@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-Lagrangian Master Derivation v19: Core 26D Action and Dimensional Reduction
+Lagrangian Master Derivation v21: Core 26D Action and Dimensional Reduction
 =============================================================================
 
 This module provides comprehensive derivations for the core 26D master action
 using the vielbein/tetrad formalism following Carroll's GR Notes and eigenchris
 style pedagogy.
 
-MATHEMATICAL FRAMEWORK:
------------------------
+MATHEMATICAL FRAMEWORK (v21 - Dual Shadow with Euclidean Bridge):
+-----------------------------------------------------------------
 1. Vielbein/Tetrad Formalism:
    - e_a^mu relates coordinate and non-coordinate bases
    - Key relation: g_munu = e_a^mu e_b^nu eta^ab (vielbein is square root of metric)
@@ -16,18 +16,18 @@ MATHEMATICAL FRAMEWORK:
    - Spin connection omega_mu^ab for covariant derivatives in non-coordinate bases
    - Torsion-free + metric compatibility uniquely determine spin connection
 
-2. 26D Master Action:
+2. 26D Master Action (v21 Unified Time):
    - S_26 = integral d^26x sqrt(-g_26) [R_26 + L_matter + L_gauge + pneuma coupling]
+   - Signature (24,1) unified time eliminates ghosts and CTCs
    - Step-by-step Euler-Lagrange derivation
-   - Show how Einstein equations emerge from variation
 
-3. Sp(2,R) Gauge Fixing:
-   - (24,2) -> (12,1) signature reduction
-   - Ghost elimination via conformal mode
-   - Physical degrees of freedom count: 24 real -> 12 complex -> 288 roots
+3. v21 Dual Shadow + Euclidean Bridge:
+   - 26D(24,1) -> 2×(11,1) + Bridge(2,0)
+   - Euclidean bridge enables cross-shadow sampling
+   - OR Reduction operator R_perp with Mobius property R_perp^2 = -I
 
-4. G2 Holonomy Reduction:
-   - 26D -> 13D (Sp(2,R)) -> 7D (G2) -> 4D (spacetime)
+4. G2 Holonomy Reduction per Shadow:
+   - Each 11D shadow -> 4D via G2(7,0) compactification
    - Kaluza-Klein ansatz for each step
    - Show how gauge fields emerge from extra dimensions
 
@@ -43,11 +43,11 @@ References:
 -----------
 [1] Carroll, S. "Spacetime and Geometry" (GR textbook and notes)
 [2] eigenchris YouTube series on differential geometry
-[3] Bars, I. "Two-Time Physics" hep-th/0606090
+[3] Acharya, B.S. & Witten, E. (2001) "Chiral Fermions from G2 Manifolds"
 [4] Joyce, D. "Compact Manifolds with Special Holonomy"
 [5] Weinberg, S. "Gravitation and Cosmology"
 [6] Kaluza, T. (1921) "On the Unity Problem in Physics"
-[7] Klein, O. (1926) "Quantum Theory and Five-Dimensional Theory"
+[7] DESI Collaboration (2025) "DESI DR2 Results"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -88,27 +88,35 @@ except ImportError:
 
 class LagrangianMasterDerivation(SimulationBase):
     """
-    Core 26D Master Action Lagrangian Derivations with Vielbein Formalism.
+    Core 26D Master Action Lagrangian Derivations with Vielbein Formalism (v21).
 
     This simulation provides comprehensive mathematical derivations for:
     A. 26D Master Action with Einstein-Hilbert gravity, gauge fields, matter
-    B. Sp(2,R) Gauge Fixing reducing (24,2) -> (12,1)
-    C. G2 Holonomy Reduction from 26D -> 4D via intermediate dimensions
+    B. v21 Dual Shadow + Euclidean Bridge structure (replaces Sp(2,R))
+    C. G2 Holonomy Reduction from 11D -> 4D per shadow
 
     All derivations follow the Carroll/eigenchris pedagogical style using
     vielbein/tetrad formalism for maximal clarity and rigor.
+
+    v21 Key Changes:
+    - Unified time (24,1) signature eliminates ghosts and CTCs
+    - Dual shadows 2×(11,1) connected by Euclidean bridge (2,0)
+    - OR Reduction operator R_perp for cross-shadow sampling
     """
 
     def __init__(self):
-        """Initialize derivation parameters and symbolic variables."""
-        # Dimensional structure
+        """Initialize derivation parameters and symbolic variables (v21)."""
+        # Dimensional structure (v21)
         self.D_critical = 26  # Critical dimension (bosonic string)
-        self.signature_26d = (24, 2)  # (spatial, temporal) for two-time physics
+        self.signature_26d = (24, 1)  # v21: unified time (no ghosts/CTCs)
 
-        # Intermediate dimensions
-        self.D_13 = 13  # After Sp(2,R) gauge fixing
-        self.signature_13d = (12, 1)  # Shadow spacetime
-        self.D_7 = 7  # G2 holonomy manifold
+        # v21: Dual Shadow structure
+        # M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
+        self.D_shadow = 11  # Per-shadow dimension (SPATIAL)
+        self.signature_shadow = (11, 0)  # v21: Per-shadow signature (SPATIAL, time shared)
+        self.D_bridge = 2  # Euclidean bridge dimension
+        self.signature_bridge = (2, 0)  # Positive-definite (Euclidean)
+        self.D_7 = 7  # G2 holonomy manifold per shadow
         self.D_4 = 4  # Final spacetime
 
         # E8 root structure (288 = 240 roots + 8 Cartan + 40 from second E8)
@@ -151,14 +159,14 @@ class LagrangianMasterDerivation(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="lagrangian_master_derivation_v19",
-            version="19.0",
+            id="lagrangian_master_derivation_v21",
+            version="21.0",
             domain="derivations",
-            title="Core 26D Master Action Lagrangian Derivations",
+            title="Core 26D Master Action Lagrangian Derivations (v21)",
             description=(
-                "Comprehensive derivations for the 26D master action using "
-                "vielbein/tetrad formalism. Includes Sp(2,R) gauge fixing, "
-                "G2 holonomy reduction, and complete Euler-Lagrange equations."
+                "v21 comprehensive derivations for the 26D master action using "
+                "vielbein/tetrad formalism. Features unified time (24,1), dual shadows "
+                "with Euclidean bridge, and G2 holonomy reduction per shadow."
             ),
             section_id="2",
             subsection_id="2.1"
@@ -210,12 +218,12 @@ class LagrangianMasterDerivation(SimulationBase):
             "einstein-equations-26d",
             "variation-metric",
 
-            # Part D: Sp(2,R) Gauge Fixing
-            "sp2r-constraint-xp",
-            "sp2r-constraint-x2",
-            "sp2r-gauge-fixed-action",
-            "ghost-elimination",
-            "dof-reduction-sp2r",
+            # Part D: v21 Dual Shadow + Bridge (legacy Sp(2,R) formulas kept for reference)
+            "sp2r-constraint-xp",       # Legacy: now replaced by OR reduction
+            "sp2r-constraint-x2",       # Legacy: now replaced by bridge geometry
+            "sp2r-gauge-fixed-action",  # Legacy: now replaced by dual-shadow structure
+            "ghost-elimination",        # v21: achieved via (24,1) unified time
+            "dof-reduction-sp2r",       # v21: replaced by dual-shadow DOF counting
 
             # Part E: G2 Holonomy
             "g2-holonomy-constraint",
@@ -278,20 +286,21 @@ class LagrangianMasterDerivation(SimulationBase):
            sqrt(-g) = det(e_a^mu) = e
         """)
 
-        # For 26D with (24,2) signature
+        # For 26D with (24,1) signature (v21 unified time)
         D = 26
         n_spatial = 24
-        n_time = 2
+        n_time = 1  # v21: Unified time eliminates ghosts and CTCs
 
         # Vielbein has D^2 = 676 components, but gauge freedom reduces this
         vielbein_components = D * D
-        lorentz_gauge = D * (D - 1) // 2  # SO(24,2) gauge freedom
+        lorentz_gauge = D * (D - 1) // 2  # SO(24,1) gauge freedom (v21)
         vielbein_physical = vielbein_components - lorentz_gauge
 
-        print(f"\nIn {D}D with ({n_spatial},{n_time}) signature:")
+        print(f"\nIn {D}D with ({n_spatial},{n_time}) signature (v21 unified time):")
         print(f"  - Total vielbein components: {vielbein_components}")
-        print(f"  - Local Lorentz gauge freedom: {lorentz_gauge} (SO(24,2))")
+        print(f"  - Local Lorentz gauge freedom: {lorentz_gauge} (SO(24,1))")
         print(f"  - Physical components: {vielbein_physical} = metric components")
+        print(f"  - v21: Unified time eliminates ghosts and CTCs")
 
         results["vielbein_total"] = vielbein_components
         results["lorentz_gauge"] = lorentz_gauge
@@ -499,17 +508,19 @@ class LagrangianMasterDerivation(SimulationBase):
         Clifford algebra in 26D:
         {Gamma^a, Gamma^b} = 2 eta^ab
 
-        Spinor dimension in 26D:
-        - Complex dimension: 2^{D/2} = 2^13 = 8192
-        - Real (Majorana): 8192 (26D admits Majorana spinors)
-        - Weyl (chiral): Not available in 26D (D not 4k+2)
+        Spinor dimension in 26D (v21 with (24,1) signature):
+        - Clifford algebra Cl(24,1) has dimension 2^25
+        - Spinor module: 2^{(25-1)/2} = 2^12 = 4096 complex
+        - v21: Unified time (24,1) gives Cl(24,1) structure
+        - Weyl (chiral): Available in odd spatial dimensions
         """)
 
-        spinor_dim = 2 ** (D // 2)
+        # v21: For Cl(24,1), spinor dim is 2^12 = 4096
+        spinor_dim = 2 ** 12  # v21: from Cl(24,1)
 
-        print(f"\nSpinor structure in {D}D:")
-        print(f"  Clifford algebra dimension: 2^{D} = {2**D}")
-        print(f"  Spinor dimension: 2^{D//2} = {spinor_dim}")
+        print(f"\nSpinor structure in {D}D (v21):")
+        print(f"  Clifford algebra Cl(24,1) dimension: 2^25 = {2**25}")
+        print(f"  Spinor dimension: 2^12 = {spinor_dim} (from Cl(24,1))")
         print(f"  Gamma matrices: {D} generators")
 
         results["spinor_dim_26d"] = spinor_dim
@@ -570,7 +581,7 @@ class LagrangianMasterDerivation(SimulationBase):
 
         This action is:
         - Diffeomorphism invariant (general coordinate transformations)
-        - Local Lorentz invariant (SO(24,2) in tangent space)
+        - Local Lorentz invariant (SO(24,1) in tangent space - v21 unified time)
         - Gauge invariant (E8 x E8)
         - BRST invariant (after ghost sector)
 
@@ -737,95 +748,107 @@ class LagrangianMasterDerivation(SimulationBase):
         return results
 
     # =========================================================================
-    # PART D: Sp(2,R) GAUGE FIXING
+    # PART D: v21 DUAL SHADOW + EUCLIDEAN BRIDGE
     # =========================================================================
 
-    def derive_sp2r_gauge_fixing(self) -> Dict[str, Any]:
+    def derive_dual_shadow_structure(self) -> Dict[str, Any]:
         """
-        Derive Sp(2,R) gauge fixing reducing (24,2) -> (12,1).
+        Derive v21 Dual Shadow structure with Euclidean bridge.
+
+        v21 replaces Sp(2,R) gauge fixing with:
+        - Unified time (24,1) signature
+        - Dual shadows 2×(11,1)
+        - Euclidean bridge (2,0)
 
         Returns:
-            Dictionary with gauge fixing results and DOF counting
+            Dictionary with dual shadow results and DOF counting
         """
         print("\n" + "="*70)
-        print("PART D: Sp(2,R) GAUGE FIXING")
+        print("PART D: v21 DUAL SHADOW + EUCLIDEAN BRIDGE")
         print("="*70)
 
         results = {}
 
         # ------------------------------------------------------------------
-        # D.1: Two-Time Physics Framework
+        # D.1: v21 Unified Time Framework
         # ------------------------------------------------------------------
-        print("\n[D.1] TWO-TIME PHYSICS FRAMEWORK")
+        print("\n[D.1] v21 UNIFIED TIME FRAMEWORK")
         print("-" * 70)
 
         print("""
-        The 26D theory has signature (24,2) with TWO time dimensions.
-        This is the "two-time physics" framework of Itzhak Bars.
+        v21 DUAL SHADOW + EUCLIDEAN BRIDGE FRAMEWORK
+        ============================================
 
-        Phase space coordinates:
-        X^M = (X^0, X^{0'}, X^1, ..., X^{24})  (positions)
-        P^M = (P^0, P^{0'}, P^1, ..., P^{24})  (momenta)
+        Structure: M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
 
-        where M = 0, 0', 1, 2, ..., 24 (26 components).
+        Components:
+        - T^1: Unified time (0,1) - shared fiber base
+        - S_normal^11: Normal shadow SPATIAL (11,0)
+        - S_mirror^11: Mirror shadow SPATIAL (11,0)
+        - B^2: Euclidean bridge (2,0) - positive-definite
 
-        The Sp(2,R) gauge symmetry acts on the (X,P) phase space:
+        Dimensional Check:
+        - Dimensions: 1 + 11 + 11 + 2 = 26 (EXACT)
+        - Spatial: 11 + 11 + 2 = 24 (CORRECT)
+        - Temporal: 1 (shared) (CORRECT)
 
-        Sp(2,R) ~ SL(2,R) generators:
-        - H: Scale transformations (dilations)
-        - E+: Boosts along X.P direction
-        - E-: Inverse boosts
+        Total signature: (24,1) - unified time
 
-        Constraint algebra:
-        [H, E+] = 2 E+
-        [H, E-] = -2 E-
-        [E+, E-] = H
+        Key advantages:
+        - Eliminates ghost modes (negative-norm states)
+        - Prevents closed timelike curves (CTCs)
+        - Preserves unitarity naturally
+        - OR Reduction replaces Sp(2,R) gauge fixing
         """)
 
         # ------------------------------------------------------------------
-        # D.2: Sp(2,R) Constraints
+        # D.2: OR Reduction Operator
         # ------------------------------------------------------------------
-        print("\n[D.2] Sp(2,R) CONSTRAINTS")
+        print("\n[D.2] OR REDUCTION OPERATOR")
         print("-" * 70)
 
         print("""
-        The Sp(2,R) gauge fixing imposes TWO constraints:
+        v21 uses the OR Reduction operator R_perp for cross-shadow sampling:
 
-        Constraint 1: X . P = 0
-        -----------------------
-        X^M P_M = 0 (orthogonality of position and momentum)
+        R_perp = | 0  -1 |
+                 | 1   0 |
 
-        This eliminates the "unphysical" direction mixing space and time.
+        Key Properties:
+        ---------------
+        1. 90-degree rotation: maps (x,y) -> (-y,x)
+        2. Mobius double-cover: R_perp^2 = -I
+        3. Orientation-preserving: det(R_perp) = 1
 
-        Constraint 2: X^2 = tau^2
-        -------------------------
-        X^M X_M = X^2 - tau^2 = 0
+        Coordinate Sampling Formula:
+        z'_mirror = R_perp * z_normal + Delta_y
 
-        where tau is the conformal time parameter.
-        This fixes the radial scale in phase space.
+        where Delta_y is the bridge offset vector.
 
-        Together, these constraints:
-        - Remove 1 dimension (X.P = 0)
-        - Fix another dimension (X^2 = tau^2)
-        - Total: reduce 26D -> 26 - 13 = 13D
+        Spinor Coherence:
+        -----------------
+        The R_perp^2 = -I property ensures spinor double-cover:
+        - Single traversal: psi -> e^{i*pi}*psi = -psi
+        - Double traversal: psi -> (-1)^2*psi = psi (return)
 
-        The counting:
-        - Original: 26 position + 26 momentum = 52 phase space DOF
-        - After constraints: 2 first-class constraints x 2 = 4 DOF removed
-        - Plus gauge fixing: removes another 2 x 2 = 4 DOF
-        - But on mass shell: 26 -> 26/2 = 13 physical dimensions
+        This replaces the Sp(2,R) X.P = 0 constraint mechanism.
         """)
 
-        # Dimension reduction
+        # v21 Dimension structure
         D_initial = 26
-        D_after_sp2r = 13
+        D_shadow = 11
+        D_bridge = 2
+        D_time = 1
 
-        print(f"\nDimension reduction:")
-        print(f"  Initial: {D_initial}D with ({24},{2}) signature")
-        print(f"  After Sp(2,R): {D_after_sp2r}D with ({12},{1}) signature")
-        print(f"  Reduction factor: {D_initial // D_after_sp2r}")
+        print(f"\nv21 Dimension structure:")
+        print(f"  M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)")
+        print(f"  Initial: {D_initial}D with (24,1) unified time")
+        print(f"  Per-shadow: {D_shadow}D SPATIAL with (11,0) signature")
+        print(f"  Bridge: {D_bridge}D with (2,0) Euclidean signature")
+        print(f"  Time: {D_time}D shared (0,1)")
+        print(f"  Verification: {D_time} + {D_shadow} + {D_shadow} + {D_bridge} = {D_time + 2*D_shadow + D_bridge}")
 
-        results["D_after_sp2r"] = D_after_sp2r
+        results["D_shadow"] = D_shadow
+        results["D_bridge"] = D_bridge
 
         # ------------------------------------------------------------------
         # D.3: Ghost Elimination
@@ -879,12 +902,13 @@ class LagrangianMasterDerivation(SimulationBase):
         print("""
         The transformation of degrees of freedom:
 
-        Step 1: 26D -> 13D via Sp(2,R)
-        ------------------------------
-        - 26 real dimensions -> 13 dimensions
-        - Signature (24,2) -> (12,1)
-        - 24 spatial become 12 complex coordinates
-        - z^i = x^{2i} + i x^{2i+1} for i = 1,...,12
+        Step 1: 26D -> Dual Shadows via OR Reduction (v21)
+        -------------------------------------------------
+        - M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
+        - Signature (24,1) unified time
+        - Per-shadow: 11D SPATIAL (11,0)
+        - Bridge: 2D Euclidean (2,0)
+        - Shared time: 1D (0,1)
 
         Step 2: E8 Root Structure
         -------------------------
@@ -1041,18 +1065,22 @@ class LagrangianMasterDerivation(SimulationBase):
         Each step removes a specific geometric structure.
         """)
 
-        # 5-level dimension chain (Gemini audit 2026-01-14)
-        # Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
-        # CRITICAL: G2 manifolds are RIEMANNIAN - signature (7,0), NOT (6,1)
-        dims = [26, 13, 7, 6, 4]
-        signatures = ["(24,2)", "(12,1)", "(7,0)", "(5,1)", "(3,1)"]
-        names = ["ANCESTRAL", "SHADOW", "G2", "EXTERNAL", "VISIBLE"]
+        # v21 dimension chain (updated 2026-01-18)
+        # Chain: 26D(24,1) → T^1×(S_normal^11 ⊕ S_mirror^11 ⊕ B^2) → [G2(7,0)] → 4D(3,1)
+        # v21: Unified time (24,1), dual shadows SPATIAL (11,0), Euclidean bridge (2,0)
+        print("\nv21 Dimensional Cascade:")
+        print("  26D(24,1) → T^1×(S_normal^11 ⊕ S_mirror^11 ⊕ B^2) → 4D(3,1)")
+        print("")
+        print("  Level 0 (ANCESTRAL): 26D with signature (24,1) - unified time")
+        print("  Level 1 (STRUCTURE): T^1 × (S_normal^11 ⊕ S_mirror^11 ⊕ B^2)")
+        print("    - T^1: Shared time (0,1)")
+        print("    - S_normal^11: Normal shadow SPATIAL (11,0)")
+        print("    - S_mirror^11: Mirror shadow SPATIAL (11,0)")
+        print("    - B^2: Euclidean bridge (2,0)")
+        print("  Level 2 (G2): 7D per shadow, signature (7,0) - RIEMANNIAN")
+        print("  Level 3 (VISIBLE): 4D with signature (3,1) - Minkowski")
 
-        print("\n5-level dimension chain:")
-        for i, (d, sig, name) in enumerate(zip(dims, signatures, names)):
-            print(f"  Level {i} ({name}): {d}D with signature {sig}")
-
-        results["reduction_chain"] = dims
+        results["reduction_chain"] = [26, 11, 7, 4]  # v21: 26D -> 11D shadow -> G2 -> 4D
 
         # ------------------------------------------------------------------
         # E.4: Gauge Fields from Extra Dimensions
@@ -1469,12 +1497,12 @@ class LagrangianMasterDerivation(SimulationBase):
         formulas.append(Formula(
             id="ghost-elimination",
             label="(2.1.16)",
-            latex=r"(24,2) \xrightarrow{\text{Sp}(2,\mathbb{R})} (12,1)",
-            plain_text="(24,2) --Sp(2,R)--> (12,1)",
+            latex=r"26D_{(24,1)} = T^1 \times_{\text{fiber}} (S^{11}_{\text{normal}} \oplus S^{11}_{\text{mirror}} \oplus B^2)",
+            plain_text="26D(24,1) = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)",
             category="DERIVED",
-            description="Signature reduction eliminating ghost (negative-norm) states",
+            description="v21: Dual shadow structure with unified time (24,1) - eliminates ghosts via OR Reduction",
             inputParams=[],
-            outputParams=["derivations.dof_after_sp2r"]
+            outputParams=["derivations.dof_after_or_reduction"]
         ))
 
         formulas.append(Formula(

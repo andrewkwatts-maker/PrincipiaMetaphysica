@@ -58,10 +58,10 @@ class IntroductionV16(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="introduction_v16_0",
-            version="20.0",
+            version="21.0",
             domain="introduction",
             title="Introduction to Principia Metaphysica",
-            description="Narrative introduction to the PM v20.0-RECURSIVE framework - 125 geometric residues",
+            description="Narrative introduction to the PM v21.0 (24,1) Dual-Shadow framework - 125 geometric residues",
             section_id="1",
             subsection_id=None
         )
@@ -123,11 +123,11 @@ class IntroductionV16(SimulationBase):
                     )
                 },
                 {
-                    "name": "Two Times",
+                    "name": "Dual Shadows with Euclidean Bridge",
                     "explanation": (
-                        "The theory includes two time dimensions related by symmetry. "
-                        "This isn't science fiction - it's a mathematical structure that helps "
-                        "explain why particles have the properties they do."
+                        "The theory uses a single unified time with a 2D Euclidean bridge "
+                        "connecting dual 'shadow' universes. This structure eliminates ghost "
+                        "modes and explains dark energy through 'breathing' pressure mismatch."
                     )
                 },
                 {
@@ -169,8 +169,9 @@ class IntroductionV16(SimulationBase):
                 "in 4D without ad hoc assumptions."
             ),
             "dimensional_hierarchy": (
-                "26D spacetime with signature (24,2) compactifies on TCS G₂ manifolds "
-                "to 13D, then to 4D, with each reduction preserving gauge symmetries "
+                "26D spacetime with unified time signature (24,1) splits into dual "
+                "(11,1) shadows connected by a 2D Euclidean bridge. Each shadow "
+                "compactifies on G₂ manifolds to 4D, preserving gauge symmetries "
                 "and generating observable physics."
             ),
             "moduli_stabilization": (
@@ -224,21 +225,21 @@ class IntroductionV16(SimulationBase):
         assert len(foundations) >= 6, "get_foundations() must return at least 6 principles"
 
         content_blocks = [
-            # Lead paragraph (abstract) - v17.2 Sterile Model
+            # Lead paragraph (abstract) - v21.0 Dual-Shadow Model
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v20.0-RECURSIVE</strong>, a sterile "
+                    "This paper presents <strong>Principia Metaphysica v21.0</strong>, a sterile "
                     "geometric framework in which all 125 fundamental physical constants emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
-                    "from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge "
-                    "symmetry</strong> freezes one time dimension, projecting the theory through "
-                    "13D → 7D → 6D → 4D via sequential brane-node descent. The internal "
-                    "<strong>V₇ manifold</strong> with <strong>b₃ = "
+                    "from a 26D spacetime with unified time signature (24,1), the framework splits "
+                    "into <strong>dual (11,1) shadows</strong> connected by a <strong>2D Euclidean "
+                    "bridge</strong>, with each shadow compactifying via G₂ holonomy through "
+                    "11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = "
                     '<span class="pm-value" data-pm-value="topology.b3">24</span></strong> and '
                     '<strong>χ = <span class="pm-value" data-pm-value="topology.chi_eff">144</span></strong> '
-                    "provides all structure: fermion generations (b₃/8 = 3), "
+                    "provides all structure: fermion generations (χ_eff/48 = 3), "
                     "mixing angles, mass hierarchies, and cosmological parameters. The framework "
                     "achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, "
                     "and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> "
@@ -443,11 +444,12 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>The Pneuma Postulate (Two-Time Framework)</h4>"
-                    "<p>In the full 26D theory with signature (24,2), the Pneuma field Ψ<sub>P</sub> "
-                    "is an <strong>8192-component spinor</strong> of Cl(24,2). After Sp(2,R) gauge-fixing "
-                    "of the two time dimensions, this reduces to an effective 64-component spinor in the "
-                    "observable 13D shadow. The internal manifold is a <strong>7D TCS (Twisted Connected "
+                    "<h4>The Pneuma Postulate (v21 Dual-Shadow Framework)</h4>"
+                    "<p>In the full 26D theory with unified time signature (24,1), the Pneuma field Ψ<sub>P</sub> "
+                    "is an <strong>8192-component spinor</strong> of Cl(24,1). The framework splits into "
+                    "<strong>dual (11,1) shadows</strong> connected by a <strong>2D Euclidean bridge</strong> "
+                    "with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective "
+                    "64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected "
                     "Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler "
                     "moduli sectors</strong>—not a static background but a dynamic geometric structure "
                     "formed from Pneuma condensates. Racetrack moduli stabilization across these four "
@@ -458,19 +460,19 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In this framework, the full 26D bulk has two timelike directions related by Z₂ "
-                    "mirror symmetry. The Pneuma field Ψ<sub>P</sub> transforms under Spin(24,2), with "
-                    "the Sp(2,R) gauge symmetry eliminating ghosts from the second time dimension. After "
-                    "gauge-fixing, the effective 13D theory emerges with Spin(12,1) symmetry and a "
-                    "64-component spinor representation. Bilinear condensates of this field generate the "
-                    "geometric tensors that define the internal manifold structure."
+                    "In the v21 framework, the full 26D bulk has unified time (24,1) signature, eliminating "
+                    "ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under "
+                    "Spin(24,1). The 26D space splits into dual (11,1) shadows connected by a 2D Euclidean "
+                    "bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = -I). "
+                    "Each shadow has Spin(10,1) symmetry with a 64-component spinor representation. Bilinear "
+                    "condensates of this field generate the geometric tensors that define the internal manifold structure."
                 )
             ),
             ContentBlock(
                 type="equation",
                 content=(
-                    "Ψ<sub>P</sub> ∈ <strong>8192</strong><sub>Spin(24,2)</sub> → "
-                    "<strong>64</strong><sub>Spin(12,1)</sub> → "
+                    "Ψ<sub>P</sub> ∈ <strong>8192</strong><sub>Spin(24,1)</sub> → "
+                    "2 × <strong>64</strong><sub>Spin(10,1)</sub> → "
                     "⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry"
                 ),
                 label="pneuma-condensate"
@@ -551,14 +553,15 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Two-Time Chirality</h4>"
-                    "<p>In the 26D two-time framework, the Z₂ mirror symmetry between the two temporal "
-                    "dimensions provides an additional mechanism for chirality generation. The mirror "
-                    "sector (related by t₁ ↔ t₂) contains \"shadow\" fermions with opposite chirality "
-                    "assignments, ensuring overall CPT conservation in the full 26D theory while allowing "
-                    "maximal parity violation in each 13D shadow sector.</p>"
+                    "<h4>Dual-Shadow Chirality</h4>"
+                    "<p>In the v21 26D unified-time framework, the dual (11,1) shadows are connected by a "
+                    "2D Euclidean bridge with OR reduction operator R<sub>⊥</sub>. The Möbius property "
+                    "(R<sub>⊥</sub>² = -I) provides spinor double-cover: a single traversal gives ψ → -ψ, "
+                    "while a double traversal returns ψ → ψ. The mirror shadow contains fermions with "
+                    "opposite chirality assignments, ensuring overall CPT conservation while allowing "
+                    "maximal parity violation in each (11,1) shadow sector.</p>"
                 ),
-                label="two-time-chirality"
+                label="dual-shadow-chirality"
             ),
 
             # 1.4 The Division Algebra Origin of D = 13
@@ -571,15 +574,15 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Framework: 26D → 13D Projection</h4>"
-                    "<p>In the full Principia Metaphysica framework, the fundamental theory lives in "
-                    "<strong>26D with signature (24,2)</strong>—matching the critical dimension of "
-                    "bosonic string theory. The two timelike dimensions are related by Sp(2,R) gauge "
-                    "symmetry and Z₂ mirror structure. After gauge-fixing, the observable physics emerges "
-                    "in a <strong>13D shadow</strong> with signature (12,1). This section explains why "
-                    "D = 13 is the unique division-algebra-consistent dimension for the observable sector.</p>"
+                    "<h4>Framework: 26D → Dual (11,1) Shadows</h4>"
+                    "<p>In the v21 Principia Metaphysica framework, the fundamental theory lives in "
+                    "<strong>26D with unified time signature (24,1)</strong>—matching the critical dimension of "
+                    "bosonic string theory while eliminating ghost modes. The 26D splits into dual "
+                    "(11,1) shadows connected by a 2D Euclidean bridge. Each shadow compactifies on G₂ "
+                    "with the OR reduction operator R<sub>⊥</sub> providing cross-shadow coherence. This section explains why "
+                    "D = 13 = 1 + 4 + 8 is the unique division-algebra-consistent dimension for the observable sector.</p>"
                 ),
-                label="framework-26d-13d"
+                label="framework-26d-dual-shadows"
             ),
             ContentBlock(
                 type="paragraph",
@@ -648,16 +651,16 @@ class IntroductionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The major candidates for fundamental theory—string theory (D = 10), M-theory (D = 11), "
-                    "and now Principia Metaphysica (D = 26 full / D = 13 shadow)—have division algebra "
+                    "and now Principia Metaphysica (D = 26 full / D = 11 per shadow)—have division algebra "
                     "interpretations with crucial differences. D = 10 = 2 + 8 = <strong>C</strong> + "
                     "<strong>O</strong> (worldsheet coordinates + transverse directions, requires "
                     "supersymmetry). D = 11 = 1 + 2 + 8 = <strong>R</strong> + <strong>C</strong> + "
                     "<strong>O</strong> (mixed structure, requires supersymmetry, 7D G₂ holonomy). "
                     "D = 13 = 1 + 4 + 8 = <strong>R</strong> + <strong>H</strong> + <strong>O</strong> "
                     "(emergent thermal time, quaternionic spacetime, full 8D octonionic geometry, "
-                    "<strong>no supersymmetry required</strong>). D = 26 = 2 × 13 = 2 × (<strong>R</strong> + "
-                    "<strong>H</strong> + <strong>O</strong>) (signature (24,2), Sp(2,R) gauge symmetry, "
-                    "Z₂ mirror structure, predicts w₀ = -1 + 1/b₃ = -23/24)."
+                    "<strong>no supersymmetry required</strong>). D = 26 with (24,1) signature splits into "
+                    "dual (11,1) shadows + (2,0) Euclidean bridge, predicting w₀ = -1 + 1/b₃ = -23/24 "
+                    "from bridge pressure mismatch."
                 )
             ),
             ContentBlock(
@@ -714,7 +717,7 @@ class IntroductionV16(SimulationBase):
             # 1.5 Outline of the Paper
             ContentBlock(
                 type="heading",
-                content="Outline of the Paper (Two-Time Framework)",
+                content="Outline of the Paper (v21 Dual-Shadow Framework)",
                 level=2,
                 label="1.5"
             ),
@@ -723,22 +726,22 @@ class IntroductionV16(SimulationBase):
                 content=(
                     "The remainder of this paper develops the <strong>Principia Metaphysica</strong> "
                     "theoretical framework systematically and derives its physical consequences. The central "
-                    "insight is the 26D → 13D → 4D dimensional hierarchy, where two time dimensions enable "
-                    "the derivation of key cosmological parameters. The structure is as follows:"
+                    "insight is the 26D (24,1) → dual (11,1) shadows → 4D dimensional hierarchy, where the "
+                    "Euclidean bridge structure enables the derivation of key cosmological parameters. The structure is as follows:"
                 )
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "<strong>Section 2 (Geometric Framework)</strong>: 26D bulk with (24,2) signature; "
-                    "Sp(2,R) gauge fixing; 13D shadow emergence; K<sub>Pneuma</sub>; racetrack moduli "
+                    "<strong>Section 2 (Geometric Framework)</strong>: 26D bulk with unified time (24,1) signature; "
+                    "dual (11,1) shadow emergence; Euclidean bridge; K<sub>Pneuma</sub>; racetrack moduli "
                     "stabilization. <strong>Section 3 (Gauge Unification)</strong>: SO(10) from 26D "
-                    "isometries; Z₂ mirror gauge sectors; symmetry breaking chains. <strong>Section 4 "
-                    "(Fermion Sector)</strong>: 8192 → 64 spinor reduction; two-time chirality mechanism; "
+                    "isometries; dual shadow gauge sectors; symmetry breaking chains. <strong>Section 4 "
+                    "(Fermion Sector)</strong>: 8192 → 2×64 spinor reduction; dual-shadow chirality mechanism; "
                     "Yukawa hierarchies (ε = 0.2257 from racetrack); 7D Monte Carlo validation. "
-                    "<strong>Section 5 (Thermal Time Hypothesis)</strong>: Two-time dynamics; extended "
+                    "<strong>Section 5 (Thermal Time Hypothesis)</strong>: Bridge dynamics; extended "
                     "Tomita-Takesaki flow; t<sub>phys</sub> emergence. <strong>Section 6 (Cosmological "
-                    "Dynamics)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ 0.27 DERIVED; mirror sector contributions."
+                    "Dynamics)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204 DERIVED; breathing dark energy. "
                     "<strong>Section 7 (Predictions & Tests)</strong>: DESI wₐ/w₀ ratio; proton decay; "
                     "GW dispersion; falsification criteria. <strong>Section 8 (Conclusion)</strong>: "
                     "Summary; achievements; open questions; future directions."
@@ -750,7 +753,7 @@ class IntroductionV16(SimulationBase):
                     "This hierarchical structure moves from the foundational 26D geometric framework "
                     "through the particle physics phenomenology to cosmological implications and "
                     "experimental tests. Each section builds upon the preceding material, developing a "
-                    "coherent picture of unified physics from 26D origins through 13D shadow to observable "
+                    "coherent picture of unified physics from 26D origins through dual (11,1) shadows to observable "
                     "4D consequences."
                 )
             ),
@@ -781,17 +784,17 @@ class IntroductionV16(SimulationBase):
                 type="note",
                 content=(
                     "<h4>Central Thesis</h4>"
-                    "<p>The central claim of this work is that a <strong>26D spacetime with signature "
-                    "(24,2)</strong>, incorporating two time dimensions related by Z₂ mirror symmetry, "
-                    "projects to a <strong>13D observable shadow</strong> containing a 1 + 3 brane hierarchy. "
-                    "The Sp(2,R) gauge-fixed framework, with geometry emerging from the 8192-component Pneuma "
+                    "<p>The central claim of this work is that a <strong>26D spacetime with unified time "
+                    "signature (24,1)</strong>, splitting into dual (11,1) shadows connected by a 2D Euclidean "
+                    "bridge, provides a <strong>ghost-free framework</strong> containing a 1 + 3 brane hierarchy. "
+                    "The dual-shadow structure, with geometry emerging from the 8192-component Pneuma "
                     "field, can simultaneously explain: (1) the origin of gauge forces from 26D isometries, "
-                    "(2) the chiral structure via two-time mirror mechanism, (3) the emergence of time from "
-                    "modular flow, (4) the <strong>precise values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ 0.27, M<sub>KK</sub> ≈"
+                    "(2) the chiral structure via dual-shadow Möbius mechanism, (3) the emergence of time from "
+                    "modular flow, (4) the <strong>precise values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈"
                     "4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli "
                     "stabilization), and δ<sub>CP</sub> = π/2 as DERIVED predictions</strong> from the "
                     "topology (b₃=24, λ=1.5), and (5) the quantum measurement problem through geometric "
-                    "hidden variables in the mirror sector.</p>"
+                    "hidden variables in the mirror shadow.</p>"
                 ),
                 label="central-thesis"
             ),
@@ -819,8 +822,8 @@ class IntroductionV16(SimulationBase):
                     "<h4>Kaluza-Klein Theory (1920s)</h4>"
                     "<p>The original insight that extra compact dimensions can yield gauge interactions from "
                     "pure geometry remains the conceptual ancestor of all modern unification programs. PM "
-                    "inherits this philosophy while extending to 26D with signature (24,2) and employing G₂ "
-                    "holonomy for chirality.</p>"
+                    "inherits this philosophy while extending to 26D with unified time signature (24,1) and employing G₂ "
+                    "holonomy for chirality in each of the dual shadows.</p>"
                 ),
                 label="kk-context"
             ),
@@ -841,11 +844,12 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Two-Time Physics (Bars 1998–2010)</h4>"
+                    "<h4>Two-Time Physics (Bars 1998–2010) — Historical Influence</h4>"
                     "<p>Itzhak Bars' program demonstrating that 2T physics with Sp(2,R) gauge symmetry "
-                    "provides a unified view of 1T systems via different gauge choices directly informs PM's "
-                    "use of signature (24,2) and the 26D → 13D → 4D reduction cascade. The Sp(2,R) constraint "
-                    "mechanism for ghost elimination is adopted from this framework.</p>"
+                    "provides a unified view of 1T systems via different gauge choices historically informed "
+                    "early PM development. However, v21 adopts unified time (24,1) to eliminate ghost modes "
+                    "directly, replacing two-time with dual (11,1) shadows connected by a 2D Euclidean bridge. "
+                    "This preserves key phenomenological features while ensuring manifest unitarity.</p>"
                 ),
                 label="two-time-context"
             ),
@@ -891,19 +895,21 @@ class IntroductionV16(SimulationBase):
                 "most profound intellectual endeavors in theoretical physics. This section traces the "
                 "historical arc from Maxwell's unification of electricity and magnetism to modern attempts "
                 "at Grand Unified Theories, while introducing the novel approach of deriving geometry from "
-                "a fundamental fermionic field. Principia Metaphysica posits a 26D spacetime with signature "
-                "(24,2)—incorporating two time dimensions related by Sp(2,R) gauge symmetry—from which an "
-                "observable 13D shadow emerges. Compactification occurs on a TCS (Twisted Connected Sum) G₂ "
-                "manifold with h^1,1=4 Kähler moduli sectors, enabling racetrack moduli stabilization that "
-                "dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without tuning. The Pneuma-Vielbein "
-                "bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature "
-                "(-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ 0.27, matching DESI 2025 (thawing) observations."
+                "a fundamental fermionic field. Principia Metaphysica v21 posits a 26D spacetime with unified "
+                "time signature (24,1)—splitting into dual (11,1) shadows connected by a 2D Euclidean bridge—"
+                "eliminating ghost modes while preserving phenomenological richness. Compactification occurs "
+                "on a TCS (Twisted Connected Sum) G₂ manifold with h^1,1=4 Kähler moduli sectors, enabling "
+                "racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without "
+                "tuning. The Pneuma-Vielbein bridge validates metric emergence from spinor bilinears with "
+                "Lorentzian signature (-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ -0.204, "
+                "matching DESI 2025 (thawing) observations."
             ),
             content_blocks=content_blocks,
             formula_refs=[],
             param_refs=[
                 "D_bulk",
-                "D_after_sp2r",
+                "D_shadow",
+                "D_bridge",
                 "D_observable",
                 "D_G2",
                 "D_spin8",

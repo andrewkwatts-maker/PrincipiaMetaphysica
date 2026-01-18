@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Certificate Stack
+PRINCIPIA METAPHYSICA v21.0 - Certificate Stack
 =================================================
 
 DOI: 10.5281/zenodo.18079602
 
 This module implements the 42 Certificates of Integrity with the
-v16.2 "Hard-Locked" enforcement requirements.
+v21.0 "Hard-Locked" enforcement requirements.
 
 THE 7 PRIMARY GATES:
     C02-R:     Root Parity (288)
@@ -473,7 +473,7 @@ class CertificateStack:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA v16.2 - Certificate Stack Audit")
+    print("PRINCIPIA METAPHYSICA v21.0 - Certificate Stack Audit")
     print("=" * 70)
 
     # Create a valid registry

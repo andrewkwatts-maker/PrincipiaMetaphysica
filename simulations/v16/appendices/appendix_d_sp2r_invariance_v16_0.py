@@ -3,6 +3,27 @@
 Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0
 ====================================================================
 
+                    ╔══════════════════════════════════════════════════════════╗
+                    ║                   ARCHIVED (v21.0)                        ║
+                    ║                                                          ║
+                    ║  This appendix describes the Sp(2,R) gauge-fixing        ║
+                    ║  approach used in the (24,2) two-time framework.         ║
+                    ║                                                          ║
+                    ║  As of v21.0, Principia Metaphysica uses UNIFIED TIME    ║
+                    ║  with (24,1) signature, eliminating the need for         ║
+                    ║  Sp(2,R) gauge-fixing entirely.                          ║
+                    ║                                                          ║
+                    ║  The v21 framework uses:                                 ║
+                    ║  - Dual (11,1) shadows connected by Euclidean bridge     ║
+                    ║  - OR reduction operator R_perp with R_perp^2 = -I       ║
+                    ║  - NO ghost modes, NO CTCs (manifest unitarity)          ║
+                    ║                                                          ║
+                    ║  See: appendix_f_v16_0.py (v21 dimensional decomposition)║
+                    ║       appendix_g_euclidean_bridge.md (v21 bridge docs)   ║
+                    ╚══════════════════════════════════════════════════════════╝
+
+HISTORICAL CONTEXT (v16.0 - OBSOLETE):
+
 THEOREM: The X*P = 0 constraint from Sp(2,R) gauge symmetry eliminates the
 second time dimension from physical observables, preventing closed timelike
 curves (CTCs) in the (24,2) signature spacetime.
@@ -72,12 +93,12 @@ class Sp2RInvarianceProof(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="appendix_d_sp2r_invariance_v16_0",
-            version="16.0",
+            version="16.0-ARCHIVED",
             domain="appendices",
-            title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves",
+            title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED]",
             description=(
-                "Rigorous proof that Sp(2,R) gauge symmetry eliminates the second time "
-                "dimension from physical observables, preventing CTCs in (24,2) signature."
+                "[ARCHIVED v21.0] Historical proof from (24,2) two-time framework. "
+                "v21 uses unified time (24,1) with dual shadows, eliminating need for Sp(2,R)."
             ),
             section_id="2",
             subsection_id="D_prime",

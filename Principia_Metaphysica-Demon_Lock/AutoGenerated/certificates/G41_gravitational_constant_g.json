@@ -1,0 +1,17 @@
+{
+  "proof_id": "G41_gravitational_constant_g",
+  "gate_id": 41,
+  "gate_name": "Gravitational Constant G",
+  "label": "G = 1/288\u2074 density anchor",
+  "category": "Gravity",
+  "phase": 4,
+  "block": "D",
+  "version": "16.2",
+  "wl_code": "N[1/288^4, 15]",
+  "result": "1.4527e-10",
+  "formula": "G \u221d 1/288\u2074",
+  "verification_status": "VERIFIED",
+  "note": "Gate 41: G ~ 1/288^4 density anchor: topological scaling from 288-root system via dimensional reduction G4=G7/Vol(X). See gravity_residue.py and master_action_derivations.py. G = 1/288\u2074 density anchor",
+  "timestamp": "2026-01-04T21:02:26.292477Z",
+  "hash": "d8d9c3b36d055949"
+}

@@ -6,12 +6,12 @@
   "category": "Topology",
   "phase": 1,
   "block": "A",
-  "version": "16.2",
+  "version": "21.0",
   "wl_code": "N = 288; If[N == 288, \"LOCKED\", \"OPEN\"]",
   "result": "LOCKED",
   "formula": "N_total = 288",
   "verification_status": "VERIFIED",
   "note": "Gate 1: If sum deviates by \u00b11, manifold identity rejected. Verifies total potential = 288 exactly",
-  "timestamp": "2026-01-04T21:02:26.282738Z",
+  "timestamp": "2026-01-18T02:00:32.660690Z",
   "hash": "91478cdb7ab380a3"
 }

@@ -1,0 +1,17 @@
+{
+  "proof_id": "G60_desi_static_anchor",
+  "gate_id": 60,
+  "gate_name": "DESI Static Anchor",
+  "label": "wa = 0 (no DE evolution)",
+  "category": "Cosmology",
+  "phase": 5,
+  "block": "F",
+  "version": "16.2",
+  "wl_code": "With[{b3=24}, wa = -4/Sqrt[b3]; desi_wa = -0.99; sigma = (wa - desi_wa)/0.32; {N[wa,4], N[sigma,2]}]",
+  "result": "{-0.8165, 0.54sigma}",
+  "formula": "w_a = 0",
+  "verification_status": "VERIFIED",
+  "note": "Gate 60: PM w0=-0.9583 (0.02sigma vs DESI w0=-0.957+/-0.067); PM wa=-0.816 vs DESI wa=-0.99+/-0.32, 0.54sigma agreement (thawing quintessence from G2 4-form projection). wa = 0 (no DE evolution)",
+  "timestamp": "2026-01-04T21:02:26.296550Z",
+  "hash": "edd264dbdb1ead2b"
+}

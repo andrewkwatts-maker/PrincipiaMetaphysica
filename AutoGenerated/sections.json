@@ -1,5 +1,5 @@
 {
-  "version": "20.0",
+  "version": "21.0",
   "count": 65,
   "sections": {
     "0": {
@@ -15,7 +15,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "We introduce a unified mathematical framework that derives fundamental physical constants and cosmological observables from the topological invariants of a <span class=\"pm-value\" data-pm-value=\"dimensions.D_bulk\">26</span>D manifold with (24,2) signature. <strong>Principia Metaphysica v20.0-RECURSIVE</strong> compactifies M-theory on a Twisted Connected Sum G₂ manifold, where S<sub>PR</sub>(2) gauge fixing yields an effective <span class=\"pm-value\" data-pm-value=\"dimensions.D_after_sp2r\">13</span>-dimensional intermediate stage (explicit decomposition: 26D = 4D × T<sup>15</sup> × G₂(7D)), followed by G₂ compactification to the observed <span class=\"pm-value\" data-pm-value=\"dimensions.D_observable\">4</span>D universe. The model predicts exactly three chiral fermion generations from n<sub>gen</sub> = |χ<sub>eff</sub>|/48 = <span class=\"pm-value\" data-pm-value=\"topology.n_gen\">3</span>, where the divisor 48 = 24 × 2 reflects both the F-theory index theorem (Sethi-Vafa-Witten 1996) and a ℤ₂ factor from S<sub>PR</sub>(2) parity identification across the two time dimensions (Bars 2006).",
+          "content": "We introduce a unified mathematical framework that derives fundamental physical constants and cosmological observables from the topological invariants of a <span class=\"pm-value\" data-pm-value=\"dimensions.D_bulk\">26</span>D manifold with (24,1) signature and 2D Euclidean bridge. <strong>Principia Metaphysica v21.0</strong> realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and a shared (2,0) Euclidean bridge (ds² = dy₁² + dy₂²) enables coherent cross-shadow sampling via OR reduction. Each shadow compactifies on G₂(7,0) to <span class=\"pm-value\" data-pm-value=\"dimensions.D_observable\">4</span>D, yielding exactly three chiral fermion generations from n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = <span class=\"pm-value\" data-pm-value=\"topology.n_gen\">3</span> per shadow, consistent with M-theory phenomenology (Acharya-Witten 2001).",
           "label": "abstract-lead",
           "equationNumber": "abstract-lead"
         },
@@ -41,7 +41,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "We introduce a unified mathematical framework that derives fundamental physical constants and cosmological observables from the topological invariants of a <span class=\"pm-value\" data-pm-value=\"dimensions.D_bulk\">26</span>D manifold with (24,2) signature. <strong>Principia Metaphysica v20.0-RECURSIVE</strong> compactifies M-theory on a Twisted Connected Sum G₂ manifold, where S<sub>PR</sub>(2) gauge fixing yields an effective <span class=\"pm-value\" data-pm-value=\"dimensions.D_after_sp2r\">13</span>-dimensional intermediate stage (explicit decomposition: 26D = 4D × T<sup>15</sup> × G₂(7D)), followed by G₂ compactification to the observed <span class=\"pm-value\" data-pm-value=\"dimensions.D_observable\">4</span>D universe. The model predicts exactly three chiral fermion generations from n<sub>gen</sub> = |χ<sub>eff</sub>|/48 = <span class=\"pm-value\" data-pm-value=\"topology.n_gen\">3</span>, where the divisor 48 = 24 × 2 reflects both the F-theory index theorem (Sethi-Vafa-Witten 1996) and a ℤ₂ factor from S<sub>PR</sub>(2) parity identification across the two time dimensions (Bars 2006).",
+          "content": "We introduce a unified mathematical framework that derives fundamental physical constants and cosmological observables from the topological invariants of a <span class=\"pm-value\" data-pm-value=\"dimensions.D_bulk\">26</span>D manifold with (24,1) signature and 2D Euclidean bridge. <strong>Principia Metaphysica v21.0</strong> realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and a shared (2,0) Euclidean bridge (ds² = dy₁² + dy₂²) enables coherent cross-shadow sampling via OR reduction. Each shadow compactifies on G₂(7,0) to <span class=\"pm-value\" data-pm-value=\"dimensions.D_observable\">4</span>D, yielding exactly three chiral fermion generations from n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = <span class=\"pm-value\" data-pm-value=\"topology.n_gen\">3</span> per shadow, consistent with M-theory phenomenology (Acharya-Witten 2001).",
           "label": "abstract-lead",
           "equationNumber": "abstract-lead"
         },
@@ -68,7 +68,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:48.987731"
+      "timestamp": "2026-01-18T12:54:32.082473"
     },
     "1": {
       "id": "1",
@@ -83,14 +83,14 @@
       "contentBlocks": [
         {
           "type": "heading",
-          "content": "The 26D(24,2) Ancestral Bulk",
+          "content": "The 26D(24,1) Ancestral Bulk with Euclidean Bridge",
           "label": "1.1",
           "equationNumber": "1.1",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,2) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, where all possible configurations of matter and force exist as undifferentiated fluctuations on a master p-brane."
+          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,1) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, with unified time (eliminating ghosts and closed timelike curves) and a 2D Euclidean shared bridge enabling dual-shadow coherence."
         },
         {
           "type": "heading",
@@ -99,31 +99,32 @@
         },
         {
           "type": "paragraph",
-          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,2) signature is critical: it provides twenty-four spatial dimensions and two time-like dimensions. This specific configuration allows for <strong>non-ghost-driven stability</strong>—a state where the vacuum energy is perfectly balanced before the introduction of entropy."
+          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong>—a state where the vacuum energy is perfectly balanced without CTC instabilities."
         },
         {
           "type": "equation",
-          "content": "\\text{Signature}(M^{26}) = (24, 2) \\quad \\Rightarrow \\quad ds^2 = -dt_1^2 - dt_2^2 + \\sum_{i=1}^{24} dx_i^2",
+          "content": "\\text{Signature}(M^{26}) = (24, 1) \\quad \\Rightarrow \\quad ds^2 = \\sum_{i=1}^{24} dx_i^2 - dt^2",
           "label": "26d-signature",
           "equationNumber": "26d-signature"
         },
         {
           "type": "heading",
-          "content": "1.1.2 The Master Brane State",
+          "content": "1.1.2 The Dual-Shadow Structure",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "In this ancestral bulk, the 125 parameters of the eventual Standard Model and Cosmology are not yet discrete values. Instead, they are defined as <strong>Vibrational Modes</strong> on a singular, 25-dimensional p-brane:"
+          "content": "The 26D bulk descends into <strong>dual shadows</strong> connected by a <strong>2D Euclidean bridge</strong>. Each shadow contains (11,1) degrees of freedom, while the bridge dimensions (y₁, y₂) are purely spacelike (2,0):"
         },
         {
           "type": "list",
           "content": null,
-          "label": "brane-degrees",
-          "equationNumber": "brane-degrees",
+          "label": "dual-shadow-structure",
+          "equationNumber": "dual-shadow-structure",
           "items": [
-            "<strong>The 24 Spatial Degrees:</strong> Correspond to the 'Symmetry Budget' that will later be partitioned into gauge groups (SU(3), SU(2), U(1)).",
-            "<strong>The 2 Temporal Degrees:</strong> Provide the 'Causal Flex' necessary for the S<sub>PR</sub>(2) gauge to initialize."
+            "<strong>Bridge Metric:</strong> ds²<sub>bridge</sub> = dy₁² + dy₂² (positive-definite, timeless)",
+            "<strong>Shadow Structure:</strong> 2 × [(5,1)<sub>bridge</sub> ⊕ ⊕<sub>k</sub>(3,1)<sub>k</sub>] per generation",
+            "<strong>OR Reduction:</strong> 90° rotation operator R<sub>⊥</sub> enables cross-shadow coordinate sampling"
           ]
         },
         {
@@ -133,78 +134,79 @@
         },
         {
           "type": "paragraph",
-          "content": "The 26D(24,2) state is inherently unstable toward <strong>Dimensional Collapse</strong>. Because the 26-dimensional bosonic string space is the state of maximum symmetry, it must 'freeze' into a lower-dimensional manifold to reach a state of minimum potential energy. This transition is not a random explosion (Big Bang), but a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy."
+          "content": "The 26D(24,1) state descends via <strong>Dimensional Collapse</strong>. The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, with the Euclidean bridge providing the coherence substrate. This transition is a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
         },
         {
           "type": "note",
-          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. This is the origin of the <strong>Global Metric Lock</strong>.</p>",
+          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. The dual-shadow structure enforces this via balanced b₃ residue splits (12/12) across shadows.</p>",
           "label": "sterility-origin",
           "equationNumber": "sterility-origin"
         },
         {
           "type": "heading",
-          "content": "The S<sub>PR</sub>(2) Gauge Filter: 26D → 13D",
+          "content": "The Euclidean Bridge and OR Reduction",
           "label": "1.2",
           "equationNumber": "1.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The transition from the 26D(24,2) bulk to the 13-dimensional intermediate manifold is governed by the <strong>Symmetry-Preserving Reduction S<sub>PR</sub>(2) gauge</strong>. This mechanism is the 'Sorting Demon' of the theory, responsible for the initial freezing of the 26-dimensional symmetry budget into a fixed physical registry."
+          "content": "The connection between the dual (24,1) shadows is mediated by a <strong>2D Euclidean bridge</strong> with signature (2,0). This timeless substrate enables cross-shadow coordinate sampling via <strong>Orthogonal Reduction (OR)</strong>, providing the mechanism for coherent information flow between the normal and mirror sectors."
         },
         {
           "type": "heading",
-          "content": "1.2.1 The Causal Collapse: t₂ → Λ",
+          "content": "1.2.1 The Bridge Metric",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The most critical function of the S<sub>PR</sub>(2) gauge is the resolution of the ancestral (24,2) signature. In the 26D → 13D transition, the second time-like dimension (t₂) is 'compactified' into a static potential. This process converts a temporal degree of freedom into the <strong>Vacuum Energy Floor (Λ)</strong>. This is the first 'Sterile Lock'—once the S<sub>PR</sub>(2) gauge initializes, the arrow of time becomes singular, and the cosmological constant is fixed as a residue of this temporal collapse."
+          "content": "The bridge is purely Euclidean with positive-definite metric. This eliminates ghost modes and closed timelike curves that would arise from multi-time theories. The bridge provides a 'timeless' substrate for cross-shadow sampling, where conformal pressure from condensate flux gradients drives the breathing dark energy mechanism."
         },
         {
           "type": "equation",
-          "content": "t_2 \\xrightarrow{S_{PR}(2)} \\Lambda \\quad \\Rightarrow \\quad \\text{Signature}(24,2) \\to \\text{Signature}(12,1)",
-          "label": "t2-to-lambda",
-          "equationNumber": "t2-to-lambda"
+          "content": "ds^2_{\\text{bridge}} = dy_1^2 + dy_2^2 \\quad \\text{(positive-definite, no ghosts)}",
+          "label": "bridge-metric",
+          "equationNumber": "bridge-metric"
         },
         {
           "type": "heading",
-          "content": "1.2.2 The 13-Dimensional Intermediate Registry",
+          "content": "1.2.2 The OR Reduction Operator",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge partitions the 24 spatial dimensions into a 13-dimensional manifold (V₁₃). This reduction is not arbitrary; it follows a precise algebraic path where the degrees of freedom are 'pinned' to 13 primary tension wells:"
+          "content": "Cross-shadow coordinate sampling uses the <strong>Orthogonal Reduction operator R<sub>⊥</sub></strong>, a 90° rotation that maps normal-shadow gradients to mirror-shadow coordinates. This operator satisfies R<sub>⊥</sub>² = −I, providing Möbius double-cover properties essential for spinor coherence:"
         },
         {
           "type": "list",
           "content": null,
-          "label": "13d-registry",
-          "equationNumber": "13d-registry",
+          "label": "or-reduction-operator",
+          "equationNumber": "or-reduction-operator",
           "items": [
-            "<strong>The Bosonic Anchor:</strong> 12 dimensions are allocated to the primary force-carriers and gauge symmetries.",
-            "<strong>The Metric Anchor:</strong> The 13th dimension acts as the 'Master Scale,' governing the ratio between the Planck mass and the electroweak scale."
+            "<strong>Rotation Matrix:</strong> R<sub>⊥</sub> = [[0, −1], [1, 0]] (det = 1, orientation-preserving)",
+            "<strong>External Sampling:</strong> z'<sub>mirror</sub> = R<sub>⊥</sub> z<sub>normal</sub> + Δy",
+            "<strong>Möbius Property:</strong> R<sub>⊥</sub>² = −I enables spinor return after double traversal"
           ]
         },
         {
           "type": "heading",
-          "content": "1.2.3 The Octonionic Link",
+          "content": "1.2.3 The Breathing Dark Energy Mechanism",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge operates on the principles of <strong>Division Algebra</strong>. Specifically, it uses the transition between Octonionic (𝕆) and Quaternionic (ℍ) logic to determine how the 13D space will eventually shatter into the 7D and 6D components. This algebraic rigidness ensures that the resulting particle flavors (quarks and leptons) are not randomly assigned but are the <strong>only permitted solutions</strong> of the gauge filter."
+          "content": "The bridge pressure arises from <strong>condensate flux mismatch</strong> between shadows. Where normal and mirror shadow pressure profiles differ, the residue drives cosmic acceleration. This yields thawing dark energy with w₀ = −1 + 1/b₃ = −23/24 ≈ −0.9583, matching DESI 2025 within 0.02σ. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
         },
         {
           "type": "heading",
-          "content": "The G₂ Manifold (V₇): The Geometric Hard-Lock",
+          "content": "The G₂ Manifold (V₇): Per-Shadow Compactification",
           "label": "1.3",
           "equationNumber": "1.3",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The descent from 13D reaches its most critical phase in the transition to <strong>7-Dimensional Space</strong>. This stage is defined by the holonomy of the <strong>G₂ Manifold (V₇)</strong>. While the S<sub>PR</sub>(2) gauge sorts the potential, the G₂ manifold provides the physical rigidity that prevents the constants of nature from drifting. In the Sterile Model, the G₂ manifold is the 'Hard-Lock' that ensures 4D reality is a unique, non-negotiable state."
+          "content": "Each dual shadow undergoes independent <strong>G₂ compactification</strong> on a <strong>7-dimensional Riemannian manifold (7,0)</strong>. This per-shadow structure provides the geometric rigidity that prevents the constants of nature from drifting. The G₂ manifold is the 'Hard-Lock' that ensures each 4D condensate is a unique, non-negotiable state with n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = 3 generations per shadow."
         },
         {
           "type": "heading",
@@ -322,21 +324,15 @@
       ],
       "content_blocks": [
         {
-          "type": "paragraph",
-          "content": "This paper presents <strong>Principia Metaphysica v20.0-RECURSIVE</strong>, a sterile geometric framework in which all 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow—without free parameters, tuning, or calibration. Beginning from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge symmetry</strong> freezes one time dimension, projecting the theory through 13D → 7D → 6D → 4D via sequential brane-node descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.b3\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.chi_eff\">144</span></strong> provides all structure: fermion generations (b₃/8 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> matching DESI thawing (0.02σ) and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2025. All derivations are cryptographically locked via <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span> Wolfram-verified certificates. DOI: 10.5281/zenodo.18079602",
-          "label": "lead",
-          "equationNumber": "lead"
-        },
-        {
           "type": "heading",
-          "content": "The 26D(24,2) Ancestral Bulk",
+          "content": "The 26D(24,1) Ancestral Bulk with Euclidean Bridge",
           "label": "1.1",
           "equationNumber": "1.1",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,2) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, where all possible configurations of matter and force exist as undifferentiated fluctuations on a master p-brane."
+          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,1) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, with unified time (eliminating ghosts and closed timelike curves) and a 2D Euclidean shared bridge enabling dual-shadow coherence."
         },
         {
           "type": "heading",
@@ -345,31 +341,32 @@
         },
         {
           "type": "paragraph",
-          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,2) signature is critical: it provides twenty-four spatial dimensions and two time-like dimensions. This specific configuration allows for <strong>non-ghost-driven stability</strong>—a state where the vacuum energy is perfectly balanced before the introduction of entropy."
+          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong>—a state where the vacuum energy is perfectly balanced without CTC instabilities."
         },
         {
           "type": "equation",
-          "content": "\\text{Signature}(M^{26}) = (24, 2) \\quad \\Rightarrow \\quad ds^2 = -dt_1^2 - dt_2^2 + \\sum_{i=1}^{24} dx_i^2",
+          "content": "\\text{Signature}(M^{26}) = (24, 1) \\quad \\Rightarrow \\quad ds^2 = \\sum_{i=1}^{24} dx_i^2 - dt^2",
           "label": "26d-signature",
           "equationNumber": "26d-signature"
         },
         {
           "type": "heading",
-          "content": "1.1.2 The Master Brane State",
+          "content": "1.1.2 The Dual-Shadow Structure",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "In this ancestral bulk, the 125 parameters of the eventual Standard Model and Cosmology are not yet discrete values. Instead, they are defined as <strong>Vibrational Modes</strong> on a singular, 25-dimensional p-brane:"
+          "content": "The 26D bulk descends into <strong>dual shadows</strong> connected by a <strong>2D Euclidean bridge</strong>. Each shadow contains (11,1) degrees of freedom, while the bridge dimensions (y₁, y₂) are purely spacelike (2,0):"
         },
         {
           "type": "list",
           "content": null,
-          "label": "brane-degrees",
-          "equationNumber": "brane-degrees",
+          "label": "dual-shadow-structure",
+          "equationNumber": "dual-shadow-structure",
           "items": [
-            "<strong>The 24 Spatial Degrees:</strong> Correspond to the 'Symmetry Budget' that will later be partitioned into gauge groups (SU(3), SU(2), U(1)).",
-            "<strong>The 2 Temporal Degrees:</strong> Provide the 'Causal Flex' necessary for the S<sub>PR</sub>(2) gauge to initialize."
+            "<strong>Bridge Metric:</strong> ds²<sub>bridge</sub> = dy₁² + dy₂² (positive-definite, timeless)",
+            "<strong>Shadow Structure:</strong> 2 × [(5,1)<sub>bridge</sub> ⊕ ⊕<sub>k</sub>(3,1)<sub>k</sub>] per generation",
+            "<strong>OR Reduction:</strong> 90° rotation operator R<sub>⊥</sub> enables cross-shadow coordinate sampling"
           ]
         },
         {
@@ -379,78 +376,79 @@
         },
         {
           "type": "paragraph",
-          "content": "The 26D(24,2) state is inherently unstable toward <strong>Dimensional Collapse</strong>. Because the 26-dimensional bosonic string space is the state of maximum symmetry, it must 'freeze' into a lower-dimensional manifold to reach a state of minimum potential energy. This transition is not a random explosion (Big Bang), but a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy."
+          "content": "The 26D(24,1) state descends via <strong>Dimensional Collapse</strong>. The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, with the Euclidean bridge providing the coherence substrate. This transition is a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
         },
         {
           "type": "note",
-          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. This is the origin of the <strong>Global Metric Lock</strong>.</p>",
+          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. The dual-shadow structure enforces this via balanced b₃ residue splits (12/12) across shadows.</p>",
           "label": "sterility-origin",
           "equationNumber": "sterility-origin"
         },
         {
           "type": "heading",
-          "content": "The S<sub>PR</sub>(2) Gauge Filter: 26D → 13D",
+          "content": "The Euclidean Bridge and OR Reduction",
           "label": "1.2",
           "equationNumber": "1.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The transition from the 26D(24,2) bulk to the 13-dimensional intermediate manifold is governed by the <strong>Symmetry-Preserving Reduction S<sub>PR</sub>(2) gauge</strong>. This mechanism is the 'Sorting Demon' of the theory, responsible for the initial freezing of the 26-dimensional symmetry budget into a fixed physical registry."
+          "content": "The connection between the dual (24,1) shadows is mediated by a <strong>2D Euclidean bridge</strong> with signature (2,0). This timeless substrate enables cross-shadow coordinate sampling via <strong>Orthogonal Reduction (OR)</strong>, providing the mechanism for coherent information flow between the normal and mirror sectors."
         },
         {
           "type": "heading",
-          "content": "1.2.1 The Causal Collapse: t₂ → Λ",
+          "content": "1.2.1 The Bridge Metric",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The most critical function of the S<sub>PR</sub>(2) gauge is the resolution of the ancestral (24,2) signature. In the 26D → 13D transition, the second time-like dimension (t₂) is 'compactified' into a static potential. This process converts a temporal degree of freedom into the <strong>Vacuum Energy Floor (Λ)</strong>. This is the first 'Sterile Lock'—once the S<sub>PR</sub>(2) gauge initializes, the arrow of time becomes singular, and the cosmological constant is fixed as a residue of this temporal collapse."
+          "content": "The bridge is purely Euclidean with positive-definite metric. This eliminates ghost modes and closed timelike curves that would arise from multi-time theories. The bridge provides a 'timeless' substrate for cross-shadow sampling, where conformal pressure from condensate flux gradients drives the breathing dark energy mechanism."
         },
         {
           "type": "equation",
-          "content": "t_2 \\xrightarrow{S_{PR}(2)} \\Lambda \\quad \\Rightarrow \\quad \\text{Signature}(24,2) \\to \\text{Signature}(12,1)",
-          "label": "t2-to-lambda",
-          "equationNumber": "t2-to-lambda"
+          "content": "ds^2_{\\text{bridge}} = dy_1^2 + dy_2^2 \\quad \\text{(positive-definite, no ghosts)}",
+          "label": "bridge-metric",
+          "equationNumber": "bridge-metric"
         },
         {
           "type": "heading",
-          "content": "1.2.2 The 13-Dimensional Intermediate Registry",
+          "content": "1.2.2 The OR Reduction Operator",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge partitions the 24 spatial dimensions into a 13-dimensional manifold (V₁₃). This reduction is not arbitrary; it follows a precise algebraic path where the degrees of freedom are 'pinned' to 13 primary tension wells:"
+          "content": "Cross-shadow coordinate sampling uses the <strong>Orthogonal Reduction operator R<sub>⊥</sub></strong>, a 90° rotation that maps normal-shadow gradients to mirror-shadow coordinates. This operator satisfies R<sub>⊥</sub>² = −I, providing Möbius double-cover properties essential for spinor coherence:"
         },
         {
           "type": "list",
           "content": null,
-          "label": "13d-registry",
-          "equationNumber": "13d-registry",
+          "label": "or-reduction-operator",
+          "equationNumber": "or-reduction-operator",
           "items": [
-            "<strong>The Bosonic Anchor:</strong> 12 dimensions are allocated to the primary force-carriers and gauge symmetries.",
-            "<strong>The Metric Anchor:</strong> The 13th dimension acts as the 'Master Scale,' governing the ratio between the Planck mass and the electroweak scale."
+            "<strong>Rotation Matrix:</strong> R<sub>⊥</sub> = [[0, −1], [1, 0]] (det = 1, orientation-preserving)",
+            "<strong>External Sampling:</strong> z'<sub>mirror</sub> = R<sub>⊥</sub> z<sub>normal</sub> + Δy",
+            "<strong>Möbius Property:</strong> R<sub>⊥</sub>² = −I enables spinor return after double traversal"
           ]
         },
         {
           "type": "heading",
-          "content": "1.2.3 The Octonionic Link",
+          "content": "1.2.3 The Breathing Dark Energy Mechanism",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge operates on the principles of <strong>Division Algebra</strong>. Specifically, it uses the transition between Octonionic (𝕆) and Quaternionic (ℍ) logic to determine how the 13D space will eventually shatter into the 7D and 6D components. This algebraic rigidness ensures that the resulting particle flavors (quarks and leptons) are not randomly assigned but are the <strong>only permitted solutions</strong> of the gauge filter."
+          "content": "The bridge pressure arises from <strong>condensate flux mismatch</strong> between shadows. Where normal and mirror shadow pressure profiles differ, the residue drives cosmic acceleration. This yields thawing dark energy with w₀ = −1 + 1/b₃ = −23/24 ≈ −0.9583, matching DESI 2025 within 0.02σ. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
         },
         {
           "type": "heading",
-          "content": "The G₂ Manifold (V₇): The Geometric Hard-Lock",
+          "content": "The G₂ Manifold (V₇): Per-Shadow Compactification",
           "label": "1.3",
           "equationNumber": "1.3",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The descent from 13D reaches its most critical phase in the transition to <strong>7-Dimensional Space</strong>. This stage is defined by the holonomy of the <strong>G₂ Manifold (V₇)</strong>. While the S<sub>PR</sub>(2) gauge sorts the potential, the G₂ manifold provides the physical rigidity that prevents the constants of nature from drifting. In the Sterile Model, the G₂ manifold is the 'Hard-Lock' that ensures 4D reality is a unique, non-negotiable state."
+          "content": "Each dual shadow undergoes independent <strong>G₂ compactification</strong> on a <strong>7-dimensional Riemannian manifold (7,0)</strong>. This per-shadow structure provides the geometric rigidity that prevents the constants of nature from drifting. The G₂ manifold is the 'Hard-Lock' that ensures each 4D condensate is a unique, non-negotiable state with n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = 3 generations per shadow."
         },
         {
           "type": "heading",
@@ -570,7 +568,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027628"
+      "timestamp": "2026-01-18T12:54:32.122609"
     },
     "2.0": {
       "id": "2",
@@ -770,7 +768,7 @@
         "geometry.n_s",
         "geometry.unity_seal"
       ],
-      "timestamp": "2026-01-17T16:20:48.988391"
+      "timestamp": "2026-01-18T12:54:32.083129"
     },
     "2": {
       "id": "2",
@@ -886,7 +884,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-17T16:20:49.030418"
+      "timestamp": "2026-01-18T12:54:32.125327"
     },
     "validation": {
       "id": "validation",
@@ -921,7 +919,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For PM's (24,2) signature theory, the central charge calculation is:"
+          "content": "For PM's v21 (24,1) signature theory with Euclidean bridge, the central charge calculation is:"
         },
         {
           "type": "formula",
@@ -967,7 +965,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For PM's (24,2) signature theory, the central charge calculation is:"
+          "content": "For PM's v21 (24,1) signature theory with Euclidean bridge, the central charge calculation is:"
         },
         {
           "type": "formula",
@@ -1008,7 +1006,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-17T16:20:48.988850"
+      "timestamp": "2026-01-18T12:54:32.083558"
     },
     "V.1": {
       "id": "validation",
@@ -1043,7 +1041,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For PM's (24,2) signature theory, the central charge calculation is:"
+          "content": "For PM's v21 (24,1) signature theory with Euclidean bridge, the central charge calculation is:"
         },
         {
           "type": "formula",
@@ -1089,7 +1087,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For PM's (24,2) signature theory, the central charge calculation is:"
+          "content": "For PM's v21 (24,1) signature theory with Euclidean bridge, the central charge calculation is:"
         },
         {
           "type": "formula",
@@ -1130,7 +1128,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-17T16:20:48.988875"
+      "timestamp": "2026-01-18T12:54:32.083584"
     },
     "3": {
       "id": "3",
@@ -1267,7 +1265,7 @@
         },
         {
           "type": "paragraph",
-          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v16.2 model asserts that <strong>any universe descending from a 26D(24,2) bulk via a G₂ manifold must exhibit this specific vacuum floor</strong>."
+          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v21 model asserts that <strong>any universe descending from a 26D(24,1) dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
         }
       ],
       "content_blocks": [
@@ -1395,14 +1393,14 @@
         },
         {
           "type": "paragraph",
-          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v16.2 model asserts that <strong>any universe descending from a 26D(24,2) bulk via a G₂ manifold must exhibit this specific vacuum floor</strong>."
+          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v21 model asserts that <strong>any universe descending from a 26D(24,1) dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027770"
+      "timestamp": "2026-01-18T12:54:32.122758"
     },
     "3.4": {
       "id": "3",
@@ -1566,7 +1564,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-17T16:20:48.988950"
+      "timestamp": "2026-01-18T12:54:32.083654"
     },
     "3.6": {
       "id": "3",
@@ -1738,7 +1736,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-17T16:20:48.989056"
+      "timestamp": "2026-01-18T12:54:32.083760"
     },
     "3.2": {
       "id": "3",
@@ -1924,7 +1922,7 @@
         "gauge.m_w_gev",
         "gauge.rho_parameter"
       ],
-      "timestamp": "2026-01-17T16:20:49.019435"
+      "timestamp": "2026-01-18T12:54:32.113977"
     },
     "3.1": {
       "id": "3",
@@ -1982,7 +1980,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-17T16:20:49.019517"
+      "timestamp": "2026-01-18T12:54:32.114047"
     },
     "4": {
       "id": "4",
@@ -2023,12 +2021,12 @@
         },
         {
           "type": "heading",
-          "content": "4.1.2 The S<sub>PR</sub>(2) Lock Mechanism",
+          "content": "4.1.2 The Dual-Shadow Bridge Lock Mechanism",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The Hysteresis Seal is enforced by the S<sub>PR</sub>(2) gauge. As detailed in Section 1.2, this gauge preserves the symmetry of the descent. In the final v16.2 build, the S<sub>PR</sub>(2) gauge acts as a 'one-way valve': Information flows from 26D potential to 4D residue. Once the 125-node registry is populated, the gauge 'locks,' preventing any back-propagation of data. This makes the model <strong>non-recursive</strong>: the observed data cannot be used to 're-tune' the starting geometry."
+          "content": "The Hysteresis Seal is enforced by the dual-shadow bridge structure. As detailed in Section 1.2, the OR reduction operator (R<sub>⊥</sub>) preserves the symmetry of the descent. In the v21 framework, the Euclidean bridge acts as a 'one-way valve': Information flows from 26D(24,1) potential to 4D residue. Once the 125-node registry is populated, the bridge 'locks,' preventing any back-propagation of data. This makes the model <strong>non-recursive</strong>: the observed data cannot be used to 're-tune' the starting geometry."
         },
         {
           "type": "heading",
@@ -2037,7 +2035,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In traditional cosmology, parameters like the Fine Structure Constant (α) are sometimes theorized to vary over billions of years. The Hysteresis Seal renders such drift impossible. Because α is a residue of the static G₂ holonomy (Section 1.3), it is anchored to the manifold's volume. Since the second time-dimension (t₂) was frozen into the vacuum floor (Λ) during the descent, there is no 'causal pathway' for the constants to change over time."
+          "content": "In traditional cosmology, parameters like the Fine Structure Constant (α) are sometimes theorized to vary over billions of years. The Hysteresis Seal renders such drift impossible. Because α is a residue of the static G₂ holonomy (Section 1.3), it is anchored to the manifold's volume per shadow. Since the Euclidean bridge coordinates were fixed into the vacuum structure during the descent, there is no 'causal pathway' for the constants to change over time."
         },
         {
           "type": "equation",
@@ -2076,7 +2074,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
+          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,1) dual-shadow bulk. They ensure that the OR reduction operator preserves parity across shadows and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
           "label": "certificate-tiers",
           "equationNumber": "certificate-tiers"
         },
@@ -2169,12 +2167,12 @@
         },
         {
           "type": "heading",
-          "content": "4.1.2 The S<sub>PR</sub>(2) Lock Mechanism",
+          "content": "4.1.2 The Dual-Shadow Bridge Lock Mechanism",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The Hysteresis Seal is enforced by the S<sub>PR</sub>(2) gauge. As detailed in Section 1.2, this gauge preserves the symmetry of the descent. In the final v16.2 build, the S<sub>PR</sub>(2) gauge acts as a 'one-way valve': Information flows from 26D potential to 4D residue. Once the 125-node registry is populated, the gauge 'locks,' preventing any back-propagation of data. This makes the model <strong>non-recursive</strong>: the observed data cannot be used to 're-tune' the starting geometry."
+          "content": "The Hysteresis Seal is enforced by the dual-shadow bridge structure. As detailed in Section 1.2, the OR reduction operator (R<sub>⊥</sub>) preserves the symmetry of the descent. In the v21 framework, the Euclidean bridge acts as a 'one-way valve': Information flows from 26D(24,1) potential to 4D residue. Once the 125-node registry is populated, the bridge 'locks,' preventing any back-propagation of data. This makes the model <strong>non-recursive</strong>: the observed data cannot be used to 're-tune' the starting geometry."
         },
         {
           "type": "heading",
@@ -2183,7 +2181,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In traditional cosmology, parameters like the Fine Structure Constant (α) are sometimes theorized to vary over billions of years. The Hysteresis Seal renders such drift impossible. Because α is a residue of the static G₂ holonomy (Section 1.3), it is anchored to the manifold's volume. Since the second time-dimension (t₂) was frozen into the vacuum floor (Λ) during the descent, there is no 'causal pathway' for the constants to change over time."
+          "content": "In traditional cosmology, parameters like the Fine Structure Constant (α) are sometimes theorized to vary over billions of years. The Hysteresis Seal renders such drift impossible. Because α is a residue of the static G₂ holonomy (Section 1.3), it is anchored to the manifold's volume per shadow. Since the Euclidean bridge coordinates were fixed into the vacuum structure during the descent, there is no 'causal pathway' for the constants to change over time."
         },
         {
           "type": "equation",
@@ -2222,7 +2220,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
+          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,1) dual-shadow bulk. They ensure that the OR reduction operator preserves parity across shadows and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
           "label": "certificate-tiers",
           "equationNumber": "certificate-tiers"
         },
@@ -2290,7 +2288,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027846"
+      "timestamp": "2026-01-18T12:54:32.122835"
     },
     "4.2": {
       "id": "4",
@@ -2352,7 +2350,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-01-17T16:20:49.020506"
+      "timestamp": "2026-01-18T12:54:32.114940"
     },
     "4.1": {
       "id": "4",
@@ -2640,7 +2638,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-17T16:20:49.019770"
+      "timestamp": "2026-01-18T12:54:32.114274"
     },
     "4.3": {
       "id": "4",
@@ -2880,7 +2878,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-17T16:20:49.019930"
+      "timestamp": "2026-01-18T12:54:32.114424"
     },
     "4.6": {
       "id": "4",
@@ -3060,7 +3058,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-17T16:20:49.020011"
+      "timestamp": "2026-01-18T12:54:32.114499"
     },
     "4.4": {
       "id": "4",
@@ -3168,7 +3166,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-17T16:20:49.020117"
+      "timestamp": "2026-01-18T12:54:32.114594"
     },
     "4.9": {
       "id": "4",
@@ -3258,7 +3256,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-17T16:20:49.020187"
+      "timestamp": "2026-01-18T12:54:32.114662"
     },
     "6": {
       "id": "6",
@@ -3320,7 +3318,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-01-17T16:20:49.030594"
+      "timestamp": "2026-01-18T12:54:32.125499"
     },
     "6.1": {
       "id": "6",
@@ -3380,7 +3378,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026523"
+      "timestamp": "2026-01-18T12:54:32.121537"
     },
     "4.8": {
       "id": "4",
@@ -3438,7 +3436,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-17T16:20:49.020556"
+      "timestamp": "2026-01-18T12:54:32.114988"
     },
     "5": {
       "id": "5",
@@ -3536,7 +3534,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-17T16:20:49.030517"
+      "timestamp": "2026-01-18T12:54:32.125425"
     },
     "5.1": {
       "id": "5",
@@ -3670,7 +3668,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-01-17T16:20:49.030289"
+      "timestamp": "2026-01-18T12:54:32.125194"
     },
     "5.2": {
       "id": "5",
@@ -3768,7 +3766,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-17T16:20:49.030551"
+      "timestamp": "2026-01-18T12:54:32.125461"
     },
     "5.6": {
       "id": "5",
@@ -4004,7 +4002,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-17T16:20:49.021121"
+      "timestamp": "2026-01-18T12:54:32.115525"
     },
     "5.7": {
       "id": "5",
@@ -4148,7 +4146,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-17T16:20:49.023062"
+      "timestamp": "2026-01-18T12:54:32.117396"
     },
     "5.4": {
       "id": "5",
@@ -4446,7 +4444,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-17T16:20:49.024458"
+      "timestamp": "2026-01-18T12:54:32.118783"
     },
     "5.9": {
       "id": "5",
@@ -4608,7 +4606,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-17T16:20:49.025849"
+      "timestamp": "2026-01-18T12:54:32.120749"
     },
     "4.5": {
       "id": "4",
@@ -4770,7 +4768,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-17T16:20:49.026030"
+      "timestamp": "2026-01-18T12:54:32.120995"
     },
     "4.7": {
       "id": "4",
@@ -5014,7 +5012,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-17T16:20:49.026165"
+      "timestamp": "2026-01-18T12:54:32.121155"
     },
     "5.3": {
       "id": "5",
@@ -5128,7 +5126,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-17T16:20:49.026304"
+      "timestamp": "2026-01-18T12:54:32.121309"
     },
     "5.8": {
       "id": "5",
@@ -5334,7 +5332,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-17T16:20:49.026438"
+      "timestamp": "2026-01-18T12:54:32.121449"
     },
     "6.2": {
       "id": "6",
@@ -5396,7 +5394,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-01-17T16:20:49.030627"
+      "timestamp": "2026-01-18T12:54:32.125535"
     },
     "6.3": {
       "id": "6",
@@ -5424,7 +5422,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026615"
+      "timestamp": "2026-01-18T12:54:32.121623"
     },
     "6.4": {
       "id": "6",
@@ -5452,7 +5450,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026649"
+      "timestamp": "2026-01-18T12:54:32.121660"
     },
     "6.5": {
       "id": "6",
@@ -5480,7 +5478,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026684"
+      "timestamp": "2026-01-18T12:54:32.121693"
     },
     "6.6": {
       "id": "6",
@@ -5508,7 +5506,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026718"
+      "timestamp": "2026-01-18T12:54:32.121728"
     },
     "6.7": {
       "id": "6",
@@ -5536,7 +5534,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026753"
+      "timestamp": "2026-01-18T12:54:32.121761"
     },
     "6.8": {
       "id": "6",
@@ -5572,7 +5570,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026782"
+      "timestamp": "2026-01-18T12:54:32.121791"
     },
     "6.9": {
       "id": "6",
@@ -5608,7 +5606,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.026816"
+      "timestamp": "2026-01-18T12:54:32.121825"
     },
     "5.5": {
       "id": "5",
@@ -5762,7 +5760,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-17T16:20:49.026974"
+      "timestamp": "2026-01-18T12:54:32.121984"
     },
     "2.6": {
       "id": "2",
@@ -6003,7 +6001,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional origin and the role of Sp(2,R) gauge symmetry."
+          "content": "Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,1) plus Euclidean bridge. This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_perp operator."
         },
         {
           "type": "heading",
@@ -6015,7 +6013,7 @@
         },
         {
           "type": "callout",
-          "content": "This action is formulated in the full 26D spacetime with two time dimensions. The Sp(2,R) gauge symmetry acts on the embedding coordinates X^M(ξ) and allows us to gauge-fix one time dimension, reducing (d,2) signature to (d,1) while maintaining covariance."
+          "content": "This action is formulated in the full 26D spacetime with signature (24,1) plus Euclidean bridge. The OR reduction via R_perp operator acts on the embedding coordinates X^M(ξ), producing dual (11,1) shadows with shared time while maintaining covariance."
         },
         {
           "type": "heading",
@@ -6031,7 +6029,7 @@
         },
         {
           "type": "paragraph",
-          "content": "5 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (5,2) → (5,1). Hosts the visible matter sector and 4D spacetime as a subspace."
+          "content": "5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R_perp: dual (11,1) shadows emerge with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
         },
         {
           "type": "heading",
@@ -6039,7 +6037,7 @@
         },
         {
           "type": "paragraph",
-          "content": "3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Contributes to dark sector structure."
+          "content": "3 spatial dimensions in dual (11,1) shadow with shared unified time. Contributes to dark sector structure."
         },
         {
           "type": "heading",
@@ -6047,7 +6045,7 @@
         },
         {
           "type": "paragraph",
-          "content": "3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Second dark sector component."
+          "content": "3 spatial dimensions in dual (11,1) shadow with shared unified time. Second dark sector component."
         },
         {
           "type": "heading",
@@ -6055,11 +6053,11 @@
         },
         {
           "type": "paragraph",
-          "content": "3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Third dark sector component."
+          "content": "3 spatial dimensions in dual (11,1) shadow with shared unified time. Third dark sector component."
         },
         {
           "type": "callout",
-          "content": "Before gauge fixing: Observable (5,2) + 3×Shadow (3,2) - total 26 dimensions with signature (24,2). After Sp(2,R) gauge fixing: Observable (5,1) + 3×Shadow (3,1) - effective theory with single timelike direction. The gauge fixing procedure removes the second time dimension from each brane while preserving the physical degrees of freedom. The orthogonal time effects persist through the g·t_ortho coupling in the effective action."
+          "content": "Starting configuration: 26D with signature (24,1) plus Euclidean bridge coordinates (y1, y2) for timeless substrate. After OR reduction via R_perp: dual (11,1) shadows + 2D(2,0) Euclidean bridge - effective theory with unified time shared between shadows. The OR reduction procedure produces the dual-shadow structure while preserving the physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action."
         },
         {
           "type": "heading",
@@ -6075,7 +6073,7 @@
         },
         {
           "type": "paragraph",
-          "content": "These constraints are first-class and generate the Sp(2,R) gauge symmetry. They ensure that: ghosts from timelike dimensions are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest."
+          "content": "These constraints are first-class and generate the OR reduction structure. They ensure that: ghosts from the dual-shadow framework are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest through the R_perp operator."
         },
         {
           "type": "heading",
@@ -6135,11 +6133,11 @@
         },
         {
           "type": "paragraph",
-          "content": "After Sp(2,R) gauge fixing from 26D to 13D, the spinor reduces from 8192 to 64 components:"
+          "content": "After OR reduction from 26D(24,1) to dual (11,1) shadows, the 4096 component spinor from Cl(24,1) reduces to effective 64 components:"
         },
         {
           "type": "callout",
-          "content": "Sp(2,R) gauge fixing removes one time dimension: (24,2) → (12,1). Spinor dimension: 2^13 = 8192 → 2^6 = 64 components. The flux terms ℒ_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+          "content": "OR reduction via R_perp produces dual shadows: (24,1) → 2×(11,1) + bridge(2,0). Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
         },
         {
           "type": "heading",
@@ -6171,7 +6169,7 @@
         },
         {
           "type": "formula",
-          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
+          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (24,1) + bridge\n↓ OR reduction via R_perp\nLevel 2 (dual shadows): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×(11,1) + (2,0)\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
         }
       ],
       "content_blocks": [
@@ -6403,7 +6401,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional origin and the role of Sp(2,R) gauge symmetry."
+          "content": "Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,1) plus Euclidean bridge. This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_perp operator."
         },
         {
           "type": "heading",
@@ -6415,7 +6413,7 @@
         },
         {
           "type": "callout",
-          "content": "This action is formulated in the full 26D spacetime with two time dimensions. The Sp(2,R) gauge symmetry acts on the embedding coordinates X^M(ξ) and allows us to gauge-fix one time dimension, reducing (d,2) signature to (d,1) while maintaining covariance."
+          "content": "This action is formulated in the full 26D spacetime with signature (24,1) plus Euclidean bridge. The OR reduction via R_perp operator acts on the embedding coordinates X^M(ξ), producing dual (11,1) shadows with shared time while maintaining covariance."
         },
         {
           "type": "heading",
@@ -6431,7 +6429,7 @@
         },
         {
           "type": "paragraph",
-          "content": "5 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (5,2) → (5,1). Hosts the visible matter sector and 4D spacetime as a subspace."
+          "content": "5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R_perp: dual (11,1) shadows emerge with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
         },
         {
           "type": "heading",
@@ -6439,7 +6437,7 @@
         },
         {
           "type": "paragraph",
-          "content": "3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Contributes to dark sector structure."
+          "content": "3 spatial dimensions in dual (11,1) shadow with shared unified time. Contributes to dark sector structure."
         },
         {
           "type": "heading",
@@ -6447,7 +6445,7 @@
         },
         {
           "type": "paragraph",
-          "content": "3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Second dark sector component."
+          "content": "3 spatial dimensions in dual (11,1) shadow with shared unified time. Second dark sector component."
         },
         {
           "type": "heading",
@@ -6455,11 +6453,11 @@
         },
         {
           "type": "paragraph",
-          "content": "3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Third dark sector component."
+          "content": "3 spatial dimensions in dual (11,1) shadow with shared unified time. Third dark sector component."
         },
         {
           "type": "callout",
-          "content": "Before gauge fixing: Observable (5,2) + 3×Shadow (3,2) - total 26 dimensions with signature (24,2). After Sp(2,R) gauge fixing: Observable (5,1) + 3×Shadow (3,1) - effective theory with single timelike direction. The gauge fixing procedure removes the second time dimension from each brane while preserving the physical degrees of freedom. The orthogonal time effects persist through the g·t_ortho coupling in the effective action."
+          "content": "Starting configuration: 26D with signature (24,1) plus Euclidean bridge coordinates (y1, y2) for timeless substrate. After OR reduction via R_perp: dual (11,1) shadows + 2D(2,0) Euclidean bridge - effective theory with unified time shared between shadows. The OR reduction procedure produces the dual-shadow structure while preserving the physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action."
         },
         {
           "type": "heading",
@@ -6475,7 +6473,7 @@
         },
         {
           "type": "paragraph",
-          "content": "These constraints are first-class and generate the Sp(2,R) gauge symmetry. They ensure that: ghosts from timelike dimensions are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest."
+          "content": "These constraints are first-class and generate the OR reduction structure. They ensure that: ghosts from the dual-shadow framework are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest through the R_perp operator."
         },
         {
           "type": "heading",
@@ -6535,11 +6533,11 @@
         },
         {
           "type": "paragraph",
-          "content": "After Sp(2,R) gauge fixing from 26D to 13D, the spinor reduces from 8192 to 64 components:"
+          "content": "After OR reduction from 26D(24,1) to dual (11,1) shadows, the 4096 component spinor from Cl(24,1) reduces to effective 64 components:"
         },
         {
           "type": "callout",
-          "content": "Sp(2,R) gauge fixing removes one time dimension: (24,2) → (12,1). Spinor dimension: 2^13 = 8192 → 2^6 = 64 components. The flux terms ℒ_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+          "content": "OR reduction via R_perp produces dual shadows: (24,1) → 2×(11,1) + bridge(2,0). Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
         },
         {
           "type": "heading",
@@ -6571,7 +6569,7 @@
         },
         {
           "type": "formula",
-          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
+          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (24,1) + bridge\n↓ OR reduction via R_perp\nLevel 2 (dual shadows): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×(11,1) + (2,0)\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
         }
       ],
       "formulaRefs": [
@@ -6594,7 +6592,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-17T16:20:49.027132"
+      "timestamp": "2026-01-18T12:54:32.122137"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -6631,7 +6629,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In Principia Metaphysica, we extend this to a two-time framework with signature (24,2). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while a hidden orthogonal time t_ortho is related by Sp(2,R) gauge symmetry. The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
+          "content": "In Principia Metaphysica, we extend this to a dual-shadow unified time framework with signature (24,1). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while bridge coordinates (y1, y2) provide a Euclidean substrate via OR reduction through R_perp. The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
         },
         {
           "type": "formula",
@@ -6677,7 +6675,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In Principia Metaphysica, we extend this to a two-time framework with signature (24,2). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while a hidden orthogonal time t_ortho is related by Sp(2,R) gauge symmetry. The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
+          "content": "In Principia Metaphysica, we extend this to a dual-shadow unified time framework with signature (24,1). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while bridge coordinates (y1, y2) provide a Euclidean substrate via OR reduction through R_perp. The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
         },
         {
           "type": "formula",
@@ -6722,7 +6720,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2026-01-17T16:20:49.027203"
+      "timestamp": "2026-01-18T12:54:32.122210"
     },
     "7": {
       "id": "7",
@@ -9156,7 +9154,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027448"
+      "timestamp": "2026-01-18T12:54:32.122441"
     },
     "7.2": {
       "id": "7",
@@ -9224,7 +9222,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-17T16:20:49.027286"
+      "timestamp": "2026-01-18T12:54:32.122294"
     },
     "1.1": {
       "id": "1",
@@ -9239,14 +9237,14 @@
       "contentBlocks": [
         {
           "type": "heading",
-          "content": "The 26D(24,2) Ancestral Bulk",
+          "content": "The 26D(24,1) Ancestral Bulk with Euclidean Bridge",
           "label": "1.1",
           "equationNumber": "1.1",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,2) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, where all possible configurations of matter and force exist as undifferentiated fluctuations on a master p-brane."
+          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,1) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, with unified time (eliminating ghosts and closed timelike curves) and a 2D Euclidean shared bridge enabling dual-shadow coherence."
         },
         {
           "type": "heading",
@@ -9255,31 +9253,32 @@
         },
         {
           "type": "paragraph",
-          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,2) signature is critical: it provides twenty-four spatial dimensions and two time-like dimensions. This specific configuration allows for <strong>non-ghost-driven stability</strong>—a state where the vacuum energy is perfectly balanced before the introduction of entropy."
+          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong>—a state where the vacuum energy is perfectly balanced without CTC instabilities."
         },
         {
           "type": "equation",
-          "content": "\\text{Signature}(M^{26}) = (24, 2) \\quad \\Rightarrow \\quad ds^2 = -dt_1^2 - dt_2^2 + \\sum_{i=1}^{24} dx_i^2",
+          "content": "\\text{Signature}(M^{26}) = (24, 1) \\quad \\Rightarrow \\quad ds^2 = \\sum_{i=1}^{24} dx_i^2 - dt^2",
           "label": "26d-signature",
           "equationNumber": "26d-signature"
         },
         {
           "type": "heading",
-          "content": "1.1.2 The Master Brane State",
+          "content": "1.1.2 The Dual-Shadow Structure",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "In this ancestral bulk, the 125 parameters of the eventual Standard Model and Cosmology are not yet discrete values. Instead, they are defined as <strong>Vibrational Modes</strong> on a singular, 25-dimensional p-brane:"
+          "content": "The 26D bulk descends into <strong>dual shadows</strong> connected by a <strong>2D Euclidean bridge</strong>. Each shadow contains (11,1) degrees of freedom, while the bridge dimensions (y₁, y₂) are purely spacelike (2,0):"
         },
         {
           "type": "list",
           "content": null,
-          "label": "brane-degrees",
-          "equationNumber": "brane-degrees",
+          "label": "dual-shadow-structure",
+          "equationNumber": "dual-shadow-structure",
           "items": [
-            "<strong>The 24 Spatial Degrees:</strong> Correspond to the 'Symmetry Budget' that will later be partitioned into gauge groups (SU(3), SU(2), U(1)).",
-            "<strong>The 2 Temporal Degrees:</strong> Provide the 'Causal Flex' necessary for the S<sub>PR</sub>(2) gauge to initialize."
+            "<strong>Bridge Metric:</strong> ds²<sub>bridge</sub> = dy₁² + dy₂² (positive-definite, timeless)",
+            "<strong>Shadow Structure:</strong> 2 × [(5,1)<sub>bridge</sub> ⊕ ⊕<sub>k</sub>(3,1)<sub>k</sub>] per generation",
+            "<strong>OR Reduction:</strong> 90° rotation operator R<sub>⊥</sub> enables cross-shadow coordinate sampling"
           ]
         },
         {
@@ -9289,78 +9288,79 @@
         },
         {
           "type": "paragraph",
-          "content": "The 26D(24,2) state is inherently unstable toward <strong>Dimensional Collapse</strong>. Because the 26-dimensional bosonic string space is the state of maximum symmetry, it must 'freeze' into a lower-dimensional manifold to reach a state of minimum potential energy. This transition is not a random explosion (Big Bang), but a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy."
+          "content": "The 26D(24,1) state descends via <strong>Dimensional Collapse</strong>. The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, with the Euclidean bridge providing the coherence substrate. This transition is a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
         },
         {
           "type": "note",
-          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. This is the origin of the <strong>Global Metric Lock</strong>.</p>",
+          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. The dual-shadow structure enforces this via balanced b₃ residue splits (12/12) across shadows.</p>",
           "label": "sterility-origin",
           "equationNumber": "sterility-origin"
         },
         {
           "type": "heading",
-          "content": "The S<sub>PR</sub>(2) Gauge Filter: 26D → 13D",
+          "content": "The Euclidean Bridge and OR Reduction",
           "label": "1.2",
           "equationNumber": "1.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The transition from the 26D(24,2) bulk to the 13-dimensional intermediate manifold is governed by the <strong>Symmetry-Preserving Reduction S<sub>PR</sub>(2) gauge</strong>. This mechanism is the 'Sorting Demon' of the theory, responsible for the initial freezing of the 26-dimensional symmetry budget into a fixed physical registry."
+          "content": "The connection between the dual (24,1) shadows is mediated by a <strong>2D Euclidean bridge</strong> with signature (2,0). This timeless substrate enables cross-shadow coordinate sampling via <strong>Orthogonal Reduction (OR)</strong>, providing the mechanism for coherent information flow between the normal and mirror sectors."
         },
         {
           "type": "heading",
-          "content": "1.2.1 The Causal Collapse: t₂ → Λ",
+          "content": "1.2.1 The Bridge Metric",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The most critical function of the S<sub>PR</sub>(2) gauge is the resolution of the ancestral (24,2) signature. In the 26D → 13D transition, the second time-like dimension (t₂) is 'compactified' into a static potential. This process converts a temporal degree of freedom into the <strong>Vacuum Energy Floor (Λ)</strong>. This is the first 'Sterile Lock'—once the S<sub>PR</sub>(2) gauge initializes, the arrow of time becomes singular, and the cosmological constant is fixed as a residue of this temporal collapse."
+          "content": "The bridge is purely Euclidean with positive-definite metric. This eliminates ghost modes and closed timelike curves that would arise from multi-time theories. The bridge provides a 'timeless' substrate for cross-shadow sampling, where conformal pressure from condensate flux gradients drives the breathing dark energy mechanism."
         },
         {
           "type": "equation",
-          "content": "t_2 \\xrightarrow{S_{PR}(2)} \\Lambda \\quad \\Rightarrow \\quad \\text{Signature}(24,2) \\to \\text{Signature}(12,1)",
-          "label": "t2-to-lambda",
-          "equationNumber": "t2-to-lambda"
+          "content": "ds^2_{\\text{bridge}} = dy_1^2 + dy_2^2 \\quad \\text{(positive-definite, no ghosts)}",
+          "label": "bridge-metric",
+          "equationNumber": "bridge-metric"
         },
         {
           "type": "heading",
-          "content": "1.2.2 The 13-Dimensional Intermediate Registry",
+          "content": "1.2.2 The OR Reduction Operator",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge partitions the 24 spatial dimensions into a 13-dimensional manifold (V₁₃). This reduction is not arbitrary; it follows a precise algebraic path where the degrees of freedom are 'pinned' to 13 primary tension wells:"
+          "content": "Cross-shadow coordinate sampling uses the <strong>Orthogonal Reduction operator R<sub>⊥</sub></strong>, a 90° rotation that maps normal-shadow gradients to mirror-shadow coordinates. This operator satisfies R<sub>⊥</sub>² = −I, providing Möbius double-cover properties essential for spinor coherence:"
         },
         {
           "type": "list",
           "content": null,
-          "label": "13d-registry",
-          "equationNumber": "13d-registry",
+          "label": "or-reduction-operator",
+          "equationNumber": "or-reduction-operator",
           "items": [
-            "<strong>The Bosonic Anchor:</strong> 12 dimensions are allocated to the primary force-carriers and gauge symmetries.",
-            "<strong>The Metric Anchor:</strong> The 13th dimension acts as the 'Master Scale,' governing the ratio between the Planck mass and the electroweak scale."
+            "<strong>Rotation Matrix:</strong> R<sub>⊥</sub> = [[0, −1], [1, 0]] (det = 1, orientation-preserving)",
+            "<strong>External Sampling:</strong> z'<sub>mirror</sub> = R<sub>⊥</sub> z<sub>normal</sub> + Δy",
+            "<strong>Möbius Property:</strong> R<sub>⊥</sub>² = −I enables spinor return after double traversal"
           ]
         },
         {
           "type": "heading",
-          "content": "1.2.3 The Octonionic Link",
+          "content": "1.2.3 The Breathing Dark Energy Mechanism",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge operates on the principles of <strong>Division Algebra</strong>. Specifically, it uses the transition between Octonionic (𝕆) and Quaternionic (ℍ) logic to determine how the 13D space will eventually shatter into the 7D and 6D components. This algebraic rigidness ensures that the resulting particle flavors (quarks and leptons) are not randomly assigned but are the <strong>only permitted solutions</strong> of the gauge filter."
+          "content": "The bridge pressure arises from <strong>condensate flux mismatch</strong> between shadows. Where normal and mirror shadow pressure profiles differ, the residue drives cosmic acceleration. This yields thawing dark energy with w₀ = −1 + 1/b₃ = −23/24 ≈ −0.9583, matching DESI 2025 within 0.02σ. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
         },
         {
           "type": "heading",
-          "content": "The G₂ Manifold (V₇): The Geometric Hard-Lock",
+          "content": "The G₂ Manifold (V₇): Per-Shadow Compactification",
           "label": "1.3",
           "equationNumber": "1.3",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The descent from 13D reaches its most critical phase in the transition to <strong>7-Dimensional Space</strong>. This stage is defined by the holonomy of the <strong>G₂ Manifold (V₇)</strong>. While the S<sub>PR</sub>(2) gauge sorts the potential, the G₂ manifold provides the physical rigidity that prevents the constants of nature from drifting. In the Sterile Model, the G₂ manifold is the 'Hard-Lock' that ensures 4D reality is a unique, non-negotiable state."
+          "content": "Each dual shadow undergoes independent <strong>G₂ compactification</strong> on a <strong>7-dimensional Riemannian manifold (7,0)</strong>. This per-shadow structure provides the geometric rigidity that prevents the constants of nature from drifting. The G₂ manifold is the 'Hard-Lock' that ensures each 4D condensate is a unique, non-negotiable state with n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = 3 generations per shadow."
         },
         {
           "type": "heading",
@@ -9478,21 +9478,15 @@
       ],
       "content_blocks": [
         {
-          "type": "paragraph",
-          "content": "This paper presents <strong>Principia Metaphysica v20.0-RECURSIVE</strong>, a sterile geometric framework in which all 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow—without free parameters, tuning, or calibration. Beginning from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge symmetry</strong> freezes one time dimension, projecting the theory through 13D → 7D → 6D → 4D via sequential brane-node descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.b3\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.chi_eff\">144</span></strong> provides all structure: fermion generations (b₃/8 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> matching DESI thawing (0.02σ) and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2025. All derivations are cryptographically locked via <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span> Wolfram-verified certificates. DOI: 10.5281/zenodo.18079602",
-          "label": "lead",
-          "equationNumber": "lead"
-        },
-        {
           "type": "heading",
-          "content": "The 26D(24,2) Ancestral Bulk",
+          "content": "The 26D(24,1) Ancestral Bulk with Euclidean Bridge",
           "label": "1.1",
           "equationNumber": "1.1",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,2) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, where all possible configurations of matter and force exist as undifferentiated fluctuations on a master p-brane."
+          "content": "The foundational premise of the Sterile Model is that the observable universe is not an independent system, but a lower-dimensional <strong>residue</strong> of a <strong>26D(24,1) Bosonic Ancestral Bulk</strong>. This high-dimensional state represents the 'Total Potential' of the physical registry, with unified time (eliminating ghosts and closed timelike curves) and a 2D Euclidean shared bridge enabling dual-shadow coherence."
         },
         {
           "type": "heading",
@@ -9501,31 +9495,32 @@
         },
         {
           "type": "paragraph",
-          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,2) signature is critical: it provides twenty-four spatial dimensions and two time-like dimensions. This specific configuration allows for <strong>non-ghost-driven stability</strong>—a state where the vacuum energy is perfectly balanced before the introduction of entropy."
+          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong>—a state where the vacuum energy is perfectly balanced without CTC instabilities."
         },
         {
           "type": "equation",
-          "content": "\\text{Signature}(M^{26}) = (24, 2) \\quad \\Rightarrow \\quad ds^2 = -dt_1^2 - dt_2^2 + \\sum_{i=1}^{24} dx_i^2",
+          "content": "\\text{Signature}(M^{26}) = (24, 1) \\quad \\Rightarrow \\quad ds^2 = \\sum_{i=1}^{24} dx_i^2 - dt^2",
           "label": "26d-signature",
           "equationNumber": "26d-signature"
         },
         {
           "type": "heading",
-          "content": "1.1.2 The Master Brane State",
+          "content": "1.1.2 The Dual-Shadow Structure",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "In this ancestral bulk, the 125 parameters of the eventual Standard Model and Cosmology are not yet discrete values. Instead, they are defined as <strong>Vibrational Modes</strong> on a singular, 25-dimensional p-brane:"
+          "content": "The 26D bulk descends into <strong>dual shadows</strong> connected by a <strong>2D Euclidean bridge</strong>. Each shadow contains (11,1) degrees of freedom, while the bridge dimensions (y₁, y₂) are purely spacelike (2,0):"
         },
         {
           "type": "list",
           "content": null,
-          "label": "brane-degrees",
-          "equationNumber": "brane-degrees",
+          "label": "dual-shadow-structure",
+          "equationNumber": "dual-shadow-structure",
           "items": [
-            "<strong>The 24 Spatial Degrees:</strong> Correspond to the 'Symmetry Budget' that will later be partitioned into gauge groups (SU(3), SU(2), U(1)).",
-            "<strong>The 2 Temporal Degrees:</strong> Provide the 'Causal Flex' necessary for the S<sub>PR</sub>(2) gauge to initialize."
+            "<strong>Bridge Metric:</strong> ds²<sub>bridge</sub> = dy₁² + dy₂² (positive-definite, timeless)",
+            "<strong>Shadow Structure:</strong> 2 × [(5,1)<sub>bridge</sub> ⊕ ⊕<sub>k</sub>(3,1)<sub>k</sub>] per generation",
+            "<strong>OR Reduction:</strong> 90° rotation operator R<sub>⊥</sub> enables cross-shadow coordinate sampling"
           ]
         },
         {
@@ -9535,78 +9530,79 @@
         },
         {
           "type": "paragraph",
-          "content": "The 26D(24,2) state is inherently unstable toward <strong>Dimensional Collapse</strong>. Because the 26-dimensional bosonic string space is the state of maximum symmetry, it must 'freeze' into a lower-dimensional manifold to reach a state of minimum potential energy. This transition is not a random explosion (Big Bang), but a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy."
+          "content": "The 26D(24,1) state descends via <strong>Dimensional Collapse</strong>. The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, with the Euclidean bridge providing the coherence substrate. This transition is a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
         },
         {
           "type": "note",
-          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. This is the origin of the <strong>Global Metric Lock</strong>.</p>",
+          "content": "<h4>Foundational Note: The Origin of Sterility</h4><p>The 'Sterility' of our 4D reality is inherited from this 26D origin. Because the ancestral bulk contains a finite amount of 'Symmetry Budget,' the 125 residues extracted in 4D must sum to a specific topological constant. The dual-shadow structure enforces this via balanced b₃ residue splits (12/12) across shadows.</p>",
           "label": "sterility-origin",
           "equationNumber": "sterility-origin"
         },
         {
           "type": "heading",
-          "content": "The S<sub>PR</sub>(2) Gauge Filter: 26D → 13D",
+          "content": "The Euclidean Bridge and OR Reduction",
           "label": "1.2",
           "equationNumber": "1.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The transition from the 26D(24,2) bulk to the 13-dimensional intermediate manifold is governed by the <strong>Symmetry-Preserving Reduction S<sub>PR</sub>(2) gauge</strong>. This mechanism is the 'Sorting Demon' of the theory, responsible for the initial freezing of the 26-dimensional symmetry budget into a fixed physical registry."
+          "content": "The connection between the dual (24,1) shadows is mediated by a <strong>2D Euclidean bridge</strong> with signature (2,0). This timeless substrate enables cross-shadow coordinate sampling via <strong>Orthogonal Reduction (OR)</strong>, providing the mechanism for coherent information flow between the normal and mirror sectors."
         },
         {
           "type": "heading",
-          "content": "1.2.1 The Causal Collapse: t₂ → Λ",
+          "content": "1.2.1 The Bridge Metric",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The most critical function of the S<sub>PR</sub>(2) gauge is the resolution of the ancestral (24,2) signature. In the 26D → 13D transition, the second time-like dimension (t₂) is 'compactified' into a static potential. This process converts a temporal degree of freedom into the <strong>Vacuum Energy Floor (Λ)</strong>. This is the first 'Sterile Lock'—once the S<sub>PR</sub>(2) gauge initializes, the arrow of time becomes singular, and the cosmological constant is fixed as a residue of this temporal collapse."
+          "content": "The bridge is purely Euclidean with positive-definite metric. This eliminates ghost modes and closed timelike curves that would arise from multi-time theories. The bridge provides a 'timeless' substrate for cross-shadow sampling, where conformal pressure from condensate flux gradients drives the breathing dark energy mechanism."
         },
         {
           "type": "equation",
-          "content": "t_2 \\xrightarrow{S_{PR}(2)} \\Lambda \\quad \\Rightarrow \\quad \\text{Signature}(24,2) \\to \\text{Signature}(12,1)",
-          "label": "t2-to-lambda",
-          "equationNumber": "t2-to-lambda"
+          "content": "ds^2_{\\text{bridge}} = dy_1^2 + dy_2^2 \\quad \\text{(positive-definite, no ghosts)}",
+          "label": "bridge-metric",
+          "equationNumber": "bridge-metric"
         },
         {
           "type": "heading",
-          "content": "1.2.2 The 13-Dimensional Intermediate Registry",
+          "content": "1.2.2 The OR Reduction Operator",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge partitions the 24 spatial dimensions into a 13-dimensional manifold (V₁₃). This reduction is not arbitrary; it follows a precise algebraic path where the degrees of freedom are 'pinned' to 13 primary tension wells:"
+          "content": "Cross-shadow coordinate sampling uses the <strong>Orthogonal Reduction operator R<sub>⊥</sub></strong>, a 90° rotation that maps normal-shadow gradients to mirror-shadow coordinates. This operator satisfies R<sub>⊥</sub>² = −I, providing Möbius double-cover properties essential for spinor coherence:"
         },
         {
           "type": "list",
           "content": null,
-          "label": "13d-registry",
-          "equationNumber": "13d-registry",
+          "label": "or-reduction-operator",
+          "equationNumber": "or-reduction-operator",
           "items": [
-            "<strong>The Bosonic Anchor:</strong> 12 dimensions are allocated to the primary force-carriers and gauge symmetries.",
-            "<strong>The Metric Anchor:</strong> The 13th dimension acts as the 'Master Scale,' governing the ratio between the Planck mass and the electroweak scale."
+            "<strong>Rotation Matrix:</strong> R<sub>⊥</sub> = [[0, −1], [1, 0]] (det = 1, orientation-preserving)",
+            "<strong>External Sampling:</strong> z'<sub>mirror</sub> = R<sub>⊥</sub> z<sub>normal</sub> + Δy",
+            "<strong>Möbius Property:</strong> R<sub>⊥</sub>² = −I enables spinor return after double traversal"
           ]
         },
         {
           "type": "heading",
-          "content": "1.2.3 The Octonionic Link",
+          "content": "1.2.3 The Breathing Dark Energy Mechanism",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge operates on the principles of <strong>Division Algebra</strong>. Specifically, it uses the transition between Octonionic (𝕆) and Quaternionic (ℍ) logic to determine how the 13D space will eventually shatter into the 7D and 6D components. This algebraic rigidness ensures that the resulting particle flavors (quarks and leptons) are not randomly assigned but are the <strong>only permitted solutions</strong> of the gauge filter."
+          "content": "The bridge pressure arises from <strong>condensate flux mismatch</strong> between shadows. Where normal and mirror shadow pressure profiles differ, the residue drives cosmic acceleration. This yields thawing dark energy with w₀ = −1 + 1/b₃ = −23/24 ≈ −0.9583, matching DESI 2025 within 0.02σ. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
         },
         {
           "type": "heading",
-          "content": "The G₂ Manifold (V₇): The Geometric Hard-Lock",
+          "content": "The G₂ Manifold (V₇): Per-Shadow Compactification",
           "label": "1.3",
           "equationNumber": "1.3",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The descent from 13D reaches its most critical phase in the transition to <strong>7-Dimensional Space</strong>. This stage is defined by the holonomy of the <strong>G₂ Manifold (V₇)</strong>. While the S<sub>PR</sub>(2) gauge sorts the potential, the G₂ manifold provides the physical rigidity that prevents the constants of nature from drifting. In the Sterile Model, the G₂ manifold is the 'Hard-Lock' that ensures 4D reality is a unique, non-negotiable state."
+          "content": "Each dual shadow undergoes independent <strong>G₂ compactification</strong> on a <strong>7-dimensional Riemannian manifold (7,0)</strong>. This per-shadow structure provides the geometric rigidity that prevents the constants of nature from drifting. The G₂ manifold is the 'Hard-Lock' that ensures each 4D condensate is a unique, non-negotiable state with n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = 3 generations per shadow."
         },
         {
           "type": "heading",
@@ -9726,7 +9722,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027685"
+      "timestamp": "2026-01-18T12:54:32.122663"
     },
     "2.5": {
       "id": "2",
@@ -9757,7 +9753,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Just as the physical dimensions and tension of a drumhead determine its specific acoustic modes, the topological constraints of the 26D(24,2) descent dictate the 'vibrational' modes of the resulting 4D spacetime. In this framework, a <strong>fundamental constant</strong> is simply a point of stationary resonance within the 7-dimensional G₂ structure."
+          "content": "Just as the physical dimensions and tension of a drumhead determine its specific acoustic modes, the topological constraints of the 26D(24,1) dual-shadow descent dictate the 'vibrational' modes of the resulting 4D spacetime. In this framework, a <strong>fundamental constant</strong> is simply a point of stationary resonance within the 7-dimensional G₂ structure per shadow."
         },
         {
           "type": "heading",
@@ -9839,7 +9835,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The 125 nodes are partitioned according to the symmetry-breaking path established by the S<sub>PR</sub>(2) gauge:"
+          "content": "The 125 nodes are partitioned according to the symmetry-breaking path established by the dual-shadow descent via the Euclidean bridge:"
         },
         {
           "type": "list",
@@ -9905,7 +9901,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Metric Lock is maintained through <strong>Topological Hysteresis</strong>. As the 26D bulk compactifies into the 4D world-sheet, the manifold undergoes a phase transition similar to crystallization. The S<sub>PR</sub>(2) gauge 'memorizes' the geometric configuration, creating a 'Hysteresis Seal' that locks the 125 residues into a terminal, sterile state."
+          "content": "The Metric Lock is maintained through <strong>Topological Hysteresis</strong>. As the 26D(24,1) bulk splits into dual shadows connected by the Euclidean bridge and compactifies into 4D, the manifold undergoes a phase transition similar to crystallization. The OR reduction operator (R<sub>⊥</sub>) 'memorizes' the geometric configuration, creating a 'Hysteresis Seal' that locks the 125 residues into a terminal, sterile state."
         },
         {
           "type": "heading",
@@ -9962,7 +9958,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Just as the physical dimensions and tension of a drumhead determine its specific acoustic modes, the topological constraints of the 26D(24,2) descent dictate the 'vibrational' modes of the resulting 4D spacetime. In this framework, a <strong>fundamental constant</strong> is simply a point of stationary resonance within the 7-dimensional G₂ structure."
+          "content": "Just as the physical dimensions and tension of a drumhead determine its specific acoustic modes, the topological constraints of the 26D(24,1) dual-shadow descent dictate the 'vibrational' modes of the resulting 4D spacetime. In this framework, a <strong>fundamental constant</strong> is simply a point of stationary resonance within the 7-dimensional G₂ structure per shadow."
         },
         {
           "type": "heading",
@@ -10044,7 +10040,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The 125 nodes are partitioned according to the symmetry-breaking path established by the S<sub>PR</sub>(2) gauge:"
+          "content": "The 125 nodes are partitioned according to the symmetry-breaking path established by the dual-shadow descent via the Euclidean bridge:"
         },
         {
           "type": "list",
@@ -10110,7 +10106,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Metric Lock is maintained through <strong>Topological Hysteresis</strong>. As the 26D bulk compactifies into the 4D world-sheet, the manifold undergoes a phase transition similar to crystallization. The S<sub>PR</sub>(2) gauge 'memorizes' the geometric configuration, creating a 'Hysteresis Seal' that locks the 125 residues into a terminal, sterile state."
+          "content": "The Metric Lock is maintained through <strong>Topological Hysteresis</strong>. As the 26D(24,1) bulk splits into dual shadows connected by the Euclidean bridge and compactifies into 4D, the manifold undergoes a phase transition similar to crystallization. The OR reduction operator (R<sub>⊥</sub>) 'memorizes' the geometric configuration, creating a 'Hysteresis Seal' that locks the 125 residues into a terminal, sterile state."
         },
         {
           "type": "heading",
@@ -10152,7 +10148,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027746"
+      "timestamp": "2026-01-18T12:54:32.122735"
     },
     "3.7": {
       "id": "3",
@@ -10289,7 +10285,7 @@
         },
         {
           "type": "paragraph",
-          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v16.2 model asserts that <strong>any universe descending from a 26D(24,2) bulk via a G₂ manifold must exhibit this specific vacuum floor</strong>."
+          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v21 model asserts that <strong>any universe descending from a 26D(24,1) dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
         }
       ],
       "content_blocks": [
@@ -10417,14 +10413,14 @@
         },
         {
           "type": "paragraph",
-          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v16.2 model asserts that <strong>any universe descending from a 26D(24,2) bulk via a G₂ manifold must exhibit this specific vacuum floor</strong>."
+          "content": "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D descent, we eliminate the need for the 'Anthropic Principle.' We no longer need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. The v21 model asserts that <strong>any universe descending from a 26D(24,1) dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-17T16:20:49.027800"
+      "timestamp": "2026-01-18T12:54:32.122786"
     },
     "A": {
       "id": "A",
@@ -10634,7 +10630,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-17T16:20:49.027910"
+      "timestamp": "2026-01-18T12:54:32.122900"
     },
     "B": {
       "id": "B",
@@ -10870,7 +10866,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-17T16:20:49.027981"
+      "timestamp": "2026-01-18T12:54:32.122972"
     },
     "C": {
       "id": "C",
@@ -11076,7 +11072,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-17T16:20:49.028037"
+      "timestamp": "2026-01-18T12:54:32.123030"
     },
     "D": {
       "id": "D",
@@ -11274,7 +11270,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-17T16:20:49.028100"
+      "timestamp": "2026-01-18T12:54:32.123092"
     },
     "E": {
       "id": "E",
@@ -11476,7 +11472,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-17T16:20:49.028154"
+      "timestamp": "2026-01-18T12:54:32.123149"
     },
     "F": {
       "id": "F",
@@ -11686,7 +11682,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-17T16:20:49.028892"
+      "timestamp": "2026-01-18T12:54:32.123846"
     },
     "G": {
       "id": "G",
@@ -12022,7 +12018,7 @@
         "topology.torsion_per_shadow",
         "seal.geometric_checksum"
       ],
-      "timestamp": "2026-01-17T16:20:49.029028"
+      "timestamp": "2026-01-18T12:54:32.123962"
     },
     "H": {
       "id": "H",
@@ -12308,7 +12304,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-17T16:20:49.029122"
+      "timestamp": "2026-01-18T12:54:32.124052"
     },
     "I": {
       "id": "I",
@@ -12662,7 +12658,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-17T16:20:49.029214"
+      "timestamp": "2026-01-18T12:54:32.124144"
     },
     "J": {
       "id": "J",
@@ -12944,7 +12940,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-17T16:20:49.029310"
+      "timestamp": "2026-01-18T12:54:32.124233"
     },
     "K": {
       "id": "K",
@@ -13360,7 +13356,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-17T16:20:49.029395"
+      "timestamp": "2026-01-18T12:54:32.124310"
     },
     "L": {
       "id": "L",
@@ -13650,7 +13646,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-17T16:20:49.029492"
+      "timestamp": "2026-01-18T12:54:32.124409"
     },
     "Z": {
       "id": "Z",
@@ -13726,7 +13722,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-17T16:20:49.029616"
+      "timestamp": "2026-01-18T12:54:32.124531"
     },
     "2.2": {
       "id": "2",
@@ -14068,7 +14064,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-01-17T16:20:49.029870"
+      "timestamp": "2026-01-18T12:54:32.124767"
     },
     "R.1": {
       "id": "R",
@@ -14616,7 +14612,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-01-17T16:20:49.030033"
+      "timestamp": "2026-01-18T12:54:32.124938"
     },
     "S.1": {
       "id": "S",
@@ -15330,7 +15326,7 @@
         "topology.chi_eff",
         "topology.b3"
       ],
-      "timestamp": "2026-01-17T16:20:49.030180"
+      "timestamp": "2026-01-18T12:54:32.125092"
     },
     "2.3": {
       "id": "2",
@@ -15446,7 +15442,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-17T16:20:49.030462"
+      "timestamp": "2026-01-18T12:54:32.125371"
     }
   }
 }

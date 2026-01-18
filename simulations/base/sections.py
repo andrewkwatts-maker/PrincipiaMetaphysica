@@ -44,17 +44,17 @@ PAPER_SECTIONS: Dict[str, SectionInfo] = {
     "0": SectionInfo(
         id="0",
         title="Abstract",
-        description="Sterile geometric framework deriving 125 constants from G2 manifold spectral residues.",
+        description="(24,1) dual-shadow framework with Euclidean bridge deriving 125 constants from G2 manifold spectral residues.",
         section_type="abstract",
-        simulation_source="abstract_v17_2"  # Abstract content
+        simulation_source="abstract_v17_2"  # Abstract content (updated for v21)
     ),
     # Main Sections
     "1": SectionInfo(
         id="1",
         title="Foundations of Dimensional Descent",
-        description="The 26D(24,2) ancestral bulk, S_PR(2) gauge filter, G2 manifold, and 6D→4D projection.",
+        description="The (24,1) bulk with unified time, dual shadows, Euclidean bridge, G2 compactification, and condensate projection.",
         section_type="section",
-        simulation_source="foundations_v16_2"  # Foundations content
+        simulation_source="merged_descent_v21"  # v21 refactor: (24,1) dual-shadow model
     ),
     "2": SectionInfo(
         id="2",

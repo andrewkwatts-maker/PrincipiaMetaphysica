@@ -3,6 +3,10 @@
 PRINCIPIA METAPHYSICA v17.2 - Pneuma Mechanism (Geometric Framework)
 ====================================================================
 
+# v21 NOTE: The pneuma mechanism is preserved in v21 framework.
+# The Sp(2,R) references in this file are historical context.
+# See v21 dual-shadow framework for current formulation.
+
 Licensed under the MIT License. See LICENSE file for details.
 
 Implements the Pneuma field dynamics and geometric coupling mechanism.
@@ -575,7 +579,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional origin and the role of Sp(2,R) gauge symmetry."
+                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,1) plus Euclidean bridge. This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_perp operator."
             ),
             ContentBlock(
                 type="heading",
@@ -588,8 +592,8 @@ class PneumaMechanismV16(SimulationBase):
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="2T Physics Framework",
-                content="This action is formulated in the full 26D spacetime with two time dimensions. The Sp(2,R) gauge symmetry acts on the embedding coordinates X^M(ξ) and allows us to gauge-fix one time dimension, reducing (d,2) signature to (d,1) while maintaining covariance."
+                title="Dual-Shadow Physics Framework",
+                content="This action is formulated in the full 26D spacetime with signature (24,1) plus Euclidean bridge. The OR reduction via R_perp operator acts on the embedding coordinates X^M(ξ), producing dual (11,1) shadows with shared time while maintaining covariance."
             ),
             ContentBlock(
                 type="heading",
@@ -605,7 +609,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="5 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (5,2) → (5,1). Hosts the visible matter sector and 4D spacetime as a subspace."
+                content="5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R_perp: dual (11,1) shadows emerge with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
             ),
             ContentBlock(
                 type="heading",
@@ -613,7 +617,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Contributes to dark sector structure."
+                content="3 spatial dimensions in dual (11,1) shadow with shared unified time. Contributes to dark sector structure."
             ),
             ContentBlock(
                 type="heading",
@@ -621,7 +625,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Second dark sector component."
+                content="3 spatial dimensions in dual (11,1) shadow with shared unified time. Second dark sector component."
             ),
             ContentBlock(
                 type="heading",
@@ -629,13 +633,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Third dark sector component."
+                content="3 spatial dimensions in dual (11,1) shadow with shared unified time. Third dark sector component."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Gauge Fixing: (d,2) → (d,1)",
-                content="Before gauge fixing: Observable (5,2) + 3×Shadow (3,2) - total 26 dimensions with signature (24,2). After Sp(2,R) gauge fixing: Observable (5,1) + 3×Shadow (3,1) - effective theory with single timelike direction. The gauge fixing procedure removes the second time dimension from each brane while preserving the physical degrees of freedom. The orthogonal time effects persist through the g·t_ortho coupling in the effective action."
+                title="OR Reduction: 26D(24,1) to dual (11,1) shadows via bridge",
+                content="Starting configuration: 26D with signature (24,1) plus Euclidean bridge coordinates (y1, y2) for timeless substrate. After OR reduction via R_perp: dual (11,1) shadows + 2D(2,0) Euclidean bridge - effective theory with unified time shared between shadows. The OR reduction procedure produces the dual-shadow structure while preserving the physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action."
             ),
             ContentBlock(
                 type="heading",
@@ -652,7 +656,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="These constraints are first-class and generate the Sp(2,R) gauge symmetry. They ensure that: ghosts from timelike dimensions are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest."
+                content="These constraints are first-class and generate the OR reduction structure. They ensure that: ghosts from the dual-shadow framework are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest through the R_perp operator."
             ),
             ContentBlock(
                 type="heading",
@@ -731,13 +735,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="After Sp(2,R) gauge fixing from 26D to 13D, the spinor reduces from 8192 to 64 components:"
+                content="After OR reduction from 26D(24,1) to dual (11,1) shadows, the 4096 component spinor from Cl(24,1) reduces to effective 64 components:"
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Dimensional Reduction: 26D → 13D",
-                content="Sp(2,R) gauge fixing removes one time dimension: (24,2) → (12,1). Spinor dimension: 2^13 = 8192 → 2^6 = 64 components. The flux terms ℒ_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+                title="Dimensional Reduction: 26D(24,1) → dual (11,1) + 2D(2,0)",
+                content="OR reduction via R_perp produces dual shadows: (24,1) → 2×(11,1) + bridge(2,0). Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
             ),
             ContentBlock(
                 type="heading",
@@ -771,7 +775,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy",
+                content="Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (24,1) + bridge\n↓ OR reduction via R_perp\nLevel 2 (dual shadows): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×(11,1) + (2,0)\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy",
                 label=""
             ),
         ])

@@ -228,7 +228,7 @@ def create_certificate(gate, existing_certs):
             "category": gate.get('domain', 'TOPOLOGY'),
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "16.2",
+            "version": "21.0",
             "wl_code": verif.get('wl_code', gate.get('wolfram', 'N/A')),
             "result": verif.get('result', 'N/A'),
             "formula": gate.get('formula', 'N/A'),
@@ -246,7 +246,7 @@ def create_certificate(gate, existing_certs):
             "category": "MATHEMATICAL",
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "16.2",
+            "version": "21.0",
             "wl_code": gate.get('wolfram', 'N/A'),
             "result": "N/A",
             "formula": gate.get('formula', 'N/A'),
@@ -265,7 +265,7 @@ def create_certificate(gate, existing_certs):
             "category": "FOUNDATIONAL_ASSUMPTION",
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "16.2",
+            "version": "21.0",
             "wl_code": gate.get('wolfram', 'N/A'),
             "result": "N/A",
             "formula": gate.get('formula', 'N/A'),
@@ -285,7 +285,7 @@ def create_certificate(gate, existing_certs):
             "category": gate.get('domain', 'PENDING'),
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "16.2",
+            "version": "21.0",
             "wl_code": gate.get('wolfram', 'PENDING'),
             "result": "PENDING",
             "formula": gate.get('formula', 'N/A'),
@@ -345,7 +345,7 @@ def main():
 
     # Create summary file
     summary = {
-        "version": "16.2",
+        "version": "21.0",
         "title": "72 Gates Certificate Registry",
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "summary": {

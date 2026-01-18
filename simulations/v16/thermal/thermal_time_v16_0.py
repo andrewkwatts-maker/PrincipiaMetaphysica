@@ -3,6 +3,11 @@
 PRINCIPIA METAPHYSICA v17.2 - Thermal Time Hypothesis
 ======================================================
 
+# v21 NOTE: The thermal time hypothesis is preserved in v21 framework.
+# v21 uses (24,1) signature with unified time and Euclidean bridge (0) for timeless substrate.
+# Dual (11,1) shadows share a common time via OR reduction through R_perp operator.
+# See v21 dual-shadow framework for current formulation.
+
 Licensed under the MIT License. See LICENSE file for details.
 
 Implements the thermal time hypothesis with two-time framework:
@@ -31,7 +36,7 @@ OUTPUTS:
     - thermal.alpha_T: Thermal time coupling constant
     - thermal.modular_temperature: Effective modular temperature
     - thermal.entropy_gradient: dS/dt (arrow of time)
-    - thermal.two_time_metric_signature: (24,2) metric signature
+    - thermal.two_time_metric_signature: (24,1) metric signature with Euclidean bridge
 
 FORMULAS:
     - modular-hamiltonian: K = -log(rho) from thermal state
@@ -185,9 +190,9 @@ class ThermalTimeV16(SimulationBase):
         # dS/dt ~ k_B * alpha_T * (T_mod / M_Planck)
         entropy_gradient = self.k_B * alpha_T * (modular_temperature / M_PLANCK)
 
-        # Two-time metric signature: (24,2) = (space, time1, time2)
-        # 24 spatial dimensions + 2 time dimensions
-        two_time_metric = "(24,2)"
+        # Metric signature: (24,1) with Euclidean bridge for timeless substrate
+        # 24 spatial dimensions + 1 unified time + bridge coordinates (y1, y2)
+        two_time_metric = "(24,1)"
 
         return {
             "thermal.alpha_T": float(alpha_T),
@@ -241,10 +246,10 @@ class ThermalTimeV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In Principia Metaphysica, we extend this to a two-time framework with "
-                    "signature (24,2). The observable thermal time t_therm emerges from the "
-                    "Pneuma field's modular flow, while a hidden orthogonal time t_ortho "
-                    "is related by Sp(2,R) gauge symmetry. The coupling alpha_T is derived "
+                    "In Principia Metaphysica, we extend this to a dual-shadow unified time framework with "
+                    "signature (24,1). The observable thermal time t_therm emerges from the "
+                    "Pneuma field's modular flow, while bridge coordinates (y1, y2) provide "
+                    "a Euclidean substrate via OR reduction through R_perp. The coupling alpha_T is derived "
                     "from G2 topology and governs the strength of time evolution."
                 )
             ),
@@ -403,8 +408,8 @@ class ThermalTimeV16(SimulationBase):
                         "Start with G2 third Betti number: b3 = 24 (associative 3-cycles)",
                         "Thermal time emerges from modular flow on b3 cycles",
                         "Base coupling: alpha_base = 2*pi / b3 (one cycle per period)",
-                        "Apply gamma_correction = 10.313 for Sp(2,R) two-time framework",
-                        "Correction accounts for: (i) two-time metric signature (24,2)",
+                        "Apply gamma_correction = 10.313 for unified time framework with Euclidean bridge",
+                        "Correction accounts for: (i) metric signature (24,1) with bridge",
                         "                         (ii) Pneuma modular automorphisms",
                         "                         (iii) G2 holonomy structure",
                         "Result: alpha_T = (2*pi / 24) * 10.313 = 2.700"
@@ -472,12 +477,12 @@ class ThermalTimeV16(SimulationBase):
             ),
             Parameter(
                 path="thermal.two_time_metric_signature",
-                name="Two-Time Metric Signature",
+                name="Metric Signature with Euclidean Bridge",
                 units="dimensionless",
                 status="GEOMETRIC",
                 description=(
-                    "Signature of the two-time spacetime: (24,2) indicates 24 spatial "
-                    "dimensions and 2 time dimensions related by Sp(2,R) gauge symmetry."
+                    "Signature of the dual-shadow spacetime: (24,1) indicates 24 spatial "
+                    "dimensions and 1 unified time, with Euclidean bridge (0) for timeless substrate."
                 ),
                 no_experimental_value=True,
             ),

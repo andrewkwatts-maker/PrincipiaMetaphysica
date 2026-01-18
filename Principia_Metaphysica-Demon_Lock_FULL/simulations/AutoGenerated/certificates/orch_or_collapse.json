@@ -1,0 +1,34 @@
+{
+  "proof_id": "orch_or_collapse",
+  "cert_id": "CERT-BIO-030",
+  "label": "Orch-OR Gravitational Collapse Time",
+  "category": "OPERATIONAL",
+  "version": "16.2",
+  "status": "SEALED",
+  "wolfram_code": "With[{\n  hbar = 1.055e-34,  (* J*s *)\n  EG = 1e-32  (* J - gravitational self-energy scale *)\n},\n  (* Penrose objective reduction timescale *)\n  (* tau = hbar / E_G *)\n  \n  tau = hbar / EG;\n  tauMs = tau * 1000;  (* Convert to milliseconds *)\n  \n  (* Neural processing timescale *)\n  neuralMs = 10;  (* ~10 ms for conscious events *)\n  \n  {N[tauMs, 3], neuralMs}\n]",
+  "expected_result": "{~10 ms, 10 ms}",
+  "verification_status": "SEALED",
+  "mathematical_goal": "Estimate Penrose-Hameroff Orch-OR collapse timescale from gravitational self-energy",
+  "theoretical_significance": "The Orch-OR (Orchestrated Objective Reduction) theory proposes that quantum coherence in microtubules collapses on a timescale tau = hbar/E_G where E_G is gravitational self-energy. For E_G ~ 10^-32 J (tubulin superposition), this gives tau ~ 10 ms, matching neural processing timescales. PM provides geometric context for this speculative framework.",
+  "orch_or_theory": {
+    "proposers": "Penrose and Hameroff",
+    "mechanism": "Quantum coherence in tubulin dimers",
+    "collapse_trigger": "Gravitational self-energy threshold",
+    "timescale": "tau = hbar / E_G ~ 10-100 ms",
+    "neural_connection": "Matches conscious processing timescales"
+  },
+  "experimental_status": {
+    "quantum_coherence": "Debated - thermal decoherence concerns",
+    "anesthetic_effects": "Some support from anesthetic studies",
+    "mainstream_acceptance": "Controversial",
+    "PM_position": "Provides geometric framework, not endorsement"
+  },
+  "geometry": {
+    "formula": "tau = hbar / E_G",
+    "hbar": 1.055e-34,
+    "E_G_estimate": 1e-32,
+    "tau_result": "~10 ms"
+  },
+  "timestamp": "2026-01-01T00:00:00Z",
+  "hash": "v16_2_bio_030_sealed_sha256_b86cf85b"
+}

@@ -1,12 +1,12 @@
 """
-PRINCIPIA METAPHYSICA v17.2 - Abstract
+PRINCIPIA METAPHYSICA v21.0 - Abstract
 ======================================
 
 Section 0: The paper abstract.
 
-This simulation provides the abstract content for Principia Metaphysica v17.2,
-the sterile geometric framework where all 125 physical constants emerge as
-spectral residues of a G2 manifold.
+This simulation provides the abstract content for Principia Metaphysica v21.0,
+the (24,1) dual-shadow framework with Euclidean bridge where all 125 physical
+constants emerge as spectral residues of G2 manifold compactification.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -30,10 +30,10 @@ if TYPE_CHECKING:
 
 class AbstractV17_2(SimulationBase):
     """
-    Abstract section (Section 0) for Principia Metaphysica v17.2.
+    Abstract section (Section 0) for Principia Metaphysica v21.0.
 
-    This simulation provides the abstract content that summarizes the entire
-    sterile geometric framework.
+    This simulation provides the abstract content that summarizes the
+    (24,1) dual-shadow framework with Euclidean bridge.
     """
 
     # No formula references - abstract is pure narrative
@@ -44,10 +44,10 @@ class AbstractV17_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="abstract_v17_2",
-            version="20.0",
+            version="21.0",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v20.0-RECURSIVE",
+            description="Paper abstract for Principia Metaphysica v21.0 (24,1) dual-shadow",
             section_id="0",
             subsection_id=None
         )
@@ -86,17 +86,14 @@ class AbstractV17_2(SimulationBase):
                     'We introduce a unified mathematical framework that derives fundamental physical '
                     'constants and cosmological observables from the topological invariants of a '
                     '<span class="pm-value" data-pm-value="dimensions.D_bulk">26</span>D manifold with '
-                    '(24,2) signature. <strong>Principia Metaphysica v20.0-RECURSIVE</strong> compactifies M-theory '
-                    'on a Twisted Connected Sum G\u2082 manifold, where S<sub>PR</sub>(2) gauge fixing yields '
-                    'an effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r">13</span>-dimensional '
-                    'intermediate stage (explicit decomposition: 26D = 4D \u00d7 T<sup>15</sup> \u00d7 G\u2082(7D)), '
-                    'followed by G\u2082 compactification to the observed '
-                    '<span class="pm-value" data-pm-value="dimensions.D_observable">4</span>D universe. '
-                    'The model predicts exactly three chiral fermion generations from n<sub>gen</sub> = '
-                    '|\u03c7<sub>eff</sub>|/48 = <span class="pm-value" data-pm-value="topology.n_gen">3</span>, '
-                    'where the divisor 48 = 24 \u00d7 2 reflects both the F-theory index theorem '
-                    '(Sethi-Vafa-Witten 1996) and a \u2124\u2082 factor from S<sub>PR</sub>(2) parity '
-                    'identification across the two time dimensions (Bars 2006).'
+                    '(24,1) signature and 2D Euclidean bridge. <strong>Principia Metaphysica v21.0</strong> '
+                    'realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and a '
+                    'shared (2,0) Euclidean bridge (ds\u00b2 = dy\u2081\u00b2 + dy\u2082\u00b2) enables coherent cross-shadow '
+                    'sampling via OR reduction. Each shadow compactifies on G\u2082(7,0) to '
+                    '<span class="pm-value" data-pm-value="dimensions.D_observable">4</span>D, yielding '
+                    'exactly three chiral fermion generations from n<sub>gen</sub> = \u03c7<sub>eff</sub>/(4\u00b7b\u2083) = '
+                    '144/48 = <span class="pm-value" data-pm-value="topology.n_gen">3</span> per shadow, '
+                    'consistent with M-theory phenomenology (Acharya-Witten 2001).'
                 ),
                 label="abstract-lead"
             ),
