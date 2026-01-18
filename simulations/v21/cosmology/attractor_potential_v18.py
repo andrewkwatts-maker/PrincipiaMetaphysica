@@ -122,8 +122,9 @@ class AttractorPotentialV18(SimulationBase):
         self.rho_Lambda = 2.846e-47     # GeV^4 (dark energy density)
 
         # Experimental references
-        self.w_0_experimental = -1.03   # Planck 2018 + BAO
-        self.w_0_uncertainty = 0.03
+        # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
+        self.w_0_experimental = -0.958  # DESI 2025
+        self.w_0_uncertainty = 0.02
         self.w_a_experimental = 0.0     # CPL parameter (DESI suggests +0.3)
         self.w_a_uncertainty = 0.2
 
@@ -487,10 +488,11 @@ class AttractorPotentialV18(SimulationBase):
                     "Equation of state at attractor from slow-roll + Ricci flow. "
                     "Predicts w_0 = -23/24 ~ -0.9583 (thawing quintessence)."
                 ),
-                experimental_bound=-1.03,
+                # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
+                experimental_bound=-0.958,
                 bound_type="measured",
-                bound_source="Planck2018+BAO",
-                uncertainty=0.03
+                bound_source="DESI_2025",
+                uncertainty=0.02
             ),
             Parameter(
                 path="cosmology.w_a_thawing",

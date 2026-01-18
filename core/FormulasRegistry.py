@@ -246,21 +246,45 @@ class FormulasRegistry:
     # CHI_EFF USAGE GUIDE (v22.0-12PAIR)
     # ===========================================================================
     #
+    # THEORETICAL BASIS: 12x(2,0) PAIRED BRIDGE SYSTEM
+    # ------------------------------------------------
+    # The v22 framework has TWO 11D shadow sectors connected by Euclidean bridges.
+    # Each shadow independently compactifies on G2 with effective Euler characteristic:
+    #
+    #   chi_eff_shadow = b3^2/8 = 576/8 = 72
+    #
+    # From Hodge numbers (TCS #187): chi_eff = h^{1,1} - h^{2,1} + h^{3,1} = 4-0+68 = 72
+    #
+    # CROSS-SHADOW TOTAL:
+    # When physics involves BOTH shadows (via bridge coupling):
+    #   chi_eff_total = chi_eff_normal + chi_eff_mirror = 72 + 72 = 144
+    #
+    # KEY PRINCIPLE: Does the physics involve one shadow or both?
+    # - Quarks (CKM): Confined by QCD to single shadow -> chi_eff = 72
+    # - Neutrinos (PMNS): Neutral, propagate across bridge -> chi_eff_total = 144
+    #
+    # Reference: docs/appendices/appendix_chi_eff_architecture.md
+    # ===========================================================================
+    #
     # chi_eff = chi_eff_sector = 72 (per shadow)
+    #   GEOMETRIC: chi_eff_shadow = b3^2/8 = 576/8 = 72
     #   USE FOR:
     #   - n_gen = chi_eff/24 = 3 (fermion generations per sector)
     #   - gate_transition calculations (fine structure refinement)
-    #   - Single-shadow physics processes
-    #   - Baryon asymmetry (b3/chi_eff ratio)
+    #   - Single-shadow physics processes (quark Yukawa, CKM)
+    #   - Baryon asymmetry (b3/chi_eff ratio) - baryogenesis at single 4-brane
     #   - Torsional leakage (b3/chi_eff in epsilon_T formula)
+    #   PHYSICS: Quarks carry color charge, confined within single shadow
     #
     # chi_eff_total = 144 (both shadows combined)
+    #   GEOMETRIC: chi_eff_total = 72 + 72 = b3^2/4 = 576/4 = 144
     #   USE FOR:
     #   - reid_invariant = 1/chi_eff_total = 1/144
     #   - chi_parity_product = watts_constant / reid_invariant = 144
     #   - Cross-shadow processes (PMNS neutrino mixing)
     #   - N_flux = chi_eff_total/6 = 24 = b3 (flux quantization)
     #   - n_gen = chi_eff_total/48 = 3 (alternative generation formula)
+    #   PHYSICS: Neutrinos are electrically neutral, propagate through bridge
     #
     # pressure_divisor = b3^2/4 = 576/4 = 144
     #   GEOMETRIC DERIVATION (Hexagonal Projection)
@@ -269,8 +293,9 @@ class FormulasRegistry:
     #   - Represents cross-shadow/global bulk pressure correction
     #
     # GEMINI VALIDATION (2026-01-19):
-    # The bulk pressure correction in H0 uses pressure_divisor=144 because it
-    # represents a global property of the dual-shadow geometry, not per-shadow.
+    # The dual chi_eff architecture is physically motivated by distinct localization
+    # properties of leptons vs quarks. Neutrino neutrality enables cross-shadow
+    # propagation; quark confinement restricts them to single-shadow physics.
     # ===========================================================================
 
     # Complete Gnostic name mapping for all named constants

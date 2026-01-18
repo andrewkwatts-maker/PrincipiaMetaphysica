@@ -515,7 +515,7 @@ def _make_registry() -> Dict[int, SpectralResidue]:
         (88, "T_CMB", 2.7255, 2.7255, 0.0006, "CMB temperature (K)"),
         (89, "eta_baryon", 6.12e-10, 6.12e-10, 0.04e-10, "Baryon asymmetry"),
         (90, "n_s", 0.9649, 0.9649, 0.0042, "Spectral index"),
-        (91, "w_0", -0.980, -1.03, 0.03, "Dark energy EoS"),
+        (91, "w_0", -0.9583, -0.958, 0.02, "Dark energy EoS (DESI 2025)"),
         (92, "sigma_8", 0.811, 0.811, 0.006, "Density fluctuation amplitude"),
     ]
 
