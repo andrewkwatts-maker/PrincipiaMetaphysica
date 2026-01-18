@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v17.2 - PMNS Neutrino Mixing from G2 Geometry
+PRINCIPIA METAPHYSICA v21.0 - PMNS Neutrino Mixing from G2 Geometry
 ====================================================================
 
 Licensed under the MIT License. See LICENSE file for details.
+
+v22 COMPATIBILITY: Uses unified time (24,1) signature with dual (11,1) shadows.
+                   OR reduction operator replaces historical Sp(2,R) approach.
+                   Orientation sum from Euclidean bridge mechanism.
 
 Fully geometric derivation of PMNS mixing angles from G2 manifold topology.
 NO CALIBRATION - all values derived from topological invariants.

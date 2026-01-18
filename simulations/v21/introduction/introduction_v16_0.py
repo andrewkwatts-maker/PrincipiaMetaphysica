@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v17.2 - Introduction
+PRINCIPIA METAPHYSICA v21.0 - Introduction
 ===========================================
 
 DOI: 10.5281/zenodo.18079602
 
 Licensed under the MIT License. See LICENSE file for details.
+
+v22 COMPATIBILITY: Uses unified time (24,1) signature with Euclidean bridge.
+                   4096-spinor Pneuma field from Cl(24,1).
+                   Dual (11,1) shadows with OR reduction operator.
 
 Provides section content for the Introduction (Section 1).
 
@@ -14,7 +18,7 @@ the narrative content and cross-references for the paper's introduction.
 
 SECTION: 1 (Introduction)
 
-v17.2 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+v21.0 STERILE MODEL: All 125 constants are geometric residues, not tuned.
 
 OUTPUTS:
     - None (narrative content only)
@@ -844,14 +848,15 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Two-Time Physics (Bars 1998–2010) — Historical Influence</h4>"
-                    "<p>Itzhak Bars' program demonstrating that 2T physics with Sp(2,R) gauge symmetry "
+                    "<h4>Historical Note: Two-Time Physics (Bars 1998–2010)</h4>"
+                    "<p>Itzhak Bars' program demonstrating that 2T physics with gauge symmetry "
                     "provides a unified view of 1T systems via different gauge choices historically informed "
-                    "early PM development. However, v21 adopts unified time (24,1) to eliminate ghost modes "
-                    "directly, replacing two-time with dual (11,1) shadows connected by a 2D Euclidean bridge. "
-                    "This preserves key phenomenological features while ensuring manifest unitarity.</p>"
+                    "early PM development. However, v21+ adopts unified time (24,1) with a Euclidean bridge "
+                    "to eliminate ghost modes directly. The dual (11,1) shadow structure with OR reduction "
+                    "preserves key phenomenological features while ensuring manifest unitarity. "
+                    "[v22: This historical approach is superseded by the Euclidean bridge mechanism.]</p>"
                 ),
-                label="two-time-context"
+                label="historical-two-time-context"
             ),
             ContentBlock(
                 type="paragraph",
