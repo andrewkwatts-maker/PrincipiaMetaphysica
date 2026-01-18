@@ -23,9 +23,20 @@ if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
     sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
 
-# Configuration
-API_KEY = 'AIzaSyDOSrO0ZUG2vBr6B_yOD3sI4FO3AqSQ5EQ'
-MODEL = 'gemini-2.0-flash'
+# Import API key from secrets config (gitignored)
+import sys
+sys.path.insert(0, str(Path(__file__).parent.parent / 'simulations'))
+try:
+    from secrets_config import GEMINI_API_KEY, GEMINI_MODEL
+    API_KEY = GEMINI_API_KEY
+    MODEL = GEMINI_MODEL
+except ImportError:
+    # Fallback for environments without secrets_config
+    API_KEY = os.environ.get('GEMINI_API_KEY', '')
+    MODEL = 'gemini-2.0-flash'
+    if not API_KEY:
+        print("WARNING: GEMINI_API_KEY not found. Create simulations/secrets_config.py")
+
 BASE_URL = f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent'
 
 PROJECT_ROOT = Path(__file__).parent.parent
