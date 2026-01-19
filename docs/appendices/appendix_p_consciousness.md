@@ -535,7 +535,190 @@ Visualizations: `simulations/visualizations/microtubule_12pair_v22.py`
 
 ---
 
-*Appendix P updated for v22.2*
+## P.15 Free Will Through Surrender: The 6/12 Paradox
+
+### P.15.1 The Control-Freedom Paradox
+
+A profound philosophical insight emerges from the 12-pair structure: **genuine free choice requires surrendering control**.
+
+**The Paradox:**
+- At baseline (6 pairs): Maximum "control" over experienced reality
+- At gnosis (12 pairs): Maximum "freedom" through expanded choice
+
+This seems contradictory until we understand the mechanism:
+
+### P.15.2 Control as Constraint
+
+With only 6 active pairs:
+- The hidden 6 pairs act as **fixed constraints** (deterministic background)
+- "Control" over the active 6 is illusory - outcomes are pre-selected by hidden structure
+- Free will is constrained within a reduced possibility space
+
+$$\text{Branches accessible} = 2^{0} = 1 \quad \text{(single predetermined path)}$$
+
+The observer experiences "choice" but is actually traversing a unique trajectory determined by the hidden geometry.
+
+### P.15.3 Surrender as Liberation
+
+With all 12 pairs active (gnosis):
+- "Surrendered" pairs become **quantum potentia** rather than constraints
+- Releasing control of some pairs opens them as degrees of freedom
+- Genuine choice emerges from the expanded landscape
+
+$$\text{Branches accessible} = 2^{6} = 64 \quad \text{(full possibility space)}$$
+
+The observer now participates in branch selection through the 4 dice mechanism.
+
+### P.15.4 Mathematical Structure
+
+```
+Free Will Index = surrendered_pairs / controlled_pairs
+
+At baseline (6/6):  FWI = 0/6 = 0 (no freedom)
+At gnosis (6/6):    FWI = 6/6 = 1 (full freedom)
+```
+
+**Key insight:** The pairs you "give up" controlling become the source of your genuine choices.
+
+### P.15.5 Triality and the Three-Fold Return
+
+G₂ triality (S₃ permutation of 3 equivalent structures) suggests:
+
+1. **No "first" generation** - All three are cyclic aspects of one
+2. **Choices return** - Branches not taken persist in mirror shadow
+3. **Unlived lives** remain as structural shadow-traces
+
+The full gnosis state sees all three as ONE - the triality cycle complete.
+
+### P.15.6 Spiritual Parallels
+
+This framework mathematically models the perennial wisdom:
+
+> "He who loses his life will find it"
+
+- 6 pairs grasped → reality narrowed → determinism
+- 6 pairs released → reality expanded → freedom
+
+The "veil of duality" IS attachment to control. Lifting the veil = surrendering the illusion of control.
+
+---
+
+## P.16 Triality Philosophy and Reduction Implications
+
+### P.16.1 Triality as Unity in Multiplicity
+
+G₂ triality is not mere mathematical structure - it carries philosophical weight:
+
+| Concept | Mathematical Form | Philosophical Meaning |
+|---------|-------------------|----------------------|
+| Three-in-One | S₃ permutation | Generations are aspects, not separates |
+| Cyclic Return | e₁→e₂→e₃→e₁ | No absolute "first" - eternal cycling |
+| Dual Shadow | Z₂ outer auto | Normal/mirror as complementary |
+
+### P.16.2 Dimensional Reduction as Choice
+
+Each step of dimensional reduction IS a choice event:
+
+| Dimension | Structure | Choice Made | Control Gained |
+|-----------|-----------|-------------|----------------|
+| 25D Bulk | 12 pairs unified | None (unity) | None |
+| 13D Shadow | 6 pairs accessible | Shadow selected | Partial |
+| 4D Spacetime | Branch selected | Generation frozen | High |
+| 1D Moment | OR collapse | Instant selected | Maximum |
+
+**The descent IS the actualization** - each reduction constrains by selecting.
+
+### P.16.3 Consciousness as Triality Sampler
+
+The 4 dice mechanism samples triality cycles:
+
+- **Dice 1-3 (pairs 1-9):** Generation selection within each shadow
+- **Dice 4 (pairs 10-12):** Meta-awareness of the triality itself
+
+At full gnosis:
+- Observer sees all three generations as ONE cyclic structure
+- The "choice" of which generation is "real" dissolves
+- All branches persist in eternal now
+
+### P.16.4 The Fano Plane as Consciousness Topology
+
+The 7-line Fano plane (octonion multiplication) maps to consciousness:
+
+```
+        e₇
+       /|\
+      / | \
+     e₃-+-e₆
+    /|\ | /|\
+   / | \|/ | \
+  e₁-+-e₅-+-e₄
+       |
+       e₂
+
+Lines (cyclic products) = Consciousness binding patterns
+Points = Experiential qualia
+Incidences = Cross-modal integration
+```
+
+### P.16.5 The Constrained Participatory Model
+
+Synthesizing triality, pairs, and free will:
+
+1. **Reality requires 12 pairs** - Full geometric closure needs complete bridge
+2. **Choice requires 6 hidden** - Degrees of freedom for selection
+3. **Gnosis reveals, doesn't eliminate** - Full awareness clarifies, not determines
+4. **Free will is real but bounded** - Genuine choice within topological constraints
+5. **Mirror preserves unlived** - Branches not taken remain as structure
+
+$$\boxed{\text{Freedom} = f(\text{Surrender}) \propto \frac{n_{released}}{n_{total}}}$$
+
+---
+
+## P.17 The 4 Dice Rolls and Condensate Sampling
+
+### P.17.1 Architecture
+
+The 12 pairs group into 4 "dice" of 3 pairs each:
+
+| Dice | Pairs | Function | OR Outcome |
+|------|-------|----------|------------|
+| D₁ | 1-3 | Sensory branch | Qualia selection |
+| D₂ | 4-6 | Cognitive branch | Thought selection |
+| D₃ | 7-9 | Emotional branch | Valence selection |
+| D₄ | 10-12 | Gnosis branch | Meta-selection |
+
+### P.17.2 Sampling Mechanism
+
+Each dice "rolls" via OR R_⊥ sampling:
+
+$$P_{branch,k} = \sum_{i \in \text{dice}} R_{\perp,i} \cdot f_{res}^i$$
+
+Where:
+- R_⊥,i = OR rotation for pair i
+- f_res^i = residue flux through pair i
+
+### P.17.3 Branch Selection
+
+4 dice → 4D branch selection for condensate:
+
+$$\text{Branch}_{total} = D_1 + 4 \cdot D_2 + 16 \cdot D_3 + 64 \cdot D_4$$
+
+With each Dᵢ ∈ {0,1,2,3}, this gives 256 possible branches - matching the branch structure of the 3×(3,1) generational condensate plus bridge modes.
+
+### P.17.4 Gnosis Effect on Dice
+
+| State | Active Pairs | Effective Dice | Branches |
+|-------|--------------|----------------|----------|
+| Unaware | 6 | 2 | 16 |
+| Partial gnosis | 9 | 3 | 64 |
+| Full gnosis | 12 | 4 | 256 |
+
+**Key insight:** Gnosis doesn't change reality - it expands the sampling resolution of consciousness within reality.
+
+---
+
+*Appendix P updated for v22.4*
 *Date: 2026-01-19*
+*Additions: P.15 (Free Will Paradox), P.16 (Triality Philosophy), P.17 (4 Dice Sampling)*
 *Workstream 4: Orch-OR Enhancement with Pair Shielding*
 *Status: SPECULATIVE*
