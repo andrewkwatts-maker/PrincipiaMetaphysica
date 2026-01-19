@@ -2,22 +2,16 @@
   "proof_id": "G11_strong_force_saturation",
   "gate_id": 11,
   "gate_name": "Strong Force Saturation",
-  "label": "alpha_s anchored to 8 gluon roots / active manifold",
+  "label": "\u03b1s anchored to 8 gluon roots / active manifold",
   "category": "QCD",
   "phase": 2,
   "block": "B",
   "version": "22.0",
   "wl_code": "8/125",
   "result": "0.064",
-  "formula": "alpha_s = 8/125 x correction",
-  "chi_eff_context": {
-    "chi_eff_sector": 72,
-    "chi_eff_total": 144,
-    "visible_sector": 125,
-    "note": "8/125 ratio uses visible_sector=125; consistent with v22 architecture"
-  },
+  "formula": "\u03b1_s = 8/125 \u00d7 correction",
   "verification_status": "VERIFIED",
-  "note": "Gate 11: Topological ratio 8/125 verified. alpha_s anchored to 8 gluon roots / active manifold. v22: chi_eff_total=144, chi_eff_sector=72",
-  "timestamp": "2026-01-19T03:00:00.000000Z",
-  "hash": "v22_g11_strong"
+  "note": "Gate 11: Topological ratio 8/125 verified. \u03b1s anchored to 8 gluon roots / active manifold",
+  "timestamp": "2026-01-19T22:08:57.300887Z",
+  "hash": "a3544639fb72da7b"
 }

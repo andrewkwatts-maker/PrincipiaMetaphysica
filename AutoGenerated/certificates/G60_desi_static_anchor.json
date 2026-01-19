@@ -6,13 +6,12 @@
   "category": "Cosmology",
   "phase": 5,
   "block": "F",
-  "version": "v22.0",
+  "version": "22.0",
   "wl_code": "With[{b3=24}, wa = -4/Sqrt[b3]; desi_wa = -0.99; sigma = (wa - desi_wa)/0.32; {N[wa,4], N[sigma,2]}]",
   "result": "{-0.8165, 0.54sigma}",
-  "formula": "w_a = -4/sqrt(b3) = -0.816",
+  "formula": "w_a = 0",
   "verification_status": "VERIFIED",
-  "chi_eff_usage": "None (uses b3 = 24 directly for DE evolution)",
-  "note": "Gate 60: PM dark energy equation of state parameters. v22.0-12PAIR: w0 = -1 + 1/b3 = -23/24 = -0.9583 (0.02sigma vs DESI w0=-0.957+/-0.067). wa = -4/sqrt(b3) = -4/sqrt(24) = -0.816 (vs DESI wa=-0.99+/-0.32, 0.54sigma). The 12x(2,0) bridge breathing mechanism provides thawing quintessence from G2 4-form projection. Uses b3 topology, not chi_eff. wa = 0 (no DE evolution) label indicates PM predicts near-static DE",
-  "timestamp": "2026-01-19T10:30:00.000000Z",
+  "note": "Gate 60: PM w0=-0.9583 (0.02sigma vs DESI w0=-0.957+/-0.067); PM wa=-0.816 vs DESI wa=-0.99+/-0.32, 0.54sigma agreement (thawing quintessence from G2 4-form projection). wa = 0 (no DE evolution)",
+  "timestamp": "2026-01-19T22:08:57.311755Z",
   "hash": "edd264dbdb1ead2b"
 }

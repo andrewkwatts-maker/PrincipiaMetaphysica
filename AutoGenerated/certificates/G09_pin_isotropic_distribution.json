@@ -2,22 +2,17 @@
   "proof_id": "G09_pin_isotropic_distribution",
   "gate_id": 9,
   "gate_name": "Pin Isotropic Distribution",
-  "label": "24 pins distributed as 4x6 matrix",
+  "label": "24 pins distributed as 4\u00d76 matrix",
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 1,
   "block": "A",
   "version": "22.0",
   "wl_code": "pins = 24; pins == 4 * 6",
   "result": "N/A",
-  "formula": "24 = 4 x 6",
-  "chi_eff_context": {
-    "chi_eff_sector": 72,
-    "chi_eff_total": 144,
-    "note": "24 pins = b3; n_gen = chi_eff_sector/b3 = 72/24 = 3"
-  },
+  "formula": "24 = 4 \u00d7 6",
   "verification_status": "NOT_TESTABLE",
   "reason": "Pin distribution is a structural assumption",
-  "note": "FOUNDATIONAL: 24 pins distributed as 4x6 matrix. This is a framework assumption, not an empirical prediction. v22: chi_eff_total=144, chi_eff_sector=72",
-  "timestamp": "2026-01-19T03:00:00.000000Z",
-  "hash": "v22_g09_pin"
+  "note": "FOUNDATIONAL: 24 pins distributed as 4\u00d76 matrix. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-19T22:08:57.300472Z",
+  "hash": "83cdeb9a528d2a83"
 }

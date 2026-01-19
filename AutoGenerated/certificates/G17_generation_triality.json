@@ -6,13 +6,12 @@
   "category": "Fermions",
   "phase": 2,
   "block": "B",
-  "version": "v22.0",
-  "wl_code": "n_gen = chi_eff_total / 48 = 144 / 48",
+  "version": "22.0",
+  "wl_code": "n_gen = 3",
   "result": "3",
-  "formula": "n_gen = chi_eff_total / 48 = 144 / 48 = 3",
-  "chi_eff_usage": "chi_eff_total = 144 (both shadows combined)",
+  "formula": "125 \u2192 3 generations",
   "verification_status": "VERIFIED",
-  "note": "Gate 17: n_gen = chi_eff_total/48 = 144/48 = 3 exact. Uses chi_eff_total = 144 (both shadows) per v22 architecture.",
-  "timestamp": "2026-01-19T17:32:46.604Z",
+  "note": "Gate 17: n_gen=3 exact. 125 nodes fold into 3 generations",
+  "timestamp": "2026-01-19T22:08:57.302193Z",
   "hash": "7bc62a0e2dbd93dc"
 }
