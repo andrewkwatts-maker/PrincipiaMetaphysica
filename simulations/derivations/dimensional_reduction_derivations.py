@@ -81,9 +81,10 @@ try:
     # v22: 12 paired bridges (2,0) each, total 24 spatial = 12×2
     N_BRIDGE_PAIRS = 12                           # Number of bridge pairs (consciousness channels)
     D_BRIDGE_PER_PAIR = 2                         # Each pair is (2,0) Euclidean
-    D_SHADOW_TOTAL = 11                           # Per-shadow dimension (SPATIAL)
-    D_SHADOW_SPACE = 11                           # Per-shadow ALL spacelike (v22)
-    D_SHADOW_TIME = 0                             # Shadows have no intrinsic time
+    # v22: Each shadow is 13D(12,1) = 12 spatial + 1 shared time
+    D_SHADOW_TOTAL = 13                           # Per-shadow total dimension (12,1)
+    D_SHADOW_SPACE = 12                           # Per-shadow spatial (from bridge coords)
+    D_SHADOW_TIME = 1                             # Shared unified time (not intrinsic)
     D_BRIDGE_TOTAL = N_BRIDGE_PAIRS * D_BRIDGE_PER_PAIR  # 24 total bridge dimensions
     D_BRIDGE_SPACE = D_BRIDGE_TOTAL               # All bridge dims are spacelike
     D_BRIDGE_TIME = 0                             # Timeless (positive-definite)
@@ -101,7 +102,8 @@ except ImportError:
     D_ANCESTRAL_TOTAL, D_ANCESTRAL_SPACE, D_ANCESTRAL_TIME = 26, 24, 1  # v22: unified time
     N_BRIDGE_PAIRS = 12                           # 12 consciousness channel pairs
     D_BRIDGE_PER_PAIR = 2                         # Each pair (2,0)
-    D_SHADOW_TOTAL, D_SHADOW_SPACE, D_SHADOW_TIME = 11, 11, 0           # Per-shadow SPATIAL
+    # v22: Each shadow is 13D(12,1) = 12 spatial + 1 shared time
+    D_SHADOW_TOTAL, D_SHADOW_SPACE, D_SHADOW_TIME = 13, 12, 1           # Per-shadow 13D(12,1)
     D_BRIDGE_TOTAL, D_BRIDGE_SPACE, D_BRIDGE_TIME = 24, 24, 0           # 12×2 Euclidean bridges
     D_G2_TOTAL, D_G2_SPACE, D_G2_TIME = 7, 7, 0
     D_EXTERNAL_TOTAL, D_EXTERNAL_SPACE, D_EXTERNAL_TIME = 6, 5, 1
