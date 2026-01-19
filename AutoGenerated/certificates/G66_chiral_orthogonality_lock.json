@@ -6,19 +6,12 @@
   "category": "Symmetry",
   "phase": 5,
   "block": "F",
-  "version": "v22.0",
-  "wl_code": "active = 125; hidden = 163; twist = 1/288; chi_eff = 72; (active + hidden == 288) && (twist == 1/288) && (chi_eff == 72)",
+  "version": "22.0",
+  "wl_code": "active = 125; hidden = 163; twist = 1/288; (active + hidden == 288) && (twist == 1/288)",
   "result": "True",
-  "formula": "Delta = 1/288 = 1/(chi_eff * 4) where chi_eff = 72",
+  "formula": "\u0394 = 1/288",
   "verification_status": "VERIFIED",
-  "note": "Gate 66: Active/sterile sectors orthogonal from 288-root geometry. 125 (left-handed, observable) perpendicular to 163 (right-handed, structural). Chiral split from G2 holonomy preserving 1 spinor. Consequence of G03+G06+G20: 1/288 twist is sole source of baryon asymmetry. v22: chi_eff=72 per shadow, n_pairs=12 bridge.",
-  "v22_architecture": {
-    "chi_eff": 72,
-    "chi_eff_total": 144,
-    "n_pairs": 12,
-    "bridge_config": "(2,0)",
-    "seal_format": "v22-12PAIR-Bridge12x(2,0)"
-  },
-  "timestamp": "2026-01-19T00:00:00.000000Z",
+  "note": "Gate 66: Active/sterile sectors orthogonal from 288-root geometry. 125 (left-handed, observable) perpendicular to 163 (right-handed, structural). Chiral split from G2 holonomy preserving 1 spinor. Consequence of G03+G06+G20: 1/288 twist is sole source of baryon asymmetry.. 1/288 twist = sole baryon asymmetry",
+  "timestamp": "2026-01-19T22:08:57.313039Z",
   "hash": "a75ea4af6021933a"
 }

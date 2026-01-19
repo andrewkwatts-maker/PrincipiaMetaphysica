@@ -2,23 +2,16 @@
   "proof_id": "G06_shadow_a_b_parity",
   "gate_id": 6,
   "gate_name": "Shadow-A/B Parity",
-  "label": "Bifurcation of 24 pins into 12+12 chiral sets with chi_eff=72 per shadow",
+  "label": "Bifurcation of 24 pins into 12+12 chiral sets",
   "category": "Symmetry",
   "phase": 1,
   "block": "A",
   "version": "22.0",
-  "wl_code": "shadowA = 12; shadowB = 12; chiEffL = 72; chiEffR = 72; shadowA + shadowB == 24 && chiEffL + chiEffR == 144",
+  "wl_code": "shadowA = 12; shadowB = 12; shadowA + shadowB == 24",
   "result": "True",
-  "formula": "24 = 12_L + 12_R where chi_eff_L = chi_eff_R = 72",
-  "chi_eff_context": {
-    "chi_eff_sector": 72,
-    "chi_eff_total": 144,
-    "shadow_L": 12,
-    "shadow_R": 12,
-    "note": "Each shadow carries chi_eff=72; combined chi_eff_total=144"
-  },
+  "formula": "24 = 12_L + 12_R",
   "verification_status": "VERIFIED",
-  "note": "Gate 6: Left/right potential balanced at source. Each shadow has chi_eff=72. Bifurcation of 24 pins into 12+12 chiral sets. v22: chi_eff_total=144, chi_eff_sector=72",
-  "timestamp": "2026-01-19T03:00:00.000000Z",
-  "hash": "v22_g06_shadow"
+  "note": "Gate 6: Left/right potential balanced at source. Bifurcation of 24 pins into 12+12 chiral sets",
+  "timestamp": "2026-01-19T22:08:57.299833Z",
+  "hash": "b5fed762df1186b5"
 }

@@ -9,15 +9,10 @@
   "version": "22.0",
   "wl_code": "pins = 24; Hol = G2Holonomy[V7]; Hol === Identity",
   "result": "N/A",
-  "formula": "Hol(V_7) = G_2",
-  "chi_eff_context": {
-    "chi_eff_sector": 72,
-    "chi_eff_total": 144,
-    "note": "G2 holonomy yields chi_eff_sector=72 per shadow via index theorem"
-  },
+  "formula": "Hol(V\u2087) = G\u2082",
   "verification_status": "NOT_TESTABLE",
   "reason": "Holonomy closure is a geometric definition, not a testable prediction",
-  "note": "FOUNDATIONAL: Parallel transport around V7 returns to origin. This is a framework assumption, not an empirical prediction. v22: chi_eff_total=144, chi_eff_sector=72",
-  "timestamp": "2026-01-19T03:00:00.000000Z",
-  "hash": "v22_g02_holonomy"
+  "note": "FOUNDATIONAL: Parallel transport around V7 returns to origin. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-19T22:08:57.298917Z",
+  "hash": "e3bf0c0d4e3f1287"
 }

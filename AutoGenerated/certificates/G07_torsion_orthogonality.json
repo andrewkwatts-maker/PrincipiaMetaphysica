@@ -2,22 +2,17 @@
   "proof_id": "G07_torsion_orthogonality",
   "gate_id": 7,
   "gate_name": "Torsion Orthogonality",
-  "label": "Each pin orthogonal (pi/2) to 288-root bulk",
+  "label": "Each pin orthogonal (\u03c0/2) to 288-root bulk",
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 1,
   "block": "A",
   "version": "22.0",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "theta_pin = pi/2",
-  "chi_eff_context": {
-    "chi_eff_sector": 72,
-    "chi_eff_total": 144,
-    "note": "Orthogonality constraint applies to all 24 pins across both shadows"
-  },
+  "formula": "\u03b8_pin = \u03c0/2",
   "verification_status": "NOT_TESTABLE",
   "reason": "Torsion orthogonality is a geometric constraint, not measurable",
-  "note": "FOUNDATIONAL: Each pin orthogonal (pi/2) to 288-root bulk. This is a framework assumption, not an empirical prediction. v22: chi_eff_total=144, chi_eff_sector=72",
-  "timestamp": "2026-01-19T03:00:00.000000Z",
-  "hash": "v22_g07_torsion"
+  "note": "FOUNDATIONAL: Each pin orthogonal (\u03c0/2) to 288-root bulk. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-19T22:08:57.300050Z",
+  "hash": "1ef3b79f78f8d4b0"
 }
