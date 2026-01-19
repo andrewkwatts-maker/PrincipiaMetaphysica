@@ -17,23 +17,27 @@ This appendix provides the theoretical justification for the dual chi_eff struct
 
 The v22.0-12PAIR framework describes spacetime as:
 
-$$M^{26} = T^1 \times_{\text{fiber}} \left( S^{11}_{\text{normal}} \oplus S^{11}_{\text{mirror}} \oplus \bigoplus_{i=1}^{12} B_i^{(2,0)} \right)$$
+$$M^{25} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right)$$
 
-where:
+where the 12×(2,0) bridge pairs warp to create shadows via coordinate selection:
 - **T^1**: Unified time fiber (0,1) - shared by both shadows
-- **S^11_normal**: Normal shadow (11,0) - spatial manifold
-- **S^11_mirror**: Mirror shadow (11,0) - spatial manifold
-- **B_i^{(2,0)}**: 12 Euclidean bridge pairs connecting the shadows
+- **B_i^{(2,0)}**: 12 Euclidean bridge pairs, each contributing (x_i, y_i)
+- **Normal Shadow**: 13D(12,1) - receives x_i from each pair + T^1
+- **Mirror Shadow**: 13D(12,1) - receives y_i from each pair + T^1
 
 ### 1.2 Signature Verification
 
 | Component | Dimensions | Spatial | Temporal |
 |-----------|------------|---------|----------|
 | Time fiber T^1 | 1 | 0 | 1 |
-| Normal shadow S^11 | 11 | 11 | 0 |
-| Mirror shadow S^11 | 11 | 11 | 0 |
-| 12x Bridge B^{(2,0)} | 2 | 2 | 0 |
-| **Total** | **26** | **24** | **1** |
+| 12× Bridge pairs B_i^{(2,0)} | 24 | 24 | 0 |
+| **Total (Bulk)** | **25** | **24** | **1** |
+
+**Shadow Creation via Coordinate Selection:**
+| Shadow | Receives | Resulting Signature |
+|--------|----------|---------------------|
+| Normal | x_i from each pair + T^1 | 13D(12,1) |
+| Mirror | y_i from each pair + T^1 | 13D(12,1) |
 
 Signature balance: (24,1) - unified time framework.
 

@@ -383,7 +383,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime with signature (24,1) plus Euclidean bridge. After OR reduction, we obtain dual (11,1) shadows with unified time. Each component has specific physical meaning:"
+                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 25D spacetime with signature (24,1) = 12×(2,0) + (0,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. Each component has specific physical meaning:"
             ),
             ContentBlock(
                 type="heading",
@@ -407,7 +407,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The covariant Dirac operator: Γ^M D_M where M runs over all 26 dimensions (effective dual shadows after OR reduction). Γ^M are 4096x4096 matrices in 26D Cl(24,1), 64x64 in effective dual shadow Cl(11,1)."
+                content="The covariant Dirac operator: Γ^M D_M where M runs over all 25 dimensions (effective dual shadows after OR reduction). Γ^M are 4096x4096 matrices in 25D Cl(24,1), 64x64 in effective dual shadow Cl(12,1)."
             ),
             ContentBlock(
                 type="heading",
@@ -445,15 +445,15 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="In full 26D with signature (24,1), the gamma matrices Γ^M form a representation of the Clifford algebra Cl(24,1) with dimension 2^12 = 4096. Upon OR reduction to dual shadows, we obtain the effective Cl(11,1) algebra:"
+                content="In full 25D with signature (24,1) = 12×(2,0) + (0,1), the gamma matrices Γ^M form a representation of the Clifford algebra Cl(24,1) with dimension 2^12 = 4096. Upon OR reduction (bridge pairs WARP to create shadows), we obtain the effective Cl(12,1) algebra:"
             ),
             ContentBlock(
                 type="heading",
-                content="Dimensional Reduction: Cl(24,1) → Cl(11,1)"
+                content="Dimensional Reduction: Cl(24,1) → Cl(12,1)"
             ),
             ContentBlock(
                 type="paragraph",
-                content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The OR reduction produces dual (11,1) shadows with unified time from (24,1) plus Euclidean bridge."
+                content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time)."
             ),
             ContentBlock(
                 type="paragraph",
@@ -472,7 +472,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Dimensional Reduction: Cl(24,1) → Cl(12,1)",
-                content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The OR reduction produces dual (11,1) shadows with unified time from (24,1) plus Euclidean bridge."
+                content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time)."
             ),
         ])
 
@@ -708,7 +708,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,1) plus Euclidean bridge. This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_perp operator producing dual (11,1) shadows with unified time."
+                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 25D spacetime with signature (24,1) = 12×(2,0) + (0,1). This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_perp operator: 12 bridge pairs WARP to create dual 13D(12,1) shadows."
             ),
             ContentBlock(
                 type="heading",
@@ -722,7 +722,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Dual-Shadow Physics Framework",
-                content="This action is formulated in the full 26D spacetime with signature (24,1) plus Euclidean bridge. The OR reduction via R_perp operator acts on the embedding coordinates X^M(ξ), producing dual (11,1) shadows with shared time while maintaining covariance."
+                content="This action is formulated in the full 25D spacetime with signature (24,1) = 12×(2,0) + (0,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time) while maintaining covariance."
             ),
             ContentBlock(
                 type="heading",
@@ -738,7 +738,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R_perp: dual (11,1) shadows emerge with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
+                content="5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R_perp: 12 bridge pairs WARP to create dual 13D(12,1) shadows with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
             ),
             ContentBlock(
                 type="heading",
@@ -746,7 +746,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="3 spatial dimensions in dual (11,1) shadow with shared unified time. Contributes to dark sector structure."
+                content="3 spatial dimensions in dual 13D(12,1) shadow with shared unified time. Contributes to dark sector structure."
             ),
             ContentBlock(
                 type="heading",
@@ -754,7 +754,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="3 spatial dimensions in dual (11,1) shadow with shared unified time. Second dark sector component."
+                content="3 spatial dimensions in dual 13D(12,1) shadow with shared unified time. Second dark sector component."
             ),
             ContentBlock(
                 type="heading",

@@ -64,7 +64,7 @@ def create_descent_chain_diagram():
     ax.add_patch(box_normal)
     ax.text(2.75, 6.1, 'Normal Shadow', ha='center', va='center',
             fontsize=11, fontweight='bold', color='white')
-    ax.text(2.75, 5.7, '(11,1)', ha='center', va='center', fontsize=10, color='#ECF0F1')
+    ax.text(2.75, 5.7, '13D(12,1)', ha='center', va='center', fontsize=10, color='#ECF0F1')
     ax.text(2.75, 5.35, r'$b_3 = 12$', ha='center', va='center', fontsize=9, color='#ECF0F1')
 
     # Euclidean Bridge (center)
@@ -82,7 +82,7 @@ def create_descent_chain_diagram():
     ax.add_patch(box_mirror)
     ax.text(11.25, 6.1, 'Mirror Shadow', ha='center', va='center',
             fontsize=11, fontweight='bold', color='white')
-    ax.text(11.25, 5.7, '(11,1)', ha='center', va='center', fontsize=10, color='#ECF0F1')
+    ax.text(11.25, 5.7, '13D(12,1)', ha='center', va='center', fontsize=10, color='#ECF0F1')
     ax.text(11.25, 5.35, r'$b_3 = 12$', ha='center', va='center', fontsize=9, color='#ECF0F1')
 
     # OR Reduction connections

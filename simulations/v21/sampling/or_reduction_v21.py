@@ -21,20 +21,20 @@ Dedicated To:
 """
 
 # =============================================================================
-# ISSUE 4 RESOLUTION (v21.1): FIBERED TIME STRUCTURE
+# ISSUE 4 RESOLUTION (v22): FIBERED TIME STRUCTURE
 # =============================================================================
 # OR reduction operates on SPATIAL coordinates only. Time is fibered.
 #
-# The v21.1 framework clarifies that:
+# The v22 framework clarifies that:
 #   - Time T^1 is the shared fiber base with signature (0,1)
-#   - Shadows are SPATIAL manifolds: S_normal^11 (11,0) and S_mirror^11 (11,0)
-#   - The Euclidean bridge B^2 is purely spatial (2,0)
+#   - 12×(2,0) bridge pairs WARP to create dual 13D(12,1) shadows
+#   - Each shadow: 12 spatial (from bridge coordinate selection) + 1 shared time
 #
-# Correct decomposition:
-#   M^26 = T^1 ×_fiber (S_normal^11 ⊕ S_mirror^11 ⊕ B^2)
+# v22 decomposition:
+#   25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows via OR coordinate selection
 #
-# The OR operator R_perp acts on the 2D Euclidean bridge coordinates (y1, y2),
-# which are SPATIAL. Time evolution is shared globally across both shadows.
+# The OR operator R_perp acts on each (2,0) bridge pair, selecting coordinates
+# for normal vs mirror shadow. Time evolution is shared globally across both shadows.
 # This ensures:
 #   1. No temporal paradoxes from cross-shadow sampling
 #   2. Consistent causal structure (single time direction)

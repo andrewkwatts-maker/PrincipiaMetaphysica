@@ -13,7 +13,7 @@ v22 KEY DIMENSIONAL CASCADE:
     Level 0: 26D (24,1) Ancestral bulk - UNIFIED TIME
     Level 1: M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) - 12 PAIRS
              24 spatial dimensions decompose into 12 × 2D Euclidean pairs
-    Level 2: Each pair bridges normal/mirror shadow (11,0) + (11,0)
+    Level 2: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows
     Level 3: 7D (7,0) per shadow - G2 HOLONOMY (Riemannian)
     Level 4: 4D (3,1) observable - SPACETIME
 

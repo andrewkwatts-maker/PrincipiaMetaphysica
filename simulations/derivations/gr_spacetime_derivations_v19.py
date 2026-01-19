@@ -7,18 +7,17 @@ This module provides comprehensive derivations showing how 4D General Relativity
 and spacetime geometry emerge from the 26D master action through dimensional
 reduction over G2 holonomy manifolds.
 
-DERIVATION CHAIN (v21):
+DERIVATION CHAIN (v22):
 -----------------------
-1. 26D Master Action with vielbein formalism (signature (24,1))
+1. 25D Master Action with vielbein formalism (signature (24,1))
 2. Metric tensor from vielbein: g_munu = eta_AB e^A_mu e^B_nu
 3. Spin connection and torsion-free condition
 4. Riemann/Ricci tensor construction
-5. v21 Dimensional reduction:
-   26D(24,1) -> T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2) -> 4D(3,1)
-   - T^1: Unified time (0,1) - shared fiber base
-   - S_normal^11: Normal shadow SPATIAL (11,0)
-   - S_mirror^11: Mirror shadow SPATIAL (11,0)
-   - B^2: Euclidean bridge (2,0) - positive-definite
+5. v22 Dimensional reduction:
+   25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1) -> 4D(3,1)
+   - (0,1): Shared unified time fiber
+   - 12x(2,0): 12 Euclidean bridge pairs
+   - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
 6. Einstein-Hilbert action emergence
 7. Newton's constant from G2 compactification volume
 8. Einstein field equations from variation
@@ -180,13 +179,12 @@ class GRSpacetimeDerivationsV19(SimulationBase):
     5. Newton's constant is fixed by G2 compactification geometry
     6. Einstein field equations follow from variational principle
 
-    v21 FRAMEWORK:
-    Structure: M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
-    - T^1: Unified time (0,1) - shared fiber base
-    - S_normal^11: Normal shadow SPATIAL (11,0)
-    - S_mirror^11: Mirror shadow SPATIAL (11,0)
-    - B^2: Euclidean bridge (2,0) - positive-definite
-    Dimensional check: 1 + 11 + 11 + 2 = 26 EXACT
+    v22 FRAMEWORK:
+    Structure: 25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+    - (0,1): Shared unified time fiber
+    - 12x(2,0): 12 Euclidean bridge pairs
+    - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
+    Dimensional check: 12x2 + 1 = 25 EXACT
 
     The derivations follow Carroll's GR Notes and eigenchris pedagogy for
     maximum clarity while maintaining mathematical rigor.
@@ -202,18 +200,17 @@ class GRSpacetimeDerivationsV19(SimulationBase):
         self.D_7 = D_G2
         self.D_4 = D_SPACETIME
 
-        # Signature - v21 dual-shadow structure
-        # v21 FRAMEWORK: M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
+        # Signature - v22 dual-shadow structure
+        # v22 FRAMEWORK: 25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
         # Components:
-        #   T^1: Unified time (0,1) - shared fiber base
-        #   S_normal^11: Normal shadow SPATIAL (11,0)
-        #   S_mirror^11: Mirror shadow SPATIAL (11,0)
-        #   B^2: Euclidean bridge (2,0) - positive-definite
-        # Dimensional check: 1 + 11 + 11 + 2 = 26 EXACT
-        self.sig_26 = (24, 1)  # (spatial, temporal) - v21: unified time
-        self.sig_shadow = (11, 0)  # v21: Shadow is SPATIAL (time shared via T^1)
-        self.sig_bridge = (2, 0)   # Euclidean bridge connecting shadows - v21
-        self.sig_time = (0, 1)     # Shared unified time - v21 NEW
+        #   (0,1): Shared unified time fiber
+        #   12x(2,0): 12 Euclidean bridge pairs
+        #   2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
+        # Dimensional check: 12x2 + 1 = 25 EXACT
+        self.sig_25 = (24, 1)  # (spatial, temporal) - v22: unified time
+        self.sig_shadow = (12, 1)  # v22: Shadow is 13D (12 spatial + 1 shared time)
+        self.sig_bridge = (2, 0)   # Each of 12 Euclidean bridge pairs - v22
+        self.sig_time = (0, 1)     # Shared unified time - v22
         self.sig_7 = (7, 0)    # G2 (Riemannian)
         self.sig_4 = (3, 1)    # Minkowski
 

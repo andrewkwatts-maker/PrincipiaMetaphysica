@@ -5,8 +5,8 @@ PRINCIPIA METAPHYSICA v22.0 - Thermal Time Hypothesis
 
 # v22 NOTE: The thermal time hypothesis is preserved in v22 framework with 12-pair
 # breathing aggregation. v22 uses (24,1) signature with unified time and 12×(2,0)
-# Euclidean bridge pairs for timeless substrate. Dual (11,1) shadows share a common
-# time via OR reduction through R_perp operator for each of 12 pairs.
+# Euclidean bridge pairs for timeless substrate. Bridge pairs WARP to create dual
+# 13D(12,1) shadows (12 spatial + 1 shared time) via OR coordinate selection.
 
 v22 KEY CHANGE - 12-Pair Breathing Aggregation:
 -----------------------------------------------

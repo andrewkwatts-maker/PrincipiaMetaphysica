@@ -16,7 +16,7 @@ This eliminates:
 - **Closed timelike curves (CTCs)**: Single time direction prevents causal paradoxes
 - **Unitarity violations**: Standard quantum mechanics preserved
 
-The 26D bulk with (24,1) signature descends into **dual shadows** connected by a **2D Euclidean bridge**.
+The 25D bulk with (24,1) signature uses 12×(2,0) bridge pairs that warp to create **dual 13D(12,1) shadows**. Each bridge pair distributes coordinates via selection: (x_i, y_i) → x_i to Normal shadow, y_i to Mirror shadow.
 
 ---
 
@@ -26,28 +26,31 @@ The 26D bulk with (24,1) signature descends into **dual shadows** connected by a
 
 The dimensional decomposition in v21.1 uses a **fibered time structure** where time is the shared base, not duplicated per shadow:
 
-$$M^{26} = T^1 \times_{\text{fiber}} \left( S^{11}_{\text{normal}} \oplus S^{11}_{\text{mirror}} \oplus B^2 \right)$$
+$$M^{25} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right)$$
 
-where:
+where the 12×(2,0) bridge pairs warp to create shadows:
 - **Time Fiber T^1**: (0,1) - unified time shared by both shadows
-- **Normal Shadow S^11**: (11,0) - SPATIAL manifold only
-- **Mirror Shadow S^11**: (11,0) - SPATIAL manifold only
-- **Euclidean Bridge B^2**: (2,0) - positive-definite connection
+- **Normal Shadow S^12**: 13D(12,1) - receives x_i from each bridge pair
+- **Mirror Shadow S^12**: 13D(12,1) - receives y_i from each bridge pair
+- **12 Bridge Pairs B_i^{(2,0)}**: Each pair contributes 1 coordinate to each shadow
 
 **Dimensional Verification Table:**
 
 | Component | Dimensions | Spatial | Temporal |
 |-----------|------------|---------|----------|
 | Time fiber T^1 | 1 | 0 | 1 |
-| Normal shadow S^11 | 11 | 11 | 0 |
-| Mirror shadow S^11 | 11 | 11 | 0 |
-| Euclidean bridge B^2 | 2 | 2 | 0 |
-| **Total** | **26** | **24** | **1** |
+| 12× Bridge pairs B_i^{(2,0)} | 24 | 24 | 0 |
+| **Total (Bulk)** | **25** | **24** | **1** |
 
-The signature balance:
-$$\text{Signature} = (0,1) + (11,0) + (11,0) + (2,0) = (24,1) \quad \checkmark$$
+**Shadow Creation via Coordinate Selection:**
+| Shadow | Receives | Resulting Signature |
+|--------|----------|---------------------|
+| Normal | x_i from each pair + T^1 | 13D(12,1) |
+| Mirror | y_i from each pair + T^1 | 13D(12,1) |
 
-**Key Insight:** The old notation "2×(11,1)" was misleading. Each shadow is a spatial (11,0) manifold; the single time coordinate T^1 is shared as a fiber base. This resolves the apparent "2×1 = 2 times" paradox.
+The bulk signature: (24,1) from T^1 + 12×(2,0) bridges.
+
+**Key Insight:** The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows through coordinate selection. Each (x_i, y_i) pair distributes x_i to Normal and y_i to Mirror. The shared T^1 ensures unified time.
 
 ---
 
@@ -137,7 +140,7 @@ $$\text{GateIndex} = \exp(-\alpha |\nabla\phi| - \beta \cdot \text{cost})$$
 
 Each shadow compactifies independently on a G₂ manifold (7,0):
 
-$$\text{Shadow}_{(11,1)} \rightarrow M^4_{(3,1)} \times G_2(7)$$
+$$\text{Shadow}_{13D(12,1)} \rightarrow M^4_{(3,1)} \times G_2(7) \times S^2$$
 
 **Per-Shadow Generation Count:**
 $$n_{\text{gen}} = \frac{\chi_{\text{eff}}}{4 \cdot b_3} = \frac{144}{48} = 3$$
@@ -150,7 +153,7 @@ The b₃ = 24 cycles split symmetrically: 12/12 between normal and mirror shadow
 
 The full dimensional descent:
 
-$$26D_{(24,1)} \rightarrow \text{shadows} + \text{bridge} \rightarrow 2 \times G_2(7) \rightarrow 2 \times [M^4 \oplus \text{branches}]$$
+$$25D_{(24,1)} \rightarrow 12\times(2,0) \text{ bridge pairs warp to create shadows} \rightarrow 2 \times G_2(7) \rightarrow 2 \times [M^4 \oplus \text{branches}]$$
 
 Explicit condensate structure:
 
