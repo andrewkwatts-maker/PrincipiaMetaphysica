@@ -254,7 +254,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"\text{26D}_{(24,1)} \xrightarrow{\text{Euclidean bridge}} \text{13D}_{(12,1)} \xrightarrow{\text{OR reduction}} \text{Effective 4D}_{(3,1)}",
+                    content=r"\text{25D}_{(24,1)} \xrightarrow{\text{Euclidean bridge}} \text{13D}_{(12,1)} \xrightarrow{\text{OR reduction}} \text{Effective 4D}_{(3,1)}",
                     label="(A.6)"
                 ),
                 ContentBlock(
@@ -270,7 +270,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "- Bulk spacetime: 26D with signature (24,1) and fibered structure automatically satisfies Virasoro anomaly cancellation\n\n"
+                        "- Bulk spacetime: 25D with signature (24,1) and fibered structure automatically satisfies Virasoro anomaly cancellation\n\n"
                         "- Euclidean bridge: Reduces (24,1) → (12,1) via analytic continuation and OR reconstruction\n\n"
                         "- Shadow reduction: Yields 13-dimensional intermediate spacetime with unified time\n\n"
                         "- Compactification: 9 spatial dimensions (from bridge reduction) + 13 shadow dimensions compactify on T^15 x G₂(7D)\n\n"

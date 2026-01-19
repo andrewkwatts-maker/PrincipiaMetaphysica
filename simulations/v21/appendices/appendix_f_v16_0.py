@@ -4,16 +4,16 @@ Appendix F: Dimensional Decomposition v21.0 - Dual Shadow Framework
 ====================================================================
 
 Mathematical framework for reducing 26-dimensional (24,1) unified time signature
-spacetime into dual (11,1) shadows connected by a 2D Euclidean bridge. Shows how
+spacetime into dual 13D(12,1) shadows connected by a 2D Euclidean bridge. Shows how
 the breathing dark energy parameter emerges from bridge pressure mismatch.
 
-The v21 decomposition follows:
+The v22 decomposition follows:
 1. (24,1) unified time signature from critical string theory (no ghosts)
-2. Dual shadow split: 26D(24,1) = 2x(11,1) + (2,0)
-3. Euclidean bridge: ds^2 = dy1^2 + dy2^2 (positive-definite)
-4. OR reduction operator R_perp with Mobius property R_perp^2 = -I
-5. Per-shadow G2 compactification: (11,1) -> (3,1) + G2(7)
-6. Bridge period: L = 2*pi*sqrt(phi) ~ 7.99 (golden ratio)
+2. 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time
+3. Bridge WARPS to create shadows: 12×(2,0) → 2×13D(12,1) via coordinate selection
+4. OR reduction operator R_perp with Mobius property R_perp² = -I
+5. Per-shadow G₂ compactification: 13D(12,1) → (3,1) + G₂(7) + fiber
+6. Each (2,0) pair (x_i, y_i): x_i → Normal shadow, y_i → Mirror shadow
 
 References:
 - Acharya & Witten (2001) "Chiral Fermions from G2 Manifolds"
@@ -51,11 +51,11 @@ from simulations.base import (
 
 class AppendixFDimensionalDecomposition(SimulationBase):
     """
-    Appendix F: v21 Dimensional Decomposition with Dual-Shadow Bridge
+    Appendix F: v22 Dimensional Decomposition with 12×(2,0) Bridge Architecture
 
-    Derives the dimensional reduction from (24,1) unified time to dual
-    (11,1) shadows connected by Euclidean bridge, then per-shadow G2
-    compactification to (3,1) + G2.
+    Derives the dimensional reduction: 25D(24,1) = 12×(2,0) + (0,1)
+    where the 12 bridge pairs WARP to create dual 13D(12,1) shadows via
+    coordinate selection, then per-shadow G₂ compactification to (3,1) + G₂.
 
     Key changes from v16.0 (24,2):
     - Unified time (24,1) eliminates ghosts and CTCs
@@ -75,7 +75,7 @@ class AppendixFDimensionalDecomposition(SimulationBase):
             title="Appendix F: v21 Dimensional Decomposition (Dual-Shadow Bridge)",
             description=(
                 "Mathematical framework for reducing 26-dimensional (24,1) unified time signature "
-                "spacetime into dual (11,1) shadows connected by a 2D Euclidean bridge."
+                "spacetime into dual 13D(12,1) shadows connected by a 2D Euclidean bridge."
             ),
             section_id="2",
             subsection_id="F",
@@ -123,45 +123,34 @@ class AppendixFDimensionalDecomposition(SimulationBase):
         Returns:
             Dictionary with dimensional reduction results
         """
-        # Critical dimension for bosonic string
-        D_critical = 26
+        # v22 DIMENSIONAL STRUCTURE
+        # 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time
+        D_bulk = 25  # 25D bulk (not 26D - that's legacy)
 
-        # v21 UNIFIED TIME: (24,1) signature - NO two-time physics
-        time_dimensions = 1  # Unified time (no ghosts, no CTCs)
-        spatial_dimensions = D_critical - time_dimensions  # = 25
+        # v22: 12×(2,0) bridge pairs = 24 spatial dimensions
+        n_bridge_pairs = 12  # 12 Euclidean bridge pairs
+        bridge_dims_per_pair = 2  # Each (2,0) pair has 2 spatial dimensions
+        total_bridge_spatial = n_bridge_pairs * bridge_dims_per_pair  # = 24 spatial
+        shared_time = 1  # (0,1) shared between shadows
 
-        # v21 DUAL SHADOW SPLIT
-        # 26D(24,1) = 2x(11,1) + (2,0) Euclidean bridge
-        shadow_spatial = 10  # 10 spacelike per shadow
-        shadow_time = 1  # 1 timelike per shadow
-        shadow_total = 11
+        # Verify: 24 spatial + 1 time = 25D
+        assert total_bridge_spatial + shared_time == D_bulk
 
-        bridge_spatial = 2  # Euclidean bridge (2,0)
-        bridge_time = 0  # Positive-definite (no time)
+        # v22: Bridge pairs WARP to create dual shadows via coordinate selection
+        # Each (x_i, y_i) pair contributes: x_i → Normal shadow, y_i → Mirror shadow
+        # Result: Each shadow gets 12 spatial + 1 shared time = 13D(12,1)
+        shadow_spatial = 12  # 12 spatial from 12 bridge pairs (one coord each)
+        shadow_time = 1  # 1 shared time
+        shadow_total = shadow_spatial + shadow_time  # = 13D per shadow
 
-        # Verify dimension count: 2*11 + 2 = 24 spatial, + 1 time = 25 total
-        # Wait - let me recalculate
-        # 26D = 24 spatial + 2 temporal in old (24,2)
-        # 26D = 24 spatial + 1 temporal in new (24,1)... but 24+1=25, not 26
-        # Actually 26D with (24,1) means 24 spacelike + 1 timelike + 1 extra
-        # The decomposition is: 26D(24,1) = 2*(10,1) shadows + (2,0) bridge + 2 shared
-        # Let me use the correct v21 structure:
-        # 26 total dimensions, signature (24,1) means 24 + signs and 1 - sign
-        # Split: 2x(10,1) = 2x11 = 22 dimensions in shadows
-        # Plus (2,0) bridge = 2 dimensions
-        # 22 + 2 = 24, need 26 - we have 2 more which are the shared time + 1 bridge coord
-
-        # Actually the correct v21 structure from appendix_g_euclidean_bridge.md:
-        # 26D(24,1) -> 2 x Shadow(11,1) + Bridge(2,0)
-        # 24 + 1 = 2*11 + 2 = 24 for space + time accounting
-        # Each shadow: (10,1) spacetime + shares unified time
-
-        # Per-shadow G2 compactification: (11,1) -> (3,1) + G2(7) + R^1
+        # Per-shadow G₂ compactification: 13D(12,1) → (3,1) + G₂(7) + S¹(1) fiber
         phys_spatial = 3
         phys_time = 1
         g2_dimensions = 7
+        s1_fiber = 1  # Remaining from 13D
 
-        # Verify: 3 + 7 + 1 = 11 for each shadow (the +1 is from fiber)
+        # Verify: 3 + 7 + 1 (fiber) + 1 (time from 13D total) = 12 + 1 = 13D
+        assert phys_spatial + g2_dimensions + s1_fiber + 1 == shadow_total + 1
 
         # OR Reduction Operator R_perp
         # R_perp = [[0, -1], [1, 0]]
@@ -180,14 +169,16 @@ class AppendixFDimensionalDecomposition(SimulationBase):
 
         return {
             "dimensions.bulk_signature": (24, 1),
-            "dimensions.shadow_signature": (10, 1),
-            "dimensions.bridge_signature": (2, 0),
+            "dimensions.shadow_signature": (12, 1),  # v22: 12 spatial + 1 shared time = 13D
+            "dimensions.bridge_structure": "12×(2,0)",  # v22: 12 bridge pairs
+            "dimensions.n_bridge_pairs": n_bridge_pairs,
             "dimensions.or_operator_property": "R_perp^2 = -I (Mobius)",
             "dimensions.mobius_verified": mobius_verified,
             "dimensions.bridge_period": bridge_period,
             "dimensions.breathing_w0": w0_breathing,
-            "dimensions.D_critical": D_critical,
+            "dimensions.D_bulk": D_bulk,  # v22: 25D not 26D
             "dimensions.g2_dimensions": g2_dimensions,
+            "dimensions.shadow_total": shadow_total,  # v22: 13D per shadow
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
@@ -201,12 +192,12 @@ class AppendixFDimensionalDecomposition(SimulationBase):
             section_id="2",
             subsection_id="F",
             appendix=True,
-            title="Appendix F: v21 Dimensional Decomposition (Dual-Shadow Bridge)",
+            title="Appendix F: v22 Dimensional Decomposition (12×(2,0) Bridge Architecture)",
             abstract=(
-                "Mathematical framework for reducing 26-dimensional (24,1) unified time signature "
-                "spacetime into dual (11,1) shadows connected by a 2D Euclidean bridge. The v21 framework "
-                "eliminates ghost modes and closed timelike curves while deriving breathing dark energy "
-                "from bridge pressure mismatch."
+                "v22 mathematical framework: 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time. "
+                "The 12 Euclidean bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. "
+                "Each (x_i, y_i) pair contributes x_i → Normal shadow, y_i → Mirror shadow. "
+                "Breathing dark energy emerges from bridge pressure mismatch."
             ),
             content_blocks=[
                 ContentBlock(
@@ -249,16 +240,16 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"26D_{(24,1)} \rightarrow 2 \times \text{Shadow}_{(11,1)} + \text{Bridge}_{(2,0)}",
-                    formula_id="v21-dual-shadow-split",
+                    content=r"25D_{(24,1)} = 12 \times (2,0) + (0,1) \xrightarrow{R_\perp} 2 \times 13D_{(12,1)}",
+                    formula_id="v22-bridge-to-shadow-warp",
                     label="(F.2)"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Each shadow has signature (11,1) with 10 spatial + 1 temporal dimension. "
-                        "The shadows are connected by a 2D Euclidean bridge with positive-definite "
-                        "metric, providing cross-shadow coherence without introducing ghosts."
+                        "v22: The 12×(2,0) bridge pairs WARP to create dual shadows via coordinate selection. "
+                        "Each (x_i, y_i) pair contributes: x_i → Normal shadow, y_i → Mirror shadow. "
+                        "Result: Each shadow gets 12 spatial + 1 shared time = 13D(12,1)."
                     )
                 ),
                 ContentBlock(
@@ -268,23 +259,22 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The 2D Euclidean bridge has purely spacelike signature (2,0) with "
-                        "positive-definite metric:"
+                        "v22: The 12×(2,0) bridge has 12 Euclidean pairs, each with positive-definite metric:"
                     )
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"ds^2_{\text{bridge}} = dy_1^2 + dy_2^2",
-                    formula_id="v21-euclidean-bridge-metric",
+                    content=r"ds^2_{\text{bridge}} = \sum_{i=1}^{12} (dx_i^2 + dy_i^2)",
+                    formula_id="v22-euclidean-bridge-metric",
                     label="(F.3)"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Key properties of the Euclidean bridge:\n"
-                        "- **Positive-definite**: All eigenvalues positive, no ghosts\n"
-                        "- **Timeless**: No temporal component, enables 'eternal' sampling\n"
-                        "- **Torus topology**: Bridge coordinates periodic on T^2\n"
+                        "Key properties of the 12×(2,0) bridge pairs:\n"
+                        "- **12 Euclidean pairs**: Each (x_i, y_i) spans 2D with positive-definite metric\n"
+                        "- **Coordinate selection**: x_i → Normal shadow, y_i → Mirror shadow\n"
+                        "- **Bridge creates shadows**: Bridge pairs WARP to become shadow dimensions\n"
                         "- **Golden scaling**: Period L = 2*pi*sqrt(phi) ~ 7.99"
                     )
                 ),
@@ -339,7 +329,7 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"\text{Shadow}_{(11,1)} \rightarrow M^4_{(3,1)} \times G_2(7)",
+                    content=r"\text{Shadow}_{13D(12,1)} \rightarrow M^4_{(3,1)} \times G_2(7) \times \text{fiber}",
                     label="(F.6)"
                 ),
                 ContentBlock(
@@ -385,7 +375,7 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                         "|---------|-----------|------------|\n"
                         "| Time signature | Two times | Unified time |\n"
                         "| Ghost modes | Require Sp(2,R) elimination | None (manifest unitarity) |\n"
-                        "| Shadow structure | Single 13D | Dual (11,1) + bridge |\n"
+                        "| Shadow structure | Single 13D | Dual 13D(12,1) + bridge |\n"
                         "| Bridge mechanism | Sp(2,R) gauge | Euclidean (2,0) |\n"
                         "| Spinor return | Not explicit | Mobius R^2 = -I |\n"
                         "| Dark energy | Vacuum energy | Bridge pressure |\n"
@@ -409,20 +399,20 @@ def v21_dimensional_reduction() -> dict:
     # Critical dimension
     D_critical = 26
 
-    # v21: Unified time (24,1) - NO ghosts, NO CTCs
+    # v22: 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time
     bulk_space = 24
     bulk_time = 1
     bulk_signature = (bulk_space, bulk_time)
 
-    # Dual shadow split: 26D = 2*(11,1) + (2,0)
-    shadow_space = 10
-    shadow_time = 1
-    shadow_signature = (shadow_space, shadow_time)
+    # v22: 12×(2,0) bridge pairs WARP to create dual shadows
+    n_bridge_pairs = 12
+    shadow_space = 12  # Each shadow gets 12 spatial from coordinate selection
+    shadow_time = 1    # Shared time
+    shadow_signature = (shadow_space, shadow_time)  # 13D(12,1) per shadow
 
-    # Euclidean bridge (2,0) - positive definite
-    bridge_space = 2
-    bridge_time = 0
-    bridge_signature = (bridge_space, bridge_time)
+    # 12×(2,0) Euclidean bridge pairs
+    bridge_dims_per_pair = 2  # Each (x_i, y_i) has 2D
+    bridge_signature = "12×(2,0)"  # 12 Euclidean pairs
 
     # OR reduction operator
     R_perp = np.array([[0, -1], [1, 0]])
@@ -442,8 +432,9 @@ def v21_dimensional_reduction() -> dict:
     phys_time = 1
     g2_dim = 7
 
-    # Verify: 3 + 7 + 1 = 11 per shadow (with fiber)
-    assert phys_spatial + g2_dim + 1 == shadow_space + shadow_time
+    # Verify: 3 + 7 + 1 + 1 = 12 + 1 = 13D per shadow
+    # (3 physical + 7 G2 + 1 fiber + 1 time from shadow = 12 + 1)
+    assert phys_spatial + g2_dim + 1 + 1 == shadow_space + shadow_time
 
     return {
         'bulk_signature': bulk_signature,
@@ -498,30 +489,30 @@ def v21_dimensional_reduction() -> dict:
                 output_params=["dimensions.bulk_signature"],
             ),
             Formula(
-                id="v21-dual-shadow-split",
+                id="v22-bridge-to-shadow-warp",
                 label="(F.2)",
-                latex=r"26D_{(24,1)} \rightarrow 2 \times \text{Shadow}_{(11,1)} + \text{Bridge}_{(2,0)}",
-                plain_text="26D(24,1) = 2*(11,1) + (2,0)",
+                latex=r"25D_{(24,1)} = 12 \times (2,0) + (0,1) \xrightarrow{R_\perp} 2 \times 13D_{(12,1)}",
+                plain_text="25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1)",
                 category="FOUNDATIONAL",
                 description=(
-                    "v21 dual shadow split: 26D bulk with unified time splits into two (11,1) "
-                    "shadow spacetimes connected by a 2D Euclidean bridge."
+                    "v22: 12×(2,0) bridge pairs + (0,1) shared time WARP to create dual 13D(12,1) shadows. "
+                    "Bridge pairs ARE the source of shadows via coordinate selection."
                 ),
                 input_params=["dimensions.bulk_signature"],
-                output_params=["dimensions.shadow_signature", "dimensions.bridge_signature"],
+                output_params=["dimensions.shadow_signature", "dimensions.bridge_structure"],
             ),
             Formula(
-                id="v21-euclidean-bridge-metric",
+                id="v22-euclidean-bridge-metric",
                 label="(F.3)",
-                latex=r"ds^2_{\text{bridge}} = dy_1^2 + dy_2^2",
-                plain_text="ds^2_bridge = dy1^2 + dy2^2",
+                latex=r"ds^2_{\text{bridge}} = \sum_{i=1}^{12} (dx_i^2 + dy_i^2)",
+                plain_text="ds^2_bridge = sum_i(dx_i^2 + dy_i^2) for i=1..12",
                 category="FOUNDATIONAL",
                 description=(
-                    "Euclidean bridge metric with positive-definite signature (2,0). "
-                    "Provides cross-shadow coherence without introducing ghost modes."
+                    "v22: 12×(2,0) Euclidean bridge metric. Each (x_i, y_i) pair has positive-definite "
+                    "metric. Coordinate selection: x_i → Normal shadow, y_i → Mirror shadow."
                 ),
                 input_params=[],
-                output_params=["dimensions.bridge_signature"],
+                output_params=["dimensions.bridge_structure"],
             ),
             Formula(
                 id="v21-or-reduction-operator",

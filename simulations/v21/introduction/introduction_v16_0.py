@@ -662,8 +662,8 @@ class IntroductionV16(SimulationBase):
                     "<strong>O</strong> (mixed structure, requires supersymmetry, 7D G₂ holonomy). "
                     "D = 13 = 1 + 4 + 8 = <strong>R</strong> + <strong>H</strong> + <strong>O</strong> "
                     "(emergent thermal time, quaternionic spacetime, full 8D octonionic geometry, "
-                    "<strong>no supersymmetry required</strong>). D = 26 with (24,1) signature splits into "
-                    "dual (11,1) shadows + (2,0) Euclidean bridge, predicting w₀ = -1 + 1/b₃ = -23/24 "
+                    "<strong>no supersymmetry required</strong>). D = 25 with (24,1) = 12×(2,0) + (0,1): "
+                    "12 bridge pairs warp to create 2×13D(12,1) shadows, predicting w₀ = -1 + 1/b₃ = -23/24 "
                     "from bridge pressure mismatch."
                 )
             ),

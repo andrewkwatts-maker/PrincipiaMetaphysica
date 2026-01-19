@@ -8,7 +8,7 @@ interface for integration with the unified simulation pipeline.
 
 Provides framework overview and introduction content for Principia Metaphysica:
 - Division algebra decomposition D = 1 + 4 + 8 = 13
-- Dimensional hierarchy 26D -> 13D -> 4D
+- Dimensional hierarchy 25D -> 13D -> 4D (v22 framework)
 - Hurwitz theorem constraints
 - G2 manifold framework introduction
 - Historical context and theoretical background
@@ -89,7 +89,7 @@ class IntroductionSimulationV18(SimulationBase):
             title="Introduction to Principia Metaphysica",
             description=(
                 "Framework overview and theoretical foundations for PM v17.2. "
-                "Introduces the 26D -> 13D -> 4D dimensional hierarchy, "
+                "Introduces the 25D -> 13D -> 4D dimensional hierarchy (v22),"
                 "division algebra constraints, and G2 manifold geometry."
             ),
             section_id="1",
@@ -181,21 +181,21 @@ class IntroductionSimulationV18(SimulationBase):
             Formula(
                 id="dimensional-hierarchy-v18",
                 label="(1.2)",
-                latex=r"26D_{(24,2)} \xrightarrow{\text{Sp}(2,\mathbb{R})} 13D_{(12,1)} \xrightarrow{G_2} 4D_{(3,1)}",
-                plain_text="26D_(24,2) --[Sp(2,R)]--> 13D_(12,1) --[G2]--> 4D_(3,1)",
+                latex=r"25D_{(24,1)} \xrightarrow{\text{OR reduction}} 13D_{(12,1)} \xrightarrow{G_2} 4D_{(3,1)}",
+                plain_text="25D_(24,1) --[OR reduction]--> 13D_(12,1) --[G2]--> 4D_(3,1)",
                 category="GEOMETRIC",
                 description=(
-                    "Dimensional hierarchy from 26D bulk through observable 13D shadow "
-                    "to 4D spacetime via G2 compactification."
+                    "Dimensional hierarchy from 25D bulk through observable 13D shadow "
+                    "to 4D spacetime via G2 compactification (v22 framework)."
                 ),
                 inputParams=[],
-                outputParams=["dimensions.D_bulk", "dimensions.D_after_sp2r", "dimensions.D_observable"],
+                outputParams=["dimensions.D_bulk", "dimensions.D_after_or", "dimensions.D_observable"],
                 derivation={
                     "steps": [
-                        "26D bulk with signature (24,2) - bosonic string critical dimension",
-                        "Sp(2,R) gauge-fixes two time dimensions, leaving 13D shadow",
+                        "25D bulk with signature (24,1) - unified time, no ghosts/CTCs",
+                        "OR reduction via R_perp produces dual 13D(12,1) shadows",
                         "G2 compactification on 7D TCS manifold yields 4D observable",
-                        "Signature preserved: (24,2) -> (12,1) -> (3,1)"
+                        "Signature preserved: (24,1) -> (12,1) -> (3,1)"
                     ]
                 },
                 terms={
@@ -417,7 +417,7 @@ class IntroductionSimulationV18(SimulationBase):
                 subsection_id=None,
                 title="Introduction to Principia Metaphysica",
                 abstract=(
-                    "Framework overview introducing the 26D -> 13D -> 4D dimensional "
+                    "Framework overview introducing the 25D -> 13D -> 4D dimensional"
                     "hierarchy, division algebra constraints from Hurwitz theorem, and "
                     "G2 manifold geometry for particle physics derivations."
                 ),

@@ -95,7 +95,7 @@ class AppendixBSumRule(SimulationBase):
         chi = registry.get("topology.chi_eff", default=144)
         vol_v7 = registry.get("topology.vol_v7", default=1.0)
 
-        # Φ_G2 is the total invariant from 26D ancestral bulk
+        # Φ_G2 is the total invariant from 25D ancestral bulk
         phi_g2 = vol_v7 * chi / b3  # Simplified geometric constraint
 
         return {
@@ -304,7 +304,7 @@ class AppendixBSumRule(SimulationBase):
                 terms={
                     "ωₙ": "Weighting factor from node lattice position",
                     "Rₙ": "Residue value at node n",
-                    "Φ_G₂": "Total geometric invariant from 26D bulk",
+                    "Φ_G₂": "Total geometric invariant from 25D bulk",
                 }
             ),
             Formula(
@@ -368,7 +368,7 @@ class AppendixBSumRule(SimulationBase):
                 name="G₂ Geometric Invariant",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Total invariant Φ_G₂ from ancestral 26D bulk",
+                description="Total invariant Φ_G₂ from ancestral 25D bulk",
                 no_experimental_value=True,
             ),
         ]

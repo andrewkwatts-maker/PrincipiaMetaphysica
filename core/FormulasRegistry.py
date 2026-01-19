@@ -184,7 +184,7 @@ class FormulasRegistry:
     # DERIVED GNOSTIC CONSTANTS
     # ===========================================================================
     SYZYGY_GAP = 18          # The Syzygy: Christos - Sophia = 153 - 135
-    HOROS = 26               # The Horos: Dimensional Boundary (26D action frame)
+    HOROS = 25               # The Horos: Dimensional Boundary (25D bulk frame)
     DECAD = 10               # The Decad: Residual Pressure Key (163 - 153 = 10)
 
     # ===========================================================================
@@ -248,7 +248,7 @@ class FormulasRegistry:
     #
     # THEORETICAL BASIS: 12x(2,0) PAIRED BRIDGE SYSTEM
     # ------------------------------------------------
-    # The v22 framework has TWO 11D shadow sectors connected by Euclidean bridges.
+    # The v22 framework has TWO 13D shadow sectors connected by Euclidean bridges.
     # Each shadow independently compactifies on G2 with effective Euler characteristic:
     #
     #   chi_eff_shadow = b3^2/8 = 576/8 = 72
@@ -638,15 +638,15 @@ class FormulasRegistry:
         # =======================================================================
         # DIMENSIONAL REDUCTION CHAIN (v20.2 - Gemini peer-reviewed 2026-01-14)
         # =======================================================================
-        # 5-LEVEL SEMANTIC NAMING CONVENTION (v21.0 - Dual-Shadow with Euclidean Bridge):
-        #   - ANCESTRAL: Original 25D bosonic frame (Level 0) - Signature (24,1)
-        #   - SHADOW:    Dual 11D shadows + 2D bridge (Level 1) - 2×(11,1) + (2,0)
+        # 5-LEVEL SEMANTIC NAMING CONVENTION (v22.0 - 12×(2,0) Bridge Architecture):
+        #   - ANCESTRAL: 25D bulk (Level 0) - Signature (24,1) = 12×(2,0) + (0,1)
+        #   - SHADOW:    Dual 13D shadows (Level 1) - 12×(2,0) warps/maps to 2×13D(12,1)
         #   - G2:        7D G2 holonomy manifold per shadow (Level 2) - Signature (7,0) RIEMANNIAN
         #   - EXTERNAL:  6D external/observable bulk (Level 3) - Signature (5,1)
         #   - VISIBLE:   4D observable spacetime (Level 4) - Signature (3,1)
         #
-        # v21 Chain: 25D(24,1) → [Dual Shadow] → 2×(11,1) + Bridge(2,0) → [G2] → 4D(3,1)
-        # Note: Replaces Sp(2,R) two-time physics with Euclidean bridge mechanism
+        # v22 Chain: 25D(24,1) = 12×(2,0)+(0,1) → [warp] → 2×13D(12,1) → [G2] → 4D(3,1)
+        # Key: 12×(2,0) bridge pairs ARE what become the dual shadows, not separate from them
         #
         # LEVEL 0: ANCESTRAL (Bosonic String Theory - starting point)
         # The 25D ancestral frame from which all physics descends
@@ -660,13 +660,14 @@ class FormulasRegistry:
         self._D_time_2 = 2                # Legacy: Keep for backward compatibility
         self._D_time_1_unified = self._D_ancestral_time  # v21: Unified time
 
-        # LEVEL 1: SHADOW (v21: Dual Shadow + Euclidean Bridge)
-        # v21: 25D descends into dual shadows connected by 2D Euclidean bridge
-        # Each shadow has (11,1) signature; bridge has (2,0) positive-definite
-        self._D_shadow_total = 13         # Total shadow spacetime dimensions (legacy)
-        self._D_shadow_space = 12         # Shadow spatial dimensions (legacy)
-        self._D_shadow_time = 1           # Shadow temporal (unified)
-        # v21 Signature: 2×(11,1) + (2,0) = 24 spatial + 1 temporal = (24,1)
+        # LEVEL 1: SHADOW (v22: 12×(2,0) Bridge Pairs Warp to Dual Shadows)
+        # v22: The 12×(2,0) bridge pairs map/warp to create dual 13D(12,1) shadows
+        # Each bridge pair (2,0) connects corresponding spatial dimensions between shadows
+        # The single (0,1) time is shared across both shadows
+        self._D_shadow_total = 13         # Total shadow spacetime dimensions
+        self._D_shadow_space = 12         # Shadow spatial (from 12 bridge pairs)
+        self._D_shadow_time = 1           # Shadow temporal (shared from bulk)
+        # v22: 12×(2,0) → 2×(12,0) spatial per shadow + shared (0,1) = 2×13D(12,1)
         # Legacy aliases (for backward compatibility):
         self._D_brane_total = self._D_shadow_total
         self._D_brane_space = self._D_shadow_space
@@ -722,16 +723,18 @@ class FormulasRegistry:
         # D_external(6) = D_visible(4) + 2 (Kaluza-Klein reduction)
 
         # =======================================================================
-        # v21.0 ALTERNATIVE: (24,1) DUAL-SHADOW WITH EUCLIDEAN BRIDGE
+        # v22.0: 12×(2,0) BRIDGE ARCHITECTURE
         # =======================================================================
-        # v21 refactors from (24,2) two-time to (24,1) unified time:
+        # v22 uses 12×(2,0) bridge pairs that warp/map to dual shadows:
         #
-        # NEW CHAIN: 25D(24,1) -> 2xShadow(11,1) + Bridge(2,0) -> 2xG2(7,0) -> 4D
+        # STRUCTURE: 25D(24,1) = 12×(2,0) + (0,1) → [warp] → 2×13D(12,1)
         #
-        # Key differences from v16/v20 (24,2) framework:
-        #   - Unified time (24,1): Eliminates ghosts/CTCs without Sp(2,R)
-        #   - Euclidean bridge (2,0): 2D positive-definite shared substrate
-        #   - Dual shadows: Normal + Mirror with balanced b3 splits (12/12)
+        # Key insight: The bridge pairs ARE what become the shadows:
+        #   - 12×(2,0) = 12 Euclidean bridge pairs (24 spatial dimensions total)
+        #   - Each pair connects corresponding spatial dimensions between shadows
+        #   - (0,1) = shared temporal dimension
+        #   - Warping: 12×(2,0) → 2×(12,0) gives 12 spatial per shadow
+        #   - Adding shared time: 2×(12,0) + (0,1) = 2×13D(12,1)
         #   - OR reduction: R_perp = [[0,-1],[1,0]] for cross-shadow sampling
         #   - Breathing DE: rho_breath = |T_normal - R_perp T_mirror|
         #
@@ -1033,7 +1036,7 @@ class FormulasRegistry:
     # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.2)
     # =========================================================================
     # 5-level chain: ANCESTRAL → SHADOW → G2 → EXTERNAL → VISIBLE
-    # v21 Chain: 25D(24,1) → [bridge] → 2×12D(11,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # v21 Chain: 25D(24,1) → [bridge] → 2×13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
     # Legacy numeric names preserved for backward compatibility
 
     # ----- LEVEL 0: ANCESTRAL (25D Bosonic) -----
@@ -1071,7 +1074,7 @@ class FormulasRegistry:
     # ----- LEVEL 1: SHADOW (2×12D via Euclidean bridge) -----
     @property
     def D_shadow_total(self) -> int:
-        """Level 1 (SHADOW): 12D per shadow (11,1) via v21 bridge."""
+        """Level 1 (SHADOW): 13D per shadow (12,1) via v21 bridge."""
         return self._D_shadow_total
 
     @property

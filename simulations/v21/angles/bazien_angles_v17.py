@@ -36,7 +36,7 @@ class BazienAngles:
     """
     Bazien angles from shadow brane intersection and parameter locking.
 
-    These angles arise in the 26D -> 13D -> 7D -> 4D dimensional descent,
+    These angles arise in the 25D -> 13D -> 7D -> 4D dimensional descent,
     governing which ancestral roots project to observable residues.
     """
 
