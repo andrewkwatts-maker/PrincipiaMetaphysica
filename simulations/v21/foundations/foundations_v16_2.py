@@ -499,7 +499,7 @@ class FoundationsV16_2(SimulationBase):
                 type="note",
                 content=(
                     "<h4>The Descent Path Summary</h4>"
-                    "<p>26D(24,1) → Dual (11,1) [Euclidean Bridge + OR Reduction] → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p>"
+                    "<p>25D(24,1) = 12×(2,0) + (0,1) → [Bridge pairs WARP via OR] → 2×13D(12,1) → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p>"
                     "<p>At each stage, the 'Symmetry Budget' is conserved, and the 125 residues are "
                     "progressively 'extracted' as the unique spectral eigenvalues of the descended geometry.</p>"
                 ),

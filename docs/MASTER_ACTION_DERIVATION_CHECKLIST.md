@@ -14,10 +14,12 @@ The Pneuma Action (25D with v21+ Euclidean bridge) is:
 S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_moduli + L_bridge]
 ```
 
-**Dimensional Reduction Chain (v21+):**
+**Dimensional Reduction Chain (v22+):**
 ```
-25D(24,1) → [dual-shadow + bridge] → 2×(11,0) + T¹ + B²(2,0) → [G2(7,0)] → 4D(3,1)
+25D(24,1) → [12×(2,0) bridge pairs warp to create shadows] → dual 13D(12,1) shadows + T¹ → [G2(7,0)] → 4D(3,1)
 ```
+
+**Bridge Coordinate Selection:** Each (x_i, y_i) pair → x_i to Normal shadow, y_i to Mirror shadow
 
 **Historical Note**: The v16-v20 framework used 26D(24,2) with Sp(2,R) gauge fixing. See Appendix A for historical reference.
 
@@ -199,7 +201,7 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 
 | ID | Validation Item | Status | Notes |
 |----|-----------------|--------|-------|
-| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_25=(24,1), sig_shadow=(11,0), sig_bridge=(2,0), T¹=(0,1) |
+| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_25=(24,1), sig_shadow=13D(12,1), 12×(2,0) bridges, T¹=(0,1) |
 | v21-02 | Fermion N_gen=3 preserved | ✅ COMPLETE | Topological: b3/8=24/8=3, spinor dim change irrelevant |
 | v21-03 | QED signature independence | ✅ COMPLETE | Section B.9.4 added to appendix_b |
 | v21-04 | QCD dual-shadow clarification | ✅ COMPLETE | Section C.5.4 added to appendix_c |

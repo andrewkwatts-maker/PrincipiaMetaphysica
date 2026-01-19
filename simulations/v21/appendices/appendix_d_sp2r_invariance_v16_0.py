@@ -14,7 +14,7 @@ Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0
                     ║  Sp(2,R) gauge-fixing entirely.                          ║
                     ║                                                          ║
                     ║  The v21 framework uses:                                 ║
-                    ║  - Dual (11,1) shadows connected by Euclidean bridge     ║
+                    ║  - Dual 13D(12,1) shadows via bridge WARP mechanism      ║
                     ║  - OR reduction operator R_perp with R_perp^2 = -I       ║
                     ║  - NO ghost modes, NO CTCs (manifest unitarity)          ║
                     ║                                                          ║

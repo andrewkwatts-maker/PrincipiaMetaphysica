@@ -15,8 +15,8 @@ from the 26D master action via Kaluza-Klein reduction over G2 manifolds.
 v22.0: 12-Pair (2,0) Bridge System
 ===================================
 Key structural change from v21:
-- v21 used: 1x(2,0) bridge + 2x(11,0) shadows
-- v22 uses: 12x(2,0) paired bridges with distributed OR reduction
+- v21 used: 1x(2,0) bridge + 2x(11,0) shadows (LEGACY)
+- v22 uses: 12x(2,0) + (0,1) WARP to create 2x13D(12,1) shadows
 
 The 12-pair system provides:
 - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)

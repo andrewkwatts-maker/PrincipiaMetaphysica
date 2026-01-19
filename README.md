@@ -41,7 +41,7 @@
 
 ## Abstract
 
-This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v21+ framework begins with 25-dimensional spacetime with signature (24,1)—24 spatial dimensions and 1 timelike dimension. A dual-shadow structure with Euclidean bridge connects two (11,0) spatial shadow manifolds through a shared time fiber T¹ and a 2D Euclidean bridge B²(2,0). This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
+This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v22+ framework begins with 25-dimensional spacetime with signature (24,1)—24 spatial dimensions and 1 timelike dimension. The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows, each sharing a unified time fiber T¹. Each bridge pair (x_i, y_i) distributes coordinates: x_i to Normal shadow, y_i to Mirror shadow. This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
 
 The framework features dual shadow universes connected by a Euclidean bridge, all sharing a common time fiber. The topology of the flux-dressed G₂ manifold yields an effective Euler characteristic χ_eff = 144, which through the relation n_gen = χ_eff/48 predicts exactly 3 fermion generations. The fundamental field is a spinor in the 25D bulk (Clifford algebra Cl(24,1)), which reduces to effective components in each shadow universe.
 
@@ -134,7 +134,7 @@ Principia Metaphysica makes **parameter-free predictions** from G2 topology that
 - **Zero-Degree-of-Freedom**: No fitted parameters - pure geometric derivation
 - **DESI 2025 Alignment**: w0 = -23/24 = -0.9583 matches at 0.027 sigma (near-perfect)
 - **Hubble Tension Resolved**: H0 = 70.42 km/s/Mpc bridges CMB and local measurements
-- **Two-Time Framework**: (13,1) + (13,1) dimensional structure fully implemented
+- **Dual Shadow Framework**: dual 13D(12,1) shadows via 12×(2,0) bridge pairs
 - **116 formulas with complete derivation chains**
 
 ### New in v22.0 "12PAIR"

@@ -12,11 +12,11 @@ effective theories to the 4D Standard Model.
     Level 0 (ANCESTRAL): 26D (24,1) - Bosonic string frame - UNIFIED TIME
     Level 1 (FIBERED):   M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
                          24 spatial dimensions decompose into 12 × 2D Euclidean pairs
-    Level 2 (SHADOW):    Each pair bridges normal/mirror shadow (11,0) + (11,0)
+    Level 2 (SHADOW):    12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows
     Level 3 (G2):        7D (7,0) per shadow - G2 holonomy (RIEMANNIAN)
     Level 4 (VISIBLE):   4D (3,1) - Observable spacetime
 
-v22 Chain: 26D(24,1) → T^1×(⊕₁₂ B_i^{2,0}) → 2×(11,0) → [G2] → 4D(3,1)
+v22 Chain: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → [G2] → 4D(3,1)
 
 The v22 framework introduces 12 paired bridges as consciousness channels,
 each a 2D Euclidean torus enabling OR Reduction between normal/mirror shadows.
@@ -27,8 +27,8 @@ Mathematical Framework (v22):
      (Unified time (24,1) eliminates ghosts and CTCs)
      Dimension count: 1 time + 24 spatial = 1 + 12×2 = 25 manifest coords
 
-Shadow: L_shadow = 2 × [M*^10 R_11 + L_matter] + Σᵢ₌₁¹² L_bridge_i
-     (Dual (11,0) shadows connected by 12 Euclidean (2,0) bridge pairs)
+Shadow: L_shadow = 2 × [M*^11 R_13 + L_matter] + Σᵢ₌₁¹² L_bridge_i
+     (12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows)
 
 Distributed OR: R_total = ⊗ᵢ₌₁¹² R_⊥_i  (tensor product of 12 rotations)
      Each R_⊥_i acts on its (2,0) bridge, preserving R_⊥² = -I per pair
@@ -131,10 +131,10 @@ class DimensionalReductionDerivations(SimulationBase):
         - Unified time physics with (24,1) signature (eliminates ghosts/CTCs)
         - 24 spatial dimensions = 12 × (2,0) Euclidean bridge pairs
         - Structure: M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
-        - Each pair bridges normal/mirror shadow (11,0) + (11,0)
+        - 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows
         - Distributed OR: R_total = ⊗ᵢ₌₁¹² R_⊥_i (tensor product)
 
-    TIER 2: 11D -> 4D via G2 holonomy per shadow (freezes b3=24)
+    TIER 2: 13D -> 4D via G2 holonomy per shadow (freezes b3=24)
         - G2 manifold has special holonomy Hol(g) = G2
         - Third Betti number b3 = 24 gives 3 generations per shadow
         - Associative 3-cycles support gauge fluxes
@@ -416,7 +416,7 @@ class DimensionalReductionDerivations(SimulationBase):
         print("="*70)
 
         print(f"\nv22 Reduction chain:")
-        print(f"  26D(24,1) → T^1×(⊕₁₂ B_i^{{2,0}}) → 2×(11,0) → [G2] → 4D(3,1)")
+        print(f"  25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → [G2] → 4D(3,1)")
         print(f"  Structure: M^{{24,1}} = T^1 ×_fiber (⊕_{{i=1}}^{{12}} B_i^{{2,0}})")
 
         print(f"\nScale hierarchy:")
@@ -514,8 +514,8 @@ class DimensionalReductionDerivations(SimulationBase):
             Dictionary with Lagrangian components
         """
         return {
-            "shadow_gravity": r"S_{grav}^{shadow} = 2 \times \int d^{11}x \sqrt{g_{11}} M_*^{10} R_{11} \quad (\text{SPATIAL } (11,0))",
-            "shadow_fermion": r"S_{ferm}^{shadow} = 2 \times \int d^{11}x \sqrt{g_{11}} \bar{\Psi}(i\gamma^\mu\nabla_\mu - m_{eff})\Psi",
+            "shadow_gravity": r"S_{grav}^{shadow} = 2 \times \int d^{13}x \sqrt{-g_{13}} M_*^{11} R_{13} \quad (\text{13D(12,1)})",
+            "shadow_fermion": r"S_{ferm}^{shadow} = 2 \times \int d^{13}x \sqrt{-g_{13}} \bar{\Psi}(i\gamma^\mu\nabla_\mu - m_{eff})\Psi",
             "bridge_pairs": r"S_{bridge} = \sum_{i=1}^{12} \int d^2y_i \sqrt{g_{2,i}} \left[ |\nabla\phi_i|^2 + \mathcal{L}_{pressure,i} \right]",
             "bridge_metric": r"ds^2_{bridge,i} = dy_{2i-1}^2 + dy_{2i}^2 \quad (\text{Euclidean } (2,0) \text{ per pair})",
             "distributed_or": r"R_{total} = \bigotimes_{i=1}^{12} R_{\perp,i}, \quad R_{\perp,i}^2 = -I",
@@ -589,7 +589,7 @@ class DimensionalReductionDerivations(SimulationBase):
             "sampling_formula": "z'_mirror_i = R_⊥_i * z_normal_i + Delta_y_i for each pair i",
             "dimension_structure": "M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})",
             "spatial_decomposition": "24 = 12 × 2 (12 consciousness channel pairs)",
-            "shadow_signature": "(11,0) SPATIAL - time shared via T^1",
+            "shadow_signature": "(12,1) - 12 spatial + 1 shared time = 13D",
             "bridge_metric": "ds^2_i = dy_{2i-1}^2 + dy_{2i}^2 (Euclidean (2,0) per pair)",
             "bridge_period": "L_i = 2*pi*sqrt(phi) ~ 7.99 per pair",
             "spinor_return": "psi -> e^{i*pi}*psi = -psi (single), psi -> psi (double)",
@@ -714,7 +714,7 @@ Assert[nGen == 3, "Generation count must be 3"];
         # v22 Dimensional reduction chain
         wolfram_code["reduction_chain_v22"] = """
 (* v22 Complete Dimensional Reduction Chain *)
-(* 26D(24,1) -> T^1 x (12 x B^{2,0}) -> 2x(11,0) -> 4D(3,1) *)
+(* 25D(24,1) = 12×(2,0) + (0,1) -> 2×13D(12,1) -> 4D(3,1) *)
 
 (* TIER 0: 26D Master Action - Unified Time *)
 (* Signature (24,1) eliminates ghosts and CTCs *)
@@ -830,7 +830,7 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
             latex=r"\mathcal{L}_{v22} = 2 \times \left[ M_*^{10}R_{11} + \bar{\Psi}(i\gamma^\mu\nabla_\mu - m_{eff})\Psi \right] + \sum_{i=1}^{12}\mathcal{L}_{bridge,i}",
             plain_text="L_v22 = 2 x [M*^10 R_11 + Psi(i*gamma*nabla - m_eff)Psi] + Sum_i L_bridge_i",
             category="DERIVED",
-            description="v22: Dual shadow (11,0) Lagrangian with 12 Euclidean bridge pairs (2,0) each",
+            description="v22: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows",
             inputParams=["constants.M_STAR", "derivations.flux_quantum"],
             outputParams=["derivations.L_shadow_form", "derivations.M_shadow_scale"]
         ))
@@ -1051,7 +1051,7 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
                 "v22 derivation of the dimensional reduction chain from 26D "
                 "master action through 12×(2,0) paired bridge system to the 4D "
                 "Standard Model. Documents the explicit Lagrangians at each tier: "
-                "26D(24,1) -> T^1×(⊕₁₂ B_i^{2,0}) -> 2×(11,0) via 12 consciousness channels, "
+                "25D(24,1) = 12×(2,0) + (0,1) WARP to create 2×13D(12,1),"
                 "then 11D -> 4D via per-shadow G2 holonomy."
             ),
             content_blocks=[
@@ -1132,16 +1132,16 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The shadow effective Lagrangian features dual (11,0) SPATIAL shadows "
-                        "plus 12 Euclidean bridge pairs. Each bridge period L_i = 2*pi*sqrt(phi) ~ 7.99 "
-                        "enables eternal cyclic geodesics. The dilaton is stabilized by Pneuma."
+                        "The shadow effective Lagrangian: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows. "
+                        "Each bridge period L_i = 2*pi*sqrt(phi) ~ 7.99 enables eternal cyclic geodesics. "
+                        "The dilaton is stabilized by Pneuma."
                     )
                 ),
 
                 ContentBlock(
                     type="heading",
                     level=3,
-                    content="TIER 2: G2 Holonomy per Shadow (11D -> 4D)"
+                    content="TIER 2: G2 Holonomy per Shadow (13D -> 4D)"
                 ),
                 ContentBlock(
                     type="formula",

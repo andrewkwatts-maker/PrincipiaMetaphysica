@@ -10,7 +10,7 @@ This simulation covers:
 1. Higher-dimensional metric GMN decomposition (26D → dual shadows → 4D)
 2. Dimensional reduction of Einstein-Hilbert action
 3. The breathing mode and moduli stabilization
-4. 26D → dual (11,1) shadow projection via Euclidean bridge
+4. 26D → dual 13D(12,1) shadow projection via Euclidean bridge
 5. BPS stability & enhanced brane configuration
 6. Pneuma field reduction: 8192 → 64 components per shadow
 7. Connection to cosmological dynamics
@@ -90,7 +90,7 @@ class CosmologyIntroV16(SimulationBase):
             domain="cosmology",
             title="Deriving 4D Gravity from Kaluza-Klein Reduction",
             description=(
-                "Complete derivation of 4D gravity from 26D(24,1) → dual (11,1) shadows → 4D dimensional "
+                "Complete derivation of 4D gravity from 25D(24,1) → dual 13D(12,1) shadows → 4D dimensional"
                 "reduction via 12×(2,0) Euclidean bridge pairs, including breathing mode with 12-pair "
                 "aggregation (ρ_breath = 1/12 ∑ρ_i), BPS branes, and Pneuma field."
             ),
@@ -221,7 +221,7 @@ class CosmologyIntroV16(SimulationBase):
             title="Deriving 4D Gravity from Kaluza-Klein Reduction",
             abstract=(
                 "We derive 4D gravity from the 26-dimensional superstring framework through "
-                "Kaluza-Klein dimensional reduction. The cascade 26D(24,1) → dual (11,1) shadows → 4D proceeds via "
+                "Kaluza-Klein dimensional reduction. The cascade 25D(24,1) → dual 13D(12,1) shadows → 4D proceeds via"
                 "Euclidean bridge connection and G₂ compactification per shadow, naturally generating both gravity "
                 "and gauge fields from pure geometry. Volume modulus stabilization via racetrack "
                 "superpotential determines ε = 0.2257 dynamically, making it a prediction rather "
@@ -262,8 +262,8 @@ class CosmologyIntroV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Starting from the per-shadow Einstein-Hilbert action (one (11,1) shadow of the full "
-                        "26D(24,1) dual-shadow framework):"
+                        "Starting from the per-shadow Einstein-Hilbert action (one 13D(12,1) shadow of the full"
+                        "25D(24,1) dual-shadow framework):"
                     )
                 ),
                 ContentBlock(
@@ -329,13 +329,13 @@ class CosmologyIntroV16(SimulationBase):
                 # Subsection: 26D → Dual Shadow Projection
                 ContentBlock(
                     type="subsection",
-                    content="26D → Dual (11,1) Shadow Projection via 12×(2,0) Euclidean Bridge Pairs"
+                    content="25D → Dual 13D(12,1) Shadow Projection via 12×(2,0) Euclidean Bridge Pairs"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The v22 framework begins with a 26D spacetime with unified time signature (24,1), "
-                        "eliminating ghost modes and closed timelike curves. This splits into dual (11,1) shadows "
+                        "The v22 framework begins with a 25D spacetime with unified time signature (24,1) = 12×(2,0) + (0,1),"
+                        "eliminating ghost modes and closed timelike curves. This splits into dual 13D(12,1) shadows"
                         "connected by 12 paired (2,0) Euclidean bridges. The 12 pairs arise from b₃ = 24/2 = 12, "
                         "where each pair couples one normal-sector 3-cycle to one mirror-sector 3-cycle. "
                         "The aggregate bridge metric is ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)."
@@ -350,8 +350,8 @@ class CosmologyIntroV16(SimulationBase):
                         "ds²_{26} = G_{MN}dX^M dX^N, M,N = 0,1,...,25\n"
                         "With unified time signature (24,1): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\n"
                         "Step 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\n"
-                        "The 26D(24,1) splits into dual (11,1) shadows connected by 12 paired bridges:\n"
-                        "26D = 2×(11,1) + 12×(2,0)\n"
+                        "25D(24,1) = 12×(2,0) + (0,1) → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\n"
+                        "Each shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\n"
                         "Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})\n"
                         "WHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\n"
                         "Step 3: Per-Pair Breathing Energy Density\n"
@@ -553,7 +553,7 @@ class CosmologyIntroV16(SimulationBase):
                 derivation={
                     "steps": [
                         {"description": "Unified time structure (24,1)", "formula": r"ds²_{26} = -dt² + \sum dx_i²"},
-                        {"description": "v22: 12-pair Euclidean bridge split", "formula": r"26D(24,1) = 2\times(11,1) + 12\times(2,0)"},
+                        {"description": "v22: 12-pair Euclidean bridge split", "formula": r"25D(24,1) = 12\times(2,0) + (0,1) \rightarrow 2\times 13D(12,1)"},
                         {"description": "Dimensional structure", "formula": r"T^1 \times_{fiber} (\oplus_{i=1}^{12} B_i^{2,0})"},
                         {"description": "Aggregate metric", "formula": r"ds² = -dt² + \sum_{i=1}^{12} (dy_{1i}² + dy_{2i}²)"},
                         {"description": "Per-pair OR reduction", "formula": r"R_{\perp,i}^2 = -I \text{ (Möbius per pair)}"},
@@ -563,7 +563,7 @@ class CosmologyIntroV16(SimulationBase):
                 },
                 terms={
                     "R_⊥_i": "Per-pair OR reduction operator (90° rotation for pair i)",
-                    "(11,1)": "Per-shadow signature (10 space + 1 time)",
+                    "13D(12,1)": "Per-shadow signature (12 space + 1 time)",
                     "12×(2,0)": "12 Euclidean bridge pairs (positive-definite each)",
                     "b₃ = 24": "Associative 3-cycles, giving 12 normal/mirror pairs"
                 }

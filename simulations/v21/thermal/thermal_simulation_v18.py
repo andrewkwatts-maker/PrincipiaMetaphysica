@@ -418,7 +418,7 @@ class ThermalSimulationV18(SimulationBase):
                         "G2 manifold provides b₃ = 24 associative 3-cycles",
                         "v22: 12 pairs from b₃/2 = 24/2 = 12 normal/mirror pairs",
                         "Thermal time hypothesis: t from modular flow (unified time)",
-                        "OR reduction via R_perp_i produces dual (11,1) shadows per pair",
+                        "OR reduction via R_perp_i: 12 bridge pairs WARP to create dual 13D(12,1) shadows",
                         "12×(2,0) Euclidean bridge pairs: (y1_i, y2_i) for timeless substrate",
                         "Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})",
                         "Aggregation reduces variance: σ_eff = σ_single/√12",

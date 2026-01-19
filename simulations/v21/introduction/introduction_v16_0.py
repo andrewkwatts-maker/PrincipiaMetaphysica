@@ -9,7 +9,7 @@ Licensed under the MIT License. See LICENSE file for details.
 
 v22 COMPATIBILITY: Uses unified time (24,1) signature with Euclidean bridge.
                    4096-spinor Pneuma field from Cl(24,1).
-                   Dual (11,1) shadows with OR reduction operator.
+                   Dual 13D(12,1) shadows with OR reduction operator.
 
 Provides section content for the Introduction (Section 1).
 
@@ -173,8 +173,8 @@ class IntroductionV16(SimulationBase):
                 "in 4D without ad hoc assumptions."
             ),
             "dimensional_hierarchy": (
-                "26D spacetime with unified time signature (24,1) splits into dual "
-                "(11,1) shadows connected by a 2D Euclidean bridge. Each shadow "
+                "25D spacetime with unified time signature (24,1) = 12×(2,0) + (0,1) warps into dual "
+                "13D(12,1) shadows via coordinate selection. Each shadow"
                 "compactifies on G₂ manifolds to 4D, preserving gauge symmetries "
                 "and generating observable physics."
             ),
@@ -237,8 +237,8 @@ class IntroductionV16(SimulationBase):
                     "geometric framework in which all 125 fundamental physical constants emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
-                    "from a 26D spacetime with unified time signature (24,1), the framework splits "
-                    "into <strong>dual (11,1) shadows</strong> connected by a <strong>2D Euclidean "
+                    "from a 25D spacetime with unified time signature (24,1) = 12×(2,0) + (0,1), the framework splits"
+                    "into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean"
                     "bridge</strong>, with each shadow compactifying via G₂ holonomy through "
                     "11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = "
                     '<span class="pm-value" data-pm-value="topology.b3">24</span></strong> and '
@@ -448,10 +448,10 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>The Pneuma Postulate (v21 Dual-Shadow Framework)</h4>"
-                    "<p>In the full 26D theory with unified time signature (24,1), the Pneuma field Ψ<sub>P</sub> "
-                    "is a <strong>4096-component spinor</strong> of Cl(24,1). The framework splits into "
-                    "<strong>dual (11,1) shadows</strong> connected by a <strong>2D Euclidean bridge</strong> "
+                    "<h4>The Pneuma Postulate (v22 Dual-Shadow Framework)</h4>"
+                    "<p>In the full 25D theory with unified time signature (24,1) = 12×(2,0) + (0,1), the Pneuma field Ψ<sub>P</sub> "
+                    "is a <strong>4096-component spinor</strong> of Cl(24,1). Bridge pairs WARP to create "
+                    "<strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 shared time)."
                     "with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective "
                     "64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected "
                     "Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler "
@@ -464,9 +464,9 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v21 framework, the full 26D bulk has unified time (24,1) signature, eliminating "
+                    "In the v22 framework, the full 25D bulk has unified time (24,1) = 12×(2,0) + (0,1) signature, eliminating "
                     "ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under "
-                    "Spin(24,1). The 26D space splits into dual (11,1) shadows connected by a 2D Euclidean "
+                    "Spin(24,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection."
                     "bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = -I). "
                     "Each shadow has Spin(10,1) symmetry with a 64-component spinor representation. Bilinear "
                     "condensates of this field generate the geometric tensors that define the internal manifold structure."
@@ -558,12 +558,12 @@ class IntroductionV16(SimulationBase):
                 type="note",
                 content=(
                     "<h4>Dual-Shadow Chirality</h4>"
-                    "<p>In the v21 26D unified-time framework, the dual (11,1) shadows are connected by a "
-                    "2D Euclidean bridge with OR reduction operator R<sub>⊥</sub>. The Möbius property "
-                    "(R<sub>⊥</sub>² = -I) provides spinor double-cover: a single traversal gives ψ → -ψ, "
-                    "while a double traversal returns ψ → ψ. The mirror shadow contains fermions with "
+                    "<p>In the v22 25D unified-time framework, the dual 13D(12,1) shadows are created when "
+                    "12×(2,0) bridge pairs WARP via coordinate selection. The per-pair OR reduction operator R<sub>⊥</sub> "
+                    "provides spinor double-cover: R<sub>⊥</sub>² = -I per pair. "
+                    "The mirror shadow contains fermions with "
                     "opposite chirality assignments, ensuring overall CPT conservation while allowing "
-                    "maximal parity violation in each (11,1) shadow sector.</p>"
+                    "maximal parity violation in each 13D(12,1) shadow sector.</p>"
                 ),
                 label="dual-shadow-chirality"
             ),
@@ -578,11 +578,11 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Framework: 26D → Dual (11,1) Shadows</h4>"
-                    "<p>In the v21 Principia Metaphysica framework, the fundamental theory lives in "
-                    "<strong>26D with unified time signature (24,1)</strong>—matching the critical dimension of "
-                    "bosonic string theory while eliminating ghost modes. The 26D splits into dual "
-                    "(11,1) shadows connected by a 2D Euclidean bridge. Each shadow compactifies on G₂ "
+                    "<h4>Framework: 25D → Dual 13D(12,1) Shadows</h4>"
+                    "<p>In the v22 Principia Metaphysica framework, the fundamental theory lives in "
+                    "<strong>25D with unified time signature (24,1) = 12×(2,0) + (0,1)</strong>. "
+                    "The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection "
+                    "(each: 12 spatial from bridge + 1 shared time). Each shadow compactifies on G₂"
                     "with the OR reduction operator R<sub>⊥</sub> providing cross-shadow coherence. This section explains why "
                     "D = 13 = 1 + 4 + 8 is the unique division-algebra-consistent dimension for the observable sector.</p>"
                 ),
@@ -730,15 +730,15 @@ class IntroductionV16(SimulationBase):
                 content=(
                     "The remainder of this paper develops the <strong>Principia Metaphysica</strong> "
                     "theoretical framework systematically and derives its physical consequences. The central "
-                    "insight is the 26D (24,1) → dual (11,1) shadows → 4D dimensional hierarchy, where the "
+                    "insight is the 25D(24,1) = 12×(2,0) + (0,1) → dual 13D(12,1) shadows → 4D dimensional hierarchy, where the"
                     "Euclidean bridge structure enables the derivation of key cosmological parameters. The structure is as follows:"
                 )
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "<strong>Section 2 (Geometric Framework)</strong>: 26D bulk with unified time (24,1) signature; "
-                    "dual (11,1) shadow emergence; Euclidean bridge; K<sub>Pneuma</sub>; racetrack moduli "
+                    "<strong>Section 2 (Geometric Framework)</strong>: 25D bulk with unified time (24,1) = 12×(2,0) + (0,1) signature; "
+                    "dual 13D(12,1) shadow emergence via WARP; K<sub>Pneuma</sub>; racetrack moduli"
                     "stabilization. <strong>Section 3 (Gauge Unification)</strong>: SO(10) from 26D "
                     "isometries; dual shadow gauge sectors; symmetry breaking chains. <strong>Section 4 "
                     "(Fermion Sector)</strong>: 4096 → 2×64 spinor reduction; dual-shadow chirality mechanism; "
@@ -756,8 +756,8 @@ class IntroductionV16(SimulationBase):
                 content=(
                     "This hierarchical structure moves from the foundational 26D geometric framework "
                     "through the particle physics phenomenology to cosmological implications and "
-                    "experimental tests. Each section builds upon the preceding material, developing a "
-                    "coherent picture of unified physics from 26D origins through dual (11,1) shadows to observable "
+                    "experimental tests. Each section builds upon the preceding material, developing a"
+                    "coherent picture of unified physics from 25D origins through dual 13D(12,1) shadows to observable"
                     "4D consequences."
                 )
             ),
@@ -788,9 +788,9 @@ class IntroductionV16(SimulationBase):
                 type="note",
                 content=(
                     "<h4>Central Thesis</h4>"
-                    "<p>The central claim of this work is that a <strong>26D spacetime with unified time "
-                    "signature (24,1)</strong>, splitting into dual (11,1) shadows connected by a 2D Euclidean "
-                    "bridge, provides a <strong>ghost-free framework</strong> containing a 1 + 3 brane hierarchy. "
+                    "<p>The central claim of this work is that a <strong>25D spacetime with unified time "
+                    "signature (24,1) = 12×(2,0) + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, "
+                    "provides a <strong>ghost-free framework</strong> containing a 1 + 3 brane hierarchy."
                     "The dual-shadow structure, with geometry emerging from the 4096-component Pneuma "
                     "field, can simultaneously explain: (1) the origin of gauge forces from 26D isometries, "
                     "(2) the chiral structure via dual-shadow Möbius mechanism, (3) the emergence of time from "
@@ -826,8 +826,8 @@ class IntroductionV16(SimulationBase):
                     "<h4>Kaluza-Klein Theory (1920s)</h4>"
                     "<p>The original insight that extra compact dimensions can yield gauge interactions from "
                     "pure geometry remains the conceptual ancestor of all modern unification programs. PM "
-                    "inherits this philosophy while extending to 26D with unified time signature (24,1) and employing G₂ "
-                    "holonomy for chirality in each of the dual shadows.</p>"
+                    "inherits this philosophy while extending to 25D with unified time signature (24,1) = 12×(2,0) + (0,1) and employing G₂ "
+                    "holonomy for chirality in each of the dual 13D(12,1) shadows.</p>"
                 ),
                 label="kk-context"
             ),
@@ -851,9 +851,9 @@ class IntroductionV16(SimulationBase):
                     "<h4>Historical Note: Two-Time Physics (Bars 1998–2010)</h4>"
                     "<p>Itzhak Bars' program demonstrating that 2T physics with gauge symmetry "
                     "provides a unified view of 1T systems via different gauge choices historically informed "
-                    "early PM development. However, v21+ adopts unified time (24,1) with a Euclidean bridge "
-                    "to eliminate ghost modes directly. The dual (11,1) shadow structure with OR reduction "
-                    "preserves key phenomenological features while ensuring manifest unitarity. "
+                    "early PM development. However, v22+ adopts unified time (24,1) = 12×(2,0) + (0,1) with bridge pairs that WARP "
+                    "to create shadows. The dual 13D(12,1) shadow structure with per-pair OR reduction "
+                    "preserves key phenomenological features while ensuring manifest unitarity."
                     "[v22: This historical approach is superseded by the Euclidean bridge mechanism.]</p>"
                 ),
                 label="historical-two-time-context"
@@ -901,7 +901,7 @@ class IntroductionV16(SimulationBase):
                 "historical arc from Maxwell's unification of electricity and magnetism to modern attempts "
                 "at Grand Unified Theories, while introducing the novel approach of deriving geometry from "
                 "a fundamental fermionic field. Principia Metaphysica v21 posits a 26D spacetime with unified "
-                "time signature (24,1)—splitting into dual (11,1) shadows connected by a 2D Euclidean bridge—"
+                "time signature (24,1) = 12×(2,0) + (0,1)—with 12 bridge pairs warping to create dual 13D(12,1) shadows—"
                 "eliminating ghost modes while preserving phenomenological richness. Compactification occurs "
                 "on a TCS (Twisted Connected Sum) G₂ manifold with h^1,1=4 Kähler moduli sectors, enabling "
                 "racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without "

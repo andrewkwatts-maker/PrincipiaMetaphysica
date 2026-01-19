@@ -17,8 +17,8 @@ Derives Standard Model gauge sectors from higher-dimensional master action:
 v22.0: 12-Pair (2,0) Bridge System
 ==================================
 Key structural change from v21:
-- v21 used: 1x(2,0) bridge + 2x(11,0) shadows
-- v22 uses: 12x(2,0) paired bridges with distributed OR reduction
+- v21 used: 1x(2,0) bridge + 2x(11,0) shadows (LEGACY)
+- v22 uses: 12×(2,0) + (0,1) → 2×13D(12,1) via distributed OR reduction
 
 The 12-pair system provides:
 - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
@@ -117,8 +117,8 @@ class MasterActionSimulationV22(SimulationBase):
     v22.0: 12-Pair (2,0) Bridge System
     ===================================
     Key structural change from v21:
-    - v21 used: 1x(2,0) bridge + 2x(11,0) shadows
-    - v22 uses: 12x(2,0) paired bridges with distributed OR reduction
+    - v21 used: 1x(2,0) bridge + 2x(11,0) shadows (LEGACY)
+    - v22 uses: 12×(2,0) + (0,1) → 2×13D(12,1) via distributed OR reduction
 
     The 12-pair decomposition:
     - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
@@ -143,7 +143,7 @@ class MasterActionSimulationV22(SimulationBase):
                 "Derives Standard Model gauge structure from higher-dimensional "
                 "master action via Kaluza-Klein reduction over G2 manifolds. "
                 "v22 implements 12x(2,0) paired bridge architecture with "
-                "distributed OR reduction replacing v21's 1x(2,0) + 2x(11,0) structure."
+                "12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR reduction."
             ),
             section_id="3",  # Gauge theory section
             subsection_id="3.2"  # v19.0: Unique (3.1 used by alpha_rigor)
@@ -327,7 +327,7 @@ class MasterActionSimulationV22(SimulationBase):
                 category="THEORY",
                 description=(
                     "v22.0: 26D Pneuma master action with 12-pair (2,0) bridge system. "
-                    "Replaces v21's 1x(2,0) + 2x(11,0) structure with 12 distributed bridge pairs. "
+                    "v22: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR."
                     "Each L_bridge^i contributes to OR reduction via local R_perp_i operator."
                 ),
                 inputParams=[],
@@ -533,7 +533,7 @@ class MasterActionSimulationV22(SimulationBase):
                 name="Number of Bridge Pairs",
                 units="count",
                 status="THEORY",
-                description="v22.0: 12 (2,0) bridge pairs replacing v21's 1x(2,0) + 2x(11,0) structure",
+                description="v22.0: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows",
             ),
             Parameter(
                 path="bridge.breathing_aggregation",
@@ -642,7 +642,7 @@ class MasterActionSimulationV22(SimulationBase):
             abstract=(
                 "v22.0: Derivation of Standard Model gauge structure from higher-dimensional "
                 "master action via Kaluza-Klein reduction over G2 manifolds. "
-                "New 12-pair (2,0) bridge architecture replaces v21's 1x(2,0) + 2x(11,0) structure. "
+                "v22: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR."
                 "Distributed OR reduction via tensor product of 12 local R_perp operators."
             ),
             content_blocks=[
@@ -657,10 +657,9 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Version 22 introduces a fundamental structural change: the bridge geometry "
-                        "is now decomposed into 12 independent (2,0) pairs, replacing v21's asymmetric "
-                        "1x(2,0) bridge + 2x(11,0) shadow structure. The 25D metric becomes: "
-                        "ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2), giving 1 time + 24 bridge = 25D."
+                        "Version 22 introduces a fundamental structural change: 25D(24,1) = 12×(2,0) + (0,1). "
+                        "The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 shared time). "
+                        "The metric is: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)."
                     )
                 ),
                 ContentBlock(
@@ -807,7 +806,7 @@ def run_master_action_simulation(verbose: bool = True):
         print(f"Running: {sim.metadata.title}")
         print("=" * 70)
         print("\nv22.0: 12-Pair (2,0) Bridge System")
-        print("  - Replaces v21's 1x(2,0) + 2x(11,0) structure")
+        print("  - v22: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows")
         print("  - 12 bridge pairs with distributed OR reduction")
         print("  - Total OR dimension: 2^12 = 4096 (matches Pneuma spinor)")
         print("=" * 70)

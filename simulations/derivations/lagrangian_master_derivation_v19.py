@@ -1128,22 +1128,22 @@ class LagrangianMasterDerivation(SimulationBase):
         Each step removes a specific geometric structure.
         """)
 
-        # v21 dimension chain (updated 2026-01-18)
-        # Chain: 26D(24,1) → T^1×(S_normal^11 ⊕ S_mirror^11 ⊕ B^2) → [G2(7,0)] → 4D(3,1)
-        # v21: Unified time (24,1), dual shadows SPATIAL (11,0), Euclidean bridge (2,0)
-        print("\nv21 Dimensional Cascade:")
-        print("  26D(24,1) → T^1×(S_normal^11 ⊕ S_mirror^11 ⊕ B^2) → 4D(3,1)")
+        # v22 dimension chain (updated 2026-01-19)
+        # Chain: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → [G2(7,0)] → 4D(3,1)
+        # v22: 12 bridge pairs WARP to create 2×13D(12,1) shadows
+        print("\nv22 Dimensional Cascade:")
+        print("  25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → 4D(3,1)")
         print("")
-        print("  Level 0 (ANCESTRAL): 26D with signature (24,1) - unified time")
-        print("  Level 1 (STRUCTURE): T^1 × (S_normal^11 ⊕ S_mirror^11 ⊕ B^2)")
-        print("    - T^1: Shared time (0,1)")
-        print("    - S_normal^11: Normal shadow SPATIAL (11,0)")
-        print("    - S_mirror^11: Mirror shadow SPATIAL (11,0)")
-        print("    - B^2: Euclidean bridge (2,0)")
-        print("  Level 2 (G2): 7D per shadow, signature (7,0) - RIEMANNIAN")
-        print("  Level 3 (VISIBLE): 4D with signature (3,1) - Minkowski")
+        print("  Level 0 (ANCESTRAL): 25D with signature (24,1) - unified time")
+        print("  Level 1 (STRUCTURE): 12×(2,0) + (0,1)")
+        print("    - (0,1): Shared time fiber")
+        print("    - 12×(2,0): 12 Euclidean bridge pairs")
+        print("  Level 2 (SHADOW): 12×(2,0) + (0,1) WARP to create 2×13D(12,1)")
+        print("    - Each shadow: 13D(12,1) = 12 spatial + 1 shared time")
+        print("  Level 3 (G2): 7D per shadow, signature (7,0) - RIEMANNIAN")
+        print("  Level 4 (VISIBLE): 4D with signature (3,1) - Minkowski")
 
-        results["reduction_chain"] = [26, 11, 7, 4]  # v21: 26D -> 11D shadow -> G2 -> 4D
+        results["reduction_chain"] = [25, 13, 7, 4]  # v22: 25D -> 13D shadow -> G2 -> 4D
 
         # ------------------------------------------------------------------
         # E.4: Gauge Fields from Extra Dimensions
