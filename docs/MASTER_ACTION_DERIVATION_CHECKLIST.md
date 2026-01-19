@@ -1,9 +1,9 @@
 # MASTER ACTION DERIVATION CHECKLIST
 
 **Created**: 2026-01-14
-**Updated**: 2026-01-19 (v22.1 - Gemini consultations complete)
+**Updated**: 2026-01-20 (v22.5 - Publication polish review complete)
 **Purpose**: Comprehensive list of mathematical derivations needed to prove the Pneuma Master Action reproduces all Standard Model physics
-**Status**: ~93% COMPLETE (up from 85%)
+**Status**: ~93% COMPLETE - PUBLICATION_READY (9 PARTIAL items assessed, all LEAVE AS-IS)
 
 ---
 
@@ -310,6 +310,7 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 | 2026-01-14 | Completed all 5 critical derivations | ✅ DONE |
 | 2026-01-19 | v22.0: Created 6 new appendices for physics recovery | ✅ DONE |
 | 2026-01-19 | v22.1: Gemini consultations - 6 gaps addressed, 93% recovery | ✅ DONE |
+| 2026-01-20 | v22.5: Master Action polish review - all 9 PARTIAL items assessed | ✅ DONE |
 
 ---
 
@@ -377,8 +378,30 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 - [x] ~~Dark matter: Complete derivation of Ω_DM/Ω_b = 5.40~~ → **Formula: (T/T')³ = (1/0.57)³ = 5.40**
 - [x] ~~Vielbein: Prove uniqueness~~ → **Wang's theorem provides uniqueness**
 
-### Remaining Items
+### v22.5 PARTIAL Item Assessment (2026-01-20)
+
+Per publication polish review, all 9 PARTIAL items have been assessed. **Decision: LEAVE ALL AS-IS** to avoid overbaking with numerological adjustments.
+
+| ID | Item | Current % | Path Forward | Decision |
+|----|------|-----------|--------------|----------|
+| GS-01 | α⁻¹ (Fine Structure) | 75% | Torsion quantization speculative | ⏸️ LEAVE AS-IS |
+| GR-03 | Einstein-Hilbert | 85% | Wang's theorem established | ⏸️ LEAVE AS-IS |
+| GR-04 | Cosmological Λ | ~50% | No clear geometric path | ⏸️ LEAVE AS-IS |
+| HG-05 | Higgs VEV | 90% | G2 cycle computation pending | ⏸️ LEAVE AS-IS |
+| FM-02 | Fermion Chirality | ~60% | G2 mechanism identified | ⏸️ LEAVE AS-IS |
+| FM-03 | Yukawa Hierarchy | 90% | Homological distance exists | ⏸️ LEAVE AS-IS |
+| FM-11/12/13 | Lepton Masses | ~70% | Related to FM-03 | ⏸️ LEAVE AS-IS |
+| CO-07 | Baryon Asymmetry | ~70% | Mechanism incomplete | ⏸️ LEAVE AS-IS |
+
+**Rationale for LEAVE AS-IS:**
+1. All 25 parameters already within 1σ (PUBLICATION_READY)
+2. No geometric improvement identified that wouldn't risk numerology
+3. Framework achieves 93% physics recovery without forced refinements
+4. Better to document honest gaps than manufacture false precision
+
+### Items Marked for Future Research (Post-Publication)
 - [ ] Alpha inverse: Investigate torsion quantization approach for k_gimel² derivation
 - [ ] Dark matter: Derive d_eff/R ratio from first principles (only remaining DM gap)
 - [ ] Fermion: Complete homological distance derivation for topological charges Q_f
-- [ ] Higgs: Confirm (b₃ - 4) = 20 interpretation (b₃=24, minus 4 Higgs DOF)
+- [ ] Higgs: Explicit G2 cycle calculation for (b₃ - 4) = 20 interpretation
+- [ ] Cosmological constant: Seek geometric mechanism for Λ ~ 10⁻¹²⁰ M_Pl⁴
