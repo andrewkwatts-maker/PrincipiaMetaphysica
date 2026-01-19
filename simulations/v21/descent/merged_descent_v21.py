@@ -365,7 +365,7 @@ class MergedDescentV21(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"(24,1) \xrightarrow{\text{shadows}} 2 \times 12 + (2,0) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
+                    content=r"25D(24,1) = 12 \times (2,0) + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
                     formula_id="descent-chain-full",
                     label="(1.2)"
                 ),
@@ -429,8 +429,8 @@ class MergedDescentV21(SimulationBase):
             Formula(
                 id="descent-chain-full",
                 label="(1.2)",
-                latex=r"(24,1) \xrightarrow{\text{shadows}} 2 \times 12 + (2,0) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
-                plain_text="(24,1) -> shadows -> G2 -> 2 x (5,1 + 3x(3,1))",
+                latex=r"25D(24,1) = 12 \times (2,0) + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
+                plain_text="25D(24,1) = 12×(2,0) + (0,1) -> warp -> 2×13D(12,1) -> G2 -> 2 x (5,1 + 3x(3,1))",
                 category="THEORY",
                 description="Complete dimensional descent chain",
                 inputParams=["topology.b3", "topology.chi_eff"],
@@ -439,10 +439,10 @@ class MergedDescentV21(SimulationBase):
                 output_params=["descent.condensate_structure"],
                 derivation={
                     "steps": [
-                        {"description": "Bulk splits into dual shadows",
-                         "formula": r"24 = 12 + 12 + 2_{\text{shared}}"},
-                        {"description": "Shared Euclidean bridge",
-                         "formula": r"(2,0)_{\text{bridge}}"},
+                        {"description": "12 bridge pairs warp to create shadows",
+                         "formula": r"12 \times (2,0) \to 2 \times 12_{\text{spatial}}"},
+                        {"description": "Shared time from (0,1)",
+                         "formula": r"(0,1)_{\text{shared time}}"},
                         {"description": "G2 compactifies 7D per shadow",
                          "formula": r"G_2: 7 \to \text{conical}"},
                         {"description": "Observable condensates",

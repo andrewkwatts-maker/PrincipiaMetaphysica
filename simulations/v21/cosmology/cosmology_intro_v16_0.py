@@ -805,12 +805,12 @@ class CosmologyIntroV16(SimulationBase):
                 "12 channels averaging together, reducing noise just like averaging multiple measurements."
             ),
             "keyTakeaway": (
-                "v22 Kaluza-Klein reduction: 26D(24,1) → dual (11,1) shadows + 12×(2,0) bridge pairs → 4D per shadow (via G₂ compactification). "
+                "v22 Kaluza-Klein reduction: 25D(24,1) = 12×(2,0) + (0,1) → 12 bridge pairs warp to create 2×13D(12,1) shadows → 4D per shadow (via G₂ compactification). "
                 "12-pair aggregation: ρ_breath = (1/12) ∑ρ_i reduces variance by √12, stabilizing w ≈ -0.958 ± 0.003."
             ),
             "technicalDetail": (
-                "Starting from 26D bosonic string with unified time (24,1) signature (no ghosts), the framework splits into dual "
-                "(11,1) shadows connected by 12×(2,0) Euclidean bridge pairs. Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}). "
+                "Starting from 25D with (24,1) = 12×(2,0) + (0,1) signature (no ghosts), 12 bridge pairs warp to create dual "
+                "13D(12,1) shadows (each: 12 spatial from bridge + 1 shared time). Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}). "
                 "Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²). Per-pair energy: ρ_i = |T_normal_i - R_⊥_i T_mirror_i|. "
                 "Aggregated: ρ_breath = (1/12) ∑ρ_i. Why 12 pairs: b₃ = 24 associative 3-cycles → 24/2 = 12 normal/mirror pairs. "
                 "Aggregation reduces variance: σ_eff = σ_single/√12. Consciousness connection: 12 I/O channels."

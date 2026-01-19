@@ -762,13 +762,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="3 spatial dimensions in dual (11,1) shadow with shared unified time. Third dark sector component."
+                content="3 spatial dimensions in 13D(12,1) shadow with shared unified time. Third dark sector component."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="OR Reduction: 26D(24,1) to dual (11,1) shadows via bridge",
-                content="Starting configuration: 26D with signature (24,1) plus Euclidean bridge coordinates (y1, y2) for timeless substrate. After OR reduction via R_perp: dual (11,1) shadows + 2D(2,0) Euclidean bridge - effective theory with unified time shared between shadows. The OR reduction procedure produces the dual-shadow structure while preserving the physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action."
+                title="OR Reduction: 25D(24,1) → 12×(2,0) bridge pairs → 2×13D(12,1)",
+                content="Starting configuration: 25D with signature (24,1) = 12×(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2×13D(12,1) shadows - each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R_perp produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action."
             ),
             ContentBlock(
                 type="heading",
@@ -864,13 +864,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="After OR reduction from 26D (24,1) to dual (11,1) shadows with unified time, the 4096-component spinor from Cl(24,1) reduces to effective 64 components:"
+                content="After OR reduction from 25D(24,1) = 12×(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl(24,1) reduces to effective 64 components:"
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Dimensional Reduction: 26D(24,1) → dual (11,1) + 2D(2,0)",
-                content="OR reduction via R_perp produces dual shadows with unified time: (24,1) → 2x(11,1) + bridge(2,0). Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+                title="Dimensional Reduction: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1)",
+                content="OR reduction via R_perp: 12×(2,0) bridge pairs warp to create 2×13D(12,1) shadows with shared time. Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
             ),
             ContentBlock(
                 type="heading",
@@ -904,7 +904,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (24,1) + Euclidean bridge\n↓ OR reduction via R_perp (unified time)\nLevel 2 (dual shadows): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×(11,1) with shared time + (2,0) bridge\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy (v21 unified time)",
+                content="Level 1 (25D): S = ∫ d^25 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (24,1) = 12×(2,0) + (0,1)\n↓ OR reduction via R_perp (12 bridge pairs warp to create shadows)\nLevel 2 (dual 13D): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×13D(12,1) with shared time\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy (v22 bridge creates shadows)",
                 label=""
             ),
         ])

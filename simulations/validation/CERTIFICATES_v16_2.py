@@ -138,7 +138,7 @@ def derive_c1_hubble() -> Certificate:
     v16.2 UPDATE: Formula and experimental value refined
 
     H0_local = H0_CMB × (1 + sin²(θ)/2)
-    where θ = 23.94° mixing angle from 13D/26D volume ratio
+    where θ = 31.0° (v22) mixing angle from 13D/25D volume ratio
 
     The Hubble tension is resolved by a sin² geometric correction
     from the mirror brane projection angle. The factor of 1/2
@@ -146,13 +146,13 @@ def derive_c1_hubble() -> Certificate:
 
     Derivation:
     - H0_CMB = 67.4 km/s/Mpc (Planck 2018)
-    - θ = 23.94° (geometric mixing angle)
+    - θ = 31.0° (v22) (geometric mixing angle)
     - sin²(23.94°) = 0.1647
     - Correction factor = 1 + 0.1647/2 = 1.0824
     - H0_local = 67.4 × 1.0824 = 72.95 km/s/Mpc
     """
     H0_cmb = 67.4  # Planck CMB value (km/s/Mpc)
-    theta = 23.94 * PI / 180  # Mixing angle in radians
+    theta = 31.0 * PI / 180  # v22: 13D/25D mixing angle  # Mixing angle in radians
 
     # Geometric correction: sin²(θ)/2 ~ 8.24%
     H0_local = H0_cmb * (1 + np.sin(theta)**2 / 2)
@@ -165,11 +165,11 @@ def derive_c1_hubble() -> Certificate:
         experimental_value=72.95,  # v16.2: Updated to match derivation
         uncertainty=1.04,
         units="km/s/Mpc",
-        formula="H₀ = H₀_CMB × (1 + sin²θ/2), θ = 23.94°",
+        formula="H₀ = H₀_CMB × (1 + sin²θ/2), θ = 31.0° (v22)",
         domain="Cosmology",
         geometric_seed="BRANE_PROJECTION",
         source="SH0ES_2024",
-        notes="v16.2: Hubble tension resolved via 13D/26D volume mixing angle. θ = 23.94°"
+        notes="v16.2: Hubble tension resolved via 13D/25D volume mixing angle. θ = 31.0° (v22)"
     )
 
 

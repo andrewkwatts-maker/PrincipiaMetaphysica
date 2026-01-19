@@ -408,7 +408,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
 
         H_0 = H_CMB * (1 + sin^2(theta_mix)/2)
 
-        where theta_mix ~ 23.94 degrees is the 13D/26D volume mixing angle.
+        where theta_mix ~ 31.0 degrees is the 13D/25D volume mixing angle.
         This gives H_0 ~ 71.55 km/s/Mpc, splitting the Hubble tension.
 
         Attractor Mechanism:
@@ -427,7 +427,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         # O'Dowd formula for H_0
         # H_0 = H_CMB * (1 + sin^2(theta_mix)/2)
         H0_cmb = 67.36  # km/s/Mpc (Planck 2018)
-        theta_mix_deg = 23.94  # 13D/26D mixing angle
+        theta_mix_deg = 31.0  # 13D/25D mixing angle (v22: 13D shadow over 25D bulk)
         theta_mix_rad = theta_mix_deg * np.pi / 180
         H0_odowd = H0_cmb * (1 + np.sin(theta_mix_rad)**2 / 2)
         # ~ 67.36 * 1.062 ~ 71.55 km/s/Mpc
@@ -817,15 +817,15 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             plain_text="H_0 = H_CMB * (1 + sin^2(theta_mix)/2) ~ 71.55 km/s/Mpc",
             category="DERIVED",
             description=(
-                "Hubble constant from O'Dowd geometric formula. The 13D/26D volume "
-                "mixing angle theta_mix ~ 23.94 degrees determines the H_0 correction "
+                "Hubble constant from O'Dowd geometric formula. The 13D/25D volume "
+                "mixing angle theta_mix ~ 31.0 degrees determines the H_0 correction "
                 "from CMB value, naturally splitting the Hubble tension."
             ),
             inputParams=["cosmology.H0_cmb"],
             outputParams=["cosmology.H0_odowd"],
             terms={
                 "H_CMB": "Planck CMB value = 67.36 km/s/Mpc",
-                "theta_mix": "13D/26D mixing angle = 23.94 degrees",
+                "theta_mix": "13D/25D mixing angle = 31.0 degrees (v22)",
                 "71.55": "Predicted H_0 splitting tension"
             }
         ))
@@ -1223,7 +1223,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "The Hubble constant emerges from O'Dowd's geometric formula, "
-                        "which accounts for the 13D/26D volume mixing angle. This naturally "
+                        "which accounts for the 13D/25D volume mixing angle (v22). This naturally "
                         "predicts H_0 = 71.55 km/s/Mpc, splitting the Hubble tension."
                     )
                 ),

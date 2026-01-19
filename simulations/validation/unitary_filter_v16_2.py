@@ -19,7 +19,7 @@ For PM's v21 (24,1) signature theory with Euclidean bridge:
 
 Total: c = 24 + 2 - 26 = 0 [GHOST-FREE]
 
-The v21 framework uses OR reduction via R_perp operator to produce dual (11,1) shadows
+The v21/v22 framework uses OR reduction via R_perp operator to produce dual 13D(12,1) shadows
 with shared time, replacing the legacy Sp(2,R) gauge fixing approach.
 
 If b3 != 24 or D_total != 26, the Weyl anomaly does NOT cancel, leading to:

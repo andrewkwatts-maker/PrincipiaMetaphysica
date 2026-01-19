@@ -365,7 +365,7 @@ class DarkEnergyV16(SimulationBase):
         Compute time evolution parameter w_a from 2T (two-time) projection.
 
         The evolution parameter wa describes how w(z) changes with
-        redshift. It arises from the 26D -> 13D shadow projection
+        redshift. It arises from the 25D -> 13D shadow projection (v22)
         where the two shared timelike dimensions create a "thawing"
         effect as the G2 manifold relaxes:
 
