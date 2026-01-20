@@ -678,4 +678,4 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 ---
 
 *Document generated: 2026-01-19*
-*Principia Metaphysica v22.2*
+*Principia Metaphysica v23.0*

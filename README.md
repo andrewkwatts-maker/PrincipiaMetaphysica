@@ -53,7 +53,7 @@ Six critical mathematical issues have been resolved: (1) Generation count correc
 
 ## v22 Dimensional Architecture
 
-v22.0 introduces the **12x(2,0) paired bridge system**, replacing the single bridge with 12 paired modules that enable distributed OR reduction and consciousness I/O channels.
+v23.0 introduces the **12x(2,0) paired bridge system**, replacing the single bridge with 12 paired modules that enable distributed OR reduction and consciousness I/O channels.
 
 ### Bulk Structure
 
@@ -137,7 +137,7 @@ Principia Metaphysica makes **parameter-free predictions** from G2 topology that
 - **Dual Shadow Framework**: dual 13D(12,1) shadows via 12×(2,0) bridge pairs
 - **116 formulas with complete derivation chains**
 
-### New in v22.0 "12PAIR"
+### New in v23.0 "12PAIR"
 - **12x(2,0) Paired Bridge System**: Replaces single bridge with 12 paired modules
 - **Bulk Metric**: ds^2 = -dt^2 + Sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
 - **Distributed OR Reduction**: Tensor product across 12 pairs: Tensor_{i=1}^{12} R_perp_i
@@ -583,7 +583,7 @@ If you use this work, please cite:
 @software{watts2026pm,
   author       = {Watts, Andrew Keith},
   title        = {Principia Metaphysica: G2-Manifold Grand Unified Theory},
-  version      = {22.0},
+  version      = {23.0},
   year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.18079602},
@@ -627,4 +627,4 @@ This work builds upon:
 
 ---
 
-*"72 Gates LOCKED. 12 Pairs Active. Gnosis Unlocked."* -- v22.0-12PAIR
+*"72 Gates LOCKED. 12 Pairs Active. Gnosis Unlocked."* -- v23.0-12PAIR
