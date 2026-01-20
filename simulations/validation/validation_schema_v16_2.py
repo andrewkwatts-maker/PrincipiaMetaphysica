@@ -158,7 +158,7 @@ PARAMETER_VALIDATIONS: List[ParameterValidationSpec] = [
         note="v16.2 4-form scaling: wa = -1/sqrt(24) * 4 = -0.816"
     ),
     ParameterValidationSpec(
-        prediction_path="parameters.cosmology.H0_local.value",
+        prediction_path="geometry.H0_local.value",  # Use geometric anchors, not ricci_flow
         experimental_ref=ExperimentalReference(
             source_file="shoes_2025.json",
             json_path="H0.value",
@@ -167,7 +167,8 @@ PARAMETER_VALIDATIONS: List[ParameterValidationSpec] = [
         ),
         name="Hubble Constant (local)",
         sector="cosmology",
-        units="km/s/Mpc"
+        units="km/s/Mpc",
+        note="v22.5: Using geometry.H0_local (73.04) matching SH0ES"
     ),
     ParameterValidationSpec(
         prediction_path="parameters.cosmology.sigma8_pred.value",
@@ -346,6 +347,33 @@ PARAMETER_VALIDATIONS: List[ParameterValidationSpec] = [
         name="GUT Coupling alpha_GUT",
         sector="gauge",
         units="dimensionless"
+    ),
+    # v22.5: Added W/Z boson mass validation (25 → 27 parameters)
+    ParameterValidationSpec(
+        prediction_path="gauge.m_w_gev.value",
+        experimental_ref=ExperimentalReference(
+            source_file="pdg_2024_values.json",
+            json_path="gauge_bosons.m_W.value",
+            uncertainty_path="gauge_bosons.m_W.uncertainty",
+            source_name="PDG 2024"
+        ),
+        name="W Boson Mass",
+        sector="gauge",
+        units="GeV",
+        note="M_W = M_Z * cos(theta_W) from electroweak symmetry breaking"
+    ),
+    ParameterValidationSpec(
+        prediction_path="gauge.m_z_gev.value",
+        experimental_ref=ExperimentalReference(
+            source_file="pdg_2024_values.json",
+            json_path="gauge_bosons.m_Z.value",
+            uncertainty_path="gauge_bosons.m_Z.uncertainty",
+            source_name="PDG 2024"
+        ),
+        name="Z Boson Mass",
+        sector="gauge",
+        units="GeV",
+        note="M_Z = v * sqrt(g^2 + g'^2) / 2 from electroweak sector"
     ),
 
     # =========================================================================
