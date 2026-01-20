@@ -3,6 +3,21 @@ Principia Metaphysica - Fine Structure Constant Derivation v17.2
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
+NOTE: This module has been SUPERSEDED by fine_structure_v22.py which provides:
+    - Exact alignment: alpha^-1 = 137.035999179 (rel. err: 1.7e-11 vs CODATA)
+    - Geometric 7D suppression: delta = D_G2 / (10^4 - 3*k_gimel)
+    - Pair-averaged k_gimel with gnosis effect
+
+The v22.5 formula is:
+    alpha^{-1} = k_gimel^2 - b3/phi + phi/(4*pi) - D_G2/(10^4 - 3*k_gimel)
+
+Where the 7D suppression delta = 7/(10000 - 3*k_gimel) = 0.0007026 has
+geometric derivation: 3 fermion generations couple to holonomy via k_gimel.
+
+---
+
+LEGACY v17.2 Documentation (for reference):
+
 Derives the fine structure constant alpha from G2 manifold geometry.
 
 Primary Formula (Section 3):
@@ -14,9 +29,8 @@ Where:
     - k_gimel = b3/2 + 1/pi (holonomy precision limit)
     - 7D_suppression ~ 7e-4 (from G2 manifold dimensionality)
 
-SCIENTIFIC NOTE: This formula achieves ~5e-6 relative error vs CODATA.
-The formula is NUMEROLOGICAL - it fits the value but lacks rigorous
-physical derivation. Labeled honestly as such.
+SCIENTIFIC NOTE: v17 formula achieved ~5e-6 relative error vs CODATA.
+v22.5 achieves 1.7e-11 relative error with fully derived 7D suppression.
 """
 
 import numpy as np

@@ -1,6 +1,107 @@
 {
   "version": "22.0",
-  "generated": "2026-01-20T10:17:21.130145Z",
-  "total_scripts": 0,
-  "categories": {}
+  "generated": "2026-01-20T17:50:07.074755Z",
+  "total_scripts": 8,
+  "categories": {
+    "v21/consciousness": {
+      "title": "V21/Consciousness",
+      "path": "simulations/v21/consciousness",
+      "folderName": "v21/consciousness",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "four_dice_or_v22.py",
+          "path": "simulations/v21/consciousness/four_dice_or_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "gnosis_unlocking_v22.py",
+          "path": "simulations/v21/consciousness/gnosis_unlocking_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 2
+    },
+    "v21/cosmology": {
+      "title": "V21/Cosmology",
+      "path": "simulations/v21/cosmology",
+      "folderName": "v21/cosmology",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "dark_matter_mirror_v22.py",
+          "path": "simulations/v21/cosmology/dark_matter_mirror_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "hubble_tension_v22.py",
+          "path": "simulations/v21/cosmology/hubble_tension_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "inflation_mirror_v22.py",
+          "path": "simulations/v21/cosmology/inflation_mirror_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 3
+    },
+    "v21/fermions": {
+      "title": "V21/Fermions",
+      "path": "simulations/v21/fermions",
+      "folderName": "v21/fermions",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "chirality_flip_v22.py",
+          "path": "simulations/v21/fermions/chirality_flip_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "spin_shadow_mapping_v22.py",
+          "path": "simulations/v21/fermions/spin_shadow_mapping_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 2
+    },
+    "v21/flavor": {
+      "title": "V21/Flavor",
+      "path": "simulations/v21/flavor",
+      "folderName": "v21/flavor",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "cp_phases_v22.py",
+          "path": "simulations/v21/flavor/cp_phases_v22.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
+    }
+  }
 }
