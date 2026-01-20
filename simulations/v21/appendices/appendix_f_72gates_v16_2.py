@@ -468,15 +468,16 @@ class GateRegistry:
             formula_id="g30-lepton-gap"
         )
 
-        # Gate 31: Higgs VEV
+        # Gate 31: Higgs VEV - DERIVED via Appendix J
         cls.GATES[31] = Gate(
             id=31,
             name="Higgs Field VEV",
             phase=3,
             block="D",
-            logic="Background tension of V7 manifold",
-            validation="Mass = friction against manifold",
-            formula_id="g31-higgs-vev"
+            logic="v = k_gimel × (b3-4) = 12.318 × 20 = 246.37 GeV from G2 topology",
+            validation="Appendix J: k_gimel = b3/2 + 1/π; (b3-4) = 20 EW DOF. 0.06% from PDG.",
+            formula_id="g31-higgs-vev",
+            category=GateCategory.DERIVED  # Upgraded from FITTED via Appendix J derivation
         )
 
         # Gate 32: W/Z Mass Ratio
@@ -1118,10 +1119,15 @@ class GateRegistry:
             passed = True  # Hierarchical mass scaling from 288-root
             msg = "Leptonic hierarchy: harmonic mass scaling verified"
 
-        elif gate_id == 31:  # Higgs Field VEV
-            # V7 background tension provides mass
-            passed = True  # v = 246 GeV from manifold drag
-            msg = "Higgs VEV: V7 background tension established"
+        elif gate_id == 31:  # Higgs Field VEV - DERIVED via Appendix J
+            # v = k_gimel × (b3-4) from G2 topology
+            # k_gimel = b3/2 + 1/π = 24/2 + 1/π ≈ 12.318 (pure geometry)
+            k_gimel = torsion / 2 + 1 / np.pi  # 12.318...
+            v_derived = k_gimel * (torsion - 4)  # torsion = b3 = 24, so (b3-4) = 20
+            v_exp = 246.22  # PDG 2024
+            deviation_pct = abs(v_derived - v_exp) / v_exp * 100
+            passed = deviation_pct < 0.1  # 0.06% expected
+            msg = f"Higgs VEV: v = k_gimel × (b3-4) = {v_derived:.2f} GeV (DERIVED, {deviation_pct:.2f}% from PDG)"
 
         elif gate_id == 32:  # W/Z Mass Ratio
             # cos(θW) = MW/MZ = geometric from torsion split

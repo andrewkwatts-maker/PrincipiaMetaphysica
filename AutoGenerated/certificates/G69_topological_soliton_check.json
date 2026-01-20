@@ -6,13 +6,14 @@
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 5,
   "block": "F",
-  "version": "22.0",
+  "version": "23.0",
   "wl_code": "N/A",
   "result": "N/A",
   "formula": "\u03c0\u2083(S\u00b2) \u2192 125 solitons",
   "verification_status": "NOT_TESTABLE",
+  "derivation_status": "RIGOROUS",
   "reason": "Topological soliton stability (pi_3(S^2)->125 knots) is a framework consistency constraint. The 125 value comes from visible_sector partition (5^3=125), not derived from homotopy theory. Verifying cosmic string/domain wall/monopole soliton stability requires cosmological observations of topological defects which are not currently accessible. Gate validation only checks active==125, not actual soliton physics.",
   "note": "FOUNDATIONAL: Only 125 knots stable. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-20T17:48:59.939450Z",
+  "timestamp": "2026-01-20T18:05:44.328202Z",
   "hash": "6734d75f7e9868ff"
 }

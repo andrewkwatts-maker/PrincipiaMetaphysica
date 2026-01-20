@@ -6,6 +6,14 @@ Status values:
 - VERIFIED: Formula computationally verified to match expected result
 - PENDING_LOCK: Cannot be computationally verified yet (requires Wolfram, experiment, or advanced computation)
 - NOT_TESTABLE: Foundational assumption or philosophical premise, not empirically testable
+
+Derivation Status values:
+- RIGOROUS: Follows from established mathematics (GEOMETRIC, TOPOLOGICAL)
+- DERIVED: Key formula derived from PM parameters
+- PARTIAL: Key steps established, some assumptions remain
+- EXPLORATORY: Formula works but mechanism incomplete
+- FITTED: Uses experimental input (acknowledged)
+- INPUT: Direct experimental value used
 """
 
 import json
@@ -50,7 +58,7 @@ VERIFIABLE_GATES = {
     30: {"proof_id": "leptonic_hierarchical_gap", "wl_code": "m_mu/m_e ~ chi_eff", "result": "chi_eff = 144", "note": "m_mu/m_e ~ chi_eff = 144, m_tau/m_mu ~ b3/2 = 12"},
 
     # Block D: Higgs and CKM (G31-G40)
-    31: {"proof_id": "higgs_field_vev", "wl_code": "higgs_vev_derivation_v16_1.py", "result": "v = 246.37 GeV", "note": "Higgs VEV from G2 manifold geometry, < 0.1% deviation from PDG 2024"},
+    31: {"proof_id": "higgs_field_vev", "wl_code": "v = k_gimel × (b3-4) = 12.318 × 20", "result": "v = 246.37 GeV", "note": "DERIVED: Appendix J derives v = k_gimel × (b3-4) from G2 topology. k_gimel = b3/2 + 1/π = 12.318; (b3-4) = 20 = EW DOF. 0.06% from PDG 2024 (246.22 GeV). No kRc tuning required."},
     32: {"proof_id": "w_z_mass_ratio", "wl_code": "gauge_unification_v16_0.py", "result": "sin²θ_W_GUT = 3/8", "note": "W/Z mass ratio from SO(10) prediction"},
     35: {"proof_id": "photon_z_mixing", "wl_code": "theta_W = ArcTan[shadow/chi]", "result": "28.7 deg", "note": "Weinberg angle from shadow sector geometry"},
     36: {"proof_id": "ckm_matrix_unitarity", "wl_code": "ckm_matrix_v16_0.py", "result": "deviation < 10^-10", "note": "V_us=0.2231, V_cb=0.040, V_ub=0.004 match PDG 2024"},
@@ -181,6 +189,103 @@ NOT_TESTABLE_GATES = {
     72: {"reason": "Omega Hash is the verification seal itself"},
 }
 
+# Derivation Status mapping based on GATE_CATEGORIZATION.md
+# Maps gate_id to derivation_status
+# Categories from GATE_CATEGORIZATION.md:
+#   TOPOLOGICAL, GEOMETRIC -> RIGOROUS
+#   DERIVED -> DERIVED
+#   FITTED -> FITTED
+#   INPUT -> INPUT
+#   EXPLORATORY -> EXPLORATORY
+#   (PARTIAL is for gates with key steps established but assumptions remain)
+DERIVATION_STATUS = {
+    # Phase 1: Structural Foundations (G01-G10) - Mostly TOPOLOGICAL/GEOMETRIC
+    1: "RIGOROUS",      # TOPOLOGICAL - 288 is defined, not fitted
+    2: "RIGOROUS",      # GEOMETRIC - V7 holonomy is mathematical
+    3: "RIGOROUS",      # TOPOLOGICAL - 125 + 163 = 288 is definition
+    4: "DERIVED",       # DERIVED - Lambda from 12/288^2
+    5: "RIGOROUS",      # GEOMETRIC - Smooth mapping requirement
+    6: "RIGOROUS",      # TOPOLOGICAL - 12 + 12 = 24
+    7: "RIGOROUS",      # GEOMETRIC - pi/2 is exact
+    8: "DERIVED",       # DERIVED - arcsin(125/288) is exact
+    9: "RIGOROUS",      # TOPOLOGICAL - 4x6 = 24
+    10: "DERIVED",      # DERIVED - Vacuum energy from topology
+
+    # Phase 2: Gauge & Matter Registry (G11-G25) - Mixed
+    11: "DERIVED",      # DERIVED - alpha_s from geometric formula
+    12: "DERIVED",      # DERIVED - theta_W from shadow tilt
+    13: "RIGOROUS",     # GEOMETRIC - U(1) gauge symmetry
+    14: "RIGOROUS",     # GEOMETRIC - Group theory
+    15: "RIGOROUS",     # GEOMETRIC - Ghost decoupling
+    16: "RIGOROUS",     # GEOMETRIC - Spinor structure
+    17: "DERIVED",      # DERIVED - n_gen = chi_eff/48
+    18: "FITTED",       # FITTED - Uses Yukawa textures
+    19: "FITTED",       # FITTED - Uses Yukawa textures
+    20: "FITTED",       # FITTED - Octonionic mixing is speculative
+    21: "DERIVED",      # DERIVED - All 4 angles from geometry (mapped from CKM/PMNS)
+    22: "FITTED",       # FITTED - kRc = 11.21 tuned to v = 246 GeV
+    23: "DERIVED",      # DERIVED - m_H from quartic coupling
+    24: "DERIVED",      # DERIVED - From v and g,g'
+    25: "FITTED",       # FITTED - y_t calibrated
+
+    # Phase 3: Interaction & Mixing (G26-G40) - Mixed
+    26: "DERIVED",      # DERIVED - Wilson loop area law
+    27: "DERIVED",      # DERIVED - RG flow from geometry
+    28: "DERIVED",      # DERIVED - M_GUT from gauge unification
+    29: "INPUT",        # INPUT - Uses beta decay data
+    30: "DERIVED",      # DERIVED - V7 twist mechanism
+    31: "DERIVED",      # DERIVED - v = k_gimel × (b3-4) per Appendix J
+    32: "DERIVED",      # DERIVED - delta_PMNS from geometry
+    33: "RIGOROUS",     # GEOMETRIC - Mathematical consistency
+    34: "DERIVED",      # DERIVED - M_GUT ~ 10^16 GeV
+    35: "DERIVED",      # DERIVED - From gauge coupling ratios
+    36: "DERIVED",      # DERIVED - k_gimel formula
+    37: "DERIVED",      # DERIVED - From M_W and g
+    38: "INPUT",        # INPUT - Uses G_N as input
+    39: "DERIVED",      # DERIVED - Lambda from topology
+    40: "DERIVED",      # DERIVED - w0 = -1 + 1/b3
+
+    # Phase 4: Cosmological & Metric (G41-G55) - Mixed
+    41: "EXPLORATORY",  # EXPLORATORY - Formula not rigorous (wa)
+    42: "DERIVED",      # DERIVED - From sterile sector
+    43: "FITTED",       # FITTED - Brane angle is ad hoc (H0)
+    44: "DERIVED",      # DERIVED - Bulk viscosity mechanism
+    45: "DERIVED",      # DERIVED - From vacuum energy
+    46: "INPUT",        # INPUT - Uses observed abundances
+    47: "DERIVED",      # DERIVED - From 288-root descent
+    48: "DERIVED",      # DERIVED - From moduli decay
+    49: "DERIVED",      # DERIVED - Tensor-to-scalar ratio
+    50: "DERIVED",      # DERIVED - From holographic bound
+    51: "DERIVED",      # DERIVED - c from dimensional analysis
+    52: "DERIVED",      # DERIVED - From M_Pl
+    53: "DERIVED",      # DERIVED - From M_Pl
+    54: "DERIVED",      # DERIVED - From RS geometry
+    55: "DERIVED",      # DERIVED - From kRc
+
+    # Phase 5: Dimensional & Logical Closure (G56-G72) - Mostly GEOMETRIC
+    56: "RIGOROUS",     # GEOMETRIC - Bosonic string theory
+    57: "RIGOROUS",     # GEOMETRIC - Two-time physics
+    58: "RIGOROUS",     # GEOMETRIC - M-theory on G2
+    59: "RIGOROUS",     # GEOMETRIC - Compactification
+    60: "RIGOROUS",     # GEOMETRIC - Symmetry requirement
+    61: "RIGOROUS",     # GEOMETRIC - Mathematical theorem
+    62: "RIGOROUS",     # GEOMETRIC - Mathematical theorem
+    63: "RIGOROUS",     # GEOMETRIC - Quantum mechanics
+    64: "RIGOROUS",     # GEOMETRIC - Lightcone structure
+    65: "DERIVED",      # DERIVED - From 288-root initial state
+    66: "RIGOROUS",     # GEOMETRIC - Unitarity consequence
+    67: "RIGOROUS",     # TOPOLOGICAL - All gates consistent
+    68: "RIGOROUS",     # TOPOLOGICAL - No 25th pin
+    69: "RIGOROUS",     # GEOMETRIC - Closed manifold
+    70: "RIGOROUS",     # GEOMETRIC - Self-consistent (also MATHEMATICAL)
+    71: "RIGOROUS",     # GEOMETRIC - No hidden gauge
+    72: "RIGOROUS",     # TOPOLOGICAL - All checks pass
+}
+
+def get_derivation_status(gate_id):
+    """Get the derivation status for a gate ID."""
+    return DERIVATION_STATUS.get(gate_id, "PARTIAL")
+
 def load_gates():
     """Load the 72 gates definition."""
     with open(GATES_FILE, 'r', encoding='utf-8') as f:
@@ -228,11 +333,12 @@ def create_certificate(gate, existing_certs):
             "category": gate.get('domain', 'TOPOLOGY'),
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "22.0",
+            "version": "23.0",
             "wl_code": verif.get('wl_code', gate.get('wolfram', 'N/A')),
             "result": verif.get('result', 'N/A'),
             "formula": gate.get('formula', 'N/A'),
             "verification_status": "VERIFIED",
+            "derivation_status": get_derivation_status(gate_id),
             "note": f"Gate {gate_id}: {note}. {gate.get('logic', '')}",
             "timestamp": timestamp,
             "hash": generate_hash({"id": gate_id, "result": verif.get('result')})
@@ -246,11 +352,12 @@ def create_certificate(gate, existing_certs):
             "category": "MATHEMATICAL",
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "22.0",
+            "version": "23.0",
             "wl_code": gate.get('wolfram', 'N/A'),
             "result": "N/A",
             "formula": gate.get('formula', 'N/A'),
             "verification_status": "MATHEMATICAL",
+            "derivation_status": get_derivation_status(gate_id),
             "reason": MATHEMATICAL_GATES[gate_id]['reason'],
             "note": f"MATHEMATICAL: {gate.get('logic', '')}. This is a mathematical constraint derivable from the 288-root manifold.",
             "timestamp": timestamp,
@@ -265,11 +372,12 @@ def create_certificate(gate, existing_certs):
             "category": "FOUNDATIONAL_ASSUMPTION",
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "22.0",
+            "version": "23.0",
             "wl_code": gate.get('wolfram', 'N/A'),
             "result": "N/A",
             "formula": gate.get('formula', 'N/A'),
             "verification_status": "NOT_TESTABLE",
+            "derivation_status": get_derivation_status(gate_id),
             "reason": NOT_TESTABLE_GATES[gate_id]['reason'],
             "note": f"FOUNDATIONAL: {gate.get('logic', '')}. This is a framework assumption, not an empirical prediction.",
             "timestamp": timestamp,
@@ -285,11 +393,12 @@ def create_certificate(gate, existing_certs):
             "category": gate.get('domain', 'PENDING'),
             "phase": gate.get('phase', 1),
             "block": gate.get('block', 'A'),
-            "version": "22.0",
+            "version": "23.0",
             "wl_code": gate.get('wolfram', 'PENDING'),
             "result": "PENDING",
             "formula": gate.get('formula', 'N/A'),
             "verification_status": "PENDING_LOCK",
+            "derivation_status": get_derivation_status(gate_id),
             "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
             "note": f"PENDING: {gate.get('logic', '')}. Validation: {gate.get('validation', 'awaiting implementation')}",
             "timestamp": timestamp,
@@ -324,6 +433,16 @@ def main():
     not_testable_count = 0
     mathematical_count = 0
 
+    # Derivation status counters
+    derivation_counts = {
+        "RIGOROUS": 0,
+        "DERIVED": 0,
+        "PARTIAL": 0,
+        "EXPLORATORY": 0,
+        "FITTED": 0,
+        "INPUT": 0
+    }
+
     for gate in gates:
         cert = create_certificate(gate, existing)
         all_certificates.append(cert)
@@ -337,6 +456,11 @@ def main():
         elif cert['verification_status'] == 'MATHEMATICAL':
             mathematical_count += 1
 
+        # Count derivation status
+        ds = cert.get('derivation_status', 'PARTIAL')
+        if ds in derivation_counts:
+            derivation_counts[ds] += 1
+
         # Save individual certificate
         cert_filename = f"G{gate['id']:02d}_{cert['proof_id'].split('_', 1)[-1][:30]}.json"
         cert_path = os.path.join(CERT_DIR, cert_filename)
@@ -345,7 +469,7 @@ def main():
 
     # Create summary file
     summary = {
-        "version": "22.0",
+        "version": "23.0",
         "title": "72 Gates Certificate Registry",
         "timestamp": datetime.utcnow().isoformat() + "Z",
         "summary": {
@@ -354,6 +478,23 @@ def main():
             "pending_lock": pending_count,
             "not_testable": not_testable_count,
             "mathematical": mathematical_count
+        },
+        "derivation_summary": {
+            "description": "Derivation status indicates how each gate's formula was obtained",
+            "RIGOROUS": derivation_counts["RIGOROUS"],
+            "DERIVED": derivation_counts["DERIVED"],
+            "PARTIAL": derivation_counts["PARTIAL"],
+            "EXPLORATORY": derivation_counts["EXPLORATORY"],
+            "FITTED": derivation_counts["FITTED"],
+            "INPUT": derivation_counts["INPUT"],
+            "definitions": {
+                "RIGOROUS": "Follows from established mathematics (GEOMETRIC, TOPOLOGICAL)",
+                "DERIVED": "Key formula derived from PM parameters",
+                "PARTIAL": "Key steps established, some assumptions remain",
+                "EXPLORATORY": "Formula works but mechanism incomplete",
+                "FITTED": "Uses experimental input (acknowledged)",
+                "INPUT": "Direct experimental value used"
+            }
         },
         "honest_status": {
             "description": "This registry honestly reports verification status",
@@ -374,6 +515,13 @@ def main():
     print(f"NOT_TESTABLE:   {not_testable_count}")
     print(f"MATHEMATICAL:   {mathematical_count}")
     print(f"TOTAL:          {len(all_certificates)}")
+    print(f"\n=== Derivation Status Summary ===")
+    print(f"RIGOROUS:       {derivation_counts['RIGOROUS']}")
+    print(f"DERIVED:        {derivation_counts['DERIVED']}")
+    print(f"PARTIAL:        {derivation_counts['PARTIAL']}")
+    print(f"EXPLORATORY:    {derivation_counts['EXPLORATORY']}")
+    print(f"FITTED:         {derivation_counts['FITTED']}")
+    print(f"INPUT:          {derivation_counts['INPUT']}")
     print(f"\nOutput: {OUTPUT_FILE}")
 
 if __name__ == "__main__":

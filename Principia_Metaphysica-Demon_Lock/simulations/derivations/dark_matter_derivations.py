@@ -12,7 +12,7 @@ Key Results:
 - Portal coupling from G₂ cycle separation: g_portal ~ 10^-11
 - Direct detection cross-section: σ_SI ~ 10^-50 cm²
 
-The mirror sector emerges from Z₂ symmetry of the two-time (26D) framework.
+The mirror sector emerges from Z₂ symmetry of the 25D Euclidean bridge framework.
 Dark matter consists of mirror photons and mirror fermions with suppressed
 coupling to Standard Model via the Pneuma portal.
 
@@ -58,7 +58,7 @@ class DarkMatterDerivations:
     """
     Comprehensive dark matter derivations for Principia Metaphysica.
 
-    Derives all DM properties from G₂ geometry and two-time framework.
+    Derives all DM properties from G₂ geometry and Euclidean bridge framework.
     Generates Wolfram Alpha queries for validation.
     """
 
@@ -594,7 +594,7 @@ class DarkMatterDerivations:
             category="GEOMETRIC",
             description=(
                 "Dark matter originates from a mirror sector arising from Z2 symmetry "
-                "in the two-time (26D) framework. G2 holonomy naturally supports a "
+                "in the 25D Euclidean bridge framework. G2 holonomy naturally supports a "
                 "parity transformation between visible and shadow sectors."
             ),
             inputParams=["topology.chi_eff", "topology.b3"],
@@ -817,7 +817,7 @@ class DarkMatterDerivations:
             title="Dark Matter from Mirror Sector",
             abstract=(
                 "Dark matter in Principia Metaphysica originates from a mirror sector "
-                "arising naturally from the Z2 symmetry of the two-time (26D) framework. "
+                "arising naturally from the Z2 symmetry of the 25D Euclidean bridge framework. "
                 "The G2 holonomy structure determines the sterile fraction (163/288), "
                 "asymmetric reheating temperature ratio (T'/T ~ 0.57), and the resulting "
                 "dark matter abundance Omega_DM/Omega_b ~ 5.4, matching Planck observations. "
@@ -848,7 +848,7 @@ class DarkMatterDerivations:
                     content=(
                         "In the Principia Metaphysica framework, dark matter is not added ad hoc "
                         "but emerges naturally from the geometric structure of the theory. "
-                        "The two-time (26D) framework with G2 holonomy possesses an inherent Z2 "
+                        "The 25D Euclidean bridge framework with G2 holonomy possesses an inherent Z2 "
                         "symmetry that generates a complete mirror sector - a shadow copy of the "
                         "Standard Model with suppressed coupling to ordinary matter."
                     )
@@ -868,7 +868,7 @@ class DarkMatterDerivations:
                         "The G2 holonomy manifold in M-theory compactification naturally admits "
                         "a discrete Z2 symmetry that exchanges the visible and shadow sectors. "
                         "This is not imposed by hand but emerges from the topology of the compact "
-                        "manifold and the two-time structure of the 26D framework."
+                        "manifold and the Euclidean bridge structure of the 25D framework."
                     )
                 ),
                 ContentBlock(

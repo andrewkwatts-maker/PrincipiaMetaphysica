@@ -1,7 +1,7 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** PEER_REVIEWED | **Last Sync:** 2026-01-21 03:50:07
-**Engine Version:** v22.0-12PAIR
+**Status:** PEER_REVIEWED | **Last Sync:** 2026-01-21 04:05:52
+**Engine Version:** v23.0-12PAIR
 **Sovereign Hash:** `7842742f98aaa6ed5a989f93cefbf29b...`
 
 <!-- SOVEREIGN_HASH_FULL: 7842742f98aaa6ed5a989f93cefbf29b3905c6c82be6e414e711b22af9f0634f -->

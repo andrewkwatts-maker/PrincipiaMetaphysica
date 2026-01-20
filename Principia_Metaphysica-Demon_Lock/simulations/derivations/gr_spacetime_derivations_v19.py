@@ -7,13 +7,17 @@ This module provides comprehensive derivations showing how 4D General Relativity
 and spacetime geometry emerge from the 26D master action through dimensional
 reduction over G2 holonomy manifolds.
 
-DERIVATION CHAIN:
------------------
-1. 26D Master Action with vielbein formalism
+DERIVATION CHAIN (v22):
+-----------------------
+1. 25D Master Action with vielbein formalism (signature (24,1))
 2. Metric tensor from vielbein: g_munu = eta_AB e^A_mu e^B_nu
 3. Spin connection and torsion-free condition
 4. Riemann/Ricci tensor construction
-5. Kaluza-Klein reduction: 26D -> 13D (Sp(2,R)) -> 7D (G2) -> 4D
+5. v22 Dimensional reduction:
+   25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1) -> 4D(3,1)
+   - (0,1): Shared unified time fiber
+   - 12x(2,0): 12 Euclidean bridge pairs
+   - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
 6. Einstein-Hilbert action emergence
 7. Newton's constant from G2 compactification volume
 8. Einstein field equations from variation
@@ -85,14 +89,15 @@ try:
     B2_G2 = 4                           # Second Betti number (TCS #187)
     CHI_EFF = _SSOT.chi_eff_total       # Full manifold Euler char = 144
 
-    # 5-Level Dimensional Chain - from SSOT
-    # Level 0: ANCESTRAL (26D, signature 24,2) - Bosonic string
+    # v21 Dimensional Chain - from SSOT
+    # Level 0: ANCESTRAL (26D, signature 24,1) - v21 Unified time
     D_CRITICAL = _SSOT.D_ancestral_total      # 26
-    # Level 1: SHADOW (13D, signature 12,1) - After Sp(2,R) gauge fixing
-    D_INTERMEDIATE = _SSOT.D_shadow_total     # 13
+    # Level 1: SHADOW (11D SPATIAL, signature 11,0) - v21 dual shadows
+    # Structure: M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
+    D_INTERMEDIATE = _SSOT.D_shadow_total     # 11 (per shadow, SPATIAL)
     # Level 2: G2 (7D, signature 7,0) - G2 holonomy (RIEMANNIAN)
     D_G2 = _SSOT.D_G2_total                   # 7
-    # Level 4: VISIBLE (4D, signature 3,1) - Observable spacetime
+    # Level 3: VISIBLE (4D, signature 3,1) - Observable spacetime
     D_SPACETIME = _SSOT.D_visible_total       # 4
 
 except ImportError:
@@ -100,8 +105,8 @@ except ImportError:
     B3_G2 = 24           # Third Betti number
     B2_G2 = 4            # Second Betti number
     CHI_EFF = 144        # Effective Euler characteristic
-    D_CRITICAL = 26      # Bosonic string critical dimension
-    D_INTERMEDIATE = 13  # After Sp(2,R) gauge fixing
+    D_CRITICAL = 26      # Bosonic string critical dimension (24,1)
+    D_INTERMEDIATE = 11  # v21: Per-shadow dimension (SPATIAL 11,0)
     D_G2 = 7             # G2 holonomy manifold
     D_SPACETIME = 4      # Observable spacetime
 
@@ -164,7 +169,7 @@ class NewtonConstantDerivation:
 
 class GRSpacetimeDerivationsV19(SimulationBase):
     """
-    Complete General Relativity and Spacetime Derivations from 26D Master Action.
+    Complete General Relativity and Spacetime Derivations from 26D Master Action (v21).
 
     This simulation provides rigorous mathematical derivations showing how:
     1. The metric tensor emerges from vielbein fields
@@ -173,6 +178,13 @@ class GRSpacetimeDerivationsV19(SimulationBase):
     4. Einstein-Hilbert action emerges from dimensional reduction
     5. Newton's constant is fixed by G2 compactification geometry
     6. Einstein field equations follow from variational principle
+
+    v22 FRAMEWORK:
+    Structure: 25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+    - (0,1): Shared unified time fiber
+    - 12x(2,0): 12 Euclidean bridge pairs
+    - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
+    Dimensional check: 12x2 + 1 = 25 EXACT
 
     The derivations follow Carroll's GR Notes and eigenchris pedagogy for
     maximum clarity while maintaining mathematical rigor.
@@ -188,9 +200,17 @@ class GRSpacetimeDerivationsV19(SimulationBase):
         self.D_7 = D_G2
         self.D_4 = D_SPACETIME
 
-        # Signature
-        self.sig_26 = (24, 2)  # (spatial, temporal)
-        self.sig_13 = (12, 1)  # After Sp(2,R)
+        # Signature - v22 dual-shadow structure
+        # v22 FRAMEWORK: 25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+        # Components:
+        #   (0,1): Shared unified time fiber
+        #   12x(2,0): 12 Euclidean bridge pairs
+        #   2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
+        # Dimensional check: 12x2 + 1 = 25 EXACT
+        self.sig_25 = (24, 1)  # (spatial, temporal) - v22: unified time
+        self.sig_shadow = (12, 1)  # v22: Shadow is 13D (12 spatial + 1 shared time)
+        self.sig_bridge = (2, 0)   # Each of 12 Euclidean bridge pairs - v22
+        self.sig_time = (0, 1)     # Shared unified time - v22
         self.sig_7 = (7, 0)    # G2 (Riemannian)
         self.sig_4 = (3, 1)    # Minkowski
 
