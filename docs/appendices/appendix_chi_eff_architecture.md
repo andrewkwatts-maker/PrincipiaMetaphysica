@@ -1,6 +1,6 @@
 # Appendix: Chi-Effective Dual Architecture
 
-**Version:** v22.0-12PAIR
+**Version:** v23.0-12PAIR
 **Status:** Physics-Validated (Gemini Review)
 
 ---

@@ -513,4 +513,4 @@ This appendix uses the following Single Source of Truth (SSOT) parameters from `
 ---
 
 *Document generated: 2026-01-19*
-*Principia Metaphysica v22.1*
+*Principia Metaphysica v23.0*

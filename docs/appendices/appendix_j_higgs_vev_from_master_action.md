@@ -710,5 +710,5 @@ This simulation includes:
 ---
 
 *Document generated: 2026-01-19*
-*Principia Metaphysica v22.2*
+*Principia Metaphysica v23.0*
 *Updated with weak mixing angle derivation from bridge geometry*

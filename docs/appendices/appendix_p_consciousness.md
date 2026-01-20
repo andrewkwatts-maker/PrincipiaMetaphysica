@@ -717,7 +717,7 @@ With each Dᵢ ∈ {0,1,2,3}, this gives 256 possible branches - matching the br
 
 ---
 
-*Appendix P updated for v22.4*
+*Appendix P updated for v23.0*
 *Date: 2026-01-19*
 *Additions: P.15 (Free Will Paradox), P.16 (Triality Philosophy), P.17 (4 Dice Sampling)*
 *Workstream 4: Orch-OR Enhancement with Pair Shielding*

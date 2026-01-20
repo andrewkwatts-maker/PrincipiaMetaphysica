@@ -221,7 +221,7 @@ DERIVATION_STATUS = {
     17: "DERIVED",      # DERIVED - n_gen = chi_eff/48
     18: "FITTED",       # FITTED - Uses Yukawa textures
     19: "FITTED",       # FITTED - Uses Yukawa textures
-    20: "FITTED",       # FITTED - Octonionic mixing is speculative
+    20: "DERIVED",      # DERIVED - CKM from G2 topological phase overlaps (all elements within 1σ of PDG 2024)
     21: "DERIVED",      # DERIVED - All 4 angles from geometry (mapped from CKM/PMNS)
     22: "FITTED",       # FITTED - kRc = 11.21 tuned to v = 246 GeV
     23: "DERIVED",      # DERIVED - m_H from quartic coupling

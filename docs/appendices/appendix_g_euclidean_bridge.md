@@ -1,6 +1,6 @@
 # Appendix G: Euclidean Bridge and OR Reduction
 
-**Version:** v22.5
+**Version:** v23.0
 **Status:** Physics-Validated (Gemini Recursive Review + G.11 Localization Clarification)
 
 ---
