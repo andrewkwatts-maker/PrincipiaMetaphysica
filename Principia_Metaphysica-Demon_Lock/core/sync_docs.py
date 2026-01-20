@@ -108,10 +108,30 @@ All other values are derived from these constants.
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
 | Betti Three | B3 | `{reg.b3}` | Third Betti number of G2 manifold |
-| Chi Effective | chi_eff | `{reg.chi_eff}` | Effective Euler characteristic (B3^2/4) |
+| Chi Effective (per-shadow) | chi_eff | `{reg.chi_eff}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
+| Chi Effective (total) | chi_eff_total | `{reg.chi_eff_total}` | Both shadows combined (72 + 72 = 144) |
 | Total Roots | - | `{reg.roots_total}` | E8 x E8 root lattice |
 | Visible Sector | - | `{reg.visible_sector}` | 5^3 = 125 (SM parameters) |
 | Sterile Sector | P_O | `{reg.sterile_sector}` | 288 - 125 = 163 (O'Dowd Bulk Pressure) |
+
+### Chi-Effective Dual Architecture (v22.0-12PAIR)
+
+The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge system:
+
+| Constant | Value | Formula | Usage Domain |
+| :--- | :--- | :--- | :--- |
+| chi_eff | `{reg.chi_eff}` | B3^2/8 = 576/8 | Single-shadow (baryon, CKM) |
+| chi_eff_total | `{reg.chi_eff_total}` | B3^2/4 = 576/4 | Cross-shadow (PMNS, n_gen) |
+
+**Key Principle:** Does the physics involve one shadow or both?
+- **Single-shadow (chi_eff = 72):** Quarks (CKM mixing), baryon asymmetry, torsional leakage
+- **Cross-shadow (chi_eff_total = 144):** Neutrinos (PMNS mixing), generation counting, flux quantization
+
+**Physical Basis:**
+- Quarks carry color charge and are confined within a single 11D shadow
+- Neutrinos are electrically neutral and propagate through the Euclidean bridge
+
+*Reference: docs/appendices/appendix_chi_eff_architecture.md*
 
 ### The Sacred Heptagon (7 Intellectual Anchors)
 

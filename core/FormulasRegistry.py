@@ -1,7 +1,7 @@
 """
 FormulasRegistry.py - Single Source of Truth (SSoT)
 ====================================================
-Centralizes all topological derivations for Principia Metaphysica v22.0-12PAIR.
+Centralizes all topological derivations for Principia Metaphysica v23.0-12PAIR.
 
 v22 KEY UPDATES (2026-01-18):
 - Structure: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
@@ -75,7 +75,7 @@ lock_geometric_context()
 
 class FormulasRegistry:
     """
-    Single Source of Truth (SSoT) for Principia Metaphysica v22.0-12PAIR.
+    Single Source of Truth (SSoT) for Principia Metaphysica v23.0-12PAIR.
 
     Centralizes all topological derivations to ensure sterility across:
     1. Simulation Physics
@@ -116,8 +116,8 @@ class FormulasRegistry:
     - Bars, I. (2006). 2T-physics. Phys. Rev. D 74: 085019.
     """
 
-    VERSION = "22.0-12PAIR"
-    VERSION_SHORT = "22.0"
+    VERSION = "23.0-12PAIR"
+    VERSION_SHORT = "23.0"
     STATUS = "PEER_REVIEWED"  # Updated per Gemini review 2026-01-18
     # v22 CHANGES: 12×(2,0) paired bridge system, distributed OR reduction,
     #              gnosis unlocking (6→12 pairs), consciousness I/O channels

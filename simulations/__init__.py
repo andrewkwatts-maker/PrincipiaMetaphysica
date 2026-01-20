@@ -112,8 +112,8 @@ Total execution time: ~200 ms for all 8 domains
 """
 
 # Version information
-__version__ = "22.0"
-__framework_version__ = "v22"
+__version__ = "23.0"
+__framework_version__ = "v23"
 __author__ = "Andrew Keith Watts"
 # v22.0: 12×(2,0) paired bridge system for consciousness I/O
 # Key change: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})

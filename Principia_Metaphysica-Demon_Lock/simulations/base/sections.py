@@ -44,17 +44,17 @@ PAPER_SECTIONS: Dict[str, SectionInfo] = {
     "0": SectionInfo(
         id="0",
         title="Abstract",
-        description="The 26D(24,2) ancestral bulk, S_PR(2) gauge filter, G2 manifold, and 6D→4D projection.",
+        description="(24,1) dual-shadow framework with Euclidean bridge deriving 125 constants from G2 manifold spectral residues.",
         section_type="abstract",
-        simulation_source="foundations_v16_2"  # Abstract content from foundations
+        simulation_source="abstract_v17_2"  # Abstract content (updated for v21)
     ),
     # Main Sections
     "1": SectionInfo(
         id="1",
-        title="Introduction",
-        description="Overview of M-theory compactification and the unified framework",
+        title="Foundations of Dimensional Descent",
+        description="The (24,1) bulk with unified time, dual shadows, Euclidean bridge, G2 compactification, and condensate projection.",
         section_type="section",
-        simulation_source=None  # Manual content
+        simulation_source="merged_descent_v21"  # v21 refactor: (24,1) dual-shadow model
     ),
     "2": SectionInfo(
         id="2",
@@ -172,7 +172,7 @@ PAPER_SECTIONS: Dict[str, SectionInfo] = {
     "F": SectionInfo(
         id="F",
         title="Dimensional Decomposition",
-        description="26D to 4D reduction via 13D shadow (PM chain: 26D→13D→6D→4D)",
+        description="25D to 4D reduction via 13D shadow (PM chain: 25D→13D→6D→4D)",
         section_type="appendix"
     ),
     "G": SectionInfo(

@@ -387,11 +387,16 @@ def derive_c7_higgs_vev() -> Certificate:
     """
     Certificate 7: The Higgs Vacuum Expectation Value (v)
 
-    v = k_gimel × (b₃ - 4)
+    v = k_gimel × (b₃ - 4) = 12.318 × 20 = 246.37 GeV
 
-    The Higgs VEV emerges from the Gimel constant scaled by the
-    "visible" dimension count (b₃ - 4 = 20), representing the
-    20 extra dimensions beyond our 4D spacetime.
+    DERIVED via Appendix J (appendix_j_higgs_vev_from_master_action.md):
+    - k_gimel = b₃/2 + 1/π = 12 + 0.318 = 12.318 (pure geometry)
+    - (b₃ - 4) = 20 = Effective moduli after EW sector claims 4 DOF
+    - The "4" corresponds to 4 Higgs doublet components (3 Goldstones + 1 Higgs)
+    - Result: 0.06% agreement with PDG 2024 (v_exp = 246.22 GeV)
+
+    This derivation supersedes the old kRc = 11.21 fitted approach.
+    The formula is now parameter-free: only b₃ = 24 and π are needed.
     """
     v_higgs = K_GIMEL * (B3 - 4)  # 12.318 × 20 = 246.37
 
@@ -403,11 +408,11 @@ def derive_c7_higgs_vev() -> Certificate:
         experimental_value=246.22,  # PDG 2024
         uncertainty=0.5,  # Theoretical tolerance
         units="GeV",
-        formula="v = k_gimel × (b₃ - 4)",
+        formula="v = k_gimel × (b₃ - 4) where k_gimel = b₃/2 + 1/π",
         domain="Electroweak",
-        geometric_seed="LEECH_LATTICE",
+        geometric_seed="G2_HOLONOMY",
         source="PDG_2024",
-        notes="Gimel × 20 hidden dimensions"
+        notes="DERIVED: Appendix J parameter-free derivation. k_gimel from G2 topology, (b3-4)=20 from EW DOF subtraction. 0.06% agreement."
     )
 
 

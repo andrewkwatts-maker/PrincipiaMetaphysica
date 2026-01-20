@@ -364,10 +364,11 @@ def generate_expanding_universe(output_path: str = "../../images/expanding-unive
                                   linewidth=2, alpha=0.95))
     ax2.text(7.5, 7.1, "Dark Energy from G$_2$", fontsize=11, ha='center',
             fontweight='bold', color=PM_COLORS["dark_purple"])
+    # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
     de_lines = [
         r"$\Lambda_{eff} = c_{G,\Lambda} \cdot \Lambda_{QFT}$",
-        r"$w_0 = -1.03 \pm 0.03$",
-        r"$w_a = -0.02$",
+        r"$w_0 = -0.958 \pm 0.02$ (DESI 2025)",
+        r"$w_a = -0.204$",
     ]
     for i, line in enumerate(de_lines):
         ax2.text(7.5, 6.5 - i * 0.45, line, fontsize=9, ha='center',

@@ -23,14 +23,14 @@ The three structural anchors are defined as strings to prevent precision loss:
 
     k_gimel = b₃/2 + 1/π ≈ 12.318...
                    Gimel constant from Leech lattice spectral gap
-                   The "heartbeat" of the 26D Bulk tension
+                   The "heartbeat" of the 25D Bulk tension
 
     φ = (1+√5)/2 ≈ 1.618...
                    Golden ratio - modulates dynamic harmonics
 
 DIMENSIONAL PROJECTION CHAIN
 ----------------------------
-    26D Bulk (Leech Lattice)
+    25D Bulk (Leech Lattice)
         ↓ b₃ = 24 (compactification)
     13D Mirror Brane
         ↓ χ = √V₇ ≈ 5.013 (volumetric dressing)
@@ -54,7 +54,7 @@ def initialize_demon_lock(precision: int = 50) -> None:
     """
     Sets the global computational environment to sterile precision.
 
-    This is required to maintain the topological stability of the 26D Leech Lattice.
+    This is required to maintain the topological stability of the 25D Leech Lattice.
     Without this, rounding errors at the 16th decimal place compound exponentially
     in manifold calculations.
 

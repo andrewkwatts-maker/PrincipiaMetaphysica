@@ -12,9 +12,19 @@ Dedicated To:
 This package provides the simulation infrastructure for the Principia Metaphysica
 theoretical framework, a G2 manifold-based unification of fundamental physics.
 
-Current Production Framework: v16.0
-------------------------------------
-All production simulations use the v16 framework with SOLID architecture:
+Current Production Framework: v22.0 (12-PAIR-BRIDGE)
+-----------------------------------------------------
+All production simulations use the v22 framework with SOLID architecture:
+
+v22.0 Key Updates (12×(2,0) Paired Bridge System):
+- Bulk: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+- Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)
+- Distributed OR: ⊗_{i=1}^{12} R_⊥_i for consciousness sampling
+- Gnosis unlocking: 6→12 pairs via inner exploration
+- Consciousness I/O: Each pair is neural gate (perception/intuition)
+- Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
+
+Core Framework:
 - Unified SimulationBase interface
 - PMRegistry for parameter/formula/section management
 - JSON schema validation
@@ -26,7 +36,7 @@ Quick Start:
 ------------
     >>> from simulations.base import PMRegistry
     >>> from simulations.base.established import EstablishedPhysics
-    >>> from simulations.v16.gauge import GaugeUnificationSimulation
+    >>> from simulations.v21.gauge import GaugeUnificationSimulation
     >>>
     >>> # Create registry and load ESTABLISHED physics
     >>> registry = PMRegistry.get_instance()
@@ -40,7 +50,7 @@ Quick Start:
     >>> M_GUT = results['gauge.M_GUT']
     >>> print(f"M_GUT = {M_GUT:.3e} GeV")
 
-Available v16 Simulations (8 domains):
+Available v21 Simulations (8 domains):
 ---------------------------------------
 1. gauge:     Gauge coupling unification → M_GUT, alpha_GUT
 2. higgs:     Higgs mass from moduli stabilization
@@ -69,7 +79,7 @@ simulations/
 │   ├── validator.py
 │   ├── injector.py
 │   └── established.py
-├── v16/                    # Production simulations (USE THIS)
+├── v21/                    # Production simulations (USE THIS)
 │   ├── README.md           # v16 overview with dependency graph
 │   ├── gauge/              # Gauge unification
 │   ├── higgs/              # Higgs mass
@@ -87,7 +97,7 @@ Documentation:
 --------------
 - Architecture:      simulations/ARCHITECTURE.md
 - Simulation Guide:  simulations/SIMULATION_GUIDE.md
-- v16 Overview:      simulations/v16/README.md
+- v16 Overview:      simulations/v21/README.md
 - Foundation Schema: FOUNDATION_SCHEMA_README.md
 - Quick Start:       FOUNDATION_QUICK_START.md
 
@@ -102,12 +112,16 @@ Total execution time: ~200 ms for all 8 domains
 """
 
 # Version information
-__version__ = "19.2"
-__framework_version__ = "v16"
+__version__ = "22.0"
+__framework_version__ = "v22"
 __author__ = "Andrew Keith Watts"
+# v22.0: 12×(2,0) paired bridge system for consciousness I/O
+# Key change: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+# Each pair is a consciousness gate: y_{1i}=input, y_{2i}=output
+# Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
 
-# Export v16 production framework
-from . import v16
+# Export v21 production framework
+from . import v21
 
 # Export key infrastructure modules
 from . import base
@@ -140,21 +154,21 @@ from .base import (
     inject_section,
 )
 
-# Try to import v16 simulations (optional)
+# Try to import v21 simulations (optional)
 try:
-    from .v16.gauge import GaugeUnificationSimulation
-    from .v16.higgs import HiggsMassSimulation
-    from .v16.proton import ProtonDecaySimulation
-    from .v16.neutrino import NeutrinoMixingSimulation
-    from .v16.fermion import FermionGenerationsV16 as FermionGenerationsSimulation
-    from .v16.cosmology import MultiSectorV16 as MultiSectorCosmologySimulation
-    from .v16.geometric import G2GeometryV16 as G2GeometrySimulation
-    from .v16.pneuma import PneumaMechanismV16 as PneumaMechanismSimulation
-    _V16_SIMULATIONS_AVAILABLE = True
+    from .v21.gauge import GaugeUnificationSimulation
+    from .v21.higgs import HiggsMassSimulation
+    from .v21.proton import ProtonDecaySimulation
+    from .v21.neutrino import NeutrinoMixingSimulation
+    from .v21.fermion import FermionGenerationsV16 as FermionGenerationsSimulation
+    from .v21.cosmology import MultiSectorV16 as MultiSectorCosmologySimulation
+    from .v21.geometric import G2GeometryV16 as G2GeometrySimulation
+    from .v21.pneuma import PneumaMechanismV16 as PneumaMechanismSimulation
+    _V21_SIMULATIONS_AVAILABLE = True
 except ImportError as e:
-    _V16_SIMULATIONS_AVAILABLE = False
+    _V21_SIMULATIONS_AVAILABLE = False
     import warnings
-    warnings.warn(f"Some v16 simulations could not be imported: {e}")
+    warnings.warn(f"Some v21 simulations could not be imported: {e}")
 
 # Define public API
 __all__ = [
@@ -164,7 +178,7 @@ __all__ = [
     '__author__',
 
     # Modules
-    'v16',
+    'v21',
     'base',
     'validation',
 
@@ -187,8 +201,8 @@ __all__ = [
     'inject_section',
 ]
 
-# Add v16 simulations to __all__ if available
-if _V16_SIMULATIONS_AVAILABLE:
+# Add v21 simulations to __all__ if available
+if _V21_SIMULATIONS_AVAILABLE:
     __all__.extend([
         'GaugeUnificationSimulation',
         'HiggsMassSimulation',
@@ -204,7 +218,7 @@ if _V16_SIMULATIONS_AVAILABLE:
 # Convenience functions
 def list_simulations():
     """
-    List all available v16 simulations.
+    List all available v21 simulations.
 
     Returns:
         List of tuples: (domain, class_name, description, section)
@@ -220,8 +234,8 @@ def list_simulations():
         ("pneuma", "PneumaMechanismSimulation", "Pneuma field dynamics", "2"),
     ]
 
-    if not _V16_SIMULATIONS_AVAILABLE:
-        warnings.warn("Some v16 simulations are not available")
+    if not _V21_SIMULATIONS_AVAILABLE:
+        warnings.warn("Some v21 simulations are not available")
 
     return simulations
 
@@ -243,7 +257,7 @@ def print_info():
     print("Documentation:")
     print("  - Architecture:      simulations/ARCHITECTURE.md")
     print("  - Simulation Guide:  simulations/SIMULATION_GUIDE.md")
-    print("  - v16 Overview:      simulations/v16/README.md")
+    print("  - v16 Overview:      simulations/v21/README.md")
     print()
     print("Quick Start:")
     print("  >>> from simulations.base import PMRegistry")
@@ -265,7 +279,7 @@ def _warn_deprecated_import():
     warnings.warn(
         "Importing from simulations.core.* is deprecated. "
         "All v12.x-v15.x simulations have been moved to simulations/deprecated/core/. "
-        "Please update your code to use simulations.v16.* instead. "
+        "Please update your code to use simulations.v21.* instead. "
         "See simulations/deprecated/README.md for migration information.",
         DeprecationWarning,
         stacklevel=3
@@ -284,7 +298,7 @@ class _DeprecatedModuleBlocker:
             raise ImportError(
                 f"Module 'simulations.core' has been deprecated. "
                 f"Legacy simulations (v12-v15) are archived in 'simulations/deprecated/core/'. "
-                f"Use 'simulations.v16' for all production code. "
+                f"Use 'simulations.v21' for all production code. "
                 f"See simulations/deprecated/README.md for details."
             )
         raise AttributeError(f"module 'simulations' has no attribute '{name}'")
@@ -295,7 +309,7 @@ import sys
 if 'simulations.core' in sys.modules:
     warnings.warn(
         "simulations.core module detected. This has been deprecated. "
-        "Update imports to use simulations.v16",
+        "Update imports to use simulations.v21",
         DeprecationWarning
     )
 
