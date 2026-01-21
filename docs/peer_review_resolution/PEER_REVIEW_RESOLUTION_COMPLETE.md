@@ -1,7 +1,10 @@
 # Peer Review Issue Resolution Report
 
 *Generated: 2026-01-17*
-*Principia Metaphysica v20.14*
+*Updated: 2026-01-21*
+*Principia Metaphysica v23.0*
+
+> **Note (v23.0)**: This document was originally created for v20.14 peer review. Issue 2 (Two-Time Signature) has been superseded by the v21+ refactor. The v23.0 framework uses 25D(24,1) with Euclidean bridge pairs.
 
 ---
 
@@ -26,18 +29,21 @@ This document addresses the 10 major issues identified in the peer review. Overa
 
 ---
 
-## Issue 2: Two-Time (24,2) Signature - ACKNOWLEDGED
+## Issue 2: Two-Time (24,2) Signature - SUPERSEDED (v21+)
 
 **Critique**: Non-standard, potential ghosts and causality issues.
 
-**Resolution**: Following Bars' two-time physics:
+**Historical Resolution (v16-v20)**: Following Bars' two-time physics:
 - Sp(2,R) gauge symmetry removes extra time via X·P = 0 constraint
-- Physical spacetime is 13D(12,1) with single time
 - Reference: Bars (2001) "Two-Time Physics" arXiv:hep-th/0106021
 
-**Action**: appendix_a_sp2r_gauge_fixing.md documents this. Expanded with proofs.
+**Current Resolution (v21+)**: The framework now uses 25D(24,1) with single time:
+- 12x(2,0) Euclidean bridge pairs create dual shadows
+- Each shadow is 13D(12,1) with Lorentzian signature
+- No ghost states, no causality issues
+- See Appendix G: Euclidean Bridge Architecture
 
-**Status**: ADDRESSED - inherently controversial in mainstream physics
+**Status**: RESOLVED - v21+ eliminates two-time issues by construction
 
 ---
 

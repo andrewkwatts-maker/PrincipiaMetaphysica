@@ -1,5 +1,5 @@
 """
-Value Context Audit v17.2 - DERIVED vs EXPERIMENTAL Value Usage Validator
+Value Context Audit v23.0 - DERIVED vs EXPERIMENTAL Value Usage Validator
 ==========================================================================
 
 This script ensures that:
@@ -378,7 +378,7 @@ class ValueContextAuditor:
         """Generate a human-readable audit report."""
         lines = [
             "=" * 70,
-            " PRINCIPIA METAPHYSICA v17.2 - VALUE CONTEXT AUDIT REPORT",
+            " PRINCIPIA METAPHYSICA v23.0 - VALUE CONTEXT AUDIT REPORT",
             "=" * 70,
             "",
         ]

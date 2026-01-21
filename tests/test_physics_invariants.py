@@ -1,5 +1,5 @@
 """
-Physics Invariants Test Suite v16.2 - SSoT Edition
+Physics Invariants Test Suite v23.0 - SSoT Edition
 ===================================================
 Validates that the G2 Lagrangian remains invariant under
 local coordinate transformations.
@@ -363,7 +363,7 @@ def test_odowd_hubble_formula():
 def run_all_tests():
     """Run all physics invariance tests."""
     print("=" * 60)
-    print(" PRINCIPIA METAPHYSICA v16.2 - PHYSICS INVARIANTS AUDIT")
+    print(" PRINCIPIA METAPHYSICA v23.0 - PHYSICS INVARIANTS AUDIT")
     print("=" * 60)
 
     results = {

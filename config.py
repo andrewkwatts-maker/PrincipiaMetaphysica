@@ -34,7 +34,7 @@ CHANGELOG v12.5:
   * Fixes 20% inconsistency between PhenomenologyParameters and ModuliParameters
   * All formulas now use M_PLANCK_REDUCED consistently
   * Added dual derivations for Higgs mass and M_GUT
-- v12.5: BREAKTHROUGH - Re(T) = 7.086 from Higgs mass constraint
+- v12.5: Re(T) = 7.086 derived from Higgs mass constraint
   * Discovered v11.0-v12.4 bug: Re(T) = 1.833 gave m_h = 414 GeV (hidden)
   * Inverted formula: Re(T) = (λ₀ - λ_eff) / (κ y_t²) with m_h = 125.10 GeV
   * Result: m_h EXACT match, swampland VALID, dual UV↔IR <1% agreement
@@ -68,7 +68,7 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "v23.0"
+VERSION = "23.0"
 VERSION_SHORT = "23.0"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
 STERILE_STATUS = True  # v19.2: Zero-degree-of-freedom model - all constants derived

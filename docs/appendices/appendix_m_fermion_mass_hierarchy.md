@@ -2,9 +2,9 @@
 
 **FM-01: Derivation of Yukawa Couplings, CKM Matrix, and Lepton Masses**
 
-**Version**: 22.2
-**Date**: 2026-01-19
-**Status**: COMPLETE (99% - G2 triality foundation, unified CKM/PMNS, all angles within 1 sigma!)
+**Version**: 23.0
+**Date**: 2026-01-21
+**Status**: 95% COMPLETE (G2 triality foundation established; CKM/PMNS predictions consistent with experiment within 1 sigma)
 
 ---
 
@@ -40,7 +40,7 @@ The number of fermion generations is determined by a topological index:
 
 $$n_{\text{gen}} = \frac{b_3}{8} = \frac{24}{8} = 3$$ **(M.2)**
 
-This is **exact** and **parameter-free**.
+This result is topologically determined given the assumed G2 manifold with $b_3 = 24$.
 
 ### M.2.2 Why 8 Divides b_3
 
@@ -87,7 +87,7 @@ $$n_{\text{gen}} = \frac{144}{48} = 3$$ **(M.7)**
 | Divisor = 48 | DERIVED (from index theorem) |
 | $n_{\text{gen}} = 3$ | EXACT (topological, not fitted) |
 
-**This is the most rigorous result in PM** - pure topology forces exactly 3 generations.
+This is one of the most constrained results in PM - given the G2 manifold topology, exactly 3 generations follow from the index theorem.
 
 ---
 
@@ -296,7 +296,7 @@ The model reproduces the qualitative hierarchy:
 
 $$\frac{m_t}{m_u} = \frac{Y_t}{Y_u} = \frac{A_t \epsilon^0}{A_u \epsilon^4} \approx \frac{1}{0.0044 \times 2.47 \times 10^{-3}} \approx 10^5$$ **(M.18)**
 
-This 5-order-of-magnitude ratio emerges naturally from geometry!
+This 5-order-of-magnitude ratio is consistent with the geometric wave function overlap mechanism.
 
 ---
 
@@ -345,7 +345,7 @@ with topological factor $\xi_t \approx 0.34$.
 | $V_{cb}$ | 0.0409 | $0.0410 \pm 0.0014$ | 0.1$\sigma$ |
 | $V_{ub}$ | 0.00375 | $0.00382 \pm 0.00024$ | 0.3$\sigma$ |
 
-**All CKM elements within 1 sigma!**
+**CKM predictions consistent with PDG 2024 within experimental uncertainties.**
 
 ### M.6.5 Wolfenstein Parametrization
 
@@ -405,7 +405,7 @@ $$\gamma = 64.6° \pm 2.8°$$ **(M.33)**
 | LHCb 2024 (direct) | 64.6° | $\pm 2.8°$ |
 | Deviation | 1.16° | **0.4$\sigma$** |
 
-**EXCELLENT AGREEMENT!**
+**Good agreement within experimental uncertainty.**
 
 **Note on Historical Confusion**: Older indirect CKM fits reported $\delta \approx 68.5°$, suggesting a ~7% discrepancy with PM. However, the LHCb 2024 direct measurement of the CKM angle $\gamma$ (which equals $\delta_{\text{CKM}}$ by unitarity) shows the PM prediction is **within 0.4$\sigma$** of experiment.
 
@@ -934,5 +934,5 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 
 ---
 
-*Document generated: 2026-01-19*
+*Document generated: 2026-01-21*
 *Principia Metaphysica v23.0*

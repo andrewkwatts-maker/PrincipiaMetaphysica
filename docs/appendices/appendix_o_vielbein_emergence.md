@@ -30,7 +30,7 @@ This appendix provides the mathematical framework for this emergence, connecting
 | 1978 | Akama | Pregeometry: metric from fundamental fermions |
 | 1983 | Terazawa | Composite graviton from fermion bilinears |
 | 2004 | Wetterich | Spinor gravity: vielbein from spinor bilinears |
-| 2026 | PM v22 | 25D Pneuma spinor unifies all forces |
+| 2026 | PM v23 | 25D Pneuma spinor proposed to unify all forces |
 
 ### O.1.3 PM's Specific Approach
 
@@ -561,9 +561,9 @@ $$S_{BH} = N_{Pneuma} \times (\text{horizon area in Planck units})$$ **(O.41)**
 
 ### O.10.3 The Bottom Line
 
-**What is proven**: The mathematical structure exists whereby a 25D spinor condensate can induce an effective metric via the vielbein construction, with Einstein gravity emerging at one loop.
+**What is established**: The mathematical structure exists whereby a 25D spinor condensate could in principle induce an effective metric via the vielbein construction, with Einstein gravity emerging at one loop. This follows established induced gravity literature.
 
-**What is not proven**: That the specific Pneuma field dynamics select a unique condensate giving our observed spacetime geometry.
+**What remains open**: A demonstration that the specific Pneuma field dynamics select a unique condensate giving our observed spacetime geometry. The explicit V_eff calculation and stability analysis are incomplete.
 
 ---
 

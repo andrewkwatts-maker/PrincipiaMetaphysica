@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Dark Matter from Mirror Shadow v22.0 (WS-8)
+Dark Matter from Mirror Shadow v23.0 (WS-8)
 ============================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -131,8 +131,8 @@ class DarkMatterMirrorSimulation(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="dark_matter_mirror_v22",
-            version="22.0",
+            id="dark_matter_mirror_v23",
+            version="23.0",
             domain="cosmology",
             title="Dark Matter from Mirror Shadow",
             description=(

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Weak Mixing Angle from Bridge Rotation Averaging v22.5
+Weak Mixing Angle from Bridge Rotation Averaging v23.0
 =======================================================
 
 WS-3: Enhanced Derivation of sin^2(theta_W) from 12-pair Bridge Geometry
@@ -157,8 +157,8 @@ class WeakMixingBridgeV22(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="weak_mixing_bridge_v22_5",
-            version="22.5",
+            id="weak_mixing_bridge_v23_0",
+            version="23.0",
             domain="electroweak",
             title="Weak Mixing Angle from Bridge Rotation Averaging",
             description=(

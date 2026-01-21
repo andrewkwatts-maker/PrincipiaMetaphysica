@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Mirror Shadow Inflation Model v22.5 - WS-12
+Mirror Shadow Inflation Model v23.0 - WS-12
 ============================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -133,8 +133,8 @@ class MirrorShadowInflationSimulation(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="inflation_mirror_v22",
-            version="22.5",
+            id="inflation_mirror_v23",
+            version="23.0",
             domain="cosmology",
             title="Mirror Shadow Inflation: Natural Inflaton from Mirror Sector",
             description=(

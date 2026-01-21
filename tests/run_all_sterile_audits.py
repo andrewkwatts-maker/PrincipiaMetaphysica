@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Master Sterile Audit Runner (7-Tier)
+PRINCIPIA METAPHYSICA v23.0 - Master Sterile Audit Runner (7-Tier)
 ===================================================================
 
 DOI: 10.5281/zenodo.18079602
@@ -100,7 +100,7 @@ class SterileAuditRunner:
         self.start_time = datetime.now()
 
         print("=" * 80)
-        print("PRINCIPIA METAPHYSICA v16.2 - 7-TIER STERILE AUDIT SUITE")
+        print("PRINCIPIA METAPHYSICA v23.0 - 7-TIER STERILE AUDIT SUITE")
         print("=" * 80)
         print(f"Started: {self.start_time.isoformat()}")
         print()
@@ -494,11 +494,11 @@ class SterileAuditRunner:
 
         log_lines = [
             "=" * 80,
-            "PRINCIPIA METAPHYSICA v16.2 - 7-TIER ALIGNMENT EVIDENCE LOG",
+            "PRINCIPIA METAPHYSICA v23.0 - 7-TIER ALIGNMENT EVIDENCE LOG",
             "=" * 80,
             f"Generated: {datetime.now().isoformat()}",
             "",
-            "This log certifies that the v16.2 Terminal State has been validated",
+            "This log certifies that the v23.0 Terminal State has been validated",
             "against all 7 Primary Gates. The model is geometrically locked.",
             "",
             "=" * 80,

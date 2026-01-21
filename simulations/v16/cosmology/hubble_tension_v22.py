@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Hubble Tension Relief via Mirror Radiation v22.5
+Hubble Tension Relief via Mirror Radiation v23.0
 =================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -139,8 +139,8 @@ class HubbleTensionSimulation(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="hubble_tension_v22",
-            version="22.5",
+            id="hubble_tension_v23",
+            version="23.0",
             domain="cosmology",
             title="H0 Tension Relief via Mirror Radiation",
             description=(
@@ -1195,7 +1195,7 @@ def run_hubble_tension(verbose: bool = True) -> Dict[str, Any]:
 
     if verbose:
         print("\n" + "=" * 75)
-        print(" HUBBLE TENSION RELIEF v22.5 - MIRROR RADIATION")
+        print(" HUBBLE TENSION RELIEF v23.0 - MIRROR RADIATION")
         print("=" * 75)
 
         print("\n" + "-" * 75)
@@ -1265,9 +1265,9 @@ _validation_instance = HubbleTensionSimulation()
 
 # Validate metadata
 assert _validation_instance.metadata is not None, "HubbleTension: metadata is None"
-assert _validation_instance.metadata.id == "hubble_tension_v22", \
+assert _validation_instance.metadata.id == "hubble_tension_v23", \
     f"HubbleTension: unexpected id {_validation_instance.metadata.id}"
-assert _validation_instance.metadata.version == "22.5", \
+assert _validation_instance.metadata.version == "23.0", \
     f"HubbleTension: unexpected version {_validation_instance.metadata.version}"
 
 # Validate formulas exist

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v22.0 - Omega Seal Generator
+PRINCIPIA METAPHYSICA v23.0 - Omega Seal Generator
 ===================================================
 
 DOI: 10.5281/zenodo.18079602
 
 This module generates the cryptographic Omega Seal that locks the
-v22.0 Sterile Terminal State. Once the seal is generated, any
+v23.0 Sterile Terminal State. Once the seal is generated, any
 modification to the 125 residues will break the chain.
 
 THE OMEGA SEAL:
@@ -21,7 +21,7 @@ SEAL FORMAT:
     OMEGA-XXXX-YYYY-ZZZZ (16 hexadecimal characters)
 
 12-PAIR-BRIDGE ARCHITECTURE:
-    The v22.0 seal incorporates the 12 x (2,0) paired bridge system.
+    The v23.0 seal incorporates the 12 x (2,0) paired bridge system.
     Each pair represents a shadow brane coupling, with 12 total pairs
     providing the complete bridge structure for the sterile model.
 
@@ -47,7 +47,7 @@ class SealInput:
     pins: int
     nodes: int
     hidden: int
-    pairs: int  # 12-pair bridge count for v22.0
+    pairs: int  # 12-pair bridge count for v23.0
     sterile_angle: float
     residue_sum: float
     certificate_results: Dict[str, bool]
@@ -116,9 +116,9 @@ def generate_omega_seal(
     pairs: int = 12
 ) -> OmegaSeal:
     """
-    Generates the final Omega Seal for the v22.0 Terminal State.
+    Generates the final Omega Seal for the v23.0 Terminal State.
 
-    The v22.0 seal incorporates the 12 x (2,0) paired bridge system,
+    The v23.0 seal incorporates the 12 x (2,0) paired bridge system,
     where each pair represents a shadow brane coupling. The 12 pairs
     provide the complete 12-PAIR-BRIDGE architecture.
 
@@ -175,7 +175,7 @@ def generate_omega_seal(
     sterile_angle = np.degrees(np.arcsin(node_count / roots))
 
     # Use provided certificate results or default to all True
-    # v22.0: Added C_PAIRS gate for 12-pair bridge validation
+    # v23.0: Added C_PAIRS gate for 12-pair bridge validation
     if certificate_results is None:
         certificate_results = {
             "C02-R": roots == 288,
@@ -210,10 +210,10 @@ def generate_omega_seal(
     )
 
     # Create the hash string (deterministic format)
-    # v22.0 Format: "v22-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
-    # Updated from v21 DUAL-SHADOW to v22 12-PAIR-BRIDGE architecture
+    # v23.0 Format: "v23-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
+    # Updated from v22 to v23 12-PAIR-BRIDGE architecture
     seal_string = (
-        f"v22-Roots{roots}-Pins{pins}-Nodes{node_count}-"
+        f"v23-Roots{roots}-Pins{pins}-Nodes{node_count}-"
         f"Signature(24,1)-Bridge12x(2,0)-"
         f"Hidden{hidden}-Pairs{pairs}-Angle{sterile_angle:.6f}-Sum{residue_sum:.10f}"
     )
@@ -236,7 +236,7 @@ def generate_omega_seal(
             "sterile_angle": sterile_angle,
             "residue_sum": residue_sum,
             "certificates_passed": list(certificate_results.keys()),
-            "bridge_architecture": "12-PAIR-BRIDGE",  # v22.0 architecture label
+            "bridge_architecture": "12-PAIR-BRIDGE",  # v23.0 architecture label
         },
         sterility_status="STERILE" if validate_sterility else "UNVALIDATED",
         generation_time=timestamp
@@ -278,7 +278,7 @@ def generate_seal_certificate(seal: OmegaSeal) -> str:
     bridge_arch = seal.input_summary.get('bridge_architecture', '12-PAIR-BRIDGE')
     return f"""
 ================================================================================
-                    PRINCIPIA METAPHYSICA v22.0
+                    PRINCIPIA METAPHYSICA v23.0
                  OMEGA SEAL CERTIFICATE OF INTEGRITY
 ================================================================================
 
@@ -306,7 +306,7 @@ CERTIFICATES VALIDATED:
   {', '.join(seal.input_summary['certificates_passed'])}
 
 VERIFICATION:
-  This seal certifies that the v22.0 Terminal State is geometrically locked.
+  This seal certifies that the v23.0 Terminal State is geometrically locked.
   Any modification to the 125 residues will produce a different seal.
   The model is now READ-ONLY for physics parameters.
 
@@ -328,7 +328,7 @@ MATHEMATICAL INVARIANT:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA v22.0 - Omega Seal Generator")
+    print("PRINCIPIA METAPHYSICA v23.0 - Omega Seal Generator")
     print("12-PAIR-BRIDGE Architecture")
     print("=" * 70)
 

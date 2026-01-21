@@ -556,5 +556,5 @@ This appendix serves as a roadmap for v22+ development, with clear categorizatio
 
 ---
 
-*Document generated: 2026-01-18*
-*Principia Metaphysica v20.14*
+*Document generated: 2026-01-21*
+*Principia Metaphysica v23.0*

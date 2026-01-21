@@ -1,7 +1,7 @@
 """
-Unity Test v16.1 - Falsifiability Audit
+Unity Test v23.0 - Falsifiability Audit
 =======================================
-Proves that PM v16.1 is falsifiable - ONLY at b3=24 do all
+Proves that PM v23.0 is falsifiable - ONLY at b3=24 do all
 physical constants align with experiment.
 
 If b3 ≠ 24:
@@ -9,7 +9,7 @@ If b3 ≠ 24:
 - Mass ratio fails
 - Universe is unstable
 
-This is the "Poison Pill" that proves the theory is rigid.
+This demonstrates the theory's falsifiability through rigidity testing.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -53,7 +53,7 @@ def run_falsifiability_audit():
     """
     print("=" * 60)
     print(" UNITY TEST - TOPOLOGICAL FALSIFIABILITY AUDIT")
-    print(" PM v16.1")
+    print(" PM v23.0")
     print("=" * 60)
 
     # Target values
@@ -119,7 +119,7 @@ def run_falsifiability_audit():
     plt.legend()
     plt.grid(True, alpha=0.3)
 
-    plt.suptitle('PM v16.1 Unity Test: Topological Sensitivity', fontsize=16)
+    plt.suptitle('PM v23.0 Unity Test: Topological Sensitivity', fontsize=16)
     plt.tight_layout()
 
     # Save plot
@@ -131,7 +131,7 @@ def run_falsifiability_audit():
     # Save results JSON
     output_json = {
         "test": "Unity Falsifiability Audit",
-        "version": "16.1",
+        "version": "23.0",
         "valid_b3": 24,
         "results": results,
         "conclusion": "ONLY b3=24 produces valid physics"

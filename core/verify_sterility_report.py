@@ -1,7 +1,7 @@
 """
-Sterility Reporter v17.2-Absolute - Sovereign Audit Certificate Generator
-==========================================================================
-Generates formal verification reports that prove the manifold state
+Sterility Reporter v23.0 - Sovereign Audit Certificate Generator
+=================================================================
+Generates formal verification reports that verify the manifold state
 is sterile and geometrically sovereign.
 
 CRITICAL: This validator implements "Clean Room" validation to avoid
@@ -18,7 +18,7 @@ The validation logic:
 1. Take the claimed H0 from the registry
 2. Work BACKWARDS: Roots = 4 * (H0 - Drag + (Pressure / Divisor))
 3. Verify that we hit EXACTLY 288 (the Logic Closure)
-4. This proves the result is a "harmonic of the manifold"
+4. This verifies the result is a "harmonic of the manifold"
 
 Usage:
     from core.verify_sterility_report import SterilityReporter

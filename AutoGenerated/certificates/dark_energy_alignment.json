@@ -3,11 +3,11 @@
   "cert_id": "CERT-COSMO-012",
   "label": "DESI Dark Energy Alignment",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wl_code": "With[{b3 = 24, w0DESI = -0.957, w0Sigma = 0.067}, w0Theory = -1 + 1/b3; waTheory = 0.0; w0Deviation = Abs[w0Theory - w0DESI]/w0Sigma; {N[w0Theory, 6], N[w0Deviation, 3], \"STERILE_STASIS\"}]",
   "result": "{-0.958333, 0.020, STERILE_STASIS}",
-  "note": "v16.2 STERILE: w0 = -23/24, wa = 0. DESI w0 = -0.957 +/- 0.067. Deviation: 0.02 sigma (EXCELLENT)",
+  "note": "Prediction: w0 = -23/24, wa = 0. DESI 2025: w0 = -0.957 +/- 0.067. Deviation: 0.02 sigma (consistent)",
   "verification_status": "LOCKED",
   "experimental_data": {
     "DESI_DR2_2025": {

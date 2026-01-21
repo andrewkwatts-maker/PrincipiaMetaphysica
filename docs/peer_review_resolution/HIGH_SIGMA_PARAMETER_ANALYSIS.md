@@ -241,10 +241,11 @@ After fixes:
 
 ## References
 
-- [CODATA Fermi Constant](https://physics.nist.gov/cgi-bin/cuu/Value?gf)
-- [PDG 2024 Physical Constants](https://pdg.lbl.gov/2024/reviews/rpp2024-rev-phys-constants.pdf)
-- [Fixsen 2009 CMB Temperature](https://iopscience.iop.org/article/10.1088/0004-637X/707/2/916)
-- [COBE FIRAS Overview](https://lambda.gsfc.nasa.gov/product/cobe/firas_overview.html)
+- CODATA 2022: Fermi Constant - NIST (https://physics.nist.gov/cgi-bin/cuu/Value?gf)
+- PDG 2024: Physical Constants Review - Particle Data Group (https://pdg.lbl.gov/2024/reviews/rpp2024-rev-phys-constants.pdf)
+- Fixsen, D.J. (2009): "The Temperature of the Cosmic Microwave Background", ApJ 707, 916 (https://iopscience.iop.org/article/10.1088/0004-637X/707/2/916)
+- COBE FIRAS (1990): CMB Temperature Measurement - NASA LAMBDA (https://lambda.gsfc.nasa.gov/product/cobe/firas_overview.html)
+- MuLan Collaboration (2024): Precision muon lifetime measurement
 
 ---
 

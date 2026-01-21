@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Omega Unwinding Test
+PRINCIPIA METAPHYSICA v23.0 - Omega Unwinding Test
 ===================================================
 
 DOI: 10.5281/zenodo.18079602

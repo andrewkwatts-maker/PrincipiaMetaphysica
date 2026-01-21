@@ -2,9 +2,9 @@
 
 **Investigation: Can Scale Symmetry Explain Why v = 246 GeV Instead of M_Pl?**
 
-**Version**: 20.11
-**Date**: 2026-01-14
-**Status**: INVESTIGATION COMPLETE
+**Version**: 23.0
+**Date**: 2026-01-21
+**Status**: INVESTIGATION COMPLETE (conclusion: CSI does not solve the hierarchy problem)
 
 ---
 
@@ -408,5 +408,5 @@ This analysis uses the following Single Source of Truth (SSOT) parameters from `
 
 ---
 
-*Document generated: 2026-01-14*
-*Principia Metaphysica v20.11*
+*Document generated: 2026-01-21*
+*Principia Metaphysica v23.0*

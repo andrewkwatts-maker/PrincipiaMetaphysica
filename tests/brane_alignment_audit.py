@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Brane Alignment Audit
+PRINCIPIA METAPHYSICA v23.0 - Brane Alignment Audit
 ====================================================
 
 DOI: 10.5281/zenodo.18079602
@@ -47,7 +47,7 @@ def verify_sterile_angle() -> dict:
     calc_radians = math.asin(sin_theta)
     calc_degrees = math.degrees(calc_radians)
 
-    # Standard v16.2 Anchor (pre-calculated)
+    # Standard v23.0 Anchor (pre-calculated)
     target_degrees = 25.7234
 
     # Also calculate cos(theta) for completeness
@@ -214,5 +214,5 @@ if __name__ == "__main__":
     print(f"Brane Dimensions: {geom['brane_dimensions']}D each")
     print(f"Sterile Angle: {geom['sterile_angle_deg']}°")
     print(f"Brane Opening: {geom['brane_opening']}")
-    print(f"Intersection Dimension: {geom['calculated_intersection_dim']}D")
+    print(f"Spacetime Dimension: {geom['spacetime_dim']}D")
     print(f"STATUS: {geom['status']}")

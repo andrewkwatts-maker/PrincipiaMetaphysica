@@ -8,7 +8,9 @@ Okay, let's dive into a rigorous assessment of these hierarchy problem solutions
 
 **1. RANKING (Viability in PM Framework):**
 
-1.  **Randall-Sundrum Warped Extra Dimensions:**  High viability. Warping can generate exponential hierarchies naturally, and the PM's higher-dimensional structure provides ample space for such a setup.  The 26D -> 13D -> 7D -> 4D dimensional chain offers multiple opportunities for warping to occur at different stages.  The large shadow sector could reside on the "hidden" brane, influencing the warp factor.
+> **Note (v23.0)**: This analysis was conducted for v20. The v21+ framework uses 25D(24,1) rather than 26D(24,2), but the hierarchy mechanisms discussed remain applicable.
+
+1.  **Randall-Sundrum Warped Extra Dimensions:**  High viability. Warping can generate exponential hierarchies naturally, and the PM's higher-dimensional structure provides ample space for such a setup.  The 25D -> 13D -> 7D -> 4D dimensional chain offers multiple opportunities for warping to occur at different stages.  The large shadow sector could reside on the "hidden" brane, influencing the warp factor.
 2.  **G2 Moduli Stabilization (PM-specific):**  High viability.  Given that G2 holonomy is a central feature of PM, understanding the moduli space and finding a stable vacuum are crucial.  Stabilizing moduli at specific values can directly influence the effective 4D couplings and masses, potentially explaining the hierarchy. The k_gimel constant may play a role here.
 3.  **KKLT Moduli Stabilization:**  Good viability. Similar to G2 moduli stabilization, but leveraging the specific KKLT construction (flux compactifications, anti-branes). While KKLT is typically associated with Type IIB, the PM's higher-dimensional setting might allow for a similar construction.
 4.  **Supersymmetry (SUSY):**  Medium viability. The G2 holonomy already guarantees N=1 SUSY, but this *alone* is insufficient.  SUSY breaking needs to be carefully controlled and mediated to the visible sector to avoid fine-tuning. PM's shadow sector could play a role in SUSY breaking.

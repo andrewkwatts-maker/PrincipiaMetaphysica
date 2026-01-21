@@ -111,8 +111,8 @@
 
 | Gate | Name | Category | Justification |
 |------|------|----------|---------------|
-| G56 | 26D Origin | GEOMETRIC | Bosonic string theory |
-| G57 | Sp(2,R) Reduction | GEOMETRIC | Two-time physics |
+| G56 | 25D Origin | GEOMETRIC | 25D(24,1) bulk with unified time (v21+) |
+| G57 | Bridge Pair Reduction | GEOMETRIC | 12x(2,0) Euclidean bridge pairs (v21+) |
 | G58 | G2 Holonomy | GEOMETRIC | M-theory on G2 |
 | G59 | 4D Emergence | GEOMETRIC | Compactification |
 | G60 | Lorentz Invariance | GEOMETRIC | Symmetry requirement |

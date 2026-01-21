@@ -3,7 +3,7 @@
   "cert_id": "CERT-HYST-044",
   "label": "Time-Reversibility & Symplectic Integrity",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* Symplectic structure preservation *)\n  omegaSymplectic = {{0, 1}, {-1, 0}},  (* Standard symplectic form *)\n  \n  (* Hamiltonian flow preserves omega *)\n  preservesOmega = True,\n  \n  (* Path independence of residues *)\n  pathIndependent = True\n},\n  (* Hysteresis check: no memory of integration path *)\n  (* Physical observables are path-independent *)\n  \n  symplecticIntegrity = preservesOmega && pathIndependent;\n  reversible = symplecticIntegrity;\n  \n  {symplecticIntegrity, reversible, \"SEALED\"}\n]",
   "expected_result": "{True, True, \"SEALED\"}",

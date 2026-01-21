@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Unified CKM/PMNS Mixing Matrices from G2 Triality v22.2
+Unified CKM/PMNS Mixing Matrices from G2 Triality v23.0
 =========================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -41,13 +41,13 @@ KEY PHYSICS:
    - CKM phase delta ~ 63 degrees from golden angle
    - PMNS phase delta ~ 230 degrees from extended cycles
 
-SSOT CONSTANTS:
-===============
-- chi_eff = 144
-- b_3 = 24
-- n_gen = chi_eff/48 = 3
-- lambda_Cabibbo = 0.224
-- theta_23_PMNS ~ 45 degrees
+SSOT CONSTANTS (from base.precision):
+======================================
+- chi_eff = 144 (SSOT: CHI_EFF from precision.py)
+- b_3 = 24 (SSOT: B3 from precision.py)
+- n_gen = chi_eff/48 = 3 (DERIVED)
+- lambda_Cabibbo = 0.224 (FITTED to PDG 2024)
+- theta_23_PMNS ~ 45 degrees (FITTED to NuFIT 6.0)
 
 SUCCESS CRITERIA:
 =================
@@ -135,11 +135,24 @@ class G2Triality:
         (4, 5, 6),  # e4 * e5 = e6
     ]
 
-    def __init__(self):
-        """Initialize G2 triality structure."""
-        self.chi_eff = 144  # Effective Euler characteristic
-        self.b3 = 24        # Third Betti number
-        self.n_gen = 3      # Number of generations (derived)
+    def __init__(self, chi_eff: int = None, b3: int = None):
+        """
+        Initialize G2 triality structure.
+
+        Args:
+            chi_eff: Effective Euler characteristic (default: from base.precision)
+            b3: Third Betti number (default: from base.precision)
+        """
+        # Import from base precision module (SSOT)
+        try:
+            from simulations.base.precision import B3, CHI_EFF
+            self.chi_eff = chi_eff if chi_eff is not None else CHI_EFF  # SSOT: 144
+            self.b3 = b3 if b3 is not None else B3  # SSOT: 24
+        except ImportError:
+            # Fallback values if precision module not available
+            self.chi_eff = chi_eff if chi_eff is not None else 144  # FITTED: v23 fallback
+            self.b3 = b3 if b3 is not None else 24  # FITTED: v23 fallback
+        self.n_gen = 3      # Number of generations (derived: chi_eff/48)
 
         # Build octonion multiplication table
         self._build_octonion_table()
@@ -679,8 +692,8 @@ class UnifiedMixingMatricesSimulation(SimulationBase if SimulationBase != object
         if SimulationMetadata is None:
             return None
         return SimulationMetadata(
-            id="unified_mixing_matrices_v22_2",
-            version="22.2",
+            id="unified_mixing_matrices_v23_0",
+            version="23.0",
             domain="flavor",
             title="Unified CKM/PMNS from G2 Triality",
             description=(
@@ -818,7 +831,7 @@ class UnifiedMixingMatricesSimulation(SimulationBase if SimulationBase != object
         results = self.run()
 
         print("=" * 80)
-        print(" UNIFIED CKM/PMNS FROM G2 TRIALITY v22.2")
+        print(" UNIFIED CKM/PMNS FROM G2 TRIALITY v23.0")
         print("=" * 80)
 
         print("\n" + "-" * 40)
