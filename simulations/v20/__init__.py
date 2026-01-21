@@ -18,7 +18,8 @@ Engine Execution Order:
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
-__version__ = "20.0"
+# v23.0: Updated per comprehensive audit 2026-01-21
+__version__ = "23.0"
 __all__ = [
     "gravity_derivation_v20",
     "electroweak_precision_v20",

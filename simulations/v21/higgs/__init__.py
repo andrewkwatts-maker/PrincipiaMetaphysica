@@ -26,4 +26,5 @@ __all__ = [
     'HiggsVEVRefinedV18',
 ]
 
-__version__ = "19.2"
+# v23.0: Updated per comprehensive audit 2026-01-21
+__version__ = "23.0"
