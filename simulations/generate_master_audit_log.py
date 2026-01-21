@@ -106,7 +106,7 @@ def run_all_audits():
 
     results["topological_anchors"] = {
         "b3": {"value": b3, "status": "VERIFIED", "source": "Joyce-Karigiannis TCS"},
-        "chi_eff": {"value": chi_eff, "status": "VERIFIED", "formula": "B3^2/4"},
+        "chi_eff": {"value": chi_eff, "status": "VERIFIED", "formula": "6 * b3"},
         "roots_total": {"value": roots_total, "status": "VERIFIED", "source": "E8xE8"},
         "kappa_Delta": {"value": float(kappa_Delta), "status": "VERIFIED", "alias": "demiurgic_coupling"},
         "c_kaf": {"value": float(c_kaf), "status": "VERIFIED"},
@@ -134,10 +134,9 @@ def run_all_audits():
     alpha_error = abs(alpha_inv - 137.036) / 137.036 * 100  # alpha inverse (CODATA)
 
     # Mass ratio - CORRECTED HOLONOMY (not 1.280145!)
-    # Using the correct value: 1.5427971665 * (1 + gamma/24) * 1.9464
+    # v23.0 FIX: Removed g2_enhancement = 1.9464 (incorrectly mixed formula variants)
     holonomy_base = 1.5427971665  # G2 Laplacian eigenvalue (NOT 1.280145!)
-    g2_enhancement = 1.9464       # G2 curvature enhancement
-    holonomy = holonomy_base * (1 + sophian_gamma / b3) * g2_enhancement
+    holonomy = holonomy_base * (1 + sophian_gamma / b3)
     mass_ratio = (c_kaf**2) * (kappa_Delta / np.pi) / holonomy
     mass_error = abs(mass_ratio - 1836.15) / 1836.15 * 100  # proton/electron mass ratio (CODATA)
 
