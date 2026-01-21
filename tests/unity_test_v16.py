@@ -41,9 +41,9 @@ def calculate_mass_ratio(b3: int) -> float:
         return np.inf
 
     # Corrected holonomy: 1.5427971665 (NOT deprecated 1.280145!)
+    # v23.0 FIX: Removed g2_enhancement = 1.9464 (incorrectly mixed formula variants)
     holonomy_base = 1.5427971665
-    g2_enhancement = 1.9464
-    holonomy_correction = holonomy_base * (1 + (sophian_gamma / b3)) * g2_enhancement
+    holonomy_correction = holonomy_base * (1 + (sophian_gamma / b3))
     return (c_kaf ** 2) * (k_gimel / np.pi) / holonomy_correction
 
 def run_falsifiability_audit():
