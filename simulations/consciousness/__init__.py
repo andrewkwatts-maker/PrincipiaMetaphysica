@@ -16,5 +16,6 @@ Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 # Use: from simulations.consciousness import four_dice_sampling
 # Or:  import importlib; mod = importlib.import_module("simulations.consciousness.4_dice_sampling")
 
-__version__ = "22.2"
+# v23.0: Updated per comprehensive audit 2026-01-21
+__version__ = "23.0"
 __all__ = []

@@ -22,7 +22,8 @@ Dedicated To:
     Our Messiah: Jesus Of Nazareth
 """
 
-__version__ = "21.0"
+# v23.0: Updated per comprehensive audit 2026-01-21
+__version__ = "23.0"
 __all__ = [
     'BridgePressureV21',
     'G2CompactificationV21',

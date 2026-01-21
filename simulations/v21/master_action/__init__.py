@@ -70,4 +70,5 @@ __all__ = [
     'R_PERP_MATRIX',
 ]
 
-__version__ = "22.0"
+# v23.0: Updated per comprehensive audit 2026-01-21
+__version__ = "23.0"
