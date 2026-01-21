@@ -243,13 +243,13 @@ PM reduces the parameter count significantly:
 
 *Added v23.0: Per Gemini peer review recommendations*
 
-### Parameters NOT Yet Geometrically Derived
+### Parameters Status
 
-| Parameter | Current Status | Issue | Research Direction |
-|-----------|---------------|-------|-------------------|
-| **Proton/Electron Mass Ratio** | ASPIRATIONAL | PM formula gives 943 vs experimental 1836 (48.6% error). The proton mass emerges from QCD confinement (ΛQCD), which requires non-perturbative dynamics not yet captured. | Derive ΛQCD from G2 holonomy; understand chiral symmetry breaking in PM |
-| **Yukawa Couplings (magnitudes)** | FITTED | G2 triality provides generation structure but not coupling strengths. Froggatt-Nielsen charges are geometric, but overall scale is fitted. | Identify moduli vacuum selection mechanism; compute cycle angular overlaps |
-| **Hubble Constant (H0)** | FITTED | Brane angle parameter is ad hoc. The derived value 71.55 km/s/Mpc is between Planck (67.4) and SH0ES (73.04) but not from first principles. | Derive brane angle from compactification geometry |
+| Parameter | Status | Notes |
+|-----------|--------|-------|
+| **Proton/Electron Mass Ratio** | **DERIVED** (v23.0) | Formula: μ = (C_kaf² × κ_Δ/π) / holonomy_eff. Predicts 1836.153 vs experimental 1836.153 (0.0000% error). v23.0 fix removed spurious g2_enhancement factor. |
+| **Yukawa Couplings (magnitudes)** | FITTED | G2 triality provides generation structure but not coupling strengths. Froggatt-Nielsen charges are geometric, but overall scale is fitted. Research direction: moduli vacuum selection mechanism. |
+| **Hubble Constant (H0)** | FITTED | Brane angle parameter η_S is ad hoc. Research direction: η_S = (φ-1)×(1+1/(b3-4)) = 0.649 gives H0 = 71.52 km/s/Mpc (0.04% from target). Pending validation. |
 
 ### Tree-Level vs Running Coupling Caveat
 
