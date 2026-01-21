@@ -169,7 +169,7 @@ class MultiSectorV16(SimulationBase):
         try:
             b3 = registry.get_param("topology.b3")
         except KeyError:
-            b3 = 24  # Default for G2 manifold
+            b3 = _REG.b3  # Default from SSoT registry
 
         # Step 1: Derive geometric modulation width
         width_data = self._derive_geometric_width(registry, chi_eff)

@@ -3,7 +3,7 @@
   "cert_id": "CERT-PMNS-017",
   "label": "PMNS Theta13 Reactor",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  b2 = 14,\n  b3 = 24,\n  nGen = 3,\n  chiEff = 144,\n  S_orient = 12  (* Orientation correction from K=4 fibres *)\n},\n  (* Reactor angle from 3-cycle wavefunction overlap *)\n  (* Formula: sin(θ₁₃) = sqrt(b₂*n_gen)/b₃ * (1 + S_orient/(2*χ_eff)) *)\n  \n  baseFactor = Sqrt[b2 * nGen] / b3;\n  orientationCorrection = 1 + S_orient / (2 * chiEff);\n  \n  sinTheta13 = baseFactor * orientationCorrection;\n  theta13Deg = ArcSin[sinTheta13] * 180/Pi;\n  \n  (* NuFIT 6.0 Normal Ordering *)\n  nufit60NO = 8.58;  (* degrees *)\n  nufit60Uncertainty = 0.11;  (* degrees *)\n  \n  deviation = (theta13Deg - nufit60NO) / nufit60Uncertainty;\n  \n  {N[theta13Deg, 4], N[sinTheta13, 5], N[deviation, 3]}\n]",
   "expected_result": "{8.647°, 0.15035, 0.61σ}",

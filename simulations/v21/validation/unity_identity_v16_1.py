@@ -21,6 +21,11 @@ Dedicated To:
 import numpy as np
 from typing import Dict, Any, Optional
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 
 class UnityIdentitySolver:
     """
@@ -33,9 +38,9 @@ class UnityIdentitySolver:
     """
 
     def __init__(self):
-        # Geometric constants from G2 topology
-        self.b3 = 24  # Third Betti number
-        self.c_kaf = 27.2  # Kaehler flux: b3(b3-7)/(b3-9)
+        # Geometric constants from SSoT registry
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.c_kaf = float(_REG.c_kaf)  # = 27.2 Kaehler flux
         self.kappa = 2.101016  # Holonomy bridge constant
 
         # EXPERIMENTAL: CODATA 2022 reference values (fallback)

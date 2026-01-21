@@ -587,6 +587,20 @@ The fermion mass hierarchy in Principia Metaphysica emerges from G2 geometry thr
 - Theoretical foundation: Solid (homological distance framework established)
 - Remaining work: Explicit cycle computation for TCS #187, A_f coefficients
 
+### M.11.1 Derivation Chain Assessment
+
+| Step | Description | Status |
+|------|-------------|--------|
+| 1 | n_gen = b₃/8 = 3 generations | EXACT (topological) |
+| 2 | ε = e^(-λ) = 0.223 (Froggatt-Nielsen) | DERIVED (from λ = b₃/16) |
+| 3 | FN charges Q_f = 2n_G(f) + n_T(f) | DERIVED (homological distance) |
+| 4 | Yukawa hierarchy Y_f = A_f × ε^Q_f | DERIVED (wave function overlap) |
+| 5 | CKM from misaligned diagonalization | DERIVED (within 1σ of PDG) |
+| 6 | CP phase δ = 2arctan(1/φ) = 63.44° | DERIVED (matches LHCb at 0.4σ) |
+| 7 | A_f geometric coefficients | **FITTED** (requires cycle computation) |
+
+**Mass hierarchy properly explained**: Yes - the 5-order-of-magnitude hierarchy (m_t/m_u ~ 10^5) emerges from the geometric wave function overlap mechanism with topologically-determined FN charges.
+
 ---
 
 ## M.12 Neutrino Masses via Dual Shadow Seesaw (v22.2)
@@ -699,7 +713,7 @@ $$\Delta m_{21}^2 = m_2^2 - m_1^2 = (19.6)^2 - (4.5)^2 = 364 \text{ (meV)}^2 = 3
 Experimental (NuFIT 6.0): $\Delta m_{21}^2 = 7.42 \times 10^{-5}$ eV$^2$
 
 **Atmospheric Mass Splitting:**
-$$\Delta m_{31}^2 = m_3^2 - m_1^^2 = (45.4)^2 - (4.5)^2 = 2042 \text{ (meV)}^2 = 2.0 \times 10^{-3} \text{ eV}^2$$ **(M.39)**
+$$\Delta m_{31}^2 = m_3^2 - m_1^2 = (45.4)^2 - (4.5)^2 = 2042 \text{ (meV)}^2 = 2.0 \times 10^{-3} \text{ eV}^2$$ **(M.39)**
 
 Experimental (NuFIT 6.0): $\Delta m_{31}^2 = 2.51 \times 10^{-3}$ eV$^2$
 

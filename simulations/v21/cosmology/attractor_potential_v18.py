@@ -45,6 +45,11 @@ from typing import Dict, Any, List, Optional, Tuple
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -112,9 +117,9 @@ class AttractorPotentialV18(SimulationBase):
             subsection_id="5.2"
         )
 
-        # Topological inputs
-        self.b3 = 24                    # Third Betti number
-        self.chi_eff = 144              # Effective Euler characteristic
+        # Topological inputs from SSoT registry
+        self.b3 = _REG.b3               # = 24 (Third Betti number)
+        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
 
         # Fundamental scales
         self.M_Planck = 2.435e18        # GeV (reduced Planck mass)

@@ -42,6 +42,11 @@ from typing import Dict, Any, List, Optional
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -105,9 +110,9 @@ class GFRadiativeCorrectionV18(SimulationBase):
             subsection_id="4.3"
         )
 
-        # Geometric inputs
-        self.k_gimel = 12 + 1/np.pi
-        self.b3 = 24
+        # Geometric inputs from SSoT registry
+        self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.318...
+        self.b3 = _REG.b3  # = 24 (third Betti number)
 
         # Compute tree-level VEV and G_F
         self.v_geometric = self.k_gimel * (self.b3 - 4)  # 246.366 GeV

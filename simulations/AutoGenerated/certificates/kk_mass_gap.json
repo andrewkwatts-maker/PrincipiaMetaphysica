@@ -3,7 +3,7 @@
   "cert_id": "CERT-KK-038",
   "label": "Kaluza-Klein Mass Gap",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  kGimel = 12.31831,\n  \n  (* Compactification radius from k_gimel *)\n  (* R ~ l_Pl * k_gimel *)\n  lPl = 1.616 * 10^-35,  (* m *)\n  R = lPl * kGimel,\n  \n  (* Kaluza-Klein mass scale *)\n  (* M_KK ~ hbar * c / R ~ 1/R in natural units *)\n  hbar = 1.054571817 * 10^-34,\n  c = 299792458,\n  \n  (* Convert to GeV *)\n  GeVToJoule = 1.602176634 * 10^-10\n},\n  (* KK mass in GeV *)\n  MKK = (hbar * c / R) / GeVToJoule / 1000;  (* TeV *)\n  \n  (* LHC bound: M_KK > 3.5 TeV *)\n  LHCbound = 3.5;  (* TeV *)\n  \n  boundSatisfied = (MKK > LHCbound);\n  \n  {N[MKK, 3], boundSatisfied, \"LOCKED\"}\n]",
   "expected_result": "{10.0, True, \"LOCKED\"}",

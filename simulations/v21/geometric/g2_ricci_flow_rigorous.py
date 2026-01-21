@@ -73,6 +73,10 @@ from simulations.base import (
     Parameter,
 )
 from config import ComputationalSettings as cfg
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
 
 
 class G2RicciFlowRigorous(SimulationBase):
@@ -95,12 +99,12 @@ class G2RicciFlowRigorous(SimulationBase):
 
     def __init__(self):
         """Initialize G₂ Ricci flow simulation."""
-        # TCS #187 topology
+        # TCS #187 topology from SSoT registry
         self.tcs_id = 187
         self.h11 = 4
         self.h21 = 0
         self.h31 = 68
-        self.b3 = 24
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
 
         # Flow parameters
         self.t_initial = 0.0

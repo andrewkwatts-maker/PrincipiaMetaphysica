@@ -3,7 +3,7 @@
   "cert_id": "CERT-TOPO-024",
   "label": "Hodge Numbers (h11, h21, h31)",
   "category": "TOPOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* G2 manifold Hodge diamond *)\n  (* For Joyce G2 manifold with chi_eff = 144 *)\n  h00 = 1,\n  h11 = 4,\n  h21 = 12,\n  h31 = 54,\n  h22 = 0,\n  h33 = 0,\n  \n  (* Euler characteristic relation *)\n  (* chi = 2(h00 - h11 + h21 - h31 + h22 - h33 + h44) *)\n  (* For G2: chi_eff = 2(1 - 4 + 12 - 54 + h22 + h33 + 1) *)\n  b3 = 24\n},\n  (* Third Betti number from Hodge numbers *)\n  b3Calc = 2 * h21;  (* For G2 manifolds *)\n  \n  (* Verify consistency *)\n  consistent = (b3Calc == b3);\n  \n  {h11, h21, h31, b3Calc, consistent, \"SEALED\"}\n]",
   "expected_result": "{4, 12, 54, 24, True, \"SEALED\"}",

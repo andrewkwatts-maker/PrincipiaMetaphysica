@@ -3,7 +3,7 @@
   "cert_id": "CERT-PMNS-022",
   "label": "PMNS Delta CP Phase (Inverted Ordering)",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 complex structure gives phase *)\n  z = 7.102 + 1.054 * I\n},\n  (* Phase from complex structure *)\n  deltaCPIO = Arg[z] * (180/Pi) + 180;\n  \n  (* NuFIT 6.0 Inverted Ordering *)\n  nufit60IO = 278.0;\n  nufit60IOErr = 26.0;\n  \n  deviation = (deltaCPIO - nufit60IO) / nufit60IOErr;\n  \n  {N[deltaCPIO, 4], N[deviation, 3]}\n]",
   "expected_result": "{268.4 deg, -0.37 sigma}",

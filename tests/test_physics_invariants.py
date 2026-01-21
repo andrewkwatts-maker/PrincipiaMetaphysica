@@ -320,25 +320,28 @@ def test_odowd_hubble_formula():
     Components:
     - 288/4 = 72 (base from E8×E8 roots)
     - P_O = 163 (O'Dowd Bulk Pressure)
-    - χ_eff = 144 (effective Euler characteristic)
-    - η_S = 0.6819 (Sophian Drag)
+    - chi_eff_total = 144 (cross-shadow effective Euler characteristic)
+    - eta_S = 0.6819 (Sophian Drag)
+
+    Note: The O'Dowd formula uses chi_eff_total (144) because bulk pressure
+    correction is a global/cross-shadow effect, not chi_eff (72 per sector).
     """
     # Load from SSoT Registry
     if REGISTRY:
         roots_total = REGISTRY.roots_total          # 288
-        chi_eff = REGISTRY.chi_eff                  # χ_eff = 144
+        chi_eff_total = REGISTRY.chi_eff_total      # chi_eff_total = 144 (cross-shadow)
         P_O = REGISTRY.odowd_bulk_pressure          # P_O = 163
-        eta_S = REGISTRY.sophian_drag               # η_S = 0.6819
+        eta_S = REGISTRY.sophian_drag               # eta_S = 0.6819
     else:
         reg = get_registry()
         roots_total = 288
-        chi_eff = 144
+        chi_eff_total = 144  # Cross-shadow total (NOT chi_eff = 72 per sector)
         P_O = 163      # O'Dowd Bulk Pressure
         eta_S = reg.sophian_drag  # Sophian Drag from SSoT
 
     # O'Dowd Formula
-    H0_base = roots_total / 4.0           # 288/4 = 72
-    H0_bulk_correction = P_O / chi_eff    # 163/144 = 1.1319...
+    H0_base = roots_total / 4.0                 # 288/4 = 72
+    H0_bulk_correction = P_O / chi_eff_total    # 163/144 = 1.1319...
     H0_derived = H0_base - H0_bulk_correction + eta_S
 
     # Expected value from SSoT Registry
@@ -348,7 +351,7 @@ def test_odowd_hubble_formula():
     is_valid = abs(H0_derived - H0_expected) < tolerance
 
     print(f"\n--- O'DOWD H0 FORMULA CHECK ---")
-    print(f"Formula: (288/4) - (P_O/chi_eff) + eta_S")
+    print(f"Formula: (288/4) - (P_O/chi_eff_total) + eta_S")
     print(f"Base (288/4):              {H0_base:.2f}")
     print(f"Bulk correction (163/144): {H0_bulk_correction:.4f}")
     print(f"Sophian Drag (eta_S):      {eta_S}")

@@ -38,6 +38,11 @@ from decimal import Decimal, getcontext
 from dataclasses import dataclass
 from typing import Dict, Any
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 getcontext().prec = 50
 
 
@@ -84,8 +89,8 @@ class FineStructureDerivation:
     """
 
     def __init__(self):
-        # Topological inputs
-        self.b3 = 24
+        # Topological inputs from SSoT registry
+        self.b3 = _REG.b3  # = 24 (third Betti number)
         self.phi = (1 + np.sqrt(5)) / 2
 
         # EXPERIMENTAL: CODATA 2022 reference values

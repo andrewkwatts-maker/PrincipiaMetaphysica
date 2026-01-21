@@ -3,7 +3,7 @@
   "cert_id": "CERT-GRAV-006",
   "label": "Gravitational Projection & Planck Scale",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  chiEff = 144,\n  kGimel = 12.31831,\n  \n  (* Fundamental constants *)\n  hbar = 1.054571817 * 10^-34,  (* J.s *)\n  c = 299792458,  (* m/s *)\n  G = 6.67430 * 10^-11  (* m^3/(kg.s^2) *)\n},\n  (* Planck mass derivation *)\n  MPl = Sqrt[hbar * c / G];  (* kg *)\n  MPlGeV = MPl * c^2 / (1.602176634 * 10^-10);  (* Convert to GeV *)\n  \n  (* Geometric projection factor *)\n  projectionFactor = Sqrt[chiEff / b3];\n  \n  {N[MPlGeV, 5], N[projectionFactor, 5], \"LOCKED\"}\n]",
   "expected_result": "{1.2208*10^19, 2.4495, \"LOCKED\"}",

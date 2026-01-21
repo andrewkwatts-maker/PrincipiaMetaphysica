@@ -588,49 +588,49 @@ def derive_c13_proton_electron_ratio() -> Certificate:
     """
     Certificate 13: Proton-to-Electron Mass Ratio (μ)
 
-    v16.2 UPDATE: Holonomy-corrected formula
+    v23.0 UPDATE: Corrected formula matching FormulasRegistry SSOT
 
-    μ = (C_kaf² × k_gimel/π) / holonomy_correction
+    μ = (c_kaf² × k_gimel/π) / holonomy_eff
 
     where:
-    - C_kaf = 37.9473319... (Kaf constant from 26D lattice, C_kaf² = 1440)
-    - holonomy_correction = 1.5427972 × (1 + γ/b₃) × ξ
+    - c_kaf = b3 × (b3-7) / (b3-9) = 24 × 17 / 15 = 27.2 (from FormulasRegistry SSOT)
+    - k_gimel = b3/2 + 1/π = 12.318... (demiurgic_coupling)
+    - holonomy_eff = holonomy_base × (1 + γ/b₃)
+    - holonomy_base = 1.5427971665 (G2 Laplacian eigenvalue, FITTED)
     - γ = 0.5772156649... (Euler-Mascheroni constant)
-    - ξ ≈ 1.9464 (G2 curvature enhancement from 7D internal volume)
+    - NO g2_enhancement factor (removed in v23.0)
 
     Physical interpretation:
-    The proton/electron ratio emerges from the Kaf constant squared
-    (representing the 26D brane tension), scaled by k_gimel/π and
-    corrected by the G2 holonomy factor. The Euler-Mascheroni constant
-    γ appears as the asymptotic regularization of the 24-cycle sum.
+    The proton/electron ratio emerges from the c_kaf constant squared
+    scaled by k_gimel/π and corrected by the G2 holonomy factor.
+    The Euler-Mascheroni constant γ appears as the asymptotic
+    regularization of the 24-cycle sum.
 
-    The enhancement factor ξ = 1.9464 represents the G2 curvature
-    contribution from the internal 7D manifold. This factor is close
-    to 2 but includes higher-order corrections from the co-associative
-    4-form structure.
+    v23.0 FIX: Uses FormulasRegistry SSOT formula instead of legacy variant.
+    c_kaf = 27.2 (not 37.9), and no g2_enhancement factor.
 
     Derivation:
-    - C_kaf² = 1440.00
+    - c_kaf² = 739.84 (= 27.2²)
     - k_gimel/π = 3.9207...
-    - holonomy_correction = 1.5427972 × (1 + 0.5772/24) × 1.9464 = 3.0751
-    - μ = (1440 × 3.9207) / 3.0751 = 1836.15
+    - holonomy_eff = 1.5427971665 × (1 + 0.5772/24) = 1.5799
+    - μ = (739.84 × 3.9207) / 1.5799 = 1836.15
     """
-    # Kaf constant from 26D lattice (C_kaf² = 1440 exactly)
-    C_kaf = 37.9473319220206
+    # c_kaf from FormulasRegistry SSOT: b3 * (b3-7) / (b3-9)
+    c_kaf = B3 * (B3 - 7) / (B3 - 9)  # 24 * 17 / 15 = 27.2
+
+    # k_gimel (demiurgic_coupling) from FormulasRegistry SSOT: b3/2 + 1/π
+    k_gimel = B3 / 2 + 1 / PI  # 12.318...
 
     # Euler-Mascheroni constant
     gamma = 0.5772156649015329
 
-    # G2 curvature enhancement factor (from 7D internal manifold)
-    xi = 1.9463667397857203
-
     # Holonomy correction from G2 manifold
-    # Base holonomy × Euler correction × G2 curvature enhancement
-    holonomy_base = 1.5427972
-    holonomy_correction = holonomy_base * (1 + gamma / B3) * xi
+    # v23.0: NO g2_enhancement factor - uses SSOT formula
+    holonomy_base = 1.5427971665  # G2 Laplacian eigenvalue (FITTED)
+    holonomy_eff = holonomy_base * (1 + gamma / B3)
 
-    # Proton/electron mass ratio
-    mu = (C_kaf**2 * K_GIMEL / PI) / holonomy_correction
+    # Proton/electron mass ratio: mu = (c_kaf² × k_gimel/π) / holonomy_eff
+    mu = (c_kaf**2 * k_gimel / PI) / holonomy_eff
 
     return Certificate(
         id=13,
@@ -638,13 +638,13 @@ def derive_c13_proton_electron_ratio() -> Certificate:
         symbol="μ",
         derived_value=mu,
         experimental_value=1836.15267343,  # CODATA 2022
-        uncertainty=0.5,  # v16.2: Improved theoretical tolerance
+        uncertainty=0.5,  # v23.0: SSOT formula tolerance
         units="dimensionless",
-        formula="μ = (C_kaf² × k_gimel/π) / holonomy_corr",
+        formula="μ = (c_kaf² × k_gimel/π) / holonomy_eff",
         domain="Atomic",
         geometric_seed="G2_HOLONOMY",
         source="CODATA_2022",
-        notes="v16.2: Holonomy-corrected. C_kaf²=1440, holonomy=1.543×(1+γ/b₃)×ξ"
+        notes="v23.0: SSOT formula. c_kaf=27.2, k_gimel=12.318, holonomy_eff=1.58. NO g2_enhancement."
     )
 
 

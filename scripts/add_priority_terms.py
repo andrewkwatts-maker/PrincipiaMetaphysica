@@ -114,16 +114,17 @@ formulas['calabi-yau-projection']['html'] = '''<span class="formula-var" data-te
 <span class="formula-var" data-term="K6">K⁶<span class="var-tooltip"><span class="var-name">K⁶</span><span class="var-description">6-dimensional compactified Calabi-Yau factor</span></span></span>'''
 print('Added: calabi-yau-projection')
 
-# 8. spr2-gauge
+# 8. v21-euclidean-bridge (REPLACES deprecated spr2-gauge)
+# v21+ uses 12x(2,0) Euclidean bridge pairs instead of Sp(2,R) gauge fixing
 formulas['spr2-gauge']['terms'] = {
-    't2': {'description': 'Second time dimension', 'symbol': 't₂'},
+    'bridge': {'description': '12 Euclidean bridge pairs', 'symbol': '12×(2,0)'},
     'Lambda': {'description': 'Cosmological constant', 'symbol': 'Λ'},
-    'SPR2': {'description': 'Symplectic gauge group Sp(2,R)', 'symbol': 'Sp(2,ℝ)'}
+    'shadow': {'description': 'Dual-shadow structure', 'symbol': 'N+M'}
 }
-formulas['spr2-gauge']['html'] = '''<span class="formula-var" data-term="t2">t₂<span class="var-tooltip"><span class="var-name">t₂</span><span class="var-description">Second time dimension in (24,2) signature</span></span></span>
-<span class="formula-op"> →<sup>Sp(2,ℝ)</sup> </span>
-<span class="formula-var" data-term="Lambda">Λ<span class="var-tooltip"><span class="var-name">Λ</span><span class="var-description">Cosmological constant (vacuum energy from gauge freezing)</span></span></span>'''
-print('Added: spr2-gauge')
+formulas['spr2-gauge']['html'] = '''<span class="formula-var" data-term="bridge">12×(2,0)<span class="var-tooltip"><span class="var-name">12×(2,0)</span><span class="var-description">Euclidean bridge pairs in (24,1) signature (v21+)</span></span></span>
+<span class="formula-op"> → </span>
+<span class="formula-var" data-term="shadow">Normal + Mirror<span class="var-tooltip"><span class="var-name">N+M</span><span class="var-description">Dual-shadow structure via OR reduction R_perp</span></span></span>'''
+print('Added: v21-euclidean-bridge (replaces spr2-gauge)')
 
 data['formulas'] = formulas
 

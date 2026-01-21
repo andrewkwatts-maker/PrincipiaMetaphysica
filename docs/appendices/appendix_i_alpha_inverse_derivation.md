@@ -464,6 +464,23 @@ This is Δα^{-1} from M_GUT to M_Z
 | QED running | STANDARD | I.5 |
 | Torsion alternative | PROMISING | I.8 |
 
+### I.10.1a Derivation Chain Assessment
+
+**Complete derivation chain for α⁻¹ = k_gimel² - b3/φ + φ/(4π):**
+
+| Step | Description | Status |
+|------|-------------|--------|
+| 1 | U(1) gauge field from KK compactification | RIGOROUS (Section I.2) |
+| 2 | α = π/V_cycle from gauge-geometry duality | RIGOROUS (Eq. I.5) |
+| 3 | Identification of electromagnetic 1-cycle | PARTIAL (multiple candidates in Section I.2.3) |
+| 4 | Cycle volume V_em = 137π ≈ 430 Planck units | REQUIRED (not derived) |
+| 5 | Expression in terms of b₃, k_gimel, φ | **NUMEROLOGICAL** (Eq. I.1) |
+
+**DERIVATION PENDING**: The specific formula α⁻¹ = k_gimel² - b₃/φ + φ/(4π) achieves 0.004% precision but the combination of terms is not derived from first principles. Each term lacks rigorous physical justification:
+- k_gimel² = 151.73: No derivation from G2 geometry
+- -b₃/φ = -14.83: No topological mechanism established
+- +φ/(4π) = +0.13: No connection to quantum corrections
+
 ### I.10.2 What Would Constitute a Derivation?
 
 A genuine derivation would:

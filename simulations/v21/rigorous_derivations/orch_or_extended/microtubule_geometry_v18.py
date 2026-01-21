@@ -39,6 +39,11 @@ from dataclasses import dataclass, field
 from enum import Enum
 import math
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 
 class DerivationStatus(Enum):
     """Classification of derivation rigor."""
@@ -87,11 +92,11 @@ class MicrotubuleGeometryAnalysis:
 
     def __init__(self):
         """Initialize with G2 topology parameters from SSoT."""
-        # RIGOROUS: Topological invariant of TCS G2 manifold
-        self.b3 = 24  # Third Betti number
+        # RIGOROUS: Topological invariant from SSoT registry
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
 
-        # RIGOROUS: Mathematical definition
-        self.k_gimel = self.b3 / 2.0 + 1.0 / np.pi  # = 12.31831...
+        # RIGOROUS: Mathematical definition from SSoT registry
+        self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.31831...
 
         # BIOLOGICAL INPUT: From crystallography (Wade et al., 1990)
         self.n_protofilaments = 13  # Empirical observation

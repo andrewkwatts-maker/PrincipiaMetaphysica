@@ -37,6 +37,11 @@ from typing import Dict, Any, List, Optional
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -101,8 +106,8 @@ class AxionDMV18(SimulationBase):
 
         # Fundamental constants
         self.M_Planck = 1.22e19     # GeV
-        self.k_gimel = 12 + 1/np.pi  # ≈ 12.318
-        self.b3 = 24
+        self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.318...
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
 
         # QCD constants for axion mass
         self.Lambda_QCD = 0.217     # GeV

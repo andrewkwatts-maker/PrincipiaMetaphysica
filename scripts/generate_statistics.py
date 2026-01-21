@@ -30,7 +30,7 @@ try:
     from core.FormulasRegistry import FormulasRegistry
     VERSION = FormulasRegistry.VERSION_SHORT
 except ImportError:
-    VERSION = "19.2"  # Fallback
+    VERSION = "23.0"  # Fallback
 
 # Paths relative to project root
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

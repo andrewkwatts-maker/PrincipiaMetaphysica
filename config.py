@@ -4859,12 +4859,12 @@ class LatticeDispersionParameters:
                 'Joyce (2007): G₂ holonomy',
                 'PM v15.2: Microtubule coupling'
             ],
-            'version': 'v16.0'
+            'version': 'v23.0'
         }
 
 
 # ==============================================================================
-# SUBLEADING DISPERSION PARAMETERS (v16.1)
+# SUBLEADING DISPERSION PARAMETERS (v23.0)
 # ==============================================================================
 
 class SubleadingDispersionParameters:
@@ -5101,7 +5101,7 @@ class SubleadingDispersionParameters:
         w0_band = SubleadingDispersionParameters.w0_band(0.1)  # With max uncertainty
         return {
             'parameter_name': 'Subleading Dispersion Corrections',
-            'version': 'v16.1',
+            'version': 'v23.0',
             'theta_23': {
                 'leading_order': SubleadingDispersionParameters.THETA_23_LEADING,
                 'with_uncertainty': f"{SubleadingDispersionParameters.THETA_23_LEADING}° ± 2.25°",

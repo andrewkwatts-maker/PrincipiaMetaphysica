@@ -3,7 +3,7 @@
   "cert_id": "CERT-CKAF-033",
   "label": "c_kaf Holonomy Constant",
   "category": "TOPOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  \n  (* c_kaf derivation from flux constraints *)\n  (* c_kaf = b3 * (b3 - 7) / (b3 - 9) *)\n  cKaf = b3 * (b3 - 7) / (b3 - 9)\n},\n  (* Numerical evaluation *)\n  cKafNum = N[cKaf, 4];\n  \n  (* Verify: 24 * 17 / 15 = 408/15 = 136/5 = 27.2 *)\n  exactFraction = 136/5;\n  isExact = (cKaf == exactFraction);\n  \n  {cKafNum, exactFraction, isExact, \"LOCKED\"}\n]",
   "expected_result": "{27.2, 136/5, True, \"LOCKED\"}",

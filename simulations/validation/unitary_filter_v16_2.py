@@ -66,6 +66,12 @@ _project_root = os.path.dirname(os.path.dirname(_current_dir))
 sys.path.insert(0, _project_root)
 
 try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+except ImportError:
+    _REG = None
+
+try:
     from simulations.base import (
         SimulationBase,
         SimulationMetadata,
@@ -313,11 +319,11 @@ class UnitaryFilter:
         if registry is None:
             raise ValueError("PMRegistry is required to create UnitaryFilter from registry")
 
-        # Get b3 from registry (default to 24 if not set)
+        # Get b3 from registry (default to SSoT registry if not set)
         if registry.has_param("topology.b3"):
             b3 = registry.get_param("topology.b3")
         else:
-            b3 = 24  # Default for TCS G2 manifold
+            b3 = _REG.b3 if _REG else 24  # Default from SSoT registry
 
         # D_total is always 26 for bosonic string
         dim_total = 26

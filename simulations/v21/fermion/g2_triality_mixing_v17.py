@@ -27,6 +27,11 @@ from decimal import Decimal, getcontext
 from dataclasses import dataclass
 from typing import Dict, Any, Tuple
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 getcontext().prec = 50
 
 
@@ -77,12 +82,12 @@ class G2TrialityMixing:
         # Froggatt-Nielsen suppression
         self.epsilon = Decimal(str(np.exp(-1.5)))  # ~0.223
 
-        # G2 manifold topology
+        # G2 manifold topology from SSoT registry
         # PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
-        self.b3 = 24
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
         self.b2 = 4
-        self.chi_eff = 144  # chi_eff_total = 144 for PMNS (both shadows)
-        self.n_gen = 3
+        self.chi_eff = _REG.chi_eff_total  # = 144 for PMNS (both shadows)
+        self.n_gen = _REG.n_gen  # = 3 (fermion generations)
         self.S_orient = 12  # Single unified bridge orientation sum
 
     def compute_golden_angle_base(self) -> Dict[str, Any]:

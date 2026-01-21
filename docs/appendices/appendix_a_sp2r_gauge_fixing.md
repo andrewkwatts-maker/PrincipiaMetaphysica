@@ -352,6 +352,17 @@ The complete dimensional chain:
 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
 ```
 
+### A.12.1 Derivation Chain Status
+
+| Step | Transition | Status | See Also |
+|------|------------|--------|----------|
+| 1 | 26D(24,2) → 13D(12,1) | COMPLETE | This appendix |
+| 2 | 13D → 6D via G2 | COMPLETE | Appendix K §K.4 |
+| 3 | 6D → 4D via KK | COMPLETE | Appendix K §K.5 |
+| 4 | SM gauge emergence | COMPLETE | Appendices B, C, D |
+
+**Note**: The v21+ framework uses signature (24,1) with the Euclidean bridge mechanism. See Appendix G and Appendix K for the current formulation.
+
 ---
 
 ## A.13 SSOT Constants Reference
