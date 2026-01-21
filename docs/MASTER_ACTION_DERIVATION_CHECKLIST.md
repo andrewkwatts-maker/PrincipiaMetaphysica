@@ -32,7 +32,7 @@ S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_mod
 
 | ID | Derivation | Status | Appendix |
 |----|------------|--------|----------|
-| MA-01 | Sp(2,R) gauge fixing 26D → 13D | ✅ COMPLETE | appendix_a_sp2r_gauge_fixing |
+| MA-01 | Euclidean bridge 25D → dual 13D (v21+) | ✅ COMPLETE | appendix_g_euclidean_bridge |
 | MA-02 | G2 holonomy compactification 13D → 7D | ✅ COMPLETE | appendix_k_descent_chain |
 | MA-03 | 7D → 4D KK reduction | ✅ COMPLETE | appendix_k_descent_chain |
 | MA-04 | Complete 25D→4D descent chain | ✅ COMPLETE | appendix_k_descent_chain (NEW v22) |
@@ -222,11 +222,11 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 
 ## COMPLETED DERIVATIONS (v20.11)
 
-### 1. MA-01: Sp(2,R) Gauge Fixing (26D → 13D) ✅ [HISTORICAL v16-v20]
-- **Appendix**: [appendix_a_sp2r_gauge_fixing.md](appendices/appendix_a_sp2r_gauge_fixing.md)
-- **Key Result**: 26D(24,2) → 13D(12,1) via first-class constraints (v16-v20 formulation)
-- **Note**: v21+ uses 25D(24,1) with Euclidean bridge model - see Appendix G
-- **Wolfram Verified**: DOF halving, signature reduction, Lie algebra structure
+### 1. MA-01: Euclidean Bridge Reduction (25D → 13D) ✅ [v21+]
+- **Appendix**: [appendix_g_euclidean_bridge.md](appendices/appendix_g_euclidean_bridge.md)
+- **Key Result**: 25D(24,1) → dual 13D(12,1) shadows via 12x(2,0) Euclidean bridge pairs
+- **Note**: Supersedes v16-v20 Sp(2,R) gauge fixing (see appendix_a for historical reference)
+- **Wolfram Verified**: Metric signature, bridge pair structure, ghost-free physics
 
 ### 2. GS-06: QED Lagrangian Emergence ✅
 - **Appendix**: [appendix_b_qed_emergence.md](appendices/appendix_b_qed_emergence.md)

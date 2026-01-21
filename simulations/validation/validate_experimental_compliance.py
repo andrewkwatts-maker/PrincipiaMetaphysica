@@ -38,9 +38,10 @@ class ExperimentalComplianceValidator:
     SIMULATION_DIR = Path(__file__).parent.parent / "v16"
     VALID_SOURCES = [
         "PDG2024", "PDG 2024", "CODATA2018", "CODATA 2022",
-        "NuFIT6.0", "NuFIT 6.0", "NuFIT",
-        "DESI2025", "DESI 2025", "DESI_2025", "DESI DR2",
-        "Planck2018", "Planck 2018",
+        "NuFIT6.0", "NuFIT 6.0", "NuFIT 6.0 2025", "NuFIT",
+        "DESI2025", "DESI 2025", "DESI_2025", "DESI DR2", "DESI DR2 2025",
+        "Planck2018", "Planck 2018", "Planck 2018 (CMB)",
+        "SH0ES", "SH0ES 2022", "SH0ES 2024",
         "Super-K", "Super-Kamiokande", "Hyper-K",
         "LHC", "ATLAS", "CMS",
         "geometric", "topological", "theory"  # For no_experimental_value cases

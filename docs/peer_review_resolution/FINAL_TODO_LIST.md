@@ -1,7 +1,10 @@
 # Final TODO List - Peer Review Resolution
 
 *Generated: 2026-01-17*
+*Updated: 2026-01-21 (v23.0)*
 *After v20.15 peer review analysis*
+
+> **Note (v23.0)**: Issue 2 (Two-Time Signature) has been superseded by the v21+ refactor which uses 25D(24,1) with Euclidean bridge pairs. The Sp(2,R) gauge fixing is now historical reference only.
 
 ---
 

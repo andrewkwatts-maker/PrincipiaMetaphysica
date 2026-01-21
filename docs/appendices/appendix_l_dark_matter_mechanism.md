@@ -1,14 +1,14 @@
 # Appendix L: Physical Mechanism for Dark Matter in the PM Framework
 
-**Version:** 22.1
-**Date:** 2026-01-19
-**Status:** 95% RESOLVED (derivation complete, d_eff/R parameter needs moduli derivation)
+**Version:** 23.0
+**Date:** 2026-01-21
+**Status:** 95% RESOLVED (mechanism established; d_eff/R parameter derivation from moduli incomplete)
 
 ---
 
 ## Abstract
 
-This appendix provides a detailed physical mechanism for dark matter within the Principia Metaphysica (PM) framework. Dark matter emerges naturally from the dual-shadow structure of the 25D(24,1) bulk geometry, where the mirror shadow sector contains self-interacting particles (mirror baryons) that couple to our visible sector only through gravity and highly suppressed portal interactions. The framework predicts the observed dark matter to baryon ratio with remarkable precision (5.40 vs. Planck 5.38), now derived from first principles via asymmetric reheating and entropy dilution.
+This appendix provides a detailed physical mechanism for dark matter within the Principia Metaphysica (PM) framework. Dark matter emerges naturally from the dual-shadow structure of the 25D(24,1) bulk geometry, where the mirror shadow sector contains self-interacting particles (mirror baryons) that couple to our visible sector only through gravity and highly suppressed portal interactions. The framework predicts the dark matter to baryon ratio (5.40 vs. Planck 5.38 +/- 0.05), consistent with observations within 0.4 sigma. The mechanism uses asymmetric reheating and entropy dilution, though some parameters remain phenomenological.
 
 **Key Results:**
 - Dark matter as mirror shadow baryons
@@ -515,5 +515,5 @@ The effective bridge cycle separation d_eff/R = 0.0896 is the final missing piec
 **Completeness:** 95%
 **Remaining:** d_eff/R = 0.0896 parameter derivation from moduli stabilization
 
-*Document generated: 2026-01-19*
+*Document generated: 2026-01-21*
 *Principia Metaphysica v23.0*

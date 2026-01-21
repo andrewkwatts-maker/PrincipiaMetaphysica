@@ -3,7 +3,7 @@
   "cert_id": "CERT-OBSV-043",
   "label": "Observer Coupling & Decidability (Watts Constant)",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wl_code": "wattsConstant = 1.0; reidInvariant = 1/144; decidability = 1.0; {wattsConstant == 1.0, decidability == 1.0, \"SEALED\"}",
   "result": "{True, True, SEALED}",

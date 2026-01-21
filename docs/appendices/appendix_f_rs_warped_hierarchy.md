@@ -2,9 +2,9 @@
 
 **HG-06: Derivation of Electroweak Scale via Warped Extra Dimensions**
 
-**Version**: 20.14
-**Date**: 2026-01-14
-**Status**: COMPLETE
+**Version**: 23.0
+**Date**: 2026-01-21
+**Status**: COMPLETE (mechanism established; numerical coefficient C_moduli remains fitted)
 
 ---
 
@@ -134,7 +134,7 @@ $$k R_c \approx 11.21$$ **(F.13)**
 
 ### F.5.3 Connection to b_3 = 24
 
-The remarkable observation: $kR_c \approx b_3/2 = 12$ is close!
+The observation: $kR_c \approx b_3/2 = 12$ is numerically close (though the derivation path from b_3 to kR_c remains speculative).
 
 More precisely, using PM's k_gimel = 12.318:
 $$k R_c = \frac{k_{gimel}}{\phi^{1/4}} = \frac{12.318}{1.128} \approx 10.92$$ **(F.14)**
@@ -266,7 +266,7 @@ $$= 2.01 \times 10^{7} \times C_{moduli} \text{ GeV}$$ **(F.28)**
 For $C_{moduli} = 1.2 \times 10^{-5}$:
 $$v_H = 2.01 \times 10^{7} \times 1.2 \times 10^{-5} = 241 \text{ GeV}$$ **(F.29)**
 
-**This matches experiment within 2%!**
+This matches experiment within 2%. Note that $C_{moduli} = 1.2 \times 10^{-5}$ is a fitted coefficient whose first-principles derivation remains incomplete.
 
 ---
 
@@ -341,7 +341,7 @@ The Randall-Sundrum warped geometry mechanism, embedded in PM's dimensional casc
 3. **Moduli stabilization**: Goldberger-Wise mechanism with PM constants
 4. **Testable predictions**: KK gravitons at ~3 TeV, radion at ~100 GeV
 
-**Key Achievement**: The PM constants $(b_3, k_{gimel}, \phi)$ naturally produce $kR_c \approx 11$, which gives the correct electroweak scale!
+**Key Result**: The PM constants $(b_3, k_{gimel}, \phi)$ are consistent with producing $kR_c \approx 11$, which gives the correct electroweak scale order of magnitude. The precise coefficient derivation requires further work.
 
 ---
 
@@ -367,5 +367,5 @@ The Randall-Sundrum warped geometry mechanism, embedded in PM's dimensional casc
 
 ---
 
-*Document generated: 2026-01-14*
-*Principia Metaphysica v20.14*
+*Document generated: 2026-01-21*
+*Principia Metaphysica v23.0*

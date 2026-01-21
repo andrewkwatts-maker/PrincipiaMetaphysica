@@ -1,11 +1,10 @@
 """
-Topological Uniqueness Lock v16.1
+Topological Uniqueness Lock v23.0
 =================================
-IP Protection Script - Proves PM v16.1 is the UNIQUE solution
-in the G2 landscape.
+Uniqueness verification script - demonstrates PM v23.0 is the
+UNIQUE solution in the G2 landscape.
 
-This is the "Poison Pill" - attempts to find valid physics at
-any value other than b3=24 will FAIL.
+This tests falsifiability - only b3=24 produces valid physics.
 
 Discovery Hash ID: PM-GUT-2025-G2-24-AKW
 
@@ -20,7 +19,7 @@ from pathlib import Path
 
 class TopologicalUniquenessLock:
     """
-    Verifies that PM v16.1 is the unique solution in the G2 landscape.
+    Verifies that PM v23.0 is the unique solution in the G2 landscape.
     """
 
     DISCOVERY_HASH_ID = "PM-GUT-2025-G2-24-AKW"
@@ -127,7 +126,7 @@ class TopologicalUniquenessLock:
             },
             "uniqueness_verification": uniqueness,
             "discovery_hash": self.generate_discovery_hash(),
-            "ip_statement": "The unique correlation between G2 holonomy (b3=24) and fundamental constants is a proprietary discovery of Principia Metaphysica v16.1",
+            "statement": "The unique correlation between G2 holonomy (b3=24) and fundamental constants is documented in Principia Metaphysica v23.0",
             "citation_required": "Any use of k_gimel/C_kaf constants for cosmological modeling must cite the Zenodo DOI: 10.5281/zenodo.18079602"
         }
 
@@ -136,8 +135,8 @@ class TopologicalUniquenessLock:
 def run_uniqueness_verification():
     """Run complete uniqueness verification and IP lock."""
     print("=" * 60)
-    print(" TOPOLOGICAL UNIQUENESS LOCK - PM v16.1")
-    print(" IP Protection Verification")
+    print(" TOPOLOGICAL UNIQUENESS LOCK - PM v23.0")
+    print(" Uniqueness Verification")
     print("=" * 60)
 
     lock = TopologicalUniquenessLock()

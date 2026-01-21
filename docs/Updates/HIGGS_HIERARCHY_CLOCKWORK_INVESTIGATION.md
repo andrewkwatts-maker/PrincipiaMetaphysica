@@ -105,7 +105,9 @@ For q = 3: N ~ 35/1.1 ~ 32 sites needed.
 
 ### 3.1 Current PM Structure
 
-PM employs a 5-level dimensional hierarchy (from `dimensional_reduction_derivations.py`):
+> **Note (v23.0)**: The table below reflects the v16-v20 architecture. The v21+ framework uses 25D(24,1) with 12x(2,0) Euclidean bridge pairs instead of Sp(2,R) gauge fixing.
+
+**Historical (v16-v20)** dimensional hierarchy:
 
 | Level | Dimension | Signature | Mechanism |
 |-------|-----------|-----------|-----------|
@@ -115,7 +117,7 @@ PM employs a 5-level dimensional hierarchy (from `dimensional_reduction_derivati
 | 3 (External) | 6D | (5,1) | Observable bulk |
 | 4 (Visible) | 4D | (3,1) | Observable spacetime |
 
-The chain: 26D -> [Sp(2,R)] -> 13D -> [G2(7,0)] -> 6D -> [KK] -> 4D
+**Current (v21+)** chain: 25D(24,1) -> [12x(2,0) bridge] -> dual 13D(12,1) shadows -> [G2(7,0)] -> 4D(3,1)
 
 ### 3.2 Does This Implement Clockwork?
 

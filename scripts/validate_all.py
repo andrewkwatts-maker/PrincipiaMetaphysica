@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """
-Combined validation for Principia Metaphysica v16.2
+Combined validation for Principia Metaphysica v23
 - Key formula validations via Wolfram Alpha API
 - 72 Gates structural verification (local computation)
+
+Uses FormulasRegistry as the Single Source of Truth (SSoT).
 """
 
 import json
@@ -296,7 +298,7 @@ def main():
         sys.exit(1)
 
     print("=" * 60)
-    print("PRINCIPIA METAPHYSICA v16.2 - Complete Validation")
+    print("PRINCIPIA METAPHYSICA v23 - Complete Validation")
     print("=" * 60)
     print()
 
@@ -354,7 +356,7 @@ def main():
 
     # Save results
     output = {
-        "version": "16.2",
+        "version": "23.0",
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "total_gates": total_gates,
         "formula_validations": len(results),

@@ -12,9 +12,9 @@
 
 ### Q.1.1 Overview
 
-The 72-Gate Architecture is the computational backbone of Principia Metaphysica, providing a complete set of derived constants that bridge the Ten Pillar Seeds to physical observables. Each gate represents a specific mathematical relationship derived from the foundational topological invariants.
+The 72-Gate Architecture provides a structured set of constants that bridge the foundational seeds to physical observables. Each gate represents a specific mathematical relationship constructed from the foundational topological invariants. The physical significance of many gates remains to be fully established.
 
-**Key Principle**: The gates are NOT arbitrary fitting parameters. Each gate is algebraically derived from the core seeds:
+**Key Principle**: The gates are designed to be derived from core seeds rather than arbitrary fitting parameters. Each gate is algebraically constructed from:
 - **Logic Closure**: 288 = 135 + 153 (Shadow + Christ)
 - **Bulk Pressure**: 163 = 288 - 125 (Sterile Sector)
 - **Manifold Base**: b3 = 24 (G2 Betti Number)
@@ -804,7 +804,7 @@ Key sections:
 
 **Total Gates**: 72 = 3 x 24 = n_gen x b3
 
-**Fundamental Identity**: $G_{72} \equiv G_{12}$ (The End is the Beginning)
+**Closure Property**: $G_{72} \equiv G_{12}$ (mathematical consistency check)
 
 ---
 

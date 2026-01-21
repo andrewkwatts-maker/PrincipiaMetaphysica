@@ -79,8 +79,8 @@ class DarkMatterDerivations:
 
     def __init__(
         self,
-        chi_eff: int = 144,
-        b3: int = 24,
+        chi_eff: int = None,
+        b3: int = None,
         d_over_R: float = 0.12,
         re_T: float = 9.865
     ):
@@ -88,15 +88,22 @@ class DarkMatterDerivations:
         Initialize dark matter derivation calculator.
 
         Args:
-            chi_eff: Effective Euler characteristic of G₂ manifold
-            b3: Third Betti number (associative cycles)
-            d_over_R: Cycle separation ratio
-            re_T: Real part of modulus VEV
+            chi_eff: Effective Euler characteristic of G₂ manifold (default: from SSOT)
+            b3: Third Betti number (associative cycles) (default: from SSOT)
+            d_over_R: Cycle separation ratio (FITTED to match DM abundance)
+            re_T: Real part of modulus VEV (FITTED to match DM abundance)
         """
-        self.chi_eff = chi_eff
-        self.b3 = b3
-        self.d_over_R = d_over_R
-        self.re_T = re_T
+        # Import from base precision module (SSOT)
+        try:
+            from simulations.base.precision import B3, CHI_EFF
+            self.chi_eff = chi_eff if chi_eff is not None else CHI_EFF  # SSOT: 144
+            self.b3 = b3 if b3 is not None else B3  # SSOT: 24
+        except ImportError:
+            # Fallback values if precision module not available
+            self.chi_eff = chi_eff if chi_eff is not None else 144  # FITTED: v23 fallback
+            self.b3 = b3 if b3 is not None else 24  # FITTED: v23 fallback
+        self.d_over_R = d_over_R  # FITTED: v23 phenomenological parameter
+        self.re_T = re_T  # FITTED: v23 phenomenological parameter
 
     # =========================================================================
     # STEP 1: Temperature Ratio from Asymmetric Reheating

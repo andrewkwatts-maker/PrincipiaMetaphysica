@@ -1,5 +1,5 @@
 """
-Sterility Audit Test v17.0 - AST-Based Ghost Literal Scanner
+Sterility Audit Test v23.0 - AST-Based Ghost Literal Scanner
 =============================================================
 Scans the repository for 'Ghost Literals' - hardcoded numbers that
 should be derived from the FormulasRegistry SSoT.
@@ -69,7 +69,7 @@ class SterilityValidator(ast.NodeVisitor):
 
     def visit_Call(self, node: ast.Call) -> None:
         """
-        v17: Check for Decimal('...') calls with hardcoded literals.
+        Check for Decimal('...') calls with hardcoded literals.
 
         Decimal strings like Decimal('163') are "Logic Shadows" that
         bypass the simple numeric literal check.
@@ -99,7 +99,7 @@ class SterilityValidator(ast.NodeVisitor):
 
     def visit_ImportFrom(self, node: ast.ImportFrom) -> None:
         """
-        v17.2: Block forbidden external constant imports.
+        Block forbidden external constant imports.
 
         Importing scipy.constants or using math constants directly
         introduces "Ghost Data" not derived from the 24-base geometry.
@@ -154,7 +154,7 @@ class GhostLiteralScanner:
         "Principia_Metaphysica_v16_2_20260102_FULL",
     }
 
-    # Known Ghost Literals that MUST be migrated to Registry (v17.2)
+    # Known Ghost Literals that MUST be migrated to Registry
     # NOTE: EXPERIMENTAL values (137.036 from CODATA) are ALLOWED in validation scripts
     #       Only our DERIVED predictions should use the Registry SSoT
     KNOWN_GHOSTS: Set[float] = {
@@ -247,7 +247,7 @@ class GhostLiteralScanner:
         """Generate a human-readable sterility report."""
         lines = [
             "=" * 60,
-            " PRINCIPIA METAPHYSICA v17.0 - STERILITY AUDIT REPORT",
+            " PRINCIPIA METAPHYSICA v23.0 - STERILITY AUDIT REPORT",
             "=" * 60,
             "",
         ]

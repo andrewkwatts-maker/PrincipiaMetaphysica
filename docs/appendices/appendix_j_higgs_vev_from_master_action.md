@@ -2,8 +2,8 @@
 
 **HG-10: Direct Derivation of v = 246 GeV from 25D(24,1) Bridge Geometry**
 
-**Version**: 22.1
-**Date**: 2026-01-19
+**Version**: 23.0
+**Date**: 2026-01-21
 **Status**: 90% COMPLETE (EW DOF interpretation established; G2 cycle computation remaining)
 
 ---
@@ -18,7 +18,9 @@ This appendix derives the Higgs vacuum expectation value (VEV) directly from the
 
 $$v = k_\gimel \times (b_3 - 4) = 12.318 \times 20 = 246.37 \text{ GeV}$$ **(J.1)**
 
-This is 0.06% from the experimental value $v_{exp} = 246.22$ GeV, with the residual explained by G2 torsion corrections.
+This is 0.06% from the experimental value $v_{exp} = 246.22$ GeV. The residual is attributed to G2 torsion corrections, though this requires further derivation.
+
+**Note**: The factor $(b_3 - 4) = 20$ and the constant $k_\gimel = 12.318$ GeV are derived from topological data, but the dimensional assignment of $k_\gimel$ in GeV units requires physical justification (see Section J.10.2).
 
 ---
 
@@ -406,7 +408,7 @@ Result: 1.000608
 This gives:
 $$v_{phys} = \frac{246.37}{1.00061} = 246.22 \text{ GeV}$$ **(J.40)**
 
-**Exact match!** The correction factor $1/b_3\phi^4$ emerges from G2 moduli space geometry (Hitchin functional contributions).
+**Close match achieved.** The correction factor $1/b_3\phi^4$ is proposed to emerge from G2 moduli space geometry (Hitchin functional contributions), though a rigorous derivation remains to be established.
 
 ---
 
@@ -709,6 +711,5 @@ This simulation includes:
 
 ---
 
-*Document generated: 2026-01-19*
+*Document generated: 2026-01-21*
 *Principia Metaphysica v23.0*
-*Updated with weak mixing angle derivation from bridge geometry*

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Topology Gap Check
+PRINCIPIA METAPHYSICA v23.0 - Topology Gap Check
 =================================================
 
 DOI: 10.5281/zenodo.18079602

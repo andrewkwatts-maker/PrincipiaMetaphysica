@@ -104,13 +104,20 @@ This "Gnostic" nomenclature reflects PM's philosophical framework but maps to ph
 
 ### 2.3 Dimensional Structure
 
-PM's 5-level dimensional reduction chain:
+> **Note (v23.0)**: The dimensional chain below is from v16-v20. The current v21+ framework uses 25D(24,1) with 12x(2,0) Euclidean bridge pairs. See Appendix G for current architecture.
+
+**Historical (v16-v20)** - PM's 5-level dimensional reduction chain:
 ```
 26D(24,2) -> [Sp(2,R)] -> 13D(12,1) -> [G2(7,0)] -> 6D(5,1) -> [KK] -> 4D(3,1)
 ```
 
+**Current (v21+)** - 25D(24,1) with paired bridges:
+```
+25D(24,1) = T¹ x (⊕_{i=1}^{12} B_i^{2,0}) -> dual 13D(12,1) shadows -> [G2] -> 4D(3,1)
+```
+
 The shadow/visible terminology appears at the 13D level:
-- D_shadow_total = 13 (from Bars' 2T-physics)
+- D_shadow_total = 13 (each shadow universe)
 - D_visible_total = 4 (observable spacetime)
 
 ---

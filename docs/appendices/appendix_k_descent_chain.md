@@ -1,8 +1,8 @@
 # Appendix K: Complete Explicit Lagrangian Descent Chain (25D to 4D)
 
-**Version**: 22.2
-**Date**: 2026-01-19
-**Status**: COMPLETE (explicit chain + 4-dice consciousness sampling)
+**Version**: 23.0
+**Date**: 2026-01-21
+**Status**: COMPLETE (explicit chain established; consciousness sampling is speculative)
 
 ---
 
@@ -531,7 +531,7 @@ Verified: G₂ has 14 generators
 **Key Results**:
 1. Explicit Lagrangians provided at each level
 2. Matching conditions for scales and couplings derived
-3. Standard Model emerges from geometry without free parameters (given $b_3 = 24$)
+3. Standard Model gauge structure emerges from geometry with minimal parameters (given $b_3 = 24$; mass scales require additional input)
 4. Three generations from index theorem: $n_{gen} = \chi_{eff}/48 = 3$
 5. Gauge symmetry pattern: $G_2 \rightarrow SU(3) \times SU(2) \times U(1)$
 
@@ -677,5 +677,5 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 
 ---
 
-*Document generated: 2026-01-19*
+*Document generated: 2026-01-21*
 *Principia Metaphysica v23.0*

@@ -3,7 +3,7 @@
   "label": "CPL w(z) at z=0.45",
   "wl_code": "With[{b3 = 24, z = 0.45}, w0 = -1 + 1/b3; wa = 0.0; N[w0 + wa * (z/(1+z)), 6]]",
   "result": "-0.958333",
-  "note": "v16.2 STERILE: w0 = -23/24 = -0.9583, wa = 0 (static). w(z=0.45) = w0 = -0.9583 (no evolution)",
+  "note": "Prediction: w0 = -23/24 = -0.9583, wa = 0 (static). w(z=0.45) = w0 = -0.9583 (no evolution)",
   "hash": "58f45e80b54c1643",
   "timestamp": "2026-01-02T01:44:43.992502",
   "verified": false

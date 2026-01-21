@@ -1,9 +1,9 @@
 # Appendix P: Consciousness Framework - Orch-OR with Pair Shielding
 
-**Version:** 22.2
-**Status:** SPECULATIVE
+**Version:** 23.0
+**Status:** SPECULATIVE (not empirically validated - philosophical interpretation)
 **Domain:** Consciousness / Philosophy of Mind
-**Updated:** 2026-01-19 (Workstream 4: Orch-OR Enhancement)
+**Updated:** 2026-01-21
 
 ---
 
