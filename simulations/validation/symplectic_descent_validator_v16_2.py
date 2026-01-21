@@ -175,9 +175,9 @@ class SymplecticDescentValidator(SimulationBase):
         Execute the ghost-free proof and uniqueness verification.
 
         The proof proceeds in three stages:
-        1. Test all possible signatures (p,q) with p+q = 26
-        2. Apply ghost-free and Sp(2,R) constraints
-        3. Verify only (24,2) survives all constraints
+        1. Test all possible signatures (p,q) with p+q = 25 (v21+ unified time)
+        2. Apply ghost-free and dual-shadow constraints
+        3. Verify only (24,1) with 12x(2,0) bridge pairs survives all constraints
 
         Args:
             registry: PMRegistry instance with input parameters

@@ -41,6 +41,11 @@ from typing import Dict, Any, List, Optional
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -102,13 +107,11 @@ class BaryonAsymmetryV18(SimulationBase):
             subsection_id="6.2"
         )
 
-        # Topology constants (from PM)
-        self.b3 = 24
-        # v22 UPDATE: chi_eff changed from 144 to 72
-        # v21: chi_eff = 144 (full Euler characteristic interpretation)
-        # v22: chi_eff = 72 (half-period/hemisphere interpretation)
-        # This changes b3/chi_eff from 24/144 = 1/6 to 24/72 = 1/3
-        self.chi_eff = 72
+        # Topology constants from SSoT registry
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        # v22 UPDATE: chi_eff_sector = 72 (per-shadow interpretation)
+        # Baryon asymmetry occurs at single 4-brane, so use per-sector chi_eff
+        self.chi_eff = _REG.chi_eff  # = 72 (per-sector chi_eff)
         self.compact_dims = 7
 
         # Cycle asymmetry parameter

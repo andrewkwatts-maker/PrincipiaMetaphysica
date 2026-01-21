@@ -528,6 +528,22 @@ v = k_gimel × (b_3 - 4) = 246 GeV
 3. **Units of k_gimel**: Why $k_\gimel$ carries units of GeV needs explanation
 4. **Bridge dynamics**: Full Lagrangian $\mathcal{L}_{bridge}$ not yet computed
 
+### J.10.2a Derivation Chain Assessment
+
+**Complete derivation chain for v = k_gimel × (b₃ - 4):**
+
+| Step | Description | Status |
+|------|-------------|--------|
+| 1 | Master action S_Pneuma in 25D(24,1) | COMPLETE (Section J.2) |
+| 2 | Bridge structure 12×(2,0) pairs | COMPLETE (Section J.4.1) |
+| 3 | Warp factor Ω = exp(-πk_gimel/φ) | COMPLETE (Section J.4.3-4.4) |
+| 4 | k_gimel = b₃/2 + 1/π from holonomy | ESTABLISHED (Section J.5.4) |
+| 5 | (b₃ - 4) = EW DOF subtraction | **ESTABLISHED** (Section J.5.2-5.3) |
+| 6 | v_geo = k_gimel × (b₃ - 4) = 246.37 GeV | DERIVED (0.06% precision) |
+| 7 | G2 torsion correction η'_G2 | PROPOSED (requires proof) |
+
+**Key Gap**: The formula achieves 0.06% precision but the G2 torsion correction factor η'_G2 = 1 + 1/(b₃φ⁴) is proposed, not derived from the Hitchin functional. The physical interpretation of (b₃ - 4) as EW DOF subtraction is now well-established (Section J.5.2).
+
 ### J.10.3 Status Classification (Updated v22.1)
 
 **Overall Status**: 80% -> **90%** (EW DOF interpretation established)

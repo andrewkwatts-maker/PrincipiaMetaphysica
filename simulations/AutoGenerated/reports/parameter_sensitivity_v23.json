@@ -118,12 +118,11 @@
       "difference_percent": -48.62309905362857,
       "sigma_deviation": 100.0,
       "category": "DERIVED",
-      "formula": "mu = (C_kaf^2 * k_gimel/pi) / (holonomy * g2_enhancement)",
+      "formula": "mu = (C_kaf^2 * k_gimel/pi) / holonomy_eff",
       "dependencies": [
         "k_gimel",
         "c_kaf",
-        "holonomy",
-        "g2_enhancement"
+        "holonomy_eff"
       ],
       "downstream": [
         "atomic_structure",

@@ -3,7 +3,7 @@
   "cert_id": "CERT-C001",
   "label": "Third Betti Number b3 = 24",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "doi": "10.5281/zenodo.18079602",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* TCS G2 manifold: K3 x S³/Γ structure *)\n  b2K3 = 22,\n  b1S3Gamma = 0,\n  contribution = 2\n},\n  (* Third Betti number counts independent 3-cycles *)\n  (* For twisted connected sum (TCS) G2: *)\n  (* b3 = b2(K3) + contribution from S³ bundle *)\n  \n  b3 = b2K3 + contribution;\n  \n  (* Verify key properties *)\n  nGen = b3 / 8;  (* Fermion generations *)\n  w0 = -1 + 1/b3; (* Dark energy EoS *)\n  wa = -1/Sqrt[b3]; (* DE evolution *)\n  \n  {b3, nGen, N[w0, 6], N[wa, 6]}\n]",

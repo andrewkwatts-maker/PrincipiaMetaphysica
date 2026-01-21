@@ -183,18 +183,20 @@ def run_all_audits():
     print("\n3. COSMOLOGICAL TENSION RESOLUTION (v23)")
 
     # H0 - The O'Dowd Formula
-    # H0 = (288/4) - (P_O/chi_eff) + eta_S = 72 - 1.1319 + 0.6819 = 71.55
+    # H0 = (288/4) - (P_O/pressure_divisor) + eta_S = 72 - 1.1319 + 0.6819 = 71.55
+    # pressure_divisor = b3^2/4 = 576/4 = 144 (equals chi_eff_total geometrically)
     if registry:
         H0_local = registry.h0_local
         H0_early = registry.h0_early
         w0 = registry.w0_dark_energy
         parity_sum = registry.parity_sum
     else:
-        H0_base = roots_total / 4.0                              # 288/4 = 72
-        H0_bulk_correction = odowd_bulk_pressure / chi_eff       # 163/144 = 1.1319
-        H0_local = H0_base - H0_bulk_correction + eta_S          # 72 - 1.1319 + 0.6819 = 71.55
-        H0_early = 67.4                                          # Planck CMB
-        w0 = -sigma_T                                            # -23/24 = -0.9583
+        pressure_divisor = b3**2 / 4  # 576/4 = 144 (NOT chi_eff=72!)
+        H0_base = roots_total / 4.0                                # 288/4 = 72
+        H0_bulk_correction = odowd_bulk_pressure / pressure_divisor  # 163/144 = 1.1319
+        H0_local = H0_base - H0_bulk_correction + eta_S            # 72 - 1.1319 + 0.6819 = 71.55
+        H0_early = 67.4                                            # Planck CMB
+        w0 = -sigma_T                                              # -23/24 = -0.9583
         parity_sum = eta_S + sigma_T
 
     # S8
@@ -208,14 +210,17 @@ def run_all_audits():
     # Verify Manifold Parity
     parity_valid = abs(parity_sum - 1.6402) < 0.0001
 
+    # pressure_divisor = b3^2/4 = 144 for output calculation
+    pressure_divisor_out = b3**2 / 4 if not registry else registry.pressure_divisor
     results["cosmological_resolutions"] = {
         "H0_local": {
             "value": float(H0_local),
             "units": "km/s/Mpc",
-            "formula": "(288/4) - (P_O/chi_eff) + eta_S",
+            "formula": "(288/4) - (P_O/pressure_divisor) + eta_S",
+            "note": "pressure_divisor = b3^2/4 = 144 (equals chi_eff_total geometrically)",
             "components": {
                 "base": 72.0,
-                "bulk_correction": float(odowd_bulk_pressure / chi_eff),
+                "bulk_correction": float(odowd_bulk_pressure / pressure_divisor_out),
                 "sophian_drag": eta_S
             }
         },

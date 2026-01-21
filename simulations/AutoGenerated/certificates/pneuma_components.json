@@ -3,7 +3,7 @@
   "cert_id": "CERT-PNEU-037",
   "label": "Pneuma Components (64 DOF)",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  chiEff = 144,\n  \n  (* Supersymmetric degrees of freedom *)\n  (* For N=1 SUSY in 4D from G2 compactification *)\n  bosonicDOF = 32,  (* Graviton + gauge + scalar *)\n  fermionicDOF = 32,  (* Gravitino + gaugino + Weyl *)\n  totalDOF = bosonicDOF + fermionicDOF\n},\n  (* Pneuma = effective information content *)\n  pneuma = totalDOF;\n  \n  (* Verify supersymmetric balance *)\n  susyBalance = (bosonicDOF == fermionicDOF);\n  \n  {pneuma, susyBalance, bosonicDOF, fermionicDOF, \"SEALED\"}\n]",
   "expected_result": "{64, True, 32, 32, \"SEALED\"}",

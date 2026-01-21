@@ -3,7 +3,7 @@
   "cert_id": "CERT-C003",
   "label": "Euler Characteristic chi = 144",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  \n  (* Euler characteristic from Betti number relation *)\n  (* For G2: chi_eff = 6 * b3 *)\n  chiEff = 6 * b3\n},\n  (* Verify properties *)\n  (* chi = 144 = 12^2 = 2^4 * 3^2 *)\n  isSquare = (chiEff == 144);\n  factor = Sqrt[chiEff];\n  \n  (* Check divisibility *)\n  div24 = (Mod[chiEff, 24] == 0);\n  \n  {chiEff, isSquare, factor, div24, \"LOCKED\"}\n]",
   "expected_result": "{144, True, 12, True, \"LOCKED\"}",

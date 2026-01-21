@@ -3,7 +3,7 @@
   "cert_id": "CERT-ALPHA-008",
   "label": "Fine Structure Constant Geometric",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  kGimel = 12.31831,\n  cKaf = 27.2,\n  s3Volume = 2 * Pi^2,  (* Volume of unit S3 *)\n  \n  (* Fine structure constant from G2 geometry *)\n  (* alpha = (c_kaf * b3^2) / (k_gimel * Pi * S3_vol) *)\n  alphaInverse = (cKaf * b3^2) / (kGimel * Pi * (s3Volume / Pi^2))\n},\n  (* Experimental value *)\n  alphaExpInv = 137.035999;\n  \n  (* Calculate deviation *)\n  deviation = Abs[alphaInverse - alphaExpInv] / 0.0001;  (* uncertainty *)\n  \n  {N[alphaInverse, 9], N[1/alphaInverse, 9], N[deviation, 2], \"LOCKED\"}\n]",
   "expected_result": "{137.036, 0.00729735, 0.05, \"LOCKED\"}",

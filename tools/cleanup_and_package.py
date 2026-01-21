@@ -53,7 +53,7 @@ def _remove_readonly(func, path, excinfo):
 
 REPO_URL = "https://github.com/andrewkwatts-maker/PrincipiaMetaphysica.git"
 REPO_BRANCH = "main"
-VERSION = "16.2"
+VERSION = "23.0"
 
 SCRIPT_DIR = Path(__file__).parent
 ROOT = SCRIPT_DIR.parent

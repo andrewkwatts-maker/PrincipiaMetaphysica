@@ -47,6 +47,11 @@ from typing import Dict, Any, List, Optional, Tuple
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -129,10 +134,10 @@ class YukawaTexturesV18(SimulationBase):
             subsection_id="6.1"
         )
 
-        # Geometric constants
+        # Geometric constants from SSoT registry
         self.phi = (1 + np.sqrt(5)) / 2  # ~ 1.618
-        self.k_gimel = 12 + 1/np.pi       # ~ 12.318
-        self.b3 = 24
+        self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.318...
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
         self.v_higgs = 246.22             # GeV [PDG2024: Higgs VEV]
 
         # v19.0: CP phase from G2 triality (same as baryon asymmetry)

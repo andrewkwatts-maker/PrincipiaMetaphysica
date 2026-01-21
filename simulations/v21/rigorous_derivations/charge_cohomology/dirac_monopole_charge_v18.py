@@ -50,6 +50,11 @@ from dataclasses import dataclass, field
 from enum import Enum
 import math
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 
 # =============================================================================
 # Constants and Enumerations
@@ -120,12 +125,12 @@ class DiracMonopoleChargeQuantization:
     """
 
     def __init__(self):
-        """Initialize with G2 topology parameters."""
-        # G2 manifold topology (from TCS #187)
+        """Initialize with G2 topology parameters from SSoT registry."""
+        # G2 manifold topology from SSoT registry
         self.b2 = 4       # Second Betti number (Kahler moduli)
-        self.b3 = 24      # Third Betti number (associative 3-cycles)
-        self.chi_eff = 144  # Effective Euler characteristic
-        self.n_gen = 3    # Number of generations = chi_eff / 48
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
+        self.n_gen = _REG.n_gen  # = 3 (fermion generations)
 
         # Gauge group structure
         self.gut_group = "SO(10)"

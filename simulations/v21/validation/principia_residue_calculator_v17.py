@@ -25,6 +25,11 @@ from decimal import Decimal, getcontext
 from dataclasses import dataclass
 from typing import Dict, Any
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 getcontext().prec = 50
 
 
@@ -67,10 +72,10 @@ class PrincipiaResidueCalculator:
     """
 
     def __init__(self):
-        # Manifold topology
-        self.b3 = 24
-        self.chi_eff = 144
-        self.n_gen = self.b3 // 8  # = 3
+        # Manifold topology from SSoT registry
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
+        self.n_gen = _REG.n_gen  # = 3 (fermion generations)
 
         # Sterile projection
         self.num_residues = 125

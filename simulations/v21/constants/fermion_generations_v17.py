@@ -23,6 +23,11 @@ import numpy as np
 from dataclasses import dataclass
 from typing import Dict, Any
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 
 @dataclass
 class FermionGenerationsResult:
@@ -63,9 +68,9 @@ class FermionGenerations:
     """
 
     def __init__(self):
-        # Topological invariants (locked by TCS #187)
-        self.b3 = 24
-        self.chi_eff = 144
+        # Topological invariants from SSoT registry (locked by TCS #187)
+        self.b3 = _REG.b3  # = 24 (third Betti number)
+        self.chi_eff = _REG.chi_eff_total  # = 144 (both shadows combined)
 
         # Divisors
         self.spinorial_divisor = 8  # From 7D spinor structure

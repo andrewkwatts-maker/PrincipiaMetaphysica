@@ -48,7 +48,7 @@ from typing import Set, Dict, List, Optional
 # CONFIGURATION
 # ============================================================================
 
-VERSION = "16.2"
+VERSION = "23.0"
 RELEASE_DATE = datetime.datetime.now().strftime("%Y%m%d")
 
 # Source and build directories

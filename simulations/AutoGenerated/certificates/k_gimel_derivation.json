@@ -3,7 +3,7 @@
   "cert_id": "CERT-C004",
   "label": "Holonomy Parameter k_gimel",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  \n  (* Holonomy parameter from geometric derivation *)\n  (* k_gimel = b3/2 + 1/Pi *)\n  kGimel = b3/2 + 1/Pi\n},\n  (* Numerical evaluation *)\n  kGimelNum = N[kGimel, 10];\n  \n  (* Verify properties *)\n  halfB3 = b3/2;\n  piCorrection = 1/Pi;\n  \n  {kGimelNum, halfB3, N[piCorrection, 6], \"LOCKED\"}\n]",
   "expected_result": "{12.31831, 12, 0.318310, \"LOCKED\"}",

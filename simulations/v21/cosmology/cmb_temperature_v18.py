@@ -71,6 +71,11 @@ from typing import Dict, Any, List, Optional
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -144,9 +149,9 @@ class CMBTemperatureV18(SimulationBase):
         # Cosmological scale (current Hubble radius)
         self.R_Hubble = 4.4e26       # m (c/H_0)
 
-        # Topology constants (from PM)
-        self.b3 = 24
-        self.chi_eff = 144
+        # Topology constants from SSoT registry
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
 
         # v19.0: DERIVED geometric factor replaces calibrated k_CMB
         # The normalization is π/(b3 + 7) = π/31, arising from:

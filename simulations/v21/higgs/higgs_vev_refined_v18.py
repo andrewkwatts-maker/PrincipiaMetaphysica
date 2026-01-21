@@ -49,6 +49,11 @@ from typing import Dict, Any, List, Optional
 import numpy as np
 from dataclasses import dataclass
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 from simulations.base.simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -114,9 +119,9 @@ class HiggsVEVRefinedV18(SimulationBase):
             subsection_id="4.2"
         )
 
-        # Topology constants
-        self.b3 = 24
-        self.k_gimel = 12 + 1/np.pi      # = 12.318
+        # Topology constants from SSoT registry
+        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.318...
 
         # QED coupling for Schwinger correction
         self.alpha_em = 1 / 137.035999177  # CODATA 2022

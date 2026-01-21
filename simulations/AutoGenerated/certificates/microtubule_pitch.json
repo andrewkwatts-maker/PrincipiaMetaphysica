@@ -3,7 +3,7 @@
   "cert_id": "CERT-BIO-029",
   "label": "Microtubule Protofilament Count",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  b3 = 24,\n  kGimel = 12.318\n},\n  (* Microtubule protofilament count from G2 topology *)\n  (* N_proto = b3 / (k_gimel / Pi) *)\n  \n  nProto = b3 / (kGimel / Pi);\n  \n  (* Experimental value: 13 protofilaments *)\n  experimental = 13;\n  \n  {N[nProto, 4], experimental}\n]",
   "expected_result": "{6.12, 13}",

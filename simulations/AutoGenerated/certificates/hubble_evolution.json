@@ -3,7 +3,7 @@
   "cert_id": "CERT-COSMO-027",
   "label": "Hubble Parameter Evolution from Dynamical DE",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* Early universe Hubble from Planck *)\n  H0early = 67.4,  (* km/s/Mpc *)\n  \n  (* G2 modulus parameter *)\n  kGimel = 12.318\n},\n  (* Dynamical dark energy boost *)\n  (* H0_late ~ H0_early * (1 + k_gimel/200) *)\n  \n  boostFactor = 1 + kGimel/200;\n  H0late = H0early * boostFactor;\n  \n  (* SH0ES measurement *)\n  sh0es = 73.04;\n  sh0esErr = 1.04;\n  \n  deviation = (H0late - sh0es) / sh0esErr;\n  \n  {N[H0late, 4], N[deviation, 3]}\n]",
   "expected_result": "{71.55 km/s/Mpc, -1.43 sigma}",

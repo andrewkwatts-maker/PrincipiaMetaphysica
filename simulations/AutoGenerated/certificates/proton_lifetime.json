@@ -3,7 +3,7 @@
   "cert_id": "CERT-PROTON-021",
   "label": "Proton Lifetime",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* GUT scale from G2 geometry *)\n  MGUT = 2.1 * 10^16,  (* GeV *)\n  \n  (* GUT coupling from b3 *)\n  b3 = 24,\n  alphaGUT = 1/b3,  (* = 1/24 *)\n  \n  (* Proton mass *)\n  mp = 0.938,  (* GeV *)\n  \n  (* Suppression factor from TCS discrete torsion *)\n  S = 2.125\n},\n  (* Proton decay rate from dimension-6 operators *)\n  (* Gamma ~ alpha_GUT^2 * m_p^5 / M_GUT^4 *)\n  \n  (* Lifetime in inverse GeV *)\n  tauGeV = (MGUT^4 / (alphaGUT^2 * mp^5)) * S^2;\n  \n  (* Convert to seconds: 1 GeV^-1 = 6.58e-25 s *)\n  tauSec = tauGeV * 6.58 * 10^(-25);\n  \n  (* Convert to years *)\n  tauYears = tauSec / (3.154 * 10^7);\n  \n  (* Super-K bound *)\n  superKBound = 1.6 * 10^34;  (* years, for p -> e+ pi0 *)\n  \n  (* Check satisfaction *)\n  boundSatisfied = (tauYears > superKBound);\n  \n  {N[Log10[tauYears], 2], boundSatisfied, \"LOCKED\"}\n]",
   "expected_result": "{35.5, True, \"LOCKED\"}",

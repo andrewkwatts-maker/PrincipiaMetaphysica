@@ -3,7 +3,7 @@
   "cert_id": "CERT-COSMO-033",
   "label": "CPL Dark Energy Parameterization w(z)",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* v16.2 geometric predictions *)\n  w0 = -23/24,  (* = -0.9583 from G2 *)\n  wa = -1/Sqrt[24],  (* = -0.2041 base value *)\n  z = 0.45  (* Pivot redshift *)\n},\n  (* CPL parameterization: w(z) = w0 + wa * z/(1+z) *)\n  \n  wz = w0 + wa * (z / (1 + z));\n  \n  (* DESI DR2 at z=0.45 *)\n  desiWz = -0.95;\n  desiErr = 0.10;\n  \n  deviation = (wz - desiWz) / desiErr;\n  \n  {N[wz, 5], N[deviation, 3]}\n]",
   "expected_result": "{-1.021, -0.71 sigma}",

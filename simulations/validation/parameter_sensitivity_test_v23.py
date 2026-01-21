@@ -41,10 +41,12 @@ from dataclasses import dataclass, field, asdict
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 try:
-    from core.FormulasRegistry import FormulasRegistry
+    from core.FormulasRegistry import FormulasRegistry, get_registry
+    _REG = get_registry()
 except ImportError:
     print("Warning: Could not import FormulasRegistry, using standalone mode")
     FormulasRegistry = None
+    _REG = None
 
 try:
     from simulations.pm_config_v16_1 import PMConfig
@@ -236,9 +238,15 @@ def get_pm_parameters(registry: Optional['FormulasRegistry'] = None) -> Dict[str
         weak_mixing = registry.manifest_weak_mixing_angle
     else:
         # Standalone values matching FormulasRegistry v23 defaults
-        b3 = 24
-        chi_eff = 72               # Per-sector chi_eff
-        chi_eff_total = 144        # Total manifold chi_eff
+        # Use _REG if available, otherwise hardcoded fallback
+        if _REG:
+            b3 = _REG.b3
+            chi_eff = _REG.chi_eff
+            chi_eff_total = _REG.chi_eff_total
+        else:
+            b3 = 24
+            chi_eff = 72               # Per-sector chi_eff
+            chi_eff_total = 144        # Total manifold chi_eff
         phi = (1.0 + math.sqrt(5.0)) / 2.0
         demiurgic_coupling = b3 / 2 + 1 / math.pi  # k_gimel = 12.3183...
         alpha_inverse = demiurgic_coupling**2 - b3/phi + phi/(4.0 * math.pi)
