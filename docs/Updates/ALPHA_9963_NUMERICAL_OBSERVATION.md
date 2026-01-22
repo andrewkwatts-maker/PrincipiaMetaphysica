@@ -1,9 +1,10 @@
 # Alpha Inverse: The 9963 Numerical Observation
 
 **Date**: 2026-01-22
-**Version**: v23.0-17
+**Version**: v23.0-19
 **Status**: NUMERICAL_OBSERVATION (not derived, not numerology)
 **Discovery**: User observation that 12×12×12×6 = 10368 ≈ 10000
+**Update**: Two distinct geometric decompositions of 9963 discovered
 
 ---
 
@@ -47,6 +48,62 @@ chi_eff × chi_eff_total = 72 × 144 = 10,368
      = 10368 - 405
      = 9963 (100% SSoT constants)
 ```
+
+---
+
+## Two Geometric Decompositions of 9963
+
+A comprehensive search revealed **two distinct** ways to express 9963 from SSoT constants:
+
+### Decomposition 1 (PRIMARY): Euler Characteristic Formula
+```
+9963 = chi_eff × chi_eff_total - n_gen × shadow_sector
+     = 72 × 144 - 3 × 135
+     = 10368 - 405
+```
+
+**Components:**
+| Term | Value | Meaning |
+|------|-------|---------|
+| chi_eff | 72 | Per-shadow Euler characteristic = b3 × n_gen |
+| chi_eff_total | 144 | Total Euler = chi_eff × 2 (both shadows) |
+| n_gen | 3 | Fermion generations |
+| shadow_sector | 135 | Sophia - visible matter gates |
+
+**Physical Interpretation:** Cross-shadow topological capacity (10368) minus generation-weighted visible sector contribution (405).
+
+### Decomposition 2 (ALTERNATIVE): Gauge-Root Formula
+```
+9963 = shadow_sector × visible_sector - b3 × roots_total
+     = 135 × 125 - 24 × 288
+     = 16875 - 6912
+```
+
+**Components:**
+| Term | Value | Meaning |
+|------|-------|---------|
+| shadow_sector | 135 | Sophia - visible matter gates |
+| visible_sector | 125 | Visible sector dimension |
+| b3 | 24 | Third Betti number (Pleroma) |
+| roots_total | 288 | Total E8×E8 root count |
+
+**Physical Interpretation:** Visible gauge-matter coupling (16875) minus topological-root product (6912).
+
+### Assessment
+
+| Criterion | Formula 1 | Formula 2 |
+|-----------|-----------|-----------|
+| Constants used | 4 (chi_eff, chi_eff_total, n_gen, shadow) | 4 (shadow, visible, b3, roots) |
+| Fundamentality | Higher (Euler characteristics) | Medium (derived quantities) |
+| Numerical structure | Simpler (10368 - 405) | Larger (16875 - 6912) |
+| Physical clarity | Better (cross-shadow coupling) | Moderate (gauge-root relation) |
+
+**Recommendation:** Formula 1 is PRIMARY due to:
+- Euler characteristics are fundamental topological invariants
+- chi_eff × chi_eff_total structure suggests natural cross-shadow coupling
+- Simpler numerical form
+
+Both formulas remain NUMERICAL_OBSERVATIONS pending physical derivation.
 
 ---
 
@@ -143,4 +200,5 @@ The 9963 formula represents a **genuine numerical observation** - not arbitrary 
 ---
 
 *Document created 2026-01-22*
-*Principia Metaphysica v23.0-17*
+*Updated 2026-01-22: Added second geometric decomposition*
+*Principia Metaphysica v23.0-19*
