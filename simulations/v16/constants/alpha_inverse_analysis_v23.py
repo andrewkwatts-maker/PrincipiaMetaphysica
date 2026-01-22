@@ -1,5 +1,5 @@
 """
-Alpha Inverse Analysis Simulation - Principia Metaphysica v23.0.19
+Alpha Inverse Analysis Simulation - Principia Metaphysica v23.0.20
 
 This simulation provides a comprehensive comparison of all alpha_inverse
 formula variants discovered in PM, including the remarkable 9963 observation.
@@ -18,19 +18,32 @@ STATUS LABELS:
 - PURE_9963: NUMERICAL_OBSERVATION - uses only SSoT constants, sub-ppb accuracy
 - PAULI_PI: Pure numerology reference (0 PM constants)
 
-GEOMETRIC DISCOVERIES (v23.0.19):
-=================================
-10000 = chi_eff x chi_eff_total - n_gen x shadow_sector + n_gen x b3/2 + omega_W
-      = 72 x 144 - 3 x 135 + 3 x 12 + 1
-      = 10368 - 405 + 36 + 1 = 10000 (EXACT!)
+THE 9963 FORMULA (v23.0.20):
+============================
+PRIMARY DECOMPOSITION (Euler Characteristic):
+    9963 = chi_eff x chi_eff_total - n_gen x shadow_sector
+         = 72 x 144 - 3 x 135
+         = 10368 - 405 = 9963
 
-TWO DISTINCT DECOMPOSITIONS OF 9963:
-====================================
-Formula 1 (PRIMARY - Euler): 9963 = chi_eff x chi_eff_total - n_gen x shadow_sector
-                                  = 72 x 144 - 3 x 135 = 10368 - 405
+    Physical interpretation: Cross-shadow topological capacity minus
+    generation-weighted visible sector contribution.
 
-Formula 2 (ALTERNATIVE): 9963 = shadow_sector x visible_sector - b3 x roots_total
-                              = 135 x 125 - 24 x 288 = 16875 - 6912
+    Status: NUMERICAL_OBSERVATION - pending physical derivation
+
+ALTERNATIVE DECOMPOSITION (Gauge-Root) - documented for completeness:
+    9963 = shadow_sector x visible_sector - b3 x roots_total
+         = 135 x 125 - 24 x 288
+         = 16875 - 6912 = 9963
+
+    Physical interpretation: Visible gauge-matter coupling minus
+    topological-root product.
+
+    Status: ALTERNATIVE - pending derivation, kept for future investigation
+
+10000 DECOMPOSITION (for historical reference):
+    10000 = chi_eff x chi_eff_total - n_gen x shadow_sector + n_gen x b3/2 + omega_W
+          = 72 x 144 - 3 x 135 + 3 x 12 + 1
+          = 10368 - 405 + 36 + 1 = 10000 (EXACT!)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
