@@ -1493,9 +1493,9 @@ _validation_instance = MirrorShadowInflationSimulation()
 
 # Validate metadata
 assert _validation_instance.metadata is not None, "MirrorInflation: metadata is None"
-assert _validation_instance.metadata.id == "inflation_mirror_v22", \
+assert _validation_instance.metadata.id == "inflation_mirror_v23", \
     f"MirrorInflation: unexpected id {_validation_instance.metadata.id}"
-assert _validation_instance.metadata.version == "22.5", \
+assert _validation_instance.metadata.version == "23.0", \
     f"MirrorInflation: unexpected version {_validation_instance.metadata.version}"
 
 # Validate formulas exist
