@@ -1,7 +1,7 @@
 # Alpha Inverse: The 9963 Numerical Observation
 
 **Date**: 2026-01-22
-**Version**: v23.0-19
+**Version**: v23.0-20
 **Status**: NUMERICAL_OBSERVATION (not derived, not numerology)
 **Discovery**: User observation that 12×12×12×6 = 10368 ≈ 10000
 **Update**: Two distinct geometric decompositions of 9963 discovered
@@ -91,19 +91,22 @@ A comprehensive search revealed **two distinct** ways to express 9963 from SSoT 
 
 ### Assessment
 
-| Criterion | Formula 1 | Formula 2 |
-|-----------|-----------|-----------|
+| Criterion | Formula 1 (PRIMARY) | Formula 2 (ALTERNATIVE) |
+|-----------|---------------------|-------------------------|
+| Status | **NUMERICAL_OBSERVATION** | Documented for future investigation |
 | Constants used | 4 (chi_eff, chi_eff_total, n_gen, shadow) | 4 (shadow, visible, b3, roots) |
 | Fundamentality | Higher (Euler characteristics) | Medium (derived quantities) |
 | Numerical structure | Simpler (10368 - 405) | Larger (16875 - 6912) |
 | Physical clarity | Better (cross-shadow coupling) | Moderate (gauge-root relation) |
 
-**Recommendation:** Formula 1 is PRIMARY due to:
+**Decision (v23.0.20):** Formula 1 is adopted as PRIMARY:
 - Euler characteristics are fundamental topological invariants
 - chi_eff × chi_eff_total structure suggests natural cross-shadow coupling
 - Simpler numerical form
 
-Both formulas remain NUMERICAL_OBSERVATIONS pending physical derivation.
+**Formula 2** is retained in simulation metadata as an alternative pending derivation.
+
+Both formulas achieve exact 9963 from SSoT constants - physical derivation remains OPEN.
 
 ---
 
@@ -200,5 +203,5 @@ The 9963 formula represents a **genuine numerical observation** - not arbitrary 
 ---
 
 *Document created 2026-01-22*
-*Updated 2026-01-22: Added second geometric decomposition*
-*Principia Metaphysica v23.0-19*
+*Updated 2026-01-22: Formula 1 PRIMARY, Formula 2 ALTERNATIVE (pending derivation)*
+*Principia Metaphysica v23.0-20*
