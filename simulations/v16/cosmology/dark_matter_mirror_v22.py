@@ -1323,9 +1323,9 @@ _validation_instance = DarkMatterMirrorSimulation()
 
 # Validate metadata
 assert _validation_instance.metadata is not None, "DarkMatterMirror: metadata is None"
-assert _validation_instance.metadata.id == "dark_matter_mirror_v22", \
+assert _validation_instance.metadata.id == "dark_matter_mirror_v23", \
     f"DarkMatterMirror: unexpected id {_validation_instance.metadata.id}"
-assert _validation_instance.metadata.version == "22.0", \
+assert _validation_instance.metadata.version == "23.0", \
     f"DarkMatterMirror: unexpected version {_validation_instance.metadata.version}"
 
 # Validate formulas exist
