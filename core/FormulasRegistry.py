@@ -3433,19 +3433,42 @@ class FormulasRegistry:
         """
         Calculate alpha inverse (fine structure constant inverse).
 
-        Uses the Geometric Anchors formula - a pure geometric derivation
-        with NO magic numbers, only b3 (topological) and mathematical constants.
-
-        Formula: α⁻¹ = k_gimel² - b3/φ + φ/(4π)
+        TREE-LEVEL FORMULA (CURRENT):
+        =============================
+        alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.0367
 
         Where:
-        - k_gimel = b3/2 + 1/π = 12.3183... (Holonomy Precision Limit)
-        - φ = (1 + √5)/2 = 1.618... (Golden Ratio)
+        - k_gimel = b3/2 + 1/pi = 12.3183... (Holonomy Precision Limit)
+        - phi = (1 + sqrt(5))/2 = 1.618... (Golden Ratio)
         - b3 = 24 (Third Betti number of G2 manifold)
 
-        Result: α⁻¹ = 137.0367... (deviation ~0.0007 from CODATA)
+        COMPARISON TO EXPERIMENT:
+        =========================
+        CODATA 2022: alpha^-1 = 137.035999177 +/- 2.1e-8
+        Tree-Level:  alpha^-1 = 137.0367 (deviation ~0.0005%, 33000 sigma)
 
-        This is the HONEST geometric derivation - not reverse-engineered!
+        The deviation is EXPECTED from missing QED loop corrections.
+        This is the HONEST tree-level prediction.
+
+        v23.0.18 NUMERICAL OBSERVATION:
+        ===============================
+        A remarkable formula using ONLY SSoT constants achieves SUB-PPB accuracy:
+
+        delta_7D = 7 / (chi_eff * chi_eff_total - n_gen * shadow_sector)
+                 = 7 / (72 * 144 - 3 * 135)
+                 = 7 / 9963 = 0.0007026
+
+        alpha^-1 = 137.0367 - 0.0007026 = 137.0359991761
+        Error vs CODATA: 8.6e-10 (SUB-PART-PER-BILLION!)
+
+        DISCOVERY: The "magic" 10000 in original 7D suppression decomposes as:
+        10000 = chi_eff * chi_eff_total - n_gen * shadow_sector + n_gen * b3/2 + 1
+              = 72 * 144 - 3 * 135 + 3 * 12 + 1 = 10000 (EXACT!)
+
+        STATUS: The 9963 formula is a NUMERICAL_OBSERVATION - remarkable
+        accuracy using pure SSoT constants, but physical derivation unknown.
+
+        See: docs/Updates/ALPHA_9963_NUMERICAL_OBSERVATION.md
         """
         # Golden ratio (mathematical constant)
         phi = (1.0 + math.sqrt(5.0)) / 2.0  # φ = 1.618033988749895
