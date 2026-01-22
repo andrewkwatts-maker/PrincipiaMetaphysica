@@ -830,9 +830,24 @@ class GeometricAnchors:
         The small deviation represents missing QED radiative corrections,
         NOT a failure of the geometric framework.
 
-        NOTE: Previous v22.5 included a "7D suppression" term (δ_7D = 7/10000)
-        that achieved CODATA match. This was REMOVED per Gemini peer review
-        as it appeared to be reverse-engineering rather than genuine physics.
+        NOTE ON 7D SUPPRESSION (v23.0.17 Discovery):
+        ==============================================
+        Previous v22.5 included a "7D suppression" term δ_7D = 7/(10000 - 3×k_gimel).
+        This was REMOVED per Gemini review as "10000" appeared to be a magic number.
+
+        HOWEVER: User discovered 10000 has geometric decomposition:
+            10000 = chi_eff × chi_eff_total - n_gen × shadow_sector + n_gen × b3/2 + 1
+                  = 72 × 144 - 3 × 135 + 3 × 12 + 1 = 10368 - 405 + 36 + 1
+
+        The PURE INTEGER formula (9963 = 10368 - 405) achieves BETTER accuracy:
+            δ_7D = 7 / 9963 → α⁻¹ = 137.0359991761 (error: 8.6×10⁻¹⁰)
+
+        STATUS: NUMERICAL_OBSERVATION - remarkable accuracy using SSoT constants,
+        but no physical derivation established. Documented in:
+        docs/Updates/ALPHA_9963_NUMERICAL_OBSERVATION.md
+
+        CURRENT APPROACH: Maintain honest tree-level prediction; document 9963 formula
+        as observation for future investigation.
         """
         # Pure geometric formula - no correction terms
         return self.k_gimel**2 - self.b3/self.phi + self.phi/(4*np.pi)
