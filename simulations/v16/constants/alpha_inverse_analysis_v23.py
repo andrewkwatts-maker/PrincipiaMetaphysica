@@ -1,15 +1,15 @@
 """
-Alpha Inverse Analysis Simulation - Principia Metaphysica v23.0
+Alpha Inverse Analysis Simulation - Principia Metaphysica v23.0.19
 
 This simulation provides a comprehensive comparison of all alpha_inverse
 formula variants discovered in PM, including the remarkable 9963 observation.
 
 FORMULAS COMPARED:
 ==================
-1. TREE-LEVEL (Current): alpha^-1 = k_gimel² - b₃/φ + φ/(4π) = 137.0367
+1. TREE-LEVEL (Current): alpha^-1 = k_gimel^2 - b3/phi + phi/(4pi) = 137.0367
 2. 7D SUPPRESSION (Removed): alpha^-1 = base - 7/(10000 - 3xk_gimel) = 137.036000
 3. PURE 9963 (Observation): alpha^-1 = base - 7/9963 = 137.0359991761
-4. PAULI π (Reference): alpha^-1 = π + π² + 4π³ = 137.0362
+4. PAULI pi (Reference): alpha^-1 = pi + pi^2 + 4pi^3 = 137.0362
 
 STATUS LABELS:
 ==============
@@ -18,13 +18,19 @@ STATUS LABELS:
 - PURE_9963: NUMERICAL_OBSERVATION - uses only SSoT constants, sub-ppb accuracy
 - PAULI_PI: Pure numerology reference (0 PM constants)
 
-GEOMETRIC DISCOVERY (v23.0.18):
-==============================
+GEOMETRIC DISCOVERIES (v23.0.19):
+=================================
 10000 = chi_eff x chi_eff_total - n_gen x shadow_sector + n_gen x b3/2 + omega_W
       = 72 x 144 - 3 x 135 + 3 x 12 + 1
       = 10368 - 405 + 36 + 1 = 10000 (EXACT!)
 
-9963 = chi_eff x chi_eff_total - n_gen x shadow_sector = 10368 - 405
+TWO DISTINCT DECOMPOSITIONS OF 9963:
+====================================
+Formula 1 (PRIMARY - Euler): 9963 = chi_eff x chi_eff_total - n_gen x shadow_sector
+                                  = 72 x 144 - 3 x 135 = 10368 - 405
+
+Formula 2 (ALTERNATIVE): 9963 = shadow_sector x visible_sector - b3 x roots_total
+                              = 135 x 125 - 24 x 288 = 16875 - 6912
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -224,6 +230,55 @@ def verify_10000_decomposition() -> Dict[str, float]:
     }
 
 
+def verify_alternative_9963() -> Dict[str, float]:
+    """
+    Verify the ALTERNATIVE geometric decomposition of 9963.
+
+    DISCOVERY (v23.0.19): Two distinct ways to express 9963.
+
+    Formula 1 (PRIMARY): chi_eff x chi_eff_total - n_gen x shadow_sector
+                       = 72 x 144 - 3 x 135 = 10368 - 405 = 9963
+
+    Formula 2 (ALTERNATIVE): shadow_sector x visible_sector - b3 x roots_total
+                           = 135 x 125 - 24 x 288 = 16875 - 6912 = 9963
+    """
+    # Import additional constants
+    try:
+        VISIBLE_SECTOR = REG.visible_sector
+        ROOTS_TOTAL = REG.roots_total
+    except:
+        VISIBLE_SECTOR = 125
+        ROOTS_TOTAL = 288
+
+    # Formula 1: Euler characteristic form
+    f1_product = CHI_EFF * CHI_EFF_TOTAL  # 72 x 144 = 10368
+    f1_subtrahend = N_GEN * SHADOW_SECTOR  # 3 x 135 = 405
+    f1_result = f1_product - f1_subtrahend
+
+    # Formula 2: Gauge-root form
+    f2_product = SHADOW_SECTOR * VISIBLE_SECTOR  # 135 x 125 = 16875
+    f2_subtrahend = B3 * ROOTS_TOTAL  # 24 x 288 = 6912
+    f2_result = f2_product - f2_subtrahend
+
+    return {
+        "Formula 1 (PRIMARY)": {
+            "expression": "chi_eff x chi_eff_total - n_gen x shadow_sector",
+            "calculation": f"{CHI_EFF} x {CHI_EFF_TOTAL} - {N_GEN} x {SHADOW_SECTOR}",
+            "product": f1_product,
+            "subtrahend": f1_subtrahend,
+            "result": f1_result
+        },
+        "Formula 2 (ALTERNATIVE)": {
+            "expression": "shadow_sector x visible_sector - b3 x roots_total",
+            "calculation": f"{SHADOW_SECTOR} x {VISIBLE_SECTOR} - {B3} x {ROOTS_TOTAL}",
+            "product": f2_product,
+            "subtrahend": f2_subtrahend,
+            "result": f2_result
+        },
+        "Both equal 9963": f1_result == 9963 and f2_result == 9963
+    }
+
+
 def run_alpha_comparison() -> List[AlphaFormula]:
     """Run all alpha formula calculations and return comparison list."""
     formulas = [
@@ -256,6 +311,7 @@ def print_comparison_table(formulas: List[AlphaFormula]):
 def print_9963_discovery():
     """Print details of the 9963 geometric discovery."""
     decomp = verify_10000_decomposition()
+    alt_decomp = verify_alternative_9963()
 
     print("\n" + "="*70)
     print("GEOMETRIC DISCOVERY: The 9963 Formula")
@@ -269,13 +325,28 @@ def print_9963_discovery():
     print(f"\n  {decomp['chi_eff x chi_eff_total']} - {decomp['n_gen x shadow_sector']} + {decomp['n_gen x b3/2']} + 1 = {decomp['Full decomposition (10000)']}")
     print(f"  Matches 10000: {decomp['Matches 10000']}")
 
-    print("\nPURE 9963 FORMULA:")
-    print(f"  9963 = chi_eff x chi_eff_total - n_gen x shadow_sector")
-    print(f"       = {decomp['chi_eff x chi_eff_total']} - {decomp['n_gen x shadow_sector']}")
-    print(f"       = {decomp['Pure 9963']}")
+    print("\n" + "-"*70)
+    print("TWO GEOMETRIC DECOMPOSITIONS OF 9963")
+    print("-"*70)
+
+    f1 = alt_decomp["Formula 1 (PRIMARY)"]
+    print(f"\nFormula 1 (PRIMARY - Euler Characteristic):")
+    print(f"  {f1['expression']}")
+    print(f"  = {f1['calculation']}")
+    print(f"  = {f1['product']} - {f1['subtrahend']} = {f1['result']}")
+
+    f2 = alt_decomp["Formula 2 (ALTERNATIVE)"]
+    print(f"\nFormula 2 (ALTERNATIVE - Gauge-Root):")
+    print(f"  {f2['expression']}")
+    print(f"  = {f2['calculation']}")
+    print(f"  = {f2['product']} - {f2['subtrahend']} = {f2['result']}")
+
+    print(f"\nBoth equal 9963: {alt_decomp['Both equal 9963']}")
 
     pure_9963 = calculate_pure_9963()
-    print(f"\n  delta_7D = 7 / 9963 = {D_G2 / 9963:.10f}")
+    print(f"\n" + "-"*70)
+    print(f"ALPHA CALCULATION:")
+    print(f"  delta_7D = 7 / 9963 = {D_G2 / 9963:.10f}")
     print(f"  alpha^-1 = {pure_9963.result:.10f}")
     print(f"  Error vs CODATA: {pure_9963.error_vs_codata:.2e} (SUB-PPB!)")
 
