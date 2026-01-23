@@ -1,8 +1,8 @@
 /**
  * Centralized Formula Definitions for Principia Metaphysica
- * 26D Two-Time Framework - v12.8 VERIFIED
+ * 25D(24,1) Unified Time Framework - v23.0 (Updated from v12.8)
  *
- * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  *
  * STRUCTURE:
  * - ESTABLISHED: Well-known physics formulas with citations
@@ -24,14 +24,16 @@
  * - experimental_value: Measured value (if applicable)
  * - experimental_source: Source of measurement
  * - sigma: Agreement with experiment in standard deviations
- * - v12_7_status: Status in v12.8 verified framework
  *
- * FRAMEWORK FEATURES:
- * - 26D spacetime with signature (24,2)
- * - Two time dimensions: t_therm (thermal) + t_ortho (orthogonal)
- * - Z₂ mirror brane structure: B¹_{1:4} ↔ B²_{1:4}
- * - Sp(2,R) gauge symmetry for ghost elimination
- * - Observable 13D is gauge-fixed shadow of 26D
+ * FRAMEWORK FEATURES (v21+ / v23):
+ * - 25D spacetime with signature (24,1) - unified single time
+ * - 12×(2,0) bridge pairs connecting dual shadows
+ * - Z₂ mirror brane structure: Normal Shadow ↔ Mirror Shadow
+ * - Euclidean bridge mechanism (replaces Sp(2,R) gauge fixing)
+ * - Observable 13D(12,1) per shadow via R⊥ coordinate selection
+ *
+ * HISTORICAL NOTE: v12.8-v20 used 26D(24,2) with two time dimensions.
+ * The v21+ framework eliminates ghosts via unified time, not gauge fixing.
  */
 
 const PM_FORMULAS = {
