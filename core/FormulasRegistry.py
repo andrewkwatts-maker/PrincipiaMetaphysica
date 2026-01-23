@@ -113,7 +113,10 @@ class FormulasRegistry:
 
     VERSION = "23.0-12PAIR"
     VERSION_SHORT = "23.0"
-    STATUS = "PEER_REVIEWED"  # Reviewed by Gemini 2.0 Flash (2026-01-11, 2026-01-18)
+    STATUS = "AI_VALIDATED"  # AI-assisted validation by Gemini 2.0 Flash (2026-01-11, 2026-01-18)
+    # NOTE: This is AI-assisted validation, NOT traditional journal peer review.
+    # The framework has been reviewed by Google's Gemini and Anthropic's Claude
+    # for mathematical consistency, but has not been published in peer-reviewed journals.
     # v23 FRAMEWORK: 12×(2,0) paired bridge system, (24,1) unified time signature,
     #                Cl(24,1) 4096 spinors, breathing mode dark energy
 
@@ -1026,8 +1029,8 @@ class FormulasRegistry:
 
     @property
     def horos(self) -> int:
-        """The Horos: Dimensional Boundary (26D action frame)."""
-        return self._D_total_26  # D_bulk = 26
+        """The Horos: Dimensional Boundary (25D bulk frame)."""
+        return self._D_total_26  # D_bulk = 25 (legacy name preserved for compatibility)
 
     # =========================================================================
     # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.2)
@@ -3628,7 +3631,7 @@ class FormulasRegistry:
                     "gate": "G60",
                     "named_for": "Matt O'Dowd",
                     "gnostic_name": "The Barbelo",
-                    "gnostic_role": "First Thought; the active force in 26D space",
+                    "gnostic_role": "First Thought; the active force in 25D bulk",
                     "hubble_formula": f"(288/4) - (163/144) + 0.6819 = {self.h0_local:.2f}",
                     "pm_path": "constants.odowd_bulk_pressure"
                 },
@@ -3773,9 +3776,9 @@ class FormulasRegistry:
                     "symbol": "horos",
                     "latex": "\\text{Horos}",
                     "value": self.horos,
-                    "formula": "D_bulk = 26 (dimensional boundary)",
+                    "formula": "D_bulk = 25 (dimensional boundary)",
                     "gnostic_name": "The Horos",
-                    "gnostic_role": "The Limit; boundary of 26D action frame",
+                    "gnostic_role": "The Limit; boundary of 25D bulk frame",
                     "pm_path": "topology.horos"
                 },
                 # (Z.6) Pneuma Tensioner Constants
@@ -3911,7 +3914,7 @@ class FormulasRegistry:
                     "formula": "163/288",
                     "expanded": f"Bulk Pressure / Logic Closure = {self.gate_01_initial_action:.10f}",
                     "gnostic_name": "The Initial Action Potential",
-                    "gnostic_role": "Density Zero of manifold; base energy density of 26D action",
+                    "gnostic_role": "Density Zero of manifold; base energy density of 25D bulk action",
                     "derived_from": ["sterile_sector", "roots_total"],
                     "pm_path": "gates.G01"
                 },
@@ -4340,7 +4343,7 @@ class FormulasRegistry:
                     "formula": "(288*G38)/153",
                     "expanded": f"Hadronization lock = {self.gate_40_hadronization_lock:.10f}",
                     "gnostic_name": "The Hadronization Lock",
-                    "gnostic_role": "26D to 4D particle manifestation threshold",
+                    "gnostic_role": "25D to 4D particle manifestation threshold",
                     "derived_from": ["roots_total", "gate_38_color_symmetry", "christ_constant"],
                     "pm_path": "gates.G40"
                 },
@@ -4397,7 +4400,7 @@ class FormulasRegistry:
                     "formula": "(163-(153-135))/288",
                     "expanded": f"Ghost flux = {self.gate_45_ghost_flux:.10f}",
                     "gnostic_name": "The Ghost-Flux",
-                    "gnostic_role": "Hidden mass accounting in 26D action",
+                    "gnostic_role": "Hidden mass accounting in 25D bulk action",
                     "derived_from": ["sterile_sector", "christ_constant", "shadow_sector", "roots_total"],
                     "pm_path": "gates.G45"
                 },
@@ -4442,7 +4445,7 @@ class FormulasRegistry:
                     "formula": "(163/153)*sqrt(24)",
                     "expanded": f"Scale factor = {self.gate_49_scale_factor_prime:.10f}",
                     "gnostic_name": "The Scale Factor Prime",
-                    "gnostic_role": "26D to macroscopic magnification",
+                    "gnostic_role": "25D to macroscopic magnification",
                     "derived_from": ["sterile_sector", "christ_constant", "b3"],
                     "pm_path": "gates.G49"
                 },
