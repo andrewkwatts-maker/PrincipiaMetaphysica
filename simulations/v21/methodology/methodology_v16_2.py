@@ -128,7 +128,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "Just as the physical dimensions and tension of a drumhead determine its specific "
-                    "acoustic modes, the topological constraints of the 26D(24,1) dual-shadow descent dictate the "
+                    "acoustic modes, the topological constraints of the 25D(24,1) dual-shadow descent dictate the "
                     "'vibrational' modes of the resulting 4D spacetime. In this framework, a "
                     "<strong>fundamental constant</strong> is simply a point of stationary resonance "
                     "within the 7-dimensional G₂ structure per shadow."
@@ -344,7 +344,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "The Metric Lock is maintained through <strong>Topological Hysteresis</strong>. "
-                    "As the 26D(24,1) bulk splits into dual shadows connected by the Euclidean bridge "
+                    "As the 25D(24,1) bulk splits into dual shadows connected by the Euclidean bridge "
                     "and compactifies into 4D, the manifold undergoes a phase transition similar to "
                     "crystallization. The OR reduction operator (R<sub>⊥</sub>) 'memorizes' the geometric "
                     "configuration, creating a 'Hysteresis Seal' that locks the 125 residues into a "

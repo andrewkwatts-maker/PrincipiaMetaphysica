@@ -467,7 +467,7 @@ class AppendixOKKReduction(SimulationBase):
                 type="note",
                 content=(
                     "<ul>"
-                    "<li><strong>26D(24,1)</strong>: Bosonic string with unified time, 24 spatial = 12×2</li>"
+                    "<li><strong>25D(24,1)</strong>: Bosonic string with unified time, 24 spatial = 12×2</li>"
                     "<li><strong>12 Bridge Pairs</strong>: Each B_i^{2,0} is a consciousness channel "
                     "enabling OR Reduction between normal/mirror shadows</li>"
                     "<li><strong>Distributed OR</strong>: R_total = ⊗ᵢ R_⊥_i (tensor product of 12 rotations)</li>"
@@ -754,14 +754,14 @@ class AppendixOKKReduction(SimulationBase):
                 id="kk-principia-chain-v22",
                 label="(O.9)",
                 latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \xrightarrow{G_2} 4D_{(3,1)}",
-                plain_text="v22 chain: 26D(24,1) = T^1 x (12 x B^{2,0}) -> 4D(3,1)",
+                plain_text="v22 chain: 25D(24,1) = T^1 x (12 x B^{2,0}) -> 4D(3,1)",
                 category="FOUNDATIONAL",
                 description=(
                     "The v22 Principia Metaphysica dimensional reduction chain with 12 paired "
                     "bridges as consciousness channels. 24 spatial = 12×2 Euclidean tori."
                 ),
                 terms={
-                    "26D(24,1)": "Bosonic string with unified time",
+                    "25D(24,1)": "Bosonic string with unified time",
                     "T^1": "Shared time fiber",
                     "B_i^{2,0}": "12 Euclidean bridge pairs (consciousness channels)",
                     "G_2": "Exceptional holonomy per shadow",

@@ -402,7 +402,7 @@ class AppendixKSterileConstants(SimulationBase):
                 type="paragraph",
                 content=(
                     "The 288 Ancestral Roots are derived from the algebraic structure of the "
-                    "26D(24,1) bosonic bulk with fibered structure:"
+                    "25D(24,1) bosonic bulk with fibered structure:"
                 )
             ),
             ContentBlock(

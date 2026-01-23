@@ -47,7 +47,7 @@ def create_descent_chain_diagram():
     box_26d = FancyBboxPatch((4.5, 7.5), 5, 1, boxstyle="round,pad=0.1",
                               facecolor='#2C3E50', edgecolor='black', linewidth=2)
     ax.add_patch(box_26d)
-    ax.text(7, 8, '26D(24,1) Bulk', ha='center', va='center',
+    ax.text(7, 8, '25D(24,1) Bulk', ha='center', va='center',
             fontsize=12, fontweight='bold', color='white')
     ax.text(7, 7.65, r'$ds^2 = \sum_{i=1}^{24} dx_i^2 - dt^2$',
             ha='center', va='center', fontsize=10, color='#ECF0F1')

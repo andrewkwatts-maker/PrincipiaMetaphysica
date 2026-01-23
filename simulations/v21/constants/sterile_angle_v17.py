@@ -76,7 +76,7 @@ class SterileAngleDerivation:
         Decomposition of 288 ancestral roots.
 
         R_ancestral = 276 + 24 - 12 = 288
-        From SO(24) contributions adjusted by signature/torsion in 26D(24,1).
+        From SO(24) contributions adjusted by signature/torsion in 25D(24,1).
         """
         return {
             'so24_roots': self.so24_contribution,

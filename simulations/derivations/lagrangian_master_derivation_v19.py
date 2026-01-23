@@ -1655,7 +1655,7 @@ class LagrangianMasterDerivation(SimulationBase):
             id="ghost-elimination",
             label="(2.1.21)",
             latex=r"26D_{(24,1)} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
-            plain_text="26D(24,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})",
+            plain_text="25D(24,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})",
             category="DERIVED",
             description="v22: 12×(2,0) paired bridge structure with unified time (24,1) - eliminates ghosts via distributed OR",
             inputParams=[],
