@@ -1,13 +1,13 @@
 # Appendix G: Euclidean Bridge and OR Reduction
 
 **Version:** v23.1
-**Status:** Physics-Validated (Gemini Recursive Review + G.11 Localization Clarification + G.12 Central Sampler)
+**Status:** Physics-Validated (Gemini Recursive Review + G.11 Localization Clarification + G.12 Central Sampler + 27D Architecture)
 
 ---
 
-## G.1 The (24,1) Signature and Unified Time
+## G.1 The 27D(26,1) Architecture with Effective (24,1) Signature
 
-The v21 framework abandons the two-time (24,2) signature in favor of a unified time (24,1) structure:
+The v21 framework abandons the two-time (24,2) signature in favor of a unified time (24,1) effective structure within a 27D(26,1) total architecture:
 
 $$ds^2 = \sum_{i=1}^{24} dx_i^2 - dt^2$$
 
@@ -16,7 +16,7 @@ This eliminates:
 - **Closed timelike curves (CTCs)**: Single time direction prevents causal paradoxes
 - **Unitarity violations**: Standard quantum mechanics preserved
 
-The 25D bulk with (24,1) signature uses 12×(2,0) bridge pairs that warp to create **dual 13D(12,1) shadows**. Each bridge pair distributes coordinates via selection: (x_i, y_i) → x_i to Normal shadow, y_i to Mirror shadow.
+The 27D bulk with (26,1) signature uses 12×(2,0) bridge pairs plus the central (2,0) sampler to create **dual 13D(12,1) shadows**. Each bridge pair distributes coordinates via selection: (x_i, y_i) → x_i to Normal shadow, y_i to Mirror shadow. The effective physics signature remains (24,1) for spinor calculations.
 
 ---
 
@@ -26,30 +26,33 @@ The 25D bulk with (24,1) signature uses 12×(2,0) bridge pairs that warp to crea
 
 The dimensional decomposition in v21.1 uses a **fibered time structure** where time is the shared base, not duplicated per shadow:
 
-$$M^{25} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right)$$
+$$M^{27} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right) \oplus C^{(2,0)}$$
 
-where the 12×(2,0) bridge pairs warp to create shadows:
+where the 12×(2,0) bridge pairs warp to create shadows and $C^{(2,0)}$ is the central sampler:
 - **Time Fiber T^1**: (0,1) - unified time shared by both shadows
 - **Normal Shadow S^12**: 13D(12,1) - receives x_i from each bridge pair
 - **Mirror Shadow S^12**: 13D(12,1) - receives y_i from each bridge pair
 - **12 Bridge Pairs B_i^{(2,0)}**: Each pair contributes 1 coordinate to each shadow
 
-**Dimensional Verification Table:**
+**Dimensional Verification Table (27D Total):**
 
 | Component | Dimensions | Spatial | Temporal |
 |-----------|------------|---------|----------|
 | Time fiber T^1 | 1 | 0 | 1 |
 | 12× Bridge pairs B_i^{(2,0)} | 24 | 24 | 0 |
-| **Total (Bulk)** | **25** | **24** | **1** |
+| Central sampler C^{(2,0)} | 2 | 2 | 0 |
+| **Total (Bulk)** | **27** | **26** | **1** |
 
-**Extended Dimensional Accounting (v23):**
+**Extended Dimensional Accounting (v23.1 - 27D Architecture):**
 
 | Component | Dimensions | Notes |
 |-----------|------------|-------|
-| Core (dual shadows) | 24 | From 12× bridge warp pairs |
-| Local (2,0) pairs | 24 | 12 pairs × 2D Euclidean |
+| Time fiber T^1 | 1 | Unified time (0,1) |
+| 12× Bridge pairs | 24 | 12 pairs × 2D Euclidean (24,0) |
 | Central (2,0) pair | 2 | 1 pair × 2D (see G.12) |
-| **Total spacelike-like** | **50** | Effective signature (24,1) |
+| **Total Bulk** | **27** | **Signature (26,1)** |
+| Core (dual shadows) | 24 | From 12× bridge warp pairs |
+| **Effective physics** | **25** | **Signature (24,1) for spinors** |
 
 **Shadow Creation via Coordinate Selection:**
 | Shadow | Receives | Resulting Signature |
@@ -57,7 +60,7 @@ where the 12×(2,0) bridge pairs warp to create shadows:
 | Normal | x_i from each pair + T^1 | 13D(12,1) |
 | Mirror | y_i from each pair + T^1 | 13D(12,1) |
 
-The bulk signature: (24,1) from T^1 + 12×(2,0) bridges.
+The total bulk signature: (26,1) from T^1 + 12×(2,0) bridges + C^{(2,0)} central sampler. The effective physics signature: (24,1) for spinor calculations.
 
 **Key Insight:** The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows through coordinate selection. Each (x_i, y_i) pair distributes x_i to Normal and y_i to Mirror. The shared T^1 ensures unified time.
 
@@ -162,7 +165,7 @@ The b₃ = 24 cycles split symmetrically: 12/12 between normal and mirror shadow
 
 The full dimensional descent:
 
-$$25D_{(24,1)} \rightarrow 12\times(2,0) \text{ bridge pairs warp to create shadows} \rightarrow 2 \times G_2(7) \rightarrow 2 \times [M^4 \oplus \text{branches}]$$
+$$27D_{(26,1)} \rightarrow 12\times(2,0) \oplus C^{(2,0)} \text{ (bridge pairs + central sampler)} \rightarrow 2 \times G_2(7) \rightarrow 2 \times [M^4 \oplus \text{branches}]$$
 
 Explicit condensate structure:
 
@@ -266,13 +269,22 @@ Where:
 
 ---
 
-## G.12 Central (2,0) Sampler Architecture
+## G.12 Central (2,0) Sampler Architecture and 27D Interpretation
 
-**v23.0 Addition:** This section documents the central sampler mechanism for global condensate selection.
+**v23.1 Update:** This section documents the central sampler mechanism for global condensate selection and clarifies the 27D(26,1) total architecture.
 
-### G.12.1 Hierarchical Sampling Framework
+### G.12.1 The 27D(26,1) Total Architecture
 
-The v23 framework extends the 12 local (2,0) bridge pairs with a **central (2,0) sampler** that provides global averaging for macro-precision:
+The complete 27D bulk structure includes:
+- **25D effective physics**: T^1 × 12×(2,0) bridge pairs = 1 + 24 = 25D with signature (24,1)
+- **+2D central sampler**: C^{(2,0)} = 2D Euclidean for global averaging
+- **27D total**: (26,1) signature including the architectural central sampler
+
+The central sampler is "above" the effective physics in the sense that it provides meta-level coordination without participating in spinor calculations. This is why the effective signature for particle physics remains (24,1) while the total architectural dimension is 27D(26,1).
+
+### G.12.2 Hierarchical Sampling Framework
+
+The v23.1 framework extends the 12 local (2,0) bridge pairs with a **central (2,0) sampler** that provides global averaging for macro-precision:
 
 $$\text{Central Sampler: } p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \sqrt{\frac{n_{\text{local}}}{12}} \cdot \frac{\phi}{12}$$
 
@@ -289,29 +301,35 @@ where:
 
 The local samplers provide rapid, localized branch decisions while the central sampler enables precision refinement through global averaging across all 12 local outcomes.
 
-### G.12.2 Dimensional Accounting
+### G.12.3 Dimensional Accounting
 
 The central sampler adds 2 spacelike dimensions to the total accounting:
 
-**Complete Spacelike-Like Dimensional Budget:**
+**Complete 27D Dimensional Budget:**
 
-| Component | Dimensions | Calculation |
-|-----------|------------|-------------|
-| Core (dual shadows) | 24 | 12 × 2 (from warp pairs) |
-| Local bridge pairs | 24 | 12 pairs × 2D Euclidean |
-| Central pair | 2 | 1 pair × 2D Euclidean |
-| **Total spacelike-like** | **50** | 24 + 24 + 2 |
+| Component | Dimensions | Calculation | Signature |
+|-----------|------------|-------------|-----------|
+| Time fiber T^1 | 1 | Unified time | (0,1) |
+| Local bridge pairs | 24 | 12 pairs × 2D Euclidean | (24,0) |
+| Central pair C^{(2,0)} | 2 | 1 pair × 2D Euclidean | (2,0) |
+| **Total Bulk** | **27** | 1 + 24 + 2 | **(26,1)** |
+
+**Effective vs Total Signature:**
+- **Total architecture**: 27D(26,1) - includes all structural components
+- **Effective physics**: 25D(24,1) - for spinor and particle calculations
+- The central (2,0) sampler provides meta-coordination, not direct physics
 
 **Signature Preservation:** The effective signature remains **(24,1)** because:
-1. The central pair is purely Euclidean (positive-definite)
-2. No temporal dimension is introduced
+1. The central pair is purely Euclidean (positive-definite) and architectural
+2. No temporal dimension is introduced by the central sampler
 3. The T^1 fiber remains the single time direction
+4. Spinor calculations use the 25D(24,1) effective manifold
 
-$$M^{25}_{(24,1)} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right) \oplus C^{(2,0)}$$
+$$M^{27}_{(26,1)} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right) \oplus C^{(2,0)}$$
 
-where $C^{(2,0)}$ is the central sampler embedding.
+where $C^{(2,0)}$ is the central sampler embedding contributing the additional 2 dimensions for global averaging.
 
-### G.12.3 Activation Threshold
+### G.12.4 Activation Threshold
 
 The central sampler activates only when sufficient local information is available:
 
@@ -327,7 +345,7 @@ $$\text{Central Active} \iff n_{\text{local}} \geq 9$$
 
 **Physical Interpretation:** The threshold $n_{\text{local}} \geq 9$ ensures that global averaging is meaningful only when at least 75% of local pairs are active. Below this threshold, local variations dominate and central averaging would introduce noise rather than precision.
 
-### G.12.4 Cross-Reference
+### G.12.5 Cross-Reference
 
 Full implementation details and validation tests are provided in:
 - **Simulation:** `simulations/v21/geometric/central_sampler_v23.py`
@@ -363,36 +381,43 @@ With[{nLocal = {6, 7, 8, 9, 10, 11, 12}},
 
 ---
 
-## Certificate 43: Dimensional Accounting Verification
+## Certificate 43: 27D Dimensional Accounting Verification
 
-**Statement:** The complete spacelike-like dimensional budget is 50 dimensions: 24 core + 24 local + 2 central.
+**Statement:** The complete bulk dimensional budget is 27 dimensions with signature (26,1): T^1 + 12×(2,0) bridges + C^{(2,0)} central.
 
 **Verification:**
 ```wolfram
 With[{
-  DCore = 24,      (* Dual shadow dimensions *)
+  DTime = 1,       (* Time fiber T^1 *)
   nLocalPairs = 12,(* Number of local bridge pairs *)
   nCentralPairs = 1 (* Number of central pairs *)
 },
   DLocal = nLocalPairs * 2;   (* 12 × 2D = 24 *)
   DCentral = nCentralPairs * 2; (* 1 × 2D = 2 *)
-  DTotal = DCore + DLocal + DCentral;
-  {DTotal, DTotal === 50}
+  DTotal = DTime + DLocal + DCentral;
+  DSpatial = DLocal + DCentral;
+  {DTotal, DTotal === 27, DSpatial === 26}
 ]
-(* Result: {50, True} *)
+(* Result: {27, True, True} *)
 ```
 
-**Dimensional Breakdown:**
-| Component | Formula | Value |
-|-----------|---------|-------|
-| D_core | 12 × 2 | 24 |
-| D_local | 12 × 2 | 24 |
-| D_central | 1 × 2 | 2 |
-| **D_total** | 24 + 24 + 2 | **50** |
+**27D Dimensional Breakdown:**
+| Component | Formula | Value | Signature Contribution |
+|-----------|---------|-------|------------------------|
+| D_time | T^1 | 1 | (0,1) |
+| D_local | 12 × 2 | 24 | (24,0) |
+| D_central | 1 × 2 | 2 | (2,0) |
+| **D_total** | 1 + 24 + 2 | **27** | **(26,1)** |
 
-**Result:** VERIFIED. Dimensional accounting is consistent: 50 spacelike-like dimensions with preserved (24,1) effective signature.
+**Effective Physics Breakdown:**
+| Component | Value | Notes |
+|-----------|-------|-------|
+| D_effective | 25 | T^1 + 12×(2,0) bridges |
+| Effective signature | (24,1) | For spinor calculations |
 
-**Cross-Reference:** `central_sampler_v23.py` lines 14-21, 144-152, 397-398
+**Result:** VERIFIED. Dimensional accounting is consistent: 27D(26,1) total architecture with (24,1) effective physics signature.
+
+**Cross-Reference:** `central_sampler_v23.py` lines 14-21, 144-152, 397-398 (updated for 27D architecture)
 
 ---
 
@@ -408,4 +433,4 @@ With[{
 **Appendix Status:** APPROVED FOR INTEGRATION
 **Review Date:** 2026-01-24
 **v22.5 Addition:** G.11 Shadow Localization Physics clarification (corrects spin-based misconceptions)
-**v23.1 Addition:** G.12 Central (2,0) Sampler Architecture + Certificates 42-43
+**v23.1 Update:** G.12 Central (2,0) Sampler Architecture with 27D(26,1) interpretation + Certificates 42-43 updated for 27D

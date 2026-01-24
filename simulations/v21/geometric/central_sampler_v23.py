@@ -13,12 +13,12 @@ CENTRAL SAMPLER FORMULA:
     - n_local = active local pairs (6 baseline -> 12 full gnosis)
     - phi = golden ratio (dilution correction)
 
-DIMENSIONAL ACCOUNTING:
-    - 24 core dimensions (from dual shadows)
-    - 24 local bridge dimensions (12 pairs x 2D Euclidean each)
-    - 2 central dimensions (1 pair x 2D Euclidean)
-    - Total: 24 + 24 + 2 = 50 spacelike-like
-    - Effective signature: (24,1) preserved
+DIMENSIONAL ACCOUNTING (v23.1 - 27D interpretation):
+    - 24 core = 24 local bridge (DUAL REPRESENTATION of same physical space)
+    - 2 central dimensions (1 pair x 2D Euclidean - NEW physical dimensions)
+    - 1 unified time
+    - TOTAL: 24 + 2 + 1 = 27D with signature (26,1)
+    - Note: The "50 spacelike-like" counts bridge twice (core + local view)
 
 ACTIVATION THRESHOLD:
     Central sampler activates when n_local >= 9 (mid-gnosis).
@@ -67,12 +67,14 @@ class CentralSamplerSolver:
     FORMULA:
         p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
 
-    DIMENSIONAL ACCOUNTING:
-        24 core + 24 local + 2 central = 50 spacelike-like dimensions
-        Effective signature remains (24,1) since central is Euclidean embedded.
+    DIMENSIONAL ACCOUNTING (v23.1 - 27D):
+        24 core = 24 local (dual representation of same 24D space)
+        2 central sampler (NEW physical dimensions)
+        1 unified time
+        Total: 24 + 2 + 1 = 27D with signature (26,1)
     """
 
-    VERSION = "23.0"
+    VERSION = "23.1"
 
     def __init__(self, reg):
         """
