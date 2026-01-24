@@ -23,7 +23,7 @@ MATHEMATICAL FRAMEWORK (v22 - 12×(2,0) Paired Bridge System):
    - Spin connection omega_mu^ab for covariant derivatives in non-coordinate bases
    - Torsion-free + metric compatibility uniquely determine spin connection
 
-2. 25D Master Action (v22 with 12 bridge pairs):
+2. 27D Master Action (v22 with 13 bridge pairs):
    - S_25 = integral d^25x sqrt(-g_25) [R_25 + L_matter + L_gauge + L_bridge + pneuma]
    - Signature (24,1) unified time eliminates ghosts and CTCs
    - L_bridge = Σᵢ₌₁¹² [(∂y₁ᵢ)² + (∂y₂ᵢ)²]
@@ -824,7 +824,7 @@ class LagrangianMasterDerivation(SimulationBase):
         - Each pair has coordinates (y₁ᵢ, y₂ᵢ)
 
         Dimensional Check:
-        - Dimensions: 1 (time) + 12×2 (bridges) = 25D total
+        - Dimensions: 1 (time) + 13×2 (bridges) = 27D total
         - Spatial: 12×2 = 24 (CORRECT)
         - Temporal: 1 (shared) (CORRECT)
 
@@ -946,16 +946,16 @@ class LagrangianMasterDerivation(SimulationBase):
 
         # DOF counting (retained for comparison)
         dof_graviton_26 = 26 * (26 - 3) // 2  # = 299
-        dof_graviton_25 = 25 * (25 - 3) // 2  # = 275 (v22: 25D effective)
+        dof_graviton_27 = 27 * (27 - 3) // 2  # = 324 (v22: 27D effective)
 
         print(f"\nGraviton DOF (v22):")
         print(f"  26D graviton: {dof_graviton_26} polarizations")
-        print(f"  25D graviton (effective): {dof_graviton_25} polarizations")
+        print(f"  27D graviton (effective): {dof_graviton_27} polarizations")
         print(f"  Bridge DOF: {n_bridge_pairs} × 2 = {D_bridge_total} scalar modes")
 
         results["dof_graviton_26"] = dof_graviton_26
-        results["dof_graviton_25"] = dof_graviton_25
-        results["dof_after_sp2r"] = dof_graviton_25
+        results["dof_graviton_27"] = dof_graviton_27
+        results["dof_after_sp2r"] = dof_graviton_27
 
         # ------------------------------------------------------------------
         # D.4: v22 Bridge Lagrangian and DOF Structure
@@ -972,15 +972,15 @@ class LagrangianMasterDerivation(SimulationBase):
         Each term (∂y_{1,2}ᵢ)² contributes 1 scalar DOF.
         Total bridge DOF: 12 × 2 = 24 scalar modes.
 
-        Full 25D Action (v22):
+        Full 27D Action (v22):
         =====================
         S_25 = ∫ d²⁵x √(-g_25) [R_25 + L_gauge + L_fermion + L_bridge + L_pneuma]
 
         DOF Transformation:
         ===================
-        Step 1: 25D Bridge Structure
+        Step 1: 27D Bridge Structure
         - M^{24,1} = T¹ × (⊕ᵢ B_i^{2,0})
-        - 1 time + 24 spatial = 25D effective
+        - 1 time + 26 spatial = 27D effective
         - Bridge pairs: 12 × 2 = 24 spatial DOF
 
         Step 2: E8 Root Structure (retained from v21)
@@ -1129,12 +1129,12 @@ class LagrangianMasterDerivation(SimulationBase):
         """)
 
         # v22 dimension chain (updated 2026-01-19)
-        # Chain: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → [G2(7,0)] → 4D(3,1)
+        # Chain: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central → 2×13D(12,1) → [G2(7,0)] → 4D(3,1)
         # v22: 12 bridge pairs WARP to create 2×13D(12,1) shadows
         print("\nv22 Dimensional Cascade:")
-        print("  25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → 4D(3,1)")
+        print("  27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central → 2×13D(12,1) → 4D(3,1)")
         print("")
-        print("  Level 0 (ANCESTRAL): 25D with signature (24,1) - unified time")
+        print("  Level 0 (ANCESTRAL): 27D with signature (26,1) - unified time")
         print("  Level 1 (STRUCTURE): 12×(2,0) + (0,1)")
         print("    - (0,1): Shared time fiber")
         print("    - 12×(2,0): 12 Euclidean bridge pairs")
@@ -1143,7 +1143,7 @@ class LagrangianMasterDerivation(SimulationBase):
         print("  Level 3 (G2): 7D per shadow, signature (7,0) - RIEMANNIAN")
         print("  Level 4 (VISIBLE): 4D with signature (3,1) - Minkowski")
 
-        results["reduction_chain"] = [25, 13, 7, 4]  # v22: 25D -> 13D shadow -> G2 -> 4D
+        results["reduction_chain"] = [27, 13, 7, 4]  # v22: 27D -> 13D shadow -> G2 -> 4D
 
         # ------------------------------------------------------------------
         # E.4: Gauge Fields from Extra Dimensions
@@ -1650,14 +1650,14 @@ class LagrangianMasterDerivation(SimulationBase):
             }
         ))
 
-        # Legacy v21 formula (retained for reference)
+        # Legacy v21 formula (retained for reference) - Updated v23.1
         formulas.append(Formula(
             id="ghost-elimination",
             label="(2.1.21)",
-            latex=r"26D_{(24,1)} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
-            plain_text="25D(24,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})",
+            latex=r"27D_{(26,1)} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus C^{2,0}",
+            plain_text="27D(26,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ C^{2,0}",
             category="DERIVED",
-            description="v22: 12×(2,0) paired bridge structure with unified time (24,1) - eliminates ghosts via distributed OR",
+            description="v23.1: 12×(2,0) bridge pairs + C^(2,0) central sampler + unified time (26,1) - eliminates ghosts via distributed OR",
             inputParams=[],
             outputParams=["derivations.n_bridge_pairs"]
         ))

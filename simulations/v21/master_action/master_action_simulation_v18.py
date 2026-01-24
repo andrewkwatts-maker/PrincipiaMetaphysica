@@ -183,7 +183,7 @@ class MasterActionSimulationV22(SimulationBase):
 
         v22 Bridge Structure:
         - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
-        - Total: 1 (time) + 24 (bridge) = 25D spacetime (matching Cl(24,1))
+        - Total: 1 (time) + 26 (bridge) = 27D spacetime (matching Cl(24,1) spinor)
         - Each pair i has local OR operator R_perp_i = [[0,-1],[1,0]]
 
         Returns:
@@ -192,7 +192,7 @@ class MasterActionSimulationV22(SimulationBase):
         bridge_data = {
             "n_pairs": self._n_bridge_pairs,
             "total_bridge_dimensions": 2 * self._n_bridge_pairs,  # 24
-            "spacetime_dimensions": 1 + 2 * self._n_bridge_pairs,  # 25D
+            "spacetime_dimensions": 1 + 2 * self._n_bridge_pairs,  # 27D (26,1)
             "r_perp_matrix": self._r_perp,
             "metric_signature": f"(24,1) = 1 time + {2 * self._n_bridge_pairs} bridge",
         }
@@ -310,7 +310,7 @@ class MasterActionSimulationV22(SimulationBase):
 
         v22.0: Adds 12-pair bridge system formulas:
         - pneuma-master-action-v22: Updated master action with 12-pair bridge
-        - bridge-12-pair-metric-v22: 25D metric with 12 (2,0) bridge pairs
+        - bridge-12-pair-metric-v22: 27D metric with 13 (2,0) bridge pairs
         - bridge-lagrangian-v22: L_bridge summed over 12 pairs
         - distributed-or-reduction-v22: Tensor product of 12 R_perp operators
         - breathing-aggregation-v22: Averaged breathing mode
@@ -348,8 +348,8 @@ class MasterActionSimulationV22(SimulationBase):
                 plain_text="ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)",
                 category="THEORY",
                 description=(
-                    "v22.0: 25D metric with 12 (2,0) bridge pairs. Total dimensions: "
-                    "1 (time) + 24 (bridge) = 25D, matching Cl(24,1) signature. "
+                    "v22.0: 27D metric with 13 (2,0) bridge pairs. Total dimensions: "
+                    "1 (time) + 26 (bridge) = 27D(26,1), with Cl(24,1) spinor structure. "
                     "Each pair (y_{1i}, y_{2i}) spans a 2D Euclidean bridge plane."
                 ),
                 inputParams=[],
@@ -657,7 +657,7 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Version 22 introduces a fundamental structural change: 25D(24,1) = 12×(2,0) + (0,1). "
+                        "Version 22 introduces a fundamental structural change: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central. "
                         "The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 shared time). "
                         "The metric is: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)."
                     )
