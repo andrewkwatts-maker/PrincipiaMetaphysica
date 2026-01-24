@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 08:33:37
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 08:47:38
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -90,7 +90,7 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 The manifold is verified as **Sterile** if the following conditions are met:
 
 ### Parity Invariant
-$$\eta_S + \sigma_T \approx 1.6402$$
+$$\eta_S + \sigma_T = \frac{163}{239} + \frac{23}{24} \approx 1.6403$$
 
 **Current Values:**
 - Sophian Drag (eta_S): `0.6820083682008368`

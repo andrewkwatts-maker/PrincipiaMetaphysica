@@ -91,10 +91,10 @@ class IndependentGeometricValidator:
         # Tzimtzum from fraction (NOT from registry)
         tzimtzum_pressure = (b3 - 1) / b3         # 23/24
 
-        # Sophian drag - MUST match FormulasRegistry value
-        # v17.2-Absolute: Use the EXACT value from registry (0.6819)
+        # Sophian drag - MUST match FormulasRegistry DERIVED value
+        # v23.0+: eta_S = 163/239 (derived from bulk_pressure / (b3*10 - 1))
         # This ensures backwards-closure verification matches forward calculation
-        sophian_drag = Decimal('0.6819')  # Matches FormulasRegistry._sophian_drag
+        sophian_drag = bulk_pressure / (b3 * 10 - 1)  # 163/239 = 0.68200836820...
 
         return {
             "manifold_area": manifold_area,

@@ -149,24 +149,14 @@ def compute_statistics(sigma_deviations: List[float]) -> Dict[str, Any]:
     # Compute reduced chi-squared: sum(sigma^2) / degrees_of_freedom
     # degrees_of_freedom = n_predictions - n_fitted_params
     #
-    # NOTE: Sigma is CAPPED at 5.0 for chi-squared calculation.
-    # Parameters like alpha_inverse have misleadingly high sigma (33,000+)
-    # due to QED-level experimental precision (uncertainty ~2e-8), not poor
-    # theoretical predictions. The percentage error is only 0.0005% which
-    # is excellent. Capping prevents these precision-limited measurements
-    # from dominating chi-squared unfairly.
-    #
-    # Parameters with sigma > 5 are flagged as PRECISION_LIMITED.
-    SIGMA_CAP = 5.0
+    # NOTE: High sigma values indicate parameters that need geometric refinement.
+    # Do NOT cap or mask sigma - improve the formulas instead.
     degrees_of_freedom = max(1, total_predictions - FITTED_PARAMS_COUNT)
-
-    # Count precision-limited parameters
-    precision_limited = sum(1 for s in sigma_deviations if abs(s) > SIGMA_CAP)
-
-    # Cap sigma for chi-squared calculation
-    capped_sigmas = [min(abs(s), SIGMA_CAP) for s in sigma_deviations]
-    chi_squared = sum(s ** 2 for s in capped_sigmas)
+    chi_squared = sum(s ** 2 for s in sigma_deviations)
     chi_squared_reduced = chi_squared / degrees_of_freedom
+
+    # Count high-sigma parameters needing geometric refinement
+    high_sigma_count = sum(1 for s in sigma_deviations if abs(s) > 5.0)
 
     return {
         "within_1sigma": within_1sigma,
@@ -175,9 +165,8 @@ def compute_statistics(sigma_deviations: List[float]) -> Dict[str, Any]:
         "total_predictions": total_predictions,
         "chi_squared_reduced": round(chi_squared_reduced, 4),
         "degrees_of_freedom": degrees_of_freedom,
-        "precision_limited_count": precision_limited,
-        "sigma_cap": SIGMA_CAP,
-        "note": f"Chi-squared uses sigma capped at {SIGMA_CAP} to avoid precision-limited parameters dominating"
+        "high_sigma_count": high_sigma_count,
+        "note": "High sigma parameters need geometric refinement - see CERTIFICATES_v16_2_FINAL.json"
     }
 
 

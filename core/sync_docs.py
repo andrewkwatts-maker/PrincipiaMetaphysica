@@ -169,7 +169,7 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 The manifold is verified as **Sterile** if the following conditions are met:
 
 ### Parity Invariant
-$$\\eta_S + \\sigma_T \\approx 1.6402$$
+$$\\eta_S + \\sigma_T = \\frac{{163}}{{239}} + \\frac{{23}}{{24}} \\approx 1.6403$$
 
 **Current Values:**
 - Sophian Drag (eta_S): `{reg.sophian_drag}`

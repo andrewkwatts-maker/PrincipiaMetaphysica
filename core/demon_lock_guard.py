@@ -46,7 +46,7 @@ class DemonLockGuard:
     """
 
     # v17.2: Ghost Literal elimination - use registry parity_sum property
-    # EXPECTED_PARITY_SUM derived from: sophian_drag (0.6819) + tzimtzum_pressure (23/24)
+    # v23.0+: EXPECTED_PARITY_SUM derived from: sophian_drag (163/239) + tzimtzum_pressure (23/24) = 1.6403...
     PARITY_TOLERANCE = 0.0001
 
     @property
@@ -176,7 +176,10 @@ class DemonLockGuard:
 
     def verify_sterile_parity(self) -> bool:
         """
-        Verify Manifold Parity: Sophian Drag + Tzimtzum Pressure = 1.6402.
+        Verify Manifold Parity: Sophian Drag + Tzimtzum Pressure = 1.6403 (derived).
+
+        v23.0+: eta_S = 163/239, sigma_T = 23/24
+        163/239 + 23/24 = 1.64034169820...
 
         This is the balance check - the forces pushing out (Pressure)
         and holding back (Drag) must sum to the parity invariant.
@@ -420,7 +423,7 @@ class DemonLockGuard:
         checks = [
             ("Integer Closure (135+153=288)", self.verify_integer_closure),
             ("Tzimtzum Fraction (23/24)", self.verify_tzimtzum_fraction),
-            ("Sterile Parity (eta_S+sigma_T=1.6402)", self.verify_sterile_parity),
+            ("Sterile Parity (eta_S+sigma_T=1.6403)", self.verify_sterile_parity),
             ("Watts Guard Rail (Omega_W=1.0)", self.verify_watts_guard_rail),
             ("Hubble Formula (H0=71.55)", self.verify_hubble_formula),
             ("W0 Seal (w0=-23/24)", self.verify_w0_seal),

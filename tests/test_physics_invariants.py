@@ -138,10 +138,12 @@ def test_lorentz_invariance():
 
 def test_manifold_parity():
     """
-    Tests the Manifold Parity Check: η_S + σ_T ≈ 1.6402
+    Tests the Manifold Parity Check: η_S + σ_T ≈ 1.6403
 
-    The Sophian Drag (η_S = 0.6819) and Tzimtzum Pressure (σ_T = 23/24 = 0.9583)
+    v23.0+: The Sophian Drag (η_S = 163/239) and Tzimtzum Pressure (σ_T = 23/24)
     must satisfy this parity relation for the sterile manifold to be stable.
+
+    Exact: 163/239 + 23/24 = 1.64034169820...
 
     Physical meaning: The force pushing out (Pressure) and the force holding
     back (Drag) must balance against the observer's unit (1.0).

@@ -11,8 +11,8 @@ Value Classification:
 ---------------------
 DERIVED (must use FormulasRegistry SSoT):
     - 0.9583... (tzimtzum_pressure = 23/24)
-    - 0.6819    (sophian_drag)
-    - 1.6402    (parity_sum)
+    - 0.6820... (sophian_drag = 163/239)
+    - 1.6403    (parity_sum = 163/239 + 23/24)
     - 71.55     (h0_local from O'Dowd Formula)
     - 576       (manifold_area_bulk = B3^2)
     - 144       (pressure_divisor = B3^2/4)
@@ -92,8 +92,12 @@ class ValueContextValidator(ast.NodeVisitor):
     DERIVED_VALUES: Dict[float, str] = {
         0.9583: "tzimtzum_pressure (23/24)",
         0.95833: "tzimtzum_pressure (23/24)",
-        0.6819: "sophian_drag",
-        1.6402: "parity_sum (eta_S + sigma_T)",
+        0.6819: "sophian_drag (old fitted)",
+        0.6820: "sophian_drag (163/239)",
+        0.68200836820: "sophian_drag (163/239)",
+        1.6402: "parity_sum (old fitted)",
+        1.6403: "parity_sum (163/239 + 23/24)",
+        1.64034: "parity_sum (163/239 + 23/24)",
         71.55: "h0_local (O'Dowd Formula)",
         71.549955: "h0_local (O'Dowd Formula)",
         576: "manifold_area_bulk (B3^2)",
@@ -476,7 +480,11 @@ class ValueContextAuditor:
             0.9583: "tzimtzum_pressure",
             0.95833: "tzimtzum_pressure",
             0.6819: "sophian_drag",
+            0.6820: "sophian_drag",
+            0.68200836820: "sophian_drag",
             1.6402: "parity_sum",
+            1.6403: "parity_sum",
+            1.64034: "parity_sum",
             71.55: "h0_local",
             71.549955: "h0_local",
             576: "manifold_area_bulk",
