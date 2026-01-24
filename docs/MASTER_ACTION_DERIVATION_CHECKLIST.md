@@ -223,9 +223,9 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 
 ## COMPLETED DERIVATIONS (v20.11)
 
-### 1. MA-01: Euclidean Bridge Reduction (25D → 13D) ✅ [v21+]
+### 1. MA-01: Euclidean Bridge Reduction (27D → 13D) ✅ [v23.1]
 - **Appendix**: [appendix_g_euclidean_bridge.md](appendices/appendix_g_euclidean_bridge.md)
-- **Key Result**: 25D(24,1) → dual 13D(12,1) shadows via 12x(2,0) Euclidean bridge pairs
+- **Key Result**: 27D(26,1) → dual 13D(12,1) shadows via 12×(2,0) bridge pairs + C^(2,0) central sampler
 - **Note**: Supersedes v16-v20 Sp(2,R) gauge fixing (see appendix_a for historical reference)
 - **Wolfram Verified**: Metric signature, bridge pair structure, ghost-free physics
 

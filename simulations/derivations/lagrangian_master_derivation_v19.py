@@ -23,9 +23,9 @@ MATHEMATICAL FRAMEWORK (v22 - 12×(2,0) Paired Bridge System):
    - Spin connection omega_mu^ab for covariant derivatives in non-coordinate bases
    - Torsion-free + metric compatibility uniquely determine spin connection
 
-2. 27D Master Action (v22 with 13 bridge pairs):
-   - S_25 = integral d^25x sqrt(-g_25) [R_25 + L_matter + L_gauge + L_bridge + pneuma]
-   - Signature (24,1) unified time eliminates ghosts and CTCs
+2. 27D Master Action (v23.1 with 12 bridge pairs + 1 central sampler):
+   - S_27 = integral d^27x sqrt(-g_27) [R_27 + L_matter + L_gauge + L_bridge + pneuma]
+   - Signature (26,1) unified time eliminates ghosts and CTCs
    - L_bridge = Σᵢ₌₁¹² [(∂y₁ᵢ)² + (∂y₂ᵢ)²]
    - Step-by-step Euler-Lagrange derivation
 
