@@ -1,7 +1,7 @@
 {
-  "version": "23.0",
-  "generated": "2026-01-20T18:11:52.341991Z",
-  "total_scripts": 8,
+  "version": "23.1",
+  "generated": "2026-01-24T18:37:23.400715Z",
+  "total_scripts": 10,
   "categories": {
     "v21/consciousness": {
       "title": "V21/Consciousness",
@@ -27,6 +27,23 @@
         }
       ],
       "count": 2
+    },
+    "v21/constants": {
+      "title": "V21/Constants",
+      "path": "simulations/v21/constants",
+      "folderName": "v21/constants",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "alpha_inverse_analysis_v23.py",
+          "path": "simulations/v21/constants/alpha_inverse_analysis_v23.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
     },
     "v21/cosmology": {
       "title": "V21/Cosmology",
@@ -60,6 +77,23 @@
         }
       ],
       "count": 3
+    },
+    "v21/fermion": {
+      "title": "V21/Fermion",
+      "path": "simulations/v21/fermion",
+      "folderName": "v21/fermion",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "modular_form_yukawa_texture.py",
+          "path": "simulations/v21/fermion/modular_form_yukawa_texture.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
     },
     "v21/fermions": {
       "title": "V21/Fermions",

@@ -182,7 +182,7 @@ class FormulasRegistry:
     # DERIVED GNOSTIC CONSTANTS
     # ===========================================================================
     SYZYGY_GAP = 18          # The Syzygy: Christos - Sophia = 153 - 135
-    HOROS = 25               # The Horos: Dimensional Boundary (25D bulk frame)
+    HOROS = 27               # The Horos: Dimensional Boundary (27D bulk frame)
     DECAD = 10               # The Decad: Residual Pressure Key (163 - 153 = 10)
 
     # ===========================================================================
@@ -636,14 +636,14 @@ class FormulasRegistry:
         # =======================================================================
         # DIMENSIONAL REDUCTION CHAIN (v20.2 - Gemini peer-reviewed 2026-01-14)
         # =======================================================================
-        # 5-LEVEL SEMANTIC NAMING CONVENTION (12×(2,0) Bridge Architecture):
-        #   - ANCESTRAL: 25D bulk (Level 0) - Signature (24,1) = 12×(2,0) + (0,1)
+        # 5-LEVEL SEMANTIC NAMING CONVENTION (12×(2,0) Bridge + 1×(2,0) Central Architecture):
+        #   - ANCESTRAL: 27D bulk (Level 0) - Signature (26,1) = 12×(2,0) + 1×(2,0) + (0,1)
         #   - SHADOW:    Dual 13D shadows (Level 1) - 12×(2,0) warps/maps to 2×13D(12,1)
         #   - G2:        7D G2 holonomy manifold per shadow (Level 2) - Signature (7,0) RIEMANNIAN
         #   - EXTERNAL:  6D external/observable bulk (Level 3) - Signature (5,1)
         #   - VISIBLE:   4D observable spacetime (Level 4) - Signature (3,1)
         #
-        # Chain: 25D(24,1) = 12×(2,0)+(0,1) → [warp] → 2×13D(12,1) → [G2] → 4D(3,1)
+        # Chain: 27D(26,1) = 12×(2,0)+1×(2,0)+(0,1) → [warp] → 2×13D(12,1) → [G2] → 4D(3,1)
         # Key: 12×(2,0) bridge pairs ARE what become the dual shadows, not separate from them
         #
         # LEVEL 0: ANCESTRAL (Bosonic String Theory + Central Sampler)
@@ -1080,25 +1080,25 @@ class FormulasRegistry:
 
     @property
     def horos(self) -> int:
-        """The Horos: Dimensional Boundary (25D bulk frame)."""
-        return self._D_total_26  # D_bulk = 25 (legacy name preserved for compatibility)
+        """The Horos: Dimensional Boundary (27D bulk frame)."""
+        return self._D_ancestral_total  # D_bulk = 27 (v23.1 with central sampler)
 
     # =========================================================================
-    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.2)
+    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v23.1)
     # =========================================================================
     # 5-level chain: ANCESTRAL → SHADOW → G2 → EXTERNAL → VISIBLE
-    # v21 Chain: 25D(24,1) → [bridge] → 2×13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # v23 Chain: 27D(26,1) → [bridge] → 2×13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
     # Legacy numeric names preserved for backward compatibility
 
-    # ----- LEVEL 0: ANCESTRAL (25D Bosonic) -----
+    # ----- LEVEL 0: ANCESTRAL (27D with Central Sampler) -----
     @property
     def D_ancestral_total(self) -> int:
-        """Level 0 (ANCESTRAL): Total 25D bosonic string dimensions (24+1)."""
+        """Level 0 (ANCESTRAL): Total 27D dimensions (24 core + 2 central + 1 time)."""
         return self._D_ancestral_total
 
     @property
     def D_ancestral_space(self) -> int:
-        """Level 0 (ANCESTRAL): 24 spatial dimensions in (24,1) unified time."""
+        """Level 0 (ANCESTRAL): 26 spatial dimensions in (26,1) = 24 core + 2 central."""
         return self._D_ancestral_space
 
     @property
