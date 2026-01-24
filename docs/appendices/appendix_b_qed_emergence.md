@@ -359,9 +359,21 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 | Constant | Symbol | Value | Origin |
 |----------|--------|-------|--------|
 | Third Betti number | $b_3$ | 24 | G2 manifold topology |
-| Holonomy constant | $k_{gimel}$ | 12.318... | $b_3/2 + 1/\pi$ |
+| Holonomy constant | $\kappa_\Delta$ | 12.318... | $b_3/2 + 1/\pi$ |
 | Golden ratio | $\phi$ | 1.618... | G2 moduli space |
-| 7D suppression | $\epsilon_{7D}$ | ~0.0007 | Cycle volume correction |
+| Effective Euler char. | $\chi_{\text{eff}}$ | 72 | Per-shadow Euler characteristic |
+| Total Euler char. | $\chi_{\text{eff,total}}$ | 144 | Total effective Euler characteristic |
+| Fermion generations | $n_{\text{gen}}$ | 3 | Number of SM generations |
+
+**v23.1 Three-Loop VEV Correction** (see Appendix J):
+
+The Higgs VEV uses a three-loop correction structure:
+$$v = \kappa_\Delta \times (b_3 - 4) \times \left(1 - \frac{1}{1728} - \frac{1}{62208} - \frac{1}{8957952}\right)$$
+
+Loop structure:
+- One-loop: $1728 = b_3 \times \chi_{\text{eff}} = 24 \times 72$
+- Two-loop: $62208 = 1728 \times (2n_{\text{gen}})^2 = 1728 \times 36$
+- Three-loop: $8957952 = 62208 \times \chi_{\text{eff,total}} = 62208 \times 144$
 
 **Source Code**: `simulations/v16/constants/fine_structure_v17.py`
 
