@@ -2,8 +2,8 @@
 
 **Topic: Spacetime Metric Emergence via Induced Gravity**
 
-**Version**: 23.1
-**Date**: 2026-01-21
+**Version**: 23.2
+**Date**: 2026-01-24
 **Status**: PARTIAL (85% → 92%; Behiel-style spinor emergence + Dirac equation derivations added)
 
 ---
@@ -30,13 +30,13 @@ This appendix provides the mathematical framework for this emergence, connecting
 | 1978 | Akama | Pregeometry: metric from fundamental fermions |
 | 1983 | Terazawa | Composite graviton from fermion bilinears |
 | 2004 | Wetterich | Spinor gravity: vielbein from spinor bilinears |
-| 2026 | PM v23 | 25D Pneuma spinor proposed to unify all forces |
+| 2026 | PM v23 | 27D(26,1) bulk with 24D core Pneuma spinor proposed to unify all forces |
 
 ### O.1.3 PM's Specific Approach
 
 In the PM framework:
-- **Starting point**: 25D Clifford algebra Cl(24,1)
-- **Fundamental field**: Pneuma spinor Ψ_P with 4096 components
+- **Starting point**: 27D(26,1) bulk = 24D core physics (Cl(24,1) spinors) + 2D central sampler + 1D time
+- **Fundamental field**: Pneuma spinor Ψ_P with 4096 components (from 24D core Cl(24,1))
 - **Metric emergence**: Via spinor bilinear condensate
 - **Einstein gravity**: Emerges from 1-loop effective action
 
@@ -243,9 +243,9 @@ The degrees of freedom in the vielbein arise from the Pneuma condensate configur
 
 ### O.6.1 Starting Action: Pneuma Kinetic Term
 
-The fundamental action for the Pneuma spinor in 25D is:
+The fundamental action for the Pneuma spinor in the 27D bulk is:
 
-$$S_{\Psi} = \int d^{25}X \sqrt{-G} \, \bar{\Psi}_P (i\Gamma^M D_M - M_\Psi) \Psi_P$$ **(O.20)**
+$$S_{\Psi} = \int d^{27}X \sqrt{-G} \, \bar{\Psi}_P (i\Gamma^M D_M - M_\Psi) \Psi_P$$ **(O.20)**
 
 where:
 - $G = \det(G_{MN})$ is the metric determinant
@@ -339,9 +339,9 @@ The induced gravity paradigm faces the hierarchy problem:
 - Induced $G_N \sim 1/\Lambda^2$
 - To get $M_{Pl} \sim 10^{19}$ GeV, need $\Lambda \sim M_{Pl}$
 
-PM's resolution: The full 25D theory with G2 compactification provides:
+PM's resolution: The full 27D bulk theory with G2 compactification provides:
 1. Natural hierarchy via warped extra dimensions (see Appendix F)
-2. Dimensional reduction from 25D to 4D
+2. Dimensional reduction from 27D to 4D
 3. Volume suppression factors from compact manifold
 
 ### O.7.5 Comparison to Other Induced Gravity Models
@@ -357,25 +357,25 @@ PM's resolution: The full 25D theory with G2 compactification provides:
 
 ## O.8 Dimensional Reduction Compatibility
 
-### O.8.1 The 25D to 4D Chain
+### O.8.1 The 27D to 4D Chain
 
 PM's dimensional reduction follows:
-$$25D(24,1) \xrightarrow{\text{bridge}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times 4D(3,1)$$ **(O.33)**
+$$27D(26,1) \xrightarrow{\text{bridge}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times 4D(3,1)$$ **(O.33)**
 
 The vielbein emergence must be compatible at each stage.
 
-### O.8.2 25D Vielbein Structure
+### O.8.2 27D Vielbein Structure
 
-In 25D, the vielbein has $25 \times 25 = 625$ components.
+In the 27D bulk, the vielbein has $27 \times 27 = 729$ components.
 
 Decomposition:
 $$e^A_M = \begin{pmatrix} e^\alpha_\mu & e^\alpha_m \\ e^a_\mu & e^a_m \end{pmatrix}$$ **(O.34)**
 
 where:
 - $\mu = 0,1,2,3$ (4D spacetime)
-- $m = 4,...,24$ (internal 21D)
+- $m = 4,...,26$ (internal 23D, including 2D central sampler)
 - $\alpha = 0,1,2,3$ (4D Lorentz)
-- $a = 4,...,24$ (internal Lorentz)
+- $a = 4,...,26$ (internal Lorentz)
 
 ### O.8.3 G2 Compactification Requirements
 
@@ -389,7 +389,7 @@ This is the covariantly constant condition that defines G2 holonomy.
 ### O.8.4 4D Metric Emergence
 
 After compactification, the 4D metric:
-$$g_{\mu\nu}^{(4D)} = \int_{G_2} d^7y \sqrt{g_{G_2}} \, g_{\mu\nu}^{(25D)}(x, y)$$ **(O.36)**
+$$g_{\mu\nu}^{(4D)} = \int_{G_2} d^7y \sqrt{g_{G_2}} \, g_{\mu\nu}^{(27D)}(x, y)$$ **(O.36)**
 
 The 4D vielbein:
 $$e^\alpha_\mu(x) = \langle e^\alpha_\mu(x, y) \rangle_{G_2}$$ **(O.37)**
@@ -411,9 +411,9 @@ This is positive-definite (Euclidean), ensuring no additional timelike dimension
 ### O.8.6 Consistency Check
 
 **Total DOF counting**:
-- 25D metric: $\frac{25 \times 26}{2} = 325$ symmetric components
-- Gauge: $-25$ diffeomorphisms, $-\frac{25 \times 24}{2} = -300$ local Lorentz
-- Physical: $325 - 25 - 300 = 0$ propagating DOF in 25D
+- 27D metric: $\frac{27 \times 28}{2} = 378$ symmetric components
+- Gauge: $-27$ diffeomorphisms, $-\frac{27 \times 26}{2} = -351$ local Lorentz
+- Physical: $378 - 27 - 351 = 0$ propagating DOF in 27D
 
 This matches the expectation: gravity has no local DOF in odd dimensions without cosmological constant.
 
@@ -561,7 +561,7 @@ $$S_{BH} = N_{Pneuma} \times (\text{horizon area in Planck units})$$ **(O.41)**
 
 ### O.10.3 The Bottom Line
 
-**What is established**: The mathematical structure exists whereby a 25D spinor condensate could in principle induce an effective metric via the vielbein construction, with Einstein gravity emerging at one loop. This follows established induced gravity literature.
+**What is established**: The mathematical structure exists whereby a 27D(26,1) bulk spinor condensate (based on 24D core Cl(24,1) physics) could in principle induce an effective metric via the vielbein construction, with Einstein gravity emerging at one loop. This follows established induced gravity literature.
 
 **What remains open**: A demonstration that the specific Pneuma field dynamics select a unique condensate giving our observed spacetime geometry. The explicit V_eff calculation and stability analysis are incomplete.
 
@@ -592,9 +592,9 @@ Verified: Total gamma products in Cl(24,1)
 
 ### Certificate O.11.4: Metric DOF
 ```
-Query: 25*26/2
-Result: 325 ✓
-Verified: Symmetric metric components in 25D
+Query: 27*28/2
+Result: 378 ✓
+Verified: Symmetric metric components in 27D bulk
 ```
 
 ---
@@ -633,8 +633,8 @@ This appendix uses the following Single Source of Truth (SSOT) parameters from `
 
 | Constant | Symbol | Value | Origin |
 |----------|--------|-------|--------|
-| Bulk dimension | $D_{bulk}$ | 25 | v22 unified time |
-| Bulk signature | — | (24, 1) | v22 structure |
+| Bulk dimension | $D_{bulk}$ | 27 | v23 unified time |
+| Bulk signature | — | (26, 1) | v23 structure |
 | Spinor dimension | $N_{spinor}$ | 4096 | $2^{12}$ from Cl(24,1) |
 | Shadow dimension | $D_{shadow}$ | 13 | Per-shadow spacetime |
 | G2 dimension | $D_{G2}$ | 7 | Internal manifold |
@@ -661,13 +661,13 @@ Pneuma Ψ_P → Vielbein e^a_M → Metric g_MN → Einstein gravity → Standard
 
 ## O.15 Spinor Emergence from Cl(24,1)
 
-This section provides rigorous Behiel-style derivations showing how spinors emerge naturally from the Clifford algebra structure of PM's 25D bulk. Following Richard Behiel's pedagogical approach, we derive spinors from first principles: the "square root" of the mass shell condition.
+This section provides rigorous Behiel-style derivations showing how spinors emerge naturally from the Clifford algebra structure of PM's 27D(26,1) bulk. The 24D core physics uses Cl(24,1) for spinor structure, while the full 27D bulk includes 2D central sampler + 1D time. Following Richard Behiel's pedagogical approach, we derive spinors from first principles: the "square root" of the mass shell condition.
 
 ### O.15.1 The Fundamental Problem: Square Root of the Klein-Gordon Equation
 
 **The Starting Point**
 
-In 25D flat spacetime with signature (24,1), a free scalar field satisfies the Klein-Gordon equation:
+In the 24D core physics with signature (24,1), a free scalar field satisfies the Klein-Gordon equation:
 
 $$(\partial_M \partial^M + m^2)\Phi = 0$$ **(O.42)**
 
@@ -675,9 +675,9 @@ which in momentum space reads:
 
 $$E^2 = \vec{p}^2 + m^2$$ **(O.43)**
 
-This is the **mass shell condition** in 25D, where $\vec{p}$ has 24 spatial components.
+This is the **mass shell condition** for the 24D core, where $\vec{p}$ has 24 spatial components.
 
-**Dirac's Insight Applied to 25D**
+**Dirac's Insight Applied to 24D Core**
 
 Following Dirac's 1928 approach (as emphasized in Behiel's derivations), we seek a **linear** first-order equation whose square gives the Klein-Gordon equation:
 
@@ -928,7 +928,7 @@ The three singlets $\mathbf{1}$ from each decomposition form a **triplet** that 
 
 **Mechanism for Three Generations**
 
-When the 25D Pneuma spinor compactifies on a G2 manifold:
+When the 27D bulk Pneuma spinor compactifies on a G2 manifold:
 
 $$\Psi_{25D} = \sum_{I=1}^{3} \psi_I^{4D}(x) \otimes \eta_I(y)$$ **(O.75)**
 
@@ -952,19 +952,19 @@ This provides the mathematical basis for the "3 generations from index theorem" 
 
 ## O.16 Dirac Equation Emergence
 
-This section derives how the 4D Dirac equation emerges from the 25D Pneuma action through G2 compactification, following Behiel's approach of showing each step explicitly.
+This section derives how the 4D Dirac equation emerges from the 27D bulk Pneuma action through G2 compactification, following Behiel's approach of showing each step explicitly.
 
-### O.16.1 25D Dirac Action
+### O.16.1 27D Dirac Action
 
 **The Master Action for Pneuma**
 
-Starting from the 25D spacetime with G2 manifold structure, the Pneuma action is:
+Starting from the 27D(26,1) bulk spacetime with G2 manifold structure, the Pneuma action is:
 
-$$S_{25D} = \int d^{25}X \sqrt{-G} \, \bar{\Psi}_P (i\Gamma^M D_M - M_\Psi) \Psi_P$$ **(O.77)**
+$$S_{27D} = \int d^{27}X \sqrt{-G} \, \bar{\Psi}_P (i\Gamma^M D_M - M_\Psi) \Psi_P$$ **(O.77)**
 
 where:
-- $G = \det(G_{MN})$ is the 25D metric determinant
-- $\Gamma^M$ are 25D gamma matrices ($4096 \times 4096$)
+- $G = \det(G_{MN})$ is the 27D metric determinant
+- $\Gamma^M$ are gamma matrices (4096 × 4096 from 24D core Cl(24,1))
 - $D_M = \partial_M + \frac{1}{4}\omega_M^{AB}\Gamma_{AB} + A_M$ is the full covariant derivative
 - $\omega_M^{AB}$ is the spin connection
 - $A_M$ contains gauge fields
@@ -972,20 +972,20 @@ where:
 
 **Coordinate Split**
 
-Decompose the 25D coordinates:
+Decompose the 27D coordinates:
 $$X^M = (x^\mu, y^m)$$ **(O.78)**
 
 where:
 - $x^\mu$ ($\mu = 0,1,2,3$) = 4D spacetime
-- $y^m$ ($m = 1,...,21$) = internal 21D (includes G2 and bridge)
+- $y^m$ ($m = 1,...,23$) = internal 23D (includes G2, bridge, and 2D central sampler)
 
 ### O.16.2 G2 Compactification Ansatz
 
 **Metric Decomposition**
 
-The 25D metric takes the warped product form:
+The 27D metric takes the warped product form:
 
-$$ds_{25}^2 = e^{2A(y)} g_{\mu\nu}(x) dx^\mu dx^\nu + g_{mn}(y) dy^m dy^n$$ **(O.79)**
+$$ds_{27}^2 = e^{2A(y)} g_{\mu\nu}(x) dx^\mu dx^\nu + g_{mn}(y) dy^m dy^n$$ **(O.79)**
 
 where:
 - $e^{2A(y)}$ is the warp factor (see Appendix F)
@@ -1037,7 +1037,7 @@ The factorization preserves the Clifford algebra structure.
 
 **Substituting the Ansätze**
 
-$$S_{25D} = \int d^4x \int_{internal} d^{21}y \sqrt{-g_4} \sqrt{g_{int}} \, e^{4A} \, \bar{\Psi}_P (i\Gamma^M D_M - M_\Psi) \Psi_P$$ **(O.84)**
+$$S_{27D} = \int d^4x \int_{internal} d^{23}y \sqrt{-g_4} \sqrt{g_{int}} \, e^{4A} \, \bar{\Psi}_P (i\Gamma^M D_M - M_\Psi) \Psi_P$$ **(O.84)**
 
 **Separating Derivatives**
 
@@ -1272,6 +1272,7 @@ Verified: Cl(24,1) is in Bott class p-q ≡ 7 (mod 8)
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.1*
+*Document generated: 2026-01-24*
+*Principia Metaphysica v23.2*
 *Status: PARTIAL (85% → 92%) - Spinor emergence and Dirac equation derivations complete; explicit V_eff calculation remains*
+*Architecture: 27D(26,1) = 24D core physics (Cl(24,1) spinors) + 2D central sampler + 1D time*

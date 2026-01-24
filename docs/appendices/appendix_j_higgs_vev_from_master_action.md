@@ -1,8 +1,8 @@
 # Appendix J: Higgs VEV from the Master Action S_Pneuma
 
-**HG-10: Direct Derivation of v = 246 GeV from 25D(24,1) Bridge Geometry**
+**HG-10: Direct Derivation of v = 246 GeV from 27D(26,1) Bridge Geometry**
 
-**Version**: 23.0
+**Version**: 23.1
 **Date**: 2026-01-21
 **Status**: 90% COMPLETE (EW DOF interpretation established; G2 cycle computation remaining)
 
@@ -10,7 +10,7 @@
 
 ## J.1 Overview
 
-This appendix derives the Higgs vacuum expectation value (VEV) directly from the Pneuma master action $S_{Pneuma}$, demonstrating that $v \approx 246$ GeV emerges from the 25D(24,1) bridge geometry without requiring external calibration factors.
+This appendix derives the Higgs vacuum expectation value (VEV) directly from the Pneuma master action $S_{Pneuma}$, demonstrating that $v \approx 246$ GeV emerges from the 27D(26,1) bridge geometry without requiring external calibration factors.
 
 **The Problem with Appendix F**: The RS warped hierarchy derivation achieves $v = 246$ GeV but requires an external moduli correction factor $C_{moduli} = 1.2 \times 10^{-5}$ (see F.28). This is a fit, not a derivation.
 
@@ -26,15 +26,15 @@ This is 0.06% from the experimental value $v_{exp} = 246.22$ GeV. The residual i
 
 ## J.2 The Pneuma Master Action
 
-### J.2.1 Full Action in 25D(24,1)
+### J.2.1 Full Action in 27D(26,1)
 
 The complete Pneuma master action in the v22 framework:
 
-$$S_{Pneuma} = \int d^{25}x \sqrt{-g_{25}} \left[ \frac{M_{25}^{23}}{2} R_{25} + \mathcal{L}_{G2} + \mathcal{L}_{flux} + \mathcal{L}_{moduli} + \mathcal{L}_{bridge} \right]$$ **(J.2)**
+$$S_{Pneuma} = \int d^{27}x \sqrt{-g_{27}} \left[ \frac{M_{27}^{25}}{2} R_{27} + \mathcal{L}_{G2} + \mathcal{L}_{flux} + \mathcal{L}_{moduli} + \mathcal{L}_{bridge} \right]$$ **(J.2)**
 
 Where:
-- $M_{25}$ is the fundamental 25D Planck scale
-- $R_{25}$ is the 25D Ricci scalar
+- $M_{27}$ is the fundamental 27D Planck scale
+- $R_{27}$ is the 27D Ricci scalar
 - $\mathcal{L}_{G2}$ encodes G2 holonomy structure
 - $\mathcal{L}_{flux}$ contains flux contributions
 - $\mathcal{L}_{moduli}$ stabilizes volume and shape moduli
@@ -42,9 +42,9 @@ Where:
 
 ### J.2.2 Dimensional Structure
 
-The 25D bulk with signature (24,1) decomposes as:
+The 27D bulk with signature (26,1) decomposes as:
 
-$$M^{25}_{(24,1)} = T^1_{(0,1)} \times_{fiber} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right)$$ **(J.3)**
+$$M^{27}_{(26,1)} = T^1_{(0,1)} \times_{fiber} \left( \bigoplus_{i=1}^{13} B_i^{(2,0)} \right)$$ **(J.3)**
 
 Where:
 - $T^1_{(0,1)}$ is the unified time fiber (shared by both shadows)
@@ -54,7 +54,7 @@ Where:
 ### J.2.3 Individual Action Terms
 
 **Einstein-Hilbert Term**:
-$$\mathcal{L}_{EH} = \frac{M_{25}^{23}}{2} R_{25}$$ **(J.4)**
+$$\mathcal{L}_{EH} = \frac{M_{27}^{25}}{2} R_{27}$$ **(J.4)**
 
 **G2 Holonomy Term** (per shadow):
 $$\mathcal{L}_{G2} = -\frac{1}{4} \text{Tr}(F \wedge *F) + \frac{1}{2} |d\Phi_3|^2 + V_{G2}(\Phi_3)$$ **(J.5)**
@@ -457,7 +457,7 @@ $$v = k_\gimel \times (b_3 - 4) = 246.37 \text{ GeV}$$ **(J.42)**
 | **Formula** | Warp factor + moduli | $k_\gimel \times (b_3 - 4)$ |
 | **External inputs** | $C_{moduli} = 1.2 \times 10^{-5}$ | None |
 | **Accuracy** | 2% | 0.06% |
-| **Physical picture** | 5D warped geometry | 25D bridge projection |
+| **Physical picture** | 5D warped geometry | 27D bridge projection |
 | **Status** | Complete | 90% (EW DOF interpretation established) |
 
 ### J.8.4 Complementarity and Physical Motivation
@@ -483,7 +483,7 @@ The two approaches are **complementary**, not contradictory:
 The complete derivation chain:
 
 ```
-S_Pneuma [25D(24,1)]
+S_Pneuma [27D(26,1)]
     ↓ Bridge structure
 L_bridge with 12×(2,0) pairs
     ↓ Coordinate projection
@@ -500,7 +500,7 @@ v = k_gimel × (b_3 - 4) = 246 GeV
 
 | Step | Equation | Reference |
 |------|----------|-----------|
-| Master action | $S_{Pneuma} = \int d^{25}x \sqrt{-g_{25}} [...]$ | (J.2) |
+| Master action | $S_{Pneuma} = \int d^{27}x \sqrt{-g_{27}} [...]$ | (J.2) |
 | Bridge structure | $M^{25} = T^1 \times (\oplus_i B_i^{(2,0)})$ | (J.3) |
 | Shadow projection | $\pi_N, \pi_M: 24D \to 12D$ | (J.14-15) |
 | Warp factor | $\Omega = e^{-\pi k_\gimel/\phi}$ | (J.16) |
@@ -534,7 +534,7 @@ v = k_gimel × (b_3 - 4) = 246 GeV
 
 | Step | Description | Status |
 |------|-------------|--------|
-| 1 | Master action S_Pneuma in 25D(24,1) | COMPLETE (Section J.2) |
+| 1 | Master action S_Pneuma in 27D(26,1) | COMPLETE (Section J.2) |
 | 2 | Bridge structure 12×(2,0) pairs | COMPLETE (Section J.4.1) |
 | 3 | Warp factor Ω = exp(-πk_gimel/φ) | COMPLETE (Section J.4.3-4.4) |
 | 4 | k_gimel = b₃/2 + 1/π from holonomy | ESTABLISHED (Section J.5.4) |
@@ -728,4 +728,4 @@ This simulation includes:
 ---
 
 *Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Principia Metaphysica v23.1*

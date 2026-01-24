@@ -111,8 +111,8 @@ class FormulasRegistry:
     - Bars, I. (2006). 2T-physics. Phys. Rev. D 74: 085019.
     """
 
-    VERSION = "23.0-CENTRAL"
-    VERSION_SHORT = "23.0"
+    VERSION = "23.1-27D"
+    VERSION_SHORT = "23.1"
     STATUS = "AI_VALIDATED"  # AI-assisted validation by Gemini 2.0 Flash (2026-01-11, 2026-01-18)
     # NOTE: This is AI-assisted validation, NOT traditional journal peer review.
     # The framework has been reviewed by Google's Gemini and Anthropic's Claude
@@ -644,17 +644,18 @@ class FormulasRegistry:
         # Chain: 25D(24,1) = 12×(2,0)+(0,1) → [warp] → 2×13D(12,1) → [G2] → 4D(3,1)
         # Key: 12×(2,0) bridge pairs ARE what become the dual shadows, not separate from them
         #
-        # LEVEL 0: ANCESTRAL (Bosonic String Theory - starting point)
-        # The 25D ancestral frame from which all physics descends
-        self._D_ancestral_total = 25      # Total ancestral dimensions (24+1)
-        self._D_ancestral_space = 24      # Ancestral spatial dimensions
-        self._D_ancestral_time = 1        # v21: Unified time (eliminates ghosts/CTCs)
-        # Signature: (24, 1) - v21 unified time framework (replaces Bars' 2T-physics)
+        # LEVEL 0: ANCESTRAL (Bosonic String Theory + Central Sampler)
+        # The 27D ancestral frame from which all physics descends
+        # v23: 27D(26,1) = 24 core spatial + 2 central sampler + 1 time
+        self._D_ancestral_total = 27      # Total ancestral dimensions (26+1)
+        self._D_ancestral_space = 26      # Ancestral spatial (24 core + 2 central)
+        self._D_ancestral_time = 1        # v21+: Unified time (eliminates ghosts/CTCs)
+        # Signature: (26, 1) - v23 with central sampler as physical dimensions
         # Legacy aliases:
-        self._D_total_26 = self._D_ancestral_total
-        self._D_space_24 = self._D_ancestral_space
+        self._D_total_26 = 26             # Legacy ref to pre-v23 (26 spacelike)
+        self._D_space_24 = 24             # Core spatial (without central)
         self._D_time_2 = 2                # Legacy: Keep for backward compatibility
-        self._D_time_1_unified = self._D_ancestral_time  # v21: Unified time
+        self._D_time_1_unified = self._D_ancestral_time  # v21+: Unified time
 
         # LEVEL 1: SHADOW (12×(2,0) Bridge Pairs Warp to Dual Shadows)
         # The 12×(2,0) bridge pairs map/warp to create dual 13D(12,1) shadows
@@ -719,36 +720,39 @@ class FormulasRegistry:
         # D_external(6) = D_visible(4) + 2 (Kaluza-Klein reduction)
 
         # =======================================================================
-        # 12×(2,0) BRIDGE ARCHITECTURE
+        # 12×(2,0) + 1×(2,0) BRIDGE ARCHITECTURE (v23)
         # =======================================================================
-        # The framework uses 12×(2,0) bridge pairs that warp/map to dual shadows:
+        # The framework uses 12×(2,0) local bridge pairs + 1×(2,0) central sampler:
         #
-        # STRUCTURE: 25D(24,1) = 12×(2,0) + (0,1) → [warp] → 2×13D(12,1)
+        # STRUCTURE: 27D(26,1) = 12×(2,0) local + 1×(2,0) central + (0,1) time
         #
-        # Key insight: The bridge pairs ARE what become the shadows:
-        #   - 12×(2,0) = 12 Euclidean bridge pairs (24 spatial dimensions total)
-        #   - Each pair connects corresponding spatial dimensions between shadows
-        #   - (0,1) = shared temporal dimension
-        #   - Warping: 12×(2,0) → 2×(12,0) gives 12 spatial per shadow
+        # Key insight: Core and local bridge are DUAL REPRESENTATIONS of same 24D:
+        #   - 12×(2,0) = 12 local Euclidean pairs (24 spatial, dual view of core)
+        #   - 1×(2,0) = 1 central sampler (2 spatial, NEW in v23)
+        #   - (0,1) = unified temporal dimension
+        #   - Total: 24 + 2 + 1 = 27D with signature (26,1)
+        #
+        # Warping to shadows:
+        #   - 12×(2,0) local → 2×(12,0) gives 12 spatial per shadow
         #   - Adding shared time: 2×(12,0) + (0,1) = 2×13D(12,1)
         #   - OR reduction: R_perp = [[0,-1],[1,0]] for cross-shadow sampling
         #   - Breathing DE: rho_breath = |T_normal - R_perp T_mirror|
         #
-        # v21 Dimensional Structure:
-        self._D_v21_bulk_total = 25           # Total bulk dimensions (24+1)
-        self._D_v21_bulk_space = 24           # Bulk spacelike dimensions
-        self._D_v21_bulk_time = 1             # Unified time (no ghosts/CTCs)
-        self._D_v21_bridge_total = 2          # Euclidean bridge dimensions
-        self._D_v21_bridge_space = 2          # Bridge is purely spacelike (2,0)
-        self._D_v21_bridge_time = 0           # Timeless (positive-definite)
-        self._D_v21_shadow_per = 11           # Per-shadow spacelike (excl. shared time)
-        self._D_v21_shadow_time = 1           # Shared unified time
+        # v23 Dimensional Structure (with central sampler):
+        self._D_v23_bulk_total = 27           # Total bulk dimensions (26+1)
+        self._D_v23_bulk_space = 26           # Bulk spacelike (24 core + 2 central)
+        self._D_v23_bulk_time = 1             # Unified time (no ghosts/CTCs)
+        self._D_v23_bridge_local = 24         # Local bridge (12 pairs × 2D)
+        self._D_v23_bridge_central = 2        # Central sampler (1 pair × 2D)
+        self._D_v23_bridge_time = 0           # Timeless (positive-definite)
+        self._D_v23_shadow_per = 12           # Per-shadow spacelike
+        self._D_v23_shadow_time = 1           # Shared unified time
         #
-        # v21 Signature: (24,1) = 2*(11) + 2 + 1 where:
-        #   - 2*11 = 22 spacelike in dual shadows
-        #   - 2 = spacelike in Euclidean bridge
+        # v23 Signature: (26,1) = 24 core + 2 central + 1 time where:
+        #   - 24 = core spacelike (from 12×(2,0) dual shadow structure)
+        #   - 2 = central sampler spacelike (hierarchical averaging)
         #   - 1 = unified timelike (shared)
-        #   - Total: 22 + 2 = 24 spacelike, 1 timelike = (24,1)
+        #   - Total: 24 + 2 = 26 spacelike, 1 timelike = (26,1)
         #
         # Generation formula (per shadow):
         #   n_gen = chi_eff / (4 * b3) = 144 / 48 = 3
@@ -757,6 +761,10 @@ class FormulasRegistry:
         # Dark Energy (breathing mechanism):
         #   w0 = -1 + 1/b3 = -23/24 = -0.9583 (consistent with DESI 2025 within 0.02 sigma)
         #   w_a = -1/sqrt(b3) = -1/sqrt(24) = -0.204 (predicted)
+        #
+        # Legacy v21 aliases (for backward compatibility):
+        self._D_v21_bulk_total = 25           # Pre-v23 (without central)
+        self._D_v21_bulk_space = 24           # Pre-v23 core only
 
         # =======================================================================
         # v23 CENTRAL (2,0) ANCESTRAL EUCLIDEAN SAMPLER
@@ -766,12 +774,14 @@ class FormulasRegistry:
         #   - Local 12×(2,0): Fine-grained residue flux (micro-stability, dilution)
         #   - Central (2,0): Global averaging (macro-precision, veil lift)
         #
-        # DIMENSIONAL ACCOUNTING (v23):
-        #   - 24 core + 24 local bridge + 2 central = 50 "spacelike-like"
-        #   - Effective signature preserved: (24,1)
-        #   - Central is Euclidean (no ghosts/CTCs)
+        # DIMENSIONAL ACCOUNTING (v23 - 27D interpretation):
+        #   - 24 core = 24 local bridge (DUAL REPRESENTATION of same physical space)
+        #   - 2 central sampler (NEW physical dimensions for hierarchical averaging)
+        #   - 1 unified time
+        #   - TOTAL: 24 + 2 + 1 = 27D with signature (26,1)
+        #   - Note: The "50 spacelike-like" counts bridge twice (core + local view)
         #
-        # FORMULA: p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
+        # FORMULA: p_anc = (1/12) * sum(p_i) + (1/12) * sqrt(n_local/12) * phi
         #   - p_i = sigmoid(flux_diff_i) per pair i
         #   - n_local = active local pairs (6 baseline -> 12 full gnosis)
         #   - phi = golden ratio (dilution correction)
@@ -786,13 +796,16 @@ class FormulasRegistry:
         _phi_temp = (1.0 + math.sqrt(5.0)) / 2.0  # Golden ratio
         self._central_pair_weight = _phi_temp / math.sqrt(12)  # phi/sqrt(12)
         #
-        # Spacelike-like dimension count:
-        #   - Core: 24 (from dual shadows)
-        #   - Local bridge: 12 × 2 = 24 (12 pairs × 2D Euclidean each)
-        #   - Central: 1 × 2 = 2 (1 pair × 2D Euclidean)
-        #   - Total: 24 + 24 + 2 = 50 spacelike-like
-        #   - Note: Still (24,1) effective since central is Euclidean embedded
-        self._D_total_spacelike_like = 50         # Core + local + central
+        # v23 SPACETIME SIGNATURE: (26,1) in 27 dimensions
+        #   - 24 core spacelike (from dual shadows, = local bridge dual view)
+        #   - 2 central spacelike (hierarchical averaging dimensions)
+        #   - 1 unified timelike
+        #   - Total spacetime: 27D with signature (26,1)
+        self._D_v23_spacetime_total = 27          # Full spacetime dimensions
+        self._D_v23_spacetime_space = 26          # Spacelike (24 core + 2 central)
+        self._D_v23_spacetime_time = 1            # Unified time
+        # Legacy: "50 spacelike-like" counts each bridge coordinate twice
+        self._D_total_spacelike_like = 50         # (24 core + 24 local + 2 central)
 
         # =======================================================================
         # THE SACRED HEPTAGON (7 Intellectual Anchors)
@@ -1099,8 +1112,12 @@ class FormulasRegistry:
 
     @property
     def D_space_24(self) -> int:
-        """Level 0: Spatial dimensions - 24 in (24,1) (legacy alias)."""
-        return self._D_ancestral_space
+        """Level 0: Core spatial dimensions - 24 for Cl(24,1) physics.
+
+        CRITICAL: This is the 24D core for spinor calculations (4096 = 2^12).
+        DO NOT confuse with D_ancestral_space (26) which includes central sampler.
+        """
+        return self._D_space_24
 
     @property
     def D_time_2(self) -> int:
@@ -3003,12 +3020,30 @@ class FormulasRegistry:
     @property
     def D_total_spacelike_like(self) -> int:
         """
-        Total spacelike-like dimensions: 24 core + 24 local + 2 central = 50.
+        Total spacelike-like coordinate count: 24 core + 24 local + 2 central = 50.
 
-        v23.0: Dimensional accounting for central sampler integration.
-        Effective signature remains (24,1) since central is Euclidean embedded.
+        v23.1: This counts bridge coordinates twice (core and local are dual views).
+        The actual spacetime signature is (26,1) in 27 dimensions.
         """
         return self._D_total_spacelike_like
+
+    @property
+    def D_spacetime_signature(self) -> tuple:
+        """
+        Full spacetime signature: (26,1) in 27 dimensions.
+
+        v23.1: With central sampler as physical dimensions:
+        - 24 core spacelike (from dual shadows, = local bridge dual view)
+        - 2 central spacelike (hierarchical averaging dimensions)
+        - 1 unified timelike
+        - Total: 27D with signature (26,1)
+        """
+        return (self._D_v23_spacetime_space, self._D_v23_spacetime_time)
+
+    @property
+    def D_spacetime_total(self) -> int:
+        """Total spacetime dimensions: 27D (v23.1 with central sampler)."""
+        return self._D_v23_spacetime_total
 
     def central_sampler_active(self, n_local: int) -> bool:
         """

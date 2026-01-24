@@ -1,14 +1,14 @@
 # Appendix L: Physical Mechanism for Dark Matter in the PM Framework
 
-**Version:** 23.0
-**Date:** 2026-01-21
+**Version:** 23.1
+**Date:** 2026-01-24
 **Status:** 95% RESOLVED (mechanism established; d_eff/R parameter derivation from moduli incomplete)
 
 ---
 
 ## Abstract
 
-This appendix provides a detailed physical mechanism for dark matter within the Principia Metaphysica (PM) framework. Dark matter emerges naturally from the dual-shadow structure of the 25D(24,1) bulk geometry, where the mirror shadow sector contains self-interacting particles (mirror baryons) that couple to our visible sector only through gravity and highly suppressed portal interactions. The framework predicts the dark matter to baryon ratio (5.40 vs. Planck 5.38 +/- 0.05), consistent with observations within 0.4 sigma. The mechanism uses asymmetric reheating and entropy dilution, though some parameters remain phenomenological.
+This appendix provides a detailed physical mechanism for dark matter within the Principia Metaphysica (PM) framework. Dark matter emerges naturally from the dual-shadow structure of the 27D(26,1) bulk geometry, where the mirror shadow sector contains self-interacting particles (mirror baryons) that couple to our visible sector only through gravity and highly suppressed portal interactions. The framework predicts the dark matter to baryon ratio (5.40 vs. Planck 5.38 +/- 0.05), consistent with observations within 0.4 sigma. The mechanism uses asymmetric reheating and entropy dilution, though some parameters remain phenomenological.
 
 **Key Results:**
 - Dark matter as mirror shadow baryons
@@ -17,13 +17,15 @@ This appendix provides a detailed physical mechanism for dark matter within the 
 - Portal coupling: g ~ 10^-11
 - Direct detection: sigma_SI ~ 10^-50 cm^2
 
+**Architectural Note:** The 27D(26,1) architecture adds 2 central sampler dimensions; dark matter physics remains unchanged as it depends only on G2 parameters (chi_eff=144, b3=24).
+
 ---
 
 ## L.1 Overview: Dark Matter as Mirror Shadow Sector
 
 ### L.1.1 The Fundamental Picture
 
-In the PM framework, dark matter is not a new particle added ad hoc to the Standard Model but emerges naturally from the geometric structure of the 25D(24,1) bulk. The dual-shadow architecture creates two parallel 13D(12,1) universes connected by a Euclidean bridge:
+In the PM framework, dark matter is not a new particle added ad hoc to the Standard Model but emerges naturally from the geometric structure of the 27D(26,1) bulk. The dual-shadow architecture creates two parallel 13D(12,1) universes connected by a Euclidean bridge:
 
 $$M^{25} = T^1 \times_{\text{fiber}} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right)$$ **(L.1)**
 
@@ -36,7 +38,7 @@ where:
 
 The mirror sector hypothesis has several compelling features:
 
-1. **Geometric Necessity**: The Z2 symmetry of the 25D bulk requires a mirror copy
+1. **Geometric Necessity**: The Z2 symmetry of the 27D bulk requires a mirror copy
 2. **Self-Consistency**: Mirror particles have identical masses and self-interactions
 3. **Weak Coupling**: Portal interactions are exponentially suppressed by cycle separation
 4. **Observational Compatibility**: Consistent with all current dark matter constraints
@@ -464,7 +466,7 @@ The effective bridge cycle separation d_eff/R = 0.0896 is the final missing piec
 
 ### L.10.2 Strengths of the Mirror DM Model
 
-1. **Geometric Necessity**: Emerges from 25D bulk structure, not added by hand
+1. **Geometric Necessity**: Emerges from 27D bulk structure, not added by hand
 2. **Quantitative Agreement**: 5.40 vs 5.38 is remarkable precision
 3. **Falsifiability**: Clear predictions for direct detection limits
 4. **Consistency**: Compatible with all current observational constraints
@@ -515,5 +517,5 @@ The effective bridge cycle separation d_eff/R = 0.0896 is the final missing piec
 **Completeness:** 95%
 **Remaining:** d_eff/R = 0.0896 parameter derivation from moduli stabilization
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-24*
+*Principia Metaphysica v23.1*

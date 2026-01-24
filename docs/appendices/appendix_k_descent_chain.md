@@ -1,17 +1,17 @@
-# Appendix K: Complete Explicit Lagrangian Descent Chain (25D to 4D)
+# Appendix K: Complete Explicit Lagrangian Descent Chain (27D to 4D)
 
-**Version**: 23.0
-**Date**: 2026-01-21
+**Version**: 23.1
+**Date**: 2026-01-24
 **Status**: COMPLETE (explicit chain established; consciousness sampling is speculative)
 
 ---
 
 ## K.1 Overview
 
-This appendix provides the complete explicit Lagrangian at each stage of the dimensional descent from the 25D bulk to the 4D observable universe. The v22 cascade chain is:
+This appendix provides the complete explicit Lagrangian at each stage of the dimensional descent from the 27D bulk to the 4D observable universe. The v23.1 cascade chain is:
 
 ```
-25D(24,1) = 12×(2,0) bridge + (0,1) time
+27D(26,1) = 24 core + 2 central sampler + (0,1) time
     ↓ coordinate selection via R_perp (Möbius: R_perp² = -I)
 2×13D(12,1) shadows (each: 12 spatial from bridge + 1 shared time)
     ↓ G₂(7,0) compactification
@@ -24,7 +24,7 @@ This appendix provides the complete explicit Lagrangian at each stage of the dim
 
 | Transition | Preserved | Emergent |
 |------------|-----------|----------|
-| 25D → 2×13D | Time unification, Pneuma | Dual shadows, chirality |
+| 27D → 2×13D | Time unification, Pneuma | Dual shadows, chirality |
 | 13D → 6D | Gauge quantum numbers | G₂ → SU(3)×SU(2)×U(1), N=1 SUSY |
 | 6D → 4D | SM gauge group | KK tower, mass spectrum |
 
@@ -32,46 +32,46 @@ This appendix provides the complete explicit Lagrangian at each stage of the dim
 
 | Level | Dimension | Scale | Coupling |
 |-------|-----------|-------|----------|
-| Bulk | 25D | M₂₅ ~ M_Pl | g₂₅ |
+| Bulk | 27D | M₂₇ ~ M_Pl | g₂₇ |
 | Shadow | 13D | M₁₃ ~ M_GUT | g₁₃ |
 | Intermediate | 6D | M₆ ~ 10¹² GeV | g₆ |
 | Observable | 4D | M_EW ~ 246 GeV | g_SM |
 
 ---
 
-## K.2 25D Bulk Lagrangian
+## K.2 27D Bulk Lagrangian
 
 ### K.2.1 Full S_Pneuma Action
 
-The master action in 25D with signature (24,1) is:
+The master action in 27D with signature (26,1) is:
 
-$$S_{25} = \int d^{25}X \sqrt{-G_{25}} \left[ \mathcal{L}_{gravity} + \mathcal{L}_{gauge} + \mathcal{L}_{Pneuma} + \mathcal{L}_{bridge} \right]$$ **(K.1)**
+$$S_{27} = \int d^{27}X \sqrt{-G_{27}} \left[ \mathcal{L}_{gravity} + \mathcal{L}_{gauge} + \mathcal{L}_{Pneuma} + \mathcal{L}_{bridge} \right]$$ **(K.1)**
 
-where $G_{25}$ is the 25D metric with signature (24,1).
+where $G_{27}$ is the 27D metric with signature (26,1) = 24 core spacelike + 2 central sampler + 1 time.
 
 ### K.2.2 Gravity Sector
 
-$$\mathcal{L}_{gravity} = \frac{M_{25}^{23}}{2} R_{25}$$ **(K.2)**
+$$\mathcal{L}_{gravity} = \frac{M_{27}^{25}}{2} R_{27}$$ **(K.2)**
 
 where:
-- $M_{25}$ is the 25D fundamental Planck mass
-- $R_{25}$ is the 25D Ricci scalar
-- The exponent 23 follows from $D-2 = 25-2 = 23$
+- $M_{27}$ is the 27D fundamental Planck mass
+- $R_{27}$ is the 27D Ricci scalar
+- The exponent 25 follows from $D-2 = 27-2 = 25$
 
 **Explicit Einstein-Hilbert term**:
-$$\mathcal{L}_{gravity} = \frac{M_{25}^{23}}{2} G^{MN}\left(\Gamma^P_{MQ}\Gamma^Q_{NP} - \Gamma^P_{MN}\Gamma^Q_{PQ}\right)$$ **(K.3)**
+$$\mathcal{L}_{gravity} = \frac{M_{27}^{25}}{2} G^{MN}\left(\Gamma^P_{MQ}\Gamma^Q_{NP} - \Gamma^P_{MN}\Gamma^Q_{PQ}\right)$$ **(K.3)**
 
 with Christoffel symbols:
 $$\Gamma^P_{MN} = \frac{1}{2}G^{PQ}\left(\partial_M G_{NQ} + \partial_N G_{MQ} - \partial_Q G_{MN}\right)$$ **(K.4)**
 
 ### K.2.3 G₂ Flux Gauge Sector
 
-$$\mathcal{L}_{gauge} = -\frac{1}{4g_{25}^2}\text{Tr}\left(F_{MN}F^{MN}\right) - \frac{1}{48}G_{MNPQ}G^{MNPQ}$$ **(K.5)**
+$$\mathcal{L}_{gauge} = -\frac{1}{4g_{27}^2}\text{Tr}\left(F_{MN}F^{MN}\right) - \frac{1}{48}G_{MNPQ}G^{MNPQ}$$ **(K.5)**
 
 where:
 - $F_{MN}$ is the G₂ field strength
 - $G_{MNPQ}$ is the 4-form flux (M-theory analog)
-- g₂₅ is the 25D gauge coupling
+- g₂₇ is the 27D gauge coupling
 
 **G₂ field strength decomposition**:
 $$F_{MN} = \partial_M A_N - \partial_N A_M + [A_M, A_N]$$ **(K.6)**
@@ -83,13 +83,15 @@ with $A_M = A_M^a T^a$ where $T^a$ (a = 1,...,14) are G₂ generators.
 $$\mathcal{L}_{Pneuma} = \bar{\Psi}\left(i\Gamma^M D_M - m_\Psi\right)\Psi$$ **(K.7)**
 
 where:
-- $\Psi$ is the 25D Majorana spinor (Pneuma field)
-- $\Gamma^M$ are 25D gamma matrices satisfying $\{\Gamma^M, \Gamma^N\} = 2G^{MN}$
+- $\Psi$ is the 27D Majorana spinor (Pneuma field, 4096 components from 24D core Cl(24,1))
+- $\Gamma^M$ are 27D gamma matrices satisfying $\{\Gamma^M, \Gamma^N\} = 2G^{MN}$
 - $D_M = \partial_M + \frac{1}{4}\omega_M^{AB}\Gamma_{AB} + A_M$ is the covariant derivative
 - $\omega_M^{AB}$ is the spin connection
 
-**Spinor degrees of freedom**:
-$$\dim(\text{spinor}_{25D}) = 2^{\lfloor 25/2 \rfloor} = 2^{12} = 4096$$ **(K.8)**
+**Spinor degrees of freedom** (from 24D core physics in Cl(24,1)):
+$$\dim(\text{spinor}) = 2^{\lfloor (24+1)/2 \rfloor} = 2^{12} = 4096$$ **(K.8)**
+
+*Note: The +2 central sampler is Euclidean/architectural and does not modify the spinor algebra.*
 
 ### K.2.5 Bridge Lagrangian
 
@@ -102,7 +104,7 @@ where $R_i$ is the radius of the i-th bridge pair (typically $R_i \sim 2\pi\sqrt
 
 ---
 
-## K.3 OR Reduction: 25D → 2×13D
+## K.3 OR Reduction: 27D → 2×13D
 
 ### K.3.1 R_perp Operator Definition
 
@@ -350,7 +352,7 @@ $$\mathcal{L}_{Yukawa} = -y_u \bar{Q}\tilde{H}u - y_d \bar{Q}Hd - y_e \bar{L}He 
 
 ## K.6 Matching Conditions
 
-### K.6.1 25D → 13D Transition
+### K.6.1 27D → 13D Transition
 
 **Preserved**:
 - Unified time structure (single t)
@@ -363,7 +365,7 @@ $$\mathcal{L}_{Yukawa} = -y_u \bar{Q}\tilde{H}u - y_d \bar{Q}Hd - y_e \bar{L}He 
 - Inter-shadow correlations
 
 **Matching relation**:
-$$M_{13}^{11} = M_{25}^{23} \cdot (2\pi R_{bridge})^{12}$$ **(K.43)**
+$$M_{13}^{11} = M_{27}^{25} \cdot (2\pi R_{bridge})^{12}$$ **(K.43)**
 
 ### K.6.2 13D → 6D Transition (G₂ Compactification)
 
@@ -410,7 +412,7 @@ where $V_2 = (2\pi)^2 R_5 R_6$ is the 2D compact volume.
 
 | Level | Fermion Content | Origin |
 |-------|-----------------|--------|
-| 25D | Majorana spinor Ψ | Pneuma field |
+| 27D | Majorana spinor Ψ | Pneuma field (4096 from 24D core) |
 | 13D | Chiral spinors per shadow | R_perp projection |
 | 6D | N=1 multiplets | G₂ zero modes |
 | 4D | 3 generations SM | Index theorem: χ_eff/48 = 3 |
@@ -424,7 +426,7 @@ $$n_{gen} = \frac{\chi_{eff}}{48} = \frac{144}{48} = 3$$ **(K.49)**
 
 ### K.7.1 Coupling Constant Matching
 
-**From 25D to 4D**:
+**From 27D to 4D**:
 $$\frac{1}{g_4^2} = \frac{V_{int}}{g_{25}^2}$$ **(K.50)**
 
 where $V_{int} = V_{bridge} \cdot \text{Vol}(X_7) \cdot V_2$ is the total internal volume.
@@ -441,7 +443,7 @@ $$\alpha_1 = \alpha_2 = \alpha_3 \quad \text{at } M_{GUT} \approx 2 \times 10^{1
 
 | Level | Scale | Formula |
 |-------|-------|---------|
-| 25D Planck | $M_{25}$ | $\sim M_{Pl}^{23/2}/V_{int}^{1/2}$ |
+| 27D Planck | $M_{27}$ | $\sim M_{Pl}^{25/2}/V_{int}^{1/2}$ |
 | 13D Planck | $M_{13}$ | $M_{25}(V_{bridge})^{1/11}$ |
 | GUT scale | $M_{GUT}$ | $\sim 2 \times 10^{16}$ GeV |
 | 6D scale | $M_6$ | $M_{13}(\text{Vol}(X_7))^{1/4}$ |
@@ -482,7 +484,8 @@ where $kR_c \sim 12$ is the warping parameter.
 ```
 Query: 2^12
 Result: 4096 ✓
-Verified: 25D spinor has 2^{floor(25/2)} = 2^12 = 4096 components
+Verified: 24D core spinor (Cl(24,1)) has 2^{floor(25/2)} = 2^12 = 4096 components
+Note: The +2 central sampler is architectural (Euclidean), not affecting spinor algebra
 ```
 
 ### Certificate K.8.2: Generation Count
@@ -494,9 +497,10 @@ Verified: n_gen = χ_eff/48 = 144/48 = 3
 
 ### Certificate K.8.3: Dimension Counting
 ```
-Query: 1 + 12*2
-Result: 25 ✓
-Verified: 25D = 1 time + 12×(2,0) bridge pairs = 1 + 24 = 25
+Query: 1 + 12*2 + 2
+Result: 27 ✓
+Verified: 27D = 1 time + 12×(2,0) bridge pairs + 1×(2,0) central = 1 + 24 + 2 = 27
+         Signature: (26,1) = 24 core + 2 central spacelike + 1 time
 ```
 
 ### Certificate K.8.4: Shadow Dimensions
@@ -540,8 +544,9 @@ Verified: G₂ has 14 generators
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│  25D(24,1) Bulk: S_Pneuma                                       │
-│  L = M₂₅²³R₂₅/2 - (1/4g₂₅²)TrF² + Ψ̄(iΓᴹDᴹ)Ψ + L_bridge       │
+│  27D(26,1) Bulk: S_Pneuma                                       │
+│  L = M₂₇²⁵R₂₇/2 - (1/4g₂₇²)TrF² + Ψ̄(iΓᴹDᴹ)Ψ + L_bridge       │
+│  [24 core + 2 central sampler + 1 time, Cl(24,1) spinors]       │
 └───────────────────────────┬─────────────────────────────────────┘
                             │ R_perp coordinate selection
                             ↓
@@ -576,7 +581,7 @@ Verified: G₂ has 14 generators
 
 | Level | Lagrangian | Explicit Terms | Status |
 |-------|------------|----------------|--------|
-| 25D Bulk | $S_{25}$ | L_gravity, L_gauge, L_Pneuma, L_bridge | COMPLETE (K.2) |
+| 27D Bulk | $S_{27}$ | L_gravity, L_gauge, L_Pneuma, L_bridge | COMPLETE (K.2) |
 | 13D Shadow | $S_{13}$ | L_gravity, L_gauge, L_matter | COMPLETE (K.3.4) |
 | 6D Intermediate | $S_6$ | L_gravity, L_SM gauge, L_moduli | COMPLETE (K.4.5) |
 | 4D Observable | $S_4$ | Full SM Lagrangian | COMPLETE (K.5.4) |
