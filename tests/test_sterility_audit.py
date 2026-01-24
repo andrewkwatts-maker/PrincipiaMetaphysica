@@ -418,10 +418,11 @@ class TestParityInvariants(unittest.TestCase):
 
     def test_parity_sum(self):
         """
-        Verify Manifold Parity: eta_S + sigma_T = 1.6402
+        Verify Manifold Parity: eta_S + sigma_T = 163/239 + 23/24 = 1.6403...
         """
         parity = self.registry.parity_sum
-        expected = 1.6402
+        # v23.0+: Derived from 163/239 + 23/24 = 1.64034169820...
+        expected = 1.6403
 
         self.assertAlmostEqual(
             parity, expected, delta=0.0001,
