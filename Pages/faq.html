@@ -542,6 +542,28 @@
             </div>
 
             <div class="faq-item">
+                <h3><span class="q-marker">Q16b</span> What is the central sampler?</h3>
+                <div class="answer">
+                    <p>The <strong>central (2,0) sampler</strong> is a single Euclidean pair that averages outcomes from the 12 local (2,0) bridge pairs for global condensate selection.</p>
+                    <p><strong>The Central Sampler Formula:</strong></p>
+                    <p>\[p_{anc} = \frac{1}{12} \sum_{i=1}^{12} p_i + \sqrt{\frac{n_{local}}{12}} \cdot \phi\]</p>
+                    <p>Where \(p_i = \sigma(\text{flux\_diff}_i)\) per local pair, \(n_{local}\) is the number of active pairs (6-12), and \(\phi\) is the golden ratio (dilution correction).</p>
+                    <p><strong>Dimensional Accounting:</strong></p>
+                    <ul>
+                        <li>24 core dimensions (from dual shadows)</li>
+                        <li>24 local bridge dimensions (12 pairs x 2D Euclidean each)</li>
+                        <li>2 central dimensions (1 pair x 2D Euclidean)</li>
+                        <li><strong>Total: 24 + 24 + 2 = 50 spacelike-like dimensions</strong></li>
+                    </ul>
+                    <p>The effective signature (24,1) is preserved since the central sampler is Euclidean-embedded.</p>
+                    <div class="key-insight">
+                        <h4>Activation Threshold</h4>
+                        <p>Central sampler activates when \(n_{local} \geq 9\) (mid-gnosis), enabling global averaging for precision. See <span class="code-ref">simulations/v21/geometric/central_sampler_v23.py</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
                 <h3><span class="q-marker">Q17</span> What is the significance of 12 pairs (not 11 or 13)?</h3>
                 <div class="answer">
                     <div class="fringe-warning">

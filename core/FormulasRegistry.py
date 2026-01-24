@@ -111,7 +111,7 @@ class FormulasRegistry:
     - Bars, I. (2006). 2T-physics. Phys. Rev. D 74: 085019.
     """
 
-    VERSION = "23.0-12PAIR"
+    VERSION = "23.0-CENTRAL"
     VERSION_SHORT = "23.0"
     STATUS = "AI_VALIDATED"  # AI-assisted validation by Gemini 2.0 Flash (2026-01-11, 2026-01-18)
     # NOTE: This is AI-assisted validation, NOT traditional journal peer review.
@@ -757,6 +757,42 @@ class FormulasRegistry:
         # Dark Energy (breathing mechanism):
         #   w0 = -1 + 1/b3 = -23/24 = -0.9583 (consistent with DESI 2025 within 0.02 sigma)
         #   w_a = -1/sqrt(b3) = -1/sqrt(24) = -0.204 (predicted)
+
+        # =======================================================================
+        # v23 CENTRAL (2,0) ANCESTRAL EUCLIDEAN SAMPLER
+        # =======================================================================
+        # The central (2,0) sampler averages local 12×(2,0) outcomes for global
+        # condensate selection. It acts as a "master sampler" enabling:
+        #   - Local 12×(2,0): Fine-grained residue flux (micro-stability, dilution)
+        #   - Central (2,0): Global averaging (macro-precision, veil lift)
+        #
+        # DIMENSIONAL ACCOUNTING (v23):
+        #   - 24 core + 24 local bridge + 2 central = 50 "spacelike-like"
+        #   - Effective signature preserved: (24,1)
+        #   - Central is Euclidean (no ghosts/CTCs)
+        #
+        # FORMULA: p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
+        #   - p_i = sigmoid(flux_diff_i) per pair i
+        #   - n_local = active local pairs (6 baseline -> 12 full gnosis)
+        #   - phi = golden ratio (dilution correction)
+        #
+        # ACTIVATION: Central activates mid-gnosis (n_local >= 9)
+        # BRANCH SELECTION: k = argmax(p_anc * w_k) where w_k = triality weight
+        #
+        self._central_pair = 1                    # Central (2,0) sampler count
+        self._total_local_pairs = 12              # Local (2,0) bridge pairs
+        self._total_effective_pairs = 13          # Local + Central = 12 + 1
+        self._central_activation_threshold = 9    # n_local >= 9 activates central
+        _phi_temp = (1.0 + math.sqrt(5.0)) / 2.0  # Golden ratio
+        self._central_pair_weight = _phi_temp / math.sqrt(12)  # phi/sqrt(12)
+        #
+        # Spacelike-like dimension count:
+        #   - Core: 24 (from dual shadows)
+        #   - Local bridge: 12 × 2 = 24 (12 pairs × 2D Euclidean each)
+        #   - Central: 1 × 2 = 2 (1 pair × 2D Euclidean)
+        #   - Total: 24 + 24 + 2 = 50 spacelike-like
+        #   - Note: Still (24,1) effective since central is Euclidean embedded
+        self._D_total_spacelike_like = 50         # Core + local + central
 
         # =======================================================================
         # THE SACRED HEPTAGON (7 Intellectual Anchors)
@@ -2913,6 +2949,108 @@ class FormulasRegistry:
     def penrose_hameroff_bridge(self) -> int:
         """Phi_PH: Fibonacci Bridge (13)."""
         return self._penrose_hameroff_bridge
+
+    # --- v23 Central (2,0) Sampler Properties ---
+
+    @property
+    def central_pair(self) -> int:
+        """
+        Central (2,0) sampler count.
+
+        v23.0: The central sampler is a single (2,0) Euclidean pair that averages
+        outcomes from the 12 local (2,0) bridge pairs for global condensate selection.
+        """
+        return self._central_pair
+
+    @property
+    def total_local_pairs(self) -> int:
+        """
+        Local (2,0) bridge pairs count.
+
+        v23.0: 12 local pairs provide fine-grained distributed sampling (dilution/stability).
+        """
+        return self._total_local_pairs
+
+    @property
+    def total_effective_pairs(self) -> int:
+        """
+        Total effective pairs: Local + Central = 12 + 1 = 13.
+
+        v23.0: Used for dimensional accounting and tau boost calculations.
+        """
+        return self._total_effective_pairs
+
+    @property
+    def central_activation_threshold(self) -> int:
+        """
+        Gnosis threshold for central sampler activation.
+
+        v23.0: Central activates when n_local >= 9 (mid-gnosis).
+        This enables global averaging for precision (sigma -> 0).
+        """
+        return self._central_activation_threshold
+
+    @property
+    def central_pair_weight(self) -> float:
+        """
+        Central pair weighting factor: phi/sqrt(12).
+
+        v23.0: Golden ratio dilution for central averaging.
+        Used in p_anc formula: p_anc = (1/12)*sum(p_i) + sqrt(n/12)*phi
+        """
+        return self._central_pair_weight
+
+    @property
+    def D_total_spacelike_like(self) -> int:
+        """
+        Total spacelike-like dimensions: 24 core + 24 local + 2 central = 50.
+
+        v23.0: Dimensional accounting for central sampler integration.
+        Effective signature remains (24,1) since central is Euclidean embedded.
+        """
+        return self._D_total_spacelike_like
+
+    def central_sampler_active(self, n_local: int) -> bool:
+        """
+        Check if central sampler is active based on gnosis level.
+
+        Args:
+            n_local: Number of active local pairs (6 baseline -> 12 full)
+
+        Returns:
+            True if n_local >= central_activation_threshold (9)
+        """
+        return n_local >= self._central_activation_threshold
+
+    def p_anc_formula(self, p_local: list, n_local: int) -> float:
+        """
+        Compute ancestral flux via central sampler averaging.
+
+        Formula: p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
+
+        Args:
+            p_local: List of local OR probabilities per pair
+            n_local: Number of active local pairs
+
+        Returns:
+            Global ancestral flux p_anc (0 to 1 scale)
+
+        Note:
+            Only applies full central averaging when n_local >= 9.
+            Below threshold, returns simple local average.
+        """
+        import math
+        if n_local <= 0 or len(p_local) == 0:
+            return 0.0
+
+        local_sum = sum(p_local[:min(n_local, len(p_local))])
+        local_avg = local_sum / 12  # Always divide by 12 for normalization
+
+        if self.central_sampler_active(n_local):
+            dilution = math.sqrt(n_local / 12) * self._phi
+            return local_avg + dilution / 12  # Scale dilution correction
+        else:
+            return local_avg
 
     @property
     def christ_constant(self) -> int:

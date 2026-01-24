@@ -59,6 +59,16 @@ References:
 - Froggatt-Nielsen (1979): Flavor hierarchy from horizontal symmetry
 - Acharya et al. (2008): Yukawa couplings from M-theory on G2 manifolds
 
+v23.0 CENTRAL SAMPLER NOTE:
+    The central (2,0) sampler provides a potential precision enhancement via
+    ancestral flux averaging: p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi.
+
+    GATE CONDITION: The current CKM fits are validated within 1sigma of PDG.
+    Central sampler correction is NOT applied to avoid regression. Future work
+    may integrate p_anc precision if experimental constraints tighten.
+
+    See: simulations/v21/geometric/central_sampler_v23.py for details.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:

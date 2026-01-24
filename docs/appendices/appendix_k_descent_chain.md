@@ -150,7 +150,44 @@ After selection:
 | Normal | $t + 12 × x_i$ | (12,1) |
 | Mirror | $t + 12 × y_i$ | (12,1) |
 
-### K.3.4 Resulting 13D Lagrangian per Shadow
+### K.3.4 Hierarchical Bridge Sampling: Local Pairs + Central (2,0) Ancestral Sampler
+
+The v23 framework extends the 12 local (2,0) bridge pairs with a **central (2,0) ancestral sampler** that provides global averaging for macro-precision during OR reduction.
+
+**Descent Flow:**
+1. **Bulk → Local 12×(2,0) pairs** (fine flux sampling per bridge)
+2. **Local → Central (2,0) averaging** → ancestral descent into condensate ((5,1) + 3×(3,1))
+
+**Central Ancestral Flux Formula:**
+
+$$p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \sqrt{\frac{n_{\text{local}}}{12}} \cdot \phi$$ **(K.14a)**
+
+where:
+- $p_i$: Local probability from bridge pair $i$ (sigmoid of flux differential)
+- $n_{\text{local}}$: Number of active local pairs (6 baseline → 12 full gnosis)
+- $\phi = (1+\sqrt{5})/2$: Golden ratio (dilution correction)
+
+**Hierarchical Sampling Structure:**
+
+| Level | Component | Function | Scope |
+|-------|-----------|----------|-------|
+| Local | 12 × (2,0) pairs | Micro-stability | Per-branch selection |
+| Central | 1 × (2,0) pair | Macro-precision | Global averaging |
+
+**Dimensional Accounting (v23):**
+
+| Component | Dimensions | Calculation |
+|-----------|------------|-------------|
+| Core (dual shadows) | 24 | 12 × 2 (from warp pairs) |
+| Local bridge pairs | 24 | 12 pairs × 2D Euclidean |
+| Central pair | 2 | 1 pair × 2D Euclidean |
+| **Total spacelike-like** | **50** | 24 + 24 + 2 |
+
+**Activation Threshold:** The central sampler activates only when $n_{\text{local}} \geq 9$ (mid-gnosis threshold), ensuring global averaging is meaningful only when at least 75% of local pairs are active.
+
+**Signature Preservation:** The effective signature remains (24,1) because the central pair is purely Euclidean (positive-definite) with no temporal dimension introduced.
+
+### K.3.5 Resulting 13D Lagrangian per Shadow
 
 For each shadow $S \in \{N, M\}$:
 

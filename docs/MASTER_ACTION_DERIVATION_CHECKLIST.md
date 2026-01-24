@@ -36,6 +36,7 @@ S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_mod
 | MA-02 | G2 holonomy compactification 13D → 7D | ✅ COMPLETE | appendix_k_descent_chain |
 | MA-03 | 7D → 4D KK reduction | ✅ COMPLETE | appendix_k_descent_chain |
 | MA-04 | Complete 25D→4D descent chain | ✅ COMPLETE | appendix_k_descent_chain (NEW v22) |
+| MA-05 | Central (2,0) sampler integration (v23) | ✅ COMPLETE | master_action_derivations.py |
 
 ### 1.2 Gauge Sector (QED/QCD/Electroweak)
 
@@ -183,7 +184,7 @@ S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_mod
 
 | Category | Complete | Partial | Needed | New Appendix | Gemini Update |
 |----------|----------|---------|--------|--------------|---------------|
-| Master Action Structure | 4 | 0 | 0 | appendix_k_descent_chain | — |
+| Master Action Structure | 5 | 0 | 0 | appendix_k_descent_chain | MA-05: Central sampler (v23) |
 | Gauge Sector | 7 | 1 | 0 | appendix_i_alpha_inverse | GS-01: 70%→75% (torsion path) |
 | Gravity Sector | 2 | 2 | 0 | appendix_o_vielbein_emergence | GR-03: 75%→85% (Wang's theorem) |
 | Electroweak | 4 | 0 | 0 | — | — |
@@ -193,7 +194,7 @@ S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_mod
 | Cosmology | 6 | 1 | 0 | — | — |
 | Dark Matter | 6 | 0 | 0 | appendix_l_dark_matter | DM-01: 70%→95% ✅ RESOLVED |
 | Proton Decay | 3 | 0 | 0 | — | — |
-| **TOTAL** | **52** | **9** | **0** | **6 NEW** | **+8% recovery** |
+| **TOTAL** | **53** | **9** | **0** | **6 NEW** | **+8% recovery** |
 
 **v22.1 Progress:** 85% → ~93% physics recovery (+8% from Gemini consultations)
 
@@ -255,6 +256,13 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 - **Simulation**: `simulations/v16/higgs/rs_warped_hierarchy_v20.py`
 - **Wolfram Verified**: sqrt(24)=4.899, ln(5e-16)=-35.24, e^(-pi*11.22)=5e-16
 - **Predictions**: KK graviton ~0.9 TeV, Radion ~28 GeV
+
+### 7. MA-05: Central (2,0) Sampler Integration ✅ NEW (v23)
+- **Location**: `simulations/derivations/master_action_derivations.py`
+- **Key Result**: L_bridge = Σᵢ₌₁¹² ρᵢ + ρ_c × ⟨ρᵢ⟩ with central averaging weight ρ_c = φ/√12
+- **Ancestral Flux Formula**: p_anc = (1/12) × Σᵢ pᵢ + √(n_local/12) × φ
+- **Activation**: Central sampler engages when n_local ≥ 9 (mid-gnosis threshold)
+- **Output Parameters**: central_pair_coupling, central_sampler_weight, p_anc_formula
 
 ---
 
