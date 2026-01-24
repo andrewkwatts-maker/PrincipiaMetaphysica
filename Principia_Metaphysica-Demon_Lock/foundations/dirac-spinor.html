@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dirac Spinors - The mathematical objects that describe spin-1/2 particles and transform under Lorentz symmetry">
+    <title>Dirac Spinors - Foundational Mathematics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/pm-header.css">
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'Dirac Spinors'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main-content">
+
+    <main>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.15), rgba(139, 127, 255, 0.1)); border: 2px solid rgba(255, 126, 182, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Mathematics (1928)</span>
+            <h1 style="background: linear-gradient(135deg, #ff7eb6, #8b7fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Dirac Spinors</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The mathematical objects that describe fermions with spin-1/2 in relativistic quantum mechanics, transforming under Lorentz symmetry in a unique double-valued way.
+            </p>
+            <div class="main-equation" style="background: rgba(255, 126, 182, 0.1);">
+                &psi; = (&psi;<sub>1</sub>, &psi;<sub>2</sub>, &psi;<sub>3</sub>, &psi;<sub>4</sub>)<sup>T</sup>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                4-component complex column vector | Foundation for fermion physics
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.03)); border-left: 4px solid #ff7eb6;">
+            <h2>What Are Dirac Spinors?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>Dirac spinors are 4-component complex vectors that describe spin-1/2 particles in 4D spacetime.</strong>
+                They are the fundamental objects for describing fermions (electrons, quarks, neutrinos) in quantum field theory.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">4 Components in 4D Spacetime</h4>
+                    <p>In <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime with signature (3,1), Dirac spinors have exactly 4 complex components, arising from the Clifford algebra Cl(3,1).</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Double-Valued Transformation</h4>
+                    <p>Spinors change sign under a 360&deg; rotation but return to their original value after 720&deg; - they are elements of the double cover of the rotation group.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Weyl Decomposition</h4>
+                    <p>A Dirac spinor can be decomposed into left-handed and right-handed Weyl spinors, each with 2 components, corresponding to different chiralities.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">&psi; = (&psi;<sub>1</sub>, &psi;<sub>2</sub>, &psi;<sub>3</sub>, &psi;<sub>4</sub>)<sup>T</sup></div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">&psi;</div>
+                        <div class="component-name">Dirac Spinor</div>
+                        <div class="component-desc">
+                            A 4-component column vector in complex Hilbert space. Each component &psi;<sub>i</sub> is a complex number.<br>
+                            Represents the quantum state of a spin-1/2 fermion in relativistic quantum mechanics.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Quantum Field Theory</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">4 Components</div>
+                        <div class="component-name">From Cl(3,1)</div>
+                        <div class="component-desc">
+                            The 4 components arise from the spinor representation of the Clifford algebra Cl(3,1) for <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime.<br>
+                            Formula: 2<sup>&lfloor;n/2&rfloor;</sup> = 2<sup>2</sup> = 4 for n=4 dimensions.
+                        </div>
+                        <a href="clifford-algebra.html" class="component-link">Learn about Clifford Algebras &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">T</div>
+                        <div class="component-name">Transpose</div>
+                        <div class="component-desc">
+                            The superscript T denotes transpose, indicating &psi; is a column vector (4&times;1 matrix).<br>
+                            Spinors transform contravariantly under Lorentz transformations.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Linear Algebra</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Complex Numbers</div>
+                        <div class="component-name">C<sup>4</sup> Space</div>
+                        <div class="component-desc">
+                            Each component is complex: &psi;<sub>i</sub> &isin; C.<br>
+                            Total: 4 complex components = 8 real degrees of freedom.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Complex Analysis</span>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Construction Chain</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="clifford-algebra.html">Clifford Algebra Cl(3,1)</a>
+                        <span class="foundation-badge established">Mathematics</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Spinor representation: 2<sup>2</sup> = 4 dimensions</span>
+                        <span class="foundation-badge established">Representation Theory</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="dirac-equation.html">Dirac Equation: (i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi; = 0</a>
+                        <span class="foundation-badge established">Physics Application</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Weyl Spinors -->
+        <section class="subsection">
+            <h2>Weyl Spinors: Left-Handed and Right-Handed Components</h2>
+            <p>
+                A Dirac spinor can be decomposed into two <strong>Weyl spinors</strong> (also called chiral spinors),
+                each with 2 complex components:
+            </p>
+
+            <div class="equation-box">
+                &psi; = (&psi;<sub>L</sub>, &psi;<sub>R</sub>)<sup>T</sup>
+                <span class="equation-label">Weyl decomposition: 4 = 2 + 2</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                where:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>&psi;<sub>L</sub></strong> - Left-handed Weyl spinor (2 components)</li>
+                <li><strong>&psi;<sub>R</sub></strong> - Right-handed Weyl spinor (2 components)</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Chirality Projectors</h3>
+            <p>
+                The left-handed and right-handed components are obtained using <strong>chirality projectors</strong>:
+            </p>
+            <div class="equation-box">
+                &psi;<sub>L</sub> = P<sub>L</sub>&psi; = &frac12;(1 - &gamma;<sup>5</sup>)&psi;
+                <span class="equation-label">Left-handed projector</span>
+            </div>
+            <div class="equation-box">
+                &psi;<sub>R</sub> = P<sub>R</sub>&psi; = &frac12;(1 + &gamma;<sup>5</sup>)&psi;
+                <span class="equation-label">Right-handed projector</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                where &gamma;<sup>5</sup> = i&gamma;<sup>0</sup>&gamma;<sup>1</sup>&gamma;<sup>2</sup>&gamma;<sup>3</sup> is the <strong>chirality matrix</strong> (also called the pseudoscalar).
+            </p>
+
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h4>Physical Meaning: Chirality</h4>
+                <p>
+                    <strong>Chirality</strong> (or handedness) describes the relationship between a particle's spin and its momentum:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem; line-height: 1.8;">
+                    <li><strong>Left-handed (&psi;<sub>L</sub>):</strong> Spin antiparallel to momentum (like a left-handed screw)</li>
+                    <li><strong>Right-handed (&psi;<sub>R</sub>):</strong> Spin parallel to momentum (like a right-handed screw)</li>
+                    <li><strong>Standard Model:</strong> Only left-handed particles couple to the weak force (parity violation)</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Weyl Representation</h3>
+            <p>
+                In the <strong>Weyl (chiral) representation</strong>, the gamma matrices have a block-diagonal form that makes the left/right splitting manifest:
+            </p>
+            <div class="equation-box">
+                &gamma;<sup>&mu;</sup> = <span style="font-size: 1.3rem;">[</span><sub style="vertical-align: middle; font-size: 1.1rem;"><sup>0</sup> <sup>&sigma;<sup>&mu;</sup></sup></sub><sup style="vertical-align: middle; font-size: 1.1rem;"><sub><span style="text-decoration: overline;">&sigma;</span><sup>&mu;</sup></sub> <sub>0</sub></sup><span style="font-size: 1.3rem;">]</span>
+                <span class="equation-label">where &sigma;<sup>&mu;</sup> = (I, &sigma;<sup>i</sup>) and <span style="text-decoration: overline;">&sigma;</span><sup>&mu;</sup> = (I, -&sigma;<sup>i</sup>)</span>
+            </div>
+        </section>
+
+        <!-- Lorentz Transformation -->
+        <section class="subsection">
+            <h2>Transformation Under Lorentz Symmetry</h2>
+            <p>
+                The defining property of spinors is how they transform under Lorentz transformations (boosts and rotations in spacetime).
+                Unlike vectors, spinors transform according to the <strong>spin representation</strong> of the Lorentz group.
+            </p>
+
+            <h3>Spinor Transformation Law</h3>
+            <p>
+                Under a Lorentz transformation &Lambda;, a Dirac spinor transforms as:
+            </p>
+            <div class="equation-box">
+                &psi;(x) &rarr; &psi;'(x') = S(&Lambda;)&psi;(x)
+                <span class="equation-label">where x' = &Lambda;x and S(&Lambda;) is a 4&times;4 matrix</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                The matrix S(&Lambda;) is constructed from the gamma matrices:
+            </p>
+            <div class="equation-box">
+                S(&Lambda;) = exp(&frac14;&omega;<sub>&mu;&nu;</sub>&sigma;<sup>&mu;&nu;</sup>)
+                <span class="equation-label">where &sigma;<sup>&mu;&nu;</sup> = &frac12;i[&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>]</span>
+            </div>
+
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                Here &omega;<sub>&mu;&nu;</sub> are the parameters of the Lorentz transformation, and &sigma;<sup>&mu;&nu;</sup> are the generators of the spinor representation.
+            </p>
+
+            <h3 style="margin-top: 2rem;">The Double Cover Property</h3>
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                <h4 style="color: #ff7eb6;">Spin-1/2 and 720&deg; Symmetry</h4>
+                <p>
+                    The most remarkable property of spinors is that they change sign under a 360&deg; rotation:
+                </p>
+                <div class="equation-box" style="margin: 1rem 0;">
+                    S(R<sub>2&pi;</sub>) = -I
+                    <span class="equation-label">360&deg; rotation gives minus sign</span>
+                </div>
+                <div class="equation-box" style="margin: 1rem 0;">
+                    S(R<sub>4&pi;</sub>) = +I
+                    <span class="equation-label">720&deg; rotation returns to original</span>
+                </div>
+                <p>
+                    This is why spinors are called <strong>double-valued</strong> representations. The spinor space is the
+                    <em>double cover</em> of the rotation group: Spin(3,1) &rarr; SO(3,1) is a 2-to-1 map.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Connection to SU(2) and SO(3)</h3>
+            <p>
+                For spatial rotations only (no boosts), the transformation reduces to SU(2):
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>SO(3):</strong> The rotation group in 3D space (vectors)</li>
+                <li><strong>SU(2):</strong> The spin group - double cover of SO(3) (spinors)</li>
+                <li><strong>2-to-1 map:</strong> Both +U and -U in SU(2) correspond to the same rotation in SO(3)</li>
+                <li><strong>Spin-1/2:</strong> The fundamental (2-dimensional) representation of SU(2)</li>
+            </ul>
+
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                This structure explains why spin is quantized in half-integer units: spin-1/2 corresponds to the fundamental
+                representation of SU(2), which cannot be obtained from tensor products of vector representations.
+            </p>
+        </section>
+
+        <!-- Connection to Clifford Algebra -->
+        <section class="subsection">
+            <h2>Connection to Clifford Algebras</h2>
+            <p>
+                Spinors emerge naturally from <strong>Clifford algebra</strong> representation theory. The Dirac spinor is
+                the minimal left ideal of the Clifford algebra Cl(3,1).
+            </p>
+
+            <h3>Clifford Algebra Cl(3,1)</h3>
+            <p>
+                The Clifford algebra for <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime with signature (3,1) is generated by basis elements
+                {&gamma;<sup>0</sup>, &gamma;<sup>1</sup>, &gamma;<sup>2</sup>, &gamma;<sup>3</sup>} satisfying:
+            </p>
+            <div class="equation-box">
+                {&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = &gamma;<sup>&mu;</sup>&gamma;<sup>&nu;</sup> + &gamma;<sup>&nu;</sup>&gamma;<sup>&mu;</sup> = 2&eta;<sup>&mu;&nu;</sup>
+                <span class="equation-label">Clifford relation for signature &eta; = diag(+1,-1,-1,-1)</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                The <strong>spinor space</strong> is the vector space on which this algebra acts irreducibly. For Cl(3,1):
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Algebra dimension:</strong> 2<sup>4</sup> = 16 (the 16 Dirac gamma matrices and their products)</li>
+                <li><strong>Spinor dimension:</strong> 2<sup>2</sup> = 4 (the minimal irreducible representation)</li>
+                <li><strong>Formula:</strong> For n-dimensional space, spinor dimension = 2<sup>&lfloor;n/2&rfloor;</sup></li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">Higher-Dimensional Spinors</h3>
+            <p>
+                The Clifford algebra framework generalizes naturally to any dimension. For a D-dimensional spacetime with
+                signature (p,q) where p+q=D:
+            </p>
+            <div class="equation-box">
+                dim(Spinor) = 2<sup>&lfloor;D/2&rfloor;</sup>
+                <span class="equation-label">General spinor dimension formula</span>
+            </div>
+
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Spacetime</th>
+                        <th>Dimension</th>
+                        <th>Signature</th>
+                        <th>Clifford Algebra</th>
+                        <th>Spinor Components</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Observable</strong></td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D</td>
+                        <td>(3,1)</td>
+                        <td>Cl(3,1)</td>
+                        <td>2<sup>2</sup> = 4</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.05);">
+                        <td><strong>Intermediate (G₂)</strong></td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_G2"></span>D</td>
+                        <td>(7,0)</td>
+                        <td>Cl(7,0)</td>
+                        <td>2<sup>3</sup> = 8</td>
+                    </tr>
+                    <tr style="background: rgba(79, 172, 254, 0.05);">
+                        <td><strong>Shadow</strong></td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D</td>
+                        <td>(12,1)</td>
+                        <td>Cl(12,1)</td>
+                        <td>2<sup>6</sup> = 64</td>
+                    </tr>
+                    <tr style="background: rgba(255, 126, 182, 0.05);">
+                        <td><strong>Bulk</strong></td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</td>
+                        <td>(24,1)</td>
+                        <td>Cl(24,1)</td>
+                        <td>2<sup>12</sup> = 4096</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
+                Notice the power-of-two structure: 4 &rarr; 8 &rarr; 64 &rarr; 4096. This reflects the nested Clifford algebra
+                structure preserved through dimensional reduction.
+            </p>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Relevance to Principia Metaphysica Framework</h2>
+            <p>
+                In PM, the <strong>Pneuma field</strong> &Psi;<sub>P</sub> is fundamentally a spinor field in higher dimensions.
+                The framework emphasizes <strong>fermionic primacy</strong>: spinors are the fundamental entities, and bosonic
+                fields (gauge fields, gravity) emerge from spinor bilinears.
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">The Pneuma Spinor: 13D Shadow Manifold</h4>
+                <p style="color: var(--text-secondary);">
+                    After dimensional reduction from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (signature 24,1), the Pneuma field becomes
+                    a <strong>64-component spinor</strong> in the 13D shadow manifold (signature 12,1):
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Bulk:</strong> &Psi;<sub>P,bulk</sub> has 4096 components from Cl(24,1)</li>
+                    <li><strong>Shadow:</strong> &Psi;<sub>P,shadow</sub> has 64 components from Cl(12,1)</li>
+                    <li><strong>Reduction factor:</strong> 4096/64 = 64 = 2<sup>6</sup></li>
+                    <li><strong>Observable:</strong> Standard Dirac spinor with 4 components from Cl(3,1)</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Spinor Condensate and Emergent Geometry</h3>
+            <p>
+                In PM's fermionic primacy approach, the metric tensor (geometry) emerges from spinor bilinears:
+            </p>
+            <div class="equation-box">
+                g<sub>MN</sub> &sim; &lang;<span style="text-decoration: overline;">&Psi;</span><sub>P</sub> &Gamma;<sub>(MN)</sub> &Psi;<sub>P</sub>&rang;
+                <span class="equation-label">Metric from spinor bivector condensate</span>
+            </div>
+
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                where &Gamma;<sub>(MN)</sub> = &frac12;[&Gamma;<sub>M</sub>, &Gamma;<sub>N</sub>] is the antisymmetrized
+                product of gamma matrices (a bivector in Clifford algebra), and &lang;...&rang; denotes the vacuum expectation value.
+            </p>
+
+            <h3 style="margin-top: 2rem;">Generation Structure from 64 Components</h3>
+            <p>
+                The <strong>64-component shadow spinor</strong> provides a natural framework for fermion generations:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>SO(10) GUT:</strong> One generation fits in a 16-dimensional spinor representation</li>
+                <li><strong>4 families:</strong> 64 components = 4 &times; 16, allowing for 3 generations plus extra states</li>
+                <li><strong>Chiral structure:</strong> Odd-dimensional Cl(12,1) projects to even-dimensional Cl(3,1) with well-defined chirality</li>
+                <li><strong>Topological origin:</strong> 3 generations may arise from Wilson lines or moduli on the compact manifold</li>
+            </ul>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">Validated Spinor Dimensions</h4>
+                <p style="color: var(--text-secondary);">
+                    The spinor component counts have been validated through Clifford algebra formulas:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>27D (26,1) bulk:</strong> 2<sup>12</sup> = 4096 components (from 24D core Cl(24,1)) - Validated</li>
+                    <li><strong>13D (12,1) shadow:</strong> 2<sup>6</sup> = 64 components - Validated</li>
+                    <li><strong>Reduction preserves structure:</strong> 4096/64 = 64 = 2<sup>6</sup></li>
+                    <li><strong>4D (3,1) observed:</strong> 2<sup>2</sup> = 4 components (standard Dirac spinor)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Mathematical Details -->
+        <section class="subsection">
+            <h2>Mathematical Details</h2>
+
+            <h3>Dirac Adjoint and Bilinears</h3>
+            <p>
+                The <strong>Dirac adjoint</strong> is defined as:
+            </p>
+            <div class="equation-box">
+                <span style="text-decoration: overline;">&psi;</span> = &psi;<sup>&dagger;</sup>&gamma;<sup>0</sup>
+                <span class="equation-label">Dirac adjoint: row vector</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                where &psi;<sup>&dagger;</sup> is the Hermitian conjugate (complex conjugate transpose). The Dirac adjoint
+                ensures Lorentz covariance of spinor bilinears.
+            </p>
+
+            <h3 style="margin-top: 2rem;">Spinor Bilinear Covariants</h3>
+            <p>
+                There are 16 linearly independent bilinear covariants that can be formed from Dirac spinors, corresponding
+                to the 16 elements of the Clifford algebra Cl(3,1):
+            </p>
+
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Form</th>
+                        <th>Count</th>
+                        <th>Transformation</th>
+                        <th>Physical Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Scalar</strong></td>
+                        <td><span style="text-decoration: overline;">&psi;</span>&psi;</td>
+                        <td>1</td>
+                        <td>Lorentz scalar</td>
+                        <td>Mass term</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pseudoscalar</strong></td>
+                        <td><span style="text-decoration: overline;">&psi;</span>&gamma;<sup>5</sup>&psi;</td>
+                        <td>1</td>
+                        <td>Pseudoscalar</td>
+                        <td>Chirality density</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vector</strong></td>
+                        <td><span style="text-decoration: overline;">&psi;</span>&gamma;<sup>&mu;</sup>&psi;</td>
+                        <td>4</td>
+                        <td>4-vector</td>
+                        <td>Current density</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Axial vector</strong></td>
+                        <td><span style="text-decoration: overline;">&psi;</span>&gamma;<sup>5</sup>&gamma;<sup>&mu;</sup>&psi;</td>
+                        <td>4</td>
+                        <td>Axial 4-vector</td>
+                        <td>Axial current (weak interaction)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Tensor</strong></td>
+                        <td><span style="text-decoration: overline;">&psi;</span>&sigma;<sup>&mu;&nu;</sup>&psi;</td>
+                        <td>6</td>
+                        <td>Antisymmetric tensor</td>
+                        <td>Angular momentum density</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
+                Total: 1 + 1 + 4 + 4 + 6 = 16 independent bilinears, matching the 16-dimensional Clifford algebra Cl(3,1).
+            </p>
+
+            <h3 style="margin-top: 2rem;">Gamma Matrix Explicit Form</h3>
+            <p>
+                In the <strong>Dirac (standard) representation</strong>:
+            </p>
+            <div class="equation-box" style="font-size: 0.95rem;">
+                &gamma;<sup>0</sup> = <span style="font-size: 1.1rem;">[</span><sub style="vertical-align: middle; font-size: 0.9rem;"><sup>I</sup> <sup>0</sup></sub><sup style="vertical-align: middle; font-size: 0.9rem;"><sub>0</sub> <sub>-I</sub></sup><span style="font-size: 1.1rem;">]</span>, &nbsp;&nbsp;
+                &gamma;<sup>i</sup> = <span style="font-size: 1.1rem;">[</span><sub style="vertical-align: middle; font-size: 0.9rem;"><sup>0</sup> <sup>&sigma;<sup>i</sup></sup></sub><sup style="vertical-align: middle; font-size: 0.9rem;"><sub>-&sigma;<sup>i</sup></sub> <sub>0</sub></sup><span style="font-size: 1.1rem;">]</span>
+                <span class="equation-label">where I is the 2&times;2 identity and &sigma;<sup>i</sup> are Pauli matrices</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                In the <strong>Weyl (chiral) representation</strong>:
+            </p>
+            <div class="equation-box" style="font-size: 0.95rem;">
+                &gamma;<sup>0</sup> = <span style="font-size: 1.1rem;">[</span><sub style="vertical-align: middle; font-size: 0.9rem;"><sup>0</sup> <sup>I</sup></sub><sup style="vertical-align: middle; font-size: 0.9rem;"><sub>I</sub> <sub>0</sub></sup><span style="font-size: 1.1rem;">]</span>, &nbsp;&nbsp;
+                &gamma;<sup>i</sup> = <span style="font-size: 1.1rem;">[</span><sub style="vertical-align: middle; font-size: 0.9rem;"><sup>0</sup> <sup>&sigma;<sup>i</sup></sup></sub><sup style="vertical-align: middle; font-size: 0.9rem;"><sub>-&sigma;<sup>i</sup></sub> <sub>0</sub></sup><span style="font-size: 1.1rem;">]</span>
+                <span class="equation-label">Block off-diagonal form makes chirality manifest</span>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05);">
+            <h2>References & Further Reading</h2>
+            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
+                <li>
+                    <strong>Original Paper:</strong> Dirac, P.A.M. (1928) "The Quantum Theory of the Electron"
+                    <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.1928.0023" target="_blank" style="color: var(--accent-primary);">[Proc. Roy. Soc. A]</a>
+                </li>
+                <li>
+                    <strong>Spinor Theory:</strong> Penrose, R. & Rindler, W. "Spinors and Space-Time" (2 volumes)
+                    <a href="https://en.wikipedia.org/wiki/Spinors_and_Space-Time" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Clifford Algebras:</strong> Lounesto, P. "Clifford Algebras and Spinors" (2001)
+                    <a href="https://www.cambridge.org/core/books/clifford-algebras-and-spinors/2C499BB189CFAFE2C26707FEE32C0945" target="_blank" style="color: var(--accent-primary);">[Cambridge]</a>
+                </li>
+                <li>
+                    <strong>QFT Textbook:</strong> Peskin & Schroeder "An Introduction to Quantum Field Theory" Ch. 3
+                    <a href="https://en.wikipedia.org/wiki/An_Introduction_to_Quantum_Field_Theory" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Spinor" target="_blank" style="color: var(--accent-primary);">Spinor</a> |
+                    <a href="https://en.wikipedia.org/wiki/Dirac_spinor" target="_blank" style="color: var(--accent-primary);">Dirac Spinor</a> |
+                    <a href="https://en.wikipedia.org/wiki/Weyl_spinor" target="_blank" style="color: var(--accent-primary);">Weyl Spinor</a> |
+                    <a href="https://en.wikipedia.org/wiki/Chirality_(physics)" target="_blank" style="color: var(--accent-primary);">Chirality</a>
+                </li>
+                <li>
+                    <strong>Video Series:</strong>
+                    <a href="https://www.youtube.com/playlist?list=PLJHszsWbB6hpk5h8lSfBkVrpjsqvUGTCx" target="_blank" style="color: var(--accent-primary);">Spinors for Beginners (eigenchris)</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where Dirac Spinors Are Used in PM</h2>
+            <p>
+                This foundational mathematics appears throughout Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        The fundamental Pneuma field &Psi;<sub>P</sub> is a 64-component spinor in the 13D shadow manifold
+                    </p>
+                    <a href="../sections.html#pneuma-lagrangian" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Fermion Sector</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Three generations of fermions emerge from the spinor structure
+                    </p>
+                    <a href="../Pages/sections.html#fermion-sector" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Dirac Equation</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        The equation of motion for spin-1/2 particles
+                    </p>
+                    <a href="dirac-equation.html" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Clifford Algebra</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        The mathematical framework from which spinors emerge
+                    </p>
+                    <a href="clifford-algebra.html" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="../Pages/foundations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="clifford-algebra.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Clifford Algebra &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+    </div>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff7eb6, #8b7fff);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #8b7fff;
+        }
+        .highlight-box h4 {
+            color: #8b7fff;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script type="module">
+        
+        </script>
+</body>
+</html>

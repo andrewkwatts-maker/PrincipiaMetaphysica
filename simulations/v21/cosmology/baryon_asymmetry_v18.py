@@ -104,7 +104,7 @@ class BaryonAsymmetryV18(SimulationBase):
                 "v19.0: k_bary derived from J, no calibration constants."
             ),
             section_id="6",
-            subsection_id="6.2"
+            subsection_id="6.2.1"
         )
 
         # Topology constants from SSoT registry
@@ -369,7 +369,7 @@ class BaryonAsymmetryV18(SimulationBase):
         """Return section content for paper."""
         return SectionContent(
             section_id="6",
-            subsection_id="6.2",
+            subsection_id="6.2.1",
             title="Baryon Asymmetry from G2 Cycles + Jarlskog",
             abstract=(
                 "The matter-antimatter asymmetry is derived from cycle structure "

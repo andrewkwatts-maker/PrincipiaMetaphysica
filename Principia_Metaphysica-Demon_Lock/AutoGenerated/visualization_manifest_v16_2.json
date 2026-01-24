@@ -1,0 +1,123 @@
+{
+  "version": "23.0",
+  "manuscript_id": "PM-v23.0-FINAL",
+  "generated": "2025-12-31",
+  "description": "Maps high-fidelity visualizations to theoretical sections for paper injection",
+
+  "injections": [
+    {
+      "section": "1.4",
+      "title": "Dimensional Descent",
+      "anchor_text": "transition from the 26D bosonic string vacuum to the 11D M-theory limit",
+      "visualization": "dimensional_projection_stack",
+      "image": "dimensional-reduction-pathway.svg",
+      "simulation": "derivations/g2_geometry_derivations.py",
+      "caption": "Figure 1: The recursive folding of the 26D Leech Lattice into the 11D Supergravity limit via G2 compactification.",
+      "status": "KEEP"
+    },
+    {
+      "section": "2.1",
+      "title": "The G2 Holonomy",
+      "anchor_text": "associative 3-form calibration and the co-associative 4-form residue",
+      "visualization": "g2_manifold_holonomy",
+      "image": "g2-manifold.png",
+      "simulation": "v16/geometric/g2_geometry_v16_0.py",
+      "caption": "Figure 2: Geometric representation of the G2 manifold, highlighting the associative cycles (b3=24) that determine gauge coupling residues.",
+      "status": "KEEP"
+    },
+    {
+      "section": "4.2",
+      "title": "Renormalization Group Flow",
+      "anchor_text": "running of the fine structure constant from the Planck scale to MZ",
+      "visualization": "rg_flow_convergence",
+      "image": "gauge-fixing-time.png",
+      "simulation": "renormalization_group_runner_fixed.py",
+      "caption": "Figure 3: 3-Loop RG evolution of alpha^-1 showing the transition from the bare G2 residue to the CODATA laboratory value.",
+      "status": "KEEP",
+      "v16_2_notes": "Uses Radau method with first_step=1e-12 for numerical stability"
+    },
+    {
+      "section": "5.3",
+      "title": "Neutrino Mass Hierarchy",
+      "anchor_text": "sum of neutrino masses constrained by the octonionic volume suppression",
+      "visualization": "neutrino_mass_landscape",
+      "image": "parameter-space.png",
+      "simulation": "v16/neutrino/neutrino_mixing_v16_0.py",
+      "caption": "Figure 4: Normal Hierarchy octonionic scaling from v16.2 (IO experimental values, theta_g golden angle constraint).",
+      "status": "KEEP",
+      "v16_2_notes": "Updated from Inverted to Normal Hierarchy per NuFIT 6.0"
+    },
+    {
+      "section": "6.1",
+      "title": "CKM Unitarity Triangles",
+      "anchor_text": "Jarlskog invariant as a geometric area within the symplectic boundary",
+      "visualization": "ckm_unitary_triangle",
+      "image": "octonionic-triality-ckm-pmns.png",
+      "simulation": "v16/fermion/ckm_matrix_v16_0.py",
+      "caption": "Figure 5: The CKM Unitary Triangle showing the v16.2 CP phase from doubled golden angle (2*theta_g = 63.44 deg).",
+      "status": "KEEP",
+      "v16_2_notes": "CP phase derived from 2*arctan(1/phi), see Appendix H"
+    },
+    {
+      "section": "7.4",
+      "title": "Dark Energy Thawing",
+      "anchor_text": "thawing equation of state w(z) aligned with DESI 2025 cusp data",
+      "visualization": "de_cusp_z2_anchor",
+      "image": "ricci-flow-hubble-evolution.png",
+      "simulation": "v16/cosmology/dark_energy_thawing_v16_2.py",
+      "caption": "Figure 6: w0-wa parameter space showing PM-v16.2 thawing prediction (w0=-0.9583, wa=-0.204) at 0.02 sigma from DESI 2025.",
+      "status": "NEW",
+      "v16_2_notes": "Essential for DESI 2025 alignment. w0=-1+1/b3, wa=-1/sqrt(b3), see Appendix G"
+    },
+    {
+      "section": "8.2",
+      "title": "Structure Formation",
+      "anchor_text": "S8 clustering suppression induced by torsional metric pressure",
+      "visualization": "matter_power_spectrum_damping",
+      "image": "cosmology-evolution-diagram.png",
+      "simulation": "v16/cosmology/s8_suppression_v16_1.py",
+      "caption": "Figure 7: The matter power spectrum comparing Lambda-CDM clustering with the PM-v16.2 torsional damping result (S8=0.766).",
+      "status": "KEEP"
+    },
+    {
+      "section": "9.1",
+      "title": "Cosmic Microwave Background",
+      "anchor_text": "acoustic peak shifts in the high-ell regime",
+      "visualization": "cmb_acoustic_peaks",
+      "image": "cmb-power-spectrum.png",
+      "simulation": "v16/cosmology/cosmology_intro_v16_0.py",
+      "caption": "Figure 8: CMB Power Spectrum showing v16.2 alignment with Planck 2018/2025 TT-TE-EE datasets.",
+      "status": "KEEP"
+    }
+  ],
+
+  "obsolete_visualizations": [
+    {
+      "id": "static_gut_unification_v16_1",
+      "title": "Static GUT Unification (OBSOLETE)",
+      "reason": "Replaced by logarithmic RG flow. Tree-level approximation invalid in 3-loop framework.",
+      "replacement": "rg_flow_convergence"
+    },
+    {
+      "id": "inverted_hierarchy_density_v16_1",
+      "title": "Inverted Hierarchy Density (OBSOLETE)",
+      "reason": "Replaced by Normal Hierarchy logic per NuFIT 6.0 / PDG 2024.",
+      "replacement": "neutrino_mass_landscape"
+    }
+  ],
+
+  "appendix_references": {
+    "appendix_g": {
+      "title": "Non-Linear Ricci Flow and Redshift Anchors",
+      "visualization": "de_cusp_z2_anchor",
+      "figure_ref": "Figure 6",
+      "key_result": "w(z) = w0 + wa * z/(1+z) with z=2.0 Ricci flow anchor"
+    },
+    "appendix_h": {
+      "title": "Symplectic Parity and CP-Phase Rotation",
+      "visualization": "ckm_unitary_triangle",
+      "figure_ref": "Figure 5",
+      "key_result": "delta_CP = 2 * arctan(1/phi) = 63.44 degrees"
+    }
+  }
+}

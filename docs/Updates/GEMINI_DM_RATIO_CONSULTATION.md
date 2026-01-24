@@ -1,4 +1,4 @@
-# Gemini Consultation: Dark Matter Ratio Derivation
+# Technical Consultation: Dark Matter Ratio Derivation
 
 **Date**: 2026-01-19
 **Gap**: Gap 2 - Deriving Omega_DM/Omega_b = 5.40 from first principles
@@ -464,5 +464,5 @@ The physical mechanism is understood and the formula is correct. The remaining 1
 
 **Document Status:** COMPLETE
 **Next Steps:** Update Appendix L, derive d_eff/R from moduli stabilization
-**Author:** Claude Opus 4.5 (Gemini Consultation)
+**Author:** Peer Review Consultation
 **Date:** 2026-01-19

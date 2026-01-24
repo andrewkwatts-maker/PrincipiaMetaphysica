@@ -47,7 +47,7 @@ The framework features dual shadow universes connected by a Euclidean bridge, al
 
 Time emerges from thermal entropy via the Two-Time Thermal Hypothesis: observable thermal time couples to an orthogonal hidden time dimension. The framework predicts dark energy equation of state w₀ = -23/24 ≈ -0.9583 (v16.2 thawing quintessence formula: w₀ = -1 + 1/b₃) and w_a = -1/√24 ≈ -0.204, matching DESI 2025 thawing constraint within 0.02σ. SO(10) grand unification emerges naturally from the G₂ compactification. Shared extra dimensions produce Kaluza-Klein graviton resonances at approximately 5 TeV, testable at the High-Luminosity LHC.
 
-Six critical mathematical issues have been resolved: (1) Generation count correctly derived from flux-dressed topology rather than bare Euler characteristic; (2) Dark energy attractor to w = -1.0 at late times via Mashiach minimum; (3) Spinor dimensions validated via Clifford algebra; (4) Dimensional reduction pathway clarified (gauge projection followed by compactification); (5) Previously undefined parameters now derived from geometry; (6) Gauge coupling unification achieved with 3% precision. Framework validation shows 40 of 72 gates verified (56% with remaining 30 being untestable foundational axioms and 2 mathematical), with 25 of 26 predictions within 1 sigma experimental error bars (chi^2_reduced = 0.3).
+Six critical mathematical issues have been resolved: (1) Generation count correctly derived from flux-dressed topology rather than bare Euler characteristic; (2) Dark energy attractor to w = -1.0 at late times via Mashiach minimum; (3) Spinor dimensions validated via Clifford algebra; (4) Dimensional reduction pathway clarified (gauge projection followed by compactification); (5) Previously undefined parameters now derived from geometry; (6) Gauge coupling unification achieved with 3% precision. Framework validation shows 72/72 gates certified (of which ~88% are DERIVED or GEOMETRIC, ~7% are FITTED, ~4% use INPUT values). See GATE_CATEGORIZATION.md for detailed classification.
 
 ---
 
@@ -104,9 +104,9 @@ beta ~ 0.5 (residue-tuned)
 
 ---
 
-## Key Validated Predictions (v16.2)
+## Key Validated Predictions (v23.0)
 
-Principia Metaphysica makes **parameter-free predictions** from G2 topology that match experiment:
+Principia Metaphysica derives predictions from G2 topology that match experiment:
 
 ### Fundamental Constants
 | Prediction | PM Value | Experiment | Agreement |
@@ -121,21 +121,21 @@ Principia Metaphysica makes **parameter-free predictions** from G2 topology that
 | theta_12 (solar) | 33.59 deg | 33.41 +/- 0.75 deg | 0.24 sigma |
 | theta_13 (reactor) | 8.65 deg | 8.63 +/- 0.11 deg | 0.16 sigma |
 | theta_23 (atmospheric) | 49.75 deg | 49.3 +/- 1.0 deg | 0.45 sigma |
-| Mass Sum (Sum m_nu) | 0.099 eV | < 0.12 eV (Planck) | PASS |
+| Mass Sum (Sum m_nu) | 0.099 eV | < 0.12 eV (Planck 2018) | PASS |
 
 ### Cosmology (DESI 2025 thawing comparison)
-| Parameter | PM Prediction (v16.2) | DESI 2025 (thawing) | Agreement |
+| Parameter | PM Prediction (v23.0) | DESI 2025 (thawing) | Agreement |
 |-----------|----------------------|---------------------|-----------|
 | Dark Energy w_0 | -0.9583 (-23/24) | -0.957 +/- 0.067 | 0.02 sigma |
 | Evolution w_a | -0.204 (-1/√24) | -0.99 +/- 0.32 | 2.4 sigma |
 
-### New in v16.2 "STERILE"
+### Key Features
 - **72 Gates of Integrity**: Complete sterile certification - all gates LOCKED
-- **Zero-Degree-of-Freedom**: No fitted parameters - pure geometric derivation
-- **DESI 2025 Alignment**: w0 = -23/24 = -0.9583 matches at 0.027 sigma (near-perfect)
-- **Hubble Tension Resolved**: H0 = 70.42 km/s/Mpc bridges CMB and local measurements
-- **Dual Shadow Framework**: dual 13D(12,1) shadows via 12×(2,0) bridge pairs
-- **116 formulas with complete derivation chains**
+- **Reduced Parameter Count**: ~5 fitted parameters vs Standard Model's 19+
+- **DESI 2025 Alignment**: w0 = -23/24 = -0.9583 consistent with DESI thawing constraint
+- **Hubble Tension**: H0 prediction bridges CMB and local measurements (exploratory)
+- **Dual Shadow Framework**: dual 13D(12,1) shadows via 12x(2,0) bridge pairs
+- **116 formulas with derivation chains**
 
 ### New in v23.0 "12PAIR"
 - **12x(2,0) Paired Bridge System**: Replaces single bridge with 12 paired modules
@@ -158,7 +158,7 @@ All 72 gates derive from:
 
 ## The Octonionic Constraint: Why 3 Generations?
 
-Principia Metaphysica v16.1 demonstrates that the 3 generations of matter are not arbitrary parameters but **topological necessities**.
+Principia Metaphysica proposes that the 3 generations of matter emerge from topological constraints rather than being arbitrary parameters.
 
 - **Vacuum Capacity:** The G₂ manifold has a transverse dimensionality of 24 (the third Betti number b₃ = 24), representing the total "capacity" for independent matter modes.
 - **Matter Structure:** The fundamental degrees of freedom are defined by the Octonions (𝕆), which have dimension 8. This reflects the 8-brane structure of the two-time framework.
@@ -199,10 +199,10 @@ python serve.py
 
 Then open http://localhost:8000 in your browser.
 
-### v22 Module Verification
+### v23 Module Verification
 
 ```python
-# Verify v22 12-pair imports
+# Verify v23 12-pair imports
 from simulations import __version__
 print(f"Version: {__version__}")  # Should show "23.0"
 
@@ -457,7 +457,7 @@ Located in `simulations/data/experimental/`:
 - Source: NIST CODATA database
 
 **pdg_2024_values.json**
-- Particle Data Group 2024 review
+- Particle Data Group 2024 Review (PDG 2024)
 - Particle masses, lifetimes, branching ratios
 - Source: PDG Live
 
@@ -481,6 +481,22 @@ Located in `simulations/data/experimental/`:
 **sections.json**
 - Paper content in structured format
 - Section hierarchy and cross-references
+
+---
+
+## Scientific Status and Caveats
+
+**Important**: Principia Metaphysica is a speculative theoretical framework, not an established physical theory. The following caveats apply:
+
+1. **Fitted Parameters**: ~5 gates (~7%) use fitted parameters (Yukawa couplings, Hubble angle, etc.). These are acknowledged limitations, not predictions.
+
+2. **Speculative Elements**: The octonionic mixing mechanism, gnosis/consciousness claims, and some cosmological derivations remain conjectural.
+
+3. **Falsification Risks**: The Inverted Ordering prediction (sum m_nu ~ 0.10 eV) is in potential tension with DESI 2024 bounds (< 0.072 eV at 95% CL).
+
+4. **Derivation Rigor**: Some formulas (e.g., alpha^-1, k_gimel) achieve numerical precision but lack rigorous first-principles derivation paths.
+
+See [GATE_CATEGORIZATION.md](docs/peer_review_resolution/GATE_CATEGORIZATION.md) for detailed classification of predictions vs fitted parameters.
 
 ---
 
@@ -620,7 +636,7 @@ GitHub: [andrewkwatts-maker](https://github.com/andrewkwatts-maker)
 
 This work builds upon:
 - CODATA 2022 recommended values (NIST)
-- Particle Data Group 2024 review
+- Particle Data Group 2024 Review (PDG 2024)
 - NuFIT 6.0 neutrino oscillation analysis
 - DESI 2025 dark energy survey results
 - Mathematical foundations from the G₂ manifold literature

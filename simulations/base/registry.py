@@ -745,7 +745,12 @@ class PMRegistry:
             key = content.subsection_id
 
         if key in self._sections:
-            warnings.warn(f"Overwriting section {key}")
+            existing = self._sections[key].content
+            # Only warn if content actually differs (not during normal re-registration)
+            if (existing.title != content.title or
+                existing.abstract != content.abstract or
+                existing.content_blocks != content.content_blocks):
+                warnings.warn(f"Overwriting section {key} with different content")
 
         self._sections[key] = SectionEntry(content=content)
 

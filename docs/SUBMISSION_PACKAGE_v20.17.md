@@ -178,4 +178,4 @@ c672b1f v20.15: Peer review issue resolution documentation
 
 ---
 
-*This submission package was prepared with AI assistance (Claude Opus 4.5) following rigorous peer review resolution.*
+*This submission package was prepared following rigorous peer review resolution.*

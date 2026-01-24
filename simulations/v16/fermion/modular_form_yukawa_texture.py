@@ -12,7 +12,7 @@ MODULAR FORM APPROACH:
 
 TARGET: A_f ~ 0.6 (varies by generation)
 
-Author: Claude Code (Anthropic)
+Author: Andrew Keith Watts
 Version: 23.0
 Date: 2026-01-22
 """

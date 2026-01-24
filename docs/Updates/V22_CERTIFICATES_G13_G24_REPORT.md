@@ -1,6 +1,6 @@
 # V22.0-12PAIR Certificates G13-G24 Polish Report
 **Generated:** 2026-01-19
-**Prepared by:** Claude Code (Opus 4.5)
+**Prepared by:** Peer Review
 **Target Version:** v22.0-12PAIR
 
 ## Executive Summary

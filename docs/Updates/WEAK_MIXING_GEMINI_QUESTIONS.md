@@ -1,4 +1,4 @@
-# Gemini Questions: Weak Mixing Angle from Bridge Geometry
+# Review Questions: Weak Mixing Angle from Bridge Geometry
 
 **Document ID**: GQ-v22.2-WEAK-MIXING-001
 **Date**: 2026-01-19

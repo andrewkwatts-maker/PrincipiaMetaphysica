@@ -1,4 +1,4 @@
-# Gemini Consultation: delta_CKM Derivation from G2 Topology
+# Technical Consultation: delta_CKM Derivation from G2 Topology
 
 **Version**: 23.0
 **Date**: 2026-01-22

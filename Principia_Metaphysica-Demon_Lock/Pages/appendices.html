@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<!--
+    Principia Metaphysica: Appendix Index
+    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+    A Geometric Unification of the Standard Model and Cosmology
+    from M-Theory on a Single G₂ Manifold
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appendices - Principia Metaphysica</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+<link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-paper: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --accent: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --border: #e0e0e0;
+            --code-bg: #f5f5f5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 11pt;
+        }
+
+        .paper {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 50px 60px;
+            background: var(--bg-paper);
+            color: var(--text-dark);
+            min-height: 100vh;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: var(--accent);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-top: 3rem;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        /* Header Navigation */
+        .header-nav {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-nav a {
+            color: var(--accent);
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .header-nav a:hover {
+            color: var(--accent-secondary);
+        }
+
+        /* Appendix Grid */
+        .appendix-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .appendix-card {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.03));
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--accent);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .appendix-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.15);
+        }
+
+        .appendix-label {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .appendix-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .appendix-title a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .appendix-title a:hover {
+            color: var(--accent);
+        }
+
+        .appendix-description {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0.75rem;
+        }
+
+        .appendix-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .appendix-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .btn-expand {
+            background: linear-gradient(135deg, var(--accent), #6b5fff);
+            color: white;
+        }
+
+        .btn-expand:hover {
+            background: linear-gradient(135deg, #9d91ff, var(--accent));
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .btn-expand.active {
+            background: linear-gradient(135deg, var(--accent-secondary), #ff5ea0);
+        }
+
+        .btn-view-paper {
+            background: transparent;
+            color: var(--accent);
+            border: 1px solid var(--accent);
+        }
+
+        .btn-view-paper:hover {
+            background: rgba(139, 127, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Expandable content */
+        .appendix-content {
+            display: none;
+            margin-top: 1.25rem;
+            padding: 1.25rem;
+            background: rgba(139, 127, 255, 0.03);
+            border: 1px solid rgba(139, 127, 255, 0.15);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .appendix-content.expanded {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .appendix-content h4 {
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            margin-top: 0;
+        }
+
+        .appendix-content p {
+            margin-bottom: 0.75rem;
+        }
+
+        .appendix-content ul {
+            margin: 0.75rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .appendix-content li {
+            margin-bottom: 0.4rem;
+        }
+
+        .appendix-content .equation {
+            background: rgba(0, 0, 0, 0.03);
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            overflow-x: auto;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            margin: 3rem 0 2rem 0;
+            border-top: 2px solid var(--border);
+            padding-top: 2rem;
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+            color: var(--accent-secondary);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+            text-align: center;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-content">
+    <!-- Header injected by pm-header.js -->
+
+    <main>
+        <div class="paper">
+        <!-- Title -->
+        <h1>Appendices</h1>
+        <p style="text-align: center; font-style: italic; color: #777; margin-bottom: 2rem;">
+            Principia Metaphysica: A Geometric Unification of the Standard Model and Cosmology
+        </p>
+
+        <!-- Introduction -->
+        <p>
+            This index provides access to all appendices supporting the Principia Metaphysica framework.
+            The appendices are organized into two categories: theoretical derivations embedded in the main paper,
+            and computational implementations available in the supplementary documentation.
+        </p>
+
+        <!-- Main Paper Appendices -->
+        <h2>Main Paper Appendices</h2>
+        <p>
+            These appendices provide detailed mathematical derivations, calculations, and supplementary material
+            referenced throughout the main paper. Each appendix includes both analytical results and simulation code.
+        </p>
+
+        <div class="appendix-grid">
+            <!-- Appendix A -->
+            <div class="appendix-card" id="card-appendix-a">
+                <div class="appendix-label">Appendix A</div>
+                <div class="appendix-title">Virasoro Anomaly Cancellation</div>
+                <div class="appendix-description">
+                    Derivation of the critical dimension $D = 26$ from BRST quantization of the bosonic string.
+                    Validates the v21 (24,1) unified time signature compatibility with Virasoro central charge cancellation
+                    and includes dual-shadow Euclidean bridge analysis.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-a')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-a" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-a">
+                    <h4>Key Results</h4>
+                    <p>The Virasoro central charge calculation demonstrates:</p>
+                    <ul>
+                        <li>Critical dimension $D = 26$ emerges from BRST cohomology requirements</li>
+                        <li>The v21 (24,1) unified time signature is compatible with conformal anomaly cancellation</li>
+                        <li>The dual-shadow Euclidean bridge structure ensures ghost-free unitarity</li>
+                    </ul>
+                    <div class="equation">
+                        $$c_{\text{total}} = c_{\text{matter}} + c_{\text{ghost}} = 26 - 26 = 0$$
+                    </div>
+                    <p>This vanishing central charge is essential for consistent string quantization. The v22 framework achieves this with unified time (24,1) where 12×(2,0) bridge pairs warp to create 2×13D(12,1) shadows through coordinate selection mechanism.</p>
+                </div>
+            </div>
+
+            <!-- Appendix B -->
+            <div class="appendix-card" id="card-appendix-b">
+                <div class="appendix-label">Appendix B</div>
+                <div class="appendix-title">Generation Number Derivation</div>
+                <div class="appendix-description">
+                    Extended index formula demonstrating how three fermion generations emerge from
+                    G₂ holonomy group structure. Includes chirality operator analysis and
+                    spinor representation calculations on the seven-dimensional manifold.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-b')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-b" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-b">
+                    <h4>Key Results</h4>
+                    <p>The generation number emerges from the Atiyah-Singer index theorem on the G₂ manifold:</p>
+                    <ul>
+                        <li>Three fermion generations arise from $b_3(M_{G_2}) = 3$ Betti number topology</li>
+                        <li>Chirality operator analysis confirms left-handed fermion localization</li>
+                        <li>Spinor representations under $G_2 \subset Spin(7)$ yield correct quantum numbers</li>
+                    </ul>
+                    <div class="equation">
+                        $$N_{\text{gen}} = \frac{1}{2}|b_3(M_{G_2}) - b_2(M_{G_2})| = 3$$
+                    </div>
+                    <p>This topological result is robust against continuous deformations of the manifold.</p>
+                </div>
+            </div>
+
+            <!-- Appendix C -->
+            <div class="appendix-card" id="card-appendix-c">
+                <div class="appendix-label">Appendix C</div>
+                <div class="appendix-title">Atmospheric Mixing Angle Derivation</div>
+                <div class="appendix-description">
+                    Calculation of the PMNS atmospheric mixing angle $\theta_{23}$ from G₂ geometry.
+                    Derives the prediction $\theta_{23} = 42.3°$ from associative 3-cycle volumes
+                    and compares with experimental value $42.1° \pm 0.7°$.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-c')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-c" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-c">
+                    <h4>Key Results</h4>
+                    <p>The atmospheric mixing angle derives from G₂ associative 3-cycle geometry:</p>
+                    <ul>
+                        <li>Volume ratios of associative cycles determine neutrino mass matrix entries</li>
+                        <li>Prediction: $\theta_{23} = 42.3°$ from geometric constraints</li>
+                        <li>Experimental: $\theta_{23} = 42.1° \pm 0.7°$ (excellent agreement)</li>
+                    </ul>
+                    <div class="equation">
+                        $$\tan^2\theta_{23} = \frac{\text{Vol}(\Sigma_\mu)}{\text{Vol}(\Sigma_\tau)} \approx 0.83$$
+                    </div>
+                    <p>This geometric origin explains the near-maximal but non-maximal atmospheric mixing.</p>
+                </div>
+            </div>
+
+            <!-- Appendix D -->
+            <div class="appendix-card" id="card-appendix-d">
+                <div class="appendix-label">Appendix D</div>
+                <div class="appendix-title">Dark Energy Equation of State</div>
+                <div class="appendix-description">
+                    Derivation of the dark energy equation of state w₀ = -23/24 ≈ -0.9583 from
+                    G₂ thawing quintessence (v16.2). Includes full simulation code for
+                    dark energy evolution and comparison with DESI 2025 thawing observations.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-d')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-d" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-d">
+                    <h4>Key Results</h4>
+                    <p>The dark energy equation of state emerges from G₂ moduli dynamics:</p>
+                    <ul>
+                        <li>Thawing quintessence from slowly-rolling G₂ moduli fields</li>
+                        <li>Prediction: $w_0 = -23/24 \approx -0.9583$</li>
+                        <li>DESI 2025: $w_0 = -0.55^{+0.39}_{-0.21}$ (thawing preferred)</li>
+                    </ul>
+                    <div class="equation">
+                        $$w_0 = -1 + \frac{1}{24} = -\frac{23}{24}$$
+                    </div>
+                    <p>The 1/24 deviation from cosmological constant arises from the v22 breathing dark energy mechanism via bridge pressure mismatch between dual 13D(12,1) shadows.</p>
+                </div>
+            </div>
+
+            <!-- Appendix E -->
+            <div class="appendix-card" id="card-appendix-e">
+                <div class="appendix-label">Appendix E</div>
+                <div class="appendix-title">Proton Decay Calculation</div>
+                <div class="appendix-description">
+                    Detailed calculation of proton decay lifetime from dimension-6 effective operators.
+                    Predicts $\tau_{p \to \pi^0 e^+} = 1.3 \times 10^{35}$ years, testable by
+                    Hyper-Kamiokande. Includes geometric suppression factors from G₂ structure.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-e')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-e" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-e">
+                    <h4>Key Results</h4>
+                    <p>Proton decay rate calculation from dimension-6 operators:</p>
+                    <ul>
+                        <li>Geometric suppression from G₂ wavefunction overlap</li>
+                        <li>Prediction: $\tau_{p \to \pi^0 e^+} = 1.3 \times 10^{35}$ years</li>
+                        <li>Hyper-Kamiokande sensitivity: $\sim 10^{35}$ years (testable)</li>
+                    </ul>
+                    <div class="equation">
+                        $$\tau_p \sim \frac{M_{\text{GUT}}^4}{\alpha_{\text{GUT}}^2 m_p^5} \cdot f_{G_2}$$
+                    </div>
+                    <p>The geometric factor $f_{G_2}$ provides crucial suppression beyond minimal GUT predictions.</p>
+                </div>
+            </div>
+
+            <!-- Appendix F -->
+            <div class="appendix-card" id="card-appendix-f">
+                <div class="appendix-label">Appendix F</div>
+                <div class="appendix-title">v21 Dimensional Decomposition</div>
+                <div class="appendix-description">
+                    Mathematical framework for reducing 27D(26,1) unified time spacetime to
+                    dual 13D(12,1) shadow spaces via 12×(2,0) bridge pairs. Shows how the OR reduction operator
+                    with coordinate selection mechanism implements Möbius topology and generates observable 4D physics.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-f')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-f" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-f">
+                    <h4>Key Results</h4>
+                    <p>v22 Dimensional reduction from 27D(26,1) to dual 13D(12,1) shadows:</p>
+                    <ul>
+                        <li>12×(2,0) bridge pairs warp to create 2×13D(12,1) shadows via coordinate selection</li>
+                        <li>Per-shadow G₂ compactification: $13D(12,1) \to 4D(3,1) \times M_{G_2}^7$</li>
+                        <li>OR operator $R_\perp^2 = -I$ implements Möbius spinor double-cover</li>
+                    </ul>
+                    <div class="equation">
+                        $$M^{27D(26,1)} \xrightarrow{\text{12×(2,0) bridges + C^{2,0}}} 2\times M^{13D(12,1)} \xrightarrow{G_2} 4D \times M_{G_2}^7$$
+                    </div>
+                    <p>This cascade preserves all physical degrees of freedom while eliminating ghosts via unified time structure.</p>
+                </div>
+            </div>
+
+            <!-- Appendix G -->
+            <div class="appendix-card" id="card-appendix-g">
+                <div class="appendix-label">Appendix G</div>
+                <div class="appendix-title">Effective Torsion from Flux Quantization</div>
+                <div class="appendix-description">
+                    Derivation of effective torsion tensor from G₂ flux quantization conditions.
+                    Shows how M-theory 4-form flux generates torsion corrections to Einstein gravity
+                    and influences gravitational wave propagation.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-g')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-g" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-g">
+                    <h4>Key Results</h4>
+                    <p>Effective torsion from M-theory 4-form flux:</p>
+                    <ul>
+                        <li>G₂ flux quantization: $\int_{\Sigma_4} G_4 = 2\pi n$</li>
+                        <li>Torsion tensor emerges from flux backreaction on geometry</li>
+                        <li>Modified GW propagation with frequency-dependent dispersion</li>
+                    </ul>
+                    <div class="equation">
+                        $$T^{\rho}_{\mu\nu} = \frac{1}{M_P^2} G_{\mu\nu\alpha\beta} \star G^{\alpha\beta\rho}$$
+                    </div>
+                    <p>This torsion provides observable corrections to gravitational wave phase evolution.</p>
+                </div>
+            </div>
+
+            <!-- Appendix H -->
+            <div class="appendix-card" id="card-appendix-h">
+                <div class="appendix-label">Appendix H</div>
+                <div class="appendix-title">Proton Decay Branching Ratio</div>
+                <div class="appendix-description">
+                    Calculation of the branching ratio $\text{BR}(p \to \pi^0 e^+) / \text{BR}(p \to K^+ \bar{\nu})$
+                    from flavor-specific Yukawa couplings. Predicts ratio $\approx 2.1$ from
+                    G₂ holonomy constraints on quark-lepton transitions.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-h')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-h" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-h">
+                    <h4>Key Results</h4>
+                    <p>Proton decay branching ratio from G₂ flavor structure:</p>
+                    <ul>
+                        <li>Flavor-specific Yukawa couplings from G₂ associative cycles</li>
+                        <li>Prediction: $\text{BR}(p \to \pi^0 e^+) / \text{BR}(p \to K^+ \bar{\nu}) \approx 2.1$</li>
+                        <li>Distinguishes PM from minimal SU(5) GUT predictions</li>
+                    </ul>
+                    <div class="equation">
+                        $$\frac{\Gamma(p \to \pi^0 e^+)}{\Gamma(p \to K^+ \bar{\nu})} = \left|\frac{Y_e}{Y_s}\right|^2 \cdot \frac{m_\pi^2}{m_K^2}$$
+                    </div>
+                    <p>This ratio provides a critical test distinguishing PM from other GUT frameworks.</p>
+                </div>
+            </div>
+
+            <!-- Appendix I -->
+            <div class="appendix-card" id="card-appendix-i">
+                <div class="appendix-label">Appendix I</div>
+                <div class="appendix-title">Gravitational Wave Dispersion</div>
+                <div class="appendix-description">
+                    Modified dispersion relation for gravitational waves from 2T physics.
+                    Predicts observable effects at $f \sim 10^{-15}$ Hz, testable by LISA.
+                    Includes loop correction analysis and orthogonal time propagation effects.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-i')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-i" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-i">
+                    <h4>Key Results</h4>
+                    <p>Modified GW dispersion from v21 bridge breathing dynamics:</p>
+                    <ul>
+                        <li>Euclidean bridge oscillations create frequency-dependent phase velocity</li>
+                        <li>Observable effects boosted to $f \sim 10^{-15}$ Hz (47 orders of magnitude)</li>
+                        <li>LISA sensitivity: detectable phase shifts in binary inspirals</li>
+                    </ul>
+                    <div class="equation">
+                        $$\omega^2 = k^2 c^2 \left(1 + \frac{\ell_P^2 k^2}{24}\right)$$
+                    </div>
+                    <p>The 1/24 factor connects to the b₃ = 24 topological invariant of the v21 dual-shadow G₂ structure.</p>
+                </div>
+            </div>
+
+            <!-- Appendix J -->
+            <div class="appendix-card" id="card-appendix-j">
+                <div class="appendix-label">Appendix J</div>
+                <div class="appendix-title">Monte Carlo Error Propagation</div>
+                <div class="appendix-description">
+                    Statistical methodology for error propagation through complex parameter dependencies.
+                    Uses Monte Carlo sampling with 100,000 trials to validate theoretical predictions
+                    against experimental uncertainties.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-j')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-j" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-j">
+                    <h4>Key Results</h4>
+                    <p>Monte Carlo methodology for uncertainty quantification:</p>
+                    <ul>
+                        <li>100,000 trial sampling for robust statistical convergence</li>
+                        <li>Correlated parameter variations preserve physical constraints</li>
+                        <li>Non-Gaussian error distributions properly characterized</li>
+                    </ul>
+                    <div class="equation">
+                        $$\sigma_f = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(f(\vec{p}_i) - \bar{f})^2}$$
+                    </div>
+                    <p>This methodology ensures rigorous uncertainty quantification for all PM predictions.</p>
+                </div>
+            </div>
+
+            <!-- Appendix K -->
+            <div class="appendix-card" id="card-appendix-k">
+                <div class="appendix-label">Appendix K</div>
+                <div class="appendix-title">Transparency Statement</div>
+                <div class="appendix-description">
+                    Comprehensive disclosure of the research process, including computational tools
+                    used in mathematical derivations, code development, and paper writing.
+                    Details methodology, limitations, and validation procedures.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-k')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-k" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-k">
+                    <h4>Key Points</h4>
+                    <p>Comprehensive research transparency disclosure:</p>
+                    <ul>
+                        <li>AI-assisted mathematical derivation verification using Claude</li>
+                        <li>Independent SymPy/QuTiP numerical validation of all results</li>
+                        <li>Open-source simulation code available for reproducibility</li>
+                        <li>Human oversight maintained throughout the research process</li>
+                    </ul>
+                    <p>This appendix ensures complete transparency regarding the tools and methods used in developing the Principia Metaphysica framework.</p>
+                </div>
+            </div>
+
+            <!-- Appendix L -->
+            <div class="appendix-card" id="card-appendix-l">
+                <div class="appendix-label">Appendix L</div>
+                <div class="appendix-title">Complete PM Values Summary</div>
+                <div class="appendix-description">
+                    Comprehensive table of all theoretical predictions, experimental values,
+                    and simulation results. Includes 23 key observables spanning particle physics,
+                    cosmology, and quantum gravity with full uncertainty analysis.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-l')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-l" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-l">
+                    <h4>Summary Overview</h4>
+                    <p>Complete compilation of PM theoretical predictions:</p>
+                    <ul>
+                        <li>23 key observables across particle physics, cosmology, and quantum gravity</li>
+                        <li>Full uncertainty analysis with Monte Carlo propagation</li>
+                        <li>Comparison with current experimental bounds and future sensitivity</li>
+                        <li>Statistical significance assessment for each prediction</li>
+                    </ul>
+                    <p>This appendix provides a comprehensive reference for all quantitative predictions of the framework, enabling systematic experimental validation.</p>
+                </div>
+            </div>
+
+            <!-- Appendix M -->
+            <div class="appendix-card" id="card-appendix-m">
+                <div class="appendix-label">Appendix M</div>
+                <div class="appendix-title">Speculative Extensions - Consciousness and the Pneuma Vacuum</div>
+                <div class="appendix-description">
+                    Exploratory discussion of potential connections between the pneuma vacuum field
+                    and consciousness phenomena. Includes Orch OR integration, entanglement-mediated
+                    information processing, and testable predictions for quantum biology experiments.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-m')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-m" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-m">
+                    <h4>Speculative Content</h4>
+                    <p>Exploratory connections between PM and consciousness studies:</p>
+                    <ul>
+                        <li>Pneuma vacuum field as potential substrate for quantum coherence</li>
+                        <li>Integration with Penrose-Hameroff Orch OR hypothesis</li>
+                        <li>Entanglement-mediated information processing in biological systems</li>
+                        <li>Testable predictions for quantum biology experiments</li>
+                    </ul>
+                    <p><strong>Note:</strong> This appendix is explicitly speculative and distinct from the rigorous derivations in the main framework.</p>
+                </div>
+            </div>
+
+            <!-- Appendix N -->
+            <div class="appendix-card" id="card-appendix-n">
+                <div class="appendix-label">Appendix N</div>
+                <div class="appendix-title">G₂ Topology Landscape</div>
+                <div class="appendix-description">
+                    Complete enumeration of known G₂ manifold constructions from twisted connected sums,
+                    resolutions, and other geometric techniques. Documents the landscape of viable
+                    compactification candidates and their topological invariants.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-n')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="paper.html#appendix-topology-list" class="appendix-btn btn-view-paper">View in Paper</a>
+                </div>
+                <div class="appendix-content" id="content-appendix-n">
+                    <h4>Topology Overview</h4>
+                    <p>Comprehensive G₂ manifold landscape enumeration:</p>
+                    <ul>
+                        <li>Twisted connected sum (TCS) constructions from Fano threefolds</li>
+                        <li>Joyce orbifold resolutions and their deformations</li>
+                        <li>Topological invariants: $b_2$, $b_3$ Betti numbers for each class</li>
+                        <li>Candidate selection criteria for SM gauge group emergence</li>
+                    </ul>
+                    <p>This landscape analysis identifies the manifold classes compatible with three fermion generations and correct gauge symmetry breaking.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Computational Appendices -->
+        <div class="section-divider">
+            <h2 class="section-header">Computational Appendices</h2>
+            <p>
+                Detailed SymPy and QuTiP implementations of key calculations. These appendices provide
+                executable code examples, numerical validations, and rigorous quantum simulations
+                supporting the theoretical framework.
+            </p>
+        </div>
+
+        <div class="appendix-grid">
+            <!-- Computational Appendix A -->
+            <div class="appendix-card" id="card-comp-a">
+                <div class="appendix-label">Computational Appendix A</div>
+                <div class="appendix-title">Gravitational Wave Dispersion - SymPy Implementation</div>
+                <div class="appendix-description">
+                    Complete SymPy implementation of the GW dispersion relation with linear corrections
+                    from orthogonal time. Demonstrates boost from $\sim 10^{-32}$ to $\sim 10^{-15}$ Hz,
+                    bringing effects into LISA's detection range.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('comp-a')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="../docs/computational-appendices.html#appendix-a" class="appendix-btn btn-view-paper">View Code</a>
+                </div>
+                <div class="appendix-content" id="content-comp-a">
+                    <h4>Implementation Summary</h4>
+                    <p>SymPy implementation of modified dispersion relation:</p>
+                    <ul>
+                        <li>Symbolic derivation of frequency-dependent phase velocity</li>
+                        <li>Numerical evaluation across LISA frequency band</li>
+                        <li>47 orders of magnitude boost from orthogonal time effects</li>
+                    </ul>
+                    <p>The code provides reproducible verification of the GW dispersion predictions from the theoretical framework.</p>
+                </div>
+            </div>
+
+            <!-- Computational Appendix B -->
+            <div class="appendix-card" id="card-comp-b">
+                <div class="appendix-label">Computational Appendix B</div>
+                <div class="appendix-title">Moduli Potential Stability - QuTiP Quantum Simulation</div>
+                <div class="appendix-description">
+                    QuTiP quantum simulation of moduli potential stability with swampland-compliant parameters.
+                    Validates that the G₂ manifold remains stable under quantum corrections and
+                    thermal fluctuations.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('comp-b')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="../docs/computational-appendices.html#appendix-b" class="appendix-btn btn-view-paper">View Code</a>
+                </div>
+                <div class="appendix-content" id="content-comp-b">
+                    <h4>Implementation Summary</h4>
+                    <p>QuTiP quantum simulation of moduli stability:</p>
+                    <ul>
+                        <li>Full Hamiltonian construction for moduli potential</li>
+                        <li>Swampland distance conjecture compliance verification</li>
+                        <li>Thermal state analysis at cosmological temperatures</li>
+                    </ul>
+                    <p>Demonstrates long-term stability of the G₂ compactification under quantum fluctuations.</p>
+                </div>
+            </div>
+
+            <!-- Computational Appendix C -->
+            <div class="appendix-card" id="card-comp-c">
+                <div class="appendix-label">Computational Appendix C</div>
+                <div class="appendix-title">Vacuum Tunneling Rates - CDL Instanton Calculations</div>
+                <div class="appendix-description">
+                    Coleman-De Luccia instanton calculations for vacuum tunneling between different
+                    G₂ flux vacua. Computes bounce actions and tunneling rates for various
+                    potential barrier heights.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('comp-c')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="../docs/computational-appendices.html#appendix-c" class="appendix-btn btn-view-paper">View Code</a>
+                </div>
+                <div class="appendix-content" id="content-comp-c">
+                    <h4>Implementation Summary</h4>
+                    <p>CDL instanton calculations for vacuum decay:</p>
+                    <ul>
+                        <li>Bounce action computation for thin-wall approximation</li>
+                        <li>Tunneling rate estimation between flux vacua</li>
+                        <li>Stability verification against catastrophic vacuum decay</li>
+                    </ul>
+                    <p>Confirms our vacuum is metastable with lifetime exceeding the age of the universe.</p>
+                </div>
+            </div>
+
+            <!-- Computational Appendix D -->
+            <div class="appendix-card" id="card-comp-d">
+                <div class="appendix-label">Computational Appendix D</div>
+                <div class="appendix-title">CMB Cold Spot Statistics - Gaussian vs. Bubble Collisions</div>
+                <div class="appendix-description">
+                    Statistical analysis distinguishing Gaussian CMB fluctuations from multiverse bubble
+                    collision signatures. Computes power spectra, angular profiles, and likelihood ratios
+                    for observed cold spots.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('comp-d')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="../docs/computational-appendices.html#appendix-d" class="appendix-btn btn-view-paper">View Code</a>
+                </div>
+                <div class="appendix-content" id="content-comp-d">
+                    <h4>Implementation Summary</h4>
+                    <p>Statistical analysis for CMB anomaly signatures:</p>
+                    <ul>
+                        <li>Power spectrum analysis of cold spot regions</li>
+                        <li>Angular profile comparison with bubble collision predictions</li>
+                        <li>Bayesian model comparison: Gaussian vs. multiverse origin</li>
+                    </ul>
+                    <p>Provides methodology for distinguishing random fluctuations from potential multiverse signatures.</p>
+                </div>
+            </div>
+
+            <!-- Computational Appendix G -->
+            <div class="appendix-card" id="card-comp-g">
+                <div class="appendix-label">Computational Appendix G</div>
+                <div class="appendix-title">SymPy GW Dispersion Derivation - Deep Dive</div>
+                <div class="appendix-description">
+                    Extended SymPy analysis with complete derivation chain from 2T metric to dispersion relation.
+                    Includes plotting code and demonstrates the remarkable 47 orders of magnitude boost
+                    from v21 bridge breathing effects.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('comp-g')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="../docs/computational-appendices.html#appendix-g" class="appendix-btn btn-view-paper">View Code</a>
+                </div>
+                <div class="appendix-content" id="content-comp-g">
+                    <h4>Implementation Summary</h4>
+                    <p>Extended derivation chain for GW dispersion:</p>
+                    <ul>
+                        <li>Step-by-step symbolic computation from v21 (24,1) unified time metric</li>
+                        <li>Euclidean bridge coupling and dimensional reduction steps</li>
+                        <li>Visualization of frequency-dependent effects from dual-shadow dynamics</li>
+                    </ul>
+                    <p>Complete pedagogical derivation demonstrating the origin of observable GW modifications from v21 framework.</p>
+                </div>
+            </div>
+
+            <!-- Computational Appendix H -->
+            <div class="appendix-card" id="card-comp-h">
+                <div class="appendix-label">Computational Appendix H</div>
+                <div class="appendix-title">QuTiP Moduli Potential Simulation - Rigorous Quantum Analysis</div>
+                <div class="appendix-description">
+                    Rigorous QuTiP simulation of moduli potential with full quantum state evolution,
+                    entropy validation, and thermal state analysis. Verifies stability across
+                    cosmological time scales.
+                </div>
+                <div class="appendix-actions">
+                    <button class="appendix-btn btn-expand" onclick="toggleAppendix('comp-h')">
+                        <span class="btn-icon">+</span> Expand
+                    </button>
+                    <a href="../docs/computational-appendices.html#appendix-h" class="appendix-btn btn-view-paper">View Code</a>
+                </div>
+                <div class="appendix-content" id="content-comp-h">
+                    <h4>Implementation Summary</h4>
+                    <p>Rigorous quantum analysis of moduli dynamics:</p>
+                    <ul>
+                        <li>Master equation evolution with decoherence effects</li>
+                        <li>Von Neumann entropy tracking for purity verification</li>
+                        <li>Long-time stability analysis over cosmological scales</li>
+                    </ul>
+                    <p>Demonstrates that quantum corrections do not destabilize the G₂ moduli configuration.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>
+                <strong>Principia Metaphysica</strong><br>
+                A Geometric Unification of the Standard Model and Cosmology from M-Theory on a Single G₂ Manifold
+            </p>
+            <p style="margin-top: 1rem;">
+                <a href="paper.html">Return to Main Paper</a> |
+                <a href="references.html">References</a>
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.85rem;">
+                Copyright &copy; 2025-2026 Andrew Keith Watts. All rights reserved.
+            </p>
+        </div>
+        </div>
+    </main>
+    </div>
+
+    <script>
+        // Toggle appendix content expansion
+        function toggleAppendix(appendixId) {
+            const content = document.getElementById('content-' + appendixId);
+            const button = document.querySelector('#card-' + appendixId + ' .btn-expand');
+            const icon = button.querySelector('.btn-icon');
+
+            if (content.classList.contains('expanded')) {
+                content.classList.remove('expanded');
+                button.classList.remove('active');
+                icon.textContent = '+';
+                button.innerHTML = '<span class="btn-icon">+</span> Expand';
+            } else {
+                content.classList.add('expanded');
+                button.classList.add('active');
+                icon.textContent = '-';
+                button.innerHTML = '<span class="btn-icon">-</span> Collapse';
+
+                // Re-render MathJax for newly visible content
+                if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+                    MathJax.typesetPromise([content]).catch(function (err) {
+                        console.log('MathJax typeset failed: ' + err.message);
+                    });
+                }
+            }
+        }
+
+        // Make function globally available
+        window.toggleAppendix = toggleAppendix;
+    </script>
+
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('appendices');
+        });
+
+        </script>
+</body>
+</html>

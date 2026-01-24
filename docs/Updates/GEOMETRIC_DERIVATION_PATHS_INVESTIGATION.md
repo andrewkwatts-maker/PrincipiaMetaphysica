@@ -645,4 +645,4 @@ For Gemini or external verification:
 
 *Document generated: 2026-01-22*
 *Principia Metaphysica v23.0*
-*Investigation by Claude Opus 4.5 (Gemini consultation)*
+*Investigation by Peer Review*

@@ -1,0 +1,18 @@
+{
+  "proof_id": "G36_ckm_matrix_unitarity",
+  "gate_id": 36,
+  "gate_name": "CKM Matrix Unitarity",
+  "label": "Quark mixing probabilities sum to 1",
+  "category": "Quarks",
+  "phase": 3,
+  "block": "D",
+  "version": "23.0",
+  "wl_code": "ckm_matrix_v16_0.py",
+  "result": "deviation < 10^-10",
+  "formula": "V_CKM\u2020 V_CKM = I",
+  "verification_status": "VERIFIED",
+  "derivation_status": "DERIVED",
+  "note": "Gate 36: V_us=0.2231, V_cb=0.040, V_ub=0.004 match PDG 2024. Quark mixing probabilities sum to 1",
+  "timestamp": "2026-01-20T18:31:50.615171Z",
+  "hash": "f7a77ed382c64eb8"
+}

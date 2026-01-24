@@ -114,7 +114,7 @@ class AttractorPotentialV18(SimulationBase):
                 "Connects vacuum energy to G2 manifold curvature."
             ),
             section_id="5",
-            subsection_id="5.2"
+            subsection_id="5.2.1"
         )
 
         # Topological inputs from SSoT registry
@@ -519,7 +519,7 @@ class AttractorPotentialV18(SimulationBase):
         """Return section content for paper."""
         return SectionContent(
             section_id="5",
-            subsection_id="5.2",
+            subsection_id="5.2.1",
             title="Dark Energy Attractor Potential",
             abstract=(
                 "The G2 modulus field phi_M evolves under Ricci flow toward a stable "

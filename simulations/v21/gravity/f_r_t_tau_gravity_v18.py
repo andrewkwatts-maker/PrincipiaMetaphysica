@@ -126,7 +126,7 @@ class FRTTauGravityV18(SimulationBase):
                 "Predicts dark energy w_0 = -0.980 from attractor dynamics."
             ),
             section_id="5",
-            subsection_id="5.1"
+            subsection_id="5.1.1"
         )
 
         # Topological inputs from SSoT registry
@@ -650,7 +650,7 @@ class FRTTauGravityV18(SimulationBase):
         """Return section content for paper."""
         return SectionContent(
             section_id="5",
-            subsection_id="5.1",
+            subsection_id="5.1.1",
             title="f(R,T,tau) Modified Gravity from G2 Compactification",
             abstract=(
                 "The effective 4D gravity Lagrangian emerges from dimensional reduction "

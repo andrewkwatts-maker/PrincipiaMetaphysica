@@ -353,7 +353,7 @@ class FinalSigmaValidator(SimulationBase):
 
         # 3. Neutrino Mixing
         try:
-            from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
+            from simulations.v21.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
             self._setup_neutrino_topology(registry)
             sim = NeutrinoMixingSimulation()
             results = sim.execute(registry, verbose=False)

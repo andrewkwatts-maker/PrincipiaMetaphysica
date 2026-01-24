@@ -2,8 +2,8 @@
 
 **Date**: 2026-01-24
 **Version**: v23.0-CENTRAL
-**Scrum Master**: Claude Opus 4.5
-**Product Owner**: Gemini 2.5 Pro (simulated)
+**Scrum Master**: Peer Review
+**Product Owner**: Peer Review
 **Status**: IN PROGRESS
 
 ---
@@ -29,30 +29,30 @@ This sprint integrates a **central (2,0) Euclidean sampler** into the existing 1
 
 ---
 
-## Sprint Backlog (Gemini-Approved)
+## Sprint Backlog
 
 ### TIER 1: FOUNDATIONAL (Critical Path)
 
 | ID | Story | Priority | Status | Owner |
 |----|-------|----------|--------|-------|
-| WS-0 | Create Architecture Design Document | CRITICAL | COMPLETE | Claude |
-| WS-1 | Update FormulasRegistry with CENTRAL_PAIR constants | CRITICAL | PENDING | Claude |
-| WS-3 | Update master action derivation with L_central term | CRITICAL | PENDING | Claude |
+| WS-0 | Create Architecture Design Document | CRITICAL | COMPLETE | Author |
+| WS-1 | Update FormulasRegistry with CENTRAL_PAIR constants | CRITICAL | PENDING | Author |
+| WS-3 | Update master action derivation with L_central term | CRITICAL | PENDING | Author |
 
 ### TIER 2: CORE SIMULATION (Physics Validation)
 
 | ID | Story | Priority | Status | Owner |
 |----|-------|----------|--------|-------|
-| WS-2 | Create central_sampler_v23.py simulation | HIGH | PENDING | Claude |
-| WS-9 | Run validation and regenerate certificates | HIGH | PENDING | Claude |
+| WS-2 | Create central_sampler_v23.py simulation | HIGH | PENDING | Author |
+| WS-9 | Run validation and regenerate certificates | HIGH | PENDING | Author |
 
 ### TIER 3: INTEGRATION (Connect to Existing Systems)
 
 | ID | Story | Priority | Status | Owner |
 |----|-------|----------|--------|-------|
-| WS-4 | Update Orch-OR simulation with central sampler tau boost | MEDIUM | PENDING | Claude |
-| WS-5 | Update CKM/PMNS derivations with p_anc precision formulas | MEDIUM | PENDING | Claude |
-| WS-6 | Update Appendix G certificates (add Certificate 42/43) | MEDIUM | PENDING | Claude |
+| WS-4 | Update Orch-OR simulation with central sampler tau boost | MEDIUM | PENDING | Author |
+| WS-5 | Update CKM/PMNS derivations with p_anc precision formulas | MEDIUM | PENDING | Author |
+| WS-6 | Update Appendix G certificates (add Certificate 42/43) | MEDIUM | PENDING | Author |
 
 **GATE CONDITION (WS-5)**: If any CKM/PMNS value moves outside 2sigma of PDG, ABORT central precision correction.
 
@@ -60,8 +60,8 @@ This sprint integrates a **central (2,0) Euclidean sampler** into the existing 1
 
 | ID | Story | Priority | Status | Owner |
 |----|-------|----------|--------|-------|
-| WS-7 | Update Section 1 dimensional descent with hierarchical sampling | LOW | PENDING | Claude |
-| WS-8 | Update website pages explaining central sampler | LOW | PENDING | Claude |
+| WS-7 | Update Section 1 dimensional descent with hierarchical sampling | LOW | PENDING | Author |
+| WS-8 | Update website pages explaining central sampler | LOW | PENDING | Author |
 | WS-10 | Final review and commit v23.0.24 | LOW | PENDING | Claude/Gemini |
 
 ---

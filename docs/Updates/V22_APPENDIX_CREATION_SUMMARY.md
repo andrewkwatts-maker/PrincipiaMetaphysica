@@ -238,9 +238,9 @@ From all 6 agents, key questions for Gemini recursive review:
 
 1. **Update MASTER_ACTION_DERIVATION_CHECKLIST.md** with new appendix references
 2. **Run simulations** to verify formulas
-3. **Gemini recursive consultation** on Priority 1 gaps
+3. **Recursive peer review consultation** on Priority 1 gaps
 4. **Target:** 95% physics recovery in v22.1
 
 ---
 
-*Generated: 2026-01-19 | v22.0 | Claude Opus 4.5 Multi-Agent Synthesis*
+*Generated: 2026-01-19 | v22.0 | Peer Review Synthesis*

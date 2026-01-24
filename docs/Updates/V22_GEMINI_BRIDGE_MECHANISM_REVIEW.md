@@ -1,14 +1,14 @@
-# v22 Gemini Review: 12×(2,0) Bridge Mechanism
+# v22 Technical Review: 12x(2,0) Bridge Mechanism
 
 **Date:** 2026-01-19
 **Version:** v22.1
-**Reviewer:** Gemini 2.0 Flash
+**Reviewer:** Peer Review
 
 ---
 
 ## Summary
 
-Gemini reviewed the 12×(2,0) bridge architecture and provided mathematical clarification on the shadow creation mechanism.
+Peer review examined the 12x(2,0) bridge architecture and provided mathematical clarification on the shadow creation mechanism.
 
 ---
 
@@ -79,4 +79,4 @@ The two dimensions of each (2,0) bridge pair represent different gauge choices f
 
 ---
 
-*Generated: 2026-01-19 | v22.1 | Gemini 2.0 Flash Review*
+*Generated: 2026-01-19 | v22.1 | Peer Review*

@@ -1,8 +1,8 @@
-# v22.1 Gemini Dimensional Structure Review
+# v22.1 Dimensional Structure Review
 
 **Date:** 2026-01-19
 **Version:** v22.1
-**Reviewer:** Gemini 2.0 Flash
+**Reviewer:** Peer Review
 
 ---
 
@@ -51,7 +51,7 @@ The persistence of high-sigma discrepancies suggests the model is not addressing
 
 ---
 
-## Gemini Recommendations
+## Review Recommendations
 
 1. **Provide rigorous mathematical definition** of "shared time" and "Euclidean bridge model"
 2. **Explain field dynamics** in each shadow given shared time and bridges
@@ -93,4 +93,4 @@ The 12×(2,0) bridge structure is motivated by:
 
 ---
 
-*Generated: 2026-01-19 | v22.1 | Gemini 2.0 Flash Review*
+*Generated: 2026-01-19 | v22.1 | Peer Review*

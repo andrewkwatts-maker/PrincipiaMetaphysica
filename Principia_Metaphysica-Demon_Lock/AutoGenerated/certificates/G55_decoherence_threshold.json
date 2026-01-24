@@ -1,0 +1,19 @@
+{
+  "proof_id": "G55_decoherence_threshold",
+  "gate_id": 55,
+  "gate_name": "Decoherence Threshold",
+  "label": "Hidden\u2192Active observation boundary",
+  "category": "FOUNDATIONAL_ASSUMPTION",
+  "phase": 4,
+  "block": "E",
+  "version": "23.0",
+  "wl_code": "N/A",
+  "result": "N/A",
+  "formula": "|\u03c8\u27e9 \u2192 classical",
+  "verification_status": "NOT_TESTABLE",
+  "derivation_status": "DERIVED",
+  "reason": "Decoherence threshold is QM axiom (Copenhagen/decoherence interpretation boundary). The quantum-to-classical transition is foundational to QM, not a PM-specific prediction. PM uses standard decoherence theory as input. quantum_decoherence_solver.py calculates coherence times for Orch-OR but does not verify G55.",
+  "note": "FOUNDATIONAL: Hidden\u2192Active observation boundary. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-20T18:31:50.620151Z",
+  "hash": "02bb682c5005a3be"
+}

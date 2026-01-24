@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yang-Mills Theory - Learn the foundation of the Standard Model with non-abelian gauge fields, diagrams, and educational resources">
+    <title>Yang-Mills Theory - Foundational Physics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/pm-header.css">
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'Yang-Mills Theory'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main-content">
+
+    <main>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.15), rgba(139, 127, 255, 0.1)); border: 2px solid rgba(255, 126, 182, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Physics (1954)</span>
+            <h1 style="background: linear-gradient(135deg, #ff7eb6, #8b7fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Yang-Mills Theory</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The foundation of modern particle physics: a non-abelian gauge theory that underlies the strong and electroweak forces of the Standard Model.
+            </p>
+            <div class="main-equation" style="background: rgba(255, 126, 182, 0.1);">
+                ℒ = -¼ F<sup>a</sup><sub>&mu;&nu;</sub> F<sup>a&mu;&nu;</sup>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Published by Chen-Ning Yang and Robert Mills in 1954 | Foundation of QCD and Electroweak Theory
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.03)); border-left: 4px solid #ff7eb6;">
+            <h2>What Is Yang-Mills Theory?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>Non-abelian gauge theory: forces arise from local symmetry transformations that don't commute.</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Gauge Fields: A<sup>a</sup><sub>&mu;</sub></h4>
+                    <p>Vector potentials for each generator of the gauge group. The index <em>a</em> runs over group generators, and <em>&mu;</em> over spacetime dimensions.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Field Strength: F<sup>a</sup><sub>&mu;&nu;</sub></h4>
+                    <p>The <strong>non-abelian field strength tensor</strong> includes self-interactions: F<sup>a</sup><sub>&mu;&nu;</sub> = &part;<sub>&mu;</sub>A<sup>a</sup><sub>&nu;</sub> - &part;<sub>&nu;</sub>A<sup>a</sup><sub>&mu;</sub> - gf<sup>abc</sup>A<sup>b</sup><sub>&mu;</sub>A<sup>c</sup><sub>&nu;</sub></p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Standard Model</h4>
+                    <p>Yang-Mills theory with SU(3) &times; SU(2) &times; U(1) describes all non-gravitational forces: strong (QCD), weak, and electromagnetic.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">ℒ = -¼ F<sup>a</sup><sub>&mu;&nu;</sub> F<sup>a&mu;&nu;</sup></div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">F<sup>a</sup><sub>&mu;&nu;</sub></div>
+                        <div class="component-name">Field Strength Tensor</div>
+                        <div class="component-desc">
+                            F<sup>a</sup><sub>&mu;&nu;</sub> = &part;<sub>&mu;</sub>A<sup>a</sup><sub>&nu;</sub> - &part;<sub>&nu;</sub>A<sup>a</sup><sub>&mu;</sub> - gf<sup>abc</sup>A<sup>b</sup><sub>&mu;</sub>A<sup>c</sup><sub>&nu;</sub><br>
+                            The crucial -gf<sup>abc</sup>A<sup>b</sup><sub>&mu;</sub>A<sup>c</sup><sub>&nu;</sub> term distinguishes non-abelian from abelian (Maxwell) theory.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Non-abelian</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">A<sup>a</sup><sub>&mu;</sub></div>
+                        <div class="component-name">Gauge Fields (Gauge Bosons)</div>
+                        <div class="component-desc">
+                            Vector potentials transforming in the adjoint representation of the gauge group.<br>
+                            SU(3): 8 gluons | SU(2): 3 weak bosons (W<sup>±</sup>, Z) | U(1): 1 photon
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Gauge_boson" target="_blank" class="component-link">Wikipedia: Gauge Boson &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">f<sup>abc</sup></div>
+                        <div class="component-name">Structure Constants</div>
+                        <div class="component-desc">
+                            Define the Lie algebra via [T<sup>a</sup>, T<sup>b</sup>] = if<sup>abc</sup>T<sup>c</sup><br>
+                            Completely antisymmetric. For SU(N), there are N(N²-1)/2 independent structure constants.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Structure_constants" target="_blank" class="component-link">Wikipedia: Structure Constants &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">D<sub>&mu;</sub></div>
+                        <div class="component-name">Covariant Derivative</div>
+                        <div class="component-desc">
+                            D<sub>&mu;</sub> = &part;<sub>&mu;</sub> + igA<sup>a</sup><sub>&mu;</sub>T<sup>a</sup><br>
+                            Ensures gauge covariance: D<sub>&mu;</sub>&psi; transforms properly under gauge transformations.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Gauge_covariant_derivative" target="_blank" class="component-link">Wikipedia: Gauge Covariant Derivative &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">SU(N)</div>
+                        <div class="component-name">Special Unitary Group</div>
+                        <div class="component-desc">
+                            Non-abelian Lie group of N×N unitary matrices with determinant 1.<br>
+                            SU(3) for QCD (color), SU(2) for weak isospin, U(1) for hypercharge/electromagnetism.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Special_unitary_group" target="_blank" class="component-link">Wikipedia: SU(N) &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">g</div>
+                        <div class="component-name">Coupling Constant</div>
+                        <div class="component-desc">
+                            Determines the strength of gauge interactions. Running coupling: g = g(&mu;) depends on energy scale.<br>
+                            For QCD: &alpha;<sub>s</sub> = g²/4&pi; ~ 0.1 at high energies (asymptotic freedom).
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Running Coupling</span>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Foundation Chain</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Lie Group Theory (Sophus Lie, 1870s)</span>
+                        <span class="foundation-badge established">Mathematics</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Gauge Invariance (Hermann Weyl, 1918)</span>
+                        <span class="foundation-badge established">Symmetry Principle</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Quantum Electrodynamics (QED) - U(1) gauge theory</span>
+                        <span class="foundation-badge established">Physics</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Yang-Mills (1954) - Non-abelian generalization</span>
+                        <span class="foundation-badge established"></span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>QCD (1973) - SU(3) color gauge theory</span>
+                        <span class="foundation-badge established">Standard Model</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: Gauge Field Interactions</h2>
+            <p>Yang-Mills theory is distinguished by gauge boson self-interactions absent in abelian theories:</p>
+
+            <svg width="100%" height="500" viewBox="0 0 800 500" style="background: rgba(139, 127, 255, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="var(--accent-primary)" />
+                    </marker>
+                    <radialGradient id="gluonGlow" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Title sections -->
+                <text x="200" y="30" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="600">Abelian (Maxwell/QED)</text>
+                <text x="600" y="30" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="600">Non-Abelian (Yang-Mills)</text>
+
+                <!-- Dividing line -->
+                <line x1="400" y1="50" x2="400" y2="480" stroke="var(--border-primary)" stroke-width="2" stroke-dasharray="5,5"/>
+
+                <!-- LEFT SIDE: ABELIAN (QED) -->
+                <!-- Photon exchange between fermions -->
+                <g>
+                    <text x="200" y="80" text-anchor="middle" fill="var(--text-secondary)" font-size="14">Photon couples to charged particles</text>
+
+                    <!-- Fermion lines -->
+                    <line x1="50" y1="120" x2="150" y2="120" stroke="#4facfe" stroke-width="3" marker-end="url(#arrow)"/>
+                    <text x="100" y="110" text-anchor="middle" fill="#4facfe" font-size="12">e⁻</text>
+
+                    <line x1="250" y1="120" x2="350" y2="120" stroke="#4facfe" stroke-width="3" marker-end="url(#arrow)"/>
+                    <text x="300" y="110" text-anchor="middle" fill="#4facfe" font-size="12">e⁺</text>
+
+                    <!-- Photon (wavy line) -->
+                    <path d="M 150 120 Q 160 110, 170 120 T 190 120 T 210 120 T 230 120 T 250 120"
+                          stroke="#ffb347" stroke-width="2.5" fill="none"/>
+                    <text x="200" y="145" text-anchor="middle" fill="#ffb347" font-size="12" font-weight="600">γ</text>
+
+                    <!-- Label -->
+                    <text x="200" y="170" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Vertex: ~e</text>
+                </g>
+
+                <!-- NO self-interaction for photons -->
+                <g>
+                    <text x="200" y="220" text-anchor="middle" fill="var(--text-secondary)" font-size="14">No photon self-coupling</text>
+
+                    <!-- Three photon lines meeting (crossed out) -->
+                    <path d="M 200 260 L 200 310" stroke="#ffb347" stroke-width="2.5" fill="none" opacity="0.3"/>
+                    <path d="M 200 310 L 160 350" stroke="#ffb347" stroke-width="2.5" fill="none" opacity="0.3"/>
+                    <path d="M 200 310 L 240 350" stroke="#ffb347" stroke-width="2.5" fill="none" opacity="0.3"/>
+
+                    <!-- Big red X -->
+                    <line x1="160" y1="260" x2="240" y2="360" stroke="#ff4444" stroke-width="4"/>
+                    <line x1="240" y1="260" x2="160" y2="360" stroke="#ff4444" stroke-width="4"/>
+
+                    <text x="200" y="380" text-anchor="middle" fill="#ff4444" font-size="13" font-weight="600">FORBIDDEN</text>
+                    <text x="200" y="395" text-anchor="middle" fill="var(--text-muted)" font-size="10">F_μν linear in A</text>
+                </g>
+
+                <!-- RIGHT SIDE: NON-ABELIAN (Yang-Mills) -->
+                <!-- Gluon exchange between quarks -->
+                <g>
+                    <text x="600" y="80" text-anchor="middle" fill="var(--text-secondary)" font-size="14">Gluon couples to color charge</text>
+
+                    <!-- Quark lines -->
+                    <line x1="450" y1="120" x2="550" y2="120" stroke="#51cf66" stroke-width="3" marker-end="url(#arrow)"/>
+                    <text x="500" y="110" text-anchor="middle" fill="#51cf66" font-size="12">q (red)</text>
+
+                    <line x1="650" y1="120" x2="750" y2="120" stroke="#51cf66" stroke-width="3" marker-end="url(#arrow)"/>
+                    <text x="700" y="110" text-anchor="middle" fill="#51cf66" font-size="12">q̄ (blue)</text>
+
+                    <!-- Gluon (spring/coiled line) -->
+                    <path d="M 550 120 Q 555 115, 560 120 T 570 120 T 580 120 T 590 120 T 600 120 T 610 120 T 620 120 T 630 120 T 640 120 T 650 120"
+                          stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+                    <text x="600" y="145" text-anchor="middle" fill="#ff7eb6" font-size="12" font-weight="600">g</text>
+
+                    <text x="600" y="170" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Vertex: ~g_s</text>
+                </g>
+
+                <!-- Triple gluon vertex -->
+                <g>
+                    <text x="520" y="220" text-anchor="middle" fill="var(--text-secondary)" font-size="14">3-gluon vertex</text>
+
+                    <circle cx="520" cy="280" r="8" fill="url(#gluonGlow)"/>
+                    <circle cx="520" cy="280" r="4" fill="#ff7eb6"/>
+
+                    <path d="M 520 280 L 520 230" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+                    <path d="M 520 280 L 480 315" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+                    <path d="M 520 280 L 560 315" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+
+                    <text x="530" y="250" fill="#ff7eb6" font-size="10">g</text>
+                    <text x="470" y="330" fill="#ff7eb6" font-size="10">g</text>
+                    <text x="565" y="330" fill="#ff7eb6" font-size="10">g</text>
+
+                    <text x="520" y="350" text-anchor="middle" fill="var(--text-muted)" font-size="10">~gf^abc A^b A^c term</text>
+                </g>
+
+                <!-- Quartic gluon vertex -->
+                <g>
+                    <text x="680" y="220" text-anchor="middle" fill="var(--text-secondary)" font-size="14">4-gluon vertex</text>
+
+                    <circle cx="680" cy="280" r="8" fill="url(#gluonGlow)"/>
+                    <circle cx="680" cy="280" r="4" fill="#ff7eb6"/>
+
+                    <path d="M 680 280 L 680 230" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+                    <path d="M 680 280 L 680 330" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+                    <path d="M 680 280 L 635 280" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+                    <path d="M 680 280 L 725 280" stroke="#ff7eb6" stroke-width="2.5" fill="none"/>
+
+                    <text x="685" y="250" fill="#ff7eb6" font-size="10">g</text>
+                    <text x="685" y="340" fill="#ff7eb6" font-size="10">g</text>
+                    <text x="625" y="285" fill="#ff7eb6" font-size="10">g</text>
+                    <text x="730" y="285" fill="#ff7eb6" font-size="10">g</text>
+
+                    <text x="680" y="360" text-anchor="middle" fill="var(--text-muted)" font-size="10">~g² (f^abc)² term</text>
+                </g>
+
+                <!-- Bottom comparison -->
+                <g>
+                    <rect x="50" y="410" width="300" height="70" fill="rgba(79, 172, 254, 0.08)" stroke="#4facfe" stroke-width="2" rx="10"/>
+                    <text x="200" y="435" text-anchor="middle" fill="#4facfe" font-size="13" font-weight="600">U(1): Commutative</text>
+                    <text x="200" y="455" text-anchor="middle" fill="var(--text-secondary)" font-size="11">Linear field strength</text>
+                    <text x="200" y="470" text-anchor="middle" fill="var(--text-muted)" font-size="10">F_μν = ∂_μA_ν - ∂_νA_μ</text>
+                </g>
+
+                <g>
+                    <rect x="450" y="410" width="300" height="70" fill="rgba(255, 126, 182, 0.08)" stroke="#ff7eb6" stroke-width="2" rx="10"/>
+                    <text x="600" y="435" text-anchor="middle" fill="#ff7eb6" font-size="13" font-weight="600">SU(N): Non-commutative</text>
+                    <text x="600" y="455" text-anchor="middle" fill="var(--text-secondary)" font-size="11">Non-linear field strength</text>
+                    <text x="600" y="470" text-anchor="middle" fill="var(--text-muted)" font-size="10">F^a_μν includes -gf^abc A^b A^c</text>
+                </g>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                The key difference: gluons carry color charge and interact with themselves, unlike photons.
+            </p>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
+
+            <h3>1. Gauge Invariance and Local Symmetry</h3>
+            <p>
+                Yang-Mills theory is built on the principle of <strong>local gauge invariance</strong>: the physics must be unchanged
+                under spacetime-dependent group transformations:
+            </p>
+            <div class="equation-box">
+                &psi;(x) &rarr; U(x)&psi;(x), &nbsp;&nbsp; U(x) = e<sup>i&alpha;<sup>a</sup>(x)T<sup>a</sup></sup>
+                <span class="equation-label">Local gauge transformation (non-abelian)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                The gauge fields A<sup>a</sup><sub>&mu;</sub> transform to compensate and preserve the form of the covariant derivative:
+            </p>
+            <div class="equation-box">
+                A<sup>a</sup><sub>&mu;</sub> &rarr; UA<sup>a</sup><sub>&mu;</sub>U<sup>†</sup> + (i/g)(&part;<sub>&mu;</sub>U)U<sup>†</sup>
+                <span class="equation-label">Gauge field transformation</span>
+            </div>
+
+            <h3 style="margin-top: 2rem;">2. Non-Abelian Groups: SU(N)</h3>
+            <p>
+                The gauge group structure determines the force properties:
+            </p>
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Force</th>
+                        <th>Gauge Group</th>
+                        <th>Generators</th>
+                        <th>Gauge Bosons</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Electromagnetism</strong></td>
+                        <td>U(1)</td>
+                        <td>1</td>
+                        <td>Photon (&gamma;)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weak Force</strong></td>
+                        <td>SU(2)<sub>L</sub></td>
+                        <td>3</td>
+                        <td>W<sup>+</sup>, W<sup>-</sup>, Z<sup>0</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Strong Force (QCD)</strong></td>
+                        <td>SU(3)<sub>C</sub></td>
+                        <td>8</td>
+                        <td>8 gluons (color octet)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Standard Model</strong></td>
+                        <td>SU(3) &times; SU(2) &times; U(1)</td>
+                        <td>8 + 3 + 1 = 12</td>
+                        <td>All SM gauge bosons</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">3. Gluon Self-Coupling and Confinement</h3>
+            <p>
+                The non-abelian structure constants f<sup>abc</sup> &ne; 0 lead to gluon self-interactions:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>3-gluon vertex:</strong> Proportional to gf<sup>abc</sup> (cubic term in Lagrangian)</li>
+                <li><strong>4-gluon vertex:</strong> Proportional to g²(f<sup>abc</sup>f<sup>cde</sup>) (quartic term)</li>
+                <li><strong>Confinement:</strong> At low energies, strong coupling prevents isolated color charges (quarks, gluons)</li>
+                <li><strong>Color confinement:</strong> Only color-neutral (white) states like mesons (qq̄) and baryons (qqq) are observed</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">4. Asymptotic Freedom and Running Coupling</h3>
+            <p>
+                Yang-Mills theories with fermions exhibit <strong>asymptotic freedom</strong> (Nobel Prize 2004: Gross, Politzer, Wilczek):
+            </p>
+            <div class="equation-box">
+                &alpha;<sub>s</sub>(&mu;) = &alpha;<sub>s</sub>(&mu;<sub>0</sub>) / [1 + &alpha;<sub>s</sub>(&mu;<sub>0</sub>)b ln(&mu;/&mu;<sub>0</sub>)]
+                <span class="equation-label">Running coupling constant (one-loop QCD)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                <strong>Key result:</strong> The coupling decreases at high energies (short distances), allowing perturbative calculations.
+                At low energies, the coupling grows strong, leading to confinement.
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem; margin-top: 1rem;">
+                <li><strong>High energy (~100 GeV):</strong> &alpha;<sub>s</sub> ~ 0.1 (weak, perturbative)</li>
+                <li><strong>Confinement scale (~1 GeV):</strong> &alpha;<sub>s</sub> ~ 1 (strong, non-perturbative)</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">5. Connection to the Standard Model</h3>
+            <p>
+                The Standard Model is a Yang-Mills theory with gauge group SU(3)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; U(1)<sub>Y</sub>:
+            </p>
+            <div class="equation-box">
+                ℒ<sub>SM</sub> = ℒ<sub>YM</sub> + ℒ<sub>fermions</sub> + ℒ<sub>Higgs</sub> + ℒ<sub>Yukawa</sub>
+                <span class="equation-label">Standard Model Lagrangian structure</span>
+            </div>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem; margin-top: 1rem;">
+                <li><strong>SU(3)<sub>C</sub>:</strong> Quantum Chromodynamics (QCD) - strong force, 8 gluons</li>
+                <li><strong>SU(2)<sub>L</sub> &times; U(1)<sub>Y</sub>:</strong> Electroweak theory - broken by Higgs mechanism to U(1)<sub>EM</sub></li>
+                <li><strong>Matter content:</strong> <span class="pm-value" data-pm-value="topology.n_gen"></span> generations of quarks and leptons in representations of gauge group</li>
+            </ul>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>Yang-Mills Theory - PBS Space Time</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Accessible introduction to gauge theory and Yang-Mills fields.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=e8KFf8_iYhw" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">~15 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Gauge Theory - Physics Explained</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Clear explanation of gauge invariance and why it matters.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=7vF2dYWZCOo" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">~20 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>QCD and Yang-Mills - Tobias Osborne</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Lecture series on Yang-Mills theory and quantum chromodynamics (advanced).
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=rJVAwzS217o" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">Lecture series</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Asymptotic Freedom - 3Blue1Brown</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Visual explanation of the Nobel-winning discovery in QCD.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=AKKHXzbjB-Q" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">~25 min</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Papers</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Yang%E2%80%93Mills_theory" target="_blank" style="color: var(--accent-primary);">Yang-Mills Theory</a> |
+                    <a href="https://en.wikipedia.org/wiki/Gauge_theory" target="_blank" style="color: var(--accent-primary);">Gauge Theory</a> |
+                    <a href="https://en.wikipedia.org/wiki/Quantum_chromodynamics" target="_blank" style="color: var(--accent-primary);">Quantum Chromodynamics</a>
+                </li>
+                <li>
+                    <strong>Original Paper (1954):</strong>
+                    Yang, C.N. & Mills, R. "Conservation of Isotopic Spin and Isotopic Gauge Invariance"
+                    <a href="https://journals.aps.org/pr/abstract/10.1103/PhysRev.96.191" target="_blank" style="color: var(--accent-primary);">[Physical Review]</a>
+                </li>
+                <li>
+                    <strong>Asymptotic Freedom Papers (1973):</strong>
+                    Gross & Wilczek | Politzer (Nobel Prize 2004)
+                    <a href="https://en.wikipedia.org/wiki/Asymptotic_freedom" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Graduate):</strong>
+                    "Quantum Field Theory" by Peskin & Schroeder (Chapters 15-16)
+                </li>
+                <li>
+                    <strong>Textbook (Advanced):</strong>
+                    "Gauge Theories in Particle Physics" by Aitchison & Hey
+                </li>
+                <li>
+                    <strong>Review Article:</strong>
+                    "Yang-Mills Theory" by David Gross
+                    <a href="https://www.pnas.org/doi/10.1073/pnas.93.25.14256" target="_blank" style="color: var(--accent-primary);">[PNAS]</a>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem;">Advanced Topics</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>BRST Quantization:</strong>
+                    <a href="https://en.wikipedia.org/wiki/BRST_quantization" target="_blank" style="color: var(--accent-primary);">Wikipedia: BRST Symmetry</a>
+                </li>
+                <li>
+                    <strong>Faddeev-Popov Ghosts:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Faddeev%E2%80%93Popov_ghost" target="_blank" style="color: var(--accent-primary);">Ghost fields in gauge fixing</a>
+                </li>
+                <li>
+                    <strong>Lattice QCD:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Lattice_QCD" target="_blank" style="color: var(--accent-primary);">Non-perturbative numerical approach</a>
+                </li>
+                <li>
+                    <strong>Millennium Prize Problem:</strong>
+                    <a href="https://www.claymath.org/millennium-problems/yang-mills-and-mass-gap" target="_blank" style="color: var(--accent-primary);">Yang-Mills Mass Gap Problem</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>Gauge Boson</h4>
+                    <p>Force carrier particles arising from gauge symmetry: photon (U(1)), W/Z (SU(2)), gluons (SU(3)).</p>
+                    <a href="https://en.wikipedia.org/wiki/Gauge_boson" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Gauge Fixing</h4>
+                    <p>Procedure to eliminate redundant gauge degrees of freedom. Common choices: Lorenz gauge, Coulomb gauge, axial gauge.</p>
+                    <a href="https://en.wikipedia.org/wiki/Gauge_fixing" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>BRST Symmetry</h4>
+                    <p>Symmetry (Becchi-Rouet-Stora-Tyutin) that replaces gauge symmetry after gauge fixing, preserving unitarity.</p>
+                    <a href="https://en.wikipedia.org/wiki/BRST_quantization" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Faddeev-Popov Ghosts</h4>
+                    <p>Fictitious fermion fields required in gauge-fixed path integrals to cancel unphysical gauge degrees of freedom.</p>
+                    <a href="https://en.wikipedia.org/wiki/Faddeev%E2%80%93Popov_ghost" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Wilson Loops</h4>
+                    <p>Path-ordered exponentials of gauge fields around closed loops. Used to define gauge-invariant observables and confinement.</p>
+                    <a href="https://en.wikipedia.org/wiki/Wilson_loop" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Color Charge</h4>
+                    <p>The charge of QCD (SU(3)), analogous to electric charge. Comes in three types: red, green, blue (and anti-colors).</p>
+                    <a href="https://en.wikipedia.org/wiki/Color_charge" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Instantons</h4>
+                    <p>Non-perturbative, topologically non-trivial field configurations. Important for understanding QCD vacuum structure.</p>
+                    <a href="https://en.wikipedia.org/wiki/Instanton" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Theta Vacuum</h4>
+                    <p>QCD vacuum characterized by topological &theta;-angle. CP violation from &theta; term (strong CP problem).</p>
+                    <a href="https://en.wikipedia.org/wiki/Theta_vacuum" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experimental Verification -->
+        <section class="subsection">
+            <h2>Experimental Verification</h2>
+            <p>Yang-Mills theory has been tested to extraordinary precision in particle physics experiments:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">QCD at Colliders (1970s-present)</h4>
+                    <p>Three-jet events at PETRA (1979) confirmed gluon existence and 3-gluon vertex. Detailed structure function measurements at HERA.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Asymptotic Freedom (1973-2004)</h4>
+                    <p>Running of &alpha;<sub>s</sub> measured from LEP, Tevatron, LHC. Confirmed to ~1% precision across energy scales 1-1000 GeV.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Electroweak Unification (1983)</h4>
+                    <p>Discovery of W<sup>±</sup> and Z<sup>0</sup> bosons at CERN by UA1/UA2. Masses and couplings match SU(2) &times; U(1) predictions.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Precision Electroweak Tests (LEP, 1989-2000)</h4>
+                    <p>Z boson properties measured to 0.001%. Confirms Yang-Mills structure at quantum loop level.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">QCD Jets at LHC (2010-present)</h4>
+                    <p>Multi-jet production, jet substructure, and top quark production test QCD to unprecedented precision at TeV scales.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Higgs Boson (2012)</h4>
+                    <p>Discovery at LHC confirms SU(2) &times; U(1) structure via measured couplings to gauge bosons and fermions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                Principia Metaphysica unifies Yang-Mills gauge theories within higher-dimensional framework:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">Gauge Unification via G₂ Compactification</h4>
+                <p style="color: var(--text-secondary);">
+                    The Standard Model gauge group emerges from dimensional reduction:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,1):</strong> Fundamental gauge symmetry</li>
+                    <li><strong>13D shadow (12,1):</strong> After Euclidean bridge reduction</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_G2"></span>D G₂ manifold:</strong> Compactification with G₂ holonomy preserves supersymmetry</li>
+                    <li><strong>SO(10) GUT:</strong> Emerges as holonomy group, breaks to SU(3) &times; SU(2) &times; U(1)</li>
+                    <li><strong>Gauge fields in bulk:</strong> Higher-dimensional Yang-Mills fields reduce to <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Standard Model</li>
+                </ul>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 600;">
+                    <strong>SO(10) embedding on G₂ associative cycles:</strong>
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                    <li><strong>b₂ = 4 associative 3-cycles:</strong> D5-branes wrap these cycles to generate SO(10) gauge bosons</li>
+                    <li><strong>Gauge kinetic function:</strong> f(φ) = Vol(Σ₃) where Σ₃ are the associative cycles</li>
+                    <li><strong>Cycle volumes:</strong> Determine the relative gauge coupling strengths at GUT scale</li>
+                    <li><strong>TCS gluing angle θ=π/6:</strong> Ensures consistent gauge symmetry after compactification</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
+                <h4 style="color: #ff7eb6;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Yang-Mills Action</h4>
+                <p style="color: var(--text-secondary);">
+                    The bulk theory includes higher-dimensional gauge fields:
+                </p>
+                <div class="equation-box" style="margin-top: 1rem;">
+                    S = &int; d<sup>25</sup>x &sqrt;-g<sub>25</sub> [-¼ F<sup>A</sup><sub>MN</sub> F<sup>AMN</sup> + ℒ<sub>matter</sub>]
+                    <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Yang-Mills action in (24,1) signature</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    After compactification and symmetry breaking, this reduces to the Standard Model Yang-Mills action plus corrections.
+                </p>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                <strong>Key insights:</strong>
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem; margin-top: 0.5rem;">
+                <li>Gauge couplings unify at GUT scale M<sub>GUT</sub> = 2.118×10¹⁶ GeV in SO(10) with 1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv" data-format="fixed:2"></span></li>
+                <li>Three generations of fermions from G₂ topology</li>
+                <li>QCD confinement scale emerges from compactification radius</li>
+                <li>CP violation and strong CP problem connected to bulk geometry</li>
+            </ul>
+        </section>
+
+        <!-- Problem Sets -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding with these exercises:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: SU(2) Structure Constants</h4>
+                <p>
+                    Derive the structure constants f<sup>abc</sup> for SU(2) using the Pauli matrices &sigma;<sup>a</sup> with
+                    generators T<sup>a</sup> = &sigma;<sup>a</sup>/2. Verify [T<sup>a</sup>, T<sup>b</sup>] = i&epsilon;<sup>abc</sup>T<sup>c</sup>.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        For SU(2), f<sup>abc</sup> = &epsilon;<sup>abc</sup> (the totally antisymmetric Levi-Civita symbol).
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Field Strength Transformation</h4>
+                <p>
+                    Show that the field strength tensor F<sup>a</sup><sub>&mu;&nu;</sub> transforms covariantly under gauge transformations:
+                    F<sup>a</sup><sub>&mu;&nu;</sub> &rarr; (U<sup>ad</sup>F<sup>d</sup><sub>&mu;&nu;</sub>), where U is in the adjoint representation.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Use the fact that F<sup>a</sup><sub>&mu;&nu;</sub> = (i/g)[D<sub>&mu;</sub>, D<sub>&nu;</sub>]<sup>a</sup> and D transforms covariantly.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Running Coupling</h4>
+                <p>
+                    Given the one-loop beta function &beta;(g) = -(b/16&pi;²)g³ for QCD with n<sub>f</sub> = 6 quark flavors,
+                    where b = (11 - 2n<sub>f</sub>/3), calculate &alpha;<sub>s</sub>(M<sub>Z</sub>) given &alpha;<sub>s</sub>(1 GeV) = 0.5.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        With n<sub>f</sub> = 6: b = 11 - 4 = 7 (asymptotic freedom).<br>
+                        Using RG equation, &alpha;<sub>s</sub>(M<sub>Z</sub> ~ 91 GeV) &asymp; <span class="pm-value" data-pm-value="gauge_couplings.alpha_s_MZ" data-format="fixed:4"></span> (matches experiment).
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 4: Gluon Number</h4>
+                <p>
+                    Show that for gauge group SU(N), the number of gauge bosons (gluons) is N² - 1.
+                    Apply this to verify 8 gluons for SU(3) and 3 weak bosons for SU(2).
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        The number of generators of SU(N) equals the dimension of its Lie algebra, which is N² - 1.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where Yang-Mills Theory Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Gauge Unification</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        SO(10) and Standard Model forces
+                    </p>
+                    <a href="../sections.html#gauge-unification" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Geometric Framework</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Gauge fields in bulk
+                    </p>
+                    <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where Yang-Mills Theory Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Gauge Unification</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        SO(10) and Standard Model forces
+                    </p>
+                    <a href="../sections.html#gauge-unification" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Geometric Framework</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Gauge fields in bulk
+                    </p>
+                    <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="../Pages/foundations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="einstein-field-equations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Einstein Field Equations &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff7eb6, #8b7fff);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(255, 126, 182, 0.1), rgba(139, 127, 255, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #ff7eb6;
+        }
+        .highlight-box h4 {
+            color: #ff7eb6;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+    </div>
+
+    <script type="module">
+        
+        </script>
+</body>
+</html>

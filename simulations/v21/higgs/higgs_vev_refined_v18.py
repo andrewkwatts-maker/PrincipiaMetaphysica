@@ -116,7 +116,7 @@ class HiggsVEVRefinedV18(SimulationBase):
                 "without calibration - a genuine geometric prediction."
             ),
             section_id="4",
-            subsection_id="4.2"
+            subsection_id="4.2.1"
         )
 
         # Topology constants from SSoT registry
@@ -401,7 +401,7 @@ class HiggsVEVRefinedV18(SimulationBase):
         """Return section content for paper."""
         return SectionContent(
             section_id="4",
-            subsection_id="4.2",
+            subsection_id="4.2.1",
             title="Geometric Higgs VEV from G2 Holonomy",
             abstract=(
                 "The Higgs VEV is derived from the G2 holonomy warp factor times "

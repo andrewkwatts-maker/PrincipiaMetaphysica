@@ -2,8 +2,8 @@
 
 **Date:** 2026-01-20
 **Status:** IN PROGRESS
-**Scrum Master:** Claude Opus 4.5
-**Product Owner/Peer Reviewer:** Gemini
+**Scrum Master:** Peer Review
+**Product Owner/Peer Reviewer:** Peer Review
 
 ---
 

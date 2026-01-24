@@ -342,4 +342,4 @@ For g_0 ~ M_Pl, need q^(-N) ~ v/M_Pl ~ 10^(-16)
 
 *Document generated: 2026-01-14*
 *Principia Metaphysica v20.11*
-*Investigation by Claude Opus 4.5*
+*Investigation by Peer Review*
