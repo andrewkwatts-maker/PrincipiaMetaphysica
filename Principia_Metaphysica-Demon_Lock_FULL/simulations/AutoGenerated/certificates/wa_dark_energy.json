@@ -3,7 +3,7 @@
   "cert_id": "CERT-COSMO-013",
   "label": "Dark Energy Evolution Parameter w_a",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G₂ manifold topology - fundamental constant *)\n  b3 = 24  (* Third Betti number *)\n},\n  (* v16.2: w_a from moduli rolling dynamics *)\n  (* Formula: w_a = -1/√b₃ = -1/√24 *)\n  \n  waGeometric = -1/Sqrt[b3];\n  \n  (* DESI DR2 2025 result *)\n  desi2025 = -0.816;\n  desiUncertainty = 0.25;\n  \n  deviation = (waGeometric - desi2025) / desiUncertainty;\n  \n  {N[waGeometric, 6], N[deviation, 3]}\n]",
   "expected_result": "{-0.816497, 0.002σ}",

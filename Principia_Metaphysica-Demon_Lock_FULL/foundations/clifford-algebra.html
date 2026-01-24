@@ -130,7 +130,7 @@
                             Different dimensional frameworks in PM:<br>
                             <strong>(3,1)</strong>: 4D spacetime (our universe)<br>
                             <strong>(12,1)</strong>: 13D shadow manifold<br>
-                            <strong>(24,2)</strong>: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (2T physics)
+                            <strong>(24,1)</strong>: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (Euclidean bridge)
                         </div>
                         <span class="foundation-badge pm-specific" style="margin-top: 0.5rem; background: rgba(139, 127, 255, 0.1); color: #8b7fff;">PM Framework</span>
                     </div>
@@ -141,7 +141,7 @@
                             Spinor dimension formula: <strong>2<sup>⌊n/2⌋</sup></strong> for n-dimensional space<br>
                             4D: 2<sup>2</sup> = 4 components (Dirac spinor)<br>
                             13D: 2<sup>6</sup> = 64 components<br>
-                            <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D: 2<sup>13</sup> = 8192 components
+                            <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D: 2<sup>12</sup> = 4096 components
                         </div>
                         <span class="foundation-badge established" style="margin-top: 0.5rem;">Representation Theory</span>
                     </div>
@@ -263,9 +263,9 @@
                 <!-- <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D -->
                 <rect x="580" y="360" width="220" height="100" fill="rgba(255, 126, 182, 0.1)" stroke="#ff7eb6" stroke-width="2" rx="8"/>
                 <text x="690" y="382" text-anchor="middle" fill="#ff7eb6" font-size="14" font-weight="700"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk</text>
-                <text x="690" y="402" text-anchor="middle" fill="var(--text-primary)" font-size="13">Cl(24,2)</text>
-                <text x="690" y="420" text-anchor="middle" fill="var(--text-secondary)" font-size="12">Signature: (24,2)</text>
-                <text x="690" y="438" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-weight="600">Spinors: 2¹³ = 8192 components</text>
+                <text x="690" y="402" text-anchor="middle" fill="var(--text-primary)" font-size="13">Cl(24,1)</text>
+                <text x="690" y="420" text-anchor="middle" fill="var(--text-secondary)" font-size="12">Signature: (24,1)</text>
+                <text x="690" y="438" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-weight="600">Spinors: 2¹² = 4096 components</text>
                 <text x="690" y="452" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-style="italic">(massive spinor space)</text>
 
                 <defs>
@@ -554,15 +554,15 @@
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk: Cl(24,2) with 8192-Component Spinors</h4>
+                <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk: Cl(24,1) with 4096-Component Spinors</h4>
                 <p style="color: var(--text-secondary);">
-                    The 26-dimensional bulk spacetime has signature (24,2) in the 2T physics framework. The Clifford algebra Cl(24,2) gives rise to massive spinor representations:
+                    The 27-dimensional bulk spacetime has signature (26,1) in the v23.1 framework. The Clifford algebra Cl(24,1) acts on the 24D core (excluding the 2D central sampler) and gives rise to massive spinor representations:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong>Algebra dimension:</strong> 2<sup>26</sup> = 67,108,864 (total Clifford algebra elements)</li>
-                    <li><strong>Spinor dimension:</strong> 2<sup>13</sup> = 8192 components (irreducible representation)</li>
+                    <li><strong>Algebra dimension:</strong> 2<sup>25</sup> = 33,554,432 (total Clifford algebra elements)</li>
+                    <li><strong>Spinor dimension:</strong> 2<sup>12</sup> = 4096 components (irreducible representation)</li>
                     <li><strong>Physical meaning:</strong> Contains all possible fermionic degrees of freedom in the bulk</li>
-                    <li><strong>Factorization:</strong> 8192 = 64 × 128, suggesting <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure</li>
+                    <li><strong>Factorization:</strong> 4096 = 64 × 64, suggesting <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure</li>
                 </ul>
             </div>
 
@@ -572,8 +572,8 @@
                     After Sp(2,R) gauge fixing, we obtain a <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>-dimensional shadow manifold with signature (12,1):
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong>Algebra dimension:</strong> 2<sup>13</sup> = 8192</li>
-                    <li><strong>Spinor dimension:</strong> 2<sup>6</sup> = 64 components</li>
+                    <li><strong>Algebra dimension:</strong> 2<sup>13</sup> = 8192 (for Cl(13))</li>
+                    <li><strong>Spinor dimension:</strong> 2<sup>6</sup> = 64 components (for 13D)</li>
                     <li><strong>Generation structure:</strong> 64 = 4 × 16, suggesting decomposition into 4D spinors</li>
                     <li><strong>Fermion generations:</strong> The 64 components may encode the <span class="pm-value" data-pm-value="topology.n_gen"></span> generations of fermions plus symmetries</li>
                 </ul>
@@ -594,7 +594,7 @@
 
             <p style="margin-top: 1.5rem;">
                 The dimensional reduction from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 4D preserves the Clifford algebra structure at each level, with spinor spaces
-                nested inside one another. This hierarchy naturally explains:
+                nested inside one another via the Euclidean bridge mechanism. This hierarchy naturally explains:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem; margin-top: 1rem;">
                 <li><strong>Fermion generations:</strong> The 64 components in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D may encode 3 generations × (quarks + leptons) structure</li>
@@ -722,7 +722,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        8192-component bulk spinor
+                        4096-component bulk spinor
                     </p>
                     <a href="../sections.html#pneuma-lagrangian" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -732,7 +732,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Geometric Framework</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        Cl(24,2) → Cl(12,1) reduction
+                        Cl(24,1) → Cl(12,1) reduction
                     </p>
                     <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -770,7 +770,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        8192-component bulk spinor
+                        4096-component bulk spinor
                     </p>
                     <a href="../sections.html#pneuma-lagrangian" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -780,7 +780,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Geometric Framework</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        Cl(24,2) → Cl(12,1) reduction
+                        Cl(24,1) → Cl(12,1) reduction
                     </p>
                     <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;

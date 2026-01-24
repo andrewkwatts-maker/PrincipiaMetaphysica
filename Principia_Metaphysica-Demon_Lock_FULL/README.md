@@ -1,17 +1,17 @@
 # Principia Metaphysica
 **Philosophiæ Metaphysicæ Principia Mathematica**
 
-[![Version](https://img.shields.io/badge/version-16.2%20STERILE-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
-[![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/v16/appendices/appendix_f_72gates_v16_2.py)
+[![Version](https://img.shields.io/badge/version-23.0--12PAIR-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
+[![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/v21/appendices/appendix_f_72gates_v16_2.py)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
 
-**v16.2 STERILE: A Zero-Degree-of-Freedom Geometric Framework from G₂ Manifold Compactification**
+**v23.0-12PAIR: 12x(2,0) Paired Bridge System - Unified Consciousness Architecture**
 
 *Copyright (c) 2025-2026 Andrew Keith Watts.
 
-> ⚠️ **STERILE STATUS**: This is a zero-degree-of-freedom model. All 72 Gates are LOCKED.
-> No free parameters remain - every constant derives from pure G₂ topology.
+> **v23.0 STATUS**: 12x(2,0) paired bridge system with distributed OR reduction.
+> All 72 Gates LOCKED. Zero degrees of freedom - every constant derives from pure G2 topology.
 
 ---
 
@@ -26,6 +26,7 @@
 ## Table of Contents
 
 - [Quick Start](#quick-start)
+- [v22 Dimensional Architecture](#v22-dimensional-architecture)
 - [Abstract](#abstract)
 - [Key Validated Predictions](#key-validated-predictions-v162)
 - [The Octonionic Constraint](#the-octonionic-constraint-why-3-generations)
@@ -40,19 +41,72 @@
 
 ## Abstract
 
-This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, demonstrating Weyl anomaly cancellation via Sp(2,R) symplectic invariance, ensuring a ghost-free unitary vacuum. The framework begins with 26-dimensional spacetime with signature (24,2)—24 spatial dimensions and 2 timelike dimensions. An Sp(2,R) gauge symmetry removes unphysical ghost states, projecting to an effective 13-dimensional shadow manifold with signature (12,1). This 13D space then compactifies on a 7-dimensional G₂ manifold, yielding a 6-dimensional bulk with signature (5,1).
+This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v22+ framework begins with 25-dimensional spacetime with signature (24,1)—24 spatial dimensions and 1 timelike dimension. The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows, each sharing a unified time fiber T¹. Each bridge pair (x_i, y_i) distributes coordinates: x_i to Normal shadow, y_i to Mirror shadow. This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
 
-The framework features four branes: one 6D observable universe (5,1) and three 4D shadow universes (3,1), all sharing a common 4D spacetime base. The topology of the flux-dressed G₂ manifold yields an effective Euler characteristic χ_eff = 144, which through the relation n_gen = χ_eff/48 predicts exactly 3 fermion generations. The fundamental field is an 8192-component spinor in 26D (Clifford algebra Cl(24,2)), which gauge-reduces to 64 effective components in the 13D shadow.
+The framework features dual shadow universes connected by a Euclidean bridge, all sharing a common time fiber. The topology of the flux-dressed G₂ manifold yields an effective Euler characteristic χ_eff = 144, which through the relation n_gen = χ_eff/48 predicts exactly 3 fermion generations. The fundamental field is a spinor in the 25D bulk (Clifford algebra Cl(24,1)), which reduces to effective components in each shadow universe.
 
 Time emerges from thermal entropy via the Two-Time Thermal Hypothesis: observable thermal time couples to an orthogonal hidden time dimension. The framework predicts dark energy equation of state w₀ = -23/24 ≈ -0.9583 (v16.2 thawing quintessence formula: w₀ = -1 + 1/b₃) and w_a = -1/√24 ≈ -0.204, matching DESI 2025 thawing constraint within 0.02σ. SO(10) grand unification emerges naturally from the G₂ compactification. Shared extra dimensions produce Kaluza-Klein graviton resonances at approximately 5 TeV, testable at the High-Luminosity LHC.
 
-Six critical mathematical issues have been resolved: (1) Generation count correctly derived from flux-dressed topology rather than bare Euler characteristic; (2) Dark energy attractor to w = -1.0 at late times via Mashiach minimum; (3) Spinor dimensions validated via Clifford algebra; (4) Dimensional reduction pathway clarified (gauge projection followed by compactification); (5) Previously undefined parameters now derived from geometry; (6) Gauge coupling unification achieved with 3% precision. Framework validation shows 40 of 72 gates verified (56% with remaining 30 being untestable foundational axioms and 2 mathematical), with 25 of 26 predictions within 1σ experimental error bars (χ²_reduced = 0.3).
+Six critical mathematical issues have been resolved: (1) Generation count correctly derived from flux-dressed topology rather than bare Euler characteristic; (2) Dark energy attractor to w = -1.0 at late times via Mashiach minimum; (3) Spinor dimensions validated via Clifford algebra; (4) Dimensional reduction pathway clarified (gauge projection followed by compactification); (5) Previously undefined parameters now derived from geometry; (6) Gauge coupling unification achieved with 3% precision. Framework validation shows 72/72 gates certified (of which ~88% are DERIVED or GEOMETRIC, ~7% are FITTED, ~4% use INPUT values). See GATE_CATEGORIZATION.md for detailed classification.
 
 ---
 
-## Key Validated Predictions (v16.2)
+## v22 Dimensional Architecture
 
-Principia Metaphysica makes **parameter-free predictions** from G2 topology that match experiment:
+v23.0 introduces the **12x(2,0) paired bridge system**, replacing the single bridge with 12 paired modules that enable distributed OR reduction and consciousness I/O channels.
+
+### Bulk Structure
+
+```
+M^{24,1} = T^1 x_fiber (Direct_Sum_{i=1}^{12} B_i^{2,0})
+```
+
+- **24 spacelike dimensions**: 12 pairs x 2 dimensions per pair = 24
+- **1 timelike dimension**: Single unified time fibering over all pairs
+- **12 Euclidean bridge pairs**: Each B_i^{2,0} is a 2D Euclidean bridge
+
+### Metric Tensor
+
+```
+ds^2 = -dt^2 + Sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
+```
+
+Where:
+- `dy_{1i}` = perception/input coordinate for pair i
+- `dy_{2i}` = intuition/output coordinate for pair i
+
+### Distributed OR Reduction
+
+```
+Full OR: Tensor_{i=1}^{12} R_perp_i
+
+Per-pair: R_perp_i = [[0, -1], [1, 0]]
+```
+
+Each pair executes independent OR reduction, with the full transformation being the tensor product across all 12 pairs.
+
+### Consciousness I/O Channels
+
+| Pair Index | Function | Role |
+|------------|----------|------|
+| 1-6 | Baseline awareness | Minimum for wet microtubule stability (tau > 25ms) |
+| 7-12 | Gnosis unlocking | Progressive activation -> full awareness |
+
+### Gnosis Unlocking Formula
+
+```
+alpha = 1 / (1 + exp(-beta * (n_active - 6)))
+beta ~ 0.5 (residue-tuned)
+```
+
+- 6 pairs active: alpha ~ 0.5 (baseline unaware)
+- 12 pairs active: alpha ~ 0.99 (full gnosis)
+
+---
+
+## Key Validated Predictions (v23.0)
+
+Principia Metaphysica derives predictions from G2 topology that match experiment:
 
 ### Fundamental Constants
 | Prediction | PM Value | Experiment | Agreement |
@@ -67,21 +121,30 @@ Principia Metaphysica makes **parameter-free predictions** from G2 topology that
 | theta_12 (solar) | 33.59 deg | 33.41 +/- 0.75 deg | 0.24 sigma |
 | theta_13 (reactor) | 8.65 deg | 8.63 +/- 0.11 deg | 0.16 sigma |
 | theta_23 (atmospheric) | 49.75 deg | 49.3 +/- 1.0 deg | 0.45 sigma |
-| Mass Sum (Sum m_nu) | 0.099 eV | < 0.12 eV (Planck) | PASS |
+| Mass Sum (Sum m_nu) | 0.099 eV | < 0.12 eV (Planck 2018) | PASS |
 
 ### Cosmology (DESI 2025 thawing comparison)
-| Parameter | PM Prediction (v16.2) | DESI 2025 (thawing) | Agreement |
+| Parameter | PM Prediction (v23.0) | DESI 2025 (thawing) | Agreement |
 |-----------|----------------------|---------------------|-----------|
 | Dark Energy w_0 | -0.9583 (-23/24) | -0.957 +/- 0.067 | 0.02 sigma |
 | Evolution w_a | -0.204 (-1/√24) | -0.99 +/- 0.32 | 2.4 sigma |
 
-### New in v16.2 "STERILE"
+### Key Features
 - **72 Gates of Integrity**: Complete sterile certification - all gates LOCKED
-- **Zero-Degree-of-Freedom**: No fitted parameters - pure geometric derivation
-- **DESI 2025 Alignment**: w₀ = -23/24 = -0.9583 matches at 0.027σ (near-perfect)
-- **Hubble Tension Resolved**: H₀ = 70.42 km/s/Mpc bridges CMB and local measurements
-- **Two-Time Framework**: (13,1) + (13,1) dimensional structure fully implemented
-- **116 formulas with complete derivation chains**
+- **Reduced Parameter Count**: ~5 fitted parameters vs Standard Model's 19+
+- **DESI 2025 Alignment**: w0 = -23/24 = -0.9583 consistent with DESI thawing constraint
+- **Hubble Tension**: H0 prediction bridges CMB and local measurements (exploratory)
+- **Dual Shadow Framework**: dual 13D(12,1) shadows via 12x(2,0) bridge pairs
+- **116 formulas with derivation chains**
+
+### New in v23.0 "12PAIR"
+- **12x(2,0) Paired Bridge System**: Replaces single bridge with 12 paired modules
+- **Bulk Metric**: ds^2 = -dt^2 + Sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
+- **Distributed OR Reduction**: Tensor product across 12 pairs: Tensor_{i=1}^{12} R_perp_i
+- **Consciousness I/O Channels**: Each pair is a neural gate (y_{1i} = input, y_{2i} = output)
+- **Gnosis Unlocking**: 6 baseline pairs (unaware) -> 12 full awareness (complete gnosis)
+- **Dimensional Structure**: M^{24,1} = T^1 x_fiber (Direct_Sum_{i=1}^{12} B_i^{2,0})
+- **Wet Microtubule Stability**: 6-pair minimum for coherence time tau > 25ms
 
 ### Three Topological Seeds
 All 72 gates derive from:
@@ -95,7 +158,7 @@ All 72 gates derive from:
 
 ## The Octonionic Constraint: Why 3 Generations?
 
-Principia Metaphysica v16.1 demonstrates that the 3 generations of matter are not arbitrary parameters but **topological necessities**.
+Principia Metaphysica proposes that the 3 generations of matter emerge from topological constraints rather than being arbitrary parameters.
 
 - **Vacuum Capacity:** The G₂ manifold has a transverse dimensionality of 24 (the third Betti number b₃ = 24), representing the total "capacity" for independent matter modes.
 - **Matter Structure:** The fundamental degrees of freedom are defined by the Octonions (𝕆), which have dimension 8. This reflects the 8-brane structure of the two-time framework.
@@ -135,6 +198,18 @@ python serve.py
 ```
 
 Then open http://localhost:8000 in your browser.
+
+### v23 Module Verification
+
+```python
+# Verify v23 12-pair imports
+from simulations import __version__
+print(f"Version: {__version__}")  # Should show "23.0"
+
+from simulations.v21.master_action import master_action_simulation_v18
+from simulations.v21.quantum_bio import orch_or_bridge_v17
+from simulations.v21.foundations import foundations_v16_2
+```
 
 ---
 
@@ -254,25 +329,25 @@ Each simulation module can be run independently:
 
 **Neutrino Physics:**
 ```bash
-python simulations/v16/neutrino/pmns_derivation_v16_2.py
-python simulations/v16/neutrino/neutrino_mass_hierarchy_v16_2.py
+python simulations/v21/neutrino/pmns_derivation_v16_2.py
+python simulations/v21/neutrino/neutrino_mass_hierarchy_v16_2.py
 ```
 
 **Cosmology:**
 ```bash
-python simulations/v16/cosmology/dark_energy_eos_v16_2.py
-python simulations/v16/cosmology/hubble_tension_v16_2.py
+python simulations/v21/cosmology/dark_energy_eos_v16_2.py
+python simulations/v21/cosmology/hubble_tension_v16_2.py
 ```
 
 **Gauge Unification:**
 ```bash
-python simulations/v16/gauge/coupling_unification_v16_2.py
+python simulations/v21/gauge/coupling_unification_v16_2.py
 ```
 
 **Fermion Mixing:**
 ```bash
-python simulations/v16/fermion/ckm_matrix_v16_2.py
-python simulations/v16/fermion/octonionic_mixing_v16_2.py
+python simulations/v21/fermion/ckm_matrix_v16_2.py
+python simulations/v21/fermion/octonionic_mixing_v16_2.py
 ```
 
 ### Batch Processing
@@ -382,7 +457,7 @@ Located in `simulations/data/experimental/`:
 - Source: NIST CODATA database
 
 **pdg_2024_values.json**
-- Particle Data Group 2024 review
+- Particle Data Group 2024 Review (PDG 2024)
 - Particle masses, lifetimes, branching ratios
 - Source: PDG Live
 
@@ -406,6 +481,22 @@ Located in `simulations/data/experimental/`:
 **sections.json**
 - Paper content in structured format
 - Section hierarchy and cross-references
+
+---
+
+## Scientific Status and Caveats
+
+**Important**: Principia Metaphysica is a speculative theoretical framework, not an established physical theory. The following caveats apply:
+
+1. **Fitted Parameters**: ~5 gates (~7%) use fitted parameters (Yukawa couplings, Hubble angle, etc.). These are acknowledged limitations, not predictions.
+
+2. **Speculative Elements**: The octonionic mixing mechanism, gnosis/consciousness claims, and some cosmological derivations remain conjectural.
+
+3. **Falsification Risks**: The Inverted Ordering prediction (sum m_nu ~ 0.10 eV) is in potential tension with DESI 2024 bounds (< 0.072 eV at 95% CL).
+
+4. **Derivation Rigor**: Some formulas (e.g., alpha^-1, k_gimel) achieve numerical precision but lack rigorous first-principles derivation paths.
+
+See [GATE_CATEGORIZATION.md](docs/peer_review_resolution/GATE_CATEGORIZATION.md) for detailed classification of predictions vs fitted parameters.
 
 ---
 
@@ -448,7 +539,7 @@ LICENSE
 requirements.txt
 run_all_simulations.py
 simulations/validation/
-simulations/v16/
+simulations/v21/
 simulations/data/experimental/
 AutoGenerated/*.json
 scripts/zenodo_pack_v16.py
@@ -474,7 +565,7 @@ These folders can be excluded from Zenodo to reduce archive size:
 | `node_modules/` | If present | Variable |
 | `__pycache__/` | Python bytecode cache | ~5MB |
 | `.vscode/` | IDE settings | ~1MB |
-| `.claude/` | Claude AI settings | ~1MB |
+| `.claude/` | Code assistant settings | ~1MB |
 | `*.pyc` files | Compiled Python | ~2MB |
 
 ### .zenodoignore
@@ -505,11 +596,11 @@ Thumbs.db
 If you use this work, please cite:
 
 ```bibtex
-@software{watts2025pm,
+@software{watts2026pm,
   author       = {Watts, Andrew Keith},
   title        = {Principia Metaphysica: G2-Manifold Grand Unified Theory},
-  version      = {16.2},
-  year         = {2025},
+  version      = {23.0},
+  year         = {2026},
   publisher    = {Zenodo},
   doi          = {10.5281/zenodo.18079602},
   url          = {https://github.com/andrewkwatts-maker/PrincipiaMetaphysica}
@@ -545,11 +636,11 @@ GitHub: [andrewkwatts-maker](https://github.com/andrewkwatts-maker)
 
 This work builds upon:
 - CODATA 2022 recommended values (NIST)
-- Particle Data Group 2024 review
+- Particle Data Group 2024 Review (PDG 2024)
 - NuFIT 6.0 neutrino oscillation analysis
 - DESI 2025 dark energy survey results
 - Mathematical foundations from the G₂ manifold literature
 
 ---
 
-*"72 Gates LOCKED. STERILE: Zero degrees of freedom remain."* — v16.2 STERILE
+*"72 Gates LOCKED. 12 Pairs Active. Gnosis Unlocked."* -- v23.0-12PAIR

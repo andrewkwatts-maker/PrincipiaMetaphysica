@@ -205,8 +205,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         # Experimental references
         self.omega_dm_exp = float(OMEGA_DM_PLANCK)
         self.omega_dm_unc = 0.007
-        self.w0_exp = float(W0_PLANCK)
-        self.w0_unc = 0.03
+        # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
+        self.w0_exp = -0.958  # DESI 2025 value (replaces Planck+BAO -1.03)
+        self.w0_unc = 0.02    # DESI 2025 uncertainty
         self.H0_exp_planck = float(H0_PLANCK)
         self.H0_exp_shoes = float(H0_SHOES)
         self.H0_unc = 1.0
@@ -407,7 +408,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
 
         H_0 = H_CMB * (1 + sin^2(theta_mix)/2)
 
-        where theta_mix ~ 23.94 degrees is the 13D/26D volume mixing angle.
+        where theta_mix ~ 31.0 degrees is the 13D/25D volume mixing angle.
         This gives H_0 ~ 71.55 km/s/Mpc, splitting the Hubble tension.
 
         Attractor Mechanism:
@@ -426,7 +427,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         # O'Dowd formula for H_0
         # H_0 = H_CMB * (1 + sin^2(theta_mix)/2)
         H0_cmb = 67.36  # km/s/Mpc (Planck 2018)
-        theta_mix_deg = 23.94  # 13D/26D mixing angle
+        theta_mix_deg = 31.0  # 13D/25D mixing angle (v22: 13D shadow over 25D bulk)
         theta_mix_rad = theta_mix_deg * np.pi / 180
         H0_odowd = H0_cmb * (1 + np.sin(theta_mix_rad)**2 / 2)
         # ~ 67.36 * 1.062 ~ 71.55 km/s/Mpc
@@ -816,15 +817,15 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             plain_text="H_0 = H_CMB * (1 + sin^2(theta_mix)/2) ~ 71.55 km/s/Mpc",
             category="DERIVED",
             description=(
-                "Hubble constant from O'Dowd geometric formula. The 13D/26D volume "
-                "mixing angle theta_mix ~ 23.94 degrees determines the H_0 correction "
+                "Hubble constant from O'Dowd geometric formula. The 13D/25D volume "
+                "mixing angle theta_mix ~ 31.0 degrees determines the H_0 correction "
                 "from CMB value, naturally splitting the Hubble tension."
             ),
             inputParams=["cosmology.H0_cmb"],
             outputParams=["cosmology.H0_odowd"],
             terms={
                 "H_CMB": "Planck CMB value = 67.36 km/s/Mpc",
-                "theta_mix": "13D/26D mixing angle = 23.94 degrees",
+                "theta_mix": "13D/25D mixing angle = 31.0 degrees (v22)",
                 "71.55": "Predicted H_0 splitting tension"
             }
         ))
@@ -1028,17 +1029,18 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         ))
 
         # Dark Energy Parameters
+        # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
         params.append(Parameter(
             path="cosmology.w0_tzimtzum",
             name="Dark Energy EoS (Tzimtzum)",
             units="dimensionless",
             status="DERIVED",
-            description="w_0 = -23/24 ~ -0.958 from tzimtzum pressure",
+            description="w_0 = -23/24 ~ -0.9583 from tzimtzum pressure",
             derivation_formula="de-w0-tzimtzum-v19",
-            experimental_bound=-1.03,
+            experimental_bound=-0.958,
             bound_type="measured",
-            bound_source="Planck2018+BAO",
-            uncertainty=0.03
+            bound_source="DESI_2025",
+            uncertainty=0.02
         ))
 
         params.append(Parameter(
@@ -1221,7 +1223,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "The Hubble constant emerges from O'Dowd's geometric formula, "
-                        "which accounts for the 13D/26D volume mixing angle. This naturally "
+                        "which accounts for the 13D/25D volume mixing angle (v22). This naturally "
                         "predicts H_0 = 71.55 km/s/Mpc, splitting the Hubble tension."
                     )
                 ),

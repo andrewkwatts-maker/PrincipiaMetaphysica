@@ -3,7 +3,7 @@
   "cert_id": "CERT-SWAMP-035",
   "label": "Swampland Distance Conjecture",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* Swampland distance conjecture parameters *)\n  (* For consistent quantum gravity: a >= 1/sqrt(d-2) *)\n  spacetimeDimension = 4,\n  effectiveDimension = 7,  (* G2 manifold *)\n  \n  (* Swampland bound *)\n  aSwampland = 1/Sqrt[effectiveDimension - 2],\n  \n  (* PM scalar field range *)\n  (* phi_max / M_Pl < O(1) *)\n  scalarRange = 0.5  (* Sub-Planckian *)\n},\n  (* Check swampland bound is satisfied *)\n  aBound = N[aSwampland, 4];\n  boundSatisfied = (aBound > 0.4);\n  \n  (* Check scalar field range *)\n  rangeValid = (scalarRange < 1);\n  \n  {aBound, boundSatisfied, rangeValid, \"SEALED\"}\n]",
   "expected_result": "{0.4472, True, True, \"SEALED\"}",

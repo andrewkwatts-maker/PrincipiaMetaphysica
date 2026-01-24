@@ -1,0 +1,501 @@
+{
+  "metadata": {
+    "generated": "2026-01-21T04:26:51.690319",
+    "version": "v23.0",
+    "generator": "parameter_sensitivity_test_v23.py"
+  },
+  "summary": {
+    "total_parameters": 17,
+    "high_priority": 4,
+    "medium_priority": 1,
+    "low_priority": 12,
+    "with_experimental_comparison": 12,
+    "without_experimental_comparison": 5
+  },
+  "sigma_statistics": {
+    "mean": 17.15873355613401,
+    "max": 100.0,
+    "min": 0.0,
+    "within_1sigma": 7,
+    "within_2sigma": 10,
+    "within_3sigma": 10,
+    "beyond_3sigma": 2
+  },
+  "category_breakdown": {
+    "DERIVED": {
+      "count": 12,
+      "params": [
+        "alpha_inverse",
+        "mass_ratio",
+        "H0_local",
+        "V_cb",
+        "V_us",
+        "V_ub",
+        "jarlskog_J",
+        "theta_13",
+        "theta_23",
+        "w0",
+        "theta_12",
+        "chi_eff_total"
+      ]
+    },
+    "SEED": {
+      "count": 3,
+      "params": [
+        "b3",
+        "chi_eff",
+        "phi"
+      ]
+    },
+    "GEOMETRIC": {
+      "count": 1,
+      "params": [
+        "k_gimel"
+      ]
+    },
+    "FITTED": {
+      "count": 1,
+      "params": [
+        "sin2_theta_W"
+      ]
+    }
+  },
+  "priority_lists": {
+    "high": [
+      "alpha_inverse",
+      "mass_ratio",
+      "H0_local",
+      "V_cb"
+    ],
+    "medium": [
+      "b3"
+    ],
+    "low": [
+      "V_us",
+      "V_ub",
+      "jarlskog_J",
+      "theta_13",
+      "theta_23",
+      "w0",
+      "theta_12",
+      "chi_eff",
+      "chi_eff_total",
+      "k_gimel",
+      "phi",
+      "sin2_theta_W"
+    ]
+  },
+  "results": [
+    {
+      "param_name": "alpha_inverse",
+      "pm_value": 137.03670177575597,
+      "exp_value": 137.035999084,
+      "exp_uncertainty": 2.1e-08,
+      "exp_source": "CODATA 2022",
+      "difference_percent": 0.0005127789490883039,
+      "sigma_deviation": 100.0,
+      "category": "DERIVED",
+      "formula": "alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi)",
+      "dependencies": [
+        "k_gimel",
+        "b3",
+        "phi"
+      ],
+      "downstream": [
+        "all_QED_predictions",
+        "fine_structure_tests"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "HIGH",
+      "notes": "Large deviation (+0.00%) with 2 downstream"
+    },
+    {
+      "param_name": "mass_ratio",
+      "pm_value": 943.358340252282,
+      "exp_value": 1836.15267343,
+      "exp_uncertainty": 1.1e-07,
+      "exp_source": "CODATA 2022",
+      "difference_percent": -48.62309905362857,
+      "sigma_deviation": 100.0,
+      "category": "DERIVED",
+      "formula": "mu = (C_kaf^2 * k_gimel/pi) / holonomy_eff",
+      "dependencies": [
+        "k_gimel",
+        "c_kaf",
+        "holonomy_eff"
+      ],
+      "downstream": [
+        "atomic_structure",
+        "chemistry"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "HIGH",
+      "notes": "Large deviation (-48.62%) with 2 downstream"
+    },
+    {
+      "param_name": "H0_local",
+      "pm_value": 71.54995555555556,
+      "exp_value": 73.04,
+      "exp_uncertainty": 1.04,
+      "exp_source": "SH0ES 2022",
+      "difference_percent": -2.040038943653409,
+      "sigma_deviation": 1.4327350427350483,
+      "category": "DERIVED",
+      "formula": "H0 = roots/4 - P_O/pressure_divisor + eta_S",
+      "dependencies": [
+        "roots_total",
+        "odowd_bulk",
+        "sophian_drag"
+      ],
+      "downstream": [
+        "age_of_universe",
+        "distance_ladder"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "HIGH",
+      "notes": "1.4 sigma deviation with 2 downstream"
+    },
+    {
+      "param_name": "V_cb",
+      "pm_value": 0.04032752537796979,
+      "exp_value": 0.041,
+      "exp_uncertainty": 0.0014,
+      "exp_source": "PDG 2024",
+      "difference_percent": -1.640182004951735,
+      "sigma_deviation": 0.48033901573586524,
+      "category": "DERIVED",
+      "formula": "V_cb = A * epsilon^2 ~ 0.040",
+      "dependencies": [
+        "epsilon_fn",
+        "A_geometric"
+      ],
+      "downstream": [
+        "B_physics",
+        "CP_violation"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "HIGH",
+      "notes": "0.5 sigma deviation with 2 downstream"
+    },
+    {
+      "param_name": "b3",
+      "pm_value": 24,
+      "exp_value": null,
+      "exp_uncertainty": null,
+      "exp_source": null,
+      "difference_percent": null,
+      "sigma_deviation": null,
+      "category": "SEED",
+      "formula": "b3 = 24 (G2 Betti number)",
+      "dependencies": [],
+      "downstream": [
+        "chi_eff",
+        "k_gimel",
+        "w0",
+        "n_gen",
+        "roots_total"
+      ],
+      "downstream_impact_count": 5,
+      "priority": "MEDIUM",
+      "notes": "SEED parameter with 5 downstream"
+    },
+    {
+      "param_name": "V_us",
+      "pm_value": 0.22313016014842982,
+      "exp_value": 0.2245,
+      "exp_uncertainty": 0.0008,
+      "exp_source": "PDG 2024",
+      "difference_percent": -0.6101736532606624,
+      "sigma_deviation": 1.7122998144627337,
+      "category": "DERIVED",
+      "formula": "V_us = epsilon = exp(-1.5) ~ 0.223",
+      "dependencies": [
+        "epsilon_fn"
+      ],
+      "downstream": [
+        "CKM_unitarity",
+        "kaon_physics"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "V_ub",
+      "pm_value": 0.0034757158300444454,
+      "exp_value": 0.00382,
+      "exp_uncertainty": 0.00024,
+      "exp_source": "PDG 2024",
+      "difference_percent": -9.012674606166353,
+      "sigma_deviation": 1.434517374814811,
+      "category": "DERIVED",
+      "formula": "V_ub = A * epsilon^3 * sqrt(rho^2 + eta^2)",
+      "dependencies": [
+        "epsilon_fn",
+        "A_geometric",
+        "rho",
+        "eta"
+      ],
+      "downstream": [
+        "rare_B_decays"
+      ],
+      "downstream_impact_count": 1,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "jarlskog_J",
+      "pm_value": 2.9148902086057355e-05,
+      "exp_value": 3e-05,
+      "exp_uncertainty": 3e-06,
+      "exp_source": "PDG 2024",
+      "difference_percent": -2.836993046475486,
+      "sigma_deviation": 0.28369930464754856,
+      "category": "DERIVED",
+      "formula": "J = A^2 * epsilon^6 * eta",
+      "dependencies": [
+        "epsilon_fn",
+        "A_geometric",
+        "eta"
+      ],
+      "downstream": [
+        "CP_violation_measure"
+      ],
+      "downstream_impact_count": 1,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "theta_13",
+      "pm_value": 8.61,
+      "exp_value": 8.58,
+      "exp_uncertainty": 0.11,
+      "exp_source": "NuFIT 6.0 (NO)",
+      "difference_percent": 0.3496503496503422,
+      "sigma_deviation": 0.27272727272726693,
+      "category": "DERIVED",
+      "formula": "theta_13 from chi_eff/b3 geometric ratio",
+      "dependencies": [
+        "chi_eff",
+        "b3"
+      ],
+      "downstream": [
+        "reactor_theta_13",
+        "CP_violation"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "theta_23",
+      "pm_value": 42.0,
+      "exp_value": 42.2,
+      "exp_uncertainty": 1.1,
+      "exp_source": "NuFIT 6.0 (NO)",
+      "difference_percent": -0.47393364928910625,
+      "sigma_deviation": 0.18181818181818438,
+      "category": "DERIVED",
+      "formula": "theta_23 = 45 - delta_23 (maximal + correction)",
+      "dependencies": [
+        "maximal_mixing",
+        "corrections"
+      ],
+      "downstream": [
+        "atmospheric_neutrinos",
+        "long_baseline"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "w0",
+      "pm_value": -0.9583333333333334,
+      "exp_value": -0.957,
+      "exp_uncertainty": 0.02,
+      "exp_source": "DESI DR2 2025",
+      "difference_percent": 0.1393242772553196,
+      "sigma_deviation": 0.06666666666667043,
+      "category": "DERIVED",
+      "formula": "w0 = -sigma_T = -23/24 = -0.9583...",
+      "dependencies": [
+        "b3"
+      ],
+      "downstream": [
+        "dark_energy_evolution",
+        "cosmic_acceleration"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "theta_12",
+      "pm_value": 33.44,
+      "exp_value": 33.41,
+      "exp_uncertainty": 0.75,
+      "exp_source": "NuFIT 6.0",
+      "difference_percent": 0.0897934750074862,
+      "sigma_deviation": 0.040000000000001514,
+      "category": "DERIVED",
+      "formula": "theta_12 = arcsin(1/sqrt(3)) + corrections",
+      "dependencies": [
+        "tribimaximal_base",
+        "corrections"
+      ],
+      "downstream": [
+        "solar_neutrinos",
+        "reactor_neutrinos"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    },
+    {
+      "param_name": "chi_eff",
+      "pm_value": 72,
+      "exp_value": null,
+      "exp_uncertainty": null,
+      "exp_source": null,
+      "difference_percent": null,
+      "sigma_deviation": null,
+      "category": "SEED",
+      "formula": "chi_eff = b3^2/8 = 72 (per sector)",
+      "dependencies": [
+        "b3"
+      ],
+      "downstream": [
+        "n_gen",
+        "reid_invariant",
+        "gate_transitions"
+      ],
+      "downstream_impact_count": 3,
+      "priority": "LOW",
+      "notes": "No experimental comparison available"
+    },
+    {
+      "param_name": "chi_eff_total",
+      "pm_value": 144,
+      "exp_value": null,
+      "exp_uncertainty": null,
+      "exp_source": null,
+      "difference_percent": null,
+      "sigma_deviation": null,
+      "category": "DERIVED",
+      "formula": "chi_eff_total = 2 * chi_eff = 144",
+      "dependencies": [
+        "chi_eff"
+      ],
+      "downstream": [
+        "reid_invariant",
+        "pressure_divisor",
+        "PMNS_mixing"
+      ],
+      "downstream_impact_count": 3,
+      "priority": "LOW",
+      "notes": "No experimental comparison available"
+    },
+    {
+      "param_name": "k_gimel",
+      "pm_value": 12.31830988618379,
+      "exp_value": null,
+      "exp_uncertainty": null,
+      "exp_source": null,
+      "difference_percent": null,
+      "sigma_deviation": null,
+      "category": "GEOMETRIC",
+      "formula": "k_gimel = b3/2 + 1/pi = 12.3183...",
+      "dependencies": [
+        "b3"
+      ],
+      "downstream": [
+        "alpha_inverse",
+        "mass_ratio",
+        "H0_calculation"
+      ],
+      "downstream_impact_count": 3,
+      "priority": "LOW",
+      "notes": "No experimental comparison available"
+    },
+    {
+      "param_name": "phi",
+      "pm_value": 1.618033988749895,
+      "exp_value": null,
+      "exp_uncertainty": null,
+      "exp_source": null,
+      "difference_percent": null,
+      "sigma_deviation": null,
+      "category": "SEED",
+      "formula": "phi = (1 + sqrt(5))/2 (Golden Ratio)",
+      "dependencies": [],
+      "downstream": [
+        "alpha_inverse",
+        "fermion_mass_scaling"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "No experimental comparison available"
+    },
+    {
+      "param_name": "sin2_theta_W",
+      "pm_value": 0.23121,
+      "exp_value": 0.23121,
+      "exp_uncertainty": 4e-05,
+      "exp_source": "PDG 2024 (Z-pole)",
+      "difference_percent": 0.0,
+      "sigma_deviation": 0.0,
+      "category": "FITTED",
+      "formula": "sin^2(theta_W) = CODATA * (1 + epsilon)",
+      "dependencies": [
+        "roots_total"
+      ],
+      "downstream": [
+        "W_Z_masses",
+        "electroweak_precision"
+      ],
+      "downstream_impact_count": 2,
+      "priority": "LOW",
+      "notes": "Within 2 sigma, limited downstream impact"
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "CRITICAL",
+      "category": "DEVIATION",
+      "parameters": [
+        "alpha_inverse",
+        "mass_ratio"
+      ],
+      "action": "These parameters show >3 sigma deviation from experiment. Review derivation chain for systematic errors or update formulas."
+    },
+    {
+      "priority": "HIGH",
+      "category": "STATUS",
+      "parameters": [
+        "sin2_theta_W"
+      ],
+      "action": "Move these FITTED parameters toward DERIVED status by establishing geometric or topological derivations."
+    },
+    {
+      "priority": "HIGH",
+      "category": "IMPACT",
+      "parameters": [
+        "alpha_inverse",
+        "mass_ratio",
+        "H0_local"
+      ],
+      "action": "Focus on these high-impact parameters first, as they affect the most downstream calculations."
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "FOUNDATION",
+      "parameters": [
+        "b3",
+        "chi_eff",
+        "phi"
+      ],
+      "action": "Review SEED parameters for potential geometric/topological justification. These form the foundation of the derivation chain."
+    }
+  ]
+}

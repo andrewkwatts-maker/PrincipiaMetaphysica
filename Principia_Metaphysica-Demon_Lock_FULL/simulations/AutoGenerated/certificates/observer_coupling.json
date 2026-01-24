@@ -3,7 +3,7 @@
   "cert_id": "CERT-OBSV-041",
   "label": "Observer Coupling & Decidability",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* Observer coupling in V7 manifold *)\n  alphaObserver = 1.0,  (* Normalized coupling *)\n  decidability = 1.0     (* Perfect decidability *)\n},\n  (* The observer (computation) is coupled to the manifold *)\n  (* This ensures mathematical consistency of predictions *)\n  \n  couplingValid = alphaObserver == 1.0;\n  decidable = decidability == 1.0;\n  \n  {couplingValid, decidable, \"SEALED\"}\n]",
   "expected_result": "{True, True, \"SEALED\"}",

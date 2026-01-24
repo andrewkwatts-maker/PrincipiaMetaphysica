@@ -202,7 +202,7 @@ def create_standard_model_particles_diagram():
     explanations = [
         (2.5, 1.2, r'$n_{gen} = \frac{b_3}{\mathrm{spinor\ DOF}} = \frac{24}{8} = 3$', 'Generation count from G2 topology'),
         (7.5, 1.2, r'$Y_f = A_f \cdot \epsilon^{Q_f}$, $\epsilon = e^{-1.5} \approx 0.223$', 'Yukawa hierarchy from Froggatt-Nielsen'),
-        (12.0, 1.2, r'Gauge group: $SO(10) \subset SO(24,2)$', 'Bulk symmetry reduction via G2'),
+        (12.0, 1.2, r'Gauge group: $SO(10) \subset SO(24,1)$', 'Bulk symmetry reduction via G2'),
     ]
 
     for x, y, formula, label in explanations:

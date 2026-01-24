@@ -658,8 +658,8 @@ class EstablishedPhysics:
                 value=12,
                 uncertainty=0.5,
                 units="dimensionless",
-                source="ESTABLISHED:Sp(2,R)_GAUGE_FIXING",
-                description="Orientation sum from Sp(2,R) gauge fixing - determines flux winding in theta_23"
+                source="ESTABLISHED:V21_BRIDGE_REDUCTION",
+                description="Orientation sum from v21 dual-shadow bridge - determines flux winding in theta_23"
             ),
             # Consciousness parameters for Appendix M (Speculative Extensions)
             EstablishedParameter(

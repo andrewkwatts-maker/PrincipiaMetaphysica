@@ -12,7 +12,7 @@ Key Results:
 - Portal coupling from G₂ cycle separation: g_portal ~ 10^-11
 - Direct detection cross-section: σ_SI ~ 10^-50 cm²
 
-The mirror sector emerges from Z₂ symmetry of the two-time (26D) framework.
+The mirror sector emerges from Z₂ symmetry of the 25D Euclidean bridge framework.
 Dark matter consists of mirror photons and mirror fermions with suppressed
 coupling to Standard Model via the Pneuma portal.
 
@@ -58,7 +58,7 @@ class DarkMatterDerivations:
     """
     Comprehensive dark matter derivations for Principia Metaphysica.
 
-    Derives all DM properties from G₂ geometry and two-time framework.
+    Derives all DM properties from G₂ geometry and Euclidean bridge framework.
     Generates Wolfram Alpha queries for validation.
     """
 
@@ -79,8 +79,8 @@ class DarkMatterDerivations:
 
     def __init__(
         self,
-        chi_eff: int = 144,
-        b3: int = 24,
+        chi_eff: int = None,
+        b3: int = None,
         d_over_R: float = 0.12,
         re_T: float = 9.865
     ):
@@ -88,15 +88,22 @@ class DarkMatterDerivations:
         Initialize dark matter derivation calculator.
 
         Args:
-            chi_eff: Effective Euler characteristic of G₂ manifold
-            b3: Third Betti number (associative cycles)
-            d_over_R: Cycle separation ratio
-            re_T: Real part of modulus VEV
+            chi_eff: Effective Euler characteristic of G₂ manifold (default: from SSOT)
+            b3: Third Betti number (associative cycles) (default: from SSOT)
+            d_over_R: Cycle separation ratio (FITTED to match DM abundance)
+            re_T: Real part of modulus VEV (FITTED to match DM abundance)
         """
-        self.chi_eff = chi_eff
-        self.b3 = b3
-        self.d_over_R = d_over_R
-        self.re_T = re_T
+        # Import from base precision module (SSOT)
+        try:
+            from simulations.base.precision import B3, CHI_EFF
+            self.chi_eff = chi_eff if chi_eff is not None else CHI_EFF  # SSOT: 144
+            self.b3 = b3 if b3 is not None else B3  # SSOT: 24
+        except ImportError:
+            # Fallback values if precision module not available
+            self.chi_eff = chi_eff if chi_eff is not None else 144  # FITTED: v23 fallback
+            self.b3 = b3 if b3 is not None else 24  # FITTED: v23 fallback
+        self.d_over_R = d_over_R  # FITTED: v23 phenomenological parameter
+        self.re_T = re_T  # FITTED: v23 phenomenological parameter
 
     # =========================================================================
     # STEP 1: Temperature Ratio from Asymmetric Reheating
@@ -594,7 +601,7 @@ class DarkMatterDerivations:
             category="GEOMETRIC",
             description=(
                 "Dark matter originates from a mirror sector arising from Z2 symmetry "
-                "in the two-time (26D) framework. G2 holonomy naturally supports a "
+                "in the 25D Euclidean bridge framework. G2 holonomy naturally supports a "
                 "parity transformation between visible and shadow sectors."
             ),
             inputParams=["topology.chi_eff", "topology.b3"],
@@ -817,7 +824,7 @@ class DarkMatterDerivations:
             title="Dark Matter from Mirror Sector",
             abstract=(
                 "Dark matter in Principia Metaphysica originates from a mirror sector "
-                "arising naturally from the Z2 symmetry of the two-time (26D) framework. "
+                "arising naturally from the Z2 symmetry of the 25D Euclidean bridge framework. "
                 "The G2 holonomy structure determines the sterile fraction (163/288), "
                 "asymmetric reheating temperature ratio (T'/T ~ 0.57), and the resulting "
                 "dark matter abundance Omega_DM/Omega_b ~ 5.4, matching Planck observations. "
@@ -848,7 +855,7 @@ class DarkMatterDerivations:
                     content=(
                         "In the Principia Metaphysica framework, dark matter is not added ad hoc "
                         "but emerges naturally from the geometric structure of the theory. "
-                        "The two-time (26D) framework with G2 holonomy possesses an inherent Z2 "
+                        "The 25D Euclidean bridge framework with G2 holonomy possesses an inherent Z2 "
                         "symmetry that generates a complete mirror sector - a shadow copy of the "
                         "Standard Model with suppressed coupling to ordinary matter."
                     )
@@ -868,7 +875,7 @@ class DarkMatterDerivations:
                         "The G2 holonomy manifold in M-theory compactification naturally admits "
                         "a discrete Z2 symmetry that exchanges the visible and shadow sectors. "
                         "This is not imposed by hand but emerges from the topology of the compact "
-                        "manifold and the two-time structure of the 26D framework."
+                        "manifold and the Euclidean bridge structure of the 25D framework."
                     )
                 ),
                 ContentBlock(

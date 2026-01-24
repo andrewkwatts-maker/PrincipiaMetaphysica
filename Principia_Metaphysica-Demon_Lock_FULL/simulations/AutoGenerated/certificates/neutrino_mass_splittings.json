@@ -3,7 +3,7 @@
   "cert_id": "CERT-NEUT-020",
   "label": "Neutrino Mass Splittings",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 topological invariants *)\n  b2 = 14,\n  b3 = 24,\n  chiEff = 144,\n  kGimel = 12.31831,\n  \n  (* Compactification scale *)\n  mGUT = 2.1*^16,  (* GeV *)\n  mPlanck = 2.435*^18,  (* GeV *)\n  \n  (* Seesaw parameters *)\n  yNu = 0.5,  (* Dirac Yukawa coupling *)\n  vEW = 246   (* GeV *)\n},\n  (* Seesaw formula: m_nu ~ (y_nu * v)^2 / M_R *)\n  (* Right-handed mass from G2 moduli: M_R ~ M_GUT / kGimel *)\n  \n  mR = mGUT / kGimel;\n  \n  (* Atmospheric splitting from 3-cycle volume *)\n  deltaM31Sq = (yNu * vEW)^2 / mR * (b3 / chiEff) * 1.0e18;\n  \n  (* Solar splitting from 2-cycle topology *)\n  deltaM21Sq = deltaM31Sq * (b2 / b3)^2;\n  \n  (* NuFIT 6.0 Normal Ordering *)\n  nufit60_dm21 = 7.41e-5;\n  nufit60_dm31 = 2.507e-3;\n  \n  {N[deltaM31Sq, 4], N[deltaM21Sq, 4]}\n]",
   "expected_result": "{2.4e-3 eV^2, 8.2e-5 eV^2}",

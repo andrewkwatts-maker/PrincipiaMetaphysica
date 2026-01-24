@@ -1,11 +1,16 @@
 """
-Master Audit Log Generator v16.2 - SSoT Edition
+Master Audit Log Generator v23.0 - SSoT Edition
 ================================================
 Runs all verification scripts and generates the complete
 audit log for Zenodo upload.
 
 Uses FormulasRegistry as the Single Source of Truth (SSoT)
 to ensure all derived values match the official Ten Pillars.
+
+v23.0 CHANGES:
+- Removed g2_enhancement = 1.9464 (incorrectly mixed formula variants)
+- All hardcoded constants now sourced from FormulasRegistry
+- Version strings updated to 23.0
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -44,7 +49,7 @@ def run_all_audits():
     """Run all verification audits and compile results using SSoT Registry."""
 
     print("=" * 70)
-    print(" PRINCIPIA METAPHYSICA v16.2 - MASTER AUDIT LOG (SSoT Edition)")
+    print(" PRINCIPIA METAPHYSICA v23.0 - MASTER AUDIT LOG (SSoT Edition)")
     print("=" * 70)
     print(f" Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f" Kernel: Python {sys.version.split()[0]}")
@@ -61,7 +66,7 @@ def run_all_audits():
     results = {
         "header": {
             "title": "Principia Metaphysica Master Audit",
-            "version": "16.2.0-SSoT",
+            "version": "23.0.0-SSoT",
             "execution_date": datetime.now().isoformat(),
             "kernel": f"Python {sys.version.split()[0]}",
             "ssot_enabled": registry is not None
@@ -91,23 +96,24 @@ def run_all_audits():
         sophian_gamma = registry.sophian_gamma
         odowd_bulk_pressure = registry.odowd_bulk_pressure
     else:
-        # Fallback values (should not be used if SSoT is properly configured)
-        b3 = 24
-        chi_eff = 144
-        roots_total = 288
-        visible_sector = 125
-        sterile_sector = 163
-        kappa_Delta = b3/2 + 1/np.pi
-        c_kaf = b3 * (b3 - 7) / (b3 - 9)
-        eta_S = 0.6819
-        sigma_T = 23.0 / 24.0
-        sophian_gamma = 0.57721566490153286
-        odowd_bulk_pressure = 163
+        # Fallback values matching FormulasRegistry v23 definitions
+        b3 = 24  # SEED: Joyce-Karigiannis TCS manifold
+        chi_eff = 72  # DERIVED: b3^2/8 = 72 (per sector)
+        chi_eff_total = 144  # DERIVED: 2 * chi_eff = 144 (total)
+        roots_total = 288  # DERIVED: 12 * b3 = 288
+        visible_sector = 125  # FITTED: Effective visible residues
+        sterile_sector = 163  # DERIVED: roots_total - visible_sector
+        kappa_Delta = b3/2 + 1/np.pi  # DERIVED: k_gimel formula
+        c_kaf = b3 * (b3 - 7) / (b3 - 9)  # DERIVED: C_kaf formula
+        eta_S = 0.6819  # FITTED: H0 friction coefficient
+        sigma_T = 23.0 / 24.0  # DERIVED: Tzimtzum pressure (-w0)
+        sophian_gamma = 0.57721566490153286  # SEED: Euler-Mascheroni constant
+        odowd_bulk_pressure = 163  # DERIVED: 7*b3-5 = 163
 
     results["topological_anchors"] = {
         "b3": {"value": b3, "status": "VERIFIED", "source": "Joyce-Karigiannis TCS"},
-        "chi_eff": {"value": chi_eff, "status": "VERIFIED", "formula": "B3^2/4"},
-        "roots_total": {"value": roots_total, "status": "VERIFIED", "source": "E8xE8"},
+        "chi_eff": {"value": chi_eff, "status": "VERIFIED", "formula": "b3^2/8 = 72 (per sector)"},
+        "roots_total": {"value": roots_total, "status": "VERIFIED", "source": "12 * b3 = 288"},
         "kappa_Delta": {"value": float(kappa_Delta), "status": "VERIFIED", "alias": "demiurgic_coupling"},
         "c_kaf": {"value": float(c_kaf), "status": "VERIFIED"},
         "eta_S": {"value": eta_S, "status": "VERIFIED", "role": "Sophian Drag"},
@@ -134,10 +140,9 @@ def run_all_audits():
     alpha_error = abs(alpha_inv - 137.036) / 137.036 * 100  # alpha inverse (CODATA)
 
     # Mass ratio - CORRECTED HOLONOMY (not 1.280145!)
-    # Using the correct value: 1.5427971665 * (1 + gamma/24) * 1.9464
+    # v23.0 FIX: Removed g2_enhancement = 1.9464 (incorrectly mixed formula variants)
     holonomy_base = 1.5427971665  # G2 Laplacian eigenvalue (NOT 1.280145!)
-    g2_enhancement = 1.9464       # G2 curvature enhancement
-    holonomy = holonomy_base * (1 + sophian_gamma / b3) * g2_enhancement
+    holonomy = holonomy_base * (1 + sophian_gamma / b3)
     mass_ratio = (c_kaf**2) * (kappa_Delta / np.pi) / holonomy
     mass_error = abs(mass_ratio - 1836.15) / 1836.15 * 100  # proton/electron mass ratio (CODATA)
 
@@ -173,23 +178,25 @@ def run_all_audits():
     print(f"   Lambda   (Vacuum):         {lambda_val:.4e}")
 
     # ==========================================================================
-    # 3. COSMOLOGICAL TENSION RESOLUTION (v16.2 O'Dowd Formula)
+    # 3. COSMOLOGICAL TENSION RESOLUTION (v23 O'Dowd Formula)
     # ==========================================================================
-    print("\n3. COSMOLOGICAL TENSION RESOLUTION (v16.2)")
+    print("\n3. COSMOLOGICAL TENSION RESOLUTION (v23)")
 
     # H0 - The O'Dowd Formula
-    # H0 = (288/4) - (P_O/chi_eff) + eta_S = 72 - 1.1319 + 0.6819 = 71.55
+    # H0 = (288/4) - (P_O/pressure_divisor) + eta_S = 72 - 1.1319 + 0.6819 = 71.55
+    # pressure_divisor = b3^2/4 = 576/4 = 144 (equals chi_eff_total geometrically)
     if registry:
         H0_local = registry.h0_local
         H0_early = registry.h0_early
         w0 = registry.w0_dark_energy
         parity_sum = registry.parity_sum
     else:
-        H0_base = roots_total / 4.0                              # 288/4 = 72
-        H0_bulk_correction = odowd_bulk_pressure / chi_eff       # 163/144 = 1.1319
-        H0_local = H0_base - H0_bulk_correction + eta_S          # 72 - 1.1319 + 0.6819 = 71.55
-        H0_early = 67.4                                          # Planck CMB
-        w0 = -sigma_T                                            # -23/24 = -0.9583
+        pressure_divisor = b3**2 / 4  # 576/4 = 144 (NOT chi_eff=72!)
+        H0_base = roots_total / 4.0                                # 288/4 = 72
+        H0_bulk_correction = odowd_bulk_pressure / pressure_divisor  # 163/144 = 1.1319
+        H0_local = H0_base - H0_bulk_correction + eta_S            # 72 - 1.1319 + 0.6819 = 71.55
+        H0_early = 67.4                                            # Planck CMB
+        w0 = -sigma_T                                              # -23/24 = -0.9583
         parity_sum = eta_S + sigma_T
 
     # S8
@@ -203,14 +210,17 @@ def run_all_audits():
     # Verify Manifold Parity
     parity_valid = abs(parity_sum - 1.6402) < 0.0001
 
+    # pressure_divisor = b3^2/4 = 144 for output calculation
+    pressure_divisor_out = b3**2 / 4 if not registry else registry.pressure_divisor
     results["cosmological_resolutions"] = {
         "H0_local": {
             "value": float(H0_local),
             "units": "km/s/Mpc",
-            "formula": "(288/4) - (P_O/chi_eff) + eta_S",
+            "formula": "(288/4) - (P_O/pressure_divisor) + eta_S",
+            "note": "pressure_divisor = b3^2/4 = 144 (equals chi_eff_total geometrically)",
             "components": {
                 "base": 72.0,
-                "bulk_correction": float(odowd_bulk_pressure / chi_eff),
+                "bulk_correction": float(odowd_bulk_pressure / pressure_divisor_out),
                 "sophian_drag": eta_S
             }
         },
@@ -280,7 +290,7 @@ def run_all_audits():
     # Save as text log
     log_text = f"""
 ============================================================
-PRINCIPIA METAPHYSICA v16.2 - MASTER AUDIT LOG (SSoT Edition)
+PRINCIPIA METAPHYSICA v23.0 - MASTER AUDIT LOG (SSoT Edition)
 ============================================================
 Execution Date: {datetime.now().strftime('%Y-%m-%d')}
 Kernel: Python {sys.version.split()[0]}
@@ -288,7 +298,7 @@ SSoT Registry: {'ACTIVE' if registry else 'FALLBACK'}
 ------------------------------------------------------------
 1. TOPOLOGICAL ANCHORS (THE TEN PILLARS)
    B3 Betti Number:        {b3} (G2 Manifold Holonomy)
-   chi_eff:                {chi_eff} (B3^2/4)
+   chi_eff:                {chi_eff} (b3^2/8 per sector)
    kappa_Delta (Demiurgic): {kappa_Delta:.10f}
    C_kaf (Flux):           {c_kaf:.4f}
 
@@ -302,7 +312,7 @@ SSoT Registry: {'ACTIVE' if registry else 'FALLBACK'}
    m_p/m_e  (Mass Ratio):     {registry_mass_ratio:.2f}  [ERROR: {mass_error:.4f}%]
    Lambda   (Vacuum):         {lambda_val:.4e}
 
-4. COSMOLOGICAL TENSION RESOLUTION (v16.2 O'Dowd Formula)
+4. COSMOLOGICAL TENSION RESOLUTION (v23 O'Dowd Formula)
    H0 (Local):             {H0_local:.2f} km/s/Mpc [= (288/4) - (163/144) + 0.6819]
    H0 (Early/Planck):      {H0_early:.1f} km/s/Mpc
    S8 (Clustering):        {s8_pm:.3f} (Viscosity Suppressed)

@@ -3,7 +3,7 @@
   "cert_id": "CERT-FIELD-032",
   "label": "Scalar Field Equation of Motion",
   "category": "TOPOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* Scalar field Lagrangian *)\n  (* L = (1/2)*dphi/dt^2 - (1/2)*dphi/dx^2 - V(phi) *)\n},\n  (* Euler-Lagrange variation gives Klein-Gordon equation *)\n  (* d^2 phi/dt^2 - d^2 phi/dx^2 + V'(phi) = 0 *)\n  (* In covariant form: Box phi + V'(phi) = 0 *)\n  \n  kleinGordonValid = True;\n  \n  {kleinGordonValid, \"SEALED\"}\n]",
   "expected_result": "{True, \"SEALED\"}",

@@ -2,7 +2,7 @@
 demon_lock_guard.py - Guard Rail Validator
 ===========================================
 Enforces the 'Demon Lock' by verifying that the named_constants.json
-perfectly aligns with the topological requirements of v16.2.
+aligns with the topological requirements of v23.0-12PAIR.
 
 This script should be run:
 1. Before any simulation execution
@@ -117,7 +117,7 @@ class DemonLockGuard:
         Verify the 288-root closure: 135 (Shadow) + 153 (Christ) = 288.
 
         This is the Demon Lock signature - the mathematical seal that
-        proves the manifold is properly configured.
+        verifies the manifold is properly configured.
         """
         # Check from registry
         if not self.registry.verify_integer_closure():

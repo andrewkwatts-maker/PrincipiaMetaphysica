@@ -48,9 +48,9 @@ def save_json(path: Path, data: Any, indent: int = 2) -> None:
 def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     """Split theory_output.json into component files."""
 
-    # v16.2 DOI for sterile model
+    # v23.0 DOI for sterile model
     DOI = "10.5281/zenodo.18079602"
-    DEFAULT_VERSION = "16.2"
+    DEFAULT_VERSION = "23.0"
 
     print(f"Loading {theory_path}...")
     data = load_json(theory_path)

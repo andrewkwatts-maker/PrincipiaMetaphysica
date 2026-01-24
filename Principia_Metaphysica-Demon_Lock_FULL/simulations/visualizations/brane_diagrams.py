@@ -21,8 +21,8 @@ Physics Context:
 In M-theory, our 4-dimensional spacetime may be a 3-brane (3 spatial
 dimensions + time) embedded in an 11-dimensional bulk.
 
-**PM Theory is DISTINCT from M-theory:** PM starts from 26D_{(24,2)} and
-reduces via: 26D → [Sp(2,R)] → 13D → [G₂ 7-manifold] → 6D → 4D.
+**PM Theory is DISTINCT from M-theory:** PM starts from 25D_{(24,1)} and
+reduces via: 25D → [Euclidean bridge] → 13D → [G₂ 7-manifold] → 6D → 4D.
 The G₂ holonomy operates on a 7D internal manifold, yielding effective 4D physics.
 This diagram shows M-theory concepts for comparison; PM's full framework differs.
 

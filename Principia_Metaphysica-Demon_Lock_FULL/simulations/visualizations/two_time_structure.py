@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
+# [ARCHIVED: v16 Historical Formulation]
+# This file documents the historical (24,2) two-time framework from v16-v20.
+# The v21+ framework uses unified time (24,1) with Euclidean bridge.
+# Retained for historical comparison and educational purposes only.
 """
+[HISTORICAL v16] Two-Time Structure Visualization
+
+NOTE: This visualization was created for the v16-v20 (24,2) two-time framework.
+The v21 framework uses unified time (24,1) with Euclidean bridge.
+Retained for historical comparison and educational purposes.
+
 Two-Time Structure Visualizations
 ==================================
 

@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "test_name": "eta_S Geometric Derivation Test",
+    "generated": "2026-01-22T08:18:41.248413",
+    "version": "v23.0",
+    "generator": "eta_s_derivation_test.py"
+  },
+  "derivation": {
+    "formula": "eta_S = sterile_sector / (b3 * 10 - 1)",
+    "expanded": "eta_S = (7*b3 - 5) / (b3*10 - 1) = 163/239",
+    "numerator": {
+      "name": "sterile_sector",
+      "formula": "7 * b3 - 5",
+      "symbolic": "7*24 - 5 = 163",
+      "value": 163,
+      "explanation": "The sterile sector emerges from the 7-fold octonionic structure of the G2 manifold (7 = dim(G2)) scaled by the Pleroma (b3=24), minus the 5-fold pentagrammic defect (5 = dimension of compactified space)."
+    },
+    "denominator": {
+      "name": "decad_projection",
+      "formula": "b3 * 10 - 1",
+      "symbolic": "24*10 - 1 = 239",
+      "value": 239,
+      "explanation": "The Decad (10) is a fundamental PM constant representing the 'residual pressure key' (163 - 153 = 10). The projection b3*10 = 240 is the natural Decad scaling of the Pleroma, minus 1 for the observer collapse (unity extraction)."
+    }
+  },
+  "eta_s_comparison": {
+    "derived_value": 0.6820083682008368,
+    "derived_fraction": "163/239",
+    "fitted_value": 0.6819,
+    "difference": 0.00010836820083681697,
+    "percent_error": 0.015892095737911276
+  },
+  "h0_results": {
+    "with_derived_eta_s": 71.5500639237564,
+    "with_fitted_eta_s": 71.54995555555556,
+    "experimental_reference": 71.55,
+    "difference_vs_exp": 6.3923756400186e-05,
+    "percent_error_vs_exp": 8.934137861661215e-05,
+    "unit": "km/s/Mpc"
+  },
+  "parity_check": {
+    "formula": "eta_S + sigma_T",
+    "with_derived": 1.6403417015341701,
+    "expected": 1.6402,
+    "difference": 0.00014170153417003561,
+    "satisfied": false
+  },
+  "experimental_validation": {
+    "sigma_from_shoes": 1.8836466002832608,
+    "sigma_from_planck": 8.300127847512783,
+    "tension_resolution": "PARTIAL: 1.88sigma from SH0ES, 8.30sigma from Planck"
+  },
+  "verdict": {
+    "derivation_valid": false,
+    "confidence_level": "MEDIUM",
+    "upgrade_recommendation": "CONSIDER UPGRADE: Derivation shows <1% error. May need additional correction term or refinement of the geometric interpretation."
+  }
+}

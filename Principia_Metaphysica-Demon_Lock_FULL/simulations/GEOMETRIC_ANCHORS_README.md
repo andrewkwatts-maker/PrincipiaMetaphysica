@@ -267,10 +267,10 @@ The module is designed to work standalone (without registry) or integrated (with
 
 ## See Also
 
-- **TCS Construction**: `simulations/v16/geometric/` - Twisted Connected Sum manifolds
-- **Gauge Unification**: `simulations/v16/gauge/` - Uses `alpha_gut` for coupling running
-- **Fermion Generations**: `simulations/v16/fermion/` - Uses `n_generations` for spectrum
-- **Pneuma Mechanism**: `simulations/v16/pneuma/` - Uses `pneuma_amplitude` and `pneuma_width`
+- **TCS Construction**: `simulations/v21/geometric/` - Twisted Connected Sum manifolds
+- **Gauge Unification**: `simulations/v21/gauge/` - Uses `alpha_gut` for coupling running
+- **Fermion Generations**: `simulations/v21/fermion/` - Uses `n_generations` for spectrum
+- **Pneuma Mechanism**: `simulations/v21/pneuma/` - Uses `pneuma_amplitude` and `pneuma_width`
 
 ## References
 

@@ -1,0 +1,92 @@
+# Firebase Service Account Keys (NEVER commit these)
+serviceAccountKey.json
+*-firebase-adminsdk-*.json
+principia-metaphysica-firebase-adminsdk-*.json
+
+# Firebase backup data
+firebase-backup/
+
+# Node.js
+node_modules/
+package-lock.json
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# API Keys and Secrets (NEVER commit these)
+simulations/secrets_config.py
+secrets_config.py
+*_secrets.py
+wolfram_api_key.txt
+scripts/gemini_peer_review.py
+*_api_key*
+*gemini*key*
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+tmp/
+nul
+
+# Archive files (generated, not source)
+*.zip
+*.zip.sha256
+*.7z
+zenodo_submission/
+zenodo_package/
+Principia_Metaphysica_v16*/
+
+# Test files (development only)
+test-*.html
+test_*.html
+test-*.js
+
+# GitHub Actions (PAT lacks workflow scope)
+.github/
+
+# Discussion logs
+*_Discussion_Log_*.txt
+*.pytest_cache/

@@ -343,15 +343,15 @@
                     <tr style="background: rgba(255, 126, 182, 0.05);">
                         <td><strong>Bulk</strong></td>
                         <td><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</td>
-                        <td>(24,2)</td>
-                        <td>Cl(24,2)</td>
-                        <td>2<sup>13</sup> = 8192</td>
+                        <td>(24,1)</td>
+                        <td>Cl(24,1)</td>
+                        <td>2<sup>12</sup> = 4096</td>
                     </tr>
                 </tbody>
             </table>
 
             <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
-                Notice the power-of-two structure: 4 &rarr; 8 &rarr; 64 &rarr; 8192. This reflects the nested Clifford algebra
+                Notice the power-of-two structure: 4 &rarr; 8 &rarr; 64 &rarr; 4096. This reflects the nested Clifford algebra
                 structure preserved through dimensional reduction.
             </p>
         </section>
@@ -368,13 +368,13 @@
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
                 <h4 style="color: #8b7fff;">The Pneuma Spinor: 13D Shadow Manifold</h4>
                 <p style="color: var(--text-secondary);">
-                    After dimensional reduction from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (signature 24,2), the Pneuma field becomes
+                    After dimensional reduction from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (signature 24,1), the Pneuma field becomes
                     a <strong>64-component spinor</strong> in the 13D shadow manifold (signature 12,1):
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong>Bulk:</strong> &Psi;<sub>P,bulk</sub> has 8192 components from Cl(24,2)</li>
+                    <li><strong>Bulk:</strong> &Psi;<sub>P,bulk</sub> has 4096 components from Cl(24,1)</li>
                     <li><strong>Shadow:</strong> &Psi;<sub>P,shadow</sub> has 64 components from Cl(12,1)</li>
-                    <li><strong>Reduction factor:</strong> 8192/64 = 128 = 2<sup>7</sup></li>
+                    <li><strong>Reduction factor:</strong> 4096/64 = 64 = 2<sup>6</sup></li>
                     <li><strong>Observable:</strong> Standard Dirac spinor with 4 components from Cl(3,1)</li>
                 </ul>
             </div>
@@ -410,9 +410,9 @@
                     The spinor component counts have been validated through Clifford algebra formulas:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong>26D (24,2) bulk:</strong> 2<sup>13</sup> = 8192 components - Validated</li>
+                    <li><strong>27D (26,1) bulk:</strong> 2<sup>12</sup> = 4096 components (from 24D core Cl(24,1)) - Validated</li>
                     <li><strong>13D (12,1) shadow:</strong> 2<sup>6</sup> = 64 components - Validated</li>
-                    <li><strong>Reduction preserves structure:</strong> 8192/64 = 128 = 2<sup>7</sup></li>
+                    <li><strong>Reduction preserves structure:</strong> 4096/64 = 64 = 2<sup>6</sup></li>
                     <li><strong>4D (3,1) observed:</strong> 2<sup>2</sup> = 4 components (standard Dirac spinor)</li>
                 </ul>
             </div>
