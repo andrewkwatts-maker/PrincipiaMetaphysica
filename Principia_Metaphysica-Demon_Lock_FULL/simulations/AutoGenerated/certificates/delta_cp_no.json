@@ -3,7 +3,7 @@
   "cert_id": "CERT-PMNS-019",
   "label": "PMNS Delta CP Phase",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  b2 = 14,\n  b3 = 24,\n  nGen = 3\n},\n  (* CP-violating phase from topological matching *)\n  (* Formula: δ_CP = π * ((n_gen + b₂)/(2*n_gen) + n_gen/b₃) *)\n  \n  term1 = (nGen + b2) / (2 * nGen);  (* Generation-Betti mixing *)\n  term2 = nGen / b3;  (* Generation-flux ratio *)\n  \n  deltaCPRad = Pi * (term1 + term2);\n  deltaCPDeg = deltaCPRad * 180/Pi;\n  \n  (* Wrap to [0, 360] range *)\n  deltaCPDegWrapped = Mod[deltaCPDeg, 360];\n  \n  (* NuFIT 6.0 Normal Ordering *)\n  nufit60NO = 232.5;  (* degrees *)\n  nufit60Uncertainty = 26.7;  (* degrees *)\n  \n  deviation = (deltaCPDegWrapped - nufit60NO) / nufit60Uncertainty;\n  \n  {N[deltaCPDegWrapped, 4], N[deltaCPRad, 5], N[deviation, 3]}\n]",
   "expected_result": "{220.5°, 3.8485 rad, -0.45σ}",

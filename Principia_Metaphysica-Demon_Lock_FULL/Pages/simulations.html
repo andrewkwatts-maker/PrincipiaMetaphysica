@@ -516,7 +516,8 @@
     v
 <span class="accent">run_all_simulations.py</span>    Master orchestrator - runs all canonical simulations
     |
-    +---> <span class="accent">simulations/*.py</span>      Individual physics modules (v13.0-v15.x)
+    +---> <span class="accent">simulations/*.py</span>      Individual physics modules (v16.x-v23.x)
+    |     +---> <span class="accent">central_sampler_v23.py</span>  Central (2,0) sampler: 24+24+2=50 dims
     |
     v
 <span class="accent">theory_output.json</span>        Machine-readable results with validation status
@@ -1303,7 +1304,7 @@
         function getFolderFromPath(path) {
             if (!path) return '';
 
-            // Handle v16 structure: simulations/v16/gauge/...
+            // Handle v16 structure: simulations/v21/gauge/...
             let match = path.match(/simulations\/v16\/([^\/]+)/);
             if (match) return match[1];
 

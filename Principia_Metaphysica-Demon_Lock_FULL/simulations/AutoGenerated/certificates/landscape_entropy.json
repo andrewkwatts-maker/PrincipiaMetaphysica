@@ -3,7 +3,7 @@
   "cert_id": "CERT-LAND-036",
   "label": "Landscape Entropy",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* String landscape parameters *)\n  (* Number of flux vacua ~ 10^500 (Susskind estimate) *)\n  landscapeSize = 10^500,\n  \n  (* PM reduces this to O(1) via G2 selection *)\n  b3 = 24,\n  chiEff = 144,\n  \n  (* Effective vacua after G2 constraint *)\n  effectiveVacua = 1  (* Unique G2 vacuum *)\n},\n  (* Entropy of landscape *)\n  entropyFull = Log[10, landscapeSize];\n  entropyEffective = Log[10, effectiveVacua];\n  \n  (* Reduction factor *)\n  reductionFactor = entropyFull - entropyEffective;\n  \n  {entropyFull, entropyEffective, reductionFactor, \"SEALED\"}\n]",
   "expected_result": "{500, 0, 500, \"SEALED\"}",

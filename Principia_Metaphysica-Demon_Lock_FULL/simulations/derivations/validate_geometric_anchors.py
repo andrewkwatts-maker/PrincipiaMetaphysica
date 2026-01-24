@@ -17,6 +17,11 @@ from typing import Dict, Tuple, List
 import sys
 import io
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 # Force UTF-8 encoding for Windows
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
@@ -45,7 +50,7 @@ def validate_parameter(
 def run_validations() -> Dict[str, Dict]:
     """Run all geometric anchor validations."""
 
-    b3 = 24
+    b3 = _REG.b3  # = 24 (Third Betti number from SSoT registry)
     results = {}
 
     # 1. b₃ (topological invariant)
@@ -213,7 +218,7 @@ def print_validation_report(results: Dict[str, Dict]) -> Tuple[int, int]:
 
 def run_cross_validation_tests() -> List[Tuple[str, bool]]:
     """Run cross-validation consistency tests."""
-    b3 = 24
+    b3 = _REG.b3  # = 24 (Third Betti number from SSoT registry)
     tests = []
 
     # Test 1: χ_eff = 6b₃

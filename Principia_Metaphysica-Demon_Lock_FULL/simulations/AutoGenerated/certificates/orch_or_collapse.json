@@ -3,7 +3,7 @@
   "cert_id": "CERT-BIO-030",
   "label": "Orch-OR Gravitational Collapse Time",
   "category": "OPERATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  hbar = 1.055e-34,  (* J*s *)\n  EG = 1e-32  (* J - gravitational self-energy scale *)\n},\n  (* Penrose objective reduction timescale *)\n  (* tau = hbar / E_G *)\n  \n  tau = hbar / EG;\n  tauMs = tau * 1000;  (* Convert to milliseconds *)\n  \n  (* Neural processing timescale *)\n  neuralMs = 10;  (* ~10 ms for conscious events *)\n  \n  {N[tauMs, 3], neuralMs}\n]",
   "expected_result": "{~10 ms, 10 ms}",

@@ -1,7 +1,7 @@
 {
-  "audit_version": "23.0-12PAIR",
-  "timestamp": "2026-01-21T20:01:54.305314Z",
-  "session_id": "20260121041152",
+  "audit_version": "23.1-27D",
+  "timestamp": "2026-01-25T05:14:07.947050Z",
+  "session_id": "20260125051407",
   "sterility_score": "100%",
   "verifications": {
     "integer_closure": {
@@ -9,8 +9,8 @@
       "passed": true
     },
     "parity_sum": {
-      "value": 1.6402333333333332,
-      "target": 1.6402,
+      "value": 1.6403417015341701,
+      "target": 1.6403,
       "passed": true
     },
     "tzimtzum_fraction": {
@@ -25,7 +25,7 @@
     }
   },
   "provenance": {
-    "h0": "Derived via O'Dowd Formula: 71.5500",
+    "h0": "Derived via O'Dowd Formula: 71.5501",
     "w0": "Derived via Tzimtzum Seal: -0.9583333333",
     "source_of_truth": "core/FormulasRegistry.py"
   },
@@ -42,7 +42,7 @@
     "odowd_bulk_pressure": 163,
     "penrose_hameroff_bridge": 13,
     "christ_constant": 153,
-    "sophian_drag": 0.6819,
+    "sophian_drag": 0.6820083682008368,
     "demiurgic_coupling": 12.31830988618379,
     "tzimtzum_pressure": 0.9583333333333334,
     "sophian_gamma": 0.5772156649015329,
@@ -52,13 +52,13 @@
     "logic_closure": 288
   },
   "derived": {
-    "h0_local": 71.54995555555556,
+    "h0_local": 71.5500639237564,
     "h0_early": 67.4,
     "w0_dark_energy": -0.9583333333333334,
-    "parity_sum": 1.6402333333333332,
+    "parity_sum": 1.6403417015341701,
     "chi_parity_product": 144.0,
     "c_kaf": 27.2,
-    "mass_ratio": 1836.1526734670417,
+    "mass_ratio": 1836.1907528988008,
     "alpha_inverse": 137.03670177575597,
     "sterile_ratio": 0.5659722222222222
   }

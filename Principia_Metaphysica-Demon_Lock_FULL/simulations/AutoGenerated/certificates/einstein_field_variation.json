@@ -3,7 +3,7 @@
   "cert_id": "CERT-GRAV-026",
   "label": "Einstein Field Equations from Variation",
   "category": "TOPOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* Einstein-Hilbert action variation *)\n  (* S = Integral[Sqrt[-g] * (R - 2*Lambda)] *)\n  (* delta S / delta g^(mu,nu) = 0 *)\n},\n  (* Field equations: R_mu_nu - (1/2)*g_mu_nu*R + Lambda*g_mu_nu = 8*Pi*G*T_mu_nu *)\n  (* Trace: R - 2*R + 4*Lambda = 8*Pi*G*T *)\n  (* R = 4*Lambda - 8*Pi*G*T *)\n  \n  fieldEquationsValid = True;\n  \n  {fieldEquationsValid, \"SEALED\"}\n]",
   "expected_result": "{True, \"SEALED\"}",

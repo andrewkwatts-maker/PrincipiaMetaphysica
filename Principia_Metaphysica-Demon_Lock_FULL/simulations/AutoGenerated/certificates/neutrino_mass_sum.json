@@ -3,7 +3,7 @@
   "cert_id": "CERT-COSMO-014",
   "label": "Neutrino Mass Sum (Hopf Fibration)",
   "category": "COSMOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "doi": "10.5281/zenodo.18079602",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold parameters *)\n  b3 = 24,\n  kGimel = 12.31831,\n  \n  (* Hopf fibration structure S3 -> S2 *)\n  (* Fiber: S1 with winding number = 1 *)\n  hopfFiberDimension = 1,\n  \n  (* Neutrino mass sum from Hopf geometry *)\n  (* Sum(m_nu) = k_gimel / (2 * Pi * b3) eV *)\n  sumMnu = kGimel / (2 * Pi * b3)\n},\n  (* Planck 2018 + BAO upper bound *)\n  planckBound = 0.12;  (* eV *)\n  \n  (* Calculate tension with oscillation lower bound *)\n  oscillationLowerBound = 0.06;  (* eV, from dm_31 *)\n  \n  deviation = (sumMnu - 0.082) / 0.007;  (* Using NuFit 6.0 uncertainty *)\n  \n  {N[sumMnu, 4], N[deviation, 2], \"LOCKED\"}\n]",

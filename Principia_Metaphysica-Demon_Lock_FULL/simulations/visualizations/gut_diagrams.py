@@ -1,4 +1,16 @@
 #!/usr/bin/env python3
+# =============================================================================
+# HISTORICAL ARCHIVE - v16/v20 Physics
+# =============================================================================
+# This file contains visualizations for the deprecated (24,2) two-time physics
+# or Sp(2,R) gauge fixing framework. These have been superseded by the v22+
+# unified (24,1) signature with 12×(2,0) Euclidean bridge pairs.
+#
+# Retained for historical reference and educational purposes.
+# DO NOT use these visualizations for v23+ publication figures.
+#
+# Current framework: docs/appendices/appendix_g_euclidean_bridge.md
+# =============================================================================
 """
 GUT Diagrams for Principia Metaphysica
 =======================================

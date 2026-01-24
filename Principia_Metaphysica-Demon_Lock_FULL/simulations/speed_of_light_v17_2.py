@@ -8,7 +8,7 @@ Uses the (Z.6) Pneuma Tensioner and Decad³ Projection Engine.
 
 This file provides a standalone interface to the v16 simulation.
 For the full SimulationBase implementation, see:
-    simulations/v16/cosmology/speed_of_light_v17_2.py
+    simulations/v21/cosmology/speed_of_light_v17_2.py
 
 PHYSICAL MECHANISM:
 ------------------

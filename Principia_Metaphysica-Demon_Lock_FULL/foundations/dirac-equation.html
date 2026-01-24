@@ -149,16 +149,16 @@
                     The spinor component counts have been rigorously validated through Clifford algebra analysis:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk spinor: 8192 components</strong> - From Cl(24,2) representation. Validated: 2^(26/2) = 2^13 = 8192</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk spinor: 4096 components</strong> - From Cl(24,1) representation. Validated: 2^(25/2) = 2^12 = 4096</li>
                     <li><strong>13D shadow spinor: 64 components</strong> - From Cl(12,1) representation. Validated: 2^(13/2) ≈ 2^6 = 64</li>
-                    <li><strong>Reduction factor: 128 = 2^7</strong> - Dimensional reduction preserves power-of-two structure</li>
-                    <li><strong>Framework: 2T physics (24,2)</strong> - Two timelike dimensions provide gauge redundancy</li>
+                    <li><strong>Reduction factor: 64 = 2^6</strong> - Dimensional reduction preserves power-of-two structure</li>
+                    <li><strong>Framework: Euclidean bridge (24,1)</strong> - One timelike dimension with Euclidean bridge model</li>
                 </ul>
             </div>
 
             <p>
                 The Pneuma Lagrangian in Principia Metaphysica is a <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional generalization</strong>
-                of the Dirac Lagrangian in the 2T physics framework, with spinors in Cl(24,2):
+                of the Dirac Lagrangian in the Euclidean bridge framework, with spinors in Cl(24,1):
             </p>
 
             <div class="expandable-formula">
@@ -174,20 +174,20 @@
                     <div class="sub-components">
                         <div class="sub-component">
                             <div class="component-symbol">&Gamma;<sup>A</sup></div>
-                            <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Gamma Matrices (24,2)</div>
-                            <div class="component-desc">8192&times;8192 matrices from Cl(24,2), signature (24,2). A = 0,1,...,25. The Clifford algebra Cl(24,2) has a minimal spinor representation of dimension 2^13 = 8192 (validated).</div>
-                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
+                            <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Gamma Matrices (24,1)</div>
+                            <div class="component-desc">4096&times;4096 matrices from Cl(24,1), signature (24,1). A = 0,1,...,24. The Clifford algebra Cl(24,1) has a minimal spinor representation of dimension 2^12 = 4096 (validated).</div>
+                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">Euclidean Bridge</span>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">D<sub>A</sub></div>
                             <div class="component-name">Covariant Derivative</div>
-                            <div class="component-desc">Includes gravity (spin connection), gauge fields, and Sp(2,R) connection. The master bulk action emphasizes fermionic primacy.</div>
-                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
+                            <div class="component-desc">Includes gravity (spin connection) and gauge fields. The master bulk action emphasizes fermionic primacy.</div>
+                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">Euclidean Bridge</span>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">&Psi;<sub>P</sub></div>
                             <div class="component-name">Pneuma Spinor (Fundamental)</div>
-                            <div class="component-desc">8192-component spinor (2<sup>13</sup>) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D from Cl(24,2). The fundamental fermionic field from which geometry emerges as a spinor condensate. Reduces to 64 components in 13D shadow (Cl(12,1)).</div>
+                            <div class="component-desc">4096-component spinor (2<sup>12</sup>) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D from Cl(24,1). The fundamental fermionic field from which geometry emerges as a spinor condensate. Reduces to 64 components in 13D shadow (Cl(12,1)).</div>
                             <a href="../sections.html#pneuma-lagrangian" class="component-link">Learn more &rarr;</a>
                         </div>
                     </div>
@@ -200,8 +200,8 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,2):</strong> Cl(24,2) → 2<sup>13</sup> = 8192 components (validated ✓)
-                            <span class="foundation-badge pm-specific">2T Framework</span>
+                            <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,1):</strong> Cl(24,1) → 2<sup>12</sup> = 4096 components (validated ✓)
+                            <span class="foundation-badge pm-specific">Euclidean Bridge</span>
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
@@ -210,7 +210,7 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <strong>Reduction factor:</strong> 8192/64 = 128 = 2<sup>7</sup> (power-of-two structure preserved)
+                            <strong>Reduction factor:</strong> 4096/64 = 64 = 2<sup>6</sup> (power-of-two structure preserved)
                             <span class="foundation-badge pm-specific">Clifford Consistency</span>
                         </div>
                         <div class="chain-step">
@@ -228,9 +228,9 @@
                 the fundamental field, and geometry emerges from its condensate. Key Clifford algebra details:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
-                <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk: Cl(24,2)</strong> - Signature (24,2) with 2 timelike dimensions. Minimal spinor: 2^(26/2) = 8192 components (validated ✓)</li>
+                <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk: Cl(24,1)</strong> - Signature (24,1) with 1 timelike dimension. Minimal spinor: 2^(25/2) = 2^12 = 4096 components (validated ✓)</li>
                 <li><strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow: Cl(12,1)</strong> - After dimensional reduction. Minimal spinor: 2^⌊(13+1)/2⌋ = 64 components (validated ✓)</li>
-                <li><strong>Reduction: 8192/64 = 128 = 2^7</strong> - Factor-of-128 reduction preserves power-of-two Clifford structure</li>
+                <li><strong>Reduction: 4096/64 = 64 = 2^6</strong> - Factor-of-64 reduction preserves power-of-two Clifford structure</li>
                 <li><strong>Master bulk action</strong> - Fermionic term primary; bosonic fields (gauge, gravity) emerge from spinor bilinears</li>
                 <li><strong>Geometry from condensate</strong> - Metric g<sub>MN</sub> ∼ ⟨Ψ̄<sub>P</sub> Γ<sub>(MN)</sub> Ψ<sub>P</sub>⟩ (spinor bivector condensate)</li>
             </ul>
@@ -239,11 +239,11 @@
                 The key generalization from standard <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Dirac theory:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
-                <li>Dimensions: 4 (3,1) &rarr; 26 (24,2) bulk &rarr; <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow &rarr; 4D observed</li>
-                <li>Clifford algebra: Cl(3,1) &rarr; Cl(24,2) &rarr; Cl(12,1) &rarr; Cl(3,1)</li>
-                <li>Spinor components: 4 &rarr; 8192 &rarr; 64 &rarr; 4 (3 generations × symmetry breaking)</li>
-                <li>Gamma matrices: 4×4 &rarr; 8192×8192 &rarr; 64×64 &rarr; 4×4</li>
-                <li>Derivative: Partial &rarr; Covariant (includes gauge, gravity, Sp(2,R) connection)</li>
+                <li>Dimensions: 4 (3,1) &rarr; 25 (24,1) bulk &rarr; <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow &rarr; 4D observed</li>
+                <li>Clifford algebra: Cl(3,1) &rarr; Cl(24,1) &rarr; Cl(12,1) &rarr; Cl(3,1)</li>
+                <li>Spinor components: 4 &rarr; 4096 &rarr; 64 &rarr; 4 (3 generations × symmetry breaking)</li>
+                <li>Gamma matrices: 4×4 &rarr; 4096×4096 &rarr; 64×64 &rarr; 4×4</li>
+                <li>Derivative: Partial &rarr; Covariant (includes gauge, gravity)</li>
                 <li>Philosophy: Bosons fundamental &rarr; <strong>Fermions fundamental</strong> (geometry emerges)</li>
             </ul>
         </section>
@@ -358,7 +358,7 @@
                     In PM's framework, the <strong>Pneuma spinor Ψ<sub>P</sub></strong> is the fundamental entity:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk:</strong> Ψ<sub>P</sub> has 8192 components from Cl(24,2) - the master bulk action</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk:</strong> Ψ<sub>P</sub> has 4096 components from Cl(24,1) - the master bulk action</li>
                     <li><strong>Geometry emerges:</strong> Metric g<sub>MN</sub> arises from spinor condensate ⟨Ψ̄<sub>P</sub> Γ<sub>(MN)</sub> Ψ<sub>P</sub>⟩</li>
                     <li><strong>Gauge fields emerge:</strong> A<sub>M</sub> from ⟨Ψ̄<sub>P</sub> Γ<sub>M</sub> Ψ<sub>P</sub>⟩ (spinor current)</li>
                     <li><strong>Dimensional reduction:</strong> <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D shadow with 64-component spinor from Cl(12,1)</li>
@@ -386,9 +386,9 @@
                 <tbody>
                     <tr style="background: rgba(81, 207, 102, 0.08); border-left: 3px solid #51cf66;">
                         <td><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</strong></td>
-                        <td><strong>(24,2)</strong></td>
-                        <td><strong>Cl(24,2)</strong></td>
-                        <td><strong>2<sup>13</sup> = 8192</strong></td>
+                        <td><strong>(24,1)</strong></td>
+                        <td><strong>Cl(24,1)</strong></td>
+                        <td><strong>2<sup>12</sup> = 4096</strong></td>
                         <td><strong>Validated</strong></td>
                         <td>2T bulk - fermionic primacy</td>
                     </tr>
@@ -420,7 +420,7 @@
             </table>
 
             <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
-                <strong>Key validation:</strong> Reduction factor 8192/64 = 128 = 2^7 preserves the power-of-two
+                <strong>Key validation:</strong> Reduction factor 4096/64 = 64 = 2^6 preserves the power-of-two
                 Clifford structure, confirming consistency of the dimensional reduction pathway.
             </p>
 
@@ -431,16 +431,16 @@
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
                     <li>
-                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) bulk: Cl(24,2) → 8192 components (✓ validated):</strong>
-                        The fundamental Pneuma spinor Ψ<sub>P</sub> in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D has 2^(26/2) = 2^13 = 8192 components.
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,1) bulk: Cl(24,1) → 4096 components (✓ validated):</strong>
+                        The fundamental Pneuma spinor Ψ<sub>P</sub> in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D has 2^(26/2) = 2^13 = 4096 components.
                         This is the master bulk action where geometry emerges from the spinor condensate.
-                        Signature (24,2) provides 2 timelike dimensions for Sp(2,R) gauge redundancy.
+                        Signature (24,1) provides 1 timelike dimension for Euclidean bridge connection.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D shadow: Cl(24,2) → Cl(12,1) via dimensional reduction:</strong>
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D shadow: Cl(24,1) → Cl(12,1) via dimensional reduction:</strong>
                         Compactification to 13D shadow manifold. Clifford algebra reduces to Cl(12,1) with
                         spinor dimension 2^⌊(13+1)/2⌋ = 2^6 = 64 components (✓ validated). Reduction factor
-                        8192/64 = 128 = 2^7 preserves power-of-two structure.
+                        4096/64 = 64 = 2^6 preserves power-of-two structure.
                     </li>
                     <li style="margin-top: 0.5rem;">
                         <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D → 7D: Cl(12,1) → Cl(7,0) via G₂ holonomy:</strong>
@@ -486,15 +486,15 @@
                 of the 64-component shadow spinor combined with topological constraints.
             </p>
 
-            <h3>Pneuma Field Decomposition: From 8192 to 64 Components</h3>
+            <h3>Pneuma Field Decomposition: From 4096 to 64 Components</h3>
             <p style="margin-top: 1.5rem;">
-                The fundamental <strong>8192-component bulk Pneuma spinor</strong> Ψ<sub>P</sub> (from Cl(24,2) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)
+                The fundamental <strong>4096-component bulk Pneuma spinor</strong> Ψ<sub>P</sub> (from Cl(24,1) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)
                 reduces to the <strong>64-component shadow spinor</strong> (from Cl(12,1) in 13D) through dimensional
                 reduction with factor 128 = 2^7:
             </p>
             <div class="equation-box">
                 &Psi;<sub>P,bulk</sub>(x<sup>A</sup>) &rarr; &Psi;<sub>P,shadow</sub>(x<sup>&mu;</sup>, y<sup>a</sup>)
-                <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (A=0,...,25) → 13D (μ=0,...,3 visible + a=1,...,9 compact): 8192 → 64 components</span>
+                <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (A=0,...,25) → 13D (μ=0,...,3 visible + a=1,...,9 compact): 4096 → 64 components</span>
             </div>
 
             <p style="margin-top: 1rem;">
@@ -512,9 +512,9 @@
                     The spinor dimension validation confirms the mathematical consistency of PM's framework:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,2): 8192 components from Cl(24,2)</strong> - Validated ✓</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,1): 4096 components from Cl(24,1)</strong> - Validated ✓</li>
                     <li><strong>13D shadow (12,1): 64 components from Cl(12,1)</strong> - Validated ✓</li>
-                    <li><strong>Reduction factor: 8192/64 = 128 = 2^7</strong> - Power-of-two structure preserved</li>
+                    <li><strong>Reduction factor: 4096/64 = 64 = 2^6</strong> - Power-of-two structure preserved</li>
                     <li><strong>Fermionic primacy:</strong> Ψ<sub>P</sub> is fundamental; geometry emerges from condensate</li>
                     <li><strong>Generation count:</strong> 64 = 4×16 connects to SO(10) and 3 generations from topology</li>
                     <li><strong>Master bulk action:</strong> Emphasis on fundamental fermionic nature of reality</li>

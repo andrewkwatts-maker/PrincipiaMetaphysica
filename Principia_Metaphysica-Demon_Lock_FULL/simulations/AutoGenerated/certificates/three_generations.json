@@ -3,7 +3,7 @@
   "cert_id": "CERT-C002",
   "label": "Three Fermion Generations",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  b3 = 24,\n  spinorDOF = 8\n},\n  (* Number of generations from index theorem *)\n  (* n_gen = b₃ / (spinor DOF in 7D) *)\n  (* 7D spinor has 8 real components *)\n  (* Index theorem: n_gen = (1/2)*integral(A-hat) = b₃/8 *)\n  \n  nGen = b3 / spinorDOF;\n  \n  (* Verify this is exactly 3 *)\n  {nGen, nGen == 3}\n]",
   "expected_result": "{3, True}",

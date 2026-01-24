@@ -24,6 +24,11 @@ from pathlib import Path
 # Add parent directories to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 
 class V16_2_LogicChecker:
     """
@@ -31,7 +36,7 @@ class V16_2_LogicChecker:
     """
 
     def __init__(self):
-        self.b3 = 24
+        self.b3 = _REG.b3  # = 24 (Third Betti number from SSoT registry)
         self.D_crit = 26  # Critical dimension
         self.results = {}
         self.all_passed = True

@@ -3,7 +3,7 @@
   "cert_id": "CERT-FERM-028",
   "label": "Proton-Electron Mass Ratio from G2",
   "category": "FOUNDATIONAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  b3 = 24,\n  kGimel = 12.318310,\n  cKaf = 27.2,\n  gamma = 0.57721566  (* Euler-Mascheroni constant *)\n},\n  (* Mass ratio from geometric constants *)\n  (* m_p/m_e = c_kaf^2 * (k_gimel/Pi) / (correction factor) *)\n  \n  numerator = cKaf^2 * (kGimel / Pi);\n  denominator = 1.5427972 * (1 + gamma/24);\n  \n  massRatio = numerator / denominator;\n  \n  (* CODATA 2022 value *)\n  codata2022 = 1836.15267343;\n  codataErr = 0.00000011;\n  \n  deviation = (massRatio - codata2022) / codataErr;\n  \n  {N[massRatio, 11], N[deviation, 3]}\n]",
   "expected_result": "{1836.15267343, 0.0 sigma}",

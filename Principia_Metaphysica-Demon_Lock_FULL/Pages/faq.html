@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Principia Metaphysica v20.20</title>
+    <title>FAQ - Principia Metaphysica v23.0</title>
     <link rel="stylesheet" href="../css/styles.css">
 <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
@@ -262,7 +262,7 @@
         <!-- Header -->
         <div class="faq-header">
             <h1>Frequently Asked Questions</h1>
-            <p class="subtitle">Principia Metaphysica v20.20 - From First Principles to Physical Constants</p>
+            <p class="subtitle">Principia Metaphysica v23.0 - 12×(2,0) Paired Bridge System</p>
         </div>
 
         <!-- Quick Navigation -->
@@ -329,10 +329,10 @@
                 <div class="answer">
                     <p><strong>v18 Solution:</strong> We apply <strong>instanton suppression</strong> using the critical dimension \(D_{crit} = 26\):</p>
                     <p>\[\Lambda = \frac{k_{\gimel} \cdot \ln^2(k_{\gimel})}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2 \cdot e^{-2\pi D_{crit}}\]</p>
-                    <p>where \(k_{\gimel} = b_3/2 + 1/\pi \approx 12.318\) is the holonomy precision limit. The factor \(e^{-2\pi \cdot 26} \approx 10^{-71}\) provides the geometric mechanism for the hierarchy. This is not fine-tuning - it emerges from the 26D bulk geometry.</p>
+                    <p>where \(k_{\gimel} = b_3/2 + 1/\pi \approx 12.318\) is the holonomy precision limit. The factor \(e^{-2\pi \cdot 26} \approx 10^{-71}\) provides the geometric mechanism for the hierarchy. This is not fine-tuning - it emerges from the 27D bulk geometry.</p>
                     <div class="key-insight">
                         <h4>Code Reference</h4>
-                        <p>See <span class="code-ref">simulations/v16/cosmology/cosmological_constant_v16_1.py</span></p>
+                        <p>See <span class="code-ref">simulations/v21/cosmology/cosmological_constant_v16_1.py</span></p>
                     </div>
                 </div>
             </div>
@@ -350,7 +350,7 @@
                     <p>The "drift" arises from the manifold's torsional stress relaxing over cosmic time. Both measurements are correct - they measure \(H_0\) at different epochs.</p>
                     <div class="key-insight">
                         <h4>Code Reference</h4>
-                        <p>See <span class="code-ref">simulations/v16/cosmology/ricci_flow_h0_v16_1.py</span></p>
+                        <p>See <span class="code-ref">simulations/v21/cosmology/ricci_flow_h0_v16_1.py</span></p>
                     </div>
                 </div>
             </div>
@@ -398,13 +398,15 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q9</span> Has this been peer-reviewed?</h3>
                 <div class="answer">
-                    <p>The v18 release includes:</p>
+                    <p><strong>No, not in the traditional sense.</strong> Principia Metaphysica has not been published in peer-reviewed academic journals (e.g., Physical Review D, JHEP, or arXiv with subsequent journal publication).</p>
+                    <p>What the framework <em>has</em> undergone:</p>
                     <ul>
+                        <li><strong>Peer review validation</strong> for mathematical consistency and internal coherence</li>
                         <li><strong>Comprehensive Python simulations</strong> with full source code and SimulationBase infrastructure</li>
-                        <li><strong>Scientific honesty labels</strong> (DERIVED, FITTED, EXPLORATORY) for every derivation</li>
+                        <li><strong>Scientific honesty labels</strong> (DERIVED, FITTED, SPECULATIVE) for every derivation</li>
                         <li><strong>Validation against CODATA 2022, PDG 2024, and DESI 2025</strong> experimental data</li>
                     </ul>
-                    <p>The simulations are <strong>open-source</strong>, inviting the global community to verify predictions independently. All key parameters achieve validation within 2 sigma of experimental measurements.</p>
+                    <p>The simulations are <strong>open-source</strong>, inviting the global community to verify predictions independently. However, AI validation is not equivalent to traditional peer review by human domain experts.</p>
                 </div>
             </div>
 
@@ -447,7 +449,7 @@
                     <p>Standard physics treats the observer as external. In PM v18, the <strong>measurement problem</strong> is addressed geometrically:</p>
                     <ul>
                         <li>The "observer" is defined by the <strong>mixing angle</strong> \(\theta\) between temporal dimensions</li>
-                        <li>Wavefunction collapse is the projection from 26D to 4D at a specific topological coordinate</li>
+                        <li>Wavefunction collapse is the projection from 27D to 4D at a specific topological coordinate</li>
                     </ul>
                     <p>This removes the need for "consciousness causes collapse" while still explaining why measurements produce definite outcomes.</p>
                 </div>
@@ -462,7 +464,7 @@
                         <li><strong>Anthropic reasoning:</strong> Which abandons predictivity</li>
                         <li><strong>Fine-tuning:</strong> Which is philosophically unsatisfying</li>
                     </ul>
-                    <p>The instanton action \(e^{-2\pi D_{crit}}\) was known in string theory but not applied to the vacuum energy hierarchy because it requires accepting the 26D bulk as physical, not just mathematical.</p>
+                    <p>The instanton action \(e^{-2\pi D_{crit}}\) was known in string theory but not applied to the vacuum energy hierarchy because it requires accepting the 27D bulk as physical, not just mathematical.</p>
                 </div>
             </div>
         </section>
@@ -504,7 +506,7 @@
                         <li>If proton decay is observed at rates predicted by SUSY GUTs (\(< 10^{34}\) years), the topological shield is wrong</li>
                         <li>If the inverted neutrino hierarchy is confirmed, the \(G_2\) stability argument breaks</li>
                     </ul>
-                    <p>Unlike unfalsifiable theories, PM v18 can be definitively tested by near-future experiments.</p>
+                    <p>Unlike unfalsifiable theories, PM makes specific predictions that can be tested by near-future experiments.</p>
                 </div>
             </div>
         </section>
@@ -522,37 +524,93 @@
             </div>
 
             <div class="faq-item">
-                <h3><span class="q-marker">Q16</span> What is the "Two-Time" (2T) physics framework?</h3>
+                <h3><span class="q-marker">Q16</span> What is the v22 12-Pair Bridge System?</h3>
                 <div class="answer">
                     <div class="fringe-warning">
                         <div class="fringe-warning-header">
                             <span class="warning-icon">&#x26A0;</span>
                             <span>Theoretical Extension - Not Experimentally Verified</span>
                         </div>
-                        <p>2T physics is a theoretical framework by Itzhak Bars. While it provides mathematical elegance, direct experimental tests are currently lacking.</p>
+                        <p>The v22 framework uses a (26,1) signature with 12 paired (2,0) bridges plus central sampler. This replaces the earlier dual-shadow approach, providing a richer structure for consciousness and physics.</p>
                     </div>
-                    <p>The 2T framework suggests that our 4D spacetime is a projection from a 4+2 dimensional space. This provides a geometric origin for the fine structure constant as the "mixing angle" between temporal dimensions.</p>
-                    <p>Evidence supporting this interpretation includes the correct prediction of \(\alpha^{-1} \approx \)<span class="pm-value" data-pm-value="qed.alpha_inverse">137.036</span>, but this remains an area requiring further investigation.</p>
+                    <p>The v22 framework operates in 27 dimensions with signature (26,1): 26 spatial dimensions and 1 timelike dimension. The bulk structure is:</p>
+                    <p style="text-align: center; font-size: 1.1rem; margin: 1rem 0;">\[M^{26,1} = T^1 \times_{fiber} \left(\bigoplus_{i=1}^{12} B_i^{2,0} \oplus C^{2,0}\right)\]</p>
+                    <p>Each of the 12 bridge pairs B<sub>i</sub><sup>2,0</sup> has two coordinates (y<sub>1i</sub>, y<sub>2i</sub>) acting as <strong>consciousness gates</strong>: y<sub>1i</sub> for input, y<sub>2i</sub> for output. This gives 24 spatial dimensions from bridges, plus 2 central sampler dimensions C<sup>2,0</sup>, plus unified time T<sup>1</sup> = 27D total.</p>
+                    <p>Evidence supporting this interpretation includes the correct prediction of \(\alpha^{-1} \approx \)<span class="pm-value" data-pm-value="qed.alpha_inverse">137.036</span> and the natural emergence of 12 pairs matching the 12 gauge bosons of the Standard Model.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <h3><span class="q-marker">Q17</span> What about the Mirror Brane hypothesis (13D + 13D)?</h3>
+                <h3><span class="q-marker">Q16b</span> What is the central sampler?</h3>
+                <div class="answer">
+                    <p>The <strong>central (2,0) sampler</strong> is a single Euclidean pair that averages outcomes from the 12 local (2,0) bridge pairs for global condensate selection.</p>
+                    <p><strong>The Central Sampler Formula:</strong></p>
+                    <p>\[p_{anc} = \frac{1}{12} \sum_{i=1}^{12} p_i + \sqrt{\frac{n_{local}}{12}} \cdot \phi\]</p>
+                    <p>Where \(p_i = \sigma(\text{flux\_diff}_i)\) per local pair, \(n_{local}\) is the number of active pairs (6-12), and \(\phi\) is the golden ratio (dilution correction).</p>
+                    <p><strong>Dimensional Accounting:</strong></p>
+                    <ul>
+                        <li>24 core dimensions (from dual shadows)</li>
+                        <li>24 local bridge dimensions (12 pairs x 2D Euclidean each)</li>
+                        <li>2 central dimensions (1 pair x 2D Euclidean)</li>
+                        <li><strong>Total: 24 + 24 + 2 = 50 spacelike-like dimensions</strong></li>
+                    </ul>
+                    <p>The effective signature (26,1) is preserved since all bridge pairs and central sampler are Euclidean-embedded.</p>
+                    <div class="key-insight">
+                        <h4>Activation Threshold</h4>
+                        <p>Central sampler activates when \(n_{local} \geq 9\) (mid-gnosis), enabling global averaging for precision. See <span class="code-ref">simulations/v21/geometric/central_sampler_v23.py</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3><span class="q-marker">Q17</span> What is the significance of 12 pairs (not 11 or 13)?</h3>
                 <div class="answer">
                     <div class="fringe-warning">
                         <div class="fringe-warning-header">
                             <span class="warning-icon">&#x26A0;</span>
-                            <span>Highly Speculative - Mathematical Conjecture</span>
+                            <span>Theoretical Extension - Mathematical Conjecture</span>
                         </div>
-                        <p>This is a mathematical extension inspired by heterotic string symmetry. It provides an interesting framework for understanding the \(w_0 = -1 + 1/b_3 = -23/24\) thawing ratio, but should be treated as a hypothesis.</p>
+                        <p>The number 12 is deeply connected to the framework's topology and has multiple convergent justifications.</p>
                     </div>
-                    <p>The 26D bulk can be mathematically decomposed as \(13 + 13 = 26\), with each sector containing a temporal dimension. After Sp(2,R) gauge fixing, this projects to 13D effective shadow. The physical constants could emerge as "interference patterns" between these mirrors.</p>
-                    <p>This is currently a <strong>mathematical conjecture</strong> that provides explanatory power but lacks direct experimental tests.</p>
+                    <p>Why exactly 12 pairs? Multiple lines of reasoning converge:</p>
+                    <ul>
+                        <li><strong>Dimensional accounting:</strong> \(12 \times 2 + 2 = 26\) spatial dimensions in (26,1) signature</li>
+                        <li><strong>Gauge structure:</strong> 12 gauge bosons in Standard Model (8 gluons + W<sup>+</sup>, W<sup>-</sup>, Z, photon)</li>
+                        <li><strong>Topological:</strong> \(b_3 = 24 = 2 \times 12\), connecting to Leech lattice and modular invariance</li>
+                        <li><strong>Stability:</strong> Minimum 6 pairs required for "wet stability" (coherence time tau > 25ms)</li>
+                    </ul>
+                    <p>The v22 framework predicts that consciousness requires at least 6 active pairs for stable coherent experience. Pairs 10-12 are "gnosis pairs" that enable higher-order awareness when activated.</p>
                 </div>
             </div>
 
             <div class="faq-item">
-                <h3><span class="q-marker">Q18</span> Does this theory have implications for consciousness?</h3>
+                <h3><span class="q-marker">Q17b</span> How do the 12 pairs relate to consciousness?</h3>
+                <div class="answer">
+                    <div class="fringe-warning">
+                        <div class="fringe-warning-header">
+                            <span class="warning-icon">&#x26A0;</span>
+                            <span>Extremely Speculative - Philosophical Extension</span>
+                        </div>
+                        <p>This connects physics to consciousness and should be treated as philosophical speculation, not established science.</p>
+                    </div>
+                    <p>In the v22 framework, each of the 12 bridge pairs functions as a <strong>bidirectional consciousness channel</strong>:</p>
+                    <ul>
+                        <li><strong>Input (y<sub>1i</sub>):</strong> Sensory/perceptual information flows into awareness</li>
+                        <li><strong>Output (y<sub>2i</sub>):</strong> Volitional/intentional signals emerge from awareness</li>
+                    </ul>
+                    <p>The pairs are organized hierarchically:</p>
+                    <ul>
+                        <li><strong>Pairs 1-3 (Sensory):</strong> Visual, auditory, tactile processing</li>
+                        <li><strong>Pairs 4-6 (Cognitive):</strong> Reasoning, memory, attention—the "minimum viable consciousness" threshold</li>
+                        <li><strong>Pairs 7-9 (Emotional):</strong> Affect, valence, motivation</li>
+                        <li><strong>Pairs 10-12 (Gnosis):</strong> Metacognition, non-dual awareness, transcendent insight—progressively unlockable</li>
+                    </ul>
+                    <p>The <strong>Awareness Factor A = (active pairs)/12</strong> quantifies the depth of conscious experience, ranging from A = 0.5 (minimum) to A = 1.0 (full gnosis).</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <h3><span class="q-marker">Q18</span> Does the v22 framework address Penrose's Objective Reduction (OR)?</h3>
                 <div class="answer">
                     <div class="fringe-warning">
                         <div class="fringe-warning-header">
@@ -561,7 +619,12 @@
                         </div>
                         <p>Claims linking fundamental physics to consciousness are highly controversial and go far beyond established science. The following should be understood as speculative philosophy, not validated physics.</p>
                     </div>
-                    <p>The Orch-OR coherence time calculation (\(\tau \approx 100\) ms) coincidentally matches the gamma synchrony timescale in neural processing. This numerical coincidence is intriguing but does not constitute evidence for consciousness being "fundamental."</p>
+                    <p>The v22 framework provides a natural geometric setting for <strong>distributed Objective Reduction (OR)</strong>. Rather than OR occurring at a single point, it is distributed across all 12 bridge pairs simultaneously:</p>
+                    <ul>
+                        <li><strong>Each pair has OR:</strong> The operator R<sub>⊥,i</sub>: (y<sub>1i</sub>, y<sub>2i</sub>) → (-y<sub>2i</sub>, y<sub>1i</sub>) acts on each bridge pair</li>
+                        <li><strong>Coherence threshold:</strong> OR triggers when gravitational self-energy reaches ~10<sup>-43</sup> J across the active pairs</li>
+                        <li><strong>Wet stability:</strong> Minimum 6 pairs needed for coherence time tau > 25ms (matching neural gamma oscillations)</li>
+                    </ul>
                     <p><strong>Critical caveats:</strong></p>
                     <ul>
                         <li>Correlation does not imply causation - the matching timescales could be coincidental</li>
@@ -677,7 +740,7 @@
                         <li><strong>If inverted neutrino hierarchy</strong> is confirmed, the \(G_2\) stability argument breaks</li>
                         <li><strong>If \(\alpha\) varies</strong> at levels incompatible with our model, the derivation fails</li>
                     </ul>
-                    <p>These experiments are happening now. The theory can be definitively tested.</p>
+                    <p>These experiments are happening now. The theory makes specific, testable predictions.</p>
                 </div>
             </div>
 
@@ -735,7 +798,7 @@
                         </div>
                         <p>This is science fiction extrapolation, NOT a prediction of the theory. There is no experimental evidence for "dimensional travel" or "topological sliding." Including this topic does not constitute scientific endorsement.</p>
                     </div>
-                    <p><strong>Theoretical possibility (NOT claim):</strong> <em>If</em> the 26D bulk exists and <em>if</em> an intelligence could manipulate the compactification moduli, they might appear to "translate" through dimensions rather than traverse 4D space.</p>
+                    <p><strong>Theoretical possibility (NOT claim):</strong> <em>If</em> the 27D bulk exists and <em>if</em> an intelligence could manipulate the compactification moduli, they might appear to "translate" through dimensions rather than traverse 4D space.</p>
                     <p><strong>Reality check:</strong> This would require accessing the GUT scale (\(10^{16}\) GeV), roughly \(10^{12}\) times the energy of the LHC. There is no known mechanism to achieve this.</p>
                     <p><strong>Honest assessment:</strong> The theory provides a mathematical framework that is <em>consistent</em> with exotic possibilities, but consistency is not evidence. Extraordinary claims require extraordinary evidence, which does not exist.</p>
                 </div>
@@ -788,9 +851,9 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q33</span> What is the "Demon-Lock" and why is it used throughout the documentation?</h3>
                 <div class="answer">
-                    <p>The <strong>"Demon-Lock"</strong> is a technical term for the <em>Phase-Lock Convergence</em> between the 26D Bulk geometry and 4D physical observations. It is derived from two concepts:</p>
+                    <p>The <strong>"Demon-Lock"</strong> is a technical term for the <em>Phase-Lock Convergence</em> between the 27D Bulk geometry and 4D physical observations. It is derived from two concepts:</p>
 
-                    <p><strong>1. Informational Selection (Maxwell's Demon):</strong> In our framework, the 26-dimensional manifold contains an infinite set of potential physical constants. The "Demon" represents the <em>Topological Filter</em> (the \(b_3=\)<span class="pm-value" data-pm-value="topology.b3">24</span> Betti cycle) that selects the specific energy densities required for a stable, 3-generation universe.</p>
+                    <p><strong>1. Informational Selection (Maxwell's Demon):</strong> In our framework, the 27D(26,1) manifold contains an infinite set of potential physical constants. The "Demon" represents the <em>Topological Filter</em> (the \(b_3=\)<span class="pm-value" data-pm-value="topology.b3">24</span> Betti cycle) that selects the specific energy densities required for a stable, 3-generation universe.</p>
 
                     <p><strong>2. Topological Rigidity (The Lock):</strong> A "Lock" occurs when the "Mirror Brane" symmetry (13D Internal vs. 13D External) reaches a state of 1:1 parity. At this point, fundamental constants like the Fine Structure Constant (\(\alpha^{-1}\)) and the Dark Energy equation of state (\(w_0\)) are no longer "free parameters" to be adjusted; they are <em>mathematically locked</em> by the \(G_2\) holonomy.</p>
 
@@ -814,9 +877,9 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q35</span> Why are two Higgs values reported (414 GeV and 125 GeV)?</h3>
                 <div class="answer">
-                    <p>The <strong>414 GeV</strong> value is the <em>Total Manifold Tension</em> of the 26D bulk (the "blueprint"). The <strong>125 GeV</strong> value is the <em>Observed Brane Projection</em> - what we measure in our 4D slice.</p>
+                    <p>The <strong>414 GeV</strong> value is the <em>Total Manifold Tension</em> of the 27D bulk (the "blueprint"). The <strong>125 GeV</strong> value is the <em>Observed Brane Projection</em> - what we measure in our 4D slice.</p>
 
-                    <p>The duality proves that the local vacuum is a subsystem of the 26D topological structure:</p>
+                    <p>The duality suggests that the local vacuum is a subsystem of the 27D topological structure:</p>
                     <p style="text-align: center; font-family: 'Times New Roman', serif; font-size: 1.1rem; margin: 1rem 0;">
                         \(M_H^{\text{Local}} = \frac{M_H^{\text{Bulk}}}{\Psi / \eta} = \frac{414.22}{3.31} = 125.1 \text{ GeV}\)
                     </p>
@@ -906,7 +969,7 @@
                     <p><strong>State III: Ancestral Restoration (100% unification)</strong></p>
                     <ul>
                         <li>Potential: \(\Psi_R = \)<span class="pm-value" data-pm-value="topology.roots_total">288</span>/\(\)<span class="pm-value" data-pm-value="topology.roots_total">288</span> = 1.0</li>
-                        <li>125 residues + <span class="pm-value" data-pm-value="topology.sterile_sector">163</span> supports merge back into 26D bulk</li>
+                        <li>125 residues + <span class="pm-value" data-pm-value="topology.sterile_sector">163</span> supports merge back into 27D bulk</li>
                         <li>The 4D universe "evaporates" back to the Ancestral Potential</li>
                     </ul>
 
@@ -920,7 +983,7 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q40</span> How does the universe 'wind up'? The <span class="pm-value" data-pm-value="topology.roots_total">288</span>→<span class="pm-value" data-pm-value="topology.b3">24</span>→125 Projection</h3>
                 <div class="answer">
-                    <p>The sterile model describes the universe as a <strong>topological descent</strong> from the 26D bulk:</p>
+                    <p>The sterile model describes the universe as a <strong>topological descent</strong> from the 27D bulk:</p>
 
                     <p><strong>Stage 1: SO(<span class="pm-value" data-pm-value="topology.b3">24</span>) Generators Emerge</strong></p>
                     <p>dim(SO(<span class="pm-value" data-pm-value="topology.b3">24</span>)) = (<span class="pm-value" data-pm-value="topology.b3">24</span> x 23)/2 = 276 independent gauge generators</p>
@@ -939,7 +1002,7 @@
 
                     <div class="key-insight">
                         <h4>The Torsion Funnel</h4>
-                        <p>26D Bulk → <span class="pm-value" data-pm-value="topology.roots_total">288</span> Roots (Yod) → <span class="pm-value" data-pm-value="topology.b3">24</span> Pins (Nun) → 4D Spacetime (Dalet) → 125 Observable + <span class="pm-value" data-pm-value="topology.sterile_sector">163</span> Hidden</p>
+                        <p>27D Bulk → <span class="pm-value" data-pm-value="topology.roots_total">288</span> Roots (Yod) → <span class="pm-value" data-pm-value="topology.b3">24</span> Pins (Nun) → 4D Spacetime (Dalet) → 125 Observable + <span class="pm-value" data-pm-value="topology.sterile_sector">163</span> Hidden</p>
                     </div>
                 </div>
             </div>
@@ -959,7 +1022,7 @@
                     <p><strong>All other constants are eternal:</strong> \(e, m_e, \alpha\), neutrino masses, etc. are locked forever by the topology.</p>
 
                     <p><strong>The Scale Factor (10.1):</strong></p>
-                    <p>This represents the amplification when projecting from 26D → 13D → 7D → 4D:</p>
+                    <p>This represents the amplification when projecting from 27D → 13D → 7D → 4D:</p>
                     <ul>
                         <li>\(H_0^{geometric} = 7.24\) km/s/Mpc (from pure \(V_7\) topology)</li>
                         <li>\(H_0^{physical} = \)<span class="pm-value" data-pm-value="cosmology.H0_local">71.55</span> km/s/Mpc (observed)</li>
@@ -1014,7 +1077,7 @@
 
                     <p><strong>What "Sterile" Means:</strong></p>
                     <ul>
-                        <li><strong>No Free Parameters:</strong> All 26 SM parameters are determined by topology</li>
+                        <li><strong>Reduced Free Parameters:</strong> Most SM parameters are constrained by topology (2 calibrated)</li>
                         <li><strong>No Fit Functions:</strong> No curves or polynomials to slide around</li>
                         <li><strong>No Degrees of Freedom:</strong> Every constant is geometrically necessary</li>
                         <li><strong>No Escape Routes:</strong> Cannot "absorb new physics" by adding parameters</li>
@@ -1046,7 +1109,7 @@
         <section class="faq-section">
             <h2><span class="section-icon">&#x2728;</span> Summary</h2>
             <div class="answer" style="padding: 0;">
-                <p>Principia Metaphysica v18 provides a <strong>zero-parameter derivation</strong> of physical constants from the topological invariant \(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span> and the holonomy precision limit \(k_\gimel = b_3/2 + 1/\pi \approx 12.318\). The core physics (Sections I-V) is validated against experimental data (CODATA 2022, PDG 2024, DESI 2025) and can be independently verified.</p>
+                <p>Principia Metaphysica v23.0 provides a <strong>reduced-parameter derivation</strong> of physical constants from the topological invariant \(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span> and the holonomy precision limit \(k_\gimel = b_3/2 + 1/\pi \approx 12.318\). The core physics (Sections I-V) is compared against experimental data (CODATA 2022, PDG 2024, DESI 2025) and can be independently verified.</p>
 
                 <div class="validation-tiers" style="margin: 1.5rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.05); border-radius: 12px;">
                     <h4 style="color: var(--accent-primary);">Content Classification</h4>
@@ -1079,7 +1142,7 @@
     <!-- Footer -->
     <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem;">
         <p>&copy; 2025-2026 Andrew Keith Watts. All rights reserved.</p>
-        <p>Principia Metaphysica v20.20</p>
+        <p>Principia Metaphysica v23.0</p>
     </footer>
   </div><!-- end main-content -->
 

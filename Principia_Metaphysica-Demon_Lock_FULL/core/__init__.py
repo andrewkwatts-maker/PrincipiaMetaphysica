@@ -1,7 +1,7 @@
 """
 Principia Metaphysica Core Module
 =================================
-Single Source of Truth (SSoT) implementation for v16.2 Demon Lock.
+Single Source of Truth (SSoT) implementation for v23.0-12PAIR.
 
 This module provides:
 - FormulasRegistry: The SSoT class with Ten Pillar Seeds and derived formulas
@@ -52,4 +52,4 @@ __all__ = [
     'resolve_with_seeds',
 ]
 
-__version__ = "19.2"
+__version__ = "23.0"

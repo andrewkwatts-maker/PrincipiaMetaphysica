@@ -3,7 +3,7 @@
   "cert_id": "CERT-TOPO-023",
   "label": "Chern-Simons Level k=24",
   "category": "TOPOLOGICAL",
-  "version": "16.2",
+  "version": "23.0",
   "status": "SEALED",
   "wolfram_code": "With[{\n  (* G2 manifold with third Betti number *)\n  b3 = 24,\n  \n  (* Chern-Simons level equals b3 *)\n  (* This is topologically fixed *)\n  k = b3,\n  \n  (* Anomaly cancellation condition *)\n  (* For consistent G2 compactification: k = b3 *)\n  anomalyFree = (k == b3)\n},\n  (* The Chern-Simons level is an integer *)\n  (* It determines gauge field quantization *)\n  \n  {k, anomalyFree, \"SEALED\"}\n]",
   "expected_result": "{24, True, \"SEALED\"}",
