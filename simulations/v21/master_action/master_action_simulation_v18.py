@@ -310,7 +310,7 @@ class MasterActionSimulationV22(SimulationBase):
 
         v22.0: Adds 12-pair bridge system formulas:
         - pneuma-master-action-v22: Updated master action with 12-pair bridge
-        - bridge-12-pair-metric-v22: 27D metric with 13 (2,0) bridge pairs
+        - bridge-12-pair-metric-v22: 27D metric with 12 (2,0) bridge pairs + C^(2,0) central
         - bridge-lagrangian-v22: L_bridge summed over 12 pairs
         - distributed-or-reduction-v22: Tensor product of 12 R_perp operators
         - breathing-aggregation-v22: Averaged breathing mode
@@ -348,8 +348,8 @@ class MasterActionSimulationV22(SimulationBase):
                 plain_text="ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)",
                 category="THEORY",
                 description=(
-                    "v22.0: 27D metric with 13 (2,0) bridge pairs. Total dimensions: "
-                    "1 (time) + 26 (bridge) = 27D(26,1), with Cl(24,1) spinor structure. "
+                    "v23.1: 27D metric with 12 (2,0) bridge pairs + C^(2,0) central sampler. "
+                    "Total: 1 (time) + 24 (bridges) + 2 (central) = 27D(26,1), Cl(24,1) spinors. "
                     "Each pair (y_{1i}, y_{2i}) spans a 2D Euclidean bridge plane."
                 ),
                 inputParams=[],
