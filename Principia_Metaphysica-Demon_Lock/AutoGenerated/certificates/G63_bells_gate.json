@@ -1,0 +1,19 @@
+{
+  "proof_id": "G63_bells_gate",
+  "gate_id": 63,
+  "gate_name": "Bell's Gate",
+  "label": "Non-local limits from V7 connectivity",
+  "category": "FOUNDATIONAL_ASSUMPTION",
+  "phase": 5,
+  "block": "F",
+  "version": "23.0",
+  "wl_code": "N/A",
+  "result": "N/A",
+  "formula": "Bell inequality from V7",
+  "verification_status": "NOT_TESTABLE",
+  "derivation_status": "RIGOROUS",
+  "reason": "Bell's Gate assumes QM violates Bell inequalities. Gate validation only checks torsion=24, does not derive Bell violations from V7 connectivity. CHSH predictions exist separately in predictions_aggregator but G63 does not verify them.",
+  "note": "FOUNDATIONAL: Non-local limits from V7 connectivity. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-20T18:31:50.622157Z",
+  "hash": "59cf26b88879d682"
+}

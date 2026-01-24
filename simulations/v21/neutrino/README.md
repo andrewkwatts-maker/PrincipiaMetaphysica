@@ -42,7 +42,7 @@ Comprehensive test suite validating:
 ### Standalone Execution
 
 ```python
-from simulations.v16.neutrino.neutrino_mixing_v16_0 import run_neutrino_mixing
+from simulations.v21.neutrino.neutrino_mixing_v16_0 import run_neutrino_mixing
 
 results = run_neutrino_mixing(verbose=True)
 # Prints detailed output with NuFIT comparison
@@ -52,7 +52,7 @@ results = run_neutrino_mixing(verbose=True)
 
 ```python
 from simulations.base import PMRegistry
-from simulations.v16.neutrino import NeutrinoMixingSimulation
+from simulations.v21.neutrino import NeutrinoMixingSimulation
 
 # Create registry and set topological inputs
 registry = PMRegistry.get_instance()
@@ -158,7 +158,7 @@ theta_13 = results['theta_13']['theta_13_deg']
 
 New v16 code:
 ```python
-from simulations.v16.neutrino import NeutrinoMixingSimulation
+from simulations.v21.neutrino import NeutrinoMixingSimulation
 from simulations.base import PMRegistry
 
 registry = PMRegistry.get_instance()

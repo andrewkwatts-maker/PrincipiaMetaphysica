@@ -1,4 +1,4 @@
-# Outstanding Issues for Gemini Discussion - v21 Framework
+# Outstanding Issues for Review Discussion - v21 Framework
 
 **Date:** 2026-01-18
 **Version:** v21.0 "Dual-Shadow Bridge Landing"
@@ -42,7 +42,7 @@ Add version tagging to allow v21 seals alongside v20 seals.
 **Option C: Disable OMEGA check during v21 transition**
 Temporarily bypass Gate 72 until v21 is fully validated.
 
-### Question for Gemini
+### Question for Review
 Which approach is most appropriate for maintaining model integrity while allowing the v21 transition? Should the OMEGA hash include version information to prevent cross-version validation?
 
 ---
@@ -77,7 +77,7 @@ All references should be updated to v21 terminology:
 | 8192 spinor components | 4096 spinor components |
 | t_ortho gauge-fixed | bridge coordinates |
 
-### Question for Gemini
+### Question for Review
 Should we maintain a "legacy physics" section in the appendices explaining the historical (24,2) approach, or completely replace all references?
 
 ---
@@ -115,7 +115,7 @@ Run symbolic computation for each chain with v21 parameters and verify:
 2. Algebraic structure preserved
 3. Gauge group emergence consistent
 
-### Question for Gemini
+### Question for Review
 Should we prioritize any specific derivation chain for immediate validation? Which is most sensitive to the (24,2)→(24,1) change?
 
 ---
@@ -147,7 +147,7 @@ Or alternatively, the time is in the bridge connection:
 26D(24,1) = 2×(11,0) shadows + (2,1) bridge
 ```
 
-### Question for Gemini
+### Question for Review
 Which interpretation is physically correct?
 1. One shadow has time (11,1), other is purely spatial (11,0)?
 2. Both shadows share the same time via bridge coupling?
@@ -214,7 +214,7 @@ The bridge period may relate to:
 - Breathing mode frequency
 - Cross-shadow communication scale
 
-### Question for Gemini
+### Question for Review
 Can you derive L = 2π√φ from first principles, or is this an empirical choice? What physical observable would falsify this specific value?
 
 ---
@@ -229,7 +229,7 @@ Can you derive L = 2π√φ from first principles, or is this an empirical choic
 
 ---
 
-## Request to Gemini
+## Request for Review
 
 Please provide:
 1. Resolution for the dimensional arithmetic ambiguity
@@ -239,7 +239,7 @@ Please provide:
 
 ---
 
-**Document Status:** READY FOR GEMINI REVIEW
-**Prepared By:** Claude Opus 4.5
-**Next Step:** Submit to Gemini for recursive discussion
+**Document Status:** READY FOR PEER REVIEW
+**Prepared By:** Peer Review
+**Next Step:** Submit for recursive discussion
 

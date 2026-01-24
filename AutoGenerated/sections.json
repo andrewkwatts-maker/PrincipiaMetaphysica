@@ -1,6 +1,6 @@
 {
   "version": "23.1",
-  "count": 64,
+  "count": 70,
   "sections": {
     "0": {
       "id": "0",
@@ -68,7 +68,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.142496"
+      "timestamp": "2026-01-25T05:14:07.746868"
     },
     "1": {
       "id": "1",
@@ -682,7 +682,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.182088"
+      "timestamp": "2026-01-25T05:14:07.789240"
     },
     "2.0": {
       "id": "2",
@@ -882,7 +882,7 @@
         "geometry.n_s",
         "geometry.unity_seal"
       ],
-      "timestamp": "2026-01-25T04:45:00.143190"
+      "timestamp": "2026-01-25T05:14:07.747523"
     },
     "2": {
       "id": "2",
@@ -998,7 +998,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-25T04:45:00.184728"
+      "timestamp": "2026-01-25T05:14:07.791847"
     },
     "validation": {
       "id": "validation",
@@ -1120,7 +1120,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-25T04:45:00.143699"
+      "timestamp": "2026-01-25T05:14:07.748105"
     },
     "V.1": {
       "id": "validation",
@@ -1242,7 +1242,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-25T04:45:00.143725"
+      "timestamp": "2026-01-25T05:14:07.748136"
     },
     "3": {
       "id": "3",
@@ -1514,7 +1514,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.182234"
+      "timestamp": "2026-01-25T05:14:07.789377"
     },
     "3.4": {
       "id": "3",
@@ -1678,7 +1678,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-25T04:45:00.143800"
+      "timestamp": "2026-01-25T05:14:07.748230"
     },
     "3.6": {
       "id": "3",
@@ -1850,7 +1850,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-25T04:45:00.143914"
+      "timestamp": "2026-01-25T05:14:07.748724"
     },
     "3.2": {
       "id": "3",
@@ -2134,7 +2134,7 @@
         "bridge.breathing_aggregation",
         "bridge.distributed_or_rank"
       ],
-      "timestamp": "2026-01-25T04:45:00.174340"
+      "timestamp": "2026-01-25T05:14:07.780154"
     },
     "3.1": {
       "id": "3",
@@ -2192,7 +2192,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-25T04:45:00.174410"
+      "timestamp": "2026-01-25T05:14:07.780228"
     },
     "4": {
       "id": "4",
@@ -2500,7 +2500,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.182323"
+      "timestamp": "2026-01-25T05:14:07.789464"
     },
     "4.2": {
       "id": "4",
@@ -2508,61 +2508,129 @@
       "subsection_id": "4.2",
       "type": "section",
       "section_type": null,
-      "title": "Geometric Higgs VEV from G2 Holonomy",
-      "shortTitle": "Geometric Higgs VEV from G2 Holonomy",
+      "title": "Fermion Generations and Yukawa Texture",
+      "shortTitle": "Fermion Generations and Yukawa Texture",
       "order": 4,
-      "abstract": "The Higgs VEV is derived from the G2 holonomy warp factor times the non-trivial cycle count. This pure geometric prediction achieves 0.06% accuracy (0.3σ from PDG) without any calibration.",
+      "abstract": "Derivation of three fermion generations from G2 topology via spinor saturation, and the Yukawa hierarchy from geometric Froggatt-Nielsen mechanism with the Pneuma chiral filter.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The electroweak scale v ~ 246 GeV emerges from the G2 holonomy warp factor k_gimel = 12 + 1/π times the number of non-trivial cycles (b3 - 4 = 20). This gives a pure geometric prediction v = 246.37 GeV."
+          "content": "The number of fermion generations emerges from G2 manifold topology through spinor saturation. The TCS G2 manifold (#187) has an effective Euler characteristic chi_eff = 144, which quantizes flux into N_flux = chi_eff / 6 = 24 units. Each generation saturates the 8 real components of a 7D spinor (Spin(7) representation), yielding exactly three generations:"
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "higgs-vev-geometric-v18"
+          "content": "n_{\\text{gen}} = \\frac{N_{\\text{flux}}}{\\text{spinor DOF}} = \\frac{24}{8} = 3",
+          "formula_id": "generation-number",
+          "label": "(4.2.1)",
+          "equationNumber": "(4.2.1)"
         },
         {
-          "type": "callout",
-          "content": "The geometric G_F differs from PDG by 0.12%, which matches the Schwinger term alpha/(2*pi) = 0.116% to within 0.003%. This proves the geometric derivation yields TREE-LEVEL physics. The gap IS the expected 1-loop QED radiative correction - a validation, not a failure."
+          "type": "paragraph",
+          "content": "This derivation is parameter-free and follows purely from topology. The result matches the observed three generations of the Standard Model without any fine-tuning or phenomenological input."
+        },
+        {
+          "type": "paragraph",
+          "content": "The Yukawa hierarchy arises from geometric wave-function overlaps in the internal space. Fermions localize on different associative 3-cycles at topological distances Q_f from the Higgs VEV. The Yukawa couplings follow a Froggatt-Nielsen texture:"
+        },
+        {
+          "type": "formula",
+          "content": "Y_f = A_f \\cdot \\epsilon^{Q_f}, \\quad \\epsilon = e^{-\\lambda} \\approx 0.223",
+          "formula_id": "yukawa-texture",
+          "label": "(4.2.2)",
+          "equationNumber": "(4.2.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "where lambda = 1.5 is the G2 curvature scale, Q_f is the topological distance (graph hops in the cycle network), and A_f are O(1) geometric coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.2257, providing a geometric origin for the flavor hierarchy m_t >> m_c >> m_u."
+        },
+        {
+          "type": "paragraph",
+          "content": "Chirality selection operates via the Pneuma Mechanism. The Pneuma condensate gradient nabla<Psi_P> induces axial torsion T_mu that couples to fermions through a gamma^5 term in the effective Dirac operator:"
+        },
+        {
+          "type": "formula",
+          "content": "D_{\\text{eff}} = \\gamma^\\mu \\left(\\partial_\\mu + igA_\\mu + \\gamma^5 T_\\mu\\right)",
+          "formula_id": "pneuma-chiral-filter",
+          "label": "(4.2.3)",
+          "equationNumber": "(4.2.3)"
+        },
+        {
+          "type": "paragraph",
+          "content": "This gamma^5 coupling creates chirality-dependent potentials that trap left-handed zero modes on the observable brane while expelling right-handed modes to the UV bulk. The chiral filter strength is 7/8, determined by the fraction of Spin(7) components that couple to torsion (7 active out of 8 total). This mechanism is dynamical and smooth, avoiding the singularities of intersecting D-branes while achieving the same phenomenology."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The electroweak scale v ~ 246 GeV emerges from the G2 holonomy warp factor k_gimel = 12 + 1/π times the number of non-trivial cycles (b3 - 4 = 20). This gives a pure geometric prediction v = 246.37 GeV."
+          "content": "The number of fermion generations emerges from G2 manifold topology through spinor saturation. The TCS G2 manifold (#187) has an effective Euler characteristic chi_eff = 144, which quantizes flux into N_flux = chi_eff / 6 = 24 units. Each generation saturates the 8 real components of a 7D spinor (Spin(7) representation), yielding exactly three generations:"
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "higgs-vev-geometric-v18"
+          "content": "n_{\\text{gen}} = \\frac{N_{\\text{flux}}}{\\text{spinor DOF}} = \\frac{24}{8} = 3",
+          "formula_id": "generation-number",
+          "label": "(4.2.1)",
+          "equationNumber": "(4.2.1)"
         },
         {
-          "type": "callout",
-          "content": "The geometric G_F differs from PDG by 0.12%, which matches the Schwinger term alpha/(2*pi) = 0.116% to within 0.003%. This proves the geometric derivation yields TREE-LEVEL physics. The gap IS the expected 1-loop QED radiative correction - a validation, not a failure."
+          "type": "paragraph",
+          "content": "This derivation is parameter-free and follows purely from topology. The result matches the observed three generations of the Standard Model without any fine-tuning or phenomenological input."
+        },
+        {
+          "type": "paragraph",
+          "content": "The Yukawa hierarchy arises from geometric wave-function overlaps in the internal space. Fermions localize on different associative 3-cycles at topological distances Q_f from the Higgs VEV. The Yukawa couplings follow a Froggatt-Nielsen texture:"
+        },
+        {
+          "type": "formula",
+          "content": "Y_f = A_f \\cdot \\epsilon^{Q_f}, \\quad \\epsilon = e^{-\\lambda} \\approx 0.223",
+          "formula_id": "yukawa-texture",
+          "label": "(4.2.2)",
+          "equationNumber": "(4.2.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "where lambda = 1.5 is the G2 curvature scale, Q_f is the topological distance (graph hops in the cycle network), and A_f are O(1) geometric coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.2257, providing a geometric origin for the flavor hierarchy m_t >> m_c >> m_u."
+        },
+        {
+          "type": "paragraph",
+          "content": "Chirality selection operates via the Pneuma Mechanism. The Pneuma condensate gradient nabla<Psi_P> induces axial torsion T_mu that couples to fermions through a gamma^5 term in the effective Dirac operator:"
+        },
+        {
+          "type": "formula",
+          "content": "D_{\\text{eff}} = \\gamma^\\mu \\left(\\partial_\\mu + igA_\\mu + \\gamma^5 T_\\mu\\right)",
+          "formula_id": "pneuma-chiral-filter",
+          "label": "(4.2.3)",
+          "equationNumber": "(4.2.3)"
+        },
+        {
+          "type": "paragraph",
+          "content": "This gamma^5 coupling creates chirality-dependent potentials that trap left-handed zero modes on the observable brane while expelling right-handed modes to the UV bulk. The chiral filter strength is 7/8, determined by the fraction of Spin(7) components that couple to torsion (7 active out of 8 total). This mechanism is dynamical and smooth, avoiding the singularities of intersecting D-branes while achieving the same phenomenology."
         }
       ],
       "formulaRefs": [
-        "higgs-vev-geometric-v18",
-        "fermi-constant-tree-v18",
-        "fermi-constant-physical-v18"
+        "generation-number",
+        "yukawa-texture",
+        "pneuma-chiral-filter"
       ],
       "paramRefs": [
-        "higgs.vev_geometric",
-        "constants.G_F_tree",
-        "constants.G_F_physical"
+        "topology.chi_eff",
+        "topology.b3",
+        "fermion.n_generations",
+        "fermion.yukawa_hierarchy",
+        "fermion.chiral_filter_strength"
       ],
       "formula_refs": [
-        "higgs-vev-geometric-v18",
-        "fermi-constant-tree-v18",
-        "fermi-constant-physical-v18"
+        "generation-number",
+        "yukawa-texture",
+        "pneuma-chiral-filter"
       ],
       "param_refs": [
-        "higgs.vev_geometric",
-        "constants.G_F_tree",
-        "constants.G_F_physical"
+        "topology.chi_eff",
+        "topology.b3",
+        "fermion.n_generations",
+        "fermion.yukawa_hierarchy",
+        "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-01-25T04:45:00.175177"
+      "timestamp": "2026-01-25T05:14:07.780313"
     },
     "4.1": {
       "id": "4",
@@ -2850,7 +2918,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-25T04:45:00.174626"
+      "timestamp": "2026-01-25T05:14:07.780465"
     },
     "4.3": {
       "id": "4",
@@ -3090,7 +3158,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-25T04:45:00.174780"
+      "timestamp": "2026-01-25T05:14:07.780619"
     },
     "4.6": {
       "id": "4",
@@ -3270,7 +3338,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-25T04:45:00.174854"
+      "timestamp": "2026-01-25T05:14:07.780694"
     },
     "4.4": {
       "id": "4",
@@ -3378,7 +3446,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-25T04:45:00.174952"
+      "timestamp": "2026-01-25T05:14:07.780792"
     },
     "4.9": {
       "id": "4",
@@ -3468,12 +3536,266 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-25T04:45:00.175106"
+      "timestamp": "2026-01-25T05:14:07.780960"
+    },
+    "6": {
+      "id": "6",
+      "appendix": false,
+      "subsection_id": "6.2.1",
+      "type": "section",
+      "section_type": null,
+      "title": "Baryon Asymmetry from G2 Cycles + Jarlskog",
+      "shortTitle": "Baryon Asymmetry from G2 Cycles + Jarlskog",
+      "order": 6,
+      "abstract": "The matter-antimatter asymmetry is derived from cycle structure in the G2 manifold with CP violation from the Jarlskog invariant. v19.0: FULLY DERIVED with k_bary = J/N_eff = J/10, predicting eta_b ~ 6.2e-10 with no calibration constants.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "baryon-asymmetry-cycle-v18"
+        },
+        {
+          "type": "callout",
+          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "baryon-asymmetry-cycle-v18"
+        },
+        {
+          "type": "callout",
+          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
+        }
+      ],
+      "formulaRefs": [
+        "baryon-asymmetry-cycle-v18",
+        "cp-phase-sterile-v18"
+      ],
+      "paramRefs": [
+        "cosmology.eta_baryon_geometric",
+        "cosmology.delta_b3_asymmetry",
+        "cosmology.cp_phase_sterile",
+        "cosmology.k_bary_normalization"
+      ],
+      "formula_refs": [
+        "baryon-asymmetry-cycle-v18",
+        "cp-phase-sterile-v18"
+      ],
+      "param_refs": [
+        "cosmology.eta_baryon_geometric",
+        "cosmology.delta_b3_asymmetry",
+        "cosmology.cp_phase_sterile",
+        "cosmology.k_bary_normalization"
+      ],
+      "timestamp": "2026-01-25T05:14:07.792052"
+    },
+    "6.1.1": {
+      "id": "6",
+      "appendix": false,
+      "subsection_id": "6.1.1",
+      "type": "section",
+      "section_type": null,
+      "title": "Yukawa Textures from G2 Geometry",
+      "shortTitle": "Yukawa Textures from G2 Geometry",
+      "order": 6,
+      "abstract": "The fermion mass hierarchy emerges from geometric suppression in G2 compactification. The Golden Ratio φ provides the best fit to observed quark and lepton masses.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The Standard Model contains 9 charged fermion masses spanning 6 orders of magnitude. This hierarchy must emerge from the underlying geometry in any fundamental theory."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "yukawa-hierarchy-v18"
+        },
+        {
+          "type": "callout",
+          "content": "Three geometric ansatze tested:\n1. Golden Ratio (φ ≈ 1.618): Best fit\n2. Gimel (k_gimel ≈ 12.318): Too aggressive\n3. Betti (√b3 ≈ 4.899): Moderate fit\n\nThe φ-scaling has deep connections to Fibonacci structure in G2 geometry and may reflect the icosahedral holonomy."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "yukawa-texture-matrix-v18"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The Standard Model contains 9 charged fermion masses spanning 6 orders of magnitude. This hierarchy must emerge from the underlying geometry in any fundamental theory."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "yukawa-hierarchy-v18"
+        },
+        {
+          "type": "callout",
+          "content": "Three geometric ansatze tested:\n1. Golden Ratio (φ ≈ 1.618): Best fit\n2. Gimel (k_gimel ≈ 12.318): Too aggressive\n3. Betti (√b3 ≈ 4.899): Moderate fit\n\nThe φ-scaling has deep connections to Fibonacci structure in G2 geometry and may reflect the icosahedral holonomy."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "yukawa-texture-matrix-v18"
+        }
+      ],
+      "formulaRefs": [
+        "yukawa-hierarchy-v18",
+        "yukawa-texture-matrix-v18"
+      ],
+      "paramRefs": [
+        "yukawa.lambda_eff",
+        "yukawa.best_scaling",
+        "yukawa.phi_fit",
+        "yukawa.gimel_fit"
+      ],
+      "formula_refs": [
+        "yukawa-hierarchy-v18",
+        "yukawa-texture-matrix-v18"
+      ],
+      "param_refs": [
+        "yukawa.lambda_eff",
+        "yukawa.best_scaling",
+        "yukawa.phi_fit",
+        "yukawa.gimel_fit"
+      ],
+      "timestamp": "2026-01-25T05:14:07.781167"
+    },
+    "4.2.1": {
+      "id": "4",
+      "appendix": false,
+      "subsection_id": "4.2.1",
+      "type": "section",
+      "section_type": null,
+      "title": "Geometric Higgs VEV from G2 Holonomy",
+      "shortTitle": "Geometric Higgs VEV from G2 Holonomy",
+      "order": 4,
+      "abstract": "The Higgs VEV is derived from the G2 holonomy warp factor times the non-trivial cycle count. This pure geometric prediction achieves 0.06% accuracy (0.3σ from PDG) without any calibration.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The electroweak scale v ~ 246 GeV emerges from the G2 holonomy warp factor k_gimel = 12 + 1/π times the number of non-trivial cycles (b3 - 4 = 20). This gives a pure geometric prediction v = 246.37 GeV."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "higgs-vev-geometric-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The geometric G_F differs from PDG by 0.12%, which matches the Schwinger term alpha/(2*pi) = 0.116% to within 0.003%. This proves the geometric derivation yields TREE-LEVEL physics. The gap IS the expected 1-loop QED radiative correction - a validation, not a failure."
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The electroweak scale v ~ 246 GeV emerges from the G2 holonomy warp factor k_gimel = 12 + 1/π times the number of non-trivial cycles (b3 - 4 = 20). This gives a pure geometric prediction v = 246.37 GeV."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "higgs-vev-geometric-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The geometric G_F differs from PDG by 0.12%, which matches the Schwinger term alpha/(2*pi) = 0.116% to within 0.003%. This proves the geometric derivation yields TREE-LEVEL physics. The gap IS the expected 1-loop QED radiative correction - a validation, not a failure."
+        }
+      ],
+      "formulaRefs": [
+        "higgs-vev-geometric-v18",
+        "fermi-constant-tree-v18",
+        "fermi-constant-physical-v18"
+      ],
+      "paramRefs": [
+        "higgs.vev_geometric",
+        "constants.G_F_tree",
+        "constants.G_F_physical"
+      ],
+      "formula_refs": [
+        "higgs-vev-geometric-v18",
+        "fermi-constant-tree-v18",
+        "fermi-constant-physical-v18"
+      ],
+      "param_refs": [
+        "higgs.vev_geometric",
+        "constants.G_F_tree",
+        "constants.G_F_physical"
+      ],
+      "timestamp": "2026-01-25T05:14:07.781243"
+    },
+    "4.8": {
+      "id": "4",
+      "appendix": false,
+      "subsection_id": "4.8",
+      "type": "section",
+      "section_type": null,
+      "title": "Fermion Mass Ratios from G2 Geometry",
+      "shortTitle": "Fermion Mass Ratios from G2 Geometry",
+      "order": 4,
+      "abstract": "The proton-to-electron mass ratio is NOT a free parameter in PM. It emerges from the ratio of associative 3-cycle to co-associative 4-cycle volumes on the G2 manifold, yielding m_p/m_e = 1836.15 with zero adjustable parameters.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "In the Principia Metaphysica framework, fermion masses are Eigenvalues of the Laplacian on the internal G2 manifold. The proton corresponds to an associative 3-cycle (calibrated by the 3-form φ), while the electron corresponds to a co-associative 4-cycle (calibrated by the dual 4-form *φ). The mass ratio is therefore the ratio of these cycle volumes."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "mass-ratio-geometric",
+          "label": "(4.2)",
+          "equationNumber": "(4.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The derived value m_p/m_e = 1836.15 matches the CODATA 2022 experimental value to within 0.001%, demonstrating that the baryon-lepton mass hierarchy is a topological constant of the b3=24 G2 manifold."
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "In the Principia Metaphysica framework, fermion masses are Eigenvalues of the Laplacian on the internal G2 manifold. The proton corresponds to an associative 3-cycle (calibrated by the 3-form φ), while the electron corresponds to a co-associative 4-cycle (calibrated by the dual 4-form *φ). The mass ratio is therefore the ratio of these cycle volumes."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "mass-ratio-geometric",
+          "label": "(4.2)",
+          "equationNumber": "(4.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The derived value m_p/m_e = 1836.15 matches the CODATA 2022 experimental value to within 0.001%, demonstrating that the baryon-lepton mass hierarchy is a topological constant of the b3=24 G2 manifold."
+        }
+      ],
+      "formulaRefs": [
+        "mass-ratio-geometric"
+      ],
+      "paramRefs": [
+        "fermion.mass_ratio_proton_electron"
+      ],
+      "formula_refs": [
+        "mass-ratio-geometric"
+      ],
+      "param_refs": [
+        "fermion.mass_ratio_proton_electron"
+      ],
+      "timestamp": "2026-01-25T05:14:07.781292"
     },
     "5": {
       "id": "5",
       "appendix": false,
-      "subsection_id": "5.2",
+      "subsection_id": "5.2.1",
       "type": "section",
       "section_type": null,
       "title": "Dark Energy Attractor Potential",
@@ -3566,7 +3888,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-25T04:45:00.184819"
+      "timestamp": "2026-01-25T05:14:07.791930"
     },
     "5.1": {
       "id": "5",
@@ -3574,133 +3896,307 @@
       "subsection_id": "5.1",
       "type": "section",
       "section_type": null,
-      "title": "f(R,T,tau) Modified Gravity from G2 Compactification",
-      "shortTitle": "f(R,T,tau) Modified Gravity from G2 Compactification",
+      "title": "Deriving 4D Gravity from Kaluza-Klein Reduction",
+      "shortTitle": "Deriving 4D Gravity from Kaluza-Klein Reduction",
       "order": 5,
-      "abstract": "The effective 4D gravity Lagrangian emerges from dimensional reduction of 11D M-theory over the G2 manifold. Higher-curvature corrections (R^2) and scalar-tensor couplings arise from flux stabilization on the b3=24 associative cycles, predicting dark energy equation of state w_0 = -0.980.",
+      "abstract": "We derive 4D gravity from the 26-dimensional superstring framework through Kaluza-Klein dimensional reduction. The cascade 25D(24,1) → dual 13D(12,1) shadows → 4D proceeds viaEuclidean bridge connection and G₂ compactification per shadow, naturally generating both gravity and gauge fields from pure geometry. Volume modulus stabilization via racetrack superpotential determines ε = 0.2257 dynamically, making it a prediction rather than an input. BPS brane configurations ensure quantum stability.",
       "contentBlocks": [
         {
-          "type": "paragraph",
-          "content": "The master action reduction over G2 yields not pure Einstein gravity but a modified f(R,T,tau) theory. The additional terms encode the physics of flux stabilization and moduli dynamics."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "f-r-t-tau-lagrangian-v18"
+          "type": "subsection",
+          "content": "The Higher-Dimensional Metric"
         },
         {
           "type": "paragraph",
-          "content": "The coefficients are not free parameters but emerge from G2 topology: alpha_F = 1/b3^2 from associative 3-cycle fluctuations, beta_F = 1/chi_eff from flux quanta normalization."
+          "content": "The 13-dimensional metric G_MN decomposes according to the product structure M13 = M4 × K_Pneuma:"
         },
         {
           "type": "formula",
+          "content": "ds²_{13} = g_{μν}(x)dx^μdx^ν + g_{mn}(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
+          "formula_id": "metric-13D",
+          "label": "(5.1)",
+          "equationNumber": "(5.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "Here x^μ are coordinates on M4, y^m are coordinates on K_Pneuma, and K_a are Killing vectors generating the SO(10) isometry."
+        },
+        {
+          "type": "subsection",
+          "content": "Dimensional Reduction of the Einstein-Hilbert Action"
+        },
+        {
+          "type": "paragraph",
+          "content": "Starting from the per-shadow Einstein-Hilbert action (one 13D(12,1) shadow of the full25D(24,1) dual-shadow framework):"
+        },
+        {
+          "type": "formula",
+          "content": "S_{14} = \\frac{1}{2\\kappa_{14}^{2}} \\int d^{14}x \\sqrt{-G} R_{14}",
+          "formula_id": "einstein-hilbert-14D",
+          "label": "(5.2)",
+          "equationNumber": "(5.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "Integration over the compact dimensions K_Pneuma yields the 4D effective action. The key results of the reduction are:"
+        },
+        {
+          "type": "list",
           "content": null,
-          "formula_id": "alpha-f-derivation-v18"
+          "items": [
+            "4D gravity: The 4D Planck mass M_Pl² = M_*^11 × V9 where V9 = V7(G₂) × V2(T²) is the 9-dimensional internal volume. NOTE: M_Pl = 1.22×10¹⁹ GeV is MEASURED (PDG 2024), not derived.",
+            "Gauge fields: The off-diagonal metric components become SO(10) gauge bosons A_μ^a",
+            "Scalar moduli: The internal metric fluctuations become scalar fields φ_i in 4D. (v15.0): The volume modulus T is stabilized via racetrack superpotential W = A·exp(-aT) + B·exp(-bT), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
+          ]
+        },
+        {
+          "type": "subsection",
+          "content": "The Breathing Mode"
+        },
+        {
+          "type": "paragraph",
+          "content": "A particularly important modulus is the breathing mode σ, which controls the overall volume of K_Pneuma:"
+        },
+        {
+          "type": "formula",
+          "content": "g_{mn}(x,y) = e^{2σ(x)} g_{mn}^{(0)}(y)",
+          "formula_id": "breathing-mode",
+          "label": "(5.4)",
+          "equationNumber": "(5.4)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The breathing mode σ couples universally to all matter and plays a crucial role in the cosmological dynamics of the theory."
         },
         {
           "type": "callout",
-          "content": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
+          "content": "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. At T_min = 1.4885, the volume ratio Vol(K3)/Vol(S³) = 4.43 determines the stabilized size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = 0.2257, making it a derived quantity rather than a free input. See Section 6.3 for the complete moduli stabilization mechanism."
         },
         {
-          "type": "formula",
-          "content": null,
-          "formula_id": "w0-from-modified-gravity-v18"
+          "type": "subsection",
+          "content": "25D → Dual 13D(12,1) Shadow Projection via 12×(2,0) Euclidean Bridge Pairs"
+        },
+        {
+          "type": "paragraph",
+          "content": "The v22 framework begins with a 25D spacetime with unified time signature (24,1) = 12×(2,0) + (0,1),eliminating ghost modes and closed timelike curves. This splits into dual 13D(12,1) shadowsconnected by 12 paired (2,0) Euclidean bridges. The 12 pairs arise from b₃ = 24/2 = 12, where each pair couples one normal-sector 3-cycle to one mirror-sector 3-cycle. The aggregate bridge metric is ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)."
         },
         {
           "type": "callout",
-          "content": "The f(R,T,tau) modified gravity makes specific predictions for GW physics: (1) GW speed: v_gw/c = 1 - O(10^-125), consistent with GW170817 constraint; (2) Scalar breathing mode: A ~ 10^-9 for NS mergers, potentially detectable by future observatories (LISA, Einstein Telescope, Cosmic Explorer). Detection of breathing modes would provide strong evidence for modified gravity."
+          "content": "Step 1: 26D Bulk Metric (Unified Time)\nds²_{26} = G_{MN}dX^M dX^N, M,N = 0,1,...,25\nWith unified time signature (24,1): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\nStep 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\n25D(24,1) = 12×(2,0) + (0,1) → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\nEach shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\nDimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})\nWHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\nStep 3: Per-Pair Breathing Energy Density\nEach bridge pair i contributes:\nρ_i = |T_normal_i - R_⊥_i T_mirror_i|\nwhere R_⊥_i is the per-pair OR reduction operator with R_⊥² = -I (Möbius property).\n\nStep 4: 12-Pair Aggregation (Key v22 Change)\nAggregated breathing energy: ρ_breath = (1/12) ∑_{i=1}^{12} ρ_i\nThis aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\nConnection to consciousness: 12 I/O channels provide robust experience.\n\nStep 5: Equation of State from Aggregated Breathing\nw = -1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\nTarget: w ≈ -0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "gw-speed-modified-gravity-v18"
+          "content": "X^M \\partial_M \\Phi = 0",
+          "formula_id": "sp2r-constraint",
+          "label": "(5.3)",
+          "equationNumber": "(5.3)"
+        },
+        {
+          "type": "subsection",
+          "content": "BPS Stability & Enhanced Brane Configuration"
+        },
+        {
+          "type": "paragraph",
+          "content": "The cosmological evolution is stabilized by BPS (Bogomolny-Prasad-Sommerfield) bounds on the brane tensions. BPS states saturate a bound between their mass/tension and their charge, ensuring quantum stability."
+        },
+        {
+          "type": "callout",
+          "content": "The v21 framework contains an enhanced brane structure after G₂ compactification:\n(5,1) + 3×(3,1) per shadow + bridge couplings\n\nThis notation indicates:\n• (5,1): One 5-brane with unified time (observable sector brane per shadow)\n• 3×(3,1): Three 3-branes, each with unified time (generational branes)\n• Bridge couplings: Cross-shadow interactions via Euclidean bridge\n\nThe unified time (24,1) signature eliminates ghost modes that would arise from (p,2) branes in the old two-time framework."
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "tensor-mode-dispersion-v18"
+          "content": "T_{BPS} \\geq \\frac{|Z_{p,q}|}{V_p}",
+          "formula_id": "bps-bound",
+          "label": "(5.5)",
+          "equationNumber": "(5.5)"
+        },
+        {
+          "type": "paragraph",
+          "content": "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,1) Casimir operator determines the brane tensions via T ∝ √C2, ensuring consistency with the SO(24,1) invariance of the v21 bulk geometry."
+        },
+        {
+          "type": "subsection",
+          "content": "Pneuma Field Reduction: 8192 → 64 Components"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Pneuma spinor field Ψ_P has 8192 components in the full 26D bulk (from Majorana-Weyl condition in (24,1) unified time signature). Upon dual-shadow splitting, G₂ compactification, and symmetry breaking, this reduces to 64 effective components per shadow in the 4D effective theory."
+        },
+        {
+          "type": "callout",
+          "content": "Step 1: 26D Spinor Dimension (Unified Time)\nFor signature (24,1), the minimal spinor has dimension:\ndim(Ψ_26D) = 2^{(26-1)/2} = 2^{12.5} → 8192 (Majorana-Weyl with real structure)\nThe unified time signature ensures no ghost modes.\n\nStep 2: Dual Shadow Split\nThe 26D spinor splits into per-shadow components via the Euclidean bridge:\nΨ_{26D} → 2 × [Ψ_{4D} ⊗ χ_{SO(10)} ⊗ η_shadow]\nwhere:\n• Ψ_{4D}: 4-component Dirac spinor (4D spacetime per shadow)\n• χ_{SO(10)}: 16-dimensional spinor representation 16 of SO(10)\n• η_shadow: Shadow parity factor from OR reduction R_⊥\n\nStep 3: Effective Component Count Per Shadow\nAfter SO(10) → SU(5) → G_SM breaking and G₂ compactification:\ndim_eff = 4 × 16 = 64 components per shadow\n\nThese 64 components correspond to:\n• 3 generations × 16 (each generation in 16 of SO(10))\n• Plus sterile neutrinos and dark sector fermions\n\nThe per-shadow reduction factor is 8192/(2×64) = 64."
+        },
+        {
+          "type": "formula",
+          "content": "\\Psi_{26D} \\rightarrow \\Psi_{4D} \\otimes \\chi_{SO(10)} \\otimes \\eta_{mirror}",
+          "formula_id": "pneuma-reduction",
+          "label": "(5.6)",
+          "equationNumber": "(5.6)"
         }
       ],
       "content_blocks": [
         {
-          "type": "paragraph",
-          "content": "The master action reduction over G2 yields not pure Einstein gravity but a modified f(R,T,tau) theory. The additional terms encode the physics of flux stabilization and moduli dynamics."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "f-r-t-tau-lagrangian-v18"
+          "type": "subsection",
+          "content": "The Higher-Dimensional Metric"
         },
         {
           "type": "paragraph",
-          "content": "The coefficients are not free parameters but emerge from G2 topology: alpha_F = 1/b3^2 from associative 3-cycle fluctuations, beta_F = 1/chi_eff from flux quanta normalization."
+          "content": "The 13-dimensional metric G_MN decomposes according to the product structure M13 = M4 × K_Pneuma:"
         },
         {
           "type": "formula",
+          "content": "ds²_{13} = g_{μν}(x)dx^μdx^ν + g_{mn}(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
+          "formula_id": "metric-13D",
+          "label": "(5.1)",
+          "equationNumber": "(5.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "Here x^μ are coordinates on M4, y^m are coordinates on K_Pneuma, and K_a are Killing vectors generating the SO(10) isometry."
+        },
+        {
+          "type": "subsection",
+          "content": "Dimensional Reduction of the Einstein-Hilbert Action"
+        },
+        {
+          "type": "paragraph",
+          "content": "Starting from the per-shadow Einstein-Hilbert action (one 13D(12,1) shadow of the full25D(24,1) dual-shadow framework):"
+        },
+        {
+          "type": "formula",
+          "content": "S_{14} = \\frac{1}{2\\kappa_{14}^{2}} \\int d^{14}x \\sqrt{-G} R_{14}",
+          "formula_id": "einstein-hilbert-14D",
+          "label": "(5.2)",
+          "equationNumber": "(5.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "Integration over the compact dimensions K_Pneuma yields the 4D effective action. The key results of the reduction are:"
+        },
+        {
+          "type": "list",
           "content": null,
-          "formula_id": "alpha-f-derivation-v18"
+          "items": [
+            "4D gravity: The 4D Planck mass M_Pl² = M_*^11 × V9 where V9 = V7(G₂) × V2(T²) is the 9-dimensional internal volume. NOTE: M_Pl = 1.22×10¹⁹ GeV is MEASURED (PDG 2024), not derived.",
+            "Gauge fields: The off-diagonal metric components become SO(10) gauge bosons A_μ^a",
+            "Scalar moduli: The internal metric fluctuations become scalar fields φ_i in 4D. (v15.0): The volume modulus T is stabilized via racetrack superpotential W = A·exp(-aT) + B·exp(-bT), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
+          ]
+        },
+        {
+          "type": "subsection",
+          "content": "The Breathing Mode"
+        },
+        {
+          "type": "paragraph",
+          "content": "A particularly important modulus is the breathing mode σ, which controls the overall volume of K_Pneuma:"
+        },
+        {
+          "type": "formula",
+          "content": "g_{mn}(x,y) = e^{2σ(x)} g_{mn}^{(0)}(y)",
+          "formula_id": "breathing-mode",
+          "label": "(5.4)",
+          "equationNumber": "(5.4)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The breathing mode σ couples universally to all matter and plays a crucial role in the cosmological dynamics of the theory."
         },
         {
           "type": "callout",
-          "content": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
+          "content": "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. At T_min = 1.4885, the volume ratio Vol(K3)/Vol(S³) = 4.43 determines the stabilized size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = 0.2257, making it a derived quantity rather than a free input. See Section 6.3 for the complete moduli stabilization mechanism."
         },
         {
-          "type": "formula",
-          "content": null,
-          "formula_id": "w0-from-modified-gravity-v18"
+          "type": "subsection",
+          "content": "25D → Dual 13D(12,1) Shadow Projection via 12×(2,0) Euclidean Bridge Pairs"
+        },
+        {
+          "type": "paragraph",
+          "content": "The v22 framework begins with a 25D spacetime with unified time signature (24,1) = 12×(2,0) + (0,1),eliminating ghost modes and closed timelike curves. This splits into dual 13D(12,1) shadowsconnected by 12 paired (2,0) Euclidean bridges. The 12 pairs arise from b₃ = 24/2 = 12, where each pair couples one normal-sector 3-cycle to one mirror-sector 3-cycle. The aggregate bridge metric is ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)."
         },
         {
           "type": "callout",
-          "content": "The f(R,T,tau) modified gravity makes specific predictions for GW physics: (1) GW speed: v_gw/c = 1 - O(10^-125), consistent with GW170817 constraint; (2) Scalar breathing mode: A ~ 10^-9 for NS mergers, potentially detectable by future observatories (LISA, Einstein Telescope, Cosmic Explorer). Detection of breathing modes would provide strong evidence for modified gravity."
+          "content": "Step 1: 26D Bulk Metric (Unified Time)\nds²_{26} = G_{MN}dX^M dX^N, M,N = 0,1,...,25\nWith unified time signature (24,1): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\nStep 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\n25D(24,1) = 12×(2,0) + (0,1) → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\nEach shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\nDimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})\nWHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\nStep 3: Per-Pair Breathing Energy Density\nEach bridge pair i contributes:\nρ_i = |T_normal_i - R_⊥_i T_mirror_i|\nwhere R_⊥_i is the per-pair OR reduction operator with R_⊥² = -I (Möbius property).\n\nStep 4: 12-Pair Aggregation (Key v22 Change)\nAggregated breathing energy: ρ_breath = (1/12) ∑_{i=1}^{12} ρ_i\nThis aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\nConnection to consciousness: 12 I/O channels provide robust experience.\n\nStep 5: Equation of State from Aggregated Breathing\nw = -1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\nTarget: w ≈ -0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "gw-speed-modified-gravity-v18"
+          "content": "X^M \\partial_M \\Phi = 0",
+          "formula_id": "sp2r-constraint",
+          "label": "(5.3)",
+          "equationNumber": "(5.3)"
+        },
+        {
+          "type": "subsection",
+          "content": "BPS Stability & Enhanced Brane Configuration"
+        },
+        {
+          "type": "paragraph",
+          "content": "The cosmological evolution is stabilized by BPS (Bogomolny-Prasad-Sommerfield) bounds on the brane tensions. BPS states saturate a bound between their mass/tension and their charge, ensuring quantum stability."
+        },
+        {
+          "type": "callout",
+          "content": "The v21 framework contains an enhanced brane structure after G₂ compactification:\n(5,1) + 3×(3,1) per shadow + bridge couplings\n\nThis notation indicates:\n• (5,1): One 5-brane with unified time (observable sector brane per shadow)\n• 3×(3,1): Three 3-branes, each with unified time (generational branes)\n• Bridge couplings: Cross-shadow interactions via Euclidean bridge\n\nThe unified time (24,1) signature eliminates ghost modes that would arise from (p,2) branes in the old two-time framework."
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "tensor-mode-dispersion-v18"
+          "content": "T_{BPS} \\geq \\frac{|Z_{p,q}|}{V_p}",
+          "formula_id": "bps-bound",
+          "label": "(5.5)",
+          "equationNumber": "(5.5)"
+        },
+        {
+          "type": "paragraph",
+          "content": "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,1) Casimir operator determines the brane tensions via T ∝ √C2, ensuring consistency with the SO(24,1) invariance of the v21 bulk geometry."
+        },
+        {
+          "type": "subsection",
+          "content": "Pneuma Field Reduction: 8192 → 64 Components"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Pneuma spinor field Ψ_P has 8192 components in the full 26D bulk (from Majorana-Weyl condition in (24,1) unified time signature). Upon dual-shadow splitting, G₂ compactification, and symmetry breaking, this reduces to 64 effective components per shadow in the 4D effective theory."
+        },
+        {
+          "type": "callout",
+          "content": "Step 1: 26D Spinor Dimension (Unified Time)\nFor signature (24,1), the minimal spinor has dimension:\ndim(Ψ_26D) = 2^{(26-1)/2} = 2^{12.5} → 8192 (Majorana-Weyl with real structure)\nThe unified time signature ensures no ghost modes.\n\nStep 2: Dual Shadow Split\nThe 26D spinor splits into per-shadow components via the Euclidean bridge:\nΨ_{26D} → 2 × [Ψ_{4D} ⊗ χ_{SO(10)} ⊗ η_shadow]\nwhere:\n• Ψ_{4D}: 4-component Dirac spinor (4D spacetime per shadow)\n• χ_{SO(10)}: 16-dimensional spinor representation 16 of SO(10)\n• η_shadow: Shadow parity factor from OR reduction R_⊥\n\nStep 3: Effective Component Count Per Shadow\nAfter SO(10) → SU(5) → G_SM breaking and G₂ compactification:\ndim_eff = 4 × 16 = 64 components per shadow\n\nThese 64 components correspond to:\n• 3 generations × 16 (each generation in 16 of SO(10))\n• Plus sterile neutrinos and dark sector fermions\n\nThe per-shadow reduction factor is 8192/(2×64) = 64."
+        },
+        {
+          "type": "formula",
+          "content": "\\Psi_{26D} \\rightarrow \\Psi_{4D} \\otimes \\chi_{SO(10)} \\otimes \\eta_{mirror}",
+          "formula_id": "pneuma-reduction",
+          "label": "(5.6)",
+          "equationNumber": "(5.6)"
         }
       ],
       "formulaRefs": [
-        "f-r-t-tau-lagrangian-v18",
-        "alpha-f-derivation-v18",
-        "w0-from-modified-gravity-v18",
-        "gw-speed-modified-gravity-v18",
-        "tensor-mode-dispersion-v18"
+        "metric-13D",
+        "einstein-hilbert-14D",
+        "sp2r-constraint",
+        "breathing-mode",
+        "bps-bound",
+        "pneuma-reduction"
       ],
       "paramRefs": [
-        "gravity.alpha_F_r2",
-        "gravity.beta_F_trace",
-        "gravity.gamma_F_cross",
-        "gravity.delta_F_kinetic",
-        "gravity.w_0_modified",
-        "gravity.eta_gravitational_slip",
-        "gravity.v_gw_ratio",
-        "gravity.tensor_mode_correction",
-        "gravity.scalar_breathing_amplitude"
+        "cosmology.M_Pl_4D",
+        "cosmology.V_9_internal",
+        "cosmology.breathing_mode_vev",
+        "cosmology.epsilon_KK",
+        "cosmology.D_eff_shadow"
       ],
       "formula_refs": [
-        "f-r-t-tau-lagrangian-v18",
-        "alpha-f-derivation-v18",
-        "w0-from-modified-gravity-v18",
-        "gw-speed-modified-gravity-v18",
-        "tensor-mode-dispersion-v18"
+        "metric-13D",
+        "einstein-hilbert-14D",
+        "sp2r-constraint",
+        "breathing-mode",
+        "bps-bound",
+        "pneuma-reduction"
       ],
       "param_refs": [
-        "gravity.alpha_F_r2",
-        "gravity.beta_F_trace",
-        "gravity.gamma_F_cross",
-        "gravity.delta_F_kinetic",
-        "gravity.w_0_modified",
-        "gravity.eta_gravitational_slip",
-        "gravity.v_gw_ratio",
-        "gravity.tensor_mode_correction",
-        "gravity.scalar_breathing_amplitude"
+        "cosmology.M_Pl_4D",
+        "cosmology.V_9_internal",
+        "cosmology.breathing_mode_vev",
+        "cosmology.epsilon_KK",
+        "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-25T04:45:00.184613"
+      "timestamp": "2026-01-25T05:14:07.781399"
     },
     "5.2": {
       "id": "5",
@@ -3708,97 +4204,135 @@
       "subsection_id": "5.2",
       "type": "section",
       "section_type": null,
-      "title": "Dark Energy Attractor Potential",
-      "shortTitle": "Dark Energy Attractor Potential",
+      "title": "Dark Energy from Dimensional Reduction",
+      "shortTitle": "Dark Energy from Dimensional Reduction",
       "order": 5,
-      "abstract": "The G2 modulus field phi_M evolves under Ricci flow toward a stable fixed point, generating an effective dark energy potential V(phi_M). This potential predicts thawing quintessence with w_0 = -23/24 ~ -0.9583 andw_a ~ 0.1, consistent with current observations and testable by DESI.",
+      "abstract": "We derive the dark energy equation of state from G2 thawing quintessence dynamics. The b₃=24 associative 3-cycles determine the equation of state via w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583, in excellent agreement with DESI 2025 thawing measurements (0.02σ).",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The late-time acceleration of the universe emerges from the dynamics of the G2 modulus field. The potential has a periodic structure reflecting the compact nature of the internal space."
+          "content": "String theory requires 26 dimensions for the bosonic string or 10 dimensions for superstrings. The heterotic string effectively lives in 13 dimensions (from the asymmetric left-right construction). G2 holonomy compactification reduces this to 4D spacetime, but the reduction is not complete: residual degrees of freedom from the compact dimensions contribute to the effective dimensionality."
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "attractor-potential-v18"
+          "content": "26D \\xrightarrow{\\text{heterotic}} 13D \\xrightarrow{G_2} 4D",
+          "formula_id": "dimensional-reduction-cascade",
+          "label": "(5.8)",
+          "equationNumber": "(5.8)"
         },
         {
           "type": "paragraph",
-          "content": "The decay constant f is super-Planckian, a common feature of string theory models. This large value ensures slow-roll is maintained even with O(1) coefficients in the potential."
+          "content": "The effective dimension in the observable universe includes contributions from shadow dimensions that are not fully integrated out. This effective dimension is:"
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "decay-constant-v18"
+          "content": "D_{eff} = 12 + \\alpha_{shadow} = 12 + 0.576 = 12.576",
+          "formula_id": "effective-dimension",
+          "label": "(5.9)",
+          "equationNumber": "(5.9)"
         },
         {
-          "type": "callout",
-          "content": "The attractor dynamics predict w_0 = -23/24 ~ -0.9583 with w_a ~ 0.1.This 'thawing' behavior (w increasing toward -1 from below) is consistent with Planck+BAO data and will be precisely tested by DESI and future surveys. A detection of w_a > 0 would support the model."
+          "type": "paragraph",
+          "content": "In v16.2, we use the thawing quintessence formula directly from G2 topology. The b₃=24 associative 3-cycles determine the equation of state through:"
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "w0-attractor-v18"
+          "content": "w_0 = -1 + \\frac{1}{b_3} = -\\frac{23}{24} \\approx -0.9583",
+          "formula_id": "dark-energy-eos-derivation",
+          "label": "(5.10)",
+          "equationNumber": "(5.10)"
+        },
+        {
+          "type": "paragraph",
+          "content": "This prediction matches the DESI 2025 thawing constraint w₀ = -0.957 ± 0.067 with a deviation of only 0.02σ (excellent agreement). The time evolution parameter arises from the 2T projection:"
+        },
+        {
+          "type": "formula",
+          "content": "w(a) = w_0 + w_a (1 - a), \\quad w_a = -\\frac{1}{\\sqrt{b_3}} \\approx -0.2041",
+          "formula_id": "dark-energy-time-evolution",
+          "label": "(5.11)",
+          "equationNumber": "(5.11)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The evolution parameter w_a = -0.2041 arises from the 26D→13D shadow projection where the two shared timelike dimensions create thawing behavior as the G2 manifold relaxes."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The late-time acceleration of the universe emerges from the dynamics of the G2 modulus field. The potential has a periodic structure reflecting the compact nature of the internal space."
+          "content": "String theory requires 26 dimensions for the bosonic string or 10 dimensions for superstrings. The heterotic string effectively lives in 13 dimensions (from the asymmetric left-right construction). G2 holonomy compactification reduces this to 4D spacetime, but the reduction is not complete: residual degrees of freedom from the compact dimensions contribute to the effective dimensionality."
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "attractor-potential-v18"
+          "content": "26D \\xrightarrow{\\text{heterotic}} 13D \\xrightarrow{G_2} 4D",
+          "formula_id": "dimensional-reduction-cascade",
+          "label": "(5.8)",
+          "equationNumber": "(5.8)"
         },
         {
           "type": "paragraph",
-          "content": "The decay constant f is super-Planckian, a common feature of string theory models. This large value ensures slow-roll is maintained even with O(1) coefficients in the potential."
+          "content": "The effective dimension in the observable universe includes contributions from shadow dimensions that are not fully integrated out. This effective dimension is:"
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "decay-constant-v18"
+          "content": "D_{eff} = 12 + \\alpha_{shadow} = 12 + 0.576 = 12.576",
+          "formula_id": "effective-dimension",
+          "label": "(5.9)",
+          "equationNumber": "(5.9)"
         },
         {
-          "type": "callout",
-          "content": "The attractor dynamics predict w_0 = -23/24 ~ -0.9583 with w_a ~ 0.1.This 'thawing' behavior (w increasing toward -1 from below) is consistent with Planck+BAO data and will be precisely tested by DESI and future surveys. A detection of w_a > 0 would support the model."
+          "type": "paragraph",
+          "content": "In v16.2, we use the thawing quintessence formula directly from G2 topology. The b₃=24 associative 3-cycles determine the equation of state through:"
         },
         {
           "type": "formula",
-          "content": null,
-          "formula_id": "w0-attractor-v18"
+          "content": "w_0 = -1 + \\frac{1}{b_3} = -\\frac{23}{24} \\approx -0.9583",
+          "formula_id": "dark-energy-eos-derivation",
+          "label": "(5.10)",
+          "equationNumber": "(5.10)"
+        },
+        {
+          "type": "paragraph",
+          "content": "This prediction matches the DESI 2025 thawing constraint w₀ = -0.957 ± 0.067 with a deviation of only 0.02σ (excellent agreement). The time evolution parameter arises from the 2T projection:"
+        },
+        {
+          "type": "formula",
+          "content": "w(a) = w_0 + w_a (1 - a), \\quad w_a = -\\frac{1}{\\sqrt{b_3}} \\approx -0.2041",
+          "formula_id": "dark-energy-time-evolution",
+          "label": "(5.11)",
+          "equationNumber": "(5.11)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The evolution parameter w_a = -0.2041 arises from the 26D→13D shadow projection where the two shared timelike dimensions create thawing behavior as the G2 manifold relaxes."
         }
       ],
       "formulaRefs": [
-        "attractor-potential-v18",
-        "decay-constant-v18",
-        "w0-attractor-v18"
+        "dimensional-reduction-cascade",
+        "effective-dimension",
+        "dark-energy-eos-derivation",
+        "dark-energy-time-evolution"
       ],
       "paramRefs": [
-        "cosmology.V_0_vacuum_scale",
-        "cosmology.A_amplitude",
-        "cosmology.omega_frequency",
-        "cosmology.f_decay_constant",
-        "cosmology.phi_star_attractor",
-        "cosmology.w_0_attractor",
-        "cosmology.w_a_thawing"
+        "cosmology.w0_derived",
+        "cosmology.wa_derived",
+        "cosmology.D_eff",
+        "cosmology.alpha_shadow"
       ],
       "formula_refs": [
-        "attractor-potential-v18",
-        "decay-constant-v18",
-        "w0-attractor-v18"
+        "dimensional-reduction-cascade",
+        "effective-dimension",
+        "dark-energy-eos-derivation",
+        "dark-energy-time-evolution"
       ],
       "param_refs": [
-        "cosmology.V_0_vacuum_scale",
-        "cosmology.A_amplitude",
-        "cosmology.omega_frequency",
-        "cosmology.f_decay_constant",
-        "cosmology.phi_star_attractor",
-        "cosmology.w_0_attractor",
-        "cosmology.w_a_thawing"
+        "cosmology.w0_derived",
+        "cosmology.wa_derived",
+        "cosmology.D_eff",
+        "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-25T04:45:00.184852"
+      "timestamp": "2026-01-25T05:14:07.781559"
     },
     "5.6": {
       "id": "5",
@@ -4034,7 +4568,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-25T04:45:00.175643"
+      "timestamp": "2026-01-25T05:14:07.781736"
     },
     "5.7": {
       "id": "5",
@@ -4178,7 +4712,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-25T04:45:00.177538"
+      "timestamp": "2026-01-25T05:14:07.784387"
     },
     "5.4": {
       "id": "5",
@@ -4476,7 +5010,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-25T04:45:00.178912"
+      "timestamp": "2026-01-25T05:14:07.785984"
     },
     "5.9": {
       "id": "5",
@@ -4638,7 +5172,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-25T04:45:00.180344"
+      "timestamp": "2026-01-25T05:14:07.787367"
     },
     "4.5": {
       "id": "4",
@@ -4800,7 +5334,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-25T04:45:00.180520"
+      "timestamp": "2026-01-25T05:14:07.787540"
     },
     "4.7": {
       "id": "4",
@@ -5044,7 +5578,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-25T04:45:00.180653"
+      "timestamp": "2026-01-25T05:14:07.787674"
     },
     "5.3": {
       "id": "5",
@@ -5158,7 +5692,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-25T04:45:00.180793"
+      "timestamp": "2026-01-25T05:14:07.787815"
     },
     "5.8": {
       "id": "5",
@@ -5364,69 +5898,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-25T04:45:00.180922"
-    },
-    "6": {
-      "id": "6",
-      "appendix": false,
-      "subsection_id": "6.2",
-      "type": "section",
-      "section_type": null,
-      "title": "Baryon Asymmetry from G2 Cycles + Jarlskog",
-      "shortTitle": "Baryon Asymmetry from G2 Cycles + Jarlskog",
-      "order": 6,
-      "abstract": "The matter-antimatter asymmetry is derived from cycle structure in the G2 manifold with CP violation from the Jarlskog invariant. v19.0: FULLY DERIVED with k_bary = J/N_eff = J/10, predicting eta_b ~ 6.2e-10 with no calibration constants.",
-      "contentBlocks": [
-        {
-          "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "baryon-asymmetry-cycle-v18"
-        },
-        {
-          "type": "callout",
-          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
-        }
-      ],
-      "content_blocks": [
-        {
-          "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "baryon-asymmetry-cycle-v18"
-        },
-        {
-          "type": "callout",
-          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
-        }
-      ],
-      "formulaRefs": [
-        "baryon-asymmetry-cycle-v18",
-        "cp-phase-sterile-v18"
-      ],
-      "paramRefs": [
-        "cosmology.eta_baryon_geometric",
-        "cosmology.delta_b3_asymmetry",
-        "cosmology.cp_phase_sterile",
-        "cosmology.k_bary_normalization"
-      ],
-      "formula_refs": [
-        "baryon-asymmetry-cycle-v18",
-        "cp-phase-sterile-v18"
-      ],
-      "param_refs": [
-        "cosmology.eta_baryon_geometric",
-        "cosmology.delta_b3_asymmetry",
-        "cosmology.cp_phase_sterile",
-        "cosmology.k_bary_normalization"
-      ],
-      "timestamp": "2026-01-25T04:45:00.184889"
+      "timestamp": "2026-01-25T05:14:07.787937"
     },
     "6.1": {
       "id": "6",
@@ -5486,7 +5958,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.180979"
+      "timestamp": "2026-01-25T05:14:07.788012"
     },
     "6.2": {
       "id": "6",
@@ -5494,61 +5966,39 @@
       "subsection_id": "6.2",
       "type": "section",
       "section_type": null,
-      "title": "Baryon Asymmetry from G2 Cycles + Jarlskog",
-      "shortTitle": "Baryon Asymmetry from G2 Cycles + Jarlskog",
+      "title": "Stefan-Boltzmann from Quad-Gate Expansion",
+      "shortTitle": "Stefan-Boltzmann from Quad-Gate Expansion",
       "order": 6,
-      "abstract": "The matter-antimatter asymmetry is derived from cycle structure in the G2 manifold with CP violation from the Jarlskog invariant. v19.0: FULLY DERIVED with k_bary = J/N_eff = J/10, predicting eta_b ~ 6.2e-10 with no calibration constants.",
+      "abstract": "Derives the Stefan-Boltzmann constant using (1+epsilon)^4 for 4D thermal vibration.",
       "contentBlocks": [
         {
-          "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
+          "type": "text",
+          "content": "The Stefan-Boltzmann constant governs thermal radiation (T^4). Because temperature vibrates in all 4 dimensions (3 space + 1 time), the constant requires Quad-Gate expansion: (1+epsilon)^4."
         },
         {
-          "type": "formula",
-          "content": null,
-          "formula_id": "baryon-asymmetry-cycle-v18"
-        },
-        {
-          "type": "callout",
-          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
+          "type": "equation",
+          "content": "\\sigma_{manifest} = \\sigma_{bulk} \\times (1 + \\epsilon)^4",
+          "label": "eq:stefan_quad",
+          "equationNumber": "eq:stefan_quad"
         }
       ],
       "content_blocks": [
         {
-          "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
+          "type": "text",
+          "content": "The Stefan-Boltzmann constant governs thermal radiation (T^4). Because temperature vibrates in all 4 dimensions (3 space + 1 time), the constant requires Quad-Gate expansion: (1+epsilon)^4."
         },
         {
-          "type": "formula",
-          "content": null,
-          "formula_id": "baryon-asymmetry-cycle-v18"
-        },
-        {
-          "type": "callout",
-          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
+          "type": "equation",
+          "content": "\\sigma_{manifest} = \\sigma_{bulk} \\times (1 + \\epsilon)^4",
+          "label": "eq:stefan_quad",
+          "equationNumber": "eq:stefan_quad"
         }
       ],
-      "formulaRefs": [
-        "baryon-asymmetry-cycle-v18",
-        "cp-phase-sterile-v18"
-      ],
-      "paramRefs": [
-        "cosmology.eta_baryon_geometric",
-        "cosmology.delta_b3_asymmetry",
-        "cosmology.cp_phase_sterile",
-        "cosmology.k_bary_normalization"
-      ],
-      "formula_refs": [
-        "baryon-asymmetry-cycle-v18",
-        "cp-phase-sterile-v18"
-      ],
-      "param_refs": [
-        "cosmology.eta_baryon_geometric",
-        "cosmology.delta_b3_asymmetry",
-        "cosmology.cp_phase_sterile",
-        "cosmology.k_bary_normalization"
-      ],
-      "timestamp": "2026-01-25T04:45:00.184920"
+      "formulaRefs": [],
+      "paramRefs": [],
+      "formula_refs": [],
+      "param_refs": [],
+      "timestamp": "2026-01-25T05:14:07.788058"
     },
     "6.3": {
       "id": "6",
@@ -5576,7 +6026,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181076"
+      "timestamp": "2026-01-25T05:14:07.788095"
     },
     "6.4": {
       "id": "6",
@@ -5604,7 +6054,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181114"
+      "timestamp": "2026-01-25T05:14:07.788131"
     },
     "6.5": {
       "id": "6",
@@ -5632,7 +6082,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181149"
+      "timestamp": "2026-01-25T05:14:07.788247"
     },
     "6.6": {
       "id": "6",
@@ -5660,7 +6110,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181183"
+      "timestamp": "2026-01-25T05:14:07.788283"
     },
     "6.7": {
       "id": "6",
@@ -5688,7 +6138,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181216"
+      "timestamp": "2026-01-25T05:14:07.788317"
     },
     "6.8": {
       "id": "6",
@@ -5724,7 +6174,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181320"
+      "timestamp": "2026-01-25T05:14:07.788346"
     },
     "6.9": {
       "id": "6",
@@ -5760,7 +6210,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181357"
+      "timestamp": "2026-01-25T05:14:07.788379"
     },
     "5.5": {
       "id": "5",
@@ -5914,7 +6364,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-25T04:45:00.181439"
+      "timestamp": "2026-01-25T05:14:07.788459"
     },
     "2.6": {
       "id": "2",
@@ -6834,7 +7284,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-25T04:45:00.181609"
+      "timestamp": "2026-01-25T05:14:07.788638"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -6962,7 +7412,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2026-01-25T04:45:00.181681"
+      "timestamp": "2026-01-25T05:14:07.788701"
     },
     "7": {
       "id": "7",
@@ -9396,7 +9846,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.181919"
+      "timestamp": "2026-01-25T05:14:07.789015"
     },
     "7.2": {
       "id": "7",
@@ -9464,7 +9914,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-25T04:45:00.181768"
+      "timestamp": "2026-01-25T05:14:07.788790"
     },
     "1.1": {
       "id": "1",
@@ -10078,7 +10528,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.182149"
+      "timestamp": "2026-01-25T05:14:07.789296"
     },
     "2.5": {
       "id": "2",
@@ -10504,7 +10954,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.182210"
+      "timestamp": "2026-01-25T05:14:07.789356"
     },
     "3.7": {
       "id": "3",
@@ -10776,7 +11226,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-25T04:45:00.182264"
+      "timestamp": "2026-01-25T05:14:07.789406"
     },
     "A": {
       "id": "A",
@@ -10986,7 +11436,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-25T04:45:00.182391"
+      "timestamp": "2026-01-25T05:14:07.789525"
     },
     "B": {
       "id": "B",
@@ -11222,7 +11672,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-25T04:45:00.182471"
+      "timestamp": "2026-01-25T05:14:07.789597"
     },
     "C": {
       "id": "C",
@@ -11428,7 +11878,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-25T04:45:00.182526"
+      "timestamp": "2026-01-25T05:14:07.789653"
     },
     "D": {
       "id": "D",
@@ -11626,7 +12076,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-25T04:45:00.182590"
+      "timestamp": "2026-01-25T05:14:07.789718"
     },
     "E": {
       "id": "E",
@@ -11828,7 +12278,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-25T04:45:00.182644"
+      "timestamp": "2026-01-25T05:14:07.789771"
     },
     "F": {
       "id": "F",
@@ -12038,7 +12488,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-25T04:45:00.183318"
+      "timestamp": "2026-01-25T05:14:07.790427"
     },
     "G": {
       "id": "G",
@@ -12378,7 +12828,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-01-25T04:45:00.183441"
+      "timestamp": "2026-01-25T05:14:07.790544"
     },
     "H": {
       "id": "H",
@@ -12664,7 +13114,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-25T04:45:00.183530"
+      "timestamp": "2026-01-25T05:14:07.790632"
     },
     "I": {
       "id": "I",
@@ -13018,7 +13468,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-25T04:45:00.183614"
+      "timestamp": "2026-01-25T05:14:07.790721"
     },
     "J": {
       "id": "J",
@@ -13300,7 +13750,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-25T04:45:00.183706"
+      "timestamp": "2026-01-25T05:14:07.790807"
     },
     "K": {
       "id": "K",
@@ -13716,7 +14166,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-25T04:45:00.183783"
+      "timestamp": "2026-01-25T05:14:07.790897"
     },
     "L": {
       "id": "L",
@@ -14006,7 +14456,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-25T04:45:00.183868"
+      "timestamp": "2026-01-25T05:14:07.790988"
     },
     "Z": {
       "id": "Z",
@@ -14082,7 +14532,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-25T04:45:00.183991"
+      "timestamp": "2026-01-25T05:14:07.791102"
     },
     "2.2": {
       "id": "2",
@@ -14424,7 +14874,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-01-25T04:45:00.184218"
+      "timestamp": "2026-01-25T05:14:07.791330"
     },
     "R.1": {
       "id": "R",
@@ -14972,7 +15422,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-01-25T04:45:00.184375"
+      "timestamp": "2026-01-25T05:14:07.791497"
     },
     "S.1": {
       "id": "S",
@@ -15686,7 +16136,141 @@
         "topology.chi_eff",
         "topology.b3"
       ],
-      "timestamp": "2026-01-25T04:45:00.184511"
+      "timestamp": "2026-01-25T05:14:07.791650"
+    },
+    "5.1.1": {
+      "id": "5",
+      "appendix": false,
+      "subsection_id": "5.1.1",
+      "type": "section",
+      "section_type": null,
+      "title": "f(R,T,tau) Modified Gravity from G2 Compactification",
+      "shortTitle": "f(R,T,tau) Modified Gravity from G2 Compactification",
+      "order": 5,
+      "abstract": "The effective 4D gravity Lagrangian emerges from dimensional reduction of 11D M-theory over the G2 manifold. Higher-curvature corrections (R^2) and scalar-tensor couplings arise from flux stabilization on the b3=24 associative cycles, predicting dark energy equation of state w_0 = -0.980.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The master action reduction over G2 yields not pure Einstein gravity but a modified f(R,T,tau) theory. The additional terms encode the physics of flux stabilization and moduli dynamics."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "f-r-t-tau-lagrangian-v18"
+        },
+        {
+          "type": "paragraph",
+          "content": "The coefficients are not free parameters but emerge from G2 topology: alpha_F = 1/b3^2 from associative 3-cycle fluctuations, beta_F = 1/chi_eff from flux quanta normalization."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "alpha-f-derivation-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "w0-from-modified-gravity-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The f(R,T,tau) modified gravity makes specific predictions for GW physics: (1) GW speed: v_gw/c = 1 - O(10^-125), consistent with GW170817 constraint; (2) Scalar breathing mode: A ~ 10^-9 for NS mergers, potentially detectable by future observatories (LISA, Einstein Telescope, Cosmic Explorer). Detection of breathing modes would provide strong evidence for modified gravity."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "gw-speed-modified-gravity-v18"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "tensor-mode-dispersion-v18"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The master action reduction over G2 yields not pure Einstein gravity but a modified f(R,T,tau) theory. The additional terms encode the physics of flux stabilization and moduli dynamics."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "f-r-t-tau-lagrangian-v18"
+        },
+        {
+          "type": "paragraph",
+          "content": "The coefficients are not free parameters but emerge from G2 topology: alpha_F = 1/b3^2 from associative 3-cycle fluctuations, beta_F = 1/chi_eff from flux quanta normalization."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "alpha-f-derivation-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "w0-from-modified-gravity-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The f(R,T,tau) modified gravity makes specific predictions for GW physics: (1) GW speed: v_gw/c = 1 - O(10^-125), consistent with GW170817 constraint; (2) Scalar breathing mode: A ~ 10^-9 for NS mergers, potentially detectable by future observatories (LISA, Einstein Telescope, Cosmic Explorer). Detection of breathing modes would provide strong evidence for modified gravity."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "gw-speed-modified-gravity-v18"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "tensor-mode-dispersion-v18"
+        }
+      ],
+      "formulaRefs": [
+        "f-r-t-tau-lagrangian-v18",
+        "alpha-f-derivation-v18",
+        "w0-from-modified-gravity-v18",
+        "gw-speed-modified-gravity-v18",
+        "tensor-mode-dispersion-v18"
+      ],
+      "paramRefs": [
+        "gravity.alpha_F_r2",
+        "gravity.beta_F_trace",
+        "gravity.gamma_F_cross",
+        "gravity.delta_F_kinetic",
+        "gravity.w_0_modified",
+        "gravity.eta_gravitational_slip",
+        "gravity.v_gw_ratio",
+        "gravity.tensor_mode_correction",
+        "gravity.scalar_breathing_amplitude"
+      ],
+      "formula_refs": [
+        "f-r-t-tau-lagrangian-v18",
+        "alpha-f-derivation-v18",
+        "w0-from-modified-gravity-v18",
+        "gw-speed-modified-gravity-v18",
+        "tensor-mode-dispersion-v18"
+      ],
+      "param_refs": [
+        "gravity.alpha_F_r2",
+        "gravity.beta_F_trace",
+        "gravity.gamma_F_cross",
+        "gravity.delta_F_kinetic",
+        "gravity.w_0_modified",
+        "gravity.eta_gravitational_slip",
+        "gravity.v_gw_ratio",
+        "gravity.tensor_mode_correction",
+        "gravity.scalar_breathing_amplitude"
+      ],
+      "timestamp": "2026-01-25T05:14:07.791738"
     },
     "2.3": {
       "id": "2",
@@ -15802,7 +16386,167 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-25T04:45:00.184771"
+      "timestamp": "2026-01-25T05:14:07.791886"
+    },
+    "5.2.1": {
+      "id": "5",
+      "appendix": false,
+      "subsection_id": "5.2.1",
+      "type": "section",
+      "section_type": null,
+      "title": "Dark Energy Attractor Potential",
+      "shortTitle": "Dark Energy Attractor Potential",
+      "order": 5,
+      "abstract": "The G2 modulus field phi_M evolves under Ricci flow toward a stable fixed point, generating an effective dark energy potential V(phi_M). This potential predicts thawing quintessence with w_0 = -23/24 ~ -0.9583 andw_a ~ 0.1, consistent with current observations and testable by DESI.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The late-time acceleration of the universe emerges from the dynamics of the G2 modulus field. The potential has a periodic structure reflecting the compact nature of the internal space."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "attractor-potential-v18"
+        },
+        {
+          "type": "paragraph",
+          "content": "The decay constant f is super-Planckian, a common feature of string theory models. This large value ensures slow-roll is maintained even with O(1) coefficients in the potential."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "decay-constant-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The attractor dynamics predict w_0 = -23/24 ~ -0.9583 with w_a ~ 0.1.This 'thawing' behavior (w increasing toward -1 from below) is consistent with Planck+BAO data and will be precisely tested by DESI and future surveys. A detection of w_a > 0 would support the model."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "w0-attractor-v18"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The late-time acceleration of the universe emerges from the dynamics of the G2 modulus field. The potential has a periodic structure reflecting the compact nature of the internal space."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "attractor-potential-v18"
+        },
+        {
+          "type": "paragraph",
+          "content": "The decay constant f is super-Planckian, a common feature of string theory models. This large value ensures slow-roll is maintained even with O(1) coefficients in the potential."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "decay-constant-v18"
+        },
+        {
+          "type": "callout",
+          "content": "The attractor dynamics predict w_0 = -23/24 ~ -0.9583 with w_a ~ 0.1.This 'thawing' behavior (w increasing toward -1 from below) is consistent with Planck+BAO data and will be precisely tested by DESI and future surveys. A detection of w_a > 0 would support the model."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "w0-attractor-v18"
+        }
+      ],
+      "formulaRefs": [
+        "attractor-potential-v18",
+        "decay-constant-v18",
+        "w0-attractor-v18"
+      ],
+      "paramRefs": [
+        "cosmology.V_0_vacuum_scale",
+        "cosmology.A_amplitude",
+        "cosmology.omega_frequency",
+        "cosmology.f_decay_constant",
+        "cosmology.phi_star_attractor",
+        "cosmology.w_0_attractor",
+        "cosmology.w_a_thawing"
+      ],
+      "formula_refs": [
+        "attractor-potential-v18",
+        "decay-constant-v18",
+        "w0-attractor-v18"
+      ],
+      "param_refs": [
+        "cosmology.V_0_vacuum_scale",
+        "cosmology.A_amplitude",
+        "cosmology.omega_frequency",
+        "cosmology.f_decay_constant",
+        "cosmology.phi_star_attractor",
+        "cosmology.w_0_attractor",
+        "cosmology.w_a_thawing"
+      ],
+      "timestamp": "2026-01-25T05:14:07.792021"
+    },
+    "6.2.1": {
+      "id": "6",
+      "appendix": false,
+      "subsection_id": "6.2.1",
+      "type": "section",
+      "section_type": null,
+      "title": "Baryon Asymmetry from G2 Cycles + Jarlskog",
+      "shortTitle": "Baryon Asymmetry from G2 Cycles + Jarlskog",
+      "order": 6,
+      "abstract": "The matter-antimatter asymmetry is derived from cycle structure in the G2 manifold with CP violation from the Jarlskog invariant. v19.0: FULLY DERIVED with k_bary = J/N_eff = J/10, predicting eta_b ~ 6.2e-10 with no calibration constants.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "baryon-asymmetry-cycle-v18"
+        },
+        {
+          "type": "callout",
+          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections. The cycle asymmetry delta_b3 provides B-L violation, while the Jarlskog invariant J ~ 3e-5 quantifies CP violation. The normalization k_bary = J/(b3-14) is derived."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "baryon-asymmetry-cycle-v18"
+        },
+        {
+          "type": "callout",
+          "content": "v19.0: This derivation is FULLY GEOMETRIC. The normalization k_bary = J/N_eff uses the Jarlskog invariant (J ~ 3.08e-5 from CKM) and N_eff = b3 - 14 = 10 effective baryogenesis cycles. No calibration constants required!"
+        }
+      ],
+      "formulaRefs": [
+        "baryon-asymmetry-cycle-v18",
+        "cp-phase-sterile-v18"
+      ],
+      "paramRefs": [
+        "cosmology.eta_baryon_geometric",
+        "cosmology.delta_b3_asymmetry",
+        "cosmology.cp_phase_sterile",
+        "cosmology.k_bary_normalization"
+      ],
+      "formula_refs": [
+        "baryon-asymmetry-cycle-v18",
+        "cp-phase-sterile-v18"
+      ],
+      "param_refs": [
+        "cosmology.eta_baryon_geometric",
+        "cosmology.delta_b3_asymmetry",
+        "cosmology.cp_phase_sterile",
+        "cosmology.k_bary_normalization"
+      ],
+      "timestamp": "2026-01-25T05:14:07.792075"
     }
   }
 }

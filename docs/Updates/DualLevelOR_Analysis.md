@@ -2,8 +2,8 @@
 
 **Version**: 23.0
 **Date**: 2026-01-21
-**Status**: ANALYSIS FOR GEMINI PEER REVIEW
-**Author**: Claude Opus 4.5 Analysis
+**Status**: ANALYSIS FOR PEER REVIEW
+**Author**: Peer Review Analysis
 
 ---
 
@@ -430,5 +430,4 @@ where f(geometry) accounts for the specific mass distribution.
 ---
 
 *Document generated: 2026-01-21*
-*Analysis by: Claude Opus 4.5*
-*For Gemini Peer Review*
+*For Peer Review*

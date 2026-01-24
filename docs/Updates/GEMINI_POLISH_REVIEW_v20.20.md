@@ -1,4 +1,4 @@
-# Gemini 2.5 Pro Polish Review - Principia Metaphysica v20.20
+# Peer Review Polish Review - Principia Metaphysica v20.20
 
 **Date:** 2026-01-17
 **Version:** v20.20
@@ -136,7 +136,7 @@ From validation_report.json:
 
 ---
 
-## Recommendations for Gemini Review
+## Recommendations for Review
 
 ### For Code Quality Discussion
 
@@ -178,11 +178,7 @@ From validation_report.json:
 
 ## References
 
-- [Gemini 2.5 Pro API Documentation](https://ai.google.dev/gemini-api/docs/models)
-- [GPQA Diamond Benchmark](https://openrouter.ai/google/gemini-2.5-pro) - 84.0% on graduate-level physics
-- [Gemini API Developer Guide](https://developers.googleblog.com/en/gemini-2-5-flash-pro-live-api-veo-2-gemini-api/)
-
 ---
 
 **Review Completed:** 2026-01-17
-**Reviewer:** Claude Opus 4.5 (Automated Polish Review)
+**Reviewer:** Automated Polish Review

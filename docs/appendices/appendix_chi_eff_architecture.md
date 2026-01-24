@@ -1,7 +1,7 @@
 # Appendix: Chi-Effective Dual Architecture
 
 **Version:** v23.0-12PAIR
-**Status:** Physics-Validated (Gemini Review)
+**Status:** Physics-Validated (Peer Review)
 
 ---
 
@@ -144,7 +144,7 @@ $$\theta_{13} = \arcsin(0.1503) = 8.65°$$
 **Generation count with chi_eff_total = 144:**
 $$n_{\text{gen}} = \frac{\chi_{\text{eff}}^{\text{total}}}{48} = \frac{144}{48} = 3$$ (exact)
 
-### 5.3 Gemini Physics Validation
+### 5.3 Physics Validation
 
 **Query:** "Is it physically reasonable that PMNS mixing (neutrino oscillations) involves both shadow sectors while quark physics (CKM) is single-shadow?"
 

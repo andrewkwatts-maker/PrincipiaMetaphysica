@@ -131,7 +131,7 @@ class YukawaTexturesV18(SimulationBase):
                 "v19.0: Includes Jarlskog invariant from texture geometry."
             ),
             section_id="6",
-            subsection_id="6.1"
+            subsection_id="6.1.1"
         )
 
         # Geometric constants from SSoT registry
@@ -487,7 +487,7 @@ class YukawaTexturesV18(SimulationBase):
         """Return section content for paper."""
         return SectionContent(
             section_id="6",
-            subsection_id="6.1",
+            subsection_id="6.1.1",
             title="Yukawa Textures from G2 Geometry",
             abstract=(
                 "The fermion mass hierarchy emerges from geometric suppression "

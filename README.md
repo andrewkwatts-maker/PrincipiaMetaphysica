@@ -565,7 +565,7 @@ These folders can be excluded from Zenodo to reduce archive size:
 | `node_modules/` | If present | Variable |
 | `__pycache__/` | Python bytecode cache | ~5MB |
 | `.vscode/` | IDE settings | ~1MB |
-| `.claude/` | Claude AI settings | ~1MB |
+| `.claude/` | Code assistant settings | ~1MB |
 | `*.pyc` files | Compiled Python | ~2MB |
 
 ### .zenodoignore

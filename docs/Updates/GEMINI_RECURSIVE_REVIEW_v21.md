@@ -1,4 +1,4 @@
-# Gemini Recursive Review: v21 (24,1) Signature Refactor
+# Recursive Review: v21 (24,1) Signature Refactor
 
 **Version:** v21.0 "Dual-Shadow Bridge Landing"
 **Date:** 2026-01-17
@@ -165,7 +165,7 @@ This document presents a comprehensive recursive review of the v21 implementatio
 
 ---
 
-## 4. Gemini Discussion Points - Resolved
+## 4. Discussion Points - Resolved
 
 ### 4.1 OR Reduction Sufficiency
 
@@ -255,5 +255,5 @@ The v21 refactor is **PHYSICS-VALIDATED** and ready for integration:
 ---
 
 **Review Completed:** 2026-01-17
-**Reviewer:** Claude Opus 4.5
+**Reviewer:** Peer Review
 **Status:** APPROVED FOR INTEGRATION

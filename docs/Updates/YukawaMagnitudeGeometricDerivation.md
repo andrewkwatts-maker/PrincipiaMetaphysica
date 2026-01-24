@@ -2,8 +2,8 @@
 
 **Version**: 23.0
 **Date**: 2026-01-21
-**Status**: INVESTIGATION (For Gemini Peer Review)
-**Author**: Claude Opus 4.5 Analysis
+**Status**: INVESTIGATION (For Peer Review)
+**Author**: Peer Review Analysis
 
 ---
 

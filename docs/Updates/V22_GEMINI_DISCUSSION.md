@@ -1,23 +1,23 @@
-# v22 Gemini Discussion: Addressing Peer Review Concerns
+# v22 Discussion: Addressing Peer Review Concerns
 
 **Date:** 2026-01-18
 **Version:** 22.0-12PAIR
-**Context:** Response to Gemini's January 2026 peer review of v20
+**Context:** Response to January 2026 peer review of v20
 
 ---
 
-## 1. Summary of Gemini's Verdict
+## 1. Summary of Peer Review Verdict
 
-Gemini's peer review (2026-01-11) of v20.0-RECURSIVE classified the framework as:
+The peer review (2026-01-11) of v20.0-RECURSIVE classified the framework as:
 
 > **"Pseudoscience, bordering on numerology"** - lacking physical justification, over-relying on numerological coincidences, with limited falsifiability.
 
-### Three Most Significant Concerns (per Gemini)
+### Three Most Significant Concerns (per review)
 1. **Lack of physical justification for geometric assumptions** - "the jump from abstract geometry to observable physics is the weakest link"
 2. **Over-reliance on numerological coincidences** - "cherry-picking geometric ratios then projecting onto existing experimental values"
 3. **Limited falsifiability and predictive power** - flexibility in choosing exponents allows fitting data post-hoc
 
-### Three Strongest Aspects (per Gemini)
+### Three Strongest Aspects (per review)
 1. **Ambitious unification goal** - connecting electroweak, masses, and cosmology through geometry
 2. **Advanced mathematical structures** - G2 holonomy, octonions, E8×E8 roots
 3. **Iterative electroweak calculation** - sound technique incorporating radiative corrections
@@ -26,9 +26,9 @@ Gemini's peer review (2026-01-11) of v20.0-RECURSIVE classified the framework as
 
 ## 2. Framework Evolution: v20 → v22
 
-Since Gemini's review, significant structural changes have been implemented:
+Since the peer review, significant structural changes have been implemented:
 
-| Aspect | v20 (Gemini Review) | v22 (Current) |
+| Aspect | v20 (Peer Review) | v22 (Current) |
 |--------|---------------------|---------------|
 | **Signature** | (24,2) with Sp(2,R) gauge fixing | (24,1) with 12×(2,0) Euclidean bridge |
 | **Time Structure** | Two timelike dimensions | Unified time + 12 fibered pairs |
@@ -39,11 +39,11 @@ Since Gemini's review, significant structural changes have been implemented:
 
 ---
 
-## 3. Addressing Gemini's Concerns
+## 3. Addressing Reviewer's Concerns
 
 ### 3.1 Physical Justification for Geometric Assumptions
 
-**Gemini's Critique:** "Why should E8×E8 roots relate to dark matter density?"
+**Reviewer's Critique:** "Why should E8×E8 roots relate to dark matter density?"
 
 **Response:** The v22 framework provides clearer physical grounding:
 
@@ -61,7 +61,7 @@ Since Gemini's review, significant structural changes have been implemented:
 
 ### 3.2 Numerological Coincidences vs Derivations
 
-**Gemini's Critique:** "163/288 ≈ Ω_DM appears to be post-hoc fitting"
+**Reviewer's Critique:** "163/288 ≈ Ω_DM appears to be post-hoc fitting"
 
 **Response:** The framework's approach to this is:
 
@@ -80,7 +80,7 @@ Since Gemini's review, significant structural changes have been implemented:
 
 ### 3.3 Predictive Power and Falsifiability
 
-**Gemini's Critique:** "Models lack testable predictions beyond reproducing known values"
+**Reviewer's Critique:** "Models lack testable predictions beyond reproducing known values"
 
 **Response:** v22 makes several falsifiable predictions:
 

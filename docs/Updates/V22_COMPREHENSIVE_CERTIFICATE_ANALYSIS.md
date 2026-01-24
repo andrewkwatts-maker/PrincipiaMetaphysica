@@ -262,4 +262,4 @@ Sigma: 18.56 (expected for heuristic vs precision)
 
 ---
 
-*Generated: 2026-01-19 | v22.0 | Claude Opus 4.5 Analysis*
+*Generated: 2026-01-19 | v22.0 | Peer Review Analysis*

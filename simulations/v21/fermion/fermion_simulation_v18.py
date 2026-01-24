@@ -59,7 +59,7 @@ from .muon_g2_anomaly_v16_1 import MuonG2AnomalySimulation
 from .g2_triality_mixing_v17 import G2TrialityMixing
 
 # Import neutrino module
-from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
+from simulations.v21.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
 
 # Get SSOT values
 _REG = get_registry()

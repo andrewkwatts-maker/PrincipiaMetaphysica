@@ -389,7 +389,7 @@ pneuma_sim.execute(registry)
 # 3. Tier 2: Depend on Tier 1 (can run in parallel)
 from simulations.v16.proton import ProtonDecaySimulation
 from simulations.v16.higgs import HiggsMassSimulation
-from simulations.v16.neutrino import NeutrinoMixingSimulation
+from simulations.v21.neutrino import NeutrinoMixingSimulation
 from simulations.v16.fermion import FermionGenerationsSimulation
 
 proton_sim = ProtonDecaySimulation()
@@ -660,7 +660,7 @@ from simulations.v16.gauge import GaugeUnificationSimulation
 from simulations.v16.pneuma import PneumaMechanismSimulation
 from simulations.v16.proton import ProtonDecaySimulation
 from simulations.v16.higgs import HiggsMassSimulation
-from simulations.v16.neutrino import NeutrinoMixingSimulation
+from simulations.v21.neutrino import NeutrinoMixingSimulation
 from simulations.v16.fermion import FermionGenerationsSimulation
 from simulations.v16.cosmology import MultiSectorCosmologySimulation
 

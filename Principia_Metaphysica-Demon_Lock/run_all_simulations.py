@@ -77,7 +77,7 @@ Phase 6 - v16.2 Sterile Model Paper Structure (DOI: 10.5281/zenodo.18079602):
 OUTPUT STRUCTURE:
 {
   "metadata": {
-    "version": "19.2",
+    "version": "23.0",
     "timestamp": "2025-12-28T10:30:00.000Z",
     "git": {
       "commit_hash": "abc1234...",
@@ -1987,7 +1987,7 @@ class SimulationRunner:
         # 1. Formulas
         if 'formulas' in data:
             formulas_data = {
-                'version': data.get('metadata', {}).get('version', '16.2'),
+                'version': data.get('metadata', {}).get('version', '23.0'),
                 'count': len(data['formulas']),
                 'formulas': data['formulas']
             }
@@ -2019,7 +2019,7 @@ class SimulationRunner:
                 enriched_params[param_path] = enriched
 
             params_data = {
-                'version': data.get('metadata', {}).get('version', '16.2'),
+                'version': data.get('metadata', {}).get('version', '23.0'),
                 'parameters': enriched_params
             }
             params_path = output_dir / 'parameters.json'
@@ -2031,7 +2031,7 @@ class SimulationRunner:
         # 3. Sections
         if 'sections' in data:
             sections_data = {
-                'version': data.get('metadata', {}).get('version', '16.2'),
+                'version': data.get('metadata', {}).get('version', '23.0'),
                 'count': len(data['sections']),
                 'sections': data['sections']
             }
@@ -2043,7 +2043,7 @@ class SimulationRunner:
 
         # 4. Metadata
         metadata = {
-            'version': data.get('metadata', {}).get('version', '16.2'),
+            'version': data.get('metadata', {}).get('version', '23.0'),
             'timestamp': data.get('metadata', {}).get('timestamp'),
             'validation': data.get('validation', {})
         }
@@ -2055,7 +2055,7 @@ class SimulationRunner:
 
         # 5. Statistics
         stats_data = {
-            'version': data.get('metadata', {}).get('version', '16.2'),
+            'version': data.get('metadata', {}).get('version', '23.0'),
             'statistics': data.get('statistics', {}),
             'framework_statistics': data.get('framework_statistics', {})
         }
@@ -2081,7 +2081,7 @@ class SimulationRunner:
                 ref_id = ref.get('id', ref.get('title', '').lower().replace(' ', '_')[:30])
                 refs_by_id[ref_id] = ref
             refs_data = {
-                'version': data.get('metadata', {}).get('version', '16.2'),
+                'version': data.get('metadata', {}).get('version', '23.0'),
                 'count': len(refs_by_id),
                 'references': refs_by_id
             }
@@ -2093,7 +2093,7 @@ class SimulationRunner:
 
         # 8. Index file
         index = {
-            'version': data.get('metadata', {}).get('version', '16.2'),
+            'version': data.get('metadata', {}).get('version', '23.0'),
             'components': [
                 {'name': 'formulas', 'file': 'formulas.json'},
                 {'name': 'parameters', 'file': 'parameters.json'},

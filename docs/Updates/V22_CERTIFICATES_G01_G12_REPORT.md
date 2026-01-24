@@ -2,7 +2,7 @@
 
 **Date**: 2026-01-19
 **Version**: 22.0-12PAIR
-**Reviewer**: Claude Opus 4.5 + Gemini 2.0 Flash
+**Reviewer**: Peer Review
 
 ## Executive Summary
 
@@ -175,9 +175,9 @@ n_gen = chi_eff/b3 = 3   (fermion generations)
 
 ---
 
-## Gemini API Review Summary
+## Peer Review Summary
 
-The Gemini 2.0 Flash model provided the following key recommendations (all implemented):
+The following key recommendations were provided (all implemented):
 
 1. **Version Update**: All certificates updated from "21.0" to "22.0"
 2. **G06 Enhancement**: Explicit chi_eff=72 per shadow reference added

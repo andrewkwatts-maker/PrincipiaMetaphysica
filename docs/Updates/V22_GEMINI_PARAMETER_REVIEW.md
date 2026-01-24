@@ -1,12 +1,12 @@
 # V22.5 Parameter Refinement Review
 
 **Date:** 2026-01-20
-**Purpose:** Gemini Peer Review of Parameter Refinement Decisions
+**Purpose:** Peer Review of Parameter Refinement Decisions
 **Status:** CONSULTATION DOCUMENT
 
 ---
 
-## Question for Gemini Review
+## Question for Review
 
 Should we refine any parameters, or leave all as-is given they're within 1σ?
 

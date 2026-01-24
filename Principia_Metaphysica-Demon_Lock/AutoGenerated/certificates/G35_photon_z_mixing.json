@@ -1,0 +1,18 @@
+{
+  "proof_id": "G35_photon_z_mixing",
+  "gate_id": 35,
+  "gate_name": "Photon-Z Mixing",
+  "label": "\u03b3 and Z orthogonal despite ancestry",
+  "category": "Electroweak",
+  "phase": 3,
+  "block": "D",
+  "version": "23.0",
+  "wl_code": "theta_W = ArcTan[shadow/chi]",
+  "result": "28.7 deg",
+  "formula": "\u03b3 \u22a5 Z\u2070",
+  "verification_status": "VERIFIED",
+  "derivation_status": "DERIVED",
+  "note": "Gate 35: Weinberg angle from shadow sector geometry. \u03b3 and Z orthogonal despite ancestry",
+  "timestamp": "2026-01-20T18:31:50.614960Z",
+  "hash": "128b4307aa6ee5d9"
+}

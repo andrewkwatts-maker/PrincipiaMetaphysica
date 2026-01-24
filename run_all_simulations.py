@@ -1164,7 +1164,7 @@ class SimulationRunner:
                 self.registry.set_param("topology.b3", 24,
                                          source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
 
-            # Dual chi_eff structure (v20.1 - Gemini audit 2026-01-14)
+            # Dual chi_eff structure (v20.1)
             # chi_eff = 72 (per-sector), chi_eff_total = 144 (full manifold)
             # Both give n_gen = 3: 72/24 = 3 OR 144/48 = 3
             if not self.registry.has_param("topology.chi_eff"):

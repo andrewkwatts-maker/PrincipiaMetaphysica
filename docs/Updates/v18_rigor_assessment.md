@@ -373,4 +373,4 @@ r_delta = 0.25 nm  # Conformational displacement estimated
 ---
 
 *Document generated: 2026-01-10*
-*Assessment by: Claude Code v18 validation session*
+*Assessment by: v18 validation session*

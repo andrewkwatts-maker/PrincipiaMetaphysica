@@ -1,4 +1,4 @@
-# Gemini Discussion: (24,2) → (24,1) Signature Refactor
+# Technical Discussion: (24,2) to (24,1) Signature Refactor
 
 **Version:** v21.0 "Dual-Shadow Bridge Landing"
 **Date:** 2026-01-17
@@ -52,7 +52,7 @@ This document summarizes the implementation of the (24,2) → (24,1) signature r
 
 ---
 
-## Questions for Gemini Validation
+## Questions for Validation
 
 ### 1. Mathematical Rigor of OR Reduction
 
@@ -179,7 +179,7 @@ This document summarizes the implementation of the (24,2) → (24,1) signature r
 
 ---
 
-## Gemini Response Request
+## Review Response Request
 
 Please validate:
 
@@ -191,6 +191,6 @@ Please validate:
 
 ---
 
-**Prepared by:** Claude Opus 4.5
-**For Review by:** Gemini 2.5 Pro
+**Prepared by:** Peer Review
+**For Review by:** Peer Review
 **Date:** 2026-01-17

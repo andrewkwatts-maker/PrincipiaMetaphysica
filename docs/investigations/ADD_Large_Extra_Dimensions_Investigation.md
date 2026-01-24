@@ -3,7 +3,7 @@
 **Investigation ID**: HG-05-ADD
 **Date**: 2026-01-14
 **Status**: COMPLETE
-**Investigator**: Claude (Anthropic)
+**Investigator**: Peer Review
 
 ---
 

@@ -1,0 +1,18 @@
+{
+  "proof_id": "G03_ancestral_mapping",
+  "gate_id": 3,
+  "gate_name": "Ancestral Mapping",
+  "label": "Partition: 125 Active + 163 Hidden = 288",
+  "category": "Topology",
+  "phase": 1,
+  "block": "A",
+  "version": "23.0",
+  "wl_code": "active = 125; hidden = 163; active + hidden == 288",
+  "result": "True",
+  "formula": "125 + 163 = 288",
+  "verification_status": "VERIFIED",
+  "derivation_status": "RIGOROUS",
+  "note": "Gate 3: Primary conservation law of the manifold. Partition: 125 Active + 163 Hidden = 288",
+  "timestamp": "2026-01-20T18:31:50.607336Z",
+  "hash": "df369a9e1cac58f4"
+}
