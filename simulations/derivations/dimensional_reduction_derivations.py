@@ -16,7 +16,7 @@ effective theories to the 4D Standard Model.
     Level 3 (G2):        7D (7,0) per shadow - G2 holonomy (RIEMANNIAN)
     Level 4 (VISIBLE):   4D (3,1) - Observable spacetime
 
-v22 Chain: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → [G2] → 4D(3,1)
+v22 Chain: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central → 2×13D(12,1) → [G2] → 4D(3,1)
 
 The v22 framework introduces 12 paired bridges as consciousness channels,
 each a 2D Euclidean torus enabling OR Reduction between normal/mirror shadows.
@@ -418,7 +418,7 @@ class DimensionalReductionDerivations(SimulationBase):
         print("="*70)
 
         print(f"\nv22 Reduction chain:")
-        print(f"  25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → [G2] → 4D(3,1)")
+        print(f"  27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central → 2×13D(12,1) → [G2] → 4D(3,1)")
         print(f"  Structure: M^{{24,1}} = T^1 ×_fiber (⊕_{{i=1}}^{{12}} B_i^{{2,0}})")
 
         print(f"\nScale hierarchy:")
@@ -716,7 +716,7 @@ Assert[nGen == 3, "Generation count must be 3"];
         # v22 Dimensional reduction chain
         wolfram_code["reduction_chain_v22"] = """
 (* v22 Complete Dimensional Reduction Chain *)
-(* 25D(24,1) = 12×(2,0) + (0,1) -> 2×13D(12,1) -> 4D(3,1) *)
+(* 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central -> 2×13D(12,1) -> 4D(3,1) *)
 
 (* TIER 0: 26D Master Action - Unified Time *)
 (* Signature (24,1) eliminates ghosts and CTCs *)
@@ -789,7 +789,7 @@ S4D = Integrate[
 Print["Dark energy: w0 = ", N[w0]];  (* -0.9583 *)
 Print["Aggregate breathing: rho = Sum_i rho_i"];
 
-Print["v22 Reduction chain: 25D(24,1) -> T^1 x (12 x B^{2,0}) -> 4D(3,1)"];
+Print["v22 Reduction chain: 27D(26,1) -> T^1 x (13 x B^{2,0}) -> 4D(3,1)"];
 Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
 """
 
@@ -914,7 +914,7 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
             id="dimensional-reduction-chain-v22",
             label="(2.2.8)",
             latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \xrightarrow{G_2} 4D_{(3,1)}",
-            plain_text="25D(24,1) = T^1 x_fiber (direct sum of 12 B_i^{2,0}) --[G2]--> 4D(3,1)",
+            plain_text="27D(26,1) = T^1 x_fiber (direct sum of 13 B_i^{2,0}) --[G2]--> 4D(3,1)",
             category="FOUNDATIONAL",
             description="v22: Complete dimensional reduction chain - unified time, 12 bridge pairs as consciousness channels",
             inputParams=["dimensions.D_critical", "topology.b3"],
@@ -1053,7 +1053,7 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
                 "v22 derivation of the dimensional reduction chain from 26D "
                 "master action through 12×(2,0) paired bridge system to the 4D "
                 "Standard Model. Documents the explicit Lagrangians at each tier: "
-                "25D(24,1) = 12×(2,0) + (0,1) WARP to create 2×13D(12,1),"
+                "27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central WARP to create 2×13D(12,1),"
                 "then 11D -> 4D via per-shadow G2 holonomy."
             ),
             content_blocks=[
@@ -1234,7 +1234,7 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
 
 # Self-test when run as script
 if __name__ == "__main__":
-    print("v22 Dimensional Reduction: 25D(24,1) -> 12-Pair Bridges -> 4D")
+    print("v22 Dimensional Reduction: 27D(26,1) -> 13-Pair Bridges -> 4D")
     print("=" * 70)
     print("\nThis module documents the complete PM v22 dimensional reduction chain.")
     print("v22 Structure: M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})")

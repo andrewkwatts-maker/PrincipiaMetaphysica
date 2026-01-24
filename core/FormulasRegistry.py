@@ -1,14 +1,16 @@
 """
 FormulasRegistry.py - Single Source of Truth (SSoT)
 ====================================================
-Centralizes all topological derivations for Principia Metaphysica v23.0-12PAIR.
+Centralizes all topological derivations for Principia Metaphysica v23.1-27D.
 
-v23 FRAMEWORK (Publication Release):
-- Structure: M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
-- Bridge: 12×(2,0) paired system connecting dual shadows
+v23.1 FRAMEWORK (Publication Release):
+- Structure: M^{27}(26,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ C^{2,0}
+  - 12 bridge pairs (24D): Create dual 13D(12,1) shadows via coordinate selection
+  - 1 central sampler (2D): Architectural global averaging (separate from shadows)
+  - 1 unified time (1D): Shared T^1 fiber
+  - Total: 24 + 2 + 1 = 27D with signature (26,1)
 - OR: Distributed ⊗_{i=1}^{12} R_⊥_i (OR reduction for cross-shadow sampling)
-- Signature: (24,1) unified time (eliminates ghosts/CTCs)
-- Spinor: Cl(24,1) yields 4096 components
+- Spinor: Cl(24,1) on 24D CORE yields 4096 components
 - Dark Energy: Breathing mode from bridge size modulus (w0 = -23/24)
 
 PEER REVIEW STATUS: Reviewed by Gemini 2.0 Flash (2026-01-11)

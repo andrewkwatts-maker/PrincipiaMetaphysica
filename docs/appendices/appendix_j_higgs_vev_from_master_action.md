@@ -44,11 +44,12 @@ Where:
 
 The 27D bulk with signature (26,1) decomposes as:
 
-$$M^{27}_{(26,1)} = T^1_{(0,1)} \times_{fiber} \left( \bigoplus_{i=1}^{13} B_i^{(2,0)} \right)$$ **(J.3)**
+$$M^{27}_{(26,1)} = T^1_{(0,1)} \times_{fiber} \left( \bigoplus_{i=1}^{12} B_i^{(2,0)} \right) \oplus C^{(2,0)}$$ **(J.3)**
 
 Where:
 - $T^1_{(0,1)}$ is the unified time fiber (shared by both shadows)
-- $B_i^{(2,0)}$ are the 12 Euclidean bridge pairs
+- $B_i^{(2,0)}$ are the 12 Euclidean bridge pairs (create dual shadows)
+- $C^{(2,0)}$ is the central sampler (global averaging, separate from shadow creation)
 - Each bridge pair distributes coordinates: $(x_i, y_i) \to x_i$ to Normal shadow, $y_i$ to Mirror shadow
 
 ### J.2.3 Individual Action Terms
