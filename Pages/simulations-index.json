@@ -1,7 +1,7 @@
 {
   "version": "23.0",
   "generated": "2025-12-31T00:22:28.576402Z",
-  "total_scripts": 124,
+  "total_scripts": 125,
   "categories": {
     "Ad-Hoc / Experimental": {
       "title": "Ad-Hoc / Experimental",
@@ -904,6 +904,14 @@
           "title": "G2 Geometry and Topology",
           "description": "Licensed under the MIT License. See LICENSE file for details.",
           "status": null
+        },
+        {
+          "file": "central_sampler_v23.py",
+          "path": "simulations/v21/geometric/central_sampler_v23.py",
+          "version": "23.0",
+          "title": "Central (2,0) Sampler",
+          "description": "Central sampler mechanism: p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi. Dimensional accounting: 24 core + 24 local + 2 central = 50 spacelike-like.",
+          "status": "GEOMETRIC"
         },
         {
           "file": "gauge_unification_v16_0.py",

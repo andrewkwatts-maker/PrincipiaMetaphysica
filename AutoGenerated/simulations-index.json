@@ -1,7 +1,7 @@
 {
   "version": "23.0",
   "generated": "2025-12-31T07:11:13.173197Z",
-  "total_scripts": 164,
+  "total_scripts": 165,
   "categories": {
     "Ad-Hoc / Experimental": {
       "title": "Ad-Hoc / Experimental",
@@ -1319,9 +1319,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "central_sampler_v23.py",
+          "path": "simulations/v21/geometric/central_sampler_v23.py",
+          "version": "23.0",
+          "title": "Central (2,0) Sampler",
+          "description": "Central sampler mechanism: p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi. Dimensional accounting: 24 core + 24 local + 2 central = 50 spacelike-like.",
+          "status": "GEOMETRIC"
         }
       ],
-      "count": 7
+      "count": 8
     },
     "v16/higgs": {
       "title": "Higgs Sector",

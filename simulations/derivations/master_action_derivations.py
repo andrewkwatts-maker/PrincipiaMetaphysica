@@ -153,6 +153,10 @@ class MasterActionDerivations(SimulationBase):
             "derivations.n_bridge_pairs",    # Number of bridge pairs (12)
             "derivations.min_active_pairs",  # Minimum for wet microtubule (6)
             "derivations.bridge_coherence_time",  # τ > 25ms stability
+            # v23 central sampler parameters
+            "derivations.central_pair_coupling",  # Central (2,0) coupling strength
+            "derivations.central_sampler_weight", # rho_c = phi/sqrt(12)
+            "derivations.p_anc_formula",          # Ancestral flux formula
         ]
 
     @property
@@ -375,6 +379,49 @@ class MasterActionDerivations(SimulationBase):
         print(f"  Each unlocked pair doubles consciousness bandwidth")
 
         # =================================================================
+        # [v23] CENTRAL SAMPLER INTEGRATION
+        # =================================================================
+        # The central (2,0) sampler averages local 12×(2,0) outcomes:
+        #
+        # L_bridge = sum_{i=1}^{12} rho_i + rho_c * <rho_i>
+        #
+        # where:
+        #   - rho_i = local flux per pair i
+        #   - rho_c = central averaging weight = phi/sqrt(12)
+        #   - <rho_i> = (1/12) * sum(rho_i)
+        #
+        # Ancestral flux formula:
+        #   p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
+        #
+        # Activation: Central activates when n_local >= 9 (mid-gnosis)
+        print("\n[v23] CENTRAL SAMPLER INTEGRATION")
+        print("-" * 70)
+
+        # v23 Central Sampler Parameters
+        phi = (1.0 + np.sqrt(5.0)) / 2.0  # Golden ratio
+        central_sampler_weight = phi / np.sqrt(12.0)  # rho_c = phi/sqrt(12)
+        central_pair_coupling = 1.0 / 12.0  # Equal coupling to each pair
+        n_local_activation = 9  # Mid-gnosis threshold
+
+        print(f"\n[v23.1] Central (2,0) Sampler Architecture:")
+        print(f"  The central sampler averages local 12×(2,0) outcomes")
+        print(f"  Central weight: ρ_c = φ/√12 = {central_sampler_weight:.6f}")
+        print(f"  Pair coupling: 1/12 = {central_pair_coupling:.6f}")
+
+        print(f"\n[v23.2] Bridge Lagrangian with Central Term:")
+        print(f"  L_bridge = Σᵢ₌₁¹² ρᵢ + ρ_c × ⟨ρᵢ⟩")
+        print(f"  where ⟨ρᵢ⟩ = (1/12) × Σᵢ ρᵢ")
+
+        print(f"\n[v23.3] Ancestral Flux Formula:")
+        print(f"  p_anc = (1/12) × Σᵢ pᵢ + √(n_local/12) × φ")
+        print(f"  This formula computes hierarchical flux propagation")
+
+        print(f"\n[v23.4] Activation Threshold:")
+        print(f"  Central activates when n_local ≥ {n_local_activation} (mid-gnosis)")
+        print(f"  Below threshold: local sampling only")
+        print(f"  Above threshold: central averaging engages")
+
+        # =================================================================
         # VALIDATION AGAINST EXPERIMENTAL DATA
         # =================================================================
         print("\n" + "="*70)
@@ -435,6 +482,11 @@ class MasterActionDerivations(SimulationBase):
             "derivations.n_bridge_pairs": n_bridge_pairs,
             "derivations.min_active_pairs": min_active_pairs,
             "derivations.bridge_coherence_time": bridge_coherence_time,
+
+            # v23 Central Sampler
+            "derivations.central_pair_coupling": central_pair_coupling,
+            "derivations.central_sampler_weight": central_sampler_weight,
+            "derivations.p_anc_formula": "p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi",
 
             # Validation
             "derivations.M_Pl_4D_deviation": M_Pl_dev,

@@ -324,6 +324,51 @@ class FoundationsV16_2(SimulationBase):
                     "within 0.02σ. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
                 )
             ),
+            ContentBlock(
+                type="heading",
+                content="1.2.4 Hierarchical Bridge Sampling: Local Pairs + Central (2,0) Ancestral Sampler",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The v23 framework extends the 12 local (2,0) bridge pairs with a <strong>central (2,0) "
+                    "ancestral sampler</strong> that provides global averaging for macro-precision. This hierarchical "
+                    "structure enables two levels of condensate selection: local pairs for fine flux control, and the "
+                    "central sampler for global coherence during dimensional descent."
+                )
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<strong>Descent Flow:</strong><br/>"
+                    "• Bulk → 12×(2,0) local pairs (fine flux sampling per bridge)<br/>"
+                    "• Local → central (2,0) averaging → ancestral descent into condensate ((5,1) + 3×(3,1))"
+                )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \sqrt{\frac{n_{\text{local}}}{12}} \cdot \phi",
+                label="central-sampler-formula"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "Here p<sub>i</sub> is the local probability from bridge pair i, n<sub>local</sub> is the "
+                    "number of active local pairs (6 baseline → 12 full gnosis), and φ is the golden ratio. "
+                    "The central sampler activates at mid-gnosis (n<sub>local</sub> ≥ 9)."
+                )
+            ),
+            ContentBlock(
+                type="list",
+                items=[
+                    "<strong>Dimensional Accounting:</strong> 24 core + 24 local + 2 central = 50 spacelike-like dimensions",
+                    "<strong>Local Level:</strong> 12×(2,0) pairs → micro-stability (per-branch selection)",
+                    "<strong>Central Level:</strong> 1×(2,0) pair → macro-precision (global averaging)",
+                    "<strong>Signature Preservation:</strong> Effective (24,1) maintained (central is Euclidean, no ghosts)"
+                ],
+                label="hierarchical-sampling-structure"
+            ),
 
             # ================================================================
             # 1.3 The G2 Manifold (V7) per Shadow
@@ -545,6 +590,16 @@ class FoundationsV16_2(SimulationBase):
                 plain_text="R_perp^full = tensor_{i=1}^{12} R_perp^i where R_perp^i = [[0,-1],[1,0]]",
                 category="THEORY",
                 description="Full OR reduction operator as tensor product of 12 per-pair 90-degree rotations.",
+                input_params=["topology.b3"],
+                output_params=[],
+            ),
+            Formula(
+                id="central-sampler-formula",
+                label="(1.2c)",
+                latex=r"p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \sqrt{\frac{n_{\text{local}}}{12}} \cdot \phi",
+                plain_text="p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi",
+                category="THEORY",
+                description="Central (2,0) ancestral sampler formula. Averages 12 local pairs with golden ratio scaling.",
                 input_params=["topology.b3"],
                 output_params=[],
             ),
