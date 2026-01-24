@@ -160,7 +160,7 @@ The v23 framework extends the 12 local (2,0) bridge pairs with a **central (2,0)
 
 **Central Ancestral Flux Formula:**
 
-$$p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \sqrt{\frac{n_{\text{local}}}{12}} \cdot \phi$$ **(K.14a)**
+$$p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \frac{1}{12}\sqrt{\frac{n_{\text{local}}}{12}} \cdot \phi$$ **(K.14a)**
 
 where:
 - $p_i$: Local probability from bridge pair $i$ (sigmoid of flux differential)
