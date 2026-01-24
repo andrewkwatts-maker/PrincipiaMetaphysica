@@ -824,11 +824,11 @@ class LagrangianMasterDerivation(SimulationBase):
         - Each pair has coordinates (y₁ᵢ, y₂ᵢ)
 
         Dimensional Check:
-        - Dimensions: 1 (time) + 13×2 (bridges) = 27D total
-        - Spatial: 12×2 = 24 (CORRECT)
+        - Dimensions: 1 (time) + 12×2 (bridges) + 1×2 (central) = 27D total
+        - Spatial: 12×2 + 2 = 26 (24 core + 2 central)
         - Temporal: 1 (shared) (CORRECT)
 
-        Total signature: (24,1) - unified time
+        Total signature: (26,1) - v23.1 with central sampler
 
         Key v22 Features:
         - 12 bridge pairs: Each B_i^{2,0} has (y₁ᵢ=input, y₂ᵢ=output)

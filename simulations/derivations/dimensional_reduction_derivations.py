@@ -789,8 +789,8 @@ S4D = Integrate[
 Print["Dark energy: w0 = ", N[w0]];  (* -0.9583 *)
 Print["Aggregate breathing: rho = Sum_i rho_i"];
 
-Print["v22 Reduction chain: 27D(26,1) -> T^1 x (13 x B^{2,0}) -> 4D(3,1)"];
-Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
+Print["v23.1 Reduction chain: 27D(26,1) -> T^1 x_fiber (12 x B^{2,0}) + C^{2,0} -> 4D(3,1)"];
+Print["Dimensions: 1 time + 12x2 bridge + 1x2 central = 27D total (26,1)"];
 """
 
         return wolfram_code
@@ -911,12 +911,12 @@ Print["Dimensions: 1 time + 12x2 spatial = 25 manifest (26D total)"];
 
         # v22 Dimensional Reduction Chain
         formulas.append(Formula(
-            id="dimensional-reduction-chain-v22",
+            id="dimensional-reduction-chain-v23",
             label="(2.2.8)",
-            latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \xrightarrow{G_2} 4D_{(3,1)}",
-            plain_text="27D(26,1) = T^1 x_fiber (direct sum of 13 B_i^{2,0}) --[G2]--> 4D(3,1)",
+            latex=r"M^{27}_{(26,1)} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus C^{2,0} \xrightarrow{G_2} 4D_{(3,1)}",
+            plain_text="27D(26,1) = T^1 x_fiber (12 B_i^{2,0}) + C^{2,0} --[G2]--> 4D(3,1)",
             category="FOUNDATIONAL",
-            description="v22: Complete dimensional reduction chain - unified time, 12 bridge pairs as consciousness channels",
+            description="v23.1: Complete dimensional reduction chain - 12 bridge pairs + 1 central sampler",
             inputParams=["dimensions.D_critical", "topology.b3"],
             outputParams=["derivations.n_bridge_pairs"]
         ))

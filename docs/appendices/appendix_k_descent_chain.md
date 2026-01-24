@@ -144,7 +144,8 @@ Each shadow receives 12 spatial coordinates plus the shared time:
 | Bridge pair 2 | $(x_2, y_2)$ | (2,0) |
 | ... | ... | ... |
 | Bridge pair 12 | $(x_{12}, y_{12})$ | (2,0) |
-| **Total Bulk** | 25 | (24,1) |
+| Central sampler | $(x_c, y_c)$ | (2,0) |
+| **Total Bulk** | 27 | (26,1) |
 
 After selection:
 | Shadow | Receives | Signature |
@@ -205,7 +206,7 @@ $$\mathcal{L}_{gauge}^{(S)} = -\frac{1}{4g_{13}^2}\text{Tr}\left(F_{\mu\nu}^{(S)
 $$\mathcal{L}_{matter}^{(S)} = \bar{\psi}^{(S)}\left(i\gamma^\mu D_\mu - m^{(S)}\right)\psi^{(S)}$$ **(K.17)**
 
 **Scale matching**:
-$$M_{13}^{11} = M_{25}^{23} \cdot V_{bridge}^{(S)}$$ **(K.18)**
+$$M_{13}^{11} = M_{27}^{25} \cdot V_{bridge}^{(S)}$$ **(K.18)**
 
 where $V_{bridge}^{(S)}$ is the effective volume of the 12 bridge coordinates assigned to shadow $S$.
 
@@ -444,7 +445,7 @@ $$\alpha_1 = \alpha_2 = \alpha_3 \quad \text{at } M_{GUT} \approx 2 \times 10^{1
 | Level | Scale | Formula |
 |-------|-------|---------|
 | 27D Planck | $M_{27}$ | $\sim M_{Pl}^{25/2}/V_{int}^{1/2}$ |
-| 13D Planck | $M_{13}$ | $M_{25}(V_{bridge})^{1/11}$ |
+| 13D Planck | $M_{13}$ | $M_{27}(V_{bridge})^{1/11}$ |
 | GUT scale | $M_{GUT}$ | $\sim 2 \times 10^{16}$ GeV |
 | 6D scale | $M_6$ | $M_{13}(\text{Vol}(X_7))^{1/4}$ |
 | KK scale | $M_{KK}$ | $1/R \sim 10^{12}$ GeV |
