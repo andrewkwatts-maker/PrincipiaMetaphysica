@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 17:43:47
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 19:21:44
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -30,10 +30,10 @@ All other values are derived from these constants.
 | :--- | :--- | :--- | :--- |
 | Governing Elder | E_כד | `24` | Third Betti number of G2 manifold (24 Elders) |
 | Chi Effective (per-shadow) | χ_עב | `72` | Per-shadow Euler characteristic (B3^2/8 = 72) |
-| Chi Effective (total) | χ_ק | `144` | Both shadows combined (72 + 72 = 144) |
+| Chi Effective (total) | ק_דם | `144` | Both shadows combined (72 + 72 = 144) |
 | Total Roots (Nitzotzin) | 𝒩_רפח | `288` | 12 * B3 = 288 Logic Closure Sum |
 | Sophian Modulus | ק_כה | `125` | 5^3 = 125 Visible Residue Modulus |
-| Barbelo Modulus | ק_סג | `163` | 288 - 125 = 163 Bulk Pressure Modulus |
+| Barbelo Modulus | ק_סג | `163` | 288 - 125 = 163 Ancestral Bulk Pressure Modulus |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
 
@@ -178,12 +178,12 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | elder_kads | `24` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
 | horos_limit | `27` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | mephorash_chi | `72` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
-| sophian_modulus | `125` | 𝒬^כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
+| sophian_modulus | `125` | ק_כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
 | demiurgic_Yetts | `135` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
-| qedem_chi_sum | `144` | 𝒬^דם | Qedem (קדם) | 144 | Total Euler Characteristic | Qedem Chi |
+| qedem_chi_sum | `144` | ק_דם | Qedem (קדם) | 144 | Total Euler Characteristic | Qedem Chi |
 | nitzotzin_sector | `144` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
 | logos_joint | `153` | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
-| barbelo_modulus | `163` | 𝒬^סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
+| barbelo_modulus | `163` | ק_סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
 | nitzotzin_roots | `288` | 𝒩_רפח | Raphach (רפח) | 288 | Logic Closure Sum | The Nitzotzin Sparks |
 
 ### Central Sampler (Reid Architecture)
