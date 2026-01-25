@@ -31,7 +31,8 @@ RENAMES = {
     "demiurgic_gates": ("demiurgic_Yetts", 135, "Yd", "Kalah"),
     "ennoia_chi": ("qedem_chi_sum", 144, "chi_Q", "Qedem"),
     "bridge_effective": ("Echad_Prime", 13, "Yud-Gimel", "Echad"),
-    "bridge_local": ("Dodecad_Anchor", 12, "Bet-Yod", "Dodecad"),
+    "bridge_local": ("Dodecad_Anchors", 12, "Bet-Yod", "Dodecad"),
+    "Dodecad_Anchor": ("Dodecad_Anchors", 12, "Bet-Yod", "Dodecad"),
 }
 
 # Files to skip (core definitions)

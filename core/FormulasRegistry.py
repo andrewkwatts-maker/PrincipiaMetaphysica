@@ -641,7 +641,7 @@ class FormulasRegistry:
         "sophian_registry": {"hebrew": "Lamed", "gematria": 74, "value": 125, "old_name": "visible_sector", "symbol": "V_l"},
         "qedem_chi_sum": {"hebrew": "Qedem", "gematria": 144, "value": 144, "old_name": "chi_eff_total", "symbol": "chi_Q"},
         "nitzotzin_sector": {"hebrew": "Mem", "gematria": 144, "value": 144, "old_name": "roots_per_sector", "symbol": "R_m"},
-        "Dodecad_Anchor": {"hebrew": "Bet-Yod", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": "n_12"},
+        "Dodecad_Anchors": {"hebrew": "Bet-Yod", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": "n_12"},
         "Echad_Prime": {"hebrew": "Yud-Gimel", "gematria": 13, "value": 13, "old_name": "total_effective_pairs", "symbol": "n_13"},
     }
 
@@ -3247,14 +3247,19 @@ class FormulasRegistry:
         return self._roots_per_sector
 
     @property
-    def Dodecad_Anchor(self) -> int:
+    def Dodecad_Anchors(self) -> int:
         """Local Bridge Pairs (12) - Hebrew: Bet-Yod (Within). Symbol: n_12."""
         return self._total_local_pairs
 
     @property
+    def Dodecad_Anchor(self) -> int:
+        """LEGACY ALIAS for Dodecad_Anchors. Local Bridge Pairs (12)."""
+        return self.Dodecad_Anchors
+
+    @property
     def bridge_local(self) -> int:
-        """LEGACY ALIAS for Dodecad_Anchor. Local Bridge Pairs (12)."""
-        return self.Dodecad_Anchor
+        """LEGACY ALIAS for Dodecad_Anchors. Local Bridge Pairs (12)."""
+        return self.Dodecad_Anchors
 
     @property
     def Echad_Prime(self) -> int:
