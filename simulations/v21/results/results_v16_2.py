@@ -289,7 +289,7 @@ class ResultsV16_2(SimulationBase):
                     "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D "
                     "descent, we eliminate the need for the 'Anthropic Principle.' We no longer "
                     "need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. "
-                    "The v21 model asserts that <strong>any universe descending from a 25D(24,1) "
+                    "The v21 model asserts that <strong>any universe descending from a 27D(26,1) "
                     "dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
                 )
             ),

@@ -1,9 +1,9 @@
 {
   "version": "23.1-27D",
-  "timestamp": "2026-01-25T10:25:42.174674Z",
-  "session_id": "PM20260125102542",
+  "timestamp": "2026-01-25T11:02:07.036852Z",
+  "session_id": "PM20260125110207",
   "volatility": {
-    "generated_at": "2026-01-25T10:25:42.174674Z",
+    "generated_at": "2026-01-25T11:02:07.036852Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "23.1-27D",
@@ -74,7 +74,7 @@
       "gate": "G60",
       "named_for": "Matt O'Dowd",
       "gnostic_name": "The Barbelo",
-      "gnostic_role": "First Thought; the active force in 25D bulk",
+      "gnostic_role": "First Thought; the active force in 27D(26,1) bulk",
       "hubble_formula": "(288/4) - (163/144) + 0.6819 = 71.55",
       "pm_path": "constants.odowd_bulk_pressure"
     },
@@ -233,9 +233,9 @@
       "symbol": "horos",
       "latex": "\\text{Horos}",
       "value": 27,
-      "formula": "D_bulk = 25 (dimensional boundary)",
+      "formula": "D_bulk = 27 (dimensional boundary: 24 core + 2 central + 1 time)",
       "gnostic_name": "The Horos",
-      "gnostic_role": "The Limit; boundary of 25D bulk frame",
+      "gnostic_role": "The Limit; boundary of 27D(26,1) bulk frame",
       "pm_path": "topology.horos"
     },
     "decad": {
@@ -411,7 +411,7 @@
       "formula": "163/288",
       "expanded": "Bulk Pressure / Logic Closure = 0.5659722222",
       "gnostic_name": "The Initial Action Potential",
-      "gnostic_role": "Density Zero of manifold; base energy density of 25D bulk action",
+      "gnostic_role": "Density Zero of manifold; base energy density of 27D(26,1) bulk action",
       "derived_from": [
         "sterile_sector",
         "roots_total"
@@ -963,7 +963,7 @@
       "formula": "(288*G38)/153",
       "expanded": "Hadronization lock = 282.1231070844",
       "gnostic_name": "The Hadronization Lock",
-      "gnostic_role": "25D to 4D particle manifestation threshold",
+      "gnostic_role": "27D(26,1) to 4D particle manifestation threshold",
       "derived_from": [
         "roots_total",
         "gate_38_color_symmetry",
@@ -1036,7 +1036,7 @@
       "formula": "(163-(153-135))/288",
       "expanded": "Ghost flux = 0.5034722222",
       "gnostic_name": "The Ghost-Flux",
-      "gnostic_role": "Hidden mass accounting in 25D bulk action",
+      "gnostic_role": "Hidden mass accounting in 27D(26,1) bulk action",
       "derived_from": [
         "sterile_sector",
         "christ_constant",
@@ -1095,7 +1095,7 @@
       "formula": "(163/153)*sqrt(24)",
       "expanded": "Scale factor = 5.2191742232",
       "gnostic_name": "The Scale Factor Prime",
-      "gnostic_role": "25D to macroscopic magnification",
+      "gnostic_role": "27D(26,1) to macroscopic magnification",
       "derived_from": [
         "sterile_sector",
         "christ_constant",

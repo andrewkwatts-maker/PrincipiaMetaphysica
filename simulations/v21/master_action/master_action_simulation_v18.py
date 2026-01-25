@@ -320,25 +320,26 @@ class MasterActionSimulationV22(SimulationBase):
             # v22.0: 12-Pair Bridge System Formulas
             # =================================================================
             Formula(
-                id="pneuma-master-action-v22",
+                id="pneuma-master-action-v23",
                 label="(1.1)",
-                latex=r"S = \int d^{26}X \sqrt{-G} \left[ R + \bar{\Psi}_P (i \Gamma^M D_M - m) \Psi_P + \lambda (\bar{\Psi}_P \Psi_P)^2 + \sum_{i=1}^{12} \mathcal{L}_{\text{bridge}}^i \right]",
-                plain_text="S = integral d^26X sqrt(-G) [ R + Psi-bar_P (i*Gamma^M*D_M - m) Psi_P + lambda*(Psi-bar_P*Psi_P)^2 + sum_{i=1}^{12} L_bridge^i ]",
+                latex=r"S = \int d^{27}X \sqrt{-G} \left[ R + \bar{\Psi}_P (i \Gamma^M D_M - m) \Psi_P + \lambda (\bar{\Psi}_P \Psi_P)^2 + \sum_{i=1}^{12} \mathcal{L}_{\text{bridge}}^i + \mathcal{L}_{C} \right]",
+                plain_text="S = integral d^27X sqrt(-G) [ R + Psi-bar_P (i*Gamma^M*D_M - m) Psi_P + lambda*(Psi-bar_P*Psi_P)^2 + sum_{i=1}^{12} L_bridge^i + L_C ]",
                 category="THEORY",
                 description=(
-                    "v22.0: 26D Pneuma master action with 12-pair (2,0) bridge system. "
-                    "v22: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR."
+                    "v23.1: 27D(26,1) Pneuma master action with 12-pair (2,0) bridge system + C^(2,0) central sampler. "
+                    "12×(2,0) + C^(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. "
                     "Each L_bridge^i contributes to OR reduction via local R_perp_i operator."
                 ),
                 inputParams=[],
                 outputParams=["bridge.n_pairs"],
                 terms={
-                    "R": "26D Einstein-Hilbert scalar curvature",
+                    "R": "27D Einstein-Hilbert scalar curvature",
                     "Psi_P": "4096-component Pneuma spinor from Cl(24,1)",
-                    "Gamma^M": "26D gamma matrices (4096x4096)",
+                    "Gamma^M": "27D gamma matrices (4096x4096)",
                     "D_M": "Covariant derivative with spin connection",
                     "lambda": "Quartic self-interaction for condensation",
-                    "L_bridge^i": "Bridge Lagrangian for pair i (12 total)"
+                    "L_bridge^i": "Bridge Lagrangian for pair i (12 total)",
+                    "L_C": "Central sampler Lagrangian C^(2,0)"
                 }
             ),
             Formula(
@@ -706,21 +707,21 @@ class MasterActionSimulationV22(SimulationBase):
                 # =============================================================
                 ContentBlock(
                     type="heading",
-                    content="The 26D Pneuma Master Action",
+                    content="The 27D(26,1) Pneuma Master Action",
                     level=2
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The fundamental action in 26D spacetime with signature (24,1) now includes "
-                        "the 12-pair bridge structure: S = int d^26X sqrt(-G) [R + Psi-bar(iGamma.D - m)Psi "
-                        "+ lambda(Psi-bar Psi)^2 + sum_{i=1}^{12} L_bridge^i]. The 4096-component Pneuma spinor "
+                        "The fundamental action in 27D spacetime with signature (26,1) now includes "
+                        "the 12-pair bridge structure + C^(2,0) central sampler: S = int d^27X sqrt(-G) [R + Psi-bar(iGamma.D - m)Psi "
+                        "+ lambda(Psi-bar Psi)^2 + sum_{i=1}^{12} L_bridge^i + L_C]. The 4096-component Pneuma spinor "
                         "from Cl(24,1) couples to each bridge pair through the distributed OR structure."
                     )
                 ),
                 ContentBlock(
                     type="formula",
-                    formula_id="pneuma-master-action-v22"
+                    formula_id="pneuma-master-action-v23"
                 ),
                 ContentBlock(
                     type="heading",

@@ -226,7 +226,7 @@ class GeometricAnchors:
     # =========================================================================
     # DIMENSIONAL STRUCTURE (5-Level SSOT Chain v20.3)
     # =========================================================================
-    # Chain: 25D(24,1) → [Euclidean bridge] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # Chain: 27D(26,1) → [Euclidean bridge] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
 
     @property
     def D_bulk(self) -> int:

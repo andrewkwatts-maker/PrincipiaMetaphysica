@@ -1,6 +1,6 @@
 # Geometric Anchors Derivation Chains
 
-**Version:** 16.2
+**Version:** 23.1
 **Framework:** Principia Metaphysica - Geometric Unity
 **Author:** Andrew Keith Watts
 **Date:** 2025-12-29
@@ -312,7 +312,7 @@ All parameters trace back to **b₃ = 24**, the third Betti number of the TCS G�
   title={Geometric Anchors: Derivation of Physics from Topology},
   author={Watts, Andrew Keith},
   journal={Principia Metaphysica},
-  version={16.2},
+  version={23.1},
   year={2025},
   note={All parameters derived from b₃ = 24 topological invariant}
 }

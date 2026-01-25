@@ -747,9 +747,9 @@ From `GATES_72_CERTIFICATES.json`:
 | Gate Range | Simulation Files |
 |------------|------------------|
 | G01-G12 | `FormulasRegistry.py` core properties |
-| G31-G40 | `gauge_unification_v16_0.py` |
-| G41-G48 | `neutrino_mixing_v16_0.py`, `ckm_matrix_v16_0.py` |
-| G47-G60 | `hubble_constant_v16_*.py`, cosmology modules |
+| G31-G40 | `simulations/v21/gauge/gauge_unification.py` |
+| G41-G48 | `simulations/v21/fermion/neutrino_mixing.py`, `simulations/v21/fermion/ckm_matrix.py` |
+| G47-G60 | `simulations/v21/cosmology/hubble_constant.py`, cosmology modules |
 | G69-G72 | `sovereign_hash_generator.py` |
 
 ---
@@ -758,8 +758,8 @@ From `GATES_72_CERTIFICATES.json`:
 
 ### Q.10.1 Related Appendices
 
-- **Appendix A**: Sp(2,R) gauge fixing (historical v16-v20)
-- **Appendix G**: Euclidean bridge mechanism (current v21+)
+- **Appendix A**: Sp(2,R) gauge fixing (historical reference, deprecated in v23.1)
+- **Appendix G**: Euclidean bridge mechanism (current v23.1)
 - **Appendix I**: Alpha inverse derivation using gates
 - **Appendix J**: Higgs VEV from G31 master action
 - **Appendix K**: Descent chain using dimensional anchors

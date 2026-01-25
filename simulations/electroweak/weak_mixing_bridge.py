@@ -6,7 +6,7 @@ Weak Mixing Angle from Bridge Geometry v22.2
 Licensed under the MIT License. See LICENSE file for details.
 
 Derives the weak mixing angle (Weinberg angle) sin^2(theta_W) from the 12-pair
-bridge structure of the 25D(24,1) Pneuma master action. The key insight is that
+bridge structure of the 27D(26,1) Pneuma master action. The key insight is that
 the bridge rotation angle theta_bridge = pi/12 (from 12 pairs) gets enhanced
 by an effective multiplier that combines the golden ratio phi with geometric
 corrections from pi.
@@ -280,7 +280,7 @@ class WeakMixingBridgeSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The 25D(24,1) master action contains 12 bridge pairs B_i = (x_i, y_i) "
+                        "The 27D(26,1) master action contains 12 bridge pairs B_i = (x_i, y_i) "
                         "that connect the Normal and Mirror shadows. Each pair contributes a "
                         "fundamental rotation angle of pi/12 to the total bridge geometry. "
                         "This 12-fold symmetry is the origin of the weak mixing angle."

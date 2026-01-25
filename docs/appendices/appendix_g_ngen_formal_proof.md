@@ -1,6 +1,6 @@
 # Appendix G: Formal Proof of Three Fermion Generations
 
-*Principia Metaphysica v20.16*
+*Principia Metaphysica v23.1*
 *Peer Review Issue 9: Formal Proofs*
 
 ---

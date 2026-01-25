@@ -941,12 +941,12 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 | Sum of neutrino masses | $\Sigma m_\nu$ | ~0.069 eV | PREDICTED: seesaw + cosmology |
 
 **Source Code**:
-- `simulations/v21/fermion/fermion_generations_v16_0.py`
-- `simulations/v21/fermion/octonionic_mixing_v16_2.py`
-- `simulations/v21/fermion/ckm_matrix_v16_0.py`
-- `simulations/neutrino/seesaw_dual_shadow.py` (v22.2)
+- `simulations/v21/fermion/fermion_generations.py`
+- `simulations/v21/fermion/octonionic_mixing.py`
+- `simulations/v21/fermion/ckm_matrix.py`
+- `simulations/v21/neutrino/seesaw_dual_shadow.py`
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*

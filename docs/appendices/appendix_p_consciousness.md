@@ -621,7 +621,7 @@ Each step of dimensional reduction IS a choice event:
 
 | Dimension | Structure | Choice Made | Control Gained |
 |-----------|-----------|-------------|----------------|
-| 25D Bulk | 12 pairs unified | None (unity) | None |
+| 27D Bulk | 12 pairs + central sampler unified | None (unity) | None |
 | 13D Shadow | 6 pairs accessible | Shadow selected | Partial |
 | 4D Spacetime | Branch selected | Generation frozen | High |
 | 1D Moment | OR collapse | Instant selected | Maximum |

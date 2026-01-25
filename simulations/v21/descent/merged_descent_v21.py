@@ -4,8 +4,8 @@ Merged Dimensional Descent v21.0
 
 Licensed under the MIT License. See LICENSE file for details.
 
-Implements the complete dimensional descent chain for the (24,1) dual-shadow model:
-(24,1) bulk -> dual shadows -> Euclidean bridge -> G2 compact -> condensate projection
+Implements the complete dimensional descent chain for the 27D(26,1) dual-shadow model:
+27D(26,1) bulk -> dual shadows -> Euclidean bridge -> G2 compact -> condensate projection
 
 This simulation combines all v21 components:
 - Bridge pressure
@@ -46,13 +46,14 @@ from simulations.base import (
 @dataclass
 class DescentConfig:
     """Configuration for merged descent computation."""
-    # Bulk signature
-    D_bulk: int = 25  # 24 space + 1 time = (24,1)
-    D_space: int = 24
+    # Bulk signature - v23.1: 27D(26,1) = 24 spatial + 2 central bridge + 1 time
+    D_bulk: int = 27  # 26 space + 1 time = (26,1)
+    D_space: int = 26  # 24 core spatial + 2 central bridge
+    D_core_spatial: int = 24  # Core spatial dimensions
     D_time: int = 1
 
     # Bridge dimensions
-    D_bridge: int = 2  # Shared Euclidean (2,0)
+    D_bridge: int = 2  # Shared Euclidean (2,0) central sampler
 
     # G2 compactification
     D_g2: int = 7  # 7D per shadow
@@ -71,7 +72,7 @@ class MergedDescentV21(SimulationBase):
     """
     Complete dimensional descent simulation.
 
-    Traces the full reduction chain from (24,1) bulk through
+    Traces the full reduction chain from 27D(26,1) bulk through
     dual shadows, G2 compactification, and condensate formation.
     """
 
@@ -84,11 +85,11 @@ class MergedDescentV21(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="merged_descent_v21",
-            version="21.0",
+            version="23.1",
             domain="foundations",
             title="Dimensional Descent Chain",
             description=(
-                "Complete reduction from (24,1) bulk through dual shadows, "
+                "Complete reduction from 27D(26,1) bulk through dual shadows, "
                 "Euclidean bridge, G2 compactification, to observable "
                 "condensates (2 x (5,1 + 3x(3,1)))."
             ),
@@ -160,7 +161,7 @@ class MergedDescentV21(SimulationBase):
         }
 
     def _verify_bulk_signature(self) -> str:
-        """Verify (24,1) bulk signature."""
+        """Verify 27D(26,1) bulk signature."""
         D_space = self.config.D_space
         D_time = self.config.D_time
         return f"({D_space},{D_time})"
@@ -169,18 +170,20 @@ class MergedDescentV21(SimulationBase):
         """
         Compute shadow dimension splitting.
 
-        24 spacelike = 12 normal + 12 mirror + 2 bridge (shared)
-        But bridge is part of both shadows, so effectively:
-        12 internal normal + 12 internal mirror + 2 shared
+        27D(26,1) = 24 core spatial + 2 central bridge + 1 time
+        24 core spacelike = 12 normal + 12 mirror (via 12×(2,0) bridge pairs)
+        Central bridge C^(2,0) is shared between both shadows
         """
         D_bridge = self.config.D_bridge
-        D_per_shadow = (self.config.D_space - D_bridge) // 2
+        D_core_spatial = self.config.D_core_spatial
+        D_per_shadow = D_core_spatial // 2  # 12 per shadow
 
         return {
             "D_normal_internal": D_per_shadow,
             "D_mirror_internal": D_per_shadow,
-            "D_bridge_shared": D_bridge,
-            "total": 2 * D_per_shadow + D_bridge,
+            "D_central_bridge": D_bridge,
+            "D_core_spatial": D_core_spatial,
+            "total": D_core_spatial + D_bridge,
         }
 
     def _verify_g2_compact(self) -> Dict[str, Any]:
@@ -226,19 +229,19 @@ class MergedDescentV21(SimulationBase):
         """
         Verify total dimension accounting.
 
-        Bulk (24,1) = 25 total
-        After G2: 25 - 2*7 = 11 (per shadow gets half)
+        Bulk 27D(26,1) = 27 total = 24 core spatial + 2 central bridge + 1 time
+        After G2: 27 - 2*7 = 13 (central bridge + remaining)
         Observable: 4D spacetime + KK towers
         """
-        D_bulk = self.config.D_bulk  # 25
+        D_bulk = self.config.D_bulk  # 27
         D_g2_total = 2 * self.config.D_g2  # 14 compact
-        D_remaining = D_bulk - D_g2_total  # 11
+        D_remaining = D_bulk - D_g2_total  # 13
 
         # Effective 4D from 3,1 branches
         D_observable = 4
 
-        # KK tower dimensions
-        D_kk = D_remaining - D_observable  # 7 KK
+        # KK tower dimensions (including central bridge contribution)
+        D_kk = D_remaining - D_observable  # 9 KK
 
         accounting = {
             "D_bulk": D_bulk,
@@ -246,6 +249,7 @@ class MergedDescentV21(SimulationBase):
             "D_remaining": D_remaining,
             "D_observable": D_observable,
             "D_kk": D_kk,
+            "D_central_bridge": self.config.D_bridge,
         }
 
         verified = (D_bulk == D_g2_total + D_remaining) and (D_observable == 4)
@@ -256,27 +260,31 @@ class MergedDescentV21(SimulationBase):
         """
         Verify complete descent chain.
 
-        (24,1) -> dual shadows -> (2,0) bridge -> G2(7,0) -> 2x(5,1 + 3x(3,1))
+        27D(26,1) -> dual shadows -> (2,0) central bridge -> G2(7,0) -> 2x(5,1 + 3x(3,1))
         """
         checks = []
 
-        # Check 1: Bulk signature
-        bulk_ok = (self.config.D_space == 24 and self.config.D_time == 1)
-        checks.append(("Bulk (24,1)", bulk_ok))
+        # Check 1: Bulk signature - 27D(26,1)
+        bulk_ok = (self.config.D_bulk == 27 and self.config.D_space == 26 and self.config.D_time == 1)
+        checks.append(("Bulk 27D(26,1)", bulk_ok))
 
-        # Check 2: Bridge Euclidean
+        # Check 2: Core spatial dimensions
+        core_ok = (self.config.D_core_spatial == 24)
+        checks.append(("Core spatial = 24", core_ok))
+
+        # Check 3: Bridge Euclidean (central sampler)
         bridge_ok = (self.config.D_bridge == 2)
-        checks.append(("Bridge (2,0)", bridge_ok))
+        checks.append(("Central Bridge (2,0)", bridge_ok))
 
-        # Check 3: G2 dimension
+        # Check 4: G2 dimension
         g2_ok = (self.config.D_g2 == 7)
         checks.append(("G2 (7,0)", g2_ok))
 
-        # Check 4: Generations
+        # Check 5: Generations
         gen_ok = (self.config.num_generations == 3)
         checks.append(("Generations = 3", gen_ok))
 
-        # Check 5: b3 matches
+        # Check 6: b3 matches
         b3_ok = (self.config.b3_total == 24)
         checks.append(("b3 = 24", b3_ok))
 
@@ -292,23 +300,24 @@ class MergedDescentV21(SimulationBase):
         """Return ASCII diagram of descent chain."""
         return """
         ┌─────────────────────────────────────────────┐
-        │           (24,1) BULK                       │
-        │    24 spacelike + 1 timelike                │
+        │           27D(26,1) BULK                    │
+        │  24 core spatial + 2 central + 1 time      │
         └──────────────────┬──────────────────────────┘
                            │
                     ┌──────┴──────┐
                     ▼             ▼
         ┌───────────────┐  ┌───────────────┐
         │ NORMAL SHADOW │  │ MIRROR SHADOW │
-        │   12 internal │  │   12 internal │
+        │ 12 internal   │  │ 12 internal   │
+        │ via 12×(2,0)  │  │ via 12×(2,0)  │
         └───────┬───────┘  └───────┬───────┘
                 │                  │
                 └───────┬──────────┘
                         │
                 ┌───────▼───────┐
-                │ (2,0) BRIDGE  │
-                │   Euclidean   │
-                │   Shared      │
+                │ C^(2,0) BRIDGE│
+                │ Central       │
+                │ Sampler       │
                 └───────┬───────┘
                         │
               ┌─────────┴─────────┐
@@ -336,8 +345,8 @@ class MergedDescentV21(SimulationBase):
             subsection_id="1.1",
             title="Foundations of Dimensional Descent",
             abstract=(
-                "The (24,1) bulk with unified time descends through dual "
-                "shadows sharing a 2D Euclidean bridge. G2 compactification "
+                "The 27D(26,1) bulk with unified time descends through dual "
+                "shadows sharing a 2D Euclidean central bridge. G2 compactification "
                 "on each shadow yields the observable condensate structure: "
                 "2 x (5,1 bridge + 3 x (3,1) generational branches)."
             ),
@@ -345,15 +354,15 @@ class MergedDescentV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The ancestral bulk is a (24,1) Lorentzian manifold with "
-                        "24 spacelike and 1 timelike dimension. This unified time "
-                        "eliminates ghost/CTC issues from earlier (24,2) formulations:"
+                        "The ancestral bulk is a 27D(26,1) Lorentzian manifold with "
+                        "24 core spatial + 2 central bridge + 1 timelike dimension. "
+                        "This unified time eliminates ghost/CTC issues from earlier (24,2) formulations:"
                     )
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"ds^2 = \sum_{i=1}^{24} dx_i^2 - dt^2",
-                    formula_id="bulk-signature-24-1",
+                    content=r"ds^2 = \sum_{i=1}^{24} dx_i^2 + dy_1^2 + dy_2^2 - dt^2",
+                    formula_id="bulk-signature-26-1",
                     label="(1.1)"
                 ),
                 ContentBlock(
@@ -365,7 +374,7 @@ class MergedDescentV21(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"25D(24,1) = 12 \times (2,0) + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
+                    content=r"27D(26,1) = 12 \times (2,0) + C^{(2,0)} + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
                     formula_id="descent-chain-full",
                     label="(1.2)"
                 ),
@@ -384,7 +393,7 @@ class MergedDescentV21(SimulationBase):
                 ),
             ],
             formula_refs=[
-                "bulk-signature-24-1",
+                "bulk-signature-26-1",
                 "descent-chain-full",
                 "condensate-structure",
             ],
@@ -399,40 +408,43 @@ class MergedDescentV21(SimulationBase):
         """Return list of formulas this simulation provides."""
         return [
             Formula(
-                id="bulk-signature-24-1",
+                id="bulk-signature-26-1",
                 label="(1.1)",
-                latex=r"ds^2 = \sum_{i=1}^{24} dx_i^2 - dt^2",
-                plain_text="ds^2 = sum(dx_i^2) - dt^2, i=1..24",
+                latex=r"ds^2 = \sum_{i=1}^{24} dx_i^2 + dy_1^2 + dy_2^2 - dt^2",
+                plain_text="ds^2 = sum(dx_i^2) + dy_1^2 + dy_2^2 - dt^2, i=1..24",
                 category="THEORY",
-                description="(24,1) bulk metric with unified time",
+                description="27D(26,1) bulk metric with unified time: 24 core spatial + 2 central bridge + 1 time",
                 inputParams=[],
                 outputParams=["descent.bulk_signature"],
                 input_params=[],
                 output_params=["descent.bulk_signature"],
                 derivation={
                     "steps": [
-                        {"description": "24 spacelike dimensions",
+                        {"description": "24 core spacelike dimensions",
                          "formula": r"\sum_{i=1}^{24} dx_i^2"},
+                        {"description": "2 central bridge dimensions C^(2,0)",
+                         "formula": r"dy_1^2 + dy_2^2"},
                         {"description": "1 timelike dimension",
                          "formula": r"-dt^2"},
                         {"description": "Lorentzian signature",
-                         "formula": r"(24,1)"}
+                         "formula": r"(26,1)"}
                     ],
                     "references": ["PM Section 1.1"]
                 },
                 terms={
                     "ds^2": "Line element",
-                    "dx_i": "Spacelike differentials",
+                    "dx_i": "Core spacelike differentials (24)",
+                    "dy_1, dy_2": "Central bridge differentials (2)",
                     "dt": "Timelike differential",
                 }
             ),
             Formula(
                 id="descent-chain-full",
                 label="(1.2)",
-                latex=r"25D(24,1) = 12 \times (2,0) + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
-                plain_text="25D(24,1) = 12×(2,0) + (0,1) -> warp -> 2×13D(12,1) -> G2 -> 2 x (5,1 + 3x(3,1))",
+                latex=r"27D(26,1) = 12 \times (2,0) + C^{(2,0)} + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
+                plain_text="27D(26,1) = 12×(2,0) + C^(2,0) + (0,1) -> warp -> 2×13D(12,1) -> G2 -> 2 x (5,1 + 3x(3,1))",
                 category="THEORY",
-                description="Complete dimensional descent chain",
+                description="Complete dimensional descent chain from 27D(26,1)",
                 inputParams=["topology.b3", "topology.chi_eff"],
                 outputParams=["descent.condensate_structure"],
                 input_params=["topology.b3", "topology.chi_eff"],
@@ -441,6 +453,8 @@ class MergedDescentV21(SimulationBase):
                     "steps": [
                         {"description": "12 bridge pairs warp to create shadows",
                          "formula": r"12 \times (2,0) \to 2 \times 12_{\text{spatial}}"},
+                        {"description": "Central bridge sampler",
+                         "formula": r"C^{(2,0)}_{\text{central sampler}}"},
                         {"description": "Shared time from (0,1)",
                          "formula": r"(0,1)_{\text{shared time}}"},
                         {"description": "G2 compactifies 7D per shadow",
@@ -451,8 +465,9 @@ class MergedDescentV21(SimulationBase):
                     "references": ["PM Section 1.1"]
                 },
                 terms={
-                    "(24,1)": "Bulk signature",
-                    "(2,0)": "Euclidean bridge signature",
+                    "(26,1)": "Bulk signature: 26 spatial + 1 time",
+                    "(2,0)": "Euclidean bridge pair signature",
+                    "C^(2,0)": "Central sampler bridge (2D Euclidean)",
                     "G2": "G2 holonomy compactification",
                     "(5,1)": "Extended bridge (5 space + 1 time)",
                     "(3,1)": "Generational Minkowski branch",
@@ -498,8 +513,8 @@ class MergedDescentV21(SimulationBase):
                 name="Bulk Signature",
                 units="signature",
                 status="ESTABLISHED",
-                description="Bulk manifold signature: (24,1) Lorentzian with unified time.",
-                derivation_formula="bulk-signature-24-1",
+                description="Bulk manifold signature: 27D(26,1) Lorentzian with unified time (24 core + 2 central bridge + 1 time).",
+                derivation_formula="bulk-signature-26-1",
                 no_experimental_value=True
             ),
             Parameter(

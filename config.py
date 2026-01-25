@@ -1556,30 +1556,30 @@ class CoreFormulas:
     # =========================================================================
 
     MASTER_ACTION_25D = Formula(
-        id="master-action-25d",
+        id="master-action-27d",  # Updated ID for v23.1
         output_params=['dimensions.D_BULK'],
         label="(2.1) Master Action",
-        html="S<sub>25</sub> = ∫ d<sup>25</sup>x √|G| [M<sub>*</sub><sup>23</sup>R<sub>25</sub> + Ψ̄<sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub> + ℒ<sub>bridge</sub>]",
-        latex="S_{25} = \\int d^{25}x \\sqrt{|G_{(24,1)}|} \\left[ M_*^{23} R_{25} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{bridge}} \\right]",
-        plain_text="S_25 = ∫ d²⁵x √|G| [M*²³R₂₅ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_bridge]",
+        html="S<sub>27</sub> = ∫ d<sup>27</sup>x √|G| [M<sub>*</sub><sup>25</sup>R<sub>27</sub> + Ψ̄<sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub> + ℒ<sub>bridge</sub>]",
+        latex="S_{27} = \\int d^{27}x \\sqrt{|G_{(26,1)}|} \\left[ M_*^{25} R_{27} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{bridge}} \\right]",
+        plain_text="S_27 = ∫ d²⁷x √|G| [M*²⁵R₂₇ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_bridge]",
         category=FormulaCategory.THEORY,
-        description="v21/v22 Master action for 27D(26,1) bulk with Pneuma field and Euclidean bridge",  # Legacy var name "25D"
+        description="v23.1 Master action for 27D(26,1) bulk with Pneuma field and Euclidean central bridge",
         section="2",
         status="FOUNDATIONAL",
         terms={
-            "S_25": FormulaTerm("27D Action", "Full action in (26,1) unified time signature", "sections.html#2"),  # Legacy key "S_25"
+            "S_27": FormulaTerm("27D Action", "Full action in 27D(26,1) unified time signature", "sections.html#2"),
             "M_*": FormulaTerm("Fundamental Scale", "27D Planck scale ~10¹⁶ GeV"),
-            "R_25": FormulaTerm("Ricci Scalar", "27D curvature scalar"),  # Legacy key "R_25"
-            "Ψ_P": FormulaTerm("Pneuma Field", "v21/v22: 4096-component spinor from Cl(24,1)"),
-            "ℒ_bridge": FormulaTerm("Bridge Lagrangian", "v21/v22: Euclidean bridge dynamics"),
+            "R_27": FormulaTerm("Ricci Scalar", "27D curvature scalar"),
+            "Ψ_P": FormulaTerm("Pneuma Field", "v23.1: 4096-component spinor from Cl(24,1)"),
+            "ℒ_bridge": FormulaTerm("Bridge Lagrangian", "v23.1: 12×(2,0) bridge pairs + C^(2,0) central sampler"),
         },
         derivation=FormulaDerivation(
             parent_formulas=[],
             established_physics=["virasoro-anomaly", "string-theory"],
             steps=[
-                "Start with 27D = (26,1) unified time signature",
+                "Start with 27D(26,1) = 24 core spatial + 2 central bridge + 1 time",
                 "Include Pneuma spinor field for fermionic DOF (4096 components from Cl(24,1))",
-                "v21/v22: Add Euclidean bridge for dual-shadow structure (replaces Sp(2,R))"
+                "v23.1: Add Euclidean central bridge for dual-shadow structure"
             ],
             verification_page="sections.html#2"
         ),
@@ -1705,19 +1705,19 @@ class CoreFormulas:
         ],
     )
 
-    # v21: OR Reduction Operator (replaces Sp(2,R) constraints)
+    # v23.1: OR Reduction Operator (replaces Sp(2,R) constraints)
     V21_OR_REDUCTION = Formula(
         id="v21-or-reduction",
         input_params=['dimensions.D_BULK'],
         output_params=['dimensions.D_EFFECTIVE'],
-        label="(2.3) v21 OR Reduction Operator",
+        label="(2.3) v23.1 OR Reduction Operator",
         html="R<sub>⊥</sub> = [[0,-1],[1,0]], R<sub>⊥</sub>² = -I, det(R<sub>⊥</sub>) = 1",
         latex="R_\\perp = \\begin{pmatrix} 0 & -1 \\\\ 1 & 0 \\end{pmatrix}, \\quad R_\\perp^2 = -I, \\quad \\det(R_\\perp) = 1",
         plain_text="R_perp = [[0,-1],[1,0]], R_perp² = -I, det(R_perp) = 1",
         category=FormulaCategory.THEORY,
-        description="v21 OR reduction operator for dual-shadow coordinate mapping with Möbius topology",
+        description="v23.1 OR reduction operator for dual-shadow coordinate mapping with Möbius topology",
         section="2",
-        status="v21.0 FOUNDATIONAL",
+        status="v23.1 FOUNDATIONAL",
         terms={
             "R_⊥": FormulaTerm("OR Operator", "Maps between Normal and Mirror shadow coordinates"),
             "R_⊥²=-I": FormulaTerm("Möbius Property", "Spinor double-cover: ψ→-ψ after single traversal"),
@@ -1727,8 +1727,8 @@ class CoreFormulas:
             parent_formulas=[],
             established_physics=["clifford-algebra", "spinor-geometry"],
             steps=[
-                "v21: Unified time (24,1) eliminates ghosts without gauge constraints",
-                "Dual shadows 2×13D(12,1) connected via 12×(2,0) bridge pairs with shared (0,1) time",
+                "v23.1: 27D(26,1) = 24 core + 2 central + 1 time; unified time eliminates ghosts",
+                "Dual shadows 2×13D(12,1) connected via 12×(2,0) bridge pairs + C^(2,0) central",
                 "OR reduction R_perp identifies physics across shadows",
                 "R_perp² = -I gives Möbius double-cover for spinor topology"
             ]
@@ -1890,18 +1890,19 @@ class CoreFormulas:
         id="reduction-cascade",
         input_params=['dimensions.D_BULK'],
         output_params=['dimensions.D_EFFECTIVE'],
-        label="(1.1) v21/v22 Dimensional Cascade",
-        html="25D<sub>(24,1)</sub> →<sup>12×(2,0) bridge</sup> 2×13D<sub>(12,1)</sub> →<sup>per-shadow G₂</sup> 2×4D<sub>(3,1)</sub> →<sup>R<sub>⊥</sub></sup> 4D<sub>(3,1)</sub>",
-        latex="\\text{25D}_{(24,1)} \\xrightarrow{12\\times(2,0)} 2\\times\\text{13D}_{(12,1)} \\xrightarrow{G_2} 2\\times\\text{4D}_{(3,1)} \\xrightarrow{R_\\perp} \\text{4D}_{(3,1)}",
-        plain_text="25D_(24,1) → [12×(2,0) bridge] → 2×13D_(12,1) → [per-shadow G₂] → 2×4D_(3,1) → [R_perp] → 4D_(3,1)",
+        label="(1.1) v23.1 Dimensional Cascade",
+        html="27D<sub>(26,1)</sub> →<sup>12×(2,0) + C<sup>(2,0)</sup></sup> 2×13D<sub>(12,1)</sub> →<sup>per-shadow G₂</sup> 2×4D<sub>(3,1)</sub> →<sup>R<sub>⊥</sub></sup> 4D<sub>(3,1)</sub>",
+        latex="\\text{27D}_{(26,1)} \\xrightarrow{12\\times(2,0)+C^{(2,0)}} 2\\times\\text{13D}_{(12,1)} \\xrightarrow{G_2} 2\\times\\text{4D}_{(3,1)} \\xrightarrow{R_\\perp} \\text{4D}_{(3,1)}",
+        plain_text="27D_(26,1) → [12×(2,0) + C^(2,0)] → 2×13D_(12,1) → [per-shadow G₂] → 2×4D_(3,1) → [R_perp] → 4D_(3,1)",
         category=FormulaCategory.THEORY,
-        description="v21/v22 Dimensional cascade from 27D(26,1) bulk via dual shadows to 4D observable",
+        description="v23.1 Dimensional cascade from 27D(26,1) bulk via dual shadows to 4D observable",
         section="1",
-        status="v21.0 FOUNDATIONAL",
+        status="v23.1 FOUNDATIONAL",
         terms={
-            "27D_(26,1)": FormulaTerm("Bulk", "v21/v22: 26 space + 1 unified time = 12×(2,0) bridges + (0,1) time + C^(2,0) central"),  # Legacy key "25D_(24,1)"
-            "2×13D_(12,1)": FormulaTerm("Dual Shadows", "v21/v22: Normal + Mirror shadows, each 12 space + 1 shared time"),
-            "12×(2,0)": FormulaTerm("Bridge Pairs", "v22: 12 Euclidean bridge pairs connecting shadow dimensions"),
+            "27D_(26,1)": FormulaTerm("Bulk", "v23.1: 24 core spatial + 2 central bridge + 1 unified time"),
+            "2×13D_(12,1)": FormulaTerm("Dual Shadows", "v23.1: Normal + Mirror shadows, each 12 space + 1 shared time"),
+            "12×(2,0)": FormulaTerm("Bridge Pairs", "v23.1: 12 Euclidean bridge pairs connecting shadow dimensions"),
+            "C^(2,0)": FormulaTerm("Central Sampler", "v23.1: 2D Euclidean central averaging bridge"),
             "per-shadow G₂": FormulaTerm("Compactification", "G₂ on (7,0) per shadow"),
             "R_⊥": FormulaTerm("OR Reduction", "Identifies physics across shadows"),
             "4D_(3,1)": FormulaTerm("Observable", "Our spacetime"),

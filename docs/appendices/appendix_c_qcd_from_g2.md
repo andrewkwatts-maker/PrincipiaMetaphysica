@@ -342,9 +342,9 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 | Holonomy constant | $k_{gimel}$ | 12.318... | $b_3/2 + 1/\pi$ |
 | Active quark flavors | $n_f$ | 6 | SM fermion content |
 
-**Source Code**: `simulations/geometric_anchors_v16_1.py`
+**Source Code**: `simulations/v21/geometric/geometric_anchors.py`
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*

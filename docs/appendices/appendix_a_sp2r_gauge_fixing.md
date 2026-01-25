@@ -1,8 +1,9 @@
-> **[HISTORICAL: v16-v20 Formulation]**
+> **[HISTORICAL: v16-v20 Formulation - DEPRECATED in v23.1]**
 > This appendix describes the Sp(2,R) gauge-fixing formulation used in v16-v20 with signature (24,2).
-> **The v21+ framework uses 27D(26,1) = 24D core + 2D central sampler + 1D time.**
-> The 26D/(24,2) references below are preserved for historical context; the current framework uses 27D(26,1).
-> See Appendix G for the current v21+ formulation.
+> **The v23.1 framework uses 27D(26,1) = 24D core + 2D central sampler + 1D time.**
+> The 26D/(24,2) references and Sp(2,R) gauge symmetry below are preserved for historical context only.
+> The current framework uses 27D(26,1) with the Euclidean bridge mechanism.
+> See Appendix G for the current v23.1 formulation.
 
 # Appendix A: Sp(2,R) Gauge Fixing Derivation
 

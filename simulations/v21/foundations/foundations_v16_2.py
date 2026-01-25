@@ -19,7 +19,7 @@ KEY v22 CHANGES:
 WHY 12 PAIRS: b_3 = 24 => 24/2 = 12 paired bridges
 
 This simulation generates the content for Section 1 of the paper:
-  1.1 The 25D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+  1.1 The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge
   1.2 The Paired Bridge System and OR Reduction
   1.3 The G2 Manifold (V7) per Shadow
   1.4 The 6D->4D Projection
@@ -59,7 +59,7 @@ class FoundationsV16_2(SimulationBase):
 
     Provides the sterile derivation narrative for the (24,1)->4D descent path
     with 12x(2,0) paired bridge system:
-    - 1.1: The 25D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+    - 1.1: The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge
     - 1.2: The Paired Bridge System and OR Reduction
     - 1.3: The G2 Manifold V7 per Shadow (7D Geometric Hard-Lock)
     - 1.4: The 6D->4D Projection (Calabi-Yau Filtering)
@@ -138,11 +138,11 @@ class FoundationsV16_2(SimulationBase):
             # Section 1 should start directly with the foundational content
 
             # ================================================================
-            # 1.1 The 25D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+            # 1.1 The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge
             # ================================================================
             ContentBlock(
                 type="heading",
-                content="The 25D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge",
+                content="The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge",
                 level=2,
                 label="1.1"
             ),
@@ -151,7 +151,7 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "The foundational premise of the Sterile Model is that the observable universe "
                     "is not an independent system, but a lower-dimensional <strong>residue</strong> "
-                    "of a <strong>25D(24,1) Bosonic Ancestral Bulk</strong>. This high-dimensional "
+                    "of a <strong>27D(26,1) Bosonic Ancestral Bulk</strong>. This high-dimensional "
                     "state represents the 'Total Potential' of the physical registry, with unified "
                     "time (eliminating ghosts and closed timelike curves) and a <strong>12x(2,0) "
                     "paired bridge system</strong> enabling dual-shadow coherence."
@@ -222,7 +222,7 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 25D(24,1) state descends via <strong>Dimensional Collapse</strong>. "
+                    "The 27D(26,1) state descends via <strong>Dimensional Collapse</strong>. "
                     "The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, "
                     "with the Euclidean bridge providing the coherence substrate. This transition is a "
                     "<strong>Topological Shattering</strong>, where the high-dimensional bulk breaks "
@@ -533,7 +533,7 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "Our observable universe is the <strong>4D World-Sheet</strong> upon which this "
                     "entire descent is recorded. The 125 residues are the terminal artifacts of the "
-                    "25D(24,1) potential. At this level, the 'Fine-Structure Constant' and the "
+                    "27D(26,1) potential. At this level, the 'Fine-Structure Constant' and the "
                     "'Proton-to-Electron Mass Ratio' are revealed not as lucky accidents, but as the "
                     "<strong>Terminal Geometric Identity</strong> of the manifold. 4D reality is a "
                     "'topologically locked' state, where the physical constants represent the only "
@@ -544,7 +544,7 @@ class FoundationsV16_2(SimulationBase):
                 type="note",
                 content=(
                     "<h4>The Descent Path Summary</h4>"
-                    "<p>25D(24,1) = 12×(2,0) + (0,1) → [Bridge pairs WARP via OR] → 2×13D(12,1) → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p>"
+                    "<p>27D(26,1) = 12×(2,0) + (0,1) → [Bridge pairs WARP via OR] → 2×13D(12,1) → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p>"
                     "<p>At each stage, the 'Symmetry Budget' is conserved, and the 125 residues are "
                     "progressively 'extracted' as the unique spectral eigenvalues of the descended geometry.</p>"
                 ),
@@ -556,7 +556,7 @@ class FoundationsV16_2(SimulationBase):
             section_id="1",
             subsection_id="1.1",  # v19.0: Unique subsection
             title="Foundations of Dimensional Descent",
-            abstract="The 25D(24,1) ancestral bulk with Euclidean bridge, OR reduction, dual shadows, G2 manifold, and 6D→4D projection.",
+            abstract="The 27D(26,1) ancestral bulk with Euclidean bridge, OR reduction, dual shadows, G2 manifold, and 6D→4D projection.",
             content_blocks=content_blocks
         )
 

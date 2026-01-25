@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Wolfram Cloud Formal Audit
+PRINCIPIA METAPHYSICA v23.1 - Wolfram Cloud Formal Audit
 =========================================================
 
 Uses the Wolfram Language (WL) API for formal symbolic derivations.
@@ -435,7 +435,7 @@ class WolframCloudAuditor:
             Complete proof manifest
         """
         print("=" * 70)
-        print("PRINCIPIA METAPHYSICA v16.2 - FORMAL WOLFRAM AUDIT")
+        print("PRINCIPIA METAPHYSICA v23.1 - FORMAL WOLFRAM AUDIT")
         print("=" * 70)
 
         certificates = []
@@ -452,7 +452,7 @@ class WolframCloudAuditor:
 
         # Create manifest
         manifest = FormalProofManifest(
-            version="16.2",
+            version="23.1",
             theoretical_basis="Principia Metaphysica",
             generated=datetime.now().isoformat(),
             proofs=self.FORMAL_PROOFS,
@@ -488,7 +488,7 @@ class WolframCloudAuditor:
             Dictionary suitable for web display
         """
         web_data = {
-            "version": "16.2",
+            "version": "23.1",
             "proofs": []
         }
 

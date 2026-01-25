@@ -2,8 +2,8 @@
 
 **Investigation: Can Scale Symmetry Explain Why v = 246 GeV Instead of M_Pl?**
 
-**Version**: 23.0
-**Date**: 2026-01-21
+**Version**: 23.1
+**Date**: 2026-01-25
 **Status**: INVESTIGATION COMPLETE (conclusion: CSI does not solve the hierarchy problem)
 
 ---
@@ -13,7 +13,7 @@
 This appendix investigates whether classical scale invariance (CSI) and the Coleman-Weinberg (CW) mechanism could explain the electroweak hierarchy in Principia Metaphysica. The central question: why does the Higgs VEV v = 246 GeV rather than the "natural" scale M_Pl = 2.4 x 10^18 GeV?
 
 **Key Findings**:
-1. The PM 26D action is **not** classically scale-invariant at tree level
+1. The PM 27D action is **not** classically scale-invariant at tree level
 2. Coleman-Weinberg requires specific coupling structures not present in PM
 3. Dimensional transmutation alone cannot generate the required 16 orders of magnitude
 4. CSI-based approaches remain speculative but worth further investigation
@@ -347,7 +347,7 @@ For m_tilde ~ TeV, this stabilizes the hierarchy.
 
 **CSI does NOT solve PM's hierarchy problem** for the following reasons:
 
-1. The 26D master action contains explicit mass scales (M_*)
+1. The 27D master action contains explicit mass scales (M_*)
 2. Coleman-Weinberg produces O(1) ratios, not 10^(-16)
 3. Extended CSI models require additional fine-tuning
 4. G2 topology fixes discrete invariants (b_3, chi_eff) but not continuous scales

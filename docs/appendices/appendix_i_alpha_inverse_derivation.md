@@ -525,9 +525,9 @@ This appendix uses the following Single Source of Truth (SSOT) parameters from `
 | Golden ratio | $\phi$ | 1.618... | G2 moduli space (conjectured) |
 | Effective Euler char. | $\chi_{eff}$ | 144 | Cross-shadow topological count |
 
-**Source Code**: `simulations/v16/constants/fine_structure_v17.py`
+**Source Code**: `simulations/v21/constants/fine_structure.py`
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*

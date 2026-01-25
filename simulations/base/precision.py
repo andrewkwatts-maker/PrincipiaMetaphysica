@@ -4,7 +4,7 @@
 precision.py - Sterile Decimal-50 Precision Engine
 ===================================================
 
-Principia Metaphysica v16.2 "Demon-Lock" Precision Framework
+Principia Metaphysica v23.1 "Demon-Lock" Precision Framework
 
 This module enforces 50-decimal precision for all topological calculations.
 Without this, the Unity Seal (Certificate 42) will drift due to float leakage
@@ -112,9 +112,24 @@ E: float = float(E_STERILE)
 # DERIVED CONSTANTS (Sterile)
 # =============================================================================
 
-# Chi effective: chi_eff = b3 * b2 = 24 * 6 = 144 (Euler characteristic proxy)
-CHI_EFF_STERILE = B3_STERILE * Decimal('6')
-CHI_EFF: int = 144
+# Chi effective: DUAL STRUCTURE (v20.1 naming convention from FormulasRegistry)
+# ================================================================
+# chi_eff = 72 (per-sector, single-shadow)
+#   GEOMETRIC: chi_eff_shadow = b3^2/8 = 576/8 = 72
+#   USE FOR: n_gen = chi_eff/24 = 3 (fermion generations per sector)
+#            Single-shadow physics processes (quark Yukawa, CKM)
+#
+# chi_eff_total = 144 (both shadows combined)
+#   GEOMETRIC: chi_eff_total = 72 + 72 = b3^2/4 = 576/4 = 144
+#   USE FOR: n_gen = chi_eff_total/48 = 3 (alternative generation formula)
+#            Cross-shadow processes (PMNS neutrino mixing)
+#            reid_invariant = 1/chi_eff_total = 1/144
+# ================================================================
+CHI_EFF_STERILE = B3_STERILE * Decimal('3')  # b3 * 3 = 24 * 3 = 72
+CHI_EFF: int = 72  # Single-shadow effective Euler characteristic
+
+CHI_EFF_TOTAL_STERILE = B3_STERILE * Decimal('6')  # b3 * 6 = 24 * 6 = 144
+CHI_EFF_TOTAL: int = 144  # Both shadows: 72 + 72 = 144
 
 # Volume factor for 4D projection: V_G2 = sqrt(b3)^7 / 7! ≈ 5.013
 V_G2_STERILE = (B3_STERILE.sqrt() ** 7) / Decimal('5040')
@@ -213,6 +228,7 @@ def get_sterile_constants() -> dict:
         "pi": PI_STERILE,
         "e": E_STERILE,
         "chi_eff": CHI_EFF_STERILE,
+        "chi_eff_total": CHI_EFF_TOTAL_STERILE,
         "v_g2": V_G2_STERILE,
         "unity_seal": UNITY_SEAL_STERILE,
     }
@@ -224,7 +240,7 @@ def get_sterile_constants() -> dict:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA - DEMON-LOCK PRECISION ENGINE v16.2")
+    print("PRINCIPIA METAPHYSICA - DEMON-LOCK PRECISION ENGINE v23.1")
     print("=" * 70)
 
     result = verify_precision()

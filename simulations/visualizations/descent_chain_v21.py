@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Descent Chain Visualization v21
-================================
+Descent Chain Visualization v23.1
+==================================
 
-Visualizes the (24,1) → dual shadows → 4D descent chain for Principia Metaphysica v21.
+Visualizes the (24,1) → dual shadows → 4D descent chain for Principia Metaphysica v23.1.
 
 Features:
 1. Descent chain diagram showing dimensional flow
@@ -38,7 +38,7 @@ def create_descent_chain_diagram():
     ax.axis('off')
 
     # Title
-    ax.text(7, 9.5, 'Principia Metaphysica v21.0 - Descent Chain',
+    ax.text(7, 9.5, 'Principia Metaphysica v23.1 - Descent Chain',
             ha='center', va='center', fontsize=16, fontweight='bold')
     ax.text(7, 9.0, '(24,1) Dual-Shadow Model with Euclidean Bridge',
             ha='center', va='center', fontsize=12, style='italic', color='#666666')
@@ -47,7 +47,7 @@ def create_descent_chain_diagram():
     box_26d = FancyBboxPatch((4.5, 7.5), 5, 1, boxstyle="round,pad=0.1",
                               facecolor='#2C3E50', edgecolor='black', linewidth=2)
     ax.add_patch(box_26d)
-    ax.text(7, 8, '25D(24,1) Bulk', ha='center', va='center',
+    ax.text(7, 8, '27D(26,1) Bulk', ha='center', va='center',
             fontsize=12, fontweight='bold', color='white')
     ax.text(7, 7.65, r'$ds^2 = \sum_{i=1}^{24} dx_i^2 - dt^2$',
             ha='center', va='center', fontsize=10, color='#ECF0F1')
@@ -152,7 +152,7 @@ def create_descent_chain_diagram():
     ax.legend(handles=legend_elements, loc='upper left', framealpha=0.95, fontsize=9)
 
     plt.tight_layout()
-    output_path = os.path.join(OUTPUT_DIR, 'descent_chain_v21.png')
+    output_path = os.path.join(OUTPUT_DIR, 'descent_chain_v23_1.png')
     plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white')
     plt.close()
     print(f"Saved: {output_path}")
@@ -169,7 +169,7 @@ def create_bridge_pressure_diagram():
     ax.set_aspect('equal')
     ax.set_xlabel(r'$y_1$', fontsize=12)
     ax.set_ylabel(r'$y_2$', fontsize=12)
-    ax.set_title('Euclidean Bridge: OR Reduction Sampling\nv21.0', fontsize=14, fontweight='bold')
+    ax.set_title('Euclidean Bridge: OR Reduction Sampling\nv23.1', fontsize=14, fontweight='bold')
 
     # Draw bridge torus (as a circle in 2D projection)
     theta = np.linspace(0, 2*np.pi, 100)
@@ -222,7 +222,7 @@ def create_bridge_pressure_diagram():
     ax.legend(loc='lower right')
 
     plt.tight_layout()
-    output_path = os.path.join(OUTPUT_DIR, 'bridge_pressure_v21.png')
+    output_path = os.path.join(OUTPUT_DIR, 'bridge_pressure_v23_1.png')
     plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white')
     plt.close()
     print(f"Saved: {output_path}")
@@ -233,7 +233,7 @@ def create_w_evolution_diagram():
     """Create dark energy w(a) evolution diagram."""
     fig, ax = plt.subplots(1, 1, figsize=(10, 6))
 
-    # Parameters from v21
+    # Parameters from v23.1
     b3 = 24
     w0 = -1 + 1/b3  # -23/24
     wa = -1/np.sqrt(b3)  # -1/sqrt(24)
@@ -249,7 +249,7 @@ def create_w_evolution_diagram():
     w_desi_err = 0.067
 
     # Plot
-    ax.plot(a, w_a, 'b-', lw=3, label='PM v21.0: w0 = -23/24, wa = -1/sqrt(24)')
+    ax.plot(a, w_a, 'b-', lw=3, label='PM v23.1: w0 = -23/24, wa = -1/sqrt(24)')
     ax.axhline(y=-1, color='gray', linestyle='--', lw=1, label='LCDM (w = -1)')
 
     # DESI band (at a=1)
@@ -275,7 +275,7 @@ def create_w_evolution_diagram():
     ax.set_ylim(-1.05, -0.85)
 
     plt.tight_layout()
-    output_path = os.path.join(OUTPUT_DIR, 'w_evolution_v21.png')
+    output_path = os.path.join(OUTPUT_DIR, 'w_evolution_v23_1.png')
     plt.savefig(output_path, dpi=150, bbox_inches='tight', facecolor='white')
     plt.close()
     print(f"Saved: {output_path}")
@@ -283,7 +283,7 @@ def create_w_evolution_diagram():
 
 
 if __name__ == "__main__":
-    print("=== Generating v21 Visualizations ===")
+    print("=== Generating v23.1 Visualizations ===")
     print()
     create_descent_chain_diagram()
     create_bridge_pressure_diagram()

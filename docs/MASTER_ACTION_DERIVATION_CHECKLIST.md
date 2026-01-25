@@ -9,15 +9,15 @@
 
 ## MASTER ACTION STRUCTURE
 
-The Pneuma Action (25D with v21+ Euclidean bridge) is:
+The Pneuma Action (27D with v23+ Euclidean bridge) is:
 
 ```
-S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_moduli + L_bridge]
+S_Pneuma = ∫ d²⁷x √(-g₂₇) [M₂₇²R₂₇/2 + L_G2 + L_flux + L_moduli + L_bridge]
 ```
 
-**Dimensional Reduction Chain (v22+):**
+**Dimensional Reduction Chain (v23+):**
 ```
-25D(24,1) → [12×(2,0) bridge pairs warp to create shadows] → dual 13D(12,1) shadows + T¹ → [G2(7,0)] → 4D(3,1)
+27D(26,1) → [12×(2,0) bridge pairs + C^(2,0) central sampler warp to create shadows] → dual 13D(12,1) shadows + T¹ → [G2(7,0)] → 4D(3,1)
 ```
 
 **Bridge Coordinate Selection:** Each (x_i, y_i) pair → x_i to Normal shadow, y_i to Mirror shadow
@@ -32,10 +32,10 @@ S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_mod
 
 | ID | Derivation | Status | Appendix |
 |----|------------|--------|----------|
-| MA-01 | Euclidean bridge 25D → dual 13D (v21+) | ✅ COMPLETE | appendix_g_euclidean_bridge |
+| MA-01 | Euclidean bridge 27D → dual 13D (v23+) | ✅ COMPLETE | appendix_g_euclidean_bridge |
 | MA-02 | G2 holonomy compactification 13D → 7D | ✅ COMPLETE | appendix_k_descent_chain |
 | MA-03 | 7D → 4D KK reduction | ✅ COMPLETE | appendix_k_descent_chain |
-| MA-04 | Complete 25D→4D descent chain | ✅ COMPLETE | appendix_k_descent_chain (NEW v22) |
+| MA-04 | Complete 27D→4D descent chain | ✅ COMPLETE | appendix_k_descent_chain (NEW v23) |
 | MA-05 | Central (2,0) sampler integration (v23) | ✅ COMPLETE | master_action_derivations.py |
 
 ### 1.2 Gauge Sector (QED/QCD/Electroweak)
@@ -202,11 +202,11 @@ S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_mod
 
 ## v21+ SIGNATURE VALIDATION CHECKLIST
 
-The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and Euclidean bridge. All gauge physics remains unchanged because it depends on G2 topology (b3=24), not bulk signature.
+The v23+ framework uses 27D bulk with signature (26,1): 24 spatial + 2 Euclidean bridge (central sampler) + 1 time. The dual-shadow structure and Euclidean bridge remain. All gauge physics is unchanged because it depends on G2 topology (b3=24), not bulk signature.
 
 | ID | Validation Item | Status | Notes |
 |----|-----------------|--------|-------|
-| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_25=(24,1), sig_shadow=13D(12,1), 12×(2,0) bridges, T¹=(0,1) |
+| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_27=(26,1), sig_shadow=13D(12,1), 12×(2,0) bridges + C^(2,0) central, T¹=(0,1) |
 | v21-02 | Fermion N_gen=3 preserved | ✅ COMPLETE | Topological: b3/8=24/8=3, spinor dim change irrelevant |
 | v21-03 | QED signature independence | ✅ COMPLETE | Section B.9.4 added to appendix_b |
 | v21-04 | QCD dual-shadow clarification | ✅ COMPLETE | Section C.5.4 added to appendix_c |
@@ -217,15 +217,15 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 2. Coupling constants depend on b3=24 (topology), not bulk signature
 3. Each shadow universe has complete, identical gauge physics
 4. The Euclidean bridge (2,0) carries no gauge charges
-5. The v21+ 25D/(24,1) framework preserves all v20 predictions while eliminating ghost states
+5. The v23+ 27D(26,1) framework preserves all v20 predictions while eliminating ghost states
 
 ---
 
 ## COMPLETED DERIVATIONS (v20.11)
 
-### 1. MA-01: Euclidean Bridge Reduction (27D → 13D) ✅ [v23.1]
+### 1. MA-01: Euclidean Bridge Reduction (27D → dual 13D) ✅ [v23.1]
 - **Appendix**: [appendix_g_euclidean_bridge.md](appendices/appendix_g_euclidean_bridge.md)
-- **Key Result**: 27D(26,1) → dual 13D(12,1) shadows via 12×(2,0) bridge pairs + C^(2,0) central sampler
+- **Key Result**: 27D(26,1) = 24 spatial + 2 central bridge + 1 time → dual 13D(12,1) shadows via 12×(2,0) bridge pairs + C^(2,0) central sampler
 - **Note**: Supersedes v16-v20 Sp(2,R) gauge fixing (see appendix_a for historical reference)
 - **Wolfram Verified**: Metric signature, bridge pair structure, ghost-free physics
 
@@ -337,9 +337,9 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 - **Status**: 90% - geometric ansatz with physical interpretation
 - **Gemini v22.1**: 4 = Higgs doublet DOF (electroweak interpretation); b₃-4 = net G2 cycles after EW breaking
 
-### 9. MA-02/03/04: Complete 25D→4D Descent Chain ✅ COMPLETE
+### 9. MA-02/03/04: Complete 27D→4D Descent Chain ✅ COMPLETE
 - **Appendix**: [appendix_k_descent_chain.md](appendices/appendix_k_descent_chain.md)
-- **Key Result**: Explicit Lagrangians at 25D, 13D, 6D, 4D with matching conditions
+- **Key Result**: Explicit Lagrangians at 27D, 13D, 6D, 4D with matching conditions
 - **Status**: 95% - most complete of new appendices
 
 ### 10. DM-01: Dark Matter Mechanism ✅ COMPLETE (95%)
@@ -375,7 +375,7 @@ The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and E
 
 7. [x] Create Appendix I: Alpha inverse first-principles derivation
 8. [x] Create Appendix J: Higgs VEV from master action
-9. [x] Create Appendix K: Complete 25D→4D descent chain
+9. [x] Create Appendix K: Complete 27D→4D descent chain
 10. [x] Create Appendix L: Dark matter mechanism
 11. [x] Create Appendix M: Fermion mass hierarchy
 12. [x] Create Appendix O: Vielbein emergence proof
