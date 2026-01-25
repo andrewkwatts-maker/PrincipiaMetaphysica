@@ -3208,7 +3208,7 @@ class FormulasRegistry:
 
     @property
     def barbelo_modulus(self) -> int:
-        """Barbelo Modulus (163) - Hebrew: Tsade. The First Emanation.
+        """Barbelo Modulus (163) - Hebrew: קסג. Symbol: ק_סג.
 
         Barbelo is the Divine Mother, the First Thought of the Monad.
         163 sterile residues stabilize the higher-dimensional manifold.
@@ -3275,7 +3275,7 @@ class FormulasRegistry:
 
     @property
     def sophian_modulus(self) -> int:
-        """Visible Residue Modulus (125) - Hebrew: He (5). Symbol: M_ה."""
+        """Visible Residue Modulus (125) - Hebrew: קכה. Symbol: ק_כה."""
         return self._visible_sector
 
     @property
@@ -3285,7 +3285,7 @@ class FormulasRegistry:
 
     @property
     def qedem_chi_sum(self) -> int:
-        """Total Euler Characteristic (144) - Hebrew: Qedem (Ancient). Symbol: chi_Q."""
+        """Total Euler Characteristic (144) - Hebrew: קדם. Symbol: ק_דם."""
         return self._chi_eff_total
 
     @property
