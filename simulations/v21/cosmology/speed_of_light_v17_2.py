@@ -231,11 +231,11 @@ class SpeedOfLightV17(SimulationBase):
                 ContentBlock(
                     type="list",
                     items=[
-                        f"C_geo = SYZYGY_GAP/PLEROMA = 18/24 = {geo_ratio:.4f} (Geometric Ratio)",
-                        f"S_f = (Z6 × 24) + (1/Z6) = 10 + 2.4 = {stretch_factor:.4f} (Stretching Factor)",
-                        f"B_v = (ENNOIA/BARBELO) × (CHRISTOS/SOPHIA) = {bulk_visc:.6f} (Bulk Viscosity)",
-                        f"χ_gc = (ENNOIA-PLEROMA)/(BARBELO+MONAD) = {gnostic_conv:.6f} (Gnostic Conversion)",
-                        f"P_3D = 1 + 1/(ENNOIA × DECAD²) = {spatial_proj:.10f} (Spatial Projection)",
+                        f"C_geo = Δ_syzygy/b₃ = 18/24 = {geo_ratio:.4f} (Geometric Ratio)",
+                        f"S_f = (Z₆ × 24) + (1/Z₆) = 10 + 2.4 = {stretch_factor:.4f} (Stretching Factor)",
+                        f"B_v = (288/P_O) × (Λ_JC/135) = {bulk_visc:.6f} (Bulk Viscosity)",
+                        f"χ_gc = (288-b₃)/(P_O+Ω_W) = {gnostic_conv:.6f} (Geometric Conversion)",
+                        f"P_3D = 1 + 1/(288 × D₁₀²) = {spatial_proj:.10f} (Spatial Projection)",
                     ]
                 ),
                 ContentBlock(
@@ -246,14 +246,14 @@ class SpeedOfLightV17(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Pneuma Tensioner Z.6 = DECAD/PLEROMA = 10/24 acts as the "
+                        "The Pneuma Tensioner Z₆ = D₁₀/b₃ = 10/24 acts as the "
                         "'safety valve' of the manifold, controlling the flow between the "
                         "13D Shadow Branes and the 4D observable universe:"
                     )
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"Z_6 = \frac{\text{DECAD}}{\text{PLEROMA}} = \frac{10}{24} = 0.41\overline{6}",
+                    content=r"Z_6 = \frac{D_{10}}{b_3} = \frac{10}{24} = 0.41\overline{6}",
                     formula_id="pneuma-tensioner-z6",
                     label="(5.61)"
                 ),
@@ -265,14 +265,14 @@ class SpeedOfLightV17(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Decad³ = 1000 correction represents the 3D spatial projection. "
+                        "The D₁₀³ = 1000 correction represents the 3D spatial projection. "
                         "Light propagates THROUGH 3D space, so it experiences this expansion "
                         "from the higher-dimensional bulk:"
                     )
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"P_{3D} = 1 + \frac{1}{\text{ENNOIA} \times \text{DECAD}^2} = 1 + \frac{1}{28800}",
+                    content=r"P_{3D} = 1 + \frac{1}{288 \times D_{10}^2} = 1 + \frac{1}{28800}",
                     formula_id="decad3-projection",
                     label="(5.62)"
                 ),
@@ -372,23 +372,23 @@ class SpeedOfLightV17(SimulationBase):
                     "steps": [
                         {
                             "description": "Geometric Ratio from Syzygy Gap",
-                            "formula": rf"C_{{geo}} = \frac{{\text{{SYZYGY_GAP}}}}{{\text{{PLEROMA}}}} = \frac{{18}}{{24}} = {geo_ratio:.4f}"
+                            "formula": rf"C_{{geo}} = \frac{{\Delta_{{syzygy}}}}{{b_3}} = \frac{{18}}{{24}} = {geo_ratio:.4f}"
                         },
                         {
                             "description": "Stretching Factor from Pneuma expansion",
                             "formula": rf"S_f = (Z_6 \times 24) + (1/Z_6) = 10 + 2.4 = {stretch_factor:.1f}"
                         },
                         {
-                            "description": "Bulk Viscosity from Barbelo drag",
-                            "formula": rf"B_v = \frac{{\text{{ENNOIA}}}}{{\text{{BARBELO}}}} \times \frac{{\text{{CHRISTOS}}}}{{\text{{SOPHIA}}}} = \frac{{288}}{{163}} \times \frac{{153}}{{135}} = {bulk_visc:.6f}"
+                            "description": "Bulk Viscosity from geometric ratios",
+                            "formula": rf"B_v = \frac{{288}}{{P_O}} \times \frac{{\Lambda_{{JC}}}}{{135}} = \frac{{288}}{{163}} \times \frac{{153}}{{135}} = {bulk_visc:.6f}"
                         },
                         {
-                            "description": "Gnostic Conversion factor",
-                            "formula": rf"\chi_{{gc}} = \frac{{\text{{ENNOIA}} - \text{{PLEROMA}}}}{{\text{{BARBELO}} + \text{{MONAD}}}} = \frac{{288 - 24}}{{163 + 1}} = {gnostic_conv:.6f}"
+                            "description": "Geometric Conversion factor",
+                            "formula": rf"\chi_{{gc}} = \frac{{288 - b_3}}{{P_O + \Omega_W}} = \frac{{288 - 24}}{{163 + 1}} = {gnostic_conv:.6f}"
                         },
                         {
-                            "description": "Decad³ spatial projection",
-                            "formula": rf"P_{{3D}} = 1 + \frac{{1}}{{\text{{ENNOIA}} \times \text{{DECAD}}^2}} = 1 + \frac{{1}}{{28800}} = {spatial_proj:.10f}"
+                            "description": "D₁₀³ spatial projection",
+                            "formula": rf"P_{{3D}} = 1 + \frac{{1}}{{288 \times D_{{10}}^2}} = 1 + \frac{{1}}{{28800}} = {spatial_proj:.10f}"
                         },
                         {
                             "description": "Final computation",
@@ -409,17 +409,17 @@ class SpeedOfLightV17(SimulationBase):
                     "C_geo": f"Geometric Ratio = 18/24 = {geo_ratio:.4f}",
                     "S_f": f"Stretching Factor = {stretch_factor:.1f}",
                     "B_v": f"Bulk Viscosity = {bulk_visc:.6f}",
-                    "chi_gc": f"Gnostic Conversion = {gnostic_conv:.6f}",
+                    "chi_gc": f"Geometric Conversion = {gnostic_conv:.6f}",
                     "P_3D": f"Spatial Projection = {spatial_proj:.10f}",
                 }
             ),
             Formula(
                 id="pneuma-tensioner-z6",
                 label="(5.61)",
-                latex=r"Z_6 = \frac{\text{DECAD}}{\text{PLEROMA}} = \frac{10}{24} = 0.41\overline{6}",
-                plain_text="Z.6 = DECAD/PLEROMA = 10/24 = 0.4166...",
+                latex=r"Z_6 = \frac{D_{10}}{b_3} = \frac{10}{24} = 0.41\overline{6}",
+                plain_text="Z₆ = D₁₀/b₃ = 10/24 = 0.4166...",
                 category="DERIVED",
-                description="The (Z.6) Pneuma Tensioner - the 'Safety Valve' controlling brane tension",
+                description="The Z₆ Pneuma Tensioner - the 'Safety Valve' controlling brane tension",
                 inputParams=["topology.b3"],
                 outputParams=[],
                 input_params=["topology.b3"],
@@ -427,12 +427,12 @@ class SpeedOfLightV17(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "DECAD = Residual Pressure Key",
-                            "formula": r"\text{DECAD} = \text{BARBELO} - \text{CHRISTOS} = 163 - 153 = 10"
+                            "description": "D₁₀ = Residual Pressure Key",
+                            "formula": r"D_{10} = P_O - \Lambda_{JC} = 163 - 153 = 10"
                         },
                         {
-                            "description": "PLEROMA = Logic Fabric base",
-                            "formula": r"\text{PLEROMA} = b_3 = 24"
+                            "description": "b₃ = Betti-3 (Logic Fabric base)",
+                            "formula": r"b_3 = 24"
                         },
                         {
                             "description": "Pneuma Tensioner ratio",
@@ -442,18 +442,18 @@ class SpeedOfLightV17(SimulationBase):
                 },
                 terms={
                     "Z_6": "Pneuma Tensioner (10/24)",
-                    "DECAD": "Residual Pressure Key (10)",
-                    "PLEROMA": "Logic Fabric dimension (24)",
+                    "D_10": "Residual Pressure Key (10)",
+                    "b_3": "Betti-3 dimension (24)",
                 }
             ),
             Formula(
                 id="decad3-projection",
                 label="(5.62)",
-                latex=r"P_{3D} = 1 + \frac{1}{\text{ENNOIA} \times \text{DECAD}^2} = 1 + \frac{1}{28800} = 1.0000347222",
-                plain_text=f"P_3D = 1 + 1/(ENNOIA × DECAD²) = 1 + 1/28800 = {spatial_proj:.10f}",
+                latex=r"P_{3D} = 1 + \frac{1}{288 \times D_{10}^2} = 1 + \frac{1}{28800} = 1.0000347222",
+                plain_text=f"P_3D = 1 + 1/(288 × D₁₀²) = 1 + 1/28800 = {spatial_proj:.10f}",
                 category="DERIVED",
                 description=(
-                    "Decad³ spatial projection factor for 3D propagation constants. "
+                    "D₁₀³ spatial projection factor for 3D propagation constants. "
                     "Closes the gap from ~10,444 m/s to ~35 m/s for speed of light."
                 ),
                 inputParams=["topology.roots_total"],
@@ -463,16 +463,16 @@ class SpeedOfLightV17(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "ENNOIA = Logic Closure total",
-                            "formula": r"\text{ENNOIA} = \text{SOPHIA} + \text{CHRISTOS} = 135 + 153 = 288"
+                            "description": "Logic Closure total = 288",
+                            "formula": r"135 + \Lambda_{JC} = 135 + 153 = 288"
                         },
                         {
-                            "description": "DECAD² = 100 (3D volume scale)",
-                            "formula": r"\text{DECAD}^2 = 10^2 = 100"
+                            "description": "D₁₀² = 100 (3D volume scale)",
+                            "formula": r"D_{10}^2 = 10^2 = 100"
                         },
                         {
                             "description": "Projection denominator",
-                            "formula": r"\text{ENNOIA} \times \text{DECAD}^2 = 288 \times 100 = 28800"
+                            "formula": r"288 \times D_{10}^2 = 288 \times 100 = 28800"
                         },
                         {
                             "description": "Spatial projection factor",
@@ -482,8 +482,8 @@ class SpeedOfLightV17(SimulationBase):
                 },
                 terms={
                     "P_3D": f"Spatial projection factor = {spatial_proj:.10f}",
-                    "ENNOIA": "Logic Closure (288)",
-                    "DECAD": "Residual Pressure Key (10)",
+                    "288": "Logic Closure total",
+                    "D_10": "Residual Pressure Key (10)",
                 }
             ),
             Formula(
