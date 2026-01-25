@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:14:55
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:19:45
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -175,7 +175,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | monad_unity | `1.0` | Omega_Aleph | Aleph | 1 |
 | residual_key | `10` | R_Yod | Yod | 10 |
 | syzygy_gap | `18` | S_gap | Chai | 18 |
-| governing_elder_kad | `24` | E_כד | Kad | 24 |
+| elder_kads | `24` | E_כד | Kad | 24 |
 | horos_limit | `27` | H_27 | Kaz | 27 |
 | mephorash_chi | `72` | M_chi | Av | 72 |
 | sophian_registry | `125` | V_Lamed | Lamed | 74 |

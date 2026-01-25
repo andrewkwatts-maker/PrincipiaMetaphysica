@@ -533,7 +533,7 @@ def run_qed_simulation(verbose: bool = True):
     try:
         registry.get_param("topology.b3")
     except (KeyError, ValueError):
-        registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
+        registry.set_param("topology.b3", _REG.elder_kads, source="ESTABLISHED:FormulasRegistry")
 
     results = sim.run(registry)
 

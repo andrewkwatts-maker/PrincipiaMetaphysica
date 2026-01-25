@@ -119,7 +119,7 @@ if __name__ == "__main__":
     print("HARTREE ENERGY v17.2 - Inverse Double-Gate")
     sim = HartreeEnergyV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.elder_kads, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_HARTREE:.15e} J")
     print(f"Bulk:     {sim.bulk_hartree:.15e} J")

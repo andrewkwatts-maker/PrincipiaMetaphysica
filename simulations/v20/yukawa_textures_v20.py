@@ -240,7 +240,7 @@ class YukawaTexturesV20(SimulationBase):
 
         defaults = {
             "geometry.k_gimel": (k_gimel, "ESTABLISHED:FormulasRegistry"),
-            "topology.b3": (_REG.governing_elder_kad, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.elder_kads, "ESTABLISHED:FormulasRegistry"),
         }
 
         for path, (value, source) in defaults.items():

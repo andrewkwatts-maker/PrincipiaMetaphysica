@@ -33,7 +33,7 @@ def test_gauge_invariance():
     """
     # Load geometric anchors from SSoT Registry
     if REGISTRY:
-        b3 = REGISTRY.governing_elder_kad
+        b3 = REGISTRY.elder_kads
         kappa_Delta = REGISTRY.demiurgic_coupling  # κ_Δ = B3/2 + 1/π ≈ 12.318
     else:
         b3 = 24
@@ -70,7 +70,7 @@ def test_su3_color_invariance():
 
     # Load from SSoT Registry
     if REGISTRY:
-        b3 = REGISTRY.governing_elder_kad
+        b3 = REGISTRY.elder_kads
         C_kaf = REGISTRY.c_kaf  # Flux normalization: B3*(B3-7)/(B3-9) = 27.2
     else:
         b3 = 24

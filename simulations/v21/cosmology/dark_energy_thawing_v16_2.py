@@ -1256,7 +1256,7 @@ def export_dark_energy_thawing_v16() -> Dict[str, Any]:
     if not registry.has_param("topology.b3"):
         registry.set_param(
             "topology.b3",
-            _REG.governing_elder_kad,  # 24 from SSoT
+            _REG.elder_kads,  # 24 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )

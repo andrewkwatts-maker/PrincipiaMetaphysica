@@ -115,7 +115,7 @@ class GateRegistry:
     ROOTS = _reg.nitzotzin_roots           # 288 (octonionic/24D structure, NOT E8xE8)
     ACTIVE = _reg.visible_sector       # 125 (5^3)
     HIDDEN = _reg.sophian_pressure       # 163 (O'Dowd Bulk)
-    TORSION_PINS = _reg.governing_elder_kad             # 24 (Betti number)
+    TORSION_PINS = _reg.elder_kads             # 24 (Betti number)
     DIMENSIONS = 4
     STERILE_ANGLE = np.degrees(np.arcsin(_reg.visible_sector / _reg.nitzotzin_roots))  # ≈ 25.7234°
 

@@ -27,7 +27,7 @@ RENAMES = {
     'watts_constant': ('monad_unity', 1, 'Aleph', 'The Monad', 'Absolute unity anchor'),
     'decad': ('residual_key', 10, 'Yod', 'The Hand', 'Core flux residual'),
     # syzygy_gap stays the same
-    'b3': ('governing_elder_kad', 24, 'Kad', 'Elder Vessels', 'G2 cycle container'),
+    'b3': ('elder_kads', 24, 'Kad', 'Elder Vessels', 'G2 cycle container'),
     'horos': ('horos_limit', 27, 'Kaz', 'The Boundary', 'Ancestral higher-D limit'),
     'chi_eff': ('mephorash_chi', 72, 'Av', 'Shem HaMephorash', 'chi_eff generations'),
     'shadow_sector': ('demiurgic_Yetts', 135, 'Kalah', 'Demiurge Gates', 'Normal entry portals'),
@@ -75,7 +75,7 @@ HEBREW_REGISTRY = '''
         "monad_unity": {"hebrew": "Aleph", "gematria": 1, "value": 1.0},
         "residual_key": {"hebrew": "Yod", "gematria": 10, "value": 10},
         "syzygy_gap": {"hebrew": "Chai", "gematria": 18, "value": 18},
-        "governing_elder_kad": {"hebrew": "Kad", "gematria": 24, "value": 24},
+        "elder_kads": {"hebrew": "Kad", "gematria": 24, "value": 24},
         "horos_limit": {"hebrew": "Kaz", "gematria": 27, "value": 27},
         "mephorash_chi": {"hebrew": "Av", "gematria": 72, "value": 72},
         "demiurgic_Yetts": {"hebrew": "Kalah", "gematria": 135, "value": 135},
@@ -140,7 +140,7 @@ def apply_changes(dry_run: bool = True):
     gnostic_additions = {
         'monad_unity': 'The Monad',
         'residual_key': 'The Hand',
-        'governing_elder_kad': 'Elder Vessels',
+        'elder_kads': 'Elder Vessels',
         'horos_limit': 'The Boundary',
         'mephorash_chi': 'Shem HaMephorash',
         'demiurgic_Yetts': 'Demiurge Gates',

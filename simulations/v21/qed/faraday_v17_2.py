@@ -115,7 +115,7 @@ if __name__ == "__main__":
     print("FARADAY CONSTANT v17.2 - Inverse Cubic")
     sim = FaradayV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.elder_kads, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_FARADAY:.10f} C/mol")
     print(f"Bulk:     {sim.bulk_f:.10f} C/mol")
