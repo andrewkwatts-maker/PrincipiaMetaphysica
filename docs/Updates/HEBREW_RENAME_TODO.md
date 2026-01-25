@@ -87,12 +87,12 @@ The following symbols were updated to use Greek subscripts where Greek gematria 
 | `elder_kads` | 24 | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
 | `horos_limit` | 27 | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | `mephorash_chi` | 72 | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
-| `sophian_modulus` | 125 | ℳ^ק_כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
+| `sophian_modulus` | 125 | 𝒬^כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
 | `demiurgic_Yetts` | 135 | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
 | `qedem_chi_sum` | 144 | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
 | `nitzotzin_sector` | 144 | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
 | `logos_joint` | 153 | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
-| `barbelo_modulus` | 163 | ℳ^ק_סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
+| `barbelo_modulus` | 163 | 𝒬^סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
 | `nitzotzin_roots` | 288 | 𝒩_רפח | Raphach (רפח) | 288 | Logic Closure Sum | The Nitzotzin Sparks |
 
 ### Central Sampler (Reid Architecture)
@@ -116,7 +116,7 @@ The following symbols were updated to use Greek subscripts where Greek gematria 
 
 ### Shadow-Modulus Closure Proof
 
-$$\mathcal{M}^{\text{ק}}_{\text{כה}} (125) + \mathcal{M}^{\text{ק}}_{\text{סג}} (163) = \mathcal{N}_{\text{רפח}} (288)$$
+$$\mathcal{\text{ק}}^{\text{כה}} (125) + \mathcal{\text{ק}}^{\text{סג}} (163) = \mathcal{N}_{\text{רפח}} (288)$$
 
 **Sophia Assembly + Barbelo Modulus = Nitzotzin Sparks (Logic Closure)**
 
@@ -172,13 +172,13 @@ $$\mathcal{M}^{\text{ק}}_{\text{כה}} (125) + \mathcal{M}^{\text{ק}}_{\text{�
 - **Value:** 72
 - **Role:** Ayin-Bet (עב = 72) is the gematria of the 72-letter Explicit Name of God. The per-shadow Euler characteristic encodes the chiral structure of each 11D shadow.
 
-### sophian_modulus (ℳ^ק_כה)
+### sophian_modulus (𝒬^כה)
 - **Scientific Name:** Visible Residue Modulus
 - **Gnostic Name:** Sophia Assembly
 - **Hebrew:** Qoph-Kaf-He (קכה)
 - **Gematria:** 125
 - **Value:** 125
-- **Role:** M for Modulus with Qoph (ק) superscript denoting the normal/visible domain. כה = 25 subscript completes 125. The 125 Standard Model parameters visible through Sophia's window (5³ = 125 = manifest volume).
+- **Role:** Calligraphic Qoph (ק) with כה (25) superscript = 125. The 125 Standard Model parameters visible through Sophia's window (5³ = 125 = manifest volume).
 
 ### demiurgic_Yetts (𝒮_δ)
 - **Scientific Name:** Normal Portal Flux
@@ -212,13 +212,13 @@ $$\mathcal{M}^{\text{ק}}_{\text{כה}} (125) + \mathcal{M}^{\text{ק}}_{\text{�
 - **Value:** 153
 - **Role:** Nun-Sofit (ן) = the 'Fish.' Greek nu (ν = 50) matches Hebrew nun (נ = 50) gematria. 153 = triangular(17), the miraculous catch of John 21:11. The Logos joint closes the bridge identity: 135 + 153 = 288.
 
-### barbelo_modulus (ℳ^ק_סג)
+### barbelo_modulus (𝒬^סג)
 - **Scientific Name:** Ancestral Bulk Pressure Modulus
 - **Gnostic Name:** Barbelo Modulus
 - **Hebrew:** Qoph-Samekh-Gimel (קסג)
 - **Gematria:** 163
 - **Value:** 163
-- **Role:** M for Modulus with Qoph (ק) superscript denoting the mirror/hidden domain. סג = 63 subscript completes 163. Barbelo is the Divine Mother, the First Emanation of the Monad. 163 sterile residues stabilize the higher-dimensional manifold: (7 × 24) - 5 = 163. Seesaw heavy M_R ~10^{12} GeV. (Renamed from `sophian_pressure` in v23.2.27)
+- **Role:** Calligraphic Qoph (ק) with סג (63) superscript = 163. Barbelo is the Divine Mother, the First Emanation of the Monad. 163 sterile residues stabilize the higher-dimensional manifold: (7 × 24) - 5 = 163. Seesaw heavy M_R ~10^{12} GeV. (Renamed from `sophian_pressure` in v23.2.27)
 
 ### nitzotzin_roots (𝒩_רפח)
 - **Scientific Name:** Logic Closure Sum
