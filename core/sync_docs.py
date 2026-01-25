@@ -111,8 +111,8 @@ All other values are derived from these constants.
 | Chi Effective (per-shadow) | χ_עב | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | χ_ק | `{reg.qedem_chi_sum}` | Both shadows combined (72 + 72 = 144) |
 | Total Roots (Nitzotzin) | 𝒩_רפח | `{reg.nitzotzin_roots}` | 12 * B3 = 288 Logic Closure Sum |
-| Sophian Modulus | ℳ_ה | `{reg.sophian_modulus}` | 5^3 = 125 Visible Residue Modulus |
-| Barbelo Modulus | 𝒫_צ | `{reg.barbelo_modulus}` | 288 - 125 = 163 Bulk Pressure Modulus |
+| Sophian Modulus | ℳ^ק_כה | `{reg.sophian_modulus}` | 5^3 = 125 Visible Residue Modulus |
+| Barbelo Modulus | ℳ^ק_סג | `{reg.barbelo_modulus}` | 288 - 125 = 163 Ancestral Bulk Pressure Modulus |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
 
@@ -257,12 +257,12 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | elder_kads | `{reg.elder_kads}` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
 | horos_limit | `{reg.horos_limit}` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | mephorash_chi | `{reg.mephorash_chi}` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
-| sophian_modulus | `{reg.sophian_modulus}` | ℳ_ה | He (ה) | 5 | Visible Residue Modulus | Sophia Assembly |
+| sophian_modulus | `{reg.sophian_modulus}` | ℳ^ק_כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
 | demiurgic_Yetts | `{reg.demiurgic_Yetts}` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
 | qedem_chi_sum | `{reg.qedem_chi_sum}` | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
 | nitzotzin_sector | `{reg.nitzotzin_sector}` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
 | logos_joint | `{reg.logos_joint}` | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
-| barbelo_modulus | `{reg.barbelo_modulus}` | 𝒫_צ | Tsade (צ) | 90 | Bulk Pressure Modulus | The Barbelo Hook |
+| barbelo_modulus | `{reg.barbelo_modulus}` | ℳ^ק_סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
 | nitzotzin_roots | `{reg.nitzotzin_roots}` | 𝒩_רפח | Raphach (רפח) | 288 | Logic Closure Sum | The Nitzotzin Sparks |
 
 ### Central Sampler (Reid Architecture)
