@@ -130,7 +130,7 @@ class FRTTauGravityV18(SimulationBase):
         )
 
         # Topological inputs from SSoT registry
-        self.b3 = _REG.b3               # = 24 (Third Betti number)
+        self.b3 = _REG.elders               # = 24 (Third Betti number)
         self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
         self.Vol_proxy = 1e12           # G2 volume in Planck units
 

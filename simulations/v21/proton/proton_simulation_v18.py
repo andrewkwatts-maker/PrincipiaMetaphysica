@@ -193,7 +193,7 @@ class ProtonSimulationV18(SimulationBase):
     def _ensure_required_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required inputs are set in registry."""
         # Use SSOT values from FormulasRegistry
-        b3 = _REG.b3  # 24 from SSOT
+        b3 = _REG.elders  # 24 from SSOT
         # GUT parameters (geometric values)
         defaults = {
             "gauge.M_GUT_GEOMETRIC": (getattr(_REG, "M_GUT_GEOMETRIC", 2.1e16), "ESTABLISHED:torsion_moduli", "GeV"),

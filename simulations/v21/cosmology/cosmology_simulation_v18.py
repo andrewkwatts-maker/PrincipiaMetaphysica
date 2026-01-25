@@ -265,8 +265,8 @@ class CosmologySimulationV18(SimulationBase):
         """Ensure all required topology inputs are set in registry."""
         # Use SSOT values from FormulasRegistry - no hardcoding
         defaults = {
-            "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
-            "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
+            "topology.chi_eff": (_REG.mephorash_chi, "ESTABLISHED:FormulasRegistry"),
             "desi.Omega_m": (0.315, "DESI 2025"),
             "desi.w0": (-0.957, "DESI 2025"),
             "desi.wa": (-0.99, "DESI 2025"),

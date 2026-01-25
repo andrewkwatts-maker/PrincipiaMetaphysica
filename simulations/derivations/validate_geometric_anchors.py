@@ -50,7 +50,7 @@ def validate_parameter(
 def run_validations() -> Dict[str, Dict]:
     """Run all geometric anchor validations."""
 
-    b3 = _REG.b3  # = 24 (Third Betti number from SSoT registry)
+    b3 = _REG.elders  # = 24 (Third Betti number from SSoT registry)
     results = {}
 
     # 1. b₃ (topological invariant)
@@ -218,7 +218,7 @@ def print_validation_report(results: Dict[str, Dict]) -> Tuple[int, int]:
 
 def run_cross_validation_tests() -> List[Tuple[str, bool]]:
     """Run cross-validation consistency tests."""
-    b3 = _REG.b3  # = 24 (Third Betti number from SSoT registry)
+    b3 = _REG.elders  # = 24 (Third Betti number from SSoT registry)
     tests = []
 
     # Test 1: χ_eff = 6b₃

@@ -115,7 +115,7 @@ if __name__ == "__main__":
     print("VON KLITZING CONSTANT v17.2 - Direct Expansion")
     sim = VonKlitzingV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.b3, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_RK:.10f} Ohm")
     print(f"Bulk:     {sim.bulk_rk:.10f} Ohm")

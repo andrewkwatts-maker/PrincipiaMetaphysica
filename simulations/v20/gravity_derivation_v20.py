@@ -187,12 +187,12 @@ class GravityDerivationV20(SimulationBase):
         # k_gimel = demiurgic_coupling in FormulasRegistry (b3/2 + 1/pi = 12.318...)
         k_gimel = _REG.demiurgic_coupling
         # V_G2 placeholder - using chi_eff based volume proxy
-        V_G2 = 1.0 / _REG.chi_eff  # Normalized volume ~0.00694
+        V_G2 = 1.0 / _REG.mephorash_chi  # Normalized volume ~0.00694
 
         defaults = {
             "geometry.k_gimel": (k_gimel, "ESTABLISHED:FormulasRegistry"),
             "geometry.V_G2": (V_G2, "DERIVED:1/chi_eff"),
-            "geometry.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
+            "geometry.chi_eff": (_REG.mephorash_chi, "ESTABLISHED:FormulasRegistry"),
             "electroweak.v_higgs": (246.22, "ESTABLISHED:PDG2024"),  # PDG experimental GeV
         }
 
@@ -218,8 +218,8 @@ class GravityDerivationV20(SimulationBase):
         # Get geometric parameters from SSOT
         # Note: k_gimel = demiurgic_coupling in FormulasRegistry
         k_gimel_default = _REG.demiurgic_coupling  # b3/2 + 1/pi = 12.318...
-        V_G2_default = 1.0 / _REG.chi_eff  # Normalized volume proxy
-        chi_eff_default = _REG.chi_eff
+        V_G2_default = 1.0 / _REG.mephorash_chi  # Normalized volume proxy
+        chi_eff_default = _REG.mephorash_chi
 
         k_gimel = registry.get("geometry.k_gimel", default=k_gimel_default)
         V_G2 = registry.get("geometry.V_G2", default=V_G2_default)

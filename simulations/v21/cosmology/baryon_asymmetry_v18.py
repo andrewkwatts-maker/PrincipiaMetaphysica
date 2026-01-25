@@ -108,10 +108,10 @@ class BaryonAsymmetryV18(SimulationBase):
         )
 
         # Topology constants from SSoT registry
-        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.b3 = _REG.elders  # = 24 (Third Betti number)
         # v22 UPDATE: chi_eff_sector = 72 (per-shadow interpretation)
         # Baryon asymmetry occurs at single 4-brane, so use per-sector chi_eff
-        self.chi_eff = _REG.chi_eff  # = 72 (per-sector chi_eff)
+        self.chi_eff = _REG.mephorash_chi  # = 72 (per-sector chi_eff)
         self.compact_dims = 7
 
         # Cycle asymmetry parameter

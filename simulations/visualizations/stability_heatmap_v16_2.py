@@ -73,7 +73,7 @@ class StabilityHeatmapGenerator:
         """
         self.b2_range = b2_range
         self.b3_range = b3_range
-        self.chi_eff = chi_eff if chi_eff is not None else _REG.chi_eff  # 144 from SSoT
+        self.chi_eff = chi_eff if chi_eff is not None else _REG.mephorash_chi  # 144 from SSoT
         self.n_gen = n_gen
 
     def compute_theta_13(self, b2: int, b3: int, orientation_sum: int = 12) -> float:

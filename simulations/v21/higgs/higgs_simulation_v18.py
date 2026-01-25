@@ -265,12 +265,12 @@ class HiggsSimulationV18(SimulationBase):
 
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required topology inputs are set in registry."""
-        b3 = _REG.b3  # TCS G2 manifold from FormulasRegistry
+        b3 = _REG.elders  # TCS G2 manifold from FormulasRegistry
         k_gimel = b3 / 2.0 + 1.0 / np.pi  # ~ 12.318
 
         defaults = {
             "topology.b3": (b3, "ESTABLISHED:FormulasRegistry", "ESTABLISHED"),
-            "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry", "ESTABLISHED"),
+            "topology.chi_eff": (_REG.mephorash_chi, "ESTABLISHED:FormulasRegistry", "ESTABLISHED"),
             "topology.k_gimel": (k_gimel, "DERIVED:k_gimel_formula", "GEOMETRIC"),
             "topology.T_OMEGA": (1.0, "ESTABLISHED:TCS_CONSTRUCTION", "GEOMETRIC"),
             "higgs.vev_yukawa": (174.0, "ESTABLISHED:PDG_2024", "PHENOMENOLOGICAL"),

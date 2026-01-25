@@ -107,7 +107,7 @@ All other values are derived from these constants.
 
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
-| Betti Three | B3 | `{reg.elder_vessels}` | Third Betti number of G2 manifold |
+| Betti Three | B3 | `{reg.elders}` | Third Betti number of G2 manifold |
 | Chi Effective (per-shadow) | chi_eff | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | chi_eff_total | `{reg.chi_eff_total}` | Both shadows combined (72 + 72 = 144) |
 | Total Roots | - | `{reg.nitzotzin_roots}` | E8 x E8 root lattice |
@@ -181,9 +181,9 @@ $$\\eta_S + \\sigma_T = \\frac{{163}}{{239}} + \\frac{{23}}{{24}} \\approx 1.640
 $$135 (\\text{{Visible}}) + 153 (\\Lambda_{{JC}}) = 288 (\\text{{E8}} \\times \\text{{E8}})$$
 
 **Current Values:**
-- Shadow Sector: `{reg.demiurgic_gates}`
+- Shadow Sector: `{reg.demiurgic_Yetts}`
 - Christ Constant (Lambda_JC): `{reg.logos_joint}`
-- **Sum:** `{reg.demiurgic_gates + reg.logos_joint}`
+- **Sum:** `{reg.demiurgic_Yetts + reg.logos_joint}`
 - **Status:** `{'PASS' if reg.verify_integer_closure() else 'FAIL'}`
 
 ### Tzimtzum Fraction
@@ -240,6 +240,41 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
 **Verification Status:**
 - Bulk Pressure Derivation (163 = (7*24)-5): `{'PASS' if reg.verify_bulk_pressure_derivation() else 'FAIL'}`
 - Sterile = Bulk (163 = 163): `{'PASS' if reg.verify_sterile_equals_bulk() else 'FAIL'}`
+
+---
+
+## Hebrew Symbol Reference (v23.1)
+
+The framework uses Hebrew-derived naming for mathematical constants, connecting gematria to geometric invariants.
+
+### Primary Constants
+
+| Code Name | Value | Symbol | Hebrew | Gematria |
+| :--- | :--- | :--- | :--- | :--- |
+| monad_unity | `{reg.monad_unity}` | Omega_Aleph | Aleph | 1 |
+| residual_key | `{reg.residual_key}` | R_Yod | Yod | 10 |
+| syzygy_gap | `{reg.syzygy_gap}` | S_gap | Chai | 18 |
+| elders | `{reg.elders}` | E_b3 | Kad | 24 |
+| horos_limit | `{reg.horos_limit}` | H_27 | Kaz | 27 |
+| mephorash_chi | `{reg.mephorash_chi}` | M_chi | Av | 72 |
+| sophian_registry | `{reg.sophian_registry}` | V_Lamed | Lamed | 74 |
+| demiurgic_Yetts | `{reg.demiurgic_Yetts}` | Yd | Kalah | 135 |
+| qedem_chi_sum | `{reg.qedem_chi_sum}` | chi_Q | Qedem | 144 |
+| nitzotzin_sector | `{reg.nitzotzin_sector}` | R_Mem | Mem | 144 |
+| logos_joint | `{reg.logos_joint}` | Delta_jc | 153 | 153 |
+| sophian_pressure | `{reg.sophian_pressure}` | P_S | 163 | 163 |
+| nitzotzin_roots | `{reg.nitzotzin_roots}` | R_Xi | 288 | 288 |
+
+### Central Sampler Constants
+
+| Code Name | Value | Symbol | Hebrew | Gematria |
+| :--- | :--- | :--- | :--- | :--- |
+| gnosis_threshold | `{reg.gnosis_threshold}` | G_Tet | Tet | 9 |
+| Dodecad_Anchor | `{reg.Dodecad_Anchor}` | n_12 | Bet-Yod | 12 |
+| Echad_Prime | `{reg.Echad_Prime}` | n_13 | Yud-Gimel | 13 |
+| nitsot_par | `{reg.nitsot_par:.16f}` | N_p | Nun-Qoph | 150 |
+| reid_pair | `{reg.reid_pair}` | R_Resh | Resh | 200 |
+| watts_weight | `{reg.watts_weight:.10f}` | W_phi | Resh-Phi | 261 |
 
 ---
 

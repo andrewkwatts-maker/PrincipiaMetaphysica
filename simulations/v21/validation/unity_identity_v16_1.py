@@ -39,7 +39,7 @@ class UnityIdentitySolver:
 
     def __init__(self):
         # Geometric constants from SSoT registry
-        self.b3 = _REG.b3  # = 24 (Third Betti number)
+        self.b3 = _REG.elders  # = 24 (Third Betti number)
         self.c_kaf = float(_REG.c_kaf)  # = 27.2 Kaehler flux
         self.kappa = 2.101016  # Holonomy bridge constant
 

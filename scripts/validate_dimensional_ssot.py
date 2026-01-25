@@ -232,7 +232,7 @@ class DimensionalSSOTValidator:
 
         # n_gen from chi_eff
         n_gen = self.registry.n_gen
-        b3 = self.registry.elder_vessels
+        b3 = self.registry.elders
         if n_gen != chi_sector // b3:
             self.errors.append(f"n_gen relation failed: {n_gen} != {chi_sector}/{b3}")
             success = False
@@ -258,7 +258,7 @@ class DimensionalSSOTValidator:
             self.info.append(f"roots_total(288) = visible(125) + sterile(163) [OK]")
 
         # Gnostic partition
-        shadow = self.registry.demiurgic_gates
+        shadow = self.registry.demiurgic_Yetts
         christ = self.registry.logos_joint
         if roots_total != shadow + christ:
             self.errors.append(f"Gnostic partition failed: {roots_total} != {shadow} + {christ}")

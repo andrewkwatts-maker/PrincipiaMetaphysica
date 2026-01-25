@@ -516,7 +516,7 @@ def main():
 
     # Add required topology parameters from FormulasRegistry SSoT
     registry.set_param("topology.n_gen", 3, source="foundational")
-    registry.set_param("topology.chi_eff", _REG.chi_eff, source="foundational")  # 144 from SSoT
+    registry.set_param("topology.chi_eff", _REG.mephorash_chi, source="foundational")  # 144 from SSoT
 
     # Create and run appendix
     appendix = AppendixNG2Landscape()

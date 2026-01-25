@@ -237,8 +237,8 @@ class ValidationSimulationV18(SimulationBase):
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required topology inputs are set in registry."""
         defaults = {
-            "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
-            "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
+            "topology.chi_eff": (_REG.mephorash_chi, "ESTABLISHED:FormulasRegistry"),
             # Neutrino predictions (example values)
             "neutrino.theta_12_pred": (33.59, "neutrino_mixing_v16_0"),
             "neutrino.theta_13_pred": (8.33, "neutrino_mixing_v16_0"),

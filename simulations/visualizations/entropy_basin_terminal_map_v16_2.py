@@ -72,7 +72,7 @@ class EntropyBasinVisualization:
         "Metric_Null": {
             "name": "Metric Null",
             "subtitle": "Scale Dissolution",
-            "potential": (_REG.roots_total - 12) / _REG.roots_total,  # 276/288 = 95.83%
+            "potential": (_REG.nitzotzin_roots - 12) / _REG.nitzotzin_roots,  # 276/288 = 95.83%
             "description": "SO(24) returns to bulk",
             "physics": "G → 0, spacetime dissolves",
             "color": PM_COLORS["metric_null"],
@@ -80,16 +80,16 @@ class EntropyBasinVisualization:
         "Gauge_Ghost": {
             "name": "Gauge Ghost",
             "subtitle": "Information Stasis",
-            "potential": _REG.b3 / _REG.roots_total,   # 24/288 = 8.33%
-            "description": f"{_REG.b3} pins lock permanently",
+            "potential": _REG.elders / _REG.nitzotzin_roots,   # 24/288 = 8.33%
+            "description": f"{_REG.elders} pins lock permanently",
             "physics": "Forces freeze, time stops",
             "color": PM_COLORS["gauge_ghost"],
         },
         "Ancestral_Restoration": {
             "name": "Ancestral Restoration",
             "subtitle": "Unitary Return",
-            "potential": _REG.roots_total / _REG.roots_total,  # 288/288 = 100%
-            "description": f"{_REG.visible_sector} + {_REG.sterile_sector} merge",
+            "potential": _REG.nitzotzin_roots / _REG.nitzotzin_roots,  # 288/288 = 100%
+            "description": f"{_REG.visible_sector} + {_REG.sophian_pressure} merge",
             "physics": "Full return to 26D",
             "color": PM_COLORS["restoration"],
         },

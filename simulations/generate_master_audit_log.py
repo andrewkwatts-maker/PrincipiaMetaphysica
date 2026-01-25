@@ -84,7 +84,7 @@ def run_all_audits():
 
     if registry:
         # Load from SSoT Registry
-        b3 = registry.elder_vessels
+        b3 = registry.elders
         chi_eff = registry.mephorash_chi
         roots_total = registry.nitzotzin_roots
         visible_sector = registry.visible_sector

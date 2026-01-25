@@ -1249,14 +1249,14 @@ def export_dark_energy_thawing_v16() -> Dict[str, Any]:
     if not registry.has_param("topology.chi_eff"):
         registry.set_param(
             "topology.chi_eff",
-            _REG.chi_eff,  # 144 from SSoT
+            _REG.mephorash_chi,  # 144 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )
     if not registry.has_param("topology.b3"):
         registry.set_param(
             "topology.b3",
-            _REG.b3,  # 24 from SSoT
+            _REG.elders,  # 24 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )

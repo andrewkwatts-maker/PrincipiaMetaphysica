@@ -79,7 +79,7 @@ class MultiSectorV16(SimulationBase):
         self.width_source = "not_computed"
 
         # G2 topology constants for width derivation
-        self.b3 = _REG.b3  # Associative 3-cycles (third Betti number) from SSOT
+        self.b3 = _REG.elders  # Associative 3-cycles (third Betti number) from SSOT
         self.L_G2 = 1.0  # G2 manifold length scale (normalized)
 
     # -------------------------------------------------------------------------
@@ -169,7 +169,7 @@ class MultiSectorV16(SimulationBase):
         try:
             b3 = registry.get_param("topology.b3")
         except KeyError:
-            b3 = _REG.b3  # Default from SSoT registry
+            b3 = _REG.elders  # Default from SSoT registry
 
         # Step 1: Derive geometric modulation width
         width_data = self._derive_geometric_width(registry, chi_eff)
@@ -403,7 +403,7 @@ class MultiSectorV16(SimulationBase):
             Temperature ratio T'/T
         """
         # G2 topology parameters
-        b3 = _REG.b3  # Associative 3-cycles from SSOT
+        b3 = _REG.elders  # Associative 3-cycles from SSOT
 
         # Decay rate asymmetry from moduli couplings
         decay_asymmetry = (chi_eff / b3**2) ** 2
@@ -975,7 +975,7 @@ def export_multi_sector_v16() -> Dict[str, Any]:
     if not registry.has_param("topology.chi_eff"):
         registry.set_param(
             "topology.chi_eff",
-            _REG.chi_eff,  # 144 from SSoT
+            _REG.mephorash_chi,  # 144 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )
@@ -983,7 +983,7 @@ def export_multi_sector_v16() -> Dict[str, Any]:
     if not registry.has_param("topology.b3"):
         registry.set_param(
             "topology.b3",
-            _REG.b3,  # 24 from SSoT
+            _REG.elders,  # 24 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )
