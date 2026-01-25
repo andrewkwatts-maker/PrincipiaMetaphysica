@@ -80,8 +80,8 @@ class EntropyBasinVisualization:
         "Gauge_Ghost": {
             "name": "Gauge Ghost",
             "subtitle": "Information Stasis",
-            "potential": _REG.elders / _REG.nitzotzin_roots,   # 24/288 = 8.33%
-            "description": f"{_REG.elders} pins lock permanently",
+            "potential": _REG.governing_elder_kad / _REG.nitzotzin_roots,   # 24/288 = 8.33%
+            "description": f"{_REG.governing_elder_kad} pins lock permanently",
             "physics": "Forces freeze, time stops",
             "color": PM_COLORS["gauge_ghost"],
         },

@@ -452,7 +452,7 @@ class FluxIntegralChargeSimulation(SimulationBase):
         super().__init__()
 
         # Get topology from registry
-        self._b3 = _REG.elders  # = 24
+        self._b3 = _REG.governing_elder_kad  # = 24
         self._chi_eff = _REG.mephorash_chi  # = 144
 
         self._topology = G2TopologyConstants(
@@ -595,7 +595,7 @@ class FluxIntegralChargeSimulation(SimulationBase):
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure required inputs are set from SSOT."""
         defaults = {
-            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.governing_elder_kad, "ESTABLISHED:FormulasRegistry"),
             "topology.chi_eff": (_REG.mephorash_chi, "ESTABLISHED:FormulasRegistry"),
         }
 
@@ -678,7 +678,7 @@ class FluxIntegralChargeSimulation(SimulationBase):
                         "*F is the Hodge dual 5-form (in 7D)",
                         "F ^ *F is a 7-form, integrable over G2",
                         "Restriction to 3-cycles gives quantized values",
-                        f"With b3={_REG.elders} cycles, get spectrum of charges"
+                        f"With b3={_REG.governing_elder_kad} cycles, get spectrum of charges"
                     ]
                 },
                 terms={
@@ -1099,7 +1099,7 @@ def run_flux_integral_simulation(verbose: bool = True) -> Dict[str, Any]:
     registry = PMRegistry.get_instance()
 
     # Set up inputs from SSOT
-    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry", status="ESTABLISHED")
+    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry", status="ESTABLISHED")
     registry.set_param("topology.chi_eff", _REG.mephorash_chi, source="ESTABLISHED:FormulasRegistry", status="ESTABLISHED")
 
     sim = FluxIntegralChargeSimulation()
@@ -1111,7 +1111,7 @@ def run_flux_integral_simulation(verbose: bool = True) -> Dict[str, Any]:
         print("=" * 70)
 
         print("\n--- Topology Inputs ---")
-        print(f"  b3 (3-cycles):       {_REG.elders}")
+        print(f"  b3 (3-cycles):       {_REG.governing_elder_kad}")
         print(f"  chi_eff (Euler):     {_REG.mephorash_chi}")
 
         print("\n--- Dirac Quantization ---")

@@ -41,7 +41,7 @@ sys.path.insert(0, project_root)
 try:
     from core.FormulasRegistry import FormulasRegistry
     _SSOT = FormulasRegistry()
-    B3_DEFAULT = _SSOT.elders               # Third Betti number = 24
+    B3_DEFAULT = _SSOT.governing_elder_kad               # Third Betti number = 24
     CHI_EFF_TOTAL = _SSOT.chi_eff_total # Full manifold Euler char = 144
 except ImportError:
     # Fallback values if SSOT not available (standalone execution)

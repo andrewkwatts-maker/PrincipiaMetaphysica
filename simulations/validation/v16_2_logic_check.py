@@ -36,7 +36,7 @@ class V16_2_LogicChecker:
     """
 
     def __init__(self):
-        self.b3 = _REG.elders  # = 24 (Third Betti number from SSoT registry)
+        self.b3 = _REG.governing_elder_kad  # = 24 (Third Betti number from SSoT registry)
         self.D_crit = 26  # Critical dimension
         self.results = {}
         self.all_passed = True

@@ -351,7 +351,7 @@ class DarkEnergyV16(SimulationBase):
         # v22: Use thawing formula from G2 topology with 12-pair aggregation
         # w0 = -1 + 1/b3 where b3 = 24 (associative 3-cycles)
         # The 12-pair aggregation (b3/2 = 12) reduces variance, not the w0 value
-        b3 = _REG.elders  # = 24 from SSoT registry
+        b3 = _REG.governing_elder_kad  # = 24 from SSoT registry
         n_pairs = b3 // 2  # = 12 pairs for aggregation
         w0 = -1.0 + (1.0 / b3)
 
@@ -431,7 +431,7 @@ class DarkEnergyV16(SimulationBase):
     def get_section_content(self) -> Optional[SectionContent]:
         """Return section content for the paper with dynamic values."""
         # Compute values dynamically from SSoT registry
-        b3 = _REG.elders  # = 24 from SSoT registry
+        b3 = _REG.governing_elder_kad  # = 24 from SSoT registry
         w0, w0_frac, _ = w0_from_b3(b3)
         wa, _ = wa_from_b3(b3)
         numerator = b3 - 1
@@ -542,7 +542,7 @@ class DarkEnergyV16(SimulationBase):
     def get_formulas(self) -> List[Formula]:
         """Return list of formulas this simulation provides with dynamic values."""
         # Compute values dynamically from SSoT registry
-        b3 = _REG.elders  # = 24 from SSoT registry
+        b3 = _REG.governing_elder_kad  # = 24 from SSoT registry
         w0, w0_frac, _ = w0_from_b3(b3)
         wa, _ = wa_from_b3(b3)
         numerator = b3 - 1
@@ -734,7 +734,7 @@ class DarkEnergyV16(SimulationBase):
         """Return parameter definitions for outputs with dynamic values."""
         # Get computed values or defaults from SSoT registry
         # v16.2: w0 = -1 + 1/b3 = -23/24 (thawing), wa = -1/sqrt(24)
-        b3 = _REG.elders  # = 24 from SSoT registry
+        b3 = _REG.governing_elder_kad  # = 24 from SSoT registry
         w0_computed, w0_frac, _ = w0_from_b3(b3)
         wa_computed, wa_desc = wa_from_b3(b3)
 
@@ -918,7 +918,7 @@ class DarkEnergyV16(SimulationBase):
             Dictionary with beginner explanation fields (using dynamic values)
         """
         # Compute values from SSoT registry
-        b3 = _REG.elders  # = 24 from SSoT registry
+        b3 = _REG.governing_elder_kad  # = 24 from SSoT registry
         n_pairs = b3 // 2  # = 12 pairs
         w0, w0_frac, _ = w0_from_b3(b3)
         wa, _ = wa_from_b3(b3)
@@ -1047,7 +1047,7 @@ def export_dark_energy_v16() -> Dict[str, Any]:
     if not registry.has_param("topology.b3"):
         registry.set_param(
             "topology.b3",
-            _REG.elders,  # 24 from SSoT
+            _REG.governing_elder_kad,  # 24 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )

@@ -90,7 +90,7 @@ HEBREW_ALIASES = {
         "gnostic_role": "Residual Pressure Key - Core flux residual",
         "alias_of": "decad"
     },
-    "elders": {
+    "governing_elder_kad": {
         "value": 24,
         "hebrew": "Kad",
         "gematria": 24,

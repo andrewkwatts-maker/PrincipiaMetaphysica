@@ -210,7 +210,7 @@ class NeutrinoSimulationV18(SimulationBase):
     def _ensure_topology_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required topology inputs are set in registry."""
         # Use SSOT values from FormulasRegistry - derive dependent values from b3
-        b3 = _REG.elders  # 24 from SSOT
+        b3 = _REG.governing_elder_kad  # 24 from SSOT
         defaults = {
             "topology.b2": (b3 // 6, "DERIVED:b3/6:FormulasRegistry"),  # 4
             "topology.b3": (b3, "ESTABLISHED:FormulasRegistry"),  # 24
@@ -556,7 +556,7 @@ class NeutrinoSimulationV18(SimulationBase):
             List of Parameter instances describing the neutrino parameters
         """
         # Use SSOT topology values from FormulasRegistry
-        b3 = _REG.elders  # 24
+        b3 = _REG.governing_elder_kad  # 24
         b2 = b3 // 6  # 4 - derived from b3
         chi_eff = _REG.mephorash_chi  # 144
         n_gen = b3 // 8  # 3 - derived from b3

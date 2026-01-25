@@ -27,7 +27,8 @@ ROOT = Path(__file__).parent.parent
 # v23.2 Rename mappings: old_name -> (new_name, value, symbol, hebrew)
 RENAMES = {
     # Property renames - Registry access patterns
-    "elder_vessels": ("elders", 24, "E_b3", "Kad"),
+    "elder_vessels": ("governing_elder_kad", 24, r"\mathcal{E}_{\text{כד}}", "Kad"),
+    "elders": ("governing_elder_kad", 24, r"\mathcal{E}_{\text{כד}}", "Kad"),
     "demiurgic_gates": ("demiurgic_Yetts", 135, "Yd", "Kalah"),
     "ennoia_chi": ("qedem_chi_sum", 144, "chi_Q", "Qedem"),
     "bridge_effective": ("Echad_Prime", 13, "Yud-Gimel", "Echad"),

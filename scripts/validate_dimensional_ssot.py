@@ -232,7 +232,7 @@ class DimensionalSSOTValidator:
 
         # n_gen from chi_eff
         n_gen = self.registry.n_gen
-        b3 = self.registry.elders
+        b3 = self.registry.governing_elder_kad
         if n_gen != chi_sector // b3:
             self.errors.append(f"n_gen relation failed: {n_gen} != {chi_sector}/{b3}")
             success = False

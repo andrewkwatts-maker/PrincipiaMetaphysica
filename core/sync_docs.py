@@ -107,7 +107,7 @@ All other values are derived from these constants.
 
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
-| Betti Three | B3 | `{reg.elders}` | Third Betti number of G2 manifold |
+| Governing Elder | E_כד | `{reg.governing_elder_kad}` | Third Betti number of G2 manifold (24 Elders) |
 | Chi Effective (per-shadow) | chi_eff | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | chi_eff_total | `{reg.chi_eff_total}` | Both shadows combined (72 + 72 = 144) |
 | Total Roots | - | `{reg.nitzotzin_roots}` | E8 x E8 root lattice |
@@ -254,7 +254,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | monad_unity | `{reg.monad_unity}` | Omega_Aleph | Aleph | 1 |
 | residual_key | `{reg.residual_key}` | R_Yod | Yod | 10 |
 | syzygy_gap | `{reg.syzygy_gap}` | S_gap | Chai | 18 |
-| elders | `{reg.elders}` | E_b3 | Kad | 24 |
+| governing_elder_kad | `{reg.governing_elder_kad}` | E_כד | Kad | 24 |
 | horos_limit | `{reg.horos_limit}` | H_27 | Kaz | 27 |
 | mephorash_chi | `{reg.mephorash_chi}` | M_chi | Av | 72 |
 | sophian_registry | `{reg.sophian_registry}` | V_Lamed | Lamed | 74 |

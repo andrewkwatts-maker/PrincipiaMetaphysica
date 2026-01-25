@@ -323,7 +323,7 @@ class UnitaryFilter:
         if registry.has_param("topology.b3"):
             b3 = registry.get_param("topology.b3")
         else:
-            b3 = _REG.elders if _REG else 24  # Default from SSoT registry
+            b3 = _REG.governing_elder_kad if _REG else 24  # Default from SSoT registry
 
         # D_total is always 26 for bosonic string
         dim_total = 26

@@ -292,7 +292,7 @@ class QuantumBioSimulationV22(SimulationBase):
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required topology inputs are set in registry."""
         defaults = {
-            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.governing_elder_kad, "ESTABLISHED:FormulasRegistry"),
         }
 
         for path, (value, source) in defaults.items():
