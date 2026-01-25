@@ -86,9 +86,9 @@ class CentralSamplerSolver:
         self.reg = reg
 
         # Extract constants from registry (SSoT)
-        self.central_pair = reg.reid_euclidean
-        self.total_local_pairs = reg.total_local_pairs
-        self.total_effective_pairs = reg.total_effective_pairs
+        self.central_pair = reg.reid_merkabah
+        self.total_local_pairs = reg.Dodecad_Anchors  # 12 local (2,0) pairs
+        self.total_effective_pairs = reg.Echad_Prime   # 13 total (12 + 1 central)
         self.central_activation_threshold = reg.gnosis_threshold
         self.D_total_spacelike_like = reg.D_total_spacelike_like
 
@@ -378,8 +378,8 @@ def save_certificate(certificate: Dict[str, Any], output_dir: Path = None) -> Pa
 _validation_reg = get_registry()
 
 # Validate central sampler constants
-assert _validation_reg.reid_euclidean == 1, \
-    f"Central pair should be 1, got {_validation_reg.reid_euclidean}"
+assert _validation_reg.reid_merkabah == 1, \
+    f"Central pair should be 1, got {_validation_reg.reid_merkabah}"
 assert _validation_reg.total_local_pairs == 12, \
     f"Total local pairs should be 12, got {_validation_reg.total_local_pairs}"
 assert _validation_reg.total_effective_pairs == 13, \

@@ -37,8 +37,8 @@ RENAMES = {
     'shadow_sector': 'demiurgic_gates',
     'christ_constant': 'logos_joint',
     'delta_jc': 'logos_joint',
-    'odowd_bulk_pressure': 'sophian_pressure',
-    'sterile_sector': 'sophian_pressure',  # Same value (163)
+    'odowd_bulk_pressure': 'barbelo_modulus',
+    'sterile_sector': 'barbelo_modulus',  # Same value (163)
     'roots_total': 'nitzotzin_roots',
 
     # CENTRAL SAMPLER
@@ -172,7 +172,7 @@ def main():
             'mephorash_chi': ('72', 'עב (Av)'),
             'demiurgic_gates': ('135', 'קלה (Kalah)'),
             'logos_joint': ('153', 'קנג'),
-            'sophian_pressure': ('163', 'קסג'),
+            'barbelo_modulus': ('163', 'צ (Tsade)'),
             'nitzotzin_roots': ('288', 'רפח'),
             'reid_pair': ('200', 'ר (Resh)'),
             'watts_weight': ('~261', 'רϕ'),

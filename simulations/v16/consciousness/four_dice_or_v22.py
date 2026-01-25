@@ -549,7 +549,7 @@ class FourDiceORSimulation(SimulationBase):
         # Get FormulasRegistry for central sampler properties
         try:
             reg = get_formulas_registry()
-            k_central = reg.watts_weight  # phi/sqrt(12)
+            k_central = reg.watts_echud  # phi/sqrt(12)
             activation_threshold = reg.gnosis_threshold  # 9
         except Exception:
             # Fallback to computed values if registry unavailable

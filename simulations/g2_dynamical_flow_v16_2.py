@@ -42,7 +42,7 @@ try:
     from core.FormulasRegistry import FormulasRegistry
     _SSOT = FormulasRegistry()
     B3_DEFAULT = _SSOT.elder_kads               # Third Betti number = 24
-    CHI_EFF_TOTAL = _SSOT.chi_eff_total # Full manifold Euler char = 144
+    CHI_EFF_TOTAL = _SSOT.qedem_chi_sum  # Full manifold Euler char = 144
 except ImportError:
     # Fallback values if SSOT not available (standalone execution)
     B3_DEFAULT = 24

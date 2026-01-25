@@ -219,7 +219,7 @@ def get_pm_parameters(registry: Optional['FormulasRegistry'] = None) -> Dict[str
     if registry:
         b3 = registry.elder_kads
         chi_eff = registry.mephorash_chi              # 72 per sector
-        chi_eff_total = registry.chi_eff_total  # 144 total
+        chi_eff_total = registry.qedem_chi_sum   # 144 total
         phi = registry.phi
         demiurgic_coupling = registry.demiurgic_coupling
         alpha_inverse = registry.alpha_inverse

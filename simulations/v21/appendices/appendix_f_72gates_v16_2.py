@@ -111,13 +111,13 @@ class GateRegistry:
     # Get values from FormulasRegistry SSoT
     _reg = get_registry()
 
-    # Fundamental constants - derived from FormulasRegistry
+    # Fundamental constants - derived from FormulasRegistry (v23.2 Hebrew names)
     ROOTS = _reg.nitzotzin_roots           # 288 (octonionic/24D structure, NOT E8xE8)
-    ACTIVE = _reg.visible_sector       # 125 (5^3)
-    HIDDEN = _reg.sophian_pressure       # 163 (O'Dowd Bulk)
-    TORSION_PINS = _reg.elder_kads             # 24 (Betti number)
+    ACTIVE = _reg.sophian_registry         # 125 (5^3) - formerly visible_sector
+    HIDDEN = _reg.barbelo_modulus          # 163 (Barbelo Modulus)
+    TORSION_PINS = _reg.elder_kads         # 24 (Betti number)
     DIMENSIONS = 4
-    STERILE_ANGLE = np.degrees(np.arcsin(_reg.visible_sector / _reg.nitzotzin_roots))  # ≈ 25.7234°
+    STERILE_ANGLE = np.degrees(np.arcsin(_reg.sophian_registry / _reg.nitzotzin_roots))  # ≈ 25.7234°
 
     # Gate definitions organized by phase
     GATES: Dict[int, Gate] = {}

@@ -49,13 +49,13 @@ USAGE_RENAMES = {
     "shadow_sector": "demiurgic_gates",
     "christ_constant": "logos_joint",
     "delta_jc": "logos_joint",
-    "odowd_bulk_pressure": "sophian_pressure",
-    "sterile_sector": "sophian_pressure",
+    "odowd_bulk_pressure": "barbelo_modulus",
+    "sterile_sector": "barbelo_modulus",
     "roots_total": "nitzotzin_roots",
     # Central Sampler
     "reid_invariant": "nitsot_par",
     "central_pair": "reid_pair",
-    "central_pair_weight": "watts_weight",
+    "central_pair_weight": "watts_echud",
     "central_activation_threshold": "gnosis_threshold",
 }
 

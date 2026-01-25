@@ -130,12 +130,12 @@ HEBREW_ALIASES = {
         "gnostic_role": "Joint Identity Constant - Bridge identity closure",
         "alias_of": "christ_constant"
     },
-    "sophian_pressure": {
+    "barbelo_modulus": {
         "value": 163,
-        "hebrew": "163",
+        "hebrew": "Tsade",
         "gematria": 163,
-        "gnostic_name": "Sophia Pressure",
-        "gnostic_role": "Ancestral Bulk Pressure - Higher-D stabilizer",
+        "gnostic_name": "Barbelo Modulus",
+        "gnostic_role": "Bulk Pressure Modulus - Higher-D stabilizer (The Barbelo Hook)",
         "alias_of": "odowd_bulk_pressure"
     },
     "nitzotzin_roots": {
@@ -146,7 +146,7 @@ HEBREW_ALIASES = {
         "gnostic_role": "Ancestral Root Structure - Ancestral sparks of symmetry",
         "alias_of": "roots_total"
     },
-    "reid_euclidean": {
+    "reid_merkabah": {
         "value": 1,
         "hebrew": "Resh",
         "gematria": 200,
@@ -154,7 +154,7 @@ HEBREW_ALIASES = {
         "gnostic_role": "Central Sampler Count - Global (2,0) averager",
         "alias_of": "central_pair"
     },
-    "watts_weight": {
+    "watts_echud": {
         "value": "phi/sqrt(12)",
         "hebrew": "Resh-Phi",
         "gematria": 261,

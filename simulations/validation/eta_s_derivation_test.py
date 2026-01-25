@@ -232,7 +232,7 @@ def run_eta_s_derivation_test(registry: Optional['FormulasRegistry'] = None) -> 
     # Get SSoT values if registry available
     if registry:
         b3 = registry.elder_kads
-        sterile_sector = registry.sophian_pressure
+        sterile_sector = registry.barbelo_modulus
         eta_s_fitted = registry.sophian_drag
         sigma_t = registry.tzimtzum_pressure
         h0_current = registry.h0_local

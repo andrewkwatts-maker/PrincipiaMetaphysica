@@ -87,14 +87,14 @@ def run_all_audits():
         b3 = registry.elder_kads
         chi_eff = registry.mephorash_chi
         roots_total = registry.nitzotzin_roots
-        visible_sector = registry.visible_sector
-        sterile_sector = registry.sophian_pressure
+        visible_sector = registry.sophian_registry
+        sterile_sector = registry.barbelo_modulus
         kappa_Delta = registry.demiurgic_coupling
         c_kaf = registry.c_kaf
         eta_S = registry.sophian_drag
         sigma_T = registry.tzimtzum_pressure
         sophian_gamma = registry.sophian_gamma
-        odowd_bulk_pressure = registry.sophian_pressure
+        odowd_bulk_pressure = registry.barbelo_modulus
     else:
         # Fallback values matching FormulasRegistry v23 definitions
         b3 = 24  # SEED: Joyce-Karigiannis TCS manifold

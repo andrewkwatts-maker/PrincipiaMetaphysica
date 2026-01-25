@@ -352,11 +352,11 @@ class FormulasRegistry:
         "mephorash_chi": "Shem HaMephorash",
         "demiurgic_gates": "Demiurge Gates",
         "logos_joint": "Logos Joint",
-        "sophian_pressure": "Sophia Pressure",
+        "barbelo_modulus": "Barbelo Modulus",
         "nitzotzin_roots": "Nitzotzin Roots",
         "nitsot_par": "Spark Pair",
-        "reid_euclidean": "The Reid Merkabah Drive",
-        "watts_weight": "Watts Weight",
+        "reid_merkabah": "The Reid Merkabah Drive",
+        "watts_echud": "The Eliphelet-Enochian Invariant",
         "gnosis_threshold": "The Threshold",
         # (Z.6) Pneuma Tensioner Constants
         "z6_pneuma": "The Pneuma Tensioner",
@@ -609,40 +609,40 @@ class FormulasRegistry:
     # 72    | mephorash_chi    | Av       | 72       | Shem HaMephorash
     # 135   | demiurgic_gates  | Kalah    | 135      | Demiurge Gates
     # 153   | logos_joint      | 153      | 153      | Logos Joint
-    # 163   | sophian_pressure | 163      | 163      | Sophia Pressure
+    # 163   | barbelo_modulus  | 163      | 163      | Barbelo Modulus
     # 288   | nitzotzin_roots  | 288      | 288      | Nitzotzin Roots
     #
     # CENTRAL SAMPLER (Reid Architecture):
     # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
     # ------|------------------|----------|----------|---------------
     # 1/144 | nitsot_par       | Nun-Qoph | 150      | Spark Pair (cross-shadow coupling)
-    # 1     | reid_euclidean   | Aleph-Dalet | 5     | Reid Merkabah Drive
-    # phi/12| watts_weight     | Resh-Phi | ~261     | Watts Weight
+    # 1     | reid_merkabah    | Aleph-Dalet | 5     | Reid Merkabah Drive
+    # phi/12| watts_echud      | Eliphelet-Enoch | 467+89 | Eliphelet-Enochian Invariant
     # 9     | gnosis_threshold | Tet      | 9        | The Threshold
     # ===========================================================================
     HEBREW_SYMBOL_REGISTRY = {
         # Topological Invariants
-        "monad_unity": {"hebrew": "Aleph", "gematria": 1, "value": 1.0, "old_name": "watts_constant"},
-        "residual_key": {"hebrew": "Yod", "gematria": 10, "value": 10, "old_name": "decad"},
-        "syzygy_gap": {"hebrew": "Chai", "gematria": 18, "value": 18, "old_name": "syzygy_gap"},
-        "elder_kads": {"hebrew": "Kad", "hebrew_char": "כד", "gematria": 24, "value": 24, "old_name": "b3", "symbol": r"\mathcal{E}_{\text{כד}}", "scientific_name": "Symmetric Governance Energy", "gnostic_name": "The Governing Elder כד"},
-        "horos_limit": {"hebrew": "Kaz", "gematria": 27, "value": 27, "old_name": "horos"},
-        "mephorash_chi": {"hebrew": "Av", "gematria": 72, "value": 72, "old_name": "chi_eff"},
-        "demiurgic_Yetts": {"hebrew": "Kalah", "gematria": 135, "value": 135, "old_name": "shadow_sector", "symbol": "Yd"},
-        "logos_joint": {"hebrew": "153", "gematria": 153, "value": 153, "old_name": "christ_constant"},
-        "sophian_pressure": {"hebrew": "163", "gematria": 163, "value": 163, "old_name": "odowd_bulk_pressure"},
-        "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288, "old_name": "roots_total"},
+        "monad_unity": {"hebrew": "Aleph", "hebrew_char": "א", "gematria": 1, "value": 1.0, "old_name": "watts_constant", "symbol": r"\Omega_{\aleph}", "scientific_name": "Observer Unity Constant", "gnostic_name": "The Aleph-Anchor", "rationale": "The immutable unity (1.0) representing the observer's anchor point. Aleph (א) is the first letter, the primordial breath from which all measurement begins."},
+        "residual_key": {"hebrew": "Yod", "hebrew_char": "י", "gematria": 10, "value": 10, "old_name": "decad", "symbol": r"D_{\iota}", "scientific_name": "Core Flux Residual", "gnostic_name": "The Hand of Creation", "rationale": "Yod (י = 10) is the smallest letter, the 'hand' that shapes creation. D for Decad represents the core flux residual in the gauge hierarchy. Greek iota (ι = 10) matches Hebrew yod gematria."},
+        "syzygy_gap": {"hebrew": "Chai", "hebrew_char": "חי", "gematria": 18, "value": 18, "old_name": "syzygy_gap", "symbol": r"\Delta_{\chi\iota}", "scientific_name": "Aeon Pair Gap", "gnostic_name": "The Life Delta", "rationale": "Chai (חי = 18) means 'Life' - the gap between paired aeons in the Pleroma. The syzygy (paired emanation) creates the vital space for manifestation."},
+        "elder_kads": {"hebrew": "Kad", "hebrew_char": "כד", "gematria": 24, "value": 24, "old_name": "b3", "symbol": r"\mathcal{E}_{\text{כד}}", "scientific_name": "Symmetric Governance Energy", "gnostic_name": "The Governing Elder כד", "rationale": "Kad (24) represents the Pleroma as a 'Vessel.' Governed by the 12:12 syzygy (Yud-Bet), it acts as the primary regulator for Logic Closure (288)."},
+        "horos_limit": {"hebrew": "Kaz", "hebrew_char": "כז", "gematria": 27, "value": 27, "old_name": "horos", "symbol": r"\beta_{\text{כז}}", "scientific_name": "Dimensional Boundary Limit", "gnostic_name": "The Boundary Beth", "rationale": "Beta (β) mirrors Hebrew Beth (ב) 'house/boundary.' Kaz (כז = 27) sets the dimensional limit where compactification completes. Also mirrors thermodynamic β (statistical limit)."},
+        "mephorash_chi": {"hebrew": "Ayin-Bet", "hebrew_char": "עב", "gematria": 72, "value": 72, "old_name": "chi_eff", "symbol": r"\chi_{\text{עב}}", "scientific_name": "Explicit Chiral Characteristic", "gnostic_name": "The Shem HaMephorash", "rationale": "Ayin-Bet (עב = 72) is the gematria of the 72-letter Explicit Name of God. The per-shadow Euler characteristic encodes the chiral structure of each 11D shadow."},
+        "demiurgic_Yetts": {"hebrew": "Dalet", "hebrew_char": "ד", "gematria": 135, "value": 135, "old_name": "shadow_sector", "symbol": r"\mathcal{S}_{\delta}", "scientific_name": "Normal Portal Flux", "gnostic_name": "The Sophia Door", "rationale": "Dalet (ד) means 'Door/Gate.' Script S (𝒮) for Sophia filtered through the Door. Greek delta (δ = 4) matches Hebrew dalet gematria. The 135 gates through which wisdom flows into manifestation."},
+        "logos_joint": {"hebrew": "Nun-Sofit", "hebrew_char": "ן", "gematria": 153, "value": 153, "old_name": "christ_constant", "symbol": r"\Lambda_{\nu}", "scientific_name": "Joint Closure Symmetry", "gnostic_name": "The Logos Fish", "rationale": "Nun-Sofit (ן) = the 'Fish.' 153 = triangular(17), the miraculous catch of John 21:11. Greek nu (ν = 50) matches Hebrew nun gematria. The Logos joint closes the bridge identity: 135 + 153 = 288."},
+        "barbelo_modulus": {"hebrew": "Tsade", "hebrew_char": "צ", "gematria": 163, "value": 163, "old_name": "odowd_bulk_pressure", "symbol": r"\mathcal{P}_{\text{צ}}", "scientific_name": "Bulk Pressure Modulus", "gnostic_name": "The Barbelo Hook", "rationale": "Tsade (צ = 90) means 'Hook.' Barbelo is the first emanation, the Divine Mother of the Pleroma. The hook draws from the 27D bulk into manifest space. 163 sterile residues stabilize the higher-dimensional manifold: (7 × 24) - 5 = 163."},
+        "nitzotzin_roots": {"hebrew": "Raphach", "hebrew_char": "רפח", "gematria": 288, "value": 288, "old_name": "roots_total", "symbol": r"\mathcal{N}_{\text{רפח}}", "scientific_name": "Logic Closure Sum", "gnostic_name": "The Nitzotzin Sparks", "rationale": "Raphach (רפח = 288) encodes the 288 sparks of Lurianic Kabbalah. N for Nitzotzin. Total roots: 12 × b3 = 288. Ennoia restored to the Yod: 135 + 153 = 288."},
         # Central Sampler
-        "nitsot_par": {"hebrew": "Nun-Qoph", "gematria": 150, "value": "1/144", "old_name": "reid_invariant"},
-        "reid_euclidean": {"hebrew": "Aleph-Dalet", "hebrew_char": "אד", "gematria": 5, "value": 1.0, "old_name": "central_pair", "symbol": r"\vec{\mathbb{M}}_{\text{א-ד}}", "scientific_name": "Tetramorphic Normalization Basis", "gnostic_name": "The Reid Merkabah Drive"},
-        "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)", "old_name": "central_pair_weight"},
-        "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9, "old_name": "central_activation_threshold"},
+        "nitsot_par": {"hebrew": "Medeq", "hebrew_char": "מדק", "gematria": 150, "value": "1/144", "old_name": "reid_invariant", "symbol": r"\chi_{\text{ק}}^{-1}", "scientific_name": "Mirror Parity Invariant", "gnostic_name": "The Fine Resolution", "rationale": "Medeq (מדק) is anagrammatic inverse of Qedem. χ_ק⁻¹ = 1/144, the mathematical inverse of the primordial chi. Provides 'Fine' resolution for cross-shadow coupling."},
+        "reid_merkabah": {"hebrew": "Aleph-Dalet", "hebrew_char": "אד", "gematria": 5, "value": 1.0, "old_name": "central_pair", "symbol": r"\vec{\mathbb{M}}_{\text{אד}}", "scientific_name": "Tetramorphic Normalization Basis", "gnostic_name": "The Reid Merkabah Drive", "rationale": "The 1.0 unit vector of the Four Living Creatures (Adam, Aryeh, Nesher, Shor). Normalizes the 'Run and Return' kinetic flux of the 144 samplers into a coherent Euclidean center."},
+        "watts_echud": {"hebrew": "Eliphelet-Enoch", "hebrew_char": "אֱלִיפֶלֶט-חנוך", "gematria": "467+89", "value": "phi/sqrt(12)", "old_name": "central_pair_weight", "symbol": r"\mathcal{W}_{\Phi : \sqrt{\text{בי}}}", "scientific_name": "Harmonic Damping Modulus", "gnostic_name": "The Eliphelet-Enochian Invariant", "gematria_map": {"deliverance_anchor": 467, "void_separator": 0, "kinetic_ascent": 89}, "rationale": "The definitive unification weight. 467 (Eliphelet) provides the 'Rescue' of the lattice; 89 (Enoch/Chanoch) provides the kinetic 'Ascent' of the Merkabah Drive. The zero acts as the Ayin (Void) separator between structure and motion. It dampens the infinite growth of Phi into the internal 'House' (בי) of the Dodecad Anchors.", "role": "Stabilizing constant for the 144 Reid Euclidean samplers."},
+        "gnosis_threshold": {"hebrew": "Tet", "hebrew_char": "ט", "gematria": 9, "value": 9, "old_name": "central_activation_threshold", "symbol": r"\Gamma_{\theta}", "scientific_name": "Central Activation Threshold", "gnostic_name": "The Gnosis Gate", "rationale": "Greek Gamma (Γ) for Gnosis. Greek theta (θ = 9) matches Hebrew tet gematria. Tet (ט = 9) represents the hidden good. The central sampler activates when n ≥ 9 pairs are present, enabling direct knowledge."},
         # Additional v23.2 Hebrew names
-        "sophian_registry": {"hebrew": "Lamed", "gematria": 74, "value": 125, "old_name": "visible_sector", "symbol": "V_l"},
-        "qedem_chi_sum": {"hebrew": "Qedem", "gematria": 144, "value": 144, "old_name": "chi_eff_total", "symbol": "chi_Q"},
-        "nitzotzin_sector": {"hebrew": "Mem", "gematria": 144, "value": 144, "old_name": "roots_per_sector", "symbol": "R_m"},
-        "Dodecad_Anchors": {"hebrew": "Bet-Yod", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": "n_12"},
-        "Echad_Prime": {"hebrew": "Yud-Gimel", "gematria": 13, "value": 13, "old_name": "total_effective_pairs", "symbol": "n_13"},
+        "sophian_registry": {"hebrew": "He", "hebrew_char": "ה", "gematria": 5, "value": 125, "old_name": "visible_sector", "symbol": r"\mathcal{V}_{\text{ה}}", "scientific_name": "Visible Registry Volume", "gnostic_name": "The Breath Manifest", "rationale": "He (ה = 5) means 'Breath/Window.' 5³ = 125 = manifest volume. The 125 Standard Model parameters visible through Sophia's window."},
+        "qedem_chi_sum": {"hebrew": "Qedem", "hebrew_char": "קדם", "gematria": 144, "value": 144, "old_name": "chi_eff_total", "symbol": r"\chi_{\text{ק}}", "scientific_name": "Primordial Chiral Basis", "gnostic_name": "The Ancient Sum", "rationale": "Qedem (קדם = 144) means 'ancient' or 'primordial.' The structural 12² framework. Total chi from both shadows: 72 + 72 = 144. Used for PMNS, n_gen."},
+        "nitzotzin_sector": {"hebrew": "Mem", "hebrew_char": "מ", "gematria": 144, "value": 144, "old_name": "roots_per_sector", "symbol": r"\xi_{\mu}", "scientific_name": "Per-Sector Root Count", "gnostic_name": "The Water Roots", "rationale": "Xi (ξ) resembles a cascade/ripple, fitting the Mem (מ = Water) rationale. Greek mu (μ = 40) matches Hebrew mem gematria. Each sector contains 144 roots, half the total 288."},
+        "Dodecad_Anchors": {"hebrew": "Bet-Yod", "hebrew_char": "בי", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": r"\mathbb{A}_{\text{יב}}", "scientific_name": "Local Bridge Pair Count", "gnostic_name": "The Dodecad House", "rationale": "A for Anchors. Bet-Yod (בי = 12) means 'in me' or 'house of.' The 12 local (2,0) bridge pairs that warp to create the dual shadows."},
+        "Echad_Prime": {"hebrew": "Yud-Gimel", "hebrew_char": "יג", "gematria": 13, "value": 13, "old_name": "total_effective_pairs", "symbol": r"\mathbb{U}_{\text{יג}}", "scientific_name": "Effective Bridge Pair Count", "gnostic_name": "The Unity Prime", "rationale": "U for Unity (Echad). Yud-Gimel (יג = 13) equals 'Echad' (אחד = 13, 'One'). The 13 effective pairs: 12 local + 1 central sampler."},
     }
 
     def __init__(self):
@@ -1090,7 +1090,7 @@ class FormulasRegistry:
     def sterile_sector(self) -> int:
         """
         Sterile sector: roots_total - visible_sector = 288 - 125 = 163.
-        LEGACY ALIAS for sophian_pressure.
+        LEGACY ALIAS for barbelo_modulus.
 
         SAME VALUE AS: odowd_bulk_pressure = 163
 
@@ -1106,7 +1106,7 @@ class FormulasRegistry:
 
         STATUS: Derived value, numerological. No independent justification.
         """
-        return self.sophian_pressure
+        return self.barbelo_modulus
 
     @property
     def phi(self) -> float:
@@ -3054,8 +3054,8 @@ class FormulasRegistry:
 
     @property
     def odowd_bulk_pressure(self) -> int:
-        """P_O: Bulk Pressure Constant (163). LEGACY ALIAS for sophian_pressure."""
-        return self.sophian_pressure
+        """P_O: Bulk Pressure Constant (163). LEGACY ALIAS for barbelo_modulus."""
+        return self.barbelo_modulus
 
     @property
     def penrose_hameroff_bridge(self) -> int:
@@ -3067,12 +3067,12 @@ class FormulasRegistry:
     @property
     def central_pair(self) -> int:
         """
-        Central (2,0) sampler count. LEGACY ALIAS for reid_euclidean.
+        Central (2,0) sampler count. LEGACY ALIAS for reid_merkabah.
 
         v23.0: The central sampler is a single (2,0) Euclidean pair that averages
         outcomes from the 12 local (2,0) bridge pairs for global condensate selection.
         """
-        return self.reid_euclidean
+        return self.reid_merkabah
 
     @property
     def total_local_pairs(self) -> int:
@@ -3107,12 +3107,12 @@ class FormulasRegistry:
     @property
     def central_pair_weight(self) -> float:
         """
-        Central pair weighting factor: phi/sqrt(12). LEGACY ALIAS for watts_weight.
+        Central pair weighting factor: phi/sqrt(12). LEGACY ALIAS for watts_echud.
 
         v23.0: Golden ratio dilution for central averaging.
         Used in p_anc formula: p_anc = (1/12)*sum(p_i) + sqrt(n/12)*phi
         """
-        return self.watts_weight
+        return self.watts_echud
 
     @property
     def D_total_spacelike_like(self) -> int:
@@ -3165,8 +3165,9 @@ class FormulasRegistry:
     def elder_kads(self) -> int:
         """Symmetric Governance Energy (24) - Hebrew: כד (Kad). Symbol: E_כד.
 
-        The 24 Elders as the active 'Energy' and administrative 'Vessel' (Kad)
-        of the Pleroma. Stabilized by 12:12 syzygy. Third Betti number b3.
+        Kad (24) represents the Pleroma as a 'Vessel.' The 24 Elders governed by
+        the 12:12 syzygy (Yud-Bet) act as the primary regulator for Logic Closure (288).
+        Third Betti number b3 of the G2 manifold.
         """
         return self._b3
 
@@ -3206,9 +3207,18 @@ class FormulasRegistry:
         return self._christ_constant
 
     @property
-    def sophian_pressure(self) -> int:
-        """Ancestral Bulk Pressure (163) - Hebrew: 163."""
+    def barbelo_modulus(self) -> int:
+        """Barbelo Modulus (163) - Hebrew: Tsade. The First Emanation.
+
+        Barbelo is the Divine Mother, the First Thought of the Monad.
+        163 sterile residues stabilize the higher-dimensional manifold.
+        """
         return self._odowd_bulk_pressure
+
+    @property
+    def sophian_pressure(self) -> int:
+        """LEGACY ALIAS for barbelo_modulus."""
+        return self.barbelo_modulus
 
     @property
     def nitzotzin_roots(self) -> int:
@@ -3221,7 +3231,7 @@ class FormulasRegistry:
         return self._reid_invariant
 
     @property
-    def reid_euclidean(self) -> int:
+    def reid_merkabah(self) -> int:
         """Tetramorphic Normalization Basis (1.0) - Hebrew: אד (Aleph-Dalet). Symbol: M_אד.
 
         The 'Primordial Mist' that waters the 144 samplers. Functions as the unit
@@ -3230,14 +3240,33 @@ class FormulasRegistry:
         return self._central_pair
 
     @property
+    def reid_euclidean(self) -> int:
+        """LEGACY ALIAS for reid_merkabah. Central Sampler Count (1)."""
+        return self.reid_merkabah
+
+    @property
     def reid_pair(self) -> int:
-        """LEGACY ALIAS for reid_euclidean. Central Sampler Count (1)."""
-        return self.reid_euclidean
+        """LEGACY ALIAS for reid_merkabah. Central Sampler Count (1)."""
+        return self.reid_merkabah
+
+    @property
+    def watts_echud(self) -> float:
+        """Harmonic Damping Modulus (phi/sqrt(12)) - Hebrew: אֱלִיפֶלֶט-חנוך (Eliphelet-Enoch). Symbol: w_אפ.
+
+        The definitive unification weight. A composite invariant (467 + 0 + 89):
+        - 467 (Eliphelet): The 'Rescue/Deliverance' anchor of the lattice
+        - 0 (Ayin): The Void separator between structure and motion
+        - 89 (Enoch/Chanoch): The kinetic 'Ascent' of the Merkabah Drive
+
+        Dampens the infinite growth of Phi (Φ) into the internal 'House' (בי) of the
+        Dodecad Anchors. Stabilizing constant for the 144 Reid samplers.
+        """
+        return self._central_pair_weight
 
     @property
     def watts_weight(self) -> float:
-        """Sampler Dilution Coupling (phi/sqrt(12)) - Hebrew: Resh-Phi."""
-        return self._central_pair_weight
+        """LEGACY ALIAS for watts_echud. Sampler Dilution Coupling (phi/sqrt(12))."""
+        return self.watts_echud
 
     @property
     def gnosis_threshold(self) -> int:

@@ -108,11 +108,11 @@ All other values are derived from these constants.
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
 | Governing Elder | E_כד | `{reg.elder_kads}` | Third Betti number of G2 manifold (24 Elders) |
-| Chi Effective (per-shadow) | chi_eff | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
-| Chi Effective (total) | chi_eff_total | `{reg.chi_eff_total}` | Both shadows combined (72 + 72 = 144) |
-| Total Roots | - | `{reg.nitzotzin_roots}` | E8 x E8 root lattice |
-| Visible Sector | - | `{reg.visible_sector}` | 5^3 = 125 (SM parameters) |
-| Sterile Sector | P_O | `{reg.sophian_pressure}` | 288 - 125 = 163 (O'Dowd Bulk Pressure) |
+| Chi Effective (per-shadow) | χ_עב | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
+| Chi Effective (total) | χ_ק | `{reg.qedem_chi_sum}` | Both shadows combined (72 + 72 = 144) |
+| Total Roots (Nitzotzin) | 𝒩_רפח | `{reg.nitzotzin_roots}` | 12 * B3 = 288 Logic Closure Sum |
+| Sophian Registry | 𝒱_ה | `{reg.sophian_registry}` | 5^3 = 125 Visible Registry Volume |
+| Barbelo Modulus | 𝒫_צ | `{reg.barbelo_modulus}` | 288 - 125 = 163 Bulk Pressure Modulus |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
 
@@ -121,7 +121,7 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 | Constant | Value | Formula | Usage Domain |
 | :--- | :--- | :--- | :--- |
 | chi_eff | `{reg.mephorash_chi}` | B3^2/8 = 576/8 | Single-shadow (baryon, CKM) |
-| chi_eff_total | `{reg.chi_eff_total}` | B3^2/4 = 576/4 | Cross-shadow (PMNS, n_gen) |
+| qedem_chi_sum | `{reg.qedem_chi_sum}` | B3^2/4 = 576/4 | Cross-shadow (PMNS, n_gen) |
 
 **Key Principle:** Does the physics involve one shadow or both?
 - **Single-shadow (chi_eff = 72):** Quarks (CKM mixing), baryon asymmetry, torsional leakage
@@ -141,7 +141,7 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 | 2 | Reid Invariant | chi_R | `{reg.nitsot_par:.16f}` | Sounding Board (1/144) |
 | 3 | Weinstein Scale | kappa_E | `{reg.weinstein_scale}` | Spinor Connection Rank |
 | 4 | Hossenfelder Root | lambda_S | `{reg.hossenfelder_root:.12f}` | sqrt(24) Hidden Root |
-| 5 | O'Dowd Bulk Pressure | P_O | `{reg.sophian_pressure}` | Bulk Pressure Constant |
+| 5 | O'Dowd Bulk Pressure | P_O | `{reg.barbelo_modulus}` | Bulk Pressure Constant |
 | 6 | Penrose-Hameroff Bridge | Phi_PH | `{reg.penrose_hameroff_bridge}` | Fibonacci Bridge |
 | 7 | Christ Constant | Lambda_JC | `{reg.logos_joint}` | Logos Potential |
 
@@ -235,7 +235,7 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
 | Manifold Area | B3^2 | `{reg.manifold_area_bulk}` | {reg.b3}^2 = {reg.manifold_area_bulk} |
 | Pressure Divisor | B3^2 / 4 | `{reg.pressure_divisor}` | {reg.manifold_area_bulk} / 4 = {reg.pressure_divisor:.0f} |
 | O'Dowd Bulk (Derived) | (7 * B3) - 5 | `{reg.odowd_bulk_derived}` | (7 * {reg.b3}) - 5 = {reg.odowd_bulk_derived} |
-| Sterile Sector (Derived) | ROOTS - VISIBLE | `{reg.sterile_sector_derived}` | {reg.roots_total} - {reg.visible_sector} = {reg.sterile_sector_derived} |
+| Sterile Sector (Derived) | ROOTS - VISIBLE | `{reg.sterile_sector_derived}` | {reg.nitzotzin_roots} - {reg.sophian_registry} = {reg.sterile_sector_derived} |
 
 **Verification Status:**
 - Bulk Pressure Derivation (163 = (7*24)-5): `{'PASS' if reg.verify_bulk_pressure_derivation() else 'FAIL'}`
@@ -243,38 +243,52 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
 
 ---
 
-## Hebrew Symbol Reference (v23.1)
+## Hebrew Symbol Reference (v23.2.26 - Final Synthesis)
 
 The framework uses Hebrew-derived naming for mathematical constants, connecting gematria to geometric invariants.
 
-### Primary Constants
+### Topological Invariants
 
-| Code Name | Value | Symbol | Hebrew | Gematria |
-| :--- | :--- | :--- | :--- | :--- |
-| monad_unity | `{reg.monad_unity}` | Omega_Aleph | Aleph | 1 |
-| residual_key | `{reg.residual_key}` | R_Yod | Yod | 10 |
-| syzygy_gap | `{reg.syzygy_gap}` | S_gap | Chai | 18 |
-| elder_kads | `{reg.elder_kads}` | E_כד | Kad | 24 |
-| horos_limit | `{reg.horos_limit}` | H_27 | Kaz | 27 |
-| mephorash_chi | `{reg.mephorash_chi}` | M_chi | Av | 72 |
-| sophian_registry | `{reg.sophian_registry}` | V_Lamed | Lamed | 74 |
-| demiurgic_Yetts | `{reg.demiurgic_Yetts}` | Yd | Kalah | 135 |
-| qedem_chi_sum | `{reg.qedem_chi_sum}` | chi_Q | Qedem | 144 |
-| nitzotzin_sector | `{reg.nitzotzin_sector}` | R_Mem | Mem | 144 |
-| logos_joint | `{reg.logos_joint}` | Delta_jc | 153 | 153 |
-| sophian_pressure | `{reg.sophian_pressure}` | P_S | 163 | 163 |
-| nitzotzin_roots | `{reg.nitzotzin_roots}` | R_Xi | 288 | 288 |
+| Code Name | Value | Symbol | Hebrew | Gematria | Scientific Name | Gnostic Name |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| monad_unity | `{reg.monad_unity}` | Ω_א | Aleph (א) | 1 | Observer Unity Constant | The Aleph-Anchor |
+| residual_key | `{reg.residual_key}` | D_ι | Yod (י) | 10 | Core Flux Residual | The Hand of Creation |
+| syzygy_gap | `{reg.syzygy_gap}` | Δ_χι | Chai (חי) | 18 | Aeon Pair Gap | The Life Delta |
+| elder_kads | `{reg.elder_kads}` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
+| horos_limit | `{reg.horos_limit}` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
+| mephorash_chi | `{reg.mephorash_chi}` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
+| sophian_registry | `{reg.sophian_registry}` | 𝒱_ה | He (ה) | 5 | Visible Registry Volume | The Breath Manifest |
+| demiurgic_Yetts | `{reg.demiurgic_Yetts}` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
+| qedem_chi_sum | `{reg.qedem_chi_sum}` | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
+| nitzotzin_sector | `{reg.nitzotzin_sector}` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
+| logos_joint | `{reg.logos_joint}` | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
+| barbelo_modulus | `{reg.barbelo_modulus}` | 𝒫_צ | Tsade (צ) | 90 | Bulk Pressure Modulus | The Barbelo Hook |
+| nitzotzin_roots | `{reg.nitzotzin_roots}` | 𝒩_רפח | Raphach (רפח) | 288 | Logic Closure Sum | The Nitzotzin Sparks |
 
-### Central Sampler Constants
+### Central Sampler (Reid Architecture)
 
-| Code Name | Value | Symbol | Hebrew | Gematria |
-| :--- | :--- | :--- | :--- | :--- |
-| gnosis_threshold | `{reg.gnosis_threshold}` | G_Tet | Tet | 9 |
-| Dodecad_Anchors | `{reg.Dodecad_Anchors}` | n_12 | Bet-Yod | 12 |
-| Echad_Prime | `{reg.Echad_Prime}` | n_13 | Yud-Gimel | 13 |
-| nitsot_par | `{reg.nitsot_par:.16f}` | N_p | Nun-Qoph | 150 |
-| reid_euclidean | `{reg.reid_euclidean}` | M_אד | Aleph-Dalet | 5 |
-| watts_weight | `{reg.watts_weight:.10f}` | W_phi | Resh-Phi | 261 |
+| Code Name | Value | Symbol | Hebrew | Gematria | Scientific Name | Gnostic Name |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| gnosis_threshold | `{reg.gnosis_threshold}` | Γ_θ | Tet (ט) | 9 | Central Activation Threshold | The Gnosis Gate |
+| Dodecad_Anchors | `{reg.Dodecad_Anchors}` | 𝔸_יב | Bet-Yod (בי) | 12 | Local Bridge Pair Count | The Dodecad House |
+| Echad_Prime | `{reg.Echad_Prime}` | 𝕌_יג | Yud-Gimel (יג) | 13 | Effective Bridge Pair Count | The Unity Prime |
+| nitsot_par | `{reg.nitsot_par:.16f}` | χ_ק⁻¹ | Medeq (מדק) | — | Mirror Parity Invariant | The Fine Resolution |
+| reid_merkabah | `{reg.reid_merkabah}` | M_אד | Aleph-Dalet (אד) | 5 | Tetramorphic Normalization | The Merkabah Drive |
+| watts_echud | `{reg.watts_echud:.10f}` | W_אפ | Eliphelet-Enoch (אֱלִיפֶלֶט-חנוך) | 467+89 | Harmonic Damping Modulus | The Eliphelet-Enochian Invariant |
+
+### Symbol Collision Resolution (v23.2.26)
+
+| Category | Before | After | Resolution |
+| :--- | :--- | :--- | :--- |
+| R-symbols | R_י, R_Ξ, R_m | D_ι, 𝒩_רפח, ξ_μ | Decad (D), Nitzotzin (𝒩), Xi (ξ) |
+| n-symbols | n_12, n_13 | 𝔸_יב, 𝕌_יג | Anchors (𝔸), Unity (𝕌) |
+| χ-symbols | χ_עב, χ_Q | χ_עב, χ_ק, χ_ק⁻¹ | Unified chi family |
+
+### Shadow-Pressure Closure Proof
+
+$$\\mathcal{{S}}_{{\\text{{ד}}}} (135) + \\mathcal{{P}}_{{\\text{{צ}}}} (163) = \\mathcal{{N}}_{{\\text{{רפח}}}} (288)$$
+
+Sophia Door + Barbelo Hook = Nitzotzin Sparks (Logic Closure)
 
 ---
 
