@@ -72,6 +72,106 @@ DERIVED_GNOSTIC = {
     }
 }
 
+# Hebrew Naming Aliases (v23.1 - Scientific-Hebrew Synthesis)
+HEBREW_ALIASES = {
+    "monad_unity": {
+        "value": 1.0,
+        "hebrew": "Aleph",
+        "gematria": 1,
+        "gnostic_name": "The Monad",
+        "gnostic_role": "Observer Unity - Absolute precision anchor",
+        "alias_of": "watts_constant"
+    },
+    "residual_key": {
+        "value": 10,
+        "hebrew": "Yod",
+        "gematria": 10,
+        "gnostic_name": "The Hand",
+        "gnostic_role": "Residual Pressure Key - Core flux residual",
+        "alias_of": "decad"
+    },
+    "elder_vessels": {
+        "value": 24,
+        "hebrew": "Kad",
+        "gematria": 24,
+        "gnostic_name": "Elder Vessels",
+        "gnostic_role": "Third Betti Number b3 - G2 cycle container",
+        "alias_of": "b3"
+    },
+    "horos_limit": {
+        "value": 27,
+        "hebrew": "Kaz",
+        "gematria": 27,
+        "gnostic_name": "The Boundary",
+        "gnostic_role": "Bulk Dimension - Ancestral higher-D limit",
+        "alias_of": "horos"
+    },
+    "mephorash_chi": {
+        "value": 72,
+        "hebrew": "Av",
+        "gematria": 72,
+        "gnostic_name": "Shem HaMephorash",
+        "gnostic_role": "Triality Euler Index - 72-fold name of generations",
+        "alias_of": "chi_eff"
+    },
+    "demiurgic_gates": {
+        "value": 135,
+        "hebrew": "Kalah",
+        "gematria": 135,
+        "gnostic_name": "Demiurge Gates",
+        "gnostic_role": "Visible Sector Gates - Normal entry portals",
+        "alias_of": "shadow_sector"
+    },
+    "logos_joint": {
+        "value": 153,
+        "hebrew": "153",
+        "gematria": 153,
+        "gnostic_name": "Logos Joint",
+        "gnostic_role": "Joint Identity Constant - Bridge identity closure",
+        "alias_of": "christ_constant"
+    },
+    "sophian_pressure": {
+        "value": 163,
+        "hebrew": "163",
+        "gematria": 163,
+        "gnostic_name": "Sophia Pressure",
+        "gnostic_role": "Ancestral Bulk Pressure - Higher-D stabilizer",
+        "alias_of": "odowd_bulk_pressure"
+    },
+    "nitzotzin_roots": {
+        "value": 288,
+        "hebrew": "288",
+        "gematria": 288,
+        "gnostic_name": "Nitzotzin Roots",
+        "gnostic_role": "Ancestral Root Structure - Ancestral sparks of symmetry",
+        "alias_of": "roots_total"
+    },
+    "reid_pair": {
+        "value": 1,
+        "hebrew": "Resh",
+        "gematria": 200,
+        "gnostic_name": "Reid Pair",
+        "gnostic_role": "Central Sampler Count - Global (2,0) averager",
+        "alias_of": "central_pair"
+    },
+    "watts_weight": {
+        "value": "phi/sqrt(12)",
+        "hebrew": "Resh-Phi",
+        "gematria": 261,
+        "gnostic_name": "Watts Weight",
+        "gnostic_role": "Sampler Dilution Coupling - Central averaging weight",
+        "alias_of": "central_pair_weight"
+    },
+    "gnosis_threshold": {
+        "value": 9,
+        "hebrew": "Tet",
+        "gematria": 9,
+        "gnostic_name": "The Threshold",
+        "gnostic_role": "Activation Threshold - Central activates at n >= 9",
+        "alias_of": "central_activation_threshold"
+    }
+}
+
 
 def update_named_constants():
     """Update named_constants.json with Gnostic identities."""
@@ -101,6 +201,12 @@ def update_named_constants():
     data["gnostic_identities"]["derived"] = {}
     for key, info in DERIVED_GNOSTIC.items():
         data["gnostic_identities"]["derived"][key] = info
+
+    # Add Hebrew naming aliases (v23.1)
+    data["hebrew_aliases"] = {
+        "description": "Hebrew-Scientific naming synthesis (v23.1)",
+        "aliases": HEBREW_ALIASES
+    }
 
     # Update individual constant entries with gnostic_name if they exist
     if "constants" in data:
