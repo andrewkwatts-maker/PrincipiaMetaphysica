@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:19:45
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:27:16
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -194,7 +194,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | Dodecad_Anchors | `12` | n_12 | Bet-Yod | 12 |
 | Echad_Prime | `13` | n_13 | Yud-Gimel | 13 |
 | nitsot_par | `0.0069444444444444` | N_p | Nun-Qoph | 150 |
-| reid_pair | `1` | R_Resh | Resh | 200 |
+| reid_euclidean | `1` | M_אד | Aleph-Dalet | 5 |
 | watts_weight | `0.4670861795` | W_phi | Resh-Phi | 261 |
 
 ---

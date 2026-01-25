@@ -355,7 +355,7 @@ class FormulasRegistry:
         "sophian_pressure": "Sophia Pressure",
         "nitzotzin_roots": "Nitzotzin Roots",
         "nitsot_par": "Spark Pair",
-        "reid_pair": "Reid Pair",
+        "reid_euclidean": "The Reid Merkabah Drive",
         "watts_weight": "Watts Weight",
         "gnosis_threshold": "The Threshold",
         # (Z.6) Pneuma Tensioner Constants
@@ -616,7 +616,7 @@ class FormulasRegistry:
     # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
     # ------|------------------|----------|----------|---------------
     # 1/144 | nitsot_par       | Nun-Qoph | 150      | Spark Pair (cross-shadow coupling)
-    # 1     | reid_pair        | Resh     | 200      | Reid Pair
+    # 1     | reid_euclidean   | Aleph-Dalet | 5     | Reid Merkabah Drive
     # phi/12| watts_weight     | Resh-Phi | ~261     | Watts Weight
     # 9     | gnosis_threshold | Tet      | 9        | The Threshold
     # ===========================================================================
@@ -634,7 +634,7 @@ class FormulasRegistry:
         "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288, "old_name": "roots_total"},
         # Central Sampler
         "nitsot_par": {"hebrew": "Nun-Qoph", "gematria": 150, "value": "1/144", "old_name": "reid_invariant"},
-        "reid_pair": {"hebrew": "Resh", "gematria": 200, "value": 1, "old_name": "central_pair"},
+        "reid_euclidean": {"hebrew": "Aleph-Dalet", "hebrew_char": "אד", "gematria": 5, "value": 1.0, "old_name": "central_pair", "symbol": r"\vec{\mathbb{M}}_{\text{א-ד}}", "scientific_name": "Tetramorphic Normalization Basis", "gnostic_name": "The Reid Merkabah Drive"},
         "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)", "old_name": "central_pair_weight"},
         "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9, "old_name": "central_activation_threshold"},
         # Additional v23.2 Hebrew names
@@ -3067,12 +3067,12 @@ class FormulasRegistry:
     @property
     def central_pair(self) -> int:
         """
-        Central (2,0) sampler count. LEGACY ALIAS for reid_pair.
+        Central (2,0) sampler count. LEGACY ALIAS for reid_euclidean.
 
         v23.0: The central sampler is a single (2,0) Euclidean pair that averages
         outcomes from the 12 local (2,0) bridge pairs for global condensate selection.
         """
-        return self.reid_pair
+        return self.reid_euclidean
 
     @property
     def total_local_pairs(self) -> int:
@@ -3221,9 +3221,18 @@ class FormulasRegistry:
         return self._reid_invariant
 
     @property
-    def reid_pair(self) -> int:
-        """Central Sampler Count (1) - Hebrew: Resh (200)."""
+    def reid_euclidean(self) -> int:
+        """Tetramorphic Normalization Basis (1.0) - Hebrew: אד (Aleph-Dalet). Symbol: M_אד.
+
+        The 'Primordial Mist' that waters the 144 samplers. Functions as the unit
+        vector for the Four Living Creatures, normalizing the kinetic 'Run and Return' flux.
+        """
         return self._central_pair
+
+    @property
+    def reid_pair(self) -> int:
+        """LEGACY ALIAS for reid_euclidean. Central Sampler Count (1)."""
+        return self.reid_euclidean
 
     @property
     def watts_weight(self) -> float:

@@ -146,7 +146,7 @@ HEBREW_ALIASES = {
         "gnostic_role": "Ancestral Root Structure - Ancestral sparks of symmetry",
         "alias_of": "roots_total"
     },
-    "reid_pair": {
+    "reid_euclidean": {
         "value": 1,
         "hebrew": "Resh",
         "gematria": 200,

@@ -273,7 +273,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | Dodecad_Anchors | `{reg.Dodecad_Anchors}` | n_12 | Bet-Yod | 12 |
 | Echad_Prime | `{reg.Echad_Prime}` | n_13 | Yud-Gimel | 13 |
 | nitsot_par | `{reg.nitsot_par:.16f}` | N_p | Nun-Qoph | 150 |
-| reid_pair | `{reg.reid_pair}` | R_Resh | Resh | 200 |
+| reid_euclidean | `{reg.reid_euclidean}` | M_אד | Aleph-Dalet | 5 |
 | watts_weight | `{reg.watts_weight:.10f}` | W_phi | Resh-Phi | 261 |
 
 ---
