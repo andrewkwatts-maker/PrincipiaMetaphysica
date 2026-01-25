@@ -970,13 +970,14 @@ class FormulasRegistry:
 
     @property
     def b3(self) -> int:
-        """Third Betti number of G2 manifold."""
-        return self._b3
+        """Third Betti number of G2 manifold. LEGACY ALIAS for elder_vessels."""
+        return self.elder_vessels
 
     @property
     def chi_eff(self) -> int:
         """
         Per-sector effective chiral index: chi_eff_sector = 72.
+        LEGACY ALIAS for mephorash_chi.
 
         n_gen = chi_eff/24 = 72/24 = 3 (M-theory index theorem per sector)
 
@@ -991,7 +992,7 @@ class FormulasRegistry:
 
         Reference: Acharya, B.S. & Witten, E. (2001). arXiv:hep-th/0109152
         """
-        return self._chi_eff
+        return self.mephorash_chi
 
     @property
     def chi_eff_total(self) -> int:
@@ -1029,6 +1030,7 @@ class FormulasRegistry:
     def roots_total(self) -> int:
         """
         Logic Closure Total (288 = b3 * 12 = 24 * 12).
+        LEGACY ALIAS for nitzotzin_roots.
 
         DUAL INTERPRETATION:
         1. GNOSTIC: 288 = shadow_sector(135) + christ_constant(153)
@@ -1038,7 +1040,7 @@ class FormulasRegistry:
         (which would be 480 = 240 + 240). The 288 arises from b3=24 times the
         spinor connection rank 12, providing a 24D-dimensional basis for parameter projection.
         """
-        return self._roots_total
+        return self.nitzotzin_roots
 
     @property
     def roots_per_sector(self) -> int:
@@ -1079,6 +1081,7 @@ class FormulasRegistry:
     def sterile_sector(self) -> int:
         """
         Sterile sector: roots_total - visible_sector = 288 - 125 = 163.
+        LEGACY ALIAS for sophian_pressure.
 
         SAME VALUE AS: odowd_bulk_pressure = 163
 
@@ -1094,7 +1097,7 @@ class FormulasRegistry:
 
         STATUS: Derived value, numerological. No independent justification.
         """
-        return self._sterile_sector
+        return self.sophian_pressure
 
     @property
     def phi(self) -> float:
@@ -1160,8 +1163,8 @@ class FormulasRegistry:
 
     @property
     def horos(self) -> int:
-        """The Horos: Dimensional Boundary (27D bulk frame)."""
-        return self._D_ancestral_total  # D_bulk = 27 (v23.1 with central sampler)
+        """The Horos: Dimensional Boundary (27D bulk frame). LEGACY ALIAS for horos_limit."""
+        return self.horos_limit
 
     # =========================================================================
     # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v23.1)
@@ -1350,6 +1353,7 @@ class FormulasRegistry:
     def decad(self) -> int:
         """
         The Decad (10) - The Residual Pressure Key.
+        LEGACY ALIAS for residual_key.
 
         Formula: DECAD = BARBELO - CHRISTOS = 163 - 153 = 10
 
@@ -1361,7 +1365,7 @@ class FormulasRegistry:
         In Gnostic terms, the number 10 represents the Decad—the first group
         of Aeons that emerge to organize the Pleroma.
         """
-        return self.DECAD  # 10
+        return self.residual_key
 
     @property
     def z6_pneuma(self) -> float:
@@ -3021,13 +3025,13 @@ class FormulasRegistry:
 
     @property
     def watts_constant(self) -> float:
-        """Omega_W: Observer Unity (immutable at 1.0)."""
-        return self._watts_constant
+        """Omega_W: Observer Unity (immutable at 1.0). LEGACY ALIAS for monad_unity."""
+        return self.monad_unity
 
     @property
     def reid_invariant(self) -> float:
-        """chi_R: Sounding Board Coefficient (1/144)."""
-        return self._reid_invariant
+        """chi_R: Sounding Board Coefficient (1/144). LEGACY ALIAS for nitsot_par."""
+        return self.nitsot_par
 
     @property
     def weinstein_scale(self) -> float:
@@ -3041,8 +3045,8 @@ class FormulasRegistry:
 
     @property
     def odowd_bulk_pressure(self) -> int:
-        """P_O: Bulk Pressure Constant (163)."""
-        return self._odowd_bulk_pressure
+        """P_O: Bulk Pressure Constant (163). LEGACY ALIAS for sophian_pressure."""
+        return self.sophian_pressure
 
     @property
     def penrose_hameroff_bridge(self) -> int:
@@ -3054,12 +3058,12 @@ class FormulasRegistry:
     @property
     def central_pair(self) -> int:
         """
-        Central (2,0) sampler count.
+        Central (2,0) sampler count. LEGACY ALIAS for reid_pair.
 
         v23.0: The central sampler is a single (2,0) Euclidean pair that averages
         outcomes from the 12 local (2,0) bridge pairs for global condensate selection.
         """
-        return self._central_pair
+        return self.reid_pair
 
     @property
     def total_local_pairs(self) -> int:
@@ -3082,22 +3086,22 @@ class FormulasRegistry:
     @property
     def central_activation_threshold(self) -> int:
         """
-        Gnosis threshold for central sampler activation.
+        Gnosis threshold for central sampler activation. LEGACY ALIAS for gnosis_threshold.
 
         v23.0: Central activates when n_local >= 9 (mid-gnosis).
         This enables global averaging for precision (sigma -> 0).
         """
-        return self._central_activation_threshold
+        return self.gnosis_threshold
 
     @property
     def central_pair_weight(self) -> float:
         """
-        Central pair weighting factor: phi/sqrt(12).
+        Central pair weighting factor: phi/sqrt(12). LEGACY ALIAS for watts_weight.
 
         v23.0: Golden ratio dilution for central averaging.
         Used in p_anc formula: p_anc = (1/12)*sum(p_i) + sqrt(n/12)*phi
         """
-        return self._central_pair_weight
+        return self.watts_weight
 
     @property
     def D_total_spacelike_like(self) -> int:
@@ -3128,78 +3132,78 @@ class FormulasRegistry:
         return self._D_v23_spacetime_total
 
     # ===========================================================================
-    # HEBREW NAMING ALIASES (v23.1 - Backward Compatible)
+    # HEBREW NAMING PROPERTIES (v23.1 - PRIMARY)
     # ===========================================================================
-    # These aliases map the new Hebrew-scientific names to existing properties.
-    # Old code continues to work; new code can use either naming scheme.
+    # These are the primary Hebrew-scientific names accessing internal variables.
+    # The old names (b3, watts_constant, etc.) are aliases for backward compatibility.
     #
     # See HEBREW_SYMBOL_REGISTRY for the complete gematria mapping.
     # ===========================================================================
 
     @property
     def monad_unity(self) -> float:
-        """Observer Unity (1.0) - Hebrew: Aleph (1). Alias for watts_constant."""
-        return self.watts_constant
+        """Observer Unity (1.0) - Hebrew: Aleph (1)."""
+        return self._watts_constant
 
     @property
     def residual_key(self) -> int:
-        """Residual Pressure Key (10) - Hebrew: Yod (10). Alias for decad."""
-        return self.decad
+        """Residual Pressure Key (10) - Hebrew: Yod (10)."""
+        return self.DECAD
 
     @property
     def elder_vessels(self) -> int:
-        """Third Betti Number b3 (24) - Hebrew: Kad (24). Alias for b3."""
-        return self.b3
+        """Third Betti Number b3 (24) - Hebrew: Kad (24)."""
+        return self._b3
 
     @property
     def horos_limit(self) -> int:
-        """Bulk Boundary Dimension (27) - Hebrew: Kaz (27). Alias for horos."""
-        return self.horos
+        """Bulk Boundary Dimension (27) - Hebrew: Kaz (27)."""
+        return self._D_ancestral_total  # D_bulk = 27 (v23.1 with central sampler)
 
     @property
     def mephorash_chi(self) -> int:
-        """Triality Euler Index (72) - Hebrew: Av (72). Alias for chi_eff."""
-        return self.chi_eff
+        """Triality Euler Index (72) - Hebrew: Av (72)."""
+        return self._chi_eff
 
     @property
     def demiurgic_gates(self) -> int:
-        """Visible Sector Gates (135) - Hebrew: Kalah (135). Alias for shadow_sector."""
-        return self.shadow_sector
+        """Visible Sector Gates (135) - Hebrew: Kalah (135)."""
+        return self._shadow_sector
 
     @property
     def logos_joint(self) -> int:
-        """Joint Identity Constant (153) - Hebrew: 153. Alias for christ_constant."""
-        return self.christ_constant
+        """Joint Identity Constant (153) - Hebrew: 153."""
+        return self._christ_constant
 
     @property
     def sophian_pressure(self) -> int:
-        """Ancestral Bulk Pressure (163) - Hebrew: 163. Alias for odowd_bulk_pressure."""
-        return self.odowd_bulk_pressure
+        """Ancestral Bulk Pressure (163) - Hebrew: 163."""
+        return self._odowd_bulk_pressure
 
     @property
     def nitzotzin_roots(self) -> int:
-        """Ancestral Root Structure (288) - Hebrew: 288. Alias for roots_total."""
-        return self.roots_total
+        """Ancestral Root Structure (288) - Hebrew: 288."""
+        return self._roots_total
 
     @property
     def nitsot_par(self) -> float:
-        """Spark Pair coupling (1/144) - Hebrew: Nun-Qoph (150). Alias for reid_invariant."""
-        return self.reid_invariant
+        """Spark Pair coupling (1/144) - Hebrew: Nun-Qoph (150)."""
+        return self._reid_invariant
 
     @property
     def reid_pair(self) -> int:
-        """Central Sampler Count (1) - Hebrew: Resh (200). Alias for central_pair."""
-        return self.central_pair
+        """Central Sampler Count (1) - Hebrew: Resh (200)."""
+        return self._central_pair
 
     @property
     def watts_weight(self) -> float:
-        """Sampler Dilution Coupling (phi/sqrt(12)) - Hebrew: Resh-Phi. Alias for central_pair_weight."""
-        return self.central_pair_weight
+        """Sampler Dilution Coupling (phi/sqrt(12)) - Hebrew: Resh-Phi."""
+        return self._central_pair_weight
 
     @property
     def gnosis_threshold(self) -> int:
-        """Activation Threshold (9) - Hebrew: Tet (9). Alias for central_activation_threshold."""
-        return self.central_activation_threshold
+        """Activation Threshold (9) - Hebrew: Tet (9)."""
+        return self._central_activation_threshold
 
     def central_sampler_active(self, n_local: int) -> bool:
         """
@@ -3245,8 +3249,8 @@ class FormulasRegistry:
 
     @property
     def christ_constant(self) -> int:
-        """Lambda_JC: Logos Potential (153)."""
-        return self._christ_constant
+        """Lambda_JC: Logos Potential (153). LEGACY ALIAS for logos_joint."""
+        return self.logos_joint
 
     # --- Mechanical Triad ---
 
@@ -3286,8 +3290,8 @@ class FormulasRegistry:
 
     @property
     def shadow_sector(self) -> int:
-        """Shadow sector for Integer Closure (135)."""
-        return self._shadow_sector
+        """Shadow sector for Integer Closure (135). LEGACY ALIAS for demiurgic_gates."""
+        return self.demiurgic_gates
 
     # --- JC Identity Aliases (v17.2-Absolute) ---
 

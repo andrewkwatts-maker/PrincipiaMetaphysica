@@ -107,12 +107,12 @@ All other values are derived from these constants.
 
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
-| Betti Three | B3 | `{reg.b3}` | Third Betti number of G2 manifold |
-| Chi Effective (per-shadow) | chi_eff | `{reg.chi_eff}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
+| Betti Three | B3 | `{reg.elder_vessels}` | Third Betti number of G2 manifold |
+| Chi Effective (per-shadow) | chi_eff | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | chi_eff_total | `{reg.chi_eff_total}` | Both shadows combined (72 + 72 = 144) |
-| Total Roots | - | `{reg.roots_total}` | E8 x E8 root lattice |
+| Total Roots | - | `{reg.nitzotzin_roots}` | E8 x E8 root lattice |
 | Visible Sector | - | `{reg.visible_sector}` | 5^3 = 125 (SM parameters) |
-| Sterile Sector | P_O | `{reg.sterile_sector}` | 288 - 125 = 163 (O'Dowd Bulk Pressure) |
+| Sterile Sector | P_O | `{reg.sophian_pressure}` | 288 - 125 = 163 (O'Dowd Bulk Pressure) |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
 
@@ -120,7 +120,7 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 
 | Constant | Value | Formula | Usage Domain |
 | :--- | :--- | :--- | :--- |
-| chi_eff | `{reg.chi_eff}` | B3^2/8 = 576/8 | Single-shadow (baryon, CKM) |
+| chi_eff | `{reg.mephorash_chi}` | B3^2/8 = 576/8 | Single-shadow (baryon, CKM) |
 | chi_eff_total | `{reg.chi_eff_total}` | B3^2/4 = 576/4 | Cross-shadow (PMNS, n_gen) |
 
 **Key Principle:** Does the physics involve one shadow or both?
@@ -137,13 +137,13 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 
 | # | Name | Symbol | Value | Role |
 | :--- | :--- | :--- | :--- | :--- |
-| 1 | Watts Constant | Omega_W | `{reg.watts_constant}` | Observer Unity |
-| 2 | Reid Invariant | chi_R | `{reg.reid_invariant:.16f}` | Sounding Board (1/144) |
+| 1 | Watts Constant | Omega_W | `{reg.monad_unity}` | Observer Unity |
+| 2 | Reid Invariant | chi_R | `{reg.nitsot_par:.16f}` | Sounding Board (1/144) |
 | 3 | Weinstein Scale | kappa_E | `{reg.weinstein_scale}` | Spinor Connection Rank |
 | 4 | Hossenfelder Root | lambda_S | `{reg.hossenfelder_root:.12f}` | sqrt(24) Hidden Root |
-| 5 | O'Dowd Bulk Pressure | P_O | `{reg.odowd_bulk_pressure}` | Bulk Pressure Constant |
+| 5 | O'Dowd Bulk Pressure | P_O | `{reg.sophian_pressure}` | Bulk Pressure Constant |
 | 6 | Penrose-Hameroff Bridge | Phi_PH | `{reg.penrose_hameroff_bridge}` | Fibonacci Bridge |
-| 7 | Christ Constant | Lambda_JC | `{reg.christ_constant}` | Logos Potential |
+| 7 | Christ Constant | Lambda_JC | `{reg.logos_joint}` | Logos Potential |
 
 ### The Mechanical Triad (Gates 64, 46, 70)
 
@@ -181,9 +181,9 @@ $$\\eta_S + \\sigma_T = \\frac{{163}}{{239}} + \\frac{{23}}{{24}} \\approx 1.640
 $$135 (\\text{{Visible}}) + 153 (\\Lambda_{{JC}}) = 288 (\\text{{E8}} \\times \\text{{E8}})$$
 
 **Current Values:**
-- Shadow Sector: `{reg.shadow_sector}`
-- Christ Constant (Lambda_JC): `{reg.christ_constant}`
-- **Sum:** `{reg.shadow_sector + reg.christ_constant}`
+- Shadow Sector: `{reg.demiurgic_gates}`
+- Christ Constant (Lambda_JC): `{reg.logos_joint}`
+- **Sum:** `{reg.demiurgic_gates + reg.logos_joint}`
 - **Status:** `{'PASS' if reg.verify_integer_closure() else 'FAIL'}`
 
 ### Tzimtzum Fraction

@@ -269,7 +269,7 @@ class SterilityReporter:
         # Registry values (the "claims" we're verifying)
         h0_claimed = reg.h0_local
         parity_claimed = reg.parity_sum
-        closure_claimed = reg.shadow_sector + reg.christ_constant
+        closure_claimed = reg.demiurgic_gates + reg.logos_joint
 
         # Independent targets (derived from raw seeds, NOT registry)
         h0_target = float((independent["logic_closure"] / 4) -
@@ -353,7 +353,7 @@ class SterilityReporter:
                 },
                 "watts_guard_rail": {
                     "description": "Omega_W = 1.0 exactly",
-                    "value": reg.watts_constant,
+                    "value": reg.monad_unity,
                     "target": 1.0,
                     "status": "PASS" if reg.verify_watts_constant() else "FAIL"
                 },
