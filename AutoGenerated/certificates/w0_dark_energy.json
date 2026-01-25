@@ -2,7 +2,7 @@
   "proof_id": "w0_dark_energy",
   "label": "Dark Energy Equation of State w₀",
   "category": "COSMOLOGY",
-  "version": "23.0",
+  "version": "23.3",
   "wolfram_code": "With[{\n  (* G₂ manifold topology - fundamental constant *)\n  b3 = 24  (* Third Betti number *)\n},\n  (* v23.0: w₀ from thawing quintessence *)\n  (* Formula: w₀ = -1 + 1/b₃ = -1 + 1/24 = -23/24 *)\n  \n  w0Geometric = -1 + 1/b3;\n  w0Exact = -23/24;\n  \n  (* DESI DR2 2025 result *)\n  desi2025 = -0.957;\n  desiUncertainty = 0.067;\n  \n  deviation = (w0Geometric - desi2025) / desiUncertainty;\n  \n  {N[w0Geometric, 6], N[w0Exact, 6], N[deviation, 3]}\n]",
   "expected_result": "{-0.958333, -0.958333, 0.02σ}",
   "verification_status": "verified",
@@ -12,8 +12,14 @@
     "DESI_DR2_2025": {
       "best_fit": -0.957,
       "uncertainty": 0.067,
-      "range_1sigma": [-1.024, -0.890],
-      "range_2sigma": [-1.091, -0.823]
+      "range_1sigma": [
+        -1.024,
+        -0.89
+      ],
+      "range_2sigma": [
+        -1.091,
+        -0.823
+      ]
     },
     "PM_prediction": -0.958333,
     "deviation_sigma": 0.02,
@@ -52,6 +58,6 @@
     "topological_origin": "Dark energy properties encoded in G₂ topology",
     "predictive_power": "No free parameters - w₀ fixed by b₃ alone"
   },
-  "timestamp": "2026-01-01T00:00:00Z",
+  "timestamp": "2026-01-25T10:33:34.756304Z",
   "hash": "v23_0_w0_b3_24"
 }

@@ -3,7 +3,7 @@
   "cert_id": "CERT-OBSV-043",
   "label": "Observer Coupling & Decidability (Watts Constant)",
   "category": "OPERATIONAL",
-  "version": "23.0",
+  "version": "23.3",
   "status": "SEALED",
   "wl_code": "wattsConstant = 1.0; reidInvariant = 1/144; decidability = 1.0; {wattsConstant == 1.0, decidability == 1.0, \"SEALED\"}",
   "result": "{True, True, SEALED}",
@@ -27,6 +27,6 @@
     "decidability": 1.0,
     "interpretation": "Observer (Watts) coupled; dialogue acknowledged (Reid)"
   },
-  "timestamp": "2026-01-02T21:45:00Z",
+  "timestamp": "2026-01-25T10:33:34.754746Z",
   "hash": "v16_2_obsv_watts_reid_sealed"
 }

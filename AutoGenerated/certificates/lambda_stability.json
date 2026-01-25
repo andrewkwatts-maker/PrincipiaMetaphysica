@@ -3,7 +3,7 @@
   "cert_id": "CERT-STAB-005",
   "label": "Lambda Stability via Symplectic Screening",
   "category": "FOUNDATIONAL",
-  "version": "23.0",
+  "version": "23.3",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold topology *)\n  b3 = 24,           (* Third Betti number *)\n  k = 24,            (* Chern-Simons level *)\n  \n  (* Symplectic screening factor *)\n  (* Beta(Lambda) = 1/(b3^2 * k^2)^4 *)\n  screeningExponent = 4\n},\n  (* Symplectic screening of cosmological constant running *)\n  betaLambda = (b3^2 * k^2)^(-screeningExponent);\n  \n  (* Floor in log10 units *)\n  log10Floor = Log10[betaLambda];\n  \n  (* Experimental detection limit *)\n  expLimit = -20;  (* log10 *)\n  \n  (* Theoretical floor *)\n  theoFloor = -50;  (* log10 *)\n  \n  {N[betaLambda, 6], N[log10Floor, 4], \"SCREENED\"}\n]",
   "expected_result": "{3.01e-50, -49.52, \"SCREENED\"}",
@@ -48,6 +48,6 @@
     "running_suppression": "30 orders of magnitude below detection"
   },
   "validation_code": "beta_lambda = (b3**2 * k**2)**-4; return beta_lambda <= 1e-50",
-  "timestamp": "2026-01-01T00:00:00Z",
+  "timestamp": "2026-01-25T10:33:34.753789Z",
   "hash": "v16_2_stab_005_locked"
 }
