@@ -7,7 +7,7 @@ DOI: 10.5281/zenodo.18079602
 
 This module derives the dimensionless coupling constants (α_s, α_w, α_e)
 from the 24 Torsion Pin matrix. It proves that gauge unification occurs
-exactly at the 25D Ancestral Scale.
+exactly at the 27D Ancestral Scale.
 
 THE UNIFICATION PRINCIPLE:
     Force strengths are ratios of "Pin Density." The Strong, Weak, and
@@ -37,7 +37,7 @@ class CouplingUnification:
     """
     Validates the 'Gauge Unification' residue.
     Proves that the 24 torsion pins (12+12) determine the
-    fundamental force strengths at the 25D Bulk Scale.
+    fundamental force strengths at the 27D Bulk Scale.
     """
 
     # Immutable geometric constants
@@ -57,7 +57,7 @@ class CouplingUnification:
 
     def derive_unification_residues(self) -> Dict[str, float]:
         """
-        Derives Alpha_S, Alpha_W, and Alpha_E at the 25D bulk scale.
+        Derives Alpha_S, Alpha_W, and Alpha_E at the 27D bulk scale.
 
         Logic: Force strength is a ratio of active pins to the 288 potential.
 
@@ -99,7 +99,7 @@ class CouplingUnification:
         saturation_density = 125 / 288
 
         # Fine structure constant: α = α_e_26d * saturation_density / π
-        # This projects the 25D coupling to 4D observation
+        # This projects the 27D coupling to 4D observation
         alpha_4d = couplings['alpha_e_26d'] * saturation_density / np.pi
 
         # The inverse (α⁻¹ ≈ 137)
@@ -152,7 +152,7 @@ class CouplingUnification:
 
     def calculate_running_couplings(self, energy_scale: float = 1.0) -> Dict[str, Any]:
         """
-        Calculates how the fixed 25D residues scale to observed low-energy values.
+        Calculates how the fixed 27D residues scale to observed low-energy values.
 
         In v16.2, "running" is the unwinding of the manifold, not RG flow.
         The sterile angle provides the projection factor.
@@ -211,7 +211,7 @@ if __name__ == "__main__":
 
     logic = CouplingUnification()
 
-    print("\n[1] 25D GAUGE RESIDUES")
+    print("\n[1] 27D GAUGE RESIDUES")
     print("-" * 40)
     residues = logic.derive_unification_residues()
     print(f"  Strong (α_s): {residues['alpha_s_26d']} = 8/24")

@@ -9,7 +9,7 @@ the breathing dark energy parameter emerges from bridge pressure mismatch.
 
 The v22 decomposition follows:
 1. (24,1) unified time signature from critical string theory (no ghosts)
-2. 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time
+2. 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time
 3. Bridge WARPS to create shadows: 12×(2,0) → 2×13D(12,1) via coordinate selection
 4. OR reduction operator R_perp with Mobius property R_perp² = -I
 5. Per-shadow G₂ compactification: 13D(12,1) → (3,1) + G₂(7) + fiber
@@ -53,7 +53,7 @@ class AppendixFDimensionalDecomposition(SimulationBase):
     """
     Appendix F: v22 Dimensional Decomposition with 12×(2,0) Bridge Architecture
 
-    Derives the dimensional reduction: 25D(24,1) = 12×(2,0) + (0,1)
+    Derives the dimensional reduction: 27D(26,1) = 12×(2,0) + (0,1)
     where the 12 bridge pairs WARP to create dual 13D(12,1) shadows via
     coordinate selection, then per-shadow G₂ compactification to (3,1) + G₂.
 
@@ -124,7 +124,7 @@ class AppendixFDimensionalDecomposition(SimulationBase):
             Dictionary with dimensional reduction results
         """
         # v22 DIMENSIONAL STRUCTURE
-        # 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time
+        # 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time
         D_bulk = 25  # 25D bulk (not 26D - that's legacy)
 
         # v22: 12×(2,0) bridge pairs = 24 spatial dimensions
@@ -194,7 +194,7 @@ class AppendixFDimensionalDecomposition(SimulationBase):
             appendix=True,
             title="Appendix F: v22 Dimensional Decomposition (12×(2,0) Bridge Architecture)",
             abstract=(
-                "v22 mathematical framework: 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time. "
+                "v22 mathematical framework: 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time. "
                 "The 12 Euclidean bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. "
                 "Each (x_i, y_i) pair contributes x_i → Normal shadow, y_i → Mirror shadow. "
                 "Breathing dark energy emerges from bridge pressure mismatch."
@@ -399,7 +399,7 @@ def v21_dimensional_reduction() -> dict:
     # Critical dimension
     D_critical = 26
 
-    # v22: 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time
+    # v22: 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time
     bulk_space = 24
     bulk_time = 1
     bulk_signature = (bulk_space, bulk_time)
@@ -492,7 +492,7 @@ def v21_dimensional_reduction() -> dict:
                 id="v22-bridge-to-shadow-warp",
                 label="(F.2)",
                 latex=r"25D_{(24,1)} = 12 \times (2,0) + (0,1) \xrightarrow{R_\perp} 2 \times 13D_{(12,1)}",
-                plain_text="25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1)",
+                plain_text="27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1)",
                 category="FOUNDATIONAL",
                 description=(
                     "v22: 12×(2,0) bridge pairs + (0,1) shared time WARP to create dual 13D(12,1) shadows. "

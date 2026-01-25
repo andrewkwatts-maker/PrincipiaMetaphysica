@@ -87,7 +87,7 @@ The v21+ dual-shadow structure uses bulk signature (24,1), with two shadow unive
 
 5. **W/Z masses unchanged**: The electroweak mass generation via Higgs VEV $v = 246$ GeV depends on the G2 moduli structure, not bulk signature.
 
-**Conclusion**: All electroweak predictions (Weinberg angle, W/Z masses, rho parameter) remain unchanged between v20 and v21. The dual-shadow architecture preserves complete electroweak physics in each shadow.
+**Conclusion**: All electroweak predictions (Weinberg angle, W/Z masses, rho parameter) remain unchanged across PM versions. The dual-shadow architecture preserves complete electroweak physics in each shadow.
 
 ---
 
@@ -215,7 +215,7 @@ $$\sin^2\theta_W = 0.375 \times 0.618034 \times 0.997619 = 0.231210929719...$$ *
 
 | Approach | Formula | Variance | Status |
 |----------|---------|----------|--------|
-| Torsion Gate (v17) | Circular identity | 0 (trivial) | Engineering |
+| Torsion Gate (historical) | Circular identity | 0 (trivial) | Engineering |
 | Bridge Rotation (v22.2) | $\sin^2(\pi/12 \times M_{\text{eff}})$ | $3.8 \times 10^{-4}$ | Approximate |
 | **Bridge Rotation (v22.5)** | $(3/8)(1/\varphi)(1-1/420)$ | $9.3 \times 10^{-7}$ | **LOCKED** |
 
@@ -477,7 +477,7 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 
 **Note**: W and Z masses are DERIVED from inputs $v$, $\alpha_{em}$, $\sin^2\theta_W$.
 
-**Source Code**: `simulations/v16/gauge/gauge_unification_v16_0.py`
+**Source Code**: `simulations/v21/gauge/gauge_unification.py`
 
 ---
 

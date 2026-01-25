@@ -1,9 +1,14 @@
 # Appendix F: Randall-Sundrum Warped Hierarchy in PM Framework
 
+> **[HISTORICAL: v16-v20 Dimensional Chain Reference]**
+> This appendix uses the v16-v20 dimensional chain notation (26D(24,2) with Sp(2,R)) for historical reference.
+> **The v23.1 framework uses 27D(26,1) = 24D core + 2D central sampler + 1D time.**
+> See Appendix G and Appendix K for the current v23.1 formulation.
+
 **HG-06: Derivation of Electroweak Scale via Warped Extra Dimensions**
 
-**Version**: 23.0
-**Date**: 2026-01-21
+**Version**: 23.1
+**Date**: 2026-01-25
 **Status**: COMPLETE (mechanism established; numerical coefficient C_moduli remains fitted)
 
 ---
@@ -367,5 +372,5 @@ The Randall-Sundrum warped geometry mechanism, embedded in PM's dimensional casc
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*

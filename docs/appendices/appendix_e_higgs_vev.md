@@ -334,9 +334,9 @@ This derivation attempts to use the following Single Source of Truth (SSOT) para
 
 **Honesty Note**: The naive geometric formulas in sections E.5-E.7 fail to reproduce the Higgs VEV from topology alone. The hierarchy ratio $M_{Pl}/v \approx 10^{16}$ remains an open problem requiring additional input beyond $b_3$.
 
-**Source Code**: `simulations/v16/higgs/higgs_vev_derivation_v16_1.py`
+**Source Code**: `simulations/v21/higgs/higgs_vev_derivation.py`
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*

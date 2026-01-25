@@ -119,8 +119,8 @@ class FormulasRegistry:
     # NOTE: This is internal validation, NOT traditional journal peer review.
     # The framework has been reviewed for mathematical consistency,
     # but has not been published in peer-reviewed journals.
-    # v23 FRAMEWORK: 12×(2,0) paired bridge system, (24,1) unified time signature,
-    #                Cl(24,1) 4096 spinors, breathing mode dark energy
+    # v23.1 FRAMEWORK: 12×(2,0) paired bridge system + C^(2,0) central sampler,
+    #                  (26,1) unified time signature, Cl(24,1) 4096 spinors on 24D core
 
     # ===========================================================================
     # RIGOR DISCLAIMER (per peer review 2026-01-11)
@@ -566,16 +566,15 @@ class FormulasRegistry:
         # =======================================================================
         # b3 = 24: Third Betti number of G2 manifold (Joyce-Karigiannis TCS)
         #
-        # NOTE ON b3 = D_space_24 = 24 COINCIDENCE:
-        # b3 (G2 Betti number) and D_space_24 (bosonic spatial dims) have the
-        # same numerical value (24) but represent DISTINCT concepts:
+        # NOTE ON b3 = D_core_24 = 24:
+        # b3 (G2 Betti number) and D_core_24 (G2 core spatial dims) have the
+        # same numerical value (24) representing connected concepts:
         # - b3: Topological invariant from G2 cohomology (rank of H^3)
-        # - D_space_24: Spatial dimensions in 26D bosonic string (24,1) signature
+        # - D_core_24: Core spatial dimensions in 27D(26,1) bulk
         #
-        # v21 UPDATE: Signature changed from (24,2) to (24,1) unified time.
-        # Currently considered COINCIDENTAL. No established physical connection
-        # between G2 Betti numbers and bosonic string critical dimension.
-        # Further investigation recommended.
+        # v23.1 UPDATE: 27D = 24 core + 2 bridge + 1 time = (26,1) signature.
+        # The 24D core supports Cl(24,1) physics while 2D central sampler provides
+        # architectural global averaging outside the fiber product.
         #
         # Reference: Joyce, D. (2000). Compact Manifolds with Special Holonomy
         self._b3 = 24                    # Third Betti number of G2 manifold
@@ -3977,7 +3976,7 @@ class FormulasRegistry:
                     "gate": "G60",
                     "named_for": "Matt O'Dowd",
                     "gnostic_name": "The Barbelo",
-                    "gnostic_role": "First Thought; the active force in 25D bulk",
+                    "gnostic_role": "First Thought; the active force in 27D(26,1) bulk",
                     "hubble_formula": f"(288/4) - (163/144) + 0.6819 = {self.h0_local:.2f}",
                     "pm_path": "constants.odowd_bulk_pressure"
                 },
@@ -4122,9 +4121,9 @@ class FormulasRegistry:
                     "symbol": "horos",
                     "latex": "\\text{Horos}",
                     "value": self.horos,
-                    "formula": "D_bulk = 25 (dimensional boundary)",
+                    "formula": "D_bulk = 27 (dimensional boundary: 24 core + 2 central + 1 time)",
                     "gnostic_name": "The Horos",
-                    "gnostic_role": "The Limit; boundary of 25D bulk frame",
+                    "gnostic_role": "The Limit; boundary of 27D(26,1) bulk frame",
                     "pm_path": "topology.horos"
                 },
                 # (Z.6) Pneuma Tensioner Constants
@@ -4260,7 +4259,7 @@ class FormulasRegistry:
                     "formula": "163/288",
                     "expanded": f"Bulk Pressure / Logic Closure = {self.gate_01_initial_action:.10f}",
                     "gnostic_name": "The Initial Action Potential",
-                    "gnostic_role": "Density Zero of manifold; base energy density of 25D bulk action",
+                    "gnostic_role": "Density Zero of manifold; base energy density of 27D(26,1) bulk action",
                     "derived_from": ["sterile_sector", "roots_total"],
                     "pm_path": "gates.G01"
                 },
@@ -4689,7 +4688,7 @@ class FormulasRegistry:
                     "formula": "(288*G38)/153",
                     "expanded": f"Hadronization lock = {self.gate_40_hadronization_lock:.10f}",
                     "gnostic_name": "The Hadronization Lock",
-                    "gnostic_role": "25D to 4D particle manifestation threshold",
+                    "gnostic_role": "27D(26,1) to 4D particle manifestation threshold",
                     "derived_from": ["roots_total", "gate_38_color_symmetry", "christ_constant"],
                     "pm_path": "gates.G40"
                 },
@@ -4746,7 +4745,7 @@ class FormulasRegistry:
                     "formula": "(163-(153-135))/288",
                     "expanded": f"Ghost flux = {self.gate_45_ghost_flux:.10f}",
                     "gnostic_name": "The Ghost-Flux",
-                    "gnostic_role": "Hidden mass accounting in 25D bulk action",
+                    "gnostic_role": "Hidden mass accounting in 27D(26,1) bulk action",
                     "derived_from": ["sterile_sector", "christ_constant", "shadow_sector", "roots_total"],
                     "pm_path": "gates.G45"
                 },
@@ -4791,7 +4790,7 @@ class FormulasRegistry:
                     "formula": "(163/153)*sqrt(24)",
                     "expanded": f"Scale factor = {self.gate_49_scale_factor_prime:.10f}",
                     "gnostic_name": "The Scale Factor Prime",
-                    "gnostic_role": "25D to macroscopic magnification",
+                    "gnostic_role": "27D(26,1) to macroscopic magnification",
                     "derived_from": ["sterile_sector", "christ_constant", "b3"],
                     "pm_path": "gates.G49"
                 },

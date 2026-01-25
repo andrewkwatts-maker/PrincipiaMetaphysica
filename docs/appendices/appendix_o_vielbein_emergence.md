@@ -647,7 +647,7 @@ This appendix uses the following Single Source of Truth (SSOT) parameters from `
 ## O.14 Connection to Other Appendices
 
 This derivation connects to:
-- **Appendix A**: Sp(2,R) gauge fixing (historical v16-v20)
+- **Appendix A**: Sp(2,R) gauge fixing (historical reference, deprecated in v23.1)
 - **Appendix B-D**: Gauge field emergence via KK reduction
 - **Appendix F**: RS warped hierarchy for Planck scale
 - **Appendix G**: Euclidean bridge and shadow structure
@@ -1227,7 +1227,7 @@ Verified: Cl(24,1) is in Bott class p-q ≡ 7 (mod 8)
 
 17. Baez, J. (2002). "The Octonions". Bull. Amer. Math. Soc. 39, 145-205. [Triality and exceptional structures]
 
-18. Appendix K of this document: "Complete Explicit Lagrangian Descent Chain (25D to 4D)" [Detailed dimensional reduction with matching conditions]
+18. Appendix K of this document: "Complete Explicit Lagrangian Descent Chain (27D to 4D)" [Detailed dimensional reduction with matching conditions]
 
 19. Atiyah, M., Bott, R. & Shapiro, A. (1964). "Clifford modules". Topology 3, 3-38. [Bott periodicity and spinor classification]
 

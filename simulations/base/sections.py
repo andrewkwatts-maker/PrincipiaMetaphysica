@@ -44,17 +44,17 @@ PAPER_SECTIONS: Dict[str, SectionInfo] = {
     "0": SectionInfo(
         id="0",
         title="Abstract",
-        description="(24,1) dual-shadow framework with Euclidean bridge deriving 125 constants from G2 manifold spectral residues.",
+        description="27D(26,1) dual-shadow framework with Euclidean central bridge deriving 125 constants from G2 manifold spectral residues.",
         section_type="abstract",
-        simulation_source="abstract_v17_2"  # Abstract content (updated for v21)
+        simulation_source="abstract_v17_2"  # Abstract content (updated for v23.1)
     ),
     # Main Sections
     "1": SectionInfo(
         id="1",
         title="Foundations of Dimensional Descent",
-        description="The (24,1) bulk with unified time, dual shadows, Euclidean bridge, G2 compactification, and condensate projection.",
+        description="The 27D(26,1) bulk with unified time, dual shadows, Euclidean central bridge, G2 compactification, and condensate projection.",
         section_type="section",
-        simulation_source="merged_descent_v21"  # v21 refactor: (24,1) dual-shadow model
+        simulation_source="merged_descent_v21"  # v23.1 refactor: 27D(26,1) dual-shadow model
     ),
     "2": SectionInfo(
         id="2",
@@ -172,7 +172,7 @@ PAPER_SECTIONS: Dict[str, SectionInfo] = {
     "F": SectionInfo(
         id="F",
         title="Dimensional Decomposition",
-        description="25D to 4D reduction via 13D shadow (PM chain: 25D→13D→6D→4D)",
+        description="27D to 4D reduction via 13D shadow (PM chain: 27D→13D→6D→4D)",
         section_type="appendix"
     ),
     "G": SectionInfo(

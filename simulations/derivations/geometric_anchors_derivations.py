@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Geometric Anchors Derivation Chains
+PRINCIPIA METAPHYSICA v23.1 - Geometric Anchors Derivation Chains
 ===================================================================
 
 Complete algebraic derivation chains for all 13 geometric parameters

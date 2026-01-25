@@ -273,11 +273,11 @@ The formula (B.15) shows $\alpha_{em}$ is determined by:
 2. The constant $k_{gimel}$ (geometry)
 3. No free parameters!
 
-### B.9.4 v21 Signature Independence Note
+### B.9.4 v23.1 Signature Independence Note
 
-**Key Result**: QED emergence is identical in both v20 and v21 frameworks.
+**Key Result**: QED emergence is identical across all PM framework versions.
 
-The v21+ dual-shadow structure uses bulk signature (24,1) (replacing the earlier (24,2)), but the QED Lagrangian derivation is **signature-independent** because:
+The v23.1 dual-shadow structure uses bulk signature 27D(26,1) (replacing the earlier (24,2) used in v16-v20), but the QED Lagrangian derivation is **signature-independent** because:
 
 1. **U(1) gauge structure depends on G2 topology**: The emergence of the U(1) gauge field via Kaluza-Klein reduction depends on the G2 manifold structure, specifically the third Betti number $b_3 = 24$, not the bulk signature.
 
@@ -285,7 +285,7 @@ The v21+ dual-shadow structure uses bulk signature (24,1) (replacing the earlier
 
 3. **Fine structure constant unchanged**: The formula $\alpha_{em}^{-1} = k_{gimel}^2 - b_3/\phi + \phi/(4\pi) - \epsilon_{7D}$ involves only topological constants ($b_3$, $\phi$, $\pi$) that are signature-independent.
 
-**Conclusion**: All QED predictions (charge quantization, Maxwell equations, fine structure constant) remain unchanged between v20 and v21. The dual-shadow structure affects only the bulk spacetime interpretation, not the 4D gauge physics.
+**Conclusion**: All QED predictions (charge quantization, Maxwell equations, fine structure constant) remain unchanged across all PM versions. The dual-shadow structure affects only the bulk spacetime interpretation, not the 4D gauge physics.
 
 ---
 
@@ -309,7 +309,7 @@ Query: 4*pi^2*24/(12.318*22)
 Result: 947.5/271 = 3.49...
 
 Note: The exact formula in PM involves additional factors from G2 cycles.
-See fine_structure_analysis_v17.py for full derivation.
+See fine_structure_analysis.py for full derivation.
 ```
 
 ### Certificate B.10.3: Charge Quantization
@@ -375,7 +375,7 @@ Loop structure:
 - Two-loop: $62208 = 1728 \times (2n_{\text{gen}})^2 = 1728 \times 36$
 - Three-loop: $8957952 = 62208 \times \chi_{\text{eff,total}} = 62208 \times 144$
 
-**Source Code**: `simulations/v16/constants/fine_structure_v17.py`
+**Source Code**: `simulations/v21/constants/fine_structure.py`
 
 ---
 

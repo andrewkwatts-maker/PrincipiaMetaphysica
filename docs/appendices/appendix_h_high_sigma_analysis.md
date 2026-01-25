@@ -1,7 +1,7 @@
 # Appendix H: High Sigma Parameter Analysis
 
-**Version**: 23.0
-**Date**: 2026-01-20
+**Version**: 23.1
+**Date**: 2026-01-25
 **Status**: RESOLVED - ALL PARAMETERS WITHIN 1σ
 
 ---
@@ -123,7 +123,7 @@ $$G_F^{matched} = G_F^{tree} \times \left(1 + \frac{\alpha}{2\pi}\right)$$
 
 | Quantity | Value | Source |
 |----------|-------|--------|
-| Predicted | 91.508 GeV | PM electroweak_mixing_v17 |
+| Predicted | 91.508 GeV | PM electroweak_mixing |
 | Experimental | 91.1876 GeV | PDG 2024 |
 | Uncertainty | 0.0021 GeV | PDG 2024 |
 | Deviation | 152.6 sigma | (91.508 - 91.188)/0.0021 |
@@ -139,7 +139,7 @@ Or equivalently:
 $$M_Z = \frac{v \cdot g_2}{2 \cos\theta_W}$$ **(H.6)**
 
 In PM:
-- $v = v_{higgs} = 246.22$ GeV (from electroweak_mixing_v17.py)
+- $v = v_{higgs} = 246.22$ GeV (from electroweak_mixing.py)
 - $\sin^2\theta_W = 0.23129$ (locked by G2 cycle ratio)
 - $g_2 = 0.6517$ (weak coupling)
 
@@ -157,7 +157,7 @@ The 0.35% discrepancy arises from a combination of factors:
 
 ### H.3.4 Detailed Breakdown
 
-Using the PM electroweak_mixing_v17.py values:
+Using the PM electroweak_mixing.py values:
 - v = 246.22 GeV
 - g_2 = 0.6517
 - g' = g_2 * tan(theta_W) = 0.6517 * 0.536 = 0.349
@@ -186,7 +186,7 @@ The issue is that the framework uses:
 
 | Quantity | Value | Source |
 |----------|-------|--------|
-| Predicted | 2.737 K | PM cmb_temperature_v18 |
+| Predicted | 2.737 K | PM cmb_temperature |
 | Experimental | 2.7255 K | COBE/Planck 2018 |
 | Uncertainty | 0.0006 K | Planck 2018 |
 | Deviation | 18.6 sigma | (2.737 - 2.7255)/0.0006 |
@@ -258,7 +258,7 @@ The 0.42% agreement (2.737 vs 2.7255 K) is remarkable for such a simple formula,
 
 | Quantity | Value | Source |
 |----------|-------|--------|
-| Predicted | 80.231 GeV | PM electroweak_mixing_v17 |
+| Predicted | 80.231 GeV | PM electroweak_mixing |
 | Experimental | 80.377 GeV | PDG 2024 |
 | Uncertainty | 0.012 GeV | PDG 2024 |
 | Deviation | 12.2 sigma | (80.377 - 80.231)/0.012 |
@@ -321,7 +321,7 @@ The M_W discrepancy is fundamentally tied to:
 
 | Quantity | Value | Source |
 |----------|-------|--------|
-| Predicted | 8.996 degrees | PM octonionic_mixing_v16_2 |
+| Predicted | 8.996 degrees | PM octonionic_mixing |
 | Experimental | 8.63 degrees | NuFIT 6.0 (IO) |
 | Uncertainty | 0.11 degrees | NuFIT 6.0 |
 | Deviation | 3.33 sigma | (8.996 - 8.63)/0.11 |
@@ -348,7 +348,7 @@ Wait - this gives 8.65 degrees, very close to experiment! Let me check the actua
 
 ### H.6.3 Reanalysis
 
-Looking at octonionic_mixing_v16_2.py more carefully:
+Looking at octonionic_mixing.py more carefully:
 
 The predicted theta_13 from the simulation output is stated as 8.33 degrees in the docstring, but the calculation gives:
 
@@ -384,7 +384,7 @@ If there is indeed a 3+ sigma deviation, it likely arises from:
 
 | Quantity | Value | Source |
 |----------|-------|--------|
-| Predicted | 6.0e-10 | PM baryon_asymmetry_v18 |
+| Predicted | 6.0e-10 | PM baryon_asymmetry |
 | Experimental | 6.12e-10 | Planck 2018/BBN |
 | Uncertainty | 0.04e-10 | Planck 2018 |
 | Deviation | 3.0 sigma | (6.12 - 6.0)/0.04 |
@@ -431,7 +431,7 @@ $$\eta_b = 2.0 \times 10^{-4} \times 3.08 \times 10^{-6} = 6.2 \times 10^{-10}$$
 
 ### H.7.5 Assessment
 
-The v19 derivation claims to be "fully derived" but several parameters are phenomenological:
+The derivation claims to be "fully derived" but several parameters are phenomenological:
 - Delta_b3 = 0.12 (why not 0.10 or 0.15?)
 - Re(T) = 7.086 (from where exactly?)
 - delta_CP = pi/6 (why this specific value?)
@@ -547,14 +547,14 @@ This appendix serves as a roadmap for v22+ development, with clear categorizatio
 
 | Parameter | PM Value | Exp Value | Uncertainty | Sigma | Source File |
 |-----------|----------|-----------|-------------|-------|-------------|
-| G_F | 1.1650e-5 | 1.1664e-5 | 6e-12 | 2312 | gf_radiative_correction_v18.py |
-| M_Z | 91.508 | 91.1876 | 0.0021 | 152.6 | electroweak_mixing_v17.py |
-| T_CMB | 2.737 | 2.7255 | 0.0006 | 18.6 | cmb_temperature_v18.py |
-| M_W | 80.231 | 80.377 | 0.012 | 12.2 | electroweak_mixing_v17.py |
-| theta_13 | 8.996 | 8.63 | 0.11 | 3.33 | octonionic_mixing_v16_2.py |
-| eta_b | 6.0e-10 | 6.12e-10 | 4e-12 | 3.0 | baryon_asymmetry_v18.py |
+| G_F | 1.1650e-5 | 1.1664e-5 | 6e-12 | 2312 | gf_radiative_correction.py |
+| M_Z | 91.508 | 91.1876 | 0.0021 | 152.6 | electroweak_mixing.py |
+| T_CMB | 2.737 | 2.7255 | 0.0006 | 18.6 | cmb_temperature.py |
+| M_W | 80.231 | 80.377 | 0.012 | 12.2 | electroweak_mixing.py |
+| theta_13 | 8.996 | 8.63 | 0.11 | 3.33 | octonionic_mixing.py |
+| eta_b | 6.0e-10 | 6.12e-10 | 4e-12 | 3.0 | baryon_asymmetry.py |
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*

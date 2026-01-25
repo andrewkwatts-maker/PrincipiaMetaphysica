@@ -150,7 +150,7 @@ def explain_4_pattern() -> str:
 THE 4-PATTERN EXPLANATION: Why Spacetime is 3+1 Dimensional
 ============================================================
 
-The 24 torsion pins from the 25D(24,1) ancestral bulk must be distributed
+The 24 torsion pins from the 27D(26,1) ancestral bulk must be distributed
 across spacetime dimensions. This distribution is subject to three constraints:
 
 1. INTEGER DIVISIBILITY

@@ -727,9 +727,9 @@ This derivation uses the following Single Source of Truth (SSOT) parameters from
 | Higgs VEV | $v$ | 246.22 GeV | INPUT (measured) |
 | Golden ratio | $\phi$ | 1.618... | Bridge scaling |
 
-**Source Code**: `simulations/v16/dimensional_reduction_v22.py` (planned)
+**Source Code**: `simulations/v21/dimensional/dimensional_reduction.py`
 
 ---
 
-*Document generated: 2026-01-21*
-*Principia Metaphysica v23.0*
+*Document generated: 2026-01-25*
+*Principia Metaphysica v23.1*
