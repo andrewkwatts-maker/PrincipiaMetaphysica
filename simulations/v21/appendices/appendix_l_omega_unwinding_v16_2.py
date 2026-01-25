@@ -166,7 +166,7 @@ class TerminalBasinAnalysis:
         """
         # Use registry SSoT for defaults
         if active_residues is None:
-            active_residues = _REG.visible_sector  # 125
+            active_residues = _REG.sophian_registry  # 125
         if hidden_supports is None:
             hidden_supports = _REG.barbelo_modulus  # 163
 

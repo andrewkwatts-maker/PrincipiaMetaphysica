@@ -78,17 +78,20 @@ from simulations.base import (
 # Set high precision for calculations
 getcontext().prec = 50
 
+# Import FormulasRegistry for Single Source of Truth (SSoT)
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
 
 # =============================================================================
 # PHYSICAL CONSTANTS AND GEOMETRIC PARAMETERS
 # =============================================================================
 
-# G2 Topology Constants (TCS #187)
-B3_G2 = 24              # Third Betti number
-B2_G2 = 4               # Second Betti number
-CHI_EFF = 144           # Effective Euler characteristic
-N_GEN = 3               # Fermion generations = b3/8
-S_ORIENT = 12           # Orientation sum from Sp(2,R)
+# G2 Topology Constants (TCS #187) - from FormulasRegistry SSoT
+B3_G2 = _REG.elder_kads         # Third Betti number = 24
+B2_G2 = 4                       # Second Betti number
+CHI_EFF = _REG.qedem_chi_sum    # Effective Euler characteristic = 144
+N_GEN = 3                       # Fermion generations = b3/8
+S_ORIENT = 12                   # Orientation sum from Sp(2,R)
 
 # Physical Constants (PDG 2024)
 V_HIGGS_GEV = Decimal('246.22')         # Higgs VEV

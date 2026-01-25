@@ -101,15 +101,24 @@ from simulations.base import (
     PMRegistry,
 )
 
+# Import FormulasRegistry as Single Source of Truth
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
 
 # ============================================================================
 # PHYSICAL CONSTANTS AND G2 PARAMETERS
 # ============================================================================
 
-# G2 Topology from TCS #187
-B3 = 24  # Third Betti number (associative 3-cycles)
+# G2 Topology from TCS #187 (via FormulasRegistry SSoT)
+B3 = _REG.elder_kads if _REGISTRY_AVAILABLE else 24  # Third Betti number (associative 3-cycles)
 H11 = 4  # Kahler moduli
-CHI_EFF = 144  # Effective Euler characteristic
+CHI_EFF = _REG.qedem_chi_sum if _REGISTRY_AVAILABLE else 144  # Effective Euler characteristic
 
 # Derived geometric parameters
 K_GIMEL = B3 / 2.0 + 1.0 / np.pi  # ~12.318 (holonomy precision limit)

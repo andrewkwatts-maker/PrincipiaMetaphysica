@@ -65,6 +65,15 @@ from simulations.base import (
     FoundationEntry,
 )
 
+# Import Single Source of Truth for derived constants
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
 
 class AppendixSSpectralResidueV19(SimulationBase):
     """
@@ -84,11 +93,11 @@ class AppendixSSpectralResidueV19(SimulationBase):
     - Connect abstract mathematics to observables
     """
 
-    # Key spectral constants
+    # Key spectral constants (via FormulasRegistry SSoT)
     N_EIGENVALUES = 125          # Number of physically relevant eigenvalues
     DIM_V7 = 7                   # Dimension of internal manifold
-    CHI_EFF = 144                # Effective Euler characteristic
-    B3 = 24                      # Third Betti number
+    CHI_EFF = _REG.qedem_chi_sum if _REGISTRY_AVAILABLE else 144  # Effective Euler characteristic
+    B3 = _REG.elder_kads if _REGISTRY_AVAILABLE else 24  # Third Betti number
     M_PLANCK = 2.435e18          # Reduced Planck mass (GeV)
     K_GIMEL = 12 + 1/np.pi       # Fundamental scale (~12.318)
 

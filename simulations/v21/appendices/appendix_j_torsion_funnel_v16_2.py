@@ -43,6 +43,15 @@ from simulations.base import (
     Parameter,
 )
 
+# Import FormulasRegistry as Single Source of Truth
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
 
 class TorsionFunnelFlow:
     """
@@ -52,9 +61,9 @@ class TorsionFunnelFlow:
     through the 24-pin torsion barrier to the 4D observable universe.
     """
 
-    # Funnel stages
-    ANCESTRAL_ROOTS = 288  # Entry
-    TORSION_PINS = 24      # Bottleneck
+    # Funnel stages (via FormulasRegistry SSoT where applicable)
+    ANCESTRAL_ROOTS = _REG.nitzotzin_roots if _REGISTRY_AVAILABLE else 288  # Entry
+    TORSION_PINS = _REG.elder_kads if _REGISTRY_AVAILABLE else 24           # Bottleneck
     ACTIVE_RESIDUES = 125  # Exit
     HIDDEN_SUPPORTS = 163  # Scaffolding
 

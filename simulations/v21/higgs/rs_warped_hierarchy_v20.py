@@ -39,12 +39,16 @@ if sys.platform == 'win32':
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.insert(0, project_root)
 
+from core.FormulasRegistry import get_registry
+
+_REG = get_registry()
+
 # =============================================================================
 # SSOT CONSTANTS (from config.py / FormulasRegistry)
 # =============================================================================
 
 # Fundamental PM constants
-B3 = 24                          # Third Betti number (G2 topology)
+B3 = _REG.elder_kads             # Third Betti number (G2 topology) - 24
 PHI = (1 + np.sqrt(5)) / 2       # Golden ratio
 K_GIMEL = B3/2 + 1/np.pi         # Holonomy precision limit: 12.318
 M_PL = 2.435e18                  # Reduced Planck mass (GeV)

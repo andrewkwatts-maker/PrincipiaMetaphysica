@@ -56,6 +56,15 @@ from simulations.base import (
     FoundationEntry,
 )
 
+# Import FormulasRegistry as Single Source of Truth
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
 
 class AppendixQIndexTheorem(SimulationBase):
     """
@@ -76,9 +85,9 @@ class AppendixQIndexTheorem(SimulationBase):
     - Connect abstract math to physical observables
     """
 
-    # Key topological constants
-    CHI_EFF = 144           # Effective Euler characteristic of V_7
-    B3 = 24                 # Third Betti number
+    # Key topological constants (via FormulasRegistry SSoT)
+    CHI_EFF = _REG.qedem_chi_sum if _REGISTRY_AVAILABLE else 144  # Effective Euler characteristic of V_7
+    B3 = _REG.elder_kads if _REGISTRY_AVAILABLE else 24           # Third Betti number
     SPINOR_DOF = 8          # Spinor DOF in 7D (Spin(7) representation)
     N_GEN_OBSERVED = 3      # Observed number of generations
 

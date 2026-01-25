@@ -27,6 +27,10 @@ from enum import Enum
 # Initialize Decimal precision
 getcontext().prec = 50
 
+# Import SSoT constants from FormulasRegistry
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 # Import sterile constants
 try:
     from simulations.base.precision import (
@@ -34,12 +38,12 @@ try:
         B3, K_GIMEL, PHI, PI, to_decimal
     )
 except ImportError:
-    # Fallback if running standalone
-    B3 = 24
-    K_GIMEL = 12.3183098862
-    PHI = 1.6180339887
+    # Fallback if running standalone - use registry SSoT
+    B3 = _REG.elder_kads  # 24
+    K_GIMEL = _REG.demiurgic_coupling  # 12.3183098862
+    PHI = _REG.phi  # 1.6180339887
     PI = 3.14159265359
-    B3_STERILE = Decimal('24')
+    B3_STERILE = Decimal(str(_REG.elder_kads))
     K_GIMEL_STERILE = Decimal('12.31830988618379067153776752674502872406891929148091')
     PHI_STERILE = Decimal('1.61803398874989484820458683436563811772030917980576')
     PI_STERILE = Decimal('3.14159265358979323846264338327950288419716939937510')

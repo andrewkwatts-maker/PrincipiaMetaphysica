@@ -60,6 +60,15 @@ from simulations.base import (
     FoundationEntry,
 )
 
+# Import Single Source of Truth for derived constants
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
 
 class AppendixRVacuumStabilityV19(SimulationBase):
     """
@@ -92,9 +101,9 @@ class AppendixRVacuumStabilityV19(SimulationBase):
     B_CRIT = 400                # Critical bounce action for cosmological safety
     TAU_UNIVERSE = 13.8e9       # Age of universe (years)
 
-    # PM G2 parameters
-    B3 = 24                     # Third Betti number of TCS G2
-    CHI_EFF = 144               # Effective Euler characteristic
+    # PM G2 parameters (via FormulasRegistry SSoT)
+    B3 = _REG.elder_kads if _REGISTRY_AVAILABLE else 24  # Third Betti number of TCS G2
+    CHI_EFF = _REG.qedem_chi_sum if _REGISTRY_AVAILABLE else 144  # Effective Euler characteristic
 
     @property
     def metadata(self) -> SimulationMetadata:

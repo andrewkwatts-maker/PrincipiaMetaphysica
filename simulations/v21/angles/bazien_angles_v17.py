@@ -17,6 +17,10 @@ import numpy as np
 from dataclasses import dataclass
 from typing import Dict, Any
 
+from core.FormulasRegistry import get_registry
+
+_REG = get_registry()
+
 
 @dataclass
 class BazienAnglesResult:
@@ -41,9 +45,9 @@ class BazienAngles:
     """
 
     def __init__(self):
-        self.NUM_RESIDUES = 125  # Observable spectral residues
-        self.ANC_ROOTS = 288  # Ancestral root basis (Appendix H)
-        self.B3 = 24  # Third Betti number
+        self.NUM_RESIDUES = _REG.sophian_registry  # Observable spectral residues (125)
+        self.ANC_ROOTS = _REG.nitzotzin_roots  # Ancestral root basis (288)
+        self.B3 = _REG.elder_kads  # Third Betti number (24)
         self.PHI = (1 + np.sqrt(5)) / 2  # Golden ratio
 
     def compute_sterile_angle(self) -> Dict[str, float]:

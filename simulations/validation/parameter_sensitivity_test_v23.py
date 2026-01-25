@@ -242,7 +242,7 @@ def get_pm_parameters(registry: Optional['FormulasRegistry'] = None) -> Dict[str
         if _REG:
             b3 = _REG.elder_kads
             chi_eff = _REG.mephorash_chi
-            chi_eff_total = _REG.chi_eff_total
+            chi_eff_total = _REG.qedem_chi_sum
         else:
             b3 = 24
             chi_eff = 72               # Per-sector chi_eff

@@ -57,12 +57,22 @@ except ImportError:
 # CONSTANTS (SSoT values from FormulasRegistry)
 # =============================================================================
 
+# Import SSoT constants from registry if available
+if REGISTRY_AVAILABLE and FormulasRegistry:
+    _REG = get_registry()
+    B3 = _REG.elder_kads  # 24 - G2 manifold third Betti number
+    ROOTS_TOTAL = _REG.nitzotzin_roots  # 288 - Logic closure (b3 * 12)
+    STERILE_SECTOR = _REG.barbelo_modulus  # 163 - O'Dowd bulk pressure
+    PRESSURE_DIVISOR = _REG.qedem_chi_sum  # 144 - b3^2 / 4 = 576 / 4
+else:
+    # Fallback values if registry unavailable
+    B3 = 24                          # G2 manifold third Betti number
+    ROOTS_TOTAL = 288                # Logic closure (b3 * 12)
+    STERILE_SECTOR = 163             # 7*b3 - 5 = 7*24 - 5 (O'Dowd bulk pressure)
+    PRESSURE_DIVISOR = 144           # b3^2 / 4 = 576 / 4
+
 # Topological Seeds
-B3 = 24                          # G2 manifold third Betti number
-ROOTS_TOTAL = 288                # Logic closure (b3 * 12)
-STERILE_SECTOR = 163             # 7*b3 - 5 = 7*24 - 5 (O'Dowd bulk pressure)
 SIGMA_T = Fraction(23, 24)       # Tzimtzum pressure (dark energy w0 = -23/24)
-PRESSURE_DIVISOR = 144           # b3^2 / 4 = 576 / 4
 
 # Current FITTED value
 ETA_S_FITTED = 0.6819            # Current fitted sophian_drag

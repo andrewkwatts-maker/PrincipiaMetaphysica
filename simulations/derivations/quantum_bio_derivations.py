@@ -30,7 +30,16 @@ from typing import Dict, List, Any, Optional, Tuple
 from dataclasses import dataclass, asdict
 import json
 import os
+import sys
 from datetime import datetime
+
+# Add parent directories to path for imports
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.insert(0, project_root)
+
+# Import FormulasRegistry for Single Source of Truth (SSoT)
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
 
 
 @dataclass
@@ -72,10 +81,10 @@ class QuantumBiologyDerivations:
     N_TUBULINS_NEURON = 1e16    # ~10^16 tubulins per neuron (Hameroff)
     T_BRAIN = 310.0             # Brain temperature (K) ≈ 37°C
 
-    # G2 geometry parameters
-    CHI_EFF = 144               # Effective Euler characteristic
-    B3 = 24                     # Third Betti number
-    N_FLUX = 24                 # Flux quanta
+    # G2 geometry parameters - from FormulasRegistry SSoT
+    CHI_EFF = _REG.qedem_chi_sum   # Effective Euler characteristic = 144
+    B3 = _REG.elder_kads           # Third Betti number = 24
+    N_FLUX = _REG.elder_kads       # Flux quanta = 24
 
     # Gamma oscillation
     GAMMA_FREQ = 40.0           # Gamma frequency (Hz)

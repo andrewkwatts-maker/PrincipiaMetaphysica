@@ -22,8 +22,17 @@ Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 import numpy as np
 from typing import Dict, Tuple, Optional
 
-# Fundamental constants from G2 topology
-B3 = 24  # Associative 3-cycles in TCS #187
+# Import FormulasRegistry as Single Source of Truth
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
+# Fundamental constants from G2 topology (via FormulasRegistry SSoT)
+B3 = _REG.elder_kads if _REGISTRY_AVAILABLE else 24  # Associative 3-cycles in TCS #187
 K_GIMEL = 12.3183098862  # Symplectic stiffness
 PHI = (1 + np.sqrt(5)) / 2  # Golden ratio
 

@@ -24,6 +24,10 @@ import numpy as np
 from pathlib import Path
 from typing import Dict, List, Any
 
+# Import SSoT constants from FormulasRegistry
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 try:
     import matplotlib.pyplot as plt
     import matplotlib.patches as mpatches
@@ -64,14 +68,14 @@ class TorsionFunnelVisualization:
     24 torsion pins to produce 125 observable residues.
     """
 
-    # Sterile model constants
+    # Sterile model constants (from SSoT)
     SO24_GENERATORS = 276
-    SHADOW_TORSION = 24
+    SHADOW_TORSION = _REG.elder_kads  # 24
     MANIFOLD_COST = 12
-    ANCESTRAL_ROOTS = 288  # 276 + 24 - 12
-    TORSION_PINS = 24
-    ACTIVE_RESIDUES = 125
-    HIDDEN_SUPPORTS = 163
+    ANCESTRAL_ROOTS = _REG.nitzotzin_roots  # 288 (276 + 24 - 12)
+    TORSION_PINS = _REG.elder_kads  # 24
+    ACTIVE_RESIDUES = _REG.sophian_registry  # 125
+    HIDDEN_SUPPORTS = _REG.barbelo_modulus  # 163
     DIMENSIONS = 4
     PINS_PER_DIM = 6
 

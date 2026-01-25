@@ -70,7 +70,7 @@ class FermionGenerations:
     def __init__(self):
         # Topological invariants from SSoT registry (locked by TCS #187)
         self.b3 = _REG.elder_kads  # = 24 (third Betti number)
-        self.chi_eff = _REG.chi_eff_total  # = 144 (both shadows combined)
+        self.chi_eff = _REG.qedem_chi_sum  # = 144 (both shadows combined)
 
         # Divisors
         self.spinorial_divisor = 8  # From 7D spinor structure

@@ -112,9 +112,9 @@ IONIC_STRENGTH = 0.15       # M - Typical cytoplasmic ionic strength (~150 mM)
 DIELECTRIC_WATER = 80.0     # Relative permittivity of water at 310K
 VISCOSITY_CYTO = 0.01       # Pa*s - Cytoplasmic viscosity
 
-# G2 Topology Parameters (from FormulasRegistry)
-B3 = 24                     # Third Betti number
-CHI_EFF = 144               # Effective Euler characteristic
+# G2 Topology Parameters (via FormulasRegistry SSoT)
+B3 = _REG.elder_kads if REGISTRY_AVAILABLE else 24                     # Third Betti number
+CHI_EFF = _REG.qedem_chi_sum if REGISTRY_AVAILABLE else 144            # Effective Euler characteristic
 CYCLE_SEPARATION = 0.12     # d/R ratio for TCS G2
 
 

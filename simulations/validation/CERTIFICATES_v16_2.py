@@ -39,6 +39,10 @@ from enum import Enum
 # STERILE PRECISION IMPORTS (Decimal-50)
 # =============================================================================
 
+# Import SSoT constants from FormulasRegistry
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 # Import sterile constants from precision module
 # This ensures the Demon-Lock precision context is initialized
 try:
@@ -49,19 +53,19 @@ try:
     )
     PRECISION_INITIALIZED = True
 except ImportError:
-    # Fallback for standalone execution
+    # Fallback for standalone execution - use registry SSoT
     from decimal import Decimal, getcontext, ROUND_HALF_EVEN
     getcontext().prec = 50
     getcontext().rounding = ROUND_HALF_EVEN
 
-    B3 = 24
-    K_GIMEL = 12.3183098862
-    PHI = (1 + np.sqrt(5)) / 2
+    B3 = _REG.elder_kads  # 24
+    K_GIMEL = _REG.demiurgic_coupling  # 12.3183098862
+    PHI = _REG.phi  # (1 + sqrt(5)) / 2
     PI = np.pi
     E = np.e
 
     # Sterile versions for high-precision calculations
-    B3_STERILE = Decimal('24')
+    B3_STERILE = Decimal(str(_REG.elder_kads))
     K_GIMEL_STERILE = Decimal('12.31830988618379067153776752674502872406891929148091')
     PHI_STERILE = Decimal('1.61803398874989484820458683436563811772030917980576')
     PI_STERILE = Decimal('3.14159265358979323846264338327950288419716939937510')

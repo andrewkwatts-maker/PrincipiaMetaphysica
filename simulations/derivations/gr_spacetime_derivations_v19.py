@@ -81,24 +81,24 @@ getcontext().prec = 50
 # =============================================================================
 # Import dimensional parameters from Single Source of Truth
 try:
-    from core.FormulasRegistry import FormulasRegistry
-    _SSOT = FormulasRegistry()
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
 
     # G2 Topology (TCS #187) - from SSOT
-    B3_G2 = _SSOT.elder_kads                    # Third Betti number = 24
+    B3_G2 = _REG.elder_kads             # Third Betti number = 24
     B2_G2 = 4                           # Second Betti number (TCS #187)
-    CHI_EFF = _SSOT.qedem_chi_sum        # Full manifold Euler char = 144
+    CHI_EFF = _REG.qedem_chi_sum        # Full manifold Euler char = 144
 
     # v21 Dimensional Chain - from SSOT
     # Level 0: ANCESTRAL (26D, signature 24,1) - v21 Unified time
-    D_CRITICAL = _SSOT.D_ancestral_total      # 26
+    D_CRITICAL = _REG.D_ancestral_total      # 26
     # Level 1: SHADOW (11D SPATIAL, signature 11,0) - v21 dual shadows
     # Structure: M^26 = T^1 x_fiber (S_normal^11 + S_mirror^11 + B^2)
-    D_INTERMEDIATE = _SSOT.D_shadow_total     # 11 (per shadow, SPATIAL)
+    D_INTERMEDIATE = _REG.D_shadow_total     # 11 (per shadow, SPATIAL)
     # Level 2: G2 (7D, signature 7,0) - G2 holonomy (RIEMANNIAN)
-    D_G2 = _SSOT.D_G2_total                   # 7
+    D_G2 = _REG.D_G2_total                   # 7
     # Level 3: VISIBLE (4D, signature 3,1) - Observable spacetime
-    D_SPACETIME = _SSOT.D_visible_total       # 4
+    D_SPACETIME = _REG.D_visible_total       # 4
 
 except ImportError:
     # Fallback values if SSOT not available (standalone execution)

@@ -82,15 +82,18 @@ from simulations.base import (
 # Set high precision for calculations
 getcontext().prec = 50
 
+# Import FormulasRegistry for Single Source of Truth (SSoT)
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
 
 # =============================================================================
 # PHYSICAL CONSTANTS AND COSMOLOGICAL PARAMETERS
 # =============================================================================
 
-# G2 Topology Constants
-B3_G2 = 24                          # Third Betti number
+# G2 Topology Constants - from FormulasRegistry SSoT
+B3_G2 = _REG.elder_kads             # Third Betti number = 24
 B2_G2 = 4                           # Second Betti number
-CHI_EFF = 144                       # Effective Euler characteristic
+CHI_EFF = _REG.qedem_chi_sum        # Effective Euler characteristic = 144
 
 # PM Logic Closure Constants
 VISIBLE_SECTOR = 125                # Visible SM states
