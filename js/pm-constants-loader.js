@@ -1216,6 +1216,12 @@
         const formulaElements = document.querySelectorAll('[data-formula-id]');
         formulaElements.forEach(el => {
             const formulaId = el.getAttribute('data-formula-id');
+
+            // Skip elements with empty or missing formula IDs
+            if (!formulaId) {
+                return;
+            }
+
             const formula = PM.formula(formulaId);
 
             if (formula) {
