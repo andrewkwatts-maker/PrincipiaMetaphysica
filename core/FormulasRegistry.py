@@ -179,6 +179,26 @@ class FormulasRegistry:
     BULK_PRESSURE = 163      # O'Dowd Bulk Pressure (= sterile_sector)
 
     # ===========================================================================
+    # THE 7 SOVEREIGN GNOSTIC CONSTANTS
+    # ===========================================================================
+    # These are the archetypal names for the fundamental constants:
+    #
+    # Value  | Gnostic Name    | Mathematical Identity
+    # -------|-----------------|----------------------
+    # 1.0    | The Monad       | watts_constant (Absolute Precision Anchor)
+    # 24     | The Pleroma     | b3 (Dimensional Totality)
+    # 135    | The Sophia      | shadow_sector (Visible Gates / Wisdom)
+    # 144    | The Demiurge    | chi_eff (Pressure Divisor / Craftsman)
+    # 153    | The Christos    | christ_constant (Joint Closure / Redeemer)
+    # 163    | The Barbelo     | odowd_bulk_pressure (Bulk Pressure / First Thought)
+    # 288    | The Ennoia      | roots_total (Logic Closure / Universal Mind)
+    #
+    # Derived:
+    # 18     | The Syzygy      | christos - sophia (Divine Pairing Gap)
+    # 26     | The Horos       | D_bulk (The Limit / Dimensional Boundary)
+    # ===========================================================================
+
+    # ===========================================================================
     # DERIVED GNOSTIC CONSTANTS
     # ===========================================================================
     SYZYGY_GAP = 18          # The Syzygy: Christos - Sophia = 153 - 135
@@ -324,6 +344,19 @@ class FormulasRegistry:
         "syzygy_gap": "The Syzygy",
         "horos": "The Horos",
         "decad": "The Decad",
+        # Hebrew Naming Aliases (v23.1)
+        "monad_unity": "The Monad",
+        "residual_key": "The Hand",
+        "elder_vessels": "Elder Vessels",
+        "horos_limit": "The Boundary",
+        "mephorash_chi": "Shem HaMephorash",
+        "demiurgic_gates": "Demiurge Gates",
+        "logos_joint": "Logos Joint",
+        "sophian_pressure": "Sophia Pressure",
+        "nitzotzin_roots": "Nitzotzin Roots",
+        "reid_pair": "Reid Pair",
+        "watts_weight": "Watts Weight",
+        "gnosis_threshold": "The Threshold",
         # (Z.6) Pneuma Tensioner Constants
         "z6_pneuma": "The Pneuma Tensioner",
         "geometric_ratio": "The Geometric Base",
@@ -557,6 +590,51 @@ class FormulasRegistry:
 
     # Reverse mapping: property name → symbol
     PROPERTY_TO_SYMBOL = {v: k for k, v in SYMBOL_MAP.items()}
+
+    # ===========================================================================
+    # HEBREW SYMBOL REGISTRY (v23.1 - Scientific-Hebrew Synthesis)
+    # ===========================================================================
+    # Maps parameters to their Hebrew letter equivalents via gematria.
+    # These are display names - code variables remain stable for compatibility.
+    #
+    # TOPOLOGICAL INVARIANTS:
+    # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
+    # ------|------------------|----------|----------|---------------
+    # 1     | monad_unity      | Aleph    | 1        | The Monad
+    # 10    | residual_key     | Yod      | 10       | The Hand
+    # 18    | syzygy_gap       | Chai     | 18       | The Life
+    # 24    | elder_vessels    | Kad      | 24       | Elder Vessels
+    # 27    | horos_limit      | Kaz      | 27       | The Boundary
+    # 72    | mephorash_chi    | Av       | 72       | Shem HaMephorash
+    # 135   | demiurgic_gates  | Kalah    | 135      | Demiurge Gates
+    # 153   | logos_joint      | 153      | 153      | Logos Joint
+    # 163   | sophian_pressure | 163      | 163      | Sophia Pressure
+    # 288   | nitzotzin_roots  | 288      | 288      | Nitzotzin Roots
+    #
+    # CENTRAL SAMPLER (Reid Architecture):
+    # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
+    # ------|------------------|----------|----------|---------------
+    # 1     | reid_pair        | Resh     | 200      | Reid Pair
+    # phi/12| watts_weight     | Resh-Phi | ~261     | Watts Weight
+    # 9     | gnosis_threshold | Tet      | 9        | The Threshold
+    # ===========================================================================
+    HEBREW_SYMBOL_REGISTRY = {
+        # Topological Invariants
+        "monad_unity": {"hebrew": "Aleph", "gematria": 1, "value": 1.0, "old_name": "watts_constant"},
+        "residual_key": {"hebrew": "Yod", "gematria": 10, "value": 10, "old_name": "decad"},
+        "syzygy_gap": {"hebrew": "Chai", "gematria": 18, "value": 18, "old_name": "syzygy_gap"},
+        "elder_vessels": {"hebrew": "Kad", "gematria": 24, "value": 24, "old_name": "b3"},
+        "horos_limit": {"hebrew": "Kaz", "gematria": 27, "value": 27, "old_name": "horos"},
+        "mephorash_chi": {"hebrew": "Av", "gematria": 72, "value": 72, "old_name": "chi_eff"},
+        "demiurgic_gates": {"hebrew": "Kalah", "gematria": 135, "value": 135, "old_name": "shadow_sector"},
+        "logos_joint": {"hebrew": "153", "gematria": 153, "value": 153, "old_name": "christ_constant"},
+        "sophian_pressure": {"hebrew": "163", "gematria": 163, "value": 163, "old_name": "odowd_bulk_pressure"},
+        "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288, "old_name": "roots_total"},
+        # Central Sampler
+        "reid_pair": {"hebrew": "Resh", "gematria": 200, "value": 1, "old_name": "central_pair"},
+        "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)", "old_name": "central_pair_weight"},
+        "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9, "old_name": "central_activation_threshold"},
+    }
 
     def __init__(self):
         """Initialize with the Ten Pillar Seeds - the ONLY hardcoded values."""
@@ -3045,6 +3123,75 @@ class FormulasRegistry:
     def D_spacetime_total(self) -> int:
         """Total spacetime dimensions: 27D (v23.1 with central sampler)."""
         return self._D_v23_spacetime_total
+
+    # ===========================================================================
+    # HEBREW NAMING ALIASES (v23.1 - Backward Compatible)
+    # ===========================================================================
+    # These aliases map the new Hebrew-scientific names to existing properties.
+    # Old code continues to work; new code can use either naming scheme.
+    #
+    # See HEBREW_SYMBOL_REGISTRY for the complete gematria mapping.
+    # ===========================================================================
+
+    @property
+    def monad_unity(self) -> float:
+        """Observer Unity (1.0) - Hebrew: Aleph (1). Alias for watts_constant."""
+        return self.watts_constant
+
+    @property
+    def residual_key(self) -> int:
+        """Residual Pressure Key (10) - Hebrew: Yod (10). Alias for decad."""
+        return self.decad
+
+    @property
+    def elder_vessels(self) -> int:
+        """Third Betti Number b3 (24) - Hebrew: Kad (24). Alias for b3."""
+        return self.b3
+
+    @property
+    def horos_limit(self) -> int:
+        """Bulk Boundary Dimension (27) - Hebrew: Kaz (27). Alias for horos."""
+        return self.horos
+
+    @property
+    def mephorash_chi(self) -> int:
+        """Triality Euler Index (72) - Hebrew: Av (72). Alias for chi_eff."""
+        return self.chi_eff
+
+    @property
+    def demiurgic_gates(self) -> int:
+        """Visible Sector Gates (135) - Hebrew: Kalah (135). Alias for shadow_sector."""
+        return self.shadow_sector
+
+    @property
+    def logos_joint(self) -> int:
+        """Joint Identity Constant (153) - Hebrew: 153. Alias for christ_constant."""
+        return self.christ_constant
+
+    @property
+    def sophian_pressure(self) -> int:
+        """Ancestral Bulk Pressure (163) - Hebrew: 163. Alias for odowd_bulk_pressure."""
+        return self.odowd_bulk_pressure
+
+    @property
+    def nitzotzin_roots(self) -> int:
+        """Ancestral Root Structure (288) - Hebrew: 288. Alias for roots_total."""
+        return self.roots_total
+
+    @property
+    def reid_pair(self) -> int:
+        """Central Sampler Count (1) - Hebrew: Resh (200). Alias for central_pair."""
+        return self.central_pair
+
+    @property
+    def watts_weight(self) -> float:
+        """Sampler Dilution Coupling (phi/sqrt(12)) - Hebrew: Resh-Phi. Alias for central_pair_weight."""
+        return self.central_pair_weight
+
+    @property
+    def gnosis_threshold(self) -> int:
+        """Activation Threshold (9) - Hebrew: Tet (9). Alias for central_activation_threshold."""
+        return self.central_activation_threshold
 
     def central_sampler_active(self, n_local: int) -> bool:
         """
