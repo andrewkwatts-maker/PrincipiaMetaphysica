@@ -138,9 +138,21 @@ These are cosmetic/documentation issues that don't affect functionality.
 - [x] Website pages updated
 - [x] FORMULAS.md synced
 - [x] Hebrew naming complete
-- [ ] Gemini peer review
-- [ ] Git push to remote
-- [ ] Package for submission
+- [x] Gemini peer review (APPROVED)
+- [x] Git push to remote (a5de3a2)
+- [x] Package for submission (v23.3.1)
+
+---
+
+## Final Commit History (v23.3.x)
+
+```
+a5de3a2 v23.3.1: Fix ק-family docstrings to match HEBREW_SYMBOL_REGISTRY
+ac4ab67 v23.3: Complete Hebrew-Scientific naming polish and version bump
+46d4539 v23.2.33: Simplify Qoph symbols to subscript notation
+```
+
+**Status: SUBMISSION COMPLETE**
 
 ---
 
