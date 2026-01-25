@@ -936,8 +936,10 @@
                         formulaContent = `$$\\displaystyle ${latexContent}$$`;
                     }
                     const labelHtml = block.label ? `<span class="equation-number">${escapeHtml(block.label)}</span>` : '';
+                    // Only include data-formula-id if we have a non-empty formula ID
+                    const formulaIdAttr = formulaId ? ` data-formula-id="${escapeHtml(formulaId)}"` : '';
                     blockDiv.innerHTML = `
-                        <div class="formula-block equation-wrapper" data-formula-id="${escapeHtml(formulaId)}">
+                        <div class="formula-block equation-wrapper"${formulaIdAttr}>
                             <div class="equation-line">
                                 <div class="equation-content">${formulaContent}</div>
                                 ${labelHtml}
@@ -1255,7 +1257,9 @@
         }
 
         const titleAttr = tooltipText ? ` title="${tooltipText}"` : '';
-        let html = `<div class="equation-wrapper academic-equation" id="${anchorId}" data-formula-id="${formulaId}"${titleAttr}>`;
+        // Only include data-formula-id if we have a non-empty formula ID
+        const formulaIdAttr = formulaId ? ` data-formula-id="${formulaId}"` : '';
+        let html = `<div class="equation-wrapper academic-equation" id="${anchorId}"${formulaIdAttr}${titleAttr}>`;
 
         // Main equation with number
         // Add \displaystyle to ensure fractions render at full size (prevents cramped rendering)
