@@ -222,7 +222,7 @@ class DimensionalSSOTValidator:
             self.info.append(f"D_external signature (5,1) [OK]")
 
         # Chi_eff relations
-        chi_sector = self.registry.chi_eff
+        chi_sector = self.registry.mephorash_chi
         chi_total = self.registry.chi_eff_total
         if chi_total != 2 * chi_sector:
             self.errors.append(f"Chi relation failed: {chi_total} != 2 * {chi_sector}")
@@ -232,7 +232,7 @@ class DimensionalSSOTValidator:
 
         # n_gen from chi_eff
         n_gen = self.registry.n_gen
-        b3 = self.registry.b3
+        b3 = self.registry.elder_vessels
         if n_gen != chi_sector // b3:
             self.errors.append(f"n_gen relation failed: {n_gen} != {chi_sector}/{b3}")
             success = False
@@ -240,7 +240,7 @@ class DimensionalSSOTValidator:
             self.info.append(f"n_gen(3) = chi_eff(72) / b3(24) [OK]")
 
         # Roots relations
-        roots_total = self.registry.roots_total
+        roots_total = self.registry.nitzotzin_roots
         roots_per_sector = self.registry.roots_per_sector
         if roots_total != 2 * roots_per_sector:
             self.errors.append(f"Roots relation failed: {roots_total} != 2 * {roots_per_sector}")
@@ -250,7 +250,7 @@ class DimensionalSSOTValidator:
 
         # Sector partition
         visible = self.registry.visible_sector
-        sterile = self.registry.sterile_sector
+        sterile = self.registry.sophian_pressure
         if roots_total != visible + sterile:
             self.errors.append(f"Sector partition failed: {roots_total} != {visible} + {sterile}")
             success = False
@@ -258,8 +258,8 @@ class DimensionalSSOTValidator:
             self.info.append(f"roots_total(288) = visible(125) + sterile(163) [OK]")
 
         # Gnostic partition
-        shadow = self.registry.shadow_sector
-        christ = self.registry.christ_constant
+        shadow = self.registry.demiurgic_gates
+        christ = self.registry.logos_joint
         if roots_total != shadow + christ:
             self.errors.append(f"Gnostic partition failed: {roots_total} != {shadow} + {christ}")
             success = False

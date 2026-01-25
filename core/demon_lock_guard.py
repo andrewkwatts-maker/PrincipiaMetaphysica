@@ -128,13 +128,13 @@ class DemonLockGuard:
         if self.data:
             try:
                 christ = self._get_constant_value('christ_constant')
-                expected_christ = self.registry.christ_constant  # 153 from SSoT
+                expected_christ = self.registry.logos_joint  # 153 from SSoT
                 if christ != expected_christ:
                     self.violations.append(f"CLOSURE ERROR: Christ Constant = {christ}, expected {expected_christ}")
                     return False
 
                 roots = self._get_invariant_value('roots')
-                expected_roots = self.registry.roots_total  # 288 from SSoT
+                expected_roots = self.registry.nitzotzin_roots  # 288 from SSoT
                 if roots != expected_roots:
                     self.violations.append(f"CLOSURE ERROR: Total roots = {roots}, expected {expected_roots}")
                     return False
@@ -217,7 +217,7 @@ class DemonLockGuard:
         Any deviation breaks the entire framework.
         """
         # Check registry
-        if self.registry.watts_constant != 1.0:
+        if self.registry.monad_unity != 1.0:
             self.violations.append("GUARD RAIL BROKEN: Watts Constant != 1.0")
             return False
 
