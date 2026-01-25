@@ -115,7 +115,7 @@ if __name__ == "__main__":
     print("MAGNETIC FLUX QUANTUM v17.2 - Direct Expansion")
     sim = MagneticFluxV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.elder_kads, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_FLUX:.15e} Wb")
     print(f"Bulk:     {sim.bulk_flux:.15e} Wb")

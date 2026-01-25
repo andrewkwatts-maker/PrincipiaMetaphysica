@@ -270,7 +270,7 @@ class ThermalSimulationV18(SimulationBase):
         """Ensure all required inputs are set in registry."""
         defaults = {
             "constants.M_PLANCK": (getattr(_REG, "M_PLANCK", 2.435e18), "CODATA", "ESTABLISHED"),
-            "topology.b3": (_REG.governing_elder_kad, "ESTABLISHED:FormulasRegistry", "GEOMETRIC"),
+            "topology.b3": (_REG.elder_kads, "ESTABLISHED:FormulasRegistry", "GEOMETRIC"),
             "pneuma.vev": (getattr(_REG, "pneuma_vev", 1.833), "pneuma_mechanism_v16_0", "DERIVED"),
             "pneuma.mass_scale": (getattr(_REG, "pneuma_mass_scale", 2.03e17), "pneuma_mechanism_v16_0", "DERIVED"),
         }

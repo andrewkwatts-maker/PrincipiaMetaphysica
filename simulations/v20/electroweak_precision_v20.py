@@ -52,7 +52,7 @@ except ImportError:
 
 # Constants from SSOT
 K_GIMEL = _REG.demiurgic_coupling  # b3/2 + 1/pi = 12.318...
-B3 = _REG.governing_elder_kad  # 24
+B3 = _REG.elder_kads  # 24
 PHI = _REG.phi  # (1 + sqrt(5))/2
 
 

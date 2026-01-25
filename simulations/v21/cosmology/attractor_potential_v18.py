@@ -118,7 +118,7 @@ class AttractorPotentialV18(SimulationBase):
         )
 
         # Topological inputs from SSoT registry
-        self.b3 = _REG.governing_elder_kad               # = 24 (Third Betti number)
+        self.b3 = _REG.elder_kads               # = 24 (Third Betti number)
         self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
 
         # Fundamental scales

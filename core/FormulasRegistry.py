@@ -625,7 +625,7 @@ class FormulasRegistry:
         "monad_unity": {"hebrew": "Aleph", "gematria": 1, "value": 1.0, "old_name": "watts_constant"},
         "residual_key": {"hebrew": "Yod", "gematria": 10, "value": 10, "old_name": "decad"},
         "syzygy_gap": {"hebrew": "Chai", "gematria": 18, "value": 18, "old_name": "syzygy_gap"},
-        "governing_elder_kad": {"hebrew": "Kad", "hebrew_char": "כד", "gematria": 24, "value": 24, "old_name": "b3", "symbol": r"\mathcal{E}_{\text{כד}}", "scientific_name": "Symmetric Governance Energy", "gnostic_name": "The Governing Elder כד"},
+        "elder_kads": {"hebrew": "Kad", "hebrew_char": "כד", "gematria": 24, "value": 24, "old_name": "b3", "symbol": r"\mathcal{E}_{\text{כד}}", "scientific_name": "Symmetric Governance Energy", "gnostic_name": "The Governing Elder כד"},
         "horos_limit": {"hebrew": "Kaz", "gematria": 27, "value": 27, "old_name": "horos"},
         "mephorash_chi": {"hebrew": "Av", "gematria": 72, "value": 72, "old_name": "chi_eff"},
         "demiurgic_Yetts": {"hebrew": "Kalah", "gematria": 135, "value": 135, "old_name": "shadow_sector", "symbol": "Yd"},
@@ -3162,7 +3162,7 @@ class FormulasRegistry:
         return self.DECAD
 
     @property
-    def governing_elder_kad(self) -> int:
+    def elder_kads(self) -> int:
         """Symmetric Governance Energy (24) - Hebrew: כד (Kad). Symbol: E_כד.
 
         The 24 Elders as the active 'Energy' and administrative 'Vessel' (Kad)
@@ -3172,13 +3172,13 @@ class FormulasRegistry:
 
     @property
     def elders(self) -> int:
-        """LEGACY ALIAS for governing_elder_kad. Third Betti Number b3 (24)."""
-        return self.governing_elder_kad
+        """LEGACY ALIAS for elder_kads. Third Betti Number b3 (24)."""
+        return self.elder_kads
 
     @property
     def elder_vessels(self) -> int:
-        """LEGACY ALIAS for governing_elder_kad. Third Betti Number b3 (24)."""
-        return self.governing_elder_kad
+        """LEGACY ALIAS for elder_kads. Third Betti Number b3 (24)."""
+        return self.elder_kads
 
     @property
     def horos_limit(self) -> int:

@@ -90,7 +90,7 @@ class FineStructureDerivation:
 
     def __init__(self):
         # Topological inputs from SSoT registry
-        self.b3 = _REG.governing_elder_kad  # = 24 (third Betti number)
+        self.b3 = _REG.elder_kads  # = 24 (third Betti number)
         self.phi = (1 + np.sqrt(5)) / 2
 
         # EXPERIMENTAL: CODATA 2022 reference values

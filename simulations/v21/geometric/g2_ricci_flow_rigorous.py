@@ -104,7 +104,7 @@ class G2RicciFlowRigorous(SimulationBase):
         self.h11 = 4
         self.h21 = 0
         self.h31 = 68
-        self.b3 = _REG.governing_elder_kad  # = 24 (Third Betti number)
+        self.b3 = _REG.elder_kads  # = 24 (Third Betti number)
 
         # Flow parameters
         self.t_initial = 0.0

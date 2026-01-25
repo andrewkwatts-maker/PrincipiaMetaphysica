@@ -93,7 +93,7 @@ class MicrotubuleGeometryAnalysis:
     def __init__(self):
         """Initialize with G2 topology parameters from SSoT."""
         # RIGOROUS: Topological invariant from SSoT registry
-        self.b3 = _REG.governing_elder_kad  # = 24 (Third Betti number)
+        self.b3 = _REG.elder_kads  # = 24 (Third Betti number)
 
         # RIGOROUS: Mathematical definition from SSoT registry
         self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.31831...
