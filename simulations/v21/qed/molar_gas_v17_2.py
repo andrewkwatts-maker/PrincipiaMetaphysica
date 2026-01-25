@@ -110,7 +110,7 @@ if __name__ == "__main__":
     print("MOLAR GAS CONSTANT v17.2 - Neutral Bridge (The Still Point)")
     sim = MolarGasV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_R:.12f} J/(mol K)")
     print(f"Manifest: {sim.manifest_r:.12f} J/(mol K)")

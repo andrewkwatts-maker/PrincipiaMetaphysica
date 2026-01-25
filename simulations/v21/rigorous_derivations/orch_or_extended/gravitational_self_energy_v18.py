@@ -180,7 +180,7 @@ class DiosiPenroseCalculator:
         # Get k_gimel from registry or use computed value
         if REGISTRY_AVAILABLE and _REG is not None:
             self.k_gimel = Decimal(str(_REG.demiurgic_coupling))
-            self.b3 = _REG.elders
+            self.b3 = _REG.governing_elder_kad
         else:
             self.b3 = 24
             self.k_gimel = Decimal(str(self.b3)) / 2 + 1 / Decimal(str(np.pi))

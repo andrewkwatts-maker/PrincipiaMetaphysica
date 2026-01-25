@@ -150,7 +150,7 @@ class CMBTemperatureV18(SimulationBase):
         self.R_Hubble = 4.4e26       # m (c/H_0)
 
         # Topology constants from SSoT registry
-        self.b3 = _REG.elders  # = 24 (Third Betti number)
+        self.b3 = _REG.governing_elder_kad  # = 24 (Third Betti number)
         self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
 
         # v19.0: DERIVED geometric factor replaces calibrated k_CMB

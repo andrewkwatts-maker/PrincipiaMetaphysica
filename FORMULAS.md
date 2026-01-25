@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:06:55
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:14:55
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -28,7 +28,7 @@ All other values are derived from these constants.
 
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
-| Betti Three | B3 | `24` | Third Betti number of G2 manifold |
+| Governing Elder | E_כד | `24` | Third Betti number of G2 manifold (24 Elders) |
 | Chi Effective (per-shadow) | chi_eff | `72` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | chi_eff_total | `144` | Both shadows combined (72 + 72 = 144) |
 | Total Roots | - | `288` | E8 x E8 root lattice |
@@ -175,7 +175,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | monad_unity | `1.0` | Omega_Aleph | Aleph | 1 |
 | residual_key | `10` | R_Yod | Yod | 10 |
 | syzygy_gap | `18` | S_gap | Chai | 18 |
-| elders | `24` | E_b3 | Kad | 24 |
+| governing_elder_kad | `24` | E_כד | Kad | 24 |
 | horos_limit | `27` | H_27 | Kaz | 27 |
 | mephorash_chi | `72` | M_chi | Av | 72 |
 | sophian_registry | `125` | V_Lamed | Lamed | 74 |

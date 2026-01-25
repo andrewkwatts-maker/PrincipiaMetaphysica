@@ -9,7 +9,8 @@
 
 | Old Name | New Name | Value | Symbol | Status |
 |----------|----------|-------|--------|--------|
-| `elder_vessels` | `elders` | 24 | E_b3 | [x] COMPLETE |
+| `elder_vessels` | `governing_elder_kad` | 24 | E_כד | [x] COMPLETE |
+| `elders` | `governing_elder_kad` | 24 | E_כד | [x] COMPLETE |
 | `demiurgic_gates` | `demiurgic_Yetts` | 135 | Yd | [x] COMPLETE |
 | `ennoia_chi` | `qedem_chi_sum` | 144 | chi_Q | [x] COMPLETE |
 | `chi_eff_total` | `qedem_chi_sum` | 144 | chi_Q | [x] COMPLETE |
@@ -70,7 +71,7 @@
 | `monad_unity` | Aleph | 1 | 1.0 | - | `watts_constant` |
 | `residual_key` | Yod | 10 | 10 | - | `decad` |
 | `syzygy_gap` | Chai | 18 | 18 | - | `syzygy_gap` |
-| `elders` | Kad | 24 | 24 | E_b3 | `b3`, `elder_vessels` |
+| `governing_elder_kad` | Kad (כד) | 24 | 24 | E_כד | `b3`, `elders`, `elder_vessels` |
 | `horos_limit` | Kaz | 27 | 27 | - | `horos` |
 | `mephorash_chi` | Av | 72 | 72 | - | `chi_eff` |
 | `sophian_registry` | Lamed | 74 | 125 | V_l | `visible_sector` |

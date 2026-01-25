@@ -265,7 +265,7 @@ class HiggsSimulationV18(SimulationBase):
 
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required topology inputs are set in registry."""
-        b3 = _REG.elders  # TCS G2 manifold from FormulasRegistry
+        b3 = _REG.governing_elder_kad  # TCS G2 manifold from FormulasRegistry
         k_gimel = b3 / 2.0 + 1.0 / np.pi  # ~ 12.318
 
         defaults = {

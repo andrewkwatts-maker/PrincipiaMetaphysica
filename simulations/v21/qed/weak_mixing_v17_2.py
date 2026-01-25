@@ -120,7 +120,7 @@ if __name__ == "__main__":
     print("WEAK MIXING ANGLE v17.2 - Torsion Gate")
     sim = WeakMixingV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"Target:   {CODATA_WEAK:.10f}")
     print(f"Bulk:     {sim.bulk_weak:.10f}")

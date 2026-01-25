@@ -84,7 +84,7 @@ class G2TrialityMixing:
 
         # G2 manifold topology from SSoT registry
         # PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
-        self.b3 = _REG.elders  # = 24 (Third Betti number)
+        self.b3 = _REG.governing_elder_kad  # = 24 (Third Betti number)
         self.b2 = 4
         self.chi_eff = _REG.chi_eff_total  # = 144 for PMNS (both shadows)
         self.n_gen = _REG.n_gen  # = 3 (fermion generations)

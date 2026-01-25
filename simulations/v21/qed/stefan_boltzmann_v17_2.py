@@ -157,7 +157,7 @@ if __name__ == "__main__":
     print("=" * 70)
     sim = StefanBoltzmannV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.governing_elder_kad, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_STEFAN:.15e} W/(m^2 K^4)")
     print(f"Bulk:     {sim.bulk_sigma:.15e} W/(m^2 K^4)")

@@ -237,8 +237,8 @@ class GaugeSimulationV18(SimulationBase):
             "pdg.sin2_theta_W": (getattr(_REG, "sin2_theta_W", 0.23121), "PDG 2024"),  # EXPERIMENTAL: PDG 2024
             "pdg.m_Z": (getattr(_REG, "m_Z", 91.1876), "PDG 2024"),  # EXPERIMENTAL: PDG 2024
             # Topology
-            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
-            "topology.h11": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.governing_elder_kad, "ESTABLISHED:FormulasRegistry"),
+            "topology.h11": (_REG.governing_elder_kad, "ESTABLISHED:FormulasRegistry"),
         }
 
         for path, (value, source) in defaults.items():
