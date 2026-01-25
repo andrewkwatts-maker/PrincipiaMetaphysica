@@ -145,8 +145,8 @@ class G2Triality:
         """
         # Import from base precision module (SSOT)
         try:
-            from simulations.base.precision import B3, CHI_EFF
-            self.chi_eff = chi_eff if chi_eff is not None else CHI_EFF  # SSOT: 144
+            from simulations.base.precision import B3, CHI_EFF_TOTAL
+            self.chi_eff = chi_eff if chi_eff is not None else CHI_EFF_TOTAL  # SSOT: 144 (both shadows)
             self.b3 = b3 if b3 is not None else B3  # SSOT: 24
         except ImportError:
             # Fallback values if precision module not available

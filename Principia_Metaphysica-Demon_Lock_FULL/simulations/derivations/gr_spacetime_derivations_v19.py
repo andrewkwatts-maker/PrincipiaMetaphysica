@@ -14,7 +14,7 @@ DERIVATION CHAIN (v22):
 3. Spin connection and torsion-free condition
 4. Riemann/Ricci tensor construction
 5. v22 Dimensional reduction:
-   25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1) -> 4D(3,1)
+   27D(26,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1) -> 4D(3,1)
    - (0,1): Shared unified time fiber
    - 12x(2,0): 12 Euclidean bridge pairs
    - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
@@ -180,7 +180,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
     6. Einstein field equations follow from variational principle
 
     v22 FRAMEWORK:
-    Structure: 25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+    Structure: 27D(26,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
     - (0,1): Shared unified time fiber
     - 12x(2,0): 12 Euclidean bridge pairs
     - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
@@ -201,7 +201,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
         self.D_4 = D_SPACETIME
 
         # Signature - v22 dual-shadow structure
-        # v22 FRAMEWORK: 25D(24,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+        # v22 FRAMEWORK: 27D(26,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
         # Components:
         #   (0,1): Shared unified time fiber
         #   12x(2,0): 12 Euclidean bridge pairs

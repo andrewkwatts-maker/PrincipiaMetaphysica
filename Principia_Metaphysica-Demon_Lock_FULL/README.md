@@ -41,9 +41,9 @@
 
 ## Abstract
 
-This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v22+ framework begins with 25-dimensional spacetime with signature (24,1)—24 spatial dimensions and 1 timelike dimension. The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows, each sharing a unified time fiber T¹. Each bridge pair (x_i, y_i) distributes coordinates: x_i to Normal shadow, y_i to Mirror shadow. This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
+This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v23.1+ framework begins with 27-dimensional spacetime with signature (26,1)—26 spatial dimensions (24 G2 core + 2 Euclidean bridge) and 1 timelike dimension. The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows, each sharing a unified time fiber T¹. Each bridge pair (x_i, y_i) distributes coordinates: x_i to Normal shadow, y_i to Mirror shadow. A central C^(2,0) sampler provides architectural global averaging outside the fiber product. This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
 
-The framework features dual shadow universes connected by a Euclidean bridge, all sharing a common time fiber. The topology of the flux-dressed G₂ manifold yields an effective Euler characteristic χ_eff = 144, which through the relation n_gen = χ_eff/48 predicts exactly 3 fermion generations. The fundamental field is a spinor in the 25D bulk (Clifford algebra Cl(24,1)), which reduces to effective components in each shadow universe.
+The framework features dual shadow universes connected by a Euclidean bridge, all sharing a common time fiber. The topology of the flux-dressed G₂ manifold yields an effective Euler characteristic χ_eff = 144, which through the relation n_gen = χ_eff/48 predicts exactly 3 fermion generations. The fundamental field is a spinor on the 24D core (Clifford algebra Cl(24,1)), which reduces to effective components in each shadow universe.
 
 Time emerges from thermal entropy via the Two-Time Thermal Hypothesis: observable thermal time couples to an orthogonal hidden time dimension. The framework predicts dark energy equation of state w₀ = -23/24 ≈ -0.9583 (v16.2 thawing quintessence formula: w₀ = -1 + 1/b₃) and w_a = -1/√24 ≈ -0.204, matching DESI 2025 thawing constraint within 0.02σ. SO(10) grand unification emerges naturally from the G₂ compactification. Shared extra dimensions produce Kaluza-Klein graviton resonances at approximately 5 TeV, testable at the High-Luminosity LHC.
 
@@ -51,29 +51,31 @@ Six critical mathematical issues have been resolved: (1) Generation count correc
 
 ---
 
-## v22 Dimensional Architecture
+## v23.1 Dimensional Architecture
 
-v23.0 introduces the **12x(2,0) paired bridge system**, replacing the single bridge with 12 paired modules that enable distributed OR reduction and consciousness I/O channels.
+v23.1 introduces the **27D(26,1) architecture** with 12x(2,0) paired bridge system plus central sampler, enabling distributed OR reduction and consciousness I/O channels.
 
 ### Bulk Structure
 
 ```
-M^{24,1} = T^1 x_fiber (Direct_Sum_{i=1}^{12} B_i^{2,0})
+M^{27}(26,1) = T^1 x_fiber (Direct_Sum_{i=1}^{12} B_i^{2,0}) + C^{2,0}
 ```
 
-- **24 spacelike dimensions**: 12 pairs x 2 dimensions per pair = 24
+- **24 G2 core dimensions**: 12 pairs x 2 dimensions per pair = 24 (physics)
+- **2 central sampler dimensions**: C^(2,0) for architectural global averaging
 - **1 timelike dimension**: Single unified time fibering over all pairs
-- **12 Euclidean bridge pairs**: Each B_i^{2,0} is a 2D Euclidean bridge
+- **Total**: 24 + 2 + 1 = 27D with signature (26,1)
 
 ### Metric Tensor
 
 ```
-ds^2 = -dt^2 + Sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
+ds^2 = -dt^2 + Sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + (dc_1^2 + dc_2^2)
 ```
 
 Where:
-- `dy_{1i}` = perception/input coordinate for pair i
+- `dy_{1i}` = perception/input coordinate for pair i (24D total)
 - `dy_{2i}` = intuition/output coordinate for pair i
+- `dc_1, dc_2` = central sampler coordinates (2D, outside fiber product)
 
 ### Distributed OR Reduction
 

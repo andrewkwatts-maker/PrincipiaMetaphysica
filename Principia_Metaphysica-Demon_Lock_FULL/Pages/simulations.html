@@ -1551,6 +1551,9 @@
         });
     </script>
 
+    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
+    <script src="../js/site-config.js"></script>
+
     <!-- Header and Auth system integration -->
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';

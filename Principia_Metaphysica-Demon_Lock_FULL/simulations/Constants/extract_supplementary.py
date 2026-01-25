@@ -214,7 +214,7 @@ def extract_all_supplementary(base_dir: Path) -> Dict[str, Any]:
     print("Extracting supplementary content...")
 
     supplementary = {
-        'version': '16.2',
+        'version': '23.1',
         'count': 0,
         'items': {}
     }

@@ -31,7 +31,7 @@ Dedicated To:
 #   - Each shadow: 12 spatial (from bridge coordinate selection) + 1 shared time
 #
 # v22 decomposition:
-#   25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows via OR coordinate selection
+#   27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows via OR coordinate selection
 #
 # The OR operator R_perp acts on each (2,0) bridge pair, selecting coordinates
 # for normal vs mirror shadow. Time evolution is shared globally across both shadows.

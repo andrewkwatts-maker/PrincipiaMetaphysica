@@ -1154,6 +1154,9 @@
     </div>
     </div>
 
+    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
+    <script src="../js/site-config.js"></script>
+
     <script type="module">
       import { setupAuthGuard } from '../js/auth-guard.js';
       setupAuthGuard('docs-beginners-guide-printable');

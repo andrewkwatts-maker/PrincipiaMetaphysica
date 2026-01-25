@@ -15,7 +15,7 @@ The physics (v21 framework):
 - Any other configuration fails the ghost-free criterion
 
 Dimensional descent verification (v22 correction):
-- 25D(24,1) = 12×(2,0) + (0,1) with OR reduction via R_perp operator
+- 27D(26,1) = 12×(2,0) + (0,1) with OR reduction via R_perp operator
 - 12 Euclidean bridge pairs WARP to create 2×13D(12,1) shadows
 - Each shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)
 
@@ -469,7 +469,7 @@ class SymplecticDescentValidator(SimulationBase):
 
     def _verify_dimensional_descent(self, b3: int) -> bool:
         """
-        Verify the dimensional descent: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows.
+        Verify the dimensional descent: 27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows.
 
         The descent proceeds via OR reduction through R_perp operator:
         1. Start: 25D = 12×(2,0) bridge pairs + (0,1) shared time
@@ -492,7 +492,7 @@ class SymplecticDescentValidator(SimulationBase):
         Returns:
             True if descent is consistent
         """
-        # 25D(24,1) starting point = 12×(2,0) + (0,1)
+        # 27D(26,1) starting point = 12×(2,0) + (0,1)
         D_bulk = 25  # v22: 25D bulk not 26D
         p_bulk, q_bulk = 24, 1
 
@@ -687,7 +687,7 @@ class SymplecticDescentValidator(SimulationBase):
                         "The complete proof chain for (24,1) with 12×(2,0) bridge uniqueness:\n\n"
                         "1. Weyl anomaly requires D = 26 (central charge constraint)\n\n"
                         "2. Ghost-free physical states require OR reduction via R_perp (q = 1 with bridge)\n\n"
-                        "3. 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time\n\n"
+                        "3. 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time\n\n"
                         "4. Bridge pairs WARP to create dual shadows: 12×(2,0) → 2×13D(12,1)\n\n"
                         "5. Each shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\n\n"
                         "The (24,1) signature with 12×(2,0) bridge is not arbitrary - it is the ONLY configuration "
@@ -845,7 +845,7 @@ class SymplecticDescentValidator(SimulationBase):
                 id="dimensional-descent-26-to-dual",
                 label="(2.V.7)",
                 latex=r"25D_{(24,1)} = 12 \times (2,0) + (0,1) \xrightarrow{R_\perp} 2 \times 13D_{(12,1)}",
-                plain_text="25D(24,1) = 12×(2,0) + (0,1) → [R_perp] → 2×13D(12,1)",
+                plain_text="27D(26,1) = 12×(2,0) + (0,1) → [R_perp] → 2×13D(12,1)",
                 category="DERIVED",
                 description=(
                     "v22 dimensional descent: 12×(2,0) bridge pairs + (0,1) shared time WARP to create "
@@ -857,7 +857,7 @@ class SymplecticDescentValidator(SimulationBase):
                     "method": "OR reduction via R_perp on 12×(2,0) bridge pairs",
                     "parentFormulas": ["or-reduction-constraint"],
                     "steps": [
-                        "Start: 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time",
+                        "Start: 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time",
                         "R_perp acts on bridge pairs via coordinate selection",
                         "Each (x_i, y_i) contributes: x_i → Normal shadow, y_i → Mirror shadow",
                         "Result: 12×(2,0) warps to create 2×13D(12,1) shadows",
@@ -886,7 +886,7 @@ class SymplecticDescentValidator(SimulationBase):
                 derivation={
                     "method": "Coordinate selection via R_perp",
                     "steps": [
-                        "Start: 25D(24,1) = 12×(2,0) bridge pairs + (0,1) shared time",
+                        "Start: 27D(26,1) = 12×(2,0) bridge pairs + (0,1) shared time",
                         "Each bridge pair (x_i, y_i) represents 2D Euclidean space",
                         "Coordinate selection: x_i → Normal shadow, y_i → Mirror shadow",
                         "Result: Each shadow gets 12 spatial + 1 shared time = 13D(12,1)",

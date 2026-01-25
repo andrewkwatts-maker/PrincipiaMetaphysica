@@ -222,6 +222,38 @@ export function setupAuthGuard(pageId = 'index') {
 
   console.log(`[PM Auth Guard] Setting up for page: ${pageId}`);
 
+  // Check if authentication is disabled via site-config.js
+  const authRequired = window.PM_CONFIG?.AUTH_REQUIRED ?? window.PM_AUTH_REQUIRED ?? true;
+  const offlineMode = window.PM_CONFIG?.OFFLINE_MODE ?? window.PM_OFFLINE ?? false;
+
+  if (!authRequired || offlineMode) {
+    console.log('[PM Auth Guard] Authentication DISABLED - showing content directly');
+
+    // Skip authentication entirely - show content immediately
+    document.body.classList.add('authenticated');
+    document.body.classList.remove('not-authenticated', 'auth-loading');
+
+    const overlay = document.getElementById('auth-overlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.style.display = 'block';
+    }
+
+    // Set authenticated flag (for code that checks it)
+    isAuthenticated = true;
+
+    // Re-trigger MathJax if needed
+    if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(err => console.warn('[PM Auth Guard] MathJax error:', err));
+    }
+
+    return; // Skip all auth setup
+  }
+
   // Check for cached session FIRST - this is the key optimization
   const cachedSession = getCachedSession();
 

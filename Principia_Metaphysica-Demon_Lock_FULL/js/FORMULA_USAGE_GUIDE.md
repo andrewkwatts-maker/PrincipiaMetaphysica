@@ -34,17 +34,17 @@ The Principia Metaphysica website uses a standardized formula component system t
 <pm-formula formula-id="w0-formula" show-label="false"></pm-formula>
 ```
 
-## Gold Standard: Master Action 25D
+## Gold Standard: Master Action 27D
 
-The `master-action-25d` formula serves as the reference implementation:
+The `master-action-27d` formula serves as the reference implementation:
 
 ```html
-<pm-formula formula-id="master-action-25d" show-derivation="true"></pm-formula>
+<pm-formula formula-id="master-action-27d" show-derivation="true"></pm-formula>
 ```
 
-**Note**: The v21+ framework uses 25D(24,1) with unified time, replacing the
-historical 26D(24,2) two-time formulation. Legacy "master-action-26d" IDs may
-exist for backward compatibility.
+**Note**: The v23.1+ framework uses 27D(26,1) with unified time. The 26 spatial
+dimensions = 24 G2 core + 2 Euclidean bridge. Legacy "master-action-25d" and
+"master-action-26d" IDs may exist for backward compatibility.
 
 This demonstrates all features:
 - Complex HTML with subscripts/superscripts

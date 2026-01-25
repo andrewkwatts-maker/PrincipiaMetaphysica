@@ -685,7 +685,7 @@ deltaHsqMax
         chain = {
             "metadata": {
                 "title": "Principia Metaphysica - Cosmology Derivation Chain",
-                "version": "16.2",
+                "version": "23.1",
                 "date": "2025-12-29",
                 "author": "Andrew Keith Watts",
                 "description": "Complete Wolfram Alpha verification chain for PM cosmological predictions",
@@ -833,7 +833,7 @@ if __name__ == "__main__":
 
     print("=" * 70)
     print("COSMOLOGY DERIVATION CHAIN GENERATOR")
-    print("Principia Metaphysica v16.2")
+    print("Principia Metaphysica v23.1")
     print("=" * 70)
 
     # Initialize derivation chain
