@@ -1149,6 +1149,10 @@
 
   <script src="../js/pm-tooltip-system.js"></script>
   <script src="../js/pm-constants-loader.js"></script>
+
+  <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
+  <script src="../js/site-config.js"></script>
+
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
     import { setupAuthGuard } from '../js/auth-guard.js';

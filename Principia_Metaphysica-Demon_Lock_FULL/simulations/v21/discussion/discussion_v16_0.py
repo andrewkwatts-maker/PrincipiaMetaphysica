@@ -284,7 +284,7 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "<strong>Central Equation (25D Dual-Shadow Framework with G₂ Compactification):</strong> "
-                    "The 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows → 7D G₂ → 6D bulk → 4D dimensional reduction "
+                    "The 27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows → 7D G₂ → 6D bulk → 4D dimensional reduction "
                     "yields the unified framework central equation."
                 )
             ),
@@ -1283,7 +1283,7 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Framework", "Dimensions", "Fundamental Object", "Testability"],
                 rows=[
-                    ["Principia Metaphysica", "25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → 4D via G₂", "4096-spinor Pneuma + TCS G₂ manifold", "Near-term (2027-2030s)"],
+                    ["Principia Metaphysica", "27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → 4D via G₂", "4096-spinor Pneuma + TCS G₂ manifold", "Near-term (2027-2030s)"],
                     ["Type IIA/IIB String", "10", "Strings (1D)", "Far-term (M_Pl scale)"],
                     ["M-Theory", "11", "M2/M5 branes", "Far-term (M_Pl scale)"],
                     ["Loop Quantum Gravity", "4", "Spin networks", "Far-term (Planck scale)"]

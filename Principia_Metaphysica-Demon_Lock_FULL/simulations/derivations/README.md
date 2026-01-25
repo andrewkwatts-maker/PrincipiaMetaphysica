@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains comprehensive **Wolfram Alpha/Mathematica derivation chains** for all major cosmological predictions in Principia Metaphysica v16.2. The derivations are organized into formal, step-by-step proofs that can be verified in Wolfram Language.
+This directory contains comprehensive **Wolfram Alpha/Mathematica derivation chains** for all major cosmological predictions in Principia Metaphysica v23.1. The derivations are organized into formal, step-by-step proofs that can be verified in Wolfram Language.
 
 ## Files
 
@@ -387,7 +387,7 @@ All cosmological parameters stem from **b₃ = 24**:
 ## Author
 
 **Andrew Keith Watts**
-Principia Metaphysica v16.2
+Principia Metaphysica v23.1
 December 29, 2025
 
 ---

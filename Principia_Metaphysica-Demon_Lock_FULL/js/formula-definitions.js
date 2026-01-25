@@ -1,6 +1,6 @@
 /**
  * Centralized Formula Definitions for Principia Metaphysica
- * 25D(24,1) Unified Time Framework - v23.0 (Updated from v12.8)
+ * 27D(26,1) Unified Time Framework - v23.1 (Updated from v23.0)
  *
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  *
@@ -25,15 +25,16 @@
  * - experimental_source: Source of measurement
  * - sigma: Agreement with experiment in standard deviations
  *
- * FRAMEWORK FEATURES (v21+ / v23):
- * - 25D spacetime with signature (24,1) - unified single time
+ * FRAMEWORK FEATURES (v23.1+ / 27D):
+ * - 27D spacetime with signature (26,1) - unified single time
+ *   - 26 spatial = 24 G2 core + 2 Euclidean bridge
  * - 12×(2,0) bridge pairs connecting dual shadows
  * - Z₂ mirror brane structure: Normal Shadow ↔ Mirror Shadow
  * - Euclidean bridge mechanism (replaces Sp(2,R) gauge fixing)
  * - Observable 13D(12,1) per shadow via R⊥ coordinate selection
  *
  * HISTORICAL NOTE: v12.8-v20 used 26D(24,2) with two time dimensions.
- * The v21+ framework eliminates ghosts via unified time, not gauge fixing.
+ * v21-v23.0 used 25D(24,1). v23.1+ uses 27D(26,1) with central sampler.
  */
 
 const PM_FORMULAS = {

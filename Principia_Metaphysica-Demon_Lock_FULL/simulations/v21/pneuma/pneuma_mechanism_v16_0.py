@@ -767,7 +767,7 @@ class PneumaMechanismV16(SimulationBase):
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="OR Reduction: 25D(24,1) → 12×(2,0) bridge pairs → 2×13D(12,1)",
+                title="OR Reduction: 27D(26,1) → 12×(2,0) bridge pairs → 2×13D(12,1)",
                 content="Starting configuration: 25D with signature (24,1) = 12×(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2×13D(12,1) shadows - each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R_perp produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action."
             ),
             ContentBlock(
@@ -864,12 +864,12 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="After OR reduction from 25D(24,1) = 12×(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl(24,1) reduces to effective 64 components:"
+                content="After OR reduction from 27D(26,1) = 12×(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl(24,1) reduces to effective 64 components:"
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Dimensional Reduction: 25D(24,1) = 12×(2,0) + (0,1) → 2×13D(12,1)",
+                title="Dimensional Reduction: 27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1)",
                 content="OR reduction via R_perp: 12×(2,0) bridge pairs warp to create 2×13D(12,1) shadows with shared time. Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
             ),
             ContentBlock(
@@ -900,11 +900,11 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The complete descent from fundamental 26D physics to 4D observables:"
+                content="The complete descent from fundamental 27D physics to 4D observables:"
             ),
             ContentBlock(
                 type="formula",
-                content="Level 1 (25D): S = ∫ d^25 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (24,1) = 12×(2,0) + (0,1)\n↓ OR reduction via R_perp (12 bridge pairs warp to create shadows)\nLevel 2 (dual 13D): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×13D(12,1) with shared time\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy (v22 bridge creates shadows)",
+                content="Level 1 (27D): S = ∫ d^27 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P] with (26,1) = 12×(2,0) + C^(2,0) + (0,1)\n↓ OR reduction via R_perp (12 bridge pairs + central sampler warp to create shadows)\nLevel 2 (dual 13D): ℒ = M_*^11 R + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux in 2×13D(12,1) with shared time\n↓ KK reduction → 4D\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy (v23.1 bridge + central sampler creates shadows)",
                 label=""
             ),
         ])

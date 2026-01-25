@@ -66,7 +66,7 @@ _base_dir = os.path.join(_simulations_dir, 'base')
 sys.path.insert(0, _base_dir)
 
 # Import directly from base module files (avoids triggering simulations/__init__.py)
-from precision import PHI, B3, CHI_EFF
+from precision import PHI, B3, CHI_EFF_TOTAL
 from simulation_base import (
     SimulationBase,
     SimulationMetadata,
@@ -105,7 +105,7 @@ class DarkMatterMirrorSimulation(SimulationBase):
 
     # PM Fundamental Constants
     B3 = int(B3)                        # Third Betti number = 24
-    CHI_EFF = int(CHI_EFF)              # Effective Euler characteristic = 144
+    CHI_EFF_TOTAL = int(CHI_EFF_TOTAL)  # Effective Euler characteristic = 144 (both shadows)
     PHI = float(PHI)                    # Golden ratio ~ 1.618
     N_PAIRS = 12                        # Number of bridge pairs
 
@@ -658,7 +658,7 @@ class DarkMatterMirrorSimulation(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content=rf"\chi_{{\text{{gnosis}}}}^{{\text{{DM}}}} = \frac{{1}}{{\chi_{{\text{{eff}}}}}} = \frac{{1}}{{{self.CHI_EFF}}} \approx 0.007",
+                content=rf"\chi_{{\text{{gnosis}}}}^{{\text{{DM}}}} = \frac{{1}}{{\chi_{{\text{{eff}}}}}} = \frac{{1}}{{{self.CHI_EFF_TOTAL}}} \approx 0.007",
                 formula_id="gnosis-dm-visibility",
                 label="(5.3.7)"
             ),
@@ -903,8 +903,8 @@ class DarkMatterMirrorSimulation(SimulationBase):
             Formula(
                 id="gnosis-dm-visibility",
                 label="(5.3.7)",
-                latex=rf"\chi_{{\text{{gnosis}}}}^{{\text{{DM}}}} = 1/\chi_{{\text{{eff}}}} = 1/{self.CHI_EFF} \approx 0.007",
-                plain_text=f"chi_gnosis_DM = 1/chi_eff = 1/{self.CHI_EFF} ~ 0.007",
+                latex=rf"\chi_{{\text{{gnosis}}}}^{{\text{{DM}}}} = 1/\chi_{{\text{{eff}}}} = 1/{self.CHI_EFF_TOTAL} \approx 0.007",
+                plain_text=f"chi_gnosis_DM = 1/chi_eff = 1/{self.CHI_EFF_TOTAL} ~ 0.007",
                 category="PREDICTIONS",
                 description=(
                     "Gnosis visibility for dark matter sector. Maximum coupling to "
@@ -918,8 +918,8 @@ class DarkMatterMirrorSimulation(SimulationBase):
                     "steps": [
                         "From WS-4: chi_gnosis(n) = n/12 * 1/chi_eff",
                         "At n=12 (full activation): chi_gnosis = 1/chi_eff",
-                        f"chi_eff = {self.CHI_EFF}",
-                        f"chi_gnosis = {1/self.CHI_EFF:.6f}",
+                        f"chi_eff = {self.CHI_EFF_TOTAL}",
+                        f"chi_gnosis = {1/self.CHI_EFF_TOTAL:.6f}",
                     ],
                     "references": ["WS-4: spin_shadow_mapping"]
                 },
@@ -1058,7 +1058,7 @@ class DarkMatterMirrorSimulation(SimulationBase):
                 status="DERIVED",
                 description=(
                     f"Maximum mirror visibility at full gnosis: 1/chi_eff = "
-                    f"1/{self.CHI_EFF} = {1/self.CHI_EFF:.6f}."
+                    f"1/{self.CHI_EFF_TOTAL} = {1/self.CHI_EFF_TOTAL:.6f}."
                 ),
                 derivation_formula="gnosis-dm-visibility",
                 no_experimental_value=True

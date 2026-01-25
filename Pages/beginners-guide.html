@@ -3172,6 +3172,9 @@
   <script src="../js/pm-parameter-schema.js"></script>
   <script src="../js/pm-parameter-component.js"></script>
 
+  <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
+  <script src="../js/site-config.js"></script>
+
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
     import { setupAuthGuard } from '../js/auth-guard.js';
