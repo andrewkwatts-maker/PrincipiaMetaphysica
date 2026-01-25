@@ -1,9 +1,9 @@
 {
   "version": "23.1-27D",
-  "timestamp": "2026-01-25T08:33:37.182310Z",
-  "session_id": "PM20260125083337",
+  "timestamp": "2026-01-25T09:58:06.309799Z",
+  "session_id": "PM20260125095806",
   "volatility": {
-    "generated_at": "2026-01-25T08:33:37.182310Z",
+    "generated_at": "2026-01-25T09:58:06.309799Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "23.1-27D",
@@ -212,7 +212,7 @@
     "alpha_inverse": {
       "symbol": "alpha_inv",
       "latex": "\\alpha^{-1}",
-      "value": 137.03670177575597,
+      "value": 137.03599917613738,
       "formula": "(C_kaf * B3^2) / (kappa_Delta * pi * s3_projection)",
       "pm_path": "qed.alpha_inverse"
     },
@@ -901,9 +901,9 @@
     "gate_36_fine_structure_alignment": {
       "symbol": "G36",
       "latex": "G_{36}",
-      "value": 0.0008058384828428314,
+      "value": 0.0008058426144711196,
       "formula": "G34/alpha_inv",
-      "expanded": "Fine structure alignment = 8.0583848284e-04",
+      "expanded": "Fine structure alignment = 8.0584261447e-04",
       "gnostic_name": "The Fine Structure Alignment",
       "gnostic_role": "Coupling strength at 50% mark (36/72)",
       "derived_from": [
@@ -1373,7 +1373,7 @@
     "gate_69_recursive_feedback_suture": {
       "symbol": "G69",
       "latex": "G_{69}",
-      "value": 0.03615134058585627,
+      "value": 0.036151340585950036,
       "formula": "SUM(G01-G68)/(288*153)",
       "expanded": "Recursive feedback = 0.0361513406",
       "gnostic_name": "The Recursive Feedback Suture",
@@ -1503,7 +1503,7 @@
       "valid": true
     },
     "parity_check": {
-      "formula": "eta_S + sigma_T = 1.6402",
+      "formula": "eta_S + sigma_T = 163/239 + 23/24 = 1.6403",
       "value": 1.6403417015341701,
       "valid": true
     },

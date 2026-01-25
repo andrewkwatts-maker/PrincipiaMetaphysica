@@ -136,9 +136,9 @@
                 renderTableOfContents(container, PaperRenderer._data.sections);
             }
 
-            // Abstract (renders after TOC)
-            if (renderAbstract && PaperRenderer._data.sections?.['1']?.abstract) {
-                renderAbstractSection(container, PaperRenderer._data.sections['1'].abstract);
+            // Abstract (renders after TOC) - v23.1: Use section '0' which is the Abstract section
+            if (renderAbstract && PaperRenderer._data.sections?.['0']?.abstract) {
+                renderAbstractSection(container, PaperRenderer._data.sections['0'].abstract);
             }
 
             // Main sections
@@ -412,11 +412,18 @@
             }
         }
 
-        // Sort groups by major number
+        // Sort groups by major number or order field (v23.1: support non-numeric sections)
         const sortedGroups = [...sectionGroups.entries()].sort((a, b) => {
-            const numA = parseInt(a[0]) || 999;
-            const numB = parseInt(b[0]) || 999;
-            return numA - numB;
+            // For numeric sections, use the parsed number
+            // For non-numeric sections, use the order field from the parent/first section
+            const getOrder = ([key, group]) => {
+                const parsed = parseInt(key);
+                if (!isNaN(parsed)) return parsed;
+                // Non-numeric section - use order field
+                const section = group.parent || group.subsections[0];
+                return section?.order || 999;
+            };
+            return getOrder(a) - getOrder(b);
         });
 
         for (const [majorNum, group] of sortedGroups) {

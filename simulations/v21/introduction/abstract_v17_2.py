@@ -1,10 +1,10 @@
 """
-PRINCIPIA METAPHYSICA v21.0 - Abstract
+PRINCIPIA METAPHYSICA v23.1 - Abstract
 ======================================
 
 Section 0: The paper abstract.
 
-This simulation provides the abstract content for Principia Metaphysica v21.0,
+This simulation provides the abstract content for Principia Metaphysica v23.1,
 the (24,1) dual-shadow framework with Euclidean bridge where all 125 physical
 constants emerge as spectral residues of G2 manifold compactification.
 
@@ -30,7 +30,7 @@ if TYPE_CHECKING:
 
 class AbstractV17_2(SimulationBase):
     """
-    Abstract section (Section 0) for Principia Metaphysica v21.0.
+    Abstract section (Section 0) for Principia Metaphysica v23.1.
 
     This simulation provides the abstract content that summarizes the
     (24,1) dual-shadow framework with Euclidean bridge.
@@ -47,7 +47,7 @@ class AbstractV17_2(SimulationBase):
             version="21.0",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v21.0 (24,1) dual-shadow",
+            description="Paper abstract for Principia Metaphysica v23.1 (24,1) dual-shadow",
             section_id="0",
             subsection_id=None
         )
@@ -86,7 +86,7 @@ class AbstractV17_2(SimulationBase):
                     'We introduce a unified mathematical framework that derives fundamental physical '
                     'constants and cosmological observables from the topological invariants of a '
                     '<span class="pm-value" data-pm-value="dimensions.D_bulk">26</span>D manifold with '
-                    '(24,1) signature and 2D Euclidean bridge. <strong>Principia Metaphysica v21.0</strong> '
+                    '(24,1) signature and 2D Euclidean bridge. <strong>Principia Metaphysica v23.1</strong> '
                     'realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and a '
                     'shared (2,0) Euclidean bridge (ds\u00b2 = dy\u2081\u00b2 + dy\u2082\u00b2) enables coherent cross-shadow '
                     'sampling via OR reduction. Each shadow compactifies on G\u2082(7,0) to '
