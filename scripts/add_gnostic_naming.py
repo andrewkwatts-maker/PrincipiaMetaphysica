@@ -169,6 +169,14 @@ HEBREW_ALIASES = {
         "gnostic_name": "The Threshold",
         "gnostic_role": "Activation Threshold - Central activates at n >= 9",
         "alias_of": "central_activation_threshold"
+    },
+    "nitsot_par": {
+        "value": "1/144",
+        "hebrew": "Nun-Qoph",
+        "gematria": 150,
+        "gnostic_name": "Spark Pair",
+        "gnostic_role": "Cross-shadow coupling constant - 1/chi_eff_total",
+        "alias_of": "reid_invariant"
     }
 }
 

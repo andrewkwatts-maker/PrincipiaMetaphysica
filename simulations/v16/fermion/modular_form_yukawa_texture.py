@@ -28,8 +28,8 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..', 'co
 try:
     from FormulasRegistry import FormulasRegistry
     registry = FormulasRegistry()
-    B3 = registry.b3  # 24
-    CHI_EFF = registry.chi_eff  # 72
+    B3 = registry.elder_vessels  # 24
+    CHI_EFF = registry.mephorash_chi  # 72
     PHI = registry.phi  # golden ratio
 except ImportError:
     B3 = 24
