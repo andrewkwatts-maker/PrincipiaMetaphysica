@@ -89,7 +89,7 @@ The following symbols were updated to use Greek subscripts where Greek gematria 
 | `mephorash_chi` | 72 | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
 | `sophian_modulus` | 125 | 𝒬^כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
 | `demiurgic_Yetts` | 135 | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
-| `qedem_chi_sum` | 144 | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
+| `qedem_chi_sum` | 144 | 𝒬^דם | Qedem (קדם) | 144 | Total Euler Characteristic | Qedem Chi |
 | `nitzotzin_sector` | 144 | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
 | `logos_joint` | 153 | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
 | `barbelo_modulus` | 163 | 𝒬^סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
@@ -188,13 +188,13 @@ $$\mathcal{\text{ק}}^{\text{כה}} (125) + \mathcal{\text{ק}}^{\text{סג}} (1
 - **Value:** 135
 - **Role:** Dalet (ד) means 'Door/Gate.' Greek delta (δ = 4) matches Hebrew dalet (ד = 4) gematria. Script S (𝒮) for Sophia filtered through the Door. Distinguishes from Entropy (S). The 135 gates through which wisdom flows into manifestation.
 
-### qedem_chi_sum (χ_ק)
-- **Scientific Name:** Primordial Chiral Basis
-- **Gnostic Name:** The Ancient Sum
+### qedem_chi_sum (𝒬^דם)
+- **Scientific Name:** Total Euler Characteristic
+- **Gnostic Name:** Qedem Chi
 - **Hebrew:** Qedem (קדם)
 - **Gematria:** 144
 - **Value:** 144
-- **Role:** Qedem (קדם = 144) means 'ancient' or 'primordial.' The structural 12² framework. Total chi from both shadows: 72 + 72 = 144. Used for PMNS, n_gen.
+- **Role:** Calligraphic Qoph (ק) with דם (44) superscript = 144. Qedem (קדם = 144) means 'ancient' or 'primordial.' Total χ_eff across both shadows: 72 + 72 = 144. Ancestral unity.
 
 ### nitzotzin_sector (ξ_μ)
 - **Scientific Name:** Per-Sector Root Count

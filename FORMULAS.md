@@ -180,7 +180,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | mephorash_chi | `72` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
 | sophian_modulus | `125` | 𝒬^כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
 | demiurgic_Yetts | `135` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
-| qedem_chi_sum | `144` | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
+| qedem_chi_sum | `144` | 𝒬^דם | Qedem (קדם) | 144 | Total Euler Characteristic | Qedem Chi |
 | nitzotzin_sector | `144` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
 | logos_joint | `153` | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
 | barbelo_modulus | `163` | 𝒬^סג | Qoph-Samekh-Gimel (קסג) | 163 | Ancestral Bulk Pressure Modulus | Barbelo Modulus |
