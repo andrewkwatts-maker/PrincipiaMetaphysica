@@ -6,13 +6,13 @@
   "category": "Symmetry",
   "phase": 1,
   "block": "A",
-  "version": "23.0",
+  "version": "23.3",
   "wl_code": "shadowA = 12; shadowB = 12; shadowA + shadowB == 24",
   "result": "True",
   "formula": "24 = 12_L + 12_R",
   "verification_status": "VERIFIED",
   "derivation_status": "RIGOROUS",
   "note": "Gate 6: Left/right potential balanced at source. Bifurcation of 24 pins into 12+12 chiral sets",
-  "timestamp": "2026-01-24T23:47:20.150468Z",
+  "timestamp": "2026-01-25T09:21:29.491267Z",
   "hash": "b5fed762df1186b5"
 }
