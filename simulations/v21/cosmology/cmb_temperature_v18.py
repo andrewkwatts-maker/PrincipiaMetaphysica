@@ -151,7 +151,7 @@ class CMBTemperatureV18(SimulationBase):
 
         # Topology constants from SSoT registry
         self.b3 = _REG.elder_kads  # = 24 (Third Betti number)
-        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
+        self.chi_eff = _REG.qedem_chi_sum  # = 144 (Effective Euler characteristic)
 
         # v19.0: DERIVED geometric factor replaces calibrated k_CMB
         # The normalization is π/(b3 + 7) = π/31, arising from:

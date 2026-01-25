@@ -25,16 +25,12 @@ import os
 # Add core to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', '..', '..', 'core'))
 
-try:
-    from FormulasRegistry import FormulasRegistry
-    registry = FormulasRegistry()
-    B3 = registry.elder_kads  # 24
-    CHI_EFF = registry.mephorash_chi  # 72
-    PHI = registry.phi  # golden ratio
-except ImportError:
-    B3 = 24
-    CHI_EFF = 72
-    PHI = (1 + np.sqrt(5)) / 2
+# Import SSoT constants from FormulasRegistry
+from FormulasRegistry import get_registry
+_REG = get_registry()
+B3 = _REG.elder_kads  # 24
+CHI_EFF = _REG.mephorash_chi  # 72
+PHI = _REG.phi  # golden ratio
 
 # =============================================================================
 # MATHEMATICAL CONSTANTS

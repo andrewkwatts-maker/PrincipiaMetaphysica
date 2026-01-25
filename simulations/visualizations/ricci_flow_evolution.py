@@ -31,6 +31,10 @@ from matplotlib.collections import PatchCollection
 import matplotlib.patheffects as path_effects
 from pathlib import Path
 
+# Import SSoT constants from FormulasRegistry
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 # PM Color palette
 PM_COLORS = {
     "purple": "#8b7fff",
@@ -56,9 +60,9 @@ H0_SHOES_SIGMA = 1.04
 OMEGA_M = 0.311  # Matter density
 OMEGA_DE = 0.689  # Dark energy density
 
-# PM parameters
-B3 = 24
-K_GIMEL = B3 / 2 + 1 / np.pi  # ~12.318
+# PM parameters (from SSoT)
+B3 = _REG.elder_kads  # 24
+K_GIMEL = _REG.demiurgic_coupling  # ~12.318
 TAU = K_GIMEL / B3  # ~0.513 (Ricci flow timescale)
 Z_STAR = 1 / TAU  # ~1.95 (transition redshift)
 

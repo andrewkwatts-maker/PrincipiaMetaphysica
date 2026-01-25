@@ -72,13 +72,17 @@ if sys.platform == 'win32':
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.insert(0, project_root)
 
+from core.FormulasRegistry import get_registry
+
+_REG = get_registry()
+
 # =============================================================================
 # SSOT CONSTANTS (from config.py / FormulasRegistry)
 # =============================================================================
 
 # Fundamental PM constants
-B3 = 24                          # Third Betti number (G2 topology)
-CHI_EFF = 144                    # Effective Euler characteristic (chi_eff = 6 * b3)
+B3 = _REG.elder_kads             # Third Betti number (G2 topology) - 24
+CHI_EFF = _REG.qedem_chi_sum     # Effective Euler characteristic (chi_eff = 6 * b3) - 144
 PHI = (1 + np.sqrt(5)) / 2       # Golden ratio ~ 1.618
 N_PAIRS_TOTAL = 12               # Total (2,0) pairs = b3/2
 N_PAIRS_BASELINE = 6             # Baseline active pairs (normal shadow dominant)

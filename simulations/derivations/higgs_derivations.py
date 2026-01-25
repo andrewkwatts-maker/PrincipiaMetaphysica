@@ -47,6 +47,10 @@ import os
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../..')))
 
+# Import FormulasRegistry for Single Source of Truth (SSoT)
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 try:
     from config import (
         HiggsMassParameters,
@@ -91,9 +95,9 @@ except ImportError:
             return 246.0  # GeV
 
     class TCSTopology:
-        CHI_EFF = 144
+        CHI_EFF = _REG.qedem_chi_sum  # From SSoT = 144
         B2 = 4
-        B3 = 24
+        B3 = _REG.elder_kads         # From SSoT = 24
         N_GEN = 3
 
     class BreakingChainParameters:

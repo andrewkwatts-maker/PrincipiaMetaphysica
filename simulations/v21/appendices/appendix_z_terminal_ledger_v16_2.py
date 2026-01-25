@@ -65,6 +65,15 @@ from simulations.base import (
     Parameter,
 )
 
+# Import Single Source of Truth for derived constants
+try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    _REGISTRY_AVAILABLE = False
+
 
 class AppendixZTerminalLedger(SimulationBase):
     """
@@ -84,11 +93,11 @@ class AppendixZTerminalLedger(SimulationBase):
     NUN = "ן"       # 24 pins
     DALET = "ד"     # 4 dimensions
 
-    # Core geometric constants (with Hebrew notation)
-    ROOTS = 288     # Yod total (י₁ - י₂₈₈)
+    # Core geometric constants (with Hebrew notation) - via FormulasRegistry SSoT
+    ROOTS = _REG.nitzotzin_roots if _REGISTRY_AVAILABLE else 288  # Yod total (י₁ - י₂₈₈)
     ACTIVE = 125    # Yod active (observable nodes)
     HIDDEN = 163    # Yod hidden (bulk supports)
-    PINS = 24       # Nun total (ן₁ - ן₂₄)
+    PINS = _REG.elder_kads if _REGISTRY_AVAILABLE else 24  # Nun total (ן₁ - ן₂₄)
     SO24 = 276      # SO(24) generators
     TAX = 12        # Manifold tax = Nun/2
     DIMS = 4        # Dalet total (ד₁ - ד₄)

@@ -31,6 +31,10 @@ from typing import Dict, Any, List, Tuple, Optional
 from dataclasses import dataclass
 from enum import Enum
 
+# Import SSoT constants from FormulasRegistry
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 
 class RigorLevel(Enum):
     """Certificate rigor levels."""
@@ -68,11 +72,11 @@ class TFTRigorProofs:
     4. Stable under RG flow
     """
 
-    # Topological inputs from TCS #187 G2 manifold
-    B2 = 4       # Kahler moduli
-    B3 = 24      # Associative 3-cycles
-    CHI_EFF = 144  # Effective Euler characteristic
-    N_GEN = 3    # Number of generations
+    # Topological inputs from TCS #187 G2 manifold (from SSoT)
+    B2 = _REG.b2  # 4 - Kahler moduli
+    B3 = _REG.elder_kads  # 24 - Associative 3-cycles
+    CHI_EFF = _REG.qedem_chi_sum  # 144 - Effective Euler characteristic
+    N_GEN = _REG.n_gen  # 3 - Number of generations
     T_OMEGA = 0.12  # Torsional class parameter
 
     # Physical constants

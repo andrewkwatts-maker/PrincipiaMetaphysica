@@ -129,7 +129,7 @@ class DiracMonopoleChargeQuantization:
         # G2 manifold topology from SSoT registry
         self.b2 = 4       # Second Betti number (Kahler moduli)
         self.b3 = _REG.elder_kads  # = 24 (Third Betti number)
-        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
+        self.chi_eff = _REG.qedem_chi_sum  # = 144 (Effective Euler characteristic)
         self.n_gen = _REG.n_gen  # = 3 (fermion generations)
 
         # Gauge group structure

@@ -54,30 +54,21 @@ from dataclasses import dataclass
 from typing import List, Dict, Tuple
 from enum import Enum
 
-# Import SSoT constants
+# Import SSoT constants from FormulasRegistry
 import sys
 sys.path.insert(0, 'h:/Github/PrincipiaMetaphysica')
-try:
-    from core.FormulasRegistry import get_registry
-    REG = get_registry()
-    B3 = REG.b3
-    CHI_EFF = REG.chi_eff
-    CHI_EFF_TOTAL = REG.chi_eff_total
-    SHADOW_SECTOR = REG.shadow_sector
-    N_GEN = REG.n_gen
-    K_GIMEL = REG.demiurgic_coupling
-    PHI = REG.phi
-    OMEGA_W = 1.0  # The Monad
-except ImportError:
-    # Fallback values
-    B3 = 24
-    CHI_EFF = 72
-    CHI_EFF_TOTAL = 144
-    SHADOW_SECTOR = 135
-    N_GEN = 3
-    K_GIMEL = B3/2 + 1/math.pi
-    PHI = (1 + math.sqrt(5)) / 2
-    OMEGA_W = 1.0
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
+# All constants from registry SSoT
+B3 = _REG.elder_kads  # 24
+CHI_EFF = _REG.mephorash_chi  # 72
+CHI_EFF_TOTAL = _REG.qedem_chi_sum  # 144
+SHADOW_SECTOR = _REG.shadow_sector  # 135
+N_GEN = _REG.n_gen  # 3
+K_GIMEL = _REG.demiurgic_coupling  # 12.3183...
+PHI = _REG.phi  # golden ratio
+OMEGA_W = 1.0  # The Monad
 
 # Experimental reference
 CODATA_2022 = 137.035999177

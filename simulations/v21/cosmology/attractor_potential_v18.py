@@ -119,7 +119,7 @@ class AttractorPotentialV18(SimulationBase):
 
         # Topological inputs from SSoT registry
         self.b3 = _REG.elder_kads               # = 24 (Third Betti number)
-        self.chi_eff = _REG.chi_eff_total  # = 144 (Effective Euler characteristic)
+        self.chi_eff = _REG.qedem_chi_sum  # = 144 (Effective Euler characteristic)
 
         # Fundamental scales
         self.M_Planck = 2.435e18        # GeV (reduced Planck mass)

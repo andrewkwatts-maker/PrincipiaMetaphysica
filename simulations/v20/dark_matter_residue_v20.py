@@ -139,7 +139,7 @@ class DarkMatterResidueV20(SimulationBase):
         if hasattr(_REG, 'roots_total'):
             self.N_TOTAL = _REG.nitzotzin_roots
         if hasattr(_REG, 'visible_sector'):
-            self.N_VISIBLE = _REG.visible_sector
+            self.N_VISIBLE = _REG.sophian_registry
         if hasattr(_REG, 'sterile_sector'):
             self.N_HIDDEN = _REG.barbelo_modulus
 

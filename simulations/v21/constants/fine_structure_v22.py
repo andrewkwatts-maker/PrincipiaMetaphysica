@@ -91,11 +91,15 @@ CODATA_UNCERTAINTY = 0.000000021  # CODATA 2022 experimental precision
 THEORY_UNCERTAINTY = 0.01         # PM theory uncertainty (G2 moduli stabilization)
 
 
+from core.FormulasRegistry import get_registry
+
+_REG = get_registry()
+
 # =============================================================================
 # TOPOLOGICAL CONSTANTS
 # =============================================================================
 
-B3 = 24                           # Third Betti number (TCS G2 manifold)
+B3 = _REG.elder_kads              # Third Betti number (TCS G2 manifold) - 24
 N_PAIRS_MAX = 12                  # Number of (2,0) bridge pairs
 PHI = (1 + np.sqrt(5)) / 2        # Golden ratio from octonionic structure
 PI = np.pi                        # Transcendental constant

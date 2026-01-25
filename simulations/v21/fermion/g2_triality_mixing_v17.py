@@ -86,7 +86,7 @@ class G2TrialityMixing:
         # PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
         self.b3 = _REG.elder_kads  # = 24 (Third Betti number)
         self.b2 = 4
-        self.chi_eff = _REG.chi_eff_total  # = 144 for PMNS (both shadows)
+        self.chi_eff = _REG.qedem_chi_sum  # = 144 for PMNS (both shadows)
         self.n_gen = _REG.n_gen  # = 3 (fermion generations)
         self.S_orient = 12  # Single unified bridge orientation sum
 
