@@ -33,7 +33,7 @@ def test_gauge_invariance():
     """
     # Load geometric anchors from SSoT Registry
     if REGISTRY:
-        b3 = REGISTRY.elder_vessels
+        b3 = REGISTRY.elders
         kappa_Delta = REGISTRY.demiurgic_coupling  # κ_Δ = B3/2 + 1/π ≈ 12.318
     else:
         b3 = 24
@@ -70,7 +70,7 @@ def test_su3_color_invariance():
 
     # Load from SSoT Registry
     if REGISTRY:
-        b3 = REGISTRY.elder_vessels
+        b3 = REGISTRY.elders
         C_kaf = REGISTRY.c_kaf  # Flux normalization: B3*(B3-7)/(B3-9) = 27.2
     else:
         b3 = 24
@@ -185,12 +185,12 @@ def test_integer_closure():
     """
     # Load from SSoT Registry - ALWAYS prefer registry values
     if REGISTRY:
-        shadow = REGISTRY.demiurgic_gates           # Shadow sector
+        shadow = REGISTRY.demiurgic_Yetts           # Shadow sector
         Lambda_JC = REGISTRY.logos_joint      # Λ_JC: Logos Potential (153)
         total_roots = REGISTRY.nitzotzin_roots        # E8×E8 root lattice
     else:
         # Fallback only if registry unavailable - must match SSoT values
-        shadow = 135           # Fallback: must match registry.demiurgic_gates
+        shadow = 135           # Fallback: must match registry.demiurgic_Yetts
         Lambda_JC = 153        # Fallback: must match registry.logos_joint
         total_roots = 288      # Fallback: must match registry.nitzotzin_roots
 

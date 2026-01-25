@@ -270,7 +270,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | Code Name | Value | Symbol | Hebrew | Gematria |
 | :--- | :--- | :--- | :--- | :--- |
 | gnosis_threshold | `{reg.gnosis_threshold}` | G_Tet | Tet | 9 |
-| Dodecad_Anchor | `{reg.Dodecad_Anchor}` | n_12 | Bet-Yod | 12 |
+| Dodecad_Anchors | `{reg.Dodecad_Anchors}` | n_12 | Bet-Yod | 12 |
 | Echad_Prime | `{reg.Echad_Prime}` | n_13 | Yud-Gimel | 13 |
 | nitsot_par | `{reg.nitsot_par:.16f}` | N_p | Nun-Qoph | 150 |
 | reid_pair | `{reg.reid_pair}` | R_Resh | Resh | 200 |
