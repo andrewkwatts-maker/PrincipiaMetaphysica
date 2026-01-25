@@ -1,9 +1,9 @@
 {
   "version": "23.1-27D",
-  "timestamp": "2026-01-25T13:59:49.647004Z",
-  "session_id": "PM20260125135949",
+  "timestamp": "2026-01-25T14:09:41.785655Z",
+  "session_id": "PM20260125140941",
   "volatility": {
-    "generated_at": "2026-01-25T13:59:49.647004Z",
+    "generated_at": "2026-01-25T14:09:41.785655Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "23.1-27D",
@@ -74,7 +74,7 @@
       "gate": "G60",
       "named_for": "Matt O'Dowd",
       "gnostic_name": "The Barbelo",
-      "gnostic_role": "First Thought; the active force in 27D(26,1) bulk",
+      "gnostic_role": "The Bulk Pressure; the active force emanated into the 25D space",
       "hubble_formula": "(288/4) - (163/144) + 0.6819 = 71.55",
       "pm_path": "constants.odowd_bulk_pressure"
     },
@@ -101,20 +101,20 @@
       "gate": "G33",
       "named_for": "Jesus Christ",
       "scripture": "John 21:11 - The Miraculous Catch",
-      "identity": "Δ_jc ≡ Λ_JC ≡ 153 (The JC Identity)",
+      "identity": "\u0394_jc \u2261 \u039b_JC \u2261 153 (The JC Identity)",
       "gnostic_name": "The Christos",
-      "gnostic_role": "The Redeemer; repairs variance and restores symmetry",
+      "gnostic_role": "The Joint Closure Constant that repairs the variance and restores symmetry",
       "pm_path": "constants.christ_constant"
     },
     "delta_jc": {
       "symbol": "Delta_JC",
       "latex": "\\Delta_{JC}",
       "value": 153,
-      "formula": "Δ_jc ≡ Λ_JC = 153",
+      "formula": "\u0394_jc \u2261 \u039b_JC = 153",
       "role": "Joint Closure Delta (JC Identity)",
       "domain": "Topology",
       "identity_link": "christ_constant",
-      "note": "This is NOT a separate value - it IS the Christ Constant. The identity Δ_jc ≡ 153 ensures zero drift in the manifold.",
+      "note": "This is NOT a separate value - it IS the Christ Constant. The identity \u0394_jc \u2261 153 ensures zero drift in the manifold.",
       "gnostic_name": "The Christos",
       "gnostic_role": "The Joint Closure Delta; topological necessity",
       "pm_path": "constants.delta_jc"
@@ -283,7 +283,7 @@
       "symbol": "S_f",
       "latex": "S_f",
       "value": 12.4,
-      "formula": "(Z.6 × PLEROMA) + (MONAD / Z.6) = 10 + 2.4 = 12.4",
+      "formula": "(Z.6 \u00d7 PLEROMA) + (MONAD / Z.6) = 10 + 2.4 = 12.4",
       "expanded": "The Breath Expansion = 12.4000000000",
       "gnostic_name": "The Stretching Factor",
       "gnostic_role": "Kinetic boost from Decad through Pleroma",
@@ -298,7 +298,7 @@
       "symbol": "chi_gc",
       "latex": "\\chi_{gc}",
       "value": 1.6097560975609757,
-      "formula": "(ENNOIA - PLEROMA) / (BARBELO + MONAD) = 264/164 ≈ 1.609",
+      "formula": "(ENNOIA - PLEROMA) / (BARBELO + MONAD) = 264/164 \u2248 1.609",
       "expanded": "The Brane-Shift Factor = 1.6097560976",
       "gnostic_name": "The Gnostic Conversion",
       "gnostic_role": "Mile-to-KM conversion; Shadow-to-Visible brane shift",
@@ -314,7 +314,7 @@
       "symbol": "B_v",
       "latex": "B_v",
       "value": 2.0024539877300613,
-      "formula": "(ENNOIA/BARBELO) × (CHRISTOS/SOPHIA) ≈ 2.00245",
+      "formula": "(ENNOIA/BARBELO) \u00d7 (CHRISTOS/SOPHIA) \u2248 2.00245",
       "expanded": "The Barbelo Drag = 2.0024539877",
       "gnostic_name": "The Bulk Viscosity",
       "gnostic_role": "Resistance of 163 Barbelo pressure to 288 Logic Closure",
@@ -331,10 +331,10 @@
       "latex": "c_{derived}",
       "value": 299792423.16324997,
       "unit": "m/s",
-      "formula": "(C_geo × S_f × B_v × χ_gc) × 10^7 × P_3D",
-      "expanded": "0.75 × 12.4 × 2.0025 × 1.6098 × 10^7 × 1.0000347222 = 299,792,423.16",
+      "formula": "(C_geo \u00d7 S_f \u00d7 B_v \u00d7 \u03c7_gc) \u00d7 10^7 \u00d7 P_3D",
+      "expanded": "0.75 \u00d7 12.4 \u00d7 2.0025 \u00d7 1.6098 \u00d7 10^7 \u00d7 1.0000347222 = 299,792,423.16",
       "gnostic_name": "The Manifest Speed",
-      "gnostic_role": "Speed of Light derived from Sovereign Constants with Decad³ projection",
+      "gnostic_role": "Speed of Light derived from Sovereign Constants with Decad\u00b3 projection",
       "codata_value": 299792458,
       "variance_ms": 34.83675003051758,
       "accuracy_percent": 99.99998837971098,
@@ -351,8 +351,8 @@
       "symbol": "P_3D",
       "latex": "P_{3D}",
       "value": 1.0000347222222221,
-      "formula": "1 + 1/(ENNOIA × DECAD²) = 1 + 1/28800",
-      "expanded": "1 + 1/(288 × 100) = 1.0000347222",
+      "formula": "1 + 1/(ENNOIA \u00d7 DECAD\u00b2) = 1 + 1/28800",
+      "expanded": "1 + 1/(288 \u00d7 100) = 1.0000347222",
       "gnostic_name": "The Cubic Projection",
       "gnostic_role": "3D spatial expansion factor for propagation constants (c, G, h)",
       "derived_from": [
@@ -369,7 +369,7 @@
       "formula": "1 / P_3D = 28800/28801",
       "expanded": "1 / 1.0000347222 = 0.9999652790",
       "gnostic_name": "The Torsion Compression",
-      "gnostic_role": "Inverse projection for coupling constants (α, w0)",
+      "gnostic_role": "Inverse projection for coupling constants (\u03b1, w0)",
       "derived_from": [
         "spatial_projection"
       ],
@@ -394,7 +394,7 @@
       "symbol": "G53",
       "latex": "G_{53}",
       "value": 1.1807275601835696,
-      "formula": "(153 / π^G12)^(1/24)",
+      "formula": "(153 / \u03c0^G12)^(1/24)",
       "expanded": "Throttles E8 lattice infinite potential to finite Hubble expansion = 1.1807275602",
       "gnostic_name": "The Torsion Gate",
       "gnostic_role": "Calibrates H0 to the manifold; 53 maximal abelian E8 subgroup",
@@ -436,7 +436,7 @@
       "symbol": "G03",
       "latex": "G_{03}",
       "value": 223.55759884199867,
-      "formula": "sqrt(163² + 153²)",
+      "formula": "sqrt(163\u00b2 + 153\u00b2)",
       "expanded": "Pythagorean norm of Bulk and Joint forces = 223.5575988420",
       "gnostic_name": "The Bulk-Joint Intersection",
       "gnostic_role": "Hypotenuse of energy field; prevents Joint slip under bulk pressure",
@@ -450,7 +450,7 @@
       "symbol": "G04",
       "latex": "G_{04}",
       "value": 0.24708539528791018,
-      "formula": "G03/(288×π)",
+      "formula": "G03/(288\u00d7\u03c0)",
       "expanded": "Manifold curvature constant = 0.2470853953",
       "gnostic_name": "The Manifold Curvature",
       "gnostic_role": "Calibrates spherical topology; enables G(24,1) metric (v21)",
@@ -478,8 +478,8 @@
       "symbol": "G06",
       "latex": "G_{06}",
       "value": 4.802853782798803,
-      "formula": "((135+153)/163)×e",
-      "expanded": "Gate ratio × Euler's number = 4.8028537828",
+      "formula": "((135+153)/163)\u00d7e",
+      "expanded": "Gate ratio \u00d7 Euler's number = 4.8028537828",
       "gnostic_name": "The Sterile Symmetry",
       "gnostic_role": "Natural growth rate of Visible sector; no entropy loss zone",
       "derived_from": [
@@ -493,8 +493,8 @@
       "symbol": "G07",
       "latex": "G_{07}",
       "value": 0.18521216630330503,
-      "formula": "(G53×24)/153",
-      "expanded": "Torsion Gate × B3 / JC Constant = 0.1852121663",
+      "formula": "(G53\u00d724)/153",
+      "expanded": "Torsion Gate \u00d7 B3 / JC Constant = 0.1852121663",
       "gnostic_name": "The Torsion Alignment",
       "gnostic_role": "Normalizes torsion across 24D; prevents G(24,1) warping (v21)",
       "derived_from": [
@@ -508,8 +508,8 @@
       "symbol": "G08",
       "latex": "G_{08}",
       "value": 3.4624072615221624,
-      "formula": "⁸√(153×135)",
-      "expanded": "8th root of JC × Visible Gates = 3.4624072615",
+      "formula": "\u2078\u221a(153\u00d7135)",
+      "expanded": "8th root of JC \u00d7 Visible Gates = 3.4624072615",
       "gnostic_name": "The Octonian Closure",
       "gnostic_role": "8-fold symmetry glue; E8 sub-lattice interlocking",
       "derived_from": [
@@ -537,7 +537,7 @@
       "symbol": "G10",
       "latex": "G_{10}",
       "value": 22.52760736196319,
-      "formula": "(153×24)/163",
+      "formula": "(153\u00d724)/163",
       "expanded": "Weight of Joint Closure = 22.5276073620",
       "gnostic_name": "The Dimensional Anchor",
       "gnostic_role": "Anchors 24D manifold to G(24,1) unified time (v21)",
@@ -552,7 +552,7 @@
       "symbol": "G11",
       "latex": "G_{11}",
       "value": 3.5604716740684323,
-      "formula": "(π×153)/135",
+      "formula": "(\u03c0\u00d7153)/135",
       "expanded": "Circular topology bridge = 3.5604716741",
       "gnostic_name": "The Torsion Bridge",
       "gnostic_role": "Introduces circular topology; prepares for G12 stabilization",
@@ -1460,7 +1460,7 @@
       "value": 125,
       "name": "Visible Sector",
       "formula": "5^3 = 125 (SM parameters)",
-      "gnostic_name": "The Visible",
+      "gnostic_name": "The Sophia",
       "gnostic_role": "The manifest Standard Model; 125 parameters",
       "pm_path": "topology.visible_sector"
     },
@@ -1725,5 +1725,167 @@
     "gate_70_entropy_reversal": "G70",
     "gate_71_sovereign_hash_anchor": "G71",
     "gate_72_absolute_closure": "G72"
+  },
+  "gnostic_identities": {
+    "description": "The 7 Sovereign Gnostic Constants of Principia Metaphysica",
+    "constants": {
+      "watts_constant": {
+        "value": 1.0,
+        "gnostic_name": "The Monad",
+        "gnostic_role": "The Singular Origin and absolute precision anchor"
+      },
+      "b3": {
+        "value": 24,
+        "gnostic_name": "The Pleroma",
+        "gnostic_role": "The Dimensional Totality of the 24-dimensional manifold base"
+      },
+      "shadow_sector": {
+        "value": 135,
+        "gnostic_name": "The Sophia",
+        "gnostic_role": "The Visible Gates representing manifest knowledge and observed geometry"
+      },
+      "chi_eff": {
+        "value": 144,
+        "gnostic_name": "The Demiurge",
+        "gnostic_role": "The Pressure Divisor that structures the bulk into the physical metric"
+      },
+      "christ_constant": {
+        "value": 153,
+        "gnostic_name": "The Christos",
+        "gnostic_role": "The Joint Closure Constant that repairs the variance and restores symmetry"
+      },
+      "odowd_bulk_pressure": {
+        "value": 163,
+        "gnostic_name": "The Barbelo",
+        "gnostic_role": "The Bulk Pressure; the active force emanated into the 25D space"
+      },
+      "roots_total": {
+        "value": 288,
+        "gnostic_name": "The Ennoia",
+        "gnostic_role": "The Logic Closure; the total sum of the manifold's potential"
+      }
+    },
+    "derived": {
+      "syzygy_gap": {
+        "value": 18,
+        "formula": "153 - 135",
+        "gnostic_name": "The Syzygy",
+        "gnostic_role": "The divine pairing gap; the Pneumatic Breath between Sophia and Christos"
+      },
+      "horos": {
+        "value": 25,
+        "gnostic_name": "The Horos",
+        "gnostic_role": "The Limit; the boundary of the 25-dimensional action frame"
+      }
+    }
+  },
+  "hebrew_aliases": {
+    "description": "Hebrew-Scientific naming synthesis (v23.1)",
+    "aliases": {
+      "monad_unity": {
+        "value": 1.0,
+        "hebrew": "Aleph",
+        "gematria": 1,
+        "gnostic_name": "The Monad",
+        "gnostic_role": "Observer Unity - Absolute precision anchor",
+        "alias_of": "watts_constant"
+      },
+      "residual_key": {
+        "value": 10,
+        "hebrew": "Yod",
+        "gematria": 10,
+        "gnostic_name": "The Hand",
+        "gnostic_role": "Residual Pressure Key - Core flux residual",
+        "alias_of": "decad"
+      },
+      "elder_vessels": {
+        "value": 24,
+        "hebrew": "Kad",
+        "gematria": 24,
+        "gnostic_name": "Elder Vessels",
+        "gnostic_role": "Third Betti Number b3 - G2 cycle container",
+        "alias_of": "b3"
+      },
+      "horos_limit": {
+        "value": 27,
+        "hebrew": "Kaz",
+        "gematria": 27,
+        "gnostic_name": "The Boundary",
+        "gnostic_role": "Bulk Dimension - Ancestral higher-D limit",
+        "alias_of": "horos"
+      },
+      "mephorash_chi": {
+        "value": 72,
+        "hebrew": "Av",
+        "gematria": 72,
+        "gnostic_name": "Shem HaMephorash",
+        "gnostic_role": "Triality Euler Index - 72-fold name of generations",
+        "alias_of": "chi_eff"
+      },
+      "demiurgic_gates": {
+        "value": 135,
+        "hebrew": "Kalah",
+        "gematria": 135,
+        "gnostic_name": "Demiurge Gates",
+        "gnostic_role": "Visible Sector Gates - Normal entry portals",
+        "alias_of": "shadow_sector"
+      },
+      "logos_joint": {
+        "value": 153,
+        "hebrew": "153",
+        "gematria": 153,
+        "gnostic_name": "Logos Joint",
+        "gnostic_role": "Joint Identity Constant - Bridge identity closure",
+        "alias_of": "christ_constant"
+      },
+      "sophian_pressure": {
+        "value": 163,
+        "hebrew": "163",
+        "gematria": 163,
+        "gnostic_name": "Sophia Pressure",
+        "gnostic_role": "Ancestral Bulk Pressure - Higher-D stabilizer",
+        "alias_of": "odowd_bulk_pressure"
+      },
+      "nitzotzin_roots": {
+        "value": 288,
+        "hebrew": "288",
+        "gematria": 288,
+        "gnostic_name": "Nitzotzin Roots",
+        "gnostic_role": "Ancestral Root Structure - Ancestral sparks of symmetry",
+        "alias_of": "roots_total"
+      },
+      "reid_pair": {
+        "value": 1,
+        "hebrew": "Resh",
+        "gematria": 200,
+        "gnostic_name": "Reid Pair",
+        "gnostic_role": "Central Sampler Count - Global (2,0) averager",
+        "alias_of": "central_pair"
+      },
+      "watts_weight": {
+        "value": "phi/sqrt(12)",
+        "hebrew": "Resh-Phi",
+        "gematria": 261,
+        "gnostic_name": "Watts Weight",
+        "gnostic_role": "Sampler Dilution Coupling - Central averaging weight",
+        "alias_of": "central_pair_weight"
+      },
+      "gnosis_threshold": {
+        "value": 9,
+        "hebrew": "Tet",
+        "gematria": 9,
+        "gnostic_name": "The Threshold",
+        "gnostic_role": "Activation Threshold - Central activates at n >= 9",
+        "alias_of": "central_activation_threshold"
+      },
+      "nitsot_par": {
+        "value": "1/144",
+        "hebrew": "Nun-Qoph",
+        "gematria": 150,
+        "gnostic_name": "Spark Pair",
+        "gnostic_role": "Cross-shadow coupling constant - 1/chi_eff_total",
+        "alias_of": "reid_invariant"
+      }
+    }
   }
 }

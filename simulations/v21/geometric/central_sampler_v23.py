@@ -86,10 +86,10 @@ class CentralSamplerSolver:
         self.reg = reg
 
         # Extract constants from registry (SSoT)
-        self.central_pair = reg.central_pair
+        self.central_pair = reg.reid_pair
         self.total_local_pairs = reg.total_local_pairs
         self.total_effective_pairs = reg.total_effective_pairs
-        self.central_activation_threshold = reg.central_activation_threshold
+        self.central_activation_threshold = reg.gnosis_threshold
         self.D_total_spacelike_like = reg.D_total_spacelike_like
 
         # Golden ratio for dilution correction
@@ -378,14 +378,14 @@ def save_certificate(certificate: Dict[str, Any], output_dir: Path = None) -> Pa
 _validation_reg = get_registry()
 
 # Validate central sampler constants
-assert _validation_reg.central_pair == 1, \
-    f"Central pair should be 1, got {_validation_reg.central_pair}"
+assert _validation_reg.reid_pair == 1, \
+    f"Central pair should be 1, got {_validation_reg.reid_pair}"
 assert _validation_reg.total_local_pairs == 12, \
     f"Total local pairs should be 12, got {_validation_reg.total_local_pairs}"
 assert _validation_reg.total_effective_pairs == 13, \
     f"Total effective pairs should be 13, got {_validation_reg.total_effective_pairs}"
-assert _validation_reg.central_activation_threshold == 9, \
-    f"Activation threshold should be 9, got {_validation_reg.central_activation_threshold}"
+assert _validation_reg.gnosis_threshold == 9, \
+    f"Activation threshold should be 9, got {_validation_reg.gnosis_threshold}"
 assert _validation_reg.D_total_spacelike_like == 50, \
     f"D_total should be 50, got {_validation_reg.D_total_spacelike_like}"
 

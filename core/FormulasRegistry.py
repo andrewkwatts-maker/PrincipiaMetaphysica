@@ -354,6 +354,7 @@ class FormulasRegistry:
         "logos_joint": "Logos Joint",
         "sophian_pressure": "Sophia Pressure",
         "nitzotzin_roots": "Nitzotzin Roots",
+        "nitsot_par": "Spark Pair",
         "reid_pair": "Reid Pair",
         "watts_weight": "Watts Weight",
         "gnosis_threshold": "The Threshold",
@@ -614,6 +615,7 @@ class FormulasRegistry:
     # CENTRAL SAMPLER (Reid Architecture):
     # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
     # ------|------------------|----------|----------|---------------
+    # 1/144 | nitsot_par       | Nun-Qoph | 150      | Spark Pair (cross-shadow coupling)
     # 1     | reid_pair        | Resh     | 200      | Reid Pair
     # phi/12| watts_weight     | Resh-Phi | ~261     | Watts Weight
     # 9     | gnosis_threshold | Tet      | 9        | The Threshold
@@ -631,6 +633,7 @@ class FormulasRegistry:
         "sophian_pressure": {"hebrew": "163", "gematria": 163, "value": 163, "old_name": "odowd_bulk_pressure"},
         "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288, "old_name": "roots_total"},
         # Central Sampler
+        "nitsot_par": {"hebrew": "Nun-Qoph", "gematria": 150, "value": "1/144", "old_name": "reid_invariant"},
         "reid_pair": {"hebrew": "Resh", "gematria": 200, "value": 1, "old_name": "central_pair"},
         "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)", "old_name": "central_pair_weight"},
         "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9, "old_name": "central_activation_threshold"},
@@ -3177,6 +3180,11 @@ class FormulasRegistry:
     def nitzotzin_roots(self) -> int:
         """Ancestral Root Structure (288) - Hebrew: 288. Alias for roots_total."""
         return self.roots_total
+
+    @property
+    def nitsot_par(self) -> float:
+        """Spark Pair coupling (1/144) - Hebrew: Nun-Qoph (150). Alias for reid_invariant."""
+        return self.reid_invariant
 
     @property
     def reid_pair(self) -> int:

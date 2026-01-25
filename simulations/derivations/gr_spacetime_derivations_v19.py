@@ -85,7 +85,7 @@ try:
     _SSOT = FormulasRegistry()
 
     # G2 Topology (TCS #187) - from SSOT
-    B3_G2 = _SSOT.b3                    # Third Betti number = 24
+    B3_G2 = _SSOT.elder_vessels                    # Third Betti number = 24
     B2_G2 = 4                           # Second Betti number (TCS #187)
     CHI_EFF = _SSOT.chi_eff_total       # Full manifold Euler char = 144
 

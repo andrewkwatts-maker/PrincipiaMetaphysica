@@ -33,7 +33,7 @@ def test_gauge_invariance():
     """
     # Load geometric anchors from SSoT Registry
     if REGISTRY:
-        b3 = REGISTRY.b3
+        b3 = REGISTRY.elder_vessels
         kappa_Delta = REGISTRY.demiurgic_coupling  # κ_Δ = B3/2 + 1/π ≈ 12.318
     else:
         b3 = 24
@@ -70,7 +70,7 @@ def test_su3_color_invariance():
 
     # Load from SSoT Registry
     if REGISTRY:
-        b3 = REGISTRY.b3
+        b3 = REGISTRY.elder_vessels
         C_kaf = REGISTRY.c_kaf  # Flux normalization: B3*(B3-7)/(B3-9) = 27.2
     else:
         b3 = 24
@@ -185,14 +185,14 @@ def test_integer_closure():
     """
     # Load from SSoT Registry - ALWAYS prefer registry values
     if REGISTRY:
-        shadow = REGISTRY.shadow_sector           # Shadow sector
-        Lambda_JC = REGISTRY.christ_constant      # Λ_JC: Logos Potential (153)
-        total_roots = REGISTRY.roots_total        # E8×E8 root lattice
+        shadow = REGISTRY.demiurgic_gates           # Shadow sector
+        Lambda_JC = REGISTRY.logos_joint      # Λ_JC: Logos Potential (153)
+        total_roots = REGISTRY.nitzotzin_roots        # E8×E8 root lattice
     else:
         # Fallback only if registry unavailable - must match SSoT values
-        shadow = 135           # Fallback: must match registry.shadow_sector
-        Lambda_JC = 153        # Fallback: must match registry.christ_constant
-        total_roots = 288      # Fallback: must match registry.roots_total
+        shadow = 135           # Fallback: must match registry.demiurgic_gates
+        Lambda_JC = 153        # Fallback: must match registry.logos_joint
+        total_roots = 288      # Fallback: must match registry.nitzotzin_roots
 
     closure_sum = shadow + Lambda_JC
     is_valid = (closure_sum == total_roots)
@@ -216,8 +216,8 @@ def test_sterile_ratio():
     """
     # Load from SSoT Registry
     if REGISTRY:
-        P_O = REGISTRY.odowd_bulk_pressure   # P_O: O'Dowd Bulk Pressure (163)
-        total_roots = REGISTRY.roots_total   # E8×E8 root lattice (288)
+        P_O = REGISTRY.sophian_pressure   # P_O: O'Dowd Bulk Pressure (163)
+        total_roots = REGISTRY.nitzotzin_roots   # E8×E8 root lattice (288)
     else:
         P_O = 163          # Fallback: O'Dowd Bulk Pressure
         total_roots = 288
@@ -287,8 +287,8 @@ def test_watts_constant_guard_rail():
     """
     # Load from SSoT Registry
     if REGISTRY:
-        Omega_W = REGISTRY.watts_constant    # Ω_W: Observer Unity
-        chi_R = REGISTRY.reid_invariant      # χ_R: Sounding Board (1/144)
+        Omega_W = REGISTRY.monad_unity    # Ω_W: Observer Unity
+        chi_R = REGISTRY.nitsot_par      # χ_R: Sounding Board (1/144)
     else:
         Omega_W = 1.0          # Fallback - IMMUTABLE
         chi_R = 1.0 / 144.0    # Reid Invariant
@@ -330,9 +330,9 @@ def test_odowd_hubble_formula():
     """
     # Load from SSoT Registry
     if REGISTRY:
-        roots_total = REGISTRY.roots_total          # 288
+        roots_total = REGISTRY.nitzotzin_roots          # 288
         chi_eff_total = REGISTRY.chi_eff_total      # chi_eff_total = 144 (cross-shadow)
-        P_O = REGISTRY.odowd_bulk_pressure          # P_O = 163
+        P_O = REGISTRY.sophian_pressure          # P_O = 163
         eta_S = REGISTRY.sophian_drag               # eta_S = 0.6819
     else:
         reg = get_registry()
