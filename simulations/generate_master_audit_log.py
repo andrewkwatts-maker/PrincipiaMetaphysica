@@ -87,7 +87,7 @@ def run_all_audits():
         b3 = registry.elder_kads
         chi_eff = registry.mephorash_chi
         roots_total = registry.nitzotzin_roots
-        visible_sector = registry.sophian_registry
+        visible_sector = registry.sophian_modulus
         sterile_sector = registry.barbelo_modulus
         kappa_Delta = registry.demiurgic_coupling
         c_kaf = registry.c_kaf

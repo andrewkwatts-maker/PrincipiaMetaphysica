@@ -87,7 +87,7 @@ The following symbols were updated to use Greek subscripts where Greek gematria 
 | `elder_kads` | 24 | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
 | `horos_limit` | 27 | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | `mephorash_chi` | 72 | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
-| `sophian_registry` | 125 | 𝒱_ה | He (ה) | 5 | Visible Registry Volume | The Breath Manifest |
+| `sophian_modulus` | 125 | ℳ_ה | He (ה) | 5 | Visible Residue Modulus | Sophia Assembly |
 | `demiurgic_Yetts` | 135 | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
 | `qedem_chi_sum` | 144 | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
 | `nitzotzin_sector` | 144 | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
@@ -172,13 +172,13 @@ $$\mathcal{S}_{\delta} (135) + \mathcal{P}_{\text{צ}} (163) = \mathcal{N}_{\tex
 - **Value:** 72
 - **Role:** Ayin-Bet (עב = 72) is the gematria of the 72-letter Explicit Name of God. The per-shadow Euler characteristic encodes the chiral structure of each 11D shadow.
 
-### sophian_registry (𝒱_ה)
-- **Scientific Name:** Visible Registry Volume
-- **Gnostic Name:** The Breath Manifest
+### sophian_modulus (ℳ_ה)
+- **Scientific Name:** Visible Residue Modulus
+- **Gnostic Name:** Sophia Assembly
 - **Hebrew:** He (ה)
 - **Gematria:** 5
 - **Value:** 125
-- **Role:** He (ה = 5) means 'Breath/Window.' 5³ = 125 = manifest volume. The 125 Standard Model parameters visible through Sophia's window.
+- **Role:** He (ה = 5) means 'Breath/Window.' 5³ = 125 = manifest volume. The 125 Standard Model parameters visible through Sophia's window. M for Modulus matching barbelo_modulus pattern.
 
 ### demiurgic_Yetts (𝒮_δ)
 - **Scientific Name:** Normal Portal Flux
@@ -293,7 +293,7 @@ These old names still work as aliases pointing to the Hebrew names:
 | `elder_vessels` | `elders` | 24 |
 | `horos` | `horos_limit` | 27 |
 | `chi_eff` | `mephorash_chi` | 72 |
-| `visible_sector` | `sophian_registry` | 125 |
+| `visible_sector` | `sophian_modulus` | 125 |
 | `shadow_sector` | `demiurgic_Yetts` | 135 |
 | `demiurgic_gates` | `demiurgic_Yetts` | 135 |
 | `chi_eff_total` | `qedem_chi_sum` | 144 |

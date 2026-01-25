@@ -45,7 +45,7 @@ class BazienAngles:
     """
 
     def __init__(self):
-        self.NUM_RESIDUES = _REG.sophian_registry  # Observable spectral residues (125)
+        self.NUM_RESIDUES = _REG.sophian_modulus  # Observable spectral residues (125)
         self.ANC_ROOTS = _REG.nitzotzin_roots  # Ancestral root basis (288)
         self.B3 = _REG.elder_kads  # Third Betti number (24)
         self.PHI = (1 + np.sqrt(5)) / 2  # Golden ratio

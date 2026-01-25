@@ -74,7 +74,7 @@ class TorsionFunnelVisualization:
     MANIFOLD_COST = 12
     ANCESTRAL_ROOTS = _REG.nitzotzin_roots  # 288 (276 + 24 - 12)
     TORSION_PINS = _REG.elder_kads  # 24
-    ACTIVE_RESIDUES = _REG.sophian_registry  # 125
+    ACTIVE_RESIDUES = _REG.sophian_modulus  # 125
     HIDDEN_SUPPORTS = _REG.barbelo_modulus  # 163
     DIMENSIONS = 4
     PINS_PER_DIM = 6
