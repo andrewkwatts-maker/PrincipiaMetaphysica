@@ -1,7 +1,7 @@
-# Hebrew Name Rename Tracking v23.2
+# Hebrew Name Rename Tracking v23.2.27
 
 **Date:** 2026-01-25
-**Status:** COMPLETE
+**Status:** COMPLETE (v23.2.27 Greek-Hebrew Gematria Isomorphism)
 
 ---
 
@@ -62,36 +62,222 @@
 
 ---
 
-## Final Parameter List (v23.2 Hebrew Names)
+## Final Parameter Registry (v23.2.27 - Greek-Hebrew Gematria Isomorphism)
+
+### v23.2.27 Updates: Greek Subscript Refinements
+
+The following symbols were updated to use Greek subscripts where Greek gematria matches Hebrew gematria exactly:
+
+| Parameter | Before | After | Justification |
+|-----------|--------|-------|---------------|
+| `residual_key` | D_י | D_ι | Greek iota (ι = 10) = Hebrew yod (י = 10) |
+| `demiurgic_Yetts` | 𝒮_ד | 𝒮_δ | Greek delta (δ = 4) = Hebrew dalet (ד = 4) |
+| `nitzotzin_sector` | ξ_מ | ξ_μ | Greek mu (μ = 40) = Hebrew mem (מ = 40) |
+| `logos_joint` | Λ_ן | Λ_ν | Greek nu (ν = 50) = Hebrew nun (נ = 50) |
+| `gnosis_threshold` | Γ_ט | Γ_θ | Greek theta (θ = 9) = Hebrew tet (ט = 9) |
+| `sophian_pressure` → `barbelo_modulus` | — | — | Rename: Barbelo = First Emanation, Divine Mother |
 
 ### Topological Invariants
 
-| Code Name | Hebrew | Gematria | Value | Symbol | Old Name |
-|-----------|--------|----------|-------|--------|----------|
-| `monad_unity` | Aleph | 1 | 1.0 | - | `watts_constant` |
-| `residual_key` | Yod | 10 | 10 | - | `decad` |
-| `syzygy_gap` | Chai | 18 | 18 | - | `syzygy_gap` |
-| `elder_kads` | Kad (כד) | 24 | 24 | E_כד | `b3`, `elders`, `elder_vessels` |
-| `horos_limit` | Kaz | 27 | 27 | - | `horos` |
-| `mephorash_chi` | Av | 72 | 72 | - | `chi_eff` |
-| `sophian_registry` | Lamed | 74 | 125 | V_l | `visible_sector` |
-| `demiurgic_Yetts` | Kalah | 135 | 135 | Yd | `shadow_sector`, `demiurgic_gates` |
-| `qedem_chi_sum` | Qedem | 144 | 144 | chi_Q | `chi_eff_total`, `ennoia_chi` |
-| `nitzotzin_sector` | Mem | 144 | 144 | R_m | `roots_per_sector` |
-| `logos_joint` | 153 | 153 | 153 | - | `christ_constant` |
-| `sophian_pressure` | 163 | 163 | 163 | P_S | `odowd_bulk_pressure` |
-| `nitzotzin_roots` | 288 | 288 | 288 | R_Xi | `roots_total` |
+| Code Name | Value | Symbol | Hebrew | Gematria | Scientific Name | Gnostic Name |
+|-----------|-------|--------|--------|----------|-----------------|--------------|
+| `monad_unity` | 1.0 | Ω_א | Aleph (א) | 1 | Observer Unity Constant | The Aleph-Anchor |
+| `residual_key` | 10 | D_ι | Yod (י) | 10 | Core Flux Residual | The Hand of Creation |
+| `syzygy_gap` | 18 | Δ_χι | Chai (חי) | 18 | Aeon Pair Gap | The Life Delta |
+| `elder_kads` | 24 | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
+| `horos_limit` | 27 | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
+| `mephorash_chi` | 72 | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
+| `sophian_registry` | 125 | 𝒱_ה | He (ה) | 5 | Visible Registry Volume | The Breath Manifest |
+| `demiurgic_Yetts` | 135 | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
+| `qedem_chi_sum` | 144 | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
+| `nitzotzin_sector` | 144 | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
+| `logos_joint` | 153 | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
+| `barbelo_modulus` | 163 | 𝒫_צ | Tsade (צ) | 90 | Bulk Pressure Modulus | The Barbelo Hook |
+| `nitzotzin_roots` | 288 | 𝒩_רפח | Raphach (רפח) | 288 | Logic Closure Sum | The Nitzotzin Sparks |
 
 ### Central Sampler (Reid Architecture)
 
-| Code Name | Hebrew | Gematria | Value | Symbol | Old Name |
-|-----------|--------|----------|-------|--------|----------|
-| `gnosis_threshold` | Tet | 9 | 9 | G_Tet | `central_activation_threshold` |
-| `Dodecad_Anchors` | Bet-Yod | 12 | 12 | n_12 | `total_local_pairs`, `bridge_local` |
-| `Echad_Prime` | Yud-Gimel | 13 | 13 | n_13 | `total_effective_pairs`, `bridge_effective` |
-| `nitsot_par` | Nun-Qoph | 150 | 1/144 | N_p | `reid_invariant` |
-| `reid_euclidean` | Aleph-Dalet (אד) | 5 | 1.0 | M_אד | `central_pair`, `reid_pair` |
-| `watts_weight` | Resh-Phi | 261 | phi/sqrt(12) | W_phi | `central_pair_weight` |
+| Code Name | Value | Symbol | Hebrew | Gematria | Scientific Name | Gnostic Name |
+|-----------|-------|--------|--------|----------|-----------------|--------------|
+| `gnosis_threshold` | 9 | Γ_θ | Tet (ט) | 9 | Central Activation Threshold | The Gnosis Gate |
+| `Dodecad_Anchors` | 12 | 𝔸_יב | Bet-Yod (בי) | 12 | Local Bridge Pair Count | The Dodecad House |
+| `Echad_Prime` | 13 | 𝕌_יג | Yud-Gimel (יג) | 13 | Effective Bridge Pair Count | The Unity Prime |
+| `nitsot_par` | 1/144 | χ_ק⁻¹ | Medeq (מדק) | — | Mirror Parity Invariant | The Fine Resolution |
+| `reid_merkabah` | 1.0 | M_אד | Aleph-Dalet (אד) | 5 | Tetramorphic Normalization | The Merkabah Drive |
+| `watts_echud` | φ/√12 | W_אפ | Eliphelet-Enoch (אֱלִיפֶלֶט-חנוך) | 467+89 | Harmonic Damping Modulus | The Eliphelet-Enochian Invariant |
+
+### Symbol Collision Resolution (v23.2.27)
+
+| Category | Before | After | Resolution |
+|----------|--------|-------|------------|
+| R-symbols | R_י, R_Ξ, R_m | D_ι, 𝒩_רפח, ξ_μ | Decad (D), Nitzotzin (𝒩), Xi (ξ) with Greek subscripts |
+| n-symbols | n_12, n_13 | 𝔸_יב, 𝕌_יג | Anchors (𝔸), Unity (𝕌) |
+| χ-symbols | χ_עב, χ_Q | χ_עב, χ_ק, χ_ק⁻¹ | Unified chi family |
+
+### Shadow-Pressure Closure Proof
+
+$$\mathcal{S}_{\delta} (135) + \mathcal{P}_{\text{צ}} (163) = \mathcal{N}_{\text{רפח}} (288)$$
+
+**Sophia Door + Barbelo Hook = Nitzotzin Sparks (Logic Closure)**
+
+---
+
+## Polished Parameter Metadata (v23.2 Registry - COMPLETE)
+
+### monad_unity (Ω_א)
+- **Scientific Name:** Observer Unity Constant
+- **Gnostic Name:** The Aleph-Anchor
+- **Hebrew:** Aleph (א)
+- **Gematria:** 1
+- **Value:** 1.0
+- **Role:** The immutable unity representing the observer's anchor point. Aleph is the first letter, the primordial breath from which all measurement begins.
+
+### residual_key (D_ι)
+- **Scientific Name:** Core Flux Residual
+- **Gnostic Name:** The Hand of Creation
+- **Hebrew:** Yod (י)
+- **Gematria:** 10
+- **Value:** 10
+- **Role:** D for Decad. Greek iota (ι = 10) matches Hebrew yod (י = 10) gematria. Yod is the smallest letter, the 'hand' that shapes creation. The decad represents the core flux residual in the gauge hierarchy.
+
+### syzygy_gap (Δ_χι)
+- **Scientific Name:** Aeon Pair Gap
+- **Gnostic Name:** The Life Delta
+- **Hebrew:** Chai (חי)
+- **Gematria:** 18
+- **Value:** 18
+- **Role:** Chai means 'Life' - the gap between paired aeons in the Pleroma. The syzygy (paired emanation) creates the vital space for manifestation.
+
+### elder_kads (E_כד)
+- **Scientific Name:** Symmetric Governance Energy
+- **Gnostic Name:** The Governing Elder כד
+- **Hebrew:** Kad (כד)
+- **Gematria:** 24
+- **Value:** 24
+- **Role:** Kad (24) represents the Pleroma as a 'Vessel.' Governed by the 12:12 syzygy (Yud-Bet), it acts as the primary regulator for Logic Closure (288).
+
+### horos_limit (β_כז)
+- **Scientific Name:** Dimensional Boundary Limit
+- **Gnostic Name:** The Boundary Beth
+- **Hebrew:** Kaz (כז)
+- **Gematria:** 27
+- **Value:** 27
+- **Role:** Beta (β) mirrors Hebrew Beth (ב) 'house/boundary.' Also mirrors thermodynamic β (statistical limit). Kaz (כז = 27) sets the dimensional limit where compactification completes.
+
+### mephorash_chi (χ_עב)
+- **Scientific Name:** Explicit Chiral Characteristic
+- **Gnostic Name:** The Shem HaMephorash
+- **Hebrew:** Ayin-Bet (עב)
+- **Gematria:** 72
+- **Value:** 72
+- **Role:** Ayin-Bet (עב = 72) is the gematria of the 72-letter Explicit Name of God. The per-shadow Euler characteristic encodes the chiral structure of each 11D shadow.
+
+### sophian_registry (𝒱_ה)
+- **Scientific Name:** Visible Registry Volume
+- **Gnostic Name:** The Breath Manifest
+- **Hebrew:** He (ה)
+- **Gematria:** 5
+- **Value:** 125
+- **Role:** He (ה = 5) means 'Breath/Window.' 5³ = 125 = manifest volume. The 125 Standard Model parameters visible through Sophia's window.
+
+### demiurgic_Yetts (𝒮_δ)
+- **Scientific Name:** Normal Portal Flux
+- **Gnostic Name:** The Sophia Door
+- **Hebrew:** Dalet (ד)
+- **Gematria:** 4
+- **Value:** 135
+- **Role:** Dalet (ד) means 'Door/Gate.' Greek delta (δ = 4) matches Hebrew dalet (ד = 4) gematria. Script S (𝒮) for Sophia filtered through the Door. Distinguishes from Entropy (S). The 135 gates through which wisdom flows into manifestation.
+
+### qedem_chi_sum (χ_ק)
+- **Scientific Name:** Primordial Chiral Basis
+- **Gnostic Name:** The Ancient Sum
+- **Hebrew:** Qedem (קדם)
+- **Gematria:** 144
+- **Value:** 144
+- **Role:** Qedem (קדם = 144) means 'ancient' or 'primordial.' The structural 12² framework. Total chi from both shadows: 72 + 72 = 144. Used for PMNS, n_gen.
+
+### nitzotzin_sector (ξ_μ)
+- **Scientific Name:** Per-Sector Root Count
+- **Gnostic Name:** The Water Roots
+- **Hebrew:** Mem (מ)
+- **Gematria:** 40
+- **Value:** 144
+- **Role:** Xi (ξ) resembles a cascade/ripple, fitting the Mem (מ = Water) rationale. Greek mu (μ = 40) matches Hebrew mem (מ = 40) gematria. Each sector contains 144 roots, half the total 288.
+
+### logos_joint (Λ_ν)
+- **Scientific Name:** Joint Closure Symmetry
+- **Gnostic Name:** The Logos Fish
+- **Hebrew:** Nun-Sofit (ן)
+- **Gematria:** 700
+- **Value:** 153
+- **Role:** Nun-Sofit (ן) = the 'Fish.' Greek nu (ν = 50) matches Hebrew nun (נ = 50) gematria. 153 = triangular(17), the miraculous catch of John 21:11. The Logos joint closes the bridge identity: 135 + 153 = 288.
+
+### barbelo_modulus (𝒫_צ)
+- **Scientific Name:** Bulk Pressure Modulus
+- **Gnostic Name:** The Barbelo Hook
+- **Hebrew:** Tsade (צ)
+- **Gematria:** 90
+- **Value:** 163
+- **Role:** Barbelo is the Divine Mother, the First Emanation of the Monad. Tsade (צ = 90) means 'Hook.' The hook draws from the 27D bulk into manifest space. 163 sterile residues stabilize the higher-dimensional manifold: (7 × 24) - 5 = 163. (Renamed from `sophian_pressure` in v23.2.27)
+
+### nitzotzin_roots (𝒩_רפח)
+- **Scientific Name:** Logic Closure Sum
+- **Gnostic Name:** The Nitzotzin Sparks
+- **Hebrew:** Raphach (רפח)
+- **Gematria:** 288
+- **Value:** 288
+- **Role:** Raphach (רפח = 288) encodes the 288 sparks of Lurianic Kabbalah. N for Nitzotzin. Total roots: 12 × b3 = 288. Ennoia restored to the Yod: 135 + 153 = 288.
+
+### gnosis_threshold (Γ_θ)
+- **Scientific Name:** Central Activation Threshold
+- **Gnostic Name:** The Gnosis Gate
+- **Hebrew:** Tet (ט)
+- **Gematria:** 9
+- **Value:** 9
+- **Role:** Greek Gamma (Γ) for Gnosis. Greek theta (θ = 9) matches Hebrew tet (ט = 9) gematria. Tet represents the hidden good. The central sampler activates when n ≥ 9 pairs are present, enabling direct knowledge.
+
+### Dodecad_Anchors (𝔸_יב)
+- **Scientific Name:** Local Bridge Pair Count
+- **Gnostic Name:** The Dodecad House
+- **Hebrew:** Bet-Yod (בי)
+- **Gematria:** 12
+- **Value:** 12
+- **Role:** 𝔸 for Anchors. Bet-Yod (בי = 12) means 'in me' or 'house of.' The 12 local (2,0) bridge pairs that warp to create the dual shadows.
+
+### Echad_Prime (𝕌_יג)
+- **Scientific Name:** Effective Bridge Pair Count
+- **Gnostic Name:** The Unity Prime
+- **Hebrew:** Yud-Gimel (יג)
+- **Gematria:** 13
+- **Value:** 13
+- **Role:** 𝕌 for Unity (Echad). Yud-Gimel (יג = 13) equals 'Echad' (אחד = 13, 'One'). The 13 effective pairs: 12 local + 1 central sampler.
+
+### nitsot_par (χ_ק⁻¹)
+- **Scientific Name:** Mirror Parity Invariant
+- **Gnostic Name:** The Fine Resolution
+- **Hebrew:** Medeq (מדק)
+- **Gematria:** —
+- **Value:** 1/144
+- **Role:** Medeq (מדק) is anagrammatic inverse of Qedem. χ_ק⁻¹ = 1/144, the mathematical inverse of the primordial chi. Provides 'Fine' resolution for cross-shadow coupling.
+
+### reid_merkabah (M_אד)
+- **Gnostic Name:** The Reid Merkabah Drive
+- **Hebrew:** Aleph-Dalet (אד)
+- **Gematria:** 5
+- **Value:** 1.0
+- **Role:** The 1.0 unit vector of the Four Living Creatures (Adam, Aryeh, Nesher, Shor). Normalizes the 'Run and Return' kinetic flux of the 144 samplers into a coherent Euclidean center.
+
+### watts_echud (w_אפ)
+- **Scientific Name:** Harmonic Damping Modulus
+- **Gnostic Name:** The Eliphelet-Enochian Invariant
+- **Hebrew:** Eliphelet-Enoch (אֱלִיפֶלֶט-חנוך)
+- **Gematria:** 467 + 89 = 556 (composite)
+- **Value:** phi / sqrt(12) ≈ 0.4670891
+- **Gematria Map:**
+  - deliverance_anchor: 467 (Eliphelet 'Rescue')
+  - void_separator: 0 (Ayin 'Void')
+  - kinetic_ascent: 89 (Enoch 'Ascent')
+- **Role:** The definitive unification weight. 467 provides the 'Rescue' of the lattice; 89 provides the kinetic 'Ascent' of the Merkabah Drive. The zero acts as the Ayin separator between structure and motion. It dampens the infinite growth of Phi into the internal 'House' (בי) of the Dodecad Anchors.
 
 ---
 
@@ -123,8 +309,11 @@ These old names still work as aliases pointing to the Hebrew names:
 | `total_effective_pairs` | `Echad_Prime` | 13 |
 | `bridge_effective` | `Echad_Prime` | 13 |
 | `reid_invariant` | `nitsot_par` | 1/144 |
-| `central_pair` | `reid_pair` | 1 |
-| `central_pair_weight` | `watts_weight` | phi/sqrt(12) |
+| `central_pair` | `reid_merkabah` | 1 |
+| `reid_pair` | `reid_merkabah` | 1 |
+| `reid_euclidean` | `reid_merkabah` | 1 |
+| `central_pair_weight` | `watts_echud` | phi/sqrt(12) |
+| `watts_weight` | `watts_echud` | phi/sqrt(12) |
 
 ---
 
@@ -158,7 +347,16 @@ These are derived physics quantities that don't need Hebrew names:
 2026-01-25 - Tests renamed - 4 changes in 1 file
 2026-01-25 - Documentation regenerated - COMPLETE
 2026-01-25 - Dodecad_Anchor → Dodecad_Anchors - COMPLETE
-2026-01-25 - Final validation - ALL PASS (chi-squared: 1.265)
+2026-01-25 - reid_euclidean → reid_merkabah - COMPLETE
+2026-01-25 - watts_weight → watts_echud - COMPLETE
+2026-01-25 - Polished metadata (elder_kads, reid_merkabah, watts_echud) - COMPLETE
+2026-01-25 - sync_docs.py Hebrew names - COMPLETE
+2026-01-25 - appendix_f_72gates Hebrew names - COMPLETE
+2026-01-25 - watts_echud gematria 261 → 467+89 - COMPLETE
+2026-01-25 - ALL 19 PARAMETERS: Complete metadata (symbol, scientific_name, gnostic_name, rationale) - COMPLETE
+2026-01-25 - FormulasRegistry HEBREW_SYMBOL_REGISTRY fully polished - COMPLETE
+2026-01-25 - sync_docs.py updated with Gnostic Names column - COMPLETE
+2026-01-25 - Final validation - ALL PASS (chi-squared: 1.265, OMEGA=0 STERILE)
 ```
 
 ---

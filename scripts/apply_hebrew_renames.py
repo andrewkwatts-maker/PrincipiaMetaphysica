@@ -33,11 +33,11 @@ RENAMES = {
     'shadow_sector': ('demiurgic_Yetts', 135, 'Kalah', 'Demiurge Gates', 'Normal entry portals'),
     'christ_constant': ('logos_joint', 153, '153', 'Logos Joint', 'Bridge identity closure'),
     'delta_jc': ('logos_joint', 153, '153', 'Logos Joint', 'Bridge identity closure'),
-    'odowd_bulk_pressure': ('sophian_pressure', 163, '163', 'Sophia Pressure', 'Higher-D stabilizer'),
-    'sterile_sector': ('sophian_pressure', 163, '163', 'Sophia Pressure', 'Higher-D stabilizer'),
+    'odowd_bulk_pressure': ('barbelo_modulus', 163, 'Tsade', 'Barbelo Modulus', 'Higher-D stabilizer'),
+    'sterile_sector': ('barbelo_modulus', 163, 'Tsade', 'Barbelo Modulus', 'Higher-D stabilizer'),
     'roots_total': ('nitzotzin_roots', 288, '288', 'Nitzotzin Roots', 'Ancestral sparks'),
-    'central_pair': ('reid_euclidean', 200, 'Resh', 'Reid Pair', 'Central (2,0) averager'),
-    'central_pair_weight': ('watts_weight', 261, 'Resh-Phi', 'Watts Weight', 'Central averaging'),
+    'central_pair': ('reid_merkabah', 200, 'Resh', 'Reid Pair', 'Central (2,0) averager'),
+    'central_pair_weight': ('watts_echud', 261, 'Resh-Phi', 'Watts Weight', 'Central averaging'),
     'central_activation_threshold': ('gnosis_threshold', 9, 'Tet', 'The Threshold', 'Central activates n>=9'),
 }
 
@@ -60,14 +60,14 @@ HEBREW_REGISTRY = '''
     # 72    | mephorash_chi    | Av       | 72       | Shem HaMephorash
     # 135   | demiurgic_gates  | Kalah    | 135      | Demiurge Gates
     # 153   | logos_joint      | 153      | 153      | Logos Joint
-    # 163   | sophian_pressure | 163      | 163      | Sophia Pressure
+    # 163   | barbelo_modulus  | Tsade    | 163      | Barbelo Modulus
     # 288   | nitzotzin_roots  | 288      | 288      | Nitzotzin Roots
     #
     # CENTRAL SAMPLER:
     # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
     # ------|------------------|----------|----------|---------------
-    # 1     | reid_euclidean        | Resh     | 200      | Reid Pair
-    # phi/12| watts_weight     | Resh-Phi | ~261     | Watts Weight
+    # 1     | reid_merkabah        | Resh     | 200      | Reid Pair
+    # phi/12| watts_echud     | Resh-Phi | ~261     | Watts Weight
     # 9     | gnosis_threshold | Tet      | 9        | The Threshold
     # ===========================================================================
     HEBREW_SYMBOL_REGISTRY = {
@@ -80,11 +80,11 @@ HEBREW_REGISTRY = '''
         "mephorash_chi": {"hebrew": "Av", "gematria": 72, "value": 72},
         "demiurgic_Yetts": {"hebrew": "Kalah", "gematria": 135, "value": 135},
         "logos_joint": {"hebrew": "153", "gematria": 153, "value": 153},
-        "sophian_pressure": {"hebrew": "163", "gematria": 163, "value": 163},
+        "barbelo_modulus": {"hebrew": "Tsade", "gematria": 163, "value": 163},
         "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288},
         # Central Sampler
-        "reid_euclidean": {"hebrew": "Resh", "gematria": 200, "value": 1},
-        "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)"},
+        "reid_merkabah": {"hebrew": "Resh", "gematria": 200, "value": 1},
+        "watts_echud": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)"},
         "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9},
     }
 '''
@@ -145,10 +145,10 @@ def apply_changes(dry_run: bool = True):
         'mephorash_chi': 'Shem HaMephorash',
         'demiurgic_Yetts': 'Demiurge Gates',
         'logos_joint': 'Logos Joint',
-        'sophian_pressure': 'Sophia Pressure',
+        'barbelo_modulus': 'Barbelo Modulus',
         'nitzotzin_roots': 'Nitzotzin Roots',
-        'reid_euclidean': 'Reid Pair',
-        'watts_weight': 'Watts Weight',
+        'reid_merkabah': 'Reid Pair',
+        'watts_echud': 'Watts Weight',
         'gnosis_threshold': 'The Threshold',
     }
 
@@ -210,8 +210,8 @@ def apply_changes(dry_run: bool = True):
         return self.christ_constant
 
     @property
-    def sophian_pressure(self) -> int:
-        """Ancestral Bulk Pressure (163) - Hebrew: 163."""
+    def barbelo_modulus(self) -> int:
+        """Bulk Pressure Modulus (163) - Hebrew: Tsade."""
         return self.odowd_bulk_pressure
 
     @property
@@ -220,12 +220,12 @@ def apply_changes(dry_run: bool = True):
         return self.roots_total
 
     @property
-    def reid_euclidean(self) -> int:
+    def reid_merkabah(self) -> int:
         """Central Sampler Count (1) - Hebrew: Resh (200)."""
         return self.central_pair
 
     @property
-    def watts_weight(self) -> float:
+    def watts_echud(self) -> float:
         """Sampler Dilution Coupling (phi/sqrt(12)) - Hebrew: Resh-Phi."""
         return self.central_pair_weight
 

@@ -223,7 +223,7 @@ class DimensionalSSOTValidator:
 
         # Chi_eff relations
         chi_sector = self.registry.mephorash_chi
-        chi_total = self.registry.chi_eff_total
+        chi_total = self.registry.qedem_chi_sum
         if chi_total != 2 * chi_sector:
             self.errors.append(f"Chi relation failed: {chi_total} != 2 * {chi_sector}")
             success = False
@@ -250,7 +250,7 @@ class DimensionalSSOTValidator:
 
         # Sector partition
         visible = self.registry.visible_sector
-        sterile = self.registry.sophian_pressure
+        sterile = self.registry.barbelo_modulus
         if roots_total != visible + sterile:
             self.errors.append(f"Sector partition failed: {roots_total} != {visible} + {sterile}")
             success = False

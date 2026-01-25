@@ -216,7 +216,7 @@ def test_sterile_ratio():
     """
     # Load from SSoT Registry
     if REGISTRY:
-        P_O = REGISTRY.sophian_pressure   # P_O: O'Dowd Bulk Pressure (163)
+        P_O = REGISTRY.barbelo_modulus   # P_O: Barbelo Modulus / Bulk Pressure (163)
         total_roots = REGISTRY.nitzotzin_roots   # E8×E8 root lattice (288)
     else:
         P_O = 163          # Fallback: O'Dowd Bulk Pressure
@@ -332,7 +332,7 @@ def test_odowd_hubble_formula():
     if REGISTRY:
         roots_total = REGISTRY.nitzotzin_roots          # 288
         chi_eff_total = REGISTRY.chi_eff_total      # chi_eff_total = 144 (cross-shadow)
-        P_O = REGISTRY.sophian_pressure          # P_O = 163
+        P_O = REGISTRY.barbelo_modulus          # P_O = 163
         eta_S = REGISTRY.sophian_drag               # eta_S = 0.6819
     else:
         reg = get_registry()

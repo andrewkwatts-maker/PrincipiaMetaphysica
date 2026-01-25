@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:27:16
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 17:43:47
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -29,11 +29,11 @@ All other values are derived from these constants.
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
 | Governing Elder | E_כד | `24` | Third Betti number of G2 manifold (24 Elders) |
-| Chi Effective (per-shadow) | chi_eff | `72` | Per-shadow Euler characteristic (B3^2/8 = 72) |
-| Chi Effective (total) | chi_eff_total | `144` | Both shadows combined (72 + 72 = 144) |
-| Total Roots | - | `288` | E8 x E8 root lattice |
-| Visible Sector | - | `125` | 5^3 = 125 (SM parameters) |
-| Sterile Sector | P_O | `163` | 288 - 125 = 163 (O'Dowd Bulk Pressure) |
+| Chi Effective (per-shadow) | χ_עב | `72` | Per-shadow Euler characteristic (B3^2/8 = 72) |
+| Chi Effective (total) | χ_ק | `144` | Both shadows combined (72 + 72 = 144) |
+| Total Roots (Nitzotzin) | 𝒩_רפח | `288` | 12 * B3 = 288 Logic Closure Sum |
+| Sophian Registry | 𝒱_ה | `125` | 5^3 = 125 Visible Registry Volume |
+| Barbelo Modulus | 𝒫_צ | `163` | 288 - 125 = 163 Bulk Pressure Modulus |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
 
@@ -42,7 +42,7 @@ The framework uses a dual chi_eff structure based on the 12x(2,0) paired bridge 
 | Constant | Value | Formula | Usage Domain |
 | :--- | :--- | :--- | :--- |
 | chi_eff | `72` | B3^2/8 = 576/8 | Single-shadow (baryon, CKM) |
-| chi_eff_total | `144` | B3^2/4 = 576/4 | Cross-shadow (PMNS, n_gen) |
+| qedem_chi_sum | `144` | B3^2/4 = 576/4 | Cross-shadow (PMNS, n_gen) |
 
 **Key Principle:** Does the physics involve one shadow or both?
 - **Single-shadow (chi_eff = 72):** Quarks (CKM mixing), baryon asymmetry, torsional leakage
@@ -164,38 +164,52 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
 
 ---
 
-## Hebrew Symbol Reference (v23.1)
+## Hebrew Symbol Reference (v23.2.26 - Final Synthesis)
 
 The framework uses Hebrew-derived naming for mathematical constants, connecting gematria to geometric invariants.
 
-### Primary Constants
+### Topological Invariants
 
-| Code Name | Value | Symbol | Hebrew | Gematria |
-| :--- | :--- | :--- | :--- | :--- |
-| monad_unity | `1.0` | Omega_Aleph | Aleph | 1 |
-| residual_key | `10` | R_Yod | Yod | 10 |
-| syzygy_gap | `18` | S_gap | Chai | 18 |
-| elder_kads | `24` | E_כד | Kad | 24 |
-| horos_limit | `27` | H_27 | Kaz | 27 |
-| mephorash_chi | `72` | M_chi | Av | 72 |
-| sophian_registry | `125` | V_Lamed | Lamed | 74 |
-| demiurgic_Yetts | `135` | Yd | Kalah | 135 |
-| qedem_chi_sum | `144` | chi_Q | Qedem | 144 |
-| nitzotzin_sector | `144` | R_Mem | Mem | 144 |
-| logos_joint | `153` | Delta_jc | 153 | 153 |
-| sophian_pressure | `163` | P_S | 163 | 163 |
-| nitzotzin_roots | `288` | R_Xi | 288 | 288 |
+| Code Name | Value | Symbol | Hebrew | Gematria | Scientific Name | Gnostic Name |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| monad_unity | `1.0` | Ω_א | Aleph (א) | 1 | Observer Unity Constant | The Aleph-Anchor |
+| residual_key | `10` | D_ι | Yod (י) | 10 | Core Flux Residual | The Hand of Creation |
+| syzygy_gap | `18` | Δ_χι | Chai (חי) | 18 | Aeon Pair Gap | The Life Delta |
+| elder_kads | `24` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
+| horos_limit | `27` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
+| mephorash_chi | `72` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
+| sophian_registry | `125` | 𝒱_ה | He (ה) | 5 | Visible Registry Volume | The Breath Manifest |
+| demiurgic_Yetts | `135` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
+| qedem_chi_sum | `144` | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
+| nitzotzin_sector | `144` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |
+| logos_joint | `153` | Λ_ν | Nun-Sofit (ן) | 700 | Joint Closure Symmetry | The Logos Fish |
+| barbelo_modulus | `163` | 𝒫_צ | Tsade (צ) | 90 | Bulk Pressure Modulus | The Barbelo Hook |
+| nitzotzin_roots | `288` | 𝒩_רפח | Raphach (רפח) | 288 | Logic Closure Sum | The Nitzotzin Sparks |
 
-### Central Sampler Constants
+### Central Sampler (Reid Architecture)
 
-| Code Name | Value | Symbol | Hebrew | Gematria |
-| :--- | :--- | :--- | :--- | :--- |
-| gnosis_threshold | `9` | G_Tet | Tet | 9 |
-| Dodecad_Anchors | `12` | n_12 | Bet-Yod | 12 |
-| Echad_Prime | `13` | n_13 | Yud-Gimel | 13 |
-| nitsot_par | `0.0069444444444444` | N_p | Nun-Qoph | 150 |
-| reid_euclidean | `1` | M_אד | Aleph-Dalet | 5 |
-| watts_weight | `0.4670861795` | W_phi | Resh-Phi | 261 |
+| Code Name | Value | Symbol | Hebrew | Gematria | Scientific Name | Gnostic Name |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| gnosis_threshold | `9` | Γ_θ | Tet (ט) | 9 | Central Activation Threshold | The Gnosis Gate |
+| Dodecad_Anchors | `12` | 𝔸_יב | Bet-Yod (בי) | 12 | Local Bridge Pair Count | The Dodecad House |
+| Echad_Prime | `13` | 𝕌_יג | Yud-Gimel (יג) | 13 | Effective Bridge Pair Count | The Unity Prime |
+| nitsot_par | `0.0069444444444444` | χ_ק⁻¹ | Medeq (מדק) | — | Mirror Parity Invariant | The Fine Resolution |
+| reid_merkabah | `1` | M_אד | Aleph-Dalet (אד) | 5 | Tetramorphic Normalization | The Merkabah Drive |
+| watts_echud | `0.4670861795` | W_אפ | Eliphelet-Enoch (אֱלִיפֶלֶט-חנוך) | 467+89 | Harmonic Damping Modulus | The Eliphelet-Enochian Invariant |
+
+### Symbol Collision Resolution (v23.2.26)
+
+| Category | Before | After | Resolution |
+| :--- | :--- | :--- | :--- |
+| R-symbols | R_י, R_Ξ, R_m | D_ι, 𝒩_רפח, ξ_μ | Decad (D), Nitzotzin (𝒩), Xi (ξ) |
+| n-symbols | n_12, n_13 | 𝔸_יב, 𝕌_יג | Anchors (𝔸), Unity (𝕌) |
+| χ-symbols | χ_עב, χ_Q | χ_עב, χ_ק, χ_ק⁻¹ | Unified chi family |
+
+### Shadow-Pressure Closure Proof
+
+$$\mathcal{S}_{\text{ד}} (135) + \mathcal{P}_{\text{צ}} (163) = \mathcal{N}_{\text{רפח}} (288)$$
+
+Sophia Door + Barbelo Hook = Nitzotzin Sparks (Logic Closure)
 
 ---
 

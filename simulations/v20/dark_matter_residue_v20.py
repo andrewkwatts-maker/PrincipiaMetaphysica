@@ -141,7 +141,7 @@ class DarkMatterResidueV20(SimulationBase):
         if hasattr(_REG, 'visible_sector'):
             self.N_VISIBLE = _REG.visible_sector
         if hasattr(_REG, 'sterile_sector'):
-            self.N_HIDDEN = _REG.sophian_pressure
+            self.N_HIDDEN = _REG.barbelo_modulus
 
     @property
     def metadata(self) -> SimulationMetadata:
