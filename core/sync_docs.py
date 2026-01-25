@@ -111,7 +111,7 @@ All other values are derived from these constants.
 | Chi Effective (per-shadow) | χ_עב | `{reg.mephorash_chi}` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | χ_ק | `{reg.qedem_chi_sum}` | Both shadows combined (72 + 72 = 144) |
 | Total Roots (Nitzotzin) | 𝒩_רפח | `{reg.nitzotzin_roots}` | 12 * B3 = 288 Logic Closure Sum |
-| Sophian Registry | 𝒱_ה | `{reg.sophian_registry}` | 5^3 = 125 Visible Registry Volume |
+| Sophian Modulus | ℳ_ה | `{reg.sophian_modulus}` | 5^3 = 125 Visible Residue Modulus |
 | Barbelo Modulus | 𝒫_צ | `{reg.barbelo_modulus}` | 288 - 125 = 163 Bulk Pressure Modulus |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
@@ -235,7 +235,7 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
 | Manifold Area | B3^2 | `{reg.manifold_area_bulk}` | {reg.b3}^2 = {reg.manifold_area_bulk} |
 | Pressure Divisor | B3^2 / 4 | `{reg.pressure_divisor}` | {reg.manifold_area_bulk} / 4 = {reg.pressure_divisor:.0f} |
 | O'Dowd Bulk (Derived) | (7 * B3) - 5 | `{reg.odowd_bulk_derived}` | (7 * {reg.b3}) - 5 = {reg.odowd_bulk_derived} |
-| Sterile Sector (Derived) | ROOTS - VISIBLE | `{reg.sterile_sector_derived}` | {reg.nitzotzin_roots} - {reg.sophian_registry} = {reg.sterile_sector_derived} |
+| Sterile Sector (Derived) | ROOTS - VISIBLE | `{reg.sterile_sector_derived}` | {reg.nitzotzin_roots} - {reg.sophian_modulus} = {reg.sterile_sector_derived} |
 
 **Verification Status:**
 - Bulk Pressure Derivation (163 = (7*24)-5): `{'PASS' if reg.verify_bulk_pressure_derivation() else 'FAIL'}`
@@ -257,7 +257,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | elder_kads | `{reg.elder_kads}` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
 | horos_limit | `{reg.horos_limit}` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | mephorash_chi | `{reg.mephorash_chi}` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
-| sophian_registry | `{reg.sophian_registry}` | 𝒱_ה | He (ה) | 5 | Visible Registry Volume | The Breath Manifest |
+| sophian_modulus | `{reg.sophian_modulus}` | ℳ_ה | He (ה) | 5 | Visible Residue Modulus | Sophia Assembly |
 | demiurgic_Yetts | `{reg.demiurgic_Yetts}` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
 | qedem_chi_sum | `{reg.qedem_chi_sum}` | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
 | nitzotzin_sector | `{reg.nitzotzin_sector}` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |

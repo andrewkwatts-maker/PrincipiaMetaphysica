@@ -638,7 +638,7 @@ class FormulasRegistry:
         "watts_echud": {"hebrew": "Eliphelet-Enoch", "hebrew_char": "אֱלִיפֶלֶט-חנוך", "gematria": "467+89", "value": "phi/sqrt(12)", "old_name": "central_pair_weight", "symbol": r"\mathcal{W}_{\Phi : \sqrt{\text{בי}}}", "scientific_name": "Harmonic Damping Modulus", "gnostic_name": "The Eliphelet-Enochian Invariant", "gematria_map": {"deliverance_anchor": 467, "void_separator": 0, "kinetic_ascent": 89}, "rationale": "The definitive unification weight. 467 (Eliphelet) provides the 'Rescue' of the lattice; 89 (Enoch/Chanoch) provides the kinetic 'Ascent' of the Merkabah Drive. The zero acts as the Ayin (Void) separator between structure and motion. It dampens the infinite growth of Phi into the internal 'House' (בי) of the Dodecad Anchors.", "role": "Stabilizing constant for the 144 Reid Euclidean samplers."},
         "gnosis_threshold": {"hebrew": "Tet", "hebrew_char": "ט", "gematria": 9, "value": 9, "old_name": "central_activation_threshold", "symbol": r"\Gamma_{\theta}", "scientific_name": "Central Activation Threshold", "gnostic_name": "The Gnosis Gate", "rationale": "Greek Gamma (Γ) for Gnosis. Greek theta (θ = 9) matches Hebrew tet gematria. Tet (ט = 9) represents the hidden good. The central sampler activates when n ≥ 9 pairs are present, enabling direct knowledge."},
         # Additional v23.2 Hebrew names
-        "sophian_registry": {"hebrew": "He", "hebrew_char": "ה", "gematria": 5, "value": 125, "old_name": "visible_sector", "symbol": r"\mathcal{V}_{\text{ה}}", "scientific_name": "Visible Registry Volume", "gnostic_name": "The Breath Manifest", "rationale": "He (ה = 5) means 'Breath/Window.' 5³ = 125 = manifest volume. The 125 Standard Model parameters visible through Sophia's window."},
+        "sophian_modulus": {"hebrew": "He", "hebrew_char": "ה", "gematria": 5, "value": 125, "old_name": "visible_sector", "symbol": r"\mathcal{M}_{\text{ה}}", "scientific_name": "Visible Residue Modulus", "gnostic_name": "Sophia Assembly", "rationale": "He (ה = 5) means 'Breath/Window.' 5³ = 125 = manifest volume. The 125 Standard Model parameters visible through Sophia's window. M for Modulus matching barbelo_modulus pattern."},
         "qedem_chi_sum": {"hebrew": "Qedem", "hebrew_char": "קדם", "gematria": 144, "value": 144, "old_name": "chi_eff_total", "symbol": r"\chi_{\text{ק}}", "scientific_name": "Primordial Chiral Basis", "gnostic_name": "The Ancient Sum", "rationale": "Qedem (קדם = 144) means 'ancient' or 'primordial.' The structural 12² framework. Total chi from both shadows: 72 + 72 = 144. Used for PMNS, n_gen."},
         "nitzotzin_sector": {"hebrew": "Mem", "hebrew_char": "מ", "gematria": 144, "value": 144, "old_name": "roots_per_sector", "symbol": r"\xi_{\mu}", "scientific_name": "Per-Sector Root Count", "gnostic_name": "The Water Roots", "rationale": "Xi (ξ) resembles a cascade/ripple, fitting the Mem (מ = Water) rationale. Greek mu (μ = 40) matches Hebrew mem gematria. Each sector contains 144 roots, half the total 288."},
         "Dodecad_Anchors": {"hebrew": "Bet-Yod", "hebrew_char": "בי", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": r"\mathbb{A}_{\text{יב}}", "scientific_name": "Local Bridge Pair Count", "gnostic_name": "The Dodecad House", "rationale": "A for Anchors. Bet-Yod (בי = 12) means 'in me' or 'house of.' The 12 local (2,0) bridge pairs that warp to create the dual shadows."},
@@ -1067,7 +1067,7 @@ class FormulasRegistry:
     def visible_sector(self) -> int:
         """
         Effective Visible Sector Residues: 125 phenomenological parameter slots.
-        LEGACY ALIAS for sophian_registry.
+        LEGACY ALIAS for sophian_modulus.
 
         WARNING: This is NUMEROLOGY, not rigorous physics.
 
@@ -1084,7 +1084,7 @@ class FormulasRegistry:
         STATUS: Requires theoretical justification or explicit ANSATZ label.
         The origin of '5' in 5^3 needs tracing within the framework.
         """
-        return self.sophian_registry
+        return self.sophian_modulus
 
     @property
     def sterile_sector(self) -> int:
@@ -3274,9 +3274,14 @@ class FormulasRegistry:
         return self._central_activation_threshold
 
     @property
-    def sophian_registry(self) -> int:
-        """Visible Residue Registry (125) - Hebrew: Lamed (74). Symbol: V_l."""
+    def sophian_modulus(self) -> int:
+        """Visible Residue Modulus (125) - Hebrew: He (5). Symbol: M_ה."""
         return self._visible_sector
+
+    @property
+    def sophian_registry(self) -> int:
+        """LEGACY ALIAS for sophian_modulus (v23.2.29)."""
+        return self.sophian_modulus
 
     @property
     def qedem_chi_sum(self) -> int:

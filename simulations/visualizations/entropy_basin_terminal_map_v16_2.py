@@ -89,7 +89,7 @@ class EntropyBasinVisualization:
             "name": "Ancestral Restoration",
             "subtitle": "Unitary Return",
             "potential": _REG.nitzotzin_roots / _REG.nitzotzin_roots,  # 288/288 = 100%
-            "description": f"{_REG.sophian_registry} + {_REG.barbelo_modulus} merge",
+            "description": f"{_REG.sophian_modulus} + {_REG.barbelo_modulus} merge",
             "physics": "Full return to 26D",
             "color": PM_COLORS["restoration"],
         },

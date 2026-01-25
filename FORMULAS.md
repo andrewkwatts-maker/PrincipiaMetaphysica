@@ -178,7 +178,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | elder_kads | `24` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
 | horos_limit | `27` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | mephorash_chi | `72` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
-| sophian_registry | `125` | 𝒱_ה | He (ה) | 5 | Visible Registry Volume | The Breath Manifest |
+| sophian_modulus | `125` | ℳ_ה | He (ה) | 5 | Visible Residue Modulus | Sophia Assembly |
 | demiurgic_Yetts | `135` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
 | qedem_chi_sum | `144` | χ_ק | Qedem (קדם) | 144 | Primordial Chiral Basis | The Ancient Sum |
 | nitzotzin_sector | `144` | ξ_μ | Mem (מ) | 40 | Per-Sector Root Count | The Water Roots |

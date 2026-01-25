@@ -52,6 +52,8 @@ USAGE_RENAMES = {
     "odowd_bulk_pressure": "barbelo_modulus",
     "sterile_sector": "barbelo_modulus",
     "roots_total": "nitzotzin_roots",
+    "visible_sector": "sophian_modulus",
+    "sophian_registry": "sophian_modulus",  # v23.2.29 update
     # Central Sampler
     "reid_invariant": "nitsot_par",
     "central_pair": "reid_pair",

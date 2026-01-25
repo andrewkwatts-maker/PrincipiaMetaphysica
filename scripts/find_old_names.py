@@ -40,6 +40,8 @@ RENAMES = {
     'odowd_bulk_pressure': 'barbelo_modulus',
     'sterile_sector': 'barbelo_modulus',  # Same value (163)
     'roots_total': 'nitzotzin_roots',
+    'visible_sector': 'sophian_modulus',
+    'sophian_registry': 'sophian_modulus',  # v23.2.29 update
 
     # CENTRAL SAMPLER
     'central_pair': 'reid_pair',
