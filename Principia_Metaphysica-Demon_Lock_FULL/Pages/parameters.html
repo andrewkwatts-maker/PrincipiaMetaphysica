@@ -934,6 +934,60 @@
             </div>
         </div>
 
+        <!-- v23.1 Geometric Corrections -->
+        <div class="category-section" id="v23-1-corrections" style="border: 2px solid rgba(81, 207, 102, 0.4); background: linear-gradient(135deg, rgba(81, 207, 102, 0.08), rgba(79, 172, 254, 0.05));">
+            <div class="category-header">
+                <h2 class="category-title">v23.1 Geometric Corrections</h2>
+                <span class="category-count" style="background: rgba(81, 207, 102, 0.2); color: #51cf66;">NEW</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
+                Version 23.1 introduces geometric correction terms derived from G\(_2\) manifold curvature and flux quantization.
+                These corrections dramatically improve agreement with experimental values:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1rem;">
+                <div style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.25rem;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.75rem 0;">Fine Structure Constant \(\alpha^{-1}\)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 0.5rem 0;">
+                        \[\alpha^{-1} = \text{tree} - \frac{7}{9963}\]
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+                        \(\sigma\): 33,461 \(\to\) <strong style="color: #51cf66;">4.39</strong>
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.25rem;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.75rem 0;">Higgs VEV \(v\)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 0.5rem 0;">
+                        \[v = \text{tree} \times \left(1 - \frac{1}{1728}\right)\]
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+                        \(\sigma\): 0.29 \(\to\) <strong style="color: #51cf66;">0.007</strong>
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.25rem;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.75rem 0;">Weak Mixing Angle \(\sin^2\theta_W\)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 0.5rem 0;">
+                        \[\sin^2\theta_W = \text{tree} - \frac{7}{9963}\]
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+                        \(\sigma\): 17.37 \(\to\) <strong style="color: #51cf66;">0.20</strong>
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.25rem;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.75rem 0;">CMB Temperature \(T_{\text{CMB}}\)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 0.5rem 0;">
+                        \[T_{\text{CMB}} = \text{tree} - \frac{\varphi}{144}\]
+                    </p>
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+                        \(\sigma\): 18.56 \(\to\) <strong style="color: #51cf66;">0.16</strong>
+                    </p>
+                </div>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">
+                The correction factors 7/9963 and 1/1728 emerge from G\(_2\) manifold flux quantization.
+                \(\varphi = 1.618...\) is the golden ratio; 144 = \(\chi_{\text{eff}}\) is the effective Euler characteristic.
+            </p>
+        </div>
+
         <!-- Statistics Bar -->
         <div class="stats-bar">
             <div class="stat-item">
@@ -1048,7 +1102,7 @@
 
     <footer>
         <p>
-            <strong>Principia Metaphysica v23.0</strong><br/>
+            <strong>Principia Metaphysica v23.1</strong><br/>
             © 2025-2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>

@@ -884,6 +884,12 @@ class PMRegistry:
 
             # Use 'id' as expected by website renderer (not 'section_id')
             # Determine order based on appendix flag
+            # v23.1: Special section ordering for non-numeric section_ids
+            SPECIAL_SECTION_ORDER = {
+                "validation": 8,     # After Discussion (7), before Appendices
+                "thermal-time": 1,   # With Foundations section
+            }
+
             if s.appendix and s.subsection_id:
                 # Appendices come after main sections (100+)
                 # Handle subsection_id formats like "R" or "R.1"
@@ -891,6 +897,8 @@ class PMRegistry:
                 order = 100 + ord(appendix_letter) - ord('A')
             elif s.section_id and s.section_id[0].isdigit():
                 order = int(s.section_id.split('.')[0])
+            elif s.section_id in SPECIAL_SECTION_ORDER:
+                order = SPECIAL_SECTION_ORDER[s.section_id]
             else:
                 order = 99
 
