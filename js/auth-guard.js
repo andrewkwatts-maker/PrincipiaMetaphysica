@@ -167,17 +167,18 @@ async function fetchFrameworkStats() {
 
 /**
  * Default statistics if theory_output.json is unavailable
+ * Updated for v23.1 - 27D(26,1) Dual-Shadow Framework
  */
 function getDefaultStats() {
   return {
-    totalParameters: 58,
-    calibratedParameters: 0,  // Updated to match current theory status (v14.1+)
+    totalParameters: 26,
+    calibratedParameters: 1,  // VEV coefficient calibration
     constraintsCount: 1,      // m_h fixes Re(T)
     manifoldType: 'G₂',
-    within1Sigma: 45,
-    within2Sigma: 47,
-    exactMatches: 12,
-    successRate: 93.8
+    within1Sigma: 24,
+    within2Sigma: 24,
+    exactMatches: 3,
+    successRate: 92.3
   };
 }
 
@@ -637,12 +638,12 @@ function injectAuthOverlay() {
       <p class="auth-latin">Philosophiae Metaphysicae Principia Mathematica</p>
 
       <div class="auth-framework">
-        <h2>The Two-Time Framework</h2>
+        <h2>27D Dual-Shadow Framework</h2>
         <p>A First-Principles Geometric Theory</p>
       </div>
 
       <p class="auth-description">
-        A unified geometric framework deriving Standard Model parameters from G₂ geometry...
+        A unified geometric framework deriving 26 Standard Model parameters from G₂ manifold topology...
       </p>
 
       <button id="google-login-btn" class="google-login-btn">
@@ -656,7 +657,7 @@ function injectAuthOverlay() {
       </div>
 
       <footer class="auth-footer">
-        <p>Copyright © Andrew K Watts 2025</p>
+        <p>Copyright © Andrew K Watts 2025-2026</p>
       </footer>
     </div>
 
