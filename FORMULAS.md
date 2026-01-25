@@ -32,8 +32,8 @@ All other values are derived from these constants.
 | Chi Effective (per-shadow) | χ_עב | `72` | Per-shadow Euler characteristic (B3^2/8 = 72) |
 | Chi Effective (total) | χ_ק | `144` | Both shadows combined (72 + 72 = 144) |
 | Total Roots (Nitzotzin) | 𝒩_רפח | `288` | 12 * B3 = 288 Logic Closure Sum |
-| Sophian Registry | 𝒱_ה | `125` | 5^3 = 125 Visible Registry Volume |
-| Barbelo Modulus | 𝒫_צ | `163` | 288 - 125 = 163 Bulk Pressure Modulus |
+| Sophian Modulus | ק_כה | `125` | 5^3 = 125 Visible Residue Modulus |
+| Barbelo Modulus | ק_סג | `163` | 288 - 125 = 163 Bulk Pressure Modulus |
 
 ### Chi-Effective Dual Architecture (v22.0-12PAIR)
 
