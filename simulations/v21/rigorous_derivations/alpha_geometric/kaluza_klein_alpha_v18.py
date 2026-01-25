@@ -65,6 +65,20 @@ project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(o
 sys.path.insert(0, project_root)
 
 try:
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
+    B3 = _REG.elder_kads  # 24
+    CHI_EFF = _REG.qedem_chi_sum  # 144
+    REGISTRY_AVAILABLE = True
+except ImportError:
+    _REG = None
+    B3 = 24
+    CHI_EFF = 144
+    REGISTRY_AVAILABLE = False
+
+PI = np.pi
+
+try:
     from simulations.base import (
         SimulationBase,
         SimulationMetadata,
@@ -73,15 +87,10 @@ try:
         Formula,
         Parameter,
         PMRegistry,
-        B3, CHI_EFF, PI,
     )
     SCHEMA_AVAILABLE = True
 except ImportError:
     SCHEMA_AVAILABLE = False
-    # Fallback constants
-    B3 = 24
-    CHI_EFF = 144
-    PI = np.pi
 
 
 # =============================================================================
