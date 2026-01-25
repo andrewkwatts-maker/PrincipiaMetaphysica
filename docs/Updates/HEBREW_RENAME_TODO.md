@@ -90,7 +90,7 @@
 | `Dodecad_Anchors` | Bet-Yod | 12 | 12 | n_12 | `total_local_pairs`, `bridge_local` |
 | `Echad_Prime` | Yud-Gimel | 13 | 13 | n_13 | `total_effective_pairs`, `bridge_effective` |
 | `nitsot_par` | Nun-Qoph | 150 | 1/144 | N_p | `reid_invariant` |
-| `reid_pair` | Resh | 200 | 1 | R_Resh | `central_pair` |
+| `reid_euclidean` | Aleph-Dalet (אד) | 5 | 1.0 | M_אד | `central_pair`, `reid_pair` |
 | `watts_weight` | Resh-Phi | 261 | phi/sqrt(12) | W_phi | `central_pair_weight` |
 
 ---

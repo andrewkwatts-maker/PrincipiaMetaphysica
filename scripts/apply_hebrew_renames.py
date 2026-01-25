@@ -36,7 +36,7 @@ RENAMES = {
     'odowd_bulk_pressure': ('sophian_pressure', 163, '163', 'Sophia Pressure', 'Higher-D stabilizer'),
     'sterile_sector': ('sophian_pressure', 163, '163', 'Sophia Pressure', 'Higher-D stabilizer'),
     'roots_total': ('nitzotzin_roots', 288, '288', 'Nitzotzin Roots', 'Ancestral sparks'),
-    'central_pair': ('reid_pair', 200, 'Resh', 'Reid Pair', 'Central (2,0) averager'),
+    'central_pair': ('reid_euclidean', 200, 'Resh', 'Reid Pair', 'Central (2,0) averager'),
     'central_pair_weight': ('watts_weight', 261, 'Resh-Phi', 'Watts Weight', 'Central averaging'),
     'central_activation_threshold': ('gnosis_threshold', 9, 'Tet', 'The Threshold', 'Central activates n>=9'),
 }
@@ -66,7 +66,7 @@ HEBREW_REGISTRY = '''
     # CENTRAL SAMPLER:
     # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
     # ------|------------------|----------|----------|---------------
-    # 1     | reid_pair        | Resh     | 200      | Reid Pair
+    # 1     | reid_euclidean        | Resh     | 200      | Reid Pair
     # phi/12| watts_weight     | Resh-Phi | ~261     | Watts Weight
     # 9     | gnosis_threshold | Tet      | 9        | The Threshold
     # ===========================================================================
@@ -83,7 +83,7 @@ HEBREW_REGISTRY = '''
         "sophian_pressure": {"hebrew": "163", "gematria": 163, "value": 163},
         "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288},
         # Central Sampler
-        "reid_pair": {"hebrew": "Resh", "gematria": 200, "value": 1},
+        "reid_euclidean": {"hebrew": "Resh", "gematria": 200, "value": 1},
         "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)"},
         "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9},
     }
@@ -147,7 +147,7 @@ def apply_changes(dry_run: bool = True):
         'logos_joint': 'Logos Joint',
         'sophian_pressure': 'Sophia Pressure',
         'nitzotzin_roots': 'Nitzotzin Roots',
-        'reid_pair': 'Reid Pair',
+        'reid_euclidean': 'Reid Pair',
         'watts_weight': 'Watts Weight',
         'gnosis_threshold': 'The Threshold',
     }
@@ -220,7 +220,7 @@ def apply_changes(dry_run: bool = True):
         return self.roots_total
 
     @property
-    def reid_pair(self) -> int:
+    def reid_euclidean(self) -> int:
         """Central Sampler Count (1) - Hebrew: Resh (200)."""
         return self.central_pair
 

@@ -35,6 +35,7 @@ RENAMES = {
     "bridge_effective": ("Echad_Prime", 13, "Yud-Gimel", "Echad"),
     "bridge_local": ("Dodecad_Anchors", 12, "Bet-Yod", "Dodecad"),
     "Dodecad_Anchor": ("Dodecad_Anchors", 12, "Bet-Yod", "Dodecad"),
+    "reid_pair": ("reid_euclidean", 1.0, r"\vec{\mathbb{M}}_{\text{א-ד}}", "Aleph-Dalet"),
 }
 
 # Files to skip (core definitions)
