@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-01-25 14:22:40
+**Status:** VALIDATED | **Last Sync:** 2026-01-25 16:00:58
 **Engine Version:** v23.1-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
@@ -161,6 +161,41 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
 **Verification Status:**
 - Bulk Pressure Derivation (163 = (7*24)-5): `PASS`
 - Sterile = Bulk (163 = 163): `PASS`
+
+---
+
+## Hebrew Symbol Reference (v23.1)
+
+The framework uses Hebrew-derived naming for mathematical constants, connecting gematria to geometric invariants.
+
+### Primary Constants
+
+| Code Name | Value | Symbol | Hebrew | Gematria |
+| :--- | :--- | :--- | :--- | :--- |
+| monad_unity | `1.0` | Omega_Aleph | Aleph | 1 |
+| residual_key | `10` | R_Yod | Yod | 10 |
+| syzygy_gap | `18` | S_gap | Chai | 18 |
+| elders | `24` | E_b3 | Kad | 24 |
+| horos_limit | `27` | H_27 | Kaz | 27 |
+| mephorash_chi | `72` | M_chi | Av | 72 |
+| sophian_registry | `125` | V_Lamed | Lamed | 74 |
+| demiurgic_Yetts | `135` | Yd | Kalah | 135 |
+| qedem_chi_sum | `144` | chi_Q | Qedem | 144 |
+| nitzotzin_sector | `144` | R_Mem | Mem | 144 |
+| logos_joint | `153` | Delta_jc | 153 | 153 |
+| sophian_pressure | `163` | P_S | 163 | 163 |
+| nitzotzin_roots | `288` | R_Xi | 288 | 288 |
+
+### Central Sampler Constants
+
+| Code Name | Value | Symbol | Hebrew | Gematria |
+| :--- | :--- | :--- | :--- | :--- |
+| gnosis_threshold | `9` | G_Tet | Tet | 9 |
+| Dodecad_Anchor | `12` | n_12 | Bet-Yod | 12 |
+| Echad_Prime | `13` | n_13 | Yud-Gimel | 13 |
+| nitsot_par | `0.0069444444444444` | N_p | Nun-Qoph | 150 |
+| reid_pair | `1` | R_Resh | Resh | 200 |
+| watts_weight | `0.4670861795` | W_phi | Resh-Phi | 261 |
 
 ---
 

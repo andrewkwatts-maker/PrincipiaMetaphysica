@@ -298,7 +298,7 @@ class PredictionsSimulationV18(SimulationBase):
         """Ensure all required topology inputs are set in registry."""
         # chi_abs = 72 (absolute chiral index for n_gen = |chi|/24 = 3)
         defaults = {
-            "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
             "topology.chi_abs": (72, "ESTABLISHED:FormulasRegistry"),  # |chi| = 72
         }
 

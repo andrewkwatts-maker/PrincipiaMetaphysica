@@ -625,10 +625,10 @@ class FormulasRegistry:
         "monad_unity": {"hebrew": "Aleph", "gematria": 1, "value": 1.0, "old_name": "watts_constant"},
         "residual_key": {"hebrew": "Yod", "gematria": 10, "value": 10, "old_name": "decad"},
         "syzygy_gap": {"hebrew": "Chai", "gematria": 18, "value": 18, "old_name": "syzygy_gap"},
-        "elder_vessels": {"hebrew": "Kad", "gematria": 24, "value": 24, "old_name": "b3"},
+        "elders": {"hebrew": "Kad", "gematria": 24, "value": 24, "old_name": "b3", "symbol": "E_b3"},
         "horos_limit": {"hebrew": "Kaz", "gematria": 27, "value": 27, "old_name": "horos"},
         "mephorash_chi": {"hebrew": "Av", "gematria": 72, "value": 72, "old_name": "chi_eff"},
-        "demiurgic_gates": {"hebrew": "Kalah", "gematria": 135, "value": 135, "old_name": "shadow_sector"},
+        "demiurgic_Yetts": {"hebrew": "Kalah", "gematria": 135, "value": 135, "old_name": "shadow_sector", "symbol": "Yd"},
         "logos_joint": {"hebrew": "153", "gematria": 153, "value": 153, "old_name": "christ_constant"},
         "sophian_pressure": {"hebrew": "163", "gematria": 163, "value": 163, "old_name": "odowd_bulk_pressure"},
         "nitzotzin_roots": {"hebrew": "288", "gematria": 288, "value": 288, "old_name": "roots_total"},
@@ -637,6 +637,12 @@ class FormulasRegistry:
         "reid_pair": {"hebrew": "Resh", "gematria": 200, "value": 1, "old_name": "central_pair"},
         "watts_weight": {"hebrew": "Resh-Phi", "gematria": 261, "value": "phi/sqrt(12)", "old_name": "central_pair_weight"},
         "gnosis_threshold": {"hebrew": "Tet", "gematria": 9, "value": 9, "old_name": "central_activation_threshold"},
+        # Additional v23.2 Hebrew names
+        "sophian_registry": {"hebrew": "Lamed", "gematria": 74, "value": 125, "old_name": "visible_sector", "symbol": "V_l"},
+        "qedem_chi_sum": {"hebrew": "Qedem", "gematria": 144, "value": 144, "old_name": "chi_eff_total", "symbol": "chi_Q"},
+        "nitzotzin_sector": {"hebrew": "Mem", "gematria": 144, "value": 144, "old_name": "roots_per_sector", "symbol": "R_m"},
+        "Dodecad_Anchor": {"hebrew": "Bet-Yod", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": "n_12"},
+        "Echad_Prime": {"hebrew": "Yud-Gimel", "gematria": 13, "value": 13, "old_name": "total_effective_pairs", "symbol": "n_13"},
     }
 
     def __init__(self):
@@ -998,6 +1004,7 @@ class FormulasRegistry:
     def chi_eff_total(self) -> int:
         """
         Total manifold effective Euler characteristic: chi_eff_total = 144.
+        LEGACY ALIAS for qedem_chi_sum.
 
         chi_eff_total = 2 * chi_eff_sector = 2 * 72 = 144
 
@@ -1006,7 +1013,7 @@ class FormulasRegistry:
 
         Connection to reid_invariant: reid_invariant = 1/chi_eff_total = 1/144
         """
-        return self._chi_eff_total
+        return self.qedem_chi_sum
 
     @property
     def chi_eff_sector(self) -> int:
@@ -1046,6 +1053,7 @@ class FormulasRegistry:
     def roots_per_sector(self) -> int:
         """
         Roots per sector: roots_total / 2 = 288/2 = 144.
+        LEGACY ALIAS for nitzotzin_sector.
 
         Analogous to chi_eff dual structure:
         - roots_total = 288 (full system)
@@ -1053,12 +1061,13 @@ class FormulasRegistry:
 
         Connection: chi_eff_total = roots_per_sector = 144
         """
-        return self._roots_per_sector
+        return self.nitzotzin_sector
 
     @property
     def visible_sector(self) -> int:
         """
         Effective Visible Sector Residues: 125 phenomenological parameter slots.
+        LEGACY ALIAS for sophian_registry.
 
         WARNING: This is NUMEROLOGY, not rigorous physics.
 
@@ -1075,7 +1084,7 @@ class FormulasRegistry:
         STATUS: Requires theoretical justification or explicit ANSATZ label.
         The origin of '5' in 5^3 needs tracing within the framework.
         """
-        return self._visible_sector
+        return self.sophian_registry
 
     @property
     def sterile_sector(self) -> int:
@@ -1158,7 +1167,7 @@ class FormulasRegistry:
 
     @property
     def syzygy_gap(self) -> int:
-        """The Syzygy: Christos - Sophia = 153 - 135 = 18."""
+        """The Syzygy Gap (18) - Hebrew: Chai (life=18). Symbol: S_gap."""
         return self._christ_constant - self._shadow_sector  # 153 - 135 = 18
 
     @property
@@ -3069,19 +3078,21 @@ class FormulasRegistry:
     def total_local_pairs(self) -> int:
         """
         Local (2,0) bridge pairs count.
+        LEGACY ALIAS for bridge_local.
 
         v23.0: 12 local pairs provide fine-grained distributed sampling (dilution/stability).
         """
-        return self._total_local_pairs
+        return self.bridge_local
 
     @property
     def total_effective_pairs(self) -> int:
         """
         Total effective pairs: Local + Central = 12 + 1 = 13.
+        LEGACY ALIAS for bridge_effective.
 
         v23.0: Used for dimensional accounting and tau boost calculations.
         """
-        return self._total_effective_pairs
+        return self.bridge_effective
 
     @property
     def central_activation_threshold(self) -> int:
@@ -3151,9 +3162,14 @@ class FormulasRegistry:
         return self.DECAD
 
     @property
-    def elder_vessels(self) -> int:
-        """Third Betti Number b3 (24) - Hebrew: Kad (24)."""
+    def elders(self) -> int:
+        """Third Betti Number b3 (24) - Hebrew: Kad (24). Symbol: E_b3."""
         return self._b3
+
+    @property
+    def elder_vessels(self) -> int:
+        """LEGACY ALIAS for elders. Third Betti Number b3 (24)."""
+        return self.elders
 
     @property
     def horos_limit(self) -> int:
@@ -3166,9 +3182,14 @@ class FormulasRegistry:
         return self._chi_eff
 
     @property
-    def demiurgic_gates(self) -> int:
-        """Visible Sector Gates (135) - Hebrew: Kalah (135)."""
+    def demiurgic_Yetts(self) -> int:
+        """Visible Sector Gates (135) - Hebrew: Kalah (135). Symbol: Yd."""
         return self._shadow_sector
+
+    @property
+    def demiurgic_gates(self) -> int:
+        """LEGACY ALIAS for demiurgic_Yetts. Visible Sector Gates (135)."""
+        return self.demiurgic_Yetts
 
     @property
     def logos_joint(self) -> int:
@@ -3204,6 +3225,46 @@ class FormulasRegistry:
     def gnosis_threshold(self) -> int:
         """Activation Threshold (9) - Hebrew: Tet (9)."""
         return self._central_activation_threshold
+
+    @property
+    def sophian_registry(self) -> int:
+        """Visible Residue Registry (125) - Hebrew: Lamed (74). Symbol: V_l."""
+        return self._visible_sector
+
+    @property
+    def qedem_chi_sum(self) -> int:
+        """Total Euler Characteristic (144) - Hebrew: Qedem (Ancient). Symbol: chi_Q."""
+        return self._chi_eff_total
+
+    @property
+    def ennoia_chi(self) -> int:
+        """LEGACY ALIAS for qedem_chi_sum. Total Euler Characteristic (144)."""
+        return self.qedem_chi_sum
+
+    @property
+    def nitzotzin_sector(self) -> int:
+        """Per-Sector Root Count (144) - Hebrew: Mem (144). Symbol: R_m."""
+        return self._roots_per_sector
+
+    @property
+    def Dodecad_Anchor(self) -> int:
+        """Local Bridge Pairs (12) - Hebrew: Bet-Yod (Within). Symbol: n_12."""
+        return self._total_local_pairs
+
+    @property
+    def bridge_local(self) -> int:
+        """LEGACY ALIAS for Dodecad_Anchor. Local Bridge Pairs (12)."""
+        return self.Dodecad_Anchor
+
+    @property
+    def Echad_Prime(self) -> int:
+        """Effective Bridge Pairs (13) - Hebrew: Yud-Gimel (One). Symbol: n_13."""
+        return self._total_effective_pairs
+
+    @property
+    def bridge_effective(self) -> int:
+        """LEGACY ALIAS for Echad_Prime. Effective Bridge Pairs (13)."""
+        return self.Echad_Prime
 
     def central_sampler_active(self, n_local: int) -> bool:
         """

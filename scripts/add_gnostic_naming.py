@@ -90,7 +90,7 @@ HEBREW_ALIASES = {
         "gnostic_role": "Residual Pressure Key - Core flux residual",
         "alias_of": "decad"
     },
-    "elder_vessels": {
+    "elders": {
         "value": 24,
         "hebrew": "Kad",
         "gematria": 24,
@@ -114,7 +114,7 @@ HEBREW_ALIASES = {
         "gnostic_role": "Triality Euler Index - 72-fold name of generations",
         "alias_of": "chi_eff"
     },
-    "demiurgic_gates": {
+    "demiurgic_Yetts": {
         "value": 135,
         "hebrew": "Kalah",
         "gematria": 135,

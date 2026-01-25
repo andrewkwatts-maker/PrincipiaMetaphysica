@@ -296,7 +296,7 @@ if __name__ == "__main__":
     # Run simulation
     from simulations.base import PMRegistry
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.b3, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry")
     results = sim.run(registry)
 
     epsilon = 1.0 / (_REG._roots_total * (_REG.DECAD ** 2))

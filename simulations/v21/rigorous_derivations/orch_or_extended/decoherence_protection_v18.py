@@ -326,7 +326,7 @@ class G2TopologicalProtection:
 
         # Use registry values if available
         if REGISTRY_AVAILABLE and _REG is not None:
-            self.b3 = _REG.b3
+            self.b3 = _REG.elders
             self.k_gimel = _REG.demiurgic_coupling
         else:
             self.k_gimel = b3 / 2 + 1 / np.pi  # ~ 12.318

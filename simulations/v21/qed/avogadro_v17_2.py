@@ -115,7 +115,7 @@ if __name__ == "__main__":
     print("AVOGADRO NUMBER v17.2 - Inverse Cubic")
     sim = AvogadroV17()
     registry = PMRegistry()
-    registry.set_param("topology.b3", _REG.b3, source="ESTABLISHED:FormulasRegistry")
+    registry.set_param("topology.b3", _REG.elders, source="ESTABLISHED:FormulasRegistry")
     sim.run(registry)
     print(f"CODATA:   {CODATA_NA:.10e}")
     print(f"Bulk:     {sim.bulk_na:.10e}")

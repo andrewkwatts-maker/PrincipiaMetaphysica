@@ -217,7 +217,7 @@ def get_pm_parameters(registry: Optional['FormulasRegistry'] = None) -> Dict[str
 
     # Use registry if available, otherwise use hardcoded values matching v23
     if registry:
-        b3 = registry.elder_vessels
+        b3 = registry.elders
         chi_eff = registry.mephorash_chi              # 72 per sector
         chi_eff_total = registry.chi_eff_total  # 144 total
         phi = registry.phi
@@ -240,8 +240,8 @@ def get_pm_parameters(registry: Optional['FormulasRegistry'] = None) -> Dict[str
         # Standalone values matching FormulasRegistry v23 defaults
         # Use _REG if available, otherwise hardcoded fallback
         if _REG:
-            b3 = _REG.b3
-            chi_eff = _REG.chi_eff
+            b3 = _REG.elders
+            chi_eff = _REG.mephorash_chi
             chi_eff_total = _REG.chi_eff_total
         else:
             b3 = 24

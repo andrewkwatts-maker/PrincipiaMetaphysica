@@ -507,8 +507,8 @@ class GUTEmbeddingChargeSimulation(SimulationBase):
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required inputs are set in registry."""
         defaults = {
-            "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
-            "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
+            "topology.b3": (_REG.elders, "ESTABLISHED:FormulasRegistry"),
+            "topology.chi_eff": (_REG.mephorash_chi, "ESTABLISHED:FormulasRegistry"),
             "constants.M_PLANCK": (2.435e18, "CODATA 2018"),
             "pdg.m_Z": (91.1876, "PDG 2024"),  # EXPERIMENTAL: PDG2024
         }

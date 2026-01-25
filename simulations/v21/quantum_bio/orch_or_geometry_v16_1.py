@@ -122,7 +122,7 @@ class OrchORRigorSolver:
         """
         # Use registry values when available (SSoT compliance)
         if REGISTRY_AVAILABLE and _REG is not None:
-            self.b3 = _REG.b3 if b3 is None else b3
+            self.b3 = _REG.elders if b3 is None else b3
             self.k_gimel = _REG.demiurgic_coupling  # SSoT: k_gimel = B3/2 + 1/π
             self.c_kaf = _REG.c_kaf  # SSoT: c_kaf = B3 × (B3-7)/(B3-9)
             self.phi_ph = _REG.penrose_hameroff_bridge  # SSoT: Fibonacci bridge = 13

@@ -112,7 +112,7 @@ class GFRadiativeCorrectionV18(SimulationBase):
 
         # Geometric inputs from SSoT registry
         self.k_gimel = float(_REG.demiurgic_coupling)  # = b3/2 + 1/pi = 12.318...
-        self.b3 = _REG.b3  # = 24 (third Betti number)
+        self.b3 = _REG.elders  # = 24 (third Betti number)
 
         # Compute tree-level VEV and G_F
         self.v_geometric = self.k_gimel * (self.b3 - 4)  # 246.366 GeV

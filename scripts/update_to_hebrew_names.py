@@ -67,7 +67,7 @@ def create_patterns():
     patterns = {}
 
     # Prefixes that indicate registry/SSoT access
-    registry_prefixes = r'(?:reg|registry|REGISTRY|_SSOT|_registry|self\.reg|self\.registry|self\._registry)'
+    registry_prefixes = r'(?:reg|registry|REGISTRY|_SSOT|_registry|_REG|self\.reg|self\.registry|self\._registry)'
 
     for old_name, new_name in USAGE_RENAMES.items():
         # Match registry_prefix.old_name followed by non-word char or end

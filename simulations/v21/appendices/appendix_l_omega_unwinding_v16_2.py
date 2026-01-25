@@ -168,10 +168,10 @@ class TerminalBasinAnalysis:
         if active_residues is None:
             active_residues = _REG.visible_sector  # 125
         if hidden_supports is None:
-            hidden_supports = _REG.sterile_sector  # 163
+            hidden_supports = _REG.sophian_pressure  # 163
 
         # Decay constant gamma
-        gamma = np.log(_REG.roots_total / active_residues)  # ~0.834
+        gamma = np.log(_REG.nitzotzin_roots / active_residues)  # ~0.834
 
         # Current entropy estimate
         current_entropy = current_epoch * gamma
