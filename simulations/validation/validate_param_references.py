@@ -29,9 +29,9 @@ PARAMETER_ALIASES = {
     'dimensions.d_g2': 'dimensions.D_G2',
 
     # Topology
-    'topology.b3': 'parameters.topology.B3',
+    'topology.elder_kads': 'parameters.topology.B3',
     'topology.b2': 'parameters.topology.B2',
-    'topology.chi_eff': 'parameters.topology.CHI_EFF',
+    'topology.mephorash_chi': 'parameters.topology.CHI_EFF',
     'topology.n_gen': 'parameters.topology.n_gen',
 
     # KK spectrum

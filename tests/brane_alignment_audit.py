@@ -25,7 +25,7 @@ import os
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from src.physics.root_derivation import RootDerivation
+from simulations.support.physics.root_derivation import RootDerivation
 
 
 def verify_sterile_angle() -> dict:

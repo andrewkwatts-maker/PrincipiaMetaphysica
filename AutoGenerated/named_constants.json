@@ -1,9 +1,9 @@
 {
   "version": "23.1-27D",
-  "timestamp": "2026-01-25T20:30:34.160808Z",
-  "session_id": "PM20260125203034",
+  "timestamp": "2026-01-26T15:08:00.389796Z",
+  "session_id": "PM20260126150800",
   "volatility": {
-    "generated_at": "2026-01-25T20:30:34.160808Z",
+    "generated_at": "2026-01-26T15:08:00.389796Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "23.1-27D",
@@ -24,7 +24,7 @@
       "named_for": "Andrew Keith Watts",
       "gnostic_name": "The Monad",
       "gnostic_role": "The Singular Origin and absolute precision anchor",
-      "pm_path": "constants.watts_constant"
+      "pm_path": "constants.monad_unity"
     },
     "reid_invariant": {
       "symbol": "chi_R",
@@ -37,7 +37,7 @@
       "named_for": "Richard George Reid [074]",
       "gnostic_name": "The Pneuma",
       "gnostic_role": "The divine breath; quantum of meaning (1/Demiurge)",
-      "pm_path": "constants.reid_invariant"
+      "pm_path": "constants.nitsot_par"
     },
     "weinstein_scale": {
       "symbol": "kappa_E",
@@ -76,7 +76,7 @@
       "gnostic_name": "The Barbelo",
       "gnostic_role": "First Thought; the active force in 27D(26,1) bulk",
       "hubble_formula": "(288/4) - (163/144) + 0.6819 = 71.55",
-      "pm_path": "constants.odowd_bulk_pressure"
+      "pm_path": "constants.barbelo_modulus"
     },
     "penrose_hameroff_bridge": {
       "symbol": "Phi_PH",
@@ -104,7 +104,7 @@
       "identity": "Δ_jc ≡ Λ_JC ≡ 153 (The JC Identity)",
       "gnostic_name": "The Christos",
       "gnostic_role": "The Redeemer; repairs variance and restores symmetry",
-      "pm_path": "constants.christ_constant"
+      "pm_path": "constants.logos_joint"
     },
     "delta_jc": {
       "symbol": "Delta_JC",
@@ -236,7 +236,7 @@
       "formula": "D_bulk = 27 (dimensional boundary: 24 core + 2 central + 1 time)",
       "gnostic_name": "The Horos",
       "gnostic_role": "The Limit; boundary of 27D(26,1) bulk frame",
-      "pm_path": "topology.horos"
+      "pm_path": "topology.pleroma_boundary"
     },
     "decad": {
       "symbol": "D_10",
@@ -249,7 +249,7 @@
         "sterile_sector",
         "christ_constant"
       ],
-      "pm_path": "topology.decad"
+      "pm_path": "topology.residual_key"
     },
     "z6_pneuma": {
       "symbol": "Z6",
@@ -1437,7 +1437,7 @@
       "description": "Third Betti number of G2 manifold",
       "gnostic_name": "The Pleroma",
       "gnostic_role": "The Dimensional Totality; the Fullness",
-      "pm_path": "topology.b3"
+      "pm_path": "topology.elder_kads"
     },
     "chi_eff": {
       "value": 72,
@@ -1454,7 +1454,7 @@
       "description": "Octonionic/24D structure (288 = b3 * 12)",
       "gnostic_name": "The Ennoia",
       "gnostic_role": "Universal Mind; Logic Closure",
-      "pm_path": "topology.roots_total"
+      "pm_path": "topology.nitzotzin_roots"
     },
     "visible": {
       "value": 125,
@@ -1462,7 +1462,7 @@
       "formula": "5^3 = 125 (SM parameters)",
       "gnostic_name": "The Visible",
       "gnostic_role": "The manifest Standard Model; 125 parameters",
-      "pm_path": "topology.visible_sector"
+      "pm_path": "topology.sophian_modulus"
     },
     "sterile": {
       "value": 163,
@@ -1470,7 +1470,7 @@
       "formula": "ROOTS - VISIBLE = 288 - 125 = 163",
       "gnostic_name": "The Barbelo",
       "gnostic_role": "First Thought; the hidden bulk pressure",
-      "pm_path": "topology.sterile_sector"
+      "pm_path": "topology.barbelo_modulus"
     },
     "shadow_sector": {
       "value": 135,
@@ -1478,7 +1478,7 @@
       "formula": "VISIBLE_GATES = 135",
       "gnostic_name": "The Sophia",
       "gnostic_role": "Wisdom; the Visible Gates of manifest knowledge",
-      "pm_path": "topology.shadow_sector"
+      "pm_path": "topology.demiurgic_Yetts"
     }
   },
   "precision_constants": {
@@ -1539,18 +1539,18 @@
     }
   },
   "symbol_map": {
-    "Omega_W": "watts_constant",
-    "chi_R": "reid_invariant",
+    "Omega_W": "monad_unity",
+    "chi_R": "nitsot_par",
     "kappa_E": "weinstein_scale",
     "lambda_S": "hossenfelder_root",
-    "P_O": "odowd_bulk_pressure",
+    "P_O": "barbelo_modulus",
     "Phi_PH": "penrose_hameroff_bridge",
-    "Lambda_JC": "christ_constant",
+    "Lambda_JC": "logos_joint",
     "Delta_JC": "delta_jc",
     "eta_S": "sophian_drag",
     "kappa_Delta": "demiurgic_coupling",
     "sigma_T": "tzimtzum_pressure",
-    "D_10": "decad",
+    "D_10": "residual_key",
     "Z6": "z6_pneuma",
     "C_geo": "geometric_ratio",
     "S_f": "stretching_factor",
@@ -1633,18 +1633,18 @@
     "G72": "gate_72_absolute_closure"
   },
   "property_to_symbol": {
-    "watts_constant": "Omega_W",
-    "reid_invariant": "chi_R",
+    "monad_unity": "Omega_W",
+    "nitsot_par": "chi_R",
     "weinstein_scale": "kappa_E",
     "hossenfelder_root": "lambda_S",
-    "odowd_bulk_pressure": "P_O",
+    "barbelo_modulus": "P_O",
     "penrose_hameroff_bridge": "Phi_PH",
-    "christ_constant": "Lambda_JC",
+    "logos_joint": "Lambda_JC",
     "delta_jc": "Delta_JC",
     "sophian_drag": "eta_S",
     "demiurgic_coupling": "kappa_Delta",
     "tzimtzum_pressure": "sigma_T",
-    "decad": "D_10",
+    "residual_key": "D_10",
     "z6_pneuma": "Z6",
     "geometric_ratio": "C_geo",
     "stretching_factor": "S_f",

@@ -41,7 +41,7 @@ from dataclasses import dataclass, field, asdict
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 try:
-    from core.FormulasRegistry import FormulasRegistry, get_registry
+    from simulations.core.FormulasRegistry import FormulasRegistry, get_registry
     _REG = get_registry()
 except ImportError:
     print("Warning: Could not import FormulasRegistry, using standalone mode")

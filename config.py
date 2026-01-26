@@ -82,7 +82,7 @@ from typing import Dict, List, Optional, Any
 # documentation purposes, but FormulasRegistry is the authoritative source.
 # To enforce SSoT, simulations should use FormulasRegistry directly.
 try:
-    from core.FormulasRegistry import FormulasRegistry
+    from simulations.core.FormulasRegistry import FormulasRegistry
     _REGISTRY_AVAILABLE = True
 except ImportError:
     _REGISTRY_AVAILABLE = False
@@ -1097,7 +1097,7 @@ class CoreFormulas:
 
     DARK_ENERGY_W0 = Formula(
         id="dark-energy-w0",
-        input_params=['topology.b3'],
+        input_params=['topology.elder_kads'],
         output_params=['dark_energy.w0'],
         label="(7.1) Dark Energy EoS",
         html="w₀ = -(b₃ - 1)/b₃ = -23/24 = -0.9583",
@@ -1986,7 +1986,7 @@ class CoreFormulas:
 
     LAGRANGIAN_13D_EFFECTIVE = Formula(
         id="lagrangian-13d-effective",
-        input_params=['constants.M_STAR', 'topology.b3'],
+        input_params=['constants.M_STAR', 'topology.elder_kads'],
         output_params=['derivations.L_13D_form'],
         label="(2.2.2) v21 Per-Shadow Effective Lagrangian",
         html="ℒ<sub>shadow</sub> = M<sub>*</sub><sup>10</sup>R<sub>12</sub> + Ψ̄<sub>64</sub>(iγ<sup>μ</sup>∇<sub>μ</sub> - m<sub>eff</sub>)Ψ<sub>64</sub> + ℒ<sub>flux</sub>",
@@ -2103,7 +2103,7 @@ class CoreFormulas:
 
     G2_HOLONOMY_CONSTRAINT = Formula(
         id="g2-holonomy-constraint",
-        input_params=['topology.b3'],
+        input_params=['topology.elder_kads'],
         output_params=['derivations.n_generations'],
         label="(2.2.5) G2 Holonomy Constraint",
         html="Hol(g<sub>X</sub>) = G<sub>2</sub> ⟹ b<sub>3</sub>(X) = 24, n<sub>gen</sub> = b<sub>3</sub>/8 = 3",

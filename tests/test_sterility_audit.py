@@ -343,7 +343,7 @@ class TestParityInvariants(unittest.TestCase):
     def setUp(self):
         """Initialize registry for tests."""
         try:
-            from core.FormulasRegistry import get_registry
+            from simulations.core.FormulasRegistry import get_registry
             self.registry = get_registry()
         except ImportError:
             self.skipTest("FormulasRegistry not available")
@@ -441,7 +441,7 @@ class TestJSONConsistency(unittest.TestCase):
     def setUp(self):
         """Initialize registry for tests."""
         try:
-            from core.FormulasRegistry import get_registry
+            from simulations.core.FormulasRegistry import get_registry
             self.registry = get_registry()
         except ImportError:
             self.skipTest("FormulasRegistry not available")

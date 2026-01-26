@@ -24,7 +24,7 @@ from pathlib import Path
 # Add parent directories to path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-from core.FormulasRegistry import get_registry
+from simulations.core.FormulasRegistry import get_registry
 
 # Get registry SSoT
 _REG = get_registry()
@@ -36,7 +36,7 @@ class V16_2_LogicChecker:
     """
 
     def __init__(self):
-        self.b3 = _REG.elder_kads  # = 24 (Third Betti number from SSoT registry)
+        self.elder_kads = _REG.elder_kads  # = 24 (Third Betti number from SSoT registry)
         self.D_crit = 26  # Critical dimension
         self.results = {}
         self.all_passed = True
@@ -131,8 +131,8 @@ class V16_2_LogicChecker:
         print("=" * 60)
 
         # Calculate from topology
-        w0 = -1.0 + 1.0 / self.b3
-        wa = -1.0 / np.sqrt(self.b3)
+        w0 = -1.0 + 1.0 / self.elder_kads
+        wa = -1.0 / np.sqrt(self.elder_kads)
 
         # At different redshifts
         w_z0 = w0  # Today
@@ -184,8 +184,8 @@ class V16_2_LogicChecker:
         G_NEWTON = 6.67430e-11  # m^3/(kg*s^2)
 
         # PM geometric anchors
-        k_gimel = self.b3 / 2.0 + 1.0 / np.pi  # ~12.318
-        c_kaf = self.b3 * (self.b3 - 7) / (self.b3 - 9)  # ~27.2
+        k_gimel = self.elder_kads / 2.0 + 1.0 / np.pi  # ~12.318
+        c_kaf = self.elder_kads * (self.elder_kads - 7) / (self.elder_kads - 9)  # ~27.2
 
         # Tubulin parameters (v16.2 corrected)
         m_tubulin_single = 1.8e-22  # kg (110 kDa)
@@ -244,7 +244,7 @@ class V16_2_LogicChecker:
         print("=" * 60)
 
         # Calculate anomaly correction
-        anomaly_correction = 1.0 - 1.0 / (self.b3 ** 2)
+        anomaly_correction = 1.0 - 1.0 / (self.elder_kads ** 2)
         expected = 1.0 - 1.0 / 576.0  # = 575/576
 
         # Verify
@@ -256,7 +256,7 @@ class V16_2_LogicChecker:
         G_corrected = G_NEWTON * anomaly_correction
         correction_pct = (1 - anomaly_correction) * 100
 
-        print(f"  Anomaly factor: 1 - 1/b3^2 = 1 - 1/{self.b3**2} = {anomaly_correction:.8f}")
+        print(f"  Anomaly factor: 1 - 1/b3^2 = 1 - 1/{self.elder_kads**2} = {anomaly_correction:.8f}")
         print(f"  Expected: 575/576 = {expected:.8f}")
         print(f"  G_Newton: {G_NEWTON:.5e} m^3/(kg*s^2)")
         print(f"  G_corrected: {G_corrected:.5e} m^3/(kg*s^2)")
@@ -287,15 +287,15 @@ class V16_2_LogicChecker:
         print("=" * 60)
 
         # BRST ghost cancellation
-        c = self.b3 + 2 - self.D_crit  # 24 + 2 - 26 = 0
+        c = self.elder_kads + 2 - self.D_crit  # 24 + 2 - 26 = 0
 
         passed = c == 0
         status = "[PASS]" if passed else "[FAIL]"
 
-        print(f"  b3 (3-cycles): {self.b3}")
+        print(f"  b3 (3-cycles): {self.elder_kads}")
         print(f"  2T (shared times): 2")
         print(f"  D_crit (critical dim): {self.D_crit}")
-        print(f"  Ghost count: c = {self.b3} + 2 - {self.D_crit} = {c}")
+        print(f"  Ghost count: c = {self.elder_kads} + 2 - {self.D_crit} = {c}")
         print(f"  Required for unitarity: c = 0")
         print(f"  Status: {status}")
 

@@ -402,16 +402,19 @@ class SimulationBase(ABC):
         """
         section_content = self.get_section_content()
         if section_content:
-            registry.add_section_content(section_content.section_id, section_content)
+            # Use subsection_id as key if available, else section_id
+            section_key = section_content.subsection_id or section_content.section_id
+            registry.add_section_content(section_key, section_content)
 
         # Also inject formulas with logging
         formulas = self.get_formulas()
+        sim_source = getattr(self.metadata, 'id', '') if hasattr(self, 'metadata') else ''
         if formulas and getattr(self, 'verbose', False):
             print(f"  [FORMULAS] Registering {len(formulas)} formula(s):")
             for f in formulas:
                 print(f"    - {f.id}: {f.label}")
         for formula in formulas:
-            registry.add_formula(formula)
+            registry.add_formula(formula, source=sim_source)
 
     @abstractmethod
     def get_section_content(self) -> Optional[SectionContent]:

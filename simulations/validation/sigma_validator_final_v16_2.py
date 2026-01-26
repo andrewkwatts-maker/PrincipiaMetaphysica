@@ -353,7 +353,7 @@ class FinalSigmaValidator(SimulationBase):
 
         # 3. Neutrino Mixing
         try:
-            from simulations.v21.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
+            from simulations.v23.particle.neutrino_mixing import NeutrinoMixingV16 as NeutrinoMixingSimulation
             self._setup_neutrino_topology(registry)
             sim = NeutrinoMixingSimulation()
             results = sim.execute(registry, verbose=False)
@@ -452,10 +452,10 @@ class FinalSigmaValidator(SimulationBase):
 
     def _setup_topology(self, registry: PMRegistry) -> None:
         """Ensure topological parameters are available."""
-        if not registry.has_param("topology.b3"):
-            registry.set_param("topology.b3", 24, source="ESTABLISHED:G2_topology", status="ESTABLISHED")
-        if not registry.has_param("topology.chi_eff"):
-            registry.set_param("topology.chi_eff", 144, source="ESTABLISHED:G2_topology", status="ESTABLISHED")
+        if not registry.has_param("topology.elder_kads"):
+            registry.set_param("topology.elder_kads", 24, source="ESTABLISHED:G2_topology", status="ESTABLISHED")
+        if not registry.has_param("topology.mephorash_chi"):
+            registry.set_param("topology.mephorash_chi", 144, source="ESTABLISHED:G2_topology", status="ESTABLISHED")
         # k_gimel = b3/2 + 1/pi (holonomy precision limit)
         if not registry.has_param("topology.k_gimel"):
             k_gimel = 24/2 + 1/np.pi  # ~12.318
@@ -465,8 +465,8 @@ class FinalSigmaValidator(SimulationBase):
         """Set up neutrino-specific topology parameters."""
         params = {
             "topology.b2": (4, "ESTABLISHED:TCS_construction"),
-            "topology.b3": (24, "ESTABLISHED:TCS_construction"),
-            "topology.chi_eff": (144, "ESTABLISHED:TCS_construction"),
+            "topology.elder_kads": (24, "ESTABLISHED:TCS_construction"),
+            "topology.mephorash_chi": (144, "ESTABLISHED:TCS_construction"),
             "topology.n_gen": (3, "ESTABLISHED:TCS_construction"),
             "topology.orientation_sum": (12, "ESTABLISHED:Sp2R_gauge_fixing"),
         }

@@ -39,7 +39,7 @@ sys.path.insert(0, project_root)
 # SSOT IMPORTS - Single Source of Truth for G2 Topology
 # =============================================================================
 try:
-    from core.FormulasRegistry import FormulasRegistry
+    from simulations.core.FormulasRegistry import FormulasRegistry
     _SSOT = FormulasRegistry()
     B3_DEFAULT = _SSOT.elder_kads               # Third Betti number = 24
     CHI_EFF_TOTAL = _SSOT.qedem_chi_sum  # Full manifold Euler char = 144
@@ -77,13 +77,13 @@ class G2DynamicalFlow:
         Args:
             b3: Third Betti number (default: 24 from SSOT for TCS G₂)
         """
-        self.b3 = b3
+        self.elder_kads = b3
 
         # Static geometric anchors (boundary conditions for flow)
         self.k_gimel_static = (b3 / 2.0) + (1.0 / np.pi)  # 12.318
         self.c_kaf_static = b3 * (b3 - 7) / (b3 - 9)      # 27.2
         # chi_eff from SSOT: chi_eff_total = 6 * b3 = 144 for full manifold
-        self.chi_eff = CHI_EFF_TOTAL if b3 == B3_DEFAULT else 6 * b3
+        self.mephorash_chi = CHI_EFF_TOTAL if b3 == B3_DEFAULT else 6 * b3
 
         # DESI 2025 observations for calibration
         self.desi = DESIObservations()
@@ -107,7 +107,7 @@ class G2DynamicalFlow:
 
         # Flow velocity wₐ from topological invariant
         # The stabilization rate scales as 1/χ_eff
-        self.wa_geometric = -self.b3 / 100.0 * (1 + 1/self.chi_eff)
+        self.wa_geometric = -self.elder_kads / 100.0 * (1 + 1/self.mephorash_chi)
 
         # Phantom crossing redshift from c_kaf
         # z_cross = c_kaf / (c_kaf + k_gimel)
@@ -294,7 +294,7 @@ if __name__ == "__main__":
     print("\n1. GEOMETRIC ANCHORS (Static Boundary Conditions):")
     print(f"   k_gimel = {flow.k_gimel_static:.6f}")
     print(f"   C_kaf   = {flow.c_kaf_static:.6f}")
-    print(f"   χ_eff   = {flow.chi_eff}")
+    print(f"   χ_eff   = {flow.mephorash_chi}")
 
     print("\n2. DYNAMICAL DARK ENERGY:")
     print(f"   w₀ (geometric) = {flow.w0_geometric:.4f}")

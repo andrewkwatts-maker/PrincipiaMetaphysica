@@ -42,14 +42,14 @@ import json
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 # Import all test modules
-from src.physics.root_derivation import RootDerivation
-from src.validation.stress_test_rigidity import run_all_rigidity_tests
-from src.validation.anisotropy_check import verify_4_pattern_orthogonality
-from src.sim.isotropic_flow_validator import run_all_isotropic_tests
-from src.sim.bulk_leakage_monitor import run_all_leakage_tests
-from src.audit.hard_certificate_audit import run_hard_audit
-from src.audit.omega_seal_generator import generate_omega_seal
-from src.audit.certificate_stack import CertificateStack
+from simulations.support.physics.root_derivation import RootDerivation
+from simulations.validation.rigidity.stress_test_rigidity import run_all_rigidity_tests
+from simulations.validation.rigidity.anisotropy_check import verify_4_pattern_orthogonality
+from simulations.validation.sim.isotropic_flow_validator import run_all_isotropic_tests
+from simulations.validation.sim.bulk_leakage_monitor import run_all_leakage_tests
+from simulations.validation.audit.hard_certificate_audit import run_hard_audit
+from simulations.validation.audit.omega_seal_generator import generate_omega_seal
+from simulations.validation.audit.certificate_stack import CertificateStack
 
 # Import topological tests
 from tests.topology_gap_check import validate_topological_gap, test_gap_sensitivity
