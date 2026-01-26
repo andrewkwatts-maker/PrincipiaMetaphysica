@@ -63,7 +63,8 @@ def inject_param(
 
 def inject_formula(
     registry: 'PMRegistry',
-    formula: 'Formula'
+    formula: 'Formula',
+    source: str = ""
 ) -> None:
     """
     Inject a formula into the registry.
@@ -71,6 +72,7 @@ def inject_formula(
     Args:
         registry: PMRegistry instance
         formula: Formula instance to inject
+        source: Source simulation file identifier
 
     Example:
         from simulations.base import Formula
@@ -87,7 +89,7 @@ def inject_formula(
         )
         inject_formula(registry, formula)
     """
-    registry.add_formula(formula)
+    registry.add_formula(formula, source=source)
 
 
 def inject_section(
@@ -179,7 +181,7 @@ def inject_geometric(
 
     Args:
         registry: PMRegistry instance
-        path: Parameter path (e.g., "topology.b3", "topology.CHI_EFF")
+        path: Parameter path (e.g., "topology.elder_kads", "topology.CHI_EFF")
         value: Parameter value
         source: Source simulation ID
         uncertainty: Optional uncertainty
@@ -188,7 +190,7 @@ def inject_geometric(
     Example:
         inject_geometric(
             registry,
-            "topology.b3",
+            "topology.elder_kads",
             24,
             "g2_geometry_v16_0"
         )

@@ -45,7 +45,7 @@ from typing import Dict, Any, Optional, Tuple
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 try:
-    from core.FormulasRegistry import FormulasRegistry, get_registry
+    from simulations.core.FormulasRegistry import FormulasRegistry, get_registry
     REGISTRY_AVAILABLE = True
 except ImportError:
     print("Warning: Could not import FormulasRegistry, using standalone mode")

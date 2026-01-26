@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "simulations"))
 
 # Import SSoT Registry
 try:
-    from core.FormulasRegistry import get_registry
+    from simulations.core.FormulasRegistry import get_registry
     REGISTRY = get_registry()
 except ImportError:
     REGISTRY = None

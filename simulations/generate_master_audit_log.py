@@ -39,7 +39,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 # Import the Single Source of Truth
 try:
-    from core.FormulasRegistry import get_registry
+    from simulations.core.FormulasRegistry import get_registry
 except ImportError:
     # Fallback if core module not found
     get_registry = None

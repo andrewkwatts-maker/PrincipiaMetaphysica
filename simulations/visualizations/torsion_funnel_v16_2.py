@@ -25,7 +25,7 @@ from pathlib import Path
 from typing import Dict, List, Any
 
 # Import SSoT constants from FormulasRegistry
-from core.FormulasRegistry import get_registry
+from simulations.core.FormulasRegistry import get_registry
 _REG = get_registry()
 
 try:

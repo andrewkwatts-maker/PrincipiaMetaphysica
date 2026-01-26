@@ -39,7 +39,7 @@ except ImportError:
 import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from core.FormulasRegistry import get_registry
+from simulations.core.FormulasRegistry import get_registry
 
 # Get registry SSoT
 _REG = get_registry()

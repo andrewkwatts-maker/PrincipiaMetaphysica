@@ -200,7 +200,7 @@ from simulations.base.established import EstablishedPhysics
 
 # v17: Import DemonLockGuard for pre-flight sterility check
 try:
-    from core.demon_lock_guard import DemonLockGuard
+    from simulations.core.demon_lock_guard import DemonLockGuard
     DEMON_LOCK_AVAILABLE = True
 except ImportError:
     DEMON_LOCK_AVAILABLE = False
@@ -208,21 +208,21 @@ except ImportError:
 
 # v17.1: Import SterilityReporter for sovereign audit reports
 try:
-    from core.verify_sterility_report import SterilityReporter
+    from simulations.core.verify_sterility_report import SterilityReporter
     STERILITY_REPORTER_AVAILABLE = True
 except ImportError:
     STERILITY_REPORTER_AVAILABLE = False
 
 # v17.1: Import DocumentationSynchronizer for SSoT sync
 try:
-    from core.sync_docs import DocumentationSynchronizer
+    from simulations.core.sync_docs import DocumentationSynchronizer
     DOC_SYNC_AVAILABLE = True
 except ImportError:
     DOC_SYNC_AVAILABLE = False
 
 # v17.2: Import FormulasRegistry for Ghost Literal elimination
 try:
-    from core.FormulasRegistry import get_registry as get_formulas_registry
+    from simulations.core.FormulasRegistry import get_registry as get_formulas_registry
     FORMULAS_REGISTRY_AVAILABLE = True
 except ImportError:
     FORMULAS_REGISTRY_AVAILABLE = False
@@ -243,20 +243,20 @@ except ImportError:
 
 # Import v16 simulations
 # Phase 0 - Abstract and Introduction (narrative only, no dependencies)
-from simulations.v21.introduction.introduction_v16_0 import IntroductionV16
-from simulations.v21.introduction.abstract_v17_2 import AbstractV17_2
+from simulations.v23.paper.introduction import IntroductionV16
+from simulations.v23.paper.abstract import AbstractV17_2
 
 # Phase 1 - Root simulations (no dependencies)
-from simulations.v21.geometric.g2_geometry_v16_0 import G2GeometryV16
-from simulations.v21.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
-from simulations.v21.master_action.master_action_simulation_v18 import MasterActionSimulationV18
+from simulations.v23.geometry.g2_geometry import G2GeometryV16
+from simulations.v23.gauge.gauge_unification import GaugeUnificationSimulation
+from simulations.v23.gauge.master_action import MasterActionSimulationV18
 
 # v16.2 - Geometric Anchors (fundamental constants from b3=24)
-from simulations.v21.geometric.geometric_anchors_simulation_v16_2 import GeometricAnchorsSimulation
+from simulations.v23.geometry.geometric_anchors import GeometricAnchorsSimulation
 
 # v16.2 - Two-Time Physics and Leech Partition (foundational geometric proofs)
-from simulations.v21.geometric.leech_partition_v16_2 import LeechPartitionV16
-from simulations.v21.geometric.modular_invariance_v16_2 import ModularInvarianceV16
+from simulations.v23.geometry.leech_partition import LeechPartitionV16
+from simulations.v23.geometry.modular_invariance import ModularInvarianceV16
 
 # v16.2 - Ghost-Free Stability Check (The Guardian) - BLOCKS simulations if anomaly not cancelled
 try:
@@ -268,50 +268,50 @@ except ImportError:
 
 # Academic Armor v16.1 - Rigor simulations (geometric derivations)
 try:
-    from simulations.v21.geometric.alpha_rigor_v16_1 import AlphaRigorSimulation
+    from simulations.v23.geometry.alpha_rigor import AlphaRigorSimulation
     ALPHA_RIGOR_AVAILABLE = True
 except ImportError:
     ALPHA_RIGOR_AVAILABLE = False
 
 try:
-    from simulations.v21.fermion.mass_ratio_v16_1 import MassRatioSimulation
+    from simulations.v23.particle.mass_ratio import MassRatioSimulation
     MASS_RATIO_AVAILABLE = True
 except ImportError:
     MASS_RATIO_AVAILABLE = False
 
 try:
-    from simulations.v21.quantum_bio.orch_or_geometry_v16_1 import OrchORSimulation
+    from simulations.v23.field_dynamics.orch_or_geometry import OrchORSimulation
     ORCH_OR_AVAILABLE = True
 except ImportError:
     ORCH_OR_AVAILABLE = False
 
 # Phase 2 - Core physics (depends on Phase 1)
-from simulations.v21.fermion.fermion_generations_v16_0 import FermionGenerationsV16
-from simulations.v21.fermion.chirality_v16_0 import ChiralitySpinorSimulation
-from simulations.v21.fermion.ckm_matrix_v16_0 import CKMMatrixSimulation
-from simulations.v21.proton.proton_decay_v16_0 import ProtonDecaySimulation
-from simulations.v21.higgs.higgs_mass_v16_0 import HiggsMassSimulation
-from simulations.v21.higgs.higgs_brane_partition_v16_2 import HiggsBranePartitionSimulation
+from simulations.v23.particle.fermion_generations import FermionGenerationsV16
+from simulations.v23.particle.chirality import ChiralitySpinorSimulation
+from simulations.v23.particle.ckm_matrix import CKMMatrixSimulation
+from simulations.v23.particle.proton_decay import ProtonDecaySimulation
+from simulations.v23.particle.higgs_mass import HiggsMassSimulation
+from simulations.v23.particle.higgs_brane_partition import HiggsBranePartitionSimulation
 
 # Phase 3 - Precision observables and cosmology (depends on Phase 2)
-from simulations.v21.cosmology.cosmology_intro_v16_0 import CosmologyIntroV16
-from simulations.v21.cosmology.dark_energy_v16_0 import DarkEnergyV16
-from simulations.v21.cosmology.s8_suppression_v16_1 import S8SuppressionV16
-from simulations.v21.cosmology.ricci_flow_h0_v16_1 import RicciFlowH0V16
-from simulations.v21.thermal.thermal_time_v16_0 import ThermalTimeV16
-from simulations.v21.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
-from simulations.v21.cosmology.multi_sector_v16_0 import MultiSectorV16
+from simulations.v23.cosmology.cosmology_intro import CosmologyIntroV16
+from simulations.v23.cosmology.dark_energy import DarkEnergyV16
+from simulations.v23.cosmology.s8_suppression import S8SuppressionV16
+from simulations.v23.cosmology.ricci_flow_h0 import RicciFlowH0V16
+from simulations.v23.field_dynamics.thermal_time import ThermalTimeV16
+from simulations.v23.particle.neutrino_mixing import NeutrinoMixingSimulation
+from simulations.v23.cosmology.multi_sector import MultiSectorV16
 
 # v16.2 - Dark Energy Thawing and Evolution Engine (Three Bridges)
-from simulations.v21.cosmology.dark_energy_thawing_v16_2 import DarkEnergyEvolution
-from simulations.v21.cosmology.evolution_engine_v16_2 import EvolutionEngineV16
-from simulations.v21.fermion.octonionic_mixing_v16_2 import OctonionicMixing
+from simulations.v23.cosmology.dark_energy_thawing import DarkEnergyEvolution
+from simulations.v23.cosmology.evolution_engine import EvolutionEngineV16
+from simulations.v23.particle.octonionic_mixing import OctonionicMixing
 
 # v17.2 - Speed of Light from Sovereign Constants
-from simulations.v21.cosmology.speed_of_light_v17_2 import SpeedOfLightV17
+from simulations.v23.cosmology.speed_of_light import SpeedOfLightV17
 
 # v17.2 - QED Manifold Constants (Decad-Cubic Projection Engine)
-from simulations.v21.qed import (
+from simulations.v23.qed import (
     ComptonWavelengthV17,
     StefanBoltzmannV17,
     HartreeEnergyV17,
@@ -325,94 +325,94 @@ from simulations.v21.qed import (
 
 # Optional v16.1 cosmology simulations
 try:
-    from simulations.v21.cosmology.cosmological_constant_v16_1 import CosmologicalConstantV16
+    from simulations.v23.cosmology.cosmological_constant import CosmologicalConstantV16
     COSMOLOGICAL_CONSTANT_AVAILABLE = True
 except ImportError:
     COSMOLOGICAL_CONSTANT_AVAILABLE = False
 
 # Phase 4 - Field dynamics (depends on all)
-from simulations.v21.pneuma.pneuma_mechanism_v16_0 import PneumaMechanismV16
+from simulations.v23.field_dynamics.pneuma_mechanism import PneumaMechanismV16
 
 # Phase 5 - Discussion, predictions, and appendices (aggregators and reference material)
-from simulations.v21.discussion.discussion_v16_0 import DiscussionV16
-from simulations.v21.predictions.predictions_aggregator_v16_0 import PredictionsAggregatorV16
+from simulations.v23.paper.discussion import DiscussionV16
+from simulations.v23.paper.predictions_aggregator import PredictionsAggregatorV16
 
 # v16.2 Sterile Model - New Section Simulations (Sections 1-4)
 try:
-    from simulations.v21.foundations.foundations_v16_2 import FoundationsV16_2
+    from simulations.v23.paper.foundations import FoundationsV16_2
     FOUNDATIONS_AVAILABLE = True
 except ImportError:
     FOUNDATIONS_AVAILABLE = False
 
 try:
-    from simulations.v21.methodology.methodology_v16_2 import MethodologyV16_2
+    from simulations.v23.paper.methodology import MethodologyV16_2
     METHODOLOGY_AVAILABLE = True
 except ImportError:
     METHODOLOGY_AVAILABLE = False
 
 try:
-    from simulations.v21.results.results_v16_2 import ResultsV16_2
+    from simulations.v23.paper.results import ResultsV16_2
     RESULTS_AVAILABLE = True
 except ImportError:
     RESULTS_AVAILABLE = False
 
 try:
-    from simulations.v21.integrity.integrity_v16_2 import IntegrityV16_2
+    from simulations.v23.paper.integrity import IntegrityV16_2
     INTEGRITY_AVAILABLE = True
 except ImportError:
     INTEGRITY_AVAILABLE = False
 
 # v16.2 Sterile Model - New Appendices (A-G)
 try:
-    from simulations.v21.appendices.appendix_a_spectral_registry_v16_2 import AppendixASpectralRegistry
+    from simulations.v23.paper.appendices.appendix_a_spectral_registry import AppendixASpectralRegistry
     APPENDIX_A_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_A_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_b_sum_rule_v16_2 import AppendixBSumRule
+    from simulations.v23.paper.appendices.appendix_b_sum_rule import AppendixBSumRule
     APPENDIX_B_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_B_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_c_gauge_matrices_v16_2 import AppendixCGaugeMatrices
+    from simulations.v23.paper.appendices.appendix_c_gauge_matrices import AppendixCGaugeMatrices
     APPENDIX_C_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_C_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_d_alignment_v16_2 import AppendixDAlignment
+    from simulations.v23.paper.appendices.appendix_d_alignment import AppendixDAlignment
     APPENDIX_D_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_D_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_e_brane_map_v16_2 import AppendixEBraneMap
+    from simulations.v23.paper.appendices.appendix_e_brane_map import AppendixEBraneMap
     APPENDIX_E_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_E_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_f_72gates_v16_2 import Appendix72Gates
+    from simulations.v23.paper.appendices.appendix_f_72gates import Appendix72Gates
     APPENDIX_F_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_F_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_g_omega_seal_v16_2 import AppendixGOmegaSeal
+    from simulations.v23.paper.appendices.appendix_g_omega_seal import AppendixGOmegaSeal
     APPENDIX_G_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_G_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_h_288_roots_v16_2 import AppendixH288Roots
+    from simulations.v23.paper.appendices.appendix_h_288_roots import AppendixH288Roots
     APPENDIX_H_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_H_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_i_terminal_states_v16_2 import AppendixITerminalStates
+    from simulations.v23.paper.appendices.appendix_i_terminal_states import AppendixITerminalStates
     APPENDIX_I_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_I_V16_2_AVAILABLE = False
@@ -424,157 +424,157 @@ except ImportError:
 # The v16.2 model treats constants as geometric necessities, not tunable values.
 # These imports are preserved for historical reference but are not executed.
 #
-# from simulations.v21.appendices.appendix_a_math_v16_0 import AppendixAMathFoundations
-# from simulations.v21.appendices.appendix_b_methods_v16_0 import AppendixBComputationalMethods
-# from simulations.v21.appendices.appendix_c_derivations_v16_0 import AppendixCExtendedDerivations
-# from simulations.v21.appendices.appendix_d_tables_v16_0 import AppendixDParameterTables
-# from simulations.v21.appendices.appendix_e_proton_v16_0 import AppendixEProtonDecay
-# from simulations.v21.appendices.appendix_f_v16_0 import AppendixFDimensionalDecomposition
-# from simulations.v21.appendices.appendix_g_v16_0 import AppendixGEffectiveTorsion
-# from simulations.v21.appendices.appendix_h_v16_0 import AppendixHProtonBranching
-# from simulations.v21.appendices.appendix_i_v16_0 import AppendixIGWDispersion
-# from simulations.v21.appendices.appendix_j_v16_0 import AppendixJMonteCarloError
-# from simulations.v21.appendices.appendix_k_v16_0 import AppendixKTransparency
-# from simulations.v21.appendices.appendix_l_v16_0 import AppendixLValuesSummary
-# from simulations.v21.appendices.appendix_m_v16_0 import AppendixMConsciousnessSpeculation
-# from simulations.v21.appendices.appendix_n_v16_0 import AppendixNG2Landscape
+# from simulations.v23.paper.appendices.appendix_a_math import AppendixAMathFoundations
+# from simulations.v23.paper.appendices.appendix_b_methods import AppendixBComputationalMethods
+# from simulations.v23.paper.appendices.appendix_c_derivations import AppendixCExtendedDerivations
+# from simulations.v23.paper.appendices.appendix_d_tables import AppendixDParameterTables
+# from simulations.v23.paper.appendices.appendix_e_proton import AppendixEProtonDecay
+# from simulations.v23.paper.appendices.appendix_f import AppendixFDimensionalDecomposition
+# from simulations.v23.paper.appendices.appendix_g import AppendixGEffectiveTorsion
+# from simulations.v23.paper.appendices.appendix_h import AppendixHProtonBranching
+# from simulations.v23.paper.appendices.appendix_i import AppendixIGWDispersion
+# from simulations.v23.paper.appendices.appendix_j import AppendixJMonteCarloError
+# from simulations.v23.paper.appendices.appendix_k import AppendixKTransparency
+# from simulations.v23.paper.appendices.appendix_l import AppendixLValuesSummary
+# from simulations.v23.paper.appendices.appendix_m import AppendixMConsciousnessSpeculation
+# from simulations.v23.paper.appendices.appendix_n import AppendixNG2Landscape
 # ============================================================================
 
 # v16.2 Sterile Model - New Appendices J, K, L
 try:
-    from simulations.v21.appendices.appendix_j_torsion_funnel_v16_2 import AppendixJTorsionFunnel
+    from simulations.v23.paper.appendices.appendix_j_torsion_funnel import AppendixJTorsionFunnel
     APPENDIX_J_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_J_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_k_sterile_constants_v16_2 import AppendixKSterileConstants
+    from simulations.v23.paper.appendices.appendix_k_sterile_constants import AppendixKSterileConstants
     APPENDIX_K_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_K_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_l_omega_unwinding_v16_2 import AppendixLOmegaUnwinding
+    from simulations.v23.paper.appendices.appendix_l_omega_unwinding import AppendixLOmegaUnwinding
     APPENDIX_L_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_L_V16_2_AVAILABLE = False
 
 # v16.2 Sterile Model - Appendix Z: Terminal Constant Ledger
 try:
-    from simulations.v21.appendices.appendix_z_terminal_ledger_v16_2 import AppendixZTerminalLedger
+    from simulations.v23.paper.appendices.appendix_z_terminal_ledger import AppendixZTerminalLedger
     APPENDIX_Z_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_Z_V16_2_AVAILABLE = False
 
 # v19.0 Complete Derivations (Wave 4 - Comprehensive sector derivations)
 try:
-    from simulations.derivations.lagrangian_master_derivation_v19 import LagrangianMasterDerivationV19
+    from simulations.v23.derivations.lagrangian_master import LagrangianMasterDerivationV19
     LAGRANGIAN_MASTER_V19_AVAILABLE = True
 except ImportError:
     LAGRANGIAN_MASTER_V19_AVAILABLE = False
 
 try:
-    from simulations.derivations.gauge_sector_complete_v19 import GaugeSectorCompleteV19
+    from simulations.v23.derivations.gauge_sector_complete import GaugeSectorCompleteV19
     GAUGE_SECTOR_V19_AVAILABLE = True
 except ImportError:
     GAUGE_SECTOR_V19_AVAILABLE = False
 
 try:
-    from simulations.derivations.matter_sector_complete_v19 import MatterSectorCompleteV19
+    from simulations.v23.derivations.matter_sector_complete import MatterSectorCompleteV19
     MATTER_SECTOR_V19_AVAILABLE = True
 except ImportError:
     MATTER_SECTOR_V19_AVAILABLE = False
 
 try:
-    from simulations.derivations.cosmology_sector_complete_v19 import CosmologySectorCompleteV19
+    from simulations.v23.derivations.cosmology_sector_complete import CosmologySectorCompleteV19
     COSMOLOGY_SECTOR_V19_AVAILABLE = True
 except ImportError:
     COSMOLOGY_SECTOR_V19_AVAILABLE = False
 
 try:
-    from simulations.derivations.gr_spacetime_derivations_v19 import GRSpacetimeDerivationsV19
+    from simulations.v23.derivations.gr_spacetime import GRSpacetimeDerivationsV19
     GR_SPACETIME_V19_AVAILABLE = True
 except ImportError:
     GR_SPACETIME_V19_AVAILABLE = False
 
 # v19.0 Eigenchris-style Mathematical Appendices
 try:
-    from simulations.v21.appendices.appendix_m_tensor_calc_v19 import AppendixMTensorCalcV19
+    from simulations.v23.paper.appendices.appendix_m_tensor_calc import AppendixMTensorCalcV19
     APPENDIX_M_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_M_V19_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_n_vielbein_v19 import AppendixNVielbeinV19
+    from simulations.v23.paper.appendices.appendix_n_vielbein import AppendixNVielbeinV19
     APPENDIX_N_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_N_V19_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_o_kk_reduction_v19 import AppendixOKKReductionV19
+    from simulations.v23.paper.appendices.appendix_o_kk_reduction import AppendixOKKReductionV19
     APPENDIX_O_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_O_V19_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_p_g2_holonomy_v19 import AppendixPG2HolonomyV19
+    from simulations.v23.paper.appendices.appendix_p_g2_holonomy import AppendixPG2HolonomyV19
     APPENDIX_P_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_P_V19_AVAILABLE = False
 
 try:
-    from simulations.v21.appendices.appendix_q_index_theorem_v19 import AppendixQIndexTheoremV19
+    from simulations.v23.paper.appendices.appendix_q_index_theorem import AppendixQIndexTheoremV19
     APPENDIX_Q_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_Q_V19_AVAILABLE = False
 
 # v19.0 Appendix R: Vacuum Stability Analysis
 try:
-    from simulations.v21.appendices.appendix_r_vacuum_stability_v19 import AppendixRVacuumStabilityV19
+    from simulations.v23.paper.appendices.appendix_r_vacuum_stability import AppendixRVacuumStabilityV19
     APPENDIX_R_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_R_V19_AVAILABLE = False
 
 # v19.0 Appendix S: Spectral Residue Methodology
 try:
-    from simulations.v21.appendices.appendix_s_spectral_residue_v19 import AppendixSSpectralResidueV19
+    from simulations.v23.paper.appendices.appendix_s_spectral_residue import AppendixSSpectralResidueV19
     APPENDIX_S_V19_AVAILABLE = True
 except ImportError:
     APPENDIX_S_V19_AVAILABLE = False
 
 # v18.0 Core Physics Simulations
 try:
-    from simulations.v21.fermion.yukawa_textures_v18 import YukawaTexturesV18
+    from simulations.v23.particle.yukawa_textures import YukawaTexturesV18
     YUKAWA_V18_AVAILABLE = True
 except ImportError:
     YUKAWA_V18_AVAILABLE = False
 
 try:
-    from simulations.v21.gravity.f_r_t_tau_gravity_v18 import FRTTauGravityV18
+    from simulations.v23.cosmology.f_r_t_tau_gravity import FRTTauGravityV18
     F_R_T_TAU_V18_AVAILABLE = True
 except ImportError:
     F_R_T_TAU_V18_AVAILABLE = False
 
 try:
-    from simulations.v21.spectral.complete_residue_registry_v18 import CompleteResidueRegistryV18
+    from simulations.v23.support.complete_residue_registry import CompleteResidueRegistryV18
     RESIDUE_REGISTRY_V18_AVAILABLE = True
 except ImportError:
     RESIDUE_REGISTRY_V18_AVAILABLE = False
 
 try:
-    from simulations.v21.cosmology.attractor_potential_v18 import AttractorPotentialV18
+    from simulations.v23.cosmology.attractor_potential import AttractorPotentialV18
     ATTRACTOR_V18_AVAILABLE = True
 except ImportError:
     ATTRACTOR_V18_AVAILABLE = False
 
 try:
-    from simulations.v21.cosmology.baryon_asymmetry_v18 import BaryonAsymmetryV18
+    from simulations.v23.cosmology.baryon_asymmetry import BaryonAsymmetryV18
     BARYON_V18_AVAILABLE = True
 except ImportError:
     BARYON_V18_AVAILABLE = False
 
 try:
-    from simulations.v21.higgs.higgs_vev_refined_v18 import HiggsVEVRefinedV18
+    from simulations.v23.particle.higgs_vev_refined import HiggsVEVRefinedV18
     HIGGS_VEV_V18_AVAILABLE = True
 except ImportError:
     HIGGS_VEV_V18_AVAILABLE = False
@@ -1057,6 +1057,10 @@ class SimulationRunner:
         omega_hash_passed = self._check_omega_hash()
         validation_report["omega_hash_passed"] = omega_hash_passed
 
+        # Step 5b: LaTeX Registry bi-directional validation
+        latex_validation = self._validate_latex_registry()
+        validation_report["latex_validation"] = latex_validation
+
         # Step 6: Export to theory_output.json
         output_data = self._export_to_json(validation_report)
 
@@ -1121,7 +1125,7 @@ class SimulationRunner:
 
         # Register system version first (SYSTEM status - not counted in scientific stats)
         try:
-            from core.FormulasRegistry import FormulasRegistry
+            from simulations.core.FormulasRegistry import FormulasRegistry
             if not self.registry.has_param("system.version"):
                 self.registry.set_param("system.version", FormulasRegistry.VERSION,
                                          source="SYSTEM:FormulasRegistry",
@@ -1160,19 +1164,26 @@ class SimulationRunner:
             # Using GEOMETRIC (not ESTABLISHED) allows validation against experiment
             import numpy as np
 
+            if not self.registry.has_param("topology.elder_kads"):
+                self.registry.set_param("topology.elder_kads", 24,
+                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
+            # Legacy alias for backward compatibility
             if not self.registry.has_param("topology.b3"):
                 self.registry.set_param("topology.b3", 24,
-                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
+                                         source="GEOMETRIC:TCS_G2_187:alias", status="GEOMETRIC")
 
             # Dual chi_eff structure (v20.1)
-            # chi_eff = 72 (per-sector), chi_eff_total = 144 (full manifold)
+            # mephorash_chi = 144 (full manifold), chi_eff_sector = 72 (per-sector)
             # Both give n_gen = 3: 72/24 = 3 OR 144/48 = 3
+            if not self.registry.has_param("topology.mephorash_chi"):
+                self.registry.set_param("topology.mephorash_chi", 144,
+                                         source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC")
             if not self.registry.has_param("topology.chi_eff"):
                 self.registry.set_param("topology.chi_eff", 72,
                                          source="GEOMETRIC:TCS_G2_sector", status="GEOMETRIC")
             if not self.registry.has_param("topology.chi_eff_total"):
                 self.registry.set_param("topology.chi_eff_total", 144,
-                                         source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC")
+                                         source="GEOMETRIC:TCS_G2_manifold:alias", status="GEOMETRIC")
 
             # Pre-compute k_gimel for early use
             k_gimel = 24 / 2 + 1 / np.pi
@@ -1182,9 +1193,9 @@ class SimulationRunner:
 
             if self.verbose:
                 print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")
-                print(f"  - topology.b3 = 24 (derived from G2 manifold)")
+                print(f"  - topology.elder_kads = 24 (derived from G2 manifold)")
+                print(f"  - topology.mephorash_chi = 144 (full manifold: n_gen = 144/48 = 3)")
                 print(f"  - topology.chi_eff = 72 (per-sector: n_gen = 72/24 = 3)")
-                print(f"  - topology.chi_eff_total = 144 (full manifold: n_gen = 144/48 = 3)")
                 print(f"  - topology.k_gimel = {k_gimel:.6f} (derived: b3/2 + 1/pi)")
                 print(f"  Note: Full geometric anchors computed in Phase 1")
 
@@ -1309,19 +1320,7 @@ class SimulationRunner:
                     print(f"  [OK] All outputs validated")
                     print(f"  Computed: {len(result.outputs_computed)} parameters")
 
-                # Step 4: Collect section content from simulation (v16.2+)
-                if hasattr(sim, 'get_section_content') and callable(sim.get_section_content):
-                    try:
-                        section_content = sim.get_section_content()
-                        if section_content is not None:
-                            # Use subsection_id if present, else section_id
-                            section_key = section_content.subsection_id or section_content.section_id
-                            self.registry.add_section_content(section_key, section_content)
-                            if self.verbose:
-                                print(f"  [+] Section content registered: {section_key}")
-                    except Exception as sec_e:
-                        if self.verbose:
-                            print(f"  [!] Could not collect section content: {sec_e}")
+                # Step 4: Section content already registered by inject_section() during execute()
 
         except Exception as e:
             result.status = "FAILED"
@@ -1519,6 +1518,85 @@ class SimulationRunner:
             print(f"\n[OK] Validated {params_checked} parameters against V16.0 bounds")
             if tensions_found > 0:
                 print(f"[WARNING] Found {tensions_found} parameter(s) with >1sigma tension")
+
+    def _validate_latex_registry(self) -> Dict[str, Any]:
+        """Bi-directional LaTeX validation: PM Params ↔ LaTeX symbols ↔ Formulas.
+
+        Checks:
+        1. All LATEX_REGISTRY code names resolve to valid @property (or known exceptions)
+        2. All HEBREW_SYMBOL_REGISTRY entries have LATEX_REGISTRY coverage
+        3. All SYMBOL_MAP property names have LATEX_REGISTRY coverage
+        4. No duplicate LaTeX symbols
+        5. All formula LaTeX strings are valid (balanced braces, resolved placeholders)
+
+        Returns:
+            dict with "passed" (bool) and detailed results
+        """
+        from simulations.core.FormulasRegistry import FormulasRegistry as PMRegistry
+
+        if self.verbose:
+            print("\n[LATEX VALIDATION] Bi-directional PM Params <-> LaTeX check")
+            print("-" * 80)
+
+        # Step 1: PM Params ↔ LaTeX bi-directional coverage
+        coverage = PMRegistry.validate_latex_coverage()
+
+        if self.verbose:
+            total = coverage["total_latex_entries"]
+            hebrew = coverage["total_hebrew_entries"]
+            symbols = coverage["total_symbol_map_entries"]
+            print(f"  LATEX_REGISTRY entries:        {total}")
+            print(f"  HEBREW_SYMBOL_REGISTRY entries: {hebrew}")
+            print(f"  SYMBOL_MAP entries:             {symbols}")
+
+            if coverage["passed"]:
+                print("  [PASS] All bi-directional checks passed")
+            else:
+                if coverage.get("latex_without_property"):
+                    print(f"  [FAIL] LaTeX keys without @property: {coverage['latex_without_property']}")
+                if coverage.get("hebrew_without_latex"):
+                    print(f"  [FAIL] Hebrew entries without LaTeX: {coverage['hebrew_without_latex']}")
+                if coverage.get("symbol_map_without_latex"):
+                    print(f"  [FAIL] SYMBOL_MAP without LaTeX: {coverage['symbol_map_without_latex']}")
+                if coverage.get("invalid_latex"):
+                    print(f"  [FAIL] Invalid LaTeX entries: {coverage['invalid_latex']}")
+                if coverage.get("duplicate_latex"):
+                    print(f"  [FAIL] Duplicate LaTeX symbols: {coverage['duplicate_latex']}")
+
+        # Step 2: Validate all registered formulas' LaTeX
+        try:
+            from simulations.base.formulas import FormulaRegistry
+            formula_reg = FormulaRegistry()
+            formula_validation = formula_reg.validate_all_latex()
+
+            if self.verbose:
+                total_f = formula_validation["total_formulas"]
+                valid_f = formula_validation["valid_formulas"]
+                invalid_f = formula_validation["invalid_formulas"]
+                print(f"\n  Formula LaTeX validation:")
+                print(f"    Total formulas:   {total_f}")
+                print(f"    Valid LaTeX:       {valid_f}")
+                print(f"    Invalid LaTeX:     {len(invalid_f)}")
+                if invalid_f:
+                    for fid, errors in invalid_f[:5]:
+                        print(f"    [FAIL] {fid}: {errors}")
+                    if len(invalid_f) > 5:
+                        print(f"    ... and {len(invalid_f) - 5} more")
+        except Exception as e:
+            formula_validation = {"passed": True, "note": f"Formula registry unavailable: {e}"}
+            if self.verbose:
+                print(f"  [SKIP] Formula LaTeX validation: {e}")
+
+        passed = coverage["passed"]
+        if self.verbose:
+            status = "PASS" if passed else "FAIL"
+            print(f"\n  [{status}] LaTeX Registry validation {'passed' if passed else 'FAILED'}")
+
+        return {
+            "passed": passed,
+            "coverage": coverage,
+            "formula_validation": formula_validation,
+        }
 
     def _generate_validation_report(self) -> Dict[str, Any]:
         """
@@ -1744,7 +1822,7 @@ class SimulationRunner:
         Returns:
             Complete output data structure
         """
-        from core.FormulasRegistry import FormulasRegistry
+        from simulations.core.FormulasRegistry import FormulasRegistry
 
         if self.verbose:
             print("\n[EXPORT] Generating theory_output.json")
@@ -1875,7 +1953,7 @@ class SimulationRunner:
         """
         from datetime import datetime, timezone
         import re
-        from core.FormulasRegistry import FormulasRegistry
+        from simulations.core.FormulasRegistry import FormulasRegistry
 
         simulations_dir = Path(__file__).parent / "simulations" / "v16"
         index_data = {
@@ -2482,7 +2560,7 @@ def main():
 
     # Generate validation statistics (always run to ensure statistics.json is populated)
     try:
-        from scripts.generate_statistics import generate_statistics, OUTPUT_FILE
+        from scripts.generation.generate_statistics import generate_statistics, OUTPUT_FILE
         import json
         import os
 

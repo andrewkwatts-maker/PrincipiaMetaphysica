@@ -103,11 +103,11 @@ def initialize_framework(verbose: bool = True) -> PMRegistry:
         print("-" * 70)
 
         key_params = [
-            "geometry.b3",
+            "geometry.elder_kads",
             "geometry.n_generations",
             "geometry.k_gimel",
             "geometry.alpha_gut",
-            "topology.chi_eff",
+            "topology.mephorash_chi",
         ]
 
         for param_path in key_params:

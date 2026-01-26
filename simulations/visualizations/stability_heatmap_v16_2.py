@@ -31,7 +31,7 @@ import sys
 
 # Add project root for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from core.FormulasRegistry import get_registry
+from simulations.core.FormulasRegistry import get_registry
 
 # Get registry SSoT
 _REG = get_registry()
@@ -73,13 +73,13 @@ class StabilityHeatmapGenerator:
         """
         self.b2_range = b2_range
         self.b3_range = b3_range
-        self.chi_eff = chi_eff if chi_eff is not None else _REG.mephorash_chi  # 144 from SSoT
+        self.mephorash_chi = chi_eff if chi_eff is not None else _REG.mephorash_chi  # 144 from SSoT
         self.n_gen = n_gen
 
     def compute_theta_13(self, b2: int, b3: int, orientation_sum: int = 12) -> float:
         """Compute theta_13 from (1,3) cycle intersection geometry."""
         base_factor = np.sqrt(b2 * self.n_gen) / b3
-        orientation_correction = 1 + orientation_sum / (2 * self.chi_eff)
+        orientation_correction = 1 + orientation_sum / (2 * self.mephorash_chi)
         sin_theta_13 = base_factor * orientation_correction
         sin_theta_13 = np.clip(sin_theta_13, -1, 1)
         return np.degrees(np.arcsin(sin_theta_13))
@@ -87,7 +87,7 @@ class StabilityHeatmapGenerator:
     def compute_theta_12(self, b2: int, b3: int) -> float:
         """Compute theta_12 from topology."""
         base_sin = 1.0 / np.sqrt(3)
-        perturbation = (b3 - b2 * self.n_gen) / (2 * self.chi_eff)
+        perturbation = (b3 - b2 * self.n_gen) / (2 * self.mephorash_chi)
         sin_theta_12 = base_sin * (1 - perturbation)
         sin_theta_12 = np.clip(sin_theta_12, -1, 1)
         return np.degrees(np.arcsin(sin_theta_12))
@@ -96,7 +96,7 @@ class StabilityHeatmapGenerator:
         """Compute theta_23 from topology."""
         base_angle = 45.0
         kahler_correction = (b2 - self.n_gen) * self.n_gen / b2
-        flux_shift = (orientation_sum / b3) * (b2 * self.chi_eff) / (b3 * self.n_gen)
+        flux_shift = (orientation_sum / b3) * (b2 * self.mephorash_chi) / (b3 * self.n_gen)
         return base_angle + kahler_correction + flux_shift
 
     def compute_delta_cp(self, b2: int, b3: int) -> float:
@@ -109,7 +109,7 @@ class StabilityHeatmapGenerator:
 
     def compute_mass_sum(self, b2: int, b3: int) -> float:
         """Compute neutrino mass sum from topology."""
-        k_gimel = self.chi_eff / (b2 * b3)
+        k_gimel = self.mephorash_chi / (b2 * b3)
         c_kaf = b3 / (b2 * self.n_gen)
         m_base = 0.049  # eV
         m2 = m_base * (1 + k_gimel / 1000)
@@ -120,7 +120,7 @@ class StabilityHeatmapGenerator:
 
     def compute_dm_ratio(self, b2: int, b3: int, T_ratio: float = 0.57) -> float:
         """Compute dark matter ratio from topology."""
-        chi_correction = 1 + self.chi_eff / (b3**2)
+        chi_correction = 1 + self.mephorash_chi / (b3**2)
         return (1/T_ratio)**3 / chi_correction
 
     def compute_sigma(self, predicted: float, target: Dict[str, float]) -> float:
@@ -204,7 +204,7 @@ class StabilityHeatmapGenerator:
                 "sigma_total": self.compute_total_deviation(4, 24)["sigma_total"],
             },
             "metadata": {
-                "chi_eff": self.chi_eff,
+                "chi_eff": self.mephorash_chi,
                 "n_gen": self.n_gen,
                 "targets": self.TARGETS,
             }
@@ -370,7 +370,7 @@ class StabilityHeatmapGenerator:
         report.append("=" * 70)
         report.append("")
         report.append(f"Parameter scan: b2 in {self.b2_range}, b3 in {self.b3_range}")
-        report.append(f"Fixed: chi_eff = {self.chi_eff}, n_gen = {self.n_gen}")
+        report.append(f"Fixed: chi_eff = {self.mephorash_chi}, n_gen = {self.n_gen}")
         report.append("")
         report.append("-" * 70)
         report.append("GLOBAL MINIMUM:")

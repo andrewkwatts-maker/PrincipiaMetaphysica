@@ -66,6 +66,33 @@ class FormulaMetadata:
     simulation_file: str = ""
     references: List[str] = field(default_factory=list)
 
+    def render_latex(self) -> str:
+        """Render LaTeX with <<param_name>> placeholders substituted from PM Params registry.
+
+        Uses FormulasRegistry.render_formula() to substitute code names with
+        canonical LaTeX symbols. Formulas without placeholders pass through unchanged.
+
+        Returns:
+            LaTeX string with all <<param_name>> resolved to symbols.
+
+        Raises:
+            KeyError: If any <<param_name>> is not in LATEX_REGISTRY.
+        """
+        from simulations.core.FormulasRegistry import FormulasRegistry
+        return FormulasRegistry.render_formula(self.latex)
+
+    def validate_latex(self) -> Dict[str, Any]:
+        """Validate this formula's LaTeX for syntax and PM Param references.
+
+        Checks: non-empty, balanced braces, all <<param_name>> placeholders
+        resolve to valid LATEX_REGISTRY entries.
+
+        Returns:
+            dict with "valid" (bool) and "errors" (list of str).
+        """
+        from simulations.core.FormulasRegistry import FormulasRegistry
+        return FormulasRegistry.validate_formula_latex(self.latex)
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
         return {
@@ -342,6 +369,59 @@ class FormulaRegistry:
             'validated': validated_count,
             'unvalidated': len(self.formulas) - validated_count,
         }
+
+    def validate_all_latex(self) -> Dict[str, Any]:
+        """Validate LaTeX for all registered formulas.
+
+        Checks every formula's LaTeX for:
+        - Non-empty content
+        - Balanced braces
+        - Valid <<param_name>> placeholders (resolve in LATEX_REGISTRY)
+
+        Also validates that all PM Param code names in LATEX_REGISTRY
+        produce valid LaTeX (bi-directional check).
+
+        Returns:
+            dict with:
+              - "passed": bool (True if all checks pass)
+              - "total_formulas": int
+              - "valid_formulas": int
+              - "invalid_formulas": list of (formula_id, errors)
+              - "latex_coverage": dict from validate_latex_coverage()
+        """
+        from simulations.core.FormulasRegistry import FormulasRegistry as PMRegistry
+
+        invalid = []
+        valid_count = 0
+        for formula_id, formula in self.formulas.items():
+            result = formula.validate_latex()
+            if result["valid"]:
+                valid_count += 1
+            else:
+                invalid.append((formula_id, result["errors"]))
+
+        # Bi-directional PM Params ↔ LaTeX coverage check
+        coverage = PMRegistry.validate_latex_coverage()
+
+        passed = len(invalid) == 0 and coverage["passed"]
+        return {
+            "passed": passed,
+            "total_formulas": len(self.formulas),
+            "valid_formulas": valid_count,
+            "invalid_formulas": invalid,
+            "latex_coverage": coverage,
+        }
+
+    def render_all_latex(self) -> Dict[str, str]:
+        """Render LaTeX for all formulas, substituting PM Param placeholders.
+
+        Returns:
+            dict mapping formula_id to rendered LaTeX string.
+
+        Raises:
+            KeyError: If any formula contains an unresolvable <<param_name>>.
+        """
+        return {fid: f.render_latex() for fid, f in self.formulas.items()}
 
     def export_to_json(self, output_path: str) -> None:
         """Export registry to JSON file."""

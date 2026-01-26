@@ -21,7 +21,7 @@ from typing import Dict, Any
 
 # Import SSOT dimensional params (v20.3)
 try:
-    from core.FormulasRegistry import FormulasRegistry
+    from simulations.core.FormulasRegistry import FormulasRegistry
     _SSOT = FormulasRegistry()
     # 5-level dimensional chain from SSOT
     D_ANCESTRAL_TOTAL = _SSOT.D_ancestral_total   # 26
@@ -51,17 +51,17 @@ class GeometricAnchors:
     """
 
     def __init__(self, b3: int = 24):
-        self.b3 = b3
+        self.elder_kads = b3
 
     @property
     def k_gimel(self) -> float:
         """Warp factor: Geometry (b₃/2) + Transcendental (1/π)"""
-        return (self.b3 / 2.0) + (1.0 / np.pi)  # ≈ 12.318
+        return (self.elder_kads / 2.0) + (1.0 / np.pi)  # ≈ 12.318
 
     @property
     def c_kaf(self) -> float:
         """Flux constraint from G₂ intersection matrix"""
-        return self.b3 * (self.b3 - 7) / (self.b3 - 9)  # = 27.2
+        return self.elder_kads * (self.elder_kads - 7) / (self.elder_kads - 9)  # = 27.2
 
     @property
     def f_heh(self) -> float:
@@ -77,10 +77,10 @@ class GeometricAnchors:
     @property
     def delta_lamed(self) -> float:
         """Threshold correction: Logarithmic loop refinement"""
-        return np.log(self.k_gimel) / (2 * np.pi / self.b3)  # ≈ 1.2
+        return np.log(self.k_gimel) / (2 * np.pi / self.elder_kads)  # ≈ 1.2
 
     @property
-    def chi_eff(self) -> int:
+    def mephorash_chi(self) -> int:
         """
         Effective Euler characteristic from TCS construction.
 
@@ -93,7 +93,12 @@ class GeometricAnchors:
         - n_gen = chi_eff/24 = 72/24 = 3
         - n_gen = chi_eff_total/48 = 144/48 = 3
         """
-        return 6 * self.b3  # = 144 (chi_eff_total for backward compatibility)
+        return 6 * self.elder_kads  # = 144 (chi_eff_total for backward compatibility)
+
+    @property
+    def chi_eff(self) -> int:
+        """Alias for backward compatibility."""
+        return self.mephorash_chi
 
     @property
     def chi_eff_total(self) -> int:
@@ -101,7 +106,7 @@ class GeometricAnchors:
         Total manifold Euler characteristic (v20.6).
         chi_eff_total = 2 * chi_eff_sector = 6 * b3 = 144
         """
-        return 6 * self.b3  # = 144
+        return 6 * self.elder_kads  # = 144
 
     @property
     def chi_eff_sector(self) -> int:
@@ -109,15 +114,20 @@ class GeometricAnchors:
         Per-sector Euler characteristic (v20.6).
         chi_eff_sector = chi_eff_total / 2 = 72
         """
-        return 3 * self.b3  # = 72
+        return 3 * self.elder_kads  # = 72
+
+    @property
+    def nitzotzin_roots(self) -> int:
+        """
+        Total roots from E8xE8 = 288 (v20.6).
+        nitzotzin_roots = b3 * D_shadow_space = 24 * 12 = 288
+        """
+        return self.elder_kads * D_SHADOW_SPACE  # 24 * 12 = 288
 
     @property
     def roots_total(self) -> int:
-        """
-        Total roots from E8xE8 = 288 (v20.6).
-        roots_total = b3 * D_shadow_space = 24 * 12 = 288
-        """
-        return self.b3 * D_SHADOW_SPACE  # 24 * 12 = 288
+        """Alias for backward compatibility."""
+        return self.nitzotzin_roots
 
     @property
     def roots_per_sector(self) -> int:
@@ -125,7 +135,7 @@ class GeometricAnchors:
         Roots per sector = roots_total/2 = 144 (v20.6).
         Connection: chi_eff_total = roots_per_sector = 144
         """
-        return self.roots_total // 2  # 288/2 = 144
+        return self.nitzotzin_roots // 2  # 288/2 = 144
 
     # =========================================================================
     # Hodge Numbers for TCS #187 (Selected Topology)
@@ -151,12 +161,12 @@ class GeometricAnchors:
     @property
     def n_generations(self) -> int:
         """Number of fermion generations"""
-        return self.b3 // 8  # = 3
+        return self.elder_kads // 8  # = 3
 
     @property
     def alpha_gut_inv(self) -> float:
         """GUT coupling inverse from b₃"""
-        return self.b3 + 0.3  # ≈ 24.3
+        return self.elder_kads + 0.3  # ≈ 24.3
 
     @property
     def alpha_gut(self) -> float:
@@ -176,7 +186,7 @@ class GeometricAnchors:
         This small correction (~0.17%) is required for consistency with
         the ghost cancellation: c = 24 + 2 - 26 = 0
         """
-        return 1.0 - 1.0 / (self.b3 ** 2)  # ≈ 0.998264
+        return 1.0 - 1.0 / (self.elder_kads ** 2)  # ≈ 0.998264
 
     @property
     def g_newton_corrected(self) -> float:
@@ -194,7 +204,7 @@ class GeometricAnchors:
     @property
     def k_matching(self) -> int:
         """TCS matching number"""
-        return self.b3 // 6  # = 4
+        return self.elder_kads // 6  # = 4
 
     @property
     def pneuma_amplitude(self) -> float:
@@ -216,7 +226,7 @@ class GeometricAnchors:
 
         Note: Old DESI DR2 Lambda-CDM value was -0.728.
         """
-        return -1.0 + 1.0/self.b3  # -23/24 ≈ -0.9583
+        return -1.0 + 1.0/self.elder_kads  # -23/24 ≈ -0.9583
 
     @property
     def s8_viscosity_scale(self) -> float:
@@ -343,7 +353,7 @@ class GeometricAnchors:
 
         Geometric: m_KK = M_Pl / (b3 * k_gimel^2) ~ 4.1 TeV
         """
-        return self.m_planck_4d / (self.b3 * self.k_gimel**2)  # ~ 4.1 TeV
+        return self.m_planck_4d / (self.elder_kads * self.k_gimel**2)  # ~ 4.1 TeV
 
     @property
     def m_KK_central(self) -> float:
@@ -390,9 +400,9 @@ class GeometricAnchors:
         With Leech lattice enhancement: 0.685
         """
         # Geometric bare value
-        bare = (self.D_shadow / self.D_bulk) * (1 + 1/self.b3)
+        bare = (self.D_shadow / self.D_bulk) * (1 + 1/self.elder_kads)
         # Leech lattice enhancement factor from 24-cycle
-        leech_factor = np.sqrt(self.b3 / (2 * np.pi))  # ≈ 1.95
+        leech_factor = np.sqrt(self.elder_kads / (2 * np.pi))  # ≈ 1.95
         return min(bare * leech_factor, 0.7)  # Cap at physical limit
 
     @property
@@ -413,7 +423,7 @@ class GeometricAnchors:
 
         Physical: Baryons are 1/(5n+1) of total for n=b₃ cycles.
         """
-        return self.b3 / (5 * self.b3 + 1)  # ≈ 0.0496
+        return self.elder_kads / (5 * self.elder_kads + 1)  # ≈ 0.0496
 
     @property
     def Omega_DM(self) -> float:
@@ -535,7 +545,7 @@ class GeometricAnchors:
 
         Used in Ricci flow evolution of the G2 manifold.
         """
-        return 2 * np.pi * self.k_gimel / (self.b3 - 1)  # ≈ 3.36
+        return 2 * np.pi * self.k_gimel / (self.elder_kads - 1)  # ≈ 3.36
         # Note: This gives ~3.36, but the phenomenological value is ~2.7
 
     @property
@@ -552,7 +562,7 @@ class GeometricAnchors:
 
         Controls Starobinsky-type corrections in early universe.
         """
-        denominator = (self.b3 * self.k_gimel) ** 2
+        denominator = (self.elder_kads * self.k_gimel) ** 2
         return 1 / denominator  # ≈ 1.1e-5 (too small)
         # Phenomenological value: 0.0045
 
@@ -574,7 +584,7 @@ class GeometricAnchors:
 
         Geometric: λ = k_gimel / (b₃ × φ × √2)
         """
-        return self.k_gimel / (self.b3 * self.phi * np.sqrt(2))  # ≈ 0.225
+        return self.k_gimel / (self.elder_kads * self.phi * np.sqrt(2))  # ≈ 0.225
 
     @property
     def V_cb(self) -> float:
@@ -711,7 +721,7 @@ class GeometricAnchors:
 
         Controls scalar polarization in GW signal.
         """
-        return self.phi / self.b3 * 0.1  # ≈ 0.0067
+        return self.phi / self.elder_kads * 0.1  # ≈ 0.0067
 
     @property
     def k_LISA_typical(self) -> float:
@@ -751,7 +761,7 @@ class GeometricAnchors:
 
         From dS conjecture: |∇V| > λ × V / M_Pl
         """
-        return 1 / np.sqrt(self.b3)  # ≈ 0.204
+        return 1 / np.sqrt(self.elder_kads)  # ≈ 0.204
 
     @property
     def landscape_entropy(self) -> float:
@@ -763,7 +773,7 @@ class GeometricAnchors:
         Number of distinct G2 compactifications.
         """
         from math import factorial, log
-        return self.b3 * log(factorial(self.b3))  # ≈ 1300
+        return self.elder_kads * log(factorial(self.elder_kads))  # ≈ 1300
 
     # =========================================================================
     # EXPERIMENTAL REFERENCE VALUES (for comparison)
@@ -850,7 +860,7 @@ class GeometricAnchors:
         as observation for future investigation.
         """
         # Pure geometric formula - no correction terms
-        return self.k_gimel**2 - self.b3/self.phi + self.phi/(4*np.pi)
+        return self.k_gimel**2 - self.elder_kads/self.phi + self.phi/(4*np.pi)
 
     @property
     def alpha_s(self) -> float:
@@ -863,9 +873,9 @@ class GeometricAnchors:
 
         Physical interpretation: Lattice friction from 24 associative 3-cycles.
         """
-        denominator = self.b3 * (np.pi + 1) + self.k_gimel / 2
+        denominator = self.elder_kads * (np.pi + 1) + self.k_gimel / 2
         alpha_s_base = self.k_gimel / denominator
-        lattice_correction = 1 + 1 / (self.b3 * np.pi)  # ~1.0133
+        lattice_correction = 1 + 1 / (self.elder_kads * np.pi)  # ~1.0133
         return alpha_s_base * lattice_correction  # ≈ 0.1182
 
     @property
@@ -890,7 +900,7 @@ class GeometricAnchors:
         The Higgs VEV emerges from the Gimel constant scaled by the
         20 non-trivial cycles of the G2 manifold.
         """
-        return self.k_gimel * (self.b3 - 4)  # ≈ 246.37 GeV
+        return self.k_gimel * (self.elder_kads - 4)  # ≈ 246.37 GeV
 
     @property
     def m_planck_4d(self) -> float:
@@ -926,7 +936,7 @@ class GeometricAnchors:
         """
         euler_gamma = 0.57721566  # Euler-Mascheroni constant
         base_ratio = (self.c_kaf ** 2) * (self.k_gimel / np.pi)
-        holonomy_correction = 1.5427971665 * (1 + (euler_gamma / self.b3))
+        holonomy_correction = 1.5427971665 * (1 + (euler_gamma / self.elder_kads))
         return base_ratio / holonomy_correction  # ≈ 1836.15
 
     @property
@@ -1020,7 +1030,7 @@ class GeometricAnchors:
         Planck 2018: n_s = 0.9649 ± 0.0042
         """
         # N_eff = chi_eff / phi^2 = 144 / 2.618 ≈ 55
-        N_eff = self.chi_eff / (self.phi ** 2)
+        N_eff = self.mephorash_chi / (self.phi ** 2)
         return 1 - 2 / N_eff  # ≈ 0.9636
 
     @property
@@ -1038,7 +1048,7 @@ class GeometricAnchors:
         DESI 2025: Σmν = 0.072 ± 0.02 eV
         PM v16.2:  Σmν = 0.082 eV (0.5σ agreement)
         """
-        return self.k_gimel / (2 * np.pi * self.b3)  # ≈ 0.0817 eV
+        return self.k_gimel / (2 * np.pi * self.elder_kads)  # ≈ 0.0817 eV
 
     @property
     def wa(self) -> float:
@@ -1050,7 +1060,7 @@ class GeometricAnchors:
 
         DESI 2025: wa = -0.99 ± 0.33 (thawing quintessence)
         """
-        wa_linear = -1.0 / np.sqrt(self.b3)  # -0.204
+        wa_linear = -1.0 / np.sqrt(self.elder_kads)  # -0.204
         dim_psi = 4  # Co-associative 4-form dimension
         return wa_linear * dim_psi  # -0.816
 
@@ -1080,7 +1090,7 @@ class GeometricAnchors:
 
         See: docs/Updates/V22_HIGH_SIGMA_ANALYSIS.md for full analysis.
         """
-        return (self.k_gimel / self.b3) * self.phi  # = 0.8305 from pure geometry
+        return (self.k_gimel / self.elder_kads) * self.phi  # = 0.8305 from pure geometry
 
     @property
     def S8(self) -> float:
@@ -1093,7 +1103,7 @@ class GeometricAnchors:
         """
         Omega_m = 0.315  # Planck 2018
         S8_base = self.sigma8 * np.sqrt(Omega_m / 0.3)  # ≈ 0.847
-        leech_suppression = 1 - 1 / (2 * self.b3)  # = 0.9792
+        leech_suppression = 1 - 1 / (2 * self.elder_kads)  # = 0.9792
         return S8_base * leech_suppression  # ≈ 0.829
 
     @property
@@ -1113,7 +1123,7 @@ class GeometricAnchors:
         Planck 2018 BBN: η = 6.12e-10 ± 0.04e-10
         This formula: η ≈ 6.0e-10 (3.0σ from experiment - heuristic only)
         """
-        return self.b3 / (4.0 * 1e10)  # = 6.0e-10
+        return self.elder_kads / (4.0 * 1e10)  # = 6.0e-10
 
     @property
     def unity_seal(self) -> float:
@@ -1125,7 +1135,7 @@ class GeometricAnchors:
         The Unity Seal proves the framework is self-consistent.
         Should equal ~1.0.
         """
-        return self.k_gimel * self.phi / (self.b3 - 4)  # ≈ 0.997
+        return self.k_gimel * self.phi / (self.elder_kads - 4)  # ≈ 0.997
 
     def verify_stability(self) -> Dict[str, Any]:
         """
@@ -1133,7 +1143,7 @@ class GeometricAnchors:
         Identity: (C_kaf * b3) / k_gimel must remain within
         Stability Bound [52.9, 53.1] (Joyce-Stability bound)
         """
-        stability_ratio = (self.c_kaf * self.b3) / self.k_gimel
+        stability_ratio = (self.c_kaf * self.elder_kads) / self.k_gimel
         # 27.2 * 24 / 12.318 = 52.99
         is_stable = 52.9 < stability_ratio < 53.1
 
@@ -1160,8 +1170,8 @@ class GeometricAnchors:
         """Return all geometric anchors as dictionary."""
         return {
             # Core topology
-            "b3": self.b3,
-            "chi_eff": self.chi_eff,
+            "elder_kads": self.elder_kads,
+            "mephorash_chi": self.mephorash_chi,
             "n_generations": self.n_generations,
             "phi": self.phi,
 
@@ -1216,9 +1226,9 @@ class GeometricAnchors:
             "spinor_13d": self.spinor_13d,
             "flux_reduction": self.flux_reduction,
             # v20.6: Dual chi_eff and roots structure
-            "chi_eff_total": self.chi_eff_total,      # 144 (full manifold)
+            "chi_eff_total": self.mephorash_chi,      # 144 (full manifold)
             "chi_eff_sector": self.chi_eff_sector,    # 72 (per sector)
-            "roots_total": self.roots_total,          # 288
+            "roots_total": self.nitzotzin_roots,          # 288
             "roots_per_sector": self.roots_per_sector,  # 144
 
             # Kaluza-Klein Mass Scale (v16.2)
@@ -1388,7 +1398,7 @@ if __name__ == "__main__":
         print("-" * 60)
 
         # Show a few key parameters
-        key_params = ["geometry.b3", "geometry.k_gimel", "geometry.alpha_gut", "topology.chi_eff"]
+        key_params = ["geometry.elder_kads", "geometry.k_gimel", "geometry.alpha_gut", "topology.mephorash_chi"]
         for param_path in key_params:
             if registry.has_param(param_path):
                 entry = registry.get_entry(param_path)

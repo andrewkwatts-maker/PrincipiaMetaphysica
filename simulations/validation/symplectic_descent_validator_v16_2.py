@@ -131,7 +131,7 @@ class SymplecticDescentValidator(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
         return [
-            "topology.b3",
+            "topology.elder_kads",
         ]
 
     @property
@@ -186,7 +186,7 @@ class SymplecticDescentValidator(SimulationBase):
             Dictionary with proof results and verification status
         """
         # Get b3 from topology (for connection to TCS G2)
-        b3 = registry.get_param("topology.b3")
+        b3 = registry.get_param("topology.elder_kads")
 
         # =====================================================================
         # STAGE 1: Central Charge Calculation
@@ -711,7 +711,7 @@ class SymplecticDescentValidator(SimulationBase):
                 "symplectic.c_total",
                 "symplectic.is_unique",
                 "symplectic.ghost_free_verified",
-                "topology.b3",
+                "topology.elder_kads",
             ]
         )
 
@@ -1178,8 +1178,8 @@ def run_symplectic_descent_validation(verbose: bool = True) -> Dict[str, Any]:
         pass
 
     # Set topology parameters if not present
-    if not registry.has_param("topology.b3"):
-        registry.set_param("topology.b3", 24, source="established", status="ESTABLISHED")
+    if not registry.has_param("topology.elder_kads"):
+        registry.set_param("topology.elder_kads", 24, source="established", status="ESTABLISHED")
 
     # Create and execute validator
     validator = SymplecticDescentValidator()

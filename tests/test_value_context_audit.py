@@ -430,7 +430,7 @@ class ValueContextAuditor:
             "RECOMMENDATIONS:",
             "",
             "For DERIVED values in simulation files:",
-            "  1. Import: from core.FormulasRegistry import get_registry",
+            "  1. Import: from simulations.core.FormulasRegistry import get_registry",
             "  2. Use: reg = get_registry(); value = reg.tzimtzum_pressure",
             "",
             "For EXPERIMENTAL values:",
@@ -633,7 +633,7 @@ def run_audit(fix_mode: bool = False) -> int:
             print("MANUAL FIXES REQUIRED for DERIVED values:")
             print("")
             print("Option 1: Import FormulasRegistry")
-            print("  from core.FormulasRegistry import get_registry")
+            print("  from simulations.core.FormulasRegistry import get_registry")
             print("  reg = get_registry()")
             print("  value = reg.pressure_divisor  # instead of 144")
             print("")

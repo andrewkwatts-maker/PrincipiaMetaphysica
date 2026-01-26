@@ -120,8 +120,8 @@ __author__ = "Andrew Keith Watts"
 # Each pair is a consciousness gate: y_{1i}=input, y_{2i}=output
 # Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
 
-# Export v21 production framework
-from . import v21
+# Export v23 production framework
+from . import v23
 
 # Export key infrastructure modules
 from . import base
@@ -154,21 +154,21 @@ from .base import (
     inject_section,
 )
 
-# Try to import v21 simulations (optional)
+# Try to import v23 simulations (optional)
 try:
-    from .v21.gauge import GaugeUnificationSimulation
-    from .v21.higgs import HiggsMassSimulation
-    from .v21.proton import ProtonDecaySimulation
-    from .v21.neutrino import NeutrinoMixingSimulation
-    from .v21.fermion import FermionGenerationsV16 as FermionGenerationsSimulation
-    from .v21.cosmology import MultiSectorV16 as MultiSectorCosmologySimulation
-    from .v21.geometric import G2GeometryV16 as G2GeometrySimulation
-    from .v21.pneuma import PneumaMechanismV16 as PneumaMechanismSimulation
-    _V21_SIMULATIONS_AVAILABLE = True
+    from .v23.gauge.gauge_unification import GaugeUnificationSimulation
+    from .v23.particle.higgs_mass import HiggsMassSimulation
+    from .v23.particle.proton_decay import ProtonDecaySimulation
+    from .v23.particle.neutrino_mixing import NeutrinoMixingSimulation
+    from .v23.particle.fermion_generations import FermionGenerationsV16 as FermionGenerationsSimulation
+    from .v23.cosmology.multi_sector import MultiSectorV16 as MultiSectorCosmologySimulation
+    from .v23.geometry.g2_geometry import G2GeometryV16 as G2GeometrySimulation
+    from .v23.field_dynamics.pneuma_mechanism import PneumaMechanismV16 as PneumaMechanismSimulation
+    _V23_SIMULATIONS_AVAILABLE = True
 except ImportError as e:
-    _V21_SIMULATIONS_AVAILABLE = False
+    _V23_SIMULATIONS_AVAILABLE = False
     import warnings
-    warnings.warn(f"Some v21 simulations could not be imported: {e}")
+    warnings.warn(f"Some v23 simulations could not be imported: {e}")
 
 # Define public API
 __all__ = [
@@ -178,7 +178,7 @@ __all__ = [
     '__author__',
 
     # Modules
-    'v21',
+    'v23',
     'base',
     'validation',
 
@@ -201,8 +201,8 @@ __all__ = [
     'inject_section',
 ]
 
-# Add v21 simulations to __all__ if available
-if _V21_SIMULATIONS_AVAILABLE:
+# Add v23 simulations to __all__ if available
+if _V23_SIMULATIONS_AVAILABLE:
     __all__.extend([
         'GaugeUnificationSimulation',
         'HiggsMassSimulation',
@@ -234,7 +234,7 @@ def list_simulations():
         ("pneuma", "PneumaMechanismSimulation", "Pneuma field dynamics", "2"),
     ]
 
-    if not _V21_SIMULATIONS_AVAILABLE:
+    if not _V23_SIMULATIONS_AVAILABLE:
         warnings.warn("Some v21 simulations are not available")
 
     return simulations
@@ -286,33 +286,6 @@ def _warn_deprecated_import():
     )
 
 
-# Block imports from deprecated core modules
-class _DeprecatedModuleBlocker:
-    """
-    Blocks imports from deprecated core modules with helpful error messages.
-    """
-
-    def __getattr__(self, name):
-        if name == 'core':
-            _warn_deprecated_import()
-            raise ImportError(
-                f"Module 'simulations.core' has been deprecated. "
-                f"Legacy simulations (v12-v15) are archived in 'simulations/deprecated/core/'. "
-                f"Use 'simulations.v21' for all production code. "
-                f"See simulations/deprecated/README.md for details."
-            )
-        raise AttributeError(f"module 'simulations' has no attribute '{name}'")
-
-
-# Install the blocker
-import sys
-if 'simulations.core' in sys.modules:
-    warnings.warn(
-        "simulations.core module detected. This has been deprecated. "
-        "Update imports to use simulations.v21",
-        DeprecationWarning
-    )
-
-# Note: We don't install a full blocker on __getattr__ to avoid breaking
-# legitimate attribute access, but the warning system above should catch
-# most deprecated usage patterns.
+# simulations.core is a legitimate subpackage (FormulasRegistry, demon_lock_guard, etc.)
+# It was moved from root core/ during v23 consolidation.
+from . import core

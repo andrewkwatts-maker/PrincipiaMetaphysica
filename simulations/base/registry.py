@@ -19,7 +19,7 @@ import warnings
 
 # Import dependency resolver components
 try:
-    from core.dependency_resolver import (
+    from simulations.core.dependency_resolver import (
         DependencyGraph,
         DependencyResolver,
         CycleDetectedError,
@@ -84,9 +84,11 @@ class FormulaEntry:
     Attributes:
         formula: The Formula object
         timestamp: When the formula was added
+        source: The simulation file that registered this formula
     """
     formula: 'Formula'
     timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
+    source: str = ""
 
 
 @dataclass
@@ -472,8 +474,8 @@ class PMRegistry:
         Example:
             registry.register_dependency(
                 "cosmology.H0_geometric",
-                depends_on=["geometry.k_gimel", "seeds.chi_eff"],
-                compute_fn=lambda deps: 71.55 * (deps["geometry.k_gimel"] * deps["seeds.chi_eff"]) ** 0.1
+                depends_on=["geometry.k_gimel", "seeds.mephorash_chi"],
+                compute_fn=lambda deps: 71.55 * (deps["geometry.k_gimel"] * deps["seeds.mephorash_chi"]) ** 0.1
             )
         """
         if self._dependency_graph is None:
@@ -681,17 +683,18 @@ class PMRegistry:
     # Formula Management
     # -------------------------------------------------------------------------
 
-    def add_formula(self, formula: 'Formula') -> None:
+    def add_formula(self, formula: 'Formula', source: str = "") -> None:
         """
         Add a formula to the registry.
 
         Args:
             formula: Formula instance to add
+            source: Source simulation file identifier
         """
         if formula.id in self._formulas:
             warnings.warn(f"Overwriting formula {formula.id}")
 
-        self._formulas[formula.id] = FormulaEntry(formula=formula)
+        self._formulas[formula.id] = FormulaEntry(formula=formula, source=source)
 
     def get_formula(self, formula_id: str) -> Optional['Formula']:
         """
@@ -834,6 +837,15 @@ class PMRegistry:
             title = getattr(f, 'title', None)
             if not title and f.description:
                 title = f.description.split('.')[0].strip()[:80]
+
+            # Enrich derivation with source if missing
+            derivation = f.derivation
+            if derivation is None:
+                derivation = {}
+            if isinstance(derivation, dict) and not derivation.get('source') and entry.source:
+                derivation = dict(derivation)
+                derivation['source'] = entry.source
+
             result[formula_id] = {
                 'id': f.id,
                 'label': f.label,
@@ -844,8 +856,9 @@ class PMRegistry:
                 'title': title,
                 'input_params': f.input_params,
                 'output_params': f.output_params,
-                'derivation': f.derivation,
+                'derivation': derivation,
                 'terms': f.terms,
+                'source_simulation': entry.source,
                 'timestamp': entry.timestamp,
             }
         return result
@@ -907,7 +920,7 @@ class PMRegistry:
                 'appendix': s.appendix,  # Boolean: render at end of paper
                 'subsection_id': s.subsection_id,  # Appendix letter (A, B, C...)
                 'type': 'appendix' if s.appendix else 'section',  # For renderer compatibility
-                'section_type': s.section_type,  # Deprecated, kept for compatibility
+                'section_type': s.section_type or ('appendix' if s.appendix else 'section'),
                 'title': s.title,
                 'shortTitle': s.title,
                 'order': order,
