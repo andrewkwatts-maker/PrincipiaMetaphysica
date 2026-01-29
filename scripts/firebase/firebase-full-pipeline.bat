@@ -66,7 +66,7 @@ echo  STEP 1: Running Simulations
 echo ============================================================
 echo.
 
-python run_all_simulations.py
+python simulations/run_all_simulations.py
 
 if %ERRORLEVEL% neq 0 (
     echo.

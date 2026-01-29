@@ -6,7 +6,7 @@ REM
 REM Validates and pushes simulation updates to Firebase.
 REM
 REM BEFORE RUNNING:
-REM 1. Run simulations: python run_all_simulations.py
+REM 1. Run simulations: python simulations/run_all_simulations.py
 REM 2. Review theory_output.json
 REM
 REM This script will:
@@ -52,7 +52,7 @@ if not exist "theory_output.json" (
     echo ERROR: theory_output.json not found
     echo.
     echo Run simulations first:
-    echo   python run_all_simulations.py
+    echo   python simulations/run_all_simulations.py
     echo.
     pause
     exit /b 1

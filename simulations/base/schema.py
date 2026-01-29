@@ -180,6 +180,89 @@ class TypeDataEntry:
 
 
 @dataclass
+class CertificateEntry:
+    """A certificate assertion for simulation outputs (SSOT Rule 4)."""
+    id: str                       # e.g., "CERT_G2_RICCI_FLAT"
+    assertion: str                # What is being certified
+    condition: str                # Mathematical condition (evaluable expression)
+    tolerance: float = 0.0       # Numerical tolerance
+    status: str = "OFFLINE"      # "PASS", "FAIL", "OFFLINE"
+    wolfram_query: Optional[str] = None  # Wolfram Alpha query string
+    wolfram_result: Optional[str] = None  # Returned result or "OFFLINE"
+    sector: str = ""             # Domain category
+    simulation_source: str = ""  # Source simulation ID
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class ProofEntry:
+    """A mathematical proof (SSOT Rule for proofs)."""
+    id: str                       # e.g., "P_G2_RICCI_FLAT"
+    theorem: str                  # Statement of the theorem
+    steps: List[str] = field(default_factory=list)  # Proof steps
+    qed: str = ""                # QED conclusion statement
+    simulation_source: str = ""  # Source simulation ID
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class DiscoveryEntry:
+    """A discovery claim from simulation results."""
+    id: str                       # e.g., "D_ALPHA_GEOMETRIC"
+    claim: str                    # Discovery claim statement
+    evidence: str = ""           # Supporting evidence summary
+    significance: str = ""       # Scientific significance
+    simulation_source: str = ""  # Source simulation ID
+    confidence: str = "medium"   # "high", "medium", "speculative"
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class LearningMaterialEntry:
+    """An educational resource for AI validation (SSOT Rule 7)."""
+    topic: str                    # Physics concept
+    url: str                      # Link to resource
+    relevance: str = ""          # How this concept is used
+    validation_hint: str = ""    # What an AI reviewer should check
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class GateCheckEntry:
+    """A gate check result (SSOT Rule 9)."""
+    gate_id: str                  # Gate identifier
+    simulation_id: str            # Source simulation ID
+    assertion: str                # What the gate checks
+    result: str = "PASS"         # "PASS" or "FAIL"
+    timestamp: str = ""          # ISO timestamp
+    details: Dict[str, Any] = field(default_factory=dict)
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
+class SelfValidationEntry:
+    """Self-validation result (SSOT Rule 5)."""
+    name: str                     # Check description
+    passed: bool = True          # Pass/fail
+    confidence_interval: Dict[str, float] = field(default_factory=dict)  # lower, upper, sigma
+    log_level: str = "INFO"      # "DEBUG", "INFO", "WARNING", "ERROR"
+    message: str = ""            # Result message
+
+    def to_dict(self) -> Dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass
 class SimulationResult:
     """
     Comprehensive simulation result that must be returned by all v16 simulations.
@@ -214,6 +297,14 @@ class SimulationResult:
     # Raw computed values (for backwards compatibility)
     computedValues: Dict[str, Any] = field(default_factory=dict)
 
+    # SSOT extensions (Phase 3)
+    certificates: List[CertificateEntry] = field(default_factory=list)
+    proofs: List[ProofEntry] = field(default_factory=list)
+    discoveries: List[DiscoveryEntry] = field(default_factory=list)
+    learningMaterials: List[LearningMaterialEntry] = field(default_factory=list)
+    gateChecks: List[GateCheckEntry] = field(default_factory=list)
+    selfValidation: List[SelfValidationEntry] = field(default_factory=list)
+
     # Status
     success: bool = True
     errors: List[str] = field(default_factory=list)
@@ -238,6 +329,13 @@ class SimulationResult:
             "outputValidation": self.outputValidation,
             "typeData": [t.to_dict() if hasattr(t, 'to_dict') else t for t in self.typeData],
             "computedValues": self.computedValues,
+            # SSOT extensions
+            "certificates": [c.to_dict() if hasattr(c, 'to_dict') else c for c in self.certificates],
+            "proofs": [p.to_dict() if hasattr(p, 'to_dict') else p for p in self.proofs],
+            "discoveries": [d.to_dict() if hasattr(d, 'to_dict') else d for d in self.discoveries],
+            "learningMaterials": [m.to_dict() if hasattr(m, 'to_dict') else m for m in self.learningMaterials],
+            "gateChecks": [g.to_dict() if hasattr(g, 'to_dict') else g for g in self.gateChecks],
+            "selfValidation": [v.to_dict() if hasattr(v, 'to_dict') else v for v in self.selfValidation],
             "success": self.success,
             "errors": self.errors,
             "warnings": self.warnings,
