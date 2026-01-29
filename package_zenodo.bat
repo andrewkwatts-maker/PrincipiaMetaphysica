@@ -4,7 +4,7 @@ echo  PRINCIPIA METAPHYSICA - Package for Zenodo Submission
 echo ============================================================
 echo.
 echo Step 1: Running all simulations to ensure fresh output...
-python run_all_simulations.py --quiet
+python simulations/run_all_simulations.py --quiet
 if errorlevel 1 (
     echo ERROR: Simulations failed. Fix issues before packaging.
     pause

@@ -121,7 +121,7 @@ __author__ = "Andrew Keith Watts"
 # Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
 
 # Export v23 production framework
-from . import v23
+from . import PM
 
 # Export key infrastructure modules
 from . import base
@@ -154,16 +154,16 @@ from .base import (
     inject_section,
 )
 
-# Try to import v23 simulations (optional)
+# Try to import PM simulations (optional)
 try:
-    from .v23.gauge.gauge_unification import GaugeUnificationSimulation
-    from .v23.particle.higgs_mass import HiggsMassSimulation
-    from .v23.particle.proton_decay import ProtonDecaySimulation
-    from .v23.particle.neutrino_mixing import NeutrinoMixingSimulation
-    from .v23.particle.fermion_generations import FermionGenerationsV16 as FermionGenerationsSimulation
-    from .v23.cosmology.multi_sector import MultiSectorV16 as MultiSectorCosmologySimulation
-    from .v23.geometry.g2_geometry import G2GeometryV16 as G2GeometrySimulation
-    from .v23.field_dynamics.pneuma_mechanism import PneumaMechanismV16 as PneumaMechanismSimulation
+    from .PM.gauge.gauge_unification import GaugeUnificationSimulation
+    from .PM.particle.higgs_mass import HiggsMassSimulation
+    from .PM.particle.proton_decay import ProtonDecaySimulation
+    from .PM.particle.neutrino_mixing import NeutrinoMixingSimulation
+    from .PM.particle.fermion_generations import FermionGenerationsV16 as FermionGenerationsSimulation
+    from .PM.cosmology.multi_sector import MultiSectorV16 as MultiSectorCosmologySimulation
+    from .PM.geometry.g2_geometry import G2GeometryV16 as G2GeometrySimulation
+    from .PM.field_dynamics.pneuma_mechanism import PneumaMechanismV16 as PneumaMechanismSimulation
     _V23_SIMULATIONS_AVAILABLE = True
 except ImportError as e:
     _V23_SIMULATIONS_AVAILABLE = False

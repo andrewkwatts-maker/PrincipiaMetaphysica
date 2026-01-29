@@ -327,7 +327,7 @@ class FinalSigmaValidator(SimulationBase):
 
         # 1. Geometric Anchors (foundation)
         try:
-            from simulations.geometric_anchors_v16_1 import GeometricAnchors
+            from simulations.PM.geometry.geometric_anchors_core import GeometricAnchors
             anchors = GeometricAnchors(b3=24)
             anchor_data = anchors.get_all_anchors()
             for key, value in anchor_data.items():
@@ -353,7 +353,7 @@ class FinalSigmaValidator(SimulationBase):
 
         # 3. Neutrino Mixing
         try:
-            from simulations.v23.particle.neutrino_mixing import NeutrinoMixingV16 as NeutrinoMixingSimulation
+            from simulations.PM.particle.neutrino_mixing import NeutrinoMixingV16 as NeutrinoMixingSimulation
             self._setup_neutrino_topology(registry)
             sim = NeutrinoMixingSimulation()
             results = sim.execute(registry, verbose=False)

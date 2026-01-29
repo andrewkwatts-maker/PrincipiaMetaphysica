@@ -6,7 +6,7 @@ REM
 REM Complete build pipeline:
 REM   config.py (hand-coded foundations)
 REM       ↓
-REM   run_all_simulations.py (compute predictions)
+REM   simulations/run_all_simulations.py (compute predictions)
 REM       ↓
 REM   theory_output.json (simulation results)
 REM       ↓
@@ -29,7 +29,7 @@ echo   - proton_decay_rg_hybrid.py
 echo   - pmns_full_matrix.py
 echo   - wz_evolution_desi_dr2.py
 echo.
-python run_all_simulations.py
+python simulations/run_all_simulations.py
 
 if %ERRORLEVEL% NEQ 0 (
     echo.

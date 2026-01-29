@@ -254,7 +254,7 @@ INCLUDE_ROOT_FILES: List[str] = [
     'index.html',
     'serve.py',
     'Launch.bat',
-    'run_all_simulations.py',  # For full package
+    'simulations/run_all_simulations.py',  # For full package
 ]
 
 # ============================================================================
@@ -1126,7 +1126,7 @@ Examples:
         print("=" * 70)
         try:
             result = subprocess.run(
-                [sys.executable, str(SOURCE_DIR / "run_all_simulations.py")],
+                [sys.executable, str(SOURCE_DIR / "simulations" / "run_all_simulations.py")],
                 capture_output=True,
                 text=True,
                 encoding='utf-8',
