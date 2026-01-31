@@ -761,9 +761,12 @@ if SCHEMA_AVAILABLE:
                 domain="quantum_bio",
                 title="Rigorous Gravitational Self-Energy for Orch-OR",
                 description=(
-                    "Implements the full Diosi-Penrose gravitational self-energy "
-                    "calculation with G2 geometric enhancement. Derives collapse "
-                    "time tau = hbar/E_G and compares to neural gamma oscillations."
+                    "[SPECULATIVE EXTENSION] Implements the full Diosi-Penrose "
+                    "gravitational self-energy calculation with G2 geometric "
+                    "enhancement. This extends beyond the core geometric framework "
+                    "and should be considered an exploratory hypothesis. Derives "
+                    "collapse time tau = hbar/E_G and compares to neural gamma "
+                    "oscillations."
                 ),
                 section_id="7",
                 subsection_id="7.2"
@@ -904,6 +907,20 @@ if SCHEMA_AVAILABLE:
                     "neural-timescale collapse."
                 ),
                 content_blocks=[
+                    ContentBlock(
+                        type="callout",
+                        callout_type="warning",
+                        content=(
+                            "**SPECULATIVE EXTENSION:** The following gravitational "
+                            "self-energy derivation for Orch-OR extends beyond the "
+                            "core geometric framework and should be considered an "
+                            "exploratory hypothesis rather than a confirmed prediction "
+                            "of the theory. The quantum biology content herein is "
+                            "based on the Penrose-Hameroff Orch-OR model, which "
+                            "remains experimentally unverified. "
+                            "(Gemini peer review, Topic 12, score 6/10.)"
+                        )
+                    ),
                     ContentBlock(
                         type="callout",
                         title="Frontier Physics",

@@ -444,10 +444,28 @@ class GeometricAnchorsSimulation(SimulationBase):
                     content=(
                         "The Hodge number h^{1,1} = 4 of TCS #187 corresponds to four independent "
                         "Kahler moduli, interpreted as four geometric 'faces' per shadow in the "
-                        "dual-shadow architecture. Each face controls a distinct sector of the "
-                        "compactified geometry, with inter-face leakage coupling "
-                        "alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.408. See four_face_g2_structure "
-                        "simulation for detailed analysis."
+                        "dual-shadow architecture. In the TCS (Twisted Connected Sum) construction, "
+                        "h^{1,1} = b2 counts the independent 2-cycles arising from the K3 matching "
+                        "fibres of the Kovalev gluing. Each 2-cycle controls a distinct K3 fibre, and "
+                        "the corresponding Kahler modulus T_i determines the volume of that cycle. "
+                        "The four faces are not an arbitrary decomposition but a direct consequence "
+                        "of the TCS topology: each face corresponds to a K3 matching fibre sector "
+                        "with its own racetrack-stabilized VEV."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The inter-face leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) "
+                        "= 0.408 quantifies the geometric probability of wavefunction overlap between "
+                        "distinct face sectors. The ratio chi_eff/b3 = 144/24 = 6 counts the average "
+                        "number of associative 3-cycles per Kahler modulus sector; its inverse square "
+                        "root gives the tunneling amplitude. The torsional leakage mechanism "
+                        "T_leak = alpha_leak * Psi_bridge (where Psi_bridge = k_gimel/b3) formalizes "
+                        "how the G2 torsion tensor mediates cross-face field propagation. "
+                        "See the four_face_g2_structure simulation (Section 2.7) for the complete "
+                        "derivation of racetrack-stabilized moduli VEVs, shadow asymmetry, and "
+                        "face-dependent KK mass spectrum."
                     )
                 ),
             ],
@@ -765,10 +783,12 @@ class GeometricAnchorsSimulation(SimulationBase):
         Return academic references for geometric anchor derivations.
 
         Returns:
-            List of reference dictionaries with real academic citations
+            List of reference dictionaries with key, title, authors, year,
+            url/doi fields as required by SSOT compliance.
         """
         return [
             {
+                "key": "joyce2000",
                 "id": "joyce2000",
                 "authors": "Joyce, D.D.",
                 "title": "Compact Manifolds with Special Holonomy",
@@ -776,9 +796,11 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "type": "book",
                 "publisher": "Oxford University Press",
                 "url": "https://global.oup.com/academic/product/compact-manifolds-with-special-holonomy-9780198506010",
+                "doi": "10.1093/oso/9780198506010.001.0001",
                 "relevance": "Foundation for G2 holonomy geometry from which the Betti number b3=24 originates"
             },
             {
+                "key": "kovalev2003",
                 "id": "kovalev2003",
                 "authors": "Kovalev, A.",
                 "title": "Twisted connected sums and special Riemannian holonomy",
@@ -791,6 +813,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "relevance": "TCS construction theorem yielding compact G2 manifolds with controlled Betti numbers"
             },
             {
+                "key": "chnp2015",
                 "id": "chnp2015",
                 "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
                 "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
@@ -802,9 +825,15 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "type": "article",
                 "arxiv": "1207.3200",
                 "url": "https://arxiv.org/abs/1207.3200",
-                "relevance": "Classification of TCS G2 manifolds; source of TCS #187 with b2=4, b3=24"
+                "doi": "10.1215/00127094-3120743",
+                "relevance": (
+                    "Classification of TCS G2 manifolds; source of TCS #187 with b2=4, b3=24. "
+                    "The h^{1,1} = b2 = 4 Kahler moduli yield the four-face sub-sector structure "
+                    "(see four_face_g2_structure simulation, Section 2.7)"
+                )
             },
             {
+                "key": "planck2018",
                 "id": "planck2018",
                 "authors": "Planck Collaboration",
                 "title": "Planck 2018 results. VI. Cosmological parameters",
@@ -818,6 +847,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "relevance": "Experimental measurement of n_s = 0.9649 +/- 0.0042 for spectral index validation"
             },
             {
+                "key": "desi2025",
                 "id": "desi2025",
                 "authors": "DESI Collaboration",
                 "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
@@ -829,6 +859,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "relevance": "Experimental constraint w0 = -0.957 +/- 0.067 for dark energy equation of state validation"
             },
             {
+                "key": "codata2022",
                 "id": "codata2022",
                 "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
                 "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
@@ -837,6 +868,22 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "type": "article",
                 "url": "https://physics.nist.gov/cuu/Constants/",
                 "relevance": "Source of alpha^-1 = 137.035999177, M_Pl, and mu_pe experimental values"
+            },
+            {
+                "key": "pm_four_face",
+                "id": "pm_four_face",
+                "authors": "Watts, A.K.",
+                "title": "Four-Face G2 Sub-Sector Structure (PM v23.7)",
+                "year": 2026,
+                "type": "internal",
+                "url": "simulations/PM/geometry/four_face_structure.py",
+                "relevance": (
+                    "Cross-reference: The h^{1,1} = 4 Kahler moduli from geometric "
+                    "anchors are developed into the four-face sub-sector structure in "
+                    "this companion simulation, deriving inter-face leakage coupling "
+                    "alpha_leak = 1/sqrt(6), racetrack-stabilized moduli VEVs, "
+                    "shadow asymmetry, and the torsional leakage mechanism"
+                )
             },
         ]
 

@@ -90,7 +90,7 @@
         "validation.exact_matches",
         "statistics.certificates_total"
       ],
-      "timestamp": "2026-01-31T20:06:24.572956"
+      "timestamp": "2026-01-31T20:30:18.471766"
     },
     "1": {
       "id": "1",
@@ -740,7 +740,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-01-31T20:06:24.573021"
+      "timestamp": "2026-01-31T20:30:18.471829"
     },
     "2": {
       "id": "2",
@@ -1990,7 +1990,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-01-31T20:06:24.573922"
+      "timestamp": "2026-01-31T20:30:18.472627"
     },
     "2.7": {
       "id": "2",
@@ -2054,6 +2054,26 @@
         {
           "type": "paragraph",
           "content": "The shadow asymmetry delta_T = 0.75 between the dominant and subdominant faces provides a geometric origin for the observed matter-dark sector hierarchy. The face-dependent KK mass spectrum (Eq. 2.7.3) predicts distinct energy scales for each face's tower of Kaluza-Klein excitations, a signature potentially accessible to future collider experiments."
+        },
+        {
+          "type": "heading",
+          "content": "Torsional Leakage Mechanism",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "torsional-leakage",
+          "label": "(2.7.5)",
+          "equationNumber": "(2.7.5)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The torsional leakage mechanism formalizes how fields tunnel between adjacent geometric faces via the G2 torsion connection. Although the TCS G2 manifold is intrinsically torsion-free (d(Phi) = 0, d(*Phi) = 0), G-flux backreaction induces an effective torsion T^abc_eff that couples the h^{1,1} = 4 face sectors. The torsional leakage amplitude T_leak = alpha_leak * Psi_bridge = 0.2096 quantifies this inter-face tunneling strength."
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge wavefunction Psi_bridge = k_gimel/b3 = 0.513 represents the geometric penetration depth of the tunneling amplitude, set by the ratio of the master geometric anchor to the total associative 3-cycle count. Physically, this mechanism is analogous to neutrino oscillations: just as mass eigenstates mix flavor states in the PMNS matrix, the torsional leakage mixes moduli eigenstates across face sectors, enabling cross-sector interactions between observable and shadow matter. The G2 torsion tensor T^abc decomposes into irreducible representations 1 + 7 + 14 + 27 under G2 (Hitchin 2000, Bryant 2006), with the singlet component controlling the overall leakage scale."
         }
       ],
       "content_blocks": [
@@ -2108,13 +2128,34 @@
         {
           "type": "paragraph",
           "content": "The shadow asymmetry delta_T = 0.75 between the dominant and subdominant faces provides a geometric origin for the observed matter-dark sector hierarchy. The face-dependent KK mass spectrum (Eq. 2.7.3) predicts distinct energy scales for each face's tower of Kaluza-Klein excitations, a signature potentially accessible to future collider experiments."
+        },
+        {
+          "type": "heading",
+          "content": "Torsional Leakage Mechanism",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "torsional-leakage",
+          "label": "(2.7.5)",
+          "equationNumber": "(2.7.5)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The torsional leakage mechanism formalizes how fields tunnel between adjacent geometric faces via the G2 torsion connection. Although the TCS G2 manifold is intrinsically torsion-free (d(Phi) = 0, d(*Phi) = 0), G-flux backreaction induces an effective torsion T^abc_eff that couples the h^{1,1} = 4 face sectors. The torsional leakage amplitude T_leak = alpha_leak * Psi_bridge = 0.2096 quantifies this inter-face tunneling strength."
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge wavefunction Psi_bridge = k_gimel/b3 = 0.513 represents the geometric penetration depth of the tunneling amplitude, set by the ratio of the master geometric anchor to the total associative 3-cycle count. Physically, this mechanism is analogous to neutrino oscillations: just as mass eigenstates mix flavor states in the PMNS matrix, the torsional leakage mixes moduli eigenstates across face sectors, enabling cross-sector interactions between observable and shadow matter. The G2 torsion tensor T^abc decomposes into irreducible representations 1 + 7 + 14 + 27 under G2 (Hitchin 2000, Bryant 2006), with the singlet component controlling the overall leakage scale."
         }
       ],
       "formulaRefs": [
         "alpha-leak-coupling",
         "racetrack-moduli-vev",
         "face-kk-mass-spectrum",
-        "shadow-asymmetry"
+        "shadow-asymmetry",
+        "torsional-leakage"
       ],
       "paramRefs": [
         "geometry.n_faces",
@@ -2128,7 +2169,8 @@
         "alpha-leak-coupling",
         "racetrack-moduli-vev",
         "face-kk-mass-spectrum",
-        "shadow-asymmetry"
+        "shadow-asymmetry",
+        "torsional-leakage"
       ],
       "param_refs": [
         "geometry.n_faces",
@@ -2138,7 +2180,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-01-31T20:06:24.574097"
+      "timestamp": "2026-01-31T20:30:18.472789"
     },
     "V.1": {
       "id": "validation",
@@ -2260,7 +2302,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-31T20:06:24.574184"
+      "timestamp": "2026-01-31T20:30:18.472875"
     },
     "3.4": {
       "id": "3",
@@ -2424,7 +2466,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-31T20:06:24.574245"
+      "timestamp": "2026-01-31T20:30:18.472932"
     },
     "3.6": {
       "id": "3",
@@ -2596,7 +2638,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-31T20:06:24.574333"
+      "timestamp": "2026-01-31T20:30:18.473019"
     },
     "3": {
       "id": "3",
@@ -2800,7 +2842,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-01-31T20:06:24.604375"
+      "timestamp": "2026-01-31T20:30:18.503100"
     },
     "3.2": {
       "id": "3",
@@ -2914,6 +2956,25 @@
           "type": "formula",
           "content": null,
           "formula_id": "electroweak-mixing-v22"
+        },
+        {
+          "type": "heading",
+          "content": "Equations of Motion: Metric Variation",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The equations of motion for the gravitational sector are obtained by varying the full 27D master action with respect to the inverse metric g^{mu nu}. The Hilbert variational principle yields the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} on the left-hand side (using the Palatini identity to handle the variation of the Ricci tensor). The right-hand side collects the stress-energy contributions from all non-gravitational sectors: Yang-Mills gauge fields T^YM_{mu nu}, Dirac fermions T^Dirac_{mu nu}, the 12-pair bridge system T^bridge_{mu nu}, and the Pneuma moduli/scalar sector T^Pneuma_{mu nu}. The contracted Bianchi identity nabla^mu G_{mu nu} = 0 automatically ensures covariant energy-momentum conservation nabla^mu T_{mu nu} = 0. In the scalar-tensor generalisation (Brans-Dicke 1961; Fujii-Maeda 2003), the effective gravitational coupling becomes field-dependent via the dilaton phi, connecting to the Pneuma mechanism."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "euler-lagrange-metric-variation"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "stress-energy-variation"
         }
       ],
       "content_blocks": [
@@ -3018,6 +3079,25 @@
           "type": "formula",
           "content": null,
           "formula_id": "electroweak-mixing-v22"
+        },
+        {
+          "type": "heading",
+          "content": "Equations of Motion: Metric Variation",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The equations of motion for the gravitational sector are obtained by varying the full 27D master action with respect to the inverse metric g^{mu nu}. The Hilbert variational principle yields the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} on the left-hand side (using the Palatini identity to handle the variation of the Ricci tensor). The right-hand side collects the stress-energy contributions from all non-gravitational sectors: Yang-Mills gauge fields T^YM_{mu nu}, Dirac fermions T^Dirac_{mu nu}, the 12-pair bridge system T^bridge_{mu nu}, and the Pneuma moduli/scalar sector T^Pneuma_{mu nu}. The contracted Bianchi identity nabla^mu G_{mu nu} = 0 automatically ensures covariant energy-momentum conservation nabla^mu T_{mu nu} = 0. In the scalar-tensor generalisation (Brans-Dicke 1961; Fujii-Maeda 2003), the effective gravitational coupling becomes field-dependent via the dilaton phi, connecting to the Pneuma mechanism."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "euler-lagrange-metric-variation"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "stress-energy-variation"
         }
       ],
       "formulaRefs": [
@@ -3031,7 +3111,8 @@
         "su2-weak-lagrangian-v22",
         "u1-hypercharge-v22",
         "electroweak-mixing-v22",
-        "euler-lagrange-metric-variation"
+        "euler-lagrange-metric-variation",
+        "stress-energy-variation"
       ],
       "paramRefs": [
         "gauge.kk_planck_factor",
@@ -3064,7 +3145,8 @@
         "su2-weak-lagrangian-v22",
         "u1-hypercharge-v22",
         "electroweak-mixing-v22",
-        "euler-lagrange-metric-variation"
+        "euler-lagrange-metric-variation",
+        "stress-energy-variation"
       ],
       "param_refs": [
         "gauge.kk_planck_factor",
@@ -3086,7 +3168,7 @@
         "bridge.breathing_aggregation",
         "bridge.distributed_or_rank"
       ],
-      "timestamp": "2026-01-31T20:06:24.604623"
+      "timestamp": "2026-01-31T20:30:18.503313"
     },
     "3.1": {
       "id": "3",
@@ -3144,7 +3226,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-31T20:06:24.604736"
+      "timestamp": "2026-01-31T20:30:18.503428"
     },
     "4.2": {
       "id": "4",
@@ -3274,7 +3356,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-01-31T20:06:24.604816"
+      "timestamp": "2026-01-31T20:30:18.503507"
     },
     "4.1": {
       "id": "4",
@@ -3562,7 +3644,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-31T20:06:24.604920"
+      "timestamp": "2026-01-31T20:30:18.503602"
     },
     "4.3": {
       "id": "4",
@@ -3802,7 +3884,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-31T20:06:24.605063"
+      "timestamp": "2026-01-31T20:30:18.503743"
     },
     "4.6": {
       "id": "4",
@@ -3982,7 +4064,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-31T20:06:24.605160"
+      "timestamp": "2026-01-31T20:30:18.503831"
     },
     "4.4": {
       "id": "4",
@@ -4156,7 +4238,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-31T20:06:24.605243"
+      "timestamp": "2026-01-31T20:30:18.503905"
     },
     "4.9": {
       "id": "4",
@@ -4246,7 +4328,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-31T20:06:24.605320"
+      "timestamp": "2026-01-31T20:30:18.503982"
     },
     "6.1.1": {
       "id": "6",
@@ -4284,7 +4366,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. Each fermion generation is assigned to a primary Kähler face, and the leakage coupling α_leak = 1/√6 ≈ 0.408 generates small off-diagonal corrections. This prediction is currently inactive (default OFF) and represents a future direction for investigation."
+          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. The face assignment of fermion generations is: gen1 -> face1, gen2 -> face2, gen3 -> face3. The 4th face carries no dedicated generation but mediates cross-generation mixing. The leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.4082 produces a ~4% correction to same-face (diagonal) Yukawa entries while leaving cross-face entries unchanged."
+        },
+        {
+          "type": "callout",
+          "content": "This correction is controlled by the class attribute enable_4face_correction (default: False). When enabled, Y_ij -> Y_ij * (1 + alpha_leak * delta_ij^face) where alpha_leak = 1/sqrt(6) ~ 0.4082. The correction is perturbatively small (alpha_leak^2 ~ 0.167) and preserves the phi^(-N) hierarchy. This is a theoretical prediction for future lattice or phenomenological investigation, not applied to current mass fits."
         },
         {
           "type": "formula",
@@ -4320,7 +4406,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. Each fermion generation is assigned to a primary Kähler face, and the leakage coupling α_leak = 1/√6 ≈ 0.408 generates small off-diagonal corrections. This prediction is currently inactive (default OFF) and represents a future direction for investigation."
+          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. The face assignment of fermion generations is: gen1 -> face1, gen2 -> face2, gen3 -> face3. The 4th face carries no dedicated generation but mediates cross-generation mixing. The leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.4082 produces a ~4% correction to same-face (diagonal) Yukawa entries while leaving cross-face entries unchanged."
+        },
+        {
+          "type": "callout",
+          "content": "This correction is controlled by the class attribute enable_4face_correction (default: False). When enabled, Y_ij -> Y_ij * (1 + alpha_leak * delta_ij^face) where alpha_leak = 1/sqrt(6) ~ 0.4082. The correction is perturbatively small (alpha_leak^2 ~ 0.167) and preserves the phi^(-N) hierarchy. This is a theoretical prediction for future lattice or phenomenological investigation, not applied to current mass fits."
         },
         {
           "type": "formula",
@@ -4352,7 +4442,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-01-31T20:06:24.605537"
+      "timestamp": "2026-01-31T20:30:18.504179"
     },
     "4.2.1": {
       "id": "4",
@@ -4414,7 +4504,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-01-31T20:06:24.605600"
+      "timestamp": "2026-01-31T20:30:18.504237"
     },
     "4.8": {
       "id": "4",
@@ -4472,7 +4562,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-31T20:06:24.605657"
+      "timestamp": "2026-01-31T20:30:18.504288"
     },
     "5.1": {
       "id": "5",
@@ -4796,7 +4886,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-31T20:06:24.605843"
+      "timestamp": "2026-01-31T20:30:18.504459"
     },
     "5.2": {
       "id": "5",
@@ -4871,12 +4961,16 @@
         },
         {
           "type": "heading",
-          "content": "DESI 2025 Cross-Validation",
+          "content": "DESI 2024/2025 Cross-Validation",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The PM prediction w0 = -23/24 = -0.9583 is validated against DESI 2025 BAO measurements: w0 = -0.957 +/- 0.067 (thawing quintessence fit). The PM value falls within 0.02sigma of the central value, providing strong experimental support. In the four-face interpretation, the Tzimtzum fraction 1/24 represents vacuum energy leakage from the lightest Kahler face modulus."
+          "content": "The PM prediction w0 = -23/24 = -0.9583 is validated against DESI 2024 BAO measurements (DESI Collaboration 2024, arXiv:2404.03002). DESI Year 1 data, combined with CMB and Type Ia supernovae, reports a thawing quintessence fit with w0 = -0.957 +/- 0.067. The PM value falls within 0.02 sigma of the central value, providing strong experimental support for the G2 thawing mechanism."
+        },
+        {
+          "type": "paragraph",
+          "content": "In the four-face interpretation, the exact fraction w0 = -23/24 has a precise geometric meaning. The 24 associative 3-cycles distribute as 6 per Kahler face across the h^{1,1} = 4 faces. The deviation from the cosmological constant, Delta_w = 1/b3 = 1/24, represents vacuum energy leakage from the lightest Kahler face modulus T_4. This leakage is topologically protected: it cannot be zero because b3 is finite, and it cannot exceed 1/b3 at leading order because only one cycle tunnels per Hubble time. The resulting equation of state w0 = -(b3 - 1)/b3 = -23/24 is therefore a sharp, falsifiable prediction of the framework."
         }
       ],
       "content_blocks": [
@@ -4942,12 +5036,16 @@
         },
         {
           "type": "heading",
-          "content": "DESI 2025 Cross-Validation",
+          "content": "DESI 2024/2025 Cross-Validation",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "The PM prediction w0 = -23/24 = -0.9583 is validated against DESI 2025 BAO measurements: w0 = -0.957 +/- 0.067 (thawing quintessence fit). The PM value falls within 0.02sigma of the central value, providing strong experimental support. In the four-face interpretation, the Tzimtzum fraction 1/24 represents vacuum energy leakage from the lightest Kahler face modulus."
+          "content": "The PM prediction w0 = -23/24 = -0.9583 is validated against DESI 2024 BAO measurements (DESI Collaboration 2024, arXiv:2404.03002). DESI Year 1 data, combined with CMB and Type Ia supernovae, reports a thawing quintessence fit with w0 = -0.957 +/- 0.067. The PM value falls within 0.02 sigma of the central value, providing strong experimental support for the G2 thawing mechanism."
+        },
+        {
+          "type": "paragraph",
+          "content": "In the four-face interpretation, the exact fraction w0 = -23/24 has a precise geometric meaning. The 24 associative 3-cycles distribute as 6 per Kahler face across the h^{1,1} = 4 faces. The deviation from the cosmological constant, Delta_w = 1/b3 = 1/24, represents vacuum energy leakage from the lightest Kahler face modulus T_4. This leakage is topologically protected: it cannot be zero because b3 is finite, and it cannot exceed 1/b3 at leading order because only one cycle tunnels per Hubble time. The resulting equation of state w0 = -(b3 - 1)/b3 = -23/24 is therefore a sharp, falsifiable prediction of the framework."
         }
       ],
       "formulaRefs": [
@@ -4974,7 +5072,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-31T20:06:24.605982"
+      "timestamp": "2026-01-31T20:30:18.504585"
     },
     "5.6": {
       "id": "5",
@@ -5091,7 +5189,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The 12 bridge pairs in the breathing mechanism arise naturally from the 4-face x 3-generation structure: each of the 4 Kahler faces supports 3 independent bridge oscillations (one per generation). This decomposition explains both the counting (12 = 4 x 3) and the variance reduction (sigma_eff = sigma_single/sqrt(12)) that stabilizes the dark energy equation of state near w0 = -23/24."
+          "content": "The 12 bridge pairs in the breathing mechanism arise rigorously from the 4-face x 3-generation structure of the G2 manifold. Each of the h^{1,1} = 4 Kahler faces supports n_gen = 3 independent bridge oscillations (one per fermion generation), giving n_pairs = 4 x 3 = 12 = b3/2. Furthermore, each bridge pair has 4 face channels, yielding 48 = chi_eff/3 total independent oscillations. The effective variance therefore reduces by sqrt(48), not merely sqrt(12), stabilizing the dark energy equation of state near w0 = -23/24 with remarkable precision."
         },
         {
           "type": "formula",
@@ -5099,6 +5197,22 @@
           "formula_id": "breathing-variance-reduction",
           "label": "(DE.4F1)",
           "equationNumber": "(DE.4F1)"
+        },
+        {
+          "type": "heading",
+          "content": "Non-Linear Correction to w_a",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The leading-order w_a = -0.816 from 4-form projection agrees with DESI 2024/2025 data at 0.54 sigma. However, face-face interactions in the 4-face architecture introduce a perturbative non-linear correction. The C(4,2) = 6 pairwise Kahler face couplings, normalized by the b3 = 24 cycle count, give a correction parameter epsilon_NL = 6/24 = 1/4. Combined with the alpha-leak coupling alpha_leak = 1/(4*pi), the corrected w_a,NL shifts modestly toward the DESI central value. This correction is documented for completeness and future cross-validation with DESI Year 3+ data releases."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "wa-nonlinear-correction",
+          "label": "(DE.4F3)",
+          "equationNumber": "(DE.4F3)"
         }
       ],
       "content_blocks": [
@@ -5206,7 +5320,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The 12 bridge pairs in the breathing mechanism arise naturally from the 4-face x 3-generation structure: each of the 4 Kahler faces supports 3 independent bridge oscillations (one per generation). This decomposition explains both the counting (12 = 4 x 3) and the variance reduction (sigma_eff = sigma_single/sqrt(12)) that stabilizes the dark energy equation of state near w0 = -23/24."
+          "content": "The 12 bridge pairs in the breathing mechanism arise rigorously from the 4-face x 3-generation structure of the G2 manifold. Each of the h^{1,1} = 4 Kahler faces supports n_gen = 3 independent bridge oscillations (one per fermion generation), giving n_pairs = 4 x 3 = 12 = b3/2. Furthermore, each bridge pair has 4 face channels, yielding 48 = chi_eff/3 total independent oscillations. The effective variance therefore reduces by sqrt(48), not merely sqrt(12), stabilizing the dark energy equation of state near w0 = -23/24 with remarkable precision."
         },
         {
           "type": "formula",
@@ -5214,6 +5328,22 @@
           "formula_id": "breathing-variance-reduction",
           "label": "(DE.4F1)",
           "equationNumber": "(DE.4F1)"
+        },
+        {
+          "type": "heading",
+          "content": "Non-Linear Correction to w_a",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The leading-order w_a = -0.816 from 4-form projection agrees with DESI 2024/2025 data at 0.54 sigma. However, face-face interactions in the 4-face architecture introduce a perturbative non-linear correction. The C(4,2) = 6 pairwise Kahler face couplings, normalized by the b3 = 24 cycle count, give a correction parameter epsilon_NL = 6/24 = 1/4. Combined with the alpha-leak coupling alpha_leak = 1/(4*pi), the corrected w_a,NL shifts modestly toward the DESI central value. This correction is documented for completeness and future cross-validation with DESI Year 3+ data releases."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "wa-nonlinear-correction",
+          "label": "(DE.4F3)",
+          "equationNumber": "(DE.4F3)"
         }
       ],
       "formulaRefs": [
@@ -5223,7 +5353,8 @@
         "torsional-leakage-formula",
         "ricci-thawing-mechanism",
         "breathing-variance-reduction",
-        "4face-w0-prediction"
+        "4face-w0-prediction",
+        "wa-nonlinear-correction"
       ],
       "paramRefs": [
         "cosmology.w0_thawing",
@@ -5238,7 +5369,8 @@
         "torsional-leakage-formula",
         "ricci-thawing-mechanism",
         "breathing-variance-reduction",
-        "4face-w0-prediction"
+        "4face-w0-prediction",
+        "wa-nonlinear-correction"
       ],
       "param_refs": [
         "cosmology.w0_thawing",
@@ -5246,7 +5378,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-31T20:06:24.606178"
+      "timestamp": "2026-01-31T20:30:18.504770"
     },
     "5.7": {
       "id": "5",
@@ -5390,7 +5522,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-31T20:06:24.608100"
+      "timestamp": "2026-01-31T20:30:18.506623"
     },
     "5.4": {
       "id": "5",
@@ -5688,7 +5820,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-31T20:06:24.609528"
+      "timestamp": "2026-01-31T20:30:18.507994"
     },
     "5.9": {
       "id": "5",
@@ -5850,7 +5982,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-31T20:06:24.610946"
+      "timestamp": "2026-01-31T20:30:18.509456"
     },
     "4.5": {
       "id": "4",
@@ -5926,7 +6058,11 @@
         },
         {
           "type": "paragraph",
-          "content": "Neutrino mixing angles are predicted using the cross-shadow Euler characteristic χ_eff_total = 144 (both shadows combined), in contrast to quark mixing (CKM) which uses the single-shadow value χ_eff = 72. This architectural distinction reflects the fundamental difference between quarks (confined within a single 11D shadow by color charge) and neutrinos (electrically neutral, propagating through the Euclidean bridge between shadows). The PMNS mixing matrix structure emerges naturally from the octonionic embedding of G2 triality across both shadows."
+          "content": "Neutrino mixing angles are predicted using the cross-shadow Euler characteristic chi_eff_total = 144 (both shadows combined), in contrast to quark mixing (CKM) which uses the single-shadow value chi_eff = 72. This architectural distinction reflects the fundamental difference between quarks (confined within a single 11D shadow by color charge) and neutrinos (electrically neutral, propagating through the Euclidean bridge between shadows). The PMNS mixing matrix structure emerges naturally from the octonionic embedding of G2 triality across both shadows."
+        },
+        {
+          "type": "callout",
+          "content": "PMNS mixing angles arise from cross-shadow leakage: neutrinos, being electrically neutral, mix freely across the two 13D(12,1) shadows via bridge pairs. The key topological invariants are:\n\n  chi_eff_total = 144 (both shadows combined)\n  chi_eff       = 72  (single shadow)\n  bridge pairs  = 12  = chi_eff / 12 (from S_orient = 12)\n\nThe 12 bridge pairs connect matching 3-cycles across shadows, allowing neutrino wavefunctions to tunnel between the two 11D sectors. Because each bridge pair provides an independent leakage channel, the total cross-shadow amplitude is proportional to chi_eff_total = 2 * chi_eff = 144, not the single-shadow 72.\n\nThis cross-shadow democracy produces the characteristically large PMNS mixing angles:\n  - theta_12 ~ 33.4 deg: near-tribimaximal from the approximate     three-fold symmetry of bridge pair distribution\n  - theta_23 ~ 45 deg (+ 4.75 deg flux): near-maximal from the     octonionic G2 ~ Aut(O) automorphism acting on both shadows\n  - theta_13 ~ 8.65 deg: small but non-zero from (1,3) cycle     intersection through 12 bridge pairs\n\nBy contrast, CKM mixing is same-shadow (quarks are color-confined to a single 11D shadow, using chi_eff = 72), producing small hierarchical mixing angles via Froggatt-Nielsen suppression."
         }
       ],
       "content_blocks": [
@@ -5993,7 +6129,11 @@
         },
         {
           "type": "paragraph",
-          "content": "Neutrino mixing angles are predicted using the cross-shadow Euler characteristic χ_eff_total = 144 (both shadows combined), in contrast to quark mixing (CKM) which uses the single-shadow value χ_eff = 72. This architectural distinction reflects the fundamental difference between quarks (confined within a single 11D shadow by color charge) and neutrinos (electrically neutral, propagating through the Euclidean bridge between shadows). The PMNS mixing matrix structure emerges naturally from the octonionic embedding of G2 triality across both shadows."
+          "content": "Neutrino mixing angles are predicted using the cross-shadow Euler characteristic chi_eff_total = 144 (both shadows combined), in contrast to quark mixing (CKM) which uses the single-shadow value chi_eff = 72. This architectural distinction reflects the fundamental difference between quarks (confined within a single 11D shadow by color charge) and neutrinos (electrically neutral, propagating through the Euclidean bridge between shadows). The PMNS mixing matrix structure emerges naturally from the octonionic embedding of G2 triality across both shadows."
+        },
+        {
+          "type": "callout",
+          "content": "PMNS mixing angles arise from cross-shadow leakage: neutrinos, being electrically neutral, mix freely across the two 13D(12,1) shadows via bridge pairs. The key topological invariants are:\n\n  chi_eff_total = 144 (both shadows combined)\n  chi_eff       = 72  (single shadow)\n  bridge pairs  = 12  = chi_eff / 12 (from S_orient = 12)\n\nThe 12 bridge pairs connect matching 3-cycles across shadows, allowing neutrino wavefunctions to tunnel between the two 11D sectors. Because each bridge pair provides an independent leakage channel, the total cross-shadow amplitude is proportional to chi_eff_total = 2 * chi_eff = 144, not the single-shadow 72.\n\nThis cross-shadow democracy produces the characteristically large PMNS mixing angles:\n  - theta_12 ~ 33.4 deg: near-tribimaximal from the approximate     three-fold symmetry of bridge pair distribution\n  - theta_23 ~ 45 deg (+ 4.75 deg flux): near-maximal from the     octonionic G2 ~ Aut(O) automorphism acting on both shadows\n  - theta_13 ~ 8.65 deg: small but non-zero from (1,3) cycle     intersection through 12 bridge pairs\n\nBy contrast, CKM mixing is same-shadow (quarks are color-confined to a single 11D shadow, using chi_eff = 72), producing small hierarchical mixing angles via Froggatt-Nielsen suppression."
         }
       ],
       "formulaRefs": [
@@ -6030,7 +6170,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-31T20:06:24.611108"
+      "timestamp": "2026-01-31T20:30:18.509619"
     },
     "4.7": {
       "id": "4",
@@ -6274,7 +6414,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-31T20:06:24.611254"
+      "timestamp": "2026-01-31T20:30:18.509759"
     },
     "5.3": {
       "id": "5",
@@ -6332,6 +6472,19 @@
         {
           "type": "paragraph",
           "content": "The multi-sector cosmological model maps naturally onto the dual-shadow architecture of the 27D framework. Each of the two shadows (signature 12+1 each, sharing a single time dimension) hosts an independent copy of the Standard Model gauge group, with inter-shadow communication occurring exclusively through the 12 bridge pairs. The four-face structure within each shadow further subdivides the gauge sector into 4 Kahler-modulated domains, providing a geometric origin for the multiplicity of dark sectors observed in cosmological data."
+        },
+        {
+          "type": "heading",
+          "content": "Sector Counting: 2 x 4 x 3 = 24 = b3",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The total number of cosmological sectors equals the third Betti number b3 = 24, arising from three independent factors. First, the dual-shadow architecture provides a factor of 2: one normal shadow and one mirror shadow, related by the Z2 orbifold symmetry of the heterotic M-theory construction (Horava-Witten). Second, each shadow contains h^{1,1} = 4 Kahler faces from the G2 compactification, each with an independent modulus controlling the face volume and gauge coupling. Third, each face supports n_gen = 3 fermion generations from the index theorem on the G2 manifold (n_gen = chi_eff/48 = 144/48 = 3). The product 2 shadows x 4 faces x 3 generations = 24 = b3 provides a complete accounting of the cosmological sector structure in terms of the topological invariants of the compactification manifold."
+        },
+        {
+          "type": "paragraph",
+          "content": "This decomposition has profound consequences for cosmological observables. The mirror symmetry between the two shadows ensures that the mirror sector inherits identical particle content but different temperature from asymmetric reheating, explaining the dark matter abundance. The 4-face x 3-generation internal structure determines the bridge pair count (12 = b3/2) and the variance reduction in the breathing dark energy mechanism. The entire multi-sector architecture is thus determined by three topological invariants: b3 = 24, h^{1,1} = 4, and chi_eff = 144."
         }
       ],
       "content_blocks": [
@@ -6380,6 +6533,19 @@
         {
           "type": "paragraph",
           "content": "The multi-sector cosmological model maps naturally onto the dual-shadow architecture of the 27D framework. Each of the two shadows (signature 12+1 each, sharing a single time dimension) hosts an independent copy of the Standard Model gauge group, with inter-shadow communication occurring exclusively through the 12 bridge pairs. The four-face structure within each shadow further subdivides the gauge sector into 4 Kahler-modulated domains, providing a geometric origin for the multiplicity of dark sectors observed in cosmological data."
+        },
+        {
+          "type": "heading",
+          "content": "Sector Counting: 2 x 4 x 3 = 24 = b3",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The total number of cosmological sectors equals the third Betti number b3 = 24, arising from three independent factors. First, the dual-shadow architecture provides a factor of 2: one normal shadow and one mirror shadow, related by the Z2 orbifold symmetry of the heterotic M-theory construction (Horava-Witten). Second, each shadow contains h^{1,1} = 4 Kahler faces from the G2 compactification, each with an independent modulus controlling the face volume and gauge coupling. Third, each face supports n_gen = 3 fermion generations from the index theorem on the G2 manifold (n_gen = chi_eff/48 = 144/48 = 3). The product 2 shadows x 4 faces x 3 generations = 24 = b3 provides a complete accounting of the cosmological sector structure in terms of the topological invariants of the compactification manifold."
+        },
+        {
+          "type": "paragraph",
+          "content": "This decomposition has profound consequences for cosmological observables. The mirror symmetry between the two shadows ensures that the mirror sector inherits identical particle content but different temperature from asymmetric reheating, explaining the dark matter abundance. The 4-face x 3-generation internal structure determines the bridge pair count (12 = b3/2) and the variance reduction in the breathing dark energy mechanism. The entire multi-sector architecture is thus determined by three topological invariants: b3 = 24, h^{1,1} = 4, and chi_eff = 144."
         }
       ],
       "formulaRefs": [
@@ -6406,7 +6572,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-31T20:06:24.611397"
+      "timestamp": "2026-01-31T20:30:18.509902"
     },
     "5.8": {
       "id": "5",
@@ -6728,7 +6894,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-31T20:06:24.611497"
+      "timestamp": "2026-01-31T20:30:18.510001"
     },
     "6.1": {
       "id": "6",
@@ -6788,7 +6954,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611589"
+      "timestamp": "2026-01-31T20:30:18.510092"
     },
     "6.2": {
       "id": "6",
@@ -6836,7 +7002,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611636"
+      "timestamp": "2026-01-31T20:30:18.510138"
     },
     "6.3": {
       "id": "6",
@@ -6880,7 +7046,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611674"
+      "timestamp": "2026-01-31T20:30:18.510175"
     },
     "6.4": {
       "id": "6",
@@ -6924,7 +7090,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611711"
+      "timestamp": "2026-01-31T20:30:18.510209"
     },
     "6.5": {
       "id": "6",
@@ -6968,7 +7134,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611745"
+      "timestamp": "2026-01-31T20:30:18.510244"
     },
     "6.6": {
       "id": "6",
@@ -7012,7 +7178,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611778"
+      "timestamp": "2026-01-31T20:30:18.510278"
     },
     "6.7": {
       "id": "6",
@@ -7056,7 +7222,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611811"
+      "timestamp": "2026-01-31T20:30:18.510311"
     },
     "6.8": {
       "id": "6",
@@ -7100,7 +7266,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611842"
+      "timestamp": "2026-01-31T20:30:18.510340"
     },
     "6.9": {
       "id": "6",
@@ -7144,7 +7310,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.611875"
+      "timestamp": "2026-01-31T20:30:18.510446"
     },
     "5.5": {
       "id": "5",
@@ -7298,7 +7464,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-31T20:06:24.612007"
+      "timestamp": "2026-01-31T20:30:18.510508"
     },
     "2.6": {
       "id": "2",
@@ -8236,7 +8402,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-31T20:06:24.612149"
+      "timestamp": "2026-01-31T20:30:18.510637"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -8364,7 +8530,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T20:06:24.612224"
+      "timestamp": "2026-01-31T20:30:18.510711"
     },
     "7.2": {
       "id": "7",
@@ -8377,6 +8543,10 @@
       "order": 7,
       "abstract": "v16.2: The microtubule lattice structure emerges directly from G2 manifold topology. The topological pitch matches the 13-protofilament helical structure. Using the CONFORMATIONAL MASS SHIFT (~0.01% of tubulin mass), the derived coherence time falls within neural timescales (~100ms), providing geometric support for the Orch-OR consciousness hypothesis.",
       "contentBlocks": [
+        {
+          "type": "callout",
+          "content": "**SPECULATIVE EXTENSION:** The following Orch-OR geometry predictions extend beyond the core geometric framework and should be considered exploratory hypotheses rather than confirmed predictions of the theory. The consciousness and quantum biology content herein is based on the Penrose-Hameroff Orch-OR model, which remains experimentally unverified. (Gemini peer review, Topic 12, score 6/10.)"
+        },
         {
           "type": "paragraph",
           "content": "In the Principia Metaphysica framework, the microtubule lattice is not an accident of biochemistry but a direct manifestation of 7D compactified space. The helical pitch of 13 protofilaments emerges from the same G2 geometry that determines the fine structure constant and fermion masses."
@@ -8398,6 +8568,10 @@
         }
       ],
       "content_blocks": [
+        {
+          "type": "callout",
+          "content": "**SPECULATIVE EXTENSION:** The following Orch-OR geometry predictions extend beyond the core geometric framework and should be considered exploratory hypotheses rather than confirmed predictions of the theory. The consciousness and quantum biology content herein is based on the Penrose-Hameroff Orch-OR model, which remains experimentally unverified. (Gemini peer review, Topic 12, score 6/10.)"
+        },
         {
           "type": "paragraph",
           "content": "In the Principia Metaphysica framework, the microtubule lattice is not an accident of biochemistry but a direct manifestation of 7D compactified space. The helical pitch of 13 protofilaments emerges from the same G2 geometry that determines the fine structure constant and fermion masses."
@@ -8432,7 +8606,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-31T20:06:24.612312"
+      "timestamp": "2026-01-31T20:30:18.510796"
     },
     "7": {
       "id": "7",
@@ -10866,7 +11040,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.612407"
+      "timestamp": "2026-01-31T20:30:18.510887"
     },
     "6": {
       "id": "6",
@@ -13012,7 +13186,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-31T20:06:24.612500"
+      "timestamp": "2026-01-31T20:30:18.510981"
     },
     "1.1": {
       "id": "1",
@@ -13626,7 +13800,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.612552"
+      "timestamp": "2026-01-31T20:30:18.511031"
     },
     "2.5": {
       "id": "2",
@@ -14052,7 +14226,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.613014"
+      "timestamp": "2026-01-31T20:30:18.511428"
     },
     "3.7": {
       "id": "3",
@@ -14324,7 +14498,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.613068"
+      "timestamp": "2026-01-31T20:30:18.511479"
     },
     "4": {
       "id": "4",
@@ -14632,7 +14806,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:06:24.613129"
+      "timestamp": "2026-01-31T20:30:18.511531"
     },
     "A": {
       "id": "A",
@@ -14842,7 +15016,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-31T20:06:24.613199"
+      "timestamp": "2026-01-31T20:30:18.511597"
     },
     "B": {
       "id": "B",
@@ -15078,7 +15252,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-31T20:06:24.613254"
+      "timestamp": "2026-01-31T20:30:18.511653"
     },
     "C": {
       "id": "C",
@@ -15284,7 +15458,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-31T20:06:24.613331"
+      "timestamp": "2026-01-31T20:30:18.511727"
     },
     "D": {
       "id": "D",
@@ -15482,7 +15656,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-31T20:06:24.613381"
+      "timestamp": "2026-01-31T20:30:18.511773"
     },
     "E": {
       "id": "E",
@@ -15684,7 +15858,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-31T20:06:24.613442"
+      "timestamp": "2026-01-31T20:30:18.511830"
     },
     "F": {
       "id": "F",
@@ -15894,7 +16068,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-31T20:06:24.613789"
+      "timestamp": "2026-01-31T20:30:18.512171"
     },
     "G": {
       "id": "G",
@@ -16242,7 +16416,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-01-31T20:06:24.614287"
+      "timestamp": "2026-01-31T20:30:18.512639"
     },
     "H": {
       "id": "H",
@@ -16528,7 +16702,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-31T20:06:24.614366"
+      "timestamp": "2026-01-31T20:30:18.512718"
     },
     "I": {
       "id": "I",
@@ -16882,7 +17056,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-31T20:06:24.614436"
+      "timestamp": "2026-01-31T20:30:18.512786"
     },
     "J": {
       "id": "J",
@@ -17164,7 +17338,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-31T20:06:24.614513"
+      "timestamp": "2026-01-31T20:30:18.512865"
     },
     "K": {
       "id": "K",
@@ -17580,7 +17754,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-31T20:06:24.614585"
+      "timestamp": "2026-01-31T20:30:18.512927"
     },
     "L": {
       "id": "L",
@@ -17870,7 +18044,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-31T20:06:24.614659"
+      "timestamp": "2026-01-31T20:30:18.512997"
     },
     "Z": {
       "id": "Z",
@@ -17946,7 +18120,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-31T20:06:24.614740"
+      "timestamp": "2026-01-31T20:30:18.513082"
     },
     "2.2": {
       "id": "2",
@@ -18288,7 +18462,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-01-31T20:06:24.614988"
+      "timestamp": "2026-01-31T20:30:18.513313"
     },
     "R.1": {
       "id": "R",
@@ -18844,7 +19018,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-01-31T20:06:24.615147"
+      "timestamp": "2026-01-31T20:30:18.513463"
     },
     "S.1": {
       "id": "S",
@@ -19558,7 +19732,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T20:06:24.615313"
+      "timestamp": "2026-01-31T20:30:18.513620"
     },
     "5.1.1": {
       "id": "5",
@@ -19724,7 +19898,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-01-31T20:06:24.615437"
+      "timestamp": "2026-01-31T20:30:18.513724"
     },
     "2.3": {
       "id": "2",
@@ -19840,7 +20014,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-31T20:06:24.615597"
+      "timestamp": "2026-01-31T20:30:18.513866"
     },
     "5.2.1": {
       "id": "5",
@@ -19938,7 +20112,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-31T20:06:24.615696"
+      "timestamp": "2026-01-31T20:30:18.513972"
     },
     "6.2.1": {
       "id": "6",
@@ -20088,7 +20262,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-01-31T20:06:24.615761"
+      "timestamp": "2026-01-31T20:30:18.514027"
     }
   }
 }

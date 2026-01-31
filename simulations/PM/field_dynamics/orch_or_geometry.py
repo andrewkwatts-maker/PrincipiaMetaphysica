@@ -491,7 +491,13 @@ if SCHEMA_AVAILABLE:
                 version="22.0",
                 domain="quantum_biology",
                 title="Orch-OR Quantum Consciousness Validation - 12x(2,0) Paired Bridge",
-                description="Links microtubule geometry to G2 manifold topology with v22 gnosis unlocking. Implements 6-pair minimum stability and consciousness I/O channels.",
+                description=(
+                    "[SPECULATIVE EXTENSION] Links microtubule geometry to G2 manifold "
+                    "topology with v22 gnosis unlocking. Implements 6-pair minimum "
+                    "stability and consciousness I/O channels. This extends beyond the "
+                    "core geometric framework and should be considered an exploratory "
+                    "hypothesis rather than a confirmed prediction of the theory."
+                ),
                 section_id="7",
                 subsection_id="7.2"
             )
@@ -537,6 +543,19 @@ if SCHEMA_AVAILABLE:
                     "support for the Orch-OR consciousness hypothesis."
                 ),
                 content_blocks=[
+                    ContentBlock(
+                        type="callout",
+                        callout_type="warning",
+                        content=(
+                            "**SPECULATIVE EXTENSION:** The following Orch-OR geometry "
+                            "predictions extend beyond the core geometric framework and "
+                            "should be considered exploratory hypotheses rather than "
+                            "confirmed predictions of the theory. The consciousness and "
+                            "quantum biology content herein is based on the Penrose-Hameroff "
+                            "Orch-OR model, which remains experimentally unverified. "
+                            "(Gemini peer review, Topic 12, score 6/10.)"
+                        )
+                    ),
                     ContentBlock(
                         type="paragraph",
                         content=(

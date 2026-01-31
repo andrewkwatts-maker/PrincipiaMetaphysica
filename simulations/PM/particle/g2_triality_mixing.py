@@ -257,29 +257,60 @@ class G2TrialityMixing:
         return [
             {
                 "id": "pdg2024",
+                "key": "pdg2024",
                 "authors": "Particle Data Group",
                 "title": "Review of Particle Physics",
                 "journal": "Prog. Theor. Exp. Phys.",
                 "volume": "2024",
                 "year": "2024",
+                "url": "https://pdg.lbl.gov/",
                 "notes": "CKM matrix elements and Wolfenstein parameters"
             },
             {
                 "id": "nufit2024",
+                "key": "nufit2024",
                 "authors": "NuFIT Collaboration",
                 "title": "NuFIT 6.0 - Neutrino oscillation global fit",
                 "year": "2024",
-                "publisher": "www.nu-fit.org",
+                "url": "http://www.nu-fit.org",
                 "notes": "PMNS mixing angles and delta_CP"
             },
             {
                 "id": "acharya2004",
+                "key": "acharya2004",
                 "authors": "Acharya, B. S.",
                 "title": "A Moduli Fixing Mechanism in M-theory",
                 "journal": "arXiv:hep-th/0212294",
                 "year": "2004",
                 "arxiv": "hep-th/0212294",
+                "url": "https://arxiv.org/abs/hep-th/0212294",
                 "notes": "G2 manifold CKM/PMNS from M-theory compactification"
+            },
+            {
+                "id": "slansky1981",
+                "key": "slansky1981",
+                "authors": "Slansky, R.",
+                "title": "Group Theory for Unified Model Building",
+                "journal": "Phys. Rept.",
+                "volume": "79",
+                "year": "1981",
+                "pages": "1-128",
+                "doi": "10.1016/0370-1573(81)90092-2",
+                "url": "https://doi.org/10.1016/0370-1573(81)90092-2",
+                "notes": "Comprehensive Lie algebra branching rules; G2 -> SU(3): 7 = 1+3+3-bar (Table 39)"
+            },
+            {
+                "id": "baez2002",
+                "key": "baez2002",
+                "authors": "Baez, J. C.",
+                "title": "The Octonions",
+                "journal": "Bull. Amer. Math. Soc.",
+                "volume": "39",
+                "year": "2002",
+                "pages": "145-205",
+                "doi": "10.1090/S0273-0979-01-00934-X",
+                "url": "https://arxiv.org/abs/math/0105155",
+                "notes": "Definitive review of octonions and exceptional Lie groups; G2 = Aut(O) and Fano plane structure"
             }
         ]
 
@@ -347,8 +378,39 @@ class G2TrialityMixing:
             {
                 "topic": "G2 triality and fermion generation structure",
                 "url": "https://ncatlab.org/nlab/show/G2",
-                "relevance": "G2 triality (the outer automorphism of the Dynkin diagram) constrains how 3 fermion generations mix; in the 4-face picture, generations are assigned to Kähler moduli sectors",
-                "validation_hint": "The n_gen = 3 result from χ_eff/48 = 144/48 should be robust: check that alternative Hodge numbers give non-integer n_gen"
+                "relevance": (
+                    "G2 triality constrains how 3 fermion generations mix. The 7-dimensional "
+                    "fundamental representation of G2 decomposes under the maximal SU(3) "
+                    "subgroup as 7 = 1 + 3 + 3-bar. This 1+3+3 decomposition maps to: "
+                    "the singlet (shared 4th face providing inter-generation mixing) plus "
+                    "two conjugate triplets (the 3 generation-bearing faces in each shadow). "
+                    "In the 4-face picture, n_gen = chi_eff/48 = 144/48 = 3 where "
+                    "48 = 2 * b3 = 2 * 24 (both shadows)."
+                ),
+                "validation_hint": "The n_gen = 3 result from chi_eff/48 = 144/48 should be robust: check that alternative Hodge numbers give non-integer n_gen"
+            },
+            {
+                "topic": "G2 representation theory (Slansky tables)",
+                "url": "https://doi.org/10.1016/0370-1573(81)90092-2",
+                "relevance": (
+                    "Slansky's comprehensive tables of Lie algebra representations include "
+                    "the G2 branching rules. The 7-dim rep decomposes as 1+3+3 under SU(3), "
+                    "and the 14-dim adjoint decomposes as 8+3+3-bar. These branching rules "
+                    "underpin the generation counting and mixing structure in PM."
+                ),
+                "validation_hint": "Verify that 7 -> 1+3+3 under G2 -> SU(3) branching from Slansky Table 39"
+            },
+            {
+                "topic": "Octonions and exceptional Lie groups (Baez)",
+                "url": "https://arxiv.org/abs/math/0105155",
+                "relevance": (
+                    "Baez's review of octonions and their relationship to exceptional Lie "
+                    "groups provides the mathematical foundation for G2 = Aut(O). The "
+                    "connection between octonion multiplication, the Fano plane, and G2 "
+                    "triality is essential for understanding why 3 generations arise and "
+                    "how the golden angle emerges from the octonionic structure."
+                ),
+                "validation_hint": "Check that G2 = Aut(O) is correctly stated and that the Fano plane multiplication table is consistent"
             },
         ]
 
@@ -541,12 +603,29 @@ class G2TrialityMixing:
                     "type": "paragraph",
                     "content": (
                         "The three fermion generations emerge from the effective Euler "
-                        "characteristic via n_gen = χ_eff / 48 = 144 / 48 = 3. In the "
-                        "four-face decomposition, this can be understood as 4 faces × "
-                        "12 bridge pairs = 48 geometric channels per generation, with "
-                        "the total χ_eff = 144 supporting exactly 3 complete generations. "
-                        "The G2 triality further constrains the mixing between generations "
-                        "assigned to different Kähler faces."
+                        "characteristic via n_gen = chi_eff / 48 = 144 / 48 = 3. The "
+                        "factor 48 decomposes as 48 = 2 * 24 = 2 * b3, reflecting "
+                        "the contribution of both 11D shadows (factor of 2) times "
+                        "the third Betti number b3 = 24 (associative 3-cycles per shadow). "
+                        "In the four-face decomposition, this can equivalently be understood "
+                        "as 4 faces * 12 bridge pairs = 48 geometric channels per generation, "
+                        "with the total chi_eff_total = 144 supporting exactly 3 complete "
+                        "generations."
+                    )
+                },
+                {
+                    "type": "paragraph",
+                    "content": (
+                        "Each of the 3 generations maps to one of 3 Kahler faces of the "
+                        "G2 sub-sector: gen1 -> face1, gen2 -> face2, gen3 -> face3. "
+                        "The 4th face carries no dedicated generation but provides the "
+                        "geometric substrate for inter-generation mixing. This face "
+                        "mediates both CKM mixing (within a single shadow, small due to "
+                        "associative 3-cycle rigidity) and PMNS mixing (across both "
+                        "shadows, large due to co-associative 4-cycle flexibility). "
+                        "The G2 triality automorphism constrains how the 3 generation-bearing "
+                        "faces rotate into each other, producing the observed pattern of "
+                        "hierarchical quark mixing versus near-democratic lepton mixing."
                     )
                 },
             ],

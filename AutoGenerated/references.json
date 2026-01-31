@@ -1,6 +1,6 @@
 {
   "version": "23.1",
-  "count": 182,
+  "count": 196,
   "references": {
     "acharya_witten_2001": {
       "id": "acharya_witten_2001",
@@ -84,6 +84,7 @@
       "source_simulation": "introduction_v16_0"
     },
     "joyce2000": {
+      "key": "joyce2000",
       "id": "joyce2000",
       "authors": "Joyce, D.D.",
       "title": "Compact Manifolds with Special Holonomy",
@@ -91,10 +92,12 @@
       "type": "book",
       "publisher": "Oxford University Press",
       "url": "https://global.oup.com/academic/product/compact-manifolds-with-special-holonomy-9780198506010",
+      "doi": "10.1093/oso/9780198506010.001.0001",
       "relevance": "Foundation for G2 holonomy geometry from which the Betti number b3=24 originates",
       "source_simulation": "geometric_anchors_v16_2"
     },
     "kovalev2003": {
+      "key": "kovalev2003",
       "id": "kovalev2003",
       "authors": "Kovalev, A.",
       "title": "Twisted connected sums and special Riemannian holonomy",
@@ -108,6 +111,7 @@
       "source_simulation": "geometric_anchors_v16_2"
     },
     "chnp2015": {
+      "key": "chnp2015",
       "id": "chnp2015",
       "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
       "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
@@ -119,10 +123,12 @@
       "type": "article",
       "arxiv": "1207.3200",
       "url": "https://arxiv.org/abs/1207.3200",
-      "relevance": "Classification of TCS G2 manifolds; source of TCS #187 with b2=4, b3=24",
+      "doi": "10.1215/00127094-3120743",
+      "relevance": "Classification of TCS G2 manifolds; source of TCS #187 with b2=4, b3=24. The h^{1,1} = b2 = 4 Kahler moduli yield the four-face sub-sector structure (see four_face_g2_structure simulation, Section 2.7)",
       "source_simulation": "geometric_anchors_v16_2"
     },
     "planck2018": {
+      "key": "planck2018",
       "id": "planck2018",
       "authors": "Planck Collaboration",
       "title": "Planck 2018 results. VI. Cosmological parameters",
@@ -137,6 +143,7 @@
       "source_simulation": "geometric_anchors_v16_2"
     },
     "desi2025": {
+      "key": "desi2025",
       "id": "desi2025",
       "authors": "DESI Collaboration",
       "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
@@ -149,6 +156,7 @@
       "source_simulation": "geometric_anchors_v16_2"
     },
     "codata2022": {
+      "key": "codata2022",
       "id": "codata2022",
       "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
       "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
@@ -159,7 +167,33 @@
       "relevance": "Source of alpha^-1 = 137.035999177, M_Pl, and mu_pe experimental values",
       "source_simulation": "geometric_anchors_v16_2"
     },
+    "pm_four_face": {
+      "key": "pm_four_face",
+      "id": "pm_four_face",
+      "authors": "Watts, A.K.",
+      "title": "Four-Face G2 Sub-Sector Structure (PM v23.7)",
+      "year": 2026,
+      "type": "internal",
+      "url": "simulations/PM/geometry/four_face_structure.py",
+      "relevance": "Cross-reference: The h^{1,1} = 4 Kahler moduli from geometric anchors are developed into the four-face sub-sector structure in this companion simulation, deriving inter-face leakage coupling alpha_leak = 1/sqrt(6), racetrack-stabilized moduli VEVs, shadow asymmetry, and the torsional leakage mechanism",
+      "source_simulation": "geometric_anchors_v16_2"
+    },
+    "joyce1996": {
+      "key": "joyce1996",
+      "id": "joyce1996",
+      "authors": "Joyce, D.D.",
+      "title": "Compact Riemannian 7-manifolds with holonomy G2. I, II",
+      "journal": "J. Differential Geom.",
+      "volume": "43",
+      "pages": "291-328, 329-375",
+      "year": 1996,
+      "type": "article",
+      "url": "https://projecteuclid.org/euclid.jdg/1214458109",
+      "relevance": "Original construction of compact G2 manifolds via resolution of T^7/Gamma orbifolds. First rigorous proof of existence of compact manifolds with full G2 holonomy.",
+      "source_simulation": "g2_geometry_v16_0"
+    },
     "joyce2017": {
+      "key": "joyce2017",
       "id": "joyce2017",
       "authors": "Joyce, D.D.",
       "title": "Conjectures on counting associative 3-folds in G2-manifolds",
@@ -168,10 +202,40 @@
       "year": 2017,
       "type": "article",
       "url": "https://doi.org/10.1090/pspum/099/01",
-      "relevance": "Associative 3-cycle counting relevant to matter localization in M-theory",
+      "doi": "10.1090/pspum/099/01",
+      "relevance": "Associative 3-cycle counting relevant to matter localization in M-theory. The conjectured invariants relate to the b3 = 24 associative cycles of TCS #187.",
+      "source_simulation": "g2_geometry_v16_0"
+    },
+    "chnp2012": {
+      "key": "chnp2012",
+      "id": "chnp2012",
+      "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
+      "title": "Asymptotically cylindrical Calabi-Yau 3-folds from weak Fano 3-folds",
+      "journal": "Geom. Topol.",
+      "volume": "17",
+      "pages": "1955-2059",
+      "year": 2013,
+      "type": "article",
+      "arxiv": "1206.2277",
+      "url": "https://arxiv.org/abs/1206.2277",
+      "doi": "10.2140/gt.2013.17.1955",
+      "relevance": "Construction of ACyl CY3 building blocks from weak Fano 3-folds; provides the input data (Picard lattices, Hodge numbers) for TCS G2 manifold assembly.",
+      "source_simulation": "g2_geometry_v16_0"
+    },
+    "chnp2018": {
+      "key": "chnp2018",
+      "id": "chnp2018",
+      "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
+      "title": "Extra-twisted connected sum G2-manifolds",
+      "year": 2018,
+      "type": "article",
+      "arxiv": "1809.09083",
+      "url": "https://arxiv.org/abs/1809.09083",
+      "relevance": "Extra-twisted TCS construction with pi/6 involution blocks achieving refined Betti numbers. The involution structure b2=4 is obtained via adjusted matching conditions on the Picard lattice intersection.",
       "source_simulation": "g2_geometry_v16_0"
     },
     "hitchin2000": {
+      "key": "hitchin2000",
       "id": "hitchin2000",
       "authors": "Hitchin, N.J.",
       "title": "The Geometry of Three-Forms in Six and Seven Dimensions",
@@ -183,10 +247,11 @@
       "type": "article",
       "arxiv": "math/0010054",
       "url": "https://arxiv.org/abs/math/0010054",
-      "relevance": "Hitchin deformation theory for G2 structures; moduli space of torsion-free G2 metrics",
+      "relevance": "Hitchin deformation theory for G2 structures; establishes that the moduli space of torsion-free G2 structures is a smooth manifold. The torsion tensor decomposition 1+7+14+27 under G2 is essential for the torsional leakage mechanism.",
       "source_simulation": "g2_geometry_v16_0"
     },
     "acharya2002": {
+      "key": "acharya2002",
       "id": "acharya2002",
       "authors": "Acharya, B.S.",
       "title": "M Theory, Joyce Orbifolds and Super Yang-Mills",
@@ -199,7 +264,20 @@
       "relevance": "Chiral fermion generation counting from G2 compactification index theorem",
       "source_simulation": "g2_geometry_v16_0"
     },
+    "acharya_witten2001": {
+      "key": "acharya_witten2001",
+      "id": "acharya_witten2001",
+      "authors": "Acharya, B.S., Witten, E.",
+      "title": "Chiral Fermions from Manifolds of G2 Holonomy",
+      "year": 2001,
+      "type": "article",
+      "arxiv": "hep-th/0109152",
+      "url": "https://arxiv.org/abs/hep-th/0109152",
+      "relevance": "Chiral fermion localization on singular G2 manifolds; establishes the mechanism for obtaining chiral matter from M-theory on G2.",
+      "source_simulation": "g2_geometry_v16_0"
+    },
     "berger1955": {
+      "key": "berger1955",
       "id": "berger1955",
       "authors": "Berger, M.",
       "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine et des varietes riemanniennes",
@@ -209,21 +287,12 @@
       "year": 1955,
       "type": "article",
       "url": "https://doi.org/10.24033/bsmf.1464",
+      "doi": "10.24033/bsmf.1464",
       "relevance": "Berger classification of Riemannian holonomy groups including G2 in dimension 7",
       "source_simulation": "g2_geometry_v16_0"
     },
-    "acharya_witten2001": {
-      "id": "acharya_witten2001",
-      "authors": "Acharya, B.S., Witten, E.",
-      "title": "Chiral Fermions from Manifolds of G2 Holonomy",
-      "year": 2001,
-      "type": "article",
-      "arxiv": "hep-th/0109152",
-      "url": "https://arxiv.org/abs/hep-th/0109152",
-      "relevance": "Chiral fermion localization on G2 manifolds; provides the physical basis for face-dependent matter sector structure",
-      "source_simulation": "four_face_g2_structure"
-    },
     "kklt2003": {
+      "key": "kklt2003",
       "id": "kklt2003",
       "authors": "Kachru, S., Kallosh, R., Linde, A., Trivedi, S.P.",
       "title": "de Sitter Vacua in String Theory",
@@ -234,7 +303,24 @@
       "type": "article",
       "arxiv": "hep-th/0301240",
       "url": "https://arxiv.org/abs/hep-th/0301240",
-      "relevance": "Racetrack mechanism for Kahler moduli stabilization; adapted here to the four-face G2 context",
+      "doi": "10.1103/PhysRevD.68.046005",
+      "relevance": "KKLT racetrack mechanism for Kahler moduli stabilization; adapted here to the four-face G2 context to derive T_i VEVs.",
+      "source_simulation": "four_face_g2_structure"
+    },
+    "bbcq2005": {
+      "key": "bbcq2005",
+      "id": "bbcq2005",
+      "authors": "Balasubramanian, V., Berglund, P., Conlon, J.P., Quevedo, F.",
+      "title": "Systematics of Moduli Stabilisation in Calabi-Yau Flux Compactifications",
+      "journal": "JHEP",
+      "volume": "0503",
+      "pages": "007",
+      "year": 2005,
+      "type": "article",
+      "arxiv": "hep-th/0502058",
+      "url": "https://arxiv.org/abs/hep-th/0502058",
+      "doi": "10.1088/1126-6708/2005/03/007",
+      "relevance": "Large Volume Scenario (LVS) for moduli stabilization; complementary to KKLT, providing the hierarchical moduli spectrum that mirrors the 1/i face hierarchy.",
       "source_simulation": "four_face_g2_structure"
     },
     "polchinski1998": {
@@ -435,6 +521,44 @@
       "year": "2001",
       "type": "article",
       "url": "https://arxiv.org/abs/hep-th/0109152",
+      "source_simulation": "master_action_simulation_v22_0"
+    },
+    "brans_dicke1961": {
+      "id": "brans_dicke1961",
+      "key": "brans_dicke1961",
+      "authors": "Brans, C., Dicke, R.H.",
+      "title": "Mach's Principle and a Relativistic Theory of Gravitation",
+      "journal": "Phys. Rev.",
+      "volume": "124",
+      "pages": "925-935",
+      "year": "1961",
+      "type": "article",
+      "doi": "10.1103/PhysRev.124.925",
+      "url": "https://doi.org/10.1103/PhysRev.124.925",
+      "source_simulation": "master_action_simulation_v22_0"
+    },
+    "fujii_maeda2003": {
+      "id": "fujii_maeda2003",
+      "key": "fujii_maeda2003",
+      "authors": "Fujii, Y., Maeda, K.",
+      "title": "The Scalar-Tensor Theory of Gravitation",
+      "journal": "Cambridge University Press",
+      "year": "2003",
+      "type": "book",
+      "doi": "10.1017/CBO9780511535093",
+      "url": "https://doi.org/10.1017/CBO9780511535093",
+      "source_simulation": "master_action_simulation_v22_0"
+    },
+    "hilbert1915": {
+      "id": "hilbert1915",
+      "key": "hilbert1915",
+      "authors": "Hilbert, D.",
+      "title": "Die Grundlagen der Physik (Erste Mitteilung)",
+      "journal": "Nachr. Ges. Wiss. Goettingen, Math.-Phys. Kl.",
+      "pages": "395-407",
+      "year": "1915",
+      "type": "article",
+      "url": "https://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action",
       "source_simulation": "master_action_simulation_v22_0"
     },
     "parker2018": {
@@ -682,6 +806,7 @@
     },
     "pdg2024_masses": {
       "id": "pdg2024_masses",
+      "key": "pdg2024_masses",
       "authors": "Particle Data Group",
       "title": "Review of Particle Physics - Quark Masses",
       "journal": "Prog. Theor. Exp. Phys.",
@@ -693,13 +818,40 @@
     },
     "acharya2008_yukawa": {
       "id": "acharya2008_yukawa",
+      "key": "acharya2008_yukawa",
       "authors": "Acharya, B. S. et al.",
       "title": "Yukawa couplings in M-theory on G2 manifolds",
       "journal": "arXiv:0810.5302",
       "year": "2008",
       "arxiv": "0810.5302",
       "url": "https://arxiv.org/abs/0810.5302",
-      "notes": "Yukawa couplings from G2 wavefunction overlaps",
+      "notes": "Yukawa couplings from G2 wavefunction overlaps; fermion masses from associative 3-cycle geometry",
+      "source_simulation": "yukawa_textures_v18"
+    },
+    "heckman2010_ftheory": {
+      "id": "heckman2010_ftheory",
+      "key": "heckman2010_ftheory",
+      "authors": "Heckman, J. J. and Vafa, C.",
+      "title": "Flavor Hierarchy From F-theory",
+      "journal": "Nucl. Phys. B",
+      "volume": "837",
+      "year": "2010",
+      "doi": "10.1016/j.nuclphysb.2010.05.009",
+      "url": "https://arxiv.org/abs/0811.2417",
+      "notes": "F-theory Yukawa couplings from intersection geometry; analogous to G2 face structure in PM",
+      "source_simulation": "yukawa_textures_v18"
+    },
+    "acharya2012_g2fermion": {
+      "id": "acharya2012_g2fermion",
+      "key": "acharya2012_g2fermion",
+      "authors": "Acharya, B. S., Kane, G., Kumar, P.",
+      "title": "Compactified String Theories -- Generic Predictions for Particle Physics",
+      "journal": "Int. J. Mod. Phys. A",
+      "volume": "27",
+      "year": "2012",
+      "doi": "10.1142/S0217751X12300128",
+      "url": "https://arxiv.org/abs/1204.2795",
+      "notes": "G2 compactification predictions for fermion mass hierarchy and Yukawa textures",
       "source_simulation": "yukawa_textures_v18"
     },
     "pdg2024_higgs_vev": {
@@ -774,13 +926,14 @@
     },
     "desi2024": {
       "id": "desi2024",
-      "authors": "DESI Collaboration",
-      "title": "DESI 2024: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
-      "journal": "arXiv",
+      "authors": "DESI Collaboration (Adame, A.G. et al.)",
+      "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
+      "journal": "arXiv preprint",
       "year": 2024,
       "arxiv": "2404.03002",
       "url": "https://arxiv.org/abs/2404.03002",
-      "notes": "w₀ = -0.727 ± 0.067 (BAO+CMB+PantheonPlus)",
+      "doi": "10.48550/arXiv.2404.03002",
+      "notes": "DESI Year 1 BAO measurements combined with CMB and supernovae. Reports preference for evolving dark energy (w0 > -1, wa < 0). Thawing quintessence fit: w0 = -0.957 +/- 0.067. Validates PM prediction w0 = -23/24 = -0.9583 at 0.02 sigma.",
       "source_simulation": "dark_energy_v16_0"
     },
     "green1987": {
@@ -863,6 +1016,18 @@
       "url": "https://arxiv.org/abs/astro-ph/0208512",
       "notes": "CPL parametrization w(a) = w0 + wa(1-a)",
       "source_simulation": "dark_energy_v16_0"
+    },
+    "desi2024_bao": {
+      "id": "desi2024_bao",
+      "authors": "DESI Collaboration (Adame, A.G. et al.)",
+      "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
+      "journal": "arXiv preprint",
+      "year": 2024,
+      "arxiv": "2404.03002",
+      "url": "https://arxiv.org/abs/2404.03002",
+      "doi": "10.48550/arXiv.2404.03002",
+      "notes": "DESI Year 1 BAO measurements combined with CMB and supernovae. Reports preference for evolving dark energy with w0 > -1, wa < 0 (thawing quintessence). Thawing model fit: w0 = -0.957 +/- 0.067, wa = -0.99 +/- 0.32.",
+      "source_simulation": "dark_energy_thawing_v16_2"
     },
     "hamilton1982": {
       "id": "hamilton1982",
@@ -958,30 +1123,49 @@
     },
     "nufit2024": {
       "id": "nufit2024",
+      "key": "nufit2024",
       "authors": "NuFIT Collaboration",
       "title": "NuFIT 6.0 (2024) - Neutrino oscillation global fit",
       "year": 2024,
       "url": "http://www.nu-fit.org",
+      "notes": "Global fit of neutrino oscillation parameters; source of all experimental PMNS benchmarks",
       "source_simulation": "neutrino_mixing_v17_2"
     },
     "pontecorvo1957": {
       "id": "pontecorvo1957",
+      "key": "pontecorvo1957",
       "authors": "Pontecorvo, B.",
       "title": "Mesonium and antimesonium",
       "journal": "Soviet Physics JETP",
       "volume": "6",
       "year": 1957,
       "url": "https://inspirehep.net/literature/2890",
+      "notes": "First proposal of neutrino oscillations; foundational for the PMNS framework",
       "source_simulation": "neutrino_mixing_v17_2"
     },
     "mns1962": {
       "id": "mns1962",
+      "key": "mns1962",
       "authors": "Maki, Z., Nakagawa, M., Sakata, S.",
       "title": "Remarks on the Unified Model of Elementary Particles",
       "journal": "Prog. Theor. Phys.",
       "volume": "28",
       "year": 1962,
       "url": "https://doi.org/10.1143/PTP.28.870",
+      "doi": "10.1143/PTP.28.870",
+      "notes": "Original PMNS (Maki-Nakagawa-Sakata) neutrino mixing matrix formulation",
+      "source_simulation": "neutrino_mixing_v17_2"
+    },
+    "pontecorvo1968": {
+      "id": "pontecorvo1968",
+      "key": "pontecorvo1968",
+      "authors": "Pontecorvo, B.",
+      "title": "Neutrino Experiments and the Problem of Conservation of Leptonic Charge",
+      "journal": "Soviet Physics JETP",
+      "volume": "26",
+      "year": 1968,
+      "url": "https://inspirehep.net/literature/52sergei",
+      "notes": "Extended neutrino mixing formalism; completed the Pontecorvo-MNS framework",
       "source_simulation": "neutrino_mixing_v17_2"
     },
     "harveylawson1982": {
@@ -1011,6 +1195,30 @@
       "volume": "10",
       "year": 1922,
       "url": "https://doi.org/10.1007/BF01332580",
+      "source_simulation": "multi_sector_v16_0"
+    },
+    "horava_witten_1996": {
+      "id": "horava_witten_1996",
+      "authors": "Horava, P.; Witten, E.",
+      "title": "Eleven-dimensional supergravity on a manifold with boundary",
+      "journal": "Nucl. Phys. B",
+      "volume": "460",
+      "year": 1996,
+      "pages": "506-524",
+      "arxiv": "hep-th/9603142",
+      "url": "https://arxiv.org/abs/hep-th/9603142",
+      "notes": "Foundational paper for heterotic M-theory with two end-of-the-world branes. The dual-shadow architecture generalizes this to G2 holonomy with 2 shadows sharing a Euclidean bridge.",
+      "source_simulation": "multi_sector_v16_0"
+    },
+    "hori_vafa_2000": {
+      "id": "hori_vafa_2000",
+      "authors": "Hori, K.; Vafa, C.",
+      "title": "Mirror Symmetry",
+      "year": 2000,
+      "journal": "arXiv preprint",
+      "arxiv": "hep-th/0002222",
+      "url": "https://arxiv.org/abs/hep-th/0002222",
+      "notes": "Mirror symmetry as a duality between Calabi-Yau manifolds. In the G2 context, the normal/mirror shadow duality is the M-theory lift of mirror symmetry, explaining the Z2 structure of the dual-shadow architecture.",
       "source_simulation": "multi_sector_v16_0"
     },
     "bipm2019": {

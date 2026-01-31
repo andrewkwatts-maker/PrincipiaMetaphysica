@@ -148,6 +148,7 @@ _OUTPUT_FORMULAS = [
     "u1-hypercharge-v22",
     "electroweak-mixing-v22",
     "euler-lagrange-metric-variation",
+    "stress-energy-variation",
 ]
 
 
@@ -662,25 +663,102 @@ class MasterActionSimulationV22(SimulationBase):
             Formula(
                 id="euler-lagrange-metric-variation",
                 label="(MA.EL1)",
-                latex=r"\frac{\delta S_{27}}{\delta g^{\mu\nu}} = 0 \implies G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}",
-                plain_text="delta S_27 / delta g^{mu nu} = 0 => G_mu_nu + Lambda g_mu_nu = 8*pi*G * T_mu_nu",
+                latex=(
+                    r"\frac{\delta S_{27}}{\delta g^{\mu\nu}} = 0 \;\Longrightarrow\; "
+                    r"G_{\mu\nu} + \Lambda_{\text{eff}}\,g_{\mu\nu} = \frac{8\pi G_{27}}{c^4}"
+                    r"\!\left(T_{\mu\nu}^{\text{YM}} + T_{\mu\nu}^{\text{Dirac}} "
+                    r"+ T_{\mu\nu}^{\text{bridge}} + T_{\mu\nu}^{\text{Pneuma}}\right)"
+                ),
+                plain_text=(
+                    "delta S_27 / delta g^{mu nu} = 0  =>  "
+                    "G_{mu nu} + Lambda_eff g_{mu nu} = (8 pi G_27 / c^4) "
+                    "(T^YM_{mu nu} + T^Dirac_{mu nu} + T^bridge_{mu nu} + T^Pneuma_{mu nu})"
+                ),
                 category="DERIVED",
-                description="Einstein field equations from variation of 27D master action with respect to the metric tensor. The stress-energy tensor T_mu_nu includes contributions from all matter, gauge, bridge, and Pneuma sectors.",
+                description=(
+                    "Einstein field equations from metric variation of the full 27D master "
+                    "action. The left-hand side contains the Einstein tensor G_{mu nu} = "
+                    "R_{mu nu} - (1/2) R g_{mu nu} (from the Hilbert variation of sqrt(-g) R) "
+                    "plus an effective cosmological constant Lambda_eff from vacuum energy. "
+                    "The right-hand side decomposes the total stress-energy T_{mu nu} into "
+                    "its four physical sectors: Yang-Mills (gauge), Dirac (fermion), bridge "
+                    "(12-pair system), and Pneuma (moduli/scalar). The Bianchi identity "
+                    "nabla^mu G_{mu nu} = 0 ensures covariant conservation of T_{mu nu}. "
+                    "This is the equation of motion (EOM) for the gravitational sector."
+                ),
+                inputParams=[
+                    "constants.M_STAR",
+                    "geometry.D_bulk",
+                ],
+                outputParams=[],
                 derivation={
                     "steps": [
-                        "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_pneuma",
-                        "Vary with respect to the inverse metric g^{mu nu}: delta S / delta g^{mu nu} = 0",
-                        "The Einstein-Hilbert variation gives the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2)R g_{mu nu}",
-                        "Matter + gauge + bridge + pneuma variations give the combined stress-energy tensor T_{mu nu}"
+                        "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_Pneuma where each sector is separately gauge-invariant",
+                        "Vary the Einstein-Hilbert sector: delta(sqrt(-g) R) / delta g^{mu nu} = sqrt(-g) (R_{mu nu} - (1/2) R g_{mu nu}) using the Palatini identity for delta R_{mu nu}",
+                        "Vary the cosmological constant term: delta(Lambda sqrt(-g)) / delta g^{mu nu} = -(Lambda/2) sqrt(-g) g_{mu nu}",
+                        "Define the sector stress-energy tensors via T^(X)_{mu nu} = -(2/sqrt(-g)) delta S_X / delta g^{mu nu} for X in {YM, Dirac, bridge, Pneuma}",
+                        "Combine all variations and set delta S_27 / delta g^{mu nu} = 0 to obtain the 27D Einstein field equations with source decomposition",
+                        "Verify covariant conservation: the contracted Bianchi identity nabla^mu G_{mu nu} = 0 implies nabla^mu T_{mu nu} = 0 (energy-momentum conservation)"
                     ],
-                    "method": "Euler-Lagrange variation of master action with respect to spacetime metric",
+                    "method": "analytical",
+                    "derivation_type": "analytical",
                     "parentFormulas": ["pneuma-master-action-v23"]
                 },
                 terms={
-                    r"G_{\mu\nu}": {"description": "Einstein tensor: curvature contribution to field equations"},
-                    r"T_{\mu\nu}": {"description": "Total stress-energy tensor from all sectors (matter, gauge, bridge, Pneuma)"},
-                    r"\Lambda": {"description": "Effective cosmological constant from vacuum energy"},
-                    r"g_{\mu\nu}": {"description": "Spacetime metric tensor in 27D"}
+                    r"G_{\mu\nu}": {"description": "Einstein tensor R_{mu nu} - (1/2) R g_{mu nu}, divergence-free by the Bianchi identity"},
+                    r"T_{\mu\nu}^{\text{YM}}": {"description": "Yang-Mills stress-energy from gauge field kinetic and self-interaction terms"},
+                    r"T_{\mu\nu}^{\text{Dirac}}": {"description": "Fermionic stress-energy from Pneuma spinor kinetic and mass terms"},
+                    r"T_{\mu\nu}^{\text{bridge}}": {"description": "Bridge sector stress-energy from the 12-pair (2,0) system kinetic terms"},
+                    r"T_{\mu\nu}^{\text{Pneuma}}": {"description": "Moduli/scalar stress-energy including Kahler moduli and dilaton contributions"},
+                    r"\Lambda_{\text{eff}}": {"description": "Effective cosmological constant from vacuum energy (moduli stabilisation)"},
+                    r"G_{27}": {"description": "27D gravitational coupling constant, related to M_*^{25} via 8 pi G_27 = M_*^{-25}"}
+                }
+            ),
+            Formula(
+                id="stress-energy-variation",
+                label="(MA.EL2)",
+                latex=(
+                    r"T_{\mu\nu} \equiv -\frac{2}{\sqrt{-g}}\,\frac{\delta S_{\text{matter}}}{\delta g^{\mu\nu}}"
+                    r", \quad \nabla^\mu T_{\mu\nu} = 0"
+                ),
+                plain_text=(
+                    "T_{mu nu} = -(2/sqrt(-g)) delta S_matter / delta g^{mu nu},  "
+                    "nabla^mu T_{mu nu} = 0"
+                ),
+                category="DERIVED",
+                description=(
+                    "Stress-energy tensor definition from the metric variation of the matter "
+                    "action, and its covariant conservation law. The factor of -2/sqrt(-g) "
+                    "ensures T_{mu nu} is a symmetric (0,2) tensor with the standard "
+                    "normalisation. The conservation law nabla^mu T_{mu nu} = 0 follows "
+                    "from the contracted Bianchi identity applied to the Einstein equations "
+                    "delta S/delta g^{mu nu} = 0, and guarantees energy-momentum conservation "
+                    "in the curved 27D spacetime. For the Pneuma master action, S_matter "
+                    "includes all non-gravitational sectors (YM, Dirac, bridge, Pneuma). "
+                    "In the scalar-tensor (Brans-Dicke) generalisation, the effective "
+                    "gravitational coupling becomes field-dependent: G_eff = G / phi, "
+                    "modifying the source term."
+                ),
+                inputParams=[
+                    "constants.M_STAR",
+                ],
+                outputParams=[],
+                derivation={
+                    "steps": [
+                        "From the Einstein field equations delta S / delta g^{mu nu} = 0, identify the source term as the functional derivative of the non-gravitational action",
+                        "Define T_{mu nu} = -(2/sqrt(-g)) delta S_matter / delta g^{mu nu}, ensuring symmetry T_{mu nu} = T_{nu mu} and correct normalisation",
+                        "Apply the contracted Bianchi identity nabla^mu G_{mu nu} = 0 to the field equations to derive nabla^mu T_{mu nu} = 0 (covariant energy-momentum conservation)",
+                        "In the Brans-Dicke scalar-tensor generalisation, replace G with G_eff = G/phi(x) where phi is the dilaton, giving modified field equations with an effective Newton constant"
+                    ],
+                    "method": "analytical",
+                    "derivation_type": "analytical",
+                    "parentFormulas": ["euler-lagrange-metric-variation", "pneuma-master-action-v23"]
+                },
+                terms={
+                    r"T_{\mu\nu}": {"description": "Total stress-energy tensor, symmetric and covariantly conserved"},
+                    r"S_{\text{matter}}": {"description": "Non-gravitational action (YM + Dirac + bridge + Pneuma sectors)"},
+                    r"\nabla^\mu": {"description": "Covariant divergence with respect to the Levi-Civita connection"},
+                    r"-2/\sqrt{-g}": {"description": "Normalisation factor ensuring canonical dimensions and symmetry of T_{mu nu}"}
                 }
             ),
         ]
@@ -950,6 +1028,42 @@ class MasterActionSimulationV22(SimulationBase):
                     type="formula",
                     formula_id="electroweak-mixing-v22"
                 ),
+                # =============================================================
+                # Equations of Motion from Metric Variation
+                # =============================================================
+                ContentBlock(
+                    type="heading",
+                    content="Equations of Motion: Metric Variation",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The equations of motion for the gravitational sector are obtained "
+                        "by varying the full 27D master action with respect to the inverse "
+                        "metric g^{mu nu}. The Hilbert variational principle yields the "
+                        "Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} on "
+                        "the left-hand side (using the Palatini identity to handle the "
+                        "variation of the Ricci tensor). The right-hand side collects "
+                        "the stress-energy contributions from all non-gravitational sectors: "
+                        "Yang-Mills gauge fields T^YM_{mu nu}, Dirac fermions T^Dirac_{mu nu}, "
+                        "the 12-pair bridge system T^bridge_{mu nu}, and the Pneuma "
+                        "moduli/scalar sector T^Pneuma_{mu nu}. The contracted Bianchi "
+                        "identity nabla^mu G_{mu nu} = 0 automatically ensures covariant "
+                        "energy-momentum conservation nabla^mu T_{mu nu} = 0. In the "
+                        "scalar-tensor generalisation (Brans-Dicke 1961; Fujii-Maeda 2003), "
+                        "the effective gravitational coupling becomes field-dependent via "
+                        "the dilaton phi, connecting to the Pneuma mechanism."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="euler-lagrange-metric-variation"
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="stress-energy-variation"
+                ),
             ],
             formula_refs=_OUTPUT_FORMULAS,
             param_refs=_OUTPUT_PARAMS
@@ -1027,6 +1141,41 @@ class MasterActionSimulationV22(SimulationBase):
                 "type": "review",
                 "doi": "10.1103/PhysRevD.110.030001",
                 "url": "https://pdg.lbl.gov/",
+            },
+            {
+                "id": "brans_dicke1961",
+                "key": "brans_dicke1961",
+                "authors": "Brans, C., Dicke, R.H.",
+                "title": "Mach's Principle and a Relativistic Theory of Gravitation",
+                "journal": "Phys. Rev.",
+                "volume": "124",
+                "pages": "925-935",
+                "year": "1961",
+                "type": "article",
+                "doi": "10.1103/PhysRev.124.925",
+                "url": "https://doi.org/10.1103/PhysRev.124.925",
+            },
+            {
+                "id": "fujii_maeda2003",
+                "key": "fujii_maeda2003",
+                "authors": "Fujii, Y., Maeda, K.",
+                "title": "The Scalar-Tensor Theory of Gravitation",
+                "journal": "Cambridge University Press",
+                "year": "2003",
+                "type": "book",
+                "doi": "10.1017/CBO9780511535093",
+                "url": "https://doi.org/10.1017/CBO9780511535093",
+            },
+            {
+                "id": "hilbert1915",
+                "key": "hilbert1915",
+                "authors": "Hilbert, D.",
+                "title": "Die Grundlagen der Physik (Erste Mitteilung)",
+                "journal": "Nachr. Ges. Wiss. Goettingen, Math.-Phys. Kl.",
+                "pages": "395-407",
+                "year": "1915",
+                "type": "article",
+                "url": "https://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action",
             },
         ]
 

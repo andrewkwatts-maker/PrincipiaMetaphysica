@@ -640,11 +640,13 @@ if SCHEMA_AVAILABLE:
                 domain="quantum_biology",
                 title="Orch-OR Coherence Bridge - 12x(2,0) Paired Tensor Structure",
                 description=(
-                    "Bridges biological microtubule coherence to G2 manifold geometry "
-                    "using the Penrose Criterion for gravitational Objective Reduction "
-                    "(tau = hbar / E_g). Implements a 12x(2,0) paired tensor framework "
-                    "with 6-pair minimum stability threshold and topological coherence "
-                    "enhancement from warping shield geometry."
+                    "[SPECULATIVE EXTENSION] Bridges biological microtubule coherence "
+                    "to G2 manifold geometry using the Penrose Criterion for "
+                    "gravitational Objective Reduction (tau = hbar / E_g). Implements "
+                    "a 12x(2,0) paired tensor framework with 6-pair minimum stability "
+                    "threshold and topological coherence enhancement from warping "
+                    "shield geometry. This extends beyond the core geometric framework "
+                    "and should be considered an exploratory hypothesis."
                 ),
                 section_id="7",
                 subsection_id="7.2"
@@ -1178,6 +1180,19 @@ if SCHEMA_AVAILABLE:
                     "enhancement for wet biological environments."
                 ),
                 content_blocks=[
+                    ContentBlock(
+                        type="callout",
+                        callout_type="warning",
+                        content=(
+                            "**SPECULATIVE EXTENSION:** The following Orch-OR bridge "
+                            "predictions extend beyond the core geometric framework and "
+                            "should be considered exploratory hypotheses rather than "
+                            "confirmed predictions of the theory. The consciousness and "
+                            "quantum biology content herein is based on the Penrose-Hameroff "
+                            "Orch-OR model, which remains experimentally unverified. "
+                            "(Gemini peer review, Topic 12, score 6/10.)"
+                        )
+                    ),
                     ContentBlock(
                         type="paragraph",
                         content=(
