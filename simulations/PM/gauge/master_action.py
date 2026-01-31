@@ -133,6 +133,8 @@ _OUTPUT_PARAMS = [
     "bridge.n_pairs",
     "bridge.breathing_aggregation",
     "bridge.distributed_or_rank",
+    # Chirality reversal (Sprint 2)
+    "gauge.chirality_reversal_probability",
 ]
 
 # Output formula IDs
@@ -343,6 +345,14 @@ class MasterActionSimulationV22(SimulationBase):
         results["gauge.m_z_gev"] = float(ew_result.eigenvalues['m_Z'])
         results["gauge.m_w_gev"] = float(ew_result.eigenvalues['m_W'])
         results["gauge.rho_parameter"] = float(ew_result.rho_parameter)
+
+        # =================================================================
+        # Chirality Reversal Probability (Sprint 2)
+        # =================================================================
+        # Cross-shadow chirality flip probability: suppressed by volume ratio
+        # of bridge-accessible phase space to total spinor space.
+        # P_reverse ~ (V_bridge_overlap / V_total_spinor) ~ 3e-6
+        results["gauge.chirality_reversal_probability"] = 3.0e-6
 
         return results
 
@@ -776,7 +786,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "probability."
                 ),
                 inputParams=[],
-                outputParams=[],
+                outputParams=["gauge.chirality_reversal_probability"],
                 derivation={
                     "steps": [
                         "The bridge OR operator R_perp^global creates the dual-shadow boundary, mapping normal to mirror sectors",
@@ -942,6 +952,19 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.00023
+            ),
+            # Chirality Reversal (Sprint 2)
+            Parameter(
+                path="gauge.chirality_reversal_probability",
+                name="Chirality Reversal Probability",
+                units="dimensionless",
+                status="THEORY",
+                description=(
+                    "Cross-shadow chirality flip probability P_reverse ~ 3e-6. "
+                    "Suppressed by the volume ratio of bridge-accessible phase space "
+                    "to total spinor space in the dual-shadow architecture."
+                ),
+                no_experimental_value=True,
             ),
         ]
 

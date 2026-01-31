@@ -1,0 +1,2207 @@
+{
+  "status": "completed",
+  "timestamp": "2026-01-31T21:35:14.084897",
+  "model": "gemini-2.0-flash",
+  "total_files": 122,
+  "total_reviewed": 122,
+  "mean_score": 8.420491803278688,
+  "min_score": 6.0,
+  "max_score": 10.0,
+  "verdicts": {
+    "STRONG": 60,
+    "ADEQUATE": 59,
+    "NEEDS_WORK": 3,
+    "ERROR": 0
+  },
+  "reviews": [
+    {
+      "file_path": "simulations\\PM\\constants\\parameter_residues.py",
+      "simulation_id": "parameter_residues_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Clarify the connection between Selberg trace formula and residue extraction more explicitly."
+      ],
+      "timestamp": "2026-01-31T21:31:01.967004",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\attractor_potential.py",
+      "simulation_id": "attractor_potential_v18",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a section visualizing the attractor potential landscape."
+      ],
+      "timestamp": "2026-01-31T21:31:01.967009",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\axion_dm.py",
+      "simulation_id": "axion_dm_v18",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The origin of k_gimel^6 suppression needs further explanation."
+      ],
+      "suggestions": [
+        "Provide more context on the motivation and justification for the k_gimel^6 suppression factor.",
+        "Investigate the sensitivity of the relic density calculation to variations in the axion decay constant."
+      ],
+      "timestamp": "2026-01-31T21:31:01.967011",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\baryon_asymmetry.py",
+      "simulation_id": "baryon_asymmetry_v18",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The connection between G2 cycle imbalance and Jarlskog CP violation needs clearer exposition."
+      ],
+      "suggestions": [
+        "Elaborate on the specific G2 cycles involved and how their imbalance contributes to CP violation.",
+        "Quantify the uncertainty in the predicted baryon asymmetry based on the parameter uncertainties."
+      ],
+      "timestamp": "2026-01-31T21:31:01.967011",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\breathing_de.py",
+      "simulation_id": "breathing_de_v21",
+      "overall_score": 6.0,
+      "formula_strength": 0.0,
+      "derivation_rigor": 0.0,
+      "section_wording": 10.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 6.0,
+      "verdict": "NEEDS_WORK",
+      "key_issues": [
+        "The simulation contains no formulas.",
+        "Missing content to analyze."
+      ],
+      "suggestions": [
+        "Populate the file with the relevant formulas and derivations for breathing dark energy.",
+        "Consider removing the file if it is no longer relevant."
+      ],
+      "timestamp": "2026-01-31T21:31:01.967012",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\cmb_temperature.py",
+      "simulation_id": "cmb_temperature_v18",
+      "overall_score": 7.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 6.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Heuristic normalization factor needs stronger theoretical justification.",
+        "Geometric scaling is a good starting point, but lacks connection to deeper physics"
+      ],
+      "suggestions": [
+        "Explore potential connections between the normalization factor and G2 holonomy or string theory parameters.",
+        "Provide more rigorous derivation of the geometric scaling from fundamental principles."
+      ],
+      "timestamp": "2026-01-31T21:31:21.117825",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\cosmological_constant.py",
+      "simulation_id": "cosmological_constant_v16_1",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [
+        "Instanton suppression factor, while interesting, needs stronger motivation.",
+        "Connection between G2 entropy density and cosmological constant could be elaborated upon."
+      ],
+      "suggestions": [
+        "Provide a more detailed explanation of the origin and implications of the instanton suppression factor.",
+        "Clarify the link between G2 entropy density and the emergence of the cosmological constant, perhaps through holographic arguments."
+      ],
+      "timestamp": "2026-01-31T21:31:21.117829",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\cosmology_intro.py",
+      "simulation_id": "cosmology_intro_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 7.5,
+      "derivation_rigor": 6.0,
+      "section_wording": 7.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The series of high dimensional concepts are vaguely introduced.",
+        "Pneuma reduction details are unclear and require better justification."
+      ],
+      "suggestions": [
+        "Provide more physical intuition and motivation for the 13D metric decomposition and Einstein-Hilbert action.",
+        "Elaborate on the Pneuma field reduction process, explaining the underlying principles and assumptions."
+      ],
+      "timestamp": "2026-01-31T21:31:21.117830",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\dark_energy.py",
+      "simulation_id": "dark_energy_v16_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Dimensional reduction cascade needs more explicit details about the compactification process.",
+        "The connection between G2 geometry and the dark energy equation of state should be clarified."
+      ],
+      "suggestions": [
+        "Provide a more detailed description of the dimensional reduction steps and the resulting effective theories.",
+        "Explain how the G2 thawing dynamics influence the dark energy equation of state."
+      ],
+      "timestamp": "2026-01-31T21:31:21.117831",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\dark_energy_thawing.py",
+      "simulation_id": "dark_energy_thawing_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [
+        "Torsional leakage and its effect on the overall results should be emphasized more clearly.",
+        "Nonlinear correction to wa is interesting, but the physical interpretation needs strengthening."
+      ],
+      "suggestions": [
+        "Highlight the role of torsional leakage in the thawing mechanism and its impact on the dark energy dynamics.",
+        "Provide a more intuitive explanation of the physical origin and implications of the nonlinear correction to wa."
+      ],
+      "timestamp": "2026-01-31T21:31:21.117831",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\evolution_engine.py",
+      "simulation_id": "evolution_engine_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider further exploring the parameter space for the relaxation factor to optimize convergence and accuracy."
+      ],
+      "timestamp": "2026-01-31T21:31:31.050691",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\f_r_t_tau_gravity.py",
+      "simulation_id": "f_r_t_tau_gravity_v18",
+      "overall_score": 9.2,
+      "formula_strength": 9.3,
+      "derivation_rigor": 9.1,
+      "section_wording": 8.8,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Investigate the sensitivity of gravitational wave speed to the modified gravity coefficients. Document the allowed parameter ranges for the coefficients."
+      ],
+      "timestamp": "2026-01-31T21:31:31.050696",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\multi_sector.py",
+      "simulation_id": "multi_sector_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 8.7,
+      "derivation_rigor": 8.3,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Expand on the physical interpretation of the modulation width in relation to G2 wavefunction overlap geometry.  Add a section explaining the observational constraints on asymmetric reheating."
+      ],
+      "timestamp": "2026-01-31T21:31:31.050697",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\ricci_flow_h0.py",
+      "simulation_id": "ricci_flow_h0_v16_1",
+      "overall_score": 9.1,
+      "formula_strength": 9.4,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.7,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Perform a detailed sensitivity analysis to quantify the impact of initial conditions on the Hubble tension resolution.  Compare to other Hubble tension resolution mechanisms."
+      ],
+      "timestamp": "2026-01-31T21:31:31.050698",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\s8_suppression.py",
+      "simulation_id": "s8_suppression_v16_1",
+      "overall_score": 8.8,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.5,
+      "section_wording": 8.3,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.7,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Investigate the observational constraints on the growth suppression factor and refine the model to better match existing data. Add a discussion of the errors on the measured S8 parameter and how it impacts the prediction accuracy."
+      ],
+      "timestamp": "2026-01-31T21:31:31.050698",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\cosmology\\speed_of_light.py",
+      "simulation_id": "speed_of_light_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a section to address any potential criticisms of using G2 manifold topology to derive fundamental constants."
+      ],
+      "timestamp": "2026-01-31T21:31:41.364274",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\derivations\\cosmology_sector_complete.py",
+      "simulation_id": "cosmology_sector_complete_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Expand on the physical interpretation of the tzimtzum pressure and its connection to dark energy.",
+        "Possibly include error estimations or sensitivity analysis for the Hubble constant derivation."
+      ],
+      "timestamp": "2026-01-31T21:31:41.364278",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\derivations\\gauge_sector_complete.py",
+      "simulation_id": "gauge_sector_complete_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Add a discussion of the limitations or assumptions involved in deriving the gauge sector from G2 geometry.",
+        "Explore any potential connections between the hypercharge ratio derivation and other aspects of the PM framework."
+      ],
+      "timestamp": "2026-01-31T21:31:41.364279",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\derivations\\gr_spacetime.py",
+      "simulation_id": "gr_spacetime_derivations_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider expanding on the implications of deriving GR from the vielbein formalism within the PM framework.",
+        "Address any potential modifications to GR that may arise from the underlying G2 structure."
+      ],
+      "timestamp": "2026-01-31T21:31:41.364280",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\derivations\\lagrangian_master.py",
+      "simulation_id": "lagrangian_master_derivation_v22",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Provide a more detailed explanation of the Pneuma coupling and its role in the 26D master action.",
+        "Further clarify how the Euler-Lagrange equation leads to the Einstein equations in this context."
+      ],
+      "timestamp": "2026-01-31T21:31:41.364281",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\derivations\\matter_sector_complete.py",
+      "simulation_id": "matter_sector_complete_v19",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:31:50.365914",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\field_dynamics\\orch_or_bridge.py",
+      "simulation_id": "orch_or_bridge_v22_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:31:50.365918",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\field_dynamics\\orch_or_geometry.py",
+      "simulation_id": "orch_or_geometry_v22_0",
+      "overall_score": 7.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 6.5,
+      "section_wording": 7.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:31:50.365919",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\field_dynamics\\pneuma_mechanism.py",
+      "simulation_id": "pneuma_mechanism_v22_0",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:31:50.365920",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\field_dynamics\\thermal_time.py",
+      "simulation_id": "thermal_time_v22_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:31:50.365920",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\electroweak_mixing.py",
+      "simulation_id": "electroweak_mixing_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Reliance on G2-locked parameters needs more explicit justification.",
+        "Connection to full 26D string theory could be stronger."
+      ],
+      "suggestions": [
+        "Elaborate on the physical implications of the Weinberg angle being locked by G2.",
+        "Add a section connecting this simulation to the larger 26D string theory landscape."
+      ],
+      "timestamp": "2026-01-31T21:32:01.337423",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\gauge_unification.py",
+      "simulation_id": "gauge_unification_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [
+        "KK threshold corrections could be explained more intuitively.",
+        "Impact of asymptotic safety fixed point needs more discussion."
+      ],
+      "suggestions": [
+        "Provide a more intuitive explanation of the Kaluza-Klein threshold corrections.",
+        "Include a discussion on the robustness of the GUT scale prediction given the asymptotic safety correction."
+      ],
+      "timestamp": "2026-01-31T21:32:01.337428",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\kk_reduction_gr_gauge.py",
+      "simulation_id": "kk_reduction_gr_gauge_v22_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.5,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The derivation of the gauge coupling and Planck mass relations could be made more explicit.",
+        "Motivation for the 5D metric ansatz could be strengthened."
+      ],
+      "suggestions": [
+        "Provide a more detailed derivation of the relationship between the 5D Planck mass, 4D Planck mass, and gauge coupling.",
+        "Add a paragraph explaining the rationale behind choosing the specific 5D Kaluza-Klein metric ansatz."
+      ],
+      "timestamp": "2026-01-31T21:32:01.337429",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\master_action.py",
+      "simulation_id": "master_action_simulation_v22_0",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [
+        "Complexity of the Pneuma master action makes it difficult to grasp intuitively.",
+        "The distributed OR reduction operator is somewhat opaque."
+      ],
+      "suggestions": [
+        "Consider adding a simplified version of the master action to aid understanding.",
+        "Provide a more detailed explanation of the distributed OR reduction operator and its physical significance."
+      ],
+      "timestamp": "2026-01-31T21:32:01.337429",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\non_abelian_kk_gauge.py",
+      "simulation_id": "non_abelian_kk_gauge_v17_2",
+      "overall_score": 7.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The connection to the specific group manifold used for KK reduction should be stated explicitly.",
+        "The physical interpretation of the Yang-Mills kinetic term could be expanded."
+      ],
+      "suggestions": [
+        "Specify the group manifold used in the Kaluza-Klein reduction.",
+        "Add a section discussing the physical implications of the derived Yang-Mills kinetic term, especially in the context of the PM framework."
+      ],
+      "timestamp": "2026-01-31T21:32:01.337430",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\su2_weak_gauge.py",
+      "simulation_id": "su2_weak_gauge_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:32:10.140168",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\su3_qcd_gauge.py",
+      "simulation_id": "su3_qcd_gauge_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:32:10.140172",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\gauge\\u1_hypercharge.py",
+      "simulation_id": "u1_hypercharge_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:32:10.140173",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\alpha_rigor.py",
+      "simulation_id": "alpha_rigor_v16_1",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:32:10.140174",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\four_face_structure.py",
+      "simulation_id": "four_face_g2_structure",
+      "overall_score": 9.5,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:32:10.140174",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\g2_compactification.py",
+      "simulation_id": "g2_compactification_v21",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider expanding the explanation of the G2 residue triality derivation."
+      ],
+      "timestamp": "2026-01-31T21:32:26.022365",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\g2_geometry.py",
+      "simulation_id": "g2_geometry_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Provide more details on the TCS gluing construction."
+      ],
+      "timestamp": "2026-01-31T21:32:26.022370",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\geometric_anchors.py",
+      "simulation_id": "geometric_anchors_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The connection between topological Tzimtzum fraction and dark energy needs more justification.",
+        "The 'Experimental' labels on spectral index and dark energy anchors should be carefully considered."
+      ],
+      "suggestions": [
+        "Provide more theoretical backing for the dark energy equation of state.",
+        "Clearly define the 'topological Tzimtzum fraction'."
+      ],
+      "timestamp": "2026-01-31T21:32:26.022371",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\leech_partition.py",
+      "simulation_id": "leech_partition_v16_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Elaborate on the significance of G2 as the automorphism group of octonions in this context."
+      ],
+      "timestamp": "2026-01-31T21:32:26.022371",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\modular_invariance.py",
+      "simulation_id": "modular_invariance_v16_2",
+      "overall_score": 7.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Connection between modular anomaly and G2 geometry is not explicit.",
+        "The critical dimension calculation should be more clearly linked to the other simulations."
+      ],
+      "suggestions": [
+        "Explain how the modular anomaly cancellation condition relates to G2 holonomy.",
+        "Provide a more detailed explanation of the physical implications of the critical dimension in the context of the PM framework."
+      ],
+      "timestamp": "2026-01-31T21:32:26.022372",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\geometry\\torsional_constants.py",
+      "simulation_id": "torsional_constants_v16_1",
+      "overall_score": 8.5,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Further clarify the connection between geometric anchors and physical observables."
+      ],
+      "timestamp": "2026-01-31T21:32:36.476217",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\abstract.py",
+      "simulation_id": "abstract_v17_2",
+      "overall_score": 7.5,
+      "formula_strength": 7.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Abstract could be more specific regarding the dimensional descent mechanism."
+      ],
+      "suggestions": [
+        "Elaborate on the 27D ancestral bulk and its relation to the Standard Model.",
+        "Provide a more quantitative overview of the framework's predictions."
+      ],
+      "timestamp": "2026-01-31T21:32:36.476222",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_a_math.py",
+      "simulation_id": "appendix_a_math_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding visual representations of the G2 holonomy condition and associative/coassociative calibrations."
+      ],
+      "timestamp": "2026-01-31T21:32:36.476223",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_a_spectral_registry.py",
+      "simulation_id": "appendix_a_spectral_registry_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 7.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The link between spectral eigenvalues and physical parameters is not fully transparent.",
+        "The significance of the 125 residues requires more explanation."
+      ],
+      "suggestions": [
+        "Provide more details on the physical interpretation of the spectral eigenvalues.",
+        "Explain how the cryptographic hash ensures registry immutability in the context of the simulation."
+      ],
+      "timestamp": "2026-01-31T21:32:36.476223",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_b_methods.py",
+      "simulation_id": "appendix_b_methods_v16_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 8.0,
+      "section_wording": 7.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The asymptotic safety correction needs further justification in the G2 holonomy context.",
+        "Connection to experimental data needs to be emphasized."
+      ],
+      "suggestions": [
+        "Elaborate on the theoretical basis for the asymptotic safety correction in this framework.",
+        "Clearly state how these methods are used to derive the 125 SM parameters.",
+        "Include more explicit comparisons to experimental data."
+      ],
+      "timestamp": "2026-01-31T21:32:36.476224",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_b_sum_rule.py",
+      "simulation_id": "appendix_b_sum_rule_v16_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a visualization of the sum rule convergence."
+      ],
+      "timestamp": "2026-01-31T21:32:46.629143",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_c_derivations.py",
+      "simulation_id": "appendix_c_derivations_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Perhaps include more intermediate steps in the more complex derivations for clarity."
+      ],
+      "timestamp": "2026-01-31T21:32:46.629148",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_c_gauge_matrices.py",
+      "simulation_id": "appendix_c_gauge_matrices_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The symmetry shattering rule could benefit from more explicit examples."
+      ],
+      "suggestions": [
+        "Provide a concrete example demonstrating the application of the symmetry shattering rule."
+      ],
+      "timestamp": "2026-01-31T21:32:46.629149",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_d_alignment.py",
+      "simulation_id": "appendix_d_alignment_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The geometric interpretation of the Hubble tension resolution could be further elaborated."
+      ],
+      "suggestions": [
+        "Add a diagram illustrating the geometric resolution of the Hubble tension."
+      ],
+      "timestamp": "2026-01-31T21:32:46.629149",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_d_sp2r_invariance.py",
+      "simulation_id": "appendix_d_sp2r_invariance_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a discussion of the implications of the no-CTC theorem for the shadow spacetime."
+      ],
+      "timestamp": "2026-01-31T21:32:46.629150",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_d_tables.py",
+      "simulation_id": "appendix_d_tables_v16_0",
+      "overall_score": 8.0,
+      "formula_strength": 0.0,
+      "derivation_rigor": 0.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "No explicit formulas listed. This suggests the file primarily contains data tables or lookup information, which are indirectly based on formulas from other files."
+      ],
+      "suggestions": [
+        "Consider explicitly referencing the formulas used to generate the tables within the file for improved traceability."
+      ],
+      "timestamp": "2026-01-31T21:32:56.841554",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_e_brane_map.py",
+      "simulation_id": "appendix_e_brane_map_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding visual representations of the brane map for enhanced understanding."
+      ],
+      "timestamp": "2026-01-31T21:32:56.841558",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_e_proton.py",
+      "simulation_id": "appendix_e_proton_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Include more detailed explanations of the geometric suppression factor and its implications for proton decay."
+      ],
+      "timestamp": "2026-01-31T21:32:56.841559",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_f.py",
+      "simulation_id": "appendix_f_v21_0",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a section visualizing the OR Reduction operator and its Mobius property to improve comprehension."
+      ],
+      "timestamp": "2026-01-31T21:32:56.841560",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_f_72gates.py",
+      "simulation_id": "appendix_f_72gates_v16_2",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Provide a more detailed explanation of the physical interpretation of the '24 pins' mentioned in several gate checks."
+      ],
+      "timestamp": "2026-01-31T21:32:56.841560",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_g.py",
+      "simulation_id": "appendix_g_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:33:05.935892",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_g_omega_seal.py",
+      "simulation_id": "appendix_g_omega_seal_v22_0",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:33:05.935897",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_h.py",
+      "simulation_id": "appendix_h_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 6.5,
+      "section_wording": 7.5,
+      "schema_compliance": 8.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:33:05.935898",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_h_288_roots.py",
+      "simulation_id": "appendix_h_288_roots_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 8.5,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:33:05.935899",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_i.py",
+      "simulation_id": "appendix_i_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 8.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:33:05.935899",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_i_terminal_states.py",
+      "simulation_id": "appendix_i_terminal_states_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider visualizing the 'terminal-geodesic-curve' for better understanding."
+      ],
+      "timestamp": "2026-01-31T21:33:15.956704",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_j.py",
+      "simulation_id": "appendix_j_mc_error_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Add a section explaining how these error propagation formulas are specifically applied within the PM framework simulations."
+      ],
+      "timestamp": "2026-01-31T21:33:15.956709",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_j_torsion_funnel.py",
+      "simulation_id": "appendix_j_torsion_funnel_v16_2",
+      "overall_score": 9.2,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Elaborate on the physical interpretation of the 'torsion-funnel-bottleneck' in terms of particle physics."
+      ],
+      "timestamp": "2026-01-31T21:33:15.956710",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_k.py",
+      "simulation_id": "appendix_k_transparency_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 0.0,
+      "derivation_rigor": 0.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "NEEDS_WORK",
+      "key_issues": [
+        "No formulas are present in this file."
+      ],
+      "suggestions": [
+        "Add formulas relevant to the transparency topic to this file. Consider including formulas for optical depth, transmission, etc."
+      ],
+      "timestamp": "2026-01-31T21:33:15.956711",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_k_sterile_constants.py",
+      "simulation_id": "appendix_k_sterile_constants_v16_2",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a brief explanation of why these constants are referred to as 'sterile' within the PM framework."
+      ],
+      "timestamp": "2026-01-31T21:33:15.956711",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_l.py",
+      "simulation_id": "appendix_l_values_summary_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 0.0,
+      "derivation_rigor": 6.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "No formulas listed, indicating primarily summary or lookup operations. Lack of formulas make assessing theoretical impact difficult."
+      ],
+      "suggestions": [
+        "Consider adding explicit formulas, even if simple, used for any value lookups or conversions to increase transparency."
+      ],
+      "timestamp": "2026-01-31T21:33:26.008833",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_l_omega_unwinding.py",
+      "simulation_id": "appendix_l_omega_unwinding_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Further exploration into the physical implications of ancestral restoration basin.",
+        "Investigate stability and dynamics of gauge-ghost-basin"
+      ],
+      "timestamp": "2026-01-31T21:33:26.008837",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_m.py",
+      "simulation_id": "appendix_m_consciousness_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 6.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Consciousness connection is highly speculative, needing stronger justification.",
+        "orch-or-collapse formula only has PREDICTED timescale."
+      ],
+      "suggestions": [
+        "Provide stronger arguments linking PM vacuum modulation to consciousness event frequency.",
+        "Quantify uncertainty of 'predicted' timescale. Potentially compare against experimental data on Orch-OR."
+      ],
+      "timestamp": "2026-01-31T21:33:26.008838",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_m_tensor_calc.py",
+      "simulation_id": "appendix_m_tensor_calc_v19",
+      "overall_score": 10.0,
+      "formula_strength": 10.0,
+      "derivation_rigor": 10.0,
+      "section_wording": 10.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Ensure correct index notation and proper tensor transformations are enforced throughout the PM framework (consider automated checks)."
+      ],
+      "timestamp": "2026-01-31T21:33:26.008839",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_n.py",
+      "simulation_id": "appendix_n_g2_landscape_v16_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Connection between topology constraint and physical reality needs stronger explication.",
+        "Generation counting formula relies on an assumption that should be made explicit."
+      ],
+      "suggestions": [
+        "Elaborate on the physical origin and interpretation of the Hodge number constraint.",
+        "Clarify the assumptions behind the generation counting formula and its relation to the third Betti number. Provide evidence/reasoning for the choice of b3/8."
+      ],
+      "timestamp": "2026-01-31T21:33:26.008839",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_n_vielbein.py",
+      "simulation_id": "appendix_n_vielbein_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding more explicit examples of vielbein calculations in specific curved spacetimes."
+      ],
+      "timestamp": "2026-01-31T21:33:35.398996",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_o_kk_reduction.py",
+      "simulation_id": "appendix_o_kk_reduction_v22",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 10.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Potentially expand on the non-Abelian gauge group emergence from isometry groups."
+      ],
+      "timestamp": "2026-01-31T21:33:35.399000",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_p_g2_holonomy.py",
+      "simulation_id": "appendix_p_g2_holonomy_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Add more detail on the connection between octonions and the G2 group structure."
+      ],
+      "timestamp": "2026-01-31T21:33:35.399001",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_q_index_theorem.py",
+      "simulation_id": "appendix_q_index_theorem_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider elaborating on the physical implications of the G2 specialization of the index theorem."
+      ],
+      "timestamp": "2026-01-31T21:33:35.399002",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_r_vacuum_stability.py",
+      "simulation_id": "appendix_r_vacuum_stability_v19",
+      "overall_score": 8.5,
+      "formula_strength": 8.5,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Provide a more detailed derivation or justification for the G2 portal correction to the Higgs quartic coupling. Clarify the assumptions used in the thin-wall approximation."
+      ],
+      "timestamp": "2026-01-31T21:33:35.399002",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_s_spectral_residue.py",
+      "simulation_id": "appendix_s_spectral_residue_v19",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding more intuitive explanations for the physical significance of each spectral residue."
+      ],
+      "timestamp": "2026-01-31T21:33:45.035419",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\appendices\\appendix_z_terminal_ledger.py",
+      "simulation_id": "appendix_z_terminal_ledger_v16_2",
+      "overall_score": 9.5,
+      "formula_strength": 10.0,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "None, this is an excellent summary of key results."
+      ],
+      "timestamp": "2026-01-31T21:33:45.035423",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\discussion.py",
+      "simulation_id": "discussion_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 6.0,
+      "section_wording": 7.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The global alignment metric needs further justification and connection to specific experimental results."
+      ],
+      "suggestions": [
+        "Provide a more detailed explanation of how the global alignment metric is calculated and how it relates to the overall validation of the PM framework.",
+        "Include specific examples of experimental data and how the PM predictions align with them."
+      ],
+      "timestamp": "2026-01-31T21:33:45.035424",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\foundations.py",
+      "simulation_id": "foundations_v16_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Clarify the connection between the 26D signature and its implications for lower-dimensional physics."
+      ],
+      "timestamp": "2026-01-31T21:33:45.035425",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\integrity.py",
+      "simulation_id": "integrity_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Provide more details on the specific cryptographic hash functions used for the Omega Seal."
+      ],
+      "timestamp": "2026-01-31T21:33:45.035426",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\introduction.py",
+      "simulation_id": "introduction_v16_0",
+      "overall_score": 8.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 6.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Derivation rigor could be improved.",
+        "Needs better connection to subsequent sections"
+      ],
+      "suggestions": [
+        "Elaborate on the emergent nature of the real numbers.",
+        "Add a forward-looking statement to connect to methodology."
+      ],
+      "timestamp": "2026-01-31T21:33:55.842021",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\methodology.py",
+      "simulation_id": "methodology_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [
+        "Wording could be more accessible.",
+        "The leap from the heat kernel to the volume calculation could be better justified for non-experts."
+      ],
+      "suggestions": [
+        "Add a paragraph explaining the significance of each formula.",
+        "Expand on the connection between the heat kernel expansion and volume calculation."
+      ],
+      "timestamp": "2026-01-31T21:33:55.842025",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\predictions_aggregator.py",
+      "simulation_id": "predictions_aggregator_v16_0",
+      "overall_score": 7.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 6.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Needs more context for each prediction to be truly falsifiable.",
+        "Rigor in derivations of predictions could be improved."
+      ],
+      "suggestions": [
+        "Provide specific experimental setups to test each prediction.",
+        "Strengthen the derivations linking the dark force leakage, phase shift, vacuum noise and GW polarization to the two-layer OR structure."
+      ],
+      "timestamp": "2026-01-31T21:33:55.842026",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\paper\\results.py",
+      "simulation_id": "results_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [
+        "None major, but further connection to the overall narrative would be beneficial."
+      ],
+      "suggestions": [
+        "Reiterate the implications of these results for the overall PM framework.",
+        "Consider adding error bars based on simulation uncertainty, if available."
+      ],
+      "timestamp": "2026-01-31T21:33:55.842027",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\chirality.py",
+      "simulation_id": "chirality_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The jump from the Atiyah-Singer index theorem to the number of fermion generations could be explained more clearly.",
+        "The physical implications of spinor saturation could be highlighted more."
+      ],
+      "suggestions": [
+        "Provide a more detailed explanation of how the index theorem leads to the three-generation result.",
+        "Expand on the relationship between spinor saturation, G2 holonomy and the Standard Model particle content."
+      ],
+      "timestamp": "2026-01-31T21:33:55.842027",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\ckm_matrix.py",
+      "simulation_id": "ckm_matrix_v16_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Further explore the geometric origin of Cabibbo angle and other CKM parameters."
+      ],
+      "timestamp": "2026-01-31T21:34:05.217955",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\fermion_generations.py",
+      "simulation_id": "fermion_generations_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Connection between G2 manifold spinor saturation and observed fermion masses could be stronger."
+      ],
+      "suggestions": [
+        "Provide more detailed explanation on Pneuma-induced axial torsion coupling."
+      ],
+      "timestamp": "2026-01-31T21:34:05.217959",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\higgs_brane_partition.py",
+      "simulation_id": "higgs_brane_partition_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The brane partition scaling from Cl(24,1) needs more rigorous justification."
+      ],
+      "suggestions": [
+        "Elaborate on the physical interpretation of the 26D Higgs tension and its projection to 4D."
+      ],
+      "timestamp": "2026-01-31T21:34:05.217960",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\higgs_mass.py",
+      "simulation_id": "higgs_mass_v16_0",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The connection between racetrack potential and Kähler moduli stabilization could be clearer."
+      ],
+      "suggestions": [
+        "Provide more details on the calculation of the effective quartic coupling and its moduli corrections."
+      ],
+      "timestamp": "2026-01-31T21:34:05.217961",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\higgs_vev_refined.py",
+      "simulation_id": "higgs_vev_refined_v18",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Further analysis of higher-order QED corrections to the Fermi constant."
+      ],
+      "timestamp": "2026-01-31T21:34:05.217962",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\mass_ratio.py",
+      "simulation_id": "mass_ratio_v23_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:13.680007",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\muon_g2_anomaly.py",
+      "simulation_id": "muon_g2_anomaly_v16_1",
+      "overall_score": 8.5,
+      "formula_strength": 8.5,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:13.680011",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\neutrino_mixing.py",
+      "simulation_id": "neutrino_mixing_v17_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:13.680012",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\octonionic_mixing.py",
+      "simulation_id": "octonionic_mixing_v16_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:13.680012",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\proton_decay.py",
+      "simulation_id": "proton_decay_v17_2",
+      "overall_score": 7.5,
+      "formula_strength": 7.5,
+      "derivation_rigor": 7.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:13.680013",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\particle\\yukawa_textures.py",
+      "simulation_id": "yukawa_textures_v18",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Further explore the physical implications of the four-face correction."
+      ],
+      "timestamp": "2026-01-31T21:34:23.258039",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\avogadro.py",
+      "simulation_id": "avogadro_v17_2",
+      "overall_score": 7.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Provide more context and justification for the inverse cubic relationship."
+      ],
+      "timestamp": "2026-01-31T21:34:23.258043",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\compton_wavelength.py",
+      "simulation_id": "compton_wavelength_v17_2",
+      "overall_score": 7.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Elaborate on the physical interpretation of projecting the Compton wavelength using the inverse cubic."
+      ],
+      "timestamp": "2026-01-31T21:34:23.258044",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\faraday.py",
+      "simulation_id": "faraday_v17_2",
+      "overall_score": 7.0,
+      "formula_strength": 7.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Expand on why 'e' is invariant in this context and its connection to the Avogadro contraction."
+      ],
+      "timestamp": "2026-01-31T21:34:23.258045",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\hartree_energy.py",
+      "simulation_id": "hartree_energy_v17_2",
+      "overall_score": 6.5,
+      "formula_strength": 6.5,
+      "derivation_rigor": 6.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 6.5,
+      "verdict": "NEEDS_WORK",
+      "key_issues": [
+        "The double-gate adjustment requires more clarification.",
+        "Binding energy scaling needs stronger justification."
+      ],
+      "suggestions": [
+        "Provide a more detailed explanation of the inverse double-gate adjustment.",
+        "Justify the binding energy scaling within the PM framework."
+      ],
+      "timestamp": "2026-01-31T21:34:23.258045",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\magnetic_flux.py",
+      "simulation_id": "magnetic_flux_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:32.090665",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\molar_gas.py",
+      "simulation_id": "molar_gas_v17_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:32.090670",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\stefan_boltzmann.py",
+      "simulation_id": "stefan_boltzmann_v17_2",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:32.090671",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\von_klitzing.py",
+      "simulation_id": "von_klitzing_v17_2",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:32.090672",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\qed\\weak_mixing.py",
+      "simulation_id": "weak_mixing_v17_2",
+      "overall_score": 7.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 7.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [],
+      "timestamp": "2026-01-31T21:34:32.090672",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\alpha_geometric\\holonomy_alpha.py",
+      "simulation_id": "holonomy_alpha_v18_0",
+      "overall_score": 7.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 6.0,
+      "section_wording": 7.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Geometric Anchors formula lacks derivation, making it numerological."
+      ],
+      "suggestions": [
+        "Attempt to provide a derivation or justification for the Geometric Anchors formula to move it beyond numerology.",
+        "Clarify the relationship between the formulas and the overall derivation of alpha."
+      ],
+      "timestamp": "2026-01-31T21:34:43.919273",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\charge_cohomology\\spectral_flow_charge.py",
+      "simulation_id": "spectral_flow_charge_v18",
+      "overall_score": 8.5,
+      "formula_strength": 8.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "Need to ensure the G2 topology assumption used in the charge quantization formula is well-justified."
+      ],
+      "suggestions": [
+        "Provide more detailed explanation of how the G2 topology directly leads to the specific charge quantization result.",
+        "Elaborate on the physical implications of the spectral flow definition and its connection to charge."
+      ],
+      "timestamp": "2026-01-31T21:34:43.919278",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\confinement\\wilson_loop.py",
+      "simulation_id": "wilson_loop_confinement_v18_0",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 8.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [
+        "The connection between the string tension and G2 geometry should be made explicit with a clear chain of reasoning."
+      ],
+      "suggestions": [
+        "Provide a more detailed step-by-step explanation of how the G2 geometry determines the string tension.",
+        "Consider adding a section discussing the limitations and potential refinements of the model."
+      ],
+      "timestamp": "2026-01-31T21:34:43.919278",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\dirac_spectral\\laplacian_eigenvalue.py",
+      "simulation_id": "laplacian_eigenvalue_v18_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The justification for using Laplacian eigenvalues to determine fermion masses needs stronger physical motivation."
+      ],
+      "suggestions": [
+        "Provide a more compelling physical argument for the relationship between Laplacian eigenvalues and fermion masses.",
+        "Discuss the limitations and potential corrections to the fermion mass estimation."
+      ],
+      "timestamp": "2026-01-31T21:34:43.919279",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\dirac_spectral\\zero_mode_index.py",
+      "simulation_id": "zero_mode_index_v18_0",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The link between G2 geometry and the Froggatt-Nielsen expansion parameter requires further explanation to be more convincing."
+      ],
+      "suggestions": [
+        "Provide a more detailed geometric interpretation of the Froggatt-Nielsen expansion parameter in the context of G2 manifolds.",
+        "Elaborate on how the Yukawa texture is related to the geometry and potentially incorporate more details about the specific geometry leading to the texture."
+      ],
+      "timestamp": "2026-01-31T21:34:43.919280",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\orch_or_extended\\decoherence_protection.py",
+      "simulation_id": "decoherence_protection_v18_0",
+      "overall_score": 7.5,
+      "formula_strength": 8.0,
+      "derivation_rigor": 7.0,
+      "section_wording": 7.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The Frohlich condensation protection has a caveat due to the energy ratio.",
+        "Needs more direct connection to Orch-OR, beyond just mentioning it in the path."
+      ],
+      "suggestions": [
+        "Elaborate on the implications of R < 1 for the Frohlich condensation protection.",
+        "Explicitly state how these protection mechanisms relate to Orch-OR's objective reduction."
+      ],
+      "timestamp": "2026-01-31T21:34:55.962021",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\rigorous_derivations\\orch_or_extended\\gravitational_self_energy.py",
+      "simulation_id": "gravitational_self_energy_v18_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The G2 enhancement factor needs further justification in its connection to the underlying geometry.",
+        "The direct experimental validation of the Penrose collapse criterion is currently limited."
+      ],
+      "suggestions": [
+        "Provide a more detailed explanation of how the G2 holonomy affects gravitational coupling.",
+        "Discuss potential future experimental setups to test the Penrose collapse criterion, given current limitations."
+      ],
+      "timestamp": "2026-01-31T21:34:55.962025",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\bridge_pressure.py",
+      "simulation_id": "bridge_pressure_v21",
+      "overall_score": 9.0,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.5,
+      "section_wording": 8.5,
+      "schema_compliance": 9.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [
+        "The connection between the 'breathing density' and observed dark energy fluctuations needs further investigation.",
+        "The 'dark force leakage' probabilities require more empirical support."
+      ],
+      "suggestions": [
+        "Analyze the time-dependent behavior of the 'breathing density' and compare it to observational constraints on dark energy fluctuations.",
+        "Investigate potential observational signatures of the 'dark force leakage', such as anomalous particle decays or interactions."
+      ],
+      "timestamp": "2026-01-31T21:34:55.962026",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\complete_residue_registry.py",
+      "simulation_id": "complete_residue_registry_v18",
+      "overall_score": 8.5,
+      "formula_strength": 8.5,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The precision of the neutrino mass sum prediction should be compared to existing and future experimental constraints.",
+        "The proton decay lifetime prediction needs to be tested against current experimental bounds, and justifications made if it significantly exceeds them."
+      ],
+      "suggestions": [
+        "Refine the error bars on the neutrino mass sum prediction, taking into account uncertainties in the G2 geometry and model parameters.",
+        "Carefully analyze the theoretical uncertainties in the proton decay lifetime calculation and compare the prediction to current experimental limits. Consider adjustments to the model if necessary."
+      ],
+      "timestamp": "2026-01-31T21:34:55.962027",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\dirac_simulation.py",
+      "simulation_id": "dirac_simulation_v18_0",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 7.5,
+      "section_wording": 8.0,
+      "schema_compliance": 9.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [
+        "The connection between G2 triality and the PMNS matrix is interesting, but the theoretical basis could be expanded.",
+        "Further explanation of the link between the Dirac Lagrangian in curved spacetime and macroscopic gravity is required."
+      ],
+      "suggestions": [
+        "Provide a more detailed explanation of how the G2 triality leads to the specific value of theta_23.",
+        "Expand on the derivation of the Dirac-gravity coupling, demonstrating how it connects to Einstein's field equations at larger scales."
+      ],
+      "timestamp": "2026-01-31T21:34:55.962027",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\gf_radiative_correction.py",
+      "simulation_id": "gf_radiative_correction_v18",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a visualization of the radiative correction's impact."
+      ],
+      "timestamp": "2026-01-31T21:35:06.863330",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\merged_descent.py",
+      "simulation_id": "merged_descent_v21",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Expand on the physical interpretation of the unified time in the 27D bulk metric.",
+        "Clarify the connection between the condensate structure and observable predictions."
+      ],
+      "timestamp": "2026-01-31T21:35:06.863334",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\mobius_return.py",
+      "simulation_id": "mobius_return_v21",
+      "overall_score": 8.0,
+      "formula_strength": 8.5,
+      "derivation_rigor": 8.0,
+      "section_wording": 7.5,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.0,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Provide more intuition behind the golden-ratio period.",
+        "Elaborate on the implications of the spinor double-cover property."
+      ],
+      "timestamp": "2026-01-31T21:35:06.863335",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\support\\or_reduction.py",
+      "simulation_id": "or_reduction_v21",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.5,
+      "section_wording": 8.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 8.5,
+      "verdict": "ADEQUATE",
+      "key_issues": [],
+      "suggestions": [
+        "Visualize the OR reduction rotation matrix and its effect.",
+        "Clarify the physical significance of the external cross-shadow coordinate mapping."
+      ],
+      "timestamp": "2026-01-31T21:35:06.863336",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\validation\\rigor_covariance.py",
+      "simulation_id": "rigor_covariance_v16_1",
+      "overall_score": 9.5,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.5,
+      "section_wording": 9.0,
+      "schema_compliance": 10.0,
+      "theory_consistency": 9.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Consider adding a section discussing the limitations of the chi-square test in this context."
+      ],
+      "timestamp": "2026-01-31T21:35:06.863337",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\validation\\rigorous_validator.py",
+      "simulation_id": "rigorous_validator_v16_1",
+      "overall_score": 8.5,
+      "formula_strength": 9.0,
+      "derivation_rigor": 8.0,
+      "section_wording": 8.0,
+      "schema_compliance": 9.5,
+      "theory_consistency": 8.5,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Provide more detail on the experimental datasets used for validation.",
+        "Consider adding more statistical tests beyond sigma deviation."
+      ],
+      "timestamp": "2026-01-31T21:35:14.084792",
+      "model": "gemini-2.0-flash"
+    },
+    {
+      "file_path": "simulations\\PM\\validation\\unitary_filter.py",
+      "simulation_id": "unitary_filter_v16_2",
+      "overall_score": 9.0,
+      "formula_strength": 9.5,
+      "derivation_rigor": 9.0,
+      "section_wording": 8.5,
+      "schema_compliance": 9.5,
+      "theory_consistency": 9.0,
+      "verdict": "STRONG",
+      "key_issues": [],
+      "suggestions": [
+        "Expand on the connection between G2 geometry and the central charge unitarity requirement.",
+        "Explore potential implications if the Weyl anomaly cancellation is not perfect."
+      ],
+      "timestamp": "2026-01-31T21:35:14.084798",
+      "model": "gemini-2.0-flash"
+    }
+  ]
+}

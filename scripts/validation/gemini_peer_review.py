@@ -56,6 +56,16 @@ if hasattr(sys.stdout, 'reconfigure'):
 PROJECT_ROOT = Path(__file__).parent.parent.parent
 sys.path.insert(0, str(PROJECT_ROOT))
 
+# Load .env file if present (API keys stored there, gitignored)
+_env_file = PROJECT_ROOT / ".env"
+if _env_file.exists():
+    with open(_env_file) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _key, _, _val = _line.partition("=")
+                os.environ.setdefault(_key.strip(), _val.strip())
+
 # ─── Gemini Review JSON Schema ─────────────────────────────────────────────
 
 REVIEW_SCHEMA = {
@@ -175,12 +185,13 @@ PAPER_REVIEW_SCHEMA = {
 # ─── Gemini Client ─────────────────────────────────────────────────────────
 
 class GeminiClient:
-    """Wrapper for Google Gemini API calls."""
+    """Wrapper for Google Gemini API calls with SDK and REST fallback."""
 
     def __init__(self, api_key: str, model: str = "gemini-2.5-flash"):
         self.api_key = api_key
         self.model = model
         self._client = None
+        self._use_rest = False
 
     def _get_client(self):
         if self._client is None:
@@ -188,16 +199,37 @@ class GeminiClient:
                 from google import genai
                 self._client = genai.Client(api_key=self.api_key)
             except ImportError:
-                import google.generativeai as genai
-                genai.configure(api_key=self.api_key)
-                self._client = genai.GenerativeModel(self.model)
+                try:
+                    import google.generativeai as genai
+                    genai.configure(api_key=self.api_key)
+                    self._client = genai.GenerativeModel(self.model)
+                except ImportError:
+                    self._use_rest = True
+                    self._client = True  # Sentinel — use REST
         return self._client
+
+    def _generate_rest(self, prompt: str) -> str:
+        """Fallback: call Gemini via urllib REST API (no SDK needed)."""
+        import urllib.request
+        url = (f"https://generativelanguage.googleapis.com/v1beta/models/"
+               f"{self.model}:generateContent?key={self.api_key}")
+        payload = json.dumps({
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {"temperature": 0.3, "maxOutputTokens": 4096}
+        }).encode("utf-8")
+        req = urllib.request.Request(url, data=payload,
+                                     headers={"Content-Type": "application/json"})
+        resp = urllib.request.urlopen(req, timeout=60)
+        data = json.loads(resp.read().decode("utf-8"))
+        return data["candidates"][0]["content"]["parts"][0]["text"]
 
     def generate(self, prompt: str, max_retries: int = 3) -> str:
         """Send prompt to Gemini and return text response."""
         client = self._get_client()
         for attempt in range(max_retries):
             try:
+                if self._use_rest:
+                    return self._generate_rest(prompt)
                 try:
                     # New google.genai API
                     response = client.models.generate_content(
@@ -843,6 +875,194 @@ def review_simulation_file(
     report = generate_markdown_report(analysis, review)
 
     return review, report
+
+
+def build_batch_review_prompt(analyses: List[Dict], theory_context: str) -> str:
+    """Build a Gemini prompt for reviewing a BATCH of simulation files."""
+    files_text = ""
+    for i, analysis in enumerate(analyses, 1):
+        fpath = analysis.get("file_path", "unknown")
+        sim_id = analysis.get("simulation_id", "unknown")
+        n_formulas = len(analysis.get("formulas", []))
+        n_params = len(analysis.get("parameters", []))
+        has_certs = "YES" if analysis.get("has_get_certificates") else "NO"
+        has_refs = "YES" if analysis.get("has_get_references") else "NO"
+        has_lm = "YES" if analysis.get("has_get_learning_materials") else "NO"
+        has_vs = "YES" if analysis.get("has_validate_self") else "NO"
+
+        formulas_brief = ""
+        for f in analysis.get("formulas", [])[:10]:
+            formulas_brief += f"\n      - {f['id']}: {f.get('description', '')[:80]}"
+
+        files_text += f"""
+--- FILE {i}: {fpath} (sim_id: {sim_id}) ---
+  Formulas: {n_formulas}, Parameters: {n_params}
+  Certificates: {has_certs}, References: {has_refs}
+  Learning Materials: {has_lm}, validate_self: {has_vs}
+  Top formulas:{formulas_brief or ' (none)'}
+"""
+
+    prompt = f"""# PRINCIPIA METAPHYSICA — Batch Simulation Review ({len(analyses)} files)
+
+Review these simulation files from the PM framework (G2 holonomy, 26D string theory).
+
+{files_text}
+
+## THEORY CONTEXT
+{theory_context[:2000]}
+
+## INSTRUCTIONS
+For EACH file, provide a brief review. Return ONLY valid JSON (no markdown):
+
+{{
+  "batch_reviews": [
+    {{
+      "file_path": "<path>",
+      "simulation_id": "<id>",
+      "overall_score": <float 0-10>,
+      "formula_strength": <float 0-10>,
+      "derivation_rigor": <float 0-10>,
+      "section_wording": <float 0-10>,
+      "schema_compliance": <float 0-10>,
+      "theory_consistency": <float 0-10>,
+      "verdict": "STRONG|ADEQUATE|NEEDS_WORK",
+      "key_issues": ["<issue>", ...],
+      "suggestions": ["<suggestion>", ...]
+    }},
+    ...
+  ],
+  "batch_summary": "<1-2 sentence summary>"
+}}
+"""
+    return prompt
+
+
+def review_batch(
+    client: GeminiClient,
+    analyzer: SimulationAnalyzer,
+    files: List[Path],
+    theory_context: str,
+) -> List[Dict]:
+    """Review a batch of simulation files in a single API call.
+    Returns list of per-file review dicts.
+    """
+    analyses = [analyzer.analyze_file(f) for f in files]
+    prompt = build_batch_review_prompt(analyses, theory_context)
+
+    response_text = client.generate(prompt)
+    result = parse_gemini_json(response_text)
+
+    reviews = result.get("batch_reviews", [])
+    for r in reviews:
+        r["timestamp"] = datetime.now().isoformat()
+        r["model"] = client.model
+    return reviews
+
+
+def run_post_simulation_review(
+    api_key: str,
+    batch_size: int = 5,
+    model: str = "gemini-2.0-flash",
+    quiet: bool = False,
+) -> Dict:
+    """Run Gemini peer review on ALL simulation files after simulation completes.
+
+    Called by run_all_simulations.py with --gemini-review flag.
+    Batches files into groups of `batch_size` for parallel efficiency.
+
+    Returns aggregate review results dict.
+    """
+    client = GeminiClient(api_key, model=model)
+    analyzer = SimulationAnalyzer()
+    theory_context = get_theory_context()
+
+    all_files = analyzer.get_all_simulation_files()
+    if not all_files:
+        if not quiet:
+            print("  [WARN] No simulation files found for review")
+        return {"status": "no_files", "reviews": []}
+
+    if not quiet:
+        print(f"\n{'=' * 72}")
+        print("  GEMINI PEER REVIEW (Post-Simulation)")
+        print(f"{'=' * 72}")
+        print(f"  Files: {len(all_files)}")
+        print(f"  Batch size: {batch_size}")
+        print(f"  API calls needed: {(len(all_files) + batch_size - 1) // batch_size}")
+        print(f"  Model: {model}")
+        print()
+
+    all_reviews = []
+    n_batches = (len(all_files) + batch_size - 1) // batch_size
+
+    for batch_idx in range(n_batches):
+        start = batch_idx * batch_size
+        end = min(start + batch_size, len(all_files))
+        batch_files = all_files[start:end]
+
+        if not quiet:
+            names = [f.name for f in batch_files]
+            print(f"  Batch {batch_idx + 1}/{n_batches}: {', '.join(names)}")
+
+        try:
+            reviews = review_batch(client, analyzer, batch_files, theory_context)
+            all_reviews.extend(reviews)
+            if not quiet:
+                for r in reviews:
+                    score = r.get("overall_score", 0)
+                    verdict = r.get("verdict", "?")
+                    print(f"    {r.get('file_path', '?')}: {score:.1f}/10 [{verdict}]")
+        except Exception as e:
+            if not quiet:
+                print(f"    [ERROR] Batch {batch_idx + 1} failed: {e}")
+            for f in batch_files:
+                all_reviews.append({
+                    "file_path": str(f.relative_to(PROJECT_ROOT)),
+                    "overall_score": 0,
+                    "verdict": "ERROR",
+                    "error": str(e),
+                })
+
+        # Rate limiting between batches
+        if batch_idx < n_batches - 1:
+            time.sleep(4)
+
+    # Compute aggregate statistics
+    scores = [r.get("overall_score", 0) for r in all_reviews if r.get("overall_score", 0) > 0]
+    aggregate = {
+        "status": "completed",
+        "timestamp": datetime.now().isoformat(),
+        "model": model,
+        "total_files": len(all_files),
+        "total_reviewed": len(scores),
+        "mean_score": sum(scores) / len(scores) if scores else 0,
+        "min_score": min(scores) if scores else 0,
+        "max_score": max(scores) if scores else 0,
+        "verdicts": {
+            "STRONG": sum(1 for r in all_reviews if r.get("verdict") == "STRONG"),
+            "ADEQUATE": sum(1 for r in all_reviews if r.get("verdict") == "ADEQUATE"),
+            "NEEDS_WORK": sum(1 for r in all_reviews if r.get("verdict") == "NEEDS_WORK"),
+            "ERROR": sum(1 for r in all_reviews if r.get("verdict") == "ERROR"),
+        },
+        "reviews": all_reviews,
+    }
+
+    # Save results
+    output_path = PROJECT_ROOT / "AutoGenerated" / "gemini_post_simulation_review.json"
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(aggregate, f, indent=2, ensure_ascii=False)
+
+    if not quiet:
+        print(f"\n  {'─' * 60}")
+        print(f"  Mean score: {aggregate['mean_score']:.1f}/10")
+        print(f"  Range: {aggregate['min_score']:.1f} - {aggregate['max_score']:.1f}")
+        v = aggregate['verdicts']
+        print(f"  Verdicts: {v['STRONG']} STRONG, {v['ADEQUATE']} ADEQUATE, "
+              f"{v['NEEDS_WORK']} NEEDS_WORK, {v['ERROR']} ERROR")
+        print(f"  Output: {output_path}")
+
+    return aggregate
 
 
 def review_paper_sections(
