@@ -79,10 +79,7 @@ class AppendixIGWDispersion(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.elder_kads",
-            "gauge.M_GUT",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

@@ -75,11 +75,7 @@ class AppendixCExtendedDerivations(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.elder_kads",
-            "topology.K_MATCHING",
-            "gauge.M_GUT",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:
@@ -712,7 +708,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                     r"\exp\left(\frac{1}{K}\right)"
                 ),
                 plain_text="τ_p = C M_GUT⁴/(m_p⁵ α_GUT²) × exp(1/K)",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description=(
                     "Derivation of proton lifetime including geometric suppression "
                     "from TCS cycle separation."

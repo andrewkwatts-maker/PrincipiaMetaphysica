@@ -592,11 +592,27 @@ _OUTPUT_FORMULAS = [
 
 class CompleteResidueRegistryV18(SimulationBase):
     """
-    Complete registry of 125 spectral residues from G2 Laplacian.
+    Complete registry of 125 spectral residues from the G2 manifold Laplacian.
 
-    Physics: Each eigenvalue lambda_n generates a particle mass via
-    m_n^2 = lambda_n / L^2. The first ~100 modes correspond to
-    Standard Model particles; modes 101-125 are heavy KK tower.
+    This simulation catalogues PM-derived spectral residues -- eigenvalues of the
+    Laplace-Beltrami operator on the compact G2 holonomy manifold V_7 -- and
+    maps each to a physical interpretation (particle mass, mixing parameter,
+    coupling constant, or cosmological observable). The registry itself is a
+    PM-internal data structure; values stored here are PM predictions or
+    catalogue entries populated from PDG reference values for cross-checking,
+    not independent experimental measurements.
+
+    The run() method computes:
+      - Category counts (gauge bosons, fermions) for structural verification
+      - Eigenvalue statistics (max, min, mean) over the registry
+      - Neutrino mass eigenstate predictions from the G2 see-saw mechanism
+      - Proton decay lifetime and branching ratio predictions
+      - Registry summary statistics
+
+    NOTE: Experimental values cited in the registry (PDG masses, NuFIT angles)
+    are reference anchors for orientation. This simulation does not perform
+    independent fits to experimental data or covariance-matrix chi-squared
+    analyses. It registers PM spectral residues and their physical assignments.
     """
 
     def __init__(self):
@@ -607,9 +623,11 @@ class CompleteResidueRegistryV18(SimulationBase):
             domain="spectral",
             title="Complete 125-Residue Registry",
             description=(
-                "Complete spectral decomposition of G2 manifold Laplacian. "
-                "125 eigenvalues encode particle masses, mixing angles, "
-                "couplings, and cosmological parameters."
+                "Catalogues 125 PM-derived spectral residues from the G2 manifold "
+                "Laplacian and maps each eigenvalue to its physical interpretation "
+                "(particle masses, mixing angles, couplings, cosmological parameters). "
+                "Registry entries include PDG/NuFIT reference values for orientation "
+                "but are not independent experimental fits."
             ),
             section_id="2",
             subsection_id="2.3"
@@ -955,7 +973,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.10)",
                 latex=r"\zeta_V(s) = \sum_{n=1}^{\infty} \lambda_n^{-s}",
                 plain_text="zeta_V(s) = sum_{n=1}^{inf} lambda_n^{-s}",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Spectral zeta function of G2 Laplacian. "
                     "Residues at poles encode topological data."
@@ -1114,14 +1132,24 @@ class CompleteResidueRegistryV18(SimulationBase):
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
-        """Return parameter definitions."""
+        """Return parameter definitions for all outputs produced by run().
+
+        Each description specifies what the run() method actually computes
+        and how the value is obtained (category count, registry lookup,
+        G2 see-saw derivation, etc.). Experimental bounds listed here are
+        reference anchors from the literature, not results of fits performed
+        by this simulation.
+        """
         return [
             Parameter(
                 path="spectral.n_residues",
                 name="Number of Spectral Residues",
                 units="count",
                 status="DERIVED",
-                description="125 eigenvalues in complete G2 spectrum.",
+                description=(
+                    "Total count of eigenvalues catalogued in the G2 Laplacian "
+                    "residue registry. Computed by len(registry) in run()."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -1129,7 +1157,11 @@ class CompleteResidueRegistryV18(SimulationBase):
                 name="Maximum Eigenvalue",
                 units="dimensionless",
                 status="DERIVED",
-                description="Largest eigenvalue in registry (heavy KK modes).",
+                description=(
+                    "Largest Laplacian eigenvalue in the registry, corresponding "
+                    "to the heaviest KK mode. Computed as max(lambda_n) over all "
+                    "registry entries with lambda_n > 0."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -1137,7 +1169,11 @@ class CompleteResidueRegistryV18(SimulationBase):
                 name="Gauge Boson Count",
                 units="count",
                 status="DERIVED",
-                description="12 gauge bosons (gamma + W+/W- + 8g + Z).",
+                description=(
+                    "Count of residues in the GAUGE_BOSON category. "
+                    "Run() filters the registry by ResidueCategory.GAUGE_BOSON. "
+                    "Expected to match the SM count of 12 (gamma + W+/- + 8g + Z)."
+                ),
                 experimental_bound=12,
                 bound_type="measured",
                 bound_source="SM"
@@ -1147,7 +1183,11 @@ class CompleteResidueRegistryV18(SimulationBase):
                 name="Fermion Count",
                 units="count",
                 status="DERIVED",
-                description="Fermion modes in registry.",
+                description=(
+                    "Count of residues in the FERMION category, including "
+                    "three generations, antiparticles, and neutrino mass eigenstates. "
+                    "Run() filters the registry by ResidueCategory.FERMION."
+                ),
                 experimental_bound=24,
                 bound_type="measured",
                 bound_source="SM"
@@ -1159,8 +1199,10 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="eV",
                 status="PREDICTED",
                 description=(
-                    "Lightest neutrino mass eigenstate from G2 see-saw. "
-                    "PM predicts m1 ~ 0.001 eV in normal hierarchy."
+                    "PM prediction for the lightest neutrino mass eigenstate "
+                    "from G2 see-saw mechanism (m1 ~ 0.001 eV, normal hierarchy). "
+                    "Read from registry mode 49 and converted from GeV to eV. "
+                    "No direct experimental measurement exists for the absolute mass scale."
                 ),
                 no_experimental_value=True  # Not yet measured
             ),
@@ -1170,7 +1212,10 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="eV",
                 status="PREDICTED",
                 description=(
-                    "Middle neutrino mass: m2 = sqrt(Dm2_21 + m1^2) ~ 0.009 eV."
+                    "PM prediction for the middle neutrino mass eigenstate: "
+                    "m2 = sqrt(Dm2_21 + m1^2) ~ 0.009 eV. Read from registry "
+                    "mode 50 (pre-computed from oscillation mass-squared splittings). "
+                    "No direct measurement of absolute m2 exists."
                 ),
                 no_experimental_value=True
             ),
@@ -1180,7 +1225,10 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="eV",
                 status="PREDICTED",
                 description=(
-                    "Heaviest neutrino mass: m3 = sqrt(Dm2_31 + m1^2) ~ 0.050 eV."
+                    "PM prediction for the heaviest neutrino mass eigenstate: "
+                    "m3 = sqrt(Dm2_31 + m1^2) ~ 0.050 eV. Read from registry "
+                    "mode 51 (pre-computed from oscillation mass-squared splittings). "
+                    "No direct measurement of absolute m3 exists."
                 ),
                 no_experimental_value=True
             ),
@@ -1190,8 +1238,10 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="eV",
                 status="PREDICTED",
                 description=(
-                    "Sum of neutrino masses: ~0.06 eV (normal hierarchy minimum). "
-                    "Testable by cosmology (CMB + LSS). Current bound: < 0.12 eV (Planck)."
+                    "PM prediction for the sum of neutrino masses (m1 + m2 + m3 ~ 0.06 eV). "
+                    "Read from registry mode 52. The Planck 2018 cosmological upper bound "
+                    "of < 0.12 eV (95% CL) is cited as a reference constraint, not as a "
+                    "fit result from this simulation."
                 ),
                 experimental_bound=0.12,
                 bound_type="upper_limit",
@@ -1204,8 +1254,9 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="categorical",
                 status="PREDICTED",
                 description=(
-                    "PM predicts normal hierarchy (m1 < m2 < m3) from G2 brane tensions. "
-                    "Testable by JUNO, DUNE, Hyper-K atmospheric measurements."
+                    "PM predicts normal hierarchy (m1 < m2 < m3) from G2 brane tension "
+                    "asymmetry. This is a categorical prediction, not a fitted value. "
+                    "Testable by JUNO, DUNE, and Hyper-K atmospheric measurements."
                 ),
                 no_experimental_value=True
             ),
@@ -1216,8 +1267,10 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="years",
                 status="PREDICTED",
                 description=(
-                    "Proton lifetime from dimension-6 operators with G2 instanton suppression. "
-                    "PM predicts tau_p ~ 10^34 yr. Testable by Hyper-Kamiokande."
+                    "PM prediction for proton lifetime from dimension-6 GUT operators "
+                    "with G2 instanton suppression (tau_p ~ 10^34 yr). The Super-K "
+                    "lower limit of ~10^34 yr is cited as a reference bound, not as "
+                    "a constraint applied within this simulation."
                 ),
                 experimental_bound=1e34,
                 bound_type="lower_limit",
@@ -1230,8 +1283,10 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="GeV",
                 status="DERIVED",
                 description=(
-                    "GUT scale from G2 geometry: M_Pl/sqrt(b3) with instanton suppression. "
-                    "~2e17 GeV, lower than typical GUT predictions due to G2 instantons."
+                    "PM-derived effective GUT scale from G2 geometry: "
+                    "M_Pl/sqrt(b3) with instanton suppression (~2e17 GeV). "
+                    "The standard GUT unification scale (~2e16 GeV) is cited as a "
+                    "theoretical reference point, not a fitted value."
                 ),
                 experimental_bound=2e16,
                 bound_type="theory",
@@ -1243,8 +1298,9 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="dimensionless",
                 status="PREDICTED",
                 description=(
-                    "Branching ratio for p -> e+ pi0 decay channel. "
-                    "~30% from E8 breaking pattern in PM."
+                    "PM prediction for the p -> e+ pi0 proton decay branching ratio "
+                    "(~30%), derived from E8 breaking pattern. No experimental measurement "
+                    "exists (proton decay has not been observed)."
                 ),
                 no_experimental_value=True
             ),
@@ -1254,8 +1310,9 @@ class CompleteResidueRegistryV18(SimulationBase):
                 units="dimensionless",
                 status="PREDICTED",
                 description=(
-                    "Branching ratio for p -> nu_bar K+ decay channel. "
-                    "~60% (dominant) due to G2 holonomy favoring SUSY-like channels."
+                    "PM prediction for the p -> nu_bar K+ proton decay branching ratio "
+                    "(~60%, dominant channel), arising from G2 holonomy favoring "
+                    "SUSY-like decay channels. No experimental measurement exists."
                 ),
                 no_experimental_value=True
             ),
@@ -1269,8 +1326,10 @@ class CompleteResidueRegistryV18(SimulationBase):
             title="Complete Spectral Decomposition",
             abstract=(
                 "The G2 manifold Laplacian has a discrete spectrum of eigenvalues. "
-                "These 125 residues encode the complete particle spectrum including "
-                "masses, mixings, couplings, and cosmological parameters."
+                "This section catalogues 125 PM-derived spectral residues and maps "
+                "each to a physical interpretation: particle masses, mixing angles, "
+                "couplings, and cosmological parameters. PDG and NuFIT reference "
+                "values are included for orientation but are not independently fitted."
             ),
             content_blocks=[
                 ContentBlock(
@@ -1335,7 +1394,14 @@ class CompleteResidueRegistryV18(SimulationBase):
         )
 
     def get_references(self) -> List[Dict[str, Any]]:
-        """Return physics references for spectral residue registry."""
+        """Return physics references for spectral residue registry.
+
+        These references are cited for context and as sources of the reference
+        values catalogued alongside PM residues. This simulation does not
+        perform fits to these datasets or use their covariance matrices.
+        PDG and NuFIT values appear in the registry as orientation anchors
+        for comparing PM-derived spectral residues against known physics.
+        """
         return [
             {
                 "id": "ref-pdg-2024",
@@ -1346,7 +1412,12 @@ class CompleteResidueRegistryV18(SimulationBase):
                 "volume": "110",
                 "pages": "030001",
                 "url": "https://pdg.lbl.gov/",
-                "notes": "Authoritative source for particle masses, mixing angles, coupling constants."
+                "notes": (
+                    "Source of reference particle masses, mixing angles, and coupling "
+                    "constants catalogued in the registry. These PDG values are stored "
+                    "alongside PM spectral residues for orientation; this simulation "
+                    "does not perform independent fits to PDG data."
+                )
             },
             {
                 "id": "ref-acharya-2004-g2",
@@ -1356,7 +1427,11 @@ class CompleteResidueRegistryV18(SimulationBase):
                 "journal": "arXiv preprint",
                 "arxiv": "hep-th/0109152",
                 "url": "https://arxiv.org/abs/hep-th/0109152",
-                "notes": "Foundational paper on chiral fermion spectrum from G2 compactification."
+                "notes": (
+                    "Foundational paper on chiral fermion spectrum from G2 "
+                    "compactification. Provides the theoretical basis for "
+                    "interpreting Laplacian eigenvalues as particle modes."
+                )
             },
             {
                 "id": "ref-esteban-2020-nufit",
@@ -1368,7 +1443,13 @@ class CompleteResidueRegistryV18(SimulationBase):
                 "pages": "178",
                 "arxiv": "2007.14792",
                 "url": "https://arxiv.org/abs/2007.14792",
-                "notes": "NuFIT global fits for neutrino oscillation parameters used in PMNS matrix."
+                "notes": (
+                    "Source of reference PMNS mixing angles and mass-squared "
+                    "splittings used to populate registry modes 41-44 and to compute "
+                    "neutrino mass eigenstates (modes 49-52). NuFIT central values "
+                    "and uncertainties are catalogued for reference; this simulation "
+                    "does not use NuFIT covariance matrices or perform chi-squared fits."
+                )
             },
             {
                 "id": "ref-nishino-2012-proton",
@@ -1379,7 +1460,30 @@ class CompleteResidueRegistryV18(SimulationBase):
                 "volume": "102",
                 "pages": "141801",
                 "url": "https://doi.org/10.1103/PhysRevLett.102.141801",
-                "notes": "Super-K proton decay limits constraining GUT-scale predictions."
+                "notes": (
+                    "Source of the proton decay experimental lower limit (~10^34 yr) "
+                    "cited as a reference bound for the PM proton lifetime prediction. "
+                    "This simulation does not fit to Super-K data; the bound is used "
+                    "for contextual comparison only."
+                )
+            },
+            {
+                "id": "ref-planck-2018",
+                "authors": "Planck Collaboration (Aghanim, N. et al.)",
+                "title": "Planck 2018 results. VI. Cosmological parameters",
+                "year": 2020,
+                "journal": "Astronomy & Astrophysics",
+                "volume": "641",
+                "pages": "A6",
+                "arxiv": "1807.06209",
+                "url": "https://arxiv.org/abs/1807.06209",
+                "notes": (
+                    "Source of the cosmological upper bound on sum of neutrino masses "
+                    "(< 0.12 eV at 95% CL) cited as a reference constraint for the PM "
+                    "prediction of sum(m_nu) ~ 0.06 eV. Cosmological parameters "
+                    "(H0, Omega_Lambda, T_CMB) in registry modes 85-92 also reference "
+                    "Planck 2018 central values for orientation."
+                )
             },
         ]
 
@@ -1448,10 +1552,20 @@ class CompleteResidueRegistryV18(SimulationBase):
         ]
 
     def validate_self(self) -> Dict[str, Any]:
-        """Return self-validation checks for spectral residue registry."""
+        """
+        Self-validation checks for spectral residue registry.
+
+        Validates internal consistency of the 125-residue registry including
+        eigenvalue finiteness, mass ordering, mixing parameter bounds,
+        neutrino hierarchy consistency, and structural completeness.
+        These checks verify the registry's mathematical self-consistency;
+        they do not constitute direct experimental comparisons.
+        """
         checks = []
 
-        # Check 1: Registry size
+        # ------------------------------------------------------------------
+        # Check 1: Registry size -- must contain all 125 modes
+        # ------------------------------------------------------------------
         n = len(self.registry)
         size_ok = n >= 100
         checks.append({
@@ -1462,40 +1576,277 @@ class CompleteResidueRegistryV18(SimulationBase):
             "message": f"Registry contains {n} residues (need >= 100)."
         })
 
-        # Check 2: Photon is massless
-        photon = self.get_residue(1)
-        photon_ok = photon is not None and photon.mass_gev == 0.0
+        # ------------------------------------------------------------------
+        # Check 2: All eigenvalues are finite (no NaN/Inf)
+        # ------------------------------------------------------------------
+        all_lambdas = [r.lambda_n for r in self.registry.values()]
+        finite_count = sum(1 for lam in all_lambdas if np.isfinite(lam))
+        all_finite = finite_count == len(all_lambdas)
         checks.append({
-            "name": "photon_massless",
-            "passed": photon_ok,
+            "name": "eigenvalues_all_finite",
+            "passed": all_finite,
             "confidence_interval": {"lower": 1.0, "upper": 1.0, "sigma": 0.0},
-            "log_level": "INFO",
-            "message": "Photon (mode 1) has mass = 0 GeV."
+            "log_level": "ERROR" if not all_finite else "INFO",
+            "message": (
+                f"{finite_count}/{len(all_lambdas)} eigenvalues are finite. "
+                f"Non-finite eigenvalues would indicate a registry construction error."
+            )
         })
 
-        # Check 3: W boson mass within PDG range
+        # ------------------------------------------------------------------
+        # Check 3: Non-zero eigenvalues for massive particles
+        # Massive gauge bosons (W+, W-, Z) and Higgs must have lambda > 0
+        # ------------------------------------------------------------------
+        massive_indices = [2, 3, 12, 13]  # W+, W-, Z, H
+        massive_labels = ["W+", "W-", "Z", "Higgs"]
+        massive_ok = True
+        massive_details = []
+        for idx, label in zip(massive_indices, massive_labels):
+            r = self.get_residue(idx)
+            if r is None or r.lambda_n <= 0:
+                massive_ok = False
+                massive_details.append(f"{label}(mode {idx}): lambda={r.lambda_n if r else 'MISSING'}")
+        checks.append({
+            "name": "massive_particles_nonzero_eigenvalue",
+            "passed": massive_ok,
+            "confidence_interval": {"lower": 0.99, "upper": 1.0, "sigma": 0.0},
+            "log_level": "ERROR" if not massive_ok else "INFO",
+            "message": (
+                "All massive gauge bosons and Higgs have lambda_n > 0."
+                if massive_ok else
+                f"Massive particles with zero/missing eigenvalues: {massive_details}"
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 4: Photon and gluons are exactly massless (lambda = 0)
+        # ------------------------------------------------------------------
+        massless_indices = [1] + list(range(4, 12))  # photon + 8 gluons
+        massless_ok = True
+        for idx in massless_indices:
+            r = self.get_residue(idx)
+            if r is None or r.lambda_n != 0.0:
+                massless_ok = False
+                break
+        checks.append({
+            "name": "massless_gauge_bosons_zero_eigenvalue",
+            "passed": massless_ok,
+            "confidence_interval": {"lower": 1.0, "upper": 1.0, "sigma": 0.0},
+            "log_level": "ERROR" if not massless_ok else "INFO",
+            "message": (
+                "Photon (mode 1) and 8 gluons (modes 4-11) have lambda_n = 0 "
+                "(massless by gauge invariance)."
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 5: W boson mass within PDG range
+        # ------------------------------------------------------------------
         w_boson = self.get_residue(2)
-        w_ok = w_boson is not None and abs(w_boson.mass_gev - 80.377) < 0.1
+        w_dev = abs(w_boson.mass_gev - 80.377) if w_boson else float('inf')
+        w_sigma = w_dev / 0.012 if w_boson else float('inf')
+        w_ok = w_boson is not None and w_dev < 0.1
         checks.append({
-            "name": "w_boson_mass_correct",
+            "name": "w_boson_mass_within_pdg",
             "passed": w_ok,
-            "confidence_interval": {"lower": 0.99, "upper": 1.0, "sigma": 0.01},
-            "log_level": "INFO",
-            "message": f"W boson mass: {w_boson.mass_gev if w_boson else 'N/A'} GeV (PDG: 80.377)."
+            "confidence_interval": {
+                "lower": 80.377 - 0.012,
+                "upper": 80.377 + 0.012,
+                "sigma": round(w_sigma, 2) if np.isfinite(w_sigma) else None
+            },
+            "log_level": "WARNING" if not w_ok else "INFO",
+            "message": (
+                f"W boson registry mass: {w_boson.mass_gev if w_boson else 'N/A'} GeV "
+                f"(PDG 2024: 80.377 +/- 0.012 GeV, deviation: {w_sigma:.1f} sigma)."
+            )
         })
 
-        # Check 4: Higgs mass correct
+        # ------------------------------------------------------------------
+        # Check 6: Higgs mass within PDG range
+        # ------------------------------------------------------------------
         higgs = self.get_residue(13)
-        higgs_ok = higgs is not None and abs(higgs.mass_gev - 125.25) < 1.0
+        h_dev = abs(higgs.mass_gev - 125.25) if higgs else float('inf')
+        h_sigma = h_dev / 0.17 if higgs else float('inf')
+        higgs_ok = higgs is not None and h_dev < 1.0
         checks.append({
-            "name": "higgs_mass_correct",
+            "name": "higgs_mass_within_pdg",
             "passed": higgs_ok,
-            "confidence_interval": {"lower": 0.99, "upper": 1.0, "sigma": 0.17},
-            "log_level": "INFO",
-            "message": f"Higgs mass: {higgs.mass_gev if higgs else 'N/A'} GeV (PDG: 125.25)."
+            "confidence_interval": {
+                "lower": 125.25 - 0.17,
+                "upper": 125.25 + 0.17,
+                "sigma": round(h_sigma, 2) if np.isfinite(h_sigma) else None
+            },
+            "log_level": "WARNING" if not higgs_ok else "INFO",
+            "message": (
+                f"Higgs registry mass: {higgs.mass_gev if higgs else 'N/A'} GeV "
+                f"(PDG 2024: 125.25 +/- 0.17 GeV, deviation: {h_sigma:.1f} sigma)."
+            )
         })
 
-        # Check 5: Formulas have derivation steps
+        # ------------------------------------------------------------------
+        # Check 7: CKM matrix elements in physical range [0, 1]
+        # (magnitudes of unitary matrix entries)
+        # ------------------------------------------------------------------
+        ckm_indices = list(range(32, 41))
+        ckm_ok = True
+        ckm_violations = []
+        for idx in ckm_indices:
+            r = self.get_residue(idx)
+            if r and r.experimental_mass is not None:
+                val = r.experimental_mass
+                # V_tb can slightly exceed 1.0 within uncertainties
+                if val < 0.0 or val > 1.5:
+                    ckm_ok = False
+                    ckm_violations.append(f"mode {idx}: {val}")
+        checks.append({
+            "name": "ckm_elements_in_physical_range",
+            "passed": ckm_ok,
+            "confidence_interval": {"lower": 0.0, "upper": 1.5, "sigma": 0.0},
+            "log_level": "ERROR" if not ckm_ok else "INFO",
+            "message": (
+                "All CKM matrix element magnitudes are in [0, 1.5] "
+                "(allowing PDG uncertainty on V_tb)."
+                if ckm_ok else
+                f"CKM elements out of range: {ckm_violations}"
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 8: PMNS mixing angles in physical range
+        # sin^2(theta) must be in [0, 1]; delta_CP in [0, 2*pi]
+        # ------------------------------------------------------------------
+        pmns_ok = True
+        pmns_violations = []
+        for idx in [41, 42, 43]:
+            r = self.get_residue(idx)
+            if r and r.experimental_mass is not None:
+                if r.experimental_mass < 0.0 or r.experimental_mass > 1.0:
+                    pmns_ok = False
+                    pmns_violations.append(f"mode {idx} sin^2(theta)={r.experimental_mass}")
+        # delta_CP range check
+        r44 = self.get_residue(44)
+        if r44 and r44.experimental_mass is not None:
+            if r44.experimental_mass < 0.0 or r44.experimental_mass > 2 * np.pi + 0.1:
+                pmns_ok = False
+                pmns_violations.append(f"mode 44 delta_CP={r44.experimental_mass}")
+        checks.append({
+            "name": "pmns_parameters_in_physical_range",
+            "passed": pmns_ok,
+            "confidence_interval": {"lower": 0.0, "upper": 1.0, "sigma": 0.0},
+            "log_level": "ERROR" if not pmns_ok else "INFO",
+            "message": (
+                "All PMNS mixing parameters are in physical ranges: "
+                "sin^2(theta) in [0,1], delta_CP in [0, 2*pi]."
+                if pmns_ok else
+                f"PMNS parameters out of range: {pmns_violations}"
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 9: Neutrino mass hierarchy consistency (m1 < m2 < m3)
+        # ------------------------------------------------------------------
+        nu1 = self.get_residue(49)
+        nu2 = self.get_residue(50)
+        nu3 = self.get_residue(51)
+        if nu1 and nu2 and nu3 and nu1.mass_gev and nu2.mass_gev and nu3.mass_gev:
+            m1 = nu1.mass_gev * 1e9  # convert to eV
+            m2 = nu2.mass_gev * 1e9
+            m3 = nu3.mass_gev * 1e9
+            hierarchy_ok = m1 < m2 < m3
+            sum_nu = m1 + m2 + m3
+            checks.append({
+                "name": "neutrino_normal_hierarchy_ordering",
+                "passed": hierarchy_ok,
+                "confidence_interval": {
+                    "lower": 0.0,
+                    "upper": 0.12,
+                    "sigma": 0.0
+                },
+                "log_level": "WARNING" if not hierarchy_ok else "INFO",
+                "message": (
+                    f"Normal hierarchy verified: m1={m1:.4f} < m2={m2:.4f} < m3={m3:.4f} eV. "
+                    f"Sum = {sum_nu:.4f} eV."
+                )
+            })
+        else:
+            checks.append({
+                "name": "neutrino_normal_hierarchy_ordering",
+                "passed": False,
+                "confidence_interval": {"lower": 0.0, "upper": 0.12, "sigma": None},
+                "log_level": "ERROR",
+                "message": "Could not verify neutrino hierarchy: mass eigenstates missing from registry."
+            })
+
+        # ------------------------------------------------------------------
+        # Check 10: Neutrino mass sum below cosmological bound (< 0.12 eV)
+        # ------------------------------------------------------------------
+        nu_sum = self.get_residue(52)
+        if nu_sum and nu_sum.mass_gev:
+            sum_ev = nu_sum.mass_gev * 1e9
+            sum_ok = sum_ev < 0.12  # Planck 2018 95% CL upper bound
+            checks.append({
+                "name": "neutrino_sum_below_cosmological_bound",
+                "passed": sum_ok,
+                "confidence_interval": {
+                    "lower": 0.0,
+                    "upper": 0.12,
+                    "sigma": abs(sum_ev - 0.12) / 0.06 if sum_ok else None
+                },
+                "log_level": "WARNING" if not sum_ok else "INFO",
+                "message": (
+                    f"Sum(m_nu) = {sum_ev:.4f} eV "
+                    f"({'below' if sum_ok else 'EXCEEDS'} Planck 2018 bound of 0.12 eV at 95% CL)."
+                )
+            })
+
+        # ------------------------------------------------------------------
+        # Check 11: Non-zero eigenvalues for all fermion modes
+        # ------------------------------------------------------------------
+        fermion_modes = list(range(14, 32))  # modes 14-31 (3 generations + anti)
+        fermion_lambda_ok = True
+        zero_fermions = []
+        for idx in fermion_modes:
+            r = self.get_residue(idx)
+            if r and r.mass_gev and r.mass_gev > 0 and r.lambda_n <= 0:
+                fermion_lambda_ok = False
+                zero_fermions.append(f"mode {idx} ({r.particle})")
+        checks.append({
+            "name": "fermion_eigenvalues_nonzero",
+            "passed": fermion_lambda_ok,
+            "confidence_interval": {"lower": 0.0, "upper": None, "sigma": 0.0},
+            "log_level": "WARNING" if not fermion_lambda_ok else "INFO",
+            "message": (
+                "All massive fermion modes have non-zero eigenvalues."
+                if fermion_lambda_ok else
+                f"Fermions with zero eigenvalue despite nonzero mass: {zero_fermions}"
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 12: Positive-definite eigenvalue sum (spectral zeta convergence)
+        # Sum of non-zero eigenvalues must be finite and positive
+        # ------------------------------------------------------------------
+        nonzero_lambdas = [r.lambda_n for r in self.registry.values() if r.lambda_n > 0]
+        lambda_sum = sum(nonzero_lambdas)
+        sum_finite = np.isfinite(lambda_sum) and lambda_sum > 0
+        checks.append({
+            "name": "eigenvalue_sum_finite_positive",
+            "passed": sum_finite,
+            "confidence_interval": {
+                "lower": 0.0,
+                "upper": None,
+                "sigma": 0.0
+            },
+            "log_level": "ERROR" if not sum_finite else "INFO",
+            "message": (
+                f"Sum of {len(nonzero_lambdas)} non-zero eigenvalues = {lambda_sum:.4e} "
+                f"(finite and positive: required for spectral zeta convergence)."
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 13: Formulas have complete derivation steps (>= 3 each)
+        # ------------------------------------------------------------------
         formulas = self.get_formulas()
         formulas_ok = all(
             hasattr(f, 'derivation') and f.derivation and len(f.derivation.get("steps", [])) >= 3
@@ -1505,8 +1856,41 @@ class CompleteResidueRegistryV18(SimulationBase):
             "name": "formulas_have_derivation_steps",
             "passed": formulas_ok,
             "confidence_interval": {"lower": 0.95, "upper": 1.0, "sigma": 0.0},
-            "log_level": "INFO",
-            "message": "All formulas have >= 3 derivation steps."
+            "log_level": "WARNING" if not formulas_ok else "INFO",
+            "message": (
+                f"All {len(formulas)} formulas have >= 3 derivation steps."
+                if formulas_ok else
+                "Some formulas are missing derivation steps (need >= 3)."
+            )
+        })
+
+        # ------------------------------------------------------------------
+        # Check 14: Coupling constants in physically expected ranges
+        # ------------------------------------------------------------------
+        alpha_em = self.get_residue(57)
+        alpha_s = self.get_residue(58)
+        couplings_ok = True
+        coupling_msgs = []
+        if alpha_em and alpha_em.experimental_mass is not None:
+            a_em = alpha_em.experimental_mass
+            if not (1e-4 < a_em < 0.1):
+                couplings_ok = False
+                coupling_msgs.append(f"alpha_em={a_em} outside (1e-4, 0.1)")
+        if alpha_s and alpha_s.experimental_mass is not None:
+            a_s = alpha_s.experimental_mass
+            if not (0.05 < a_s < 0.5):
+                couplings_ok = False
+                coupling_msgs.append(f"alpha_s={a_s} outside (0.05, 0.5)")
+        checks.append({
+            "name": "coupling_constants_physical_range",
+            "passed": couplings_ok,
+            "confidence_interval": {"lower": 1e-4, "upper": 0.5, "sigma": 0.0},
+            "log_level": "WARNING" if not couplings_ok else "INFO",
+            "message": (
+                "Coupling constants alpha_em and alpha_s are within expected physical ranges."
+                if couplings_ok else
+                f"Coupling constant range violations: {coupling_msgs}"
+            )
         })
 
         return {

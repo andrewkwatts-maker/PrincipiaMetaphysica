@@ -317,7 +317,8 @@ class AppendixKSterileConstants(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return []
+        """Registry parameters consumed by the sterile constant table."""
+        return ["geometry.k_gimel"]
 
     @property
     def output_params(self) -> List[str]:
@@ -648,50 +649,127 @@ class AppendixKSterileConstants(SimulationBase):
                 label="(K.1)",
                 latex=r"c = \frac{L_{\text{horizon}}}{6 \cdot t_{\text{Planck}}}",
                 plain_text="c = L_horizon / (6 * t_Planck)",
-                category="STERILE",
+                category="GEOMETRIC",
                 description="Speed of light from time-like torsion pins.",
                 input_params=["topology.torsion_per_shadow"],
                 output_params=["sterile.c_origin"],
+                derivation={
+                    "method": "Causal span from time-like torsion pin allocation",
+                    "steps": [
+                        "The 4x6 torsion matrix assigns 6 pins to the time dimension",
+                        "These 6 pins define the causal span: maximum information transfer rate across the manifold",
+                        "Speed of light c = L_horizon / (6 * t_Planck), set by torsion geometry",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
+                terms={
+                    "c": "Speed of light (causal limit)",
+                    "L_{\\text{horizon}}": "Causal horizon length",
+                    "6": "Number of time-like torsion pins",
+                    "t_{\\text{Planck}}": "Planck time unit",
+                },
             ),
             Formula(
                 id="G-metric-anchor",
                 label="(K.2)",
                 latex=r"G = \frac{c^5}{H_0^2 \cdot \text{Vol}(V_7)}",
                 plain_text="G = c^5 / (H0^2 * Vol(V7))",
-                category="STERILE",
+                category="GEOMETRIC",
                 description="Gravitational constant from Metric Anchor node.",
                 input_params=["established.c", "cosmology.H0_geometric", "topology.vol_v7"],
                 output_params=["sterile.G_origin"],
+                derivation={
+                    "method": "Metric Bank Node 001 eigenvalue extraction",
+                    "steps": [
+                        "G resides at Node 001 of the Metric Bank in the 125-node spectral registry",
+                        "Its value is determined by the ratio c^5 / (H0^2 * Vol(V7))",
+                        "This links gravitational coupling to the V7 internal volume and the Hubble rate",
+                    ],
+                    "parentFormulas": ["c-torsion-derivation"],
+                },
+                terms={
+                    "G": "Gravitational constant",
+                    "c": "Speed of light",
+                    "H_0": "Hubble constant",
+                    "\\text{Vol}(V_7)": "Volume of the G2 holonomy manifold V7",
+                },
             ),
             Formula(
                 id="alpha-sterile-angle",
                 label="(K.3)",
                 latex=r"\alpha = f\left(\arcsin\frac{125}{288}\right) = f(25.72°)",
                 plain_text="alpha = f(arcsin(125/288)) = f(25.72 deg)",
-                category="STERILE",
+                category="GEOMETRIC",
                 description="Fine structure constant from sterile angle.",
                 input_params=["topology.sterile_angle"],
                 output_params=["sterile.alpha_origin"],
+                derivation={
+                    "method": "Fine structure constant from sterile projection angle",
+                    "steps": [
+                        "The sterile angle theta = arcsin(125/288) ~ 25.72 deg encodes the active-to-root ratio",
+                        "The fine structure constant alpha is a function of this angle through the gauge sector projection",
+                        "alpha = f(theta_sterile), where f maps the geometric angle to electromagnetic coupling",
+                    ],
+                    "parentFormulas": ["sterile-projection-filter"],
+                },
+                terms={
+                    r"\alpha": "Fine structure constant (~1/137)",
+                    "125": "Active residues",
+                    "288": "Ancestral roots",
+                    "f": "Gauge sector projection function",
+                },
             ),
             Formula(
                 id="h-scale-factor",
                 label="(K.3b)",
                 latex=r"h = \frac{\text{Vol}(V_7)}{288} \cdot \frac{c^7}{G \cdot H_0^6}",
                 plain_text="h = Vol(V7)/288 * c^7/(G*H0^6)",
-                category="STERILE",
-                description="Planck's constant from 26D→4D scale factor.",
+                category="GEOMETRIC",
+                description="Planck's constant from 26D to 4D scale factor.",
                 input_params=["topology.vol_v7", "topology.ancestral_roots"],
                 output_params=["sterile.h_origin"],
+                derivation={
+                    "method": "Dimensional reduction normalization from 26D to 4D",
+                    "steps": [
+                        "Planck's constant emerges from the 26D to 4D dimensional reduction",
+                        "The V7 volume divided by 288 roots gives the per-root quantum of action",
+                        "Combined with the metric factors c^7/(G*H0^6), this yields h in natural units",
+                    ],
+                    "parentFormulas": ["G-metric-anchor", "c-torsion-derivation"],
+                },
+                terms={
+                    "h": "Planck's constant (quantum of action)",
+                    "\\text{Vol}(V_7)": "Volume of the G2 holonomy manifold",
+                    "288": "Total ancestral roots (normalization divisor)",
+                    "c": "Speed of light",
+                    "G": "Gravitational constant",
+                    "H_0": "Hubble constant",
+                },
             ),
             Formula(
                 id="w0-betti-derivation",
                 label="(K.4)",
                 latex=r"w_0 = -1 + \frac{1}{b_3} = -\frac{23}{24}",
                 plain_text="w0 = -1 + 1/b3 = -23/24",
-                category="STERILE",
+                category="GEOMETRIC",
                 description="Dark energy EoS from Betti number.",
                 input_params=["topology.elder_kads"],
                 output_params=["sterile.w0_origin"],
+                derivation={
+                    "method": "Dark energy equation of state from b3 Betti number",
+                    "steps": [
+                        "The third Betti number of TCS #187 is b3 = 24",
+                        "The dark energy EoS receives a geometric correction: w0 = -1 + 1/b3",
+                        "This gives w0 = -1 + 1/24 = -23/24 ~ -0.9583, predicting phantom-free quintessence",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    "w_0": "Dark energy equation of state parameter",
+                    "b_3": "Third Betti number of the G2 manifold (= 24)",
+                    "-1": "Cosmological constant limit",
+                    "-23/24": "Geometric prediction for dark energy EoS",
+                },
             ),
         ]
 

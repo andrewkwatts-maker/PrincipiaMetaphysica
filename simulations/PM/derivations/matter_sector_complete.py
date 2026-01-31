@@ -883,7 +883,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 r"\text{Kahler modulus } T_H = \text{Vol}(\Sigma_H^3) + i C_3"
             ),
             plain_text="H = (H+; H0) <-- Kahler modulus T_H = Vol(Sigma_H) + i*C_3",
-            category="THEORY",
+            category="DERIVED",
             description=(
                 "Higgs doublet emerges from a specific Kahler modulus "
                 "that couples to visible sector fermions via 3-cycle overlaps."

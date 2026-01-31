@@ -86,7 +86,7 @@ class AppendixITerminalStates(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return ["topology.ancestral_roots"]
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -419,12 +419,21 @@ class AppendixITerminalStates(SimulationBase):
                 label="(I.2)",
                 latex=r"\Psi_M = \frac{276}{288} \approx 95.83\%",
                 plain_text="Psi_M = 276/288 ≈ 95.83%",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Metric Null State: Dissolution of spatial scale from SO(24) decoupling.",
                 input_params=["topology.so24_generators", "topology.ancestral_roots"],
                 output_params=["terminal.metric_null_potential"],
+                derivation={
+                    "method": "Terminal state potential from SO(24) generator fraction",
+                    "steps": [
+                        "Identify the SO(24) generator count (276) as the metric sector contribution",
+                        "Compute the fraction of ancestral roots in the metric sector: 276/288 = 95.83%",
+                        "This fraction defines the Metric Null potential: when SO(24) decouples from 4D, spacetime dissolves",
+                    ],
+                    "parentFormulas": ["so24-generators", "ancestral-roots-derivation"],
+                },
                 terms={
-                    "Ψ_M": "Metric Null potential",
+                    r"\Psi_M": "Metric Null potential",
                     "276": "SO(24) generators",
                     "288": "Total ancestral roots",
                 },
@@ -434,12 +443,21 @@ class AppendixITerminalStates(SimulationBase):
                 label="(I.3)",
                 latex=r"\Psi_G = \frac{24}{288} \approx 8.33\%",
                 plain_text="Psi_G = 24/288 ≈ 8.33%",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Gauge Ghost State: Information stasis from shadow torsion locking.",
                 input_params=["topology.shadow_torsion_total", "topology.ancestral_roots"],
                 output_params=["terminal.gauge_ghost_potential"],
+                derivation={
+                    "method": "Terminal state potential from shadow torsion fraction",
+                    "steps": [
+                        "Identify the shadow torsion pin count (24) as the gauge sector contribution",
+                        "Compute the fraction of ancestral roots in the gauge sector: 24/288 = 8.33%",
+                        "This fraction defines the Gauge Ghost potential: forces freeze into standing waves at their origins",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum", "ancestral-roots-derivation"],
+                },
                 terms={
-                    "Ψ_G": "Gauge Ghost potential",
+                    r"\Psi_G": "Gauge Ghost potential",
                     "24": "Shadow torsion pins",
                     "288": "Total ancestral roots",
                 },
@@ -449,12 +467,21 @@ class AppendixITerminalStates(SimulationBase):
                 label="(I.4)",
                 latex=r"\Psi_R = \frac{125 + 163}{288} = 1.0",
                 plain_text="Psi_R = (125 + 163)/288 = 1.0",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Ancestral Restoration: Unitary return to 26D bulk potential.",
                 input_params=["registry.node_count", "topology.hidden_supports", "topology.ancestral_roots"],
                 output_params=["terminal.restoration_potential"],
+                derivation={
+                    "method": "Unitary restoration from active-hidden recombination",
+                    "steps": [
+                        "Active residues (125) and hidden supports (163) together exhaust the full root budget",
+                        "Their sum 125 + 163 = 288 restores the complete ancestral potential",
+                        "Restoration potential Psi_R = 288/288 = 1.0 (unitary), corresponding to full return to 26D bulk",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "hidden-support-count"],
+                },
                 terms={
-                    "Ψ_R": "Restoration potential",
+                    r"\Psi_R": "Restoration potential",
                     "125": "Active residues",
                     "163": "Hidden supports",
                     "288": "Total ancestral roots",
@@ -465,30 +492,75 @@ class AppendixITerminalStates(SimulationBase):
                 label="(I.1)",
                 latex=r"\lim_{t \to \infty} \sum_{n=1}^{\text{ק}_{\text{כה}}} e^{-t\lambda_n} = \text{Vol}(V_7)^{\text{max}}",
                 plain_text="lim(t->inf) Sum exp(-t*lambda_n) = Vol(V7)_max",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Spectral trace saturation: End of expansion as trace reaches maximum.",
                 input_params=["topology.vol_v7"],
                 output_params=["terminal.trace_saturated"],
+                derivation={
+                    "method": "Heat kernel trace saturation on V7 manifold",
+                    "steps": [
+                        "The spectral trace sums exp(-t*lambda_n) over all 125 eigenvalues of the V7 Laplacian",
+                        "As t approaches infinity, the trace converges to the maximum volume of the V7 manifold",
+                        "At saturation the expansion locks: the manifold curvature is fully consumed and no further work can be extracted",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    r"\lambda_n": "Eigenvalues of the V7 Laplacian",
+                    r"\text{Vol}(V_7)^{\text{max}}": "Maximum volume of the G2 holonomy manifold",
+                    "t": "Cosmic time parameter",
+                },
             ),
             Formula(
                 id="terminal-geodesic-curve",
                 label="(I.6)",
                 latex=r"\gamma(t) = \left(1 - e^{-\kappa_M t}\right) \oplus \left(1 - e^{-\kappa_G (t - t_c)}\right) \oplus \left(1 - e^{-\kappa_R t}\right)",
                 plain_text="gamma(t) = Terminal geodesic through three states",
-                category="TERMINAL",
+                category="DERIVED",
                 description="The terminal geodesic curve showing expansion flattening to Static Lock.",
                 input_params=["terminal.metric_null_potential", "terminal.gauge_ghost_potential"],
                 output_params=["terminal.geodesic_defined"],
+                derivation={
+                    "method": "Piecewise exponential saturation across three terminal basins",
+                    "steps": [
+                        "Model each terminal state as a saturating exponential: (1 - exp(-kappa * t))",
+                        "The Metric Null component activates first (kappa_M), dissolving spatial scale",
+                        "The Gauge Ghost component activates at critical time t_c (kappa_G), freezing force carriers",
+                        "The Ancestral Restoration completes the geodesic (kappa_R), returning to 26D bulk",
+                    ],
+                    "parentFormulas": ["metric-null-potential", "gauge-ghost-potential", "ancestral-restoration"],
+                },
+                terms={
+                    r"\gamma(t)": "Terminal geodesic curve through the three end-states",
+                    r"\kappa_M": "Metric Null decay constant",
+                    r"\kappa_G": "Gauge Ghost decay constant",
+                    r"\kappa_R": "Ancestral Restoration decay constant",
+                    "t_c": "Critical time for Gauge Ghost activation",
+                },
             ),
             Formula(
                 id="shadow-decoupling-rate",
                 label="(I.5)",
                 latex=r"\frac{d\tau}{dt} \propto -e^{-\Lambda t}",
                 plain_text="d(tau)/dt ~ -exp(-Lambda*t)",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Shadow torsion decoupling rate over cosmic time.",
                 input_params=["topology.shadow_torsion_total", "cosmology.lambda_geometric"],
                 output_params=["terminal.decoupling_rate"],
+                derivation={
+                    "method": "Exponential torsion dissipation from cosmological constant",
+                    "steps": [
+                        "The 24 torsion pins holding the dual 13D shadow branes in place dissipate over cosmic time",
+                        "The dissipation rate is governed by the cosmological constant Lambda via exponential decay",
+                        "As d(tau)/dt approaches zero, the shadow branes decouple and the 4D projection fades",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
+                terms={
+                    r"\tau": "Shadow torsion tension",
+                    r"\Lambda": "Cosmological constant (geometric)",
+                    "t": "Cosmic time",
+                },
             ),
         ]
 

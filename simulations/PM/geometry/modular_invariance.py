@@ -201,8 +201,9 @@ class ModularInvarianceV16(SimulationBase):
         2. Modular weight is half-integer × 24
         3. No tachyonic states in physical spectrum
         """
-        # Vacuum energy check
-        E0_correct = np.isclose(self.vacuum_energy, -1.0)
+        # Vacuum energy check -- use instance value if set, otherwise compute
+        vac_energy = self.vacuum_energy if self.vacuum_energy is not None else self._compute_vacuum_energy(b3)
+        E0_correct = np.isclose(vac_energy, -1.0)
 
         # Modular weight check (η^(-24) has weight -12)
         weight_correct = (b3 == 24)
@@ -380,7 +381,7 @@ class ModularInvarianceV16(SimulationBase):
                 label="(3.19)",
                 latex=r"\eta(\tau) = q^{1/24} \prod_{n=1}^{\infty} (1 - q^n)",
                 plain_text="eta(tau) = q^(1/24) * prod(1 - q^n)",
-                category="THEORY",
+                category="DERIVED",
                 description="Dedekind eta function definition",
                 inputParams=[],
                 outputParams=[],
@@ -461,7 +462,7 @@ class ModularInvarianceV16(SimulationBase):
                 label="(3.21)",
                 latex=r"b_3 \equiv 0 \mod 24",
                 plain_text="b3 mod 24 = 0",
-                category="THEORY",
+                category="DERIVED",
                 description="Modular anomaly cancellation condition",
                 inputParams=[],
                 outputParams=["topology.b3_modular"],
@@ -488,7 +489,7 @@ class ModularInvarianceV16(SimulationBase):
                 label="(3.23)",
                 latex=r"D_{crit} = b_3 + 2 = 26",
                 plain_text="D_crit = b3 + 2 = 26",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description="Critical dimension of bosonic string",
                 inputParams=["topology.elder_kads"],
                 outputParams=["topology.critical_dim"],
@@ -1134,7 +1135,7 @@ class ModularInvarianceUniquenessProof:
                 label="(3.24)",
                 latex=r"\eta(\tau + 1) = e^{i\pi/12} \eta(\tau)",
                 plain_text="eta(tau+1) = exp(i*pi/12) * eta(tau)",
-                category="THEORY",
+                category="DERIVED",
                 description="Dedekind eta T-transformation under modular group",
                 inputParams=[],
                 outputParams=[],
@@ -1154,7 +1155,7 @@ class ModularInvarianceUniquenessProof:
                 label="(3.25)",
                 latex=r"\eta(-1/\tau) = \sqrt{-i\tau} \, \eta(\tau)",
                 plain_text="eta(-1/tau) = sqrt(-i*tau) * eta(tau)",
-                category="THEORY",
+                category="DERIVED",
                 description="Dedekind eta S-transformation under modular group",
                 inputParams=[],
                 outputParams=[],
@@ -1173,7 +1174,7 @@ class ModularInvarianceUniquenessProof:
                 label="(3.26)",
                 latex=r"e^{-i\pi b_3/12} = 1 \implies b_3 \equiv 0 \pmod{24}",
                 plain_text="exp(-i*pi*b3/12) = 1 => b3 mod 24 = 0",
-                category="THEORY",
+                category="DERIVED",
                 description="Modular phase condition for single-valuedness",
                 inputParams=["topology.elder_kads"],
                 outputParams=[],
@@ -1236,7 +1237,7 @@ class ModularInvarianceUniquenessProof:
                 label="(3.29)",
                 latex=r"\theta_3^4 = \theta_2^4 + \theta_4^4",
                 plain_text="theta3^4 = theta2^4 + theta4^4",
-                category="THEORY",
+                category="DERIVED",
                 description="Jacobi theta identity connecting modular functions",
                 inputParams=[],
                 outputParams=[],
@@ -1255,7 +1256,7 @@ class ModularInvarianceUniquenessProof:
                 label="(3.30)",
                 latex=r"\eta(\tau)^{24} = \frac{\Delta(\tau)}{(2\pi)^{12}}",
                 plain_text="eta(tau)^24 = Delta(tau)/(2*pi)^12",
-                category="THEORY",
+                category="DERIVED",
                 description="Ramanujan relation: η^24 is modular discriminant",
                 inputParams=[],
                 outputParams=[],

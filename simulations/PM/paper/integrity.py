@@ -77,8 +77,8 @@ class IntegrityV16_2(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters referenced by the integrity narrative."""
+        return ["geometry.unity_seal"]
 
     @property
     def output_params(self) -> List[str]:
@@ -367,36 +367,109 @@ class IntegrityV16_2(SimulationBase):
                 label="(4.1)",
                 latex=r"\frac{d\alpha}{dt} = 0 \quad \text{(Hysteresis Constraint)}",
                 plain_text="d(alpha)/dt = 0 (Hysteresis Constraint)",
-                category="VALIDATION",
-                description="Parameter freeze from topological hysteresis.",
+                category="DERIVED",
+                description="Parameter freeze from topological hysteresis: all 125 spectral residues are time-invariant due to G2 holonomy rigidity.",
                 input_params=["topology.elder_kads", "topology.euler_chi"],
                 output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "G2 holonomy fixes a torsion-free Ricci-flat metric on V7, making the Laplacian spectrum rigid", "formula": r"\text{Hol}(g) \subseteq G_2 \;\Rightarrow\; R_{\mu\nu} = 0"},
+                        {"description": "Physical constants are spectral eigenvalues of the rigid V7 Laplacian, hence topological invariants", "formula": r"\alpha = f(\lambda_n) \quad \text{where } \Delta_{V_7}\Psi_n = \lambda_n \Psi_n"},
+                        {"description": "Topological invariants cannot vary under continuous deformation, enforcing zero time derivative", "formula": r"\frac{d\alpha}{dt} = \frac{\partial f}{\partial \lambda_n}\frac{d\lambda_n}{dt} = 0"},
+                    ],
+                    "method": "topological_rigidity",
+                    "parentFormulas": ["g2-holonomy", "laplacian-eigenvalue"]
+                },
+                terms={
+                    "alpha": "Any physical constant (e.g., fine structure constant)",
+                    "d/dt": "Time derivative",
+                    "G_2": "Exceptional holonomy group of the internal 7-manifold",
+                    "lambda_n": "Spectral eigenvalue of V7 Laplacian encoding the constant",
+                },
             ),
             Formula(
                 id="certificate-validation",
                 label="(4.2)",
                 latex=r"\text{Valid} = \prod_{n=1}^{42} C_n \quad \text{(All must pass)}",
                 plain_text="Valid = Product(C_n) for n=1..42 (All must pass)",
-                category="VALIDATION",
-                description="42 certificates of integrity validation logic.",
+                category="DERIVED",
+                description="42 certificates of integrity validation logic: short-circuit binary enforcement requiring all geometric, algebraic, and observational checks to pass.",
                 input_params=["certificates.tier1_status", "certificates.tier2_status", "certificates.tier3_status"],
                 output_params=["certificates.all_passed"],
+                derivation={
+                    "steps": [
+                        {"description": "Partition 42 certificates into 3 tiers: Geometric (C01-C14), Algebraic (C15-C28), Observational (C29-C42)", "formula": r"\{C_n\}_{n=1}^{42} = \text{Tier I} \cup \text{Tier II} \cup \text{Tier III}"},
+                        {"description": "Each certificate evaluates a binary pass/fail condition against the 125-residue registry", "formula": r"C_n \in \{0, 1\} \quad \forall\, n = 1, \ldots, 42"},
+                        {"description": "Overall validity requires all certificates to pass via short-circuit product", "formula": r"\text{Valid} = \prod_{n=1}^{42} C_n = 1 \;\Leftrightarrow\; C_n = 1 \;\forall\, n"},
+                    ],
+                    "method": "binary_enforcement",
+                    "parentFormulas": ["hysteresis-lock"]
+                },
+                terms={
+                    "C_n": "n-th certificate of integrity (binary: 0=fail, 1=pass)",
+                    "42": "Total number of validation certificates across 3 tiers",
+                    "Valid": "Overall system validity flag (1 if and only if all pass)",
+                    "Tier I": "Geometric consistency certificates (C01-C14)",
+                    "Tier II": "Algebraic parity certificates (C15-C28)",
+                    "Tier III": "Observational alignment certificates (C29-C42)",
+                },
             ),
             Formula(
                 id="omega-seal",
                 label="(4.3)",
                 latex=r"\Omega_{\text{seal}} = \text{SHA-256}(\text{registry} \| \text{coords} \| \text{tensors})",
                 plain_text="Omega_seal = SHA-256(registry || coords || tensors)",
-                category="VALIDATION",
-                description="Omega Seal cryptographic hash for terminal state.",
+                category="DERIVED",
+                description="Omega Seal: cryptographic hash locking the terminal state of the 125-residue registry, node coordinates, and projection tensors.",
                 input_params=["registry.node_count", "geometry.coordinate_hash"],
                 output_params=["seal.omega_hash", "seal.verified"],
+                derivation={
+                    "steps": [
+                        {"description": "Concatenate bitstreams of registry.json (125 residues), node_coords.csv, and projection_tensors.py", "formula": r"\text{input} = \text{registry} \| \text{coords} \| \text{tensors}"},
+                        {"description": "Apply SHA-256 cryptographic hash function to the concatenated bitstream", "formula": r"\Omega_{\text{seal}} = \text{SHA-256}(\text{input}) \in \{0,1\}^{256}"},
+                        {"description": "Any modification to any residue changes the hash, providing tamper detection for the frozen registry", "formula": r"\text{input}' \neq \text{input} \;\Rightarrow\; \text{SHA-256}(\text{input}') \neq \Omega_{\text{seal}}"},
+                    ],
+                    "method": "cryptographic_verification",
+                    "parentFormulas": ["certificate-validation"]
+                },
+                terms={
+                    "Omega_seal": "SHA-256 hash of the terminal state (256-bit digest)",
+                    "registry": "Frozen 125-residue registry (registry.json)",
+                    "coords": "Node coordinates of the brane-node intersection lattice",
+                    "tensors": "Projection tensors for 26D to 4D dimensional reduction",
+                    "SHA-256": "Cryptographic hash function (NIST FIPS 180-4)",
+                },
             ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
-        """Return parameter definitions - narrative section has no output parameters."""
-        return []
+        """Return parameter definitions for integrity verification outputs."""
+        return [
+            Parameter(
+                path="certificates.all_passed",
+                name="All Certificates Passed",
+                units="boolean",
+                status="DERIVED",
+                description="Binary flag: True if all 42 certificates of integrity pass validation.",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="seal.omega_hash",
+                name="Omega Seal Hash",
+                units="dimensionless",
+                status="DERIVED",
+                description="SHA-256 cryptographic hash of the terminal state (registry + coords + tensors).",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="seal.verified",
+                name="Seal Verified",
+                units="boolean",
+                status="DERIVED",
+                description="Boolean flag indicating the Omega Seal hash matches the stored reference.",
+                no_experimental_value=True,
+            ),
+        ]
 
     def get_certificates(self) -> List[Dict[str, Any]]:
         """Return verification certificates for paper integrity."""

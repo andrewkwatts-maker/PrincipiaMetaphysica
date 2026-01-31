@@ -46,6 +46,7 @@ from simulations.base import (
     SimulationMetadata,
     ContentBlock,
     SectionContent,
+    Formula,
     Parameter,
 )
 
@@ -74,8 +75,8 @@ class IntroductionV16(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        """No required inputs - this is narrative content only."""
-        return []
+        """Registry parameters referenced by the introduction narrative."""
+        return ["topology.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -929,9 +930,36 @@ class IntroductionV16(SimulationBase):
             ]
         )
 
-    def get_formulas(self) -> List:
-        """No formulas in introduction section."""
-        return []
+    def get_formulas(self) -> List[Formula]:
+        """Return key framework formula for the introduction."""
+        return [
+            Formula(
+                id="intro-division-algebra-decomposition",
+                label="(1.4)",
+                latex=r"D = 13 = 1 + 4 + 8 = \dim(\mathbb{R}) + \dim(\mathbb{H}) + \dim(\mathbb{O})",
+                plain_text="D = 13 = 1 + 4 + 8 = dim(R) + dim(H) + dim(O)",
+                category="DERIVED",
+                description="Unique division algebra decomposition of shadow dimension D=13 into real (emergent time), quaternionic (Lorentz spacetime), and octonionic (internal G2 manifold) components via the Hurwitz theorem.",
+                input_params=[],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "Hurwitz theorem: only 4 normed division algebras exist over R with dimensions 1, 2, 4, 8", "formula": r"\mathbb{R}(1),\; \mathbb{C}(2),\; \mathbb{H}(4),\; \mathbb{O}(8)"},
+                        {"description": "Physical constraints: exactly one factor each of dim 1 (time), dim 4 (spacetime), dim 8 (internal); exclude dim 2 (no worldsheet)", "formula": r"D = \dim(\mathbb{R}) + \dim(\mathbb{H}) + \dim(\mathbb{O})"},
+                        {"description": "Unique solution yields D=13 per shadow, with Aut(O) = G2 governing internal geometry", "formula": r"D = 1 + 4 + 8 = 13, \quad \text{Aut}(\mathbb{O}) = G_2"},
+                    ],
+                    "method": "hurwitz_classification",
+                    "parentFormulas": []
+                },
+                terms={
+                    "D": "Total dimension of each observable shadow sector (13)",
+                    "R": "Real numbers, dimension 1 (emergent thermal time)",
+                    "H": "Quaternions, dimension 4 (Lorentzian spacetime with Spin(3,1))",
+                    "O": "Octonions, dimension 8 (internal manifold with Aut(O) = G2)",
+                    "Aut(O)": "Automorphism group of octonions, isomorphic to G2",
+                }
+            )
+        ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
         """No output parameters in introduction section — narrative section."""

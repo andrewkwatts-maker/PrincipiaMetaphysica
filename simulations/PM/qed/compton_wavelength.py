@@ -189,7 +189,7 @@ class ComptonWavelengthV17(SimulationBase):
             abstract="Derives the electron Compton wavelength using inverse cubic contraction.",
             content_blocks=[
                 ContentBlock(
-                    type="text",
+                    type="paragraph",
                     content=(
                         "The electron Compton wavelength represents the quantum limit "
                         "of electron localization. In the Decad-Cubic framework, this "
@@ -208,7 +208,7 @@ class ComptonWavelengthV17(SimulationBase):
                     label="eq:compton_manifest"
                 ),
                 ContentBlock(
-                    type="text",
+                    type="paragraph",
                     content=(
                         f"Where epsilon = 1/28800 = {epsilon:.10e}. "
                         f"The bulk Compton wavelength is {bulk_val:.15e} m, "

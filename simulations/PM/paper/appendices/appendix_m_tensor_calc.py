@@ -86,9 +86,7 @@ class AppendixMTensorCalculus(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "constants.M_PLANCK",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

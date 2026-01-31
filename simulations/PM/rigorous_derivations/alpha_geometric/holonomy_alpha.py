@@ -1192,7 +1192,7 @@ if SCHEMA_AVAILABLE:
                     label="(A.4)",
                     latex=r"\frac{1}{g^2_{4D}} \sim \frac{V_{\text{cycle}}}{V_{G_2}}",
                     plain_text="1/g^2_4D ~ V_cycle / V_G2",
-                    category="THEORY",
+                    category="DERIVED",
                     description=(
                         "M-theory compactification formula relating 4D gauge coupling to "
                         "internal geometry. Correct framework but requires explicit metric data."

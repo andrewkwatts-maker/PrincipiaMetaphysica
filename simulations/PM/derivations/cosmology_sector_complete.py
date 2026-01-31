@@ -886,7 +886,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
                 r"\Rightarrow \text{Tension Resolved}"
             ),
             plain_text="H0_local = 71.55, H0_CMB = 67.36 -> Tension Resolved",
-            category="PREDICTIONS",
+            category="PREDICTED",
             description=(
                 "Hubble tension resolution from O'Dowd formula. The geometric H_0 "
                 "prediction (71.55) lies between Planck (67.36) and SH0ES (73.04), "
@@ -936,7 +936,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
                 r"\Delta N_{\rm eff}^{\rm PM} \approx 0"
             ),
             plain_text="N_eff = 3.046 + delta_N_eff, delta_N_eff^PM ~ 0",
-            category="PREDICTIONS",
+            category="PREDICTED",
             description=(
                 "BBN neutrino generations prediction. G2 compactification does not "
                 "introduce extra light degrees of freedom, so N_eff = 3.046 (SM value)."

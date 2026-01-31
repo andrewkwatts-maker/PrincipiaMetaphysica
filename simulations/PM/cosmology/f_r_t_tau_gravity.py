@@ -781,6 +781,24 @@ class FRTTauGravityV18(SimulationBase):
             ),
             content_blocks=[
                 ContentBlock(
+                    type="subsection",
+                    content="Derivation from 11D M-Theory"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Starting from the 11D M-theory action S_11 = integral d^11x sqrt(-g) "
+                        "[R_11 + F_4^2 + ...], dimensional reduction over the G2 manifold "
+                        "K_Pneuma (b3 = 24, chi_eff = 144) yields a 4D effective action that "
+                        "is not pure Einstein gravity but a modified f(R,T,tau) theory. "
+                        "The higher-curvature corrections (R^2 term) arise from the "
+                        "associative 3-cycle fluctuations, while the stress-energy trace "
+                        "coupling (T term) emerges from the flux quanta normalization. "
+                        "The modulus tau represents the G2 cycle volume, acting as a "
+                        "quintessence-like scalar field."
+                    )
+                ),
+                ContentBlock(
                     type="paragraph",
                     content=(
                         "The master action reduction over G2 yields not pure Einstein gravity "
@@ -839,6 +857,25 @@ class FRTTauGravityV18(SimulationBase):
                     type="formula",
                     formula_id="tensor-mode-dispersion-v18"
                 ),
+                ContentBlock(
+                    type="subsection",
+                    content="Summary of Testable Predictions"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The f(R,T,tau) modified gravity framework makes three classes of "
+                        "testable predictions: (1) the dark energy equation of state w_0 from "
+                        "the attractor potential, verifiable by DESI, Euclid, and LSST surveys; "
+                        "(2) the gravitational slip parameter eta_G, measurable via weak lensing "
+                        "cross-correlated with galaxy clustering; (3) the scalar breathing mode "
+                        "amplitude in gravitational waves, potentially detectable by LISA, "
+                        "Einstein Telescope, or Cosmic Explorer. The key advantage of this "
+                        "framework is that all coefficients (alpha_F, beta_F, gamma_F, delta_F) "
+                        "are determined by the G2 topology, leaving zero free parameters "
+                        "in the gravitational sector."
+                    )
+                ),
             ],
             formula_refs=_OUTPUT_FORMULAS,
             param_refs=_OUTPUT_PARAMS
@@ -885,6 +922,29 @@ class FRTTauGravityV18(SimulationBase):
                 "arxiv": "0805.1726",
                 "url": "https://doi.org/10.1103/RevModPhys.82.451",
                 "notes": "Review of f(R) modified gravity"
+            },
+            {
+                "id": "acharya2002",
+                "authors": "Acharya, B.S.",
+                "title": "M theory, Joyce orbifolds and Super Yang-Mills",
+                "journal": "Adv. Theor. Math. Phys.",
+                "volume": "3",
+                "year": 1999,
+                "arxiv": "hep-th/9812205",
+                "url": "https://arxiv.org/abs/hep-th/9812205",
+                "notes": "M-theory on G2 manifolds: gauge fields from singularities"
+            },
+            {
+                "id": "nishizawa2018",
+                "authors": "Nishizawa, A.",
+                "title": "Generalized framework for testing gravity with gravitational-wave propagation",
+                "journal": "Phys. Rev. D",
+                "volume": "97",
+                "pages": "104037",
+                "year": 2018,
+                "arxiv": "1710.04825",
+                "url": "https://doi.org/10.1103/PhysRevD.97.104037",
+                "notes": "Framework for GW speed constraints on modified gravity"
             },
         ]
 

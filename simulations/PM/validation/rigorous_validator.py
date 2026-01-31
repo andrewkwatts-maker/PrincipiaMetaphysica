@@ -518,7 +518,11 @@ class RigorousValidatorV16_1(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "For each parameter, we compute the sigma deviation using the standard formula:"
+                    "For each parameter, we compute the sigma deviation using the standard "
+                    "Gaussian hypothesis-testing formula. The PM-predicted value is compared "
+                    "with the experimental central value, and the absolute residual is "
+                    "normalised by the reported 1-sigma experimental uncertainty. This yields "
+                    "a dimensionless deviation expressed in units of standard deviations:"
                 )
             ),
             ContentBlock(
@@ -530,9 +534,14 @@ class RigorousValidatorV16_1(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "We classify results as follows: PASS (σ < 2.0) indicates agreement within "
-                    "experimental uncertainties, while TENSION (σ ≥ 2.0) indicates a potential "
-                    "discrepancy requiring geometric justification or model refinement."
+                    "We classify results according to the standard 2-sigma criterion used in "
+                    "particle physics and cosmology. A deviation below 2.0 sigma indicates that "
+                    "the PM prediction lies within the 95.45% confidence interval of the "
+                    "experimental measurement and is classified as PASS. A deviation at or "
+                    "above 2.0 sigma is classified as TENSION, signalling a potential "
+                    "discrepancy that requires either geometric justification from higher-order "
+                    "terms in the G2 holonomy expansion or model refinement in the dimensional "
+                    "reduction cascade."
                 )
             ),
             ContentBlock(
@@ -597,9 +606,13 @@ class RigorousValidatorV16_1(SimulationBase):
                     "The validation demonstrates that Principia Metaphysica v16.1 predictions "
                     "are in good agreement with the latest observational data from 2025. "
                     "Any tensions identified should be examined for: (1) potential geometric "
-                    "corrections from higher-order terms in the G₂ expansion, (2) systematic "
-                    "uncertainties in experimental measurements, or (3) theoretical refinements "
-                    "needed in the dimensional reduction cascade."
+                    "corrections from higher-order terms in the G2 holonomy expansion, "
+                    "(2) systematic uncertainties in experimental measurements that may shift "
+                    "central values in future data releases, or (3) theoretical refinements "
+                    "needed in the dimensional reduction cascade from 26 to 4 dimensions. "
+                    "The rigorous statistical methodology employed here ensures that all PM "
+                    "predictions remain quantitatively testable and falsifiable against current "
+                    "and future experimental datasets."
                 )
             ),
         ])
@@ -642,7 +655,7 @@ class RigorousValidatorV16_1(SimulationBase):
                 label="(A.1)",
                 latex=r"\sigma = \frac{|x_{\text{PM}} - x_{\text{exp}}|}{\sigma_{\text{exp}}}",
                 plain_text="sigma = |x_PM - x_exp| / sigma_exp",
-                category="THEORY",
+                category="DERIVED",
                 description="Sigma deviation formula for validation against experimental data",
                 inputParams=["*.pm_value", "*.exp_value", "*.exp_uncertainty"],
                 outputParams=["*.sigma_deviation"],
@@ -651,16 +664,38 @@ class RigorousValidatorV16_1(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "Compute absolute difference",
+                            "description": (
+                                "Compute the residual between the PM-predicted value and the "
+                                "experimental central value. The absolute value ensures the "
+                                "deviation is non-negative regardless of sign."
+                            ),
                             "formula": r"\Delta x = |x_{\text{PM}} - x_{\text{exp}}|"
                         },
                         {
-                            "description": "Normalize by experimental uncertainty",
+                            "description": (
+                                "Normalize the residual by the experimental 1-sigma uncertainty "
+                                "to express the deviation in units of standard deviations. This "
+                                "assumes the experimental measurement follows a Gaussian "
+                                "distribution centred on x_exp with width sigma_exp."
+                            ),
                             "formula": r"\sigma = \frac{\Delta x}{\sigma_{\text{exp}}}"
+                        },
+                        {
+                            "description": (
+                                "Interpret the result using the Gaussian cumulative distribution: "
+                                "sigma < 1 corresponds to the 68% confidence interval (routine "
+                                "agreement), sigma < 2 corresponds to the 95.45% interval "
+                                "(acceptable agreement), and sigma >= 2 indicates a statistically "
+                                "significant tension warranting further investigation."
+                            ),
+                            "formula": r"P(\sigma) = \mathrm{erf}\!\left(\frac{\sigma}{\sqrt{2}}\right)"
                         }
                     ],
+                    "method": "gaussian_hypothesis_test",
                     "references": [
-                        "Standard statistical validation methodology"
+                        "Standard statistical validation methodology",
+                        "Particle Data Group - Review of Particle Physics: Statistics (2024)",
+                        "Cowan, G. - Statistical Data Analysis (Oxford, 1998)"
                     ]
                 },
                 terms={
@@ -678,7 +713,7 @@ class RigorousValidatorV16_1(SimulationBase):
                       r"\text{TENSION} & \text{if } \sigma \geq 2.0 "
                       r"\end{cases}",
                 plain_text="Status = PASS if sigma < 2.0, TENSION if sigma >= 2.0",
-                category="THEORY",
+                category="DERIVED",
                 description="Threshold for classifying validation results as PASS or TENSION",
                 inputParams=["*.sigma_deviation"],
                 outputParams=["*.status"],
@@ -687,16 +722,40 @@ class RigorousValidatorV16_1(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "2σ threshold for statistical significance",
-                            "formula": r"\text{threshold} = 2.0\sigma"
+                            "description": (
+                                "Establish the 2-sigma threshold: in a Gaussian distribution, "
+                                "values within 2 standard deviations of the mean account for "
+                                "95.45% of the probability. Deviations beyond this boundary "
+                                "have less than a 4.55% chance of arising from statistical "
+                                "fluctuation alone."
+                            ),
+                            "formula": r"\text{threshold} = 2.0\,\sigma \quad (P \approx 95.45\%)"
                         },
                         {
-                            "description": "Classification rule",
-                            "formula": r"\text{Status} = f(\sigma, \text{threshold})"
+                            "description": (
+                                "Apply the binary classification rule: if the computed sigma "
+                                "deviation falls below the threshold the prediction is deemed "
+                                "consistent with experiment (PASS); otherwise it is flagged as "
+                                "a statistical tension requiring geometric justification or "
+                                "model refinement."
+                            ),
+                            "formula": r"\text{Status} = \begin{cases} \text{PASS} & \sigma < 2 \\ \text{TENSION} & \sigma \geq 2 \end{cases}"
+                        },
+                        {
+                            "description": (
+                                "Aggregate across all validated parameters to determine the "
+                                "overall simulation status. Zero tensions yields PASS, one or "
+                                "two tensions yields MARGINAL, and more than two tensions "
+                                "yields an overall TENSION status for the theory sector."
+                            ),
+                            "formula": r"\text{Overall} = \begin{cases} \text{PASS} & N_{\text{tension}} = 0 \\ \text{MARGINAL} & 1 \leq N_{\text{tension}} \leq 2 \\ \text{TENSION} & N_{\text{tension}} > 2 \end{cases}"
                         }
                     ],
+                    "method": "threshold_classification",
                     "references": [
-                        "Standard 2σ criterion for statistical tension in particle physics"
+                        "Standard 2-sigma criterion for statistical tension in particle physics",
+                        "Particle Data Group - Statistical methods (RPP 2024)",
+                        "Lyons, L. - Open statistical issues in particle physics, Ann. Appl. Stat. (2008)"
                     ]
                 },
                 terms={
@@ -718,6 +777,7 @@ class RigorousValidatorV16_1(SimulationBase):
         Returns:
             List of Parameter instances describing validation results
         """
+        total_checks = len(self.validation_entries)
         return [
             Parameter(
                 path="validation.overall_status",
@@ -725,9 +785,12 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="categorical",
                 status="VALIDATION",
                 description=(
-                    f"Overall validation status: {self.overall_status}. "
-                    f"PASS: all checks < 2σ. MARGINAL: 1-2 checks ≥ 2σ. "
-                    f"TENSION: >2 checks ≥ 2σ."
+                    f"Overall validation status across all checked parameters. "
+                    f"Current value: '{self.overall_status}' "
+                    f"(populated at runtime by run(); defaults to 'UNKNOWN' before execution). "
+                    f"Classification: PASS = all checks below 2-sigma, "
+                    f"MARGINAL = 1-2 checks at or above 2-sigma, "
+                    f"TENSION = more than 2 checks at or above 2-sigma."
                 ),
                 no_experimental_value=True,
             ),
@@ -737,8 +800,11 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="count",
                 status="VALIDATION",
                 description=(
-                    f"Number of parameters with σ ≥ 2.0: {self.tension_count}. "
-                    f"Each tension requires geometric justification."
+                    f"Count of validated parameters whose sigma deviation reaches or "
+                    f"exceeds the 2-sigma threshold. Current value: {self.tension_count} "
+                    f"(populated at runtime by run(); defaults to 0 before execution). "
+                    f"Each tension flags a prediction-vs-experiment discrepancy that "
+                    f"requires geometric justification or model refinement."
                 ),
                 no_experimental_value=True,
             ),
@@ -748,8 +814,10 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="count",
                 status="VALIDATION",
                 description=(
-                    f"Number of parameters with σ < 2.0: {self.pass_count}. "
-                    f"These predictions agree with observations."
+                    f"Count of validated parameters whose sigma deviation falls below "
+                    f"the 2-sigma threshold, indicating agreement with experiment within "
+                    f"the 95.45% confidence interval. Current value: {self.pass_count} "
+                    f"(populated at runtime by run(); defaults to 0 before execution)."
                 ),
                 no_experimental_value=True,
             ),
@@ -759,7 +827,10 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="count",
                 status="VALIDATION",
                 description=(
-                    f"Total number of validation checks performed: {len(self.validation_entries)}."
+                    f"Total number of parameter-level validation checks performed across "
+                    f"the neutrino, dark energy, and cosmology sectors. Current value: "
+                    f"{total_checks} (populated at runtime by run(); defaults to 0 before "
+                    f"execution). Equal to pass_count + tension_count."
                 ),
                 no_experimental_value=True,
             ),
@@ -769,7 +840,10 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="categorical",
                 status="VALIDATION",
                 description=(
-                    "Validation status for neutrino mixing parameters against NuFIT 6.0 (2025)."
+                    "Sector-level validation status for neutrino mixing parameters "
+                    "(theta_12, theta_13, theta_23, delta_CP) compared against NuFIT 6.0 "
+                    "(2025) global-fit central values and 1-sigma uncertainties. Returns "
+                    "PASS, MARGINAL, or TENSION (populated at runtime by run())."
                 ),
                 no_experimental_value=True,
             ),
@@ -779,7 +853,9 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="categorical",
                 status="VALIDATION",
                 description=(
-                    "Validation status for dark energy parameters against DESI 2025."
+                    "Sector-level validation status for dark energy equation-of-state "
+                    "parameters (w0, wa) compared against DESI 2025 BAO+CMB constraints. "
+                    "Returns PASS or TENSION (populated at runtime by run())."
                 ),
                 no_experimental_value=True,
             ),
@@ -789,7 +865,11 @@ class RigorousValidatorV16_1(SimulationBase):
                 units="categorical",
                 status="VALIDATION",
                 description=(
-                    "Validation status for cosmological parameters against Planck 2025."
+                    "Sector-level validation status for cosmological parameters "
+                    "(Omega_m, H0) compared against Planck 2025 CMB measurements. "
+                    "Returns PASS, MARGINAL, TENSION, or UNAVAILABLE if the required "
+                    "input parameters were not set in the registry (populated at runtime "
+                    "by run())."
                 ),
                 no_experimental_value=True,
             ),
@@ -1016,37 +1096,137 @@ class RigorousValidatorV16_1(SimulationBase):
         ]
 
     def validate_self(self) -> Dict[str, Any]:
-        """Validate internal consistency of the rigorous validator simulation."""
-        checks = [
-            {
-                "name": "sigma_computation_correct",
-                "passed": True,
-                "confidence_interval": {"lower": 0.0, "upper": 5.0, "sigma": 1.0},
-                "log_level": "INFO",
-                "message": "Sigma deviation formula |x_PM - x_exp|/sigma_exp correctly applied"
-            },
-            {
-                "name": "threshold_classification",
-                "passed": True,
-                "confidence_interval": {"lower": 0.0, "upper": 2.0, "sigma": 0.5},
-                "log_level": "INFO",
-                "message": "PASS/TENSION classification threshold at 2 sigma correctly enforced"
-            },
-            {
-                "name": "experimental_data_current",
-                "passed": True,
-                "confidence_interval": {"lower": 2024.0, "upper": 2025.0, "sigma": 0.5},
-                "log_level": "INFO",
-                "message": "Experimental reference data from NuFIT 6.0, DESI 2025, Planck 2025"
-            },
-            {
-                "name": "no_tensions_above_3sigma",
-                "passed": True,
-                "confidence_interval": {"lower": 0.0, "upper": 3.0, "sigma": 2.0},
-                "log_level": "INFO",
-                "message": "No PM predictions exceed 3 sigma tension with experiment"
-            },
-        ]
+        """
+        Validate internal consistency of the rigorous validator simulation.
+
+        Performs meaningful runtime checks on the computed validation state:
+        - Verifies total_checks is positive (validation actually ran)
+        - Verifies pass_count is non-negative
+        - Verifies tension_count is non-negative
+        - Verifies pass_count + tension_count == total_checks (bookkeeping)
+        - Verifies overall_status is a recognised classification string
+        - Verifies all sigma deviations are non-negative (absolute value property)
+        - Verifies no prediction exceeds 3-sigma tension with experiment
+        - Verifies experimental reference datasets contain expected entries
+        """
+        total_checks = len(self.validation_entries)
+        checks = []
+
+        # Check 1: Validation actually produced entries
+        has_entries = total_checks > 0
+        checks.append({
+            "name": "total_checks_positive",
+            "passed": has_entries,
+            "confidence_interval": {"lower": 1.0, "upper": 20.0, "sigma": 0.0},
+            "log_level": "INFO" if has_entries else "ERROR",
+            "message": (
+                f"Total validation checks = {total_checks}; "
+                f"{'at least one check was performed' if has_entries else 'no checks were performed -- run() may not have been called'}"
+            )
+        })
+
+        # Check 2: pass_count is non-negative
+        pass_ok = self.pass_count >= 0
+        checks.append({
+            "name": "pass_count_non_negative",
+            "passed": pass_ok,
+            "confidence_interval": {"lower": 0.0, "upper": float(total_checks), "sigma": 0.0},
+            "log_level": "INFO" if pass_ok else "ERROR",
+            "message": (
+                f"pass_count = {self.pass_count}; "
+                f"{'valid' if pass_ok else 'negative pass_count indicates bookkeeping error'}"
+            )
+        })
+
+        # Check 3: tension_count is non-negative
+        tension_ok = self.tension_count >= 0
+        checks.append({
+            "name": "tension_count_non_negative",
+            "passed": tension_ok,
+            "confidence_interval": {"lower": 0.0, "upper": float(total_checks), "sigma": 0.0},
+            "log_level": "INFO" if tension_ok else "ERROR",
+            "message": (
+                f"tension_count = {self.tension_count}; "
+                f"{'valid' if tension_ok else 'negative tension_count indicates bookkeeping error'}"
+            )
+        })
+
+        # Check 4: Counts sum correctly (pass + tension == total)
+        counts_consistent = (self.pass_count + self.tension_count) == total_checks
+        checks.append({
+            "name": "counts_sum_to_total",
+            "passed": counts_consistent,
+            "confidence_interval": {"lower": 0.0, "upper": 0.0, "sigma": 0.0},
+            "log_level": "INFO" if counts_consistent else "ERROR",
+            "message": (
+                f"pass_count ({self.pass_count}) + tension_count ({self.tension_count}) "
+                f"{'==' if counts_consistent else '!='} total_checks ({total_checks})"
+            )
+        })
+
+        # Check 5: overall_status is a recognised string
+        valid_statuses = {"PASS", "MARGINAL", "TENSION", "UNKNOWN"}
+        status_valid = self.overall_status in valid_statuses
+        checks.append({
+            "name": "overall_status_recognised",
+            "passed": status_valid,
+            "confidence_interval": {"lower": 0.0, "upper": 1.0, "sigma": 0.0},
+            "log_level": "INFO" if status_valid else "ERROR",
+            "message": (
+                f"overall_status = '{self.overall_status}'; "
+                f"{'recognised classification' if status_valid else 'unrecognised -- expected one of ' + str(valid_statuses)}"
+            )
+        })
+
+        # Check 6: All sigma deviations are non-negative (|x - y| / sigma >= 0)
+        all_sigma_ok = all(e.sigma_deviation >= 0.0 for e in self.validation_entries)
+        checks.append({
+            "name": "sigma_deviations_non_negative",
+            "passed": all_sigma_ok,
+            "confidence_interval": {"lower": 0.0, "upper": 5.0, "sigma": 1.0},
+            "log_level": "INFO" if all_sigma_ok else "ERROR",
+            "message": (
+                "All sigma deviations >= 0 (absolute-value property satisfied)"
+                if all_sigma_ok else
+                "Negative sigma deviation found -- formula implementation error"
+            )
+        })
+
+        # Check 7: No prediction exceeds 3-sigma tension
+        max_sigma = max((e.sigma_deviation for e in self.validation_entries), default=0.0)
+        no_extreme = max_sigma < 3.0
+        checks.append({
+            "name": "no_tensions_above_3sigma",
+            "passed": no_extreme,
+            "confidence_interval": {"lower": 0.0, "upper": 3.0, "sigma": 2.0},
+            "log_level": "INFO" if no_extreme else "WARNING",
+            "message": (
+                f"Maximum sigma deviation = {max_sigma:.2f}; "
+                f"{'within 3-sigma bound' if no_extreme else 'exceeds 3-sigma -- severe tension detected'}"
+            )
+        })
+
+        # Check 8: Experimental reference datasets contain expected keys
+        nufit_keys = set(self.NUFIT_6_0_2025.keys())
+        desi_keys = set(self.DESI_2025.keys())
+        planck_keys = set(self.PLANCK_2025.keys())
+        datasets_ok = (
+            {'theta_12', 'theta_13', 'theta_23', 'delta_CP'} <= nufit_keys
+            and {'w0', 'wa'} <= desi_keys
+            and {'Omega_m', 'H0', 'sum_m_nu_upper'} <= planck_keys
+        )
+        checks.append({
+            "name": "experimental_datasets_complete",
+            "passed": datasets_ok,
+            "confidence_interval": {"lower": 0.0, "upper": 1.0, "sigma": 0.0},
+            "log_level": "INFO" if datasets_ok else "ERROR",
+            "message": (
+                "All expected entries present in NuFIT 6.0, DESI 2025, and Planck 2025 reference datasets"
+                if datasets_ok else
+                "One or more experimental reference datasets are missing expected parameter entries"
+            )
+        })
+
         return {
             "passed": all(c["passed"] for c in checks),
             "checks": checks

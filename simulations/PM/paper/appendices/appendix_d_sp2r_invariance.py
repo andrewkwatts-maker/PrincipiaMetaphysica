@@ -108,9 +108,7 @@ class Sp2RInvarianceProof(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.elder_kads",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

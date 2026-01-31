@@ -698,7 +698,7 @@ class MultiSectorV16(SimulationBase):
                 label="(5.17)",
                 latex=r"\frac{\Omega_{DM}}{\Omega_b} = \left(\frac{T}{T'}\right)^3 = \left(\frac{1}{0.57}\right)^3 \approx 5.4",
                 plain_text="Omega_DM/Omega_b = (T/T')^3 = (1/0.57)^3 ≈ 5.4",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description="Dark matter abundance from mirror sector entropy dilution",
                 inputParams=["cosmology.T_mirror_ratio"],
                 outputParams=["cosmology.Omega_DM_over_b"],

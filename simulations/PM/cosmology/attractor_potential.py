@@ -393,8 +393,10 @@ class AttractorPotentialV18(SimulationBase):
                 plain_text="V(phi_M) = V_0 * [1 + A * cos(omega * phi_M / f)]",
                 category="DERIVED",
                 description=(
-                    "Dark energy attractor potential from G2 modulus dynamics. "
-                    "Cosine form arises from periodic structure of G2 cycle volumes."
+                    "Dark energy attractor potential from G2 modulus dynamics with Ricci flow coupling. "
+                    "The cosine form arises from the Fourier expansion of the periodic modulus on the "
+                    "compact G2 manifold. Parameters A = 1/sqrt(b3), omega = 2*pi/sqrt(chi_eff), and "
+                    "f = M_Pl/sqrt(chi_eff) are all determined by G2 topology (b3 = 24, chi_eff = 144)."
                 ),
                 inputParams=["topology.elder_kads", "topology.mephorash_chi"],
                 outputParams=["cosmology.V_0_vacuum_scale", "cosmology.A_amplitude", "cosmology.omega_frequency", "cosmology.f_decay_constant"],
@@ -445,8 +447,10 @@ class AttractorPotentialV18(SimulationBase):
                 plain_text="f = M_Pl / sqrt(chi_eff) ~ 2.03e17 GeV",
                 category="DERIVED",
                 description=(
-                    "Super-Planckian decay constant from effective Euler characteristic. "
-                    "Natural scale for modulus field variations in reduced Planck units."
+                    "Super-Planckian decay constant from effective Euler characteristic chi_eff = 144. "
+                    "f = M_Pl/sqrt(chi_eff) = 2.435e18/12 ~ 2.03e17 GeV sets the natural scale for "
+                    "modulus field variations. The super-Planckian value (f > M_Pl/12) ensures "
+                    "slow-roll is maintained with O(1) potential coefficients."
                 ),
                 inputParams=["topology.mephorash_chi"],
                 outputParams=["cosmology.f_decay_constant"],
@@ -485,7 +489,7 @@ class AttractorPotentialV18(SimulationBase):
                 label="(5.6)",
                 latex=r"w_0 = -1 + \frac{1}{b_3} = -1 + \frac{1}{24} = -\frac{23}{24} \approx -0.9583",
                 plain_text="w_0 = -1 + 1/b3 = -1 + 1/24 = -23/24 ~ -0.9583",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description=(
                     "Equation of state at attractor from slow-roll + Ricci flow correction. "
                     "Predicts thawing quintessence consistent with DESI 2025 observations."
@@ -537,7 +541,11 @@ class AttractorPotentialV18(SimulationBase):
                 name="Vacuum Energy Scale",
                 units="GeV^4",
                 status="DERIVED",
-                description="Dark energy density scale from cosmological observations.",
+                description=(
+                    "Dark energy density scale set by the observed cosmological constant: "
+                    "V_0 = rho_Lambda ~ 2.846e-47 GeV^4. This is the zero-point of the "
+                    "attractor potential V(phi_M) from G2 manifold scalar curvature integration."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -545,7 +553,11 @@ class AttractorPotentialV18(SimulationBase):
                 name="Potential Amplitude",
                 units="dimensionless",
                 status="DERIVED",
-                description="Oscillation amplitude A = 1/sqrt(b3) ~ 0.204.",
+                description=(
+                    "Oscillation amplitude of the attractor potential from b3 cycle fluctuations: "
+                    "A = 1/sqrt(b3) = 1/sqrt(24) ~ 0.204. Satisfies the small oscillation "
+                    "limit (A < 1) required for stable attractor behavior."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -553,7 +565,11 @@ class AttractorPotentialV18(SimulationBase):
                 name="Potential Frequency",
                 units="dimensionless",
                 status="DERIVED",
-                description="Angular frequency omega = 2*pi/sqrt(chi_eff) ~ 0.524.",
+                description=(
+                    "Angular frequency of the cosine potential from chi_eff oscillation modes: "
+                    "omega = 2*pi/sqrt(chi_eff) = 2*pi/sqrt(144) = pi/6 ~ 0.524. Determines "
+                    "the periodicity of modulus field oscillations around the attractor."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -561,7 +577,11 @@ class AttractorPotentialV18(SimulationBase):
                 name="Decay Constant",
                 units="GeV",
                 status="DERIVED",
-                description="Super-Planckian decay constant f = M_Pl/sqrt(chi_eff).",
+                description=(
+                    "Super-Planckian decay constant from Planck mass reduction by G2 topology: "
+                    "f = M_Pl/sqrt(chi_eff) = 2.435e18/12 ~ 2.03e17 GeV. Sets the natural "
+                    "scale for modulus field variations; f > M_Pl/12 ensures slow-roll stability."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -569,7 +589,11 @@ class AttractorPotentialV18(SimulationBase):
                 name="Attractor Fixed Point",
                 units="GeV",
                 status="DERIVED",
-                description="phi_star where V'=0 (attractor minimum).",
+                description=(
+                    "Fixed point of the attractor potential where V'(phi_star) = 0: "
+                    "phi_star = (pi/2) * f / omega ~ 6.12e17 GeV. The G2 modulus evolves "
+                    "toward this point under Ricci flow, driving late-time acceleration."
+                ),
                 no_experimental_value=True
             ),
             Parameter(
@@ -610,18 +634,20 @@ class AttractorPotentialV18(SimulationBase):
             subsection_id="5.2.1",
             title="Dark Energy Attractor Potential",
             abstract=(
-                "The G2 modulus field phi_M evolves under Ricci flow toward a stable "
+                "The G2 modulus field phi_M evolves under 7D Ricci flow toward a stable "
                 "fixed point, generating an effective dark energy potential V(phi_M). "
-                "This potential predicts thawing quintessence with w_0 = -23/24 ~ -0.9583 and"
-                "w_a ~ 0.1, consistent with current observations and testable by DESI."
+                "This potential predicts thawing quintessence with w_0 = -23/24 ~ -0.9583 and "
+                "w_a ~ 0.1, consistent with DESI 2025 observations and testable by future surveys."
             ),
             content_blocks=[
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "The late-time acceleration of the universe emerges from the "
-                        "dynamics of the G2 modulus field. The potential has a periodic "
-                        "structure reflecting the compact nature of the internal space."
+                        "dynamics of the G2 modulus field phi_M, which parametrizes the "
+                        "volume of 3-cycles on the compact G2 manifold. The potential has a periodic "
+                        "cosine structure reflecting the compact nature of the internal space, "
+                        "with amplitude A = 1/sqrt(b3) and frequency omega = 2*pi/sqrt(chi_eff)."
                     )
                 ),
                 ContentBlock(
@@ -645,7 +671,7 @@ class AttractorPotentialV18(SimulationBase):
                     callout_type="success",
                     title="Thawing Quintessence Prediction",
                     content=(
-                        "The attractor dynamics predict w_0 = -23/24 ~ -0.9583 with w_a ~ 0.1."
+                        "The attractor dynamics predict w_0 = -23/24 ~ -0.9583 with w_a ~ 0.1. "
                         "This 'thawing' behavior (w increasing toward -1 from below) is "
                         "consistent with Planck+BAO data and will be precisely tested by "
                         "DESI and future surveys. A detection of w_a > 0 would support the model."
@@ -844,43 +870,57 @@ class AttractorPotentialV18(SimulationBase):
 
         checks = []
 
-        # Check 1: w0 in physical range
+        # Check 1: w0 in quintessence range
         w0_ok = -1.1 < result.w_0_attractor < -0.8
         checks.append({
-            "name": "w0 in quintessence range (-1.1, -0.8)",
+            "name": "w0_quintessence_range",
             "passed": w0_ok,
-            "confidence_interval": {"lower": -1.1, "upper": -0.8, "sigma": 0.0},
+            "confidence_interval": {"lower": -1.1, "upper": -0.8, "sigma": 0.02},
             "log_level": "INFO" if w0_ok else "ERROR",
-            "message": f"w0 = {result.w_0_attractor:.4f}"
+            "message": f"w0 = {result.w_0_attractor:.6f} (must be in quintessence range -1.1 < w0 < -0.8)"
         })
 
-        # Check 2: Amplitude in small oscillation limit
-        amp_ok = 0 < result.A < 1
+        # Check 2: w0 close to topological prediction -23/24
+        w0_topo = -23.0 / 24.0
+        w0_topo_dev = abs(result.w_0_attractor - w0_topo)
+        w0_topo_ok = w0_topo_dev < 0.005
         checks.append({
-            "name": "Amplitude A in (0, 1) small oscillation limit",
+            "name": "w0_topological_prediction",
+            "passed": w0_topo_ok,
+            "confidence_interval": {"lower": w0_topo - 0.005, "upper": w0_topo + 0.005, "sigma": w0_topo_dev},
+            "log_level": "INFO" if w0_topo_ok else "WARNING",
+            "message": f"w0 = {result.w_0_attractor:.6f} vs topological -23/24 = {w0_topo:.6f} (dev: {w0_topo_dev:.6f})"
+        })
+
+        # Check 3: Amplitude in small oscillation limit with expected value
+        expected_A = 1.0 / np.sqrt(24)
+        amp_ok = 0 < result.A < 1 and abs(result.A - expected_A) < 1e-10
+        checks.append({
+            "name": "amplitude_small_oscillation",
             "passed": amp_ok,
-            "confidence_interval": {"lower": 0.0, "upper": 1.0, "sigma": 0.0},
+            "confidence_interval": {"lower": 0.0, "upper": 1.0, "sigma": abs(result.A - expected_A)},
             "log_level": "INFO" if amp_ok else "ERROR",
-            "message": f"A = {result.A:.4f}"
+            "message": f"A = {result.A:.6f} (expected 1/sqrt(24) = {expected_A:.6f}, must satisfy 0 < A < 1)"
         })
 
-        # Check 3: Decay constant is super-Planckian
-        f_ok = result.f > 1e17
+        # Check 4: Decay constant is super-Planckian with correct value
+        expected_f = self.M_Planck / np.sqrt(self.mephorash_chi)
+        f_ok = result.f > 1e17 and abs(result.f - expected_f) / expected_f < 1e-10
         checks.append({
-            "name": "Decay constant f > 10^17 GeV (super-Planckian)",
+            "name": "decay_constant_super_planckian",
             "passed": f_ok,
-            "confidence_interval": {"lower": 1e17, "upper": 1e19, "sigma": 0.0},
+            "confidence_interval": {"lower": 1e17, "upper": 1e19, "sigma": abs(result.f - expected_f) / expected_f},
             "log_level": "INFO" if f_ok else "ERROR",
-            "message": f"f = {result.f:.3e} GeV"
+            "message": f"f = {result.f:.3e} GeV (expected M_Pl/sqrt(chi_eff) = {expected_f:.3e} GeV)"
         })
 
-        # Check 4: w0 within 3sigma of DESI
+        # Check 5: w0 within 3sigma of DESI 2025
         w0_desi = -0.957
         w0_sigma = 0.067
         dev = abs(result.w_0_attractor - w0_desi) / w0_sigma
         desi_ok = dev < 3.0
         checks.append({
-            "name": "w0 within 3sigma of DESI 2025",
+            "name": "w0_desi_3sigma",
             "passed": desi_ok,
             "confidence_interval": {
                 "lower": w0_desi - 3 * w0_sigma,
@@ -888,17 +928,39 @@ class AttractorPotentialV18(SimulationBase):
                 "sigma": dev
             },
             "log_level": "INFO" if desi_ok else "WARNING",
-            "message": f"w0 deviation from DESI: {dev:.2f}sigma"
+            "message": f"w0 = {result.w_0_attractor:.4f} vs DESI {w0_desi} +/- {w0_sigma}: deviation = {dev:.2f}sigma"
         })
 
-        # Check 5: V_0 is physical (positive, ~rho_Lambda)
-        v0_ok = result.V_0 > 0
+        # Check 6: Vacuum energy V_0 matches rho_Lambda
+        v0_ok = result.V_0 > 0 and abs(result.V_0 - self.rho_Lambda) / self.rho_Lambda < 1e-10
         checks.append({
-            "name": "Vacuum energy V_0 > 0",
+            "name": "vacuum_energy_rho_lambda",
             "passed": v0_ok,
-            "confidence_interval": {"lower": 0.0, "upper": 1e-40, "sigma": 0.0},
+            "confidence_interval": {"lower": 1e-48, "upper": 1e-46, "sigma": 0.0},
             "log_level": "INFO" if v0_ok else "ERROR",
-            "message": f"V_0 = {result.V_0:.3e} GeV^4"
+            "message": f"V_0 = {result.V_0:.3e} GeV^4 (expected rho_Lambda = {self.rho_Lambda:.3e} GeV^4)"
+        })
+
+        # Check 7: Attractor satisfies V'(phi_star) ~ 0
+        _, Vp_star, _ = self.evaluate_potential(result.phi_star)
+        vp_ok = abs(Vp_star) < 1e-55  # Should be essentially zero at attractor
+        checks.append({
+            "name": "attractor_v_prime_zero",
+            "passed": vp_ok,
+            "confidence_interval": {"lower": -1e-55, "upper": 1e-55, "sigma": abs(Vp_star)},
+            "log_level": "INFO" if vp_ok else "WARNING",
+            "message": f"V'(phi_star) = {Vp_star:.3e} (should be ~0 at attractor fixed point)"
+        })
+
+        # Check 8: omega matches expected value pi/6
+        expected_omega = 2 * np.pi / np.sqrt(self.mephorash_chi)
+        omega_ok = abs(result.omega - expected_omega) < 1e-10
+        checks.append({
+            "name": "omega_frequency_consistency",
+            "passed": omega_ok,
+            "confidence_interval": {"lower": expected_omega - 1e-10, "upper": expected_omega + 1e-10, "sigma": 0.0},
+            "log_level": "INFO" if omega_ok else "ERROR",
+            "message": f"omega = {result.omega:.6f} (expected 2*pi/sqrt(144) = {expected_omega:.6f})"
         })
 
         all_passed = all(c["passed"] for c in checks)

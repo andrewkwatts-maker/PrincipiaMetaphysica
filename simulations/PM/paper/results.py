@@ -61,8 +61,8 @@ class ResultsV16_2(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters referenced by the results narrative."""
+        return ["geometry.alpha_inverse", "geometry.w_zero"]
 
     @property
     def output_params(self) -> List[str]:
@@ -362,7 +362,7 @@ class ResultsV16_2(SimulationBase):
                 label="(3.2b)",
                 latex=r"H_0 = c \cdot \sqrt{\frac{\chi}{b_3 \cdot \text{Vol}(V_7)}} = 73.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}",
                 plain_text="H0 = c * sqrt(chi / (b3 * Vol(V7))) = 73.04 km/s/Mpc",
-                category="STERILE_PROOF",
+                category="DERIVED",
                 description="H0 Bridge: Direct derivation of Hubble constant from V7 topology.",
                 input_params=["topology.elder_kads", "topology.euler_chi", "topology.vol_v7"],
                 output_params=["cosmology.H0_geometric"],
@@ -414,7 +414,7 @@ class ResultsV16_2(SimulationBase):
                 label="(3.4)",
                 latex=r"\text{Vol}(V_7) = \frac{\chi}{b_3} \cdot \left(\frac{c}{H_0}\right)^7",
                 plain_text="Vol(V7) = (chi/b3) * (c/H0)^7",
-                category="STERILE_PROOF",
+                category="DERIVED",
                 description="Holonomy Volume Constraint: V7 volume locked by topology and H0.",
                 input_params=["topology.euler_chi", "topology.elder_kads", "cosmology.H0_geometric"],
                 output_params=["topology.vol_v7"],

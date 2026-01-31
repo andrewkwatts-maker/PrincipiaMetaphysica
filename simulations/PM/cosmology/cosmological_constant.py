@@ -427,7 +427,7 @@ class CosmologicalConstantV16(SimulationBase):
                 label="(5.26)",
                 latex=r"\Lambda = \frac{k_{\gimel} \cdot [\ln(k_{\gimel})]^2}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2 \cdot e^{-2\pi D_{crit}}",
                 plain_text="Lambda = (k_gimel * ln(k_gimel)^2 / b3^3) * (l_Pl/R_H)^2 * exp(-2*pi*D_crit)",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description=(
                     "v16.2: Cosmological constant with instanton suppression. "
                     "The e^{-2*pi*26} factor (~10^-71) solves the 120-order hierarchy problem."
@@ -516,7 +516,7 @@ class CosmologicalConstantV16(SimulationBase):
                 label="(5.27)",
                 latex=r"\frac{\Lambda}{\Lambda_{\text{Pl}}} = \frac{k_{\gimel} \cdot \ln^2(k_{\gimel})}{b_3^3} \cdot \left(\frac{H_0}{M_{\text{Pl}}}\right)^2 \sim 10^{-122}",
                 plain_text="Lambda/Lambda_Pl ~ 10^-122",
-                category="THEORY",
+                category="DERIVED",
                 description="Hierarchy between Planck and observed Lambda",
                 inputParams=["topology.elder_kads", "constants.k_gimel"],
                 outputParams=["cosmology.Lambda_ratio"],

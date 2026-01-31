@@ -126,12 +126,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
         Uses registry parameters with fallback to class constants for
         compatibility with standalone execution.
         """
-        return [
-            "topology.mephorash_chi",      # Effective Euler characteristic (default: 144)
-            "topology.elder_kads",           # Third Betti number (default: 24)
-            "constants.M_PLANCK",    # Reduced Planck mass in GeV (default: 2.435e18)
-            "topology.k_gimel",      # Fundamental scale (default: 12 + 1/pi)
-        ]
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -734,7 +729,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 label="(S.1)",
                 latex=r"-\Delta_{V_7} \psi_n = \lambda_n \psi_n",
                 plain_text="-Delta_V7 psi_n = lambda_n psi_n",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The eigenvalue equation for the Laplace-Beltrami operator on the "
                     "G2 manifold V_7. The discrete spectrum {lambda_n} encodes all "
@@ -765,7 +760,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 label="(S.2)",
                 latex=r"\zeta_{V_7}(s) = \sum_{n=1}^{\infty} \lambda_n^{-s} = \text{Tr}(\Delta^{-s})",
                 plain_text="zeta_V7(s) = sum_{n=1}^{inf} lambda_n^{-s} = Tr(Delta^{-s})",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The spectral zeta function defined as the Dirichlet series over "
                     "eigenvalues. Converges for Re(s) > d/2 = 7/2 and admits meromorphic "
@@ -800,7 +795,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 label="(S.3)",
                 latex=r"\text{Res}(\zeta_{V_7}, s) = \frac{a_{d-2s}(\Delta)}{(4\pi)^{d/2} \, \Gamma(s)}",
                 plain_text="Res(zeta_V7, s) = a_{d-2s}(Delta) / ((4*pi)^{d/2} * Gamma(s))",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "General formula for residues of the spectral zeta function at poles "
                     "s = (d-k)/2. The residues are heat kernel coefficients a_k encoding "
@@ -923,7 +918,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 label="(S.7)",
                 latex=r"\sum_n h(\lambda_n) = \int_{V_7} \tilde{h}(0) \, dV + \sum_{\gamma} \frac{L_\gamma \hat{h}(L_\gamma)}{|\det(I - P_\gamma)|}",
                 plain_text="sum h(lambda_n) = integral h_tilde(0) dV + sum over geodesics",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The Selberg trace formula connecting the eigenvalue spectrum "
                     "(spectral side) to the geometry of closed geodesics (geometric side). "
@@ -996,7 +991,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 label="(S.9)",
                 latex=r"K(t) = \text{Tr}(e^{-t\Delta}) \sim \frac{1}{(4\pi t)^{7/2}} \sum_{k=0}^{\infty} a_k \, t^k",
                 plain_text="K(t) = Tr(e^{-t*Delta}) ~ (4*pi*t)^{-7/2} * sum a_k * t^k",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The heat kernel trace and its asymptotic expansion. The coefficients "
                     "a_k are geometric invariants that appear in zeta function residues."
@@ -1026,7 +1021,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 label="(S.10)",
                 latex=r"m_n^2 = \frac{\lambda_n}{L^2}",
                 plain_text="m_n^2 = lambda_n / L^2",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "The fundamental relation between Laplacian eigenvalues and particle "
                     "masses. The compactification scale L is set by the Planck mass and "
@@ -1287,6 +1282,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 "volume": "10",
                 "pages": "288-307",
                 "year": "1967",
+                "doi": "10.1090/pspum/010/0237943",
             },
             {
                 "id": "gilkey-1984",
@@ -1294,6 +1290,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 "title": "Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem",
                 "journal": "Publish or Perish",
                 "year": "1984",
+                "doi": "10.1201/9780203749791",
             },
             {
                 "id": "dowker-critchley-1976",
@@ -1323,6 +1320,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 "volume": "20",
                 "pages": "47-87",
                 "year": "1956",
+                "url": "https://mathworld.wolfram.com/SelbergTraceFormula.html",
             },
         ]
 

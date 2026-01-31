@@ -110,8 +110,8 @@ class FoundationsV16_2(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        """No required inputs - this is narrative content only."""
-        return []
+        """Registry parameters referenced by the foundations narrative."""
+        return ["geometry.elder_kads", "geometry.k_gimel"]
 
     @property
     def output_params(self) -> List[str]:
@@ -569,7 +569,7 @@ class FoundationsV16_2(SimulationBase):
                 label="(1.1)",
                 latex=r"\text{Signature}(M^{24,1}) = (24, 1) \quad ds^2 = -dt^2 + \sum_{i=1}^{12}(dy_{1i}^2 + dy_{2i}^2)",
                 plain_text="Signature(M^{24,1}) = (24, 1); ds^2 = -dt^2 + sum_i(dy_{1i}^2 + dy_{2i}^2)",
-                category="THEORY",
+                category="DERIVED",
                 description="26D ancestral bulk signature with unified time. 24 spacelike from 12x2 pairs, 1 timelike.",
                 input_params=["dimensions.D_bulk", "topology.elder_kads"],
                 output_params=[],
@@ -593,7 +593,7 @@ class FoundationsV16_2(SimulationBase):
                 label="(1.2)",
                 latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
                 plain_text="M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})",
-                category="THEORY",
+                category="DERIVED",
                 description="Fibered time structure with 12x(2,0) paired bridges. b_3=24 => 12 pairs.",
                 input_params=["dimensions.D_bulk", "topology.elder_kads"],
                 output_params=["dimensions.D_shadow"],
@@ -617,7 +617,7 @@ class FoundationsV16_2(SimulationBase):
                 label="(1.2b)",
                 latex=r"R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i \quad \text{where} \quad R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}",
                 plain_text="R_perp^full = tensor_{i=1}^{12} R_perp^i where R_perp^i = [[0,-1],[1,0]]",
-                category="THEORY",
+                category="DERIVED",
                 description="Full OR reduction operator as tensor product of 12 per-pair 90-degree rotations.",
                 input_params=["topology.elder_kads"],
                 output_params=[],
@@ -641,7 +641,7 @@ class FoundationsV16_2(SimulationBase):
                 label="(1.2c)",
                 latex=r"p_{\text{anc}} = \frac{1}{12}\sum_{i=1}^{12} p_i + \sqrt{\frac{n_{\text{local}}}{12}} \cdot \phi",
                 plain_text="p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi",
-                category="THEORY",
+                category="DERIVED",
                 description="Central (2,0) ancestral sampler formula. Averages 12 local pairs with golden ratio scaling.",
                 input_params=["topology.elder_kads"],
                 output_params=[],
@@ -666,7 +666,7 @@ class FoundationsV16_2(SimulationBase):
                 label="(1.3)",
                 latex=r"\text{Hol}(g) \subseteq G_2 \iff \exists \eta: \nabla \eta = 0",
                 plain_text="Hol(g) ⊆ G2 iff exists eta: nabla eta = 0",
-                category="THEORY",
+                category="DERIVED",
                 description="G2 holonomy condition for torsion-free, Ricci-flat metric.",
                 input_params=["topology.elder_kads", "topology.euler_chi"],
                 output_params=[],
@@ -716,7 +716,7 @@ class FoundationsV16_2(SimulationBase):
                 label="(1.4)",
                 latex=r"V_7 \xrightarrow{\text{CY}_3} M^4 \times K^6",
                 plain_text="V7 -> M^4 x K^6 via CY3",
-                category="THEORY",
+                category="DERIVED",
                 description="Calabi-Yau filtering from 7D G2 to 4D Minkowski spacetime.",
                 input_params=["dimensions.D_after_sp2r"],
                 output_params=["dimensions.D_observable"],

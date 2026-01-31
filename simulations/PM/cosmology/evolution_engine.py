@@ -768,6 +768,10 @@ class EvolutionEngineV16(SimulationBase):
                 derivation={
                     "steps": [
                         {
+                            "description": "Logarithmic relaxation ansatz from G2 topology",
+                            "formula": r"\text{relaxation}(z) = 1 + \frac{\ln(1+z)}{b_3}"
+                        },
+                        {
                             "description": "At z=0: relaxation = 1 (no correction)",
                             "formula": r"\text{relaxation}(0) = 1 + \ln(1)/24 = 1"
                         },
@@ -776,7 +780,9 @@ class EvolutionEngineV16(SimulationBase):
                             "formula": r"\text{relaxation}(1100) = 1 + \ln(1101)/24 \approx 1.292"
                         }
                     ],
-                    "provenance": "v14.2 log-scaling"
+                    "provenance": "v14.2 log-scaling",
+                    "method": "topological_relaxation",
+                    "parentFormulas": ["h-evolution-log-scaling"]
                 },
                 terms={
                     "relaxation": "Denominator correction factor",
@@ -788,7 +794,7 @@ class EvolutionEngineV16(SimulationBase):
                 label="(5.32)",
                 latex=r"R(z) = R_0 \exp\left(-\frac{z}{\tau_{Ricci}}\right), \quad \tau_{Ricci} = \frac{k_\gimel}{b_3}",
                 plain_text="R(z) = R0 * exp(-z / tau_ricci), tau_ricci = k_gimel / b3",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Ricci curvature evolution under Hamilton's flow on G2 manifold."
                 ),

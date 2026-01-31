@@ -72,17 +72,7 @@ class AppendixEProtonDecay(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            # Read from main proton decay simulation (already computed)
-            "proton_decay.tau_p_years",
-            "proton_decay.suppression_factor",
-            "proton_decay.super_k_ratio",
-            "proton_decay.status",
-            # For documentation context
-            "gauge.M_GUT_GEOMETRIC",
-            "gauge.ALPHA_GUT_GEOMETRIC",
-            "constants.m_proton",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

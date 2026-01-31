@@ -90,8 +90,6 @@ class ProtonDecaySimulation(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
         return [
-            "constants.M_PLANCK",
-            "constants.m_proton",
             "gauge.M_GUT_GEOMETRIC",
             "gauge.ALPHA_GUT_GEOMETRIC",
             "topology.K_MATCHING",

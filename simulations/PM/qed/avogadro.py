@@ -73,7 +73,24 @@ class AvogadroV17(SimulationBase):
             title="Avogadro Number",
             abstract="Derives Avogadro's number using inverse cubic 1/(1+epsilon) contraction.",
             content_blocks=[
-                ContentBlock(type="equation", content=r"N_A = N_{A,bulk} / (1+\epsilon)")
+                ContentBlock(type="paragraph", content=(
+                    "The Avogadro constant N_A counts the number of entities per mole "
+                    "and was fixed exactly to 6.02214076e23 mol^-1 in the 2019 SI "
+                    "redefinition. Because N_A is a count of discrete objects, the "
+                    "projection from the bulk Pleroma to three-dimensional space "
+                    "contracts it: counts decrease as the volume of manifest space "
+                    "increases relative to the bulk."
+                )),
+                ContentBlock(type="equation", content=r"N_A = N_{A,bulk} / (1+\epsilon)"),
+                ContentBlock(type="paragraph", content=(
+                    "The Decad-Cubic Projection Engine provides the dimensionless "
+                    "projection parameter epsilon = 1/(ENNOIA * DECAD^2) = 1/28800. "
+                    "The inverse cubic gate 1/(1+epsilon) applies because particle "
+                    "number density is an extensive quantity that transforms inversely "
+                    "with the volume expansion factor. The round-trip identity "
+                    "N_A_manifest = N_A_bulk / (1+epsilon) recovers the CODATA exact "
+                    "value to full numerical precision."
+                )),
             ]
         )
 

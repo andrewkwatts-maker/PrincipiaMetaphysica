@@ -76,8 +76,8 @@ class AppendixDAlignment(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters consumed by the alignment appendix."""
+        return ["geometry.alpha_inverse"]
 
     @property
     def output_params(self) -> List[str]:
@@ -239,7 +239,7 @@ class AppendixDAlignment(SimulationBase):
                 label="(D.1)",
                 latex=r"\chi^2 = \sum \frac{(R_{\text{model}} - V_{\text{obs}})^2}{\sigma_{\text{obs}}^2}",
                 plain_text="chi^2 = Sum[(R_model - V_obs)^2 / sigma_obs^2]",
-                category="VALIDATION",
+                category="DERIVED",
                 description="Global chi-squared convergence metric for sterile verification.",
                 input_params=self.PARAM_REFS,
                 output_params=["validation.chi2_total"],
@@ -265,7 +265,7 @@ class AppendixDAlignment(SimulationBase):
                 label="(D.3)",
                 latex=r"H_0^{\text{geo}} = 70.42 \text{ km/s/Mpc}",
                 plain_text="H0_geo = 70.42 km/s/Mpc",
-                category="PRIMARY",
+                category="PREDICTED",
                 description="Geometric Hubble residue resolving the Planck-SH0ES tension.",
                 input_params=["topology.elder_kads"],
                 output_params=["cosmology.H0_geometric"],
@@ -287,7 +287,7 @@ class AppendixDAlignment(SimulationBase):
                 label="(D.2)",
                 latex=r"\sigma_{w_0} = \frac{|w_{0,\text{geo}} - w_{0,\text{DESI}}|}{\sigma_{\text{DESI}}} = 0.02",
                 plain_text="sigma_w0 = |w0_geo - w0_DESI| / sigma_DESI = 0.02",
-                category="VALIDATION",
+                category="DERIVED",
                 description="w0 alignment with DESI BAO measurements at 0.02 sigma.",
                 input_params=["cosmology.w0_geometric", "observational.w0_desi"],
                 output_params=["validation.sigma_global"],

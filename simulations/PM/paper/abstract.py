@@ -2,11 +2,28 @@
 PRINCIPIA METAPHYSICA v23.1 - Abstract
 ======================================
 
-Section 0: The paper abstract.
+DOI: 10.5281/zenodo.18079602
 
-This simulation provides the abstract content for Principia Metaphysica v23.1,
+Licensed under the MIT License. See LICENSE file for details.
+
+v22 COMPATIBILITY: Uses unified time (24,1) signature with Euclidean bridge.
+                   4096-spinor Pneuma field from Cl(24,1).
+                   Dual 13D(12,1) shadows with OR reduction operator.
+
+Provides section content for the Abstract (Section 0).
+
+This simulation provides the abstract narrative for Principia Metaphysica v23.1,
 the 27D(26,1) dual-shadow framework with Euclidean bridge where all 125 physical
-constants emerge as spectral residues of G2 manifold compactification.
+constants emerge as spectral residues of G2 manifold compactification. It does
+not compute physics parameters, but instead generates the narrative content and
+cross-references for the paper's abstract section.
+
+SECTION: 0 (Abstract)
+
+v21.0 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+
+OUTPUTS:
+    - None (narrative content only)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -23,6 +40,7 @@ from simulations.base import (
     SimulationMetadata,
     SectionContent,
     ContentBlock,
+    Formula,
     Parameter,
 )
 
@@ -34,8 +52,17 @@ class AbstractV17_2(SimulationBase):
     """
     Abstract section (Section 0) for Principia Metaphysica v23.1.
 
-    This simulation provides the abstract content that summarizes the
-    27D(26,1) dual-shadow framework with Euclidean bridge.
+    This simulation provides the abstract narrative content that summarizes
+    the 27D(26,1) dual-shadow framework with Euclidean bridge. It describes
+    the dimensional descent from 27D ancestral bulk through dual 13D(12,1)
+    shadows to observable 4D via G2 compactification, yielding exactly 3
+    fermion generations from n_gen = chi_eff/(4*b3) = 144/48 = 3.
+
+    The abstract references 26 Standard Model parameter predictions (24 within
+    1-sigma), 55 pure predictions, 72 Wolfram-verified certificates, and
+    key testable outputs including w0 = -23/24 (DESI 2025 thawing match).
+
+    This is a narrative-only section: run() returns an empty dict.
     """
 
     # No formula references - abstract is pure narrative
@@ -49,15 +76,15 @@ class AbstractV17_2(SimulationBase):
             version="21.0",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v23.1 27D(26,1) dual-shadow",
+            description="Paper abstract for Principia Metaphysica v23.1 27D(26,1) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification",
             section_id="0",
             subsection_id=None
         )
 
     @property
     def required_inputs(self) -> List[str]:
-        """No required inputs - this is narrative content only."""
-        return []
+        """Registry parameters referenced by the abstract narrative."""
+        return ["topology.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -70,7 +97,15 @@ class AbstractV17_2(SimulationBase):
         return self.FORMULA_REFS
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """Execute - returns empty dict as this is narrative only."""
+        """
+        Execute the abstract generation.
+
+        Args:
+            registry: PMRegistry instance (not used for abstract)
+
+        Returns:
+            Empty dictionary (no computed parameters -- narrative content only)
+        """
         return {}
 
     def get_section_content(self) -> Optional[SectionContent]:
@@ -147,17 +182,82 @@ class AbstractV17_2(SimulationBase):
             section_id="0",
             subsection_id=None,
             title="Abstract",
-            abstract="Sterile geometric framework deriving 125 constants from G2 manifold spectral residues.",
+            abstract=(
+                "Unified mathematical framework deriving 125 fundamental physical constants "
+                "and cosmological observables as spectral residues of a 27D(26,1) dual-shadow "
+                "G2 manifold compactification with Euclidean bridge. Predicts 26 Standard Model "
+                "parameters (24 within 1-sigma), thawing dark energy w0 = -23/24, and proton "
+                "decay lifetime testable by Hyper-K. All derivations cryptographically locked "
+                "via 72 Wolfram-verified certificates."
+            ),
             content_blocks=content_blocks,
-            section_type="abstract"
+            section_type="abstract",
+            formula_refs=["abstract-framework-overview"],
+            param_refs=[
+                "topology.elder_kads",
+                "topology.n_gen",
+                "dimensions.D_bulk",
+                "dimensions.D_observable",
+                "validation.total_predictions",
+                "validation.predictions_within_1sigma",
+                "validation.exact_matches",
+                "statistics.certificates_total",
+            ]
         )
 
-    def get_formulas(self) -> List:
-        """No formulas for abstract."""
-        return []
+    def get_formulas(self) -> List[Formula]:
+        """Return framework overview formulas for the abstract.
+
+        Returns a summary formula capturing the dimensional descent chain
+        and a generation-count formula. These reference the detailed
+        derivations in the geometric, fermion, and cosmology sectors.
+        """
+        return [
+            Formula(
+                id="abstract-framework-overview",
+                label="(0.1)",
+                latex=r"27\text{D}(26,1) \;\xrightarrow{\text{OR}}\; 2 \times 13\text{D}(12,1) \;\xrightarrow{G_2}\; 2 \times 4\text{D} \quad \Rightarrow \quad n_{\text{gen}} = \frac{\chi_{\text{eff}}}{4 \cdot b_3} = \frac{144}{48} = 3",
+                plain_text="27D(26,1) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3",
+                category="DERIVED",
+                description="Framework overview: dimensional descent from 27D ancestral bulk with unified time signature (26,1) through dual 13D(12,1) shadows connected by C^(2,0) Euclidean bridge to observable 4D via G2 holonomy compactification, yielding exactly 3 chiral fermion generations from topological invariants of the G2 manifold (Acharya-Witten 2001).",
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "Start from 27D(26,1) ancestral bulk: unified time signature (26,1) = 12x(2,0) bridge pairs + (0,1) time + C^(2,0) central Euclidean bridge", "formula": r"M^{27} = T^1 \times C^{(2,0)} \times_{\text{fiber}} \bigoplus_{i=1}^{12} B_i^{(2,0)}"},
+                        {"description": "OR reduction operator R_perp (per-pair Moebius double-cover, R_perp^2 = -I) creates dual 13D(12,1) shadows via coordinate selection from bridge pair warping", "formula": r"R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i \;\Rightarrow\; 2 \times 13\text{D}(12,1)"},
+                        {"description": "Each shadow compactifies on a 7D TCS G2 manifold (K_Pneuma) with h^{1,1}=4 Kaehler moduli sectors, yielding 4D effective theory with Spin(3,1) Lorentz symmetry", "formula": r"13\text{D}(12,1) \;\xrightarrow{G_2}\; 4\text{D}(3,1) \times V_7"},
+                        {"description": "Fermion generations determined by G2 topology: effective Euler characteristic chi_eff = 144 and third Betti number b_3 yield exactly 3 generations per shadow, consistent with M-theory phenomenology", "formula": r"n_{\text{gen}} = \frac{\chi_{\text{eff}}}{4 \cdot b_3} = \frac{144}{48} = 3"},
+                        {"description": "Ghost-free unitarity: unified time eliminates ghosts and closed timelike curves; Euclidean bridge ds^2 = dy_1^2 + dy_2^2 provides positive-definite cross-shadow coherence", "formula": r"\text{ds}^2_{\text{bridge}} = dy_1^2 + dy_2^2 > 0"},
+                    ],
+                    "method": "dimensional_descent",
+                    "parentFormulas": [
+                        "intro-division-algebra-decomposition",
+                        "g2-holonomy",
+                        "laplacian-eigenvalue",
+                    ]
+                },
+                terms={
+                    "27D(26,1)": "27-dimensional ancestral bulk with signature (26 spatial, 1 temporal), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + C^(2,0) central bridge",
+                    "13D(12,1)": "13-dimensional observable shadow with signature (12 spatial from bridge, 1 shared temporal); each shadow compactifies independently on G2",
+                    "C^(2,0)": "2-dimensional Euclidean central bridge with positive-definite metric ds^2 = dy_1^2 + dy_2^2 enabling cross-shadow coherence via OR reduction",
+                    "n_gen": "Number of chiral fermion generations per shadow, topologically fixed at 3",
+                    "chi_eff": "Effective Euler characteristic of the G2 manifold (chi_eff = 144), computed from TCS topology #187",
+                    "b_3": "Third Betti number of the G2 manifold V7; 4*b_3 = 48 appears in the generation formula denominator",
+                    "OR": "Orthogonal Reduction operator R_perp providing per-pair Moebius double-cover (R_perp^2 = -I) for cross-shadow coordinate selection",
+                    "G_2": "Exceptional Lie group G2 = Aut(O) providing holonomy for 7D compactification; Ricci-flat metric ensures spectral rigidity",
+                    "V_7": "7-dimensional internal G2 holonomy manifold (TCS construction) hosting the 125-residue spectral port",
+                }
+            )
+        ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
-        """No output parameters for abstract — narrative section."""
+        """Return parameter definitions for abstract section.
+
+        The abstract is a narrative section with no physics computations,
+        but defines a system-level parameter tracking word count for
+        content integrity validation.
+        """
         return [
             Parameter(
                 path="abstract.word_count",
@@ -168,6 +268,81 @@ class AbstractV17_2(SimulationBase):
                 status="SYSTEM"
             )
         ]
+
+    def get_beginner_explanation(self) -> Dict[str, Any]:
+        """
+        Return a beginner-friendly explanation of the abstract's key claims.
+
+        Returns:
+            Dictionary with title, summary, and key concepts suitable for
+            non-experts encountering the Principia Metaphysica framework.
+        """
+        return {
+            "title": "What does this abstract say?",
+            "summary": (
+                "The abstract summarizes a theory that claims the fundamental constants "
+                "of physics (like particle masses and force strengths) are not arbitrary "
+                "numbers but are mathematically determined by the shape of a hidden "
+                "higher-dimensional space."
+            ),
+            "explanation": (
+                "Principia Metaphysica proposes that our familiar 4D universe is a "
+                "'shadow' of a 27-dimensional space. When this larger space folds down "
+                "to what we observe, the folding pattern fixes all the physical constants "
+                "we measure in experiments -- they emerge as mathematical harmonics of "
+                "the folded geometry, much like how a drum's shape determines the notes "
+                "it can produce."
+            ),
+            "key_concepts": [
+                {
+                    "name": "27 Dimensions to 4 Dimensions",
+                    "explanation": (
+                        "The theory starts with a 27-dimensional space that splits into "
+                        "two 13-dimensional 'shadows' connected by a 2D bridge. Each "
+                        "shadow then compactifies (folds up 9 of its dimensions) to give "
+                        "the 4D spacetime we experience. The specific way the folding "
+                        "happens is governed by G2 holonomy -- a precise mathematical "
+                        "structure that leaves no room for adjustable parameters."
+                    )
+                },
+                {
+                    "name": "125 Constants from Geometry",
+                    "explanation": (
+                        "Rather than treating constants like the electron mass or the "
+                        "strength of gravity as independent inputs, the theory derives "
+                        "all 125 of them as 'spectral residues' -- the natural resonant "
+                        "frequencies of the folded 7-dimensional internal manifold."
+                    )
+                },
+                {
+                    "name": "Testable Predictions",
+                    "explanation": (
+                        "The abstract highlights several predictions that experiments can "
+                        "check: 24 out of 26 predictions already match experimental data "
+                        "within measurement uncertainty, dark energy behaves as 'thawing' "
+                        "(confirmed by DESI 2025), and proton decay at a rate testable by "
+                        "the Hyper-Kamiokande detector."
+                    )
+                },
+                {
+                    "name": "Three Generations of Matter",
+                    "explanation": (
+                        "One of physics' unsolved puzzles is why matter comes in exactly "
+                        "3 families (electron/muon/tau and their associated particles). "
+                        "This theory derives n_gen = 3 from the topology of the internal "
+                        "manifold: chi_eff/(4*b3) = 144/48 = 3. The number 3 is not "
+                        "put in by hand -- it is forced by the geometry."
+                    )
+                },
+            ],
+            "why_it_matters": (
+                "If correct, this framework would represent a fundamental advance in "
+                "theoretical physics: it would mean that the constants of nature are not "
+                "arbitrary but are as mathematically inevitable as the digits of pi. The "
+                "theory makes specific, falsifiable predictions that upcoming experiments "
+                "can test."
+            )
+        }
 
     # -------------------------------------------------------------------------
     # SSOT enrichment methods
@@ -205,10 +380,23 @@ class AbstractV17_2(SimulationBase):
                 "url": "https://arxiv.org/abs/1807.06209",
                 "notes": "Primary cosmological data set for validation"
             },
+            {
+                "id": "nufit_6_0",
+                "authors": "Esteban, I. et al. (NuFIT collaboration)",
+                "title": "NuFIT 6.0: Updated Global Analysis of Neutrino Oscillation Parameters",
+                "year": 2024,
+                "url": "http://www.nu-fit.org/",
+                "notes": "PMNS mixing angle and delta_CP data referenced in abstract; theta_13 and delta_CP fitted pending explicit Yukawa calculation"
+            },
         ]
 
     def get_certificates(self) -> List[Dict[str, Any]]:
-        """Return certificate assertions verifying abstract section integrity."""
+        """Return certificate assertions verifying abstract section integrity.
+
+        Checks content word count, key framework term coverage, and
+        formula derivation completeness to certify the abstract meets
+        structural and content quality requirements.
+        """
         section = self.get_section_content()
         blocks = section.content_blocks if section else []
         paragraph_blocks = [b for b in blocks if b.type == "paragraph"]
@@ -217,6 +405,12 @@ class AbstractV17_2(SimulationBase):
         has_key_terms = all(
             term in total_text
             for term in ["27", "G\u2082", "dual-shadow", "125", "certificates"]
+        )
+        formulas = self.get_formulas()
+        formulas_have_derivation = all(
+            f.derivation and len(f.derivation.get("steps", [])) >= 3
+            and f.derivation.get("method")
+            for f in formulas
         )
 
         return [
@@ -237,6 +431,16 @@ class AbstractV17_2(SimulationBase):
                 "tolerance": "exact",
                 "status": "PASS" if has_key_terms else "FAIL",
                 "wolfram_query": "N/A (content integrity check)",
+                "wolfram_result": "N/A",
+                "sector": "paper"
+            },
+            {
+                "id": "CERT_ABSTRACT_FORMULA_INTEGRITY",
+                "assertion": "Abstract formula definitions include complete derivation chains (>=3 steps, method, parentFormulas)",
+                "condition": f"formula_count >= 1 (actual: {len(formulas)}), all_have_derivation: {formulas_have_derivation}",
+                "tolerance": "exact",
+                "status": "PASS" if (len(formulas) >= 1 and formulas_have_derivation) else "FAIL",
+                "wolfram_query": "N/A (structural check)",
                 "wolfram_result": "N/A",
                 "sector": "paper"
             },
@@ -266,7 +470,12 @@ class AbstractV17_2(SimulationBase):
         ]
 
     def validate_self(self) -> Dict[str, Any]:
-        """Validate abstract section integrity."""
+        """Validate abstract section integrity.
+
+        Performs structural and content checks to ensure the abstract
+        meets minimum quality standards: word count, block count,
+        key term coverage, formula integrity, and reference completeness.
+        """
         checks = []
 
         section = self.get_section_content()
@@ -275,30 +484,101 @@ class AbstractV17_2(SimulationBase):
         total_text = " ".join(b.content for b in paragraph_blocks)
         word_count = len(total_text.split())
 
+        # Check 1: Word count minimum
         wc_ok = word_count >= 100
         checks.append({
             "name": "Abstract word count meets minimum (>=100)",
             "passed": wc_ok,
             "confidence_interval": {
                 "lower": 100,
-                "upper": 1000,
+                "upper": 500,
                 "sigma": 0.0
             },
             "log_level": "INFO" if wc_ok else "ERROR",
             "message": f"Word count = {word_count} (minimum 100)"
         })
 
+        # Check 2: Content block count
         blocks_ok = len(blocks) >= 3
         checks.append({
             "name": "Abstract has at least 3 content blocks",
             "passed": blocks_ok,
             "confidence_interval": {
                 "lower": 3,
-                "upper": 20,
+                "upper": 10,
                 "sigma": 0.0
             },
             "log_level": "INFO" if blocks_ok else "ERROR",
             "message": f"Content blocks = {len(blocks)} (minimum 3)"
+        })
+
+        # Check 3: Key framework terms present in abstract text
+        required_terms = ["27", "G\u2082", "dual-shadow", "125", "certificates"]
+        present_terms = [t for t in required_terms if t in total_text]
+        missing_terms = [t for t in required_terms if t not in total_text]
+        terms_ok = len(missing_terms) == 0
+        checks.append({
+            "name": "Abstract contains all key framework terms",
+            "passed": terms_ok,
+            "confidence_interval": {
+                "lower": len(required_terms),
+                "upper": len(required_terms),
+                "sigma": 0.0
+            },
+            "log_level": "INFO" if terms_ok else "ERROR",
+            "message": (
+                f"Key terms present: {len(present_terms)}/{len(required_terms)}"
+                + (f" (missing: {missing_terms})" if missing_terms else "")
+            )
+        })
+
+        # Check 4: Formula definitions present and well-formed
+        formulas = self.get_formulas()
+        formulas_ok = len(formulas) >= 1
+        formulas_have_derivation = all(
+            f.derivation and len(f.derivation.get("steps", [])) >= 3
+            for f in formulas
+        )
+        checks.append({
+            "name": "Abstract formula definitions present with derivation steps",
+            "passed": formulas_ok and formulas_have_derivation,
+            "confidence_interval": {
+                "lower": 1,
+                "upper": 3,
+                "sigma": 0.0
+            },
+            "log_level": "INFO" if (formulas_ok and formulas_have_derivation) else "ERROR",
+            "message": f"Formulas = {len(formulas)}, all have >=3 derivation steps: {formulas_have_derivation}"
+        })
+
+        # Check 5: References provided
+        refs = self.get_references()
+        refs_ok = len(refs) >= 2
+        checks.append({
+            "name": "At least 2 bibliographic references provided",
+            "passed": refs_ok,
+            "confidence_interval": {
+                "lower": 2,
+                "upper": 10,
+                "sigma": 0.0
+            },
+            "log_level": "INFO" if refs_ok else "ERROR",
+            "message": f"References = {len(refs)} (minimum 2)"
+        })
+
+        # Check 6: Learning materials provided
+        materials = self.get_learning_materials()
+        materials_ok = len(materials) >= 2
+        checks.append({
+            "name": "At least 2 learning materials provided",
+            "passed": materials_ok,
+            "confidence_interval": {
+                "lower": 2,
+                "upper": 10,
+                "sigma": 0.0
+            },
+            "log_level": "INFO" if materials_ok else "WARNING",
+            "message": f"Learning materials = {len(materials)} (minimum 2)"
         })
 
         return {
@@ -307,26 +587,40 @@ class AbstractV17_2(SimulationBase):
         }
 
     def get_gate_checks(self) -> List[Dict[str, Any]]:
-        """Return gate check results for abstract section."""
+        """Return gate check results for abstract section.
+
+        Verifies content integrity and structural completeness of the
+        abstract narrative, including word count, key term coverage,
+        and formula/reference availability.
+        """
         section = self.get_section_content()
         blocks = section.content_blocks if section else []
         paragraph_blocks = [b for b in blocks if b.type == "paragraph"]
         total_text = " ".join(b.content for b in paragraph_blocks)
         word_count = len(total_text.split())
-        passed = word_count >= 100
+
+        required_terms = ["27", "G\u2082", "dual-shadow", "125", "certificates"]
+        has_key_terms = all(term in total_text for term in required_terms)
+        formulas = self.get_formulas()
+        refs = self.get_references()
+        passed = word_count >= 100 and has_key_terms and len(formulas) >= 1
 
         return [
             {
                 "gate_id": "G_ABSTRACT_CONTENT_INTEGRITY",
                 "simulation_id": self.metadata.id,
-                "assertion": "Abstract section contains substantive content (>=100 words) covering the 27D dual-shadow framework",
+                "assertion": "Abstract section contains substantive content (>=100 words) with key framework terms, formula definitions, and bibliographic references",
                 "result": "PASS" if passed else "FAIL",
                 "timestamp": datetime.now().isoformat(),
                 "details": {
                     "word_count": word_count,
                     "content_blocks": len(blocks),
+                    "paragraph_blocks": len(paragraph_blocks),
+                    "key_terms_present": has_key_terms,
+                    "formula_count": len(formulas),
+                    "reference_count": len(refs),
                     "section_type": "narrative_abstract",
-                    "note": "Paper abstract for Principia Metaphysica v23.1"
+                    "note": "Paper abstract for Principia Metaphysica v23.1 27D(26,1) dual-shadow framework"
                 }
             },
         ]

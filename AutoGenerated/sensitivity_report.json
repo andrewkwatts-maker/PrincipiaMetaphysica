@@ -1,0 +1,2392 @@
+{
+  "timestamp": "2026-01-30T19:34:09.982103",
+  "simulations_analysed": 67,
+  "over_1sigma_simulations": [
+    "gauge_unification_v16_0",
+    "master_action_simulation_v22_0",
+    "alpha_rigor_v16_1",
+    "ckm_matrix_v16_0",
+    "higgs_mass_v16_0",
+    "higgs_vev_refined_v18",
+    "dark_energy_v16_0",
+    "s8_suppression_v16_1",
+    "ricci_flow_h0_v16_1",
+    "multi_sector_v16_0",
+    "cosmological_constant_v16_1",
+    "f_r_t_tau_gravity_v18",
+    "complete_residue_registry_v18",
+    "attractor_potential_v18",
+    "baryon_asymmetry_v18"
+  ],
+  "total_improvement_suggestions": 0,
+  "reports": {
+    "abstract_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "introduction_v16_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "g2_geometry_v16_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "unitary_filter_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "leech_partition_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "modular_invariance_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "gauge_unification_v16_0": {
+      "sensitivity_report": {
+        "constants.M_PLANCK": {
+          "geometric_value": 2.435e+18,
+          "experimental_value": 2.435e+18,
+          "outputs": {
+            "gauge.M_GUT": {
+              "baseline_value": 6324555320336760.0,
+              "swapped_value": 6324555320336760.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.M_GUT_GEOMETRIC": {
+              "baseline_value": 2.1e+16,
+              "swapped_value": 2.1e+16,
+              "baseline_sigma": 1.8555555555555557e+19,
+              "swapped_sigma": 1.8555555555555557e+19,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "gauge.ALPHA_GUT": {
+              "baseline_value": 0.023402505224827168,
+              "swapped_value": 0.023402505224827168,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_INV": {
+              "baseline_value": 42.730467973109285,
+              "swapped_value": 42.730467973109285,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_GEOMETRIC": {
+              "baseline_value": 0.04248088360237893,
+              "swapped_value": 0.04248088360237893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.sin2_theta_W_gut": {
+              "baseline_value": 0.375,
+              "swapped_value": 0.375,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "pdg.alpha_s_MZ": {
+          "geometric_value": 0.118,
+          "experimental_value": 0.118,
+          "outputs": {
+            "gauge.M_GUT": {
+              "baseline_value": 6324555320336760.0,
+              "swapped_value": 6324555320336760.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.M_GUT_GEOMETRIC": {
+              "baseline_value": 2.1e+16,
+              "swapped_value": 2.1e+16,
+              "baseline_sigma": 1.8555555555555557e+19,
+              "swapped_sigma": 1.8555555555555557e+19,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "gauge.ALPHA_GUT": {
+              "baseline_value": 0.023402505224827168,
+              "swapped_value": 0.023402505224827168,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_INV": {
+              "baseline_value": 42.730467973109285,
+              "swapped_value": 42.730467973109285,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_GEOMETRIC": {
+              "baseline_value": 0.04248088360237893,
+              "swapped_value": 0.04248088360237893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.sin2_theta_W_gut": {
+              "baseline_value": 0.375,
+              "swapped_value": 0.375,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "pdg.sin2_theta_W": {
+          "geometric_value": 0.23121,
+          "experimental_value": 0.23121,
+          "outputs": {
+            "gauge.M_GUT": {
+              "baseline_value": 6324555320336760.0,
+              "swapped_value": 6324555320336760.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.M_GUT_GEOMETRIC": {
+              "baseline_value": 2.1e+16,
+              "swapped_value": 2.1e+16,
+              "baseline_sigma": 1.8555555555555557e+19,
+              "swapped_sigma": 1.8555555555555557e+19,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "gauge.ALPHA_GUT": {
+              "baseline_value": 0.023402505224827168,
+              "swapped_value": 0.023402505224827168,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_INV": {
+              "baseline_value": 42.730467973109285,
+              "swapped_value": 42.730467973109285,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_GEOMETRIC": {
+              "baseline_value": 0.04248088360237893,
+              "swapped_value": 0.04248088360237893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.sin2_theta_W_gut": {
+              "baseline_value": 0.375,
+              "swapped_value": 0.375,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "pdg.m_Z": {
+          "geometric_value": 91.1876,
+          "experimental_value": 91.1876,
+          "outputs": {
+            "gauge.M_GUT": {
+              "baseline_value": 6324555320336760.0,
+              "swapped_value": 6324555320336760.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.M_GUT_GEOMETRIC": {
+              "baseline_value": 2.1e+16,
+              "swapped_value": 2.1e+16,
+              "baseline_sigma": 1.8555555555555557e+19,
+              "swapped_sigma": 1.8555555555555557e+19,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "gauge.ALPHA_GUT": {
+              "baseline_value": 0.023402505224827168,
+              "swapped_value": 0.023402505224827168,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_INV": {
+              "baseline_value": 42.730467973109285,
+              "swapped_value": 42.730467973109285,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_GEOMETRIC": {
+              "baseline_value": 0.04248088360237893,
+              "swapped_value": 0.04248088360237893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.sin2_theta_W_gut": {
+              "baseline_value": 0.375,
+              "swapped_value": 0.375,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "constants.alpha_em": {
+          "geometric_value": 0.0072973525643314245,
+          "experimental_value": 0.0072973525643314245,
+          "outputs": {
+            "gauge.M_GUT": {
+              "baseline_value": 6324555320336760.0,
+              "swapped_value": 6324555320336760.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.M_GUT_GEOMETRIC": {
+              "baseline_value": 2.1e+16,
+              "swapped_value": 2.1e+16,
+              "baseline_sigma": 1.8555555555555557e+19,
+              "swapped_sigma": 1.8555555555555557e+19,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "gauge.ALPHA_GUT": {
+              "baseline_value": 0.023402505224827168,
+              "swapped_value": 0.023402505224827168,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_INV": {
+              "baseline_value": 42.730467973109285,
+              "swapped_value": 42.730467973109285,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.ALPHA_GUT_GEOMETRIC": {
+              "baseline_value": 0.04248088360237893,
+              "swapped_value": 0.04248088360237893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gauge.sin2_theta_W_gut": {
+              "baseline_value": 0.375,
+              "swapped_value": 0.375,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "master_action_simulation_v22_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "alpha_rigor_v16_1": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "fermion_generations_v16_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "chirality_v16_0": {
+      "sensitivity_report": {
+        "constants.M_PLANCK": {
+          "geometric_value": 2.435e+18,
+          "experimental_value": 2.435e+18,
+          "outputs": {
+            "chirality.spinor_dimension": {
+              "baseline_value": 8,
+              "swapped_value": 8,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.preserved_spinors": {
+              "baseline_value": 1,
+              "swapped_value": 1,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.chiral_index": {
+              "baseline_value": 6.0,
+              "swapped_value": 6.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.zero_modes_left": {
+              "baseline_value": 6.0,
+              "swapped_value": 6.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.zero_modes_right": {
+              "baseline_value": 0,
+              "swapped_value": 0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.imbalance": {
+              "baseline_value": 6.0,
+              "swapped_value": 6.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.generation_count": {
+              "baseline_value": 3,
+              "swapped_value": 3,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "chirality.saturation_ratio": {
+              "baseline_value": 1.0,
+              "swapped_value": 1.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "ckm_matrix_v16_0": {
+      "sensitivity_report": {
+        "fermion.n_generations": {
+          "geometric_value": 3,
+          "experimental_value": 3,
+          "outputs": {
+            "ckm.V_us": {
+              "baseline_value": 0.22313016014842982,
+              "swapped_value": 0.22313016014842982,
+              "baseline_sigma": 1.7122998144627337,
+              "swapped_sigma": 1.7122998144627337,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_cb": {
+              "baseline_value": 0.04032752537796979,
+              "swapped_value": 0.04032752537796979,
+              "baseline_sigma": 0.48033901573586524,
+              "swapped_sigma": 0.48033901573586524,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_ub": {
+              "baseline_value": 0.0034757158300444454,
+              "swapped_value": 0.0034757158300444454,
+              "baseline_sigma": 1.434517374814811,
+              "swapped_sigma": 1.434517374814811,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_td": {
+              "baseline_value": 0.008389183792439896,
+              "swapped_value": 0.008389183792439896,
+              "baseline_sigma": 0.018027012600171807,
+              "swapped_sigma": 0.018027012600171807,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_ts": {
+              "baseline_value": 0.04032752537796979,
+              "swapped_value": 0.04032752537796979,
+              "baseline_sigma": 0.12130569554436649,
+              "swapped_sigma": 0.12130569554436649,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_tb": {
+              "baseline_value": 0.9991512959968505,
+              "swapped_value": 0.9991512959968505,
+              "baseline_sigma": 0.05043199895016226,
+              "swapped_sigma": 0.05043199895016226,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.jarlskog_invariant": {
+              "baseline_value": 2.9148902086057355e-05,
+              "swapped_value": 2.9148902086057355e-05,
+              "baseline_sigma": 0.28369930464754856,
+              "swapped_sigma": 0.28369930464754856,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.lambda_wolfenstein": {
+              "baseline_value": 0.22313016014842982,
+              "swapped_value": 0.22313016014842982,
+              "baseline_sigma": 1.7122998144627337,
+              "swapped_sigma": 1.7122998144627337,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.A_wolfenstein": {
+              "baseline_value": 0.81,
+              "swapped_value": 0.81,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "ckm.rho_wolfenstein": {
+              "baseline_value": 0.14,
+              "swapped_value": 0.14,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "ckm.eta_wolfenstein": {
+              "baseline_value": 0.36,
+              "swapped_value": 0.36,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "ckm.delta_cp": {
+              "baseline_value": 0.5235987755982988,
+              "swapped_value": 0.5235987755982988,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "ckm.unitarity_test": {
+              "baseline_value": 5.829780417210273e-05,
+              "swapped_value": 5.829780417210273e-05,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "proton_decay_v17_2": {
+      "sensitivity_report": {
+        "gauge.M_GUT_GEOMETRIC": {
+          "geometric_value": 2.1e+16,
+          "experimental_value": 1.67e+34,
+          "outputs": {
+            "proton_decay.tau_p_years": {
+              "baseline_value": 4.757399129595567e+34,
+              "swapped_value": 1.9026473231462374e+106,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "proton_decay.suppression_factor": {
+              "baseline_value": 1.2840254166877414,
+              "swapped_value": 1.2840254166877414,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "proton_decay.super_k_ratio": {
+              "baseline_value": 2.8487419937698006,
+              "swapped_value": 1.1393097743390643e+72,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "proton_decay.status": {
+              "baseline_value": "CONSISTENT - Well above Super-K bound",
+              "swapped_value": "CONSISTENT - Well above Super-K bound",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "bounds.tau_proton_lower": {
+          "geometric_value": 1.67e+34,
+          "experimental_value": 1.67e+34,
+          "outputs": {
+            "proton_decay.tau_p_years": {
+              "baseline_value": 4.757399129595567e+34,
+              "swapped_value": 4.757399129595567e+34,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "proton_decay.suppression_factor": {
+              "baseline_value": 1.2840254166877414,
+              "swapped_value": 1.2840254166877414,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "proton_decay.super_k_ratio": {
+              "baseline_value": 2.8487419937698006,
+              "swapped_value": 2.8487419937698006,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "proton_decay.status": {
+              "baseline_value": "CONSISTENT - Well above Super-K bound",
+              "swapped_value": "CONSISTENT - Well above Super-K bound",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "higgs_mass_v16_0": {
+      "sensitivity_report": {
+        "topology.T_OMEGA": {
+          "geometric_value": 0.12,
+          "experimental_value": 0.12,
+          "outputs": {
+            "higgs.m_higgs_pred": {
+              "baseline_value": 120.6228111675565,
+              "swapped_value": 120.6228111675565,
+              "baseline_sigma": 27.218757837902903,
+              "swapped_sigma": 27.218757837902903,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.m_higgs_geometric": {
+              "baseline_value": 504.0623474622599,
+              "swapped_value": 504.0623474622599,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.vev": {
+              "baseline_value": 246.0,
+              "swapped_value": 246.0,
+              "baseline_sigma": 0.4399999999999977,
+              "swapped_sigma": 0.4399999999999977,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.lambda_0": {
+              "baseline_value": 0.129,
+              "swapped_value": 0.129,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_pheno": {
+              "baseline_value": 0.006079284956305497,
+              "swapped_value": 0.006079284956305497,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_geometric": {
+              "baseline_value": 0.10616029694119695,
+              "swapped_value": 0.10616029694119695,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "moduli.stabilization_status": {
+              "baseline_value": "NEEDS_REVIEW",
+              "swapped_value": "NEEDS_REVIEW",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.quartic_correction": {
+              "baseline_value": 0.1229207150436945,
+              "swapped_value": 0.1229207150436945,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "higgs.vev_yukawa": {
+          "geometric_value": 174.10383166375172,
+          "experimental_value": 174.10383166375172,
+          "outputs": {
+            "higgs.m_higgs_pred": {
+              "baseline_value": 120.6228111675565,
+              "swapped_value": 120.6228111675565,
+              "baseline_sigma": 27.218757837902903,
+              "swapped_sigma": 27.218757837902903,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.m_higgs_geometric": {
+              "baseline_value": 504.0623474622599,
+              "swapped_value": 504.0623474622599,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.vev": {
+              "baseline_value": 246.0,
+              "swapped_value": 246.0,
+              "baseline_sigma": 0.4399999999999977,
+              "swapped_sigma": 0.4399999999999977,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.lambda_0": {
+              "baseline_value": 0.129,
+              "swapped_value": 0.129,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_pheno": {
+              "baseline_value": 0.006079284956305497,
+              "swapped_value": 0.006079284956305497,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_geometric": {
+              "baseline_value": 0.10616029694119695,
+              "swapped_value": 0.10616029694119695,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "moduli.stabilization_status": {
+              "baseline_value": "NEEDS_REVIEW",
+              "swapped_value": "NEEDS_REVIEW",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.quartic_correction": {
+              "baseline_value": 0.1229207150436945,
+              "swapped_value": 0.1229207150436945,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "yukawa.y_top": {
+          "geometric_value": 0.9918793765177882,
+          "experimental_value": 0.9918793765177882,
+          "outputs": {
+            "higgs.m_higgs_pred": {
+              "baseline_value": 120.6228111675565,
+              "swapped_value": 120.6228111675565,
+              "baseline_sigma": 27.218757837902903,
+              "swapped_sigma": 27.218757837902903,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.m_higgs_geometric": {
+              "baseline_value": 504.0623474622599,
+              "swapped_value": 504.0623474622599,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.vev": {
+              "baseline_value": 246.0,
+              "swapped_value": 246.0,
+              "baseline_sigma": 0.4399999999999977,
+              "swapped_sigma": 0.4399999999999977,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.lambda_0": {
+              "baseline_value": 0.129,
+              "swapped_value": 0.129,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_pheno": {
+              "baseline_value": 0.006079284956305497,
+              "swapped_value": 0.006079284956305497,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_geometric": {
+              "baseline_value": 0.10616029694119695,
+              "swapped_value": 0.10616029694119695,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "moduli.stabilization_status": {
+              "baseline_value": "NEEDS_REVIEW",
+              "swapped_value": "NEEDS_REVIEW",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.quartic_correction": {
+              "baseline_value": 0.1229207150436945,
+              "swapped_value": 0.1229207150436945,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "gauge.g_gut": {
+          "geometric_value": 0.7191207083539627,
+          "experimental_value": 0.7191207083539627,
+          "outputs": {
+            "higgs.m_higgs_pred": {
+              "baseline_value": 120.6228111675565,
+              "swapped_value": 120.6228111675565,
+              "baseline_sigma": 27.218757837902903,
+              "swapped_sigma": 27.218757837902903,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.m_higgs_geometric": {
+              "baseline_value": 504.0623474622599,
+              "swapped_value": 504.0623474622599,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.vev": {
+              "baseline_value": 246.0,
+              "swapped_value": 246.0,
+              "baseline_sigma": 0.4399999999999977,
+              "swapped_sigma": 0.4399999999999977,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.lambda_0": {
+              "baseline_value": 0.129,
+              "swapped_value": 0.129,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_pheno": {
+              "baseline_value": 0.006079284956305497,
+              "swapped_value": 0.006079284956305497,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_geometric": {
+              "baseline_value": 0.10616029694119695,
+              "swapped_value": 0.10616029694119695,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "moduli.stabilization_status": {
+              "baseline_value": "NEEDS_REVIEW",
+              "swapped_value": "NEEDS_REVIEW",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.quartic_correction": {
+              "baseline_value": 0.1229207150436945,
+              "swapped_value": 0.1229207150436945,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "moduli.re_t_attractor": {
+          "geometric_value": 1.833,
+          "experimental_value": 1.833,
+          "outputs": {
+            "higgs.m_higgs_pred": {
+              "baseline_value": 120.6228111675565,
+              "swapped_value": 120.6228111675565,
+              "baseline_sigma": 27.218757837902903,
+              "swapped_sigma": 27.218757837902903,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.m_higgs_geometric": {
+              "baseline_value": 504.0623474622599,
+              "swapped_value": 504.0623474622599,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.vev": {
+              "baseline_value": 246.0,
+              "swapped_value": 246.0,
+              "baseline_sigma": 0.4399999999999977,
+              "swapped_sigma": 0.4399999999999977,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.lambda_0": {
+              "baseline_value": 0.129,
+              "swapped_value": 0.129,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_pheno": {
+              "baseline_value": 0.006079284956305497,
+              "swapped_value": 0.006079284956305497,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_geometric": {
+              "baseline_value": 0.10616029694119695,
+              "swapped_value": 0.10616029694119695,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "moduli.stabilization_status": {
+              "baseline_value": "NEEDS_REVIEW",
+              "swapped_value": "NEEDS_REVIEW",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.quartic_correction": {
+              "baseline_value": 0.1229207150436945,
+              "swapped_value": 0.1229207150436945,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "moduli.re_t_phenomenological": {
+          "geometric_value": 9.865,
+          "experimental_value": 9.865,
+          "outputs": {
+            "higgs.m_higgs_pred": {
+              "baseline_value": 120.6228111675565,
+              "swapped_value": 120.6228111675565,
+              "baseline_sigma": 27.218757837902903,
+              "swapped_sigma": 27.218757837902903,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.m_higgs_geometric": {
+              "baseline_value": 504.0623474622599,
+              "swapped_value": 504.0623474622599,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.vev": {
+              "baseline_value": 246.0,
+              "swapped_value": 246.0,
+              "baseline_sigma": 0.4399999999999977,
+              "swapped_sigma": 0.4399999999999977,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "higgs.lambda_0": {
+              "baseline_value": 0.129,
+              "swapped_value": 0.129,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_pheno": {
+              "baseline_value": 0.006079284956305497,
+              "swapped_value": 0.006079284956305497,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.lambda_eff_geometric": {
+              "baseline_value": 0.10616029694119695,
+              "swapped_value": 0.10616029694119695,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "moduli.stabilization_status": {
+              "baseline_value": "NEEDS_REVIEW",
+              "swapped_value": "NEEDS_REVIEW",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "higgs.quartic_correction": {
+              "baseline_value": 0.1229207150436945,
+              "swapped_value": 0.1229207150436945,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "higgs_brane_partition_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "yukawa_textures_v18": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "higgs_vev_refined_v18": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "mass_ratio_v23_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "cosmology_intro_v16_0": {
+      "sensitivity_report": {
+        "constants.M_PLANCK": {
+          "geometric_value": 2.435e+18,
+          "experimental_value": 2.435e+18,
+          "outputs": {
+            "cosmology.M_Pl_4D": {
+              "baseline_value": 2.435e+18,
+              "swapped_value": 2.435e+18,
+              "baseline_sigma": 0.0,
+              "swapped_sigma": 0.0,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.V_9_internal": {
+              "baseline_value": 13015.153988690734,
+              "swapped_value": 13015.153988690734,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.breathing_mode_vev": {
+              "baseline_value": 1.82625e+17,
+              "swapped_value": 1.82625e+17,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.epsilon_KK": {
+              "baseline_value": 0.2257,
+              "swapped_value": 0.2257,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.D_eff_shadow": {
+              "baseline_value": 12.576152,
+              "swapped_value": 12.576152,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.brane_tension_5_2": {
+              "baseline_value": 1.3747965125203362e+111,
+              "swapped_value": 1.3747965125203362e+111,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.pneuma_components_4D": {
+              "baseline_value": 64.0,
+              "swapped_value": 64.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "dark_energy_v16_0": {
+      "sensitivity_report": {
+        "desi.w0": {
+          "geometric_value": -0.957,
+          "experimental_value": -0.957,
+          "outputs": {
+            "cosmology.w0_derived": {
+              "baseline_value": -0.9583333333333334,
+              "swapped_value": -0.9583333333333334,
+              "baseline_sigma": 0.01990049751243893,
+              "swapped_sigma": 0.01990049751243893,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.wa_derived": {
+              "baseline_value": -0.20412414523193154,
+              "swapped_value": -0.20412414523193154,
+              "baseline_sigma": 2.4558620461502136,
+              "swapped_sigma": 2.4558620461502136,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.D_eff": {
+              "baseline_value": 12.576,
+              "swapped_value": 12.576,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.alpha_shadow": {
+              "baseline_value": 0.576,
+              "swapped_value": 0.576,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.w0_deviation": {
+              "baseline_value": 0.01990049751243893,
+              "swapped_value": 0.01990049751243893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.w0_validation": {
+              "baseline_value": {
+                "predicted": -0.9583333333333334,
+                "experimental": -0.957,
+                "uncertainty": 0.067,
+                "sigma": 0.01990049751243893,
+                "status": "EXCELLENT",
+                "source": "ESTABLISHED:DESI_2025"
+              },
+              "swapped_value": {
+                "predicted": -0.9583333333333334,
+                "experimental": -0.957,
+                "uncertainty": 0.067,
+                "sigma": 0.01990049751243893,
+                "status": "EXCELLENT",
+                "source": "ESTABLISHED:DESI_2025"
+              },
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "desi.wa": {
+          "geometric_value": -0.99,
+          "experimental_value": -0.99,
+          "outputs": {
+            "cosmology.w0_derived": {
+              "baseline_value": -0.9583333333333334,
+              "swapped_value": -0.9583333333333334,
+              "baseline_sigma": 0.01990049751243893,
+              "swapped_sigma": 0.01990049751243893,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.wa_derived": {
+              "baseline_value": -0.20412414523193154,
+              "swapped_value": -0.20412414523193154,
+              "baseline_sigma": 2.4558620461502136,
+              "swapped_sigma": 2.4558620461502136,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.D_eff": {
+              "baseline_value": 12.576,
+              "swapped_value": 12.576,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.alpha_shadow": {
+              "baseline_value": 0.576,
+              "swapped_value": 0.576,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.w0_deviation": {
+              "baseline_value": 0.01990049751243893,
+              "swapped_value": 0.01990049751243893,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.w0_validation": {
+              "baseline_value": {
+                "predicted": -0.9583333333333334,
+                "experimental": -0.957,
+                "uncertainty": 0.067,
+                "sigma": 0.01990049751243893,
+                "status": "EXCELLENT",
+                "source": "ESTABLISHED:DESI_2025"
+              },
+              "swapped_value": {
+                "predicted": -0.9583333333333334,
+                "experimental": -0.957,
+                "uncertainty": 0.067,
+                "sigma": 0.01990049751243893,
+                "status": "EXCELLENT",
+                "source": "ESTABLISHED:DESI_2025"
+              },
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "dark_energy_thawing_v16_2": {
+      "sensitivity_report": {
+        "desi.w0": {
+          "geometric_value": -0.957,
+          "experimental_value": -0.957,
+          "outputs": {
+            "cosmology.w0_thawing": {
+              "baseline_value": -0.9583333333333334,
+              "swapped_value": -0.9583333333333334,
+              "baseline_sigma": 0.01990049751243893,
+              "swapped_sigma": 0.01990049751243893,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.wa_thawing": {
+              "baseline_value": -0.8164965809277261,
+              "swapped_value": -0.8164965809277261,
+              "baseline_sigma": 0.5421981846008558,
+              "swapped_sigma": 0.5421981846008558,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.z_thaw": {
+              "baseline_value": 4.898979485566356,
+              "swapped_value": 4.898979485566356,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.torsional_leakage": {
+              "baseline_value": 0.13264597579467807,
+              "swapped_value": 0.13264597579467807,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.w0_desi_sigma": {
+              "baseline_value": -0.021164021164022356,
+              "swapped_value": -0.021164021164022356,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.wa_desi_sigma": {
+              "baseline_value": 0.5421981846008558,
+              "swapped_value": 0.5421981846008558,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.thawing_validated": {
+              "baseline_value": true,
+              "swapped_value": true,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "desi.wa": {
+          "geometric_value": -0.99,
+          "experimental_value": -0.99,
+          "outputs": {
+            "cosmology.w0_thawing": {
+              "baseline_value": -0.9583333333333334,
+              "swapped_value": -0.9583333333333334,
+              "baseline_sigma": 0.01990049751243893,
+              "swapped_sigma": 0.01990049751243893,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.wa_thawing": {
+              "baseline_value": -0.8164965809277261,
+              "swapped_value": -0.8164965809277261,
+              "baseline_sigma": 0.5421981846008558,
+              "swapped_sigma": 0.5421981846008558,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.z_thaw": {
+              "baseline_value": 4.898979485566356,
+              "swapped_value": 4.898979485566356,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.torsional_leakage": {
+              "baseline_value": 0.13264597579467807,
+              "swapped_value": 0.13264597579467807,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.w0_desi_sigma": {
+              "baseline_value": -0.021164021164022356,
+              "swapped_value": -0.021164021164022356,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.wa_desi_sigma": {
+              "baseline_value": 0.5421981846008558,
+              "swapped_value": 0.5421981846008558,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.thawing_validated": {
+              "baseline_value": true,
+              "swapped_value": true,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "evolution_engine_v16_2": {
+      "sensitivity_report": {
+        "desi.Omega_m": {
+          "geometric_value": 0.3111,
+          "experimental_value": 0.3111,
+          "outputs": {
+            "cosmology.H0_late_evolved": {
+              "baseline_value": 73.04,
+              "swapped_value": 73.04,
+              "baseline_sigma": 0.0,
+              "swapped_sigma": 0.0,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.H0_early_normalized": {
+              "baseline_value": 67.40001769345331,
+              "swapped_value": 67.40001769345331,
+              "baseline_sigma": 3.5386906603207535e-05,
+              "swapped_sigma": 3.5386906603207535e-05,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.relaxation_z1100": {
+              "baseline_value": 1.2918322556967783,
+              "swapped_value": 1.2918322556967783,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.ricci_flow_consistency": {
+              "baseline_value": 0.758334723639454,
+              "swapped_value": 0.758334723639454,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.h_evolution_sigma": {
+              "baseline_value": 3.5386906603207535e-05,
+              "swapped_value": 3.5386906603207535e-05,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "s8_suppression_v16_1": {
+      "sensitivity_report": {
+        "desi.sigma8": {
+          "geometric_value": 0.827,
+          "experimental_value": 0.827,
+          "outputs": {
+            "cosmology.s8_pm_predicted": {
+              "baseline_value": 0.8468398523494727,
+              "swapped_value": 0.8468398523494727,
+              "baseline_sigma": 1.8036229408611564,
+              "swapped_sigma": 1.8036229408611564,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.s8_suppression_factor": {
+              "baseline_value": 1.005556320203449,
+              "swapped_value": 1.005556320203449,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.growth_index_pm": {
+              "baseline_value": 0.5589982991426107,
+              "swapped_value": 0.5589982991426107,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.growth_index_lcdm": {
+              "baseline_value": 0.55,
+              "swapped_value": 0.55,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_kids": {
+              "baseline_value": 4.041992617473633,
+              "swapped_value": 4.041992617473633,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_des": {
+              "baseline_value": 4.1670501382042735,
+              "swapped_value": 4.1670501382042735,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_planck": {
+              "baseline_value": 1.1415271038055936,
+              "swapped_value": 1.1415271038055936,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_improvement_factor": {
+              "baseline_value": 0.9380307167234834,
+              "swapped_value": 0.9380307167234834,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "desi.Omega_m": {
+          "geometric_value": 0.3111,
+          "experimental_value": 0.3111,
+          "outputs": {
+            "cosmology.s8_pm_predicted": {
+              "baseline_value": 0.8468398523494727,
+              "swapped_value": 0.8468398523494727,
+              "baseline_sigma": 1.8036229408611564,
+              "swapped_sigma": 1.8036229408611564,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.s8_suppression_factor": {
+              "baseline_value": 1.005556320203449,
+              "swapped_value": 1.005556320203449,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.growth_index_pm": {
+              "baseline_value": 0.5589982991426107,
+              "swapped_value": 0.5589982991426107,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.growth_index_lcdm": {
+              "baseline_value": 0.55,
+              "swapped_value": 0.55,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_kids": {
+              "baseline_value": 4.041992617473633,
+              "swapped_value": 4.041992617473633,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_des": {
+              "baseline_value": 4.1670501382042735,
+              "swapped_value": 4.1670501382042735,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_planck": {
+              "baseline_value": 1.1415271038055936,
+              "swapped_value": 1.1415271038055936,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_improvement_factor": {
+              "baseline_value": 0.9380307167234834,
+              "swapped_value": 0.9380307167234834,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "planck.S8": {
+          "geometric_value": 0.832,
+          "experimental_value": 0.832,
+          "outputs": {
+            "cosmology.s8_pm_predicted": {
+              "baseline_value": 0.8468398523494727,
+              "swapped_value": 0.8468398523494727,
+              "baseline_sigma": 1.8036229408611564,
+              "swapped_sigma": 1.8036229408611564,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.s8_suppression_factor": {
+              "baseline_value": 1.005556320203449,
+              "swapped_value": 1.005556320203449,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.growth_index_pm": {
+              "baseline_value": 0.5589982991426107,
+              "swapped_value": 0.5589982991426107,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.growth_index_lcdm": {
+              "baseline_value": 0.55,
+              "swapped_value": 0.55,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_kids": {
+              "baseline_value": 4.041992617473633,
+              "swapped_value": 4.041992617473633,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_des": {
+              "baseline_value": 4.1670501382042735,
+              "swapped_value": 4.1670501382042735,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_tension_planck": {
+              "baseline_value": 1.1415271038055936,
+              "swapped_value": 1.1415271038055936,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.s8_improvement_factor": {
+              "baseline_value": 0.9380307167234834,
+              "swapped_value": 0.9380307167234834,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "ricci_flow_h0_v16_1": {
+      "sensitivity_report": {
+        "desi.Omega_m": {
+          "geometric_value": 0.3111,
+          "experimental_value": 0.3111,
+          "outputs": {
+            "cosmology.H0_local": {
+              "baseline_value": 76.33940416705774,
+              "swapped_value": 76.33940416705774,
+              "baseline_sigma": 3.172504006786279,
+              "swapped_sigma": 3.172504006786279,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.H0_early": {
+              "baseline_value": 67.4,
+              "swapped_value": 67.4,
+              "baseline_sigma": 0.0,
+              "swapped_sigma": 0.0,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.z_transition": {
+              "baseline_value": 10.0,
+              "swapped_value": 10.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.H0_tension_sigma": {
+              "baseline_value": 3.172504006786279,
+              "swapped_value": 3.172504006786279,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.ricci_flow_rate": {
+              "baseline_value": 1.9483192273737477,
+              "swapped_value": 1.9483192273737477,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "neutrino_mixing_v17_2": {
+      "sensitivity_report": {
+        "topology.orientation_sum": {
+          "geometric_value": 12,
+          "experimental_value": 12,
+          "outputs": {
+            "neutrino.theta_12_pred": {
+              "baseline_value": 33.59329049922625,
+              "swapped_value": 33.59329049922625,
+              "baseline_sigma": 0.2443873323016703,
+              "swapped_sigma": 0.2443873323016703,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.theta_13_pred": {
+              "baseline_value": 8.647304725338865,
+              "swapped_value": 8.647304725338865,
+              "baseline_sigma": 0.15731568489876224,
+              "swapped_sigma": 0.15731568489876224,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.theta_23_pred": {
+              "baseline_value": 49.75,
+              "swapped_value": 49.75,
+              "baseline_sigma": 0.45000000000000284,
+              "swapped_sigma": 0.45000000000000284,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.delta_CP_pred": {
+              "baseline_value": 278.4,
+              "swapped_value": 278.4,
+              "baseline_sigma": 0.018181818181817147,
+              "swapped_sigma": 0.018181818181817147,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.m1": {
+              "baseline_value": 0.04831157627577474,
+              "swapped_value": 0.04831157627577474,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "neutrino.m2": {
+              "baseline_value": 0.049073500000000006,
+              "swapped_value": 0.049073500000000006,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "neutrino.m3": {
+              "baseline_value": 0.002,
+              "swapped_value": 0.002,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "neutrino.mass_sum": {
+              "baseline_value": 0.09938507627577475,
+              "swapped_value": 0.09938507627577475,
+              "baseline_sigma": 0.41229847448450485,
+              "swapped_sigma": 0.41229847448450485,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.dm2_21": {
+              "baseline_value": 7.419999999999996e-05,
+              "swapped_value": 7.419999999999996e-05,
+              "baseline_sigma": 1.9360753080098294e-14,
+              "swapped_sigma": 1.9360753080098294e-14,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.dm2_32": {
+              "baseline_value": -0.0024042084022500004,
+              "swapped_value": -0.0024042084022500004,
+              "baseline_sigma": 0.007442937500016967,
+              "swapped_sigma": 0.007442937500016967,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "neutrino.ordering": {
+              "baseline_value": "INVERTED",
+              "swapped_value": "INVERTED",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "neutrino.k_gimel": {
+              "baseline_value": 1.5,
+              "swapped_value": 1.5,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "neutrino.C_kaf": {
+              "baseline_value": 2.0,
+              "swapped_value": 2.0,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "octonionic_mixing_v16_2": {
+      "sensitivity_report": {
+        "topology.orientation_sum": {
+          "geometric_value": 12,
+          "experimental_value": 12,
+          "outputs": {
+            "ckm.V_us_triality": {
+              "baseline_value": 0.22450008639436136,
+              "swapped_value": 0.22450008639436136,
+              "baseline_sigma": 0.00010799295169922063,
+              "swapped_sigma": 0.00010799295169922063,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_cb_triality": {
+              "baseline_value": 0.040867549778280866,
+              "swapped_value": 0.040867549778280866,
+              "baseline_sigma": 0.09460730122795381,
+              "swapped_sigma": 0.09460730122795381,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.V_ub_triality": {
+              "baseline_value": 0.003750070930845949,
+              "swapped_value": 0.003750070930845949,
+              "baseline_sigma": 0.2913711214752135,
+              "swapped_sigma": 0.2913711214752135,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "ckm.jarlskog_triality": {
+              "baseline_value": 3.143181574832559e-05,
+              "swapped_value": 3.143181574832559e-05,
+              "baseline_sigma": 0.4772719161085296,
+              "swapped_sigma": 0.4772719161085296,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "pmns.theta_12_triality": {
+              "baseline_value": 33.59329049922625,
+              "swapped_value": 33.59329049922625,
+              "baseline_sigma": 0.2443873323016703,
+              "swapped_sigma": 0.2443873323016703,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "pmns.theta_23_triality": {
+              "baseline_value": 49.75,
+              "swapped_value": 49.75,
+              "baseline_sigma": 0.45000000000000284,
+              "swapped_sigma": 0.45000000000000284,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "pmns.theta_13_triality": {
+              "baseline_value": 8.647304725338865,
+              "swapped_value": 8.647304725338865,
+              "baseline_sigma": 0.15731568489876224,
+              "swapped_sigma": 0.15731568489876224,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "triality.theta_g": {
+              "baseline_value": 31.717474411461005,
+              "swapped_value": 31.717474411461005,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "triality.phi_golden": {
+              "baseline_value": 1.618033988749895,
+              "swapped_value": 1.618033988749895,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "triality.associative_dimension": {
+              "baseline_value": 3,
+              "swapped_value": 3,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "triality.coassociative_dimension": {
+              "baseline_value": 4,
+              "swapped_value": 4,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "triality.mixing_ratio": {
+              "baseline_value": 2.464560334295213,
+              "swapped_value": 2.464560334295213,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "multi_sector_v16_0": {
+      "sensitivity_report": {
+        "desi.w0": {
+          "geometric_value": -0.957,
+          "experimental_value": -0.957,
+          "outputs": {
+            "cosmology.w_eff": {
+              "baseline_value": -0.8526812021213906,
+              "swapped_value": -0.8526812021213906,
+              "baseline_sigma": 1.5569969832628254,
+              "swapped_sigma": 1.5569969832628254,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.Omega_DM_over_b": {
+              "baseline_value": 5.399772129616132,
+              "swapped_value": 5.399772129616132,
+              "baseline_sigma": 0.1318141974408782,
+              "swapped_sigma": 0.1318141974408782,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.T_mirror_ratio": {
+              "baseline_value": 0.57,
+              "swapped_value": 0.57,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.modulation_width": {
+              "baseline_value": 0.408248290463863,
+              "swapped_value": 0.408248290463863,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.sm_weight": {
+              "baseline_value": 0.0021089953617339126,
+              "swapped_value": 0.0021089953617339126,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.mirror_weight": {
+              "baseline_value": 0.0003107342392717563,
+              "swapped_value": 0.0003107342392717563,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.hierarchy_ratio": {
+              "baseline_value": 0.8715830731075855,
+              "swapped_value": 0.8715830731075855,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "desi.wa": {
+          "geometric_value": -0.99,
+          "experimental_value": -0.99,
+          "outputs": {
+            "cosmology.w_eff": {
+              "baseline_value": -0.8526812021213906,
+              "swapped_value": -0.8526812021213906,
+              "baseline_sigma": 1.5569969832628254,
+              "swapped_sigma": 1.5569969832628254,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.Omega_DM_over_b": {
+              "baseline_value": 5.399772129616132,
+              "swapped_value": 5.399772129616132,
+              "baseline_sigma": 0.1318141974408782,
+              "swapped_sigma": 0.1318141974408782,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.T_mirror_ratio": {
+              "baseline_value": 0.57,
+              "swapped_value": 0.57,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.modulation_width": {
+              "baseline_value": 0.408248290463863,
+              "swapped_value": 0.408248290463863,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.sm_weight": {
+              "baseline_value": 0.0021089953617339126,
+              "swapped_value": 0.0021089953617339126,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.mirror_weight": {
+              "baseline_value": 0.0003107342392717563,
+              "swapped_value": 0.0003107342392717563,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.hierarchy_ratio": {
+              "baseline_value": 0.8715830731075855,
+              "swapped_value": 0.8715830731075855,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "desi.H0": {
+          "geometric_value": 67.4,
+          "experimental_value": 67.4,
+          "outputs": {
+            "cosmology.w_eff": {
+              "baseline_value": -0.8526812021213906,
+              "swapped_value": -0.8526812021213906,
+              "baseline_sigma": 1.5569969832628254,
+              "swapped_sigma": 1.5569969832628254,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.Omega_DM_over_b": {
+              "baseline_value": 5.399772129616132,
+              "swapped_value": 5.399772129616132,
+              "baseline_sigma": 0.1318141974408782,
+              "swapped_sigma": 0.1318141974408782,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.T_mirror_ratio": {
+              "baseline_value": 0.57,
+              "swapped_value": 0.57,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.modulation_width": {
+              "baseline_value": 0.408248290463863,
+              "swapped_value": 0.408248290463863,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.sm_weight": {
+              "baseline_value": 0.0021089953617339126,
+              "swapped_value": 0.0021089953617339126,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.mirror_weight": {
+              "baseline_value": 0.0003107342392717563,
+              "swapped_value": 0.0003107342392717563,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.hierarchy_ratio": {
+              "baseline_value": 0.8715830731075855,
+              "swapped_value": 0.8715830731075855,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "desi.Omega_m": {
+          "geometric_value": 0.3111,
+          "experimental_value": 0.3111,
+          "outputs": {
+            "cosmology.w_eff": {
+              "baseline_value": -0.8526812021213906,
+              "swapped_value": -0.8526812021213906,
+              "baseline_sigma": 1.5569969832628254,
+              "swapped_sigma": 1.5569969832628254,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.Omega_DM_over_b": {
+              "baseline_value": 5.399772129616132,
+              "swapped_value": 5.399772129616132,
+              "baseline_sigma": 0.1318141974408782,
+              "swapped_sigma": 0.1318141974408782,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.T_mirror_ratio": {
+              "baseline_value": 0.57,
+              "swapped_value": 0.57,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.modulation_width": {
+              "baseline_value": 0.408248290463863,
+              "swapped_value": 0.408248290463863,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.sm_weight": {
+              "baseline_value": 0.0021089953617339126,
+              "swapped_value": 0.0021089953617339126,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.mirror_weight": {
+              "baseline_value": 0.0003107342392717563,
+              "swapped_value": 0.0003107342392717563,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.hierarchy_ratio": {
+              "baseline_value": 0.8715830731075855,
+              "swapped_value": 0.8715830731075855,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "speed_of_light_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "compton_wavelength_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "stefan_boltzmann_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "hartree_energy_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "magnetic_flux_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "von_klitzing_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "avogadro_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "faraday_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "molar_gas_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "weak_mixing_v17_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "cosmological_constant_v16_1": {
+      "sensitivity_report": {
+        "desi.H0": {
+          "geometric_value": 67.4,
+          "experimental_value": 67.4,
+          "outputs": {
+            "cosmology.Lambda_derived": {
+              "baseline_value": 1.2266298633892773e-52,
+              "swapped_value": 1.2266298633892773e-52,
+              "baseline_sigma": 1.266298633892772,
+              "swapped_sigma": 1.266298633892772,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.rho_vacuum": {
+              "baseline_value": 1.1730108700558416e+77,
+              "swapped_value": 1.1730108700558416e+77,
+              "baseline_sigma": 3.910036233519472e+87,
+              "swapped_sigma": 3.910036233519472e+87,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "cosmology.entropy_density": {
+              "baseline_value": 5.563065417483114e-78,
+              "swapped_value": 5.563065417483114e-78,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.Lambda_ratio": {
+              "baseline_value": 3.203289916527108e-122,
+              "swapped_value": 3.203289916527108e-122,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "cosmology.Lambda_deviation_log": {
+              "baseline_value": 0.04732084860536037,
+              "swapped_value": 0.04732084860536037,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "pneuma_mechanism_v22_0": {
+      "sensitivity_report": {
+        "constants.M_PLANCK": {
+          "geometric_value": 2.435e+18,
+          "experimental_value": 2.435e+18,
+          "outputs": {
+            "pneuma.coupling": {
+              "baseline_value": 7.847778500191315e-17,
+              "swapped_value": 7.847778500191315e-17,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.flow_parameter": {
+              "baseline_value": 0.0011346578282206315,
+              "swapped_value": 0.0011346578282206315,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.lagrangian_valid": {
+              "baseline_value": true,
+              "swapped_value": true,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.vev": {
+              "baseline_value": 6.3358573796986395,
+              "swapped_value": 6.3358573796986395,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.mass_scale": {
+              "baseline_value": 2.0291666666666666e+17,
+              "swapped_value": 2.0291666666666666e+17,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.n_bridge_pairs": {
+              "baseline_value": 12,
+              "swapped_value": 12,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.neural_gate_active": {
+              "baseline_value": true,
+              "swapped_value": true,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        },
+        "pdg.m_higgs": {
+          "geometric_value": 125.1,
+          "experimental_value": 125.1,
+          "outputs": {
+            "pneuma.coupling": {
+              "baseline_value": 7.847778500191315e-17,
+              "swapped_value": 7.847778500191315e-17,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.flow_parameter": {
+              "baseline_value": 0.0011346578282206315,
+              "swapped_value": 0.0011346578282206315,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.lagrangian_valid": {
+              "baseline_value": true,
+              "swapped_value": true,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.vev": {
+              "baseline_value": 6.3358573796986395,
+              "swapped_value": 6.3358573796986395,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.mass_scale": {
+              "baseline_value": 2.0291666666666666e+17,
+              "swapped_value": 2.0291666666666666e+17,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.n_bridge_pairs": {
+              "baseline_value": 12,
+              "swapped_value": 12,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "pneuma.neural_gate_active": {
+              "baseline_value": true,
+              "swapped_value": true,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "thermal_time_v22_0": {
+      "sensitivity_report": {
+        "constants.M_PLANCK": {
+          "geometric_value": 2.435e+18,
+          "experimental_value": 2.435e+18,
+          "outputs": {
+            "thermal.alpha_T": {
+              "baseline_value": 2.6999999182257,
+              "swapped_value": 2.6999999182257,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "thermal.modular_temperature": {
+              "baseline_value": 3.2026709963019756e+16,
+              "swapped_value": 3.2026709963019756e+16,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "thermal.entropy_gradient": {
+              "baseline_value": 3.0600829928584296e-06,
+              "swapped_value": 3.0600829928584296e-06,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "thermal.two_time_metric_signature": {
+              "baseline_value": "(24,1)+12x(2,0)",
+              "swapped_value": "(24,1)+12x(2,0)",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "orch_or_geometry_v22_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "discussion_v16_0": {
+      "sensitivity_report": {
+        "geometry.alpha_inverse": {
+          "geometric_value": 137.03670177575597,
+          "experimental_value": 137.035999177,
+          "outputs": {},
+          "any_improvement": false
+        },
+        "geometry.w_zero": {
+          "geometric_value": -0.9583333333333334,
+          "experimental_value": -0.957,
+          "outputs": {},
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "predictions_aggregator_v16_0": {
+      "sensitivity_report": {
+        "geometry.alpha_inverse": {
+          "geometric_value": 137.03670177575597,
+          "experimental_value": 137.035999177,
+          "outputs": {
+            "predictions.summary": {
+              "baseline_value": {
+                "gauge_unification": {
+                  "M_GUT": 6324555320336760.0,
+                  "alpha_GUT_inv": 42.730467973109285
+                },
+                "proton_decay": {
+                  "tau_p_years": 4.757399129595567e+34
+                },
+                "neutrino_mixing": {
+                  "theta_12": 33.59329049922625,
+                  "theta_13": 8.647304725338865,
+                  "theta_23": 49.75,
+                  "delta_CP": 278.4
+                },
+                "cosmology": {
+                  "w_eff": -0.8526812021213906,
+                  "Omega_DM_over_b": 5.399772129616132
+                },
+                "topology": {
+                  "n_gen": 3
+                }
+              },
+              "swapped_value": {
+                "gauge_unification": {
+                  "M_GUT": 6324555320336760.0,
+                  "alpha_GUT_inv": 42.730467973109285
+                },
+                "proton_decay": {
+                  "tau_p_years": 4.757399129595567e+34
+                },
+                "neutrino_mixing": {
+                  "theta_12": 33.59329049922625,
+                  "theta_13": 8.647304725338865,
+                  "theta_23": 49.75,
+                  "delta_CP": 278.4
+                },
+                "cosmology": {
+                  "w_eff": -0.8526812021213906,
+                  "Omega_DM_over_b": 5.399772129616132
+                },
+                "topology": {
+                  "n_gen": 3
+                }
+              },
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "predictions.falsifiable_count": {
+              "baseline_value": 10,
+              "swapped_value": 10,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "foundations_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "methodology_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "results_v16_2": {
+      "sensitivity_report": {
+        "geometry.alpha_inverse": {
+          "geometric_value": 137.03670177575597,
+          "experimental_value": 137.035999177,
+          "outputs": {},
+          "any_improvement": false
+        },
+        "geometry.w_zero": {
+          "geometric_value": -0.9583333333333334,
+          "experimental_value": -0.957,
+          "outputs": {},
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "integrity_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_a_spectral_registry_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_b_sum_rule_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_c_gauge_matrices_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_d_alignment_v16_2": {
+      "sensitivity_report": {
+        "geometry.alpha_inverse": {
+          "geometric_value": 137.03670177575597,
+          "experimental_value": 137.035999177,
+          "outputs": {
+            "validation.chi2_total": {
+              "baseline_value": 0.2304,
+              "swapped_value": 0.2304,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "validation.alignment_status": {
+              "baseline_value": "PASS",
+              "swapped_value": "PASS",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "appendix_e_brane_map_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_f_72gates_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_g_omega_seal_v22_0": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_h_288_roots_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_i_terminal_states_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_j_torsion_funnel_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_k_sterile_constants_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_l_omega_unwinding_v16_2": {
+      "sensitivity_report": {
+        "geometry.w_zero": {
+          "geometric_value": -0.9583333333333334,
+          "experimental_value": -0.957,
+          "outputs": {
+            "terminal.dominant_basin": {
+              "baseline_value": "Gauge_Ghost",
+              "swapped_value": "Gauge_Ghost",
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "terminal.restoration_probability": {
+              "baseline_value": 0.8848,
+              "swapped_value": 0.8848,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "appendix_z_terminal_ledger_v16_2": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "gr_spacetime_derivations_v19": {
+      "sensitivity_report": {
+        "constants.M_PLANCK": {
+          "geometric_value": 2.435e+18,
+          "experimental_value": 2.435e+18,
+          "outputs": {
+            "gravity.vielbein_rank": {
+              "baseline_value": 4,
+              "swapped_value": 4,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gravity.spin_connection_components": {
+              "baseline_value": 24,
+              "swapped_value": 24,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gravity.riemann_independent_4d": {
+              "baseline_value": 20,
+              "swapped_value": 20,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gravity.ricci_components_4d": {
+              "baseline_value": 10,
+              "swapped_value": 10,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gravity.newton_constant_theory": {
+              "baseline_value": 6.708832159377011e-39,
+              "swapped_value": 6.708832159377011e-39,
+              "baseline_sigma": 0.14395846738234636,
+              "swapped_sigma": 0.14395846738234636,
+              "improved": false,
+              "delta_sigma": 0.0
+            },
+            "gravity.planck_mass_from_g2": {
+              "baseline_value": 1.22089e+19,
+              "swapped_value": 1.22089e+19,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            },
+            "gravity.graviton_dof_4d": {
+              "baseline_value": 2,
+              "swapped_value": 2,
+              "baseline_sigma": null,
+              "swapped_sigma": null
+            }
+          },
+          "any_improvement": false
+        }
+      },
+      "improvement_suggestions": []
+    },
+    "appendix_r_vacuum_stability_v19": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "appendix_s_spectral_residue_v19": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "f_r_t_tau_gravity_v18": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "complete_residue_registry_v18": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "attractor_potential_v18": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    },
+    "baryon_asymmetry_v18": {
+      "sensitivity_report": {},
+      "improvement_suggestions": []
+    }
+  }
+}

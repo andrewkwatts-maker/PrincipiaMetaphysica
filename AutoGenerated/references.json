@@ -1,6 +1,6 @@
 {
   "version": "23.1",
-  "count": 177,
+  "count": 182,
   "references": {
     "acharya_witten_2001": {
       "id": "acharya_witten_2001",
@@ -32,6 +32,15 @@
       "pages": "A6",
       "url": "https://arxiv.org/abs/1807.06209",
       "notes": "Primary cosmological data set for validation",
+      "source_simulation": "abstract_v17_2"
+    },
+    "nufit_6_0": {
+      "id": "nufit_6_0",
+      "authors": "Esteban, I. et al. (NuFIT collaboration)",
+      "title": "NuFIT 6.0: Updated Global Analysis of Neutrino Oscillation Parameters",
+      "year": 2024,
+      "url": "http://www.nu-fit.org/",
+      "notes": "PMNS mixing angle and delta_CP data referenced in abstract; theta_13 and delta_CP fitted pending explicit Yukawa calculation",
       "source_simulation": "abstract_v17_2"
     },
     "maxwell_1865": {
@@ -209,6 +218,8 @@
       "title": "String Theory Vol. 1: An Introduction to the Bosonic String",
       "journal": "Cambridge University Press",
       "year": 1998,
+      "type": "book",
+      "url": "https://doi.org/10.1017/CBO9780511816079",
       "source_simulation": "unitary_filter_v16_2"
     },
     "polyakov1981": {
@@ -219,6 +230,8 @@
       "volume": "103",
       "pages": "207-210",
       "year": 1981,
+      "type": "journal",
+      "doi": "10.1016/0370-2693(81)90743-7",
       "source_simulation": "unitary_filter_v16_2"
     },
     "bars2006": {
@@ -227,6 +240,8 @@
       "title": "Gauge symmetry in phase space with spin, a basis for conformal symmetry and duality among many interactions",
       "journal": "arXiv:hep-th/0604012",
       "year": 2006,
+      "type": "preprint",
+      "url": "https://arxiv.org/abs/hep-th/0604012",
       "source_simulation": "unitary_filter_v16_2"
     },
     "conway1969": {
@@ -717,6 +732,31 @@
       "url": "https://doi.org/10.1093/acprof:oso/9780199215607.001.0001",
       "source_simulation": "cosmology_intro_v16_0"
     },
+    "corti2015": {
+      "id": "corti2015",
+      "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
+      "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
+      "journal": "Duke Mathematical Journal",
+      "volume": "164",
+      "pages": "1971-2092",
+      "year": 2015,
+      "arxiv": "1207.3529",
+      "url": "https://arxiv.org/abs/1207.3529",
+      "notes": "TCS construction of compact G2 manifolds from K3 surface fibrations",
+      "source_simulation": "cosmology_intro_v16_0"
+    },
+    "kachru2003": {
+      "id": "kachru2003",
+      "authors": "Kachru, S., Kallosh, R., Linde, A., Trivedi, S.P.",
+      "title": "de Sitter vacua in string theory",
+      "journal": "Phys. Rev. D",
+      "volume": "68",
+      "year": 2003,
+      "arxiv": "hep-th/0301240",
+      "url": "https://arxiv.org/abs/hep-th/0301240",
+      "notes": "KKLT mechanism for moduli stabilization via racetrack superpotential",
+      "source_simulation": "cosmology_intro_v16_0"
+    },
     "desi2024": {
       "id": "desi2024",
       "authors": "DESI Collaboration",
@@ -964,6 +1004,7 @@
       "title": "SI Brochure: The International System of Units (9th edition)",
       "publisher": "Bureau International des Poids et Mesures",
       "year": 2019,
+      "url": "https://www.bipm.org/en/publications/si-brochure",
       "notes": "Redefinition of SI base units making c exact",
       "source_simulation": "speed_of_light_v17_2"
     },
@@ -1183,17 +1224,7 @@
       "pages": "581-600",
       "year": "1996",
       "doi": "10.1007/BF02105068",
-      "source_simulation": "pneuma_mechanism_v22_0"
-    },
-    "hameroff_penrose2014": {
-      "id": "hameroff_penrose2014",
-      "authors": "Hameroff, S. and Penrose, R.",
-      "title": "Consciousness in the universe: A review of the 'Orch OR' theory",
-      "journal": "Physics of Life Reviews",
-      "volume": "11",
-      "pages": "39-78",
-      "year": "2014",
-      "doi": "10.1016/j.plrev.2013.08.002",
+      "note": "Included for gravitational quantum collapse aspects relevant to field dynamics, not speculative consciousness theories",
       "source_simulation": "pneuma_mechanism_v22_0"
     },
     "kklt2003": {
@@ -1237,6 +1268,17 @@
       "year": "1994",
       "url": "https://doi.org/10.1016/B978-0-08-057175-1.X5000-6",
       "note": "Foundational text for Tomita-Takesaki modular theory and its physical applications",
+      "source_simulation": "thermal_time_v22_0"
+    },
+    "hameroff_penrose2014": {
+      "id": "hameroff_penrose2014",
+      "authors": "Hameroff, S. and Penrose, R.",
+      "title": "Consciousness in the universe: A review of the 'Orch OR' theory",
+      "journal": "Physics of Life Reviews",
+      "volume": "11",
+      "pages": "39-78",
+      "year": "2014",
+      "doi": "10.1016/j.plrev.2013.08.002",
       "source_simulation": "thermal_time_v22_0"
     },
     "rovelli2004": {
@@ -1485,6 +1527,7 @@
       "journal": "Bulletin de la Societe Mathematique de France",
       "volume": "83",
       "pages": "279-330",
+      "doi": "10.24033/bsmf.1464",
       "notes": "Classification of holonomy groups including G2.",
       "source_simulation": "appendix_a_spectral_registry_v16_2"
     },
@@ -1765,6 +1808,7 @@
       "volume": "10",
       "pages": "288-307",
       "year": "1967",
+      "doi": "10.1090/pspum/010/0237943",
       "source_simulation": "appendix_s_spectral_residue_v19"
     },
     "gilkey-1984": {
@@ -1773,6 +1817,7 @@
       "title": "Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem",
       "journal": "Publish or Perish",
       "year": "1984",
+      "doi": "10.1201/9780203749791",
       "source_simulation": "appendix_s_spectral_residue_v19"
     },
     "dowker-critchley-1976": {
@@ -1805,6 +1850,7 @@
       "volume": "20",
       "pages": "47-87",
       "year": "1956",
+      "url": "https://mathworld.wolfram.com/SelbergTraceFormula.html",
       "source_simulation": "appendix_s_spectral_residue_v19"
     },
     "desi2025_de": {
@@ -1844,6 +1890,19 @@
       "notes": "Review of f(R) modified gravity",
       "source_simulation": "f_r_t_tau_gravity_v18"
     },
+    "nishizawa2018": {
+      "id": "nishizawa2018",
+      "authors": "Nishizawa, A.",
+      "title": "Generalized framework for testing gravity with gravitational-wave propagation",
+      "journal": "Phys. Rev. D",
+      "volume": "97",
+      "pages": "104037",
+      "year": 2018,
+      "arxiv": "1710.04825",
+      "url": "https://doi.org/10.1103/PhysRevD.97.104037",
+      "notes": "Framework for GW speed constraints on modified gravity",
+      "source_simulation": "f_r_t_tau_gravity_v18"
+    },
     "ref-pdg-2024": {
       "id": "ref-pdg-2024",
       "authors": "Particle Data Group",
@@ -1853,7 +1912,7 @@
       "volume": "110",
       "pages": "030001",
       "url": "https://pdg.lbl.gov/",
-      "notes": "Authoritative source for particle masses, mixing angles, coupling constants.",
+      "notes": "Source of reference particle masses, mixing angles, and coupling constants catalogued in the registry. These PDG values are stored alongside PM spectral residues for orientation; this simulation does not perform independent fits to PDG data.",
       "source_simulation": "complete_residue_registry_v18"
     },
     "ref-acharya-2004-g2": {
@@ -1864,7 +1923,7 @@
       "journal": "arXiv preprint",
       "arxiv": "hep-th/0109152",
       "url": "https://arxiv.org/abs/hep-th/0109152",
-      "notes": "Foundational paper on chiral fermion spectrum from G2 compactification.",
+      "notes": "Foundational paper on chiral fermion spectrum from G2 compactification. Provides the theoretical basis for interpreting Laplacian eigenvalues as particle modes.",
       "source_simulation": "complete_residue_registry_v18"
     },
     "ref-esteban-2020-nufit": {
@@ -1877,7 +1936,7 @@
       "pages": "178",
       "arxiv": "2007.14792",
       "url": "https://arxiv.org/abs/2007.14792",
-      "notes": "NuFIT global fits for neutrino oscillation parameters used in PMNS matrix.",
+      "notes": "Source of reference PMNS mixing angles and mass-squared splittings used to populate registry modes 41-44 and to compute neutrino mass eigenstates (modes 49-52). NuFIT central values and uncertainties are catalogued for reference; this simulation does not use NuFIT covariance matrices or perform chi-squared fits.",
       "source_simulation": "complete_residue_registry_v18"
     },
     "ref-nishino-2012-proton": {
@@ -1889,7 +1948,20 @@
       "volume": "102",
       "pages": "141801",
       "url": "https://doi.org/10.1103/PhysRevLett.102.141801",
-      "notes": "Super-K proton decay limits constraining GUT-scale predictions.",
+      "notes": "Source of the proton decay experimental lower limit (~10^34 yr) cited as a reference bound for the PM proton lifetime prediction. This simulation does not fit to Super-K data; the bound is used for contextual comparison only.",
+      "source_simulation": "complete_residue_registry_v18"
+    },
+    "ref-planck-2018": {
+      "id": "ref-planck-2018",
+      "authors": "Planck Collaboration (Aghanim, N. et al.)",
+      "title": "Planck 2018 results. VI. Cosmological parameters",
+      "year": 2020,
+      "journal": "Astronomy & Astrophysics",
+      "volume": "641",
+      "pages": "A6",
+      "arxiv": "1807.06209",
+      "url": "https://arxiv.org/abs/1807.06209",
+      "notes": "Source of the cosmological upper bound on sum of neutrino masses (< 0.12 eV at 95% CL) cited as a reference constraint for the PM prediction of sum(m_nu) ~ 0.06 eV. Cosmological parameters (H0, Omega_Lambda, T_CMB) in registry modes 85-92 also reference Planck 2018 central values for orientation.",
       "source_simulation": "complete_residue_registry_v18"
     },
     "svrcek_witten2006": {

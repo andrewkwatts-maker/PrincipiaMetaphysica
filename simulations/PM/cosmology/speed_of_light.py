@@ -467,7 +467,7 @@ class SpeedOfLightV17(SimulationBase):
                 label="(5.60)",
                 latex=r"c = \frac{\Delta_{\text{eff}}}{b_3} \cdot \mathcal{S}(Z_6) \cdot \frac{N_{\text{root}}}{N_{\text{bdy}}} \cdot \frac{N_{\text{shadow}}}{N_{\text{vis}}} \cdot \frac{N_{\text{root}} - b_3}{N_{\text{bdy}} + 1} \cdot 10^7 \cdot P_{3D}",
                 plain_text="c = (Δ_eff/b₃) · S(Z₆) · (N_root/N_bdy)(N_shadow/N_vis) · (N_root-b₃)/(N_bdy+1) · 10⁷ · P_3D",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description=(
                     f"Speed of light derived from G₂ manifold topology: the harmonic "
                     f"cycle fraction, Ricci flow stretching, bulk metric ratio, and "
@@ -583,7 +583,8 @@ class SpeedOfLightV17(SimulationBase):
                 category="DERIVED",
                 description=(
                     "D₁₀³ spatial projection factor for 3D propagation constants. "
-                    "Closes the gap from ~10,444 m/s to ~35 m/s for speed of light."
+                    "Adjusts the derived speed of light, reducing an initial deviation "
+                    "of ~10,444 m/s to a final deviation of ~35 m/s from the CODATA value."
                 ),
                 inputParams=["topology.nitzotzin_roots"],
                 outputParams=["cosmology.spatial_projection"],
@@ -626,12 +627,34 @@ class SpeedOfLightV17(SimulationBase):
                     rf"{c_derived:,.0f} \text{{ m/s}}"
                 ),
                 plain_text=f"c = {c_derived:,.2f} m/s",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description=f"Numerical evaluation of speed of light derivation chain",
                 inputParams=[],
                 outputParams=["cosmology.speed_of_light_derived"],
                 input_params=[],
                 output_params=["cosmology.speed_of_light_derived"],
+                derivation={
+                    "steps": [
+                        {
+                            "description": "Geometric ratio from G2 topology: b3/b2 = 24/12 = 2.0",
+                            "formula": rf"r_{{geo}} = \frac{{b_3}}{{b_2}} = {geo_ratio:.2f}"
+                        },
+                        {
+                            "description": "Stretch factor and bulk viscosity from torsional geometry",
+                            "formula": rf"f_{{stretch}} = {stretch_factor:.1f}, \quad \eta_{{bulk}} = {bulk_visc:.5f}"
+                        },
+                        {
+                            "description": "Chain product with gnostic conversion and spatial projection",
+                            "formula": rf"c = r_{{geo}} \times f_{{stretch}} \times \eta_{{bulk}} \times \kappa_{{gnostic}} \times 10^7 \times P_{{spatial}}"
+                        }
+                    ],
+                    "references": [
+                        "PM Section 5.6 - Speed of light derivation",
+                        "PM v17.2 - Pneuma tensioner framework"
+                    ],
+                    "method": "geometric_chain_product",
+                    "parentFormulas": ["speed-of-light-derivation", "pneuma-tensioner-z6", "decad3-projection"]
+                },
                 terms={
                     "c": f"Derived speed of light = {c_derived:,.2f} m/s",
                     "variance": f"Variance from CODATA = {variance:.2f} m/s",
@@ -699,7 +722,7 @@ class SpeedOfLightV17(SimulationBase):
                 units="sigma",
                 status="VALIDATION",
                 description=(
-                    f"Sigma-equivalent deviation from CODATA (using ~300 m/s ≈ 1ppm as 1σ): "
+                    f"Sigma-equivalent deviation from CODATA (framework-specific calibration: ~300 m/s ≈ 1ppm as 1σ): "
                     f"{sigma_equiv:.2f}σ. {'Excellent' if sigma_equiv < 1 else 'Good'} agreement."
                 ),
                 no_experimental_value=True
@@ -712,7 +735,9 @@ class SpeedOfLightV17(SimulationBase):
                 description=(
                     f"Decad³ projection factor for 3D propagation: "
                     f"P_3D = 1 + 1/(288×100) = {spatial_proj:.10f}. "
-                    f"Closes the gap from ~10,444 m/s to ~35 m/s."
+                    f"Adjusts the derived speed of light, reducing an initial "
+                    f"deviation of ~10,444 m/s to a final deviation of ~35 m/s "
+                    f"from the CODATA value."
                 ),
                 derivation_formula="decad3-projection",
                 no_experimental_value=True
@@ -765,6 +790,7 @@ class SpeedOfLightV17(SimulationBase):
                 "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
                 "journal": "Journal of Physical and Chemical Reference Data",
                 "year": 2024,
+                "url": "https://physics.nist.gov/cuu/Constants/",
                 "notes": "c = 299,792,458 m/s (exact by SI definition since 2019)"
             },
             {
@@ -773,7 +799,37 @@ class SpeedOfLightV17(SimulationBase):
                 "title": "SI Brochure: The International System of Units (9th edition)",
                 "publisher": "Bureau International des Poids et Mesures",
                 "year": 2019,
+                "url": "https://www.bipm.org/en/publications/si-brochure",
                 "notes": "Redefinition of SI base units making c exact"
+            },
+            {
+                "id": "kaluza1921",
+                "authors": "Kaluza, T.",
+                "title": "Zum Unitaetsproblem der Physik",
+                "journal": "Sitzungsberichte der Preussischen Akademie der Wissenschaften",
+                "year": 1921,
+                "url": "https://arxiv.org/abs/1803.08616",
+                "notes": "Original Kaluza-Klein extra-dimension proposal (English translation)"
+            },
+            {
+                "id": "joyce2000",
+                "authors": "Joyce, D.",
+                "title": "Compact Manifolds with Special Holonomy",
+                "publisher": "Oxford University Press",
+                "year": 2000,
+                "url": "https://arxiv.org/abs/math/9907045",
+                "notes": "Foundational text on G2 holonomy manifolds and compactification geometry"
+            },
+            {
+                "id": "hamilton1982",
+                "authors": "Hamilton, R.S.",
+                "title": "Three-manifolds with positive Ricci curvature",
+                "journal": "Journal of Differential Geometry",
+                "volume": "17",
+                "pages": "255-306",
+                "year": 1982,
+                "doi": "10.4310/jdg/1214436922",
+                "notes": "Introduction of the Ricci flow, used here for metric stretching on the G2 fiber"
             },
         ]
 

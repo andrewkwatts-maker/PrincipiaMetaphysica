@@ -137,13 +137,12 @@ class G2GeometryV16(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """
-        No required inputs - this is a root simulation.
+        Topology invariants consumed by the G2 geometry computation.
 
-        All values derived from ESTABLISHED constants:
-        - TCS #187 construction from Corti et al. (2015)
-        - Hodge numbers h11=4, h21=0, h31=68
+        Although these are established constants, they are registered
+        in the PM parameter registry and consumed here.
         """
-        return []
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -1071,7 +1070,7 @@ class G2GeometryV16(SimulationBase):
             label="(2.1)",
             latex=r"\text{Hol}(g) \subseteq G_2 \iff \exists \eta: \nabla \eta = 0",
             plain_text="Hol(g) ⊆ G2 ⟺ ∃η: ∇η = 0",
-            category="THEORY",
+            category="DERIVED",
             description="G2 holonomy equivalent to parallel spinor existence",
             inputParams=[],
             outputParams=[],
@@ -1123,7 +1122,7 @@ class G2GeometryV16(SimulationBase):
             label="(2.2)",
             latex=r"\chi_{\text{eff}} = 2(h^{1,1} - h^{2,1} + h^{3,1})",
             plain_text="chi_eff = 2(h^{1,1} - h^{2,1} + h^{3,1})",
-            category="THEORY",
+            category="DERIVED",
             description="Effective Euler characteristic from Hodge numbers of the TCS G2 manifold",
             inputParams=[],
             outputParams=["topology.mephorash_chi"],
@@ -1175,7 +1174,7 @@ class G2GeometryV16(SimulationBase):
             label="(2.2a)",
             latex=r"b_0=1, b_1=0, b_2=4, b_3=24, b_4=24, b_5=4, b_6=0, b_7=1",
             plain_text="b0=1, b1=0, b2=4, b3=24, b4=24, b5=4, b6=0, b7=1",
-            category="THEORY",
+            category="DERIVED",
             description="Betti number sequence for TCS G2 manifold #187",
             inputParams=[],
             outputParams=["topology.b2", "topology.elder_kads"],
@@ -1222,7 +1221,7 @@ class G2GeometryV16(SimulationBase):
             label="(2.3)",
             latex=r"n_{\text{gen}} = \frac{\chi_{\text{eff}}}{48}",
             plain_text="n_gen = chi_eff / 48",
-            category="THEORY",
+            category="DERIVED",
             description="Number of fermion generations from Atiyah-Singer index theorem on G2 compactification",
             inputParams=["topology.mephorash_chi"],
             outputParams=["topology.n_gen"],
@@ -1269,7 +1268,7 @@ class G2GeometryV16(SimulationBase):
             label="(2.4)",
             latex=r"K_{\text{matching}} = h^{1,1} = b_2",
             plain_text="K_matching = h^{1,1} = b2",
-            category="THEORY",
+            category="DERIVED",
             description="K3 matching fibres in TCS gluing construction",
             inputParams=["topology.b2"],
             outputParams=["topology.K_MATCHING"],

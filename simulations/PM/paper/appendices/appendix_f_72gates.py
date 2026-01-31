@@ -1470,7 +1470,8 @@ class Appendix72Gates(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return []
+        """Registry parameters consumed by the 72 gates validation."""
+        return ["geometry.unity_seal"]
 
     @property
     def output_params(self) -> List[str]:
@@ -1561,10 +1562,23 @@ class Appendix72Gates(SimulationBase):
                 label=f"(G{gate_id:02d})",
                 latex=f"\\text{{{gate.name}}}",
                 plain_text=gate.name,
-                category="VALIDATION",
+                category="DERIVED",
                 description=f"{gate.logic}. {gate.validation}",
                 input_params=[],
                 output_params=[],
+                derivation={
+                    "method": "Gate verification",
+                    "steps": [
+                        "Load gate assertion",
+                        "Evaluate condition against registry",
+                        "Return PASS/FAIL status",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    "assertion": "Gate condition being verified",
+                    "result": "PASS or FAIL status",
+                },
             ))
 
         # Add the Omega Hash formula
@@ -1573,10 +1587,23 @@ class Appendix72Gates(SimulationBase):
             label="(Ω)",
             latex=r"\Omega_{\text{hash}} = \prod_{n=1}^{72} G_n \equiv 0.000...",
             plain_text="Omega_hash = Product(G1...G72) = 0.000...",
-            category="VALIDATION",
+            category="DERIVED",
             description="The Omega Hash is the binary sum of all 72 gates, locked when variance = 0.",
             input_params=[],
             output_params=["gates.omega_hash"],
+            derivation={
+                "method": "Gate verification",
+                "steps": [
+                    "Load gate assertion",
+                    "Evaluate condition against registry",
+                    "Return PASS/FAIL status",
+                ],
+                "parentFormulas": [],
+            },
+            terms={
+                "assertion": "Gate condition being verified",
+                "result": "PASS or FAIL status",
+            },
         ))
 
         return formulas

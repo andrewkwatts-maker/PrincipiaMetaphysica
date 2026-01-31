@@ -71,10 +71,7 @@ class AppendixHProtonBranching(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.elder_kads",
-            "dimensions.orientation_sum",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

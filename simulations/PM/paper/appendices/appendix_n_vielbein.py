@@ -337,6 +337,7 @@ class AppendixNVielbein(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
+        """Registry parameters consumed by the vielbein appendix."""
         return []
 
     @property

@@ -90,10 +90,7 @@ class AppendixPG2Holonomy(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.mephorash_chi",
-            "topology.elder_kads",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:
@@ -748,7 +745,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 label="(P.8)",
                 latex=r"\phi|_{\Sigma^3} = \text{vol}_{\Sigma^3}",
                 plain_text="Associative 3-cycles are calibrated by phi",
-                category="THEORY",
+                category="DERIVED",
                 description="Calibration condition for associative 3-cycles",
                 input_params=[],
                 output_params=[],
@@ -773,7 +770,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 label="(P.9)",
                 latex=r"\psi|_{\Sigma^4} = \text{vol}_{\Sigma^4}",
                 plain_text="Coassociative 4-cycles are calibrated by psi",
-                category="THEORY",
+                category="DERIVED",
                 description="Calibration condition for coassociative 4-cycles",
                 input_params=[],
                 output_params=[],
@@ -823,7 +820,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 label="(P.11)",
                 latex=r"b_3 = \frac{\chi_{\text{eff}}}{2} = \frac{144}{2} = 24",
                 plain_text="Third Betti number from effective Euler characteristic",
-                category="THEORY",
+                category="DERIVED",
                 description="Computing b3 from chi_eff for Principia G2 manifold",
                 input_params=["topology.mephorash_chi"],
                 output_params=["topology.elder_kads"],
@@ -847,7 +844,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 label="(P.12)",
                 latex=r"n_{\text{gen}} = \frac{b_3}{8} = \frac{24}{8} = 3",
                 plain_text="Three fermion generations from topology",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description="Number of fermion generations from third Betti number",
                 input_params=["topology.elder_kads"],
                 output_params=["g2_holonomy.n_gen"],
@@ -872,7 +869,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 label="(P.13)",
                 latex=r"SU(3)_C \leftarrow \text{M2-branes wrapped on associative 3-cycles}",
                 plain_text="SU(3) color from M2-branes on associative cycles",
-                category="THEORY",
+                category="DERIVED",
                 description="Origin of SU(3) color from wrapped M2-branes",
                 input_params=[],
                 output_params=[],
@@ -896,7 +893,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 label="(P.14)",
                 latex=r"SU(2)_L \leftarrow \text{M5-branes wrapped on coassociative 4-cycles}",
                 plain_text="SU(2) weak from M5-branes on coassociative cycles",
-                category="THEORY",
+                category="DERIVED",
                 description="Origin of SU(2) weak from wrapped M5-branes",
                 input_params=[],
                 output_params=[],

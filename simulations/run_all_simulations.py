@@ -859,7 +859,7 @@ class SimulationRunner:
     Orchestrates execution of all v16 simulations in topological order.
     """
 
-    def __init__(self, verbose: bool = True, schema_mode: bool = False, uq_mode: bool = False):
+    def __init__(self, verbose: bool = True, schema_mode: bool = False, uq_mode: bool = False, use_experimental: bool = False):
         """
         Initialize the simulation runner.
 
@@ -867,10 +867,12 @@ class SimulationRunner:
             verbose: Whether to print progress messages
             schema_mode: Whether to use schema-compliant execution mode
             uq_mode: Whether to enable Monte Carlo uncertainty quantification
+            use_experimental: Whether to swap geometric inputs for experimental values
         """
         self.verbose = verbose
         self.schema_mode = schema_mode
         self.uq_mode = uq_mode
+        self.use_experimental = use_experimental
         self.registry = PMRegistry.get_instance()
         self.results: List[SimulationResult] = []
         self.schema_results: List[Dict[str, Any]] = []  # Schema-compliant results
@@ -1286,6 +1288,12 @@ class SimulationRunner:
 
                 # Store schema result
                 self.schema_results.append(schema_result.to_dict())
+            elif self.use_experimental:
+                # Execute with experimental inputs swapped in
+                exp_result = sim.execute_with_sensitivity(
+                    self.registry, use_experimental=True, verbose=False
+                )
+                computed_results = exp_result.get("results", {})
             else:
                 computed_results = sim.execute(self.registry, verbose=False)
 
@@ -2502,6 +2510,16 @@ def main():
         action="store_true",
         help="Skip DemonLockGuard pre-flight check (use for debugging only)"
     )
+    parser.add_argument(
+        "--sensitivity",
+        action="store_true",
+        help="Run per-input sensitivity analysis after the main pipeline completes"
+    )
+    parser.add_argument(
+        "--use-experimental",
+        action="store_true",
+        help="Replace geometric inputs with experimental values for all simulations"
+    )
 
     args = parser.parse_args()
 
@@ -2535,9 +2553,143 @@ def main():
     runner = SimulationRunner(
         verbose=not args.quiet,
         schema_mode=args.schema,
-        uq_mode=args.uq
+        uq_mode=args.uq,
+        use_experimental=args.use_experimental,
     )
     output_data = runner.run_all()
+
+    # =========================================================================
+    # SENSITIVITY ANALYSIS (optional, --sensitivity flag)
+    # =========================================================================
+    # Post-processing pass: after all simulations pass and OMEGA=0 is verified,
+    # run per-input sensitivity sweeps on every simulation that has swappable
+    # inputs.  Failures here do NOT break the main pipeline.
+    # =========================================================================
+    if args.sensitivity:
+        try:
+            import logging
+            _sens_logger = logging.getLogger('principia.sensitivity')
+            _sens_logger.setLevel(logging.INFO)
+            if not _sens_logger.handlers:
+                _sh = logging.StreamHandler()
+                _sh.setFormatter(logging.Formatter('[%(name)s] %(message)s'))
+                _sens_logger.addHandler(_sh)
+
+            if not args.quiet:
+                print("\n" + "=" * 80)
+                print("SENSITIVITY ANALYSIS - POST-PIPELINE SWEEP")
+                print("=" * 80)
+
+            sensitivity_reports: Dict[str, Any] = {}
+            improvement_count = 0
+            over_1sigma_sims: List[str] = []
+
+            # Collect all simulations from all phases
+            all_pipeline_sims: List[SimulationBase] = []
+            for _phase_sims in runner.phases.values():
+                all_pipeline_sims.extend(_phase_sims)
+
+            for sim in all_pipeline_sims:
+                sim_id = sim.metadata.id
+
+                # Skip seed simulations that have no required_inputs
+                if not sim.required_inputs:
+                    if not args.quiet:
+                        print(f"  [SKIP] {sim_id} (no required inputs)")
+                    continue
+
+                try:
+                    if not args.quiet:
+                        print(f"  [SENS] Running sensitivity for {sim_id}...")
+
+                    report = sim.run_sensitivity_analysis(
+                        runner.registry, verbose=(not args.quiet)
+                    )
+
+                    sensitivity_reports[sim_id] = {
+                        "sensitivity_report": report.get("sensitivity_report", {}),
+                        "improvement_suggestions": report.get("improvement_suggestions", []),
+                    }
+
+                    suggestions = report.get("improvement_suggestions", [])
+                    improvement_count += len(suggestions)
+
+                    # Check baseline outputs for >1 sigma deviations
+                    baseline_results = report.get("results", {})
+                    output_defs = {
+                        p.path: p for p in sim.get_output_param_definitions()
+                    }
+                    for out_path, val in baseline_results.items():
+                        pdef = output_defs.get(out_path)
+                        if (pdef and pdef.experimental_bound is not None
+                                and pdef.uncertainty is not None
+                                and pdef.uncertainty != 0):
+                            try:
+                                sigma = abs(float(val) - float(pdef.experimental_bound)) / float(pdef.uncertainty)
+                                if sigma > 1.0 and sim_id not in over_1sigma_sims:
+                                    over_1sigma_sims.append(sim_id)
+                            except (TypeError, ValueError):
+                                pass
+
+                except Exception as exc:
+                    if not args.quiet:
+                        print(f"  [WARN] Sensitivity failed for {sim_id}: {exc}")
+                    sensitivity_reports[sim_id] = {"error": str(exc)}
+
+            # -----------------------------------------------------------------
+            # Print summary table
+            # -----------------------------------------------------------------
+            if not args.quiet:
+                print("\n" + "-" * 80)
+                print("SENSITIVITY SUMMARY")
+                print("-" * 80)
+                print(f"Simulations analysed:          {len(sensitivity_reports)}")
+                print(f"Simulations with >1sigma gap:  {len(over_1sigma_sims)}")
+                print(f"Total improvement suggestions: {improvement_count}")
+
+                if over_1sigma_sims:
+                    print("\nSimulations with outputs >1 sigma from experiment:")
+                    for sid in over_1sigma_sims:
+                        print(f"  - {sid}")
+
+                if improvement_count > 0:
+                    print("\nInputs where experimental swap improves agreement:")
+                    for sid, rep in sensitivity_reports.items():
+                        for sug in rep.get("improvement_suggestions", []):
+                            print(
+                                f"  - [{sid}] {sug['input_path']}: "
+                                f"geometric={sug.get('geometric_value', '?')}, "
+                                f"experimental={sug.get('experimental_value', '?')}"
+                            )
+                print("-" * 80)
+
+            # -----------------------------------------------------------------
+            # Save report to AutoGenerated/sensitivity_report.json
+            # -----------------------------------------------------------------
+            try:
+                sensitivity_output = {
+                    "timestamp": datetime.now().isoformat(),
+                    "simulations_analysed": len(sensitivity_reports),
+                    "over_1sigma_simulations": over_1sigma_sims,
+                    "total_improvement_suggestions": improvement_count,
+                    "reports": sensitivity_reports,
+                }
+                sens_path = os.path.join(
+                    str(PROJECT_ROOT), "AutoGenerated", "sensitivity_report.json"
+                )
+                os.makedirs(os.path.dirname(sens_path), exist_ok=True)
+                with open(sens_path, 'w', encoding='utf-8') as f:
+                    json.dump(sensitivity_output, f, indent=2, cls=NumpyJSONEncoder)
+                if not args.quiet:
+                    print(f"[OK] Sensitivity report written to: {sens_path}")
+            except Exception as exc:
+                if not args.quiet:
+                    print(f"[WARN] Could not write sensitivity report: {exc}")
+
+        except Exception as exc:
+            # Top-level guard: sensitivity failures must never crash the pipeline
+            if not args.quiet:
+                print(f"\n[WARN] Sensitivity analysis aborted: {exc}")
 
     # =========================================================================
     # v17.1: POST-SIMULATION STERILITY REPORT
@@ -2673,8 +2825,6 @@ def main():
     # Generate validation statistics (always run to ensure statistics.json is populated)
     try:
         from scripts.generation.generate_statistics import generate_statistics, OUTPUT_FILE
-        import json
-        import os
 
         if not args.quiet:
             print("\n" + "=" * 80)

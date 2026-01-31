@@ -83,10 +83,7 @@ class AppendixNG2Landscape(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.n_gen",
-            "topology.mephorash_chi",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:
@@ -336,7 +333,7 @@ class AppendixNG2Landscape(SimulationBase):
                 label="(N.2)",
                 latex=r"n_{\text{gen}} = \frac{b_3}{8} = \frac{24}{8} = 3",
                 plain_text="n_gen = b_3/8 = 24/8 = 3",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Generation number from third Betti number. Identical for all 49 "
                     "valid topologies."
