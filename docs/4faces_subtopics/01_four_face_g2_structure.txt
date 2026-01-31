@@ -1,0 +1,68 @@
+# Sub-Topic 01: Four-Face G₂ Sub-Sector Structure
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~2055-2432 (primary), ~1959-2054 (setup)
+# Status: NEW CONCEPT - Core innovation from document
+# Target Simulations: 
+#   - simulations/PM/geometry/g2_geometry.py
+#   - simulations/PM/geometry/geometric_anchors.py
+#   - simulations/PM/cosmology/dark_energy.py (hidden sector contributions)
+#   - NEW: simulations/PM/geometry/four_face_structure.py
+
+## Summary
+The h^{1,1}=4 Kähler moduli sectors of TCS G₂ #187 are reinterpreted as 
+four co-existing effective G₂ "faces" per shadow, yielding 8 total effective 
+G₂ realizations across both shadows. Each face selects a different combination 
+of compactified directions: (7,0) core + (3,1) leakage + (2,0) bridge remnant.
+
+## Key Concepts
+
+### 1. Four Kähler Moduli as "Four Dice Rolls"
+- h^{1,1}=4 means four independent Kähler moduli T₁, T₂, T₃, T₄
+- Each controls the size/shape of distinct 2-cycle classes in G₂
+- Racetrack stabilization: V({T_i}) = Σ Λ_i exp(-a_i T_i) + Λ₀, a_i = 24/i
+- Stabilization proceeds independently in each shadow
+
+### 2. Per-Face Direction Decomposition
+Each face inherits: (7,0)_core + (3,1)_leakage + (2,0)_bridge_remnant
+- Face 1: T₁ >> T₂,₃,₄ → purest 7,0 G₂ + minimal leakage (OUR WORLD)
+- Face 2: T₂ dominant → partial 3,1 leakage + 2,0 bridge remnant
+- Face 3: T₃ dominant → different 3,1 leakage pattern  
+- Face 4: T₄ dominant → balanced 2,0 retention
+
+### 3. Leakage Coupling Strength (~0.57)
+α_leak ≈ 1/√(χ_eff/b₃) = 1/√6 ≈ 0.577
+- Hidden faces interact at ~57% strength compared to visible sector
+- Candidates for dark matter, sterile neutrinos, ultra-light axions
+
+## New Formulas
+
+### Per-Face Moduli VEV
+T_i^(f) = (1/a_i) ln(Λ_i/Λ₀ · χ_eff/b₃), a_i = 24/i, f=1,2,3,4
+
+### Leakage Coupling Strength  
+α_leak^(f) = 1/√(χ_eff/b₃ · exp(T_i^(f)/T_max)) ≈ 0.57 (f=2,3,4)
+
+### Effective Extra-Dimensional Mass Scale
+m_extra^(f) = M_Pl · exp(-T_i^(f)/2) ≈ TeV-PeV range
+
+### Shadow-to-Shadow Moduli Difference
+ΔT_i = T_i^(1) - T_i^(2) ≈ ln(flux_asymmetry)/a_i ~ 1/24 ≈ 0.0417
+
+## Physical Implications
+1. We live in Face 1 of Shadow 1 (minimal leakage, full SM)
+2. Faces 2-4 are hidden sectors (KK modes, sterile neutrinos, axions)
+3. Mirror shadow has opposite chirality + its own 4 faces
+4. Total: 8 effective G₂ realizations, only 1 visible to us
+
+## Testable Predictions
+- Precision flavor physics deviations (Δθ₂₃ ~ 0.1°)
+- Moduli-mediated long-range forces (strength ~0.57 × G)
+- Extra-dimensional GW echoes (η ≈ 0.10)
+- Anomalous neutrino oscillations or proton decay branching ratios
+
+## Implementation Priority: HIGHEST
+This is the central new concept from the document. Requires:
+1. New simulation file: four_face_structure.py
+2. Updates to geometric_anchors.py (add h^{1,1}=4 face decomposition)
+3. Updates to g2_geometry.py (add per-face moduli formulas)
+4. Integration with dark matter / hidden sector simulations

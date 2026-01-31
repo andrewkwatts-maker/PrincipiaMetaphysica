@@ -1,0 +1,53 @@
+# Sub-Topic 03: Field Equations from Master Action
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~300-600 (field equation derivations)
+# Status: FORMULA UPDATE - Enhances existing derivation files
+# Target Simulations:
+#   - simulations/PM/derivations/gr_spacetime.py
+#   - simulations/PM/derivations/gauge_sector_complete.py
+#   - simulations/PM/derivations/matter_sector_complete.py
+#   - simulations/PM/cosmology/f_r_t_tau_gravity.py
+
+## Summary
+Field equations are derived by varying the 27D master action with respect to
+each dynamical field (metric, flux, fermions, moduli, torsion). After G₂
+compactification, these yield the effective 4D equations governing gravity,
+gauge forces, and matter.
+
+## Key Equations
+
+### 1. 27D Einstein Equations (with torsion)
+G_MN + Λ₂₇ g_MN = κ₂₇² (T_MN^flux + T_MN^moduli + T_MN^torsion)
+
+### 2. G-Flux Equation of Motion
+d*F₄ + (1/2)F₄ ∧ F₄ = J₃ (source current from branes)
+
+### 3. 4D Effective Einstein Equations
+G_μν + Λ_eff g_μν = 8πG_N T_μν^eff
+where:
+- Λ_eff = Λ₂₇/V_internal ≈ 10^{-52} m^{-2}
+- G_N = G₂₇/V_internal
+- T_μν^eff includes moduli kinetic + potential + flux energy density
+
+### 4. Moduli Equations
+□T_i + ∂V/∂T_i = 0 (racetrack stabilization)
+V = Σ Λ_i exp(-a_i T_i) + Λ₀
+
+### 5. Torsion Equation
+T^a_{bc} = (1/6)ε_{bcdefg} φ^{defg} (from G₂ associative 3-form)
+
+### 6. Dirac Equation on G₂
+(iγ^μ D_μ + Σ_n R_n m_n γ⁵) ψ = 0
+where R_n = exp(-λ_n/b₃) are spectral residue mass corrections
+
+### 7. Ricci Flow (moduli evolution)
+∂g_ij/∂τ = -2R_ij + (2/n)R g_ij (Hamilton-Perelman)
+Applied to G₂ metric under racetrack potential constraints
+
+## Updates Needed
+1. gr_spacetime.py: Add full 27D→4D Einstein equation chain
+2. gauge_sector_complete.py: Add flux EOM and SO(10) breaking
+3. matter_sector_complete.py: Add Dirac on G₂ with spectral residues
+4. f_r_t_tau_gravity.py: Ensure f(R,T,τ) matches 4D effective gravity
+
+## Implementation Priority: HIGH

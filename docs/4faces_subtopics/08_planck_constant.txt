@@ -1,0 +1,56 @@
+# Sub-Topic 08: Planck Constant Geometric Derivation
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~3602-3654 (complete derivation)
+# Status: FORMULA UPDATE - New derivation for constants simulations
+# Target Simulations:
+#   - simulations/PM/constants/speed_of_light_const.py (related)
+#   - NEW: simulations/PM/constants/planck_constant.py
+
+## Summary
+Geometric derivation of ℏ = 1.0545718 × 10⁻³⁴ J·s from G₂ volume
+scaling, spectral residues, spectral gap, and flux quantization.
+
+## Master Formula
+ℏ = Vol(V₇)^{2/7} · b₃/χ_eff · R_ℏ · f_flux⁻¹ · k_gimel⁻¹ · u_phys,ℏ
+
+## Expanded
+ℏ = (√(χ_eff/b₃))^{2/7} · b₃/χ_eff · exp(-λ_ℏ/b₃) · 1 · (12+1/π)⁻¹ · u_phys,ℏ
+
+## Key Steps
+
+### 1. Quantum Scale from G₂ Volume
+- Fundamental quantum length: ℓ_quantum ~ Vol(V₇)^{1/7}
+- Action scale: ℏ ~ Vol(V₇)^{2/7} · b₃ / χ_eff
+- 2/7 from Weyl scaling in d=7
+
+### 2. Spectral Residue (Quantum Mode)
+- n_ℏ ≈ 1 (fundamental quantum mode, lowest in registry)
+- R_ℏ = exp(-λ_ℏ/b₃)
+- λ_ℏ = (n_ℏ/(c₇·Vol))^{2/7}
+- Low mode → mild suppression
+
+### 3. Spectral Gap Suppression
+- k_gimel = 12 + 1/π ≈ 12.318
+- From associative 3-cycles on G₂
+- k_gimel⁻¹ ≈ 0.0812
+
+### 4. Numerical Assembly
+- Core scale: Vol^{2/7} · b₃/χ_eff ≈ 6^{1/7} · 24/144 ≈ 1.14 · 0.167 ≈ 0.19
+- Gap suppression: × 0.0812
+- Residue: × R_ℏ (mild)
+- u_phys,ℏ: converts to SI J·s
+
+## Physical Insight
+The quantum of action ℏ emerges from the G₂ volume scaling and
+the spectral gap structure. The low mode index (n_ℏ ≈ 1) means
+quantum mechanics involves the most fundamental spectral mode,
+while gravity (n_G ~ 100) is deep in the tower — explaining why
+quantum effects dominate at small scales while gravity dominates at large.
+
+## Updates Needed
+1. NEW: Create planck_constant.py simulation
+2. Register ℏ derivation in FormulasRegistry
+3. Connect to speed_of_light derivation (shared spectral framework)
+4. Add to fundamental constants validation suite
+
+## Implementation Priority: MEDIUM
