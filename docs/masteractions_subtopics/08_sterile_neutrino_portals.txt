@@ -1,0 +1,88 @@
+SUB-TOPIC 08: Sterile Neutrino Portals
+Source: MasterActionsPortalsAxionsAndSterileNeutrenos.txt (Part 3)
+================================================================
+
+Detailed, formal mathematical derivation of sterile neutrino portals in Principia Metaphysica v23.1.
+Sterile neutrino portals are one of the most natural and predictive dark-sector couplings in the theory.
+
+Geometric Origins
+------------------
+They arise geometrically from:
+- Flux threading the G2 manifold (chi_eff = 144, b_3 = 24 -> 3 generations + sterile right-handed states)
+- Opposite chirality in the mirror shadow (sterile neutrinos are naturally right-handed)
+- Bridge-mediated mixing (Euclidean bridge allows small Dirac/Majorana mass terms across shadows)
+- Moduli vevs in hidden faces (Faces 2-4) generating effective portal operators
+
+1. Geometric Origin of Sterile Neutrinos
+------------------------------------------
+
+Step 1. Chiral asymmetry across shadows
+  Our shadow (Shadow 1) has left-handed SU(2)_L doublets (nu_L) and right-handed singlets (nu_R) from G2 spinor decomposition (64 -> 3 generations + sterile states).
+  Mirror shadow (Shadow 2) has opposite chirality:
+  nu_L <-> nu_R under bridge OR (R_perp flips chirality projection).
+
+Step 2. Sterile states from flux & bridge
+  Effective number of right-handed neutrino singlets:
+  n_sterile = chi_eff/48 - 3 = 3 - 3 = 0 (visible sector)
+  But bridge flux leakage adds extra sterile states:
+  n_sterile_eff = (chi_eff/48) * alpha_leak^(f) * 3 ~ 3 * 0.57 ~ 1.71 (per hidden face)
+  Total effective sterile neutrinos (sum over 3 hidden faces):
+  n_sterile_total ~ 3 * 1.71 ~ 5.13 (light sterile states)
+
+2. Sterile Neutrino Mass Generation (Geometric Portal)
+--------------------------------------------------------
+
+Dirac portal term (active-sterile mixing):
+  L_Dirac = y_as nu_bar_L phi nu_R^sterile + h.c.
+
+Majorana mass term (from hidden-face moduli vevs):
+  L_Majorana = (1/2) M_s nu_bar_R^sterile nu_R^{sterile,c}
+
+Parameters:
+  y_as ~ alpha_leak^(f) ~ 0.57 (portal suppression)
+  M_s ~ M_Pl e^{-T_i^(f)/2} ~ 10^2 - 10^4 GeV (TeV-PeV scale, hidden-face moduli)
+
+Effective low-energy seesaw mass:
+  m_nu^eff ~ y_as^2 v^2 / M_s ~ (0.57)^2 * (246)^2 / M_s ~ 2e4 / M_s eV
+
+For M_s ~ 10^4 GeV:
+  m_nu^eff ~ 2e-3 eV (consistent with atmospheric Delta_m^2 ~ 2.5e-3 eV^2)
+
+Sterile mass scale:
+  m_s ~ M_s ~ 10^4 GeV (TeV-PeV range)
+
+Mixing angle:
+  sin^2(2*theta) ~ 4 * m_nu^eff / m_s ~ 4 * 2e-3 / 10^4 ~ 8e-7 (small mixing)
+
+3. Portal Lagrangian Term (Explicit)
+--------------------------------------
+Sterile neutrino portal (effective operator after seesaw):
+  L_sterile = (y_as * v / M_s) nu_bar_L nu_R^sterile phi + (1/2) M_s nu_bar_R^sterile nu_R^{sterile,c} + h.c.
+
+Numerical strength:
+  y_as * v / M_s ~ 0.57 * 246 / 10^4 ~ 0.014 eV
+  Consistent with 3+1 sterile neutrino models (e.g., MiniBooNE, LSND anomalies).
+
+4. Observables & Detection Implications
+------------------------------------------
+
+| Observable                  | Formula/Estimate                               | Expected Value     | Experiment                    |
+|-----------------------------|-------------------------------------------------|--------------------|---------------------------------|
+| Sterile neutrino mass       | m_s ~ M_s                                      | 10^2-10^4 GeV      | LHC monojet + missing energy   |
+| Active-sterile mixing       | sin^2(2*theta) ~ 4 m_nu^eff / m_s              | ~10^{-6}-10^{-4}  | DUNE, IceCube, KM3NeT          |
+| Short-baseline anomalies    | P(nu_mu -> nu_e) ~ sin^2(2*theta) sin^2(...)    | ~10^{-3}-10^{-2}  | MiniBooNE, MicroBooNE, SBN     |
+| Cosmological impact         | Delta_N_eff ~ 0.1-0.3 from sterile states       | ~0.1-0.3           | CMB-S4, DESI                   |
+| Relic density contribution  | Omega_DM h^2 ~ (alpha_leak/0.57)^2 * ...       | Fraction of 0.12   | Direct detection, cosmology    |
+
+Key predictions:
+  - Sterile neutrinos are TeV-PeV scale (hidden-face moduli mass)
+  - Mixing angle ~10^{-6} to 10^{-4} (small but detectable)
+  - Contributes to short-baseline anomalies (MiniBooNE excess) and Delta_N_eff
+
+Conclusion
+----------
+Sterile neutrino portals are one of the most natural and testable predictions of the theory:
+- They emerge geometrically from flux leakage + opposite chirality in the mirror shadow.
+- Masses are set by hidden-face moduli (TeV-PeV).
+- Mixing is small (~10^{-6} to 10^{-4}) but large enough to explain anomalies and be probed by oscillation experiments.
+This is a high-priority test of the framework -- confirmation would strongly support the dual-shadow + four-face structure.

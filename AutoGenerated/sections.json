@@ -102,7 +102,7 @@
         "validation.exact_matches",
         "statistics.certificates_total"
       ],
-      "timestamp": "2026-01-31T22:00:01.267551"
+      "timestamp": "2026-02-01T08:56:00.510001"
     },
     "1": {
       "id": "1",
@@ -752,7 +752,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-01-31T22:00:01.267605"
+      "timestamp": "2026-02-01T08:56:00.510069"
     },
     "2": {
       "id": "2",
@@ -2002,7 +2002,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-01-31T22:00:01.268378"
+      "timestamp": "2026-02-01T08:56:00.511185"
     },
     "2.7": {
       "id": "2",
@@ -2342,7 +2342,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-01-31T22:00:01.268541"
+      "timestamp": "2026-02-01T08:56:00.511477"
     },
     "V.1": {
       "id": "validation",
@@ -2464,7 +2464,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-31T22:00:01.268638"
+      "timestamp": "2026-02-01T08:56:00.511663"
     },
     "3.4": {
       "id": "3",
@@ -2628,7 +2628,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-31T22:00:01.268690"
+      "timestamp": "2026-02-01T08:56:00.511771"
     },
     "3.6": {
       "id": "3",
@@ -2800,7 +2800,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-31T22:00:01.268769"
+      "timestamp": "2026-02-01T08:56:00.511876"
     },
     "3": {
       "id": "3",
@@ -3004,7 +3004,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-01-31T22:00:01.299002"
+      "timestamp": "2026-02-01T08:56:00.542432"
     },
     "3.2": {
       "id": "3",
@@ -3392,7 +3392,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-01-31T22:00:01.299199"
+      "timestamp": "2026-02-01T08:56:00.542675"
     },
     "3.1": {
       "id": "3",
@@ -3450,7 +3450,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-31T22:00:01.299312"
+      "timestamp": "2026-02-01T08:56:00.542804"
     },
     "4.2": {
       "id": "4",
@@ -3580,7 +3580,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-01-31T22:00:01.299376"
+      "timestamp": "2026-02-01T08:56:00.542885"
     },
     "4.1": {
       "id": "4",
@@ -3868,7 +3868,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-31T22:00:01.299455"
+      "timestamp": "2026-02-01T08:56:00.542976"
     },
     "4.3": {
       "id": "4",
@@ -4108,7 +4108,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-31T22:00:01.299577"
+      "timestamp": "2026-02-01T08:56:00.543118"
     },
     "4.6": {
       "id": "4",
@@ -4123,7 +4123,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "In TCS G2 manifolds, the twisted connected sum construction glues two asymptotically cylindrical building blocks (each a K3-fibered Calabi-Yau threefold cross S^1) along a common neck region. Matter fields localize on associative 3-cycles in one building block, while the Higgs multiplet localizes on 3-cycles in the other. The neck provides a physical barrier: dimension-6 proton decay operators (qq -> ql via leptoquark exchange) are suppressed by the exponentially small wavefunction overlap across the neck."
+          "content": "In TCS G2 manifolds, the twisted connected sum construction glues two asymptotically cylindrical building blocks (each a K3-fibered Calabi-Yau threefold cross S^1) along a common neck region diffeomorphic to S^1 x K3. The key physical insight is that matter fields and Higgs fields must localize in opposite building blocks due to their distinct topological requirements: chiral fermions (quarks and leptons) arise as zero modes of the Dirac operator on associative 3-cycles, which support the correct SU(3) x SU(2) x U(1) representations, while the Higgs doublet responsible for electroweak symmetry breaking localizes on coassociative 4-cycles in the opposite block, where the scalar field boundary conditions are satisfied. The neck region acts as a topological barrier between these two sectors: any interaction coupling matter to Higgs (such as the baryon-number-violating dimension-6 operators qqql that mediate proton decay via leptoquark exchange) must tunnel across the neck, and the amplitude for this process is exponentially suppressed by the wavefunction overlap integral."
         },
         {
           "type": "paragraph",
@@ -4138,7 +4138,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This cycle separation leads to an exponential suppression of the wavefunction overlap between matter and Higgs fields:"
+          "content": "This cycle separation leads to an exponential suppression of the wavefunction overlap between matter and Higgs fields. Physically, the harmonic zero-mode wavefunctions decay as exp(-lambda_1 * x) along the neck cylinder, where lambda_1 = 2*pi/R is the first eigenvalue of the Laplacian on the K3 cross-section. The overlap integral thus scales as:"
         },
         {
           "type": "formula",
@@ -4149,7 +4149,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For K=4, this gives S = exp(1/4) ≈ 2.1. The proton lifetime is then given by the standard GUT formula multiplied by this geometric suppression factor:"
+          "content": "For K=4, this gives S = exp(1/4) ~ 1.284. To connect this to the proton lifetime, we consider the dimension-6 operators responsible for proton decay. In GUTs, integrating out the heavy X and Y gauge bosons at M_GUT generates effective baryon-number-violating operators of the form O_6 ~ (alpha_GUT / M_GUT^2)(qqql), where the four-fermion vertex couples two quarks, a quark, and a lepton (e.g., (u_R^c d_R)(u_L e_L) for p -> e+pi0). The decay rate Gamma ~ |C_6|^2 * m_p^5 scales as alpha_GUT^2 * m_p^5 / M_GUT^4, reflecting the dimension-6 nature of the operator. In the TCS framework, the Wilson coefficient C_6 acquires an additional factor of exp(-pi*d/R) from the suppressed wavefunction overlap, so the lifetime (tau_p = 1/Gamma) is enhanced by S. The full formula reads:"
         },
         {
           "type": "formula",
@@ -4160,7 +4160,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where C = 3.82 x 10^33 years is a prefactor incorporating hadronic matrix elements from lattice QCD (proton-to-vacuum transition amplitudes), Standard Model phase space factors, and RG running of the dimension-6 Wilson coefficients from the GUT scale down to the proton mass. The M_GUT^4 suppression reflects the dimension-6 operator structure (two quark fields, one lepton field, one Higgs field) at the unification scale."
+          "content": "where C = 3.82 x 10^33 years is a prefactor that absorbs several well-determined Standard Model contributions: (i) the hadronic matrix element alpha_H ~ 0.015 GeV^3 from lattice QCD, encoding the proton-to-vacuum transition amplitude <pi0|(ud)_R u_L|p>; (ii) phase space factors for the two-body final state (e+ pi0); and (iii) renormalization group running of the dimension-6 Wilson coefficients from M_GUT down to the proton mass scale, which enhances the coefficient by a factor of ~2-3 due to QCD corrections. The M_GUT^4 suppression in the denominator of the decay rate is the hallmark signature of dimension-6 operators: each qqql vertex carries two powers of 1/M_GUT from the heavy gauge boson propagator, and the rate depends on |C_6|^2 ~ alpha_GUT^2/M_GUT^4."
         },
         {
           "type": "paragraph",
@@ -4174,7 +4174,11 @@
         },
         {
           "type": "paragraph",
-          "content": "This is above the Super-Kamiokande lower bound of 2.4 × 10³⁴ years (90% CL), making it consistent with current experimental constraints while remaining testable in future experiments like Hyper-Kamiokande."
+          "content": "This is above the Super-Kamiokande lower bound of 2.4 x 10^34 years (90% CL) for the p -> e+pi0 channel, making it consistent with current experimental constraints while sitting close enough to the bound to be decisively testable by next-generation experiments."
+        },
+        {
+          "type": "paragraph",
+          "content": "Hyper-Kamiokande (HK), with its 187 kton fiducial water Cherenkov volume (approximately 8x Super-K), will achieve sensitivity to proton lifetimes up to ~10^35 years after 10 years of operation. The predicted tau_p ~ 3.9 x 10^34 years falls squarely within HK's discovery reach for the p -> e+pi0 channel, which produces a characteristic back-to-back Cherenkov ring signature (positron + two gammas from pi0 decay). If HK observes proton decay at this lifetime with the predicted branching ratio BR ~ 0.25, it would constitute direct evidence for both grand unification and the TCS geometric suppression mechanism. Conversely, a null result pushing the bound above ~6 x 10^34 years would require either a larger K matching number (increasing the suppression) or a higher M_GUT, constraining the geometric moduli of the G2 compactification."
         },
         {
           "type": "paragraph",
@@ -4188,13 +4192,13 @@
         },
         {
           "type": "paragraph",
-          "content": "This geometric selection rule arises from the sum over orientations of the matter and Higgs cycles within the TCS G2 manifold."
+          "content": "This geometric selection rule arises from the sum over orientations of the associative matter 3-cycles within the TCS G2 manifold. Of the 24 possible orientations of the 3-cycle relative to the G2 structure, exactly 12 contribute to the e+pi0 channel (those aligned with the SU(5) -> SU(3) x SU(2) x U(1) breaking pattern), giving BR = (12/24)^2 = 0.25."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "In TCS G2 manifolds, the twisted connected sum construction glues two asymptotically cylindrical building blocks (each a K3-fibered Calabi-Yau threefold cross S^1) along a common neck region. Matter fields localize on associative 3-cycles in one building block, while the Higgs multiplet localizes on 3-cycles in the other. The neck provides a physical barrier: dimension-6 proton decay operators (qq -> ql via leptoquark exchange) are suppressed by the exponentially small wavefunction overlap across the neck."
+          "content": "In TCS G2 manifolds, the twisted connected sum construction glues two asymptotically cylindrical building blocks (each a K3-fibered Calabi-Yau threefold cross S^1) along a common neck region diffeomorphic to S^1 x K3. The key physical insight is that matter fields and Higgs fields must localize in opposite building blocks due to their distinct topological requirements: chiral fermions (quarks and leptons) arise as zero modes of the Dirac operator on associative 3-cycles, which support the correct SU(3) x SU(2) x U(1) representations, while the Higgs doublet responsible for electroweak symmetry breaking localizes on coassociative 4-cycles in the opposite block, where the scalar field boundary conditions are satisfied. The neck region acts as a topological barrier between these two sectors: any interaction coupling matter to Higgs (such as the baryon-number-violating dimension-6 operators qqql that mediate proton decay via leptoquark exchange) must tunnel across the neck, and the amplitude for this process is exponentially suppressed by the wavefunction overlap integral."
         },
         {
           "type": "paragraph",
@@ -4209,7 +4213,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This cycle separation leads to an exponential suppression of the wavefunction overlap between matter and Higgs fields:"
+          "content": "This cycle separation leads to an exponential suppression of the wavefunction overlap between matter and Higgs fields. Physically, the harmonic zero-mode wavefunctions decay as exp(-lambda_1 * x) along the neck cylinder, where lambda_1 = 2*pi/R is the first eigenvalue of the Laplacian on the K3 cross-section. The overlap integral thus scales as:"
         },
         {
           "type": "formula",
@@ -4220,7 +4224,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For K=4, this gives S = exp(1/4) ≈ 2.1. The proton lifetime is then given by the standard GUT formula multiplied by this geometric suppression factor:"
+          "content": "For K=4, this gives S = exp(1/4) ~ 1.284. To connect this to the proton lifetime, we consider the dimension-6 operators responsible for proton decay. In GUTs, integrating out the heavy X and Y gauge bosons at M_GUT generates effective baryon-number-violating operators of the form O_6 ~ (alpha_GUT / M_GUT^2)(qqql), where the four-fermion vertex couples two quarks, a quark, and a lepton (e.g., (u_R^c d_R)(u_L e_L) for p -> e+pi0). The decay rate Gamma ~ |C_6|^2 * m_p^5 scales as alpha_GUT^2 * m_p^5 / M_GUT^4, reflecting the dimension-6 nature of the operator. In the TCS framework, the Wilson coefficient C_6 acquires an additional factor of exp(-pi*d/R) from the suppressed wavefunction overlap, so the lifetime (tau_p = 1/Gamma) is enhanced by S. The full formula reads:"
         },
         {
           "type": "formula",
@@ -4231,7 +4235,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where C = 3.82 x 10^33 years is a prefactor incorporating hadronic matrix elements from lattice QCD (proton-to-vacuum transition amplitudes), Standard Model phase space factors, and RG running of the dimension-6 Wilson coefficients from the GUT scale down to the proton mass. The M_GUT^4 suppression reflects the dimension-6 operator structure (two quark fields, one lepton field, one Higgs field) at the unification scale."
+          "content": "where C = 3.82 x 10^33 years is a prefactor that absorbs several well-determined Standard Model contributions: (i) the hadronic matrix element alpha_H ~ 0.015 GeV^3 from lattice QCD, encoding the proton-to-vacuum transition amplitude <pi0|(ud)_R u_L|p>; (ii) phase space factors for the two-body final state (e+ pi0); and (iii) renormalization group running of the dimension-6 Wilson coefficients from M_GUT down to the proton mass scale, which enhances the coefficient by a factor of ~2-3 due to QCD corrections. The M_GUT^4 suppression in the denominator of the decay rate is the hallmark signature of dimension-6 operators: each qqql vertex carries two powers of 1/M_GUT from the heavy gauge boson propagator, and the rate depends on |C_6|^2 ~ alpha_GUT^2/M_GUT^4."
         },
         {
           "type": "paragraph",
@@ -4245,7 +4249,11 @@
         },
         {
           "type": "paragraph",
-          "content": "This is above the Super-Kamiokande lower bound of 2.4 × 10³⁴ years (90% CL), making it consistent with current experimental constraints while remaining testable in future experiments like Hyper-Kamiokande."
+          "content": "This is above the Super-Kamiokande lower bound of 2.4 x 10^34 years (90% CL) for the p -> e+pi0 channel, making it consistent with current experimental constraints while sitting close enough to the bound to be decisively testable by next-generation experiments."
+        },
+        {
+          "type": "paragraph",
+          "content": "Hyper-Kamiokande (HK), with its 187 kton fiducial water Cherenkov volume (approximately 8x Super-K), will achieve sensitivity to proton lifetimes up to ~10^35 years after 10 years of operation. The predicted tau_p ~ 3.9 x 10^34 years falls squarely within HK's discovery reach for the p -> e+pi0 channel, which produces a characteristic back-to-back Cherenkov ring signature (positron + two gammas from pi0 decay). If HK observes proton decay at this lifetime with the predicted branching ratio BR ~ 0.25, it would constitute direct evidence for both grand unification and the TCS geometric suppression mechanism. Conversely, a null result pushing the bound above ~6 x 10^34 years would require either a larger K matching number (increasing the suppression) or a higher M_GUT, constraining the geometric moduli of the G2 compactification."
         },
         {
           "type": "paragraph",
@@ -4259,7 +4267,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This geometric selection rule arises from the sum over orientations of the matter and Higgs cycles within the TCS G2 manifold."
+          "content": "This geometric selection rule arises from the sum over orientations of the associative matter 3-cycles within the TCS G2 manifold. Of the 24 possible orientations of the 3-cycle relative to the G2 structure, exactly 12 contribute to the e+pi0 channel (those aligned with the SU(5) -> SU(3) x SU(2) x U(1) breaking pattern), giving BR = (12/24)^2 = 0.25."
         }
       ],
       "formulaRefs": [
@@ -4288,7 +4296,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-31T22:00:01.299655"
+      "timestamp": "2026-02-01T08:56:00.543211"
     },
     "4.4": {
       "id": "4",
@@ -4470,7 +4478,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-31T22:00:01.299726"
+      "timestamp": "2026-02-01T08:56:00.543299"
     },
     "4.9": {
       "id": "4",
@@ -4560,7 +4568,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-31T22:00:01.299791"
+      "timestamp": "2026-02-01T08:56:00.543373"
     },
     "6.1.1": {
       "id": "6",
@@ -4674,7 +4682,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-01-31T22:00:01.299984"
+      "timestamp": "2026-02-01T08:56:00.543585"
     },
     "4.2.1": {
       "id": "4",
@@ -4736,7 +4744,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-01-31T22:00:01.300105"
+      "timestamp": "2026-02-01T08:56:00.543752"
     },
     "4.8": {
       "id": "4",
@@ -4794,7 +4802,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-31T22:00:01.300149"
+      "timestamp": "2026-02-01T08:56:00.543808"
     },
     "5.1": {
       "id": "5",
@@ -5134,7 +5142,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-31T22:00:01.300207"
+      "timestamp": "2026-02-01T08:56:00.543902"
     },
     "5.2": {
       "id": "5",
@@ -5338,7 +5346,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-31T22:00:01.300321"
+      "timestamp": "2026-02-01T08:56:00.544034"
     },
     "5.6": {
       "id": "5",
@@ -5662,7 +5670,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-31T22:00:01.300497"
+      "timestamp": "2026-02-01T08:56:00.544222"
     },
     "5.7": {
       "id": "5",
@@ -5806,7 +5814,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-31T22:00:01.302363"
+      "timestamp": "2026-02-01T08:56:00.546172"
     },
     "5.4": {
       "id": "5",
@@ -6126,7 +6134,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-31T22:00:01.303745"
+      "timestamp": "2026-02-01T08:56:00.547563"
     },
     "5.9": {
       "id": "5",
@@ -6288,7 +6296,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-31T22:00:01.305122"
+      "timestamp": "2026-02-01T08:56:00.548953"
     },
     "4.5": {
       "id": "4",
@@ -6494,7 +6502,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-31T22:00:01.305268"
+      "timestamp": "2026-02-01T08:56:00.549119"
     },
     "4.7": {
       "id": "4",
@@ -6738,7 +6746,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-31T22:00:01.305399"
+      "timestamp": "2026-02-01T08:56:00.549263"
     },
     "5.3": {
       "id": "5",
@@ -6896,7 +6904,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-31T22:00:01.305530"
+      "timestamp": "2026-02-01T08:56:00.549412"
     },
     "5.8": {
       "id": "5",
@@ -7218,7 +7226,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-31T22:00:01.305613"
+      "timestamp": "2026-02-01T08:56:00.549516"
     },
     "6.1": {
       "id": "6",
@@ -7278,7 +7286,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305692"
+      "timestamp": "2026-02-01T08:56:00.549609"
     },
     "6.2": {
       "id": "6",
@@ -7326,7 +7334,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305730"
+      "timestamp": "2026-02-01T08:56:00.549656"
     },
     "6.3": {
       "id": "6",
@@ -7418,7 +7426,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305770"
+      "timestamp": "2026-02-01T08:56:00.549706"
     },
     "6.4": {
       "id": "6",
@@ -7470,7 +7478,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305801"
+      "timestamp": "2026-02-01T08:56:00.549746"
     },
     "6.5": {
       "id": "6",
@@ -7522,7 +7530,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305896"
+      "timestamp": "2026-02-01T08:56:00.549878"
     },
     "6.6": {
       "id": "6",
@@ -7574,7 +7582,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305926"
+      "timestamp": "2026-02-01T08:56:00.549917"
     },
     "6.7": {
       "id": "6",
@@ -7626,7 +7634,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305954"
+      "timestamp": "2026-02-01T08:56:00.549953"
     },
     "6.8": {
       "id": "6",
@@ -7670,7 +7678,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.305976"
+      "timestamp": "2026-02-01T08:56:00.549984"
     },
     "6.9": {
       "id": "6",
@@ -7714,7 +7722,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.306001"
+      "timestamp": "2026-02-01T08:56:00.550018"
     },
     "5.5": {
       "id": "5",
@@ -7868,7 +7876,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-31T22:00:01.306051"
+      "timestamp": "2026-02-01T08:56:00.550079"
     },
     "2.6": {
       "id": "2",
@@ -8814,7 +8822,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-31T22:00:01.306171"
+      "timestamp": "2026-02-01T08:56:00.550215"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -8942,7 +8950,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T22:00:01.306238"
+      "timestamp": "2026-02-01T08:56:00.550293"
     },
     "7.2": {
       "id": "7",
@@ -8980,7 +8988,22 @@
         },
         {
           "type": "paragraph",
-          "content": "The derived coherence time τ ≈ 100ms matches the neural timescale for conscious processing (Gamma synchrony at 40Hz), suggesting that quantum coherence in microtubules plays a role in consciousness as proposed by the Orch-OR model. The gravitational self-energy is regulated by k_gimel."
+          "content": "The derived coherence time tau ~ 100ms matches the neural timescale for conscious processing (Gamma synchrony at 40Hz), suggesting that quantum coherence in microtubules plays a role in consciousness as proposed by the Orch-OR model. The gravitational self-energy is regulated by k_gimel, which enters as a G2-holonomy enhancement of the gravitational coupling at compactification scales. Within the Penrose-Hameroff framework, each OR event corresponds to a discrete conscious moment whose temporal grain is set by tau -- the collapse timescale dictated by E_G."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "microtubule-topological-pitch",
+          "label": "(7.2b)",
+          "equationNumber": "(7.2b)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The topological pitch p_G2 ~ 6.12 encodes the G2 winding number per associative 3-cycle. When scaled by the factor 2.125, it reproduces the 13-protofilament helical architecture observed in biological microtubules, confirming that the cylindrical symmetry required for Orch-OR quantum coherence is not an evolutionary accident but a geometric necessity of the compactified 7D space."
+        },
+        {
+          "type": "paragraph",
+          "content": "LIMITATIONS AND TESTABILITY: Several caveats apply to the above derivations. First, the conformational mass fraction f_conf ~ 10^-4 is estimated from protein conformational mechanics and carries at least an order-of-magnitude uncertainty; direct measurement of the mass redistribution during tubulin alpha-helix to beta-sheet transitions would constrain this parameter. Second, the model neglects environmental decoherence -- thermal noise from the ~310 K biological milieu, electromagnetic coupling to surrounding water dipoles and ionic currents, and lattice defects in real microtubules all act to reduce the effective coherence time below the tau = hbar/E_G upper bound. Incorporating a decoherence rate Gamma_D would yield tau_eff = hbar/(E_G + hbar*Gamma_D), which future work should constrain experimentally. Third, the scaling factor 2.125 connecting the G2 pitch to the 13-protofilament count is currently a geometric fit rather than a first-principles derivation; a rigorous derivation from the Kaluza-Klein reduction of the G2 metric would strengthen this link. Potential experimental tests include: (1) ultrafast spectroscopy to probe coherence timescales in isolated microtubule preparations, (2) anesthetic binding studies that alter f_conf and should shift tau predictably, and (3) cryo-EM structural analysis of tubulin conformational states to measure the displacement radius r_delta directly."
         }
       ],
       "content_blocks": [
@@ -9009,24 +9032,41 @@
         },
         {
           "type": "paragraph",
-          "content": "The derived coherence time τ ≈ 100ms matches the neural timescale for conscious processing (Gamma synchrony at 40Hz), suggesting that quantum coherence in microtubules plays a role in consciousness as proposed by the Orch-OR model. The gravitational self-energy is regulated by k_gimel."
+          "content": "The derived coherence time tau ~ 100ms matches the neural timescale for conscious processing (Gamma synchrony at 40Hz), suggesting that quantum coherence in microtubules plays a role in consciousness as proposed by the Orch-OR model. The gravitational self-energy is regulated by k_gimel, which enters as a G2-holonomy enhancement of the gravitational coupling at compactification scales. Within the Penrose-Hameroff framework, each OR event corresponds to a discrete conscious moment whose temporal grain is set by tau -- the collapse timescale dictated by E_G."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "microtubule-topological-pitch",
+          "label": "(7.2b)",
+          "equationNumber": "(7.2b)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The topological pitch p_G2 ~ 6.12 encodes the G2 winding number per associative 3-cycle. When scaled by the factor 2.125, it reproduces the 13-protofilament helical architecture observed in biological microtubules, confirming that the cylindrical symmetry required for Orch-OR quantum coherence is not an evolutionary accident but a geometric necessity of the compactified 7D space."
+        },
+        {
+          "type": "paragraph",
+          "content": "LIMITATIONS AND TESTABILITY: Several caveats apply to the above derivations. First, the conformational mass fraction f_conf ~ 10^-4 is estimated from protein conformational mechanics and carries at least an order-of-magnitude uncertainty; direct measurement of the mass redistribution during tubulin alpha-helix to beta-sheet transitions would constrain this parameter. Second, the model neglects environmental decoherence -- thermal noise from the ~310 K biological milieu, electromagnetic coupling to surrounding water dipoles and ionic currents, and lattice defects in real microtubules all act to reduce the effective coherence time below the tau = hbar/E_G upper bound. Incorporating a decoherence rate Gamma_D would yield tau_eff = hbar/(E_G + hbar*Gamma_D), which future work should constrain experimentally. Third, the scaling factor 2.125 connecting the G2 pitch to the 13-protofilament count is currently a geometric fit rather than a first-principles derivation; a rigorous derivation from the Kaluza-Klein reduction of the G2 metric would strengthen this link. Potential experimental tests include: (1) ultrafast spectroscopy to probe coherence timescales in isolated microtubule preparations, (2) anesthetic binding studies that alter f_conf and should shift tau predictably, and (3) cryo-EM structural analysis of tubulin conformational states to measure the displacement radius r_delta directly."
         }
       ],
       "formulaRefs": [
-        "orch-or-coherence-time"
+        "orch-or-coherence-time",
+        "microtubule-topological-pitch"
       ],
       "paramRefs": [
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
       "formula_refs": [
-        "orch-or-coherence-time"
+        "orch-or-coherence-time",
+        "microtubule-topological-pitch"
       ],
       "param_refs": [
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-31T22:00:01.306312"
+      "timestamp": "2026-02-01T08:56:00.550390"
     },
     "7": {
       "id": "7",
@@ -11478,7 +11518,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.306390"
+      "timestamp": "2026-02-01T08:56:00.550505"
     },
     "6": {
       "id": "6",
@@ -14068,7 +14108,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-31T22:00:01.306492"
+      "timestamp": "2026-02-01T08:56:00.550622"
     },
     "1.1": {
       "id": "1",
@@ -14698,7 +14738,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.306551"
+      "timestamp": "2026-02-01T08:56:00.550694"
     },
     "2.5": {
       "id": "2",
@@ -15204,7 +15244,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.306903"
+      "timestamp": "2026-02-01T08:56:00.560182"
     },
     "3.7": {
       "id": "3",
@@ -15476,7 +15516,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.306944"
+      "timestamp": "2026-02-01T08:56:00.560272"
     },
     "4": {
       "id": "4",
@@ -15784,7 +15824,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T22:00:01.306991"
+      "timestamp": "2026-02-01T08:56:00.560359"
     },
     "A": {
       "id": "A",
@@ -15994,7 +16034,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-31T22:00:01.307038"
+      "timestamp": "2026-02-01T08:56:00.560472"
     },
     "B": {
       "id": "B",
@@ -16230,7 +16270,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-31T22:00:01.307086"
+      "timestamp": "2026-02-01T08:56:00.560568"
     },
     "C": {
       "id": "C",
@@ -16436,7 +16476,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-31T22:00:01.307219"
+      "timestamp": "2026-02-01T08:56:00.560864"
     },
     "D": {
       "id": "D",
@@ -16634,7 +16674,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-31T22:00:01.307263"
+      "timestamp": "2026-02-01T08:56:00.560927"
     },
     "E": {
       "id": "E",
@@ -16836,7 +16876,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-31T22:00:01.307314"
+      "timestamp": "2026-02-01T08:56:00.561010"
     },
     "F": {
       "id": "F",
@@ -17046,7 +17086,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-31T22:00:01.307655"
+      "timestamp": "2026-02-01T08:56:00.561442"
     },
     "G": {
       "id": "G",
@@ -17394,7 +17434,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-01-31T22:00:01.308038"
+      "timestamp": "2026-02-01T08:56:00.561912"
     },
     "H": {
       "id": "H",
@@ -17680,7 +17720,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-31T22:00:01.308110"
+      "timestamp": "2026-02-01T08:56:00.561995"
     },
     "I": {
       "id": "I",
@@ -18034,7 +18074,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-31T22:00:01.308173"
+      "timestamp": "2026-02-01T08:56:00.562071"
     },
     "J": {
       "id": "J",
@@ -18316,7 +18356,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-31T22:00:01.308242"
+      "timestamp": "2026-02-01T08:56:00.562163"
     },
     "K": {
       "id": "K",
@@ -18732,7 +18772,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-31T22:00:01.308296"
+      "timestamp": "2026-02-01T08:56:00.562231"
     },
     "L": {
       "id": "L",
@@ -19022,7 +19062,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-31T22:00:01.308363"
+      "timestamp": "2026-02-01T08:56:00.562309"
     },
     "Z": {
       "id": "Z",
@@ -19098,7 +19138,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-31T22:00:01.308444"
+      "timestamp": "2026-02-01T08:56:00.562398"
     },
     "2.2": {
       "id": "2",
@@ -19440,7 +19480,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-01-31T22:00:01.308661"
+      "timestamp": "2026-02-01T08:56:00.562644"
     },
     "R.1": {
       "id": "R",
@@ -19996,7 +20036,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-01-31T22:00:01.308861"
+      "timestamp": "2026-02-01T08:56:00.562937"
     },
     "S.1": {
       "id": "S",
@@ -20710,7 +20750,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T22:00:01.308952"
+      "timestamp": "2026-02-01T08:56:00.563094"
     },
     "5.1.1": {
       "id": "5",
@@ -20876,7 +20916,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-01-31T22:00:01.309045"
+      "timestamp": "2026-02-01T08:56:00.563239"
     },
     "2.3": {
       "id": "2",
@@ -20992,7 +21032,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-31T22:00:01.309178"
+      "timestamp": "2026-02-01T08:56:00.563416"
     },
     "5.2.1": {
       "id": "5",
@@ -21090,7 +21130,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-31T22:00:01.309260"
+      "timestamp": "2026-02-01T08:56:00.563523"
     },
     "6.2.1": {
       "id": "6",
@@ -21240,7 +21280,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-01-31T22:00:01.309311"
+      "timestamp": "2026-02-01T08:56:00.563599"
     }
   }
 }

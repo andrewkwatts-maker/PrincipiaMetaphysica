@@ -1,0 +1,73 @@
+SUB-TOPIC 02: Dark Light Leakage (Cross-Shadow Electromagnetic Propagation)
+Source: MasterActionsPortalsAxionsAndSterileNeutrenos.txt (Part 3)
+=======================================================================
+
+Formal mathematical derivation of dark light leakage (cross-shadow electromagnetic propagation, aka "shadow light", "mirror photons", or "dark light") in Principia Metaphysica v23.1.
+The derivation is 100% geometric, sterile (no free parameters), and shows that leakage is possible but extremely weak -- quantum-coherent only, exponentially suppressed, and ~200-1000x weaker than dark matter portal leakage (~0.57).
+
+Final Key Formulas for Dark Light Leakage
+-------------------------------------------
+
+Leakage amplitude (per photon, quantum tunneling across bridge):
+  A_leak = R_n * e^{-S_E}
+
+Leakage probability (observable cross-shadow effect per photon):
+  P_leak = |R_n|^2 * e^{-2S_E} ~ e^{-12} ~ 6.1e-6
+
+Effective dark light coupling strength (square-root probability):
+  alpha_leak_light = sqrt(P_leak) ~ e^{-6} ~ 0.00248
+
+Ratio to dark matter portal leakage:
+  alpha_leak_light / alpha_leak_DM ~ 0.00248 / 0.57 ~ 0.00435 (~230x weaker)
+
+Observable signature strength (e.g., cross-shadow vacuum fluctuation excess):
+  delta_noise = P_leak * (hbar * omega) / (kT) ~ 10^{-6} (optical frequencies, room temperature)
+
+Step-by-Step Derivation
+--------------------------
+
+Step 1. Classical prohibition
+  Local 4D null geodesics ds^2 = 0 cannot cross Euclidean bridge (ds^2 > 0, no time direction) -> classical leakage = 0.
+
+Step 2. Quantum tunneling amplitude
+  Path integral over Euclidean bridge instanton:
+  A_leak = integral D[A] e^{iS[A]} * R_perp^bridge
+  R_perp^bridge: Collective bridge OR (tensor product over 12 pairs, Mobius R_perp^2 = -I)
+  S_E: Euclidean action cost
+
+Step 3. Euclidean action cost (torsion + flux)
+  Bridge Euclidean -> positive action:
+  S_E ~ integral T_omega wedge phi + flux term ~ chi_eff / b_3 = 6
+  Torsion T_omega = 1/sqrt(6) (bridge pressure, Appendix J)
+  Flux integral F wedge phi = 6 (quantized, p. 2)
+
+Step 4. Spectral residue overlap
+  Photon overlap requires high-n bridge-spanning mode (n ~ 100-150, Appendix A):
+  R_n = exp(-lambda_n / b_3),  lambda_n ~ (n / (c_7 * Vol))^{2/7}
+
+Step 5. Multiplicity & normalization
+  12 bridge pairs -> (1/12)^2 suppression (independent pairs).
+  Flux normalization -> unity.
+
+Step 6. Final probability & coupling
+  P_leak = (1/12)^2 * e^{-12} = (1/144) * e^{-12} ~ 6.9e-6
+  alpha_leak_light = sqrt(P_leak) ~ e^{-6} ~ 0.00248
+
+Dark Light Observables & Detection Methods
+--------------------------------------------
+
+| Observable                          | Formula/Estimate                              | Expected Strength    | Detection Method                    | Feasibility                      |
+|-------------------------------------|-----------------------------------------------|----------------------|-------------------------------------|----------------------------------|
+| Cross-shadow phase shift            | Delta_phi ~ P_leak * omega * tau_coh          | ~10^{-6} to 10^{-8} rad | High-finesse interferometers    | Near-term (sensitivity ~10^{-9}) |
+| CMB polarization excess (B/E-mode)  | Delta_P ~ P_leak * hbar*omega_CMB / kT_CMB    | ~10^{-7}            | CMB-S4, LiteBIRD                   | Mid-term (~10^{-8})              |
+| Vacuum noise excess (QED precision) | delta_QED ~ P_leak * alpha                    | ~10^{-8}            | Next-gen g-2, Lamb shift           | Mid-term (~10^{-10})             |
+| GW polarization anomalies           | Delta_eta_light ~ P_leak * eta                | ~10^{-7}            | LIGO/Virgo O4/O5                   | Long-term (~10^{-8})             |
+
+Upper bound (current): P_leak < 10^{-5} to 10^{-6} (no observed leakage in QED precision tests).
+Theory prediction: P_leak ~ 10^{-5} to 10^{-6} (high-n modes) -- within reach of future quantum optics, CMB polarization, g-2, and consciousness-related experiments.
+
+Conclusion
+----------
+Dark light leakage is possible but quantum-only, exponentially suppressed (~10^{-5} to 10^{-6}), and ~230x weaker than dark matter portal leakage (~0.57).
+It arises from bridge tunneling + cross-shadow OR coherence, but does not allow classical light transfer -- only faint statistical quantum noise or subtle polarization anomalies.
+This is one of the theory's most subtle and potentially testable predictions -- dark light as the electromagnetic ghost of the mirror shadow.
