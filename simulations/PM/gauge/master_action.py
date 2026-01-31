@@ -147,6 +147,7 @@ _OUTPUT_FORMULAS = [
     "su2-weak-lagrangian-v22",
     "u1-hypercharge-v22",
     "electroweak-mixing-v22",
+    "euler-lagrange-metric-variation",
 ]
 
 
@@ -653,6 +654,33 @@ class MasterActionSimulationV22(SimulationBase):
                     "g_2": "SU(2)_L weak isospin coupling",
                     "g'": "U(1)_Y hypercharge coupling",
                     "f_W/f_Y": "G2 cycle volume ratio that locks the mixing angle"
+                }
+            ),
+            # =================================================================
+            # Euler-Lagrange Variation Formulas
+            # =================================================================
+            Formula(
+                id="euler-lagrange-metric-variation",
+                label="(MA.EL1)",
+                latex=r"\frac{\delta S_{27}}{\delta g^{\mu\nu}} = 0 \implies G_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi G T_{\mu\nu}",
+                plain_text="delta S_27 / delta g^{mu nu} = 0 => G_mu_nu + Lambda g_mu_nu = 8*pi*G * T_mu_nu",
+                category="DERIVED",
+                description="Einstein field equations from variation of 27D master action with respect to the metric tensor. The stress-energy tensor T_mu_nu includes contributions from all matter, gauge, bridge, and Pneuma sectors.",
+                derivation={
+                    "steps": [
+                        "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_pneuma",
+                        "Vary with respect to the inverse metric g^{mu nu}: delta S / delta g^{mu nu} = 0",
+                        "The Einstein-Hilbert variation gives the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2)R g_{mu nu}",
+                        "Matter + gauge + bridge + pneuma variations give the combined stress-energy tensor T_{mu nu}"
+                    ],
+                    "method": "Euler-Lagrange variation of master action with respect to spacetime metric",
+                    "parentFormulas": ["pneuma-master-action-v23"]
+                },
+                terms={
+                    r"G_{\mu\nu}": {"description": "Einstein tensor: curvature contribution to field equations"},
+                    r"T_{\mu\nu}": {"description": "Total stress-energy tensor from all sectors (matter, gauge, bridge, Pneuma)"},
+                    r"\Lambda": {"description": "Effective cosmological constant from vacuum energy"},
+                    r"g_{\mu\nu}": {"description": "Spacetime metric tensor in 27D"}
                 }
             ),
         ]

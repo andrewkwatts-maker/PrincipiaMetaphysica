@@ -1471,6 +1471,25 @@ class GaugeSectorCompleteDerivations(SimulationBase):
                     label="(3.3.14)"
                 ),
 
+                # Section E: Gauge Symmetry Breaking via Four-Face Flux
+                ContentBlock(
+                    type="heading",
+                    level=2,
+                    content="E. Gauge Symmetry Breaking via Four-Face Flux"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "In the four-face G2 architecture, the Standard Model gauge group "
+                        "G_SM = SU(3) x SU(2) x U(1) arises from the breaking of a unified "
+                        "SO(10) gauge symmetry by discrete Wilson lines threading the four "
+                        "independent 2-cycles (h^{1,1} = 4). Each face contributes a distinct "
+                        "flux quantum, and the pattern of breaking is dictated by the TCS "
+                        "gluing data. This mechanism avoids the doublet-triplet splitting "
+                        "problem endemic to 4D GUT constructions."
+                    )
+                ),
+
                 # Summary
                 ContentBlock(
                     type="callout",
@@ -1631,6 +1650,12 @@ class GaugeSectorCompleteDerivations(SimulationBase):
                 "url": "https://en.wikipedia.org/wiki/Anomaly_(physics)",
                 "relevance": "Explains why hypercharge sum per generation must vanish",
                 "validation_hint": "Verify sum of hypercharges = 0 for each generation"
+            },
+            {
+                "topic": "Gauge symmetry breaking in G2 compactifications via Wilson lines",
+                "url": "https://en.wikipedia.org/wiki/Wilson_loop",
+                "relevance": "In the four-face G2 architecture, SO(10) breaks to G_SM = SU(3) x SU(2) x U(1) via discrete Wilson lines threading the h^{1,1} = 4 independent 2-cycles. Each face contributes a distinct flux quantum dictated by TCS gluing data.",
+                "validation_hint": "Verify that Wilson line breaking of SO(10) on G2 manifolds can yield the Standard Model gauge group without doublet-triplet splitting"
             },
         ]
 

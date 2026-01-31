@@ -343,7 +343,13 @@ class G2TrialityMixing:
                 "url": "https://en.wikipedia.org/wiki/Quark_mixing_matrix",
                 "relevance": "CKM and PMNS matrices describe quark and lepton flavor mixing respectively, here unified by G2 geometry",
                 "validation_hint": "Confirm CKM is hierarchical (small) while PMNS is near-tribimaximal (large)"
-            }
+            },
+            {
+                "topic": "G2 triality and fermion generation structure",
+                "url": "https://ncatlab.org/nlab/show/G2",
+                "relevance": "G2 triality (the outer automorphism of the Dynkin diagram) constrains how 3 fermion generations mix; in the 4-face picture, generations are assigned to Kähler moduli sectors",
+                "validation_hint": "The n_gen = 3 result from χ_eff/48 = 144/48 should be robust: check that alternative Hodge numbers give non-integer n_gen"
+            },
         ]
 
     def validate_self(self) -> Dict[str, Any]:
@@ -525,7 +531,24 @@ class G2TrialityMixing:
                         "localize on flexible co-associative 4-cycles, producing qualitatively "
                         "different mixing patterns from the same underlying geometry."
                     )
-                }
+                },
+                {
+                    "type": "heading",
+                    "content": "Generation Counting from Four-Face Geometry",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "content": (
+                        "The three fermion generations emerge from the effective Euler "
+                        "characteristic via n_gen = χ_eff / 48 = 144 / 48 = 3. In the "
+                        "four-face decomposition, this can be understood as 4 faces × "
+                        "12 bridge pairs = 48 geometric channels per generation, with "
+                        "the total χ_eff = 144 supporting exactly 3 complete generations. "
+                        "The G2 triality further constrains the mixing between generations "
+                        "assigned to different Kähler faces."
+                    )
+                },
             ],
             "formula_refs": ["triality-ckm-wolfenstein", "triality-pmns-flexible"],
             "param_refs": ["triality.theta_23_deg", "triality.wolfenstein_lambda"]

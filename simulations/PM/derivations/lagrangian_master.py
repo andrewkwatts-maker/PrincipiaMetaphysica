@@ -272,6 +272,11 @@ class LagrangianMasterDerivation(SimulationBase):
             "kk-ansatz-7-4",
             "gauge-from-kk",
             "root-lattice-288",
+
+            # Part F: Four-Face G2 Extensions
+            "racetrack-moduli-potential",
+            "torsion-correction-term",
+            "spectral-residue-dressing",
         ]
 
     # =========================================================================
@@ -2223,6 +2228,83 @@ class LagrangianMasterDerivation(SimulationBase):
             }
         ))
 
+        # =================================================================
+        # PART F: FOUR-FACE G2 EXTENSIONS (Metadata-only)
+        # =================================================================
+
+        formulas.append(Formula(
+            id="racetrack-moduli-potential",
+            label="(L.R1)",
+            latex=r"V(\{T_i\}) = \sum_{i=1}^{4} \Lambda_i \exp(-a_i T_i) + \Lambda_0",
+            plain_text="V({T_i}) = Sum_i Lambda_i exp(-a_i T_i) + Lambda_0",
+            category="PREDICTED",
+            description="Racetrack moduli potential for 4-face G2 structure. Each face has an independent stabilization scale a_i = b3/i, connecting to KKLT/LVS moduli stabilization. Default: theoretical prediction (not computed in run()).",
+            derivation={
+                "steps": [
+                    "The G2 manifold has h^{1,1} = 4 independent Kahler moduli T_1,...,T_4 (one per face)",
+                    "Non-perturbative effects from wrapped M2-branes on associative 3-cycles generate exponential superpotential W_i ~ exp(-a_i T_i)",
+                    "The racetrack stabilization scale is a_i = b3/i = 24/i, encoding geometric scaling from the Betti number",
+                    "The scalar potential V = e^K (|DW|^2 - 3|W|^2) with Kahler potential K = -2 ln(V_7) yields the racetrack form"
+                ],
+                "method": "Racetrack moduli stabilization with G2 holonomy non-perturbative corrections",
+                "parentFormulas": ["master-action-26d-full"]
+            },
+            terms={
+                r"T_i": {"description": "Kahler modulus for face i (i=1..4), controlling the volume of the i-th 2-cycle"},
+                r"\Lambda_i": {"description": "Non-perturbative scale for face i, from M2-brane wrapping on associative 3-cycles"},
+                r"a_i": {"description": "Racetrack coefficient a_i = b3/i = 24/i, geometric scaling from Betti number"},
+                r"\Lambda_0": {"description": "Cosmological constant uplift term from flux contribution"}
+            }
+        ))
+
+        formulas.append(Formula(
+            id="torsion-correction-term",
+            label="(L.R2)",
+            latex=r"\delta\mathcal{L}_{\text{torsion}} = \frac{1}{2\kappa^2} T^{abc} T_{abc}",
+            plain_text="delta_L_torsion = (1/2*kappa^2) * T^abc T_abc",
+            category="PREDICTED",
+            description="Torsion correction to the 27D master Lagrangian. In G2 holonomy, the associative 3-form defines a preferred torsion class. This term captures deviations from the torsion-free Levi-Civita connection.",
+            derivation={
+                "steps": [
+                    "The G2 structure on the internal 7-manifold defines an associative 3-form Phi and co-associative 4-form *Phi",
+                    "The intrinsic torsion of a G2 structure is classified by 4 torsion classes tau_0, tau_1, tau_2, tau_3 (Fernandez-Gray classification)",
+                    "For the TCS construction, tau_0 = 0 (closed 3-form) but tau_1, tau_2 may have small corrections from gluing",
+                    "The torsion correction term T^abc T_abc captures these residual contributions to the effective action"
+                ],
+                "method": "Fernandez-Gray torsion classification applied to TCS G2 holonomy manifold",
+                "parentFormulas": ["master-action-26d-full"]
+            },
+            terms={
+                r"T^{abc}": {"description": "Contorsion tensor components from G2 structure deformation"},
+                r"\kappa": {"description": "Gravitational coupling constant in 27D"},
+                r"\delta\mathcal{L}_{\text{torsion}}": {"description": "Torsion correction to the master Lagrangian density"}
+            }
+        ))
+
+        formulas.append(Formula(
+            id="spectral-residue-dressing",
+            label="(L.R3)",
+            latex=r"R_n = \exp(-\lambda_n / b_3)",
+            plain_text="R_n = exp(-lambda_n / b3)",
+            category="PREDICTED",
+            description="Spectral residue dressing factor from Weyl eigenvalues on the G2 manifold. Each eigenvalue lambda_n of the Laplacian on the compact 7D space contributes a suppression factor to physical coupling constants.",
+            derivation={
+                "steps": [
+                    "The Laplacian on the compact G2 7-manifold has a discrete spectrum: Delta_7 psi_n = lambda_n psi_n",
+                    "By Weyl's asymptotic law, lambda_n ~ n^{2/7} for large n on a 7-dimensional manifold",
+                    "Each eigenvalue contributes a residue factor R_n = exp(-lambda_n/b3) to the KK tower truncation",
+                    "The total spectral dressing is the product: R_total = Pi_n R_n (converges due to exponential suppression)"
+                ],
+                "method": "Spectral zeta function regularization of Laplacian eigenvalues on compact G2 manifold",
+                "parentFormulas": ["master-action-26d-full"]
+            },
+            terms={
+                r"R_n": {"description": "Spectral residue for mode n; suppresses high-KK modes exponentially"},
+                r"\lambda_n": {"description": "n-th eigenvalue of the Laplacian on the compact G2 7-manifold"},
+                r"b_3": {"description": "Third Betti number (= 24); sets the natural energy scale for spectral cutoff"}
+            }
+        ))
+
         return formulas
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -2508,6 +2590,26 @@ class LagrangianMasterDerivation(SimulationBase):
                     )
                 ),
                 ContentBlock(
+                    type="heading",
+                    content="Four-Face Racetrack Potential",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The four Kahler moduli T_1,...,T_4 of the TCS G2 manifold "
+                        "(corresponding to h^{1,1} = 4 independent 2-cycles) each require "
+                        "independent stabilization. The racetrack mechanism, adapted from "
+                        "KKLT/LVS moduli stabilization in Type IIB string theory, provides "
+                        "a natural stabilization scheme with scale parameters a_i = b3/i."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="racetrack-moduli-potential",
+                    label="(L.R1)"
+                ),
+                ContentBlock(
                     type="callout",
                     callout_type="success",
                     title="Key Results (v22)",
@@ -2536,6 +2638,10 @@ class LagrangianMasterDerivation(SimulationBase):
                 "ghost-elimination",
                 "g2-holonomy-constraint",
                 "root-lattice-288",
+                # Part F: Four-Face G2 Extensions
+                "racetrack-moduli-potential",
+                "torsion-correction-term",
+                "spectral-residue-dressing",
             ],
             param_refs=[
                 "derivations.vielbein_rank",

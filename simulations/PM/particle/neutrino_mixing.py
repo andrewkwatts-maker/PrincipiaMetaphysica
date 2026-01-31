@@ -620,6 +620,25 @@ class NeutrinoMixingSimulation(SimulationBase):
                        "These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, "
                        "with no calibration or free parameters."
             ),
+            ContentBlock(
+                type="heading",
+                content="Dual-Shadow Architecture for Neutrino Mixing",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "Neutrino mixing angles are predicted using the cross-shadow "
+                    "Euler characteristic χ_eff_total = 144 (both shadows combined), "
+                    "in contrast to quark mixing (CKM) which uses the single-shadow "
+                    "value χ_eff = 72. This architectural distinction reflects the "
+                    "fundamental difference between quarks (confined within a single "
+                    "11D shadow by color charge) and neutrinos (electrically neutral, "
+                    "propagating through the Euclidean bridge between shadows). "
+                    "The PMNS mixing matrix structure emerges naturally from the "
+                    "octonionic embedding of G2 triality across both shadows."
+                )
+            ),
         ]
 
         return SectionContent(
@@ -1299,7 +1318,13 @@ class NeutrinoMixingSimulation(SimulationBase):
                 "url": "http://www.nu-fit.org/",
                 "relevance": "NuFIT 6.0 provides the experimental benchmark values for all PMNS parameters",
                 "validation_hint": "Confirm experimental values used match the latest NuFIT 6.0 release"
-            }
+            },
+            {
+                "topic": "PMNS matrix and neutrino oscillations",
+                "url": "https://en.wikipedia.org/wiki/Pontecorvo%E2%80%93Maki%E2%80%93Nakagawa%E2%80%93Sakata_matrix",
+                "relevance": "The PM framework derives PMNS angles from cross-shadow (χ_eff=144) octonionic structure, using the full dual-shadow architecture",
+                "validation_hint": "Compare derived θ_12, θ_13, θ_23 against NuFIT 6.0 values; PM uses both-shadow χ_eff=144 for neutrino sector"
+            },
         ]
 
     def validate_self(self) -> Dict[str, Any]:

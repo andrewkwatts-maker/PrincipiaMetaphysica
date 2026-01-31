@@ -257,6 +257,13 @@ from simulations.PM.gauge.master_action import MasterActionSimulationV18
 # v16.2 - Geometric Anchors (fundamental constants from b3=24)
 from simulations.PM.geometry.geometric_anchors import GeometricAnchorsSimulation
 
+# v23.7 - Four-Face G2 Sub-Sector Structure
+try:
+    from simulations.PM.geometry.four_face_structure import FourFaceG2Structure
+    FOUR_FACE_AVAILABLE = True
+except ImportError:
+    FOUR_FACE_AVAILABLE = False
+
 # v16.2 - Two-Time Physics and Leech Partition (foundational geometric proofs)
 from simulations.PM.geometry.leech_partition import LeechPartitionV16
 from simulations.PM.geometry.modular_invariance import ModularInvarianceV16
@@ -892,7 +899,7 @@ class SimulationRunner:
                 # v16.2: GeometricAnchors FIRST - provides fundamental constants for all other simulations
                 GeometricAnchorsSimulation(),
                 G2GeometryV16(),
-            ] + ([UnitaryFilterSimulation()] if UNITARY_FILTER_AVAILABLE else []) + [
+            ] + ([FourFaceG2Structure()] if FOUR_FACE_AVAILABLE else []) + ([UnitaryFilterSimulation()] if UNITARY_FILTER_AVAILABLE else []) + [
                 # After UnitaryFilter validates ghost-free stability:
                 LeechPartitionV16(),       # v16.2 - Proves 24/8=3 generations
                 ModularInvarianceV16(),    # v16.2 - Proves b3=24 uniqueness

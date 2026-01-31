@@ -434,6 +434,22 @@ class GeometricAnchorsSimulation(SimulationBase):
                         "all topological residues are correctly balanced."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Four-Face G2 Sub-Sector Structure",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The Hodge number h^{1,1} = 4 of TCS #187 corresponds to four independent "
+                        "Kahler moduli, interpreted as four geometric 'faces' per shadow in the "
+                        "dual-shadow architecture. Each face controls a distinct sector of the "
+                        "compactified geometry, with inter-face leakage coupling "
+                        "alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.408. See four_face_g2_structure "
+                        "simulation for detailed analysis."
+                    )
+                ),
             ],
             formula_refs=[
                 "k-gimel-anchor",

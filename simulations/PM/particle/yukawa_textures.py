@@ -109,6 +109,7 @@ _OUTPUT_PARAMS = [
 _OUTPUT_FORMULAS = [
     "yukawa-hierarchy-v18",
     "yukawa-texture-matrix-v18",
+    "yukawa-4face-correction",
 ]
 
 
@@ -469,6 +470,35 @@ class YukawaTexturesV18(SimulationBase):
                     "\\lambda": "Suppression factor from G2 geometry (golden ratio)"
                 }
             ),
+            Formula(
+                id="yukawa-4face-correction",
+                label="(Y.4F)",
+                latex=r"Y_{ij}^{\text{4-face}} = Y_{ij} \times \left(1 + \alpha_{\text{leak}} \cdot \delta_{ij}^{\text{face}}\right)",
+                plain_text="Y_ij^4face = Y_ij * (1 + alpha_leak * delta_ij^face)",
+                category="PREDICTED",
+                description=(
+                    "Four-face texture correction to Yukawa couplings. The inter-face leakage "
+                    "coupling α_leak = 1/√6 ≈ 0.408 modifies the diagonal texture entries based "
+                    "on which G2 face each fermion generation is assigned to. Default: OFF (correction = 0). "
+                    "This is a theoretical prediction for future investigation, not applied to current mass fits."
+                ),
+                derivation={
+                    "steps": [
+                        "Each of the 3 fermion generations is assigned to a primary G2 face (out of 4 available per shadow)",
+                        "The inter-face leakage coupling α_leak = 1/√(χ_eff/b₃) = 1/√6 introduces off-diagonal mixing",
+                        "The face-assignment matrix δ_ij^face encodes which generation couples to which face",
+                        "When face corrections are enabled, Y_ij receives a multiplicative correction (1 + α_leak × δ_ij^face)"
+                    ],
+                    "method": "Inter-face leakage correction from four-face G2 sub-sector structure",
+                    "parentFormulas": ["alpha-leak-coupling"]
+                },
+                terms={
+                    r"Y_{ij}": {"description": "Base Yukawa coupling matrix from φ^(-N) hierarchy"},
+                    r"\alpha_{\text{leak}}": {"description": "Inter-face leakage coupling = 1/√6 ≈ 0.408 from G2 geometry"},
+                    r"\delta_{ij}^{\text{face}}": {"description": "Face-assignment delta: +1 if generations i,j share a face, 0 otherwise"},
+                    r"Y_{ij}^{\text{4-face}}": {"description": "Corrected Yukawa coupling including 4-face effects"}
+                }
+            ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -605,7 +635,13 @@ class YukawaTexturesV18(SimulationBase):
                 "url": "https://en.wikipedia.org/wiki/Golden_ratio",
                 "relevance": "The golden ratio phi = (1+sqrt(5))/2 emerges as the optimal Yukawa suppression factor from G2 geometry",
                 "validation_hint": "Confirm phi = 1.6180... is used consistently"
-            }
+            },
+            {
+                "topic": "Yukawa coupling hierarchies from extra dimensions",
+                "url": "https://en.wikipedia.org/wiki/Yukawa_interaction",
+                "relevance": "The φ^(-N) hierarchy generates fermion mass ratios from geometric suppression; the 4-face correction adds inter-sector leakage",
+                "validation_hint": "Check that the base hierarchy (without 4-face correction) reproduces known fermion mass ratios within expected accuracy"
+            },
         ]
 
     def validate_self(self) -> Dict[str, Any]:
@@ -732,6 +768,27 @@ class YukawaTexturesV18(SimulationBase):
                 ContentBlock(
                     type="formula",
                     formula_id="yukawa-texture-matrix-v18"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Four-Face Texture Corrections (Predicted)",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The four-face G2 sub-sector structure introduces a potential correction "
+                        "to Yukawa textures through inter-face leakage. Each fermion generation "
+                        "is assigned to a primary Kähler face, and the leakage coupling "
+                        "α_leak = 1/√6 ≈ 0.408 generates small off-diagonal corrections. This "
+                        "prediction is currently inactive (default OFF) and represents a "
+                        "future direction for investigation."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="yukawa-4face-correction",
+                    label="(Y.4F)"
                 ),
             ],
             formula_refs=_OUTPUT_FORMULAS,
