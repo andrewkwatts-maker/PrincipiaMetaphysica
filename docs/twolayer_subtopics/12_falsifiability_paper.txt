@@ -1,0 +1,45 @@
+SUB-TOPIC 12: Falsifiability & Paper Strengthening
+=====================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+The two-layer OR structure strengthens the theory's falsifiability claims and requires
+updates to the paper's abstract, introduction, and predictions sections.
+
+FALSIFIABILITY CRITERIA (existing + new):
+1. Proton lifetime: τ_p > 10^{34} years (existing, from GUT constraint)
+2. GW dispersion: η ≈ 0.10–0.13 (existing, from torsion T_ω/π)
+3. Dark energy EOS: w₀ = -23/24 ≈ -0.9583 (existing, DESI-compatible)
+4. Neutrino mass ordering: Normal hierarchy (existing)
+5. NEW: Dark light leakage: P_leak ~ 10^{-5}–10^{-6} (testable in quantum optics)
+6. NEW: Cross-shadow phase shift: Δφ ~ 10^{-6}–10^{-8} rad
+7. NEW: Dark force hierarchy: Strong=0, Weak=0, EM~10^{-3}, Gravity~10^{-3}
+8. NEW: Chirality reversal: P_reverse ≈ 3×10^{-6}
+
+GHOST-FREE CLAIM:
+The theory claims ghost-free propagation (BRST cohomology) because:
+- All terms in the master action are derived from topology
+- No free parameters → no ghost degrees of freedom
+- Two OR layers are hierarchically nested and non-commuting
+- V_bridge and V_face are positive-definite racetrack potentials
+
+PAPER UPDATES NEEDED:
+1. Abstract: Mention two-layer OR structure and dark force predictions
+2. Introduction: Frame the dual-layer collapse as central organizing principle
+3. Predictions section: Add dark force leakage observables table
+4. Discussion: Address dark motor impossibility and communication limits
+5. Conclusions: Strengthen falsifiability claims with new predictions
+
+PROPOSED CHANGES:
+1. Update abstract.py section content to mention two OR layers
+2. Update predictions.py with dark force observables
+3. Add falsifiability criteria to validation simulations
+4. Document ghost-free proof in methodology section
+5. Ensure all new predictions are registered as formal predictions
+
+AFFECTED SIMULATIONS:
+- simulations/PM/paper/sections/abstract.py
+- simulations/PM/paper/sections/introduction.py
+- simulations/PM/paper/sections/predictions.py
+- simulations/PM/paper/sections/discussion.py
+- simulations/PM/paper/sections/methodology.py

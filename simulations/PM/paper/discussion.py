@@ -1324,8 +1324,34 @@ class DiscussionV16(SimulationBase):
                     "particle physics and cosmology. With all 15 critical issues resolved, strong experimental "
                     "agreement across multiple observables, and near-term falsifiability through HL-LHC, JUNO, "
                     "DUNE, and Hyper-Kamiokande, the framework stands as a testable alternative to the string "
-                    "landscape and provides a geometrically unified description of nature from a single TCS G₂ "
+                    "landscape and provides a geometrically unified description of nature from a single TCS G\u2082 "
                     "manifold with explicit torsion structure."
+                )
+            ),
+
+            # Two-Layer OR and Dark Sector Implications
+            ContentBlock(
+                type="heading",
+                content="Two-Layer OR and Dark Sector Implications",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "**Two-Layer OR and Dark Sector Implications**\n\n"
+                    "The hierarchical OR structure has profound implications for dark matter and dark forces:\n\n"
+                    "1. **Dark matter origin**: Three hidden K\u00e4hler faces (f=2,3,4) per shadow provide "
+                    "multi-component dark matter \u2014 KK modes (~40%), axion-like particles (~35%), and sterile "
+                    "neutrinos (~25%) \u2014 with portal coupling \u03b1_leak \u2248 0.57 from G\u2082 volume ratio.\n\n"
+                    "2. **Dark force hierarchy**: The theory predicts that strong and weak forces cannot leak "
+                    "across shadows (confinement and mass barriers), while EM and gravity leak at P \u2248 6.9\u00d710\u207b\u2076 "
+                    "\u2014 a sharp, testable prediction.\n\n"
+                    "3. **Communication impossibility**: Dark motor designs are thermodynamically forbidden \u2014 "
+                    "dark light is equilibrium noise, not free energy. Cross-shadow communication via any force "
+                    "is impossible (P_leak too weak, quantum-only, random).\n\n"
+                    "4. **Chirality as mirror symmetry**: The bridge OR operator R_\u22a5 naturally reverses chirality "
+                    "between shadows (Left\u2194Right), explaining why our weak force is left-chiral while the mirror "
+                    "shadow is right-chiral. CPT is preserved globally across both shadows."
                 )
             ),
         ]

@@ -1,0 +1,48 @@
+SUB-TOPIC 06: Dark Light Leakage (Cross-Shadow EM)
+=====================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+Dark light leakage (cross-shadow electromagnetic propagation) is possible but extremely
+weak — quantum-coherent only, exponentially suppressed by Euclidean bridge action.
+
+MECHANISM:
+- Classical prohibition: Null geodesics ds²=0 cannot cross Euclidean bridge (ds²>0)
+- Quantum tunneling: Photon can tunnel via Euclidean bridge instanton in path integral
+- Bridge-spanning modes: High-n spectral modes (n>94) extend into bridge directions
+
+LEAKAGE AMPLITUDE (per photon):
+A_leak = R_n · exp(-S_E)
+
+Where:
+- R_n = exp(-λ_n/b₃): Spectral residue overlap (high-n bridge mode)
+- S_E ≈ χ_eff/b₃ = 6: Euclidean action (torsion + flux cost)
+
+LEAKAGE PROBABILITY:
+P_leak = |R_n|² · exp(-2S_E) ≈ (1/144) · e^{-12} ≈ 6.9 × 10^{-6}
+
+With bridge multiplicity: 12 pairs → (1/12)² suppression
+
+EFFECTIVE COUPLING STRENGTH:
+α_leak,light = √P_leak ≈ e^{-6} ≈ 0.00248
+
+RATIO TO DM PORTAL:
+α_leak,light / α_leak,DM ≈ 0.00248/0.57 ≈ 0.00435 (≈230× weaker)
+
+KEY INSIGHT:
+Dark light is ~230× weaker than dark matter portal because:
+- Matter portals use scalar fields → power-law suppression (volume ratio ~0.57)
+- Photons are gauge bosons → require null paths; Euclidean bridge blocks → exponential suppression
+
+PROPOSED CHANGES:
+1. Add dark light leakage formulas to bridge_pressure.py or new dark_forces.py
+2. Register P_leak ≈ 6.9×10^{-6} and α_leak,light ≈ 0.00248
+3. Add Euclidean action derivation S_E = χ_eff/b₃ = 6
+4. Add observables formulas (phase shift, CMB polarization, vacuum noise)
+5. Section content explaining classical prohibition vs quantum tunneling
+
+AFFECTED SIMULATIONS:
+- simulations/PM/support/bridge_pressure.py (primary)
+- simulations/PM/geometry/four_face_structure.py
+- simulations/PM/cosmology/dark_energy.py
+- simulations/PM/field_dynamics/orch_or_bridge.py (OR coherence)

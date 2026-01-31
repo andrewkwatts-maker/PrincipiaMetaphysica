@@ -1,0 +1,60 @@
+SUB-TOPIC 07: Dark Force Hierarchy (All Four Forces)
+======================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+Dark force leakage across shadows is highly asymmetric. General formula for any gauge
+boson of group G:
+
+GENERAL FORMULA:
+A_leak,G = R_n · exp(-S_E) · C_G
+P_leak,G = |R_n|² · exp(-2S_E) · |C_G|²
+α_leak,G = √P_leak,G
+
+Common prefactor: P_base = (1/12)² · e^{-12} ≈ 6.9 × 10^{-6}
+
+GROUP-SPECIFIC SUPPRESSION FACTORS:
+
+1. STRONG FORCE (SU(3)_C gluons):
+   - Confinement → color-neutral instanton required
+   - S_inst ~ 8π²/g_s² ≈ 80 (at GUT scale)
+   - C_G,strong ≈ e^{-80} ~ 10^{-35}
+   - P_leak,strong ~ 10^{-75}
+   - α_leak,strong ~ 10^{-37.5} → EFFECTIVELY ZERO
+
+2. WEAK FORCE (SU(2)_L W/Z):
+   - Massive bosons (m_W ~ 80 GeV) → tunneling suppressed
+   - C_G,weak ≈ e^{-m_W r_bridge} ~ e^{-10^5} ~ 10^{-43400}
+   - P_leak,weak ~ 0 → EFFECTIVELY ZERO
+
+3. ELECTROMAGNETIC (U(1)_Y photons):
+   - Massless, parity-even → moderate suppression
+   - C_G,EM ≈ 1 (no gauge suppression)
+   - α_leak,light ≈ 0.00248 (~230× weaker than DM portal)
+
+4. GRAVITY (gravitons):
+   - Massless, universal → weakest suppression
+   - C_G,grav ≈ 1 (gravitons couple to everything)
+   - P_leak,grav ~ 6.9×10^{-6}
+   - α_leak,grav ≈ 0.00248 (same as photons, but universal)
+
+HIERARCHY TABLE:
+| Force     | α_leak       | P_leak      | Status        |
+|-----------|-------------|-------------|---------------|
+| Strong    | ~10^{-37}   | ~10^{-75}   | Zero          |
+| Weak      | ~0          | ~0          | Zero          |
+| EM        | ~0.00248    | ~6.9×10^{-6}| Detectable    |
+| Gravity   | ~0.00248    | ~6.9×10^{-6}| Detectable    |
+
+PROPOSED CHANGES:
+1. Create dark_force_leakage.py simulation with full hierarchy
+2. Register group-specific C_G suppression factors
+3. Compute all four force leakage strengths
+4. Add detection feasibility assessment
+5. Section content explaining why strong/weak are impossible
+
+AFFECTED SIMULATIONS:
+- simulations/PM/support/bridge_pressure.py
+- simulations/PM/gauge/master_action.py
+- simulations/PM/derivations/gauge_sector_complete.py
+- simulations/PM/geometry/four_face_structure.py

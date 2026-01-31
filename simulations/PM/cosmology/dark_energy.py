@@ -625,6 +625,24 @@ class DarkEnergyV16(SimulationBase):
                         "prediction of the framework."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Two-Layer OR Connection to Dark Energy",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Two-Layer OR Connection to Dark Energy**\n\n"
+                        "The dark energy equation of state w\u2080 = -23/24 emerges from the bridge warping potential "
+                        "V_bridge through torsion T_\u03c9 = 1/\u221a6. The two-layer OR structure provides:\n\n"
+                        "- 12 bridge pairs \u00d7 4 faces per shadow = 48 channels (= \u03c7_eff/3)\n"
+                        "- Breathing variance reduction: \u03c3_eff = \u03c3_single/\u221a12 from 4-face \u00d7 3-generation pairing\n"
+                        "- Bridge warping potential V_bridge \u2192 w\u2080 = -1 + T_\u03c9\u00b2/(4\u03c0) \u2248 -1 + 1/24 = -23/24\n\n"
+                        "Dark matter as hidden faces: The three hidden faces (f=2,3,4) per shadow provide "
+                        "multi-component dark matter with portal coupling \u03b1_leak \u2248 0.57 from G\u2082 volume ratio."
+                    )
+                ),
             ],
             formula_refs=[
                 "dimensional-reduction-cascade",

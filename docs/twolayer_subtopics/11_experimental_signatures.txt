@@ -1,0 +1,51 @@
+SUB-TOPIC 11: Experimental Signatures & Observables
+=====================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+The two-layer OR structure and dark force leakage predict specific experimental signatures.
+All observables are derived from the base leakage probability P_leak ≈ 6.9×10^{-6}.
+
+OBSERVABLES TABLE:
+
+1. Cross-shadow phase shift (entangled photons):
+   Δφ ~ P_leak · ω · τ_coh ≈ 10^{-6} to 10^{-8} rad
+   Detection: High-finesse interferometers, quantum networks
+   Feasibility: Near-term (sensitivity ~10^{-9} rad)
+
+2. CMB polarization excess (B/E-mode):
+   ΔP ~ P_leak · ℏω_CMB/(kT_CMB) ≈ 10^{-7}
+   Detection: CMB-S4, LiteBIRD
+   Feasibility: Mid-term (sensitivity ~10^{-8})
+
+3. Vacuum noise excess (QED precision):
+   δ_QED ~ P_leak · α ≈ 10^{-8}
+   Detection: Next-gen g-2, Lamb shift
+   Feasibility: Mid-term (sensitivity ~10^{-10})
+
+4. GW polarization anomalies:
+   Δη_light ~ P_leak · η ≈ 10^{-7}
+   Detection: LIGO/Virgo O4/O5, LISA
+   Feasibility: Long-term (sensitivity ~10^{-8})
+
+5. Dark motor (theoretical limit):
+   P_out/P_in ~ 10^{-6} × N² A² ω τ_coh B² / (R ℏ)
+   → Net efficiency ≤ 1 (thermodynamic limit prevents net power from vacuum)
+   Conclusion: Dark motor is theoretically impossible
+
+UPPER BOUNDS:
+- P_leak < 10^{-5}–10^{-6} (no observed leakage in QED precision tests)
+- Theory prediction: P_leak ~ 10^{-5} to 10^{-6} (consistent with bounds)
+
+PROPOSED CHANGES:
+1. Add experimental observables to predictions_aggregator.py
+2. Register detection method formulas and sensitivity thresholds
+3. Add dark force observable table to paper sections
+4. Cross-reference with existing GW dispersion predictions
+5. Section content: experimental program for testing two-layer OR
+
+AFFECTED SIMULATIONS:
+- simulations/PM/paper/sections/predictions.py
+- simulations/PM/cosmology/gw_dispersion.py
+- simulations/PM/cosmology/dark_energy.py
+- simulations/PM/field_dynamics/orch_or_bridge.py

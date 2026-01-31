@@ -1,0 +1,50 @@
+SUB-TOPIC 09: Torsion from Topology (T_ω Derivation)
+======================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+Torsion T_ω is not postulated — it emerges as a topological invariant of the bridge
+structure and G₂ manifold. The derivation is purely geometric in 4 steps.
+
+FINAL FORMULA:
+T_ω = √(b₃/χ_eff) = 1/√6 ≈ 0.408
+
+DERIVATION (4 Steps):
+
+Step 1. Torsion as non-integrability of G₂ 3-form
+Under flux and bridge warping (weak G₂ structure):
+∇φ = T_ω ∧ φ
+Magnitude |T_ω| measures deviation from torsion-free G₂.
+
+Step 2. Topological imbalance source
+Bridge pressure arises from ratio of independent 3-cycles to total topology:
+|T_ω| ∝ √(b₃/χ_eff) = √(transverse modes / total complexity)
+
+Step 3. Flux quantization normalizes exactly
+∫F∧φ = χ_eff/24 = 6 → proportionality constant = 1
+
+Step 4. No further corrections needed
+Volume Vol = √(χ_eff/b₃), spectral gap k_gimel = 12+1/π, and shadows cancel:
+T_ω = √(b₃/χ_eff) = √(24/144) = 1/√6
+
+PHYSICAL ROLES:
+- Covariant derivative: D_M = ∂_M + (1/4)ω_MAB Γ^AB + T_ω^M
+- GW dispersion: η ≈ T_ω/π ≈ 0.13
+- Portal leakage: α_leak ~ 1/√6 ≈ 0.577 → 0.57 (flux-tuned)
+- DE thawing: w₀ = -1 + 1/b₃ = -23/24 (bridge pressure via torsion)
+- Bridge warping: V_bridge contains T_ω²/2 · χ_eff/b₃ term
+- Face warping: V_face contains T_ω²/2 · exp(-T/T_max) term
+
+PROPOSED CHANGES:
+1. Enhance torsion derivation documentation in geometric_anchors.py
+2. Add the 4-step derivation as explicit section content
+3. Register T_ω = 1/√6 with full topological justification
+4. Cross-reference all physical roles (GW, portal, DE, warping)
+5. Ensure torsion appears consistently across all affected simulations
+
+AFFECTED SIMULATIONS:
+- simulations/PM/geometry/geometric_anchors.py (torsion definition)
+- simulations/PM/geometry/torsional_constants.py
+- simulations/PM/support/bridge_pressure.py
+- simulations/PM/cosmology/dark_energy_thawing.py
+- simulations/PM/cosmology/gw_dispersion.py

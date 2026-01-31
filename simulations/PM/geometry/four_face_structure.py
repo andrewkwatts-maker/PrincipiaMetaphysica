@@ -52,6 +52,11 @@ _OUTPUT_FORMULAS = [
     "face-kk-mass-spectrum",
     "shadow-asymmetry",
     "torsional-leakage",
+    "two-layer-or-bridge-operator",
+    "two-layer-or-face-operator",
+    "bridge-warping-potential",
+    "face-warping-potential",
+    "face-sampling-strength",
 ]
 
 
@@ -488,6 +493,322 @@ class FourFaceG2Structure(SimulationBase):
                     },
                 },
             ),
+            # ─── TwoLayerOR Integration: New formulas (Sprint 1) ───
+            Formula(
+                id="two-layer-or-bridge-operator",
+                label="(2.7.6)",
+                latex=(
+                    r"R_\perp^{\text{global}} = \bigotimes_{i=1}^{12} R_{\perp,i}, "
+                    r"\quad R_{\perp,i}^2 = -I"
+                ),
+                plain_text=(
+                    "R_perp_global = tensor_product(R_perp_i, i=1..12), R_perp_i^2 = -I"
+                ),
+                category="geometric",
+                description=(
+                    "Bridge/Global OR operator — tensor product of 12 Mobius "
+                    "double-cover operators, creates dual shadows from 27D bulk"
+                ),
+                derivation={
+                    "steps": [
+                        "Start from the 12 bridge pairs (n_pairs = chi_eff/12 = 12) "
+                        "connecting dual shadows across the Euclidean bridge",
+                        "Each bridge pair i carries its own local OR operator R_{perp,i} "
+                        "acting as a 90-degree Mobius rotation in the bridge plane",
+                        "The global OR operator is the tensor product over all 12 pairs: "
+                        "R_perp^global = R_{perp,1} x R_{perp,2} x ... x R_{perp,12}",
+                        "Each local operator satisfies R_{perp,i}^2 = -I (double cover "
+                        "property), so the global operator squares to (-1)^{12} I = I, "
+                        "recovering identity after full double-cover application",
+                    ],
+                    "method": (
+                        "Tensor product construction of global OR from 12 local "
+                        "bridge-pair Mobius operators"
+                    ),
+                    "parentFormulas": ["or-reduction-operator", "4face-bridge-flux"],
+                },
+                terms={
+                    r"R_\perp^{\text{global}}": {
+                        "description": (
+                            "Global Bridge OR operator: tensor product of all 12 local "
+                            "Mobius double-cover operators, implementing Layer 1 (27D to 2x13D) "
+                            "orthogonal reduction"
+                        ),
+                    },
+                    r"R_{\perp,i}": {
+                        "description": (
+                            "Local OR operator for bridge pair i; 90-degree rotation in the "
+                            "Euclidean bridge plane with R_{perp,i}^2 = -I"
+                        ),
+                    },
+                },
+            ),
+            Formula(
+                id="two-layer-or-face-operator",
+                label="(2.7.7)",
+                latex=(
+                    r"R_{\text{face}}^{(f)} = e^{-i \lambda_f t / b_3} \cdot R_{\text{OR}}, "
+                    r"\quad \lambda_f = \left( \frac{n_f}{c_7 \sqrt{6}} \right)^{2/7}"
+                ),
+                plain_text=(
+                    "R_face^(f) = exp(-i*lambda_f*t/b3) * R_OR, "
+                    "lambda_f = (n_f/(c7*sqrt(6)))^(2/7)"
+                ),
+                category="geometric",
+                description=(
+                    "Face/Local OR operator — selects visible face within each shadow "
+                    "via Dirac eigenvalue modulation"
+                ),
+                derivation={
+                    "steps": [
+                        "Within each shadow (after Layer 1 bridge OR), the 13D geometry "
+                        "contains h^{1,1} = 4 Kahler faces that must be reduced to 4D",
+                        "The face operator R_face^(f) modulates the base OR operator "
+                        "R_OR by a Dirac eigenvalue phase exp(-i*lambda_f*t/b3)",
+                        "The eigenvalue lambda_f = (n_f/(c7*sqrt(6)))^{2/7} is determined "
+                        "by the face index n_f and the G2 holonomy constant c7, with the "
+                        "sqrt(6) factor from chi_eff/b3",
+                        "The 2/7 exponent arises from the 7-dimensional G2 holonomy group "
+                        "acting on the 2-cycles (Kahler moduli) of the compactification",
+                    ],
+                    "method": (
+                        "Dirac eigenvalue modulation of base OR operator for "
+                        "face-specific dimensional reduction (Layer 2)"
+                    ),
+                    "parentFormulas": ["or-reduction-operator", "racetrack-moduli-vev"],
+                },
+                terms={
+                    r"R_{\text{face}}^{(f)}": {
+                        "description": (
+                            "Face/Local OR operator for face f: selects the visible "
+                            "4D sector from the 13D shadow geometry (Layer 2 reduction)"
+                        ),
+                    },
+                    r"\lambda_f": {
+                        "description": (
+                            "Dirac eigenvalue for face f: controls the phase modulation "
+                            "that selects the visible sector"
+                        ),
+                    },
+                    r"R_{\text{OR}}": {
+                        "description": (
+                            "Base OR operator (90-degree Mobius rotation in bridge plane)"
+                        ),
+                    },
+                },
+            ),
+            Formula(
+                id="bridge-warping-potential",
+                label="(2.7.8)",
+                latex=(
+                    r"V_{\text{bridge}} = \sum_{i=1}^{12} \Lambda_i e^{-a_i T_{\text{bridge},i}} "
+                    r"+ \frac{T_\omega^2}{2} \cdot \frac{\chi_{\text{eff}}}{b_3} "
+                    r"+ \kappa \sum_{i=1}^{12} |\nabla T_{\text{bridge},i}|^2"
+                ),
+                plain_text=(
+                    "V_bridge = sum(Lambda_i * exp(-a_i * T_bridge_i), i=1..12) "
+                    "+ T_omega^2/2 * chi_eff/b3 "
+                    "+ kappa * sum(|grad(T_bridge_i)|^2)"
+                ),
+                category="geometric",
+                description=(
+                    "Bridge warping potential — governs shadow creation/separation "
+                    "(Layer 1 global OR). God-level limit: T_bridge->inf implies "
+                    "V->0, shadows merge."
+                ),
+                inputParams=[
+                    "topology.mephorash_chi",
+                    "topology.elder_kads",
+                    "geometry.k_gimel",
+                ],
+                derivation={
+                    "steps": [
+                        "The bridge warping potential V_bridge controls the energy cost "
+                        "of maintaining two separate shadows in the dual-shadow architecture",
+                        "Term 1: Racetrack-type non-perturbative terms sum_i Lambda_i "
+                        "exp(-a_i T_{bridge,i}) from the 12 bridge pair moduli, analogous "
+                        "to KKLT but acting on bridge (not bulk) moduli",
+                        "Term 2: Torsion mass term T_omega^2/2 * chi_eff/b3 from the "
+                        "G2 torsion tensor coupling, with chi_eff/b3 = 6 as the torsion "
+                        "normalization factor",
+                        "Term 3: Gradient energy kappa * sum |grad T_{bridge,i}|^2 "
+                        "penalizing spatial variations of bridge moduli (stabilization)",
+                        "God-level limit: when all T_{bridge,i} -> infinity, the "
+                        "exponential terms vanish and V -> 0, meaning the two shadows "
+                        "merge back into the undifferentiated 27D bulk",
+                    ],
+                    "method": (
+                        "Racetrack + torsion + gradient construction for bridge moduli "
+                        "potential governing Layer 1 shadow separation"
+                    ),
+                    "parentFormulas": [
+                        "racetrack-moduli-vev",
+                        "torsional-leakage",
+                        "or-reduction-operator",
+                    ],
+                },
+                terms={
+                    r"V_{\text{bridge}}": {
+                        "description": (
+                            "Bridge warping potential: total energy cost of maintaining "
+                            "the dual-shadow separation via the Euclidean bridge"
+                        ),
+                    },
+                    r"T_{\text{bridge},i}": {
+                        "description": (
+                            "Bridge pair modulus for the i-th associative cycle pair "
+                            "(i = 1..12); controls shadow separation distance"
+                        ),
+                    },
+                    r"T_\omega": {
+                        "description": (
+                            "Torsion scale parameter from the G2 torsion tensor"
+                        ),
+                    },
+                    r"\kappa": {
+                        "description": (
+                            "Gradient energy coefficient controlling moduli stabilization"
+                        ),
+                    },
+                },
+            ),
+            Formula(
+                id="face-warping-potential",
+                label="(2.7.9)",
+                latex=(
+                    r"V_{\text{face}}^{(f)} = \sum_{i=1}^4 \Lambda_i e^{-a_i T_i^{(f)}} "
+                    r"+ \frac{T_\omega^2}{2} e^{-T_i^{(f)}/T_{\max}} "
+                    r"+ \kappa_f \sum_{i=1}^4 |\nabla T_i^{(f)}|^2"
+                ),
+                plain_text=(
+                    "V_face^(f) = sum(Lambda_i * exp(-a_i * T_i^(f)), i=1..4) "
+                    "+ T_omega^2/2 * exp(-T_i^(f)/T_max) "
+                    "+ kappa_f * sum(|grad(T_i^(f))|^2)"
+                ),
+                category="geometric",
+                description=(
+                    "Face warping potential — governs visible face selection "
+                    "(Layer 2 local OR). Human-level limit: T_i>>T_max implies "
+                    "V->0, hidden faces decoupled."
+                ),
+                inputParams=[
+                    "geometry.h11",
+                    "topology.elder_kads",
+                    "geometry.k_gimel",
+                ],
+                derivation={
+                    "steps": [
+                        "Within each shadow, the face warping potential V_face^(f) "
+                        "controls which of the h^{1,1} = 4 Kahler faces is the "
+                        "visible (observable) sector",
+                        "Term 1: Racetrack terms sum_i Lambda_i exp(-a_i T_i^(f)) "
+                        "from the 4 face moduli, stabilizing the face hierarchy",
+                        "Term 2: Exponential screening T_omega^2/2 * exp(-T_i/T_max) "
+                        "which suppresses contributions from faces with T_i >> T_max, "
+                        "effectively decoupling the hidden faces",
+                        "Term 3: Face gradient energy kappa_f * sum |grad T_i^(f)|^2 "
+                        "for spatial stability of face moduli",
+                        "Human-level limit: when T_i >> T_max for the hidden faces, "
+                        "the screening exponential kills their contribution and V -> 0, "
+                        "leaving only the visible face (T_1) dynamically active",
+                    ],
+                    "method": (
+                        "Racetrack + screening + gradient construction for face moduli "
+                        "potential governing Layer 2 face selection"
+                    ),
+                    "parentFormulas": [
+                        "racetrack-moduli-vev",
+                        "alpha-leak-coupling",
+                    ],
+                },
+                terms={
+                    r"V_{\text{face}}^{(f)}": {
+                        "description": (
+                            "Face warping potential: energy cost of maintaining face f "
+                            "as the visible sector while decoupling hidden faces"
+                        ),
+                    },
+                    r"T_i^{(f)}": {
+                        "description": (
+                            "Face modulus for the i-th Kahler direction within face f"
+                        ),
+                    },
+                    r"T_{\max}": {
+                        "description": (
+                            "Maximum modulus scale: sets the screening threshold above "
+                            "which faces decouple from the visible sector"
+                        ),
+                    },
+                    r"\kappa_f": {
+                        "description": (
+                            "Face-specific gradient energy coefficient"
+                        ),
+                    },
+                },
+            ),
+            Formula(
+                id="face-sampling-strength",
+                label="(2.7.10)",
+                latex=(
+                    r"\alpha_{\text{sample}}^{(f)} = e^{-T_i^{(f)}/(2 T_{\max})} "
+                    r"\cdot \frac{1}{\sqrt{6}} \cdot "
+                    r"\left( 1 + \frac{\Delta F_f}{F_0} \right)^{-1/2} \approx 0.57"
+                ),
+                plain_text=(
+                    "alpha_sample^(f) = exp(-T_i^(f)/(2*T_max)) * 1/sqrt(6) "
+                    "* (1 + Delta_F_f/F0)^(-1/2) approx 0.57"
+                ),
+                category="geometric",
+                description=(
+                    "Sampling strength from visible sector to hidden faces — "
+                    "derived from G2 volume ratio, torsion, and flux asymmetry"
+                ),
+                derivation={
+                    "steps": [
+                        "The sampling strength alpha_sample^(f) quantifies how strongly "
+                        "the visible face can probe hidden face excitations through the "
+                        "face warping potential",
+                        "Factor 1: exp(-T_i/(2*T_max)) is the moduli screening from the "
+                        "face warping potential, suppressing access to deeply hidden faces",
+                        "Factor 2: 1/sqrt(6) = 1/sqrt(chi_eff/b3) is the topological "
+                        "leakage coupling alpha_leak from the inter-face overlap",
+                        "Factor 3: (1 + Delta_F_f/F0)^{-1/2} is the flux asymmetry "
+                        "correction from unequal G-flux distribution across faces",
+                        "Combined: alpha_sample approx 0.57, which is the dark matter "
+                        "portal coupling from hidden faces — this sets the strength of "
+                        "dark matter interactions with visible matter",
+                    ],
+                    "method": (
+                        "Product of moduli screening, topological coupling, and flux "
+                        "asymmetry factors for visible-to-hidden face sampling"
+                    ),
+                    "parentFormulas": [
+                        "alpha-leak-coupling",
+                        "face-warping-potential",
+                    ],
+                },
+                terms={
+                    r"\alpha_{\text{sample}}^{(f)}": {
+                        "description": (
+                            "Face sampling strength: effective coupling between the visible "
+                            "sector and hidden face f, serving as the dark matter portal "
+                            "coupling (approx 0.57)"
+                        ),
+                        "value": 0.57,
+                    },
+                    r"\Delta F_f": {
+                        "description": (
+                            "Flux asymmetry between visible and hidden face f: measures "
+                            "the G-flux imbalance driving the sampling correction"
+                        ),
+                    },
+                    r"F_0": {
+                        "description": (
+                            "Reference flux scale normalizing the flux asymmetry"
+                        ),
+                    },
+                },
+            ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -742,6 +1063,113 @@ class FourFaceG2Structure(SimulationBase):
                         "controlling the overall leakage scale."
                     ),
                 ),
+                # ─── TwoLayerOR Integration: New section content (Sprint 1) ───
+                ContentBlock(
+                    type="heading",
+                    content="Two-Layer Orthogonal Reduction (TwoLayerOR)",
+                    level=2,
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The OR mechanism operates in two hierarchically nested layers. "
+                        "Layer 1 (Bridge/Global OR) reduces the 27D bulk into two 13D "
+                        "shadows via the global operator R_perp^global, which is the "
+                        "tensor product of 12 local Mobius double-cover operators "
+                        "(one per bridge pair). Layer 2 (Face/Local OR) then selects "
+                        "the visible 4D face within each 13D shadow via the face operator "
+                        "R_face^(f), which modulates the base OR by a Dirac eigenvalue "
+                        "phase. The full reduction chain is: "
+                        "|Psi_bulk> -> |Psi_1> x |Psi_2> -> |Psi_vis,1> x |Psi_vis,2>."
+                    ),
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="two-layer-or-bridge-operator",
+                    label="(2.7.6)",
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="two-layer-or-face-operator",
+                    label="(2.7.7)",
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "A crucial structural property is non-commutativity: "
+                        "R_face composed with R_perp^global is not equal to "
+                        "R_perp^global composed with R_face. The bridge OR must "
+                        "act first to create the shadow pair, and only then can the "
+                        "face OR select the visible sector within each shadow. "
+                        "Reversing the order is physically meaningless because "
+                        "face selection presupposes the existence of separate shadows. "
+                        "This ordering constraint is analogous to the non-commutativity "
+                        "of symmetry-breaking stages in grand unified theories."
+                    ),
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Bridge and Face Warping Potentials",
+                    level=2,
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="bridge-warping-potential",
+                    label="(2.7.8)",
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The bridge warping potential V_bridge controls the energy cost "
+                        "of maintaining two separate shadows. It consists of racetrack "
+                        "non-perturbative terms from the 12 bridge pair moduli, a torsion "
+                        "mass term weighted by chi_eff/b3 = 6, and gradient energy for "
+                        "moduli stabilization. In the God-level limit where all bridge "
+                        "moduli T_bridge,i tend to infinity, V_bridge tends to zero and the "
+                        "two shadows merge back into the undifferentiated 27D bulk."
+                    ),
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="face-warping-potential",
+                    label="(2.7.9)",
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The face warping potential V_face^(f) governs which of the "
+                        "h^{1,1} = 4 Kahler faces is the visible (observable) sector. "
+                        "It features racetrack stabilization of the 4 face moduli, an "
+                        "exponential screening term that suppresses contributions from "
+                        "faces with T_i >> T_max, and face gradient energy. In the "
+                        "human-level limit where hidden face moduli greatly exceed T_max, "
+                        "the screening kills their contribution, leaving only the visible "
+                        "face (T_1) dynamically active."
+                    ),
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Dark Matter Portal Coupling",
+                    level=2,
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="face-sampling-strength",
+                    label="(2.7.10)",
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The sampling strength alpha_sample approx 0.57 is the dark matter "
+                        "portal coupling from hidden faces. It is derived from three factors: "
+                        "(1) moduli screening exp(-T_i/(2*T_max)) from the face warping "
+                        "potential, (2) the topological leakage coupling 1/sqrt(6) from the "
+                        "inter-face overlap, and (3) a flux asymmetry correction from unequal "
+                        "G-flux distribution across faces. This coupling sets the strength of "
+                        "dark matter interactions with visible matter, and is entirely "
+                        "determined by the G2 geometry without free parameters."
+                    ),
+                ),
             ],
             formula_refs=[
                 "alpha-leak-coupling",
@@ -749,6 +1177,11 @@ class FourFaceG2Structure(SimulationBase):
                 "face-kk-mass-spectrum",
                 "shadow-asymmetry",
                 "torsional-leakage",
+                "two-layer-or-bridge-operator",
+                "two-layer-or-face-operator",
+                "bridge-warping-potential",
+                "face-warping-potential",
+                "face-sampling-strength",
             ],
             param_refs=[
                 "geometry.n_faces",

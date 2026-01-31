@@ -668,6 +668,24 @@ class NeutrinoMixingSimulation(SimulationBase):
                     "hierarchical mixing angles via Froggatt-Nielsen suppression."
                 )
             ),
+            ContentBlock(
+                type="heading",
+                content="Dual-Shadow Architecture and PMNS Mixing",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "**Dual-Shadow Architecture and PMNS Mixing**\n\n"
+                    "The two-layer OR structure provides a natural framework for neutrino mixing:\n"
+                    "- Bridge/Global OR: Creates dual shadows with opposite chirality (L\u2194R)\n"
+                    "- Cross-shadow mixing through bridge OR coherence \u2192 PMNS angles\n"
+                    "- \u03c7_eff_total = 144 (both shadows) vs \u03c7_eff = 72 (single shadow)\n"
+                    "- The 4-face decomposition explains generation triality: \u03c7_eff/48 = 3\n\n"
+                    "Chirality reversal probability P_reverse \u2248 3\u00d710\u207b\u2076 constrains the "
+                    "cross-shadow contribution to neutrino oscillations."
+                )
+            ),
         ]
 
         return SectionContent(

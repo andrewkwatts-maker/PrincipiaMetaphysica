@@ -1,0 +1,42 @@
+SUB-TOPIC 01: Two-Layer OR Reduction Structure
+================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+The theory contains TWO hierarchically distinct Objective Reduction (OR) layers:
+
+Layer 1 — Bridge/Global OR (Higher-Level):
+- Operator: R_⊥^global = ⊗_{i=1}^{12} R_{⊥,i}, with R_{⊥,i}² = -I (Möbius double-cover per bridge pair)
+- Domain: Acts on the full 27D bulk BEFORE any compactification
+- Effect: Creates and maintains the two 13D shadows from the 27D bulk
+- The 12 bridge pairs (Euclidean C^(2,0) directions) provide the tensor product structure
+
+Layer 2 — Face/Local OR (Lower-Level):
+- Operator: R_face^(f) = exp(-iλ_f t/b₃) · R_OR
+- Eigenvalues: λ_f = (n_f / (c₇ Vol))^{2/7} (from Dirac spectrum on G₂)
+- Domain: Acts AFTER shadows exist — operates independently in each 13D shadow on its moduli wavefunction
+- Effect: Selects the dominant visible face (1 of 4 Kähler moduli sectors per shadow)
+
+Hierarchical Nesting:
+|Ψ_bulk⟩ →[R_⊥^global]→ |Ψ₁⟩ ⊗ |Ψ₂⟩ →[R_face^(f₁) ⊗ R_face^(f₂)]→ |Ψ_vis,1⟩ ⊗ |Ψ_vis,2⟩
+
+Non-commutativity proof: R_face ∘ R_⊥^global ≠ R_⊥^global ∘ R_face
+(Shadows must exist before faces can be selected.)
+
+KEY FORMULAS:
+- R_⊥^global = ⊗_{i=1}^{12} R_{⊥,i}
+- R_face^(f) = exp(-iλ_f t / b₃) · R_OR
+- λ_f = (n_f / (c₇ √6))^{2/7}
+
+PROPOSED CHANGES:
+1. Create new simulation formalizing the two-layer OR structure
+2. Register both OR operators as formal mathematical objects
+3. Prove hierarchical nesting and non-commutativity
+4. Add section content explaining bridge OR vs face OR
+5. Connect to existing geometric_anchors.py and four_face_structure.py
+
+AFFECTED SIMULATIONS:
+- simulations/PM/geometry/four_face_structure.py (already has face OR hints)
+- simulations/PM/geometry/geometric_anchors.py (bridge structure)
+- simulations/PM/field_dynamics/orch_or_bridge.py (OR mechanism)
+- simulations/PM/support/bridge_pressure.py (bridge physics)

@@ -1,0 +1,46 @@
+SUB-TOPIC 08: Chirality Reversal Mechanism
+=============================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+The dual-shadow structure naturally reverses chirality: Shadow 1 is left-chiral (our world),
+Shadow 2 is right-chiral (mirror). The chirality reversal operator combines both OR layers.
+
+CHIRALITY REVERSAL OPERATOR:
+R_chirality = R_⊥^global · P_{L/R} · R_face^(f)
+
+Where:
+- R_⊥^global: Bridge OR (creates shadow duality, flips chirality)
+- P_{L/R}: Chiral projection operator (selects left or right handedness)
+- R_face^(f): Face OR (selects visible sector within shadow)
+
+CHIRALITY FLIP PROBABILITY:
+P_reverse ≈ 3 × 10^{-6}
+
+This is the probability that a left-handed particle in Shadow 1 appears right-handed
+in Shadow 2 through bridge tunneling.
+
+MIRROR SHADOW PROPERTIES:
+- Shadow 1 (our world): Left-chiral weak force (SU(2)_L)
+- Shadow 2 (mirror): Right-chiral weak force (SU(2)_R)
+- Both shadows share: same speed of light, same gravity, same timeline
+- Euclidean bridge (C^(2,0)): Timeless connector, Möbius twist reverses chirality
+
+PHYSICAL IMPLICATIONS:
+1. The weak force looks different in the mirror shadow (right-handed)
+2. Strong force, EM, and gravity are identical in both shadows
+3. CPT is preserved globally across both shadows
+4. The chirality reversal is topological — encoded in the Möbius structure of R_⊥
+
+PROPOSED CHANGES:
+1. Add chirality reversal formula to orch_or_bridge.py or new simulation
+2. Register R_chirality operator and P_reverse ≈ 3×10^{-6}
+3. Document mirror shadow chirality properties
+4. Add section content explaining CPT preservation across shadows
+5. Connect to existing neutrino_mixing.py (cross-shadow PMNS)
+
+AFFECTED SIMULATIONS:
+- simulations/PM/field_dynamics/orch_or_bridge.py
+- simulations/PM/particle/neutrino_mixing.py
+- simulations/PM/gauge/master_action.py
+- simulations/PM/support/bridge_pressure.py

@@ -1,0 +1,47 @@
+SUB-TOPIC 10: Reduced Lagrangians (13D per-shadow, 4D effective)
+=================================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+After each OR layer, the master action reduces to lower-dimensional effective theories.
+This gives a clear chain: 27D → 13D (bridge OR) → 4D (face OR).
+
+REDUCTION CHAIN:
+
+27D Bulk (full master action):
+S = ∫_{M^27} √(-g) [R + ... + V_bridge + Σ V_face^(f)]
+
+→ Bridge/Global OR (Layer 1) →
+
+13D Per-Shadow Lagrangian:
+S_13D = ∫ √(-g_13) [R_13 + Ψ̄_P iγ^m(∂_m + T_ω^m)Ψ_P + V_face^(f)(local OR)]
+
+Key: After bridge OR, each shadow inherits the face OR potential.
+The 14 Euclidean bridge dimensions (12×(2,0) + C^(2,0)) are integrated out.
+
+→ Face/Local OR (Layer 2) →
+
+4D Effective Lagrangian:
+L_4D = -(M_Pl²/2)R_4 + χ̄ iD̸χ + |D_μ φ|² - V(φ) + (1/4)F_μν^a F^aμν + y_f ψ̄φψ + Λ + ...
+
+With:
+- M_Pl² = M_*^{11} Vol(V₇) (Planck mass from extra-dimensional volume)
+- Λ = (∫F∧φ)²/Vol ≈ 10^{-52} m^{-2} (cosmological constant from flux)
+
+DIMENSIONALITY ACCOUNTING:
+- 27D total = 4D visible + 7D G₂ core + 14D bridges + 2D central bridge
+- After bridge OR: 13D = 4D visible + 7D G₂ core + 2D residual
+- After face OR: 4D visible (all internal dimensions compactified)
+
+PROPOSED CHANGES:
+1. Add 13D per-shadow Lagrangian formula to lagrangian_master.py
+2. Add explicit 4D effective Lagrangian with M_Pl and Λ expressions
+3. Document the reduction chain as section content
+4. Verify dimensional accounting (27→13→4)
+5. Connect to KK reduction simulation (appendix_o)
+
+AFFECTED SIMULATIONS:
+- simulations/PM/derivations/lagrangian_master.py
+- simulations/PM/gauge/kk_reduction_gr_gauge.py
+- simulations/PM/paper/appendices/appendix_o_kk_reduction.py
+- simulations/PM/gauge/master_action.py

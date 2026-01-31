@@ -761,6 +761,71 @@ class MasterActionSimulationV22(SimulationBase):
                     r"-2/\sqrt{-g}": {"description": "Normalisation factor ensuring canonical dimensions and symmetry of T_{mu nu}"}
                 }
             ),
+            # =================================================================
+            # Two-Layer OR: Chirality Reversal and Dark Matter Portal (Sprint 2)
+            # =================================================================
+            Formula(
+                id="chirality-reversal-operator",
+                label="(MA.TL1)",
+                latex=r"R_{\text{chirality}} = R_\perp^{\text{global}} \cdot P_{L/R} \cdot R_{\text{face}}^{(f)}, \quad P_{\text{reverse}} \approx 3 \times 10^{-6}",
+                plain_text="R_chirality = R_perp_global * P_LR * R_face^(f), P_reverse ≈ 3e-6",
+                category="geometric",
+                description=(
+                    "Chirality reversal operator -- combines bridge OR (creates shadow duality, "
+                    "flips chirality) with face OR. P_reverse is the cross-shadow chirality flip "
+                    "probability."
+                ),
+                inputParams=[],
+                outputParams=[],
+                derivation={
+                    "steps": [
+                        "The bridge OR operator R_perp^global creates the dual-shadow boundary, mapping normal to mirror sectors",
+                        "Under bridge OR, the chiral projection operators P_L and P_R are exchanged: Shadow 1 inherits left-chiral fermions, Shadow 2 inherits right-chiral fermions",
+                        "The face OR operator R_face^(f) acts within each shadow to select the visible face from the 4 TCS faces",
+                        "The combined chirality reversal operator R_chirality = R_perp_global * P_LR * R_face^(f) composes all three operations",
+                        "The cross-shadow chirality flip probability P_reverse ~ 3e-6 quantifies the suppressed but nonzero coupling between shadows that allows rare chirality violation"
+                    ],
+                    "method": "Composition of bridge OR, chiral projection, and face OR operators",
+                    "parentFormulas": ["distributed-or-reduction-v22", "electroweak-mixing-v22"]
+                },
+                terms={
+                    "R_perp_global": "Bridge OR operator creating dual-shadow duality (Layer 1)",
+                    "P_LR": "Chiral projection operator selecting left or right handedness",
+                    "R_face^(f)": "Face OR operator selecting visible face within a shadow (Layer 2)",
+                    "P_reverse": "Cross-shadow chirality flip probability ~ 3e-6 (suppressed by volume ratio)"
+                }
+            ),
+            Formula(
+                id="dark-matter-portal-lagrangian",
+                label="(MA.TL2)",
+                latex=r"\mathscr{L}_{\text{portal}} = \alpha_{\text{leak}} \phi_{\text{vis}} \phi_{\text{dark}} \phi_{\text{mod}}, \quad \alpha_{\text{leak}} \approx 0.57",
+                plain_text="L_portal = alpha_leak * phi_vis * phi_dark * phi_mod, alpha_leak ≈ 0.57",
+                category="geometric",
+                description=(
+                    "Dark matter portal Lagrangian -- hidden face coupling from volume ratio "
+                    "(1/sqrt(6)), torsion, and flux asymmetry corrections."
+                ),
+                inputParams=[],
+                outputParams=[],
+                derivation={
+                    "steps": [
+                        "The 4-face TCS G2 structure has one visible face (selected by face OR) and three hidden faces",
+                        "The hidden face fields phi_dark couple to the visible face fields phi_vis through the shared moduli phi_mod",
+                        "The portal coupling alpha_leak is determined geometrically: the base factor is 1/sqrt(6) from the volume ratio of the visible face to the total internal volume",
+                        "Torsion corrections from the G2 contorsion tensor modify the base coupling by a factor of order unity",
+                        "Flux asymmetry between visible and hidden faces provides an additional correction factor",
+                        "The combined result is alpha_leak ~ 0.57, entirely determined by the internal geometry"
+                    ],
+                    "method": "Hidden face coupling from G2 volume ratio, torsion, and flux corrections",
+                    "parentFormulas": ["pneuma-master-action-v23"]
+                },
+                terms={
+                    "phi_vis": "Visible face scalar fields (our universe)",
+                    "phi_dark": "Hidden (dark) face scalar fields",
+                    "phi_mod": "Shared moduli fields mediating cross-face coupling",
+                    "alpha_leak": "Portal coupling ~ 0.57 from 1/sqrt(6) with torsion and flux corrections"
+                }
+            ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -1064,8 +1129,55 @@ class MasterActionSimulationV22(SimulationBase):
                     type="formula",
                     formula_id="stress-energy-variation"
                 ),
+                # =============================================================
+                # Two-Layer OR: Chirality and Dark Matter Portal (Sprint 2)
+                # =============================================================
+                ContentBlock(
+                    type="heading",
+                    content="Two-Layer OR: Chirality Reversal Mechanism",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The chirality reversal mechanism arises naturally from the two-layer OR "
+                        "structure. Bridge OR (Layer 1) creates the dual-shadow boundary, and in "
+                        "doing so exchanges the chiral projection operators: Shadow 1 inherits "
+                        "left-chiral fermions (our world), while Shadow 2 inherits right-chiral "
+                        "fermions (the mirror world). CPT symmetry is preserved globally across "
+                        "both shadows. The cross-shadow chirality flip probability P_reverse ~ "
+                        "3e-6 quantifies the suppressed coupling between shadows."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="chirality-reversal-operator"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Dark Matter Portal from Hidden Face Geometry",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The dark matter portal coupling emerges from the hidden face geometry "
+                        "of the TCS G2 manifold. Face OR (Layer 2) selects one face as visible, "
+                        "leaving three hidden faces. The hidden face fields couple to visible "
+                        "fields through shared moduli, with a portal coupling alpha_leak ~ 0.57 "
+                        "determined by the volume ratio 1/sqrt(6), torsion corrections from the "
+                        "G2 contorsion tensor, and flux asymmetry between visible and hidden faces."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="dark-matter-portal-lagrangian"
+                ),
             ],
-            formula_refs=_OUTPUT_FORMULAS,
+            formula_refs=_OUTPUT_FORMULAS + [
+                "chirality-reversal-operator",
+                "dark-matter-portal-lagrangian",
+            ],
             param_refs=_OUTPUT_PARAMS
         )
 
