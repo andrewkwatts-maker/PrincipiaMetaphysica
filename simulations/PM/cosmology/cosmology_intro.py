@@ -248,6 +248,37 @@ class CosmologyIntroV16(SimulationBase):
                         "to yield 4D gravity plus gauge fields plus scalar moduli."
                     )
                 ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Each step in this cascade is physically necessary, not merely "
+                        "mathematically convenient. The initial 26D -> 13D split is forced by "
+                        "the requirement that the (24,1) unified time signature must decompose "
+                        "into two copies of (12,1), the unique factorisation that preserves "
+                        "Lorentzian causality in each shadow while eliminating ghost modes from "
+                        "extra timelike dimensions. The subsequent 13D -> 4D compactification "
+                        "on K_Pneuma = G2 x T2 is dictated by supersymmetry: G2 holonomy is "
+                        "the UNIQUE holonomy group in 7 dimensions that preserves exactly one "
+                        "covariantly constant spinor, yielding N=1 supersymmetry in 4D -- the "
+                        "minimal amount compatible with a chiral fermion spectrum matching the "
+                        "Standard Model. The T2 torus factor provides the two additional compact "
+                        "directions needed for the heterotic-like gauge sector embedding."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Physically, the 9 internal dimensions of K_Pneuma encode ALL the "
+                        "information about particle physics: the 7D G2 manifold's topology "
+                        "(characterised by Betti numbers b2 = 4 and b3 = 24) determines the "
+                        "number of gauge fields (from harmonic 2-forms) and matter generations "
+                        "(from harmonic 3-forms), while the T2 factor controls the GUT-scale "
+                        "coupling unification. The 4D observer never 'sees' these dimensions "
+                        "directly because they are compactified at scales near the Planck length "
+                        "(~10^-35 m), but their geometry manifests as the coupling constants, "
+                        "mass hierarchies, and mixing angles measured in collider experiments."
+                    )
+                ),
                 # Subsection: Higher-Dimensional Metric
                 ContentBlock(
                     type="subsection",
@@ -513,7 +544,14 @@ class CosmologyIntroV16(SimulationBase):
                 latex=r"ds²_{13} = g_{μν}(x)dx^μdx^ν + g_{mn}(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
                 plain_text="ds²_13 = g_μν(x)dx^μdx^ν + g_mn(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
                 category="DERIVED",
-                description="13-dimensional metric decomposition for Kaluza-Klein reduction",
+                description=(
+                    "13-dimensional metric decomposition for Kaluza-Klein reduction. "
+                    "The three blocks encode distinct physics: g_uv(x) contains 4D gravity "
+                    "(10 independent components = graviton), g_mn(x,y) encodes the internal "
+                    "geometry whose shape determines particle masses and couplings, and the "
+                    "mixed term A_u^a provides gauge fields (one for each Killing vector of "
+                    "the internal isometry group SO(10), giving the GUT gauge bosons)."
+                ),
                 inputParams=[],
                 outputParams=["cosmology.M_Pl_4D"],
                 input_params=[],

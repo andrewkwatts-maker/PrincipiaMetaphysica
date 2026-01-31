@@ -50,6 +50,26 @@ MATHEMATICAL FRAMEWORK:
    - The charges are quantized: Q = n * e, where n in Z
    - The unit charge e = sqrt(4*pi*alpha) from alpha = 1/137.036
 
+   WHY G2 SPECIFICALLY:
+   G2 holonomy is distinguished among Berger's list of special holonomies
+   because it is the UNIQUE holonomy in 7 dimensions that preserves exactly
+   N=1 supersymmetry upon M-theory compactification to 4D (Joyce 2000,
+   Acharya & Witten 2001). Compared to SU(3) holonomy (Calabi-Yau 3-folds),
+   G2 manifolds naturally produce chiral fermions from singular fibres and
+   support non-abelian gauge fields localized on codimension-4 singularities.
+   The third Betti number b3 counts independent associative 3-cycles; with
+   b3=24 these cycles generate the charge lattice and constrain the number
+   of fermion generations to b3/8 = 3.
+
+   LATTICE APPROXIMATION CAVEATS:
+   The lattice discretization used here replaces the smooth G2 manifold with
+   a finite periodic lattice, breaking some continuous symmetries. However,
+   the spectral flow is a topological invariant protected by the index
+   theorem: it counts net zero-mode crossings regardless of lattice spacing.
+   The key quantity (SF = winding number) converges to the continuum result
+   even on coarse lattices because it depends only on the homotopy class of
+   the gauge transformation, not on metric details.
+
 5. SPECTRAL ASYMMETRY AND ETA-INVARIANT
    -------------------------------------
    The eta-invariant measures spectral asymmetry:
@@ -148,6 +168,14 @@ class DiracOperatorG2:
         D psi = gamma^mu (partial_mu + i*A_mu) psi
 
     where gamma^mu are the 7D Dirac matrices satisfying {gamma^mu, gamma^nu} = 2*delta^{mu,nu}
+
+    LATTICE CAVEAT: The smooth G2 manifold is replaced by a periodic lattice
+    that preserves the octonionic structure constants (associative 3-form) but
+    breaks continuous isometries. The spectral flow, being a topological
+    invariant, converges to the continuum result even on this coarse lattice
+    because it depends only on the homotopy class of the gauge transformation.
+    Metric-sensitive quantities (individual eigenvalues, eta-invariant) should
+    be interpreted qualitatively; only their topological content is rigorous.
     """
 
     def __init__(self, n_sites: int = 8, b3: int = 24):
@@ -618,6 +646,15 @@ class ChargeQuantizationDerivation:
 
     This provides a topological proof of charge quantization without
     invoking magnetic monopoles (Dirac quantization) or GUTs.
+
+    M-THEORY CONNECTION:
+    In M-theory compactified on a G2 manifold, the 11D spacetime is
+    M_4 x X_7 where X_7 has G2 holonomy. M2-branes wrapping associative
+    3-cycles in X_7 give rise to charged particles in the 4D effective
+    theory. The charge lattice is determined by H_3(X_7, Z), and with
+    b3=24 the 24 independent 3-cycles generate the full charge spectrum.
+    The spectral flow argument shows this charge lattice is quantized
+    from topology alone, without assuming any specific brane dynamics.
     """
 
     def __init__(self, b3: int = 24, n_sites: int = 8):
@@ -1212,12 +1249,28 @@ class SpectralFlowChargeV18(SimulationBase):
             ),
             ContentBlock(
                 type="callout",
+                callout_type="info",
+                title="Why G2 Holonomy?",
+                content=(
+                    "G2 holonomy is the unique special holonomy in 7 dimensions that preserves "
+                    "exactly N=1 supersymmetry upon M-theory compactification to 4D (Berger's "
+                    "classification; Joyce 2000). Unlike SU(3) Calabi-Yau compactifications, "
+                    "G2 manifolds naturally produce chiral fermions via singular fibres and "
+                    "support non-abelian gauge fields on codimension-4 singularities. The "
+                    "b3=24 associative 3-cycles generate the charge lattice via H_3(X_7, Z), "
+                    "constraining the fermion generation count to b3/8 = 3."
+                )
+            ),
+            ContentBlock(
+                type="callout",
                 callout_type="success",
                 title="Key Result",
                 content=(
                     "Charge quantization Q = n*e follows from topology alone. This is "
                     "independent of the metric, regularization, or other details - only "
-                    "the G2 structure and gauge topology matter."
+                    "the G2 structure and gauge topology matter. The lattice discretization "
+                    "preserves this result because the spectral flow depends only on the "
+                    "homotopy class of the gauge transformation, not on metric details."
                 )
             )
         ]

@@ -1130,6 +1130,17 @@ class PredictionsAggregatorV16(SimulationBase):
                     "These predictions are now strengthened by the unified time framework derivations."
                 )
             ),
+            ContentBlock(
+                type="table",
+                headers=["Prediction", "Experimental Setup", "Observable Signature", "Falsification Criterion"],
+                rows=[
+                    ["Normal hierarchy", "JUNO: 20 kton liquid scintillator, 53 km baseline from Yangjiang/Taishan reactors", "Oscillation pattern in reactor antineutrino spectrum (2-8 MeV) distinguishes NH vs IH at 3-4 sigma after 6 years", "IH confirmed at >3 sigma falsifies PM"],
+                    ["KK graviton 5.0 TeV", "HL-LHC: pp collisions at sqrt(s) = 14 TeV, 3000 fb^-1 integrated luminosity", "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section sigma*BR(gamma gamma) ~ 0.10 fb", "No excess above 7 TeV challenges geometric derivation"],
+                    ["Proton decay p->e+pi0", "Hyper-K: 260 kton water Cherenkov detector, 10 yr exposure", "Back-to-back e+ and pi0 (each ~459 MeV); Cherenkov ring topology distinguishes from atmospheric nu background", "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10) scale"],
+                    ["w0 = -23/24", "DESI: 5000 fibre spectroscopic survey, 14000 deg^2, BAO measurements at z = 0.1-3.5", "BAO peak positions + RSD amplitude vs redshift constrain w0 to +/-0.02 (DR3)", "w0 outside [-0.99, -0.92] at 3 sigma falsifies MEP derivation"],
+                    ["GW dispersion n=2", "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission", "Frequency-dependent arrival time delay in massive BH mergers: Delta_t ~ 10^-42 s * (f/mHz)^2", "n != 2 or xi_2 off by >10x challenges CY4 compactification geometry"],
+                ]
+            ),
 
             # ===== SUMMARY TABLE =====
             ContentBlock(

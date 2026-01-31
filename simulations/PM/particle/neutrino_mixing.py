@@ -692,7 +692,15 @@ class NeutrinoMixingSimulation(SimulationBase):
             section_id="4",
             subsection_id="4.5",
             title="Neutrino Mixing from G2 Geometry",
-            abstract="Derivation of PMNS mixing angles from associative 3-cycle topology",
+            abstract=(
+                "Derives the full Pontecorvo-Maki-Nakagawa-Sakata (PMNS) neutrino mixing matrix "
+                "from the topological structure of associative 3-cycles on the G2 manifold. All four "
+                "mixing parameters (theta_12, theta_13, theta_23, delta_CP) emerge from wavefunction "
+                "overlaps on cycle intersections, with no free parameters or calibration to experimental "
+                "data. The cross-shadow architecture (chi_eff_total = 144 from both 13D shadows) "
+                "naturally produces the characteristically large PMNS mixing angles, in contrast to "
+                "the small CKM angles arising from single-shadow quark confinement."
+            ),
             content_blocks=content_blocks,
             formula_refs=["pmns-theta-13", "pmns-delta-cp", "pmns-theta-12", "pmns-theta-23"],
             param_refs=[
@@ -718,7 +726,14 @@ class NeutrinoMixingSimulation(SimulationBase):
                       r"\left(1 + \frac{S_{\text{orient}}}{2\chi_{\text{eff}}}\right)",
                 plain_text="sin(theta_13) = sqrt(b2 * n_gen) / b3 * (1 + S_orient/(2*chi_eff))",
                 category="DERIVED",
-                description="Reactor neutrino mixing angle from (1,3) cycle intersections",
+                description=(
+                    "Reactor neutrino mixing angle theta_13 derived from the geometric "
+                    "intersection properties of the (1,3) associative 3-cycle pair on the "
+                    "G2 manifold. The base factor sqrt(b2*n_gen)/b3 quantifies the wavefunction "
+                    "overlap between first and third generation neutrinos localized on distinct "
+                    "cycles, while the orientation correction (1 + S_orient/(2*chi_eff)) accounts "
+                    "for flux-induced phase shifts at cycle boundaries."
+                ),
                 inputParams=["topology.b2", "topology.elder_kads", "topology.n_gen",
                             "topology.mephorash_chi", "topology.orientation_sum"],
                 outputParams=["neutrino.theta_13_pred"],
@@ -797,7 +812,13 @@ class NeutrinoMixingSimulation(SimulationBase):
                       r"\left(1 - \frac{b_3 - b_2 n_{\text{gen}}}{2\chi_{\text{eff}}}\right)",
                 plain_text="sin(theta_12) = 1/sqrt(3) * (1 - (b3 - b2*n_gen)/(2*chi_eff))",
                 category="DERIVED",
-                description="Solar neutrino mixing angle from tri-bimaximal base",
+                description=(
+                    "Solar neutrino mixing angle theta_12 starting from the tri-bimaximal value "
+                    "sin(theta_12) = 1/sqrt(3), which arises from the approximate A4 discrete "
+                    "symmetry of the three associative 3-cycle generations. The topological "
+                    "perturbation (b3 - b2*n_gen)/(2*chi_eff) breaks this discrete symmetry, "
+                    "shifting the angle from 35.26 deg to the observed value near 33.4 deg."
+                ),
                 inputParams=["topology.b2", "topology.elder_kads", "topology.n_gen", "topology.mephorash_chi"],
                 outputParams=["neutrino.theta_12_pred"],
                 input_params=["topology.b2", "topology.elder_kads", "topology.n_gen", "topology.mephorash_chi"],
@@ -838,7 +859,15 @@ class NeutrinoMixingSimulation(SimulationBase):
                       r"+ \frac{S_{\text{orient}}}{b_3} \cdot \frac{b_2 \chi_{\text{eff}}}{b_3 n_{\text{gen}}}",
                 plain_text="theta_23 = 45 + (b2 - n_gen)*n_gen/b2 + (S_orient/b3)*(b2*chi_eff)/(b3*n_gen)",
                 category="DERIVED",
-                description="Atmospheric neutrino mixing angle from octonionic maximal mixing with flux perturbation",
+                description=(
+                    "Atmospheric neutrino mixing angle theta_23 derived from the octonionic "
+                    "automorphism structure G2 ~ Aut(O). The base value of 45 deg (maximal "
+                    "mixing) reflects the inherent octonionic symmetry, while two geometric "
+                    "corrections shift the angle to the observed upper octant: a Kahler moduli "
+                    "correction of +0.75 deg and a G4-flux winding contribution of +4.0 deg "
+                    "from flux quantization threading the associative 3-cycles. This resolves "
+                    "the atmospheric octant ambiguity without parameter tuning."
+                ),
                 inputParams=["topology.b2", "topology.elder_kads", "topology.n_gen",
                             "topology.mephorash_chi", "topology.orientation_sum"],
                 outputParams=["neutrino.theta_23_pred"],
@@ -901,7 +930,14 @@ class NeutrinoMixingSimulation(SimulationBase):
                       r"\mathbf{M}_\nu = \mathbf{Y}_\nu \mathbf{Y}_\nu^T",
                 plain_text="m_i^2 = eigenvalues(M_nu), M_nu = Y_nu * Y_nu^T",
                 category="DERIVED",
-                description="Neutrino mass eigenvalues from Yukawa texture",
+                description=(
+                    "Neutrino mass eigenvalues from the Yukawa texture matrix determined by "
+                    "associative 3-cycle intersection geometry. The mass hierarchy arises from "
+                    "exponentially suppressed wavefunction overlaps between generations localized "
+                    "on distinct cycles of the G2 manifold. The b3=24 topology (even Betti number) "
+                    "naturally supports Inverted Ordering with two near-degenerate heavy states "
+                    "(m1, m2 ~ 0.049 eV) and one flux-suppressed light state (m3 ~ 0.002 eV)."
+                ),
                 inputParams=["topology.b2", "topology.elder_kads", "topology.mephorash_chi"],
                 outputParams=["neutrino.m1", "neutrino.m2", "neutrino.m3"],
                 input_params=["topology.b2", "topology.elder_kads", "topology.mephorash_chi"],

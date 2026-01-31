@@ -1040,18 +1040,30 @@ if SCHEMA_AVAILABLE:
                 subsection_id="A.1",
                 title="G2 Holonomy and Fine Structure Constant",
                 abstract=(
-                    "Investigation of whether alpha can be derived from G2 holonomy. "
-                    "Multiple approaches examined with rigorous assessment. Conclusion: "
-                    "closest matches are likely numerological; rigorous derivation remains elusive."
+                    "Investigation of whether the fine-structure constant alpha = 1/137.036 "
+                    "can be derived from G2 holonomy and related geometric structures. "
+                    "Fifteen approaches are examined on a 1-10 rigor scale: numerical "
+                    "ansatze (e.g. k_gimel^2 - b3/phi + phi/(4*pi) = 137.037, matching to "
+                    "0.0005%) achieve impressive coincidences but lack a derivation chain "
+                    "connecting geometry to QED. The most rigorous approach, M-theory "
+                    "dimensional reduction (1/g^2_4D ~ V_cycle/V_G2), provides the correct "
+                    "framework but requires explicit metric data for the TCS G2 manifold. "
+                    "Conclusion: G2 holonomy alone does not determine alpha; additional "
+                    "physical input (moduli stabilization, flux quantization) is needed."
                 ),
                 content_blocks=[
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The fine structure constant alpha = 1/137.036 is one of the most "
-                            "precisely measured constants in physics. Various approaches have "
-                            "attempted to derive it from fundamental geometry. Here we investigate "
-                            "whether G2 holonomy provides such a derivation."
+                            "The fine-structure constant alpha = e^2/(4*pi*epsilon_0*hbar*c) = "
+                            "1/137.035999177 (CODATA 2022) governs the strength of electromagnetic "
+                            "interactions. A true geometric derivation of alpha would require a "
+                            "complete chain: (1) specifying a compact G2 manifold with known metric, "
+                            "(2) computing the U(1) gauge coupling from the volume of the associative "
+                            "3-cycle supporting the photon, (3) running the coupling to low energies "
+                            "via RG flow. This appendix tests whether any shortcut through G2 "
+                            "holonomy data alone can reproduce alpha, and honestly classifies "
+                            "each attempt on a 1-10 rigor scale."
                         )
                     ),
                     ContentBlock(
@@ -1091,10 +1103,15 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "CONCLUSION: G2 holonomy alone does not appear to determine alpha. "
-                            "While G2 provides the geometric framework, additional structure "
-                            "(compactification scale, flux quantization, or moduli stabilization) "
-                            "is needed to fix the gauge coupling."
+                            "CONCLUSION: G2 holonomy alone does not determine alpha. The "
+                            "numerical coincidences (best match 0.0005%) are impressive but "
+                            "lack the essential derivation chain: metric -> cycle volume -> "
+                            "gauge coupling -> RG running -> alpha(M_Z). A rigorous derivation "
+                            "requires (i) moduli stabilization fixing the G2 metric, "
+                            "(ii) flux quantization constraining cycle volumes, and "
+                            "(iii) explicit one-loop running from M_GUT to M_Z. "
+                            "Until these are provided, the close matches remain "
+                            "numerological coincidences, not physical derivations."
                         )
                     )
                 ],
@@ -1138,8 +1155,15 @@ if SCHEMA_AVAILABLE:
                     plain_text="alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.037",
                     category="HEURISTIC",
                     description=(
-                        "Geometric Anchors formula - achieves ~0.0005% match but is "
-                        "NUMEROLOGICAL: no derivation showing why these terms combine to give alpha."
+                        "Geometric Anchors formula: numerically approximates alpha^{-1} to "
+                        "0.0005% accuracy, but the relationship is purely empirical. A "
+                        "rigorous derivation would require relating k_gimel, b3, and phi to "
+                        "the physical definition alpha = e^2/(4*pi*hbar*c) via QED loop "
+                        "corrections, vacuum polarization, or M-theory cycle volumes. "
+                        "This link is missing: the formula combines topological (b3), "
+                        "algebraic (phi), and number-theoretic (pi) quantities with no "
+                        "physical mechanism connecting them to electromagnetic coupling. "
+                        "Classified as NUMEROLOGICAL (rigor 2/10)."
                     ),
                     input_params=["topology.elder_kads"],
                     output_params=["geometry.alpha_inverse"],
@@ -1194,8 +1218,14 @@ if SCHEMA_AVAILABLE:
                     plain_text="1/g^2_4D ~ V_cycle / V_G2",
                     category="DERIVED",
                     description=(
-                        "M-theory compactification formula relating 4D gauge coupling to "
-                        "internal geometry. Correct framework but requires explicit metric data."
+                        "M-theory compactification formula: the 4D gauge coupling g^2_4D is "
+                        "determined by the ratio of the associative 3-cycle volume V_cycle "
+                        "(supporting the gauge field) to the total G2 manifold volume V_G2. "
+                        "This is the physically correct framework for deriving alpha from "
+                        "geometry (rigor 7/10), but requires explicit knowledge of the TCS "
+                        "G2 metric -- currently unavailable. The derivation chain would be: "
+                        "stabilize moduli -> compute V_cycle/V_G2 -> obtain g^2_4D -> "
+                        "run RG from M_GUT to M_Z -> extract alpha(M_Z)."
                     ),
                     input_params=["geometry.volume_ratio"],
                     output_params=["gauge.coupling"],

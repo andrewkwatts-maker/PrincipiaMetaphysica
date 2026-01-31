@@ -183,19 +183,26 @@ class ProtonDecaySimulation(SimulationBase):
             subsection_id="4.6",
             title="Proton Decay Lifetime",
             abstract=(
-                "We compute the proton lifetime using geometric suppression from "
-                "TCS G2 cycle separation. The key insight is that matter and Higgs "
-                "fields localize on separated 3-cycles, with separation determined "
-                "by K3 fibre matching topology."
+                "We compute the proton lifetime from the TCS (twisted connected sum) "
+                "G2 manifold, where the neck topology separating the two building "
+                "blocks exponentially suppresses dimension-6 proton decay operators. "
+                "The K3 fibre matching number K = 4 fixes the cycle separation "
+                "d/R = 1/(2*pi*K), yielding tau_p ~ 3.9 x 10^34 years -- above the "
+                "Super-Kamiokande bound and testable by Hyper-Kamiokande."
             ),
             content_blocks=[
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "In TCS G2 manifolds, the twisted connected sum construction "
-                        "creates a 'neck' region where two building blocks are glued "
-                        "together. Matter fields and Higgs fields localize on associative "
-                        "3-cycles that are separated by this neck topology."
+                        "glues two asymptotically cylindrical building blocks (each a "
+                        "K3-fibered Calabi-Yau threefold cross S^1) along a common neck "
+                        "region. Matter fields localize on associative 3-cycles in one "
+                        "building block, while the Higgs multiplet localizes on 3-cycles "
+                        "in the other. The neck provides a physical barrier: dimension-6 "
+                        "proton decay operators (qq -> ql via leptoquark exchange) are "
+                        "suppressed by the exponentially small wavefunction overlap across "
+                        "the neck."
                     )
                 ),
                 ContentBlock(
@@ -245,10 +252,13 @@ class ProtonDecaySimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where C = 3.82 × 10³³ years is a prefactor that includes "
-                        "hadronic matrix elements from lattice QCD, Standard Model "
-                        "phase space factors, and running of couplings to the proton "
-                        "mass scale."
+                        "where C = 3.82 x 10^33 years is a prefactor incorporating "
+                        "hadronic matrix elements from lattice QCD (proton-to-vacuum "
+                        "transition amplitudes), Standard Model phase space factors, "
+                        "and RG running of the dimension-6 Wilson coefficients from the "
+                        "GUT scale down to the proton mass. The M_GUT^4 suppression "
+                        "reflects the dimension-6 operator structure (two quark fields, "
+                        "one lepton field, one Higgs field) at the unification scale."
                     )
                 ),
                 ContentBlock(
@@ -324,9 +334,12 @@ class ProtonDecaySimulation(SimulationBase):
                 plain_text="S = exp(2*pi*d/R) = exp(1/K)",
                 category="DERIVED",
                 description=(
-                    "Geometric suppression factor from TCS cycle separation. "
-                    "Quantifies wavefunction overlap suppression between matter "
-                    "and Higgs fields localized on separated 3-cycles."
+                    "Geometric suppression factor from TCS neck topology. In the "
+                    "twisted connected sum G2 construction, matter and Higgs 3-cycles "
+                    "sit in opposite building blocks separated by the neck region of "
+                    "length d. The wavefunction overlap integral decays exponentially "
+                    "with separation: |<psi_matter|psi_Higgs>|^2 ~ exp(-2*pi*d/R). "
+                    "For K = 4 matching K3 fibres, d/R = 1/(2*pi*K) gives S = exp(1/4)."
                 ),
                 inputParams=["topology.K_MATCHING"],
                 outputParams=["proton_decay.suppression_factor", "proton_decay.d_over_R"],
@@ -358,9 +371,13 @@ class ProtonDecaySimulation(SimulationBase):
                 plain_text="tau_p = C * (M_GUT/10^16)^4 * (0.03/alpha_GUT)^2 * S",
                 category="PREDICTED",
                 description=(
-                    "Proton lifetime including TCS geometric suppression. "
-                    "Combines standard GUT decay rate with cycle separation "
-                    "selection rule to give testable prediction."
+                    "Proton lifetime including TCS geometric suppression from "
+                    "dimension-6 operator analysis. The base GUT rate Gamma ~ "
+                    "alpha_GUT^2 * m_p^5 / M_GUT^4 is enhanced by the geometric "
+                    "suppression factor S = exp(1/K) from K3 fibre matching, "
+                    "extending the lifetime above the Super-K bound. Uses "
+                    "M_GUT_geometric (from torsion/moduli stabilization, not RG "
+                    "extrapolation) for a testable Hyper-K prediction."
                 ),
                 inputParams=[
                     "gauge.M_GUT_GEOMETRIC",

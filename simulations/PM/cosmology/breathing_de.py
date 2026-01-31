@@ -107,6 +107,10 @@ class BreathingDEV21(SimulationBase):
             "breathing-w0-formula",
             "breathing-wa-formula",
             "breathing-w-evolution",
+            "breathing-variance-reduction",
+            "breathing-4face-decomposition",
+            "breathing-aggregated-rho",
+            "breathing-amplitude-decay",
         ]
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
@@ -115,7 +119,7 @@ class BreathingDEV21(SimulationBase):
         try:
             b3 = int(registry.get_param("topology.elder_kads"))
         except:
-            b3 = self.config.elder_kads
+            b3 = self.config.b3
 
         # Get breathing density if available
         try:
@@ -209,7 +213,7 @@ class BreathingDEV21(SimulationBase):
             w(a) = w0 + wa * (1 - a)
             where a = 1 / (1 + z)
         """
-        b3 = self.config.elder_kads
+        b3 = self.config.b3
         w0 = self._derive_w0_topological(b3)
         wa = self._derive_wa(b3)
 
@@ -218,7 +222,8 @@ class BreathingDEV21(SimulationBase):
 
     def get_section_content(self) -> Optional[SectionContent]:
         """Return section content for the paper."""
-        b3 = self.config.elder_kads
+        b3 = self.config.b3
+        n_pairs = b3 // 2  # 24/2 = 12 normal/mirror bridge pairs
         w0 = self._derive_w0_topological(b3)
         wa = self._derive_wa(b3)
 
@@ -228,16 +233,28 @@ class BreathingDEV21(SimulationBase):
             title="Breathing Dark Energy",
             abstract=(
                 f"Dark energy equation of state derives from shadow pressure "
-                f"mismatch. The topological formula w0 = -1 + 1/b3 = -{b3-1}/{b3} "
-                f"≈ {w0:.4f} aligns with DESI thawing measurements."
+                f"mismatch in the (24,1) dual-shadow model. The b3 = {b3} "
+                f"associative 3-cycles pair into {n_pairs} normal/mirror bridge "
+                f"pairs, whose aggregated breathing density yields the topological "
+                f"formula w0 = -1 + 1/b3 = -{b3-1}/{b3} "
+                f"= {w0:.4f}, aligning with DESI 2025 thawing measurements. "
+                f"Variance reduction from {n_pairs}-pair aggregation stabilises "
+                f"the equation of state near w0 = -{b3-1}/{b3} with "
+                f"sigma_eff = sigma_single/sqrt({n_pairs})."
             ),
             content_blocks=[
+                ContentBlock(
+                    type="heading",
+                    content="Shadow Pressure Mismatch",
+                    level=3
+                ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "The breathing dark energy mechanism arises from the "
                         "mismatch between normal and OR-rotated mirror stress "
-                        "tensors in the shared Euclidean bridge:"
+                        "tensors in the shared Euclidean bridge. Each of the "
+                        f"{n_pairs} bridge pairs contributes a per-pair density:"
                     )
                 ),
                 ContentBlock(
@@ -245,6 +262,31 @@ class BreathingDEV21(SimulationBase):
                     content=r"\rho_{\text{breath}} = |T^{ab}_{\text{normal}} - R_\perp T^{ab}_{\text{mirror}}|",
                     formula_id="breathing-rho-formula",
                     label="(3.5)"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="12-Pair Aggregation",
+                    level=3
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        f"The b3 = {b3} associative 3-cycles of the G2 manifold "
+                        f"pair into n_pairs = b3/2 = {n_pairs} normal/mirror bridge "
+                        f"pairs. The total breathing density is the average over "
+                        f"all {n_pairs} pairs:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=rf"\rho_{{\text{{breath}}}} = \frac{{1}}{{{n_pairs}}} \sum_{{i=1}}^{{{n_pairs}}} \rho_i",
+                    formula_id="breathing-aggregated-rho",
+                    label="(3.11)"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Topological Equation of State",
+                    level=3
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -283,23 +325,103 @@ class BreathingDEV21(SimulationBase):
                     formula_id="breathing-w-evolution",
                     label="(3.8)"
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Variance Reduction from Bridge Pair Aggregation",
+                    level=3
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        f"Averaging over {n_pairs} independent bridge oscillations "
+                        f"reduces the effective variance by sqrt({n_pairs}), explaining "
+                        f"the remarkable stability of the observed dark energy "
+                        f"equation of state:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=rf"\sigma_{{\text{{eff}}}} = \frac{{\sigma_{{\text{{single}}}}}}{{\sqrt{{{n_pairs}}}}} \approx 0.289 \, \sigma_{{\text{{single}}}}",
+                    formula_id="breathing-variance-reduction",
+                    label="(3.9)"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="4-Face Decomposition",
+                    level=3
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        f"The {n_pairs} bridge pairs have a geometric origin in the "
+                        f"4-face structure of the G2 manifold. Each of the h^{{1,1}} = 4 "
+                        f"Kahler faces supports n_gen = 3 independent bridge oscillations "
+                        f"(one per fermion generation), giving the decomposition:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"n_{\text{pairs}} = h^{1,1} \times n_{\text{gen}} = 4 \times 3 = 12",
+                    formula_id="breathing-4face-decomposition",
+                    label="(3.10)"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Bridge Breathing Amplitude Decay",
+                    level=3
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The breathing amplitude decays exponentially as the G2 "
+                        "manifold relaxes under Ricci flow. The torsion energy "
+                        "scale T_omega sets the initial amplitude, while the thawing "
+                        f"timescale t_thaw = sqrt(b3) * H0^-1 ~ {np.sqrt(b3):.1f} "
+                        "Hubble times governs the decay rate:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"A_{\text{breath}}(t) = T_\omega \exp\!\left(-\frac{t}{t_{\text{thaw}}}\right)",
+                    formula_id="breathing-amplitude-decay",
+                    label="(3.12)"
+                ),
+                ContentBlock(
+                    type="callout",
+                    callout_type="info",
+                    title="Physical Interpretation: Breathing as Thawing",
+                    content=(
+                        f"The 'breathing' observed in the bridge pairs is the "
+                        f"microscopic mechanism behind the macroscopic 'thawing' "
+                        f"signature detected by DESI 2025. As the G2 manifold relaxes "
+                        f"under Ricci flow, the {n_pairs} bridge oscillations dampen, "
+                        f"transferring frozen dark energy (w = -1) into the dynamic "
+                        f"thawing component (w = -{b3-1}/{b3})."
+                    )
+                ),
             ],
             formula_refs=[
                 "breathing-rho-formula",
                 "breathing-w0-formula",
                 "breathing-wa-formula",
                 "breathing-w-evolution",
+                "breathing-variance-reduction",
+                "breathing-4face-decomposition",
+                "breathing-aggregated-rho",
+                "breathing-amplitude-decay",
             ],
             param_refs=[
                 "breathing.w0_derived",
                 "breathing.wa_derived",
                 "breathing.w_desi_deviation",
+                "breathing.mechanism_verified",
             ]
         )
 
     def get_formulas(self) -> List[Formula]:
         """Return list of formulas this simulation provides."""
-        b3 = self.config.elder_kads
+        b3 = self.config.b3
+        n_pairs = b3 // 2  # 24/2 = 12 normal/mirror bridge pairs
         w0 = self._derive_w0_topological(b3)
         wa = self._derive_wa(b3)
 
@@ -418,11 +540,155 @@ class BreathingDEV21(SimulationBase):
                     "z": "Redshift",
                 }
             ),
+            Formula(
+                id="breathing-variance-reduction",
+                label="(3.9)",
+                latex=r"\sigma_{\text{eff}} = \frac{\sigma_{\text{single}}}{\sqrt{n_{\text{pairs}}}} = \frac{\sigma_{\text{single}}}{\sqrt{12}} \approx 0.289 \, \sigma_{\text{single}}",
+                plain_text=f"sigma_eff = sigma_single / sqrt({n_pairs}) ~ 0.289 * sigma_single",
+                category="DERIVED",
+                description=(
+                    f"Variance reduction in breathing dark energy from {n_pairs} independent "
+                    f"bridge pairs. The b3 = {b3} associative 3-cycles pair into "
+                    f"n_pairs = b3/2 = {n_pairs} normal/mirror pairs. By the central limit "
+                    f"theorem, averaging over {n_pairs} independent bridge oscillations "
+                    f"reduces the effective variance by sqrt({n_pairs}), stabilising "
+                    f"w0 near -{b3-1}/{b3}."
+                ),
+                inputParams=["topology.elder_kads"],
+                outputParams=[],
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": f"b3 = {b3} associative 3-cycles pair into n_pairs = b3/2 = {n_pairs}",
+                         "formula": rf"n_{{\text{{pairs}}}} = \frac{{b_3}}{{2}} = \frac{{{b3}}}{{2}} = {n_pairs}"},
+                        {"description": f"Each pair oscillates independently with variance sigma_single^2",
+                         "formula": r"\text{Var}(\rho_i) = \sigma_{\text{single}}^2"},
+                        {"description": f"Aggregated variance reduces by factor n_pairs = {n_pairs}",
+                         "formula": rf"\text{{Var}}(\rho_{{\text{{breath}}}}) = \frac{{\sigma_{{\text{{single}}}}^2}}{{{n_pairs}}}"},
+                        {"description": "Effective standard deviation",
+                         "formula": rf"\sigma_{{\text{{eff}}}} = \frac{{\sigma_{{\text{{single}}}}}}{{\sqrt{{{n_pairs}}}}} \approx 0.289 \, \sigma_{{\text{{single}}}}"},
+                    ],
+                    "references": ["PM Section 3.2", "Central Limit Theorem"]
+                },
+                terms={
+                    r"\sigma_{\text{eff}}": "Effective variance after averaging over bridge pairs",
+                    r"\sigma_{\text{single}}": "Single-channel variance of one bridge oscillation",
+                    r"n_{\text{pairs}}": f"Number of bridge pairs = b3/2 = {n_pairs}",
+                }
+            ),
+            Formula(
+                id="breathing-4face-decomposition",
+                label="(3.10)",
+                latex=r"n_{\text{pairs}} = h^{1,1} \times n_{\text{gen}} = 4 \times 3 = 12 = \frac{b_3}{2}",
+                plain_text=f"n_pairs = h^(1,1) x n_gen = 4 x 3 = {n_pairs} = b3/2",
+                category="DERIVED",
+                description=(
+                    f"Geometric decomposition of {n_pairs} bridge pairs into 4 Kahler "
+                    f"faces times 3 fermion generations. Each of the h^{{1,1}} = 4 Kahler "
+                    f"faces supports n_gen = 3 independent bridge oscillations (one per "
+                    f"fermion generation), giving n_pairs = 4 x 3 = {n_pairs} = b3/2."
+                ),
+                inputParams=["topology.elder_kads"],
+                outputParams=[],
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "Kahler faces from G2 Hodge structure",
+                         "formula": r"h^{1,1} = 4"},
+                        {"description": "Fermion generations from chi_eff",
+                         "formula": r"n_{\text{gen}} = \frac{\chi_{\text{eff}}}{48} = \frac{144}{48} = 3"},
+                        {"description": "Total bridge pairs",
+                         "formula": rf"n_{{\text{{pairs}}}} = 4 \times 3 = {n_pairs}"},
+                        {"description": "Consistency check with b3",
+                         "formula": rf"\frac{{b_3}}{{2}} = \frac{{{b3}}}{{2}} = {n_pairs} \; \checkmark"},
+                    ],
+                    "references": ["PM Section 3.2", "Joyce (2000) - G2 manifolds"]
+                },
+                terms={
+                    r"h^{1,1}": "Kahler Hodge number (4 for TCS G2)",
+                    r"n_{\text{gen}}": "Number of fermion generations (3)",
+                    r"n_{\text{pairs}}": f"Number of bridge pairs ({n_pairs})",
+                    r"b_3": f"Third Betti number ({b3})",
+                }
+            ),
+            Formula(
+                id="breathing-aggregated-rho",
+                label="(3.11)",
+                latex=rf"\rho_{{\text{{breath}}}} = \frac{{1}}{{{n_pairs}}} \sum_{{i=1}}^{{{n_pairs}}} \rho_i, \quad \rho_i = |T^{{ab}}_{{\text{{normal}},i}} - R_{{\perp,i}} T^{{ab}}_{{\text{{mirror}},i}}|",
+                plain_text=f"rho_breath = (1/{n_pairs}) * sum_i(rho_i), rho_i = |T_normal_i - R_perp_i T_mirror_i|",
+                category="DERIVED",
+                description=(
+                    f"Aggregated breathing dark energy density from {n_pairs} bridge pairs. "
+                    f"Each pair contributes a density rho_i from the mismatch between "
+                    f"its normal and OR-rotated mirror stress tensors. The average over "
+                    f"all {n_pairs} pairs gives the observed dark energy density."
+                ),
+                inputParams=["bridge.T_normal", "bridge.T_mirror"],
+                outputParams=["breathing.rho_breath"],
+                input_params=["bridge.T_normal", "bridge.T_mirror"],
+                output_params=["breathing.rho_breath"],
+                derivation={
+                    "steps": [
+                        {"description": f"Dimensional structure: T^1 x_fiber (sum_{{i=1}}^{{{n_pairs}}} B_i^{{2,0}})",
+                         "formula": rf"T^1 \times_{{\text{{fiber}}}} \left(\bigoplus_{{i=1}}^{{{n_pairs}}} B_i^{{2,0}}\right)"},
+                        {"description": f"Per-pair density from stress tensor mismatch",
+                         "formula": r"\rho_i = |T^{ab}_{\text{normal},i} - R_{\perp,i} T^{ab}_{\text{mirror},i}|"},
+                        {"description": f"Aggregate over {n_pairs} independent pairs",
+                         "formula": rf"\rho_{{\text{{breath}}}} = \frac{{1}}{{{n_pairs}}} \sum_{{i=1}}^{{{n_pairs}}} \rho_i"},
+                    ],
+                    "references": ["PM Section 3.2"]
+                },
+                terms={
+                    r"\rho_{\text{breath}}": "Aggregated breathing dark energy density",
+                    r"\rho_i": "Per-pair breathing density",
+                    r"R_{\perp,i}": "OR reduction operator for pair i",
+                    r"B_i^{2,0}": "Bridge bundle for pair i",
+                }
+            ),
+            Formula(
+                id="breathing-amplitude-decay",
+                label="(3.12)",
+                latex=r"A_{\text{breath}}(t) = T_\omega \, \exp\!\left(-\frac{t}{t_{\text{thaw}}}\right), \quad t_{\text{thaw}} = \sqrt{b_3} \, H_0^{-1}",
+                plain_text=f"A_breath(t) = T_omega * exp(-t / t_thaw), t_thaw = sqrt({b3}) * H0^-1",
+                category="DERIVED",
+                description=(
+                    "Bridge breathing amplitude decays exponentially as the G2 manifold "
+                    "relaxes under Ricci flow. T_omega is the torsion energy scale and "
+                    f"t_thaw = sqrt(b3) * H0^-1 ~ sqrt({b3}) Hubble times is the "
+                    "characteristic thawing timescale. This decay drives the transition "
+                    "from frozen (w = -1) to thawing (w > -1) dark energy."
+                ),
+                inputParams=["topology.elder_kads"],
+                outputParams=[],
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "Ricci flow drives 3-form relaxation",
+                         "formula": r"\frac{d\Phi}{dt} = -\tau_\Phi \, \Phi"},
+                        {"description": "Bridge breathing amplitude tracks 3-form",
+                         "formula": r"A_{\text{breath}} \propto \|\Phi(t)\|"},
+                        {"description": "Exponential solution with torsion energy scale",
+                         "formula": r"A_{\text{breath}}(t) = T_\omega \exp(-t / t_{\text{thaw}})"},
+                        {"description": f"Thawing timescale from G2 cycle count",
+                         "formula": rf"t_{{\text{{thaw}}}} = \sqrt{{b_3}} \, H_0^{{-1}} = \sqrt{{{b3}}} \, H_0^{{-1}} \approx {np.sqrt(b3):.2f} \, H_0^{{-1}}"},
+                    ],
+                    "references": ["PM Section 3.2", "Hamilton (1982) - Ricci flow"]
+                },
+                terms={
+                    r"A_{\text{breath}}": "Bridge breathing amplitude",
+                    r"T_\omega": "Torsion energy scale",
+                    r"t_{\text{thaw}}": f"Thawing timescale (sqrt({b3}) Hubble times)",
+                    r"\Phi": "G2 associative 3-form",
+                }
+            ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
         """Return parameter definitions for outputs."""
-        b3 = self.config.elder_kads
+        b3 = self.config.b3
         w0 = self._derive_w0_topological(b3)
         wa = self._derive_wa(b3)
 

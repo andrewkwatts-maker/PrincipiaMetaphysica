@@ -373,12 +373,21 @@ class CMBTemperatureV18(SimulationBase):
                 plain_text="k_CMB = pi/(b3 + 7) = pi/31 ~ 0.101",
                 category="HEURISTIC",  # v22: Phenomenological choice
                 description=(
-                    "CMB normalization factor - HEURISTIC choice. "
-                    "v22: The combination pi/(b3+7) is motivated by thermal geometry, "
-                    "but the specific form is not uniquely determined from first principles. "
-                    "Derivation: (1) G2 has 7 compact dimensions, "
-                    "(2) b3 = 24 associative 3-cycles produce thermal modes, "
-                    "(3) heuristic normalization pi/(b3 + dim(G2)) = pi/31 ~ 0.101."
+                    "CMB normalization factor -- HEURISTIC choice with G2 motivation. "
+                    "The numerator pi arises from thermal equilibrium geometry: blackbody "
+                    "radiation in 3D involves pi^2 k_B^4 / (60 hbar^3 c^2) in the "
+                    "Stefan-Boltzmann constant, so pi is the natural scale factor for "
+                    "relating temperature to radiation energy density. The denominator "
+                    "(b3 + 7) = 31 counts the total topological + geometric modes of "
+                    "the G2 compactification: b3 = 24 independent co-associative cycles "
+                    "(from H^3(G2, Z), the third cohomology group) represent independent "
+                    "thermal channels, and dim(G2) = 7 represents the spatial degrees of "
+                    "freedom in the compact manifold. The ratio pi/31 ~ 0.101 can be "
+                    "interpreted as the fraction of the Planck-Hubble base temperature "
+                    "that survives thermal equilibration across all 31 modes. CAVEAT: "
+                    "this specific combination is NOT uniquely determined from first "
+                    "principles; other topological data (e.g., chi_eff/144 or b2+b3) "
+                    "could also be used."
                 ),
                 inputParams=["topology.elder_kads"],
                 outputParams=["cosmology.k_CMB_normalization"],
@@ -466,6 +475,27 @@ class CMBTemperatureV18(SimulationBase):
                         "combining thermal radiation geometry with G2 partition modes. "
                         "This normalization is a heuristic choice motivated by the "
                         "G2 topology but not uniquely derived from first principles."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Connection to G2 parameters: The denominator (b3 + 7) = 31 combines "
+                        "two quantities with clear geometric meaning in the PM framework. "
+                        "b3 = 24 is the third Betti number of the G2 manifold, counting the "
+                        "independent co-associative 4-cycles (equivalently, the number of "
+                        "independent harmonic 3-forms). The 7 comes from dim(G2) = 7, the "
+                        "number of compactified dimensions. Together, b3 + 7 = 31 counts "
+                        "the total number of independent topological and geometric modes "
+                        "available for distributing thermal energy in the compactification. "
+                        "The factor of pi in the numerator arises from the thermal blackbody "
+                        "spectrum: the Stefan-Boltzmann law involves T^4 multiplied by "
+                        "pi^2/(60 c^2 hbar^3), so pi encodes the thermal equilibrium "
+                        "geometry of radiation. While this motivation is physically "
+                        "suggestive, the specific combination pi/31 is NOT uniquely "
+                        "determined -- other combinations of G2 topological data could "
+                        "equally be proposed. This is why the formula is classified as "
+                        "HEURISTIC and excluded from core validation."
                     )
                 ),
                 ContentBlock(

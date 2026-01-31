@@ -324,6 +324,18 @@ def _make_registry() -> Dict[int, SpectralResidue]:
     #   m3 ~ sqrt(Dm^2_31 + m1^2) ~ 0.050 eV
     #
     # Sum: Sigma_m_nu ~ 0.06 eV (testable by cosmology!)
+    #
+    # EXPERIMENTAL CONSTRAINTS (as of 2024):
+    #   - Oscillation lower bound (NH): sum >= 0.058 eV (from Dm^2 alone)
+    #   - Planck+BAO (2018): sum < 0.12 eV (95% CL)
+    #   - DESI+CMB+BAO (2024): sum < 0.072 eV (95% CL) -- tighter!
+    #   - KATRIN direct kinematic: m_beta < 0.45 eV (90% CL)
+    #
+    # The PM prediction of sum ~ 0.06 eV sits very close to the oscillation
+    # floor (~0.058 eV for NH) and is well within Planck+BAO bounds. The newer
+    # DESI+CMB+BAO bound of <0.072 eV narrows the allowed window significantly
+    # but remains consistent with the prediction. Future CMB-S4 and DESI
+    # full-survey data will test this prediction decisively.
     # ------------------------------------------------------------------------
 
     # Experimental mass-squared differences (oscillation data)
@@ -1040,8 +1052,11 @@ class CompleteResidueRegistryV18(SimulationBase):
                 category="PREDICTED",
                 description=(
                     "Sum of neutrino masses in normal hierarchy. PM predicts lightest mass "
-                    "m1 ~ 0.001 eV, giving sum ~ 0.06 eV at the minimum allowed by oscillations. "
-                    "Testable by cosmology: Planck+BAO gives sum < 0.12 eV (95% CL)."
+                    "m1 ~ 0.001 eV, giving sum ~ 0.06 eV -- very close to the oscillation "
+                    "floor of ~0.058 eV (NH). Experimental constraints: Planck+BAO < 0.12 eV "
+                    "(95% CL, 2018); DESI+CMB+BAO < 0.072 eV (95% CL, 2024). The shrinking "
+                    "window makes this a near-term falsifiable prediction: CMB-S4 and DESI "
+                    "full survey will test it decisively."
                 ),
                 inputParams=["spectral.m_nu_1"],
                 outputParams=["spectral.sum_m_nu"],
@@ -1239,9 +1254,11 @@ class CompleteResidueRegistryV18(SimulationBase):
                 status="PREDICTED",
                 description=(
                     "PM prediction for the sum of neutrino masses (m1 + m2 + m3 ~ 0.06 eV). "
-                    "Read from registry mode 52. The Planck 2018 cosmological upper bound "
-                    "of < 0.12 eV (95% CL) is cited as a reference constraint, not as a "
-                    "fit result from this simulation."
+                    "Read from registry mode 52. This sits near the oscillation floor "
+                    "(~0.058 eV for NH). Experimental bounds: Planck+BAO < 0.12 eV (95% CL, "
+                    "2018); DESI+CMB+BAO < 0.072 eV (95% CL, 2024). These are reference "
+                    "constraints, not fit results. The narrowing window makes this a "
+                    "near-term falsifiable prediction."
                 ),
                 experimental_bound=0.12,
                 bound_type="upper_limit",
@@ -1512,13 +1529,14 @@ class CompleteResidueRegistryV18(SimulationBase):
             },
             {
                 "id": "CERT-SPECTRAL-NEUTRINO-SUM",
-                "assertion": "Sum of neutrino masses below cosmological bound",
-                "condition": "sum_m_nu < 0.12 eV",
-                "tolerance": 0.06,
+                "assertion": "Sum of neutrino masses below cosmological bounds (Planck+BAO and DESI+CMB+BAO)",
+                "condition": "sum_m_nu < 0.12 eV (Planck+BAO 2018) AND sum_m_nu < 0.072 eV (DESI+CMB+BAO 2024)",
+                "tolerance": 0.012,
                 "status": "PASS",
                 "wolfram_query": "sum neutrino masses cosmological bound",
                 "wolfram_result": "OFFLINE",
-                "sector": "neutrino_physics"
+                "sector": "neutrino_physics",
+                "note": "PM prediction ~0.06 eV is near oscillation floor (~0.058 eV NH) and within both bounds"
             },
         ]
 

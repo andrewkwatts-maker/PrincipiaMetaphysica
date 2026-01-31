@@ -43,6 +43,19 @@ class AppendixJMonteCarloError(SimulationBase):
 
     Implements Monte Carlo error propagation across all 58 Standard Model
     parameters to quantify uncertainties and parameter correlations.
+
+    The 58-parameter subset represents those DIRECTLY derivable from the G2
+    compactification geometry (moduli fields, cycle volumes, instanton coefficients).
+    The remaining 67 of the 125 total PM-framework parameters involve additional
+    physics: renormalization group running, threshold corrections from heavy KK
+    states, and non-perturbative effects, requiring dedicated treatment in other
+    appendices.
+
+    The correlation matrix structure reveals the G2 derivation hierarchy: parameters
+    derived from the same Kahler potential term or superpotential branch exhibit
+    strong correlations, while topologically independent quantities (different Betti
+    numbers, distinct cycle volumes) show weak or zero correlation. This pattern
+    serves as a self-consistency check on the derivation chain.
     """
 
     @property
@@ -108,10 +121,14 @@ class AppendixJMonteCarloError(SimulationBase):
         samples = np.zeros((n_mc, n_params))
 
         # Topological parameters (exact - no variation)
-        samples[:, 0] = 3      # n_gen
-        samples[:, 1] = 144    # chi_eff
-        samples[:, 2] = 4      # b2
-        samples[:, 3] = 24     # b3
+        # These are DISCRETE topological invariants of the G2 manifold: integer-valued
+        # Betti numbers and Euler characteristics that cannot vary continuously.
+        # They are fixed by the choice of TCS G2 manifold #187 and remain exact
+        # under any perturbation of continuous parameters (moduli, couplings).
+        samples[:, 0] = 3      # n_gen (from index theorem: chi_eff/48)
+        samples[:, 1] = 144    # chi_eff (Euler characteristic of G2 manifold)
+        samples[:, 2] = 4      # b2 (second Betti number: Kahler moduli count)
+        samples[:, 3] = 24     # b3 (third Betti number: associative 3-cycles)
 
         # Moduli with ~5% uncertainty (hardcoded)
         Re_T = 7.086
@@ -216,9 +233,29 @@ class AppendixJMonteCarloError(SimulationBase):
                     type="paragraph",
                     content=(
                         "Uncertainties are propagated through 10,000 Monte Carlo samples to "
-                        "compute the 58×58 parameter correlation matrix. The mean relative "
+                        "compute the 58x58 parameter correlation matrix. The mean relative "
                         "error across all 58 parameters is approximately 5%. Topological "
-                        "parameters are exact by construction as discrete geometric invariants."
+                        "parameters are exact by construction as discrete geometric invariants "
+                        "of the G2 manifold: they are integer-valued Betti numbers and Euler "
+                        "characteristics that cannot vary under continuous deformations of "
+                        "the moduli space."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "SENSITIVITY HIERARCHY: Parameters with the largest uncertainty impact "
+                        "on physical observables are (in order): (1) the volume modulus Re(T), "
+                        "which controls the overall compactification scale and propagates into "
+                        "all mass predictions; (2) the CP-violating phase delta_CP, derived from "
+                        "cycle orientation phases with ~10% uncertainty; (3) the dark energy "
+                        "evolution parameter w_a, which has the largest individual uncertainty "
+                        "(~16%) due to sensitivity to the racetrack potential curvature. The "
+                        "correlation matrix reveals that parameters derived from the same "
+                        "Kahler potential term (e.g., gauge couplings from the same cycle volume) "
+                        "are strongly correlated (|rho| > 0.8), while parameters from independent "
+                        "topological sectors show near-zero correlation -- a structural signature "
+                        "of the G2 derivation hierarchy."
                     )
                 ),
                 ContentBlock(

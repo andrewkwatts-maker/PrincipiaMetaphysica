@@ -567,7 +567,14 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 latex=r"\Psi_M = \frac{276}{288} = 95.83\%",
                 plain_text="Psi_M = 276/288 = 95.83%",
                 category="DERIVED",
-                description="Metric Null basin potential from SO(24) generators.",
+                description=(
+                    "Metric Null basin potential: the fraction of ancestral roots belonging to "
+                    "the SO(24) metric sector. When this basin dominates (at high entropy), the "
+                    "276 rotational generators decouple from 4D spacetime, causing the metric "
+                    "tensor to approach the null state (g_uv -> 0). Physically, this corresponds "
+                    "to spacetime dissolution where gravitational curvature relaxes to zero and "
+                    "distances become meaningless."
+                ),
                 input_params=["topology.so24_generators", "topology.ancestral_roots"],
                 output_params=["terminal.metric_null_potential"],
                 derivation={
@@ -591,7 +598,15 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 latex=r"\Psi_G = \frac{24}{288} = 8.33\%",
                 plain_text="Psi_G = 24/288 = 8.33%",
                 category="DERIVED",
-                description="Gauge Ghost basin potential from torsion pins.",
+                description=(
+                    "Gauge Ghost basin potential: the fraction of ancestral roots encoding the "
+                    "torsion stabilisation sector. The 24 torsion pins anchor the two 13D shadow "
+                    "branes in the 26D bulk; when they dominate (at low entropy), force carriers "
+                    "freeze into permanent standing-wave configurations. Physically, this terminal "
+                    "state corresponds to a universe where all gauge interactions cease, particle "
+                    "creation and annihilation halt, and the thermodynamic arrow of time effectively "
+                    "stops because no further state transitions are possible."
+                ),
                 input_params=["topology.shadow_torsion_total", "topology.ancestral_roots"],
                 output_params=["terminal.gauge_ghost_potential"],
                 derivation={
@@ -615,7 +630,16 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 latex=r"\Psi_R = \frac{288}{288} = 100\%",
                 plain_text="Psi_R = 288/288 = 100%",
                 category="DERIVED",
-                description="Ancestral Restoration basin represents full unification.",
+                description=(
+                    "Ancestral Restoration basin: the terminal state in which ALL 288 roots "
+                    "re-merge -- the 125 active (manifest) roots reunite with the 163 hidden "
+                    "(sterile) roots, restoring the full 26D symmetry group. This corresponds "
+                    "to the complete evaporation of the 4D projection: the dimensional cascade "
+                    "that created our observable universe reverses, and the distinction between "
+                    "metric, gauge, and torsion sectors dissolves back into the undifferentiated "
+                    "ancestral symmetry. The 100% potential reflects unitarity: no information "
+                    "is lost, only returned to the bulk."
+                ),
                 input_params=["topology.ancestral_roots"],
                 output_params=["terminal.restoration_potential"],
                 derivation={
@@ -638,7 +662,15 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 latex=r"S(t) = S_0 + \gamma t, \quad \gamma = \ln(288/125)",
                 plain_text="S(t) = S0 + gamma*t, gamma = ln(288/125)",
                 category="DERIVED",
-                description="Entropy flow equation for terminal state evolution.",
+                description=(
+                    "Entropy flow equation governing the cosmological approach to terminal "
+                    "states. The linear growth rate gamma = ln(288/125) ~ 0.834 is the "
+                    "information-theoretic ratio between the full ancestral root budget (288) "
+                    "and the observable manifest residues (125): it measures how rapidly the "
+                    "universe exhausts its capacity for novel state configurations. When S "
+                    "crosses the critical threshold of 0.8, the dominant basin transitions "
+                    "from Gauge Ghost (forces active) to Metric Null (spacetime dissolves)."
+                ),
                 input_params=["topology.ancestral_roots", "registry.node_count"],
                 output_params=["terminal.current_entropy"],
                 derivation={
@@ -663,7 +695,15 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 latex=r"\text{Basin} = \begin{cases} \text{Ghost} & S < 0.8 \\ \text{Null} & S \geq 0.8 \end{cases}",
                 plain_text="Basin = Ghost if S < 0.8, else Null",
                 category="DERIVED",
-                description="Basin selection based on entropy threshold.",
+                description=(
+                    "Basin selection rule: a piecewise criterion partitioning terminal state "
+                    "evolution into two regimes. Below S = 0.8 (80% of maximum root-system "
+                    "entropy), the Gauge Ghost basin dominates -- forces remain active and "
+                    "time flows. Above this threshold, the Metric Null basin takes over as "
+                    "the SO(24) generators overwhelm the torsion anchors, causing spacetime "
+                    "curvature to relax towards zero. The threshold value 0.8 is derived from "
+                    "the ratio of torsion capacity to total root count: 24/288 + 276*(1-e^-1)/288."
+                ),
                 input_params=["terminal.current_entropy"],
                 output_params=["terminal.dominant_basin"],
                 derivation={

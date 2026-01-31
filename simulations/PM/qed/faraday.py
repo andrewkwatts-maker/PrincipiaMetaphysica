@@ -79,6 +79,20 @@ class FaradayV17(SimulationBase):
                     "Engine, F inherits its adjustment entirely from Avogadro's number N_A, "
                     "which contracts via 1/(1+epsilon) as particle counts decrease with spatial expansion."
                 )),
+                ContentBlock(type="paragraph", content=(
+                    "Why is the elementary charge e invariant under dimensional projection? "
+                    "In Kaluza-Klein theory, electric charge is a topological quantum number "
+                    "arising from the quantised momentum along the compact U(1) fibre: "
+                    "e = n * sqrt(hbar * c / R_KK), where n is an integer (the KK mode number) "
+                    "and R_KK is the compactification radius. Since n is a discrete topological "
+                    "invariant (it counts the number of times the wavefunction wraps the compact "
+                    "dimension), it cannot change under continuous deformations of the internal "
+                    "geometry. The Decad-Cubic Projection Engine rescales volumes by (1+epsilon), "
+                    "but this rescaling does not change the winding number n. Therefore e is "
+                    "protected by topology: it is the SAME in the bulk and in 3D. This is why "
+                    "F = N_A * e adjusts only through N_A (an extensive count) and not through "
+                    "e (a topological charge)."
+                )),
                 ContentBlock(type="equation", content=r"F = F_{bulk} / (1+\epsilon)"),
                 ContentBlock(type="paragraph", content=(
                     "The CODATA 2018 exact value is F = 96485.33212 C/mol. The inverse cubic "
@@ -96,7 +110,16 @@ class FaradayV17(SimulationBase):
                 latex=r"F = F_{bulk}/(1+\epsilon)",
                 plain_text="F = F_bulk / (1+epsilon)",
                 category="DERIVED",
-                description="Faraday constant follows Avogadro contraction since F = N_A * e and e is invariant.",
+                description=(
+                    "Faraday constant follows Avogadro contraction since F = N_A * e and e is "
+                    "topologically invariant. The elementary charge e is a quantised KK momentum "
+                    "(winding number) along the compact U(1) fibre, protected by topology against "
+                    "continuous volume rescalings. Therefore the ENTIRE projection effect on F "
+                    "comes from the extensive factor N_A, which contracts by 1/(1+epsilon) when "
+                    "projecting from bulk to 3D. This demonstrates the dichotomy between "
+                    "topological (invariant) and extensive (diluting) quantities in the PM "
+                    "projection framework."
+                ),
                 derivation={
                     "steps": [
                         "Start with the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",

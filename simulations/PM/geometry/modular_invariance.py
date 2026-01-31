@@ -272,8 +272,12 @@ class ModularInvarianceV16(SimulationBase):
             title="Modular Invariance and Critical Dimension",
             abstract=(
                 "We prove that modular invariance of the partition function "
-                "requires exactly b₃ = 24, explaining the critical dimension "
-                "D = 26 of bosonic string theory."
+                "requires exactly b₃ = 24, the third Betti number of the G₂ "
+                "manifold counting independent associative 3-cycles. Each "
+                "3-cycle contributes one bosonic oscillator mode to the "
+                "partition function Z(q) = η(τ)^{-b₃}, and anomaly "
+                "cancellation uniquely fixes b₃ = 24 (critical dimension "
+                "D = b₃ + 2 = 26)."
             ),
             content_blocks=[
                 ContentBlock(
@@ -281,8 +285,13 @@ class ModularInvarianceV16(SimulationBase):
                     content=(
                         "The partition function of the theory must be invariant "
                         "under modular transformations τ → (aτ+b)/(cτ+d) with "
-                        "ad - bc = 1. This severely constrains the allowed values "
-                        "of the topological invariant b₃."
+                        "ad - bc = 1. In the G₂ framework, b₃ counts the "
+                        "independent associative 3-cycles in H₃(V₇, Z): each "
+                        "such cycle supports a harmonic 3-form that contributes "
+                        "one bosonic oscillator mode to the worldsheet partition "
+                        "function. The modular invariance of Z(q) = η(τ)^{-b₃} "
+                        "then severely constrains b₃, linking the topology of "
+                        "the internal G₂ manifold directly to anomaly cancellation."
                     )
                 ),
                 ContentBlock(
@@ -382,7 +391,7 @@ class ModularInvarianceV16(SimulationBase):
                 latex=r"\eta(\tau) = q^{1/24} \prod_{n=1}^{\infty} (1 - q^n)",
                 plain_text="eta(tau) = q^(1/24) * prod(1 - q^n)",
                 category="DERIVED",
-                description="Dedekind eta function definition",
+                description="Dedekind eta function, a weight-1/2 modular form whose 24th power yields the modular discriminant Delta(tau). Its transformation law under SL(2,Z) encodes the phase factor that constrains b3.",
                 inputParams=[],
                 outputParams=[],
                 input_params=[],
@@ -409,7 +418,7 @@ class ModularInvarianceV16(SimulationBase):
                 latex=r"Z(q) = \eta(\tau)^{-b_3}",
                 plain_text="Z(q) = eta(tau)^(-b3)",
                 category="DERIVED",
-                description="Partition function in terms of eta",
+                description="Partition function for b3 bosonic oscillators from the G2 manifold's associative 3-cycles. Each independent 3-cycle in H3(V7, Z) contributes one inverse-eta factor, so the total partition function is eta^(-b3). Modular invariance of Z constrains b3 mod 24 = 0.",
                 inputParams=["topology.elder_kads"],
                 outputParams=[],
                 input_params=["topology.elder_kads"],
@@ -436,7 +445,7 @@ class ModularInvarianceV16(SimulationBase):
                 latex=r"E_0 = -\frac{b_3}{24} = -1",
                 plain_text="E0 = -b3/24 = -1",
                 category="DERIVED",
-                description="Vacuum energy from zero-point sum",
+                description="Vacuum energy from zeta-regularized zero-point sum over b3 bosonic oscillators. For b3 = 24 (the G2 manifold value), E0 = -24/24 = -1 exactly, satisfying the Virasoro on-shell condition L0|phys> = 0 for the physical spectrum.",
                 inputParams=["topology.elder_kads"],
                 outputParams=["topology.vacuum_energy"],
                 input_params=["topology.elder_kads"],
@@ -463,7 +472,7 @@ class ModularInvarianceV16(SimulationBase):
                 latex=r"b_3 \equiv 0 \mod 24",
                 plain_text="b3 mod 24 = 0",
                 category="DERIVED",
-                description="Modular anomaly cancellation condition",
+                description="Modular anomaly cancellation condition: under T-transformation tau -> tau+1, the partition function Z = eta^(-b3) picks up phase exp(-i*pi*b3/12). Single-valuedness requires b3/12 to be an even integer, forcing b3 = 0 mod 24. The G2 manifold's third Betti number b3 = 24 is the unique minimal physical solution.",
                 inputParams=[],
                 outputParams=["topology.b3_modular"],
                 input_params=[],
@@ -490,7 +499,7 @@ class ModularInvarianceV16(SimulationBase):
                 latex=r"D_{crit} = b_3 + 2 = 26",
                 plain_text="D_crit = b3 + 2 = 26",
                 category="PREDICTED",
-                description="Critical dimension of bosonic string",
+                description="Critical spacetime dimension D = b3 + 2 = 26, where b3 = 24 transverse (physical) dimensions correspond to the G2 manifold's associative 3-cycles and the +2 accounts for lightcone directions (time + longitudinal). This is uniquely forced by modular invariance.",
                 inputParams=["topology.elder_kads"],
                 outputParams=["topology.critical_dim"],
                 input_params=["topology.elder_kads"],

@@ -163,9 +163,13 @@ class AppendixNG2Landscape(SimulationBase):
             appendix=True,
             title="Appendix N: G2 Topology Landscape",
             abstract=(
-                "This appendix provides the complete list of valid G2 manifold topologies "
-                "that yield exactly n_gen = 3 fermion generations under the physical "
-                "constraints described in Section 4.1."
+                "This appendix presents the complete set of 49 valid G2 manifold topologies "
+                "constructed via the twisted connected sum (TCS) method that satisfy the "
+                "topological and geometric constraints necessary to yield precisely n_gen = 3 "
+                "chiral fermion generations in the effective 4D theory. These topologies are "
+                "identified by scanning Hodge numbers subject to the constraint h^{1,1} + h^{3,1} = 72, "
+                "derived from the requirement chi_eff = 144 for anomaly cancellation and a stable, "
+                "phenomenologically viable compactification vacuum."
             ),
             content_blocks=[
                 ContentBlock(
@@ -309,8 +313,11 @@ class AppendixNG2Landscape(SimulationBase):
                 plain_text="h^{1,1} + h^{3,1} = 72",
                 category="FOUNDATIONAL",
                 description=(
-                    "Hodge number constraint for valid topologies. Fixed relation from "
-                    "effective Euler characteristic chi_eff = 144."
+                    "Hodge number constraint h^{1,1} + h^{3,1} = 72 enforced on TCS G2 manifolds. "
+                    "This fixed relation derives from the requirement that the effective Euler "
+                    "characteristic chi_eff = 2(h^{1,1} + h^{3,1}) = 144, which is itself a "
+                    "consistency condition ensuring anomaly cancellation in the compactified theory "
+                    "and the emergence of exactly 3 fermion generations via n_gen = chi_eff/48."
                 ),
                 input_params=["topology.mephorash_chi"],
                 output_params=[],
@@ -335,8 +342,12 @@ class AppendixNG2Landscape(SimulationBase):
                 plain_text="n_gen = b_3/8 = 24/8 = 3",
                 category="DERIVED",
                 description=(
-                    "Generation number from third Betti number. Identical for all 49 "
-                    "valid topologies."
+                    "The number of chiral fermion generations is determined from the third "
+                    "Betti number of the G2 manifold via n_gen = b_3/8. Each associative "
+                    "3-cycle supports 8 fermionic zero-mode components (from the spinor "
+                    "decomposition on the cycle), so b_3 = 24 cycles yield exactly 3 "
+                    "generations. This value is consistently 3 for all 49 valid topologies, "
+                    "guaranteeing the observed generation count in the low-energy effective theory."
                 ),
                 input_params=["topology.elder_kads"],
                 output_params=["topology.n_gen"],

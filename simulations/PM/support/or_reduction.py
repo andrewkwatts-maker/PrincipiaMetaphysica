@@ -13,6 +13,36 @@ Key Features:
 3. Internal sampling: Restricted by gradient cost
 4. Gate Index computation for sampling viability
 
+GEOMETRIC VISUALIZATION OF R_perp:
+====================================
+The OR operator R_perp is a 90-degree counter-clockwise rotation in the
+2D Euclidean bridge plane. Its action on coordinates is:
+
+    R_perp: (x, y) --> (-y, x)
+
+Example mappings:
+    (1, 0)  -->  (0, 1)    [x-axis maps to y-axis]
+    (0, 1)  -->  (-1, 0)   [y-axis maps to -x-axis]
+    (1, 1)  -->  (-1, 1)   [diagonal rotates 90 degrees]
+
+Bridge plane action (normal shadow -> mirror view):
+
+         y ^                          y ^
+           |  * (1,1)                   | * (-1,1)
+           |                         *  |
+    -------+-------> x        -------+-------> x
+           |                            |
+           |                            |
+
+    Normal shadow coords          Mirror view (after R_perp)
+
+This rotation has two key algebraic properties:
+- det(R_perp) = +1: orientation-preserving (proper rotation)
+- R_perp^2 = -I: Mobius double-cover (two applications negate, not return)
+  This means spinors pick up a -1 phase after one loop, requiring two
+  full loops for identity return. This is the geometric origin of
+  fermionic statistics in the bridge sector.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
@@ -263,9 +293,13 @@ class ORReductionV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The OR operator R_perp performs a 90 degree rotation "
-                        "in the bridge plane, mapping normal shadow coordinates "
-                        "to their mirror view:"
+                        "The OR operator R_perp performs a 90-degree counter-clockwise "
+                        "rotation in the bridge plane, mapping normal shadow coordinates "
+                        "to their mirror view. Geometrically, R_perp sends (x, y) to "
+                        "(-y, x): the x-axis maps to the y-axis and the y-axis maps to "
+                        "the negative x-axis. This is the simplest non-trivial rotation "
+                        "that swaps the two bridge coordinates while preserving the "
+                        "Euclidean metric:"
                     )
                 ),
                 ContentBlock(
@@ -299,6 +333,20 @@ class ORReductionV21(SimulationBase):
                     content=r"\text{GateIndex} = \exp(-\alpha |\nabla\phi| - \beta \cdot \text{cost})",
                     formula_id="or-internal-gate-index",
                     label="(1.21)"
+                ),
+                ContentBlock(
+                    type="callout",
+                    callout_type="info",
+                    title="Geometric Picture",
+                    content=(
+                        "R_perp acts on bridge coordinates as: (1,0) -> (0,1), "
+                        "(0,1) -> (-1,0), (1,1) -> (-1,1). Every vector rotates "
+                        "exactly 90 degrees counter-clockwise. The key property "
+                        "det(R_perp) = +1 ensures orientation preservation, while "
+                        "R_perp^2 = -I (not +I) means the rotation is a square root "
+                        "of negation, not identity -- this is the algebraic origin "
+                        "of the spinor double-cover in bridge geometry."
+                    )
                 ),
                 ContentBlock(
                     type="paragraph",

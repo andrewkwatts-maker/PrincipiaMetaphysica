@@ -499,12 +499,18 @@ class DarkEnergyV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "String theory requires 26 dimensions for the bosonic string or "
-                        "10 dimensions for superstrings. The heterotic string effectively "
-                        "lives in 13 dimensions (from the asymmetric left-right construction). "
-                        "G2 holonomy compactification reduces this to 4D spacetime, but the "
-                        "reduction is not complete: residual degrees of freedom from the "
-                        "compact dimensions contribute to the effective dimensionality."
+                        "String theory, aiming to unify all fundamental forces, postulates "
+                        "extra spatial dimensions beyond the familiar three. The bosonic string "
+                        "requires a 26-dimensional spacetime for mathematical consistency (anomaly "
+                        "cancellation of the Virasoro algebra), while superstring theories reduce "
+                        "this to 10 dimensions. The heterotic string, constructed from a hybrid of "
+                        "bosonic (left-movers in 26D) and superstring (right-movers in 10D) sectors, "
+                        "effectively operates in 13 dimensions due to this asymmetric left-right "
+                        "construction. G2 holonomy compactification on a 7-dimensional internal "
+                        "manifold reduces this to 4D spacetime, but the reduction is not absolute: "
+                        "residual degrees of freedom from the compactified dimensions persist as "
+                        "moduli fields and contribute to the effective dimensionality and vacuum "
+                        "energy density of the resulting 4D universe."
                     )
                 ),
                 ContentBlock(
@@ -682,7 +688,7 @@ class DarkEnergyV16(SimulationBase):
                 latex=r"26D \xrightarrow{\text{heterotic}} 13D \xrightarrow{G_2} 4D",
                 plain_text="26D → (heterotic) → 13D → (G2) → 4D",
                 category="DERIVED",
-                description="Dimensional reduction cascade from 26D bosonic string through 13D heterotic to 4D observable spacetime via G2 compactification, utilising the third Betti number b₃=24",
+                description="Dimensional reduction cascade illustrating the transition from the 26-dimensional bosonic string theory, through the 13-dimensional heterotic string (from asymmetric left-right construction), to the effective 4-dimensional spacetime via G2 manifold compactification. The third Betti number b3=24 characterizes the topological complexity of the compactified G2 space and determines the residual vacuum energy density through the Tzimtzum fraction 1/b3.",
                 inputParams=[],
                 outputParams=["cosmology.D_eff"],
                 input_params=[],
@@ -690,19 +696,19 @@ class DarkEnergyV16(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "Bosonic string critical dimension",
+                            "description": "Bosonic string critical dimension from Virasoro anomaly cancellation: c = D - 2 = 24 requires D = 26",
                             "formula": r"D_{bosonic} = 26"
                         },
                         {
-                            "description": "Heterotic string asymmetric construction",
+                            "description": "Heterotic string asymmetric construction: left-movers in 26D (bosonic), right-movers in 10D (superstring), yielding D_eff = (26+10)/2 = 13",
                             "formula": r"D_{heterotic} = \frac{26 + 10}{2} = 13 \text{ (effectively)}"
                         },
                         {
-                            "description": "G2 compactification to spacetime",
+                            "description": "G2 holonomy compactification on 7D internal manifold (with b3=24 associative 3-cycles) reduces 13D to 4D observable spacetime",
                             "formula": r"D_{observable} = 13 - 9 = 4"
                         },
                         {
-                            "description": "Shadow contribution from incomplete reduction",
+                            "description": "Shadow contribution from incomplete dimensional reduction: residual moduli fields from compact dimensions contribute alpha_shadow to effective dimensionality",
                             "formula": r"D_{eff} = 12 + \alpha_{shadow}"
                         }
                     ],

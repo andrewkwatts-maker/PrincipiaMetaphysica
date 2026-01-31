@@ -670,10 +670,15 @@ if _HAS_BASE:
                 domain="dirac_spectral",
                 title="Fermion Mass Hierarchy from Laplace-Beltrami Spectrum",
                 description=(
-                    "Rigorous derivation of fermion mass hierarchy from eigenvalues "
-                    "of the Laplace-Beltrami operator on a discretized G2 manifold. "
-                    "Uses Weyl's law and KK reduction to connect spectral geometry "
-                    "to the observed electron/muon/tau mass ratios."
+                    "Rigorous derivation of the fermion mass hierarchy from eigenvalues "
+                    "of the Laplace-Beltrami operator on a discretized G2 manifold. The "
+                    "connection between geometry and mass is physically motivated by "
+                    "Kaluza-Klein compactification: fermion zero-modes on the internal G2 "
+                    "manifold acquire 4D masses proportional to sqrt(lambda_n)/R from the "
+                    "discrete Laplacian spectrum. Weyl's asymptotic law (1911) provides an "
+                    "independent verification that the discretization faithfully represents "
+                    "the 7-dimensional G2 geometry. The resulting mass ratios m_mu/m_e and "
+                    "m_tau/m_mu are compared to PDG 2024 experimental values."
                 ),
                 section_id="4",
                 subsection_id="4.8"
@@ -817,9 +822,16 @@ if _HAS_BASE:
                     plain_text="m_f = m_ref * sqrt(lambda_n) * (V_G2 / V_cycle)^(1/3) * exp(-S_inst)",
                     category="DERIVED",
                     description=(
-                        "Fermion mass from Laplacian eigenvalue. The mass arises from "
-                        "KK reduction (sqrt(lambda)), volume ratio normalization, and "
-                        "instanton suppression between generations."
+                        "Fermion mass from Laplacian eigenvalue via Kaluza-Klein reduction. "
+                        "The physical chain from geometry to mass proceeds as: (1) the massless "
+                        "7D Dirac equation on the G2 manifold decomposes into eigenmodes of the "
+                        "Laplace-Beltrami operator with eigenvalues lambda_n encoding quantized "
+                        "energy levels of the internal space; (2) upon compactification, each "
+                        "eigenvalue maps to a 4D mass via m^2 = lambda_n/R^2; (3) the volume "
+                        "ratio (V_G2/V_cycle)^(1/3) normalizes the 7D wavefunction to the 4D "
+                        "slice; and (4) instanton corrections exp(-S_inst) provide exponential "
+                        "suppression between generations, producing the observed hierarchy "
+                        "m_e << m_mu << m_tau from the spectral structure."
                     ),
                     inputParams=["spectral.eigenvalue_1"],
                     outputParams=["spectral.m_electron_mev"],
@@ -925,10 +937,15 @@ if _HAS_BASE:
                     type="paragraph",
                     content=(
                         "The eigenvalue spectrum of the Laplace-Beltrami operator on "
-                        "a compact manifold encodes profound geometric information. "
-                        "For the G2 manifold underlying our framework, this spectrum "
-                        "directly determines the fermion mass hierarchy through "
-                        "Kaluza-Klein dimensional reduction."
+                        "a compact Riemannian manifold encodes fundamental geometric "
+                        "information (spectral geometry, cf. Weyl 1911, Kac 1966). For the "
+                        "G2 manifold underlying the PM framework, this spectrum maps directly "
+                        "to the fermion mass hierarchy through Kaluza-Klein dimensional "
+                        "reduction: solutions to the massless 7D Dirac equation decompose into "
+                        "eigenmodes of the internal Laplacian, and each eigenvalue lambda_n "
+                        "becomes a 4D mass squared m_n^2 = lambda_n/R^2 upon compactification. "
+                        "The geometry of the internal manifold thereby dictates the allowed "
+                        "energy states for fermions propagating in the extra dimensions."
                     )
                 ),
                 ContentBlock(
@@ -960,10 +977,14 @@ if _HAS_BASE:
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The fermion mass formula arises from KK reduction of the 7D "
-                        "massless Dirac equation. The effective 4D mass is proportional "
-                        "to sqrt(lambda_n) from the KK tower, with volume ratio and "
-                        "instanton corrections providing the full hierarchical structure."
+                        "The fermion mass formula arises from Kaluza-Klein reduction of the "
+                        "7D massless Dirac equation D_7 Psi = 0. Decomposing Psi(x,y) = "
+                        "sum_n psi_n(x) phi_n(y), where phi_n are Laplacian eigenmodes on the "
+                        "G2 manifold, yields 4D Dirac equations with masses m_n^2 = lambda_n/R^2. "
+                        "The effective 4D mass is then proportional to sqrt(lambda_n) from the KK "
+                        "tower, with the volume ratio (V_G2/V_cycle)^(1/3) normalizing the "
+                        "wavefunction from 7D to 4D, and instanton corrections exp(-S_inst) "
+                        "providing exponential suppression between fermion generations."
                     )
                 ),
                 ContentBlock(

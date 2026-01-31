@@ -180,9 +180,13 @@ class AppendixDAlignment(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The table below compares the v16.2 sterile extraction against the two conflicting "
-                    "'standard' measurements. The 0.48sigma alignment suggests that the v16.2 model "
-                    "provides the 'True North' that reconciles the tension:"
+                    "The table below compares the v16.2 sterile extraction against the two "
+                    "conflicting standard measurements of the Hubble constant: Planck (CMB-derived, "
+                    "early universe) and SH0ES (Cepheid distance ladder, local universe). The "
+                    "0.48sigma combined alignment suggests that the v16.2 geometric model provides "
+                    "a resolution to the Hubble tension by deriving H0 from the V7 manifold's "
+                    "spectral structure, effectively reconciling the discrepancy between early "
+                    "and late universe measurements through a fixed geometric residue:"
                 )
             ),
             ContentBlock(
@@ -266,7 +270,7 @@ class AppendixDAlignment(SimulationBase):
                 latex=r"H_0^{\text{geo}} = 70.42 \text{ km/s/Mpc}",
                 plain_text="H0_geo = 70.42 km/s/Mpc",
                 category="PREDICTED",
-                description="Geometric Hubble residue resolving the Planck-SH0ES tension.",
+                description="Geometric Hubble residue derived from the V7 manifold's spectral structure, offering a resolution to the Planck-SH0ES Hubble tension. The value H0 = 70.42 km/s/Mpc emerges as a fixed geometric quantity, positioned between the early-universe (Planck CMB: 67.4) and local-universe (SH0ES Cepheids: 73.0) measurements, aligning with both within combined statistical uncertainties.",
                 input_params=["topology.elder_kads"],
                 output_params=["cosmology.H0_geometric"],
                 terms={
@@ -276,9 +280,9 @@ class AppendixDAlignment(SimulationBase):
                     "method": "geometric_derivation",
                     "parentFormulas": ["spectral-eigenvalue-extraction", "log-harmonic-spacing"],
                     "steps": [
-                        "Extract the cosmological node eigenvalue from the V7 spectral registry",
-                        "Map the eigenvalue to physical units via the torsion pin calibration",
-                        "Obtain H0 = 70.42 km/s/Mpc as a fixed geometric residue",
+                        "Extract the cosmological node eigenvalue from the V7 spectral registry, representing a fundamental topological parameter related to the universe's expansion rate",
+                        "Map the eigenvalue to physical units via the torsion pin calibration, which establishes the correspondence between abstract spectral quantities and observable cosmological measurements",
+                        "Obtain H0 = 70.42 km/s/Mpc as a fixed geometric residue, positioned between Planck (67.4) and SH0ES (73.0) values, suggesting a geometric resolution to the Hubble tension",
                     ],
                 },
             ),

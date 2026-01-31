@@ -249,12 +249,12 @@ class GeometricAnchorsSimulation(SimulationBase):
                 latex=r"w_0 = -1 + \frac{1}{b_3} = -\frac{23}{24} \approx -0.9583",
                 plain_text="w0 = -1 + 1/b3 = -23/24 = -0.9583",
                 category="DERIVED",
-                description="Dark energy equation of state from topological Tzimtzum fraction. Experimental: w0 = -0.957 +/- 0.067 (DESI 2025 thawing quintessence)",
+                description="Dark energy equation of state parameter w0, anchored by the topological Tzimtzum fraction 1/b3. This fraction provides a geometric mechanism for the deviation from a pure cosmological constant (w = -1): vacuum energy leakage through one associative 3-cycle out of b3 = 24 drives thawing quintessence behavior. Experimental constraint: w0 = -0.957 +/- 0.067 (DESI 2025 thawing quintessence).",
                 derivation={
                     "steps": [
                         "In the PM framework, dark energy arises from the Pneuma field's residual vacuum energy after compactification",
-                        "The deviation from pure cosmological constant (w = -1) is set by the Tzimtzum fraction 1/b3",
-                        "The Tzimtzum fraction represents the fractional 'contraction' of the 7D bulk volume: one cycle out of b3 = 24 associative cycles contributes to vacuum energy leakage",
+                        "The deviation of w from -1 (pure cosmological constant) is directly proportional to the Tzimtzum fraction 1/b3, which quantifies the degree of vacuum energy leakage from the bulk to the 4D brane due to the compactification geometry",
+                        "The Tzimtzum fraction represents the fractional contraction of the 7D bulk volume during G2 compactification: one associative 3-cycle out of b3 = 24 total cycles contributes to the leakage of vacuum energy from the bulk into the 4D observable sector, a consequence of the non-trivial topology of the compact G2 manifold",
                         "Result: w0 = -1 + 1/24 = -23/24 = -0.95833..., a thawing quintessence equation of state"
                     ],
                     "method": "Topological vacuum energy fraction from associative 3-cycle count on TCS G2 manifold",
