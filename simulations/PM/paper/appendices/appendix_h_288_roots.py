@@ -79,7 +79,11 @@ class AppendixH288Roots(SimulationBase):
             version="16.2",
             domain="appendices",
             title="Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
-            description="The 288 ancestral roots from SO(24) and 12-per-shadow torsion",
+            description=(
+                "Derives the 288 ancestral roots from SO(24) transverse symmetry (276 generators) "
+                "and dual-shadow torsion (24 pins), minus the manifold projection cost (12). "
+                "Proves the 125 observable residues are the sterile-filtered subset at theta ~ 25.72 deg."
+            ),
             section_id="H",
             subsection_id=None,
             appendix=True
@@ -87,7 +91,8 @@ class AppendixH288Roots(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return []
+        """Registry parameters consumed by the 288-root analysis."""
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -320,7 +325,12 @@ class AppendixH288Roots(SimulationBase):
             section_id="H",
             subsection_id=None,
             title="Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
-            abstract="The 288 ancestral roots from SO(24) transverse symmetry and 12-per-shadow torsion.",
+            abstract=(
+                "Derives the 288 ancestral roots from the SO(24) transverse symmetry group (276 generators), "
+                "dual-shadow torsion (24 pins, 12 per 13D brane), minus the manifold projection cost (12). "
+                "Proves the 125 observable residues are the sterile-filtered subset via the V7 Laplacian, "
+                "with 163 hidden supports enforcing the Metric Lock at sub-Planckian scales."
+            ),
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
             param_refs=self.PARAM_REFS,
@@ -335,13 +345,29 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.1)",
                 latex=r"\text{dim}(SO(24)) = \frac{24 \times 23}{2} = 276",
                 plain_text="dim(SO(24)) = 24*23/2 = 276",
-                category="FOUNDATIONAL",
-                description="SO(24) symmetry generators from 24 transverse dimensions.",
+                category="GEOMETRIC",
+                description=(
+                    "Number of independent generators of SO(24), the transverse rotation group "
+                    "in 26D bosonic string theory. Computed via the standard Lie algebra dimension "
+                    "formula dim(SO(n)) = n(n-1)/2 with n = 24 transverse directions."
+                ),
                 input_params=["topology.transverse_dimensions"],
                 output_params=["topology.so24_generators"],
+                derivation={
+                    "method": "Lie algebra dimension formula for SO(n)",
+                    "steps": [
+                        "Identify the transverse symmetry group: bosonic string in 26D has 24 transverse directions (26 - 2 light-cone)",
+                        "The rotation symmetry of these 24 directions is SO(24), the special orthogonal group",
+                        "Apply the standard Lie algebra dimension formula: dim(SO(n)) = n(n-1)/2",
+                        "Compute dim(SO(24)) = 24 * 23 / 2 = 276 independent generators",
+                    ],
+                    "parentFormulas": ["26d-bosonic-string-transverse"],
+                },
                 terms={
-                    "SO(24)": "Special orthogonal group in 24 dimensions",
-                    "276": "Number of independent generators",
+                    "SO(24)": "Special orthogonal group in 24 dimensions (transverse rotation symmetry)",
+                    "n": "Number of transverse dimensions (n = 24)",
+                    "276": "Number of independent generators (antisymmetric rank-2 tensors)",
+                    "26D": "Bosonic string critical dimension (26 total, 24 transverse)",
                 },
             ),
             Formula(
@@ -349,13 +375,31 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.2)",
                 latex=r"\tau_{\text{total}} = \tau_A + \tau_B = 12 + 12 = 24",
                 plain_text="tau_total = 12 + 12 = 24",
-                category="FOUNDATIONAL",
-                description="Total shadow torsion from two 13D branes with 12 pins each.",
+                category="GEOMETRIC",
+                description=(
+                    "Total shadow torsion pins from the dual 13D shadow brane architecture. "
+                    "Each 13D brane requires 12 independent pinning vectors for stability in "
+                    "the 26D bulk, giving 24 total pins matching the Leech lattice dimension."
+                ),
                 input_params=["topology.torsion_per_shadow"],
                 output_params=["topology.shadow_torsion_total"],
+                derivation={
+                    "method": "Brane stability counting in 26D bulk",
+                    "steps": [
+                        "The 26D bulk contains two 13D shadow branes (Shadow A and Shadow B) in the dual-shadow architecture",
+                        "Each 13D brane requires 12 independent pinning vectors for topological stability (26 - 13 - 1 = 12 constraints)",
+                        "Shadow A contributes tau_A = 12 torsion pins",
+                        "Shadow B contributes tau_B = 12 torsion pins",
+                        "Total torsion = tau_A + tau_B = 12 + 12 = 24 pins, matching the Leech lattice dimension",
+                    ],
+                    "parentFormulas": ["26d-dual-shadow-architecture"],
+                },
                 terms={
-                    "τ_A": "Torsion pins for Shadow Brane A (12)",
-                    "τ_B": "Torsion pins for Shadow Brane B (12)",
+                    r"\tau_A": "Torsion pins for Shadow Brane A (12 independent pinning vectors)",
+                    r"\tau_B": "Torsion pins for Shadow Brane B (12 independent pinning vectors)",
+                    r"\tau_{\text{total}}": "Total torsion pin count (24)",
+                    "13D": "Dimensionality of each shadow brane",
+                    "26D": "Dimensionality of the ancestral bulk",
                 },
             ),
             Formula(
@@ -363,14 +407,25 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.3)",
                 latex=r"R_{\text{ancestral}} = 276 + 24 - 12 = 288",
                 plain_text="R_ancestral = 276 + 24 - 12 = 288",
-                category="STERILE_PROOF",
+                category="DERIVED",
                 description="Total ancestral roots: SO(24) + torsion - manifold cost.",
                 input_params=["topology.so24_generators", "topology.shadow_torsion_total", "topology.manifold_cost"],
                 output_params=["topology.ancestral_roots"],
+                derivation={
+                    "method": "Symmetry budget accounting for 26D to 4D projection",
+                    "steps": [
+                        "Start with SO(24) generators providing the transverse symmetry budget: 276",
+                        "Add 24 shadow torsion pins that stabilize the dual 13D branes",
+                        "Subtract the manifold projection cost of 12 degrees consumed in creating the 4D bridge",
+                        "Net ancestral roots: 276 + 24 - 12 = 288",
+                    ],
+                    "parentFormulas": ["so24-generators", "shadow-torsion-sum"],
+                },
                 terms={
+                    "R_{\\text{ancestral}}": "Total ancestral root count",
                     "276": "SO(24) generators",
                     "24": "Shadow torsion pins",
-                    "12": "Manifold projection cost",
+                    "12": "Manifold projection cost (consumed for 4D bridge)",
                     "288": "Total ancestral roots",
                 },
             ),
@@ -383,6 +438,20 @@ class AppendixH288Roots(SimulationBase):
                 description="Sterile angle determining which roots manifest as observables.",
                 input_params=["registry.node_count", "topology.ancestral_roots"],
                 output_params=["topology.sterile_angle"],
+                derivation={
+                    "method": "V7 Laplacian eigenvalue selection via sterile angle",
+                    "steps": [
+                        "The V7 Laplacian acts as a spectral filter on the 288 ancestral roots",
+                        "Only roots whose projection angle satisfies the sterile condition pass through",
+                        "The sterile angle theta = arcsin(N_active / N_roots) = arcsin(125/288) ~ 25.72 deg",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation"],
+                },
+                terms={
+                    r"\theta_{\text{sterile}}": "Sterile projection angle (approx 25.72 degrees)",
+                    "125": "Number of active observable residues",
+                    "288": "Total ancestral roots",
+                },
             ),
             Formula(
                 id="hidden-support-count",
@@ -393,6 +462,21 @@ class AppendixH288Roots(SimulationBase):
                 description="Hidden structural supports that enforce the Metric Lock.",
                 input_params=["topology.ancestral_roots", "registry.node_count"],
                 output_params=["topology.hidden_supports"],
+                derivation={
+                    "method": "Root partition from G2 holonomy constraint",
+                    "steps": [
+                        "The 288 ancestral roots partition into active (observable) and hidden (structural) sectors",
+                        "Shell saturation selects 125 roots as the active residues (1 + 12 + 112 shell packing)",
+                        "The remaining 163 = 288 - 125 roots form sub-Planckian structural supports enforcing the Metric Lock",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation"],
+                },
+                terms={
+                    "N_{\\text{hidden}}": "Number of hidden structural supports",
+                    "288": "Total ancestral roots",
+                    "125": "Active observable residues",
+                    "163": "Hidden sub-Planckian supports (bulk insulation)",
+                },
             ),
         ]
 
@@ -402,33 +486,48 @@ class AppendixH288Roots(SimulationBase):
             Parameter(
                 path="topology.ancestral_roots",
                 name="Ancestral Root Count",
-                units="dimensionless",
+                units="count",
                 status="FOUNDATIONAL",
-                description="Total 288 ancestral roots from SO(24) + shadow torsion - manifold cost",
+                description=(
+                    "Total ancestral roots from the 26D bulk symmetry budget: "
+                    "SO(24) generators (276) + shadow torsion (24) - manifold projection cost (12) = 288. "
+                    "This is the total symmetry budget available before sterile filtering."
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
                 path="topology.so24_generators",
                 name="SO(24) Generators",
-                units="dimensionless",
+                units="count",
                 status="FOUNDATIONAL",
-                description="Number of SO(24) symmetry generators (276)",
+                description=(
+                    "Number of independent generators of SO(24), the transverse rotation group "
+                    "in 26D bosonic string theory. Computed as dim(SO(n)) = n(n-1)/2 = 24*23/2 = 276."
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
                 path="topology.shadow_torsion_total",
                 name="Total Shadow Torsion",
-                units="dimensionless",
+                units="count",
                 status="FOUNDATIONAL",
-                description="Total torsion pins from both 13D shadow branes (24)",
+                description=(
+                    "Total torsion pins from the dual 13D shadow brane architecture: "
+                    "12 pinning vectors per brane x 2 branes = 24 pins. Matches the Leech lattice dimension "
+                    "and distributes isotropically as [6,6,6,6] across the 4 spacetime dimensions."
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
                 path="topology.hidden_supports",
                 name="Hidden Structural Supports",
-                units="dimensionless",
+                units="count",
                 status="DERIVED",
-                description="Sub-Planckian supports enforcing Metric Lock (163)",
+                description=(
+                    "Sub-Planckian structural supports that enforce the Metric Lock: "
+                    "288 total roots - 125 active residues = 163 hidden supports. "
+                    "These are not observable but provide topological reinforcement for the 125 active modes."
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
@@ -436,7 +535,11 @@ class AppendixH288Roots(SimulationBase):
                 name="Sterile Saturation Ratio",
                 units="dimensionless",
                 status="DERIVED",
-                description="Percentage of ancestral roots that manifest (125/288 = 43.4%)",
+                description=(
+                    "Fraction of ancestral roots that manifest as observable residues: "
+                    "125/288 = 0.4340 (43.40%). The complementary fraction 163/288 = 56.60% "
+                    "remains hidden as structural supports."
+                ),
                 no_experimental_value=True,
             ),
         ]
@@ -548,44 +651,89 @@ class AppendixH288Roots(SimulationBase):
         """Run internal consistency checks on 288-root decomposition."""
         checks = []
 
-        # Check 1: Total root count
+        # Check 1: Total root count via E8 decomposition
         total = 240 + 48
         checks.append({
-            "name": "root_count_288",
+            "name": "root_count_288_e8",
             "passed": total == 288,
             "confidence_interval": {"lower": 288, "upper": 288, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"E8(240) + shadow(48) = {total}",
+            "message": f"E8(240) + shadow(48) = {total} (expected 288)",
         })
 
-        # Check 2: SO(24) dimension
+        # Check 2: SO(24) dimension formula
         so24_dim = 24 * 23 // 2
         checks.append({
-            "name": "so24_dimension",
+            "name": "so24_dimension_276",
             "passed": so24_dim == 276,
             "confidence_interval": {"lower": 276, "upper": 276, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"SO(24) dim = 24*23/2 = {so24_dim}",
+            "message": f"dim(SO(24)) = 24*23/2 = {so24_dim} (expected 276)",
         })
 
-        # Check 3: Active + hidden = total
+        # Check 3: Active + hidden = total (root partition completeness)
         active_hidden = 125 + 163
         checks.append({
             "name": "active_hidden_partition",
             "passed": active_hidden == 288,
             "confidence_interval": {"lower": 288, "upper": 288, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"125 active + 163 hidden = {active_hidden}",
+            "message": f"125 active + 163 hidden = {active_hidden} (must equal 288)",
         })
 
-        # Check 4: Sterile ratio
+        # Check 4: Sterile ratio within expected bounds
         ratio = 125 / 288
         checks.append({
             "name": "sterile_saturation_ratio",
-            "passed": abs(ratio - 0.434) < 0.001,
-            "confidence_interval": {"lower": 0.433, "upper": 0.435, "sigma": 0.001},
+            "passed": abs(ratio - 0.4340) < 0.0005,
+            "confidence_interval": {"lower": 0.4335, "upper": 0.4345, "sigma": 0.0005},
             "log_level": "INFO",
-            "message": f"Sterile ratio = {ratio:.4f} (expected ~0.434)",
+            "message": f"Sterile ratio = {ratio:.6f} (expected 0.4340 +/- 0.0005)",
+        })
+
+        # Check 5: Sterile angle derivation consistency
+        sterile_angle = np.degrees(np.arcsin(125 / 288))
+        angle_ok = abs(sterile_angle - 25.72) < 0.01
+        checks.append({
+            "name": "sterile_angle_consistency",
+            "passed": angle_ok,
+            "confidence_interval": {"lower": 25.71, "upper": 25.73, "sigma": 0.01},
+            "log_level": "INFO" if angle_ok else "ERROR",
+            "message": f"Sterile angle = {sterile_angle:.4f} deg (expected ~25.72 deg)",
+        })
+
+        # Check 6: Manifold cost is exactly half the torsion (12 = 24/2)
+        manifold_cost = 12
+        torsion_half = 24 // 2
+        cost_ok = manifold_cost == torsion_half
+        checks.append({
+            "name": "manifold_cost_torsion_half",
+            "passed": cost_ok,
+            "confidence_interval": {"lower": 12, "upper": 12, "sigma": 0.0},
+            "log_level": "INFO" if cost_ok else "ERROR",
+            "message": f"Manifold cost {manifold_cost} = torsion/2 = {torsion_half} (structural identity)",
+        })
+
+        # Check 7: 288-root budget equation (generators + torsion - cost = 288)
+        budget = 276 + 24 - 12
+        budget_ok = budget == 288
+        checks.append({
+            "name": "root_budget_equation",
+            "passed": budget_ok,
+            "confidence_interval": {"lower": 288, "upper": 288, "sigma": 0.0},
+            "log_level": "INFO" if budget_ok else "ERROR",
+            "message": f"SO(24)(276) + torsion(24) - cost(12) = {budget} (must equal 288)",
+        })
+
+        # Check 8: Torsion isotropic distribution (24 pins / 4 dims = 6 each)
+        pins_per_dim = 24 // 4
+        isotropy_ok = pins_per_dim == 6 and 24 % 4 == 0
+        checks.append({
+            "name": "torsion_isotropy_check",
+            "passed": isotropy_ok,
+            "confidence_interval": {"lower": 6, "upper": 6, "sigma": 0.0},
+            "log_level": "INFO" if isotropy_ok else "ERROR",
+            "message": f"24 pins / 4 dims = {pins_per_dim} per dim ([6,6,6,6] isotropic distribution)",
         })
 
         all_passed = all(c["passed"] for c in checks)

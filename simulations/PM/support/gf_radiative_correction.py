@@ -282,7 +282,7 @@ class GFRadiativeCorrectionV18(SimulationBase):
                 label="(4.8)",
                 latex=r"G_F^{\rm phys} = G_F^{\rm tree} \times \left(1 + \frac{\alpha}{2\pi}\right)",
                 plain_text="G_F^phys = G_F^tree * (1 + alpha/(2*pi))",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Physical Fermi constant includes 1-loop QED correction. "
                     "The Schwinger term alpha/(2*pi) ~ 0.116% bridges tree to loop level."

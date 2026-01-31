@@ -850,7 +850,7 @@ if SCHEMA_AVAILABLE:
                     label="(7.2c)",
                     latex=r"G_{\text{eff}} = G_N \cdot k_\gimel, \quad k_\gimel = \frac{b_3}{2} + \frac{1}{\pi}",
                     plain_text="G_eff = G_Newton * k_gimel, k_gimel = b3/2 + 1/pi",
-                    category="THEORY",
+                    category="DERIVED",
                     description=(
                         "G2 geometric enhancement to gravitational coupling. The holonomy "
                         "parameter k_gimel modifies the effective G at atomic scales."

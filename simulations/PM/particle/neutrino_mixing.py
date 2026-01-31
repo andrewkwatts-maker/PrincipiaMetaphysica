@@ -754,6 +754,15 @@ class NeutrinoMixingSimulation(SimulationBase):
                     "references": [
                         "Tri-bimaximal mixing from discrete symmetries"
                     ]
+                },
+                terms={
+                    r"\theta_{12}": "Solar neutrino mixing angle",
+                    r"\frac{1}{\sqrt{3}}": "Tri-bimaximal base value (sin(theta_12) ~ 0.577)",
+                    "b_3": "Third Betti number of G2 manifold (24)",
+                    "b_2": "Second Betti number (12)",
+                    r"n_{\text{gen}}": "Number of fermion generations (3)",
+                    r"\chi_{\text{eff}}": "Effective Euler characteristic",
+                    r"\delta": "Topological perturbation from TBM base"
                 }
             ),
             Formula(

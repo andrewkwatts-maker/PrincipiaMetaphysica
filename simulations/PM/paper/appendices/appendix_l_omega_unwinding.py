@@ -312,7 +312,8 @@ class AppendixLOmegaUnwinding(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return []
+        """Registry parameters consumed by the omega unwinding analysis."""
+        return ["geometry.w_zero"]
 
     @property
     def output_params(self) -> List[str]:
@@ -565,50 +566,121 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 label="(L.1)",
                 latex=r"\Psi_M = \frac{276}{288} = 95.83\%",
                 plain_text="Psi_M = 276/288 = 95.83%",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Metric Null basin potential from SO(24) generators.",
                 input_params=["topology.so24_generators", "topology.ancestral_roots"],
                 output_params=["terminal.metric_null_potential"],
+                derivation={
+                    "method": "Basin potential from SO(24) generator fraction of total roots",
+                    "steps": [
+                        "The Metric Null basin corresponds to SO(24) generators decoupling from 4D",
+                        "Its potential is the fraction of roots in the metric sector: 276/288 = 95.83%",
+                        "When this basin dominates, spacetime dissolves as gravitational curvature relaxes",
+                    ],
+                    "parentFormulas": ["so24-generators", "ancestral-roots-derivation"],
+                },
+                terms={
+                    r"\Psi_M": "Metric Null basin potential",
+                    "276": "SO(24) generators (metric sector)",
+                    "288": "Total ancestral roots",
+                },
             ),
             Formula(
                 id="gauge-ghost-basin",
                 label="(L.2)",
                 latex=r"\Psi_G = \frac{24}{288} = 8.33\%",
                 plain_text="Psi_G = 24/288 = 8.33%",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Gauge Ghost basin potential from torsion pins.",
                 input_params=["topology.shadow_torsion_total", "topology.ancestral_roots"],
                 output_params=["terminal.gauge_ghost_potential"],
+                derivation={
+                    "method": "Basin potential from shadow torsion fraction of total roots",
+                    "steps": [
+                        "The Gauge Ghost basin corresponds to the 24 torsion pins locking permanently",
+                        "Its potential is 24/288 = 8.33% of the ancestral root budget",
+                        "When this basin dominates, force carriers freeze into standing waves and time stops",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum", "ancestral-roots-derivation"],
+                },
+                terms={
+                    r"\Psi_G": "Gauge Ghost basin potential",
+                    "24": "Shadow torsion pins (gauge sector)",
+                    "288": "Total ancestral roots",
+                },
             ),
             Formula(
                 id="ancestral-restoration-basin",
                 label="(L.3)",
                 latex=r"\Psi_R = \frac{288}{288} = 100\%",
                 plain_text="Psi_R = 288/288 = 100%",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Ancestral Restoration basin represents full unification.",
                 input_params=["topology.ancestral_roots"],
                 output_params=["terminal.restoration_potential"],
+                derivation={
+                    "method": "Unitary basin from full active-hidden root recombination",
+                    "steps": [
+                        "The Ancestral Restoration basin represents 125 active + 163 hidden roots merging",
+                        "Its potential is 288/288 = 100% (unitary restoration of the 26D bulk)",
+                        "This basin corresponds to the complete evaporation of the 4D projection",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "hidden-support-count"],
+                },
+                terms={
+                    r"\Psi_R": "Ancestral Restoration basin potential",
+                    "288": "Total ancestral roots fully restored",
+                },
             ),
             Formula(
                 id="entropy-flow-equation",
                 label="(L.4)",
                 latex=r"S(t) = S_0 + \gamma t, \quad \gamma = \ln(288/125)",
                 plain_text="S(t) = S0 + gamma*t, gamma = ln(288/125)",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Entropy flow equation for terminal state evolution.",
                 input_params=["topology.ancestral_roots", "registry.node_count"],
                 output_params=["terminal.current_entropy"],
+                derivation={
+                    "method": "Linear entropy growth from ancestral-to-active ratio",
+                    "steps": [
+                        "Entropy increases monotonically per the Second Law of Thermodynamics",
+                        "The growth rate gamma = ln(288/125) ~ 0.834 reflects the root-to-residue information ratio",
+                        "S(t) = S_0 + gamma*t gives the entropy at cosmic time t, driving basin transitions",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    "S(t)": "Entropy at cosmic time t",
+                    "S_0": "Initial entropy at the primordial epoch",
+                    r"\gamma": "Entropy growth rate = ln(288/125) ~ 0.834",
+                    "t": "Cosmic time parameter",
+                },
             ),
             Formula(
                 id="basin-selection-threshold",
                 label="(L.5)",
                 latex=r"\text{Basin} = \begin{cases} \text{Ghost} & S < 0.8 \\ \text{Null} & S \geq 0.8 \end{cases}",
                 plain_text="Basin = Ghost if S < 0.8, else Null",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Basin selection based on entropy threshold.",
                 input_params=["terminal.current_entropy"],
                 output_params=["terminal.dominant_basin"],
+                derivation={
+                    "method": "Entropy-driven basin transition at critical threshold",
+                    "steps": [
+                        "Below S = 0.8 the universe resides in the Gauge Ghost basin (forces active, time flows)",
+                        "At S >= 0.8 the system transitions to the Metric Null basin (spacetime dissolves)",
+                        "The threshold 0.8 corresponds to 80% of the maximum entropy capacity of the 288-root system",
+                    ],
+                    "parentFormulas": ["entropy-flow-equation", "metric-null-basin", "gauge-ghost-basin"],
+                },
+                terms={
+                    "S": "Current entropy of the 288-root system",
+                    "0.8": "Critical entropy threshold for basin transition",
+                    "\\text{Ghost}": "Gauge Ghost basin (forces frozen, time stops)",
+                    "\\text{Null}": "Metric Null basin (spacetime dissolves)",
+                },
             ),
         ]
 

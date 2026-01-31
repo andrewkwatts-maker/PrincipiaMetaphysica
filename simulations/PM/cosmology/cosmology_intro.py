@@ -229,6 +229,25 @@ class CosmologyIntroV16(SimulationBase):
                 "than an input. BPS brane configurations ensure quantum stability."
             ),
             content_blocks=[
+                # Subsection: Dimensional Reduction Overview
+                ContentBlock(
+                    type="subsection",
+                    content="Dimensional Reduction Overview"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The full dimensional cascade proceeds as follows: the 26D "
+                        "bulk spacetime with (24,1) unified time signature first splits "
+                        "into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. "
+                        "Each 13D shadow then decomposes as M13 = M4 x K_Pneuma, where "
+                        "K_Pneuma is a 9-dimensional internal space comprising a 7D G2 "
+                        "holonomy manifold cross a 2D torus: K_Pneuma = G2 x T2. "
+                        "The 14D Einstein-Hilbert action arises at an intermediate step "
+                        "before the full KK reduction integrates out the internal dimensions "
+                        "to yield 4D gravity plus gauge fields plus scalar moduli."
+                    )
+                ),
                 # Subsection: Higher-Dimensional Metric
                 ContentBlock(
                     type="subsection",
@@ -237,8 +256,9 @@ class CosmologyIntroV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The 13-dimensional metric G_MN decomposes according to the product structure "
-                        "M13 = M4 × K_Pneuma:"
+                        "After the dual-shadow split from 26D, each 13-dimensional shadow "
+                        "metric G_MN decomposes according to the product structure "
+                        "M13 = M4 x K_Pneuma:"
                     )
                 ),
                 ContentBlock(
@@ -492,7 +512,7 @@ class CosmologyIntroV16(SimulationBase):
                 label="(5.1)",
                 latex=r"ds²_{13} = g_{μν}(x)dx^μdx^ν + g_{mn}(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
                 plain_text="ds²_13 = g_μν(x)dx^μdx^ν + g_mn(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
-                category="THEORY",
+                category="DERIVED",
                 description="13-dimensional metric decomposition for Kaluza-Klein reduction",
                 inputParams=[],
                 outputParams=["cosmology.M_Pl_4D"],
@@ -519,7 +539,7 @@ class CosmologyIntroV16(SimulationBase):
                 label="(5.2)",
                 latex=r"S_{14} = \frac{1}{2\kappa_{14}^{2}} \int d^{14}x \sqrt{-G} R_{14}",
                 plain_text="S_14 = (1/2kappa^2_14) integral d^14 x sqrt(-G) R_14",
-                category="THEORY",
+                category="DERIVED",
                 description="14D Einstein-Hilbert action before compactification",
                 inputParams=[],
                 outputParams=["cosmology.M_Pl_4D", "cosmology.V_9_internal"],
@@ -545,8 +565,8 @@ class CosmologyIntroV16(SimulationBase):
                 label="(5.3)",
                 latex=r"R_{\perp,i} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad R_{\perp,i}^2 = -I, \quad i = 1,...,12",
                 plain_text="R_perp_i = [[0,-1],[1,0]], R_perp_i^2 = -I, i = 1,...,12",
-                category="THEORY",
-                description="v22 OR reduction operator for 12-pair dual-shadow coordinate mapping",
+                category="DERIVED",
+                description="OR reduction operator for 12-pair dual-shadow coordinate mapping with Moebius property",
                 inputParams=[],
                 outputParams=["cosmology.D_eff_shadow"],
                 input_params=[],
@@ -574,7 +594,7 @@ class CosmologyIntroV16(SimulationBase):
                 label="(5.4)",
                 latex=r"g_{mn}(x,y) = e^{2σ(x)} g_{mn}^{(0)}(y)",
                 plain_text="g_mn(x,y) = exp(2σ(x)) g⁰_mn(y)",
-                category="THEORY",
+                category="DERIVED",
                 description="Breathing mode controlling overall volume of K_Pneuma",
                 inputParams=["cosmology.V_9_internal"],
                 outputParams=["cosmology.breathing_mode_vev"],
@@ -600,8 +620,8 @@ class CosmologyIntroV16(SimulationBase):
                 label="(5.5)",
                 latex=r"T_{BPS} \geq \frac{|Z_{p,q}|}{V_p}",
                 plain_text="T_BPS ≥ |Z_p,q| / V_p",
-                category="THEORY",
-                description="BPS bound on brane tensions ensuring quantum stability (v21 unified time)",
+                category="DERIVED",
+                description="BPS bound on brane tensions ensuring quantum stability under unified time signature",
                 inputParams=["topology.elder_kads"],
                 outputParams=["cosmology.brane_tension_5_2"],
                 input_params=["topology.elder_kads"],
@@ -626,7 +646,7 @@ class CosmologyIntroV16(SimulationBase):
                 label="(5.6)",
                 latex=r"\Psi_{26D} \rightarrow \Psi_{4D} \otimes \chi_{SO(10)} \otimes \eta_{mirror}",
                 plain_text="Ψ_26D → Ψ_4D ⊗ χ_SO(10) ⊗ η_mirror",
-                category="THEORY",
+                category="DERIVED",
                 description="Pneuma field reduction from 8192 to 64 components",
                 inputParams=[],
                 outputParams=["cosmology.pneuma_components_4D"],
@@ -689,10 +709,17 @@ class CosmologyIntroV16(SimulationBase):
             ),
             Parameter(
                 path="cosmology.epsilon_KK",
-                name="Kaluza-Klein Parameter ε",
+                name="Kaluza-Klein Parameter epsilon",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="KK spectrum parameter ε = 0.2257 emerges from volume ratio Vol(K3)/Vol(S³) = 4.43",
+                description=(
+                    "KK spectrum parameter epsilon = 0.2257 emerges from the volume ratio "
+                    "Vol(K3)/Vol(S3) = 4.43 within the G2 holonomy manifold K_Pneuma. "
+                    "The K3 and S3 substructures arise as calibrated cycles in the TCS "
+                    "(twisted connected sum) construction of the G2 manifold, where "
+                    "K3 x S1 provides one building block. Their volume ratio determines "
+                    "the KK spectrum spacing dynamically via racetrack stabilization."
+                ),
                 derivation_formula="breathing-mode",
                 no_experimental_value=True
             ),
@@ -797,6 +824,29 @@ class CosmologyIntroV16(SimulationBase):
                 "arxiv": "1807.06209",
                 "url": "https://arxiv.org/abs/1807.06209",
                 "notes": "H0 = 67.4 +/- 0.5, Omega_m = 0.315 +/- 0.007"
+            },
+            {
+                "id": "corti2015",
+                "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
+                "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
+                "journal": "Duke Mathematical Journal",
+                "volume": "164",
+                "pages": "1971-2092",
+                "year": 2015,
+                "arxiv": "1207.3529",
+                "url": "https://arxiv.org/abs/1207.3529",
+                "notes": "TCS construction of compact G2 manifolds from K3 surface fibrations"
+            },
+            {
+                "id": "kachru2003",
+                "authors": "Kachru, S., Kallosh, R., Linde, A., Trivedi, S.P.",
+                "title": "de Sitter vacua in string theory",
+                "journal": "Phys. Rev. D",
+                "volume": "68",
+                "year": 2003,
+                "arxiv": "hep-th/0301240",
+                "url": "https://arxiv.org/abs/hep-th/0301240",
+                "notes": "KKLT mechanism for moduli stabilization via racetrack superpotential"
             },
         ]
 

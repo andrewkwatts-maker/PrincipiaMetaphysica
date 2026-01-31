@@ -75,8 +75,8 @@ class AppendixCGaugeMatrices(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters consumed by the gauge matrices appendix."""
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -246,7 +246,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 label="(C.1)",
                 latex=r"R_4 = \mathbf{P}_{13 \to 4} \times S_{PR}(2) \times V_{13}",
                 plain_text="R_4 = P_{13->4} x S_PR(2) x V_13",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Dimensional projection from 13D ancestral registry to 4D observables. "
                     "The gauge filter ensures lossless symmetry reduction."
@@ -274,7 +274,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 label="(C.2)",
                 latex=r"\mathbf{P}_{13 \to 4}^\dagger \mathbf{P}_{13 \to 4} = \mathbf{I}_{13}",
                 plain_text="P_dagger * P = I_13",
-                category="VALIDATION",
+                category="DERIVED",
                 description="Unitarity condition ensuring lossless projection from 13D to 4D.",
                 input_params=[],
                 output_params=["gauge.unitarity_verified"],
@@ -297,7 +297,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 label="(C.3)",
                 latex=r"G_{13} \xrightarrow{S_{PR}(2)} SU(3)_C \times SU(2)_L \times U(1)_Y",
                 plain_text="G_13 -> SU(3)_C x SU(2)_L x U(1)_Y via S_PR(2)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description="Symmetry shattering rule producing Standard Model gauge groups from 13D.",
                 input_params=["dimensions.D_after_sp2r"],
                 output_params=[],
@@ -352,6 +352,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 "journal": "Physics Reports",
                 "volume": "72",
                 "pages": "185-385",
+                "doi": "10.1016/0370-1573(81)90059-4",
                 "notes": "Comprehensive review of gauge symmetry breaking chains.",
             },
             {
@@ -362,6 +363,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 "journal": "Physical Review Letters",
                 "volume": "32",
                 "pages": "438-441",
+                "doi": "10.1103/PhysRevLett.32.438",
                 "notes": "Original SU(5) grand unification proposal.",
             },
         ]

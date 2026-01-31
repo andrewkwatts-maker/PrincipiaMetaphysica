@@ -157,9 +157,11 @@ class YukawaTexturesV18(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Uses internal constants (phi, k_gimel, b3) rather than registry values
-        # for consistency with the geometric scaling analysis
-        return []
+        """Registry parameters underlying the Yukawa texture analysis."""
+        return [
+            "topology.elder_kads",        # b3 = 24 (used to derive k_gimel)
+            "topology.mephorash_chi",     # chi = 72 (chi effective)
+        ]
 
     @property
     def output_params(self) -> List[str]:

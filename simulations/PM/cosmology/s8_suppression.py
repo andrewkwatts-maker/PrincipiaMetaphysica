@@ -114,9 +114,10 @@ class S8SuppressionV16(SimulationBase):
             title="S8 Tension Resolution via Dynamical Dark Energy",
             description=(
                 "Resolves S8 tension between CMB (Planck) and weak lensing "
-                "(KiDS-1000, DES Y3) through PM's w₀ = -1 + 1/b₃ = -23/24 dark energy."
-                "Dynamical dark energy with w₀ < -1/3 suppresses late-time "
-                "structure growth, reducing S8 by ~3% relative to ΛCDM."
+                "(KiDS-1000, DES Y3) through PM's w₀ = -1 + 1/b₃ = -23/24 dark energy. "
+                "Dynamical dark energy with w₀ > -1 modifies the integrated expansion "
+                "history, yielding a growth suppression factor beta ≈ 0.994 (~0.6% "
+                "reduction relative to LCDM) at the effective weak lensing redshift z=0.5."
             ),
             section_id="5",
             subsection_id="5.4"
@@ -661,6 +662,28 @@ class S8SuppressionV16(SimulationBase):
                 outputParams=["cosmology.s8_pm_predicted"],
                 input_params=["desi.sigma8", "desi.Omega_m"],
                 output_params=["cosmology.s8_pm_predicted"],
+                derivation={
+                    "steps": [
+                        {
+                            "description": "Define RMS matter fluctuation amplitude at 8 h^-1 Mpc scale",
+                            "formula": r"\sigma_8 = \sqrt{\langle \delta^2 \rangle_{R=8\,h^{-1}\text{Mpc}}}"
+                        },
+                        {
+                            "description": "Weight by matter density to remove Omega_m degeneracy",
+                            "formula": r"S_8 = \sigma_8 \sqrt{\frac{\Omega_m}{0.3}}"
+                        },
+                        {
+                            "description": "Standard cosmological parameter combining clustering and density",
+                            "formula": r"S_8 \text{ observable: combines weak lensing and galaxy clustering}"
+                        }
+                    ],
+                    "references": [
+                        "Joudaki et al. (2017) - KiDS-450: S8 definition",
+                        "DES Collaboration (2022) - S8 constraints"
+                    ],
+                    "method": "standard_cosmological_definition",
+                    "parentFormulas": []
+                },
                 terms={
                     "S8": "Weighted clustering amplitude",
                     "sigma8": "RMS matter fluctuation at 8 h⁻¹ Mpc",
@@ -712,7 +735,7 @@ class S8SuppressionV16(SimulationBase):
                 label="(5.20)",
                 latex=r"H^2(z) = H_0^2 \left[\Omega_m (1+z)^3 + \Omega_{DE} a^{-3(1+w_0+w_a)} e^{3w_a(a-1)}\right]",
                 plain_text="H²(z) = H0² [Ωm(1+z)³ + Ω_DE a^(-3(1+w0+wa)) exp(3wa(a-1))]",
-                category="THEORY",
+                category="DERIVED",
                 description="Hubble parameter evolution for CPL dynamical dark energy",
                 inputParams=["cosmology.w0_derived", "cosmology.wa_derived", "desi.Omega_m"],
                 outputParams=["cosmology.s8_suppression_factor"],
@@ -754,9 +777,9 @@ class S8SuppressionV16(SimulationBase):
             Formula(
                 id="growth-suppression-factor",
                 label="(5.21)",
-                latex=r"\beta(z) = \frac{D_{PM}(z)}{D_{\Lambda CDM}(z)} \approx 0.97 \quad (\text{at } z=0.5)",
-                plain_text="β(z) = D_PM(z) / D_ΛCDM(z) ≈ 0.97 at z=0.5",
-                category="PREDICTIONS",
+                latex=r"\beta(z) = \frac{D_{PM}(z)}{D_{\Lambda CDM}(z)} \approx 0.994 \quad (\text{at } z=0.5)",
+                plain_text="β(z) = D_PM(z) / D_ΛCDM(z) ≈ 0.994 at z=0.5",
+                category="PREDICTED",
                 description="Structure growth suppression factor for PM vs ΛCDM",
                 inputParams=["cosmology.growth_index_pm", "cosmology.growth_index_lcdm"],
                 outputParams=["cosmology.s8_suppression_factor"],
@@ -769,8 +792,8 @@ class S8SuppressionV16(SimulationBase):
                             "formula": r"f(z) \equiv \frac{d\ln D}{d\ln a} = \Omega_m(z)^\gamma"
                         },
                         {
-                            "description": "PM growth index",
-                            "formula": r"\gamma_{PM} \approx 0.55 + 0.05(1+w_0) + 0.02w_a \approx 0.514"
+                            "description": "PM growth index (corrected formula with early DE)",
+                            "formula": r"\gamma_{PM} \approx 0.55 + 0.02(1+w_0) - 0.01 w_a \approx 0.548"
                         },
                         {
                             "description": "ΛCDM growth index",
@@ -778,7 +801,7 @@ class S8SuppressionV16(SimulationBase):
                         },
                         {
                             "description": "Suppression at z=0.5",
-                            "formula": r"\beta(0.5) = \frac{D_{PM}}{D_{\Lambda CDM}} \approx 0.97"
+                            "formula": r"\beta(0.5) = \frac{D_{PM}}{D_{\Lambda CDM}} \approx 0.994"
                         }
                     ],
                     "references": [
@@ -798,9 +821,9 @@ class S8SuppressionV16(SimulationBase):
             Formula(
                 id="s8-prediction-pm",
                 label="(5.22)",
-                latex=r"S_{8,PM} = \sigma_8 \sqrt{\frac{\Omega_m}{0.3}} \times \beta(z_{eff}) \approx 0.788",
-                plain_text="S8_PM = σ8 * sqrt(Ωm/0.3) * β(z_eff) ≈ 0.788",
-                category="PREDICTIONS",
+                latex=r"S_{8,PM} = \sigma_8 \sqrt{\frac{\Omega_m}{0.3}} \times \beta(z_{eff}) \approx 0.831",
+                plain_text="S8_PM = σ8 * sqrt(Ωm/0.3) * β(z_eff) ≈ 0.831",
+                category="PREDICTED",
                 description="PM prediction for S8 parameter including growth suppression",
                 inputParams=["desi.sigma8", "desi.Omega_m", "cosmology.s8_suppression_factor"],
                 outputParams=["cosmology.s8_pm_predicted"],
@@ -818,11 +841,11 @@ class S8SuppressionV16(SimulationBase):
                         },
                         {
                             "description": "Suppression factor at z_eff = 0.5",
-                            "formula": r"\beta(0.5) = 0.97"
+                            "formula": r"\beta(0.5) \approx 0.994"
                         },
                         {
                             "description": "PM S8 prediction",
-                            "formula": r"S_{8,PM} = 0.827 \times 1.011 \times 0.97 = 0.788"
+                            "formula": r"S_{8,PM} = 0.827 \times 1.011 \times 0.994 \approx 0.831"
                         },
                         {
                             "description": "Comparison to observations",
@@ -851,9 +874,9 @@ class S8SuppressionV16(SimulationBase):
 
     def get_output_param_definitions(self) -> List[Parameter]:
         """Return parameter definitions for outputs."""
-        # Use computed values if available
-        s8_pm = self.s8_pm if self.s8_pm is not None else 0.788
-        suppression = self.suppression_factor if self.suppression_factor is not None else 0.97
+        # Use computed values if available (fallbacks match certificate defaults)
+        s8_pm = self.s8_pm if self.s8_pm is not None else 0.837
+        suppression = self.suppression_factor if self.suppression_factor is not None else 0.994
 
         return [
             Parameter(
@@ -862,10 +885,10 @@ class S8SuppressionV16(SimulationBase):
                 units="dimensionless",
                 status="PREDICTED",
                 description=(
-                    f"PM prediction for S8 parameter: {s8_pm:.3f}. Includes ~3% "
-                    f"suppression from dynamical dark energy (w₀ = -1 + 1/b₃ = -23/24). "
-                    f"KiDS-1000 tension: 1.1σ (vs 3.1σ for ΛCDM). "
-                    f"DES Y3 tension: 0.7σ (vs 2.7σ for ΛCDM)."
+                    f"PM prediction for S8 parameter: {s8_pm:.3f}. Includes ~0.6% "
+                    f"suppression (beta ≈ 0.994) from dynamical dark energy "
+                    f"(w₀ = -1 + 1/b₃ = -23/24). Intermediate between Planck (0.832) "
+                    f"and weak lensing (0.77) measurements."
                 ),
                 derivation_formula="s8-prediction-pm",
                 experimental_bound=0.827,  # DESI 2025 sigma8
@@ -879,8 +902,10 @@ class S8SuppressionV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    f"Suppression of structure growth at z=0.5: β = {suppression:.3f}. "
-                    f"Arises from earlier dark energy domination with w₀ < -1/3."
+                    f"Suppression of structure growth at z=0.5: beta = {suppression:.4f}. "
+                    f"Ratio of PM growth factor D_PM(z) to LCDM growth factor D_LCDM(z). "
+                    f"A value near unity (~0.6% suppression) reflects the modest difference "
+                    f"between PM's w0 = -23/24 and LCDM's w = -1."
                 ),
                 derivation_formula="growth-suppression-factor",
                 no_experimental_value=True
@@ -891,8 +916,11 @@ class S8SuppressionV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    "Growth index γ for PM cosmology: γ_PM ≈ 0.514. "
-                    "Lower than ΛCDM (0.55) due to w₀ = -1 + 1/b₃ = -23/24."
+                    "Growth index gamma for PM cosmology: gamma_PM ≈ 0.548. "
+                    "Nearly identical to LCDM (0.55), as the small departure "
+                    "w0 = -23/24 vs w = -1 produces only a ~0.4% shift in gamma. "
+                    "The suppression comes from the integrated expansion history, "
+                    "not the instantaneous growth rate."
                 ),
                 derivation_formula="growth-suppression-factor",
                 no_experimental_value=True

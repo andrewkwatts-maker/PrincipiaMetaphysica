@@ -318,7 +318,11 @@ class CMBTemperatureV18(SimulationBase):
                 description=(
                     "CMB temperature from Planck-Hubble geometric scaling. "
                     "v22: HEURISTIC - the normalization pi/(b3+7) = pi/31 is a fitting choice. "
-                    "Deviation ~18σ from Planck 2018 due to small experimental uncertainty."
+                    "Derivation: (1) Planck temperature T_Pl = hc/(k_B L_Pl), "
+                    "(2) scale ratio sqrt(L_Pl/R_H), (3) base temperature T_base ~ 27 K, "
+                    "(4) heuristic normalization pi/31 from thermal + G2 partition, "
+                    "(5) final T_CMB = T_base * pi/31 ~ 2.75 K. "
+                    "Deviation ~18sigma from Planck 2018 due to small experimental uncertainty (0.0006 K)."
                 ),
                 inputParams=["topology.elder_kads"],
                 outputParams=["cosmology.T_CMB_geometric"],
@@ -371,7 +375,10 @@ class CMBTemperatureV18(SimulationBase):
                 description=(
                     "CMB normalization factor - HEURISTIC choice. "
                     "v22: The combination pi/(b3+7) is motivated by thermal geometry, "
-                    "but the specific form is not uniquely determined from first principles."
+                    "but the specific form is not uniquely determined from first principles. "
+                    "Derivation: (1) G2 has 7 compact dimensions, "
+                    "(2) b3 = 24 associative 3-cycles produce thermal modes, "
+                    "(3) heuristic normalization pi/(b3 + dim(G2)) = pi/31 ~ 0.101."
                 ),
                 inputParams=["topology.elder_kads"],
                 outputParams=["cosmology.k_CMB_normalization"],
@@ -417,7 +424,9 @@ class CMBTemperatureV18(SimulationBase):
                 status="HEURISTIC",  # v22: Acknowledged as phenomenological
                 description=(
                     "CMB temperature from Planck-Hubble scaling with heuristic normalization. "
-                    "v22: HEURISTIC - pi/(b3+7) is a fitting choice, ~18σ from Planck 2018."
+                    "v22: HEURISTIC - pi/(b3+7) is a fitting choice. "
+                    "Derived value: ~2.75 K. Target observation: 2.7255 +/- 0.0006 K (COBE/Planck 2018). "
+                    "Percent error ~1%, but ~18sigma due to very small experimental uncertainty."
                 ),
                 experimental_bound=2.7255,
                 bound_type="measured",
@@ -443,8 +452,9 @@ class CMBTemperatureV18(SimulationBase):
             abstract=(
                 "The CMB temperature emerges as the geometric mean of Planck and "
                 "Hubble energy scales, normalized by the thermal + G2 partition. "
-                "v19.0: FULLY DERIVED with no calibration constants. The factor "
-                "pi/(b3+7) = pi/31 combines thermal geometry with G2 topology."
+                "v19.0: Geometric approach with heuristic normalization. The factor "
+                "pi/(b3+7) = pi/31 combines thermal geometry with G2 topology, but "
+                "this specific combination remains a phenomenological choice."
             ),
             content_blocks=[
                 ContentBlock(
@@ -453,7 +463,9 @@ class CMBTemperatureV18(SimulationBase):
                         "The cosmic microwave background temperature bridges quantum "
                         "and cosmic scales through geometric scaling. The Planck-Hubble "
                         "geometric mean (~27 K) is normalized by pi/(b3+7) = pi/31, "
-                        "combining thermal radiation geometry with G2 partition modes."
+                        "combining thermal radiation geometry with G2 partition modes. "
+                        "This normalization is a heuristic choice motivated by the "
+                        "G2 topology but not uniquely derived from first principles."
                     )
                 ),
                 ContentBlock(
@@ -462,13 +474,16 @@ class CMBTemperatureV18(SimulationBase):
                 ),
                 ContentBlock(
                     type="callout",
-                    callout_type="success",
-                    title="Zero Free Parameters",
+                    callout_type="info",
+                    title="Geometric Approach with Heuristic Normalization",
                     content=(
-                        "v19.0: This derivation is FULLY GEOMETRIC. The normalization "
-                        "k_CMB = pi/(b3+7) = pi/31 arises from: pi (thermal equilibrium "
-                        "geometry, cf. Stefan-Boltzmann) and (b3+7) = 31 G2 partition modes. "
-                        "No calibration constants required!"
+                        "v19.0: This derivation applies geometric principles throughout. "
+                        "The normalization k_CMB = pi/(b3+7) = pi/31 is a heuristic choice, "
+                        "motivated by pi (thermal equilibrium geometry, cf. Stefan-Boltzmann) "
+                        "and (b3+7) = 31 G2 partition modes. While no external calibration "
+                        "constants are introduced, the selection of this specific normalization "
+                        "factor is phenomenological and not uniquely determined from first "
+                        "principles. Result: ~1% agreement with Planck 2018."
                     )
                 ),
             ],

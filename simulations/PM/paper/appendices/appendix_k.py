@@ -70,10 +70,7 @@ class AppendixKTransparency(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "gauge.M_GUT",
-            "topology.n_gen",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

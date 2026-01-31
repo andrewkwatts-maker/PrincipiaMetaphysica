@@ -131,16 +131,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
         These parameters are fetched from the registry with fallbacks to
         class constants for backward compatibility.
         """
-        return [
-            "constants.M_PLANCK",      # Reduced Planck mass (GeV)
-            "gauge.M_GUT",             # GUT/compactification scale (GeV)
-            "pdg.m_Z",                 # Z boson mass (GeV)
-            "pdg.m_higgs",             # Higgs mass (GeV)
-            "pdg.m_top",               # Top quark mass (GeV)
-            "geometry.higgs_vev",      # Electroweak VEV (GeV)
-            "geometry.elder_kads",             # Third Betti number
-            "geometry.mephorash_chi",        # Effective Euler characteristic
-        ]
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -457,7 +448,8 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The approximate solution to the RG equation gives:"
+                        "Keeping only the dominant top Yukawa contribution, the approximate "
+                        "solution to the renormalization group equation for lambda takes the form:"
                     )
                 ),
                 ContentBlock(
@@ -555,7 +547,8 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The lifetime of the metastable vacuum is:"
+                        "The expected lifetime of the metastable vacuum can be computed from "
+                        "the tunneling rate and the observable Hubble volume:"
                     )
                 ),
                 ContentBlock(
@@ -614,7 +607,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ),
                 ContentBlock(
                     type="list",
-                    content=[
+                    items=[
                         "<strong>G2 portal coupling:</strong> The TCS G2 manifold (#187) with b_3 = 24 provides moduli that couple to SM fields",
                         "<strong>Threshold correction:</strong> At M_GC, these moduli contribute +Delta_lambda ~ 0.001 to the quartic coupling",
                         "<strong>High-scale stabilization:</strong> The corrected RG running keeps lambda > 0 for all mu < M_P",
@@ -638,7 +631,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ),
                 ContentBlock(
                     type="list",
-                    content=[
+                    items=[
                         "<strong>Instability scale:</strong> Lambda_I^PM > M_P (pushed beyond Planck)",
                         "<strong>Bounce action:</strong> B_PM > 10^6 >> B_crit ~ 400",
                         "<strong>Tunneling rate:</strong> Gamma/V ~ exp(-10^6) ~ 0 (effectively zero)",
@@ -715,7 +708,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ),
                 ContentBlock(
                     type="list",
-                    content=[
+                    items=[
                         "<strong>Cosmological consistency:</strong> The universe will never decay to a different vacuum state",
                         "<strong>UV completion:</strong> The G2 portal provides a consistent high-energy completion",
                         "<strong>Fine-tuning:</strong> The near-criticality of SM parameters is explained by G2 dynamics",
@@ -741,7 +734,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ),
                 ContentBlock(
                     type="list",
-                    content=[
+                    items=[
                         "The Standard Model predicts a metastable vacuum due to top Yukawa driving lambda negative",
                         "SM vacuum is cosmologically safe (tau ~ 10^70 years) but not absolutely stable",
                         "PM resolves this through G2 portal coupling at M_GC ~ 2.1 x 10^16 GeV",
@@ -788,7 +781,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.1)",
                 latex=r"V_{\text{eff}}(\phi) = -\mu^2 |\phi|^2 + \lambda(\mu) |\phi|^4 + \frac{\beta_\lambda}{64\pi^2} |\phi|^4 \ln\frac{|\phi|^2}{v^2}",
                 plain_text="V_eff(phi) = -mu^2 |phi|^2 + lambda(mu) |phi|^4 + radiative corrections",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The one-loop effective potential for the Higgs field, including "
                     "radiative corrections from the running of lambda. The logarithmic "
@@ -812,9 +805,11 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 },
                 terms={
                     "phi": "Higgs field doublet",
-                    "mu^2": "Higgs mass parameter (negative for SSB)",
-                    "lambda(mu)": "Running quartic coupling at scale mu",
+                    "mu^2": "Higgs mass parameter (negative for spontaneous symmetry breaking)",
+                    "lambda(mu)": "Running quartic coupling at renormalization scale mu",
+                    "beta_lambda": "One-loop beta function for the quartic coupling",
                     "v": "Electroweak VEV = 246 GeV",
+                    "64*pi^2": "Normalization factor for the one-loop logarithmic correction",
                 }
             ),
 
@@ -824,7 +819,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.2)",
                 latex=r"\beta_\lambda = \frac{1}{16\pi^2}\left[ 24\lambda^2 - 6y_t^4 + \frac{9}{5}g_1^4 + \frac{9}{4}g_2^4 + \lambda(12y_t^2 - \frac{9}{5}g_1^2 - 9g_2^2) \right]",
                 plain_text="beta_lambda = (1/16pi^2) [24*lambda^2 - 6*y_t^4 + gauge terms]",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "One-loop beta function for the Higgs quartic coupling in the Standard Model. "
                     "The -6*y_t^4 term from the top Yukawa is the dominant negative contribution "
@@ -837,15 +832,18 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     "steps": [
                         "Compute one-loop diagrams contributing to phi^4 vertex",
                         "Include: Higgs loops, top quark loops, gauge boson loops",
-                        "Top contribution: -6*y_t^4 / (16*pi^2) per log(mu)",
+                        "The -6*y_t^4 term from the top Yukawa coupling dominates the running at high scales",
                         "This is the largest term and determines sign of beta",
                         "Higher loops (2-loop, 3-loop) refine but don't change qualitative picture",
                     ]
                 },
                 terms={
                     "y_t": "Top Yukawa coupling ~ 0.94",
-                    "g_1, g_2": "U(1)_Y and SU(2)_L gauge couplings",
-                    "16*pi^2": "Loop factor",
+                    "g_1": "U(1)_Y hypercharge gauge coupling",
+                    "g_2": "SU(2)_L weak isospin gauge coupling",
+                    "24*lambda^2": "Higgs self-coupling contribution (positive)",
+                    "-6*y_t^4": "Top quark loop contribution (dominant negative term)",
+                    "16*pi^2": "Standard one-loop suppression factor",
                 }
             ),
 
@@ -874,8 +872,11 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     ]
                 },
                 terms={
+                    "lambda(mu)": "Running quartic coupling evaluated at scale mu",
+                    "lambda(M_Z)": "Quartic coupling at Z mass ~ 0.13 (input value)",
                     "M_Z": "Z boson mass = 91.2 GeV (reference scale)",
                     "y_t^4": "Fourth power of top Yukawa ~ 0.78",
+                    "3/(8*pi^2)": "Coefficient from integrating the dominant beta function term",
                 }
             ),
 
@@ -904,8 +905,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     ]
                 },
                 terms={
-                    "Lambda_I": "Instability scale where lambda vanishes",
+                    "Lambda_I": "Instability scale where the running quartic coupling vanishes",
                     "lambda(M_Z)": "Quartic coupling at Z mass ~ 0.13",
+                    "M_Z": "Z boson mass = 91.2 GeV (starting scale for running)",
+                    "8*pi^2 / (3*y_t^4)": "Inverse of the integrated beta coefficient",
                 }
             ),
 
@@ -915,7 +918,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.5)",
                 latex=r"B = \frac{27\pi^2 \sigma^4}{2\epsilon^3}",
                 plain_text="B = 27*pi^2 * sigma^4 / (2*epsilon^3)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The Euclidean bounce action in the thin-wall approximation, "
                     "derived by Coleman. Controls the tunneling rate via Gamma ~ exp(-B)."
@@ -937,9 +940,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     ]
                 },
                 terms={
-                    "sigma": "Domain wall tension (energy/area)",
-                    "epsilon": "Energy density difference between vacua",
-                    "R_c": "Critical bubble radius",
+                    "B": "Euclidean bounce action (dimensionless); B > 400 ensures cosmological stability",
+                    "sigma": "Domain wall tension (energy per unit area of the bubble wall)",
+                    "epsilon": "Energy density difference between false and true vacua",
+                    "R_c": "Critical bubble radius = 3*sigma/epsilon",
                 }
             ),
 
@@ -968,9 +972,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     ]
                 },
                 terms={
-                    "Gamma/V": "Decay rate per unit 4-volume",
-                    "B": "Bounce action (suppression factor)",
-                    "M_P": "Planck mass sets natural scale",
+                    "Gamma/V": "Decay rate per unit spacetime 4-volume (GeV^4)",
+                    "A": "Prefactor of order M_P^4 from determinant ratio and loop factors",
+                    "B": "Bounce action (exponential suppression factor)",
+                    "M_P": "Reduced Planck mass = 2.435 x 10^18 GeV",
                 }
             ),
 
@@ -1000,8 +1005,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     ]
                 },
                 terms={
-                    "V_H": "Hubble volume ~ 4 x 10^80 GeV^-4",
-                    "tau": "Expected time before vacuum decay",
+                    "tau": "Expected time before vacuum decay (in years)",
+                    "Gamma/V": "Tunneling rate per unit 4-volume from bounce calculation",
+                    "V_H": "Hubble volume ~ 4 x 10^80 GeV^-4 (observable universe volume)",
+                    "e^B": "Exponential enhancement factor from bounce action suppression",
                 }
             ),
 
@@ -1011,7 +1018,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.8)",
                 latex=r"\Delta\lambda_{G_2} = \frac{g_{\text{portal}}^2}{16\pi^2 b_3} = \frac{g_{\text{portal}}^2}{16\pi^2 \cdot 24}",
                 plain_text="Delta_lambda_G2 = g_portal^2 / (16*pi^2 * b_3)",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "The positive threshold correction to the Higgs quartic coupling from "
                     "the G2 moduli portal at the GUT scale. This counteracts the top Yukawa "
@@ -1030,8 +1037,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     ]
                 },
                 terms={
+                    "Delta_lambda_G2": "Positive threshold correction to the Higgs quartic coupling",
                     "g_portal": "Portal coupling between Higgs and G2 moduli ~ O(1)",
-                    "b_3": "Third Betti number of G2 manifold = 24",
+                    "b_3": "Third Betti number of the TCS G2 manifold = 24",
+                    "16*pi^2": "Standard one-loop suppression factor",
                     "M_GC": "GUT/compactification scale ~ 2 x 10^16 GeV",
                 }
             ),
@@ -1090,7 +1099,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Energy scale at which lambda becomes negative in the Standard Model. "
-                    "Lambda_I ~ 10^10.5 GeV for measured m_H and m_t."
+                    "Lambda_I ~ 10^10.5 GeV for measured m_H and m_t. "
+                    "No direct experimental measurement exists; the SM estimated value "
+                    "is ~10^11 GeV based on NNLO RG running (Degrassi et al. 2012, "
+                    "Buttazzo et al. 2013)."
                 ),
                 derivation_formula="instability-scale-v19",
                 no_experimental_value=True,
@@ -1141,9 +1153,13 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     "tau >> 10^100 years (absolutely stable)."
                 ),
                 derivation_formula="vacuum-lifetime-v19",
-                experimental_bound="> 10^10 years",
+                experimental_bound=(
+                    "> 10^10 years (observational lower bound from the universe's existence); "
+                    "SM metastability estimates yield tau ~ 10^{58}-10^{70} years "
+                    "(Buttazzo et al. 2013, Degrassi et al. 2012)"
+                ),
                 bound_type="limit",
-                bound_source="Cosmological observation (universe exists)"
+                bound_source="Cosmological observation and SM metastability calculations"
             ),
             Parameter(
                 path="vacuum.is_stable",

@@ -74,8 +74,8 @@ class AppendixEBraneMap(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters consumed by the brane map appendix."""
+        return ["geometry.D_bulk"]
 
     @property
     def output_params(self) -> List[str]:
@@ -236,7 +236,7 @@ class AppendixEBraneMap(SimulationBase):
                 label="(E.1)",
                 latex=r"\vec{x}_n = (x_1, x_2, \ldots, x_7) \in V_7",
                 plain_text="x_n = (x1, x2, ..., x7) in V7",
-                category="FOUNDATIONAL",
+                category="GEOMETRIC",
                 description="7-tuple coordinate vector for each residue node in the V7 manifold.",
                 input_params=["topology.elder_kads"],
                 output_params=["geometry.shell_distribution"],
@@ -260,7 +260,7 @@ class AppendixEBraneMap(SimulationBase):
                 label="(E.2)",
                 latex=r"m_n \propto \text{Vol}(\text{Brane}_a \cap \text{Brane}_b)|_{x_n}",
                 plain_text="m_n proportional to Vol(Brane_a intersection Brane_b) at x_n",
-                category="FOUNDATIONAL",
+                category="GEOMETRIC",
                 description="Mass generation via brane intersection overlap volume at node coordinates.",
                 input_params=[],
                 output_params=[],
@@ -285,7 +285,7 @@ class AppendixEBraneMap(SimulationBase):
                 label="(E.3)",
                 latex=r"\text{Unique}(\{x_n\}) \iff \sum_n \omega_n R_n^2 = \Phi_{G_2}",
                 plain_text="Unique({x_n}) iff Sum(omega_n * R_n^2) = Phi_G2",
-                category="VALIDATION",
+                category="DERIVED",
                 description="Coordinate uniqueness constraint from the Global Sum Rule.",
                 input_params=["validation.phi_g2"],
                 output_params=[],

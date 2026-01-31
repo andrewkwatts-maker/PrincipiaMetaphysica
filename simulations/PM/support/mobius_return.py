@@ -375,7 +375,7 @@ class MobiusReturnV21(SimulationBase):
                 label="(5.17)",
                 latex=r"\psi \xrightarrow{L} e^{i\pi}\psi = -\psi \xrightarrow{L} e^{i2\pi}\psi = \psi",
                 plain_text="psi -> -psi (one loop) -> psi (two loops)",
-                category="THEORY",
+                category="DERIVED",
                 description="Spinor double-cover: flip at one period, identity at two",
                 inputParams=["cyclic.L"],
                 outputParams=["cyclic.spinor_phase"],

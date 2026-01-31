@@ -83,7 +83,8 @@ class MethodologyV16_2(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return []
+        """Registry parameters referenced by the methodology narrative."""
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -411,7 +412,7 @@ class MethodologyV16_2(SimulationBase):
                 label="(2.1)",
                 latex=r"\Delta_{V_7} \Psi = \lambda_n \Psi",
                 plain_text="Delta_V7 Psi = lambda_n Psi",
-                category="THEORY",
+                category="DERIVED",
                 description="Laplacian eigenvalue equation on the G2 manifold.",
                 input_params=["topology.elder_kads", "topology.euler_chi"],
                 output_params=["registry.node_count"],
@@ -435,7 +436,7 @@ class MethodologyV16_2(SimulationBase):
                 label="(2.2)",
                 latex=r"\sum_{n=1}^{\text{ק}_{\text{כה}}} f(\lambda_n) \approx \text{Vol}(V_7)",
                 plain_text="Sum f(lambda_n) ≈ Vol(V7)",
-                category="THEORY",
+                category="DERIVED",
                 description="Selberg-type trace formula for system closure.",
                 input_params=["topology.vol_v7"],
                 output_params=["validation.trace_convergence"],
@@ -460,7 +461,7 @@ class MethodologyV16_2(SimulationBase):
                 label="(2.2b)",
                 latex=r"\text{Tr}(e^{-t\Delta_{V_7}}) = \sum_{n=1}^{\text{ק}_{\text{כה}}} e^{-t\lambda_n} = \frac{\text{Vol}(V_7)}{(4\pi t)^{7/2}} + O(t^{-5/2})",
                 plain_text="Tr(exp(-t*Delta_V7)) = Sum exp(-t*lambda_n) = Vol(V7)/(4*pi*t)^(7/2) + O(t^(-5/2))",
-                category="STERILE_PROOF",
+                category="DERIVED",
                 description="Spectral Trace: Heat kernel expansion proving 125 residues encode V7 volume.",
                 input_params=["topology.vol_v7", "topology.elder_kads", "topology.euler_chi"],
                 output_params=["validation.trace_convergence", "registry.node_count"],
@@ -486,7 +487,7 @@ class MethodologyV16_2(SimulationBase):
                 label="(2.3)",
                 latex=r"\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \cdot \mathcal{R}_n^2 = \Phi_{G_2}",
                 plain_text="Σ_{n=1}^{ק_כה} ω_n · R_n² = Φ_{G₂}",
-                category="VALIDATION",
+                category="DERIVED",
                 description="Global holonomy checksum for visible-sector residue verification.",
                 input_params=["topology.elder_kads", "topology.euler_chi", "topology.sophian_modulus"],
                 output_params=["validation.phi_g2"],

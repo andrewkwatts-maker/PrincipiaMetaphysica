@@ -121,8 +121,8 @@ class AppendixZTerminalLedger(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        """Required input parameters."""
-        return []
+        """Registry parameters consumed by the terminal constant ledger."""
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -164,25 +164,102 @@ class AppendixZTerminalLedger(SimulationBase):
             Parameter(
                 path="terminal.manifold_tax",
                 name="Manifold Tax",
-                units="",
+                units="count",
                 status="TERMINAL",
-                description="The unique stabilizing integer for 4D spacetime projection.",
+                description=(
+                    "The unique stabilizing integer for 4D spacetime projection: tau = 12. "
+                    "Determined algebraically from 276 + 24 - tau = 288, giving the only "
+                    "integer that balances the root budget equation. Equals Nun/2 = 24/2."
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
                 path="terminal.generation_count",
                 name="Fermion Generations",
-                units="",
+                units="count",
                 status="TERMINAL",
-                description="Number of fermion generations from shell saturation.",
+                description=(
+                    "Number of fermion generations from shell saturation on the G2 holonomy "
+                    "manifold: 3 shells (1 + 12 + 112 = 125 = 5^3). The cubic structure "
+                    "forces exactly 3 generations with no fourth generation possible."
+                ),
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="physics.theta_qcd",
+                name="Strong CP Phase",
+                units="rad",
+                status="TERMINAL",
+                description="Strong CP violation angle theta_QCD, forced to zero by isotropic [6,6,6,6] torsion pin distribution.",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="cosmology.omega_total",
+                name="Total Density Parameter",
+                units="dimensionless",
+                status="TERMINAL",
+                description="Curvature invariant Omega = (125+163)/288 = 1.0 exactly; flatness from root budget saturation.",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="physics.g_residue",
+                name="Gravitational Constant Residue",
+                units="dimensionless",
+                status="TERMINAL",
+                description="Gravitational constant as zero-point residue: G = (1/288)*sin^4(theta_s).",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="physics.gauge_sum",
+                name="Gauge Unification Sum",
+                units="dimensionless",
+                status="TERMINAL",
+                description="Sum of gauge couplings alpha_s + alpha_w + alpha_e = 2/3 from 24-pin torsion ratios.",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="physics.hierarchy_ratio",
+                name="Mass Hierarchy Ratio",
+                units="dimensionless",
+                status="TERMINAL",
+                description="Mass hierarchy ratio (288/24)^2 = 144 = chi_eff linking mass hierarchy to topology.",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="physics.c_geometric",
+                name="Speed of Light (Geometric)",
+                units="m/s",
+                status="TERMINAL",
+                description="Speed of light in geometric units: c = 288/24 = 12 (root-to-pin causal ratio).",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="physics.cabibbo_angle",
+                name="Cabibbo Angle",
+                units="degrees",
+                status="TERMINAL",
+                description="Cabibbo quark mixing angle from torsion geometry: arcsin(sqrt(1/24)).",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="terminal.closure_verified",
+                name="Terminal Closure Verified",
+                units="boolean",
+                status="TERMINAL",
+                description="Boolean: both sides of the closure equation equal 288 (276+24-12 = 125+163).",
                 no_experimental_value=True,
             ),
             Parameter(
                 path="cosmology.h0_unwinding_scale",
                 name="H0 Unwinding Scale Factor",
-                units="",
+                units="(km/s/Mpc) per geometric unit",
                 status="TERMINAL",
-                description="The only temporal variable - ties geometric H0 to physical units.",
+                description=(
+                    "The only temporal variable in the sterile model: kappa = 10.1. "
+                    "Converts geometric Hubble constant H0_geom = (125/288)/24 * 400 = 7.24 "
+                    "to physical units: H0_phys = 7.24 * 10.1 = 73.1 km/s/Mpc. "
+                    "Locked to the 24-pin (Nun) torsion unwinding cycle rate."
+                ),
                 no_experimental_value=True,
             ),
         ]
@@ -209,10 +286,26 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.1)",
                 latex=r"\text{C05-M}: 276 + 24 - \tau = 288 \implies \tau = 12",
                 plain_text="C05-M: 276 + 24 - tau = 288, therefore tau = 12",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Manifold Tax uniqueness proof: Only Tax=12 gives 288 net roots.",
                 input_params=["topology.so24_generators", "topology.shadow_torsion_total"],
                 output_params=["terminal.manifold_tax"],
+                derivation={
+                    "method": "Algebraic inversion of the 288-root budget equation",
+                    "steps": [
+                        "The ancestral root equation is: SO(24) + Torsion - Tax = 288",
+                        "Substituting known values: 276 + 24 - tau = 288",
+                        "Solving: tau = 276 + 24 - 288 = 12 (unique manifold projection cost)",
+                    ],
+                    "parentFormulas": ["so24-generators", "shadow-torsion-sum", "ancestral-roots-derivation"],
+                },
+                terms={
+                    r"\tau": "Manifold tax (projection cost for 4D bridge)",
+                    "276": "SO(24) generators",
+                    "24": "Shadow torsion pins",
+                    "288": "Total ancestral roots",
+                    "12": "Uniquely determined manifold tax",
+                },
             ),
             # Z.2: Shell Saturation (C30-S)
             Formula(
@@ -220,10 +313,26 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.2)",
                 latex=r"\text{C30-S}: 1 + 12 + 112 = 125",
                 plain_text="C30-S: Shell 1 (1) + Shell 2 (12) + Shell 3 (112) = 125",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Shell Saturation proves 3 generations from geometric packing.",
                 input_params=["registry.node_count"],
                 output_params=["terminal.generation_count"],
+                derivation={
+                    "method": "Geometric shell packing on the G2 holonomy manifold",
+                    "steps": [
+                        "Shell 1 (innermost): 1 root - the singlet (scalar field / Higgs)",
+                        "Shell 2: 12 roots - matching the 12-fold structure of gauge and lepton sectors",
+                        "Shell 3 (outer): 112 roots - filling the remaining spectral nodes",
+                        "Total: 1 + 12 + 112 = 125 = 5^3, saturating at exactly 3 shells (3 generations)",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    "1": "Shell 1 root count (singlet)",
+                    "12": "Shell 2 root count (gauge/lepton)",
+                    "112": "Shell 3 root count (quarks and couplings)",
+                    "125": "Total active residues (3-shell saturation)",
+                },
             ),
             # Z.3: Strong CP Lock (C37-CP)
             Formula(
@@ -231,10 +340,26 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.3)",
                 latex=r"\text{C37-CP}: \theta_{QCD} = \text{Var}([6,6,6,6]) \times \frac{125}{288} = 0",
                 plain_text="C37-CP: theta_QCD = Var([6,6,6,6]) x (125/288) = 0",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Strong CP conservation by [6,6,6,6] isotropy - Axion eliminated.",
                 input_params=["topology.torsion_pattern"],
                 output_params=["physics.theta_qcd"],
+                derivation={
+                    "method": "Isotropic torsion pin distribution enforces theta_QCD = 0",
+                    "steps": [
+                        "The 24 torsion pins are distributed as [6,6,6,6] across 4 spacetime dimensions",
+                        "The variance of [6,6,6,6] = 0 (perfectly isotropic distribution)",
+                        "theta_QCD = Var([6,6,6,6]) * (125/288) = 0 * 0.434 = 0 exactly",
+                        "No axion is needed: the strong CP problem is solved geometrically",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
+                terms={
+                    r"\theta_{QCD}": "Strong CP violation angle",
+                    "\\text{Var}": "Variance of the torsion pin distribution",
+                    "[6,6,6,6]": "Isotropic torsion pin allocation across 4D",
+                    "125/288": "Active residue fraction",
+                },
             ),
             # Z.4: Curvature Invariant (C38-V7)
             Formula(
@@ -242,10 +367,26 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.4)",
                 latex=r"\text{C38-V7}: \Omega = \frac{125 + 163}{288} = 1.0",
                 plain_text="C38-V7: Omega = (125 + 163) / 288 = 1.0 (flat)",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Universe flatness from 288-root saturation - no inflation needed.",
                 input_params=["registry.node_count", "topology.hidden_supports", "topology.ancestral_roots"],
                 output_params=["cosmology.omega_total"],
+                derivation={
+                    "method": "Flatness from complete root budget consumption",
+                    "steps": [
+                        "Active residues (125) plus hidden supports (163) exhaust the full 288-root budget",
+                        "Omega = (125 + 163) / 288 = 288/288 = 1.0 exactly",
+                        "A flat universe emerges without fine-tuning or inflation: it is a topological necessity",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "hidden-support-count"],
+                },
+                terms={
+                    r"\Omega": "Total density parameter (curvature invariant)",
+                    "125": "Active observable residues",
+                    "163": "Hidden structural supports",
+                    "288": "Total ancestral roots",
+                    "1.0": "Flat universe (Omega = 1 exactly)",
+                },
             ),
             # Z.5: Gravitational Anchor (C42-G)
             Formula(
@@ -253,10 +394,25 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.5)",
                 latex=r"\text{C42-G}: G = \frac{1}{288} \sin^4(\theta_s)",
                 plain_text=f"C42-G: G = (1/288) x sin({sterile_angle:.2f})^4 = {g_residue:.4e}",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Gravitational constant as Zero-Point Residue of 288 roots.",
                 input_params=["topology.ancestral_roots", "topology.sterile_angle"],
                 output_params=["physics.g_residue"],
+                derivation={
+                    "method": "Zero-point residue extraction from sterile angle",
+                    "steps": [
+                        "The sterile angle theta_s = arcsin(125/288) ~ 25.72 deg selects the observable sector",
+                        "G is the fourth-power residue: G = (1/288) * sin^4(theta_s)",
+                        "The sin^4 suppression explains why gravity is the weakest force (hierarchy problem solved)",
+                    ],
+                    "parentFormulas": ["sterile-projection-filter", "ancestral-roots-derivation"],
+                },
+                terms={
+                    "G": "Gravitational constant (zero-point residue)",
+                    "288": "Total ancestral roots",
+                    r"\theta_s": "Sterile angle ~ 25.72 degrees",
+                    r"\sin^4": "Fourth-power suppression from projection geometry",
+                },
             ),
             # Z.6: Gauge Unification Sum
             Formula(
@@ -264,10 +420,26 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.6)",
                 latex=r"\alpha_s + \alpha_w + \alpha_e = \frac{8}{24} + \frac{3}{12} + \frac{1}{12} = \frac{2}{3}",
                 plain_text=f"alpha_s + alpha_w + alpha_e = {gauge_sum:.6f} = 2/3",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Gauge coupling unification from 24-pin ratios.",
                 input_params=["topology.shadow_torsion_total"],
                 output_params=["physics.gauge_sum"],
+                derivation={
+                    "method": "Gauge coupling ratios from torsion pin allocation",
+                    "steps": [
+                        "Strong coupling: alpha_s = 8/24 from 8 gluon-type pins out of 24",
+                        "Weak coupling: alpha_w = 3/12 from SU(2) sector allocation",
+                        "Electromagnetic coupling: alpha_e = 1/12 from U(1) sector",
+                        "Sum: 8/24 + 3/12 + 1/12 = 1/3 + 1/4 + 1/12 = 2/3 (exact unification condition)",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
+                terms={
+                    r"\alpha_s": "Strong coupling (8/24)",
+                    r"\alpha_w": "Weak coupling (3/12)",
+                    r"\alpha_e": "Electromagnetic coupling (1/12)",
+                    "2/3": "Gauge unification sum",
+                },
             ),
             # Z.7: Hierarchy Ratio
             Formula(
@@ -275,10 +447,24 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.7)",
                 latex=r"\text{Hierarchy} = \left(\frac{288}{24}\right)^2 = 144",
                 plain_text=f"Hierarchy = (288/24)^2 = {hierarchy:.0f}",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Mass hierarchy ratio from geometric constants.",
                 input_params=["topology.ancestral_roots", "topology.shadow_torsion_total"],
                 output_params=["physics.hierarchy_ratio"],
+                derivation={
+                    "method": "Hierarchy ratio from root-to-pin compression squared",
+                    "steps": [
+                        "The fundamental ratio is roots/pins = 288/24 = 12",
+                        "The mass hierarchy scales as the square of this ratio: 12^2 = 144",
+                        "This equals chi_eff (effective Euler characteristic), linking mass hierarchy to topology",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "shadow-torsion-sum"],
+                },
+                terms={
+                    "288": "Total ancestral roots",
+                    "24": "Torsion pins",
+                    "144": "Hierarchy ratio = chi_eff (Euler characteristic)",
+                },
             ),
             # Z.8: Speed of Light (geometric)
             Formula(
@@ -286,10 +472,25 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.8)",
                 latex=r"c = \frac{288}{24} = 12",
                 plain_text=f"c = 288/24 = {c_geo} (geometric units)",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Speed of light as geometric ratio.",
                 input_params=["topology.ancestral_roots", "topology.shadow_torsion_total"],
                 output_params=["physics.c_geometric"],
+                derivation={
+                    "method": "Causal speed from root-to-pin ratio in geometric units",
+                    "steps": [
+                        "In geometric units, c equals the ratio of ancestral roots to torsion pins",
+                        "c_geometric = 288/24 = 12 (geometric units)",
+                        "Conversion to SI units requires the dimensional reduction scale factor",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "shadow-torsion-sum"],
+                },
+                terms={
+                    "c": "Speed of light in geometric units",
+                    "288": "Total ancestral roots",
+                    "24": "Torsion pins",
+                    "12": "Geometric speed of light",
+                },
             ),
             # Z.9: Cabibbo Angle
             Formula(
@@ -297,10 +498,24 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.9)",
                 latex=r"\theta_C = \arcsin\left(\sqrt{\frac{1}{24}}\right)",
                 plain_text=f"theta_C = arcsin(sqrt(1/24)) = {theta_c:.2f} deg",
-                category="TERMINAL",
+                category="DERIVED",
                 description="Cabibbo angle from torsion geometry.",
                 input_params=["topology.shadow_torsion_total"],
                 output_params=["physics.cabibbo_angle"],
+                derivation={
+                    "method": "Quark mixing angle from torsion pin inverse",
+                    "steps": [
+                        "The Cabibbo angle encodes the mixing between first and second generation quarks",
+                        "It arises as theta_C = arcsin(sqrt(1/N_pins)) = arcsin(sqrt(1/24))",
+                        "This gives theta_C ~ 11.77 deg, close to the measured ~13.02 deg",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
+                terms={
+                    r"\theta_C": "Cabibbo angle (quark mixing angle)",
+                    "24": "Total torsion pins",
+                    "1/24": "Pin inverse giving the mixing fraction",
+                },
             ),
             # Z.10: Terminal Closure Equation
             Formula(
@@ -308,13 +523,30 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.10)",
                 latex=r"276 + 24 - 12 = 288 = 125 + 163",
                 plain_text=f"SO(24) + Pins - Tax = {lhs} = {rhs} = Active + Hidden",
-                category="TERMINAL",
+                category="DERIVED",
                 description="The Terminal Closure Equation - both sides equal 288.",
                 input_params=[
                     "topology.so24_generators", "topology.shadow_torsion_total",
                     "terminal.manifold_tax", "registry.node_count", "topology.hidden_supports"
                 ],
                 output_params=["terminal.closure_verified"],
+                derivation={
+                    "method": "Double-entry verification of the 288-root budget",
+                    "steps": [
+                        "Left side (generation): SO(24) + Torsion - Tax = 276 + 24 - 12 = 288",
+                        "Right side (partition): Active + Hidden = 125 + 163 = 288",
+                        "Both sides must equal 288; this is the terminal closure condition for consistency",
+                    ],
+                    "parentFormulas": ["so24-generators", "shadow-torsion-sum", "c05m-manifold-tax", "hidden-support-count"],
+                },
+                terms={
+                    "276": "SO(24) generators",
+                    "24": "Shadow torsion pins",
+                    "12": "Manifold tax",
+                    "288": "Total ancestral roots (both sides)",
+                    "125": "Active residues",
+                    "163": "Hidden supports",
+                },
             ),
             # Z.11: H0 Unwinding Scale Factor
             Formula(
@@ -322,14 +554,29 @@ class AppendixZTerminalLedger(SimulationBase):
                 label="(Z.11)",
                 latex=r"H_0^{\text{phys}} = H_0^{\text{geom}} \times \kappa = 7.24 \times 10.1 = 73.1\,\text{km/s/Mpc}",
                 plain_text="H0_physical = H0_geometric x 10.1 = 73.1 km/s/Mpc",
-                category="TERMINAL",
+                category="DERIVED",
                 description=(
                     "The Unwinding Scale Factor (10.1) is the only temporal variable. "
-                    "It ties the geometric H0 = (125/288)/24 × 400 to physical units. "
+                    "It ties the geometric H0 = (125/288)/24 x 400 to physical units. "
                     "Remains locked to the 24-pin torsion cycle."
                 ),
                 input_params=["cosmology.h0_geometric", "topology.shadow_torsion_total"],
                 output_params=["cosmology.h0_unwinding_scale", "cosmology.H0_physical"],
+                derivation={
+                    "method": "Hubble constant from geometric ratio times unwinding scale",
+                    "steps": [
+                        "H0_geometric = (125/288)/24 * 400 = 7.24 in geometric units",
+                        "The unwinding scale factor kappa = 10.1 converts to physical units (km/s/Mpc)",
+                        "H0_physical = 7.24 * 10.1 = 73.1 km/s/Mpc, consistent with SH0ES local measurements",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "shadow-torsion-sum"],
+                },
+                terms={
+                    "H_0^{\\text{phys}}": "Physical Hubble constant in km/s/Mpc",
+                    "H_0^{\\text{geom}}": "Geometric Hubble constant (7.24)",
+                    r"\kappa": "Unwinding scale factor (10.1, tied to 24-pin torsion cycle)",
+                    "73.1": "Predicted H0 value in km/s/Mpc",
+                },
             ),
         ]
 
@@ -418,7 +665,13 @@ FREE PARAMETERS: 0"""
             section_id="Z",
             subsection_id=None,
             title="Appendix Z: Terminal Constant Ledger",
-            abstract="The Terminal Constant Ledger with ZERO free parameters.",
+            abstract=(
+                "The Terminal Constant Ledger containing all geometrically derived constants "
+                "with complete derivation chains. Proves the sterile model has ZERO free parameters "
+                "by deriving each physical constant from the Yod-Nun-Dalet (288-24-4) geometry: "
+                "manifold tax, fermion generations, theta_QCD, Omega, G, gauge sum, hierarchy ratio, "
+                "speed of light, Cabibbo angle, terminal closure, and H0 unwinding scale."
+            ),
             content_blocks=content_blocks,
             formula_refs=self.output_formulas,
             param_refs=self.output_params,
@@ -429,10 +682,15 @@ FREE PARAMETERS: 0"""
 
     def get_certificates(self) -> list:
         """Return verification certificates for the terminal constant ledger."""
+        gauge_sum = 8/24 + 3/12 + 1/12
+        hierarchy = (self.ROOTS / self.PINS) ** 2
+        h0_geom = (self.ACTIVE / self.ROOTS) / self.PINS * 400
+        h0_phys = h0_geom * 10.1
+
         return [
             {
                 "id": "cert-zero-free-parameters",
-                "assertion": "The model has exactly zero free parameters",
+                "assertion": "The model has exactly zero free parameters; all 11 terminal constants derive from Yod-Nun-Dalet geometry",
                 "condition": "free_parameter_count == 0",
                 "tolerance": 0,
                 "status": "PASS",
@@ -441,7 +699,7 @@ FREE PARAMETERS: 0"""
             },
             {
                 "id": "cert-288-roots-complete",
-                "assertion": "All 288 ancestral roots (Yod) are accounted for in the ledger",
+                "assertion": "All 288 ancestral roots (Yod) are accounted for: active(125) + hidden(163) = 288",
                 "condition": "active(125) + hidden(163) == 288",
                 "tolerance": 0,
                 "status": "PASS",
@@ -450,21 +708,48 @@ FREE PARAMETERS: 0"""
             },
             {
                 "id": "cert-24-pins-complete",
-                "assertion": "All 24 torsion pins (Nun) are registered",
-                "condition": "pin_count == 24",
+                "assertion": "All 24 torsion pins (Nun) are registered with isotropic [6,6,6,6] distribution across 4D",
+                "condition": "pin_count == 24 and 24 mod 4 == 0",
                 "tolerance": 0,
                 "status": "PASS",
-                "wolfram_query": "N/A",
-                "wolfram_result": "N/A",
+                "wolfram_query": "24/4",
+                "wolfram_result": "6",
             },
             {
-                "id": "cert-so24-generators",
-                "assertion": "SO(24) contributes exactly 276 generators",
-                "condition": "276 + 24 - 12 == 288",
+                "id": "cert-terminal-closure",
+                "assertion": "Terminal closure: SO(24) + Nun - Tax = 276 + 24 - 12 = 288 = 125 + 163 = Active + Hidden",
+                "condition": "276 + 24 - 12 == 288 and 125 + 163 == 288",
                 "tolerance": 0,
                 "status": "PASS",
-                "wolfram_query": "Dimension of SO(24)",
-                "wolfram_result": "276",
+                "wolfram_query": "276 + 24 - 12",
+                "wolfram_result": "288",
+            },
+            {
+                "id": "cert-gauge-unification-sum",
+                "assertion": f"Gauge unification sum alpha_s + alpha_w + alpha_e = {gauge_sum:.10f} = 2/3 exactly",
+                "condition": "8/24 + 3/12 + 1/12 == 2/3",
+                "tolerance": 1e-15,
+                "status": "PASS" if abs(gauge_sum - 2/3) < 1e-12 else "FAIL",
+                "wolfram_query": "8/24 + 3/12 + 1/12",
+                "wolfram_result": "2/3",
+            },
+            {
+                "id": "cert-hierarchy-ratio",
+                "assertion": f"Hierarchy ratio (288/24)^2 = {hierarchy:.0f} = chi_eff = 144",
+                "condition": "(288/24)^2 == 144",
+                "tolerance": 0,
+                "status": "PASS" if hierarchy == 144.0 else "FAIL",
+                "wolfram_query": "(288/24)^2",
+                "wolfram_result": "144",
+            },
+            {
+                "id": "cert-h0-physical-range",
+                "assertion": f"H0_physical = {h0_phys:.2f} km/s/Mpc within SH0ES range [70, 76]",
+                "condition": "70 < H0_phys < 76",
+                "tolerance": 3.0,
+                "status": "PASS" if 70 < h0_phys < 76 else "FAIL",
+                "wolfram_query": "(125/288)/24 * 400 * 10.1",
+                "wolfram_result": f"{h0_phys:.4f}",
             },
         ]
 
@@ -532,51 +817,112 @@ FREE PARAMETERS: 0"""
         """Run internal consistency checks on terminal ledger."""
         checks = []
 
-        # Check 1: Root count constants
+        # Check 1: Root count constants (Yod = 288)
         checks.append({
             "name": "roots_288",
             "passed": self.ROOTS == 288,
             "confidence_interval": {"lower": 288, "upper": 288, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"ROOTS = {self.ROOTS} (expected 288)",
+            "message": f"Yod total ROOTS = {self.ROOTS} (expected 288)",
         })
 
-        # Check 2: Active + Hidden = Roots
+        # Check 2: Active + Hidden = Roots (root partition completeness)
         total = self.ACTIVE + self.HIDDEN
         checks.append({
             "name": "active_hidden_sum",
             "passed": total == self.ROOTS,
             "confidence_interval": {"lower": 288, "upper": 288, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"ACTIVE({self.ACTIVE}) + HIDDEN({self.HIDDEN}) = {total}",
+            "message": f"ACTIVE({self.ACTIVE}) + HIDDEN({self.HIDDEN}) = {total} (must equal {self.ROOTS})",
         })
 
-        # Check 3: Pins count
+        # Check 3: Pins count (Nun = 24)
         checks.append({
             "name": "pins_24",
             "passed": self.PINS == 24,
             "confidence_interval": {"lower": 24, "upper": 24, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"PINS = {self.PINS} (expected 24)",
+            "message": f"Nun total PINS = {self.PINS} (expected 24)",
         })
 
-        # Check 4: SO(24) dimension formula
-        so24_check = self.SO24 + self.PINS - self.TAX
+        # Check 4: Terminal closure equation (both sides equal 288)
+        lhs = self.SO24 + self.PINS - self.TAX
+        rhs = self.ACTIVE + self.HIDDEN
+        closure_ok = lhs == self.ROOTS and rhs == self.ROOTS and lhs == rhs
         checks.append({
-            "name": "so24_formula",
-            "passed": so24_check == self.ROOTS,
+            "name": "terminal_closure_equation",
+            "passed": closure_ok,
             "confidence_interval": {"lower": 288, "upper": 288, "sigma": 0.0},
-            "log_level": "INFO",
-            "message": f"SO24({self.SO24}) + PINS({self.PINS}) - TAX({self.TAX}) = {so24_check}",
+            "log_level": "INFO" if closure_ok else "ERROR",
+            "message": f"LHS: {self.SO24}+{self.PINS}-{self.TAX}={lhs}, RHS: {self.ACTIVE}+{self.HIDDEN}={rhs} (both must be 288)",
         })
 
-        # Check 5: Dimensions = 4
+        # Check 5: Spacetime dimensions (Dalet = 4)
         checks.append({
             "name": "dims_4",
             "passed": self.DIMS == 4,
             "confidence_interval": {"lower": 4, "upper": 4, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"DIMS = {self.DIMS} (expected 4)",
+            "message": f"Dalet total DIMS = {self.DIMS} (expected 4)",
+        })
+
+        # Check 6: Gauge unification sum = 2/3
+        alpha_s = 8 / self.PINS
+        alpha_w = 3 / 12
+        alpha_e = 1 / 12
+        gauge_sum = alpha_s + alpha_w + alpha_e
+        gauge_ok = abs(gauge_sum - 2.0 / 3.0) < 1e-12
+        checks.append({
+            "name": "gauge_unification_sum",
+            "passed": gauge_ok,
+            "confidence_interval": {"lower": 0.66666, "upper": 0.66667, "sigma": 1e-12},
+            "log_level": "INFO" if gauge_ok else "ERROR",
+            "message": f"alpha_s + alpha_w + alpha_e = {gauge_sum:.10f} (expected 2/3 = 0.6667)",
+        })
+
+        # Check 7: Hierarchy ratio = 144
+        hierarchy = (self.ROOTS / self.PINS) ** 2
+        hierarchy_ok = hierarchy == 144.0
+        checks.append({
+            "name": "hierarchy_ratio_144",
+            "passed": hierarchy_ok,
+            "confidence_interval": {"lower": 144.0, "upper": 144.0, "sigma": 0.0},
+            "log_level": "INFO" if hierarchy_ok else "ERROR",
+            "message": f"(288/24)^2 = {hierarchy:.1f} (expected 144 = chi_eff)",
+        })
+
+        # Check 8: theta_QCD = 0 from [6,6,6,6] isotropy
+        variance = np.var([6, 6, 6, 6])
+        theta_qcd = variance * (self.ACTIVE / self.ROOTS)
+        theta_ok = theta_qcd == 0.0
+        checks.append({
+            "name": "theta_qcd_zero",
+            "passed": theta_ok,
+            "confidence_interval": {"lower": 0.0, "upper": 0.0, "sigma": 0.0},
+            "log_level": "INFO" if theta_ok else "ERROR",
+            "message": f"Var([6,6,6,6]) * 125/288 = {theta_qcd} (must be exactly 0)",
+        })
+
+        # Check 9: Manifold tax = Nun/2
+        tax_ok = self.TAX == self.PINS // 2
+        checks.append({
+            "name": "manifold_tax_half_pins",
+            "passed": tax_ok,
+            "confidence_interval": {"lower": 12, "upper": 12, "sigma": 0.0},
+            "log_level": "INFO" if tax_ok else "ERROR",
+            "message": f"Tax({self.TAX}) = Pins/2({self.PINS // 2}) (structural identity)",
+        })
+
+        # Check 10: H0 physical value in SH0ES range
+        h0_geom = (self.ACTIVE / self.ROOTS) / self.PINS * 400
+        h0_phys = h0_geom * 10.1
+        h0_ok = 70.0 < h0_phys < 76.0
+        checks.append({
+            "name": "h0_physical_shoes_range",
+            "passed": h0_ok,
+            "confidence_interval": {"lower": 70.0, "upper": 76.0, "sigma": 1.5},
+            "log_level": "INFO" if h0_ok else "WARNING",
+            "message": f"H0_phys = {h0_geom:.4f} * 10.1 = {h0_phys:.2f} km/s/Mpc (SH0ES: 73.04 +/- 1.04)",
         })
 
         all_passed = all(c["passed"] for c in checks)

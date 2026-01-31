@@ -74,10 +74,7 @@ class AppendixGEffectiveTorsion(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.elder_kads",
-            "topology.mephorash_chi",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:

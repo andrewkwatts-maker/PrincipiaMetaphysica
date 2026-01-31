@@ -840,7 +840,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.1)",
             latex=r"g_{\mu\nu} = \eta_{AB} e^A_\mu e^B_\nu",
             plain_text="g_munu = eta_AB e^A_mu e^B_nu",
-            category="FOUNDATIONAL",
+            category="ESTABLISHED",
             description=(
                 "Metric tensor from vielbein (tetrad) field. The vielbein e^A_mu maps "
                 "between curved spacetime (Greek indices) and flat tangent space (Latin). "
@@ -849,6 +849,18 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Vielbein decomposition of the metric tensor",
+                "steps": [
+                    "At each point, introduce a local orthonormal frame (vielbein) e^A_mu",
+                    "The metric in the coordinate basis is reconstructed from the flat tangent metric eta_AB",
+                    "Contract: g_munu = eta_AB e^A_mu e^B_nu, making the vielbein the 'square root' of the metric",
+                ],
+                "parentFormulas": [],
+                "references": [
+                    "Carroll, Spacetime and Geometry, Ch. 3: Curvature",
+                ],
+            },
             terms={
                 "g_munu": "Metric tensor in coordinate basis (curved)",
                 "eta_AB": "Flat Minkowski metric in tangent space (frame basis)",
@@ -861,7 +873,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.2)",
             latex=r"\sqrt{-g} = \det(e^A_\mu) = e",
             plain_text="sqrt(-g) = det(e^A_mu) = e",
-            category="FOUNDATIONAL",
+            category="ESTABLISHED",
             description=(
                 "Volume element from vielbein determinant. The vielbein determinant e "
                 "equals sqrt(-g), appearing in all spacetime integrals. This ensures "
@@ -869,6 +881,15 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Determinant identity from vielbein-metric relation",
+                "steps": [
+                    "Take the determinant of g_munu = eta_AB e^A_mu e^B_nu",
+                    "det(g) = det(eta) * det(e)^2 = -1 * e^2, so -g = e^2",
+                    "Therefore sqrt(-g) = |det(e^A_mu)| = e, the vielbein determinant",
+                ],
+                "parentFormulas": ["gr-metric-from-vielbein-v19"],
+            },
             terms={
                 "sqrt(-g)": "Metric determinant (volume element factor)",
                 "e": "Vielbein determinant"
@@ -880,7 +901,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.3)",
             latex=r"D_\mu e^A_\nu = \partial_\mu e^A_\nu + \omega^A{}_{B\mu} e^B_\nu - \Gamma^\rho_{\mu\nu} e^A_\rho = 0",
             plain_text="D_mu e^A_nu = d_mu e^A_nu + omega^A_Bmu e^B_nu - Gamma^rho_munu e^A_rho = 0",
-            category="FOUNDATIONAL",
+            category="ESTABLISHED",
             description=(
                 "Tetrad postulate relating spin connection omega and Christoffel symbols Gamma. "
                 "This compatibility condition ensures covariant derivatives commute between "
@@ -888,6 +909,15 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Compatibility of covariant derivative with vielbein basis",
+                "steps": [
+                    "Require that the total covariant derivative of the vielbein vanishes: D_mu e^A_nu = 0",
+                    "Expand D_mu using both the spin connection (frame index) and Christoffel symbols (coordinate index)",
+                    "This postulate uniquely links omega^A_Bmu and Gamma^rho_munu, ensuring basis consistency",
+                ],
+                "parentFormulas": ["gr-metric-from-vielbein-v19"],
+            },
             terms={
                 "D_mu": "Covariant derivative (full)",
                 "omega^A_Bmu": "Spin connection (frame indices)",
@@ -912,6 +942,16 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=["gravity.spin_connection_components"],
+            derivation={
+                "method": "Solve tetrad postulate for the spin connection",
+                "steps": [
+                    "Start from the tetrad postulate: D_mu e^A_nu = 0",
+                    "Rearrange to isolate omega^A_Bmu in terms of vielbein derivatives and Christoffel symbols",
+                    "Contract with inverse vielbein e^{A nu} to obtain the explicit expression",
+                    "Antisymmetry omega_muAB = -omega_muBA follows from metric compatibility D_mu eta_AB = 0",
+                ],
+                "parentFormulas": ["gr-tetrad-postulate-v19", "gr-christoffel-symbols-v19"],
+            },
             terms={
                 "omega^AB_mu": "Spin connection (antisymmetric in AB)",
                 "e^{A nu}": "Inverse vielbein",
@@ -924,7 +964,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.5)",
             latex=r"T^A_{\mu\nu} = D_{[\mu} e^A_{\nu]} = \partial_{[\mu} e^A_{\nu]} + \omega^A{}_{B[\mu} e^B_{\nu]} = 0",
             plain_text="T^A_munu = D_[mu e^A_nu] = d_[mu e^A_nu] + omega^A_B[mu e^B_nu] = 0",
-            category="FOUNDATIONAL",
+            category="ESTABLISHED",
             description=(
                 "Torsion-free condition in vielbein formalism. Setting torsion to zero, combined "
                 "with metric compatibility, uniquely determines the spin connection as the "
@@ -932,6 +972,18 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Torsion-free constraint from Riemannian geometry",
+                "steps": [
+                    "Define torsion as the antisymmetric part of the covariant derivative of the vielbein",
+                    "T^A_munu = D_[mu e^A_nu] = partial_[mu e^A_nu] + omega^A_B[mu e^B_nu]",
+                    "Setting T = 0 (torsion-free) plus metric compatibility uniquely fixes the Levi-Civita connection",
+                ],
+                "parentFormulas": ["gr-tetrad-postulate-v19"],
+                "references": [
+                    "Carroll, Spacetime and Geometry, Sec. 3.1: Covariant derivatives",
+                ],
+            },
             terms={
                 "T^A_munu": "Torsion tensor (vanishes for Levi-Civita)",
                 "D_[mu e^A_nu]": "Antisymmetrized covariant derivative of vielbein"
@@ -943,7 +995,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.6)",
             latex=r"\nabla_\mu g_{\nu\rho} = 0 \quad \Leftrightarrow \quad D_\mu \eta_{AB} = 0",
             plain_text="nabla_mu g_nu rho = 0  <=>  D_mu eta_AB = 0",
-            category="FOUNDATIONAL",
+            category="ESTABLISHED",
             description=(
                 "Metric compatibility condition. The covariant derivative of the metric vanishes, "
                 "meaning parallel transport preserves lengths and angles. In frame formalism, "
@@ -951,6 +1003,15 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Metric preservation under parallel transport",
+                "steps": [
+                    "Require that parallel transport preserves the inner product: nabla_mu g_nurho = 0",
+                    "In the frame basis, this becomes D_mu eta_AB = 0 (flat metric is covariantly constant)",
+                    "This constraint forces the spin connection to be antisymmetric: omega_muAB = -omega_muBA",
+                ],
+                "parentFormulas": ["gr-metric-from-vielbein-v19"],
+            },
             terms={
                 "nabla_mu g_nurho": "Covariant derivative of metric (coordinate)",
                 "D_mu eta_AB": "Covariant derivative of flat metric (frame)"
@@ -974,6 +1035,19 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Unique solution from torsion-free plus metric compatibility",
+                "steps": [
+                    "Impose torsion-free condition: Gamma^rho_munu = Gamma^rho_numu (symmetry in lower indices)",
+                    "Impose metric compatibility: nabla_mu g_nurho = 0",
+                    "Solve for Gamma by permuting indices and combining the three resulting equations",
+                    "Result: Gamma^rho_munu = (1/2) g^rho sigma (d_mu g_sigma nu + d_nu g_mu sigma - d_sigma g_munu)",
+                ],
+                "parentFormulas": ["gr-torsion-free-condition-v19", "gr-metricity-condition-v19"],
+                "references": [
+                    "Carroll, Spacetime and Geometry, Eq. (3.27)",
+                ],
+            },
             terms={
                 "Gamma^rho_munu": "Christoffel symbols (symmetric in mu,nu)",
                 "g^rho sigma": "Inverse metric",
@@ -994,6 +1068,19 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=["gravity.riemann_independent_4d"],
+            derivation={
+                "method": "Commutator of covariant derivatives acting on a vector",
+                "steps": [
+                    "Compute the commutator [D_mu, D_nu] V^rho for an arbitrary vector V^rho",
+                    "Expand each covariant derivative in terms of Christoffel symbols",
+                    "The non-canceling terms define R^rho_sigma mu nu V^sigma",
+                    "In 4D, the Riemann tensor has n^2(n^2-1)/12 = 20 independent components due to symmetries",
+                ],
+                "parentFormulas": ["gr-christoffel-symbols-v19"],
+                "references": [
+                    "Carroll, Spacetime and Geometry, Eq. (3.66)",
+                ],
+            },
             terms={
                 "R^rho_sigma mu nu": "Riemann curvature tensor",
                 "[D_mu, D_nu]": "Commutator of covariant derivatives"
@@ -1012,6 +1099,15 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=["gravity.ricci_components_4d"],
+            derivation={
+                "method": "Contraction of Riemann tensor on first and third indices",
+                "steps": [
+                    "Contract the Riemann tensor R^rho_sigma mu nu by setting sigma = rho and summing",
+                    "R_munu = R^rho_mu rho nu, which is symmetric: R_munu = R_numu",
+                    "In 4D this yields 10 independent components (symmetric 4x4 tensor)",
+                ],
+                "parentFormulas": ["gr-riemann-tensor-v19"],
+            },
             terms={
                 "R_munu": "Ricci curvature tensor",
                 "R^rho_mu rho nu": "Contraction on first and third indices"
@@ -1031,6 +1127,15 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Full contraction of Ricci tensor with inverse metric",
+                "steps": [
+                    "Contract the Ricci tensor with the inverse metric: R = g^munu R_munu",
+                    "This is the unique scalar invariant obtainable from single contraction of Riemann",
+                    "R serves as the gravitational Lagrangian density in the Einstein-Hilbert action",
+                ],
+                "parentFormulas": ["gr-ricci-tensor-v19"],
+            },
             terms={
                 "R": "Ricci scalar (curvature scalar)",
                 "g^munu R_munu": "Full contraction with inverse metric"
@@ -1054,6 +1159,20 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=["constants.M_PLANCK"],
             outputParams=[],
+            derivation={
+                "method": "Gravitational action from Ricci scalar integrated over spacetime",
+                "steps": [
+                    "The simplest diffeomorphism-invariant action built from curvature is the integral of R",
+                    "Include the volume element sqrt(-g) d^4x for coordinate invariance",
+                    "Normalize with 1/(16 pi G) to match Newtonian limit, or equivalently M_Pl^2/2",
+                    "In PM framework, this emerges from dimensional reduction of the 26D master action over G2",
+                ],
+                "parentFormulas": ["gr-ricci-scalar-v19", "gr-vielbein-determinant-v19"],
+                "references": [
+                    "Carroll, Spacetime and Geometry, Sec. 4.3: Einstein's Equations",
+                    "Hilbert (1915): Die Grundlagen der Physik",
+                ],
+            },
             terms={
                 "S_EH": "Einstein-Hilbert gravitational action",
                 "G": "Newton's gravitational constant",
@@ -1075,6 +1194,16 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            derivation={
+                "method": "Trace reversal of the Ricci tensor",
+                "steps": [
+                    "Define G_munu = R_munu - (1/2) g_munu R (subtract half the trace)",
+                    "The contracted Bianchi identity nabla^mu R_munu = (1/2) nabla_nu R",
+                    "guarantees nabla^mu G_munu = 0 (automatic divergence-free property)",
+                    "This makes G_munu the natural geometric quantity to equate with matter content",
+                ],
+                "parentFormulas": ["gr-ricci-tensor-v19", "gr-ricci-scalar-v19"],
+            },
             terms={
                 "G_munu": "Einstein tensor (symmetric, divergence-free)",
                 "R_munu": "Ricci tensor",
@@ -1095,6 +1224,20 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=["constants.G_NEWTON"],
             outputParams=[],
+            derivation={
+                "method": "Variational principle applied to Einstein-Hilbert plus matter action",
+                "steps": [
+                    "Vary the total action S = S_EH + S_matter with respect to the metric g^munu",
+                    "delta S_EH / delta g^munu yields the Einstein tensor G_munu",
+                    "delta S_matter / delta g^munu yields -(1/2) sqrt(-g) T_munu",
+                    "Setting delta S = 0 gives G_munu = (8 pi G / c^4) T_munu",
+                ],
+                "parentFormulas": ["gr-einstein-hilbert-4d-v19", "gr-einstein-tensor-v19"],
+                "references": [
+                    "Einstein (1915): Die Feldgleichungen der Gravitation",
+                    "Carroll, Spacetime and Geometry, Sec. 4.3",
+                ],
+            },
             terms={
                 "G_munu": "Einstein tensor (geometry)",
                 "T_munu": "Stress-energy tensor (matter)",
@@ -1119,6 +1262,16 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=["topology.mephorash_chi", "topology.elder_kads"],
             outputParams=["gravity.newton_constant_theory"],
+            derivation={
+                "method": "Dimensional reduction of 26D gravitational action over compact space",
+                "steps": [
+                    "Start from the 26D Einstein-Hilbert action with fundamental scale M_26D",
+                    "Integrate over the 22 internal compact dimensions with volume Vol(X_22)",
+                    "The resulting 4D Planck mass satisfies M_Pl^2 = M_26D^24 * Vol(X_22)",
+                    "Invert to get G_N = 1/M_Pl^2, expressing Newton's constant in terms of 26D geometry",
+                ],
+                "parentFormulas": ["gr-einstein-hilbert-4d-v19"],
+            },
             terms={
                 "G_N": "Newton's gravitational constant",
                 "M_Pl": "4D Planck mass (observed)",
@@ -1140,6 +1293,16 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             inputParams=["topology.mephorash_chi", "topology.elder_kads"],
             outputParams=["gravity.planck_mass_from_g2"],
+            derivation={
+                "method": "G2 compactification with topological correction factors",
+                "steps": [
+                    "The 4D Planck mass depends on the 26D scale M_26D and the G2 internal volume",
+                    "The volume factor enters as Vol(G2)^(-1/5) from the dimensional reduction power law",
+                    "Topological correction f(chi_eff, b3) encodes the G2 holonomy invariants: chi_eff=144, b3=24",
+                    "Together these fix M_Pl = 1.22e19 GeV from pure geometry without free parameters",
+                ],
+                "parentFormulas": ["gr-newton-from-g2-v19"],
+            },
             terms={
                 "M_Pl": "4D Planck mass = 1.22e19 GeV",
                 "M_26D": "26D fundamental scale",
@@ -1168,7 +1331,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             path="gravity.vielbein_rank",
             name="Vielbein Rank (4D)",
             units="dimensionless",
-            status="FOUNDATIONAL",
+            status="ESTABLISHED",
             description="Rank of vielbein matrix in 4D spacetime (equals dimension D=4)",
             no_experimental_value=True
         ))

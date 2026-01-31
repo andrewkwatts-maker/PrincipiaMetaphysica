@@ -398,8 +398,8 @@ class AppendixGOmegaSeal(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters consumed by the omega seal verification."""
+        return ["geometry.unity_seal"]
 
     @property
     def output_params(self) -> List[str]:
@@ -475,6 +475,19 @@ class AppendixGOmegaSeal(SimulationBase):
                     "Torsion pins, and validating the 12-PAIR-BRIDGE architecture (12 x (2,0) paired bridges), "
                     "we declare that no further parameters can be added or modified. "
                     "The model is now a rigid, closed loop."
+                )
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The 42-Certificate Validation Matrix comprises 42 independent integrity checks "
+                    "distributed across all sectors of the PM Framework. This appendix details the "
+                    "4 master gate certificates (cert-omega-hash-determinism, cert-bulk-insulation, "
+                    "cert-temporal-sync, cert-master-gate-7of7) that serve as the top-level seals "
+                    "within the broader 42-certificate matrix. The remaining 38 sector-specific "
+                    "certificates are defined in their respective simulation modules and validated "
+                    "during the full audit, contributing to the overall 196 certificates of the "
+                    "PM Framework."
                 )
             ),
 
@@ -690,14 +703,29 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.1)",
                 latex=r"\Omega_{\text{seal}} = \text{SHA-256}\left(R_{288} \| \tau_{24} \| P_{12} \| \text{registry}\right)",
                 plain_text="Omega_seal = SHA-256(R_288 || tau_24 || P_12 || registry)",
-                category="VALIDATION",
-                description="Geometric seal anchored to 288 ancestral roots, 24 torsion pins, and 12 bridge pairs.",
+                category="DERIVED",
+                description=(
+                    "Geometric seal anchored to 288 ancestral roots, 24 torsion pins, and 12 bridge pairs. "
+                    "Concatenates the root values (from SO(24) generators + shadow torsion - manifold cost), "
+                    "torsion pin states, and bridge pair configurations into a single byte stream, then "
+                    "computes SHA-256 to produce a deterministic, tamper-evident checksum."
+                ),
                 input_params=["topology.ancestral_roots", "topology.shadow_torsion_total", "seal.bridge_pairs", "registry.node_count"],
                 output_params=["seal.geometric_checksum"],
+                derivation={
+                    "method": "Cryptographic hash of complete geometric state",
+                    "steps": [
+                        "Concatenate the 288 ancestral root values, 24 torsion pin states, and 12 bridge pair configurations",
+                        "Append the full 125-node spectral registry state",
+                        "Compute SHA-256 hash of the concatenated byte stream to produce the geometric seal",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation", "shadow-torsion-sum"],
+                },
                 terms={
-                    "R_288": "288 ancestral roots from SO(24) + torsion",
-                    "tau_24": "24 shadow torsion pins (12 per brane)",
-                    "P_12": "12 x (2,0) paired bridges (12-PAIR-BRIDGE)",
+                    "R_{288}": "288 ancestral roots from SO(24) + torsion",
+                    r"\tau_{24}": "24 shadow torsion pins (12 per brane)",
+                    "P_{12}": "12 x (2,0) paired bridges (12-PAIR-BRIDGE)",
+                    "\\text{registry}": "125-node spectral registry state",
                 },
             ),
             Formula(
@@ -705,10 +733,24 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.2)",
                 latex=r"\tau_{\text{per-dim}} = \frac{24}{4} = 6 \quad \Rightarrow \quad \text{Isotropic}",
                 plain_text="tau_per_dim = 24/4 = 6 => Isotropic",
-                category="VALIDATION",
-                description="4-fold stabilizer: 6 torsion pins per spacetime dimension ensures isotropy.",
+                category="DERIVED",
+                description=(
+                    "4-fold stabilizer verification: the 24 torsion pins divide evenly among "
+                    "4 spacetime dimensions (t, x, y, z), yielding exactly 6 pins per dimension. "
+                    "This integer divisibility is required for isotropy; non-integer division "
+                    "would produce anisotropic physics (different laws in different directions)."
+                ),
                 input_params=["topology.shadow_torsion_total"],
                 output_params=["seal.4_pattern_verified"],
+                derivation={
+                    "method": "Isotropy verification from even pin division across 4D",
+                    "steps": [
+                        "The 24 torsion pins must divide evenly among 4 spacetime dimensions",
+                        "tau_per_dim = 24/4 = 6 (exact integer, confirming isotropy)",
+                        "If 24 were not divisible by 4, the universe would exhibit anisotropy",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
                 terms={
                     "24": "Total shadow torsion pins",
                     "4": "Spacetime dimensions (t, x, y, z)",
@@ -720,40 +762,114 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.3)",
                 latex=r"\Omega_{\text{seal}} = \text{SHA-256}(\text{registry} \| \text{coords} \| \text{tensors})",
                 plain_text="Omega_seal = SHA-256(registry || coords || tensors)",
-                category="VALIDATION",
-                description="Terminal hash generation from all locked data files.",
+                category="DERIVED",
+                description=(
+                    "Terminal hash generation from all locked data files. Serializes the 125-node "
+                    "spectral registry, V7 manifold coordinates, and torsion tensors into a "
+                    "deterministic byte stream, then computes SHA-256 to produce the terminal "
+                    "Omega hash. Any modification to any locked value changes this hash."
+                ),
                 input_params=["registry.node_count", "geometry.coordinate_hash"],
                 output_params=["seal.omega_hash"],
+                derivation={
+                    "method": "Terminal hash from concatenation of all model state vectors",
+                    "steps": [
+                        "Serialize the spectral registry (125 nodes), V7 coordinates, and torsion tensors",
+                        "Concatenate into a single deterministic byte stream",
+                        "Compute SHA-256 to produce the terminal Omega hash (reproducible across runs)",
+                    ],
+                    "parentFormulas": ["geometric-seal-288"],
+                },
+                terms={
+                    r"\Omega_{\text{seal}}": "Terminal Omega hash (SHA-256 checksum)",
+                    "\\text{registry}": "125-node spectral registry",
+                    "\\text{coords}": "V7 manifold coordinate data",
+                    "\\text{tensors}": "Torsion and curvature tensor data",
+                },
             ),
             Formula(
                 id="holonomy-checksum",
                 label="(G.4)",
                 latex=r"\text{Holonomy}(\{R_n\}) = \sum_n \omega_n R_n^2 = \Phi_{G_2}",
-                plain_text="Holonomy({Rn}) = Σ(omega_n * Rn^2) = Phi_G2",
-                category="VALIDATION",
-                description="Holonomy checksum for runtime consistency verification.",
+                plain_text="Holonomy({Rn}) = Sum(omega_n * Rn^2) = Phi_G2",
+                category="DERIVED",
+                description=(
+                    "Holonomy checksum for runtime consistency verification. Computes the "
+                    "weighted sum of squared ancestral root values (omega_n * R_n^2) and "
+                    "compares against the G2 holonomy invariant Phi_G2. Any deviation "
+                    "indicates a broken holonomy constraint and model integrity failure."
+                ),
                 input_params=["validation.phi_g2"],
                 output_params=["seal.verified"],
+                derivation={
+                    "method": "G2 holonomy invariant from weighted root-square sum",
+                    "steps": [
+                        "For each ancestral root R_n, compute the weighted square omega_n * R_n^2",
+                        "Sum over all roots: the total must equal the G2 holonomy invariant Phi_G2",
+                        "Any deviation indicates a broken holonomy constraint (model integrity failure)",
+                    ],
+                    "parentFormulas": ["ancestral-roots-derivation"],
+                },
+                terms={
+                    "R_n": "Individual ancestral root values",
+                    r"\omega_n": "Holonomy weight for root n",
+                    r"\Phi_{G_2}": "G2 holonomy invariant (target checksum)",
+                },
             ),
             Formula(
                 id="dead-mans-switch",
                 label="(G.5)",
                 latex=r"\text{v16.2} \xrightarrow{\Delta > \epsilon} \text{FALSIFIED}",
                 plain_text="v16.2 -> FALSIFIED (if Delta > epsilon)",
-                category="VALIDATION",
-                description="Dead man's switch: model is discarded if future data conflicts.",
+                category="DERIVED",
+                description=(
+                    "Dead man's switch: the model is discarded (not adjusted) if future "
+                    "observational data produces a global sigma deviation Delta exceeding "
+                    "the falsification tolerance epsilon. Ensures the Sterile Model remains "
+                    "a fixed prediction rather than an adjustable fit."
+                ),
                 input_params=["validation.sigma_global"],
                 output_params=["seal.integrity_status"],
+                derivation={
+                    "method": "Falsifiability trigger from sigma deviation threshold",
+                    "steps": [
+                        "Monitor the global sigma deviation Delta between predictions and experimental data",
+                        "If Delta exceeds the tolerance epsilon (set by the model), the Omega Seal is broken",
+                        "A broken seal triggers FALSIFIED status: the model is discarded, not adjusted",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    r"\Delta": "Global deviation between model predictions and data",
+                    r"\epsilon": "Tolerance threshold for falsification",
+                    "\\text{v16.2}": "Current model version",
+                    "\\text{FALSIFIED}": "Terminal state if deviation exceeds tolerance",
+                },
             ),
             Formula(
                 id="sterile-rigidity-declaration",
                 label="(G.6)",
                 latex=r"\text{Sterile} \equiv \frac{125}{288} \cdot \left(\frac{24}{4}\right) = 43.4\% \times 6",
-                plain_text="Sterile = (125/288) * (24/4) = 43.4% × 6 = LOCKED",
-                category="VALIDATION",
-                description="Sterile rigidity: observable ratio times isotropic distribution.",
+                plain_text="Sterile = (125/288) * (24/4) = 43.4% x 6 = LOCKED",
+                category="DERIVED",
+                description=(
+                    "Sterile rigidity declaration: the product of the observable ratio "
+                    "(125/288 = 43.4%) and the isotropic pin factor (24/4 = 6) yields the "
+                    "sterile rigidity invariant 2.604. This product being geometrically fixed "
+                    "locks the model: no parameter can be adjusted without breaking both factors."
+                ),
                 input_params=["registry.node_count", "topology.ancestral_roots", "topology.shadow_torsion_total"],
                 output_params=["seal.sterile_locked"],
+                derivation={
+                    "method": "Sterile rigidity product from survival rate and isotropy factor",
+                    "steps": [
+                        "The survival rate is 125/288 = 43.4% (fraction of roots that become observable)",
+                        "The isotropy factor is 24/4 = 6 (pins per spacetime dimension)",
+                        "Their product = 0.434 * 6 = 2.604 is the sterile rigidity invariant",
+                        "This product being fixed locks the model: no parameter can be adjusted without breaking both",
+                    ],
+                    "parentFormulas": ["survival-rate-formula", "4-fold-stabilizer-check"],
+                },
                 terms={
                     "125/288": "Observable residue fraction (43.4%)",
                     "24/4": "Isotropic pin distribution (6 per dim)",
@@ -769,15 +885,51 @@ class AppendixGOmegaSeal(SimulationBase):
                 name="Omega Seal Verified",
                 units="boolean",
                 status="VALIDATION",
-                description="True if Omega Seal matches expected value",
-                no_experimental_value=True,
+                description=(
+                    "True if the Omega Seal is verified: all 288 ancestral roots are confirmed, "
+                    "the 4-fold stabilizer passes (24/4 = 6 pins per dimension), and the "
+                    "12-PAIR-BRIDGE architecture is valid. False triggers model falsification."
+                ),
+                experimental_bound=True,
+                bound_type="exact",
+                bound_source="Geometric necessity",
             ),
             Parameter(
                 path="seal.integrity_status",
                 name="Integrity Status",
                 units="status",
                 status="VALIDATION",
-                description="TERMINAL_LOCKED if all seals pass, COMPROMISED otherwise",
+                description=(
+                    "Terminal integrity status of the Sterile Model. TERMINAL_LOCKED indicates "
+                    "all 8 master gates pass and the 288-root geometric seal is intact. "
+                    "COMPROMISED triggers the dead man's switch (model falsification)."
+                ),
+                experimental_bound="TERMINAL_LOCKED",
+                bound_type="exact",
+                bound_source="Geometric necessity",
+            ),
+            Parameter(
+                path="seal.bridge_pairs",
+                name="Bridge Pair Count",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Number of (2,0) Euclidean bridge pairs in the 12-PAIR-BRIDGE architecture. "
+                    "Each pair couples one Normal shadow coordinate to one Mirror shadow coordinate."
+                ),
+                experimental_bound=12,
+                bound_type="exact",
+                bound_source="Geometric necessity",
+            ),
+            Parameter(
+                path="seal.bridge_architecture",
+                name="Bridge Architecture Identifier",
+                units="label",
+                status="DERIVED",
+                description=(
+                    "Identifier for the bridge coupling architecture: 12-PAIR-BRIDGE denotes "
+                    "12 x (2,0) Euclidean paired bridges connecting dual 13D(12,1) shadow branes."
+                ),
                 no_experimental_value=True,
             ),
         ]

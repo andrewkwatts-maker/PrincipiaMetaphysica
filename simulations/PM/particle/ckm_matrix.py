@@ -76,6 +76,55 @@ Dedicated To:
     Our Messiah: Jesus Of Nazareth
 """
 
+# ============================================================================
+# SENSITIVITY ANALYSIS NOTES
+# Output: ckm.V_us, ckm.lambda_wolfenstein
+# Deviation: 1.71 sigma from experimental (PDG 2024: V_us = 0.2245 +/- 0.0008)
+#
+# Classification: PRECISION FRONTIER (octonionic mixing resolution)
+#
+# Explanation:
+#   The CKM matrix elements are derived from G2 geometry phase structure
+#   via the Froggatt-Nielsen mechanism. The key prediction is:
+#     V_us = epsilon = exp(-3/2) ~ 0.2231
+#     lambda_wolfenstein = epsilon ~ 0.2231
+#
+#   The PDG 2024 value V_us = 0.2245 +/- 0.0008 differs by:
+#     (0.2245 - 0.2231) / 0.0008 = 1.71 sigma
+#
+#   This is a GOOD fit -- within 2 sigma of one of the most precisely
+#   measured flavor parameters in particle physics.
+#
+# Why 1.71 sigma:
+#   - The Froggatt-Nielsen parameter epsilon = exp(-3/2) is derived from
+#     the G2 curvature scale, with the exponent 3/2 from triality
+#   - The exact value depends on:
+#     a) The G2 cycle volume ratios (leading order: exp(-3/2))
+#     b) Threshold corrections from KK modes (subleading: ~1-2%)
+#     c) RG running of Yukawa couplings from M_GUT to M_Z (~0.5%)
+#   - The 0.6% discrepancy (0.0014 in V_us) is consistent with
+#     missing sub-leading corrections
+#
+# Improvement path:
+#   1. Include next-to-leading-order G2 curvature corrections to epsilon
+#      (expected: O(1/b_3) ~ 4% correction to the exponent)
+#   2. Full RG running of CKM elements from M_GUT to M_Z
+#      (known to shift V_us by ~0.2% -- goes in the right direction)
+#   3. Include octonionic mixing phases beyond leading Froggatt-Nielsen
+#   4. Incorporate v23 central sampler ancestral flux corrections
+#      (currently disabled to avoid regression, see docstring)
+#   5. The other CKM elements (V_cb, V_ub, J) are all within 1 sigma,
+#      so the improvement is specifically needed for V_us
+#
+# Note: All other CKM observables are within 1 sigma:
+#   V_cb = 0.0405 vs PDG 0.0410 +/- 0.0014 (0.36 sigma)
+#   V_ub = 0.0037 vs PDG 0.00382 +/- 0.00024 (0.50 sigma)
+#   J = 3.08e-5 vs PDG 3.0 +/- 0.3 x 10^-5 (0.27 sigma)
+#   The V_us tension is the ONLY significant deviation in the CKM sector.
+#
+# Status: GOOD FIT - minor precision improvement possible
+# ============================================================================
+
 import numpy as np
 from datetime import datetime
 from typing import Dict, Any, List, Optional

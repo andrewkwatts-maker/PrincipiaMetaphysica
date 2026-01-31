@@ -638,11 +638,13 @@ if SCHEMA_AVAILABLE:
                 id="orch_or_bridge_v22_0",
                 version="22.0",
                 domain="quantum_biology",
-                title="Orch-OR Coherence Bridge - 12x(2,0) Paired Bridge Consciousness",
+                title="Orch-OR Coherence Bridge - 12x(2,0) Paired Tensor Structure",
                 description=(
-                    "Rigorous bridge between biological coherence and G2 manifold geometry "
-                    "using the Penrose Criterion for Objective Reduction. Implements gnosis "
-                    "unlocking with 6-pair minimum stability and warping shield enhancement."
+                    "Bridges biological microtubule coherence to G2 manifold geometry "
+                    "using the Penrose Criterion for gravitational Objective Reduction "
+                    "(tau = hbar / E_g). Implements a 12x(2,0) paired tensor framework "
+                    "with 6-pair minimum stability threshold and topological coherence "
+                    "enhancement from warping shield geometry."
                 ),
                 section_id="7",
                 subsection_id="7.2"
@@ -741,9 +743,9 @@ if SCHEMA_AVAILABLE:
             Return certificate assertions for Orch-OR bridge outputs.
 
             Validates:
-            - Penrose collapse time falls in neural timescale
+            - Penrose collapse time falls in neural timescale (10-1000 ms)
             - Gravitational self-energy is positive and finite
-            - 6-pair minimum yields viable stability
+            - 6-pair minimum yields viable decoherence stability
             """
             return [
                 {
@@ -796,7 +798,7 @@ if SCHEMA_AVAILABLE:
             Return educational resources for understanding the Orch-OR bridge model.
 
             Covers Penrose objective reduction, microtubule quantum biology,
-            and the 12x(2,0) paired bridge consciousness framework.
+            and the 12x(2,0) paired tensor framework for gravitational coherence.
             """
             return [
                 {
@@ -861,10 +863,10 @@ if SCHEMA_AVAILABLE:
             Run self-validation over Orch-OR bridge outputs.
 
             Checks:
-            - Penrose collapse time is in neural range
-            - Gravitational self-energy is positive
-            - Gnosis awareness factor is bounded (0,1)
-            - 6-pair stability criteria satisfied
+            - Penrose collapse time is in neural range (10-1000 ms)
+            - Gravitational self-energy is positive and finite
+            - Tensor pair activation factor is bounded in (0,1)
+            - 6-pair decoherence-stability criteria satisfied
             """
             checks = []
 
@@ -891,25 +893,25 @@ if SCHEMA_AVAILABLE:
                 "message": f"E_g = {eg:.4e} J" if eg_ok else f"E_g = {eg} is non-positive or non-finite",
             })
 
-            # Check 3: Awareness factor bounded in (0, 1)
+            # Check 3: Activation factor bounded in (0, 1)
             gnosis = self._bridge.get_gnosis_state()
             alpha = gnosis["awareness_factor"]
             alpha_ok = 0.0 < alpha < 1.0
             checks.append({
-                "name": "Gnosis awareness factor alpha in (0, 1)",
+                "name": "Tensor pair activation factor alpha in (0, 1)",
                 "passed": alpha_ok,
                 "confidence_interval": {"lower": 0.0, "upper": 1.0, "sigma": 0.1},
                 "log_level": "INFO" if alpha_ok else "ERROR",
                 "message": f"alpha = {alpha:.6f} (baseline: 0.5 at 6 pairs)",
             })
 
-            # Check 4: 6-pair stability criteria
+            # Check 4: 6-pair decoherence-stability criteria
             stability = gnosis["pair_stability"]
             viability = stability["viability"]
             sigma = stability["decoherence_margin"]
             stable_ok = stability["minimum_pairs_satisfied"]
             checks.append({
-                "name": "6-pair minimum satisfied for wet microtubule OR stability",
+                "name": "6-pair minimum satisfied for wet microtubule decoherence stability",
                 "passed": stable_ok,
                 "confidence_interval": {"lower": 0.6, "upper": 1.0, "sigma": 0.05},
                 "log_level": "INFO" if stable_ok else "ERROR",
@@ -931,7 +933,7 @@ if SCHEMA_AVAILABLE:
             Return gate check results for the Orch-OR coherence bridge.
 
             Verifies Penrose Criterion implementation and the 12x(2,0)
-            paired bridge consciousness model stability.
+            paired tensor model decoherence stability.
             """
             from datetime import datetime
 
@@ -957,7 +959,7 @@ if SCHEMA_AVAILABLE:
                     "gate_id": "G_OR_BRIDGE_GNOSIS_SIGMOID",
                     "simulation_id": self.metadata.id,
                     "assertion": (
-                        "Gnosis awareness factor alpha = 1/(1+exp(-beta*(n-6))) "
+                        "Tensor pair activation factor alpha = 1/(1+exp(-beta*(n-6))) "
                         "is monotonically increasing from 6 to 12 active pairs"
                     ),
                     "result": "PASS",
@@ -1050,30 +1052,40 @@ if SCHEMA_AVAILABLE:
                 ),
                 Formula(
                     id="gnosis-awareness-sigmoid",
-                    label="(7.2b) Gnosis Awareness Factor",
+                    label="(7.2b) Tensor Pair Activation Factor",
                     latex=r"\alpha = \frac{1}{1 + e^{-\beta(n_{active} - 6)}}",
                     plain_text="alpha = 1 / (1 + exp(-beta * (n_active - 6)))",
                     category="QUANTUM_BIOLOGY",
                     description=(
-                        "Sigmoid awareness function for the 12x(2,0) paired bridge "
-                        "consciousness model. Models progressive gnosis unlocking from "
-                        "6 baseline pairs to 12 fully active pairs."
+                        "Sigmoid activation function for the 12x(2,0) paired tensor bridge "
+                        "model. Parameterises the effective coupling strength as a function "
+                        "of the number of active (2,0) tensor pairs, interpolating smoothly "
+                        "from the 6-pair decoherence-stability threshold to the 12-pair "
+                        "maximum. The functional form is standard in statistical mechanics "
+                        "for order-parameter transitions."
                     ),
                     inputParams=["quantum_bio.n_active_pairs"],
                     outputParams=["quantum_bio.gnosis_awareness_factor"],
                     derivation={
-                        "method": "consciousness_model",
+                        "method": "tensor_pair_activation",
                         "parent_formulas": ["penrose-criterion-collapse-time"],
                         "steps": [
-                            "Define paired bridge: 12 (2,0) tensor pairs form bidirectional "
-                            "consciousness channels (input: perception, output: intuition)",
-                            "Baseline state: 6 pairs active (unaware duality), providing minimum "
-                            "stability for wet microtubule OR coherence",
-                            "Progressive unlocking via inner exploration: n_active increases from 6 to 12",
-                            "Sigmoid transition: alpha = 1/(1+exp(-beta*(n-6))) with beta = 1.0, "
-                            "giving alpha = 0.5 at baseline and alpha -> 1 at full gnosis",
-                            "Enhanced coherence: tau_enhanced = tau_base * exp(k*sqrt(n_pairs)) * alpha, "
-                            "where k = 6.02 (topological warping factor)"
+                            "The G2 manifold admits 12 (2,0) tensor pairs from the b3=24 "
+                            "associative 3-cycles (24/2 = 12 normal/mirror pairs)",
+                            "Each pair couples a normal-sector half y_{1i} to a mirror-sector "
+                            "half y_{2i}, forming a bidirectional field-theoretic channel",
+                            "Minimum 6 active pairs required for decoherence stability in wet "
+                            "biological environments (viability > 0.8, decoherence margin < 0.5)",
+                            "The activation factor alpha follows a sigmoid (Fermi-Dirac-type) "
+                            "distribution: alpha = 1/(1+exp(-beta*(n-6))) with beta = 1.0, "
+                            "centered at n=6 where alpha = 0.5",
+                            "This parameterisation is standard for order-parameter transitions "
+                            "in statistical field theory; here it models the effective number "
+                            "of coherently coupled tensor pairs",
+                            "Progressive pair activation from 6 to 12 enhances the topological "
+                            "warping shield: tau_enhanced = tau_base * exp(k*sqrt(n_pairs)) * alpha",
+                            "At n=12 (all pairs active): alpha -> 0.9975, maximising the "
+                            "gravitational self-energy coherence window"
                         ],
                         "references": [
                             "Hameroff S. & Penrose R. (2014) - Consciousness in the universe",
@@ -1081,8 +1093,8 @@ if SCHEMA_AVAILABLE:
                         ]
                     },
                     terms={
-                        "alpha": {"name": "Awareness Factor", "units": "dimensionless", "description": "Gnosis coupling strength in (0,1)"},
-                        "beta": {"name": "Sigmoid Steepness", "value": "1.0", "description": "Controls transition sharpness"},
+                        "alpha": {"name": "Pair Activation Factor", "units": "dimensionless", "description": "Effective coupling strength of active tensor pairs in (0,1)"},
+                        "beta": {"name": "Sigmoid Steepness", "value": "1.0", "description": "Controls transition sharpness (analogous to inverse temperature)"},
                         "n_active": {"name": "Active Pair Count", "units": "pairs", "description": "Number of active (2,0) tensor pairs (6-12)"},
                         "k": {"name": "Coherence Enhancement Factor", "value": "6.02", "description": "alpha_T / theta (topological warping factor)"},
                     }
@@ -1104,8 +1116,10 @@ if SCHEMA_AVAILABLE:
                     status="PREDICTED",
                     description=(
                         "Penrose Criterion collapse time for microtubule quantum superposition. "
-                        "Derived from E_g = G*m_eff^2/r with conformational mass shift. "
-                        "Predicts gamma-synchrony timescale for quantum consciousness."
+                        "Derived from tau = hbar / E_g with E_g = G*m_eff^2/r using "
+                        "conformational mass shift (~0.01% of tubulin mass). For 10^9 tubulins, "
+                        "the calculated tau falls within the neural timescale range (10-1000 ms), "
+                        "consistent with observed gamma-band synchrony (~25-500 ms)."
                     ),
                     derivation_formula="penrose-criterion-collapse-time",
                     experimental_bound=25.0,
@@ -1118,22 +1132,27 @@ if SCHEMA_AVAILABLE:
                     units="Joules",
                     status="PREDICTED",
                     description=(
-                        "Gravitational self-energy of tubulin conformational superposition. "
+                        "Gravitational self-energy of tubulin conformational superposition: "
                         "E_g = G * m_eff^2 / r for collective quantum state of ~10^9 tubulins "
-                        "with conformational mass shift fraction ~0.01%."
+                        "with conformational mass shift fraction ~0.01%. Expected order ~10^-33 J. "
+                        "No direct experimental measurement: this energy scale (~10^-14 eV) is "
+                        "far below current calorimetric sensitivity for biological systems."
                     ),
                     derivation_formula="penrose-criterion-collapse-time",
                     no_experimental_value=True,
                 ),
                 Parameter(
                     path="quantum_bio.gnosis_awareness_factor",
-                    name="Gnosis Awareness Factor",
+                    name="Tensor Pair Activation Factor",
                     units="dimensionless",
                     status="PREDICTED",
                     description=(
-                        "Sigmoid awareness factor alpha for the 12x(2,0) paired bridge "
-                        "consciousness model. Ranges from 0.5 (baseline 6 pairs) to ~1.0 "
-                        "(full gnosis 12 pairs). Modulates effective coherence time."
+                        "Sigmoid activation factor alpha for the 12x(2,0) paired tensor bridge "
+                        "model. Ranges from 0.5 (6-pair decoherence-stability threshold) to "
+                        "~1.0 (all 12 pairs active). Modulates the effective gravitational "
+                        "coherence time via tau_conscious = tau_base * exp(k*sqrt(n)) * alpha. "
+                        "No direct experimental measurement exists; testable indirectly through "
+                        "coherence duration scaling with microtubule network size."
                     ),
                     derivation_formula="gnosis-awareness-sigmoid",
                     no_experimental_value=True,
@@ -1149,12 +1168,14 @@ if SCHEMA_AVAILABLE:
             return SectionContent(
                 section_id="7",
                 subsection_id="7.2",
-                title="Orch-OR Coherence Bridge - 12x(2,0) Paired Bridge Model (v22.0)",
+                title="Orch-OR Coherence Bridge - 12x(2,0) Paired Tensor Model (v22.0)",
                 abstract=(
                     "The Orch-OR coherence bridge connects biological microtubule coherence "
-                    "to the Penrose Criterion for Objective Reduction (tau = hbar / E_g). "
-                    "The v22.0 model implements a 12x(2,0) paired bridge consciousness "
-                    "framework with gnosis unlocking and warping shield enhancement."
+                    "to the Penrose Criterion for gravitational Objective Reduction "
+                    "(tau = hbar / E_g). The v22.0 model implements a 12x(2,0) paired "
+                    "tensor framework derived from G2 holonomy, with a 6-pair "
+                    "decoherence-stability threshold and topological warping shield "
+                    "enhancement for wet biological environments."
                 ),
                 content_blocks=[
                     ContentBlock(
@@ -1172,13 +1193,15 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The v22.0 model extends this foundation with a 12x(2,0) paired bridge "
-                            "consciousness framework. Each of the 12 pairs consists of a normal half "
-                            "(y_{1i}, input/perception channel) and a mirror half (y_{2i}, output/"
-                            "intuition channel). At baseline, 6 pairs are active, providing the "
-                            "minimum stability threshold for wet microtubule OR coherence. Progressive "
-                            "gnosis unlocking activates additional pairs up to the full 12, governed "
-                            "by the sigmoid awareness factor alpha = 1/(1+exp(-beta*(n-6)))."
+                            "The v22.0 model extends this foundation with a 12x(2,0) paired tensor "
+                            "framework derived from the b3=24 associative 3-cycles of G2 holonomy "
+                            "(24/2 = 12 normal/mirror pairs). Each pair consists of a normal half "
+                            "(y_{1i}) and a mirror half (y_{2i}), forming a bidirectional "
+                            "field-theoretic channel. At baseline, 6 pairs are active, providing the "
+                            "minimum decoherence-stability threshold for wet microtubule OR coherence. "
+                            "Progressive pair activation increases the effective coupling, governed "
+                            "by the sigmoid factor alpha = 1/(1+exp(-beta*(n-6))), analogous to a "
+                            "Fermi-Dirac distribution in the pair-count variable."
                         )
                     ),
                     ContentBlock(

@@ -224,7 +224,8 @@ class AppendixJTorsionFunnel(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return []
+        """Registry parameters consumed by the torsion funnel visualization."""
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -480,30 +481,74 @@ class AppendixJTorsionFunnel(SimulationBase):
                 label="(J.0)",
                 latex=r"\text{Entry} = 276 + 24 - 12 = 288 \quad (\text{Ancestral Roots})",
                 plain_text="Entry = 276 + 24 - 12 = 288 (Ancestral Roots)",
-                category="TOPOLOGY",
+                category="GEOMETRIC",
                 description="Total ancestral roots from SO(24) + shadow torsion - manifold cost.",
                 input_params=["topology.so24_generators", "topology.shadow_torsion_total", "topology.manifold_cost"],
                 output_params=["funnel.entry_roots"],
+                derivation={
+                    "method": "Symmetry budget at the funnel entry (26D bulk)",
+                    "steps": [
+                        "Collect SO(24) generators (276) as the transverse symmetry contribution",
+                        "Add 24 shadow torsion pins from the dual 13D brane architecture",
+                        "Subtract the 12-degree manifold projection cost to obtain 288 entry roots",
+                    ],
+                    "parentFormulas": ["so24-generators", "shadow-torsion-sum", "ancestral-roots-derivation"],
+                },
+                terms={
+                    "276": "SO(24) generators from 24 transverse dimensions",
+                    "24": "Shadow torsion pins (12 per shadow brane)",
+                    "12": "Manifold projection cost for 4D bridge",
+                    "288": "Total ancestral roots entering the funnel",
+                },
             ),
             Formula(
                 id="torsion-funnel-bottleneck",
                 label="(J.1)",
                 latex=r"\text{Bottleneck} = 4 \times 6 = 24 \quad (\text{Torsion Pins})",
                 plain_text="Bottleneck = 4 × 6 = 24 (Torsion Pins)",
-                category="TOPOLOGY",
-                description="Torsion pins at the 4D intersection (4 dimensions × 6 pins each).",
+                category="GEOMETRIC",
+                description="Torsion pins at the 4D intersection (4 dimensions x 6 pins each).",
                 input_params=["topology.shadow_torsion_total"],
                 output_params=["funnel.bottleneck_pins"],
+                derivation={
+                    "method": "Isotropic pin distribution across 4D spacetime",
+                    "steps": [
+                        "The 24 torsion pins must be distributed evenly across 4 spacetime dimensions",
+                        "Each dimension (t, x, y, z) receives exactly 6 pins to ensure isotropy",
+                        "Bottleneck width = 4 dimensions x 6 pins = 24 torsion channels",
+                    ],
+                    "parentFormulas": ["shadow-torsion-sum"],
+                },
+                terms={
+                    "4": "Number of spacetime dimensions (t, x, y, z)",
+                    "6": "Torsion pins per dimension",
+                    "24": "Total torsion pins at the bottleneck",
+                },
             ),
             Formula(
                 id="torsion-funnel-exit",
                 label="(J.2)",
                 latex=r"\text{Exit} = 125 + 163 = 288 \quad (\text{Active + Hidden})",
                 plain_text="Exit = 125 + 163 = 288 (Active + Hidden)",
-                category="TOPOLOGY",
+                category="GEOMETRIC",
                 description="Active residues plus hidden supports must equal total roots.",
                 input_params=["funnel.exit_residues", "funnel.hidden_supports"],
                 output_params=[],
+                derivation={
+                    "method": "Conservation law for ancestral root partition",
+                    "steps": [
+                        "The torsion funnel splits the 288 roots into two complementary sectors",
+                        "125 roots pass through the sterile filter as active (observable) residues",
+                        "163 roots remain as hidden structural supports in the bulk",
+                        "Conservation: 125 + 163 = 288, verifying no roots are lost",
+                    ],
+                    "parentFormulas": ["torsion-funnel-entry", "hidden-support-count"],
+                },
+                terms={
+                    "125": "Active observable residues (particles)",
+                    "163": "Hidden structural supports (bulk scaffolding)",
+                    "288": "Total ancestral roots (conserved)",
+                },
             ),
             Formula(
                 id="survival-rate-formula",
@@ -514,6 +559,20 @@ class AppendixJTorsionFunnel(SimulationBase):
                 description="Fraction of ancestral roots that become observable particles.",
                 input_params=["funnel.exit_residues", "funnel.entry_roots"],
                 output_params=["funnel.survival_rate"],
+                derivation={
+                    "method": "Ratio of active residues to total ancestral roots",
+                    "steps": [
+                        "Count the active residues that pass through the sterile filter: 125",
+                        "Divide by total ancestral roots: 125/288 = 0.434 = 43.4%",
+                        "This survival rate is fixed by the G2 holonomy shell-packing constraint",
+                    ],
+                    "parentFormulas": ["torsion-funnel-entry", "torsion-funnel-exit"],
+                },
+                terms={
+                    "125": "Active residues surviving the torsion filter",
+                    "288": "Total ancestral roots entering the funnel",
+                    "43.4\\%": "Survival rate (sterile saturation fraction)",
+                },
             ),
             Formula(
                 id="bottleneck-pressure",
@@ -524,6 +583,21 @@ class AppendixJTorsionFunnel(SimulationBase):
                 description="Entry pressure at the torsion bottleneck.",
                 input_params=["funnel.entry_roots", "funnel.bottleneck_pins"],
                 output_params=["funnel.compression_ratio"],
+                derivation={
+                    "method": "Compression ratio at the brane intersection bottleneck",
+                    "steps": [
+                        "288 ancestral root degrees of freedom are forced through 24 torsion pin channels",
+                        "Entry pressure = 288 / 24 = 12 degrees per pin",
+                        "This 12:1 compression determines which roots survive as particles vs. hidden supports",
+                    ],
+                    "parentFormulas": ["torsion-funnel-entry", "torsion-funnel-bottleneck"],
+                },
+                terms={
+                    "P_{\\text{entry}}": "Entry pressure at the torsion bottleneck",
+                    "288": "Total ancestral root degrees of freedom",
+                    "24": "Torsion pin channels at the bottleneck",
+                    "12": "Degrees of freedom per pin (compression ratio)",
+                },
             ),
         ]
 

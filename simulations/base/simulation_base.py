@@ -17,9 +17,13 @@ Dedicated To:
 """
 
 from abc import ABC, abstractmethod
+import copy
 from dataclasses import dataclass, field
+import logging
 from typing import Dict, Any, List, Optional
 from datetime import datetime
+
+logger = logging.getLogger('principia.sensitivity')
 
 
 @dataclass
@@ -123,7 +127,7 @@ class Formula:
         label: Display label (e.g., "(4.12)")
         latex: LaTeX representation of the formula
         plain_text: Plain text representation
-        category: Category ("ESTABLISHED", "THEORY", "DERIVED", "PREDICTIONS")
+        category: Category ("ESTABLISHED", "GEOMETRIC", "DERIVED", "PREDICTED")
         description: What the formula computes
         title: Short descriptive title for display (derived from description if not provided)
         inputParams: List of input parameter paths (camelCase for JSON)
@@ -528,6 +532,294 @@ class SimulationBase(ABC):
         # Build schema-compliant result using mixin
         builder = _SchemaBuilder(self)
         return builder.build_result(registry, results, elapsed_ms)
+
+    # -------------------------------------------------------------------------
+    # Sensitivity Analysis (optional, does not alter existing behaviour)
+    # -------------------------------------------------------------------------
+
+    def run_sensitivity_analysis(
+        self,
+        registry: 'PMRegistry',
+        verbose: bool = True,
+    ) -> Dict[str, Any]:
+        """
+        Run simulation with geometric inputs (default), then run per-input
+        sensitivity tests swapping each geometric input for its experimental value.
+
+        Logs warnings when:
+        - An output param deviates >1 sigma from experimental measurement
+        - Switching a specific input to experimental improves the output
+
+        Args:
+            registry: PMRegistry instance containing the parameters
+            verbose: Whether to emit human-readable output to the logger
+
+        Returns:
+            Dict with keys:
+            - 'results':                 normal geometric results
+            - 'sensitivity_report':      per-input deviation analysis
+            - 'improvement_suggestions': list of inputs where experimental
+                                         values would improve agreement
+        """
+        sim_id = self.metadata.id
+
+        # ------------------------------------------------------------------
+        # 1. Baseline run with geometric (default) inputs
+        # ------------------------------------------------------------------
+        if verbose:
+            logger.info("[%s] Running baseline with geometric inputs...", sim_id)
+        baseline_results = self.run(registry)
+
+        # Build lookup of output Parameter definitions keyed by path
+        output_defs = {p.path: p for p in self.get_output_param_definitions()}
+
+        # ------------------------------------------------------------------
+        # Helper: compute sigma deviation for a single output
+        # ------------------------------------------------------------------
+        def _sigma_for_output(path: str, computed_value: Any) -> Optional[float]:
+            """Return |computed - experimental| / uncertainty, or None."""
+            pdef = output_defs.get(path)
+            if pdef is None:
+                return None
+            exp_bound = pdef.experimental_bound
+            unc = pdef.uncertainty
+            if exp_bound is None or unc is None or unc == 0:
+                return None
+            try:
+                return abs(float(computed_value) - float(exp_bound)) / float(unc)
+            except (TypeError, ValueError):
+                return None
+
+        # Compute baseline sigma deviations for every output
+        baseline_sigmas: Dict[str, Optional[float]] = {}
+        for out_path in self.output_params:
+            if out_path in baseline_results:
+                baseline_sigmas[out_path] = _sigma_for_output(
+                    out_path, baseline_results[out_path]
+                )
+
+        # Warn about outputs already >1 sigma in the baseline
+        for out_path, sigma in baseline_sigmas.items():
+            if sigma is not None and sigma > 1.0:
+                logger.warning(
+                    "[%s] Baseline output '%s' deviates %.2f sigma from "
+                    "experimental (bound=%s, uncertainty=%s)",
+                    sim_id,
+                    out_path,
+                    sigma,
+                    output_defs[out_path].experimental_bound,
+                    output_defs[out_path].uncertainty,
+                )
+
+        # ------------------------------------------------------------------
+        # 2. Identify swappable inputs
+        # ------------------------------------------------------------------
+        swappable_inputs: Dict[str, float] = {}
+        for input_path in self.required_inputs:
+            entry = registry.get_entry(input_path)
+            if entry is not None and entry.experimental_value is not None:
+                swappable_inputs[input_path] = entry.experimental_value
+
+        if verbose:
+            logger.info(
+                "[%s] Found %d swappable inputs (have experimental values): %s",
+                sim_id,
+                len(swappable_inputs),
+                list(swappable_inputs.keys()),
+            )
+
+        # ------------------------------------------------------------------
+        # 3. Per-input sensitivity sweep
+        # ------------------------------------------------------------------
+        sensitivity_report: Dict[str, Dict[str, Any]] = {}
+        improvement_suggestions: List[Dict[str, Any]] = []
+
+        for input_path, exp_value in swappable_inputs.items():
+            entry = registry.get_entry(input_path)
+            if entry is None:
+                continue  # defensive
+
+            original_value = entry.value
+
+            # Swap input to experimental value
+            entry.value = exp_value
+
+            try:
+                swapped_results = self.run(registry)
+            except Exception as exc:
+                logger.error(
+                    "[%s] Sensitivity run failed when swapping '%s' to %s: %s",
+                    sim_id, input_path, exp_value, exc,
+                )
+                # Restore and skip
+                entry.value = original_value
+                sensitivity_report[input_path] = {
+                    "status": "ERROR",
+                    "error": str(exc),
+                }
+                continue
+            finally:
+                # Always restore the geometric value
+                entry.value = original_value
+
+            # Compare each output
+            per_output: Dict[str, Dict[str, Any]] = {}
+            any_improvement = False
+
+            for out_path in self.output_params:
+                baseline_val = baseline_results.get(out_path)
+                swapped_val = swapped_results.get(out_path)
+                if baseline_val is None or swapped_val is None:
+                    continue
+
+                baseline_sigma = baseline_sigmas.get(out_path)
+                swapped_sigma = _sigma_for_output(out_path, swapped_val)
+
+                output_entry: Dict[str, Any] = {
+                    "baseline_value": baseline_val,
+                    "swapped_value": swapped_val,
+                    "baseline_sigma": baseline_sigma,
+                    "swapped_sigma": swapped_sigma,
+                }
+
+                # Determine if swapping improved agreement
+                if baseline_sigma is not None and swapped_sigma is not None:
+                    improved = swapped_sigma < baseline_sigma
+                    output_entry["improved"] = improved
+                    output_entry["delta_sigma"] = baseline_sigma - swapped_sigma
+
+                    if improved:
+                        any_improvement = True
+                        if verbose:
+                            logger.info(
+                                "[%s] Swapping '%s' to experimental (%.6g) "
+                                "improves '%s': %.2f sigma -> %.2f sigma",
+                                sim_id, input_path, exp_value,
+                                out_path, baseline_sigma, swapped_sigma,
+                            )
+
+                    # Warn when swapping causes >1 sigma deviation
+                    if swapped_sigma > 1.0 and (baseline_sigma is None or baseline_sigma <= 1.0):
+                        logger.warning(
+                            "[%s] Swapping input '%s' to experimental "
+                            "causes output '%s' to deviate %.2f sigma",
+                            sim_id, input_path, out_path, swapped_sigma,
+                        )
+
+                per_output[out_path] = output_entry
+
+            sensitivity_report[input_path] = {
+                "geometric_value": original_value,
+                "experimental_value": exp_value,
+                "outputs": per_output,
+                "any_improvement": any_improvement,
+            }
+
+            if any_improvement:
+                improvement_suggestions.append({
+                    "input_path": input_path,
+                    "geometric_value": original_value,
+                    "experimental_value": exp_value,
+                    "details": per_output,
+                })
+
+        if verbose:
+            logger.info(
+                "[%s] Sensitivity analysis complete. %d/%d inputs suggest "
+                "improvement with experimental values.",
+                sim_id,
+                len(improvement_suggestions),
+                len(swappable_inputs),
+            )
+
+        return {
+            "results": baseline_results,
+            "sensitivity_report": sensitivity_report,
+            "improvement_suggestions": improvement_suggestions,
+        }
+
+    def execute_with_sensitivity(
+        self,
+        registry: 'PMRegistry',
+        use_experimental: bool = False,
+        verbose: bool = True,
+    ) -> Dict[str, Any]:
+        """
+        Wrapper around ``execute()`` with optional sensitivity logging.
+
+        Behaviour:
+        - ``use_experimental=False`` (default): executes normally with
+          geometric inputs, then appends a sensitivity report.
+        - ``use_experimental=True``: swaps every input that has an
+          experimental value in the registry **before** running, then
+          restores all originals afterwards.
+
+        Args:
+            registry: PMRegistry instance
+            use_experimental: If True, run with experimental inputs instead
+                              of geometric ones.
+            verbose: Whether to print / log progress information.
+
+        Returns:
+            Dict with keys:
+            - 'results':                 computed parameter values
+            - 'sensitivity_report':      per-input deviation analysis
+                                         (only when use_experimental=False)
+            - 'improvement_suggestions': inputs where experimental values
+                                         would help (only when
+                                         use_experimental=False)
+        """
+        if not use_experimental:
+            # Default path: run with geometric, append sensitivity report
+            report = self.run_sensitivity_analysis(registry, verbose=verbose)
+
+            # Inject results + section content via the normal pipeline
+            self.inject_outputs(registry, report["results"])
+            self.inject_section(registry)
+
+            return report
+
+        # ------------------------------------------------------------------
+        # Experimental-override path: swap ALL inputs that have exp values
+        # ------------------------------------------------------------------
+        sim_id = self.metadata.id
+        originals: Dict[str, Any] = {}
+
+        for input_path in self.required_inputs:
+            entry = registry.get_entry(input_path)
+            if entry is not None and entry.experimental_value is not None:
+                originals[input_path] = entry.value
+                entry.value = entry.experimental_value
+
+        if verbose:
+            logger.info(
+                "[%s] Running with %d experimental overrides: %s",
+                sim_id,
+                len(originals),
+                list(originals.keys()),
+            )
+
+        try:
+            results = self.execute(registry, verbose=verbose)
+        finally:
+            # Always restore geometric values
+            for input_path, orig_val in originals.items():
+                entry = registry.get_entry(input_path)
+                if entry is not None:
+                    entry.value = orig_val
+
+        if verbose:
+            logger.info(
+                "[%s] Experimental run complete. Restored %d geometric values.",
+                sim_id,
+                len(originals),
+            )
+
+        return {
+            "results": results,
+            "sensitivity_report": {},
+            "improvement_suggestions": [],
+        }
 
     def get_foundations(self) -> List[Dict[str, Any]]:
         """

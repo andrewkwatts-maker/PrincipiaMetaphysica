@@ -353,6 +353,8 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
 
     def __init__(self):
         """Initialize the simulation."""
+        if SimulationBase is not object:
+            super().__init__()
         self._filter: Optional[UnitaryFilter] = None
 
     @property
@@ -441,7 +443,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                 label="(V.1)",
                 latex=r"c_{\text{total}} = c_{\text{matter}} + c_{\text{ghost}} = 26 - 26 = 0",
                 plain_text="c_total = c_matter + c_ghost = 26 - 26 = 0",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Weyl anomaly cancellation in 26D. The matter contribution (26 from "
                     "24 transverse + 2 Sp(2,R)) exactly cancels the ghost contribution (-26 "
@@ -470,7 +472,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                 label="(V.2)",
                 latex=r"c = b_3 + 2 - 26 = 24 + 2 - 26 = 0",
                 plain_text="c = b3 + 2 - 26 = 24 + 2 - 26 = 0",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Unitarity requirement in terms of the G2 geometry. The third Betti "
                     "number b3 = 24 provides transverse modes, unified time (1) + Euclidean "

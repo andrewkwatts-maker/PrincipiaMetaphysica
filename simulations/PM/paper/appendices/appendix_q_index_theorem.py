@@ -112,10 +112,7 @@ class AppendixQIndexTheorem(SimulationBase):
     @property
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
-        return [
-            "topology.mephorash_chi",
-            "topology.elder_kads",
-        ]
+        return []
 
     @property
     def output_params(self) -> List[str]:
@@ -939,7 +936,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.8)",
                 latex=r"\text{ind}(D)_{G_2} = \frac{\chi_{\text{eff}}}{48}",
                 plain_text="ind(D)_G2 = chi_eff / 48",
-                category="THEORY",
+                category="DERIVED",
                 description=(
                     "Specialization of the index theorem to G2 holonomy manifolds. "
                     "The index is given by the effective Euler characteristic "
@@ -998,7 +995,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.10)",
                 latex=r"N_{\text{gen}} = \left|\frac{144}{48}\right| = 3",
                 plain_text="N_gen = |144 / 48| = 3",
-                category="PREDICTIONS",
+                category="PREDICTED",
                 description=(
                     "The Principia Metaphysica prediction: exactly 3 fermion "
                     "generations from the TCS G2 manifold #187 with chi_eff = 144. "

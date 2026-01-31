@@ -77,8 +77,8 @@ class AppendixBSumRule(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        # Narrative content - no strict dependencies
-        return []
+        """Registry parameters consumed by the sum rule validation."""
+        return ["geometry.elder_kads"]
 
     @property
     def output_params(self) -> List[str]:
@@ -275,7 +275,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.1)",
                 latex=r"Z(t) = \text{Tr}(e^{-t\Delta_{V_7}}) = \sum_{n=1}^{\text{ק}_{\text{כה}}} e^{-t\lambda_n}",
                 plain_text="Z(t) = Tr(exp(-tΔ_V₇)) = Σexp(-tλₙ)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Heat kernel partition function of V₇ manifold. Converges to "
                     "Vol(V₇) times geometric factors for Ricci-flat manifolds."
@@ -303,7 +303,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.2)",
                 latex=r"\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \cdot \mathcal{R}_n^2 = \Phi_{G_2}",
                 plain_text="Σ_{n=1}^{ק_כה} ω_n · R_n² = Φ_{G₂}",
-                category="VALIDATION",
+                category="DERIVED",
                 description=(
                     "Global sum rule ensuring metric rigidity. The weighted sum of "
                     "squared residues must equal the ancestral G₂ holonomy invariant."
@@ -332,7 +332,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.4)",
                 latex=r"\Delta\Phi = \left|\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \mathcal{R}_n^2 - \Phi_{G_2}\right| < \epsilon_{\text{sterile}}",
                 plain_text="|Σ_{n=1}^{ק_כה} ω_n·R_n² - Φ_{G₂}| < ε_sterile",
-                category="VALIDATION",
+                category="DERIVED",
                 description=(
                     "Closure condition for trace formula verification. Variance must "
                     "be below sterile tolerance threshold to maintain certification."
@@ -360,7 +360,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.3)",
                 latex=r"\Delta\lambda_{UV-IR} = \lambda_{\text{ק}_{\text{כה}}} - \lambda_1 \propto \log(M_{Pl}/m_e)",
                 plain_text="Δλ_UV-IR ∝ log(M_Pl/m_e)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Spectral gap explaining the hierarchy problem. The UV-IR "
                     "eigenvalue gap encodes the Planck-to-electron mass ratio."

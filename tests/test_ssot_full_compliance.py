@@ -48,8 +48,7 @@ from simulations.base.simulation_base import SimulationBase
 # Constants
 # ===========================================================================
 VALID_FORMULA_CATEGORIES = frozenset({
-    "ESTABLISHED", "GEOMETRIC", "DERIVED", "PREDICTED",
-    "PREDICTIONS", "CALIBRATED", "THEORY",
+    "DERIVED", "ESTABLISHED", "GEOMETRIC", "PREDICTED",
 })
 
 VALID_CERT_STATUSES = frozenset({"PASS", "FAIL", "OFFLINE"})
