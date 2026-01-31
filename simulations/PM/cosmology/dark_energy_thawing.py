@@ -753,6 +753,25 @@ class DarkEnergyEvolution(SimulationBase):
                     formula_id="wa-nonlinear-correction",
                     label="(DE.4F3)"
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="4-Face Interpretation of Breathing Dark Energy",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**4-Face Interpretation of Breathing Dark Energy**\n\n"
+                        "The breathing mechanism \u03c3_eff = \u03c3_single/\u221a12 now has a geometric interpretation:\n"
+                        "- 12 = 4 faces \u00d7 3 generations (from \u03c7_eff/48 = 3)\n"
+                        "- Each bridge pair connects to all 4 faces in both shadows\n"
+                        "- The \u221a12 variance reduction emerges from 12 independent bridge-face channels\n\n"
+                        "The face warping potential V_face^(f) modulates the breathing amplitude:\n"
+                        "- Visible face (f=1): full breathing amplitude\n"
+                        "- Hidden faces (f=2,3,4): suppressed by \u03b1_sample \u2248 0.57\n"
+                        "- Total breathing: weighted average across 4 faces with sampling weights"
+                    )
+                ),
             ],
             formula_refs=[
                 "thawing-w0-derivation",

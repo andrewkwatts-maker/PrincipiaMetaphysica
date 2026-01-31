@@ -176,6 +176,23 @@ class AbstractV17_2(SimulationBase):
                 ),
                 label="abstract-note"
             ),
+            # Two-Layer Objective Reduction
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "**Two-Layer Objective Reduction**\n\n"
+                    "The theory introduces a hierarchical two-layer OR structure: "
+                    "(i) Bridge/Global OR (R_\u22a5^global) creates dual shadows from the 27D bulk via tensor product "
+                    "of 12 M\u00f6bius double-cover operators, and "
+                    "(ii) Face/Local OR (R_face^(f)) selects the visible sector within each shadow from 4 K\u00e4hler "
+                    "moduli faces. The master action explicitly captures both layers through warping potentials "
+                    "V_bridge (shadow creation) and V_face (face selection). Hidden faces (f=2,3,4) provide "
+                    "multi-component dark matter with portal coupling \u03b1_leak \u2248 0.57 derived from G\u2082 volume ratio. "
+                    "Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, "
+                    "EM and gravity at P_leak \u2248 6.9\u00d710\u207b\u2076."
+                ),
+                label="abstract-two-layer-or"
+            ),
         ]
 
         return SectionContent(

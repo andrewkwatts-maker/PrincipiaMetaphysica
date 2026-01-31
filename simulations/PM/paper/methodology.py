@@ -394,6 +394,30 @@ class MethodologyV16_2(SimulationBase):
                 ],
                 label="sip-protocol"
             ),
+
+            # ================================================================
+            # Two-Layer OR Methodology
+            # ================================================================
+            ContentBlock(
+                type="heading",
+                content="Two-Layer OR Methodology",
+                level=2,
+                label="2.4"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "**Two-Layer OR Methodology**\n\n"
+                    "The theory now explicitly distinguishes two hierarchical OR processes:\n\n"
+                    "- **Layer 1 (Bridge/Global OR)**: R_\u22a5^global = \u2297_{i=1}^{12} R_{\u22a5,i} creates dual shadows "
+                    "from the 27D bulk. Warping potential V_bridge governs shadow separation.\n"
+                    "- **Layer 2 (Face/Local OR)**: R_face^(f) selects the visible sector within each shadow "
+                    "from 4 K\u00e4hler moduli faces. Warping potential V_face governs face selection.\n\n"
+                    "The operators do not commute: shadows must exist before faces can be selected. "
+                    "This hierarchical nesting is structurally necessary and geometric."
+                ),
+                label="two-layer-or-methodology"
+            ),
         ]
 
         return SectionContent(

@@ -1,0 +1,45 @@
+SUB-TOPIC 03: Face Warping Potential (V_face)
+===============================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+The face warping potential V_face^(f) governs visible face selection within each shadow (Layer 2 OR).
+It stabilizes the four Kähler moduli sectors, selecting one dominant visible face.
+
+EXPLICIT FORMULA (per face f):
+V_face^(f) = Σ_{i=1}^{4} Λ_i exp(-a_i T_i^(f)) + (T_ω²/2) exp(-T_i^(f)/T_max) + κ_f Σ_{i=1}^{4} |∇T_i^(f)|²
+
+Where:
+- T_i^(f): Kähler modulus VEV in face f (sector i)
+- T_max: Maximum VEV across faces (visible face stabilization)
+- a_i = 24/i, Λ_i ~ 6/12 (same as bridge layer)
+- T_ω = 1/√6 (shared torsion)
+- κ_f ~ 1/√6 (per-face normalization)
+
+SAMPLING STRENGTH TO HIDDEN FACES:
+α_sample^(f) = exp(-T_i^(f)/(2T_max)) · (1/√6) · (1 + ΔF_f/F₀)^{-1/2} ≈ 0.57
+
+HUMAN-LEVEL LIMIT (complete localization):
+lim_{T_i^(f) >> T_max (f=2,3,4)} V_face^(f) → 0 ⟹ hidden faces fully decoupled
+
+MODULI WAVEFUNCTION COLLAPSE:
+|Φ_M⟩ = Σ_{f=1}^{4} c_f |T^(f)⟩ →[R_face^(f)]→ |T^(f_vis)⟩
+
+KEY PROPERTIES:
+1. Exponential suppression of hidden faces as T_i^(f) >> T_max
+2. Visible face (f=1) has minimal leakage, full 4D coupling
+3. Hidden faces (f=2,3,4) have ~57% coupling strength
+4. Human-level limit is physical — we experience one bright room
+
+PROPOSED CHANGES:
+1. Add V_face formula to master action / four_face_structure.py
+2. Register face warping parameters (T_i^(f), α_sample, T_max)
+3. Compute α_sample ≈ 0.57 from geometric factors
+4. Add section content explaining Human-level localization limit
+5. Connect dark matter interpretation to hidden face coupling
+
+AFFECTED SIMULATIONS:
+- simulations/PM/geometry/four_face_structure.py
+- simulations/PM/derivations/lagrangian_master.py
+- simulations/PM/gauge/master_action.py
+- simulations/PM/cosmology/dark_energy.py (hidden face contribution)

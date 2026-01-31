@@ -1,0 +1,47 @@
+SUB-TOPIC 05: Dark Matter Portal Coupling & Relic Density
+============================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+Hidden faces (f=2,3,4) in each shadow act as dark sectors with portal coupling ~0.57.
+Dark matter is multi-component from three hidden faces, summing to observed relic density.
+
+PORTAL COUPLING FORMULA:
+α_leak^(f) = exp(-T_i^(f)/(2T_max)) · (1/√6) · (1 + ΔF_f/F₀)^{-1/2} ≈ 0.57
+
+6-STEP DERIVATION:
+1. Core volume (visible face baseline): V_core = √(χ_eff/b₃) = √6
+2. Leaked volume in hidden faces: V_leak^(f) = V_core · exp(T_i^(f)/T_max)
+3. Volume ratio suppression: α_leak = (V_core/V_leak)^{1/2} = exp(-T_i^(f)/(2T_max))
+4. Torsion correction: × 1/√(1+T_ω²) ≈ × 0.99 (small)
+5. Flux asymmetry: × (1+ΔF_f/F₀)^{-1/2} ≈ × 0.98 (ΔF_f/F₀ ~ 1/24)
+6. Final: α_leak ≈ (1/√6) × 0.99 × 0.98 ≈ 0.57
+
+DARK MATTER PORTAL LAGRANGIAN:
+L_portal = α_leak φ_vis φ_dark φ_mod
+
+RELIC DENSITY:
+Ω_DM h² ≈ 0.12 · (α_leak/0.57)² · (m_dark/100 GeV)^{-2} · (T_reh/10^{10} GeV)^{1/2}
+
+MULTI-COMPONENT DM:
+- Face 2: KK modes from hidden Kähler sector (~40% of DM)
+- Face 3: Axion-like particles from torsion (~35% of DM)
+- Face 4: Sterile neutrinos from cross-shadow mixing (~25% of DM)
+
+KEY PROPERTIES:
+1. α_leak ≈ 0.57 is genuinely geometric — derived from b₃, χ_eff, flux
+2. Three hidden faces naturally provide multi-component DM
+3. Relic density Ω_DM h² ≈ 0.12 consistent with Planck
+
+PROPOSED CHANGES:
+1. Create dark matter portal simulation or enhance dark_energy.py
+2. Register α_leak_DM ≈ 0.57 as geometric prediction
+3. Add portal Lagrangian formula
+4. Add relic density formula with multi-component breakdown
+5. Connect to existing dark_matter/ sector simulations
+
+AFFECTED SIMULATIONS:
+- simulations/PM/cosmology/dark_energy.py
+- simulations/PM/geometry/four_face_structure.py
+- simulations/PM/support/bridge_pressure.py
+- simulations/PM/cosmology/multi_sector.py

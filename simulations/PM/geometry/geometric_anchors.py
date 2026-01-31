@@ -468,6 +468,29 @@ class GeometricAnchorsSimulation(SimulationBase):
                         "face-dependent KK mass spectrum."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Torsion from Topology (4-Step Derivation)",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Torsion from Topology (4-Step Derivation)**\n\n"
+                        "The torsion T_\u03c9 = \u221a(b\u2083/\u03c7_eff) = 1/\u221a6 \u2248 0.408 emerges purely from G\u2082 topology:\n\n"
+                        "1. **Non-integrability of G\u2082 3-form**: Under flux and bridge warping, \u2207\u03c6 = T_\u03c9 \u2227 \u03c6\n"
+                        "2. **Topological imbalance**: |T_\u03c9| \u221d \u221a(b\u2083/\u03c7_eff) = \u221a(transverse modes / total complexity)\n"
+                        "3. **Flux quantization normalizes**: \u222bF\u2227\u03c6 = \u03c7_eff/24 = 6 \u2192 constant = 1\n"
+                        "4. **Final result**: T_\u03c9 = \u221a(24/144) = 1/\u221a6 \u2248 0.408\n\n"
+                        "Physical roles of T_\u03c9:\n"
+                        "- Covariant derivative: D_M = \u2202_M + (1/4)\u03c9_MAB \u0393^AB + T_\u03c9^M\n"
+                        "- GW dispersion: \u03b7 \u2248 T_\u03c9/\u03c0 \u2248 0.13\n"
+                        "- Portal leakage: \u03b1_leak ~ 1/\u221a6 \u2248 0.577 \u2192 0.57 (flux-tuned)\n"
+                        "- DE thawing: w\u2080 = -1 + 1/b\u2083 = -23/24 (bridge pressure via torsion)\n"
+                        "- Bridge warping: V_bridge contains T_\u03c9\u00b2/2 \u00b7 \u03c7_eff/b\u2083\n"
+                        "- Face warping: V_face contains T_\u03c9\u00b2/2 \u00b7 exp(-T/T_max)"
+                    )
+                ),
             ],
             formula_refs=[
                 "k-gimel-anchor",

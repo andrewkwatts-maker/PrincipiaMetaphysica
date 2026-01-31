@@ -2377,6 +2377,112 @@ class LagrangianMasterDerivation(SimulationBase):
             }
         ))
 
+        # =================================================================
+        # PART G: TWO-LAYER OR INTEGRATION (Sprint 2)
+        # =================================================================
+
+        formulas.append(Formula(
+            id="master-action-two-layer-or",
+            label="(2.1.G1)",
+            latex=r"S = \int \sqrt{-g} \Big[ R + \bar{\Psi}_P i \gamma^M (D_M + T_\omega^M) \Psi_P + |\partial \Phi_M|^2 - V(\Phi_M) + \frac{1}{24} \int F \wedge \phi + \sum R_n \bar{\psi}_n \slashed{D} \psi_n - \ln(\text{Vol}) \, dt_{\text{phys}} + V_{\text{bridge}}^{\text{(global OR)}} + \sum_{f=1}^{4} V_{\text{face}}^{(f)\text{(local OR)}} \Big]",
+            plain_text="S = integral sqrt(-g) [ R + Psi_P_bar i gamma^M (D_M + T_omega^M) Psi_P + |d Phi_M|^2 - V(Phi_M) + (1/24) F wedge phi + sum R_n psi_n_bar D_slash psi_n - ln(Vol) dt_phys + V_bridge^(global OR) + sum V_face^(f)(local OR) ]",
+            category="geometric",
+            description=(
+                "Full 27D master action with explicit two-layer OR warping potentials. "
+                "V_bridge governs shadow creation (Layer 1), V_face governs face selection "
+                "(Layer 2). All terms sterile."
+            ),
+            inputParams=["constants.M_STAR", "geometry.D_bulk"],
+            outputParams=[],
+            derivation={
+                "steps": [
+                    "Start from the 27D master action S_27 with Einstein-Hilbert gravity R, Pneuma spinor kinetic and torsion coupling, moduli kinetic and potential terms, and flux integral",
+                    "Add the KK tower fermion sum over spectral residues R_n with Dirac kinetic terms for each mode",
+                    "Include the volume breathing term -ln(Vol) dt_phys that tracks the dynamical evolution of the internal volume",
+                    "Introduce V_bridge^(global OR): the bridge potential that governs shadow creation and separation (Layer 1 of the two-layer OR hierarchy)",
+                    "Introduce sum_f V_face^(f)(local OR): the per-face potential that governs face selection within each shadow (Layer 2 of the two-layer OR hierarchy)",
+                    "The two-layer structure is hierarchical: bridge OR must act first to create shadows, then face OR selects the visible face within each shadow"
+                ],
+                "method": "Two-layer OR extension of the 27D master action",
+                "parentFormulas": ["master-action-26d-full", "v22-distributed-or-reduction"]
+            },
+            terms={
+                "R": "27D Ricci scalar (Einstein-Hilbert gravity)",
+                "Psi_P": "Pneuma spinor field with torsion coupling T_omega^M",
+                "Phi_M": "Moduli scalar fields with potential V(Phi_M)",
+                "F wedge phi": "G-flux integral through the G2 associative 3-form",
+                "R_n": "Spectral residue dressing factor for KK mode n",
+                "V_bridge^(global OR)": "Bridge OR potential: controls shadow creation/separation (Layer 1)",
+                "V_face^(f)(local OR)": "Face OR potential: controls face selection per shadow (Layer 2)"
+            }
+        ))
+
+        formulas.append(Formula(
+            id="reduced-lagrangian-13d",
+            label="(2.1.G2)",
+            latex=r"S_{13D} = \int \sqrt{-g_{13}} \left[ R_{13} + \bar{\Psi}_P i \gamma^m (\partial_m + T_\omega^m) \Psi_P + V_{\text{face}}^{(f)\text{(local OR)}} \right]",
+            plain_text="S_13D = integral sqrt(-g_13) [ R_13 + Psi_P_bar i gamma^m (d_m + T_omega^m) Psi_P + V_face^(f)(local OR) ]",
+            category="geometric",
+            description=(
+                "13D per-shadow Lagrangian -- after bridge/global OR integrates out bridge "
+                "directions. Each shadow inherits face OR potential."
+            ),
+            inputParams=[],
+            outputParams=[],
+            derivation={
+                "steps": [
+                    "Begin with the full 27D master action including both OR layers",
+                    "Apply bridge OR (V_bridge^(global OR)): this integrates out the bridge directions, creating two 13D shadows",
+                    "Each 13D shadow inherits its own copy of the face OR potential V_face^(f)(local OR)",
+                    "The 13D per-shadow action retains gravity R_13, the Pneuma spinor with torsion coupling, and the face OR potential",
+                    "Bridge directions are frozen at their OR-selected values; only face degrees of freedom remain dynamical"
+                ],
+                "method": "Bridge OR dimensional reduction: 27D to 13D per shadow",
+                "parentFormulas": ["master-action-two-layer-or"]
+            },
+            terms={
+                "R_13": "13D Ricci scalar on the per-shadow spacetime",
+                "Psi_P": "Pneuma spinor restricted to the 13D shadow",
+                "T_omega^m": "Torsion connection inherited from the 27D bulk",
+                "V_face^(f)(local OR)": "Face OR potential inherited from the master action (Layer 2)"
+            }
+        ))
+
+        formulas.append(Formula(
+            id="reduced-lagrangian-4d",
+            label="(2.1.G3)",
+            latex=r"\mathscr{L}_{4D} = -\frac{M_{\text{Pl}}^2}{2} R_4 + \bar{\chi} i \slashed{D} \chi + |D_\mu \phi|^2 - V(\phi) + \frac{1}{4} F_{\mu\nu}^a F^{a\mu\nu} + y_f \bar{\psi} \phi \psi + \Lambda",
+            plain_text="L_4D = -(M_Pl^2/2) R_4 + chi_bar i D_slash chi + |D_mu phi|^2 - V(phi) + (1/4) F_munu^a F^a_munu + y_f psi_bar phi psi + Lambda",
+            category="geometric",
+            description=(
+                "4D effective Lagrangian -- after face/local OR in dominant visible face. "
+                "M_Pl^2 = M_*^{11} Vol(V_7), Lambda = (integral F wedge phi)^2 / Vol."
+            ),
+            inputParams=["constants.M_STAR"],
+            outputParams=[],
+            derivation={
+                "steps": [
+                    "Begin with the 13D per-shadow Lagrangian after bridge OR",
+                    "Apply face OR (V_face^(f)(local OR)): this selects the dominant visible face from the 4 faces of the TCS G2 manifold",
+                    "Perform G2 Kaluza-Klein reduction on the selected face: 13D -> 4D, compactifying the 7D G2 internal space V_7",
+                    "The 4D Planck mass emerges from the volume: M_Pl^2 = M_*^{11} Vol(V_7)",
+                    "The cosmological constant arises from flux: Lambda = (integral F wedge phi)^2 / Vol",
+                    "The resulting 4D effective theory is the Standard Model (gauge + Higgs + Yukawa) plus GR plus dark energy"
+                ],
+                "method": "Face OR followed by G2 Kaluza-Klein reduction: 13D to 4D",
+                "parentFormulas": ["reduced-lagrangian-13d", "kk-ansatz-7-4"]
+            },
+            terms={
+                "M_Pl": "4D Planck mass, derived from M_*^{11} Vol(V_7)",
+                "R_4": "4D Ricci scalar (Einstein gravity)",
+                "chi": "4D fermion fields from Pneuma spinor decomposition",
+                "phi": "Higgs doublet from moduli sector",
+                "F_munu^a": "Standard Model gauge field strengths (SU(3) x SU(2) x U(1))",
+                "y_f": "Yukawa couplings from G2 trilinear overlaps",
+                "Lambda": "Cosmological constant from flux squared over volume"
+            }
+        ))
+
         return formulas
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -2715,6 +2821,72 @@ class LagrangianMasterDerivation(SimulationBase):
                         "- Consciousness I/O: 12 gates (6 min for biological systems)"
                     )
                 ),
+                # =============================================================
+                # Part G: Two-Layer OR Integration (Sprint 2)
+                # =============================================================
+                ContentBlock(
+                    type="heading",
+                    level=3,
+                    content="Two-Layer OR Integration: Master Action with Hierarchical Warping"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The master action now explicitly captures both OR layers of the PM "
+                        "framework. V_bridge^(global OR) controls shadow creation and separation, "
+                        "implementing the first (bridge/global) layer of objective reduction. "
+                        "V_face^(f)(local OR) controls face selection per shadow, implementing "
+                        "the second (face/local) layer. These two potentials are hierarchically "
+                        "nested: bridge OR must act first to create the dual shadows, and only "
+                        "then can face OR select the visible face within each shadow."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="master-action-two-layer-or",
+                    label="(2.1.G1)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The reduction chain proceeds as follows: 27D (full bulk with both OR "
+                        "layers) reduces to 13D per shadow via bridge OR, then to 4D via face "
+                        "OR combined with G2 Kaluza-Klein compactification. At each step, the "
+                        "relevant OR potential integrates out the corresponding degrees of "
+                        "freedom, leaving the lower-dimensional effective theory."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="reduced-lagrangian-13d",
+                    label="(2.1.G2)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The 13D per-shadow Lagrangian inherits the face OR potential from the "
+                        "master action. After face OR selects the dominant visible face, G2 "
+                        "compactification yields the 4D effective Lagrangian: the Standard Model "
+                        "coupled to Einstein gravity plus a cosmological constant from flux. "
+                        "The 4D Planck mass M_Pl^2 = M_*^{11} Vol(V_7) and the cosmological "
+                        "constant Lambda = (integral F wedge phi)^2 / Vol are both determined "
+                        "by the internal geometry, with no free parameters."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="reduced-lagrangian-4d",
+                    label="(2.1.G3)"
+                ),
+                ContentBlock(
+                    type="list",
+                    items=[
+                        "27D master action: full bulk with V_bridge^(global OR) + V_face^(f)(local OR)",
+                        "27D -> 13D: bridge OR integrates out bridge directions, creating dual shadows",
+                        "13D per-shadow: inherits face OR potential V_face^(f)(local OR)",
+                        "13D -> 4D: face OR selects visible face, then G2 KK yields SM + GR + Lambda",
+                    ]
+                ),
             ],
             formula_refs=[
                 "vielbein-metric-relation",
@@ -2735,6 +2907,10 @@ class LagrangianMasterDerivation(SimulationBase):
                 "racetrack-moduli-potential",
                 "torsion-correction-term",
                 "spectral-residue-dressing",
+                # Part G: Two-Layer OR Integration
+                "master-action-two-layer-or",
+                "reduced-lagrangian-13d",
+                "reduced-lagrangian-4d",
             ],
             param_refs=[
                 "derivations.vielbein_rank",

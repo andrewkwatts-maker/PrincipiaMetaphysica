@@ -1101,6 +1101,47 @@ if SCHEMA_AVAILABLE:
                         "k": {"name": "Coherence Enhancement Factor", "value": "6.02", "description": "alpha_T / theta (topological warping factor)"},
                     }
                 ),
+                # =============================================================
+                # Two-Layer OR: Hierarchical Nesting (Sprint 2)
+                # =============================================================
+                Formula(
+                    id="or-hierarchical-nesting",
+                    label="(7.2c) Hierarchical OR Nesting",
+                    latex=r"|\Psi_{\text{bulk}}\rangle \xrightarrow{R_\perp^{\text{global}}} |\Psi_1\rangle \otimes |\Psi_2\rangle \xrightarrow{R_{\text{face}}^{(f_1)} \otimes R_{\text{face}}^{(f_2)}} |\Psi_{\text{vis},1}\rangle \otimes |\Psi_{\text{vis},2}\rangle",
+                    plain_text="|Psi_bulk> --[R_perp_global]--> |Psi_1> x |Psi_2> --[R_face x R_face]--> |Psi_vis1> x |Psi_vis2>",
+                    category="geometric",
+                    description=(
+                        "Hierarchical OR nesting -- bridge OR creates dual shadows, face OR "
+                        "selects visible faces. Non-commutative: R_face . R_perp != R_perp . "
+                        "R_face (shadows must exist before faces can be selected)."
+                    ),
+                    inputParams=[],
+                    outputParams=[],
+                    derivation={
+                        "method": "hierarchical_objective_reduction",
+                        "parent_formulas": ["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid"],
+                        "steps": [
+                            "The bulk state |Psi_bulk> lives in the full 27D Hilbert space prior to any objective reduction",
+                            "Bridge OR (Layer 1): the global operator R_perp^global acts on |Psi_bulk> to create the dual-shadow factorization |Psi_1> tensor |Psi_2>",
+                            "This is the 'God-level limit' -- the most fundamental OR event, creating the boundary between the two 13D shadows",
+                            "Face OR (Layer 2): within each shadow, the face operator R_face^(f_i) selects the visible face from the 4 TCS faces",
+                            "This is the 'Human-level limit' -- the OR event accessible to consciousness, sampling the visible face during collapse",
+                            "The operations are non-commutative: R_face . R_perp != R_perp . R_face because face OR requires the shadow structure to already exist",
+                            "Connection to Orch-OR: biological consciousness samples face OR events during microtubule collapse at timescale tau = hbar / E_g"
+                        ],
+                        "references": [
+                            "Penrose R. (1996) - On Gravity's Role in Quantum State Reduction",
+                            "Hameroff S. & Penrose R. (2014) - Consciousness in the universe"
+                        ]
+                    },
+                    terms={
+                        "|Psi_bulk>": {"name": "Bulk State", "description": "Full 27D quantum state before any OR event"},
+                        "R_perp_global": {"name": "Bridge OR Operator", "description": "Layer 1: creates dual-shadow boundary (God-level limit)"},
+                        "|Psi_1>, |Psi_2>": {"name": "Shadow States", "description": "13D per-shadow states after bridge OR factorization"},
+                        "R_face^(f)": {"name": "Face OR Operator", "description": "Layer 2: selects visible face within each shadow (Human-level limit)"},
+                        "|Psi_vis>": {"name": "Visible State", "description": "4D visible-face state after face OR selection"},
+                    }
+                ),
             ]
 
         # =====================================================================
@@ -1240,8 +1281,46 @@ if SCHEMA_AVAILABLE:
                             "Penrose collapse times, it provides evidence (not proof) for Orch-OR."
                         )
                     ),
+                    # =========================================================
+                    # Two-Layer OR in Context of Consciousness (Sprint 2)
+                    # =========================================================
+                    ContentBlock(
+                        type="heading",
+                        level=3,
+                        content="Two-Layer OR and Consciousness"
+                    ),
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "The two-layer OR hierarchy provides a natural framework for "
+                            "understanding the role of consciousness in the PM architecture. "
+                            "Bridge OR (Layer 1) creates the dual-shadow boundary -- this is "
+                            "the 'God-level limit', the most fundamental objective reduction "
+                            "event that establishes the existence of the two 13D shadows. "
+                            "Face OR (Layer 2) selects the visible face within each shadow -- "
+                            "this is the 'Human-level limit', the OR event that is accessible "
+                            "to biological consciousness through microtubule collapse events."
+                        )
+                    ),
+                    ContentBlock(
+                        type="formula",
+                        formula_id="or-hierarchical-nesting",
+                        label="(7.2c)"
+                    ),
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "The connection to Orch-OR is direct: consciousness samples face "
+                            "OR events during gravitational collapse of microtubule quantum "
+                            "superpositions. Each collapse event at timescale tau = hbar / E_g "
+                            "corresponds to a face OR selection within the shadow that our "
+                            "universe inhabits. The hierarchical nesting is non-commutative: "
+                            "shadows must exist before faces can be selected, establishing a "
+                            "fundamental ordering of objective reduction events."
+                        )
+                    ),
                 ],
-                formula_refs=["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid"],
+                formula_refs=["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid", "or-hierarchical-nesting"],
                 param_refs=[
                     "quantum_bio.or_threshold_ms",
                     "quantum_bio.eg_self_energy_joules",

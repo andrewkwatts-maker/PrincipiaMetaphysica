@@ -1,0 +1,46 @@
+SUB-TOPIC 04: Updated Master Lagrangian (Both OR Layers)
+==========================================================
+Source: TwoLayerOR And Dark Forces.txt
+
+PROPOSAL SUMMARY:
+The master action must now explicitly distinguish both OR layers by including separate
+warping potential terms for bridge and face reduction.
+
+FULL 27D BULK ACTION:
+S = ∫_{M^27} √(-g) [ R + Ψ̄_P iγ^M(D_M + T_ω^M)Ψ_P + |∂Φ_M|² - V(Φ_M)
+    + (1/24)∫F∧φ + Σ_{n=1}^{125} R_n ψ̄_n D̸ψ_n - ln(Vol(V₇)) dt_phys
+    + V_bridge^(global OR) + Σ_{f=1}^{4} V_face^(f)(local OR) ]
+
+Where (unchanged shared terms):
+- R: 27D Ricci scalar (emergent from g_MN = ⟨Ψ_P Γ_MN Ψ_P⟩)
+- D_M = ∂_M + (1/4)ω_MAB Γ^AB + T_ω^M (covariant derivative with torsion T_ω ≈ 1/√6)
+- V(Φ_M) = Σ_{i=1}^{4} Λ_i exp(-a_i Φ_M) + Λ₀ (racetrack, a_i = b₃/i)
+- Flux: ∫F∧φ = χ_eff/24 = 6
+- Residues: R_n = exp(-λ_n/b₃) (125 constants from G₂ Laplacian)
+- Thermal time: -ln(Vol) dt_phys
+
+NEW TERMS:
+- V_bridge^(global OR): Controls shadow creation/separation (God limit)
+- Σ V_face^(f)(local OR): Controls face selection per shadow (Human limit)
+
+REDUCED LAGRANGIANS (after each OR layer):
+
+13D per-shadow (after bridge OR):
+S_13D = ∫√(-g_13) [R_13 + Ψ̄_P iγ^m(∂_m + T_ω^m)Ψ_P + V_face^(f)(local OR)]
+
+4D effective (after face OR in dominant face):
+L_4D = -(M_Pl²/2)R_4 + χ̄ iD̸χ + |D_μ φ|² - V(φ) + (1/4)F_μν^a F^aμν + y_f ψ̄φψ + Λ + ...
+with: M_Pl² = M_*^11 Vol(V₇), Λ = (∫F∧φ)²/Vol ≈ 10^{-52} m^{-2}
+
+PROPOSED CHANGES:
+1. Update lagrangian_master.py to include V_bridge + V_face terms
+2. Add 13D and 4D reduced Lagrangian formulas
+3. Register the full master action with both OR layers
+4. Add section content explaining the hierarchical reduction chain
+5. Ensure all terms remain sterile (no free parameters)
+
+AFFECTED SIMULATIONS:
+- simulations/PM/derivations/lagrangian_master.py (primary)
+- simulations/PM/gauge/master_action.py (secondary)
+- simulations/PM/derivations/gauge_sector_complete.py
+- simulations/PM/derivations/gr_spacetime.py

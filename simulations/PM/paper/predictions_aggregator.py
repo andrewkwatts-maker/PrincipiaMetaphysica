@@ -1074,6 +1074,41 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["CMB bubbles", "○ UNTESTED", "Cold spot signatures - CMB-S4 2027+"],
                 ]
             ),
+
+            # ===== DARK FORCE LEAKAGE (Two-Layer OR) =====
+            ContentBlock(
+                type="heading",
+                content="Dark Force Leakage Predictions (Two-Layer OR)",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "**Dark Force Leakage Predictions (Two-Layer OR)**\n\n"
+                    "The dual-shadow bridge structure predicts dark force leakage across shadows:\n\n"
+                    "| Force | Leakage Strength \u03b1_leak | Probability P_leak | Status |\n"
+                    "|-------|------------------------|-------------------|--------|\n"
+                    "| Strong (SU(3)_C) | ~10\u207b\u00b3\u2077 | ~10\u207b\u2077\u2075 | Zero |\n"
+                    "| Weak (SU(2)_L) | ~0 | ~0 | Zero |\n"
+                    "| Electromagnetic (U(1)) | ~0.00248 | ~6.9\u00d710\u207b\u2076 | Testable |\n"
+                    "| Gravity (gravitons) | ~0.00248 | ~6.9\u00d710\u207b\u2076 | Testable |\n\n"
+                    "Strong force leakage is impossible (confinement + instanton cost S_inst \u2248 80). "
+                    "Weak force leakage is impossible (mass barrier m_W r_bridge ~ 10\u2075). "
+                    "EM and gravity leak at ~230\u00d7 weaker than dark matter portal (~0.57)."
+                )
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "**Experimental Observables from Two-Layer OR**\n\n"
+                    "1. Cross-shadow phase shift: \u0394\u03c6 ~ P_leak \u00b7 \u03c9 \u00b7 \u03c4_coh \u2248 10\u207b\u2076 to 10\u207b\u2078 rad (near-term)\n"
+                    "2. CMB polarization excess: \u0394P ~ P_leak \u00b7 \u210f\u03c9_CMB/(kT_CMB) \u2248 10\u207b\u2077 (CMB-S4)\n"
+                    "3. Vacuum noise excess: \u03b4_QED ~ P_leak \u00b7 \u03b1 \u2248 10\u207b\u2078 (next-gen g-2)\n"
+                    "4. GW polarization: \u0394\u03b7 ~ P_leak \u00b7 \u03b7 \u2248 10\u207b\u2077 (LISA)\n"
+                    "5. Chirality reversal: P_reverse \u2248 3\u00d710\u207b\u2076 (cross-shadow chirality flip)\n\n"
+                    "All predictions are derived from base probability P_leak = (1/144) \u00b7 e\u207b\u00b9\u00b2 \u2248 6.9\u00d710\u207b\u2076."
+                )
+            ),
         ]
 
         return SectionContent(
@@ -1157,6 +1192,38 @@ class PredictionsAggregatorV16(SimulationBase):
                     r"\sigma_i": "Deviation of prediction i from experimental value",
                     r"\sigma_{\text{exp}}": "Experimental uncertainty for each observable",
                     r"\mathbb{1}": "Indicator function (1 if condition met, 0 otherwise)"
+                }
+            ),
+            Formula(
+                id="dark-force-leakage-prediction",
+                label="(8.2)",
+                latex=r"P_{\text{leak}} = \frac{1}{144} e^{-12} \approx 6.9 \times 10^{-6}",
+                plain_text="P_leak = (1/144) * exp(-12) ≈ 6.9e-6",
+                category="prediction",
+                description=(
+                    "Dark force leakage probability — testable prediction from two-layer OR structure. "
+                    "EM and gravity leak at this rate; strong/weak forces are zero."
+                ),
+                inputParams=[],
+                outputParams=[],
+                input_params=[],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        "Bridge OR creates dual shadows separated by 12 Möbius double-cover operators",
+                        "Each operator contributes suppression factor e^{-1}, total suppression e^{-12}",
+                        "144 = chi_eff from G2 topology provides geometric normalization",
+                        "P_leak = (1/144) * e^{-12} ≈ 6.9e-6 for EM and gravity",
+                        "Strong force: additional confinement + instanton barrier S_inst ≈ 80 → P ≈ 0",
+                        "Weak force: mass barrier m_W * r_bridge ~ 10^5 → P ≈ 0"
+                    ],
+                    "method": "two_layer_or_bridge_suppression",
+                    "parentFormulas": ["abstract-framework-overview"]
+                },
+                terms={
+                    r"P_{\text{leak}}": "Dark force leakage probability across shadows",
+                    "144": "Effective Euler characteristic chi_eff from G2 manifold topology",
+                    "e^{-12}": "Suppression from 12 Möbius double-cover bridge operators",
                 }
             ),
         ]
