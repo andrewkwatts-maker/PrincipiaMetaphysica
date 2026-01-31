@@ -1060,10 +1060,15 @@ if SCHEMA_AVAILABLE:
                 subsection_id="7.3",
                 title="Decoherence Protection Mechanisms (Critical Analysis)",
                 abstract=(
-                    "Analysis of mechanisms proposed to protect quantum coherence "
-                    "in warm biological systems. Debye shielding, G2 topology, and "
-                    "Frohlich condensation together provide ~10^6-10^8 protection, "
-                    "but 10^11 is required. This represents a significant gap."
+                    "Critical analysis of mechanisms proposed to protect quantum "
+                    "coherence in warm biological systems at T=310K. Three mechanisms "
+                    "are evaluated: (1) Debye shielding (~10^2 protection), "
+                    "(2) G2 topological confinement (~10^2-10^3), and (3) Frohlich "
+                    "condensation (~10^3-10^5 if achieved). Combined: ~10^6-10^8, "
+                    "but ~10^11 is required. Critically, Frohlich condensation is "
+                    "undermined by the energy ratio R = hbar*omega_F/(k_B*T) = 0.15 "
+                    "< 1, meaning thermal fluctuations at 310K dominate over the "
+                    "THz excitation energy, preventing robust condensate formation."
                 ),
                 content_blocks=[
                     ContentBlock(
@@ -1097,9 +1102,17 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "Standard physics predicts decoherence at T=310K occurs in "
-                            "tau_dec ~ 10^-13 s. Orch-OR requires tau ~ 10^-2 s (25ms for "
-                            "gamma oscillations). This is a factor of 10^11 enhancement needed."
+                            "Standard physics (Tegmark 2000) predicts decoherence at T=310K "
+                            "occurs in tau_dec ~ 10^-13 s for unshielded biological superpositions. "
+                            "Orch-OR requires tau ~ 10^-2 s (25ms gamma oscillation timescale). "
+                            "This demands a protection factor of ~10^11. Of the three mechanisms "
+                            "evaluated, Frohlich condensation offers the largest potential gain "
+                            "but faces a fundamental thermodynamic barrier: the energy ratio "
+                            "R = hbar*omega_F/(k_B*T) = 0.15 << 1 at 310K, meaning thermal "
+                            "energy k_B*T vastly exceeds the Frohlich excitation energy "
+                            "hbar*omega_F. Effective condensation requires R >> 1, which "
+                            "would need either much lower temperatures or much higher "
+                            "characteristic frequencies than the ~1 THz observed in tubulin."
                         )
                     ),
                     ContentBlock(
@@ -1132,8 +1145,13 @@ if SCHEMA_AVAILABLE:
                     plain_text="V(r) = (Q/4*pi*eps_0*eps_r*r) * exp(-r/lambda_D), lambda_D ~ 0.7 nm",
                     category="SPECULATIVE",
                     description=(
-                        "Debye-Huckel screening potential. At ionic strength I~150mM, "
-                        "lambda_D~0.7nm provides ~10^2 protection factor."
+                        "Debye-Huckel screening potential: ordered water and ions form "
+                        "a screening shell around microtubules with Debye length "
+                        "lambda_D ~ 0.7 nm at physiological ionic strength I ~ 150 mM. "
+                        "The exponential decay exp(-r/lambda_D) attenuates external "
+                        "electromagnetic perturbations, providing ~10^2 protection. "
+                        "This is the best-established mechanism but contributes the "
+                        "smallest enhancement factor."
                     ),
                     input_params=["constants.epsilon_0", "constants.k_B", "constants.T_brain"],
                     output_params=["quantum_bio.debye_protection_factor"]
@@ -1145,8 +1163,13 @@ if SCHEMA_AVAILABLE:
                     plain_text="P_G2 = (21/14) * exp(2*pi*0.12) * (144/24) * k_gimel ~ 240",
                     category="SPECULATIVE",
                     description=(
-                        "G2 topological protection from holonomy restriction, cycle isolation, "
-                        "flux quantization, and k_gimel enhancement. Provides ~10^2 protection."
+                        "G2 topological protection factor combining four mechanisms: "
+                        "(i) holonomy restriction dim(SO(7))/dim(G2) = 21/14 = 3/2, which "
+                        "limits available decoherence channels; (ii) cycle isolation "
+                        "exp(2*pi*d/R) from TCS neck separation d/R = 0.12; (iii) flux "
+                        "quantization providing topological stability chi_eff/b3 = 144/24 = 6; "
+                        "(iv) k_gimel enhancement. Combined: ~10^2-10^3 protection. "
+                        "SPECULATIVE: applying G2 topology to biological systems is unverified."
                     ),
                     input_params=["topology.elder_kads", "topology.mephorash_chi", "topology.k_gimel"],
                     output_params=["quantum_bio.g2_protection_factor"]
@@ -1158,8 +1181,16 @@ if SCHEMA_AVAILABLE:
                     plain_text="P_F ~ sqrt(N) to N for N~10^9 oscillators, omega_F~THz",
                     category="SPECULATIVE",
                     description=(
-                        "Frohlich coherent dipole oscillation. CAVEAT: Energy ratio R~0.15<1 "
-                        "means thermal fluctuations dominate. Protection ~10^3-10^5 if achieved."
+                        "Frohlich coherent dipole oscillation model. The energy ratio "
+                        "R = hbar*omega_F/(k_B*T) = 0.15 is significantly less than 1, "
+                        "meaning thermal energy (k_B*T = 4.3e-21 J at 310K) exceeds the "
+                        "Frohlich excitation energy (hbar*omega_F = 6.6e-22 J at 1 THz) "
+                        "by a factor of ~6.5. This inhibits formation of a coherent "
+                        "condensate: effective Frohlich protection requires R >> 1 so that "
+                        "quantum coherence energy dominates thermal disruption. If R were "
+                        "sufficiently large (e.g. R > 5), protection factors of 10^3-10^5 "
+                        "might be achievable for N ~ 10^9 oscillators. At biological "
+                        "temperatures, this condition is not met."
                     ),
                     input_params=["constants.hbar", "constants.k_B", "constants.T_brain"],
                     output_params=["quantum_bio.frohlich_protection_factor"]

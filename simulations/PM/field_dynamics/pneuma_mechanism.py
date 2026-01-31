@@ -561,7 +561,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The quartic interaction term λ(Ψ̄Ψ)² combined with the orthogonal time coupling g·t_ortho leads to a self-consistent gap equation for the Pneuma condensate. Using mean-field approximation, we derive the condensate mass gap Δ:"
+                content="The quartic interaction term lambda(Psi-bar Psi)^2 combined with the orthogonal time coupling g*t_ortho leads to a self-consistent gap equation for the Pneuma condensate. This mechanism is directly analogous to the gap equation in Bardeen-Cooper-Schrieffer (BCS) theory of superconductivity (Bardeen, Cooper, Schrieffer, Phys. Rev. 108, 1175, 1957): in both cases, an attractive interaction between fermions drives a non-perturbative condensate that spontaneously breaks a continuous symmetry and generates a mass gap. The key difference is that BCS pairs electrons near the Fermi surface via phonon exchange, while here the Pneuma field self-pairs via the quartic coupling lambda and the orthogonal time coupling g*t_ortho. Using mean-field approximation, we derive the condensate mass gap Delta:"
             ),
             ContentBlock(
                 type="heading",
@@ -686,6 +686,12 @@ class PneumaMechanismV16(SimulationBase):
                 callout_type="info",
                 title="Neural Gate Dynamics",
                 content="The 12 bridge pairs create 12 parallel channels for consciousness flow: y_{1i} coordinates aggregate to form the normal shadow (perception input), y_{2i} coordinates aggregate to form the mirror shadow (intuition output). Each shadow maintains independent G2 compactification while being connected through the OR reduction mechanism."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Observational Signatures of Neural Gate I/O",
+                content="The neural gate mechanism predicts specific signatures distinguishable from standard cosmology: (1) CMB non-Gaussianity: the 12-channel structure imprints a characteristic 12-fold symmetry in higher-order correlation functions (trispectrum), potentially detectable by next-generation CMB experiments (CMB-S4, LiteBIRD). (2) Gravitational wave spectrum: the bridge pair dynamics during reheating produce a stochastic GW background with spectral features at frequencies corresponding to the bridge pair mass scale, targetable by LISA and pulsar timing arrays. (3) Dark sector self-interactions: mirror sector particles inherit the neural gate coupling structure, predicting a specific dark matter self-interaction cross-section sigma/m ~ 0.1-10 cm^2/g observable in galaxy cluster mergers (Bullet Cluster class events)."
             ),
             ContentBlock(
                 type="heading",
@@ -844,7 +850,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout."
+                content="The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout. Testability concentrates at Levels 3 and 4: the f(R,T,tau) modified gravity coefficients (alpha_F, beta_F) produce specific deviations from GR testable via gravitational wave dispersion (LIGO/Virgo/KAGRA) and binary pulsar timing, while the Mashiach attractor potential predicts w_eff = -0.853 measurable by DESI and Euclid. Level 2 predicts KK mode signatures accessible at future 100 TeV colliders if M_KK < 10 TeV. Level 1 is not directly testable but provides the mathematical consistency constraints (anomaly cancellation, modular invariance) that fix all lower-level parameters."
             ),
             ContentBlock(
                 type="heading",

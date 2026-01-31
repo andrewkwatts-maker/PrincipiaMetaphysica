@@ -91,6 +91,19 @@ class AvogadroV17(SimulationBase):
                     "N_A_manifest = N_A_bulk / (1+epsilon) recovers the CODATA exact "
                     "value to full numerical precision."
                 )),
+                ContentBlock(type="paragraph", content=(
+                    "Physical justification for the inverse cubic projection: In Kaluza-Klein "
+                    "theory, a quantity that counts discrete objects per unit 3-volume transforms "
+                    "under dimensional reduction as n_3D = n_bulk / V_internal, where V_internal "
+                    "is the volume of the compactified dimensions. The Decad-Cubic Engine parameterises "
+                    "this volume ratio as (1 + epsilon), where epsilon = 1/28800 encodes the tiny "
+                    "fractional excess of the bulk volume over the manifest 3-volume. Since N_A "
+                    "counts particles per mole (an intrinsically 3D volumetric concept), the bulk "
+                    "value must be DIVIDED by (1 + epsilon) to recover the count as measured by a "
+                    "3D observer. This is the same logic that makes mass density transform as "
+                    "rho_3D = rho_bulk / (1 + epsilon): extensive quantities dilute when projected "
+                    "from higher to lower dimensions."
+                )),
             ]
         )
 
@@ -102,7 +115,15 @@ class AvogadroV17(SimulationBase):
                 latex=r"N_A = N_{A,bulk}/(1+\epsilon)",
                 plain_text="N_A = N_A_bulk / (1+epsilon)",
                 category="DERIVED",
-                description="Avogadro number contracts via inverse cubic",
+                description=(
+                    "Avogadro number contracts via inverse cubic projection from the bulk "
+                    "Pleroma to 3D manifest space. The physical basis is that N_A counts "
+                    "discrete particles per mole -- an extensive quantity that dilutes when "
+                    "projected from higher to lower dimensions, analogous to how mass density "
+                    "decreases when a volume expands. The projection factor 1/(1+epsilon) "
+                    "with epsilon = 1/28800 encodes the fractional volume excess of the "
+                    "compactified internal dimensions."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine with epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",

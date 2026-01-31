@@ -3,30 +3,51 @@ S8 Tension Resolution via Dynamical Dark Energy v16.1
 =======================================================
 
 Analyzes the S8 tension between weak lensing surveys and CMB predictions in the
-context of PM's dynamical dark energy with w₀ = -0.9583. The S8 parameter quantifies
-matter clustering amplitude: S8 ≡ σ8 × (Ωm/0.3)^0.5.
+context of PM's dynamical dark energy with w0 = -0.9583. The S8 parameter quantifies
+matter clustering amplitude: S8 = sigma_8 x (Omega_m/0.3)^0.5.
 
 The tension arises because:
-- Planck CMB (early universe): S8 = 0.832 ± 0.013
-- KiDS-1000 weak lensing (late time): S8 = 0.766 ± 0.020
-- DES Y3 weak lensing (late time): S8 = 0.776 ± 0.017
-- DESI 2025 (BAO+CMB): σ8 = 0.827 ± 0.011
+- Planck CMB (early universe): S8 = 0.832 +/- 0.013
+- KiDS-1000 weak lensing (late time): S8 = 0.766 +/- 0.020
+- DES Y3 weak lensing (late time): S8 = 0.776 +/- 0.017
+- HSC-Y3 weak lensing (late time): S8 = 0.769 +0.031/-0.034
+- DESI 2024 (BAO+CMB): sigma_8 = 0.827 +/- 0.011
 
 Key Physics:
-PM's w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 is between ΛCDM (w=-1) and quintessence (w>-1).
-Since -0.9583 > -1, it provides LESS acceleration than ΛCDM at early times,
-allowing MORE structure growth. This actually predicts HIGHER S8 than ΛCDM,
+PM's w0 = -1 + 1/b3 = -23/24 ~ -0.9583 is between LCDM (w=-1) and quintessence (w>-1).
+Since -0.9583 > -1, it provides LESS acceleration than LCDM at early times,
+allowing MORE structure growth. This actually predicts HIGHER S8 than LCDM,
 which is opposite to what's needed to resolve the tension.
 
-However, the time evolution w_a ≈ 0.29 means w becomes more negative at high z,
+However, the time evolution w_a ~ 0.29 means w becomes more negative at high z,
 providing early dark energy that can suppress growth. The net effect depends on
 the integrated expansion history.
 
 Resolution Strategy:
-1. Quantify PM's prediction given DESI σ8 = 0.827 ± 0.011
+1. Quantify PM's prediction given DESI sigma_8 = 0.827 +/- 0.011
 2. Compare to weak lensing measurements to assess agreement
-3. Document that PM predicts S8 ≈ 0.837, which is between Planck (0.832) and
-   weak lensing (0.77), representing a modest improvement over ΛCDM
+3. Document that PM predicts S8 ~ 0.837, which is between Planck (0.832) and
+   weak lensing (0.77), representing a modest improvement over LCDM
+
+ERROR BUDGET AND SYSTEMATIC UNCERTAINTIES:
+==========================================
+The PM prediction S8_PM ~ 0.837 has an error budget from three sources:
+1. STATISTICAL: sigma_8 measurement uncertainty (+/- 0.011 from DESI) propagated
+   through S8 = sigma_8 * (Omega_m/0.3)^0.5, giving delta_S8 ~ +/- 0.011
+2. OMEGA_M: matter density uncertainty (+/- 0.005) contributes delta_S8 ~ +/- 0.008
+3. GROWTH SUPPRESSION: the ~0.6% PM correction (beta ~ 0.994) is much smaller
+   than the ~1.3% statistical uncertainty, meaning the PM prediction is
+   indistinguishable from LCDM within current error bars
+
+Weak lensing measurements are also subject to systematic uncertainties:
+- Baryonic feedback: hydrodynamical effects on small-scale power spectrum
+- Intrinsic alignments: galaxy shape correlations not from lensing
+- Photometric redshift errors: bias in source galaxy redshift estimates
+- Shear calibration: multiplicative bias in shape measurement
+
+These systematics are being actively addressed by Stage-IV surveys (Rubin/LSST,
+Euclid, Roman) which will reduce S8 uncertainty to ~0.005, potentially
+distinguishing PM's 0.6% suppression from LCDM.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -113,11 +134,12 @@ class S8SuppressionV16(SimulationBase):
             domain="cosmology",
             title="S8 Tension Resolution via Dynamical Dark Energy",
             description=(
-                "Resolves S8 tension between CMB (Planck) and weak lensing "
-                "(KiDS-1000, DES Y3) through PM's w₀ = -1 + 1/b₃ = -23/24 dark energy. "
-                "Dynamical dark energy with w₀ > -1 modifies the integrated expansion "
-                "history, yielding a growth suppression factor beta ≈ 0.994 (~0.6% "
-                "reduction relative to LCDM) at the effective weak lensing redshift z=0.5."
+                "Analyzes S8 tension between CMB (Planck) and weak lensing "
+                "(KiDS-1000, DES Y3, HSC-Y3) in PM's w0 = -1 + 1/b3 = -23/24 dark energy. "
+                "Dynamical dark energy with w0 > -1 modifies the integrated expansion "
+                "history, yielding a growth suppression factor beta ~ 0.994 (~0.6% "
+                "reduction relative to LCDM) at z=0.5. This is below current statistical "
+                "precision (~1.7%); Stage-IV surveys will reach the required sensitivity."
             ),
             section_id="5",
             subsection_id="5.4"
@@ -272,6 +294,14 @@ class S8SuppressionV16(SimulationBase):
                 uncertainty=0.017,  # DES Y3 uncertainty
                 redshift=0.6,
                 source='DES Collaboration (2022) PRD 105, 023520',
+                measurement_type='S8'
+            ),
+            'HSC-Y3': S8Measurement(
+                name='HSC Year 3',
+                value=0.769,
+                uncertainty=0.032,  # HSC-Y3 symmetric average of +0.031/-0.034
+                redshift=0.6,
+                source='Li et al. (2023) PRD 108, 123518 (Hyper Suprime-Cam Y3)',
                 measurement_type='S8'
             ),
         }
@@ -595,24 +625,38 @@ class S8SuppressionV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="table",
-                    headers=["Survey", "S8 Measured", "σ from Planck", "σ from PM", "PM Position"],
+                    headers=["Survey", "S8 Measured", "sigma from Planck", "sigma from PM", "PM Position"],
                     rows=[
-                        ["Planck 2018", "0.832 ± 0.013", "—", "0.4σ", "Slightly high"],
-                        ["KiDS-1000", "0.766 ± 0.020", "3.3σ low", "3.5σ high", "Between"],
-                        ["DES Y3", "0.776 ± 0.017", "3.3σ low", "3.6σ high", "Between"],
-                        ["DESI σ8 (input)", "0.827 ± 0.011", "0.5σ low", "Used", "Consistent"],
+                        ["Planck 2018", "0.832 +/- 0.013", "--", "0.4 sigma", "Slightly high"],
+                        ["KiDS-1000", "0.766 +/- 0.020", "3.3 sigma low", "3.5 sigma high", "Between"],
+                        ["DES Y3", "0.776 +/- 0.017", "3.3 sigma low", "3.6 sigma high", "Between"],
+                        ["HSC-Y3", "0.769 +/- 0.032", "2.0 sigma low", "2.0 sigma high", "Between"],
+                        ["DESI sigma8 (input)", "0.827 +/- 0.011", "0.5 sigma low", "Used", "Consistent"],
                     ]
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "PM's S8 = 0.837 ± 0.011 lies between Planck's high value (0.832) "
-                        "and weak lensing's low values (0.766-0.776). While PM doesn't fully "
-                        "resolve the tension, it represents a data point intermediate between "
-                        "early-universe (CMB) and late-universe (weak lensing) measurements. "
-                        "The discrepancy suggests either systematic errors in weak lensing "
-                        "surveys or additional physics beyond PM's current formulation (e.g., "
-                        "massive neutrinos, modified gravity at late times)."
+                        "PM's S8 = 0.837 +/- 0.014 (combining sigma_8 and Omega_m uncertainties "
+                        "in quadrature: delta_S8^2 ~ (0.011)^2 + (0.008)^2) lies between "
+                        "Planck's high value (0.832) and weak lensing's low values (0.766-0.776). "
+                        "The PM growth suppression of ~0.6% (beta ~ 0.994) is well below the "
+                        "~1.7% statistical uncertainty, making PM indistinguishable from LCDM "
+                        "with current data. Stage-IV surveys (Rubin/LSST, Euclid, Roman) "
+                        "will reduce S8 uncertainty to ~0.005, potentially resolving this."
+                    )
+                ),
+                ContentBlock(
+                    type="callout",
+                    callout_type="warning",
+                    title="Systematic Uncertainties",
+                    content=(
+                        "Weak lensing S8 measurements are subject to systematic uncertainties "
+                        "from: (i) baryonic feedback on small-scale power spectrum, (ii) "
+                        "intrinsic galaxy alignments not from lensing, (iii) photometric "
+                        "redshift bias, and (iv) shear calibration multiplicative bias. "
+                        "These systematics may account for part of the S8 tension; the "
+                        "KiDS-1000, DES Y3, and HSC-Y3 teams are actively quantifying them."
                     )
                 ),
                 ContentBlock(
@@ -620,11 +664,14 @@ class S8SuppressionV16(SimulationBase):
                     callout_type="info",
                     title="S8 Tension Status",
                     content=(
-                        "PM's w₀ = -1 + 1/b₃ = -23/24 gives S8 ≈ 0.837, intermediate between Planck"
-                        "(0.832) and weak lensing (0.77). The 0.6% difference from ΛCDM is "
-                        "too small to resolve the 8% weak lensing discrepancy. Future work "
-                        "should explore: (1) neutrino mass effects (Σmν < 0.12 eV), "
-                        "(2) early dark energy contributions, (3) systematic errors in surveys."
+                        "PM's w0 = -1 + 1/b3 = -23/24 gives S8 ~ 0.837 +/- 0.014, intermediate "
+                        "between Planck (0.832) and weak lensing (0.77). The 0.6% growth "
+                        "suppression from LCDM is too small to resolve the ~8% weak lensing "
+                        "discrepancy given current error bars (~1.7%). Stage-IV surveys will "
+                        "reach ~0.6% precision, enabling a definitive test. Future work: "
+                        "(1) neutrino mass effects (sum m_nu ~ 0.06 eV from PM prediction), "
+                        "(2) early dark energy contributions from w_a ~ 0.29, "
+                        "(3) systematic error reduction in KiDS, DES, HSC, Euclid."
                     )
                 ),
             ],

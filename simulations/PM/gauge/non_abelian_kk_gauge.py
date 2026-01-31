@@ -443,8 +443,12 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                 plain_text="F^a_mn = d_m A^a_n - d_n A^a_m + g f^abc A^b_m A^c_n",
                 category="ESTABLISHED",
                 description=(
-                    "Non-Abelian field strength tensor with structure constants f^{abc}. "
-                    "The self-interaction term distinguishes non-Abelian from Abelian gauge theory."
+                    "Non-Abelian field strength tensor with structure constants f^{abc} "
+                    "from the gauge group Lie algebra. The self-interaction term "
+                    "g f^{abc} A^b A^c, absent in U(1), encodes gauge boson self-coupling "
+                    "(cubic and quartic vertices) and is responsible for asymptotic freedom "
+                    "in SU(3)_C. In the G2 framework, f^{abc} are inherited from the "
+                    "ADE singularity classification at the corresponding cycle locus."
                 ),
                 inputParams=[],
                 outputParams=[],
@@ -477,8 +481,11 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                 plain_text="L_YM = -1/4 Tr(F_mn F^mn) = -1/4 F^a_mn F^a_mn",
                 category="ESTABLISHED",
                 description=(
-                    "Yang-Mills kinetic Lagrangian from KK reduction on group manifold. "
-                    "Canonical -1/4 Tr(F^2) normalization with Tr(T^a T^b) = (1/2) delta^{ab}."
+                    "Yang-Mills kinetic Lagrangian from Kaluza-Klein reduction on a group "
+                    "manifold. In the S^3 toy model (SU(2) isometry), the higher-dimensional "
+                    "Ricci scalar decomposes to yield -(r/4) Tr(F^2) with r = Vol(S^3). "
+                    "In PM's G2 framework, the analogous term arises from the ADE singular "
+                    "cycle volume. Canonical normalization Tr(T^a T^b) = (1/2) delta^{ab}."
                 ),
                 inputParams=["topology.cycle_volume_su2", "topology.cycle_volume_su3"],
                 outputParams=["gauge.su2_canonical_coeff", "gauge.su3_canonical_coeff"],
@@ -563,8 +570,10 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
             title="Non-Abelian Gauge Fields from KK Reduction on Group Manifolds",
             abstract=(
                 "We demonstrate how non-Abelian Yang-Mills gauge fields emerge from "
-                "Kaluza-Klein reduction on manifolds with non-Abelian isometry groups, "
-                "the mechanism underlying SU(3)xSU(2) gauge symmetry in Principia Metaphysica."
+                "Kaluza-Klein reduction on group manifolds with non-Abelian isometries. "
+                "The toy model uses S^3 (the group manifold of SU(2)); in Principia "
+                "Metaphysica the full SU(3)xSU(2)xU(1) gauge group arises from ADE "
+                "singularities on the 7-dimensional TCS G2 holonomy manifold."
             ),
             content_blocks=[
                 ContentBlock(
@@ -572,10 +581,15 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     content=(
                         "While the Abelian U(1) gauge field arises from compactification on "
                         "a circle (Section 3.3), non-Abelian gauge groups require internal "
-                        "manifolds with non-Abelian isometry groups. Compactification on S^3 "
-                        "(the group manifold of SU(2)) yields three gauge fields in the "
-                        "adjoint representation, while ADE singularities on G2 manifolds "
-                        "produce the full Standard Model gauge group SU(3)xSU(2)xU(1)."
+                        "manifolds with non-Abelian isometry groups. As a pedagogical toy "
+                        "model, compactification on S^3 -- the group manifold of SU(2) with "
+                        "isometry group SO(4) ~ SU(2)_L x SU(2)_R -- yields three gauge "
+                        "fields in the adjoint representation via left-invariant one-forms "
+                        "sigma^a on S^3. In Principia Metaphysica, the physical mechanism "
+                        "differs: the full Standard Model gauge group SU(3)xSU(2)xU(1) "
+                        "arises from ADE singularities on the 7-dimensional TCS G2 holonomy "
+                        "manifold, where gauge enhancement occurs at orbifold loci rather "
+                        "than from smooth isometry groups."
                     ),
                 ),
                 ContentBlock(
@@ -584,9 +598,13 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                         "The key distinction from the Abelian case is the appearance of "
                         "structure constants f^{abc} in the field strength tensor, leading "
                         "to gauge boson self-interactions (cubic and quartic vertices). "
-                        "In Principia Metaphysica, SU(3)_C arises from A2 singularities "
-                        "on associative 3-cycles, while SU(2)_L arises from A1 singularities "
-                        "on distinct cycles of smaller volume, explaining the coupling hierarchy."
+                        "In Principia Metaphysica, SU(3)_C arises from A2-type ADE "
+                        "singularities along associative 3-cycles within the G2 manifold, "
+                        "where the singular fiber degenerates to produce 8 massless gauge "
+                        "bosons (gluons). Similarly, SU(2)_L arises from A1 singularities "
+                        "on distinct cycles of smaller volume, yielding 3 weak gauge bosons. "
+                        "The cycle volume ratio Vol(Sigma_SU2)/Vol(Sigma_SU3) directly sets "
+                        "the coupling hierarchy alpha_2/alpha_3 via spectral residues."
                     ),
                 ),
                 ContentBlock(
@@ -603,8 +621,11 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     content=(
                         "The Yang-Mills kinetic Lagrangian L_YM = -1/4 Tr(F^2) emerges "
                         "with canonical normalization when the internal cycle volume is "
-                        "appropriately chosen. The gauge coupling g is determined by the "
-                        "cycle volume spectral residue, fixing it without free parameters."
+                        "appropriately chosen. In the S^3 toy model, the cycle volume r "
+                        "enters as an overall prefactor -(r/4)Tr(F^2), requiring r = 1 for "
+                        "canonical normalization. In the full G2 framework, the gauge coupling "
+                        "g_i = 1/sqrt(Vol(Sigma_i)) is set by the volume of the corresponding "
+                        "ADE singular cycle, fixing each coupling without free parameters."
                     ),
                 ),
             ],

@@ -14,6 +14,37 @@ This simulation combines all v21 components:
 - Cyclic Mobius return
 - Breathing dark energy
 
+UNIFIED TIME IN THE 27D BULK:
+==============================
+The bulk manifold has signature (26,1) -- exactly ONE timelike dimension.
+This design choice is physically essential for three reasons:
+
+1. GHOST AVOIDANCE: Multiple timelike dimensions introduce ghost degrees of
+   freedom (negative-norm states) that violate unitarity. With signature (p,q)
+   where q >= 2, the kinetic term for at least one field flips sign, making
+   the Hamiltonian unbounded below. The (26,1) signature avoids this entirely.
+
+2. CTC PREVENTION: Closed Timelike Curves (CTCs) arise generically in
+   spacetimes with compact timelike directions or multiple time dimensions.
+   The single non-compact timelike direction in (26,1) admits a global time
+   function t that increases monotonically along every causal curve, enforcing
+   global hyperbolicity and preventing CTCs.
+
+3. CAUSAL STRUCTURE PRESERVATION: During the descent chain, the single time
+   direction is inherited at each stage:
+   - 27D(26,1) bulk: t is the unique timelike coordinate
+   - Dual 13D(12,1) shadows: each inherits the same t
+   - G2 compactification (7,0): purely Riemannian, does not touch t
+   - Condensate (3,1): the observed Lorentzian signature of spacetime
+
+   The G2 compactification is on a Riemannian (7,0) manifold, which by
+   construction cannot alter the timelike sector. The central (2,0) bridge
+   is Euclidean, again preserving the single time direction. At no stage
+   does the reduction introduce or remove timelike dimensions.
+
+The earlier (24,2) formulation was abandoned precisely because two timelike
+dimensions led to ghost instabilities and potential CTCs in the bridge sector.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
@@ -357,7 +388,12 @@ class MergedDescentV21(SimulationBase):
                     content=(
                         "The ancestral bulk is a 27D(26,1) Lorentzian manifold with "
                         "24 core spatial + 2 central bridge + 1 timelike dimension. "
-                        "This unified time eliminates ghost/CTC issues from earlier (24,2) formulations:"
+                        "The single timelike direction is physically essential: it prevents "
+                        "ghost degrees of freedom (which arise with multiple time dimensions "
+                        "due to wrong-sign kinetic terms), ensures global hyperbolicity "
+                        "(preventing Closed Timelike Curves), and is preserved through every "
+                        "stage of the descent chain since G2 compactification acts only on "
+                        "Riemannian (7,0) submanifolds:"
                     )
                 ),
                 ContentBlock(
@@ -414,7 +450,13 @@ class MergedDescentV21(SimulationBase):
                 latex=r"ds^2 = \sum_{i=1}^{24} dx_i^2 + dy_1^2 + dy_2^2 - dt^2",
                 plain_text="ds^2 = sum(dx_i^2) + dy_1^2 + dy_2^2 - dt^2, i=1..24",
                 category="DERIVED",
-                description="27D(26,1) bulk metric with unified time: 24 core spatial + 2 central bridge + 1 time",
+                description=(
+                    "27D(26,1) bulk metric with unified time: 24 core spatial + 2 central "
+                    "bridge + 1 time. The single timelike direction prevents ghost states "
+                    "(no wrong-sign kinetic terms), ensures global hyperbolicity (no CTCs), "
+                    "and is preserved through G2 compactification since only Riemannian "
+                    "(7,0) submanifolds are compactified."
+                ),
                 inputParams=[],
                 outputParams=["descent.bulk_signature"],
                 input_params=[],

@@ -264,7 +264,10 @@ class AppendixDParameterTables(SimulationBase):
                 "This appendix provides complete tables of all parameters used in "
                 "Principia Metaphysica, including physical constants, experimental "
                 "inputs, geometric invariants, and theory predictions. Each parameter "
-                "includes its value, uncertainty, source, and experimental status."
+                "includes its value, uncertainty, source, experimental status, and "
+                "references to the originating derivation formula(s) where applicable, "
+                "ensuring full traceability of computed results back to their "
+                "geometric or physical origins."
             ),
             content_blocks=[
                 ContentBlock(
@@ -275,7 +278,10 @@ class AppendixDParameterTables(SimulationBase):
                     type="paragraph",
                     content=(
                         "Table D.1 lists fundamental constants of nature used throughout "
-                        "the calculations. All values are from PDG 2024 unless otherwise noted."
+                        "the calculations. All values are from PDG 2024 unless otherwise noted. "
+                        "These constants serve as inputs to various derivation formulas, including "
+                        "the dimensional reduction cascade (Eq. 5.8) and the Kaluza-Klein gauge "
+                        "coupling relation (Eq. 3.3.3)."
                     )
                 ),
                 ContentBlock(
@@ -299,7 +305,10 @@ class AppendixDParameterTables(SimulationBase):
                     content=(
                         "Table D.3 lists geometric parameters of TCS G2 manifold #187, "
                         "including Betti numbers, Hodge numbers, and cycle separations. "
-                        "These are determined by the TCS construction from Corti et al. (2015)."
+                        "These are determined by the TCS construction from Corti et al. (2015). "
+                        "The Betti number b3=24 is the single topological input to the Gimel "
+                        "constant (Eq. 2.1, k-gimel-anchor) and the effective dimension "
+                        "calculation (Eq. 5.9, effective-dimension)."
                     )
                 ),
                 ContentBlock(
@@ -322,7 +331,10 @@ class AppendixDParameterTables(SimulationBase):
                     type="paragraph",
                     content=(
                         "Table D.5 lists fermion wavefunction overlaps and Yukawa couplings "
-                        "derived from geometric localization on associative 3-cycles."
+                        "derived from geometric localization on associative 3-cycles. The "
+                        "Yukawa textures are computed using the Gimel constant k_gimel "
+                        "(Eq. 2.1, k-gimel-anchor) and the fine structure constant anchor "
+                        "(Eq. 2.2, alpha-inverse-anchor) as geometric inputs."
                     )
                 ),
                 ContentBlock(
@@ -347,7 +359,10 @@ class AppendixDParameterTables(SimulationBase):
                         "Table D.7 lists new physics predictions from Principia Metaphysica, "
                         "including proton lifetime, dark matter relic density, neutrinoless "
                         "double beta decay amplitude, and inflation scale. Each prediction "
-                        "is compared with current experimental bounds where available."
+                        "is compared with current experimental bounds where available. The "
+                        "dark energy equation of state is derived from the thawing anchor "
+                        "(Eq. 2.3, w0-thawing-anchor), and the spectral index from the "
+                        "golden-modulated e-fold formula (Eq. 2.4, spectral-index-anchor)."
                     )
                 ),
                 ContentBlock(
@@ -367,7 +382,15 @@ class AppendixDParameterTables(SimulationBase):
                     )
                 ),
             ],
-            formula_refs=[],
+            formula_refs=[
+                "k-gimel-anchor",
+                "alpha-inverse-anchor",
+                "w0-thawing-anchor",
+                "spectral-index-anchor",
+                "dimensional-reduction-cascade",
+                "effective-dimension",
+                "kk-gauge-coupling-relation",
+            ],
             param_refs=[
                 "constants.M_PLANCK",
                 "pdg.m_Z",

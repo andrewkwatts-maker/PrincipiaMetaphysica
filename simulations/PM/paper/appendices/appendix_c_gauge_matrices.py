@@ -164,9 +164,16 @@ class AppendixCGaugeMatrices(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The S<sub>PR</sub>(2) gauge acts as a 'Symmetry Splitter.' As the 13D "
-                    "registry descends, the gauge forces the potential to 'shatter' along the "
-                    "lines of the SU(3) × SU(2) × U(1) Standard Model groups:"
+                    "The S<sub>PR</sub>(2) gauge acts as a 'Symmetry Splitter,' playing a "
+                    "crucial role in the dimensional reduction and symmetry breaking cascade. "
+                    "As the 13D registry descends to lower dimensions, the S<sub>PR</sub>(2) "
+                    "gauge forces the potential to 'shatter' along specific directions, "
+                    "analogous to how the adjoint representation of E<sub>8</sub> decomposes "
+                    "under successive maximal subgroup chains. The result is the emergence of "
+                    "the SU(3) × SU(2) × U(1) Standard Model gauge groups. For example, "
+                    "the color SU(3)<sub>C</sub> sector emerges from the strong-interaction nodes "
+                    "(Gauge Bank, Nodes 19-45), while the electroweak SU(2)<sub>L</sub> × U(1)<sub>Y</sub> "
+                    "arises from the scalar and mixed-symmetry sectors:"
                 )
             ),
             ContentBlock(
@@ -298,7 +305,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 latex=r"G_{13} \xrightarrow{S_{PR}(2)} SU(3)_C \times SU(2)_L \times U(1)_Y",
                 plain_text="G_13 -> SU(3)_C x SU(2)_L x U(1)_Y via S_PR(2)",
                 category="ESTABLISHED",
-                description="Symmetry shattering rule producing Standard Model gauge groups from 13D.",
+                description="Symmetry shattering rule based on the S_PR(2) gauge, dictating how the initial 13D gauge group G_13 breaks down into the Standard Model gauge groups SU(3)_C x SU(2)_L x U(1)_Y through a cascade of maximal subgroup reductions. Each Standard Model factor corresponds to a specific sector of the 125-node spectral registry.",
                 input_params=["dimensions.D_after_sp2r"],
                 output_params=[],
                 terms={
@@ -311,9 +318,9 @@ class AppendixCGaugeMatrices(SimulationBase):
                     "method": "symmetry_breaking_chain",
                     "parentFormulas": ["dimensional-projection-matrix", "gauge-unitarity-condition"],
                     "steps": [
-                        "Begin with the 13D gauge group G_13 containing all internal symmetries",
-                        "Apply the S_PR(2) reduction to break G_13 along maximal subgroup chains",
-                        "Identify the residual symmetry as SU(3)_C x SU(2)_L x U(1)_Y",
+                        "Begin with the 13D gauge group G_13, representing the full internal symmetry of the higher-dimensional theory prior to compactification",
+                        "Apply the S_PR(2) reduction to break G_13 along maximal subgroup chains, guided by the geometry of the internal G2 manifold and its associative 3-cycle structure",
+                        "Identify the residual symmetry as SU(3)_C x SU(2)_L x U(1)_Y: the color group SU(3)_C governs strong interactions (Gauge Bank nodes), SU(2)_L provides weak isospin (electroweak sector), and U(1)_Y yields hypercharge (scalar sector nodes)",
                     ],
                 },
             ),

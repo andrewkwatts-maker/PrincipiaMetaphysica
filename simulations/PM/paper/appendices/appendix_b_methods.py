@@ -430,8 +430,13 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Near the Planck scale, we apply asymptotic safety corrections "
-                        "that suppress gauge coupling running toward a UV fixed point:"
+                        "Near the Planck scale, the running of gauge couplings can be "
+                        "significantly affected by quantum gravity effects. Within the G2 "
+                        "holonomy framework, we implement asymptotic safety corrections that "
+                        "suppress gauge coupling running toward a UV fixed point, effectively "
+                        "moderating the growth of couplings at high energies. This ensures "
+                        "the model remains perturbative and well-defined even in the vicinity "
+                        "of the Planck scale where G2 compactification effects are strongest:"
                     )
                 ),
                 ContentBlock(
@@ -656,18 +661,22 @@ class AppendixBComputationalMethods(SimulationBase):
                 plain_text="β_i^AS(μ) = β_i(μ) × (1 - μ²/M_Pl²)^γ",
                 category="DERIVED",
                 description=(
-                    "Asymptotic safety correction near Planck scale. Suppresses "
-                    "beta function approaching UV fixed point."
+                    "Asymptotic safety correction applied to gauge coupling beta functions "
+                    "near the Planck scale within the G2 compactification framework. This "
+                    "correction term suppresses the beta function, preventing gauge couplings "
+                    "from diverging and driving them toward a UV fixed point. The critical "
+                    "exponent gamma parameterizes the approach rate to the fixed point, "
+                    "informed by RG flow analysis in the G2 holonomy context."
                 ),
                 input_params=["constants.M_PLANCK"],
                 output_params=["gauge.M_GUT"],
                 derivation={
                     "method": "UV fixed point analysis",
                     "steps": [
-                        "Asymptotic safety: couplings approach fixed point at M_Pl",
-                        "Critical exponent γ ≈ 0.5 from SO(10) flow",
-                        "Modify β-function: β → β × (1 - μ²/M_Pl²)^γ",
-                        "Effect negligible below 10¹⁸ GeV",
+                        "Asymptotic safety: gauge couplings approach a UV fixed point at the Planck mass M_Pl due to quantum gravity effects within the G2 compactification framework",
+                        "Critical exponent gamma = 0.5 informed by renormalization group flow analysis in SO(10) grand unified theories embedded in the G2 holonomy structure",
+                        "Modify the beta-function: beta -> beta * (1 - mu^2/M_Pl^2)^gamma, introducing a suppression factor that becomes significant as mu approaches M_Pl",
+                        "Effect is negligible at energy scales below ~10^18 GeV; only relevant for near-Planckian unification threshold matching",
                     ]
                 },
                 terms={

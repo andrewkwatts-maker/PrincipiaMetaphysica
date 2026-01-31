@@ -171,9 +171,12 @@ class IntroductionV16(SimulationBase):
         """
         foundations = {
             "metric_emergence": (
-                "Spacetime geometry emerges from fermionic spinor bilinears via the "
-                "Pneuma-Vielbein bridge, yielding Lorentzian signature (-,+,+,+) "
-                "in 4D without ad hoc assumptions."
+                "Spacetime geometry emerges dynamically from fermionic spinor bilinears "
+                "within the Pneuma field. The Pneuma-Vielbein bridge construction establishes "
+                "a direct link between fundamental fermionic degrees of freedom and the emergent "
+                "metric, consistently yielding Lorentzian signature (-,+,+,+) in 4D without "
+                "requiring ad hoc assumptions about the background spacetime structure. This "
+                "avoids the traditional circular dependence on a pre-existing metric."
             ),
             "dimensional_hierarchy": (
                 "27D spacetime with unified time signature (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central warps into dual"
@@ -187,9 +190,14 @@ class IntroductionV16(SimulationBase):
                 "without free parameters."
             ),
             "thermal_time": (
-                "Physical time emerges from the modular flow of the Pneuma field's "
-                "KMS state, resolving the frozen formalism problem in quantum gravity "
-                "and connecting thermodynamics to temporal evolution."
+                "Physical time emerges from the modular flow associated with the KMS "
+                "(Kubo-Martin-Schwinger) thermal equilibrium state of the Pneuma field. "
+                "This identification resolves the 'frozen formalism' problem inherent in "
+                "canonical quantum gravity, where time is absent at the fundamental level. "
+                "By grounding temporal evolution in the thermodynamic properties of the "
+                "Pneuma field, the framework provides a natural link between quantum gravity "
+                "and the arrow of time, suggesting that time is an emergent property of the "
+                "system's thermal state rather than a fundamental background parameter."
             ),
             "gauge_unification": (
                 "SU(3) × SU(2) × U(1) gauge couplings unify at M_GUT ~ 2×10¹⁶ GeV "
@@ -939,7 +947,17 @@ class IntroductionV16(SimulationBase):
                 latex=r"D = 13 = 1 + 4 + 8 = \dim(\mathbb{R}) + \dim(\mathbb{H}) + \dim(\mathbb{O})",
                 plain_text="D = 13 = 1 + 4 + 8 = dim(R) + dim(H) + dim(O)",
                 category="DERIVED",
-                description="Unique division algebra decomposition of shadow dimension D=13 into real (emergent time), quaternionic (Lorentz spacetime), and octonionic (internal G2 manifold) components via the Hurwitz theorem.",
+                description=(
+                    "The shadow dimension D=13 admits a unique decomposition into normed division "
+                    "algebra components, as classified by the Hurwitz theorem (1898): real R (dim 1, "
+                    "encoding emergent thermal time from KMS modular flow), quaternionic H (dim 4, "
+                    "encoding Lorentz spacetime with Spin(3,1) isomorphic to SL(2,H)), and octonionic "
+                    "O (dim 8, encoding the internal G2 manifold whose automorphism group Aut(O) = G2 "
+                    "governs gauge symmetry and particle content). The decomposition 13 = 1 + 4 + 8 is "
+                    "the unique partition of 13 into Hurwitz dimensions that assigns exactly one factor "
+                    "to each physical role, with the exclusion of dim 2 (complex numbers) reflecting the "
+                    "absence of a fundamental worldsheet degree of freedom in the observable sector."
+                ),
                 input_params=[],
                 output_params=[],
                 derivation={

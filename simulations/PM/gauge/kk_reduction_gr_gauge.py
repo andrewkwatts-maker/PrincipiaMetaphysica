@@ -580,8 +580,11 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 plain_text="R^(5) = R^(4) - (k^2 R^2 / 4) F_mn F^mn",
                 category="DERIVED",
                 description=(
-                    "Decomposition of the 5D Ricci scalar into 4D Einstein-Hilbert curvature "
-                    "plus canonical gauge kinetic term. Internal curvature vanishes for flat circle."
+                    "Decomposition of the 5D Ricci scalar into the 4D Einstein-Hilbert curvature "
+                    "term R^(4) and the kinetic term for a U(1) gauge field arising from the "
+                    "off-diagonal components of the 5D metric. The internal curvature contribution "
+                    "vanishes identically due to the intrinsic flatness of the S^1 circle "
+                    "compactification (zero Riemann tensor on S^1)."
                 ),
                 inputParams=["topology.compact_radius"],
                 outputParams=["kk.gauge_kinetic_coefficient"],
@@ -613,8 +616,12 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 plain_text="g_YM^2 = k^2 / R^2, M_Pl^2 = M_*^3 * 2pi R",
                 category="DERIVED",
                 description=(
-                    "Gauge coupling and Planck mass relations from Kaluza-Klein reduction. "
-                    "Both are determined by the compactification radius R and fundamental scale M_*."
+                    "Gauge coupling and Planck mass relations from Kaluza-Klein reduction, "
+                    "establishing how both quantities emerge from the geometry of the compact "
+                    "dimension. The Planck mass M_Pl is set by the volume of the extra dimension "
+                    "(2pi R), while the gauge coupling g_YM is fixed by the inverse radius 1/R. "
+                    "This geometric unification of gravity and gauge interactions extends to the "
+                    "full G2 compactification with cycle volumes replacing the single radius R."
                 ),
                 inputParams=["topology.compact_radius", "constants.M_PLANCK"],
                 outputParams=["kk.planck_factor"],
@@ -622,9 +629,9 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 output_params=["kk.planck_factor"],
                 derivation={
                     "steps": [
-                        "Integrate the 5D Einstein-Hilbert action over the compact S^1: integral dy = 2pi R.",
-                        "Match the coefficient of R^(4) to the 4D Planck mass: M_Pl^2 = M_*^3 * 2pi R.",
-                        "Match the coefficient of F^2 to the canonical gauge kinetic term to extract g_YM^2 = k^2 / R^2.",
+                        "Integrate the 5D Einstein-Hilbert action S_5 = M_*^3 integral R^(5) sqrt(-g_5) d^5x over the compact S^1 coordinate y in [0, 2pi R): integral dy = 2pi R.",
+                        "Match the coefficient of the 4D Ricci scalar R^(4) to the standard 4D Einstein-Hilbert form to obtain the Planck mass relation: M_Pl^2 = M_*^3 * 2pi R.",
+                        "Match the coefficient of the gauge kinetic term -1/4 F_{mn} F^{mn} to the canonically normalized form, extracting the gauge coupling: g_YM^2 = k^2 / R^2. This matching ensures correct normalization for physical quantities in the 4D effective theory.",
                     ],
                     "method": "dimensional_reduction_matching",
                     "parentFormulas": ["kk-5d-metric-ansatz", "kk-ricci-decomposition"],
@@ -696,12 +703,16 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Kaluza-Klein mechanism provides the foundational technique for "
-                        "extracting 4D physics from higher-dimensional gravity. In the "
-                        "simplest case, a 5D Einstein-Hilbert action compactified on a circle "
-                        "S^1 of radius R produces 4D General Relativity (the R^(4) term) plus "
-                        "a U(1) gauge kinetic term (the -1/4 F^2 term). The gauge coupling is "
-                        "determined geometrically by the compactification radius, g_YM^2 = k^2/R^2."
+                        "The Kaluza-Klein mechanism elegantly demonstrates how higher-dimensional "
+                        "gravity can give rise to lower-dimensional gravity coupled to gauge fields. "
+                        "By compactifying a 5D Einstein-Hilbert action on a circle S^1 of radius R, "
+                        "we obtain a 4D effective theory containing General Relativity, represented "
+                        "by the 4D Ricci scalar R^(4), and a U(1) gauge kinetic term -1/4 F^2, "
+                        "where F_{mn} = partial_m A_n - partial_n A_m is the field strength tensor "
+                        "of the gauge field arising from the off-diagonal metric components g_{m5}. "
+                        "The gauge coupling constant in 4D is directly determined by the geometry "
+                        "of the compactified dimension: g_YM^2 = k^2/R^2, highlighting the "
+                        "geometric origin of gauge interactions in the Principia Metaphysica framework."
                     ),
                 ),
                 ContentBlock(

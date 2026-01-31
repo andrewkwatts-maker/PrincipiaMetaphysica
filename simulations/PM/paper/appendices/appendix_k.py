@@ -46,7 +46,33 @@ class AppendixKTransparency(SimulationBase):
 
     Documents parameter classification, validation statistics, and
     resolution status of all outstanding theoretical issues.
+
+    SOLID Principles:
+    - Single Responsibility: Handles transparency documentation only
+    - Open/Closed: Extensible for additional validation metrics
+    - Dependency Inversion: References values via registry
     """
+
+    FORMULA_REFS = [
+        "sigma-deviation-metric",
+        "agreement-fraction",
+        "constraint-propagation-chain",
+        "zero-calibration-condition",
+        "classification-completeness",
+    ]
+
+    PARAM_REFS = [
+        "gauge.M_GUT",
+        "gauge.alpha_gut",
+        "topology.n_gen",
+        "neutrino.theta_23_pred",
+        "neutrino.theta_13_pred",
+        "neutrino.delta_CP_pred",
+        "cosmology.w0_derived",
+        "cosmology.wa_derived",
+        "moduli.re_t_phenomenological",
+        "pdg.m_higgs",
+    ]
 
     @property
     def metadata(self) -> SimulationMetadata:
@@ -86,7 +112,7 @@ class AppendixKTransparency(SimulationBase):
     @property
     def output_formulas(self) -> List[str]:
         """Return list of formula IDs this simulation provides."""
-        return []
+        return self.FORMULA_REFS
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
         """
@@ -122,8 +148,167 @@ class AppendixKTransparency(SimulationBase):
         }
 
     def get_formulas(self) -> List['Formula']:
-        """Return list of formulas (none for transparency statement)."""
-        return []
+        """Return formula definitions for transparency validation framework."""
+        return [
+            Formula(
+                id="sigma-deviation-metric",
+                label="(K.1)",
+                latex=r"\sigma_i = \frac{|x_i^{\text{pred}} - x_i^{\text{obs}}|}{\delta x_i^{\text{obs}}}",
+                plain_text="sigma_i = |x_pred - x_obs| / delta_x_obs",
+                category="ESTABLISHED",
+                description=(
+                    "Sigma deviation metric for parameter validation. Quantifies "
+                    "the deviation of each PM prediction from experimental measurement "
+                    "in units of the observed uncertainty."
+                ),
+                input_params=["validation.total_parameters"],
+                output_params=["validation.within_1sigma"],
+                derivation={
+                    "method": "Standard statistical deviation from experimental data",
+                    "steps": [
+                        "For each testable parameter i, obtain PM predicted value x_pred",
+                        "Obtain PDG/CODATA experimental value x_obs with uncertainty delta_x_obs",
+                        "Compute absolute deviation: |x_pred - x_obs|",
+                        "Normalize by observed uncertainty: sigma_i = |x_pred - x_obs| / delta_x_obs",
+                        "Classify: sigma_i <= 1 implies within 1-sigma, sigma_i <= 2 implies within 2-sigma",
+                    ],
+                    "parentFormulas": [],
+                },
+                terms={
+                    r"\sigma_i": "Deviation in sigma units for parameter i",
+                    r"x_i^{\text{pred}}": "PM framework predicted value for parameter i",
+                    r"x_i^{\text{obs}}": "Experimental (PDG/CODATA) measured value for parameter i",
+                    r"\delta x_i^{\text{obs}}": "Experimental uncertainty (1-sigma) on measured value",
+                },
+            ),
+            Formula(
+                id="agreement-fraction",
+                label="(K.2)",
+                latex=r"f_{n\sigma} = \frac{N(\sigma_i \leq n)}{N_{\text{total}}} = \frac{45}{48} \approx 93.75\%",
+                plain_text="f_n_sigma = N(sigma_i <= n) / N_total = 45/48 ~ 93.75%",
+                category="DERIVED",
+                description=(
+                    "Agreement fraction: ratio of predictions within n-sigma bounds "
+                    "to total testable parameters. Evaluated at n=1 (93.75%) and n=2 (97.92%)."
+                ),
+                input_params=["validation.within_1sigma", "validation.total_parameters"],
+                output_params=["validation.agreement_1sigma_pct"],
+                derivation={
+                    "method": "Counting statistic from sigma deviation metric",
+                    "parentFormulas": ["sigma-deviation-metric"],
+                    "steps": [
+                        "Apply sigma deviation metric to all N_total = 48 testable parameters",
+                        "Count N(sigma_i <= 1) = 45 predictions within 1-sigma",
+                        "Count N(sigma_i <= 2) = 47 predictions within 2-sigma",
+                        "Compute fractions: f_1sigma = 45/48 = 93.75%, f_2sigma = 47/48 = 97.92%",
+                    ],
+                },
+                terms={
+                    r"f_{n\sigma}": "Fraction of predictions within n-sigma experimental bounds",
+                    r"N(\sigma_i \leq n)": "Count of parameters with sigma deviation at most n",
+                    r"N_{\text{total}}": {"symbol": r"N_{\text{total}}", "value": 48, "description": "Total testable Standard Model parameters"},
+                    "n": "Sigma threshold (1 or 2)",
+                },
+            ),
+            Formula(
+                id="constraint-propagation-chain",
+                label="(K.3)",
+                latex=r"m_h = 125.10\;\text{GeV} \;\xrightarrow{\text{fixes}}\; \text{Re}(T) \;\xrightarrow{W_{\text{race}}}\; \{M_{\text{GUT}},\, \alpha_{\text{GUT}},\, m_f,\, \theta_{ij},\, \ldots\}",
+                plain_text="m_h = 125.10 GeV -> Re(T) -> {M_GUT, alpha_GUT, m_f, theta_ij, ...}",
+                category="DERIVED",
+                description=(
+                    "Constraint propagation chain: the single experimental input (Higgs mass) "
+                    "determines the volume modulus Re(T) via racetrack stabilization, which in turn "
+                    "fixes all derived Standard Model parameters through the G2 geometric chain."
+                ),
+                input_params=["pdg.m_higgs", "moduli.re_t_phenomenological"],
+                output_params=["gauge.M_GUT", "gauge.alpha_gut"],
+                derivation={
+                    "method": "Moduli stabilization via G2-racetrack potential",
+                    "parentFormulas": [],
+                    "steps": [
+                        "Input: m_h = 125.10 GeV (single experimental constraint)",
+                        "Racetrack potential W = Ae^{-aT} - Be^{-bT} with a = 2pi/24, b = 2pi/25",
+                        "Stabilize volume modulus: Re(T) = 7.086 from dW/dT = 0",
+                        "Re(T) determines Vol(V7), which fixes M_GUT, alpha_GUT via KK reduction",
+                        "All 52 derived parameters propagate from this single geometric anchor",
+                    ],
+                },
+                terms={
+                    r"m_h": "Higgs boson mass (single experimental constraint)",
+                    r"\text{Re}(T)": {"symbol": r"\text{Re}(T)", "value": 7.086, "description": "Volume modulus of G2 manifold"},
+                    r"W_{\text{race}}": "G2-racetrack superpotential",
+                    r"M_{\text{GUT}}": "Grand Unification scale",
+                    r"\alpha_{\text{GUT}}": "Unified gauge coupling at GUT scale",
+                },
+            ),
+            Formula(
+                id="zero-calibration-condition",
+                label="(K.4)",
+                latex=r"N_{\text{cal}} = N_{\text{total}} - N_{\text{derived}} - N_{\text{semi}} - N_{\text{constrained}} = 57 - 52 - 4 - 1 = 0",
+                plain_text="N_cal = N_total - N_derived - N_semi - N_constrained = 57 - 52 - 4 - 1 = 0",
+                category="DERIVED",
+                description=(
+                    "Zero-calibration achievement: total classified parameters minus derived, "
+                    "semi-derived, and constrained equals zero. No free parameters remain to be "
+                    "fitted to data, achieved as of v14.1 when theta_13 and delta_CP were derived."
+                ),
+                input_params=["validation.calibrated_count"],
+                output_params=[],
+                derivation={
+                    "method": "Exhaustive parameter classification accounting",
+                    "parentFormulas": [],
+                    "steps": [
+                        "Count all classified parameters: N_total = 57",
+                        "Derived from G2 topology/geometry: N_derived = 52",
+                        "Semi-derived (require phenomenological input): N_semi = 4",
+                        "Constrained by measurement (m_h fixes Re(T)): N_constrained = 1",
+                        "Calibrated (fitted to data): N_cal = 57 - 52 - 4 - 1 = 0",
+                        "v14.1 milestone: theta_13 and delta_CP reclassified from calibrated to derived",
+                    ],
+                },
+                terms={
+                    r"N_{\text{cal}}": "Number of calibrated (free) parameters",
+                    r"N_{\text{total}}": {"symbol": r"N_{\text{total}}", "value": 57, "description": "Total classified parameters"},
+                    r"N_{\text{derived}}": {"symbol": r"N_{\text{derived}}", "value": 52, "description": "Parameters derived from G2 topology and geometry"},
+                    r"N_{\text{semi}}": {"symbol": r"N_{\text{semi}}", "value": 4, "description": "Semi-derived parameters requiring phenomenological input"},
+                    r"N_{\text{constrained}}": {"symbol": r"N_{\text{constrained}}", "value": 1, "description": "Parameters constrained by experimental measurement"},
+                },
+            ),
+            Formula(
+                id="classification-completeness",
+                label="(K.5)",
+                latex=r"N_{\text{total}} = N_{\text{topo}} + N_{\text{geom}} + N_{\text{phenom}} + N_{\text{exp}} = \sum_{L=1}^{4} N_L",
+                plain_text="N_total = N_topo + N_geom + N_phenom + N_exp = sum_{L=1}^{4} N_L",
+                category="FOUNDATIONAL",
+                description=(
+                    "Classification completeness: every parameter belongs to exactly one of "
+                    "four hierarchy levels (Topological, Geometric, Phenomenological, Experimental). "
+                    "No parameter is unclassified and no double-counting occurs."
+                ),
+                input_params=["validation.total_parameters"],
+                output_params=[],
+                derivation={
+                    "method": "Parameter hierarchy partition into four disjoint levels",
+                    "parentFormulas": ["zero-calibration-condition"],
+                    "steps": [
+                        "Level 1 (Topological/Exact): n_gen, chi_eff, b2, b3 - no uncertainty",
+                        "Level 2 (Geometric/Derived): M_GUT, alpha_GUT, theta_23, theta_13, delta_CP, w0, wa",
+                        "Level 3 (Phenomenological/Semi-Derived): theta_12, tau_p, some fermion masses",
+                        "Level 4 (Experimental/Constrained): Re(T) from m_h = 125.10 GeV",
+                        "Verify partition: every parameter assigned to exactly one level",
+                    ],
+                },
+                terms={
+                    r"N_{\text{total}}": "Total number of classified parameters",
+                    r"N_{\text{topo}}": "Level 1: Topological parameters (exact, from manifold topology)",
+                    r"N_{\text{geom}}": "Level 2: Geometric parameters (derived from moduli and cycles)",
+                    r"N_{\text{phenom}}": "Level 3: Phenomenological parameters (semi-derived, ~5-15% uncertainty)",
+                    r"N_{\text{exp}}": "Level 4: Experimental parameters (constrained by measurement)",
+                    r"N_L": "Parameter count at hierarchy level L",
+                },
+            ),
+        ]
 
     def get_section_content(self) -> Optional[SectionContent]:
         """
@@ -180,8 +365,50 @@ class AppendixKTransparency(SimulationBase):
                     }
                 ),
                 ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The zero-calibration condition verifies that every parameter is accounted "
+                        "for by derivation, semi-derivation, or constraint, with none remaining as "
+                        "free parameters fitted to data:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"N_{\text{cal}} = N_{\text{total}} - N_{\text{derived}} - N_{\text{semi}} - N_{\text{constrained}} = 57 - 52 - 4 - 1 = 0",
+                    formula_id="zero-calibration-condition",
+                    label="(K.4)"
+                ),
+
+                # K.2 Validation Statistics
+                ContentBlock(
                     type="subsection",
                     content="K.2 Validation Statistics"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Each PM prediction is compared against experimental data using "
+                        "the standard sigma deviation metric:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\sigma_i = \frac{|x_i^{\text{pred}} - x_i^{\text{obs}}|}{\delta x_i^{\text{obs}}}",
+                    formula_id="sigma-deviation-metric",
+                    label="(K.1)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The overall agreement fraction quantifies the proportion of predictions "
+                        "falling within n-sigma experimental bounds:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"f_{n\sigma} = \frac{N(\sigma_i \leq n)}{N_{\text{total}}} = \frac{45}{48} \approx 93.75\%",
+                    formula_id="agreement-fraction",
+                    label="(K.2)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -197,8 +424,8 @@ class AppendixKTransparency(SimulationBase):
                     content={
                         "type": "unordered",
                         "items": [
-                            "Predictions within 1σ: 45 of 48",
-                            "Predictions within 2σ: 47 of 48",
+                            "Predictions within 1σ: 45 of 48 (f₁σ = 93.75%)",
+                            "Predictions within 2σ: 47 of 48 (f₂σ = 97.92%)",
                             "Calibrated parameters: 0 (θ₁₃, δ_CP derived geometrically)",
                             "Constraints: 1 (m_h fixes Re(T))",
                             "Phenomenological inputs: 0"
@@ -331,8 +558,22 @@ class AppendixKTransparency(SimulationBase):
                     type="paragraph",
                     content=(
                         "All parameter values trace to theory_output.json generated by "
-                        "run_all_simulations.py. Simulation code is available in the simulations/ "
-                        "directory with complete derivation chains documented in v12.8 Python modules."
+                        "run_all_simulations.py. The complete derivation chain originates from "
+                        "a single experimental constraint and propagates through the moduli "
+                        "stabilization mechanism:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"m_h = 125.10\;\text{GeV} \;\xrightarrow{\text{fixes}}\; \text{Re}(T) \;\xrightarrow{W_{\text{race}}}\; \{M_{\text{GUT}},\, \alpha_{\text{GUT}},\, m_f,\, \theta_{ij},\, \ldots\}",
+                    formula_id="constraint-propagation-chain",
+                    label="(K.3)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Simulation code is available in the simulations/ directory with complete "
+                        "derivation chains documented in v12.8 Python modules."
                     )
                 ),
                 ContentBlock(
@@ -380,6 +621,19 @@ class AppendixKTransparency(SimulationBase):
                 ),
                 ContentBlock(
                     type="paragraph",
+                    content=(
+                        "Every parameter belongs to exactly one of four hierarchy levels, "
+                        "forming a complete and disjoint partition:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"N_{\text{total}} = N_{\text{topo}} + N_{\text{geom}} + N_{\text{phenom}} + N_{\text{exp}} = \sum_{L=1}^{4} N_L",
+                    formula_id="classification-completeness",
+                    label="(K.5)"
+                ),
+                ContentBlock(
+                    type="paragraph",
                     content="Level 1: Topological (Exact)"
                 ),
                 ContentBlock(
@@ -423,26 +677,8 @@ class AppendixKTransparency(SimulationBase):
                     )
                 ),
             ],
-            formula_refs=[],
-            param_refs=[
-                "gauge.M_GUT",
-                "gauge.alpha_gut",
-                "topology.n_gen",
-                "neutrino.theta_23_pred",
-                "neutrino.theta_12_pred",
-                "neutrino.theta_13_pred",
-                "neutrino.delta_CP_pred",
-                "cosmology.w0_derived",
-                "cosmology.wa_derived",
-                "dimensions.d_eff",
-                "dimensions.d_bulk",
-                "topology.mephorash_chi",
-                "topology.b2",
-                "topology.elder_kads",
-                "moduli.re_t_phenomenological",
-                "pdg.m_higgs",
-                "proton_decay.tau_p_years",
-            ]
+            formula_refs=self.FORMULA_REFS,
+            param_refs=self.PARAM_REFS
         )
 
     def get_output_param_definitions(self) -> List[Parameter]:

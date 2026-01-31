@@ -279,9 +279,15 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Penrose-Hameroff Orchestrated Objective Reduction (Orch OR) model "
-                        "proposes that consciousness arises from quantum coherence in microtubules "
-                        "within neurons. Key elements include:"
+                        "SPECULATIVE CONTEXT: The Penrose-Hameroff Orchestrated Objective Reduction "
+                        "(Orch OR) model proposes that consciousness arises from quantum coherence in "
+                        "microtubules within neurons. This model remains highly controversial: critics "
+                        "note that thermal decoherence at biological temperatures (~310 K) would destroy "
+                        "quantum superpositions on timescales of ~10^-13 s, far shorter than the ~500 ms "
+                        "needed for conscious processing. Proponents counter that topological protection "
+                        "and error-correction mechanisms may extend coherence. The connection to PM "
+                        "geometry explored here is a theoretical possibility, not an established result. "
+                        "Key elements of the Orch OR model include:"
                     )
                 ),
                 ContentBlock(
@@ -320,11 +326,14 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The PM framework stabilizes the Pneuma vacuum at a specific position in "
-                        "moduli space via the racetrack mechanism. This stable configuration "
-                        "represents a 'middle' position across four multi-sector nodes, balanced "
-                        "between competing superpotential contributions. We speculate that this "
-                        "vacuum structure may modulate quantum coherence properties."
+                        "SPECULATIVE HYPOTHESIS: The PM framework stabilizes the Pneuma vacuum at a "
+                        "specific position in moduli space via the racetrack mechanism. This stable "
+                        "configuration represents a 'middle' position across four multi-sector nodes, "
+                        "balanced between competing superpotential contributions. We speculate -- "
+                        "without current experimental support -- that this vacuum structure may "
+                        "modulate quantum coherence properties if macroscopic quantum coherence "
+                        "in biological systems is established experimentally. This remains an IF, "
+                        "not a prediction of the theory."
                     )
                 ),
                 ContentBlock(

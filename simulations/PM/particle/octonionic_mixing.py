@@ -170,10 +170,14 @@ class OctonionicMixing(SimulationBase):
             domain="fermion",
             title="Unified CKM/PMNS from G2 Triality",
             description=(
-                "Derives both CKM and PMNS mixing matrices from the same octonionic "
-                "structure (G2 ~ Aut(O)). Quarks map to associative 3-form Phi (small "
-                "mixing), leptons to co-associative 4-form *Phi (large mixing). The "
-                "golden angle theta_g = arctan(1/phi) sets the fundamental mixing scale."
+                "Unified derivation of both the CKM quark mixing matrix and the PMNS lepton "
+                "mixing matrix from the same octonionic automorphism structure G2 ~ Aut(O). "
+                "Quarks localize on associative 3-form Phi calibrated cycles (3D, geometrically "
+                "rigid, producing small mixing angles), while leptons localize on co-associative "
+                "4-form *Phi calibrated cycles (4D, geometrically flexible, producing large mixing "
+                "angles). The golden angle theta_g = arctan(1/phi), arising from the Fano plane "
+                "geometry of octonionic multiplication, sets the fundamental flavor mixing scale "
+                "for both sectors."
             ),
             section_id="4",
             subsection_id="4.7"
@@ -714,10 +718,14 @@ class OctonionicMixing(SimulationBase):
                 plain_text="theta_g = arctan(1/phi) ~ 31.72 deg, where phi = (1+sqrt(5))/2",
                 category="GEOMETRIC",
                 description=(
-                    "Golden angle from octonionic multiplication structure. This is the "
-                    "fundamental mixing scale in G2 ~ Aut(O). The golden ratio phi appears "
-                    "because the octonions have deep connections to exceptional structures "
-                    "and Fibonacci patterns."
+                    "Golden angle from the octonionic multiplication structure, serving as "
+                    "the fundamental flavor mixing scale in the G2 ~ Aut(O) framework. The "
+                    "golden ratio phi = (1+sqrt(5))/2 appears naturally in the Fano plane "
+                    "geometry that encodes the octonionic product rule: the seven imaginary "
+                    "units e1...e7 form a projective plane whose automorphism group is G2, "
+                    "and the angle arctan(1/phi) characterizes the canonical rotation between "
+                    "adjacent octonionic subalgebras. This angle governs the base scale of "
+                    "quark-lepton mixing via the associative/co-associative cycle split."
                 ),
                 inputParams=[],
                 outputParams=["triality.theta_g", "triality.phi_golden"],
@@ -753,9 +761,15 @@ class OctonionicMixing(SimulationBase):
                 plain_text="V_us = sin(theta_g/2) * xi, V_cb = V_us^2 * xi_b, V_ub = V_us^3 * xi_t",
                 category="DERIVED",
                 description=(
-                    "CKM matrix elements from golden angle on associative 3-form. "
-                    "The 3D structure is rigid, constraining mixing to small angles. "
-                    "The hierarchy follows from successive powers of sin(theta_g/2)."
+                    "CKM matrix elements derived from the golden angle acting on the "
+                    "associative 3-form Phi. Quarks localize on 3-dimensional associative "
+                    "cycles of the G2 manifold, whose rigid geometry constrains mixing to "
+                    "small angles. The golden angle theta_g governs quark mixing because it "
+                    "sets the canonical rotation between adjacent generation cycles in the "
+                    "Fano plane. The hierarchical pattern V_us >> V_cb >> V_ub follows from "
+                    "successive powers of sin(theta_g/2), reflecting the exponential "
+                    "suppression of wavefunction overlaps across generation boundaries "
+                    "in the compact 3-cycle geometry."
                 ),
                 inputParams=["triality.theta_g", "fermion.epsilon_fn"],
                 outputParams=["ckm.V_us_triality", "ckm.V_cb_triality", "ckm.V_ub_triality"],
@@ -795,9 +809,15 @@ class OctonionicMixing(SimulationBase):
                 plain_text="theta_23 ~ 45 + theta_g/2, theta_12 ~ arcsin(1/sqrt(3)), theta_13 ~ sqrt(b2*n)/b3",
                 category="DERIVED",
                 description=(
-                    "PMNS matrix angles from octonionic triality on co-associative 4-form. "
-                    "The 4D structure is flexible, allowing near-maximal mixing. Tribimaximal "
-                    "pattern emerges naturally from discrete symmetries in 4D."
+                    "PMNS matrix angles derived from octonionic triality acting on the "
+                    "co-associative 4-form *Phi. Leptons localize on 4-dimensional co-associative "
+                    "cycles, whose higher dimensionality provides more orthogonal directions for "
+                    "wavefunction mixing compared to the 3-cycle quark sector. The near-maximal "
+                    "atmospheric angle (theta_23 ~ 45 deg) is a direct consequence of the G2 ~ Aut(O) "
+                    "octonionic symmetry acting on the 4-form. The near-tribimaximal solar angle "
+                    "(theta_12 ~ 35 deg) emerges from approximate A4 discrete symmetry of the three "
+                    "co-associative cycle generations. This dimensional asymmetry (3D rigid vs 4D "
+                    "flexible) is the geometric origin of the quark-lepton complementarity."
                 ),
                 inputParams=["triality.theta_g", "topology.b2", "topology.elder_kads", "topology.n_gen"],
                 outputParams=["pmns.theta_12_triality", "pmns.theta_23_triality", "pmns.theta_13_triality"],

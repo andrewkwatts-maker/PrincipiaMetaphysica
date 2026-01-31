@@ -1385,14 +1385,27 @@ class DiscussionV16(SimulationBase):
                 latex=r"\bar{\sigma} = \frac{1}{N_{\text{pred}}} \sum_{i=1}^{N_{\text{pred}}} \frac{|x_i^{\text{PM}} - x_i^{\text{exp}}|}{\sigma_i^{\text{exp}}} = 0.48\sigma",
                 plain_text="sigma_bar = (1/N_pred) * sum |x_i^PM - x_i^exp| / sigma_i^exp = 0.48 sigma",
                 category="DERIVED",
-                description="Global alignment metric: average deviation of PM predictions from experimental data across all validated observables, achieving 0.48 sigma mean alignment with Planck 2018, DESI 2025, and NuFIT 6.0.",
+                description=(
+                    "Global alignment metric: the arithmetic mean of per-observable pulls "
+                    "(absolute deviation in sigma units) across ALL validated PM predictions. "
+                    "The calculation proceeds as follows: for each observable i, the pull_i = "
+                    "|x_i^PM - x_i^exp| / sigma_i^exp quantifies how many standard deviations "
+                    "the PM prediction deviates from the experimental central value. The global "
+                    "metric sigma_bar = (1/N_pred) * sum(pull_i) = 0.48 sigma averages over N_pred "
+                    "observables spanning gauge couplings (Planck 2018), dark energy parameters "
+                    "(DESI DR2 2025), neutrino mixing angles (NuFIT 6.0), and fermion mass ratios "
+                    "(PDG 2024). A value below 1.0 sigma indicates that, on average, PM predictions "
+                    "fall within the 1-sigma experimental bands. For comparison, the Standard Model "
+                    "with tuned parameters achieves sigma_bar ~ 0 by construction, while a random "
+                    "theory would yield sigma_bar >> 1."
+                ),
                 input_params=[],
                 output_params=[],
                 derivation={
                     "steps": [
-                        {"description": "Collect all N_pred PM predictions and corresponding experimental measurements", "formula": r"\{x_i^{\text{PM}}, x_i^{\text{exp}}, \sigma_i^{\text{exp}}\}_{i=1}^{N_{\text{pred}}}"},
-                        {"description": "Compute per-observable pull as absolute deviation in units of experimental uncertainty", "formula": r"\text{pull}_i = \frac{|x_i^{\text{PM}} - x_i^{\text{exp}}|}{\sigma_i^{\text{exp}}}"},
-                        {"description": "Average over all predictions to obtain global alignment metric", "formula": r"\bar{\sigma} = \frac{1}{N_{\text{pred}}} \sum_{i=1}^{N_{\text{pred}}} \text{pull}_i = 0.48"},
+                        {"description": "Collect all N_pred PM predictions with experimental data. The observable set includes: 1/alpha_GUT (gauge), w_0 and w_a (dark energy), theta_12/theta_13/theta_23/delta_CP (PMNS angles), m_h (Higgs), Sigma m_nu (neutrino sum), and fermion mass ratios. Experimental sources: Planck 2018, DESI DR2 2025, NuFIT 6.0, PDG 2024.", "formula": r"\{x_i^{\text{PM}}, x_i^{\text{exp}}, \sigma_i^{\text{exp}}\}_{i=1}^{N_{\text{pred}}}"},
+                        {"description": "For each observable, compute the pull: the absolute deviation between PM prediction and experimental central value, normalised by the published 1-sigma experimental uncertainty. Observables with zero uncertainty (exact constants) are excluded from the average.", "formula": r"\text{pull}_i = \frac{|x_i^{\text{PM}} - x_i^{\text{exp}}|}{\sigma_i^{\text{exp}}}"},
+                        {"description": "Average over all N_pred observables to obtain the global alignment metric. The result sigma_bar = 0.48 means PM predictions fall, on average, within the inner half of the 1-sigma experimental band.", "formula": r"\bar{\sigma} = \frac{1}{N_{\text{pred}}} \sum_{i=1}^{N_{\text{pred}}} \text{pull}_i = 0.48"},
                     ],
                     "method": "statistical_alignment",
                     "parentFormulas": []

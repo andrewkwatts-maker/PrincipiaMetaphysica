@@ -125,10 +125,15 @@ class AppendixASpectralRegistry(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This appendix provides the terminal values for the 125 physical residues "
-                    "extracted from the V₇ manifold. Each residue is mapped to its "
-                    "<strong>Brane-Node ID</strong>, its <strong>Spectral Index</strong> (λₙ), "
-                    "and its functional <strong>Symmetry Bank</strong>."
+                    "This appendix catalogs the terminal values for the 125 physical residues "
+                    "extracted from the V₇ manifold's Laplacian spectrum. Each residue is uniquely "
+                    "identified by its <strong>Brane-Node ID</strong> (geometric coordinate within "
+                    "the G₂ lattice), its <strong>Spectral Index</strong> (λₙ) quantifying the "
+                    "eigenvalue of the Laplace-Beltrami operator, and its functional "
+                    "<strong>Symmetry Bank</strong> indicating the symmetry properties of the "
+                    "corresponding eigenfunction. These residues are directly related to physical "
+                    "parameters in the effective field theory, such as particle masses and "
+                    "coupling constants."
                 )
             ),
 
@@ -261,8 +266,12 @@ class AppendixASpectralRegistry(SimulationBase):
                 plain_text="lambda_n = Delta_V7(Psi_n)",
                 category="ESTABLISHED",
                 description=(
-                    "Spectral eigenvalue extraction from V7 Laplacian. Each of the 125 "
-                    "residues corresponds to a specific eigenvalue of this operator."
+                    "Extraction of spectral eigenvalues from the Laplace-Beltrami operator "
+                    "on the V7 manifold with G2 holonomy. Each of the 125 residues corresponds "
+                    "to a specific eigenvalue representing a distinct mode of excitation on the "
+                    "manifold. These eigenvalues determine the mass spectrum and coupling "
+                    "constants of particles in the 4D effective theory via the spectral "
+                    "geometry correspondence."
                 ),
                 input_params=["topology.elder_kads", "topology.euler_chi"],
                 output_params=["registry.node_count"],

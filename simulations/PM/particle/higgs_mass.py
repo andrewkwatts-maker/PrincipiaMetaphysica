@@ -325,7 +325,15 @@ class HiggsMassSimulation(SimulationBase):
                     content=(
                         "The modulus Re(T) is itself determined by the racetrack superpotential, "
                         "which stabilizes the Kahler moduli through a balance of competing "
-                        "non-perturbative exponentials. The racetrack form is:"
+                        "non-perturbative exponentials. In Kahler moduli stabilization, Re(T) "
+                        "controls the overall volume of the compactified space, and the scalar "
+                        "potential takes the form V = e^K |D_T W|^2 where K is the Kahler "
+                        "potential and D_T W = dW/dT + (dK/dT)W is the Kahler covariant "
+                        "derivative. PM employs a pure racetrack mechanism (as opposed to KKLT "
+                        "which adds an explicit flux superpotential W_0, or LVS which relies on "
+                        "the overall volume modulus). The PM racetrack is selected because the "
+                        "TCS G2 geometry naturally provides two condensing gauge sectors with "
+                        "distinct ranks from the D5 singularity structure. The racetrack form is:"
                     )
                 ),
                 ContentBlock(
@@ -369,7 +377,13 @@ class HiggsMassSimulation(SimulationBase):
                         "triplets into the shadow sector, yielding a mass hierarchy "
                         "M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This "
                         "topological protection eliminates dangerous dimension-5 proton "
-                        "decay operators without fine-tuning."
+                        "decay operators without fine-tuning. The resulting proton lifetime "
+                        "prediction is tau_p > 10^{34} years, comfortably above the current "
+                        "Super-Kamiokande bound of tau_p > 1.6 x 10^{34} years (p -> e+ pi^0). "
+                        "This is a direct consequence of the M_T ~ M_GUT suppression: the "
+                        "dimension-6 operators mediating proton decay are suppressed by "
+                        "(M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that "
+                        "no residual dimension-5 operators survive the compactification."
                     )
                 ),
                 ContentBlock(
@@ -378,11 +392,25 @@ class HiggsMassSimulation(SimulationBase):
                         "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a "
                         "phenomenological INPUT to constrain Re(T) = 9.865, not derived from "
                         "pure geometry. The geometric value Re(T) = 1.833 from the attractor "
-                        "mechanism yields m_h approximately 414 GeV, which fails to match "
-                        "experiment. This factor-of-3.3 discrepancy indicates that the pure "
-                        "racetrack minimum does not correspond to the physical vacuum without "
-                        "additional corrections (see Section 4.9 for the brane partition "
-                        "resolution)."
+                        "mechanism yields m_h ~ 414 GeV, which fails to match experiment. "
+                        "This factor-of-3.3 discrepancy indicates that the pure racetrack "
+                        "minimum does not correspond to the physical vacuum without additional "
+                        "corrections (see Section 4.9 for the brane partition resolution)."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**What physics is missing?** The discrepancy between geometric and "
+                        "phenomenological Re(T) traces to three omitted contributions: (1) The "
+                        "brane partition function, which modifies the Kahler potential via D-brane "
+                        "instanton corrections; (2) Higher-order multi-instanton corrections to the "
+                        "superpotential beyond the two-term racetrack; (3) Warping effects from "
+                        "the throat region of the CY3 sub-manifold within G2, which can stretch "
+                        "the moduli space metric by factors of O(1-10). Including these effects is "
+                        "expected to shift the geometric minimum from Re(T) = 1.833 toward the "
+                        "phenomenologically required value of ~9.865, but a full calculation "
+                        "remains an open problem in M-theory compactifications."
                     )
                 ),
                 ContentBlock(

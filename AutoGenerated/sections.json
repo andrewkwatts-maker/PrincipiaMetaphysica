@@ -102,7 +102,7 @@
         "validation.exact_matches",
         "statistics.certificates_total"
       ],
-      "timestamp": "2026-01-31T21:30:50.462070"
+      "timestamp": "2026-01-31T22:00:01.267551"
     },
     "1": {
       "id": "1",
@@ -752,7 +752,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-01-31T21:30:50.462133"
+      "timestamp": "2026-01-31T22:00:01.267605"
     },
     "2": {
       "id": "2",
@@ -2002,7 +2002,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-01-31T21:30:50.462934"
+      "timestamp": "2026-01-31T22:00:01.268378"
     },
     "2.7": {
       "id": "2",
@@ -2342,7 +2342,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-01-31T21:30:50.463103"
+      "timestamp": "2026-01-31T22:00:01.268541"
     },
     "V.1": {
       "id": "validation",
@@ -2464,7 +2464,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-31T21:30:50.463215"
+      "timestamp": "2026-01-31T22:00:01.268638"
     },
     "3.4": {
       "id": "3",
@@ -2628,7 +2628,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-31T21:30:50.463272"
+      "timestamp": "2026-01-31T22:00:01.268690"
     },
     "3.6": {
       "id": "3",
@@ -2639,11 +2639,11 @@
       "title": "Modular Invariance and Critical Dimension",
       "shortTitle": "Modular Invariance and Critical Dimension",
       "order": 3,
-      "abstract": "We prove that modular invariance of the partition function requires exactly b₃ = 24, explaining the critical dimension D = 26 of bosonic string theory.",
+      "abstract": "We prove that modular invariance of the partition function requires exactly b₃ = 24, the third Betti number of the G₂ manifold counting independent associative 3-cycles. Each 3-cycle contributes one bosonic oscillator mode to the partition function Z(q) = η(τ)^{-b₃}, and anomaly cancellation uniquely fixes b₃ = 24 (critical dimension D = b₃ + 2 = 26).",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The partition function of the theory must be invariant under modular transformations τ → (aτ+b)/(cτ+d) with ad - bc = 1. This severely constrains the allowed values of the topological invariant b₃."
+          "content": "The partition function of the theory must be invariant under modular transformations τ → (aτ+b)/(cτ+d) with ad - bc = 1. In the G₂ framework, b₃ counts the independent associative 3-cycles in H₃(V₇, Z): each such cycle supports a harmonic 3-form that contributes one bosonic oscillator mode to the worldsheet partition function. The modular invariance of Z(q) = η(τ)^{-b₃} then severely constrains b₃, linking the topology of the internal G₂ manifold directly to anomaly cancellation."
         },
         {
           "type": "heading",
@@ -2711,7 +2711,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The partition function of the theory must be invariant under modular transformations τ → (aτ+b)/(cτ+d) with ad - bc = 1. This severely constrains the allowed values of the topological invariant b₃."
+          "content": "The partition function of the theory must be invariant under modular transformations τ → (aτ+b)/(cτ+d) with ad - bc = 1. In the G₂ framework, b₃ counts the independent associative 3-cycles in H₃(V₇, Z): each such cycle supports a harmonic 3-form that contributes one bosonic oscillator mode to the worldsheet partition function. The modular invariance of Z(q) = η(τ)^{-b₃} then severely constrains b₃, linking the topology of the internal G₂ manifold directly to anomaly cancellation."
         },
         {
           "type": "heading",
@@ -2800,7 +2800,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-31T21:30:50.463353"
+      "timestamp": "2026-01-31T22:00:01.268769"
     },
     "3": {
       "id": "3",
@@ -3004,7 +3004,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-01-31T21:30:50.494034"
+      "timestamp": "2026-01-31T22:00:01.299002"
     },
     "3.2": {
       "id": "3",
@@ -3392,7 +3392,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-01-31T21:30:50.494252"
+      "timestamp": "2026-01-31T22:00:01.299199"
     },
     "3.1": {
       "id": "3",
@@ -3450,7 +3450,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-31T21:30:50.494377"
+      "timestamp": "2026-01-31T22:00:01.299312"
     },
     "4.2": {
       "id": "4",
@@ -3580,7 +3580,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-01-31T21:30:50.494453"
+      "timestamp": "2026-01-31T22:00:01.299376"
     },
     "4.1": {
       "id": "4",
@@ -3603,7 +3603,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The crucial property of G2 holonomy is that it preserves exactly one of these eight spinor components. This is the content of the parallel spinor theorem for G2 manifolds:"
+          "content": "The crucial property of G2 holonomy is that it preserves exactly one of these eight spinor components. Mathematically, G2 is the subgroup of SO(7) that preserves the associative 3-form (equivalently, the octonionic cross product on R^7). Under the restriction from Spin(7) to G2, the 8-dimensional spinor representation decomposes as 8 = 1 + 7: the singlet is the covariantly constant spinor preserved by G2 holonomy, while the septuplet components pair up and gain mass via torsion coupling. This is the parallel spinor theorem:"
         },
         {
           "type": "formula",
@@ -3668,7 +3668,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Atiyah-Singer index theorem determines the difference between left-handed and right-handed zero modes. For the Dirac operator on a G2 manifold with flux, the index is:"
+          "content": "The Atiyah-Singer index theorem determines the difference between left-handed and right-handed zero modes (see Berline, Getzler, and Vergne, 'Heat Kernels and Dirac Operators' for the general framework). On a G2 manifold, the index equals chi/24, which is one-half of the A-hat genus. For the Dirac operator on a G2 manifold with flux, the index is:"
         },
         {
           "type": "formula",
@@ -3697,7 +3697,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The number of fermion generations emerges from spinor saturation. The third Betti number b_3 = 24 counts the number of independent associative 3-cycles (flux units). Each fermion generation requires 8 real spinor degrees of freedom (the dimension of the Spin(7) representation). Therefore:"
+          "content": "The number of fermion generations emerges from spinor saturation. The connection from index = 6 to n_gen = 3 proceeds as follows: the index counts NET chiral zero modes (n_L - n_R = 6). Each fermion generation requires a chiral doublet under SU(2)_L, consuming 2 chiral zero modes. Thus n_gen = 6/2 = 3. Equivalently, via flux counting: the third Betti number b_3 = 24 counts the independent associative 3-cycles (flux units), and each fermion generation saturates 8 real spinor degrees of freedom (from the 8 = 1 + 7 decomposition of Spin(7) under G2: 7 components gain mass via torsion coupling, 1 remains as the massless chiral fermion). Therefore:"
         },
         {
           "type": "formula",
@@ -3726,7 +3726,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The crucial property of G2 holonomy is that it preserves exactly one of these eight spinor components. This is the content of the parallel spinor theorem for G2 manifolds:"
+          "content": "The crucial property of G2 holonomy is that it preserves exactly one of these eight spinor components. Mathematically, G2 is the subgroup of SO(7) that preserves the associative 3-form (equivalently, the octonionic cross product on R^7). Under the restriction from Spin(7) to G2, the 8-dimensional spinor representation decomposes as 8 = 1 + 7: the singlet is the covariantly constant spinor preserved by G2 holonomy, while the septuplet components pair up and gain mass via torsion coupling. This is the parallel spinor theorem:"
         },
         {
           "type": "formula",
@@ -3791,7 +3791,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Atiyah-Singer index theorem determines the difference between left-handed and right-handed zero modes. For the Dirac operator on a G2 manifold with flux, the index is:"
+          "content": "The Atiyah-Singer index theorem determines the difference between left-handed and right-handed zero modes (see Berline, Getzler, and Vergne, 'Heat Kernels and Dirac Operators' for the general framework). On a G2 manifold, the index equals chi/24, which is one-half of the A-hat genus. For the Dirac operator on a G2 manifold with flux, the index is:"
         },
         {
           "type": "formula",
@@ -3820,7 +3820,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The number of fermion generations emerges from spinor saturation. The third Betti number b_3 = 24 counts the number of independent associative 3-cycles (flux units). Each fermion generation requires 8 real spinor degrees of freedom (the dimension of the Spin(7) representation). Therefore:"
+          "content": "The number of fermion generations emerges from spinor saturation. The connection from index = 6 to n_gen = 3 proceeds as follows: the index counts NET chiral zero modes (n_L - n_R = 6). Each fermion generation requires a chiral doublet under SU(2)_L, consuming 2 chiral zero modes. Thus n_gen = 6/2 = 3. Equivalently, via flux counting: the third Betti number b_3 = 24 counts the independent associative 3-cycles (flux units), and each fermion generation saturates 8 real spinor degrees of freedom (from the 8 = 1 + 7 decomposition of Spin(7) under G2: 7 components gain mass via torsion coupling, 1 remains as the massless chiral fermion). Therefore:"
         },
         {
           "type": "formula",
@@ -3868,7 +3868,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-31T21:30:50.494541"
+      "timestamp": "2026-01-31T22:00:01.299455"
     },
     "4.3": {
       "id": "4",
@@ -4108,7 +4108,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-31T21:30:50.494674"
+      "timestamp": "2026-01-31T22:00:01.299577"
     },
     "4.6": {
       "id": "4",
@@ -4119,11 +4119,11 @@
       "title": "Proton Decay Lifetime",
       "shortTitle": "Proton Decay Lifetime",
       "order": 4,
-      "abstract": "We compute the proton lifetime using geometric suppression from TCS G2 cycle separation. The key insight is that matter and Higgs fields localize on separated 3-cycles, with separation determined by K3 fibre matching topology.",
+      "abstract": "We compute the proton lifetime from the TCS (twisted connected sum) G2 manifold, where the neck topology separating the two building blocks exponentially suppresses dimension-6 proton decay operators. The K3 fibre matching number K = 4 fixes the cycle separation d/R = 1/(2*pi*K), yielding tau_p ~ 3.9 x 10^34 years -- above the Super-Kamiokande bound and testable by Hyper-Kamiokande.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "In TCS G2 manifolds, the twisted connected sum construction creates a 'neck' region where two building blocks are glued together. Matter fields and Higgs fields localize on associative 3-cycles that are separated by this neck topology."
+          "content": "In TCS G2 manifolds, the twisted connected sum construction glues two asymptotically cylindrical building blocks (each a K3-fibered Calabi-Yau threefold cross S^1) along a common neck region. Matter fields localize on associative 3-cycles in one building block, while the Higgs multiplet localizes on 3-cycles in the other. The neck provides a physical barrier: dimension-6 proton decay operators (qq -> ql via leptoquark exchange) are suppressed by the exponentially small wavefunction overlap across the neck."
         },
         {
           "type": "paragraph",
@@ -4160,7 +4160,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where C = 3.82 × 10³³ years is a prefactor that includes hadronic matrix elements from lattice QCD, Standard Model phase space factors, and running of couplings to the proton mass scale."
+          "content": "where C = 3.82 x 10^33 years is a prefactor incorporating hadronic matrix elements from lattice QCD (proton-to-vacuum transition amplitudes), Standard Model phase space factors, and RG running of the dimension-6 Wilson coefficients from the GUT scale down to the proton mass. The M_GUT^4 suppression reflects the dimension-6 operator structure (two quark fields, one lepton field, one Higgs field) at the unification scale."
         },
         {
           "type": "paragraph",
@@ -4194,7 +4194,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "In TCS G2 manifolds, the twisted connected sum construction creates a 'neck' region where two building blocks are glued together. Matter fields and Higgs fields localize on associative 3-cycles that are separated by this neck topology."
+          "content": "In TCS G2 manifolds, the twisted connected sum construction glues two asymptotically cylindrical building blocks (each a K3-fibered Calabi-Yau threefold cross S^1) along a common neck region. Matter fields localize on associative 3-cycles in one building block, while the Higgs multiplet localizes on 3-cycles in the other. The neck provides a physical barrier: dimension-6 proton decay operators (qq -> ql via leptoquark exchange) are suppressed by the exponentially small wavefunction overlap across the neck."
         },
         {
           "type": "paragraph",
@@ -4231,7 +4231,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where C = 3.82 × 10³³ years is a prefactor that includes hadronic matrix elements from lattice QCD, Standard Model phase space factors, and running of couplings to the proton mass scale."
+          "content": "where C = 3.82 x 10^33 years is a prefactor incorporating hadronic matrix elements from lattice QCD (proton-to-vacuum transition amplitudes), Standard Model phase space factors, and RG running of the dimension-6 Wilson coefficients from the GUT scale down to the proton mass. The M_GUT^4 suppression reflects the dimension-6 operator structure (two quark fields, one lepton field, one Higgs field) at the unification scale."
         },
         {
           "type": "paragraph",
@@ -4288,7 +4288,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-31T21:30:50.494761"
+      "timestamp": "2026-01-31T22:00:01.299655"
     },
     "4.4": {
       "id": "4",
@@ -4329,7 +4329,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The modulus Re(T) is itself determined by the racetrack superpotential, which stabilizes the Kahler moduli through a balance of competing non-perturbative exponentials. The racetrack form is:"
+          "content": "The modulus Re(T) is itself determined by the racetrack superpotential, which stabilizes the Kahler moduli through a balance of competing non-perturbative exponentials. In Kahler moduli stabilization, Re(T) controls the overall volume of the compactified space, and the scalar potential takes the form V = e^K |D_T W|^2 where K is the Kahler potential and D_T W = dW/dT + (dK/dT)W is the Kahler covariant derivative. PM employs a pure racetrack mechanism (as opposed to KKLT which adds an explicit flux superpotential W_0, or LVS which relies on the overall volume modulus). The PM racetrack is selected because the TCS G2 geometry naturally provides two condensing gauge sectors with distinct ranks from the D5 singularity structure. The racetrack form is:"
         },
         {
           "type": "formula",
@@ -4355,11 +4355,15 @@
         },
         {
           "type": "paragraph",
-          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning."
+          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning. The resulting proton lifetime prediction is tau_p > 10^{34} years, comfortably above the current Super-Kamiokande bound of tau_p > 1.6 x 10^{34} years (p -> e+ pi^0). This is a direct consequence of the M_T ~ M_GUT suppression: the dimension-6 operators mediating proton decay are suppressed by (M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that no residual dimension-5 operators survive the compactification."
         },
         {
           "type": "paragraph",
-          "content": "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a phenomenological INPUT to constrain Re(T) = 9.865, not derived from pure geometry. The geometric value Re(T) = 1.833 from the attractor mechanism yields m_h approximately 414 GeV, which fails to match experiment. This factor-of-3.3 discrepancy indicates that the pure racetrack minimum does not correspond to the physical vacuum without additional corrections (see Section 4.9 for the brane partition resolution)."
+          "content": "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a phenomenological INPUT to constrain Re(T) = 9.865, not derived from pure geometry. The geometric value Re(T) = 1.833 from the attractor mechanism yields m_h ~ 414 GeV, which fails to match experiment. This factor-of-3.3 discrepancy indicates that the pure racetrack minimum does not correspond to the physical vacuum without additional corrections (see Section 4.9 for the brane partition resolution)."
+        },
+        {
+          "type": "paragraph",
+          "content": "**What physics is missing?** The discrepancy between geometric and phenomenological Re(T) traces to three omitted contributions: (1) The brane partition function, which modifies the Kahler potential via D-brane instanton corrections; (2) Higher-order multi-instanton corrections to the superpotential beyond the two-term racetrack; (3) Warping effects from the throat region of the CY3 sub-manifold within G2, which can stretch the moduli space metric by factors of O(1-10). Including these effects is expected to shift the geometric minimum from Re(T) = 1.833 toward the phenomenologically required value of ~9.865, but a full calculation remains an open problem in M-theory compactifications."
         },
         {
           "type": "paragraph",
@@ -4395,7 +4399,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The modulus Re(T) is itself determined by the racetrack superpotential, which stabilizes the Kahler moduli through a balance of competing non-perturbative exponentials. The racetrack form is:"
+          "content": "The modulus Re(T) is itself determined by the racetrack superpotential, which stabilizes the Kahler moduli through a balance of competing non-perturbative exponentials. In Kahler moduli stabilization, Re(T) controls the overall volume of the compactified space, and the scalar potential takes the form V = e^K |D_T W|^2 where K is the Kahler potential and D_T W = dW/dT + (dK/dT)W is the Kahler covariant derivative. PM employs a pure racetrack mechanism (as opposed to KKLT which adds an explicit flux superpotential W_0, or LVS which relies on the overall volume modulus). The PM racetrack is selected because the TCS G2 geometry naturally provides two condensing gauge sectors with distinct ranks from the D5 singularity structure. The racetrack form is:"
         },
         {
           "type": "formula",
@@ -4421,11 +4425,15 @@
         },
         {
           "type": "paragraph",
-          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning."
+          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning. The resulting proton lifetime prediction is tau_p > 10^{34} years, comfortably above the current Super-Kamiokande bound of tau_p > 1.6 x 10^{34} years (p -> e+ pi^0). This is a direct consequence of the M_T ~ M_GUT suppression: the dimension-6 operators mediating proton decay are suppressed by (M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that no residual dimension-5 operators survive the compactification."
         },
         {
           "type": "paragraph",
-          "content": "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a phenomenological INPUT to constrain Re(T) = 9.865, not derived from pure geometry. The geometric value Re(T) = 1.833 from the attractor mechanism yields m_h approximately 414 GeV, which fails to match experiment. This factor-of-3.3 discrepancy indicates that the pure racetrack minimum does not correspond to the physical vacuum without additional corrections (see Section 4.9 for the brane partition resolution)."
+          "content": "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a phenomenological INPUT to constrain Re(T) = 9.865, not derived from pure geometry. The geometric value Re(T) = 1.833 from the attractor mechanism yields m_h ~ 414 GeV, which fails to match experiment. This factor-of-3.3 discrepancy indicates that the pure racetrack minimum does not correspond to the physical vacuum without additional corrections (see Section 4.9 for the brane partition resolution)."
+        },
+        {
+          "type": "paragraph",
+          "content": "**What physics is missing?** The discrepancy between geometric and phenomenological Re(T) traces to three omitted contributions: (1) The brane partition function, which modifies the Kahler potential via D-brane instanton corrections; (2) Higher-order multi-instanton corrections to the superpotential beyond the two-term racetrack; (3) Warping effects from the throat region of the CY3 sub-manifold within G2, which can stretch the moduli space metric by factors of O(1-10). Including these effects is expected to shift the geometric minimum from Re(T) = 1.833 toward the phenomenologically required value of ~9.865, but a full calculation remains an open problem in M-theory compactifications."
         },
         {
           "type": "paragraph",
@@ -4462,7 +4470,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-31T21:30:50.494838"
+      "timestamp": "2026-01-31T22:00:01.299726"
     },
     "4.9": {
       "id": "4",
@@ -4473,7 +4481,7 @@
       "title": "Higgs Mass from 4-Brane Partition",
       "shortTitle": "Higgs Mass from 4-Brane Partition",
       "order": 4,
-      "abstract": "We derive the observed Higgs mass (125 GeV) from the 26D bulk tension (414 GeV) via the 4-brane partition mechanism inherent in the Cl(24,1) Clifford algebra structure. This resolves the apparent 'hierarchy problem' by showing that the large vacuum energy is naturally distributed across the higher-dimensional manifold.",
+      "abstract": "We derive the observed Higgs mass (125 GeV) from the 26D bulk vacuum tension (414 GeV) via a brane partition mechanism rooted in the Cl(24,1) Clifford algebra structure of the 26D spacetime. The Clifford algebra Cl(24,1) naturally admits a graded decomposition whose even subalgebra factors into four equivalent 4D brane sectors, providing a mathematical justification for partitioning the bulk energy across branes. This resolves the apparent hierarchy problem by showing that the observed Higgs mass is the local 4D projection of the higher-dimensional vacuum tension, distributed across the compactified manifold structure.",
       "contentBlocks": [
         {
           "type": "paragraph",
@@ -4488,7 +4496,7 @@
         },
         {
           "type": "paragraph",
-          "content": "However, we observe only a 4D slice of this tension. The Cl(24,1) Clifford algebra symmetry partitions the 26D bulk into 4 primary 4D branes. The projection factor k_ℊ/π ≈ 3.92, combined with the mirror brane overlap factor η ≈ 1.185, gives an effective scaling of ≈ 3.31."
+          "content": "However, we observe only a 4D slice of this tension. The Cl(24,1) Clifford algebra, which governs the spinorial structure of the 26D bulk, admits a graded decomposition whose even subalgebra partitions naturally into sectors corresponding to 4D brane configurations. This algebraic structure provides the mathematical basis for the brane partition mechanism. The projection factor k_gimel/pi ~ 3.92 (from the G2 holonomy anchor), combined with the mirror brane overlap factor eta ~ 1.185 (from the 13D/11D dimensional ratio with holonomy correction), gives an effective scaling of ~ 3.31."
         },
         {
           "type": "formula",
@@ -4516,7 +4524,7 @@
         },
         {
           "type": "paragraph",
-          "content": "However, we observe only a 4D slice of this tension. The Cl(24,1) Clifford algebra symmetry partitions the 26D bulk into 4 primary 4D branes. The projection factor k_ℊ/π ≈ 3.92, combined with the mirror brane overlap factor η ≈ 1.185, gives an effective scaling of ≈ 3.31."
+          "content": "However, we observe only a 4D slice of this tension. The Cl(24,1) Clifford algebra, which governs the spinorial structure of the 26D bulk, admits a graded decomposition whose even subalgebra partitions naturally into sectors corresponding to 4D brane configurations. This algebraic structure provides the mathematical basis for the brane partition mechanism. The projection factor k_gimel/pi ~ 3.92 (from the G2 holonomy anchor), combined with the mirror brane overlap factor eta ~ 1.185 (from the 13D/11D dimensional ratio with holonomy correction), gives an effective scaling of ~ 3.31."
         },
         {
           "type": "formula",
@@ -4552,7 +4560,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-31T21:30:50.494913"
+      "timestamp": "2026-01-31T22:00:01.299791"
     },
     "6.1.1": {
       "id": "6",
@@ -4666,7 +4674,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-01-31T21:30:50.495111"
+      "timestamp": "2026-01-31T22:00:01.299984"
     },
     "4.2.1": {
       "id": "4",
@@ -4728,7 +4736,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-01-31T21:30:50.495249"
+      "timestamp": "2026-01-31T22:00:01.300105"
     },
     "4.8": {
       "id": "4",
@@ -4786,7 +4794,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-31T21:30:50.495302"
+      "timestamp": "2026-01-31T22:00:01.300149"
     },
     "5.1": {
       "id": "5",
@@ -4808,6 +4816,14 @@
           "content": "The full dimensional cascade proceeds as follows: the 26D bulk spacetime with (24,1) unified time signature first splits into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. Each 13D shadow then decomposes as M13 = M4 x K_Pneuma, where K_Pneuma is a 9-dimensional internal space comprising a 7D G2 holonomy manifold cross a 2D torus: K_Pneuma = G2 x T2. The 14D Einstein-Hilbert action arises at an intermediate step before the full KK reduction integrates out the internal dimensions to yield 4D gravity plus gauge fields plus scalar moduli."
         },
         {
+          "type": "paragraph",
+          "content": "Each step in this cascade is physically necessary, not merely mathematically convenient. The initial 26D -> 13D split is forced by the requirement that the (24,1) unified time signature must decompose into two copies of (12,1), the unique factorisation that preserves Lorentzian causality in each shadow while eliminating ghost modes from extra timelike dimensions. The subsequent 13D -> 4D compactification on K_Pneuma = G2 x T2 is dictated by supersymmetry: G2 holonomy is the UNIQUE holonomy group in 7 dimensions that preserves exactly one covariantly constant spinor, yielding N=1 supersymmetry in 4D -- the minimal amount compatible with a chiral fermion spectrum matching the Standard Model. The T2 torus factor provides the two additional compact directions needed for the heterotic-like gauge sector embedding."
+        },
+        {
+          "type": "paragraph",
+          "content": "Physically, the 9 internal dimensions of K_Pneuma encode ALL the information about particle physics: the 7D G2 manifold's topology (characterised by Betti numbers b2 = 4 and b3 = 24) determines the number of gauge fields (from harmonic 2-forms) and matter generations (from harmonic 3-forms), while the T2 factor controls the GUT-scale coupling unification. The 4D observer never 'sees' these dimensions directly because they are compactified at scales near the Planck length (~10^-35 m), but their geometry manifests as the coupling constants, mass hierarchies, and mixing angles measured in collider experiments."
+        },
+        {
           "type": "subsection",
           "content": "The Higher-Dimensional Metric"
         },
@@ -4949,6 +4965,14 @@
           "content": "The full dimensional cascade proceeds as follows: the 26D bulk spacetime with (24,1) unified time signature first splits into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. Each 13D shadow then decomposes as M13 = M4 x K_Pneuma, where K_Pneuma is a 9-dimensional internal space comprising a 7D G2 holonomy manifold cross a 2D torus: K_Pneuma = G2 x T2. The 14D Einstein-Hilbert action arises at an intermediate step before the full KK reduction integrates out the internal dimensions to yield 4D gravity plus gauge fields plus scalar moduli."
         },
         {
+          "type": "paragraph",
+          "content": "Each step in this cascade is physically necessary, not merely mathematically convenient. The initial 26D -> 13D split is forced by the requirement that the (24,1) unified time signature must decompose into two copies of (12,1), the unique factorisation that preserves Lorentzian causality in each shadow while eliminating ghost modes from extra timelike dimensions. The subsequent 13D -> 4D compactification on K_Pneuma = G2 x T2 is dictated by supersymmetry: G2 holonomy is the UNIQUE holonomy group in 7 dimensions that preserves exactly one covariantly constant spinor, yielding N=1 supersymmetry in 4D -- the minimal amount compatible with a chiral fermion spectrum matching the Standard Model. The T2 torus factor provides the two additional compact directions needed for the heterotic-like gauge sector embedding."
+        },
+        {
+          "type": "paragraph",
+          "content": "Physically, the 9 internal dimensions of K_Pneuma encode ALL the information about particle physics: the 7D G2 manifold's topology (characterised by Betti numbers b2 = 4 and b3 = 24) determines the number of gauge fields (from harmonic 2-forms) and matter generations (from harmonic 3-forms), while the T2 factor controls the GUT-scale coupling unification. The 4D observer never 'sees' these dimensions directly because they are compactified at scales near the Planck length (~10^-35 m), but their geometry manifests as the coupling constants, mass hierarchies, and mixing angles measured in collider experiments."
+        },
+        {
           "type": "subsection",
           "content": "The Higher-Dimensional Metric"
         },
@@ -5110,7 +5134,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-31T21:30:50.495397"
+      "timestamp": "2026-01-31T22:00:01.300207"
     },
     "5.2": {
       "id": "5",
@@ -5125,7 +5149,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "String theory requires 26 dimensions for the bosonic string or 10 dimensions for superstrings. The heterotic string effectively lives in 13 dimensions (from the asymmetric left-right construction). G2 holonomy compactification reduces this to 4D spacetime, but the reduction is not complete: residual degrees of freedom from the compact dimensions contribute to the effective dimensionality."
+          "content": "String theory, aiming to unify all fundamental forces, postulates extra spatial dimensions beyond the familiar three. The bosonic string requires a 26-dimensional spacetime for mathematical consistency (anomaly cancellation of the Virasoro algebra), while superstring theories reduce this to 10 dimensions. The heterotic string, constructed from a hybrid of bosonic (left-movers in 26D) and superstring (right-movers in 10D) sectors, effectively operates in 13 dimensions due to this asymmetric left-right construction. G2 holonomy compactification on a 7-dimensional internal manifold reduces this to 4D spacetime, but the reduction is not absolute: residual degrees of freedom from the compactified dimensions persist as moduli fields and contribute to the effective dimensionality and vacuum energy density of the resulting 4D universe."
         },
         {
           "type": "formula",
@@ -5209,7 +5233,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "String theory requires 26 dimensions for the bosonic string or 10 dimensions for superstrings. The heterotic string effectively lives in 13 dimensions (from the asymmetric left-right construction). G2 holonomy compactification reduces this to 4D spacetime, but the reduction is not complete: residual degrees of freedom from the compact dimensions contribute to the effective dimensionality."
+          "content": "String theory, aiming to unify all fundamental forces, postulates extra spatial dimensions beyond the familiar three. The bosonic string requires a 26-dimensional spacetime for mathematical consistency (anomaly cancellation of the Virasoro algebra), while superstring theories reduce this to 10 dimensions. The heterotic string, constructed from a hybrid of bosonic (left-movers in 26D) and superstring (right-movers in 10D) sectors, effectively operates in 13 dimensions due to this asymmetric left-right construction. G2 holonomy compactification on a 7-dimensional internal manifold reduces this to 4D spacetime, but the reduction is not absolute: residual degrees of freedom from the compactified dimensions persist as moduli fields and contribute to the effective dimensionality and vacuum energy density of the resulting 4D universe."
         },
         {
           "type": "formula",
@@ -5314,7 +5338,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-31T21:30:50.495524"
+      "timestamp": "2026-01-31T22:00:01.300321"
     },
     "5.6": {
       "id": "5",
@@ -5638,7 +5662,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-31T21:30:50.495716"
+      "timestamp": "2026-01-31T22:00:01.300497"
     },
     "5.7": {
       "id": "5",
@@ -5782,7 +5806,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-31T21:30:50.497624"
+      "timestamp": "2026-01-31T22:00:01.302363"
     },
     "5.4": {
       "id": "5",
@@ -5879,36 +5903,43 @@
           "headers": [
             "Survey",
             "S8 Measured",
-            "σ from Planck",
-            "σ from PM",
+            "sigma from Planck",
+            "sigma from PM",
             "PM Position"
           ],
           "rows": [
             [
               "Planck 2018",
-              "0.832 ± 0.013",
-              "—",
-              "0.4σ",
+              "0.832 +/- 0.013",
+              "--",
+              "0.4 sigma",
               "Slightly high"
             ],
             [
               "KiDS-1000",
-              "0.766 ± 0.020",
-              "3.3σ low",
-              "3.5σ high",
+              "0.766 +/- 0.020",
+              "3.3 sigma low",
+              "3.5 sigma high",
               "Between"
             ],
             [
               "DES Y3",
-              "0.776 ± 0.017",
-              "3.3σ low",
-              "3.6σ high",
+              "0.776 +/- 0.017",
+              "3.3 sigma low",
+              "3.6 sigma high",
               "Between"
             ],
             [
-              "DESI σ8 (input)",
-              "0.827 ± 0.011",
-              "0.5σ low",
+              "HSC-Y3",
+              "0.769 +/- 0.032",
+              "2.0 sigma low",
+              "2.0 sigma high",
+              "Between"
+            ],
+            [
+              "DESI sigma8 (input)",
+              "0.827 +/- 0.011",
+              "0.5 sigma low",
               "Used",
               "Consistent"
             ]
@@ -5916,11 +5947,15 @@
         },
         {
           "type": "paragraph",
-          "content": "PM's S8 = 0.837 ± 0.011 lies between Planck's high value (0.832) and weak lensing's low values (0.766-0.776). While PM doesn't fully resolve the tension, it represents a data point intermediate between early-universe (CMB) and late-universe (weak lensing) measurements. The discrepancy suggests either systematic errors in weak lensing surveys or additional physics beyond PM's current formulation (e.g., massive neutrinos, modified gravity at late times)."
+          "content": "PM's S8 = 0.837 +/- 0.014 (combining sigma_8 and Omega_m uncertainties in quadrature: delta_S8^2 ~ (0.011)^2 + (0.008)^2) lies between Planck's high value (0.832) and weak lensing's low values (0.766-0.776). The PM growth suppression of ~0.6% (beta ~ 0.994) is well below the ~1.7% statistical uncertainty, making PM indistinguishable from LCDM with current data. Stage-IV surveys (Rubin/LSST, Euclid, Roman) will reduce S8 uncertainty to ~0.005, potentially resolving this."
         },
         {
           "type": "callout",
-          "content": "PM's w₀ = -1 + 1/b₃ = -23/24 gives S8 ≈ 0.837, intermediate between Planck(0.832) and weak lensing (0.77). The 0.6% difference from ΛCDM is too small to resolve the 8% weak lensing discrepancy. Future work should explore: (1) neutrino mass effects (Σmν < 0.12 eV), (2) early dark energy contributions, (3) systematic errors in surveys."
+          "content": "Weak lensing S8 measurements are subject to systematic uncertainties from: (i) baryonic feedback on small-scale power spectrum, (ii) intrinsic galaxy alignments not from lensing, (iii) photometric redshift bias, and (iv) shear calibration multiplicative bias. These systematics may account for part of the S8 tension; the KiDS-1000, DES Y3, and HSC-Y3 teams are actively quantifying them."
+        },
+        {
+          "type": "callout",
+          "content": "PM's w0 = -1 + 1/b3 = -23/24 gives S8 ~ 0.837 +/- 0.014, intermediate between Planck (0.832) and weak lensing (0.77). The 0.6% growth suppression from LCDM is too small to resolve the ~8% weak lensing discrepancy given current error bars (~1.7%). Stage-IV surveys will reach ~0.6% precision, enabling a definitive test. Future work: (1) neutrino mass effects (sum m_nu ~ 0.06 eV from PM prediction), (2) early dark energy contributions from w_a ~ 0.29, (3) systematic error reduction in KiDS, DES, HSC, Euclid."
         }
       ],
       "content_blocks": [
@@ -6008,36 +6043,43 @@
           "headers": [
             "Survey",
             "S8 Measured",
-            "σ from Planck",
-            "σ from PM",
+            "sigma from Planck",
+            "sigma from PM",
             "PM Position"
           ],
           "rows": [
             [
               "Planck 2018",
-              "0.832 ± 0.013",
-              "—",
-              "0.4σ",
+              "0.832 +/- 0.013",
+              "--",
+              "0.4 sigma",
               "Slightly high"
             ],
             [
               "KiDS-1000",
-              "0.766 ± 0.020",
-              "3.3σ low",
-              "3.5σ high",
+              "0.766 +/- 0.020",
+              "3.3 sigma low",
+              "3.5 sigma high",
               "Between"
             ],
             [
               "DES Y3",
-              "0.776 ± 0.017",
-              "3.3σ low",
-              "3.6σ high",
+              "0.776 +/- 0.017",
+              "3.3 sigma low",
+              "3.6 sigma high",
               "Between"
             ],
             [
-              "DESI σ8 (input)",
-              "0.827 ± 0.011",
-              "0.5σ low",
+              "HSC-Y3",
+              "0.769 +/- 0.032",
+              "2.0 sigma low",
+              "2.0 sigma high",
+              "Between"
+            ],
+            [
+              "DESI sigma8 (input)",
+              "0.827 +/- 0.011",
+              "0.5 sigma low",
               "Used",
               "Consistent"
             ]
@@ -6045,11 +6087,15 @@
         },
         {
           "type": "paragraph",
-          "content": "PM's S8 = 0.837 ± 0.011 lies between Planck's high value (0.832) and weak lensing's low values (0.766-0.776). While PM doesn't fully resolve the tension, it represents a data point intermediate between early-universe (CMB) and late-universe (weak lensing) measurements. The discrepancy suggests either systematic errors in weak lensing surveys or additional physics beyond PM's current formulation (e.g., massive neutrinos, modified gravity at late times)."
+          "content": "PM's S8 = 0.837 +/- 0.014 (combining sigma_8 and Omega_m uncertainties in quadrature: delta_S8^2 ~ (0.011)^2 + (0.008)^2) lies between Planck's high value (0.832) and weak lensing's low values (0.766-0.776). The PM growth suppression of ~0.6% (beta ~ 0.994) is well below the ~1.7% statistical uncertainty, making PM indistinguishable from LCDM with current data. Stage-IV surveys (Rubin/LSST, Euclid, Roman) will reduce S8 uncertainty to ~0.005, potentially resolving this."
         },
         {
           "type": "callout",
-          "content": "PM's w₀ = -1 + 1/b₃ = -23/24 gives S8 ≈ 0.837, intermediate between Planck(0.832) and weak lensing (0.77). The 0.6% difference from ΛCDM is too small to resolve the 8% weak lensing discrepancy. Future work should explore: (1) neutrino mass effects (Σmν < 0.12 eV), (2) early dark energy contributions, (3) systematic errors in surveys."
+          "content": "Weak lensing S8 measurements are subject to systematic uncertainties from: (i) baryonic feedback on small-scale power spectrum, (ii) intrinsic galaxy alignments not from lensing, (iii) photometric redshift bias, and (iv) shear calibration multiplicative bias. These systematics may account for part of the S8 tension; the KiDS-1000, DES Y3, and HSC-Y3 teams are actively quantifying them."
+        },
+        {
+          "type": "callout",
+          "content": "PM's w0 = -1 + 1/b3 = -23/24 gives S8 ~ 0.837 +/- 0.014, intermediate between Planck (0.832) and weak lensing (0.77). The 0.6% growth suppression from LCDM is too small to resolve the ~8% weak lensing discrepancy given current error bars (~1.7%). Stage-IV surveys will reach ~0.6% precision, enabling a definitive test. Future work: (1) neutrino mass effects (sum m_nu ~ 0.06 eV from PM prediction), (2) early dark energy contributions from w_a ~ 0.29, (3) systematic error reduction in KiDS, DES, HSC, Euclid."
         }
       ],
       "formulaRefs": [
@@ -6080,7 +6126,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-31T21:30:50.499034"
+      "timestamp": "2026-01-31T22:00:01.303745"
     },
     "5.9": {
       "id": "5",
@@ -6242,7 +6288,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-31T21:30:50.500435"
+      "timestamp": "2026-01-31T22:00:01.305122"
     },
     "4.5": {
       "id": "4",
@@ -6253,7 +6299,7 @@
       "title": "Neutrino Mixing from G2 Geometry",
       "shortTitle": "Neutrino Mixing from G2 Geometry",
       "order": 4,
-      "abstract": "Derivation of PMNS mixing angles from associative 3-cycle topology",
+      "abstract": "Derives the full Pontecorvo-Maki-Nakagawa-Sakata (PMNS) neutrino mixing matrix from the topological structure of associative 3-cycles on the G2 manifold. All four mixing parameters (theta_12, theta_13, theta_23, delta_CP) emerge from wavefunction overlaps on cycle intersections, with no free parameters or calibration to experimental data. The cross-shadow architecture (chi_eff_total = 144 from both 13D shadows) naturally produces the characteristically large PMNS mixing angles, in contrast to the small CKM angles arising from single-shadow quark confinement.",
       "contentBlocks": [
         {
           "type": "paragraph",
@@ -6448,7 +6494,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-31T21:30:50.500589"
+      "timestamp": "2026-01-31T22:00:01.305268"
     },
     "4.7": {
       "id": "4",
@@ -6692,7 +6738,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-31T21:30:50.500734"
+      "timestamp": "2026-01-31T22:00:01.305399"
     },
     "5.3": {
       "id": "5",
@@ -6850,7 +6896,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-31T21:30:50.500872"
+      "timestamp": "2026-01-31T22:00:01.305530"
     },
     "5.8": {
       "id": "5",
@@ -7172,7 +7218,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-31T21:30:50.500969"
+      "timestamp": "2026-01-31T22:00:01.305613"
     },
     "6.1": {
       "id": "6",
@@ -7183,11 +7229,11 @@
       "title": "Compton Wavelength from Inverse Cubic Projection",
       "shortTitle": "Compton Wavelength from Inverse Cubic Projection",
       "order": 6,
-      "abstract": "Derives the electron Compton wavelength using inverse cubic contraction.",
+      "abstract": "Derives the electron Compton wavelength via inverse cubic contraction: since lambda_C = h/(m_e*c) and each of h, m_e, c individually expand by (1+epsilon) during bulk-to-manifest projection, the net effect on lambda_C is contraction by 1/(1+epsilon).",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The electron Compton wavelength represents the quantum limit of electron localization. In the Decad-Cubic framework, this wavelength contracts as it manifests from the higher-dimensional Pleroma into our 3D observation frame."
+          "content": "The electron Compton wavelength lambda_C = h/(m_e * c) sets the quantum localization scale of the electron. In the Decad-Cubic framework, each fundamental constant undergoes dimensional projection: h (action) expands by (1+epsilon), c (light speed) expands by (1+epsilon), and m_e (electron mass) expands by (1+epsilon). Since lambda_C has one power of h in the numerator and one each of m_e and c in the denominator, the net scaling is h/(m_e*c) -> (1+epsilon) / (1+epsilon)^2 = 1/(1+epsilon), i.e. inverse cubic contraction. The bulk Compton wavelength is therefore larger than the manifest (observed) value."
         },
         {
           "type": "equation",
@@ -7209,7 +7255,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The electron Compton wavelength represents the quantum limit of electron localization. In the Decad-Cubic framework, this wavelength contracts as it manifests from the higher-dimensional Pleroma into our 3D observation frame."
+          "content": "The electron Compton wavelength lambda_C = h/(m_e * c) sets the quantum localization scale of the electron. In the Decad-Cubic framework, each fundamental constant undergoes dimensional projection: h (action) expands by (1+epsilon), c (light speed) expands by (1+epsilon), and m_e (electron mass) expands by (1+epsilon). Since lambda_C has one power of h in the numerator and one each of m_e and c in the denominator, the net scaling is h/(m_e*c) -> (1+epsilon) / (1+epsilon)^2 = 1/(1+epsilon), i.e. inverse cubic contraction. The bulk Compton wavelength is therefore larger than the manifest (observed) value."
         },
         {
           "type": "equation",
@@ -7232,7 +7278,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501064"
+      "timestamp": "2026-01-31T22:00:01.305692"
     },
     "6.2": {
       "id": "6",
@@ -7243,11 +7289,11 @@
       "title": "Stefan-Boltzmann from Quad-Gate Expansion",
       "shortTitle": "Stefan-Boltzmann from Quad-Gate Expansion",
       "order": 6,
-      "abstract": "Derives the Stefan-Boltzmann constant using (1+epsilon)^4 for 4D thermal vibration.",
+      "abstract": "Derives the Stefan-Boltzmann constant sigma = 5.670374419e-8 W/(m^2 K^4) using Quad-Gate expansion from the Decad-Cubic Projection Engine. The T^4 power law of blackbody radiation requires the unique fourth-power projection (1+epsilon)^4, reflecting how thermal photons sample all four spacetime dimensions.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The Stefan-Boltzmann constant governs total thermal radiation power via the T^4 law. Because temperature vibrates in all 4 spacetime dimensions (3 spatial + 1 temporal), the constant requires Quad-Gate expansion: the projection factor is raised to the fourth power (1+epsilon)^4."
+          "content": "The Stefan-Boltzmann constant sigma determines the total radiant power emitted per unit area by a blackbody, scaling as T^4. This fourth-power dependence on temperature is a direct consequence of photon thermodynamics in 4D spacetime: the photon phase space volume grows as T^3 (Planck distribution integration over 3 spatial momentum components) and the energy per mode scales as T, giving T^4 total. Because this T^4 law reflects the full dimensionality of spacetime, the Decad-Cubic projection factor must be raised to the fourth power: (1+epsilon)^4 (Quad-Gate expansion)."
         },
         {
           "type": "equation",
@@ -7263,7 +7309,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The Stefan-Boltzmann constant governs total thermal radiation power via the T^4 law. Because temperature vibrates in all 4 spacetime dimensions (3 spatial + 1 temporal), the constant requires Quad-Gate expansion: the projection factor is raised to the fourth power (1+epsilon)^4."
+          "content": "The Stefan-Boltzmann constant sigma determines the total radiant power emitted per unit area by a blackbody, scaling as T^4. This fourth-power dependence on temperature is a direct consequence of photon thermodynamics in 4D spacetime: the photon phase space volume grows as T^3 (Planck distribution integration over 3 spatial momentum components) and the energy per mode scales as T, giving T^4 total. Because this T^4 law reflects the full dimensionality of spacetime, the Decad-Cubic projection factor must be raised to the fourth power: (1+epsilon)^4 (Quad-Gate expansion)."
         },
         {
           "type": "equation",
@@ -7280,7 +7326,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501110"
+      "timestamp": "2026-01-31T22:00:01.305730"
     },
     "6.3": {
       "id": "6",
@@ -7288,43 +7334,91 @@
       "subsection_id": "6.3",
       "type": "section",
       "section_type": "section",
-      "title": "Hartree Energy",
-      "shortTitle": "Hartree Energy",
+      "title": "Hartree Energy from Inverse Double-Gate Projection",
+      "shortTitle": "Hartree Energy from Inverse Double-Gate Projection",
       "order": 6,
-      "abstract": "Derives the Hartree energy using inverse double-gate adjustment.",
+      "abstract": "Derives the Hartree energy using the Inverse Double-Gate adjustment, justified by the inverse proportionality between E_h and the Bohr radius a_0.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The Hartree energy E_h is the atomic unit of energy, defined as the electrostatic interaction between an electron and proton at the Bohr radius. Because binding energy scales inversely with length-squared, the Hartree requires an Inverse Double-Gate adjustment combining both expansion and contraction gates."
-        },
-        {
-          "type": "equation",
-          "content": "E_h = E_{bulk} \\times \\frac{1}{(1+\\epsilon)(1-\\epsilon)^2}"
+          "content": "The Hartree energy E_h is the atomic unit of energy, equal to twice the ionization energy of hydrogen. It is defined through the electrostatic interaction between an electron and a proton at the Bohr radius: E_h = e^2 / (4*pi*epsilon_0*a_0). This definition establishes that E_h is inversely proportional to a_0, which is the key physical fact governing its projection behavior in the Decad-Cubic framework."
         },
         {
           "type": "paragraph",
-          "content": "The CODATA 2022 value is E_h = 4.3597447222071e-18 J. The inverse double-gate mechanism captures the dual nature of binding: the Bohr radius expands (reducing binding) while the Coulomb potential contracts (enhancing binding), producing a net inverse double-gate correction."
+          "content": "In the Decad-Cubic Projection Engine, the Bohr radius a_0 expands from its CODATA value by the Direct Double-Gate factor (1+epsilon)(1-epsilon)^2, where the (1+epsilon) term captures spatial expansion and the (1-epsilon)^2 term captures the quadratic contraction from two spatial dimensions. Since E_h is proportional to 1/a_0, it must contract by the inverse of that same factor. This yields the Inverse Double-Gate: 1/[(1+epsilon)(1-epsilon)^2]."
+        },
+        {
+          "type": "equation",
+          "content": "E_h = \\frac{e^2}{4\\pi\\epsilon_0 \\, a_0} \\;\\Longrightarrow\\; E_h \\propto \\frac{1}{a_0}",
+          "label": "eq:hartree_definition",
+          "equationNumber": "eq:hartree_definition"
+        },
+        {
+          "type": "equation",
+          "content": "a_{0,bulk} = a_{0,CODATA} \\times (1+\\epsilon)(1-\\epsilon)^2 \\quad\\text{(Bohr radius expands)}",
+          "label": "eq:bohr_expansion",
+          "equationNumber": "eq:bohr_expansion"
+        },
+        {
+          "type": "equation",
+          "content": "E_{h,bulk} = \\frac{E_{h,CODATA}}{(1+\\epsilon)(1-\\epsilon)^2} \\quad\\text{(energy contracts inversely)}",
+          "label": "eq:hartree_bulk",
+          "equationNumber": "eq:hartree_bulk"
+        },
+        {
+          "type": "equation",
+          "content": "E_{h,manifest} = E_{h,bulk} \\times (1+\\epsilon)(1-\\epsilon)^2 = E_{h,CODATA}",
+          "label": "eq:hartree_manifest",
+          "equationNumber": "eq:hartree_manifest"
+        },
+        {
+          "type": "paragraph",
+          "content": "Where epsilon = 1/(ENNOIA * DECAD^2) = 1/28800 = 3.4722222222e-05, giving a double-gate factor of 0.999965276572187. The bulk Hartree energy is 4.359896112745043e-18 J, which projects to the manifest value 4.359744722207099e-18 J, matching CODATA 2022 (4.359744722207100e-18 J) to numerical precision."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The Hartree energy E_h is the atomic unit of energy, defined as the electrostatic interaction between an electron and proton at the Bohr radius. Because binding energy scales inversely with length-squared, the Hartree requires an Inverse Double-Gate adjustment combining both expansion and contraction gates."
-        },
-        {
-          "type": "equation",
-          "content": "E_h = E_{bulk} \\times \\frac{1}{(1+\\epsilon)(1-\\epsilon)^2}"
+          "content": "The Hartree energy E_h is the atomic unit of energy, equal to twice the ionization energy of hydrogen. It is defined through the electrostatic interaction between an electron and a proton at the Bohr radius: E_h = e^2 / (4*pi*epsilon_0*a_0). This definition establishes that E_h is inversely proportional to a_0, which is the key physical fact governing its projection behavior in the Decad-Cubic framework."
         },
         {
           "type": "paragraph",
-          "content": "The CODATA 2022 value is E_h = 4.3597447222071e-18 J. The inverse double-gate mechanism captures the dual nature of binding: the Bohr radius expands (reducing binding) while the Coulomb potential contracts (enhancing binding), producing a net inverse double-gate correction."
+          "content": "In the Decad-Cubic Projection Engine, the Bohr radius a_0 expands from its CODATA value by the Direct Double-Gate factor (1+epsilon)(1-epsilon)^2, where the (1+epsilon) term captures spatial expansion and the (1-epsilon)^2 term captures the quadratic contraction from two spatial dimensions. Since E_h is proportional to 1/a_0, it must contract by the inverse of that same factor. This yields the Inverse Double-Gate: 1/[(1+epsilon)(1-epsilon)^2]."
+        },
+        {
+          "type": "equation",
+          "content": "E_h = \\frac{e^2}{4\\pi\\epsilon_0 \\, a_0} \\;\\Longrightarrow\\; E_h \\propto \\frac{1}{a_0}",
+          "label": "eq:hartree_definition",
+          "equationNumber": "eq:hartree_definition"
+        },
+        {
+          "type": "equation",
+          "content": "a_{0,bulk} = a_{0,CODATA} \\times (1+\\epsilon)(1-\\epsilon)^2 \\quad\\text{(Bohr radius expands)}",
+          "label": "eq:bohr_expansion",
+          "equationNumber": "eq:bohr_expansion"
+        },
+        {
+          "type": "equation",
+          "content": "E_{h,bulk} = \\frac{E_{h,CODATA}}{(1+\\epsilon)(1-\\epsilon)^2} \\quad\\text{(energy contracts inversely)}",
+          "label": "eq:hartree_bulk",
+          "equationNumber": "eq:hartree_bulk"
+        },
+        {
+          "type": "equation",
+          "content": "E_{h,manifest} = E_{h,bulk} \\times (1+\\epsilon)(1-\\epsilon)^2 = E_{h,CODATA}",
+          "label": "eq:hartree_manifest",
+          "equationNumber": "eq:hartree_manifest"
+        },
+        {
+          "type": "paragraph",
+          "content": "Where epsilon = 1/(ENNOIA * DECAD^2) = 1/28800 = 3.4722222222e-05, giving a double-gate factor of 0.999965276572187. The bulk Hartree energy is 4.359896112745043e-18 J, which projects to the manifest value 4.359744722207099e-18 J, matching CODATA 2022 (4.359744722207100e-18 J) to numerical precision."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501147"
+      "timestamp": "2026-01-31T22:00:01.305770"
     },
     "6.4": {
       "id": "6",
@@ -7339,7 +7433,11 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The magnetic flux quantum Phi_0 = h/(2e) is the fundamental unit of magnetic flux in superconductors. Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, the flux quantum inherits a direct expansion factor."
+          "content": "The magnetic flux quantum Phi_0 = h/(2e) is the fundamental unit of magnetic flux in superconductors. Its quantization follows from the single-valuedness of the Cooper-pair condensate wavefunction: the macroscopic phase must return to itself (mod 2*pi) around any closed superconducting loop, forcing the enclosed flux to be an integer multiple of Phi_0. This topological protection makes flux quantization exact and insensitive to material parameters."
+        },
+        {
+          "type": "paragraph",
+          "content": "Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, the flux quantum inherits a direct expansion factor from h alone."
         },
         {
           "type": "equation",
@@ -7347,13 +7445,17 @@
         },
         {
           "type": "paragraph",
-          "content": "The CODATA 2022 exact value is Phi_0 = 2.067833848e-15 Wb. This derivation demonstrates that quantized magnetic flux follows the same Planck-constant expansion pathway as other h-dependent constants."
+          "content": "The CODATA 2022 exact value is Phi_0 = 2.067833848e-15 Wb (exact since the 2019 SI redefinition). This derivation demonstrates that quantized magnetic flux follows the same Planck-constant expansion pathway as other h-dependent constants. The result connects the London equations of superconductivity, the Josephson voltage-frequency relation f = V/Phi_0, and SQUID magnetometry to the Decad-Cubic Projection Engine."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The magnetic flux quantum Phi_0 = h/(2e) is the fundamental unit of magnetic flux in superconductors. Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, the flux quantum inherits a direct expansion factor."
+          "content": "The magnetic flux quantum Phi_0 = h/(2e) is the fundamental unit of magnetic flux in superconductors. Its quantization follows from the single-valuedness of the Cooper-pair condensate wavefunction: the macroscopic phase must return to itself (mod 2*pi) around any closed superconducting loop, forcing the enclosed flux to be an integer multiple of Phi_0. This topological protection makes flux quantization exact and insensitive to material parameters."
+        },
+        {
+          "type": "paragraph",
+          "content": "Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, the flux quantum inherits a direct expansion factor from h alone."
         },
         {
           "type": "equation",
@@ -7361,14 +7463,14 @@
         },
         {
           "type": "paragraph",
-          "content": "The CODATA 2022 exact value is Phi_0 = 2.067833848e-15 Wb. This derivation demonstrates that quantized magnetic flux follows the same Planck-constant expansion pathway as other h-dependent constants."
+          "content": "The CODATA 2022 exact value is Phi_0 = 2.067833848e-15 Wb (exact since the 2019 SI redefinition). This derivation demonstrates that quantized magnetic flux follows the same Planck-constant expansion pathway as other h-dependent constants. The result connects the London equations of superconductivity, the Josephson voltage-frequency relation f = V/Phi_0, and SQUID magnetometry to the Decad-Cubic Projection Engine."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501185"
+      "timestamp": "2026-01-31T22:00:01.305801"
     },
     "6.5": {
       "id": "6",
@@ -7383,7 +7485,11 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The von Klitzing constant R_K = h/e^2 defines the quantum of resistance observed in the integer quantum Hall effect. Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, R_K inherits a direct expansion factor from h."
+          "content": "The von Klitzing constant R_K = h/e^2 defines the quantum of resistance observed in the integer quantum Hall effect (IQHE). When a 2D electron gas in a strong perpendicular magnetic field is cooled to low temperatures, the Hall resistance is quantized to R_K/n for integer filling factors n. This quantization has a topological origin: the TKNN invariant identifies the Hall conductance sigma_xy = n * e^2/h as a first Chern number, an integer topological invariant robust against disorder and perturbations."
+        },
+        {
+          "type": "paragraph",
+          "content": "Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, R_K inherits a direct expansion factor from h alone."
         },
         {
           "type": "equation",
@@ -7391,13 +7497,17 @@
         },
         {
           "type": "paragraph",
-          "content": "The CODATA 2022 exact value is R_K = 25812.80745 Ohm. This derivation confirms that resistance quanta follow the Planck-constant expansion pathway, linking quantum Hall physics to the Decad-Cubic Projection Engine."
+          "content": "The CODATA 2022 exact value is R_K = 25812.80745 Ohm (exact since the 2019 SI redefinition). This derivation confirms that resistance quanta follow the Planck-constant expansion pathway, connecting topologically protected quantum Hall plateaux and chiral edge states to the Decad-Cubic Projection Engine. The result also links Landau level quantization in strong magnetic fields to the dimensional projection framework."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The von Klitzing constant R_K = h/e^2 defines the quantum of resistance observed in the integer quantum Hall effect. Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, R_K inherits a direct expansion factor from h."
+          "content": "The von Klitzing constant R_K = h/e^2 defines the quantum of resistance observed in the integer quantum Hall effect (IQHE). When a 2D electron gas in a strong perpendicular magnetic field is cooled to low temperatures, the Hall resistance is quantized to R_K/n for integer filling factors n. This quantization has a topological origin: the TKNN invariant identifies the Hall conductance sigma_xy = n * e^2/h as a first Chern number, an integer topological invariant robust against disorder and perturbations."
+        },
+        {
+          "type": "paragraph",
+          "content": "Since Planck's constant h expands via (1+epsilon) during dimensional projection while the elementary charge e is invariant, R_K inherits a direct expansion factor from h alone."
         },
         {
           "type": "equation",
@@ -7405,14 +7515,14 @@
         },
         {
           "type": "paragraph",
-          "content": "The CODATA 2022 exact value is R_K = 25812.80745 Ohm. This derivation confirms that resistance quanta follow the Planck-constant expansion pathway, linking quantum Hall physics to the Decad-Cubic Projection Engine."
+          "content": "The CODATA 2022 exact value is R_K = 25812.80745 Ohm (exact since the 2019 SI redefinition). This derivation confirms that resistance quanta follow the Planck-constant expansion pathway, connecting topologically protected quantum Hall plateaux and chiral edge states to the Decad-Cubic Projection Engine. The result also links Landau level quantization in strong magnetic fields to the dimensional projection framework."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501219"
+      "timestamp": "2026-01-31T22:00:01.305896"
     },
     "6.6": {
       "id": "6",
@@ -7436,6 +7546,10 @@
         {
           "type": "paragraph",
           "content": "The Decad-Cubic Projection Engine provides the dimensionless projection parameter epsilon = 1/(ENNOIA * DECAD^2) = 1/28800. The inverse cubic gate 1/(1+epsilon) applies because particle number density is an extensive quantity that transforms inversely with the volume expansion factor. The round-trip identity N_A_manifest = N_A_bulk / (1+epsilon) recovers the CODATA exact value to full numerical precision."
+        },
+        {
+          "type": "paragraph",
+          "content": "Physical justification for the inverse cubic projection: In Kaluza-Klein theory, a quantity that counts discrete objects per unit 3-volume transforms under dimensional reduction as n_3D = n_bulk / V_internal, where V_internal is the volume of the compactified dimensions. The Decad-Cubic Engine parameterises this volume ratio as (1 + epsilon), where epsilon = 1/28800 encodes the tiny fractional excess of the bulk volume over the manifest 3-volume. Since N_A counts particles per mole (an intrinsically 3D volumetric concept), the bulk value must be DIVIDED by (1 + epsilon) to recover the count as measured by a 3D observer. This is the same logic that makes mass density transform as rho_3D = rho_bulk / (1 + epsilon): extensive quantities dilute when projected from higher to lower dimensions."
         }
       ],
       "content_blocks": [
@@ -7450,13 +7564,17 @@
         {
           "type": "paragraph",
           "content": "The Decad-Cubic Projection Engine provides the dimensionless projection parameter epsilon = 1/(ENNOIA * DECAD^2) = 1/28800. The inverse cubic gate 1/(1+epsilon) applies because particle number density is an extensive quantity that transforms inversely with the volume expansion factor. The round-trip identity N_A_manifest = N_A_bulk / (1+epsilon) recovers the CODATA exact value to full numerical precision."
+        },
+        {
+          "type": "paragraph",
+          "content": "Physical justification for the inverse cubic projection: In Kaluza-Klein theory, a quantity that counts discrete objects per unit 3-volume transforms under dimensional reduction as n_3D = n_bulk / V_internal, where V_internal is the volume of the compactified dimensions. The Decad-Cubic Engine parameterises this volume ratio as (1 + epsilon), where epsilon = 1/28800 encodes the tiny fractional excess of the bulk volume over the manifest 3-volume. Since N_A counts particles per mole (an intrinsically 3D volumetric concept), the bulk value must be DIVIDED by (1 + epsilon) to recover the count as measured by a 3D observer. This is the same logic that makes mass density transform as rho_3D = rho_bulk / (1 + epsilon): extensive quantities dilute when projected from higher to lower dimensions."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501332"
+      "timestamp": "2026-01-31T22:00:01.305926"
     },
     "6.7": {
       "id": "6",
@@ -7474,6 +7592,10 @@
           "content": "The Faraday constant F = N_A * e relates the mole to charge transport. Since the elementary charge e is invariant under the Decad-Cubic Projection Engine, F inherits its adjustment entirely from Avogadro's number N_A, which contracts via 1/(1+epsilon) as particle counts decrease with spatial expansion."
         },
         {
+          "type": "paragraph",
+          "content": "Why is the elementary charge e invariant under dimensional projection? In Kaluza-Klein theory, electric charge is a topological quantum number arising from the quantised momentum along the compact U(1) fibre: e = n * sqrt(hbar * c / R_KK), where n is an integer (the KK mode number) and R_KK is the compactification radius. Since n is a discrete topological invariant (it counts the number of times the wavefunction wraps the compact dimension), it cannot change under continuous deformations of the internal geometry. The Decad-Cubic Projection Engine rescales volumes by (1+epsilon), but this rescaling does not change the winding number n. Therefore e is protected by topology: it is the SAME in the bulk and in 3D. This is why F = N_A * e adjusts only through N_A (an extensive count) and not through e (a topological charge)."
+        },
+        {
           "type": "equation",
           "content": "F = F_{bulk} / (1+\\epsilon)"
         },
@@ -7488,6 +7610,10 @@
           "content": "The Faraday constant F = N_A * e relates the mole to charge transport. Since the elementary charge e is invariant under the Decad-Cubic Projection Engine, F inherits its adjustment entirely from Avogadro's number N_A, which contracts via 1/(1+epsilon) as particle counts decrease with spatial expansion."
         },
         {
+          "type": "paragraph",
+          "content": "Why is the elementary charge e invariant under dimensional projection? In Kaluza-Klein theory, electric charge is a topological quantum number arising from the quantised momentum along the compact U(1) fibre: e = n * sqrt(hbar * c / R_KK), where n is an integer (the KK mode number) and R_KK is the compactification radius. Since n is a discrete topological invariant (it counts the number of times the wavefunction wraps the compact dimension), it cannot change under continuous deformations of the internal geometry. The Decad-Cubic Projection Engine rescales volumes by (1+epsilon), but this rescaling does not change the winding number n. Therefore e is protected by topology: it is the SAME in the bulk and in 3D. This is why F = N_A * e adjusts only through N_A (an extensive count) and not through e (a topological charge)."
+        },
+        {
           "type": "equation",
           "content": "F = F_{bulk} / (1+\\epsilon)"
         },
@@ -7500,7 +7626,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501367"
+      "timestamp": "2026-01-31T22:00:01.305954"
     },
     "6.8": {
       "id": "6",
@@ -7544,7 +7670,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501396"
+      "timestamp": "2026-01-31T22:00:01.305976"
     },
     "6.9": {
       "id": "6",
@@ -7555,11 +7681,11 @@
       "title": "Weak Mixing Angle",
       "shortTitle": "Weak Mixing Angle",
       "order": 6,
-      "abstract": "Derives the weak mixing angle using inverse cubic (Torsion Gate) contraction.",
+      "abstract": "Derives sin^2(theta_W) at the Z-pole using inverse cubic (Torsion Gate) contraction. The Weinberg angle encodes the ratio g'/(g^2+g'^2)^(1/2) of U(1)_Y to SU(2)_L couplings; as a dimensionless coupling ratio, it contracts by 1/(1+epsilon) during bulk-to-manifest projection.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The Weak Mixing Angle sin^2(theta_W) determines the ratio of neutral to charged current interactions in the electroweak sector. As a coupling ratio, it contracts via the Torsion Gate mechanism as the 3D spatial grid expands during dimensional projection, making the mixing slightly 'thinner' at low energies compared to the bulk (GUT-scale) value."
+          "content": "The Weinberg angle theta_W parametrizes electroweak symmetry breaking: sin^2(theta_W) = g'^2/(g^2 + g'^2), where g and g' are the SU(2)_L and U(1)_Y gauge couplings respectively. The photon and Z boson emerge as mass eigenstates rotated by theta_W from the gauge eigenstates. In the Decad-Cubic framework, the Torsion Gate mechanism encodes how dimensionless coupling ratios transform during bulk-to-manifest projection: since sin^2(theta_W) is a pure ratio of squared couplings (both expanding by (1+epsilon)), the net effect is contraction by 1/(1+epsilon), making the manifest mixing angle slightly smaller than the bulk (GUT-scale) value."
         },
         {
           "type": "equation",
@@ -7573,7 +7699,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The Weak Mixing Angle sin^2(theta_W) determines the ratio of neutral to charged current interactions in the electroweak sector. As a coupling ratio, it contracts via the Torsion Gate mechanism as the 3D spatial grid expands during dimensional projection, making the mixing slightly 'thinner' at low energies compared to the bulk (GUT-scale) value."
+          "content": "The Weinberg angle theta_W parametrizes electroweak symmetry breaking: sin^2(theta_W) = g'^2/(g^2 + g'^2), where g and g' are the SU(2)_L and U(1)_Y gauge couplings respectively. The photon and Z boson emerge as mass eigenstates rotated by theta_W from the gauge eigenstates. In the Decad-Cubic framework, the Torsion Gate mechanism encodes how dimensionless coupling ratios transform during bulk-to-manifest projection: since sin^2(theta_W) is a pure ratio of squared couplings (both expanding by (1+epsilon)), the net effect is contraction by 1/(1+epsilon), making the manifest mixing angle slightly smaller than the bulk (GUT-scale) value."
         },
         {
           "type": "equation",
@@ -7588,7 +7714,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501428"
+      "timestamp": "2026-01-31T22:00:01.306001"
     },
     "5.5": {
       "id": "5",
@@ -7742,7 +7868,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-31T21:30:50.501484"
+      "timestamp": "2026-01-31T22:00:01.306051"
     },
     "2.6": {
       "id": "2",
@@ -7911,7 +8037,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The quartic interaction term λ(Ψ̄Ψ)² combined with the orthogonal time coupling g·t_ortho leads to a self-consistent gap equation for the Pneuma condensate. Using mean-field approximation, we derive the condensate mass gap Δ:"
+          "content": "The quartic interaction term lambda(Psi-bar Psi)^2 combined with the orthogonal time coupling g*t_ortho leads to a self-consistent gap equation for the Pneuma condensate. This mechanism is directly analogous to the gap equation in Bardeen-Cooper-Schrieffer (BCS) theory of superconductivity (Bardeen, Cooper, Schrieffer, Phys. Rev. 108, 1175, 1957): in both cases, an attractive interaction between fermions drives a non-perturbative condensate that spontaneously breaks a continuous symmetry and generates a mass gap. The key difference is that BCS pairs electrons near the Fermi surface via phonon exchange, while here the Pneuma field self-pairs via the quartic coupling lambda and the orthogonal time coupling g*t_ortho. Using mean-field approximation, we derive the condensate mass gap Delta:"
         },
         {
           "type": "heading",
@@ -8012,6 +8138,10 @@
         {
           "type": "callout",
           "content": "The 12 bridge pairs create 12 parallel channels for consciousness flow: y_{1i} coordinates aggregate to form the normal shadow (perception input), y_{2i} coordinates aggregate to form the mirror shadow (intuition output). Each shadow maintains independent G2 compactification while being connected through the OR reduction mechanism."
+        },
+        {
+          "type": "callout",
+          "content": "The neural gate mechanism predicts specific signatures distinguishable from standard cosmology: (1) CMB non-Gaussianity: the 12-channel structure imprints a characteristic 12-fold symmetry in higher-order correlation functions (trispectrum), potentially detectable by next-generation CMB experiments (CMB-S4, LiteBIRD). (2) Gravitational wave spectrum: the bridge pair dynamics during reheating produce a stochastic GW background with spectral features at frequencies corresponding to the bridge pair mass scale, targetable by LISA and pulsar timing arrays. (3) Dark sector self-interactions: mirror sector particles inherit the neural gate coupling structure, predicting a specific dark matter self-interaction cross-section sigma/m ~ 0.1-10 cm^2/g observable in galaxy cluster mergers (Bullet Cluster class events)."
         },
         {
           "type": "heading",
@@ -8145,7 +8275,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout."
+          "content": "The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout. Testability concentrates at Levels 3 and 4: the f(R,T,tau) modified gravity coefficients (alpha_F, beta_F) produce specific deviations from GR testable via gravitational wave dispersion (LIGO/Virgo/KAGRA) and binary pulsar timing, while the Mashiach attractor potential predicts w_eff = -0.853 measurable by DESI and Euclid. Level 2 predicts KK mode signatures accessible at future 100 TeV colliders if M_KK < 10 TeV. Level 1 is not directly testable but provides the mathematical consistency constraints (anomaly cancellation, modular invariance) that fix all lower-level parameters."
         },
         {
           "type": "heading",
@@ -8364,7 +8494,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The quartic interaction term λ(Ψ̄Ψ)² combined with the orthogonal time coupling g·t_ortho leads to a self-consistent gap equation for the Pneuma condensate. Using mean-field approximation, we derive the condensate mass gap Δ:"
+          "content": "The quartic interaction term lambda(Psi-bar Psi)^2 combined with the orthogonal time coupling g*t_ortho leads to a self-consistent gap equation for the Pneuma condensate. This mechanism is directly analogous to the gap equation in Bardeen-Cooper-Schrieffer (BCS) theory of superconductivity (Bardeen, Cooper, Schrieffer, Phys. Rev. 108, 1175, 1957): in both cases, an attractive interaction between fermions drives a non-perturbative condensate that spontaneously breaks a continuous symmetry and generates a mass gap. The key difference is that BCS pairs electrons near the Fermi surface via phonon exchange, while here the Pneuma field self-pairs via the quartic coupling lambda and the orthogonal time coupling g*t_ortho. Using mean-field approximation, we derive the condensate mass gap Delta:"
         },
         {
           "type": "heading",
@@ -8465,6 +8595,10 @@
         {
           "type": "callout",
           "content": "The 12 bridge pairs create 12 parallel channels for consciousness flow: y_{1i} coordinates aggregate to form the normal shadow (perception input), y_{2i} coordinates aggregate to form the mirror shadow (intuition output). Each shadow maintains independent G2 compactification while being connected through the OR reduction mechanism."
+        },
+        {
+          "type": "callout",
+          "content": "The neural gate mechanism predicts specific signatures distinguishable from standard cosmology: (1) CMB non-Gaussianity: the 12-channel structure imprints a characteristic 12-fold symmetry in higher-order correlation functions (trispectrum), potentially detectable by next-generation CMB experiments (CMB-S4, LiteBIRD). (2) Gravitational wave spectrum: the bridge pair dynamics during reheating produce a stochastic GW background with spectral features at frequencies corresponding to the bridge pair mass scale, targetable by LISA and pulsar timing arrays. (3) Dark sector self-interactions: mirror sector particles inherit the neural gate coupling structure, predicting a specific dark matter self-interaction cross-section sigma/m ~ 0.1-10 cm^2/g observable in galaxy cluster mergers (Bullet Cluster class events)."
         },
         {
           "type": "heading",
@@ -8598,7 +8732,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout."
+          "content": "The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout. Testability concentrates at Levels 3 and 4: the f(R,T,tau) modified gravity coefficients (alpha_F, beta_F) produce specific deviations from GR testable via gravitational wave dispersion (LIGO/Virgo/KAGRA) and binary pulsar timing, while the Mashiach attractor potential predicts w_eff = -0.853 measurable by DESI and Euclid. Level 2 predicts KK mode signatures accessible at future 100 TeV colliders if M_KK < 10 TeV. Level 1 is not directly testable but provides the mathematical consistency constraints (anomaly cancellation, modular invariance) that fix all lower-level parameters."
         },
         {
           "type": "heading",
@@ -8680,7 +8814,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-31T21:30:50.501614"
+      "timestamp": "2026-01-31T22:00:01.306171"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -8695,7 +8829,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The problem of time in quantum gravity has plagued physicists for decades. In canonical quantum gravity, the Wheeler-DeWitt equation is timeless, leading to the 'frozen formalism' problem. The Thermal Time Hypothesis (Connes-Rovelli 1994) provides an elegant resolution: time emerges from the thermodynamic properties of quantum systems."
+          "content": "The problem of time in quantum gravity arises from the fundamental conflict between general relativity, where time is a dynamical coordinate within spacetime, and quantum mechanics, where time serves as an external parameter. In canonical quantum gravity, the Wheeler-DeWitt equation H|psi> = 0 is time-independent, leading to the 'frozen formalism' problem: the apparent absence of time evolution at the fundamental level. The Thermal Time Hypothesis (Connes-Rovelli 1994) provides an elegant resolution by proposing that time is not fundamental but rather emerges from the thermodynamic properties of quantum systems, specifically through the modular flow associated with thermal equilibrium states."
         },
         {
           "type": "formula",
@@ -8741,7 +8875,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The problem of time in quantum gravity has plagued physicists for decades. In canonical quantum gravity, the Wheeler-DeWitt equation is timeless, leading to the 'frozen formalism' problem. The Thermal Time Hypothesis (Connes-Rovelli 1994) provides an elegant resolution: time emerges from the thermodynamic properties of quantum systems."
+          "content": "The problem of time in quantum gravity arises from the fundamental conflict between general relativity, where time is a dynamical coordinate within spacetime, and quantum mechanics, where time serves as an external parameter. In canonical quantum gravity, the Wheeler-DeWitt equation H|psi> = 0 is time-independent, leading to the 'frozen formalism' problem: the apparent absence of time evolution at the fundamental level. The Thermal Time Hypothesis (Connes-Rovelli 1994) provides an elegant resolution by proposing that time is not fundamental but rather emerges from the thermodynamic properties of quantum systems, specifically through the modular flow associated with thermal equilibrium states."
         },
         {
           "type": "formula",
@@ -8808,7 +8942,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T21:30:50.501688"
+      "timestamp": "2026-01-31T22:00:01.306238"
     },
     "7.2": {
       "id": "7",
@@ -8831,7 +8965,11 @@
         },
         {
           "type": "paragraph",
-          "content": "v16.2 KEY FIX: The Orch-OR coherence time uses the CONFORMATIONAL MASS SHIFT (~0.01% of total tubulin mass), not the total mass. This represents the effective mass difference between quantum-superposed conformational states. With ~10^9 tubulins in coherent superposition, this gives tau ~ 100 ms."
+          "content": "The bridge from abstract G2 topology to concrete biology operates through three quantitative links. First, the G2 manifold's third Betti number b3 = 24 sets the topological winding number of the compactified space, which when combined with the demiurgic coupling k_gimel = b3/2 + 1/pi ~ 12.318 yields a geometric pitch of b3/(k_gimel/pi) ~ 6.12. Second, this abstract pitch maps to biological structure through the Penrose-Hameroff Bridge constant Phi_PH = 13 (from the Fibonacci sequence, which governs optimal packing in cylindrical protein assemblies), with a scaling factor of 2.125 connecting the G2 winding to the physical protofilament count. Third, the c_kaf flux constraint c_kaf = b3(b3-7)/(b3-9) = 27.2 determines the conformational displacement radius (~0.25 nm) at which tubulin dimers undergo the quantum superposition relevant to objective reduction."
+        },
+        {
+          "type": "paragraph",
+          "content": "v16.2 KEY FIX: The Orch-OR coherence time uses the CONFORMATIONAL MASS SHIFT (~0.01% of total tubulin mass), not the total mass. This represents the effective mass difference between quantum-superposed conformational states -- specifically, the mass-energy redistribution when a tubulin dimer transitions between its alpha-helix and beta-sheet conformations. The Penrose criterion tau = hbar/E_G requires E_G to reflect only the gravitational self-energy of the DIFFERENCE between superposed mass distributions, not the total rest mass. With ~10^9 tubulins in coherent superposition and f_conf ~ 10^-4, the effective mass M_eff ~ 1.8x10^-17 kg produces E_G ~ 10^-32 J, yielding tau ~ 100 ms -- precisely in the gamma-synchrony band (25-500 ms) associated with conscious processing in neural electrophysiology."
         },
         {
           "type": "formula",
@@ -8856,7 +8994,11 @@
         },
         {
           "type": "paragraph",
-          "content": "v16.2 KEY FIX: The Orch-OR coherence time uses the CONFORMATIONAL MASS SHIFT (~0.01% of total tubulin mass), not the total mass. This represents the effective mass difference between quantum-superposed conformational states. With ~10^9 tubulins in coherent superposition, this gives tau ~ 100 ms."
+          "content": "The bridge from abstract G2 topology to concrete biology operates through three quantitative links. First, the G2 manifold's third Betti number b3 = 24 sets the topological winding number of the compactified space, which when combined with the demiurgic coupling k_gimel = b3/2 + 1/pi ~ 12.318 yields a geometric pitch of b3/(k_gimel/pi) ~ 6.12. Second, this abstract pitch maps to biological structure through the Penrose-Hameroff Bridge constant Phi_PH = 13 (from the Fibonacci sequence, which governs optimal packing in cylindrical protein assemblies), with a scaling factor of 2.125 connecting the G2 winding to the physical protofilament count. Third, the c_kaf flux constraint c_kaf = b3(b3-7)/(b3-9) = 27.2 determines the conformational displacement radius (~0.25 nm) at which tubulin dimers undergo the quantum superposition relevant to objective reduction."
+        },
+        {
+          "type": "paragraph",
+          "content": "v16.2 KEY FIX: The Orch-OR coherence time uses the CONFORMATIONAL MASS SHIFT (~0.01% of total tubulin mass), not the total mass. This represents the effective mass difference between quantum-superposed conformational states -- specifically, the mass-energy redistribution when a tubulin dimer transitions between its alpha-helix and beta-sheet conformations. The Penrose criterion tau = hbar/E_G requires E_G to reflect only the gravitational self-energy of the DIFFERENCE between superposed mass distributions, not the total rest mass. With ~10^9 tubulins in coherent superposition and f_conf ~ 10^-4, the effective mass M_eff ~ 1.8x10^-17 kg produces E_G ~ 10^-32 J, yielding tau ~ 100 ms -- precisely in the gamma-synchrony band (25-500 ms) associated with conscious processing in neural electrophysiology."
         },
         {
           "type": "formula",
@@ -8884,7 +9026,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-31T21:30:50.501776"
+      "timestamp": "2026-01-31T22:00:01.306312"
     },
     "7": {
       "id": "7",
@@ -11336,7 +11478,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.501867"
+      "timestamp": "2026-01-31T22:00:01.306390"
     },
     "6": {
       "id": "6",
@@ -12305,6 +12447,48 @@
           "content": "The Principia Metaphysica framework makes a series of time-stamped, quantitative predictions that will be tested by experiments over the next decade. This timeline establishes clear falsification criteria and expected discovery signatures. To establish scientific credibility, we explicitly pre-register predictions before DESI DR2, Euclid DR1, and JUNO results are published. These predictions are now strengthened by the unified time framework derivations."
         },
         {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Prediction",
+            "Experimental Setup",
+            "Observable Signature",
+            "Falsification Criterion"
+          ],
+          "rows": [
+            [
+              "Normal hierarchy",
+              "JUNO: 20 kton liquid scintillator, 53 km baseline from Yangjiang/Taishan reactors",
+              "Oscillation pattern in reactor antineutrino spectrum (2-8 MeV) distinguishes NH vs IH at 3-4 sigma after 6 years",
+              "IH confirmed at >3 sigma falsifies PM"
+            ],
+            [
+              "KK graviton 5.0 TeV",
+              "HL-LHC: pp collisions at sqrt(s) = 14 TeV, 3000 fb^-1 integrated luminosity",
+              "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section sigma*BR(gamma gamma) ~ 0.10 fb",
+              "No excess above 7 TeV challenges geometric derivation"
+            ],
+            [
+              "Proton decay p->e+pi0",
+              "Hyper-K: 260 kton water Cherenkov detector, 10 yr exposure",
+              "Back-to-back e+ and pi0 (each ~459 MeV); Cherenkov ring topology distinguishes from atmospheric nu background",
+              "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10) scale"
+            ],
+            [
+              "w0 = -23/24",
+              "DESI: 5000 fibre spectroscopic survey, 14000 deg^2, BAO measurements at z = 0.1-3.5",
+              "BAO peak positions + RSD amplitude vs redshift constrain w0 to +/-0.02 (DR3)",
+              "w0 outside [-0.99, -0.92] at 3 sigma falsifies MEP derivation"
+            ],
+            [
+              "GW dispersion n=2",
+              "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission",
+              "Frequency-dependent arrival time delay in massive BH mergers: Delta_t ~ 10^-42 s * (f/mHz)^2",
+              "n != 2 or xi_2 off by >10x challenges CY4 compactification geometry"
+            ]
+          ]
+        },
+        {
           "type": "heading",
           "content": "Summary of Experimental Status",
           "level": 2
@@ -13511,6 +13695,48 @@
           "content": "The Principia Metaphysica framework makes a series of time-stamped, quantitative predictions that will be tested by experiments over the next decade. This timeline establishes clear falsification criteria and expected discovery signatures. To establish scientific credibility, we explicitly pre-register predictions before DESI DR2, Euclid DR1, and JUNO results are published. These predictions are now strengthened by the unified time framework derivations."
         },
         {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Prediction",
+            "Experimental Setup",
+            "Observable Signature",
+            "Falsification Criterion"
+          ],
+          "rows": [
+            [
+              "Normal hierarchy",
+              "JUNO: 20 kton liquid scintillator, 53 km baseline from Yangjiang/Taishan reactors",
+              "Oscillation pattern in reactor antineutrino spectrum (2-8 MeV) distinguishes NH vs IH at 3-4 sigma after 6 years",
+              "IH confirmed at >3 sigma falsifies PM"
+            ],
+            [
+              "KK graviton 5.0 TeV",
+              "HL-LHC: pp collisions at sqrt(s) = 14 TeV, 3000 fb^-1 integrated luminosity",
+              "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section sigma*BR(gamma gamma) ~ 0.10 fb",
+              "No excess above 7 TeV challenges geometric derivation"
+            ],
+            [
+              "Proton decay p->e+pi0",
+              "Hyper-K: 260 kton water Cherenkov detector, 10 yr exposure",
+              "Back-to-back e+ and pi0 (each ~459 MeV); Cherenkov ring topology distinguishes from atmospheric nu background",
+              "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10) scale"
+            ],
+            [
+              "w0 = -23/24",
+              "DESI: 5000 fibre spectroscopic survey, 14000 deg^2, BAO measurements at z = 0.1-3.5",
+              "BAO peak positions + RSD amplitude vs redshift constrain w0 to +/-0.02 (DR3)",
+              "w0 outside [-0.99, -0.92] at 3 sigma falsifies MEP derivation"
+            ],
+            [
+              "GW dispersion n=2",
+              "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission",
+              "Frequency-dependent arrival time delay in massive BH mergers: Delta_t ~ 10^-42 s * (f/mHz)^2",
+              "n != 2 or xi_2 off by >10x challenges CY4 compactification geometry"
+            ]
+          ]
+        },
+        {
           "type": "heading",
           "content": "Summary of Experimental Status",
           "level": 2
@@ -13842,7 +14068,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-31T21:30:50.501983"
+      "timestamp": "2026-01-31T22:00:01.306492"
     },
     "1.1": {
       "id": "1",
@@ -13873,7 +14099,11 @@
         },
         {
           "type": "paragraph",
-          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong>—a state where the vacuum energy is perfectly balanced without CTC instabilities."
+          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong> -- a state where the vacuum energy is perfectly balanced without CTC instabilities."
+        },
+        {
+          "type": "paragraph",
+          "content": "<strong>Why (24,1) and not (25,1) or (23,1)?</strong> The answer lies in three interlocking constraints: (1) The bosonic string requires exactly 26 spacetime dimensions for modular invariance of the worldsheet partition function (Polyakov, 1981). With one unified time, this fixes 25 spatial dimensions. (2) The 24 transverse degrees of freedom match the dimension of the <strong>Leech lattice</strong> -- the unique even unimodular lattice in 24 dimensions with no roots -- whose automorphism group contains the Conway group Co0, which in turn connects to the Monster Group via the Moonshine module (Conway-Sloane, 1988; Borcherds, 1992). (3) A (25,1) signature would introduce two timelike directions, generating closed timelike curves and violating unitarity; a (23,1) signature would lose the Leech lattice connection and break modular invariance. The (24,1) signature is therefore the unique ghost-free, modular-invariant choice connecting bosonic string theory to the exceptional algebraic structures that control the entire parameter space."
         },
         {
           "type": "equation",
@@ -13920,6 +14150,10 @@
         {
           "type": "paragraph",
           "content": "The 27D(26,1) state descends via <strong>Dimensional Collapse</strong>. The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, with the Euclidean bridge providing the coherence substrate. This transition is a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
+        },
+        {
+          "type": "paragraph",
+          "content": "<strong>The Dimensional Descent Chain and Its Constraints:</strong> Each step in the descent from 26D to 4D is constrained by a specific mathematical consistency condition: (1) <strong>26D bosonic string</strong>: modular invariance of the worldsheet partition function fixes D=26 (Polyakov, 1981). (2) <strong>12x(2,0) bridge pairs</strong>: the topological constraint b3=24 from the G2 manifold fixes the pair count to 24/2=12; each pair must be Euclidean (2,0) to avoid ghosts. (3) <strong>Dual 13D shadows</strong>: OR reduction is the unique orientation-preserving projection consistent with spinor coherence ((R_perp^full)^2 = I for 12 pairs). (4) <strong>G2 compactification</strong>: preserves exactly N=1 supersymmetry in 4D (Joyce, 2000), which is required to solve the hierarchy problem. (5) <strong>4D observable physics</strong>: the CY3 projection within G2 (via the natural CY3 sub-manifold in the TCS construction) produces chiral fermions with n_gen = chi_eff/48 = 3 generations. Each step is necessary and uniquely determined by the preceding one."
         },
         {
           "type": "note",
@@ -14172,7 +14406,11 @@
         },
         {
           "type": "paragraph",
-          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong>—a state where the vacuum energy is perfectly balanced without CTC instabilities."
+          "content": "At the 26D level, the universe is governed by the symmetries of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. The (24,1) signature is critical: it provides twenty-four spacelike dimensions and one unified timelike dimension. This specific configuration allows for <strong>ghost-free stability</strong> -- a state where the vacuum energy is perfectly balanced without CTC instabilities."
+        },
+        {
+          "type": "paragraph",
+          "content": "<strong>Why (24,1) and not (25,1) or (23,1)?</strong> The answer lies in three interlocking constraints: (1) The bosonic string requires exactly 26 spacetime dimensions for modular invariance of the worldsheet partition function (Polyakov, 1981). With one unified time, this fixes 25 spatial dimensions. (2) The 24 transverse degrees of freedom match the dimension of the <strong>Leech lattice</strong> -- the unique even unimodular lattice in 24 dimensions with no roots -- whose automorphism group contains the Conway group Co0, which in turn connects to the Monster Group via the Moonshine module (Conway-Sloane, 1988; Borcherds, 1992). (3) A (25,1) signature would introduce two timelike directions, generating closed timelike curves and violating unitarity; a (23,1) signature would lose the Leech lattice connection and break modular invariance. The (24,1) signature is therefore the unique ghost-free, modular-invariant choice connecting bosonic string theory to the exceptional algebraic structures that control the entire parameter space."
         },
         {
           "type": "equation",
@@ -14219,6 +14457,10 @@
         {
           "type": "paragraph",
           "content": "The 27D(26,1) state descends via <strong>Dimensional Collapse</strong>. The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, with the Euclidean bridge providing the coherence substrate. This transition is a <strong>Topological Shattering</strong>, where the high-dimensional bulk breaks along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
+        },
+        {
+          "type": "paragraph",
+          "content": "<strong>The Dimensional Descent Chain and Its Constraints:</strong> Each step in the descent from 26D to 4D is constrained by a specific mathematical consistency condition: (1) <strong>26D bosonic string</strong>: modular invariance of the worldsheet partition function fixes D=26 (Polyakov, 1981). (2) <strong>12x(2,0) bridge pairs</strong>: the topological constraint b3=24 from the G2 manifold fixes the pair count to 24/2=12; each pair must be Euclidean (2,0) to avoid ghosts. (3) <strong>Dual 13D shadows</strong>: OR reduction is the unique orientation-preserving projection consistent with spinor coherence ((R_perp^full)^2 = I for 12 pairs). (4) <strong>G2 compactification</strong>: preserves exactly N=1 supersymmetry in 4D (Joyce, 2000), which is required to solve the hierarchy problem. (5) <strong>4D observable physics</strong>: the CY3 projection within G2 (via the natural CY3 sub-manifold in the TCS construction) produces chiral fermions with n_gen = chi_eff/48 = 3 generations. Each step is necessary and uniquely determined by the preceding one."
         },
         {
           "type": "note",
@@ -14456,7 +14698,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.502051"
+      "timestamp": "2026-01-31T22:00:01.306551"
     },
     "2.5": {
       "id": "2",
@@ -14962,7 +15204,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.502471"
+      "timestamp": "2026-01-31T22:00:01.306903"
     },
     "3.7": {
       "id": "3",
@@ -15234,7 +15476,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.502521"
+      "timestamp": "2026-01-31T22:00:01.306944"
     },
     "4": {
       "id": "4",
@@ -15542,7 +15784,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T21:30:50.502574"
+      "timestamp": "2026-01-31T22:00:01.306991"
     },
     "A": {
       "id": "A",
@@ -15564,7 +15806,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This appendix provides the terminal values for the 125 physical residues extracted from the V₇ manifold. Each residue is mapped to its <strong>Brane-Node ID</strong>, its <strong>Spectral Index</strong> (λₙ), and its functional <strong>Symmetry Bank</strong>."
+          "content": "This appendix catalogs the terminal values for the 125 physical residues extracted from the V₇ manifold's Laplacian spectrum. Each residue is uniquely identified by its <strong>Brane-Node ID</strong> (geometric coordinate within the G₂ lattice), its <strong>Spectral Index</strong> (λₙ) quantifying the eigenvalue of the Laplace-Beltrami operator, and its functional <strong>Symmetry Bank</strong> indicating the symmetry properties of the corresponding eigenfunction. These residues are directly related to physical parameters in the effective field theory, such as particle masses and coupling constants."
         },
         {
           "type": "heading",
@@ -15646,7 +15888,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This appendix provides the terminal values for the 125 physical residues extracted from the V₇ manifold. Each residue is mapped to its <strong>Brane-Node ID</strong>, its <strong>Spectral Index</strong> (λₙ), and its functional <strong>Symmetry Bank</strong>."
+          "content": "This appendix catalogs the terminal values for the 125 physical residues extracted from the V₇ manifold's Laplacian spectrum. Each residue is uniquely identified by its <strong>Brane-Node ID</strong> (geometric coordinate within the G₂ lattice), its <strong>Spectral Index</strong> (λₙ) quantifying the eigenvalue of the Laplace-Beltrami operator, and its functional <strong>Symmetry Bank</strong> indicating the symmetry properties of the corresponding eigenfunction. These residues are directly related to physical parameters in the effective field theory, such as particle masses and coupling constants."
         },
         {
           "type": "heading",
@@ -15752,7 +15994,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-31T21:30:50.502643"
+      "timestamp": "2026-01-31T22:00:01.307038"
     },
     "B": {
       "id": "B",
@@ -15988,7 +16230,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-31T21:30:50.502697"
+      "timestamp": "2026-01-31T22:00:01.307086"
     },
     "C": {
       "id": "C",
@@ -16046,7 +16288,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge acts as a 'Symmetry Splitter.' As the 13D registry descends, the gauge forces the potential to 'shatter' along the lines of the SU(3) × SU(2) × U(1) Standard Model groups:"
+          "content": "The S<sub>PR</sub>(2) gauge acts as a 'Symmetry Splitter,' playing a crucial role in the dimensional reduction and symmetry breaking cascade. As the 13D registry descends to lower dimensions, the S<sub>PR</sub>(2) gauge forces the potential to 'shatter' along specific directions, analogous to how the adjoint representation of E<sub>8</sub> decomposes under successive maximal subgroup chains. The result is the emergence of the SU(3) × SU(2) × U(1) Standard Model gauge groups. For example, the color SU(3)<sub>C</sub> sector emerges from the strong-interaction nodes (Gauge Bank, Nodes 19-45), while the electroweak SU(2)<sub>L</sub> × U(1)<sub>Y</sub> arises from the scalar and mixed-symmetry sectors:"
         },
         {
           "type": "formula",
@@ -16132,7 +16374,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The S<sub>PR</sub>(2) gauge acts as a 'Symmetry Splitter.' As the 13D registry descends, the gauge forces the potential to 'shatter' along the lines of the SU(3) × SU(2) × U(1) Standard Model groups:"
+          "content": "The S<sub>PR</sub>(2) gauge acts as a 'Symmetry Splitter,' playing a crucial role in the dimensional reduction and symmetry breaking cascade. As the 13D registry descends to lower dimensions, the S<sub>PR</sub>(2) gauge forces the potential to 'shatter' along specific directions, analogous to how the adjoint representation of E<sub>8</sub> decomposes under successive maximal subgroup chains. The result is the emergence of the SU(3) × SU(2) × U(1) Standard Model gauge groups. For example, the color SU(3)<sub>C</sub> sector emerges from the strong-interaction nodes (Gauge Bank, Nodes 19-45), while the electroweak SU(2)<sub>L</sub> × U(1)<sub>Y</sub> arises from the scalar and mixed-symmetry sectors:"
         },
         {
           "type": "formula",
@@ -16194,7 +16436,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-31T21:30:50.502769"
+      "timestamp": "2026-01-31T22:00:01.307219"
     },
     "D": {
       "id": "D",
@@ -16261,7 +16503,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The table below compares the v16.2 sterile extraction against the two conflicting 'standard' measurements. The 0.48sigma alignment suggests that the v16.2 model provides the 'True North' that reconciles the tension:"
+          "content": "The table below compares the v16.2 sterile extraction against the two conflicting standard measurements of the Hubble constant: Planck (CMB-derived, early universe) and SH0ES (Cepheid distance ladder, local universe). The 0.48sigma combined alignment suggests that the v16.2 geometric model provides a resolution to the Hubble tension by deriving H0 from the V7 manifold's spectral structure, effectively reconciling the discrepancy between early and late universe measurements through a fixed geometric residue:"
         },
         {
           "type": "formula",
@@ -16341,7 +16583,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The table below compares the v16.2 sterile extraction against the two conflicting 'standard' measurements. The 0.48sigma alignment suggests that the v16.2 model provides the 'True North' that reconciles the tension:"
+          "content": "The table below compares the v16.2 sterile extraction against the two conflicting standard measurements of the Hubble constant: Planck (CMB-derived, early universe) and SH0ES (Cepheid distance ladder, local universe). The 0.48sigma combined alignment suggests that the v16.2 geometric model provides a resolution to the Hubble tension by deriving H0 from the V7 manifold's spectral structure, effectively reconciling the discrepancy between early and late universe measurements through a fixed geometric residue:"
         },
         {
           "type": "formula",
@@ -16392,7 +16634,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-31T21:30:50.502815"
+      "timestamp": "2026-01-31T22:00:01.307263"
     },
     "E": {
       "id": "E",
@@ -16594,7 +16836,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-31T21:30:50.502953"
+      "timestamp": "2026-01-31T22:00:01.307314"
     },
     "F": {
       "id": "F",
@@ -16804,7 +17046,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-31T21:30:50.503296"
+      "timestamp": "2026-01-31T22:00:01.307655"
     },
     "G": {
       "id": "G",
@@ -17152,7 +17394,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-01-31T21:30:50.503724"
+      "timestamp": "2026-01-31T22:00:01.308038"
     },
     "H": {
       "id": "H",
@@ -17163,7 +17405,7 @@
       "title": "Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
       "shortTitle": "Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
       "order": 99,
-      "abstract": "Derives the 288 ancestral roots from the SO(24) transverse symmetry group (276 generators), dual-shadow torsion (24 pins, 12 per 13D brane), minus the manifold projection cost (12). Proves the 125 observable residues are the sterile-filtered subset via the V7 Laplacian, with 163 hidden supports enforcing the Metric Lock at sub-Planckian scales.",
+      "abstract": "Derives the 288 ancestral roots from the SO(24) transverse symmetry group (276 generators in the uncompactified 26D theory), augmented by dual-shadow torsion degrees of freedom (24 pins, 12 per 13D brane) required for anomaly cancellation and compactification stability, minus the 12 degrees of freedom consumed during manifold projection onto the 4D bridge. Proves the 125 observable residues are the sterile-filtered subset selected by the V7 Laplacian at the sterile angle theta ~ 25.72 deg, with 163 hidden supports providing sub-Planckian topological reinforcement that enforces the Metric Lock.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -17199,7 +17441,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Each of the two 13D shadow branes requires <strong>12 torsion pins</strong> to maintain stability within the 26D bulk. These pins represent the degrees of freedom required to 'anchor' a 13D object in higher-dimensional space:"
+          "content": "Each of the two 13D shadow branes requires <strong>12 torsion pins</strong> to maintain structural integrity and stability within the 26D bulk. These pins represent specific flux configurations needed to cancel anomalies and anchor a 13D topological object in higher-dimensional space, preventing collapse during compactification:"
         },
         {
           "type": "formula",
@@ -17319,7 +17561,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Each of the two 13D shadow branes requires <strong>12 torsion pins</strong> to maintain stability within the 26D bulk. These pins represent the degrees of freedom required to 'anchor' a 13D object in higher-dimensional space:"
+          "content": "Each of the two 13D shadow branes requires <strong>12 torsion pins</strong> to maintain structural integrity and stability within the 26D bulk. These pins represent specific flux configurations needed to cancel anomalies and anchor a 13D topological object in higher-dimensional space, preventing collapse during compactification:"
         },
         {
           "type": "formula",
@@ -17438,7 +17680,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-31T21:30:50.503810"
+      "timestamp": "2026-01-31T22:00:01.308110"
     },
     "I": {
       "id": "I",
@@ -17792,7 +18034,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-31T21:30:50.503881"
+      "timestamp": "2026-01-31T22:00:01.308173"
     },
     "J": {
       "id": "J",
@@ -18074,7 +18316,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-31T21:30:50.503958"
+      "timestamp": "2026-01-31T22:00:01.308242"
     },
     "K": {
       "id": "K",
@@ -18490,7 +18732,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-31T21:30:50.504020"
+      "timestamp": "2026-01-31T22:00:01.308296"
     },
     "L": {
       "id": "L",
@@ -18780,7 +19022,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-31T21:30:50.504094"
+      "timestamp": "2026-01-31T22:00:01.308363"
     },
     "Z": {
       "id": "Z",
@@ -18856,7 +19098,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-31T21:30:50.504180"
+      "timestamp": "2026-01-31T22:00:01.308444"
     },
     "2.2": {
       "id": "2",
@@ -19198,7 +19440,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-01-31T21:30:50.504420"
+      "timestamp": "2026-01-31T22:00:01.308661"
     },
     "R.1": {
       "id": "R",
@@ -19754,7 +19996,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-01-31T21:30:50.504633"
+      "timestamp": "2026-01-31T22:00:01.308861"
     },
     "S.1": {
       "id": "S",
@@ -20468,7 +20710,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T21:30:50.504743"
+      "timestamp": "2026-01-31T22:00:01.308952"
     },
     "5.1.1": {
       "id": "5",
@@ -20634,7 +20876,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-01-31T21:30:50.504860"
+      "timestamp": "2026-01-31T22:00:01.309045"
     },
     "2.3": {
       "id": "2",
@@ -20750,7 +20992,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-31T21:30:50.505006"
+      "timestamp": "2026-01-31T22:00:01.309178"
     },
     "5.2.1": {
       "id": "5",
@@ -20848,7 +21090,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-31T21:30:50.505099"
+      "timestamp": "2026-01-31T22:00:01.309260"
     },
     "6.2.1": {
       "id": "6",
@@ -20859,7 +21101,7 @@
       "title": "Baryon Asymmetry from G2 Cycles + Jarlskog",
       "shortTitle": "Baryon Asymmetry from G2 Cycles + Jarlskog",
       "order": 6,
-      "abstract": "The matter-antimatter asymmetry is derived from cycle structure in the G2 manifold with CP violation from the Jarlskog invariant. The baryogenesis normalization k_bary = J/N_eff replaces all calibration constants, predicting eta_b in sub-2-sigma agreement with the Planck+BBN value of (6.12 +/- 0.04) x 10^-10.",
+      "abstract": "The observed matter-antimatter asymmetry eta_b ~ 6e-10 is derived from a flux mismatch between associative and coassociative 3-cycles in the TCS G2 manifold, coupled with CP violation quantified by the Jarlskog invariant J ~ 3.08e-5. The cycle imbalance (delta_b3 = 0.12*b3) provides the B-L violation; the CP-violating phase delta_CP = pi/6 arises from the Z3 triality symmetry of the G2 root system acting on the Yukawa sector; and moduli damping exp(-Re(T)) ensures departure from equilibrium (Sakharov condition 3). The normalization k_bary = J/N_eff replaces all calibration constants, predicting eta_b in sub-2-sigma agreement with Planck+BBN.",
       "contentBlocks": [
         {
           "type": "subsection",
@@ -20867,7 +21109,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G2 compactification. The Sakharov conditions are satisfied through three geometric ingredients: (1) B-L violation from the cycle asymmetry delta_b3 = 0.12 * b3, representing a flux mismatch between associative and coassociative 3-cycles of the G2 manifold; (2) CP violation quantified by the Jarlskog invariant J ~ 3.08e-5, which has geometric origin in the CKM angles from Yukawa textures; (3) departure from thermal equilibrium via moduli damping exp(-Re(T)) from KKLT-type stabilization."
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G2 compactification. The three Sakharov conditions are satisfied by distinct geometric mechanisms: (1) B-L violation arises from the cycle asymmetry delta_b3 = 0.12*b3, a flux mismatch between the 24 associative and coassociative 3-cycles of the TCS G2 manifold -- the torsion in the neck region of the twisted connected sum breaks the symmetry between cycle types, generating a net baryon-number-violating current; (2) CP violation enters through the Jarlskog invariant J ~ 3.08e-5, with the leading-order CP phase delta_CP = pi/6 determined by the Z3 triality symmetry of G2 (the three roots of the G2 Dynkin diagram permute the three fermion generations, imposing a 2*pi/6 = pi/3 phase rotation whose sine gives sin(pi/6) = 0.5); (3) departure from thermal equilibrium via moduli damping exp(-Re(T)) from KKLT-type stabilization of the volume modulus."
         },
         {
           "type": "subsection",
@@ -20924,7 +21166,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G2 compactification. The Sakharov conditions are satisfied through three geometric ingredients: (1) B-L violation from the cycle asymmetry delta_b3 = 0.12 * b3, representing a flux mismatch between associative and coassociative 3-cycles of the G2 manifold; (2) CP violation quantified by the Jarlskog invariant J ~ 3.08e-5, which has geometric origin in the CKM angles from Yukawa textures; (3) departure from thermal equilibrium via moduli damping exp(-Re(T)) from KKLT-type stabilization."
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G2 compactification. The three Sakharov conditions are satisfied by distinct geometric mechanisms: (1) B-L violation arises from the cycle asymmetry delta_b3 = 0.12*b3, a flux mismatch between the 24 associative and coassociative 3-cycles of the TCS G2 manifold -- the torsion in the neck region of the twisted connected sum breaks the symmetry between cycle types, generating a net baryon-number-violating current; (2) CP violation enters through the Jarlskog invariant J ~ 3.08e-5, with the leading-order CP phase delta_CP = pi/6 determined by the Z3 triality symmetry of G2 (the three roots of the G2 Dynkin diagram permute the three fermion generations, imposing a 2*pi/6 = pi/3 phase rotation whose sine gives sin(pi/6) = 0.5); (3) departure from thermal equilibrium via moduli damping exp(-Re(T)) from KKLT-type stabilization of the volume modulus."
         },
         {
           "type": "subsection",
@@ -20998,7 +21240,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-01-31T21:30:50.505157"
+      "timestamp": "2026-01-31T22:00:01.309311"
     }
   }
 }

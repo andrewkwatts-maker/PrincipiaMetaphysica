@@ -170,8 +170,27 @@ class FoundationsV16_2(SimulationBase):
                     "<strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. "
                     "The (24,1) signature is critical: it provides twenty-four spacelike dimensions "
                     "and one unified timelike dimension. This specific configuration allows for "
-                    "<strong>ghost-free stability</strong>—a state where the vacuum energy "
+                    "<strong>ghost-free stability</strong> -- a state where the vacuum energy "
                     "is perfectly balanced without CTC instabilities."
+                )
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<strong>Why (24,1) and not (25,1) or (23,1)?</strong> The answer lies in "
+                    "three interlocking constraints: (1) The bosonic string requires exactly 26 "
+                    "spacetime dimensions for modular invariance of the worldsheet partition function "
+                    "(Polyakov, 1981). With one unified time, this fixes 25 spatial dimensions. "
+                    "(2) The 24 transverse degrees of freedom match the dimension of the "
+                    "<strong>Leech lattice</strong> -- the unique even unimodular lattice in 24 "
+                    "dimensions with no roots -- whose automorphism group contains the Conway group "
+                    "Co0, which in turn connects to the Monster Group via the Moonshine module "
+                    "(Conway-Sloane, 1988; Borcherds, 1992). (3) A (25,1) signature would introduce "
+                    "two timelike directions, generating closed timelike curves and violating "
+                    "unitarity; a (23,1) signature would lose the Leech lattice connection and "
+                    "break modular invariance. The (24,1) signature is therefore the unique "
+                    "ghost-free, modular-invariant choice connecting bosonic string theory to the "
+                    "exceptional algebraic structures that control the entire parameter space."
                 )
             ),
             ContentBlock(
@@ -228,6 +247,24 @@ class FoundationsV16_2(SimulationBase):
                     "with the Euclidean bridge providing the coherence substrate. This transition is a "
                     "<strong>Topological Shattering</strong>, where the high-dimensional bulk breaks "
                     "along the fault lines of the G₂ holonomy into two mirrored 4D condensates."
+                )
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<strong>The Dimensional Descent Chain and Its Constraints:</strong> Each step in the "
+                    "descent from 26D to 4D is constrained by a specific mathematical consistency condition: "
+                    "(1) <strong>26D bosonic string</strong>: modular invariance of the worldsheet partition "
+                    "function fixes D=26 (Polyakov, 1981). (2) <strong>12x(2,0) bridge pairs</strong>: the "
+                    "topological constraint b3=24 from the G2 manifold fixes the pair count to 24/2=12; each "
+                    "pair must be Euclidean (2,0) to avoid ghosts. (3) <strong>Dual 13D shadows</strong>: "
+                    "OR reduction is the unique orientation-preserving projection consistent with spinor "
+                    "coherence ((R_perp^full)^2 = I for 12 pairs). (4) <strong>G2 compactification</strong>: "
+                    "preserves exactly N=1 supersymmetry in 4D (Joyce, 2000), which is required to solve "
+                    "the hierarchy problem. (5) <strong>4D observable physics</strong>: the CY3 projection "
+                    "within G2 (via the natural CY3 sub-manifold in the TCS construction) produces chiral "
+                    "fermions with n_gen = chi_eff/48 = 3 generations. Each step is necessary and uniquely "
+                    "determined by the preceding one."
                 )
             ),
             ContentBlock(

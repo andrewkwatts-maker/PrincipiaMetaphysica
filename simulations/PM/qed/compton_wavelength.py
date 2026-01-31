@@ -186,15 +186,21 @@ class ComptonWavelengthV17(SimulationBase):
             section_id="6",
             subsection_id="6.1",
             title="Compton Wavelength from Inverse Cubic Projection",
-            abstract="Derives the electron Compton wavelength using inverse cubic contraction.",
+            abstract="Derives the electron Compton wavelength via inverse cubic contraction: since lambda_C = h/(m_e*c) and each of h, m_e, c individually expand by (1+epsilon) during bulk-to-manifest projection, the net effect on lambda_C is contraction by 1/(1+epsilon).",
             content_blocks=[
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The electron Compton wavelength represents the quantum limit "
-                        "of electron localization. In the Decad-Cubic framework, this "
-                        "wavelength contracts as it manifests from the higher-dimensional "
-                        "Pleroma into our 3D observation frame."
+                        "The electron Compton wavelength lambda_C = h/(m_e * c) sets "
+                        "the quantum localization scale of the electron. In the Decad-Cubic "
+                        "framework, each fundamental constant undergoes dimensional projection: "
+                        "h (action) expands by (1+epsilon), c (light speed) expands by "
+                        "(1+epsilon), and m_e (electron mass) expands by (1+epsilon). Since "
+                        "lambda_C has one power of h in the numerator and one each of m_e and "
+                        "c in the denominator, the net scaling is h/(m_e*c) -> (1+epsilon) / "
+                        "(1+epsilon)^2 = 1/(1+epsilon), i.e. inverse cubic contraction. The "
+                        "bulk Compton wavelength is therefore larger than the manifest (observed) "
+                        "value."
                     )
                 ),
                 ContentBlock(
@@ -228,7 +234,7 @@ class ComptonWavelengthV17(SimulationBase):
                 latex=r"\lambda_{C,bulk} = \lambda_{C,CODATA} \times (1 + \epsilon)",
                 plain_text="lambda_C_bulk = lambda_C_CODATA * (1 + epsilon)",
                 category="DERIVED",
-                description="Derives the bulk Compton wavelength from CODATA",
+                description="Derives the bulk (pre-projection) Compton wavelength from the CODATA manifest value by inverting the inverse cubic contraction: lambda_C_bulk = lambda_C_CODATA * (1 + epsilon). This represents the Compton wavelength in the higher-dimensional Pleroma before dimensional reduction contracts it.",
                 derivation={
                     "steps": [
                         "Begin with CODATA 2022 electron Compton wavelength: lambda_C = 2.42631023867(73) x 10^-12 m",
@@ -251,7 +257,7 @@ class ComptonWavelengthV17(SimulationBase):
                 latex=r"\lambda_{C,manifest} = \frac{\lambda_{C,bulk}}{1 + \epsilon}",
                 plain_text="lambda_C_manifest = lambda_C_bulk / (1 + epsilon)",
                 category="DERIVED",
-                description="Projects bulk Compton to manifest 3D value via inverse cubic",
+                description="Projects the bulk Compton wavelength to the manifest (observed) 3D value via inverse cubic contraction: lambda_C = h/(m_e*c) contracts as 1/(1+epsilon) because h expands once while m_e and c each expand once in the denominator, yielding net contraction. This recovers the CODATA 2022 value to machine precision.",
                 derivation={
                     "steps": [
                         "Start from the bulk Compton wavelength lambda_C_bulk computed in eq. (6.1a)",

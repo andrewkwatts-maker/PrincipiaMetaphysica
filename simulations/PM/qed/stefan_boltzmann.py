@@ -62,7 +62,14 @@ class StefanBoltzmannV17(SimulationBase):
             version="17.2",
             domain="qed",
             title="Stefan-Boltzmann from Quad-Gate Expansion",
-            description="Derives sigma using (1+epsilon)^4 for 4D thermal vibration.",
+            description=(
+                "Derives the Stefan-Boltzmann constant sigma from the Decad-Cubic Projection "
+                "Engine using Quad-Gate expansion (1+epsilon)^4. The fourth-power correction "
+                "reflects the fundamental connection between the T^4 blackbody radiation law "
+                "and the 4-dimensional spacetime structure: thermal radiation samples all four "
+                "spacetime dimensions (3 spatial + 1 temporal), requiring the projection factor "
+                "to be raised to the fourth power."
+            ),
             section_id="6",
             subsection_id="6.2"
         )
@@ -102,13 +109,22 @@ class StefanBoltzmannV17(SimulationBase):
             section_id="6",
             subsection_id="6.2",
             title="Stefan-Boltzmann from Quad-Gate Expansion",
-            abstract="Derives the Stefan-Boltzmann constant using (1+epsilon)^4 for 4D thermal vibration.",
+            abstract=(
+                "Derives the Stefan-Boltzmann constant sigma = 5.670374419e-8 W/(m^2 K^4) "
+                "using Quad-Gate expansion from the Decad-Cubic Projection Engine. The T^4 "
+                "power law of blackbody radiation requires the unique fourth-power projection "
+                "(1+epsilon)^4, reflecting how thermal photons sample all four spacetime dimensions."
+            ),
             content_blocks=[
                 ContentBlock(type="paragraph", content=(
-                    "The Stefan-Boltzmann constant governs total thermal radiation power "
-                    "via the T^4 law. Because temperature vibrates in all 4 spacetime "
-                    "dimensions (3 spatial + 1 temporal), the constant requires Quad-Gate "
-                    "expansion: the projection factor is raised to the fourth power (1+epsilon)^4."
+                    "The Stefan-Boltzmann constant sigma determines the total radiant power "
+                    "emitted per unit area by a blackbody, scaling as T^4. This fourth-power "
+                    "dependence on temperature is a direct consequence of photon thermodynamics "
+                    "in 4D spacetime: the photon phase space volume grows as T^3 (Planck distribution "
+                    "integration over 3 spatial momentum components) and the energy per mode scales "
+                    "as T, giving T^4 total. Because this T^4 law reflects the full dimensionality "
+                    "of spacetime, the Decad-Cubic projection factor must be raised to the fourth "
+                    "power: (1+epsilon)^4 (Quad-Gate expansion)."
                 )),
                 ContentBlock(
                     type="equation",
@@ -132,7 +148,14 @@ class StefanBoltzmannV17(SimulationBase):
                 latex=r"\sigma = \sigma_{bulk} \times (1+\epsilon)^4",
                 plain_text="sigma = sigma_bulk * (1+epsilon)^4",
                 category="DERIVED",
-                description="Stefan-Boltzmann constant derived via Quad-Gate expansion for 4D thermal vibration (T^4 law).",
+                description=(
+                    "Stefan-Boltzmann constant derived via Quad-Gate expansion from the Decad-Cubic "
+                    "Projection Engine. The fourth-power correction (1+epsilon)^4 is unique among the "
+                    "projection types because the T^4 radiation law integrates over all 4 spacetime "
+                    "dimensions (3 spatial momentum modes + 1 energy/temperature scaling), requiring "
+                    "the full 4D projection factor rather than the linear or quadratic forms used for "
+                    "constants governed by fewer dimensional dependencies."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",

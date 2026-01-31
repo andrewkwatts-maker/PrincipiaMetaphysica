@@ -1008,10 +1008,14 @@ if SCHEMA_AVAILABLE:
                     plain_text="tau = hbar / E_g, E_g = G * m_eff^2 / r",
                     category="QUANTUM_BIOLOGY",
                     description=(
-                        "The Penrose Criterion for Objective Reduction. Quantum superpositions "
-                        "collapse at timescale tau inversely proportional to their gravitational "
-                        "self-energy E_g. For microtubule-scale masses, tau falls in the neural "
-                        "range (25-500 ms), matching observed gamma synchrony."
+                        "The Penrose Criterion for Objective Reduction, stating that quantum "
+                        "superpositions collapse at a timescale tau inversely proportional to their "
+                        "gravitational self-energy E_g. The larger the superposition's gravitational "
+                        "self-energy (determined by mass displacement and separation distance), the "
+                        "faster the collapse occurs. For microtubule-scale masses and associated "
+                        "conformational superpositions, the calculated collapse time tau falls within "
+                        "the neural range (approximately 25-500 ms), potentially correlating with "
+                        "observed gamma synchrony at ~40 Hz in the brain."
                     ),
                     inputParams=[
                         "constants.hbar",
@@ -1213,10 +1217,14 @@ if SCHEMA_AVAILABLE:
                 subsection_id="7.2",
                 title="Orch-OR Coherence Bridge - 12x(2,0) Paired Tensor Model (v22.0)",
                 abstract=(
-                    "The Orch-OR coherence bridge connects biological microtubule coherence "
-                    "to the Penrose Criterion for gravitational Objective Reduction "
-                    "(tau = hbar / E_g). The v22.0 model implements a 12x(2,0) paired "
-                    "tensor framework derived from G2 holonomy, with a 6-pair "
+                    "The Orch-OR coherence bridge proposes a connection between quantum "
+                    "coherence within biological microtubules and the Penrose Criterion for "
+                    "gravitational Objective Reduction (tau = hbar / E_g). This framework "
+                    "suggests that quantum superpositions in microtubules, sustained by "
+                    "specific biological mechanisms, collapse due to spacetime curvature "
+                    "effects when a gravitational self-energy threshold is reached. The v22.0 "
+                    "model implements a 12x(2,0) paired tensor framework inspired by G2 "
+                    "holonomy (b3=24/2 = 12 normal/mirror pairs), with a 6-pair "
                     "decoherence-stability threshold and topological warping shield "
                     "enhancement for wet biological environments."
                 ),

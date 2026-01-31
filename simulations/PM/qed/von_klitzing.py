@@ -5,7 +5,41 @@ Von Klitzing Constant Derivation v17.2
 The Von Klitzing constant uses DIRECT EXPANSION (1+epsilon)
 because R_K = h/e^2, where h expands and e is invariant.
 
-CODATA 2022: R_K = 25812.80745 Ohm
+PHYSICAL CONTEXT:
+=================
+The von Klitzing constant R_K = h/e^2 = 25812.80745 Ohm defines the
+quantum of resistance observed in the integer quantum Hall effect (IQHE).
+When a 2D electron gas in a strong perpendicular magnetic field is cooled
+to low temperatures, the Hall resistance is quantized to R_K/n for integer
+filling factors n, with extraordinary precision (~10^-10 relative accuracy).
+
+This quantization has a topological origin: the TKNN invariant (Thouless,
+Kohmoto, Nightingale, den Nijs, 1982) identifies the Hall conductance as
+a first Chern number -- an integer topological invariant of the occupied
+Bloch bands. Because Chern numbers are integers, the Hall conductance is
+exactly quantized and robust against disorder, impurities, and edge effects.
+
+The quantization is carried by chiral edge states: one-dimensional
+conducting channels that propagate along the boundary of the 2D sample.
+These edge states are topologically protected against backscattering,
+explaining the extraordinary precision of the Hall plateaux.
+
+LANDAU LEVELS:
+==============
+The strong magnetic field quantizes the orbital motion of 2D electrons
+into discrete, highly degenerate Landau levels with spacing hbar*omega_c.
+As the magnetic field increases, Landau levels are successively filled,
+and each completely filled level contributes one quantum of Hall
+conductance e^2/h = 1/R_K.
+
+METROLOGICAL SIGNIFICANCE:
+==========================
+The von Klitzing constant provides the most precise realization of the
+ohm. It is used by metrology laboratories worldwide (BIPM, NIST, PTB)
+to maintain the SI resistance standard. Since the 2019 SI redefinition,
+R_K is exact by definition from the fixed values of h and e.
+
+CODATA 2022: R_K = 25812.80745 Ohm (exact since 2019 SI)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -75,15 +109,26 @@ class VonKlitzingV17(SimulationBase):
             content_blocks=[
                 ContentBlock(type="paragraph", content=(
                     "The von Klitzing constant R_K = h/e^2 defines the quantum of resistance "
-                    "observed in the integer quantum Hall effect. Since Planck's constant h "
-                    "expands via (1+epsilon) during dimensional projection while the elementary "
-                    "charge e is invariant, R_K inherits a direct expansion factor from h."
+                    "observed in the integer quantum Hall effect (IQHE). When a 2D electron gas "
+                    "in a strong perpendicular magnetic field is cooled to low temperatures, "
+                    "the Hall resistance is quantized to R_K/n for integer filling factors n. "
+                    "This quantization has a topological origin: the TKNN invariant identifies "
+                    "the Hall conductance sigma_xy = n * e^2/h as a first Chern number, an "
+                    "integer topological invariant robust against disorder and perturbations."
+                )),
+                ContentBlock(type="paragraph", content=(
+                    "Since Planck's constant h expands via (1+epsilon) during dimensional "
+                    "projection while the elementary charge e is invariant, R_K inherits a "
+                    "direct expansion factor from h alone."
                 )),
                 ContentBlock(type="equation", content=r"R_K = R_{K,bulk} \times (1+\epsilon)"),
                 ContentBlock(type="paragraph", content=(
-                    "The CODATA 2022 exact value is R_K = 25812.80745 Ohm. This derivation "
-                    "confirms that resistance quanta follow the Planck-constant expansion "
-                    "pathway, linking quantum Hall physics to the Decad-Cubic Projection Engine."
+                    "The CODATA 2022 exact value is R_K = 25812.80745 Ohm (exact since the "
+                    "2019 SI redefinition). This derivation confirms that resistance quanta "
+                    "follow the Planck-constant expansion pathway, connecting topologically "
+                    "protected quantum Hall plateaux and chiral edge states to the Decad-Cubic "
+                    "Projection Engine. The result also links Landau level quantization in "
+                    "strong magnetic fields to the dimensional projection framework."
                 )),
             ]
         )
@@ -96,7 +141,11 @@ class VonKlitzingV17(SimulationBase):
                 latex=r"R_K = R_{K,bulk}(1+\epsilon)",
                 plain_text="R_K = R_K_bulk * (1+epsilon)",
                 category="DERIVED",
-                description="Von Klitzing constant expands with Planck's constant h since e is invariant.",
+                description=(
+                    "Von Klitzing constant expands with Planck's constant h since e is invariant. "
+                    "R_K = h/e^2 sets the quantum of Hall resistance via the TKNN (Chern number) "
+                    "invariant; its topological protection explains ~10^-10 relative precision."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",

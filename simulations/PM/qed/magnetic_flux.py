@@ -5,7 +5,31 @@ Magnetic Flux Quantum Derivation v17.2
 The Magnetic Flux Quantum uses DIRECT EXPANSION (1+epsilon)
 because Phi_0 = h/(2e), where h expands and e is invariant.
 
-CODATA 2022: Phi_0 = 2.067833848 x 10^-15 Wb
+PHYSICAL CONTEXT:
+=================
+The magnetic flux quantum Phi_0 = h/(2e) is the fundamental unit of
+magnetic flux threading a superconducting loop. Its quantization follows
+from the single-valuedness of the Cooper-pair condensate wavefunction:
+the macroscopic phase must return to itself (mod 2*pi) around any closed
+path, forcing the enclosed flux to be an integer multiple of Phi_0.
+
+This topological protection makes flux quantization exact -- it is
+insensitive to material parameters, loop geometry, or temperature
+(as long as the loop remains superconducting). The London equations,
+which describe the relationship between supercurrent density and vector
+potential, enforce the Meissner effect and flux expulsion that underlie
+this quantization.
+
+METROLOGICAL SIGNIFICANCE:
+==========================
+Phi_0 enters directly into Josephson junction physics: the AC Josephson
+frequency f = V/Phi_0 provides a voltage-to-frequency conversion used in
+voltage standards worldwide. SQUID magnetometers exploit flux quantization
+to achieve sensitivities of ~10^-15 T, enabling applications from
+geophysics to brain imaging (MEG). Superconducting flux qubits encode
+quantum information in the number of flux quanta threading a loop.
+
+CODATA 2022: Phi_0 = 2.067833848 x 10^-15 Wb (exact since 2019 SI)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -75,15 +99,25 @@ class MagneticFluxV17(SimulationBase):
             content_blocks=[
                 ContentBlock(type="paragraph", content=(
                     "The magnetic flux quantum Phi_0 = h/(2e) is the fundamental unit of magnetic "
-                    "flux in superconductors. Since Planck's constant h expands via (1+epsilon) "
-                    "during dimensional projection while the elementary charge e is invariant, "
-                    "the flux quantum inherits a direct expansion factor."
+                    "flux in superconductors. Its quantization follows from the single-valuedness "
+                    "of the Cooper-pair condensate wavefunction: the macroscopic phase must return "
+                    "to itself (mod 2*pi) around any closed superconducting loop, forcing the "
+                    "enclosed flux to be an integer multiple of Phi_0. This topological protection "
+                    "makes flux quantization exact and insensitive to material parameters."
+                )),
+                ContentBlock(type="paragraph", content=(
+                    "Since Planck's constant h expands via (1+epsilon) during dimensional "
+                    "projection while the elementary charge e is invariant, the flux quantum "
+                    "inherits a direct expansion factor from h alone."
                 )),
                 ContentBlock(type="equation", content=r"\Phi_0 = \Phi_{bulk} \times (1+\epsilon)"),
                 ContentBlock(type="paragraph", content=(
-                    "The CODATA 2022 exact value is Phi_0 = 2.067833848e-15 Wb. This derivation "
-                    "demonstrates that quantized magnetic flux follows the same Planck-constant "
-                    "expansion pathway as other h-dependent constants."
+                    "The CODATA 2022 exact value is Phi_0 = 2.067833848e-15 Wb (exact since "
+                    "the 2019 SI redefinition). This derivation demonstrates that quantized "
+                    "magnetic flux follows the same Planck-constant expansion pathway as other "
+                    "h-dependent constants. The result connects the London equations of "
+                    "superconductivity, the Josephson voltage-frequency relation f = V/Phi_0, "
+                    "and SQUID magnetometry to the Decad-Cubic Projection Engine."
                 )),
             ]
         )
@@ -96,7 +130,11 @@ class MagneticFluxV17(SimulationBase):
                 latex=r"\Phi_0 = \Phi_{bulk}(1+\epsilon)",
                 plain_text="Phi_0 = Phi_bulk * (1+epsilon)",
                 category="DERIVED",
-                description="Magnetic flux quantum expands with Planck's constant h since e is invariant.",
+                description=(
+                    "Magnetic flux quantum expands with Planck's constant h since e is invariant. "
+                    "Phi_0 = h/(2e) governs flux quantization in superconducting loops (London "
+                    "equations), the Josephson voltage-frequency relation, and SQUID sensitivity."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
