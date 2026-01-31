@@ -1000,8 +1000,10 @@ if SCHEMA_AVAILABLE:
                 domain="quantum_bio",
                 title="Decoherence Protection for Orch-OR (Critical Analysis)",
                 description=(
-                    "Analyzes Debye shielding, G2 topological protection, and Frohlich "
-                    "condensation as mechanisms to extend quantum coherence in warm brains. "
+                    "[SPECULATIVE EXTENSION] Analyzes Debye shielding, G2 topological "
+                    "protection, and Frohlich condensation as mechanisms to extend "
+                    "quantum coherence in warm brains. This extends beyond the core "
+                    "geometric framework and should be considered exploratory. "
                     "Provides honest assessment: achievable protection ~10^6-10^8, "
                     "required ~10^11, leaving 10^3-10^5 gap."
                 ),
@@ -1064,6 +1066,20 @@ if SCHEMA_AVAILABLE:
                     "but 10^11 is required. This represents a significant gap."
                 ),
                 content_blocks=[
+                    ContentBlock(
+                        type="callout",
+                        callout_type="warning",
+                        content=(
+                            "**SPECULATIVE EXTENSION:** The following decoherence "
+                            "protection analysis extends beyond the core geometric "
+                            "framework and should be considered an exploratory "
+                            "hypothesis rather than a confirmed prediction of the "
+                            "theory. The quantum biology content herein is based on "
+                            "the Penrose-Hameroff Orch-OR model, which remains "
+                            "experimentally unverified. "
+                            "(Gemini peer review, Topic 12, score 6/10.)"
+                        )
+                    ),
                     ContentBlock(
                         type="callout",
                         callout_type="warning",

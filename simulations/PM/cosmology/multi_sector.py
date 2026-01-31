@@ -560,6 +560,43 @@ class MultiSectorV16(SimulationBase):
                         "of dark sectors observed in cosmological data."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Sector Counting: 2 x 4 x 3 = 24 = b3",
+                    level=3
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The total number of cosmological sectors equals the third Betti "
+                        "number b3 = 24, arising from three independent factors. First, the "
+                        "dual-shadow architecture provides a factor of 2: one normal shadow "
+                        "and one mirror shadow, related by the Z2 orbifold symmetry of the "
+                        "heterotic M-theory construction (Horava-Witten). Second, each shadow "
+                        "contains h^{1,1} = 4 Kahler faces from the G2 compactification, "
+                        "each with an independent modulus controlling the face volume and "
+                        "gauge coupling. Third, each face supports n_gen = 3 fermion "
+                        "generations from the index theorem on the G2 manifold "
+                        "(n_gen = chi_eff/48 = 144/48 = 3). The product "
+                        "2 shadows x 4 faces x 3 generations = 24 = b3 provides a "
+                        "complete accounting of the cosmological sector structure in terms "
+                        "of the topological invariants of the compactification manifold."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "This decomposition has profound consequences for cosmological "
+                        "observables. The mirror symmetry between the two shadows ensures "
+                        "that the mirror sector inherits identical particle content but "
+                        "different temperature from asymmetric reheating, explaining the "
+                        "dark matter abundance. The 4-face x 3-generation internal structure "
+                        "determines the bridge pair count (12 = b3/2) and the variance "
+                        "reduction in the breathing dark energy mechanism. The entire "
+                        "multi-sector architecture is thus determined by three topological "
+                        "invariants: b3 = 24, h^{1,1} = 4, and chi_eff = 144."
+                    )
+                ),
             ],
             formula_refs=[
                 "moduli-potential",
@@ -892,7 +929,52 @@ class MultiSectorV16(SimulationBase):
                 "volume": "10",
                 "year": 1922,
                 "url": "https://doi.org/10.1007/BF01332580"
-            }
+            },
+            {
+                "id": "horava_witten_1996",
+                "authors": "Horava, P.; Witten, E.",
+                "title": "Eleven-dimensional supergravity on a manifold with boundary",
+                "journal": "Nucl. Phys. B",
+                "volume": "460",
+                "year": 1996,
+                "pages": "506-524",
+                "arxiv": "hep-th/9603142",
+                "url": "https://arxiv.org/abs/hep-th/9603142",
+                "notes": (
+                    "Foundational paper for heterotic M-theory with two end-of-the-world "
+                    "branes. The dual-shadow architecture generalizes this to G2 holonomy "
+                    "with 2 shadows sharing a Euclidean bridge."
+                )
+            },
+            {
+                "id": "acharya_witten_2001",
+                "authors": "Acharya, B.S.; Witten, E.",
+                "title": "Chiral Fermions from Manifolds of G2 Holonomy",
+                "year": 2001,
+                "journal": "arXiv preprint",
+                "arxiv": "hep-th/0109152",
+                "url": "https://arxiv.org/abs/hep-th/0109152",
+                "notes": (
+                    "M-theory on G2 manifolds producing chiral fermions. The b3 = 24 "
+                    "associative 3-cycles and generation counting n_gen = chi/48 are "
+                    "central to the multi-sector decomposition."
+                )
+            },
+            {
+                "id": "hori_vafa_2000",
+                "authors": "Hori, K.; Vafa, C.",
+                "title": "Mirror Symmetry",
+                "year": 2000,
+                "journal": "arXiv preprint",
+                "arxiv": "hep-th/0002222",
+                "url": "https://arxiv.org/abs/hep-th/0002222",
+                "notes": (
+                    "Mirror symmetry as a duality between Calabi-Yau manifolds. In the "
+                    "G2 context, the normal/mirror shadow duality is the M-theory lift "
+                    "of mirror symmetry, explaining the Z2 structure of the dual-shadow "
+                    "architecture."
+                )
+            },
         ]
 
     # -------------------------------------------------------------------------

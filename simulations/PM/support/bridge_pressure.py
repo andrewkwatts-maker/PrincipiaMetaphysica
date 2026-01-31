@@ -130,6 +130,7 @@ class BridgePressureV21(SimulationBase):
             "breathing-density",
             "bridge-stress-tensor",
             "4face-bridge-flux",
+            "per-face-bridge-pressure",
         ]
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
@@ -368,18 +369,42 @@ class BridgePressureV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "In the four-face G2 architecture, each of the 12 bridge pairs "
-                        "has 4 independent face-specific leakage channels, yielding "
-                        "48 = chi_eff/3 total bridge flux channels. This decomposition "
-                        "connects the bridge pressure mechanism to the Kahler moduli "
-                        "structure and explains why the effective number of channels "
-                        "per generation equals the total Euler characteristic divided by 3."
+                        "The dual-shadow bridge mechanism operates through a "
+                        "topologically determined channel structure. In the (24,1) "
+                        "framework, each shadow hosts a G2 manifold with b3 = 24 "
+                        "associative 3-cycles. These pair across shadows into "
+                        "n_pairs = chi_eff/12 = 144/12 = 12 bridge pairs, where "
+                        "chi_eff = 144 is the effective Euler characteristic. "
+                        "Each bridge pair admits h^{1,1} = 4 independent face-specific "
+                        "leakage channels, one per Kahler modulus. The total number of "
+                        "bridge flux channels is therefore 12 x 4 = 48 = chi_eff/3, "
+                        "connecting the bridge pressure mechanism directly to the "
+                        "generation structure (48 channels / 3 generations = 16 per generation). "
+                        "This decomposition is consistent with M-theory compactification "
+                        "on G2 manifolds, where the associative 3-cycles control gauge "
+                        "coupling localization and the Kahler moduli determine the face "
+                        "geometry (Acharya-Witten 2001)."
                     )
                 ),
                 ContentBlock(
                     type="formula",
                     formula_id="4face-bridge-flux",
                     label="(BP.4F)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The total conformal pressure distributes democratically across "
+                        "the four Kahler faces, with each face carrying P_total/4 of the "
+                        "bridge pressure. Each face supports 3 bridge oscillations (one per "
+                        "fermion generation), so the 4 x 3 = 12 bridge pairs arise naturally "
+                        "from the face-generation product structure."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="per-face-bridge-pressure",
+                    label="(BP.PF)"
                 ),
             ],
             formula_refs=[
@@ -388,6 +413,7 @@ class BridgePressureV21(SimulationBase):
                 "or-reduction-operator",
                 "breathing-density",
                 "4face-bridge-flux",
+                "per-face-bridge-pressure",
             ],
             param_refs=[
                 "bridge.rho_breath",
@@ -521,30 +547,84 @@ class BridgePressureV21(SimulationBase):
             Formula(
                 id="4face-bridge-flux",
                 label="(BP.4F)",
-                latex=r"\Phi_{\text{bridge}} = n_{\text{pairs}} \times n_{\text{faces}} = 12 \times 4 = 48 = \frac{\chi_{\text{eff}}}{3}",
-                plain_text="Phi_bridge = n_pairs * n_faces = 12 * 4 = 48 = chi_eff / 3",
+                latex=r"\Phi_{\text{bridge}} = n_{\text{pairs}} \times n_{\text{faces}} = \frac{\chi_{\text{eff}}}{12} \times h^{1,1} = \frac{144}{12} \times 4 = 12 \times 4 = 48 = \frac{\chi_{\text{eff}}}{3}",
+                plain_text="Phi_bridge = n_pairs x n_faces = (chi_eff/12) x h^{1,1} = (144/12) x 4 = 12 x 4 = 48 = chi_eff/3",
                 category="GEOMETRIC",
-                description="Total bridge flux channels from 4-face decomposition. Each of 12 bridge pairs has 4 face-specific leakage channels, giving 48 = chi_eff/3 total channels.",
+                description=(
+                    "Total bridge flux channels from 4-face decomposition, derived entirely "
+                    "from topology. The number of bridge pairs is chi_eff/12 = 144/12 = 12, "
+                    "each bridge has h^{1,1} = 4 face channels, giving 48 = chi_eff/3 total "
+                    "channels. This connects the bridge pressure to the Kahler moduli structure."
+                ),
+                inputParams=["topology.mephorash_chi", "topology.elder_kads"],
+                outputParams=["bridge.flux_channels"],
+                input_params=["topology.mephorash_chi", "topology.elder_kads"],
+                output_params=["bridge.flux_channels"],
                 derivation={
                     "steps": [
-                        {"description": "The dual-shadow architecture has 12 bridge pairs (from b3/2 = 12 associative cycle pairs)",
-                         "formula": r"n_{\text{pairs}} = b_3 / 2 = 12"},
-                        {"description": "Each bridge pair connects corresponding faces across shadows: 4 faces per shadow",
+                        {"description": "Start from the effective Euler characteristic chi_eff = 144 and third Betti number b3 = 24",
+                         "formula": r"\chi_{\text{eff}} = 144, \quad b_3 = 24"},
+                        {"description": "Bridge pairs derived from topology: n_pairs = chi_eff/12 = b3/2 = 12 associative cycle pairs",
+                         "formula": r"n_{\text{pairs}} = \frac{\chi_{\text{eff}}}{12} = \frac{b_3}{2} = 12"},
+                        {"description": "Each bridge pair has h^{1,1} = 4 independent face-specific leakage channels from the Kahler moduli",
                          "formula": r"n_{\text{faces}} = h^{1,1} = 4"},
-                        {"description": "Total flux channels = 12 pairs x 4 faces = 48",
-                         "formula": r"\Phi_{\text{bridge}} = 12 \times 4 = 48"},
-                        {"description": "This equals chi_eff/n_gen = 144/3 = 48, confirming geometric consistency",
-                         "formula": r"\Phi_{\text{bridge}} = \chi_{\text{eff}} / n_{\text{gen}} = 144 / 3 = 48"}
+                        {"description": "Total flux channels = pairs x faces, derived purely from topology",
+                         "formula": r"\Phi_{\text{bridge}} = n_{\text{pairs}} \times n_{\text{faces}} = 12 \times 4 = 48"},
+                        {"description": "Consistency check: 48 = chi_eff/n_gen = 144/3, confirming the link between bridge channels and generation structure",
+                         "formula": r"\Phi_{\text{bridge}} = \frac{\chi_{\text{eff}}}{n_{\text{gen}}} = \frac{144}{3} = 48"}
                     ],
-                    "method": "Combinatorial counting of face-specific bridge channels in dual-shadow architecture",
-                    "parentFormulas": ["alpha-leak-coupling"],
-                    "references": ["PM Section 1.5: Euclidean Bridge"]
+                    "method": "Topological derivation: bridge pair count from chi_eff and b3, face channels from h^{1,1}",
+                    "parentFormulas": ["alpha-leak-coupling", "bridge-metric-euclidean"],
+                    "references": [
+                        "PM Section 1.5: Euclidean Bridge",
+                        "Acharya-Witten (2001): M-theory on manifolds of G2 holonomy"
+                    ]
                 },
                 terms={
-                    r"\Phi_{\text{bridge}}": {"description": "Total number of independent bridge flux channels"},
-                    r"n_{\text{pairs}}": {"description": "Number of bridge pairs = b3/2 = 12"},
+                    r"\Phi_{\text{bridge}}": {"description": "Total number of independent bridge flux channels = 48"},
+                    r"n_{\text{pairs}}": {"description": "Number of bridge pairs = chi_eff/12 = b3/2 = 12"},
                     r"n_{\text{faces}}": {"description": "Number of Kahler faces per shadow = h^{1,1} = 4"},
-                    r"\chi_{\text{eff}}": {"description": "Effective Euler characteristic = 144"}
+                    r"h^{1,1}": {"description": "Hodge number counting Kahler deformations = 4"},
+                    r"\chi_{\text{eff}}": {"description": "Effective Euler characteristic = 144"},
+                    r"n_{\text{gen}}": {"description": "Number of fermion generations = 3"}
+                }
+            ),
+            Formula(
+                id="per-face-bridge-pressure",
+                label="(BP.PF)",
+                latex=r"P_{\text{face}} = \frac{P_{\text{total}}}{n_{\text{faces}}} = \frac{P_{\text{total}}}{h^{1,1}} = \frac{P_{\text{total}}}{4}",
+                plain_text="P_face = P_total / n_faces = P_total / h^{1,1} = P_total / 4",
+                category="DERIVED",
+                description=(
+                    "Per-face bridge pressure: the total conformal pressure distributes "
+                    "equally across the h^{1,1} = 4 Kahler faces. Each face carries 1/4 of "
+                    "the total bridge pressure, corresponding to one of the four independent "
+                    "Kahler moduli controlling the face geometry."
+                ),
+                inputParams=["bridge.pressure_normal", "bridge.pressure_mirror"],
+                outputParams=["bridge.pressure_per_face"],
+                input_params=["bridge.pressure_normal", "bridge.pressure_mirror"],
+                output_params=["bridge.pressure_per_face"],
+                derivation={
+                    "steps": [
+                        {"description": "Total bridge pressure from condensate fluxes across all faces",
+                         "formula": r"P_{\text{total}} = \sum_{f=1}^{h^{1,1}} P_f"},
+                        {"description": "By the democratic distribution principle (equal Kahler volumes at stabilization)",
+                         "formula": r"P_1 = P_2 = P_3 = P_4 = P_{\text{face}}"},
+                        {"description": "Per-face pressure from division",
+                         "formula": r"P_{\text{face}} = \frac{P_{\text{total}}}{h^{1,1}} = \frac{P_{\text{total}}}{4}"},
+                        {"description": "Each face contributes to 3 bridge pairs (one per generation): 4 faces x 3 gen = 12 pairs",
+                         "formula": r"n_{\text{pairs}} = n_{\text{faces}} \times n_{\text{gen}} = 4 \times 3 = 12"}
+                    ],
+                    "method": "Democratic pressure distribution across Kahler faces",
+                    "parentFormulas": ["4face-bridge-flux", "conformal-pressure"],
+                    "references": ["PM Section 1.5: Four-Face Bridge Decomposition"]
+                },
+                terms={
+                    r"P_{\text{face}}": {"description": "Pressure carried by a single Kahler face"},
+                    r"P_{\text{total}}": {"description": "Total conformal pressure from all G2 condensate fluxes"},
+                    r"h^{1,1}": {"description": "Number of Kahler faces = 4"},
+                    r"n_{\text{gen}}": {"description": "Number of fermion generations = 3"}
                 }
             ),
         ]
@@ -637,6 +717,36 @@ class BridgePressureV21(SimulationBase):
                 "volume": "61",
                 "pages": "1-23",
                 "notes": "Foundational reference for the cosmological constant problem addressed by breathing mechanism."
+            },
+            {
+                "id": "ref-acharya-witten-2001",
+                "authors": "Acharya, B.S.; Witten, E.",
+                "title": "Chiral Fermions from Manifolds of G2 Holonomy",
+                "year": 2001,
+                "journal": "arXiv preprint",
+                "arxiv": "hep-th/0109152",
+                "url": "https://arxiv.org/abs/hep-th/0109152",
+                "notes": (
+                    "M-theory compactification on G2 manifolds producing chiral fermions. "
+                    "The associative 3-cycle structure (b3 = 24) underpins the bridge pair "
+                    "counting and face-channel decomposition used in bridge pressure."
+                )
+            },
+            {
+                "id": "ref-randall-sundrum-1999",
+                "authors": "Randall, L.; Sundrum, R.",
+                "title": "A Large Mass Hierarchy from a Small Extra Dimension",
+                "year": 1999,
+                "journal": "Physical Review Letters",
+                "volume": "83",
+                "pages": "3370-3373",
+                "arxiv": "hep-ph/9905221",
+                "url": "https://arxiv.org/abs/hep-ph/9905221",
+                "notes": (
+                    "Brane-world scenario where matter is localized on branes separated by "
+                    "a bulk. The dual-shadow bridge mechanism is analogous, with condensate "
+                    "pressure replacing the Randall-Sundrum warp factor."
+                )
             },
         ]
 

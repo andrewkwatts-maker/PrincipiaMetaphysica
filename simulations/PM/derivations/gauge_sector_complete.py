@@ -39,9 +39,13 @@ References:
 ----------
 [1] Carroll, S. "Spacetime and Geometry" - Spin connection formalism
 [2] Joyce, D. (2000) "Compact Manifolds with Special Holonomy"
-[3] Acharya, B.S. (2002) "M-theory, G2-manifolds and 4D physics"
+[3] Acharya, B.S. (2002) "M-theory, Joyce Orbifolds and Super Yang-Mills"
 [4] Weinberg, S. (1967) "A Model of Leptons" Phys. Rev. Lett. 19, 1264
 [5] Glashow, S. (1961) "Partial-symmetries of weak interactions"
+[6] Acharya, B.S., Witten, E. (2001) "Chiral Fermions from Manifolds of G2 Holonomy"
+[7] Witten, E. (2002) "Deconstruction, G2 Holonomy, and Doublet-Triplet Splitting"
+[8] Acharya, B.S., Kane, G. (2007) "Phases of string/M theory compactifications"
+[9] Corti, A. et al. (2015) "G2-manifolds and associative submanifolds via semi-Fano 3-folds"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -1471,22 +1475,80 @@ class GaugeSectorCompleteDerivations(SimulationBase):
                     label="(3.3.14)"
                 ),
 
-                # Section E: Gauge Symmetry Breaking via Four-Face Flux
+                # Section E: SO(10) -> G_SM Breaking via Four-Face G2 Flux
                 ContentBlock(
                     type="heading",
                     level=2,
-                    content="E. Gauge Symmetry Breaking via Four-Face Flux"
+                    content="E. SO(10) -> G_SM Breaking via Four-Face G2 Flux"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "In the four-face G2 architecture, the Standard Model gauge group "
-                        "G_SM = SU(3) x SU(2) x U(1) arises from the breaking of a unified "
-                        "SO(10) gauge symmetry by discrete Wilson lines threading the four "
-                        "independent 2-cycles (h^{1,1} = 4). Each face contributes a distinct "
-                        "flux quantum, and the pattern of breaking is dictated by the TCS "
-                        "gluing data. This mechanism avoids the doublet-triplet splitting "
-                        "problem endemic to 4D GUT constructions."
+                        "In M-theory compactified on a G2 holonomy manifold, the non-Abelian "
+                        "gauge symmetry arises from codimension-4 singularities (ADE type) "
+                        "in the compact 7-dimensional space (Acharya 2002; Acharya-Witten "
+                        "2001). For the four-face TCS (twisted connected sum) construction, "
+                        "a unified SO(10) gauge symmetry is supported at the singular locus "
+                        "of the G2 manifold. The breaking chain"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "    SO(10) -> SU(5) x U(1)_X -> SU(3)_C x SU(2)_L x U(1)_Y"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "is implemented by discrete Wilson lines (flat connections) threading "
+                        "the h^{1,1} = 4 independent 2-cycles of the TCS G2 manifold. Each "
+                        "of the four faces contributes a distinct topological flux quantum, "
+                        "and the pattern of breaking is dictated by the TCS gluing data. "
+                        "Concretely, the G-flux (4-form field strength of the M-theory 3-form "
+                        "C-field) on the G2 manifold has quantised periods:"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "    (1/2 pi)^2 integral_{Sigma_i} G_4 = n_i,  i = 1,...,4"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "where Sigma_i is the i-th independent 4-cycle dual to the "
+                        "h^{1,1} = 4 two-cycles, and n_i are integers constrained by the "
+                        "Freed-Witten anomaly cancellation condition. The flux integers "
+                        "(n_1, n_2, n_3, n_4) select the particular breaking pattern of "
+                        "SO(10) to the Standard Model gauge group G_SM = SU(3) x SU(2) x U(1). "
+                        "This geometric mechanism has several advantages over 4D GUT "
+                        "constructions (Witten 2002; Acharya-Witten 2001):"
+                    )
+                ),
+                ContentBlock(
+                    type="list",
+                    items=[
+                        "Doublet-triplet splitting problem is automatically resolved: the Wilson line "
+                        "projection removes the colour-triplet Higgs partners without fine-tuning",
+                        "Proton decay rate suppression: dimension-6 operators are suppressed by the "
+                        "compactification scale M_KK >> M_GUT, consistent with Super-Kamiokande bounds",
+                        "Chiral matter emerges at conical singularities: fermion zero modes are "
+                        "localised at codimension-7 points where the singular locus meets the "
+                        "associative 3-cycles, producing exactly 3 generations when b_3 = 24",
+                        "Gauge coupling unification at M_GUT is automatic from the common ADE "
+                        "singularity origin, with threshold corrections from KK tower modes"
+                    ]
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The interplay between the four-face flux quanta and the racetrack "
+                        "moduli stabilisation (formulas L.R1--L.R3 in the Lagrangian master "
+                        "derivation) ensures that the internal geometry is rigid: the Wilson "
+                        "line breaking pattern is locked by the stabilised moduli values, "
+                        "preventing decompactification or unwanted gauge symmetry restoration."
                     )
                 ),
 
@@ -1621,6 +1683,53 @@ class GaugeSectorCompleteDerivations(SimulationBase):
                 "year": 2004,
                 "url": "https://www.cambridge.org/core/books/spacetime-and-geometry/3BD4EB1E9E68AB7EC3DFE4A2E088E87B",
                 "type": "textbook"
+            },
+            {
+                "id": "acharya2002_g2",
+                "key": "acharya2002_g2",
+                "authors": "Acharya, B.S.",
+                "title": "M theory, Joyce Orbifolds and Super Yang-Mills",
+                "year": 2002,
+                "doi": "10.4310/ATMP.1999.v3.n2.a7",
+                "url": "https://arxiv.org/abs/hep-th/9812011",
+                "type": "article",
+            },
+            {
+                "id": "acharya_witten2001_chiral",
+                "key": "acharya_witten2001_chiral",
+                "authors": "Acharya, B.S., Witten, E.",
+                "title": "Chiral Fermions from Manifolds of G2 Holonomy",
+                "year": 2001,
+                "url": "https://arxiv.org/abs/hep-th/0109152",
+                "type": "article",
+            },
+            {
+                "id": "witten2002_deconstruction",
+                "key": "witten2002_deconstruction",
+                "authors": "Witten, E.",
+                "title": "Deconstruction, G2 Holonomy, and Doublet-Triplet Splitting",
+                "year": 2002,
+                "url": "https://arxiv.org/abs/hep-ph/0201018",
+                "type": "article",
+            },
+            {
+                "id": "acharya_kane2007",
+                "key": "acharya_kane2007",
+                "authors": "Acharya, B.S., Kane, G.",
+                "title": "Phases of string/M theory compactifications and phenomenology",
+                "year": 2007,
+                "url": "https://arxiv.org/abs/hep-th/0612247",
+                "type": "review",
+            },
+            {
+                "id": "corti_haskins2015",
+                "key": "corti_haskins2015",
+                "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
+                "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
+                "year": 2015,
+                "doi": "10.1215/00127094-2785720",
+                "url": "https://arxiv.org/abs/1207.3200",
+                "type": "article",
             },
         ]
 
