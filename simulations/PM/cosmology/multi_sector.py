@@ -541,6 +541,25 @@ class MultiSectorV16(SimulationBase):
                         "achieve this agreement."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Dual-Shadow Multi-Sector Architecture",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The multi-sector cosmological model maps naturally onto the "
+                        "dual-shadow architecture of the 27D framework. Each of the two "
+                        "shadows (signature 12+1 each, sharing a single time dimension) "
+                        "hosts an independent copy of the Standard Model gauge group, "
+                        "with inter-shadow communication occurring exclusively through "
+                        "the 12 bridge pairs. The four-face structure within each shadow "
+                        "further subdivides the gauge sector into 4 Kahler-modulated "
+                        "domains, providing a geometric origin for the multiplicity "
+                        "of dark sectors observed in cosmological data."
+                    )
+                ),
             ],
             formula_refs=[
                 "moduli-potential",
@@ -951,6 +970,12 @@ class MultiSectorV16(SimulationBase):
                 "validation_hint": (
                     "Confirm Omega_DM h^2 = 0.120 and Omega_b h^2 = 0.0224 from Planck."
                 )
+            },
+            {
+                "topic": "Mirror symmetry and hidden sectors in string theory",
+                "url": "https://en.wikipedia.org/wiki/Mirror_symmetry_(string_theory)",
+                "relevance": "The dual-shadow architecture is a specific realization of mirror symmetry in M-theory on G2 manifolds, where each shadow hosts a complete copy of physics",
+                "validation_hint": "Check that the shadow structure preserves gauge coupling unification and doesn't introduce additional light degrees of freedom below the KK scale"
             },
         ]
 

@@ -178,6 +178,8 @@ class DarkEnergyEvolution(SimulationBase):
             "cpl-parametrization",
             "torsional-leakage-formula",
             "ricci-thawing-mechanism",
+            "breathing-variance-reduction",
+            "4face-w0-prediction",
         ]
 
     # -------------------------------------------------------------------------
@@ -702,6 +704,27 @@ class DarkEnergyEvolution(SimulationBase):
                         "approximately 13.3% per Hubble time."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Four-Face Interpretation of Breathing Dark Energy",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The 12 bridge pairs in the breathing mechanism arise naturally "
+                        "from the 4-face x 3-generation structure: each of the 4 Kahler faces "
+                        "supports 3 independent bridge oscillations (one per generation). "
+                        "This decomposition explains both the counting (12 = 4 x 3) and the "
+                        "variance reduction (sigma_eff = sigma_single/sqrt(12)) that stabilizes the "
+                        "dark energy equation of state near w0 = -23/24."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="breathing-variance-reduction",
+                    label="(DE.4F1)"
+                ),
             ],
             formula_refs=[
                 "thawing-w0-derivation",
@@ -709,6 +732,8 @@ class DarkEnergyEvolution(SimulationBase):
                 "cpl-parametrization",
                 "torsional-leakage-formula",
                 "ricci-thawing-mechanism",
+                "breathing-variance-reduction",
+                "4face-w0-prediction",
             ],
             param_refs=[
                 "cosmology.w0_thawing",
@@ -933,6 +958,63 @@ class DarkEnergyEvolution(SimulationBase):
                     "Ric": "Ricci curvature",
                     "Phi": "Associative 3-form",
                     "tau_Phi": "Relaxation timescale"
+                }
+            ),
+            Formula(
+                id="breathing-variance-reduction",
+                label="(DE.4F1)",
+                latex=r"\sigma_{\text{eff}} = \frac{\sigma_{\text{single}}}{\sqrt{12}} = \frac{\sigma_{\text{single}}}{\sqrt{n_{\text{faces}} \times n_{\text{gen}}}}",
+                plain_text="sigma_eff = sigma_single / sqrt(12) = sigma_single / sqrt(n_faces * n_gen)",
+                category="DERIVED",
+                description=(
+                    "Variance reduction in the breathing dark energy mechanism from "
+                    "12 independent bridge pairs. The 12 pairs arise from 4 faces x 3 "
+                    "generations in the four-face G2 architecture. Each pair contributes "
+                    "an independent oscillation, reducing the effective variance by sqrt(12)."
+                ),
+                derivation={
+                    "steps": [
+                        "The b3 = 24 associative 3-cycles pair into 12 normal/mirror bridge pairs",
+                        "In the 4-face architecture: 12 pairs = 4 Kahler faces x 3 fermion generations",
+                        "Each pair oscillates independently with amplitude sigma_single",
+                        "By the central limit theorem, the effective variance is sigma_eff = sigma_single/sqrt(12) ~ 0.29 x sigma_single"
+                    ],
+                    "method": "Central limit theorem applied to 12 independent bridge oscillations from 4-face x 3-generation pairing",
+                    "parentFormulas": ["v22-distributed-or-reduction"]
+                },
+                terms={
+                    r"\sigma_{\text{eff}}": {"description": "Effective variance of dark energy breathing after averaging over 12 pairs"},
+                    r"\sigma_{\text{single}}": {"description": "Single-pair variance of bridge oscillation"},
+                    r"n_{\text{faces}}": {"description": "Number of Kahler faces per shadow = h^{1,1} = 4"},
+                    r"n_{\text{gen}}": {"description": "Number of fermion generations = chi_eff/48 = 3"}
+                }
+            ),
+            Formula(
+                id="4face-w0-prediction",
+                label="(DE.4F2)",
+                latex=r"w_0 = -1 + \frac{1}{b_3} = -1 + \frac{1}{24} = -\frac{23}{24}",
+                plain_text="w0 = -1 + 1/b3 = -1 + 1/24 = -23/24",
+                category="DERIVED",
+                description=(
+                    "Dark energy equation of state from Tzimtzum fraction, now interpreted "
+                    "through the 4-face lens: the deviation from w = -1 arises because "
+                    "one Tzimtzum cycle out of b3 = 24 leaks vacuum energy from the bulk. "
+                    "In the 4-face picture, this corresponds to 6 cycles per face x 4 faces = 24, "
+                    "with the leak coming from the lightest face modulus."
+                ),
+                derivation={
+                    "steps": [
+                        "The 24 associative 3-cycles distribute as 6 per face across 4 Kahler faces",
+                        "The lightest face modulus T_4 = b3 x k_gimel / (4*pi) has the smallest stabilization energy",
+                        "One cycle on the lightest face tunnels vacuum energy to the 4D sector",
+                        "The fractional leakage 1/b3 = 1/24 shifts w from -1 to -23/24 = -0.9583"
+                    ],
+                    "method": "Tzimtzum vacuum energy leakage from lightest face modulus in 4-face G2 geometry",
+                    "parentFormulas": ["alpha-leak-coupling"]
+                },
+                terms={
+                    r"w_0": {"description": "Dark energy equation of state at z=0; w=-1 is pure cosmological constant"},
+                    r"b_3": {"description": "Third Betti number = 24 (total associative 3-cycles across all faces)"}
                 }
             ),
         ]
@@ -1477,7 +1559,7 @@ _validation_instance = DarkEnergyEvolution()
 assert _validation_instance.metadata is not None
 assert _validation_instance.metadata.id == "dark_energy_thawing_v16_2"
 assert _validation_instance.metadata.version == "22.0"
-assert len(_validation_instance.get_formulas()) == 5
+assert len(_validation_instance.get_formulas()) == 7
 
 # Test w0 and wa calculations with b3=24, k_gimel=12.318
 _test_w0 = _validation_instance.calculate_w_params_w0(24)

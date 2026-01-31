@@ -1673,6 +1673,12 @@ class G2GeometryV16(SimulationBase):
                 "relevance": "The Berger classification restricts irreducible holonomy groups; G2 is the unique exceptional holonomy in 7 dimensions",
                 "validation_hint": "Berger's 1955 classification lists G2 and Spin(7) as the only exceptional holonomy groups"
             },
+            {
+                "topic": "Kahler moduli and sub-sector structure",
+                "url": "https://en.wikipedia.org/wiki/K%C3%A4hler_manifold",
+                "relevance": "The h^{1,1} = 4 Hodge number yields 4 independent Kahler moduli, interpreted as 4 geometric 'faces' per shadow in the PM dual-shadow architecture",
+                "validation_hint": "For TCS G2 manifolds, h^{1,1} = b2 counts independent 2-cycles (K3 matching fibres in the Kovalev construction)"
+            },
         ]
 
     def validate_self(self) -> Dict[str, Any]:

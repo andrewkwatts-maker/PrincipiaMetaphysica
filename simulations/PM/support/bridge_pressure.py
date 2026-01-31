@@ -129,6 +129,7 @@ class BridgePressureV21(SimulationBase):
             "or-reduction-operator",
             "breathing-density",
             "bridge-stress-tensor",
+            "4face-bridge-flux",
         ]
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
@@ -359,12 +360,34 @@ class BridgePressureV21(SimulationBase):
                     formula_id="breathing-density",
                     label="(1.18)"
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Four-Face Bridge Decomposition",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "In the four-face G2 architecture, each of the 12 bridge pairs "
+                        "has 4 independent face-specific leakage channels, yielding "
+                        "48 = chi_eff/3 total bridge flux channels. This decomposition "
+                        "connects the bridge pressure mechanism to the Kahler moduli "
+                        "structure and explains why the effective number of channels "
+                        "per generation equals the total Euler characteristic divided by 3."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="4face-bridge-flux",
+                    label="(BP.4F)"
+                ),
             ],
             formula_refs=[
                 "bridge-metric-euclidean",
                 "conformal-pressure",
                 "or-reduction-operator",
                 "breathing-density",
+                "4face-bridge-flux",
             ],
             param_refs=[
                 "bridge.rho_breath",
@@ -493,6 +516,35 @@ class BridgePressureV21(SimulationBase):
                     "rho_breath": "Breathing dark energy density",
                     "T^ab": "Stress-energy tensor in bridge",
                     "R_perp": "OR reduction operator",
+                }
+            ),
+            Formula(
+                id="4face-bridge-flux",
+                label="(BP.4F)",
+                latex=r"\Phi_{\text{bridge}} = n_{\text{pairs}} \times n_{\text{faces}} = 12 \times 4 = 48 = \frac{\chi_{\text{eff}}}{3}",
+                plain_text="Phi_bridge = n_pairs * n_faces = 12 * 4 = 48 = chi_eff / 3",
+                category="GEOMETRIC",
+                description="Total bridge flux channels from 4-face decomposition. Each of 12 bridge pairs has 4 face-specific leakage channels, giving 48 = chi_eff/3 total channels.",
+                derivation={
+                    "steps": [
+                        {"description": "The dual-shadow architecture has 12 bridge pairs (from b3/2 = 12 associative cycle pairs)",
+                         "formula": r"n_{\text{pairs}} = b_3 / 2 = 12"},
+                        {"description": "Each bridge pair connects corresponding faces across shadows: 4 faces per shadow",
+                         "formula": r"n_{\text{faces}} = h^{1,1} = 4"},
+                        {"description": "Total flux channels = 12 pairs x 4 faces = 48",
+                         "formula": r"\Phi_{\text{bridge}} = 12 \times 4 = 48"},
+                        {"description": "This equals chi_eff/n_gen = 144/3 = 48, confirming geometric consistency",
+                         "formula": r"\Phi_{\text{bridge}} = \chi_{\text{eff}} / n_{\text{gen}} = 144 / 3 = 48"}
+                    ],
+                    "method": "Combinatorial counting of face-specific bridge channels in dual-shadow architecture",
+                    "parentFormulas": ["alpha-leak-coupling"],
+                    "references": ["PM Section 1.5: Euclidean Bridge"]
+                },
+                terms={
+                    r"\Phi_{\text{bridge}}": {"description": "Total number of independent bridge flux channels"},
+                    r"n_{\text{pairs}}": {"description": "Number of bridge pairs = b3/2 = 12"},
+                    r"n_{\text{faces}}": {"description": "Number of Kahler faces per shadow = h^{1,1} = 4"},
+                    r"\chi_{\text{eff}}": {"description": "Effective Euler characteristic = 144"}
                 }
             ),
         ]
