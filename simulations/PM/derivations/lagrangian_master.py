@@ -2849,11 +2849,43 @@ class LagrangianMasterDerivation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The reduction chain proceeds as follows: 27D (full bulk with both OR "
-                        "layers) reduces to 13D per shadow via bridge OR, then to 4D via face "
-                        "OR combined with G2 Kaluza-Klein compactification. At each step, the "
-                        "relevant OR potential integrates out the corresponding degrees of "
-                        "freedom, leaving the lower-dimensional effective theory."
+                        "The reduction chain proceeds in two explicit stages with clear "
+                        "dimensionality tracking at each level:"
+                    )
+                ),
+                ContentBlock(
+                    type="callout",
+                    callout_type="info",
+                    title="KK Reduction Chain: 27D \u2192 13D (bridge reduction) \u2192 4D (face reduction)",
+                    content=(
+                        "<strong>Stage 1 \u2014 Bridge OR Reduction (27D \u2192 13D):</strong> "
+                        "The bridge/global OR potential V_bridge^(global OR) integrates out "
+                        "the 12\u00d7(2,0) bridge directions (24 spatial DOF), reducing the "
+                        "27D(26,1) master action to a 13D(12,1) per-shadow action. The "
+                        "resulting Lagrangian is denoted <strong>L_13D</strong> \u2014 the "
+                        "13D per-shadow Lagrangian after bridge OR reduction. It retains "
+                        "13D gravity R_13, the Pneuma spinor with torsion coupling, and "
+                        "the face OR potential V_face^(f)(local OR) as a dynamical "
+                        "degree of freedom.\n\n"
+                        "<strong>Stage 2 \u2014 Face OR Reduction (13D \u2192 4D):</strong> "
+                        "The face/local OR potential V_face^(f)(local OR) selects the "
+                        "dominant visible face from the 4 K\u00e4hler moduli faces of the TCS "
+                        "G2 manifold. G2 Kaluza-Klein compactification then reduces the "
+                        "remaining 7 internal dimensions, yielding the "
+                        "<strong>L_4D</strong> \u2014 the 4D effective Lagrangian. This is "
+                        "the Standard Model (SU(3)\u00d7SU(2)\u00d7U(1) gauge + Higgs + Yukawa) "
+                        "coupled to Einstein gravity, with M_Pl\u00b2 = M_*\u00b9\u00b9 Vol(V_7) and "
+                        "\u039b = (\u222b F \u2227 \u03c6)\u00b2 / Vol determined entirely by internal geometry."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "<strong>L_13D</strong>: The 13D per-shadow Lagrangian after bridge "
+                        "OR reduction. Bridge directions are frozen at their OR-selected "
+                        "values; only face degrees of freedom remain dynamical. This "
+                        "intermediate Lagrangian lives on a 13D(12,1) spacetime \u2014 one "
+                        "copy per shadow of the dual-shadow pair."
                     )
                 ),
                 ContentBlock(
@@ -2864,12 +2896,14 @@ class LagrangianMasterDerivation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The 13D per-shadow Lagrangian inherits the face OR potential from the "
-                        "master action. After face OR selects the dominant visible face, G2 "
-                        "compactification yields the 4D effective Lagrangian: the Standard Model "
-                        "coupled to Einstein gravity plus a cosmological constant from flux. "
-                        "The 4D Planck mass M_Pl^2 = M_*^{11} Vol(V_7) and the cosmological "
-                        "constant Lambda = (integral F wedge phi)^2 / Vol are both determined "
+                        "<strong>L_4D</strong>: The 4D effective Lagrangian after face OR "
+                        "reduction followed by G2 Kaluza-Klein compactification. The face "
+                        "OR selects the dominant visible face, and G2 compactification "
+                        "integrates out the 7 internal dimensions of V_7. The resulting "
+                        "4D(3,1) theory is the complete Standard Model coupled to Einstein "
+                        "gravity plus a cosmological constant from flux. The 4D Planck mass "
+                        "M_Pl^2 = M_*^{11} Vol(V_7) and the cosmological constant "
+                        "Lambda = (integral F wedge phi)^2 / Vol are both determined "
                         "by the internal geometry, with no free parameters."
                     )
                 ),
@@ -2881,10 +2915,11 @@ class LagrangianMasterDerivation(SimulationBase):
                 ContentBlock(
                     type="list",
                     items=[
-                        "27D master action: full bulk with V_bridge^(global OR) + V_face^(f)(local OR)",
-                        "27D -> 13D: bridge OR integrates out bridge directions, creating dual shadows",
-                        "13D per-shadow: inherits face OR potential V_face^(f)(local OR)",
-                        "13D -> 4D: face OR selects visible face, then G2 KK yields SM + GR + Lambda",
+                        "S_27D: 27D(26,1) master action \u2014 full bulk with V_bridge^(global OR) + V_face^(f)(local OR)",
+                        "27D \u2192 13D (bridge reduction): bridge OR integrates out 24 bridge DOF, creating dual 13D(12,1) shadows",
+                        "L_13D: 13D(12,1) per-shadow Lagrangian \u2014 inherits face OR potential V_face^(f)(local OR)",
+                        "13D \u2192 4D (face reduction): face OR selects visible face, G2 KK compactifies 7D internal space",
+                        "L_4D: 4D(3,1) effective Lagrangian \u2014 SM + GR + \u039b, all parameters fixed by geometry",
                     ]
                 ),
             ],

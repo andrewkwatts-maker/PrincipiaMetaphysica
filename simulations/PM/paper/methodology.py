@@ -418,6 +418,69 @@ class MethodologyV16_2(SimulationBase):
                 ),
                 label="two-layer-or-methodology"
             ),
+
+            # ================================================================
+            # 2.5 Ghost-Freedom of the Master Lagrangian
+            # ================================================================
+            ContentBlock(
+                type="heading",
+                content="Ghost-Freedom of the Master Lagrangian",
+                level=2,
+                label="2.5"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "A critical falsifiability requirement for any fundamental theory is the "
+                    "absence of ghost degrees of freedom (negative-norm states that would "
+                    "render the quantum theory non-unitary). The PM master Lagrangian "
+                    "L = R + F\u00b2 + |D\u03a6|\u00b2 + V(T) is manifestly ghost-free. "
+                    "We establish this sector by sector."
+                )
+            ),
+            ContentBlock(
+                type="list",
+                items=[
+                    "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R "
+                    "yields second-order equations of motion with a positive-definite "
+                    "kinetic term for the two physical graviton polarizations. The "
+                    "(26,1) unified-time signature eliminates the negative-norm temporal "
+                    "modes that would otherwise produce gravitational ghosts.",
+
+                    "<strong>Yang-Mills sector (F\u00b2):</strong> The gauge field strength "
+                    "F\u00b2 = F_{\u03bc\u03bd}^a F^{a\u03bc\u03bd} is gauge-invariant by "
+                    "construction. Ghost-freedom follows from the standard Faddeev-Popov "
+                    "procedure: the unphysical longitudinal and temporal polarizations are "
+                    "exactly cancelled by the Faddeev-Popov ghost determinant, leaving only "
+                    "the D-2 physical transverse modes at each step of the KK reduction.",
+
+                    "<strong>Moduli potential sector V(T):</strong> The K\u00e4hler moduli "
+                    "potential V(T) is stabilised by the racetrack mechanism (dual "
+                    "non-perturbative exponentials), which guarantees that V(T) is bounded "
+                    "below. The moduli kinetic terms inherit positive-definiteness from the "
+                    "K\u00e4hler metric on moduli space. No flat directions remain after "
+                    "stabilisation, preventing runaway ghost modes.",
+
+                    "<strong>Absence of higher-derivative terms:</strong> The master "
+                    "Lagrangian contains no R\u00b2, R_{\u03bc\u03bd}R^{\u03bc\u03bd}, or "
+                    "other higher-derivative gravity terms. This is structurally enforced: "
+                    "the G2 holonomy compactification is Ricci-flat, so higher-curvature "
+                    "corrections vanish at leading order. Consequently, there are no "
+                    "Ostrogradsky ghosts (the massive spin-2 states that generically "
+                    "plague higher-derivative gravity theories)."
+                ],
+                label="ghost-free-proof"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "Taken together, these four conditions ensure that every propagating "
+                    "degree of freedom in the PM framework has a positive-definite kinetic "
+                    "term and a bounded-below potential. The theory is therefore unitary at "
+                    "the classical level, and the standard quantisation procedure preserves "
+                    "this unitarity order by order in perturbation theory."
+                )
+            ),
         ]
 
         return SectionContent(

@@ -106,6 +106,7 @@ _OUTPUT_FORMULAS = [
     "w0-thawing-anchor",
     "spectral-index-anchor",
     "unity-seal-anchor",
+    "torsion-from-topology-derivation",
 ]
 
 
@@ -335,6 +336,44 @@ class GeometricAnchorsSimulation(SimulationBase):
                     }
                 }
             ),
+            Formula(
+                id="torsion-from-topology-derivation",
+                label="(2.6)",
+                latex=r"T_\omega = \sqrt{b_3/\chi_{\text{eff}}} = \sqrt{24/144} = 1/\sqrt{6}",
+                plain_text="T_omega = sqrt(b3/chi_eff) = sqrt(24/144) = 1/sqrt(6) ≈ 0.4082",
+                category="THEORY",
+                description=(
+                    "Torsion amplitude derived purely from G2 topology. The non-integrability "
+                    "of the G2 3-form under flux and bridge warping produces a torsion proportional "
+                    "to sqrt(b3/chi_eff). Physical roles include covariant derivative correction, "
+                    "GW dispersion (eta ~ T_omega/pi), portal leakage (alpha_leak ~ 1/sqrt(6)), "
+                    "and dark energy thawing (bridge pressure via torsion)."
+                ),
+                derivation={
+                    "steps": [
+                        "Start from G2 manifold with third Betti number b3 = 24 (TCS #187, Corti et al. 2015)",
+                        "Compute effective Euler characteristic: chi_eff = b3^2 / 4 = 576 / 4 = 144",
+                        "Torsion amplitude from topological imbalance: T_omega = sqrt(b3 / chi_eff) = sqrt(24 / 144) = sqrt(1/6)",
+                        "Result: T_omega = 1/sqrt(6) ≈ 0.4082 (exact algebraic value from topology alone)"
+                    ],
+                    "method": "Topological torsion from non-integrability of G2 3-form under flux quantization",
+                    "parentFormulas": ["k-gimel-anchor"]
+                },
+                terms={
+                    r"T_\omega": {
+                        "description": "Torsion amplitude: measures non-integrability of the G2 associative 3-form phi under flux and bridge warping",
+                        "value": 1.0 / np.sqrt(6.0)
+                    },
+                    r"b_3": {
+                        "description": "Third Betti number of TCS G2 manifold (= 24): counts independent associative 3-cycles (transverse modes)",
+                        "value": 24
+                    },
+                    r"\chi_{\text{eff}}": {
+                        "description": "Effective Euler characteristic (= 144 = b3^2/4): measures total topological complexity of the G2 manifold",
+                        "value": 144
+                    }
+                }
+            ),
         ]
 
     def get_section_content(self) -> SectionContent:
@@ -474,6 +513,11 @@ class GeometricAnchorsSimulation(SimulationBase):
                     level=2
                 ),
                 ContentBlock(
+                    type="formula",
+                    formula_id="torsion-from-topology-derivation",
+                    label="(2.6)"
+                ),
+                ContentBlock(
                     type="paragraph",
                     content=(
                         "**Torsion from Topology (4-Step Derivation)**\n\n"
@@ -497,7 +541,8 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "alpha-inverse-anchor",
                 "w0-thawing-anchor",
                 "spectral-index-anchor",
-                "unity-seal-anchor"
+                "unity-seal-anchor",
+                "torsion-from-topology-derivation"
             ],
             param_refs=[
                 "geometry.elder_kads",

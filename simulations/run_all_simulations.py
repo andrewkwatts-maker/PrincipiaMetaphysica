@@ -156,6 +156,16 @@ from datetime import datetime
 from dataclasses import dataclass, field
 import warnings
 
+# Load .env file if present (API keys for Gemini review, gitignored)
+_env_file = Path(__file__).resolve().parent.parent / ".env"
+if _env_file.exists():
+    with open(_env_file) as _f:
+        for _line in _f:
+            _line = _line.strip()
+            if _line and not _line.startswith("#") and "=" in _line:
+                _key, _, _val = _line.partition("=")
+                os.environ.setdefault(_key.strip(), _val.strip())
+
 # Conditionally import numpy for UQ (Monte Carlo)
 try:
     import numpy as np
@@ -2527,6 +2537,21 @@ def main():
         action="store_true",
         help="Replace geometric inputs with experimental values for all simulations"
     )
+    parser.add_argument(
+        "--gemini-review",
+        action="store_true",
+        help="Run Gemini peer review on all simulation files AFTER simulations complete"
+    )
+    parser.add_argument(
+        "--gemini-batch-size",
+        type=int, default=5,
+        help="Number of simulation files per Gemini API call (default: 5)"
+    )
+    parser.add_argument(
+        "--gemini-model",
+        type=str, default="gemini-2.0-flash",
+        help="Gemini model for peer review (default: gemini-2.0-flash)"
+    )
 
     args = parser.parse_args()
 
@@ -2870,6 +2895,36 @@ def main():
         exit_code = 2  # Validation failure (distinct from simulation failure)
         if not args.quiet:
             print("\n[FAILURE] Anti-tautology validation failed")
+
+    # =========================================================================
+    # GEMINI PEER REVIEW (Post-Simulation, Optional)
+    # =========================================================================
+    # Runs AFTER all simulations complete and theory_output.json is generated.
+    # Batches simulation files (default 5 per API call) for efficiency.
+    # Requires GEMINI_API_KEY environment variable.
+    # =========================================================================
+    if getattr(args, 'gemini_review', False):
+        api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+        if not api_key:
+            if not args.quiet:
+                print("\n[WARN] --gemini-review requires GEMINI_API_KEY environment variable")
+                print("  Skipping Gemini peer review.")
+        else:
+            try:
+                from scripts.validation.gemini_peer_review import run_post_simulation_review
+                review_result = run_post_simulation_review(
+                    api_key=api_key,
+                    batch_size=args.gemini_batch_size,
+                    model=args.gemini_model,
+                    quiet=args.quiet,
+                )
+                if not args.quiet:
+                    mean = review_result.get("mean_score", 0)
+                    total = review_result.get("total_reviewed", 0)
+                    print(f"\n[GEMINI] Review complete: {total} files, mean score {mean:.1f}/10")
+            except Exception as e:
+                if not args.quiet:
+                    print(f"\n[WARN] Gemini review failed: {e}")
 
     sys.exit(exit_code)
 

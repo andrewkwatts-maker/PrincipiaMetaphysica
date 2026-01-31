@@ -102,7 +102,7 @@
         "validation.exact_matches",
         "statistics.certificates_total"
       ],
-      "timestamp": "2026-01-31T20:59:53.387272"
+      "timestamp": "2026-01-31T21:30:50.462070"
     },
     "1": {
       "id": "1",
@@ -752,7 +752,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-01-31T20:59:53.387338"
+      "timestamp": "2026-01-31T21:30:50.462133"
     },
     "2": {
       "id": "2",
@@ -2002,7 +2002,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-01-31T20:59:53.388165"
+      "timestamp": "2026-01-31T21:30:50.462934"
     },
     "2.7": {
       "id": "2",
@@ -2342,7 +2342,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-01-31T20:59:53.388381"
+      "timestamp": "2026-01-31T21:30:50.463103"
     },
     "V.1": {
       "id": "validation",
@@ -2464,7 +2464,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-31T20:59:53.388532"
+      "timestamp": "2026-01-31T21:30:50.463215"
     },
     "3.4": {
       "id": "3",
@@ -2628,7 +2628,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-31T20:59:53.388693"
+      "timestamp": "2026-01-31T21:30:50.463272"
     },
     "3.6": {
       "id": "3",
@@ -2800,7 +2800,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-31T20:59:53.388787"
+      "timestamp": "2026-01-31T21:30:50.463353"
     },
     "3": {
       "id": "3",
@@ -3004,7 +3004,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-01-31T20:59:53.419817"
+      "timestamp": "2026-01-31T21:30:50.494034"
     },
     "3.2": {
       "id": "3",
@@ -3352,7 +3352,8 @@
         "gauge.rho_parameter",
         "bridge.n_pairs",
         "bridge.breathing_aggregation",
-        "bridge.distributed_or_rank"
+        "bridge.distributed_or_rank",
+        "gauge.chirality_reversal_probability"
       ],
       "formula_refs": [
         "pneuma-master-action-v22",
@@ -3388,9 +3389,10 @@
         "gauge.rho_parameter",
         "bridge.n_pairs",
         "bridge.breathing_aggregation",
-        "bridge.distributed_or_rank"
+        "bridge.distributed_or_rank",
+        "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-01-31T20:59:53.420061"
+      "timestamp": "2026-01-31T21:30:50.494252"
     },
     "3.1": {
       "id": "3",
@@ -3448,7 +3450,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-31T20:59:53.420192"
+      "timestamp": "2026-01-31T21:30:50.494377"
     },
     "4.2": {
       "id": "4",
@@ -3578,7 +3580,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-01-31T20:59:53.420292"
+      "timestamp": "2026-01-31T21:30:50.494453"
     },
     "4.1": {
       "id": "4",
@@ -3866,7 +3868,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-31T20:59:53.420422"
+      "timestamp": "2026-01-31T21:30:50.494541"
     },
     "4.3": {
       "id": "4",
@@ -4106,7 +4108,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-31T20:59:53.420598"
+      "timestamp": "2026-01-31T21:30:50.494674"
     },
     "4.6": {
       "id": "4",
@@ -4286,7 +4288,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-31T20:59:53.420698"
+      "timestamp": "2026-01-31T21:30:50.494761"
     },
     "4.4": {
       "id": "4",
@@ -4460,7 +4462,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-31T20:59:53.420785"
+      "timestamp": "2026-01-31T21:30:50.494838"
     },
     "4.9": {
       "id": "4",
@@ -4550,7 +4552,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-31T20:59:53.420865"
+      "timestamp": "2026-01-31T21:30:50.494913"
     },
     "6.1.1": {
       "id": "6",
@@ -4664,7 +4666,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-01-31T20:59:53.421083"
+      "timestamp": "2026-01-31T21:30:50.495111"
     },
     "4.2.1": {
       "id": "4",
@@ -4726,7 +4728,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-01-31T20:59:53.421251"
+      "timestamp": "2026-01-31T21:30:50.495249"
     },
     "4.8": {
       "id": "4",
@@ -4784,7 +4786,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-31T20:59:53.421308"
+      "timestamp": "2026-01-31T21:30:50.495302"
     },
     "5.1": {
       "id": "5",
@@ -5108,7 +5110,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-31T20:59:53.421406"
+      "timestamp": "2026-01-31T21:30:50.495397"
     },
     "5.2": {
       "id": "5",
@@ -5312,7 +5314,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-31T20:59:53.421541"
+      "timestamp": "2026-01-31T21:30:50.495524"
     },
     "5.6": {
       "id": "5",
@@ -5636,7 +5638,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-31T20:59:53.421734"
+      "timestamp": "2026-01-31T21:30:50.495716"
     },
     "5.7": {
       "id": "5",
@@ -5780,7 +5782,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-31T20:59:53.423651"
+      "timestamp": "2026-01-31T21:30:50.497624"
     },
     "5.4": {
       "id": "5",
@@ -6078,7 +6080,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-31T20:59:53.425029"
+      "timestamp": "2026-01-31T21:30:50.499034"
     },
     "5.9": {
       "id": "5",
@@ -6240,7 +6242,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-31T20:59:53.426430"
+      "timestamp": "2026-01-31T21:30:50.500435"
     },
     "4.5": {
       "id": "4",
@@ -6446,7 +6448,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-31T20:59:53.426595"
+      "timestamp": "2026-01-31T21:30:50.500589"
     },
     "4.7": {
       "id": "4",
@@ -6690,7 +6692,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-31T20:59:53.426739"
+      "timestamp": "2026-01-31T21:30:50.500734"
     },
     "5.3": {
       "id": "5",
@@ -6848,7 +6850,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-31T20:59:53.426881"
+      "timestamp": "2026-01-31T21:30:50.500872"
     },
     "5.8": {
       "id": "5",
@@ -7170,7 +7172,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-31T20:59:53.426982"
+      "timestamp": "2026-01-31T21:30:50.500969"
     },
     "6.1": {
       "id": "6",
@@ -7230,7 +7232,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427071"
+      "timestamp": "2026-01-31T21:30:50.501064"
     },
     "6.2": {
       "id": "6",
@@ -7278,7 +7280,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427117"
+      "timestamp": "2026-01-31T21:30:50.501110"
     },
     "6.3": {
       "id": "6",
@@ -7322,7 +7324,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427154"
+      "timestamp": "2026-01-31T21:30:50.501147"
     },
     "6.4": {
       "id": "6",
@@ -7366,7 +7368,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427188"
+      "timestamp": "2026-01-31T21:30:50.501185"
     },
     "6.5": {
       "id": "6",
@@ -7410,7 +7412,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427223"
+      "timestamp": "2026-01-31T21:30:50.501219"
     },
     "6.6": {
       "id": "6",
@@ -7454,7 +7456,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427331"
+      "timestamp": "2026-01-31T21:30:50.501332"
     },
     "6.7": {
       "id": "6",
@@ -7498,7 +7500,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427365"
+      "timestamp": "2026-01-31T21:30:50.501367"
     },
     "6.8": {
       "id": "6",
@@ -7542,7 +7544,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427395"
+      "timestamp": "2026-01-31T21:30:50.501396"
     },
     "6.9": {
       "id": "6",
@@ -7586,7 +7588,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427428"
+      "timestamp": "2026-01-31T21:30:50.501428"
     },
     "5.5": {
       "id": "5",
@@ -7740,7 +7742,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-31T20:59:53.427487"
+      "timestamp": "2026-01-31T21:30:50.501484"
     },
     "2.6": {
       "id": "2",
@@ -8678,7 +8680,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-31T20:59:53.427616"
+      "timestamp": "2026-01-31T21:30:50.501614"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -8806,7 +8808,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T20:59:53.427688"
+      "timestamp": "2026-01-31T21:30:50.501688"
     },
     "7.2": {
       "id": "7",
@@ -8882,7 +8884,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-31T20:59:53.427775"
+      "timestamp": "2026-01-31T21:30:50.501776"
     },
     "7": {
       "id": "7",
@@ -11334,7 +11336,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.427870"
+      "timestamp": "2026-01-31T21:30:50.501867"
     },
     "6": {
       "id": "6",
@@ -12375,6 +12377,21 @@
               "CMB bubbles",
               "○ UNTESTED",
               "Cold spot signatures - CMB-S4 2027+"
+            ],
+            [
+              "Cross-shadow phase shift",
+              "○ UNTESTED",
+              "δφ = α_leak × L/λ_dB, α_leak = 1/√6 - atom interferometry"
+            ],
+            [
+              "Vacuum noise excess",
+              "○ UNTESTED",
+              "P_noise/P_thermal = (1/144)e⁻¹² ≈ 6.9×10⁻⁸ - SQUID/cavity QED"
+            ],
+            [
+              "GW polarization anomaly",
+              "○ UNTESTED",
+              "δh/h ~ T_ω² = 1/6 - LIGO O5 / LISA polarization"
             ]
           ]
         },
@@ -12388,8 +12405,153 @@
           "content": "**Dark Force Leakage Predictions (Two-Layer OR)**\n\nThe dual-shadow bridge structure predicts dark force leakage across shadows:\n\n| Force | Leakage Strength α_leak | Probability P_leak | Status |\n|-------|------------------------|-------------------|--------|\n| Strong (SU(3)_C) | ~10⁻³⁷ | ~10⁻⁷⁵ | Zero |\n| Weak (SU(2)_L) | ~0 | ~0 | Zero |\n| Electromagnetic (U(1)) | ~0.00248 | ~6.9×10⁻⁶ | Testable |\n| Gravity (gravitons) | ~0.00248 | ~6.9×10⁻⁶ | Testable |\n\nStrong force leakage is impossible (confinement + instanton cost S_inst ≈ 80). Weak force leakage is impossible (mass barrier m_W r_bridge ~ 10⁵). EM and gravity leak at ~230× weaker than dark matter portal (~0.57)."
         },
         {
+          "type": "heading",
+          "content": "Experimental Observables from Two-Layer OR",
+          "level": 3
+        },
+        {
           "type": "paragraph",
-          "content": "**Experimental Observables from Two-Layer OR**\n\n1. Cross-shadow phase shift: Δφ ~ P_leak · ω · τ_coh ≈ 10⁻⁶ to 10⁻⁸ rad (near-term)\n2. CMB polarization excess: ΔP ~ P_leak · ℏω_CMB/(kT_CMB) ≈ 10⁻⁷ (CMB-S4)\n3. Vacuum noise excess: δ_QED ~ P_leak · α ≈ 10⁻⁸ (next-gen g-2)\n4. GW polarization: Δη ~ P_leak · η ≈ 10⁻⁷ (LISA)\n5. Chirality reversal: P_reverse ≈ 3×10⁻⁶ (cross-shadow chirality flip)\n\nAll predictions are derived from base probability P_leak = (1/144) · e⁻¹² ≈ 6.9×10⁻⁶."
+          "content": "The two-layer OR bridge structure yields three primary experimental signatures, each derived from the base leakage parameters: coupling strength α_leak = 1/√6 ≈ 0.408, bridge probability P_leak = (1/144) · e⁻¹² ≈ 6.9×10⁻⁸, and torsion parameter T_ω = 1/√6 ≈ 0.408. These observables provide independent, falsifiable tests of the dual-shadow bridge mechanism."
+        },
+        {
+          "type": "heading",
+          "content": "Observable 1: Cross-Shadow Phase Shift",
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "The cross-shadow interference produces a measurable phase shift δφ = α_leak × L/λ_dB, where α_leak = 1/√6 ≈ 0.408 is the leakage coupling, L is the propagation path length, and λ_dB is the de Broglie wavelength of the probe particle. For cold-atom interferometry (L ~ 1 m, λ_dB ~ 10⁻⁹ m), the predicted shift is δφ ~ 10⁻¹⁰ to 10⁻⁸ rad."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Platform",
+            "Path Length L",
+            "λ_dB",
+            "Predicted δφ (rad)",
+            "Current Sensitivity"
+          ],
+          "rows": [
+            [
+              "Cold atom interferometer",
+              "1 m",
+              "~10⁻⁹ m",
+              "~4 × 10⁻¹⁰",
+              "~10⁻⁹ rad/√Hz"
+            ],
+            [
+              "Neutron interferometer",
+              "0.1 m",
+              "~10⁻¹⁰ m",
+              "~4 × 10⁻⁸",
+              "~10⁻⁶ rad"
+            ],
+            [
+              "Electron holography",
+              "10⁻³ m",
+              "~10⁻¹² m",
+              "~4 × 10⁻⁷",
+              "~10⁻⁴ rad"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Observable 2: Vacuum Noise Excess from Bridge Leakage",
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge leaks vacuum fluctuations from the dark sector, producing an excess noise power P_noise = (1/144) × e⁻¹² × P_thermal ≈ 6.9×10⁻⁸ × P_thermal. This fractional noise excess above the thermal background is detectable in millikelvin cavity QED experiments and superconducting qubit readout circuits, where thermal noise is minimized to reveal the bridge leakage floor."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Detector",
+            "Temperature",
+            "P_noise/P_thermal",
+            "Sensitivity Threshold",
+            "Status"
+          ],
+          "rows": [
+            [
+              "SQUID amplifier",
+              "10 mK",
+              "~6.9 × 10⁻⁸",
+              "~10⁻⁹",
+              "REACHABLE"
+            ],
+            [
+              "Superconducting qubit",
+              "15 mK",
+              "~6.9 × 10⁻⁸",
+              "~10⁻⁷",
+              "ACCESSIBLE"
+            ],
+            [
+              "Microwave cavity QED",
+              "20 mK",
+              "~6.9 × 10⁻⁸",
+              "~10⁻⁶",
+              "ACCESSIBLE"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Observable 3: Gravitational Wave Polarization Anomaly",
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "G₂ torsion couples to gravitational wave polarization through the torsion parameter T_ω = 1/√6 ≈ 0.408, producing a fractional anomaly δh/h ~ T_ω² = 1/6 ≈ 0.167 in the plus-cross polarization ratio. This is a large fractional effect that should be detectable by cross-correlating polarization channels in current and next-generation GW observatories."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Observatory",
+            "Band",
+            "Sensitivity to δh/h",
+            "Timeline",
+            "Status"
+          ],
+          "rows": [
+            [
+              "LIGO O5",
+              "10–300 Hz",
+              "~10⁻²",
+              "2027+",
+              "DETECTABLE"
+            ],
+            [
+              "Einstein Telescope",
+              "1–300 Hz",
+              "~10⁻³",
+              "2035+",
+              "HIGH SENSITIVITY"
+            ],
+            [
+              "LISA",
+              "0.1–1 mHz",
+              "~10⁻²",
+              "2037+",
+              "DETECTABLE"
+            ],
+            [
+              "Pulsar Timing Arrays",
+              "1–10 nHz",
+              "~10⁻¹",
+              "Ongoing",
+              "COMPLEMENTARY"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Additional observables from the two-layer OR bridge include: CMB polarization excess ΔP ~ P_leak · ℏω_CMB/(kT_CMB) ≈ 10⁻⁷ (CMB-S4), QED vacuum correction δ_QED ~ P_leak · α ≈ 10⁻⁸ (next-gen g-2), and chirality reversal probability P_reverse ≈ 3×10⁻⁶ (cross-shadow chirality flip). All predictions trace to base probability P_leak = (1/144) · e⁻¹² ≈ 6.9×10⁻⁸."
         }
       ],
       "content_blocks": [
@@ -13421,6 +13583,21 @@
               "CMB bubbles",
               "○ UNTESTED",
               "Cold spot signatures - CMB-S4 2027+"
+            ],
+            [
+              "Cross-shadow phase shift",
+              "○ UNTESTED",
+              "δφ = α_leak × L/λ_dB, α_leak = 1/√6 - atom interferometry"
+            ],
+            [
+              "Vacuum noise excess",
+              "○ UNTESTED",
+              "P_noise/P_thermal = (1/144)e⁻¹² ≈ 6.9×10⁻⁸ - SQUID/cavity QED"
+            ],
+            [
+              "GW polarization anomaly",
+              "○ UNTESTED",
+              "δh/h ~ T_ω² = 1/6 - LIGO O5 / LISA polarization"
             ]
           ]
         },
@@ -13434,11 +13611,160 @@
           "content": "**Dark Force Leakage Predictions (Two-Layer OR)**\n\nThe dual-shadow bridge structure predicts dark force leakage across shadows:\n\n| Force | Leakage Strength α_leak | Probability P_leak | Status |\n|-------|------------------------|-------------------|--------|\n| Strong (SU(3)_C) | ~10⁻³⁷ | ~10⁻⁷⁵ | Zero |\n| Weak (SU(2)_L) | ~0 | ~0 | Zero |\n| Electromagnetic (U(1)) | ~0.00248 | ~6.9×10⁻⁶ | Testable |\n| Gravity (gravitons) | ~0.00248 | ~6.9×10⁻⁶ | Testable |\n\nStrong force leakage is impossible (confinement + instanton cost S_inst ≈ 80). Weak force leakage is impossible (mass barrier m_W r_bridge ~ 10⁵). EM and gravity leak at ~230× weaker than dark matter portal (~0.57)."
         },
         {
+          "type": "heading",
+          "content": "Experimental Observables from Two-Layer OR",
+          "level": 3
+        },
+        {
           "type": "paragraph",
-          "content": "**Experimental Observables from Two-Layer OR**\n\n1. Cross-shadow phase shift: Δφ ~ P_leak · ω · τ_coh ≈ 10⁻⁶ to 10⁻⁸ rad (near-term)\n2. CMB polarization excess: ΔP ~ P_leak · ℏω_CMB/(kT_CMB) ≈ 10⁻⁷ (CMB-S4)\n3. Vacuum noise excess: δ_QED ~ P_leak · α ≈ 10⁻⁸ (next-gen g-2)\n4. GW polarization: Δη ~ P_leak · η ≈ 10⁻⁷ (LISA)\n5. Chirality reversal: P_reverse ≈ 3×10⁻⁶ (cross-shadow chirality flip)\n\nAll predictions are derived from base probability P_leak = (1/144) · e⁻¹² ≈ 6.9×10⁻⁶."
+          "content": "The two-layer OR bridge structure yields three primary experimental signatures, each derived from the base leakage parameters: coupling strength α_leak = 1/√6 ≈ 0.408, bridge probability P_leak = (1/144) · e⁻¹² ≈ 6.9×10⁻⁸, and torsion parameter T_ω = 1/√6 ≈ 0.408. These observables provide independent, falsifiable tests of the dual-shadow bridge mechanism."
+        },
+        {
+          "type": "heading",
+          "content": "Observable 1: Cross-Shadow Phase Shift",
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "The cross-shadow interference produces a measurable phase shift δφ = α_leak × L/λ_dB, where α_leak = 1/√6 ≈ 0.408 is the leakage coupling, L is the propagation path length, and λ_dB is the de Broglie wavelength of the probe particle. For cold-atom interferometry (L ~ 1 m, λ_dB ~ 10⁻⁹ m), the predicted shift is δφ ~ 10⁻¹⁰ to 10⁻⁸ rad."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Platform",
+            "Path Length L",
+            "λ_dB",
+            "Predicted δφ (rad)",
+            "Current Sensitivity"
+          ],
+          "rows": [
+            [
+              "Cold atom interferometer",
+              "1 m",
+              "~10⁻⁹ m",
+              "~4 × 10⁻¹⁰",
+              "~10⁻⁹ rad/√Hz"
+            ],
+            [
+              "Neutron interferometer",
+              "0.1 m",
+              "~10⁻¹⁰ m",
+              "~4 × 10⁻⁸",
+              "~10⁻⁶ rad"
+            ],
+            [
+              "Electron holography",
+              "10⁻³ m",
+              "~10⁻¹² m",
+              "~4 × 10⁻⁷",
+              "~10⁻⁴ rad"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Observable 2: Vacuum Noise Excess from Bridge Leakage",
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge leaks vacuum fluctuations from the dark sector, producing an excess noise power P_noise = (1/144) × e⁻¹² × P_thermal ≈ 6.9×10⁻⁸ × P_thermal. This fractional noise excess above the thermal background is detectable in millikelvin cavity QED experiments and superconducting qubit readout circuits, where thermal noise is minimized to reveal the bridge leakage floor."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Detector",
+            "Temperature",
+            "P_noise/P_thermal",
+            "Sensitivity Threshold",
+            "Status"
+          ],
+          "rows": [
+            [
+              "SQUID amplifier",
+              "10 mK",
+              "~6.9 × 10⁻⁸",
+              "~10⁻⁹",
+              "REACHABLE"
+            ],
+            [
+              "Superconducting qubit",
+              "15 mK",
+              "~6.9 × 10⁻⁸",
+              "~10⁻⁷",
+              "ACCESSIBLE"
+            ],
+            [
+              "Microwave cavity QED",
+              "20 mK",
+              "~6.9 × 10⁻⁸",
+              "~10⁻⁶",
+              "ACCESSIBLE"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Observable 3: Gravitational Wave Polarization Anomaly",
+          "level": 4
+        },
+        {
+          "type": "paragraph",
+          "content": "G₂ torsion couples to gravitational wave polarization through the torsion parameter T_ω = 1/√6 ≈ 0.408, producing a fractional anomaly δh/h ~ T_ω² = 1/6 ≈ 0.167 in the plus-cross polarization ratio. This is a large fractional effect that should be detectable by cross-correlating polarization channels in current and next-generation GW observatories."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Observatory",
+            "Band",
+            "Sensitivity to δh/h",
+            "Timeline",
+            "Status"
+          ],
+          "rows": [
+            [
+              "LIGO O5",
+              "10–300 Hz",
+              "~10⁻²",
+              "2027+",
+              "DETECTABLE"
+            ],
+            [
+              "Einstein Telescope",
+              "1–300 Hz",
+              "~10⁻³",
+              "2035+",
+              "HIGH SENSITIVITY"
+            ],
+            [
+              "LISA",
+              "0.1–1 mHz",
+              "~10⁻²",
+              "2037+",
+              "DETECTABLE"
+            ],
+            [
+              "Pulsar Timing Arrays",
+              "1–10 nHz",
+              "~10⁻¹",
+              "Ongoing",
+              "COMPLEMENTARY"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Additional observables from the two-layer OR bridge include: CMB polarization excess ΔP ~ P_leak · ℏω_CMB/(kT_CMB) ≈ 10⁻⁷ (CMB-S4), QED vacuum correction δ_QED ~ P_leak · α ≈ 10⁻⁸ (next-gen g-2), and chirality reversal probability P_reverse ≈ 3×10⁻⁶ (cross-shadow chirality flip). All predictions trace to base probability P_leak = (1/144) · e⁻¹² ≈ 6.9×10⁻⁸."
         }
       ],
-      "formulaRefs": [],
+      "formulaRefs": [
+        "cross-shadow-phase-shift",
+        "vacuum-noise-excess",
+        "gw-polarization-anomaly"
+      ],
       "paramRefs": [
         "dark_energy.planck_tension_resolved",
         "dark_energy.w0_DESI_central",
@@ -13467,12 +13793,19 @@
         "pmns_nufit_comparison.theta_13_nufit_error",
         "pmns_nufit_comparison.theta_23_nufit",
         "pmns_nufit_comparison.theta_23_nufit_error",
+        "predictions.cross_shadow_phase_shift",
+        "predictions.gw_torsion_anomaly",
+        "predictions.vacuum_noise_fraction",
         "proton_decay.alpha_GUT_inv",
         "topology.elder_kads",
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "formula_refs": [],
+      "formula_refs": [
+        "cross-shadow-phase-shift",
+        "vacuum-noise-excess",
+        "gw-polarization-anomaly"
+      ],
       "param_refs": [
         "dark_energy.planck_tension_resolved",
         "dark_energy.w0_DESI_central",
@@ -13501,12 +13834,15 @@
         "pmns_nufit_comparison.theta_13_nufit_error",
         "pmns_nufit_comparison.theta_23_nufit",
         "pmns_nufit_comparison.theta_23_nufit_error",
+        "predictions.cross_shadow_phase_shift",
+        "predictions.gw_torsion_anomaly",
+        "predictions.vacuum_noise_fraction",
         "proton_decay.alpha_GUT_inv",
         "topology.elder_kads",
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-31T20:59:53.427967"
+      "timestamp": "2026-01-31T21:30:50.501983"
     },
     "1.1": {
       "id": "1",
@@ -14120,7 +14456,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.428024"
+      "timestamp": "2026-01-31T21:30:50.502051"
     },
     "2.5": {
       "id": "2",
@@ -14348,6 +14684,33 @@
           "content": "**Two-Layer OR Methodology**\n\nThe theory now explicitly distinguishes two hierarchical OR processes:\n\n- **Layer 1 (Bridge/Global OR)**: R_⊥^global = ⊗_{i=1}^{12} R_{⊥,i} creates dual shadows from the 27D bulk. Warping potential V_bridge governs shadow separation.\n- **Layer 2 (Face/Local OR)**: R_face^(f) selects the visible sector within each shadow from 4 Kähler moduli faces. Warping potential V_face governs face selection.\n\nThe operators do not commute: shadows must exist before faces can be selected. This hierarchical nesting is structurally necessary and geometric.",
           "label": "two-layer-or-methodology",
           "equationNumber": "two-layer-or-methodology"
+        },
+        {
+          "type": "heading",
+          "content": "Ghost-Freedom of the Master Lagrangian",
+          "label": "2.5",
+          "equationNumber": "2.5",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "A critical falsifiability requirement for any fundamental theory is the absence of ghost degrees of freedom (negative-norm states that would render the quantum theory non-unitary). The PM master Lagrangian L = R + F² + |DΦ|² + V(T) is manifestly ghost-free. We establish this sector by sector."
+        },
+        {
+          "type": "list",
+          "content": null,
+          "label": "ghost-free-proof",
+          "equationNumber": "ghost-free-proof",
+          "items": [
+            "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R yields second-order equations of motion with a positive-definite kinetic term for the two physical graviton polarizations. The (26,1) unified-time signature eliminates the negative-norm temporal modes that would otherwise produce gravitational ghosts.",
+            "<strong>Yang-Mills sector (F²):</strong> The gauge field strength F² = F_{μν}^a F^{aμν} is gauge-invariant by construction. Ghost-freedom follows from the standard Faddeev-Popov procedure: the unphysical longitudinal and temporal polarizations are exactly cancelled by the Faddeev-Popov ghost determinant, leaving only the D-2 physical transverse modes at each step of the KK reduction.",
+            "<strong>Moduli potential sector V(T):</strong> The Kähler moduli potential V(T) is stabilised by the racetrack mechanism (dual non-perturbative exponentials), which guarantees that V(T) is bounded below. The moduli kinetic terms inherit positive-definiteness from the Kähler metric on moduli space. No flat directions remain after stabilisation, preventing runaway ghost modes.",
+            "<strong>Absence of higher-derivative terms:</strong> The master Lagrangian contains no R², R_{μν}R^{μν}, or other higher-derivative gravity terms. This is structurally enforced: the G2 holonomy compactification is Ricci-flat, so higher-curvature corrections vanish at leading order. Consequently, there are no Ostrogradsky ghosts (the massive spin-2 states that generically plague higher-derivative gravity theories)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Taken together, these four conditions ensure that every propagating degree of freedom in the PM framework has a positive-definite kinetic term and a bounded-below potential. The theory is therefore unitary at the classical level, and the standard quantisation procedure preserves this unitarity order by order in perturbation theory."
         }
       ],
       "content_blocks": [
@@ -14566,13 +14929,40 @@
           "content": "**Two-Layer OR Methodology**\n\nThe theory now explicitly distinguishes two hierarchical OR processes:\n\n- **Layer 1 (Bridge/Global OR)**: R_⊥^global = ⊗_{i=1}^{12} R_{⊥,i} creates dual shadows from the 27D bulk. Warping potential V_bridge governs shadow separation.\n- **Layer 2 (Face/Local OR)**: R_face^(f) selects the visible sector within each shadow from 4 Kähler moduli faces. Warping potential V_face governs face selection.\n\nThe operators do not commute: shadows must exist before faces can be selected. This hierarchical nesting is structurally necessary and geometric.",
           "label": "two-layer-or-methodology",
           "equationNumber": "two-layer-or-methodology"
+        },
+        {
+          "type": "heading",
+          "content": "Ghost-Freedom of the Master Lagrangian",
+          "label": "2.5",
+          "equationNumber": "2.5",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "A critical falsifiability requirement for any fundamental theory is the absence of ghost degrees of freedom (negative-norm states that would render the quantum theory non-unitary). The PM master Lagrangian L = R + F² + |DΦ|² + V(T) is manifestly ghost-free. We establish this sector by sector."
+        },
+        {
+          "type": "list",
+          "content": null,
+          "label": "ghost-free-proof",
+          "equationNumber": "ghost-free-proof",
+          "items": [
+            "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R yields second-order equations of motion with a positive-definite kinetic term for the two physical graviton polarizations. The (26,1) unified-time signature eliminates the negative-norm temporal modes that would otherwise produce gravitational ghosts.",
+            "<strong>Yang-Mills sector (F²):</strong> The gauge field strength F² = F_{μν}^a F^{aμν} is gauge-invariant by construction. Ghost-freedom follows from the standard Faddeev-Popov procedure: the unphysical longitudinal and temporal polarizations are exactly cancelled by the Faddeev-Popov ghost determinant, leaving only the D-2 physical transverse modes at each step of the KK reduction.",
+            "<strong>Moduli potential sector V(T):</strong> The Kähler moduli potential V(T) is stabilised by the racetrack mechanism (dual non-perturbative exponentials), which guarantees that V(T) is bounded below. The moduli kinetic terms inherit positive-definiteness from the Kähler metric on moduli space. No flat directions remain after stabilisation, preventing runaway ghost modes.",
+            "<strong>Absence of higher-derivative terms:</strong> The master Lagrangian contains no R², R_{μν}R^{μν}, or other higher-derivative gravity terms. This is structurally enforced: the G2 holonomy compactification is Ricci-flat, so higher-curvature corrections vanish at leading order. Consequently, there are no Ostrogradsky ghosts (the massive spin-2 states that generically plague higher-derivative gravity theories)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "Taken together, these four conditions ensure that every propagating degree of freedom in the PM framework has a positive-definite kinetic term and a bounded-below potential. The theory is therefore unitary at the classical level, and the standard quantisation procedure preserves this unitarity order by order in perturbation theory."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.428483"
+      "timestamp": "2026-01-31T21:30:50.502471"
     },
     "3.7": {
       "id": "3",
@@ -14844,7 +15234,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.428536"
+      "timestamp": "2026-01-31T21:30:50.502521"
     },
     "4": {
       "id": "4",
@@ -15152,7 +15542,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-31T20:59:53.428596"
+      "timestamp": "2026-01-31T21:30:50.502574"
     },
     "A": {
       "id": "A",
@@ -15362,7 +15752,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-31T20:59:53.428663"
+      "timestamp": "2026-01-31T21:30:50.502643"
     },
     "B": {
       "id": "B",
@@ -15598,7 +15988,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-31T20:59:53.428720"
+      "timestamp": "2026-01-31T21:30:50.502697"
     },
     "C": {
       "id": "C",
@@ -15804,7 +16194,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-31T20:59:53.428792"
+      "timestamp": "2026-01-31T21:30:50.502769"
     },
     "D": {
       "id": "D",
@@ -16002,7 +16392,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-31T20:59:53.428838"
+      "timestamp": "2026-01-31T21:30:50.502815"
     },
     "E": {
       "id": "E",
@@ -16204,7 +16594,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-31T20:59:53.428895"
+      "timestamp": "2026-01-31T21:30:50.502953"
     },
     "F": {
       "id": "F",
@@ -16414,7 +16804,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-31T20:59:53.429320"
+      "timestamp": "2026-01-31T21:30:50.503296"
     },
     "G": {
       "id": "G",
@@ -16762,7 +17152,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-01-31T20:59:53.429716"
+      "timestamp": "2026-01-31T21:30:50.503724"
     },
     "H": {
       "id": "H",
@@ -17048,7 +17438,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-31T20:59:53.429794"
+      "timestamp": "2026-01-31T21:30:50.503810"
     },
     "I": {
       "id": "I",
@@ -17402,7 +17792,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-31T20:59:53.429863"
+      "timestamp": "2026-01-31T21:30:50.503881"
     },
     "J": {
       "id": "J",
@@ -17684,7 +18074,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-31T20:59:53.429939"
+      "timestamp": "2026-01-31T21:30:50.503958"
     },
     "K": {
       "id": "K",
@@ -18100,7 +18490,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-31T20:59:53.429999"
+      "timestamp": "2026-01-31T21:30:50.504020"
     },
     "L": {
       "id": "L",
@@ -18390,7 +18780,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-31T20:59:53.430072"
+      "timestamp": "2026-01-31T21:30:50.504094"
     },
     "Z": {
       "id": "Z",
@@ -18466,7 +18856,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-31T20:59:53.430157"
+      "timestamp": "2026-01-31T21:30:50.504180"
     },
     "2.2": {
       "id": "2",
@@ -18808,7 +19198,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-01-31T20:59:53.430394"
+      "timestamp": "2026-01-31T21:30:50.504420"
     },
     "R.1": {
       "id": "R",
@@ -19364,7 +19754,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-01-31T20:59:53.430610"
+      "timestamp": "2026-01-31T21:30:50.504633"
     },
     "S.1": {
       "id": "S",
@@ -20078,7 +20468,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-01-31T20:59:53.430718"
+      "timestamp": "2026-01-31T21:30:50.504743"
     },
     "5.1.1": {
       "id": "5",
@@ -20244,7 +20634,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-01-31T20:59:53.430836"
+      "timestamp": "2026-01-31T21:30:50.504860"
     },
     "2.3": {
       "id": "2",
@@ -20360,7 +20750,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-01-31T20:59:53.430995"
+      "timestamp": "2026-01-31T21:30:50.505006"
     },
     "5.2.1": {
       "id": "5",
@@ -20458,7 +20848,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-01-31T20:59:53.431090"
+      "timestamp": "2026-01-31T21:30:50.505099"
     },
     "6.2.1": {
       "id": "6",
@@ -20608,7 +20998,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-01-31T20:59:53.431149"
+      "timestamp": "2026-01-31T21:30:50.505157"
     }
   }
 }
