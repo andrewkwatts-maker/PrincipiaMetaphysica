@@ -1,0 +1,52 @@
+# Sub-Topic 07: Gravitational Constant Geometric Derivation
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~3449-3601 (complete derivation, repeated for emphasis)
+# Status: FORMULA UPDATE - Enhances gravity derivation simulations
+# Target Simulations:
+#   - simulations/PM/cosmology/f_r_t_tau_gravity.py
+#   - simulations/PM/derivations/gr_spacetime.py
+
+## Summary
+Geometric derivation of G_N = 6.67430 × 10⁻¹¹ m³kg⁻¹s⁻² from higher-
+dimensional reduction, spectral residues, and G₂ volume suppression.
+
+## Master Formula
+G_N = 1/(χ_eff · √(χ_eff/b₃)) · R_G · f_flux · s_shadow · u_phys,G
+
+## Expanded
+G_N = 1/(χ_eff · Vol(V₇)) · exp(-λ_G/b₃) · (χ_eff/24)/(χ_eff/b₃) · 2 · u_phys,G
+
+## Key Steps
+
+### 1. Higher-Dimensional Planck Scale
+- M₂₇²⁵ ~ 1/(∫F∧φ) = 24/χ_eff = 1/6
+- M₂₇ ~ 6^{1/25} (normalized units)
+
+### 2. Volume Suppression
+- V_internal ≈ Vol(V₇) · V_bridge ≈ √6 · 24 = χ_eff
+- G_N ~ 1/(M₂₇² · V_internal) ~ 1/(χ_eff · √(χ_eff/b₃))
+- Core suppression: 1/(144 · √6) ≈ 1/353
+
+### 3. Spectral Residue (Gravity Mode)
+- n_G ≈ 95-125 (gravity/cosmo modes in spectral registry)
+- λ_G = (n_G/(c₇·√(χ_eff/b₃)))^{2/7}
+- R_G ≈ exp(-3857/24) ≈ 10⁻⁷⁰ (extremely small!)
+- This matches the observed extreme weakness of gravity
+
+### 4. Flux Factor: 1 (same as other constants)
+### 5. Shadow Factor: 2 (dual-shadow volume doubling)
+### 6. Unit Conversion: u_phys,G → SI m³kg⁻¹s⁻²
+
+## Physical Insight
+The extreme weakness of gravity (relative to other forces) emerges
+naturally from the high spectral mode index n_G ~ 95-125, which
+places gravity deep in the exponential tail of the spectral residue
+distribution. This is a geometric explanation for the hierarchy problem.
+
+## Updates Needed
+1. f_r_t_tau_gravity.py: Add complete G_N derivation chain
+2. gr_spacetime.py: Add 27D→4D reduction with volume factors
+3. Register n_G mode index in spectral registry
+4. Connect to hierarchy problem discussion
+
+## Implementation Priority: MEDIUM-HIGH

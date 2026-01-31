@@ -1,0 +1,58 @@
+# Sub-Topic 04: Dimensional Reduction (27D → 13D → 4D)
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~600-900 (KK reduction discussions)
+# Status: FORMULA UPDATE - Enhances KK reduction simulations
+# Target Simulations:
+#   - simulations/PM/gauge/kk_reduction_gr_gauge.py
+#   - simulations/PM/paper/appendices/appendix_o_kk_reduction.py
+#   - simulations/PM/geometry/g2_compactification.py
+
+## Summary
+The Kaluza-Klein dimensional descent from the 27D bulk through 13D shadows
+to 4D effective spacetime, including the role of WARP bridge selection,
+G₂ compactification, and the emergence of the Standard Model gauge group.
+
+## Key Steps
+
+### Step 1: 27D → Dual 13D Shadows via WARP
+- 27D (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central
+- WARP: coordinate selection from 12 bridge pairs
+- Result: 2 × 13D(12,1) shadows sharing time t
+- Bridge pairs: Euclidean (2,0), OR reduction R_⊥² = -I per pair
+
+### Step 2: 13D → 4D via G₂ Compactification
+- Each shadow: 13D = 4D(3,1) + 7D G₂(7,0) + 2D bridge remnant
+- G₂ manifold: TCS #187, b₃=24, χ_eff=144, h^{1,1}=4
+- Ricci-flat (Ric=0), holonomy exactly G₂ = Aut(O)
+- Volume: Vol(V₇) = √(χ_eff/b₃) = √6
+
+### Step 3: 4D Effective Theory Emergence
+- Gauge group: SO(10) → SU(3)_C × SU(2)_L × U(1)_Y via flux breaking
+- Generations: n_gen = χ_eff/48 = 3
+- Gravitational coupling: G_N = G₂₇/V_internal
+- Cosmological constant: Λ_eff = Λ₂₇/V_internal
+
+### Step 4: Four-Face Decomposition (NEW from 4Faces)
+- Within each shadow, h^{1,1}=4 moduli create 4 effective faces
+- Each face: (7,0)_core + (3,1)_leakage + (2,0)_bridge
+- Visible sector = Face 1 (minimal leakage)
+- Hidden sectors = Faces 2-4 (coupling ~0.57)
+
+## Volume Factors
+- V_G₂ = Vol(V₇) = √6 (G₂ volume)
+- V_bridge = b₃ = 24 (bridge volume contribution)
+- V_internal ≈ χ_eff = 144 (total internal volume)
+
+## Spectral Tower
+- KK modes: m_n = λ_n^{1/2} / R_G₂
+- Residues: R_n = exp(-λ_n/b₃)
+- Weyl law: λ_n ~ (n/(c₇·Vol))^{2/7}
+- c₇ = (4π)^{-7/2} / Γ(9/2)
+
+## Updates Needed
+1. kk_reduction_gr_gauge.py: Add complete 27D→4D descent chain
+2. appendix_o_kk_reduction.py: Formalize 4-face decomposition in KK
+3. g2_compactification.py: Add per-face volume and leakage formulas
+4. Verify consistency with existing spectral registry (Appendix A)
+
+## Implementation Priority: HIGH

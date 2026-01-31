@@ -1,0 +1,49 @@
+# Sub-Topic 02: Master Lagrangian / 27D Action
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~1-300 (primary master action discussion)
+# Status: FORMULA UPDATE - Enhances existing master_action.py
+# Target Simulations:
+#   - simulations/PM/derivations/lagrangian_master.py
+#   - simulations/PM/gauge/master_action.py
+#   - simulations/PM/gauge/gauge_unification.py
+
+## Summary
+The document provides the complete 27D master action for Principia Metaphysica,
+integrating Einstein-Hilbert gravity, G-flux kinetic terms, racetrack moduli 
+potential, torsion corrections, spectral residue dressing, and thermal time terms.
+
+## Key Formulas
+
+### Complete 27D Master Action
+S = ∫_{M₂₇} d²⁷x √(-g₂₇) [
+    R₂₇/(2κ₂₇²)                    # Einstein-Hilbert (27D)
+    - (1/2)|F₄|²                     # G-flux kinetic
+    + Σᵢ Λᵢ exp(-aᵢTᵢ) + Λ₀        # Racetrack moduli potential
+    + (torsion corrections)           # Cartan torsion terms
+    + R_n spectral dressing           # Spectral residue corrections
+    + (thermal time terms)            # Connes-Rovelli modular flow
+]
+
+### Racetrack Potential (4 Kähler sectors)
+V(Φ_M) = Σ_{i=1}^{4} Λ_i exp(-a_i T_i) + Λ₀
+where a_i = b₃/i = 24/i
+
+### Key Components
+- κ₂₇² = 8πG₂₇ (27D gravitational coupling)
+- F₄ = dC₃ (4-form flux from 3-form potential)
+- T_i: four Kähler moduli (h^{1,1}=4)
+- Torsion: T^a_{bc} from G₂ associative 3-form φ
+- R_n = exp(-λ_n/b₃): spectral residue corrections
+- Thermal time: β-KMS flow from Connes-Rovelli
+
+## Dimensional Descent
+27D → 13D(12,1) shadows via WARP → 4D(3,1) via G₂ compactification
+Each step reduces the action with volume suppression factors.
+
+## Updates Needed
+1. lagrangian_master.py: Add complete 27D action terms
+2. master_action.py: Ensure all terms present with proper coefficients
+3. gauge_unification.py: Verify SO(10) → G_SM breaking from flux
+4. Add 4-face moduli potential with independent stabilization per face
+
+## Implementation Priority: HIGH

@@ -1,0 +1,70 @@
+# Sub-Topic 11: Particle Physics, Yukawa Hierarchies & Mixing
+# Source: C_G_4Faces And Other Geometric Proofs.txt
+# Lines: ~1200-1440 (particle physics discussions)
+# Status: VALIDATION - Cross-check with existing particle simulations
+# Target Simulations:
+#   - simulations/PM/particle/yukawa_textures.py
+#   - simulations/PM/particle/ckm_matrix.py
+#   - simulations/PM/particle/neutrino_mixing.py
+#   - simulations/PM/particle/mass_ratio.py
+#   - simulations/PM/particle/fermion_generations.py
+#   - simulations/PM/particle/muon_g2_anomaly.py
+#   - simulations/PM/particle/proton_decay.py
+
+## Summary
+The document discusses particle physics implications including fermion mass
+hierarchies from spectral residues, CKM/PMNS mixing from G₂ geometry,
+and proton decay rates from torsional leakage.
+
+## Key Concepts
+
+### Generation Structure
+- n_gen = χ_eff/48 = 144/48 = 3 generations
+- Factor 48 = dim(Spin(8) triality spinor) × 2 (shadows)
+- Three generations from topological invariant (not parameter)
+
+### Yukawa Hierarchies
+- Mass hierarchies from spectral residues R_n = exp(-λ_n/b₃)
+- ε = exp(-λ/b₃) hierarchical parameter
+- y_f ~ ε^{Q_f} where Q_f depends on cycle distances
+- Explains why m_t >> m_b >> m_s >> m_d >> m_u
+
+### CKM Matrix (Single-Shadow)
+- Uses χ_eff = 72 (single shadow)
+- Cabibbo angle from G₂ geometry
+- CP violation from torsion phases
+
+### PMNS Matrix (Cross-Shadow)
+- Uses qedem_chi_sum = 144 (cross-shadow)
+- Neutrinos propagate through Euclidean bridge
+- Large mixing angles from cross-shadow geometry
+- δ_CP from bridge torsion
+
+### Mass Ratio (Proton/Electron)
+- μ = m_p/m_e ≈ 1836.19
+- From holonomy coupling: (C_kaf² · κ_Δ/π) / holonomy
+- C_kaf = 27.2 = b₃(b₃-7)/(b₃-9)
+
+### Muon g-2 Anomaly
+- Extra contribution from torsional leakage
+- Potentially explains discrepancy with SM prediction
+
+### Proton Decay
+- τ_p > 10³⁴ years (stable floor from torsion)
+- Baryon number violation suppressed by exp(-χ_eff/b₃)
+
+## 4Faces Impact on Particle Physics
+- Hidden faces may contain heavy KK copies of SM particles
+- Sector mixing could produce tiny flavor violations
+- Δθ₂₃ ~ 0.1° from face-to-face mixing
+- Additional dark matter candidates from face 2-4 particles
+
+## Updates Needed
+1. yukawa_textures.py: Verify spectral residue hierarchy chain
+2. ckm_matrix.py: Confirm single-shadow χ_eff=72 usage
+3. neutrino_mixing.py: Confirm cross-shadow χ_eff=144 usage
+4. mass_ratio.py: Verify holonomy coupling formula
+5. proton_decay.py: Add torsion suppression mechanism
+6. muon_g2_anomaly.py: Add torsional contribution term
+
+## Implementation Priority: MEDIUM
