@@ -1,0 +1,14 @@
+{
+  "timestamp": "2026-02-01T14:01:50.094507",
+  "model": "gemini-2.5-flash",
+  "auto_fix": false,
+  "dry_run": false,
+  "files_reviewed": 0,
+  "file_reviews": [],
+  "paper_review": {
+    "error": "Failed to parse Gemini response",
+    "raw": "{\n  \"overall_coherence\": 4.5,\n  \"section_flow\": {\n    \"score\": 4.0,\n    \"issues\": [\n      \"The paper's scope is extraordinarily broad, attempting to unify fundamental physics, cosmology, and consciousness, which creates significant challenges for maintaining a coherent narrative flow.\",\n      \"Specific sections seem out of place: Section 3.7 ('Cosmological Results and Alignment') appears within 'Gauge Coupling Unification', and Section 4.9 ('Higgs Mass from 4-Brane Partition') appears to be a se",
+    "timestamp": "2026-02-01T14:01:50.094009",
+    "model": "gemini-2.5-flash"
+  }
+}

@@ -529,7 +529,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                         "Physical roles of T_\u03c9:\n"
                         "- Covariant derivative: D_M = \u2202_M + (1/4)\u03c9_MAB \u0393^AB + T_\u03c9^M\n"
                         "- GW dispersion: \u03b7 \u2248 T_\u03c9/\u03c0 \u2248 0.13\n"
-                        "- Portal leakage: \u03b1_leak ~ 1/\u221a6 \u2248 0.577 \u2192 0.57 (flux-tuned)\n"
+                        "- Portal leakage: \u03b1_leak = 1/\u221a6 \u2248 0.408 (pure geometric); \u03b1_sample \u2248 0.57 (with flux corrections)\n"
                         "- DE thawing: w\u2080 = -1 + 1/b\u2083 = -23/24 (bridge pressure via torsion)\n"
                         "- Bridge warping: V_bridge contains T_\u03c9\u00b2/2 \u00b7 \u03c7_eff/b\u2083\n"
                         "- Face warping: V_face contains T_\u03c9\u00b2/2 \u00b7 exp(-T/T_max)"

@@ -646,7 +646,7 @@ class DarkEnergyV16(SimulationBase):
                         "- Breathing variance reduction: \u03c3_eff = \u03c3_single/\u221a12 from 4-face \u00d7 3-generation pairing\n"
                         "- Bridge warping potential V_bridge \u2192 w\u2080 = -1 + T_\u03c9\u00b2/(4\u03c0) \u2248 -1 + 1/24 = -23/24\n\n"
                         "Dark matter as hidden faces: The three hidden faces (f=2,3,4) per shadow provide "
-                        "multi-component dark matter with portal coupling \u03b1_leak \u2248 0.57 from G\u2082 volume ratio."
+                        "multi-component dark matter with portal coupling \u03b1_leak = 1/\u221a6 \u2248 0.408 from G\u2082 volume ratio (\u03b1_sample \u2248 0.57 with flux corrections)."
                     )
                 ),
             ],

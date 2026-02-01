@@ -1342,7 +1342,7 @@ class DiscussionV16(SimulationBase):
                     "The hierarchical OR structure has profound implications for dark matter and dark forces:\n\n"
                     "1. **Dark matter origin**: Three hidden K\u00e4hler faces (f=2,3,4) per shadow provide "
                     "multi-component dark matter \u2014 KK modes (~40%), axion-like particles (~35%), and sterile "
-                    "neutrinos (~25%) \u2014 with portal coupling \u03b1_leak \u2248 0.57 from G\u2082 volume ratio.\n\n"
+                    "neutrinos (~25%) \u2014 with effective face sampling strength \u03b1_sample \u2248 0.57 (base coupling \u03b1_leak = 1/\u221a6 \u2248 0.408 from G\u2082 volume ratio, enhanced by torsion and flux corrections).\n\n"
                     "2. **Dark force hierarchy**: The theory predicts that strong and weak forces cannot leak "
                     "across shadows (confinement and mass barriers), while EM and gravity leak at P \u2248 6.9\u00d710\u207b\u2076 "
                     "\u2014 a sharp, testable prediction.\n\n"
