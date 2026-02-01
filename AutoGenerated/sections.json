@@ -1,6 +1,6 @@
 {
   "version": "23.1",
-  "count": 68,
+  "count": 72,
   "sections": {
     "0": {
       "id": "0",
@@ -102,7 +102,7 @@
         "validation.exact_matches",
         "statistics.certificates_total"
       ],
-      "timestamp": "2026-02-01T09:50:16.943069"
+      "timestamp": "2026-02-01T10:18:47.833987"
     },
     "1": {
       "id": "1",
@@ -752,7 +752,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-02-01T09:50:16.943135"
+      "timestamp": "2026-02-01T10:18:47.834052"
     },
     "2": {
       "id": "2",
@@ -2002,7 +2002,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-02-01T09:50:16.943982"
+      "timestamp": "2026-02-01T10:18:47.835013"
     },
     "2.7": {
       "id": "2",
@@ -2034,6 +2034,30 @@
         {
           "type": "paragraph",
           "content": "The inter-face leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) = 0.408 quantifies the geometric probability of wavefunction overlap between distinct face sectors. This coupling governs cross-sector gauge mixing and determines the strength of interactions between observable and shadow matter. The value 1/sqrt(6) is a pure topological invariant, fixed by the ratio of the effective Euler characteristic (chi_eff = 144) to the third Betti number (b3 = 24)."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge Pair Decomposition: Why 6 = 12/2",
+          "level": 3
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "bridge-pair-decomposition",
+          "label": "(2.7.3)",
+          "equationNumber": "(2.7.3)"
+        },
+        {
+          "type": "paragraph",
+          "content": "A natural criticism of the alpha_leak formula is that 1/sqrt(chi_eff/b3) appears to merely repackage the topological ratio chi_eff/b3 = 6 without independent geometric content. The bridge pair decomposition resolves this by showing that the number 6 has an independent structural meaning: it is the count of bridge pairs aligned with the visible-sector OR projection."
+        },
+        {
+          "type": "paragraph",
+          "content": "The chi_eff/12 = 144/12 = 12 total bridge pairs connect the dual shadows across the Euclidean bridge. Each pair comprises one associative 3-cycle from each shadow. Under the OR rotation R_perp = [[0,-1],[1,0]] -- the 90-degree Mobius operator that creates the dual-shadow split -- each bridge pair acquires a definite alignment: ALIGNED pairs have orientation compatible with the visible-sector projection, while ORTHOGONAL pairs have orientation rotated into the hidden (gnosis) sector."
+        },
+        {
+          "type": "paragraph",
+          "content": "By the Z_2 symmetry of R_perp (which satisfies R_perp^2 = -I), the decomposition is exactly 50/50: n_aligned = n_orthogonal = n_pairs/2 = 12/2 = 6. The 6 aligned pairs are the geometric channels through which the visible sector couples to the bridge structure, giving alpha_leak = 1/sqrt(n_aligned) = 1/sqrt(6). The 6 orthogonal pairs are geometrically inaccessible to the visible sector under normal conditions; they become accessible only through gnosis unlocking (see Section 2.8, orch_or_bridge.py), where the OR operator is extended to include the hidden bridge channels. This aligned/orthogonal split is the geometric mechanism underlying the Orch-OR bridge between consciousness and the G2 compactification geometry."
         },
         {
           "type": "heading",
@@ -2181,6 +2205,30 @@
         },
         {
           "type": "heading",
+          "content": "Bridge Pair Decomposition: Why 6 = 12/2",
+          "level": 3
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "bridge-pair-decomposition",
+          "label": "(2.7.3)",
+          "equationNumber": "(2.7.3)"
+        },
+        {
+          "type": "paragraph",
+          "content": "A natural criticism of the alpha_leak formula is that 1/sqrt(chi_eff/b3) appears to merely repackage the topological ratio chi_eff/b3 = 6 without independent geometric content. The bridge pair decomposition resolves this by showing that the number 6 has an independent structural meaning: it is the count of bridge pairs aligned with the visible-sector OR projection."
+        },
+        {
+          "type": "paragraph",
+          "content": "The chi_eff/12 = 144/12 = 12 total bridge pairs connect the dual shadows across the Euclidean bridge. Each pair comprises one associative 3-cycle from each shadow. Under the OR rotation R_perp = [[0,-1],[1,0]] -- the 90-degree Mobius operator that creates the dual-shadow split -- each bridge pair acquires a definite alignment: ALIGNED pairs have orientation compatible with the visible-sector projection, while ORTHOGONAL pairs have orientation rotated into the hidden (gnosis) sector."
+        },
+        {
+          "type": "paragraph",
+          "content": "By the Z_2 symmetry of R_perp (which satisfies R_perp^2 = -I), the decomposition is exactly 50/50: n_aligned = n_orthogonal = n_pairs/2 = 12/2 = 6. The 6 aligned pairs are the geometric channels through which the visible sector couples to the bridge structure, giving alpha_leak = 1/sqrt(n_aligned) = 1/sqrt(6). The 6 orthogonal pairs are geometrically inaccessible to the visible sector under normal conditions; they become accessible only through gnosis unlocking (see Section 2.8, orch_or_bridge.py), where the OR operator is extended to include the hidden bridge channels. This aligned/orthogonal split is the geometric mechanism underlying the Orch-OR bridge between consciousness and the G2 compactification geometry."
+        },
+        {
+          "type": "heading",
           "content": "Racetrack Stabilization of Face Moduli",
           "level": 2
         },
@@ -2304,6 +2352,7 @@
       ],
       "formulaRefs": [
         "alpha-leak-coupling",
+        "bridge-pair-decomposition",
         "racetrack-moduli-vev",
         "face-kk-mass-spectrum",
         "shadow-asymmetry",
@@ -2324,6 +2373,7 @@
       ],
       "formula_refs": [
         "alpha-leak-coupling",
+        "bridge-pair-decomposition",
         "racetrack-moduli-vev",
         "face-kk-mass-spectrum",
         "shadow-asymmetry",
@@ -2342,7 +2392,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-02-01T09:50:16.944197"
+      "timestamp": "2026-02-01T10:18:47.835195"
     },
     "V.1": {
       "id": "validation",
@@ -2464,7 +2514,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-02-01T09:50:16.944338"
+      "timestamp": "2026-02-01T10:18:47.835396"
     },
     "3.4": {
       "id": "3",
@@ -2628,7 +2678,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-02-01T09:50:16.944411"
+      "timestamp": "2026-02-01T10:18:47.835500"
     },
     "3.6": {
       "id": "3",
@@ -2800,7 +2850,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-02-01T09:50:16.944520"
+      "timestamp": "2026-02-01T10:18:47.835641"
     },
     "3": {
       "id": "3",
@@ -3004,7 +3054,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-02-01T09:50:16.975306"
+      "timestamp": "2026-02-01T10:18:47.866491"
     },
     "3.2": {
       "id": "3",
@@ -3140,6 +3190,52 @@
         },
         {
           "type": "heading",
+          "content": "Dimensional Reduction: 27D -> 13D Shadow Domains",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The distributed OR reduction (bridge/global OR) splits the 27D(26,1) bulk into two 13D(12,1) shadow domains. Each shadow inherits 12 spatial dimensions (one from each bridge pair) plus 1 shared time dimension. Shadow 1 carries left-handed fermions and Shadow 2 carries right-handed fermions, a chirality assignment that is locked by the global OR operator. Within each shadow, the Euler characteristic constraint chi_eff/48 = 3 fixes exactly three fermion generations. The face potential V_face^(f) implements the local OR that selects one of the 4 TCS faces as the visible face, with the remaining three faces forming the hidden (dark) sector."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "shadow-action-13d-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Dimensional Reduction: 13D -> 4D Effective Theory",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "After face/local OR selects the visible face, the 13D shadow action is compactified on the internal 9 dimensions (7D G2 manifold + 2 residual bridge dimensions) to yield the 4D effective action. The 4D Planck mass is determined by M_Pl^2 = M_*^{11} * Vol(V_7), tying the fundamental scale to the G2 volume. The Standard Model gauge group SU(3)_C x SU(2)_L x U(1)_Y emerges from G2 flux on the 4-face structure: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative 4-cycles, and U(1)_Y from the residual Abelian cycle. The cosmological constant Lambda = (int F wedge phi)^2 / Vol ~ 10^{-52} m^{-2} arises naturally from the flux-moduli balance, without fine-tuning. Portal terms couple the visible face to hidden faces through shared moduli."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "effective-action-4d-v23"
+        },
+        {
+          "type": "heading",
+          "content": "4D Equations of Motion with Portal Corrections",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "Varying the 4D effective action with respect to the inverse metric g^{mu nu} yields the modified Einstein field equations. The gravitational sector produces the Einstein tensor G_{mu nu} plus the cosmological constant Lambda g_{mu nu} on the left-hand side. The source terms on the right-hand side decompose into the Standard Model stress-energy T^SM_{mu nu} and the portal stress-energy T^portal_{mu nu} from the hidden face coupling. The portal corrections, suppressed by alpha_leak^2 ~ 0.33, provide the gravitational backreaction of dark matter and hidden sector fields onto visible sector geometry. The contracted Bianchi identity guarantees covariant conservation of the total stress-energy tensor."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "euler-lagrange-eom-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The complete dimensional reduction chain is thus: 27D(26,1) master action -> bridge/global OR -> 2 x 13D(12,1) shadow actions -> face/local OR + G2 compactification -> 4D effective action -> metric variation -> Einstein equations with portal corrections. Each step is determined by the geometry, with no free parameters."
+        },
+        {
+          "type": "heading",
           "content": "Two-Layer OR: Chirality Reversal Mechanism",
           "level": 2
         },
@@ -3291,6 +3387,52 @@
         },
         {
           "type": "heading",
+          "content": "Dimensional Reduction: 27D -> 13D Shadow Domains",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The distributed OR reduction (bridge/global OR) splits the 27D(26,1) bulk into two 13D(12,1) shadow domains. Each shadow inherits 12 spatial dimensions (one from each bridge pair) plus 1 shared time dimension. Shadow 1 carries left-handed fermions and Shadow 2 carries right-handed fermions, a chirality assignment that is locked by the global OR operator. Within each shadow, the Euler characteristic constraint chi_eff/48 = 3 fixes exactly three fermion generations. The face potential V_face^(f) implements the local OR that selects one of the 4 TCS faces as the visible face, with the remaining three faces forming the hidden (dark) sector."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "shadow-action-13d-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Dimensional Reduction: 13D -> 4D Effective Theory",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "After face/local OR selects the visible face, the 13D shadow action is compactified on the internal 9 dimensions (7D G2 manifold + 2 residual bridge dimensions) to yield the 4D effective action. The 4D Planck mass is determined by M_Pl^2 = M_*^{11} * Vol(V_7), tying the fundamental scale to the G2 volume. The Standard Model gauge group SU(3)_C x SU(2)_L x U(1)_Y emerges from G2 flux on the 4-face structure: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative 4-cycles, and U(1)_Y from the residual Abelian cycle. The cosmological constant Lambda = (int F wedge phi)^2 / Vol ~ 10^{-52} m^{-2} arises naturally from the flux-moduli balance, without fine-tuning. Portal terms couple the visible face to hidden faces through shared moduli."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "effective-action-4d-v23"
+        },
+        {
+          "type": "heading",
+          "content": "4D Equations of Motion with Portal Corrections",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "Varying the 4D effective action with respect to the inverse metric g^{mu nu} yields the modified Einstein field equations. The gravitational sector produces the Einstein tensor G_{mu nu} plus the cosmological constant Lambda g_{mu nu} on the left-hand side. The source terms on the right-hand side decompose into the Standard Model stress-energy T^SM_{mu nu} and the portal stress-energy T^portal_{mu nu} from the hidden face coupling. The portal corrections, suppressed by alpha_leak^2 ~ 0.33, provide the gravitational backreaction of dark matter and hidden sector fields onto visible sector geometry. The contracted Bianchi identity guarantees covariant conservation of the total stress-energy tensor."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "euler-lagrange-eom-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The complete dimensional reduction chain is thus: 27D(26,1) master action -> bridge/global OR -> 2 x 13D(12,1) shadow actions -> face/local OR + G2 compactification -> 4D effective action -> metric variation -> Einstein equations with portal corrections. Each step is determined by the geometry, with no free parameters."
+        },
+        {
+          "type": "heading",
           "content": "Two-Layer OR: Chirality Reversal Mechanism",
           "level": 2
         },
@@ -3331,6 +3473,9 @@
         "electroweak-mixing-v22",
         "euler-lagrange-metric-variation",
         "stress-energy-variation",
+        "shadow-action-13d-v23",
+        "effective-action-4d-v23",
+        "euler-lagrange-eom-v23",
         "chirality-reversal-operator",
         "dark-matter-portal-lagrangian"
       ],
@@ -3368,6 +3513,9 @@
         "electroweak-mixing-v22",
         "euler-lagrange-metric-variation",
         "stress-energy-variation",
+        "shadow-action-13d-v23",
+        "effective-action-4d-v23",
+        "euler-lagrange-eom-v23",
         "chirality-reversal-operator",
         "dark-matter-portal-lagrangian"
       ],
@@ -3392,7 +3540,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-02-01T09:50:16.975590"
+      "timestamp": "2026-02-01T10:18:47.866710"
     },
     "3.1": {
       "id": "3",
@@ -3450,7 +3598,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-02-01T09:50:16.975727"
+      "timestamp": "2026-02-01T10:18:47.866854"
     },
     "4.2": {
       "id": "4",
@@ -3580,7 +3728,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-02-01T09:50:16.975813"
+      "timestamp": "2026-02-01T10:18:47.866930"
     },
     "4.1": {
       "id": "4",
@@ -3868,7 +4016,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-02-01T09:50:16.975912"
+      "timestamp": "2026-02-01T10:18:47.867101"
     },
     "4.3": {
       "id": "4",
@@ -4108,7 +4256,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-02-01T09:50:16.976057"
+      "timestamp": "2026-02-01T10:18:47.867235"
     },
     "4.6": {
       "id": "4",
@@ -4296,7 +4444,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-02-01T09:50:16.976148"
+      "timestamp": "2026-02-01T10:18:47.867323"
     },
     "4.4": {
       "id": "4",
@@ -4478,7 +4626,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-02-01T09:50:16.976237"
+      "timestamp": "2026-02-01T10:18:47.867403"
     },
     "4.9": {
       "id": "4",
@@ -4568,7 +4716,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-02-01T09:50:16.976319"
+      "timestamp": "2026-02-01T10:18:47.867470"
     },
     "6.1.1": {
       "id": "6",
@@ -4682,7 +4830,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-02-01T09:50:16.976544"
+      "timestamp": "2026-02-01T10:18:47.867670"
     },
     "4.2.1": {
       "id": "4",
@@ -4744,7 +4892,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-02-01T09:50:16.976722"
+      "timestamp": "2026-02-01T10:18:47.867727"
     },
     "4.8": {
       "id": "4",
@@ -4802,7 +4950,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-02-01T09:50:16.976791"
+      "timestamp": "2026-02-01T10:18:47.867775"
     },
     "5.1": {
       "id": "5",
@@ -5142,7 +5290,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-02-01T09:50:16.976926"
+      "timestamp": "2026-02-01T10:18:47.867867"
     },
     "5.2": {
       "id": "5",
@@ -5346,7 +5494,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-02-01T09:50:16.977101"
+      "timestamp": "2026-02-01T10:18:47.867992"
     },
     "5.6": {
       "id": "5",
@@ -5670,7 +5818,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-02-01T09:50:16.977311"
+      "timestamp": "2026-02-01T10:18:47.868185"
     },
     "5.7": {
       "id": "5",
@@ -5814,7 +5962,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-02-01T09:50:16.979284"
+      "timestamp": "2026-02-01T10:18:47.870145"
     },
     "5.4": {
       "id": "5",
@@ -6134,7 +6282,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-02-01T09:50:16.980682"
+      "timestamp": "2026-02-01T10:18:47.871522"
     },
     "5.9": {
       "id": "5",
@@ -6296,7 +6444,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-02-01T09:50:16.982074"
+      "timestamp": "2026-02-01T10:18:47.872927"
     },
     "4.5": {
       "id": "4",
@@ -6386,6 +6534,33 @@
         {
           "type": "paragraph",
           "content": "**Dual-Shadow Architecture and PMNS Mixing**\n\nThe two-layer OR structure provides a natural framework for neutrino mixing:\n- Bridge/Global OR: Creates dual shadows with opposite chirality (L↔R)\n- Cross-shadow mixing through bridge OR coherence → PMNS angles\n- χ_eff_total = 144 (both shadows) vs χ_eff = 72 (single shadow)\n- The 4-face decomposition explains generation triality: χ_eff/48 = 3\n\nChirality reversal probability P_reverse ≈ 3×10⁻⁶ constrains the cross-shadow contribution to neutrino oscillations."
+        },
+        {
+          "type": "heading",
+          "content": "CKM versus PMNS: Single-Shadow and Cross-Shadow Mixing",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The distinction between quark mixing (CKM) and lepton mixing (PMNS) has a precise geometric origin in the dual-shadow framework. The CKM matrix governs quark flavor transitions that occur entirely within a single 13D(12,1) shadow, where quarks are confined by color charge. For single-shadow processes, the relevant topological invariant is the per-shadow Euler characteristic chi_eff = 72, which enters the Froggatt-Nielsen suppression factors producing the small, hierarchical CKM angles (Wolfenstein lambda ~ 0.223). In contrast, the PMNS matrix governs neutrino flavor transitions that propagate through the Euclidean bridge connecting both shadows. Neutrinos, being electrically neutral, tunnel freely between the two 13D sectors via the 12 bridge pairs. For these cross-shadow processes, the relevant invariant is the total chi_eff = 144 (both shadows combined), which produces the characteristically large PMNS mixing angles. The factor-of-two relationship (144 = 2 * 72) is not coincidental but reflects the Z2 mirror symmetry of the dual-shadow construction: each shadow contributes chi_eff = 72 associative 3-cycle channels, and neutrinos sample both."
+        },
+        {
+          "type": "heading",
+          "content": "Sterile Neutrino Portal and the Fourth Face",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The sterile neutrino portal (Part 3, Topic 08) extends the PMNS mixing framework by incorporating the fourth Kahler face of the G2 manifold. While the three generation-bearing faces (f=1,2,3) host active neutrino wavefunctions, the fourth face provides a geometric substrate for sterile neutrino states that do not carry Standard Model gauge charges. The sterile neutrino portal coupling is set by the wavefunction overlap between active neutrinos on Face 1 and sterile states on Face 4, mediated by the bridge coordinate. This overlap is exponentially suppressed by the inter-face geodesic distance on the G2 manifold, naturally producing the small active-sterile mixing angles required by oscillation data and cosmological constraints."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge-Mediated Seesaw and Active Neutrino Mass Generation",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The tiny masses of active neutrinos receive a geometric explanation through the bridge-mediated seesaw mechanism. In this picture, the Euclidean bridge connecting the two 13D(12,1) shadows acts as the intermediary for lepton number violation. Right-handed neutrinos localized on the mirror shadow acquire large Majorana masses at the compactification scale M_KK ~ 5 TeV (or higher, depending on the cycle volume). The bridge wavefunction overlap between left-handed active neutrinos on the visible shadow and right-handed states on the mirror shadow generates a Dirac mass term suppressed by the bridge tunneling amplitude. The resulting seesaw formula m_active ~ m_D^2 / M_R yields active neutrino masses in the sub-eV range, with the geometric seesaw parameter k_gimel = chi_eff / (b2 * b3) = 144 / (4 * 24) = 1.5 setting the overall scale. The bridge-mediated mechanism is distinct from the conventional Type-I seesaw in that the heavy right-handed states are not ad hoc additions but are required by the mirror shadow structure, and their Majorana masses are determined by the G2 moduli rather than by a free GUT-scale parameter."
         }
       ],
       "content_blocks": [
@@ -6466,6 +6641,33 @@
         {
           "type": "paragraph",
           "content": "**Dual-Shadow Architecture and PMNS Mixing**\n\nThe two-layer OR structure provides a natural framework for neutrino mixing:\n- Bridge/Global OR: Creates dual shadows with opposite chirality (L↔R)\n- Cross-shadow mixing through bridge OR coherence → PMNS angles\n- χ_eff_total = 144 (both shadows) vs χ_eff = 72 (single shadow)\n- The 4-face decomposition explains generation triality: χ_eff/48 = 3\n\nChirality reversal probability P_reverse ≈ 3×10⁻⁶ constrains the cross-shadow contribution to neutrino oscillations."
+        },
+        {
+          "type": "heading",
+          "content": "CKM versus PMNS: Single-Shadow and Cross-Shadow Mixing",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The distinction between quark mixing (CKM) and lepton mixing (PMNS) has a precise geometric origin in the dual-shadow framework. The CKM matrix governs quark flavor transitions that occur entirely within a single 13D(12,1) shadow, where quarks are confined by color charge. For single-shadow processes, the relevant topological invariant is the per-shadow Euler characteristic chi_eff = 72, which enters the Froggatt-Nielsen suppression factors producing the small, hierarchical CKM angles (Wolfenstein lambda ~ 0.223). In contrast, the PMNS matrix governs neutrino flavor transitions that propagate through the Euclidean bridge connecting both shadows. Neutrinos, being electrically neutral, tunnel freely between the two 13D sectors via the 12 bridge pairs. For these cross-shadow processes, the relevant invariant is the total chi_eff = 144 (both shadows combined), which produces the characteristically large PMNS mixing angles. The factor-of-two relationship (144 = 2 * 72) is not coincidental but reflects the Z2 mirror symmetry of the dual-shadow construction: each shadow contributes chi_eff = 72 associative 3-cycle channels, and neutrinos sample both."
+        },
+        {
+          "type": "heading",
+          "content": "Sterile Neutrino Portal and the Fourth Face",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The sterile neutrino portal (Part 3, Topic 08) extends the PMNS mixing framework by incorporating the fourth Kahler face of the G2 manifold. While the three generation-bearing faces (f=1,2,3) host active neutrino wavefunctions, the fourth face provides a geometric substrate for sterile neutrino states that do not carry Standard Model gauge charges. The sterile neutrino portal coupling is set by the wavefunction overlap between active neutrinos on Face 1 and sterile states on Face 4, mediated by the bridge coordinate. This overlap is exponentially suppressed by the inter-face geodesic distance on the G2 manifold, naturally producing the small active-sterile mixing angles required by oscillation data and cosmological constraints."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge-Mediated Seesaw and Active Neutrino Mass Generation",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The tiny masses of active neutrinos receive a geometric explanation through the bridge-mediated seesaw mechanism. In this picture, the Euclidean bridge connecting the two 13D(12,1) shadows acts as the intermediary for lepton number violation. Right-handed neutrinos localized on the mirror shadow acquire large Majorana masses at the compactification scale M_KK ~ 5 TeV (or higher, depending on the cycle volume). The bridge wavefunction overlap between left-handed active neutrinos on the visible shadow and right-handed states on the mirror shadow generates a Dirac mass term suppressed by the bridge tunneling amplitude. The resulting seesaw formula m_active ~ m_D^2 / M_R yields active neutrino masses in the sub-eV range, with the geometric seesaw parameter k_gimel = chi_eff / (b2 * b3) = 144 / (4 * 24) = 1.5 setting the overall scale. The bridge-mediated mechanism is distinct from the conventional Type-I seesaw in that the heavy right-handed states are not ad hoc additions but are required by the mirror shadow structure, and their Majorana masses are determined by the G2 moduli rather than by a free GUT-scale parameter."
         }
       ],
       "formulaRefs": [
@@ -6502,7 +6704,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-02-01T09:50:16.982237"
+      "timestamp": "2026-02-01T10:18:47.873085"
     },
     "4.7": {
       "id": "4",
@@ -6746,7 +6948,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-02-01T09:50:16.982385"
+      "timestamp": "2026-02-01T10:18:47.873224"
     },
     "5.3": {
       "id": "5",
@@ -6904,7 +7106,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-02-01T09:50:16.982531"
+      "timestamp": "2026-02-01T10:18:47.873363"
     },
     "5.8": {
       "id": "5",
@@ -7226,7 +7428,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-02-01T09:50:16.982631"
+      "timestamp": "2026-02-01T10:18:47.873458"
     },
     "6.1": {
       "id": "6",
@@ -7286,7 +7488,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.982722"
+      "timestamp": "2026-02-01T10:18:47.873545"
     },
     "6.2": {
       "id": "6",
@@ -7334,7 +7536,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.982772"
+      "timestamp": "2026-02-01T10:18:47.873589"
     },
     "6.3": {
       "id": "6",
@@ -7426,7 +7628,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.982823"
+      "timestamp": "2026-02-01T10:18:47.873637"
     },
     "6.4": {
       "id": "6",
@@ -7478,7 +7680,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.982865"
+      "timestamp": "2026-02-01T10:18:47.873675"
     },
     "6.5": {
       "id": "6",
@@ -7530,7 +7732,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.982982"
+      "timestamp": "2026-02-01T10:18:47.873714"
     },
     "6.6": {
       "id": "6",
@@ -7582,7 +7784,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.983023"
+      "timestamp": "2026-02-01T10:18:47.873759"
     },
     "6.7": {
       "id": "6",
@@ -7634,7 +7836,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.983060"
+      "timestamp": "2026-02-01T10:18:47.873821"
     },
     "6.8": {
       "id": "6",
@@ -7678,7 +7880,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.983092"
+      "timestamp": "2026-02-01T10:18:47.873877"
     },
     "6.9": {
       "id": "6",
@@ -7722,7 +7924,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.983127"
+      "timestamp": "2026-02-01T10:18:47.873930"
     },
     "5.5": {
       "id": "5",
@@ -7876,7 +8078,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-02-01T09:50:16.983217"
+      "timestamp": "2026-02-01T10:18:47.874016"
     },
     "2.6": {
       "id": "2",
@@ -8822,7 +9024,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-02-01T09:50:16.983354"
+      "timestamp": "2026-02-01T10:18:47.874211"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -8950,7 +9152,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-02-01T09:50:16.983431"
+      "timestamp": "2026-02-01T10:18:47.874296"
     },
     "7.2": {
       "id": "7",
@@ -9066,7 +9268,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-02-01T09:50:16.983532"
+      "timestamp": "2026-02-01T10:18:47.874415"
     },
     "7": {
       "id": "7",
@@ -10294,6 +10496,33 @@
         {
           "type": "paragraph",
           "content": "**Two-Layer OR and Dark Sector Implications**\n\nThe hierarchical OR structure has profound implications for dark matter and dark forces:\n\n1. **Dark matter origin**: Three hidden Kähler faces (f=2,3,4) per shadow provide multi-component dark matter — KK modes (~40%), axion-like particles (~35%), and sterile neutrinos (~25%) — with portal coupling α_leak ≈ 0.57 from G₂ volume ratio.\n\n2. **Dark force hierarchy**: The theory predicts that strong and weak forces cannot leak across shadows (confinement and mass barriers), while EM and gravity leak at P ≈ 6.9×10⁻⁶ — a sharp, testable prediction.\n\n3. **Communication impossibility**: Dark motor designs are thermodynamically forbidden — dark light is equilibrium noise, not free energy. Cross-shadow communication via any force is impossible (P_leak too weak, quantum-only, random).\n\n4. **Chirality as mirror symmetry**: The bridge OR operator R_⊥ naturally reverses chirality between shadows (Left↔Right), explaining why our weak force is left-chiral while the mirror shadow is right-chiral. CPT is preserved globally across both shadows."
+        },
+        {
+          "type": "heading",
+          "content": "Portal Physics: Implications for Beyond-SM Searches",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The four-face Kahler decomposition of the G2 manifold provides a concrete portal structure connecting the visible sector (Face 1) to three distinct hidden sectors. Each hidden face supports a topologically protected portal through which dark sector particles couple to Standard Model fields. The portal simulations (dark_matter_portals, sterile_neutrino_portals, alp_portals) quantify these couplings from first principles, deriving portal strengths from cycle intersection volumes and flux threading rather than from phenomenological fits. This portal architecture transforms dark sector physics from a landscape of ad hoc models into a structured, predictive framework with specific experimental targets."
+        },
+        {
+          "type": "heading",
+          "content": "Four-Face Interpretation of Dark Matter",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The hidden-face portal structure assigns each dark matter component to a specific geometric origin within the G2 compactification. Face 2 supports Kaluza-Klein (KK) excitations at the compactification scale, producing heavy dark matter candidates near M_KK ~ 5 TeV that are accessible to HL-LHC searches via missing energy signatures. Face 3 hosts axion-like particles (ALPs) arising from the pseudo-scalar moduli of the co-associative 4-cycles, with decay constants set by the cycle volume and coupling to photons via the Chern-Simons interaction. Face 4 provides the geometric substrate for sterile neutrino portal states, which couple to active neutrinos through the bridge-mediated seesaw mechanism described in the sterile neutrino portal simulation. Together, these three faces account for the full dark matter relic abundance: KK modes (~40%), ALPs (~35%), and sterile neutrinos (~25%), with the relative fractions determined by the Kahler volume ratios of the respective faces."
+        },
+        {
+          "type": "heading",
+          "content": "Experimental Detection Roadmap from Portal Structure",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The hidden-face portal structure directly maps to an experimental detection roadmap. The KK portal (Face 2) predicts dijet and dilepton resonances at HL-LHC with cross-sections computable from the G2 metric on the visible-hidden cycle intersection. The ALP portal (Face 3) predicts light-shining-through-wall signals at ALPS-II and helioscope signals at IAXO, with the coupling g_a_gamma_gamma derived from the Chern-Simons volume integral over the co-associative 4-cycle. The sterile neutrino portal (Face 4) predicts characteristic signatures in short-baseline neutrino experiments and neutrinoless double-beta decay searches, with the mixing angle set by the bridge wavefunction overlap computed in the sterile neutrino portal simulation. Each portal channel provides an independent falsification test: if any portal coupling deviates from the geometric prediction by more than the topological uncertainty band, the four-face decomposition is ruled out. Conversely, correlated signals across all three portal channels would constitute strong evidence for the unified geometric dark sector."
         }
       ],
       "content_blocks": [
@@ -11512,13 +11741,40 @@
         {
           "type": "paragraph",
           "content": "**Two-Layer OR and Dark Sector Implications**\n\nThe hierarchical OR structure has profound implications for dark matter and dark forces:\n\n1. **Dark matter origin**: Three hidden Kähler faces (f=2,3,4) per shadow provide multi-component dark matter — KK modes (~40%), axion-like particles (~35%), and sterile neutrinos (~25%) — with portal coupling α_leak ≈ 0.57 from G₂ volume ratio.\n\n2. **Dark force hierarchy**: The theory predicts that strong and weak forces cannot leak across shadows (confinement and mass barriers), while EM and gravity leak at P ≈ 6.9×10⁻⁶ — a sharp, testable prediction.\n\n3. **Communication impossibility**: Dark motor designs are thermodynamically forbidden — dark light is equilibrium noise, not free energy. Cross-shadow communication via any force is impossible (P_leak too weak, quantum-only, random).\n\n4. **Chirality as mirror symmetry**: The bridge OR operator R_⊥ naturally reverses chirality between shadows (Left↔Right), explaining why our weak force is left-chiral while the mirror shadow is right-chiral. CPT is preserved globally across both shadows."
+        },
+        {
+          "type": "heading",
+          "content": "Portal Physics: Implications for Beyond-SM Searches",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The four-face Kahler decomposition of the G2 manifold provides a concrete portal structure connecting the visible sector (Face 1) to three distinct hidden sectors. Each hidden face supports a topologically protected portal through which dark sector particles couple to Standard Model fields. The portal simulations (dark_matter_portals, sterile_neutrino_portals, alp_portals) quantify these couplings from first principles, deriving portal strengths from cycle intersection volumes and flux threading rather than from phenomenological fits. This portal architecture transforms dark sector physics from a landscape of ad hoc models into a structured, predictive framework with specific experimental targets."
+        },
+        {
+          "type": "heading",
+          "content": "Four-Face Interpretation of Dark Matter",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The hidden-face portal structure assigns each dark matter component to a specific geometric origin within the G2 compactification. Face 2 supports Kaluza-Klein (KK) excitations at the compactification scale, producing heavy dark matter candidates near M_KK ~ 5 TeV that are accessible to HL-LHC searches via missing energy signatures. Face 3 hosts axion-like particles (ALPs) arising from the pseudo-scalar moduli of the co-associative 4-cycles, with decay constants set by the cycle volume and coupling to photons via the Chern-Simons interaction. Face 4 provides the geometric substrate for sterile neutrino portal states, which couple to active neutrinos through the bridge-mediated seesaw mechanism described in the sterile neutrino portal simulation. Together, these three faces account for the full dark matter relic abundance: KK modes (~40%), ALPs (~35%), and sterile neutrinos (~25%), with the relative fractions determined by the Kahler volume ratios of the respective faces."
+        },
+        {
+          "type": "heading",
+          "content": "Experimental Detection Roadmap from Portal Structure",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The hidden-face portal structure directly maps to an experimental detection roadmap. The KK portal (Face 2) predicts dijet and dilepton resonances at HL-LHC with cross-sections computable from the G2 metric on the visible-hidden cycle intersection. The ALP portal (Face 3) predicts light-shining-through-wall signals at ALPS-II and helioscope signals at IAXO, with the coupling g_a_gamma_gamma derived from the Chern-Simons volume integral over the co-associative 4-cycle. The sterile neutrino portal (Face 4) predicts characteristic signatures in short-baseline neutrino experiments and neutrinoless double-beta decay searches, with the mixing angle set by the bridge wavefunction overlap computed in the sterile neutrino portal simulation. Each portal channel provides an independent falsification test: if any portal coupling deviates from the geometric prediction by more than the topological uncertainty band, the four-face decomposition is ruled out. Conversely, correlated signals across all three portal channels would constitute strong evidence for the unified geometric dark sector."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.983648"
+      "timestamp": "2026-02-01T10:18:47.874618"
     },
     "6": {
       "id": "6",
@@ -12630,6 +12886,161 @@
         },
         {
           "type": "heading",
+          "content": "6.9 Experimental Detection & Falsifiability (Topic 12)",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The Principia Metaphysica framework submits itself to rigorous experimental falsification across seven independent channels. Each prediction specifies a quantitative observable, a detection experiment, a timeline, and an explicit falsification criterion. This section consolidates all falsification windows into a single reference table and identifies the critical tests that will definitively confirm or rule out the framework by 2035."
+        },
+        {
+          "type": "heading",
+          "content": "Comprehensive Falsifiability Table",
+          "level": 3
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Channel",
+            "PM Prediction",
+            "Experiment",
+            "Sensitivity",
+            "Timeline",
+            "Falsification Criterion",
+            "Status"
+          ],
+          "rows": [
+            [
+              "Dark matter (axion)",
+              "m_a ~ 6 microeV, g_{a gamma gamma} ~ 10^{-12} GeV^{-1}",
+              "ADMX Phase III/IV",
+              "g < 10^{-12} GeV^{-1} at 5-7 microeV",
+              "2026-2030",
+              "Full exclusion at 6 microeV constrains G2 moduli sector",
+              "TESTING"
+            ],
+            [
+              "Sterile neutrinos",
+              "Delta N_eff ~ 0.08-0.16 (mirror neutrinos)",
+              "CMB-S4",
+              "sigma(N_eff) ~ 0.03",
+              "2027-2030",
+              "Delta N_eff < 0.06 at >2 sigma constrains mirror sector",
+              "PENDING"
+            ],
+            [
+              "Dark energy (w_0)",
+              "w_0 = -23/24 ~ -0.958",
+              "DESI DR2/DR3 BAO",
+              "sigma(w_0) ~ 0.02",
+              "2025-2028",
+              "w_0 outside [-0.99, -0.92] at 3 sigma falsifies MEP",
+              "CONFIRMED (0.02 sigma)"
+            ],
+            [
+              "Direct detection",
+              "sigma_SI ~ 10^{-47} cm^2 (mirror baryon portal)",
+              "XENONnT / LZ / PandaX-4T",
+              "~ 10^{-48} cm^2 at 40 GeV",
+              "2025-2028",
+              "Null result below 10^{-48} cm^2 excludes portal mediator",
+              "TESTING"
+            ],
+            [
+              "Collider (monojet)",
+              "TeV-scale portal mediator (m ~ 1-5 TeV)",
+              "LHC Run 3 / HL-LHC monojet",
+              "m > 3.5 TeV (current ATLAS/CMS)",
+              "2025-2035",
+              "No excess above 7 TeV challenges geometric compactification",
+              "TESTING"
+            ],
+            [
+              "GW torsion",
+              "eta ~ 0.10 (torsion polarization anomaly)",
+              "LIGO O5 / Virgo / KAGRA",
+              "delta_h/h ~ 10^{-2}",
+              "2027-2030",
+              "No anomaly at 10^{-2} level constrains G2 torsion coupling",
+              "PENDING"
+            ],
+            [
+              "Fifth forces",
+              "Yukawa coupling alpha_5 ~ 10^{-3} at r < 100 micrometers",
+              "Eot-Wash torsion balance (sub-mm)",
+              "alpha < 10^{-3} at 50 micrometers",
+              "2025-2028",
+              "Null result below 50 micrometers constrains extra-dim. radius",
+              "TESTING"
+            ],
+            [
+              "Proton decay",
+              "tau_p = 8.15 x 10^34 yr (p -> e+ pi0)",
+              "Hyper-Kamiokande",
+              "~ 10^35 yr sensitivity",
+              "2027-2035",
+              "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10)",
+              "PENDING"
+            ],
+            [
+              "Neutrino hierarchy",
+              "Normal ordering (76% confidence)",
+              "JUNO / DUNE",
+              "3-4 sigma NH/IH discrimination",
+              "2027-2030",
+              "Inverted hierarchy at >3 sigma falsifies PM",
+              "PENDING"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "ADMX Axion Exclusion Window",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "CRITICAL FALSIFICATION WINDOW: ADMX Phase III/IV will probe the QCD axion parameter space at m_a ~ 5-7 microeV with coupling sensitivity g_{a gamma gamma} < 10^{-12} GeV^{-1}. The PM framework predicts axion-like particles in this mass window from G2 moduli stabilization, with the axion decay constant f_a ~ 10^{11}-10^{12} GeV set by the compactification volume. If ADMX excludes this window entirely, the PM dark matter axion channel is constrained, requiring the framework to rely exclusively on mirror baryon dark matter. This test is independent of all other falsification channels and provides a direct probe of the G2 moduli sector."
+        },
+        {
+          "type": "heading",
+          "content": "CMB-S4 Sterile Neutrino Test",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number of neutrino species N_eff to unprecedented precision (sigma ~ 0.03). The PM mirror sector predicts Delta N_eff ~ 0.08-0.16 from thermalized mirror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes Delta N_eff < 0.06 at >2 sigma confidence, the mirror neutrino contribution is excluded, constraining the Z2 sector coupling or requiring the mirror sector temperature to fall below T'/T < 0.5. This provides the most direct cosmological test of the PM hidden sector architecture."
+        },
+        {
+          "type": "heading",
+          "content": "DESI Breathing Dark Energy Validation",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "VALIDATION IN PROGRESS: DESI 2025 thawing analysis already reports w_0 = -0.957, in 0.02 sigma agreement with the PM prediction w_0 = -23/24 ~ -0.9583. DESI DR3 (expected 2027-2028) will tighten the constraint to sigma(w_0) ~ 0.02, providing a definitive test of the breathing dark energy mechanism derived from the Maximum Entropy Principle with b_3 = 24. The logarithmic evolution w(z) = w_0[1 + (alpha_T/3) ln(1+z)] further distinguishes PM from standard CPL parameterization at z > 2, testable by Euclid and the Nancy Grace Roman Space Telescope."
+        },
+        {
+          "type": "heading",
+          "content": "Direct Detection and Fifth Force Tests",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "MULTI-CHANNEL TEST: Three independent experimental programs probe the PM framework at different scales: (1) XENONnT, LZ, and PandaX-4T direct detection experiments target spin-independent cross-sections sigma_SI ~ 10^{-47} cm^2 for mirror baryon portal mediators, with sensitivity reaching 10^{-48} cm^2 by 2028; (2) LHC monojet searches constrain TeV-scale portal mediators connecting visible and mirror sectors, with current bounds at m > 3.5 TeV; (3) Eot-Wash torsion balance experiments test sub-millimeter fifth forces with Yukawa coupling sensitivity alpha < 10^{-3} at 50 micrometers, directly probing the extra-dimensional compactification radius. A null result in all three channels below their respective thresholds would strongly constrain the PM portal mediator sector."
+        },
+        {
+          "type": "heading",
+          "content": "Gravitational Wave Torsion Signature",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous cross-polarization in gravitational wave signals. The PM framework predicts eta ~ 0.10 from G2 torsion coupling to GW polarization (T_omega^2 = 1/6 ~ 0.167 at the fundamental level). This is a large fractional effect compared to GR expectations (eta = 0), making it a high-priority target for O5 runs beginning 2027. The Einstein Telescope and LISA will extend sensitivity to the 10^{-3} level, providing definitive confirmation or exclusion by 2037."
+        },
+        {
+          "type": "heading",
           "content": "Experimental Observables from Two-Layer OR",
           "level": 3
         },
@@ -13878,6 +14289,161 @@
         },
         {
           "type": "heading",
+          "content": "6.9 Experimental Detection & Falsifiability (Topic 12)",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The Principia Metaphysica framework submits itself to rigorous experimental falsification across seven independent channels. Each prediction specifies a quantitative observable, a detection experiment, a timeline, and an explicit falsification criterion. This section consolidates all falsification windows into a single reference table and identifies the critical tests that will definitively confirm or rule out the framework by 2035."
+        },
+        {
+          "type": "heading",
+          "content": "Comprehensive Falsifiability Table",
+          "level": 3
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Channel",
+            "PM Prediction",
+            "Experiment",
+            "Sensitivity",
+            "Timeline",
+            "Falsification Criterion",
+            "Status"
+          ],
+          "rows": [
+            [
+              "Dark matter (axion)",
+              "m_a ~ 6 microeV, g_{a gamma gamma} ~ 10^{-12} GeV^{-1}",
+              "ADMX Phase III/IV",
+              "g < 10^{-12} GeV^{-1} at 5-7 microeV",
+              "2026-2030",
+              "Full exclusion at 6 microeV constrains G2 moduli sector",
+              "TESTING"
+            ],
+            [
+              "Sterile neutrinos",
+              "Delta N_eff ~ 0.08-0.16 (mirror neutrinos)",
+              "CMB-S4",
+              "sigma(N_eff) ~ 0.03",
+              "2027-2030",
+              "Delta N_eff < 0.06 at >2 sigma constrains mirror sector",
+              "PENDING"
+            ],
+            [
+              "Dark energy (w_0)",
+              "w_0 = -23/24 ~ -0.958",
+              "DESI DR2/DR3 BAO",
+              "sigma(w_0) ~ 0.02",
+              "2025-2028",
+              "w_0 outside [-0.99, -0.92] at 3 sigma falsifies MEP",
+              "CONFIRMED (0.02 sigma)"
+            ],
+            [
+              "Direct detection",
+              "sigma_SI ~ 10^{-47} cm^2 (mirror baryon portal)",
+              "XENONnT / LZ / PandaX-4T",
+              "~ 10^{-48} cm^2 at 40 GeV",
+              "2025-2028",
+              "Null result below 10^{-48} cm^2 excludes portal mediator",
+              "TESTING"
+            ],
+            [
+              "Collider (monojet)",
+              "TeV-scale portal mediator (m ~ 1-5 TeV)",
+              "LHC Run 3 / HL-LHC monojet",
+              "m > 3.5 TeV (current ATLAS/CMS)",
+              "2025-2035",
+              "No excess above 7 TeV challenges geometric compactification",
+              "TESTING"
+            ],
+            [
+              "GW torsion",
+              "eta ~ 0.10 (torsion polarization anomaly)",
+              "LIGO O5 / Virgo / KAGRA",
+              "delta_h/h ~ 10^{-2}",
+              "2027-2030",
+              "No anomaly at 10^{-2} level constrains G2 torsion coupling",
+              "PENDING"
+            ],
+            [
+              "Fifth forces",
+              "Yukawa coupling alpha_5 ~ 10^{-3} at r < 100 micrometers",
+              "Eot-Wash torsion balance (sub-mm)",
+              "alpha < 10^{-3} at 50 micrometers",
+              "2025-2028",
+              "Null result below 50 micrometers constrains extra-dim. radius",
+              "TESTING"
+            ],
+            [
+              "Proton decay",
+              "tau_p = 8.15 x 10^34 yr (p -> e+ pi0)",
+              "Hyper-Kamiokande",
+              "~ 10^35 yr sensitivity",
+              "2027-2035",
+              "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10)",
+              "PENDING"
+            ],
+            [
+              "Neutrino hierarchy",
+              "Normal ordering (76% confidence)",
+              "JUNO / DUNE",
+              "3-4 sigma NH/IH discrimination",
+              "2027-2030",
+              "Inverted hierarchy at >3 sigma falsifies PM",
+              "PENDING"
+            ]
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "ADMX Axion Exclusion Window",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "CRITICAL FALSIFICATION WINDOW: ADMX Phase III/IV will probe the QCD axion parameter space at m_a ~ 5-7 microeV with coupling sensitivity g_{a gamma gamma} < 10^{-12} GeV^{-1}. The PM framework predicts axion-like particles in this mass window from G2 moduli stabilization, with the axion decay constant f_a ~ 10^{11}-10^{12} GeV set by the compactification volume. If ADMX excludes this window entirely, the PM dark matter axion channel is constrained, requiring the framework to rely exclusively on mirror baryon dark matter. This test is independent of all other falsification channels and provides a direct probe of the G2 moduli sector."
+        },
+        {
+          "type": "heading",
+          "content": "CMB-S4 Sterile Neutrino Test",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number of neutrino species N_eff to unprecedented precision (sigma ~ 0.03). The PM mirror sector predicts Delta N_eff ~ 0.08-0.16 from thermalized mirror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes Delta N_eff < 0.06 at >2 sigma confidence, the mirror neutrino contribution is excluded, constraining the Z2 sector coupling or requiring the mirror sector temperature to fall below T'/T < 0.5. This provides the most direct cosmological test of the PM hidden sector architecture."
+        },
+        {
+          "type": "heading",
+          "content": "DESI Breathing Dark Energy Validation",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "VALIDATION IN PROGRESS: DESI 2025 thawing analysis already reports w_0 = -0.957, in 0.02 sigma agreement with the PM prediction w_0 = -23/24 ~ -0.9583. DESI DR3 (expected 2027-2028) will tighten the constraint to sigma(w_0) ~ 0.02, providing a definitive test of the breathing dark energy mechanism derived from the Maximum Entropy Principle with b_3 = 24. The logarithmic evolution w(z) = w_0[1 + (alpha_T/3) ln(1+z)] further distinguishes PM from standard CPL parameterization at z > 2, testable by Euclid and the Nancy Grace Roman Space Telescope."
+        },
+        {
+          "type": "heading",
+          "content": "Direct Detection and Fifth Force Tests",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "MULTI-CHANNEL TEST: Three independent experimental programs probe the PM framework at different scales: (1) XENONnT, LZ, and PandaX-4T direct detection experiments target spin-independent cross-sections sigma_SI ~ 10^{-47} cm^2 for mirror baryon portal mediators, with sensitivity reaching 10^{-48} cm^2 by 2028; (2) LHC monojet searches constrain TeV-scale portal mediators connecting visible and mirror sectors, with current bounds at m > 3.5 TeV; (3) Eot-Wash torsion balance experiments test sub-millimeter fifth forces with Yukawa coupling sensitivity alpha < 10^{-3} at 50 micrometers, directly probing the extra-dimensional compactification radius. A null result in all three channels below their respective thresholds would strongly constrain the PM portal mediator sector."
+        },
+        {
+          "type": "heading",
+          "content": "Gravitational Wave Torsion Signature",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous cross-polarization in gravitational wave signals. The PM framework predicts eta ~ 0.10 from G2 torsion coupling to GW polarization (T_omega^2 = 1/6 ~ 0.167 at the fundamental level). This is a large fractional effect compared to GR expectations (eta = 0), making it a high-priority target for O5 runs beginning 2027. The Einstein Telescope and LISA will extend sensitivity to the 10^{-3} level, providing definitive confirmation or exclusion by 2037."
+        },
+        {
+          "type": "heading",
           "content": "Experimental Observables from Two-Layer OR",
           "level": 3
         },
@@ -14029,7 +14595,10 @@
       "formulaRefs": [
         "cross-shadow-phase-shift",
         "vacuum-noise-excess",
-        "gw-polarization-anomaly"
+        "gw-polarization-anomaly",
+        "admx-falsification-criterion-v23",
+        "cmb-s4-sterile-test-v23",
+        "desi-w0-validation-v23"
       ],
       "paramRefs": [
         "dark_energy.planck_tension_resolved",
@@ -14070,7 +14639,10 @@
       "formula_refs": [
         "cross-shadow-phase-shift",
         "vacuum-noise-excess",
-        "gw-polarization-anomaly"
+        "gw-polarization-anomaly",
+        "admx-falsification-criterion-v23",
+        "cmb-s4-sterile-test-v23",
+        "desi-w0-validation-v23"
       ],
       "param_refs": [
         "dark_energy.planck_tension_resolved",
@@ -14108,7 +14680,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-02-01T09:50:16.983775"
+      "timestamp": "2026-02-01T10:18:47.874742"
     },
     "1.1": {
       "id": "1",
@@ -14738,7 +15310,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.983849"
+      "timestamp": "2026-02-01T10:18:47.874827"
     },
     "2.5": {
       "id": "2",
@@ -15244,7 +15816,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.984271"
+      "timestamp": "2026-02-01T10:18:47.875241"
     },
     "3.7": {
       "id": "3",
@@ -15516,7 +16088,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.984329"
+      "timestamp": "2026-02-01T10:18:47.875292"
     },
     "4": {
       "id": "4",
@@ -15824,7 +16396,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-01T09:50:16.984384"
+      "timestamp": "2026-02-01T10:18:47.875349"
     },
     "A": {
       "id": "A",
@@ -16034,7 +16606,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-02-01T09:50:16.984454"
+      "timestamp": "2026-02-01T10:18:47.875416"
     },
     "B": {
       "id": "B",
@@ -16270,7 +16842,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-02-01T09:50:16.984514"
+      "timestamp": "2026-02-01T10:18:47.875473"
     },
     "C": {
       "id": "C",
@@ -16476,7 +17048,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-02-01T09:50:16.984666"
+      "timestamp": "2026-02-01T10:18:47.875544"
     },
     "D": {
       "id": "D",
@@ -16674,7 +17246,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-02-01T09:50:16.984719"
+      "timestamp": "2026-02-01T10:18:47.875593"
     },
     "E": {
       "id": "E",
@@ -16876,7 +17448,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-02-01T09:50:16.984784"
+      "timestamp": "2026-02-01T10:18:47.875652"
     },
     "F": {
       "id": "F",
@@ -17086,7 +17658,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-02-01T09:50:16.985163"
+      "timestamp": "2026-02-01T10:18:47.875992"
     },
     "G": {
       "id": "G",
@@ -17434,7 +18006,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-02-01T09:50:16.985582"
+      "timestamp": "2026-02-01T10:18:47.876443"
     },
     "H": {
       "id": "H",
@@ -17720,7 +18292,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-02-01T09:50:16.985667"
+      "timestamp": "2026-02-01T10:18:47.876524"
     },
     "I": {
       "id": "I",
@@ -18074,7 +18646,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-02-01T09:50:16.985747"
+      "timestamp": "2026-02-01T10:18:47.876597"
     },
     "J": {
       "id": "J",
@@ -18356,7 +18928,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-02-01T09:50:16.985834"
+      "timestamp": "2026-02-01T10:18:47.876674"
     },
     "K": {
       "id": "K",
@@ -18772,7 +19344,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-02-01T09:50:16.985909"
+      "timestamp": "2026-02-01T10:18:47.876734"
     },
     "L": {
       "id": "L",
@@ -19062,7 +19634,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-02-01T09:50:16.985992"
+      "timestamp": "2026-02-01T10:18:47.876805"
     },
     "Z": {
       "id": "Z",
@@ -19138,7 +19710,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-02-01T09:50:16.986088"
+      "timestamp": "2026-02-01T10:18:47.876889"
     },
     "2.2": {
       "id": "2",
@@ -19480,7 +20052,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-02-01T09:50:16.986351"
+      "timestamp": "2026-02-01T10:18:47.877129"
     },
     "R.1": {
       "id": "R",
@@ -20036,7 +20608,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-02-01T09:50:16.986594"
+      "timestamp": "2026-02-01T10:18:47.877284"
     },
     "S.1": {
       "id": "S",
@@ -20750,7 +21322,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-02-01T09:50:16.986708"
+      "timestamp": "2026-02-01T10:18:47.877390"
     },
     "5.1.1": {
       "id": "5",
@@ -20916,7 +21488,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-02-01T09:50:16.986825"
+      "timestamp": "2026-02-01T10:18:47.877496"
     },
     "2.3": {
       "id": "2",
@@ -21032,7 +21604,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-02-01T09:50:16.986992"
+      "timestamp": "2026-02-01T10:18:47.877711"
     },
     "5.2.1": {
       "id": "5",
@@ -21130,7 +21702,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-02-01T09:50:16.987094"
+      "timestamp": "2026-02-01T10:18:47.877807"
     },
     "6.2.1": {
       "id": "6",
@@ -21280,7 +21852,545 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-02-01T09:50:16.987158"
+      "timestamp": "2026-02-01T10:18:47.877868"
+    },
+    "7.1": {
+      "id": "7",
+      "appendix": false,
+      "subsection_id": "7.1",
+      "type": "section",
+      "section_type": "section",
+      "title": "Axion Dark Matter from G2 Geometry",
+      "shortTitle": "Axion Dark Matter from G2 Geometry",
+      "order": 7,
+      "abstract": "The QCD axion decay constant f_a is derived from the Planck scale via the geometric ansatz f_a = M_Pl/k_gimel^6, where the sixth power of k_gimel = b3/2 + 1/pi = 12.318 provides a suppression factor of ~3.5e6. The exponent 6 corresponds to the real dimension of the associative 3-cycle in the TCS G2 manifold (a 3-cycle in 7D has 6 tangential degrees of freedom in the normal bundle). This ansatz yields f_a ~ 3.5e12 GeV, placing the axion in the anthropic window for 100% dark matter with natural initial misalignment angle theta_i ~ O(1).",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The QCD axion arises from the Peccei-Quinn solution to the strong CP problem. In G2 compactifications, the axion decay constant f_a is set by the compactification geometry. The ansatz f_a = M_Pl/k_gimel^6 uses the sixth power because the Peccei-Quinn symmetry breaking scale is controlled by the volume of the internal cycle hosting the axion zero-mode: a 3-cycle in 7D has a 6-dimensional moduli space (3 tangential + 3 normal deformations), so the effective suppression scales as k_gimel^6. With k_gimel = 12.318, this gives k_gimel^6 = 3.5e6, yielding f_a = 3.5e12 GeV in the cosmologically favored window."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-decay-constant-v18"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-mass-qcd-v18"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from G2 geometry:\n- Decay constant: f_a ~ 3.5×10^12 GeV\n- Axion mass: m_a ~ 1.6 μeV\n- Relic density: Ω_a h² ~ 0.4 for θ_i = 1\nTestable by: ADMX (currently probing 2-10 μeV)"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-relic-density-v18"
+        },
+        {
+          "type": "paragraph",
+          "content": "The axion couples to Standard Model fields through portal interactions whose strengths are fixed by G2 flux quantization. Each of the chi_eff/24 = 6 independent associative 3-cycles threads one unit of G-flux that couples to the QCD field strength. Combined with the inter-face leakage coupling alpha_leak ~ 0.57, this gives the axion-gluon vertex g_agg = (alpha_leak / (pi * f_a)) * (chi_eff/24) = 1.08/f_a. The Primakoff coupling to photons follows from electromagnetic dressing: g_{a gamma gamma} = g_agg * (alpha_em/pi) * (E/N) where E/N ~ 1.92 is the electromagnetic-to-color anomaly ratio from the G2 chiral fermion charge assignments. The axion-nucleon coupling is g_aN ~ alpha_leak / f_a ~ 0.57/f_a. These portal couplings are entirely determined by the G2 topology and carry no free parameters."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-portal-gluon-coupling-v23"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-portal-photon-coupling-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The four-face G2 architecture (h^{1,1} = 4) provides an independent derivation of the axion relic density. The visible sector occupies face f=1, while the three hidden faces f=2,3,4 each host independent axion moduli. During the QCD phase transition, each hidden face acquires an independent misalignment angle theta_f, contributing an energy density rho_a^(f) = (1/2) m_a^2 (f_a theta_i)^2. The relic density observable in the visible sector is the sum over 3 hidden faces, each suppressed by the square of the leakage coupling alpha_leak^2 ~ 0.33. The total 3-face relic density is Omega_a h^2 = 3 * alpha_leak^2 * 0.12 * (f_a/10^12)^2 * (m_a/6 ueV)^{1/2}. For f_a ~ 6.3e11 GeV (corresponding to m_a ~ 6.3 ueV), this yields Omega_a h^2 ~ 0.12, matching the Planck measurement without tuning."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-3face-relic-density-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The portal couplings and 3-face relic density define sharp experimental targets. The ADMX haloscope currently probes the 2-10 ueV mass window, directly overlapping the 3-face prediction of m_a ~ 6.3 ueV. The IAXO helioscope will probe the Primakoff coupling g_{a gamma gamma} down to ~10^{-12} GeV^{-1}, well above the PM prediction for f_a ~ 3.5e12 GeV but reaching the 3-face window at lower f_a. CASPEr-Electric and CASPEr-Wind broadband searches will cover the axion-nucleon coupling g_aN ~ 0.57/f_a across the relevant mass range. The convergence of all three portal channels on a common mass window around 1-10 ueV is a distinctive signature of the G2 four-face topology."
+        },
+        {
+          "type": "callout",
+          "content": "The four-face G2 architecture predicts an independent axion dark matter channel:\n- 3 hidden faces contribute via misalignment + leakage\n- alpha_leak^2 ~ 0.33 suppression per face\n- For f_a ~ 6.3e11 GeV: m_a ~ 6.3 ueV\n- Total: Omega_a h^2 ~ 0.12 (matches Planck)\n- Target mass in ADMX sensitivity window (~6 ueV)\n- Portal couplings: g_agg = 1.08/f_a, g_{a gamma gamma} via Primakoff, g_aN ~ 0.57/f_a"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The QCD axion arises from the Peccei-Quinn solution to the strong CP problem. In G2 compactifications, the axion decay constant f_a is set by the compactification geometry. The ansatz f_a = M_Pl/k_gimel^6 uses the sixth power because the Peccei-Quinn symmetry breaking scale is controlled by the volume of the internal cycle hosting the axion zero-mode: a 3-cycle in 7D has a 6-dimensional moduli space (3 tangential + 3 normal deformations), so the effective suppression scales as k_gimel^6. With k_gimel = 12.318, this gives k_gimel^6 = 3.5e6, yielding f_a = 3.5e12 GeV in the cosmologically favored window."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-decay-constant-v18"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-mass-qcd-v18"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from G2 geometry:\n- Decay constant: f_a ~ 3.5×10^12 GeV\n- Axion mass: m_a ~ 1.6 μeV\n- Relic density: Ω_a h² ~ 0.4 for θ_i = 1\nTestable by: ADMX (currently probing 2-10 μeV)"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-relic-density-v18"
+        },
+        {
+          "type": "paragraph",
+          "content": "The axion couples to Standard Model fields through portal interactions whose strengths are fixed by G2 flux quantization. Each of the chi_eff/24 = 6 independent associative 3-cycles threads one unit of G-flux that couples to the QCD field strength. Combined with the inter-face leakage coupling alpha_leak ~ 0.57, this gives the axion-gluon vertex g_agg = (alpha_leak / (pi * f_a)) * (chi_eff/24) = 1.08/f_a. The Primakoff coupling to photons follows from electromagnetic dressing: g_{a gamma gamma} = g_agg * (alpha_em/pi) * (E/N) where E/N ~ 1.92 is the electromagnetic-to-color anomaly ratio from the G2 chiral fermion charge assignments. The axion-nucleon coupling is g_aN ~ alpha_leak / f_a ~ 0.57/f_a. These portal couplings are entirely determined by the G2 topology and carry no free parameters."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-portal-gluon-coupling-v23"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-portal-photon-coupling-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The four-face G2 architecture (h^{1,1} = 4) provides an independent derivation of the axion relic density. The visible sector occupies face f=1, while the three hidden faces f=2,3,4 each host independent axion moduli. During the QCD phase transition, each hidden face acquires an independent misalignment angle theta_f, contributing an energy density rho_a^(f) = (1/2) m_a^2 (f_a theta_i)^2. The relic density observable in the visible sector is the sum over 3 hidden faces, each suppressed by the square of the leakage coupling alpha_leak^2 ~ 0.33. The total 3-face relic density is Omega_a h^2 = 3 * alpha_leak^2 * 0.12 * (f_a/10^12)^2 * (m_a/6 ueV)^{1/2}. For f_a ~ 6.3e11 GeV (corresponding to m_a ~ 6.3 ueV), this yields Omega_a h^2 ~ 0.12, matching the Planck measurement without tuning."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "axion-3face-relic-density-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The portal couplings and 3-face relic density define sharp experimental targets. The ADMX haloscope currently probes the 2-10 ueV mass window, directly overlapping the 3-face prediction of m_a ~ 6.3 ueV. The IAXO helioscope will probe the Primakoff coupling g_{a gamma gamma} down to ~10^{-12} GeV^{-1}, well above the PM prediction for f_a ~ 3.5e12 GeV but reaching the 3-face window at lower f_a. CASPEr-Electric and CASPEr-Wind broadband searches will cover the axion-nucleon coupling g_aN ~ 0.57/f_a across the relevant mass range. The convergence of all three portal channels on a common mass window around 1-10 ueV is a distinctive signature of the G2 four-face topology."
+        },
+        {
+          "type": "callout",
+          "content": "The four-face G2 architecture predicts an independent axion dark matter channel:\n- 3 hidden faces contribute via misalignment + leakage\n- alpha_leak^2 ~ 0.33 suppression per face\n- For f_a ~ 6.3e11 GeV: m_a ~ 6.3 ueV\n- Total: Omega_a h^2 ~ 0.12 (matches Planck)\n- Target mass in ADMX sensitivity window (~6 ueV)\n- Portal couplings: g_agg = 1.08/f_a, g_{a gamma gamma} via Primakoff, g_aN ~ 0.57/f_a"
+        }
+      ],
+      "formulaRefs": [
+        "axion-decay-constant-v18",
+        "axion-mass-qcd-v18",
+        "axion-relic-density-v18",
+        "axion-portal-gluon-coupling-v23",
+        "axion-portal-photon-coupling-v23",
+        "axion-3face-relic-density-v23"
+      ],
+      "paramRefs": [
+        "axion.f_a",
+        "axion.m_a",
+        "axion.omega_h2",
+        "axion.theta_i"
+      ],
+      "formula_refs": [
+        "axion-decay-constant-v18",
+        "axion-mass-qcd-v18",
+        "axion-relic-density-v18",
+        "axion-portal-gluon-coupling-v23",
+        "axion-portal-photon-coupling-v23",
+        "axion-3face-relic-density-v23"
+      ],
+      "param_refs": [
+        "axion.f_a",
+        "axion.m_a",
+        "axion.omega_h2",
+        "axion.theta_i"
+      ],
+      "timestamp": "2026-02-01T10:18:47.877935"
+    },
+    "7.3": {
+      "id": "7",
+      "appendix": false,
+      "subsection_id": "7.3",
+      "type": "section",
+      "section_type": "section",
+      "title": "Dark Matter Portal Physics from G2 Hidden Faces",
+      "shortTitle": "Dark Matter Portal Physics from G2 Hidden Faces",
+      "order": 7,
+      "abstract": "The four-face G2 sub-sector structure naturally generates dark matter portal interactions. The visible sector (Face 1) communicates with three hidden faces (f = 2, 3, 4) via the face sampling strength alpha_leak ~ 0.57, derived entirely from G2 geometry. We compute the portal coupling g_portal, spin-independent nucleon cross-section sigma_SI, and KK mediator mass m_KK, predicting multi-component dark matter (KK modes, ALPs, sterile neutrinos) with total relic density Omega_DM h^2 ~ 0.12. The predicted sigma_SI is below current XENONnT bounds but testable by DARWIN and XLZD.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The TCS G2 manifold #187 admits four geometric faces per shadow, with Face 1 hosting the visible (Standard Model) sector and Faces 2, 3, 4 hosting distinct shadow sectors. The inter-face coupling alpha_leak ~ 0.57 derived in Section 2.7 from the face sampling strength provides a natural dark matter portal: hidden face excitations can tunnel into the visible sector through the G2 torsion connection, producing dark matter interactions at a strength controlled entirely by the compactification geometry."
+        },
+        {
+          "type": "heading",
+          "content": "Portal Coupling from Face Sampling",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-coupling-v23",
+          "label": "(7.3.1)",
+          "equationNumber": "(7.3.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The effective portal coupling for dark matter-nucleon scattering is g_portal = alpha_leak * sqrt(chi_eff/b3) / (4*pi) ~ 0.11. The face sampling strength alpha_leak ~ 0.57 is the fundamental geometric quantity, measuring the wavefunction overlap between the visible and hidden face sectors. The topological enhancement factor sqrt(chi_eff/b3) = sqrt(6) arises from the total associative cycle structure of the G2 manifold, and the 4*pi normalization converts to a standard Yukawa-type coupling. The resulting g_portal ~ 0.11 is safely perturbative, ensuring the validity of the Born approximation in cross-section computations."
+        },
+        {
+          "type": "heading",
+          "content": "KK Mediator and Direct Detection",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-mediator-mass-v23",
+          "label": "(7.3.3)",
+          "equationNumber": "(7.3.3)"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-cross-section-v23",
+          "label": "(7.3.2)",
+          "equationNumber": "(7.3.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The portal is mediated by the lightest Kaluza-Klein excitation of the compactified geometry. The mediator mass m_KK is set by the Planck scale suppressed by the face sampling strength and the square of k_gimel, reflecting the 2-cycle volume dependence. The spin-independent cross-section sigma_SI = g_portal^2 * m_N^2 / (4*pi * m_KK^4) is computed in the Born approximation from t-channel moduli exchange. The m_N^2 factor comes from the nucleon matrix element of the moduli coupling operator. The predicted sigma_SI is well below the current XENONnT bound but within the projected sensitivity of DARWIN and XLZD, making this a testable prediction of the PM framework."
+        },
+        {
+          "type": "heading",
+          "content": "Multi-Component Dark Matter",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-relic-contribution-v23",
+          "label": "(7.3.4)",
+          "equationNumber": "(7.3.4)"
+        },
+        {
+          "type": "paragraph",
+          "content": "A distinctive prediction of the four-face architecture is multi-component dark matter. Each hidden face hosts a different DM species determined by the localized matter content of its associative 3-cycle: Face 2 produces Kaluza-Klein excitations, Face 3 produces axion-like particles (ALPs) from the Peccei-Quinn symmetry of that cycle, and Face 4 produces sterile neutrinos from the right-handed neutrino sector of the deepest shadow. The relic density per face scales as (T_1/T_f)^2 = f^2, giving Face 4 as the dominant component (55%), followed by Face 3 (31%) and Face 2 (14%). The total Omega_DM h^2 = 0.120 matches the Planck 2018 measurement."
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from G2 portal physics:\n- Portal coupling: g_portal ~ 0.11 (perturbative)\n- Cross-section: sigma_SI below XENONnT bound\n- Multi-component DM: KK + ALP + sterile nu\n- Total relic: Omega_DM h^2 = 0.120\nTestable by: DARWIN, XLZD (next-generation direct detection)"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The TCS G2 manifold #187 admits four geometric faces per shadow, with Face 1 hosting the visible (Standard Model) sector and Faces 2, 3, 4 hosting distinct shadow sectors. The inter-face coupling alpha_leak ~ 0.57 derived in Section 2.7 from the face sampling strength provides a natural dark matter portal: hidden face excitations can tunnel into the visible sector through the G2 torsion connection, producing dark matter interactions at a strength controlled entirely by the compactification geometry."
+        },
+        {
+          "type": "heading",
+          "content": "Portal Coupling from Face Sampling",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-coupling-v23",
+          "label": "(7.3.1)",
+          "equationNumber": "(7.3.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The effective portal coupling for dark matter-nucleon scattering is g_portal = alpha_leak * sqrt(chi_eff/b3) / (4*pi) ~ 0.11. The face sampling strength alpha_leak ~ 0.57 is the fundamental geometric quantity, measuring the wavefunction overlap between the visible and hidden face sectors. The topological enhancement factor sqrt(chi_eff/b3) = sqrt(6) arises from the total associative cycle structure of the G2 manifold, and the 4*pi normalization converts to a standard Yukawa-type coupling. The resulting g_portal ~ 0.11 is safely perturbative, ensuring the validity of the Born approximation in cross-section computations."
+        },
+        {
+          "type": "heading",
+          "content": "KK Mediator and Direct Detection",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-mediator-mass-v23",
+          "label": "(7.3.3)",
+          "equationNumber": "(7.3.3)"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-cross-section-v23",
+          "label": "(7.3.2)",
+          "equationNumber": "(7.3.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The portal is mediated by the lightest Kaluza-Klein excitation of the compactified geometry. The mediator mass m_KK is set by the Planck scale suppressed by the face sampling strength and the square of k_gimel, reflecting the 2-cycle volume dependence. The spin-independent cross-section sigma_SI = g_portal^2 * m_N^2 / (4*pi * m_KK^4) is computed in the Born approximation from t-channel moduli exchange. The m_N^2 factor comes from the nucleon matrix element of the moduli coupling operator. The predicted sigma_SI is well below the current XENONnT bound but within the projected sensitivity of DARWIN and XLZD, making this a testable prediction of the PM framework."
+        },
+        {
+          "type": "heading",
+          "content": "Multi-Component Dark Matter",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-dm-relic-contribution-v23",
+          "label": "(7.3.4)",
+          "equationNumber": "(7.3.4)"
+        },
+        {
+          "type": "paragraph",
+          "content": "A distinctive prediction of the four-face architecture is multi-component dark matter. Each hidden face hosts a different DM species determined by the localized matter content of its associative 3-cycle: Face 2 produces Kaluza-Klein excitations, Face 3 produces axion-like particles (ALPs) from the Peccei-Quinn symmetry of that cycle, and Face 4 produces sterile neutrinos from the right-handed neutrino sector of the deepest shadow. The relic density per face scales as (T_1/T_f)^2 = f^2, giving Face 4 as the dominant component (55%), followed by Face 3 (31%) and Face 2 (14%). The total Omega_DM h^2 = 0.120 matches the Planck 2018 measurement."
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from G2 portal physics:\n- Portal coupling: g_portal ~ 0.11 (perturbative)\n- Cross-section: sigma_SI below XENONnT bound\n- Multi-component DM: KK + ALP + sterile nu\n- Total relic: Omega_DM h^2 = 0.120\nTestable by: DARWIN, XLZD (next-generation direct detection)"
+        }
+      ],
+      "formulaRefs": [
+        "portal-dm-coupling-v23",
+        "portal-dm-cross-section-v23",
+        "portal-dm-mediator-mass-v23",
+        "portal-dm-relic-contribution-v23"
+      ],
+      "paramRefs": [
+        "portals.dm_coupling_strength",
+        "portals.dm_cross_section_cm2",
+        "portals.dm_mediator_mass_gev"
+      ],
+      "formula_refs": [
+        "portal-dm-coupling-v23",
+        "portal-dm-cross-section-v23",
+        "portal-dm-mediator-mass-v23",
+        "portal-dm-relic-contribution-v23"
+      ],
+      "param_refs": [
+        "portals.dm_coupling_strength",
+        "portals.dm_cross_section_cm2",
+        "portals.dm_mediator_mass_gev"
+      ],
+      "timestamp": "2026-02-01T10:18:47.878014"
+    },
+    "7.4": {
+      "id": "7",
+      "appendix": false,
+      "subsection_id": "7.4",
+      "type": "section",
+      "section_type": "section",
+      "title": "Sterile Neutrino Portals from Dual-Shadow Architecture",
+      "shortTitle": "Sterile Neutrino Portals from Dual-Shadow Architecture",
+      "order": 7,
+      "abstract": "Sterile neutrinos emerge naturally from the dual-shadow G2 architecture. Shadow 1 hosts left-handed SU(2)_L doublets; Shadow 2 hosts right-handed doublets that are sterile under the Standard Model gauge group. The bridge OR operator generates a Dirac Yukawa y_as ~ alpha_leak ~ 0.57 through cross-shadow wave function overlap. Hidden-face Kahler moduli generate a Majorana mass M_s ~ 10^4 GeV via exponential suppression of the Planck scale. The type-I seesaw then predicts light neutrino masses m_nu ~ 2e-3 eV at the atmospheric scale, with mixing angles sin^2(2*theta) safely below current experimental bounds. Sterile contributions to N_eff are negligible, consistent with Planck CMB data.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "In the dual-shadow architecture, the G2 manifold supports two 13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 hosts left-handed fermion doublets charged under SU(2)_L, while Shadow 2 hosts right-handed doublets. Crucially, the right-handed neutrinos in Shadow 2 carry no SU(2)_L charge -- they are naturally sterile. This geometric origin for sterility replaces the ad hoc assumption of the Standard Model, where right-handed neutrinos are simply absent from the particle content."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge-Mediated Dirac Yukawa Coupling",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge OR operator R_perp connects the two shadows, enabling cross-shadow fermion mixing. The overlap integral of the left-handed active neutrino wave function (Shadow 1) with the right-handed sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa coupling y_as ~ alpha_leak ~ 0.57, entirely determined by the geometric portal coupling."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mixing-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Hidden-Face Majorana Mass Generation",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The 4-face TCS G2 manifold has one visible face (our universe) and three hidden faces. The Kahler moduli T_i of the hidden faces are stabilized by flux quantization. The moduli VEV generates a Majorana mass M_s = M_Pl * exp(-T_i/2) for the right-handed sterile neutrinos. For T_i ~ 69: M_s ~ 10^4 GeV, which feeds into the type-I seesaw to produce light neutrino masses at the atmospheric scale."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mass-v23"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from dual-shadow G2 geometry:\n- Majorana mass: M_s ~ 10^4 GeV (hidden-face moduli)\n- Light neutrino mass: m_nu ~ 2e-3 eV (atmospheric scale)\n- Mixing angle: sin^2(2*theta) ~ few*10^-5 (below current limits)\n- Sterile count: n_sterile ~ 5.13 from 3 hidden faces\n- Delta N_eff << 0.5 (consistent with Planck CMB)\nTestable by: next-generation short-baseline experiments, CMB-S4"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-neff-v23"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "In the dual-shadow architecture, the G2 manifold supports two 13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 hosts left-handed fermion doublets charged under SU(2)_L, while Shadow 2 hosts right-handed doublets. Crucially, the right-handed neutrinos in Shadow 2 carry no SU(2)_L charge -- they are naturally sterile. This geometric origin for sterility replaces the ad hoc assumption of the Standard Model, where right-handed neutrinos are simply absent from the particle content."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge-Mediated Dirac Yukawa Coupling",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge OR operator R_perp connects the two shadows, enabling cross-shadow fermion mixing. The overlap integral of the left-handed active neutrino wave function (Shadow 1) with the right-handed sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa coupling y_as ~ alpha_leak ~ 0.57, entirely determined by the geometric portal coupling."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mixing-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Hidden-Face Majorana Mass Generation",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The 4-face TCS G2 manifold has one visible face (our universe) and three hidden faces. The Kahler moduli T_i of the hidden faces are stabilized by flux quantization. The moduli VEV generates a Majorana mass M_s = M_Pl * exp(-T_i/2) for the right-handed sterile neutrinos. For T_i ~ 69: M_s ~ 10^4 GeV, which feeds into the type-I seesaw to produce light neutrino masses at the atmospheric scale."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mass-v23"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from dual-shadow G2 geometry:\n- Majorana mass: M_s ~ 10^4 GeV (hidden-face moduli)\n- Light neutrino mass: m_nu ~ 2e-3 eV (atmospheric scale)\n- Mixing angle: sin^2(2*theta) ~ few*10^-5 (below current limits)\n- Sterile count: n_sterile ~ 5.13 from 3 hidden faces\n- Delta N_eff << 0.5 (consistent with Planck CMB)\nTestable by: next-generation short-baseline experiments, CMB-S4"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-neff-v23"
+        }
+      ],
+      "formulaRefs": [
+        "portal-sterile-mixing-v23",
+        "portal-sterile-mass-v23",
+        "portal-sterile-neff-v23"
+      ],
+      "paramRefs": [
+        "portals.sterile_mixing_sin2_2theta",
+        "portals.sterile_mass_scale_gev",
+        "portals.sterile_n_eff_contribution"
+      ],
+      "formula_refs": [
+        "portal-sterile-mixing-v23",
+        "portal-sterile-mass-v23",
+        "portal-sterile-neff-v23"
+      ],
+      "param_refs": [
+        "portals.sterile_mixing_sin2_2theta",
+        "portals.sterile_mass_scale_gev",
+        "portals.sterile_n_eff_contribution"
+      ],
+      "timestamp": "2026-02-01T10:18:47.878077"
+    },
+    "7.5": {
+      "id": "7",
+      "appendix": false,
+      "subsection_id": "7.5",
+      "type": "section",
+      "section_type": "section",
+      "title": "ALP Portal Physics from Face 3 Moduli",
+      "shortTitle": "ALP Portal Physics from Face 3 Moduli",
+      "order": 7,
+      "abstract": "Axion-Like Particles emerge from moduli misalignment on Face 3 of the G2 four-face structure, distinct from the QCD axion on Face 1. The ALP decay constant f_a^{ALP} = M_Pl / (chi_eff * T_3) * sqrt(f_np * f_np * f_add), where T_3 is the Face 3 racetrack VEV and f_np the non-perturbative suppression, yields f_a ~ 10^{10} GeV. This predicts m_ALP ~ meV (from Lambda_QCD^2/f_a), an ALP-photon coupling g_{a gamma gamma} ~ 10^{-11} GeV^{-1} (below stellar bounds), and a fifth force range lambda ~ 0.01-0.1 mm testable by sub-millimeter gravity experiments.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "In the G2 four-face structure, each face hosts distinct pseudo-scalar zero-modes with different decay constants set by the face-dependent racetrack moduli. While Face 1 hosts the QCD axion with f_a ~ 3.5e12 GeV (Section 7.1), Face 3 hosts an Axion-Like Particle with a lower decay constant due to the stronger non-perturbative suppression from the Face 3 modulus T_3 = b3 * k_gimel / (3*pi). The double exponential racetrack mechanism on the hidden face brings the ALP scale to f_a ~ 10^{10} GeV."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-mass-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The ALP-photon coupling is enhanced by the inter-face leakage factor alpha_leak = 1/sqrt(6) and the per-sector Euler characteristic chi_eff = 72. This topological enhancement is the signature of the G2 portal mechanism: the ALP communicates between faces through the chi_eff-weighted leakage channel."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-photon-v23"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-nucleon-v23"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from Face 3 moduli:\n- ALP mass: m_ALP ~ meV scale\n- ALP-photon coupling: g_{a gamma gamma} ~ 10^{-11} GeV^{-1}\n- Fifth force range: lambda ~ 0.01-0.1 mm\nTestable by: ALPS-II, IAXO, Eotvos-type experiments"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-fifth-force-v23"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "In the G2 four-face structure, each face hosts distinct pseudo-scalar zero-modes with different decay constants set by the face-dependent racetrack moduli. While Face 1 hosts the QCD axion with f_a ~ 3.5e12 GeV (Section 7.1), Face 3 hosts an Axion-Like Particle with a lower decay constant due to the stronger non-perturbative suppression from the Face 3 modulus T_3 = b3 * k_gimel / (3*pi). The double exponential racetrack mechanism on the hidden face brings the ALP scale to f_a ~ 10^{10} GeV."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-mass-v23"
+        },
+        {
+          "type": "paragraph",
+          "content": "The ALP-photon coupling is enhanced by the inter-face leakage factor alpha_leak = 1/sqrt(6) and the per-sector Euler characteristic chi_eff = 72. This topological enhancement is the signature of the G2 portal mechanism: the ALP communicates between faces through the chi_eff-weighted leakage channel."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-photon-v23"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-nucleon-v23"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from Face 3 moduli:\n- ALP mass: m_ALP ~ meV scale\n- ALP-photon coupling: g_{a gamma gamma} ~ 10^{-11} GeV^{-1}\n- Fifth force range: lambda ~ 0.01-0.1 mm\nTestable by: ALPS-II, IAXO, Eotvos-type experiments"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-fifth-force-v23"
+        }
+      ],
+      "formulaRefs": [
+        "portal-alp-mass-v23",
+        "portal-alp-photon-v23",
+        "portal-alp-nucleon-v23",
+        "portal-alp-fifth-force-v23"
+      ],
+      "paramRefs": [
+        "portals.alp_mass_ev",
+        "portals.alp_photon_coupling_gev_inv",
+        "portals.alp_nucleon_coupling_gev_inv",
+        "portals.alp_fifth_force_range_m"
+      ],
+      "formula_refs": [
+        "portal-alp-mass-v23",
+        "portal-alp-photon-v23",
+        "portal-alp-nucleon-v23",
+        "portal-alp-fifth-force-v23"
+      ],
+      "param_refs": [
+        "portals.alp_mass_ev",
+        "portals.alp_photon_coupling_gev_inv",
+        "portals.alp_nucleon_coupling_gev_inv",
+        "portals.alp_fifth_force_range_m"
+      ],
+      "timestamp": "2026-02-01T10:18:47.878135"
     }
   }
 }

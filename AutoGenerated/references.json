@@ -1,6 +1,6 @@
 {
   "version": "23.1",
-  "count": 196,
+  "count": 213,
   "references": {
     "acharya_witten_2001": {
       "id": "acharya_witten_2001",
@@ -2224,6 +2224,199 @@
       "url": "https://doi.org/10.1070/PU1991v034n05ABEH002497",
       "notes": "Three conditions for baryogenesis",
       "source_simulation": "baryon_asymmetry_v18"
+    },
+    "planck2018_dm": {
+      "id": "planck2018_dm",
+      "authors": "Planck Collaboration",
+      "title": "Planck 2018 results. VI. Cosmological parameters",
+      "journal": "A&A",
+      "volume": "641",
+      "pages": "A6",
+      "year": 2020,
+      "arxiv": "1807.06209",
+      "notes": "Omega_DM h^2 = 0.120 +/- 0.001",
+      "source_simulation": "axion_dm_v18"
+    },
+    "pdg2024_axion": {
+      "id": "pdg2024_axion",
+      "authors": "Particle Data Group",
+      "title": "Review of Particle Physics: Axions and Other Similar Particles",
+      "journal": "Phys. Rev. D",
+      "volume": "110",
+      "year": 2024,
+      "notes": "m_a = 5.7 ueV * (10^12 GeV / f_a)",
+      "source_simulation": "axion_dm_v18"
+    },
+    "admx2021": {
+      "id": "admx2021",
+      "authors": "ADMX Collaboration",
+      "title": "A SQUID-Based Microwave Cavity Search for Dark-Matter Axions",
+      "journal": "Phys. Rev. Lett.",
+      "volume": "127",
+      "year": 2021,
+      "arxiv": "2104.06801",
+      "notes": "ADMX probes 2-10 ueV axion mass range",
+      "source_simulation": "axion_dm_v18"
+    },
+    "xenonnt2023": {
+      "id": "xenonnt2023",
+      "authors": "XENONnT Collaboration",
+      "title": "First Dark Matter Search with Nuclear Recoils from the XENONnT Experiment",
+      "journal": "Phys. Rev. Lett.",
+      "volume": "131",
+      "pages": "041003",
+      "year": 2023,
+      "arxiv": "2303.14729",
+      "notes": "sigma_SI < 2.58e-47 cm^2 at 28 GeV; strongest SI bound",
+      "source_simulation": "dark_matter_portals_v23"
+    },
+    "acharya_kumar2008": {
+      "id": "acharya_kumar2008",
+      "authors": "Acharya, B.S., Kumar, P., Bobkov, K., Kane, G., Shao, J., Watson, S.",
+      "title": "Non-thermal Dark Matter and the Moduli Problem in String Frameworks",
+      "journal": "JHEP",
+      "volume": "0806",
+      "pages": "064",
+      "year": 2008,
+      "arxiv": "0804.0863",
+      "notes": "Multi-component dark matter from G2 compactification; moduli-mediated portal interactions",
+      "source_simulation": "dark_matter_portals_v23"
+    },
+    "jungman_kamionkowski1996": {
+      "id": "jungman_kamionkowski1996",
+      "authors": "Jungman, G., Kamionkowski, M., Griest, K.",
+      "title": "Supersymmetric Dark Matter",
+      "journal": "Phys. Rept.",
+      "volume": "267",
+      "pages": "195-373",
+      "year": 1996,
+      "arxiv": "hep-ph/9506380",
+      "notes": "Standard reference for DM direct detection cross-sections and relic density calculations",
+      "source_simulation": "dark_matter_portals_v23"
+    },
+    "darwin2016": {
+      "id": "darwin2016",
+      "authors": "DARWIN Collaboration",
+      "title": "DARWIN: towards the ultimate dark matter detector",
+      "journal": "JCAP",
+      "volume": "1611",
+      "pages": "017",
+      "year": 2016,
+      "arxiv": "1606.07001",
+      "notes": "Next-generation direct detection; projected sensitivity reaches neutrino floor",
+      "source_simulation": "dark_matter_portals_v23"
+    },
+    "minkowski1977_seesaw": {
+      "id": "minkowski1977_seesaw",
+      "authors": "Minkowski, P.",
+      "title": "mu -> e gamma at a rate of one out of 10^9 muon decays?",
+      "journal": "Phys. Lett. B",
+      "volume": "67",
+      "pages": "421-428",
+      "year": 1977,
+      "notes": "Original type-I seesaw mechanism proposal",
+      "source_simulation": "sterile_neutrino_portals_v23"
+    },
+    "dodelson_widrow1994": {
+      "id": "dodelson_widrow1994",
+      "authors": "Dodelson, S. & Widrow, L.M.",
+      "title": "Sterile Neutrinos as Dark Matter",
+      "journal": "Phys. Rev. Lett.",
+      "volume": "72",
+      "pages": "17",
+      "year": 1994,
+      "arxiv": "hep-ph/9303287",
+      "notes": "Sterile neutrino production via oscillation in early universe",
+      "source_simulation": "sterile_neutrino_portals_v23"
+    },
+    "planck2018_neff": {
+      "id": "planck2018_neff",
+      "authors": "Planck Collaboration",
+      "title": "Planck 2018 results. VI. Cosmological parameters",
+      "journal": "A&A",
+      "volume": "641",
+      "pages": "A6",
+      "year": 2020,
+      "arxiv": "1807.06209",
+      "notes": "N_eff = 2.99 +/- 0.34, constraining extra radiation",
+      "source_simulation": "sterile_neutrino_portals_v23"
+    },
+    "pdg2024_neutrino": {
+      "id": "pdg2024_neutrino",
+      "authors": "Particle Data Group",
+      "title": "Review of Particle Physics: Neutrino Masses, Mixing, and Oscillations",
+      "journal": "Phys. Rev. D",
+      "volume": "110",
+      "year": 2024,
+      "notes": "Delta m^2_atm = 2.453e-3 eV^2, atmospheric neutrino mass scale",
+      "source_simulation": "sterile_neutrino_portals_v23"
+    },
+    "acharya2002_moduli": {
+      "id": "acharya2002_moduli",
+      "authors": "Acharya, B.S.",
+      "title": "M-theory, Joyce orbifolds and super Yang-Mills",
+      "journal": "Adv. Theor. Math. Phys.",
+      "volume": "3",
+      "year": 2002,
+      "arxiv": "hep-th/0212294",
+      "notes": "Moduli stabilization in G2 compactifications",
+      "source_simulation": "sterile_neutrino_portals_v23"
+    },
+    "svrcek_witten_2006": {
+      "id": "svrcek_witten_2006",
+      "authors": "Svrcek, P. & Witten, E.",
+      "title": "Axions in String Theory",
+      "journal": "JHEP",
+      "volume": "0606",
+      "pages": "051",
+      "year": 2006,
+      "arxiv": "hep-th/0605206",
+      "notes": "ALP landscape from string compactifications",
+      "source_simulation": "alp_portals_v23"
+    },
+    "conlon_2006": {
+      "id": "conlon_2006",
+      "authors": "Conlon, J.P.",
+      "title": "The QCD Axion and Moduli Stabilisation",
+      "journal": "JHEP",
+      "volume": "0605",
+      "pages": "078",
+      "year": 2006,
+      "arxiv": "hep-th/0602233",
+      "notes": "Moduli stabilization effects on axion-like particles",
+      "source_simulation": "alp_portals_v23"
+    },
+    "cast_2017": {
+      "id": "cast_2017",
+      "authors": "CAST Collaboration",
+      "title": "New CAST limit on the axion-photon interaction",
+      "journal": "Nature Physics",
+      "volume": "13",
+      "pages": "584",
+      "year": 2017,
+      "notes": "g_{a gamma gamma} < 6.6e-11 GeV^{-1} for m_a < 0.02 eV",
+      "source_simulation": "alp_portals_v23"
+    },
+    "raffelt_1996": {
+      "id": "raffelt_1996",
+      "authors": "Raffelt, G.G.",
+      "title": "Stars as Laboratories for Fundamental Physics",
+      "journal": "University of Chicago Press",
+      "year": 1996,
+      "notes": "Stellar cooling bounds on ALP couplings",
+      "source_simulation": "alp_portals_v23"
+    },
+    "adelberger_2009": {
+      "id": "adelberger_2009",
+      "authors": "Adelberger, E.G. et al.",
+      "title": "Torsion balance experiments: A low-energy frontier of particle physics",
+      "journal": "Prog. Part. Nucl. Phys.",
+      "volume": "62",
+      "pages": "102",
+      "year": 2009,
+      "arxiv": "0901.3842",
+      "notes": "Sub-mm fifth force bounds from torsion balance",
+      "source_simulation": "alp_portals_v23"
     }
   }
 }

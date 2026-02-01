@@ -277,6 +277,10 @@ class LagrangianMasterDerivation(SimulationBase):
             "racetrack-moduli-potential",
             "torsion-correction-term",
             "spectral-residue-dressing",
+
+            # Part F2: 27D Master Lagrangian (Topic 03)
+            "bulk-action-27d-v23",
+            "racetrack-moduli-potential-27d-v23",
         ]
 
     # =========================================================================
@@ -2483,6 +2487,290 @@ class LagrangianMasterDerivation(SimulationBase):
             }
         ))
 
+        # =================================================================
+        # PART F2: 27D MASTER LAGRANGIAN (Topic 03)
+        # =================================================================
+        # These formulas document the full 27D bulk action with explicit
+        # dimensional decomposition 27D = 4D + 7D + 14D + 2D and the
+        # racetrack moduli potential with geometric scaling a_i = b3/i.
+        # They are THEORETICAL/documentation-only and do not alter any
+        # computed values in run().
+
+        formulas.append(Formula(
+            id="bulk-action-27d-v23",
+            label="(2.1.H1)",
+            latex=(
+                r"S_{27} = \int d^{27}x \, \sqrt{-G_{27}} \left[ "
+                r"\frac{R_{27}}{2\kappa_{27}^2} "
+                r"- \frac{1}{2}|F_4|^2 "
+                r"+ V_{\text{mod}} "
+                r"+ V_{\text{tor}} "
+                r"+ \sum_n \mathcal{R}_n \, \bar{\psi}_n \slashed{D} \psi_n "
+                r"+ V_{\text{bridge}} "
+                r"+ \sum_{f=1}^{4} V_{\text{face}}^{(f)} "
+                r"\right]"
+            ),
+            plain_text=(
+                "S_27 = integral d^27x sqrt(-G_27) [ R_27/(2 kappa_27^2) "
+                "- (1/2)|F_4|^2 + V_mod + V_tor "
+                "+ sum_n R_n psi_bar_n D_slash psi_n "
+                "+ V_bridge + sum_f V_face^(f) ]"
+            ),
+            category="THEORETICAL",
+            description=(
+                "Full 27D bulk action with explicit two-layer OR structure "
+                "(Topic 03: 27D Master Lagrangian). The 27 dimensions decompose as "
+                "27D = 4D (visible spacetime) + 7D (G2 holonomy internal manifold) "
+                "+ 14D (7 bridge pairs, carrying shadow/face information) "
+                "+ 2D (central sampler C^{2,0} from v23.1). "
+                "Each term has a precise geometric origin:\n"
+                "  R_27/(2 kappa_27^2): Einstein-Hilbert gravity in the full 27D bulk, "
+                "with kappa_27 the 27D gravitational coupling.\n"
+                "  |F_4|^2/2: M-theory 4-form flux kinetic term; F_4 = dC_3 is the "
+                "field strength of the C_3 potential, with 4-form flux threading "
+                "associative 3-cycles of the G2 manifold.\n"
+                "  V_mod: Racetrack moduli potential stabilising the 4 Kahler moduli "
+                "T_1,...,T_4 via non-perturbative M2-brane instantons (see "
+                "racetrack-moduli-potential-27d-v23).\n"
+                "  V_tor: Torsion correction from G2 structure deformation, encoding "
+                "the Fernandez-Gray tau_1 intrinsic torsion class.\n"
+                "  sum_n R_n psi_bar_n D_slash psi_n: Kaluza-Klein tower of fermion "
+                "modes dressed by spectral residues R_n = exp(-lambda_n/b_3) from "
+                "Laplacian eigenvalues on the G2 7-manifold.\n"
+                "  V_bridge (Layer 1 -- global OR): Bridge potential governing shadow "
+                "creation and separation. This implements the first OR layer, splitting "
+                "the 27D bulk into dual 13D shadows.\n"
+                "  sum_f V_face^(f) (Layer 2 -- local OR): Per-face potential governing "
+                "face selection within each shadow. This implements the second OR layer, "
+                "selecting the visible face from the 4 TCS faces.\n"
+                "The two-layer hierarchy is strict: bridge OR (Layer 1) must act first "
+                "to create the dual shadows, then face OR (Layer 2) selects which face "
+                "is visible within each shadow. This mirrors the M-theory "
+                "compactification structure where bulk -> shadow -> face reduction "
+                "proceeds through two nested moduli stabilisation stages.\n"
+                "Connection to M-theory literature: The 4-form flux F_4 and the G2 "
+                "compactification follow Acharya-Witten (2001). The racetrack moduli "
+                "stabilisation adapts KKLT (2003) and LVS (2005) from Type IIB to "
+                "the G2 setting. The spectral residue dressing generalises Weyl's "
+                "asymptotic formula to the G2 internal space."
+            ),
+            inputParams=[
+                "constants.M_STAR",
+                "topology.elder_kads",
+                "topology.mephorash_chi",
+            ],
+            outputParams=[],
+            derivation={
+                "steps": [
+                    "Begin with the 27D spacetime M^{26,1} decomposed as "
+                    "27D = 4D (visible M^{3,1}) + 7D (G2 internal X_7) "
+                    "+ 14D (7 bridge pairs for shadow/face structure) "
+                    "+ 2D (central sampler C^{2,0})",
+                    "Write the Einstein-Hilbert gravitational sector "
+                    "R_27/(2 kappa_27^2) with kappa_27^2 = 8 pi G_27, "
+                    "the 27D Newton constant related to M_* via "
+                    "kappa_27^2 ~ M_*^{-25}",
+                    "Include the M-theory 4-form flux kinetic term "
+                    "-(1/2)|F_4|^2 where F_4 = dC_3 threads the b_3 = 24 "
+                    "independent associative 3-cycles of the G2 manifold, "
+                    "providing flux stabilisation of complex structure moduli",
+                    "Add the racetrack moduli potential V_mod = "
+                    "sum_i Lambda_i exp(-a_i T_i) + Lambda_0 with "
+                    "a_i = b_3/i = 24/i for i=1..4, stabilising the 4 "
+                    "Kahler moduli of the TCS G2 construction",
+                    "Include the torsion correction V_tor from the "
+                    "Fernandez-Gray tau_1 class of the G2 structure, "
+                    "coupling contorsion to the associative 3-form",
+                    "Sum over the KK tower of fermion modes "
+                    "sum_n R_n psi_bar_n D_slash psi_n, with each mode "
+                    "dressed by the spectral residue R_n = exp(-lambda_n/b_3) "
+                    "from the Laplacian eigenvalues on X_7",
+                    "Introduce V_bridge as the Layer 1 (global) OR potential "
+                    "that governs shadow creation by splitting the bulk into "
+                    "dual 13D shadows through bridge direction integration",
+                    "Introduce sum_f V_face^(f) as the Layer 2 (local) OR "
+                    "potential that governs face selection within each shadow, "
+                    "choosing the visible face from the 4 TCS faces",
+                    "Verify that the complete action is diffeomorphism-invariant, "
+                    "locally Lorentz SO(26,1)-invariant, and respects the G2 "
+                    "structure group of the internal manifold"
+                ],
+                "method": (
+                    "Lagrangian construction from M-theory compactification on "
+                    "G2 holonomy manifold with two-layer OR warping hierarchy. "
+                    "Adapts KKLT/LVS moduli stabilisation to the G2 setting "
+                    "(Acharya-Witten 2001; KKLT 2003; LVS 2005)."
+                ),
+                "parentFormulas": [
+                    "master-action-26d-full",
+                    "master-action-two-layer-or",
+                    "racetrack-moduli-potential",
+                    "torsion-correction-term",
+                    "spectral-residue-dressing",
+                ]
+            },
+            terms={
+                "R_{27}": "27D Ricci scalar from the full bulk metric G_{27}",
+                r"\kappa_{27}": (
+                    "27D gravitational coupling; kappa_27^2 = 8 pi G_27 ~ M_*^{-25}"
+                ),
+                "|F_4|^2": (
+                    "Squared norm of the M-theory 4-form flux F_4 = dC_3, "
+                    "threading b_3 = 24 associative 3-cycles"
+                ),
+                "V_{mod}": (
+                    "Racetrack moduli potential: V = sum_i Lambda_i exp(-a_i T_i) + Lambda_0 "
+                    "with a_i = 24/i (see racetrack-moduli-potential-27d-v23)"
+                ),
+                "V_{tor}": (
+                    "Torsion correction from Fernandez-Gray tau_1 class of G2 structure"
+                ),
+                r"\mathcal{R}_n": (
+                    "Spectral residue dressing for KK mode n: "
+                    "R_n = exp(-lambda_n/b_3) from Laplacian eigenvalues on X_7"
+                ),
+                "V_{bridge}": (
+                    "Layer 1 (global) OR potential: governs shadow creation "
+                    "by splitting bulk into dual 13D shadows"
+                ),
+                "V_{face}^{(f)}": (
+                    "Layer 2 (local) OR potential for face f: governs face "
+                    "selection within each shadow (f = 1..4 TCS faces)"
+                ),
+                "27D decomposition": (
+                    "27 = 4 (visible spacetime M^{3,1}) + 7 (G2 internal X_7) "
+                    "+ 14 (7 bridge pairs) + 2 (central sampler C^{2,0})"
+                ),
+            }
+        ))
+
+        formulas.append(Formula(
+            id="racetrack-moduli-potential-27d-v23",
+            label="(2.1.H2)",
+            latex=(
+                r"V(\{T_i\}) = \sum_{i=1}^{4} \Lambda_i \, e^{-a_i T_i} + \Lambda_0, "
+                r"\quad a_i = \frac{b_3}{i} = \frac{24}{i} \;"
+                r"\Rightarrow\; a_1 = 24,\; a_2 = 12,\; a_3 = 8,\; a_4 = 6"
+            ),
+            plain_text=(
+                "V({T_i}) = sum_{i=1}^4 Lambda_i exp(-a_i T_i) + Lambda_0, "
+                "a_i = b3/i = 24/i => a_1=24, a_2=12, a_3=8, a_4=6"
+            ),
+            category="THEORETICAL",
+            description=(
+                "Racetrack moduli potential for the 27D master Lagrangian "
+                "(Topic 03) with explicit geometric scaling a_i = b_3/i. "
+                "This is the leading-order moduli potential V_mod appearing "
+                "in the 27D bulk action (bulk-action-27d-v23). "
+                "Each of the 4 Kahler moduli T_i (i=1..4) corresponds to one "
+                "face of the twisted connected sum (TCS) G2 construction, "
+                "controlling the volume of the i-th 2-cycle. The non-perturbative "
+                "exponential contributions Lambda_i exp(-a_i T_i) arise from "
+                "M2-brane instantons wrapping associative 3-cycles of the G2 "
+                "manifold, with wrapping numbers determined by the third Betti "
+                "number b_3 = 24.\n"
+                "The geometric scaling a_i = b_3/i = 24/i encodes the hierarchy "
+                "of wrapping numbers: the first face has the largest instanton "
+                "action (a_1 = 24, most strongly stabilised), while the fourth "
+                "face has the smallest (a_4 = 6, most weakly stabilised). This "
+                "hierarchy is intrinsic to the TCS construction where each face "
+                "subtends 1/i of the total 3-cycle volume.\n"
+                "Lambda_i are determined by the geometric volumes of calibrated "
+                "G2 associative cycles: Lambda_i ~ Vol(Sigma_i)^{-1} where "
+                "Sigma_i is the i-th associative 3-cycle. Lambda_0 is the "
+                "tree-level flux contribution from G-flux threading the G2 "
+                "manifold, analogous to W_0 in the KKLT construction.\n"
+                "Connection to KKLT/LVS moduli stabilisation: In Type IIB "
+                "string theory, KKLT (Kachru-Kallosh-Linde-Trivedi 2003) showed "
+                "that non-perturbative D3-brane instantons generate exponential "
+                "superpotential terms W ~ exp(-aT), which combined with "
+                "flux-generated W_0 can stabilise all Kahler moduli and produce "
+                "de Sitter vacua. The LVS (Large Volume Scenario, "
+                "Balasubramanian-Berglund-Conlon-Quevedo 2005) extends this to "
+                "multiple moduli with a racetrack of competing exponentials. "
+                "Here we adapt both frameworks from Type IIB Calabi-Yau to "
+                "M-theory G2: D3-brane instantons become M2-brane instantons, "
+                "the Calabi-Yau Kahler moduli become G2 Kahler moduli, and "
+                "the racetrack scales a_i are fixed by the G2 topology (b_3 = 24) "
+                "rather than being free parameters.\n"
+                "At the minimum dV/dT_i = 0, all four moduli are stabilised and "
+                "the residual vacuum energy is Lambda_0 + sum_i Lambda_i exp(-a_i T_i^*), "
+                "contributing to the observed cosmological constant."
+            ),
+            inputParams=[
+                "topology.elder_kads",
+                "moduli.re_t_attractor",
+            ],
+            outputParams=[],
+            derivation={
+                "steps": [
+                    "The TCS G2 manifold has 4 independent Kahler moduli "
+                    "T_1,...,T_4, one per face of the twisted connected sum, "
+                    "controlling the volumes of the 4 independent 2-cycles",
+                    "Non-perturbative M2-brane instantons wrapping associative "
+                    "3-cycles Sigma_i generate exponential terms "
+                    "Lambda_i exp(-a_i T_i) in the effective potential, where "
+                    "Lambda_i ~ Vol(Sigma_i)^{-1} from the instanton determinant",
+                    "The instanton action for wrapping the i-th cycle is "
+                    "a_i = b_3/i = 24/i, encoding the geometric scaling: "
+                    "a_1 = 24/1 = 24, a_2 = 24/2 = 12, a_3 = 24/3 = 8, "
+                    "a_4 = 24/4 = 6. This follows from the TCS construction "
+                    "where the i-th face subtends 1/i of the total 3-cycle volume",
+                    "The tree-level flux contribution Lambda_0 arises from "
+                    "G-flux threading the G2 manifold, analogous to W_0 in KKLT. "
+                    "It provides the constant offset that allows a metastable "
+                    "minimum with positive vacuum energy (de Sitter)",
+                    "The racetrack mechanism stabilises all moduli simultaneously: "
+                    "the competing exponentials with different scales a_i create "
+                    "a minimum at dV/dT_i = 0 where "
+                    "Lambda_i a_i exp(-a_i T_i^*) = 0 for each i, fixing "
+                    "T_i^* = ln(Lambda_i a_i / ...) / a_i",
+                    "Verify arithmetic: b_3 = 24 divides evenly by i=1,2,3,4, "
+                    "giving a_i = {24, 12, 8, 6}, all positive integers. "
+                    "This integrality is required for well-defined instanton "
+                    "wrapping numbers"
+                ],
+                "method": (
+                    "M-theory G2 racetrack moduli stabilisation, adapting "
+                    "KKLT (2003) and LVS (2005) from Type IIB Calabi-Yau to "
+                    "M-theory on G2 holonomy manifolds with TCS construction. "
+                    "Scales a_i = b_3/i fixed by G2 topology."
+                ),
+                "parentFormulas": [
+                    "racetrack-moduli-potential",
+                    "bulk-action-27d-v23",
+                    "g2-holonomy-constraint",
+                ]
+            },
+            terms={
+                "T_i": (
+                    "Kahler modulus for TCS face i (i=1..4), controlling the "
+                    "volume of the i-th 2-cycle in the G2 construction. "
+                    "Re(T_i) > 0 is required for geometric validity"
+                ),
+                r"\Lambda_i": (
+                    "Non-perturbative scale for face i, determined by the "
+                    "geometric volume of the i-th calibrated G2 associative "
+                    "cycle: Lambda_i ~ Vol(Sigma_i)^{-1}"
+                ),
+                "a_i": (
+                    "Racetrack coefficient a_i = b_3/i = 24/i: "
+                    "a_1=24 (strongest), a_2=12, a_3=8, a_4=6 (weakest). "
+                    "Encodes the hierarchy of M2-brane instanton wrapping numbers"
+                ),
+                r"\Lambda_0": (
+                    "Tree-level flux contribution from G-flux through the G2 "
+                    "manifold, analogous to W_0 in KKLT. Provides the constant "
+                    "offset enabling a metastable de Sitter minimum"
+                ),
+                "b_3 = 24": (
+                    "Third Betti number of the G2 manifold, counting the "
+                    "independent associative 3-cycles. Sets the natural scale "
+                    "for instanton actions: a_i = b_3/i"
+                ),
+            }
+        ))
+
         return formulas
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -2922,6 +3210,117 @@ class LagrangianMasterDerivation(SimulationBase):
                         "L_4D: 4D(3,1) effective Lagrangian \u2014 SM + GR + \u039b, all parameters fixed by geometry",
                     ]
                 ),
+                # =============================================================
+                # Part H: 27D Master Lagrangian (Topic 03)
+                # =============================================================
+                ContentBlock(
+                    type="heading",
+                    level=3,
+                    content="27D Master Lagrangian: Full Bulk Action with Dimensional Decomposition"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The 27 dimensions of the PM framework admit a precise physical "
+                        "decomposition into four sectors:\n\n"
+                        "27D = 4D (visible spacetime) + 7D (G2 internal) "
+                        "+ 14D (bridges) + 2D (central sampler)\n\n"
+                        "The 4D visible spacetime M^{3,1} is the Minkowski (or FRW) "
+                        "spacetime we observe. The 7D G2 holonomy manifold X_7 carries "
+                        "the internal geometry whose topology (b_3 = 24 associative "
+                        "3-cycles, chi_eff = 144) determines all 4D coupling constants. "
+                        "The 14D bridge sector consists of 7 bridge pairs (each 2D), "
+                        "which carry the shadow and face structure of the two-layer OR "
+                        "hierarchy. The 2D central sampler C^{2,0} (introduced in v23.1) "
+                        "provides the final two spatial dimensions completing the 27D total."
+                    )
+                ),
+                ContentBlock(
+                    type="callout",
+                    callout_type="info",
+                    title="27D Dimensional Decomposition",
+                    content=(
+                        "4D: Visible spacetime M^{3,1} (3 spatial + 1 temporal)\n"
+                        "7D: G2 holonomy internal manifold X_7 (b_3 = 24, chi_eff = 144)\n"
+                        "14D: 7 bridge pairs (shadow/face structure, 2D each)\n"
+                        "2D: Central sampler C^{2,0} (v23.1 extension)\n"
+                        "Total: 4 + 7 + 14 + 2 = 27 dimensions with (26,1) signature"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The full 27D bulk action collects all geometric and matter "
+                        "contributions into a single integral. Each term has a precise "
+                        "origin in the M-theory compactification:\n\n"
+                        "R_27/(2 kappa_27^2): Einstein-Hilbert gravity in the full "
+                        "27D bulk, ensuring diffeomorphism invariance.\n\n"
+                        "|F_4|^2/2: The M-theory 4-form flux kinetic energy. The field "
+                        "strength F_4 = dC_3 threads the b_3 = 24 independent associative "
+                        "3-cycles of the G2 manifold, stabilising complex structure moduli.\n\n"
+                        "V_mod: The racetrack moduli potential with geometric scaling "
+                        "a_i = b_3/i = 24/i, stabilising the 4 Kahler moduli of the TCS "
+                        "G2 construction.\n\n"
+                        "V_tor: Torsion correction from the Fernandez-Gray tau_1 class.\n\n"
+                        "Sum_n R_n psi_bar_n D_slash psi_n: KK tower of fermion modes "
+                        "dressed by spectral residues.\n\n"
+                        "V_bridge + Sum_f V_face^(f): The two-layer OR structure, where "
+                        "V_bridge (Layer 1, global OR) creates shadows and V_face (Layer 2, "
+                        "local OR) selects the visible face within each shadow."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="bulk-action-27d-v23",
+                    label="(2.1.H1)"
+                ),
+                ContentBlock(
+                    type="heading",
+                    level=3,
+                    content="Racetrack Moduli Potential with Geometric Scaling"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The racetrack moduli potential provides the explicit form of "
+                        "V_mod in the 27D bulk action. The 4 Kahler moduli T_1,...,T_4 "
+                        "of the TCS G2 manifold are stabilised by competing non-perturbative "
+                        "exponentials with geometrically-determined scales a_i = b_3/i = 24/i. "
+                        "This adapts the KKLT (Kachru-Kallosh-Linde-Trivedi 2003) and LVS "
+                        "(Large Volume Scenario, Balasubramanian-Berglund-Conlon-Quevedo 2005) "
+                        "moduli stabilisation frameworks from Type IIB string theory to the "
+                        "M-theory G2 setting.\n\n"
+                        "The key insight is that the instanton scales a_i are not free "
+                        "parameters but are fixed by the G2 topology: a_i = b_3/i = 24/i "
+                        "where b_3 = 24 is the third Betti number counting independent "
+                        "associative 3-cycles. The integrality of all a_i (a_1=24, a_2=12, "
+                        "a_3=8, a_4=6) follows from 24 being divisible by 1, 2, 3, and 4, "
+                        "and is required for well-defined M2-brane wrapping numbers.\n\n"
+                        "The Lambda_i coefficients are determined by the geometric volumes "
+                        "of calibrated G2 associative cycles: Lambda_i ~ Vol(Sigma_i)^{-1}. "
+                        "The constant term Lambda_0 is the tree-level flux contribution, "
+                        "analogous to W_0 in the KKLT construction."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="racetrack-moduli-potential-27d-v23",
+                    label="(2.1.H2)"
+                ),
+                ContentBlock(
+                    type="callout",
+                    callout_type="success",
+                    title="27D Master Lagrangian: Key Results (Topic 03)",
+                    content=(
+                        "Dimensional decomposition: 27 = 4 + 7 + 14 + 2\n"
+                        "Two-layer OR: V_bridge (global, creates shadows) + "
+                        "V_face (local, selects visible face)\n"
+                        "Racetrack scales: a_i = b_3/i = {24, 12, 8, 6} "
+                        "(all positive integers from b_3 = 24)\n"
+                        "Lambda_i from calibrated G2 associative cycle volumes\n"
+                        "M-theory origin: adapts KKLT/LVS from Type IIB CY to G2"
+                    )
+                ),
             ],
             formula_refs=[
                 "vielbein-metric-relation",
@@ -2946,6 +3345,9 @@ class LagrangianMasterDerivation(SimulationBase):
                 "master-action-two-layer-or",
                 "reduced-lagrangian-13d",
                 "reduced-lagrangian-4d",
+                # Part H: 27D Master Lagrangian (Topic 03)
+                "bulk-action-27d-v23",
+                "racetrack-moduli-potential-27d-v23",
             ],
             param_refs=[
                 "derivations.vielbein_rank",
