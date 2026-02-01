@@ -37,8 +37,8 @@ Key Constants from Framework:
 - visible_sector = 125 (SM states)
 - logic_closure = 288 (total state count)
 
-72-Gate System References:
--------------------------
+Gate System References:
+-----------------------
 - G46: Hubble constant H_0 derivation
 - G47: Dark matter density Omega_DM
 - G48: Dark energy w_0 equation of state
@@ -1144,7 +1144,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         """
         return SectionContent(
             section_id="5",
-            subsection_id="5.4",
+            subsection_id="5.4.2",
             title="Complete Cosmology Sector Derivations from G2 Holonomy",
             abstract=(
                 "Comprehensive derivation of dark matter, dark energy, and cosmological "

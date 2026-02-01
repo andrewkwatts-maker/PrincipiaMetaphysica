@@ -275,7 +275,7 @@ class MobiusReturnV21(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="5",
-            subsection_id="5.4",
+            subsection_id="5.4.1",
             title="Cyclic Eternal Return",
             abstract=(
                 "Spinors in the Euclidean bridge traverse closed geodesics "
@@ -456,7 +456,7 @@ class MobiusReturnV21(SimulationBase):
                 path="cyclic.flip_verified",
                 name="Flip Verified",
                 units="boolean",
-                status="GATE",
+                status="DERIVED",
                 description="Verification that spinor flips after one period.",
                 derivation_formula="cyclic-spinor-return",
                 no_experimental_value=True
@@ -465,7 +465,7 @@ class MobiusReturnV21(SimulationBase):
                 path="cyclic.return_verified",
                 name="Return Verified",
                 units="boolean",
-                status="GATE",
+                status="DERIVED",
                 description="Verification that spinor returns to identity after two periods.",
                 derivation_formula="cyclic-spinor-return",
                 no_experimental_value=True
@@ -474,7 +474,7 @@ class MobiusReturnV21(SimulationBase):
                 path="cyclic.continuity_gate",
                 name="Continuity Gate",
                 units="status",
-                status="GATE",
+                status="DERIVED",
                 description="Gate status for trajectory closure and flip modular identity.",
                 derivation_formula="cyclic-geodesic",
                 no_experimental_value=True

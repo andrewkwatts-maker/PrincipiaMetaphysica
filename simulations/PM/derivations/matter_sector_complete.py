@@ -17,8 +17,8 @@ Mathematical Foundation:
 - Yukawa couplings arise from wavefunction overlaps on 3-cycles
 - Neutrino masses via Type-I seesaw with M_R from compactification scale
 
-72-Gate System References:
--------------------------
+Gate System References:
+-----------------------
 - G13: Fermion mass hierarchy mechanism
 - G14: CKM matrix from cycle phases
 - G15: Yukawa texture structure
@@ -1323,7 +1323,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
         """
         return SectionContent(
             section_id="3",
-            subsection_id="3.4",
+            subsection_id="3.4.1",
             title="Complete Matter Sector Derivations from G2 Holonomy",
             abstract=(
                 "Comprehensive derivation of Standard Model matter sector from "

@@ -281,7 +281,7 @@ class ORReductionV21(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="1",
-            subsection_id="1.5",
+            subsection_id="1.3",
             title="OR Reduction Coordinate Sampling",
             abstract=(
                 "Orthogonal Reduction (OR) enables cross-shadow coordinate "
@@ -531,7 +531,7 @@ class ORReductionV21(SimulationBase):
                 path="or.mobius_property",
                 name="Mobius Property Verified",
                 units="boolean",
-                status="GATE",
+                status="DERIVED",
                 description="Verification that R_perp^2 = -I (Mobius double-cover).",
                 derivation_formula="or-mobius-property",
                 no_experimental_value=True

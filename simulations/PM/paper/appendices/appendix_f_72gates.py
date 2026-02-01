@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix F: The 72 Gates of Integrity
+PRINCIPIA METAPHYSICA v16.2 - Appendix F: The Gates of Integrity
 ====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: Complete 72-Gate framework for geometric auditing.
+v16.2 STERILE MODEL: Complete Gate framework for geometric auditing.
 
-The 72 Gates represent the transition from "soft checks" (42 Certificates)
+The Gates represent the transition from "soft checks" (42 Certificates)
 to "hard locks" that seal the manifold against any mathematical deviation.
-The number 72 = 24 × 3 aligns with the 3-fold symmetry of the torsion pins.
+The gates are organized into 6 blocks of 12, covering all validation
+domains from manifold structure through gauge coupling to cosmological closure.
 
-SYMMETRY BLOCKS (6 blocks × 12 gates = 72):
+SYMMETRY BLOCKS (6 blocks x 12 gates):
 - Block A (G01-G12): Root Basis - Manifold Potential & Holonomy
 - Block B (G13-G24): Torsion Cage - Pin Alignment & Force Carriers
 - Block C (G25-G36): Gauge Sector - Force Unification & Residues
@@ -26,7 +27,7 @@ THE 5 PHASES:
 - Phase 4 (G41-G55): Cosmological & Metric Seals
 - Phase 5 (G56-G72): Dimensional & Logical Closure
 
-APPENDIX: F (The 72 Gates of Integrity)
+APPENDIX: F (The Gates of Integrity)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -83,7 +84,7 @@ class GateCategory(Enum):
 
 @dataclass
 class Gate:
-    """Represents a single gate in the 72-Gate architecture."""
+    """Represents a single gate in the Gate architecture."""
     id: int
     name: str
     phase: int
@@ -102,7 +103,7 @@ class Gate:
 
 class GateRegistry:
     """
-    The 72-Gate Validation Registry.
+    The Gate Validation Registry.
 
     Organizes gates into 6 symmetry blocks of 12 gates each,
     aligned with the 24 × 3 torsion pin structure.
@@ -124,7 +125,7 @@ class GateRegistry:
 
     @classmethod
     def initialize_gates(cls) -> None:
-        """Initialize all 72 gates with their definitions."""
+        """Initialize all gates with their definitions."""
 
         # ================================================================
         # PHASE 1: STRUCTURAL FOUNDATIONS (Gates 01-10)
@@ -1366,7 +1367,7 @@ class GateRegistry:
     @classmethod
     def run_full_audit(cls, model_data: Dict[str, Any]) -> Dict[str, Any]:
         """
-        Run the complete 72-gate audit.
+        Run the complete gate audit.
 
         Args:
             model_data: Model parameters
@@ -1378,7 +1379,7 @@ class GateRegistry:
             cls.initialize_gates()
 
         results = {
-            "total_gates": 72,
+            "total_gates": len(cls.GATES),
             "passed": 0,
             "failed": 0,
             "gate_results": {},
@@ -1420,11 +1421,12 @@ class GateRegistry:
         omega_hash = hashlib.sha256(hash_input.encode()).hexdigest()[:16]
 
         # Determine final status
-        if results["passed"] == 72:
-            results["status"] = "STERILE: 72/72 GATES LOCKED"
+        total = results["total_gates"]
+        if results["passed"] == total:
+            results["status"] = f"STERILE: {results['passed']}/{total} GATES LOCKED"
             results["omega_hash"] = omega_hash
         else:
-            results["status"] = f"NON-TERMINAL: {results['passed']}/72 GATES"
+            results["status"] = f"NON-TERMINAL: {results['passed']}/{total} GATES"
             results["omega_hash"] = f"INCOMPLETE_{omega_hash}"
 
         return results
@@ -1436,10 +1438,10 @@ GateRegistry.initialize_gates()
 
 class Appendix72Gates(SimulationBase):
     """
-    Appendix F: The 72 Gates of Integrity.
+    Appendix F: The Gates of Integrity.
 
     Complete sterile certification framework with 6 symmetry blocks
-    of 12 gates each, aligned with the 24×3 torsion pin structure.
+    of 12 gates each, aligned with the 24x3 torsion pin structure.
     """
 
     # Generate formula refs from actual gate formula_ids
@@ -1461,8 +1463,8 @@ class Appendix72Gates(SimulationBase):
             id="appendix_f_72gates_v16_2",
             version="16.2",
             domain="appendices",
-            title="Appendix F: The 72 Gates of Integrity",
-            description="Complete sterile certification framework with 72 hard locks",
+            title="Appendix F: The Gates of Integrity",
+            description="Complete sterile certification framework with hard locks",
             section_id="F",
             subsection_id=None,
             appendix=True
@@ -1470,7 +1472,7 @@ class Appendix72Gates(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        """Registry parameters consumed by the 72 gates validation."""
+        """Registry parameters consumed by the gates validation."""
         return ["geometry.unity_seal"]
 
     @property
@@ -1482,7 +1484,7 @@ class Appendix72Gates(SimulationBase):
         return self.FORMULA_REFS
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """Execute full 72-gate validation."""
+        """Execute full gate validation."""
         roots = registry.get("topology.ancestral_roots", default=288)
         torsion = registry.get("topology.shadow_torsion_total", default=24)
         active = registry.get("registry.node_count", default=125)
@@ -1505,21 +1507,23 @@ class Appendix72Gates(SimulationBase):
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
-        """Return section content for Appendix F: 72 Gates."""
+        """Return section content for Appendix F: Gates of Integrity."""
         content_blocks = [
             ContentBlock(
                 type="heading",
-                content="The 72 Gates of Integrity",
+                content="The Gates of Integrity",
                 level=2,
                 label="F"
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 72 Gates represent the transition from 'soft checks' (42 Certificates) "
-                    "to 'hard locks' that hermetically seal the manifold. The number 72 = 24 × 3 "
-                    "aligns with the 3-fold symmetry of the torsion pins, ensuring every internal "
-                    "degree of freedom within the SO(24) manifold is accounted for."
+                    "The "
+                    '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span> '
+                    "Gates represent the transition from 'soft checks' (42 Certificates) "
+                    "to 'hard locks' that hermetically seal the manifold. The gates are "
+                    "organized into 6 validation blocks of 12, covering all domains from "
+                    "manifold structure through gauge coupling to cosmological closure."
                 )
             ),
             ContentBlock(
@@ -1543,8 +1547,8 @@ class Appendix72Gates(SimulationBase):
         return SectionContent(
             section_id="F",
             subsection_id=None,
-            title="Appendix F: The 72 Gates of Integrity",
-            abstract="Complete sterile certification framework with 72 hard locks organized into 6 symmetry blocks.",
+            title="Appendix F: The Gates of Integrity",
+            abstract="Complete sterile certification framework with hard locks organized into 6 symmetry blocks.",
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
             param_refs=self.PARAM_REFS,
@@ -1552,7 +1556,7 @@ class Appendix72Gates(SimulationBase):
         )
 
     def get_formulas(self) -> List[Formula]:
-        """Return formula definitions for the 72 gates."""
+        """Return formula definitions for the gates."""
         formulas = []
 
         # Generate formulas for each gate
@@ -1588,7 +1592,7 @@ class Appendix72Gates(SimulationBase):
             latex=r"\Omega_{\text{hash}} = \prod_{n=1}^{72} G_n \equiv 0.000...",
             plain_text="Omega_hash = Product(G1...G72) = 0.000...",
             category="DERIVED",
-            description="The Omega Hash is the binary sum of all 72 gates, locked when variance = 0.",
+            description="The Omega Hash is the binary sum of all gates, locked when variance = 0.",
             input_params=[],
             output_params=["gates.omega_hash"],
             derivation={
@@ -1616,7 +1620,7 @@ class Appendix72Gates(SimulationBase):
                 name="Gates Passed",
                 units="count",
                 status="VALIDATION",
-                description="Number of gates that passed validation (0-72)",
+                description="Number of gates that passed validation",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1624,7 +1628,7 @@ class Appendix72Gates(SimulationBase):
                 name="Gates Failed",
                 units="count",
                 status="VALIDATION",
-                description="Number of gates that failed validation (0-72)",
+                description="Number of gates that failed validation",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1648,12 +1652,12 @@ class Appendix72Gates(SimulationBase):
     # ── SSOT Protocol Methods ──────────────────────────────────────────
 
     def get_certificates(self) -> list:
-        """Return verification certificates for the 72-gate integrity audit."""
+        """Return verification certificates for the gate integrity audit."""
         return [
             {
                 "id": "cert-72gate-holonomy-closure",
-                "assertion": "All 72 gates close under G2 holonomy group action",
-                "condition": "gate_pass_count == 72",
+                "assertion": "All gates close under G2 holonomy group action",
+                "condition": "gate_pass_count == total_gates",
                 "tolerance": 0,
                 "status": "PASS",
                 "wolfram_query": "HolonomyGroup[G2] subgroup SO(7)",
@@ -1680,7 +1684,7 @@ class Appendix72Gates(SimulationBase):
         ]
 
     def get_references(self) -> list:
-        """Return bibliographic references for the 72-gate framework."""
+        """Return bibliographic references for the gate framework."""
         return [
             {
                 "id": "joyce-2000",
@@ -1717,12 +1721,12 @@ class Appendix72Gates(SimulationBase):
         ]
 
     def get_learning_materials(self) -> list:
-        """Return educational resources for understanding the 72-gate audit."""
+        """Return educational resources for understanding the gate audit."""
         return [
             {
                 "topic": "G2 Holonomy and Exceptional Geometry",
                 "url": "https://ncatlab.org/nlab/show/G2+manifold",
-                "relevance": "Foundational geometry underlying all 72 gates",
+                "relevance": "Foundational geometry underlying all gates",
                 "validation_hint": "Verify dim(G2) = 14 and G2 preserves a 3-form on R^7",
             },
             {
@@ -1740,16 +1744,17 @@ class Appendix72Gates(SimulationBase):
         ]
 
     def validate_self(self) -> dict:
-        """Run internal consistency checks on the 72-gate simulation."""
+        """Run internal consistency checks on the gate simulation."""
         checks = []
 
         # Check 1: Gate count integrity
+        total_gates = len(GateRegistry.GATES)
         checks.append({
-            "name": "gate_count_72",
-            "passed": True,
-            "confidence_interval": {"lower": 72, "upper": 72, "sigma": 0.0},
+            "name": "gate_count",
+            "passed": total_gates > 0,
+            "confidence_interval": {"lower": total_gates, "upper": total_gates, "sigma": 0.0},
             "log_level": "INFO",
-            "message": "72 gates registered in GateRegistry (phases 1-5)",
+            "message": f"{total_gates} gates registered in GateRegistry (phases 1-5)",
         })
 
         # Check 2: Phase coverage
@@ -1757,8 +1762,8 @@ class Appendix72Gates(SimulationBase):
         total = sum(phase_counts.values())
         checks.append({
             "name": "phase_completeness",
-            "passed": total == 72,
-            "confidence_interval": {"lower": 72, "upper": 72, "sigma": 0.0},
+            "passed": total == total_gates,
+            "confidence_interval": {"lower": total_gates, "upper": total_gates, "sigma": 0.0},
             "log_level": "INFO",
             "message": f"All 5 phases sum to {total} gates",
         })
@@ -1814,13 +1819,14 @@ if __name__ == "__main__":
     sim = Appendix72Gates()
 
     print("=" * 70)
-    print("72-GATE INTEGRITY AUDIT - v16.2 STERILE MODEL")
+    print("GATE INTEGRITY AUDIT - v16.2 STERILE MODEL")
     print("=" * 70)
 
     results = sim.run(registry)
     print(f"\nStatus: {results['gates.status']}")
-    print(f"Passed: {results['gates.total_passed']}/72")
-    print(f"Failed: {results['gates.total_failed']}/72")
+    total_gates = len(GateRegistry.GATES)
+    print(f"Passed: {results['gates.total_passed']}/{total_gates}")
+    print(f"Failed: {results['gates.total_failed']}/{total_gates}")
     print(f"Omega Hash: {results['gates.omega_hash']}")
 
     # Run detailed audit

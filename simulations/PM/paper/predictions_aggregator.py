@@ -1614,7 +1614,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 label="(8.2)",
                 latex=r"P_{\text{leak}} = \frac{1}{144} e^{-12} \approx 6.9 \times 10^{-6}",
                 plain_text="P_leak = (1/144) * exp(-12) ≈ 6.9e-6",
-                category="prediction",
+                category="PREDICTED",
                 description=(
                     "Dark force leakage probability — testable prediction from two-layer OR structure. "
                     "EM and gravity leak at this rate; strong/weak forces are zero."
@@ -1647,7 +1647,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 label="(8.3)",
                 latex=r"\delta\varphi = \alpha_{\text{leak}} \times \frac{L}{\lambda_{\text{dB}}}",
                 plain_text="delta_phi = alpha_leak * L / lambda_dB",
-                category="prediction",
+                category="PREDICTED",
                 description=(
                     "Cross-shadow phase shift from two-layer OR bridge interference. "
                     "The leakage coupling alpha_leak = 1/sqrt(6) ~ 0.408 induces a measurable "
@@ -1682,7 +1682,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 label="(8.4)",
                 latex=r"P_{\text{noise}} = \frac{1}{144} e^{-12} \, P_{\text{thermal}}",
                 plain_text="P_noise = (1/144) * exp(-12) * P_thermal ≈ 6.9e-8 * P_thermal",
-                category="prediction",
+                category="PREDICTED",
                 description=(
                     "Dark sector vacuum noise excess from two-layer OR bridge leakage. "
                     "The bridge probability P_leak = (1/144)*e^{-12} ~ 6.9e-8 sets the "
@@ -1717,7 +1717,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 label="(8.5)",
                 latex=r"\frac{\delta h}{h} \sim T_\omega^2 = \frac{1}{6}",
                 plain_text="delta_h / h ~ T_omega^2 = 1/6 ≈ 0.167",
-                category="prediction",
+                category="PREDICTED",
                 description=(
                     "Gravitational wave polarization anomaly from G2 torsion coupling. "
                     "The torsion parameter T_omega = 1/sqrt(6) ~ 0.408 introduces a "
@@ -1762,7 +1762,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "If g_{a gamma gamma} < 1e-12 GeV^{-1} at m_a ~ 6 microeV "
                     "then f_a > 1e12 GeV"
                 ),
-                category="FALSIFICATION",
+                category="PREDICTED",
                 description=(
                     "ADMX Phase III/IV exclusion window for QCD axion at ~6 microeV. "
                     "If ADMX excludes the axion-photon coupling g_{a gamma gamma} below "
@@ -1804,7 +1804,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 plain_text=(
                     "Delta N_eff < 0.06 implies sterile neutrino sector constrained"
                 ),
-                category="FALSIFICATION",
+                category="PREDICTED",
                 description=(
                     "CMB-S4 sensitivity to sterile neutrino sector. The PM mirror "
                     "sector predicts Delta N_eff ~ 0.08-0.16 from mirror neutrinos "
@@ -1845,7 +1845,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 plain_text=(
                     "w_0 = -23/24 ~ -0.958 (PM prediction from b3 = 24)"
                 ),
-                category="FALSIFICATION",
+                category="PREDICTED",
                 description=(
                     "DESI dark energy equation of state test. The PM framework derives "
                     "w_0 = -1 + 1/b_3 = -23/24 from the third Betti number b_3 = 24 of "

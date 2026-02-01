@@ -376,6 +376,36 @@ class G2CompactificationV21(SimulationBase):
                     "b3": "Third Betti number (24 total, 12 per shadow)",
                 }
             ),
+            Formula(
+                id="g2-chiral-index",
+                label="(2.8)",
+                latex=r"I_{\text{chiral}} = \frac{b_3}{8} = \frac{24}{8} = 3",
+                plain_text="I_chiral = b3/8 = 24/8 = 3",
+                category="DERIVED",
+                description="Chiral index from G2 conical singularities: the number of chiral zero modes localized at ADE-type singularities on the G2 manifold equals b3 divided by the octonion dimension.",
+                inputParams=["topology.elder_kads"],
+                outputParams=["g2.chiral_index"],
+                input_params=["topology.elder_kads"],
+                output_params=["g2.chiral_index"],
+                derivation={
+                    "method": "singularity_index",
+                    "parentFormulas": ["g2-holonomy-condition"],
+                    "steps": [
+                        {"description": "ADE singularities on G2 support chiral zero modes",
+                         "formula": r"I = \int_{M^7} \hat{A}(TM) \wedge \text{ch}(E)"},
+                        {"description": "For b3 associative 3-cycles with octonionic structure",
+                         "formula": r"I_{\text{chiral}} = b_3 / \dim(\mathbb{O}) = b_3 / 8"},
+                        {"description": "Evaluate for TCS #187 with b3 = 24",
+                         "formula": r"I_{\text{chiral}} = 24 / 8 = 3"},
+                    ],
+                    "references": ["Acharya-Witten (2001)", "Joyce (2000)"]
+                },
+                terms={
+                    "I_chiral": "Chiral index: net number of chiral zero modes",
+                    "b_3": "Third Betti number (24)",
+                    "8": "Octonion dimension (division algebra sector size)",
+                }
+            ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -412,8 +442,8 @@ class G2CompactificationV21(SimulationBase):
                 path="g2.holonomy_gate",
                 name="Holonomy Gate Status",
                 units="status",
-                status="GATE",
-                description="Verification that G2 holonomy conditions are satisfied.",
+                status="DERIVED",
+                description="Verification that G2 holonomy conditions are satisfied: d(phi)=0 and d(*phi)=0 for torsion-free G2 structure.",
                 derivation_formula="g2-holonomy-condition",
                 no_experimental_value=True
             ),

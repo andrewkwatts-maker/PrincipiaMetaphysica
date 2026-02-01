@@ -614,7 +614,7 @@ def sp2r_ctc_proof() -> dict:
                 label="(D'.2)",
                 latex=r"X^\mu P_\mu = 0",
                 plain_text="X^mu P_mu = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Primary Sp(2,R) gauge constraint. Phase space orthogonality condition "
                     "that eliminates the second time dimension from physical observables."
@@ -640,7 +640,7 @@ def sp2r_ctc_proof() -> dict:
                 label="(D'.1)",
                 latex=r"\{X \cdot P, X^2, P^2\} \quad \text{form Sp}(2,\mathbb{R}) \text{ Lie algebra}",
                 plain_text="{X.P, X^2, P^2} form Sp(2,R) Lie algebra",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The three generators of Sp(2,R) gauge symmetry form the sl(2,R) ~ sp(2,R) "
                     "Lie algebra with commutation relations [X*P, X^2] = 2X^2, etc."
@@ -715,7 +715,7 @@ def sp2r_ctc_proof() -> dict:
                 label="(D'.6)",
                 latex=r"\text{Single time } (\text{12,1}) \quad \Longrightarrow \quad \text{No CTCs}",
                 plain_text="Single time (12,1) => No CTCs",
-                category="THEOREM",
+                category="DERIVED",
                 description=(
                     "No-CTC theorem: In (12,1) signature shadow spacetime with single time "
                     "dimension, closed timelike curves are topologically forbidden due to "
@@ -741,7 +741,7 @@ def sp2r_ctc_proof() -> dict:
                 label="(D'.1b)",
                 latex=r"[X \cdot P, X^2] = 2X^2, \quad [X \cdot P, P^2] = -2P^2, \quad [X^2, P^2] = 4 X \cdot P",
                 plain_text="[X.P, X^2] = 2X^2, [X.P, P^2] = -2P^2, [X^2, P^2] = 4X.P",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Sp(2,R) ~ sl(2,R) Lie algebra commutation relations. These define the "
                     "gauge symmetry structure that enables dimensional reduction."
@@ -764,7 +764,7 @@ def sp2r_ctc_proof() -> dict:
                 label="(D'.3)",
                 latex=r"\chi_1 = X^\mu P_\mu = 0, \quad \chi_2 = X^2 = 0, \quad \chi_3 = P^2 = 0",
                 plain_text="chi_1 = X.P = 0, chi_2 = X^2 = 0, chi_3 = P^2 = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The three first-class constraints of Sp(2,R) symmetry. These constraints "
                     "commute weakly (on constraint surface) and generate gauge transformations."

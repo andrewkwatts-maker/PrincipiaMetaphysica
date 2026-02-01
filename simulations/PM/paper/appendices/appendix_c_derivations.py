@@ -559,7 +559,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                 label="(C.1)",
                 latex=r"\nabla \eta = 0 \quad \Longrightarrow \quad \text{Hol}(g) \subseteq G_2 \quad \Longrightarrow \quad \nabla\varphi = 0",
                 plain_text="∇η = 0 ⟹ Hol(g) ⊆ G2 ⟹ ∇φ = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Derivation of G2 holonomy from parallel spinor condition. "
                     "Shows equivalence between spinor, holonomy, and 3-form formulations."
@@ -715,6 +715,17 @@ class AppendixCExtendedDerivations(SimulationBase):
                 ),
                 input_params=["gauge.M_GUT", "gauge.ALPHA_GUT", "topology.K_MATCHING"],
                 output_params=["proton_decay.tau_p_years"],
+                derivation={
+                    "method": "GUT proton decay with geometric suppression",
+                    "parentFormulas": ["unification-condition-derivation"],
+                    "steps": [
+                        "Standard GUT decay amplitude: A_p ~ alpha_GUT^2 * m_p^5 / M_GUT^4",
+                        "In G2 compactification, matter and Higgs localize on separated 3-cycles with neck distance d",
+                        "Wavefunction overlap suppression: |<psi_matter|psi_Higgs>|^2 ~ exp(-2*pi*d/R)",
+                        "For TCS with K=4 matching fibres: d/R ~ 1/(2*pi*K), giving suppression exp(1/K)",
+                        "Modified lifetime: tau_p = C * M_GUT^4 / (m_p^5 * alpha_GUT^2) * exp(1/K) ~ 3.9e34 years",
+                    ],
+                },
                 terms={
                     "τ_p": "Proton lifetime",
                     "C": "Hadronic matrix element prefactor",

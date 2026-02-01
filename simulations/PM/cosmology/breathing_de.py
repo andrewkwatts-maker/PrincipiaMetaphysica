@@ -730,8 +730,8 @@ class BreathingDEV21(SimulationBase):
                 path="breathing.mechanism_verified",
                 name="Mechanism Gate",
                 units="status",
-                status="GATE",
-                description="Verification that breathing mechanism is consistent.",
+                status="DERIVED",
+                description="Verification that breathing mechanism is consistent: bridge density oscillation converges within tolerance.",
                 derivation_formula="breathing-rho-formula",
                 no_experimental_value=True
             ),

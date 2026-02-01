@@ -293,7 +293,7 @@ class DiracSimulationV18(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="4",
-            subsection_id="4.7",
+            subsection_id="4.7.1",
             title="Dirac Equation Validations",
             abstract=(
                 "Numerical validation of wave function evolution under the effective "

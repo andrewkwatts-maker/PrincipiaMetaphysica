@@ -7,8 +7,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="72 Gates of Integrity - Complete sterile certification framework with 72 hard locks from G2 topology">
-    <title>72 Gates of Integrity - Principia Metaphysica v23.3</title>
+    <meta name="description" content="Gates of Integrity - Complete sterile certification framework with hard locks from G2 topology">
+    <title>Gates of Integrity - Principia Metaphysica v23.3</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pm-common.css">
     <link rel="stylesheet" href="../css/pm-header.css">
@@ -686,16 +686,16 @@
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
             <span class="separator">/</span>
-            <span>72 Gates of Integrity</span>
+            <span>Gates of Integrity</span>
         </nav>
 
         <div class="cert-hero">
             <span class="version-badge">v23.3</span>
-            <h1>72 Gates of Integrity</h1>
+            <h1><span id="hero-gate-count">72</span> Gates of Integrity</h1>
             <p class="lead">
-                Complete sterile certification framework with 72 hard locks organized into 6 symmetry blocks.
+                Complete sterile certification framework with <span id="lead-gate-count">72</span> hard locks organized into 6 symmetry blocks.
                 $72 = 24 \times 3$ aligns with the 3-fold symmetry of the torsion pins.
-                Every gate is <strong>LOCKED</strong> &mdash; STERILE: 72/72 GATES LOCKED.
+                Every gate is <strong>LOCKED</strong> &mdash; STERILE: <span id="sterile-gate-ratio">72/72</span> GATES LOCKED.
             </p>
         </div>
 
@@ -724,11 +724,11 @@
         <!-- Statistics -->
         <div class="stats-bar">
             <div class="stat-item">
-                <div class="stat-value" id="gates-total">72</div>
+                <div class="stat-value" id="gates-total">--</div>
                 <div class="stat-label">Gates</div>
             </div>
             <div class="stat-item">
-                <div class="stat-value" id="gates-locked">72</div>
+                <div class="stat-value" id="gates-locked">--</div>
                 <div class="stat-label">Locked</div>
             </div>
             <div class="stat-item">
@@ -774,7 +774,7 @@
         <div class="validate-section">
             <div class="validate-info" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; text-align: center;">
                 <h4 style="color: var(--accent-primary); margin-bottom: 0.75rem;">Run Validation Locally</h4>
-                <p style="color: var(--text-secondary); margin-bottom: 1rem;">To validate all 72 gates, run the simulation suite from your terminal:</p>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">To validate all gates, run the simulation suite from your terminal:</p>
                 <code style="display: inline-block; background: rgba(0,0,0,0.4); padding: 0.75rem 1.5rem; border-radius: 8px; color: #51cf66; font-family: monospace;">python run_all_simulations.py</code>
                 <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 1rem;">This validates all certificates and outputs OMEGA = 0 for STERILE confirmation.</p>
             </div>
@@ -830,7 +830,7 @@
   </script>
 
   <script>
-    // 72 Gates of Integrity - Loaded dynamically from JSON
+    // Gates of Integrity - Loaded dynamically from JSON
     let GATES = [];
     let GATES_METADATA = {};
     let VALIDATION_REPORT = null;
@@ -845,9 +845,19 @@
         GATES_METADATA = data;
 
         // Update statistics
-        document.getElementById('gates-total').textContent = data.architecture?.total_gates || GATES.length;
-        document.getElementById('gates-locked').textContent = data.validation_summary?.locked_count || GATES.length;
+        const totalGates = data.architecture?.total_gates || GATES.length;
+        const lockedCount = data.validation_summary?.locked_count || GATES.length;
+        document.getElementById('gates-total').textContent = totalGates;
+        document.getElementById('gates-locked').textContent = lockedCount;
         document.getElementById('gates-open').textContent = data.validation_summary?.open_count || 0;
+
+        // Update hero section dynamic gate counts
+        const heroCount = document.getElementById('hero-gate-count');
+        if (heroCount) heroCount.textContent = totalGates;
+        const leadCount = document.getElementById('lead-gate-count');
+        if (leadCount) leadCount.textContent = totalGates;
+        const sterileRatio = document.getElementById('sterile-gate-ratio');
+        if (sterileRatio) sterileRatio.textContent = `${lockedCount}/${totalGates}`;
 
         console.log(`Loaded ${GATES.length} gates`);
         return true;
@@ -1661,7 +1671,7 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
       // Render gates (or fallback to legacy certificates)
       renderGates();
 
-      console.log(`Certificates page loaded: ${gatesLoaded ? '72 Gates' : 'Legacy 42 Certificates'}`);
+      console.log(`Certificates page loaded: ${gatesLoaded ? GATES.length + ' Gates' : 'Legacy 42 Certificates'}`);
       console.log(`Wolfram validation: ${wolframLoaded ? `${WOLFRAM_RESULTS.length} results` : 'not available'}`);
       console.log(`Validation report: ${validationLoaded ? `${VALIDATION_REPORT.summary?.total_parameters} parameters` : 'not available'}`);
       console.log(`Certificates data: ${certificatesLoaded ? `${CERTIFICATES_DATA.summary?.verified} verified` : 'not available'}`);

@@ -1376,7 +1376,7 @@ class WilsonLoopConfinementV18(SimulationBase):
 
         return SectionContent(
             section_id="8",
-            subsection_id="8.3",
+            subsection_id="8.1",
             title="QCD Confinement from Wilson Loops",
             abstract=(
                 "Derivation of QCD color confinement from G2 manifold topology. "

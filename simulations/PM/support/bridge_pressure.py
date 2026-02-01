@@ -305,7 +305,7 @@ class BridgePressureV21(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="1",
-            subsection_id="1.5",
+            subsection_id="1.2",
             title="Euclidean Bridge and OR Reduction",
             abstract=(
                 "The (24,1) bulk shares a 2D Euclidean bridge between dual shadows. "
@@ -818,9 +818,9 @@ class BridgePressureV21(SimulationBase):
                 plain_text=(
                     "alpha_warp^(i) = exp(-T_bridge_i/T_core) * (1 + T_omega^2)^(-1/2)"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
-                    "Warping strength per bridge pair — exponential suppression from "
+                    "Warping strength per bridge pair -- exponential suppression from "
                     "moduli hierarchy with torsion correction"
                 ),
                 inputParams=["topology.elder_kads", "topology.mephorash_chi"],
@@ -874,7 +874,7 @@ class BridgePressureV21(SimulationBase):
                 plain_text=(
                     "P_leak_G = |R_n|^2 * exp(-2*S_E) * |C_G|^2, S_E = chi_eff/b3 = 6"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "General dark force leakage probability for gauge boson of group G. "
                     "S_E is the Euclidean bridge action (torsion + flux cost)."
@@ -936,10 +936,10 @@ class BridgePressureV21(SimulationBase):
                     "P_leak = (1/144) * exp(-12) approx 6.9e-6, "
                     "alpha_leak_light = sqrt(P_leak) approx exp(-6) approx 0.00248"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
-                    "Dark light leakage — cross-shadow EM propagation probability via "
-                    "Euclidean bridge instanton. ~230x weaker than dark matter portal."
+                    "Dark light leakage -- cross-shadow EM propagation probability via "
+                    "Euclidean bridge instanton. Approximately 230x weaker than dark matter portal."
                 ),
                 inputParams=["topology.mephorash_chi", "topology.elder_kads"],
                 derivation={
@@ -1128,9 +1128,9 @@ class BridgePressureV21(SimulationBase):
                     "alpha_strong ~ 10^(-37.5), alpha_weak ~ 0, "
                     "alpha_EM approx 0.00248, alpha_grav approx 0.00248"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
-                    "Dark force hierarchy — Strong/Weak forces cannot leak "
+                    "Dark force hierarchy -- Strong/Weak forces cannot leak "
                     "(confinement/mass), EM/Gravity leak at ~10^{-3} "
                     "(Euclidean suppression only)."
                 ),
@@ -1235,7 +1235,7 @@ class BridgePressureV21(SimulationBase):
                 path="bridge.viability",
                 name="Bridge Pressure Viability",
                 units="dimensionless",
-                status="GATE",
+                status="DERIVED",
                 description=(
                     "Viability score: mean(rho_breath) / std(rho_breath). "
                     "Gate target: > 0.8 for LOCKED status."

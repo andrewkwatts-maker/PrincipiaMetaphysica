@@ -511,7 +511,7 @@ class ZeroModeIndexV18(SimulationBase):
                 "Reference: Sethi-Vafa-Witten (1996), Acharya-Witten (2001)."
             ),
             section_id="4",
-            subsection_id="4.2"
+            subsection_id="4.2.2"
         )
 
     @property
@@ -916,7 +916,7 @@ class ZeroModeIndexV18(SimulationBase):
 
         return SectionContent(
             section_id="4",
-            subsection_id="4.2A",
+            subsection_id="4.2.2",
             title="Fermion Generations from Atiyah-Singer Index Theorem",
             abstract=(
                 "Rigorous derivation of n_gen = 3 from the Atiyah-Singer index theorem "
@@ -950,11 +950,11 @@ class ZeroModeIndexV18(SimulationBase):
                 label="(4.2.A1)",
                 latex=r"\text{index}(D) = \frac{1}{48} \int_M p_1(TM) \wedge \frac{F}{2\pi} = \frac{\chi_{\text{eff}}}{48}",
                 plain_text="index(D) = (1/48) * integral_M [p1(TM) ^ F/(2pi)] = chi_eff / 48",
-                category="EXACT",
+                category="ESTABLISHED",
                 description=(
                     "Atiyah-Singer index theorem for the Dirac operator on a G2 manifold "
                     "with G4-flux. The divisor 48 arises from the A-hat genus normalization. "
-                    "For chi_eff = 144: index(D) = 3. This is an EXACT topological result."
+                    "For chi_eff = 144: index(D) = 3. This is an exact topological result."
                 ),
                 inputParams=["topology.mephorash_chi"],
                 outputParams=["index.dirac_index"],
@@ -1022,10 +1022,10 @@ class ZeroModeIndexV18(SimulationBase):
                 label="(4.2.A2)",
                 latex=r"n_{\text{gen}} = |\text{index}(D)| = \frac{\chi_{\text{eff}}}{48} = \frac{144}{48} = 3",
                 plain_text="n_gen = |index(D)| = chi_eff / 48 = 144 / 48 = 3",
-                category="EXACT",
+                category="ESTABLISHED",
                 description=(
                     "Number of fermion generations from the Dirac operator index. "
-                    "This is an EXACT topological result with NO free parameters. "
+                    "This is an exact topological result with no free parameters. "
                     "The value 3 matches the observed number of generations in nature."
                 ),
                 inputParams=["topology.mephorash_chi"],
@@ -1186,11 +1186,11 @@ class ZeroModeIndexV18(SimulationBase):
                 path="index.dirac_index",
                 name="Dirac Operator Index",
                 units="dimensionless",
-                status="EXACT",
+                status="ESTABLISHED",
                 description=(
                     "Index of the Dirac operator on the G2 manifold, computed via "
                     "the Atiyah-Singer index theorem: index(D) = chi_eff/48 = 144/48 = 3. "
-                    "This is an EXACT topological result with no approximations."
+                    "This is an exact topological result with no approximations."
                 ),
                 derivation_formula="atiyah-singer-g2-index",
                 no_experimental_value=True
@@ -1200,10 +1200,10 @@ class ZeroModeIndexV18(SimulationBase):
                 path="index.n_generations",
                 name="Number of Fermion Generations",
                 units="dimensionless",
-                status="EXACT",
+                status="ESTABLISHED",
                 description=(
                     "Number of chiral fermion generations from the Dirac index: "
-                    "n_gen = |index(D)| = 3. EXACT topological result matching "
+                    "n_gen = |index(D)| = 3. Exact topological result matching "
                     "the observed 3 generations in the Standard Model."
                 ),
                 derivation_formula="generation-from-index",
@@ -1216,7 +1216,7 @@ class ZeroModeIndexV18(SimulationBase):
                 path="index.is_exact_integer",
                 name="Exact Integer Flag",
                 units="boolean",
-                status="EXACT",
+                status="ESTABLISHED",
                 description=(
                     "True if chi_eff is exactly divisible by 48, ensuring "
                     "the generation count is an exact integer with no rounding."
@@ -1266,7 +1266,7 @@ class ZeroModeIndexV18(SimulationBase):
                 path="index.cabibbo_deviation_sigma",
                 name="Cabibbo Angle Deviation",
                 units="sigma",
-                status="VALIDATED",
+                status="DERIVED",
                 description=(
                     "Number of standard deviations between the geometric prediction "
                     "epsilon = 0.2231 and the measured Cabibbo angle V_us = 0.2257. "

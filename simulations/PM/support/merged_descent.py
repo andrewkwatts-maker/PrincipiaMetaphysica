@@ -154,10 +154,9 @@ class MergedDescentV21(SimulationBase):
     def output_formulas(self) -> List[str]:
         """Return formula IDs this simulation provides."""
         return [
-            "bulk-signature-24-1",
+            "bulk-signature-26-1",
             "descent-chain-full",
             "condensate-structure",
-            "dimension-accounting",
         ]
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
@@ -374,7 +373,7 @@ class MergedDescentV21(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="1",
-            subsection_id="1.1",
+            subsection_id="1.1.1",
             title="Foundations of Dimensional Descent",
             abstract=(
                 "The 27D(26,1) bulk with unified time descends through dual "
@@ -579,7 +578,7 @@ class MergedDescentV21(SimulationBase):
                 path="descent.descent_chain_verified",
                 name="Descent Chain Gate",
                 units="status",
-                status="GATE",
+                status="DERIVED",
                 description="Verification that all descent stages are consistent.",
                 derivation_formula="descent-chain-full",
                 no_experimental_value=True

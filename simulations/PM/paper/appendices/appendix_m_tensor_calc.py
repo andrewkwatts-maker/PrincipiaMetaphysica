@@ -674,7 +674,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.1)",
                 latex=r"V'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} V^\nu",
                 plain_text="V'^mu = (dx'^mu/dx^nu) V^nu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Contravariant vector transformation law. Upper-index components "
                     "transform with the Jacobian matrix of the coordinate transformation."
@@ -702,7 +702,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.2)",
                 latex=r"W'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} W_\nu",
                 plain_text="W'_mu = (dx^nu/dx'^mu) W_nu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Covariant vector transformation law. Lower-index components "
                     "transform with the inverse Jacobian matrix."
@@ -730,7 +730,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.3)",
                 latex=r"g'_{\mu\nu} = \frac{\partial x^\alpha}{\partial x'^\mu} \frac{\partial x^\beta}{\partial x'^\nu} g_{\alpha\beta}",
                 plain_text="g'_munu transforms as (0,2) tensor",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Metric tensor covariant transformation law. The metric is a "
                     "rank-(0,2) tensor transforming with two inverse Jacobian factors."
@@ -759,7 +759,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.4)",
                 latex=r"T'^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\alpha} \frac{\partial x^\beta}{\partial x'^\nu} T^\alpha{}_\beta",
                 plain_text="T'^mu_nu = (dx'^mu/dx^a)(dx^b/dx'^nu) T^a_b",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Mixed tensor transformation law. Upper indices transform with "
                     "Jacobian, lower indices with inverse Jacobian."
@@ -787,7 +787,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.5)",
                 latex=r"A^\mu B_\mu \equiv \sum_{\mu=0}^{n-1} A^\mu B_\mu",
                 plain_text="A^mu B_mu = sum over mu of A^mu * B_mu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Einstein summation convention. Repeated indices (one upper, one lower) "
                     "imply summation over all index values."
@@ -815,7 +815,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.6)",
                 latex=r"V_\mu = g_{\mu\nu} V^\nu",
                 plain_text="V_mu = g_munu V^nu (lowering index)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Index lowering operation. The metric tensor converts contravariant "
                     "components to covariant components."
@@ -843,7 +843,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.7)",
                 latex=r"V^\mu = g^{\mu\nu} V_\nu",
                 plain_text="V^mu = g^munu V_nu (raising index)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Index raising operation. The inverse metric tensor converts covariant "
                     "components to contravariant components."
@@ -871,7 +871,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.8)",
                 latex=r"\nabla_\mu V^\nu = \partial_\mu V^\nu + \Gamma^\nu_{\mu\lambda} V^\lambda",
                 plain_text="nabla_mu V^nu = partial_mu V^nu + Gamma^nu_mu,lambda V^lambda",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Covariant derivative of a contravariant vector. The connection "
                     "term (Christoffel symbol) accounts for basis vector changes."
@@ -900,7 +900,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.9)",
                 latex=r"\Gamma_{\mu\nu\lambda} = \frac{1}{2} \left( \partial_\nu g_{\mu\lambda} + \partial_\lambda g_{\mu\nu} - \partial_\mu g_{\nu\lambda} \right)",
                 plain_text="Gamma_mu,nu,lambda = (1/2)(dg_mu,lambda/dx^nu + dg_mu,nu/dx^lambda - dg_nu,lambda/dx^mu)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Christoffel symbol of the first kind. All indices covariant, "
                     "defined directly from metric derivatives."
@@ -929,7 +929,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.10)",
                 latex=r"\Gamma^\lambda_{\mu\nu} = \frac{1}{2} g^{\lambda\sigma} \left( \partial_\mu g_{\nu\sigma} + \partial_\nu g_{\mu\sigma} - \partial_\sigma g_{\mu\nu} \right)",
                 plain_text="Gamma^lambda_mu,nu = (1/2) g^lambda,sigma (dg_nu,sigma/dx^mu + dg_mu,sigma/dx^nu - dg_mu,nu/dx^sigma)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Christoffel symbol of the second kind. One upper index, obtained "
                     "by raising the first index with the inverse metric."
@@ -957,7 +957,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.11)",
                 latex=r"\nabla_\lambda g_{\mu\nu} = 0",
                 plain_text="nabla_lambda g_munu = 0 (metric compatibility)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Metric compatibility condition. The covariant derivative of the "
                     "metric vanishes for the Levi-Civita connection."
@@ -984,7 +984,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.12)",
                 latex=r"u^\mu \nabla_\mu V^\nu = \frac{dV^\nu}{d\lambda} + \Gamma^\nu_{\mu\sigma} u^\mu V^\sigma = 0",
                 plain_text="dV^nu/dlambda + Gamma^nu_mu,sigma u^mu V^sigma = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Parallel transport equation. A vector is parallel transported "
                     "along a curve if its covariant derivative along the tangent vanishes."
@@ -1014,7 +1014,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.13)",
                 latex=r"\frac{d^2 x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha\beta} \frac{dx^\alpha}{d\lambda} \frac{dx^\beta}{d\lambda} = 0",
                 plain_text="d^2 x^mu / dlambda^2 + Gamma^mu_ab (dx^a/dlambda)(dx^b/dlambda) = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Geodesic equation. Describes the straightest possible path in "
                     "curved spacetime - the trajectory of freely falling particles."
@@ -1044,7 +1044,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.14)",
                 latex=r"[\nabla_\mu, \nabla_\nu] V^\lambda = R^\lambda{}_{\sigma\mu\nu} V^\sigma",
                 plain_text="[nabla_mu, nabla_nu] V^lambda = R^lambda_sigma,mu,nu V^sigma",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Riemann tensor from covariant derivative commutator. The failure "
                     "of covariant derivatives to commute measures spacetime curvature."
@@ -1074,7 +1074,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.15)",
                 latex=r"R^\lambda{}_{\sigma\mu\nu} = \partial_\mu \Gamma^\lambda_{\nu\sigma} - \partial_\nu \Gamma^\lambda_{\mu\sigma} + \Gamma^\lambda_{\mu\rho} \Gamma^\rho_{\nu\sigma} - \Gamma^\lambda_{\nu\rho} \Gamma^\rho_{\mu\sigma}",
                 plain_text="R^lambda_sigma,mu,nu = d_mu Gamma^lambda_nu,sigma - d_nu Gamma^lambda_mu,sigma + Gamma*Gamma - Gamma*Gamma",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Riemann tensor in terms of Christoffel symbols. This formula "
                     "allows explicit computation of curvature from the metric."
@@ -1104,7 +1104,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.16)",
                 latex=r"R_{\mu\nu} = R^\lambda{}_{\mu\lambda\nu}",
                 plain_text="R_munu = R^lambda_mu,lambda,nu (Ricci tensor)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Ricci tensor as contraction of Riemann tensor. Appears in "
                     "Einstein's field equations relating geometry to matter."
@@ -1140,7 +1140,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 path="tensor.spacetime_dimension",
                 name="Spacetime Dimension",
                 units="dimensionless",
-                status="FOUNDATIONAL",
+                status="ESTABLISHED",
                 description="Dimension of observable spacetime (4D Minkowski)",
                 no_experimental_value=True,
             ),
@@ -1148,7 +1148,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 path="tensor.metric_signature",
                 name="Metric Signature",
                 units="dimensionless",
-                status="FOUNDATIONAL",
+                status="ESTABLISHED",
                 description="Signature of the spacetime metric: (+,-,-,-) mostly minus convention",
                 no_experimental_value=True,
             ),
@@ -1156,7 +1156,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 path="tensor.riemann_symmetries",
                 name="Riemann Independent Components",
                 units="dimensionless",
-                status="FOUNDATIONAL",
+                status="ESTABLISHED",
                 description="Number of independent Riemann tensor components in 4D (20)",
                 no_experimental_value=True,
             ),
