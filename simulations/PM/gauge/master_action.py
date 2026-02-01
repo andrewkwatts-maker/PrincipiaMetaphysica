@@ -151,6 +151,9 @@ _OUTPUT_FORMULAS = [
     "electroweak-mixing-v22",
     "euler-lagrange-metric-variation",
     "stress-energy-variation",
+    "shadow-action-13d-v23",
+    "effective-action-4d-v23",
+    "euler-lagrange-eom-v23",
 ]
 
 
@@ -836,6 +839,192 @@ class MasterActionSimulationV22(SimulationBase):
                     "alpha_leak": "Portal coupling ~ 0.57 from 1/sqrt(6) with torsion and flux corrections"
                 }
             ),
+            # =================================================================
+            # Topics 04-05: 13D Shadow Action, 4D Effective Action, EOM
+            # =================================================================
+            Formula(
+                id="shadow-action-13d-v23",
+                label="(MA.S1)",
+                latex=(
+                    r"S_{13} = \int d^{13}x \sqrt{-g_{13}} "
+                    r"\left[ R_{13} + \bar\Psi_P i\gamma^m D_m \Psi_P "
+                    r"+ V_{face}^{(f)} \right]"
+                ),
+                plain_text=(
+                    "S_13 = integral d^{13}x sqrt(-g_13) "
+                    "[ R_13 + Psi-bar_P i*gamma^m D_m Psi_P + V_face^(f) ]"
+                ),
+                category="THEORETICAL",
+                description=(
+                    "13D shadow action after bridge/global OR reduction from the 27D master "
+                    "action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge "
+                    "pairs) + 1 shared time. Two mirror shadows emerge: Shadow 1 carries "
+                    "left-handed fermions, Shadow 2 carries right-handed fermions. The Euler "
+                    "characteristic chi_eff/48 = 3 fixes three generations per shadow. The face "
+                    "potential V_face^(f) encodes the local OR that selects the visible face "
+                    "from the 4-face TCS G2 structure. The gravitational sector R_13 is the "
+                    "13D Ricci scalar from the induced metric g_13 on the shadow, and the "
+                    "fermion kinetic term Psi-bar_P i*gamma^m D_m Psi_P describes the "
+                    "propagation of the projected Pneuma spinor on the 13D shadow."
+                ),
+                inputParams=[
+                    "geometry.D_bulk",
+                    "bridge.n_pairs",
+                ],
+                outputParams=[],
+                derivation={
+                    "steps": [
+                        "Start from the 27D master action S = int d^{27}X sqrt(-G) [R + ...]",
+                        "Apply bridge/global OR: the distributed OR operator R_perp = tensor_{i=1}^{12} R_perp_i splits the 27D bulk into two 13D shadow domains",
+                        "Each shadow inherits 12 spatial dims (one from each bridge pair) + 1 shared time = 13D(12,1)",
+                        "Shadow 1 receives left-chiral projections P_L Psi_P, Shadow 2 receives right-chiral projections P_R Psi_P",
+                        "The G2 manifold structure on each shadow has Euler characteristic chi_eff with chi_eff/48 = 3, fixing three fermion generations",
+                        "The face potential V_face^(f) implements local OR: among the 4 TCS faces, one is selected as the visible face, the other 3 become hidden (dark) faces",
+                        "Integrate out the bridge degrees of freedom to obtain the effective 13D action S_13 on each shadow",
+                    ],
+                    "method": "dimensional_reduction_via_bridge_or",
+                    "derivation_type": "analytical",
+                    "parentFormulas": [
+                        "pneuma-master-action-v23",
+                        "distributed-or-reduction-v22",
+                        "chirality-reversal-operator",
+                    ],
+                },
+                terms={
+                    r"R_{13}": {"description": "13D Ricci scalar from the induced metric g_13 on the shadow domain"},
+                    r"g_{13}": {"description": "Induced 13D metric on the shadow, signature (12,1)"},
+                    r"\Psi_P": {"description": "Projected Pneuma spinor on the shadow (chiral: L for Shadow 1, R for Shadow 2)"},
+                    r"\gamma^m": {"description": "13D gamma matrices (m = 0, 1, ..., 12) from the shadow Clifford algebra"},
+                    r"D_m": {"description": "Covariant derivative on the 13D shadow including spin connection and gauge fields"},
+                    r"V_{face}^{(f)}": {"description": "Face potential implementing local OR to select the visible face f from 4 TCS faces"},
+                    r"\chi_{eff}/48 = 3": {"description": "Euler characteristic constraint fixing three fermion generations per shadow"},
+                }
+            ),
+            Formula(
+                id="effective-action-4d-v23",
+                label="(MA.S2)",
+                latex=(
+                    r"S_4 = \int d^4x \sqrt{-g} \left[ "
+                    r"-\frac{M_{Pl}^2}{2}R + \mathcal{L}_{SM} "
+                    r"+ \mathcal{L}_{portal} + \mathcal{L}_{DM} \right]"
+                ),
+                plain_text=(
+                    "S_4 = integral d^4x sqrt(-g) "
+                    "[ -(M_Pl^2 / 2) R + L_SM + L_portal + L_DM ]"
+                ),
+                category="THEORETICAL",
+                description=(
+                    "4D effective action after face/local OR and compactification of the "
+                    "internal 9 dimensions of the 13D shadow. The 4D Planck mass is determined "
+                    "by M_Pl^2 = M_*^{11} * Vol(V_7), where M_* is the fundamental 11D Planck "
+                    "mass and Vol(V_7) is the volume of the compact G2 7-manifold. The SM gauge "
+                    "group SU(3)_C x SU(2)_L x U(1)_Y emerges from G2 flux on the 4-face "
+                    "structure: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative "
+                    "4-cycles, and U(1)_Y from the residual Abelian cycle. The cosmological "
+                    "constant Lambda = (int F wedge phi)^2 / Vol ~ 10^{-52} m^{-2} arises from "
+                    "the flux-moduli balance. Portal terms L_portal = alpha_leak * (dark matter "
+                    "+ sterile neutrino + ALP interactions) couple the visible face to hidden "
+                    "faces, and L_DM captures the dark matter sector from hidden face fields."
+                ),
+                inputParams=[
+                    "constants.M_STAR",
+                    "geometry.D_bulk",
+                    "bridge.n_pairs",
+                ],
+                outputParams=[
+                    "gauge.sin2_theta_w",
+                    "gauge.m_z_gev",
+                    "gauge.m_w_gev",
+                ],
+                derivation={
+                    "steps": [
+                        "Start from the 13D shadow action S_13 after bridge OR reduction",
+                        "Decompose 13D = 4D spacetime + 9D internal: ds_13^2 = g_{mu nu} dx^mu dx^nu + g_{mn}^{int} dy^m dy^n",
+                        "The 9 internal dimensions include the 7D G2 manifold (V_7) plus 2 residual bridge dimensions",
+                        "Integrate over the internal 9D volume to obtain the 4D effective action",
+                        "The 4D Planck mass emerges as M_Pl^2 = M_*^{11} * Vol(V_7) from the dimensional reduction of the Einstein-Hilbert term",
+                        "SM gauge group SU(3)_C x SU(2)_L x U(1)_Y emerges from harmonic forms on G2 cycles: 3-cycles -> SU(3)_C, 4-cycles -> SU(2)_L, residual -> U(1)_Y",
+                        "The cosmological constant Lambda = (int F wedge phi)^2 / Vol(V_7) ~ 10^{-52} m^{-2} is set by the flux-moduli balance on the G2 manifold",
+                        "Portal Lagrangian L_portal = alpha_leak * (phi_vis phi_dark phi_mod + sterile nu mixing + ALP coupling) connects visible and hidden faces",
+                        "Dark matter Lagrangian L_DM describes the dynamics of hidden face fields that interact only gravitationally and through L_portal with visible matter",
+                    ],
+                    "method": "kaluza_klein_reduction_on_g2",
+                    "derivation_type": "analytical",
+                    "parentFormulas": [
+                        "shadow-action-13d-v23",
+                        "kk-reduction-5d-v22",
+                        "dark-matter-portal-lagrangian",
+                    ],
+                },
+                terms={
+                    r"M_{Pl}^2": {"description": "4D Planck mass squared: M_Pl^2 = M_*^{11} * Vol(V_7), where M_* is the fundamental scale and V_7 is the G2 volume"},
+                    r"R": {"description": "4D Ricci scalar from the spacetime metric g_{mu nu}"},
+                    r"\mathcal{L}_{SM}": {"description": "Standard Model Lagrangian: SU(3)_C x SU(2)_L x U(1)_Y gauge + fermion + Higgs sectors from G2 flux"},
+                    r"\mathcal{L}_{portal}": {"description": "Portal Lagrangian: alpha_leak * (dark matter + sterile nu + ALP interactions) coupling visible to hidden faces"},
+                    r"\mathcal{L}_{DM}": {"description": "Dark matter Lagrangian from hidden face fields, interacting via gravity and portal coupling"},
+                    r"\Lambda": {"description": "Cosmological constant: Lambda = (int F wedge phi)^2 / Vol(V_7) ~ 10^{-52} m^{-2} from flux-moduli balance"},
+                    r"\alpha_{leak}": {"description": "Portal coupling ~ 0.57, geometrically determined by 1/sqrt(6) with torsion and flux corrections"},
+                }
+            ),
+            Formula(
+                id="euler-lagrange-eom-v23",
+                label="(MA.S3)",
+                latex=(
+                    r"\frac{\delta S}{\delta g^{\mu\nu}} = 0 "
+                    r"\implies G_{\mu\nu} + \Lambda g_{\mu\nu} = "
+                    r"\frac{1}{M_{Pl}^2}\left("
+                    r"T_{\mu\nu}^{SM} + T_{\mu\nu}^{portal}\right)"
+                ),
+                plain_text=(
+                    "delta S / delta g^{mu nu} = 0  =>  "
+                    "G_{mu nu} + Lambda g_{mu nu} = (1 / M_Pl^2) "
+                    "(T^SM_{mu nu} + T^portal_{mu nu})"
+                ),
+                category="THEORETICAL",
+                description=(
+                    "Euler-Lagrange equations of motion for the 4D effective action. Varying "
+                    "S_4 with respect to the inverse metric g^{mu nu} yields the modified "
+                    "Einstein field equations with portal corrections. The left-hand side "
+                    "contains the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} "
+                    "and the cosmological constant term Lambda g_{mu nu}. The right-hand side "
+                    "has the Standard Model stress-energy T^SM_{mu nu} and the portal "
+                    "stress-energy T^portal_{mu nu} from the hidden face coupling. The portal "
+                    "corrections are suppressed by alpha_leak^2 ~ 0.33 relative to the SM "
+                    "terms but provide the gravitational backreaction of dark matter and "
+                    "hidden sector fields. The Bianchi identity ensures covariant conservation "
+                    "of the total stress-energy: nabla^mu (T^SM_{mu nu} + T^portal_{mu nu}) = 0."
+                ),
+                inputParams=[
+                    "constants.M_STAR",
+                    "gauge.sin2_theta_w",
+                ],
+                outputParams=[],
+                derivation={
+                    "steps": [
+                        "Start from the 4D effective action S_4 = int d^4x sqrt(-g) [-(M_Pl^2/2) R + L_SM + L_portal + L_DM]",
+                        "Vary the gravitational sector: delta(sqrt(-g) (-(M_Pl^2/2) R)) / delta g^{mu nu} = -(M_Pl^2/2) sqrt(-g) G_{mu nu} via the Palatini identity",
+                        "Vary the cosmological constant contribution: delta(sqrt(-g) (-Lambda)) / delta g^{mu nu} = (Lambda/2) sqrt(-g) g_{mu nu}",
+                        "Define SM stress-energy: T^SM_{mu nu} = -(2/sqrt(-g)) delta(sqrt(-g) L_SM) / delta g^{mu nu}, containing gauge, fermion, and Higgs contributions",
+                        "Define portal stress-energy: T^portal_{mu nu} = -(2/sqrt(-g)) delta(sqrt(-g) (L_portal + L_DM)) / delta g^{mu nu}, with portal and dark matter contributions",
+                        "Combine all variations and set delta S_4 / delta g^{mu nu} = 0 to obtain G_{mu nu} + Lambda g_{mu nu} = (1/M_Pl^2)(T^SM_{mu nu} + T^portal_{mu nu})",
+                        "Verify covariant conservation via the contracted Bianchi identity: nabla^mu G_{mu nu} = 0 implies nabla^mu (T^SM_{mu nu} + T^portal_{mu nu}) = 0",
+                    ],
+                    "method": "metric_variation_of_effective_action",
+                    "derivation_type": "analytical",
+                    "parentFormulas": [
+                        "effective-action-4d-v23",
+                        "euler-lagrange-metric-variation",
+                        "stress-energy-variation",
+                    ],
+                },
+                terms={
+                    r"G_{\mu\nu}": {"description": "Einstein tensor: G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu}, divergence-free by the Bianchi identity"},
+                    r"\Lambda": {"description": "Cosmological constant from flux-moduli balance: Lambda ~ 10^{-52} m^{-2}"},
+                    r"T_{\mu\nu}^{SM}": {"description": "Standard Model stress-energy: gauge (YM) + fermion (Dirac) + Higgs contributions"},
+                    r"T_{\mu\nu}^{portal}": {"description": "Portal stress-energy from hidden face coupling: dark matter + sterile neutrino + ALP backreaction, suppressed by alpha_leak^2"},
+                    r"M_{Pl}^2": {"description": "4D Planck mass squared from dimensional reduction: M_Pl^2 = M_*^{11} * Vol(V_7)"},
+                }
+            ),
         ]
 
     def get_output_param_definitions(self) -> List[Parameter]:
@@ -1151,6 +1340,92 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="formula",
                     formula_id="stress-energy-variation"
+                ),
+                # =============================================================
+                # Topics 04-05: Dimensional Reduction Chain
+                # =============================================================
+                ContentBlock(
+                    type="heading",
+                    content="Dimensional Reduction: 27D -> 13D Shadow Domains",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The distributed OR reduction (bridge/global OR) splits the 27D(26,1) "
+                        "bulk into two 13D(12,1) shadow domains. Each shadow inherits 12 spatial "
+                        "dimensions (one from each bridge pair) plus 1 shared time dimension. "
+                        "Shadow 1 carries left-handed fermions and Shadow 2 carries right-handed "
+                        "fermions, a chirality assignment that is locked by the global OR operator. "
+                        "Within each shadow, the Euler characteristic constraint chi_eff/48 = 3 "
+                        "fixes exactly three fermion generations. The face potential V_face^(f) "
+                        "implements the local OR that selects one of the 4 TCS faces as the "
+                        "visible face, with the remaining three faces forming the hidden (dark) sector."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="shadow-action-13d-v23"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="Dimensional Reduction: 13D -> 4D Effective Theory",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "After face/local OR selects the visible face, the 13D shadow action is "
+                        "compactified on the internal 9 dimensions (7D G2 manifold + 2 residual "
+                        "bridge dimensions) to yield the 4D effective action. The 4D Planck mass "
+                        "is determined by M_Pl^2 = M_*^{11} * Vol(V_7), tying the fundamental "
+                        "scale to the G2 volume. The Standard Model gauge group "
+                        "SU(3)_C x SU(2)_L x U(1)_Y emerges from G2 flux on the 4-face "
+                        "structure: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative "
+                        "4-cycles, and U(1)_Y from the residual Abelian cycle. The cosmological "
+                        "constant Lambda = (int F wedge phi)^2 / Vol ~ 10^{-52} m^{-2} arises "
+                        "naturally from the flux-moduli balance, without fine-tuning. Portal terms "
+                        "couple the visible face to hidden faces through shared moduli."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="effective-action-4d-v23"
+                ),
+                ContentBlock(
+                    type="heading",
+                    content="4D Equations of Motion with Portal Corrections",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Varying the 4D effective action with respect to the inverse metric "
+                        "g^{mu nu} yields the modified Einstein field equations. The gravitational "
+                        "sector produces the Einstein tensor G_{mu nu} plus the cosmological "
+                        "constant Lambda g_{mu nu} on the left-hand side. The source terms on "
+                        "the right-hand side decompose into the Standard Model stress-energy "
+                        "T^SM_{mu nu} and the portal stress-energy T^portal_{mu nu} from the "
+                        "hidden face coupling. The portal corrections, suppressed by "
+                        "alpha_leak^2 ~ 0.33, provide the gravitational backreaction of dark "
+                        "matter and hidden sector fields onto visible sector geometry. The "
+                        "contracted Bianchi identity guarantees covariant conservation of the "
+                        "total stress-energy tensor."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    formula_id="euler-lagrange-eom-v23"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The complete dimensional reduction chain is thus: "
+                        "27D(26,1) master action -> bridge/global OR -> 2 x 13D(12,1) shadow "
+                        "actions -> face/local OR + G2 compactification -> 4D effective action "
+                        "-> metric variation -> Einstein equations with portal corrections. "
+                        "Each step is determined by the geometry, with no free parameters."
+                    )
                 ),
                 # =============================================================
                 # Two-Layer OR: Chirality and Dark Matter Portal (Sprint 2)

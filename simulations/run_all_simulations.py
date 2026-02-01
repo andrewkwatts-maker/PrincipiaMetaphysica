@@ -594,6 +594,30 @@ except ImportError:
     BARYON_V18_AVAILABLE = False
 
 try:
+    from simulations.PM.cosmology.axion_dm import AxionDMV18
+    AXION_DM_V18_AVAILABLE = True
+except ImportError:
+    AXION_DM_V18_AVAILABLE = False
+
+try:
+    from simulations.PM.portals.dark_matter_portals import DarkMatterPortalsV23
+    DM_PORTALS_V23_AVAILABLE = True
+except ImportError:
+    DM_PORTALS_V23_AVAILABLE = False
+
+try:
+    from simulations.PM.portals.sterile_neutrino_portals import SterileNeutrinoPortalsV23
+    STERILE_PORTALS_V23_AVAILABLE = True
+except ImportError:
+    STERILE_PORTALS_V23_AVAILABLE = False
+
+try:
+    from simulations.PM.portals.alp_portals import ALPPortalsV23
+    ALP_PORTALS_V23_AVAILABLE = True
+except ImportError:
+    ALP_PORTALS_V23_AVAILABLE = False
+
+try:
     from simulations.PM.particle.higgs_vev_refined import HiggsVEVRefinedV18
     HIGGS_VEV_V18_AVAILABLE = True
 except ImportError:
@@ -1032,12 +1056,16 @@ class SimulationRunner:
             # ================================================================
             # v18.0 ADVANCED PHYSICS SIMULATIONS
             # ================================================================
-            # Phase 8: v18.0 High-precision physics
+            # Phase 8: v18.0 High-precision physics + v23 portal simulations
             8: (
                 ([FRTTauGravityV18()] if F_R_T_TAU_V18_AVAILABLE else []) +
                 ([CompleteResidueRegistryV18()] if RESIDUE_REGISTRY_V18_AVAILABLE else []) +
                 ([AttractorPotentialV18()] if ATTRACTOR_V18_AVAILABLE else []) +
-                ([BaryonAsymmetryV18()] if BARYON_V18_AVAILABLE else [])
+                ([BaryonAsymmetryV18()] if BARYON_V18_AVAILABLE else []) +
+                ([AxionDMV18()] if AXION_DM_V18_AVAILABLE else []) +
+                ([DarkMatterPortalsV23()] if DM_PORTALS_V23_AVAILABLE else []) +
+                ([SterileNeutrinoPortalsV23()] if STERILE_PORTALS_V23_AVAILABLE else []) +
+                ([ALPPortalsV23()] if ALP_PORTALS_V23_AVAILABLE else [])
             ),
         }
 

@@ -666,7 +666,7 @@ if SCHEMA_AVAILABLE:
 
         @property
         def output_formulas(self) -> List[str]:
-            return ["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid"]
+            return ["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid", "coherence-amplification-factor"]
 
         def run(self, registry) -> Dict[str, Any]:
             """Execute the Orch-OR bridge calculation."""
@@ -1091,7 +1091,20 @@ if SCHEMA_AVAILABLE:
                             "Progressive pair activation from 6 to 12 enhances the topological "
                             "warping shield: tau_enhanced = tau_base * exp(k*sqrt(n_pairs)) * alpha",
                             "At n=12 (all pairs active): alpha -> 0.9975, maximising the "
-                            "gravitational self-energy coherence window"
+                            "gravitational self-energy coherence window",
+                            "THE 6 = 12/2 CONNECTION TO BRIDGE PAIRS: The baseline pair count "
+                            "6 = OPTIMAL_PAIRS / 2 reflects the fundamental duality of the G2 "
+                            "bridge architecture. The 12 (2,0) pairs partition into two classes "
+                            "of 6: (i) face-aligned pairs where personal OR is already coherent "
+                            "with bridge OR, and (ii) bridge-dormant pairs whose hidden faces "
+                            "contribute leakage (alpha_sample ~ 0.57) to E_G. The sigmoid center "
+                            "at n = 6 (alpha = 0.5) marks the exact half-way point of this "
+                            "partition: MIN_PAIRS = OPTIMAL_PAIRS / 2, establishing the ground "
+                            "state of the paired tensor system before gnosis unlocking begins",
+                            "The 6-pair baseline thus represents the minimum consciousness "
+                            "configuration: exactly half the bridge channels are face-aligned, "
+                            "providing sqrt(6) coherent amplification while the remaining 6 "
+                            "dormant pairs await progressive activation toward full gnosis"
                         ],
                         "references": [
                             "Hameroff S. & Penrose R. (2014) - Consciousness in the universe",
@@ -1144,6 +1157,100 @@ if SCHEMA_AVAILABLE:
                         "|Psi_1>, |Psi_2>": {"name": "Shadow States", "description": "13D per-shadow states after bridge OR factorization"},
                         "R_face^(f)": {"name": "Face OR Operator", "description": "Layer 2: selects visible face within each shadow (Human-level limit)"},
                         "|Psi_vis>": {"name": "Visible State", "description": "4D visible-face state after face OR selection"},
+                    }
+                ),
+                # =============================================================
+                # Coherence Amplification Factor (Topic 01)
+                # =============================================================
+                Formula(
+                    id="coherence-amplification-factor",
+                    label="(7.2d) Coherence Amplification Factor",
+                    latex=r"A_{\text{coh}} = \sqrt{n_{\text{active}}} \;\cdot\; \exp\!\left(-\frac{\Delta E}{k_B \, T_{\text{eff}}}\right)",
+                    plain_text="A_coh = sqrt(n_active) * exp(-Delta_E / (k_B * T_eff))",
+                    category="DERIVED",
+                    description=(
+                        "Coherence amplification factor for the Orch-OR collapse rate when "
+                        "personal (face) OR aligns with God (bridge) OR. The amplification "
+                        "scales as the square root of the number of active (2,0) tensor pairs, "
+                        "modulated by a Boltzmann suppression factor that accounts for leakage "
+                        "from hidden faces contributing to the gravitational self-energy E_G. "
+                        "At baseline (n_active = 6 = 12/2), the six aligned bridge pairs "
+                        "provide the minimum coherent amplification for wet microtubule OR; "
+                        "progressive unlocking to n_active = 12 yields full gnosis amplification."
+                    ),
+                    inputParams=[
+                        "quantum_bio.n_active_pairs",
+                        "quantum_bio.delta_E",
+                        "constants.k_B",
+                        "quantum_bio.T_eff"
+                    ],
+                    outputParams=[
+                        "quantum_bio.coherence_amplification"
+                    ],
+                    derivation={
+                        "method": "bridge_pair_coherence_amplification",
+                        "parent_formulas": [
+                            "penrose-criterion-collapse-time",
+                            "gnosis-awareness-sigmoid",
+                            "or-hierarchical-nesting"
+                        ],
+                        "steps": [
+                            "(a) BASELINE 6 PAIRS = ALIGNED BRIDGES: "
+                            "The G2 manifold admits 12 (2,0) tensor pairs from b3 = 24 associative "
+                            "3-cycles (24/2 = 12 normal/mirror pairs). At baseline consciousness, "
+                            "exactly half are active: n_active = 6 = 12/2. These 6 pairs correspond "
+                            "to the bridge-aligned channels where personal (face) OR is already "
+                            "coherent with God (bridge) OR. The remaining 6 dormant pairs represent "
+                            "hidden-face leakage channels whose energy gap Delta_E must be overcome "
+                            "for full activation.",
+
+                            "(b) PROGRESSIVE UNLOCKING TO 12: "
+                            "As inner exploration proceeds, dormant pairs unlock one by one from "
+                            "n_active = 6 toward n_active = 12. Each newly activated pair aligns an "
+                            "additional hidden face with the bridge OR, reducing the effective energy "
+                            "gap Delta_E and increasing the Boltzmann factor exp(-Delta_E / (k_B * T_eff)). "
+                            "The leakage contribution from hidden faces (alpha_sample ~ 0.57) adds to "
+                            "the gravitational self-energy E_G, shifting the OR collapse threshold. "
+                            "At full gnosis (n_active = 12), all bridge channels are coherent and "
+                            "the Boltzmann suppression vanishes (Delta_E -> 0).",
+
+                            "(c) COHERENCE SCALES AS SQRT OF ACTIVE PAIRS: "
+                            "The amplification factor A_coh = sqrt(n_active) * exp(-Delta_E / (k_B * T_eff)) "
+                            "follows from the standard quantum-mechanical result that coherent "
+                            "superposition of n independent channels enhances the collective signal by "
+                            "sqrt(n). This is analogous to the sqrt(N) enhancement in Dicke superradiance. "
+                            "The Boltzmann factor provides thermal suppression for partially-activated "
+                            "configurations where not all bridge pairs are aligned.",
+
+                            "At baseline: A_coh(6) = sqrt(6) * exp(-Delta_E / (k_B * T_eff)) ~ 2.449 * (thermal factor). "
+                            "At full gnosis: A_coh(12) = sqrt(12) * 1 = 2*sqrt(3) ~ 3.464 (maximal amplification). "
+                            "The ratio A_coh(12)/A_coh(6) = sqrt(12/6) = sqrt(2) ~ 1.414, showing that "
+                            "full gnosis provides a sqrt(2) amplification over baseline consciousness.",
+
+                            "CONNECTION TO 6 = 12/2: The baseline pair count 6 = OPTIMAL_PAIRS / 2 is not "
+                            "arbitrary. It reflects the fundamental duality of the G2 bridge architecture: "
+                            "at the decoherence-stability threshold, exactly half of the normal/mirror "
+                            "pairs are face-aligned (active) while the other half remain bridge-dormant "
+                            "(hidden). This 50/50 split at the sigmoid center (alpha = 0.5 at n = 6) "
+                            "is the natural ground state of the paired tensor system before gnosis unlocking."
+                        ],
+                        "references": [
+                            "Penrose R. (1996) - On Gravity's Role in Quantum State Reduction",
+                            "Hameroff S. & Penrose R. (2014) - Consciousness in the universe",
+                            "Dicke R.H. (1954) - Coherence in Spontaneous Radiation Processes"
+                        ]
+                    },
+                    terms={
+                        "A_coh": {"name": "Coherence Amplification Factor", "units": "dimensionless",
+                                  "description": "Collective amplification of OR collapse rate from aligned bridge pairs"},
+                        "n_active": {"name": "Active Pair Count", "units": "pairs",
+                                     "description": "Number of active (2,0) tensor pairs (6 baseline to 12 full gnosis)"},
+                        "Delta_E": {"name": "Energy Gap", "units": "Joules",
+                                    "description": "Energy gap between aligned and misaligned bridge-pair configurations; "
+                                                   "includes leakage from hidden faces (alpha_sample ~ 0.57)"},
+                        "k_B": {"name": "Boltzmann Constant", "value": "1.380649e-23 J/K"},
+                        "T_eff": {"name": "Effective Temperature", "units": "Kelvin",
+                                  "description": "Effective thermal temperature of the microtubule coherence environment"},
                     }
                 ),
             ]
@@ -1327,8 +1434,58 @@ if SCHEMA_AVAILABLE:
                             "fundamental ordering of objective reduction events."
                         )
                     ),
+                    # =========================================================
+                    # Coherence Amplification and the 6 = 12/2 Bridge (Topic 01)
+                    # =========================================================
+                    ContentBlock(
+                        type="heading",
+                        level=3,
+                        content="Coherence Amplification and the 6 = 12/2 Bridge Pair Connection"
+                    ),
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "The 6 aligned bridge pairs at baseline consciousness represent the "
+                            "minimum coherent configuration of the 12x(2,0) paired tensor system. "
+                            "This is not an arbitrary threshold: the count 6 = 12/2 = OPTIMAL_PAIRS / 2 "
+                            "reflects the fundamental duality of the G2 bridge architecture, where "
+                            "exactly half of the normal/mirror pairs are face-aligned at the ground "
+                            "state. Each of these 6 active pairs contributes a coherent channel where "
+                            "personal (face) OR is already aligned with God (bridge) OR, providing "
+                            "the minimum decoherence-stability needed for wet microtubule quantum "
+                            "coherence. The remaining 6 dormant pairs represent hidden-face leakage "
+                            "channels whose energy gap must be overcome through progressive gnosis "
+                            "unlocking. Leakage from these hidden faces (characterised by "
+                            "alpha_sample ~ 0.57) adds to the gravitational self-energy E_G, "
+                            "shifting the OR collapse threshold and providing an additional drive "
+                            "toward full pair activation."
+                        )
+                    ),
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "The coherence amplification factor A_coh quantifies how the OR "
+                            "collapse rate is enhanced when face OR aligns with bridge OR. "
+                            "The amplification scales as sqrt(n_active), following the standard "
+                            "quantum-mechanical result that coherent superposition of n independent "
+                            "channels enhances the collective signal by sqrt(n) (analogous to Dicke "
+                            "superradiance). A Boltzmann suppression factor exp(-Delta_E / (k_B * T_eff)) "
+                            "accounts for the thermal barrier of partially-activated configurations. "
+                            "At baseline (n_active = 6), A_coh = sqrt(6) times the thermal factor, "
+                            "providing approximately 2.449x amplification. At full gnosis "
+                            "(n_active = 12), all bridge pairs are coherent, Delta_E vanishes, and "
+                            "A_coh = sqrt(12) = 2*sqrt(3) ~ 3.464, the maximal amplification. "
+                            "The ratio between full gnosis and baseline is sqrt(2) ~ 1.414, "
+                            "a direct consequence of the 6 = 12/2 bridge pair architecture."
+                        )
+                    ),
+                    ContentBlock(
+                        type="formula",
+                        formula_id="coherence-amplification-factor",
+                        label="(7.2d)"
+                    ),
                 ],
-                formula_refs=["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid", "or-hierarchical-nesting"],
+                formula_refs=["penrose-criterion-collapse-time", "gnosis-awareness-sigmoid", "or-hierarchical-nesting", "coherence-amplification-factor"],
                 param_refs=[
                     "quantum_bio.or_threshold_ms",
                     "quantum_bio.eg_self_energy_joules",

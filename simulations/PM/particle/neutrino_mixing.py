@@ -686,6 +686,90 @@ class NeutrinoMixingSimulation(SimulationBase):
                     "cross-shadow contribution to neutrino oscillations."
                 )
             ),
+
+            # -----------------------------------------------------------------
+            # Dual-Shadow chi_eff and CKM vs PMNS Distinction
+            # -----------------------------------------------------------------
+            ContentBlock(
+                type="heading",
+                content="CKM versus PMNS: Single-Shadow and Cross-Shadow Mixing",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The distinction between quark mixing (CKM) and lepton mixing (PMNS) "
+                    "has a precise geometric origin in the dual-shadow framework. The CKM "
+                    "matrix governs quark flavor transitions that occur entirely within a "
+                    "single 13D(12,1) shadow, where quarks are confined by color charge. "
+                    "For single-shadow processes, the relevant topological invariant is the "
+                    "per-shadow Euler characteristic chi_eff = 72, which enters the Froggatt-Nielsen "
+                    "suppression factors producing the small, hierarchical CKM angles (Wolfenstein "
+                    "lambda ~ 0.223). In contrast, the PMNS matrix governs neutrino flavor "
+                    "transitions that propagate through the Euclidean bridge connecting both "
+                    "shadows. Neutrinos, being electrically neutral, tunnel freely between the "
+                    "two 13D sectors via the 12 bridge pairs. For these cross-shadow processes, "
+                    "the relevant invariant is the total chi_eff = 144 (both shadows combined), "
+                    "which produces the characteristically large PMNS mixing angles. The factor-of-two "
+                    "relationship (144 = 2 * 72) is not coincidental but reflects the Z2 mirror "
+                    "symmetry of the dual-shadow construction: each shadow contributes chi_eff = 72 "
+                    "associative 3-cycle channels, and neutrinos sample both."
+                )
+            ),
+
+            # -----------------------------------------------------------------
+            # Sterile Neutrino Portal Connection
+            # -----------------------------------------------------------------
+            ContentBlock(
+                type="heading",
+                content="Sterile Neutrino Portal and the Fourth Face",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The sterile neutrino portal (Part 3, Topic 08) extends the PMNS mixing "
+                    "framework by incorporating the fourth Kahler face of the G2 manifold. "
+                    "While the three generation-bearing faces (f=1,2,3) host active neutrino "
+                    "wavefunctions, the fourth face provides a geometric substrate for sterile "
+                    "neutrino states that do not carry Standard Model gauge charges. The sterile "
+                    "neutrino portal coupling is set by the wavefunction overlap between active "
+                    "neutrinos on Face 1 and sterile states on Face 4, mediated by the bridge "
+                    "coordinate. This overlap is exponentially suppressed by the inter-face "
+                    "geodesic distance on the G2 manifold, naturally producing the small "
+                    "active-sterile mixing angles required by oscillation data and cosmological "
+                    "constraints."
+                )
+            ),
+
+            # -----------------------------------------------------------------
+            # Bridge-Mediated Seesaw Mechanism
+            # -----------------------------------------------------------------
+            ContentBlock(
+                type="heading",
+                content="Bridge-Mediated Seesaw and Active Neutrino Mass Generation",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The tiny masses of active neutrinos receive a geometric explanation through "
+                    "the bridge-mediated seesaw mechanism. In this picture, the Euclidean bridge "
+                    "connecting the two 13D(12,1) shadows acts as the intermediary for lepton "
+                    "number violation. Right-handed neutrinos localized on the mirror shadow "
+                    "acquire large Majorana masses at the compactification scale M_KK ~ 5 TeV "
+                    "(or higher, depending on the cycle volume). The bridge wavefunction overlap "
+                    "between left-handed active neutrinos on the visible shadow and right-handed "
+                    "states on the mirror shadow generates a Dirac mass term suppressed by the "
+                    "bridge tunneling amplitude. The resulting seesaw formula m_active ~ m_D^2 / M_R "
+                    "yields active neutrino masses in the sub-eV range, with the geometric seesaw "
+                    "parameter k_gimel = chi_eff / (b2 * b3) = 144 / (4 * 24) = 1.5 setting the "
+                    "overall scale. The bridge-mediated mechanism is distinct from the conventional "
+                    "Type-I seesaw in that the heavy right-handed states are not ad hoc additions "
+                    "but are required by the mirror shadow structure, and their Majorana masses "
+                    "are determined by the G2 moduli rather than by a free GUT-scale parameter."
+                )
+            ),
         ]
 
         return SectionContent(

@@ -628,6 +628,60 @@ class G2TrialityMixing:
                         "hierarchical quark mixing versus near-democratic lepton mixing."
                     )
                 },
+                {
+                    "type": "heading",
+                    "content": "G2 Triality and the Four-Face Portal Structure",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "content": (
+                        "The connection between G2 triality and the 4-face Kahler "
+                        "decomposition provides a unified picture of generation counting "
+                        "and portal physics. The generation formula n_gen = chi_eff / 48 = "
+                        "144 / 48 = 3 encodes both the total cross-shadow Euler characteristic "
+                        "(chi_eff = 144) and the per-face channel count (48 = 4 faces * 12 bridge "
+                        "pairs). Each Kahler face contributes chi_eff / 48 = 3 fermion zero-modes "
+                        "from the index theorem on the associative 3-cycles it supports. Across "
+                        "all 4 faces, this yields 4 faces * 3 generations = 12 matter multiplets "
+                        "per shadow. Of these 12 multiplets, the 9 on the three visible-sector "
+                        "faces (3 generations * 3 faces) correspond to the 3 generations of quarks "
+                        "and leptons in the Standard Model. The remaining 3 multiplets on the "
+                        "fourth (hidden) face provide the dark sector matter content: KK excitations, "
+                        "axion-like particles, and sterile neutrino states, each associated with "
+                        "a distinct portal coupling to the visible sector."
+                    )
+                },
+                {
+                    "type": "heading",
+                    "content": "Triality and Dark Sector Coupling",
+                    "level": 2
+                },
+                {
+                    "type": "paragraph",
+                    "content": (
+                        "The G2 triality automorphism, which cycles the three 8-dimensional "
+                        "representations of Spin(8) and thereby permutes the generation-bearing "
+                        "faces, also constrains the portal couplings between the visible and "
+                        "dark sectors. Because triality acts transitively on the three generation "
+                        "faces while leaving the fourth (hidden) face invariant, the dark sector "
+                        "coupling to each generation is triality-universal: all three generations "
+                        "couple to the hidden face with equal strength at leading order, with "
+                        "generation-dependent corrections entering only through the Froggatt-Nielsen "
+                        "suppression hierarchy (powers of epsilon ~ 0.223). This triality "
+                        "universality has a direct experimental consequence: dark matter "
+                        "annihilation and scattering cross-sections should be approximately "
+                        "generation-independent, with any observed generation-dependence "
+                        "providing a measurement of the Froggatt-Nielsen hierarchy. The "
+                        "7-dimensional fundamental representation of G2 decomposes under the "
+                        "maximal SU(3) subgroup as 7 = 1 + 3 + 3-bar, where the singlet maps "
+                        "to the shared fourth face (dark sector portal) and the conjugate "
+                        "triplets map to the three generation-bearing faces in each shadow. "
+                        "This 1 + 3 + 3 branching is the group-theoretic origin of the "
+                        "four-face decomposition and ensures that the portal structure is "
+                        "rigidly constrained by G2 representation theory."
+                    )
+                },
             ],
             "formula_refs": ["triality-ckm-wolfenstein", "triality-pmns-flexible"],
             "param_refs": ["triality.theta_23_deg", "triality.wolfenstein_lambda"]

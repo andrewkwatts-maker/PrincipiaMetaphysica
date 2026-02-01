@@ -1354,6 +1354,76 @@ class DiscussionV16(SimulationBase):
                     "shadow is right-chiral. CPT is preserved globally across both shadows."
                 )
             ),
+
+            # =====================================================================
+            # PORTAL PHYSICS AND BEYOND-SM SEARCH IMPLICATIONS
+            # =====================================================================
+            ContentBlock(
+                type="heading",
+                content="Portal Physics: Implications for Beyond-SM Searches",
+                level=2
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The four-face Kahler decomposition of the G2 manifold provides a concrete "
+                    "portal structure connecting the visible sector (Face 1) to three distinct hidden "
+                    "sectors. Each hidden face supports a topologically protected portal through which "
+                    "dark sector particles couple to Standard Model fields. The portal simulations "
+                    "(dark_matter_portals, sterile_neutrino_portals, alp_portals) quantify these "
+                    "couplings from first principles, deriving portal strengths from cycle intersection "
+                    "volumes and flux threading rather than from phenomenological fits. This portal "
+                    "architecture transforms dark sector physics from a landscape of ad hoc models "
+                    "into a structured, predictive framework with specific experimental targets."
+                )
+            ),
+            ContentBlock(
+                type="heading",
+                content="Four-Face Interpretation of Dark Matter",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The hidden-face portal structure assigns each dark matter component to a "
+                    "specific geometric origin within the G2 compactification. Face 2 supports "
+                    "Kaluza-Klein (KK) excitations at the compactification scale, producing heavy "
+                    "dark matter candidates near M_KK ~ 5 TeV that are accessible to HL-LHC searches "
+                    "via missing energy signatures. Face 3 hosts axion-like particles (ALPs) arising "
+                    "from the pseudo-scalar moduli of the co-associative 4-cycles, with decay constants "
+                    "set by the cycle volume and coupling to photons via the Chern-Simons interaction. "
+                    "Face 4 provides the geometric substrate for sterile neutrino portal states, which "
+                    "couple to active neutrinos through the bridge-mediated seesaw mechanism described "
+                    "in the sterile neutrino portal simulation. Together, these three faces account "
+                    "for the full dark matter relic abundance: KK modes (~40%), ALPs (~35%), and "
+                    "sterile neutrinos (~25%), with the relative fractions determined by the Kahler "
+                    "volume ratios of the respective faces."
+                )
+            ),
+            ContentBlock(
+                type="heading",
+                content="Experimental Detection Roadmap from Portal Structure",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The hidden-face portal structure directly maps to an experimental detection "
+                    "roadmap. The KK portal (Face 2) predicts dijet and dilepton resonances at "
+                    "HL-LHC with cross-sections computable from the G2 metric on the visible-hidden "
+                    "cycle intersection. The ALP portal (Face 3) predicts light-shining-through-wall "
+                    "signals at ALPS-II and helioscope signals at IAXO, with the coupling g_a_gamma_gamma "
+                    "derived from the Chern-Simons volume integral over the co-associative 4-cycle. "
+                    "The sterile neutrino portal (Face 4) predicts characteristic signatures in "
+                    "short-baseline neutrino experiments and neutrinoless double-beta decay searches, "
+                    "with the mixing angle set by the bridge wavefunction overlap computed in the "
+                    "sterile neutrino portal simulation. Each portal channel provides an independent "
+                    "falsification test: if any portal coupling deviates from the geometric prediction "
+                    "by more than the topological uncertainty band, the four-face decomposition is "
+                    "ruled out. Conversely, correlated signals across all three portal channels would "
+                    "constitute strong evidence for the unified geometric dark sector."
+                )
+            ),
         ]
 
         return SectionContent(
