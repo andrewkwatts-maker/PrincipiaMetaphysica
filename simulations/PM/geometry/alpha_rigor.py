@@ -592,7 +592,7 @@ if SCHEMA_AVAILABLE:
 
         def get_gate_checks(self) -> list:
             """
-            Return gate checks for the 72-gate verification framework.
+            Return gate checks for the gate verification framework.
 
             Returns:
                 List of gate check dictionaries

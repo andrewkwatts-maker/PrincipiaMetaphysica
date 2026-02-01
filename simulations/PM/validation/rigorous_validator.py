@@ -1015,6 +1015,7 @@ class RigorousValidatorV16_1(SimulationBase):
         return [
             {
                 "id": "CERT-RV-001",
+                "sector": "validation",
                 "assertion": "All sigma deviations computed as |x_PM - x_exp| / sigma_exp",
                 "condition": "sigma_deviation >= 0",
                 "tolerance": 0.0,
@@ -1024,6 +1025,7 @@ class RigorousValidatorV16_1(SimulationBase):
             },
             {
                 "id": "CERT-RV-002",
+                "sector": "validation",
                 "assertion": "PASS threshold at 2 sigma (95% confidence interval)",
                 "condition": "sigma < 2.0 implies PASS",
                 "tolerance": 0.0,
@@ -1033,6 +1035,7 @@ class RigorousValidatorV16_1(SimulationBase):
             },
             {
                 "id": "CERT-RV-003",
+                "sector": "neutrino",
                 "assertion": "NuFIT 6.0 central values used for neutrino validation",
                 "condition": "theta_12 = 33.41 +/- 0.70 degrees",
                 "tolerance": 0.01,
@@ -1042,6 +1045,7 @@ class RigorousValidatorV16_1(SimulationBase):
             },
             {
                 "id": "CERT-RV-004",
+                "sector": "dark_energy",
                 "assertion": "DESI 2025 w0-wa parameterization within dark energy bounds",
                 "condition": "abs(w0 + 0.958) / 0.02 < 3.0",
                 "tolerance": 3.0,
@@ -1051,6 +1055,7 @@ class RigorousValidatorV16_1(SimulationBase):
             },
             {
                 "id": "CERT-RV-005",
+                "sector": "cosmology",
                 "assertion": "Planck 2025 Hubble constant within tension-free range",
                 "condition": "abs(H0 - 67.97) / 0.42 < 3.0",
                 "tolerance": 3.0,

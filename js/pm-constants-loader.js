@@ -337,7 +337,7 @@
             'n_gen': 3,                        // chi_eff / 48 = 144 / 48 = 3 (topological)
             'phi': 1.6180339887,               // Golden ratio (mathematical constant)
             'H0_local': 71.55,                 // H0 = (288/4) - (163/144) + 0.6819 (O'Dowd formula)
-            'certificates_total': 72,          // Total gates (fixed by framework design)
+            // certificates_total: removed - now loaded dynamically from GATES_72_CERTIFICATES.json via _getDynamicValue()
             'D_observable': 4,                 // Observable spacetime dimensions (topological)
         },
 
@@ -398,6 +398,9 @@
                         return certs.filter(c => c.verification_status === 'MATHEMATICAL').length;
                     case 'certificates_verified':
                         return certs.filter(c => c.verification_status === 'VERIFIED').length;
+                    case 'certificates_total':
+                    case 'total_gates':
+                        return certs.length;
                 }
             }
             // Return null if cannot compute
@@ -887,7 +890,7 @@
 
                 // If we got at least parameters or simulations, use split files
                 if (parameters || simulations) {
-                    // Extract 72-Gate statistics from GATES_72_CERTIFICATES.json
+                    // Extract gate statistics from GATES_72_CERTIFICATES.json
                     const gateStats = gates72?.summary || {};
 
                     PM._data = {
@@ -907,13 +910,14 @@
                         framework_statistics: {
                             ...(statistics?.framework_statistics || {}),
                             // Dynamic gate statistics from GATES_72_CERTIFICATES.json
+                            // Fallback values used only when JSON is unavailable
                             pass_count: gateStats.verified ?? 40,
                             pending_count: gateStats.pending_lock ?? 0,
                             not_testable_count: gateStats.not_testable ?? 30,
                             mathematical_count: gateStats.mathematical ?? 2,
-                            total_gates: gateStats.total_gates ?? 72,
-                            // Computed: testable = total - not_testable (72 - 30 = 42)
-                            testable_count: (gateStats.total_gates ?? 72) - (gateStats.not_testable ?? 30)
+                            total_gates: gateStats.total_gates ?? (gates72?.certificates?.length) ?? null,
+                            // Computed: testable = total - not_testable
+                            testable_count: (gateStats.total_gates ?? (gates72?.certificates?.length) ?? 0) - (gateStats.not_testable ?? 30)
                         },
                         validation_summary: metadata?.validation_summary || [],
                         all_passed: metadata?.all_passed ?? true,
@@ -941,7 +945,7 @@
                     console.log(`  Simulations: ${Object.keys(PM._data.simulations).length}`);
                     console.log(`  Formulas: ${PM._data.formulas?.count || Object.keys(PM._data.formulas?.formulas || {}).length}`);
                     console.log(`  Named Constants: ${namedConstants ? 'LOADED (Ten Pillars + Topological Invariants)' : 'using defaults'}`);
-                    console.log(`  Gate Statistics: ${gates72 ? `LOADED (${gateStats.verified ?? '?'} verified / ${gateStats.total_gates ?? 72} total)` : 'using defaults'}`);
+                    console.log(`  Gate Statistics: ${gates72 ? `LOADED (${gateStats.verified ?? '?'} verified / ${gateStats.total_gates ?? '?'} total)` : 'using defaults'}`);
                     console.log(`  Validation Stats: ${statistics?.validation ? 'LOADED from statistics.json' : 'using defaults'}`);
 
                     // Expose globally

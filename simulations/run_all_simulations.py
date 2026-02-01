@@ -449,15 +449,7 @@ except ImportError:
 # from simulations.PM.paper.appendices.appendix_c_derivations import AppendixCExtendedDerivations
 # from simulations.PM.paper.appendices.appendix_d_tables import AppendixDParameterTables
 # from simulations.PM.paper.appendices.appendix_e_proton import AppendixEProtonDecay
-# from simulations.PM.paper.appendices.appendix_f import AppendixFDimensionalDecomposition
-# from simulations.PM.paper.appendices.appendix_g import AppendixGEffectiveTorsion
-# from simulations.PM.paper.appendices.appendix_h import AppendixHProtonBranching
-# from simulations.PM.paper.appendices.appendix_i import AppendixIGWDispersion
-# from simulations.PM.paper.appendices.appendix_j import AppendixJMonteCarloError
-# from simulations.PM.paper.appendices.appendix_k import AppendixKTransparency
-# from simulations.PM.paper.appendices.appendix_l import AppendixLValuesSummary
-# from simulations.PM.paper.appendices.appendix_m import AppendixMConsciousnessSpeculation
-# from simulations.PM.paper.appendices.appendix_n import AppendixNG2Landscape
+# (appendix_f through appendix_n stubs removed - replaced by full v16.2 versions)
 # ============================================================================
 
 # v16.2 Sterile Model - New Appendices J, K, L

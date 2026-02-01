@@ -25,8 +25,8 @@ G2 Holonomy Structure:
 - SU(2) from co-associative cycles
 - U(1) from residual Abelian structure
 
-72-Gate System References:
--------------------------
+Gate System References:
+-----------------------
 - G11: SU(3)_C color gauge emergence
 - G12: SU(2)_L weak isospin gauge
 - G21: U(1)_Y hypercharge gauge
@@ -1309,7 +1309,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
         """
         return SectionContent(
             section_id="3",
-            subsection_id="3.3",
+            subsection_id="3.3.1",
             title="Complete Gauge Sector Lagrangian Derivations from G2 Holonomy",
             abstract=(
                 "Comprehensive derivation of Standard Model gauge Lagrangians from "

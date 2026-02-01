@@ -905,6 +905,7 @@ class DarkMatterPortalsV23(SimulationBase):
                 "pages": "A6",
                 "year": 2020,
                 "arxiv": "1807.06209",
+                "url": "https://arxiv.org/abs/1807.06209",
                 "notes": "Omega_DM h^2 = 0.120 +/- 0.001"
             },
             {
@@ -919,6 +920,7 @@ class DarkMatterPortalsV23(SimulationBase):
                 "pages": "041003",
                 "year": 2023,
                 "arxiv": "2303.14729",
+                "url": "https://arxiv.org/abs/2303.14729",
                 "notes": (
                     "sigma_SI < 2.58e-47 cm^2 at 28 GeV; strongest SI bound"
                 )
@@ -934,6 +936,7 @@ class DarkMatterPortalsV23(SimulationBase):
                 "pages": "064",
                 "year": 2008,
                 "arxiv": "0804.0863",
+                "url": "https://arxiv.org/abs/0804.0863",
                 "notes": (
                     "Multi-component dark matter from G2 compactification; "
                     "moduli-mediated portal interactions"
@@ -948,6 +951,7 @@ class DarkMatterPortalsV23(SimulationBase):
                 "pages": "195-373",
                 "year": 1996,
                 "arxiv": "hep-ph/9506380",
+                "url": "https://arxiv.org/abs/hep-ph/9506380",
                 "notes": (
                     "Standard reference for DM direct detection cross-sections "
                     "and relic density calculations"
@@ -962,6 +966,7 @@ class DarkMatterPortalsV23(SimulationBase):
                 "pages": "017",
                 "year": 2016,
                 "arxiv": "1606.07001",
+                "url": "https://arxiv.org/abs/1606.07001",
                 "notes": (
                     "Next-generation direct detection; projected sensitivity "
                     "reaches neutrino floor"

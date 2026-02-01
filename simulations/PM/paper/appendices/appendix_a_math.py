@@ -438,7 +438,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.1)",
                 latex=r"\nabla \varphi = 0",
                 plain_text="∇φ = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "G2 holonomy condition: parallel 3-form. The existence of a "
                     "covariantly constant 3-form φ reduces the holonomy to G2 ⊂ SO(7)."
@@ -464,7 +464,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.2)",
                 latex=r"\varphi \in \Omega^3(M), \quad \text{stabilizer}(\varphi) = G_2",
                 plain_text="φ ∈ Ω³(M), stab(φ) = G2",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Associative calibration: the fundamental 3-form defining G2 structure. "
                     "Calibrates associative 3-cycles (minimal volume submanifolds)."
@@ -491,7 +491,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.3)",
                 latex=r"\psi = *\varphi",
                 plain_text="ψ = *φ",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Coassociative calibration: Hodge dual of φ. Calibrates coassociative "
                     "4-cycles and determines the 4-form part of G2 structure."
@@ -518,7 +518,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.4)",
                 latex=r"\nabla_X \eta = 0 \quad \forall X \in TM",
                 plain_text="∇_X η = 0 for all X",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Parallel spinor condition on G2 manifolds. Equivalent to holonomy "
                     "reduction and Ricci-flatness."
@@ -546,7 +546,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.5)",
                 latex=r"\gamma(X)\gamma(Y) + \gamma(Y)\gamma(X) = 2g(X,Y)",
                 plain_text="γ(X)γ(Y) + γ(Y)γ(X) = 2g(X,Y)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Clifford algebra relation for spinors in 7D. Defines the action of "
                     "tangent vectors on spinor space."
@@ -572,7 +572,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.6)",
                 latex=r"\text{Ric}(g) = 0",
                 plain_text="Ric(g) = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Ricci-flatness of G2 manifolds. Automatic consequence of holonomy "
                     "reduction, making G2 manifolds valid M-theory backgrounds."

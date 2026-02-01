@@ -894,6 +894,7 @@ class AxionDMV18(SimulationBase):
                 "pages": "A6",
                 "year": 2020,
                 "arxiv": "1807.06209",
+                "url": "https://arxiv.org/abs/1807.06209",
                 "notes": "Omega_DM h^2 = 0.120 +/- 0.001"
             },
             {
@@ -903,6 +904,7 @@ class AxionDMV18(SimulationBase):
                 "journal": "Phys. Rev. D",
                 "volume": "110",
                 "year": 2024,
+                "url": "https://pdg.lbl.gov/2024/reviews/rpp2024-rev-axions.pdf",
                 "notes": "m_a = 5.7 ueV * (10^12 GeV / f_a)"
             },
             {
@@ -913,6 +915,7 @@ class AxionDMV18(SimulationBase):
                 "volume": "127",
                 "year": 2021,
                 "arxiv": "2104.06801",
+                "url": "https://arxiv.org/abs/2110.06096",
                 "notes": "ADMX probes 2-10 ueV axion mass range"
             },
         ]

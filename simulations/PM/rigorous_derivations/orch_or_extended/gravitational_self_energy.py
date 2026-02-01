@@ -845,27 +845,53 @@ if SCHEMA_AVAILABLE:
                         r"d^3r \, d^3r'"
                     ),
                     plain_text="E_G = G * integral integral (rho_1 - rho_2)(rho_1' - rho_2') / |r-r'| d^3r d^3r'",
-                    category="FRONTIER",
+                    category="PREDICTED",
                     description=(
                         "The Diosi-Penrose formula for gravitational self-energy of a "
                         "quantum superposition. The integral is over the mass density "
                         "difference between superposed states."
                     ),
                     input_params=["topology.elder_kads", "constants.G_newton", "constants.hbar"],
-                    output_params=["quantum_bio.eg_rigorous_joules"]
+                    output_params=["quantum_bio.eg_rigorous_joules"],
+                    derivation={
+                        "steps": [
+                            {"description": "Start from Diosi-Penrose gravitational self-energy for mass in quantum superposition of two states with density distributions rho_1, rho_2",
+                             "formula": r"E_G = G \iint \frac{(\rho_1 - \rho_2)(\rho_1' - \rho_2')}{|\mathbf{r} - \mathbf{r}'|} d^3r\,d^3r'"},
+                            {"description": "For point-like mass distributions separated by distance r, the integral reduces to the Newtonian self-energy E_G = G*m^2/r",
+                             "formula": r"E_G = \frac{G m^2}{r} \quad \text{(point-mass limit)}"},
+                            {"description": "Apply G2 geometric enhancement via k_gimel = b3/2 + 1/pi = 12.318, replacing G with G_eff = G * k_gimel",
+                             "formula": r"E_G^{\text{eff}} = k_\gimel \cdot \frac{G m^2}{r}, \quad k_\gimel = \frac{b_3}{2} + \frac{1}{\pi}"},
+                        ],
+                        "method": "Diosi-Penrose gravitational self-energy with G2 holonomy enhancement",
+                        "parentFormulas": ["geometric-enhancement-g2"],
+                        "references": ["Diosi (1987)", "Penrose (1996)"]
+                    }
                 ),
                 Formula(
                     id="penrose-collapse-criterion",
                     label="(7.2b)",
                     latex=r"\tau = \frac{\hbar}{E_G}",
                     plain_text="tau = hbar / E_G",
-                    category="FRONTIER",
+                    category="PREDICTED",
                     description=(
                         "The Penrose Criterion for gravitational objective reduction. "
                         "Collapse time is inversely proportional to gravitational self-energy."
                     ),
                     input_params=["quantum_bio.eg_rigorous_joules"],
-                    output_params=["quantum_bio.tau_rigorous_ms"]
+                    output_params=["quantum_bio.tau_rigorous_ms"],
+                    derivation={
+                        "steps": [
+                            {"description": "Penrose objective reduction criterion: collapse occurs when gravitational self-energy E_G reaches the threshold set by the uncertainty principle",
+                             "formula": r"\tau = \frac{\hbar}{E_G}"},
+                            {"description": "With G2 enhancement, E_G is amplified by k_gimel ~ 12.3, shortening tau by the same factor relative to unenhanced Newtonian prediction",
+                             "formula": r"\tau_{\text{enhanced}} = \frac{\hbar}{k_\gimel \cdot G m^2 / r}"},
+                            {"description": "For N ~ 10^9 tubulins with conformational mass shift f ~ 10^-4 at separation r ~ 0.25 nm, tau falls in neural gamma range (25-500 ms)",
+                             "formula": r"\tau \sim 10^{-2} \text{ to } 10^{-1} \text{ s (neural timescale)}"},
+                        ],
+                        "method": "Penrose collapse criterion with G2 geometric enhancement",
+                        "parentFormulas": ["diosi-penrose-integral"],
+                        "references": ["Penrose (1996)", "Hameroff & Penrose (2014)"]
+                    }
                 ),
                 Formula(
                     id="geometric-enhancement-g2",
@@ -878,7 +904,20 @@ if SCHEMA_AVAILABLE:
                         "parameter k_gimel modifies the effective G at atomic scales."
                     ),
                     input_params=["topology.elder_kads"],
-                    output_params=["quantum_bio.geometric_enhancement"]
+                    output_params=["quantum_bio.geometric_enhancement"],
+                    derivation={
+                        "steps": [
+                            {"description": "The G2 holonomy parameter k_gimel is derived from the topological invariants of the G2 manifold with b3 = 24",
+                             "formula": r"k_\gimel = \frac{b_3}{2} + \frac{1}{\pi} = 12 + 0.31831\ldots = 12.31831\ldots"},
+                            {"description": "The effective gravitational coupling at atomic scales is enhanced by k_gimel, modifying Newton's constant",
+                             "formula": r"G_{\text{eff}} = G_N \cdot k_\gimel \approx 12.318 \, G_N"},
+                            {"description": "This enhancement shortens the Penrose collapse time by a factor of k_gimel, bringing it into the neural-relevant range",
+                             "formula": r"\tau_{\text{enhanced}} = \frac{\tau_{\text{bare}}}{k_\gimel} \approx \frac{\tau_{\text{bare}}}{12.318}"},
+                        ],
+                        "method": "G2 holonomy enhancement of gravitational coupling",
+                        "parentFormulas": [],
+                        "references": ["PM Section 2: G2 Geometry"]
+                    }
                 ),
             ]
 
@@ -917,7 +956,7 @@ if SCHEMA_AVAILABLE:
         def get_section_content(self) -> Optional[SectionContent]:
             return SectionContent(
                 section_id="7",
-                subsection_id="7.2",
+                subsection_id="7.2.1",
                 title="Rigorous Gravitational Self-Energy Derivation",
                 abstract=(
                     "Complete derivation of the Diosi-Penrose gravitational self-energy "

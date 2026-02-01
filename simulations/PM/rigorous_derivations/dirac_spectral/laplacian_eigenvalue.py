@@ -808,11 +808,26 @@ if _HAS_BASE:
                         "and determines the fermion mass hierarchy via KK reduction."
                     ),
                     inputParams=["topology.elder_kads", "topology.mephorash_chi"],
+                    input_params=["topology.elder_kads", "topology.mephorash_chi"],
                     outputParams=["spectral.eigenvalue_1"],
+                    output_params=["spectral.eigenvalue_1"],
                     terms={
                         "Delta_M": "Laplace-Beltrami operator on G2 manifold M",
                         "phi_n": "n-th eigenfunction (harmonic form)",
                         "lambda_n": "n-th eigenvalue (determines n-th KK mass)"
+                    },
+                    derivation={
+                        "steps": [
+                            {"description": "Construct the Laplace-Beltrami operator on the G2 manifold from the metric tensor: Delta = (1/sqrt(g)) * d_i(sqrt(g) * g^{ij} * d_j)",
+                             "formula": r"\Delta_M = \frac{1}{\sqrt{g}} \partial_i \left(\sqrt{g}\, g^{ij} \partial_j\right)"},
+                            {"description": "Discretize the G2 manifold as a weighted graph with b3 = 24 nodes (one per associative 3-cycle) and construct the discrete Laplacian L = D - A",
+                             "formula": r"L = D - A, \quad n = b_3 = 24 \text{ nodes}"},
+                            {"description": "Solve the eigenvalue problem L*phi_n = lambda_n*phi_n; the discrete spectrum encodes the geometric information of the G2 manifold",
+                             "formula": r"L \phi_n = \lambda_n \phi_n, \quad 0 = \lambda_0 < \lambda_1 \leq \lambda_2 \leq \cdots"},
+                        ],
+                        "method": "Laplace-Beltrami spectral decomposition on G2 manifold graph",
+                        "parentFormulas": [],
+                        "references": ["Weyl (1911)", "PM Section 4: Spectral Geometry"]
                     }
                 ),
                 Formula(
@@ -834,12 +849,27 @@ if _HAS_BASE:
                         "m_e << m_mu << m_tau from the spectral structure."
                     ),
                     inputParams=["spectral.eigenvalue_1"],
+                    input_params=["spectral.eigenvalue_1"],
                     outputParams=["spectral.m_electron_mev"],
+                    output_params=["spectral.m_electron_mev"],
                     terms={
                         "m_ref": "Reference mass scale (electron mass)",
                         "lambda_n": "Laplacian eigenvalue for mode n",
                         "V_G2/V_cycle": "Volume ratio (chi_eff/b3 ~ 6)",
                         "S_inst": "Instanton action (provides generation hierarchy)"
+                    },
+                    derivation={
+                        "steps": [
+                            {"description": "Start from Kaluza-Klein reduction: the massless 7D Dirac equation on M^4 x G2 decomposes into eigenmodes with m^2 = lambda_n / R^2",
+                             "formula": r"m_n^2 = \frac{\lambda_n}{R^2}"},
+                            {"description": "Normalize the 7D wavefunction to the 4D slice using the volume ratio (V_G2/V_cycle)^{1/3}, where V_G2/V_cycle = chi_eff/b3 = 6",
+                             "formula": r"m_f = m_{\text{ref}} \sqrt{\lambda_n} \left(\frac{V_{G2}}{V_{\text{cycle}}}\right)^{1/3}"},
+                            {"description": "Include instanton corrections exp(-S_inst) providing exponential suppression between generations, producing the observed hierarchy m_e << m_mu << m_tau",
+                             "formula": r"m_f = m_{\text{ref}} \sqrt{\lambda_n} \left(\frac{V_{G2}}{V_{\text{cycle}}}\right)^{1/3} e^{-S_{\text{inst}}}"},
+                        ],
+                        "method": "Kaluza-Klein reduction with instanton corrections on G2 manifold",
+                        "parentFormulas": ["laplace-beltrami-eigenvalue-v18"],
+                        "references": ["PM Section 4: Fermion Mass from Spectral Geometry"]
                     }
                 ),
                 Formula(
@@ -854,11 +884,26 @@ if _HAS_BASE:
                         "Verified to confirm correct dimensionality of discretization."
                     ),
                     inputParams=["topology.elder_kads"],
+                    input_params=["topology.elder_kads"],
                     outputParams=["spectral.weyl_exponent"],
+                    output_params=["spectral.weyl_exponent"],
                     terms={
                         "N(lambda)": "Count of eigenvalues <= lambda",
                         "d": "Manifold dimension (7 for G2)",
                         "Vol(M)": "Volume of the manifold"
+                    },
+                    derivation={
+                        "steps": [
+                            {"description": "Weyl's law (1911): on a compact d-dimensional Riemannian manifold, the eigenvalue counting function N(lambda) has the asymptotic form",
+                             "formula": r"N(\lambda) \sim \frac{\text{Vol}(M)}{(4\pi)^{d/2}} \frac{\lambda^{d/2}}{\Gamma(d/2+1)}"},
+                            {"description": "For the G2 manifold with d = 7, the Weyl exponent is d/2 = 3.5, verified by fitting log(N) vs log(lambda) from the discrete spectrum",
+                             "formula": r"N(\lambda) \sim \lambda^{7/2} \quad \text{(G2 manifold, d=7)}"},
+                            {"description": "Verification: the computed Weyl exponent from the b3 = 24 graph Laplacian matches d/2 = 3.5 within discretization error, confirming correct dimensionality",
+                             "formula": r"\alpha_{\text{Weyl}} = \frac{d}{2} = 3.5 \pm \delta"},
+                        ],
+                        "method": "Weyl's asymptotic eigenvalue law verification",
+                        "parentFormulas": ["laplace-beltrami-eigenvalue-v18"],
+                        "references": ["Weyl (1911)"]
                     }
                 ),
             ]
@@ -1011,7 +1056,7 @@ if _HAS_BASE:
 
             return SectionContent(
                 section_id="4",
-                subsection_id="4.8",
+                subsection_id="4.8.1",
                 title="Fermion Mass Hierarchy from Spectral Geometry",
                 abstract=(
                     "Rigorous derivation of fermion mass hierarchy from the "

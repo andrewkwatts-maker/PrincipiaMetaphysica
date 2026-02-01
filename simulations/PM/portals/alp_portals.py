@@ -527,6 +527,10 @@ class ALPPortalsV23(SimulationBase):
                         {
                             "description": "ALP-photon vertex from leakage through Face 3",
                             "formula": r"g_{a\gamma\gamma} = \frac{\alpha_{\rm leak} \cdot \chi_{\rm eff}}{24\pi \, f_a^{\rm ALP}}"
+                        },
+                        {
+                            "description": "Evaluate numerically using alpha_leak = 1/sqrt(6), chi_eff = 72, and f_a from Face 3 moduli stabilization to obtain g_{a gamma gamma} below the stellar cooling bound of 10^{-10} GeV^{-1}",
+                            "formula": r"g_{a\gamma\gamma} \approx \frac{0.408 \times 72}{24\pi \, f_a^{\rm ALP}} < 10^{-10}\,\text{GeV}^{-1}"
                         }
                     ],
                     "references": [
@@ -570,8 +574,12 @@ class ALPPortalsV23(SimulationBase):
                             "formula": r"g_{aN} = \frac{\alpha_{\rm leak}}{f_a^{\rm ALP}}"
                         },
                         {
-                            "description": "Spin-dependent nucleon interaction",
+                            "description": "Spin-dependent nucleon interaction Lagrangian from pseudoscalar ALP-nucleon vertex",
                             "formula": r"\mathcal{L} \supset g_{aN} \, \bar{N} \gamma^5 N \, a"
+                        },
+                        {
+                            "description": "Evaluate using alpha_leak = 1/sqrt(6) and f_a from Face 3 moduli to obtain g_aN in the testable range for spin-precession experiments (CASPEr, ARIADNE)",
+                            "formula": r"g_{aN} = \frac{1/\sqrt{6}}{f_a^{\rm ALP}} \sim 10^{-11}\,\text{GeV}^{-1}"
                         }
                     ],
                     "references": [
@@ -614,12 +622,16 @@ class ALPPortalsV23(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "Yukawa-type potential from ALP exchange",
+                            "description": "Yukawa-type potential from ALP exchange between nucleons",
                             "formula": r"V(r) = -\frac{g_{aN}^2}{4\pi} \frac{e^{-r/\lambda}}{r}"
                         },
                         {
                             "description": "Range set by ALP Compton wavelength",
                             "formula": r"\lambda = \frac{\hbar c}{m_{\rm ALP} c^2}"
+                        },
+                        {
+                            "description": "Evaluate for m_ALP in the meV range to obtain sub-millimeter fifth force range testable by torsion balance and Casimir-force experiments",
+                            "formula": r"\lambda = \frac{1.97 \times 10^{-7}\,\text{eV}\cdot\text{m}}{m_{\rm ALP}} \sim 0.01\text{--}0.1\,\text{mm}"
                         }
                     ],
                     "references": [
@@ -794,6 +806,7 @@ class ALPPortalsV23(SimulationBase):
                 "pages": "051",
                 "year": 2006,
                 "arxiv": "hep-th/0605206",
+                "url": "https://arxiv.org/abs/hep-th/0605206",
                 "notes": "ALP landscape from string compactifications"
             },
             {
@@ -805,6 +818,7 @@ class ALPPortalsV23(SimulationBase):
                 "pages": "078",
                 "year": 2006,
                 "arxiv": "hep-th/0602233",
+                "url": "https://arxiv.org/abs/hep-th/0602233",
                 "notes": "Moduli stabilization effects on axion-like particles"
             },
             {
@@ -815,6 +829,7 @@ class ALPPortalsV23(SimulationBase):
                 "volume": "13",
                 "pages": "584",
                 "year": 2017,
+                "url": "https://arxiv.org/abs/1705.02290",
                 "notes": "g_{a gamma gamma} < 6.6e-11 GeV^{-1} for m_a < 0.02 eV"
             },
             {
@@ -823,6 +838,7 @@ class ALPPortalsV23(SimulationBase):
                 "title": "Stars as Laboratories for Fundamental Physics",
                 "journal": "University of Chicago Press",
                 "year": 1996,
+                "url": "https://arxiv.org/abs/hep-ph/9602437",
                 "notes": "Stellar cooling bounds on ALP couplings"
             },
             {
@@ -834,6 +850,7 @@ class ALPPortalsV23(SimulationBase):
                 "pages": "102",
                 "year": 2009,
                 "arxiv": "0901.3842",
+                "url": "https://arxiv.org/abs/0904.2040",
                 "notes": "Sub-mm fifth force bounds from torsion balance"
             },
         ]

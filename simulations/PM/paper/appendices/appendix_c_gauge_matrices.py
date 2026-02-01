@@ -66,8 +66,8 @@ class AppendixCGaugeMatrices(SimulationBase):
             id="appendix_c_gauge_matrices_v16_2",
             version="16.2",
             domain="appendices",
-            title="Appendix C: Laplacian Eigenvalue Derivations for the V_7 Manifold",
-            description="Spectral eigenvalue derivations from the V_7 Laplace-Beltrami operator",
+            title="Appendix C: The S_PR(2) Gauge Reduction Matrices",
+            description="Projection matrices bridging the 13D ancestral registry to 4D observable residues via S_PR(2) gauge reduction",
             section_id="C",
             subsection_id=None,
             appendix=True
@@ -144,7 +144,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                     "Where P<sub>13→4</sub> is a rank-ordered tensor that maps the internal "
                     "degrees of freedom of the V₁₃ bulk onto the 4D Minkowski space. In the "
                     "v16.2 model, this matrix is <strong>unitary and lossless</strong>, meaning "
-                    "the 'Energy Budget' of the 25D ancestral state is perfectly accounted for"
+                    "the 'Energy Budget' of the 25D ancestral state is perfectly accounted for "
                     "in the 125 residues."
                 )
             ),
@@ -237,8 +237,8 @@ class AppendixCGaugeMatrices(SimulationBase):
         return SectionContent(
             section_id="C",
             subsection_id=None,
-            title="Appendix C: Laplacian Eigenvalue Derivations for the V_7 Manifold",
-            abstract="Spectral eigenvalue derivations from the V_7 Laplace-Beltrami operator.",
+            title="Appendix C: The S_PR(2) Gauge Reduction Matrices",
+            abstract="Projection matrices bridging the 13D ancestral registry to 4D observable residues via S_PR(2) gauge reduction.",
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
             param_refs=self.PARAM_REFS,

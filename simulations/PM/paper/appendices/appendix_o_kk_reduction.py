@@ -626,7 +626,7 @@ class AppendixOKKReduction(SimulationBase):
                 label="(O.1)",
                 latex=r"ds^2_{D} = e^{2\alpha\phi} g_{\mu\nu} dx^\mu dx^\nu + e^{2\beta\phi} G_{mn} dy^m dy^n",
                 plain_text="KK metric ansatz with warping",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Kaluza-Klein metric ansatz for dimensional reduction. The D-dimensional "
                     "metric splits into external 4D spacetime and internal compact manifold, "
@@ -637,14 +637,23 @@ class AppendixOKKReduction(SimulationBase):
                     "G_{mn}": "Internal compact manifold metric (12 bridge pairs in v22)",
                     "phi": "Dilaton field (volume modulus)",
                     "alpha, beta": "Weyl rescaling exponents for Einstein frame",
-                }
+                },
+                derivation={
+                    "method": "Product metric ansatz with Weyl rescaling for Einstein frame",
+                    "parentFormulas": [],
+                    "steps": [
+                        "Start with D-dimensional metric as product of 4D and internal manifold",
+                        "Allow dilaton-dependent warping to ensure 4D Einstein frame",
+                        "Choose alpha, beta exponents to canonically normalize 4D gravity",
+                    ],
+                },
             ),
             Formula(
                 id="kk-circle-reduction-v22",
                 label="(O.2)",
                 latex=r"ds^2_5 = g_{\mu\nu} dx^\mu dx^\nu + R^2 (dy + A_\mu dx^\mu)^2",
                 plain_text="5D circle metric ansatz with gauge field",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The simplest Kaluza-Klein ansatz: 5D metric on M_4 x S^1. The off-diagonal "
                     "term A_mu becomes the U(1) gauge field in 4D. V22 generalizes to 12 pairs."
@@ -653,7 +662,16 @@ class AppendixOKKReduction(SimulationBase):
                     "R": "Radius of compact circle S^1",
                     "A_mu": "Emergent U(1) gauge field",
                     "y": "Compact coordinate (periodic: y ~ y + 2*pi*R)",
-                }
+                },
+                derivation={
+                    "method": "Kaluza 1921 ansatz for 5D gravity on M4 x S1",
+                    "parentFormulas": ["kk-metric-ansatz-v22"],
+                    "steps": [
+                        "Specialize the general KK ansatz to one compact circle dimension",
+                        "Off-diagonal metric component g_{mu 5} identified as gauge field A_mu",
+                        "Periodicity y ~ y + 2*pi*R encodes U(1) gauge symmetry",
+                    ],
+                },
             ),
             Formula(
                 id="kk-gauge-emergence-v22",
@@ -669,14 +687,23 @@ class AppendixOKKReduction(SimulationBase):
                 terms={
                     "A_mu dx^mu dy": "Off-diagonal term giving gauge transformation",
                     "A_mu A_nu dx^mu dx^nu": "Quadratic term contributing to gauge kinetics",
-                }
+                },
+                derivation={
+                    "method": "Algebraic expansion of circle reduction ansatz",
+                    "parentFormulas": ["kk-circle-reduction-v22"],
+                    "steps": [
+                        "Expand R^2 (dy + A_mu dx^mu)^2 algebraically",
+                        "Identify cross-term 2*R^2 A_mu dx^mu dy as gauge kinetic coupling",
+                        "Under y -> y + Lambda(x), A_mu -> A_mu - partial_mu Lambda (gauge transformation)",
+                    ],
+                },
             ),
             Formula(
                 id="kk-dilaton-scalar-v22",
                 label="(O.4)",
                 latex=r"\phi(x) = \ln\left(\frac{R(x)}{R_0}\right) \quad \Rightarrow \quad R(x) = R_0 e^{\phi(x)}",
                 plain_text="Dilaton field from variable radius",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "When the compact radius varies over spacetime, it defines a scalar field "
                     "(dilaton/radion). This field must be stabilized to avoid long-range fifth forces."
@@ -685,14 +712,23 @@ class AppendixOKKReduction(SimulationBase):
                     "phi(x)": "Dilaton field (4D scalar)",
                     "R_0": "Reference (stabilized) radius",
                     "R(x)": "Position-dependent compact radius",
-                }
+                },
+                derivation={
+                    "method": "Logarithmic parametrization of variable compact radius",
+                    "parentFormulas": ["kk-metric-ansatz-v22"],
+                    "steps": [
+                        "Allow internal radius R to depend on external coordinates x",
+                        "Define dilaton as logarithmic ratio: phi = ln(R/R_0)",
+                        "After Weyl rescaling, phi acquires canonical kinetic term in 4D action",
+                    ],
+                },
             ),
             Formula(
                 id="kk-mode-expansion-v22",
                 label="(O.5)",
                 latex=r"\Phi(x,y) = \sum_{n=-\infty}^{\infty} \phi_n(x) e^{iny/R}",
                 plain_text="Fourier mode expansion on circle",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Any field in 5D decomposes into a tower of 4D fields indexed by "
                     "the mode number n. Each mode carries momentum n/R in the compact direction."
@@ -701,7 +737,16 @@ class AppendixOKKReduction(SimulationBase):
                     "phi_n(x)": "n-th Kaluza-Klein mode (4D field)",
                     "n": "Mode number (quantized compact momentum)",
                     "exp(iny/R)": "Fourier basis on circle",
-                }
+                },
+                derivation={
+                    "method": "Fourier decomposition on compact S1",
+                    "parentFormulas": ["kk-circle-reduction-v22"],
+                    "steps": [
+                        "Periodicity y ~ y + 2*pi*R requires discrete Fourier modes",
+                        "Expand: Phi(x,y) = sum_n phi_n(x) exp(i*n*y/R)",
+                        "Each phi_n(x) is an independent 4D field with compact momentum p_y = n/R",
+                    ],
+                },
             ),
             Formula(
                 id="kk-mass-spectrum-v22",
@@ -717,14 +762,23 @@ class AppendixOKKReduction(SimulationBase):
                     "Box_4": "4D d'Alembertian (wave operator)",
                     "m_n": "Mass of n-th KK mode",
                     "R": "Compact radius",
-                }
+                },
+                derivation={
+                    "method": "Substitution of mode expansion into 5D Klein-Gordon equation",
+                    "parentFormulas": ["kk-mode-expansion-v22"],
+                    "steps": [
+                        "Start with massless 5D Klein-Gordon equation: Box_5 Phi = 0",
+                        "Substitute mode expansion and separate variables",
+                        "4D equation for each mode: (Box_4 + n^2/R^2) phi_n = 0, giving m_n = |n|/R",
+                    ],
+                },
             ),
             Formula(
                 id="kk-zero-modes-v22",
                 label="(O.7)",
                 latex=r"\Delta_{K} \psi_0 = 0 \quad \Rightarrow \quad \psi_0 = \text{const} \quad \text{(harmonic form)}",
                 plain_text="Zero modes are harmonic forms on compact manifold",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Zero modes satisfy the internal Laplacian equation with zero eigenvalue. "
                     "Their number equals the Betti numbers of the compact manifold, linking "
@@ -734,14 +788,23 @@ class AppendixOKKReduction(SimulationBase):
                     "Delta_K": "Laplacian on compact manifold K",
                     "psi_0": "Zero mode (harmonic form)",
                     "b_p(K)": "p-th Betti number (counts harmonic p-forms)",
-                }
+                },
+                derivation={
+                    "method": "Hodge theory on compact Riemannian manifold",
+                    "parentFormulas": ["kk-mass-spectrum-v22"],
+                    "steps": [
+                        "Set n=0 in KK mass spectrum: massless modes satisfy Delta_K psi_0 = 0",
+                        "By Hodge theorem, harmonic p-forms are in bijection with H^p(K)",
+                        "Number of zero modes = b_p(K), linking topology to particle content",
+                    ],
+                },
             ),
             Formula(
                 id="kk-higher-dim-v22",
                 label="(O.8)",
                 latex=r"G_{\text{gauge}}^{4D} = \text{Isom}(K) \quad \Rightarrow \quad \text{SU}(3) \times \text{SU}(2) \times \text{U}(1)",
                 plain_text="4D gauge group = Isometry group of compact manifold",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Non-Abelian gauge groups arise from the isometry group of the internal "
                     "manifold. The Standard Model gauge group emerges from appropriate "
@@ -752,14 +815,23 @@ class AppendixOKKReduction(SimulationBase):
                     "SU(3)": "Color gauge group (QCD)",
                     "SU(2)": "Weak isospin gauge group",
                     "U(1)": "Hypercharge gauge group",
-                }
+                },
+                derivation={
+                    "method": "Isometry-gauge correspondence in KK reduction",
+                    "parentFormulas": ["kk-gauge-emergence-v22"],
+                    "steps": [
+                        "Killing vectors of compact manifold K generate continuous isometries",
+                        "KK reduction of off-diagonal metric components yields gauge fields for each Killing vector",
+                        "Gauge group = Isom(K); for G2 manifold, holonomy encodes SU(3)xSU(2)xU(1)",
+                    ],
+                },
             ),
             Formula(
                 id="kk-principia-chain-v22",
                 label="(O.9)",
                 latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \xrightarrow{G_2} 4D_{(3,1)}",
                 plain_text="v22 chain: 27D(26,1) = T^1 x (12 x B^{2,0}) -> 4D(3,1)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The v22 Principia Metaphysica dimensional reduction chain. Starting from "
                     "26D string theory (1 time + 25 spatial), the 24 spatial dimensions decompose "
@@ -775,14 +847,24 @@ class AppendixOKKReduction(SimulationBase):
                     "B_i^{2,0}": "12 Euclidean bridge pairs (consciousness channels)",
                     "G_2": "Exceptional holonomy per shadow",
                     "4D(3,1)": "Observable Minkowski spacetime",
-                }
+                },
+                derivation={
+                    "method": "v22 dimensional cascade from 26D bosonic string",
+                    "parentFormulas": ["kk-metric-ansatz-v22", "kk-higher-dim-v22"],
+                    "steps": [
+                        "Begin with 26D(24,1): bosonic string theory with unified time",
+                        "Decompose 24 spatial dimensions into 12 paired (2,0) Euclidean bridges",
+                        "Each bridge pair carries OR reduction operator R_perp_i, warping to 2 x 13D(12,1) shadows",
+                        "Per-shadow G2 holonomy compactification: 13D -> 4D(3,1) via TCS construction",
+                    ],
+                },
             ),
             Formula(
                 id="kk-distributed-or-v22",
                 label="(O.9b)",
                 latex=r"R_{total} = \bigotimes_{i=1}^{12} R_{\perp,i}, \quad R_{\perp,i}^2 = -I",
                 plain_text="Distributed OR: R_total = tensor product of 12 R_perp_i",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "v22 distributed OR Reduction over 12 bridge pairs, represented as a "
                     "tensor product of 12 per-pair rotation operators. Each R_perp_i is a "
@@ -795,7 +877,16 @@ class AppendixOKKReduction(SimulationBase):
                     "R_perp_i": "Per-pair 90-degree rotation [[0,-1],[1,0]]",
                     "R_perp^2 = -I": "Mobius double-cover property",
                     "12 pairs": "Consciousness channels",
-                }
+                },
+                derivation={
+                    "method": "Tensor product of per-pair OR reduction operators",
+                    "parentFormulas": ["kk-principia-chain-v22"],
+                    "steps": [
+                        "Each (2,0) bridge pair carries a 90-degree rotation operator R_perp_i = [[0,-1],[1,0]]",
+                        "Verify R_perp_i^2 = -I (Mobius double-cover property ensuring spinorial structure)",
+                        "Total operator: R_total = tensor product of all 12 R_perp_i, acting on full 24D internal space",
+                    ],
+                },
             ),
             Formula(
                 id="kk-aggregate-breathing-v22",
@@ -816,7 +907,16 @@ class AppendixOKKReduction(SimulationBase):
                     "T_normal_i": "Stress-energy from normal shadow for pair i",
                     "T_mirror_i": "Stress-energy from mirror shadow for pair i",
                     "w0 = -23/24": "Dark energy equation of state",
-                }
+                },
+                derivation={
+                    "method": "Summation of stress-energy mismatches across 12 bridge pairs",
+                    "parentFormulas": ["kk-distributed-or-v22", "kk-principia-chain-v22"],
+                    "steps": [
+                        "Each bridge pair i has stress-energy T^ab from normal and mirror shadows",
+                        "Mismatch rho_i = |T_normal_i - R_perp_i * T_mirror_i| due to OR rotation",
+                        "Aggregate: rho_breath = Sum_{i=1}^{12} rho_i, with EOS w0 = -1 + 1/b3 = -23/24",
+                    ],
+                },
             ),
             Formula(
                 id="kk-g2-volume-v22",
@@ -834,7 +934,16 @@ class AppendixOKKReduction(SimulationBase):
                     "V_22": "Volume of 22 compact dimensions (26 -> 4)",
                     "M_7": "7D fundamental scale",
                     "V_G2": "Volume of G_2 manifold (7 -> 4)",
-                }
+                },
+                derivation={
+                    "method": "Dimensional reduction of Einstein-Hilbert action",
+                    "parentFormulas": ["kk-metric-ansatz-v22", "kk-principia-chain-v22"],
+                    "steps": [
+                        "Integrate D-dimensional Einstein-Hilbert action over compact manifold",
+                        "Volume factor extracted: M_Pl^2 = M_D^{D-2} * V_compact",
+                        "For PM chain: M_Pl^2 = M_26^24 * V_22 and also M_Pl^2 proportional to M_7^5 * V_G2",
+                    ],
+                },
             ),
             Formula(
                 id="kk-gauge-coupling-v22",
@@ -852,14 +961,23 @@ class AppendixOKKReduction(SimulationBase):
                     "Vol(Sigma_i)": "Volume of cycle supporting gauge group i",
                     "l_s": "String length scale",
                     "alpha_i": "Fine structure constant for group i",
-                }
+                },
+                derivation={
+                    "method": "Gauge kinetic terms from internal cycle volumes",
+                    "parentFormulas": ["kk-higher-dim-v22", "kk-g2-volume-v22"],
+                    "steps": [
+                        "Gauge kinetic term in higher dimensions: integral of F^2 over cycle Sigma_i",
+                        "Dimensional reduction gives: 1/g_i^2 = Vol(Sigma_i) / l_s^{n_i}",
+                        "Fine structure constant: alpha_i = g_i^2 / (4*pi), determined by cycle geometry",
+                    ],
+                },
             ),
             Formula(
                 id="kk-consistency-v22",
                 label="(O.12)",
                 latex=r"\text{Consistent truncation:} \quad \mathcal{L}_{4D}[\phi_0] = \int_K \mathcal{L}_{D}[\phi_0, y]\, d^ny",
                 plain_text="Consistent truncation condition",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "A truncation to zero modes is consistent if the 4D equations of motion "
                     "follow from the higher-dimensional equations restricted to zero modes. "
@@ -870,7 +988,16 @@ class AppendixOKKReduction(SimulationBase):
                     "L_D": "D-dimensional Lagrangian",
                     "phi_0": "Zero-mode fields",
                     "K": "Compact manifold",
-                }
+                },
+                derivation={
+                    "method": "Consistency requirement for zero-mode truncation",
+                    "parentFormulas": ["kk-zero-modes-v22"],
+                    "steps": [
+                        "Truncate to zero modes: keep only phi_0 fields (n=0 sector)",
+                        "Integrate D-dimensional Lagrangian over compact manifold K",
+                        "Consistency: 4D EOM from L_4D must match D-dim EOM restricted to zero modes",
+                    ],
+                },
             ),
         ]
 

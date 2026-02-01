@@ -778,7 +778,7 @@ class MasterActionSimulationV22(SimulationBase):
                 label="(MA.TL1)",
                 latex=r"R_{\text{chirality}} = R_\perp^{\text{global}} \cdot P_{L/R} \cdot R_{\text{face}}^{(f)}, \quad P_{\text{reverse}} \approx 3 \times 10^{-6}",
                 plain_text="R_chirality = R_perp_global * P_LR * R_face^(f), P_reverse ≈ 3e-6",
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Chirality reversal operator -- combines bridge OR (creates shadow duality, "
                     "flips chirality) with face OR. P_reverse is the cross-shadow chirality flip "
@@ -809,7 +809,7 @@ class MasterActionSimulationV22(SimulationBase):
                 label="(MA.TL2)",
                 latex=r"\mathscr{L}_{\text{portal}} = \alpha_{\text{leak}} \phi_{\text{vis}} \phi_{\text{dark}} \phi_{\text{mod}}, \quad \alpha_{\text{leak}} \approx 0.57",
                 plain_text="L_portal = alpha_leak * phi_vis * phi_dark * phi_mod, alpha_leak ≈ 0.57",
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Dark matter portal Lagrangian -- hidden face coupling from volume ratio "
                     "(1/sqrt(6)), torsion, and flux asymmetry corrections."
@@ -850,7 +850,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "S_13 = integral d^{13}x sqrt(-g_13) "
                     "[ R_13 + Psi-bar_P i*gamma^m D_m Psi_P + V_face^(f) ]"
                 ),
-                category="THEORETICAL",
+                category="DERIVED",
                 description=(
                     "13D shadow action after bridge/global OR reduction from the 27D master "
                     "action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge "
@@ -908,7 +908,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "S_4 = integral d^4x sqrt(-g) "
                     "[ -(M_Pl^2 / 2) R + L_SM + L_portal + L_DM ]"
                 ),
-                category="THEORETICAL",
+                category="DERIVED",
                 description=(
                     "4D effective action after face/local OR and compactification of the "
                     "internal 9 dimensions of the 13D shadow. The 4D Planck mass is determined "
@@ -976,7 +976,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "G_{mu nu} + Lambda g_{mu nu} = (1 / M_Pl^2) "
                     "(T^SM_{mu nu} + T^portal_{mu nu})"
                 ),
-                category="THEORETICAL",
+                category="DERIVED",
                 description=(
                     "Euler-Lagrange equations of motion for the 4D effective action. Varying "
                     "S_4 with respect to the inverse metric g^{mu nu} yields the modified "
@@ -1040,7 +1040,7 @@ class MasterActionSimulationV22(SimulationBase):
                 path="bridge.n_pairs",
                 name="Number of Bridge Pairs",
                 units="count",
-                status="THEORY",
+                status="DERIVED",
                 description="v22.0: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows",
                 no_experimental_value=True,
             ),
@@ -1048,7 +1048,7 @@ class MasterActionSimulationV22(SimulationBase):
                 path="bridge.breathing_aggregation",
                 name="Breathing Aggregation Weight",
                 units="dimensionless",
-                status="THEORY",
+                status="DERIVED",
                 description="v22.0: Averaging weight 1/12 for breathing mode across bridge pairs",
                 no_experimental_value=True,
             ),
@@ -1056,7 +1056,7 @@ class MasterActionSimulationV22(SimulationBase):
                 path="bridge.distributed_or_rank",
                 name="Distributed OR Rank",
                 units="count",
-                status="THEORY",
+                status="DERIVED",
                 description="v22.0: Total OR operator dimension 2^12 = 4096 (matches Pneuma spinor)",
                 no_experimental_value=True,
             ),
@@ -1148,7 +1148,7 @@ class MasterActionSimulationV22(SimulationBase):
                 path="gauge.chirality_reversal_probability",
                 name="Chirality Reversal Probability",
                 units="dimensionless",
-                status="THEORY",
+                status="DERIVED",
                 description=(
                     "Cross-shadow chirality flip probability P_reverse ~ 3e-6. "
                     "Suppressed by the volume ratio of bridge-accessible phase space "

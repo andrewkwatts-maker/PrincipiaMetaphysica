@@ -719,7 +719,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.1)",
                 latex=r"\text{ind}(D) = n_+ - n_-",
                 plain_text="ind(D) = n+ - n-",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Definition of the Dirac operator index as the difference between "
                     "the number of positive (left-handed) and negative (right-handed) "
@@ -750,7 +750,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.2)",
                 latex=r"\text{ind}(D) = \int_M \hat{A}(M) \cdot \text{ch}(E)",
                 plain_text="ind(D) = integral of A-roof genus times Chern character",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The Atiyah-Singer index theorem expressing the index as an "
                     "integral of characteristic classes over the manifold. This is "
@@ -785,7 +785,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.3)",
                 latex=r"\hat{A}(M) = 1 - \frac{p_1}{24} + \frac{7p_1^2 - 4p_2}{5760} + \ldots",
                 plain_text="A-hat(M) = 1 - p1/24 + (7*p1^2 - 4*p2)/5760 + ...",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The A-roof (A-hat) genus as a polynomial in Pontryagin classes. "
                     "Encodes the intrinsic differential geometry of the manifold."
@@ -813,7 +813,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.4)",
                 latex=r"\text{ch}(E) = \text{rank}(E) + c_1(E) + \frac{1}{2}(c_1^2 - 2c_2) + \ldots",
                 plain_text="ch(E) = rank(E) + c1(E) + (1/2)(c1^2 - 2*c2) + ...",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The Chern character of a vector bundle E, encoding how the "
                     "gauge bundle twists over the base manifold."

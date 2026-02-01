@@ -807,7 +807,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.2)",
                 latex=r"g_{\mu\nu} = \eta_{AB} e^A_\mu e^B_\nu",
                 plain_text="Metric from vielbein: g_munu = eta_AB e^A_mu e^B_nu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Metric tensor constructed from vielbein (tetrad) fields. "
                     "The fundamental relation showing metric is derived from vielbein."
@@ -834,7 +834,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.1)",
                 latex=r"\eta_{AB} = g_{\mu\nu} e^{\mu}_A e^{\nu}_B",
                 plain_text="Vielbein orthonormality: eta_AB = g_munu e^mu_A e^nu_B",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Orthonormality condition for vielbein. The vielbein vectors form "
                     "an orthonormal basis with respect to the Minkowski metric."
@@ -861,7 +861,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.3a)",
                 latex=r"E_A^\mu = (e^{-1})_A^\mu",
                 plain_text="Inverse vielbein: E_A^mu = (e^(-1))_A^mu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "The inverse vielbein allows conversion from flat Lorentz indices "
                     "to curved spacetime indices."
@@ -887,7 +887,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.3)",
                 latex=r"e^A_\mu E_A^\nu = \delta^\nu_\mu",
                 plain_text="Spacetime completeness: e^A_mu E_A^nu = delta^nu_mu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Completeness relation in spacetime. Summing over Lorentz indices "
                     "gives the identity in the spacetime manifold."
@@ -914,7 +914,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.4)",
                 latex=r"e^A_\mu E_B^\mu = \delta^A_B",
                 plain_text="Tangent space completeness: e^A_mu E_B^mu = delta^A_B",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Completeness relation in tangent space. Summing over spacetime indices "
                     "gives the identity in the flat Lorentz frame."
@@ -941,7 +941,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.5)",
                 latex=r"\omega_{AB\mu} = -\omega_{BA\mu}",
                 plain_text="Spin connection antisymmetry: omega_ABmu = -omega_BAmu",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Antisymmetry of spin connection in Lorentz indices. This follows from "
                     "the antisymmetry of the Lorentz algebra generators."
@@ -968,7 +968,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.6)",
                 latex=r"T^A = de^A + \omega^A{}_B \wedge e^B = 0",
                 plain_text="Torsion-free: T^A = de^A + omega^A_B wedge e^B = 0",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Torsion-free condition (first Cartan structure equation with T=0). "
                     "This determines the spin connection from the vielbein."
@@ -995,7 +995,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.7)",
                 latex=r"\partial_\mu e^A_\nu - \partial_\nu e^A_\mu + \omega^A{}_{B\mu} e^B_\nu - \omega^A{}_{B\nu} e^B_\mu = 0",
                 plain_text="First Cartan in components",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Component form of the first Cartan structure equation (torsion-free). "
                     "This equation can be solved for omega given e."
@@ -1022,7 +1022,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.8)",
                 latex=r"R^A{}_B = d\omega^A{}_B + \omega^A{}_C \wedge \omega^C{}_B",
                 plain_text="Curvature 2-form: R^A_B = d omega + omega wedge omega",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Second Cartan structure equation defining curvature from spin connection. "
                     "This is the differential form version of the Riemann tensor."
@@ -1049,7 +1049,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.9)",
                 latex=r"R^A{}_{B\mu\nu} = \partial_\mu \omega^A{}_{B\nu} - \partial_\nu \omega^A{}_{B\mu} + \omega^A{}_{C\mu} \omega^C{}_{B\nu} - \omega^A{}_{C\nu} \omega^C{}_{B\mu}",
                 plain_text="Riemann tensor from spin connection",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Component form of Riemann curvature tensor with Lorentz indices, "
                     "computed from spin connection and its derivatives."
@@ -1076,7 +1076,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.10)",
                 latex=r"D_\mu \psi = \partial_\mu \psi + \frac{1}{4} \omega^{AB}{}_\mu \Sigma_{AB} \psi",
                 plain_text="Spinor covariant derivative: D_mu psi = partial_mu psi + (1/4) omega Sigma psi",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Covariant derivative of a Dirac spinor in curved spacetime. "
                     "The spin connection couples to spinors through Lorentz generators."
@@ -1103,7 +1103,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.11)",
                 latex=r"\Sigma_{AB} = \frac{1}{4} [\gamma_A, \gamma_B]",
                 plain_text="Lorentz generator: Sigma_AB = (1/4)[gamma_A, gamma_B]",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Lorentz algebra generators in the spinor representation. "
                     "Built from commutators of Dirac gamma matrices."
@@ -1130,7 +1130,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.12)",
                 latex=r"\omega^A{}_{B\mu} = e^A_\nu E_B^\rho \Gamma^\nu_{\rho\mu} + e^A_\nu \partial_\mu E_B^\nu",
                 plain_text="Spin connection from Christoffel: omega = e E Gamma + e partial E",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Relation between spin connection and Christoffel symbols. "
                     "Shows how vielbein formalism encodes standard GR connection."
@@ -1161,7 +1161,7 @@ class AppendixNVielbein(SimulationBase):
                 path="vielbein.spacetime_dimension",
                 name="Spacetime Dimension",
                 units="dimensionless",
-                status="FOUNDATIONAL",
+                status="ESTABLISHED",
                 description="Dimension of spacetime (D=4 for standard applications)",
                 no_experimental_value=True,
             ),
@@ -1169,7 +1169,7 @@ class AppendixNVielbein(SimulationBase):
                 path="vielbein.lorentz_group_dimension",
                 name="Lorentz Group Dimension",
                 units="dimensionless",
-                status="FOUNDATIONAL",
+                status="ESTABLISHED",
                 description="Dimension of local Lorentz group SO(1,3): D(D-1)/2 = 6",
                 no_experimental_value=True,
             ),
@@ -1177,7 +1177,7 @@ class AppendixNVielbein(SimulationBase):
                 path="vielbein.spinor_representation_dimension",
                 name="Spinor Representation Dimension",
                 units="dimensionless",
-                status="FOUNDATIONAL",
+                status="ESTABLISHED",
                 description="Dimension of Dirac spinor in 4D: 2^(D/2) = 4",
                 no_experimental_value=True,
             ),

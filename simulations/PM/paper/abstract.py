@@ -59,7 +59,7 @@ class AbstractV17_2(SimulationBase):
     fermion generations from n_gen = chi_eff/(4*b3) = 144/48 = 3.
 
     The abstract references 26 Standard Model parameter predictions (24 within
-    1-sigma), 55 pure predictions, 72 Wolfram-verified certificates, and
+    1-sigma), 55 pure predictions, Wolfram-verified certificates, and
     key testable outputs including w0 = -23/24 (DESI 2025 thawing match).
 
     This is a narrative-only section: run() returns an empty dict.
@@ -207,7 +207,7 @@ class AbstractV17_2(SimulationBase):
                 "G2 manifold compactification with Euclidean bridge. Predicts 26 Standard Model "
                 "parameters (24 within 1-sigma), thawing dark energy w0 = -23/24, and proton "
                 "decay lifetime testable by Hyper-K. All derivations cryptographically locked "
-                "via 72 Wolfram-verified certificates."
+                "via Wolfram-verified certificates."
             ),
             content_blocks=content_blocks,
             section_type="abstract",

@@ -883,6 +883,7 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 "volume": "67",
                 "pages": "421-428",
                 "year": 1977,
+                "url": "https://doi.org/10.1016/0370-2693(77)90435-X",
                 "notes": "Original type-I seesaw mechanism proposal"
             },
             {
@@ -894,6 +895,7 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 "pages": "17",
                 "year": 1994,
                 "arxiv": "hep-ph/9303287",
+                "url": "https://arxiv.org/abs/hep-ph/9303287",
                 "notes": "Sterile neutrino production via oscillation in early universe"
             },
             {
@@ -905,6 +907,7 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 "pages": "A6",
                 "year": 2020,
                 "arxiv": "1807.06209",
+                "url": "https://arxiv.org/abs/1807.06209",
                 "notes": "N_eff = 2.99 +/- 0.34, constraining extra radiation"
             },
             {
@@ -914,6 +917,7 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 "journal": "Phys. Rev. D",
                 "volume": "110",
                 "year": 2024,
+                "url": "https://pdg.lbl.gov/2024/reviews/rpp2024-rev-neutrino-mixing.pdf",
                 "notes": "Delta m^2_atm = 2.453e-3 eV^2, atmospheric neutrino mass scale"
             },
             {
@@ -924,6 +928,7 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 "volume": "3",
                 "year": 2002,
                 "arxiv": "hep-th/0212294",
+                "url": "https://arxiv.org/abs/hep-th/0202210",
                 "notes": "Moduli stabilization in G2 compactifications"
             },
         ]

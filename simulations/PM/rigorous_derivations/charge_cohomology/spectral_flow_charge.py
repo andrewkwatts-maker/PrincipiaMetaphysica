@@ -1277,7 +1277,7 @@ class SpectralFlowChargeV18(SimulationBase):
 
         return SectionContent(
             section_id="R",
-            subsection_id="R.1",
+            subsection_id="R.2",
             title="Charge Quantization from Spectral Flow on G2 Manifolds",
             abstract=(
                 "Rigorous derivation of electric charge quantization using the "

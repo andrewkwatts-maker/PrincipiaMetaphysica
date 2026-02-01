@@ -1057,7 +1057,7 @@ class G2GeometryV16(SimulationBase):
         """
         Return formulas for G2 geometry.
 
-        All formulas are THEORY category (derived from ESTABLISHED physics).
+        All formulas use DERIVED category (derived from established mathematics).
 
         Returns:
             List of Formula instances
@@ -1999,7 +1999,7 @@ class G2GeometryV16(SimulationBase):
 
     def get_gate_checks(self) -> List[Dict[str, Any]]:
         """
-        Return gate checks for the 72-gate verification framework.
+        Return gate checks for the gate verification framework.
 
         Returns:
             List of gate check dictionaries

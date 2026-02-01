@@ -632,7 +632,7 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "R_perp_global = tensor_product(R_perp_i, i=1..12), R_perp_i^2 = -I"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Bridge/Global OR operator — tensor product of 12 Mobius "
                     "double-cover operators, creates dual shadows from 27D bulk"
@@ -682,7 +682,7 @@ class FourFaceG2Structure(SimulationBase):
                     "R_face^(f) = exp(-i*lambda_f*t/b3) * R_OR, "
                     "lambda_f = (n_f/(c7*sqrt(6)))^(2/7)"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Face/Local OR operator — selects visible face within each shadow "
                     "via Dirac eigenvalue modulation"
@@ -738,7 +738,7 @@ class FourFaceG2Structure(SimulationBase):
                     "+ T_omega^2/2 * chi_eff/b3 "
                     "+ kappa * sum(|grad(T_bridge_i)|^2)"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Bridge warping potential — governs shadow creation/separation "
                     "(Layer 1 global OR). God-level limit: T_bridge->inf implies "
@@ -813,7 +813,7 @@ class FourFaceG2Structure(SimulationBase):
                     "+ T_omega^2/2 * exp(-T_i^(f)/T_max) "
                     "+ kappa_f * sum(|grad(T_i^(f))|^2)"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Face warping potential — governs visible face selection "
                     "(Layer 2 local OR). Human-level limit: T_i>>T_max implies "
@@ -886,7 +886,7 @@ class FourFaceG2Structure(SimulationBase):
                     "alpha_sample^(f) = exp(-T_i^(f)/(2*T_max)) * 1/sqrt(6) "
                     "* (1 + Delta_F_f/F0)^(-1/2) approx 0.57"
                 ),
-                category="geometric",
+                category="GEOMETRIC",
                 description=(
                     "Sampling strength from visible sector to hidden faces — "
                     "derived from G2 volume ratio, torsion, and flux asymmetry"
@@ -1831,7 +1831,7 @@ class FourFaceG2Structure(SimulationBase):
 
     def get_gate_checks(self) -> list:
         """
-        Return gate checks for the 72-gate verification framework.
+        Return gate checks for the gate verification framework.
 
         Returns:
             List of gate check dictionaries

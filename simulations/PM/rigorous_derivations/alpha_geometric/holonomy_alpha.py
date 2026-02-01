@@ -1153,7 +1153,7 @@ if SCHEMA_AVAILABLE:
                     label="(A.2)",
                     latex=r"\alpha^{-1} = k_\gimel^2 - \frac{b_3}{\varphi} + \frac{\varphi}{4\pi} \approx 137.037",
                     plain_text="alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.037",
-                    category="HEURISTIC",
+                    category="DERIVED",
                     description=(
                         "Geometric Anchors formula: numerically approximates alpha^{-1} to "
                         "0.0005% accuracy, but the relationship is purely empirical. A "

@@ -341,39 +341,67 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 label="(E.2)",
                 latex=r"\Gamma_{p \to \pi^0 e^+} \sim \frac{\alpha_{\text{GUT}}^2}{M_{\text{GUT}}^4} m_p^5 \cdot |\langle \pi^0 e^+ | \mathcal{O}_6 | p \rangle|^2",
                 plain_text="Γ_p ∝ (α_GUT²/M_GUT⁴) m_p⁵ |⟨π⁰e⁺|O₆|p⟩|²",
-                category="PREDICTION",
+                category="PREDICTED",
                 description=(
                     "Proton decay rate from dimension-6 effective operators. "
                     "Includes GUT scale suppression and hadronic matrix elements."
                 ),
                 input_params=["mass_scales.M_GUT", "fermions.proton_mass", "gauge.alpha_GUT"],
                 output_params=["proton_decay.gamma_p"],
+                derivation={
+                    "method": "Dimension-6 operator in SO(10) GUT with G2 compactification",
+                    "parentFormulas": ["geometric-suppression-factor"],
+                    "steps": [
+                        "Integrate out heavy X,Y gauge bosons at M_GUT to obtain dimension-6 four-fermion operator O_6 = (QQQL)/M_GUT^2",
+                        "Compute hadronic matrix element <pi0 e+|O_6|p> using chiral perturbation theory and lattice QCD (~0.003 GeV^3)",
+                        "Apply geometric suppression S_geom from G2 cycle separation between quark and lepton zero modes",
+                        "Combine: Gamma_p = alpha_GUT^2 * m_p^5 / M_GUT^4 * |<pi0 e+|O_6|p>|^2 * S_geom",
+                    ],
+                },
             ),
             Formula(
                 id="proton-decay-lifetime",
                 label="(E.4)",
                 latex=r"\tau_{p \to \pi^0 e^+} = \frac{\hbar}{\Gamma_p} \approx 1.3 \times 10^{35} \text{ years}",
                 plain_text="τ_p = ℏ/Γ_p ≈ 1.3 × 10³⁵ years",
-                category="PREDICTION",
+                category="PREDICTED",
                 description=(
                     "Predicted proton lifetime for p → π⁰e⁺ channel. "
                     "Testable by Hyper-Kamiokande (2027+)."
                 ),
                 input_params=["proton_decay.gamma_p"],
                 output_params=["proton_decay.tau_p_years"],
+                derivation={
+                    "method": "Inverse of total decay rate with quantum mechanical lifetime relation",
+                    "parentFormulas": ["proton-decay-rate"],
+                    "steps": [
+                        "Compute total decay rate Gamma_p from dimension-6 operator framework (Eq. E.2)",
+                        "Apply quantum mechanical lifetime relation: tau_p = hbar / Gamma_p",
+                        "Convert to years: tau_p = 1.3 x 10^35 years, exceeding Super-K bound of 1.6 x 10^34 years",
+                    ],
+                },
             ),
             Formula(
                 id="geometric-suppression-factor",
                 label="(E.3)",
                 latex=r"S_{\text{geom}} = \exp\left(-\frac{\Delta_{QL}}{\ell_{\text{string}}}\right)",
                 plain_text="S_geom = exp(-Δ_QL/ℓ_string)",
-                category="FOUNDATIONAL",
+                category="GEOMETRIC",
                 description=(
                     "Geometric suppression from wavefunction overlap between quark "
                     "and lepton cycles in G₂ manifold."
                 ),
                 input_params=["topology.cycle_separation"],
                 output_params=["proton_decay.geometric_suppression"],
+                derivation={
+                    "method": "Wavefunction overlap on G2 manifold with separated associative 3-cycles",
+                    "parentFormulas": [],
+                    "steps": [
+                        "In G2 M-theory, quarks and leptons localize on different associative 3-cycles with geodesic separation Delta_QL",
+                        "Wavefunction tails decay exponentially: |psi(x)| ~ exp(-|x|/l_string) away from the localization cycle",
+                        "Overlap integral gives suppression: S_geom = exp(-Delta_QL / l_string), with Delta_QL ~ 0.5 in Planck units for TCS #187",
+                    ],
+                },
             ),
         ]
 

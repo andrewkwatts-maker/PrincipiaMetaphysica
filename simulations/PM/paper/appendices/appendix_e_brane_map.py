@@ -65,8 +65,8 @@ class AppendixEBraneMap(SimulationBase):
             id="appendix_e_brane_map_v16_2",
             version="16.2",
             domain="appendices",
-            title="Appendix E: Computational Requirements and Precision Protocols",
-            description="Precision protocols for V_7 manifold node calculations",
+            title="Appendix E: The Brane-Intersection Map",
+            description="Node coordinates and brane intersection topology in the V_7 manifold",
             section_id="E",
             subsection_id=None,
             appendix=True
@@ -220,8 +220,8 @@ class AppendixEBraneMap(SimulationBase):
         return SectionContent(
             section_id="E",
             subsection_id=None,
-            title="Appendix E: Computational Requirements and Precision Protocols",
-            abstract="Detailed node coordinates in the V7 manifold and precision requirements.",
+            title="Appendix E: The Brane-Intersection Map",
+            abstract="Node coordinates and brane intersection topology in the V_7 manifold.",
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
             param_refs=self.PARAM_REFS,

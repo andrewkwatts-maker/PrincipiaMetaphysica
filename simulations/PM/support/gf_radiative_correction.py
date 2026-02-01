@@ -384,7 +384,7 @@ class GFRadiativeCorrectionV18(SimulationBase):
         """Return section content for paper."""
         return SectionContent(
             section_id="4",
-            subsection_id="4.3",
+            subsection_id="4.3.1",
             title="Radiative Corrections to G_F",
             abstract=(
                 "The geometric derivation yields the tree-level Fermi constant. "

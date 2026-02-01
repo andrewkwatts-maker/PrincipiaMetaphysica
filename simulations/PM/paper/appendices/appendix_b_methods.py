@@ -592,7 +592,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 label="(B.1)",
                 latex=r"\mu \frac{d\alpha_i}{d\mu} = \beta_i(\alpha_1, \alpha_2, \alpha_3)",
                 plain_text="μ dα_i/dμ = β_i(α₁, α₂, α₃)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Renormalization group β-function governing the energy scale "
                     "dependence of gauge couplings."
@@ -610,7 +610,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 label="(B.3)",
                 latex=r"b^{(1)} = \left(\frac{41}{10}, -\frac{19}{6}, -7\right)",
                 plain_text="b^(1) = (41/10, -19/6, -7)",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "One-loop beta function coefficients for Standard Model gauge "
                     "couplings (U(1)_Y, SU(2)_L, SU(3)_C)."
@@ -692,7 +692,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     r"\sum_i C_i y_i^2 - \sum_a C_a \alpha_a \right]"
                 ),
                 plain_text="μ dy_f/dμ = y_f/(16π²) [Σ_i C_i y_i² - Σ_a C_a α_a]",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Renormalization group equation for Yukawa couplings. Includes "
                     "Yukawa self-coupling and gauge coupling contributions."
@@ -713,7 +713,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     r"\frac{4\alpha_s(\bar{m})}{3\pi} + \mathcal{O}(\alpha_s^2) \right]"
                 ),
                 plain_text="m_pole = m̄(m̄) [1 + 4α_s(m̄)/(3π) + O(α_s²)]",
-                category="FOUNDATIONAL",
+                category="ESTABLISHED",
                 description=(
                     "Relation between pole mass and running MS-bar mass for quarks. "
                     "Includes QCD corrections at one-loop order."

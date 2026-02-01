@@ -455,10 +455,22 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                     "parentFormulas": ["virasoro-algebra", "brst-cohomology"],
                     "method": "Central charge calculation from conformal field theory",
                     "steps": [
-                        "Matter: c_matter = D = 26 (each coordinate contributes +1)",
-                        "Ghost: c_ghost = -26 (from bc ghost system with h_b=2, h_c=-1)",
-                        "Total: c_total = c_matter + c_ghost = 26 - 26 = 0",
-                        "Unitarity: c_total = 0 ensures no negative-norm states",
+                        {
+                            "description": "Matter sector: each bosonic coordinate in D=26 contributes +1 to the central charge",
+                            "formula": r"c_{\mathrm{matter}} = D = 26"
+                        },
+                        {
+                            "description": "Ghost sector: the bc ghost system with conformal weights h_b=2, h_c=-1 contributes -26",
+                            "formula": r"c_{\mathrm{ghost}} = -26 \quad (h_b=2,\; h_c=-1)"
+                        },
+                        {
+                            "description": "Total central charge: matter and ghost contributions cancel exactly",
+                            "formula": r"c_{\mathrm{total}} = c_{\mathrm{matter}} + c_{\mathrm{ghost}} = 26 - 26 = 0"
+                        },
+                        {
+                            "description": "Unitarity: vanishing total central charge ensures no negative-norm states propagate",
+                            "formula": r"c_{\mathrm{total}} = 0 \;\Rightarrow\; \text{no ghosts}"
+                        },
                     ]
                 },
                 terms={
@@ -484,10 +496,22 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                     "parentFormulas": ["g2-topology", "weyl-anomaly-cancellation"],
                     "method": "Dimensional counting from G2 compactification",
                     "steps": [
-                        "b3 = 24 transverse modes from TCS G2 manifold",
-                        "Unified time (1) + Euclidean bridge (0) contributes 2 for timeless substrate",
-                        "Ghost bc system contributes -26",
-                        "c = 24 + 2 - 26 = 0 [GHOST-FREE]",
+                        {
+                            "description": "Third Betti number b3=24 of the TCS G2 manifold provides 24 transverse bosonic modes",
+                            "formula": r"b_3(\mathrm{G}_2) = 24 \;\text{transverse modes}"
+                        },
+                        {
+                            "description": "Unified time (1 dimension) plus Euclidean bridge (1 complex = 2 real) contribute 2 to the central charge",
+                            "formula": r"c_{\mathrm{bridge}} = 1 + 1 = 2"
+                        },
+                        {
+                            "description": "The bc ghost system in the critical string contributes -26",
+                            "formula": r"c_{\mathrm{ghost}} = -26"
+                        },
+                        {
+                            "description": "Total central charge vanishes: ghost-free theory confirmed",
+                            "formula": r"c = b_3 + 2 - 26 = 24 + 2 - 26 = 0 \;\;[\text{GHOST-FREE}]"
+                        },
                     ]
                 },
                 terms={

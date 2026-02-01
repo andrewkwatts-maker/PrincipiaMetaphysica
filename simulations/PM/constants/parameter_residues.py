@@ -196,7 +196,7 @@ class ParameterResidueExtractor:
             'step3': 'Identify eigenvalues with SM parameters',
             'step4': 'Verify via path-independence (holonomy)',
             'step5': 'Check trace formula completeness',
-            'cryptographic': '72 Wolfram certificates lock values',
+            'cryptographic': 'Wolfram certificates lock values',
             'key_constraint': 'No tuning - values are locked'
         }
 
@@ -506,7 +506,7 @@ class ParameterResidueSimulation(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="2",
-            subsection_id="2.5",
+            subsection_id="2.4",
             title="Parameter Residue Extraction from G2 Geometry",
             abstract=(
                 "The 125 fundamental physical constants of the Standard Model "
