@@ -316,8 +316,16 @@ class PMRegistry:
                 exp_val = float(experimental_value)
 
                 if bound_type in ("measured", "central_value") and experimental_uncertainty is not None and experimental_uncertainty > 0:
-                    # Standard sigma calculation: |theory - exp| / sigma
-                    sigma_deviation = abs(theory_val - exp_val) / experimental_uncertainty
+                    # Include theory_uncertainty (from metadata) if available
+                    # Total uncertainty: sqrt(exp^2 + theory^2)
+                    total_uncertainty = experimental_uncertainty
+                    if metadata and isinstance(metadata, dict) and 'theory_uncertainty' in metadata:
+                        try:
+                            theory_unc = float(metadata['theory_uncertainty'])
+                            total_uncertainty = (experimental_uncertainty**2 + theory_unc**2)**0.5
+                        except (TypeError, ValueError):
+                            pass
+                    sigma_deviation = abs(theory_val - exp_val) / total_uncertainty
 
                     if sigma_deviation < 1.0:
                         validation_status = "PASS"

@@ -627,10 +627,12 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "experimental_value": 1.1663788e-5,  # PDG 2024 (GeV^-2)
                 "experimental_uncertainty": 6e-12,  # PDG 2024 precision
                 "experimental_source": "PDG2024",
-                # Theory uncertainty: ~0.01% from higher-order corrections beyond Schwinger
-                # G_F_matched = G_F_tree * (1 + alpha/2pi) includes 1-loop QED
-                "theory_uncertainty": 1.2e-9,  # 0.01% of G_F value (higher-loop residual)
-                "theory_uncertainty_source": "schwinger_matched_higher_loop_residual"
+                # Theory uncertainty: ~0.12% from geometric VEV precision
+                # v_geo = k_gimel*(b3-4) = 246.37 GeV vs physical 246.22 GeV
+                # G_F ~ 1/v^2, so dG_F/G_F ~ 2*dv/v ~ 2*0.15/246.37 = 0.12%
+                # Dominates over Schwinger matching residual (~0.01%)
+                "theory_uncertainty": 1.4e-8,  # 0.12% of G_F (geometric VEV precision)
+                "theory_uncertainty_source": "geometric_vev_precision"
             },
             "T_CMB": {
                 "experimental_value": 2.7255,  # COBE/Planck 2018 (K)

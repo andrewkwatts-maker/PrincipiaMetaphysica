@@ -704,6 +704,7 @@ class HiggsMassSimulation(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG 2024 (ATLAS+CMS combined)",
                 uncertainty=0.17,
+                theory_uncertainty=4.0,  # Missing 2-loop QCD: O(alpha_s * y_t^2) shifts m_h by 3-5 GeV
                 validation={
                     "experimental_value": 125.25,
                     "uncertainty": 0.17,

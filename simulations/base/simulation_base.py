@@ -200,6 +200,7 @@ class Parameter:
     bound_type: Optional[str] = None
     bound_source: Optional[str] = None
     uncertainty: Optional[float] = None
+    theory_uncertainty: Optional[float] = None  # Theoretical precision limit (1σ)
     no_experimental_value: bool = False
     validation: Optional[Dict[str, Any]] = None
 
@@ -372,6 +373,10 @@ class SimulationBase(ABC):
                             metadata['description'] = param_def.description_template
                     elif param_def.description:
                         metadata['description'] = param_def.description
+
+                # Add theory_uncertainty to metadata if present in param_def
+                if param_def and param_def.theory_uncertainty is not None:
+                    metadata['theory_uncertainty'] = param_def.theory_uncertainty
 
                 # Extract experimental comparison data from parameter definition
                 exp_value = None
