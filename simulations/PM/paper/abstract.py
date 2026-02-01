@@ -120,7 +120,7 @@ class AbstractV17_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    'We introduce a unified mathematical framework that derives fundamental physical '
+                    'We introduce a unified mathematical framework that derives all 125 fundamental physical '
                     'constants and cosmological observables from the topological invariants of a '
                     '<span class="pm-value" data-pm-value="dimensions.D_bulk">27</span>D manifold with '
                     '(26,1) signature and 2D Euclidean central bridge. <strong>Principia Metaphysica v23.1</strong> '
@@ -155,7 +155,8 @@ class AbstractV17_2(SimulationBase):
                     'of <span class="pm-value" data-pm-value="validation.total_predictions">26</span></strong> '
                     'predictions (including all non-calibrated parameters) lie within 1\u03c3 of current experimental '
                     'data, with <strong><span class="pm-value" data-pm-value="validation.exact_matches">3</span> exact '
-                    'matches</strong> including \u03b8\u2082\u2083 = <span class="pm-value" data-pm-value="pmns_matrix.theta_23">49.75</span>\u00b0 '
+                    'matches</strong> including the fine structure constant \u03b1<sup>\u22121</sup> (0.25\u03c3 from CODATA 2018) and '
+                    '\u03b8\u2082\u2083 = <span class="pm-value" data-pm-value="pmns_matrix.theta_23">49.75</span>\u00b0 '
                     '(from G\u2082 holonomy SU(3) symmetry forcing Shadow<sub>\u05f7</sub> = Shadow<sub>\u05f8</sub>). '
                     'The model predicts thawing dark energy w\u2080 = -23/24 \u2248 -0.9583 (0.02\u03c3 from DESI 2025 '
                     'thawing constraint), proton decay lifetime \u03c4<sub>p</sub> ~ 10<sup>34</sup> years '
@@ -180,16 +181,17 @@ class AbstractV17_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "**Two-Layer Objective Reduction**\n\n"
-                    "The theory introduces a hierarchical two-layer OR structure: "
-                    "(i) Bridge/Global OR (R_\u22a5^global) creates dual shadows from the 27D bulk via tensor product "
-                    "of 12 M\u00f6bius double-cover operators, and "
-                    "(ii) Face/Local OR (R_face^(f)) selects the visible sector within each shadow from 4 K\u00e4hler "
-                    "moduli faces. The master action explicitly captures both layers through warping potentials "
-                    "V_bridge (shadow creation) and V_face (face selection). Hidden faces (f=2,3,4) provide "
-                    "multi-component dark matter with portal coupling \u03b1_leak \u2248 0.57 derived from G\u2082 volume ratio. "
-                    "Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, "
-                    "EM and gravity at P_leak \u2248 6.9\u00d710\u207b\u2076."
+                    '<strong>Two-Layer Objective Reduction</strong>: '
+                    'The theory introduces a hierarchical two-layer OR structure: '
+                    '(i) Bridge/Global OR (R<sub>\u22a5</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product '
+                    'of 12 M\u00f6bius double-cover operators, and '
+                    '(ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 K\u00e4hler '
+                    'moduli faces. The master action explicitly captures both layers through warping potentials '
+                    'V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide '
+                    'multi-component dark matter with portal coupling \u03b1<sub>leak</sub> = 1/\u221a6 \u2248 0.408 derived from G\u2082 volume ratio '
+                    '(6 = 12/2 aligned bridge pairs under OR rotation). '
+                    'Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, '
+                    'EM and gravity at P<sub>leak</sub> \u2248 6.9\u00d710<sup>\u22126</sup>.'
                 ),
                 label="abstract-two-layer-or"
             ),
