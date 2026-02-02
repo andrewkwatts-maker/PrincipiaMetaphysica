@@ -225,18 +225,20 @@ class ResultsV16_2(SimulationBase):
                     "Unlike the standard ΛCDM model, which assumes a 'Perfect Vacuum' (w = -1), "
                     "the Sterile Model predicts a slight deviation due to the <strong>Topological "
                     "Hysteresis</strong> of the V₇ manifold. The Laplacian extraction yields a "
-                    "terminal value of w₀ = -0.9583, in precise agreement with the 2025 DESI Year 5 "
-                    "results (w₀ = -0.957 ± 0.067), which favor a 'thawing' quintessence-like "
+                    "terminal value of w₀ = -0.9583, within the uncertainty range of DESI 2025 BAO "
+                    "measurements (w₀ = -0.957 ± 0.067), which favor a 'thawing' quintessence-like "
                     "behavior over a static cosmological constant."
                 )
             ),
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>DESI 2025 Match: 0.02σ</h4>"
-                    "<p>The geometric prediction of w₀ = -23/24 matches the DESI DR2 2025 "
-                    "measurement to within 0.02σ—essentially an exact match within experimental "
-                    "uncertainty.</p>"
+                    "<h4>DESI 2025 Consistency</h4>"
+                    "<p>The geometric prediction w₀ = -23/24 ≈ -0.9583 falls within the DESI 2025 "
+                    "BAO-only uncertainty range (w₀ = -0.957 ± 0.067). Both the PM framework and "
+                    "DESI data independently favor thawing dark energy (w₀ > -1) over ΛCDM. "
+                    "Note: combined DESI+CMB constraints are tighter and the deviation level "
+                    "varies by dataset combination.</p>"
                 ),
                 label="desi-match"
             ),
@@ -293,6 +295,53 @@ class ResultsV16_2(SimulationBase):
                     "The v21 model asserts that <strong>any universe descending from a 27D(26,1) "
                     "dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
                 )
+            ),
+
+            # ================================================================
+            # 3.4 Predictions Summary
+            # ================================================================
+            ContentBlock(
+                type="heading",
+                content="Predictions Summary Table",
+                level=2,
+                label="3.4"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The following table summarizes the framework's key quantitative predictions "
+                    "and their comparison with experimental data. Predictions marked 'UNTESTED' "
+                    "represent genuine future tests; those marked 'CONSISTENT' are postdictions "
+                    "compared against already-measured values."
+                )
+            ),
+            ContentBlock(
+                type="table",
+                headers=["Observable", "PM Prediction", "Experimental Value", "Deviation", "Status"],
+                rows=[
+                    ["w\u2080 (dark energy EoS)", "-23/24 \u2248 -0.9583", "DESI BAO: -0.957 \u00b1 0.067", "0.02\u03c3 (BAO-only)", "CONSISTENT"],
+                    ["\u03b1\u207b\u00b9 (fine structure)", "137.036 (geometric)", "CODATA 2018: 137.036 \u00b1 0.0001", "0.25\u03c3", "CONSISTENT"],
+                    ["n_gen (fermion generations)", "3 (\u03c7_eff/48)", "LEP Z-width: 3", "Exact", "CONSISTENT"],
+                    ["sin \u03b8_C (Cabibbo angle)", "0.2257 (racetrack)", "PDG 2024: 0.2257 \u00b1 0.0010", "Central value", "CONSISTENT"],
+                    ["\u03a9_DM/\u03a9_b (DM ratio)", "5.4 (T'/T ~ 0.57)", "Planck 2018: 5.38 \u00b1 0.15", "0.1\u03c3", "CONSISTENT"],
+                    ["\u03b8\u2082\u2083 (PMNS mixing)", "49.75\u00b0 (G\u2082 symmetry)", "NuFIT 6.0: 49.5\u00b0 \u00b1 1.0\u00b0", "0.25\u03c3", "CONSISTENT"],
+                    ["H\u2080 (Hubble constant)", "71.55 km/s/Mpc", "SH0ES: 73.04 \u00b1 1.04", "1.4\u03c3", "CONSISTENT"],
+                    ["\u03c4_p (proton decay)", "3.9 \u00d7 10\u00b3\u2074 yr", "Super-K: > 1.67 \u00d7 10\u00b3\u2074 yr", "Above bound", "UNTESTED"],
+                    ["m_KK (KK graviton)", "~5.0 TeV", "LHC: searches ongoing", "\u2014", "UNTESTED"],
+                    ["m_a (QCD axion)", "~6 \u03bceV", "ADMX: scanning", "\u2014", "UNTESTED"],
+                ]
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<h4>Interpretation Note</h4>"
+                    "<p><strong>CONSISTENT</strong> predictions are comparisons against already-measured quantities "
+                    "(postdictions). While encouraging, they do not constitute independent confirmation. "
+                    "<strong>UNTESTED</strong> predictions (proton decay, KK graviton mass, axion mass) represent "
+                    "genuine falsifiable forecasts of the framework. Three quantities (VEV coefficient, "
+                    "\u03b1<sub>GUT</sub> coefficient, Re(T) from Higgs mass) are calibration inputs.</p>"
+                ),
+                label="predictions-interpretation"
             ),
         ]
 
@@ -477,7 +526,7 @@ class ResultsV16_2(SimulationBase):
                 "year": 2025,
                 "journal": "Physical Review Letters",
                 "url": "https://arxiv.org/abs/2404.03002",
-                "notes": "w0 = -0.957 thawing: 0.02 sigma agreement with PM prediction w0 = -23/24"
+                "notes": "DESI BAO measurement; PM prediction w0 = -23/24 falls within BAO-only uncertainty"
             },
             {
                 "id": "riess_2022",
@@ -513,7 +562,7 @@ class ResultsV16_2(SimulationBase):
         return [
             {
                 "id": "CERT_RESULTS_W0_DESI",
-                "assertion": "w0 = -23/24 agrees with DESI 2025 thawing at < 1 sigma",
+                "assertion": "w0 = -23/24 falls within DESI 2025 BAO-only uncertainty at < 1 sigma",
                 "condition": f"|w0_pm - w0_desi|/sigma_desi < 1.0 (actual: {w0_sigma:.4f})",
                 "tolerance": 1.0,
                 "status": "PASS" if w0_ok else "FAIL",

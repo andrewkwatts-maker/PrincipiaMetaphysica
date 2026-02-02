@@ -1273,7 +1273,7 @@ class FormulasRegistry:
         #   (From per-shadow G2 compactification)
         #
         # Dark Energy (breathing mechanism):
-        #   w0 = -1 + 1/b3 = -23/24 = -0.9583 (consistent with DESI 2025 within 0.02 sigma)
+        #   w0 = -1 + 1/b3 = -23/24 = -0.9583 (consistent with DESI 2025 BAO-only data)
         #   w_a = -1/sqrt(b3) = -1/sqrt(24) = -0.204 (predicted)
         #
         # Legacy v21 aliases (for backward compatibility):
@@ -4209,7 +4209,7 @@ class FormulasRegistry:
         Euclidean bridge (2,0) connecting the dual shadows.
         The deviation from w0=-1 (cosmological constant) is due to
         the dynamic size modulus of B^2 bridge.
-        DESI 2025 constraint: w0 = -0.958 +/- 0.02 (prediction within 0.02 sigma)
+        DESI 2025 BAO-only: w0 = -0.957 ± 0.067 (prediction within uncertainty)
         """
         return -self._tzimtzum_pressure
 
