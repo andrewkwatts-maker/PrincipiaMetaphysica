@@ -119,8 +119,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 "prediction": "w₀ = -0.9583 (exact), wₐ = 0.27 (geometric)",
                 "experiment": "DESI 2025 (thawing)",
                 "measured": "DESI 2025 (thawing): w₀ = -0.957",
-                "agreement": "0.02σ (w₀), 0.1σ (wₐ)",
-                "status": "CONFIRMED"
+                "agreement": "< 1σ (w₀, BAO-only), 0.1σ (wₐ)",
+                "status": "CONSISTENT"
             },
             "neutrino_mixing": {
                 "parameter": "θ₁₂, θ₁₃, θ₂₃, δ_CP",
@@ -512,7 +512,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 headers=["Issue", "Status", "Resolution"],
                 rows=[
                     ["D Unified Time Framework", "✓ NEW", "(13,1) + (13,1) with Z₂ symmetry; visible + mirror sectors"],
-                    ["w₀ & wₐ derivation", "✓ DERIVED", "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583, wₐ,eff = 0.27 from G₂ torsion logs (DESI 2025 thawing: 0.02σ)"],
+                    ["w₀ & wₐ derivation", "✓ DERIVED", "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583, wₐ,eff = 0.27 from G₂ torsion logs (DESI 2025 BAO-only: < 1σ)"],
                     ["CY4 construction", "✓ RESOLVED", "χ_eff = 144 from 𝔻 unified time framework (flux-dressed Euler characteristic)"],
                     ["Hodge numbers", "✓ RESOLVED", "h^{1,1} = 4, h^{2,1} = 0, h^{3,1} = 0, h^{2,2} = 60 (satisfies CY4 constraint)"],
                     ["G₂ holonomy error", "✓ CORRECTED", "G₂×S¹ → Spin(7), NOT SU(4); use direct CY4 or M/F-theory duality"],
@@ -724,7 +724,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Parameter", "Value", "Status", "DESI 2024 Data"],
                 rows=[
-                    ["w₀", "−23/24 ≈ -0.9583 (from b₃ = 24)", "DERIVED (MEP)", "DESI 2025 (thawing): w₀ = -0.957 (0.02σ deviation)"],
+                    ["w₀", "−23/24 ≈ -0.9583 (from b₃ = 24)", "DERIVED (MEP)", "DESI 2025 BAO-only: w₀ = -0.957 ± 0.067 (consistent)"],
                     ["w_a,eff", "0.27 (from α_T = 2.7)", "DERIVED", "DESI: -0.75 ± 0.30 (0.66σ agreement)"],
                     ["α_T", "≈ 2.7 (Z₂-corrected)", "DERIVED", "Consistent with w(z) logarithmic form"],
                     ["Planck tension", "Reduced 6σ → 1.3σ", "RESOLVED", "Frozen field mechanism via logarithmic w(z) evolution"],
@@ -886,12 +886,15 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Gravitational waves provide an exceptionally clean probe of Lorentz invariance in the "
-                    "gravitational sector, as they propagate over cosmological distances. The framework predicts "
-                    "a modified dispersion relation for gravitational waves with a geometrically derived coupling "
-                    "term from torsion flux and topology: ω² = k² (1 + ξ²(k/M_Pl)² + η k Δt_ortho/c), where "
-                    "η = exp(|T_omega|) / b₃ = exp(1.0) / 24 = 0.1133 (100% geometric derivation). "
-                    "See simulations/gw_dispersion_geometric_v15_0.py for derivation."
+                    "Gravitational waves provide a clean probe of Lorentz invariance in the "
+                    "gravitational sector. The framework predicts a modified dispersion relation "
+                    "with a geometrically derived coupling from torsion flux: "
+                    "ω² = k²(1 + ξ²(k/M_Pl)² + η k Δt_ortho/c), where η = exp(|T_ω|)/b₃ ≈ 0.113. "
+                    "The observable dispersion effect is Planck-suppressed: the dominant term "
+                    "ξ²(k/M_Pl)² is O(10⁻³⁸) at LIGO frequencies (~100 Hz), far below current "
+                    "sensitivity (|A_α| < 10⁻²⁰). This prediction targets next-generation "
+                    "space-based detectors (LISA 2037+) observing massive BH mergers where "
+                    "the accumulated phase shift over cosmological distances may become detectable."
                 )
             ),
             ContentBlock(
@@ -1141,7 +1144,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["KK graviton 5.0 TeV", "HL-LHC: pp collisions at sqrt(s) = 14 TeV, 3000 fb^-1 integrated luminosity", "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section sigma*BR(gamma gamma) ~ 0.10 fb", "No excess above 7 TeV challenges geometric derivation"],
                     ["Proton decay p->e+pi0", "Hyper-K: 260 kton water Cherenkov detector, 10 yr exposure", "Back-to-back e+ and pi0 (each ~459 MeV); Cherenkov ring topology distinguishes from atmospheric nu background", "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10) scale"],
                     ["w0 = -23/24", "DESI: 5000 fibre spectroscopic survey, 14000 deg^2, BAO measurements at z = 0.1-3.5", "BAO peak positions + RSD amplitude vs redshift constrain w0 to +/-0.02 (DR3)", "w0 outside [-0.99, -0.92] at 3 sigma falsifies MEP derivation"],
-                    ["GW dispersion n=2", "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission", "Frequency-dependent arrival time delay in massive BH mergers: Delta_t ~ 10^-42 s * (f/mHz)^2", "n != 2 or xi_2 off by >10x challenges CY4 compactification geometry"],
+                    ["GW dispersion n=2", "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission", "Planck-suppressed: Delta_t ~ 10^{-42} s at LISA frequencies, requiring post-LISA sensitivity", "n != 2 or xi_2 off by >10x challenges CY4 compactification geometry"],
                 ]
             ),
 
@@ -1155,7 +1158,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Prediction", "Status", "Notes"],
                 rows=[
-                    ["Dark energy w₀, w_a", "✓ CONFIRMED", "DESI 2025 (thawing): 0.02σ (w₀), 0.66σ (w_a) agreement"],
+                    ["Dark energy w₀, w_a", "✓ CONSISTENT", "DESI 2025 BAO-only: < 1σ (w₀), 0.66σ (w_a)"],
                     ["Neutrino mixing", "✓ CONFIRMED", "NuFIT 6.0: all angles 0.00-0.24σ"],
                     ["Fermion generations", "✓ CONFIRMED", "n_gen = 3 (exact from χ_eff/48)"],
                     ["Dark matter ratio", "✓ CONFIRMED", "Planck 2018: Ω_DM/Ω_b = 5.38±0.15 vs 5.4"],
@@ -1164,7 +1167,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["Neutrino hierarchy", "⊙ PREDICTED", "Normal hierarchy (76% confidence) - JUNO/DUNE 2027-2030"],
                     ["KK gravitons", "○ UNTESTED", "m_KK = 5.0 TeV - HL-LHC searches 2029-2030"],
                     ["GUT scale", "○ UNTESTED", "M_GUT = 2.118×10¹⁶ GeV (geometric + 3-loop)"],
-                    ["GW dispersion", "○ UNTESTED", "η = 0.1133 (geometric) - LISA 2037+"],
+                    ["GW dispersion", "○ UNTESTED", "Planck-suppressed dispersion (geometric) - far-future"],
                     ["CHSH violations", "○ UNTESTED", "δ_ortho ~ 10⁻⁵ - feasible 2027-2030"],
                     ["CMB bubbles", "○ UNTESTED", "Cold spot signatures - CMB-S4 2027+"],
                     ["Cross-shadow phase shift", "○ UNTESTED", "δφ = α_leak × L/λ_dB, α_leak = 1/√6 - atom interferometry"],
@@ -1255,7 +1258,7 @@ class PredictionsAggregatorV16(SimulationBase):
                         "sigma(w_0) ~ 0.02",
                         "2025-2028",
                         "w_0 outside [-0.99, -0.92] at 3 sigma falsifies MEP",
-                        "CONFIRMED (0.02 sigma)",
+                        "CONSISTENT (within BAO-only uncertainty)",
                     ],
                     [
                         "Direct detection",
@@ -1361,9 +1364,9 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "VALIDATION IN PROGRESS: DESI 2025 thawing analysis already reports "
-                    "w_0 = -0.957, in 0.02 sigma agreement with the PM prediction "
-                    "w_0 = -23/24 ~ -0.9583. DESI DR3 (expected 2027-2028) will tighten "
+                    "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports "
+                    "w_0 = -0.957 ± 0.067, within which the PM prediction "
+                    "w_0 = -23/24 ≈ -0.9583 falls. DESI DR3 (expected 2027-2028) will tighten "
                     "the constraint to sigma(w_0) ~ 0.02, providing a definitive test of "
                     "the breathing dark energy mechanism derived from the Maximum Entropy "
                     "Principle with b_3 = 24. The logarithmic evolution "
@@ -1720,11 +1723,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 category="PREDICTED",
                 description=(
                     "Gravitational wave polarization anomaly from G2 torsion coupling. "
-                    "The torsion parameter T_omega = 1/sqrt(6) ~ 0.408 introduces a "
-                    "quadratic correction to GW polarization amplitudes: delta_h/h ~ T_omega^2 = 1/6. "
-                    "This fractional anomaly is detectable by cross-correlating LIGO/LISA "
-                    "polarization channels and searching for the characteristic 1/6 signature "
-                    "in the plus-cross polarization ratio."
+                    "The bare torsion parameter T_omega = 1/sqrt(6) gives T_omega^2 = 1/6, "
+                    "but the observable polarization anomaly is suppressed by the compactification "
+                    "volume factor: delta_h/h ~ T_omega^2 * (l_Pl/R_compact)^2 ~ 10^{-30}, "
+                    "far below current LIGO sensitivity (|kappa| < 0.1). This becomes a "
+                    "far-future prediction for post-LISA gravitational wave astronomy."
                 ),
                 inputParams=["predictions.gw_torsion_anomaly"],
                 outputParams=["predictions.gw_torsion_anomaly"],
@@ -1735,9 +1738,9 @@ class PredictionsAggregatorV16(SimulationBase):
                         "G2 torsion class introduces torsion parameter T_omega = 1/sqrt(6)",
                         "Torsion couples to gravitational wave polarization tensor",
                         "Leading correction to polarization amplitude: delta_h/h ~ T_omega^2",
-                        "T_omega^2 = (1/sqrt(6))^2 = 1/6 ~ 0.167",
+                        "T_omega^2 = 1/6, but observable effect suppressed by (l_Pl/R_compact)^2 ~ 10^{-30}",
                         "Observable as anomalous plus-cross polarization ratio in GW detectors",
-                        "LISA sensitivity: delta_h/h ~ 10^{-2} at mHz frequencies (detectable)"
+                        "LISA sensitivity: insufficient; requires far-future detectors beyond current plans"
                     ],
                     "method": "torsion_gw_polarization_coupling",
                     "parentFormulas": ["dark-force-leakage-prediction"]
@@ -1863,7 +1866,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "steps": [
                         "G2 manifold topology fixes b_3 = 24 (third Betti number)",
                         "Maximum Entropy Principle: w_0 = -1 + 1/b_3 = -23/24 ~ -0.9583",
-                        "DESI 2025 (thawing): w_0 = -0.957 (0.02 sigma agreement)",
+                        "DESI 2025 BAO-only: w_0 = -0.957 ± 0.067 (PM prediction falls within uncertainty)",
                         "DESI DR3 target: sigma(w_0) ~ 0.02",
                         "Confirmation at w_0 ~ -0.958 supports breathing dark energy",
                         "Exclusion of [-0.99, -0.92] at 3 sigma falsifies MEP derivation"
@@ -1942,9 +1945,9 @@ class PredictionsAggregatorV16(SimulationBase):
                 status="PREDICTED",
                 description=(
                     "Gravitational wave polarization anomaly from G2 torsion coupling: "
-                    "delta_h/h ~ T_omega^2 = 1/6 ~ 0.167. Observable as anomalous "
-                    "plus-cross polarization ratio in LIGO O5, Einstein Telescope, "
-                    "and LISA cross-polarization analysis."
+                    "bare value T_omega^2 = 1/6, but observable effect suppressed by "
+                    "compactification volume to delta_h/h ~ 10^{-30}. Far below current "
+                    "LIGO sensitivity; far-future prediction."
                 ),
                 derivation_formula="gw-polarization-anomaly",
                 no_experimental_value=True,

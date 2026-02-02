@@ -13,8 +13,8 @@ v22 COMPATIBILITY: Uses unified time (24,1) signature with Euclidean bridge.
 Provides section content for the Abstract (Section 0).
 
 This simulation provides the abstract narrative for Principia Metaphysica v23.1,
-the 27D(26,1) dual-shadow framework with Euclidean bridge where all 125 physical
-constants emerge as spectral residues of G2 manifold compactification. It does
+the 27D(26,1) dual-shadow framework with Euclidean bridge where 125 physical
+constants are proposed to emerge as spectral residues of G2 manifold compactification. It does
 not compute physics parameters, but instead generates the narrative content and
 cross-references for the paper's abstract section.
 
@@ -59,8 +59,9 @@ class AbstractV17_2(SimulationBase):
     fermion generations from n_gen = chi_eff/(4*b3) = 144/48 = 3.
 
     The abstract references 26 Standard Model parameter predictions (24 within
-    1-sigma), 55 pure predictions, Wolfram-verified certificates, and
-    key testable outputs including w0 = -23/24 (DESI 2025 thawing match).
+    1-sigma; see results section for full table), 55 pure predictions,
+    reproducibility certificates, and key testable outputs including
+    w0 = -23/24 (consistent with DESI 2025 thawing direction).
 
     This is a narrative-only section: run() returns an empty dict.
     """
@@ -120,7 +121,7 @@ class AbstractV17_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    'We introduce a unified mathematical framework that derives all 125 fundamental physical '
+                    'We introduce a unified mathematical framework that proposes geometric expressions for 125 fundamental physical '
                     'constants and cosmological observables from the topological invariants of a '
                     '<span class="pm-value" data-pm-value="dimensions.D_bulk">27</span>D manifold with '
                     '(26,1) signature and 2D Euclidean central bridge. <strong>Principia Metaphysica v23.1</strong> '
@@ -151,19 +152,23 @@ class AbstractV17_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    '<strong><span class="pm-value" data-pm-value="validation.predictions_within_1sigma">24</span> '
-                    'of <span class="pm-value" data-pm-value="validation.total_predictions">26</span></strong> '
-                    'predictions (including all non-calibrated parameters) lie within 1\u03c3 of current experimental '
-                    'data, with <strong><span class="pm-value" data-pm-value="validation.exact_matches">3</span> exact '
-                    'matches</strong> including the fine structure constant \u03b1<sup>\u22121</sup> (0.25\u03c3 from CODATA 2018) and '
+                    'Of <span class="pm-value" data-pm-value="validation.total_predictions">26</span> '
+                    'Standard Model parameter comparisons, '
+                    '<strong><span class="pm-value" data-pm-value="validation.predictions_within_1sigma">24</span></strong> '
+                    'lie within 1\u03c3 of current experimental '
+                    'data (see Section 3 for full comparison table), with '
+                    '<strong><span class="pm-value" data-pm-value="validation.exact_matches">3</span> matching '
+                    'at the central value</strong> including the fine structure constant \u03b1<sup>\u22121</sup> (0.25\u03c3 from CODATA 2018) and '
                     '\u03b8\u2082\u2083 = <span class="pm-value" data-pm-value="pmns_matrix.theta_23">49.75</span>\u00b0 '
                     '(from G\u2082 holonomy SU(3) symmetry forcing Shadow<sub>\u05f7</sub> = Shadow<sub>\u05f8</sub>). '
-                    'The model predicts thawing dark energy w\u2080 = -23/24 \u2248 -0.9583 (0.02\u03c3 from DESI 2025 '
-                    'thawing constraint), proton decay lifetime \u03c4<sub>p</sub> ~ 10<sup>34</sup> years '
-                    '(Hyper-K testable), and gravitational wave dispersion \u03b7 \u2248 0.10 from effective torsion. '
-                    'All derivations are cryptographically locked via '
-                    '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span> Wolfram-verified '
-                    'certificates. DOI: 10.5281/zenodo.18079602'
+                    'The model predicts thawing dark energy w\u2080 = -23/24 \u2248 -0.9583, '
+                    'consistent with DESI 2025 thawing dark energy constraints '
+                    '(BAO-only: w\u2080 = \u22120.957 \u00b1 0.067), '
+                    'and proton decay lifetime \u03c4<sub>p</sub> ~ 10<sup>34</sup> years '
+                    '(Hyper-K testable). '
+                    'All derivation chains are recorded in '
+                    '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span> '
+                    'reproducibility certificates.'
                 ),
                 label="abstract-validation"
             ),
@@ -202,12 +207,12 @@ class AbstractV17_2(SimulationBase):
             subsection_id=None,
             title="Abstract",
             abstract=(
-                "Unified mathematical framework deriving 125 fundamental physical constants "
-                "and cosmological observables as spectral residues of a 27D(26,1) dual-shadow "
-                "G2 manifold compactification with Euclidean bridge. Predicts 26 Standard Model "
-                "parameters (24 within 1-sigma), thawing dark energy w0 = -23/24, and proton "
-                "decay lifetime testable by Hyper-K. All derivations cryptographically locked "
-                "via Wolfram-verified certificates."
+                "Unified mathematical framework proposing geometric expressions for 125 fundamental "
+                "physical constants and cosmological observables as spectral residues of a "
+                "27D(26,1) dual-shadow G2 manifold compactification with Euclidean bridge. "
+                "Predicts 26 Standard Model parameters (24 within 1-sigma) and proton "
+                "decay lifetime testable by Hyper-K. All derivation chains recorded in "
+                "reproducibility certificates."
             ),
             content_blocks=content_blocks,
             section_type="abstract",
@@ -328,9 +333,10 @@ class AbstractV17_2(SimulationBase):
                     "name": "125 Constants from Geometry",
                     "explanation": (
                         "Rather than treating constants like the electron mass or the "
-                        "strength of gravity as independent inputs, the theory derives "
-                        "all 125 of them as 'spectral residues' -- the natural resonant "
-                        "frequencies of the folded 7-dimensional internal manifold."
+                        "strength of gravity as independent inputs, the theory proposes "
+                        "geometric expressions for all 125 of them as 'spectral residues' "
+                        "-- the natural resonant frequencies of the folded 7-dimensional "
+                        "internal manifold."
                     )
                 },
                 {
@@ -338,9 +344,9 @@ class AbstractV17_2(SimulationBase):
                     "explanation": (
                         "The abstract highlights several predictions that experiments can "
                         "check: 24 out of 26 predictions already match experimental data "
-                        "within measurement uncertainty, dark energy behaves as 'thawing' "
-                        "(confirmed by DESI 2025), and proton decay at a rate testable by "
-                        "the Hyper-Kamiokande detector."
+                        "within measurement uncertainty, dark energy may behave as 'thawing' "
+                        "(consistent with DESI 2025 data), and proton decay at a rate "
+                        "testable by the Hyper-Kamiokande detector."
                     )
                 },
                 {
@@ -386,7 +392,7 @@ class AbstractV17_2(SimulationBase):
                 "year": 2025,
                 "journal": "Physical Review Letters",
                 "url": "https://arxiv.org/abs/2503.14738",
-                "notes": "w0 = -0.957 thawing constraint matched at 0.02 sigma by PM prediction"
+                "notes": "PM prediction w0 = -23/24 falls within BAO-only uncertainty range"
             },
             {
                 "id": "planck_2018",

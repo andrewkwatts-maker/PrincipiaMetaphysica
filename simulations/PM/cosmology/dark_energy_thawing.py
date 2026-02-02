@@ -41,7 +41,7 @@ GEOMETRIC DERIVATION
 
 EXPERIMENTAL COMPARISON (DESI 2025 Thawing)
 -------------------------------------------
-    w₀: PM = -0.9583, DESI = -0.957 ± 0.067  → 0.02σ PASS
+    w₀: PM = -0.9583, DESI = -0.957 ± 0.067  → < 1σ (BAO-only) PASS
     wₐ: PM = -0.204,  DESI = -0.99 ± 0.33   → 2.38σ TENSION (acknowledged)
 
     The wₐ tension is acknowledged as a geometric constraint: PM predicts
@@ -657,7 +657,7 @@ class DarkEnergyEvolution(SimulationBase):
                     content=(
                         "DESI 2025 thawing constraint measures w0 = -0.957 +/- 0.067 and "
                         "wa = -0.99 +/- 0.32. Our geometric predictions of w0 = -0.958 "
-                        "(excellent agreement at 0.02 sigma) and wa = -0.816 (4-form projected, "
+                        "(within BAO-only uncertainty) and wa = -0.816 (4-form projected, "
                         "0.54 sigma from DESI) capture the correct thawing sign and magnitude. "
                         "The remaining tension in wa may be reduced by non-linear corrections "
                         "from moduli-quintessence coupling, providing strong evidence that "

@@ -681,7 +681,7 @@ V16_VALIDATION_BOUNDS = {
     "neutrino.delta_CP_pred": {
         "min": 180,
         "max": 320,
-        "target": 278.0,  # v16.2: Use IO value (PM matches IO at 0.02σ)
+        "target": 278.0,  # v16.2: Use IO value (PM matches IO, < 1σ)
         "experimental": 278,  # v16.2: NuFIT 6.0 Inverted Ordering
         "sigma": 26,
     },

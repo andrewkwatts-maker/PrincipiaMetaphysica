@@ -86,7 +86,7 @@ VERIFIABLE_GATES = {
         "proof_id": "w0_equation_of_state",
         "wl_code": "w0 = -(b3-1)/b3 = -23/24",
         "result": "-0.9583",
-        "note": "Dark energy EoS from b3 topology: w0 = -1 + 1/b3 = -23/24 = -0.9583. DESI 2025: w0 = -0.957 +/- 0.067 (0.02sigma agreement). Core prediction derived from b3 = 24 (thawing quintessence)"
+        "note": "Dark energy EoS from b3 topology: w0 = -1 + 1/b3 = -23/24 = -0.9583. DESI 2025: w0 = -0.957 +/- 0.067 (within BAO-only uncertainty). Core prediction derived from b3 = 24 (thawing quintessence)"
     },
 
     # Block F: Moduli (G59)
@@ -122,7 +122,7 @@ VERIFIABLE_GATES = {
         "proof_id": "desi_static_anchor",
         "wl_code": "With[{b3=24}, wa = -4/Sqrt[b3]; desi_wa = -0.99; sigma = (wa - desi_wa)/0.32; {N[wa,4], N[sigma,2]}]",
         "result": "{-0.8165, 0.54sigma}",
-        "note": "PM w0=-0.9583 (0.02sigma vs DESI w0=-0.957+/-0.067); PM wa=-0.816 vs DESI wa=-0.99+/-0.32, 0.54sigma agreement (thawing quintessence from G2 4-form projection)"
+        "note": "PM w0=-0.9583 (within BAO-only uncertainty of DESI w0=-0.957+/-0.067); PM wa=-0.816 vs DESI wa=-0.99+/-0.32, 0.54sigma agreement (thawing quintessence from G2 4-form projection)"
     },
 
     # Block F: Chiral Orthogonality (G66)

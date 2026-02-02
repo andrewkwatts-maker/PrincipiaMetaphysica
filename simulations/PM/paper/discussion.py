@@ -1025,6 +1025,42 @@ class DiscussionV16(SimulationBase):
             ),
 
             # =====================================================================
+            # INTERPRETIVE EXTENSION: CONSCIOUSNESS / ORCH-OR CAVEAT
+            # =====================================================================
+            ContentBlock(
+                type="heading",
+                content="9.8 Consciousness and Observer Coupling (Interpretive Extension)",
+                level=2
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<h4>Interpretive Extension</h4>"
+                    "<p>The following discussion of consciousness and observer coupling is a <strong>speculative "
+                    "interpretive extension</strong> of the geometric framework, not a core theoretical claim. "
+                    "The mathematical structure of the dual-shadow bridge admits an interpretation in terms of "
+                    "Penrose-Hameroff Orch-OR, but this interpretation is not required by the physics and remains "
+                    "highly contested in the neuroscience community.</p>"
+                ),
+                label="orch-or-caveat"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "As a speculative interpretive extension, the PM dual-shadow geometry raises the possibility "
+                    "of a connection to the Penrose-Hameroff Orchestrated Objective Reduction (Orch-OR) theory "
+                    "of consciousness. The two-layer OR hierarchy (bridge OR creating dual shadows, face OR "
+                    "selecting visible faces) suggests a structural analogue to the observer-selection problem "
+                    "in quantum mechanics. It should be emphasized that the Orch-OR interpretation is not a "
+                    "core claim of the framework. The geometric unification results (gauge couplings, fermion "
+                    "masses, dark energy parameters) stand independently of any consciousness interpretation. "
+                    "The Orch-OR bridge explored in Appendix 7.2 should be understood as an exploratory "
+                    "extension whose claims are considerably more speculative than the physics derivations "
+                    "in the main body of this work."
+                )
+            ),
+
+            # =====================================================================
             # THEORY ANALYSIS: CRITICAL ANALYSIS & VALIDATION SUMMARY
             # =====================================================================
             ContentBlock(
@@ -1541,7 +1577,7 @@ class DiscussionV16(SimulationBase):
                 "volume": "11",
                 "pages": "39-78",
                 "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
-                "notes": "Orch-OR consciousness model linked to G2 geometry in the PM framework"
+                "notes": "Orch-OR consciousness model explored as a speculative interpretive extension of the PM geometric framework (not a core claim)"
             },
         ]
 
@@ -1600,8 +1636,8 @@ class DiscussionV16(SimulationBase):
             {
                 "topic": "Orchestrated objective reduction (Orch-OR)",
                 "url": "https://en.wikipedia.org/wiki/Orchestrated_objective_reduction",
-                "relevance": "Discussion explores consciousness as a topological phenomenon via Penrose-Hameroff Orch-OR linked to G2 geometry",
-                "validation_hint": "Orch-OR proposes quantum gravity effects in microtubules; PM adds geometric grounding via G2 holonomy"
+                "relevance": "As a speculative interpretive extension, the discussion explores the possibility that consciousness may relate to the topological structure via Penrose-Hameroff Orch-OR; this interpretation is not required by the core physics",
+                "validation_hint": "Orch-OR proposes quantum gravity effects in microtubules; PM raises the possibility of geometric grounding via G2 holonomy, but this remains a speculative extension"
             },
             {
                 "topic": "Fine-tuning problem in physics",

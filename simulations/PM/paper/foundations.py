@@ -359,7 +359,7 @@ class FoundationsV16_2(SimulationBase):
                     "The bridge pressure arises from <strong>condensate flux mismatch</strong> between shadows. "
                     "Where normal and mirror shadow pressure profiles differ, the residue drives cosmic acceleration. "
                     "This yields thawing dark energy with w₀ = −1 + 1/b₃ = −23/24 ≈ −0.9583, matching DESI 2025 "
-                    "within 0.02σ. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
+                    "consistent with DESI 2025 thawing constraints. The breathing density formula is: ρ<sub>breath</sub> = |T<sup>ab</sup><sub>normal</sub> − R<sub>⊥</sub> T<sup>ab</sup><sub>mirror</sub>|."
                 )
             ),
             ContentBlock(

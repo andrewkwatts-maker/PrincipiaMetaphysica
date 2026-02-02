@@ -383,7 +383,7 @@ class DarkEnergyV16(SimulationBase):
         - Aggregation smooths quantum fluctuations
 
         DESI 2025 thawing constraint: w0 = -0.957 ± 0.067
-        Our prediction: w0 = -0.9583 (within 0.02σ)
+        Our prediction: w0 = -0.9583 (within DESI BAO-only uncertainty)
         Target with aggregation: w ≈ -0.958 ± 0.003
 
         Args:
@@ -612,7 +612,7 @@ class DarkEnergyV16(SimulationBase):
                         "DESI 2024 BAO measurements (DESI Collaboration 2024, arXiv:2404.03002). "
                         "DESI Year 1 data, combined with CMB and Type Ia supernovae, reports "
                         "a thawing quintessence fit with w0 = -0.957 +/- 0.067. The PM value "
-                        "falls within 0.02 sigma of the central value, providing strong "
+                        "falls within the BAO-only uncertainty range, providing "
                         "experimental support for the G2 thawing mechanism."
                     )
                 ),
@@ -1027,7 +1027,7 @@ class DarkEnergyV16(SimulationBase):
                     "DESI Year 1 BAO measurements combined with CMB and supernovae. "
                     "Reports preference for evolving dark energy (w0 > -1, wa < 0). "
                     "Thawing quintessence fit: w0 = -0.957 +/- 0.067. Validates PM "
-                    "prediction w0 = -23/24 = -0.9583 at 0.02 sigma."
+                    "prediction w0 = -23/24 = -0.9583 (consistent with BAO-only measurement)."
                 )
             },
             {
@@ -1244,7 +1244,7 @@ class DarkEnergyV16(SimulationBase):
                     "The exact fraction w0 = -23/24 arises because the b3 = 24 associative "
                     "3-cycles distribute as 6 per Kahler face across 4 faces. The vacuum energy "
                     "leakage 1/b3 = 1/24 comes from the lightest face modulus. DESI 2024 BAO "
-                    "measurements validate this at 0.02 sigma."
+                    "measurements are consistent with this prediction."
                 ),
                 "validation_hint": (
                     "Verify that -23/24 = -0.958333... and compare against DESI thawing "

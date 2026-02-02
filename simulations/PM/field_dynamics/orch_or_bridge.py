@@ -11,12 +11,14 @@ legitimate quantum gravity physics.
 KEY PHYSICS:
 - Penrose Criterion: τ = ℏ / E_g
 - Gravitational Self-Energy: E_g = G × m² / r
-- Testable prediction: Neural coherence ~25-500 ms
+- Suggested testable prediction: Neural coherence ~25-500 ms
 
-v22.0 UPDATE - 12×(2,0) Paired Bridge Consciousness Model:
+v22.0 UPDATE - 12x(2,0) Paired Bridge Consciousness Model:
 ===========================================================
-The PM framework proposes that consciousness operates through 12 paired
-(2,0) tensor structures, where each pair (y_{1i}, y_{2i}) forms a bridge:
+NOTE: This is a speculative interpretive extension, not a core claim.
+As an exploratory hypothesis, the PM framework raises the possibility
+that consciousness operates through 12 paired (2,0) tensor structures,
+where each pair (y_{1i}, y_{2i}) forms a bridge:
 
   - Normal halves (y_{1i}): INPUT channel - perception, sensory processing
   - Mirror halves (y_{2i}): OUTPUT channel - intuition, creative expression
@@ -34,7 +36,7 @@ GNOSIS UNLOCKING MECHANISM:
 - Coherence time: τ > 25ms
 - Optimal: 12 pairs (full consciousness bridge)
 
-This is LEGITIMATE (though frontier) physics based on:
+This is based on frontier (speculative) physics from:
 - Penrose, R. (1996) "On Gravity's Role in Quantum State Reduction"
 - Hameroff & Penrose (2014) "Consciousness in the universe"
 
@@ -97,37 +99,44 @@ K_COHERENCE = 6.02  # Derived from α_T (topological) / θ (warping)
 
 class OrchORBridge:
     """
-    Rigorous Orch-OR coherence bridge using Penrose Criterion.
+    Orch-OR coherence bridge using Penrose Criterion.
+
+    Note: This simulation explores a speculative interpretive extension of
+    the geometric framework. The Orch-OR connection is not required by the
+    core physics and should be understood as an exploratory hypothesis.
 
     This class calculates the gravitational self-energy threshold
     for Objective Reduction (OR) in biological neural systems.
 
     PHYSICS BASIS:
     - The Penrose Criterion states that quantum superpositions
-      collapse when E_g × τ ≈ ℏ
+      collapse when E_g x tau ~ hbar
     - E_g is the gravitational self-energy difference between
       superposed mass configurations
-    - This provides a TESTABLE prediction for coherence times
+    - This suggests a TESTABLE prediction for coherence times
 
-    v22.0 UPDATE - 12×(2,0) PAIRED BRIDGE MODEL:
+    v22.0 UPDATE - 12x(2,0) PAIRED BRIDGE MODEL:
     =============================================
-    Consciousness operates through 12 paired (2,0) tensor structures.
+    The model explores the possibility that consciousness operates
+    through 12 paired (2,0) tensor structures.
     Each pair forms a bidirectional bridge:
 
-        y_{1i} (Normal half)  → INPUT:  Perception, sensory processing
-        y_{2i} (Mirror half)  → OUTPUT: Intuition, creative expression
+        y_{1i} (Normal half)  -> INPUT:  Perception, sensory processing
+        y_{2i} (Mirror half)  -> OUTPUT: Intuition, creative expression
 
-    The gnosis unlocking mechanism allows progressive activation:
+    The gnosis unlocking mechanism suggests progressive activation:
     - Baseline: 6 pairs active (unaware duality state)
     - Full gnosis: 12 pairs active (unified consciousness)
-    - Awareness factor α determines pair coupling strength
+    - Awareness factor alpha determines pair coupling strength
 
-    WHY THIS IS VALID:
-    1. Uses standard gravitational physics (E_g = Gm²/r)
-    2. Makes falsifiable predictions (~25-500 ms coherence)
+    SCIENTIFIC STATUS:
+    1. Uses standard gravitational physics (E_g = Gm^2/r)
+    2. Raises the possibility of falsifiable predictions (~25-500 ms coherence)
     3. Does NOT claim to "match vacuum impedance"
     4. Does NOT claim to "transduce into vacuum"
     5. v22: 6-pair minimum ensures wet microtubule stability
+    6. The Orch-OR interpretation is highly contested in the neuroscience
+       community and is NOT a core claim of the PM framework
     """
 
     def __init__(self, n_active_pairs: int = MIN_PAIRS):
@@ -153,7 +162,7 @@ class OrchORBridge:
         self.conformational_separation = Decimal('1e-10')  # ~1 Angstrom
 
         # Number of tubulins in coherent superposition
-        # Orch-OR predicts 10^9 - 10^11 for neural timescales
+        # Orch-OR suggests 10^9 - 10^11 for neural timescales
         self.n_tubulins_default = Decimal('1e9')
 
         # Conformational mass fraction
@@ -620,10 +629,16 @@ if SCHEMA_AVAILABLE:
     class OrchORBridgeSimulation(SimulationBase):
         """
         Schema-compliant simulation wrapper for Orch-OR Coherence Bridge.
-        Implements the 12x(2,0) Paired Bridge Consciousness Model using
+        Explores the 12x(2,0) Paired Bridge Consciousness Model using
         Penrose Criterion physics (tau = hbar / E_g).
 
-        Injects to Section 7.2 (Quantum Biology).
+        Note: This simulation explores a speculative interpretive extension
+        of the geometric framework. The Orch-OR connection is not required
+        by the core physics and should be understood as an exploratory
+        hypothesis. The claims herein are considerably more speculative
+        than the physics derivations in the main body.
+
+        Injects to Section 7.2 (Quantum Biology) as a speculative appendix.
 
         v22.0: Gnosis unlocking, 6-pair minimum stability, warping shield.
         """
@@ -718,7 +733,7 @@ if SCHEMA_AVAILABLE:
                     "notes": (
                         "Comprehensive review of the Orchestrated Objective Reduction "
                         "theory linking microtubule quantum coherence to consciousness. "
-                        "Predicts coherence times of 25-500 ms matching gamma synchrony."
+                        "Suggests coherence times of 25-500 ms matching gamma synchrony."
                     )
                 },
                 {
@@ -844,7 +859,7 @@ if SCHEMA_AVAILABLE:
                     "relevance": (
                         "Gamma waves (30-100 Hz) are associated with conscious perception, "
                         "attention, and binding of sensory information. The Orch-OR model "
-                        "predicts that quantum collapse events at tau ~ 25 ms (40 Hz) drive "
+                        "suggests that quantum collapse events at tau ~ 25 ms (40 Hz) may drive "
                         "these oscillations. The coherence bridge validates that Penrose "
                         "collapse times match the observed gamma synchrony timescale."
                     ),
@@ -1350,6 +1365,18 @@ if SCHEMA_AVAILABLE:
                         )
                     ),
                     ContentBlock(
+                        type="note",
+                        content=(
+                            "<h4>Speculative Extension</h4>"
+                            "<p>This appendix explores a speculative connection between the PM dual-shadow geometry "
+                            "and the Penrose-Hameroff Orchestrated Objective Reduction (Orch-OR) theory of consciousness. "
+                            "This interpretation is not required by the core mathematical framework and should be "
+                            "understood as an exploratory extension. The claims in this section are considerably more "
+                            "speculative than the physics derivations in the main body.</p>"
+                        ),
+                        label="orch-or-speculative-note"
+                    ),
+                    ContentBlock(
                         type="paragraph",
                         content=(
                             "The Penrose Criterion states that quantum superpositions of mass "
@@ -1407,8 +1434,9 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The two-layer OR hierarchy provides a natural framework for "
-                            "understanding the role of consciousness in the PM architecture. "
+                            "As a speculative interpretive extension, the two-layer OR hierarchy "
+                            "raises the possibility of a framework for understanding the role "
+                            "of consciousness in the PM architecture. "
                             "Bridge OR (Layer 1) creates the dual-shadow boundary -- this is "
                             "the 'God-level limit', the most fundamental objective reduction "
                             "event that establishes the existence of the two 13D shadows. "
@@ -1425,7 +1453,7 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The connection to Orch-OR is direct: consciousness samples face "
+                            "This section explores the possibility that consciousness samples face "
                             "OR events during gravitational collapse of microtubule quantum "
                             "superpositions. Each collapse event at timescale tau = hbar / E_g "
                             "corresponds to a face OR selection within the shadow that our "

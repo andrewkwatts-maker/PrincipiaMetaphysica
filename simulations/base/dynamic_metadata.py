@@ -15,7 +15,7 @@ USAGE:
 
     # Generate description dynamically:
     description = MetadataBuilder.w0_description(w0, target=-0.957, sigma=0.067)
-    # Returns: "w₀ = -23/24 = -0.9583. DESI 2025: w₀ = -0.957 ± 0.067. Deviation: 0.02σ."
+    # Returns: "w₀ = -23/24 = -0.9583. DESI 2025: w₀ = -0.957 ± 0.067. Deviation: < 1σ (BAO-only)."
 
 PRINCIPLES:
     1. Computed values should NEVER be hardcoded in metadata strings

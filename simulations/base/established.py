@@ -452,7 +452,7 @@ class EstablishedPhysics:
             wa_unc = 0.33
 
         # DESI 2025 thawing quintessence constraint (v16.2)
-        # PM predicts w0 = -23/24 = -0.9583, which matches thawing model at 0.02σ
+        # PM predicts w0 = -23/24 = -0.9583, which falls within BAO-only uncertainty
         w0_thawing = -0.957  # DESI 2025 thawing constraint
         w0_thawing_unc = 0.067
         wa_thawing = -0.99

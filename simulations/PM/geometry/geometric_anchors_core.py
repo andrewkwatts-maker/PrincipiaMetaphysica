@@ -222,7 +222,7 @@ class GeometricAnchors:
         v16.2: Dark energy equation of state from thawing quintessence.
 
         Theory: w0 = -1 + 1/b3 = -23/24 ≈ -0.9583
-        DESI 2025 thawing: -0.957 ± 0.067 (0.02σ agreement)
+        DESI 2025 BAO-only: -0.957 ± 0.067 (consistent)
 
         Note: Old DESI DR2 Lambda-CDM value was -0.728.
         """

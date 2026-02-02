@@ -149,7 +149,7 @@ class IntroductionV16(SimulationBase):
                     "name": "Testable Predictions",
                     "explanation": (
                         "Unlike some theories, PM makes specific predictions that can be tested: "
-                        "dark energy behavior (w₀ = -23/24 confirmed by DESI 2025 at 0.02σ), "
+                        "dark energy equation of state w₀ = -23/24 (consistent with DESI 2025 thawing constraints), "
                         "neutrino mass sum (0.082 eV, within cosmological bounds), proton decay "
                         "lifetime (future tests), and Kaluza-Klein modes at ~5 TeV (LHC searches)."
                     )
@@ -245,7 +245,7 @@ class IntroductionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "This paper presents <strong>Principia Metaphysica v21.0</strong>, a sterile "
-                    "geometric framework in which all 125 fundamental physical constants emerge as "
+                    "geometric framework in which 125 fundamental physical constants are proposed to emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
                     "from a 27D spacetime with unified time signature (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central, the framework splits "
@@ -258,13 +258,37 @@ class IntroductionV16(SimulationBase):
                     "mixing angles, mass hierarchies, and cosmological parameters. The framework "
                     "achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, "
                     "and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> "
-                    'matching DESI thawing (0.02σ) and <strong>H₀ = '
+                    'consistent with DESI 2025 thawing dark energy constraints and <strong>H₀ = '
                     '<span class="pm-value" data-pm-value="cosmology.H0_local">71.55</span> km/s/Mpc</strong> within '
-                    "1.4σ of SH0ES 2025. All derivations are cryptographically locked via "
+                    "1.4σ of SH0ES 2025. All derivation chains are recorded in "
                     '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span> '
-                    "Wolfram-verified certificates."
+                    "reproducibility certificates."
                 ),
                 label="lead"
+            ),
+
+            # Status & Caveats note
+            ContentBlock(
+                type="note",
+                content=(
+                    "<h4>Status &amp; Caveats</h4>"
+                    "<p>Principia Metaphysica is a <strong>speculative theoretical framework</strong> "
+                    "in early development. While it produces geometric expressions for many physical "
+                    "constants, several important caveats apply:</p>"
+                    "<ul>"
+                    "<li><strong>No peer review:</strong> This work has not yet been reviewed by "
+                    "the broader physics community.</li>"
+                    "<li><strong>Calibration inputs:</strong> Three quantities (VEV coefficient, "
+                    "\u03b1<sub>GUT</sub> coefficient, Re(T) from Higgs mass) are fitted, not derived. "
+                    "Two PMNS parameters (\u03b8\u2081\u2083, \u03b4<sub>CP</sub>) are fitted to NuFIT 6.0.</li>"
+                    "<li><strong>Predictions vs. postdictions:</strong> Many &lsquo;predictions&rsquo; "
+                    "are comparisons with already-measured values (postdictions). Genuine predictions "
+                    "(proton decay rate, KK graviton mass, axion properties) remain untested.</li>"
+                    "<li><strong>Consciousness appendix:</strong> The Orch-OR/consciousness "
+                    "appendix is an interpretive speculation, not a core claim of the framework.</li>"
+                    "</ul>"
+                ),
+                label="status-caveats"
             ),
 
             # 1.1 The Quest for Unification
@@ -805,11 +829,11 @@ class IntroductionV16(SimulationBase):
                     "The dual-shadow structure, with geometry emerging from the 4096-component Pneuma "
                     "field, can simultaneously explain: (1) the origin of gauge forces from 26D isometries, "
                     "(2) the chiral structure via dual-shadow Möbius mechanism, (3) the emergence of time from "
-                    "modular flow, (4) the <strong>precise values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ "
+                    "modular flow, (4) the <strong>specific values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ "
                     "4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli "
                     "stabilization), and δ<sub>CP</sub> = π/2 as DERIVED predictions</strong> from the "
-                    "topology (b₃=24, λ=1.5), and (5) the quantum measurement problem through geometric "
-                    "hidden variables in the mirror shadow.</p>"
+                    "topology (b₃=24, λ=1.5), and (5) may address aspects of the quantum measurement problem "
+                    "through geometric correlations in the mirror shadow.</p>"
                 ),
                 label="central-thesis"
             ),
@@ -910,7 +934,7 @@ class IntroductionV16(SimulationBase):
                 "The pursuit of a unified description of all fundamental forces represents one of the "
                 "most profound intellectual endeavors in theoretical physics. This section traces the "
                 "historical arc from Maxwell's unification of electricity and magnetism to modern attempts "
-                "at Grand Unified Theories, while introducing the novel approach of deriving geometry from "
+                "at Grand Unified Theories, while introducing the novel approach of proposing that geometry emerges from "
                 "a fundamental fermionic field. Principia Metaphysica v21 posits a 26D spacetime with unified "
                 "time signature (24,1) = 12×(2,0) + (0,1)—with 12 bridge pairs warping to create dual 13D(12,1) shadows—"
                 "eliminating ghost modes while preserving phenomenological richness. Compactification occurs "
@@ -918,7 +942,7 @@ class IntroductionV16(SimulationBase):
                 "racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without "
                 "tuning. The Pneuma-Vielbein bridge validates metric emergence from spinor bilinears with "
                 "Lorentzian signature (-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ -0.204, "
-                "matching DESI 2025 (thawing) observations."
+                "consistent with DESI 2025 thawing observations."
             ),
             content_blocks=content_blocks,
             formula_refs=[],

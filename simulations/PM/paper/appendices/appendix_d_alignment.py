@@ -292,7 +292,7 @@ class AppendixDAlignment(SimulationBase):
                 latex=r"\sigma_{w_0} = \frac{|w_{0,\text{geo}} - w_{0,\text{DESI}}|}{\sigma_{\text{DESI}}} = 0.02",
                 plain_text="sigma_w0 = |w0_geo - w0_DESI| / sigma_DESI = 0.02",
                 category="DERIVED",
-                description="w0 alignment with DESI BAO measurements at 0.02 sigma.",
+                description="w0 alignment with DESI BAO measurements (within BAO-only uncertainty).",
                 input_params=["cosmology.w0_geometric", "observational.w0_desi"],
                 output_params=["validation.sigma_global"],
                 terms={
@@ -375,7 +375,7 @@ class AppendixDAlignment(SimulationBase):
             },
             {
                 "id": "CERT-D-002",
-                "assertion": "w0 alignment with DESI Y5 at 0.02 sigma",
+                "assertion": "w0 falls within DESI Y5 BAO-only uncertainty",
                 "condition": "|w0_geo - w0_DESI| / sigma_DESI = 0.02",
                 "tolerance": "0.05",
                 "status": "PASS",
@@ -450,7 +450,7 @@ class AppendixDAlignment(SimulationBase):
                 "assertion": "w0 Equation of State: w0 = -23/24 = -0.9583",
                 "result": "PASS",
                 "timestamp": ts,
-                "details": "Dark energy EoS aligns with DESI Y5 at 0.02 sigma.",
+                "details": "Dark energy EoS falls within DESI Y5 BAO-only uncertainty.",
             },
         ]
 

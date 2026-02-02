@@ -596,7 +596,7 @@ class AppendixOKKReduction(SimulationBase):
                     "with distributed OR Reduction R_total = ⊗₁₂ R_⊥_i. The specific choice of "
                     "G_2 holonomy manifold (with b_3 = 24 and chi_eff = 144) uniquely determines "
                     "all gauge couplings and matter content. Aggregate breathing dark energy "
-                    "ρ = Σᵢ ρ_i yields w0 = -23/24 (DESI 2025: 0.02 sigma). No free parameters!"
+                    "ρ = Σᵢ ρ_i yields w0 = -23/24 (consistent with DESI 2025 BAO data). No free parameters!"
                 ),
                 callout_type="success",
                 title="The Geometric Origin of Gauge Symmetry (v22)"
@@ -900,7 +900,7 @@ class AppendixOKKReduction(SimulationBase):
                     "between normal and mirror shadows across all 12 pairs, where each "
                     "R_perp_i rotates the mirror contribution. The resulting equation of "
                     "state is w0 = -1 + 1/b₃ = -23/24 ≈ -0.9583, derived from the third "
-                    "Betti number b₃ = 24 (DESI 2025 thawing: 0.02 sigma agreement)."
+                    "Betti number b₃ = 24 (consistent with DESI 2025 thawing data)."
                 ),
                 terms={
                     "rho_breath": "Total breathing energy density",
