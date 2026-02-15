@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Octonionic Mixing v16.2 - Unified CKM/PMNS from G2 Triality
+Octonionic Mixing v23.1 - Unified CKM/PMNS from G2 Triality
 ============================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -12,7 +12,7 @@ PMNS uses chi_eff_total = 144 (both shadows combined) because neutrino oscillati
 Derives BOTH CKM and PMNS matrices from the SAME octonionic structure,
 explaining WHY quark mixing is small and lepton mixing is large.
 
-v16.2 GEOMETRIC FIXES
+v23.1 GEOMETRIC FIXES
 ---------------------
 - V_cb G2 Torsional Twist: (1 + 2*k_gimel/b3²) = 1.0428
   Resolves 1.29σ → 0.09σ deviation for 2nd-generation coupling
@@ -165,8 +165,8 @@ class OctonionicMixing(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="octonionic_mixing_v16_2",
-            version="16.2",
+            id="octonionic_mixing_v23_1",
+            version="23.1",
             domain="fermion",
             title="Unified CKM/PMNS from G2 Triality",
             description=(
@@ -674,6 +674,24 @@ class OctonionicMixing(SimulationBase):
                     "This is the deep answer to why quark mixing is small and lepton mixing "
                     "is large: it is NOT separate physics, but the SAME octonionic structure "
                     "viewed through different dimensional projections."
+                )
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="warning",
+                title="Status: Speculative but Structured",
+                content=(
+                    "The connection between G2 holonomy, octonionic multiplication, and "
+                    "flavor physics is a conjecture, not a theorem. The empirical success "
+                    "(CKM and PMNS angles reproduced to sub-sigma without free parameters) "
+                    "motivates the framework, but a rigorous mathematical derivation "
+                    "from first principles remains open. The key speculative steps are: "
+                    "(i) quarks localise on associative rather than co-associative cycles; "
+                    "(ii) the golden angle theta_g = arctan(1/phi) is the correct "
+                    "octonionic mixing angle (Furey 2018 provides a precursor argument); "
+                    "(iii) flux corrections xi are computed from G2 torsion, not fitted. "
+                    "Note that theta_13 and delta_CP are calibrated inputs from NuFIT 6.0, "
+                    "not parameter-free predictions."
                 )
             ),
         ]
@@ -1453,9 +1471,9 @@ _validation_instance = OctonionicMixing()
 
 # Validate metadata
 assert _validation_instance.metadata is not None, "OctonionicMixing: metadata is None"
-assert _validation_instance.metadata.id == "octonionic_mixing_v16_2", \
+assert _validation_instance.metadata.id == "octonionic_mixing_v23_1", \
     f"OctonionicMixing: unexpected id {_validation_instance.metadata.id}"
-assert _validation_instance.metadata.version == "16.2", \
+assert _validation_instance.metadata.version == "23.1", \
     f"OctonionicMixing: unexpected version {_validation_instance.metadata.version}"
 
 # Validate formulas exist

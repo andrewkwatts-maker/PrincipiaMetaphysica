@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v22.0 - Section 1: Foundations of Dimensional Descent
+PRINCIPIA METAPHYSICA v23.1 - Section 1: Foundations of Dimensional Descent
 ============================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v22.0 STERILE MODEL: M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
-The 12x(2,0) paired bridge system with unified time.
+v23.1 STERILE MODEL: M^{27}(26,1) = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0} oplus C^{2,0})
+The 12x(2,0) paired bridge system plus C^{2,0} Euclidean central sampler plus T^1 time.
 All 125 constants are geometric residues, not tuned.
 
-KEY v22 CHANGES:
-  - Bulk decomposition: M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
-  - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
-  - 24 spacelike from 12x2 pairs, 1 timelike (unified)
+KEY v23.1 ARCHITECTURE:
+  - Bulk: M^{27}(26,1) = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0} oplus C^{2,0})
+  - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + dc_1^2 + dc_2^2
+  - 24 spacelike from 12x2 pairs + 2 from C^{2,0} + 1 timelike = 27D(26,1)
   - Shadow structure: y_{1i} aggregates (normal) + y_{2i} aggregates (mirror)
-  - OR reduction: bigotimes_{i=1}^{12} R_perp_i
+  - OR reduction: bigotimes_{i=1}^{12} R_perp_i (C^{2,0} averages into both shadows)
 
 WHY 12 PAIRS: b_3 = 24 => 24/2 = 12 paired bridges
 
@@ -100,10 +100,10 @@ class FoundationsV16_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="foundations_v16_2",
-            version="22.0",
+            version="23.1",
             domain="foundations",
             title="Foundations of Dimensional Descent",
-            description="The (24,1) bulk with 12x(2,0) paired bridge system, dual shadows, and G2 compactification",
+            description="The 27D(26,1) bulk: 12x(2,0) paired bridges + C^{2,0} central sampler + T^1 time; dual shadows and G2 compactification",
             section_id="1",
             subsection_id="1.1"  # v19.0: Unique subsection (introduction_v16_0 owns section 1)
         )
@@ -166,37 +166,36 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "At the 26D level, the universe is governed by the symmetries of the "
-                    "<strong>Monster Group</strong> and the <strong>Leech Lattice</strong>. "
-                    "The (24,1) signature is critical: it provides twenty-four spacelike dimensions "
-                    "and one unified timelike dimension. This specific configuration allows for "
-                    "<strong>ghost-free stability</strong> -- a state where the vacuum energy "
-                    "is perfectly balanced without CTC instabilities."
+                    "At the highest level, the framework connects to the algebraic structures of the "
+                    "<strong>Monster Group</strong> and the <strong>Leech Lattice</strong> via the "
+                    "bosonic string (26D parent, signature (24,1) before the C^{2,0} extension). "
+                    "In PM v23.1, the actual bulk has signature <strong>(26,1)</strong>: twenty-four "
+                    "spacelike dimensions from the 12×(2,0) bridge pairs, two additional spacelike "
+                    "dimensions from the Euclidean central sampler C^{2,0}, and one unified timelike. "
+                    "This 27D(26,1) configuration is ghost-free: the single timelike direction "
+                    "prevents closed timelike curves, and OR reduction to 13D(12,1) shadows "
+                    "removes all unphysical states."
                 )
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "<strong>Why (24,1) and not (25,1) or (23,1)?</strong> The answer lies in "
-                    "three interlocking constraints: (1) The bosonic string requires exactly 26 "
-                    "spacetime dimensions for modular invariance of the worldsheet partition function "
-                    "(Polyakov, 1981). With one unified time, this fixes 25 spatial dimensions. "
-                    "(2) The 24 transverse degrees of freedom match the dimension of the "
-                    "<strong>Leech lattice</strong> -- the unique even unimodular lattice in 24 "
-                    "dimensions with no roots -- whose automorphism group contains the Conway group "
-                    "Co0, which in turn connects to the Monster Group via the Moonshine module "
-                    "(Conway-Sloane, 1988; Borcherds, 1992). (3) A (25,1) signature would introduce "
-                    "two timelike directions, generating closed timelike curves and violating "
-                    "unitarity; a (23,1) signature would lose the Leech lattice connection and "
-                    "break modular invariance. The (24,1) signature is therefore the unique "
-                    "ghost-free, modular-invariant choice connecting bosonic string theory to the "
-                    "exceptional algebraic structures that control the entire parameter space."
+                    "<strong>Why (26,1) specifically?</strong> The construction begins with the "
+                    "bosonic string: exactly 26 spacetime dimensions (25 spatial + 1 time, signature "
+                    "(24,1)) are required for modular invariance (Polyakov 1981). The 24 transverse "
+                    "dimensions match the Leech lattice -- the unique even unimodular lattice in 24D "
+                    "with no roots -- connecting via Moonshine to the Monster Group (Borcherds 1992). "
+                    "PM extends this 25D bosonic parent by appending the C^{2,0} Euclidean central "
+                    "sampler, which provides architectural averaging across the 12 bridge pairs "
+                    "and stabilizes the dual-shadow construction. The resulting (26,1) signature "
+                    "preserves ghost-freedom (single timelike) while accommodating both the G₂ "
+                    "compactification and the central sampler as independent geometric structures."
                 )
             ),
             ContentBlock(
                 type="equation",
-                content=r"\text{Signature}(M^{24,1}) = (24, 1) \quad \Rightarrow \quad ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)",
-                label="26d-signature"
+                content=r"\text{Signature}(M^{27}) = (26, 1) \quad \Rightarrow \quad ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + dc_1^2 + dc_2^2",
+                label="27d-signature"
             ),
             ContentBlock(
                 type="heading",
@@ -206,21 +205,22 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 26D bulk decomposes into <strong>12 paired bridges</strong>, each with "
-                    "Euclidean (2,0) signature. The total bulk structure is:"
+                    "The 27D(26,1) bulk decomposes into <strong>12 paired bridges</strong> plus a "
+                    "<strong>central Euclidean sampler</strong>, each with (2,0) signature. The total bulk structure is:"
                 )
             ),
             ContentBlock(
                 type="equation",
-                content=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
+                content=r"M^{27}(26,1) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0} \oplus C^{2,0}\right)",
                 label="bulk-decomposition"
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
                     "Each bridge pair B<sub>i</sub> = (y<sub>1i</sub>, y<sub>2i</sub>) contributes "
-                    "two spacelike dimensions. This gives 12 x 2 = 24 spacelike dimensions plus "
-                    "1 unified timelike dimension, matching the (24,1) signature. The pairing "
+                    "two spacelike dimensions. This gives 12×2 = 24 spacelike dimensions from the pairs, "
+                    "plus 2 from the central sampler C^{2,0} = (c<sub>1</sub>, c<sub>2</sub>), "
+                    "plus 1 unified timelike dimension: total <strong>27D(26,1)</strong>. The pairing "
                     "arises from the G₂ topology: <strong>b₃ = 24 / 2 = 12 pairs</strong>."
                 )
             ),

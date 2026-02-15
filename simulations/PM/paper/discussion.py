@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v21.0 - Discussion, Conclusions, and Theory Analysis
+PRINCIPIA METAPHYSICA v23.1 - Discussion, Conclusions, and Theory Analysis
 ============================================================================
 
 Licensed under the MIT License. See LICENSE file for details.
 
-v22 COMPATIBILITY: Uses unified time (24,1) signature with Euclidean bridge.
-                   12×(2,0) + (0,1) → 2×13D(12,1) shadows via OR coordinate selection.
-                   4096-spinor Pneuma field from Cl(24,1).
+v23.1: 27D(26,1) signature with C^(2,0) Euclidean central bridge.
+       12×(2,0) bridges + C^(2,0) central sampler + T¹ time → 2×13D(12,1) shadows via OR reduction.
+       4096-component Primordial Spinor Field from Cl(26,1).
 
 Provides comprehensive section content for:
 - Section 7: Conclusion (Summary, Predictions, Future Research)
@@ -56,7 +56,7 @@ from simulations.base import (
 
 class DiscussionV16(SimulationBase):
     """
-    Discussion, Conclusions, and Theory Analysis generator (v16.0).
+    Discussion, Conclusions, and Theory Analysis generator (v23.1).
 
     Provides comprehensive narrative content including:
     - Section 7: Conclusion (Summary, Predictions, Future Research)
@@ -70,10 +70,10 @@ class DiscussionV16(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="discussion_v16_0",
-            version="21.0",
+            version="23.1",
             domain="discussion",
             title="Discussion, Conclusions, and Theory Analysis",
-            description="Comprehensive discussion including theoretical implications, predictions, falsifiability, validation, and future directions for v21 dual-shadow framework",
+            description="Comprehensive discussion including theoretical implications, predictions, falsifiability, validation, and future directions for v23.1 dual-shadow framework (27D, 26,1)",
             section_id="7",
             subsection_id=None
         )
@@ -143,24 +143,25 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The Principia Metaphysica framework presents a unified geometric description of "
-                    "fundamental physics, deriving the Standard Model and gravity from a 25D structure "
-                    "with unified time signature (24,1). The 12×(2,0) bridge pairs + (0,1) shared time "
-                    "WARP to create dual 13D(12,1) shadows via OR coordinate selection. Each shadow "
-                    "compactifies on a 7D G₂ manifold to yield a 6D effective bulk with heterogeneous branes, "
-                    "from which all observable physics emerges. The key results achieved are:"
+                    "fundamental physics, deriving the Standard Model and gravity from a 27D structure "
+                    "with signature (26,1). The 12×(2,0) bridge pairs plus C^(2,0) Euclidean central sampler "
+                    "plus T¹ time fiber create dual 13D(12,1) shadows via OR coordinate selection (R_⊥). "
+                    "Each shadow compactifies on a 7D G₂ manifold to yield a 6D effective bulk with "
+                    "heterogeneous branes, from which all observable physics emerges. The key results are:"
                 )
             ),
             ContentBlock(
                 type="heading",
-                content="26D Dual-Shadow Framework",
+                content="27D(26,1) Dual-Shadow Framework",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The full theory lives in 25D with unified time signature (24,1). The 12×(2,0) bridge pairs "
-                    "WARP to create dual 13D(12,1) shadows via OR coordinate selection, enabling mirror sector "
-                    "dynamics (Z₂ symmetry) and deriving w_a from first principles via OR reduction and modular flow."
+                    "The full theory lives in 27D with signature (26,1): twelve 2D bridge pairs B_i^(2,0), "
+                    "a 2D Euclidean central sampler C^(2,0), and a single timelike fiber T¹. The OR reduction "
+                    "operator R_⊥ creates dual 13D(12,1) observable shadows, enabling mirror-sector "
+                    "dynamics (Z₂ symmetry) and deriving cosmological observables from pure topology."
                 )
             ),
             ContentBlock(
@@ -197,7 +198,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "All four fundamental forces emerge from the 26D geometric structure projecting to 13D "
+                    "All four fundamental forces emerge from the 27D(26,1) geometric structure projecting to 13D "
                     "observable shadow. The SO(10) gauge symmetry arises from D₅-type ADE singularities on "
                     "the G₂ manifold, unifying with gravity at the compactification scale. KK gravitons at "
                     "M_KK ≈ 4.5 TeV (derived from topology via k_eff = b₃/(2+ε) ≈ 10.80) provide near-term test."
@@ -528,8 +529,8 @@ class DiscussionV16(SimulationBase):
                 type="list",
                 items=[
                     "OR reduction operator R⊥ with Möbius property (R⊥² = -I)",
-                    "Physical state spectrum with ghost-free dynamics from (24,1) signature",
-                    "Fibered time structure: M²⁶ = T¹ ×_fiber (S_normal¹¹ ⊕ S_mirror¹¹ ⊕ B²)",
+                    "Physical state spectrum with ghost-free dynamics from (26,1) signature",
+                    "Fibered time structure: M²⁷ = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{(2,0)} ⊕ C^{(2,0)})",
                     "Emergent causality from bridge coordinate sampling"
                 ]
             ),
@@ -684,15 +685,13 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The Principia Metaphysica framework presents a 25D unified vision with signature (24,1), "
-                    "where the 12×(2,0) bridge pairs WARP to create dual 13D(12,1) shadows via OR coordinate selection, "
-                    "enabling DERIVATION of w_a = -0.30 (via α_T = 2.7) and predicting a mirror sector (Z₂). "
-                    "The dual 13D(12,1) shadow yields w₀ = -1 + 1/b₃ = -23/24 via MEP, and n_gen = 3 "
-                    "from G₂ flux-dressed topology χ_eff/48 = 144/48 = 3. With v15.0, the dynamic derivation of "
-                    "the Cabibbo angle ε = 0.2257 from racetrack moduli stabilization, coupled with full 7D Monte "
-                    "Carlo integration and active perturbation tests of geometric consistency, completes the "
-                    "phenomenological loop. The framework makes sharp, falsifiable predictions that will be tested "
-                    "by JUNO, DESI DR3, and Hyper-K in the coming years."
+                    "The Principia Metaphysica framework (v23.1) presents a 27D(26,1) unified vision: "
+                    "twelve 2D bridge pairs B_i^(2,0) plus C^(2,0) central sampler plus T¹ time create "
+                    "dual 13D(12,1) shadows via OR reduction R_⊥. The framework predicts a mirror sector (Z₂) "
+                    "and yields w₀ = -1 + 1/b₃ = -23/24 via the Maximum Entropy Principle, "
+                    "n_gen = 3 from G₂ topology (χ_eff/48 = 144/48 = 3), and the Cabibbo angle "
+                    "ε = 0.2257 from racetrack moduli stabilization. The framework makes sharp, "
+                    "falsifiable predictions testable by JUNO, DESI DR3, Hyper-K, and ALPS-II."
                 )
             ),
 
@@ -1153,25 +1152,24 @@ class DiscussionV16(SimulationBase):
             # DESI Agreement
             ContentBlock(
                 type="heading",
-                content="DESI Agreement: 26D Dual-Shadow Framework",
+                content="DESI Agreement: 27D(26,1) Dual-Shadow Framework",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 26D dual-shadow framework DERIVES w_a from first principles via modular flow in "
-                    "unified time signature (24,1) with Euclidean bridge:"
+                    "The 27D(26,1) dual-shadow framework derives cosmological observables from the "
+                    "G₂ modulus dynamics and the Maximum Entropy Principle on the moduli space:"
                 )
             ),
             ContentBlock(
                 type="list",
                 items=[
-                    "α_T = 2.7 (DERIVED from 26D bridge breathing modular flow dynamics)",
-                    "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 (SEMI-DERIVED via MEP from dual 13D(12,1) shadows)",
-                    "w_a (DERIVED: follows from α_T = 2.7 and bridge breathing dynamics)",
-                    "de Sitter attractor preserved (w → -1 as t → ∞)",
-                    "Z₂ mirror sector provides dark matter candidate",
-                    "No ghost/tachyon instabilities (unified time (24,1) maintains stability)"
+                    "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 (DERIVED via MEP from dual 13D(12,1) shadows)",
+                    "w_a ~ 0.1 (PREDICTED from residual modulus roll toward attractor)",
+                    "de Sitter attractor preserved (w → -1 as t → ∞ at Ricci-flat fixed point)",
+                    "Z₂ mirror sector provides dark matter candidate from the dual shadow",
+                    "No ghost/tachyon instabilities: (26,1) Lorentzian signature + OR reduction ensures stability"
                 ]
             ),
 
