@@ -283,11 +283,13 @@ class ThermalTimeV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In Principia Metaphysica v22, we extend this to a dual-shadow unified time framework with "
-                    "signature (24,1) and 12×(2,0) Euclidean bridge pairs. The observable thermal time t_therm emerges "
-                    "from the Pneuma field's modular flow, while 12 bridge pair coordinates (y1_i, y2_i) provide "
-                    "a Euclidean substrate via OR reduction through R_perp operators. The 12 pairs arise from "
-                    "b₃ = 24/2 = 12, coupling normal ↔ mirror sectors. Aggregation reduces variance by √12. "
+                    "In Principia Metaphysica v23.1, we extend this to a dual-shadow unified time framework with "
+                    "signature (26,1) and 12×(2,0) Euclidean bridge pairs plus the C^{2,0} central sampler. "
+                    "The observable thermal time t_therm emerges "
+                    "from the Pneuma field's modular flow, while 12 bridge pair coordinates (y1_i, y2_i) plus "
+                    "central sampler coordinates (c_1, c_2) provide a Euclidean substrate via OR reduction "
+                    "through R_⊥ operators. The 12 pairs arise from b₃ = 24/2 = 12, coupling normal ↔ mirror sectors. "
+                    "Aggregation reduces variance by √12. "
                     "The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
                 )
             ),
@@ -454,7 +456,7 @@ class ThermalTimeV16(SimulationBase):
                     "steps": [
                         "Start with G2 third Betti number: b3 = 24 associative 3-cycles from TCS construction (Corti-Haskins-Nordenstam-Pacini)",
                         "Define base thermal coupling from modular flow periodicity on b3 cycles: alpha_base = 2*pi / b3 = pi/12",
-                        "Compute gamma_correction = 10.313 incorporating: (i) metric signature (24,1) with 12x(2,0) Euclidean bridge pairs",
+                        "Compute gamma_correction = 10.313 incorporating: (i) metric signature (26,1) with 12x(2,0) Euclidean bridge pairs + C^{2,0} central sampler",
                         "Incorporate (ii) Pneuma field modular automorphism normalization from von Neumann algebra structure",
                         "Incorporate (iii) G2 holonomy group structure: 14-dimensional exceptional Lie group constraining modular flow",
                         "Combine: alpha_T = (2*pi / 24) * 10.313 = 2.700 governing strength of emergent time evolution"
@@ -526,10 +528,9 @@ class ThermalTimeV16(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description=(
-                    "v22 Signature: (24,1)+12×(2,0) indicates 24 spatial dimensions, 1 unified time, "
-                    "plus 12 Euclidean bridge pairs for timeless substrate. Dimensional structure: "
-                    "T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}). 12 pairs from b₃ = 24/2. "
-                    "Metric: ds² = -dt² + ∑_{i=1}^{12}(dy_{1i}² + dy_{2i}²)."
+                    "v23.1 Signature: (26,1) — 24 spatial from 12×(2,0) bridge pairs + 2 from C^{2,0} central sampler + 1 unified time. "
+                    "Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0} ⊕ C^{2,0}). 12 pairs from b₃ = 24/2. "
+                    "Metric: ds² = -dt² + ∑_{i=1}^{12}(dy_{1i}² + dy_{2i}²) + dc₁² + dc₂²."
                 ),
                 no_experimental_value=True,
             ),

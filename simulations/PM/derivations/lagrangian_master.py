@@ -2941,12 +2941,12 @@ class LagrangianMasterDerivation(SimulationBase):
         return SectionContent(
             section_id="2",
             subsection_id="2.1",
-            title="Core 26D Master Action: v22 12×(2,0) Paired Bridge System",
+            title="Core 27D(26,1) Master Action: v23.1 12×(2,0) Paired Bridge System",
             abstract=(
-                "Comprehensive derivation of the 26D master action using vielbein/tetrad "
-                "formalism with G2 holonomy compactification to 4D. The v22 architecture "
-                "decomposes the bulk as M^{24,1} = T^1 x_fiber (direct_sum B_i^{2,0}) with "
-                "12 paired Euclidean bridges. Covers: (A) vielbein formalism and spin connection, "
+                "Comprehensive derivation of the 27D(26,1) master action using vielbein/tetrad "
+                "formalism with G2 holonomy compactification to 4D. The v23.1 architecture "
+                "decomposes the bulk as M^{27}(26,1) = T^1 x_fiber (direct_sum B_i^{2,0} oplus C^{2,0}) with "
+                "12 paired Euclidean bridges plus C^{2,0} central sampler. Covers: (A) vielbein formalism and spin connection, "
                 "(B) 26D Einstein-Hilbert, Yang-Mills, Dirac, and Pneuma sectors, (C) Euler-Lagrange "
                 "equations yielding 26D Einstein field equations, (D) v22 bridge system with "
                 "distributed OR reduction, and (E) Kaluza-Klein reduction chain 26D -> 13D -> "
@@ -2995,15 +2995,15 @@ class LagrangianMasterDerivation(SimulationBase):
                 ContentBlock(
                     type="heading",
                     level=3,
-                    content="v22 12×(2,0) Paired Bridge System"
+                    content="v23.1 12×(2,0) Paired Bridge System"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The v22 framework introduces 12 PAIRED Euclidean bridges, each a (2,0) "
-                        "consciousness I/O gate. The bulk structure is M^{24,1} = T¹ ×_fiber "
-                        "(⊕_{i=1}^{12} B_i^{2,0}), where each B_i has coordinates (y₁ᵢ=input, y₂ᵢ=output). "
-                        "The metric decomposes as ds² = -dt² + Σᵢ₌₁¹² (dy₁ᵢ² + dy₂ᵢ²) with signature (24,1)."
+                        "The v23.1 framework introduces 12 PAIRED Euclidean bridges plus a C^{2,0} central "
+                        "sampler. The full bulk structure is M^{27}(26,1) = T¹ ×_fiber "
+                        "(⊕_{i=1}^{12} B_i^{2,0} ⊕ C^{2,0}), where each B_i has coordinates (y₁ᵢ, y₂ᵢ). "
+                        "The metric decomposes as ds² = -dt² + Σᵢ₌₁¹² (dy₁ᵢ² + dy₂ᵢ²) + dc₁² + dc₂² with signature (26,1)."
                     )
                 ),
                 ContentBlock(

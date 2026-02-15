@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v21.0 - Introduction
+PRINCIPIA METAPHYSICA v23.1 - Introduction
 ===========================================
 
 DOI: 10.5281/zenodo.18079602
 
 Licensed under the MIT License. See LICENSE file for details.
 
-v22 COMPATIBILITY: Uses unified time (24,1) signature with Euclidean bridge.
-                   4096-spinor Pneuma field from Cl(24,1).
-                   Dual 13D(12,1) shadows with OR reduction operator.
+v23.1: 27D(26,1) signature with C^(2,0) Euclidean central bridge.
+       4096-component Pneuma spinor field from Cl(26,1).
+       Dual 13D(12,1) shadows via OR reduction on 12 bridge pairs.
 
 Provides section content for the Introduction (Section 1).
 
@@ -18,7 +18,7 @@ the narrative content and cross-references for the paper's introduction.
 
 SECTION: 1 (Introduction)
 
-v21.0 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+v23.1 STERILE MODEL: All 125 constants are geometric residues, not tuned.
 
 OUTPUTS:
     - None (narrative content only)
@@ -65,10 +65,10 @@ class IntroductionV16(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="introduction_v16_0",
-            version="21.0",
+            version="23.1",
             domain="introduction",
             title="Introduction to Principia Metaphysica",
-            description="Narrative introduction to the PM v21.0 (24,1) Dual-Shadow framework - 125 geometric residues",
+            description="Narrative introduction to the PM v23.1 (26,1) Dual-Shadow framework - 125 spectral residues",
             section_id="1",
             subsection_id=None
         )
@@ -244,7 +244,7 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v21.0</strong>, a sterile "
+                    "This paper presents <strong>Principia Metaphysica v23.1</strong>, a sterile "
                     "geometric framework in which 125 fundamental physical constants are proposed to emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
@@ -483,9 +483,9 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>The Pneuma Postulate (v22 Dual-Shadow Framework)</h4>"
+                    "<h4>The Pneuma Postulate (v23.1 Dual-Shadow Framework)</h4>"
                     "<p>In the full 27D theory with unified time signature (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central, the Pneuma field Ψ<sub>P</sub> "
-                    "is a <strong>4096-component spinor</strong> of Cl(24,1). Bridge pairs WARP to create "
+                    "is a <strong>4096-component spinor</strong> of Cl(26,1). Bridge pairs WARP to create "
                     "<strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 shared time). "
                     "with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective "
                     "64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected "
@@ -499,9 +499,9 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v22 framework, the full 27D bulk has unified time (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central signature, eliminating "
+                    "In the v23.1 framework, the full 27D bulk has unified time (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central signature, eliminating "
                     "ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under "
-                    "Spin(24,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. "
+                    "Spin(26,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. "
                     "bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = -I). "
                     "Each shadow has Spin(10,1) symmetry with a 64-component spinor representation. Bilinear "
                     "condensates of this field generate the geometric tensors that define the internal manifold structure."
@@ -510,7 +510,7 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="equation",
                 content=(
-                    "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(24,1)</sub> → "
+                    "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(26,1)</sub> → "
                     "2 × <strong>64</strong><sub>Spin(10,1)</sub> → "
                     "⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry"
                 ),
@@ -593,7 +593,7 @@ class IntroductionV16(SimulationBase):
                 type="note",
                 content=(
                     "<h4>Dual-Shadow Chirality</h4>"
-                    "<p>In the v22 27D unified-time framework, the dual 13D(12,1) shadows are created when "
+                    "<p>In the v23.1 27D unified-time framework, the dual 13D(12,1) shadows are created when "
                     "12×(2,0) bridge pairs WARP via coordinate selection. The per-pair OR reduction operator R<sub>⊥</sub> "
                     "provides spinor double-cover: R<sub>⊥</sub>² = -I per pair. "
                     "The mirror shadow contains fermions with "
@@ -614,7 +614,7 @@ class IntroductionV16(SimulationBase):
                 type="note",
                 content=(
                     "<h4>Framework: 27D → Dual 13D(12,1) Shadows</h4>"
-                    "<p>In the v22 Principia Metaphysica framework, the fundamental theory lives in "
+                    "<p>In the v23.1 Principia Metaphysica framework, the fundamental theory lives in "
                     "<strong>27D with unified time signature (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central</strong>. "
                     "The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection "
                     "(each: 12 spatial from bridge + 1 shared time). Each shadow compactifies on G₂ "
@@ -697,7 +697,7 @@ class IntroductionV16(SimulationBase):
                     "<strong>O</strong> (mixed structure, requires supersymmetry, 7D G₂ holonomy). "
                     "D = 13 = 1 + 4 + 8 = <strong>R</strong> + <strong>H</strong> + <strong>O</strong> "
                     "(emergent thermal time, quaternionic spacetime, full 8D octonionic geometry, "
-                    "<strong>no supersymmetry required</strong>). D = 25 with (24,1) = 12×(2,0) + (0,1): "
+                    "<strong>no supersymmetry required</strong>). D = 27 with (26,1) = 12×(2,0) + C^(2,0) + (0,1): "
                     "12 bridge pairs warp to create 2×13D(12,1) shadows, predicting w₀ = -1 + 1/b₃ = -23/24 "
                     "from bridge pressure mismatch."
                 )
@@ -756,7 +756,7 @@ class IntroductionV16(SimulationBase):
             # 1.5 Outline of the Paper
             ContentBlock(
                 type="heading",
-                content="Outline of the Paper (v21 Dual-Shadow Framework)",
+                content="Outline of the Paper (v23.1 Dual-Shadow Framework)",
                 level=2,
                 label="1.5"
             ),
@@ -772,18 +772,18 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "<strong>Section 2 (Geometric Framework)</strong>: 27D bulk with unified time (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central signature; "
-                    "dual 13D(12,1) shadow emergence via WARP; K<sub>Pneuma</sub>; racetrack moduli "
-                    "stabilization. <strong>Section 3 (Gauge Unification)</strong>: SO(10) from 26D "
-                    "isometries; dual shadow gauge sectors; symmetry breaking chains. <strong>Section 4 "
-                    "(Fermion Sector)</strong>: 4096 → 2×64 spinor reduction; dual-shadow chirality mechanism; "
-                    "Yukawa hierarchies (ε = 0.2257 from racetrack); 7D Monte Carlo validation. "
-                    "<strong>Section 5 (Thermal Time Hypothesis)</strong>: Bridge dynamics; extended "
-                    "Tomita-Takesaki flow; t<sub>phys</sub> emergence. <strong>Section 6 (Cosmological "
-                    "Dynamics)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204 DERIVED; breathing dark energy. "
-                    "<strong>Section 7 (Predictions & Tests)</strong>: DESI wₐ/w₀ ratio; proton decay; "
-                    "GW dispersion; falsification criteria. <strong>Section 8 (Conclusion)</strong>: "
-                    "Summary; achievements; open questions; future directions."
+                    "<strong>Section 2 (Spectral Decomposition)</strong>: Complete spectral decomposition of the G\u2082 manifold; 27D bulk with unified time (26,1) signature; "
+                    "dual 13D(12,1) shadow emergence via OR reduction; racetrack moduli "
+                    "stabilization. <strong>Section 3 (Cosmological Results)</strong>: Hubble tension, S8 suppression; "
+                    "Planck 2018 and DESI 2025 alignment. <strong>Section 4 "
+                    "(CKM/PMNS from G\u2082 Triality)</strong>: Unified CKM and PMNS matrices from G\u2082 triality; "
+                    "Yukawa hierarchies (\u03b5 = 0.2257 from racetrack); mixing angle derivations. "
+                    "<strong>Section 5 (Dark Energy Attractor)</strong>: w\u2080 = -1 + 1/b\u2083 = -23/24, w\u2090 \u2248 -0.204 derived; "
+                    "breathing dark energy potential. "
+                    "<strong>Section 6 (Baryon Asymmetry)</strong>: Baryon asymmetry from G\u2082 cycles and Jarlskog invariant. "
+                    "<strong>Section 7 (ALP Portal Physics)</strong>: Axion-like particle portal physics from Face 3 K\u00e4hler moduli; "
+                    "dark matter portal coupling. "
+                    "Appendices provide spectral registry (A), algebraic foundations (B\u2013C), statistical logs (D), and validation certificates (F\u2013G)."
                 )
             ),
             ContentBlock(
@@ -824,7 +824,7 @@ class IntroductionV16(SimulationBase):
                 content=(
                     "<h4>Central Thesis</h4>"
                     "<p>The central claim of this work is that a <strong>27D spacetime with unified time "
-                    "signature (24,1) = 12×(2,0) + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, "
+                    "signature (26,1) = 12×(2,0) + C^{(2,0)} + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, "
                     "provides a <strong>ghost-free framework</strong> containing a 1 + 3 brane hierarchy. "
                     "The dual-shadow structure, with geometry emerging from the 4096-component Pneuma "
                     "field, can simultaneously explain: (1) the origin of gauge forces from 26D isometries, "
@@ -886,10 +886,10 @@ class IntroductionV16(SimulationBase):
                     "<h4>Historical Note: Two-Time Physics (Bars 1998–2010)</h4>"
                     "<p>Itzhak Bars' program demonstrating that 2T physics with gauge symmetry "
                     "provides a unified view of 1T systems via different gauge choices historically informed "
-                    "early PM development. However, v22+ adopts unified time (24,1) = 12×(2,0) + (0,1) with bridge pairs that WARP "
+                    "early PM development. However, v23.1 adopts unified time (26,1) = 12×(2,0) + C^{(2,0)} + (0,1) with bridge pairs that WARP "
                     "to create shadows. The dual 13D(12,1) shadow structure with per-pair OR reduction "
                     "preserves key phenomenological features while ensuring manifest unitarity."
-                    "[v22: This historical approach is superseded by the Euclidean bridge mechanism.]</p>"
+                    "[v23.1: This historical approach is superseded by the Euclidean bridge mechanism.]</p>"
                 ),
                 label="historical-two-time-context"
             ),
@@ -935,13 +935,13 @@ class IntroductionV16(SimulationBase):
                 "most profound intellectual endeavors in theoretical physics. This section traces the "
                 "historical arc from Maxwell's unification of electricity and magnetism to modern attempts "
                 "at Grand Unified Theories, while introducing the novel approach of proposing that geometry emerges from "
-                "a fundamental fermionic field. Principia Metaphysica v21 posits a 26D spacetime with unified "
-                "time signature (24,1) = 12×(2,0) + (0,1)—with 12 bridge pairs warping to create dual 13D(12,1) shadows—"
+                "a fundamental fermionic field. Principia Metaphysica v23.1 posits a 27D spacetime with unified "
+                "time signature (26,1) = 12\u00d7(2,0) + C^(2,0) + (0,1)\u2014with 12 bridge pairs warping to create dual 13D(12,1) shadows\u2014"
                 "eliminating ghost modes while preserving phenomenological richness. Compactification occurs "
-                "on a TCS (Twisted Connected Sum) G₂ manifold with h^1,1=4 Kähler moduli sectors, enabling "
-                "racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without "
-                "tuning. The Pneuma-Vielbein bridge validates metric emergence from spinor bilinears with "
-                "Lorentzian signature (-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ -0.204, "
+                "on a TCS (Twisted Connected Sum) G\u2082 manifold with h^1,1=4 K\u00e4hler moduli sectors, enabling "
+                "racetrack moduli stabilization that dynamically derives \u03b5 \u2248 0.2257 (the Cabibbo angle) without "
+                "tuning. The Primordial Spinor Field-Vielbein bridge validates metric emergence from spinor bilinears with "
+                "Lorentzian signature (-,+,+,+). Key predictions include w\u2080 = -1 + 1/b\u2083 = -23/24 and w\u2090 \u2248 -0.204, "
                 "consistent with DESI 2025 thawing observations."
             ),
             content_blocks=content_blocks,

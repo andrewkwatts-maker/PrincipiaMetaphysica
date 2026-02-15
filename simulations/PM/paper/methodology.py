@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Section 2: The Sterile Extraction Methodology
+PRINCIPIA METAPHYSICA v23.1 - Section 2: The Sterile Extraction Methodology
 =============================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+v23.1 STERILE MODEL: All 125 constants are geometric residues, not tuned.
 
 This simulation generates the content for Section 2 of the paper:
   2.1 Principles of Spectral Geometry
@@ -73,10 +73,10 @@ class MethodologyV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="methodology_v16_2",
-            version="21.0",
+            version="23.1",
             domain="methodology",
             title="The Sterile Extraction Methodology",
-            description="Spectral geometry and the 125-residue port (v21 dual-shadow framework)",
+            description="Spectral geometry and the 125-residue port (v23.1 dual-shadow framework, 27D/26,1)",
             section_id="2",
             subsection_id="2.5"  # v19.0: Unique subsection (2.1-2.4 used by geometry simulations)
         )

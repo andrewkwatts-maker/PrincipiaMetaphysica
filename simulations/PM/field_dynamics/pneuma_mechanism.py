@@ -383,7 +383,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 25D spacetime with signature (24,1) = 12×(2,0) + (0,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. Each component has specific physical meaning:"
+                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 27D(26,1) spacetime M^{27} = T¹ ×_fiber (⊕B_i^{2,0} ⊕ C^{2,0}). The spinor field couples to the 12×(2,0) bridge pairs and the T¹ time fiber — the Clifford algebra is Cl(24,1) (the bridge+time subalgebra, since C^{2,0} is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
             ),
             ContentBlock(
                 type="heading",
@@ -399,7 +399,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="A 4096-component Dirac spinor in full 26D (2^12 = 4096 from Cl(24,1)). Reduces to 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 x 16 under 4D spacetime x internal manifold split."
+                content="A 4096-component Dirac spinor in the 27D(26,1) bulk (2^12 = 4096 from Cl(24,1) sub-algebra of the bridge+time sector; the Euclidean C^{2,0} sampler contributes scalar rather than spinor modes). Reduces to 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 × 16 under 4D spacetime × internal manifold split."
             ),
             ContentBlock(
                 type="heading",
@@ -407,7 +407,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The covariant Dirac operator: Γ^M D_M where M runs over all 25 dimensions (effective dual shadows after OR reduction). Γ^M are 4096x4096 matrices in 25D Cl(24,1), 64x64 in effective dual shadow Cl(12,1)."
+                content="The covariant Dirac operator: Γ^M D_M where M runs over the 25 bridge+time dimensions (12×2+1; the Euclidean C^{2,0} decouples from spinor kinetics). Γ^M are 4096×4096 matrices in Cl(24,1), reducing to 64×64 in the effective dual shadow Cl(12,1) after OR reduction."
             ),
             ContentBlock(
                 type="heading",
@@ -441,11 +441,11 @@ class PneumaMechanismV16(SimulationBase):
         content_blocks.extend([
             ContentBlock(
                 type="heading",
-                content="The Gamma Matrices: 26D to 13D"
+                content="The Gamma Matrices: 27D(26,1) to 13D"
             ),
             ContentBlock(
                 type="paragraph",
-                content="In full 25D with signature (24,1) = 12×(2,0) + (0,1), the gamma matrices Γ^M form a representation of the Clifford algebra Cl(24,1) with dimension 2^12 = 4096. Upon OR reduction (bridge pairs WARP to create shadows), we obtain the effective Cl(12,1) algebra:"
+                content="In the 27D(26,1) bulk, the spinor field uses the bridge+time subalgebra Cl(24,1) (dimension 2^12 = 4096) since the Euclidean C^{2,0} central sampler contributes only scalar fluctuations. Upon OR reduction (R_⊥ acting on bridge pairs), we obtain the effective Cl(12,1) algebra of the 13D observable shadow:"
             ),
             ContentBlock(
                 type="heading",
@@ -714,7 +714,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 25D spacetime with signature (24,1) = 12×(2,0) + (0,1). This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_perp operator: 12 bridge pairs WARP to create dual 13D(12,1) shadows."
+                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 27D(26,1) spacetime M^{27} = T¹ ×_fiber (⊕B_i^{2,0} ⊕ C^{2,0}). This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_⊥ operator: 12 bridge pairs create dual 13D(12,1) shadows."
             ),
             ContentBlock(
                 type="heading",
@@ -728,7 +728,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Dual-Shadow Physics Framework",
-                content="This action is formulated in the full 25D spacetime with signature (24,1) = 12×(2,0) + (0,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time) while maintaining covariance."
+                content="This action is formulated in the full 27D(26,1) spacetime. The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction (each shadow: 12 spatial + 1 shared time) while maintaining covariance. The Euclidean C^{2,0} sampler contributes geometric averaging."
             ),
             ContentBlock(
                 type="heading",
@@ -858,7 +858,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The fundamental action in full 25D spacetime with signature (24,1), emphasizing fermionic primacy:"
+                content="The fundamental action in full 27D(26,1) spacetime, emphasizing fermionic primacy:"
             ),
             ContentBlock(
                 type="callout",

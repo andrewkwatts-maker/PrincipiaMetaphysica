@@ -386,11 +386,12 @@ class CosmologyIntroV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The v22 framework begins with a 25D spacetime with unified time signature (24,1) = 12×(2,0) + (0,1),"
-                        "eliminating ghost modes and closed timelike curves. This splits into dual 13D(12,1) shadows"
-                        "connected by 12 paired (2,0) Euclidean bridges. The 12 pairs arise from b₃ = 24/2 = 12, "
+                        "The v23.1 framework begins with a 27D spacetime with signature (26,1): 12×(2,0) bridge pairs, "
+                        "a C^{2,0} Euclidean central sampler, and a unified T¹ time fiber. This structure "
+                        "eliminates ghost modes and closed timelike curves. The 27D bulk splits into dual 13D(12,1) shadows "
+                        "via the OR reduction operator R_⊥. The 12 pairs arise from b₃ = 24/2 = 12, "
                         "where each pair couples one normal-sector 3-cycle to one mirror-sector 3-cycle. "
-                        "The aggregate bridge metric is ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)."
+                        "The full metric is ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²) + dc₁² + dc₂²."
                     )
                 ),
                 ContentBlock(
@@ -1116,7 +1117,7 @@ class CosmologyIntroV16(SimulationBase):
                 "simulation_id": self.metadata.id,
                 "assertion": (
                     f"SO(24,1) Casimir C2 = {C2} for (5,1) brane is consistent "
-                    f"with v21 dual-shadow framework"
+                    f"with v23.1 dual-shadow framework"
                 ),
                 "result": "PASS" if casimir_ok else "FAIL",
                 "timestamp": datetime.now().isoformat(),
