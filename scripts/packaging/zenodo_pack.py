@@ -52,7 +52,7 @@ VERSION = "23.3.2"
 RELEASE_DATE = datetime.datetime.now().strftime("%Y%m%d")
 
 # Source and build directories
-SOURCE_DIR = Path(__file__).parent.parent  # Project root
+SOURCE_DIR = Path(__file__).parent.parent.parent  # Project root (scripts/packaging/zenodo_pack.py -> ../../..)
 BUILD_DIR = SOURCE_DIR / "Principia_Metaphysica-Demon_Lock"
 ZIP_NAME = "Principia_Metaphysica-Demon_Lock.zip"
 
@@ -538,7 +538,10 @@ def copy_root_files():
     for filename in INCLUDE_ROOT_FILES:
         src = SOURCE_DIR / filename
         if src.exists():
-            shutil.copy2(src, BUILD_DIR / filename)
+            dst = BUILD_DIR / filename
+            # Ensure parent directory exists for files with subdirectory paths
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst)
             print(f"    Copied: {filename}")
         else:
             print(f"    [MISSING] {filename}")
