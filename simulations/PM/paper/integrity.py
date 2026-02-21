@@ -526,7 +526,7 @@ class IntegrityV16_2(SimulationBase):
         return [
             {
                 "id": "pdg-2024",
-                "authors": ["Particle Data Group"],
+                "authors": "Particle Data Group",
                 "title": "Review of Particle Physics",
                 "year": 2024,
                 "url": "https://pdg.lbl.gov/2024/",
@@ -534,7 +534,7 @@ class IntegrityV16_2(SimulationBase):
             },
             {
                 "id": "nist-sha256",
-                "authors": ["National Institute of Standards and Technology"],
+                "authors": "National Institute of Standards and Technology",
                 "title": "Secure Hash Standard (SHS) - FIPS PUB 180-4",
                 "year": 2015,
                 "url": "https://csrc.nist.gov/publications/detail/fips/180/4/final",
@@ -542,7 +542,7 @@ class IntegrityV16_2(SimulationBase):
             },
             {
                 "id": "berger-1955",
-                "authors": ["Berger, M."],
+                "authors": "Berger, M.",
                 "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine",
                 "year": 1955,
                 "doi": "10.24033/bsmf.1464",
@@ -550,7 +550,7 @@ class IntegrityV16_2(SimulationBase):
             },
             {
                 "id": "atiyah-singer-1968",
-                "authors": ["Atiyah, M.F.", "Singer, I.M."],
+                "authors": "Atiyah, M.F. and Singer, I.M.",
                 "title": "The Index of Elliptic Operators I",
                 "year": 1968,
                 "doi": "10.2307/1970715",
@@ -558,7 +558,7 @@ class IntegrityV16_2(SimulationBase):
             },
             {
                 "id": "joyce-2000",
-                "authors": ["Joyce, D.D."],
+                "authors": "Joyce, D.D.",
                 "title": "Compact Manifolds with Special Holonomy",
                 "year": 2000,
                 "url": "https://global.oup.com/academic/product/compact-manifolds-with-special-holonomy-9780198506010",

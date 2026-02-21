@@ -1,0 +1,84 @@
+{
+  "version": "23.9.5",
+  "generated": "2026-02-21T18:29:00Z",
+  "total_plots": 5,
+  "plots": [
+    {
+      "id": "certificate-dashboard",
+      "file": "certificate_dashboard_v16_2.png",
+      "title": "Certificate Dashboard - 42 Gates Grid",
+      "description": "Complete 42-certificate framework visualization showing 7 Primary Gates, 35 Technical Jury, and 3 Vaults (Ancestral, Torsion, Residue). Color-coded by status: GREEN=PASSED, RED=FAILED, GOLD=PRIMARY.",
+      "category": "validation",
+      "version": "16.2",
+      "width": 1920,
+      "height": 1080,
+      "size_kb": 423,
+      "script": "simulations/visualizations/certificate_dashboard_v16_2.py"
+    },
+    {
+      "id": "primary-gates",
+      "file": "primary_gates_v16_2.png",
+      "title": "Primary Gates Focus",
+      "description": "Focused view of the 7 Primary Gates that anchor the sterile certification framework.",
+      "category": "validation",
+      "version": "16.2",
+      "width": 1920,
+      "height": 1080,
+      "size_kb": 250,
+      "script": "simulations/visualizations/certificate_dashboard_v16_2.py"
+    },
+    {
+      "id": "four-pattern-orthogonality",
+      "file": "four_pattern_orthogonality_v16_2.png",
+      "title": "4-Pattern Orthogonality",
+      "description": "Visualization of the 4-dimensional pattern orthogonality in G₂ manifold structure. Shows geometric independence of the four fundamental topological patterns.",
+      "category": "geometry",
+      "version": "16.2",
+      "width": 1920,
+      "height": 1080,
+      "size_kb": 245,
+      "script": "simulations/visualizations/four_pattern_orthogonality_v16_2.py"
+    },
+    {
+      "id": "four-pattern-stability",
+      "file": "four_pattern_stability_v16_2.png",
+      "title": "4-Pattern Stability Heatmap",
+      "description": "Stability analysis of the 4-pattern configuration showing robustness under perturbations.",
+      "category": "geometry",
+      "version": "16.2",
+      "width": 1920,
+      "height": 1080,
+      "size_kb": 211,
+      "script": "simulations/visualizations/four_pattern_orthogonality_v16_2.py"
+    },
+    {
+      "id": "torsion-funnel",
+      "file": "torsion_funnel_v16_2.png",
+      "title": "Torsion Funnel: 288→24→125 Flow",
+      "description": "The geometric flow from 288 total roots through 24 G₂ dimensions down to 125 spectral residues. Visualizes the dimensional reduction cascade that generates physical constants.",
+      "category": "topology",
+      "version": "16.2",
+      "width": 1920,
+      "height": 1440,
+      "size_kb": 462,
+      "script": "simulations/visualizations/torsion_funnel_v16_2.py"
+    }
+  ],
+  "categories": {
+    "validation": {
+      "title": "Validation & Certification",
+      "description": "Certificate dashboards and validation status visualizations",
+      "count": 2
+    },
+    "geometry": {
+      "title": "G₂ Geometry & Patterns",
+      "description": "Geometric structure and pattern analysis of the G₂ manifold",
+      "count": 2
+    },
+    "topology": {
+      "title": "Topological Flow",
+      "description": "Dimensional reduction and topological cascade visualizations",
+      "count": 1
+    }
+  }
+}
