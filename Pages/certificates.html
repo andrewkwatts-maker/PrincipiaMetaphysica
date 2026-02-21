@@ -944,6 +944,15 @@
       return CERTIFICATES_DATA.certificates.find(cert => cert.gate_id === gateId);
     }
 
+    // Toggle sigma sort order
+    function toggleSigmaSort() {
+      if (!window.sigmaSortState) {
+        window.sigmaSortState = { ascending: true };
+      }
+      window.sigmaSortState.ascending = !window.sigmaSortState.ascending;
+      renderValidationSummary(); // Re-render table with new sort order
+    }
+
     // Render validation summary table with all simulation outputs
     function renderValidationSummary() {
       if (!VALIDATION_REPORT || !VALIDATION_REPORT.sigma_table) {
@@ -976,12 +985,19 @@
         return 'fail';
       };
 
-      // Sort by sigma value (ascending - best agreements first)
+      // Sigma sort state (closure variable)
+      if (!window.sigmaSortState) {
+        window.sigmaSortState = { ascending: true };
+      }
+
+      // Sort by sigma value
       const sortedData = [...VALIDATION_REPORT.sigma_table].sort((a, b) => {
-        return (a.sigma || 0) - (b.sigma || 0);
+        const diff = (a.sigma || 0) - (b.sigma || 0);
+        return window.sigmaSortState.ascending ? diff : -diff;
       });
 
       // Build the table
+      const sortIndicator = window.sigmaSortState.ascending ? '▲' : '▼';
       let tableHTML = `
         <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
           <thead>
@@ -989,7 +1005,9 @@
               <th style="padding: 0.75rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3);">Parameter</th>
               <th style="padding: 0.75rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3);">PM Prediction</th>
               <th style="padding: 0.75rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3);">Experimental</th>
-              <th style="padding: 0.75rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3);">Agreement</th>
+              <th onclick="toggleSigmaSort()" style="padding: 0.75rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3); cursor: pointer; user-select: none;" title="Click to toggle sort order">
+                Agreement <span style="color: var(--accent-primary);">${sortIndicator}</span>
+              </th>
               <th style="padding: 0.75rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3);">Source</th>
             </tr>
           </thead>
