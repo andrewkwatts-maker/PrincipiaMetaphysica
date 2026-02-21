@@ -189,7 +189,8 @@ class ResultsV16_2(SimulationBase):
                     "DESI 2025 BAO-only data favor a slight deviation: w₀ = −0.957 ± 0.067 "
                     "(BAO-only) at 0.64σ from −1, consistent with thawing quintessence. "
                     "Principia Metaphysica v23.1 <em>derives</em> w₀ from G₂ manifold topology "
-                    "without any free parameters."
+                    "without any free parameters. (The complete geometric derivation from dimensional "
+                    "reduction is presented in Section 5.2; here we summarize the result and experimental comparison.)"
                 )
             ),
             ContentBlock(
@@ -359,7 +360,7 @@ class ResultsV16_2(SimulationBase):
                 rows=[
                     ["w₀ (dark energy EoS)", "−23/24 ≈ −0.9583", "DESI BAO 2025: −0.957 ± 0.067", "0.02σ (BAO-only)", "CONSISTENT"],
                     ["α⁻¹ (fine structure)", "137.0367 (geometric)", "CODATA 2018: 137.035999177", "~0.05σ (theory-level)", "CONSISTENT"],
-                    ["n_gen (fermion generations)", "3 (χ_eff/48 = 144/48)", "LEP Z-width: 3 exactly", "Exact", "CONSISTENT"],
+                    ["n_gen (fermion generations)", "3 (χ<sub>eff</sub>/48 = 144/48)", "LEP Z-width: 3 exactly", "Exact", "CONSISTENT"],
                     ["sin θ_C (Cabibbo angle)", "0.2257 (racetrack moduli)", "PDG 2024: 0.2257 ± 0.0010", "Central value", "CONSISTENT"],
                     ["Ω_DM/Ω_b (DM ratio)", "5.4 (T'/T ~ 0.57)", "Planck 2018: 5.38 ± 0.15", "0.1σ", "CONSISTENT"],
                     ["θ₂₃ (PMNS atmospheric)", "49.75° (G₂ holonomy SU(3))", "NuFIT 6.0 IO: 49.3° ± ~1°", "0.45σ", "CONSISTENT"],

@@ -144,12 +144,17 @@ class AbstractV17_2(SimulationBase):
         tau_p       = safe_get("proton_decay.tau_p_years",     4.757e34)
         tau_p_bound = safe_get("bounds.tau_proton_lower",      1.67e34)
         alpha_inv_p = safe_get("constants.alpha_inverse_pred", 137.03670177575597)
-        alpha_inv_c = safe_get("codata.alpha_inverse",         137.035999177)
+        alpha_inv_c = safe_get("codata.alpha_inverse",         137.035999177)  # alpha inverse (CODATA 2022 full)
         theta23_io  = safe_get("nufit.theta_23_IO",            49.3)
 
         return {
+            # Framework version parameters (dynamic versioning system)
+            "framework.version":               "23.1",    # Full version number
+            "framework.version_major":         "23",      # Major version only
+            "framework.version_label":         "v23.1",   # Formatted with 'v' prefix
+            "framework.version_major_label":   "v23",     # Formatted major version
             # Framework summary counts
-            "abstract.total_constants":        125,
+            "abstract.total_constants":        125,  # DERIVED: visible_sector = 5^3 from V₇ spectral decomposition
             "abstract.pure_predictions":       55,
             "abstract.calibration_inputs":     3,
             "abstract.fitted_pmns":            2,
@@ -188,7 +193,7 @@ class AbstractV17_2(SimulationBase):
                     'We introduce a unified mathematical framework that proposes geometric expressions for <span class="pm-value" data-pm-value="abstract.total_constants">125</span> fundamental physical '
                     'constants and cosmological observables from the topological invariants of a '
                     '<span class="pm-value" data-pm-value="dimensions.D_bulk">27</span>D manifold with '
-                    '(26,1) signature and 2D Euclidean central bridge. <strong>Principia Metaphysica v23.1</strong> '
+                    '(26,1) signature and 2D Euclidean central bridge. <strong>Principia Metaphysica <span class="pm-value" data-pm-value="framework.version_label">v23.1</span></strong> '
                     'realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and a '
                     'shared C<sup>(2,0)</sup> Euclidean central bridge (ds\u00b2 = dy\u2081\u00b2 + dy\u2082\u00b2) enables coherent cross-shadow '
                     'sampling via OR reduction. Each shadow compactifies on G\u2082(7,0) to '
@@ -367,6 +372,40 @@ class AbstractV17_2(SimulationBase):
         content integrity validation.
         """
         return [
+            # Framework version parameters (dynamic versioning for all paper content)
+            Parameter(
+                path="framework.version",
+                name="Framework Version Number",
+                no_experimental_value=True,
+                units="version",
+                description="Current Principia Metaphysica version number (e.g., '23.1')",
+                status="SYSTEM"
+            ),
+            Parameter(
+                path="framework.version_major",
+                name="Framework Major Version",
+                no_experimental_value=True,
+                units="version",
+                description="Major version number only (e.g., '23')",
+                status="SYSTEM"
+            ),
+            Parameter(
+                path="framework.version_label",
+                name="Framework Version Label",
+                no_experimental_value=True,
+                units="version",
+                description="Formatted version with 'v' prefix (e.g., 'v23.1')",
+                status="SYSTEM"
+            ),
+            Parameter(
+                path="framework.version_major_label",
+                name="Framework Major Version Label",
+                no_experimental_value=True,
+                units="version",
+                description="Formatted major version with 'v' prefix (e.g., 'v23')",
+                status="SYSTEM"
+            ),
+            # Content tracking parameters
             Parameter(
                 path="abstract.word_count",
                 name="Abstract Word Count",
@@ -483,7 +522,7 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=False,
                 units="dimensionless",
                 description="PM framework prediction for alpha^-1 (echoed from constants.alpha_inverse_pred for abstract display)",
-                experimental_bound=137.035999177,
+                experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                 bound_type="measured",
                 bound_source="CODATA2018",
                 status="PREDICTED"
@@ -494,7 +533,7 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=False,
                 units="dimensionless",
                 description="CODATA 2018 experimental value of alpha^-1 (echoed for abstract display spans)",
-                experimental_bound=137.035999177,
+                experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                 bound_type="measured",
                 bound_source="CODATA2018",
                 status="SYSTEM"

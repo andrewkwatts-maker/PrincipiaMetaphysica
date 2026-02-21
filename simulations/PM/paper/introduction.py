@@ -204,7 +204,7 @@ class IntroductionV16(SimulationBase):
                 "via geometric running, with α_GUT⁻¹ ≈ 42.7 determined by G₂ topology."
             ),
             "topological_generations": (
-                "Number of fermion generations n_gen = χ_eff/48 = 144/48 = 3 follows "
+                "Number of fermion generations n_gen = χ<sub>eff</sub>/48 = 144/48 = 3 follows"
                 "from G₂ Euler characteristic, providing parameter-free prediction "
                 "matching Standard Model exactly."
             ),
@@ -240,11 +240,11 @@ class IntroductionV16(SimulationBase):
         assert len(foundations) >= 6, "get_foundations() must return at least 6 principles"
 
         content_blocks = [
-            # Lead paragraph (abstract) - v21.0 Dual-Shadow Model
+            # Lead paragraph (abstract) - v23.1 Dual-Shadow Model
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v23.1</strong>, a sterile "
+                    'This paper presents <strong>Principia Metaphysica <span class="pm-value" data-pm-value="framework.version_label">v23.1</span></strong>, a sterile '
                     "geometric framework in which 125 fundamental physical constants are proposed to emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
@@ -254,7 +254,7 @@ class IntroductionV16(SimulationBase):
                     "11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = "
                     '<span class="pm-value" data-pm-value="topology.elder_kads">24</span></strong> and '
                     '<strong>χ = <span class="pm-value" data-pm-value="topology.mephorash_chi">144</span></strong> '
-                    "provides all structure: fermion generations (χ_eff/48 = 3), "
+                    "provides all structure: fermion generations (χ<sub>eff</sub>/48 = 3),"
                     "mixing angles, mass hierarchies, and cosmological parameters. The framework "
                     "achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, "
                     "and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> "
@@ -808,11 +808,11 @@ class IntroductionV16(SimulationBase):
                     "<p><strong>Calibration Transparency:</strong> The framework uses minimal calibrations: "
                     "VEV factor 1.5859 (semi-derived via ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ + "
                     "|T<sub>ω</sub>|/b₃) and α<sub>GUT</sub> coefficient 0.032177—both fully documented. "
-                    "<strong>v14.2:</strong> With the derivation of the KK scale (M<sub>KK</sub> ≈ 4.5 TeV "
+                    "With the derivation of the KK scale (M<sub>KK</sub> ≈ 4.5 TeV"
                     "from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP "
                     "phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ "
                     "Standard Model + compactification parameters purely predictive</strong>. "
-                    "<strong>v15.0:</strong> Racetrack moduli stabilization now <em>dynamically derives</em> "
+                    "Racetrack moduli stabilization now <em>dynamically derives</em>"
                     "the Cabibbo angle ε = 0.2257 from flux competition—no tuning needed. Yukawa overlaps "
                     "validated via 7D Monte Carlo on explicit G₂ associative cycles, and perturbation tests "
                     "confirm active geometry evaluation robustness.</p>"

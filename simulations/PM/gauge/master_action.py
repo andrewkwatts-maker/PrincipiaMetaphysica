@@ -1162,31 +1162,31 @@ class MasterActionSimulationV22(SimulationBase):
         """
         Return section content for the paper.
 
-        v22.0: Updated to describe 12-pair bridge system architecture.
+        v23.0: Updated to describe 12-pair bridge system architecture.
         """
         return SectionContent(
             section_id="3",
             subsection_id="3.2",  # v19.0: Unique
-            title="Standard Model Gauge Sectors from Master Action (v22 12-Pair Bridge)",
+            title='Standard Model Gauge Sectors from Master Action (<span class="pm-value" data-pm-value="framework.version_major_label">v23</span> 12-Pair Bridge)',
             abstract=(
-                "v22.0: Derivation of Standard Model gauge structure from higher-dimensional "
+                '<span class="pm-value" data-pm-value="framework.version_label">v23.1</span>: Derivation of Standard Model gauge structure from higher-dimensional '
                 "master action via Kaluza-Klein reduction over G2 manifolds. "
-                "v22: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR."
+                '<span class="pm-value" data-pm-value="framework.version_major_label">v23</span>: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR.'
                 "Distributed OR reduction via tensor product of 12 local R_perp operators."
             ),
             content_blocks=[
                 # =============================================================
-                # v22.0: 12-Pair Bridge System Section
+                # v23.0: 12-Pair Bridge System Section
                 # =============================================================
                 ContentBlock(
                     type="heading",
-                    content="v22.0: 12-Pair (2,0) Bridge Architecture",
+                    content='<span class="pm-value" data-pm-value="framework.version_label">v23.1</span>: 12-Pair (2,0) Bridge Architecture',
                     level=2
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Version 22 introduces a fundamental structural change: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central. "
+                        'Version <span class="pm-value" data-pm-value="framework.version_major">23</span> introduces a fundamental structural change: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central. '
                         "The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 shared time). "
                         "The metric is: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)."
                     )
