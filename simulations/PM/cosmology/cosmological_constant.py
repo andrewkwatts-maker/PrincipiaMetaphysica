@@ -154,7 +154,7 @@ class CosmologicalConstantV16(SimulationBase):
         # rho_vacuum = Lambda * c^4 / (8 * pi * G)
         G = 6.67430e-11  # m^3 kg^-1 s^-2
         rho_vacuum_si = self.Lambda_derived * c**4 / (8 * np.pi * G)  # J/m^3
-        self.rho_vacuum = rho_vacuum_si / (1.602e-10)**4 / (1.97e-16)**3  # GeV^4
+        self.rho_vacuum = rho_vacuum_si  # J/m^3 (keep in SI units, not GeV^4)
 
         # Step 5: Compute Lambda ratio (the "why 10^-122" number)
         # Lambda_Planck = 1/l_Planck^2 = c^3 / (hbar * G) ~ 3.8e69 m^-2
