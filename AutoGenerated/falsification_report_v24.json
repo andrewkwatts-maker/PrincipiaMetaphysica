@@ -1,0 +1,128 @@
+{
+  "framework": "Principia Metaphysica v24.1",
+  "test_date": "2026-02-22T09:07:01.149311",
+  "falsifiability_status": "HIGHLY FALSIFIABLE (Multiple near-term tests)",
+  "summary": {
+    "total_predictions": 5,
+    "testable_within_5_years": 5,
+    "high_risk": 2,
+    "medium_risk": 3
+  },
+  "primary_kill_switches": [
+    {
+      "test": "ALP_Coupling",
+      "experiment": "ALPS-II / IAXO",
+      "verdict": "Should be detected by ALPS-II (2026)",
+      "risk_level": "HIGH",
+      "timeline": "2026-2028"
+    },
+    {
+      "test": "Fifth_Force",
+      "experiment": "Eot-Wash / Next-gen torsion balance",
+      "verdict": "Predicted at 56.2 microns; needs higher precision",
+      "risk_level": "MEDIUM",
+      "timeline": "Ongoing (current limits apply)"
+    },
+    {
+      "test": "Proton_Decay",
+      "experiment": "Hyper-Kamiokande",
+      "verdict": "Should be detected by Hyper-K (2027)",
+      "risk_level": "HIGH",
+      "timeline": "2027+"
+    },
+    {
+      "test": "Sterile_Neutrino",
+      "experiment": "DUNE",
+      "verdict": "Detectable by DUNE (2028)",
+      "risk_level": "MEDIUM",
+      "timeline": "2028+"
+    },
+    {
+      "test": "KK_Gravitons",
+      "experiment": "HL-LHC",
+      "verdict": "Accessible to HL-LHC (2029)",
+      "risk_level": "MEDIUM",
+      "timeline": "2029+"
+    }
+  ],
+  "detailed_risk_analysis": {
+    "ALP_Coupling": {
+      "status": "IMMINENT_DANGER",
+      "verdict": "Should be detected by ALPS-II (2026)",
+      "falsification_risk": "HIGH",
+      "predicted_value": 2.9e-11,
+      "experimental_limit": 2e-11,
+      "ratio": 1.4500000000000002
+    },
+    "Fifth_Force": {
+      "status": "VIABLE",
+      "verdict": "Predicted at 56.2 microns; needs higher precision",
+      "falsification_risk": "MEDIUM",
+      "predicted_value": 5.62e-05,
+      "experimental_limit": 0.0001,
+      "margin": 0.5619999999999999
+    },
+    "Proton_Decay": {
+      "status": "IMMINENT_TEST",
+      "verdict": "Should be detected by Hyper-K (2027)",
+      "falsification_risk": "HIGH",
+      "predicted_lifetime": 4.757e+34,
+      "experimental_sensitivity": 1e+35,
+      "ratio": 0.47570000000000007
+    },
+    "Sterile_Neutrino": {
+      "status": "TESTABLE",
+      "verdict": "Detectable by DUNE (2028)",
+      "falsification_risk": "MEDIUM",
+      "predicted_mixing": 0.01,
+      "experimental_limit": 0.001,
+      "ratio": 10.0
+    },
+    "KK_Gravitons": {
+      "status": "TESTABLE",
+      "verdict": "Accessible to HL-LHC (2029)",
+      "falsification_risk": "MEDIUM",
+      "predicted_mass": 4.5,
+      "experimental_reach": 6.0,
+      "margin": 1.3333333333333333
+    }
+  },
+  "experimental_timeline": [
+    {
+      "year": 2026,
+      "experiment": "ALPS-II",
+      "test": "ALP coupling"
+    },
+    {
+      "year": 2027,
+      "experiment": "Hyper-K",
+      "test": "Proton decay"
+    },
+    {
+      "year": 2028,
+      "experiment": "IAXO",
+      "test": "ALP mass"
+    },
+    {
+      "year": 2028,
+      "experiment": "DUNE",
+      "test": "Sterile neutrino"
+    },
+    {
+      "year": 2029,
+      "experiment": "HL-LHC",
+      "test": "KK gravitons"
+    }
+  ],
+  "peer_review_response": {
+    "falsifiability_criterion": "This theory makes 5 predictions testable within 5 years. Specifically, if ALPS-II / IAXO sets a limit below the predicted value and finds nothing, the ALP_Coupling sector of this theory is immediately falsified. This satisfies Popper's criterion for scientific falsifiability.",
+    "key_experiments": [
+      "ALPS-II / IAXO",
+      "Eot-Wash / Next-gen torsion balance",
+      "Hyper-Kamiokande",
+      "DUNE",
+      "HL-LHC"
+    ],
+    "earliest_test": "2026"
+  }
+}
