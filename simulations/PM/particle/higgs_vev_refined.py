@@ -519,6 +519,15 @@ class HiggsVEVRefinedV18(SimulationBase):
             ),
             content_blocks=[
                 ContentBlock(
+                    type="note",
+                    content=(
+                        "<strong>Context:</strong> This subsection derives the Higgs vacuum expectation value "
+                        "(v ≈ 246 GeV) from G₂ holonomy. This VEV serves as input to the Higgs mass calculation "
+                        "in Section 4.4, where moduli stabilization determines m<sub>H</sub> ≈ 125 GeV."
+                    ),
+                    label="higgs-vev-context"
+                ),
+                ContentBlock(
                     type="paragraph",
                     content=(
                         "The electroweak scale v ~ 246 GeV emerges from the G2 "

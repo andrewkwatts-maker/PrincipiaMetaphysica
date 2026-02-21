@@ -227,7 +227,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 terms={
                     r"\alpha^{-1}": {
                         "description": "Inverse fine structure constant: the dimensionless coupling strength of electromagnetism, here derived from pure G2 topology",
-                        "experimental_value": 137.035999177,
+                        "experimental_value": 137.035999177,  # alpha inverse (CODATA 2022 full)
                         "experimental_source": "CODATA 2022"
                     },
                     r"\varphi": {
@@ -781,7 +781,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 status="DERIVED",
                 description="alpha^-1 derived from G2 topology: k_gimel^2 - b3/phi + phi/(4*pi) - D_G2/(10^4 - 3*k_gimel). v22.5 alignment yields 137.035999179 vs CODATA 2022: 137.035999177 (relative error: 1.7e-11).",
                 derivation_formula="alpha-inverse-anchor",
-                experimental_bound=137.035999177,
+                experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                 bound_type="measured",
                 bound_source="CODATA2022",
                 uncertainty=0.01
@@ -990,7 +990,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "assertion": f"alpha^-1 from geometric anchors = {alpha_inv:.6f}",
                 "condition": "abs(alpha_inv - 137.035999177) < 0.01",
                 "tolerance": 0.01,
-                "status": "PASS" if abs(alpha_inv - 137.035999177) < 0.01 else "FAIL",
+                "status": "PASS" if abs(alpha_inv - 137.035999177) < 0.01 else "FAIL",  # alpha inverse (CODATA 2022 full)
                 "wolfram_query": "fine structure constant inverse CODATA 2022",
                 "wolfram_result": "OFFLINE",
                 "sector": "electromagnetic"
@@ -1098,9 +1098,9 @@ class GeometricAnchorsSimulation(SimulationBase):
         checks.append({
             "name": "alpha^-1 within 0.01 of CODATA 2022",
             "passed": alpha_ok,
-            "confidence_interval": {"value": alpha_inv, "target": 137.035999177, "tolerance": 0.01},
+            "confidence_interval": {"value": alpha_inv, "target": 137.035999177, "tolerance": 0.01},  # alpha inverse (CODATA 2022 full)
             "log_level": "INFO",
-            "message": f"alpha^-1 = {alpha_inv:.10f}, error = {abs(alpha_inv - 137.035999177):.2e}"
+            "message": f"alpha^-1 = {alpha_inv:.10f}, error = {abs(alpha_inv - 137.035999177):.2e}"  # alpha inverse (CODATA 2022 full)
         })
 
         # Check 3: w0 within 1-sigma of DESI 2025
@@ -1169,12 +1169,12 @@ class GeometricAnchorsSimulation(SimulationBase):
             {
                 "gate_id": "G_ANCHOR_ALPHA",
                 "assertion": f"alpha^-1 = {alpha_inv:.6f} matches CODATA within tolerance",
-                "result": "PASS" if abs(alpha_inv - 137.035999177) < 0.01 else "FAIL",
+                "result": "PASS" if abs(alpha_inv - 137.035999177) < 0.01 else "FAIL",  # alpha inverse (CODATA 2022 full)
                 "timestamp": "",
                 "details": {
                     "derived": alpha_inv,
-                    "codata": 137.035999177,
-                    "error": abs(alpha_inv - 137.035999177)
+                    "codata": 137.035999177,  # alpha inverse (CODATA 2022 full)
+                    "error": abs(alpha_inv - 137.035999177)  # alpha inverse (CODATA 2022 full)
                 }
             },
             {

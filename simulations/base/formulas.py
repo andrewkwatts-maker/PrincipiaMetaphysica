@@ -67,16 +67,16 @@ class FormulaMetadata:
     references: List[str] = field(default_factory=list)
 
     def render_latex(self) -> str:
-        """Render LaTeX with <<param_name>> placeholders substituted from PM Params registry.
+        """Render LaTeX with <<elder_kads>> placeholders substituted from PM Params registry.
 
         Uses FormulasRegistry.render_formula() to substitute code names with
         canonical LaTeX symbols. Formulas without placeholders pass through unchanged.
 
         Returns:
-            LaTeX string with all <<param_name>> resolved to symbols.
+            LaTeX string with all <<elder_kads>> resolved to symbols.
 
         Raises:
-            KeyError: If any <<param_name>> is not in LATEX_REGISTRY.
+            KeyError: If any <<elder_kads>> is not in LATEX_REGISTRY.
         """
         from simulations.core.FormulasRegistry import FormulasRegistry
         return FormulasRegistry.render_formula(self.latex)
@@ -84,7 +84,7 @@ class FormulaMetadata:
     def validate_latex(self) -> Dict[str, Any]:
         """Validate this formula's LaTeX for syntax and PM Param references.
 
-        Checks: non-empty, balanced braces, all <<param_name>> placeholders
+        Checks: non-empty, balanced braces, all <<elder_kads>> placeholders
         resolve to valid LATEX_REGISTRY entries.
 
         Returns:
@@ -376,7 +376,7 @@ class FormulaRegistry:
         Checks every formula's LaTeX for:
         - Non-empty content
         - Balanced braces
-        - Valid <<param_name>> placeholders (resolve in LATEX_REGISTRY)
+        - Valid <<elder_kads>> placeholders (resolve in LATEX_REGISTRY)
 
         Also validates that all PM Param code names in LATEX_REGISTRY
         produce valid LaTeX (bi-directional check).
@@ -419,7 +419,7 @@ class FormulaRegistry:
             dict mapping formula_id to rendered LaTeX string.
 
         Raises:
-            KeyError: If any formula contains an unresolvable <<param_name>>.
+            KeyError: If any formula contains an unresolvable <<elder_kads>>.
         """
         return {fid: f.render_latex() for fid, f in self.formulas.items()}
 

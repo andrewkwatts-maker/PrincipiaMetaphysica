@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix B: The Global Sum Rule
+PRINCIPIA METAPHYSICA v23.1 - Appendix B: The Global Sum Rule
 ==============================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: The mathematical constraint that locks the 125 residues.
+v23.1 STERILE MODEL: The mathematical constraint that locks the 125 residues.
 
 This appendix provides the mathematical "glue" that converts the 125 residues
 from a list of constants into a Rigid Geometric System via the Spectral Trace.
@@ -65,8 +65,8 @@ class AppendixBSumRule(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_b_sum_rule_v16_2",
-            version="16.2",
+            id="appendix_b_sum_rule_v23_1",
+            version="23.1",
             domain="appendices",
             title="Appendix B: Algebraic Foundations of S_PR(2)",
             description="The mathematical constraint that locks the 125 residues via S_PR(2) gauge",
@@ -119,7 +119,7 @@ class AppendixBSumRule(SimulationBase):
                 content=(
                     "Appendix B provides the mathematical 'glue' that converts the 125 residues "
                     "from a list of constants into a <strong>Rigid Geometric System</strong>. "
-                    "In the v16.2 Sterile Model, the 125 values are not independent; they are "
+                    "In the v23.1 Sterile Model, the 125 values are not independent; they are "
                     "constrained by the Spectral Trace of the V₇ manifold."
                 )
             ),
@@ -515,8 +515,8 @@ class AppendixBSumRule(SimulationBase):
             "message": f"Phi_G2 = chi/b3 = {chi}/{b3} = {phi_g2}",
         })
 
-        # Check 2: Residue count
-        n_residues = 125
+        # Check 2: Residue count (visible_sector = 5^3 = 125 nodes from V₇ manifold)
+        n_residues = 125  # DERIVED: visible_sector (5^3)
         checks.append({
             "name": "residue_count_125",
             "passed": n_residues == 125,

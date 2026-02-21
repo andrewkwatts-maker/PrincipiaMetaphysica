@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix F: The Gates of Integrity
+PRINCIPIA METAPHYSICA v23.1 - Appendix F: The Gates of Integrity
 ====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: Complete Gate framework for geometric auditing.
+v23.1 STERILE MODEL: Complete Gate framework for geometric auditing.
 
 The Gates represent the transition from "soft checks" (42 Certificates)
 to "hard locks" that seal the manifold against any mathematical deviation.
@@ -1460,8 +1460,8 @@ class Appendix72Gates(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_f_72gates_v16_2",
-            version="16.2",
+            id="appendix_f_72gates_v23_1",
+            version="23.1",
             domain="appendices",
             title="Appendix F: The Gates of Integrity",
             description="Complete sterile certification framework with hard locks",
@@ -1819,7 +1819,7 @@ if __name__ == "__main__":
     sim = Appendix72Gates()
 
     print("=" * 70)
-    print("GATE INTEGRITY AUDIT - v16.2 STERILE MODEL")
+    print("GATE INTEGRITY AUDIT - v23.1 STERILE MODEL")
     print("=" * 70)
 
     results = sim.run(registry)

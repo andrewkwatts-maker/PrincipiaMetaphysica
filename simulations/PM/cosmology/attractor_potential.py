@@ -642,6 +642,16 @@ class AttractorPotentialV18(SimulationBase):
             ),
             content_blocks=[
                 ContentBlock(
+                    type="note",
+                    content=(
+                        "<strong>Section Context:</strong> This subsection provides detailed derivation of the "
+                        "dark energy attractor potential mechanism. For the primary w₀ derivation from "
+                        "dimensional reduction, see Section 5.2. This section expands on the dynamical "
+                        "mechanism through which the G₂ modulus field generates the effective dark energy potential."
+                    ),
+                    label="attractor-context"
+                ),
+                ContentBlock(
                     type="heading",
                     content="The G2 Modulus as Dark Energy",
                     level=3

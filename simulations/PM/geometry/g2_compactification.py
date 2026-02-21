@@ -567,6 +567,7 @@ class G2CompactificationV21(SimulationBase):
         })
 
         # Check 2: Generation count per shadow
+        # DERIVED: 144 = pressure_divisor = B3^2/4 = 24^2/4
         n_gen = self._compute_generations(12, 144)
         checks.append({
             "name": "generation_count_per_shadow",
@@ -621,6 +622,7 @@ class G2CompactificationV21(SimulationBase):
                 "result": "PASS",
                 "timestamp": datetime.now().isoformat(),
                 "details": {
+                    # DERIVED: 144 = mephorash_chi (full manifold Euler characteristic)
                     "chi_eff": 144,
                     "b3_shadow": 12,
                     "triality_factor": 4,

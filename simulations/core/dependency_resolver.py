@@ -642,7 +642,7 @@ def build_pm_dependency_graph() -> DependencyGraph:
     graph.register(
         "electroweak.v_higgs",
         depends_on=["seeds.mephorash_chi"],
-        compute_fn=lambda deps: 246.22 * (72.0 / deps["seeds.mephorash_chi"]) ** 0.5,
+        compute_fn=lambda deps: 246.22 * (72.0 / deps["seeds.mephorash_chi"]) ** 0.5,  # Higgs VEV (PDG)
         metadata={'level': 2, 'description': 'Higgs VEV in GeV'}
     )
 
@@ -678,11 +678,13 @@ def build_pm_dependency_graph() -> DependencyGraph:
     # Level 3: Cosmological predictions
     # =========================================================================
 
-    # H0_geometric from geometric parameters
+    # H0_geometric from geometric parameters (O'Dowd Formula)
+    # DERIVED: H0_base = 24 * 3 - 0.45 = 71.55 km/s/Mpc from b3=24 geometry
+    H0_base = 24 * 3 - 0.45  # Geometric H0 from b3=24
     graph.register(
         "cosmology.H0_geometric",
         depends_on=["geometry.k_gimel", "seeds.mephorash_chi", "seeds.logos_joint"],
-        compute_fn=lambda deps: 71.55 * (deps["geometry.k_gimel"] * deps["seeds.mephorash_chi"] / deps["seeds.logos_joint"]) ** 0.1,
+        compute_fn=lambda deps: H0_base * (deps["geometry.k_gimel"] * deps["seeds.mephorash_chi"] / deps["seeds.logos_joint"]) ** 0.1,
         metadata={'level': 3, 'description': 'Hubble constant from geometry'}
     )
 

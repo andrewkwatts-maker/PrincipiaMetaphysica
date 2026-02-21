@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix D: The 0.48sigma Alignment Data
+PRINCIPIA METAPHYSICA v23.1 - Appendix D: The 0.48sigma Alignment Data
 =======================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: DESI/Planck cross-correlation and empirical verification.
+v23.1 STERILE MODEL: DESI/Planck cross-correlation and empirical verification.
 
-This appendix presents the final empirical verification of the v16.2 Sterile Model,
+This appendix presents the final empirical verification of the v23.1 Sterile Model,
 proving that the locked residues accurately describe the observable universe.
 
 APPENDIX: D (The 0.48sigma Alignment Data - DESI/Planck Cross-Correlation)
@@ -65,7 +65,7 @@ class AppendixDAlignment(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_d_alignment_v16_2",
-            version="16.2",
+            version="23.1",
             domain="appendices",
             title="Appendix D: Statistical Convergence Logs (DESI/Planck 2025)",
             description="DESI/Planck cross-correlation and 0.48σ empirical verification",
@@ -114,7 +114,7 @@ class AppendixDAlignment(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix D presents the final empirical verification of the v16.2 Sterile Model. "
+                    "Appendix D presents the final empirical verification of the v23.1 Sterile Model. "
                     "While Appendices A, B, and C establish the internal mathematical consistency, "
                     "Appendix D proves that the locked residues accurately describe the observable universe."
                 )
@@ -143,7 +143,7 @@ class AppendixDAlignment(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The result for the v16.2 Terminal State is a <strong>0.48sigma global alignment</strong>, "
+                    "The result for the v23.1 Terminal State is a <strong>0.48sigma global alignment</strong>, "
                     "indicating that the model's predictions are statistically indistinguishable from "
                     "the center of the observational error bars."
                 )
@@ -160,7 +160,7 @@ class AppendixDAlignment(SimulationBase):
                 content=(
                     "The primary test of the w0 = -0.9583 residue (Node 002) is the BAO distance scale "
                     "provided by DESI Year 5 data. The DESI 2025 data shows preference for w0 > -1, "
-                    "moving away from standard ΛCDM. The v16.2 residue sits precisely within the "
+                    "moving away from standard ΛCDM. The v23.1 residue sits precisely within the "
                     "1sigma contour of the DESI Y5 w0/wa plane."
                 )
             ),
@@ -180,10 +180,10 @@ class AppendixDAlignment(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The table below compares the v16.2 sterile extraction against the two "
+                    "The table below compares the v23.1 sterile extraction against the two "
                     "conflicting standard measurements of the Hubble constant: Planck (CMB-derived, "
                     "early universe) and SH0ES (Cepheid distance ladder, local universe). The "
-                    "0.48sigma combined alignment suggests that the v16.2 geometric model provides "
+                    "0.48sigma combined alignment suggests that the v23.1 geometric model provides "
                     "a resolution to the Hubble tension by deriving H0 from the V7 manifold's "
                     "spectral structure, effectively reconciling the discrepancy between early "
                     "and late universe measurements through a fixed geometric residue:"
@@ -199,10 +199,10 @@ class AppendixDAlignment(SimulationBase):
                 type="note",
                 content=(
                     "<table style='width:100%'>"
-                    "<tr><th>Source</th><th>H0 (km/s/Mpc)</th><th>Variance from v16.2</th></tr>"
+                    "<tr><th>Source</th><th>H0 (km/s/Mpc)</th><th>Variance from v23.1</th></tr>"
                     "<tr><td>Planck (CMB - Early Universe)</td><td>67.4 +/- 0.5</td><td>2.8sigma</td></tr>"
                     "<tr><td>SH0ES (Cepheids - Local)</td><td>73.0 +/- 1.0</td><td>2.6sigma</td></tr>"
-                    "<tr><td>v16.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48sigma (Combined)</td></tr>"
+                    "<tr><td>v23.1 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48sigma (Combined)</td></tr>"
                     "</table>"
                 ),
                 label="h0-comparison-table"

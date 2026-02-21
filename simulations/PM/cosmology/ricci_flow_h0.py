@@ -406,9 +406,10 @@ class RicciFlowH0V16(SimulationBase):
                     type="paragraph",
                     content=(
                         "The Hubble tension - a 5-sigma discrepancy between early and late "
-                        "universe H0 measurements - has been one of cosmology's most pressing "
-                        "puzzles. In our framework, this tension arises naturally from the "
-                        "G2 manifold's Ricci flow evolution."
+                        "universe H₀ measurements - has been one of cosmology's most pressing "
+                        "puzzles. (For the geometric H₀ prediction and experimental comparison, see Section 3.1.) "
+                        "This section explores how Ricci flow dynamics on the G₂ manifold provide "
+                        "a mechanism for the evolving effective Hubble parameter."
                     )
                 ),
                 ContentBlock(

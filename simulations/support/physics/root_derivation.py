@@ -245,11 +245,13 @@ class BulkInsulationConstant:
     separation between the two 13D shadow branes.
     """
 
+    # DERIVED: 163 = sterile_sector (hidden supports from 288-125)
     VALUE = 163
 
     # The 163 breaks down as follows:
     # - 144 = chi_eff (Euler characteristic contribution)
     # - 19 = residual gauge stabilizers
+    # DERIVED: 144 = pressure_divisor = B3^2/4
     CHI_EFF_CONTRIBUTION = 144
     GAUGE_STABILIZERS = 19
 

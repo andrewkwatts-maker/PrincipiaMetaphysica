@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix Z: Terminal Constant Ledger
+PRINCIPIA METAPHYSICA v23.1 - Appendix Z: Terminal Constant Ledger
 ====================================================================
 
 DOI: 10.5281/zenodo.18079602
@@ -106,7 +106,7 @@ class AppendixZTerminalLedger(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_z_terminal_ledger_v16_2",
-            version="16.2",
+            version="23.1",
             domain="appendices",
             title="Appendix Z: Terminal Constant Ledger",
             description=(

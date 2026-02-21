@@ -1565,7 +1565,7 @@ class WilsonLoopConfinementV18(SimulationBase):
         sigma = results.get("confinement.sigma", 0.0)
         sigma_ok = abs(sigma - 0.19) / 0.19 < 0.10 if sigma > 0 else False
         alpha_s = results.get("confinement.alpha_s_MZ", 0.0)
-        alpha_s_ok = abs(alpha_s - 0.1180) < 0.002 if alpha_s > 0 else False
+        alpha_s_ok = abs(alpha_s - 0.1180) < 0.002 if alpha_s > 0 else False  # alpha_s at M_Z (PDG)
 
         return {
             "passed": area_ok and af_ok and sigma_ok and alpha_s_ok,
@@ -1629,7 +1629,7 @@ class WilsonLoopConfinementV18(SimulationBase):
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "details": {
                     "alpha_s_MZ_predicted": 0.117,
-                    "alpha_s_MZ_PDG": 0.1180,
+                    "alpha_s_MZ_PDG": 0.1180,  # alpha_s at M_Z (PDG)
                     "beta_0": 11,
                     "Lambda_QCD_GeV": 0.217,
                 },

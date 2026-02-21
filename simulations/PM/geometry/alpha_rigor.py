@@ -310,7 +310,7 @@ if SCHEMA_AVAILABLE:
                             f"Evaluate the golden-ratio Betti correction: b3/phi = 24/1.618034 = {24/phi:.6f}",
                             f"Evaluate the transcendental 4D sphere residual: phi/(4*pi) = 1.618034/(4*3.14159) = {phi/(4*np.pi):.6f}",
                             f"Combine: alpha^-1 = {k_gimel**2:.6f} - {24/phi:.6f} + {phi/(4*np.pi):.6f} = {alpha_inv_val:.4f}",
-                            f"Compare with CODATA 2022: alpha^-1 = 137.035999177(21). Deviation = {abs(alpha_inv_val - 137.035999177):.6f}"
+                            f"Compare with CODATA 2022: alpha^-1 = 137.035999177(21). Deviation = {abs(alpha_inv_val - 137.035999177):.6f}"  # alpha inverse (CODATA 2022 full)
                         ],
                         "references": [
                             "CODATA 2022: alpha^-1 = 137.035999177(21)",
@@ -323,7 +323,7 @@ if SCHEMA_AVAILABLE:
                         r"\alpha^{-1}": {
                             "description": "Inverse fine structure constant: the dimensionless electromagnetic coupling strength. In QED, alpha = e^2/(4*pi*epsilon_0*hbar*c). Here derived from pure G2 topology.",
                             "units": "dimensionless",
-                            "experimental_value": 137.035999177,
+                            "experimental_value": 137.035999177,  # alpha inverse (CODATA 2022 full)
                             "experimental_source": "CODATA 2022"
                         },
                         r"k_{\gimel}": {
@@ -361,7 +361,7 @@ if SCHEMA_AVAILABLE:
                         f"This is an honest geometric prediction, not a fitted value."
                     ),
                     derivation_formula="alpha-inverse-geometric",
-                    experimental_bound=137.035999177,
+                    experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                     bound_type="measured",
                     bound_source="CODATA2022",
                     # Theoretical tolerance: ~0.0005% of value (intrinsic formula precision)
@@ -550,7 +550,7 @@ if SCHEMA_AVAILABLE:
             checks.append({
                 "name": "Within 0.01 of CODATA 2022",
                 "passed": error_ok,
-                "confidence_interval": {"value": result['derived_alpha_inv'], "target": 137.035999177, "tolerance": 0.01},
+                "confidence_interval": {"value": result['derived_alpha_inv'], "target": 137.035999177, "tolerance": 0.01},  # alpha inverse (CODATA 2022 full)
                 "log_level": "INFO",
                 "message": f"Error = {result['absolute_error']:.6f}"
             })

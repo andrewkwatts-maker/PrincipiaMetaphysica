@@ -36,7 +36,7 @@ all PM parameter names, LaTeX symbols, and Hebrew gematria values.
     odowd_bulk_pressure → barbelo_modulus   (bulk pressure = 163)
     christ_constant     → logos_joint       (logos potential = 153)
     decad               → residual_key      (core flux residual = 10)
-    horos               → pleroma_boundary  (boundary = 30)
+    horos               → horos_limit       (boundary = 27)
 
 ### Formula LaTeX Template System:
 Formulas can use <<param_name>> placeholders in LaTeX strings:
@@ -96,7 +96,7 @@ LEGACY_NAMES = {
     "total_local_pairs": None,  # no direct replacement
     "total_effective_pairs": None,  # no direct replacement
     "decad": "residual_key",
-    "horos": "pleroma_boundary",
+    "horos": "horos_limit",
 }
 
 

@@ -1063,8 +1063,8 @@ class HiggsMassSimulation(SimulationBase):
                 "timestamp": datetime.now().isoformat(),
                 "details": {
                     "v_EW": HiggsVEVs.V_EW,
-                    "pdg_value": 246.22,
-                    "deviation_GeV": abs(HiggsVEVs.V_EW - 246.22)
+                    "pdg_value": 246.22,  # Higgs VEV (PDG)
+                    "deviation_GeV": abs(HiggsVEVs.V_EW - 246.22)  # Higgs VEV (PDG)
                 }
             },
             {

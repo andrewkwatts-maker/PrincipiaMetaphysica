@@ -934,19 +934,19 @@ class FormulasRegistry:
 
     @classmethod
     def render_formula(cls, template: str) -> str:
-        """Substitute <<param_name>> placeholders with LaTeX symbols from registry.
+        """Substitute <<elder_kads>> and similar placeholders with LaTeX symbols from registry.
 
         Provides a standardised way to reference PM Params in formula LaTeX
         definitions. Uses double angle brackets to avoid clash with LaTeX braces.
 
         Args:
-            template: LaTeX string with <<param_name>> placeholders.
+            template: LaTeX string with <<elder_kads>> and similar placeholders.
 
         Returns:
             LaTeX string with all placeholders replaced by canonical symbols.
 
         Raises:
-            KeyError: If any <<param_name>> is not found in registries.
+            KeyError: If any <<sophian_modulus>> or other placeholder is not found in registries.
 
         Usage:
             render_formula(r"\\sum_{n=1}^{<<sophian_modulus>>} <<spectral_weight>>_n")
@@ -1048,7 +1048,7 @@ class FormulasRegistry:
         """Validate a formula's LaTeX string for registry compliance.
 
         Checks that the LaTeX is non-empty, has balanced braces, and
-        any <<param>> placeholders can be resolved.
+        any <<elder_kads>> or similar placeholders can be resolved.
 
         Args:
             formula_latex: LaTeX string from a Formula object.

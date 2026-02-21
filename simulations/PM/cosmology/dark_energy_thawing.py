@@ -586,8 +586,10 @@ class DarkEnergyEvolution(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The present-day equation of state w0 is determined by the "
-                        "static topological pressure from the b3 = 24 associative 3-cycles:"
+                        "The present-day equation of state w₀ is determined by the "
+                        "static topological pressure from the b₃ = 24 associative 3-cycles "
+                        "(derived geometrically in Section 5.2 from dimensional reduction; "
+                        "here we show how Ricci flow dynamics produce the thawing signature):"
                     )
                 ),
                 ContentBlock(

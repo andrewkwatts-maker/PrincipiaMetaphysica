@@ -4,12 +4,12 @@ Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0
 ====================================================================
 
                     ╔══════════════════════════════════════════════════════════╗
-                    ║                   ARCHIVED (v21.0)                        ║
+                    ║                   ARCHIVED (v23.1)                        ║
                     ║                                                          ║
                     ║  This appendix describes the Sp(2,R) gauge-fixing        ║
                     ║  approach used in the (24,2) two-time framework.         ║
                     ║                                                          ║
-                    ║  As of v21.0, Principia Metaphysica uses UNIFIED TIME    ║
+                    ║  As of v23.1, Principia Metaphysica uses UNIFIED TIME    ║
                     ║  with (24,1) signature, eliminating the need for         ║
                     ║  Sp(2,R) gauge-fixing entirely.                          ║
                     ║                                                          ║
@@ -97,7 +97,7 @@ class Sp2RInvarianceProof(SimulationBase):
             domain="appendices",
             title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED]",
             description=(
-                "[ARCHIVED v21.0] Historical proof from (24,2) two-time framework. "
+                "[ARCHIVED v23.1] Historical proof from (24,2) two-time framework. "
                 "v21 uses unified time (24,1) with dual shadows, eliminating need for Sp(2,R)."
             ),
             section_id="2",

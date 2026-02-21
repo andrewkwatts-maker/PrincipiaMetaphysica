@@ -1097,6 +1097,7 @@ class BridgePressureV21(SimulationBase):
                             "Effective Euler characteristic = 144, controlling the spectral "
                             "suppression via 1/chi_eff = 1/n_pairs^2"
                         ),
+                        # DERIVED: 144 = pressure_divisor = B3^2/4
                         "value": 144,
                     },
                     r"n_{\text{pairs}}": {

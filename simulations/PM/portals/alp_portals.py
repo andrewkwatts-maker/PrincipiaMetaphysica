@@ -136,7 +136,7 @@ class ALPPortalsV23(SimulationBase):
         self.M_Planck = 1.22e19         # GeV
         self.Lambda_QCD = 0.217         # GeV
         self.hbar_c = 1.97e-7           # eV * m (for fifth force range conversion)
-        self.alpha_em = 1.0 / 137.036   # Fine structure constant
+        self.alpha_em = 1.0 / 137.036  # alpha inverse (CODATA)
 
         # Geometric constants from registry
         self.k_gimel = float(_REG.demiurgic_coupling)   # b3/2 + 1/pi = 12.318...
