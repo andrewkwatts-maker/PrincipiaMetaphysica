@@ -210,7 +210,8 @@
                         PaperRenderer._data = {
                             sections: sectionsData.sections || sectionsData,
                             formulas: {},
-                            parameters: {}
+                            parameters: {},
+                            statistics: {}
                         };
 
                         // Try to load formulas and parameters too
@@ -232,6 +233,16 @@
                             }
                         } catch (e) {
                             if (PaperRenderer._debug) console.debug('PMPaperRenderer: parameters.json not available');
+                        }
+
+                        try {
+                            const statsResponse = await fetch(prefix + 'statistics.json');
+                            if (statsResponse.ok) {
+                                const statsData = await statsResponse.json();
+                                PaperRenderer._data.statistics = statsData;
+                            }
+                        } catch (e) {
+                            if (PaperRenderer._debug) console.debug('PMPaperRenderer: statistics.json not available');
                         }
 
                         PaperRenderer._loaded = true;
