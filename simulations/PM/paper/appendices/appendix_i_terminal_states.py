@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix I: The Three Terminal States
+PRINCIPIA METAPHYSICA v23.1 - Appendix I: The Three Terminal States
 =====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: The Topological Unwinding and Three Final States.
+v23.1 STERILE MODEL: The Topological Unwinding and Three Final States.
 
 This appendix defines the mathematical endpoint of the universe as a
 Topological Unwinding rather than chaotic heat death. The universe
@@ -75,7 +75,7 @@ class AppendixITerminalStates(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_i_terminal_states_v16_2",
-            version="16.2",
+            version="23.1",
             domain="appendices",
             title="Appendix I: The Three Terminal States (Terminal Geodesics)",
             description="The topological unwinding and three final states of the universe",
@@ -179,7 +179,7 @@ class AppendixITerminalStates(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v16.2 Sterile Model, the end of the universe is not a chaotic 'heat death' "
+                    "In the v23.1 Sterile Model, the end of the universe is not a chaotic 'heat death' "
                     "or a random 'big rip.' Instead, it is a <strong>Topological Unwinding</strong>. "
                     "Because the universe is defined by the rigid geometry of the V₇ manifold, its "
                     "conclusion is as mathematically necessitated as its beginning."
@@ -331,7 +331,7 @@ class AppendixITerminalStates(SimulationBase):
                     "<table style='width:100%'>"
                     "<tr><th>Era</th><th>State</th><th>Description</th></tr>"
                     "<tr><td>Primordial</td><td>Unlocked</td><td>The 26D potential shatters into 125 nodes</td></tr>"
-                    "<tr><td>Current (v16.2)</td><td>Locked</td><td>The 0.48σ alignment governs expansion</td></tr>"
+                    "<tr><td>Current (v23.1)</td><td>Locked</td><td>The 0.48σ alignment governs expansion</td></tr>"
                     "<tr><td>Terminal</td><td>Saturated</td><td>The manifold is fully 'unwound'; time as a gradient ceases</td></tr>"
                     "</table>"
                 ),
@@ -347,7 +347,7 @@ class AppendixITerminalStates(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The v16.2 model relies on the specific intersection angle between the two 13D "
+                    "The v23.1 model relies on the specific intersection angle between the two 13D "
                     "shadow branes. Over trillions of years, the 'tension' holding these shadows in "
                     "place begins to dissipate back into the 26D bulk:"
                 )

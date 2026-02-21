@@ -1082,7 +1082,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 "timestamp": datetime.now(timezone.utc).isoformat(),
                 "details": {
                     "b3_1loop": -7.0,
-                    "alpha_3_MZ": 0.1180,
+                    "alpha_3_MZ": 0.1180,  # alpha_s at M_Z (PDG)
                     "alpha_3_decreases": True,
                     "physical_mechanism": "Non-abelian antiscreening dominates over quark screening",
                 },

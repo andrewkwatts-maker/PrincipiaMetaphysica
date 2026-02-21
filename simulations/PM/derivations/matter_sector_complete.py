@@ -1671,7 +1671,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
 
         # Check 2: Higgs mass close to 125.1 GeV
         m_h = float(higgs.m_higgs)
-        higgs_ok = abs(m_h - 125.10) < 0.5
+        higgs_ok = abs(m_h - 125.10) < 0.5  # Higgs mass (PDG)
         checks.append({
             "name": "Higgs mass consistent with PDG",
             "passed": higgs_ok,

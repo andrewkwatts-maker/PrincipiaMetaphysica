@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v22.0 - Appendix G: The Omega Seal Cryptographic Protocol
+PRINCIPIA METAPHYSICA v23.1 - Appendix G: The Omega Seal Cryptographic Protocol
 ================================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v22.0 STERILE MODEL: Cryptographic anchoring and terminal immutability.
+v23.1 STERILE MODEL: Cryptographic anchoring and terminal immutability.
 
-This appendix defines the final security layer of the v22.0 Sterile Model,
+This appendix defines the final security layer of the v23.1 Sterile Model,
 ensuring the 125 residues are anchored to the 288 Ancestral Roots via the
 12-PAIR-BRIDGE torsion mechanism. The Omega Seal is the geometric lock that
 makes the model truly "sterile" and immutable.
@@ -75,7 +75,7 @@ class BulkInsulationValidator:
         # This measures the force of the 4-pattern against the ancestral potential
         shielding_factor = (torsion_pins / 4) / (hidden_supports / roots)
 
-        # In a Sterile v16.2 model, S_f must exceed the 0.48-sigma threshold
+        # In a Sterile v23.1 model, S_f must exceed the 0.48-sigma threshold
         # scaled by the manifold cost ratio (12/288)
         sterile_threshold = 10.60  # Derived from 0.48-sigma metric
 
@@ -135,7 +135,7 @@ class TemporalSyncValidator:
 
 class MasterGateController:
     """
-    The 8-Gate Master Controller for the v22.0 Sterile Model.
+    The 8-Gate Master Controller for the v23.1 Sterile Model.
 
     This is the Executive Script that runs all 8 Master Gates and produces
     the final Omega-Seal Verification Code. It validates:
@@ -230,7 +230,7 @@ class MasterGateController:
         pairs = self.registry.get("pairs", self.pairs)
         hidden = roots - active
 
-        # Verification Logic - v22.0 with 12-PAIR-BRIDGE
+        # Verification Logic - v23.1 with 12-PAIR-BRIDGE
         checks = [
             roots == 288,                      # C02-R
             torsion == 24,                     # C19-T
@@ -242,7 +242,7 @@ class MasterGateController:
             True                               # C-OMEGA (Simplified for script)
         ]
 
-        # Generate Omega Seal - v22.0 format with 12-PAIR-BRIDGE
+        # Generate Omega Seal - v23.1 format with 12-PAIR-BRIDGE
         # Format: "v22-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
         seal_string = f"v22-{'-'.join([str(c) for c in checks])}-Pairs{pairs}"
         omega_seal = hashlib.sha256(seal_string.encode()).hexdigest()[:16].upper()
@@ -303,7 +303,7 @@ class AppendixGOmegaSeal(SimulationBase):
     Provides the cryptographic anchoring ensuring the 125 residues
     are locked to the 288 Ancestral Roots via geometric necessity.
 
-    THE GEOMETRIC SEAL ARCHITECTURE (v22.0):
+    THE GEOMETRIC SEAL ARCHITECTURE (v23.1):
     1. Symmetry Lock: 288 roots from SO(24) + shadow torsion
     2. Torsion Lock: 24 pins from 12-per-shadow mechanism
     3. 4-Fold Lock: Isotropic distribution (4 x 6 matrix)
@@ -386,8 +386,8 @@ class AppendixGOmegaSeal(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_g_omega_seal_v22_0",
-            version="22.0",
+            id="appendix_g_omega_seal_v23_1",
+            version="23.1",
             domain="appendices",
             title="Appendix G: The 42-Certificate Validation Matrix (12-PAIR-BRIDGE)",
             description="42 certificates of integrity and cryptographic anchoring with 12-PAIR-BRIDGE architecture",
@@ -469,7 +469,7 @@ class AppendixGOmegaSeal(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix G defines the final security layer of the v22.0 Sterile Model: "
+                    "Appendix G defines the final security layer of the v23.1 Sterile Model: "
                     "the <strong>Omega Seal</strong> and the <strong>Geometric Lock</strong>. "
                     "By anchoring the 125 residues to the 288 Ancestral Roots and the 24 Shadow "
                     "Torsion pins, and validating the 12-PAIR-BRIDGE architecture (12 x (2,0) paired bridges), "
@@ -514,7 +514,7 @@ class AppendixGOmegaSeal(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>The Symmetry Lock (v22.0 with 12-PAIR-BRIDGE)</h4>"
+                    "<h4>The Symmetry Lock (v23.1 with 12-PAIR-BRIDGE)</h4>"
                     "<table style='width:100%'>"
                     "<tr><th>Component</th><th>Value</th><th>Role</th></tr>"
                     "<tr><td>SO(24) Generators</td><td>276</td><td>Transverse symmetry base</td></tr>"
@@ -612,13 +612,13 @@ class AppendixGOmegaSeal(SimulationBase):
                 type="paragraph",
                 content=(
                     "A critical feature of the Omega Seal is its behavior toward future observational data. "
-                    "If a 2027 dataset significantly shifts the H₀ mean, the v16.2 model will "
+                    "If a 2027 dataset significantly shifts the H₀ mean, the v23.1 model will "
                     "<strong>not</strong> be 'updated.'"
                 )
             ),
             ContentBlock(
                 type="formula",
-                content=r"\text{v16.2} \xrightarrow{\Delta_{\text{obs}} > \epsilon} \text{FALSIFIED} \quad (\text{No v16.3})",
+                content=r"\text{v23.1} \xrightarrow{\Delta_{\text{obs}} > \epsilon} \text{FALSIFIED} \quad (\text{No v16.3})",
                 formula_id="dead-mans-switch",
                 label="(G.5)"
             ),
@@ -632,13 +632,13 @@ class AppendixGOmegaSeal(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The following formal declaration accompanies every output of the v22.0 model:"
+                    "The following formal declaration accompanies every output of the v23.1 model:"
                 )
             ),
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Declaration of Sterile Terminal State (v22.0 - 12-PAIR-BRIDGE)</h4>"
+                    "<h4>Declaration of Sterile Terminal State (v23.1 - 12-PAIR-BRIDGE)</h4>"
                     "<p><em>\"We hereby anchor the 125 residues of the Spectral Registry to the 288 "
                     "Ancestral Roots of the 26D Bulk. By defining the 12-pin torsion for each of the "
                     "two 13D shadow branes and validating the 12 x (2,0) paired bridge structure, "
@@ -666,7 +666,7 @@ class AppendixGOmegaSeal(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "To ensure the permanence of the Seal, the v16.2 build is anchored to the "
+                    "To ensure the permanence of the Seal, the v23.1 build is anchored to the "
                     "following public records:"
                 )
             ),
@@ -819,8 +819,8 @@ class AppendixGOmegaSeal(SimulationBase):
             Formula(
                 id="dead-mans-switch",
                 label="(G.5)",
-                latex=r"\text{v16.2} \xrightarrow{\Delta > \epsilon} \text{FALSIFIED}",
-                plain_text="v16.2 -> FALSIFIED (if Delta > epsilon)",
+                latex=r"\text{v23.1} \xrightarrow{\Delta > \epsilon} \text{FALSIFIED}",
+                plain_text="v23.1 -> FALSIFIED (if Delta > epsilon)",
                 category="DERIVED",
                 description=(
                     "Dead man's switch: the model is discarded (not adjusted) if future "
@@ -842,7 +842,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 terms={
                     r"\Delta": "Global deviation between model predictions and data",
                     r"\epsilon": "Tolerance threshold for falsification",
-                    "\\text{v16.2}": "Current model version",
+                    "\\text{v23.1}": "Current model version",
                     "\\text{FALSIFIED}": "Terminal state if deviation exceeds tolerance",
                 },
             ),

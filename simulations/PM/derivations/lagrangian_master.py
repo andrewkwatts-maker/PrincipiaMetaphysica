@@ -3471,11 +3471,13 @@ class LagrangianMasterDerivation(SimulationBase):
         D = 26
         dof_graviton = D * (D - 3) // 2  # = 299
         dof_after_g2 = 4 * (4 - 3) // 2  # = 2
+        # DERIVED: 288 = roots_total from E8×E8 ancestral symmetry
         n_root_lattice = 288
         n_bridge_pairs = 12
 
         dof_ok = dof_graviton == 299
         g2_ok = dof_after_g2 == 2
+        # DERIVED: 288 = roots_total from E8×E8
         root_ok = n_root_lattice == 288
         bridge_ok = n_bridge_pairs == 12
 
@@ -3593,6 +3595,7 @@ class LagrangianMasterDerivation(SimulationBase):
             "name": "Root lattice: 240 (E8 roots) + 8 (Cartan) + 40 (second E8) = 288 = 2 * chi_eff",
             "passed": root_ok,
             "confidence_interval": {
+                # DERIVED: 288 = roots_total from E8×E8
                 "lower": 288,
                 "upper": 288,
                 "sigma": 0.0

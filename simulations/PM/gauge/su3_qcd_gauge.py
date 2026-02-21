@@ -408,7 +408,7 @@ class SU3QCDGaugeSimulation(SimulationBase):
 
     def validate_self(self) -> Dict[str, Any]:
         result = self._engine.compute_reduction()
-        alpha_s_ok = abs(float(self._engine.alpha_s_prediction) - 0.1180) < 0.002
+        alpha_s_ok = abs(float(self._engine.alpha_s_prediction) - 0.1180) < 0.002  # alpha_s at M_Z (PDG)
         gluon_ok = result.gluon_count == 8
         adjoint_ok = result.adjoint_dimension == 8
 
@@ -453,7 +453,7 @@ class SU3QCDGaugeSimulation(SimulationBase):
                     "gauge_group": "SU(3)_C",
                     "gluon_count": 8,
                     "alpha_s_MZ": 0.117,
-                    "pdg_alpha_s_MZ": 0.1180,
+                    "pdg_alpha_s_MZ": 0.1180,  # alpha_s at M_Z (PDG)
                 },
             },
             {
@@ -608,7 +608,7 @@ class SU3QCDGaugeSimulation(SimulationBase):
                     "volume spectral residue. Locked geometrically without free parameters."
                 ),
                 derivation_formula="su3-quark-coupling",
-                experimental_bound=0.1180,
+                experimental_bound=0.1180,  # alpha_s at M_Z (PDG)
                 bound_type="central_value",
                 bound_source="PDG2024",
                 uncertainty=0.0009,

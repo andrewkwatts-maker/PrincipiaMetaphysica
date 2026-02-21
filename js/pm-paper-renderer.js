@@ -63,6 +63,8 @@
             loadParameters = true,
             renderAbstract = true,
             renderTOC = true,
+            // Set false when the calling page already has a static title header (e.g. paper.html)
+            renderTitleSection = true,
             debug = false
         } = options;
 
@@ -126,8 +128,8 @@
 
         // 4. Render paper components
         try {
-            // Title and metadata
-            if (PaperRenderer._data.metadata) {
+            // Title and metadata (skip if page already has a static header)
+            if (renderTitleSection && PaperRenderer._data.metadata) {
                 renderTitle(container, PaperRenderer._data.metadata);
             }
 
@@ -137,8 +139,9 @@
             }
 
             // Abstract (renders after TOC) - v23.1: Use section '0' which is the Abstract section
-            if (renderAbstract && PaperRenderer._data.sections?.['0']?.abstract) {
-                renderAbstractSection(container, PaperRenderer._data.sections['0'].abstract);
+            // Pass full section object so all content blocks render (not just the one-liner summary)
+            if (renderAbstract && PaperRenderer._data.sections?.['0']) {
+                renderAbstractSection(container, PaperRenderer._data.sections['0']);
             }
 
             // Main sections
@@ -303,15 +306,36 @@
 
     /**
      * Render abstract section
+     * Accepts either a plain string (legacy) or a full section-0 object with content blocks.
      * @private
      */
-    function renderAbstractSection(container, abstractText) {
+    function renderAbstractSection(container, abstractOrSection) {
         const abstractDiv = document.createElement('div');
         abstractDiv.className = 'paper-abstract';
-        abstractDiv.innerHTML = `
-            <h2>Abstract</h2>
-            <p>${abstractText}</p>
-        `;
+
+        const heading = document.createElement('h2');
+        heading.textContent = 'Abstract';
+        abstractDiv.appendChild(heading);
+
+        if (typeof abstractOrSection === 'string') {
+            // Legacy plain-text fallback
+            const p = document.createElement('p');
+            p.innerHTML = abstractOrSection;
+            abstractDiv.appendChild(p);
+        } else {
+            // Full section object: render content blocks for rich abstract display
+            const blocks = abstractOrSection.contentBlocks || abstractOrSection.content_blocks || [];
+            if (blocks.length > 0) {
+                const blocksDiv = renderContentBlocks(blocks);
+                abstractDiv.appendChild(blocksDiv);
+            } else if (abstractOrSection.abstract) {
+                // Fallback to one-liner summary if no blocks present
+                const p = document.createElement('p');
+                p.innerHTML = abstractOrSection.abstract;
+                abstractDiv.appendChild(p);
+            }
+        }
+
         container.appendChild(abstractDiv);
     }
 
@@ -547,6 +571,9 @@
         let appendixNavRendered = false;
 
         for (const section of sortedSections) {
+            // Skip section 0 (Abstract) – already rendered by renderAbstractSection()
+            if (String(section.id) === '0') continue;
+
             // Insert appendix navigation before first appendix
             const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' || section.appendix === true ||
                               (section.title && section.title.startsWith('Appendix'));

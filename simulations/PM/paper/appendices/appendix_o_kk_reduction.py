@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v22.0 - Appendix O: Kaluza-Klein Reduction Steps
+PRINCIPIA METAPHYSICA v23.1 - Appendix O: Kaluza-Klein Reduction Steps
 =======================================================================
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -120,7 +120,7 @@ class AppendixOKKReduction(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_o_kk_reduction_v22",
-            version="22.0",
+            version="23.1",
             domain="appendices",
             title="Appendix O: Kaluza-Klein Reduction Steps (v22)",
             description=(

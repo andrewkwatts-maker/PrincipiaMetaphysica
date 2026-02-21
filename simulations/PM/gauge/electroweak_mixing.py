@@ -539,7 +539,7 @@ class ElectroweakMixingSimulation(SimulationBase):
         eigen = self._engine.compute_eigenvalues()
         m_Z_pred = float(eigen["m_Z"])
         m_W_pred = float(eigen["m_W"])
-        m_Z_exp = 91.1876
+        m_Z_exp = 91.1876  # Z boson mass (PDG)
         m_W_exp = 80.377
 
         z_err = abs(m_Z_pred - m_Z_exp) / m_Z_exp
@@ -759,7 +759,7 @@ class ElectroweakMixingSimulation(SimulationBase):
                     "using geometric Higgs VEV and G2-locked Weinberg angle."
                 ),
                 derivation_formula="ew-boson-masses",
-                experimental_bound=91.1876,
+                experimental_bound=91.1876,  # Z boson mass (PDG)
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.0021,

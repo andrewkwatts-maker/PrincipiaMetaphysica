@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix C: The S_PR(2) Gauge Reduction Matrices
+PRINCIPIA METAPHYSICA v23.1 - Appendix C: The S_PR(2) Gauge Reduction Matrices
 ===============================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: The projection matrices bridging 13D to 4D.
+v23.1 STERILE MODEL: The projection matrices bridging 13D to 4D.
 
 This appendix details the mathematical "filter" that bridges the gap between
 the 13-Dimensional Ancestral Registry and the 4-Dimensional Physical World-Sheet.
@@ -64,7 +64,7 @@ class AppendixCGaugeMatrices(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_c_gauge_matrices_v16_2",
-            version="16.2",
+            version="23.1",
             domain="appendices",
             title="Appendix C: The S_PR(2) Gauge Reduction Matrices",
             description="Projection matrices bridging the 13D ancestral registry to 4D observable residues via S_PR(2) gauge reduction",
@@ -143,7 +143,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 content=(
                     "Where P<sub>13→4</sub> is a rank-ordered tensor that maps the internal "
                     "degrees of freedom of the V₁₃ bulk onto the 4D Minkowski space. In the "
-                    "v16.2 model, this matrix is <strong>unitary and lossless</strong>, meaning "
+                    "v23.1 model, this matrix is <strong>unitary and lossless</strong>, meaning "
                     "the 'Energy Budget' of the 25D ancestral state is perfectly accounted for "
                     "in the 125 residues."
                 )
@@ -203,7 +203,7 @@ class AppendixCGaugeMatrices(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v16.2 repository, this appendix is implemented via a set of fixed "
+                    "In the v23.1 repository, this appendix is implemented via a set of fixed "
                     "Rotation and Projection Tensors. These tensors are the digital representation "
                     "of the S<sub>PR</sub>(2) gauge:"
                 )

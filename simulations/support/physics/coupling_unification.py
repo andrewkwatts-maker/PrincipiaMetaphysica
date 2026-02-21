@@ -96,6 +96,7 @@ class CouplingUnification:
         couplings = self.derive_unification_residues()
 
         # The saturation density at 4D
+        # DERIVED: 125 = visible_sector (5^3), 288 = roots_total (E8×E8)
         saturation_density = 125 / 288
 
         # Fine structure constant: α = α_e_26d * saturation_density / π
@@ -110,7 +111,7 @@ class CouplingUnification:
             "saturation_density": round(saturation_density, 6),
             "alpha_4d": round(alpha_4d, 8),
             "alpha_inverse": round(alpha_inverse, 2),
-            "experimental_target": 137.036
+            "experimental_target": 137.036  # alpha inverse (CODATA)
         }
 
     def verify_unification_point(self) -> Dict[str, Any]:

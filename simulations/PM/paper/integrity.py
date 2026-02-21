@@ -69,8 +69,8 @@ class IntegrityV16_2(SimulationBase):
             id="integrity_v16_2",
             version="23.1",
             domain="integrity",
-            title="System Integrity and Verification",
-            description="Hysteresis seal, 72 certificates, and data provenance (v23.1 dual-shadow framework, 27D/26,1)",
+            title="Particle Physics: Results and Validation",
+            description="Fermion masses, mixing matrices, Higgs mechanism, and system integrity validation (v23.1 dual-shadow framework, 27D/26,1)",
             section_id="4",
             subsection_id=None
         )

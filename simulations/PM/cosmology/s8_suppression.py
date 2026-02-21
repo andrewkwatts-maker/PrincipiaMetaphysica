@@ -558,8 +558,8 @@ class S8SuppressionV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "PM's dark energy with w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 and w_a ≈ 0.29 evolves"
-                        "according to w(a) = w₀ + w_a(1-a). At high redshift (small a), "
+                        "PM's dark energy with w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 (derived geometrically in Section 5.2) "
+                        "and w_a ≈ 0.29 evolves according to w(a) = w₀ + w_a(1-a). At high redshift (small a), "
                         "w becomes more negative, approaching phantom-like behavior. This "
                         "affects the integrated expansion history and growth rate:"
                     )

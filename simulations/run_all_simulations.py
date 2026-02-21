@@ -97,16 +97,16 @@ OUTPUT STRUCTURE:
   },
   "parameter_classification": {
     "established": ["gauge.alpha_em", "fermion.m_H", ...],
-    "geometric": ["topology.b3", "topology.chi_eff", ...],
+    "geometric": ["topology.elder_kads", "topology.mephorash_chi", ...],
     "derived": ["gauge.M_GUT", "gauge.alpha_GUT", ...],
     "calibrated": ["moduli.Re_T_pheno", ...]
   },
   "parameters": {
-    "topology.b3": {
+    "topology.elder_kads": {
       "value": 24,
       "source": "g2_geometry_v16_0",
       "source_simulation": "g2_geometry_v16_0",
-      "derivation_chain": ["topology.chi_eff"],
+      "derivation_chain": ["topology.mephorash_chi"],
       "status": "GEOMETRIC",
       "git_commit": "abc1234...",
       ...
@@ -116,7 +116,7 @@ OUTPUT STRUCTURE:
       "uncertainty": 0.09e16,
       "units": "GeV",
       "source_simulation": "gauge_unification_v16_0",
-      "derivation_chain": ["topology.chi_eff", "topology.b3", "gauge.alpha_GUT"],
+      "derivation_chain": ["topology.mephorash_chi", "topology.elder_kads", "gauge.alpha_GUT"],
       "status": "DERIVED",
       "git_commit": "abc1234...",
       ...
@@ -1209,23 +1209,12 @@ class SimulationRunner:
             if not self.registry.has_param("topology.elder_kads"):
                 self.registry.set_param("topology.elder_kads", 24,
                                          source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
-            # Legacy alias for backward compatibility
-            if not self.registry.has_param("topology.b3"):
-                self.registry.set_param("topology.b3", 24,
-                                         source="GEOMETRIC:TCS_G2_187:alias", status="GEOMETRIC")
 
-            # Dual chi_eff structure (v20.1)
-            # mephorash_chi = 144 (full manifold), chi_eff_sector = 72 (per-sector)
-            # Both give n_gen = 3: 72/24 = 3 OR 144/48 = 3
+            # Canonical chi_eff = 144 (full manifold Euler characteristic)
+            # mephorash_chi = 144 gives n_gen = 3: 144/48 = 3
             if not self.registry.has_param("topology.mephorash_chi"):
                 self.registry.set_param("topology.mephorash_chi", 144,
                                          source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC")
-            if not self.registry.has_param("topology.chi_eff"):
-                self.registry.set_param("topology.chi_eff", 72,
-                                         source="GEOMETRIC:TCS_G2_sector", status="GEOMETRIC")
-            if not self.registry.has_param("topology.chi_eff_total"):
-                self.registry.set_param("topology.chi_eff_total", 144,
-                                         source="GEOMETRIC:TCS_G2_manifold:alias", status="GEOMETRIC")
 
             # Pre-compute k_gimel for early use
             k_gimel = 24 / 2 + 1 / np.pi

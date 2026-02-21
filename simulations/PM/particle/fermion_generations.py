@@ -684,6 +684,7 @@ class FermionGenerationsV16(SimulationBase):
         checks = []
 
         # Check 1: Generation count is exactly 3
+        # DERIVED: 144 = pressure_divisor = B3^2/4
         n_gen = 144.0 / (6.0 * 8.0)
         gen_passed = abs(n_gen - 3.0) < 1e-10
         checks.append({

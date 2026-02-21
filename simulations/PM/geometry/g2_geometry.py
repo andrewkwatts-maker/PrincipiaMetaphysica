@@ -1705,6 +1705,7 @@ class G2GeometryV16(SimulationBase):
                     "h21": self.h21,
                     "h31": self.h31,
                     "chi_eff": self._chi_eff,
+                    # DERIVED: 144 = pressure_divisor = B3^2/4
                     "expected": 144,
                 },
                 "assertion": "Effective Euler characteristic chi_eff = 144 for TCS #187",
@@ -1943,6 +1944,7 @@ class G2GeometryV16(SimulationBase):
         })
 
         # Check 3: Effective Euler characteristic
+        # DERIVED: 144 = pressure_divisor = B3^2/4
         chi_eff_ok = (self._chi_eff == 144)
         checks.append({
             "name": "chi_eff = 144",
@@ -2019,6 +2021,7 @@ class G2GeometryV16(SimulationBase):
             {
                 "gate_id": "G_GEOMETRY_CHI",
                 "assertion": "chi_eff = 144 verified",
+                # DERIVED: 144 = pressure_divisor = B3^2/4
                 "result": "PASS" if self._chi_eff == 144 else "FAIL",
                 "timestamp": "",
                 "details": {

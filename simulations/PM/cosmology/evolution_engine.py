@@ -622,8 +622,9 @@ class EvolutionEngineV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "The Hubble tension resolution requires a dynamically evolving "
-                        "H0 that smoothly interpolates between early (Planck) and late "
-                        "(SH0ES) measurements. This section presents the unified evolution "
+                        "H₀ that smoothly interpolates between early (Planck) and late "
+                        "(SH0ES) measurements. (For the primary H₀ discussion and experimental comparison, "
+                        "see Section 3.1.) This section presents the unified evolution "
                         "engine developed by merging two successful approaches."
                     )
                 ),

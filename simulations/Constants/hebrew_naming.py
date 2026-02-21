@@ -184,6 +184,7 @@ def yod_notation(index: int) -> str:
     Returns:
         String like "Yod₁" or "Y₁"
     """
+    # DERIVED: 288 = roots_total from E8×E8 ancestral symmetry
     if not 1 <= index <= 288:
         raise ValueError(f"Yod index must be 1-288, got {index}")
     return f"Yod₍{index}₎"

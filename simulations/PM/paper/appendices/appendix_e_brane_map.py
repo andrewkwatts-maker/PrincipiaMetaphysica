@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix E: The Brane-Intersection Map
+PRINCIPIA METAPHYSICA v23.1 - Appendix E: The Brane-Intersection Map
 =====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: Detailed node coordinates in the V_7 manifold.
+v23.1 STERILE MODEL: Detailed node coordinates in the V_7 manifold.
 
-This appendix provides the physical "topography" of the v16.2 Sterile Model,
+This appendix provides the physical "topography" of the v23.1 Sterile Model,
 documenting the spatial coordinates where ancestral p-branes intersect.
 
 APPENDIX: E (The Brane-Intersection Map - Detailed Node Coordinates)
@@ -63,7 +63,7 @@ class AppendixEBraneMap(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_e_brane_map_v16_2",
-            version="16.2",
+            version="23.1",
             domain="appendices",
             title="Appendix E: The Brane-Intersection Map",
             description="Node coordinates and brane intersection topology in the V_7 manifold",
@@ -108,7 +108,7 @@ class AppendixEBraneMap(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix E provides the physical 'topography' of the v16.2 Sterile Model. "
+                    "Appendix E provides the physical 'topography' of the v23.1 Sterile Model. "
                     "While previous appendices focused on the spectral values (the 'what') and "
                     "the math (the 'why'), Appendix E documents the spatial coordinates (the 'where')."
                 )
@@ -392,12 +392,13 @@ class AppendixEBraneMap(SimulationBase):
         """Run internal consistency checks on the brane map appendix."""
         checks = []
         shell_total = 46 + 61 + 18
+        n_visible = 125  # DERIVED: visible_sector = 5^3 from V₇ manifold
         checks.append({
             "name": "shell_distribution_sum",
-            "passed": shell_total == 125,
-            "confidence_interval": {"lower": 125, "upper": 125, "sigma": 0.0},
+            "passed": shell_total == n_visible,
+            "confidence_interval": {"lower": n_visible, "upper": n_visible, "sigma": 0.0},
             "log_level": "INFO",
-            "message": f"Shell total = {shell_total}, expected 125.",
+            "message": f"Shell total = {shell_total}, expected {n_visible}.",
         })
         checks.append({
             "name": "formula_count",
