@@ -229,12 +229,12 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.3 Signature (24,1) and Euclidean Bridge"
+                    content="A.3 Bridge Subalgebra Signature (24,1) and Euclidean Central Sampler"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The PM framework employs signature (24,1) with unified time and fibered structure. "
+                        "The PM framework's bridge+time subalgebra has signature (24,1) = 12×(2,0) + (0,1), with unified time and fibered structure. "
                         "This preserves Virasoro anomaly cancellation:"
                     )
                 ),
@@ -262,14 +262,14 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The D = 26 constraint and (24,1) signature with fibered structure enable the PM framework's dimensional reduction:"
+                        "The D = 26 bosonic string constraint and bridge+time signature (24,1) [before C^{2,0} extension] enable the PM framework's dimensional reduction:"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "- Bulk spacetime: 25D with signature (24,1) and fibered structure automatically satisfies Virasoro anomaly cancellation\n\n"
-                        "- Euclidean bridge: Reduces (24,1) → (12,1) via analytic continuation and OR reconstruction\n\n"
+                        "- Bridge+time bulk: 25D with signature (24,1) = 12×(2,0) + (0,1) automatically satisfies Virasoro anomaly cancellation [full 27D(26,1) includes additional C^{2,0} central sampler]\n\n"
+                        "- Euclidean bridge: Reduces the 12×(2,0) pairs → shadows (12,1) via OR reconstruction\n\n"
                         "- Shadow reduction: Yields 13-dimensional intermediate spacetime with unified time\n\n"
                         "- Compactification: 9 spatial dimensions (from bridge reduction) + 13 shadow dimensions compactify on T^15 x G₂(7D)\n\n"
                         "- Observable physics: Effective 4D Minkowski (3,1) after full reduction"

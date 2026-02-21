@@ -56,7 +56,7 @@ from simulations.base import (
 
 class FoundationsV16_2(SimulationBase):
     """
-    Section 1: Foundations of Dimensional Descent (v22.0).
+    Section 1: Foundations of Dimensional Descent (v23.1).
 
     Provides the sterile derivation narrative for the (24,1)->4D descent path
     with 12x(2,0) paired bridge system:
@@ -181,13 +181,13 @@ class FoundationsV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "<strong>Why (26,1) specifically?</strong> The construction begins with the "
-                    "bosonic string: exactly 26 spacetime dimensions (25 spatial + 1 time, signature "
+                    "bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature "
                     "(24,1)) are required for modular invariance (Polyakov 1981). The 24 transverse "
                     "dimensions match the Leech lattice -- the unique even unimodular lattice in 24D "
                     "with no roots -- connecting via Moonshine to the Monster Group (Borcherds 1992). "
-                    "PM extends this 25D bosonic parent by appending the C^{2,0} Euclidean central "
+                    "PM extends the 25D bosonic string parent (signature (24,1)) by appending the C^{2,0} Euclidean central "
                     "sampler, which provides architectural averaging across the 12 bridge pairs "
-                    "and stabilizes the dual-shadow construction. The resulting (26,1) signature "
+                    "and stabilizes the dual-shadow construction, yielding the full 27D(26,1) bulk. The resulting (26,1) signature "
                     "preserves ghost-freedom (single timelike) while accommodating both the G₂ "
                     "compactification and the central sampler as independent geometric structures."
                 )
@@ -263,7 +263,7 @@ class FoundationsV16_2(SimulationBase):
                     "preserves exactly N=1 supersymmetry in 4D (Joyce, 2000), which is required to solve "
                     "the hierarchy problem. (5) <strong>4D observable physics</strong>: the CY3 projection "
                     "within G2 (via the natural CY3 sub-manifold in the TCS construction) produces chiral "
-                    "fermions with n_gen = chi_eff/48 = 3 generations. Each step is necessary and uniquely "
+                    "fermions with n_gen = χ<sub>eff</sub>/48 = 3 generations. Each step is necessary and uniquely"
                     "determined by the preceding one."
                 )
             ),
@@ -403,7 +403,7 @@ class FoundationsV16_2(SimulationBase):
                     "<strong>Dimensional Accounting:</strong> 24 core + 24 local + 2 central = 50 spacelike-like dimensions",
                     "<strong>Local Level:</strong> 12×(2,0) pairs → micro-stability (per-branch selection)",
                     "<strong>Central Level:</strong> 1×(2,0) pair → macro-precision (global averaging)",
-                    "<strong>Signature Preservation:</strong> Effective (24,1) maintained (central is Euclidean, no ghosts)"
+                    "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,1) = 12×(2,0) + (0,1) [pre-C^{2,0} extension]; full bulk is 27D(26,1) with Euclidean central sampler"
                 ],
                 label="hierarchical-sampling-structure"
             ),

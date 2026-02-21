@@ -649,11 +649,11 @@ class PneumaMechanismV16(SimulationBase):
         content_blocks.extend([
             ContentBlock(
                 type="heading",
-                content="v22.0: Pneuma I/O Mechanism (Neural Gates)"
+                content='<span class="pm-value" data-pm-value="framework.version_label">v23.1</span>: Pneuma I/O Mechanism (Neural Gates)'
             ),
             ContentBlock(
                 type="paragraph",
-                content="The v22.0 framework introduces the 12x(2,0) paired bridge system where each bridge pair B_i = (y_{1i}, y_{2i}) serves as a 'neural gate' for consciousness flow between shadows. The pairing arises from b_3 = 24/2 = 12 pairs."
+                content='The <span class="pm-value" data-pm-value="framework.version_label">v23.1</span> framework introduces the 12x(2,0) paired bridge system where each bridge pair B_i = (y_{1i}, y_{2i}) serves as a \'neural gate\' for consciousness flow between shadows. The pairing arises from b_3 = 24/2 = 12 pairs.'
             ),
             ContentBlock(
                 type="heading",
@@ -695,7 +695,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="heading",
-                content="Bulk Decomposition (v22)"
+                content='Bulk Decomposition (<span class="pm-value" data-pm-value="framework.version_major_label">v23</span>)'
             ),
             ContentBlock(
                 type="formula",

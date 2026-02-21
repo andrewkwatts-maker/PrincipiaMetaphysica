@@ -312,7 +312,7 @@ class AppendixBComputationalMethods(SimulationBase):
                         "- The Z₂ symmetry simultaneously solves two problems: correct generation count and "
                         "hidden variable structure for quantum foundations\n\n"
                         "- The factor of 48 = 24 x 2 combines F-theory index theorem (24) with unified time fibered structure (2)\n\n"
-                        "- This derivation is parameter-free: all inputs (chi_eff=144, F_divisor=24, Z_2=2) are "
+                        "- This derivation is parameter-free: all inputs (χ<sub>eff</sub>=144, F_divisor=24, Z_2=2) are "
                         "geometrically determined"
                     )
                 ),
@@ -842,7 +842,7 @@ class AppendixBComputationalMethods(SimulationBase):
             "passed": True,
             "confidence_interval": {"lower": 1.0, "upper": 1.0, "sigma": 3.0},
             "log_level": "INFO",
-            "message": "n_gen=3 derivation from chi_eff=144, divisor=48 verified"
+            "message": "n_gen=3 derivation from χ<sub>eff</sub>=144, divisor=48 verified"
         })
         return {"passed": True, "checks": checks}
 

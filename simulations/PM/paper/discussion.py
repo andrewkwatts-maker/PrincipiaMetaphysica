@@ -225,7 +225,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Three generations emerge from n_gen = χ_eff(G₂)/(24 × Z₂) = 144/48 = 3 (G₂ index with "
+                    "Three generations emerge from n_gen = χ<sub>eff</sub>(G₂)/(24 × Z₂) = 144/48 = 3 (G₂ index with "
                     "flux). Normal neutrino hierarchy predicted. Mirror sector (Z₂) from dual-shadow structure "
                     "provides dark matter candidate. 6D bulk with warping explains hierarchy."
                 )
@@ -689,7 +689,7 @@ class DiscussionV16(SimulationBase):
                     "twelve 2D bridge pairs B_i^(2,0) plus C^(2,0) central sampler plus T¹ time create "
                     "dual 13D(12,1) shadows via OR reduction R_⊥. The framework predicts a mirror sector (Z₂) "
                     "and yields w₀ = -1 + 1/b₃ = -23/24 via the Maximum Entropy Principle, "
-                    "n_gen = 3 from G₂ topology (χ_eff/48 = 144/48 = 3), and the Cabibbo angle "
+                    "n_gen = 3 from G₂ topology (χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle "
                     "ε = 0.2257 from racetrack moduli stabilization. The framework makes sharp, "
                     "falsifiable predictions testable by JUNO, DESI DR3, Hyper-K, and ALPS-II."
                 )
@@ -731,7 +731,7 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Category", "Parameters", "Status"],
                 rows=[
-                    ["Topology", "n_gen, χ_eff, b₂, b₃", "Derived (exact)"],
+                    ["Topology", "n_gen, χ<sub>eff</sub>, b₂, b₃", "Derived (exact)"],
                     ["Gauge", "M_GUT, α_GUT, sin²θ_W", "Derived"],
                     ["PMNS", "θ₂₃, θ₁₂, θ₁₃, δ_CP", "2 derived, 2 calibrated"],
                     ["Dark Energy", "w₀, w_a, d_eff", "Derived"],
@@ -1092,7 +1092,7 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "G₂ manifold framework has resolved all 15 outstanding issues. Generation count "
-                    "ngen = χ_eff/48 = 144/48 = 3. MGUT = 2.12×10¹⁶ GeV from torsion (GEOMETRIC). Proton "
+                    "ngen = χ<sub>eff</sub>/48 = 144/48 = 3. MGUT = 2.12×10¹⁶ GeV from torsion (GEOMETRIC). Proton "
                     "decay channels: 64.2% e⁺π⁰ (DERIVED from Yukawas). Mass ordering: 85.5% IH preference "
                     "(STRONG). KK spectrum at 5 TeV (LHC reach). Dark energy w₀ matches DESI."
                 )
@@ -1102,7 +1102,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>Issue 1 - Generation Count:</strong> RESOLVED - χ_eff/48 = 144/48 = 3 from G₂ topology",
+                    "<strong>Issue 1 - Generation Count:</strong> RESOLVED - χ<sub>eff</sub>/48 = 144/48 = 3 from G₂ topology",
                     "<strong>Issue 2 - MGUT Scale:</strong> RESOLVED - GEOMETRIC: 2.12×10¹⁶ GeV from TCS torsion Tω",
                     "<strong>Issue 3 - Proton Channels:</strong> RESOLVED - DERIVED: 64.2% e⁺π⁰ from Yukawa overlaps",
                     "<strong>Issue 4 - Mass Ordering:</strong> RESOLVED - STRONG: 85.5% IH from index theorem with flux dressing",
@@ -1136,7 +1136,7 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Observable", "Framework Prediction", "Current Data", "Status"],
                 rows=[
-                    ["Generation Count", "n_gen = χ_eff/48 = 3", "3 observed", "Agreement"],
+                    ["Generation Count", "n_gen = χ<sub>eff</sub>/48 = 3", "3 observed", "Agreement"],
                     ["MGUT Scale", "2.12×10¹⁶ GeV (GEOMETRIC)", "2.0-3.0×10¹⁶ GeV (3-loop RG)", "GEOMETRIC"],
                     ["Proton Decay e⁺π⁰", "64.2% (DERIVED)", "τ_p > 1.67×10³⁴ years (Super-K)", "DERIVED"],
                     ["Mass Ordering", "85.5% IH (STRONG)", "NH favored ~2.7σ (NuFIT 6.0)", "TESTABLE"],
@@ -1281,7 +1281,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="list",
                 items=[
-                    "Generation Count: n_gen = χ_eff/48 = 144/48 = 3",
+                    "Generation Count: n_gen = χ<sub>eff</sub>/48 = 144/48 = 3",
                     "MGUT Scale: 2.12×10¹⁶ GeV from TCS torsion Tω (GEOMETRIC)",
                     "Proton Decay Channels: 64.2% e⁺π⁰ from Yukawa overlaps (DERIVED)",
                     "Mass Ordering: 85.5% IH preference from index theorem (STRONG)",
@@ -1302,7 +1302,7 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Criterion", "Assessment", "Rating"],
                 rows=[
-                    ["Internal Mathematical Consistency", "TCS G₂ manifolds; χ_eff = 144; index theorem proven; all 15 issues resolved", "Excellent"],
+                    ["Internal Mathematical Consistency", "TCS G₂ manifolds; χ<sub>eff</sub> = 144; index theorem proven; all 15 issues resolved", "Excellent"],
                     ["External Consistency with Data", "3 exact agreements: n_gen, θ₂₃, θ₁₃; 7 strong agreements <1σ", "Excellent"],
                     ["Falsifiability", "KK at 5 TeV HL-LHC; mass ordering DUNE 2027; proton channels Hyper-K; all near-term", "Excellent"],
                     ["Theoretical Parsimony", "Geometric derivations from TCS torsion; minimal free parameters; no ad hoc fitting", "Excellent"],
@@ -1334,7 +1334,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="list",
                 items=[
-                    "Exact Generation Count: n_gen = χ_eff/48 = 3 from TCS topology (not 3 free compactifications)",
+                    "Exact Generation Count: n_gen = χ<sub>eff</sub>/48 = 3 from TCS topology (not 3 free compactifications)",
                     "Geometric MGUT: 2.12×10¹⁶ GeV from torsion Tω (not fitted to data)",
                     "Quantitative Proton Channels: 64.2% e⁺π⁰ from Yukawa overlaps (not order-of-magnitude estimate)",
                     "Strong Mass Ordering: 85.5% IH from index theorem (not weak preference)",

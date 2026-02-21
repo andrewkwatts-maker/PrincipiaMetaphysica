@@ -132,7 +132,7 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             "fermion_generations": {
                 "parameter": "n_gen",
-                "prediction": "n_gen = 3 (χ_eff/48 = 144/48)",
+                "prediction": "n_gen = 3 (χ<sub>eff</sub>/48 = 144/48)",
                 "experiment": "Standard Model + LEP Z-width",
                 "measured": "n_gen = 3 (exact)",
                 "agreement": "Exact match",
@@ -294,7 +294,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "category": "Particle Physics",
                 "observable": "Fermion Generations n_gen",
                 "pm_value": 3,
-                "pm_value_formatted": "3 (χ_eff/48 = 144/48)",
+                "pm_value_formatted": "3 (χ<sub>eff</sub>/48 = 144/48)",
                 "experimental_value": 3,
                 "experimental_error": 0,
                 "sigma_deviation": 0.0,
@@ -513,7 +513,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 rows=[
                     ["D Unified Time Framework", "✓ NEW", "(13,1) + (13,1) with Z₂ symmetry; visible + mirror sectors"],
                     ["w₀ & wₐ derivation", "✓ DERIVED", "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583, wₐ,eff = 0.27 from G₂ torsion logs (DESI 2025 BAO-only: < 1σ)"],
-                    ["CY4 construction", "✓ RESOLVED", "χ_eff = 144 from 𝔻 unified time framework (flux-dressed Euler characteristic)"],
+                    ["CY4 construction", "✓ RESOLVED", "χ<sub>eff</sub> = 144 from 𝔻 unified time framework (flux-dressed Euler characteristic)"],
                     ["Hodge numbers", "✓ RESOLVED", "h^{1,1} = 4, h^{2,1} = 0, h^{3,1} = 0, h^{2,2} = 60 (satisfies CY4 constraint)"],
                     ["G₂ holonomy error", "✓ CORRECTED", "G₂×S¹ → Spin(7), NOT SU(4); use direct CY4 or M/F-theory duality"],
                     ["V₀ circularity", "✓ RESOLVED", "Non-circular derivation via species scale + distance conjecture"],
@@ -523,7 +523,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["Proton decay channels", "✓ VALIDATED via CKM", "BR(e⁺π⁰) = 64.2%±9.4%, BR(K⁺ν̄) = 35.6%±9.4%; τ_p = 8.15×10³⁴ yr (4.9× Super-K)"],
                     ["PMNS mixing angles", "✓ CONFIRMED", "θ₂₃ = 45.75°, θ₁₂ = 33.34°, θ₁₃ = 8.63°, δ_CP = 278.4° (0.00-0.24σ vs NuFIT 6.0)"],
                     ["KK graviton tower", "✓ COMPLETE", "Full tower: m₁ = 5.0 TeV, m₂ = 7.1±2.1 TeV, with T² degeneracies; σ(m₁) = 0.10±0.03 fb"],
-                    ["n_gen = 3", "✓ DERIVED", "n_gen = χ_eff/48 = 144/48 = 3 (𝔻 unified time framework with flux quantization)"],
+                    ["n_gen = 3", "✓ DERIVED", "n_gen = χ<sub>eff</sub>/48 = 144/48 = 3 (𝔻 unified time framework with flux quantization)"],
                     ["α_T derivation", "✓ DERIVED", "Z₂-corrected Γ/H scaling (α_T ≈ 2.7)"],
                     ["Neutrino hierarchy", "✓ PREDICTION", "Normal hierarchy (76% confidence from hybrid suppression); falsifiable by JUNO/DUNE (2027-2030)"],
                     ["Mirror sector", "⚠ QUALITATIVE", "Dark matter candidate; ΔN_eff predictions pending Z₂ scale"],
@@ -582,8 +582,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "The number of fermion generations arises from the flux-dressed Euler characteristic "
                     "of the 𝔻 unified time framework, accounting for flux quantization constraints: "
-                    "n_gen = χ_eff / 48 = 144 / 48 = 3. Note: The 𝔻 unified time framework uses "
-                    "χ_eff = 144 (flux-dressed) with the formula n_gen = χ_eff/48 = 144/48 = 3. "
+                    "n_gen = χ<sub>eff</sub> / 48 = 144 / 48 = 3. Note: The 𝔻 unified time framework uses "
+                    "χ<sub>eff</sub> = 144 (flux-dressed) with the formula n_gen = χ<sub>eff</sub>/48 = 144/48 = 3. "
                     "This supersedes earlier formulations (χ/24 = 72/24 = 3 from F-theory), which also "
                     "yielded 3 generations but used different topological structures."
                 )
@@ -1076,7 +1076,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["w₀", "−23/24 ≈ -0.9583", "SEMI-DERIVED", "From Maximum Entropy Principle: w₀ = −1 + 1/b₃ = -23/24 for b₃ = 24"],
                     ["w_a", "≈ -0.75", "DERIVED", "From unified time dynamics; exact DESI 2024 match"],
                     ["Σm_ν", "0.060 eV", "NOT UNIQUE", "From oscillation data + m₁ → 0; standard result"],
-                    ["n_gen = 3", "χ_eff/48 = 144/48", "DERIVED", "Genuine prediction from 𝔻 framework formula"],
+                    ["n_gen = 3", "χ<sub>eff</sub>/48 = 144/48", "DERIVED", "Genuine prediction from 𝔻 framework formula"],
                     ["Normal Hierarchy", "m₁ < m₂ < m₃", "PREDICTION", "Only genuinely unique falsifiable prediction"],
                     ["CKM parameters (v15.0)", "ε = 0.2257, δ_CP = π/2, J = 3.06×10⁻⁵", "DERIVED", "From racetrack superpotential minimization (ε), cycle orientations (δ_CP), geometric computation (J)"],
                 ]
@@ -1112,7 +1112,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["α_T", "≈ 2.7 (Z₂-corrected)", "DERIVED", "Two-time Γ/H scaling"],
                     ["w_a/w₀ ratio", "≈ 0.89", "DERIVED", "α_T/3 from thermal time"],
                     ["sign(w_a)", "< 0", "DERIVED", "Thermal friction mechanism"],
-                    ["n_gen", "3", "DERIVED", "χ_eff/48 = 144/48 from 𝔻 framework"],
+                    ["n_gen", "3", "DERIVED", "χ<sub>eff</sub>/48 = 144/48 from 𝔻 framework"],
                     ["Neutrino hierarchy", "Normal", "DERIVED", "Sequential dominance in SO(10)"],
                     ["w_a", "≈ -0.75", "DERIVED", "Two-time dynamics; exact DESI match"],
                     ["w₀", "−23/24 ≈ -0.9583", "DERIVED (MEP)", "From Maximum Entropy Principle"],
@@ -1160,7 +1160,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 rows=[
                     ["Dark energy w₀, w_a", "✓ CONSISTENT", "DESI 2025 BAO-only: < 1σ (w₀), 0.66σ (w_a)"],
                     ["Neutrino mixing", "✓ CONFIRMED", "NuFIT 6.0: all angles 0.00-0.24σ"],
-                    ["Fermion generations", "✓ CONFIRMED", "n_gen = 3 (exact from χ_eff/48)"],
+                    ["Fermion generations", "✓ CONFIRMED", "n_gen = 3 (exact from χ<sub>eff</sub>/48)"],
                     ["Dark matter ratio", "✓ CONFIRMED", "Planck 2018: Ω_DM/Ω_b = 5.38±0.15 vs 5.4"],
                     ["CKM parameters", "✓ CONFIRMED", "ε = 0.2257 exact match (v15.0 derived)"],
                     ["Proton decay", "⊙ CONSISTENT", "τ_p = 8.15×10³⁴ yr (4.9× Super-K bound)"],
