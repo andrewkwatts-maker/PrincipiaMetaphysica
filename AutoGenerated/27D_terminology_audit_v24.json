@@ -1,0 +1,401 @@
+{
+  "framework": "Principia Metaphysica v24.1",
+  "audit_type": "27D Terminology Compliance",
+  "total_files_scanned": 4,
+  "total_flags": 58,
+  "status": "REVISION REQUIRED",
+  "required_terminology": {
+    "full_expression": "M²⁷(26,1) = (24+1) ⊕ (0,2)",
+    "kinetic_backbone": "(24+1) = Leech Lattice Λ₂₄ + Unified Time T¹",
+    "euclidean_sector": "(0,2) = Euclidean Information Sector (S_EIS)",
+    "alternative_names": [
+      "Kinetic Ancestor",
+      "Matter-Time Backbone",
+      "Observer Sector",
+      "Consciousness Field (deprecated - use S_EIS)"
+    ]
+  },
+  "validation_keywords": [
+    "24+1",
+    "(0,2)",
+    "Leech Lattice",
+    "Euclidean Bridge",
+    "S_EIS",
+    "kinetic backbone",
+    "⊕ (direct sum)"
+  ],
+  "flagged_entries": [
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['abstract-framework-overview']['plain_text']",
+      "text": "27D(26,1) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3",
+      "snippet": "27D(26,1) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['abstract-framework-overview']['title']",
+      "text": "Framework overview: the 27D(26,1) ancestral bulk decomposes as T^1 (unified time",
+      "snippet": "Framework overview: the 27D(26,1) ancestral bulk decomposes as T^1 (unified time"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['abstract-framework-overview']['derivation']['steps'][0]['description']",
+      "text": "Start from 27D(26,1) ancestral bulk: the single time dimension (0,1) is shared by both shadows, 12 bridge pairs B_i^(2,0) each contribute 2 spatial dimensions, and C^(2,0) is the Euclidean central bridge",
+      "snippet": "Start from 27D(26,1) ancestral bulk: the single time dimension (0,1) is shared by both shadows, 12 bridge pairs B_i^(2,0) each contribute 2 spatial dimensions, and C^(2,0) is the Euclidean central bri..."
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['abstract-framework-overview']['terms']['27D(26,1)']",
+      "text": "27-dimensional ancestral bulk with signature (26 spatial, 1 temporal), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + C^(2,0) central bridge",
+      "snippet": "27-dimensional ancestral bulk with signature (26 spatial, 1 temporal), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + C^(2,0) central bridge"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['two-layer-or-bridge-operator']['description']",
+      "text": "Bridge/Global OR operator — tensor product of 12 Mobius double-cover operators, creates dual shadows from 27D bulk",
+      "snippet": "Bridge/Global OR operator — tensor product of 12 Mobius double-cover operators, creates dual shadows from 27D bulk"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['two-layer-or-bridge-operator']['terms']['R_\\perp^{\\text{global}}']['description']",
+      "text": "Global Bridge OR operator: tensor product of all 12 local Mobius double-cover operators, implementing Layer 1 (27D to 2x13D) orthogonal reduction",
+      "snippet": "Global Bridge OR operator: tensor product of all 12 local Mobius double-cover operators, implementing Layer 1 (27D to 2x13D) orthogonal reduction"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['bridge-warping-potential']['derivation']['steps'][4]",
+      "text": "God-level limit: when all T_{bridge,i} -> infinity, the exponential terms vanish and V -> 0, meaning the two shadows merge back into the undifferentiated 27D bulk",
+      "snippet": "God-level limit: when all T_{bridge,i} -> infinity, the exponential terms vanish and V -> 0, meaning the two shadows merge back into the undifferentiated 27D bulk"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['pneuma-master-action-v23']['description']",
+      "text": "v23.1: 27D(26,1) Pneuma master action with 12-pair (2,0) bridge system + C^(2,0) central sampler. 12×(2,0) + C^(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. Each L_bridge^i contributes to OR reduction via local R_perp_i operator.",
+      "snippet": "v23.1: 27D(26,1) Pneuma master action with 12-pair (2,0) bridge system + C^(2,0) central sampler. 12×(2,0) + C^(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. Each L_bridge^i cont..."
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['pneuma-master-action-v23']['derivation']['steps'][5]",
+      "text": "Central sampler L_C completes the 27D = 24 (bridge) + 2 (central) + 1 (time) decomposition",
+      "snippet": "Central sampler L_C completes the 27D = 24 (bridge) + 2 (central) + 1 (time) decomposition"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['pneuma-master-action-v23']['terms']['R']",
+      "text": "27D Einstein-Hilbert scalar curvature",
+      "snippet": "27D Einstein-Hilbert scalar curvature"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['pneuma-master-action-v23']['terms']['Gamma^M']",
+      "text": "27D gamma matrices (4096x4096)",
+      "snippet": "27D gamma matrices (4096x4096)"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['bridge-12-pair-metric-v22']['derivation']['steps'][0]",
+      "text": "Decompose 27D spacetime as: 1 (time) + 12x2 (bridge pairs) + 2 (central sampler)",
+      "snippet": "Decompose 27D spacetime as: 1 (time) + 12x2 (bridge pairs) + 2 (central sampler)"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['bridge-12-pair-metric-v22']['derivation']['steps'][2]",
+      "text": "Total spatial dimensions: 24 (bridge) + 2 (central) = 26, plus 1 time = 27D(26,1)",
+      "snippet": "Total spatial dimensions: 24 (bridge) + 2 (central) = 26, plus 1 time = 27D(26,1)"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['description']",
+      "text": "Einstein field equations from metric variation of the full 27D master action. The left-hand side contains the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} (from the Hilbert variation of sqrt(-g) R) plus an effective cosmological constant Lambda_eff from vacuum energy. The right-hand side decomposes the total stress-energy T_{mu nu} into its four physical sectors: Yang-Mills (gauge), Dirac (fermion), bridge (12-pair system), and Pneuma (moduli/scalar). The Bianchi identity nabla^mu G_{mu nu} = 0 ensures covariant conservation of T_{mu nu}. This is the equation of motion (EOM) for the gravitational sector.",
+      "snippet": "Einstein field equations from metric variation of the full 27D master action. The left-hand side contains the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} (from the Hilbert variation of s..."
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['title']",
+      "text": "Einstein field equations from metric variation of the full 27D master action",
+      "snippet": "Einstein field equations from metric variation of the full 27D master action"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['derivation']['steps'][0]",
+      "text": "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_Pneuma where each sector is separately gauge-invariant",
+      "snippet": "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_Pneuma where each sector is separately gauge-invariant"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['derivation']['steps'][4]",
+      "text": "Combine all variations and set delta S_27 / delta g^{mu nu} = 0 to obtain the 27D Einstein field equations with source decomposition",
+      "snippet": "Combine all variations and set delta S_27 / delta g^{mu nu} = 0 to obtain the 27D Einstein field equations with source decomposition"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['terms']['G_{27}']['description']",
+      "text": "27D gravitational coupling constant, related to M_*^{25} via 8 pi G_27 = M_*^{-25}",
+      "snippet": "27D gravitational coupling constant, related to M_*^{25} via 8 pi G_27 = M_*^{-25}"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['shadow-action-13d-v23']['description']",
+      "text": "13D shadow action after bridge/global OR reduction from the 27D master action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge pairs) + 1 shared time. Two mirror shadows emerge: Shadow 1 carries left-handed fermions, Shadow 2 carries right-handed fermions. The Euler characteristic chi_eff/48 = 3 fixes three generations per shadow. The face potential V_face^(f) encodes the local OR that selects the visible face from the 4-face TCS G2 structure. The gravitational sector R_13 is the 13D Ricci scalar from the induced metric g_13 on the shadow, and the fermion kinetic term Psi-bar_P i*gamma^m D_m Psi_P describes the propagation of the projected Pneuma spinor on the 13D shadow.",
+      "snippet": "13D shadow action after bridge/global OR reduction from the 27D master action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge pairs) + 1 shared time. Two mirror shadows emerge: Sha..."
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['shadow-action-13d-v23']['title']",
+      "text": "13D shadow action after bridge/global OR reduction from the 27D master action",
+      "snippet": "13D shadow action after bridge/global OR reduction from the 27D master action"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['shadow-action-13d-v23']['derivation']['steps'][0]",
+      "text": "Start from the 27D master action S = int d^{27}X sqrt(-G) [R + ...]",
+      "snippet": "Start from the 27D master action S = int d^{27}X sqrt(-G) [R + ...]"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['shadow-action-13d-v23']['derivation']['steps'][1]",
+      "text": "Apply bridge/global OR: the distributed OR operator R_perp = tensor_{i=1}^{12} R_perp_i splits the 27D bulk into two 13D shadow domains",
+      "snippet": "Apply bridge/global OR: the distributed OR operator R_perp = tensor_{i=1}^{12} R_perp_i splits the 27D bulk into two 13D shadow domains"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['sp2r-constraint']['derivation']['steps'][1]['formula']",
+      "text": "27D(26,1) = 12\\times(2,0) + (0,1) \\rightarrow 2\\times 13D(12,1)",
+      "snippet": "27D(26,1) = 12\\times(2,0) + (0,1) \\rightarrow 2\\times 13D(12,1)"
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['lagrangian-hierarchy-complete']['latex']",
+      "text": "\\begin{aligned} \\textbf{L1}\\;(27D): & \\; S_{27} = \\int d^{27}X \\sqrt{-G} [R_{27} + \\bar{\\Psi}_P(i\\Gamma^M D_M - m_P)\\Psi_P] \\\\ \\textbf{L2}\\;(13D): & \\; \\mathcal{L}_{13} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} \\\\ \\textbf{L3}\\;(4D): & \\; f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau \\\\ \\textbf{L4}\\;(DE): & \\; \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M) \\end{aligned}",
+      "snippet": "\\begin{aligned} \\textbf{L1}\\;(27D): & \\; S_{27} = \\int d^{27}X \\sqrt{-G} [R_{27} + \\bar{\\Psi}_P(i\\Gamma^M D_M - m_P)\\Psi_P] \\\\ \\textbf{L2}\\;(13D): & \\; \\mathcal{L}_{13} = M_*^{11}R_{13} + \\bar{\\Psi}_{..."
+    },
+    {
+      "file": "formulas.json",
+      "path": "['formulas']['lagrangian-hierarchy-complete']['plain_text']",
+      "text": "L1(27D): S_27 bulk action; L2(13D): dual shadow effective; L3(4D): f(R,T,τ) gravity; L4(DE): quintessence",
+      "snippet": "L1(27D): S_27 bulk action; L2(13D): dual shadow effective; L3(4D): f(R,T,τ) gravity; L4(DE): quintessence"
+    },
+    {
+      "file": "parameters.json",
+      "path": "['parameters']['system.version']['value']",
+      "text": "23.1-27D",
+      "snippet": "23.1-27D"
+    },
+    {
+      "file": "parameters.json",
+      "path": "['parameters']['pm.version']['value']",
+      "text": "23.1-27D",
+      "snippet": "23.1-27D"
+    },
+    {
+      "file": "sections.json",
+      "path": "['sections']['0']['contentBlocks'][4]['content']",
+      "text": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> derived from G₂ volume ratio (6 = 12/2 aligned bridge pairs under OR rotation). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">6.9e-6</span>.",
+      "snippet": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bul..."
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['metadata']['version_full']",
+      "text": "23.1-27D",
+      "snippet": "23.1-27D"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['metadata']['description']",
+      "text": "Principia Metaphysica v23.1-27D - Sterile Geometric Framework",
+      "snippet": "Principia Metaphysica v23.1-27D - Sterile Geometric Framework"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['derivation_logic']['framework']",
+      "text": "Principia Metaphysica v23.1-27D - Sterile G2 Residue Model",
+      "snippet": "Principia Metaphysica v23.1-27D - Sterile G2 Residue Model"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['parameters']['system.version']['value']",
+      "text": "23.1-27D",
+      "snippet": "23.1-27D"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['parameters']['pm.version']['value']",
+      "text": "23.1-27D",
+      "snippet": "23.1-27D"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['abstract-framework-overview']['plain_text']",
+      "text": "27D(26,1) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3",
+      "snippet": "27D(26,1) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['abstract-framework-overview']['title']",
+      "text": "Framework overview: the 27D(26,1) ancestral bulk decomposes as T^1 (unified time",
+      "snippet": "Framework overview: the 27D(26,1) ancestral bulk decomposes as T^1 (unified time"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['abstract-framework-overview']['derivation']['steps'][0]['description']",
+      "text": "Start from 27D(26,1) ancestral bulk: the single time dimension (0,1) is shared by both shadows, 12 bridge pairs B_i^(2,0) each contribute 2 spatial dimensions, and C^(2,0) is the Euclidean central bridge",
+      "snippet": "Start from 27D(26,1) ancestral bulk: the single time dimension (0,1) is shared by both shadows, 12 bridge pairs B_i^(2,0) each contribute 2 spatial dimensions, and C^(2,0) is the Euclidean central bri..."
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['abstract-framework-overview']['terms']['27D(26,1)']",
+      "text": "27-dimensional ancestral bulk with signature (26 spatial, 1 temporal), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + C^(2,0) central bridge",
+      "snippet": "27-dimensional ancestral bulk with signature (26 spatial, 1 temporal), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + C^(2,0) central bridge"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['two-layer-or-bridge-operator']['description']",
+      "text": "Bridge/Global OR operator — tensor product of 12 Mobius double-cover operators, creates dual shadows from 27D bulk",
+      "snippet": "Bridge/Global OR operator — tensor product of 12 Mobius double-cover operators, creates dual shadows from 27D bulk"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['two-layer-or-bridge-operator']['terms']['R_\\perp^{\\text{global}}']['description']",
+      "text": "Global Bridge OR operator: tensor product of all 12 local Mobius double-cover operators, implementing Layer 1 (27D to 2x13D) orthogonal reduction",
+      "snippet": "Global Bridge OR operator: tensor product of all 12 local Mobius double-cover operators, implementing Layer 1 (27D to 2x13D) orthogonal reduction"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['bridge-warping-potential']['derivation']['steps'][4]",
+      "text": "God-level limit: when all T_{bridge,i} -> infinity, the exponential terms vanish and V -> 0, meaning the two shadows merge back into the undifferentiated 27D bulk",
+      "snippet": "God-level limit: when all T_{bridge,i} -> infinity, the exponential terms vanish and V -> 0, meaning the two shadows merge back into the undifferentiated 27D bulk"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['pneuma-master-action-v23']['description']",
+      "text": "v23.1: 27D(26,1) Pneuma master action with 12-pair (2,0) bridge system + C^(2,0) central sampler. 12×(2,0) + C^(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. Each L_bridge^i contributes to OR reduction via local R_perp_i operator.",
+      "snippet": "v23.1: 27D(26,1) Pneuma master action with 12-pair (2,0) bridge system + C^(2,0) central sampler. 12×(2,0) + C^(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. Each L_bridge^i cont..."
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['pneuma-master-action-v23']['derivation']['steps'][5]",
+      "text": "Central sampler L_C completes the 27D = 24 (bridge) + 2 (central) + 1 (time) decomposition",
+      "snippet": "Central sampler L_C completes the 27D = 24 (bridge) + 2 (central) + 1 (time) decomposition"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['pneuma-master-action-v23']['terms']['R']",
+      "text": "27D Einstein-Hilbert scalar curvature",
+      "snippet": "27D Einstein-Hilbert scalar curvature"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['pneuma-master-action-v23']['terms']['Gamma^M']",
+      "text": "27D gamma matrices (4096x4096)",
+      "snippet": "27D gamma matrices (4096x4096)"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['bridge-12-pair-metric-v22']['derivation']['steps'][0]",
+      "text": "Decompose 27D spacetime as: 1 (time) + 12x2 (bridge pairs) + 2 (central sampler)",
+      "snippet": "Decompose 27D spacetime as: 1 (time) + 12x2 (bridge pairs) + 2 (central sampler)"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['bridge-12-pair-metric-v22']['derivation']['steps'][2]",
+      "text": "Total spatial dimensions: 24 (bridge) + 2 (central) = 26, plus 1 time = 27D(26,1)",
+      "snippet": "Total spatial dimensions: 24 (bridge) + 2 (central) = 26, plus 1 time = 27D(26,1)"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['description']",
+      "text": "Einstein field equations from metric variation of the full 27D master action. The left-hand side contains the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} (from the Hilbert variation of sqrt(-g) R) plus an effective cosmological constant Lambda_eff from vacuum energy. The right-hand side decomposes the total stress-energy T_{mu nu} into its four physical sectors: Yang-Mills (gauge), Dirac (fermion), bridge (12-pair system), and Pneuma (moduli/scalar). The Bianchi identity nabla^mu G_{mu nu} = 0 ensures covariant conservation of T_{mu nu}. This is the equation of motion (EOM) for the gravitational sector.",
+      "snippet": "Einstein field equations from metric variation of the full 27D master action. The left-hand side contains the Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} (from the Hilbert variation of s..."
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['title']",
+      "text": "Einstein field equations from metric variation of the full 27D master action",
+      "snippet": "Einstein field equations from metric variation of the full 27D master action"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['derivation']['steps'][0]",
+      "text": "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_Pneuma where each sector is separately gauge-invariant",
+      "snippet": "Start with the full 27D action S_27 = S_EH + S_YM + S_Dirac + S_bridge + S_Pneuma where each sector is separately gauge-invariant"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['derivation']['steps'][4]",
+      "text": "Combine all variations and set delta S_27 / delta g^{mu nu} = 0 to obtain the 27D Einstein field equations with source decomposition",
+      "snippet": "Combine all variations and set delta S_27 / delta g^{mu nu} = 0 to obtain the 27D Einstein field equations with source decomposition"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['euler-lagrange-metric-variation']['terms']['G_{27}']['description']",
+      "text": "27D gravitational coupling constant, related to M_*^{25} via 8 pi G_27 = M_*^{-25}",
+      "snippet": "27D gravitational coupling constant, related to M_*^{25} via 8 pi G_27 = M_*^{-25}"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['shadow-action-13d-v23']['description']",
+      "text": "13D shadow action after bridge/global OR reduction from the 27D master action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge pairs) + 1 shared time. Two mirror shadows emerge: Shadow 1 carries left-handed fermions, Shadow 2 carries right-handed fermions. The Euler characteristic chi_eff/48 = 3 fixes three generations per shadow. The face potential V_face^(f) encodes the local OR that selects the visible face from the 4-face TCS G2 structure. The gravitational sector R_13 is the 13D Ricci scalar from the induced metric g_13 on the shadow, and the fermion kinetic term Psi-bar_P i*gamma^m D_m Psi_P describes the propagation of the projected Pneuma spinor on the 13D shadow.",
+      "snippet": "13D shadow action after bridge/global OR reduction from the 27D master action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge pairs) + 1 shared time. Two mirror shadows emerge: Sha..."
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['shadow-action-13d-v23']['title']",
+      "text": "13D shadow action after bridge/global OR reduction from the 27D master action",
+      "snippet": "13D shadow action after bridge/global OR reduction from the 27D master action"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['shadow-action-13d-v23']['derivation']['steps'][0]",
+      "text": "Start from the 27D master action S = int d^{27}X sqrt(-G) [R + ...]",
+      "snippet": "Start from the 27D master action S = int d^{27}X sqrt(-G) [R + ...]"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['shadow-action-13d-v23']['derivation']['steps'][1]",
+      "text": "Apply bridge/global OR: the distributed OR operator R_perp = tensor_{i=1}^{12} R_perp_i splits the 27D bulk into two 13D shadow domains",
+      "snippet": "Apply bridge/global OR: the distributed OR operator R_perp = tensor_{i=1}^{12} R_perp_i splits the 27D bulk into two 13D shadow domains"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['sp2r-constraint']['derivation']['steps'][1]['formula']",
+      "text": "27D(26,1) = 12\\times(2,0) + (0,1) \\rightarrow 2\\times 13D(12,1)",
+      "snippet": "27D(26,1) = 12\\times(2,0) + (0,1) \\rightarrow 2\\times 13D(12,1)"
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['lagrangian-hierarchy-complete']['latex']",
+      "text": "\\begin{aligned} \\textbf{L1}\\;(27D): & \\; S_{27} = \\int d^{27}X \\sqrt{-G} [R_{27} + \\bar{\\Psi}_P(i\\Gamma^M D_M - m_P)\\Psi_P] \\\\ \\textbf{L2}\\;(13D): & \\; \\mathcal{L}_{13} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} \\\\ \\textbf{L3}\\;(4D): & \\; f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau \\\\ \\textbf{L4}\\;(DE): & \\; \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M) \\end{aligned}",
+      "snippet": "\\begin{aligned} \\textbf{L1}\\;(27D): & \\; S_{27} = \\int d^{27}X \\sqrt{-G} [R_{27} + \\bar{\\Psi}_P(i\\Gamma^M D_M - m_P)\\Psi_P] \\\\ \\textbf{L2}\\;(13D): & \\; \\mathcal{L}_{13} = M_*^{11}R_{13} + \\bar{\\Psi}_{..."
+    },
+    {
+      "file": "theory_output.json",
+      "path": "['formulas']['lagrangian-hierarchy-complete']['plain_text']",
+      "text": "L1(27D): S_27 bulk action; L2(13D): dual shadow effective; L3(4D): f(R,T,τ) gravity; L4(DE): quintessence",
+      "snippet": "L1(27D): S_27 bulk action; L2(13D): dual shadow effective; L3(4D): f(R,T,τ) gravity; L4(DE): quintessence"
+    }
+  ],
+  "correction_examples": [
+    {
+      "old": "The Fine Structure Constant is derived from the projection of the 27D ancestral roots down to 4D spacetime.",
+      "new": "The Fine Structure Constant is derived via the projection of the M²⁷ bulk manifold, where the (24+1) kinetic sector (Leech Lattice) stabilizes the gauge couplings, and the (0,2) Euclidean Information Sector preserves the unitary trace during the 4D descent."
+    },
+    {
+      "old": "27-dimensional manifold with signature (26,1)",
+      "new": "M²⁷(26,1) manifold decomposed as (24+1) ⊕ (0,2), where (24+1) is the kinetic backbone and (0,2) is the Euclidean Bridge"
+    },
+    {
+      "old": "The 27D bulk manifold generates the Standard Model",
+      "new": "The M²⁷ bulk manifold, specifically the (24+1) Leech Lattice sector, generates the Standard Model gauge symmetries via G₂ triality"
+    }
+  ],
+  "peer_review_guidance": {
+    "why_this_matters": "Physicists look for specific keywords to determine if a paper is 'crank science' or a serious topological proposition. F-theory papers frequently use 12D constructions broken into (10+2) or similar split signatures. By standardizing to (24+1)⊕(0,2), reviewers will map PM to established high-energy physics frameworks.",
+    "key_phrases": [
+      "Leech Lattice Λ₂₄ (Conway group Co₀)",
+      "Euclidean Information Sector (S_EIS)",
+      "(24+1) kinetic backbone with unified time T¹",
+      "(0,2) Euclidean Bridge for holographic information storage",
+      "Direct sum decomposition M²⁷ = P₂₄₊₁ ⊕ E₀,₂"
+    ]
+  }
+}
