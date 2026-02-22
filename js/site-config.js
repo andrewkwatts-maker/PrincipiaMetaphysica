@@ -43,8 +43,8 @@ window.PM_CONFIG.OFFLINE_MODE = false;
 // VERSION INFORMATION
 // =============================================================================
 
-window.PM_CONFIG.VERSION = '23.3.2';
-window.PM_CONFIG.RELEASE_DATE = '2026-01-25';
+window.PM_CONFIG.VERSION = '24.1';
+window.PM_CONFIG.RELEASE_DATE = '2026-02-22';
 
 // =============================================================================
 // FEATURE FLAGS
