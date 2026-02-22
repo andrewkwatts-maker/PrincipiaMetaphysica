@@ -62,9 +62,9 @@ PLOTS_DIR.mkdir(parents=True, exist_ok=True)
 
 def load_data():
     """Load parameters and statistics data."""
-    with open(PARAMS_FILE, 'r') as f:
+    with open(PARAMS_FILE, 'r', encoding='utf-8') as f:
         params_data = json.load(f)
-    with open(STATS_FILE, 'r') as f:
+    with open(STATS_FILE, 'r', encoding='utf-8') as f:
         stats_data = json.load(f)
     return params_data, stats_data
 
