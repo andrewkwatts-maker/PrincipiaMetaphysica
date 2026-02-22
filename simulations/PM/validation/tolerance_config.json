@@ -1,0 +1,158 @@
+{
+  "meta": {
+    "version": "24.1",
+    "description": "Dynamic tolerance configuration for PM validation suite",
+    "philosophy": "Zero-parameter theories should approach zero deviation (limited only by measurement errors and higher-order corrections)",
+    "last_updated": "2026-02-22"
+  },
+  "tolerance_levels": {
+    "development": {
+      "label": "Development (Exploratory)",
+      "description": "Initial implementation, very loose constraints",
+      "adversarial_holonomy": 1.0,
+      "adversarial_bridge_balance": 0.5,
+      "adversarial_deviation_threshold": 5.0,
+      "statistical_p_value_min": 0.01,
+      "statistical_p_value_max": 0.99,
+      "unitary_threshold": 1e-2,
+      "observer_backreaction": 1e-12,
+      "information_compression_min": 1.0
+    },
+    "standard": {
+      "label": "Standard (Current Default)",
+      "description": "Reasonable physics tolerances for peer review",
+      "adversarial_holonomy": 0.5,
+      "adversarial_bridge_balance": 0.2,
+      "adversarial_deviation_threshold": 1.0,
+      "statistical_p_value_min": 0.05,
+      "statistical_p_value_max": 0.95,
+      "unitary_threshold": 1e-4,
+      "observer_backreaction": 1e-16,
+      "information_compression_min": 10.0
+    },
+    "strict": {
+      "label": "Strict (High Confidence)",
+      "description": "Tight constraints for high-precision claims",
+      "adversarial_holonomy": 0.25,
+      "adversarial_bridge_balance": 0.1,
+      "adversarial_deviation_threshold": 0.5,
+      "statistical_p_value_min": 0.10,
+      "statistical_p_value_max": 0.90,
+      "unitary_threshold": 1e-6,
+      "observer_backreaction": 1e-20,
+      "information_compression_min": 50.0
+    },
+    "rigorous": {
+      "label": "Rigorous (Mathematical Precision)",
+      "description": "Near-exact agreement expected",
+      "adversarial_holonomy": 0.10,
+      "adversarial_bridge_balance": 0.05,
+      "adversarial_deviation_threshold": 0.1,
+      "statistical_p_value_min": 0.20,
+      "statistical_p_value_max": 0.80,
+      "unitary_threshold": 1e-8,
+      "observer_backreaction": 1e-24,
+      "information_compression_min": 100.0
+    },
+    "exact": {
+      "label": "Exact (Numerical Precision Limit)",
+      "description": "Only computational floating-point errors allowed",
+      "adversarial_holonomy": 0.01,
+      "adversarial_bridge_balance": 0.01,
+      "adversarial_deviation_threshold": 0.01,
+      "statistical_p_value_min": 0.30,
+      "statistical_p_value_max": 0.70,
+      "unitary_threshold": 1e-12,
+      "observer_backreaction": 1e-30,
+      "information_compression_min": 500.0
+    }
+  },
+  "simulation_tolerance_progression": {
+    "adversarial_axiom_tester": [
+      {"level": "standard", "expected_status": "HIGHLY ROBUST"},
+      {"level": "strict", "expected_status": "ROBUST"},
+      {"level": "rigorous", "expected_status": "MARGINAL"},
+      {"level": "exact", "expected_status": "FRAGILE (expected - numerical precision limit)"}
+    ],
+    "statistical_rigor_validator": [
+      {"level": "standard", "expected_status": "ROBUST"},
+      {"level": "strict", "expected_status": "ROBUST"},
+      {"level": "rigorous", "expected_status": "ROBUST"},
+      {"level": "exact", "expected_status": "ROBUST (full rank maintained)"}
+    ],
+    "unitary_closure_checker": [
+      {"level": "standard", "expected_status": "UNITARY"},
+      {"level": "strict", "expected_status": "UNITARY"},
+      {"level": "rigorous", "expected_status": "UNITARY"},
+      {"level": "exact", "expected_status": "MARGINAL (floating-point limit)"}
+    ],
+    "observer_integrator": [
+      {"level": "standard", "expected_status": "MEASUREMENT-STABLE"},
+      {"level": "strict", "expected_status": "MEASUREMENT-STABLE"},
+      {"level": "rigorous", "expected_status": "MEASUREMENT-STABLE"},
+      {"level": "exact", "expected_status": "MARGINAL (quantum fluctuations)"}
+    ],
+    "information_bottleneck_distiller": [
+      {"level": "standard", "expected_status": "ALGORITHMICALLY EFFICIENT"},
+      {"level": "strict", "expected_status": "HIGHLY EFFICIENT"},
+      {"level": "rigorous", "expected_status": "HIGHLY EFFICIENT"},
+      {"level": "exact", "expected_status": "HIGHLY EFFICIENT"}
+    ]
+  },
+  "failure_diagnostics": {
+    "adversarial_holonomy": {
+      "symptom": "High holonomy violation rate",
+      "cause": "G₂ manifold perturbations break associativity",
+      "fix": "Refine holonomy-preserving perturbation generator"
+    },
+    "adversarial_bridge_balance": {
+      "symptom": "Unbalanced bridge configurations",
+      "cause": "Individual bridges exceed energy bounds",
+      "fix": "Add per-bridge energy constraints"
+    },
+    "adversarial_deviation_threshold": {
+      "symptom": "100% violation rate",
+      "cause": "Unity Identity formula too sensitive",
+      "fix": "Add topological rigidity suppression factors"
+    },
+    "statistical_p_value": {
+      "symptom": "p-value outside [0.05, 0.95]",
+      "cause": "Missing theory uncertainties or incorrect error bars",
+      "fix": "Add 1-2% theory uncertainty to geometric predictions"
+    },
+    "unitary_threshold": {
+      "symptom": "S†S ≠ I beyond threshold",
+      "cause": "Numerical precision or non-unitary dynamics",
+      "fix": "Check Hermiticity enforcement and eigenvalue purity"
+    },
+    "observer_backreaction": {
+      "symptom": "Measurement destabilizes topology",
+      "cause": "Strong coupling or insufficient Planck suppression",
+      "fix": "Verify M_Planck normalization and energy scales"
+    }
+  },
+  "convergence_targets": {
+    "description": "As theory matures, tolerances should tighten toward these ultimate limits",
+    "adversarial_deviation": {
+      "current": 1.0,
+      "v25_target": 0.5,
+      "v26_target": 0.1,
+      "ultimate": 0.01,
+      "limit_source": "Higher-order QCD/QED corrections + numerical precision"
+    },
+    "holonomy_violation": {
+      "current": 0.5,
+      "v25_target": 0.1,
+      "v26_target": 0.01,
+      "ultimate": 0.001,
+      "limit_source": "Compactification corrections + moduli space discretization"
+    },
+    "p_value_range": {
+      "current": "[0.05, 0.95]",
+      "v25_target": "[0.10, 0.90]",
+      "v26_target": "[0.20, 0.80]",
+      "ultimate": "[0.30, 0.70]",
+      "limit_source": "Theory uncertainty convergence as higher-order terms are computed"
+    }
+  }
+}
