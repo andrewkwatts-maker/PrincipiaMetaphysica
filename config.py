@@ -68,7 +68,7 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "23.3.2"
+VERSION = "24.1"
 VERSION_SHORT = "23.3.2"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
 STERILE_STATUS = True  # v19.2: Zero-degree-of-freedom model - all constants derived
