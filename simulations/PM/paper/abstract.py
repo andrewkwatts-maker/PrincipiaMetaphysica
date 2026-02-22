@@ -590,23 +590,17 @@ class AbstractV17_2(SimulationBase):
             Parameter(
                 path="alp.mass_meV",
                 name="ALP Mass (Principia Metric)",
-                no_experimental_value=False,
+                no_experimental_value=True,
                 units="meV",
-                description="Axion-Like Particle mass from M²⁷ → M⁴ vacuum residue - the primary falsifiability kill-switch for the G₂ compactification framework",
-                experimental_bound=None,
-                bound_type="predicted",
-                bound_source="PM_v23.1",
+                description="Axion-Like Particle mass from M²⁷ → M⁴ vacuum residue - the primary falsifiability kill-switch for the G₂ compactification framework (PREDICTED: awaiting IAXO/BabyIAXO 2025-2028)",
                 status="PREDICTED"
             ),
             Parameter(
                 path="alp.coupling_GeV_inv",
                 name="ALP-Photon Coupling",
-                no_experimental_value=False,
+                no_experimental_value=True,
                 units="GeV^-1",
-                description="ALP-photon coupling strength g_aγγ from Euclidean Information Sector (S_EIS) coupling - testable by IAXO/BabyIAXO 2025-2028",
-                experimental_bound=None,
-                bound_type="predicted",
-                bound_source="PM_v23.1",
+                description="ALP-photon coupling strength g_aγγ from Euclidean Information Sector (S_EIS) coupling - testable by IAXO/BabyIAXO 2025-2028 (PREDICTED: no current experimental bound)",
                 status="PREDICTED"
             ),
         ]
