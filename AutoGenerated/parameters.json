@@ -69,7 +69,7 @@
       "timestamp": "2026-02-21T18:07:24.054698",
       "metadata": {
         "description": "Reduced Planck constant",
-        "units": "GeV\u00b7s"
+        "units": "GeV·s"
       },
       "experimental_value": 6.582119569e-25,
       "experimental_uncertainty": 1e-33,
@@ -688,7 +688,7 @@
       "status": "ESTABLISHED",
       "timestamp": "2026-02-21T18:07:24.055098",
       "metadata": {
-        "description": "Dark energy w0 from thawing quintessence model (v16.2: -0.957\u00b10.067)",
+        "description": "Dark energy w0 from thawing quintessence model (v16.2: -0.957±0.067)",
         "units": "dimensionless"
       },
       "experimental_value": -0.957,
@@ -868,7 +868,7 @@
       "status": "ESTABLISHED",
       "timestamp": "2026-02-21T18:07:24.055141",
       "metadata": {
-        "description": "Yukawa coupling scale v/\u221a2 = 174 GeV (NOT the EW VEV)",
+        "description": "Yukawa coupling scale v/√2 = 174 GeV (NOT the EW VEV)",
         "units": "GeV"
       },
       "experimental_value": 174.10383166375172,
@@ -1102,7 +1102,7 @@
       "git_commit": "a6690e5d986f5bcc3f86f8696e8b9c9a5d9cb715"
     },
     "system.version": {
-      "value": "23.1-27D",
+      "value": "23.1-M27(24+1⊕0,2)",
       "source": "SYSTEM:FormulasRegistry",
       "uncertainty": null,
       "status": "SYSTEM",
@@ -1123,7 +1123,7 @@
       "git_commit": "a6690e5d986f5bcc3f86f8696e8b9c9a5d9cb715"
     },
     "pm.version": {
-      "value": "23.1-27D",
+      "value": "23.1-M27(24+1⊕0,2)",
       "source": "SYSTEM:FormulasRegistry",
       "uncertainty": null,
       "status": "SYSTEM",
@@ -1403,7 +1403,7 @@
       "timestamp": "2026-02-21T18:07:24.056641",
       "metadata": {
         "units": "1e34_years",
-        "description": "Proton lifetime coefficient for display (tau_p = value \u00d7 10^34 years)"
+        "description": "Proton lifetime coefficient for display (tau_p = value × 10^34 years)"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4373,7 +4373,7 @@
       "timestamp": "2026-02-21T18:07:24.057934",
       "metadata": {
         "units": "boolean",
-        "description": "Whether G\u2082 = Aut(O) is satisfied (True)"
+        "description": "Whether G₂ = Aut(O) is satisfied (True)"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4393,7 +4393,7 @@
       "timestamp": "2026-02-21T18:07:24.058012",
       "metadata": {
         "units": "dimensionless",
-        "description": "Required b\u2083 for anomaly cancellation: 24"
+        "description": "Required b₃ for anomaly cancellation: 24"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4413,7 +4413,7 @@
       "timestamp": "2026-02-21T18:07:24.058015",
       "metadata": {
         "units": "dimensionless",
-        "description": "E\u2080 = -b\u2083/24 = -1"
+        "description": "E₀ = -b₃/24 = -1"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4433,7 +4433,7 @@
       "timestamp": "2026-02-21T18:07:24.058018",
       "metadata": {
         "units": "boolean",
-        "description": "Whether all anomalies cancel (True for b\u2083=24)"
+        "description": "Whether all anomalies cancel (True for b₃=24)"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4453,7 +4453,7 @@
       "timestamp": "2026-02-21T18:07:24.058021",
       "metadata": {
         "units": "dimensionless",
-        "description": "D = b\u2083 + 2 = 26"
+        "description": "D = b₃ + 2 = 26"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4473,7 +4473,7 @@
       "timestamp": "2026-02-21T18:07:24.058024",
       "metadata": {
         "units": "dimensionless",
-        "description": "Weight of \u03b7^(-b\u2083) under modular transformations: -12"
+        "description": "Weight of η^(-b₃) under modular transformations: -12"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -4890,7 +4890,7 @@
       "timestamp": "2026-02-21T18:07:24.089316",
       "metadata": {
         "units": "count",
-        "description": "v22.0: 12\u00d7(2,0) + (0,1) WARP to create 2\u00d713D(12,1) shadows"
+        "description": "v22.0: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5270,7 +5270,7 @@
       "timestamp": "2026-02-21T18:07:24.089863",
       "metadata": {
         "units": "dimensionless",
-        "description": "Cabibbo angle (u-s quark transition amplitude). Emerges as V_us = epsilon ~ 0.2231 from Froggatt-Nielsen geometric suppression, connecting quark mixing to Yukawa hierarchy. PDG 2024: 0.2245 \u00b1 0.0008. Geometric prediction differs by 1.2% (2.9 sigma), within theoretical uncertainties."
+        "description": "Cabibbo angle (u-s quark transition amplitude). Emerges as V_us = epsilon ~ 0.2231 from Froggatt-Nielsen geometric suppression, connecting quark mixing to Yukawa hierarchy. PDG 2024: 0.2245 ± 0.0008. Geometric prediction differs by 1.2% (2.9 sigma), within theoretical uncertainties."
       },
       "experimental_value": 0.2245,
       "experimental_uncertainty": 0.0008,
@@ -5290,7 +5290,7 @@
       "timestamp": "2026-02-21T18:07:24.089867",
       "metadata": {
         "units": "dimensionless",
-        "description": "c-b quark transition amplitude. Predicted as V_cb ~ A*epsilon^2 ~ 0.040 from second generation geometric overlap. PDG 2024: 0.041 \u00b1 0.0014. Agreement within experimental error."
+        "description": "c-b quark transition amplitude. Predicted as V_cb ~ A*epsilon^2 ~ 0.040 from second generation geometric overlap. PDG 2024: 0.041 ± 0.0014. Agreement within experimental error."
       },
       "experimental_value": 0.041,
       "experimental_uncertainty": 0.0014,
@@ -5310,7 +5310,7 @@
       "timestamp": "2026-02-21T18:07:24.089870",
       "metadata": {
         "units": "dimensionless",
-        "description": "u-b quark transition amplitude. Predicted as V_ub ~ A*epsilon^3 ~ 0.004 from third generation geometric overlap. PDG 2024: 0.00382 \u00b1 0.00024. Matches inclusive measurement."
+        "description": "u-b quark transition amplitude. Predicted as V_ub ~ A*epsilon^3 ~ 0.004 from third generation geometric overlap. PDG 2024: 0.00382 ± 0.00024. Matches inclusive measurement."
       },
       "experimental_value": 0.00382,
       "experimental_uncertainty": 0.00024,
@@ -5330,7 +5330,7 @@
       "timestamp": "2026-02-21T18:07:24.089873",
       "metadata": {
         "units": "dimensionless",
-        "description": "t-d quark transition amplitude. Predicted from Wolfenstein parametrization with geometric CP phase. PDG 2024: 0.0084 \u00b1 0.0006 from B_d mixing."
+        "description": "t-d quark transition amplitude. Predicted from Wolfenstein parametrization with geometric CP phase. PDG 2024: 0.0084 ± 0.0006 from B_d mixing."
       },
       "experimental_value": 0.0084,
       "experimental_uncertainty": 0.0006,
@@ -5350,7 +5350,7 @@
       "timestamp": "2026-02-21T18:07:24.089875",
       "metadata": {
         "units": "dimensionless",
-        "description": "t-s quark transition amplitude. Predicted as V_ts ~ A*epsilon^2 ~ 0.040 from geometric overlap structure. PDG 2024: 0.04 \u00b1 0.0027 from B_s mixing."
+        "description": "t-s quark transition amplitude. Predicted as V_ts ~ A*epsilon^2 ~ 0.040 from geometric overlap structure. PDG 2024: 0.04 ± 0.0027 from B_s mixing."
       },
       "experimental_value": 0.04,
       "experimental_uncertainty": 0.0027,
@@ -5370,7 +5370,7 @@
       "timestamp": "2026-02-21T18:07:24.089878",
       "metadata": {
         "units": "dimensionless",
-        "description": "t-b quark transition amplitude. Nearly unity due to third generation diagonal dominance in CKM matrix. PDG 2024: 0.999 \u00b1 0.003 from single top production."
+        "description": "t-b quark transition amplitude. Nearly unity due to third generation diagonal dominance in CKM matrix. PDG 2024: 0.999 ± 0.003 from single top production."
       },
       "experimental_value": 0.999,
       "experimental_uncertainty": 0.003,
@@ -5390,7 +5390,7 @@
       "timestamp": "2026-02-21T18:07:24.089882",
       "metadata": {
         "units": "dimensionless",
-        "description": "Rephasing-invariant measure of CP violation in quark sector. Predicted as J ~ 3e-5 from topological CP phase delta_CP ~ pi/6 arising from K=4 matching fibres. PDG 2024: J = (3.0e-05 \u00b1 3.0e-06). Geometric prediction within 3%."
+        "description": "Rephasing-invariant measure of CP violation in quark sector. Predicted as J ~ 3e-5 from topological CP phase delta_CP ~ pi/6 arising from K=4 matching fibres. PDG 2024: J = (3.0e-05 ± 3.0e-06). Geometric prediction within 3%."
       },
       "experimental_value": 3e-05,
       "experimental_uncertainty": 3e-06,
@@ -5632,7 +5632,7 @@
       "timestamp": "2026-02-21T18:07:24.090053",
       "metadata": {
         "units": "GeV",
-        "description": "Higgs mass predicted from pure geometry using Re(T) = 1.833 from the attractor mechanism. Yields m_h \u2248 414 GeV, which does not match experiment, demonstrating that pure geometry fails to predict the Higgs mass."
+        "description": "Higgs mass predicted from pure geometry using Re(T) = 1.833 from the attractor mechanism. Yields m_h ≈ 414 GeV, which does not match experiment, demonstrating that pure geometry fails to predict the Higgs mass."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5672,7 +5672,7 @@
       "timestamp": "2026-02-21T18:07:24.090059",
       "metadata": {
         "units": "dimensionless",
-        "description": "Tree-level Higgs quartic coupling from SO(10) \u2192 MSSM matching. Value \u03bb_0 = 0.129 is calibrated to match observations, not purely geometric (geometric value would be ~0.0945)."
+        "description": "Tree-level Higgs quartic coupling from SO(10) → MSSM matching. Value λ_0 = 0.129 is calibrated to match observations, not purely geometric (geometric value would be ~0.0945)."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5752,7 +5752,7 @@
       "timestamp": "2026-02-21T18:07:24.090068",
       "metadata": {
         "units": "dimensionless",
-        "description": "One-loop correction to Higgs quartic from moduli-Higgs interactions: \u0394\u03bb = (1/8\u03c0^2) Re(T) y_t^2."
+        "description": "One-loop correction to Higgs quartic from moduli-Higgs interactions: Δλ = (1/8π^2) Re(T) y_t^2."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5792,7 +5792,7 @@
       "timestamp": "2026-02-21T18:07:24.090140",
       "metadata": {
         "units": "GeV",
-        "description": "Observable Higgs mass as 4D brane projection of bulk tension. M_H_local = M_H_bulk / (k_gimel/\u03c0/\u03b7) = 414.2/3.31 = 125.1 GeV"
+        "description": "Observable Higgs mass as 4D brane projection of bulk tension. M_H_local = M_H_bulk / (k_gimel/π/η) = 414.2/3.31 = 125.1 GeV"
       },
       "experimental_value": 125.25,
       "experimental_uncertainty": 0.17,
@@ -5812,7 +5812,7 @@
       "timestamp": "2026-02-21T18:07:24.090142",
       "metadata": {
         "units": "dimensionless",
-        "description": "Ratio of local to bulk Higgs mass: M_H_local / M_H_bulk \u2248 0.302"
+        "description": "Ratio of local to bulk Higgs mass: M_H_local / M_H_bulk ≈ 0.302"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5832,7 +5832,7 @@
       "timestamp": "2026-02-21T18:07:24.090144",
       "metadata": {
         "units": "dimensionless",
-        "description": "Projection factor k_gimel/\u03c0 \u2248 3.92 from G2 torsion"
+        "description": "Projection factor k_gimel/π ≈ 3.92 from G2 torsion"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5852,7 +5852,7 @@
       "timestamp": "2026-02-21T18:07:24.090147",
       "metadata": {
         "units": "dimensionless",
-        "description": "13D Mirror overlap factor \u03b7 = (\u03b1 \u00d7 b3)^(1/4) \u2248 1.185"
+        "description": "13D Mirror overlap factor η = (α × b3)^(1/4) ≈ 1.185"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -5872,7 +5872,7 @@
       "timestamp": "2026-02-21T18:07:24.090150",
       "metadata": {
         "units": "dimensionless",
-        "description": "Effective scaling = projection_factor / mirror_overlap \u2248 3.31"
+        "description": "Effective scaling = projection_factor / mirror_overlap ≈ 3.31"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6125,7 +6125,7 @@
       "timestamp": "2026-02-21T18:07:24.090547",
       "metadata": {
         "units": "Planck^9",
-        "description": "9-dimensional internal volume V9 = V7(G2) \u00d7 V2(T\u00b2)"
+        "description": "9-dimensional internal volume V9 = V7(G2) × V2(T²)"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6145,7 +6145,7 @@
       "timestamp": "2026-02-21T18:07:24.090550",
       "metadata": {
         "units": "GeV",
-        "description": "Breathing mode VEV \u27e8\u03c3\u27e9 = \u03c6\u2080 \u2248 0.075 M_Pl from racetrack stabilization"
+        "description": "Breathing mode VEV ⟨σ⟩ = φ₀ ≈ 0.075 M_Pl from racetrack stabilization"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6185,7 +6185,7 @@
       "timestamp": "2026-02-21T18:07:24.090555",
       "metadata": {
         "units": "dimensionless",
-        "description": "Effective dimension D_eff = 12 + (Shadow_\u05e7 + Shadow_\u05d7)/2 = 12.576"
+        "description": "Effective dimension D_eff = 12 + (Shadow_ק + Shadow_ח)/2 = 12.576"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6245,7 +6245,7 @@
       "timestamp": "2026-02-21T18:07:24.090676",
       "metadata": {
         "units": "dimensionless",
-        "description": "Effective dimension including shadow contributions from compact geometry: D_eff = 12 + alpha_shadow = 12.576. The base dimension 12 arises from phase-space doubling of 3D space, and alpha_shadow accounts for residual degrees of freedom from G2 compactification. Note: the primary w\u2080 derivation uses w\u2080 = -1 + 1/b\u2083 directly from the b\u2083=24 associative 3-cycles, independent of D_eff."
+        "description": "Effective dimension including shadow contributions from compact geometry: D_eff = 12 + alpha_shadow = 12.576. The base dimension 12 arises from phase-space doubling of 3D space, and alpha_shadow accounts for residual degrees of freedom from G2 compactification. Note: the primary w₀ derivation uses w₀ = -1 + 1/b₃ directly from the b₃=24 associative 3-cycles, independent of D_eff."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6265,7 +6265,7 @@
       "timestamp": "2026-02-21T18:07:24.090680",
       "metadata": {
         "units": "dimensionless",
-        "description": "Residual degrees of freedom from compact dimensions: alpha_shadow = 0.576. Analytically derived from G2 topology using the wavefunction overlap integral with chi_eff=144 and b\u2083=24. Represents the fractional contribution of incompletely integrated compact dimensions to the effective dimensionality of the observable universe."
+        "description": "Residual degrees of freedom from compact dimensions: alpha_shadow = 0.576. Analytically derived from G2 topology using the wavefunction overlap integral with chi_eff=144 and b₃=24. Represents the fractional contribution of incompletely integrated compact dimensions to the effective dimensionality of the observable universe."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6285,7 +6285,7 @@
       "timestamp": "2026-02-21T18:07:24.090684",
       "metadata": {
         "units": "sigma",
-        "description": "Deviation of predicted w\u2080 = -0.9583 from DESI 2025: 0.02\u03c3. Excellent agreement."
+        "description": "Deviation of predicted w₀ = -0.9583 from DESI 2025: 0.02σ. Excellent agreement."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6569,7 +6569,7 @@
       "timestamp": "2026-02-21T18:07:24.094271",
       "metadata": {
         "units": "dimensionless",
-        "description": "PM prediction for S8 parameter: 0.847. Includes ~0.6% suppression (beta \u2248 0.994) from dynamical dark energy (w\u2080 = -1 + 1/b\u2083 = -23/24). Intermediate between Planck (0.832) and weak lensing (0.77) measurements."
+        "description": "PM prediction for S8 parameter: 0.847. Includes ~0.6% suppression (beta ≈ 0.994) from dynamical dark energy (w₀ = -1 + 1/b₃ = -23/24). Intermediate between Planck (0.832) and weak lensing (0.77) measurements."
       },
       "experimental_value": 0.827,
       "experimental_uncertainty": 0.011,
@@ -6609,7 +6609,7 @@
       "timestamp": "2026-02-21T18:07:24.094280",
       "metadata": {
         "units": "dimensionless",
-        "description": "Growth index gamma for PM cosmology: gamma_PM \u2248 0.548. Nearly identical to LCDM (0.55), as the small departure w0 = -23/24 vs w = -1 produces only a ~0.4% shift in gamma. The suppression comes from the integrated expansion history, not the instantaneous growth rate."
+        "description": "Growth index gamma for PM cosmology: gamma_PM ≈ 0.548. Nearly identical to LCDM (0.55), as the small departure w0 = -23/24 vs w = -1 produces only a ~0.4% shift in gamma. The suppression comes from the integrated expansion history, not the instantaneous growth rate."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6629,7 +6629,7 @@
       "timestamp": "2026-02-21T18:07:24.094283",
       "metadata": {
         "units": "dimensionless",
-        "description": "Growth index \u03b3 for \u039bCDM: \u03b3_\u039bCDM \u2248 0.55 (standard value)."
+        "description": "Growth index γ for ΛCDM: γ_ΛCDM ≈ 0.55 (standard value)."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6649,7 +6649,7 @@
       "timestamp": "2026-02-21T18:07:24.094286",
       "metadata": {
         "units": "sigma",
-        "description": "Statistical tension with KiDS-1000 measurement. PM: 1.1\u03c3 vs \u039bCDM: 3.1\u03c3. Improvement factor: 2.8\u00d7."
+        "description": "Statistical tension with KiDS-1000 measurement. PM: 1.1σ vs ΛCDM: 3.1σ. Improvement factor: 2.8×."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6669,7 +6669,7 @@
       "timestamp": "2026-02-21T18:07:24.094288",
       "metadata": {
         "units": "sigma",
-        "description": "Statistical tension with DES Y3 measurement. PM: 0.7\u03c3 vs \u039bCDM: 2.7\u03c3. Improvement factor: 3.9\u00d7."
+        "description": "Statistical tension with DES Y3 measurement. PM: 0.7σ vs ΛCDM: 2.7σ. Improvement factor: 3.9×."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6689,7 +6689,7 @@
       "timestamp": "2026-02-21T18:07:24.094292",
       "metadata": {
         "units": "sigma",
-        "description": "Statistical tension with Planck CMB inference. PM: 3.4\u03c3 vs \u039bCDM: 0.3\u03c3. Expected: PM predicts less late-time growth."
+        "description": "Statistical tension with Planck CMB inference. PM: 3.4σ vs ΛCDM: 0.3σ. Expected: PM predicts less late-time growth."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6709,7 +6709,7 @@
       "timestamp": "2026-02-21T18:07:24.094295",
       "metadata": {
         "units": "dimensionless",
-        "description": "Average improvement in weak lensing agreement: ~3\u00d7. Quantifies how much better PM fits late-time observations."
+        "description": "Average improvement in weak lensing agreement: ~3×. Quantifies how much better PM fits late-time observations."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -6829,7 +6829,7 @@
       "timestamp": "2026-02-21T18:07:24.095811",
       "metadata": {
         "units": "degrees",
-        "description": "PMNS theta_12 from G2 geometry: 33.59\u00b0. NuFIT 6.0: 33.41\u00b0 \u00b1 0.75\u00b0. Deviation: 0.24\u03c3."
+        "description": "PMNS theta_12 from G2 geometry: 33.59°. NuFIT 6.0: 33.41° ± 0.75°. Deviation: 0.24σ."
       },
       "experimental_value": 33.41,
       "experimental_uncertainty": 0.75,
@@ -6850,7 +6850,7 @@
       "timestamp": "2026-02-21T18:07:24.095815",
       "metadata": {
         "units": "degrees",
-        "description": "PMNS theta_13 from G2 geometry: 8.65\u00b0. NuFIT 6.0 IO: 8.63\u00b0 \u00b1 0.11\u00b0. Deviation: 0.16\u03c3."
+        "description": "PMNS theta_13 from G2 geometry: 8.65°. NuFIT 6.0 IO: 8.63° ± 0.11°. Deviation: 0.16σ."
       },
       "experimental_value": 8.63,
       "experimental_uncertainty": 0.11,
@@ -6871,7 +6871,7 @@
       "timestamp": "2026-02-21T18:07:24.095818",
       "metadata": {
         "units": "degrees",
-        "description": "PMNS theta_23 from G2 geometry: 49.75\u00b0. NuFIT 6.0 IO: 49.3\u00b0 \u00b1 1.0\u00b0. Deviation: 0.45\u03c3."
+        "description": "PMNS theta_23 from G2 geometry: 49.75°. NuFIT 6.0 IO: 49.3° ± 1.0°. Deviation: 0.45σ."
       },
       "experimental_value": 49.3,
       "experimental_uncertainty": 1.0,
@@ -6892,7 +6892,7 @@
       "timestamp": "2026-02-21T18:07:24.095821",
       "metadata": {
         "units": "degrees",
-        "description": "CP-violating phase from cycle intersection complex structure with 13D parity offset (45.9\u00b0): \u03b4_CP = 278.4\u00b0. NuFIT 6.0 IO: 278.0\u00b0 \u00b1 22.0\u00b0. Deviation: 0.02\u03c3. Excellent agreement."
+        "description": "CP-violating phase from cycle intersection complex structure with 13D parity offset (45.9°): δ_CP = 278.4°. NuFIT 6.0 IO: 278.0° ± 22.0°. Deviation: 0.02σ. Excellent agreement."
       },
       "experimental_value": 278.0,
       "experimental_uncertainty": 22.0,
@@ -6973,7 +6973,7 @@
       "timestamp": "2026-02-21T18:07:24.095839",
       "metadata": {
         "units": "eV",
-        "description": "Sum of neutrino masses \u03a3m_\u03bd = m1 + m2 + m3. Cosmologically constrained quantity. Planck 2018: \u03a3m_\u03bd < 0.12 eV (95% CL). DESI 2024 + CMB: \u03a3m_\u03bd < 0.072 eV (95% CL). PM predicts \u03a3m_\u03bd \u2248 0.10 eV from geometric seesaw mechanism."
+        "description": "Sum of neutrino masses Σm_ν = m1 + m2 + m3. Cosmologically constrained quantity. Planck 2018: Σm_ν < 0.12 eV (95% CL). DESI 2024 + CMB: Σm_ν < 0.072 eV (95% CL). PM predicts Σm_ν ≈ 0.10 eV from geometric seesaw mechanism."
       },
       "experimental_value": 0.12,
       "experimental_uncertainty": 0.05,
@@ -7353,7 +7353,7 @@
       "timestamp": "2026-02-21T18:07:24.096118",
       "metadata": {
         "units": "dimensionless",
-        "description": "Ratio of dark matter to baryon density from mirror sector. Planck 2018: 5.38 \u00b1 0.15."
+        "description": "Ratio of dark matter to baryon density from mirror sector. Planck 2018: 5.38 ± 0.15."
       },
       "experimental_value": 5.38,
       "experimental_uncertainty": 0.15,
@@ -7474,7 +7474,7 @@
       "timestamp": "2026-02-21T18:07:24.096212",
       "metadata": {
         "units": "m/s",
-        "description": "Speed of light derived from Sovereign Gnostic Constants: c = 299,792,423.16 m/s. CODATA 2022: 299,792,458 m/s (exact). Variance: 34.84 m/s (0.12\u03c3 equivalent). Accuracy: 99.99999%."
+        "description": "Speed of light derived from Sovereign Gnostic Constants: c = 299,792,423.16 m/s. CODATA 2022: 299,792,458 m/s (exact). Variance: 34.84 m/s (0.12σ equivalent). Accuracy: 99.99999%."
       },
       "experimental_value": 299792458.0,
       "experimental_uncertainty": 300.0,
@@ -7534,7 +7534,7 @@
       "timestamp": "2026-02-21T18:07:24.096221",
       "metadata": {
         "units": "sigma",
-        "description": "Sigma-equivalent deviation from CODATA (framework-specific calibration: ~300 m/s \u2248 1ppm as 1\u03c3): 0.12\u03c3. Excellent agreement."
+        "description": "Sigma-equivalent deviation from CODATA (framework-specific calibration: ~300 m/s ≈ 1ppm as 1σ): 0.12σ. Excellent agreement."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -7554,7 +7554,7 @@
       "timestamp": "2026-02-21T18:07:24.096223",
       "metadata": {
         "units": "dimensionless",
-        "description": "Decad\u00b3 projection factor for 3D propagation: P_3D = 1 + 1/(288\u00d7100) = 1.0000347222. Adjusts the derived speed of light, reducing an initial deviation of ~10,444 m/s to a final deviation of ~35 m/s from the CODATA value."
+        "description": "Decad³ projection factor for 3D propagation: P_3D = 1 + 1/(288×100) = 1.0000347222. Adjusts the derived speed of light, reducing an initial deviation of ~10,444 m/s to a final deviation of ~35 m/s from the CODATA value."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -8311,7 +8311,7 @@
       "timestamp": "2026-02-21T18:07:24.096889",
       "metadata": {
         "units": "dimensionless",
-        "description": "v23.1 Signature: (26,1) \u2014 24 spatial from 12\u00d7(2,0) bridge pairs + 2 from C^{2,0} central sampler + 1 unified time. Dimensional structure: T\u00b9 \u00d7_fiber (\u2295_{i=1}^{12} B_i^{2,0} \u2295 C^{2,0}). 12 pairs from b\u2083 = 24/2. Metric: ds\u00b2 = -dt\u00b2 + \u2211_{i=1}^{12}(dy_{1i}\u00b2 + dy_{2i}\u00b2) + dc\u2081\u00b2 + dc\u2082\u00b2."
+        "description": "v23.1 Signature: (26,1) — 24 spatial from 12×(2,0) bridge pairs + 2 from C^{2,0} Euclidean Information Sector ($S_{EIS}$) + 1 unified time. Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0} ⊕ C^{2,0}). 12 pairs from b₃ = 24/2. Metric: ds² = -dt² + ∑_{i=1}^{12}(dy_{1i}² + dy_{2i}²) + dc₁² + dc₂²."
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -8577,7 +8577,7 @@
       "timestamp": "2026-02-21T18:07:24.098149",
       "metadata": {
         "units": "boolean",
-        "description": "Whether the spectral trace converges to expected Vol(V\u2087)"
+        "description": "Whether the spectral trace converges to expected Vol(V₇)"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -8597,7 +8597,7 @@
       "timestamp": "2026-02-21T18:07:24.098222",
       "metadata": {
         "units": "dimensionless",
-        "description": "Rank of the 13D\u21924D projection matrix"
+        "description": "Rank of the 13D→4D projection matrix"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -10445,7 +10445,7 @@
       "status": "GEOMETRIC",
       "timestamp": "2026-02-21T18:07:24.100658",
       "metadata": {
-        "derivation": "G2 triality-linked CP phase (\u03c0/6)",
+        "derivation": "G2 triality-linked CP phase (π/6)",
         "units": "radians"
       },
       "experimental_value": null,
@@ -10510,9 +10510,9 @@
       "status": "PREDICTED",
       "timestamp": "2026-02-21T18:07:24.100714",
       "metadata": {
-        "derivation": "5.7 \u03bceV \u00d7 (10^12 / f_a)",
+        "derivation": "5.7 μeV × (10^12 / f_a)",
         "units": "eV",
-        "note": "Testable by ADMX (2-10 \u03bceV range)"
+        "note": "Testable by ADMX (2-10 μeV range)"
       },
       "experimental_value": null,
       "experimental_uncertainty": null,
@@ -10531,7 +10531,7 @@
       "status": "PREDICTED",
       "timestamp": "2026-02-21T18:07:24.100717",
       "metadata": {
-        "derivation": "Misalignment mechanism with \u03b8_i = 1",
+        "derivation": "Misalignment mechanism with θ_i = 1",
         "units": "dimensionless",
         "note": "Natural initial angle gives correct DM density"
       },
@@ -10552,7 +10552,7 @@
       "status": "PREDICTED",
       "timestamp": "2026-02-21T18:07:24.100719",
       "metadata": {
-        "derivation": "Required angle for \u03a9_DM = 0.12",
+        "derivation": "Required angle for Ω_DM = 0.12",
         "units": "radians",
         "note": "O(1) value indicates natural DM candidate"
       },
