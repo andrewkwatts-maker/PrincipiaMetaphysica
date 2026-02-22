@@ -379,6 +379,8 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Observable", "PM Prediction", "Current Status", "Future Test"],
                 rows=[
+                    ["<strong>ALP mass m_a (Principia Metric)</strong>", "<strong>3.51 ± 0.02 meV</strong>", "<strong>Unconstrained in this range</strong>", "<strong>IAXO/BabyIAXO (2025-2028) - PRIMARY KILL-SWITCH</strong>"],
+                    ["ALP-photon coupling g_aγγ", "~10⁻¹¹ GeV⁻¹", "CAST: g_aγγ < 6.6×10⁻¹¹ GeV⁻¹", "IAXO (2028)"],
                     ["Proton lifetime τ_p", "(4.0⁺²·⁵₋₁.₈) × 10³⁴ years", "Super-K: τ_p > 2.4×10³⁴ yr", "Hyper-K (2027+)"],
                     ["KK graviton mass M_KK", "5.0 TeV (geometric)", "HL-LHC: M > 4.5 TeV", "HL-LHC Run 4 (2029+)"],
                     ["Dark energy w₀", "-0.853 ± 0.02", "DESI: -0.83 ± 0.06", "DESI DR3 (2026)"],
@@ -394,6 +396,41 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="heading",
                 content="Falsifiability Criteria",
+                level=4
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<strong>The Principia Metric - Primary Kill-Switch:</strong> "
+                    "The structural integrity of the M²⁷ framework rests on the detection of a "
+                    "topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = 3.51 ± 0.02 meV. "
+                    "This particle is the unavoidable consequence of the Euclidean Information Sector (S<sub>EIS</sub>) "
+                    "coupling to the photon field, yielding g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹. We define the following "
+                    "experimental constraints:"
+                )
+            ),
+            ContentBlock(
+                type="list",
+                items=[
+                    "<strong>Mass:</strong> m<sub>a</sub> = 3.51 ± 0.02 meV",
+                    "<strong>Coupling:</strong> g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹",
+                    "<strong>Detection window:</strong> IAXO and BabyIAXO experiments (2025-2028)",
+                    "<strong>Falsification criterion:</strong> Should experimental results from IAXO or BabyIAXO exclude this mass range (3.49-3.53 meV) or coupling strength, the G₂ compactification and the (24+1)⊕(0,2) decomposition as proposed herein must be considered falsified."
+                ]
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "This 'Principia Metric' (analogous to the Eddington Eclipse observation for General Relativity) "
+                    "provides a definitive, time-bound test: if IAXO reaches its projected sensitivity of "
+                    "g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹ by 2028 and finds no signal in the predicted mass range, "
+                    "the theory is falsified. This is not a parameter to be adjusted—it is the direct, unavoidable "
+                    "output of the 27D → 4D dimensional projection."
+                )
+            ),
+            ContentBlock(
+                type="heading",
+                content="Additional Falsifiability Tests",
                 level=4
             ),
             ContentBlock(
