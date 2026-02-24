@@ -450,7 +450,7 @@ class YukawaTexturesV18(SimulationBase):
             Formula(
                 id="yukawa-texture-matrix-v18",
                 label="(6.2)",
-                latex=r"Y = \begin{pmatrix} \lambda^{-2} & 0 & 0 \\ 0 & \lambda^{-1} & 0 \\ 0 & 0 & 1 \end{pmatrix}",
+                latex=r"Y = \left(\begin{smallmatrix} \lambda^{-2} & 0 & 0 \\ 0 & \lambda^{-1} & 0 \\ 0 & 0 & 1 \end{smallmatrix}\right)",
                 plain_text="Y = diag(λ^-2, λ^-1, 1)",
                 category="DERIVED",
                 description=(
