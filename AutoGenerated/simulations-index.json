@@ -1,0 +1,2039 @@
+{
+  "version": "23.0",
+  "generated": "2026-02-24T06:04:06.907256Z",
+  "total_scripts": 248,
+  "categories": {
+    "Ad-Hoc / Experimental": {
+      "title": "Ad-Hoc / Experimental",
+      "path": "simulations/",
+      "folderName": "Ad-Hoc / Experimental",
+      "description": "Experimental and ad-hoc simulation scripts",
+      "isV16": false,
+      "order": 90,
+      "sectionId": null,
+      "scripts": [
+        {
+          "file": "adversarial_axiom_tester_v24_1.py",
+          "path": "simulations/PM/validation/adversarial_axiom_tester_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Adversarial Axiom Tester - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "falsification_oracle_v24_1.py",
+          "path": "simulations/PM/validation/falsification_oracle_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Falsification Oracle - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "final_verification_script_v24_1.py",
+          "path": "simulations/PM/validation/final_verification_script_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Final Verification Script - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "information_bottleneck_distiller_v24_1.py",
+          "path": "simulations/PM/validation/information_bottleneck_distiller_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Information Bottleneck Distiller - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "observer_integrator_v24_1.py",
+          "path": "simulations/PM/validation/observer_integrator_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Observer Integrator - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "statistical_rigor_validator_v24_1.py",
+          "path": "simulations/PM/validation/statistical_rigor_validator_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Statistical Rigor Validator - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "unitary_closure_checker_v24_1.py",
+          "path": "simulations/PM/validation/unitary_closure_checker_v24_1.py",
+          "version": "24.1",
+          "title": null,
+          "description": "Unitary Closure Checker - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "gnosis_progression_v22_2.py",
+          "path": "simulations/visualizations/gnosis_progression_v22_2.py",
+          "version": "22.2",
+          "title": null,
+          "description": "Gnosis Progression Visualization v22.2",
+          "status": null
+        },
+        {
+          "file": "fine_structure_v22.py",
+          "path": "simulations/PM/constants/fine_structure_v22.py",
+          "version": "22.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "microtubule_12pair_v22.py",
+          "path": "simulations/visualizations/microtubule_12pair_v22.py",
+          "version": "22.0",
+          "title": null,
+          "description": "Microtubule Interior Visualization with 12 (2,0) Pairs v22.2",
+          "status": null
+        },
+        {
+          "file": "descent_chain_v21.py",
+          "path": "simulations/visualizations/descent_chain_v21.py",
+          "version": "21.0",
+          "title": null,
+          "description": "Descent Chain Visualization v23.1",
+          "status": null
+        },
+        {
+          "file": "certificate_dashboard_v16_2.py",
+          "path": "simulations/visualizations/certificate_dashboard_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Certificate Dashboard - v16.2 Sterile Model",
+          "status": null
+        },
+        {
+          "file": "entropy_basin_terminal_map_v16_2.py",
+          "path": "simulations/visualizations/entropy_basin_terminal_map_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Entropy Basin Terminal Map - v16.2 Sterile Model",
+          "status": null
+        },
+        {
+          "file": "four_pattern_orthogonality_v16_2.py",
+          "path": "simulations/visualizations/four_pattern_orthogonality_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "4-Pattern Orthogonality Visualization - v16.2 Sterile Model",
+          "status": null
+        },
+        {
+          "file": "stability_heatmap_v16_2.py",
+          "path": "simulations/visualizations/stability_heatmap_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "3D Stability Heatmap Visualization v16.2",
+          "status": null
+        },
+        {
+          "file": "torsion_funnel_v16_2.py",
+          "path": "simulations/visualizations/torsion_funnel_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Torsion Funnel Visualization - v16.2 Sterile Model",
+          "status": null
+        },
+        {
+          "file": "pm_config_v16_1.py",
+          "path": "simulations/pm_config_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "PM Config v16.1 - High-Precision Simulation Configuration",
+          "status": null
+        },
+        {
+          "file": "CERTIFICATES.py",
+          "path": "simulations/PM/validation/CERTIFICATES.py",
+          "version": null,
+          "title": null,
+          "description": "CERTIFICATES_v22_0.py - Comprehensive Certificate Validator",
+          "status": null
+        },
+        {
+          "file": "abstract.py",
+          "path": "simulations/PM/paper/abstract.py",
+          "version": null,
+          "title": "Abstract",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "algebra_diagrams.py",
+          "path": "simulations/visualizations/algebra_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Algebraic Structure Visualization Diagrams",
+          "status": null
+        },
+        {
+          "file": "alp_portals.py",
+          "path": "simulations/PM/portals/alp_portals.py",
+          "version": null,
+          "title": null,
+          "description": "ALP (Axion-Like Particle) Portal Physics v23.0",
+          "status": null
+        },
+        {
+          "file": "alpha_rigor.py",
+          "path": "simulations/PM/geometry/alpha_rigor.py",
+          "version": null,
+          "title": null,
+          "description": "Fine Structure Constant Geometric Derivation v16.1",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "appendix_a_math.py",
+          "path": "simulations/PM/paper/appendices/appendix_a_math.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix A: Mathematical Foundations v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_a_spectral_registry.py",
+          "path": "simulations/PM/paper/appendices/appendix_a_spectral_registry.py",
+          "version": null,
+          "title": "Appendix A: The Spectral Registry",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_b_methods.py",
+          "path": "simulations/PM/paper/appendices/appendix_b_methods.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix B: Computational Methods v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_b_sum_rule.py",
+          "path": "simulations/PM/paper/appendices/appendix_b_sum_rule.py",
+          "version": null,
+          "title": "Appendix B: The Global Sum Rule",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_c_derivations.py",
+          "path": "simulations/PM/paper/appendices/appendix_c_derivations.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix C: Extended Derivations v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_c_gauge_matrices.py",
+          "path": "simulations/PM/paper/appendices/appendix_c_gauge_matrices.py",
+          "version": null,
+          "title": "Appendix C: The S_PR(2) Gauge Reduction Matrices",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_d_alignment.py",
+          "path": "simulations/PM/paper/appendices/appendix_d_alignment.py",
+          "version": null,
+          "title": "Appendix D: The 0.48sigma Alignment Data",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_d_sp2r_invariance.py",
+          "path": "simulations/PM/paper/appendices/appendix_d_sp2r_invariance.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_d_tables.py",
+          "path": "simulations/PM/paper/appendices/appendix_d_tables.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix D: Parameter Tables v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_e_brane_map.py",
+          "path": "simulations/PM/paper/appendices/appendix_e_brane_map.py",
+          "version": null,
+          "title": "Appendix E: The Brane-Intersection Map",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_e_proton.py",
+          "path": "simulations/PM/paper/appendices/appendix_e_proton.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix E: Proton Decay Calculation v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_f_72gates.py",
+          "path": "simulations/PM/paper/appendices/appendix_f_72gates.py",
+          "version": null,
+          "title": "Appendix F: The Gates of Integrity",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_g_omega_seal.py",
+          "path": "simulations/PM/paper/appendices/appendix_g_omega_seal.py",
+          "version": null,
+          "title": "Appendix G: The Omega Seal Cryptographic Protocol",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_h_288_roots.py",
+          "path": "simulations/PM/paper/appendices/appendix_h_288_roots.py",
+          "version": null,
+          "title": "Appendix H: The 288-Root Basis",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_i_terminal_states.py",
+          "path": "simulations/PM/paper/appendices/appendix_i_terminal_states.py",
+          "version": null,
+          "title": "Appendix I: The Three Terminal States",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_j_torsion_funnel.py",
+          "path": "simulations/PM/paper/appendices/appendix_j_torsion_funnel.py",
+          "version": null,
+          "title": "Appendix J: The Torsion Funnel Visualization",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_k_sterile_constants.py",
+          "path": "simulations/PM/paper/appendices/appendix_k_sterile_constants.py",
+          "version": null,
+          "title": "Appendix K: The Sterile Constant Table",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_l_omega_unwinding.py",
+          "path": "simulations/PM/paper/appendices/appendix_l_omega_unwinding.py",
+          "version": null,
+          "title": "Appendix L: The Omega Unwinding Map",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_m_tensor_calc.py",
+          "path": "simulations/PM/paper/appendices/appendix_m_tensor_calc.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix M: Tensor Calculus Foundations v19.0",
+          "status": null
+        },
+        {
+          "file": "appendix_n_vielbein.py",
+          "path": "simulations/PM/paper/appendices/appendix_n_vielbein.py",
+          "version": null,
+          "title": "Appendix N: Vielbein and Spin Connection",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "appendix_o_kk_reduction.py",
+          "path": "simulations/PM/paper/appendices/appendix_o_kk_reduction.py",
+          "version": null,
+          "title": "Appendix O: Kaluza-Klein Reduction Steps",
+          "description": "My Wife: Elizabeth May Watts",
+          "status": null
+        },
+        {
+          "file": "appendix_p_g2_holonomy.py",
+          "path": "simulations/PM/paper/appendices/appendix_p_g2_holonomy.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix P: G2 Holonomy Mathematics v19.0",
+          "status": null
+        },
+        {
+          "file": "appendix_q_index_theorem.py",
+          "path": "simulations/PM/paper/appendices/appendix_q_index_theorem.py",
+          "version": null,
+          "title": "Appendix Q: Index Theorem Applications",
+          "description": "This appendix develops the Atiyah-Singer index theorem and its applications",
+          "status": null
+        },
+        {
+          "file": "appendix_r_vacuum_stability.py",
+          "path": "simulations/PM/paper/appendices/appendix_r_vacuum_stability.py",
+          "version": null,
+          "title": "Appendix R: Vacuum Stability Analysis",
+          "description": "This appendix proves vacuum stability of the Principia Metaphysica framework,",
+          "status": null
+        },
+        {
+          "file": "appendix_s_spectral_residue.py",
+          "path": "simulations/PM/paper/appendices/appendix_s_spectral_residue.py",
+          "version": null,
+          "title": null,
+          "description": "Appendix S: Spectral Residue Methodology v19.0",
+          "status": null
+        },
+        {
+          "file": "appendix_z_terminal_ledger.py",
+          "path": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+          "version": null,
+          "title": "Appendix Z: Terminal Constant Ledger",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "attractor_potential.py",
+          "path": "simulations/PM/cosmology/attractor_potential.py",
+          "version": null,
+          "title": null,
+          "description": "V(phi_M) Attractor Potential for Dark Energy v18.0",
+          "status": null
+        },
+        {
+          "file": "avogadro.py",
+          "path": "simulations/PM/qed/avogadro.py",
+          "version": null,
+          "title": null,
+          "description": "Avogadro Number Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "axion_dm.py",
+          "path": "simulations/PM/cosmology/axion_dm.py",
+          "version": null,
+          "title": null,
+          "description": "Axion Dark Matter Derivation v18.3",
+          "status": null
+        },
+        {
+          "file": "baryon_asymmetry.py",
+          "path": "simulations/PM/cosmology/baryon_asymmetry.py",
+          "version": null,
+          "title": null,
+          "description": "Baryon Asymmetry Geometric Derivation v23.1",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "bazien_angles.py",
+          "path": "simulations/PM/geometry/bazien_angles.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Bazien Angles Analysis v17.2",
+          "status": null
+        },
+        {
+          "file": "brane_diagrams.py",
+          "path": "simulations/visualizations/brane_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Brane Diagrams Generator",
+          "status": null
+        },
+        {
+          "file": "brane_gauge_diagrams.py",
+          "path": "simulations/visualizations/brane_gauge_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Brane Gauge Diagrams Generator",
+          "status": null
+        },
+        {
+          "file": "breathing_de.py",
+          "path": "simulations/PM/cosmology/breathing_de.py",
+          "version": null,
+          "title": null,
+          "description": "Breathing Dark Energy v21.0",
+          "status": null
+        },
+        {
+          "file": "bridge_pressure.py",
+          "path": "simulations/PM/support/bridge_pressure.py",
+          "version": null,
+          "title": null,
+          "description": "Bridge Pressure Mechanism v21.0",
+          "status": null
+        },
+        {
+          "file": "central_sampler.py",
+          "path": "simulations/PM/geometry/central_sampler.py",
+          "version": null,
+          "title": null,
+          "description": "Central (2,0) Sampler Simulation v23",
+          "status": null
+        },
+        {
+          "file": "chiral_stabilizer.py",
+          "path": "simulations/support/physics/chiral_stabilizer.py",
+          "version": null,
+          "title": "Chiral Stabilizer",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "chirality.py",
+          "path": "simulations/PM/particle/chirality.py",
+          "version": null,
+          "title": null,
+          "description": "Chirality and Spinorial Structure v16.0",
+          "status": null
+        },
+        {
+          "file": "ckm_matrix.py",
+          "path": "simulations/PM/particle/ckm_matrix.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "cmb_temperature.py",
+          "path": "simulations/PM/cosmology/cmb_temperature.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "compactification_diagrams.py",
+          "path": "simulations/visualizations/compactification_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Compactification Diagrams",
+          "status": null
+        },
+        {
+          "file": "complete_residue_registry.py",
+          "path": "simulations/PM/support/complete_residue_registry.py",
+          "version": null,
+          "title": null,
+          "description": "Complete Spectral Decomposition v23.1",
+          "status": null
+        },
+        {
+          "file": "compton_wavelength.py",
+          "path": "simulations/PM/qed/compton_wavelength.py",
+          "version": null,
+          "title": null,
+          "description": "Compton Wavelength Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "cosmological_constant.py",
+          "path": "simulations/PM/cosmology/cosmological_constant.py",
+          "version": null,
+          "title": null,
+          "description": "Cosmological Constant from Entropy Density v16.1",
+          "status": null
+        },
+        {
+          "file": "cosmology_diagrams.py",
+          "path": "simulations/visualizations/cosmology_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Cosmology Diagrams for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "cosmology_intro.py",
+          "path": "simulations/PM/cosmology/cosmology_intro.py",
+          "version": null,
+          "title": null,
+          "description": "Cosmological Framework Introduction v22.0",
+          "status": null
+        },
+        {
+          "file": "cosmology_sector_complete.py",
+          "path": "simulations/PM/derivations/cosmology_sector_complete.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "cosmology_validation.py",
+          "path": "simulations/PM/validation/cosmology_validation.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Cosmology Validation v17.2",
+          "status": null
+        },
+        {
+          "file": "coupling_unification.py",
+          "path": "simulations/support/physics/coupling_unification.py",
+          "version": null,
+          "title": "Coupling Unification",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "dark_energy.py",
+          "path": "simulations/PM/cosmology/dark_energy.py",
+          "version": null,
+          "title": null,
+          "description": "Dark Energy from Dimensional Reduction v22.0",
+          "status": null
+        },
+        {
+          "file": "dark_energy_thawing.py",
+          "path": "simulations/PM/cosmology/dark_energy_thawing.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "dark_matter_portals.py",
+          "path": "simulations/PM/portals/dark_matter_portals.py",
+          "version": null,
+          "title": null,
+          "description": "Dark Matter Portal Physics v23.0",
+          "status": null
+        },
+        {
+          "file": "decoherence_protection.py",
+          "path": "simulations/PM/rigorous_derivations/orch_or_extended/decoherence_protection.py",
+          "version": null,
+          "title": null,
+          "description": "Decoherence Protection Mechanisms for Orch-OR v18.0",
+          "status": null
+        },
+        {
+          "file": "dimension_intro_diagrams.py",
+          "path": "simulations/visualizations/dimension_intro_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Dimension Introduction Diagrams",
+          "status": null
+        },
+        {
+          "file": "dirac_1plus1d.py",
+          "path": "simulations/PM/support/dirac_1plus1d.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - 1+1D Dirac Equation Simulation v17.2",
+          "status": null
+        },
+        {
+          "file": "dirac_3plus1d.py",
+          "path": "simulations/PM/support/dirac_3plus1d.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - 3+1D Dirac Equation Simulation v17.2",
+          "status": null
+        },
+        {
+          "file": "dirac_gravity.py",
+          "path": "simulations/PM/support/dirac_gravity.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Dirac Equation in Curved Spacetime v17.2",
+          "status": null
+        },
+        {
+          "file": "dirac_monopole_charge.py",
+          "path": "simulations/PM/rigorous_derivations/charge_cohomology/dirac_monopole_charge.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica v18.0 - Dirac Monopole Charge Quantization from G2 Cohomology",
+          "status": null
+        },
+        {
+          "file": "dirac_simulation.py",
+          "path": "simulations/PM/support/dirac_simulation.py",
+          "version": null,
+          "title": null,
+          "description": "Dirac Equation Simulations v18.0 - SimulationBase Wrapper",
+          "status": null
+        },
+        {
+          "file": "discussion.py",
+          "path": "simulations/PM/paper/discussion.py",
+          "version": null,
+          "title": "Discussion, Conclusions, and Theory Analysis",
+          "description": "Licensed under the MIT License. See LICENSE file for details.",
+          "status": null
+        },
+        {
+          "file": "electroweak_mixing.py",
+          "path": "simulations/PM/gauge/electroweak_mixing.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Electroweak Mixing Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "evolution_engine.py",
+          "path": "simulations/PM/cosmology/evolution_engine.py",
+          "version": null,
+          "title": null,
+          "description": "Evolution Engine v16.2 - Merged Historical Logic",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "f_r_t_tau_gravity.py",
+          "path": "simulations/PM/cosmology/f_r_t_tau_gravity.py",
+          "version": null,
+          "title": null,
+          "description": "f(R,T,tau) Modified Gravity from G2 Compactification v18.0",
+          "status": null
+        },
+        {
+          "file": "falsifiability_dashboard.py",
+          "path": "simulations/visualizations/falsifiability_dashboard.py",
+          "version": null,
+          "title": null,
+          "description": "Falsifiability Dashboard - v16.2 Demon-Lock Visualization",
+          "status": null
+        },
+        {
+          "file": "faraday.py",
+          "path": "simulations/PM/qed/faraday.py",
+          "version": null,
+          "title": null,
+          "description": "Faraday Constant Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "fermion_generations.py",
+          "path": "simulations/PM/particle/fermion_generations.py",
+          "version": null,
+          "title": null,
+          "description": "Fermion Generations v16.0 - Three Generations from G2 Topology",
+          "status": null
+        },
+        {
+          "file": "fine_structure_analysis.py",
+          "path": "simulations/PM/geometry/fine_structure_analysis.py",
+          "version": null,
+          "title": null,
+          "description": "Fine Structure Constant Analysis v17.2",
+          "status": "PREDICTION"
+        },
+        {
+          "file": "foundations.py",
+          "path": "simulations/PM/paper/foundations.py",
+          "version": null,
+          "title": "Section 1: Foundations of Dimensional Descent",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "four_face_structure.py",
+          "path": "simulations/PM/geometry/four_face_structure.py",
+          "version": null,
+          "title": null,
+          "description": "Four-Face G2 Sub-Sector Structure v23.7 - SimulationBase Wrapper",
+          "status": null
+        },
+        {
+          "file": "g2_compactification.py",
+          "path": "simulations/PM/geometry/g2_compactification.py",
+          "version": null,
+          "title": null,
+          "description": "G2 Compactification v21.0",
+          "status": null
+        },
+        {
+          "file": "g2_dynamical_flow.py",
+          "path": "simulations/PM/geometry/g2_dynamical_flow.py",
+          "version": null,
+          "title": "G₂ Dynamical Flow",
+          "description": "Implements dynamical dark energy w(z) from G₂-Ricci flow stabilization.",
+          "status": null
+        },
+        {
+          "file": "g2_geometry.py",
+          "path": "simulations/PM/geometry/g2_geometry.py",
+          "version": null,
+          "title": "G2 Geometry and Topology",
+          "description": "Licensed under the MIT License. See LICENSE file for details.",
+          "status": null
+        },
+        {
+          "file": "g2_holonomy_angles.py",
+          "path": "simulations/PM/geometry/g2_holonomy_angles.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - G2 Holonomy Angles v17.2",
+          "status": null
+        },
+        {
+          "file": "g2_triality_mixing.py",
+          "path": "simulations/PM/particle/g2_triality_mixing.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - G2 Triality Mixing (CKM/PMNS Unified) v17.2",
+          "status": null
+        },
+        {
+          "file": "gauge_sector_complete.py",
+          "path": "simulations/PM/derivations/gauge_sector_complete.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "gauge_theory_diagrams.py",
+          "path": "simulations/visualizations/gauge_theory_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Gauge Theory Diagrams for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "gauge_unification.py",
+          "path": "simulations/PM/gauge/gauge_unification.py",
+          "version": null,
+          "title": null,
+          "description": "Gauge Unification Simulation v21.0",
+          "status": null
+        },
+        {
+          "file": "geometric_anchors.py",
+          "path": "simulations/PM/geometry/geometric_anchors.py",
+          "version": null,
+          "title": null,
+          "description": "Geometric Anchors Simulation v16.2 - SimulationBase Wrapper",
+          "status": null
+        },
+        {
+          "file": "geometric_anchors_core.py",
+          "path": "simulations/PM/geometry/geometric_anchors_core.py",
+          "version": null,
+          "title": null,
+          "description": "Geometric Anchors v16.2 - First Principles Parameter Derivation",
+          "status": null
+        },
+        {
+          "file": "gf_radiative_correction.py",
+          "path": "simulations/PM/support/gf_radiative_correction.py",
+          "version": null,
+          "title": null,
+          "description": "G_F Radiative Correction Analysis v18.0",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "goldilocks_plot.py",
+          "path": "simulations/visualizations/goldilocks_plot.py",
+          "version": null,
+          "title": null,
+          "description": "Goldilocks Plot: Visual Proof that b3=24 is Unique",
+          "status": null
+        },
+        {
+          "file": "gr_spacetime.py",
+          "path": "simulations/PM/derivations/gr_spacetime.py",
+          "version": null,
+          "title": null,
+          "description": "General Relativity and Spacetime Derivations from Master Action v19",
+          "status": null
+        },
+        {
+          "file": "gravitational_self_energy.py",
+          "path": "simulations/PM/rigorous_derivations/orch_or_extended/gravitational_self_energy.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica v18.0 - Rigorous Gravitational Self-Energy for Orch-OR",
+          "status": null
+        },
+        {
+          "file": "gravity_residue.py",
+          "path": "simulations/support/physics/gravity_residue.py",
+          "version": null,
+          "title": "Gravity Residue",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "hartree_energy.py",
+          "path": "simulations/PM/qed/hartree_energy.py",
+          "version": null,
+          "title": null,
+          "description": "Hartree Energy Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "higgs_brane_partition.py",
+          "path": "simulations/PM/particle/higgs_brane_partition.py",
+          "version": null,
+          "title": null,
+          "description": "Higgs Brane-Partition Simulation v21.0 (Demon-Lock)",
+          "status": null
+        },
+        {
+          "file": "higgs_mass.py",
+          "path": "simulations/PM/particle/higgs_mass.py",
+          "version": null,
+          "title": null,
+          "description": "Higgs Mass Simulation v16.0",
+          "status": null
+        },
+        {
+          "file": "higgs_torsion_vev.py",
+          "path": "simulations/support/physics/higgs_torsion_vev.py",
+          "version": null,
+          "title": "Higgs Torsion VEV",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "higgs_vev_refined.py",
+          "path": "simulations/PM/particle/higgs_vev_refined.py",
+          "version": null,
+          "title": null,
+          "description": "Higgs VEV Refined Derivation v18.0",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "holonomy_alpha.py",
+          "path": "simulations/PM/rigorous_derivations/alpha_geometric/holonomy_alpha.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica v18.0 - G2 Holonomy to Fine Structure Constant",
+          "status": null
+        },
+        {
+          "file": "integrity.py",
+          "path": "simulations/PM/paper/integrity.py",
+          "version": null,
+          "title": "Section 4: System Integrity and Verification",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "introduction.py",
+          "path": "simulations/PM/paper/introduction.py",
+          "version": null,
+          "title": "Introduction",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "kk_reduction_gr_gauge.py",
+          "path": "simulations/PM/gauge/kk_reduction_gr_gauge.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Kaluza-Klein Reduction: GR and Gauge v22.0",
+          "status": null
+        },
+        {
+          "file": "lagrangian_master.py",
+          "path": "simulations/PM/derivations/lagrangian_master.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "laplacian_eigenvalue.py",
+          "path": "simulations/PM/rigorous_derivations/dirac_spectral/laplacian_eigenvalue.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "leech_partition.py",
+          "path": "simulations/PM/geometry/leech_partition.py",
+          "version": null,
+          "title": null,
+          "description": "Leech Lattice Generation Partition v16.2",
+          "status": null
+        },
+        {
+          "file": "magnetic_flux.py",
+          "path": "simulations/PM/qed/magnetic_flux.py",
+          "version": null,
+          "title": null,
+          "description": "Magnetic Flux Quantum Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "manifold_tax.py",
+          "path": "simulations/support/physics/manifold_tax.py",
+          "version": null,
+          "title": "Manifold Tax Enforcement",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "mass_ratio.py",
+          "path": "simulations/PM/particle/mass_ratio.py",
+          "version": null,
+          "title": null,
+          "description": "Proton-to-Electron Mass Ratio Derivation v23.0",
+          "status": null
+        },
+        {
+          "file": "master_action.py",
+          "path": "simulations/PM/gauge/master_action.py",
+          "version": null,
+          "title": null,
+          "description": "Master Action Gauge Derivations v22.0 - SimulationBase Wrapper",
+          "status": null
+        },
+        {
+          "file": "matter_sector_complete.py",
+          "path": "simulations/PM/derivations/matter_sector_complete.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "merged_descent.py",
+          "path": "simulations/PM/support/merged_descent.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "methodology.py",
+          "path": "simulations/PM/paper/methodology.py",
+          "version": null,
+          "title": "Section 2: The Sterile Extraction Methodology",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "mixing_matrix.py",
+          "path": "simulations/support/physics/mixing_matrix.py",
+          "version": null,
+          "title": "Mixing Matrix Residues",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "mobius_return.py",
+          "path": "simulations/PM/support/mobius_return.py",
+          "version": null,
+          "title": null,
+          "description": "Mobius Cyclic Return v21.0",
+          "status": null
+        },
+        {
+          "file": "modular_invariance.py",
+          "path": "simulations/PM/geometry/modular_invariance.py",
+          "version": null,
+          "title": null,
+          "description": "Modular Invariance and b₃=24 Uniqueness v16.2",
+          "status": null
+        },
+        {
+          "file": "molar_gas.py",
+          "path": "simulations/PM/qed/molar_gas.py",
+          "version": null,
+          "title": null,
+          "description": "Molar Gas Constant Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "multi_sector.py",
+          "path": "simulations/PM/cosmology/multi_sector.py",
+          "version": null,
+          "title": null,
+          "description": "Multi-Sector Cosmology v16.0",
+          "status": null
+        },
+        {
+          "file": "muon_g2_anomaly.py",
+          "path": "simulations/PM/particle/muon_g2_anomaly.py",
+          "version": null,
+          "title": null,
+          "description": "Muon g-2 Anomaly from Topological Torsion v16.1",
+          "status": null
+        },
+        {
+          "file": "neutrino_mixing.py",
+          "path": "simulations/PM/particle/neutrino_mixing.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "non_abelian_kk_gauge.py",
+          "path": "simulations/PM/gauge/non_abelian_kk_gauge.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Non-Abelian Kaluza-Klein Gauge v17.2",
+          "status": null
+        },
+        {
+          "file": "octonion_angles.py",
+          "path": "simulations/PM/geometry/octonion_angles.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Octonion Angle Computations v17.2",
+          "status": null
+        },
+        {
+          "file": "octonionic_mixing.py",
+          "path": "simulations/PM/particle/octonionic_mixing.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "octonionic_triality.py",
+          "path": "simulations/visualizations/octonionic_triality.py",
+          "version": null,
+          "title": null,
+          "description": "Octonionic Triality: CKM vs PMNS Mixing Explanation",
+          "status": null
+        },
+        {
+          "file": "or_reduction.py",
+          "path": "simulations/PM/support/or_reduction.py",
+          "version": null,
+          "title": null,
+          "description": "Orthogonal Reduction (OR) Sampling v21.0",
+          "status": null
+        },
+        {
+          "file": "orch_or_bridge.py",
+          "path": "simulations/PM/field_dynamics/orch_or_bridge.py",
+          "version": null,
+          "title": null,
+          "description": "Orch-OR Coherence Bridge v22.0",
+          "status": "PREDICTION"
+        },
+        {
+          "file": "orch_or_geometry.py",
+          "path": "simulations/PM/field_dynamics/orch_or_geometry.py",
+          "version": null,
+          "title": null,
+          "description": "Orch-OR Geometry Solver v22.0",
+          "status": null
+        },
+        {
+          "file": "parameter_residues.py",
+          "path": "simulations/PM/constants/parameter_residues.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Parameter Residue Extraction v17.2",
+          "status": null
+        },
+        {
+          "file": "particle_diagrams.py",
+          "path": "simulations/visualizations/particle_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Particle Physics Visualization Diagrams",
+          "status": null
+        },
+        {
+          "file": "plot_wz_evolution.py",
+          "path": "simulations/visualizations/plot_wz_evolution.py",
+          "version": null,
+          "title": null,
+          "description": "Plot w(z) Evolution for Planck Tension Analysis",
+          "status": null
+        },
+        {
+          "file": "pneuma_mechanism.py",
+          "path": "simulations/PM/field_dynamics/pneuma_mechanism.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "predictions_aggregator.py",
+          "path": "simulations/PM/paper/predictions_aggregator.py",
+          "version": null,
+          "title": "Predictions Aggregator",
+          "description": "Licensed under the MIT License. See LICENSE file for details.",
+          "status": "PREDICTION"
+        },
+        {
+          "file": "principia_residue_calculator.py",
+          "path": "simulations/PM/validation/principia_residue_calculator.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Residue Calculator v17.2",
+          "status": null
+        },
+        {
+          "file": "proton_decay.py",
+          "path": "simulations/PM/particle/proton_decay.py",
+          "version": null,
+          "title": null,
+          "description": "Proton Decay Simulation v17.2",
+          "status": null
+        },
+        {
+          "file": "results.py",
+          "path": "simulations/PM/paper/results.py",
+          "version": null,
+          "title": "Section 3: Cosmological Results and Alignment",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "ricci_flow_evolution.py",
+          "path": "simulations/visualizations/ricci_flow_evolution.py",
+          "version": null,
+          "title": null,
+          "description": "Ricci Flow Hubble Evolution: Visual Hubble Tension Resolution",
+          "status": null
+        },
+        {
+          "file": "ricci_flow_h0.py",
+          "path": "simulations/PM/cosmology/ricci_flow_h0.py",
+          "version": null,
+          "title": null,
+          "description": "Ricci Flow Hubble Evolution v16.1",
+          "status": null
+        },
+        {
+          "file": "rigor_covariance.py",
+          "path": "simulations/PM/validation/rigor_covariance.py",
+          "version": null,
+          "title": "Rigorous Covariance Matrix Analysis",
+          "description": "This module implements proper statistical analysis with full covariance matrices",
+          "status": null
+        },
+        {
+          "file": "rigorous_validator.py",
+          "path": "simulations/PM/validation/rigorous_validator.py",
+          "version": null,
+          "title": "Rigorous Validation Against Latest Observational Data",
+          "description": "Validates PM v16.1 predictions against the latest experimental and observational data:",
+          "status": null
+        },
+        {
+          "file": "root_derivation.py",
+          "path": "simulations/support/physics/root_derivation.py",
+          "version": null,
+          "title": "Root Derivation Engine",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "run_all_simulations.py",
+          "path": "simulations/run_all_simulations.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "s8_suppression.py",
+          "path": "simulations/PM/cosmology/s8_suppression.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "shell_saturation.py",
+          "path": "simulations/support/physics/shell_saturation.py",
+          "version": null,
+          "title": "Shell Saturation (Fermion Packing)",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "spectral_flow_charge.py",
+          "path": "simulations/PM/rigorous_derivations/charge_cohomology/spectral_flow_charge.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "speed_of_light.py",
+          "path": "simulations/PM/cosmology/speed_of_light.py",
+          "version": null,
+          "title": null,
+          "description": "Speed of Light from G₂ Manifold Geometry v17.2",
+          "status": null
+        },
+        {
+          "file": "stefan_boltzmann.py",
+          "path": "simulations/PM/qed/stefan_boltzmann.py",
+          "version": null,
+          "title": null,
+          "description": "Stefan-Boltzmann Constant Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "sterile_neutrino_portals.py",
+          "path": "simulations/PM/portals/sterile_neutrino_portals.py",
+          "version": null,
+          "title": null,
+          "description": "Sterile Neutrino Portal Physics v23.0",
+          "status": null
+        },
+        {
+          "file": "strong_cp_lock.py",
+          "path": "simulations/support/physics/strong_cp_lock.py",
+          "version": null,
+          "title": "Strong CP Lock",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "su2_weak_gauge.py",
+          "path": "simulations/PM/gauge/su2_weak_gauge.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - SU(2)_L Electroweak Gauge Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "su3_embedding_angles.py",
+          "path": "simulations/PM/geometry/su3_embedding_angles.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - SU(3) Embedding Angles v17.2",
+          "status": null
+        },
+        {
+          "file": "su3_qcd_gauge.py",
+          "path": "simulations/PM/gauge/su3_qcd_gauge.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - SU(3)_C QCD Gauge Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "terminal_closure.py",
+          "path": "simulations/support/physics/terminal_closure.py",
+          "version": null,
+          "title": "Terminal Closure",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "theory_overview_diagrams.py",
+          "path": "simulations/visualizations/theory_overview_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "theory_overview_diagrams.py - Theory Overview Visualization Diagrams",
+          "status": null
+        },
+        {
+          "file": "thermal_time.py",
+          "path": "simulations/PM/field_dynamics/thermal_time.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "tolerance_sweep.py",
+          "path": "simulations/PM/validation/tolerance_sweep.py",
+          "version": null,
+          "title": null,
+          "description": "Tolerance Sweep Runner - v24.1 Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "torsional_constants.py",
+          "path": "simulations/PM/geometry/torsional_constants.py",
+          "version": null,
+          "title": null,
+          "description": "Torsional Constants Derivation v16.1.1",
+          "status": null
+        },
+        {
+          "file": "u1_hypercharge.py",
+          "path": "simulations/PM/gauge/u1_hypercharge.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - U(1)_Y Hypercharge Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "unitary_filter.py",
+          "path": "simulations/PM/validation/unitary_filter.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Ghost-Free Stability Check v16.2",
+          "status": null
+        },
+        {
+          "file": "unity_identity.py",
+          "path": "simulations/PM/validation/unity_identity.py",
+          "version": null,
+          "title": "Unity Identity Validation",
+          "description": "Proves the fundamental identity linking fine structure constant α",
+          "status": null
+        },
+        {
+          "file": "von_klitzing.py",
+          "path": "simulations/PM/qed/von_klitzing.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "wavefunction_validation.py",
+          "path": "simulations/PM/support/wavefunction_validation.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Wavefunction Evolution Validation v17.2",
+          "status": null
+        },
+        {
+          "file": "weak_mixing.py",
+          "path": "simulations/PM/qed/weak_mixing.py",
+          "version": null,
+          "title": null,
+          "description": "Weak Mixing Angle Derivation v17.2",
+          "status": null
+        },
+        {
+          "file": "wilson_loop.py",
+          "path": "simulations/PM/rigorous_derivations/confinement/wilson_loop.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "yukawa_textures.py",
+          "path": "simulations/PM/particle/yukawa_textures.py",
+          "version": null,
+          "title": null,
+          "description": "Yukawa Texture Analysis v19.0",
+          "status": null
+        },
+        {
+          "file": "yukawa_torsion.py",
+          "path": "simulations/support/physics/yukawa_torsion.py",
+          "version": null,
+          "title": "Yukawa Torsion",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "zero_mode_index.py",
+          "path": "simulations/PM/rigorous_derivations/dirac_spectral/zero_mode_index.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 178
+    },
+    "Constants & Utilities": {
+      "title": "Constants & Utilities",
+      "path": "simulations/",
+      "folderName": "Constants & Utilities",
+      "description": "Configuration, constants, and utility modules",
+      "isV16": false,
+      "order": 91,
+      "sectionId": null,
+      "scripts": [
+        {
+          "file": "add_missing_params.py",
+          "path": "simulations/Constants/ad-hoc/add_missing_params.py",
+          "version": null,
+          "title": null,
+          "description": "Add Missing Parameters to theory_output.json",
+          "status": null
+        },
+        {
+          "file": "csv_loader.py",
+          "path": "simulations/data/experimental/csv_loader.py",
+          "version": null,
+          "title": null,
+          "description": "CSV Loader for Experimental Physics Data",
+          "status": null
+        },
+        {
+          "file": "dynamic_metadata.py",
+          "path": "simulations/base/dynamic_metadata.py",
+          "version": null,
+          "title": null,
+          "description": "Dynamic Metadata Helper - Generate Description Strings from Computed Values",
+          "status": null
+        },
+        {
+          "file": "established.py",
+          "path": "simulations/base/established.py",
+          "version": null,
+          "title": null,
+          "description": "Established Physics Loader for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "experimental_data_loader.py",
+          "path": "simulations/data/experimental_data_loader.py",
+          "version": null,
+          "title": null,
+          "description": "Experimental Data Loader for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "extract_supplementary.py",
+          "path": "simulations/Constants/extract_supplementary.py",
+          "version": null,
+          "title": null,
+          "description": "Extract Supplementary Content to JSON",
+          "status": null
+        },
+        {
+          "file": "formulas.py",
+          "path": "simulations/base/formulas.py",
+          "version": null,
+          "title": null,
+          "description": "Formula Registry for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "generate_simulations_index.py",
+          "path": "simulations/Constants/generate_simulations_index.py",
+          "version": null,
+          "title": "Simulations Index Generator",
+          "description": "Auto-generates simulations-index.json by scanning simulations directory.",
+          "status": null
+        },
+        {
+          "file": "hebrew_naming.py",
+          "path": "simulations/Constants/hebrew_naming.py",
+          "version": null,
+          "title": "Hebrew Letter Naming Conventions",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "html_to_section_json.py",
+          "path": "simulations/Constants/ad-hoc/html_to_section_json.py",
+          "version": null,
+          "title": null,
+          "description": "HTML to Section JSON Converter",
+          "status": null
+        },
+        {
+          "file": "injector.py",
+          "path": "simulations/base/injector.py",
+          "version": null,
+          "title": null,
+          "description": "Injection Utilities",
+          "status": null
+        },
+        {
+          "file": "merge_sections_to_theory.py",
+          "path": "simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+          "version": null,
+          "title": null,
+          "description": "Merge Section JSONs into theory_output.json",
+          "status": null
+        },
+        {
+          "file": "precision.py",
+          "path": "simulations/base/precision.py",
+          "version": null,
+          "title": null,
+          "description": "precision.py - Sterile Decimal-50 Precision Engine",
+          "status": null
+        },
+        {
+          "file": "registry.py",
+          "path": "simulations/base/registry.py",
+          "version": null,
+          "title": null,
+          "description": "PMRegistry - Central Parameter, Formula, and Section Registry",
+          "status": null
+        },
+        {
+          "file": "schema.py",
+          "path": "simulations/base/schema.py",
+          "version": null,
+          "title": null,
+          "description": "Simulation Return Schema",
+          "status": null
+        },
+        {
+          "file": "section_schema.py",
+          "path": "simulations/Constants/section_schema.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Section JSON Schema",
+          "status": null
+        },
+        {
+          "file": "sections.py",
+          "path": "simulations/base/sections.py",
+          "version": null,
+          "title": null,
+          "description": "Section Registry for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "simulation_base.py",
+          "path": "simulations/base/simulation_base.py",
+          "version": null,
+          "title": null,
+          "description": "Simulation Base Classes",
+          "status": null
+        },
+        {
+          "file": "split_theory_output.py",
+          "path": "simulations/Constants/split_theory_output.py",
+          "version": null,
+          "title": null,
+          "description": "Split theory_output.json into Cacheable Components",
+          "status": null
+        },
+        {
+          "file": "units.py",
+          "path": "simulations/base/units.py",
+          "version": null,
+          "title": null,
+          "description": "Unit Conversion Utilities for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "update_sections_metadata.py",
+          "path": "simulations/Constants/ad-hoc/update_sections_metadata.py",
+          "version": null,
+          "title": null,
+          "description": "Update sections metadata in theory_output.json",
+          "status": null
+        },
+        {
+          "file": "update_values.py",
+          "path": "simulations/Constants/ad-hoc/update_values.py",
+          "version": null,
+          "title": null,
+          "description": "Helper script to update the gauge unification values in the HTML file",
+          "status": null
+        },
+        {
+          "file": "validator.py",
+          "path": "simulations/base/validator.py",
+          "version": null,
+          "title": null,
+          "description": "Validation Utilities",
+          "status": null
+        }
+      ],
+      "count": 23
+    },
+    "Core Physics": {
+      "title": "Core Physics",
+      "path": "simulations/",
+      "folderName": "Core Physics",
+      "description": "",
+      "isV16": false,
+      "order": 50,
+      "sectionId": null,
+      "scripts": [
+        {
+          "file": "FormulasRegistry.py",
+          "path": "simulations/core/FormulasRegistry.py",
+          "version": null,
+          "title": null,
+          "description": "FormulasRegistry.py - Single Source of Truth (SSoT)",
+          "status": null
+        },
+        {
+          "file": "demon_lock_guard.py",
+          "path": "simulations/core/demon_lock_guard.py",
+          "version": null,
+          "title": null,
+          "description": "demon_lock_guard.py - Guard Rail Validator",
+          "status": null
+        },
+        {
+          "file": "dependency_resolver.py",
+          "path": "simulations/core/dependency_resolver.py",
+          "version": null,
+          "title": null,
+          "description": "Dependency Resolver for Principia Metaphysica v20",
+          "status": null
+        },
+        {
+          "file": "identify_ghost_literals.py",
+          "path": "simulations/core/identify_ghost_literals.py",
+          "version": null,
+          "title": null,
+          "description": "Ghost Literal Hunter v17.2 - Identifies hardcoded constants that bypass SSoT",
+          "status": null
+        },
+        {
+          "file": "sync_docs.py",
+          "path": "simulations/core/sync_docs.py",
+          "version": null,
+          "title": null,
+          "description": "Documentation Synchronizer v17.0 - SSoT Documentation Generator",
+          "status": null
+        },
+        {
+          "file": "verify_sterility_report.py",
+          "path": "simulations/core/verify_sterility_report.py",
+          "version": null,
+          "title": null,
+          "description": "Sterility Reporter v23.0 - Sovereign Audit Certificate Generator",
+          "status": null
+        }
+      ],
+      "count": 6
+    },
+    "Validation": {
+      "title": "Validation",
+      "path": "simulations/",
+      "folderName": "Validation",
+      "description": "Validation and testing scripts",
+      "isV16": false,
+      "order": 92,
+      "sectionId": null,
+      "scripts": [
+        {
+          "file": "parameter_sensitivity_test_v23.py",
+          "path": "simulations/validation/parameter_sensitivity_test_v23.py",
+          "version": "23.0",
+          "title": null,
+          "description": "Parameter Sensitivity Test v23",
+          "status": null
+        },
+        {
+          "file": "CERTIFICATES_v16_2.py",
+          "path": "simulations/validation/CERTIFICATES_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "CERTIFICATES_v16_2.py - The 44 Demon-Lock Certificates",
+          "status": null
+        },
+        {
+          "file": "formula_validator_v16_2.py",
+          "path": "simulations/validation/formula_validator_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Formula Validator v16.2",
+          "status": null
+        },
+        {
+          "file": "output_validator_v16_2.py",
+          "path": "simulations/validation/output_validator_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Unified Output Validator v16.2",
+          "status": null
+        },
+        {
+          "file": "sigma_validator_final_v16_2.py",
+          "path": "simulations/validation/sigma_validator_final_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Final Sigma Validator and Zenodo Manifest Generator v16.2",
+          "status": null
+        },
+        {
+          "file": "symplectic_descent_validator_v16_2.py",
+          "path": "simulations/validation/symplectic_descent_validator_v16_2.py",
+          "version": "16.2",
+          "title": "Dual-Shadow Descent Validator",
+          "description": "The Ghost-Free Proof: Demonstrates that the (24,1) signature with Euclidean bridge",
+          "status": null
+        },
+        {
+          "file": "tft_rigor_proofs_v16_2.py",
+          "path": "simulations/validation/tft_rigor_proofs_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "TFT Rigor Proofs v16.2 - Demon-Lock Level Certificate Validation",
+          "status": null
+        },
+        {
+          "file": "unit_validator_v16_2.py",
+          "path": "simulations/validation/unit_validator_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Unit Validation System v16.2",
+          "status": null
+        },
+        {
+          "file": "unitary_filter_v16_2.py",
+          "path": "simulations/validation/unitary_filter_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Principia Metaphysica - Ghost-Free Stability Check v16.2",
+          "status": null
+        },
+        {
+          "file": "validation_schema_v16_2.py",
+          "path": "simulations/validation/validation_schema_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Validation Schema v16.2 - Single Source of Truth Definitions",
+          "status": null
+        },
+        {
+          "file": "add_simulation_links_to_theory.py",
+          "path": "simulations/validation/add_simulation_links_to_theory.py",
+          "version": null,
+          "title": null,
+          "description": "Add Simulation File Links to theory_output.json",
+          "status": null
+        },
+        {
+          "file": "anisotropy_check.py",
+          "path": "simulations/validation/rigidity/anisotropy_check.py",
+          "version": null,
+          "title": "Anisotropy Validation",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "bulk_leakage_monitor.py",
+          "path": "simulations/validation/sim/bulk_leakage_monitor.py",
+          "version": null,
+          "title": "Bulk Leakage Monitor",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "certificate_stack.py",
+          "path": "simulations/validation/audit/certificate_stack.py",
+          "version": null,
+          "title": "Certificate Stack",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "conftest.py",
+          "path": "simulations/tests/conftest.py",
+          "version": null,
+          "title": null,
+          "description": "Pytest Configuration for Principia Metaphysica Tests",
+          "status": null
+        },
+        {
+          "file": "eta_s_derivation_test.py",
+          "path": "simulations/validation/eta_s_derivation_test.py",
+          "version": null,
+          "title": null,
+          "description": "eta_S Geometric Derivation Test",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "final_gates.py",
+          "path": "simulations/validation/audit/final_gates.py",
+          "version": null,
+          "title": "Final Gates (C35-C41)",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "formula_validator.py",
+          "path": "simulations/validation/audit/formula_validator.py",
+          "version": null,
+          "title": "Formula Validator",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "generate_72_certificates.py",
+          "path": "simulations/validation/generate_72_certificates.py",
+          "version": null,
+          "title": null,
+          "description": "Generate all 72 Gate Certificates with honest verification status.",
+          "status": null
+        },
+        {
+          "file": "generate_72gates_json.py",
+          "path": "simulations/validation/generate_72gates_json.py",
+          "version": null,
+          "title": null,
+          "description": "Generate 72 Gates JSON for the certificates page.",
+          "status": null
+        },
+        {
+          "file": "hard_certificate_audit.py",
+          "path": "simulations/validation/audit/hard_certificate_audit.py",
+          "version": null,
+          "title": "Hard Certificate Audit",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "isotropic_flow_validator.py",
+          "path": "simulations/validation/sim/isotropic_flow_validator.py",
+          "version": null,
+          "title": "Isotropic Flow Validator",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "manifold_curvature.py",
+          "path": "simulations/validation/sim/manifold_curvature.py",
+          "version": null,
+          "title": "Manifold Curvature",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "omega_seal_generator.py",
+          "path": "simulations/validation/audit/omega_seal_generator.py",
+          "version": null,
+          "title": "Omega Seal Generator",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "recursive_symmetry_gatekeeper.py",
+          "path": "simulations/validation/recursive_symmetry_gatekeeper.py",
+          "version": null,
+          "title": null,
+          "description": "Recursive Symmetry Gatekeeper - v16.2 Topological Validator",
+          "status": null
+        },
+        {
+          "file": "stress_test_rigidity.py",
+          "path": "simulations/validation/rigidity/stress_test_rigidity.py",
+          "version": null,
+          "title": "Stress Test Rigidity",
+          "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null
+        },
+        {
+          "file": "terminal_certificates.py",
+          "path": "simulations/validation/audit/terminal_certificates.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "v16_2_logic_check.py",
+          "path": "simulations/validation/v16_2_logic_check.py",
+          "version": null,
+          "title": null,
+          "description": "Validates all v16.2 physics fixes and ensures parameter consistency.",
+          "status": null
+        },
+        {
+          "file": "validate_bidirectional_links.py",
+          "path": "simulations/validation/validate_bidirectional_links.py",
+          "version": null,
+          "title": null,
+          "description": "Validate Bi-directional Links in theory_output.json",
+          "status": null
+        },
+        {
+          "file": "validate_bindings_final.py",
+          "path": "simulations/validation/validate_bindings_final.py",
+          "version": null,
+          "title": null,
+          "description": "PM Binding Validation Script",
+          "status": null
+        },
+        {
+          "file": "validate_dynamic_vs_hardcoded.py",
+          "path": "simulations/validation/validate_dynamic_vs_hardcoded.py",
+          "version": null,
+          "title": null,
+          "description": "Validation script to compare dynamic content from theory_output.json",
+          "status": null
+        },
+        {
+          "file": "validate_experimental_compliance.py",
+          "path": "simulations/validation/validate_experimental_compliance.py",
+          "version": null,
+          "title": null,
+          "description": "Validate Experimental Value Compliance",
+          "status": null
+        },
+        {
+          "file": "validate_formula_lookups.py",
+          "path": "simulations/validation/validate_formula_lookups.py",
+          "version": null,
+          "title": null,
+          "description": "Validate Formula and Parameter Lookups",
+          "status": null
+        },
+        {
+          "file": "validate_metadata_fix.py",
+          "path": "simulations/validation/validate_metadata_fix.py",
+          "version": null,
+          "title": null,
+          "description": "Validate that all parameter metadata has been properly fixed.",
+          "status": null
+        },
+        {
+          "file": "validate_param_references.py",
+          "path": "simulations/validation/validate_param_references.py",
+          "version": null,
+          "title": null,
+          "description": "Validate Parameter References in HTML Files",
+          "status": null
+        },
+        {
+          "file": "validate_section_references.py",
+          "path": "simulations/validation/validate_section_references.py",
+          "version": null,
+          "title": null,
+          "description": "Validate that all formula and parameter references in sections actually exist",
+          "status": null
+        },
+        {
+          "file": "validate_simulation_chain.py",
+          "path": "simulations/validation/validate_simulation_chain.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Simulation Chain Validator",
+          "status": null
+        },
+        {
+          "file": "validate_simulation_links.py",
+          "path": "simulations/validation/validate_simulation_links.py",
+          "version": null,
+          "title": null,
+          "description": "Simulation Link Validation Script",
+          "status": null
+        },
+        {
+          "file": "validate_theory_output.py",
+          "path": "simulations/validation/validate_theory_output.py",
+          "version": null,
+          "title": null,
+          "description": "Principia Metaphysica - Theory Output Validator",
+          "status": null
+        },
+        {
+          "file": "validation_modules.py",
+          "path": "simulations/validation/validation_modules.py",
+          "version": null,
+          "title": null,
+          "description": "This is the intellectual property of Andrew Keith Watts. Unauthorized",
+          "status": null
+        },
+        {
+          "file": "verify_content_migration.py",
+          "path": "simulations/validation/verify_content_migration.py",
+          "version": null,
+          "title": null,
+          "description": "Content Migration Verification Script",
+          "status": null
+        }
+      ],
+      "count": 41
+    }
+  }
+}
