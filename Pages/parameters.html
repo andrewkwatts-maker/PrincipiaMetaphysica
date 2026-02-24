@@ -1130,8 +1130,6 @@
         // PARAMETERS PAGE - Dynamic Loading from parameters.json
         // ====================================================================
 
-        console.log('%c[PARAMETERS] Script loaded', 'color: cyan; font-weight: bold; font-size: 14px');
-        console.log('[PARAMETERS] Starting parameters page initialization...');
 
         let allParameters = [];
         let parametersByCategory = {};
@@ -1381,55 +1379,40 @@
 
         // Initialize the page
         async function initializePage() {
-            console.log('[PARAMETERS] Starting initialization...');
             try {
                 // Load ALL data from theory_output.json
-                console.log('[PARAMETERS] Loading data...');
                 const theoryData = await loadTheoryOutputJSON();
-                console.log('[PARAMETERS] Data loaded successfully:', theoryData);
 
                 // Load formulas for cross-referencing
-                console.log('[PARAMETERS] Loading formulas...');
                 await loadFormulasJSON();
 
                 // Process and organize ALL parameters
-                console.log('[PARAMETERS] Processing parameters...');
                 processAllParameters(theoryData);
-                console.log(`[PARAMETERS] Processed ${allParameters.length} parameters in ${Object.keys(parametersByCategory).length} categories`);
 
                 // Populate category filter
-                console.log('[PARAMETERS] Populating category filter...');
                 populateCategoryFilter();
 
                 // Render the parameters
-                console.log('[PARAMETERS] Rendering parameters...');
                 renderParameters();
 
                 // Render the OOM table
-                console.log('[PARAMETERS] Rendering OOM table...');
                 renderOOMTable();
 
                 // Setup event listeners
-                console.log('[PARAMETERS] Setting up event listeners...');
                 setupEventListeners();
 
                 // Setup view toggle
-                console.log('[PARAMETERS] Setting up view toggle...');
                 setupViewToggle();
 
                 // Setup table sorting
-                console.log('[PARAMETERS] Setting up table sorting...');
                 setupTableSorting();
 
                 // Update statistics
-                console.log('[PARAMETERS] Updating statistics...');
                 updateStatistics();
 
                 // Hide loading, show content
-                console.log('[PARAMETERS] Hiding loading indicator...');
                 hideLoading();
 
-                console.log('[PARAMETERS] ✓ Initialization complete!');
             } catch (error) {
                 console.error('[PARAMETERS] ❌ Error initializing parameters page:', error);
                 console.error('[PARAMETERS] Stack trace:', error.stack);
@@ -1447,25 +1430,17 @@
                 '../theory_output.json'
             ];
 
-            console.log('[PARAMETERS] Attempting to load from paths:', paths);
 
             for (const path of paths) {
                 try {
-                    console.log(`[PARAMETERS] Trying: ${path}`);
                     const response = await fetch(path);
-                    console.log(`[PARAMETERS] Response status for ${path}: ${response.status}`);
 
                     if (response.ok) {
                         const data = await response.json();
-                        console.log(`[PARAMETERS] ✓ Loaded data from ${path}`);
-                        console.log(`[PARAMETERS]   Version: ${data.version}`);
 
                         // Handle both parameters.json and theory_output.json formats
                         if (data.parameters && !data.simulations) {
                             // This is parameters.json format - wrap it
-                            console.log(`[PARAMETERS]   Format: parameters.json`);
-                            console.log(`[PARAMETERS]   Parameters keys: ${Object.keys(data.parameters).length}`);
-                            console.log(`[PARAMETERS]   Sample keys:`, Object.keys(data.parameters).slice(0, 10));
                             return {
                                 version: data.version,
                                 parameters: data.parameters,
@@ -1475,10 +1450,6 @@
                             };
                         } else {
                             // This is theory_output.json format
-                            console.log(`[PARAMETERS]   Format: theory_output.json`);
-                            console.log(`[PARAMETERS]   Simulations: ${Object.keys(data.simulations || {}).length}`);
-                            console.log(`[PARAMETERS]   Parameters: ${Object.keys(data.parameters || {}).length}`);
-                            console.log(`[PARAMETERS]   Framework Stats: ${data.framework_statistics ? 'YES' : 'NO'}`);
                             return data;
                         }
                     }
@@ -1494,13 +1465,11 @@
 
         // Extract ALL parameters from theory_output.json
         function processAllParameters(theoryData) {
-            console.log('[PARAMETERS] processAllParameters called with data:', theoryData);
             allParameters = [];
             parametersByCategory = {};
 
             // 1. Extract from parameters (primary source for parameters.json)
             if (theoryData.parameters) {
-                console.log(`[PARAMETERS] Processing ${Object.keys(theoryData.parameters).length} parameter entries...`);
                 for (const [fullKey, param] of Object.entries(theoryData.parameters)) {
                     // Split key like "constants.M_PLANCK" into category and key
                     const parts = fullKey.split('.');
@@ -1692,9 +1661,6 @@
                 }
             }
 
-            console.log(`[PARAMETERS] ✓ Processed ${allParameters.length} total parameters across ${Object.keys(parametersByCategory).length} categories`);
-            console.log('[PARAMETERS] Categories:', Object.keys(parametersByCategory));
-            console.log('[PARAMETERS] Category counts:', Object.fromEntries(
                 Object.entries(parametersByCategory).map(([cat, params]) => [cat, params.length])
             ));
         }
@@ -1765,12 +1731,9 @@
 
             for (const path of paths) {
                 try {
-                    console.log(`Trying to load parameters from: ${path}`);
                     const response = await fetch(path);
                     if (response.ok) {
                         const data = await response.json();
-                        console.log(`Successfully loaded parameters from ${path}`);
-                        console.log(`Version: ${data.version}`);
                         return data;
                     }
                 } catch (e) {
@@ -1784,7 +1747,6 @@
         async function loadFormulasJSON() {
             // Load formulas from theory_output.json (already loaded in main data)
             // This function now serves as a placeholder - formulas are in theoryData
-            console.log('Formulas loaded from theory_output.json');
         }
 
         function processParameters(data) {
@@ -1801,7 +1763,6 @@
                 processCategory(category, params);
             }
 
-            console.log(`Processed ${allParameters.length} parameters across ${Object.keys(parametersByCategory).length} categories`);
         }
 
         function processCategory(category, params, parentKey = '') {
@@ -2097,11 +2058,9 @@
                 select.appendChild(option);
             }
 
-            console.log(`Populated category filter with ${categories.length} categories`);
         }
 
         function renderParameters() {
-            console.log('[PARAMETERS] renderParameters called');
             const container = document.getElementById('parameters-container');
             if (!container) {
                 console.error('[PARAMETERS] ❌ parameters-container element not found!');
@@ -2115,30 +2074,24 @@
             for (const [category, params] of Object.entries(parametersByCategory)) {
                 if (params.length === 0) continue;
 
-                console.log(`[PARAMETERS] Rendering category: ${category} (${params.length} parameters)`);
                 const section = renderCategorySection(category, params);
                 container.appendChild(section);
                 totalRendered += params.length;
             }
 
-            console.log(`[PARAMETERS] ✓ Rendered ${totalRendered} parameters in ${Object.keys(parametersByCategory).length} categories`);
 
             // Trigger MathJax rendering (with proper check for async loading)
             if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
-                console.log('[PARAMETERS] Triggering MathJax typeset...');
                 MathJax.typesetPromise().then(() => {
-                    console.log('[PARAMETERS] ✓ MathJax typeset complete');
                 }).catch(err => {
                     console.warn('[PARAMETERS] MathJax typeset error:', err);
                 });
             } else if (window.MathJax) {
                 // MathJax is loading but typesetPromise not ready - wait and retry
-                console.log('[PARAMETERS] MathJax loading, waiting for typesetPromise...');
                 const checkMathJax = setInterval(() => {
                     if (typeof window.MathJax.typesetPromise === 'function') {
                         clearInterval(checkMathJax);
                         window.MathJax.typesetPromise().then(() => {
-                            console.log('[PARAMETERS] ✓ MathJax typeset complete (delayed)');
                         }).catch(err => {
                             console.warn('[PARAMETERS] MathJax typeset error:', err);
                         });
@@ -2615,7 +2568,6 @@
                 tbody.appendChild(tr);
             });
 
-            console.log(`Rendered OOM table with ${sortedParams.length} parameters (filtered from ${allParameters.length} total)`);
         }
 
         function getSigmaClass(sigma) {
@@ -2771,7 +2723,6 @@
             ).length;
             const within1sigma = allParameters.filter(p => p.sigma !== null && p.sigma < 1).length;
 
-            console.log(`[PARAMETERS] Updating statistics: total=${total}, categories=${categories}, validated=${validated}, within1σ=${within1sigma}`);
 
             document.getElementById('stat-total').textContent = total;
             document.getElementById('stat-visible').textContent = total;
@@ -2781,20 +2732,17 @@
         }
 
         function hideLoading() {
-            console.log('[PARAMETERS] hideLoading called');
             const loadingIndicator = document.getElementById('loading-indicator');
             const parametersContainer = document.getElementById('parameters-container');
 
             if (loadingIndicator) {
                 loadingIndicator.style.display = 'none';
-                console.log('[PARAMETERS] ✓ Hidden loading indicator');
             } else {
                 console.warn('[PARAMETERS] ⚠ loading-indicator element not found');
             }
 
             if (parametersContainer) {
                 parametersContainer.style.display = 'block';
-                console.log('[PARAMETERS] ✓ Shown parameters container');
             } else {
                 console.warn('[PARAMETERS] ⚠ parameters-container element not found');
             }
@@ -2809,11 +2757,9 @@
         // Initialize when DOM is ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', () => {
-                console.log('[PARAMETERS] DOM loaded, starting initialization...');
                 initializePage();
             });
         } else {
-            console.log('[PARAMETERS] DOM already loaded, starting initialization immediately...');
             initializePage();
         }
 

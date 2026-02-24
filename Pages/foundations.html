@@ -511,7 +511,6 @@
                     const response = await fetch(prefix + 'foundations_registry.json');
                     if (response.ok) {
                         const data = await response.json();
-                        console.log(`Loaded foundations_registry.json from ${prefix}`);
 
                         // Combine all foundation types into one array
                         const allFoundations = [
@@ -706,7 +705,6 @@
             const targetId = pageId || hash;
 
             if (targetId) {
-                console.log(`URL navigation: targeting "${targetId}"`);
 
                 // Find the element
                 const element = document.getElementById(targetId) ||

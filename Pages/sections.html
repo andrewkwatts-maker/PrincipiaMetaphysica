@@ -32,7 +32,6 @@
             startup: {
                 pageReady: () => {
                     return MathJax.startup.defaultPageReady().then(() => {
-                        console.log('MathJax initial typesetting complete');
                     });
                 }
             }
@@ -1631,11 +1630,9 @@
 
                     for (const path of sectionsPaths) {
                         try {
-                            console.log(`Trying to load from: ${path}`);
                             const response = await fetch(path);
                             if (response.ok) {
                                 const data = await response.json();
-                                console.log(`Successfully loaded sections from: ${path}`);
 
                                 const sections = data.sections || data;
                                 if (sections && Object.keys(sections).length > 0) {
@@ -1644,7 +1641,6 @@
                                 }
                             }
                         } catch (e) {
-                            console.log(`Failed to load from ${path}:`, e.message);
                             continue;
                         }
                     }
@@ -1659,11 +1655,9 @@
 
                     for (const path of fallbackPaths) {
                         try {
-                            console.log(`Trying fallback: ${path}`);
                             const response = await fetch(path);
                             if (response.ok) {
                                 const data = await response.json();
-                                console.log(`Successfully loaded data from: ${path}`);
 
                                 if (data.sections) {
                                     processSectionsData(data.sections);
@@ -1675,7 +1669,6 @@
                                 }
                             }
                         } catch (e) {
-                            console.log(`Failed to load from ${path}:`, e.message);
                             continue;
                         }
                     }
@@ -2312,7 +2305,6 @@
                     }
                 }
 
-                console.log('Built section name map:', Object.keys(SECTION_NAME_MAP).length, 'entries');
             }
 
             /**
@@ -2393,7 +2385,6 @@
              * Initialize app
              */
             async function init() {
-                console.log('Initializing Sections Browser...');
 
                 const loaded = await loadSectionsData();
                 if (!loaded) {
@@ -2406,15 +2397,11 @@
                     return;
                 }
 
-                console.log(`%cLoaded ${allSections.length} sections`, 'color: green; font-weight: bold');
 
                 // Log section breakdown
                 const numbered = allSections.filter(s => /^\d+$/.test(s.id)).length;
                 const appendices = allSections.filter(s => /^[A-Z]$/.test(s.id)).length;
                 const special = allSections.length - numbered - appendices;
-                console.log(`  • Numbered sections (1-9): ${numbered}`);
-                console.log(`  • Appendices (A-N): ${appendices}`);
-                console.log(`  • Special sections: ${special}`);
 
                 // Build dynamic section name map for URL navigation
                 buildSectionNameMap();
@@ -2428,7 +2415,6 @@
                 // Handle initial hash (for tab and section navigation)
                 handleHash();
 
-                console.log('%cSections Browser initialized successfully', 'color: green; font-weight: bold');
             }
 
             // Start the app when DOM is ready

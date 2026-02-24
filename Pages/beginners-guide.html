@@ -2967,7 +2967,6 @@
                         if (response.ok) {
                             const data = await response.json();
                             this.topics = data.topics || [];
-                            console.log(`✓ Loaded ${this.topics.length} beginner topics from ${path}`);
                             return true;
                         }
                     } catch (e) {
@@ -3164,7 +3163,6 @@
             }
         }
 
-        console.log(`Validation stats updated: ${within1sigma}/${total} within 1σ (${percent}%), ${exact} central value matches, DESI ${desiSigma}σ`);
     });
     </script>
 
