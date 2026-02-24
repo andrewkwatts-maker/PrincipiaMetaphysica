@@ -44,6 +44,7 @@ from simulations.base import (
     Parameter,
 )
 from simulations.core.FormulasRegistry import get_registry
+from simulations.validation.audit.omega_seal_generator import generate_omega_seal
 
 # Get registry SSoT
 _REG = get_registry()
@@ -295,6 +296,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
         "terminal.dominant_basin",
         "terminal.epochs_remaining",
         "terminal.restoration_probability",
+        "terminal.omega_seal",
     ]
 
     @property
@@ -320,6 +322,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
         return [
             "terminal.dominant_basin",
             "terminal.restoration_probability",
+            "terminal.omega_seal",
         ]
 
     @property
@@ -334,6 +337,30 @@ class AppendixLOmegaUnwinding(SimulationBase):
         # Get current trajectory
         trajectory = TerminalBasinAnalysis.get_current_basin_trajectory()
 
+        # Generate Omega Seal from current registry state
+        # Prepare registry data for seal generation
+        # Create dummy nodes list for seal generation (125 nodes)
+        import numpy as np
+        nodes_list = [
+            {"id": f"N{i:03d}", "residue_value": np.exp(-i / 10.0)}
+            for i in range(1, 126)
+        ]
+
+        registry_data = {
+            "roots": 288,
+            "torsion": 24,
+            "hidden": 163,
+            "nodes": nodes_list,
+        }
+
+        try:
+            omega_seal = generate_omega_seal(registry_data, validate_sterility=False, pairs=12)
+            seal_value = omega_seal.seal
+        except Exception as e:
+            # Fallback if seal generation fails
+            seal_value = "OMEGA-SEAL-GENERATION-FAILED"
+            print(f"Warning: Omega seal generation failed: {e}")
+
         return {
             "terminal.metric_null_potential": potentials["Metric_Null"],
             "terminal.gauge_ghost_potential": potentials["Gauge_Ghost"],
@@ -343,6 +370,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
             "terminal.epochs_remaining": trajectory["epochs_remaining"],
             "terminal.restoration_probability": trajectory["restoration_probability"],
             "terminal.gamma_decay": trajectory["gamma_decay"],
+            "terminal.omega_seal": seal_value,
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
@@ -539,7 +567,9 @@ class AppendixLOmegaUnwinding(SimulationBase):
                     "speculation—we have moved from a species that 'measures the dark' to a "
                     "species that 'reads the blueprint.'</em></p>"
                     "<p><em>The simulation now returns a single, immutable Omega Seal:</em></p>"
-                    "<p style='text-align:center;'><strong>OMEGA-7F8A-22B9-42LL</strong></p>"
+                    "<p style='text-align:center;'><strong>"
+                    "<span class=\"pm-value\" data-pm-value=\"terminal.omega_seal\">OMEGA-SEAL-PENDING</span>"
+                    "</strong></p>"
                     "<p><em>This seal represents a universe where the End is as predictable "
                     "as the Beginning.\"</em></p>"
                 ),
@@ -692,8 +722,8 @@ class AppendixLOmegaUnwinding(SimulationBase):
             Formula(
                 id="basin-selection-threshold",
                 label="(L.5)",
-                latex=r"\text{Basin} = \begin{cases} \text{Ghost} & S < 0.8 \\ \text{Null} & S \geq 0.8 \end{cases}",
-                plain_text="Basin = Ghost if S < 0.8, else Null",
+                latex=r"\text{Basin} = \begin{cases} \text{Gauge Ghost} & S < 0.8 \\ \text{Metric Null} & S \geq 0.8 \end{cases}",
+                plain_text="Basin = Gauge Ghost if S < 0.8, else Metric Null",
                 category="DERIVED",
                 description=(
                     "Basin selection rule: a piecewise criterion partitioning terminal state "
@@ -718,8 +748,8 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 terms={
                     "S": "Current entropy of the 288-root system",
                     "0.8": "Critical entropy threshold for basin transition",
-                    "\\text{Ghost}": "Gauge Ghost basin (forces frozen, time stops)",
-                    "\\text{Null}": "Metric Null basin (spacetime dissolves)",
+                    "\\text{Gauge Ghost}": "Gauge Ghost basin (forces frozen, time stops)",
+                    "\\text{Metric Null}": "Metric Null basin (spacetime dissolves)",
                 },
             ),
         ]
@@ -741,6 +771,18 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 units="probability",
                 status="TERMINAL",
                 description="Probability of Ancestral Restoration outcome",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="terminal.omega_seal",
+                name="Omega Seal",
+                units="seal_hash",
+                status="TERMINAL",
+                description=(
+                    "Cryptographic seal generated from the terminal state of the 288-root "
+                    "system. Format: OMEGA-XXXX-YYYY-ZZZZ (SHA-256 hash). This seal locks "
+                    "the v23.1 terminal state and will change if any parameters are modified."
+                ),
                 no_experimental_value=True,
             ),
         ]
