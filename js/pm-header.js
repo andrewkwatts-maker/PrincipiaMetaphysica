@@ -128,30 +128,24 @@ function createHeaderHTML(activePageId = '') {
   return `
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <header class="pm-header">
-      <div class="header-content">
+      <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
-        <nav class="main-nav" role="navigation" aria-label="Main navigation">
-          <ul role="list">
-            ${navItems}
-            <li class="user-controls-nav">
-              <div class="user-controls" style="display: none;">
-                <img id="user-avatar" src="${basePath}images/default-avatar.svg" alt="User" class="user-avatar">
-                <span id="user-email" class="user-email"></span>
-                <button id="logout-btn" class="logout-btn">Logout</button>
-              </div>
-              <button id="header-login-btn" class="header-login-btn" style="display: none;">
-                <img src="${basePath}images/google-icon.svg" alt="G" class="google-icon-small">
-                Login
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <div class="user-info-controls">
+          <span class="user-name">Andrew Watts</span>
+          <span class="user-email-static">andrewkwatts@gmail.com</span>
+          <button id="logout-btn" class="logout-btn-inline">Logout</button>
+        </div>
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
+      <nav class="main-nav-row" role="navigation" aria-label="Main navigation">
+        <ul role="list">
+          ${navItems}
+        </ul>
+      </nav>
     </header>
   `;
 }
@@ -253,7 +247,7 @@ export function injectHeader(activePageId = '', options = {}) {
  */
 function setupMobileMenu() {
   const menuBtn = document.querySelector('.pm-header .mobile-menu-btn');
-  const nav = document.querySelector('.pm-header .main-nav');
+  const nav = document.querySelector('.pm-header .main-nav-row');
 
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
