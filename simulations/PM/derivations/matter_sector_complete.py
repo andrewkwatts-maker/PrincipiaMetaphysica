@@ -879,7 +879,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             id="higgs-doublet-emergence-v19",
             label="(3.4.5)",
             latex=(
-                r"H = \begin{pmatrix} H^+ \\ H^0 \end{pmatrix} \leftarrow "
+                r"H = \left(\begin{smallmatrix} H^+ \\ H^0 \end{smallmatrix}\right) \leftarrow "
                 r"\text{Kahler modulus } T_H = \text{Vol}(\Sigma_H^3) + i C_3"
             ),
             plain_text="H = (H+; H0) <-- Kahler modulus T_H = Vol(Sigma_H) + i*C_3",
@@ -987,9 +987,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             id="yukawa-hierarchy-texture-v19",
             label="(3.4.10)",
             latex=(
-                r"\mathbf{Y} = \begin{pmatrix} "
+                r"\mathbf{Y} = \left(\begin{smallmatrix} "
                 r"\varepsilon^6 & 0 & 0 \\ 0 & \varepsilon^2 & 0 \\ 0 & 0 & 1 "
-                r"\end{pmatrix} \times O(1)"
+                r"\end{smallmatrix}\right) \times O(1)"
             ),
             plain_text="Y = diag(epsilon^6, epsilon^2, 1) * O(1)",
             category="DERIVED",

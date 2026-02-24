@@ -621,10 +621,10 @@ class GaugeSectorCompleteDerivations(SimulationBase):
 
         # Mixing matrix in LaTeX
         mixing_matrix = (
-            r"\begin{pmatrix} A_\mu \\ Z_\mu \end{pmatrix} = "
-            r"\begin{pmatrix} \cos\theta_W & \sin\theta_W \\ "
-            r"-\sin\theta_W & \cos\theta_W \end{pmatrix} "
-            r"\begin{pmatrix} B_\mu \\ W^3_\mu \end{pmatrix}"
+            r"\left(\begin{smallmatrix} A_\mu \\ Z_\mu \end{smallmatrix}\right) = "
+            r"\left(\begin{smallmatrix} \cos\theta_W & \sin\theta_W \\ "
+            r"-\sin\theta_W & \cos\theta_W \end{smallmatrix}\right) "
+            r"\left(\begin{smallmatrix} B_\mu \\ W^3_\mu \end{smallmatrix}\right)"
         )
 
         # Shadow tilt origin
@@ -1116,10 +1116,10 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             id="ew-mixing-matrix-v19",
             label="(3.3.14)",
             latex=(
-                r"\begin{pmatrix}A_\mu\\Z_\mu\end{pmatrix} = "
-                r"\begin{pmatrix}\cos\theta_W & \sin\theta_W\\"
-                r"-\sin\theta_W & \cos\theta_W\end{pmatrix}"
-                r"\begin{pmatrix}B_\mu\\W^3_\mu\end{pmatrix}"
+                r"\left(\begin{smallmatrix}A_\mu\\Z_\mu\end{smallmatrix}\right) = "
+                r"\left(\begin{smallmatrix}\cos\theta_W & \sin\theta_W\\"
+                r"-\sin\theta_W & \cos\theta_W\end{smallmatrix}\right)"
+                r"\left(\begin{smallmatrix}B_\mu\\W^3_\mu\end{smallmatrix}\right)"
             ),
             plain_text=(
                 "[A_mu; Z_mu] = [[cos(theta_W), sin(theta_W)]; "

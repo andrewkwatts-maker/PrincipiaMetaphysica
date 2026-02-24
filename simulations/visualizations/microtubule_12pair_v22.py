@@ -398,7 +398,7 @@ def create_pair_mandala():
            fontsize=10, color='#9b59b6', ha='center', va='center')
 
     # OR operator annotation
-    ax.text(1.2, -1.2, r'$R_\perp = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}$',
+    ax.text(1.2, -1.2, r'$R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)$',
            fontsize=10, color='cyan', ha='center', va='center',
            bbox=dict(boxstyle='round', facecolor='#1a1a2e', edgecolor='cyan', alpha=0.8))
 

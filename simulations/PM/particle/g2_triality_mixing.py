@@ -498,7 +498,7 @@ class G2TrialityMixing:
             {
                 "id": "triality-ckm-wolfenstein",
                 "label": "(T.1)",
-                "latex": r"V_{\text{CKM}} \sim \begin{pmatrix} 1 & \epsilon & \epsilon^3 \\ \epsilon & 1 & \epsilon^2 \\ \epsilon^3 & \epsilon^2 & 1 \end{pmatrix}",
+                "latex": r"V_{\text{CKM}} \sim \left(\begin{smallmatrix} 1 & \epsilon & \epsilon^3 \\ \epsilon & 1 & \epsilon^2 \\ \epsilon^3 & \epsilon^2 & 1 \end{smallmatrix}\right)",
                 "plain_text": "V_CKM ~ Wolfenstein form with lambda = epsilon ~ 0.223",
                 "category": "DERIVED",
                 "description": "CKM matrix in Wolfenstein parametrization from 3D associative cycle rigidity",
