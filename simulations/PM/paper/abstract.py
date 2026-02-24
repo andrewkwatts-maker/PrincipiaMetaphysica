@@ -115,6 +115,9 @@ class AbstractV17_2(SimulationBase):
             "abstract.theta23_io_central",
             "alp.mass_meV",
             "alp.coupling_GeV_inv",
+            "validation.total_predictions",
+            "validation.predictions_within_1sigma",
+            "validation.exact_matches",
         ]
 
     @property
@@ -160,6 +163,10 @@ class AbstractV17_2(SimulationBase):
             "abstract.pure_predictions":       55,
             "abstract.calibration_inputs":     3,
             "abstract.fitted_pmns":            2,
+            # Validation statistics (Standard Model parameter comparisons)
+            "validation.total_predictions":    26,   # Total SM parameters with experimental comparisons
+            "validation.predictions_within_1sigma": 24,  # Within 1σ of experimental values
+            "validation.exact_matches":        3,    # Within 0.1σ (theory uncertainty level)
             # Calibration coefficients
             "abstract.vev_coefficient":        1.5859,
             "abstract.alpha_gut_coefficient":  round(1.0 / (10.0 * math.pi), 6),  # 0.031831
@@ -602,6 +609,31 @@ class AbstractV17_2(SimulationBase):
                 units="GeV^-1",
                 description="ALP-photon coupling strength g_aγγ from Euclidean Information Sector (S_EIS) coupling - testable by IAXO/BabyIAXO 2025-2028 (PREDICTED: no current experimental bound)",
                 status="PREDICTED"
+            ),
+            # Validation Statistics
+            Parameter(
+                path="validation.total_predictions",
+                name="Total Standard Model Parameter Predictions",
+                no_experimental_value=True,
+                units="count",
+                description="Total number of Standard Model parameters with both theoretical predictions and experimental comparison data",
+                status="SYSTEM"
+            ),
+            Parameter(
+                path="validation.predictions_within_1sigma",
+                name="Predictions Within 1-Sigma",
+                no_experimental_value=True,
+                units="count",
+                description="Number of Standard Model parameter predictions within 1σ of experimental central values",
+                status="SYSTEM"
+            ),
+            Parameter(
+                path="validation.exact_matches",
+                name="Exact Matches (Within Theory Uncertainty)",
+                no_experimental_value=True,
+                units="count",
+                description="Number of predictions within 0.1σ of experimental values (within theory-level uncertainty)",
+                status="SYSTEM"
             ),
         ]
 
