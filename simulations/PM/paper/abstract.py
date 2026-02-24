@@ -98,23 +98,35 @@ class AbstractV17_2(SimulationBase):
     def output_params(self) -> List[str]:
         """Abstract-level metadata parameters registered for data-pm-value spans."""
         return [
+            # Framework version parameters
+            "framework.version",
+            "framework.version_major",
+            "framework.version_label",
+            "framework.version_major_label",
+            # Abstract counts
             "abstract.total_constants",
             "abstract.pure_predictions",
             "abstract.calibration_inputs",
             "abstract.fitted_pmns",
+            # Calibration coefficients
             "abstract.vev_coefficient",
             "abstract.alpha_gut_coefficient",
+            # Theory-level sigma comparisons
             "abstract.alpha_inv_theory_sigma",
             "abstract.theta23_sigma_io",
+            # DESI parameters
             "abstract.desi_w0_uncertainty",
+            # Display values
             "abstract.tau_p_display",
             "abstract.tau_p_bound_display",
             "abstract.dark_force_pleak",
             "abstract.alpha_inv_pred",
             "abstract.alpha_inv_codata",
             "abstract.theta23_io_central",
+            # ALP parameters
             "alp.mass_meV",
             "alp.coupling_GeV_inv",
+            # Validation statistics
             "validation.total_predictions",
             "validation.predictions_within_1sigma",
             "validation.exact_matches",
