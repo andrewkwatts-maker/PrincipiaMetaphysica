@@ -586,10 +586,7 @@ class MethodologyV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content=(
-                    "\\text{Code: } \\texttt{compute\\_alpha\\_inverse(chi\\_eff, b3)} \\quad \\Longleftrightarrow \\quad "
-                    "\\text{Geometry: } \\alpha^{-1} = \\chi_{\\text{eff}} \\times (\\text{G}_2 \\text{ correction})"
-                ),
+                content=r"\begin{aligned} \text{Code:} & \quad \texttt{compute\_alpha\_inverse}(\chi_{\text{eff}}, b_3) \\ \text{Geometry:} & \quad \alpha^{-1} = \chi_{\text{eff}} \times f_{G_2}(\phi, b_3) \end{aligned}",
                 label="algorithmic-symmetry-example"
             ),
             ContentBlock(
