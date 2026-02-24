@@ -58,7 +58,10 @@
       "Bash(set:*)",
       "Bash(\"C:/Users/Andrew/AppData/Local/Microsoft/WindowsApps/PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0/python.exe\" \"H:/Github/PrincipiaMetaphysica/scripts/generate_submission_figures.py\")",
       "Bash(tee:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(\"/c/Program Files/Google/Chrome/Application/chrome.exe\" --headless=new --print-to-pdf=\"h:\\\\Github\\\\PrincipiaMetaphysica\\\\Principia_Metaphysica_v23.1_Paper.pdf\" --disable-gpu --no-sandbox --virtual-time-budget=30000 --print-to-pdf-no-header http://localhost:8003/Pages/paper.html)",
+      "Bash(pkill:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []
