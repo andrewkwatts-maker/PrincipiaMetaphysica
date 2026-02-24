@@ -408,42 +408,22 @@ class FourFaceG2Structure(SimulationBase):
                 },
                 terms={
                     r"n_{\text{pairs}}": {
-                        "description": (
-                            "Total number of bridge pairs connecting dual shadows: "
-                            "n_pairs = chi_eff/12 = 144/12 = 12, where each pair "
-                            "comprises one associative 3-cycle from each shadow"
-                        ),
+                        "description": "Total bridge pairs: χ_eff/12 = 12",
                         "value": 12,
                     },
                     r"n_{\text{aligned}}": {
-                        "description": (
-                            "Number of bridge pairs ALIGNED with the visible-sector "
-                            "OR projection: n_aligned = n_pairs/2 = 6. These pairs "
-                            "contribute to the inter-face leakage coupling alpha_leak "
-                            "= 1/sqrt(n_aligned) = 1/sqrt(6)"
-                        ),
+                        "description": "Bridge pairs aligned with visible sector: n_pairs/2 = 6",
                         "value": 6,
                     },
                     r"n_{\text{orth}}": {
-                        "description": (
-                            "Number of bridge pairs ORTHOGONAL to the visible-sector "
-                            "projection: n_orth = n_pairs/2 = 6. These pairs are "
-                            "geometrically inaccessible to the visible sector and "
-                            "become accessible only via gnosis unlocking"
-                        ),
+                        "description": "Bridge pairs orthogonal to visible sector: n_pairs/2 = 6",
                         "value": 6,
                     },
                     r"R_\perp": {
-                        "description": (
-                            "OR rotation operator [[0,-1],[1,0]]: 90-degree Mobius "
-                            "rotation in the bridge plane classifying pairs as "
-                            "aligned or orthogonal"
-                        ),
+                        "description": "OR rotation operator: 90° Möbius rotation",
                     },
                     r"\chi_{\text{eff}}": {
-                        "description": (
-                            "Effective Euler characteristic of the G2 manifold (= 144)"
-                        ),
+                        "description": "Effective Euler characteristic of G₂ manifold",
                         "value": 144,
                     },
                 },
