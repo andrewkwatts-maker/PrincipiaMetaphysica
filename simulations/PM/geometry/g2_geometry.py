@@ -696,8 +696,17 @@ class G2GeometryV16(SimulationBase):
                 content="The TCS method builds a compact G₂ manifold by gluing two asymptotically cylindrical (ACyl) pieces:"
             ),
             ContentBlock(
+                type="paragraph",
+                content="The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice. For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂):"
+            ),
+            ContentBlock(
                 type="formula",
-                content="The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice: Λ = U³ ⊕ (-E₈)² with rank 22, signature (3,19). For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂): N₊ = N₋ = [[4,7],[7,6]], det(N) = -25, rk(N₊ ∩ N₋) = 2 (full overlap for involution), rk(N₊ + N₋) = 2 ≤ 11 (genericity satisfied)",
+                content=r"""\begin{aligned}
+\text{K3 lattice:} \quad & \Lambda = U^3 \oplus (-E_8)^2, \quad \text{rank} = 22, \quad \text{sig}(3,19) \\
+\text{Picard lattices:} \quad & N_+ = N_- = \begin{pmatrix} 4 & 7 \\ 7 & 6 \end{pmatrix}, \quad \det(N) = -25 \\
+\text{Involution overlap:} \quad & \text{rk}(N_+ \cap N_-) = 2 \quad \text{(full overlap)} \\
+\text{Genericity:} \quad & \text{rk}(N_+ + N_-) = 2 \leq 11 \quad \checkmark
+\end{aligned}""",
                 label=""
             ),
             ContentBlock(
@@ -860,29 +869,29 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The KK masses arise from solving the eigenvalue problem for the Laplacian Δ on the Ricci-flat G₂ manifold:"
+                content="The KK masses arise from solving the Laplacian eigenvalue problem on the Ricci-flat G₂ manifold:"
             ),
             ContentBlock(
                 type="formula",
-                content="Δφ = λφ — Laplacian eigenvalue problem on Ricci-flat G₂",
+                content=r"\Delta \phi = \lambda \phi",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="For a compact manifold with volume V_G₂, the discrete spectrum satisfies:"
+                content="For a compact manifold with volume Vol(G₂), the discrete eigenvalue spectrum scales with mode number n:"
             ),
             ContentBlock(
                 type="formula",
-                content="λ_n ~ n² / Vol(G₂) — Eigenvalue scaling with mode number",
+                content=r"\lambda_n \sim \frac{n^2}{\text{Vol}(G_2)}",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="The normalized volume is computed from the effective Euler characteristic and Betti numbers:"
+                content="The normalized G₂ manifold volume is computed from the effective Euler characteristic χ_eff and third Betti number b₃:"
             ),
             ContentBlock(
                 type="formula",
-                content="Vol(G₂) = √(χ_eff / b₃) = √(144/24) = √6 ≈ 2.45 — G₂ manifold normalized volume",
+                content=r"\text{Vol}(G_2) = \sqrt{\frac{\chi_{\text{eff}}}{b_3}} = \sqrt{\frac{144}{24}} = \sqrt{6} \approx 2.45",
                 label=""
             ),
             ContentBlock(
@@ -905,29 +914,29 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The KK mass scale is derived via k_eff = b₃/(2+ε):"
+                content="The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The first KK mode mass from compactification radius R_c is:"
             ),
             ContentBlock(
                 type="formula",
-                content="m_KK,1 = 1/R_c ≈ 4.5 TeV ± 1.5 TeV (95% CL) — First KK mode from compactification radius",
+                content=r"m_{KK,1} = \frac{1}{R_c} \approx 4.5 \pm 1.5 \, \text{TeV} \quad (95\% \, \text{CL})",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling:"
+                content="The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling with mode number n:"
             ),
             ContentBlock(
                 type="formula",
-                content="m_KK,n = √λ_n × (1/R_c) ≈ √(n²/Vol(G₂)) × 5 TeV — nth KK mode mass",
+                content=r"m_{KK,n} = \sqrt{\lambda_n} \times \frac{1}{R_c} \approx \sqrt{\frac{n^2}{\text{Vol}(G_2)}} \times 5 \, \text{TeV}",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure. For quantum numbers (n,m) labeling the two T² cycles:"
+                content="Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure, with quantum numbers (n,m) labeling the two T² cycles:"
             ),
             ContentBlock(
                 type="formula",
-                content="m_KK(n,m) = √(n² + m²) × 5 TeV — T² Degeneracy Tower Formula",
+                content=r"m_{KK}(n,m) = \sqrt{n^2 + m^2} \times 5 \, \text{TeV}",
                 label=""
             ),
             ContentBlock(
@@ -950,20 +959,20 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. Production occurs primarily through gluon fusion:"
+                content="The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. The first KK mode production cross-section via gluon fusion is:"
             ),
             ContentBlock(
                 type="formula",
-                content="σ(pp → KK₁ + X) ≈ 0.1 fb (at √s = 14 TeV) — First KK mode production cross-section",
+                content=r"\sigma(pp \to KK_1 + X) \approx 0.1 \, \text{fb} \quad (\sqrt{s} = 14 \, \text{TeV})",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. Monte Carlo simulations including SM backgrounds predict a discovery significance of:"
+                content="With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. The expected discovery significance from Monte Carlo simulations including SM backgrounds is:"
             ),
             ContentBlock(
                 type="formula",
-                content="Discovery Significance = 5.2σ with 3 ab⁻¹ — Expected discovery significance at HL-LHC",
+                content=r"S = 5.2\sigma \quad \left(\int \mathcal{L} \, dt = 3 \, \text{ab}^{-1}\right)",
                 label=""
             ),
             ContentBlock(

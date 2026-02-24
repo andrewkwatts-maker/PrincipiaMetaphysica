@@ -166,7 +166,7 @@
         "alp.mass_meV",
         "alp.coupling_GeV_inv"
       ],
-      "timestamp": "2026-02-24T16:40:33.251677"
+      "timestamp": "2026-02-24T16:47:48.486449"
     },
     "1": {
       "id": "1",
@@ -828,7 +828,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-02-24T16:40:33.251754"
+      "timestamp": "2026-02-24T16:47:48.486525"
     },
     "2": {
       "id": "2",
@@ -1035,8 +1035,12 @@
           "content": "The TCS method builds a compact G₂ manifold by gluing two asymptotically cylindrical (ACyl) pieces:"
         },
         {
+          "type": "paragraph",
+          "content": "The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice. For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂):"
+        },
+        {
           "type": "formula",
-          "content": "The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice: Λ = U³ ⊕ (-E₈)² with rank 22, signature (3,19). For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂): N₊ = N₋ = [[4,7],[7,6]], det(N) = -25, rk(N₊ ∩ N₋) = 2 (full overlap for involution), rk(N₊ + N₋) = 2 ≤ 11 (genericity satisfied)"
+          "content": "\\begin{aligned}\n\\text{K3 lattice:} \\quad & \\Lambda = U^3 \\oplus (-E_8)^2, \\quad \\text{rank} = 22, \\quad \\text{sig}(3,19) \\\\\n\\text{Picard lattices:} \\quad & N_+ = N_- = \\begin{pmatrix} 4 & 7 \\\\ 7 & 6 \\end{pmatrix}, \\quad \\det(N) = -25 \\\\\n\\text{Involution overlap:} \\quad & \\text{rk}(N_+ \\cap N_-) = 2 \\quad \\text{(full overlap)} \\\\\n\\text{Genericity:} \\quad & \\text{rk}(N_+ + N_-) = 2 \\leq 11 \\quad \\checkmark\n\\end{aligned}"
         },
         {
           "type": "callout",
@@ -1180,27 +1184,27 @@
         },
         {
           "type": "paragraph",
-          "content": "The KK masses arise from solving the eigenvalue problem for the Laplacian Δ on the Ricci-flat G₂ manifold:"
+          "content": "The KK masses arise from solving the Laplacian eigenvalue problem on the Ricci-flat G₂ manifold:"
         },
         {
           "type": "formula",
-          "content": "Δφ = λφ — Laplacian eigenvalue problem on Ricci-flat G₂"
+          "content": "\\Delta \\phi = \\lambda \\phi"
         },
         {
           "type": "paragraph",
-          "content": "For a compact manifold with volume V_G₂, the discrete spectrum satisfies:"
+          "content": "For a compact manifold with volume Vol(G₂), the discrete eigenvalue spectrum scales with mode number n:"
         },
         {
           "type": "formula",
-          "content": "λ_n ~ n² / Vol(G₂) — Eigenvalue scaling with mode number"
+          "content": "\\lambda_n \\sim \\frac{n^2}{\\text{Vol}(G_2)}"
         },
         {
           "type": "paragraph",
-          "content": "The normalized volume is computed from the effective Euler characteristic and Betti numbers:"
+          "content": "The normalized G₂ manifold volume is computed from the effective Euler characteristic χ_eff and third Betti number b₃:"
         },
         {
           "type": "formula",
-          "content": "Vol(G₂) = √(χ_eff / b₃) = √(144/24) = √6 ≈ 2.45 — G₂ manifold normalized volume"
+          "content": "\\text{Vol}(G_2) = \\sqrt{\\frac{\\chi_{\\text{eff}}}{b_3}} = \\sqrt{\\frac{144}{24}} = \\sqrt{6} \\approx 2.45"
         },
         {
           "type": "callout",
@@ -1216,27 +1220,27 @@
         },
         {
           "type": "paragraph",
-          "content": "The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The KK mass scale is derived via k_eff = b₃/(2+ε):"
+          "content": "The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The first KK mode mass from compactification radius R_c is:"
         },
         {
           "type": "formula",
-          "content": "m_KK,1 = 1/R_c ≈ 4.5 TeV ± 1.5 TeV (95% CL) — First KK mode from compactification radius"
+          "content": "m_{KK,1} = \\frac{1}{R_c} \\approx 4.5 \\pm 1.5 \\, \\text{TeV} \\quad (95\\% \\, \\text{CL})"
         },
         {
           "type": "paragraph",
-          "content": "The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling:"
+          "content": "The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling with mode number n:"
         },
         {
           "type": "formula",
-          "content": "m_KK,n = √λ_n × (1/R_c) ≈ √(n²/Vol(G₂)) × 5 TeV — nth KK mode mass"
+          "content": "m_{KK,n} = \\sqrt{\\lambda_n} \\times \\frac{1}{R_c} \\approx \\sqrt{\\frac{n^2}{\\text{Vol}(G_2)}} \\times 5 \\, \\text{TeV}"
         },
         {
           "type": "paragraph",
-          "content": "Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure. For quantum numbers (n,m) labeling the two T² cycles:"
+          "content": "Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure, with quantum numbers (n,m) labeling the two T² cycles:"
         },
         {
           "type": "formula",
-          "content": "m_KK(n,m) = √(n² + m²) × 5 TeV — T² Degeneracy Tower Formula"
+          "content": "m_{KK}(n,m) = \\sqrt{n^2 + m^2} \\times 5 \\, \\text{TeV}"
         },
         {
           "type": "paragraph",
@@ -1293,19 +1297,19 @@
         },
         {
           "type": "paragraph",
-          "content": "The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. Production occurs primarily through gluon fusion:"
+          "content": "The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. The first KK mode production cross-section via gluon fusion is:"
         },
         {
           "type": "formula",
-          "content": "σ(pp → KK₁ + X) ≈ 0.1 fb (at √s = 14 TeV) — First KK mode production cross-section"
+          "content": "\\sigma(pp \\to KK_1 + X) \\approx 0.1 \\, \\text{fb} \\quad (\\sqrt{s} = 14 \\, \\text{TeV})"
         },
         {
           "type": "paragraph",
-          "content": "With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. Monte Carlo simulations including SM backgrounds predict a discovery significance of:"
+          "content": "With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. The expected discovery significance from Monte Carlo simulations including SM backgrounds is:"
         },
         {
           "type": "formula",
-          "content": "Discovery Significance = 5.2σ with 3 ab⁻¹ — Expected discovery significance at HL-LHC"
+          "content": "S = 5.2\\sigma \\quad \\left(\\int \\mathcal{L} \\, dt = 3 \\, \\text{ab}^{-1}\\right)"
         },
         {
           "type": "paragraph",
@@ -1639,8 +1643,12 @@
           "content": "The TCS method builds a compact G₂ manifold by gluing two asymptotically cylindrical (ACyl) pieces:"
         },
         {
+          "type": "paragraph",
+          "content": "The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice. For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂):"
+        },
+        {
           "type": "formula",
-          "content": "The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice: Λ = U³ ⊕ (-E₈)² with rank 22, signature (3,19). For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂): N₊ = N₋ = [[4,7],[7,6]], det(N) = -25, rk(N₊ ∩ N₋) = 2 (full overlap for involution), rk(N₊ + N₋) = 2 ≤ 11 (genericity satisfied)"
+          "content": "\\begin{aligned}\n\\text{K3 lattice:} \\quad & \\Lambda = U^3 \\oplus (-E_8)^2, \\quad \\text{rank} = 22, \\quad \\text{sig}(3,19) \\\\\n\\text{Picard lattices:} \\quad & N_+ = N_- = \\begin{pmatrix} 4 & 7 \\\\ 7 & 6 \\end{pmatrix}, \\quad \\det(N) = -25 \\\\\n\\text{Involution overlap:} \\quad & \\text{rk}(N_+ \\cap N_-) = 2 \\quad \\text{(full overlap)} \\\\\n\\text{Genericity:} \\quad & \\text{rk}(N_+ + N_-) = 2 \\leq 11 \\quad \\checkmark\n\\end{aligned}"
         },
         {
           "type": "callout",
@@ -1784,27 +1792,27 @@
         },
         {
           "type": "paragraph",
-          "content": "The KK masses arise from solving the eigenvalue problem for the Laplacian Δ on the Ricci-flat G₂ manifold:"
+          "content": "The KK masses arise from solving the Laplacian eigenvalue problem on the Ricci-flat G₂ manifold:"
         },
         {
           "type": "formula",
-          "content": "Δφ = λφ — Laplacian eigenvalue problem on Ricci-flat G₂"
+          "content": "\\Delta \\phi = \\lambda \\phi"
         },
         {
           "type": "paragraph",
-          "content": "For a compact manifold with volume V_G₂, the discrete spectrum satisfies:"
+          "content": "For a compact manifold with volume Vol(G₂), the discrete eigenvalue spectrum scales with mode number n:"
         },
         {
           "type": "formula",
-          "content": "λ_n ~ n² / Vol(G₂) — Eigenvalue scaling with mode number"
+          "content": "\\lambda_n \\sim \\frac{n^2}{\\text{Vol}(G_2)}"
         },
         {
           "type": "paragraph",
-          "content": "The normalized volume is computed from the effective Euler characteristic and Betti numbers:"
+          "content": "The normalized G₂ manifold volume is computed from the effective Euler characteristic χ_eff and third Betti number b₃:"
         },
         {
           "type": "formula",
-          "content": "Vol(G₂) = √(χ_eff / b₃) = √(144/24) = √6 ≈ 2.45 — G₂ manifold normalized volume"
+          "content": "\\text{Vol}(G_2) = \\sqrt{\\frac{\\chi_{\\text{eff}}}{b_3}} = \\sqrt{\\frac{144}{24}} = \\sqrt{6} \\approx 2.45"
         },
         {
           "type": "callout",
@@ -1820,27 +1828,27 @@
         },
         {
           "type": "paragraph",
-          "content": "The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The KK mass scale is derived via k_eff = b₃/(2+ε):"
+          "content": "The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The first KK mode mass from compactification radius R_c is:"
         },
         {
           "type": "formula",
-          "content": "m_KK,1 = 1/R_c ≈ 4.5 TeV ± 1.5 TeV (95% CL) — First KK mode from compactification radius"
+          "content": "m_{KK,1} = \\frac{1}{R_c} \\approx 4.5 \\pm 1.5 \\, \\text{TeV} \\quad (95\\% \\, \\text{CL})"
         },
         {
           "type": "paragraph",
-          "content": "The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling:"
+          "content": "The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling with mode number n:"
         },
         {
           "type": "formula",
-          "content": "m_KK,n = √λ_n × (1/R_c) ≈ √(n²/Vol(G₂)) × 5 TeV — nth KK mode mass"
+          "content": "m_{KK,n} = \\sqrt{\\lambda_n} \\times \\frac{1}{R_c} \\approx \\sqrt{\\frac{n^2}{\\text{Vol}(G_2)}} \\times 5 \\, \\text{TeV}"
         },
         {
           "type": "paragraph",
-          "content": "Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure. For quantum numbers (n,m) labeling the two T² cycles:"
+          "content": "Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure, with quantum numbers (n,m) labeling the two T² cycles:"
         },
         {
           "type": "formula",
-          "content": "m_KK(n,m) = √(n² + m²) × 5 TeV — T² Degeneracy Tower Formula"
+          "content": "m_{KK}(n,m) = \\sqrt{n^2 + m^2} \\times 5 \\, \\text{TeV}"
         },
         {
           "type": "paragraph",
@@ -1897,19 +1905,19 @@
         },
         {
           "type": "paragraph",
-          "content": "The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. Production occurs primarily through gluon fusion:"
+          "content": "The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. The first KK mode production cross-section via gluon fusion is:"
         },
         {
           "type": "formula",
-          "content": "σ(pp → KK₁ + X) ≈ 0.1 fb (at √s = 14 TeV) — First KK mode production cross-section"
+          "content": "\\sigma(pp \\to KK_1 + X) \\approx 0.1 \\, \\text{fb} \\quad (\\sqrt{s} = 14 \\, \\text{TeV})"
         },
         {
           "type": "paragraph",
-          "content": "With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. Monte Carlo simulations including SM backgrounds predict a discovery significance of:"
+          "content": "With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. The expected discovery significance from Monte Carlo simulations including SM backgrounds is:"
         },
         {
           "type": "formula",
-          "content": "Discovery Significance = 5.2σ with 3 ab⁻¹ — Expected discovery significance at HL-LHC"
+          "content": "S = 5.2\\sigma \\quad \\left(\\int \\mathcal{L} \\, dt = 3 \\, \\text{ab}^{-1}\\right)"
         },
         {
           "type": "paragraph",
@@ -2078,7 +2086,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-02-24T16:40:33.252650"
+      "timestamp": "2026-02-24T16:47:48.487405"
     },
     "2.7": {
       "id": "2",
@@ -2468,7 +2476,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-02-24T16:40:33.252762"
+      "timestamp": "2026-02-24T16:47:48.487504"
     },
     "V.1": {
       "id": "validation",
@@ -2590,7 +2598,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-02-24T16:40:33.252889"
+      "timestamp": "2026-02-24T16:47:48.487618"
     },
     "3.4": {
       "id": "3",
@@ -2754,7 +2762,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-02-24T16:40:33.252949"
+      "timestamp": "2026-02-24T16:47:48.487678"
     },
     "3.6": {
       "id": "3",
@@ -2926,7 +2934,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-02-24T16:40:33.253055"
+      "timestamp": "2026-02-24T16:47:48.487784"
     },
     "3": {
       "id": "3",
@@ -3130,7 +3138,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-02-24T16:40:33.282832"
+      "timestamp": "2026-02-24T16:47:48.517630"
     },
     "3.2": {
       "id": "3",
@@ -3616,7 +3624,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-02-24T16:40:33.283051"
+      "timestamp": "2026-02-24T16:47:48.517868"
     },
     "3.1": {
       "id": "3",
@@ -3674,7 +3682,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-02-24T16:40:33.283282"
+      "timestamp": "2026-02-24T16:47:48.518125"
     },
     "4.2": {
       "id": "4",
@@ -3804,7 +3812,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-02-24T16:40:33.283356"
+      "timestamp": "2026-02-24T16:47:48.518201"
     },
     "4.1": {
       "id": "4",
@@ -4092,7 +4100,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-02-24T16:40:33.283441"
+      "timestamp": "2026-02-24T16:47:48.518287"
     },
     "4.3": {
       "id": "4",
@@ -4332,7 +4340,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-02-24T16:40:33.283566"
+      "timestamp": "2026-02-24T16:47:48.518414"
     },
     "4.6": {
       "id": "4",
@@ -4520,7 +4528,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-02-24T16:40:33.283649"
+      "timestamp": "2026-02-24T16:47:48.518498"
     },
     "4.4": {
       "id": "4",
@@ -4702,7 +4710,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-02-24T16:40:33.283726"
+      "timestamp": "2026-02-24T16:47:48.518575"
     },
     "4.9": {
       "id": "4",
@@ -4804,7 +4812,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-02-24T16:40:33.283799"
+      "timestamp": "2026-02-24T16:47:48.518647"
     },
     "6.1.1": {
       "id": "6",
@@ -4918,7 +4926,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-02-24T16:40:33.283953"
+      "timestamp": "2026-02-24T16:47:48.518805"
     },
     "4.2.1": {
       "id": "4",
@@ -4992,7 +5000,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-02-24T16:40:33.284004"
+      "timestamp": "2026-02-24T16:47:48.518864"
     },
     "4.8": {
       "id": "4",
@@ -5050,7 +5058,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-02-24T16:40:33.284072"
+      "timestamp": "2026-02-24T16:47:48.518940"
     },
     "5.1": {
       "id": "5",
@@ -5390,7 +5398,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-02-24T16:40:33.284140"
+      "timestamp": "2026-02-24T16:47:48.519009"
     },
     "5.2": {
       "id": "5",
@@ -5594,7 +5602,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-02-24T16:40:33.284280"
+      "timestamp": "2026-02-24T16:47:48.519135"
     },
     "5.6": {
       "id": "5",
@@ -5918,7 +5926,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-02-24T16:40:33.284493"
+      "timestamp": "2026-02-24T16:47:48.519318"
     },
     "5.7": {
       "id": "5",
@@ -6062,7 +6070,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-02-24T16:40:33.286432"
+      "timestamp": "2026-02-24T16:47:48.521377"
     },
     "5.4": {
       "id": "5",
@@ -6382,7 +6390,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-02-24T16:40:33.287882"
+      "timestamp": "2026-02-24T16:47:48.522796"
     },
     "5.9": {
       "id": "5",
@@ -6544,7 +6552,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-02-24T16:40:33.288861"
+      "timestamp": "2026-02-24T16:47:48.523770"
     },
     "4.5": {
       "id": "4",
@@ -6804,7 +6812,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-02-24T16:40:33.289013"
+      "timestamp": "2026-02-24T16:47:48.523924"
     },
     "4.7": {
       "id": "4",
@@ -7056,7 +7064,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-02-24T16:40:33.289142"
+      "timestamp": "2026-02-24T16:47:48.524055"
     },
     "5.3": {
       "id": "5",
@@ -7214,7 +7222,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-02-24T16:40:33.289279"
+      "timestamp": "2026-02-24T16:47:48.524196"
     },
     "5.8": {
       "id": "5",
@@ -7536,7 +7544,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-02-24T16:40:33.289373"
+      "timestamp": "2026-02-24T16:47:48.524293"
     },
     "6.1": {
       "id": "6",
@@ -7596,7 +7604,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289464"
+      "timestamp": "2026-02-24T16:47:48.524386"
     },
     "6.2": {
       "id": "6",
@@ -7644,7 +7652,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289508"
+      "timestamp": "2026-02-24T16:47:48.524431"
     },
     "6.3": {
       "id": "6",
@@ -7736,7 +7744,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289558"
+      "timestamp": "2026-02-24T16:47:48.524479"
     },
     "6.4": {
       "id": "6",
@@ -7788,7 +7796,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289594"
+      "timestamp": "2026-02-24T16:47:48.524517"
     },
     "6.5": {
       "id": "6",
@@ -7840,7 +7848,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289627"
+      "timestamp": "2026-02-24T16:47:48.524551"
     },
     "6.6": {
       "id": "6",
@@ -7892,7 +7900,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289661"
+      "timestamp": "2026-02-24T16:47:48.524586"
     },
     "6.7": {
       "id": "6",
@@ -7944,7 +7952,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289694"
+      "timestamp": "2026-02-24T16:47:48.524618"
     },
     "6.8": {
       "id": "6",
@@ -7988,7 +7996,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289722"
+      "timestamp": "2026-02-24T16:47:48.524646"
     },
     "6.9": {
       "id": "6",
@@ -8032,7 +8040,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.289754"
+      "timestamp": "2026-02-24T16:47:48.524677"
     },
     "5.5": {
       "id": "5",
@@ -8186,7 +8194,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-02-24T16:40:33.289806"
+      "timestamp": "2026-02-24T16:47:48.524730"
     },
     "2.6": {
       "id": "2",
@@ -8928,7 +8936,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.291000"
+      "timestamp": "2026-02-24T16:47:48.525901"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -9056,7 +9064,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-02-24T16:40:33.290005"
+      "timestamp": "2026-02-24T16:47:48.524936"
     },
     "7.2": {
       "id": "7",
@@ -9172,7 +9180,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-02-24T16:40:33.290099"
+      "timestamp": "2026-02-24T16:47:48.525037"
     },
     "7": {
       "id": "7",
@@ -11776,7 +11784,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.290282"
+      "timestamp": "2026-02-24T16:47:48.525222"
     },
     "6": {
       "id": "6",
@@ -14682,7 +14690,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-02-24T16:40:33.290427"
+      "timestamp": "2026-02-24T16:47:48.525351"
     },
     "1.1": {
       "id": "1",
@@ -15312,7 +15320,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.290517"
+      "timestamp": "2026-02-24T16:47:48.525434"
     },
     "3.7": {
       "id": "3",
@@ -15790,7 +15798,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.291059"
+      "timestamp": "2026-02-24T16:47:48.525958"
     },
     "4": {
       "id": "4",
@@ -16098,7 +16106,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-02-24T16:40:33.291113"
+      "timestamp": "2026-02-24T16:47:48.526010"
     },
     "A": {
       "id": "A",
@@ -16308,7 +16316,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-02-24T16:40:33.291179"
+      "timestamp": "2026-02-24T16:47:48.526074"
     },
     "B": {
       "id": "B",
@@ -16544,7 +16552,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-02-24T16:40:33.291234"
+      "timestamp": "2026-02-24T16:47:48.526128"
     },
     "C": {
       "id": "C",
@@ -16750,7 +16758,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-02-24T16:40:33.291305"
+      "timestamp": "2026-02-24T16:47:48.526193"
     },
     "D": {
       "id": "D",
@@ -16948,7 +16956,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-02-24T16:40:33.291352"
+      "timestamp": "2026-02-24T16:47:48.526240"
     },
     "E": {
       "id": "E",
@@ -17150,7 +17158,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-02-24T16:40:33.291406"
+      "timestamp": "2026-02-24T16:47:48.526293"
     },
     "F": {
       "id": "F",
@@ -17360,7 +17368,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-02-24T16:40:33.291846"
+      "timestamp": "2026-02-24T16:47:48.526736"
     },
     "G": {
       "id": "G",
@@ -17708,7 +17716,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-02-24T16:40:33.292308"
+      "timestamp": "2026-02-24T16:47:48.527185"
     },
     "H": {
       "id": "H",
@@ -18078,7 +18086,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-02-24T16:40:33.292393"
+      "timestamp": "2026-02-24T16:47:48.527267"
     },
     "I": {
       "id": "I",
@@ -18432,7 +18440,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-02-24T16:40:33.292471"
+      "timestamp": "2026-02-24T16:47:48.527345"
     },
     "J": {
       "id": "J",
@@ -18714,7 +18722,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-02-24T16:40:33.292545"
+      "timestamp": "2026-02-24T16:47:48.527419"
     },
     "K": {
       "id": "K",
@@ -19130,7 +19138,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-02-24T16:40:33.292611"
+      "timestamp": "2026-02-24T16:47:48.527480"
     },
     "L": {
       "id": "L",
@@ -19420,7 +19428,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-02-24T16:40:33.292682"
+      "timestamp": "2026-02-24T16:47:48.527549"
     },
     "Z": {
       "id": "Z",
@@ -19496,7 +19504,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-02-24T16:40:33.292765"
+      "timestamp": "2026-02-24T16:47:48.527629"
     },
     "2.2": {
       "id": "2",
@@ -19838,7 +19846,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-02-24T16:40:33.292993"
+      "timestamp": "2026-02-24T16:47:48.527864"
     },
     "R.1": {
       "id": "R",
@@ -20394,7 +20402,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-02-24T16:40:33.293145"
+      "timestamp": "2026-02-24T16:47:48.528021"
     },
     "S.1": {
       "id": "S",
@@ -21108,7 +21116,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-02-24T16:40:33.293243"
+      "timestamp": "2026-02-24T16:47:48.528124"
     },
     "5.1.1": {
       "id": "5",
@@ -21274,7 +21282,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-02-24T16:40:33.293352"
+      "timestamp": "2026-02-24T16:47:48.528230"
     },
     "2.3": {
       "id": "2",
@@ -21590,7 +21598,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-02-24T16:40:33.293566"
+      "timestamp": "2026-02-24T16:47:48.528459"
     },
     "5.2.1": {
       "id": "5",
@@ -21756,7 +21764,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-02-24T16:40:33.293653"
+      "timestamp": "2026-02-24T16:47:48.528556"
     },
     "6.2.1": {
       "id": "6",
@@ -21906,7 +21914,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-02-24T16:40:33.293705"
+      "timestamp": "2026-02-24T16:47:48.528614"
     },
     "7.1": {
       "id": "7",
@@ -22058,7 +22066,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-02-24T16:40:33.293760"
+      "timestamp": "2026-02-24T16:47:48.528674"
     },
     "7.3": {
       "id": "7",
@@ -22222,7 +22230,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-02-24T16:40:33.293829"
+      "timestamp": "2026-02-24T16:47:48.528748"
     },
     "7.4": {
       "id": "7",
@@ -22340,7 +22348,7 @@
         "portals.sterile_mass_scale_gev",
         "portals.sterile_n_eff_contribution"
       ],
-      "timestamp": "2026-02-24T16:40:33.293885"
+      "timestamp": "2026-02-24T16:47:48.528809"
     },
     "7.5": {
       "id": "7",
@@ -22500,7 +22508,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-02-24T16:40:33.293937"
+      "timestamp": "2026-02-24T16:47:48.528865"
     }
   }
 }
