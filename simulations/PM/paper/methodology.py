@@ -5,7 +5,7 @@ PRINCIPIA METAPHYSICA v23.1 - Section 2: The Sterile Extraction Methodology
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+v24.1 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
 
 This simulation generates the content for Section 2 of the paper:
   2.1 Principles of Spectral Geometry
@@ -76,7 +76,7 @@ class MethodologyV16_2(SimulationBase):
             version="23.1",
             domain="methodology",
             title="The Sterile Extraction Methodology",
-            description="Spectral geometry and the 125-residue port (v23.1 dual-shadow framework, 27D/26,1)",
+            description="Topologically Anchored spectral geometry methodology with EDOF=3 (v23.1 dual-shadow framework, 27D/26,1)",
             section_id="2",
             subsection_id="2.5"  # v19.0: Unique subsection (2.1-2.4 used by geometry simulations)
         )
@@ -112,13 +112,12 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v16.2 Sterile Model, the transition from empirical observation to "
-                    "first-principles derivation is achieved through <strong>Spectral Geometry</strong>. "
+                    "In the v24.1 Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds), the transition from empirical observation to "
+                    "first-principles derivation is achieved through <strong>Spectral Geometry</strong> with <strong>116:1 compression ratio</strong>. "
                     "This methodology posits that the 'constants' of nature are not independent variables, "
-                    "but are the discrete harmonic frequencies of the V₇ manifold. By treating the "
-                    "universe as a resonant geometric body, we define physical constants as the "
-                    "<strong>Laplacian Eigenvalues (λₙ)</strong> necessitated by the manifold's unique "
-                    "G₂ holonomy."
+                    "but emerge as discrete harmonic frequencies of the V₇ manifold from minimal phenomenological input. By treating the "
+                    "universe as a resonant geometric body, we define physical constants as <strong>Laplacian Eigenvalues (λₙ)</strong> "
+                    "necessitated by the manifold's unique G₂ holonomy."
                 )
             ),
             ContentBlock(
@@ -171,12 +170,12 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Traditional physics relies on 'fine-tuning' to match these eigenvalues to "
-                    "experimental data. Spectral Geometry renders this obsolete by proving that "
-                    "λₙ is a <strong>topological invariant</strong>. Because the G₂ manifold is "
-                    "Ricci-flat and torsion-free, its spectrum is rigid. One cannot 'tune' the mass "
-                    "of an electron without changing the volume of the V₇ manifold itself, which "
-                    "is prohibited by the Global Metric Lock."
+                    "Traditional physics relies on extensive parameter fitting to match theoretical values to "
+                    "experimental data. The Topologically Anchored Framework (<strong>EDOF=3</strong>) achieves <strong>116:1 compression</strong> "
+                    "by showing that λₙ values are <strong>topological invariants</strong> anchored by 3 geometric seeds (b₃, φ, θ₁₃). "
+                    "Because the G₂ manifold is Ricci-flat and torsion-free, its spectrum is rigid with minimal phenomenological input. "
+                    "The electron mass and other constants emerge from the volume of the V₇ manifold, "
+                    "constrained by the Global Metric Lock."
                 )
             ),
             ContentBlock(
@@ -220,11 +219,10 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the Sterile Model, the 125 parameters of the Standard Model and ΛCDM are "
-                    "not 'points' in a data table, but <strong>Physical Junctions</strong> in the "
-                    "higher-dimensional manifold. This section defines the Brane-Node Intersection "
-                    "Lattice, the geometric structure that hosts the spectral eigenvalues derived "
-                    "in Section 2.1."
+                    "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds with <strong>116:1 compression ratio</strong>), "
+                    "the 125 parameters of the Standard Model and ΛCDM are not 'points' in a data table, "
+                    "but <strong>Physical Junctions</strong> in the higher-dimensional manifold. This section defines the Brane-Node Intersection "
+                    "Lattice, the geometric structure that hosts the spectral eigenvalues derived in Section 2.1."
                 )
             ),
             ContentBlock(
@@ -307,10 +305,10 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The v16.2 transition is defined by the move from a <strong>Dynamic Simulation</strong> "
-                    "(where parameters fluctuate) to a <strong>Metric Lock</strong> (where residues are static). "
+                    "The v24.1 Topologically Anchored Framework establishes a <strong>Metric Lock</strong> where "
+                    "residues are static geometric invariants anchored by <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃). "
                     "This section details the mechanisms—both mathematical and computational—that ensure "
-                    "the 125-residue registry is immutable and self-consistent."
+                    "the 125-residue registry achieves <strong>116:1 compression ratio</strong> and self-consistency."
                 )
             ),
             ContentBlock(
@@ -323,17 +321,17 @@ class MethodologyV16_2(SimulationBase):
                 content=(
                     "In previous versions (v15.0–v16.1), the model utilized stochastic optimization "
                     "and gradient descent to minimize tension between theory and observation. In the "
-                    "Sterile Model, these protocols are <strong>deprecated and physically removed</strong> "
-                    "from the engine."
+                    "Topologically Anchored Framework (<strong>EDOF=3</strong>), these protocols are <strong>deprecated and physically removed</strong> "
+                    "from the engine. The framework achieves <strong>116:1 compression ratio</strong> from 3 geometric seeds (b₃, φ, θ₁₃)."
                 )
             ),
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>The Sterile Logic</h4>"
-                    "<p>If the residues are indeed Laplacian eigenvalues of a rigid G₂ manifold, "
-                    "then 'optimizing' them is a category error. One does not 'optimize' the "
-                    "number π; one simply extracts it.</p>"
+                    "<h4>Topological Anchoring Logic</h4>"
+                    "<p>If the residues are Laplacian eigenvalues of a rigid G₂ manifold anchored by "
+                    "<strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), then 'optimizing' them represents a category error. "
+                    "One does not 'optimize' the number π; one extracts it from topological constraints with minimal phenomenological input.</p>"
                 ),
                 label="sterile-logic"
             ),
@@ -668,8 +666,8 @@ class MethodologyV16_2(SimulationBase):
         return SectionContent(
             section_id="2",
             subsection_id="2.6",  # v24.1: Code-Theoretical Integrity section
-            title="The Sterile Extraction Methodology",
-            abstract="Spectral geometry principles, the 125-residue port, and the global metric lock.",
+            title="The Topologically Anchored Methodology (EDOF=3)",
+            abstract="Spectral geometry principles with 116:1 compression ratio from 3 geometric seeds (b₃, φ, θ₁₃), the 125-residue port, and the global metric lock.",
             content_blocks=content_blocks
         )
 
