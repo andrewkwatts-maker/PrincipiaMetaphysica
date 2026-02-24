@@ -253,7 +253,7 @@ INCLUDE_ROOT_FILES: List[str] = [
     'PEER_REVIEW_DEFENSE.md',
     'index.html',
     'serve.py',
-    'Launch.bat',
+    'launch_simulation.bat',
     'simulations/run_all_simulations.py',  # For full package
 ]
 
