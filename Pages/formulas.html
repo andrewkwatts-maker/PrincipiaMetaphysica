@@ -2848,6 +2848,9 @@
 
         // Check input_params array (v16.2 format from JSON)
         const inputParamPaths = formula.input_params || formula.inputParams || [];
+        if (inputParamPaths.length > 0) {
+            console.log(`Formula ${formula.id} has ${inputParamPaths.length} input params:`, inputParamPaths);
+        }
         inputParamPaths.forEach(paramPath => {
             const paramData = getParameterData(paramPath);
             // Extract proper display name from parameter metadata or fallback to path segment
@@ -2960,23 +2963,31 @@
         if (window.PM && window.PM._data && window.PM._data.parameters) {
             const params = window.PM._data.parameters;
             if (params[pmConstant]) {
+                console.log(`Found parameter ${pmConstant}:`, params[pmConstant]);
                 return params[pmConstant];
             }
             // Also check inside parameters.parameters (nested structure)
             if (params.parameters && params.parameters[pmConstant]) {
+                console.log(`Found nested parameter ${pmConstant}:`, params.parameters[pmConstant]);
                 return params.parameters[pmConstant];
             }
+            console.warn(`Parameter not found in PM._data.parameters: ${pmConstant}`);
+            console.log(`Available parameters (first 10):`, Object.keys(params).slice(0, 10));
+        } else {
+            console.warn(`PM data not available for parameter lookup: ${pmConstant}`);
         }
 
         // Fallback: try PM.get() which has more sophisticated lookup
         if (window.PM && typeof window.PM.get === 'function') {
             const value = window.PM.get(pmConstant);
             if (value !== null && value !== undefined) {
+                console.log(`Found parameter via PM.get(${pmConstant}):`, value);
                 // PM.get returns just the value, wrap it in expected structure
                 return { value: value };
             }
         }
 
+        console.warn(`Parameter lookup failed entirely for: ${pmConstant}`);
         return null;
     }
 
