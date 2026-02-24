@@ -394,7 +394,7 @@ class ORReductionV21(SimulationBase):
                         {"description": "Rotation angle",
                          "formula": r"\theta = \pi/2"},
                         {"description": "Standard 2D rotation",
-                         "formula": r"R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}"},
+                         "formula": r"R(\theta) = \left(\begin{smallmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{smallmatrix}\right)"},
                         {"description": "At theta = pi/2",
                          "formula": r"R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)"}
                     ],

@@ -703,7 +703,7 @@ class G2GeometryV16(SimulationBase):
                 type="formula",
                 content=r"""\begin{aligned}
 \text{K3 lattice:} \quad & \Lambda = U^3 \oplus (-E_8)^2, \quad \text{rank} = 22, \quad \text{sig}(3,19) \\
-\text{Picard lattices:} \quad & N_+ = N_- = \begin{pmatrix} 4 & 7 \\ 7 & 6 \end{pmatrix}, \quad \det(N) = -25 \\
+\text{Picard lattices:} \quad & N_+ = N_- = \left(\begin{smallmatrix} 4 & 7 \\ 7 & 6 \end{smallmatrix}\right), \quad \det(N) = -25 \\
 \text{Involution overlap:} \quad & \text{rk}(N_+ \cap N_-) = 2 \quad \text{(full overlap)} \\
 \text{Genericity:} \quad & \text{rk}(N_+ + N_-) = 2 \leq 11 \quad \checkmark
 \end{aligned}""",

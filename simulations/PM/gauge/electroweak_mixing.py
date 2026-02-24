@@ -626,7 +626,7 @@ class ElectroweakMixingSimulation(SimulationBase):
                 label="(3.2.1)",
                 latex=(
                     r"\mathcal{M}^2 = \frac{v^2}{4}"
-                    r"\begin{pmatrix} g_2^2 & -g_2 g' \\ -g_2 g' & g'^2 \end{pmatrix}"
+                    r"\left(\begin{smallmatrix} g_2^2 & -g_2 g' \\ -g_2 g' & g'^2 \end{smallmatrix}\right)"
                 ),
                 plain_text="M^2 = (v^2/4) [[g2^2, -g2 g'], [-g2 g', g'^2]]",
                 category="DERIVED",
@@ -836,8 +836,8 @@ class ElectroweakMixingSimulation(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=(
-                        r"\mathcal{M}^2 = \frac{v^2}{4}\begin{pmatrix}"
-                        r"g_2^2 & -g_2 g' \\ -g_2 g' & g'^2\end{pmatrix}"
+                        r"\mathcal{M}^2 = \frac{v^2}{4}\left(\begin{smallmatrix}"
+                        r"g_2^2 & -g_2 g' \\ -g_2 g' & g'^2\end{smallmatrix}\right)"
                     ),
                     formula_id="ew-mass-matrix",
                     label="(3.2.1)",

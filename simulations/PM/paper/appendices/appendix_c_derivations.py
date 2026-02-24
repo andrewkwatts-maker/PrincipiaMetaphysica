@@ -416,11 +416,11 @@ class AppendixCExtendedDerivations(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=(
-                        r"U_{\text{TB}} = \begin{pmatrix} "
+                        r"U_{\text{TB}} = \left(\begin{smallmatrix} "
                         r"\sqrt{\frac{2}{3}} & \frac{1}{\sqrt{3}} & 0 \\ "
                         r"-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} \\ "
                         r"-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}} "
-                        r"\end{pmatrix}"
+                        r"\end{smallmatrix}\right)"
                     ),
                     formula_id="tribimaximal-mixing-derivation",
                     label="(C.6)"
@@ -644,11 +644,11 @@ class AppendixCExtendedDerivations(SimulationBase):
                 id="tribimaximal-mixing-derivation",
                 label="(C.4)",
                 latex=(
-                    r"U_{\text{TB}} = \begin{pmatrix} "
+                    r"U_{\text{TB}} = \left(\begin{smallmatrix} "
                     r"\sqrt{\frac{2}{3}} & \frac{1}{\sqrt{3}} & 0 \\ "
                     r"-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & \frac{1}{\sqrt{2}} \\ "
                     r"-\frac{1}{\sqrt{6}} & \frac{1}{\sqrt{3}} & -\frac{1}{\sqrt{2}} "
-                    r"\end{pmatrix}"
+                    r"\end{smallmatrix}\right)"
                 ),
                 plain_text="U_TB tribimaximal mixing matrix from A4 symmetry",
                 category="DERIVED",
