@@ -530,14 +530,14 @@ class SpeedOfLightV17(SimulationBase):
                 },
                 terms={
                     "c": f"Speed of light in vacuum ({c_derived:,.2f} m/s)",
-                    "C_geo": f"Harmonic cycle fraction = Δ_eff/b₃ = 18/24 = {geo_ratio:.4f} — fraction of 3-cycles available for propagation",
-                    "S_f": f"Ricci flow stretching = Z₆·b₃ + 1/Z₆ = {stretch_factor:.1f} — metric amplification from KK tower",
-                    "B_v": f"Bulk metric ratio = (N_root/N_bdy)·(N_shadow/N_vis) = {bulk_visc:.6f} — visible/shadow sector asymmetry",
-                    "chi_gc": f"Weyl rescaling = (N_root - b₃)/(N_bdy + 1) = {gnostic_conv:.6f} — G₂ to Einstein frame conversion",
-                    "P_3D": f"KK spatial projection = 1 + 1/(N_root·d²) = {spatial_proj:.10f} — 3D spatial projection correction",
-                    "b_3": "Third Betti number of the G₂ manifold = 24",
-                    "N_root": "Total roots in extended E₈×E₈ lattice = 288 (240 roots + 48 Weyl generators)",
-                    "Z_6": "Residual dimension ratio = d_residual/b₃ = 10/24",
+                    "C_geo": f"Harmonic cycle fraction: Δ_eff/b₃ = {geo_ratio:.4f}",
+                    "S_f": f"Ricci flow stretching: Z₆·b₃ + 1/Z₆ = {stretch_factor:.1f}",
+                    "B_v": f"Bulk metric ratio: (N_root/N_bdy)·(N_shadow/N_vis) = {bulk_visc:.6f}",
+                    r"\chi_{gc}": f"Weyl rescaling: (N_root - b₃)/(N_bdy + 1) = {gnostic_conv:.6f}",
+                    "P_3D": f"KK spatial projection: 1 + 1/(N_root·d²) = {spatial_proj:.10f}",
+                    r"b_3": {"description": "Third Betti number of G₂ manifold", "value": 24},
+                    "N_root": {"description": "Extended E₈×E₈ root count", "value": 288},
+                    "Z_6": "Residual dimension ratio: d_res/b₃ = 10/24",
                 }
             ),
             Formula(
