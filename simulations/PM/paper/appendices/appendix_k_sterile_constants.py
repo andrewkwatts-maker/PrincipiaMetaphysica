@@ -408,7 +408,12 @@ class AppendixKSterileConstants(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content=r"276 \text{ (SO(24) Generators)} + 24 \text{ (Torsion Pins)} - 12 \text{ (Manifold Cost)} = 288 \text{ (Net Roots)}",
+                content=r"""\begin{aligned}
+& 276 \text{ (SO(24) Generators)} \\
+&+ 24 \text{ (Torsion Pins)} \\
+&- 12 \text{ (Manifold Cost)} \\
+&= 288 \text{ (Net Roots)}
+\end{aligned}""",
                 label="288-root-equation"
             ),
             ContentBlock(
