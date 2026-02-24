@@ -243,8 +243,8 @@ class MasterGateController:
         ]
 
         # Generate Omega Seal - v23.1 format with 12-PAIR-BRIDGE
-        # Format: "v22-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
-        seal_string = f"v22-{'-'.join([str(c) for c in checks])}-Pairs{pairs}"
+        # Format: "v23-Roots{R}-Pins{P}-Nodes{N}-Signature(26,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
+        seal_string = f"v23-{'-'.join([str(c) for c in checks])}-Pairs{pairs}"
         omega_seal = hashlib.sha256(seal_string.encode()).hexdigest()[:16].upper()
 
         status = "COMPLETE" if all(checks) else "FAILED"
