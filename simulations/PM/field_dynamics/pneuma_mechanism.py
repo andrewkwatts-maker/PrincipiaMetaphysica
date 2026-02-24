@@ -1016,7 +1016,7 @@ class PneumaMechanismV16(SimulationBase):
             Formula(
                 id="pneuma-or-reduction",
                 label="(2.4)",
-                latex=r"R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
+                latex=r"R_\perp^i = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right) \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
                 plain_text="R_perp^i = [[0,-1],[1,0]]; R_perp^full = tensor_{i=1}^{12} R_perp^i",
                 category="DERIVED",
                 description="v22.0 Per-pair OR reduction: 90-degree rotation on each bridge pair, full operator as tensor product",
