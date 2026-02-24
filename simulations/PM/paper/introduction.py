@@ -510,9 +510,9 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="equation",
                 content=(
-                    "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(26,1)</sub> → "
-                    "2 × <strong>64</strong><sub>Spin(10,1)</sub> → "
-                    "⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry"
+                    "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(26,1)</sub><br/>"
+                    "&nbsp;&nbsp;&nbsp;&nbsp;→ 2 × <strong>64</strong><sub>Spin(10,1)</sub><br/>"
+                    "&nbsp;&nbsp;&nbsp;&nbsp;→ ⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry"
                 ),
                 label="pneuma-condensate"
             ),
@@ -572,8 +572,8 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="equation",
                 content=(
-                    "Spin(12,1) ⊃ Spin(3,1) × Spin(8) → <strong>64</strong> = "
-                    "(<strong>2</strong>,<strong>8</strong><sub>s</sub>) ⊕ "
+                    "Spin(12,1) ⊃ Spin(3,1) × Spin(8) → <strong>64</strong><br/>"
+                    "&nbsp;&nbsp;&nbsp;&nbsp;= (<strong>2</strong>,<strong>8</strong><sub>s</sub>) ⊕ "
                     "(<strong>2</strong>,<strong>8</strong><sub>c</sub>) ⊕ "
                     "(<strong>2̄</strong>,<strong>8</strong><sub>v</sub>) ⊕ "
                     "(<strong>2̄</strong>,<strong>8</strong><sub>s</sub>)"
