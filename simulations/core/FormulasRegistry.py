@@ -113,14 +113,15 @@ class FormulasRegistry:
     - Bars, I. (2006). 2T-physics. Phys. Rev. D 74: 085019.
     """
 
-    VERSION = "23.1-27D"
-    VERSION_SHORT = "23.1"
-    STATUS = "VALIDATED"  # Validated (2026-01-11, 2026-01-18)
+    VERSION = "24.1-27D"
+    VERSION_SHORT = "24.1"
+    STATUS = "VALIDATED"  # Validated (2026-01-11, 2026-01-18, 2026-02-24)
     # NOTE: This is internal validation, NOT traditional journal peer review.
     # The framework has been reviewed for mathematical consistency,
     # but has not been published in peer-reviewed journals.
-    # v23.1 FRAMEWORK: 12×(2,0) paired bridge system + C^(2,0) central sampler,
-    #                  (26,1) unified time signature, Cl(24,1) 4096 spinors on 24D core
+    # v24.1 FRAMEWORK: 12×(2,0) paired bridge system + C^(2,0) central sampler,
+    #                  (26,1) unified time signature, Cl(26,1) 4096 spinors on 26D bulk,
+    #                  EDOF=3 statistical treatment (topologically anchored)
 
     # ===========================================================================
     # RIGOR DISCLAIMER (per peer review 2026-01-11)
