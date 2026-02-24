@@ -1636,7 +1636,7 @@
       "git_commit": "6b6b0d52665a686c9560a31ca80a683aabb85946"
     },
     "validation.total_predictions": {
-      "value": 0,
+      "value": 5,
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     },
@@ -10993,12 +10993,12 @@
       "description": "Number of testable gates (total - axioms)"
     },
     "framework_statistics.chi_squared_reduced": {
-      "value": null,
+      "value": 0.0887,
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     },
     "framework_statistics.degrees_of_freedom": {
-      "value": 0,
+      "value": 4,
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     },
@@ -11008,22 +11008,22 @@
       "source": "generate_statistics.py"
     },
     "framework_statistics.exact_matches": {
-      "value": 0,
+      "value": 1,
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     },
     "validation.within_1sigma": {
-      "value": 0,
+      "value": 5,
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     },
     "validation.within_2sigma": {
-      "value": 0,
+      "value": 5,
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     },
     "validation.success_rate": {
-      "value": "0.0%",
+      "value": "100.0%",
       "status": "COMPUTED",
       "source": "generate_statistics.py"
     }
