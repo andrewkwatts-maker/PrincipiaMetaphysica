@@ -2848,9 +2848,6 @@
 
         // Check input_params array (v16.2 format from JSON)
         const inputParamPaths = formula.input_params || formula.inputParams || [];
-        if (inputParamPaths.length > 0) {
-            console.log(`Formula ${formula.id} has ${inputParamPaths.length} input params:`, inputParamPaths);
-        }
         inputParamPaths.forEach(paramPath => {
             const paramData = getParameterData(paramPath);
             // Extract proper display name from parameter metadata or fallback to path segment
@@ -2959,36 +2956,52 @@
     function getParameterData(pmConstant) {
         if (!pmConstant) return null;
 
-        // Try to get from PM._data.parameters
+        // Strategy 1: Try PM._data.parameters (primary source)
         if (window.PM && window.PM._data && window.PM._data.parameters) {
             const params = window.PM._data.parameters;
             if (params[pmConstant]) {
-                console.log(`Found parameter ${pmConstant}:`, params[pmConstant]);
                 return params[pmConstant];
             }
             // Also check inside parameters.parameters (nested structure)
             if (params.parameters && params.parameters[pmConstant]) {
-                console.log(`Found nested parameter ${pmConstant}:`, params.parameters[pmConstant]);
                 return params.parameters[pmConstant];
             }
-            console.warn(`Parameter not found in PM._data.parameters: ${pmConstant}`);
-            console.log(`Available parameters (first 10):`, Object.keys(params).slice(0, 10));
-        } else {
-            console.warn(`PM data not available for parameter lookup: ${pmConstant}`);
         }
 
-        // Fallback: try PM.get() which has more sophisticated lookup
-        if (window.PM && typeof window.PM.get === 'function') {
-            const value = window.PM.get(pmConstant);
-            if (value !== null && value !== undefined) {
-                console.log(`Found parameter via PM.get(${pmConstant}):`, value);
-                // PM.get returns just the value, wrap it in expected structure
-                return { value: value };
+        // Strategy 2: Try window.PM_DATA (alternative global)
+        if (window.PM_DATA && window.PM_DATA.parameters) {
+            if (window.PM_DATA.parameters[pmConstant]) {
+                return window.PM_DATA.parameters[pmConstant];
             }
         }
 
-        console.warn(`Parameter lookup failed entirely for: ${pmConstant}`);
-        return null;
+        // Strategy 3: Try PM.get() which has sophisticated lookup with aliases
+        if (window.PM && typeof window.PM.get === 'function') {
+            try {
+                const value = window.PM.get(pmConstant);
+                if (value !== null && value !== undefined) {
+                    // PM.get returns just the value, wrap it in expected structure
+                    return {
+                        value: value,
+                        metadata: {},
+                        status: 'DERIVED'
+                    };
+                }
+            } catch (e) {
+                // Silent fail, continue to next strategy
+            }
+        }
+
+        // Strategy 4: Return a placeholder so at least the name shows
+        // This ensures parameters render even if values haven't loaded yet
+        return {
+            value: null,
+            metadata: {
+                description: `Parameter: ${pmConstant}`,
+                units: ''
+            },
+            status: 'LOADING'
+        };
     }
 
     // Render a single parameter card with hover tooltip
