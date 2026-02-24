@@ -863,6 +863,20 @@
             color: var(--text-secondary);
         }
 
+        /* Formula Parameters Container - Side-by-Side Layout */
+        .formula-params-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .formula-params-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
         /* Formula Parameters - Input/Output Cards */
         .formula-params {
             margin-top: 1.5rem;
@@ -872,6 +886,11 @@
             -webkit-backdrop-filter: blur(12px);
             border-radius: 10px;
             border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+
+        /* When inside container, remove top margin */
+        .formula-params-container .formula-params {
+            margin-top: 0;
         }
 
         .formula-params h4 {
@@ -1053,6 +1072,32 @@
         .param-tooltip-content .tooltip-name {
             color: #999;
             font-style: italic;
+        }
+
+        .param-tooltip-content .tooltip-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: 0.8rem;
+            color: #ddd;
+            margin: 8px 0 0 0;
+            padding-top: 8px;
+            border-top: 1px solid rgba(139, 127, 255, 0.15);
+        }
+
+        .param-tooltip-content .tooltip-status-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(139, 127, 255, 0.25);
+            color: #8b7fff;
+            border: 1px solid rgba(139, 127, 255, 0.4);
+            margin-left: 8px;
+            flex-shrink: 0;
         }
 
         /* Input parameters - blue tint */
@@ -2707,9 +2752,28 @@
         const inputParams = getInputParameters(formula);
         const outputParams = getOutputParameters(formula);
 
-        let html = '';
+        // If both inputs and outputs exist, render side-by-side
+        if (inputParams.length > 0 && outputParams.length > 0) {
+            return `
+                <div class="formula-params-container">
+                    <div class="formula-params inputs">
+                        <h4>Input Parameters</h4>
+                        <div class="param-cards">
+                            ${inputParams.map(param => renderParameterCard(param)).join('')}
+                        </div>
+                    </div>
+                    <div class="formula-params outputs">
+                        <h4>Output Parameters</h4>
+                        <div class="param-cards">
+                            ${outputParams.map(param => renderParameterCard(param)).join('')}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
 
-        // Render inputs
+        // Otherwise, render single column (legacy behavior)
+        let html = '';
         if (inputParams.length > 0) {
             html += `
                 <div class="formula-params inputs">
@@ -2721,7 +2785,6 @@
             `;
         }
 
-        // Render outputs
         if (outputParams.length > 0) {
             html += `
                 <div class="formula-params outputs">
@@ -2744,15 +2807,21 @@
         const inputParamPaths = formula.input_params || formula.inputParams || [];
         inputParamPaths.forEach(paramPath => {
             const paramData = getParameterData(paramPath);
-            const name = paramPath.split('.').pop(); // Last segment as display name
+            // Extract proper display name from parameter metadata or fallback to path segment
+            const displayName = paramData?.metadata?.display_name || paramData?.display_name || paramPath.split('.').pop();
+            const status = paramData?.metadata?.status || paramData?.status || '';
+            const description = paramData?.metadata?.description || paramData?.description || '';
+
             inputs.push({
-                name: name,
+                name: displayName,
                 constant: paramPath,
                 value: paramData?.value,
                 units: paramData?.metadata?.units || paramData?.units,
-                experimental: paramData?.experimental,
-                sigma: paramData?.sigma,
-                sigma_deviation: paramData?.sigma_deviation
+                experimental: paramData?.experimental || paramData?.metadata?.experimental_value,
+                sigma: paramData?.sigma || paramData?.metadata?.sigma,
+                sigma_deviation: paramData?.sigma_deviation || paramData?.metadata?.sigma_deviation,
+                status: status,
+                description: description
             });
         });
 
@@ -2804,15 +2873,21 @@
         const outputParamPaths = formula.output_params || formula.outputParams || [];
         outputParamPaths.forEach(paramPath => {
             const paramData = getParameterData(paramPath);
-            const name = paramPath.split('.').pop(); // Last segment as display name
+            // Extract proper display name from parameter metadata or fallback to path segment
+            const displayName = paramData?.metadata?.display_name || paramData?.display_name || paramPath.split('.').pop();
+            const status = paramData?.metadata?.status || paramData?.status || '';
+            const description = paramData?.metadata?.description || paramData?.description || '';
+
             outputs.push({
-                name: name,
+                name: displayName,
                 constant: paramPath,
                 value: paramData?.value,
                 units: paramData?.metadata?.units || paramData?.units,
-                experimental: paramData?.experimental,
-                sigma: paramData?.sigma,
-                sigma_deviation: paramData?.sigma_deviation
+                experimental: paramData?.experimental || paramData?.metadata?.experimental_value,
+                sigma: paramData?.sigma || paramData?.metadata?.sigma,
+                sigma_deviation: paramData?.sigma_deviation || paramData?.metadata?.sigma_deviation,
+                status: status,
+                description: description
             });
         });
 
@@ -2889,6 +2964,19 @@
             ? ` <span class="param-equals">=</span> <span class="param-value">${value}</span>${units ? ` <span class="param-units">${units}</span>` : ''}`
             : '';
 
+        // Format status text (remove redundant repetition)
+        let statusHtml = '';
+        if (param.status) {
+            let statusText = '';
+            // If description already starts with status word, don't repeat it
+            if (param.description && param.description.toLowerCase().startsWith(param.status.toLowerCase())) {
+                statusText = param.description;
+            } else {
+                statusText = param.description || param.status;
+            }
+            statusHtml = `<div class="tooltip-status">${escapeHtml(statusText)}<span class="tooltip-status-badge">${escapeHtml(param.status.toUpperCase())}</span></div>`;
+        }
+
         // Build tooltip content
         const tooltipContent = `
             <div class="param-tooltip-content">
@@ -2898,7 +2986,7 @@
                 </div>
                 ${hasValue ? `<div class="tooltip-value"><strong>Value:</strong> ${value}${units ? ' ' + units : ''}</div>` : ''}
                 ${tooltipExpHtml}
-                ${param.name ? `<div class="tooltip-name">${escapeHtml(param.name)}</div>` : ''}
+                ${statusHtml}
             </div>
         `;
 

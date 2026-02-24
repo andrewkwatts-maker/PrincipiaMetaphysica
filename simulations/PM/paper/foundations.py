@@ -335,7 +335,7 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content=r"R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \quad \Rightarrow \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
+                content=r"R_\perp^i = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right) \quad \Rightarrow \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
                 label="or-reduction-tensor"
             ),
             ContentBlock(
@@ -652,7 +652,7 @@ class FoundationsV16_2(SimulationBase):
             Formula(
                 id="or-reduction-tensor",
                 label="(1.2b)",
-                latex=r"R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i \quad \text{where} \quad R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}",
+                latex=r"R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i \quad \text{where} \quad R_\perp^i = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)",
                 plain_text="R_perp^full = tensor_{i=1}^{12} R_perp^i where R_perp^i = [[0,-1],[1,0]]",
                 category="DERIVED",
                 description="Full OR reduction operator as tensor product of 12 per-pair 90-degree rotations.",

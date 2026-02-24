@@ -543,7 +543,7 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="E_G ≥ ℏ/τ_OR, τ_OR ~ ℏ/E_G — OR reduction threshold (unified time physics)",
+                content=r"E_G \geq \frac{\hbar}{\tau_{\text{OR}}}, \quad \tau_{\text{OR}} \sim \frac{\hbar}{E_G} \qquad \text{(OR reduction threshold, unified time physics)}",
                 label=""
             ),
             ContentBlock(
