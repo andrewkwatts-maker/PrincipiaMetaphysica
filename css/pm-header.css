@@ -44,25 +44,28 @@
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.75rem 2rem;
+    padding: 0.5rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.pm-header .header-content {
-    max-width: 1400px;
+/* Top Row: Title (LHS) + User Info (RHS) */
+.pm-header .header-top-row {
+    max-width: 1600px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 0.5rem;
 }
 
 /* Site Title */
 .pm-header .site-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #f8f9fa;
     text-decoration: none;
@@ -79,73 +82,91 @@
     outline-offset: 4px;
 }
 
-/* Main Navigation */
-.pm-header .main-nav ul {
+/* User Info Controls (RHS) */
+.pm-header .user-info-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+}
+
+.pm-header .user-name {
+    color: #f8f9fa;
+    font-weight: 600;
+}
+
+.pm-header .user-email-static {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+}
+
+.pm-header .logout-btn-inline {
+    background: rgba(139, 127, 255, 0.2);
+    color: #fff;
+    border: 1px solid rgba(139, 127, 255, 0.4);
+    padding: 0.35rem 0.9rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.pm-header .logout-btn-inline:hover {
+    background: rgba(139, 127, 255, 0.3);
+    border-color: rgba(139, 127, 255, 0.6);
+}
+
+/* Navigation Row (single line) */
+.pm-header .main-nav-row {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.pm-header .main-nav-row ul {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 0.25rem;
+    gap: 0.3rem;
     flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
 }
 
-.pm-header .main-nav li {
+.pm-header .main-nav-row li {
     margin: 0;
     padding: 0;
 }
 
-.pm-header .main-nav a {
-    color: rgba(255, 255, 255, 0.9); /* Enhanced contrast for WCAG AA */
+.pm-header .main-nav-row a {
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    padding: 0.5rem 0.9rem;
+    padding: 0.4rem 0.8rem;
     border-radius: 6px;
-    font-size: 0.875rem;
+    font-size: 0.82rem;
     font-weight: 500;
     transition: all 0.2s ease;
     display: inline-block;
     white-space: nowrap;
 }
 
-.pm-header .main-nav a:hover {
+.pm-header .main-nav-row a:hover {
     background: rgba(139, 127, 255, 0.15);
     color: #fff;
 }
 
-.pm-header .main-nav a:focus {
+.pm-header .main-nav-row a:focus {
     outline: 2px solid #8b7fff;
     outline-offset: 2px;
     background: rgba(139, 127, 255, 0.15);
     color: #fff;
 }
 
-.pm-header .main-nav a.active {
+.pm-header .main-nav-row a.active {
     background: linear-gradient(135deg, rgba(139, 127, 255, 0.25), rgba(255, 126, 182, 0.15));
     color: #fff;
     border: 1px solid rgba(139, 127, 255, 0.3);
-}
-
-/* User Controls */
-.pm-header .user-controls-nav {
-    display: flex;
-    align-items: center;
-    margin-left: 0.5rem;
-    padding-left: 0.75rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.pm-header .user-controls {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.pm-header .user-avatar {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    border: 2px solid rgba(139, 127, 255, 0.5);
-    object-fit: cover;
 }
 
 .pm-header .user-email {
@@ -302,29 +323,34 @@
 
 @media (max-width: 1024px) {
     .pm-header {
-        padding: 0.75rem 1.5rem;
+        padding: 0.5rem 1.5rem;
     }
 
-    .pm-header .main-nav a {
-        padding: 0.4rem 0.7rem;
-        font-size: 0.8rem;
+    .pm-header .main-nav-row a {
+        padding: 0.35rem 0.65rem;
+        font-size: 0.78rem;
     }
 
-    .pm-header .user-email {
+    .pm-header .user-email-static {
         display: none;
     }
 }
 
 @media (max-width: 768px) {
-    .pm-header .header-content {
-        flex-wrap: nowrap;
-    }
-
     .pm-header .mobile-menu-btn {
         display: flex;
     }
 
-    .pm-header .main-nav {
+    .pm-header .user-info-controls {
+        gap: 0.5rem;
+        font-size: 0.75rem;
+    }
+
+    .pm-header .user-name {
+        display: none;
+    }
+
+    .pm-header .main-nav-row {
         display: none;
         position: absolute;
         top: 100%;
@@ -337,27 +363,20 @@
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
-    .pm-header .main-nav.mobile-open {
+    .pm-header .main-nav-row.mobile-open {
         display: block;
     }
 
-    .pm-header .main-nav ul {
+    .pm-header .main-nav-row ul {
         flex-direction: column;
         gap: 0.25rem;
+        justify-content: flex-start;
     }
 
-    .pm-header .main-nav a {
+    .pm-header .main-nav-row a {
         display: block;
         padding: 0.75rem 1rem;
-    }
-
-    .pm-header .user-controls-nav {
-        border-left: none;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-left: 0;
-        margin-top: 0.5rem;
-        padding-left: 0;
-        padding-top: 0.75rem;
+        text-align: left;
     }
 }
 
