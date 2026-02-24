@@ -513,11 +513,11 @@ class CKMMatrixSimulation(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=(
-                        r"V_{\text{CKM}} = \begin{pmatrix} "
+                        r"V_{\text{CKM}} = \left(\begin{smallmatrix} "
                         r"1 - \frac{\lambda^2}{2} & \lambda & A\lambda^3(\rho - i\eta) \\ "
                         r"-\lambda & 1 - \frac{\lambda^2}{2} & A\lambda^2 \\ "
                         r"A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 "
-                        r"\end{pmatrix} + O(\lambda^4)"
+                        r"\end{smallmatrix}\right) + O(\lambda^4)"
                     ),
                     formula_id="wolfenstein-parametrization",
                     label="(4.3.5)"
@@ -712,11 +712,11 @@ class CKMMatrixSimulation(SimulationBase):
                 id="wolfenstein-parametrization",
                 label="(4.3.5)",
                 latex=(
-                    r"V_{\text{CKM}} = \begin{pmatrix} "
+                    r"V_{\text{CKM}} = \left(\begin{smallmatrix} "
                     r"1 - \frac{\lambda^2}{2} & \lambda & A\lambda^3(\rho - i\eta) \\ "
                     r"-\lambda & 1 - \frac{\lambda^2}{2} & A\lambda^2 \\ "
                     r"A\lambda^3(1-\rho-i\eta) & -A\lambda^2 & 1 "
-                    r"\end{pmatrix}"
+                    r"\end{smallmatrix}\right)"
                 ),
                 plain_text=(
                     "V_CKM matrix in Wolfenstein parametrization with "

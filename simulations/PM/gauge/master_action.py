@@ -466,7 +466,7 @@ class MasterActionSimulationV22(SimulationBase):
             Formula(
                 id="distributed-or-reduction-v22",
                 label="(1.4)",
-                latex=r"R_\perp = \bigotimes_{i=1}^{12} R_\perp^i, \quad R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}",
+                latex=r"R_\perp = \bigotimes_{i=1}^{12} R_\perp^i, \quad R_\perp^i = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)",
                 plain_text="R_perp = tensor_{i=1}^{12} R_perp^i, R_perp^i = [[0,-1],[1,0]]",
                 category="DERIVED",
                 description=(

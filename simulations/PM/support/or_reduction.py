@@ -304,7 +304,7 @@ class ORReductionV21(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"R_\perp = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}",
+                    content=r"R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)",
                     formula_id="or-rotation-matrix",
                     label="(1.19)"
                 ),
@@ -381,7 +381,7 @@ class ORReductionV21(SimulationBase):
             Formula(
                 id="or-rotation-matrix",
                 label="(1.19)",
-                latex=r"R_\perp = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}",
+                latex=r"R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)",
                 plain_text="R_perp = [[0, -1], [1, 0]]",
                 category="DERIVED",
                 description="OR Reduction rotation matrix (90 degrees in bridge)",
@@ -396,7 +396,7 @@ class ORReductionV21(SimulationBase):
                         {"description": "Standard 2D rotation",
                          "formula": r"R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix}"},
                         {"description": "At theta = pi/2",
-                         "formula": r"R_\perp = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}"}
+                         "formula": r"R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right)"}
                     ],
                     "method": "rotation_matrix_construction",
                     "parentFormulas": [],

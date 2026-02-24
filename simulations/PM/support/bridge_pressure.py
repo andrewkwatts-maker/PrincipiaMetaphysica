@@ -350,7 +350,7 @@ class BridgePressureV21(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"R_\perp = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad R_\perp^2 = -I",
+                    content=r"R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right), \quad R_\perp^2 = -I",
                     formula_id="or-reduction-operator",
                     label="(1.17)"
                 ),
@@ -668,7 +668,7 @@ class BridgePressureV21(SimulationBase):
             Formula(
                 id="or-reduction-operator",
                 label="(1.17)",
-                latex=r"R_\perp = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad R_\perp^2 = -I",
+                latex=r"R_\perp = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right), \quad R_\perp^2 = -I",
                 plain_text="R_perp = [[0, -1], [1, 0]], R_perp^2 = -I",
                 category="DERIVED",
                 description="Orthogonal Reduction operator for cross-shadow sampling",

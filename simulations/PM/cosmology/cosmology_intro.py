@@ -602,7 +602,7 @@ class CosmologyIntroV16(SimulationBase):
             Formula(
                 id="sp2r-constraint",
                 label="(5.3)",
-                latex=r"R_{\perp,i} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}, \quad R_{\perp,i}^2 = -I, \quad i = 1,...,12",
+                latex=r"R_{\perp,i} = \left(\begin{smallmatrix} 0 & -1 \\ 1 & 0 \end{smallmatrix}\right), \quad R_{\perp,i}^2 = -I, \quad i = 1,...,12",
                 plain_text="R_perp_i = [[0,-1],[1,0]], R_perp_i^2 = -I, i = 1,...,12",
                 category="DERIVED",
                 description="OR reduction operator for 12-pair dual-shadow coordinate mapping with Moebius property",
