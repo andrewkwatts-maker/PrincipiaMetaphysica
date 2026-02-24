@@ -11,14 +11,14 @@ Dedicated To:
 
 This appendix provides a step-by-step pedagogical derivation of how extra dimensions
 give rise to gauge fields and scalars. We build intuition from the simplest case
-(5D circle reduction) and generalize to the full Principia Metaphysica v22
+(5D circle reduction) and generalize to the full Principia Metaphysica v23.1
 dimensional chain with 12x(2,0) paired bridges.
 
-v22 KEY DIMENSIONAL CASCADE:
+v23.1 KEY DIMENSIONAL CASCADE:
 =============================
-    Level 0: 26D (24,1) Ancestral bulk - UNIFIED TIME
-    Level 1: M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) - 12 PAIRS
-             24 spatial dimensions decompose into 12 × 2D Euclidean pairs
+    Level 0: 27D (26,1) Ancestral bulk - UNIFIED TIME
+    Level 1: M^{27}(26,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ C^{2,0} - 12 PAIRS + CENTRAL SAMPLER
+             24 G2 dimensions decompose into 12 × 2D Euclidean pairs
     Level 2: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows
     Level 3: 7D (7,0) per shadow - G2 HOLONOMY (Riemannian)
     Level 4: 4D (3,1) observable - SPACETIME
@@ -34,7 +34,7 @@ Topics covered:
     6. Mass spectrum from internal eigenvalues
     7. Zero modes and massless fields
     8. Generalization to higher dimensions
-    9. The v22 Principia chain: 26D -> 12-pair bridges -> 4D
+    9. The v23.1 Principia chain: 27D -> 12-pair bridges -> 4D
     10. Distributed OR Reduction: R_total = ⊗ᵢ R_⊥_i
     11. Aggregate breathing dark energy: ρ_breath = Σᵢ ρ_i
     12. Consistency conditions for truncation
@@ -66,17 +66,17 @@ from simulations.base import (
 
 class AppendixOKKReduction(SimulationBase):
     """
-    Appendix O: Kaluza-Klein Reduction Steps (v22).
+    Appendix O: Kaluza-Klein Reduction Steps (v23.1).
 
     Provides pedagogical derivations of dimensional reduction using an intuitive,
     step-by-step approach -- building from simple examples before generalizing
-    to the full 26D framework.
+    to the full 27D framework.
 
-    v22 Key Features:
+    v23.1 Key Features:
     - 12×(2,0) paired bridges as consciousness channels
     - Distributed OR Reduction: R_total = ⊗ᵢ₌₁¹² R_⊥_i
     - Aggregate breathing dark energy: ρ_breath = Σᵢ ρ_i
-    - Dimension counting: 1 time + 12×2 spatial = 25 manifest coords
+    - Dimension counting: 1 time + 12×2 spatial + 2 central = 27D manifest coords
 
     The key insight: Extra dimensions are not exotic - they simply encode
     gauge symmetries geometrically. A particle moving in a circle (compact
@@ -90,20 +90,20 @@ class AppendixOKKReduction(SimulationBase):
 
     # Dynamic formula IDs referenced by this appendix
     FORMULA_REFS = [
-        "kk-metric-ansatz-v22",
-        "kk-circle-reduction-v22",
-        "kk-gauge-emergence-v22",
-        "kk-dilaton-scalar-v22",
-        "kk-mode-expansion-v22",
-        "kk-mass-spectrum-v22",
-        "kk-zero-modes-v22",
-        "kk-higher-dim-v22",
-        "kk-principia-chain-v22",
-        "kk-distributed-or-v22",
-        "kk-g2-volume-v22",
-        "kk-consistency-v22",
-        "kk-gauge-coupling-v22",
-        "kk-aggregate-breathing-v22",
+        "kk-metric-ansatz",
+        "kk-circle-reduction",
+        "kk-gauge-emergence",
+        "kk-dilaton-scalar",
+        "kk-mode-expansion",
+        "kk-mass-spectrum",
+        "kk-zero-modes",
+        "kk-higher-dim",
+        "kk-principia-chain",
+        "kk-distributed-or",
+        "kk-g2-volume",
+        "kk-consistency",
+        "kk-gauge-coupling",
+        "kk-aggregate-breathing",
     ]
 
     # Dynamic parameter paths referenced by this appendix
@@ -119,12 +119,12 @@ class AppendixOKKReduction(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_o_kk_reduction_v22",
+            id="appendix_o_kk_reduction",
             version="23.1",
             domain="appendices",
-            title="Appendix O: Kaluza-Klein Reduction Steps (v22)",
+            title="Appendix O: Kaluza-Klein Reduction Steps (v23.1)",
             description=(
-                "Pedagogical derivation of v22 dimensional reduction from 26D string theory "
+                "Pedagogical derivation of v23.1 dimensional reduction from 27D string theory "
                 "to 4D spacetime via 12 paired (2,0) bridges and G₂ holonomy compactification"
             ),
             section_id="O",
@@ -150,12 +150,12 @@ class AppendixOKKReduction(SimulationBase):
         return self.FORMULA_REFS
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """Execute KK reduction computations (v22)."""
+        """Execute KK reduction computations (v23.1)."""
         # Get geometric inputs with defaults
         b3 = registry.get("topology.elder_kads", default=24)
         V_G2 = registry.get("geometry.V_G2", default=Decimal("0.1667"))
 
-        # v22 parameters
+        # v23.1 parameters
         n_bridge_pairs = 12  # Number of consciousness channel pairs
         d_per_pair = 2  # Dimensions per bridge pair (2,0)
         d_total_spatial = n_bridge_pairs * d_per_pair  # 24
@@ -181,12 +181,12 @@ class AppendixOKKReduction(SimulationBase):
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
-        """Return section content for Appendix O: Kaluza-Klein Reduction Steps (v22)."""
+        """Return section content for Appendix O: Kaluza-Klein Reduction Steps (v23.1)."""
         content_blocks = [
             # Main heading
             ContentBlock(
                 type="heading",
-                content="Kaluza-Klein Reduction Steps (v22)",
+                content="Kaluza-Klein Reduction Steps (v23.1)",
                 level=2,
                 label="O"
             ),
@@ -197,7 +197,7 @@ class AppendixOKKReduction(SimulationBase):
                     "how extra dimensions give rise to the gauge fields and scalars of the "
                     "Standard Model. We adopt an intuitive, step-by-step pedagogical approach: "
                     "starting with simple cases to build intuition, then generalizing to the "
-                    "v22 12-pair bridge system."
+                    "v23.1 12-pair bridge system."
                 )
             ),
             ContentBlock(
@@ -206,11 +206,11 @@ class AppendixOKKReduction(SimulationBase):
                     "The central insight of Kaluza-Klein theory is profound: <strong>gauge "
                     "symmetries are geometric</strong>. What we perceive as a charged particle "
                     "interacting with an electromagnetic field is actually a particle moving "
-                    "in an extra circular dimension. In v22, we have 12 paired bridges as "
+                    "in an extra circular dimension. In v23.1, we have 12 paired bridges as "
                     "consciousness channels, with distributed OR Reduction."
                 ),
                 callout_type="info",
-                title="The Big Picture (v22)"
+                title="The Big Picture (v23.1)"
             ),
 
             # O.1 The Metric Ansatz
@@ -230,7 +230,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"ds^2_{D} = e^{2\alpha\phi} g_{\mu\nu} dx^\mu dx^\nu + e^{2\beta\phi} G_{mn} dy^m dy^n",
-                formula_id="kk-metric-ansatz-v22",
+                formula_id="kk-metric-ansatz",
                 label="(O.1)"
             ),
             ContentBlock(
@@ -272,7 +272,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"ds^2_5 = g_{\mu\nu} dx^\mu dx^\nu + R^2 (dy + A_\mu dx^\mu)^2",
-                formula_id="kk-circle-reduction-v22",
+                formula_id="kk-circle-reduction",
                 label="(O.2)"
             ),
             ContentBlock(
@@ -284,7 +284,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"ds^2_5 = g_{\mu\nu} dx^\mu dx^\nu + R^2 dy^2 + 2R^2 A_\mu dx^\mu dy + R^2 A_\mu A_\nu dx^\mu dx^\nu",
-                formula_id="kk-gauge-emergence-v22",
+                formula_id="kk-gauge-emergence",
                 label="(O.3)"
             ),
             ContentBlock(
@@ -315,7 +315,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\phi(x) = \ln\left(\frac{R(x)}{R_0}\right) \quad \Rightarrow \quad R(x) = R_0 e^{\phi(x)}",
-                formula_id="kk-dilaton-scalar-v22",
+                formula_id="kk-dilaton-scalar",
                 label="(O.4)"
             ),
             ContentBlock(
@@ -343,7 +343,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\Phi(x,y) = \sum_{n=-\infty}^{\infty} \phi_n(x) e^{iny/R}",
-                formula_id="kk-mode-expansion-v22",
+                formula_id="kk-mode-expansion",
                 label="(O.5)"
             ),
             ContentBlock(
@@ -371,7 +371,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"(\Box_4 + m_n^2)\phi_n = 0 \quad \text{where} \quad m_n^2 = \frac{n^2}{R^2}",
-                formula_id="kk-mass-spectrum-v22",
+                formula_id="kk-mass-spectrum",
                 label="(O.6)"
             ),
             ContentBlock(
@@ -403,7 +403,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\Delta_{K} \psi_0 = 0 \quad \Rightarrow \quad \psi_0 = \text{const} \quad \text{(harmonic form)}",
-                formula_id="kk-zero-modes-v22",
+                formula_id="kk-zero-modes",
                 label="(O.7)"
             ),
             ContentBlock(
@@ -432,7 +432,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"G_{\text{gauge}}^{4D} = \text{Isom}(K) \quad \Rightarrow \quad \text{SU}(3) \times \text{SU}(2) \times \text{U}(1)",
-                formula_id="kk-higher-dim-v22",
+                formula_id="kk-higher-dim",
                 label="(O.8)"
             ),
             ContentBlock(
@@ -448,30 +448,30 @@ class AppendixOKKReduction(SimulationBase):
                 label="isometry-gauge-map"
             ),
 
-            # O.8 The v22 Principia Chain
+            # O.8 The v23.1 Principia Chain
             ContentBlock(
                 type="heading",
-                content="O.8 The v22 Principia Chain: 26D to 4D with 12-Pair Bridges",
+                content="O.8 The v23.1 Principia Chain: 27D to 4D with 12-Pair Bridges",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In Principia Metaphysica v22, the dimensional reduction proceeds through "
+                    "In Principia Metaphysica v23.1, the dimensional reduction proceeds through "
                     "12 paired bridges (consciousness channels), each a (2,0) Euclidean torus:"
                 )
             ),
             ContentBlock(
                 type="formula",
-                content=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \xrightarrow{\text{G}_2} 4D_{(3,1)}",
-                formula_id="kk-principia-chain-v22",
+                content=r"M^{27}(26,1) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus C^{2,0} \xrightarrow{\text{G}_2} 4D_{(3,1)}",
+                formula_id="kk-principia-chain",
                 label="(O.9)"
             ),
             ContentBlock(
                 type="note",
                 content=(
                     "<ul>"
-                    "<li><strong>27D(26,1)</strong>: Bosonic string with unified time, 24 spatial = 12×2</li>"
+                    "<li><strong>27D(26,1)</strong>: Bosonic string with unified time, 24 G2 spatial = 12×2, 2 central sampler</li>"
                     "<li><strong>12 Bridge Pairs</strong>: Each B_i^{2,0} is a consciousness channel "
                     "enabling OR Reduction between normal/mirror shadows</li>"
                     "<li><strong>Distributed OR</strong>: R_total = ⊗ᵢ R_⊥_i (tensor product of 12 rotations)</li>"
@@ -479,18 +479,18 @@ class AppendixOKKReduction(SimulationBase):
                     "<li><strong>G_2 → 4D</strong>: Per-shadow G_2 holonomy yields Standard Model</li>"
                     "</ul>"
                 ),
-                label="principia-stages-v22"
+                label="principia-stages-v23-1"
             ),
             ContentBlock(
                 type="formula",
                 content=r"R_{total} = \bigotimes_{i=1}^{12} R_{\perp,i}, \quad R_{\perp,i}^2 = -I",
-                formula_id="kk-distributed-or-v22",
+                formula_id="kk-distributed-or",
                 label="(O.9b)"
             ),
             ContentBlock(
                 type="formula",
-                content=r"M_{\text{Pl}}^2 = M_{26}^{24} \cdot V_{22} \propto M_{7}^{5} \cdot V_{G_2}",
-                formula_id="kk-g2-volume-v22",
+                content=r"M_{\text{Pl}}^2 = M_{27}^{25} \cdot V_{23} \propto M_{7}^{5} \cdot V_{G_2}",
+                formula_id="kk-g2-volume",
                 label="(O.10)"
             ),
 
@@ -511,7 +511,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\frac{1}{g_i^2} = \frac{\text{Vol}(\Sigma_i)}{l_s^{n_i}} \quad \Rightarrow \quad \alpha_i = \frac{g_i^2}{4\pi}",
-                formula_id="kk-gauge-coupling-v22",
+                formula_id="kk-gauge-coupling",
                 label="(O.11)"
             ),
             ContentBlock(
@@ -540,7 +540,7 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\text{Consistent truncation:} \quad \mathcal{L}_{4D}[\phi_0] = \int_K \mathcal{L}_{D}[\phi_0, y]\, d^ny",
-                formula_id="kk-consistency-v22",
+                formula_id="kk-consistency",
                 label="(O.12)"
             ),
             ContentBlock(
@@ -560,16 +560,16 @@ class AppendixOKKReduction(SimulationBase):
                 label="consistency-conditions"
             ),
 
-            # O.10b Aggregate Breathing Dark Energy (v22)
+            # O.10b Aggregate Breathing Dark Energy (v23.1)
             ContentBlock(
                 type="heading",
-                content="O.10b Aggregate Breathing Dark Energy (v22)",
+                content="O.10b Aggregate Breathing Dark Energy (v23.1)",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In v22, breathing dark energy aggregates from all 12 bridge pairs. Each "
+                    "In v23.1, breathing dark energy aggregates from all 12 bridge pairs. Each "
                     "pair i contributes a pressure mismatch between normal and mirror shadows, "
                     "summed to give the total breathing energy density:"
                 )
@@ -577,14 +577,14 @@ class AppendixOKKReduction(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\rho_{\text{breath}} = \sum_{i=1}^{12}|T^{ab}_{normal,i} - R_{\perp,i} T^{ab}_{mirror,i}|, \quad w_0 = -\frac{23}{24}",
-                formula_id="kk-aggregate-breathing-v22",
+                formula_id="kk-aggregate-breathing",
                 label="(O.10c)"
             ),
 
             # Summary
             ContentBlock(
                 type="heading",
-                content="O.11 Summary: From Geometry to Gauge (v22)",
+                content="O.11 Summary: From Geometry to Gauge (v23.1)",
                 level=3
             ),
             ContentBlock(
@@ -592,25 +592,25 @@ class AppendixOKKReduction(SimulationBase):
                 content=(
                     "Kaluza-Klein reduction teaches us that the Standard Model gauge structure "
                     "is not arbitrary - it emerges from the geometry of extra dimensions. "
-                    "In Principia Metaphysica v22, 12 paired bridges act as consciousness channels, "
+                    "In Principia Metaphysica v23.1, 12 paired bridges act as consciousness channels, "
                     "with distributed OR Reduction R_total = ⊗₁₂ R_⊥_i. The specific choice of "
                     "G_2 holonomy manifold (with b_3 = 24 and chi_eff = 144) uniquely determines "
                     "all gauge couplings and matter content. Aggregate breathing dark energy "
                     "ρ = Σᵢ ρ_i yields w0 = -23/24 (consistent with DESI 2025 BAO data). No free parameters!"
                 ),
                 callout_type="success",
-                title="The Geometric Origin of Gauge Symmetry (v22)"
+                title="The Geometric Origin of Gauge Symmetry (v23.1)"
             ),
         ]
 
         return SectionContent(
             section_id="O",
             subsection_id=None,
-            title="Appendix O: Kaluza-Klein Reduction Steps (v22)",
+            title="Appendix O: Kaluza-Klein Reduction Steps (v23.1)",
             abstract=(
                 "Pedagogical derivation of how extra dimensions give rise to gauge fields "
                 "and scalars, from the simplest 5D circle example to the full Principia "
-                "Metaphysica v22 12-pair bridge system: 26D -> 12×(2,0) bridges -> 4D."
+                "Metaphysica v23.1 12-pair bridge system: 27D -> 12×(2,0) bridges -> 4D."
             ),
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
@@ -619,10 +619,10 @@ class AppendixOKKReduction(SimulationBase):
         )
 
     def get_formulas(self) -> List[Formula]:
-        """Return formula definitions for Appendix O (v22)."""
+        """Return formula definitions for Appendix O (v23.1)."""
         return [
             Formula(
-                id="kk-metric-ansatz-v22",
+                id="kk-metric-ansatz",
                 label="(O.1)",
                 latex=r"ds^2_{D} = e^{2\alpha\phi} g_{\mu\nu} dx^\mu dx^\nu + e^{2\beta\phi} G_{mn} dy^m dy^n",
                 plain_text="KK metric ansatz with warping",
@@ -630,7 +630,7 @@ class AppendixOKKReduction(SimulationBase):
                 description=(
                     "Kaluza-Klein metric ansatz for dimensional reduction. The D-dimensional "
                     "metric splits into external 4D spacetime and internal compact manifold, "
-                    "with dilaton-dependent warping factors. In v22, internal = 12×(2,0) bridges."
+                    "with dilaton-dependent warping factors. In v23.1, internal = 12×(2,0) bridges."
                 ),
                 terms={
                     "g_{mu nu}": "4D external spacetime metric",
@@ -649,14 +649,14 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-circle-reduction-v22",
+                id="kk-circle-reduction",
                 label="(O.2)",
                 latex=r"ds^2_5 = g_{\mu\nu} dx^\mu dx^\nu + R^2 (dy + A_\mu dx^\mu)^2",
                 plain_text="5D circle metric ansatz with gauge field",
                 category="ESTABLISHED",
                 description=(
                     "The simplest Kaluza-Klein ansatz: 5D metric on M_4 x S^1. The off-diagonal "
-                    "term A_mu becomes the U(1) gauge field in 4D. V22 generalizes to 12 pairs."
+                    "term A_mu becomes the U(1) gauge field in 4D. V23.1 generalizes to 12 pairs."
                 ),
                 terms={
                     "R": "Radius of compact circle S^1",
@@ -665,7 +665,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Kaluza 1921 ansatz for 5D gravity on M4 x S1",
-                    "parentFormulas": ["kk-metric-ansatz-v22"],
+                    "parentFormulas": ["kk-metric-ansatz"],
                     "steps": [
                         "Specialize the general KK ansatz to one compact circle dimension",
                         "Off-diagonal metric component g_{mu 5} identified as gauge field A_mu",
@@ -674,7 +674,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-gauge-emergence-v22",
+                id="kk-gauge-emergence",
                 label="(O.3)",
                 latex=r"ds^2_5 = g_{\mu\nu} dx^\mu dx^\nu + R^2 dy^2 + 2R^2 A_\mu dx^\mu dy + R^2 A_\mu A_\nu dx^\mu dx^\nu",
                 plain_text="Expanded 5D metric showing gauge field terms",
@@ -690,7 +690,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Algebraic expansion of circle reduction ansatz",
-                    "parentFormulas": ["kk-circle-reduction-v22"],
+                    "parentFormulas": ["kk-circle-reduction"],
                     "steps": [
                         "Expand R^2 (dy + A_mu dx^mu)^2 algebraically",
                         "Identify cross-term 2*R^2 A_mu dx^mu dy as gauge kinetic coupling",
@@ -699,7 +699,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-dilaton-scalar-v22",
+                id="kk-dilaton-scalar",
                 label="(O.4)",
                 latex=r"\phi(x) = \ln\left(\frac{R(x)}{R_0}\right) \quad \Rightarrow \quad R(x) = R_0 e^{\phi(x)}",
                 plain_text="Dilaton field from variable radius",
@@ -715,7 +715,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Logarithmic parametrization of variable compact radius",
-                    "parentFormulas": ["kk-metric-ansatz-v22"],
+                    "parentFormulas": ["kk-metric-ansatz"],
                     "steps": [
                         "Allow internal radius R to depend on external coordinates x",
                         "Define dilaton as logarithmic ratio: phi = ln(R/R_0)",
@@ -724,7 +724,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-mode-expansion-v22",
+                id="kk-mode-expansion",
                 label="(O.5)",
                 latex=r"\Phi(x,y) = \sum_{n=-\infty}^{\infty} \phi_n(x) e^{iny/R}",
                 plain_text="Fourier mode expansion on circle",
@@ -740,7 +740,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Fourier decomposition on compact S1",
-                    "parentFormulas": ["kk-circle-reduction-v22"],
+                    "parentFormulas": ["kk-circle-reduction"],
                     "steps": [
                         "Periodicity y ~ y + 2*pi*R requires discrete Fourier modes",
                         "Expand: Phi(x,y) = sum_n phi_n(x) exp(i*n*y/R)",
@@ -749,7 +749,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-mass-spectrum-v22",
+                id="kk-mass-spectrum",
                 label="(O.6)",
                 latex=r"(\Box_4 + m_n^2)\phi_n = 0 \quad \text{where} \quad m_n^2 = \frac{n^2}{R^2}",
                 plain_text="KK mass spectrum: m_n = |n|/R",
@@ -765,7 +765,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Substitution of mode expansion into 5D Klein-Gordon equation",
-                    "parentFormulas": ["kk-mode-expansion-v22"],
+                    "parentFormulas": ["kk-mode-expansion"],
                     "steps": [
                         "Start with massless 5D Klein-Gordon equation: Box_5 Phi = 0",
                         "Substitute mode expansion and separate variables",
@@ -774,7 +774,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-zero-modes-v22",
+                id="kk-zero-modes",
                 label="(O.7)",
                 latex=r"\Delta_{K} \psi_0 = 0 \quad \Rightarrow \quad \psi_0 = \text{const} \quad \text{(harmonic form)}",
                 plain_text="Zero modes are harmonic forms on compact manifold",
@@ -791,7 +791,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Hodge theory on compact Riemannian manifold",
-                    "parentFormulas": ["kk-mass-spectrum-v22"],
+                    "parentFormulas": ["kk-mass-spectrum"],
                     "steps": [
                         "Set n=0 in KK mass spectrum: massless modes satisfy Delta_K psi_0 = 0",
                         "By Hodge theorem, harmonic p-forms are in bijection with H^p(K)",
@@ -800,7 +800,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-higher-dim-v22",
+                id="kk-higher-dim",
                 label="(O.8)",
                 latex=r"G_{\text{gauge}}^{4D} = \text{Isom}(K) \quad \Rightarrow \quad \text{SU}(3) \times \text{SU}(2) \times \text{U}(1)",
                 plain_text="4D gauge group = Isometry group of compact manifold",
@@ -818,7 +818,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Isometry-gauge correspondence in KK reduction",
-                    "parentFormulas": ["kk-gauge-emergence-v22"],
+                    "parentFormulas": ["kk-gauge-emergence"],
                     "steps": [
                         "Killing vectors of compact manifold K generate continuous isometries",
                         "KK reduction of off-diagonal metric components yields gauge fields for each Killing vector",
@@ -827,46 +827,48 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-principia-chain-v22",
+                id="kk-principia-chain",
                 label="(O.9)",
-                latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \xrightarrow{G_2} 4D_{(3,1)}",
-                plain_text="v22 chain: 27D(26,1) = T^1 x (12 x B^{2,0}) -> 4D(3,1)",
+                latex=r"M^{27}(26,1) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus C^{2,0} \xrightarrow{G_2} 4D_{(3,1)}",
+                plain_text="v23.1 chain: 27D(26,1) = T^1 x (12 x B^{2,0}) + C^{2,0} -> 4D(3,1)",
                 category="ESTABLISHED",
                 description=(
-                    "The v22 Principia Metaphysica dimensional reduction chain. Starting from "
-                    "26D string theory (1 time + 25 spatial), the 24 spatial dimensions decompose "
+                    "The v23.1 Principia Metaphysica dimensional reduction chain. Starting from "
+                    "27D string theory (1 time + 26 spatial), the 24 G2 dimensions decompose "
                     "into 12 paired (2,0) Euclidean bridges (consciousness channels), represented "
-                    "as a fiber product over a shared time T^1. Each bridge pair B_i is a 2D "
-                    "Euclidean torus carrying a reduction operator R_perp_i. Per-shadow G₂ "
-                    "holonomy compactification then reduces each 13D shadow to 4D spacetime, "
-                    "incorporating specific boundary conditions from flux quantization."
+                    "as a fiber product over a shared time T^1, with 2 additional central sampler "
+                    "dimensions C^{2,0}. Each bridge pair B_i is a 2D Euclidean torus carrying a "
+                    "reduction operator R_perp_i. Per-shadow G₂ holonomy compactification then "
+                    "reduces each 13D shadow to 4D spacetime, incorporating specific boundary "
+                    "conditions from flux quantization."
                 ),
                 terms={
-                    "27D(26,1)": "Bosonic string with unified time",
+                    "27D(26,1)": "Bosonic string with unified time and central sampler",
                     "T^1": "Shared time fiber",
                     "B_i^{2,0}": "12 Euclidean bridge pairs (consciousness channels)",
+                    "C^{2,0}": "Central sampler dimensions",
                     "G_2": "Exceptional holonomy per shadow",
                     "4D(3,1)": "Observable Minkowski spacetime",
                 },
                 derivation={
-                    "method": "v22 dimensional cascade from 26D bosonic string",
-                    "parentFormulas": ["kk-metric-ansatz-v22", "kk-higher-dim-v22"],
+                    "method": "v23.1 dimensional cascade from 27D bosonic string",
+                    "parentFormulas": ["kk-metric-ansatz", "kk-higher-dim"],
                     "steps": [
-                        "Begin with 26D(24,1): bosonic string theory with unified time",
-                        "Decompose 24 spatial dimensions into 12 paired (2,0) Euclidean bridges",
+                        "Begin with 27D(26,1): bosonic string theory with unified time and central sampler",
+                        "Decompose 24 G2 dimensions into 12 paired (2,0) Euclidean bridges",
                         "Each bridge pair carries OR reduction operator R_perp_i, warping to 2 x 13D(12,1) shadows",
                         "Per-shadow G2 holonomy compactification: 13D -> 4D(3,1) via TCS construction",
                     ],
                 },
             ),
             Formula(
-                id="kk-distributed-or-v22",
+                id="kk-distributed-or",
                 label="(O.9b)",
                 latex=r"R_{total} = \bigotimes_{i=1}^{12} R_{\perp,i}, \quad R_{\perp,i}^2 = -I",
                 plain_text="Distributed OR: R_total = tensor product of 12 R_perp_i",
                 category="ESTABLISHED",
                 description=(
-                    "v22 distributed OR Reduction over 12 bridge pairs, represented as a "
+                    "v23.1 distributed OR Reduction over 12 bridge pairs, represented as a "
                     "tensor product of 12 per-pair rotation operators. Each R_perp_i is a "
                     "90-degree rotation matrix [[0,-1],[1,0]] operating on its (2,0) bridge "
                     "pair, satisfying the Mobius double-cover property R_perp^2 = -I. The "
@@ -880,7 +882,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Tensor product of per-pair OR reduction operators",
-                    "parentFormulas": ["kk-principia-chain-v22"],
+                    "parentFormulas": ["kk-principia-chain"],
                     "steps": [
                         "Each (2,0) bridge pair carries a 90-degree rotation operator R_perp_i = [[0,-1],[1,0]]",
                         "Verify R_perp_i^2 = -I (Mobius double-cover property ensuring spinorial structure)",
@@ -889,13 +891,13 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-aggregate-breathing-v22",
+                id="kk-aggregate-breathing",
                 label="(O.10c)",
                 latex=r"\rho_{\text{breath}} = \sum_{i=1}^{12}|T^{ab}_{normal,i} - R_{\perp,i} T^{ab}_{mirror,i}|, \quad w_0 = -\frac{23}{24}",
                 plain_text="Aggregate breathing: rho = Sum_i |T_normal_i - R_perp_i T_mirror_i|",
                 category="DERIVED",
                 description=(
-                    "v22 aggregate breathing dark energy from 12 bridge pairs. The total "
+                    "v23.1 aggregate breathing dark energy from 12 bridge pairs. The total "
                     "breathing energy density is the sum of stress-energy tensor mismatches "
                     "between normal and mirror shadows across all 12 pairs, where each "
                     "R_perp_i rotates the mirror contribution. The resulting equation of "
@@ -910,7 +912,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Summation of stress-energy mismatches across 12 bridge pairs",
-                    "parentFormulas": ["kk-distributed-or-v22", "kk-principia-chain-v22"],
+                    "parentFormulas": ["kk-distributed-or", "kk-principia-chain"],
                     "steps": [
                         "Each bridge pair i has stress-energy T^ab from normal and mirror shadows",
                         "Mismatch rho_i = |T_normal_i - R_perp_i * T_mirror_i| due to OR rotation",
@@ -919,9 +921,9 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-g2-volume-v22",
+                id="kk-g2-volume",
                 label="(O.10)",
-                latex=r"M_{\text{Pl}}^2 = M_{26}^{24} \cdot V_{22} \propto M_{7}^{5} \cdot V_{G_2}",
+                latex=r"M_{\text{Pl}}^2 = M_{27}^{25} \cdot V_{23} \propto M_{7}^{5} \cdot V_{G_2}",
                 plain_text="Planck mass from higher-dimensional compactification",
                 category="DERIVED",
                 description=(
@@ -930,23 +932,23 @@ class AppendixOKKReduction(SimulationBase):
                 ),
                 terms={
                     "M_Pl": "4D Planck mass",
-                    "M_26": "26D fundamental scale",
-                    "V_22": "Volume of 22 compact dimensions (26 -> 4)",
+                    "M_27": "27D fundamental scale",
+                    "V_23": "Volume of 23 compact dimensions (27 -> 4)",
                     "M_7": "7D fundamental scale",
                     "V_G2": "Volume of G_2 manifold (7 -> 4)",
                 },
                 derivation={
                     "method": "Dimensional reduction of Einstein-Hilbert action",
-                    "parentFormulas": ["kk-metric-ansatz-v22", "kk-principia-chain-v22"],
+                    "parentFormulas": ["kk-metric-ansatz", "kk-principia-chain"],
                     "steps": [
                         "Integrate D-dimensional Einstein-Hilbert action over compact manifold",
                         "Volume factor extracted: M_Pl^2 = M_D^{D-2} * V_compact",
-                        "For PM chain: M_Pl^2 = M_26^24 * V_22 and also M_Pl^2 proportional to M_7^5 * V_G2",
+                        "For PM chain: M_Pl^2 = M_27^25 * V_23 and also M_Pl^2 proportional to M_7^5 * V_G2",
                     ],
                 },
             ),
             Formula(
-                id="kk-gauge-coupling-v22",
+                id="kk-gauge-coupling",
                 label="(O.11)",
                 latex=r"\frac{1}{g_i^2} = \frac{\text{Vol}(\Sigma_i)}{l_s^{n_i}} \quad \Rightarrow \quad \alpha_i = \frac{g_i^2}{4\pi}",
                 plain_text="Gauge coupling from cycle volume",
@@ -964,7 +966,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Gauge kinetic terms from internal cycle volumes",
-                    "parentFormulas": ["kk-higher-dim-v22", "kk-g2-volume-v22"],
+                    "parentFormulas": ["kk-higher-dim", "kk-g2-volume"],
                     "steps": [
                         "Gauge kinetic term in higher dimensions: integral of F^2 over cycle Sigma_i",
                         "Dimensional reduction gives: 1/g_i^2 = Vol(Sigma_i) / l_s^{n_i}",
@@ -973,7 +975,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
             ),
             Formula(
-                id="kk-consistency-v22",
+                id="kk-consistency",
                 label="(O.12)",
                 latex=r"\text{Consistent truncation:} \quad \mathcal{L}_{4D}[\phi_0] = \int_K \mathcal{L}_{D}[\phi_0, y]\, d^ny",
                 plain_text="Consistent truncation condition",
@@ -991,7 +993,7 @@ class AppendixOKKReduction(SimulationBase):
                 },
                 derivation={
                     "method": "Consistency requirement for zero-mode truncation",
-                    "parentFormulas": ["kk-zero-modes-v22"],
+                    "parentFormulas": ["kk-zero-modes"],
                     "steps": [
                         "Truncate to zero modes: keep only phi_0 fields (n=0 sector)",
                         "Integrate D-dimensional Lagrangian over compact manifold K",
@@ -1257,11 +1259,11 @@ if __name__ == "__main__":
     print(f"Domain: {sim.metadata.domain}")
     print(f"Appendix: {sim.metadata.appendix}")
     print()
-    print("v22 Key Features:")
+    print("v23.1 Key Features:")
     print("  - 12×(2,0) paired bridges as consciousness channels")
     print("  - Distributed OR: R_total = ⊗ᵢ R_⊥_i (tensor product)")
     print("  - Aggregate breathing: ρ_breath = Σᵢ ρ_i")
-    print("  - Dimension counting: 1 time + 12×2 spatial = 25 manifest")
+    print("  - Dimension counting: 1 time + 12×2 spatial + 2 central = 27D manifest")
     print()
     results = sim.run(registry)
     print("Results:")

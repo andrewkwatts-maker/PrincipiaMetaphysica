@@ -6,23 +6,24 @@ Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0
                     ╔══════════════════════════════════════════════════════════╗
                     ║                   ARCHIVED (v23.1)                        ║
                     ║                                                          ║
-                    ║  This appendix describes the Sp(2,R) gauge-fixing        ║
-                    ║  approach used in the (24,2) two-time framework.         ║
+                    ║  This appendix documents the deprecated v21/v22 Sp(2,R)  ║
+                    ║  gauge-fixing approach used in the (24,2) two-time       ║
+                    ║  framework. This approach has been SUPERSEDED.           ║
                     ║                                                          ║
                     ║  As of v23.1, Principia Metaphysica uses UNIFIED TIME    ║
-                    ║  with (24,1) signature, eliminating the need for         ║
-                    ║  Sp(2,R) gauge-fixing entirely.                          ║
+                    ║  with signature (26,1) in 27D = T^1 x (12x(2,0)) + C^2,0 ║
+                    ║  eliminating the need for Sp(2,R) gauge-fixing entirely. ║
                     ║                                                          ║
-                    ║  The v21 framework uses:                                 ║
+                    ║  The v23.1 framework uses:                               ║
                     ║  - Dual 13D(12,1) shadows via bridge WARP mechanism      ║
                     ║  - OR reduction operator R_perp with R_perp^2 = -I       ║
                     ║  - NO ghost modes, NO CTCs (manifest unitarity)          ║
+                    ║  - 12-PAIR-BRIDGE architecture with central sampler      ║
                     ║                                                          ║
-                    ║  See: appendix_f_v16_0.py (v21 dimensional decomposition)║
-                    ║       appendix_g_euclidean_bridge.md (v21 bridge docs)   ║
+                    ║  This file is retained for historical reference only.    ║
                     ╚══════════════════════════════════════════════════════════╝
 
-HISTORICAL CONTEXT (v16.0 - OBSOLETE):
+HISTORICAL CONTEXT (v16.0/v21/v22 - OBSOLETE):
 
 THEOREM: The X*P = 0 constraint from Sp(2,R) gauge symmetry eliminates the
 second time dimension from physical observables, preventing closed timelike
@@ -74,6 +75,8 @@ from simulations.base import (
 
 class Sp2RInvarianceProof(SimulationBase):
     """
+    ARCHIVED (v23.1): Documents deprecated v21/v22 two-time physics approach.
+
     Proves no closed timelike curves exist in (24,2) signature.
 
     THEOREM: The X*P = 0 constraint from Sp(2,R) gauge symmetry
@@ -86,6 +89,9 @@ class Sp2RInvarianceProof(SimulationBase):
     4. Physical states satisfy <psi|X^mu P_mu|psi> = 0
     5. Effective signature is (12,1) after gauge fixing
     6. With single time, CTCs are topologically forbidden
+
+    NOTE: v23.1 uses unified time signature (26,1) in 27D, making this
+    approach obsolete. Retained for historical reference only.
     """
 
     @property
@@ -97,8 +103,8 @@ class Sp2RInvarianceProof(SimulationBase):
             domain="appendices",
             title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED]",
             description=(
-                "[ARCHIVED v23.1] Historical proof from (24,2) two-time framework. "
-                "v21 uses unified time (24,1) with dual shadows, eliminating need for Sp(2,R)."
+                "[ARCHIVED v23.1] Documents deprecated v21/v22 Sp(2,R) two-time physics approach, "
+                "superseded by v23.1 unified time signature (26,1) with 12-PAIR-BRIDGE architecture."
             ),
             section_id="2",
             subsection_id="D_prime",
@@ -271,8 +277,9 @@ class Sp2RInvarianceProof(SimulationBase):
             section_id="2",
             subsection_id="D_prime",
             appendix=True,
-            title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves",
+            title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED v23.1]",
             abstract=(
+                "ARCHIVED (v23.1): Documents deprecated v21/v22 Sp(2,R) approach, superseded by unified time signature. "
                 "Rigorous proof that Sp(2,R) gauge symmetry eliminates the second time "
                 "dimension from physical observables, preventing closed timelike curves "
                 "(CTCs) in the (24,2) signature bulk spacetime. The gauge constraint "
