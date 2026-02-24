@@ -749,9 +749,8 @@ class BreathingDEV21(SimulationBase):
                 "id": "desi2025_thawing",
                 "authors": "DESI Collaboration",
                 "title": "DESI 2025: Dark Energy Constraints from Baryon Acoustic Oscillations",
-                "journal": "arXiv",
+                "journal": "arXiv preprint (not yet published)",
                 "year": 2025,
-                "arxiv": "2501.xxxxx",
                 "notes": "w0 = -0.957 +/- 0.067, wa = -0.99 +/- 0.32 (thawing)"
             },
             {
