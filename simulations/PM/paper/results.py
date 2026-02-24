@@ -421,16 +421,16 @@ class ResultsV16_2(SimulationBase):
                     "method": "maximum_entropy_principle",
                     "steps": [
                         "Apply Maximum Entropy Principle to G2 compactification vacuum energy",
-                        "Thawing deviation from Lambda: w0 = -1 + 1/b3 where b3 = 24 (3rd Betti number)",
-                        "Evaluate: w0 = -1 + 1/24 = -23/24 = -0.9583 (exact fraction)"
+                        "Thawing deviation from Lambda: w0 = -1 + 1/b3",
+                        "Evaluate: w0 = -23/24 (exact topological fraction)"
                     ],
                     "parentFormulas": ["b3-generations"]
                 },
                 terms={
                     "w_0": "Dark energy equation of state parameter at z=0",
-                    "b_3": "Third Betti number of G2 manifold (24)",
-                    "-1": "Cosmological constant limit (Lambda CDM)",
-                    "1/b_3": "Thawing deviation from MEP on G2 topology"
+                    r"b_3": {"description": "Third Betti number of G2 manifold", "value": 24},
+                    r"-1": "Cosmological constant limit (Λ-CDM)",
+                    r"1/b_3": "Thawing deviation from MEP on G2 topology"
                 },
             ),
             Formula(
@@ -472,9 +472,9 @@ class ResultsV16_2(SimulationBase):
                 category="DERIVED",
                 description=(
                     "Topological bridge formula: Hubble constant from G2 manifold geometry. "
-                    "chi=144, b3=24 fixed by topology; Vol(V7) set by compactification scale. "
-                    "Gives PM geometric prediction H0=71.55 km/s/Mpc (1.4sigma below SH0ES 73.04). "
-                    "Note: the formula structure is well-motivated but the exact Vol(V7) value "
+                    "χ_eff and b₃ fixed by topology; Vol(V₇) set by compactification scale. "
+                    "Gives PM geometric prediction H₀=71.55 km/s/Mpc (1.4σ below SH0ES 73.04). "
+                    "Note: the formula structure is well-motivated but the exact Vol(V₇) value "
                     "required to reproduce 71.55 is not independently derived."
                 ),
                 input_params=["topology.elder_kads", "topology.euler_chi", "topology.vol_v7"],
@@ -482,16 +482,16 @@ class ResultsV16_2(SimulationBase):
                 derivation={
                     "method": "topological_bridge",
                     "steps": [
-                        "G2 manifold: chi = 144, b3 = 24 (fixed by topology, no free parameters)",
-                        "Compactification scale fixes Vol(V7) via M_Pl and observed cosmological scales",
-                        "H0_PM = c * sqrt(chi / (b3 * Vol(V7))) ≈ 71.55 km/s/Mpc",
+                        "G₂ manifold topology fixes χ_eff and b₃ (no free parameters)",
+                        "Compactification scale fixes Vol(V₇) via M_Pl and observed cosmological scales",
+                        "H₀ = c × √(χ_eff / (b₃ × Vol(V₇)))",
                         "PM prediction lies between Planck (67.4) and SH0ES (73.04)"
                     ],
                     "parentFormulas": ["w0-derivation", "h0-alignment"]
                 },
                 terms={
-                    "χ": "Euler characteristic of V7 manifold = 144",
-                    "b3": "Third Betti number = 24",
+                    r"\chi": {"description": "Euler characteristic of V₇ manifold", "value": 144},
+                    r"b_3": {"description": "Third Betti number", "value": 24},
                     "Vol(V7)": "Volume of V7, set by compactification scale",
                     "c": "Speed of light = 2.998×10⁵ km/s",
                 },
