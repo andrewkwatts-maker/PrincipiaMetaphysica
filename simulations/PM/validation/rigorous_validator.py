@@ -943,9 +943,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 "id": "desi2025",
                 "authors": "DESI Collaboration",
                 "title": "DESI 2025 Cosmological Constraints from BAO",
-                "journal": "arXiv",
+                "journal": "arXiv preprint (not yet published)",
                 "year": 2025,
-                "arxiv": "2504.xxxxx",
                 "notes": "w0=-0.958±0.02, wa=-1.05±0.30 (thawing quintessence)"
             },
             {
