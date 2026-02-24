@@ -1923,7 +1923,6 @@
                                 sectionNames[sec.id] = sec.shortTitle || sec.title;
                             }
                         });
-                        console.log(`Loaded ${Object.keys(sectionNames).length} section names`);
                         return;
                     }
                 }
@@ -1931,7 +1930,6 @@
                 continue;
             }
         }
-        console.log('Could not load section names, using section numbers only');
     }
 
     // Load and initialize formulas
@@ -1952,10 +1950,8 @@
             let loadedPath = null;
             for (const path of paths) {
                 try {
-                    console.log(`Trying to load formulas from: ${path}`);
                     response = await fetch(path);
                     if (response.ok) {
-                        console.log(`Successfully loaded from: ${path}`);
                         loadedPath = path;
                         break;
                     }
@@ -1969,19 +1965,16 @@
             }
 
             const data = await response.json();
-            console.log('Raw data structure:', data);
 
             // Handle theory_output.json structure
             if (data.formulas && data.formulas.formulas) {
                 // theory_output.json format: { formulas: { formulas: { "id": {...} }, version, count } }
                 allFormulas = Object.values(data.formulas.formulas);
-                console.log(`Loaded formula database from theory_output.json v${data.formulas.version} with ${data.formulas.count} formulas`);
             }
             // Handle standalone formulas.json structure
             else if (data.formulas && typeof data.formulas === 'object') {
                 // Nested structure: { formulas: { "id": {...}, ... } }
                 allFormulas = Object.values(data.formulas);
-                console.log(`Loaded formula database v${data.version} with ${data.count || Object.keys(data.formulas).length} formulas`);
             } else if (Array.isArray(data)) {
                 // Direct array: [...]
                 allFormulas = data;
@@ -1994,7 +1987,6 @@
                 throw new Error('No formulas found in the loaded data');
             }
 
-            console.log(`Parsed ${allFormulas.length} formulas successfully`);
 
             // Derive section from label for each formula (if not already present)
             allFormulas.forEach(formula => {
@@ -2012,13 +2004,9 @@
             // This ensures parameter values are available for display
             // Note: firebase-data.js may overwrite window.PM without the load function
             if (window.PM && typeof window.PM.load === 'function' && !window.PM._loaded) {
-                console.log('Waiting for PM constants to load...');
                 await window.PM.load();
-                console.log('PM constants loaded');
             } else if (window.PM) {
-                console.log('PM data already available (loaded via firebase-data or other source)');
             } else {
-                console.log('PM not available, proceeding without parameter values');
             }
 
             // Initialize UI
@@ -2208,7 +2196,6 @@
         const formulaId = params.get('formula') || params.get('id');
 
         if (formulaId) {
-            console.log(`URL parameter: navigating to formula "${formulaId}"`);
 
             // Find the formula
             const formula = allFormulas.find(f => f.id === formulaId);
@@ -2263,7 +2250,6 @@
         const container = document.getElementById('formula-container');
         const emptyState = document.getElementById('empty-state');
 
-        console.log(`Rendering ${filteredFormulas.length} formulas...`);
 
         if (filteredFormulas.length === 0) {
             console.warn('No formulas to display after filtering');
@@ -2335,19 +2321,15 @@
 
         container.innerHTML = html;
 
-        console.log(`HTML rendered, total length: ${html.length} characters`);
 
         // Re-render MathJax with error handling
         if (window.MathJax && window.MathJax.typesetPromise) {
-            console.log('Triggering MathJax typesetting...');
             MathJax.typesetPromise([container]).then(() => {
-                console.log('MathJax typesetting complete');
             }).catch((err) => {
                 console.error('MathJax typesetting failed:', err);
             });
         } else if (window.MathJax) {
             // Fallback for older MathJax versions
-            console.log('Using MathJax Hub for typesetting...');
             try {
                 MathJax.Hub.Queue(["Typeset", MathJax.Hub, container]);
             } catch (err) {
@@ -2368,7 +2350,6 @@
             });
         });
 
-        console.log('Formula rendering complete');
     }
 
     // Render interactive formula with hoverable terms
@@ -3124,20 +3105,17 @@
 
     function tryInitialize() {
         if (domReady && authReady) {
-            console.log('Initializing formula database...');
             loadFormulas();
         }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-        console.log('DOM ready');
         domReady = true;
         tryInitialize();
     });
 
     // Listen for auth ready event
     window.addEventListener('auth-ready', () => {
-        console.log('Auth ready');
         authReady = true;
         tryInitialize();
     });
@@ -3145,7 +3123,6 @@
     // Fallback: initialize after 2 seconds if auth event doesn't fire
     setTimeout(() => {
         if (!authReady) {
-            console.log('Auth timeout - initializing anyway');
             authReady = true;
             tryInitialize();
         }

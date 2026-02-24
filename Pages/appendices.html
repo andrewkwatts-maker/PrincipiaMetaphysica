@@ -967,7 +967,6 @@
                 // Re-render MathJax for newly visible content
                 if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
                     MathJax.typesetPromise([content]).catch(function (err) {
-                        console.log('MathJax typeset failed: ' + err.message);
                     });
                 }
             }

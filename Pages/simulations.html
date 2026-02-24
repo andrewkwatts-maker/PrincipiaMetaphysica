@@ -606,10 +606,6 @@
             if (githubFolderCache) return githubFolderCache;
 
             try {
-                console.log('[GITHUB API] ========================================');
-                console.log('[GITHUB API] Fetching folder structure from GitHub...');
-                console.log('[GITHUB API] API URL:', `${GITHUB_API_BASE}/simulations`);
-                console.log('[GITHUB API] ========================================');
 
                 // Fetch main simulations folder
                 const response = await fetch(`${GITHUB_API_BASE}/simulations`);
@@ -664,7 +660,6 @@
                 if (rateLimitRemaining) {
                     const remaining = parseInt(rateLimitRemaining);
                     const limit = parseInt(rateLimitLimit) || 60;
-                    console.log(`[GITHUB API] Rate limit: ${remaining}/${limit} requests remaining`);
 
                     // Warn if running low
                     if (remaining < 10) {
@@ -711,7 +706,6 @@
                 }
 
                 githubFolderCache = folders;
-                console.log(`Discovered ${githubFolderCache.length} folders from GitHub:`,
                     folders.map(f => f.displayName).join(', '));
                 return githubFolderCache;
             } catch (error) {
@@ -905,21 +899,12 @@
                 './simulations-index.json'                           // Local copy in Pages/ (fallback)
             ];
 
-            console.log('[SIMULATIONS] ========================================');
-            console.log('[SIMULATIONS] Loading simulations index...');
-            console.log('[SIMULATIONS] Current URL:', window.location.href);
-            console.log('[SIMULATIONS] Origin:', window.location.origin);
-            console.log('[SIMULATIONS] Pathname:', window.location.pathname);
-            console.log('[SIMULATIONS] Detected base URL:', baseUrl);
-            console.log('[SIMULATIONS] Will try paths:', paths);
-            console.log('[SIMULATIONS] ========================================');
 
             let response = null;
             let successPath = null;
 
             for (const path of paths) {
                 try {
-                    console.log(`[SIMULATIONS] Trying: ${path}`);
                     const resp = await fetch(path, {
                         method: 'GET',
                         headers: { 'Accept': 'application/json' }
@@ -937,24 +922,17 @@
                                 if (data.categories || data.total_scripts !== undefined) {
                                     simulationsIndex = data;
                                     successPath = path;
-                                    console.log(`[SIMULATIONS] SUCCESS - Loaded from: ${path}`);
-                                    console.log(`[SIMULATIONS] Found ${data.total_scripts || 'unknown'} scripts`);
                                     response = { ok: true, _alreadyParsed: true };
                                     break;
                                 } else {
-                                    console.log(`[SIMULATIONS] Path ${path} returned JSON but not simulation index format`);
                                 }
                             } else {
-                                console.log(`[SIMULATIONS] Path ${path} returned non-JSON content (HTML 404?)`);
                             }
                         } catch (parseError) {
-                            console.log(`[SIMULATIONS] Path ${path} returned invalid JSON: ${parseError.message}`);
                         }
                     } else {
-                        console.log(`[SIMULATIONS] Path ${path} returned HTTP ${resp.status}`);
                     }
                 } catch (e) {
-                    console.log(`[SIMULATIONS] Path ${path} failed: ${e.message}`);
                     continue;
                 }
             }
@@ -997,7 +975,6 @@
                 } else if (!response._alreadyParsed) {
                     // Only parse if not already parsed in the loop above
                     simulationsIndex = await response.json();
-                    console.log(`[SIMULATIONS] Successfully parsed index with ${simulationsIndex.total_scripts} scripts`);
                 }
                 // If _alreadyParsed, simulationsIndex was already set in the loop
 
@@ -1075,7 +1052,6 @@
 
         // Build simulation index dynamically from GitHub API
         async function buildIndexFromGitHub() {
-            console.log('Building simulation index from GitHub...');
 
             // Fetch folder structure
             const folders = await fetchGitHubFolderStructure();
@@ -1194,7 +1170,6 @@
                 simulationsIndex.total_scripts += files.length;
             }
 
-            console.log(`Built index with ${simulationsIndex.total_scripts} scripts in ${Object.keys(simulationsIndex.categories).length} categories`);
         }
 
         // Get all scripts from index
@@ -1495,11 +1470,9 @@
         document.addEventListener('DOMContentLoaded', async () => {
             // Try using PMSimLoader if available (new approach)
             if (window.PMSimLoader) {
-                console.log('[Simulations] Using PMSimLoader module');
 
                 // Listen for simulations ready event
                 document.addEventListener('pm-simulations-ready', (e) => {
-                    console.log('[Simulations] Ready:', e.detail);
                     const statsEl = document.getElementById('index-stats');
                     if (statsEl) {
                         statsEl.style.display = 'flex';
@@ -1523,14 +1496,12 @@
                         const query = e.target.value.trim();
                         if (query.length >= 2) {
                             const results = PMSimLoader.searchScripts(query);
-                            console.log('[Simulations] Search results:', results.length);
                             // Highlight matching scripts (future enhancement)
                         }
                     });
                 }
             } else {
                 // Fallback to original inline implementation
-                console.log('[Simulations] Using fallback inline implementation');
                 loadSimulationIndex();
                 initIndexLinks();
             }
@@ -1545,7 +1516,6 @@
 
         // Listen for auth/data ready events
         document.addEventListener('pm-data-ready', () => {
-            console.log('[Simulations] pm-data-ready event received');
             const mainContent = document.getElementById('main-content');
             if (mainContent && mainContent.style.display === 'none') {
                 mainContent.style.display = 'block';

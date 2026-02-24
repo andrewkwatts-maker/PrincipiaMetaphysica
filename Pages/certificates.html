@@ -859,7 +859,6 @@
         const sterileRatio = document.getElementById('sterile-gate-ratio');
         if (sterileRatio) sterileRatio.textContent = `${lockedCount}/${totalGates}`;
 
-        console.log(`Loaded ${GATES.length} gates`);
         return true;
       } catch (e) {
         console.error('Error loading gates:', e);
@@ -879,14 +878,12 @@
           const response = await fetch(path);
           if (response.ok) {
             VALIDATION_REPORT = await response.json();
-            console.log(`Loaded validation report: ${VALIDATION_REPORT.summary?.total_parameters} parameters, chi^2/dof = ${VALIDATION_REPORT.summary?.reduced_chi_squared?.toFixed(4)}`);
             return true;
           }
         } catch (e) {
           // Try next path
         }
       }
-      console.log('Validation report not available');
       return false;
     }
 
@@ -901,14 +898,12 @@
           const response = await fetch(path);
           if (response.ok) {
             CERTIFICATES_DATA = await response.json();
-            console.log(`Loaded certificates data: ${CERTIFICATES_DATA.summary?.verified} verified, ${CERTIFICATES_DATA.summary?.not_testable} foundational`);
             return true;
           }
         } catch (e) {
           // Try next path
         }
       }
-      console.log('Certificates data not available');
       return false;
     }
 
@@ -1528,15 +1523,12 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
             const data = await response.json();
             WOLFRAM_RESULTS = data.results || [];
             GATE_STATUS = data.gate_status || [];
-            console.log(`Loaded ${WOLFRAM_RESULTS.length} Wolfram validation results from ${path}`);
-            console.log(`Loaded ${GATE_STATUS.length} gate status entries`);
             return true;
           }
         } catch (e) {
           // Try next path
         }
       }
-      console.log('Wolfram validation results not available');
       return false;
     }
 
@@ -1689,10 +1681,6 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
       // Render gates (or fallback to legacy certificates)
       renderGates();
 
-      console.log(`Certificates page loaded: ${gatesLoaded ? GATES.length + ' Gates' : 'Legacy 42 Certificates'}`);
-      console.log(`Wolfram validation: ${wolframLoaded ? `${WOLFRAM_RESULTS.length} results` : 'not available'}`);
-      console.log(`Validation report: ${validationLoaded ? `${VALIDATION_REPORT.summary?.total_parameters} parameters` : 'not available'}`);
-      console.log(`Certificates data: ${certificatesLoaded ? `${CERTIFICATES_DATA.summary?.verified} verified` : 'not available'}`);
     });
   </script>
 </body>
