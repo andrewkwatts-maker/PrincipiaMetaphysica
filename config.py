@@ -91,15 +91,9 @@ except ImportError:
 # PARAMETER CATEGORIZATION FRAMEWORK
 # ==============================================================================
 
-class ParameterCategory:
-    """Standard categories for all PM parameters."""
-    GEOMETRIC = "geometric"           # Pure topology (χ_eff, b2, b3, n_gen)
-    DERIVED = "derived"               # Computed from geometry (M_GUT, τ_p, α_GUT)
-    PHENOMENOLOGICAL = "phenomenological"  # Measured inputs (M_Planck, m_H, gauge couplings)
-    CALIBRATED = "calibrated"         # Fitted to data (θ₁₃, δ_CP)
-    PREDICTED = "predicted"           # Testable predictions (M_KK, GW dispersion)
-    EXPERIMENTAL = "experimental"     # PDG/NuFIT reference values
-
+# NOTE: ParameterCategory class is defined below at line ~295 with uppercase convention
+# (e.g., "GEOMETRIC" not "geometric"). The uppercase version is used throughout the codebase.
+# Removed duplicate lowercase definition to avoid override conflicts (v24.2 fix).
 
 class FormulaCategory:
     """Categories for formula derivation chains."""
