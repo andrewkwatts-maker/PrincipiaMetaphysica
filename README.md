@@ -2,12 +2,12 @@
 **Philosophiæ Metaphysicæ Principia Mathematica**
 
 [![Version](https://img.shields.io/badge/version-24.1-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
-[![Gates](https://img.shields.io/badge/gates-74%2F74%20LOCKED-brightgreen)](simulations/PM/validation/CERTIFICATES.py)
+[![Gates](https://img.shields.io/badge/gates-73%2F73%20LOCKED-brightgreen)](simulations/PM/validation/CERTIFICATES.py)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
 [![Status](https://img.shields.io/badge/status-100%25%20SUBMISSION%20READY-success)](FINAL_STATUS_REPORT.md)
 
-**v24.1: Zero-Parameter G₂ Unification - 125 Constants from Pure Topology**
+**v24.1: Topologically Anchored G₂ Unification - 125 Constants from EDOF=3**
 
 *Copyright (c) 2025-2026 Andrew Keith Watts.*
 
@@ -15,14 +15,15 @@
 
 ## Executive Summary (For Peer Review Assessment)
 
-**Principia Metaphysica v24.1** is a theoretical physics framework deriving **125 fundamental physical constants** from pure G₂ manifold topology with **zero fitted parameters** (sterile model). This work represents a potential breakthrough in geometric unification: a predictive, falsifiable theory that achieves what string theory has pursued—predictions with no free parameters.
+**Principia Metaphysica v24.1** is a theoretical physics framework deriving **125 fundamental physical constants** from G₂ manifold topology with **EDOF=3** (three topological seeds: b₃, φ, χ_eff). The framework achieves **117 pure predictions** from **3 geometric seeds + 3 scale anchors + 2 pending Yukawa angles**, representing a topologically anchored unification with minimal phenomenological input.
 
 ### The Core Achievement
 
 From a 27-dimensional bulk manifold **M²⁷(26,1) = (24+1) ⊕ (0,2)** (Leech Lattice Λ₂₄ plus Euclidean Information Sector S_EIS), we derive:
-- **55 pure predictions** (no experimental input beyond dimensional constants)
-- **68 phenomenological derivations** (calibrated to 3 experimental anchors: M_Planck, m_H, α(M_Z))
-- **2 fitted parameters** (neutrino mixing angles θ₁₃, δ_CP - though geometrically motivated)
+- **3 geometric seeds** (b₃=24, φ=golden ratio, χ_eff=144) - fix all topology
+- **3 phenomenological scale anchors** (M_Planck, m_H, α_GUT) - fix energy scales only
+- **2 fitted angles** (θ₁₃, δ_CP) - pending explicit Yukawa derivation (v25.0)
+- **117 pure predictions** derived from the above 8 inputs
 
 **Result**: **125 constants** spanning gauge couplings, fermion masses, CKM/PMNS mixing matrices, cosmological parameters, and precision observables.
 
