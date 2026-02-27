@@ -244,12 +244,16 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    'This paper presents <strong>Principia Metaphysica <span class="pm-value" data-pm-value="framework.version_label">v23.1</span></strong>, a <strong>Topologically Anchored Framework</strong> '
+                    'This paper presents <strong>Principia Metaphysica <span class="pm-value" data-pm-value="framework.version_label">v24.2</span></strong>, a <strong>Topologically Anchored Framework</strong> '
                     "in which 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
-                    "under Ricci flow from <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), achieving <strong>116:1 compression ratio</strong>. Beginning "
-                    "from a 27D spacetime with unified time signature (26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central, the framework splits "
-                    "into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean "
-                    "bridge</strong>, with each shadow compactifying via G₂ holonomy through "
+                    "under Ricci flow from <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), achieving <strong>116:1 compression ratio</strong>. "
+                    "The bulk manifold <strong>M<sup>27</sup>(24,1,2)</strong> decomposes as: "
+                    "<em>24</em> G₂ physics dimensions (12×(2,0) bridge pairs creating dual 13D shadows), "
+                    "<em>1</em> unified timelike fiber T¹, and "
+                    "<em>2</em> <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector "
+                    "providing global cross-shadow objective reduction averaging). "
+                    "The framework splits into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean "
+                    "bridges</strong>, with each shadow compactifying via G₂ holonomy through "
                     "11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = "
                     '<span class="pm-value" data-pm-value="topology.elder_kads">24</span></strong> and '
                     '<strong>χ = <span class="pm-value" data-pm-value="topology.mephorash_chi">144</span></strong> '

@@ -99,14 +99,15 @@ The codebase follows strict Single Source of Truth principles:
 ### Dimensional Architecture (v23.1)
 
 ```
-M^{27}(26,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ C^{2,0}
+M^{27}(24,1,2) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ S^{2,0}
 
-- 24 G2 core dimensions: 12 pairs × 2 dimensions = 24D (physics)
-- 2 central sampler dimensions: C^{2,0} (architectural averaging)
-- 1 timelike dimension: Unified time fiber T¹
-- Total: 27D with signature (26,1)
+Notation: M^{27}(24,1,2) where:
+- 24 = G₂ physics core: 12 bridge pairs × 2 dimensions = 24D
+- 1  = unified timelike fiber T¹
+- 2  = sampler data fields S^{2,0} (architecturally separate OR averaging sector)
+- Total: 24 + 1 + 2 = 27D with signature (26,1)
 
-Metric: ds² = -dt² + Σ_{i=1}^{12} (dy_{1i}² + dy_{2i}²) + (dc_1² + dc_2²)
+Metric: ds² = -dt² + Σ_{i=1}^{12} (dy_{1i}² + dy_{2i}²) + (ds_1² + ds_2²)
 ```
 
 ### Module Organization

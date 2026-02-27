@@ -3,13 +3,14 @@ FormulasRegistry.py - Single Source of Truth (SSoT)
 ====================================================
 Centralizes all topological derivations for Principia Metaphysica v23.1-27D.
 
-v23.1 FRAMEWORK (Publication Release):
-- Structure: M^{27}(26,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ C^{2,0}
-  - 12 bridge pairs (24D): Create dual 13D(12,1) shadows via coordinate selection
-  - 1 central sampler (2D): Architectural global averaging (separate from shadows)
-  - 1 unified time (1D): Shared T^1 fiber
-  - Total: 24 + 2 + 1 = 27D with signature (26,1)
-- OR: Distributed ⊗_{i=1}^{12} R_⊥_i (OR reduction for cross-shadow sampling)
+v24.2 FRAMEWORK (Publication Release):
+- Structure: M^{27}(24,1,2) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ S^{2,0}
+  - 24D physics: 12 bridge pairs × 2 dims = 24D (G₂ core, create dual 13D shadows)
+  - 1D time: Shared T¹ fiber (unified timelike dimension)
+  - 2D sampler data fields: S^{2,0} (global averaging sector, architecturally separate)
+  - Total: 24 + 1 + 2 = 27D with signature (26,1)
+  - Notation: 27D(24,1,2) where (physics, time, sampler data fields)
+- OR: Distributed ⊗_{i=1}^{12} R_⊥_i (objective reduction across bridge pairs)
 - Spinor: Cl(24,1) on 24D CORE yields 4096 components
 - Dark Energy: Breathing mode from bridge size modulus (w0 = -23/24)
 
@@ -113,14 +114,14 @@ class FormulasRegistry:
     - Bars, I. (2006). 2T-physics. Phys. Rev. D 74: 085019.
     """
 
-    VERSION = "24.1-27D"
-    VERSION_SHORT = "24.1"
+    VERSION = "24.2-27D"
+    VERSION_SHORT = "24.2"
     STATUS = "VALIDATED"  # Validated (2026-01-11, 2026-01-18, 2026-02-24)
     # NOTE: This is internal validation, NOT traditional journal peer review.
     # The framework has been reviewed for mathematical consistency,
     # but has not been published in peer-reviewed journals.
-    # v24.1 FRAMEWORK: 12×(2,0) paired bridge system + C^(2,0) central sampler,
-    #                  (26,1) unified time signature, Cl(26,1) 4096 spinors on 26D bulk,
+    # v24.2 FRAMEWORK: M^{27}(24,1,2) = 12×(2,0) bridges + T¹ time + S^{2,0} sampler data fields
+    #                  Signature (26,1), Cl(24,1) 4096 spinors on 24D physics core,
     #                  EDOF=3 statistical treatment (topologically anchored)
 
     # ===========================================================================

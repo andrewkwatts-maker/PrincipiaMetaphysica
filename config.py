@@ -68,10 +68,10 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "24.1"
-VERSION_SHORT = "24.1"
+VERSION = "24.2"
+VERSION_SHORT = "24.2"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
-STERILE_STATUS = True  # v24.1: Topologically anchored (EDOF=3) - 116:1 compression ratio
+STERILE_STATUS = True  # v24.2: Topologically anchored (EDOF=3) - M^{27}(24,1,2) framework
 
 import numpy as np
 from dataclasses import dataclass, field, asdict
