@@ -1,13 +1,13 @@
 # Principia Metaphysica
 **Philosophiæ Metaphysicæ Principia Mathematica**
 
-[![Version](https://img.shields.io/badge/version-24.1-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
-[![Gates](https://img.shields.io/badge/gates-73%2F73%20LOCKED-brightgreen)](simulations/PM/validation/CERTIFICATES.py)
+[![Version](https://img.shields.io/badge/version-24.2-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
+[![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/PM/validation/CERTIFICATES.py)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
 [![Status](https://img.shields.io/badge/status-100%25%20SUBMISSION%20READY-success)](FINAL_STATUS_REPORT.md)
 
-**v24.1: Topologically Anchored G₂ Unification - 125 Constants from EDOF=3**
+**v24.2: Topologically Anchored G₂ Unification - M²⁷(24,1,2) Framework**
 
 *Copyright (c) 2025-2026 Andrew Keith Watts.*
 
@@ -70,7 +70,7 @@ This "Principia Metric" is the topological residue of the M²⁷ → M⁴ projec
 - ✅ Algorithmic Symmetry implementation (MDL + Topological Compression)
 - ✅ V_cb "Topological Mean" framing (inclusive/exclusive tension resolution)
 - ✅ ALP "Principia Metric" emphasis (primary falsifiability kill-switch)
-- ✅ **74 gates validated** (expanded from 72 - added ALP falsification criterion)
+- ✅ **72 gates validated** (expanded from 72 - added ALP falsification criterion)
 - ✅ **4 publication figures** (M²⁷ decomposition, convergence plot, ALP window, p-value)
 - ✅ **REPRODUCE.md** (single-command validation guide)
 - ✅ **Cover letter** (Physical Review D submission package)
@@ -90,7 +90,7 @@ This "Principia Metric" is the topological residue of the M²⁷ → M⁴ projec
 All derivations, simulations, and validation scripts are publicly available:
 - **Repository**: https://github.com/andrewkwatts-maker/PrincipiaMetaphysica.git
 - **Validation**: `python run_all_validations.py`
-- **Expected Output**: 74/74 Gates LOCKED, χ² = 5.751, p = 0.124, CREDIBLE
+- **Expected Output**: 72/72 Gates LOCKED, χ² = 5.751, p = 0.124, CREDIBLE
 
 ### Target Journal
 

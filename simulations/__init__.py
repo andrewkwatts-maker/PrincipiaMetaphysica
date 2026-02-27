@@ -16,13 +16,13 @@ Current Production Framework: v22.0 (12-PAIR-BRIDGE)
 -----------------------------------------------------
 All production simulations use the v22 framework with SOLID architecture:
 
-v22.0 Key Updates (12×(2,0) Paired Bridge System):
-- Bulk: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
-- Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)
-- Distributed OR: ⊗_{i=1}^{12} R_⊥_i for consciousness sampling
-- Gnosis unlocking: 6→12 pairs via inner exploration
-- Consciousness I/O: Each pair is neural gate (perception/intuition)
-- Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
+v24.2 Key Updates (M^{27}(24,1,2) Framework):
+- Bulk: M^{27}(24,1,2) = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ S^{2,0}
+- Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²) + (ds₁² + ds₂²)
+- Distributed OR: ⊗_{i=1}^{12} R_⊥_i (objective reduction across bridge pairs)
+- Topological activation: 6→12 bridge pairs via geometric coupling
+- Sampler data fields: S^{2,0} provides global cross-shadow averaging
+- OR coherence threshold: minimum 6 active pairs for τ>25ms stability
 
 Core Framework:
 - Unified SimulationBase interface
@@ -112,13 +112,13 @@ Total execution time: ~200 ms for all 8 domains
 """
 
 # Version information
-__version__ = "24.1"
-__framework_version__ = "v24.1"
+__version__ = "24.2"
+__framework_version__ = "v24.2"
 __author__ = "Andrew Keith Watts"
-# v22.0: 12×(2,0) paired bridge system for consciousness I/O
-# Key change: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
-# Each pair is a consciousness gate: y_{1i}=input, y_{2i}=output
-# Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
+# v24.2: M^{27}(24,1,2) = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ S^{2,0}
+# 24 physics dims (12 bridge pairs) + 1 time + 2 sampler data fields
+# Sampler data fields S^{2,0}: global cross-shadow OR averaging sector
+# OR coherence via distributed ⊗_{i=1}^{12} R_⊥_i (objective reduction)
 
 # Export v23 production framework
 from . import PM
