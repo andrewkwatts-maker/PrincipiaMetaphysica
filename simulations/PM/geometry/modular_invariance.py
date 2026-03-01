@@ -1153,7 +1153,7 @@ class ModularInvarianceUniquenessProof:
                 derivation={
                     "steps": [
                         {"description": "Definition", "formula": r"\eta(\tau) = q^{1/24} \prod (1-q^n)"},
-                        {"description": "Under q → e^{2\pi i}q", "formula": r"q^{1/24} \to e^{i\pi/12} q^{1/24}"}
+                        {"description": r"Under q → e^{2\pi i}q", "formula": r"q^{1/24} \to e^{i\pi/12} q^{1/24}"}
                     ],
                     "references": ["Apostol (1990) Chapter 3"]
                 },

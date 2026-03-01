@@ -39,7 +39,7 @@
 
         // Fundamental dimensions (always available, from theory)
         dimensions: {
-            D_BULK: 26,
+            D_BULK: 27,
             D_AFTER_SP2R: 13,
             D_G2: 7,
             D_SPIN8: 8,         // Octonions dimension (Spin(8) triality)

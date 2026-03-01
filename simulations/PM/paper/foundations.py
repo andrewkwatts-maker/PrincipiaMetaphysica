@@ -80,7 +80,7 @@ class FoundationsV16_2(SimulationBase):
         "26d-signature",
         "euclidean-bridge",
         "or-reduction-tensor",
-        "g2-holonomy",
+        "g2-holonomy-foundations",
         "b3-generations",
         "calabi-yau-projection",
     ]
@@ -699,7 +699,7 @@ class FoundationsV16_2(SimulationBase):
                 },
             ),
             Formula(
-                id="g2-holonomy",
+                id="g2-holonomy-foundations",
                 label="(1.3)",
                 latex=r"\text{Hol}(g) \subseteq G_2 \iff \exists \eta: \nabla \eta = 0",
                 plain_text="Hol(g) ⊆ G2 iff exists eta: nabla eta = 0",
@@ -740,7 +740,7 @@ class FoundationsV16_2(SimulationBase):
                         "Fermion zero modes counted by chi_eff/(4*b3) = 144/48 = 3",
                         "Alternatively simplified: b3/8 = 24/8 = 3 generations per shadow"
                     ],
-                    "parentFormulas": ["g2-holonomy"]
+                    "parentFormulas": ["g2-holonomy-foundations"]
                 },
                 terms={
                     "N_gen": "Number of fermion generations",
@@ -764,7 +764,7 @@ class FoundationsV16_2(SimulationBase):
                         "Projection yields M^4 (Minkowski) x K^6 (internal Calabi-Yau)",
                         "CY3 Hodge numbers determine chirality and gauge group in 4D"
                     ],
-                    "parentFormulas": ["g2-holonomy", "b3-generations"]
+                    "parentFormulas": ["g2-holonomy-foundations", "b3-generations"]
                 },
                 terms={
                     "V_7": "7-dimensional G2 holonomy manifold",

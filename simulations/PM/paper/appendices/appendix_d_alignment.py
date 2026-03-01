@@ -48,7 +48,7 @@ class AppendixDAlignment(SimulationBase):
 
     FORMULA_REFS = [
         "chi-squared-convergence",
-        "hubble-tension-resolution",
+        "hubble-tension-resolution-appendix",
         "bao-alignment",
     ]
 
@@ -192,7 +192,7 @@ class AppendixDAlignment(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"H_0^{\text{geo}} = 70.42 \text{ km/s/Mpc} \quad \sigma_{\text{combined}} = 0.48",
-                formula_id="hubble-tension-resolution",
+                formula_id="hubble-tension-resolution-appendix",
                 label="(D.3)"
             ),
             ContentBlock(
@@ -255,7 +255,7 @@ class AppendixDAlignment(SimulationBase):
                 },
                 derivation={
                     "method": "chi_squared_comparison",
-                    "parentFormulas": ["hubble-tension-resolution", "bao-alignment"],
+                    "parentFormulas": ["hubble-tension-resolution-appendix", "bao-alignment"],
                     "steps": [
                         "Extract model predictions R_model from the locked 125-residue registry",
                         "Import observational values V_obs and uncertainties sigma_obs from DESI/Planck datasets",
@@ -265,7 +265,7 @@ class AppendixDAlignment(SimulationBase):
                 },
             ),
             Formula(
-                id="hubble-tension-resolution",
+                id="hubble-tension-resolution-appendix",
                 label="(D.3)",
                 latex=r"H_0^{\text{geo}} = 70.42 \text{ km/s/Mpc}",
                 plain_text="H0_geo = 70.42 km/s/Mpc",

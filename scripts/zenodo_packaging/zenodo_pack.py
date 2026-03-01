@@ -239,7 +239,7 @@ INCLUDE_DIRS: List[str] = [
     'PROOFS',
     'core',         # FormulasRegistry and validation scripts - REQUIRED for simulations
     'simulations',  # Included with --full, excluded otherwise via EXCLUDE_DIRS
-    # Excluded: docs, scripts, examples, diagrams, tools, sections (not needed for package)
+    'scripts',      # Included with --full for generate_statistics and publication figures
 ]
 
 # Key files to include from root

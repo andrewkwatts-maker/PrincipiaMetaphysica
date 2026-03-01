@@ -78,7 +78,7 @@ class MethodologyV16_2(SimulationBase):
             title="The Sterile Extraction Methodology",
             description="Topologically Anchored spectral geometry methodology with EDOF=3 (v23.1 dual-shadow framework, 27D/26,1)",
             section_id="2",
-            subsection_id="2.5"  # v19.0: Unique subsection (2.1-2.4 used by geometry simulations)
+            subsection_id="2.6"  # v24.1: Code-Theoretical Integrity section
         )
 
     @property
