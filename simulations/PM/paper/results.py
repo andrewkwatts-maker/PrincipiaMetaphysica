@@ -201,7 +201,7 @@ class ResultsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the 27D(26,1) bulk, the 12×(2,0) bridge pairs carry residual flux after "
+                    "In the M^{27}(24,1,2) bulk, the 12×(2,0) bridge pairs carry residual flux after "
                     "OR reduction creates the dual 13D(12,1) shadows. This flux is localized "
                     "within the b₃ = 24 associative 3-cycles of the G₂ manifold — the same "
                     "Betti number that determines the fermion generation count. By the maximum "
@@ -273,7 +273,7 @@ class ResultsV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "In the v23.1 framework, the vacuum energy is the ground-state residue of "
-                    "the 27D(26,1) bulk after dimensional descent. The 27D bulk tension "
+                    "the M^{27}(24,1,2) bulk after dimensional descent. The 27D bulk tension "
                     "(ρ<sub>bulk</sub> ∝ M_Pl⁴ ≈ 10⁷⁴ GeV⁴) is exponentially screened by the "
                     "b₃ × χ = 24 × 144 = 3456 flux quanta threading the G₂ manifold cycles. "
                     "The residual vacuum energy density is:"
@@ -304,15 +304,15 @@ class ResultsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "A key structural claim of the v23.1 model is that the 27D(26,1) → 4D "
+                    "A key structural claim of the v23.1 model is that the M^{27}(24,1,2) → 4D "
                     "descent via G₂ compactification admits <em>at most one</em> stable vacuum "
                     "consistent with the OR reduction operator R⊥ satisfying R⊥² = −I. "
-                    "The dual-shadow topology with C^(2,0) Euclidean central bridge eliminates "
+                    "The dual-shadow topology with S^(2,0) sampler data fields eliminates "
                     "the landscape degeneracy that plagues flux compactifications in string "
                     "theory: the OR reduction operator selects a unique chirality assignment "
                     "for the internal manifold, fixing the sign of the cosmological constant "
                     "residue. The v23.1 model asserts that any universe descending from a "
-                    "27D(26,1) bulk via per-shadow G₂ compactification with this topology "
+                    "M^{27}(24,1,2) bulk via per-shadow G₂ compactification with this topology "
                     "must exhibit a positive cosmological constant of this specific magnitude "
                     "(within an O(1) factor set by the dilaton VEV)."
                 )

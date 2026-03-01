@@ -5,7 +5,7 @@ Central (2,0) Sampler Simulation v23
 
 Implements the v23 Central (2,0) Sampler mechanism for Principia Metaphysica.
 
-CENTRAL SAMPLER FORMULA:
+SAMPLER DATA FIELDS FORMULA:
     p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
 
     Where:
@@ -15,13 +15,13 @@ CENTRAL SAMPLER FORMULA:
 
 DIMENSIONAL ACCOUNTING (v23.1 - 27D interpretation):
     - 24 core = 24 local bridge (DUAL REPRESENTATION of same physical space)
-    - 2 central dimensions (1 pair x 2D Euclidean - NEW physical dimensions)
+    - 2 sampler data fields dimensions (1 pair x 2D Euclidean - NEW physical dimensions)
     - 1 unified time
-    - TOTAL: 24 + 2 + 1 = 27D with signature (26,1)
+    - TOTAL: 24 + 2 + 1 = 27D with signature (24,1,2)
     - Note: The "50 spacelike-like" counts bridge twice (core + local view)
 
 ACTIVATION THRESHOLD:
-    Central sampler activates when n_local >= 9 (mid-gnosis).
+    Sampler data fields activates when n_local >= 9 (mid-gnosis).
     This enables global averaging for precision (sigma -> 0).
 
 GNOSIS STATES:
@@ -57,21 +57,21 @@ class CentralSamplerSolver:
     """
     v23 Central (2,0) Sampler Solver.
 
-    The central sampler is a single (2,0) Euclidean pair that averages outcomes
+    The sampler data fields is a single (2,0) Euclidean pair that averages outcomes
     from the 12 local (2,0) bridge pairs for global condensate selection.
 
     STRUCTURE:
         M^{24,1} = T^1 x_fiber (oplus_{i=1}^{12} B_i^{2,0})
-        Central sampler adds one additional (2,0) averaging node.
+        Sampler data fields adds one additional (2,0) averaging node.
 
     FORMULA:
         p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
 
     DIMENSIONAL ACCOUNTING (v23.1 - 27D):
         24 core = 24 local (dual representation of same 24D space)
-        2 central sampler (NEW physical dimensions)
+        2 sampler data fields (NEW physical dimensions)
         1 unified time
-        Total: 24 + 2 + 1 = 27D with signature (26,1)
+        Total: 24 + 2 + 1 = 27D with signature (24,1,2)
     """
 
     VERSION = "23.1"
@@ -100,7 +100,7 @@ class CentralSamplerSolver:
 
     def run(self) -> Dict[str, Any]:
         """
-        Run central sampler simulation.
+        Run sampler data fields simulation.
 
         Tests n_local = [6, 9, 12] activation states:
         - n_local = 6:  Baseline (central inactive)
@@ -154,7 +154,7 @@ class CentralSamplerSolver:
         results["central_sampler.dimensional_verification"] = "PASS" if dimensional_pass else "FAIL"
 
         # --- Viability Index ---
-        # Measures central sampler effectiveness
+        # Measures sampler data fields effectiveness
         # Ratio of full gnosis enhancement over baseline
         if p_anc_baseline > 0:
             viability_index = p_anc_full / p_anc_baseline
@@ -216,13 +216,13 @@ class CentralSamplerSolver:
 
 def run_central_sampler(verbose: bool = True) -> Dict[str, Any]:
     """
-    Run the central sampler simulation standalone.
+    Run the sampler data fields simulation standalone.
 
     Args:
         verbose: Whether to print detailed output
 
     Returns:
-        Dictionary with central sampler results
+        Dictionary with sampler data fields results
     """
     # Get registry instance (SSoT)
     reg = get_registry()
@@ -280,9 +280,9 @@ def run_central_sampler(verbose: bool = True) -> Dict[str, Any]:
         print(f"  (Ratio: p_anc_full / p_anc_baseline)")
 
         print("\n" + "-" * 75)
-        print(" CENTRAL SAMPLER PHYSICS")
+        print(" SAMPLER DATA FIELDS PHYSICS")
         print("-" * 75)
-        print("  The central sampler provides global averaging for condensate selection:")
+        print("  The sampler data fields provides global averaging for condensate selection:")
         print("  - Baseline (n=6):   Local averaging only, central inactive")
         print("  - Threshold (n=9):  Central activates, enables precision boost")
         print("  - Full (n=12):      Maximum gnosis, optimal branch selection")
@@ -297,7 +297,7 @@ def run_central_sampler(verbose: bool = True) -> Dict[str, Any]:
 
 def generate_certificate(results: Dict[str, Any]) -> Dict[str, Any]:
     """
-    Generate JSON certificate for central sampler validation.
+    Generate JSON certificate for sampler data fields validation.
 
     Args:
         results: Results from run_central_sampler()
@@ -377,7 +377,7 @@ def save_certificate(certificate: Dict[str, Any], output_dir: Path = None) -> Pa
 # Get registry for validation
 _validation_reg = get_registry()
 
-# Validate central sampler constants
+# Validate sampler data fields constants
 assert _validation_reg.reid_merkabah == 1, \
     f"Central pair should be 1, got {_validation_reg.reid_merkabah}"
 assert _validation_reg.total_local_pairs == 12, \

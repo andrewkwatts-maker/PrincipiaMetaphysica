@@ -638,7 +638,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 "Catalogues 125 PM-derived spectral residues from the G₂ manifold "
                 "Laplace-Beltrami operator and maps each eigenvalue to its physical "
                 "interpretation (particle masses, mixing angles, couplings, cosmological "
-                "parameters) under v23.1 27D(26,1) dual-shadow framework. Registry entries "
+                "parameters) under v23.1 M^{27}(24,1,2) dual-shadow framework. Registry entries "
                 "include PDG/NuFIT reference values for orientation but are not "
                 "independent experimental fits."
             ),
@@ -929,7 +929,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                     "Laplacian eigenvalue equation on G2 manifold V_7. "
                     "Each eigenvalue lambda_n corresponds to a KK mode."
                 ),
-                inputParams=[],
+                inputParams=["topology.elder_kads", "topology.mephorash_chi"],
                 outputParams=["spectral.n_residues"],
                 terms={
                     "Delta_V7": "Laplace-Beltrami operator on G2",
@@ -991,8 +991,8 @@ class CompleteResidueRegistryV18(SimulationBase):
                     "Spectral zeta function of G2 Laplacian. "
                     "Residues at poles encode topological data."
                 ),
-                inputParams=[],
-                outputParams=[],
+                inputParams=["topology.elder_kads", "topology.mephorash_chi"],
+                outputParams=["spectral.zeta_pole_dim"],
                 terms={
                     "zeta_V": "Spectral zeta function",
                     "s": "Complex parameter",
@@ -1418,7 +1418,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                         "The holonomy group G₂ ⊂ SO(7) decomposes the tangent bundle of V₇ into "
                         "representations of the 14-dimensional Lie group G₂, generating exactly "
                         "χ_eff = 144 zero modes in the full compactification. After accounting for "
-                        "the dual-shadow OR reduction and the C^(2,0) central bridge (which removes "
+                        "the dual-shadow OR reduction and the S^(2,0) sampler data fields (which removes "
                         "19 redundant ghost modes), 125 physical modes remain. This matches the "
                         "dimension of the exceptional Jordan algebra J₃(O) over the octonions—a "
                         "coincidence with deep algebraic significance (see Appendix B)."

@@ -283,7 +283,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 plain_text="P_dagger * P = I_13",
                 category="DERIVED",
                 description="Unitarity condition ensuring lossless projection from 13D to 4D.",
-                input_params=[],
+                input_params=["gauge.projection_matrix_13_to_4", "dimensions.D_after_sp2r"],
                 output_params=["gauge.unitarity_verified"],
                 terms={
                     "P_dagger": "Hermitian conjugate of projection tensor",

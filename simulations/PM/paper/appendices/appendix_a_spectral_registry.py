@@ -301,8 +301,8 @@ class AppendixASpectralRegistry(SimulationBase):
                     "Cryptographic hash verification ensuring registry immutability. "
                     "Any modification triggers Sterile Certification revocation."
                 ),
-                input_params=[],
-                output_params=[],
+                input_params=["registry.node_count"],
+                output_params=["validation.omega_seal"],
                 terms={
                     "Omega_seal": "The terminal cryptographic signature",
                     "SHA-256": "NIST-standard 256-bit cryptographic hash function",

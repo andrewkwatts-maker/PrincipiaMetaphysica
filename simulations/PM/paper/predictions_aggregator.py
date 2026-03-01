@@ -1622,10 +1622,10 @@ class PredictionsAggregatorV16(SimulationBase):
                     "Dark force leakage probability — testable prediction from two-layer OR structure. "
                     "EM and gravity leak at this rate; strong/weak forces are zero."
                 ),
-                inputParams=[],
-                outputParams=[],
-                input_params=[],
-                output_params=[],
+                inputParams=["topology.mephorash_chi", "topology.elder_kads"],
+                outputParams=["predictions.dark_force_leakage"],
+                input_params=["topology.mephorash_chi", "topology.elder_kads"],
+                output_params=["predictions.dark_force_leakage"],
                 derivation={
                     "steps": [
                         "Bridge OR creates dual shadows separated by 12 Möbius double-cover operators",
@@ -1774,10 +1774,10 @@ class PredictionsAggregatorV16(SimulationBase):
                     "G2 compactification moduli sector. This represents a direct "
                     "falsification window for the PM dark matter axion channel."
                 ),
-                inputParams=[],
-                outputParams=[],
-                input_params=[],
-                output_params=[],
+                inputParams=["topology.elder_kads", "constants.k_gimel"],
+                outputParams=["predictions.admx_axion_mass", "predictions.admx_fa_bound"],
+                input_params=["topology.elder_kads", "constants.k_gimel"],
+                output_params=["predictions.admx_axion_mass", "predictions.admx_fa_bound"],
                 derivation={
                     "steps": [
                         "QCD axion mass: m_a ~ 6 microeV from G2 moduli stabilization",
@@ -1817,10 +1817,10 @@ class PredictionsAggregatorV16(SimulationBase):
                     "contribution is constrained, requiring either suppressed Z2 coupling "
                     "or revised mirror sector temperature."
                 ),
-                inputParams=[],
-                outputParams=[],
-                input_params=[],
-                output_params=[],
+                inputParams=["geometry.alpha_leak", "topology.mephorash_chi"],
+                outputParams=["predictions.delta_neff_mirror"],
+                input_params=["geometry.alpha_leak", "topology.mephorash_chi"],
+                output_params=["predictions.delta_neff_mirror"],
                 derivation={
                     "steps": [
                         "PM mirror sector predicts mirror neutrinos with T'/T ~ 0.57",
@@ -1858,10 +1858,10 @@ class PredictionsAggregatorV16(SimulationBase):
                     "PM breathing dark energy mechanism is supported. Exclusion of "
                     "w_0 in [-0.99, -0.92] at 3 sigma would falsify the MEP derivation."
                 ),
-                inputParams=[],
-                outputParams=[],
-                input_params=[],
-                output_params=[],
+                inputParams=["topology.elder_kads"],
+                outputParams=["cosmology.w0_derived"],
+                input_params=["topology.elder_kads"],
+                output_params=["cosmology.w0_derived"],
                 derivation={
                     "steps": [
                         "G2 manifold topology fixes b_3 = 24 (third Betti number)",

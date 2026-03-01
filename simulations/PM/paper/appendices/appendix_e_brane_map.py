@@ -262,8 +262,8 @@ class AppendixEBraneMap(SimulationBase):
                 plain_text="m_n proportional to Vol(Brane_a intersection Brane_b) at x_n",
                 category="GEOMETRIC",
                 description="Mass generation via brane intersection overlap volume at node coordinates.",
-                input_params=[],
-                output_params=[],
+                input_params=["topology.elder_kads", "topology.mephorash_chi", "registry.node_count"],
+                output_params=["geometry.shell_distribution"],
                 terms={
                     "m_n": "Mass of the particle associated with node n",
                     "Brane_a": "First p-brane from the 26D bulk",

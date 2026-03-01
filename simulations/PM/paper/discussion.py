@@ -5,8 +5,8 @@ PRINCIPIA METAPHYSICA v23.1 - Discussion, Conclusions, and Theory Analysis
 
 Licensed under the MIT License. See LICENSE file for details.
 
-v23.1: 27D(26,1) signature with C^(2,0) Euclidean central bridge.
-       12×(2,0) bridges + C^(2,0) central sampler + T¹ time → 2×13D(12,1) shadows via OR reduction.
+v23.1: M^{27}(24,1,2) structure with S^(2,0) sampler data fields.
+       12×(2,0) bridges + S^(2,0) sampler data fields + T¹ time → 2×13D(12,1) shadows via OR reduction.
        4096-component Primordial Spinor Field from Cl(26,1).
 
 Provides comprehensive section content for:
@@ -144,7 +144,7 @@ class DiscussionV16(SimulationBase):
                 content=(
                     "The Principia Metaphysica framework presents a unified geometric description of "
                     "fundamental physics, deriving the Standard Model and gravity from a 27D structure "
-                    "with signature (26,1). The 12×(2,0) bridge pairs plus C^(2,0) Euclidean central sampler "
+                    "with structure (24,1,2). The 12×(2,0) bridge pairs plus S^(2,0) sampler data fields "
                     "plus T¹ time fiber create dual 13D(12,1) shadows via OR coordinate selection (R_⊥). "
                     "Each shadow compactifies on a 7D G₂ manifold to yield a 6D effective bulk with "
                     "heterogeneous branes, from which all observable physics emerges. The key results are:"
@@ -152,14 +152,14 @@ class DiscussionV16(SimulationBase):
             ),
             ContentBlock(
                 type="heading",
-                content="27D(26,1) Dual-Shadow Framework",
+                content="M^{27}(24,1,2) Dual-Shadow Framework",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The full theory lives in 27D with signature (26,1): twelve 2D bridge pairs B_i^(2,0), "
-                    "a 2D Euclidean central sampler C^(2,0), and a single timelike fiber T¹. The OR reduction "
+                    "The full theory lives in 27D with structure (24,1,2): twelve 2D bridge pairs B_i^(2,0), "
+                    "2D sampler data fields S^(2,0), and a single timelike fiber T¹. The OR reduction "
                     "operator R_⊥ creates dual 13D(12,1) observable shadows, enabling mirror-sector "
                     "dynamics (Z₂ symmetry) and deriving cosmological observables from pure topology."
                 )
@@ -198,7 +198,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "All four fundamental forces emerge from the 27D(26,1) geometric structure projecting to 13D "
+                    "All four fundamental forces emerge from the M^{27}(24,1,2) geometric structure projecting to 13D "
                     "observable shadow. The SO(10) gauge symmetry arises from D₅-type ADE singularities on "
                     "the G₂ manifold, unifying with gravity at the compactification scale. KK gravitons at "
                     "M_KK ≈ 4.5 TeV (derived from topology via k_eff = b₃/(2+ε) ≈ 10.80) provide near-term test."
@@ -288,7 +288,7 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "<strong>Central Equation (25D Dual-Shadow Framework with G₂ Compactification):</strong> "
-                    "The 27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1) shadows → 7D G₂ → 6D bulk → 4D dimensional reduction "
+                    "The M^{27}(24,1,2) = 12×(2,0) + (0,1) + S^{2,0} → 2×13D(12,1) shadows → 7D G₂ → 6D bulk → 4D dimensional reduction "
                     "yields the unified framework central equation."
                 )
             ),
@@ -566,8 +566,8 @@ class DiscussionV16(SimulationBase):
                 type="list",
                 items=[
                     "OR reduction operator R⊥ with Möbius property (R⊥² = -I)",
-                    "Physical state spectrum with ghost-free dynamics from (26,1) signature",
-                    "Fibered time structure: M²⁷ = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{(2,0)} ⊕ C^{(2,0)})",
+                    "Physical state spectrum with ghost-free dynamics from (24,1,2) structure",
+                    "Fibered time structure: M²⁷ = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{(2,0)} ⊕ S^{(2,0)})",
                     "Emergent causality from bridge coordinate sampling"
                 ]
             ),
@@ -722,8 +722,8 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The Principia Metaphysica framework (v23.1) presents a 27D(26,1) unified vision: "
-                    "twelve 2D bridge pairs B_i^(2,0) plus C^(2,0) central sampler plus T¹ time create "
+                    "The Principia Metaphysica framework (v23.1) presents a M^{27}(24,1,2) unified vision: "
+                    "twelve 2D bridge pairs B_i^(2,0) plus S^(2,0) sampler data fields plus T¹ time create "
                     "dual 13D(12,1) shadows via OR reduction R_⊥. The framework predicts a mirror sector (Z₂) "
                     "and yields w₀ = -1 + 1/b₃ = -23/24 via the Maximum Entropy Principle, "
                     "n_gen = 3 from G₂ topology (χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle "
@@ -1189,13 +1189,13 @@ class DiscussionV16(SimulationBase):
             # DESI Agreement
             ContentBlock(
                 type="heading",
-                content="DESI Agreement: 27D(26,1) Dual-Shadow Framework",
+                content="DESI Agreement: M^{27}(24,1,2) Dual-Shadow Framework",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 27D(26,1) dual-shadow framework derives cosmological observables from the "
+                    "The M^{27}(24,1,2) dual-shadow framework derives cosmological observables from the "
                     "G₂ modulus dynamics and the Maximum Entropy Principle on the moduli space:"
                 )
             ),
@@ -1206,7 +1206,7 @@ class DiscussionV16(SimulationBase):
                     "w_a ~ 0.1 (PREDICTED from residual modulus roll toward attractor)",
                     "de Sitter attractor preserved (w → -1 as t → ∞ at Ricci-flat fixed point)",
                     "Z₂ mirror sector provides dark matter candidate from the dual shadow",
-                    "No ghost/tachyon instabilities: (26,1) Lorentzian signature + OR reduction ensures stability"
+                    "No ghost/tachyon instabilities: (24,1,2) structure + OR reduction ensures stability"
                 ]
             ),
 
@@ -1357,7 +1357,7 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Framework", "Dimensions", "Fundamental Object", "Testability"],
                 rows=[
-                    ["Principia Metaphysica", "27D(26,1) = 12×(2,0) + (0,1) → 2×13D(12,1) → 4D via G₂", "4096-spinor Pneuma + TCS G₂ manifold", "Near-term (2027-2030s)"],
+                    ["Principia Metaphysica", "M^{27}(24,1,2) = 12×(2,0) + (0,1) + S^{2,0} → 2×13D(12,1) → 4D via G₂", "4096-spinor Pneuma + TCS G₂ manifold", "Near-term (2027-2030s)"],
                     ["Type IIA/IIB String", "10", "Strings (1D)", "Far-term (M_Pl scale)"],
                     ["M-Theory", "11", "M2/M5 branes", "Far-term (M_Pl scale)"],
                     ["Loop Quantum Gravity", "4", "Spin networks", "Far-term (Planck scale)"]
@@ -1540,8 +1540,18 @@ class DiscussionV16(SimulationBase):
                     "with tuned parameters achieves sigma_bar ~ 0 by construction, while a random "
                     "theory would yield sigma_bar >> 1."
                 ),
-                input_params=[],
-                output_params=[],
+                input_params=[
+                    "topology.elder_kads",
+                    "topology.mephorash_chi",
+                    "cosmology.w0_derived",
+                    "cosmology.H0_geometric",
+                    "gauge.ALPHA_GUT_INV",
+                    "gauge.sin2_theta_w",
+                    "particle.higgs_vev",
+                ],
+                output_params=[
+                    "statistics.global_alignment_sigma",
+                ],
                 derivation={
                     "steps": [
                         {"description": "Collect all N_pred PM predictions with experimental data. The observable set includes: 1/alpha_GUT (gauge), w_0 and w_a (dark energy), theta_12/theta_13/theta_23/delta_CP (PMNS angles), m_h (Higgs), Sigma m_nu (neutrino sum), and fermion mass ratios. Experimental sources: Planck 2018, DESI DR2 2025, NuFIT 6.0, PDG 2024.", "formula": r"\{x_i^{\text{PM}}, x_i^{\text{exp}}, \sigma_i^{\text{exp}}\}_{i=1}^{N_{\text{pred}}}"},

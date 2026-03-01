@@ -586,7 +586,7 @@ class AppendixH288Roots(SimulationBase):
                     "This E8×E8 structure is fundamental to heterotic string phenomenology and provides "
                     "the mathematical origin of the 288-root ancestral symmetry budget."
                 ),
-                input_params=[],
+                input_params=["topology.e8_root_count", "topology.e8_tilde_compactified_roots"],
                 output_params=["topology.ancestral_roots"],
                 derivation={
                     "method": "E8×E8 heterotic string root decomposition",

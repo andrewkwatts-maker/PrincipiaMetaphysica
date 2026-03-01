@@ -37,7 +37,7 @@ class DimensionalSSOTValidator:
     """Validates dimensional reduction SSOT consistency."""
 
     # Expected 5-level dimensional chain values
-    # Chain: 27D(26,1) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # Chain: 27D(24,1,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
     DIMENSIONAL_CHAIN = {
         # Level 0: ANCESTRAL (27D Bosonic) - Signature (26,1) = 24 G2 core + 2 bridge + 1 time
         "D_ancestral_total": 27,
@@ -63,7 +63,7 @@ class DimensionalSSOTValidator:
 
     # Legacy aliases that must match semantic names
     LEGACY_ALIASES = {
-        # Level 0 aliases (27D(26,1) bulk)
+        # Level 0 aliases (27D(24,1,2) bulk)
         "D_total_27": "D_ancestral_total",
         "D_space_26": "D_ancestral_space",
         "D_time_1": "D_ancestral_time",

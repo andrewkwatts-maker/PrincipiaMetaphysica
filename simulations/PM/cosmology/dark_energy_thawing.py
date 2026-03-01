@@ -1066,6 +1066,8 @@ class DarkEnergyEvolution(SimulationBase):
                     "In the 4-face picture, this corresponds to 6 cycles per face x 4 faces = 24, "
                     "with the leak coming from the lightest face modulus."
                 ),
+                input_params=["topology.elder_kads", "constants.k_gimel", "geometry.alpha_leak"],
+                output_params=["cosmology.w0_derived"],
                 derivation={
                     "steps": [
                         "The 24 associative 3-cycles distribute as 6 per face across 4 Kahler faces",

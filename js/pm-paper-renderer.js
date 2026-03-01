@@ -1227,6 +1227,44 @@
     // ========================================================================
 
     /**
+     * Render a parameter chip with dynamic value lookup from PM registry.
+     * Shows param name, value, and status with hover tooltip for description.
+     * @param {string} paramPath - Parameter path (e.g., "topology.elder_kads")
+     * @param {string} type - "input" or "output"
+     * @returns {string} - HTML for the param chip
+     */
+    function renderParamChip(paramPath, type) {
+        const shortName = paramPath.split('.').pop();
+        // Look up dynamic parameter data from PM registry
+        const paramData = PaperRenderer._data?.parameters?.[paramPath];
+        if (paramData) {
+            const value = paramData.value;
+            const status = paramData.status || '';
+            const desc = paramData.metadata?.description || paramData.description || '';
+            const units = paramData.metadata?.units || paramData.units || '';
+            // Format the value for display
+            let displayValue = '';
+            if (value !== null && value !== undefined) {
+                if (typeof value === 'number') {
+                    displayValue = Math.abs(value) >= 1000 || (Math.abs(value) < 0.01 && value !== 0)
+                        ? value.toExponential(3)
+                        : Number.isInteger(value) ? value.toString() : value.toPrecision(5);
+                } else {
+                    displayValue = String(value);
+                }
+            }
+            const statusClass = status ? ` param-status-${status.toLowerCase()}` : '';
+            const tooltip = desc ? ` title="${desc}${units ? ' [' + units + ']' : ''}"` : '';
+            return `<span class="param-chip${statusClass}" data-param-id="${paramPath}"${tooltip}>`
+                + `<span class="param-name">${shortName}</span>`
+                + (displayValue ? `<span class="param-value"> = ${displayValue}</span>` : '')
+                + `</span>`;
+        }
+        // Fallback: no dynamic data available, show path as code
+        return `<code class="param-chip" data-param-id="${paramPath}">${shortName}</code>`;
+    }
+
+    /**
      * Render an equation in academic paper style with complete metadata
      * @param {Object} block - Formula/equation content block
      * @returns {string|null} - HTML string for academic-style equation
@@ -1349,7 +1387,7 @@
             html += '<div class="equation-metadata-panel always-expanded">';
             html += '<div class="metadata-content">';
 
-            // Input/Output Parameters - compact grid layout
+            // Input/Output Parameters - dynamic rendering with values from PM registry
             if ((formulaData.input_params && formulaData.input_params.length > 0) ||
                 (formulaData.output_params && formulaData.output_params.length > 0)) {
                 html += '<div class="metadata-params-grid">';
@@ -1359,7 +1397,7 @@
                     html += '<span class="params-label">Inputs:</span>';
                     html += '<div class="params-list">';
                     for (const param of formulaData.input_params) {
-                        html += `<code class="param-chip" data-param-id="${param}">${param}</code>`;
+                        html += renderParamChip(param, 'input');
                     }
                     html += '</div></div>';
                 }
@@ -1369,7 +1407,7 @@
                     html += '<span class="params-label">Outputs:</span>';
                     html += '<div class="params-list">';
                     for (const param of formulaData.output_params) {
-                        html += `<code class="param-chip" data-param-id="${param}">${param}</code>`;
+                        html += renderParamChip(param, 'output');
                     }
                     html += '</div></div>';
                 }

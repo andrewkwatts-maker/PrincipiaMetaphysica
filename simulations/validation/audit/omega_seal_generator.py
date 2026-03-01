@@ -211,7 +211,7 @@ def generate_omega_seal(
 
     # Create the hash string (deterministic format)
     # v23.0 Format: "v23-Roots{R}-Pins{P}-Nodes{N}-Signature(26,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
-    # Updated from v22 to v23 12-PAIR-BRIDGE architecture with 27D(26,1) bulk
+    # Updated from v22 to v23 12-PAIR-BRIDGE architecture with 27D(24,1,2) bulk
     seal_string = (
         f"v23-Roots{roots}-Pins{pins}-Nodes{node_count}-"
         f"Signature(26,1)-Bridge12x(2,0)-"

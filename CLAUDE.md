@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**Principia Metaphysica** is a theoretical physics framework proposing a G2 manifold-based unification of fundamental physics. Version 23.0-12PAIR implements a 27-dimensional spacetime M^{27}(26,1) with 12×(2,0) paired bridge system plus central sampler.
+**Principia Metaphysica** is a theoretical physics framework proposing a G2 manifold-based unification of fundamental physics. Version 23.0-12PAIR implements a 27-dimensional spacetime M^{27}(24,1,2) with 12×(2,0) paired bridge system plus sampler data fields S^{2,0}.
 
 The framework derives physical constants from pure topology through a "72 Gates" certification system, aiming for zero fitted parameters (sterile model).
 

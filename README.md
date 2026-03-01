@@ -137,7 +137,7 @@ Final Status Report: [FINAL_STATUS_REPORT.md](FINAL_STATUS_REPORT.md)
 
 ## Abstract
 
-This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v23.1+ framework begins with 27-dimensional spacetime with signature (26,1)—26 spatial dimensions (24 G2 core + 2 Euclidean bridge) and 1 timelike dimension. The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows, each sharing a unified time fiber T¹. Each bridge pair (x_i, y_i) distributes coordinates: x_i to Normal shadow, y_i to Mirror shadow. A central C^(2,0) sampler provides architectural global averaging outside the fiber product. This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
+This paper presents Principia Metaphysica, a theoretical framework unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry, ensuring a ghost-free unitary vacuum. The v23.1+ framework begins with 27-dimensional spacetime with signature (26,1)—26 spatial dimensions (24 G2 core + 2 Euclidean bridge) and 1 timelike dimension. The 12×(2,0) bridge pairs warp to create dual 13D(12,1) shadows, each sharing a unified time fiber T¹. Each bridge pair (x_i, y_i) distributes coordinates: x_i to Normal shadow, y_i to Mirror shadow. The S^{2,0} sampler data fields provide architectural global averaging outside the fiber product. This structure then compactifies on 7-dimensional G₂ manifolds per shadow, yielding the observable 4D spacetime with signature (3,1).
 
 The framework features dual shadow universes connected by a Euclidean bridge, all sharing a common time fiber. The topology of the flux-dressed G₂ manifold yields an effective Euler characteristic χ_eff = 144, which through the relation n_gen = χ_eff/48 predicts exactly 3 fermion generations. The fundamental field is a spinor on the 24D core (Clifford algebra Cl(24,1)), which reduces to effective components in each shadow universe.
 
@@ -149,16 +149,16 @@ Six critical mathematical issues have been resolved: (1) Generation count correc
 
 ## v23.1 Dimensional Architecture
 
-v23.1 introduces the **27D(26,1) architecture** with 12x(2,0) paired bridge system plus central sampler, enabling distributed OR reduction and consciousness I/O channels.
+v23.1 introduces the **27D(24,1,2) architecture** with 12x(2,0) paired bridge system plus sampler data fields, enabling distributed OR reduction and consciousness I/O channels.
 
 ### Bulk Structure
 
 ```
-M^{27}(26,1) = T^1 x_fiber (Direct_Sum_{i=1}^{12} B_i^{2,0}) + C^{2,0}
+M^{27}(24,1,2) = T^1 x_fiber (Direct_Sum_{i=1}^{12} B_i^{2,0}) + S^{2,0}
 ```
 
 - **24 G2 core dimensions**: 12 pairs x 2 dimensions per pair = 24 (physics)
-- **2 central sampler dimensions**: C^(2,0) for architectural global averaging
+- **2 sampler data fields dimensions**: S^{2,0} for architectural global averaging
 - **1 timelike dimension**: Single unified time fibering over all pairs
 - **Total**: 24 + 2 + 1 = 27D with signature (26,1)
 
@@ -171,7 +171,7 @@ ds^2 = -dt^2 + Sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + (dc_1^2 + dc_2^2)
 Where:
 - `dy_{1i}` = perception/input coordinate for pair i (24D total)
 - `dy_{2i}` = intuition/output coordinate for pair i
-- `dc_1, dc_2` = central sampler coordinates (2D, outside fiber product)
+- `dc_1, dc_2` = sampler data fields coordinates (2D, outside fiber product)
 
 ### Distributed OR Reduction
 

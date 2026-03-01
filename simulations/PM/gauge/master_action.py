@@ -361,7 +361,7 @@ class MasterActionSimulationV22(SimulationBase):
 
         v22.0: Adds 12-pair bridge system formulas:
         - pneuma-master-action-v22: Updated master action with 12-pair bridge
-        - bridge-12-pair-metric-v22: 27D metric with 12 (2,0) bridge pairs + C^(2,0) central
+        - bridge-12-pair-metric-v22: 27D metric with 12 (2,0) bridge pairs + S^{2,0} sampler data fields
         - bridge-lagrangian-v22: L_bridge summed over 12 pairs
         - distributed-or-reduction-v22: Tensor product of 12 R_perp operators
         - breathing-aggregation-v22: Averaged breathing mode
@@ -377,11 +377,11 @@ class MasterActionSimulationV22(SimulationBase):
                 plain_text="S = integral d^27X sqrt(-G) [ R + Psi-bar_P (i*Gamma^M*D_M - m) Psi_P + lambda*(Psi-bar_P*Psi_P)^2 + sum_{i=1}^{12} L_bridge^i + L_C ]",
                 category="DERIVED",
                 description=(
-                    "v23.1: 27D(26,1) Pneuma master action with 12-pair (2,0) bridge system + C^(2,0) central sampler. "
-                    "12×(2,0) + C^(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. "
+                    "v23.1: 27D(24,1,2) Pneuma master action with 12-pair (2,0) bridge system + S^{2,0} sampler data fields. "
+                    "12×(2,0) + S^{2,0} + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. "
                     "Each L_bridge^i contributes to OR reduction via local R_perp_i operator."
                 ),
-                inputParams=[],
+                inputParams=["geometry.D_bulk", "bridge.n_pairs", "topology.elder_kads"],
                 outputParams=["bridge.n_pairs"],
                 derivation={
                     "steps": [
@@ -390,7 +390,7 @@ class MasterActionSimulationV22(SimulationBase):
                         "Pneuma spinor Psi_P (4096 components from 2^12 = dim Cl(24,1)) carries all matter content",
                         "Quartic self-interaction lambda*(Psi-bar Psi)^2 drives condensation and symmetry breaking",
                         "12 bridge Lagrangians L_bridge^i implement distributed OR reduction across (2,0) pairs",
-                        "Central sampler L_C completes the 27D = 24 (bridge) + 2 (central) + 1 (time) decomposition",
+                        "Sampler data fields L_C completes the 27D = 24 (bridge) + 2 (sampler) + 1 (time) decomposition",
                     ],
                     "method": "higher_dimensional_action_principle",
                     "parentFormulas": [],
@@ -402,7 +402,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "D_M": "Covariant derivative with spin connection",
                     "lambda": "Quartic self-interaction for condensation",
                     "L_bridge^i": "Bridge Lagrangian for pair i (12 total)",
-                    "L_C": "Central sampler Lagrangian C^(2,0)"
+                    "L_C": "Sampler data fields Lagrangian S^{2,0}"
                 }
             ),
             Formula(
@@ -412,17 +412,17 @@ class MasterActionSimulationV22(SimulationBase):
                 plain_text="ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)",
                 category="DERIVED",
                 description=(
-                    "v23.1: 27D metric with 12 (2,0) bridge pairs + C^(2,0) central sampler. "
-                    "Total: 1 (time) + 24 (bridges) + 2 (central) = 27D(26,1), Cl(24,1) spinors. "
+                    "v23.1: 27D metric with 12 (2,0) bridge pairs + S^{2,0} sampler data fields. "
+                    "Total: 1 (time) + 24 (bridges) + 2 (sampler) = 27D(24,1,2), Cl(24,1) spinors. "
                     "Each pair (y_{1i}, y_{2i}) spans a 2D Euclidean bridge plane."
                 ),
-                inputParams=[],
+                inputParams=["geometry.D_bulk", "bridge.n_pairs", "topology.elder_kads"],
                 outputParams=["bridge.n_pairs"],
                 derivation={
                     "steps": [
-                        "Decompose 27D spacetime as: 1 (time) + 12x2 (bridge pairs) + 2 (central sampler)",
+                        "Decompose 27D spacetime as: 1 (time) + 12x2 (bridge pairs) + 2 (sampler data fields)",
                         "Each bridge pair (y_{1i}, y_{2i}) is a 2D Euclidean plane with signature (+,+)",
-                        "Total spatial dimensions: 24 (bridge) + 2 (central) = 26, plus 1 time = 27D(26,1)",
+                        "Total spatial dimensions: 24 (bridge) + 2 (sampler) = 26, plus 1 time = 27D(24,1,2)",
                     ],
                     "method": "metric_decomposition",
                     "parentFormulas": ["pneuma-master-action-v23"],
@@ -444,7 +444,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "contributes its local breathing mode rho_breath^i and OR reduction "
                     "operator OR^i acting on the Pneuma spinor."
                 ),
-                inputParams=[],
+                inputParams=["bridge.n_pairs", "bridge.breathing_mode", "bridge.or_operator"],
                 outputParams=["bridge.n_pairs", "bridge.breathing_aggregation"],
                 derivation={
                     "steps": [
@@ -474,7 +474,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "R_perp^i matrices. Each R_perp^i is a 2x2 pi/2 rotation. Total dimension: "
                     "2^12 = 4096, matching the Pneuma spinor dimension from Cl(24,1)."
                 ),
-                inputParams=[],
+                inputParams=["bridge.n_pairs", "bridge.local_or_matrix"],
                 outputParams=["bridge.distributed_or_rank"],
                 derivation={
                     "steps": [
@@ -502,7 +502,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "all 12 bridge pairs. Each pair i contributes its local tension between "
                     "normal and rotated mirror sectors. Drives collective OR transitions."
                 ),
-                inputParams=[],
+                inputParams=["bridge.n_pairs", "bridge.normal_mirror_tension", "bridge.distributed_or_rank"],
                 outputParams=["bridge.breathing_aggregation"],
                 derivation={
                     "steps": [
@@ -533,7 +533,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "5D Kaluza-Klein metric ansatz. Reduction yields 4D GR + U(1) gauge. "
                     "Demonstrates mechanism used in full G2 reduction."
                 ),
-                inputParams=[],
+                inputParams=["geometry.D_bulk", "gauge.compact_radius", "gauge.kk_normalization"],
                 outputParams=["gauge.kk_planck_factor", "gauge.kk_gauge_kinetic_coeff"],
                 derivation={
                     "steps": [
@@ -562,7 +562,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "SU(3)_C QCD Lagrangian from G2 associative 3-cycle reduction. "
                     "8 gluons with self-interactions; quarks in color triplet."
                 ),
-                inputParams=[],
+                inputParams=["gauge.g_s_coupling", "geometry.associative_3cycle_volume"],
                 outputParams=["gauge.qcd_gluon_count", "gauge.qcd_alpha_s_mz"],
                 derivation={
                     "steps": [
@@ -591,7 +591,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "SU(2)_L weak gauge Lagrangian from G2 co-associative 4-cycle. "
                     "3 weak bosons (W+, W-, W^3) couple only to left-handed fermions."
                 ),
-                inputParams=[],
+                inputParams=["gauge.g2_weak_coupling", "geometry.coassociative_4cycle_volume"],
                 outputParams=["gauge.weak_boson_count", "gauge.weak_coupling_g2"],
                 derivation={
                     "steps": [
@@ -619,7 +619,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "U(1)_Y hypercharge from residual Abelian cycle. "
                     "Hypercharge assignments from fermion node structure."
                 ),
-                inputParams=[],
+                inputParams=["gauge.gp_hypercharge_coupling", "geometry.residual_abelian_cycle_volume"],
                 outputParams=["gauge.hypercharge_coupling_gp"],
                 derivation={
                     "steps": [
@@ -784,7 +784,7 @@ class MasterActionSimulationV22(SimulationBase):
                     "flips chirality) with face OR. P_reverse is the cross-shadow chirality flip "
                     "probability."
                 ),
-                inputParams=[],
+                inputParams=["bridge.distributed_or_rank", "gauge.electroweak_mixing_angle", "geometry.tcs_face_count"],
                 outputParams=["gauge.chirality_reversal_probability"],
                 derivation={
                     "steps": [
@@ -814,8 +814,8 @@ class MasterActionSimulationV22(SimulationBase):
                     "Dark matter portal Lagrangian -- hidden face coupling from volume ratio "
                     "(1/sqrt(6)), torsion, and flux asymmetry corrections."
                 ),
-                inputParams=[],
-                outputParams=[],
+                inputParams=["geometry.alpha_leak", "topology.mephorash_chi", "topology.elder_kads"],
+                outputParams=["gauge.dark_portal_coupling"],
                 derivation={
                     "steps": [
                         "The 4-face TCS G2 structure has one visible face (selected by face OR) and three hidden faces",
@@ -1186,7 +1186,7 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        'Version <span class="pm-value" data-pm-value="framework.version_major">23</span> introduces a fundamental structural change: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central. '
+                        'Version <span class="pm-value" data-pm-value="framework.version_major">23</span> introduces a fundamental structural change: 27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S^{2,0} sampler data fields. '
                         "The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 shared time). "
                         "The metric is: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)."
                     )
@@ -1235,14 +1235,14 @@ class MasterActionSimulationV22(SimulationBase):
                 # =============================================================
                 ContentBlock(
                     type="heading",
-                    content="The 27D(26,1) Pneuma Master Action",
+                    content="The 27D(24,1,2) Pneuma Master Action",
                     level=2
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "The fundamental action in 27D spacetime with signature (26,1) now includes "
-                        "the 12-pair bridge structure + C^(2,0) central sampler: S = int d^27X sqrt(-G) [R + Psi-bar(iGamma.D - m)Psi "
+                        "the 12-pair bridge structure + S^{2,0} sampler data fields: S = int d^27X sqrt(-G) [R + Psi-bar(iGamma.D - m)Psi "
                         "+ lambda(Psi-bar Psi)^2 + sum_{i=1}^{12} L_bridge^i + L_C]. The 4096-component Pneuma spinor "
                         "from Cl(24,1) couples to each bridge pair through the distributed OR structure."
                     )
@@ -1353,7 +1353,7 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The distributed OR reduction (bridge/global OR) splits the 27D(26,1) "
+                        "The distributed OR reduction (bridge/global OR) splits the 27D(24,1,2) "
                         "bulk into two 13D(12,1) shadow domains. Each shadow inherits 12 spatial "
                         "dimensions (one from each bridge pair) plus 1 shared time dimension. "
                         "Shadow 1 carries left-handed fermions and Shadow 2 carries right-handed "
@@ -1422,7 +1422,7 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "The complete dimensional reduction chain is thus: "
-                        "27D(26,1) master action -> bridge/global OR -> 2 x 13D(12,1) shadow "
+                        "27D(24,1,2) master action -> bridge/global OR -> 2 x 13D(12,1) shadow "
                         "actions -> face/local OR + G2 compactification -> 4D effective action "
                         "-> metric variation -> Einstein equations with portal corrections. "
                         "Each step is determined by the geometry, with no free parameters."

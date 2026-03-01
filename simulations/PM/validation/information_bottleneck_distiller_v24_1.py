@@ -66,7 +66,7 @@ class InformationBottleneckDistiller:
     def __init__(self):
         """Initialize information bottleneck distiller."""
         # PM framework structure
-        self.n_input_dims = 27  # M^{27}(26,1) manifold dimensions
+        self.n_input_dims = 27  # M^{27}(24,1,2) manifold dimensions
         self.n_output_params = 125  # Physical constants
         self.n_formulas = 116  # Topological formulas (from PM v23.9)
 
@@ -113,7 +113,7 @@ class InformationBottleneckDistiller:
         """
         Calculate description length of the 27D input manifold.
 
-        The "input" is the topological structure M^{27}(26,1) = 12×(2,0) + C^(2,0) + (0,1)
+        The "input" is the topological structure M^{27}(24,1,2) = 12×(2,0) + S^(2,0) + (0,1)
 
         Returns:
             Input description complexity
@@ -124,14 +124,14 @@ class InformationBottleneckDistiller:
         # 1. G₂ holonomy group (Lie group, 14-dimensional)
         # 2. Third Betti number b₃ = 24 (integer)
         # 3. Bridge structure: 12 pairs (integer)
-        # 4. Signature: (26,1) (2 integers)
-        # 5. Central sampler signature: (2,0) (2 integers)
+        # 4. Structure: (24,1,2) (3 integers)
+        # 5. Sampler data fields signature: (2,0) (2 integers)
 
-        # Description: "G2 manifold with b3=24, signature (26,1), 12 bridges (2,0), central (2,0)"
+        # Description: "G2 manifold with b3=24, structure (24,1,2), 12 bridges (2,0), sampler (2,0)"
         description = (
-            "Manifold M^{27}(26,1) = Twisted Connected Sum of two G₂ holonomy 7-manifolds, "
+            "Manifold M^{27}(24,1,2) = Twisted Connected Sum of two G₂ holonomy 7-manifolds, "
             "connected by 12 bridge pairs with signature (2,0), "
-            "plus central sampler C^{(2,0)} with Euclidean signature (2,0), "
+            "plus sampler data fields S^{(2,0)} with Euclidean signature (2,0), "
             "plus unified time fiber T¹ with signature (0,1). "
             f"Third Betti number b₃ = 24. "
             "G₂ holonomy fixes Ricci-flatness and induces associative 3-cycles."
@@ -146,7 +146,7 @@ class InformationBottleneckDistiller:
         universal_parameters = {
             "g2_structure_constants": 14,  # Lie algebra structure (universal, not free)
             "betti_number_b3": 1,  # Integer specification
-            "signature": 2,  # (26,1) = 2 integers
+            "signature": 3,  # (24,1,2) = 3 integers
             "bridge_count": 1,  # 12 bridges = 1 integer
             "bridge_signature": 2,  # (2,0) = 2 integers
             "central_signature": 2,  # (2,0) = 2 integers
@@ -156,7 +156,7 @@ class InformationBottleneckDistiller:
 
         # Information content: log₂(parameter space volume)
         # For b₃ = 24: log₂(1) = 0 bits (fixed by topology)
-        # For signature (26,1): log₂(1) = 0 bits (fixed by construction)
+        # For structure (24,1,2): log₂(1) = 0 bits (fixed by construction)
         # For 12 bridges: log₂(1) = 0 bits (derived from b₃/2)
 
         # True free parameters: ZERO (all topological invariants)

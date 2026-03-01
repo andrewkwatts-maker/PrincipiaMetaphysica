@@ -14,7 +14,7 @@ DERIVATION CHAIN (v22):
 3. Spin connection and torsion-free condition
 4. Riemann/Ricci tensor construction
 5. v22 Dimensional reduction:
-   27D(26,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1) -> 4D(3,1)
+   27D(24,1,2) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1) -> 4D(3,1)
    - (0,1): Shared unified time fiber
    - 12x(2,0): 12 Euclidean bridge pairs
    - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
@@ -180,7 +180,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
     6. Einstein field equations follow from variational principle
 
     v22 FRAMEWORK:
-    Structure: 27D(26,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+    Structure: 27D(24,1,2) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
     - (0,1): Shared unified time fiber
     - 12x(2,0): 12 Euclidean bridge pairs
     - 2x13D(12,1): Dual shadows (12 spatial + 1 shared time each)
@@ -201,7 +201,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
         self.D_4 = D_SPACETIME
 
         # Signature - v22 dual-shadow structure
-        # v22 FRAMEWORK: 27D(26,1) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
+        # v22 FRAMEWORK: 27D(24,1,2) = 12x(2,0) + (0,1) WARP to create 2x13D(12,1)
         # Components:
         #   (0,1): Shared unified time fiber
         #   12x(2,0): 12 Euclidean bridge pairs
@@ -847,8 +847,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "This is the 'square root' of the metric - the fundamental relation in "
                 "Carroll's vielbein formalism."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=["gravity.vielbein_rank"],
             derivation={
                 "method": "Vielbein decomposition of the metric tensor",
                 "steps": [
@@ -879,8 +879,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "equals sqrt(-g), appearing in all spacetime integrals. This ensures "
                 "coordinate-invariant integration."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Determinant identity from vielbein-metric relation",
                 "steps": [
@@ -907,8 +907,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "This compatibility condition ensures covariant derivatives commute between "
                 "coordinate and frame bases. Key relation in Carroll's GR formalism."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Compatibility of covariant derivative with vielbein basis",
                 "steps": [
@@ -940,8 +940,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "from the tetrad postulate and encodes local Lorentz transformations. The "
                 "antisymmetry omega_muAB = -omega_muBA follows from metric compatibility."
             ),
-            inputParams=[],
-            outputParams=["gravity.spin_connection_components"],
+            input_params=["geometry.D_bulk"],
+            output_params=["gravity.spin_connection_components"],
             derivation={
                 "method": "Solve tetrad postulate for the spin connection",
                 "steps": [
@@ -970,8 +970,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "with metric compatibility, uniquely determines the spin connection as the "
                 "Levi-Civita connection. This is the 'fundamental lemma of Riemannian geometry'."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Torsion-free constraint from Riemannian geometry",
                 "steps": [
@@ -1001,8 +1001,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "meaning parallel transport preserves lengths and angles. In frame formalism, "
                 "this becomes omega_muAB = -omega_muBA (antisymmetry)."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Metric preservation under parallel transport",
                 "steps": [
@@ -1033,8 +1033,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "unique connection coefficients satisfying torsion-free and metric-compatible "
                 "conditions. Standard result from Carroll and all GR textbooks."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Unique solution from torsion-free plus metric compatibility",
                 "steps": [
@@ -1066,8 +1066,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "parallel transport to commute: [D_mu, D_nu]V^rho = R^rho_sigma mu nu V^sigma. "
                 "Has 20 independent components in 4D (from symmetries)."
             ),
-            inputParams=[],
-            outputParams=["gravity.riemann_independent_4d"],
+            input_params=["geometry.D_bulk"],
+            output_params=["gravity.riemann_independent_4d"],
             derivation={
                 "method": "Commutator of covariant derivatives acting on a vector",
                 "steps": [
@@ -1097,8 +1097,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "Ricci tensor as contraction of Riemann tensor. Symmetric (R_munu = R_numu) "
                 "with 10 independent components in 4D. Appears directly in Einstein equations."
             ),
-            inputParams=[],
-            outputParams=["gravity.ricci_components_4d"],
+            input_params=["geometry.D_bulk"],
+            output_params=["gravity.ricci_components_4d"],
             derivation={
                 "method": "Contraction of Riemann tensor on first and third indices",
                 "steps": [
@@ -1125,8 +1125,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "overall curvature. Appears in the Einstein-Hilbert action as the gravitational "
                 "Lagrangian density."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Full contraction of Ricci tensor with inverse metric",
                 "steps": [
@@ -1157,8 +1157,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "Einstein's field equations. Emerges from dimensional reduction of 26D master action "
                 "over G2 manifold. M_Pl = 1/sqrt(8 pi G) is the reduced Planck mass."
             ),
-            inputParams=["constants.M_PLANCK"],
-            outputParams=[],
+            input_params=["constants.M_PLANCK"],
+            output_params=[],
             derivation={
                 "method": "Gravitational action from Ricci scalar integrated over spacetime",
                 "steps": [
@@ -1192,8 +1192,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "identity: nabla^mu G_munu = 0, ensuring automatic conservation of stress-energy. "
                 "This is the geometric side of Einstein's field equations."
             ),
-            inputParams=[],
-            outputParams=[],
+            input_params=["geometry.D_bulk"],
+            output_params=[],
             derivation={
                 "method": "Trace reversal of the Ricci tensor",
                 "steps": [
@@ -1222,8 +1222,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "(right). Derived from variation of Einstein-Hilbert + matter action. The contracted "
                 "Bianchi identity ensures nabla^mu T_munu = 0 (energy-momentum conservation)."
             ),
-            inputParams=["constants.G_NEWTON"],
-            outputParams=[],
+            input_params=["constants.G_NEWTON"],
+            output_params=[],
             derivation={
                 "method": "Variational principle applied to Einstein-Hilbert plus matter action",
                 "steps": [
@@ -1260,8 +1260,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "the 26D mass to the 24th power times the internal volume. This determines G_N "
                 "in terms of fundamental 26D scale and G2 geometry."
             ),
-            inputParams=["topology.mephorash_chi", "topology.elder_kads"],
-            outputParams=["gravity.newton_constant_theory"],
+            input_params=["topology.mephorash_chi", "topology.elder_kads"],
+            output_params=["gravity.newton_constant_theory"],
             derivation={
                 "method": "Dimensional reduction of 26D gravitational action over compact space",
                 "steps": [
@@ -1291,8 +1291,8 @@ class GRSpacetimeDerivationsV19(SimulationBase):
                 "depends on 26D scale, G2 volume, and topological invariants chi_eff = 144, b3 = 24. "
                 "This fixes the gravitational coupling in terms of fundamental geometry."
             ),
-            inputParams=["topology.mephorash_chi", "topology.elder_kads"],
-            outputParams=["gravity.planck_mass_from_g2"],
+            input_params=["topology.mephorash_chi", "topology.elder_kads"],
+            output_params=["gravity.planck_mass_from_g2"],
             derivation={
                 "method": "G2 compactification with topological correction factors",
                 "steps": [

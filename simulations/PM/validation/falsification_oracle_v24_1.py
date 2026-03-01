@@ -92,7 +92,7 @@ class FalsificationOracle:
             "fifth_force": {
                 "range_lambda_m": 5.62e-5,  # 56.2 micrometers
                 "strength_relative_to_gravity": 1e-4,  # 0.01% of gravity
-                "source": "C^(2,0) central sampler leakage",
+                "source": "S^(2,0) sampler data fields leakage",
                 "derivation": "Compactification scale from b₃ = 24"
             },
 

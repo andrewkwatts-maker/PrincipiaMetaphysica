@@ -33,7 +33,7 @@
    - **Prediction:** λ = 56.2 micrometers (0.0562 mm)
    - **Current Limit:** 100 micrometers (0.1 mm)
    - **Verdict:** Needs higher precision torsion balance
-   - **Kill Condition:** If no deviation found at 50 micron scale → C^(2,0) central sampler FALSIFIED
+   - **Kill Condition:** If no deviation found at 50 micron scale → S^{2,0} sampler data fields FALSIFIED
 
 4. **Sterile Neutrino** (DUNE 2028)
    - **Prediction:** Mass ~1.5 eV, mixing angle θ ~ 0.01

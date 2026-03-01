@@ -253,7 +253,7 @@ class TerminalCertificates:
             status=GateStatus.HARD_LOCKED if is_correct else GateStatus.FAILED,
             derived_value=bulk_dim,
             expected_value=27,
-            message="27D(26,1) bulk embedding"
+            message="27D(24,1,2) bulk embedding"
         )
 
     def c07_hidden_support(self) -> Certificate:

@@ -110,6 +110,8 @@ class FaradayV17(SimulationBase):
                 latex=r"F = F_{bulk}/(1+\epsilon)",
                 plain_text="F = F_bulk / (1+epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_faraday", "qed.manifest_faraday"],
                 description=(
                     "Faraday constant follows Avogadro contraction since F = N_A * e and e is "
                     "topologically invariant. The elementary charge e is a quantised KK momentum "

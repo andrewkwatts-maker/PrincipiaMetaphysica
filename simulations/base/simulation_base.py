@@ -152,11 +152,20 @@ class Formula:
     terms: Dict[str, Any] = field(default_factory=dict)
 
     def __post_init__(self):
-        """Generate title from description if not provided."""
+        """Generate title from description if not provided. Sync param field conventions."""
         if not self.title and self.description:
             # Take first sentence or first 60 chars as title
             first_sentence = self.description.split('.')[0].strip()
             self.title = first_sentence[:80] if len(first_sentence) > 80 else first_sentence
+        # Sync camelCase and snake_case param fields (prefer whichever is populated)
+        if self.inputParams and not self.input_params:
+            self.input_params = self.inputParams
+        elif self.input_params and not self.inputParams:
+            self.inputParams = self.input_params
+        if self.outputParams and not self.output_params:
+            self.output_params = self.outputParams
+        elif self.output_params and not self.outputParams:
+            self.outputParams = self.output_params
 
 
 @dataclass
@@ -1142,8 +1151,8 @@ class _SchemaBuilder:
                 plainText=formula.plain_text,
                 category=formula.category,
                 description=formula.description,
-                inputParams=formula.input_params,
-                outputParams=formula.output_params,
+                inputParams=formula.input_params or formula.inputParams,
+                outputParams=formula.output_params or formula.outputParams,
                 derivedFrom=formula.derivation.get("parentFormulas", []) if formula.derivation else [],
                 derivation=formula.derivation or {},
                 terms=formula.terms,

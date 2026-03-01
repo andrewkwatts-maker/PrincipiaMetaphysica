@@ -801,7 +801,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     "s = (d-k)/2. The residues are heat kernel coefficients a_k encoding "
                     "geometric invariants."
                 ),
-                input_params=[],
+                input_params=["topology.mephorash_chi", "topology.elder_kads"],
                 output_params=[],
                 derivation={
                     "method": "Heat kernel asymptotic expansion",
@@ -924,7 +924,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     "(spectral side) to the geometry of closed geodesics (geometric side). "
                     "Provides exact relationship between masses and gauge configurations."
                 ),
-                input_params=[],
+                input_params=["topology.elder_kads", "topology.mephorash_chi"],
                 output_params=[],
                 derivation={
                     "method": "Selberg trace formula for compact manifolds",
@@ -996,7 +996,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     "The heat kernel trace and its asymptotic expansion. The coefficients "
                     "a_k are geometric invariants that appear in zeta function residues."
                 ),
-                input_params=[],
+                input_params=["topology.mephorash_chi", "topology.elder_kads"],
                 output_params=[],
                 derivation={
                     "method": "Parametrix construction for heat equation",

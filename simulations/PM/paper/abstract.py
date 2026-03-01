@@ -6,14 +6,14 @@ DOI: 10.5281/zenodo.18079602
 
 Licensed under the MIT License. See LICENSE file for details.
 
-v23.1: 27D(26,1) signature with C^(2,0) Euclidean central bridge.
+v23.1: M^{27}(24,1,2) structure with S^(2,0) sampler data fields.
        4096-component Primordial Spinor Field from Cl(26,1).
        Dual 13D(12,1) shadows with OR reduction operator R_perp.
 
 Provides section content for the Abstract (Section 0).
 
 This simulation provides the abstract narrative for Principia Metaphysica v23.1,
-the 27D(26,1) dual-shadow framework with Euclidean bridge where 125 physical
+the M^{27}(24,1,2) dual-shadow framework with Euclidean bridge where 125 physical
 constants are proposed to emerge as spectral residues of G2 manifold compactification. It does
 not compute physics parameters, but instead generates the narrative content and
 cross-references for the paper's abstract section.
@@ -60,7 +60,7 @@ class AbstractV17_2(SimulationBase):
     Abstract section (Section 0) for Principia Metaphysica v23.1.
 
     This simulation provides the abstract narrative content that summarizes
-    the 27D(26,1) dual-shadow framework with Euclidean bridge. It describes
+    the M^{27}(24,1,2) dual-shadow framework with Euclidean bridge. It describes
     the dimensional descent from 27D ancestral bulk through dual 13D(12,1)
     shadows to observable 4D via G2 compactification, yielding exactly 3
     fermion generations from n_gen = chi_eff/(4*b3) = 144/48 = 3.
@@ -84,7 +84,7 @@ class AbstractV17_2(SimulationBase):
             version="23.1",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v23.1 27D(26,1) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification with EDOF=3 (3 geometric seeds)",
+            description="Paper abstract for Principia Metaphysica v23.1 M^{27}(24,1,2) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification with EDOF=3 (3 geometric seeds)",
             section_id="0",
             subsection_id=None
         )
@@ -338,7 +338,7 @@ class AbstractV17_2(SimulationBase):
             abstract=(
                 "Unified mathematical framework proposing geometric expressions for 125 fundamental "
                 "physical constants and cosmological observables as spectral residues of a "
-                "27D(26,1) dual-shadow G2 manifold compactification with Euclidean bridge. "
+                "M^{27}(24,1,2) dual-shadow G2 manifold compactification with Euclidean bridge. "
                 "Predicts 26 Standard Model parameters (24 within 1-sigma) and proton "
                 "decay lifetime testable by Hyper-K. All derivation chains recorded in "
                 "reproducibility certificates."
@@ -389,15 +389,15 @@ class AbstractV17_2(SimulationBase):
             Formula(
                 id="abstract-framework-overview",
                 label="(0.1)",
-                latex=r"27\text{D}(26,1) \;\xrightarrow{\text{OR}}\; 2 \times 13\text{D}(12,1) \;\xrightarrow{G_2}\; 2 \times 4\text{D} \quad \Rightarrow \quad n_{\text{gen}} = \frac{\chi_{\text{eff}}}{4 \cdot b_3} = \frac{144}{48} = 3",
-                plain_text="27D(26,1) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3",
+                latex=r"M^{27}(24{,}1{,}2) \;\xrightarrow{\text{OR}}\; 2 \times 13\text{D}(12,1) \;\xrightarrow{G_2}\; 2 \times 4\text{D} \quad \Rightarrow \quad n_{\text{gen}} = \frac{\chi_{\text{eff}}}{4 \cdot b_3} = \frac{144}{48} = 3",
+                plain_text="M^{27}(24,1,2) -> 2 x 13D(12,1) -> 2 x 4D => n_gen = chi_eff / (4*b3) = 144/48 = 3",
                 category="DERIVED",
-                description="Framework overview: the 27D(26,1) ancestral bulk decomposes as T^1 (unified time) x C^(2,0) (Euclidean bridge) x 12 bridge pairs B_i^(2,0). The OR reduction operator R_perp = tensor product of 12 Moebius double-covers (R_perp^2 = -I per pair) selects complementary coordinates from each bridge pair, splitting 27D into two 13D(12,1) shadows sharing the single time dimension. Each shadow then independently compactifies on a 7-dimensional TCS G2 holonomy manifold V7 (Ricci-flat, b3 = 24 associative 3-cycles), reducing 13D -> 4D(3,1) x V7 with Spin(3,1) Lorentz symmetry. The generation count n_gen = chi_eff/(4*b3) = 144/48 = 3 follows from the index theorem on V7 (Acharya-Witten 2001), fixing 3 chiral fermion families per shadow without free parameters.",
+                description="Framework overview: the M^{27}(24,1,2) ancestral bulk decomposes as T^1 (unified time) x S^(2,0) (sampler data fields) x 12 bridge pairs B_i^(2,0). The OR reduction operator R_perp = tensor product of 12 Moebius double-covers (R_perp^2 = -I per pair) selects complementary coordinates from each bridge pair, splitting 27D into two 13D(12,1) shadows sharing the single time dimension. Each shadow then independently compactifies on a 7-dimensional TCS G2 holonomy manifold V7 (Ricci-flat, b3 = 24 associative 3-cycles), reducing 13D -> 4D(3,1) x V7 with Spin(3,1) Lorentz symmetry. The generation count n_gen = chi_eff/(4*b3) = 144/48 = 3 follows from the index theorem on V7 (Acharya-Witten 2001), fixing 3 chiral fermion families per shadow without free parameters.",
                 input_params=["topology.elder_kads", "topology.mephorash_chi"],
                 output_params=["topology.n_gen"],
                 derivation={
                     "steps": [
-                        {"description": "Start from 27D(26,1) ancestral bulk: the single time dimension (0,1) is shared by both shadows, 12 bridge pairs B_i^(2,0) each contribute 2 spatial dimensions, and C^(2,0) is the Euclidean central bridge", "formula": r"M^{27} = T^1 \times C^{(2,0)} \times_{\text{fiber}} \bigoplus_{i=1}^{12} B_i^{(2,0)}"},
+                        {"description": "Start from M^{27}(24,1,2) ancestral bulk: the single time dimension (0,1) is shared by both shadows, 12 bridge pairs B_i^(2,0) each contribute 2 spatial dimensions, and S^(2,0) provides the sampler data fields", "formula": r"M^{27} = T^1 \times S^{(2,0)} \times_{\text{fiber}} \bigoplus_{i=1}^{12} B_i^{(2,0)}"},
                         {"description": "OR reduction: each bridge pair B_i^(2,0) admits a Moebius double-cover operator R_perp^i (satisfying R_perp^2 = -I) that selects one coordinate for Shadow_Aleph and the complementary coordinate for Shadow_Beth, yielding 12 spatial dims per shadow + 1 shared time = 13D(12,1) each", "formula": r"R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i \;\Rightarrow\; 2 \times 13\text{D}(12,1)"},
                         {"description": "G2 compactification: each 13D shadow compactifies 9 dimensions on a 7D TCS G2 holonomy manifold V7 (Ricci-flat, b3=24 associative 3-cycles, h^{1,1}=4 Kaehler moduli sectors giving 4 face partitions), reducing to 4D with Spin(3,1) Lorentz symmetry", "formula": r"13\text{D}(12,1) \;\xrightarrow{G_2}\; 4\text{D}(3,1) \times V_7"},
                         {"description": "Generation count from index theorem on V7: effective Euler characteristic chi_eff = 144 (from TCS topology #187) divided by 4*b3 = 48 gives exactly 3 chiral fermion generations per shadow, with no free parameter", "formula": r"n_{\text{gen}} = \frac{\chi_{\text{eff}}}{4 \cdot b_3} = \frac{144}{48} = 3"},
@@ -411,9 +411,9 @@ class AbstractV17_2(SimulationBase):
                     ]
                 },
                 terms={
-                    "27D(26,1)": "27-dimensional ancestral bulk with signature (26 spatial, 1 temporal), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + C^(2,0) central bridge",
+                    "M^{27}(24,1,2)": "27-dimensional ancestral bulk with structure (24 physics core, 1 temporal, 2 sampler data fields), decomposed as 12x(2,0) bridge pairs + (0,1) unified time + S^(2,0) sampler data fields",
                     "13D(12,1)": "13-dimensional observable shadow with signature (12 spatial from bridge, 1 shared temporal); each shadow compactifies independently on G2",
-                    "C^(2,0)": "2-dimensional Euclidean central bridge with positive-definite metric ds^2 = dy_1^2 + dy_2^2 enabling cross-shadow coherence via OR reduction",
+                    "S^(2,0)": "2-dimensional sampler data fields with positive-definite metric ds^2 = ds_1^2 + ds_2^2 enabling cross-shadow coherence via OR reduction",
                     "n_gen": "Number of chiral fermion generations per shadow, topologically fixed at 3",
                     "chi_eff": "Effective Euler characteristic of the G2 manifold (chi_eff = 144), computed from TCS topology #187",
                     "b_3": "Third Betti number of the G2 manifold V7; 4*b_3 = 48 appears in the generation formula denominator",
@@ -1005,7 +1005,7 @@ class AbstractV17_2(SimulationBase):
                     "formula_count": len(formulas),
                     "reference_count": len(refs),
                     "section_type": "narrative_abstract",
-                    "note": "Paper abstract for Principia Metaphysica v23.1 27D(26,1) dual-shadow framework"
+                    "note": "Paper abstract for Principia Metaphysica v23.1 M^{27}(24,1,2) dual-shadow framework"
                 }
             },
         ]

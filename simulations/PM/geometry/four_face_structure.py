@@ -227,6 +227,8 @@ class FourFaceG2Structure(SimulationBase):
                     "Euler characteristic to the third Betti number. Controls the "
                     "strength of cross-sector gauge coupling mixing."
                 ),
+                input_params=["topology.mephorash_chi", "topology.elder_kads"],
+                output_params=["geometry.alpha_leak"],
                 derivation={
                     "steps": [
                         "Start with effective Euler characteristic chi_eff = 144 and "
@@ -299,6 +301,8 @@ class FourFaceG2Structure(SimulationBase):
                     "of non-perturbative superpotential terms in the KKLT/LVS racetrack "
                     "mechanism adapted to G2 compactification."
                 ),
+                input_params=["topology.elder_kads", "constants.k_gimel"],
+                output_params=["geometry.T1_modulus", "geometry.T2_modulus", "geometry.T3_modulus", "geometry.T4_modulus"],
                 derivation={
                     "steps": [
                         "The racetrack superpotential for G2 moduli takes the form "
@@ -365,6 +369,8 @@ class FourFaceG2Structure(SimulationBase):
                     "has independent geometric meaning as the number of bridge pairs "
                     "aligned with the visible-sector OR projection."
                 ),
+                input_params=["topology.mephorash_chi", "topology.elder_kads"],
+                output_params=["geometry.n_bridge_pairs", "geometry.n_aligned_pairs"],
                 derivation={
                     "steps": [
                         "Start with n_pairs = chi_eff/12 = 144/12 = 12 total bridge "
@@ -444,6 +450,8 @@ class FourFaceG2Structure(SimulationBase):
                     "a hierarchical spectrum with m_KK^(1) < m_KK^(2) < m_KK^(3) < m_KK^(4). "
                     "This is a testable prediction for future collider searches."
                 ),
+                input_params=["topology.elder_kads", "constants.k_gimel", "constants.M_PLANCK"],
+                output_params=["predictions.m_KK_face1", "predictions.m_KK_face4"],
                 derivation={
                     "steps": [
                         "The KK mass scale for the i-th cycle is set by the inverse "
@@ -498,6 +506,8 @@ class FourFaceG2Structure(SimulationBase):
                     "A value of 0.75 indicates strong hierarchical structure "
                     "consistent with the observed matter-dark sector asymmetry."
                 ),
+                input_params=["topology.elder_kads", "constants.k_gimel"],
+                output_params=["geometry.shadow_asymmetry"],
                 derivation={
                     "steps": [
                         "The dominant face T_1 = b3*k_gimel/pi controls the observable "
@@ -617,6 +627,8 @@ class FourFaceG2Structure(SimulationBase):
                     "Bridge/Global OR operator — tensor product of 12 Mobius "
                     "double-cover operators, creates dual shadows from 27D bulk"
                 ),
+                input_params=["topology.mephorash_chi", "dimensions.D_bulk"],
+                output_params=["geometry.or_operator_rank"],
                 derivation={
                     "steps": [
                         "Start from the 12 bridge pairs (n_pairs = chi_eff/12 = 12) "
@@ -667,6 +679,8 @@ class FourFaceG2Structure(SimulationBase):
                     "Face/Local OR operator — selects visible face within each shadow "
                     "via Dirac eigenvalue modulation"
                 ),
+                input_params=["topology.elder_kads", "topology.mephorash_chi", "geometry.alpha_leak"],
+                output_params=["geometry.face_or_eigenvalue"],
                 derivation={
                     "steps": [
                         "Within each shadow (after Layer 1 bridge OR), the 13D geometry "
@@ -871,6 +885,8 @@ class FourFaceG2Structure(SimulationBase):
                     "Sampling strength from visible sector to hidden faces — "
                     "derived from G2 volume ratio, torsion, and flux asymmetry"
                 ),
+                input_params=["geometry.alpha_leak", "topology.mephorash_chi", "topology.elder_kads"],
+                output_params=["geometry.face_sampling_strength"],
                 derivation={
                     "steps": [
                         "The sampling strength alpha_sample^(f) quantifies how strongly "
