@@ -6,7 +6,7 @@ Unitary Closure Checker - v24.1 Principia Metaphysica
 Verifies that the S-matrix satisfies unitarity condition S†S = I at Planck scale.
 Proves the theory is ghost-free (no negative-norm states).
 
-This addresses the critical peer review concern: "Does the 27D M^{27}(26,1)
+This addresses the critical peer review concern: "Does the 27D M^{27}(24,1,2)
 manifold introduce ghosts or violate unitarity?"
 
 Purpose:
@@ -42,7 +42,7 @@ logger = logging.getLogger("UnitaryClosureChecker")
 class UnitaryClosureChecker:
     """
     Verifies S-matrix unitarity and ghost-free stability for the
-    27D M^{27}(26,1) framework.
+    27D M^{27}(24,1,2) framework.
 
     The test PASSES if:
     1. ||S†S - I|| < threshold (unitarity)
@@ -63,11 +63,11 @@ class UnitaryClosureChecker:
         self.n_test_states = n_test_states
 
         # PM framework constants
-        self.signature = (26, 1)  # M^{27}(26,1)
+        self.signature = (24, 1, 2)  # M^{27}(24,1,2)
         self.n_bridges = 12
         self.bridge_dim = 2
 
-        logger.info(f"Initialized with M^{{{n_dimensions}}}({self.signature[0]},{self.signature[1]}) manifold")
+        logger.info(f"Initialized with M^{{{n_dimensions}}}({self.signature[0]},{self.signature[1]},{self.signature[2]}) manifold")
         logger.info(f"Testing {n_test_states} random states for unitarity")
 
     def generate_s_matrix(self, energy_scale: float = 1.0) -> np.ndarray:
@@ -92,7 +92,7 @@ class UnitaryClosureChecker:
         bridge_mixing = self._generate_bridge_mixing_matrix()
 
         # Central sampler contribution (2D)
-        central_contribution = self._generate_central_sampler_matrix()
+        central_contribution = self._generate_sampler_data_fields_matrix()
 
         # Time evolution (1D)
         time_phase = np.exp(2j * np.pi * energy_scale)
@@ -107,7 +107,7 @@ class UnitaryClosureChecker:
             idx2 = i * 2 + 1
             H[idx1:idx2+1, idx1:idx2+1] = bridge_mixing[i]
 
-        # Add central sampler
+        # Add sampler data fields
         H[24:26, 24:26] = central_contribution
 
         # Add time component
@@ -146,14 +146,14 @@ class UnitaryClosureChecker:
 
         return matrices
 
-    def _generate_central_sampler_matrix(self) -> np.ndarray:
+    def _generate_sampler_data_fields_matrix(self) -> np.ndarray:
         """
-        Generate 2×2 matrix for C^{(2,0)} central sampler.
+        Generate 2×2 matrix for S^{(2,0)} sampler data fields.
 
         Returns:
             2×2 complex Hermitian matrix
         """
-        # Central sampler has Euclidean signature - purely real
+        # Sampler data fields have Euclidean signature - purely real
         H_central = np.array([
             [0.5, 0.2],
             [0.2, 0.5]
@@ -279,8 +279,8 @@ class UnitaryClosureChecker:
             psi = np.random.randn(self.n_dimensions) + 1j * np.random.randn(self.n_dimensions)
 
             # Compute norm with signature metric
-            # M^{27}(26,1) has signature (+,+,...,+,-) = 26 positive, 1 negative
-            metric = np.diag([1.0] * 26 + [-1.0])  # Signature (26,1)
+            # M^{27}(24,1,2) has 24 physics core (+), 1 timelike (-), 2 sampler data fields (+)
+            metric = np.diag([1.0] * 24 + [-1.0] + [1.0] * 2)  # Structure (24,1,2)
 
             # Norm: ⟨ψ|g|ψ⟩
             norm_squared = np.real(psi.conj() @ metric @ psi)
@@ -471,9 +471,9 @@ class UnitaryClosureChecker:
             "test_date": datetime.now().isoformat(),
             "test_name": "Unitary Closure and Ghost-Freedom Verification",
             "manifold": {
-                "structure": f"M^{{{self.n_dimensions}}}({self.signature[0]},{self.signature[1]})",
+                "structure": f"M^{{{self.n_dimensions}}}({self.signature[0]},{self.signature[1]},{self.signature[2]})",
                 "bridges": f"{self.n_bridges} × ({self.bridge_dim},0)",
-                "central_sampler": "C^(2,0)",
+                "sampler_data_fields": "S^(2,0)",
                 "time": "(0,1)"
             },
             "test_parameters": {

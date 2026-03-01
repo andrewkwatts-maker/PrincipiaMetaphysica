@@ -594,10 +594,10 @@ class GaugeUnificationSimulation(SimulationBase):
                 plain_text="mu * d(alpha_i)/d(mu) = (b_i/(2*pi)) * alpha_i^2 + 2-loop + 3-loop",
                 category="DERIVED",
                 description="3-loop renormalization group equations for gauge couplings",
-                inputParams=[],
-                outputParams=[],
-                input_params=[],
-                output_params=[],
+                inputParams=["pdg.alpha_s_MZ", "pdg.sin2_theta_W", "constants.alpha_em", "pdg.m_Z"],
+                outputParams=["gauge.M_GUT", "gauge.ALPHA_GUT"],
+                input_params=["pdg.alpha_s_MZ", "pdg.sin2_theta_W", "constants.alpha_em", "pdg.m_Z"],
+                output_params=["gauge.M_GUT", "gauge.ALPHA_GUT"],
                 derivation={
                     "steps": [
                         "1-loop beta coefficients from SM field content: b_1=41/10, b_2=-19/6, b_3=-7",

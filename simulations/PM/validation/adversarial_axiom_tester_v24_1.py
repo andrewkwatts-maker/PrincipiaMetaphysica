@@ -191,11 +191,11 @@ class AdversarialAxiomTester:
             OR large positive penalty if G₂ holonomy is violated
         """
         # PM v24.1 dimensional structure:
-        # M²⁷(26,1) = 12×(2,0) bridges + C^(2,0) + (0,1) time
+        # M²⁷(24,1,2) = 12×(2,0) bridges + S^(2,0) + (0,1) time
 
         # Extract bridge contributions (24D)
         bridge_params = manifold_params[:24].reshape(12, 2)
-        central_params = manifold_params[24:26]  # C^(2,0)
+        central_params = manifold_params[24:26]  # S^(2,0)
         time_param = manifold_params[26]  # (0,1)
 
         # ENFORCE G₂ HOLONOMY CONSTRAINT
@@ -485,8 +485,8 @@ class AdversarialAxiomTester:
                 "source": "CODATA 2018"
             },
             "topology": {
-                "manifold": "M²⁷(26,1)",
-                "structure": "12×(2,0) + C^(2,0) + (0,1)",
+                "manifold": "M²⁷(24,1,2)",
+                "structure": "12×(2,0) + S^(2,0) + (0,1)",
                 "b3": int(self.b3),
                 "chi_eff": int(self.chi_eff)
             },

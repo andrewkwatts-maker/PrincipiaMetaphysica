@@ -4,8 +4,8 @@ Merged Dimensional Descent v21.0
 
 Licensed under the MIT License. See LICENSE file for details.
 
-Implements the complete dimensional descent chain for the 27D(26,1) dual-shadow model:
-27D(26,1) bulk -> dual shadows -> Euclidean bridge -> G2 compact -> condensate projection
+Implements the complete dimensional descent chain for the M^{27}(24,1,2) dual-shadow model:
+M^{27}(24,1,2) bulk -> dual shadows -> S^(2,0) sampler data fields -> G2 compact -> condensate projection
 
 This simulation combines all v21 components:
 - Bridge pressure
@@ -16,30 +16,30 @@ This simulation combines all v21 components:
 
 UNIFIED TIME IN THE 27D BULK:
 ==============================
-The bulk manifold has signature (26,1) -- exactly ONE timelike dimension.
+The bulk manifold M^{27}(24,1,2) has exactly ONE timelike dimension.
 This design choice is physically essential for three reasons:
 
 1. GHOST AVOIDANCE: Multiple timelike dimensions introduce ghost degrees of
    freedom (negative-norm states) that violate unitarity. With signature (p,q)
    where q >= 2, the kinetic term for at least one field flips sign, making
-   the Hamiltonian unbounded below. The (26,1) signature avoids this entirely.
+   the Hamiltonian unbounded below. The M^{27}(24,1,2) structure avoids this entirely.
 
 2. CTC PREVENTION: Closed Timelike Curves (CTCs) arise generically in
    spacetimes with compact timelike directions or multiple time dimensions.
-   The single non-compact timelike direction in (26,1) admits a global time
+   The single non-compact timelike direction in M^{27}(24,1,2) admits a global time
    function t that increases monotonically along every causal curve, enforcing
    global hyperbolicity and preventing CTCs.
 
 3. CAUSAL STRUCTURE PRESERVATION: During the descent chain, the single time
    direction is inherited at each stage:
-   - 27D(26,1) bulk: t is the unique timelike coordinate
+   - M^{27}(24,1,2) bulk: t is the unique timelike coordinate
    - Dual 13D(12,1) shadows: each inherits the same t
    - G2 compactification (7,0): purely Riemannian, does not touch t
    - Condensate (3,1): the observed Lorentzian signature of spacetime
 
    The G2 compactification is on a Riemannian (7,0) manifold, which by
-   construction cannot alter the timelike sector. The central (2,0) bridge
-   is Euclidean, again preserving the single time direction. At no stage
+   construction cannot alter the timelike sector. The S^(2,0) sampler data fields
+   sector is Euclidean, again preserving the single time direction. At no stage
    does the reduction introduce or remove timelike dimensions.
 
 The earlier (24,2) formulation was abandoned precisely because two timelike
@@ -78,14 +78,14 @@ from simulations.base import (
 @dataclass
 class DescentConfig:
     """Configuration for merged descent computation."""
-    # Bulk signature - v23.1: 27D(26,1) = 24 spatial + 2 central bridge + 1 time
-    D_bulk: int = 27  # 26 space + 1 time = (26,1)
-    D_space: int = 26  # 24 core spatial + 2 central bridge
+    # Bulk signature - v24.2: M^{27}(24,1,2) = 24 physics core + 1 time + 2 sampler data fields
+    D_bulk: int = 27  # 24 physics core + 1 time + 2 sampler = M^{27}(24,1,2)
+    D_space: int = 26  # 24 core spatial + 2 sampler data fields
     D_core_spatial: int = 24  # Core spatial dimensions
     D_time: int = 1
 
     # Bridge dimensions
-    D_bridge: int = 2  # Shared Euclidean (2,0) central sampler
+    D_bridge: int = 2  # Shared Euclidean S^(2,0) sampler data fields
 
     # G2 compactification
     D_g2: int = 7  # 7D per shadow
@@ -104,7 +104,7 @@ class MergedDescentV21(SimulationBase):
     """
     Complete dimensional descent simulation.
 
-    Traces the full reduction chain from 27D(26,1) bulk through
+    Traces the full reduction chain from M^{27}(24,1,2) bulk through
     dual shadows, G2 compactification, and condensate formation.
     """
 
@@ -121,8 +121,8 @@ class MergedDescentV21(SimulationBase):
             domain="foundations",
             title="Dimensional Descent Chain",
             description=(
-                "Complete reduction from 27D(26,1) bulk through dual shadows, "
-                "Euclidean bridge, G2 compactification, to observable "
+                "Complete reduction from M^{27}(24,1,2) bulk through dual shadows, "
+                "S^(2,0) sampler data fields, G2 compactification, to observable "
                 "condensates (2 x (5,1 + 3x(3,1)))."
             ),
             section_id="1",
@@ -192,7 +192,7 @@ class MergedDescentV21(SimulationBase):
         }
 
     def _verify_bulk_signature(self) -> str:
-        """Verify 27D(26,1) bulk signature."""
+        """Verify M^{27}(24,1,2) bulk signature."""
         D_space = self.config.D_space
         D_time = self.config.D_time
         return f"({D_space},{D_time})"
@@ -201,9 +201,9 @@ class MergedDescentV21(SimulationBase):
         """
         Compute shadow dimension splitting.
 
-        27D(26,1) = 24 core spatial + 2 central bridge + 1 time
+        M^{27}(24,1,2) = 24 physics core + 1 time + 2 sampler data fields
         24 core spacelike = 12 normal + 12 mirror (via 12×(2,0) bridge pairs)
-        Central bridge C^(2,0) is shared between both shadows
+        Sampler data fields S^(2,0) is shared between both shadows
         """
         D_bridge = self.config.D_bridge
         D_core_spatial = self.config.D_core_spatial
@@ -260,8 +260,8 @@ class MergedDescentV21(SimulationBase):
         """
         Verify total dimension accounting.
 
-        Bulk 27D(26,1) = 27 total = 24 core spatial + 2 central bridge + 1 time
-        After G2: 27 - 2*7 = 13 (central bridge + remaining)
+        Bulk M^{27}(24,1,2) = 27 total = 24 physics core + 1 time + 2 sampler data fields
+        After G2: 27 - 2*7 = 13 (sampler data fields + remaining)
         Observable: 4D spacetime + KK towers
         """
         D_bulk = self.config.D_bulk  # 27
@@ -271,7 +271,7 @@ class MergedDescentV21(SimulationBase):
         # Effective 4D from 3,1 branches
         D_observable = 4
 
-        # KK tower dimensions (including central bridge contribution)
+        # KK tower dimensions (including sampler data fields contribution)
         D_kk = D_remaining - D_observable  # 9 KK
 
         accounting = {
@@ -291,19 +291,19 @@ class MergedDescentV21(SimulationBase):
         """
         Verify complete descent chain.
 
-        27D(26,1) -> dual shadows -> (2,0) central bridge -> G2(7,0) -> 2x(5,1 + 3x(3,1))
+        M^{27}(24,1,2) -> dual shadows -> S^(2,0) sampler data fields -> G2(7,0) -> 2x(5,1 + 3x(3,1))
         """
         checks = []
 
-        # Check 1: Bulk signature - 27D(26,1)
+        # Check 1: Bulk signature - M^{27}(24,1,2)
         bulk_ok = (self.config.D_bulk == 27 and self.config.D_space == 26 and self.config.D_time == 1)
-        checks.append(("Bulk 27D(26,1)", bulk_ok))
+        checks.append(("Bulk M^{27}(24,1,2)", bulk_ok))
 
         # Check 2: Core spatial dimensions
         core_ok = (self.config.D_core_spatial == 24)
         checks.append(("Core spatial = 24", core_ok))
 
-        # Check 3: Bridge Euclidean (central sampler)
+        # Check 3: Bridge Euclidean (sampler data fields)
         bridge_ok = (self.config.D_bridge == 2)
         checks.append(("Central Bridge (2,0)", bridge_ok))
 
@@ -331,8 +331,8 @@ class MergedDescentV21(SimulationBase):
         """Return ASCII diagram of descent chain."""
         return """
         ┌─────────────────────────────────────────────┐
-        │           27D(26,1) BULK                    │
-        │  24 core spatial + 2 central + 1 time      │
+        │         M^{27}(24,1,2) BULK                  │
+        │  24 physics core + 1 time + 2 sampler      │
         └──────────────────┬──────────────────────────┘
                            │
                     ┌──────┴──────┐
@@ -346,9 +346,9 @@ class MergedDescentV21(SimulationBase):
                 └───────┬──────────┘
                         │
                 ┌───────▼───────┐
-                │ C^(2,0) BRIDGE│
-                │ Central       │
-                │ Sampler       │
+                │ S^(2,0)       │
+                │ Sampler Data  │
+                │ Fields        │
                 └───────┬───────┘
                         │
               ┌─────────┴─────────┐
@@ -376,8 +376,8 @@ class MergedDescentV21(SimulationBase):
             subsection_id="1.1.1",
             title="Foundations of Dimensional Descent",
             abstract=(
-                "The 27D(26,1) bulk with unified time descends through dual "
-                "shadows sharing a 2D Euclidean central bridge. G2 compactification "
+                "The M^{27}(24,1,2) bulk with unified time descends through dual "
+                "shadows sharing 2D S^(2,0) sampler data fields. G2 compactification "
                 "on each shadow yields the observable condensate structure: "
                 "2 x (5,1 bridge + 3 x (3,1) generational branches)."
             ),
@@ -385,8 +385,8 @@ class MergedDescentV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The ancestral bulk is a 27D(26,1) Lorentzian manifold with "
-                        "24 core spatial + 2 central bridge + 1 timelike dimension. "
+                        "The ancestral bulk is an M^{27}(24,1,2) Lorentzian manifold with "
+                        "24 physics core + 1 time + 2 sampler data fields. "
                         "The single timelike direction is physically essential: it prevents "
                         "ghost degrees of freedom (which arise with multiple time dimensions "
                         "due to wrong-sign kinetic terms), ensures global hyperbolicity "
@@ -410,7 +410,7 @@ class MergedDescentV21(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"27D(26,1) = 12 \times (2,0) + C^{(2,0)} + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
+                    content=r"M^{27}(24,1,2) = 12 \times (2,0) + S^{(2,0)} + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
                     formula_id="descent-chain-full",
                     label="(1.2)"
                 ),
@@ -450,8 +450,8 @@ class MergedDescentV21(SimulationBase):
                 plain_text="ds^2 = sum(dx_i^2) + dy_1^2 + dy_2^2 - dt^2, i=1..24",
                 category="DERIVED",
                 description=(
-                    "27D(26,1) bulk metric with unified time: 24 core spatial + 2 central "
-                    "bridge + 1 time. The single timelike direction prevents ghost states "
+                    "M^{27}(24,1,2) bulk metric with unified time: 24 physics core + 1 time "
+                    "+ 2 sampler data fields. The single timelike direction prevents ghost states "
                     "(no wrong-sign kinetic terms), ensures global hyperbolicity (no CTCs), "
                     "and is preserved through G2 compactification since only Riemannian "
                     "(7,0) submanifolds are compactified."
@@ -464,12 +464,12 @@ class MergedDescentV21(SimulationBase):
                     "steps": [
                         {"description": "24 core spacelike dimensions",
                          "formula": r"\sum_{i=1}^{24} dx_i^2"},
-                        {"description": "2 central bridge dimensions C^(2,0)",
+                        {"description": "2 sampler data fields dimensions S^(2,0)",
                          "formula": r"dy_1^2 + dy_2^2"},
                         {"description": "1 timelike dimension",
                          "formula": r"-dt^2"},
-                        {"description": "Lorentzian signature",
-                         "formula": r"(26,1)"}
+                        {"description": "Dimensional structure",
+                         "formula": r"(24,1,2)"}
                     ],
                     "method": "metric_construction",
                     "parentFormulas": [],
@@ -478,17 +478,17 @@ class MergedDescentV21(SimulationBase):
                 terms={
                     "ds^2": "Line element",
                     "dx_i": "Core spacelike differentials (24)",
-                    "dy_1, dy_2": "Central bridge differentials (2)",
+                    "dy_1, dy_2": "Sampler data fields differentials (2)",
                     "dt": "Timelike differential",
                 }
             ),
             Formula(
                 id="descent-chain-full",
                 label="(1.2)",
-                latex=r"27D(26,1) = 12 \times (2,0) + C^{(2,0)} + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
-                plain_text="27D(26,1) = 12×(2,0) + C^(2,0) + (0,1) -> warp -> 2×13D(12,1) -> G2 -> 2 x (5,1 + 3x(3,1))",
+                latex=r"M^{27}(24,1,2) = 12 \times (2,0) + S^{(2,0)} + (0,1) \xrightarrow{\text{warp}} 2 \times 13D(12,1) \xrightarrow{G_2} 2 \times (5,1 + 3 \times (3,1))",
+                plain_text="M^{27}(24,1,2) = 12×(2,0) + S^(2,0) + (0,1) -> warp -> 2×13D(12,1) -> G2 -> 2 x (5,1 + 3x(3,1))",
                 category="DERIVED",
-                description="Complete dimensional descent chain from 27D(26,1)",
+                description="Complete dimensional descent chain from M^{27}(24,1,2)",
                 inputParams=["topology.elder_kads", "topology.mephorash_chi"],
                 outputParams=["descent.condensate_structure"],
                 input_params=["topology.elder_kads", "topology.mephorash_chi"],
@@ -497,8 +497,8 @@ class MergedDescentV21(SimulationBase):
                     "steps": [
                         {"description": "12 bridge pairs warp to create shadows",
                          "formula": r"12 \times (2,0) \to 2 \times 12_{\text{spatial}}"},
-                        {"description": "Central bridge sampler",
-                         "formula": r"C^{(2,0)}_{\text{central sampler}}"},
+                        {"description": "Sampler data fields",
+                         "formula": r"S^{(2,0)}_{\text{sampler data fields}}"},
                         {"description": "Shared time from (0,1)",
                          "formula": r"(0,1)_{\text{shared time}}"},
                         {"description": "G2 compactifies 7D per shadow",
@@ -511,9 +511,9 @@ class MergedDescentV21(SimulationBase):
                     "references": ["PM Section 1.1"]
                 },
                 terms={
-                    "(26,1)": "Bulk signature: 26 spatial + 1 time",
+                    "(24,1,2)": "Bulk signature: 24 physics core + 1 time + 2 sampler",
                     "(2,0)": "Euclidean bridge pair signature",
-                    "C^(2,0)": "Central sampler bridge (2D Euclidean)",
+                    "S^(2,0)": "Sampler data fields (2D Euclidean)",
                     "G2": "G2 holonomy compactification",
                     "(5,1)": "Extended bridge (5 space + 1 time)",
                     "(3,1)": "Generational Minkowski branch",
@@ -561,7 +561,7 @@ class MergedDescentV21(SimulationBase):
                 name="Bulk Signature",
                 units="signature",
                 status="ESTABLISHED",
-                description="Bulk manifold signature: 27D(26,1) Lorentzian with unified time (24 core + 2 central bridge + 1 time).",
+                description="Bulk manifold signature: M^{27}(24,1,2) Lorentzian with unified time (24 physics core + 1 time + 2 sampler data fields).",
                 derivation_formula="bulk-signature-26-1",
                 no_experimental_value=True
             ),
@@ -627,7 +627,7 @@ class MergedDescentV21(SimulationBase):
         return [
             {
                 "id": "CERT-DESCENT-BULK-27D",
-                "assertion": "Bulk manifold has total dimension 27 with signature (26,1)",
+                "assertion": "Bulk manifold has total dimension 27 with M^{27}(24,1,2) structure",
                 "condition": "D_bulk == 27 and D_space == 26 and D_time == 1",
                 "tolerance": 0,
                 "status": "PASS" if self.config.D_bulk == 27 else "FAIL",
@@ -742,7 +742,7 @@ class MergedDescentV21(SimulationBase):
             {
                 "gate_id": "GATE-DESCENT-BULK-SIGNATURE",
                 "simulation_id": self.metadata.id,
-                "assertion": "Bulk manifold is 27D(26,1) with unified time and 24 core spatial + 2 central bridge",
+                "assertion": "Bulk manifold is M^{27}(24,1,2) with unified time and 24 physics core + 2 sampler data fields",
                 "result": "PASS" if self.config.D_bulk == 27 else "FAIL",
                 "timestamp": ts,
                 "details": f"D_bulk={self.config.D_bulk}, D_space={self.config.D_space}, D_time={self.config.D_time}."

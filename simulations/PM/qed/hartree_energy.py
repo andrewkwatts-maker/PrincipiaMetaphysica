@@ -251,6 +251,8 @@ class HartreeEnergyV17(SimulationBase):
                 latex=r"E_{h,bulk} = \frac{E_{h,CODATA}}{(1+\epsilon)(1-\epsilon)^2}",
                 plain_text="E_h_bulk = E_h_CODATA / [(1+epsilon)(1-epsilon)^2]",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_hartree_energy"],
                 description="Derives the bulk Hartree energy via Inverse Double-Gate from CODATA",
                 derivation={
                     "steps": [
@@ -279,6 +281,8 @@ class HartreeEnergyV17(SimulationBase):
                 latex=r"E_{h,manifest} = E_{h,bulk} \times (1+\epsilon)(1-\epsilon)^2",
                 plain_text="E_h_manifest = E_h_bulk * (1+epsilon)(1-epsilon)^2",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.manifest_hartree_energy"],
                 description="Projects bulk Hartree energy to manifest 3D value via double-gate round-trip",
                 derivation={
                     "steps": [

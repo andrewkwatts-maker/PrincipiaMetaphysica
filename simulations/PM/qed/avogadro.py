@@ -115,6 +115,8 @@ class AvogadroV17(SimulationBase):
                 latex=r"N_A = N_{A,bulk}/(1+\epsilon)",
                 plain_text="N_A = N_A_bulk / (1+epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_avogadro", "qed.manifest_avogadro"],
                 description=(
                     "Avogadro number contracts via inverse cubic projection from the bulk "
                     "Pleroma to 3D manifest space. The physical basis is that N_A counts "

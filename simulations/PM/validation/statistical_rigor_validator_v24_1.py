@@ -95,7 +95,7 @@ class StatisticalRigorValidator:
 
         For now, we use a topologically-motivated surrogate based on:
         - Bridge structure: 12×(2,0) = 24D
-        - Central sampler: C^(2,0) = 2D
+        - Sampler data fields: S^{2,0} = 2D
         - Time fiber: (0,1) = 1D
 
         Returns:
@@ -120,10 +120,10 @@ class StatisticalRigorValidator:
             J[i, bridge_pair*2] = np.random.uniform(0.8, 1.2)
             J[i, bridge_pair*2 + 1] = np.random.uniform(0.8, 1.2)
 
-            # Weak coupling to central sampler
+            # Weak coupling to sampler data fields
             J[i, 24:26] = np.random.uniform(0.1, 0.3, 2)
 
-        # Calibration inputs (55-57): Depend on central sampler
+        # Calibration inputs (55-57): Depend on sampler data fields
         for i in range(55, 58):
             J[i, 24:26] = np.random.uniform(0.9, 1.1, 2)
             # Weak coupling to time

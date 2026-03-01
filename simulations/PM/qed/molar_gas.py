@@ -96,6 +96,8 @@ class MolarGasV17(SimulationBase):
                 latex=r"R = N_A \cdot k_B = \text{invariant (Pleromic)}",
                 plain_text="R = N_A * k_B = invariant (Pleromic Still Point)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.manifest_molar_gas_constant"],
                 description="Molar gas constant is invariant because N_A contraction cancels k_B expansion exactly.",
                 derivation={
                     "steps": [

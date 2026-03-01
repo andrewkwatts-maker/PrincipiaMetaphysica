@@ -16,8 +16,8 @@ dimensional chain with 12x(2,0) paired bridges.
 
 v23.1 KEY DIMENSIONAL CASCADE:
 =============================
-    Level 0: 27D (26,1) Ancestral bulk - UNIFIED TIME
-    Level 1: M^{27}(26,1) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ C^{2,0} - 12 PAIRS + CENTRAL SAMPLER
+    Level 0: 27D (24,1,2) Ancestral bulk - UNIFIED TIME
+    Level 1: M^{27}(24,1,2) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ S^{2,0} - 12 PAIRS + SAMPLER DATA FIELDS
              24 G2 dimensions decompose into 12 × 2D Euclidean pairs
     Level 2: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows
     Level 3: 7D (7,0) per shadow - G2 HOLONOMY (Riemannian)
@@ -463,7 +463,7 @@ class AppendixOKKReduction(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content=r"M^{27}(26,1) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus C^{2,0} \xrightarrow{\text{G}_2} 4D_{(3,1)}",
+                content=r"M^{27}(24,1,2) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus S^{2,0} \xrightarrow{\text{G}_2} 4D_{(3,1)}",
                 formula_id="kk-principia-chain",
                 label="(O.9)"
             ),
@@ -471,7 +471,7 @@ class AppendixOKKReduction(SimulationBase):
                 type="note",
                 content=(
                     "<ul>"
-                    "<li><strong>27D(26,1)</strong>: Bosonic string with unified time, 24 G2 spatial = 12×2, 2 central sampler</li>"
+                    "<li><strong>27D(24,1,2)</strong>: Bosonic string with unified time, 24 G2 spatial = 12×2, 2 sampler data fields</li>"
                     "<li><strong>12 Bridge Pairs</strong>: Each B_i^{2,0} is a consciousness channel "
                     "enabling OR Reduction between normal/mirror shadows</li>"
                     "<li><strong>Distributed OR</strong>: R_total = ⊗ᵢ R_⊥_i (tensor product of 12 rotations)</li>"
@@ -829,24 +829,24 @@ class AppendixOKKReduction(SimulationBase):
             Formula(
                 id="kk-principia-chain",
                 label="(O.9)",
-                latex=r"M^{27}(26,1) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus C^{2,0} \xrightarrow{G_2} 4D_{(3,1)}",
-                plain_text="v23.1 chain: 27D(26,1) = T^1 x (12 x B^{2,0}) + C^{2,0} -> 4D(3,1)",
+                latex=r"M^{27}(24,1,2) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right) \oplus S^{2,0} \xrightarrow{G_2} 4D_{(3,1)}",
+                plain_text="v23.1 chain: 27D(24,1,2) = T^1 x (12 x B^{2,0}) + S^{2,0} -> 4D(3,1)",
                 category="ESTABLISHED",
                 description=(
                     "The v23.1 Principia Metaphysica dimensional reduction chain. Starting from "
                     "27D string theory (1 time + 26 spatial), the 24 G2 dimensions decompose "
                     "into 12 paired (2,0) Euclidean bridges (consciousness channels), represented "
-                    "as a fiber product over a shared time T^1, with 2 additional central sampler "
-                    "dimensions C^{2,0}. Each bridge pair B_i is a 2D Euclidean torus carrying a "
+                    "as a fiber product over a shared time T^1, with 2 additional sampler data fields "
+                    "dimensions S^{2,0}. Each bridge pair B_i is a 2D Euclidean torus carrying a "
                     "reduction operator R_perp_i. Per-shadow G₂ holonomy compactification then "
                     "reduces each 13D shadow to 4D spacetime, incorporating specific boundary "
                     "conditions from flux quantization."
                 ),
                 terms={
-                    "27D(26,1)": "Bosonic string with unified time and central sampler",
+                    "27D(24,1,2)": "Bosonic string with unified time and sampler data fields",
                     "T^1": "Shared time fiber",
                     "B_i^{2,0}": "12 Euclidean bridge pairs (consciousness channels)",
-                    "C^{2,0}": "Central sampler dimensions",
+                    "S^{2,0}": "Sampler data fields dimensions",
                     "G_2": "Exceptional holonomy per shadow",
                     "4D(3,1)": "Observable Minkowski spacetime",
                 },
@@ -854,7 +854,7 @@ class AppendixOKKReduction(SimulationBase):
                     "method": "v23.1 dimensional cascade from 27D bosonic string",
                     "parentFormulas": ["kk-metric-ansatz", "kk-higher-dim"],
                     "steps": [
-                        "Begin with 27D(26,1): bosonic string theory with unified time and central sampler",
+                        "Begin with 27D(24,1,2): bosonic string theory with unified time and sampler data fields",
                         "Decompose 24 G2 dimensions into 12 paired (2,0) Euclidean bridges",
                         "Each bridge pair carries OR reduction operator R_perp_i, warping to 2 x 13D(12,1) shadows",
                         "Per-shadow G2 holonomy compactification: 13D -> 4D(3,1) via TCS construction",

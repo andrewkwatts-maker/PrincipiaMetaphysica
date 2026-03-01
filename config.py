@@ -1545,7 +1545,7 @@ class CoreFormulas:
     )
 
     # =========================================================================
-    # SECTION 2: THE 27-DIMENSIONAL BULK (26,1) UNIFIED TIME
+    # SECTION 2: THE 27-DIMENSIONAL BULK (24,1,2) UNIFIED TIME
     # (Legacy variable names use "25D" for backward compatibility)
     # =========================================================================
 
@@ -1554,26 +1554,26 @@ class CoreFormulas:
         output_params=['dimensions.D_BULK'],
         label="(2.1) Master Action",
         html="S<sub>27</sub> = ∫ d<sup>27</sup>x √|G| [M<sub>*</sub><sup>25</sup>R<sub>27</sub> + Ψ̄<sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub> + ℒ<sub>bridge</sub>]",
-        latex="S_{27} = \\int d^{27}x \\sqrt{|G_{(26,1)}|} \\left[ M_*^{25} R_{27} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{bridge}} \\right]",
+        latex="S_{27} = \\int d^{27}x \\sqrt{|G_{(24,1,2)}|} \\left[ M_*^{25} R_{27} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{bridge}} \\right]",
         plain_text="S_27 = ∫ d²⁷x √|G| [M*²⁵R₂₇ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_bridge]",
         category=FormulaCategory.THEORY,
-        description="v23.1 Master action for 27D(26,1) bulk with Pneuma field and Euclidean central bridge",
+        description="v23.1 Master action for 27D(24,1,2) bulk with Pneuma field and sampler data fields sector",
         section="2",
         status="FOUNDATIONAL",
         terms={
-            "S_27": FormulaTerm("27D Action", "Full action in 27D(26,1) unified time signature", "sections.html#2"),
+            "S_27": FormulaTerm("27D Action", "Full action in 27D(24,1,2) unified time signature", "sections.html#2"),
             "M_*": FormulaTerm("Fundamental Scale", "27D Planck scale ~10¹⁶ GeV"),
             "R_27": FormulaTerm("Ricci Scalar", "27D curvature scalar"),
             "Ψ_P": FormulaTerm("Pneuma Field", "v23.1: 4096-component spinor from Cl(24,1)"),
-            "ℒ_bridge": FormulaTerm("Bridge Lagrangian", "v23.1: 12×(2,0) bridge pairs + C^(2,0) central sampler"),
+            "ℒ_bridge": FormulaTerm("Bridge Lagrangian", "v23.1: 12×(2,0) bridge pairs + S^(2,0) sampler data fields"),
         },
         derivation=FormulaDerivation(
             parent_formulas=[],
             established_physics=["virasoro-anomaly", "string-theory"],
             steps=[
-                "Start with 27D(26,1) = 24 core spatial + 2 central bridge + 1 time",
+                "Start with 27D(24,1,2) = 24 physics core + 1 time + 2 sampler data fields",
                 "Include Pneuma spinor field for fermionic DOF (4096 components from Cl(24,1))",
-                "v23.1: Add Euclidean central bridge for dual-shadow structure"
+                "v23.1: Add sampler data fields sector for dual-shadow structure"
             ],
             verification_page="sections.html#2"
         ),
@@ -1721,8 +1721,8 @@ class CoreFormulas:
             parent_formulas=[],
             established_physics=["clifford-algebra", "spinor-geometry"],
             steps=[
-                "v23.1: 27D(26,1) = 24 core + 2 central + 1 time; unified time eliminates ghosts",
-                "Dual shadows 2×13D(12,1) connected via 12×(2,0) bridge pairs + C^(2,0) central",
+                "v23.1: 27D(24,1,2) = 24 physics core + 1 time + 2 sampler data fields; unified time eliminates ghosts",
+                "Dual shadows 2×13D(12,1) connected via 12×(2,0) bridge pairs + S^(2,0) sampler data fields",
                 "OR reduction R_perp identifies physics across shadows",
                 "R_perp² = -I gives Möbius double-cover for spinor topology"
             ]
@@ -1885,18 +1885,18 @@ class CoreFormulas:
         input_params=['dimensions.D_BULK'],
         output_params=['dimensions.D_EFFECTIVE'],
         label="(1.1) v23.1 Dimensional Cascade",
-        html="27D<sub>(26,1)</sub> →<sup>12×(2,0) + C<sup>(2,0)</sup></sup> 2×13D<sub>(12,1)</sub> →<sup>per-shadow G₂</sup> 2×4D<sub>(3,1)</sub> →<sup>R<sub>⊥</sub></sup> 4D<sub>(3,1)</sub>",
-        latex="\\text{27D}_{(26,1)} \\xrightarrow{12\\times(2,0)+C^{(2,0)}} 2\\times\\text{13D}_{(12,1)} \\xrightarrow{G_2} 2\\times\\text{4D}_{(3,1)} \\xrightarrow{R_\\perp} \\text{4D}_{(3,1)}",
-        plain_text="27D_(26,1) → [12×(2,0) + C^(2,0)] → 2×13D_(12,1) → [per-shadow G₂] → 2×4D_(3,1) → [R_perp] → 4D_(3,1)",
+        html="27D<sub>(24,1,2)</sub> →<sup>12×(2,0) + S<sup>(2,0)</sup></sup> 2×13D<sub>(12,1)</sub> →<sup>per-shadow G₂</sup> 2×4D<sub>(3,1)</sub> →<sup>R<sub>⊥</sub></sup> 4D<sub>(3,1)</sub>",
+        latex="\\text{27D}_{(24,1,2)} \\xrightarrow{12\\times(2,0)+S^{(2,0)}} 2\\times\\text{13D}_{(12,1)} \\xrightarrow{G_2} 2\\times\\text{4D}_{(3,1)} \\xrightarrow{R_\\perp} \\text{4D}_{(3,1)}",
+        plain_text="27D_(24,1,2) → [12×(2,0) + S^(2,0)] → 2×13D_(12,1) → [per-shadow G₂] → 2×4D_(3,1) → [R_perp] → 4D_(3,1)",
         category=FormulaCategory.THEORY,
-        description="v23.1 Dimensional cascade from 27D(26,1) bulk via dual shadows to 4D observable",
+        description="v23.1 Dimensional cascade from 27D(24,1,2) bulk via dual shadows to 4D observable",
         section="1",
         status="v23.1 FOUNDATIONAL",
         terms={
-            "27D_(26,1)": FormulaTerm("Bulk", "v23.1: 24 core spatial + 2 central bridge + 1 unified time"),
+            "27D_(24,1,2)": FormulaTerm("Bulk", "v23.1: 24 physics core + 1 time + 2 sampler data fields"),
             "2×13D_(12,1)": FormulaTerm("Dual Shadows", "v23.1: Normal + Mirror shadows, each 12 space + 1 shared time"),
             "12×(2,0)": FormulaTerm("Bridge Pairs", "v23.1: 12 Euclidean bridge pairs connecting shadow dimensions"),
-            "C^(2,0)": FormulaTerm("Central Sampler", "v23.1: 2D Euclidean central averaging bridge"),
+            "S^(2,0)": FormulaTerm("Sampler Data Fields", "v23.1: 2D Euclidean sampler data fields (averaging sector)"),
             "per-shadow G₂": FormulaTerm("Compactification", "G₂ on (7,0) per shadow"),
             "R_⊥": FormulaTerm("OR Reduction", "Identifies physics across shadows"),
             "4D_(3,1)": FormulaTerm("Observable", "Our spacetime"),
@@ -2727,7 +2727,7 @@ class CoreFormulas:
             "Ψ_P": FormulaTerm("Pneuma Field", "v21: 4096-component primordial spinor from Cl(24,1)"),
             "Γ_(M": FormulaTerm("Symmetrized Gamma", "Clifford gamma matrices with symmetrized indices"),
             "D_M": FormulaTerm("Covariant Derivative", "Gauge and spin covariant derivative"),
-            "g_MN": FormulaTerm("27D Metric", "v22: Metric tensor in (26,1) unified time signature"),
+            "g_MN": FormulaTerm("27D Metric", "v22: Metric tensor in signature (26,1), decomposed as (24,1,2)"),
             "ℒ_Ψ": FormulaTerm("Pneuma Lagrangian", "Lagrangian density = Ψ̄(iΓD - m)Ψ"),
         },
         derivation=FormulaDerivation(
@@ -3802,18 +3802,18 @@ class FundamentalConstants:
 
     # Dimensional Structure (v21/v22 Dual-Shadow Bridge Framework)
     # =========================================================
-    # 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central → 2×13D(12,1) shadows
+    # 27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S^(2,0) sampler data fields → 2×13D(12,1) shadows
     # (Legacy variable names use "25D" for backward compatibility)
     #
-    # Structure: 27D(26,1) bulk splits via 12×(2,0) bridge pairs into dual 13D(12,1) shadows
+    # Structure: 27D(24,1,2) bulk splits via 12×(2,0) bridge pairs into dual 13D(12,1) shadows
     # The 12 bridge pairs connect corresponding spatial dimensions between Normal/Mirror shadows
     # Both shadows share the single (0,1) temporal dimension
     # v21.0/v22.0: Unified time eliminates ghosts and CTCs without Sp(2,R)
     # OR reduction R_perp² = -I identifies physics across shadows
 
     # Initial bulk dimensions (v21/v22: 26 spatial + 1 unified time = 27D)
-    D_BULK = 25  # Legacy value - now 27D(26,1) but keeping for backward compatibility
-    SIGNATURE_BULK = (24, 1)  # Legacy value - now (26,1) but keeping for backward compatibility
+    D_BULK = 25  # Legacy value - now 27D(24,1,2) but keeping for backward compatibility
+    SIGNATURE_BULK = (24, 1)  # Legacy value - now signature (26,1), decomposed as (24,1,2)
 
     # v21/v22 Dual-Shadow Structure (replaces Sp(2,R) gauge fixing)
     N_SHADOWS = 2             # Derived: Normal + Mirror shadows
@@ -4516,13 +4516,13 @@ class V21BridgeParameters:
     Each shadow sees: 12 spatial + 1 shared time = 13D(12,1)
 
     Key features:
-    - Unified time (24,1): No negative-norm states, no causal paradoxes
+    - Unified time (24,1,2): No negative-norm states, no causal paradoxes
     - Dual shadows: 2×13D(12,1) with shared time fiber
     - 12×(2,0) bridge pairs: Connect corresponding spatial dimension pairs
     - OR reduction: R_perp² = -I implements Möbius topology
 
-    Decomposition: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central
-                 = 24D bridges + 1D time + 2D central = 27D ✓
+    Decomposition: 27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S^(2,0) sampler data fields
+                 = 24D bridges + 1D time + 2D sampler = 27D ✓
     Per shadow: 12 spatial + 1 shared time = 13D(12,1)
 
     References:
@@ -5905,7 +5905,7 @@ def validate_dimensional_consistency():
     Verify dimensional structure is self-consistent.
 
     v22 Checks (legacy code uses 25D values for backward compatibility):
-    1. Bulk starts at 27D(26,1) - unified time signature
+    1. Bulk starts at 27D(24,1,2) - signature (26,1), decomposed as (24,1,2)
     2. Dual-shadow bridge: 27D = 2×13D + 1 (with shared time structure)
     3. G₂ compactification: 13D - 7D = 6D per shadow → 4D visible
     4. Shared dimensions: 6D = 4D_common + 2D_shared
@@ -5916,7 +5916,7 @@ def validate_dimensional_consistency():
     """
     checks = []
 
-    # Check 1: v22 bulk dimension (26,1) = 27D (legacy code uses 25)
+    # Check 1: v22 bulk dimension (24,1,2) = 27D (legacy code uses 25)
     checks.append(FundamentalConstants.D_BULK == 25)
 
     # Check 2: v22 dual-shadow structure (D_PER_SHADOW = 13)
@@ -6649,7 +6649,7 @@ class BreakingChainParameters:
     v21.0: Symmetry Breaking Chain - Geometric Pati-Salam Selection.
 
     The Pati-Salam chain is GEOMETRICALLY PREFERRED because it is the natural
-    intermediate step in the 27D(26,1) → dual-shadow → 4D dimensional reduction.
+    intermediate step in the 27D(24,1,2) → dual-shadow → 4D dimensional reduction.
 
     Derivation:
     1. Bulk: SO(24,1) contains maximal subgroup including SO(10)
@@ -8129,10 +8129,10 @@ class V21UnifiedTimePhysics:
     v21.0/v22.0: Unified Time Physics Framework
 
     IMPORTANT: This class replaces TwoTimePhysics from v6.4-v20.
-    The v21/v22 framework uses unified time (26,1) with 12×(2,0) bridge pairs
+    The v21/v22 framework uses signature (26,1), decomposed as (24,1,2), with 12×(2,0) bridge pairs
     instead of the (24,2) two-time structure with Sp(2,R) gauge fixing.
 
-    Decomposition: 27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central
+    Decomposition: 27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S^(2,0) sampler data fields
                    → 2×13D(12,1) shadows with shared time
 
     The 12 bridge pairs connect 12 corresponding spatial dimension pairs between
@@ -8203,7 +8203,7 @@ TwoTimePhysics = V21UnifiedTimePhysics  # DEPRECATED: Use V21UnifiedTimePhysics
 
 class MasterActionParameters:
     """
-    v21.0/v22.0: Master Action parameters for the 27D(26,1) theory.
+    v21.0/v22.0: Master Action parameters for the 27D(24,1,2) theory.
     (Legacy variable names use "25D" for backward compatibility)
 
     S_27D = ∫d²⁷X √G [M²⁵R + Ψ̄_P(iΓ·D - m)Ψ_P + L_bridge]
@@ -8536,10 +8536,10 @@ class DimensionalStructure:
     (Legacy variable names use "25D" for backward compatibility)
 
     Structure:
-    27D(26,1) = 12×(2,0) bridges + (0,1) time + C^(2,0) central
+    27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S^(2,0) sampler data fields
 
     Stages:
-    1. Bulk: 27D(26,1) = 24 bridge + 1 time + 2 central = 27D
+    1. Bulk: 27D(24,1,2) = 24 physics core + 1 time + 2 sampler data fields = 27D
     2. Dual-Shadow Split: 27D → 2×13D(12,1) via 12×(2,0) bridge pairs
        - Each shadow: 13D = 12 spatial + 1 shared time
        - 12 bridge pairs connect corresponding spatial dimensions between shadows
@@ -8548,8 +8548,8 @@ class DimensionalStructure:
 
     Note: This class was updated in v22.0 from (11,1) to (12,1) shadow signatures.
     """
-    D_BULK = 25  # Legacy value - now 27D(26,1) but keeping for backward compatibility
-    SIGNATURE_BULK = (24, 1)  # Legacy value - now (26,1) but keeping for backward compatibility
+    D_BULK = 25  # Legacy value - now 27D(24,1,2) but keeping for backward compatibility
+    SIGNATURE_BULK = (24, 1)  # Legacy value - now signature (26,1), decomposed as (24,1,2)
 
     # Stage 1: v22 Dual-shadow split via 12×(2,0) bridge pairs
     D_PER_SHADOW = 13  # v22: Each shadow is 13D = 12 space + 1 shared time

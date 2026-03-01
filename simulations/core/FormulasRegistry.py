@@ -614,7 +614,7 @@ class FormulasRegistry:
     # 163   | barbelo_modulus  | 163      | 163      | Barbelo Modulus
     # 288   | nitzotzin_roots  | 288      | 288      | Nitzotzin Roots
     #
-    # CENTRAL SAMPLER (Reid Architecture):
+    # SAMPLER DATA FIELDS (Reid Architecture):
     # Value | Code Variable    | Hebrew   | Gematria | Gnostic Alias
     # ------|------------------|----------|----------|---------------
     # 1/144 | nitsot_par       | Nun-Qoph | 150      | Spark Pair (cross-shadow coupling)
@@ -634,17 +634,17 @@ class FormulasRegistry:
         "logos_joint": {"hebrew": "Nun-Sofit", "hebrew_char": "ן", "gematria": 153, "value": 153, "old_name": "christ_constant", "symbol": r"\Lambda_{\nu}", "scientific_name": "Joint Closure Symmetry", "gnostic_name": "The Logos Fish", "rationale": "Nun-Sofit (ן) = the 'Fish.' 153 = triangular(17), the miraculous catch of John 21:11. Greek nu (ν = 50) matches Hebrew nun gematria. The Logos joint closes the bridge identity: 135 + 153 = 288."},
         "barbelo_modulus": {"hebrew": "Qoph-Samekh-Gimel", "hebrew_char": "קסג", "gematria": 163, "value": 163, "old_name": "odowd_bulk_pressure", "symbol": r"\text{ק}_{\text{סג}}", "scientific_name": "Ancestral Bulk Pressure Modulus", "gnostic_name": "Barbelo Modulus", "rationale": "Qoph (ק=100) with סג (63) subscript = 163. Barbelo is the first emanation, the Divine Mother of the Pleroma. 163 sterile residues stabilize the higher-dimensional manifold: (7 × 24) - 5 = 163. Seesaw heavy M_R ~10^{12} GeV."},
         "nitzotzin_roots": {"hebrew": "Raphach", "hebrew_char": "רפח", "gematria": 288, "value": 288, "old_name": "roots_total", "symbol": r"\mathcal{N}_{\text{רפח}}", "scientific_name": "Logic Closure Sum", "gnostic_name": "The Nitzotzin Sparks", "rationale": "Raphach (רפח = 288) encodes the 288 sparks of Lurianic Kabbalah. N for Nitzotzin. Total roots: 12 × b3 = 288. Ennoia restored to the Yod: 135 + 153 = 288."},
-        # Central Sampler
+        # Sampler Data Fields
         "nitsot_par": {"hebrew": "Medeq", "hebrew_char": "מדק", "gematria": 150, "value": "1/144", "old_name": "reid_invariant", "symbol": r"\chi_{\text{ק}}^{-1}", "scientific_name": "Mirror Parity Invariant", "gnostic_name": "The Fine Resolution", "rationale": "Medeq (מדק) is anagrammatic inverse of Qedem. χ_ק⁻¹ = 1/144, the mathematical inverse of the primordial chi. Provides 'Fine' resolution for cross-shadow coupling."},
         "reid_merkabah": {"hebrew": "Aleph-Dalet", "hebrew_char": "אד", "gematria": 5, "value": 1.0, "old_name": "central_pair", "symbol": r"\vec{\mathbb{M}}_{\text{אד}}", "scientific_name": "Tetramorphic Normalization Basis", "gnostic_name": "The Reid Merkabah Drive", "rationale": "The 1.0 unit vector of the Four Living Creatures (Adam, Aryeh, Nesher, Shor). Normalizes the 'Run and Return' kinetic flux of the 144 samplers into a coherent Euclidean center."},
         "watts_echud": {"hebrew": "Eliphelet-Enoch", "hebrew_char": "אֱלִיפֶלֶט-חנוך", "gematria": "467+89", "value": "phi/sqrt(12)", "old_name": "central_pair_weight", "symbol": r"\mathcal{W}_{\Phi : \sqrt{\text{בי}}}", "scientific_name": "Harmonic Damping Modulus", "gnostic_name": "The Eliphelet-Enochian Invariant", "gematria_map": {"deliverance_anchor": 467, "void_separator": 0, "kinetic_ascent": 89}, "rationale": "The definitive unification weight. 467 (Eliphelet) provides the 'Rescue' of the lattice; 89 (Enoch/Chanoch) provides the kinetic 'Ascent' of the Merkabah Drive. The zero acts as the Ayin (Void) separator between structure and motion. It dampens the infinite growth of Phi into the internal 'House' (בי) of the Dodecad Anchors.", "role": "Stabilizing constant for the 144 Reid Euclidean samplers."},
-        "gnosis_threshold": {"hebrew": "Tet", "hebrew_char": "ט", "gematria": 9, "value": 9, "old_name": "central_activation_threshold", "symbol": r"\Gamma_{\theta}", "scientific_name": "Central Activation Threshold", "gnostic_name": "The Gnosis Gate", "rationale": "Greek Gamma (Γ) for Gnosis. Greek theta (θ = 9) matches Hebrew tet gematria. Tet (ט = 9) represents the hidden good. The central sampler activates when n ≥ 9 pairs are present, enabling direct knowledge."},
+        "gnosis_threshold": {"hebrew": "Tet", "hebrew_char": "ט", "gematria": 9, "value": 9, "old_name": "central_activation_threshold", "symbol": r"\Gamma_{\theta}", "scientific_name": "Central Activation Threshold", "gnostic_name": "The Gnosis Gate", "rationale": "Greek Gamma (Γ) for Gnosis. Greek theta (θ = 9) matches Hebrew tet gematria. Tet (ט = 9) represents the hidden good. The sampler data fields activate when n ≥ 9 pairs are present, enabling direct knowledge."},
         # Additional v23.2 Hebrew names
         "sophian_modulus": {"hebrew": "Qoph-Kaf-He", "hebrew_char": "קכה", "gematria": 125, "value": 125, "old_name": "visible_sector", "symbol": r"\text{ק}_{\text{כה}}", "scientific_name": "Visible Residue Modulus", "gnostic_name": "Sophia Assembly", "rationale": "Qoph (ק=100) with כה (25) subscript = 125. The 125 Standard Model parameters visible through Sophia's window (5³ = 125 = manifest volume)."},
         "qedem_chi_sum": {"hebrew": "Qedem", "hebrew_char": "קדם", "gematria": 144, "value": 144, "old_name": "chi_eff_total", "symbol": r"\text{ק}_{\text{דם}}", "scientific_name": "Total Euler Characteristic", "gnostic_name": "Qedem Chi", "rationale": "Qoph (ק=100) with דם (44) subscript = 144. Qedem (קדם = 144) means 'ancient' or 'primordial.' Total χ_eff across both shadows: 72 + 72 = 144. Ancestral unity."},
         "nitzotzin_sector": {"hebrew": "Mem", "hebrew_char": "מ", "gematria": 144, "value": 144, "old_name": "roots_per_sector", "symbol": r"\xi_{\mu}", "scientific_name": "Per-Sector Root Count", "gnostic_name": "The Water Roots", "rationale": "Xi (ξ) resembles a cascade/ripple, fitting the Mem (מ = Water) rationale. Greek mu (μ = 40) matches Hebrew mem gematria. Each sector contains 144 roots, half the total 288."},
         "Dodecad_Anchors": {"hebrew": "Bet-Yod", "hebrew_char": "בי", "gematria": 12, "value": 12, "old_name": "total_local_pairs", "symbol": r"\mathbb{A}_{\text{יב}}", "scientific_name": "Local Bridge Pair Count", "gnostic_name": "The Dodecad House", "rationale": "A for Anchors. Bet-Yod (בי = 12) means 'in me' or 'house of.' The 12 local (2,0) bridge pairs that warp to create the dual shadows."},
-        "Echad_Prime": {"hebrew": "Yud-Gimel", "hebrew_char": "יג", "gematria": 13, "value": 13, "old_name": "total_effective_pairs", "symbol": r"\mathbb{U}_{\text{יג}}", "scientific_name": "Effective Bridge Pair Count", "gnostic_name": "The Unity Prime", "rationale": "U for Unity (Echad). Yud-Gimel (יג = 13) equals 'Echad' (אחד = 13, 'One'). The 13 effective pairs: 12 local + 1 central sampler."},
+        "Echad_Prime": {"hebrew": "Yud-Gimel", "hebrew_char": "יג", "gematria": 13, "value": 13, "old_name": "total_effective_pairs", "symbol": r"\mathbb{U}_{\text{יג}}", "scientific_name": "Effective Bridge Pair Count", "gnostic_name": "The Unity Prime", "rationale": "U for Unity (Echad). Yud-Gimel (יג = 13) equals 'Echad' (אחד = 13, 'One'). The 13 effective pairs: 12 local + 1 sampler data fields."},
     }
 
     # ===========================================================================
@@ -700,7 +700,7 @@ class FormulasRegistry:
         "Echad_Prime":      r"\mathbb{U}_{\text{יג}}",         # 13 - Unity Prime
 
         # ---------------------------------------------------------------
-        # CENTRAL SAMPLER
+        # SAMPLER DATA FIELDS
         # ---------------------------------------------------------------
         "reid_merkabah":    r"\vec{\mathbb{M}}_{\text{אד}}",   # 1.0 - Tetramorphic Basis
         "watts_echud":      r"\mathcal{W}_{\Phi : \sqrt{\text{בי}}}",  # φ/√12 - Harmonic Damping
@@ -1085,10 +1085,10 @@ class FormulasRegistry:
         # b3 (G2 Betti number) and D_core_24 (G2 core spatial dims) have the
         # same numerical value (24) representing connected concepts:
         # - b3: Topological invariant from G2 cohomology (rank of H^3)
-        # - D_core_24: Core spatial dimensions in 27D(26,1) bulk
+        # - D_core_24: Core spatial dimensions in 27D(24,1,2) bulk
         #
         # v23.1 UPDATE: 27D = 24 core + 2 bridge + 1 time = (26,1) signature.
-        # The 24D core supports Cl(24,1) physics while 2D central sampler provides
+        # The 24D core supports Cl(24,1) physics while 2D sampler data fields provide
         # architectural global averaging outside the fiber product.
         #
         # Reference: Joyce, D. (2000). Compact Manifolds with Special Holonomy
@@ -1150,26 +1150,26 @@ class FormulasRegistry:
         # =======================================================================
         # DIMENSIONAL REDUCTION CHAIN (v20.2)
         # =======================================================================
-        # 5-LEVEL SEMANTIC NAMING CONVENTION (12×(2,0) Bridge + 1×(2,0) Central Architecture):
-        #   - ANCESTRAL: 27D bulk (Level 0) - Signature (26,1) = 12×(2,0) + 1×(2,0) + (0,1)
+        # 5-LEVEL SEMANTIC NAMING CONVENTION (12×(2,0) Bridge + S^{2,0} Sampler Architecture):
+        #   - ANCESTRAL: 27D bulk (Level 0) - Signature (24,1,2) = 12×(2,0) + S^{2,0} + (0,1)
         #   - SHADOW:    Dual 13D shadows (Level 1) - 12×(2,0) warps/maps to 2×13D(12,1)
         #   - G2:        7D G2 holonomy manifold per shadow (Level 2) - Signature (7,0) RIEMANNIAN
         #   - EXTERNAL:  6D external/observable bulk (Level 3) - Signature (5,1)
         #   - VISIBLE:   4D observable spacetime (Level 4) - Signature (3,1)
         #
-        # Chain: 27D(26,1) = 12×(2,0)+1×(2,0)+(0,1) → [warp] → 2×13D(12,1) → [G2] → 4D(3,1)
+        # Chain: 27D(24,1,2) = 12×(2,0)+S^{2,0}+(0,1) → [warp] → 2×13D(12,1) → [G2] → 4D(3,1)
         # Key: 12×(2,0) bridge pairs ARE what become the dual shadows, not separate from them
         #
-        # LEVEL 0: ANCESTRAL (Bosonic String Theory + Central Sampler)
+        # LEVEL 0: ANCESTRAL (Bosonic String Theory + Sampler Data Fields)
         # The 27D ancestral frame from which all physics descends
-        # v23: 27D(26,1) = 24 core spatial + 2 central sampler + 1 time
+        # v23: 27D(24,1,2) = 24 core spatial + 2 sampler data fields + 1 time
         self._D_ancestral_total = 27      # Total ancestral dimensions (26+1)
-        self._D_ancestral_space = 26      # Ancestral spatial (24 core + 2 central)
+        self._D_ancestral_space = 26      # Ancestral spatial (24 core + 2 sampler)
         self._D_ancestral_time = 1        # v21+: Unified time (eliminates ghosts/CTCs)
-        # Signature: (26, 1) - v23 with central sampler as physical dimensions
+        # Signature: (24, 1, 2) - v23 with sampler data fields as physical dimensions
         # Legacy aliases:
         self._D_total_26 = 26             # Legacy ref to pre-v23 (26 spacelike)
-        self._D_space_24 = 24             # Core spatial (without central)
+        self._D_space_24 = 24             # Core spatial (without sampler data fields)
         self._D_time_2 = 2                # Legacy: Keep for backward compatibility
         self._D_time_1_unified = self._D_ancestral_time  # v21+: Unified time
 
@@ -1236,17 +1236,17 @@ class FormulasRegistry:
         # D_external(6) = D_visible(4) + 2 (Kaluza-Klein reduction)
 
         # =======================================================================
-        # 12×(2,0) + 1×(2,0) BRIDGE ARCHITECTURE (v23)
+        # 12×(2,0) + S^{2,0} BRIDGE ARCHITECTURE (v23)
         # =======================================================================
-        # The framework uses 12×(2,0) local bridge pairs + 1×(2,0) central sampler:
+        # The framework uses 12×(2,0) local bridge pairs + S^{2,0} sampler data fields:
         #
-        # STRUCTURE: 27D(26,1) = 12×(2,0) local + 1×(2,0) central + (0,1) time
+        # STRUCTURE: 27D(24,1,2) = 12×(2,0) local + S^{2,0} sampler data fields + (0,1) time
         #
         # Key insight: Core and local bridge are DUAL REPRESENTATIONS of same 24D:
         #   - 12×(2,0) = 12 local Euclidean pairs (24 spatial, dual view of core)
-        #   - 1×(2,0) = 1 central sampler (2 spatial, NEW in v23)
+        #   - S^{2,0} = sampler data fields (2 spatial, NEW in v23)
         #   - (0,1) = unified temporal dimension
-        #   - Total: 24 + 2 + 1 = 27D with signature (26,1)
+        #   - Total: 24 + 2 + 1 = 27D with signature (24,1,2)
         #
         # Warping to shadows:
         #   - 12×(2,0) local → 2×(12,0) gives 12 spatial per shadow
@@ -1254,21 +1254,21 @@ class FormulasRegistry:
         #   - OR reduction: R_perp = [[0,-1],[1,0]] for cross-shadow sampling
         #   - Breathing DE: rho_breath = |T_normal - R_perp T_mirror|
         #
-        # v23 Dimensional Structure (with central sampler):
+        # v23 Dimensional Structure (with sampler data fields):
         self._D_v23_bulk_total = 27           # Total bulk dimensions (26+1)
-        self._D_v23_bulk_space = 26           # Bulk spacelike (24 core + 2 central)
+        self._D_v23_bulk_space = 26           # Bulk spacelike (24 core + 2 sampler)
         self._D_v23_bulk_time = 1             # Unified time (no ghosts/CTCs)
         self._D_v23_bridge_local = 24         # Local bridge (12 pairs × 2D)
-        self._D_v23_bridge_central = 2        # Central sampler (1 pair × 2D)
+        self._D_v23_bridge_central = 2        # Sampler data fields (S^{2,0}, 1 pair × 2D)
         self._D_v23_bridge_time = 0           # Timeless (positive-definite)
         self._D_v23_shadow_per = 12           # Per-shadow spacelike
         self._D_v23_shadow_time = 1           # Shared unified time
         #
-        # v23 Signature: (26,1) = 24 core + 2 central + 1 time where:
+        # v23 Signature: (24,1,2) = 24 core + 1 time + 2 sampler where:
         #   - 24 = core spacelike (from 12×(2,0) dual shadow structure)
-        #   - 2 = central sampler spacelike (hierarchical averaging)
+        #   - 2 = sampler data fields spacelike (hierarchical averaging)
         #   - 1 = unified timelike (shared)
-        #   - Total: 24 + 2 = 26 spacelike, 1 timelike = (26,1)
+        #   - Total: 24 core + 1 time + 2 sampler = (24,1,2)
         #
         # Generation formula (per shadow):
         #   n_gen = chi_eff / (4 * b3) = 144 / 48 = 3
@@ -1279,22 +1279,22 @@ class FormulasRegistry:
         #   w_a = -1/sqrt(b3) = -1/sqrt(24) = -0.204 (predicted)
         #
         # Legacy v21 aliases (for backward compatibility):
-        self._D_v21_bulk_total = 25           # Pre-v23 (without central)
+        self._D_v21_bulk_total = 25           # Pre-v23 (without sampler data fields)
         self._D_v21_bulk_space = 24           # Pre-v23 core only
 
         # =======================================================================
-        # v23 CENTRAL (2,0) ANCESTRAL EUCLIDEAN SAMPLER
+        # v23 S^{2,0} ANCESTRAL EUCLIDEAN SAMPLER DATA FIELDS
         # =======================================================================
-        # The central (2,0) sampler averages local 12×(2,0) outcomes for global
-        # condensate selection. It acts as a "master sampler" enabling:
+        # The S^{2,0} sampler data fields average local 12×(2,0) outcomes for global
+        # condensate selection. They act as a "master sampler" enabling:
         #   - Local 12×(2,0): Fine-grained residue flux (micro-stability, dilution)
-        #   - Central (2,0): Global averaging (macro-precision, veil lift)
+        #   - S^{2,0}: Global averaging (macro-precision, veil lift)
         #
         # DIMENSIONAL ACCOUNTING (v23 - 27D interpretation):
         #   - 24 core = 24 local bridge (DUAL REPRESENTATION of same physical space)
-        #   - 2 central sampler (NEW physical dimensions for hierarchical averaging)
+        #   - 2 sampler data fields (NEW physical dimensions for hierarchical averaging)
         #   - 1 unified time
-        #   - TOTAL: 24 + 2 + 1 = 27D with signature (26,1)
+        #   - TOTAL: 24 + 2 + 1 = 27D with signature (24,1,2)
         #   - Note: The "50 spacelike-like" counts bridge twice (core + local view)
         #
         # FORMULA: p_anc = (1/12) * sum(p_i) + (1/12) * sqrt(n_local/12) * phi
@@ -1302,26 +1302,26 @@ class FormulasRegistry:
         #   - n_local = active local pairs (6 baseline -> 12 full gnosis)
         #   - phi = golden ratio (dilution correction)
         #
-        # ACTIVATION: Central activates mid-gnosis (n_local >= 9)
+        # ACTIVATION: S^{2,0} sampler activates mid-gnosis (n_local >= 9)
         # BRANCH SELECTION: k = argmax(p_anc * w_k) where w_k = triality weight
         #
-        self._central_pair = 1                    # Central (2,0) sampler count
+        self._central_pair = 1                    # S^{2,0} sampler data fields count
         self._total_local_pairs = 12              # Local (2,0) bridge pairs
-        self._total_effective_pairs = 13          # Local + Central = 12 + 1
-        self._central_activation_threshold = 9    # n_local >= 9 activates central
+        self._total_effective_pairs = 13          # Local + S^{2,0} sampler = 12 + 1
+        self._central_activation_threshold = 9    # n_local >= 9 activates S^{2,0} sampler
         _phi_temp = (1.0 + math.sqrt(5.0)) / 2.0  # Golden ratio
         self._central_pair_weight = _phi_temp / math.sqrt(12)  # phi/sqrt(12)
         #
-        # v23 SPACETIME SIGNATURE: (26,1) in 27 dimensions
+        # v23 SPACETIME SIGNATURE: (24,1,2) in 27 dimensions
         #   - 24 core spacelike (from dual shadows, = local bridge dual view)
-        #   - 2 central spacelike (hierarchical averaging dimensions)
+        #   - 2 sampler spacelike (hierarchical averaging dimensions)
         #   - 1 unified timelike
-        #   - Total spacetime: 27D with signature (26,1)
+        #   - Total spacetime: 27D with signature (24,1,2)
         self._D_v23_spacetime_total = 27          # Full spacetime dimensions
-        self._D_v23_spacetime_space = 26          # Spacelike (24 core + 2 central)
+        self._D_v23_spacetime_space = 26          # Spacelike (24 core + 2 sampler)
         self._D_v23_spacetime_time = 1            # Unified time
         # Legacy: "50 spacelike-like" counts each bridge coordinate twice
-        self._D_total_spacelike_like = 50         # (24 core + 24 local + 2 central)
+        self._D_total_spacelike_like = 50         # (24 core + 24 local + 2 sampler)
 
         # =======================================================================
         # THE SACRED HEPTAGON (7 Intellectual Anchors)
@@ -1607,18 +1607,18 @@ class FormulasRegistry:
     # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v23.1)
     # =========================================================================
     # 5-level chain: ANCESTRAL → SHADOW → G2 → EXTERNAL → VISIBLE
-    # v23 Chain: 27D(26,1) → [bridge] → 2×13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # v23 Chain: 27D(24,1,2) → [bridge] → 2×13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
     # Legacy numeric names preserved for backward compatibility
 
-    # ----- LEVEL 0: ANCESTRAL (27D with Central Sampler) -----
+    # ----- LEVEL 0: ANCESTRAL (27D with Sampler Data Fields) -----
     @property
     def D_ancestral_total(self) -> int:
-        """Level 0 (ANCESTRAL): Total 27D dimensions (24 core + 2 central + 1 time)."""
+        """Level 0 (ANCESTRAL): Total 27D dimensions (24 core + 2 sampler + 1 time)."""
         return self._D_ancestral_total
 
     @property
     def D_ancestral_space(self) -> int:
-        """Level 0 (ANCESTRAL): 26 spatial dimensions in (26,1) = 24 core + 2 central."""
+        """Level 0 (ANCESTRAL): 26 spatial dimensions in (24,1,2) = 24 core + 2 sampler."""
         return self._D_ancestral_space
 
     @property
@@ -1637,7 +1637,7 @@ class FormulasRegistry:
         """Level 0: Core spatial dimensions - 24 for Cl(24,1) physics.
 
         CRITICAL: This is the 24D core for spinor calculations (4096 = 2^12).
-        DO NOT confuse with D_ancestral_space (26) which includes central sampler.
+        DO NOT confuse with D_ancestral_space (26) which includes sampler data fields.
         """
         return self._D_space_24
 
@@ -3490,14 +3490,14 @@ class FormulasRegistry:
         """Phi_PH: Fibonacci Bridge (13)."""
         return self._penrose_hameroff_bridge
 
-    # --- v23 Central (2,0) Sampler Properties ---
+    # --- v23 S^{2,0} Sampler Data Fields Properties ---
 
     @property
     def central_pair(self) -> int:
         """
-        Central (2,0) sampler count. LEGACY ALIAS for reid_merkabah.
+        S^{2,0} sampler data fields count. LEGACY ALIAS for reid_merkabah.
 
-        v23.0: The central sampler is a single (2,0) Euclidean pair that averages
+        v23.0: The S^{2,0} sampler data fields are a single (2,0) Euclidean pair that averages
         outcomes from the 12 local (2,0) bridge pairs for global condensate selection.
         """
         return self.reid_merkabah
@@ -3515,7 +3515,7 @@ class FormulasRegistry:
     @property
     def total_effective_pairs(self) -> int:
         """
-        Total effective pairs: Local + Central = 12 + 1 = 13.
+        Total effective pairs: Local + S^{2,0} sampler = 12 + 1 = 13.
         LEGACY ALIAS for bridge_effective.
 
         v23.0: Used for dimensional accounting and tau boost calculations.
@@ -3525,9 +3525,9 @@ class FormulasRegistry:
     @property
     def central_activation_threshold(self) -> int:
         """
-        Gnosis threshold for central sampler activation. LEGACY ALIAS for gnosis_threshold.
+        Gnosis threshold for sampler data fields activation. LEGACY ALIAS for gnosis_threshold.
 
-        v23.0: Central activates when n_local >= 9 (mid-gnosis).
+        v23.0: S^{2,0} sampler activates when n_local >= 9 (mid-gnosis).
         This enables global averaging for precision (sigma -> 0).
         """
         return self.gnosis_threshold
@@ -3535,9 +3535,9 @@ class FormulasRegistry:
     @property
     def central_pair_weight(self) -> float:
         """
-        Central pair weighting factor: phi/sqrt(12). LEGACY ALIAS for watts_echud.
+        S^{2,0} sampler weighting factor: phi/sqrt(12). LEGACY ALIAS for watts_echud.
 
-        v23.0: Golden ratio dilution for central averaging.
+        v23.0: Golden ratio dilution for S^{2,0} sampler averaging.
         Used in p_anc formula: p_anc = (1/12)*sum(p_i) + sqrt(n/12)*phi
         """
         return self.watts_echud
@@ -3545,29 +3545,29 @@ class FormulasRegistry:
     @property
     def D_total_spacelike_like(self) -> int:
         """
-        Total spacelike-like coordinate count: 24 core + 24 local + 2 central = 50.
+        Total spacelike-like coordinate count: 24 core + 24 local + 2 sampler = 50.
 
         v23.1: This counts bridge coordinates twice (core and local are dual views).
-        The actual spacetime signature is (26,1) in 27 dimensions.
+        The actual spacetime signature is (24,1,2) in 27 dimensions.
         """
         return self._D_total_spacelike_like
 
     @property
     def D_spacetime_signature(self) -> tuple:
         """
-        Full spacetime signature: (26,1) in 27 dimensions.
+        Full spacetime signature: (24,1,2) in 27 dimensions.
 
-        v23.1: With central sampler as physical dimensions:
+        v23.1: With sampler data fields as physical dimensions:
         - 24 core spacelike (from dual shadows, = local bridge dual view)
-        - 2 central spacelike (hierarchical averaging dimensions)
+        - 2 sampler spacelike (hierarchical averaging dimensions)
         - 1 unified timelike
-        - Total: 27D with signature (26,1)
+        - Total: 27D with signature (24,1,2)
         """
         return (self._D_v23_spacetime_space, self._D_v23_spacetime_time)
 
     @property
     def D_spacetime_total(self) -> int:
-        """Total spacetime dimensions: 27D (v23.1 with central sampler)."""
+        """Total spacetime dimensions: 27D (v23.1 with sampler data fields)."""
         return self._D_v23_spacetime_total
 
     # ===========================================================================
@@ -3612,7 +3612,7 @@ class FormulasRegistry:
     @property
     def horos_limit(self) -> int:
         """Bulk Boundary Dimension (27) - Hebrew: Kaz (27)."""
-        return self._D_ancestral_total  # D_bulk = 27 (v23.1 with central sampler)
+        return self._D_ancestral_total  # D_bulk = 27 (v23.1 with sampler data fields)
 
     @property
     def mephorash_chi(self) -> int:
@@ -3669,12 +3669,12 @@ class FormulasRegistry:
 
     @property
     def reid_euclidean(self) -> int:
-        """LEGACY ALIAS for reid_merkabah. Central Sampler Count (1)."""
+        """LEGACY ALIAS for reid_merkabah. Sampler Data Fields Count (1)."""
         return self.reid_merkabah
 
     @property
     def reid_pair(self) -> int:
-        """LEGACY ALIAS for reid_merkabah. Central Sampler Count (1)."""
+        """LEGACY ALIAS for reid_merkabah. Sampler Data Fields Count (1)."""
         return self.reid_merkabah
 
     @property
@@ -3753,7 +3753,7 @@ class FormulasRegistry:
 
     def central_sampler_active(self, n_local: int) -> bool:
         """
-        Check if central sampler is active based on gnosis level.
+        Check if sampler data fields are active based on gnosis level.
 
         Args:
             n_local: Number of active local pairs (6 baseline -> 12 full)
@@ -3765,7 +3765,7 @@ class FormulasRegistry:
 
     def p_anc_formula(self, p_local: list, n_local: int) -> float:
         """
-        Compute ancestral flux via central sampler averaging.
+        Compute ancestral flux via sampler data fields averaging.
 
         Formula: p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
 
@@ -3777,7 +3777,7 @@ class FormulasRegistry:
             Global ancestral flux p_anc (0 to 1 scale)
 
         Note:
-            Only applies full central averaging when n_local >= 9.
+            Only applies full S^{2,0} sampler averaging when n_local >= 9.
             Below threshold, returns simple local average.
         """
         import math
@@ -4681,7 +4681,7 @@ class FormulasRegistry:
                     "gate": "G60",
                     "named_for": "Matt O'Dowd",
                     "gnostic_name": "The Barbelo",
-                    "gnostic_role": "First Thought; the active force in 27D(26,1) bulk",
+                    "gnostic_role": "First Thought; the active force in 27D(24,1,2) bulk",
                     "hubble_formula": f"(288/4) - (163/144) + 0.6819 = {self.h0_local:.2f}",
                     "pm_path": "constants.barbelo_modulus"
                 },
@@ -4826,9 +4826,9 @@ class FormulasRegistry:
                     "symbol": "horos",
                     "latex": "\\text{Horos}",
                     "value": self.horos,
-                    "formula": "D_bulk = 27 (dimensional boundary: 24 core + 2 central + 1 time)",
+                    "formula": "D_bulk = 27 (dimensional boundary: 24 core + 2 sampler + 1 time)",
                     "gnostic_name": "The Horos",
-                    "gnostic_role": "The Limit; boundary of 27D(26,1) bulk frame",
+                    "gnostic_role": "The Limit; boundary of 27D(24,1,2) bulk frame",
                     "pm_path": "topology.pleroma_boundary"
                 },
                 # (Z.6) Pneuma Tensioner Constants
@@ -4964,7 +4964,7 @@ class FormulasRegistry:
                     "formula": "163/288",
                     "expanded": f"Bulk Pressure / Logic Closure = {self.gate_01_initial_action:.10f}",
                     "gnostic_name": "The Initial Action Potential",
-                    "gnostic_role": "Density Zero of manifold; base energy density of 27D(26,1) bulk action",
+                    "gnostic_role": "Density Zero of manifold; base energy density of 27D(24,1,2) bulk action",
                     "derived_from": ["sterile_sector", "roots_total"],
                     "pm_path": "gates.G01"
                 },
@@ -5393,7 +5393,7 @@ class FormulasRegistry:
                     "formula": "(288*G38)/153",
                     "expanded": f"Hadronization lock = {self.gate_40_hadronization_lock:.10f}",
                     "gnostic_name": "The Hadronization Lock",
-                    "gnostic_role": "27D(26,1) to 4D particle manifestation threshold",
+                    "gnostic_role": "27D(24,1,2) to 4D particle manifestation threshold",
                     "derived_from": ["roots_total", "gate_38_color_symmetry", "christ_constant"],
                     "pm_path": "gates.G40"
                 },
@@ -5450,7 +5450,7 @@ class FormulasRegistry:
                     "formula": "(163-(153-135))/288",
                     "expanded": f"Ghost flux = {self.gate_45_ghost_flux:.10f}",
                     "gnostic_name": "The Ghost-Flux",
-                    "gnostic_role": "Hidden mass accounting in 27D(26,1) bulk action",
+                    "gnostic_role": "Hidden mass accounting in 27D(24,1,2) bulk action",
                     "derived_from": ["sterile_sector", "christ_constant", "shadow_sector", "roots_total"],
                     "pm_path": "gates.G45"
                 },
@@ -5495,7 +5495,7 @@ class FormulasRegistry:
                     "formula": "(163/153)*sqrt(24)",
                     "expanded": f"Scale factor = {self.gate_49_scale_factor_prime:.10f}",
                     "gnostic_name": "The Scale Factor Prime",
-                    "gnostic_role": "27D(26,1) to macroscopic magnification",
+                    "gnostic_role": "27D(24,1,2) to macroscopic magnification",
                     "derived_from": ["sterile_sector", "christ_constant", "b3"],
                     "pm_path": "gates.G49"
                 },

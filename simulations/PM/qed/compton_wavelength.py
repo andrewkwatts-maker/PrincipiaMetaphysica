@@ -234,6 +234,8 @@ class ComptonWavelengthV17(SimulationBase):
                 latex=r"\lambda_{C,bulk} = \lambda_{C,CODATA} \times (1 + \epsilon)",
                 plain_text="lambda_C_bulk = lambda_C_CODATA * (1 + epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_compton_wavelength"],
                 description="Derives the bulk (pre-projection) Compton wavelength from the CODATA manifest value by inverting the inverse cubic contraction: lambda_C_bulk = lambda_C_CODATA * (1 + epsilon). This represents the Compton wavelength in the higher-dimensional Pleroma before dimensional reduction contracts it.",
                 derivation={
                     "steps": [
@@ -257,6 +259,8 @@ class ComptonWavelengthV17(SimulationBase):
                 latex=r"\lambda_{C,manifest} = \frac{\lambda_{C,bulk}}{1 + \epsilon}",
                 plain_text="lambda_C_manifest = lambda_C_bulk / (1 + epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.manifest_compton_wavelength"],
                 description="Projects the bulk Compton wavelength to the manifest (observed) 3D value via inverse cubic contraction: lambda_C = h/(m_e*c) contracts as 1/(1+epsilon) because h expands once while m_e and c each expand once in the denominator, yielding net contraction. This recovers the CODATA 2022 value to machine precision.",
                 derivation={
                     "steps": [

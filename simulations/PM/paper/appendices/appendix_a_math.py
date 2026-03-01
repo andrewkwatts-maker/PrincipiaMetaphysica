@@ -229,7 +229,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.3 Bridge Subalgebra Signature (24,1) and Euclidean Central Sampler"
+                    content="A.3 Bridge Subalgebra Signature (24,1) and Euclidean Sampler Data Fields S^{2,0}"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -262,13 +262,13 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The D = 26 bosonic string constraint and bridge+time signature (24,1) [before C^{2,0} extension] enable the PM framework's dimensional reduction:"
+                        "The D = 26 bosonic string constraint and bridge+time signature (24,1) [before S^{2,0} extension] enable the PM framework's dimensional reduction:"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "- Bridge+time bulk: 25D with signature (24,1) = 12×(2,0) + (0,1) automatically satisfies Virasoro anomaly cancellation [full 27D(26,1) includes additional C^{2,0} central sampler]\n\n"
+                        "- Bridge+time bulk: 25D with signature (24,1) = 12×(2,0) + (0,1) automatically satisfies Virasoro anomaly cancellation [full 27D(24,1,2) includes additional S^{2,0} sampler data fields]\n\n"
                         "- Euclidean bridge: Reduces the 12×(2,0) pairs → shadows (12,1) via OR reconstruction\n\n"
                         "- Shadow reduction: Yields 13-dimensional intermediate spacetime with unified time\n\n"
                         "- Compactification: 9 spatial dimensions (from bridge reduction) + 13 shadow dimensions compactify on T^15 x G₂(7D)\n\n"

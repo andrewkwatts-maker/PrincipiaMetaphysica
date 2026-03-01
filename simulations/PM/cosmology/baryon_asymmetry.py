@@ -461,9 +461,9 @@ class BaryonAsymmetryV18(SimulationBase):
                     "at T_min = 1.4885. This provides the out-of-equilibrium "
                     "condition required by Sakharov's third condition."
                 ),
-                inputParams=[],
+                inputParams=["cosmology.T_modulus_min", "cosmology.racetrack_Re_T"],
                 outputParams=["cosmology.eta_baryon_geometric"],
-                input_params=[],
+                input_params=["cosmology.T_modulus_min", "cosmology.racetrack_Re_T"],
                 output_params=["cosmology.eta_baryon_geometric"],
                 derivation={
                     "steps": [

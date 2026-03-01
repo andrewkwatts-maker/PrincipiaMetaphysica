@@ -18,7 +18,7 @@ Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0
                     ║  - Dual 13D(12,1) shadows via bridge WARP mechanism      ║
                     ║  - OR reduction operator R_perp with R_perp^2 = -I       ║
                     ║  - NO ghost modes, NO CTCs (manifest unitarity)          ║
-                    ║  - 12-PAIR-BRIDGE architecture with central sampler      ║
+                    ║  - 12-PAIR-BRIDGE architecture with sampler data fields   ║
                     ║                                                          ║
                     ║  This file is retained for historical reference only.    ║
                     ╚══════════════════════════════════════════════════════════╝
@@ -626,7 +626,7 @@ def sp2r_ctc_proof() -> dict:
                     "Primary Sp(2,R) gauge constraint. Phase space orthogonality condition "
                     "that eliminates the second time dimension from physical observables."
                 ),
-                input_params=[],
+                input_params=["geometry.D_bulk", "sp2r.lie_algebra_dimension"],
                 output_params=["sp2r.effective_signature"],
                 derivation={
                     "method": "Gauge constraint from Sp(2,R) symmetry",

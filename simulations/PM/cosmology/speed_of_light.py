@@ -629,9 +629,9 @@ class SpeedOfLightV17(SimulationBase):
                 plain_text=f"c = {c_derived:,.2f} m/s",
                 category="PREDICTED",
                 description=f"Numerical evaluation of speed of light derivation chain",
-                inputParams=[],
+                inputParams=["topology.elder_kads", "topology.b2", "topology.ancestral_roots", "topology.nitzotzin_roots"],
                 outputParams=["cosmology.speed_of_light_derived"],
-                input_params=[],
+                input_params=["topology.elder_kads", "topology.b2", "topology.ancestral_roots", "topology.nitzotzin_roots"],
                 output_params=["cosmology.speed_of_light_derived"],
                 derivation={
                     "steps": [

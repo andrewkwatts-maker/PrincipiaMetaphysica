@@ -130,6 +130,8 @@ class MagneticFluxV17(SimulationBase):
                 latex=r"\Phi_0 = \Phi_{bulk}(1+\epsilon)",
                 plain_text="Phi_0 = Phi_bulk * (1+epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_magnetic_flux", "qed.manifest_magnetic_flux"],
                 description=(
                     "Magnetic flux quantum expands with Planck's constant h since e is invariant. "
                     "Phi_0 = h/(2e) governs flux quantization in superconducting loops (London "

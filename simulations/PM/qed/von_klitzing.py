@@ -141,6 +141,8 @@ class VonKlitzingV17(SimulationBase):
                 latex=r"R_K = R_{K,bulk}(1+\epsilon)",
                 plain_text="R_K = R_K_bulk * (1+epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_von_klitzing", "qed.manifest_von_klitzing"],
                 description=(
                     "Von Klitzing constant expands with Planck's constant h since e is invariant. "
                     "R_K = h/e^2 sets the quantum of Hall resistance via the TKNN (Chern number) "

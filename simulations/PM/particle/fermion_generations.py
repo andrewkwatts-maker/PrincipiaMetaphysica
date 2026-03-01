@@ -479,9 +479,9 @@ class FermionGenerationsV16(SimulationBase):
                 plain_text="D_eff = gamma^mu (d_mu + igA_mu + gamma^5 T_mu)",
                 category="DERIVED",
                 description="Modified Dirac operator with Pneuma-induced axial torsion coupling",
-                inputParams=[],
+                inputParams=["fermion.pneuma_condensate_gradient", "geometry.g2_holonomy", "gauge.g_coupling"],
                 outputParams=["fermion.chiral_filter_strength"],
-                input_params=[],
+                input_params=["fermion.pneuma_condensate_gradient", "geometry.g2_holonomy", "gauge.g_coupling"],
                 output_params=["fermion.chiral_filter_strength"],
                 derivation={
                     "method": "Axial torsion coupling from Pneuma condensate gradient in G2 holonomy",

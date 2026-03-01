@@ -59,12 +59,12 @@ References:
 - Froggatt-Nielsen (1979): Flavor hierarchy from horizontal symmetry
 - Acharya et al. (2008): Yukawa couplings from M-theory on G2 manifolds
 
-v23.0 CENTRAL SAMPLER NOTE:
-    The central (2,0) sampler provides a potential precision enhancement via
+v23.0 SAMPLER DATA FIELDS NOTE:
+    The (2,0) sampler data fields provides a potential precision enhancement via
     ancestral flux averaging: p_anc = (1/12)*sum(p_i) + sqrt(n_local/12)*phi.
 
     GATE CONDITION: The current CKM fits are validated within 1sigma of PDG.
-    Central sampler correction is NOT applied to avoid regression. Future work
+    Sampler data fields correction is NOT applied to avoid regression. Future work
     may integrate p_anc precision if experimental constraints tighten.
 
     See: simulations/v21/geometric/central_sampler_v23.py for details.
@@ -111,7 +111,7 @@ Dedicated To:
 #   2. Full RG running of CKM elements from M_GUT to M_Z
 #      (known to shift V_us by ~0.2% -- goes in the right direction)
 #   3. Include octonionic mixing phases beyond leading Froggatt-Nielsen
-#   4. Incorporate v23 central sampler ancestral flux corrections
+#   4. Incorporate v23 sampler data fields ancestral flux corrections
 #      (currently disabled to avoid regression, see docstring)
 #   5. The other CKM elements (V_cb, V_ub, J) are all within 1 sigma,
 #      so the improvement is specifically needed for V_us
@@ -772,9 +772,9 @@ class CKMMatrixSimulation(SimulationBase):
                     "Unitarity constraint on CKM matrix. Automatically satisfied "
                     "by geometric construction from complete G2 holonomy structure."
                 ),
-                inputParams=[],
+                inputParams=["ckm.V_us_triality", "ckm.V_cb_triality", "ckm.V_ub_triality"],
                 outputParams=["ckm.unitarity_test"],
-                input_params=[],
+                input_params=["ckm.V_us_triality", "ckm.V_cb_triality", "ckm.V_ub_triality"],
                 output_params=["ckm.unitarity_test"],
                 derivation={
                     "parentFormulas": ["wolfenstein-parametrization"],

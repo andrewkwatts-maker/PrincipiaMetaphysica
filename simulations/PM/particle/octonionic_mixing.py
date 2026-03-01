@@ -745,9 +745,9 @@ class OctonionicMixing(SimulationBase):
                     "adjacent octonionic subalgebras. This angle governs the base scale of "
                     "quark-lepton mixing via the associative/co-associative cycle split."
                 ),
-                inputParams=[],
+                inputParams=["constants.phi_golden", "topology.octonion_dim"],
                 outputParams=["triality.theta_g", "triality.phi_golden"],
-                input_params=[],
+                input_params=["constants.phi_golden", "topology.octonion_dim"],
                 output_params=["triality.theta_g", "triality.phi_golden"],
                 derivation={
                     "steps": [
@@ -879,9 +879,9 @@ class OctonionicMixing(SimulationBase):
                     "difference (3D vs 4D) explains why quark mixing is small and "
                     "lepton mixing is large."
                 ),
-                inputParams=[],
+                inputParams=["geometry.g2_holonomy", "topology.g2_compatible"],
                 outputParams=["triality.associative_dimension", "triality.coassociative_dimension"],
-                input_params=[],
+                input_params=["geometry.g2_holonomy", "topology.g2_compatible"],
                 output_params=["triality.associative_dimension", "triality.coassociative_dimension"],
                 derivation={
                     "steps": [

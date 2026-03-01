@@ -148,6 +148,8 @@ class StefanBoltzmannV17(SimulationBase):
                 latex=r"\sigma = \sigma_{bulk} \times (1+\epsilon)^4",
                 plain_text="sigma = sigma_bulk * (1+epsilon)^4",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_stefan_boltzmann", "qed.manifest_stefan_boltzmann"],
                 description=(
                     "Stefan-Boltzmann constant derived via Quad-Gate expansion from the Decad-Cubic "
                     "Projection Engine. The fourth-power correction (1+epsilon)^4 is unique among the "

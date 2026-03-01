@@ -102,6 +102,8 @@ class WeakMixingV17(SimulationBase):
                 latex=r"\sin^2\theta_W = \sin^2\theta_{W,bulk}/(1+\epsilon)",
                 plain_text="sin^2(theta_W) = sin^2(theta_W_bulk) / (1+epsilon)",
                 category="DERIVED",
+                input_params=["topology.elder_kads", "topology.ancestral_roots"],
+                output_params=["qed.bulk_weak_mixing", "qed.manifest_weak_mixing"],
                 description="Weak mixing angle sin^2(theta_W) = g'^2/(g^2+g'^2) contracts via Torsion Gate (inverse cubic projection). The physical mechanism: in the Weinberg formalism, sin^2(theta_W) is a dimensionless ratio of U(1)_Y to electroweak coupling strengths. During bulk-to-manifest dimensional projection, both g and g' expand by (1+epsilon), so their squared ratio contracts by 1/(1+epsilon). This reproduces the PDG Z-pole value 0.23122 to high precision.",
                 derivation={
                     "steps": [

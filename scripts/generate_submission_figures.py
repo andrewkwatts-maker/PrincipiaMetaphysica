@@ -75,8 +75,8 @@ def load_data():
 
 def generate_figure1_m27_decomposition():
     """
-    Figure 1: M^27(26,1) Bulk Decomposition Diagram
-    Shows: M^27(26,1) = (24+1) ⊕ (0,2)
+    Figure 1: M^27(24,1,2) Bulk Decomposition Diagram
+    Shows: M^27(24,1,2) = (24+1) ⊕ (0,2)
     Components: Leech Lattice Λ₂₄ (24D), Unified Time T¹ (1D), S_EIS (0,2)
     """
     print("\n[Figure 1] Generating M27 Bulk Decomposition Diagram...")
@@ -87,9 +87,9 @@ def generate_figure1_m27_decomposition():
     ax.axis('off')
 
     # Title
-    ax.text(5, 9.5, r'$M^{27}(26,1)$ Bulk Decomposition',
+    ax.text(5, 9.5, r'$M^{27}(24,1,2)$ Bulk Decomposition',
             ha='center', fontsize=20, fontweight='bold')
-    ax.text(5, 9.0, r'$M^{27}(26,1) = \Lambda_{24} \oplus T^1 \oplus \mathcal{S}_{\mathrm{EIS}}$',
+    ax.text(5, 9.0, r'$M^{27}(24,1,2) = \Lambda_{24} \oplus T^1 \oplus \mathcal{S}_{\mathrm{EIS}}$',
             ha='center', fontsize=16, style='italic')
 
     # Main M27 box
@@ -98,7 +98,7 @@ def generate_figure1_m27_decomposition():
                               edgecolor='black', facecolor='lightblue',
                               linewidth=3, alpha=0.3)
     ax.add_patch(main_box)
-    ax.text(5, 8.0, r'$M^{27}(26,1)$ - 27D Spacetime',
+    ax.text(5, 8.0, r'$M^{27}(24,1,2)$ - 27D Spacetime',
             ha='center', fontsize=15, fontweight='bold')
 
     # Leech Lattice Λ₂₄ (24D G2 core)
@@ -123,7 +123,7 @@ def generate_figure1_m27_decomposition():
     ax.text(6.2, 7.0, r'$T^1$ (Time Fiber)',
             ha='center', fontsize=13, fontweight='bold')
     ax.text(6.2, 6.5, r'1D Timelike', ha='center', fontsize=11)
-    ax.text(6.2, 6.0, r'Signature $(26,1)$', ha='center', fontsize=10)
+    ax.text(6.2, 6.0, r'Structure $(24,1,2)$', ha='center', fontsize=10)
     ax.text(6.2, 5.5, r'Unified Clock', ha='center', fontsize=9, style='italic')
 
     # Central Sampler S_EIS (0,2)
@@ -176,7 +176,7 @@ def generate_figure1_m27_decomposition():
     ax.add_patch(metric_box)
     ax.text(5, 0.85, r'Metric:', ha='center', fontsize=11, fontweight='bold')
     ax.text(5, 0.55,
-            r'$ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + (dc_1^2 + dc_2^2)$',
+            r'$ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + (ds_1^2 + ds_2^2)$',
             ha='center', fontsize=11, style='italic')
 
     # Save figure

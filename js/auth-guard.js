@@ -167,7 +167,7 @@ async function fetchFrameworkStats() {
 
 /**
  * Default statistics if theory_output.json is unavailable
- * Updated for v23.1 - 27D(26,1) Dual-Shadow Framework
+ * Updated for v24.2 - 27D(24,1,2) Dual-Shadow Framework
  */
 function getDefaultStats() {
   return {

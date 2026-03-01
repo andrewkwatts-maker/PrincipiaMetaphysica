@@ -689,9 +689,9 @@ class DarkEnergyV16(SimulationBase):
                 plain_text="26D → (heterotic) → 13D → (G2) → 4D",
                 category="DERIVED",
                 description="Dimensional reduction cascade illustrating the transition from the 26-dimensional bosonic string theory, through the 13-dimensional heterotic string (from asymmetric left-right construction), to the effective 4-dimensional spacetime via G2 manifold compactification. The third Betti number b3=24 characterizes the topological complexity of the compactified G2 space and determines the residual vacuum energy density through the Tzimtzum fraction 1/b3.",
-                inputParams=[],
+                inputParams=["topology.elder_kads", "geometry.D_bulk", "topology.critical_dim"],
                 outputParams=["cosmology.D_eff"],
-                input_params=[],
+                input_params=["topology.elder_kads", "geometry.D_bulk", "topology.critical_dim"],
                 output_params=["cosmology.D_eff"],
                 derivation={
                     "steps": [

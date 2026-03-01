@@ -1436,6 +1436,186 @@ class GateRegistry:
 GateRegistry.initialize_gates()
 
 
+# ── Gate Parameter Mapping ────────────────────────────────────────────
+# Maps each gate number (1-72) to (input_params, output_params) tuples
+# describing what registry parameters each gate consumes and produces.
+# Groupings follow the phase/block structure of the Gate architecture.
+
+GATE_PARAMS: Dict[int, Tuple[List[str], List[str]]] = {
+    # ================================================================
+    # PHASE 1: STRUCTURAL FOUNDATIONS (G01-G10) — Topology gates
+    # Test fundamental manifold properties: root counts, holonomy,
+    # torsion pins, sterile angle, metric continuity.
+    # ================================================================
+    1:  (["topology.ancestral_roots"],
+         ["gates.g01_status"]),
+    2:  (["topology.elder_kads"],
+         ["gates.g02_status"]),
+    3:  (["topology.ancestral_roots", "topology.barbelo_modulus", "registry.node_count"],
+         ["gates.g03_status"]),
+    4:  (["topology.ancestral_roots"],
+         ["gates.g04_status"]),
+    5:  (["registry.node_count"],
+         ["gates.g05_status"]),
+    6:  (["topology.elder_kads"],
+         ["gates.g06_status"]),
+    7:  (["topology.ancestral_roots", "topology.elder_kads"],
+         ["gates.g07_status"]),
+    8:  (["topology.ancestral_roots", "registry.node_count"],
+         ["gates.g08_status"]),
+    9:  (["topology.elder_kads"],
+         ["gates.g09_status"]),
+    10: (["topology.ancestral_roots", "topology.elder_kads"],
+         ["gates.g10_status"]),
+
+    # ================================================================
+    # PHASE 2: GAUGE & MATTER REGISTRY (G11-G25) — Gauge + Particle gates
+    # Test gauge coupling properties and particle spectrum.
+    # ================================================================
+    11: (["gauge.alpha_s_mz", "registry.node_count", "topology.ancestral_roots"],
+         ["gates.g11_status"]),
+    12: (["gauge.sin2_theta_w", "topology.elder_kads"],
+         ["gates.g12_status"]),
+    13: (["gauge.alpha_s_mz", "topology.ancestral_roots"],
+         ["gates.g13_status"]),
+    14: (["gauge.sin2_theta_w", "topology.ancestral_roots"],
+         ["gates.g14_status"]),
+    15: (["gauge.alpha_s_mz", "topology.ancestral_roots"],
+         ["gates.g15_status"]),
+    16: (["registry.node_count", "topology.ancestral_roots"],
+         ["gates.g16_status"]),
+    17: (["registry.node_count", "topology.ancestral_roots"],
+         ["gates.g17_status"]),
+    18: (["topology.ancestral_roots", "registry.node_count"],
+         ["gates.g18_status"]),
+    19: (["registry.node_count", "topology.elder_kads"],
+         ["gates.g19_status"]),
+    20: (["registry.node_count", "topology.ancestral_roots"],
+         ["gates.g20_status"]),
+    21: (["registry.node_count", "topology.ancestral_roots"],
+         ["gates.g21_status"]),
+    22: (["topology.elder_kads", "topology.ancestral_roots"],
+         ["gates.g22_status"]),
+    23: (["topology.ancestral_roots", "registry.node_count"],
+         ["gates.g23_status"]),
+    24: (["topology.ancestral_roots", "topology.barbelo_modulus"],
+         ["gates.g24_status"]),
+    25: (["topology.ancestral_roots", "gauge.alpha_s_mz"],
+         ["gates.g25_status"]),
+
+    # ================================================================
+    # PHASE 3: INTERACTION & MIXING (G26-G40) — Higgs/CKM gates
+    # Test Higgs VEV, mixing matrices, and interaction dynamics.
+    # ================================================================
+    26: (["registry.node_count", "topology.ancestral_roots"],
+         ["gates.g26_status"]),
+    27: (["topology.elder_kads", "registry.node_count"],
+         ["gates.g27_status"]),
+    28: (["topology.barbelo_modulus", "registry.node_count"],
+         ["gates.g28_status"]),
+    29: (["topology.elder_kads"],
+         ["gates.g29_status"]),
+    30: (["topology.ancestral_roots", "registry.node_count"],
+         ["gates.g30_status"]),
+    31: (["particle.higgs_vev", "topology.elder_kads", "constants.k_gimel"],
+         ["gates.g31_status"]),
+    32: (["particle.higgs_vev", "topology.elder_kads"],
+         ["gates.g32_status"]),
+    33: (["particle.higgs_vev", "topology.elder_kads"],
+         ["gates.g33_status"]),
+    34: (["topology.ancestral_roots", "topology.elder_kads"],
+         ["gates.g34_status"]),
+    35: (["topology.elder_kads", "gauge.sin2_theta_w"],
+         ["gates.g35_status"]),
+    36: (["constants.k_gimel", "topology.elder_kads"],
+         ["gates.g36_status"]),
+    37: (["topology.ancestral_roots", "constants.k_gimel"],
+         ["gates.g37_status"]),
+    38: (["topology.elder_kads", "constants.k_gimel"],
+         ["gates.g38_status"]),
+    39: (["topology.elder_kads", "constants.k_gimel"],
+         ["gates.g39_status"]),
+    40: (["topology.ancestral_roots", "topology.barbelo_modulus", "registry.node_count"],
+         ["gates.g40_status"]),
+
+    # ================================================================
+    # PHASE 4: COSMOLOGICAL & METRIC SEALS (G41-G55) — Gravity/Cosmo gates
+    # Test gravitational constant, Hubble rate, dark energy, and
+    # information-theoretic constraints on spacetime.
+    # ================================================================
+    41: (["gravity.newton_constant", "topology.ancestral_roots"],
+         ["gates.g41_status"]),
+    42: (["gravity.newton_constant", "topology.ancestral_roots"],
+         ["gates.g42_status"]),
+    43: (["gravity.newton_constant", "topology.barbelo_modulus"],
+         ["gates.g43_status"]),
+    44: (["gravity.newton_constant", "topology.elder_kads"],
+         ["gates.g44_status"]),
+    45: (["gravity.newton_constant", "topology.ancestral_roots"],
+         ["gates.g45_status"]),
+    46: (["cosmology.w0_geometric", "topology.ancestral_roots"],
+         ["gates.g46_status"]),
+    47: (["cosmology.H0_geometric", "topology.ancestral_roots"],
+         ["gates.g47_status"]),
+    48: (["cosmology.w0_geometric", "topology.ancestral_roots"],
+         ["gates.g48_status"]),
+    49: (["cosmology.H0_geometric", "topology.barbelo_modulus", "topology.ancestral_roots"],
+         ["gates.g49_status"]),
+    50: (["cosmology.H0_geometric", "topology.ancestral_roots"],
+         ["gates.g50_status"]),
+    51: (["topology.ancestral_roots", "topology.euler_chi"],
+         ["gates.g51_status"]),
+    52: (["topology.ancestral_roots", "topology.euler_chi"],
+         ["gates.g52_status"]),
+    53: (["topology.ancestral_roots", "topology.euler_chi"],
+         ["gates.g53_status"]),
+    54: (["topology.ancestral_roots", "topology.euler_chi"],
+         ["gates.g54_status"]),
+    55: (["topology.ancestral_roots", "topology.euler_chi", "geometry.D_bulk"],
+         ["gates.g55_status"]),
+
+    # ================================================================
+    # PHASE 5: DIMENSIONAL & LOGICAL CLOSURE (G56-G72) — Quantum/Compact
+    # + Info/Terminal gates. Test compactification, information bounds,
+    # and recursive closure of the full 72-gate system.
+    # ================================================================
+    56: (["topology.ancestral_roots", "topology.euler_chi", "geometry.D_bulk"],
+         ["gates.g56_status"]),
+    57: (["topology.ancestral_roots", "topology.euler_chi", "geometry.D_bulk"],
+         ["gates.g57_status"]),
+    58: (["topology.ancestral_roots", "geometry.D_bulk", "registry.node_count"],
+         ["gates.g58_status"]),
+    59: (["topology.ancestral_roots", "topology.euler_chi", "geometry.D_bulk"],
+         ["gates.g59_status"]),
+    60: (["topology.ancestral_roots", "cosmology.w0_geometric", "geometry.D_bulk"],
+         ["gates.g60_status"]),
+    61: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g61_status"]),
+    62: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g62_status"]),
+    63: (["gates.total_passed", "topology.ancestral_roots", "topology.elder_kads"],
+         ["gates.g63_status"]),
+    64: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g64_status"]),
+    65: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g65_status"]),
+    66: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g66_status"]),
+    67: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g67_status"]),
+    68: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g68_status"]),
+    69: (["gates.total_passed", "topology.ancestral_roots", "registry.node_count"],
+         ["gates.g69_status"]),
+    70: (["gates.total_passed", "topology.ancestral_roots", "registry.node_count"],
+         ["gates.g70_status"]),
+    71: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g71_status"]),
+    72: (["gates.total_passed", "topology.ancestral_roots"],
+         ["gates.g72_status"]),
+}
+
+
 class Appendix72Gates(SimulationBase):
     """
     Appendix F: The Gates of Integrity.
@@ -1559,8 +1739,12 @@ class Appendix72Gates(SimulationBase):
         """Return formula definitions for the gates."""
         formulas = []
 
-        # Generate formulas for each gate
+        # Generate formulas for each gate, pulling input/output params
+        # from the GATE_PARAMS mapping defined above.
         for gate_id, gate in GateRegistry.GATES.items():
+            gate_inputs, gate_outputs = GATE_PARAMS.get(
+                gate_id, ([], [f"gates.g{gate_id:02d}_status"])
+            )
             formulas.append(Formula(
                 id=gate.formula_id or f"g{gate_id:02d}-gate",
                 label=f"(G{gate_id:02d})",
@@ -1568,8 +1752,8 @@ class Appendix72Gates(SimulationBase):
                 plain_text=gate.name,
                 category="DERIVED",
                 description=f"{gate.logic}. {gate.validation}",
-                input_params=[],
-                output_params=[],
+                input_params=gate_inputs,
+                output_params=gate_outputs,
                 derivation={
                     "method": "Gate verification",
                     "steps": [
@@ -1585,7 +1769,7 @@ class Appendix72Gates(SimulationBase):
                 },
             ))
 
-        # Add the Omega Hash formula
+        # Add the Omega Hash formula — aggregates all 72 gate statuses
         formulas.append(Formula(
             id="omega-hash-72",
             label="(Ω)",
@@ -1593,7 +1777,9 @@ class Appendix72Gates(SimulationBase):
             plain_text="Omega_hash = Product(G1...G72) = 0.000...",
             category="DERIVED",
             description="The Omega Hash is the binary sum of all gates, locked when variance = 0.",
-            input_params=[],
+            inputParams=[f"gates.g{n:02d}_status" for n in range(1, 73)],
+            outputParams=["gates.omega_hash"],
+            input_params=[f"gates.g{n:02d}_status" for n in range(1, 73)],
             output_params=["gates.omega_hash"],
             derivation={
                 "method": "Gate verification",

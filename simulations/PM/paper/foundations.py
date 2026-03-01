@@ -5,21 +5,21 @@ PRINCIPIA METAPHYSICA v23.1 - Section 1: Foundations of Dimensional Descent
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: M^{27}(26,1) = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0} oplus C^{2,0})
-The 12x(2,0) paired bridge system plus C^{2,0} Euclidean central sampler plus T^1 time.
+v24.2 STERILE MODEL: M^{27}(24,1,2) = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0} oplus S^{2,0})
+The 12x(2,0) paired bridge system plus S^{2,0} sampler data fields plus T^1 time.
 All 125 constants are geometric residues, not tuned.
 
-KEY v23.1 ARCHITECTURE:
-  - Bulk: M^{27}(26,1) = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0} oplus C^{2,0})
-  - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + dc_1^2 + dc_2^2
-  - 24 spacelike from 12x2 pairs + 2 from C^{2,0} + 1 timelike = 27D(26,1)
+KEY v24.2 ARCHITECTURE:
+  - Bulk: M^{27}(24,1,2) = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0} oplus S^{2,0})
+  - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + ds_1^2 + ds_2^2
+  - 24 physics core from 12x2 pairs + 1 timelike + 2 S^{2,0} sampler data fields = M^{27}(24,1,2)
   - Shadow structure: y_{1i} aggregates (normal) + y_{2i} aggregates (mirror)
-  - OR reduction: bigotimes_{i=1}^{12} R_perp_i (C^{2,0} averages into both shadows)
+  - OR reduction: bigotimes_{i=1}^{12} R_perp_i (S^{2,0} averages into both shadows)
 
 WHY 12 PAIRS: b_3 = 24 => 24/2 = 12 paired bridges
 
 This simulation generates the content for Section 1 of the paper:
-  1.1 The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+  1.1 The M^{27}(24,1,2) Ancestral Bulk with 12x(2,0) Paired Bridge
   1.2 The Paired Bridge System and OR Reduction
   1.3 The G2 Manifold (V7) per Shadow
   1.4 The 6D->4D Projection
@@ -60,7 +60,7 @@ class FoundationsV16_2(SimulationBase):
 
     Provides the sterile derivation narrative for the (24,1)->4D descent path
     with 12x(2,0) paired bridge system:
-    - 1.1: The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+    - 1.1: The M^{27}(24,1,2) Ancestral Bulk with 12x(2,0) Paired Bridge
     - 1.2: The Paired Bridge System and OR Reduction
     - 1.3: The G2 Manifold V7 per Shadow (7D Geometric Hard-Lock)
     - 1.4: The 6D->4D Projection (Calabi-Yau Filtering)
@@ -103,7 +103,7 @@ class FoundationsV16_2(SimulationBase):
             version="23.1",
             domain="foundations",
             title="Foundations of Dimensional Descent",
-            description="The 27D(26,1) bulk: 12x(2,0) paired bridges + C^{2,0} central sampler + T^1 time; dual shadows and G2 compactification",
+            description="The M^{27}(24,1,2) bulk: 12x(2,0) paired bridges + S^{2,0} sampler data fields + T^1 time; dual shadows and G2 compactification",
             section_id="1",
             subsection_id="1.1"  # v19.0: Unique subsection (introduction_v16_0 owns section 1)
         )
@@ -139,11 +139,11 @@ class FoundationsV16_2(SimulationBase):
             # Section 1 should start directly with the foundational content
 
             # ================================================================
-            # 1.1 The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+            # 1.1 The M^{27}(24,1,2) Ancestral Bulk with 12x(2,0) Paired Bridge
             # ================================================================
             ContentBlock(
                 type="heading",
-                content="The 27D(26,1) Ancestral Bulk with 12x(2,0) Paired Bridge",
+                content="The M^{27}(24,1,2) Ancestral Bulk with 12x(2,0) Paired Bridge",
                 level=2,
                 label="1.1"
             ),
@@ -152,7 +152,7 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "The foundational premise of the Sterile Model is that the observable universe "
                     "is not an independent system, but a lower-dimensional <strong>residue</strong> "
-                    "of a <strong>27D(26,1) Bosonic Ancestral Bulk</strong>. This high-dimensional "
+                    "of a <strong>M^{27}(24,1,2) Bosonic Ancestral Bulk</strong>. This high-dimensional "
                     "state represents the 'Total Potential' of the physical registry, with unified "
                     "time (eliminating ghosts and closed timelike curves) and a <strong>12x(2,0) "
                     "paired bridge system</strong> enabling dual-shadow coherence."
@@ -168,11 +168,11 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "At the highest level, the framework connects to the algebraic structures of the "
                     "<strong>Monster Group</strong> and the <strong>Leech Lattice</strong> via the "
-                    "bosonic string (26D parent, signature (24,1) before the C^{2,0} extension). "
-                    "In PM v23.1, the actual bulk has signature <strong>(26,1)</strong>: twenty-four "
-                    "spacelike dimensions from the 12×(2,0) bridge pairs, two additional spacelike "
-                    "dimensions from the Euclidean central sampler C^{2,0}, and one unified timelike. "
-                    "This 27D(26,1) configuration is ghost-free: the single timelike direction "
+                    "bosonic string (26D parent, signature (24,1) before the S^{2,0} extension). "
+                    "In PM v24.2, the actual bulk has structure <strong>M^{27}(24,1,2)</strong>: twenty-four "
+                    "physics core dimensions from the 12×(2,0) bridge pairs, one unified timelike, "
+                    "and two sampler data fields S^{2,0}. "
+                    "This M^{27}(24,1,2) configuration is ghost-free: the single timelike direction "
                     "prevents closed timelike curves, and OR reduction to 13D(12,1) shadows "
                     "removes all unphysical states."
                 )
@@ -180,21 +180,21 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "<strong>Why (26,1) specifically?</strong> The construction begins with the "
+                    "<strong>Why (24,1,2) specifically?</strong> The construction begins with the "
                     "bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature "
                     "(24,1)) are required for modular invariance (Polyakov 1981). The 24 transverse "
                     "dimensions match the Leech lattice -- the unique even unimodular lattice in 24D "
                     "with no roots -- connecting via Moonshine to the Monster Group (Borcherds 1992). "
-                    "PM extends the 25D bosonic string parent (signature (24,1)) by appending the C^{2,0} Euclidean central "
-                    "sampler, which provides architectural averaging across the 12 bridge pairs "
-                    "and stabilizes the dual-shadow construction, yielding the full 27D(26,1) bulk. The resulting (26,1) signature "
+                    "PM extends the 25D bosonic string parent (signature (24,1)) by appending the S^{2,0} sampler data fields, "
+                    "which provide architectural averaging across the 12 bridge pairs "
+                    "and stabilize the dual-shadow construction, yielding the full M^{27}(24,1,2) bulk. The resulting (24,1,2) structure "
                     "preserves ghost-freedom (single timelike) while accommodating both the G₂ "
-                    "compactification and the central sampler as independent geometric structures."
+                    "compactification and the sampler data fields as independent geometric structures."
                 )
             ),
             ContentBlock(
                 type="equation",
-                content=r"\text{Signature}(M^{27}) = (26, 1) \quad \Rightarrow \quad ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + dc_1^2 + dc_2^2",
+                content=r"\text{Structure}(M^{27}) = (24, 1, 2) \quad \Rightarrow \quad ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + ds_1^2 + ds_2^2",
                 label="27d-signature"
             ),
             ContentBlock(
@@ -205,13 +205,13 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 27D(26,1) bulk decomposes into <strong>12 paired bridges</strong> plus a "
-                    "<strong>central Euclidean sampler</strong>, each with (2,0) signature. The total bulk structure is:"
+                    "The M^{27}(24,1,2) bulk decomposes into <strong>12 paired bridges</strong> plus the "
+                    "<strong>sampler data fields</strong> S^{2,0}, each with (2,0) signature. The total bulk structure is:"
                 )
             ),
             ContentBlock(
                 type="equation",
-                content=r"M^{27}(26,1) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0} \oplus C^{2,0}\right)",
+                content=r"M^{27}(24,1,2) = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0} \oplus S^{2,0}\right)",
                 label="bulk-decomposition"
             ),
             ContentBlock(
@@ -219,8 +219,8 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "Each bridge pair B<sub>i</sub> = (y<sub>1i</sub>, y<sub>2i</sub>) contributes "
                     "two spacelike dimensions. This gives 12×2 = 24 spacelike dimensions from the pairs, "
-                    "plus 2 from the central sampler C^{2,0} = (c<sub>1</sub>, c<sub>2</sub>), "
-                    "plus 1 unified timelike dimension: total <strong>27D(26,1)</strong>. The pairing "
+                    "plus 1 unified timelike dimension, plus 2 sampler data fields S^{2,0} = (s<sub>1</sub>, s<sub>2</sub>): "
+                    "total <strong>M^{27}(24,1,2)</strong>. The pairing "
                     "arises from the G₂ topology: <strong>b₃ = 24 / 2 = 12 pairs</strong>."
                 )
             ),
@@ -242,7 +242,7 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 27D(26,1) state descends via <strong>Dimensional Collapse</strong>. "
+                    "The M^{27}(24,1,2) state descends via <strong>Dimensional Collapse</strong>. "
                     "The 26-dimensional bosonic string space 'shatters' into the dual-shadow configuration, "
                     "with the Euclidean bridge providing the coherence substrate. This transition is a "
                     "<strong>Topological Shattering</strong>, where the high-dimensional bulk breaks "
@@ -373,7 +373,7 @@ class FoundationsV16_2(SimulationBase):
                     "The v23 framework extends the 12 local (2,0) bridge pairs with a <strong>central (2,0) "
                     "ancestral sampler</strong> that provides global averaging for macro-precision. This hierarchical "
                     "structure enables two levels of condensate selection: local pairs for fine flux control, and the "
-                    "central sampler for global coherence during dimensional descent."
+                    "sampler data fields for global coherence during dimensional descent."
                 )
             ),
             ContentBlock(
@@ -394,7 +394,7 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "Here p<sub>i</sub> is the local probability from bridge pair i, n<sub>local</sub> is the "
                     "number of active local pairs (6 baseline → 12 full gnosis), and φ is the golden ratio. "
-                    "The central sampler activates at mid-gnosis (n<sub>local</sub> ≥ 9)."
+                    "The sampler data fields activate at mid-gnosis (n<sub>local</sub> ≥ 9)."
                 )
             ),
             ContentBlock(
@@ -403,7 +403,7 @@ class FoundationsV16_2(SimulationBase):
                     "<strong>Dimensional Accounting:</strong> 24 core + 24 local + 2 central = 50 spacelike-like dimensions",
                     "<strong>Local Level:</strong> 12×(2,0) pairs → micro-stability (per-branch selection)",
                     "<strong>Central Level:</strong> 1×(2,0) pair → macro-precision (global averaging)",
-                    "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,1) = 12×(2,0) + (0,1) [pre-C^{2,0} extension]; full bulk is 27D(26,1) with Euclidean central sampler"
+                    "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,1) = 12×(2,0) + (0,1) [pre-S^{2,0} extension]; full bulk is M^{27}(24,1,2) with Euclidean sampler data fields"
                 ],
                 label="hierarchical-sampling-structure"
             ),
@@ -571,7 +571,7 @@ class FoundationsV16_2(SimulationBase):
                 content=(
                     "Our observable universe is the <strong>4D World-Sheet</strong> upon which this "
                     "entire descent is recorded. The 125 residues are the terminal artifacts of the "
-                    "27D(26,1) potential. At this level, the 'Fine-Structure Constant' and the "
+                    "M^{27}(24,1,2) potential. At this level, the 'Fine-Structure Constant' and the "
                     "'Proton-to-Electron Mass Ratio' are revealed not as lucky accidents, but as the "
                     "<strong>Terminal Geometric Identity</strong> of the manifold. 4D reality is a "
                     "'topologically locked' state, where the physical constants represent the only "
@@ -582,7 +582,7 @@ class FoundationsV16_2(SimulationBase):
                 type="note",
                 content=(
                     "<h4>The Descent Path Summary</h4>"
-                    "<p>27D(26,1) = 12×(2,0) + (0,1) → [Bridge pairs WARP via OR] → 2×13D(12,1) → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p>"
+                    "<p>M^{27}(24,1,2) = 12×(2,0) + (0,1) + S^{2,0} → [Bridge pairs WARP via OR] → 2×13D(12,1) → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p>"
                     "<p>At each stage, the 'Symmetry Budget' is conserved, and the 125 residues are "
                     "progressively 'extracted' as the unique spectral eigenvalues of the descended geometry.</p>"
                 ),
@@ -594,7 +594,7 @@ class FoundationsV16_2(SimulationBase):
             section_id="1",
             subsection_id="1.1",  # v19.0: Unique subsection
             title="Foundations of Dimensional Descent",
-            abstract="The 27D(26,1) ancestral bulk with Euclidean bridge, OR reduction, dual shadows, G2 manifold, and 6D→4D projection.",
+            abstract="The M^{27}(24,1,2) ancestral bulk with Euclidean bridge, OR reduction, dual shadows, G2 manifold, and 6D→4D projection.",
             content_blocks=content_blocks
         )
 
@@ -692,7 +692,7 @@ class FoundationsV16_2(SimulationBase):
                     "parentFormulas": ["euclidean-bridge", "or-reduction-tensor"]
                 },
                 terms={
-                    "p_anc": "Ancestral probability from central sampler",
+                    "p_anc": "Ancestral probability from sampler data fields",
                     "p_i": "Local probability from bridge pair i",
                     "n_local": "Number of active local pairs (6 baseline to 12 full)",
                     "phi": "Golden ratio (1+sqrt(5))/2"
