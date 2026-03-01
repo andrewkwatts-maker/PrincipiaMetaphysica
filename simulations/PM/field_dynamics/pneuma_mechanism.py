@@ -129,7 +129,7 @@ class PneumaMechanismV16(SimulationBase):
             title="Pneuma Field Mechanism with 12x(2,0) Paired Bridges",
             description="Compute Pneuma field dynamics, coupling constants, neural gate I/O, and Lagrangian validity from G2 geometry with 12 paired bridge structure",
             section_id="2",
-            subsection_id="2.6"  # v19.0: Unique subsection (Pneuma Mechanism)
+            subsection_id="2.8"  # Pneuma Mechanism (2.6=methodology, 2.7=four_face)
         )
 
     @property
@@ -929,7 +929,7 @@ class PneumaMechanismV16(SimulationBase):
 
         return SectionContent(
             section_id="2",
-            subsection_id="2.6",  # v19.0: Match metadata subsection_id
+            subsection_id="2.8",  # Match metadata subsection_id
             title="The Pneuma Lagrangian",
             abstract="The fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content.",
             content_blocks=content_blocks,

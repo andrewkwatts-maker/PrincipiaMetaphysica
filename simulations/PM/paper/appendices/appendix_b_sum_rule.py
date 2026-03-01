@@ -49,7 +49,7 @@ class AppendixBSumRule(SimulationBase):
 
     FORMULA_REFS = [
         "heat-kernel-partition",
-        "global-sum-rule",
+        "global-sum-rule-appendix",
         "trace-formula-closure",
         "hierarchy-spectral-gap",
     ]
@@ -172,7 +172,7 @@ class AppendixBSumRule(SimulationBase):
             ContentBlock(
                 type="formula",
                 content=r"\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \cdot \mathcal{R}_n^2 = \Phi_{G_2}",
-                formula_id="global-sum-rule",
+                formula_id="global-sum-rule-appendix",
                 label="(B.2)"
             ),
             ContentBlock(
@@ -299,7 +299,7 @@ class AppendixBSumRule(SimulationBase):
                 }
             ),
             Formula(
-                id="global-sum-rule",
+                id="global-sum-rule-appendix",
                 label="(B.2)",
                 latex=r"\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \cdot \mathcal{R}_n^2 = \Phi_{G_2}",
                 plain_text="Σ_{n=1}^{ק_כה} ω_n · R_n² = Φ_{G₂}",
@@ -341,7 +341,7 @@ class AppendixBSumRule(SimulationBase):
                 output_params=["validation.sum_rule_result"],
                 derivation={
                     "method": "Absolute deviation bound from geometric invariant",
-                    "parentFormulas": ["global-sum-rule"],
+                    "parentFormulas": ["global-sum-rule-appendix"],
                     "steps": [
                         "Compute left-hand side: Sigma omega_n R_n^2 from registry residues",
                         "Compute right-hand side: Phi_G2 from manifold topology",

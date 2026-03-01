@@ -179,9 +179,17 @@ class FormulaRegistry:
             with open(path, 'r', encoding='utf-8') as f:
                 data = json.load(f)
 
-            formulas_list = data if isinstance(data, list) else data.get('formulas', [])
+            formulas_raw = data if isinstance(data, list) else data.get('formulas', [])
+
+            # Handle both list format and dict-of-dicts format
+            if isinstance(formulas_raw, dict):
+                formulas_list = list(formulas_raw.values())
+            else:
+                formulas_list = formulas_raw
 
             for formula_data in formulas_list:
+                if not isinstance(formula_data, dict):
+                    continue
                 formula_id = formula_data.get('id', '')
                 if not formula_id:
                     continue

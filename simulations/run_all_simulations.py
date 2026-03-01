@@ -2988,6 +2988,10 @@ def main():
 
     # Generate validation statistics (always run to ensure statistics.json is populated)
     try:
+        # Ensure PROJECT_ROOT is in sys.path for scripts.* imports
+        project_root_str = str(PROJECT_ROOT)
+        if project_root_str not in sys.path:
+            sys.path.insert(0, project_root_str)
         from scripts.generation.generate_statistics import generate_statistics, OUTPUT_FILE
 
         if not args.quiet:
