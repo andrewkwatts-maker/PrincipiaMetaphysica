@@ -530,7 +530,7 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The starting point is a gravitational theory in 26 dimensions decomposing as M_26 = M_A^13 ⊗_E M_B^13 — the critical dimension of bosonic string theory — coupled to the fundamental Pneuma field. Each 13D half has signature (12,1) connected via Euclidean bridge. OR (Objective Reduction) provides the physical mechanism eliminating ghost states through gravitational self-energy threshold. The full 26D action takes the form:"
+                content="The starting point is a gravitational theory in 26 dimensions decomposing as M₂₆ = M<sub>A</sub><sup>13</sup> ⊗<sub>E</sub> M<sub>B</sub><sup>13</sup> — the critical dimension of bosonic string theory — coupled to the fundamental Pneuma field. Each 13D half has signature (12,1) connected via Euclidean bridge. OR (Objective Reduction) provides the physical mechanism eliminating ghost states through gravitational self-energy threshold. The full 26D action takes the form:"
             ),
             ContentBlock(
                 type="formula",
@@ -539,7 +539,7 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="where Ψ_P is the Pneuma spinor with 4096 components before OR reduction (from Cl(24,1), with dimension 2^12 = 4096), and ℒ_OR contains the gravitational self-energy constraints that eliminate ghosts via objective reduction. After OR reduction, this reduces to 64 physical components (2^6). The OR reduction conditions are:"
+                content="where Ψ<sub>P</sub> is the Pneuma spinor with 4096 components before OR reduction (from Cl(24,1), with dimension 2<sup>12</sup> = 4096), and L<sub>OR</sub> contains the gravitational self-energy constraints that eliminate ghosts via objective reduction. After OR reduction, this reduces to 64 physical components (2<sup>6</sup>). The OR reduction conditions are:"
             ),
             ContentBlock(
                 type="formula",
@@ -548,23 +548,23 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="These conditions eliminate the ghost degrees of freedom through gravitational self-energy threshold, projecting the full M_26 = M_A^13 ⊗_E M_B^13 structure onto physically observable states. After OR reduction, the 4096-component spinor reduces to 64 effective components. Each 13D half independently contributes physical degrees of freedom while connecting through the Euclidean bridge."
+                content="These conditions eliminate the ghost degrees of freedom through gravitational self-energy threshold, projecting the full M₂₆ = M<sub>A</sub><sup>13</sup> ⊗<sub>E</sub> M<sub>B</sub><sup>13</sup> structure onto physically observable states. After OR reduction, the 4096-component spinor reduces to 64 effective components. Each 13D half independently contributes physical degrees of freedom while connecting through the Euclidean bridge."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="26D→13D shadow Decomposition with Euclidean Bridge (v21 January 2026)",
+                title="26D→13D Shadow Decomposition with Euclidean Bridge (v24.2)",
                 content="The 26-dimensional spacetime decomposes as a tensor product of 13D shadow (from 26D bulk) connected via Euclidean bridge. Key Features: signature (24,1) → (12,1) effective after OR reduction; OR removes ghosts; 4096 → 64 components."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Algebraic Origin of D=13 (November 2025)",
+                title="Algebraic Origin of D=13",
                 content="The dimension D=13 has a unique algebraic decomposition in terms of the normed division algebras: 13 = 1 + 4 + 8 (R + H + O). Why D=13 is unique: Unlike D=10 (C+O, requiring worldsheet) or D=11 (R+C+O, 7D internal), the decomposition 1+4+8 naturally accommodates CY4 internal geometry with thermal time emergence. The cobordism group Ω^String_13 = 0 ensures global anomaly freedom."
             ),
             ContentBlock(
                 type="paragraph",
-                content="Here G_MN denotes the effective 13D metric (with indices M,N = 0,1,...,12), R_13 is the effective 13D Ricci scalar, M_* is the fundamental mass scale, and D_M is the spinor covariant derivative in the effective 13D. The interaction Lagrangian ℒ_int contains higher-dimensional operators suppressed by powers of M_*."
+                content="Here G<sub>MN</sub> denotes the effective 13D metric (with indices M, N = 0, 1, ..., 12), R<sub>13</sub> is the effective 13D Ricci scalar, M<sub>*</sub> is the fundamental mass scale, and D<sub>M</sub> is the spinor covariant derivative in the effective 13D. The interaction Lagrangian L<sub>int</sub> contains higher-dimensional operators suppressed by powers of M<sub>*</sub>."
             ),
             ContentBlock(
                 type="callout",
@@ -574,48 +574,48 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The modern perspective, articulated by Weinberg and developed in the context of quantum gravity by Donoghue and others, treats the higher-dimensional theory as an Effective Field Theory (EFT) valid below some cutoff scale Λ ~ M_*. The key insight is that at energies E << M_*, the theory makes well-defined predictions despite containing infinitely many possible operators."
+                content="The modern perspective, articulated by Weinberg and developed in the context of quantum gravity by Donoghue and others, treats the higher-dimensional theory as an Effective Field Theory (EFT) valid below some cutoff scale Λ ~ M<sub>*</sub>. The key insight is that at energies E << M<sub>*</sub>, the theory makes well-defined predictions despite containing infinitely many possible operators."
             ),
             ContentBlock(
                 type="paragraph",
-                content="Dimensional analysis determines the structure of the effective Lagrangian. Each operator is characterized by its mass dimension and suppressed by appropriate powers of M_*:"
+                content="Dimensional analysis determines the structure of the effective Lagrangian. Each operator is characterised by its mass dimension and suppressed by appropriate powers of M<sub>*</sub>:"
             ),
             ContentBlock(
                 type="table",
                 content={
                     "headers": ["Operator Type", "Mass Dimension", "Suppression", "Example"],
                     "rows": [
-                        ["Kinetic terms", "[D] = 13", "M_*^11", "M_*^11 R"],
-                        ["Four-fermion", "[D] = 13", "M_*^-1", "(ΨΓΨ)^2 / M_*"],
-                        ["Curvature squared", "[D] = 13", "M_*^9", "M_*^9 R^2"],
-                        ["R^3 corrections", "[D] = 13", "M_*^7", "M_*^7 R^3"],
-                        ["Higher derivative", "[D] = 13", "M_*^7", "M_*^7 (∇R)^2"]
+                        ["Kinetic terms", "[D] = 13", "M<sub>*</sub><sup>11</sup>", "M<sub>*</sub><sup>11</sup> R"],
+                        ["Four-fermion", "[D] = 13", "M<sub>*</sub><sup>−1</sup>", "(ΨΓΨ)² / M<sub>*</sub>"],
+                        ["Curvature squared", "[D] = 13", "M<sub>*</sub><sup>9</sup>", "M<sub>*</sub><sup>9</sup> R²"],
+                        ["R³ corrections", "[D] = 13", "M<sub>*</sub><sup>7</sup>", "M<sub>*</sub><sup>7</sup> R³"],
+                        ["Higher derivative", "[D] = 13", "M<sub>*</sub><sup>7</sup>", "M<sub>*</sub><sup>7</sup> (∇R)²"]
                     ]
                 }
             ),
             ContentBlock(
                 type="paragraph",
-                content="At energies E << M_*, higher-dimension operators contribute corrections of order (E/M_*)^n with n ≥ 1. These corrections are systematically small and calculable in the EFT expansion. The predictive power comes from organizing operators by their relevance at low energies."
+                content="At energies E << M<sub>*</sub>, higher-dimension operators contribute corrections of order (E/M<sub>*</sub>)<sup>n</sup> with n >= 1. These corrections are systematically small and calculable in the EFT expansion. The predictive power comes from organising operators by their relevance at low energies."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="UV Completion",
-                content="The EFT description remains agnostic about the UV completion at E ~ M_*. Candidate UV completions include string theory (where M_* ~ M_string), asymptotic safety, or other quantum gravity frameworks. The low-energy predictions are largely independent of these UV details."
+                content="The EFT description remains agnostic about the UV completion at E ~ M<sub>*</sub>. Candidate UV completions include string theory (where M<sub>*</sub> ~ M<sub>string</sub>), asymptotic safety, or other quantum gravity frameworks. The low-energy predictions are largely independent of these UV details."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Critical Distinction: Three Conceptually Different Processes",
-                content="Update (v14.1): The dimensional reduction from 26D to 4D proceeds through five distinct stages, with a crucial distinction between gauge fixing (Stages 1-2), G₂ holonomy (Stage 3), and compactification (Stages 4-5). The explicit 7D G₂ holonomy stage is critical for generating SO(10) gauge symmetry and 3 fermion families."
+                content="The dimensional reduction from 26D to 4D proceeds through five distinct stages, with a crucial distinction between gauge fixing (Stages 1-2), G₂ holonomy (Stage 3), and compactification (Stages 4-5). The explicit 7D G₂ holonomy stage is critical for generating SO(10) gauge symmetry and 3 fermion families."
             ),
             ContentBlock(
                 type="paragraph",
-                content="The fundamental scale M_* is related to the observed 4D Planck mass through the volume of the internal manifold:"
+                content="The fundamental scale M<sub>*</sub> is related to the observed 4D Planck mass through the volume of the internal manifold:"
             ),
             ContentBlock(
                 type="paragraph",
-                content="For V_9 ~ (1/M_GUT)^9 with M_GUT = 2.118×10^16 GeV (Grand Unification scale - geometrically derived from G₂ topology and gauge coupling unification), and M_Pl = 2.435×10^19 GeV (measured, PDG 2024), we obtain M_* ~ M_GUT. This natural emergence of the GUT scale provides a consistency check on the framework."
+                content="For V₉ ~ (1/M<sub>GUT</sub>)⁹ with M<sub>GUT</sub> = 2.118 × 10<sup>16</sup> GeV (Grand Unification scale -- geometrically derived from G₂ topology and gauge coupling unification), and M<sub>Pl</sub> = 2.435 × 10<sup>19</sup> GeV (measured, PDG 2024), we obtain M<sub>*</sub> ~ M<sub>GUT</sub>. This natural emergence of the GUT scale provides a consistency check on the framework."
             ),
         ])
 
@@ -677,12 +677,12 @@ class G2GeometryV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Generation Count: Geometrically Derived from Flux-Dressed Topology",
-                content="The three generations of Standard Model fermions emerge geometrically from the G₂ manifold's flux-dressed Euler characteristic χ_eff = 144, which accounts for both the intrinsic topology and flux stabilization of the compactification. This represents a complete geometric derivation of n_gen = 3 from the fundamental 26D structure, connecting the dimensionality of bosonic string theory to observed particle physics through G₂ topology."
+                content="The three generations of Standard Model fermions emerge geometrically from the G₂ manifold's flux-dressed Euler characteristic χ<sub>eff</sub> = 144, which accounts for both the intrinsic topology and flux stabilisation of the compactification. This represents a complete geometric derivation of n<sub>gen</sub> = 3 from the fundamental 26D structure, connecting the dimensionality of bosonic string theory to observed particle physics through G₂ topology."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Pneuma Chiral Filter Mechanism (v13.0)",
+                title="Pneuma Chiral Filter Mechanism",
                 content="The Pneuma field provides a dynamical chiral filter via axial torsion coupling in the modified Dirac operator: iΓ^M D_M → iΓ^M D_M + γ^5 T_μ, where T_μ ~ ∇_μ ⟨Ψ_P⟩ is the axial torsion arising from the Pneuma gradient. This coupling projects onto chiral modes and filters out 7/8 of fermion states via topological barrier. References: Kaplan (1992) domain wall fermions; Acharya-Witten (2001) chiral fermions from G₂; Joyce (2000) spinor structures on G₂ manifolds."
             ),
             ContentBlock(
@@ -897,14 +897,14 @@ class G2GeometryV16(SimulationBase):
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Unified Derivation Chain — No Circular Inputs (v15.0 Update)",
-                content="The KK mass scale is derived from flux quantization and moduli stabilization: N_flux = 24 (from χ_eff=144) → racetrack coefficients a,b → T_min = 7.086 → ε = exp(-π(b-a)T_min) ≈ 0.2257 → k_eff = b₃/(2+ε) ≈ 10.80 → M_KK = M_Pl × exp(-k_eff π) ≈ 4.5 TeV. Deep Connection: The parameter λ = T_min ≈ 1.4885 is the OUTPUT of racetrack moduli stabilization, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavor physics → IR phenomenology. Reference: simulations/kk_spectrum_derived_v14_2.py"
+                title="Unified Derivation Chain — No Circular Inputs",
+                content="The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> = 7.086 → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Geometric Torsion vs Effective Torsion",
-                content="CRITICAL CLARIFICATION: The TCS G₂ manifold is Ricci-flat with zero geometric torsion. The torsion parameter T_ω = -0.884 arises from G-flux backreaction, not geometric torsion. The G₂ holonomy is validated by 4 conditions: parallel spinor existence (N=1), Ricci flatness (R=0), 3-form closure, and b₃=24 matching TCS prediction. Reference: simulations/g2_metric_ricci_validator_v15_0.py"
+                content="CRITICAL CLARIFICATION: The TCS G₂ manifold is Ricci-flat with zero geometric torsion. The torsion parameter T<sub>ω</sub> = −0.884 arises from G-flux backreaction, not geometric torsion. The G₂ holonomy is validated by 4 conditions: parallel spinor existence (N = 1), Ricci flatness (R = 0), 3-form closure, and b₃ = 24 matching TCS prediction."
             ),
             ContentBlock(
                 type="callout",
@@ -1038,9 +1038,9 @@ class G2GeometryV16(SimulationBase):
                         ["4", "Dimensional Analysis M_Pl", "[M²] = [M^11][L^9] must be dimensionally correct", "PASS"],
                         ["5", "Brane Heterogeneity", "4 distinct brane types + Z₂ mirrors = 8 total in 6D bulk", "PASS"],
                         ["6", "Shared Dimensions", "2 extra dimensions shared across all 4 branes", "PASS"],
-                        ["7", "Chirality Mechanism (v13.0)", "Pneuma γ⁵T_μ coupling creates topological chiral filter (7/8 = 0.875)", "PASS"],
+                        ["7", "Chirality Mechanism", "Pneuma γ⁵T<sub>μ</sub> coupling creates topological chiral filter (7/8 = 0.875)", "PASS"],
                         ["8", "Gauge Group Emergence", "SO(10) from D₅-type ADE singularities on G₂", "PASS"],
-                        ["9", "Generation Count (v13.0)", "n_gen = N_flux / spinor_DOF = 24/8 = 3 (Pneuma γ⁵ chiral filter)", "PASS"]
+                        ["9", "Generation Count", "n<sub>gen</sub> = N<sub>flux</sub> / spinor<sub>DOF</sub> = 24/8 = 3 (Pneuma γ⁵ chiral filter)", "PASS"]
                     ]
                 }
             ),

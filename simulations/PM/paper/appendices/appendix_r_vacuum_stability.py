@@ -109,8 +109,8 @@ class AppendixRVacuumStabilityV19(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_r_vacuum_stability_v19",
-            version="19.0",
+            id="appendix_r_vacuum_stability_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix R: Vacuum Stability Analysis",
             description=(
@@ -408,7 +408,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                     type="paragraph",
                     content=(
                         "The issue arises from the <strong>running of the Higgs quartic coupling</strong> "
-                        "lambda. At tree level, the Higgs potential is:"
+                        "&lambda;. At tree level, the Higgs potential is:"
                     )
                 ),
                 ContentBlock(
@@ -420,16 +420,16 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "For vacuum stability, we need lambda > 0 at all energy scales up to the "
-                        "Planck mass. However, the top quark Yukawa coupling drives lambda negative "
+                        "For vacuum stability, we need &lambda; &gt; 0 at all energy scales up to the "
+                        "Planck mass. However, the top quark Yukawa coupling drives &lambda; negative "
                         "at high energies through quantum corrections."
                     )
                 ),
                 ContentBlock(
                     type="note",
                     content=(
-                        "<strong>The Problem:</strong> With current SM parameters, lambda becomes "
-                        "negative around 10^10 GeV, creating a deeper minimum in the potential. "
+                        "<strong>The Problem:</strong> With current SM parameters, &lambda; becomes "
+                        "negative around 10<sup>10</sup> GeV, creating a deeper minimum in the potential. "
                         "Our current electroweak vacuum could tunnel to this deeper minimum."
                     ),
                     label="metastability-problem"
@@ -459,9 +459,9 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The <strong>critical term</strong> is -6*y_t^4, where y_t ~ 1 is the "
+                        "The <strong>critical term</strong> is &#8722;6y<sub>t</sub><sup>4</sup>, where y<sub>t</sub> ~ 1 is the "
                         "top Yukawa coupling. This negative contribution dominates, driving "
-                        "lambda downward as the energy scale increases."
+                        "&#955; downward as the energy scale increases."
                     )
                 ),
                 ContentBlock(
@@ -480,7 +480,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Setting lambda(Lambda_I) = 0 defines the <strong>instability scale</strong>:"
+                        "Setting &#955;(&#923;<sub>I</sub>) = 0 defines the <strong>instability scale</strong>:"
                     )
                 ),
                 ContentBlock(
@@ -492,9 +492,9 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This is well below the Planck scale (10^18 GeV), indicating the SM "
-                        "vacuum is not absolutely stable. However, the vacuum is <em>metastable</em> - "
-                        "the tunneling rate is so small that decay won't occur within the age of the universe."
+                        "This is well below the Planck scale (10<sup>18</sup> GeV), indicating the SM "
+                        "vacuum is not absolutely stable. However, the vacuum is <em>metastable</em> -- "
+                        "the tunnelling rate is so small that decay will not occur within the age of the universe."
                     )
                 ),
 
@@ -530,8 +530,8 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where sigma is the domain wall tension (energy per unit area of the bubble wall) "
-                        "and epsilon is the energy difference between false and true vacua."
+                        "where &#963; is the domain wall tension (energy per unit area of the bubble wall) "
+                        "and &#949; is the energy difference between false and true vacua."
                     )
                 ),
                 ContentBlock(
@@ -579,8 +579,8 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where V_H is the Hubble volume. For the SM with B ~ 450, this gives "
-                        "tau ~ 10^70 years, far exceeding the universe's age (13.8 billion years). "
+                        "where V<sub>H</sub> is the Hubble volume. For the SM with B ~ 450, this gives "
+                        "&#964; ~ 10<sup>70</sup> years, far exceeding the universe's age (13.8 billion years). "
                         "The SM vacuum is metastable but <em>cosmologically safe</em>."
                     )
                 ),
@@ -619,17 +619,17 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This positive threshold correction at M_GC ~ 2.1 x 10^16 GeV "
-                        "counteracts the top Yukawa contribution, keeping lambda positive "
+                        "This positive threshold correction at M<sub>GC</sub> ~ 2.1 &#215; 10<sup>16</sup> GeV "
+                        "counteracts the top Yukawa contribution, keeping &#955; positive "
                         "all the way up to the Planck scale."
                     )
                 ),
                 ContentBlock(
                     type="list",
                     items=[
-                        "<strong>G2 portal coupling:</strong> The TCS G2 manifold (#187) with b_3 = 24 provides moduli that couple to SM fields",
-                        "<strong>Threshold correction:</strong> At M_GC, these moduli contribute +Delta_lambda ~ 0.001 to the quartic coupling",
-                        "<strong>High-scale stabilization:</strong> The corrected RG running keeps lambda > 0 for all mu < M_P",
+                        "<strong>G<sub>2</sub> portal coupling:</strong> The TCS G<sub>2</sub> manifold (#187) with b<sub>3</sub> = 24 provides moduli that couple to SM fields",
+                        "<strong>Threshold correction:</strong> At M<sub>GC</sub>, these moduli contribute +&Delta;&lambda; ~ 0.001 to the quartic coupling",
+                        "<strong>High-scale stabilization:</strong> The corrected RG running keeps &lambda; &gt; 0 for all &mu; &lt; M<sub>P</sub>",
                         "<strong>Racetrack potential:</strong> The moduli themselves are stabilized by the racetrack superpotential",
                     ]
                 ),
@@ -651,10 +651,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 ContentBlock(
                     type="list",
                     items=[
-                        "<strong>Instability scale:</strong> Lambda_I^PM > M_P (pushed beyond Planck)",
-                        "<strong>Bounce action:</strong> B_PM > 10^6 >> B_crit ~ 400",
-                        "<strong>Tunneling rate:</strong> Gamma/V ~ exp(-10^6) ~ 0 (effectively zero)",
-                        "<strong>Vacuum lifetime:</strong> tau_PM >> 10^100 years (absolutely stable)",
+                        "<strong>Instability scale:</strong> &Lambda;<sub>I</sub><sup>PM</sup> &gt; M<sub>P</sub> (pushed beyond Planck)",
+                        "<strong>Bounce action:</strong> B<sub>PM</sub> &gt; 10&#x2076; &gt;&gt; B<sub>crit</sub> ~ 400",
+                        "<strong>Tunneling rate:</strong> &Gamma;/V ~ exp(&minus;10&#x2076;) ~ 0 (effectively zero)",
+                        "<strong>Vacuum lifetime:</strong> &tau;<sub>PM</sub> &gt;&gt; 10&sup1;&#x2070;&#x2070; years (absolutely stable)",
                     ]
                 ),
                 ContentBlock(

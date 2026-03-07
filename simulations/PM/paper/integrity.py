@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Section 4: System Integrity and Verification
+PRINCIPIA METAPHYSICA v24.2 - Section 4: System Integrity and Verification
 =============================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+v24.2 STERILE MODEL: All 125 constants are geometric residues, not tuned.
 
 This simulation generates the content for Section 4 of the paper:
   4.1 The Hysteresis Seal: Topological Rigidity
@@ -38,7 +38,7 @@ from simulations.base import (
 
 class IntegrityV16_2(SimulationBase):
     """
-    Section 4: System Integrity and Verification (v23.1).
+    Section 4: System Integrity and Verification (v24.2).
 
     Provides the integrity and validation framework:
     - 4.1: The Hysteresis Seal (Topological Rigidity)
@@ -67,10 +67,10 @@ class IntegrityV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="integrity_v16_2",
-            version="23.1",
+            version="24.2",
             domain="integrity",
-            title="Particle Physics: Results and Validation",
-            description="Fermion masses, mixing matrices, Higgs mechanism, and system integrity validation (v23.1 dual-shadow framework, 27D/26,1)",
+            title="System Integrity and Verification",
+            description="Hysteresis seal, 42 certificates of integrity, and data provenance for the v24.2 Sterile Model (27D/26,1)",
             section_id="4",
             subsection_id=None
         )
@@ -106,7 +106,7 @@ class IntegrityV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Section 4.1 defines the primary defense mechanism of the v23.1 Sterile Model: "
+                    "Section 4.1 defines the primary defense mechanism of the v24.2 Sterile Model: "
                     "the <strong>Hysteresis Seal</strong>. This is the physical and mathematical "
                     "barrier that prevents the 125 residues from drifting or being subject to "
                     "'fine-tuning.' It explains why the model's parameters are not just 'fixed' "
@@ -123,7 +123,7 @@ class IntegrityV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "In materials science, hysteresis describes a system whose state depends on "
-                    "its history. In the v23.1 model, <strong>Topological Hysteresis</strong> "
+                    "its history. In the v24.2 model, <strong>Topological Hysteresis</strong> "
                     "refers to the 'memory' of the 27D(24,1,2) bulk retained by the 4D world-sheet. "
                     "During the 27D(24,1,2) → 13D(12,1) → 4D dimensional collapse, the manifold "
                     "underwent a symmetry-shattering event that 'set' the values of the residues."
@@ -151,7 +151,7 @@ class IntegrityV16_2(SimulationBase):
                 content=(
                     "The Hysteresis Seal is enforced by the dual-shadow bridge structure. As detailed "
                     "in Section 1.2, the OR reduction operator (R<sub>⊥</sub>) preserves the symmetry of the descent. In the "
-                    "v23.1 framework, the Euclidean S^{2,0} sampler data fields acts as a 'one-way valve':"
+                    "v24.2 framework, the Euclidean S<sup>(2,0)</sup> sampler data fields act as a 'one-way valve': "
                     "Information flows from 27D(24,1,2) potential to 4D residue. Once the 125-node "
                     "registry is populated, the bridge 'locks,' preventing any back-propagation "
                     "of data. This makes the model <strong>non-recursive</strong>: the observed "
@@ -193,7 +193,7 @@ class IntegrityV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "Section 4.2 details the Automated Validation Framework that governs the "
-                    "v23.1 Sterile Model. To prevent human bias and manual 'parameter tuning,' "
+                    "v24.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' "
                     "the model's credibility is secured by <strong>42 Certificates of Integrity</strong> "
                     "(C01–C42). These are automated, binary (Pass/Fail) tests that verify the "
                     "geometric, algebraic, and statistical consistency of the 125 residues before "
@@ -213,7 +213,7 @@ class IntegrityV16_2(SimulationBase):
                     "'<strong>Digital Thread</strong>' connecting the 27D(24,1,2) theory to the 4D output. "
                     "Each certificate represents a fundamental physical law or topological constraint "
                     "that the model must satisfy. If a single certificate fails, the Metric Lock "
-                    "(Section 4.1) is revoked, and the entire simulation is invalidated."
+                    "(Section 2.3) is revoked, and the entire simulation is invalidated."
                 )
             ),
             ContentBlock(
@@ -255,7 +255,7 @@ class IntegrityV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "Unlike standard physics papers where 'good enough' fits are accepted, the "
-                    "v23.1 Sterile Model utilizes <strong>Short-Circuit Logic</strong>: If any "
+                    "v24.2 Sterile Model utilizes <strong>Short-Circuit Logic</strong>: If any "
                     "single certificate (Cₙ) returns False, the entire output of the 125-residue "
                     "registry is discarded. There is no 'partial validity' in a geometric lock. "
                     "This absolute binary requirement is what distinguishes a Sterile Theory "
@@ -280,7 +280,7 @@ class IntegrityV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The final component of the v23.1 implementation is the transition from a "
+                    "The final component of the v24.2 implementation is the transition from a "
                     "private research project to an <strong>Open-Access Sterile Ledger</strong>. "
                     "To satisfy the requirements of 'Geometric Necessity,' the model must be "
                     "transparent, reproducible, and immune to retroactive 'revisionism.' Section "
@@ -296,7 +296,7 @@ class IntegrityV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The v23.1 model is hosted as a public 'Gold Master' repository. Unlike "
+                    "The v24.2 model is hosted as a public 'Gold Master' repository. Unlike "
                     "traditional software projects that encourage frequent 'pull requests' to "
                     "change core constants, this repository is <strong>Logically Read-Only</strong>. "
                     "The main branch is protected by the Metric Lock. Any contribution must pass "
@@ -311,7 +311,7 @@ class IntegrityV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "To prevent 'Model Drift' over time, the v23.1 Terminal State is archived "
+                    "To prevent 'Model Drift' over time, the v24.2 Terminal State is archived "
                     "via Zenodo with a unique Digital Object Identifier (DOI: 10.5281/zenodo.18079602). "
                     "This archive contains the exact state of the registry.json and the V₇ "
                     "Laplacian solver. The paper cites the SHA-256 hash of this specific archive, "
@@ -341,9 +341,9 @@ class IntegrityV16_2(SimulationBase):
                     "<h4>The Dead Man's Switch</h4>"
                     "<p>A critical feature of the Omega Seal is its behavior toward future "
                     "observational data. If a 2027 dataset significantly shifts the H₀ mean, "
-                    "the v23.1 model will <strong>not</strong> be 'updated.' The model will either "
+                    "the v24.2 model will <strong>not</strong> be 'updated.' The model will either "
                     "maintain its 0.48σ alignment or it will fail. If it fails, the theory is "
-                    "discarded. There is no 'v16.3' because the Metric Lock prohibits the "
+                    "discarded. There is no 'v24.3' because the Metric Lock prohibits the "
                     "re-shattering of the 27D(24,1,2) bulk. The Omega Seal marks the end of the model's "
                     "evolution.</p>"
                 ),

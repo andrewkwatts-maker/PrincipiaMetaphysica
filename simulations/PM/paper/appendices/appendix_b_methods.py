@@ -62,8 +62,8 @@ class AppendixBComputationalMethods(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_b_methods_v16_0",
-            version="16.0",
+            id="appendix_b_methods_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix B: Computational Methods",
             description=(
@@ -167,7 +167,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The generation count n_gen = 3 follows from the F-theory index theorem "
+                        "The generation count n<sub>gen</sub> = 3 follows from the F-theory index theorem "
                         "modified by the Z₂ factor from the Euclidean bridge reduction."
                     )
                 ),
@@ -191,7 +191,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Fibered time identification**: Ψ_L(t_unified) ~ Ψ_R(t_fiber) identifies "
+                        "**Fibered time identification**: &#936;<sub>L</sub>(t<sub>unified</sub>) ~ &#936;<sub>R</sub>(t<sub>fiber</sub>) identifies "
                         "spinors across fibered structure."
                     )
                 ),
@@ -203,7 +203,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Brane doubling**: Each observable brane Sigma_i has a shadow mirror Sigma_i tilde."
+                        "**Brane doubling**: Each observable brane &#931;<sub>i</sub> has a shadow mirror &#931;&#771;<sub>i</sub>."
                     )
                 ),
                 ContentBlock(
@@ -214,7 +214,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Parity action**: Z_2: (t_unified, x_fiber) -> (t_unified, -x_fiber) "
+                        "**Parity action**: Z₂: (t<sub>unified</sub>, x<sub>fiber</sub>) &#8594; (t<sub>unified</sub>, &#8722;x<sub>fiber</sub>) "
                         "(reflection in fibered dimension)."
                     )
                 ),
@@ -269,7 +269,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     type="paragraph",
                     content=(
                         "**Step 1: Start with effective Euler characteristic**\n"
-                        "The TCS G₂ manifold construction gives χ_eff = 144."
+                        "The TCS G₂ manifold construction gives &#967;<sub>eff</sub> = 144."
                     )
                 ),
                 ContentBlock(
@@ -290,14 +290,14 @@ class AppendixBComputationalMethods(SimulationBase):
                     type="paragraph",
                     content=(
                         "**Step 4: Calculate total divisor**\n"
-                        "The Z₂ parity doubles the F-theory divisor: PM_divisor = 24 × 2 = 48."
+                        "The Z₂ parity doubles the F-theory divisor: PM<sub>divisor</sub> = 24 &#215; 2 = 48."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "**Step 5: Compute generation number**\n"
-                        "n_gen = |χ_eff| / PM_divisor = 144 / 48 = 3\n\n"
+                        "n<sub>gen</sub> = |&#967;<sub>eff</sub>| / PM<sub>divisor</sub> = 144 / 48 = 3\n\n"
                         "Result: Exactly 3 generations (perfect agreement with Standard Model)."
                     )
                 ),
@@ -308,11 +308,11 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "- The Z₂ factor from Euclidean bridge is essential - without it, we would get n_gen = 6\n\n"
+                        "- The Z₂ factor from the Euclidean bridge is essential - without it, we would get n<sub>gen</sub> = 6\n\n"
                         "- The Z₂ symmetry simultaneously solves two problems: correct generation count and "
                         "hidden variable structure for quantum foundations\n\n"
-                        "- The factor of 48 = 24 x 2 combines F-theory index theorem (24) with unified time fibered structure (2)\n\n"
-                        "- This derivation is parameter-free: all inputs (χ<sub>eff</sub>=144, F_divisor=24, Z_2=2) are "
+                        "- The factor of 48 = 24 &#215; 2 combines the F-theory index theorem (24) with unified time fibered structure (2)\n\n"
+                        "- This derivation is parameter-free: all inputs (&#967;<sub>eff</sub> = 144, F<sub>divisor</sub> = 24, Z₂ = 2) are "
                         "geometrically determined"
                     )
                 ),
@@ -418,8 +418,8 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where m_n = n/R is the mass of the n-th KK mode and R is the "
-                        "compactification radius. We typically sum up to N_max = 100 modes, "
+                        "where m<sub>n</sub> = n/R is the mass of the n-th KK mode and R is the "
+                        "compactification radius. We typically sum up to N<sub>max</sub> = 100 modes, "
                         "which provides convergence to better than 0.1%."
                     )
                 ),
@@ -462,7 +462,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Yukawa couplings y_f for fermions run according to:"
+                        "Yukawa couplings y<sub>f</sub> for fermions run according to:"
                     )
                 ),
                 ContentBlock(
@@ -477,7 +477,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where C_i are Yukawa self-coupling coefficients and C_a are "
+                        "where C<sub>i</sub> are Yukawa self-coupling coefficients and C<sub>a</sub> are "
                         "gauge coupling coefficients. We include top quark, bottom quark, "
                         "and tau lepton Yukawa couplings in the running."
                     )
@@ -516,7 +516,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "To find the GUT unification scale M_GUT where couplings meet, "
+                        "To find the GUT unification scale M<sub>GUT</sub> where couplings meet, "
                         "we solve the system:"
                     )
                 ),
@@ -529,8 +529,8 @@ class AppendixBComputationalMethods(SimulationBase):
                     type="paragraph",
                     content=(
                         "We use scipy's fsolve with the Levenberg-Marquardt algorithm. "
-                        "Initial guess is M_GUT ≈ 2×10¹⁶ GeV from one-loop running. "
-                        "Convergence criterion is |f_i| < 10⁻⁸ for all i."
+                        "Initial guess is M<sub>GUT</sub> &#8776; 2 &#215; 10<sup>16</sup> GeV from one-loop running. "
+                        "Convergence criterion is |f<sub>i</sub>| &lt; 10<sup>&#8722;8</sup> for all i."
                     )
                 ),
                 ContentBlock(
@@ -550,7 +550,7 @@ class AppendixBComputationalMethods(SimulationBase):
                         "and verify results change by less than 0.1%.\n\n"
                         "2. **Loop order comparison**: Compare 1-loop, 2-loop, and 3-loop "
                         "results to estimate truncation uncertainty.\n\n"
-                        "3. **Threshold variation**: Vary N_max for KK sums from 50 to 200 "
+                        "3. **Threshold variation**: Vary N<sub>max</sub> for KK sums from 50 to 200 "
                         "to ensure convergence.\n\n"
                         "4. **Independent implementation**: Cross-check critical calculations "
                         "with independent Python implementations."

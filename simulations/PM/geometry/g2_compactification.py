@@ -223,8 +223,8 @@ class G2CompactificationV21(SimulationBase):
             subsection_id="2.2",
             title="G2 Holonomy Manifolds",
             abstract=(
-                "Each shadow compacts 7 internal dimensions on a Riemannian G2 "
-                "manifold with special holonomy. The b3=24 associative 3-cycles "
+                "Each shadow compacts 7 internal dimensions on a Riemannian G₂ "
+                "manifold with special holonomy. The b₃ = 24 associative 3-cycles "
                 "split between shadows, deriving 3 generations per shadow from "
                 "residue triality."
             ),
@@ -232,9 +232,9 @@ class G2CompactificationV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "G2 holonomy manifolds preserve exactly one spinor under "
-                        "parallel transport, enabling N=1 supersymmetry in 4D. "
-                        "The associative 3-form phi defines the calibration:"
+                        "G₂ holonomy manifolds preserve exactly one spinor under "
+                        "parallel transport, enabling N = 1 supersymmetry in 4D. "
+                        "The associative 3-form φ defines the calibration:"
                     )
                 ),
                 ContentBlock(
@@ -260,7 +260,7 @@ class G2CompactificationV21(SimulationBase):
                     type="paragraph",
                     content=(
                         "The generation number derives from residue triality. "
-                        "With chi_eff=144 and b3=12 per shadow:"
+                        "With χ<sub>eff</sub> = 144 and b₃ = 12 per shadow:"
                     )
                 ),
                 ContentBlock(

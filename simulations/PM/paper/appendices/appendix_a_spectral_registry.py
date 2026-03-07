@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix A: The Spectral Registry
+PRINCIPIA METAPHYSICA v24.2 - Appendix A: The Spectral Registry
 ================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: The 125 residues as spectral eigenvalues of the V_7 manifold.
+v24.2 STERILE MODEL: The 125 residues as spectral eigenvalues of the V_7 manifold.
 
 This appendix provides the terminal values for the 125 physical residues
 extracted from the V_7 manifold. Each residue is mapped to its Brane-Node ID,
@@ -73,7 +73,7 @@ class AppendixASpectralRegistry(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_a_spectral_registry_v23_1",
-            version="23.1",
+            version="24.2",
             domain="appendices",
             title="Appendix A: The 125-Residue Spectral Registry (The Master Table)",
             description="The 125 residues as spectral eigenvalues of the V_7 manifold",
@@ -249,7 +249,7 @@ class AppendixASpectralRegistry(SimulationBase):
             section_id="A",
             subsection_id=None,
             title="Appendix A: The 125-Residue Spectral Registry (The Master Table)",
-            abstract="The 125 residues as spectral eigenvalues of the V7 manifold.",
+            abstract="The 125 residues as spectral eigenvalues of the V₇ manifold.",
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
             param_refs=self.PARAM_REFS,

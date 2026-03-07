@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix J: The Torsion Funnel Visualization
+PRINCIPIA METAPHYSICA v24.2 - Appendix J: The Torsion Funnel Visualization
 ===========================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: Visualization of the 288→24→125 geometric flow.
+v24.2 STERILE MODEL: Visualization of the 288→24→125 geometric flow.
 
 This appendix provides a visualization showing how the 288 Ancestral Roots
 are filtered through the 24 Torsion Pins to produce the 125 Active Residues.
@@ -213,7 +213,7 @@ class AppendixJTorsionFunnel(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_j_torsion_funnel_v16_2",
-            version="23.1",
+            version="24.2",
             domain="appendices",
             title="Appendix J: The Torsion Funnel (288-24-125 Flow Visualization)",
             description="Visualization of the geometric flow from 288 roots to 125 residues",

@@ -532,6 +532,86 @@ def strip_auth_from_js():
             print(f"    [WARNING] Could not process simulation-stats.js: {e}")
 
 
+def convert_modules_for_offline():
+    """
+    Convert ES module scripts to classic scripts for file:// protocol compatibility.
+
+    Browsers block ES module imports on file:// URLs due to CORS restrictions.
+    This converts the module-based header injection pattern to classic scripts
+    so the packaged version works when opened directly from the filesystem.
+    """
+    import re
+    print("\n  Converting ES modules for offline/file:// compatibility...")
+
+    # Step 1: Strip 'export' keywords from pm-header.js so it works as a classic script
+    header_js = BUILD_DIR / "js" / "pm-header.js"
+    if header_js.exists():
+        try:
+            with open(header_js, 'r', encoding='utf-8') as f:
+                content = f.read()
+            # Remove 'export ' prefix from function declarations and variable exports
+            content = content.replace('export function injectHeader', 'function injectHeader')
+            content = content.replace('export function updateHeaderUserDisplay', 'function updateHeaderUserDisplay')
+            content = content.replace('export function removeHeader', 'function removeHeader')
+            content = re.sub(r'^export \{ .* \};?\s*$', '', content, flags=re.MULTILINE)
+            with open(header_js, 'w', encoding='utf-8') as f:
+                f.write(content)
+            print(f"    [CONVERTED] js/pm-header.js (removed export keywords)")
+        except Exception as e:
+            print(f"    [WARNING] Could not convert pm-header.js: {e}")
+
+    # Step 2: Convert HTML files - replace module scripts with classic scripts
+    converted_count = 0
+    for root, dirs, files in os.walk(BUILD_DIR):
+        dirs[:] = [d for d in dirs if not should_exclude_dir(d)]
+        for filename in files:
+            if not filename.endswith('.html'):
+                continue
+            filepath = Path(root) / filename
+            try:
+                with open(filepath, 'r', encoding='utf-8') as f:
+                    content = f.read()
+                original = content
+
+                # Determine the relative path to js/ from this file's location
+                rel_path = filepath.relative_to(BUILD_DIR)
+                if 'Pages' in rel_path.parts or 'pages' in rel_path.parts:
+                    js_prefix = '../js/'
+                else:
+                    js_prefix = 'js/'
+
+                # Remove import statements for injectHeader (various path patterns)
+                content = re.sub(
+                    r"\s*import \{ injectHeader \} from '[^']+pm-header\.js';\s*\n?",
+                    '\n', content
+                )
+
+                # Remove any remaining empty import lines left after auth stripping
+                content = re.sub(
+                    r"\s*import \{ \} from '[^']+';\s*\n?",
+                    '\n', content
+                )
+
+                # Convert <script type="module"> to <script> and add pm-header.js src tag
+                if '<script type="module">' in content and 'injectHeader' in content:
+                    # Add <script src="pm-header.js"> before the module script
+                    content = content.replace(
+                        '<script type="module">',
+                        f'<script src="{js_prefix}pm-header.js"></script>\n  <script>'
+                    )
+
+                if content != original:
+                    with open(filepath, 'w', encoding='utf-8') as f:
+                        f.write(content)
+                    converted_count += 1
+                    rel = filepath.relative_to(BUILD_DIR)
+                    print(f"    [CONVERTED] {rel}")
+            except Exception as e:
+                print(f"    [WARNING] Could not convert {filepath.name}: {e}")
+
+    print(f"    Converted {converted_count} HTML files for offline module compatibility")
+
+
 def copy_root_files():
     """Copy important root-level files."""
     print("\n  Copying root files...")
@@ -1189,6 +1269,10 @@ Examples:
     # Step 5: Strip authentication from JS files
     print("\n[5/9] Stripping authentication from JS files...")
     strip_auth_from_js()
+
+    # Step 5b: Convert ES modules for file:// compatibility
+    print("\n[5b/9] Converting ES modules for offline use...")
+    convert_modules_for_offline()
 
     # Step 6: Create offline config
     print("\n[6/9] Creating offline configuration...")

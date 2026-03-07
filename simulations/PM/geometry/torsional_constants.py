@@ -377,8 +377,8 @@ class TorsionalConstantsV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where N_c is the Planck velocity normalization. This yields "
-                        "c = 299792458 m/s exactly (within numerical precision)."
+                        "where N<sub>c</sub> is the Planck velocity normalisation. This yields "
+                        "c = 299,792,458 m/s exactly (within numerical precision)."
                     )
                 ),
                 ContentBlock(
@@ -402,9 +402,9 @@ class TorsionalConstantsV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The anomaly correction factor (1 - 1/b3^2) = 575/576 arises from "
-                        "one-loop graviton self-energy in the G2 compactification. This "
-                        "represents vacuum polarization screening of gravity."
+                        "The anomaly correction factor (1 − 1/b₃²) = 575/576 arises from "
+                        "one-loop graviton self-energy in the G₂ compactification. This "
+                        "represents vacuum polarisation screening of gravity."
                     )
                 ),
                 ContentBlock(
@@ -416,7 +416,7 @@ class TorsionalConstantsV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "With this correction, we obtain G = 6.67430e-11 m^3 kg^-1 s^-2, "
+                        "With this correction, we obtain G = 6.67430 × 10<sup>−11</sup> m³ kg<sup>−1</sup> s<sup>−2</sup>, "
                         "matching CODATA 2018 within measurement uncertainty."
                     )
                 ),

@@ -721,15 +721,16 @@ class ALPPortalsV23(SimulationBase):
             title="ALP Portal Physics from Face 3 Moduli",
             abstract=(
                 "Axion-Like Particles emerge from moduli misalignment on Face 3 "
-                "of the G2 four-face structure, distinct from the QCD axion on "
-                "Face 1. The ALP decay constant f_a^{ALP} = M_Pl / (chi_eff * T_3) "
-                "* sqrt(f_np * f_np * f_add), where T_3 is the Face 3 racetrack "
-                "VEV and f_np the non-perturbative suppression, yields "
-                "f_a ~ 10^{10} GeV. This predicts m_ALP ~ meV (from Lambda_QCD^2/"
-                "f_a), an ALP-photon coupling g_{a gamma gamma} ~ 10^{-11} "
-                "GeV^{-1} (below stellar bounds), and a fifth force range "
-                "lambda ~ 0.01-0.1 mm testable by sub-millimeter gravity "
-                "experiments."
+                "of the G₂ four-face structure, distinct from the QCD axion on "
+                "Face 1. The ALP decay constant f<sub>a</sub><sup>ALP</sup> = "
+                "M<sub>Pl</sub> / (χ<sub>eff</sub> · T₃) "
+                "× √(f<sub>np</sub> · f<sub>np</sub> · f<sub>add</sub>), where T₃ is the Face 3 racetrack "
+                "VEV and f<sub>np</sub> the non-perturbative suppression, yields "
+                "f<sub>a</sub> ~ 10<sup>10</sup> GeV. This predicts m<sub>ALP</sub> ~ meV "
+                "(from Λ<sub>QCD</sub>²/f<sub>a</sub>), an ALP-photon coupling "
+                "g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below stellar bounds), "
+                "and a fifth force range λ ~ 0.01–0.1 mm testable by sub-millimetre "
+                "gravity experiments."
             ),
             content_blocks=[
                 ContentBlock(
@@ -740,18 +741,18 @@ class ALPPortalsV23(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The PM G2 manifold is modelled as a Twisted Connected Sum (TCS) "
+                        "The PM G₂ manifold is modelled as a Twisted Connected Sum (TCS) "
                         "with four topological faces, each hosting distinct pseudo-scalar "
                         "zero-modes from three-form flux compactification. The faces differ "
                         "in their racetrack superpotential parameters, setting face-dependent "
-                        "moduli VEVs T_i and consequently face-dependent axion decay constants. "
-                        "Face 1 hosts the QCD axion (Section 7.1) with f_a^{QCD} ~ 3.5e12 GeV, "
-                        "near the string unification scale. Face 3 hosts a qualitatively "
-                        "different pseudo-scalar: an Axion-Like Particle (ALP) with a "
-                        "significantly lower decay constant f_a^{ALP} ~ 10^{10} GeV, arising "
-                        "from the double-exponential racetrack suppression "
-                        "T_3 = b3 * k_gimel / (3*pi) ~ 31.2 on the hidden face. "
-                        "The factor-of-200 suppression in f_a shifts the ALP mass from "
+                        "moduli VEVs T<sub>i</sub> and consequently face-dependent axion decay constants. "
+                        "Face 1 hosts the QCD axion (Section 7.1) with f<sub>a</sub><sup>QCD</sup> ~ "
+                        "3.5 × 10<sup>12</sup> GeV, near the string unification scale. Face 3 hosts "
+                        "a qualitatively different pseudo-scalar: an Axion-Like Particle (ALP) with a "
+                        "significantly lower decay constant f<sub>a</sub><sup>ALP</sup> ~ 10<sup>10</sup> GeV, "
+                        "arising from the double-exponential racetrack suppression "
+                        "T₃ = b₃ · k<sub>ℷ</sub> / (3π) ~ 31.2 on the hidden face. "
+                        "The factor-of-200 suppression in f<sub>a</sub> shifts the ALP mass from "
                         "micro-eV (QCD axion) to the meV scale."
                     )
                 ),
@@ -764,11 +765,11 @@ class ALPPortalsV23(SimulationBase):
                     type="paragraph",
                     content=(
                         "The ALP mass is set by the non-perturbative potential generated "
-                        "when the Face 3 modulus T_3 is stabilized. The misalignment "
-                        "mechanism gives m_ALP ~ Lambda_QCD^2 / f_a^{ALP}, where the "
-                        "QCD scale Lambda_QCD ~ 0.2 GeV enters because the ALP inherits "
+                        "when the Face 3 modulus T₃ is stabilized. The misalignment "
+                        "mechanism gives m<sub>ALP</sub> ~ Λ<sub>QCD</sub>² / f<sub>a</sub><sup>ALP</sup>, "
+                        "where the QCD scale Λ<sub>QCD</sub> ~ 0.2 GeV enters because the ALP inherits "
                         "a small QCD anomaly coefficient through the inter-face leakage "
-                        "channel alpha_leak = 1/sqrt(6). With f_a ~ 10^{10} GeV, "
+                        "channel α<sub>leak</sub> = 1/√6. With f<sub>a</sub> ~ 10<sup>10</sup> GeV, "
                         "the ALP mass is at the meV scale, in the reach of upcoming "
                         "laboratory and astrophysical experiments:"
                     )
@@ -785,15 +786,15 @@ class ALPPortalsV23(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The ALP-photon coupling g_{a gamma gamma} is generated by "
-                        "the inter-face topological leakage. The G2 portal mechanism "
+                        "The ALP-photon coupling g<sub>aγγ</sub> is generated by "
+                        "the inter-face topological leakage. The G₂ portal mechanism "
                         "transfers axion flux between faces through the "
-                        "chi_eff-weighted channel, with amplitude set by alpha_leak = 1/sqrt(6). "
-                        "The topological enhancement factor chi_eff = 72 (the per-sector "
+                        "χ<sub>eff</sub>-weighted channel, with amplitude set by α<sub>leak</sub> = 1/√6. "
+                        "The topological enhancement factor χ<sub>eff</sub> = 72 (the per-sector "
                         "Euler characteristic) increases the effective coupling relative "
-                        "to a simple f_a^{-1} suppression. The resulting ALP-photon "
-                        "coupling g_{a gamma gamma} ~ 10^{-11} GeV^{-1} falls below "
-                        "current stellar-cooling bounds (HB stars: < 6.6e-11 GeV^{-1}) "
+                        "to a simple f<sub>a</sub><sup>−1</sup> suppression. The resulting ALP-photon "
+                        "coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> falls below "
+                        "current stellar-cooling bounds (HB stars: &lt; 6.6 × 10<sup>−11</sup> GeV<sup>−1</sup>) "
                         "and within reach of IAXO and ALPS-II:"
                     )
                 ),
@@ -815,11 +816,11 @@ class ALPPortalsV23(SimulationBase):
                     content=(
                         "ALP exchange between macroscopic matter generates a Yukawa-type "
                         "correction to Newtonian gravity at the Compton wavelength "
-                        "lambda_ALP = hbar c / (m_ALP c^2). For m_ALP ~ meV, this gives "
-                        "lambda ~ 0.01-0.1 mm -- precisely the sub-millimeter range being "
+                        "λ<sub>ALP</sub> = ℏc / (m<sub>ALP</sub> c²). For m<sub>ALP</sub> ~ meV, this gives "
+                        "λ ~ 0.01–0.1 mm — precisely the sub-millimetre range being "
                         "probed by modern torsion-balance and Casimir experiments. "
-                        "The coupling strength alpha_5 = g_{ann}^2 M_Pl^2 / (4*pi) "
-                        "is set by the nucleon coupling g_{ann} ~ 10^{-12}. "
+                        "The coupling strength α₅ = g<sub>aNN</sub>² M<sub>Pl</sub>² / (4π) "
+                        "is set by the nucleon coupling g<sub>aNN</sub> ~ 10<sup>−12</sup>. "
                         "This Yukawa signature is independent of the ALP-photon coupling "
                         "and provides a complementary laboratory test channel:"
                     )
@@ -834,10 +835,10 @@ class ALPPortalsV23(SimulationBase):
                     title="ALP Portal Predictions",
                     content=(
                         "From Face 3 moduli misalignment, PM predicts:\n"
-                        "- ALP mass: m_ALP ~ meV (Compton wavelength lambda ~ 0.1 mm)\n"
-                        "- ALP-photon coupling: g_{a gamma gamma} ~ 10^{-11} GeV^{-1} (below HB-star bound)\n"
-                        "- ALP-nucleon coupling: g_{ann} ~ 10^{-12}\n"
-                        "- Fifth-force range: lambda ~ 0.01-0.1 mm at alpha_5 ~ 10^{-3}\n"
+                        "- ALP mass: m<sub>ALP</sub> ~ meV (Compton wavelength λ ~ 0.1 mm)\n"
+                        "- ALP-photon coupling: g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below HB-star bound)\n"
+                        "- ALP-nucleon coupling: g<sub>aNN</sub> ~ 10<sup>−12</sup>\n"
+                        "- Fifth-force range: λ ~ 0.01–0.1 mm at α₅ ~ 10<sup>−3</sup>\n"
                         "These predictions are testable by: ALPS-II (photon coupling), "
                         "IAXO/BabyIAXO (helioscope), Eot-Wash and Stanford short-range "
                         "gravity experiments (fifth force), and ALP dark matter searches."

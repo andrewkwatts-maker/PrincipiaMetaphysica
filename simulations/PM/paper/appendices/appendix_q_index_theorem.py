@@ -95,8 +95,8 @@ class AppendixQIndexTheorem(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_q_index_theorem_v19",
-            version="19.0",
+            id="appendix_q_index_theorem_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix Q: Index Theorem Applications",
             description=(
@@ -386,7 +386,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where p_i are the Pontryagin classes of M. For G2 manifolds (7-dimensional), "
+                        "where p<sub>i</sub> are the Pontryagin classes of M. For G2 manifolds (7-dimensional), "
                         "the A-roof genus simplifies significantly because many terms vanish by "
                         "dimension counting."
                     )
@@ -416,8 +416,8 @@ class AppendixQIndexTheorem(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where c_i are the Chern classes. For G2 compactification with 3-form flux, "
-                        "the Chern character couples to the associative 3-form phi, selecting which "
+                        "where c<sub>i</sub> are the Chern classes. For G2 compactification with 3-form flux, "
+                        "the Chern character couples to the associative 3-form &#966;, selecting which "
                         "cycles support fermion zero modes."
                     )
                 ),
@@ -536,7 +536,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where phi is the G2 3-form and chi_eff is the effective Euler characteristic. "
+                        "where &#966; is the G2 3-form and &#967;<sub>eff</sub> is the effective Euler characteristic. "
                         "The factor 1/48 comes from the spinor structure of the G2 manifold (8 spinor "
                         "degrees of freedom times 6 from flux quantization)."
                     )
@@ -583,7 +583,7 @@ class AppendixQIndexTheorem(SimulationBase):
                     type="paragraph",
                     content=(
                         "For the TCS G2 manifold #187 used in Principia Metaphysica, we have "
-                        "chi_eff = 144. Applying the generation counting formula:"
+                        "&#967;<sub>eff</sub> = 144. Applying the generation counting formula:"
                     )
                 ),
                 ContentBlock(
@@ -595,8 +595,8 @@ class AppendixQIndexTheorem(SimulationBase):
                 ContentBlock(
                     type="note",
                     content=(
-                        "<strong>This is exact.</strong> The number 3 emerges from pure topology - "
-                        "the effective Euler characteristic chi_eff = 144 divided by the topological "
+                        "<strong>This is exact.</strong> The number 3 emerges from pure topology -- "
+                        "the effective Euler characteristic &#967;<sub>eff</sub> = 144 divided by the topological "
                         "factor 48. No fine-tuning, no free parameters. The observed 3 generations "
                         "of quarks and leptons are a geometric necessity."
                     ),
@@ -614,7 +614,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "We can verify consistency using the relation between chi_eff and b_3:"
+                        "We can verify consistency using the relation between &#967;<sub>eff</sub> and b₃:"
                     )
                 ),
                 ContentBlock(

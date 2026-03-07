@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Octonionic Mixing v23.1 - Unified CKM/PMNS from G2 Triality
+Octonionic Mixing v24.2 - Unified CKM/PMNS from G2 Triality
 ============================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -12,7 +12,7 @@ PMNS uses chi_eff_total = 144 (both shadows combined) because neutrino oscillati
 Derives BOTH CKM and PMNS matrices from the SAME octonionic structure,
 explaining WHY quark mixing is small and lepton mixing is large.
 
-v23.1 GEOMETRIC FIXES
+v24.2 GEOMETRIC FIXES
 ---------------------
 - V_cb G2 Torsional Twist: (1 + 2*k_gimel/b3²) = 1.0428
   Resolves 1.29σ → 0.09σ deviation for 2nd-generation coupling
@@ -529,7 +529,7 @@ class OctonionicMixing(SimulationBase):
                 type="paragraph",
                 content=(
                     "The CKM and PMNS mixing matrices are traditionally treated as independent "
-                    "phenomenological inputs in the Standard Model. In the G2 compactification "
+                    "phenomenological inputs in the Standard Model. In the G₂ compactification "
                     "framework, both matrices emerge from the SAME octonionic structure, with "
                     "the difference arising purely from dimensional projections."
                 )
@@ -542,7 +542,7 @@ class OctonionicMixing(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The automorphism group of the octonions is G2 ~ Aut(O). This 14-dimensional "
+                    "The automorphism group of the octonions is G₂ ≅ Aut(𝕆). This 14-dimensional "
                     "exceptional Lie group preserves the octonionic multiplication table. The "
                     "fundamental mixing angle is the golden angle:"
                 )
@@ -556,7 +556,7 @@ class OctonionicMixing(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "where phi = (1 + sqrt(5))/2 ~ 1.618 is the golden ratio. This angle appears "
+                    "where φ = (1 + √5)/2 ≈ 1.618 is the golden ratio. This angle appears "
                     "in the octonionic multiplication structure and sets the fundamental scale "
                     "for all flavor mixing."
                 )
@@ -570,7 +570,7 @@ class OctonionicMixing(SimulationBase):
                 type="paragraph",
                 content=(
                     "Quark wavefunctions localize on associative 3-cycles calibrated by the "
-                    "3-form Phi. The 3-dimensional structure is geometrically RIGID - there "
+                    "3-form Φ. The 3-dimensional structure is geometrically RIGID -- there "
                     "are only 3 orthogonal directions, constraining how much states can mix."
                 )
             ),

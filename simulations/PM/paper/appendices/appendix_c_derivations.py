@@ -59,8 +59,8 @@ class AppendixCExtendedDerivations(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_c_derivations_v16_0",
-            version="16.0",
+            id="appendix_c_derivations_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix C: Extended Derivations",
             description=(
@@ -192,7 +192,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                         "SU(3) symmetry enforces equal treatment of the three (3,1) shadow branes. "
                         "The maximal compact subgroup SU(3) requires symmetric coupling parameters for all "
                         "three shadow branes, forcing the Kuf and Chet shadow parameters to be equal: "
-                        "α_kuf = α_chet."
+                        "&alpha;<sub>kuf</sub> = &alpha;<sub>chet</sub>."
                     )
                 ),
                 ContentBlock(
@@ -278,38 +278,38 @@ class AppendixCExtendedDerivations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "We derive the GUT unification scale M_GUT including KK tower "
+                        "We derive the GUT unification scale M<sub>GUT</sub> including KK tower "
                         "threshold corrections."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 1**: Start with SM gauge couplings at M_Z:\n"
-                        "- α₁⁻¹(M_Z) = 59.0 (U(1)_Y with GUT normalization)\n"
-                        "- α₂⁻¹(M_Z) = 29.6 (SU(2)_L)\n"
-                        "- α₃⁻¹(M_Z) = 8.5 (SU(3)_C)"
+                        "**Step 1**: Start with SM gauge couplings at M<sub>Z</sub>:\n"
+                        "- &alpha;&#x2081;&sup1;(M<sub>Z</sub>) = 59.0 (U(1)<sub>Y</sub> with GUT normalization)\n"
+                        "- &alpha;&#x2082;&sup1;(M<sub>Z</sub>) = 29.6 (SU(2)<sub>L</sub>)\n"
+                        "- &alpha;&#x2083;&sup1;(M<sub>Z</sub>) = 8.5 (SU(3)<sub>C</sub>)"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "**Step 2**: Run couplings to high energy using 3-loop RG equations:\n"
-                        "α_i⁻¹(μ) = α_i⁻¹(M_Z) + (b_i^(1)/(2π)) ln(μ/M_Z) + [2-loop] + [3-loop]"
+                        "&alpha;<sub>i</sub>&sup1;(&mu;) = &alpha;<sub>i</sub>&sup1;(M<sub>Z</sub>) + (b<sub>i</sub><sup>(1)</sup>/(2&pi;)) ln(&mu;/M<sub>Z</sub>) + [2-loop] + [3-loop]"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 3**: Apply KK threshold corrections at scale M_KK ~ 10¹⁴ GeV:\n"
-                        "Δ_i^KK = (1/2π) Σ_n log(1 + (n/R)²/μ²)"
+                        "**Step 3**: Apply KK threshold corrections at scale M<sub>KK</sub> ~ 10<sup>14</sup> GeV:\n"
+                        "&Delta;<sub>i</sub><sup>KK</sup> = (1/2&pi;) &Sigma;<sub>n</sub> log(1 + (n/R)&sup2;/&mu;&sup2;)"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 4**: Solve for M_GUT where α₁(M) = α₂(M) = α₃(M):\n"
-                        "This gives M_GUT ≈ 6.3×10¹⁵ GeV (3-loop) or 2.1×10¹⁶ GeV "
+                        "**Step 4**: Solve for M<sub>GUT</sub> where &#945;₁(M) = &#945;₂(M) = &#945;₃(M):\n"
+                        "This gives M<sub>GUT</sub> &#8776; 6.3 &#215; 10<sup>15</sup> GeV (3-loop) or 2.1 &#215; 10<sup>16</sup> GeV "
                         "(with geometric corrections)."
                     )
                 ),
@@ -336,32 +336,32 @@ class AppendixCExtendedDerivations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 1**: Matter fields ψ_i localize on associative 3-cycles A_i "
-                        "with wavefunctions ~ exp(-|x-x_i|²/λ²) where λ is the localization scale."
+                        "**Step 1**: Matter fields &#968;<sub>i</sub> localize on associative 3-cycles A<sub>i</sub> "
+                        "with wavefunctions ~ exp(&#8722;|x &#8722; x<sub>i</sub>|&#178;/&#955;&#178;) where &#955; is the localization scale."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "**Step 2**: Higgs field H localizes on a different cycle with "
-                        "wavefunction ~ exp(-|x-x_H|²/λ²)."
+                        "wavefunction ~ exp(&minus;|x &minus; x<sub>H</sub>|&sup2;/&lambda;&sup2;)."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 3**: Yukawa coupling y_i ~ ∫ ψ_i² H dx. The integral gives "
-                        "exponential suppression: y_i ~ exp(-d_i²/(2λ²)) where d_i is the "
+                        "**Step 3**: Yukawa coupling y<sub>i</sub> ~ &#8747; &#968;<sub>i</sub>&#178; H dx. The integral gives "
+                        "exponential suppression: y<sub>i</sub> ~ exp(&#8722;d<sub>i</sub>&#178;/(2&#955;&#178;)) where d<sub>i</sub> is the "
                         "separation distance."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 4**: For three generations with separations d₁ < d₂ < d₃, "
+                        "**Step 4**: For three generations with separations d₁ &lt; d₂ &lt; d₃, "
                         "we get hierarchy:\n"
-                        "y_t : y_c : y_u ≈ 1 : exp(-Δ₂²) : exp(-Δ₃²)\n"
-                        "where Δ_i = (d_i² - d₁²)/(2λ²)."
+                        "y<sub>t</sub> : y<sub>c</sub> : y<sub>u</sub> &#8776; 1 : exp(&#8722;&#916;₂&#178;) : exp(&#8722;&#916;₃&#178;)\n"
+                        "where &#916;<sub>i</sub> = (d<sub>i</sub>&#178; &#8722; d₁&#178;)/(2&#955;&#178;)."
                     )
                 ),
                 ContentBlock(
@@ -391,16 +391,16 @@ class AppendixCExtendedDerivations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 2**: Three neutrino generations transform as triplet under A₄:\n"
-                        "ν_L = (ν_e, ν_μ, ν_τ)^T ~ 3 of A₄"
+                        "**Step 2**: Three neutrino generations transform as triplet under A&#x2084;:\n"
+                        "&nu;<sub>L</sub> = (&nu;<sub>e</sub>, &nu;<sub>&mu;</sub>, &nu;<sub>&tau;</sub>)<sup>T</sup> ~ <strong>3</strong> of A&#x2084;"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 3**: A₄ has three 1-dimensional representations (1, 1', 1'') "
+                        "**Step 3**: A&#x2084; has three 1-dimensional representations (1, 1', 1'') "
                         "and one 3-dimensional representation. Right-handed neutrinos transform "
-                        "as ν_R ~ (1, 1', 1'')."
+                        "as &nu;<sub>R</sub> ~ (1, 1', 1'')."
                     )
                 ),
                 ContentBlock(
@@ -446,24 +446,24 @@ class AppendixCExtendedDerivations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 2**: The Higgs field mixes with G2 moduli through loop effects. "
+                        "**Step 2**: The Higgs field mixes with G<sub>2</sub> moduli through loop effects. "
                         "This generates effective potential:\n"
-                        "V_eff ~ (g²/16π²) M_KK² |H|² + λ |H|⁴"
+                        "V<sub>eff</sub> ~ (g&sup2;/16&pi;&sup2;) M<sub>KK</sub>&sup2; |H|&sup2; + &lambda; |H|&#x2074;"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 3**: Minimizing V_eff gives Higgs VEV:\n"
-                        "v² = -g² M_KK²/(8π² λ)"
+                        "**Step 3**: Minimizing V<sub>eff</sub> gives Higgs VEV:\n"
+                        "v&sup2; = &minus;g&sup2; M<sub>KK</sub>&sup2;/(8&pi;&sup2; &lambda;)"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 4**: Higgs mass m_h² = 2λv². Substituting λ and v from "
+                        "**Step 4**: Higgs mass m<sub>h</sub>&sup2; = 2&lambda;v&sup2;. Substituting &lambda; and v from "
                         "moduli stabilization:\n"
-                        "m_h ≈ 125 GeV for M_KK ~ 10¹⁴ GeV and λ ~ 0.13"
+                        "m<sub>h</sub> &asymp; 125 GeV for M<sub>KK</sub> ~ 10&sup1;&#x2074; GeV and &lambda; ~ 0.13"
                     )
                 ),
                 ContentBlock(
@@ -487,13 +487,13 @@ class AppendixCExtendedDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "**Step 1**: Standard GUT proton decay amplitude:\n"
-                        "A_p ~ α_GUT² m_p⁵ / M_GUT⁴"
+                        "A<sub>p</sub> ~ &alpha;<sub>GUT</sub>&sup2; m<sub>p</sub>&#x2075; / M<sub>GUT</sub>&#x2074;"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Step 2**: In G2 compactification, matter and Higgs fields localize "
+                        "**Step 2**: In G<sub>2</sub> compactification, matter and Higgs fields localize "
                         "on different 3-cycles separated by neck distance d."
                     )
                 ),
@@ -501,8 +501,8 @@ class AppendixCExtendedDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "**Step 3**: Wavefunction overlap integral:\n"
-                        "|<ψ_matter|ψ_Higgs>|² ~ exp(-2πd/R)\n"
-                        "where R is the G2 manifold size."
+                        "|&#10216;&psi;<sub>matter</sub>|&psi;<sub>Higgs</sub>&#10217;|&sup2; ~ exp(&minus;2&pi;d/R)\n"
+                        "where R is the G<sub>2</sub> manifold size."
                     )
                 ),
                 ContentBlock(
@@ -517,8 +517,8 @@ class AppendixCExtendedDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "**Step 5**: Modified proton lifetime:\n"
-                        "τ_p = C × (M_GUT/10¹⁶)⁴ × (0.03/α_GUT)² × S\n"
-                        "≈ 3.9×10³⁴ years (for M_GUT = 2.1×10¹⁶ GeV)"
+                        "&tau;<sub>p</sub> = C &times; (M<sub>GUT</sub>/10&sup1;&#x2076;)&#x2074; &times; (0.03/&alpha;<sub>GUT</sub>)&sup2; &times; S\n"
+                        "&asymp; 3.9 &times; 10&#xB3;&#x2074; years (for M<sub>GUT</sub> = 2.1 &times; 10&sup1;&#x2076; GeV)"
                     )
                 ),
                 ContentBlock(

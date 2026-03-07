@@ -376,18 +376,18 @@ class BridgePressureV21(SimulationBase):
                     content=(
                         "The dual-shadow bridge mechanism operates through a "
                         "topologically determined channel structure. In the (24,1) "
-                        "framework, each shadow hosts a G2 manifold with b3 = 24 "
+                        "framework, each shadow hosts a G₂ manifold with b₃ = 24 "
                         "associative 3-cycles. These pair across shadows into "
-                        "n_pairs = chi_eff/12 = 144/12 = 12 bridge pairs, where "
-                        "chi_eff = 144 is the effective Euler characteristic. "
-                        "Each bridge pair admits h^{1,1} = 4 independent face-specific "
+                        "n<sub>pairs</sub> = χ<sub>eff</sub>/12 = 144/12 = 12 bridge pairs, where "
+                        "χ<sub>eff</sub> = 144 is the effective Euler characteristic. "
+                        "Each bridge pair admits h<sup>1,1</sup> = 4 independent face-specific "
                         "leakage channels, one per Kahler modulus. The total number of "
-                        "bridge flux channels is therefore 12 x 4 = 48 = chi_eff/3, "
+                        "bridge flux channels is therefore 12 × 4 = 48 = χ<sub>eff</sub>/3, "
                         "connecting the bridge pressure mechanism directly to the "
                         "generation structure (48 channels / 3 generations = 16 per generation). "
                         "This decomposition is consistent with M-theory compactification "
-                        "on G2 manifolds, where the associative 3-cycles control gauge "
-                        "coupling localization and the Kahler moduli determine the face "
+                        "on G₂ manifolds, where the associative 3-cycles control gauge "
+                        "coupling localisation and the Kahler moduli determine the face "
                         "geometry (Acharya-Witten 2001)."
                     )
                 ),
@@ -400,9 +400,9 @@ class BridgePressureV21(SimulationBase):
                     type="paragraph",
                     content=(
                         "The total conformal pressure distributes democratically across "
-                        "the four Kahler faces, with each face carrying P_total/4 of the "
+                        "the four Kahler faces, with each face carrying P<sub>total</sub>/4 of the "
                         "bridge pressure. Each face supports 3 bridge oscillations (one per "
-                        "fermion generation), so the 4 x 3 = 12 bridge pairs arise naturally "
+                        "fermion generation), so the 4 × 3 = 12 bridge pairs arise naturally "
                         "from the face-generation product structure."
                     )
                 ),
@@ -439,7 +439,7 @@ class BridgePressureV21(SimulationBase):
                     content=(
                         "The warping strength per bridge pair is exponentially suppressed by "
                         "the ratio of the bridge modulus to the core scale, with a torsion "
-                        "correction from the G2 torsion tensor. This sets the baseline "
+                        "correction from the G₂ torsion tensor. This sets the baseline "
                         "suppression for any force attempting to tunnel through a given "
                         "bridge channel."
                     )
@@ -452,11 +452,11 @@ class BridgePressureV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The general dark force leakage probability P_leak,G for a gauge "
+                        "The general dark force leakage probability P<sub>leak,G</sub> for a gauge "
                         "boson of group G depends on three factors: the winding number "
-                        "factor |R_n|^2 = 1/n^2 (with n = 12 bridge pairs), the Euclidean "
-                        "bridge instanton suppression exp(-2*S_E) with S_E = chi_eff/b3 = 6, "
-                        "and the group-specific Casimir factor |C_G|^2 which encodes whether "
+                        "factor |R<sub>n</sub>|² = 1/n² (with n = 12 bridge pairs), the Euclidean "
+                        "bridge instanton suppression exp(−2S<sub>E</sub>) with S<sub>E</sub> = χ<sub>eff</sub>/b₃ = 6, "
+                        "and the group-specific Casimir factor |C<sub>G</sub>|² which encodes whether "
                         "the force carrier can propagate through the bridge."
                     )
                 ),
@@ -469,11 +469,11 @@ class BridgePressureV21(SimulationBase):
                     type="paragraph",
                     content=(
                         "For electromagnetism, the photon is massless and unconfined, so "
-                        "|C_U(1)|^2 = 1 and only the Euclidean suppression applies. The "
-                        "resulting dark light leakage probability P_leak = (1/144)*exp(-12) "
-                        "approx 6.9e-6 yields a coupling amplitude alpha_leak_light approx "
+                        "|C<sub>U(1)</sub>|² = 1 and only the Euclidean suppression applies. The "
+                        "resulting dark light leakage probability P<sub>leak</sub> = (1/144) exp(−12) "
+                        "~ 6.9 × 10<sup>−6</sup> yields a coupling amplitude α<sub>leak,light</sub> ~ "
                         "0.00248, which is approximately 230 times weaker than the dark "
-                        "matter portal coupling alpha_sample approx 0.57."
+                        "matter portal coupling α<sub>sample</sub> ~ 0.57."
                     )
                 ),
                 # ─── Topic 02: Dark Light Cross-Shadow Leakage ───
@@ -485,12 +485,12 @@ class BridgePressureV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The dark photon mixing angle epsilon characterizes the kinetic "
-                        "mixing between the visible U(1)_EM and the shadow U(1)_EM' across "
+                        "The dark photon mixing angle ε characterizes the kinetic "
+                        "mixing between the visible U(1)<sub>EM</sub> and the shadow U(1)<sub>EM'</sub> across "
                         "the Euclidean bridge. From the cross-shadow leakage formula, the "
                         "mixing angle is derived from the leakage coupling and the effective "
-                        "Euler characteristic: epsilon ~ alpha_leak^2 / (4*pi*chi_eff) ~ "
-                        "(0.00248)^2 / (4*pi*144) ~ 3.4e-9, which rounds to order 10^{-7} "
+                        "Euler characteristic: ε ~ α<sub>leak</sub>² / (4πχ<sub>eff</sub>) ~ "
+                        "(0.00248)² / (4π · 144) ~ 3.4 × 10<sup>−9</sup>, which rounds to order 10<sup>−7</sup> "
                         "when accounting for the coherent 6-pair alignment enhancement. This "
                         "places the PM prediction squarely in the parameter space probed by "
                         "next-generation dark photon searches (ALPS-II, DarkQuest, FASER)."
@@ -505,13 +505,13 @@ class BridgePressureV21(SimulationBase):
                     type="paragraph",
                     content=(
                         "The classical prohibition on cross-shadow light propagation follows "
-                        "directly from the bridge metric signature. Because ds^2_bridge = "
-                        "dy1^2 + dy2^2 is positive-definite (Euclidean), there exist no null "
-                        "geodesics: ds^2 = 0 has no solution on the bridge. This means that "
+                        "directly from the bridge metric signature. Because ds²<sub>bridge</sub> = "
+                        "dy₁² + dy₂² is positive-definite (Euclidean), there exist no null "
+                        "geodesics: ds² = 0 has no solution on the bridge. This means that "
                         "no classical electromagnetic wave can propagate from one shadow to "
                         "the other. The bridge is opaque to all classical field propagation, "
                         "regardless of frequency or polarization. Only quantum tunneling via "
-                        "Euclidean bridge instantons (with action S_E = chi_eff/b3 = 6) "
+                        "Euclidean bridge instantons (with action S<sub>E</sub> = χ<sub>eff</sub>/b₃ = 6) "
                         "provides a non-perturbative channel for cross-shadow EM transfer. "
                         "This quantum-only mechanism is a distinguishing prediction of the "
                         "dual-shadow architecture: dark light is purely a tunneling phenomenon "
@@ -524,15 +524,15 @@ class BridgePressureV21(SimulationBase):
                         "Observable consequences of the cross-shadow dark photon mixing span "
                         "several experimental frontiers. (1) Precision interferometry: the "
                         "dark photon admixture induces anomalous phase shifts of order "
-                        "delta_phi ~ epsilon * (L/lambda) ~ 10^{-6} to 10^{-8} rad for "
+                        "δφ ~ ε · (L/λ) ~ 10<sup>−6</sup> to 10<sup>−8</sup> rad for "
                         "optical-to-microwave wavelengths over meter-scale baselines, within "
                         "reach of next-generation cavity experiments. (2) CMB dark photon "
                         "fraction: the leakage during recombination injects a dark photon "
-                        "component DP/gamma ~ P_dark ~ 10^{-7} into the CMB, producing "
-                        "spectral distortions at the mu ~ 10^{-8} level, testable by PIXIE "
+                        "component DP/γ ~ P<sub>dark</sub> ~ 10<sup>−7</sup> into the CMB, producing "
+                        "spectral distortions at the μ ~ 10<sup>−8</sup> level, testable by PIXIE "
                         "and Voyage 2050 concepts. (3) Vacuum birefringence: the cross-shadow "
                         "coupling breaks the degeneracy between left- and right-circular "
-                        "polarizations at order epsilon^2 ~ 10^{-14}, providing a unique "
+                        "polarizations at order ε² ~ 10<sup>−14</sup>, providing a unique "
                         "signature distinguishable from QED vacuum birefringence."
                     )
                 ),
@@ -551,13 +551,13 @@ class BridgePressureV21(SimulationBase):
                     content=(
                         "The dark force hierarchy emerges naturally from the properties of "
                         "each gauge group. The strong force (SU(3)) cannot leak because "
-                        "color confinement prevents individual gluon propagation across "
-                        "the bridge, yielding alpha_strong ~ 10^{-37.5} (effectively zero). "
+                        "colour confinement prevents individual gluon propagation across "
+                        "the bridge, yielding α<sub>strong</sub> ~ 10<sup>−37.5</sup> (effectively zero). "
                         "The weak force (SU(2)) cannot leak because W/Z boson masses "
-                        "(~80-91 GeV) provide exponential tunneling suppression far beyond "
-                        "the Euclidean bridge scale, yielding alpha_weak ~ 0. Only "
+                        "(~80--91 GeV) provide exponential tunnelling suppression far beyond "
+                        "the Euclidean bridge scale, yielding α<sub>weak</sub> ~ 0. Only "
                         "electromagnetism and gravity, carried by massless unconfined "
-                        "bosons, leak at the ~10^{-3} level set by the Euclidean bridge "
+                        "bosons, leak at the ~10<sup>−3</sup> level set by the Euclidean bridge "
                         "instanton action."
                     )
                 ),
@@ -571,14 +571,14 @@ class BridgePressureV21(SimulationBase):
                     content=(
                         "The dark force leakage predictions offer several experimental "
                         "signatures. Precision interferometry experiments could detect "
-                        "anomalous photon phase shifts at the alpha_EM ~ 10^{-3} level "
+                        "anomalous photon phase shifts at the α<sub>EM</sub> ~ 10<sup>−3</sup> level "
                         "from cross-shadow EM leakage. CMB spectral distortions could "
                         "reveal dark light contributions at early cosmological epochs when "
-                        "bridge moduli were less stabilized. Vacuum noise measurements in "
+                        "bridge moduli were less stabilised. Vacuum noise measurements in "
                         "high-sensitivity photon detectors could probe the dark light "
                         "background predicted by the leakage mechanism. These tests are "
                         "complementary to dark matter portal coupling measurements from "
-                        "the face sampling strength alpha_sample approx 0.57."
+                        "the face sampling strength α<sub>sample</sub> ~ 0.57."
                     )
                 ),
             ],

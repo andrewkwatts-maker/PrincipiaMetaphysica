@@ -74,8 +74,8 @@ class AppendixPG2Holonomy(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_p_g2_holonomy_v19",
-            version="19.0",
+            id="appendix_p_g2_holonomy_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix P: G2 Holonomy Mathematics",
             description=(
@@ -233,7 +233,7 @@ class AppendixPG2Holonomy(SimulationBase):
                         "To understand G2, we start with the octonions O. Just as the complex "
                         "numbers extend the reals with i, and quaternions extend complex numbers "
                         "with j and k, octonions extend quaternions with four more units. "
-                        "The octonions form an 8-dimensional algebra with basis {1, e1, e2, e3, e4, e5, e6, e7}."
+                        "The octonions form an 8-dimensional algebra with basis {1, e&#x2081;, e&#x2082;, e&#x2083;, e&#x2084;, e&#x2085;, e&#x2086;, e&#x2087;}."
                     )
                 ),
                 ContentBlock(
@@ -245,10 +245,10 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The structure constants f_ijk encode the multiplication table. Unlike "
+                        "The structure constants f<sub>ijk</sub> encode the multiplication table. Unlike "
                         "quaternions, octonions are NON-ASSOCIATIVE: (ab)c is not always equal to a(bc). "
-                        "This non-associativity is encoded in the 'associator' [a,b,c] = (ab)c - a(bc). "
-                        "The automorphism group - transformations preserving the multiplication - "
+                        "This non-associativity is encoded in the 'associator' [a,b,c] = (ab)c &#8722; a(bc). "
+                        "The automorphism group -- transformations preserving the multiplication -- "
                         "is precisely G2."
                     )
                 ),
@@ -294,8 +294,8 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The key geometric object on a G2 manifold is the associative 3-form phi. "
-                        "In standard coordinates on R^7, it can be written explicitly as:"
+                        "The key geometric object on a G<sub>2</sub> manifold is the associative 3-form &phi;. "
+                        "In standard coordinates on R&#x2077;, it can be written explicitly as:"
                     )
                 ),
                 ContentBlock(
@@ -307,8 +307,8 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Here dx^{ijk} = dx^i wedge dx^j wedge dx^k. This 3-form encodes the "
-                        "octonion multiplication: phi(e_i, e_j, e_k) = f_{ijk}. The 7 terms "
+                        "Here dx<sup>ijk</sup> = dx<sup>i</sup> &wedge; dx<sup>j</sup> &wedge; dx<sup>k</sup>. This 3-form encodes the "
+                        "octonion multiplication: &phi;(e<sub>i</sub>, e<sub>j</sub>, e<sub>k</sub>) = f<sub>ijk</sub>. The 7 terms "
                         "correspond to the 7 'lines' of the Fano plane, the multiplication "
                         "diagram for imaginary octonions."
                     )
@@ -322,7 +322,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Hodge dual of phi gives the coassociative 4-form psi:"
+                        "The Hodge dual of &phi; gives the coassociative 4-form &psi;:"
                     )
                 ),
                 ContentBlock(
@@ -334,14 +334,14 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The pair (phi, psi) uniquely determines the G2 structure. Knowing either "
+                        "The pair (&phi;, &psi;) uniquely determines the G<sub>2</sub> structure. Knowing either "
                         "one determines the other through Hodge duality, and both together "
                         "determine the metric g through:"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
-                    content="g_ij = (1/6) * phi_ikl * phi_j^kl"
+                    content="g<sub>ij</sub> = (1/6) &#215; &#966;<sub>ikl</sub> &#215; &#966;<sub>j</sub><sup>kl</sup>"
                 ),
 
                 # Section P.6: Holonomy Condition
@@ -352,7 +352,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "A 7-manifold M has G2 HOLONOMY (not just G2 structure) when phi is "
+                        "A 7-manifold M has G<sub>2</sub> HOLONOMY (not just G<sub>2</sub> structure) when &phi; is "
                         "parallel with respect to the Levi-Civita connection:"
                     )
                 ),
@@ -365,8 +365,8 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Geometrically: parallel transport around any loop preserves phi. "
-                        "This is much stronger than just having a G2 structure - it constrains "
+                        "Geometrically: parallel transport around any loop preserves &phi;. "
+                        "This is much stronger than just having a G<sub>2</sub> structure -- it constrains "
                         "the curvature. The fundamental theorem (Bryant, Joyce) states:"
                     )
                 ),
@@ -393,8 +393,8 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The forms phi and psi are CALIBRATIONS: they pick out special minimal "
-                        "submanifolds. An associative 3-cycle Sigma^3 satisfies:"
+                        "The forms &phi; and &psi; are CALIBRATIONS: they pick out special minimal "
+                        "submanifolds. An associative 3-cycle &Sigma;&sup3; satisfies:"
                     )
                 ),
                 ContentBlock(
@@ -406,7 +406,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Similarly, a coassociative 4-cycle Sigma^4 satisfies:"
+                        "Similarly, a coassociative 4-cycle &Sigma;&#x2074; satisfies:"
                     )
                 ),
                 ContentBlock(
@@ -458,7 +458,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This is crucial: b_2 = 0 means no massless U(1) gauge fields from "
+                        "This is crucial: b₂ = 0 means no massless U(1) gauge fields from "
                         "the internal geometry. All gauge structure comes from the non-abelian "
                         "cycles. The third Betti number relates to the Euler characteristic:"
                     )

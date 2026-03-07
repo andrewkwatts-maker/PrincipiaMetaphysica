@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix K: The Sterile Constant Table
+PRINCIPIA METAPHYSICA v24.2 - Appendix K: The Sterile Constant Table
 =====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: Geometric Residue Registry replacing measured constants.
+v24.2 STERILE MODEL: Geometric Residue Registry replacing measured constants.
 
 This appendix replaces the traditional "Fundamental Constants of Physics"
-table with the "Geometric Residue Registry." In the v23.1 Sterile Model,
+table with the "Geometric Residue Registry." In the v24.2 Sterile Model,
 we no longer "measure" these values; we "derive" them from the 288/24/4
 geometric architecture.
 
@@ -206,7 +206,7 @@ class GeometricOriginMap:
     """
     Maps physical constants to their geometric sources.
 
-    In the v23.1 Sterile Model, each constant has a specific
+    In the v24.2 Sterile Model, each constant has a specific
     location in the 288/24/4 architecture:
     - Metric Bank: Nodes 001-004 (G, c, H₀, Λ)
     - Gauge Bank: Nodes 005-008 (α, g₁, g₂, g₃)
@@ -306,7 +306,7 @@ class AppendixKSterileConstants(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_k_sterile_constants_v16_2",
-            version="23.1",
+            version="24.2",
             domain="appendices",
             title="Appendix K: The Sterile Constant Table",
             description="Geometric Residue Registry replacing measured constants",
@@ -360,7 +360,7 @@ class AppendixKSterileConstants(SimulationBase):
                 type="paragraph",
                 content=(
                     "Appendix K replaces the traditional 'Fundamental Constants of Physics' table "
-                    "with the <strong>Geometric Residue Registry</strong>. In the v23.1 Sterile Model, "
+                    "with the <strong>Geometric Residue Registry</strong>. In the v24.2 Sterile Model, "
                     "we no longer 'measure' these values from observation; we 'derive' them from the "
                     "288/24/4 geometric architecture of the V₇ manifold."
                 )
@@ -375,7 +375,7 @@ class AppendixKSterileConstants(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The transition from v16.1 (Tunable) to v23.1 (Sterile) represents a fundamental "
+                    "The transition from v16.1 (Tunable) to v24.2 (Sterile) represents a fundamental "
                     "shift in how we understand physical constants:"
                 )
             ),
@@ -618,7 +618,7 @@ class AppendixKSterileConstants(SimulationBase):
                 type="paragraph",
                 content=(
                     "By treating constants as geometric residues rather than measured values, "
-                    "the v23.1 Sterile Model resolves several long-standing problems:"
+                    "the v24.2 Sterile Model resolves several long-standing problems:"
                 )
             ),
             ContentBlock(

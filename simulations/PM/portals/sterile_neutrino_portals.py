@@ -778,28 +778,28 @@ class SterileNeutrinoPortalsV23(SimulationBase):
             subsection_id="7.4",
             title="Sterile Neutrino Portals from Dual-Shadow Architecture",
             abstract=(
-                "Sterile neutrinos emerge naturally from the dual-shadow G2 "
-                "architecture. Shadow 1 hosts left-handed SU(2)_L doublets; "
+                "Sterile neutrinos emerge naturally from the dual-shadow G₂ "
+                "architecture. Shadow 1 hosts left-handed SU(2)<sub>L</sub> doublets; "
                 "Shadow 2 hosts right-handed doublets that are sterile under "
                 "the Standard Model gauge group. The bridge OR operator "
-                "generates a Dirac Yukawa y_as ~ alpha_leak ~ 0.57 through "
-                "cross-shadow wave function overlap. Hidden-face Kahler moduli "
-                "generate a Majorana mass M_s ~ 10^4 GeV via exponential "
+                "generates a Dirac Yukawa y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57 through "
+                "cross-shadow wave-function overlap. Hidden-face Kähler moduli "
+                "generate a Majorana mass M<sub>s</sub> ~ 10⁴ GeV via exponential "
                 "suppression of the Planck scale. The type-I seesaw then "
-                "predicts light neutrino masses m_nu ~ 2e-3 eV at the "
-                "atmospheric scale, with mixing angles sin^2(2*theta) safely "
+                "predicts light neutrino masses m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV at the "
+                "atmospheric scale, with mixing angles sin²(2θ) safely "
                 "below current experimental bounds. Sterile contributions to "
-                "N_eff are negligible, consistent with Planck CMB data."
+                "N<sub>eff</sub> are negligible, consistent with Planck CMB data."
             ),
             content_blocks=[
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "In the dual-shadow architecture, the G2 manifold supports two "
+                        "In the dual-shadow architecture, the G₂ manifold supports two "
                         "13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 "
-                        "hosts left-handed fermion doublets charged under SU(2)_L, while "
+                        "hosts left-handed fermion doublets charged under SU(2)<sub>L</sub>, while "
                         "Shadow 2 hosts right-handed doublets. Crucially, the right-handed "
-                        "neutrinos in Shadow 2 carry no SU(2)_L charge -- they are naturally "
+                        "neutrinos in Shadow 2 carry no SU(2)<sub>L</sub> charge — they are naturally "
                         "sterile. This geometric origin for sterility replaces the ad hoc "
                         "assumption of the Standard Model, where right-handed neutrinos are "
                         "simply absent from the particle content."
@@ -813,11 +813,11 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The bridge OR operator R_perp connects the two shadows, enabling "
+                        "The bridge OR operator R<sub>⊥</sub> connects the two shadows, enabling "
                         "cross-shadow fermion mixing. The overlap integral of the left-handed "
                         "active neutrino wave function (Shadow 1) with the right-handed "
                         "sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa "
-                        "coupling y_as ~ alpha_leak ~ 0.57, entirely determined by the "
+                        "coupling y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57, entirely determined by the "
                         "geometric portal coupling."
                     )
                 ),
@@ -833,11 +833,11 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The 4-face TCS G2 manifold has one visible face (our universe) and "
-                        "three hidden faces. The Kahler moduli T_i of the hidden faces are "
+                        "The 4-face TCS G₂ manifold has one visible face (our universe) and "
+                        "three hidden faces. The Kähler moduli T<sub>i</sub> of the hidden faces are "
                         "stabilized by flux quantization. The moduli VEV generates a Majorana "
-                        "mass M_s = M_Pl * exp(-T_i/2) for the right-handed sterile neutrinos. "
-                        "For T_i ~ 69: M_s ~ 10^4 GeV, which feeds into the type-I seesaw to "
+                        "mass M<sub>s</sub> = M<sub>Pl</sub> · exp(−T<sub>i</sub>/2) for the right-handed sterile neutrinos. "
+                        "For T<sub>i</sub> ~ 69: M<sub>s</sub> ~ 10⁴ GeV, which feeds into the type-I seesaw to "
                         "produce light neutrino masses at the atmospheric scale."
                     )
                 ),
@@ -850,12 +850,12 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                     callout_type="testable",
                     title="Sterile Neutrino Portal Predictions",
                     content=(
-                        "PM predicts from dual-shadow G2 geometry:\n"
-                        "- Majorana mass: M_s ~ 10^4 GeV (hidden-face moduli)\n"
-                        "- Light neutrino mass: m_nu ~ 2e-3 eV (atmospheric scale)\n"
-                        "- Mixing angle: sin^2(2*theta) ~ few*10^-5 (below current limits)\n"
-                        "- Sterile count: n_sterile ~ 5.13 from 3 hidden faces\n"
-                        "- Delta N_eff << 0.5 (consistent with Planck CMB)\n"
+                        "PM predicts from dual-shadow G₂ geometry:\n"
+                        "- Majorana mass: M<sub>s</sub> ~ 10⁴ GeV (hidden-face moduli)\n"
+                        "- Light neutrino mass: m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV (atmospheric scale)\n"
+                        "- Mixing angle: sin²(2θ) ~ few × 10<sup>−5</sup> (below current limits)\n"
+                        "- Sterile count: n<sub>sterile</sub> ~ 5.13 from 3 hidden faces\n"
+                        "- ΔN<sub>eff</sub> ≪ 0.5 (consistent with Planck CMB)\n"
                         "Testable by: next-generation short-baseline experiments, CMB-S4"
                     )
                 ),

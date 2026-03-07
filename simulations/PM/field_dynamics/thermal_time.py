@@ -251,7 +251,7 @@ class ThermalTimeV16(SimulationBase):
                     "The problem of time in quantum gravity arises from the fundamental conflict "
                     "between general relativity, where time is a dynamical coordinate within "
                     "spacetime, and quantum mechanics, where time serves as an external parameter. "
-                    "In canonical quantum gravity, the Wheeler-DeWitt equation H|psi> = 0 is "
+                    "In canonical quantum gravity, the Wheeler-DeWitt equation H|&psi;&rang; = 0 is "
                     "time-independent, leading to the 'frozen formalism' problem: the apparent "
                     "absence of time evolution at the fundamental level. The Thermal Time "
                     "Hypothesis (Connes-Rovelli 1994) provides an elegant resolution by proposing "
@@ -270,8 +270,8 @@ class ThermalTimeV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The modular Hamiltonian K is constructed from the thermal density matrix "
-                    "rho. This generates a one-parameter group of automorphisms - the modular "
-                    "flow - which defines physical time evolution."
+                    "&rho;. This generates a one-parameter group of automorphisms — the modular "
+                    "flow — which defines physical time evolution."
                 )
             ),
             ContentBlock(
@@ -283,14 +283,14 @@ class ThermalTimeV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In Principia Metaphysica v23.1, we extend this to a dual-shadow unified time framework with "
-                    "M^{27}(24,1,2) structure and 12×(2,0) Euclidean bridge pairs plus the S^{2,0} sampler data fields. "
-                    "The observable thermal time t_therm emerges "
-                    "from the Pneuma field's modular flow, while 12 bridge pair coordinates (y1_i, y2_i) plus "
-                    "sampler data fields coordinates (s_1, s_2) provide a Euclidean substrate via OR reduction "
-                    "through R_⊥ operators. The 12 pairs arise from b₃ = 24/2 = 12, coupling normal ↔ mirror sectors. "
-                    "Aggregation reduces variance by √12. "
-                    "The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
+                    "In Principia Metaphysica v24.2, we extend this to a dual-shadow unified time framework with "
+                    "M<sup>27</sup>(24,1,2) structure and 12&times;(2,0) Euclidean bridge pairs plus the S<sup>(2,0)</sup> sampler data fields. "
+                    "The observable thermal time t<sub>therm</sub> emerges "
+                    "from the Pneuma field's modular flow, while 12 bridge pair coordinates (y<sub>1i</sub>, y<sub>2i</sub>) plus "
+                    "sampler data fields coordinates (s<sub>1</sub>, s<sub>2</sub>) provide a Euclidean substrate via OR reduction "
+                    "through R<sub>&perp;</sub> operators. The 12 pairs arise from b&#8323; = 24/2 = 12, coupling normal &harr; mirror sectors. "
+                    "Aggregation reduces variance by &radic;12. "
+                    "The coupling &alpha;<sub>T</sub> is derived from G&#8322; topology and governs the strength of time evolution."
                 )
             ),
             ContentBlock(
@@ -324,7 +324,7 @@ class ThermalTimeV16(SimulationBase):
                 "framework, extending it to include a unified time structure with Euclidean "
                 "bridge substrate. Time emerges from the Pneuma field's thermodynamic "
                 "properties via the modular Hamiltonian. The thermal time coupling "
-                "alpha_T is derived from G2 topology (b3 = 24)."
+                "&alpha;<sub>T</sub> is derived from G&#8322; topology (b&#8323; = 24)."
             ),
             content_blocks=content_blocks,
             formula_refs=["modular-hamiltonian", "thermal-flow", "alpha-t-derivation", "entropy-gradient"],
@@ -493,7 +493,7 @@ class ThermalTimeV16(SimulationBase):
                     "Coupling constant relating thermal state to time evolution. "
                     "Derived from G2 topology: alpha_T = (2*pi / b3) * gamma_correction "
                     "= (2*pi / 24) * 10.313 = 2.7. The correction factor accounts for "
-                    "the v21 unified time framework with Euclidean bridge substrate."
+                    "the v24.2 unified time framework with Euclidean bridge substrate."
                 ),
                 derivation_formula="alpha-t-derivation",
                 no_experimental_value=True,
@@ -528,9 +528,9 @@ class ThermalTimeV16(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description=(
-                    "v24.2 M^{27}(24,1,2): 24 physics core from 12×(2,0) bridge pairs + 1 unified time + 2 S^{2,0} sampler data fields. "
-                    "Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0} ⊕ S^{2,0}). 12 pairs from b₃ = 24/2. "
-                    "Metric: ds² = -dt² + ∑_{i=1}^{12}(dy_{1i}² + dy_{2i}²) + ds₁² + ds₂²."
+                    "v24.2 M²⁷(24,1,2): 24 physics core from 12×(2,0) bridge pairs + 1 unified time + 2 S⁽²˒⁰⁾ sampler data fields. "
+                    "Dimensional structure: T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ⁽²˒⁰⁾ ⊕ S⁽²˒⁰⁾). 12 pairs from b₃ = 24/2. "
+                    "Metric: ds² = -dt² + ∑ᵢ₌₁¹²(dy₁ᵢ² + dy₂ᵢ²) + ds₁² + ds₂²."
                 ),
                 no_experimental_value=True,
             ),

@@ -1,7 +1,7 @@
 """
 FormulasRegistry.py - Single Source of Truth (SSoT)
 ====================================================
-Centralizes all topological derivations for Principia Metaphysica v23.1-27D.
+Centralizes all topological derivations for Principia Metaphysica v24.2-27D.
 
 v24.2 FRAMEWORK (Publication Release):
 - Structure: M^{27}(24,1,2) = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) ⊕ S^{2,0}
@@ -346,7 +346,7 @@ class FormulasRegistry:
         "syzygy_gap": "The Syzygy",
         "horos": "The Horos",
         "decad": "The Decad",
-        # Hebrew Naming Aliases (v23.1)
+        # Hebrew Naming Aliases (v24.2)
         "monad_unity": "The Monad",
         "residual_key": "The Hand",
         "elder_vessels": "Elder Vessels",
@@ -595,7 +595,7 @@ class FormulasRegistry:
     PROPERTY_TO_SYMBOL = {v: k for k, v in SYMBOL_MAP.items()}
 
     # ===========================================================================
-    # HEBREW SYMBOL REGISTRY (v23.1 - Scientific-Hebrew Synthesis)
+    # HEBREW SYMBOL REGISTRY (v24.2 - Scientific-Hebrew Synthesis)
     # ===========================================================================
     # Maps parameters to their Hebrew letter equivalents via gematria.
     # These are display names - code variables remain stable for compatibility.
@@ -1087,7 +1087,7 @@ class FormulasRegistry:
         # - b3: Topological invariant from G2 cohomology (rank of H^3)
         # - D_core_24: Core spatial dimensions in 27D(24,1,2) bulk
         #
-        # v23.1 UPDATE: 27D = 24 core + 2 bridge + 1 time = (26,1) signature.
+        # v24.2 UPDATE: 27D = 24 core + 2 bridge + 1 time = (26,1) signature.
         # The 24D core supports Cl(24,1) physics while 2D sampler data fields provide
         # architectural global averaging outside the fiber product.
         #
@@ -1604,7 +1604,7 @@ class FormulasRegistry:
         return self.horos_limit
 
     # =========================================================================
-    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v23.1)
+    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v24.2)
     # =========================================================================
     # 5-level chain: ANCESTRAL → SHADOW → G2 → EXTERNAL → VISIBLE
     # v23 Chain: 27D(24,1,2) → [bridge] → 2×13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
@@ -3547,7 +3547,7 @@ class FormulasRegistry:
         """
         Total spacelike-like coordinate count: 24 core + 24 local + 2 sampler = 50.
 
-        v23.1: This counts bridge coordinates twice (core and local are dual views).
+        v24.2: This counts bridge coordinates twice (core and local are dual views).
         The actual spacetime signature is (24,1,2) in 27 dimensions.
         """
         return self._D_total_spacelike_like
@@ -3557,7 +3557,7 @@ class FormulasRegistry:
         """
         Full spacetime signature: (24,1,2) in 27 dimensions.
 
-        v23.1: With sampler data fields as physical dimensions:
+        v24.2: With sampler data fields as physical dimensions:
         - 24 core spacelike (from dual shadows, = local bridge dual view)
         - 2 sampler spacelike (hierarchical averaging dimensions)
         - 1 unified timelike
@@ -3567,11 +3567,11 @@ class FormulasRegistry:
 
     @property
     def D_spacetime_total(self) -> int:
-        """Total spacetime dimensions: 27D (v23.1 with sampler data fields)."""
+        """Total spacetime dimensions: 27D (v24.2 with sampler data fields)."""
         return self._D_v23_spacetime_total
 
     # ===========================================================================
-    # HEBREW NAMING PROPERTIES (v23.1 - PRIMARY)
+    # HEBREW NAMING PROPERTIES (v24.2 - PRIMARY)
     # ===========================================================================
     # These are the primary Hebrew-scientific names accessing internal variables.
     # The old names (b3, watts_constant, etc.) are aliases for backward compatibility.
@@ -3612,7 +3612,7 @@ class FormulasRegistry:
     @property
     def horos_limit(self) -> int:
         """Bulk Boundary Dimension (27) - Hebrew: Kaz (27)."""
-        return self._D_ancestral_total  # D_bulk = 27 (v23.1 with sampler data fields)
+        return self._D_ancestral_total  # D_bulk = 27 (v24.2 with sampler data fields)
 
     @property
     def mephorash_chi(self) -> int:
@@ -4361,7 +4361,7 @@ class FormulasRegistry:
         # Pure geometric formula: α⁻¹ = k_gimel² - b3/φ + φ/(4π)
         tree_level = k_gimel**2 - self._b3/phi + phi/(4.0 * math.pi)
 
-        # v23.1: Apply 9963 correction using pure SSoT constants
+        # v24.2: Apply 9963 correction using pure SSoT constants
         # 9963 = chi_eff × chi_eff_total - n_gen × shadow_sector
         #      = 72 × 144 - 3 × 135 = 10368 - 405 = 9963
         # Physical interpretation: Cross-shadow coupling minus generation-hidden interaction
@@ -4392,7 +4392,7 @@ class FormulasRegistry:
         ===================
         v_tree = k_gimel × (b3 - 4) = 12.318 × 20 = 246.37 GeV
 
-        v23.1: Apply three-loop correction using pure SSoT constants
+        v24.2: Apply three-loop correction using pure SSoT constants
 
         LOOP STRUCTURE (QFT geometric analog):
         ======================================
@@ -4424,7 +4424,7 @@ class FormulasRegistry:
         # Tree-level VEV from holonomy warp × cycle count
         v_tree = self._demiurgic_coupling * (self._b3 - 4)  # = 246.366 GeV
 
-        # v23.1: Three-loop geometric correction using pure SSoT constants
+        # v24.2: Three-loop geometric correction using pure SSoT constants
         # Each loop level couples to progressively deeper geometric structure
         one_loop = self._b3 * self._chi_eff  # 24 × 72 = 1728
         two_loop = one_loop * 36  # 1728 × 36 = 62208 (36 = (2*n_gen)² = 6²)
@@ -4443,7 +4443,7 @@ class FormulasRegistry:
 
     @property
     def higgs_vev(self) -> float:
-        """Higgs VEV with 1728 geometric correction (v23.1)."""
+        """Higgs VEV with 1728 geometric correction (v24.2)."""
         return self.calculate_higgs_vev()
 
     @property
@@ -4460,7 +4460,7 @@ class FormulasRegistry:
         ===================
         T_tree = phi × k_gimel / (2π + 1) = 2.7366 K
 
-        v23.1: Apply phi/chi_eff_total correction
+        v24.2: Apply phi/chi_eff_total correction
         chi_eff_total = 144 (cross-shadow effective Euler characteristic)
 
         Physical interpretation: The golden ratio φ appears in the numerator
@@ -4477,7 +4477,7 @@ class FormulasRegistry:
         # Tree-level CMB temperature
         T_tree = phi * self._demiurgic_coupling / (2.0 * math.pi + 1.0)
 
-        # v23.1: Apply phi/chi_eff_total correction
+        # v24.2: Apply phi/chi_eff_total correction
         # Physical interpretation: Golden ratio thermal correction
         return T_tree - phi / self._chi_eff_total
 
@@ -4489,7 +4489,7 @@ class FormulasRegistry:
 
     @property
     def cmb_temperature(self) -> float:
-        """CMB temperature with phi/chi_eff_total geometric correction (v23.1)."""
+        """CMB temperature with phi/chi_eff_total geometric correction (v24.2)."""
         return self.calculate_cmb_temperature()
 
     def calculate_weak_mixing_angle(self) -> float:
@@ -4500,7 +4500,7 @@ class FormulasRegistry:
         ===================
         sin²θ_W_tree = 3 / (k_gimel + φ - 1) = 0.2319
 
-        v23.1: Apply 7/9963 correction (SAME denominator as α⁻¹!)
+        v24.2: Apply 7/9963 correction (SAME denominator as α⁻¹!)
         9963 = chi_eff × chi_eff_total - n_gen × shadow_sector
              = 72 × 144 - 3 × 135 = 10368 - 405
 
@@ -4519,7 +4519,7 @@ class FormulasRegistry:
         # Tree-level weak mixing angle
         sin2_tree = 3.0 / (self._demiurgic_coupling + phi - 1.0)
 
-        # v23.1: Apply 7/9963 correction (same denominator as alpha)
+        # v24.2: Apply 7/9963 correction (same denominator as alpha)
         # Physical interpretation: Universal electroweak 7D holonomy correction
         correction_denominator = (self._chi_eff * self._chi_eff_total -
                                    self.n_gen * self._shadow_sector)  # = 9963
@@ -4534,7 +4534,7 @@ class FormulasRegistry:
 
     @property
     def weak_mixing_angle(self) -> float:
-        """Weak mixing angle sin²θ_W with 7/9963 geometric correction (v23.1)."""
+        """Weak mixing angle sin²θ_W with 7/9963 geometric correction (v24.2)."""
         return self.calculate_weak_mixing_angle()
 
     def calculate_sterile_ratio(self) -> float:

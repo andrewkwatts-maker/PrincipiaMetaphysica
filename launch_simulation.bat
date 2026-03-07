@@ -8,4 +8,8 @@ echo Target: OMEGA = 0 (sterile manifold)
 echo.
 python simulations/run_all_simulations.py %*
 echo.
-pause
+echo ============================================================
+echo  Simulations complete. Starting web server...
+echo ============================================================
+echo.
+python serve.py

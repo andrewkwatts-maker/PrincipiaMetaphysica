@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Section 2: The Sterile Extraction Methodology
+PRINCIPIA METAPHYSICA v24.2 - Section 2: The Sterile Extraction Methodology
 =============================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v24.1 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
+v24.2 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
 
 This simulation generates the content for Section 2 of the paper:
   2.1 Principles of Spectral Geometry
@@ -73,12 +73,12 @@ class MethodologyV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="methodology_v16_2",
-            version="23.1",
+            version="24.2",
             domain="methodology",
             title="The Sterile Extraction Methodology",
-            description="Topologically Anchored spectral geometry methodology with EDOF=3 (v23.1 dual-shadow framework, 27D/26,1)",
+            description="Topologically Anchored spectral geometry methodology with EDOF=3 (v24.2 dual-shadow framework, 27D/26,1)",
             section_id="2",
-            subsection_id="2.6"  # v24.1: Code-Theoretical Integrity section
+            subsection_id="2.6"  # v24.2: Code-Theoretical Integrity section
         )
 
     @property
@@ -112,7 +112,7 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v24.1 Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds), the transition from empirical observation to "
+                    "In the v24.2 Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds), the transition from empirical observation to "
                     "first-principles derivation is achieved through <strong>Spectral Geometry</strong> with <strong>116:1 compression ratio</strong>. "
                     "This methodology posits that the 'constants' of nature are not independent variables, "
                     "but emerge as discrete harmonic frequencies of the V₇ manifold from minimal phenomenological input. By treating the "
@@ -156,7 +156,7 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Where Δ<sub>V₇</sub> is the Laplace-Beltrami operator encoded with the Ricci-flat "
+                    "where Δ<sub>V₇</sub> is the Laplace-Beltrami operator encoded with the Ricci-flat "
                     "metric of the V₇ manifold, λₙ represents the n<sup>th</sup> eigenvalue corresponding "
                     "to a specific entry in the 125-residue registry, and Ψ represents the eigenfunction "
                     "(or 'wave-form') of the specific brane-node intersection."
@@ -189,7 +189,7 @@ class MethodologyV16_2(SimulationBase):
                     "The completeness of the 125-residue registry is verified via the "
                     "<strong>Selberg-type Trace Formula</strong>. This ensures that the sum of the "
                     "extracted residues accounts for the total 'Symmetry Budget' inherited from "
-                    "the 26D ancestral bulk:"
+                    "the 27D ancestral bulk:"
                 )
             ),
             ContentBlock(
@@ -305,7 +305,7 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The v24.1 Topologically Anchored Framework establishes a <strong>Metric Lock</strong> where "
+                    "The v24.2 Topologically Anchored Framework establishes a <strong>Metric Lock</strong> where "
                     "residues are static geometric invariants anchored by <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃). "
                     "This section details the mechanisms—both mathematical and computational—that ensure "
                     "the 125-residue registry achieves <strong>116:1 compression ratio</strong> and self-consistency."
@@ -405,16 +405,27 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "**Two-Layer OR Methodology**\n\n"
-                    "The theory now explicitly distinguishes two hierarchical OR processes:\n\n"
-                    "- **Layer 1 (Bridge/Global OR)**: R_\u22a5^global = \u2297_{i=1}^{12} R_{\u22a5,i} creates dual shadows "
-                    "from the 27D bulk. Warping potential V_bridge governs shadow separation.\n"
-                    "- **Layer 2 (Face/Local OR)**: R_face^(f) selects the visible sector within each shadow "
-                    "from 4 K\u00e4hler moduli faces. Warping potential V_face governs face selection.\n\n"
+                    "The theory explicitly distinguishes two hierarchical OR processes:"
+                )
+            ),
+            ContentBlock(
+                type="list",
+                items=[
+                    "<strong>Layer 1 (Bridge/Global OR):</strong> "
+                    "R<sub>\u22a5</sub><sup>global</sup> = \u2297<sub>i=1</sub><sup>12</sup> R<sub>\u22a5,i</sub> creates dual shadows "
+                    "from the 27D bulk. The warping potential V<sub>bridge</sub> governs shadow separation.",
+                    "<strong>Layer 2 (Face/Local OR):</strong> "
+                    "R<sub>face</sub><sup>(f)</sup> selects the visible sector within each shadow "
+                    "from 4 K\u00e4hler moduli faces. The warping potential V<sub>face</sub> governs face selection."
+                ],
+                label="two-layer-or-methodology"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
                     "The operators do not commute: shadows must exist before faces can be selected. "
                     "This hierarchical nesting is structurally necessary and geometric."
-                ),
-                label="two-layer-or-methodology"
+                )
             ),
 
             # ================================================================
@@ -446,7 +457,7 @@ class MethodologyV16_2(SimulationBase):
                     "modes that would otherwise produce gravitational ghosts.",
 
                     "<strong>Yang-Mills sector (F\u00b2):</strong> The gauge field strength "
-                    "F\u00b2 = F_{\u03bc\u03bd}^a F^{a\u03bc\u03bd} is gauge-invariant by "
+                    "F\u00b2 = F<sub>\u03bc\u03bd</sub><sup>a</sup> F<sup>a\u03bc\u03bd</sup> is gauge-invariant by "
                     "construction. Ghost-freedom follows from the standard Faddeev-Popov "
                     "procedure: the unphysical longitudinal and temporal polarizations are "
                     "exactly cancelled by the Faddeev-Popov ghost determinant, leaving only "
@@ -460,9 +471,9 @@ class MethodologyV16_2(SimulationBase):
                     "stabilisation, preventing runaway ghost modes.",
 
                     "<strong>Absence of higher-derivative terms:</strong> The master "
-                    "Lagrangian contains no R\u00b2, R_{\u03bc\u03bd}R^{\u03bc\u03bd}, or "
+                    "Lagrangian contains no R\u00b2, R<sub>\u03bc\u03bd</sub>R<sup>\u03bc\u03bd</sup>, or "
                     "other higher-derivative gravity terms. This is structurally enforced: "
-                    "the G2 holonomy compactification is Ricci-flat, so higher-curvature "
+                    "the G₂ holonomy compactification is Ricci-flat, so higher-curvature "
                     "corrections vanish at leading order. Consequently, there are no "
                     "Ostrogradsky ghosts (the massive spin-2 states that generically "
                     "plague higher-derivative gravity theories)."
@@ -496,10 +507,9 @@ class MethodologyV16_2(SimulationBase):
                     "of PM a 'simulation' of the theory, or is it <strong>isomorphic to the theory itself</strong>? "
                     "We demonstrate that under the principle of <strong>Minimal Description Length (MDL)</strong>, "
                     "the code achieves <strong>Algorithmic Symmetry</strong>—meaning the code's complexity "
-                    "exactly equals the geometric constraint complexity. Furthermore, we frame this derivation "
-                    "through the lens of Algorithmic Symmetry. Under the principle of Minimal Description "
-                    "Length (MDL), the 125 observed constants are demonstrated to be the most efficient "
-                    "<strong>topological compression</strong> of the M₂₇ bulk."
+                    "exactly equals the geometric constraint complexity. The 125 observed constants are "
+                    "demonstrated to be the most efficient <strong>topological compression</strong> of the "
+                    "M₂₇ bulk."
                 )
             ),
 
@@ -519,7 +529,7 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>L(Theory):</strong> 2 topological invariants (b₃ = 24, k_gimel ≈ 12.318) "
+                    "<strong>L(Theory):</strong> 2 topological invariants (b₃ = 24, k<sub>ℷ</sub> ≈ 12.318) "
                     "+ 116 geometric constraints ≈ 32,640 bits",
                     "<strong>L(Data|Theory):</strong> 0 bits (deterministic mapping from topology to constants)",
                     "<strong>Total:</strong> 32,640 bits"
@@ -665,7 +675,7 @@ class MethodologyV16_2(SimulationBase):
 
         return SectionContent(
             section_id="2",
-            subsection_id="2.6",  # v24.1: Code-Theoretical Integrity section
+            subsection_id="2.6",  # v24.2: Code-Theoretical Integrity section
             title="The Topologically Anchored Methodology (EDOF=3)",
             abstract="Spectral geometry principles with 116:1 compression ratio from 3 geometric seeds (b₃, φ, θ₁₃), the 125-residue port, and the global metric lock.",
             content_blocks=content_blocks

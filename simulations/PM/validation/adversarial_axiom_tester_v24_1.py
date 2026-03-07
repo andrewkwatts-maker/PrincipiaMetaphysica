@@ -78,7 +78,7 @@ class AdversarialAxiomTester:
         In the full implementation, this would load from theory_output.json.
         For now, we use topologically-derived values.
         """
-        # Residue structure from PM v23.1:
+        # Residue structure from PM v24.2:
         # - 55 pure predictions (geometric)
         # - 3 calibration inputs
         # - 2 fitted PMNS

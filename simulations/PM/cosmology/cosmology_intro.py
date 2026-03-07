@@ -222,7 +222,7 @@ class CosmologyIntroV16(SimulationBase):
             title="Deriving 4D Gravity from Kaluza-Klein Reduction",
             abstract=(
                 "We derive 4D gravity from the 26-dimensional superstring framework through "
-                "Kaluza-Klein dimensional reduction. The cascade M^{27}(24,1,2) → dual 13D(12,1) shadows → 4D proceeds via"
+                "Kaluza-Klein dimensional reduction. The cascade M²⁷(24,1,2) → dual 13D(12,1) shadows → 4D proceeds via "
                 "Euclidean bridge connection and G₂ compactification per shadow, naturally generating both gravity "
                 "and gauge fields from pure geometry. Volume modulus stabilization via racetrack "
                 "superpotential determines ε = 0.2257 dynamically, making it a prediction rather "
@@ -240,9 +240,9 @@ class CosmologyIntroV16(SimulationBase):
                         "The full dimensional cascade proceeds as follows: the 26D "
                         "bulk spacetime with (24,1) unified time signature first splits "
                         "into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. "
-                        "Each 13D shadow then decomposes as M13 = M4 x K_Pneuma, where "
-                        "K_Pneuma is a 9-dimensional internal space comprising a 7D G2 "
-                        "holonomy manifold cross a 2D torus: K_Pneuma = G2 x T2. "
+                        "Each 13D shadow then decomposes as M\u00b9\u00b3 = M\u2074 \u00d7 K_Pneuma, where "
+                        "K_Pneuma is a 9-dimensional internal space comprising a 7D G₂ "
+                        "holonomy manifold cross a 2D torus: K_Pneuma = G₂ \u00d7 T\u00b2. "
                         "The 14D Einstein-Hilbert action arises at an intermediate step "
                         "before the full KK reduction integrates out the internal dimensions "
                         "to yield 4D gravity plus gauge fields plus scalar moduli."
@@ -252,16 +252,16 @@ class CosmologyIntroV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "Each step in this cascade is physically necessary, not merely "
-                        "mathematically convenient. The initial 26D -> 13D split is forced by "
+                        "mathematically convenient. The initial 26D \u2192 13D split is forced by "
                         "the requirement that the (24,1) unified time signature must decompose "
                         "into two copies of (12,1), the unique factorisation that preserves "
                         "Lorentzian causality in each shadow while eliminating ghost modes from "
-                        "extra timelike dimensions. The subsequent 13D -> 4D compactification "
-                        "on K_Pneuma = G2 x T2 is dictated by supersymmetry: G2 holonomy is "
+                        "extra timelike dimensions. The subsequent 13D \u2192 4D compactification "
+                        "on K_Pneuma = G₂ \u00d7 T\u00b2 is dictated by supersymmetry: G₂ holonomy is "
                         "the UNIQUE holonomy group in 7 dimensions that preserves exactly one "
-                        "covariantly constant spinor, yielding N=1 supersymmetry in 4D -- the "
+                        "covariantly constant spinor, yielding N = 1 supersymmetry in 4D \u2014 the "
                         "minimal amount compatible with a chiral fermion spectrum matching the "
-                        "Standard Model. The T2 torus factor provides the two additional compact "
+                        "Standard Model. The T\u00b2 torus factor provides the two additional compact "
                         "directions needed for the heterotic-like gauge sector embedding."
                     )
                 ),
@@ -269,13 +269,13 @@ class CosmologyIntroV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "Physically, the 9 internal dimensions of K_Pneuma encode ALL the "
-                        "information about particle physics: the 7D G2 manifold's topology "
-                        "(characterised by Betti numbers b2 = 4 and b3 = 24) determines the "
+                        "information about particle physics: the 7D G₂ manifold's topology "
+                        "(characterised by Betti numbers b₂ = 4 and b₃ = 24) determines the "
                         "number of gauge fields (from harmonic 2-forms) and matter generations "
-                        "(from harmonic 3-forms), while the T2 factor controls the GUT-scale "
+                        "(from harmonic 3-forms), while the T\u00b2 factor controls the GUT-scale "
                         "coupling unification. The 4D observer never 'sees' these dimensions "
                         "directly because they are compactified at scales near the Planck length "
-                        "(~10^-35 m), but their geometry manifests as the coupling constants, "
+                        "(~10\u207b\u00b3\u2075 m), but their geometry manifests as the coupling constants, "
                         "mass hierarchies, and mixing angles measured in collider experiments."
                     )
                 ),
@@ -289,7 +289,7 @@ class CosmologyIntroV16(SimulationBase):
                     content=(
                         "After the dual-shadow split from 26D, each 13-dimensional shadow "
                         "metric G_MN decomposes according to the product structure "
-                        "M13 = M4 x K_Pneuma:"
+                        "M\u00b9\u00b3 = M\u2074 \u00d7 K_Pneuma:"
                     )
                 ),
                 ContentBlock(
@@ -314,8 +314,8 @@ class CosmologyIntroV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Starting from the per-shadow Einstein-Hilbert action (one 13D(12,1) shadow of the full"
-                        "M^{27}(24,1,2) dual-shadow framework):"
+                        "Starting from the per-shadow Einstein-Hilbert action (one 13D(12,1) shadow of the full "
+                        "M²⁷(24,1,2) dual-shadow framework):"
                     )
                 ),
                 ContentBlock(
@@ -334,9 +334,9 @@ class CosmologyIntroV16(SimulationBase):
                 ContentBlock(
                     type="list",
                     items=[
-                        "4D gravity: The 4D Planck mass M_Pl² = M_*^11 × V9 where V9 = V7(G₂) × V2(T²) is the 9-dimensional internal volume. NOTE: M_Pl = 1.22×10¹⁹ GeV is MEASURED (PDG 2024), not derived.",
-                        "Gauge fields: The off-diagonal metric components become SO(10) gauge bosons A_μ^a",
-                        "Scalar moduli: The internal metric fluctuations become scalar fields φ_i in 4D. (v15.0): The volume modulus T is stabilized via racetrack superpotential W = A·exp(-aT) + B·exp(-bT), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
+                        "4D gravity: The 4D Planck mass M_Pl\u00b2 = M_*\u00b9\u00b9 \u00d7 V₉ where V₉ = V₇(G₂) \u00d7 V₂(T\u00b2) is the 9-dimensional internal volume. NOTE: M_Pl = 1.22 \u00d7 10\u00b9\u2079 GeV is MEASURED (PDG 2024), not derived.",
+                        "Gauge fields: The off-diagonal metric components become SO(10) gauge bosons A_\u03bc\u1d43",
+                        "Scalar moduli: The internal metric fluctuations become scalar fields \u03c6\u1d62 in 4D. The volume modulus T is stabilized via racetrack superpotential W = A\u00b7exp(\u2212aT) + B\u00b7exp(\u2212bT), giving T_min = 1.4885 and determining \u03b5 = 0.2257 dynamically (see Section 6.3)"
                     ]
                 ),
 
@@ -370,9 +370,9 @@ class CosmologyIntroV16(SimulationBase):
                     callout_type="warning",
                     title="v15.0: Volume Stabilization",
                     content=(
-                        "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. "
-                        "At T_min = 1.4885, the volume ratio Vol(K3)/Vol(S³) = 4.43 determines the stabilized "
-                        "size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = 0.2257, "
+                        "The breathing mode VEV \u27e8\u03c3\u27e9 is fixed by the racetrack superpotential minimization. "
+                        "At T_min = 1.4885, the volume ratio Vol(K₃)/Vol(S³) = 4.43 determines the stabilized "
+                        "size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter \u03b5 = 0.2257, "
                         "making it a derived quantity rather than a free input. See Section 6.3 for the complete "
                         "moduli stabilization mechanism."
                     )
@@ -381,43 +381,43 @@ class CosmologyIntroV16(SimulationBase):
                 # Subsection: 26D → Dual Shadow Projection
                 ContentBlock(
                     type="subsection",
-                    content="25D → Dual 13D(12,1) Shadow Projection via 12×(2,0) Euclidean Bridge Pairs"
+                    content="27D \u2192 Dual 13D(12,1) Shadow Projection via 12\u00d7(2,0) Euclidean Bridge Pairs"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The v24.2 framework begins with an M^{27}(24,1,2) spacetime: 12×(2,0) bridge pairs, "
-                        "the S^{2,0} sampler data fields, and a unified T¹ time fiber. This structure "
+                        "The v24.2 framework begins with an M²⁷(24,1,2) spacetime: 12\u00d7(2,0) bridge pairs, "
+                        "the S²·⁰ sampler data fields, and a unified T¹ time fiber. This structure "
                         "eliminates ghost modes and closed timelike curves. The 27D bulk splits into dual 13D(12,1) shadows "
-                        "via the OR reduction operator R_⊥. The 12 pairs arise from b₃ = 24/2 = 12, "
+                        "via the OR reduction operator R_\u22a5. The 12 pairs arise from b₃ = 24/2 = 12, "
                         "where each pair couples one normal-sector 3-cycle to one mirror-sector 3-cycle. "
-                        "The full metric is ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²) + ds₁² + ds₂²."
+                        "The full metric is ds² = \u2212dt² + \u2211ᵢ (dy₁ᵢ² + dy₂ᵢ²) + ds₁² + ds₂²."
                     )
                 ),
                 ContentBlock(
                     type="callout",
                     callout_type="info",
-                    title="Step-by-Step Derivation: v22 Dimensional Reduction with 12-Pair Aggregation",
+                    title="Step-by-Step Derivation: v24.2 Dimensional Reduction with 12-Pair Aggregation",
                     content=(
                         "Step 1: 26D Bulk Metric (Unified Time)\n"
-                        "ds²_{26} = G_{MN}dX^M dX^N, M,N = 0,1,...,25\n"
+                        "ds²₂₆ = G_MN dX^M dX^N, M, N = 0, 1, ..., 25\n"
                         "With unified time signature (24,1): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\n"
-                        "Step 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\n"
-                        "M^{27}(24,1,2) = 12×(2,0) + (0,1) + S^{2,0} → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\n"
+                        "Step 2: Dual Shadow Split via 12\u00d7(2,0) Euclidean Bridge Pairs\n"
+                        "M²⁷(24,1,2) = 12\u00d7(2,0) + (0,1) + S²·⁰ \u2192 12 bridge pairs WARP to create 2\u00d713D(12,1) shadows:\n"
                         "Each shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\n"
-                        "Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})\n"
-                        "WHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\n"
+                        "Dimensional structure: T¹ \u00d7_fiber (\u2295ᵢ₌₁¹² Bᵢ²·⁰)\n"
+                        "WHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal \u2194 mirror.\n\n"
                         "Step 3: Per-Pair Breathing Energy Density\n"
                         "Each bridge pair i contributes:\n"
-                        "ρ_i = |T_normal_i - R_⊥_i T_mirror_i|\n"
-                        "where R_⊥_i is the per-pair OR reduction operator with R_⊥² = -I (Möbius property).\n\n"
-                        "Step 4: 12-Pair Aggregation (Key v22 Change)\n"
-                        "Aggregated breathing energy: ρ_breath = (1/12) ∑_{i=1}^{12} ρ_i\n"
-                        "This aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\n"
+                        "\u03c1ᵢ = |T_normal_i \u2212 R_\u22a5_i T_mirror_i|\n"
+                        "where R_\u22a5_i is the per-pair OR reduction operator with R_\u22a5² = \u2212I (M\u00f6bius property).\n\n"
+                        "Step 4: 12-Pair Aggregation (Key v24.2 Change)\n"
+                        "Aggregated breathing energy: \u03c1_breath = (1/12) \u2211ᵢ₌₁¹² \u03c1ᵢ\n"
+                        "This aggregation REDUCES variance: \u03c3_eff = \u03c3_single/\u221a12 \u2248 0.29 \u03c3_single\n"
                         "Connection to consciousness: 12 I/O channels provide robust experience.\n\n"
                         "Step 5: Equation of State from Aggregated Breathing\n"
-                        "w = -1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\n"
-                        "Target: w ≈ -0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
+                        "w = \u22121 + (1/\u03c6²) \u00d7 \u27e8\u03c1_breath\u27e9 / max(\u03c1_breath)\n"
+                        "Target: w \u2248 \u22120.958 \u00b1 0.003 (matches DESI 2025 thawing constraint)."
                     )
                 ),
                 ContentBlock(
@@ -465,8 +465,8 @@ class CosmologyIntroV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,1) Casimir operator "
-                        "determines the brane tensions via T ∝ √C2, ensuring consistency with the SO(24,1) "
-                        "invariance of the v21 bulk geometry."
+                        "determines the brane tensions via T \u221d \u221aC₂, ensuring consistency with the SO(24,1) "
+                        "invariance of the v24.2 bulk geometry."
                     )
                 ),
 
@@ -490,22 +490,22 @@ class CosmologyIntroV16(SimulationBase):
                     content=(
                         "Step 1: 26D Spinor Dimension (Unified Time)\n"
                         "For signature (24,1), the minimal spinor has dimension:\n"
-                        "dim(Ψ_26D) = 2^{(26-1)/2} = 2^{12.5} → 8192 (Majorana-Weyl with real structure)\n"
+                        "dim(\u03a8_26D) = 2^((26\u22121)/2) = 2^(12.5) \u2192 8192 (Majorana-Weyl with real structure)\n"
                         "The unified time signature ensures no ghost modes.\n\n"
                         "Step 2: Dual Shadow Split\n"
                         "The 26D spinor splits into per-shadow components via the Euclidean bridge:\n"
-                        "Ψ_{26D} → 2 × [Ψ_{4D} ⊗ χ_{SO(10)} ⊗ η_shadow]\n"
+                        "\u03a8₂₆D \u2192 2 \u00d7 [\u03a8₄D \u2297 \u03c7_SO(10) \u2297 \u03b7_shadow]\n"
                         "where:\n"
-                        "• Ψ_{4D}: 4-component Dirac spinor (4D spacetime per shadow)\n"
-                        "• χ_{SO(10)}: 16-dimensional spinor representation 16 of SO(10)\n"
-                        "• η_shadow: Shadow parity factor from OR reduction R_⊥\n\n"
+                        "\u2022 \u03a8₄D: 4-component Dirac spinor (4D spacetime per shadow)\n"
+                        "\u2022 \u03c7_SO(10): 16-dimensional spinor representation 16 of SO(10)\n"
+                        "\u2022 \u03b7_shadow: Shadow parity factor from OR reduction R_\u22a5\n\n"
                         "Step 3: Effective Component Count Per Shadow\n"
-                        "After SO(10) → SU(5) → G_SM breaking and G₂ compactification:\n"
-                        "dim_eff = 4 × 16 = 64 components per shadow\n\n"
+                        "After SO(10) \u2192 SU(5) \u2192 G_SM breaking and G₂ compactification:\n"
+                        "dim_eff = 4 \u00d7 16 = 64 components per shadow\n\n"
                         "These 64 components correspond to:\n"
-                        "• 3 generations × 16 (each generation in 16 of SO(10))\n"
-                        "• Plus sterile neutrinos and dark sector fermions\n\n"
-                        "The per-shadow reduction factor is 8192/(2×64) = 64."
+                        "\u2022 3 generations \u00d7 16 (each generation in 16 of SO(10))\n"
+                        "\u2022 Plus sterile neutrinos and dark sector fermions\n\n"
+                        "The per-shadow reduction factor is 8192/(2\u00d764) = 64."
                     )
                 ),
                 ContentBlock(
@@ -1117,7 +1117,7 @@ class CosmologyIntroV16(SimulationBase):
                 "simulation_id": self.metadata.id,
                 "assertion": (
                     f"SO(24,1) Casimir C2 = {C2} for (5,1) brane is consistent "
-                    f"with v23.1 dual-shadow framework"
+                    f"with v24.2 dual-shadow framework"
                 ),
                 "result": "PASS" if casimir_ok else "FAIL",
                 "timestamp": datetime.now().isoformat(),

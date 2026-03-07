@@ -13,7 +13,7 @@ SAMPLER DATA FIELDS FORMULA:
     - n_local = active local pairs (6 baseline -> 12 full gnosis)
     - phi = golden ratio (dilution correction)
 
-DIMENSIONAL ACCOUNTING (v23.1 - 27D interpretation):
+DIMENSIONAL ACCOUNTING (v24.2 - 27D interpretation):
     - 24 core = 24 local bridge (DUAL REPRESENTATION of same physical space)
     - 2 sampler data fields dimensions (1 pair x 2D Euclidean - NEW physical dimensions)
     - 1 unified time
@@ -67,7 +67,7 @@ class CentralSamplerSolver:
     FORMULA:
         p_anc = (1/12) * sum(p_i) + sqrt(n_local/12) * phi
 
-    DIMENSIONAL ACCOUNTING (v23.1 - 27D):
+    DIMENSIONAL ACCOUNTING (v24.2 - 27D):
         24 core = 24 local (dual representation of same 24D space)
         2 sampler data fields (NEW physical dimensions)
         1 unified time

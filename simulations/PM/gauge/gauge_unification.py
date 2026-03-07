@@ -253,8 +253,8 @@ class GaugeUnificationSimulation(SimulationBase):
             section_id="3",
             subsection_id=None,
             title="Gauge Coupling Unification and the GUT Scale",
-            abstract="We determine the Grand Unification scale M_GUT = (6.3 ± 0.3) × 10^15 GeV and "
-                    "unified coupling alpha_GUT^-1 = 42.7 ± 2.0 from three-loop renormalization group "
+            abstract="We determine the Grand Unification scale M<sub>GUT</sub> = (6.3 ± 0.3) × 10<sup>15</sup> GeV and "
+                    "unified coupling α<sub>GUT</sub><sup>−1</sup> = 42.7 ± 2.0 from three-loop renormalization group "
                     "evolution of Standard Model gauge couplings, including Kaluza-Klein threshold "
                     "corrections and asymptotic safety effects.",
             content_blocks=[
@@ -268,7 +268,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content="We begin with the Standard Model gauge couplings at the Z boson mass "
-                            "M_Z = 91.2 GeV, taken from PDG 2024 measurements:"
+                            "M<sub>Z</sub> = 91.2 GeV, taken from PDG 2024 measurements:"
                 ),
                 ContentBlock(
                     type="formula",
@@ -294,9 +294,9 @@ class GaugeUnificationSimulation(SimulationBase):
                 ),
                 ContentBlock(
                     type="paragraph",
-                    content="At the compactification scale M_* ~ 5 TeV, Kaluza-Klein tower states from "
-                            "the CY4 compactification introduce threshold corrections proportional to the "
-                            "Kahler moduli count h^{1,1} = 24:"
+                    content="At the compactification scale M<sub>*</sub> ~ 5 TeV, Kaluza-Klein tower states from "
+                            "the CY<sub>4</sub> compactification introduce threshold corrections proportional to the "
+                            "K&auml;hler moduli count h<sup>1,1</sup> = 24:"
                 ),
                 ContentBlock(
                     type="formula",
@@ -309,7 +309,7 @@ class GaugeUnificationSimulation(SimulationBase):
                     type="paragraph",
                     content="Near the Planck scale, the gravitational coupling becomes relevant and drives "
                             "the system toward an asymptotically safe UV fixed point. This fixed point, "
-                            "predicted by quantum gravity, determines the unified coupling alpha_GUT:"
+                            "predicted by quantum gravity, determines the unified coupling α<sub>GUT</sub>:"
                 ),
                 ContentBlock(
                     type="formula",
@@ -319,7 +319,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 ),
                 ContentBlock(
                     type="paragraph",
-                    content="The unification scale M_GUT is determined by minimizing the spread of the "
+                    content="The unification scale M<sub>GUT</sub> is determined by minimizing the spread of the "
                             "three evolved couplings:"
                 ),
                 ContentBlock(
@@ -341,22 +341,22 @@ class GaugeUnificationSimulation(SimulationBase):
                 ),
                 ContentBlock(
                     type="paragraph",
-                    content="The unified coupling alpha_GUT^-1 ~ 43 shows the influence of the asymptotic safety "
-                            "fixed point pulling toward the G2 topological value 1/alpha* ~ 24 = b3. The GUT scale "
-                            "M_GUT ~ 6 × 10^15 GeV from standard 3-loop running is lower than the geometric/torsion "
-                            "prediction M_GUT ~ 2 × 10^16 GeV, suggesting intermediate physics (e.g., Pati-Salam at "
-                            "M_PS ~ 10^12 GeV) may modify the running. This represents an active area of refinement "
+                    content="The unified coupling α<sub>GUT</sub>⁻¹ ~ 43 shows the influence of the asymptotic safety "
+                            "fixed point pulling toward the G₂ topological value 1/α* ~ 24 = b₃. The GUT scale "
+                            "M<sub>GUT</sub> ~ 6 × 10¹⁵ GeV from standard 3-loop running is lower than the geometric/torsion "
+                            "prediction M<sub>GUT</sub> ~ 2 × 10¹⁶ GeV, suggesting intermediate physics (e.g., Pati-Salam at "
+                            "M<sub>PS</sub> ~ 10¹² GeV) may modify the running. This represents an active area of refinement "
                             "in the Principia Metaphysica framework."
                 ),
                 ContentBlock(
                     type="paragraph",
                     content="It is important to distinguish two GUT scales arising from different physical mechanisms: "
-                            "(1) M_GUT = 6.3 × 10^15 GeV from 3-loop RG evolution with KK and asymptotic safety corrections, "
-                            "used for gauge coupling evolution, and (2) M_GUT_geometric = 2.1 × 10^16 GeV from torsion class "
-                            "T_omega = -0.875 and moduli stabilization Re(T) ~ 9.865, used for proton decay calculations. "
-                            "The geometric scale corresponds to alpha_GUT = 1/23.54 (not 1/42.7) and arises from the explicit "
-                            "G2 manifold geometry rather than perturbative running. This higher scale ensures proton lifetime "
-                            "tau_p ~ 3.9×10^34 years passes the Super-Kamiokande bound."
+                            "(1) M<sub>GUT</sub> = 6.3 × 10<sup>15</sup> GeV from 3-loop RG evolution with KK and asymptotic safety corrections, "
+                            "used for gauge coupling evolution, and (2) M<sub>GUT,geom</sub> = 2.1 × 10<sup>16</sup> GeV from torsion class "
+                            "T<sub>&omega;</sub> = −0.875 and moduli stabilization Re(T) ~ 9.865, used for proton decay calculations. "
+                            "The geometric scale corresponds to α<sub>GUT</sub> = 1/23.54 (not 1/42.7) and arises from the explicit "
+                            "G₂ manifold geometry rather than perturbative running. This higher scale ensures proton lifetime "
+                            "τ<sub>p</sub> ~ 3.9 × 10<sup>34</sup> years passes the Super-Kamiokande bound."
                 ),
             ],
             formula_refs=[
