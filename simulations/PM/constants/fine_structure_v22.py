@@ -778,31 +778,31 @@ def run_fine_structure_v22_demo():
             "section_id": "2",
             "subsection_id": "2.1",
             "title": "Fine Structure Constant from G2 Holonomy",
-            "abstract": "Derives the inverse fine structure constant alpha^-1 = 137.035999 from G2 manifold topology with zero free parameters.",
+            "abstract": "Derives the inverse fine structure constant α⁻¹ = 137.035999 from G₂ manifold topology with zero free parameters.",
             "content_blocks": [
                 {
                     "type": "paragraph",
                     "content": (
-                        "The fine structure constant alpha = 1/137.036 is derived from the holonomy "
-                        "precision limit k_gimel = b3/2 + 1/pi, where b3=24 is the third Betti number "
-                        "of the TCS G2 manifold. The golden ratio phi enters via the octonionic "
-                        "automorphism G2 = Aut(O), providing a natural geometric scaling."
+                        "The fine structure constant α = 1/137.036 is derived from the holonomy "
+                        "precision limit k<sub>ℷ</sub> = b₃/2 + 1/π, where b₃ = 24 is the third Betti number "
+                        "of the TCS G₂ manifold. The golden ratio φ enters via the octonionic "
+                        "automorphism G₂ = Aut(O), providing a natural geometric scaling."
                     ),
                 },
                 {
                     "type": "paragraph",
                     "content": (
-                        "The pair-averaged derivation (v22.5) organizes the 24 associative 3-cycles "
-                        "into 12 Euclidean bridge pairs between shadow branes. Under G2 holonomy "
+                        "The pair-averaged derivation organises the 24 associative 3-cycles "
+                        "into 12 Euclidean bridge pairs between shadow branes. Under G₂ holonomy "
                         "symmetry, each pair carries uniform residue flux, and the pair-averaged "
-                        "k_gimel recovers the original value with improved variance properties."
+                        "k<sub>ℷ</sub> recovers the original value with improved variance properties."
                     ),
                 },
                 {
                     "type": "paragraph",
                     "content": (
-                        "A 7D suppression term delta = D_G2 / (10^4 - 3*k_gimel) corrects the base "
-                        "formula by 7.03e-4, shifting alpha^-1 from 137.0367 to 137.035999, matching "
+                        "A 7D suppression term δ = D<sub>G₂</sub> / (10⁴ − 3k<sub>ℷ</sub>) corrects the base "
+                        "formula by 7.03 × 10<sup>−4</sup>, shifting α<sup>−1</sup> from 137.0367 to 137.035999, matching "
                         "CODATA 2022 within the theory uncertainty of 0.01."
                     ),
                 },

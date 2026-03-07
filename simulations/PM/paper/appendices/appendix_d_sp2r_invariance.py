@@ -4,17 +4,17 @@ Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0
 ====================================================================
 
                     ╔══════════════════════════════════════════════════════════╗
-                    ║                   ARCHIVED (v23.1)                        ║
+                    ║                   ARCHIVED (v24.2)                        ║
                     ║                                                          ║
                     ║  This appendix documents the deprecated v21/v22 Sp(2,R)  ║
                     ║  gauge-fixing approach used in the (24,2) two-time       ║
                     ║  framework. This approach has been SUPERSEDED.           ║
                     ║                                                          ║
-                    ║  As of v23.1, Principia Metaphysica uses UNIFIED TIME    ║
+                    ║  As of v24.2, Principia Metaphysica uses UNIFIED TIME    ║
                     ║  with signature (26,1) in 27D = T^1 x (12x(2,0)) + C^2,0 ║
                     ║  eliminating the need for Sp(2,R) gauge-fixing entirely. ║
                     ║                                                          ║
-                    ║  The v23.1 framework uses:                               ║
+                    ║  The v24.2 framework uses:                               ║
                     ║  - Dual 13D(12,1) shadows via bridge WARP mechanism      ║
                     ║  - OR reduction operator R_perp with R_perp^2 = -I       ║
                     ║  - NO ghost modes, NO CTCs (manifest unitarity)          ║
@@ -75,7 +75,7 @@ from simulations.base import (
 
 class Sp2RInvarianceProof(SimulationBase):
     """
-    ARCHIVED (v23.1): Documents deprecated v21/v22 two-time physics approach.
+    ARCHIVED (v24.2): Documents deprecated v21/v22 two-time physics approach.
 
     Proves no closed timelike curves exist in (24,2) signature.
 
@@ -90,7 +90,7 @@ class Sp2RInvarianceProof(SimulationBase):
     5. Effective signature is (12,1) after gauge fixing
     6. With single time, CTCs are topologically forbidden
 
-    NOTE: v23.1 uses unified time signature (26,1) in 27D, making this
+    NOTE: v24.2 uses unified time signature (26,1) in 27D, making this
     approach obsolete. Retained for historical reference only.
     """
 
@@ -103,8 +103,8 @@ class Sp2RInvarianceProof(SimulationBase):
             domain="appendices",
             title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED]",
             description=(
-                "[ARCHIVED v23.1] Documents deprecated v21/v22 Sp(2,R) two-time physics approach, "
-                "superseded by v23.1 unified time signature (26,1) with 12-PAIR-BRIDGE architecture."
+                "[ARCHIVED v24.2] Documents deprecated v21/v22 Sp(2,R) two-time physics approach, "
+                "superseded by v24.2 unified time signature (26,1) with 12-PAIR-BRIDGE architecture."
             ),
             section_id="2",
             subsection_id="D_prime",
@@ -277,13 +277,13 @@ class Sp2RInvarianceProof(SimulationBase):
             section_id="2",
             subsection_id="D_prime",
             appendix=True,
-            title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED v23.1]",
+            title="Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves [ARCHIVED v24.2]",
             abstract=(
-                "ARCHIVED (v23.1): Documents deprecated v21/v22 Sp(2,R) approach, superseded by unified time signature. "
+                "ARCHIVED (v24.2): Documents deprecated v21/v22 Sp(2,R) approach, superseded by unified time signature. "
                 "Rigorous proof that Sp(2,R) gauge symmetry eliminates the second time "
                 "dimension from physical observables, preventing closed timelike curves "
                 "(CTCs) in the (24,2) signature bulk spacetime. The gauge constraint "
-                "X^mu P_mu = 0 projects physical states onto (12,1) shadow spacetime "
+                "X<sup>μ</sup>P<sub>μ</sub> = 0 projects physical states onto (12,1) shadow spacetime "
                 "with strictly causal light cone structure."
             ),
             content_blocks=[
@@ -297,13 +297,13 @@ class Sp2RInvarianceProof(SimulationBase):
                         "The critical bosonic string requires D = 26 spacetime dimensions. In the "
                         "two-time physics framework of Principia Metaphysica, this manifests as "
                         "(24,2) signature spacetime with two timelike directions: thermodynamic time "
-                        "t_therm and orthogonal time tau."
+                        "t<sub>therm</sub> and orthogonal time τ."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Potential Problem**: Multiple time dimensions generically allow closed "
+                        "<strong>Potential Problem</strong>: Multiple time dimensions generically allow closed "
                         "timelike curves (CTCs), violating causality. We prove this does not occur "
                         "due to Sp(2,R) gauge symmetry."
                     )
@@ -329,11 +329,11 @@ class Sp2RInvarianceProof(SimulationBase):
                     type="paragraph",
                     content=(
                         "The commutation relations are:\n"
-                        "- [X*P, X^2] = 2X^2\n"
-                        "- [X*P, P^2] = -2P^2\n"
-                        "- [X^2, P^2] = 4X*P\n\n"
+                        "- [X·P, X²] = 2X²\n"
+                        "- [X·P, P²] = -2P²\n"
+                        "- [X², P²] = 4X·P\n\n"
                         "These are isomorphic to the standard sl(2,R) algebra with generators "
-                        "{H, E, F} where H = X*P, E = X^2/2, F = P^2/2."
+                        "{H, E, F} where H = X·P, E = X²/2, F = P²/2."
                     )
                 ),
                 ContentBlock(
@@ -362,8 +362,8 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**First-class property**: The constraints have weakly vanishing Poisson "
-                        "brackets: {chi_a, chi_b} = C^c_ab chi_c. This means the constraints are "
+                        "<strong>First-class property</strong>: The constraints have weakly vanishing Poisson "
+                        "brackets: {χ<sub>a</sub>, χ<sub>b</sub>} = C<sup>c</sup><sub>ab</sub> χ<sub>c</sub>. This means the constraints are "
                         "preserved under gauge transformations and generate redundant descriptions "
                         "of the same physical state."
                     )
@@ -414,12 +414,12 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Signature analysis**:\n"
+                        "<strong>Signature analysis</strong>:\n"
                         "- Bulk: 24 spacelike + 2 timelike = 26D with signature (24,2)\n"
                         "- Shadow: 12 spacelike + 1 timelike = 13D with signature (12,1)\n\n"
-                        "The constraint X*P = 0 acts on the (t, E) pairs for both time directions. "
+                        "The constraint X·P = 0 acts on the (t, E) pairs for both time directions. "
                         "The gauge fixing condition identifies states differing only in the orthogonal "
-                        "time tau, leaving only thermodynamic time t_therm as physical."
+                        "time τ, leaving only thermodynamic time t<sub>therm</sub> as physical."
                     )
                 ),
                 ContentBlock(
@@ -442,16 +442,16 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Proof**:\n\n"
-                        "1. **Topology**: R^{12,1} is simply connected. The time direction R^1 "
+                        "<strong>Proof</strong>:\n\n"
+                        "1. <strong>Topology</strong>: R<sup>12,1</sup> is simply connected. The time direction R<sup>1</sup> "
                         "cannot form closed loops without violating the manifold structure.\n\n"
-                        "2. **Light cone structure**: With single time, the light cone at each point "
+                        "2. <strong>Light cone structure</strong>: With single time, the light cone at each point "
                         "divides spacetime into past, future, and spacelike regions. There is no "
                         "ambiguity in causal ordering.\n\n"
-                        "3. **Causal ordering**: The time coordinate provides a global causal order. "
-                        "For any two events p, q with timelike separation, either p < q or q < p "
+                        "3. <strong>Causal ordering</strong>: The time coordinate provides a global causal order. "
+                        "For any two events p, q with timelike separation, either p &lt; q or q &lt; p "
                         "unambiguously.\n\n"
-                        "4. **CTC requirement**: CTCs require returning to one's own past light cone. "
+                        "4. <strong>CTC requirement</strong>: CTCs require returning to one's own past light cone. "
                         "In (n,1) signature, this is topologically forbidden for simply connected "
                         "spacetimes. The CTC would require t(curve) = t(start) while traversing "
                         "only timelike/null directions, which contradicts the monotonicity of "
@@ -466,7 +466,7 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The physical Hilbert space H_phys is defined by states annihilated by the "
+                        "The physical Hilbert space H<sub>phys</sub> is defined by states annihilated by the "
                         "constraint operators (weakly, as matrix elements)."
                     )
                 ),
@@ -478,9 +478,9 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This projects out the tau direction from all physical observables. Any "
+                        "This projects out the τ direction from all physical observables. Any "
                         "operator O that measures properties involving the second time direction "
-                        "gives zero expectation value on physical states: <O_tau> = 0."
+                        "gives zero expectation value on physical states: &lt;O<sub>τ</sub>&gt; = 0."
                     )
                 ),
                 ContentBlock(
@@ -490,8 +490,8 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Configurations differing only in the tau direction lie on the same gauge "
-                        "orbit. The Sp(2,R) gauge transformations mix (t, tau) and (E_t, E_tau) "
+                        "Configurations differing only in the τ direction lie on the same gauge "
+                        "orbit. The Sp(2,R) gauge transformations mix (t, τ) and (E<sub>t</sub>, E<sub>τ</sub>) "
                         "while preserving the physical content. After gauge fixing, all such "
                         "configurations are identified as representing the same physical state."
                     )
@@ -499,7 +499,7 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Physical interpretation**: The orthogonal time tau is not a direction "
+                        "<strong>Physical interpretation</strong>: The orthogonal time τ is not a direction "
                         "in which particles can travel or signals can propagate. It is pure gauge "
                         "redundancy, analogous to the longitudinal polarization of massless gauge "
                         "bosons which is eliminated by gauge symmetry."
@@ -514,14 +514,14 @@ class Sp2RInvarianceProof(SimulationBase):
                     content=(
                         "The treatment here follows Bars' two-time physics program (2001, 2006, 2011). "
                         "Key results:\n\n"
-                        "- **Holographic reduction**: 2T physics in (d+2) dimensions is equivalent to "
+                        "- <strong>Holographic reduction</strong>: 2T physics in (d+2) dimensions is equivalent to "
                         "1T physics in (d+1) dimensions via Sp(2,R) gauge fixing.\n\n"
-                        "- **Multiple 1T interpretations**: Different gauge choices give different 1T "
+                        "- <strong>Multiple 1T interpretations</strong>: Different gauge choices give different 1T "
                         "physics (relativistic particle, hydrogen atom, etc.) as dual descriptions.\n\n"
-                        "- **Causality preserved**: Despite two times in the parent theory, all 1T "
+                        "- <strong>Causality preserved</strong>: Despite two times in the parent theory, all 1T "
                         "daughter theories have standard causal structure.\n\n"
                         "In PM, the specific gauge choice yields thermodynamic time as the physical "
-                        "time direction, with tau as pure gauge."
+                        "time direction, with τ as pure gauge."
                     )
                 ),
                 ContentBlock(
@@ -531,14 +531,14 @@ class Sp2RInvarianceProof(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "**Main Result**: The (24,2) signature of 26D bulk spacetime does NOT lead to "
+                        "<strong>Main Result</strong>: The (24,2) signature of 26D bulk spacetime does NOT lead to "
                         "closed timelike curves because:\n\n"
-                        "1. Sp(2,R) gauge symmetry with constraint X*P = 0 eliminates one time "
+                        "1. Sp(2,R) gauge symmetry with constraint X·P = 0 eliminates one time "
                         "dimension from physical observables.\n\n"
                         "2. The physical shadow spacetime has signature (12,1) with single time.\n\n"
                         "3. In (12,1), CTCs are topologically forbidden (simply connected time).\n\n"
-                        "4. All observables in H_phys see only thermodynamic time; the orthogonal "
-                        "time tau is pure gauge.\n\n"
+                        "4. All observables in H<sub>phys</sub> see only thermodynamic time; the orthogonal "
+                        "time τ is pure gauge.\n\n"
                         "This resolves the apparent paradox of having two time dimensions while "
                         "maintaining strict causality in the physical theory."
                     )

@@ -541,14 +541,14 @@ class DarkEnergyEvolution(SimulationBase):
         return SectionContent(
             section_id="5",
             subsection_id="5.6",
-            title="Dark Energy Thawing from G2 Ricci Flow Relaxation",
+            title="Dark Energy Thawing from G₂ Ricci Flow Relaxation",
             abstract=(
-                "We derive the CPL dark energy parameters (w0, wa) from G2 geometry, "
+                "We derive the CPL dark energy parameters (w₀, w\u2090) from G₂ geometry, "
                 "demonstrating that DESI 2025's 'thawing' dark energy signature is "
-                "the manifestation of Ricci flow relaxation of the G2 3-form. The "
-                "equation of state w0 = -1 + 1/b3 = -0.958 arises from static 24-cycle "
-                "pressure, while wa = (-1/sqrt(b3)) * dim(Psi) = -0.816 emerges from "
-                "G2 4-form projection into 4D spacetime. This provides a geometric "
+                "the manifestation of Ricci flow relaxation of the G₂ 3-form. The "
+                "equation of state w₀ = -1 + 1/b₃ = -0.958 arises from static 24-cycle "
+                "pressure, while w\u2090 = (-1/\u221ab₃) \u00d7 dim(\u03a8) = -0.816 emerges from "
+                "G₂ 4-form projection into 4D spacetime. This provides a geometric "
                 "origin for the observed dynamic dark energy behavior."
             ),
             content_blocks=[
@@ -565,13 +565,13 @@ class DarkEnergyEvolution(SimulationBase):
                         "equation of state approaches w = -1 at early times and becomes "
                         "less negative (w > -1) today. In our framework, this behavior "
                         "has a precise geometric origin: the Ricci flow relaxation of "
-                        "the G2 manifold."
+                        "the G₂ manifold."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The G2 manifold's associative 3-form Phi encodes both the "
+                        "The G₂ manifold's associative 3-form \u03a6 encodes both the "
                         "metric structure and the torsion class. As the manifold "
                         "evolves under Ricci flow during cosmic expansion, the 3-form "
                         "'relaxes,' releasing torsional energy. This torsional leakage "
@@ -580,7 +580,7 @@ class DarkEnergyEvolution(SimulationBase):
                 ),
                 ContentBlock(
                     type="heading",
-                    content="Derivation of w0",
+                    content="Derivation of w₀",
                     level=3
                 ),
                 ContentBlock(
@@ -601,25 +601,25 @@ class DarkEnergyEvolution(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The 1/b3 correction represents the inverse volume scaling of "
+                        "The 1/b₃ correction represents the inverse volume scaling of "
                         "the 3-form contribution to the stress-energy tensor. With "
-                        "exactly 24 associative cycles in TCS G2 geometry, this gives "
+                        "exactly 24 associative cycles in TCS G₂ geometry, this gives "
                         "a small but non-zero deviation from the cosmological constant "
                         "limit w = -1."
                     )
                 ),
                 ContentBlock(
                     type="heading",
-                    content="Derivation of wa",
+                    content="Derivation of w\u2090",
                     level=3
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The evolution parameter wa arises from the G2 holonomy "
-                        "in two steps: the linear contribution wa_linear = -1/sqrt(b3) "
+                        "The evolution parameter w\u2090 arises from the G₂ holonomy "
+                        "in two steps: the linear contribution w\u2090(linear) = -1/\u221ab₃ "
                         "from the associative 3-form, followed by projection through "
-                        "the co-associative 4-form Psi (dim = 4) into 4D spacetime:"
+                        "the co-associative 4-form \u03a8 (dim = 4) into 4D spacetime:"
                     )
                 ),
                 ContentBlock(
@@ -631,7 +631,7 @@ class DarkEnergyEvolution(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The negative wa with w0 > -1 is precisely the 'thawing' "
+                        "The negative w\u2090 with w₀ > -1 is precisely the 'thawing' "
                         "signature: dark energy was closer to w = -1 in the past "
                         "and has evolved toward w > -1 today. This is the opposite "
                         "of 'freezing' models where w < -1 in the past."
@@ -657,11 +657,11 @@ class DarkEnergyEvolution(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "DESI 2025 thawing constraint measures w0 = -0.957 +/- 0.067 and "
-                        "wa = -0.99 +/- 0.32. Our geometric predictions of w0 = -0.958 "
-                        "(within BAO-only uncertainty) and wa = -0.816 (4-form projected, "
-                        "0.54 sigma from DESI) capture the correct thawing sign and magnitude. "
-                        "The remaining tension in wa may be reduced by non-linear corrections "
+                        "DESI 2025 thawing constraint measures w₀ = -0.957 \u00b1 0.067 and "
+                        "w\u2090 = -0.99 \u00b1 0.32. Our geometric predictions of w₀ = -0.958 "
+                        "(within BAO-only uncertainty) and w\u2090 = -0.816 (4-form projected, "
+                        "0.54\u03c3 from DESI) capture the correct thawing sign and magnitude. "
+                        "The remaining tension in w\u2090 may be reduced by non-linear corrections "
                         "from moduli-quintessence coupling, providing strong evidence that "
                         "dark energy behavior is geometrically determined."
                     )
@@ -672,9 +672,9 @@ class DarkEnergyEvolution(SimulationBase):
                     title="Physical Interpretation: Ricci Flow as Thawing",
                     content=(
                         "The 'thawing' observed by DESI is the direct signature of "
-                        "G2 Ricci flow relaxation. As the universe expands, the "
+                        "G₂ Ricci flow relaxation. As the universe expands, the "
                         "Ricci flow smooths the internal manifold curvature, and "
-                        "the torsional energy stored in the G2 3-form is gradually "
+                        "the torsional energy stored in the G₂ 3-form is gradually "
                         "released. This connects cosmic acceleration to the "
                         "fundamental geometry of compactification."
                     )
@@ -688,7 +688,7 @@ class DarkEnergyEvolution(SimulationBase):
                     type="paragraph",
                     content=(
                         "The torsional leakage mechanism was first identified in "
-                        "PM v15.2 as the coupling between G2 torsion and cosmic "
+                        "PM v15.2 as the coupling between G₂ torsion and cosmic "
                         "expansion. The leakage coefficient quantifies this transfer:"
                     )
                 ),
@@ -703,7 +703,7 @@ class DarkEnergyEvolution(SimulationBase):
                     content=(
                         "This coefficient determines the rate at which frozen dark "
                         "energy (w = -1) converts to the dynamic thawing component. "
-                        "For TCS G2 with b3=24 and chi_eff=144, the leakage rate is "
+                        "For TCS G₂ with b₃ = 24 and \u03c7_eff = 144, the leakage rate is "
                         "approximately 13.3% per Hubble time."
                     )
                 ),
@@ -716,14 +716,14 @@ class DarkEnergyEvolution(SimulationBase):
                     type="paragraph",
                     content=(
                         "The 12 bridge pairs in the breathing mechanism arise rigorously "
-                        "from the 4-face x 3-generation structure of the G2 manifold. "
-                        "Each of the h^{1,1} = 4 Kahler faces supports n_gen = 3 independent "
+                        "from the 4-face \u00d7 3-generation structure of the G₂ manifold. "
+                        "Each of the h(1,1) = 4 K\u00e4hler faces supports 3 independent "
                         "bridge oscillations (one per fermion generation), giving "
-                        "n_pairs = 4 x 3 = 12 = b3/2. Furthermore, each bridge pair has "
-                        "4 face channels, yielding 48 = chi_eff/3 total independent "
-                        "oscillations. The effective variance therefore reduces by sqrt(48), "
-                        "not merely sqrt(12), stabilizing the dark energy equation of state "
-                        "near w0 = -23/24 with remarkable precision."
+                        "12 = 4 \u00d7 3 = b₃/2 pairs. Furthermore, each bridge pair has "
+                        "4 face channels, yielding 48 = \u03c7_eff/3 total independent "
+                        "oscillations. The effective variance therefore reduces by \u221a48, "
+                        "not merely \u221a12, stabilizing the dark energy equation of state "
+                        "near w₀ = -23/24 with remarkable precision."
                     )
                 ),
                 ContentBlock(
@@ -733,19 +733,19 @@ class DarkEnergyEvolution(SimulationBase):
                 ),
                 ContentBlock(
                     type="heading",
-                    content="Non-Linear Correction to w_a",
+                    content="Non-Linear Correction to wₐ",
                     level=3
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The leading-order w_a = -0.816 from 4-form projection agrees with "
-                        "DESI 2024/2025 data at 0.54 sigma. However, face-face interactions "
+                        "The leading-order w\u2090 = -0.816 from 4-form projection agrees with "
+                        "DESI 2024/2025 data at 0.54\u03c3. However, face-face interactions "
                         "in the 4-face architecture introduce a perturbative non-linear "
-                        "correction. The C(4,2) = 6 pairwise Kahler face couplings, normalized "
-                        "by the b3 = 24 cycle count, give a correction parameter "
-                        "epsilon_NL = 6/24 = 1/4. Combined with the alpha-leak coupling "
-                        "alpha_leak = 1/(4*pi), the corrected w_a,NL shifts modestly toward "
+                        "correction. The C(4,2) = 6 pairwise K\u00e4hler face couplings, normalized "
+                        "by the b₃ = 24 cycle count, give a correction parameter "
+                        "\u03b5_NL = 6/24 = 1/4. Combined with the \u03b1_leak coupling "
+                        "\u03b1_leak = 1/(4\u03c0), the corrected w\u2090,NL shifts modestly toward "
                         "the DESI central value. This correction is documented for completeness "
                         "and future cross-validation with DESI Year 3+ data releases."
                     )

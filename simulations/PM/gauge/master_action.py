@@ -377,7 +377,7 @@ class MasterActionSimulationV22(SimulationBase):
                 plain_text="S = integral d^27X sqrt(-G) [ R + Psi-bar_P (i*Gamma^M*D_M - m) Psi_P + lambda*(Psi-bar_P*Psi_P)^2 + sum_{i=1}^{12} L_bridge^i + L_C ]",
                 category="DERIVED",
                 description=(
-                    "v23.1: 27D(24,1,2) Pneuma master action with 12-pair (2,0) bridge system + S^{2,0} sampler data fields. "
+                    "v24.2: 27D(24,1,2) Pneuma master action with 12-pair (2,0) bridge system + S^{2,0} sampler data fields. "
                     "12×(2,0) + S^{2,0} + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. "
                     "Each L_bridge^i contributes to OR reduction via local R_perp_i operator."
                 ),
@@ -412,7 +412,7 @@ class MasterActionSimulationV22(SimulationBase):
                 plain_text="ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)",
                 category="DERIVED",
                 description=(
-                    "v23.1: 27D metric with 12 (2,0) bridge pairs + S^{2,0} sampler data fields. "
+                    "v24.2: 27D metric with 12 (2,0) bridge pairs + S^{2,0} sampler data fields. "
                     "Total: 1 (time) + 24 (bridges) + 2 (sampler) = 27D(24,1,2), Cl(24,1) spinors. "
                     "Each pair (y_{1i}, y_{2i}) spans a 2D Euclidean bridge plane."
                 ),
@@ -1169,10 +1169,10 @@ class MasterActionSimulationV22(SimulationBase):
             subsection_id="3.2",  # v19.0: Unique
             title='Standard Model Gauge Sectors from Master Action (<span class="pm-value" data-pm-value="framework.version_major_label">v23</span> 12-Pair Bridge)',
             abstract=(
-                '<span class="pm-value" data-pm-value="framework.version_label">v23.1</span>: Derivation of Standard Model gauge structure from higher-dimensional '
-                "master action via Kaluza-Klein reduction over G2 manifolds. "
-                '<span class="pm-value" data-pm-value="framework.version_major_label">v23</span>: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR.'
-                "Distributed OR reduction via tensor product of 12 local R_perp operators."
+                '<span class="pm-value" data-pm-value="framework.version_label">v24.2</span>: Derivation of Standard Model gauge structure from higher-dimensional '
+                "master action via Kaluza-Klein reduction over G₂ manifolds. "
+                '<span class="pm-value" data-pm-value="framework.version_major_label">v23</span>: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. '
+                "Distributed OR reduction via tensor product of 12 local R<sub>&perp;</sub> operators."
             ),
             content_blocks=[
                 # =============================================================
@@ -1180,15 +1180,15 @@ class MasterActionSimulationV22(SimulationBase):
                 # =============================================================
                 ContentBlock(
                     type="heading",
-                    content='<span class="pm-value" data-pm-value="framework.version_label">v23.1</span>: 12-Pair (2,0) Bridge Architecture',
+                    content='<span class="pm-value" data-pm-value="framework.version_label">v24.2</span>: 12-Pair (2,0) Bridge Architecture',
                     level=2
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        'Version <span class="pm-value" data-pm-value="framework.version_major">23</span> introduces a fundamental structural change: 27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S^{2,0} sampler data fields. '
+                        'Version <span class="pm-value" data-pm-value="framework.version_major">23</span> introduces a fundamental structural change: 27D(24,1,2) = 12×(2,0) bridges + (0,1) time + S<sup>2,0</sup> sampler data fields. '
                         "The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 shared time). "
-                        "The metric is: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)."
+                        "The metric is: ds² = −dt² + Σ<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>² + dy<sub>2i</sub>²)."
                     )
                 ),
                 ContentBlock(
@@ -1203,9 +1203,9 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Each bridge pair i carries its own local OR operator R_perp_i = [[0,-1],[1,0]], "
-                        "a 2x2 matrix implementing pi/2 rotation. The total OR operator is the tensor product "
-                        "over all 12 pairs: R_perp = tensor_{i=1}^{12} R_perp_i. This yields a 2^12 = 4096 "
+                        "Each bridge pair i carries its own local OR operator R<sub>&perp;,i</sub> = [[0,−1],[1,0]], "
+                        "a 2×2 matrix implementing π/2 rotation. The total OR operator is the tensor product "
+                        "over all 12 pairs: R<sub>&perp;</sub> = ⊗<sub>i=1</sub><sup>12</sup> R<sub>&perp;,i</sub>. This yields a 2<sup>12</sup> = 4096 "
                         "dimensional operator, exactly matching the Pneuma spinor dimension from Cl(24,1)."
                     )
                 ),
@@ -1222,7 +1222,7 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "The breathing mode that drives OR transitions is now computed as an average "
-                        "across all 12 bridge pairs: rho_breath = (1/12) sum_{i=1}^{12} |T_normal_i - R_perp_i T_mirror_i|. "
+                        "across all 12 bridge pairs: ρ<sub>breath</sub> = (1/12) Σ<sub>i=1</sub><sup>12</sup> |T<sub>normal,i</sub> − R<sub>&perp;,i</sub> T<sub>mirror,i</sub>|. "
                         "This distributed structure provides smoother transitions and better numerical stability."
                     )
                 ),
@@ -1242,8 +1242,8 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "The fundamental action in 27D spacetime with signature (26,1) now includes "
-                        "the 12-pair bridge structure + S^{2,0} sampler data fields: S = int d^27X sqrt(-G) [R + Psi-bar(iGamma.D - m)Psi "
-                        "+ lambda(Psi-bar Psi)^2 + sum_{i=1}^{12} L_bridge^i + L_C]. The 4096-component Pneuma spinor "
+                        "the 12-pair bridge structure + S<sup>2,0</sup> sampler data fields: S = ∫ d<sup>27</sup>X √(−G) [R + Ψ̄(iΓ·D − m)Ψ "
+                        "+ λ(Ψ̄Ψ)² + Σ<sub>i=1</sub><sup>12</sup> L<sub>bridge</sub><sup>i</sup> + L<sub>C</sub>]. The 4096-component Pneuma spinor "
                         "from Cl(24,1) couples to each bridge pair through the distributed OR structure."
                     )
                 ),
@@ -1260,8 +1260,8 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "The standard Kaluza-Klein mechanism demonstrates how gauge fields "
-                        "emerge from higher-dimensional gravity. The 5D -> 4D reduction "
-                        "yields 4D GR plus U(1) gauge kinetics with -1/4 F^2 normalization."
+                        "emerge from higher-dimensional gravity. The 5D → 4D reduction "
+                        "yields 4D GR plus U(1) gauge kinetics with −1/4 F² normalization."
                     )
                 ),
                 ContentBlock(
@@ -1276,17 +1276,17 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The full G2 reduction yields non-Abelian gauge groups from cycles: "
-                        "SU(3)_C from associative 3-cycles, SU(2)_L from co-associative 4-cycles, "
-                        "and U(1)_Y from residual Abelian structure."
+                        "The full G₂ reduction yields non-Abelian gauge groups from cycles: "
+                        "SU(3)<sub>C</sub> from associative 3-cycles, SU(2)<sub>L</sub> from co-associative 4-cycles, "
+                        "and U(1)<sub>Y</sub> from residual Abelian structure."
                     )
                 ),
                 ContentBlock(
                     type="list",
                     items=[
-                        "SU(3)_C: 8 gluons, alpha_s(M_Z) ~ 0.117",
-                        "SU(2)_L: 3 weak bosons (W+, W-, W^3)",
-                        "U(1)_Y: Hypercharge gauge field B_mu"
+                        "SU(3)<sub>C</sub>: 8 gluons, α<sub>s</sub>(M<sub>Z</sub>) ~ 0.117",
+                        "SU(2)<sub>L</sub>: 3 weak bosons (W⁺, W⁻, W³)",
+                        "U(1)<sub>Y</sub>: Hypercharge gauge field B<sub>μ</sub>"
                     ]
                 ),
                 ContentBlock(
@@ -1297,9 +1297,9 @@ class MasterActionSimulationV22(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Higgs mechanism mixes W^3 and B into the massless photon "
-                        "and massive Z boson. The Weinberg angle sin^2(theta_W) = 0.23129 "
-                        "is locked by the G2 cycle volume ratio, not fit to data."
+                        "The Higgs mechanism mixes W³ and B into the massless photon "
+                        "and massive Z boson. The Weinberg angle sin²(θ<sub>W</sub>) = 0.23189 "
+                        "is locked by the G₂ cycle volume ratio, not fit to data."
                     )
                 ),
                 ContentBlock(
@@ -1319,19 +1319,19 @@ class MasterActionSimulationV22(SimulationBase):
                     content=(
                         "The equations of motion for the gravitational sector are obtained "
                         "by varying the full 27D master action with respect to the inverse "
-                        "metric g^{mu nu}. The Hilbert variational principle yields the "
-                        "Einstein tensor G_{mu nu} = R_{mu nu} - (1/2) R g_{mu nu} on "
+                        "metric g<sup>μν</sup>. The Hilbert variational principle yields the "
+                        "Einstein tensor G<sub>μν</sub> = R<sub>μν</sub> − (1/2) R g<sub>μν</sub> on "
                         "the left-hand side (using the Palatini identity to handle the "
                         "variation of the Ricci tensor). The right-hand side collects "
                         "the stress-energy contributions from all non-gravitational sectors: "
-                        "Yang-Mills gauge fields T^YM_{mu nu}, Dirac fermions T^Dirac_{mu nu}, "
-                        "the 12-pair bridge system T^bridge_{mu nu}, and the Pneuma "
-                        "moduli/scalar sector T^Pneuma_{mu nu}. The contracted Bianchi "
-                        "identity nabla^mu G_{mu nu} = 0 automatically ensures covariant "
-                        "energy-momentum conservation nabla^mu T_{mu nu} = 0. In the "
+                        "Yang-Mills gauge fields T<sup>YM</sup><sub>μν</sub>, Dirac fermions T<sup>Dirac</sup><sub>μν</sub>, "
+                        "the 12-pair bridge system T<sup>bridge</sup><sub>μν</sub>, and the Pneuma "
+                        "moduli/scalar sector T<sup>Pneuma</sup><sub>μν</sub>. The contracted Bianchi "
+                        "identity ∇<sup>μ</sup> G<sub>μν</sub> = 0 automatically ensures covariant "
+                        "energy-momentum conservation ∇<sup>μ</sup> T<sub>μν</sub> = 0. In the "
                         "scalar-tensor generalisation (Brans-Dicke 1961; Fujii-Maeda 2003), "
                         "the effective gravitational coupling becomes field-dependent via "
-                        "the dilaton phi, connecting to the Pneuma mechanism."
+                        "the dilaton φ, connecting to the Pneuma mechanism."
                     )
                 ),
                 ContentBlock(
@@ -1347,7 +1347,7 @@ class MasterActionSimulationV22(SimulationBase):
                 # =============================================================
                 ContentBlock(
                     type="heading",
-                    content="Dimensional Reduction: 27D -> 13D Shadow Domains",
+                    content="Dimensional Reduction: 27D → 13D Shadow Domains",
                     level=2
                 ),
                 ContentBlock(
@@ -1358,8 +1358,8 @@ class MasterActionSimulationV22(SimulationBase):
                         "dimensions (one from each bridge pair) plus 1 shared time dimension. "
                         "Shadow 1 carries left-handed fermions and Shadow 2 carries right-handed "
                         "fermions, a chirality assignment that is locked by the global OR operator. "
-                        "Within each shadow, the Euler characteristic constraint chi_eff/48 = 3 "
-                        "fixes exactly three fermion generations. The face potential V_face^(f) "
+                        "Within each shadow, the Euler characteristic constraint χ<sub>eff</sub>/48 = 3 "
+                        "fixes exactly three fermion generations. The face potential V<sub>face</sub><sup>(f)</sup> "
                         "implements the local OR that selects one of the 4 TCS faces as the "
                         "visible face, with the remaining three faces forming the hidden (dark) sector."
                     )
@@ -1370,21 +1370,21 @@ class MasterActionSimulationV22(SimulationBase):
                 ),
                 ContentBlock(
                     type="heading",
-                    content="Dimensional Reduction: 13D -> 4D Effective Theory",
+                    content="Dimensional Reduction: 13D → 4D Effective Theory",
                     level=2
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "After face/local OR selects the visible face, the 13D shadow action is "
-                        "compactified on the internal 9 dimensions (7D G2 manifold + 2 residual "
+                        "compactified on the internal 9 dimensions (7D G₂ manifold + 2 residual "
                         "bridge dimensions) to yield the 4D effective action. The 4D Planck mass "
-                        "is determined by M_Pl^2 = M_*^{11} * Vol(V_7), tying the fundamental "
-                        "scale to the G2 volume. The Standard Model gauge group "
-                        "SU(3)_C x SU(2)_L x U(1)_Y emerges from G2 flux on the 4-face "
-                        "structure: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative "
-                        "4-cycles, and U(1)_Y from the residual Abelian cycle. The cosmological "
-                        "constant Lambda = (int F wedge phi)^2 / Vol ~ 10^{-52} m^{-2} arises "
+                        "is determined by M<sub>Pl</sub>² = M<sub>*</sub><sup>11</sup> · Vol(V<sub>7</sub>), tying the fundamental "
+                        "scale to the G₂ volume. The Standard Model gauge group "
+                        "SU(3)<sub>C</sub> × SU(2)<sub>L</sub> × U(1)<sub>Y</sub> emerges from G₂ flux on the 4-face "
+                        "structure: SU(3)<sub>C</sub> from associative 3-cycles, SU(2)<sub>L</sub> from co-associative "
+                        "4-cycles, and U(1)<sub>Y</sub> from the residual Abelian cycle. The cosmological "
+                        "constant Λ = (∫ F ∧ φ)² / Vol ~ 10<sup>−52</sup> m<sup>−2</sup> arises "
                         "naturally from the flux-moduli balance, without fine-tuning. Portal terms "
                         "couple the visible face to hidden faces through shared moduli."
                     )
@@ -1402,13 +1402,13 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "Varying the 4D effective action with respect to the inverse metric "
-                        "g^{mu nu} yields the modified Einstein field equations. The gravitational "
-                        "sector produces the Einstein tensor G_{mu nu} plus the cosmological "
-                        "constant Lambda g_{mu nu} on the left-hand side. The source terms on "
+                        "g<sup>μν</sup> yields the modified Einstein field equations. The gravitational "
+                        "sector produces the Einstein tensor G<sub>μν</sub> plus the cosmological "
+                        "constant Λ g<sub>μν</sub> on the left-hand side. The source terms on "
                         "the right-hand side decompose into the Standard Model stress-energy "
-                        "T^SM_{mu nu} and the portal stress-energy T^portal_{mu nu} from the "
+                        "T<sup>SM</sup><sub>μν</sub> and the portal stress-energy T<sup>portal</sup><sub>μν</sub> from the "
                         "hidden face coupling. The portal corrections, suppressed by "
-                        "alpha_leak^2 ~ 0.33, provide the gravitational backreaction of dark "
+                        "α<sub>leak</sub>² ~ 0.33, provide the gravitational backreaction of dark "
                         "matter and hidden sector fields onto visible sector geometry. The "
                         "contracted Bianchi identity guarantees covariant conservation of the "
                         "total stress-energy tensor."
@@ -1422,9 +1422,9 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "The complete dimensional reduction chain is thus: "
-                        "27D(24,1,2) master action -> bridge/global OR -> 2 x 13D(12,1) shadow "
-                        "actions -> face/local OR + G2 compactification -> 4D effective action "
-                        "-> metric variation -> Einstein equations with portal corrections. "
+                        "27D(24,1,2) master action → bridge/global OR → 2 × 13D(12,1) shadow "
+                        "actions → face/local OR + G₂ compactification → 4D effective action "
+                        "→ metric variation → Einstein equations with portal corrections. "
                         "Each step is determined by the geometry, with no free parameters."
                     )
                 ),
@@ -1444,8 +1444,8 @@ class MasterActionSimulationV22(SimulationBase):
                         "doing so exchanges the chiral projection operators: Shadow 1 inherits "
                         "left-chiral fermions (our world), while Shadow 2 inherits right-chiral "
                         "fermions (the mirror world). CPT symmetry is preserved globally across "
-                        "both shadows. The cross-shadow chirality flip probability P_reverse ~ "
-                        "3e-6 quantifies the suppressed coupling between shadows."
+                        "both shadows. The cross-shadow chirality flip probability P<sub>reverse</sub> ~ "
+                        "3 × 10<sup>−6</sup> quantifies the suppressed coupling between shadows."
                     )
                 ),
                 ContentBlock(
@@ -1461,11 +1461,11 @@ class MasterActionSimulationV22(SimulationBase):
                     type="paragraph",
                     content=(
                         "The dark matter portal coupling emerges from the hidden face geometry "
-                        "of the TCS G2 manifold. Face OR (Layer 2) selects one face as visible, "
+                        "of the TCS G₂ manifold. Face OR (Layer 2) selects one face as visible, "
                         "leaving three hidden faces. The hidden face fields couple to visible "
-                        "fields through shared moduli, with a portal coupling alpha_leak ~ 0.57 "
-                        "determined by the volume ratio 1/sqrt(6), torsion corrections from the "
-                        "G2 contorsion tensor, and flux asymmetry between visible and hidden faces."
+                        "fields through shared moduli, with a portal coupling α<sub>leak</sub> ~ 0.57 "
+                        "determined by the volume ratio 1/√6, torsion corrections from the "
+                        "G₂ contorsion tensor, and flux asymmetry between visible and hidden faces."
                     )
                 ),
                 ContentBlock(

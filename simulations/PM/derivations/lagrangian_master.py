@@ -23,7 +23,7 @@ MATHEMATICAL FRAMEWORK (v22 - 12×(2,0) Paired Bridge System):
    - Spin connection omega_mu^ab for covariant derivatives in non-coordinate bases
    - Torsion-free + metric compatibility uniquely determine spin connection
 
-2. 27D Master Action (v23.1 with 12 bridge pairs + 1 sampler data fields):
+2. 27D Master Action (v24.2 with 12 bridge pairs + 1 sampler data fields):
    - S_27 = integral d^27x sqrt(-g_27) [R_27 + L_matter + L_gauge + L_bridge + pneuma]
    - Structure (24,1,2) unified time eliminates ghosts and CTCs
    - L_bridge = Σᵢ₌₁¹² [(∂y₁ᵢ)² + (∂y₂ᵢ)²]
@@ -842,7 +842,7 @@ class LagrangianMasterDerivation(SimulationBase):
         - Spatial: 12×2 + 2 = 26 (24 core + 2 central)
         - Temporal: 1 (shared) (CORRECT)
 
-        Total structure: (24,1,2) - v23.1 with sampler data fields
+        Total structure: (24,1,2) - v24.2 with sampler data fields
 
         Key v22 Features:
         - 12 bridge pairs: Each B_i^{2,0} has (y₁ᵢ=input, y₂ᵢ=output)
@@ -1980,7 +1980,7 @@ class LagrangianMasterDerivation(SimulationBase):
             }
         ))
 
-        # Ghost elimination formula (v22 base, with v23.1 sampler data fields extension noted)
+        # Ghost elimination formula (v22 base, with v24.2 sampler data fields extension noted)
         formulas.append(Formula(
             id="ghost-elimination",
             label="(2.1.21)",
@@ -1989,18 +1989,18 @@ class LagrangianMasterDerivation(SimulationBase):
             category="DERIVED",
             description=(
                 "Ghost elimination via unified time signature (24,1). The v22 12x(2,0) bridge "
-                "pair system plus the S^(2,0) sampler data fields (introduced in v23.1 as an "
+                "pair system plus the S^(2,0) sampler data fields (introduced in v24.2 as an "
                 "extension) gives the full 27D structure. The (24,1) unified time signature "
                 "eliminates negative-norm ghost states and closed timelike curves (CTCs) that "
                 "would arise from multi-time signatures. Note: the sampler data fields S^(2,0) are "
-                "a v23.1 extension of the base v22 framework (3 derivation steps)."
+                "a v24.2 extension of the base v22 framework (3 derivation steps)."
             ),
             inputParams=[],
             outputParams=["derivations.n_bridge_pairs"],
             derivation={
                 "steps": [
                     "Start from the v22 bulk M^{24,1} = T^1 x_fiber (direct_sum_i B_i^{2,0}) with 12 bridge pairs providing 24 spatial + 1 time = 25 dimensions",
-                    "Add the sampler data fields S^{2,0} (v23.1 extension) providing 2 additional spatial dimensions, for 27 total dimensions with (24,1,2) structure",
+                    "Add the sampler data fields S^{2,0} (v24.2 extension) providing 2 additional spatial dimensions, for 27 total dimensions with (24,1,2) structure",
                     "Verify ghost elimination: the unified time (single timelike direction) ensures all physical states have positive norm and prevents CTCs"
                 ],
                 "method": "Dimensional counting with signature analysis for ghost and CTC elimination",
@@ -2009,7 +2009,7 @@ class LagrangianMasterDerivation(SimulationBase):
             terms={
                 "T^1": "Unified time fiber (single timelike direction)",
                 "B_i^{2,0}": "Euclidean bridge pairs (12 total, each 2D)",
-                "S^{2,0}": "Sampler data fields (v23.1 extension, 2D Euclidean)",
+                "S^{2,0}": "Sampler data fields (v24.2 extension, 2D Euclidean)",
                 "(24,1,2)": "Structure with 24 physics core, 1 timelike, and 2 sampler data field dimensions (no ghosts)"
             }
         ))
@@ -2522,7 +2522,7 @@ class LagrangianMasterDerivation(SimulationBase):
                 "(Topic 03: 27D Master Lagrangian). The 27 dimensions decompose as "
                 "27D = 4D (visible spacetime) + 7D (G2 holonomy internal manifold) "
                 "+ 14D (7 bridge pairs, carrying shadow/face information) "
-                "+ 2D (sampler data fields S^{2,0} from v23.1). "
+                "+ 2D (sampler data fields S^{2,0} from v24.2). "
                 "Each term has a precise geometric origin:\n"
                 "  R_27/(2 kappa_27^2): Einstein-Hilbert gravity in the full 27D bulk, "
                 "with kappa_27 the 27D gravitational coupling.\n"
@@ -2929,7 +2929,7 @@ class LagrangianMasterDerivation(SimulationBase):
             description=(
                 "v22: Total bridge spatial dimensions = 12 pairs x 2D per pair = 24D. "
                 "Combined with the 1D unified time, the full spacetime is 25D with (24,1) "
-                "signature. The 27D extension adds S^{2,0} sampler data fields (v23.1)."
+                "signature. The 27D extension adds S^{2,0} sampler data fields (v24.2)."
             ),
             no_experimental_value=True
         ))
@@ -2941,10 +2941,10 @@ class LagrangianMasterDerivation(SimulationBase):
         return SectionContent(
             section_id="2",
             subsection_id="2.1",
-            title="Core M^{27}(24,1,2) Master Action: v23.1 12×(2,0) Paired Bridge System",
+            title="Core M^{27}(24,1,2) Master Action: v24.2 12×(2,0) Paired Bridge System",
             abstract=(
                 "Comprehensive derivation of the M^{27}(24,1,2) master action using vielbein/tetrad "
-                "formalism with G2 holonomy compactification to 4D. The v23.1 architecture "
+                "formalism with G2 holonomy compactification to 4D. The v24.2 architecture "
                 "decomposes the bulk as M^{27}(24,1,2) = T^1 x_fiber (direct_sum B_i^{2,0} oplus S^{2,0}) with "
                 "12 paired Euclidean bridges plus S^{2,0} sampler data fields. Covers: (A) vielbein formalism and spin connection, "
                 "(B) 26D Einstein-Hilbert, Yang-Mills, Dirac, and Pneuma sectors, (C) Euler-Lagrange "
@@ -2995,12 +2995,12 @@ class LagrangianMasterDerivation(SimulationBase):
                 ContentBlock(
                     type="heading",
                     level=3,
-                    content="v23.1 12×(2,0) Paired Bridge System"
+                    content="v24.2 12×(2,0) Paired Bridge System"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The v23.1 framework introduces 12 PAIRED Euclidean bridges plus S^{2,0} sampler data "
+                        "The v24.2 framework introduces 12 PAIRED Euclidean bridges plus S^{2,0} sampler data "
                         "fields. The full bulk structure is M^{27}(24,1,2) = T¹ ×_fiber "
                         "(⊕_{i=1}^{12} B_i^{2,0} ⊕ S^{2,0}), where each B_i has coordinates (y₁ᵢ, y₂ᵢ). "
                         "The metric decomposes as ds² = -dt² + Σᵢ₌₁¹² (dy₁ᵢ² + dy₂ᵢ²) + ds₁² + ds₂² with structure (24,1,2)."
@@ -3231,7 +3231,7 @@ class LagrangianMasterDerivation(SimulationBase):
                         "3-cycles, chi_eff = 144) determines all 4D coupling constants. "
                         "The 14D bridge sector consists of 7 bridge pairs (each 2D), "
                         "which carry the shadow and face structure of the two-layer OR "
-                        "hierarchy. The 2D sampler data fields S^{2,0} (introduced in v23.1) "
+                        "hierarchy. The 2D sampler data fields S^{2,0} (introduced in v24.2) "
                         "provides the final two spatial dimensions completing the 27D total."
                     )
                 ),
@@ -3243,7 +3243,7 @@ class LagrangianMasterDerivation(SimulationBase):
                         "4D: Visible spacetime M^{3,1} (3 spatial + 1 temporal)\n"
                         "7D: G2 holonomy internal manifold X_7 (b_3 = 24, chi_eff = 144)\n"
                         "14D: 7 bridge pairs (shadow/face structure, 2D each)\n"
-                        "2D: Sampler data fields S^{2,0} (v23.1 extension)\n"
+                        "2D: Sampler data fields S^{2,0} (v24.2 extension)\n"
                         "Total: 4 + 7 + 14 + 2 = 27 dimensions with (24,1,2) structure"
                     )
                 ),

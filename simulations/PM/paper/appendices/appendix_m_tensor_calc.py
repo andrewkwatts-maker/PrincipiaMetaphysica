@@ -69,8 +69,8 @@ class AppendixMTensorCalculus(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_m_tensor_calc_v19",
-            version="19.0",
+            id="appendix_m_tensor_calc_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix M: Tensor Calculus Foundations",
             description=(
@@ -255,7 +255,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The METRIC TENSOR g_munu is a rank-(0,2) tensor with two covariant indices. "
+                        "The METRIC TENSOR g<sub>&#956;&#957;</sub> is a rank-(0,2) tensor with two covariant indices. "
                         "It transforms by picking up two inverse Jacobian factors:"
                     )
                 ),
@@ -324,9 +324,9 @@ class AppendixMTensorCalculus(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The metric tensor g_munu is the fundamental object that defines geometry. "
+                        "The metric tensor g<sub>&#956;&#957;</sub> is the fundamental object that defines geometry. "
                         "It tells us how to measure distances and angles. In flat Minkowski space, "
-                        "the metric is diag(+1,-1,-1,-1) in the 'mostly minus' convention. "
+                        "the metric is diag(+1, &#8722;1, &#8722;1, &#8722;1) in the 'mostly minus' convention. "
                         "In curved spacetime, the metric varies from point to point."
                     )
                 ),
@@ -352,8 +352,8 @@ class AppendixMTensorCalculus(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The metric and its inverse satisfy g^{mu alpha} g_{alpha nu} = delta^mu_nu, "
-                        "where delta is the Kronecker delta. This ensures raising then lowering "
+                        "The metric and its inverse satisfy g<sup>&#956;&#945;</sup> g<sub>&#945;&#957;</sub> = &#948;<sup>&#956;</sup><sub>&#957;</sub>, "
+                        "where &#948; is the Kronecker delta. This ensures raising then lowering "
                         "(or vice versa) returns the original tensor."
                     )
                 ),
@@ -434,8 +434,8 @@ class AppendixMTensorCalculus(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Key properties: (1) Symmetric in lower two indices: Gamma^lambda_{mu nu} = "
-                        "Gamma^lambda_{nu mu} (for torsion-free connections). "
+                        "Key properties: (1) Symmetric in lower two indices: &#915;<sup>&#955;</sup><sub>&#956;&#957;</sub> = "
+                        "&#915;<sup>&#955;</sup><sub>&#957;&#956;</sub> (for torsion-free connections). "
                         "(2) In flat space with Cartesian coordinates, all Christoffel symbols vanish. "
                         "(3) 40 independent components in 4D spacetime."
                     )
@@ -570,8 +570,8 @@ class AppendixMTensorCalculus(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Key properties: (1) Antisymmetric in last two indices: R^lambda_{sigma mu nu} = "
-                        "-R^lambda_{sigma nu mu}. (2) First Bianchi identity: cyclic sum vanishes. "
+                        "Key properties: (1) Antisymmetric in last two indices: R<sup>&#955;</sup><sub>&#963;&#956;&#957;</sub> = "
+                        "&#8722;R<sup>&#955;</sup><sub>&#963;&#957;&#956;</sub>. (2) First Bianchi identity: cyclic sum vanishes. "
                         "(3) In 4D: 20 independent components. (4) Vanishes if and only if spacetime "
                         "is flat (can find global inertial coordinates)."
                     )
@@ -601,10 +601,10 @@ class AppendixMTensorCalculus(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Ricci tensor is symmetric: R_{mu nu} = R_{nu mu}. It has 10 independent "
-                        "components in 4D. The Ricci scalar R = g^{mu nu} R_{mu nu} is the simplest "
-                        "curvature invariant. Einstein's equation relates R_{mu nu} to the "
-                        "stress-energy tensor T_{mu nu}, completing the link between geometry and matter."
+                        "The Ricci tensor is symmetric: R<sub>&#956;&#957;</sub> = R<sub>&#957;&#956;</sub>. It has 10 independent "
+                        "components in 4D. The Ricci scalar R = g<sup>&#956;&#957;</sup> R<sub>&#956;&#957;</sub> is the simplest "
+                        "curvature invariant. Einstein's equation relates R<sub>&#956;&#957;</sub> to the "
+                        "stress-energy tensor T<sub>&#956;&#957;</sub>, completing the link between geometry and matter."
                     )
                 ),
 

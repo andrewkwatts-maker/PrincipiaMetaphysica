@@ -364,11 +364,11 @@ class PneumaMechanismV16(SimulationBase):
         content_blocks.extend([
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime with signature (24,1) plus Euclidean bridge."
+                content="The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics — from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 27-dimensional spacetime M<sup>27</sup>(24,1,2) with signature (24,1) plus Euclidean bridge and S<sup>(2,0)</sup> sampler data fields."
             ),
             ContentBlock(
                 type="formula",
-                content="S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P + ℒ_bridge]",
+                content="S = &int; d<sup>26</sup>X &radic;(&minus;G) [R + &Psi;&#772;<sub>P</sub> (i&Gamma;<sup>M</sup> D<sub>M</sub> &minus; m)&Psi;<sub>P</sub> + &#8466;<sub>bridge</sub>]",
                 label="Main Equation"
             ),
         ])
@@ -383,7 +383,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 27D(24,1,2) spacetime M^{27} = T¹ ×_fiber (⊕B_i^{2,0} ⊕ S^{2,0}). The spinor field couples to the 12×(2,0) bridge pairs and the T¹ time fiber — the Clifford algebra is Cl(24,1) (the bridge+time subalgebra, since S^{2,0} is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
+                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 27D(24,1,2) spacetime M<sup>27</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;B<sub>i</sub><sup>(2,0)</sup> &oplus; S<sup>(2,0)</sup>). The spinor field couples to the 12&times;(2,0) bridge pairs and the T<sup>1</sup> time fiber — the Clifford algebra is Cl<sub>(24,1)</sub> (the bridge+time subalgebra, since S<sup>(2,0)</sup> is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
             ),
             ContentBlock(
                 type="heading",
@@ -391,7 +391,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Dirac adjoint of the Pneuma field: Ψ̄_P = Ψ_P† Γ^0. Required for Lorentz-invariant bilinears in higher dimensions."
+                content="The Dirac adjoint of the Pneuma field: Ψ̄<sub>P</sub> = Ψ<sub>P</sub><sup>&dagger;</sup> &Gamma;<sup>0</sup>. Required for Lorentz-invariant bilinears in higher dimensions."
             ),
             ContentBlock(
                 type="heading",
@@ -399,7 +399,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="A 4096-component Dirac spinor in the 27D(24,1,2) bulk (2^12 = 4096 from Cl(24,1) sub-algebra of the bridge+time sector; the Euclidean S^{2,0} sampler data fields contribute scalar rather than spinor modes). Reduces to 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 × 16 under 4D spacetime × internal manifold split."
+                content="A 4096-component Dirac spinor in the 27D(24,1,2) bulk (2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> sub-algebra of the bridge+time sector; the Euclidean S<sup>(2,0)</sup> sampler data fields contribute scalar rather than spinor modes). Reduces to a 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 &times; 16 under the 4D spacetime &times; internal manifold split."
             ),
             ContentBlock(
                 type="heading",
@@ -407,7 +407,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The covariant Dirac operator: Γ^M D_M where M runs over the 25 bridge+time dimensions (12×2+1; the Euclidean S^{2,0} sampler data fields decouples from spinor kinetics). Γ^M are 4096×4096 matrices in Cl(24,1), reducing to 64×64 in the effective dual shadow Cl(12,1) after OR reduction."
+                content="The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over the 25 bridge+time dimensions (12&times;2+1; the Euclidean S<sup>(2,0)</sup> sampler data fields decouple from spinor kinetics). &Gamma;<sup>M</sup> are 4096&times;4096 matrices in Cl<sub>(24,1)</sub>, reducing to 64&times;64 in the effective dual shadow Cl<sub>(12,1)</sub> after OR reduction."
             ),
             ContentBlock(
                 type="heading",
@@ -415,7 +415,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The fundamental mass parameter m_P for the Pneuma field. Sets the scale for Pneuma condensation and influences 4D fermion masses through dimensional reduction."
+                content="The fundamental mass parameter m<sub>P</sub> for the Pneuma field. Sets the scale for Pneuma condensation and influences 4D fermion masses through dimensional reduction."
             ),
             ContentBlock(
                 type="heading",
@@ -445,15 +445,15 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="In the 27D(24,1,2) bulk, the spinor field uses the bridge+time subalgebra Cl(24,1) (dimension 2^12 = 4096) since the Euclidean S^{2,0} sampler data fields contribute only scalar fluctuations. Upon OR reduction (R_⊥ acting on bridge pairs), we obtain the effective Cl(12,1) algebra of the 13D observable shadow:"
+                content="In the 27D(24,1,2) bulk, the spinor field uses the bridge+time subalgebra Cl<sub>(24,1)</sub> (dimension 2<sup>12</sup> = 4096) since the Euclidean S<sup>(2,0)</sup> sampler data fields contribute only scalar fluctuations. Upon OR reduction (R<sub>&perp;</sub> acting on bridge pairs), we obtain the effective Cl<sub>(12,1)</sub> algebra of the 13D observable shadow:"
             ),
             ContentBlock(
                 type="heading",
-                content="Dimensional Reduction: Cl(24,1) → Cl(12,1)"
+                content="Dimensional Reduction: Cl<sub>(24,1)</sub> &rarr; Cl<sub>(12,1)</sub>"
             ),
             ContentBlock(
                 type="paragraph",
-                content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time)."
+                content="Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,1)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time)."
             ),
             ContentBlock(
                 type="paragraph",
@@ -461,18 +461,18 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="Γ^μ = γ^μ ⊗ 1_16 (μ = 0,1,2,3)\nΓ^{a+3} = γ^5 ⊗ Σ^a (a = 1,...,8)\n— Tensor product decomposition",
+                content="&Gamma;<sup>&mu;</sup> = &gamma;<sup>&mu;</sup> &otimes; 1<sub>16</sub> (&mu; = 0,1,2,3)\n&Gamma;<sup>a+3</sup> = &gamma;<sup>5</sup> &otimes; &Sigma;<sup>a</sup> (a = 1,...,8)\n— Tensor product decomposition",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="Here γ^μ are the 4D Dirac matrices, γ^5 = iγ^0γ^1γ^2γ^3 is the 4D chirality operator, and Σ^a are 16×16 matrices acting on the internal spinor space."
+                content="Here &gamma;<sup>&mu;</sup> are the 4D Dirac matrices, &gamma;<sup>5</sup> = i&gamma;<sup>0</sup>&gamma;<sup>1</sup>&gamma;<sup>2</sup>&gamma;<sup>3</sup> is the 4D chirality operator, and &Sigma;<sup>a</sup> are 16&times;16 matrices acting on the internal spinor space."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Dimensional Reduction: Cl(24,1) → Cl(12,1)",
-                content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time)."
+                title="Dimensional Reduction: Cl(24,1) &rarr; Cl(12,1)",
+                content="Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,1)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 shared time)."
             ),
         ])
 
@@ -486,7 +486,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The full covariant derivative D_M acting on the Pneuma spinor in 26D includes both gravitational and gauge connections. In the full theory, M ranges over all 26 dimensions; in the effective 13D theory, M = 0, 1, ..., 12. The derivative includes spin connection and gauge field contributions."
+                content="The full covariant derivative D<sub>M</sub> acting on the Pneuma spinor in 26D includes both gravitational and gauge connections. In the full theory, M ranges over all 26 dimensions; in the effective 13D theory, M&nbsp;=&nbsp;0,&nbsp;1,&nbsp;...,&nbsp;12. The derivative includes spin connection and gauge field contributions."
             ),
         ])
 
@@ -504,11 +504,11 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma field Ψ_P is not merely a matter field living on a fixed background - it is the fundamental source of spacetime itself. Through its bilinear condensates: g_mn ∝ ⟨Ψ̄_P Γ_mn Ψ_P⟩, these vacuum expectation values generate the metric structure of the internal manifold K_Pneuma, effectively determining the geometry of the extra dimensions."
+                content="The Pneuma field Ψ<sub>P</sub> is not merely a matter field living on a fixed background — it is the fundamental source of spacetime itself. Through its bilinear condensates: g<sub>mn</sub> &prop; &langle;Ψ̄<sub>P</sub> &Gamma;<sub>mn</sub> Ψ<sub>P</sub>&rangle;, these vacuum expectation values generate the metric structure of the internal manifold K<sub>Pneuma</sub>, effectively determining the geometry of the extra dimensions."
             ),
             ContentBlock(
                 type="paragraph",
-                content="K_Pneuma is realized as an explicit TCS (Twisted Connected Sum) G₂ manifold with Betti numbers b₂=4 (associative cycles hosting D₅ singularity for SO(10) gauge symmetry) and b₃=24 (co-associative cycles controlling Yukawa textures), constructed via π/6 hyper-Kähler rotation following Corti-Haskins-Nordenstam-Pacini (arXiv:1809.09083)."
+                content="K<sub>Pneuma</sub> is realized as an explicit TCS (Twisted Connected Sum) G&#8322; manifold with Betti numbers b&#8322; = 4 (associative cycles hosting D&#8325; singularity for SO(10) gauge symmetry) and b&#8323; = 24 (co-associative cycles controlling Yukawa textures), constructed via &pi;/6 hyper-K&auml;hler rotation following Corti-Haskins-Nordenstam-Pacini (arXiv:1809.09083)."
             ),
             ContentBlock(
                 type="heading",
@@ -516,19 +516,19 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Upon dimensional reduction over K_Pneuma, the full 4096-component 26D spinor (or equivalently, the 64-component effective dual shadow spinor) decomposes into 4D chiral fermions. The topological structure (zero modes of the Dirac operator on K_Pneuma) determines the number of generations: n_gen = χ_eff / 48 = 144 / 48 = 3."
+                content="Upon dimensional reduction over K<sub>Pneuma</sub>, the full 4096-component 26D spinor (or equivalently, the 64-component effective dual shadow spinor) decomposes into 4D chiral fermions. The topological structure (zero modes of the Dirac operator on K<sub>Pneuma</sub>) determines the number of generations: n<sub>gen</sub> = &chi;<sub>eff</sub> / 48 = 144 / 48 = 3."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Key Insight",
-                content="The same field Ψ_P that generates spacetime geometry also gives rise to all observable matter. This is the deep unification at the heart of Principia Metaphysica: geometry and matter share a common fermionic origin."
+                content="The same field Ψ<sub>P</sub> that generates spacetime geometry also gives rise to all observable matter. This is the deep unification at the heart of Principia Metaphysica: geometry and matter share a common fermionic origin."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Field Taxonomy and Statistics",
-                content="Pneuma field (Ψ_P): Chiral spinor field (4096-component in 26D from Cl(24,1), 64-component in dual shadows). Mashiach (An Attractor Scalar) field (χ): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1σ (93.8%), 12 exact matches."
+                content="Pneuma field (&Psi;<sub>P</sub>): Chiral spinor field (4096-component in 26D from Cl<sub>(24,1)</sub>, 64-component in dual shadows). Mashiach (An Attractor Scalar) field (&chi;): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1&sigma; (93.8%), 12 exact matches."
             ),
         ])
 
@@ -542,11 +542,11 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma field statistics also generate the flow of time through the Thermal Time Hypothesis (TTH). The entropy of Pneuma field configurations defines a statistical state ρ, and the modular flow σ_t associated with this state is identified with physical time evolution. This provides a thermodynamic origin for the arrow of time: time flows in the direction of increasing Pneuma field entropy."
+                content="The Pneuma field statistics also generate the flow of time through the Thermal Time Hypothesis (TTH). The entropy of Pneuma field configurations defines a statistical state &rho;, and the modular flow &sigma;<sub>t</sub> associated with this state is identified with physical time evolution. This provides a thermodynamic origin for the arrow of time: time flows in the direction of increasing Pneuma field entropy."
             ),
             ContentBlock(
                 type="formula",
-                content="t = α_T · S[ρ] — Time from Pneuma entropy",
+                content="t = &alpha;<sub>T</sub> &middot; S[&rho;] — Time from Pneuma entropy",
                 label=""
             ),
         ])
@@ -561,7 +561,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The quartic interaction term lambda(Psi-bar Psi)^2 combined with the orthogonal time coupling g*t_ortho leads to a self-consistent gap equation for the Pneuma condensate. This mechanism is directly analogous to the gap equation in Bardeen-Cooper-Schrieffer (BCS) theory of superconductivity (Bardeen, Cooper, Schrieffer, Phys. Rev. 108, 1175, 1957): in both cases, an attractive interaction between fermions drives a non-perturbative condensate that spontaneously breaks a continuous symmetry and generates a mass gap. The key difference is that BCS pairs electrons near the Fermi surface via phonon exchange, while here the Pneuma field self-pairs via the quartic coupling lambda and the orthogonal time coupling g*t_ortho. Using mean-field approximation, we derive the condensate mass gap Delta:"
+                content="The quartic interaction term &lambda;(Ψ̄Ψ)<sup>2</sup> combined with the orthogonal time coupling g&middot;t<sub>ortho</sub> leads to a self-consistent gap equation for the Pneuma condensate. This mechanism is directly analogous to the gap equation in Bardeen-Cooper-Schrieffer (BCS) theory of superconductivity (Bardeen, Cooper, Schrieffer, Phys. Rev. 108, 1175, 1957): in both cases, an attractive interaction between fermions drives a non-perturbative condensate that spontaneously breaks a continuous symmetry and generates a mass gap. The key difference is that BCS pairs electrons near the Fermi surface via phonon exchange, while here the Pneuma field self-pairs via the quartic coupling &lambda; and the orthogonal time coupling g&middot;t<sub>ortho</sub>. Using mean-field approximation, we derive the condensate mass gap &Delta;:"
             ),
             ContentBlock(
                 type="heading",
@@ -573,12 +573,12 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="ℒ_int = λ(Ψ̄Ψ)² + g·t_ortho·Ψ̄Ψ — Interaction terms for gap derivation",
+                content="&#8466;<sub>int</sub> = &lambda;(&Psi;&#772;&Psi;)&sup2; + g&middot;t<sub>ortho</sub>&middot;&Psi;&#772;&Psi; — Interaction terms for gap derivation",
                 label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="Applying the mean-field approximation with vacuum expectation value v = ⟨Ψ̄Ψ⟩, we obtain the gap equation."
+                content="Applying the mean-field approximation with vacuum expectation value v = &langle;Ψ̄Ψ&rangle;, we obtain the gap equation."
             ),
             ContentBlock(
                 type="heading",
@@ -586,7 +586,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="To verify that the condensate solution is stable and exhibits spontaneous symmetry breaking, we compute the derivative of the gap with respect to the VEV. The positivity of dΔ/dv confirms that the condensate exhibits positive feedback: an increase in the VEV leads to an increase in the gap, which is the hallmark of a self-consistent solution and spontaneous symmetry breaking."
+                content="To verify that the condensate solution is stable and exhibits spontaneous symmetry breaking, we compute the derivative of the gap with respect to the VEV. The positivity of d&Delta;/dv confirms that the condensate exhibits positive feedback: an increase in the VEV leads to an increase in the gap, which is the hallmark of a self-consistent solution and spontaneous symmetry breaking."
             ),
             ContentBlock(
                 type="heading",
@@ -594,11 +594,11 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Using representative parameters to demonstrate the gap equation: λ = 0.1 (Quartic coupling), g = 0.01 (Thermal coupling), t_ortho = 1 (Orthogonal time), E_F = 10 (Fermi energy)."
+                content="Using representative parameters to demonstrate the gap equation: &lambda; = 0.1 (quartic coupling), g = 0.01 (thermal coupling), t<sub>ortho</sub> = 1 (orthogonal time), E<sub>F</sub> = 10 (Fermi energy)."
             ),
             ContentBlock(
                 type="formula",
-                content="Results (v = 2): Δ(v=2) = (0.5 × 2) / (1 + 0.01 × 1 / 10) = 1 / 1.01 ≈ 0.99\ndΔ/dv = 0.5 / 1.01 ≈ 0.495 > 0 (stable)\n— Numerical verification of gap stability",
+                content="Results (v = 2): &Delta;(v=2) = (0.5 &times; 2) / (1 + 0.01 &times; 1 / 10) = 1 / 1.01 &asymp; 0.99\nd&Delta;/dv = 0.5 / 1.01 &asymp; 0.495 &gt; 0 (stable)\n— Numerical verification of gap stability",
                 label=""
             ),
             ContentBlock(
@@ -609,7 +609,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Condensate Stability and Geometric Emergence",
-                content="Δ > 0 derives condensate stability: the positive gap ensures the Pneuma field develops a non-trivial vacuum expectation value, breaking the original symmetry spontaneously. K_Pneuma Geometry: The stable condensate forms the internal geometry K_Pneuma. The Euler characteristic χ = 72 arises from the Hodge number h^{3,1} which counts Δ-cycles - deformation modes of the gap. Swampland Compliance: The finite gap Δ ensures the theory avoids massless scalar modes in the moduli space, satisfying Swampland constraints. Infinite or zero gap would signal pathological behavior incompatible with quantum gravity."
+                content="&Delta; &gt; 0 establishes condensate stability: the positive gap ensures the Pneuma field develops a non-trivial vacuum expectation value, breaking the original symmetry spontaneously. K<sub>Pneuma</sub> Geometry: The stable condensate forms the internal geometry K<sub>Pneuma</sub>. The Euler characteristic &chi; = 72 arises from the Hodge number h<sup>3,1</sup>, which counts &Delta;-cycles — deformation modes of the gap. Swampland Compliance: The finite gap &Delta; ensures the theory avoids massless scalar modes in the moduli space, satisfying Swampland constraints. An infinite or zero gap would signal pathological behavior incompatible with quantum gravity."
             ),
             ContentBlock(
                 type="callout",
@@ -625,11 +625,11 @@ class PneumaMechanismV16(SimulationBase):
         content_blocks.extend([
             ContentBlock(
                 type="heading",
-                content="The Orthogonal Time Coupling: g*t_ortho"
+                content="The Orthogonal Time Coupling: g&middot;t<sub>ortho</sub>"
             ),
             ContentBlock(
                 type="paragraph",
-                content="A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g*t_ortho in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
+                content="A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
             ),
             ContentBlock(
                 type="heading",
@@ -649,11 +649,11 @@ class PneumaMechanismV16(SimulationBase):
         content_blocks.extend([
             ContentBlock(
                 type="heading",
-                content='<span class="pm-value" data-pm-value="framework.version_label">v23.1</span>: Pneuma I/O Mechanism (Neural Gates)'
+                content='<span class="pm-value" data-pm-value="framework.version_label">v24.2</span>: Pneuma I/O Mechanism (Neural Gates)'
             ),
             ContentBlock(
                 type="paragraph",
-                content='The <span class="pm-value" data-pm-value="framework.version_label">v23.1</span> framework introduces the 12x(2,0) paired bridge system where each bridge pair B_i = (y_{1i}, y_{2i}) serves as a \'neural gate\' for consciousness flow between shadows. The pairing arises from b_3 = 24/2 = 12 pairs.'
+                content='The <span class="pm-value" data-pm-value="framework.version_label">v24.2</span> framework introduces the 12×(2,0) paired bridge system where each bridge pair B<sub>i</sub> = (y<sub>1i</sub>, y<sub>2i</sub>) serves as a \'neural gate\' for consciousness flow between shadows. The pairing arises from b₃ = 24/2 = 12 pairs.'
             ),
             ContentBlock(
                 type="heading",
@@ -665,7 +665,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="Input (y_{1i}): Perception from bulk time t\nOutput (y_{2i}): Intuition via cyclic feedback through OR\n-- 12 parallel consciousness channels",
+                content="Input (y<sub>1i</sub>): Perception from bulk time t\nOutput (y<sub>2i</sub>): Intuition via cyclic feedback through OR\n-- 12 parallel consciousness channels",
                 label=""
             ),
             ContentBlock(
@@ -674,24 +674,24 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Cross-shadow coordinate sampling uses per-pair OR operators. Each 2x2 operator acts on the corresponding bridge pair:"
+                content="Cross-shadow coordinate sampling uses per-pair OR operators. Each 2&times;2 operator acts on the corresponding bridge pair:"
             ),
             ContentBlock(
                 type="formula",
-                content="R_perp^i = [[0, -1], [1, 0]] for i = 1, ..., 12\nR_perp^full = tensor product over all 12 pairs\n(R_perp^full)^2 = (-1)^12 * I = I (identity)\n-- Per-pair OR reduction with spinor coherence",
+                content="R<sub>&perp;</sub><sup>i</sup> = [[0, &minus;1], [1, 0]] for i = 1, ..., 12\nR<sub>&perp;</sub><sup>full</sup> = tensor product over all 12 pairs\n(R<sub>&perp;</sub><sup>full</sup>)&sup2; = (&minus;1)<sup>12</sup> &middot; I = I (identity)\n-- Per-pair OR reduction with spinor coherence",
                 label=""
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Neural Gate Dynamics",
-                content="The 12 bridge pairs create 12 parallel channels for consciousness flow: y_{1i} coordinates aggregate to form the normal shadow (perception input), y_{2i} coordinates aggregate to form the mirror shadow (intuition output). Each shadow maintains independent G2 compactification while being connected through the OR reduction mechanism."
+                content="The 12 bridge pairs create 12 parallel channels for consciousness flow: y<sub>1i</sub> coordinates aggregate to form the normal shadow (perception input), y<sub>2i</sub> coordinates aggregate to form the mirror shadow (intuition output). Each shadow maintains independent G&#8322; compactification while being connected through the OR reduction mechanism."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Observational Signatures of Neural Gate I/O",
-                content="The neural gate mechanism predicts specific signatures distinguishable from standard cosmology: (1) CMB non-Gaussianity: the 12-channel structure imprints a characteristic 12-fold symmetry in higher-order correlation functions (trispectrum), potentially detectable by next-generation CMB experiments (CMB-S4, LiteBIRD). (2) Gravitational wave spectrum: the bridge pair dynamics during reheating produce a stochastic GW background with spectral features at frequencies corresponding to the bridge pair mass scale, targetable by LISA and pulsar timing arrays. (3) Dark sector self-interactions: mirror sector particles inherit the neural gate coupling structure, predicting a specific dark matter self-interaction cross-section sigma/m ~ 0.1-10 cm^2/g observable in galaxy cluster mergers (Bullet Cluster class events)."
+                content="The neural gate mechanism predicts specific signatures distinguishable from standard cosmology: (1) CMB non-Gaussianity: the 12-channel structure imprints a characteristic 12-fold symmetry in higher-order correlation functions (trispectrum), potentially detectable by next-generation CMB experiments (CMB-S4, LiteBIRD). (2) Gravitational wave spectrum: the bridge pair dynamics during reheating produce a stochastic GW background with spectral features at frequencies corresponding to the bridge pair mass scale, targetable by LISA and pulsar timing arrays. (3) Dark sector self-interactions: mirror sector particles inherit the neural gate coupling structure, predicting a specific dark matter self-interaction cross-section &sigma;/m &sim; 0.1&ndash;10 cm<sup>2</sup>/g observable in galaxy cluster mergers (Bullet Cluster class events)."
             ),
             ContentBlock(
                 type="heading",
@@ -699,7 +699,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content="M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})\nds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)\n-- 24 spacelike from 12x2 pairs, 1 timelike (unified)",
+                content="M<sup>(24,1)</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;<sub>i=1</sub><sup>12</sup> B<sub>i</sub><sup>(2,0)</sup>)\nds&sup2; = &minus;dt&sup2; + &sum;<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>&sup2; + dy<sub>2i</sub>&sup2;)\n-- 24 spacelike from 12&times;2 pairs, 1 timelike (unified)",
                 label=""
             ),
         ])
@@ -714,7 +714,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 27D(24,1,2) spacetime M^{27} = T¹ ×_fiber (⊕B_i^{2,0} ⊕ S^{2,0}). This formulation makes manifest the higher-dimensional origin and the role of OR reduction via R_⊥ operator: 12 bridge pairs create dual 13D(12,1) shadows."
+                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 27D(24,1,2) spacetime M<sup>27</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;B<sub>i</sub><sup>(2,0)</sup> &oplus; S<sup>(2,0)</sup>). This formulation makes manifest the higher-dimensional origin and the role of OR reduction via the R<sub>&perp;</sub> operator: 12 bridge pairs create dual 13D(12,1) shadows."
             ),
             ContentBlock(
                 type="heading",
@@ -728,7 +728,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Dual-Shadow Physics Framework",
-                content="This action is formulated in the full 27D(24,1,2) spacetime. The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction (each shadow: 12 spatial + 1 shared time) while maintaining covariance. The Euclidean S^{2,0} sampler data fields contribute geometric averaging."
+                content="This action is formulated in the full 27D(24,1,2) spacetime. The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction (each shadow: 12 spatial + 1 shared time) while maintaining covariance. The Euclidean S<sup>(2,0)</sup> sampler data fields contribute geometric averaging."
             ),
             ContentBlock(
                 type="heading",
@@ -736,7 +736,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma sector consists of four distinct p-branes embedded in the 26D spacetime. Before gauge fixing, each brane has two timelike dimensions:"
+                content="The Pneuma sector consists of four distinct p-branes embedded in the 27D spacetime. Before gauge fixing, each brane has two timelike dimensions:"
             ),
             ContentBlock(
                 type="heading",
@@ -744,7 +744,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R_perp: 12 bridge pairs WARP to create dual 13D(12,1) shadows with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
+                content="5 spatial + 1 temporal dimension with Euclidean bridge. After OR reduction via R<sub>&perp;</sub>: 12 bridge pairs WARP to create dual 13D(12,1) shadows with shared time. Hosts the visible matter sector and 4D spacetime as a subspace."
             ),
             ContentBlock(
                 type="heading",
@@ -774,7 +774,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="OR Reduction: 27D(24,1,2) → 12×(2,0) bridge pairs → 2×13D(12,1)",
-                content="Starting configuration: 25D with signature (24,1) = 12×(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2×13D(12,1) shadows - each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R_perp produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action. The S^{2,0} sampler data fields provide additional geometric averaging."
+                content="Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows — each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R<sub>&perp;</sub> produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action. The S<sup>(2,0)</sup> sampler data fields provide additional geometric averaging."
             ),
             ContentBlock(
                 type="heading",
@@ -782,7 +782,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The 2T physics formulation requires three null constraints on the embedding coordinates X^M(ξ) and their conjugate momenta P^M(ξ):"
+                content="The 2T physics formulation requires three null constraints on the embedding coordinates X<sup>M</sup>(&xi;) and their conjugate momenta P<sup>M</sup>(&xi;):"
             ),
             ContentBlock(
                 type="formula",
@@ -792,7 +792,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="These constraints are first-class and generate the OR reduction structure. They ensure that: ghosts from the dual-shadow framework are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest through the R_perp operator."
+                content="These constraints are first-class and generate the OR reduction structure. They ensure that: ghosts from the dual-shadow framework are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest through the R<sub>&perp;</sub> operator."
             ),
             ContentBlock(
                 type="heading",
@@ -800,13 +800,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,1): T_p = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
+                content="For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,1): T<sub>p</sub> = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Central Charges in SO(24,1)",
-                content="Observable 5-brane: Z_5 ∈ ∧^5(R^{24,1}) - rank-5 antisymmetric tensor charge. Shadow 3-branes: Z_3^(i) ∈ ∧^3(R^{24,1}), i=1,2,3 - three rank-3 antisymmetric tensor charges. These central charges commute with all supersymmetry generators and are topological invariants. The dimensions (5,1) and (3,1) are selected to maximize the allowed central charge structure while satisfying the total dimension constraint 25 = (5+1)+(3+1)+(3+1)+(3+1) + 7 (internal)."
+                content="Observable 5-brane: Z<sub>5</sub> &isin; &and;<sup>5</sup>(&reals;<sup>24,1</sup>) — rank-5 antisymmetric tensor charge. Shadow 3-branes: Z<sub>3</sub><sup>(i)</sup> &isin; &and;<sup>3</sup>(&reals;<sup>24,1</sup>), i = 1, 2, 3 — three rank-3 antisymmetric tensor charges. These central charges commute with all supersymmetry generators and are topological invariants. The dimensions (5,1) and (3,1) are selected to maximize the allowed central charge structure while satisfying the total dimension constraint 25 = (5+1)+(3+1)+(3+1)+(3+1) + 7 (internal)."
             ),
         ])
 
@@ -820,7 +820,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Starting from the full 26D Lagrangian (or equivalently, the 2T p-brane action), we first gauge-fix to 13D (with the g·t_ortho term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional internal manifold K_Pneuma. This yields the 4D fermion sector:"
+                content="Starting from the full 26D Lagrangian (or equivalently, the 2T p-brane action), we first gauge-fix to 13D (with the g&middot;t<sub>ortho</sub> term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional internal manifold K<sub>Pneuma</sub>. This yields the 4D fermion sector:"
             ),
             ContentBlock(
                 type="formula",
@@ -830,7 +830,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The three generations (i = 1, 2, 3) arise from the three independent zero modes of the internal Dirac operator. The 4D masses m_i and Yukawa couplings are determined by overlap integrals of these zero mode wave functions over K_Pneuma."
+                content="The three generations (i = 1, 2, 3) arise from the three independent zero modes of the internal Dirac operator. The 4D masses m<sub>i</sub> and Yukawa couplings are determined by overlap integrals of these zero-mode wave functions over K<sub>Pneuma</sub>."
             ),
             ContentBlock(
                 type="callout",
@@ -850,7 +850,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout. Testability concentrates at Levels 3 and 4: the f(R,T,tau) modified gravity coefficients (alpha_F, beta_F) produce specific deviations from GR testable via gravitational wave dispersion (LIGO/Virgo/KAGRA) and binary pulsar timing, while the Mashiach attractor potential predicts w_eff = -0.853 measurable by DESI and Euclid. Level 2 predicts KK mode signatures accessible at future 100 TeV colliders if M_KK < 10 TeV. Level 1 is not directly testable but provides the mathematical consistency constraints (anomaly cancellation, modular invariance) that fix all lower-level parameters."
+                content="The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout. Testability concentrates at Levels 3 and 4: the f(R,T,&tau;) modified gravity coefficients (&alpha;<sub>F</sub>, &beta;<sub>F</sub>) produce specific deviations from GR testable via gravitational wave dispersion (LIGO/Virgo/KAGRA) and binary pulsar timing, while the Mashiach attractor potential predicts w<sub>eff</sub> = &minus;0.853 measurable by DESI and Euclid. Level 2 predicts KK mode signatures accessible at future 100 TeV colliders if M<sub>KK</sub> &lt; 10 TeV. Level 1 is not directly testable but provides the mathematical consistency constraints (anomaly cancellation, modular invariance) that fix all lower-level parameters."
             ),
             ContentBlock(
                 type="heading",
@@ -864,7 +864,7 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Fermionic Primacy",
-                content="The Pneuma spinor Ψ_P is not a matter field on a fixed background. The fermionic term sources the Einstein equations: R_MN = T_MN[Ψ_P]. Spacetime geometry emerges from Pneuma condensates, embodying true fermionic primacy."
+                content="The Pneuma spinor &Psi;<sub>P</sub> is not a matter field on a fixed background. The fermionic term sources the Einstein equations: R<sub>MN</sub> = T<sub>MN</sub>[&Psi;<sub>P</sub>]. Spacetime geometry emerges from Pneuma condensates, embodying true fermionic primacy."
             ),
             ContentBlock(
                 type="heading",
@@ -872,13 +872,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="After OR reduction from 27D(24,1,2) = 12×(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl(24,1) reduces to effective 64 components:"
+                content="After OR reduction from 27D(24,1,2) = 12&times;(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl<sub>(24,1)</sub> reduces to effective 64 components:"
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Dimensional Reduction: 27D(24,1,2) = 12×(2,0) + (0,1) → 2×13D(12,1)",
-                content="OR reduction via R_perp: 12×(2,0) bridge pairs warp to create 2×13D(12,1) shadows with shared time. S^{2,0} sampler data fields provide geometric averaging. Spinor dimension: 2^12 = 4096 from Cl(24,1) → 2^6 = 64 effective components. The flux terms L_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+                content="OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> sampler data fields provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
             ),
             ContentBlock(
                 type="heading",
@@ -886,7 +886,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The effective 4D Lagrangian includes f(R,T,τ) modified gravity with specific coefficients derived from higher-dimensional reduction: α_F (Starobinsky Coefficient), β_F (Matter Coupling), γ_F (Two-Time Invariant), δ_F (Dynamical Evolution)."
+                content="The effective 4D Lagrangian includes f(R,T,&tau;) modified gravity with specific coefficients derived from higher-dimensional reduction: &alpha;<sub>F</sub> (Starobinsky Coefficient), &beta;<sub>F</sub> (Matter Coupling), &gamma;<sub>F</sub> (Two-Time Invariant), &delta;<sub>F</sub> (Dynamical Evolution)."
             ),
             ContentBlock(
                 type="heading",
@@ -894,13 +894,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The dark energy sector is described by the Mashiach scalar field with late-time attractor dynamics ensuring w → -1.0. The potential V(φ) is constructed to have a stable late-time attractor: φ_M VEV ~ 2.5 M_Pl, w = -1.0 exactly at minimum, Λ ~ (2.4 meV)^4, attractor dynamics φ̈ + 3Hφ̇ + V'(φ) = 0."
+                content="The dark energy sector is described by the Mashiach scalar field with late-time attractor dynamics ensuring w &rarr; &minus;1.0. The potential V(&phi;) is constructed to have a stable late-time attractor: &phi;<sub>M</sub> VEV ~ 2.5 M<sub>Pl</sub>, w = &minus;1.0 exactly at minimum, &Lambda; ~ (2.4 meV)<sup>4</sup>, attractor dynamics &phi;&#776; + 3H&phi;&#775; + V&prime;(&phi;) = 0."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
                 title="Attractor Dynamics",
-                content="The Mashiach field φ evolves according to the Klein-Gordon equation in an FRW background: φ̈ + 3Hφ̇ + V'(φ) = 0. At late times, the field rolls to the minimum of V(φ), where φ̇ → 0, yielding w = -1.0 without fine-tuning. This is the attractor solution - independent of initial conditions."
+                content="The Mashiach field &phi; evolves according to the Klein-Gordon equation in an FRW background: &phi;&#776; + 3H&phi;&#775; + V&prime;(&phi;) = 0. At late times, the field rolls to the minimum of V(&phi;), where &phi;&#775; &rarr; 0, yielding w = &minus;1.0 without fine-tuning. This is the attractor solution — independent of initial conditions."
             ),
             ContentBlock(
                 type="heading",

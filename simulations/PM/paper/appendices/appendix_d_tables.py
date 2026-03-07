@@ -58,8 +58,8 @@ class AppendixDParameterTables(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_d_tables_v16_0",
-            version="16.0",
+            id="appendix_d_tables_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix D: Comprehensive Parameter Tables",
             description=(
@@ -319,7 +319,7 @@ class AppendixDParameterTables(SimulationBase):
                     type="paragraph",
                     content=(
                         "Table D.4 lists gauge coupling values at different scales, including "
-                        "the GUT unification scale M_GUT and unified coupling α_GUT derived "
+                        "the GUT unification scale M<sub>GUT</sub> and unified coupling &alpha;<sub>GUT</sub> derived "
                         "from 3-loop RG evolution with threshold corrections."
                     )
                 ),
@@ -332,7 +332,7 @@ class AppendixDParameterTables(SimulationBase):
                     content=(
                         "Table D.5 lists fermion wavefunction overlaps and Yukawa couplings "
                         "derived from geometric localization on associative 3-cycles. The "
-                        "Yukawa textures are computed using the Gimel constant k_gimel "
+                        "Yukawa textures are computed using the Gimel constant k<sub>&#x2137;</sub> "
                         "(Eq. 2.1, k-gimel-anchor) and the fine structure constant anchor "
                         "(Eq. 2.2, alpha-inverse-anchor) as geometric inputs."
                     )

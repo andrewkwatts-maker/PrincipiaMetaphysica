@@ -300,13 +300,13 @@ class MobiusReturnV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The period is scaled by the golden ratio phi = (1+sqrt(5))/2 "
-                        "for three physical reasons: (i) phi is the 'most irrational' "
+                        "The period is scaled by the golden ratio φ = (1+√5)/2 "
+                        "for three physical reasons: (i) φ is the 'most irrational' "
                         "number, preventing resonance lock-in between successive "
                         "traversals; (ii) the bridge's self-similar scaling under "
-                        "iterated returns converges to phi; and (iii) phi encodes the "
-                        "icosahedral symmetry linked to G2 via the McKay correspondence "
-                        "(icosahedral -> E8 -> G2 folding):"
+                        "iterated returns converges to φ; and (iii) φ encodes the "
+                        "icosahedral symmetry linked to G₂ via the McKay correspondence "
+                        "(icosahedral → E₈ → G₂ folding):"
                     )
                 ),
                 ContentBlock(

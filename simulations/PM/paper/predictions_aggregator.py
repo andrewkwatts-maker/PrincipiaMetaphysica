@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.0 - Predictions Aggregator
+PRINCIPIA METAPHYSICA v24.2 - Predictions Aggregator
 =====================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -8,7 +8,7 @@ Licensed under the MIT License. See LICENSE file for details.
 Aggregates all predictions from individual simulations and generates
 a comprehensive summary for Section 6.
 
-This simulation collects results from all other v16 simulations and
+This simulation collects results from all other v24.2 simulations and
 organizes them into experimental categories:
 1. Collider physics (KK gravitons, SUSY partners)
 2. Proton decay experiments
@@ -55,7 +55,7 @@ _reg = get_registry()
 
 class PredictionsAggregatorV16(SimulationBase):
     """
-    Predictions aggregator (v16.0).
+    Predictions aggregator (v24.2).
 
     Collects and organizes all predictions from the PM framework
     for experimental testing.
@@ -65,8 +65,8 @@ class PredictionsAggregatorV16(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return metadata about this simulation."""
         return SimulationMetadata(
-            id="predictions_aggregator_v16_0",
-            version="16.0",
+            id="predictions_aggregator_v24_2",
+            version="24.2",
             domain="predictions",
             title="Falsifiable Predictions Summary",
             description=(
@@ -123,7 +123,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "status": "CONSISTENT"
             },
             "neutrino_mixing": {
-                "parameter": "θ₁₂, θ₁₃, θ₂₃, δ_CP",
+                "parameter": "θ₁₂, θ₁₃, θ₂₃, δ<sub>CP</sub>",
                 "prediction": "33.34°, 8.63°, 45.75°, 278.4°",
                 "experiment": "NuFIT 6.0 global fit",
                 "measured": "33.41° ± 0.75°, 8.57° ± 0.12°, 45.0° ± 1.5°, 232° ± 28°",
@@ -131,15 +131,15 @@ class PredictionsAggregatorV16(SimulationBase):
                 "status": "CONFIRMED"
             },
             "fermion_generations": {
-                "parameter": "n_gen",
-                "prediction": "n_gen = 3 (χ<sub>eff</sub>/48 = 144/48)",
+                "parameter": "n<sub>gen</sub>",
+                "prediction": "n<sub>gen</sub> = 3 (χ<sub>eff</sub>/48 = 144/48)",
                 "experiment": "Standard Model + LEP Z-width",
-                "measured": "n_gen = 3 (exact)",
+                "measured": "n<sub>gen</sub> = 3 (exact)",
                 "agreement": "Exact match",
                 "status": "CONFIRMED"
             },
             "dark_matter_ratio": {
-                "parameter": "Ω_DM / Ω_b",
+                "parameter": "Ω<sub>DM</sub> / Ω<sub>b</sub>",
                 "prediction": "5.4 (from T'/T ~ 0.57)",
                 "experiment": "Planck 2018",
                 "measured": "5.38 ± 0.15",
@@ -147,7 +147,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "status": "CONFIRMED"
             },
             "cabibbo_angle": {
-                "parameter": "sin θ_C (ε)",
+                "parameter": "sin θ<sub>C</sub> (ε)",
                 "prediction": "0.2257 (racetrack moduli)",
                 "experiment": "PDG 2024",
                 "measured": "0.2257 ± 0.0010",
@@ -155,7 +155,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "status": "CONFIRMED"
             },
             "proton_decay": {
-                "parameter": "τ_p (p → e⁺π⁰)",
+                "parameter": "τ<sub>p</sub> (p → e⁺π⁰)",
                 "prediction": "3.9 × 10³⁴ years",
                 "experiment": "Super-Kamiokande",
                 "measured": "> 1.67 × 10³⁴ years (90% CL)",
@@ -163,7 +163,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "status": "CONSISTENT"
             },
             "kk_gravitons": {
-                "parameter": "m_KK",
+                "parameter": "m<sub>KK</sub>",
                 "prediction": "~5.0 TeV",
                 "experiment": "LHC Run 3",
                 "measured": "Searches ongoing",
@@ -171,7 +171,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "status": "UNTESTED"
             },
             "gut_scale": {
-                "parameter": "M_GUT",
+                "parameter": "M<sub>GUT</sub>",
                 "prediction": "2.12 × 10¹⁶ GeV (geometric)",
                 "experiment": "Indirect (proton decay, coupling unification)",
                 "measured": "Not directly measurable",
@@ -180,15 +180,15 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             "cross_shadow_phase_shift": {
                 "parameter": "δφ (cross-shadow phase shift)",
-                "prediction": "α_leak = 1/√6 ≈ 0.408; δφ = α_leak × L/λ_dB",
+                "prediction": "α<sub>leak</sub> = 1/√6 ≈ 0.408; δφ = α<sub>leak</sub> × L/λ<sub>dB</sub>",
                 "experiment": "Atom interferometry / neutron interferometry",
                 "measured": "Not yet measured",
                 "agreement": "N/A",
                 "status": "UNTESTED"
             },
             "vacuum_noise_excess": {
-                "parameter": "P_noise/P_thermal (vacuum noise fraction)",
-                "prediction": "(1/144) × e⁻¹² ≈ 6.9×10⁻⁸",
+                "parameter": "P<sub>noise</sub>/P<sub>thermal</sub> (vacuum noise fraction)",
+                "prediction": "(1/144) × e⁻¹² ≈ 6.9 × 10⁻⁸",
                 "experiment": "Cavity QED / SQUID amplifiers at millikelvin",
                 "measured": "Not yet measured",
                 "agreement": "N/A",
@@ -196,7 +196,7 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             "gw_polarization_anomaly": {
                 "parameter": "δh/h (GW polarization anomaly)",
-                "prediction": "T_ω² = 1/6 ≈ 0.167",
+                "prediction": "T<sub>ω</sub>² = 1/6 ≈ 0.167",
                 "experiment": "LIGO O5 / LISA cross-polarization analysis",
                 "measured": "Not yet measured",
                 "agreement": "N/A",
@@ -280,7 +280,7 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             {
                 "category": "Neutrino Physics",
-                "observable": "CP Phase δ_CP",
+                "observable": "CP Phase δ<sub>CP</sub>",
                 "pm_value": 278.4,
                 "pm_value_formatted": "278.4° (from G₂ phases)",
                 "experimental_value": 232.0,
@@ -292,7 +292,7 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             {
                 "category": "Particle Physics",
-                "observable": "Fermion Generations n_gen",
+                "observable": "Fermion Generations n<sub>gen</sub>",
                 "pm_value": 3,
                 "pm_value_formatted": "3 (χ<sub>eff</sub>/48 = 144/48)",
                 "experimental_value": 3,
@@ -316,7 +316,7 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             {
                 "category": "Particle Physics",
-                "observable": "Cabibbo Angle sin θ_C",
+                "observable": "Cabibbo Angle sin θ<sub>C</sub>",
                 "pm_value": 0.2257,
                 "pm_value_formatted": "0.2257 (racetrack stabilization)",
                 "experimental_value": 0.2257,
@@ -324,11 +324,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 "sigma_deviation": 0.0,
                 "experiment": "PDG 2024",
                 "testability": "CONFIRMED",
-                "derivation": "Racetrack moduli stabilization with h^{1,1}=4"
+                "derivation": "Racetrack moduli stabilization with h<sup>1,1</sup> = 4"
             },
             {
                 "category": "Proton Decay",
-                "observable": "Proton Lifetime τ_p",
+                "observable": "Proton Lifetime τ<sub>p</sub>",
                 "pm_value": 3.9e34,
                 "pm_value_formatted": "3.9 × 10³⁴ years",
                 "experimental_value": 1.67e34,
@@ -340,7 +340,7 @@ class PredictionsAggregatorV16(SimulationBase):
             },
             {
                 "category": "Collider Physics",
-                "observable": "KK Graviton Mass m_KK",
+                "observable": "KK Graviton Mass m<sub>KK</sub>",
                 "pm_value": 5000,
                 "pm_value_formatted": "~5.0 TeV (compactification scale)",
                 "experimental_value": None,
@@ -348,11 +348,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 "sigma_deviation": None,
                 "experiment": "LHC Run 3 (searches ongoing)",
                 "testability": "UNTESTED",
-                "derivation": "G₂ compactification radius R_G2 ~ (M_Pl/5 TeV)^{1/7}"
+                "derivation": "G₂ compactification radius R<sub>G2</sub> ~ (M<sub>Pl</sub>/5 TeV)<sup>1/7</sup>"
             },
             {
                 "category": "Grand Unification",
-                "observable": "GUT Scale M_GUT",
+                "observable": "GUT Scale M<sub>GUT</sub>",
                 "pm_value": 2.12e16,
                 "pm_value_formatted": "2.12 × 10¹⁶ GeV (geometric)",
                 "experimental_value": None,
@@ -367,37 +367,37 @@ class PredictionsAggregatorV16(SimulationBase):
                 "category": "Dark Sector",
                 "observable": "Cross-Shadow Phase Shift δφ",
                 "pm_value": 0.408,
-                "pm_value_formatted": "α_leak = 1/√6 ≈ 0.408 (coupling strength)",
+                "pm_value_formatted": "α<sub>leak</sub> = 1/√6 ≈ 0.408 (coupling strength)",
                 "experimental_value": None,
                 "experimental_error": None,
                 "sigma_deviation": None,
                 "experiment": "Atom interferometry / neutron interferometry",
                 "testability": "UNTESTED",
-                "derivation": "Two-layer OR bridge cross-shadow interference: δφ = α_leak × L/λ_dB"
+                "derivation": "Two-layer OR bridge cross-shadow interference: δφ = α<sub>leak</sub> × L/λ<sub>dB</sub>"
             },
             {
                 "category": "Dark Sector",
-                "observable": "Vacuum Noise Excess P_noise/P_thermal",
+                "observable": "Vacuum Noise Excess P<sub>noise</sub>/P<sub>thermal</sub>",
                 "pm_value": 6.9e-8,
-                "pm_value_formatted": "(1/144) × e⁻¹² ≈ 6.9×10⁻⁸ (fractional noise)",
+                "pm_value_formatted": "(1/144) × e⁻¹² ≈ 6.9 × 10⁻⁸ (fractional noise)",
                 "experimental_value": None,
                 "experimental_error": None,
                 "sigma_deviation": None,
                 "experiment": "Cavity QED / SQUID amplifiers at millikelvin",
                 "testability": "UNTESTED",
-                "derivation": "Bridge leakage vacuum noise: P_noise = (1/144) × e^{-12} × P_thermal"
+                "derivation": "Bridge leakage vacuum noise: P<sub>noise</sub> = (1/144) × e⁻¹² × P<sub>thermal</sub>"
             },
             {
                 "category": "Dark Sector",
                 "observable": "GW Polarization Anomaly δh/h",
                 "pm_value": 1/6,
-                "pm_value_formatted": "T_ω² = 1/6 ≈ 0.167 (torsion correction)",
+                "pm_value_formatted": "T<sub>ω</sub>² = 1/6 ≈ 0.167 (torsion correction)",
                 "experimental_value": None,
                 "experimental_error": None,
                 "sigma_deviation": None,
                 "experiment": "LIGO O5 / LISA cross-polarization analysis",
                 "testability": "UNTESTED",
-                "derivation": "G₂ torsion coupling to GW polarization: δh/h ~ T_ω² = 1/6"
+                "derivation": "G₂ torsion coupling to GW polarization: δh/h ~ T<sub>ω</sub>² = 1/6"
             },
         ]
 
@@ -503,8 +503,8 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The following theoretical challenges have been systematically resolved, with "
-                    "introducing the 𝔻 unified time framework:"
+                    "The following theoretical challenges have been systematically resolved "
+                    "by introducing the 𝔻 unified time framework:"
                 )
             ),
             ContentBlock(
@@ -514,20 +514,20 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["D Unified Time Framework", "✓ NEW", "(13,1) + (13,1) with Z₂ symmetry; visible + mirror sectors"],
                     ["w₀ & wₐ derivation", "✓ DERIVED", "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583, wₐ,eff = 0.27 from G₂ torsion logs (DESI 2025 BAO-only: < 1σ)"],
                     ["CY4 construction", "✓ RESOLVED", "χ<sub>eff</sub> = 144 from 𝔻 unified time framework (flux-dressed Euler characteristic)"],
-                    ["Hodge numbers", "✓ RESOLVED", "h^{1,1} = 4, h^{2,1} = 0, h^{3,1} = 0, h^{2,2} = 60 (satisfies CY4 constraint)"],
+                    ["Hodge numbers", "✓ RESOLVED", "h<sup>1,1</sup> = 4, h<sup>2,1</sup> = 0, h<sup>3,1</sup> = 0, h<sup>2,2</sup> = 60 (satisfies CY4 constraint)"],
                     ["G₂ holonomy error", "✓ CORRECTED", "G₂×S¹ → Spin(7), NOT SU(4); use direct CY4 or M/F-theory duality"],
                     ["V₀ circularity", "✓ RESOLVED", "Non-circular derivation via species scale + distance conjecture"],
                     ["MEP w₀ derivation", "✓ DERIVED", "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 with b₃ = 24 from G₂ topology"],
                     ["Planck tension", "✓ REDUCED", "Reduced from 6σ to 1.3σ with refined w₀ and logarithmic evolution"],
-                    ["M_GUT & 1/α_GUT", "✓ DERIVED", "M_GUT = 2.118×10¹⁶ GeV, 1/α_GUT = 42.7 from G₂ torsion logs + 3-loop RG"],
-                    ["Proton decay channels", "✓ VALIDATED via CKM", "BR(e⁺π⁰) = 64.2%±9.4%, BR(K⁺ν̄) = 35.6%±9.4%; τ_p = 8.15×10³⁴ yr (4.9× Super-K)"],
-                    ["PMNS mixing angles", "✓ CONFIRMED", "θ₂₃ = 45.75°, θ₁₂ = 33.34°, θ₁₃ = 8.63°, δ_CP = 278.4° (0.00-0.24σ vs NuFIT 6.0)"],
+                    ["M<sub>GUT</sub> & 1/α<sub>GUT</sub>", "✓ DERIVED", "M<sub>GUT</sub> = 2.118 × 10¹⁶ GeV, 1/α<sub>GUT</sub> = 42.7 from G₂ torsion logs + 3-loop RG"],
+                    ["Proton decay channels", "✓ VALIDATED via CKM", "BR(e⁺π⁰) = 64.2% ± 9.4%, BR(K⁺ν̄) = 35.6% ± 9.4%; τ<sub>p</sub> = 8.15 × 10³⁴ yr (4.9× Super-K)"],
+                    ["PMNS mixing angles", "✓ CONFIRMED", "θ₂₃ = 45.75°, θ₁₂ = 33.34°, θ₁₃ = 8.63°, δ<sub>CP</sub> = 278.4° (0.00–0.24σ vs NuFIT 6.0)"],
                     ["KK graviton tower", "✓ COMPLETE", "Full tower: m₁ = 5.0 TeV, m₂ = 7.1±2.1 TeV, with T² degeneracies; σ(m₁) = 0.10±0.03 fb"],
-                    ["n_gen = 3", "✓ DERIVED", "n_gen = χ<sub>eff</sub>/48 = 144/48 = 3 (𝔻 unified time framework with flux quantization)"],
-                    ["α_T derivation", "✓ DERIVED", "Z₂-corrected Γ/H scaling (α_T ≈ 2.7)"],
+                    ["n<sub>gen</sub> = 3", "✓ DERIVED", "n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3 (𝔻 unified time framework with flux quantization)"],
+                    ["α<sub>T</sub> derivation", "✓ DERIVED", "Z₂-corrected Γ/H scaling (α<sub>T</sub> ≈ 2.7)"],
                     ["Neutrino hierarchy", "✓ PREDICTION", "Normal hierarchy (76% confidence from hybrid suppression); falsifiable by JUNO/DUNE (2027-2030)"],
-                    ["Mirror sector", "⚠ QUALITATIVE", "Dark matter candidate; ΔN_eff predictions pending Z₂ scale"],
-                    ["v15.1 Pneuma-Vielbein Bridge", "✓ PARAMETER-FREE", "Metric signature (-,+,+,+) emergent from OR reduction; G₂ norm √(7/3) exact; b₃ = 24 from vacuum stability"],
+                    ["Mirror sector", "⚠ QUALITATIVE", "Dark matter candidate; ΔN<sub>eff</sub> predictions pending Z₂ scale"],
+                    ["v24.2 Pneuma-Vielbein Bridge", "✓ PARAMETER-FREE", "Metric signature (-,+,+,+) emergent from OR reduction; G₂ norm √(7/3) exact; b₃ = 24 from vacuum stability"],
                 ]
             ),
 
@@ -553,9 +553,9 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>Graviton (g_μν):</strong> Zero mode of the 13D metric tensor",
-                    "<strong>Gauge bosons:</strong> Components A_μ^a from internal Killing vectors",
-                    "<strong>Scalar moduli:</strong> Shape and volume moduli of K_Pneuma (A Primordial Spinor Field)",
+                    "<strong>Graviton (g<sub>μν</sub>):</strong> Zero mode of the 13D metric tensor",
+                    "<strong>Gauge bosons:</strong> Components A<sub>μ</sub><sup>a</sup> from internal Killing vectors",
+                    "<strong>Scalar moduli:</strong> Shape and volume moduli of K<sub>Pneuma</sub> (A Primordial Spinor Field)",
                 ]
             ),
             ContentBlock(
@@ -567,7 +567,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The SO(10) unification scale emerges naturally from the compactification radius: "
-                    "M_GUT ~ 1/R_compact ~ 10¹⁶ GeV. At this scale, the Standard Model gauge couplings "
+                    "M<sub>GUT</sub> ~ 1/R<sub>compact</sub> ~ 10¹⁶ GeV. At this scale, the Standard Model gauge couplings "
                     "unify with gravitational strength interactions, consistent with precision gauge "
                     "coupling running."
                 )
@@ -582,8 +582,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "The number of fermion generations arises from the flux-dressed Euler characteristic "
                     "of the 𝔻 unified time framework, accounting for flux quantization constraints: "
-                    "n_gen = χ<sub>eff</sub> / 48 = 144 / 48 = 3. Note: The 𝔻 unified time framework uses "
-                    "χ<sub>eff</sub> = 144 (flux-dressed) with the formula n_gen = χ<sub>eff</sub>/48 = 144/48 = 3. "
+                    "n<sub>gen</sub> = χ<sub>eff</sub> / 48 = 144 / 48 = 3. Note: The 𝔻 unified time framework uses "
+                    "χ<sub>eff</sub> = 144 (flux-dressed) with the formula n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3. "
                     "This supersedes earlier formulations (χ/24 = 72/24 = 3 from F-theory), which also "
                     "yielded 3 generations but used different topological structures."
                 )
@@ -603,10 +603,10 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "m₁ = 5.0 TeV (Geometric from R_c^{-1}). Direct prediction from compactification radius: "
-                    "m_KK = R_c^{-1}. No phenomenological fits — pure geometric derivation from topology. "
-                    "Compactification scale: R_c ~ (5.0 TeV)⁻¹ from geometric compactification. (v15.0: Direct "
-                    "geometric derivation m_KK = R_c^{-1} = 5.0 TeV with no phenomenological fitting)"
+                    "m₁ = 5.0 TeV (geometric from R<sub>c</sub>⁻¹). Direct prediction from compactification radius: "
+                    "m<sub>KK</sub> = R<sub>c</sub>⁻¹. No phenomenological fits — pure geometric derivation from topology. "
+                    "Compactification scale: R<sub>c</sub> ≈ (5.0 TeV)⁻¹ from geometric compactification. (v24.2: Direct "
+                    "geometric derivation m<sub>KK</sub> = R<sub>c</sub>⁻¹ = 5.0 TeV with no phenomenological fitting)"
                 )
             ),
             ContentBlock(
@@ -618,10 +618,10 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Property", "Value", "Notes"],
                 rows=[
-                    ["Production", "σ×BR(γγ) = 0.10 ± 0.03 fb", "pp → G_KK → γγ at √s = 14 TeV"],
+                    ["Production", "σ × BR(γγ) = 0.10 ± 0.03 fb", "pp → G<sub>KK</sub> → γγ at √s = 14 TeV"],
                     ["Golden channel", "γγ (diphoton)", "Clean signature, low background"],
                     ["Additional channels", "jj, ℓ⁺ℓ⁻, WW, ZZ", "Universal gravitational coupling"],
-                    ["Current bound", "m_KK > 3.5 TeV", "ATLAS/CMS 2024 (95% CL, diphoton)"],
+                    ["Current bound", "m<sub>KK</sub> > 3.5 TeV", "ATLAS/CMS 2024 (95% CL, diphoton)"],
                 ]
             ),
             ContentBlock(
@@ -633,10 +633,10 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The complete Kaluza-Klein tower follows the characteristic spacing pattern from two "
-                    "shared dimensions: m_KK,n,m = √(n² + m²) × M_KK where M_KK ≈ 4.5 TeV is derived. "
-                    "v15.0 Derivation: M_KK is derived geometrically via k_eff = b₃/(2+ε) ≈ 10.80, where "
+                    "shared dimensions: m<sub>KK,n,m</sub> = √(n² + m²) × M<sub>KK</sub> where M<sub>KK</sub> ≈ 4.5 TeV is derived. "
+                    "v24.2 Derivation: M<sub>KK</sub> is derived geometrically via k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where "
                     "ε ≈ 0.2257 is the dynamically derived Cabibbo angle from the racetrack superpotential "
-                    "(T_min minimization → ε). This gives M_KK = M_Pl × exp(-k_eff π) ≈ 4.5 TeV without "
+                    "(T<sub>min</sub> minimization → ε). This gives M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ≈ 4.5 TeV without "
                     "circular inputs."
                 )
             ),
@@ -674,7 +674,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "superheavy gauge bosons (X, Y) with masses at the GUT scale. In the unified time framework, "
                     "these predictions apply to the visible (13,1) sector. The dominant decay channel is "
                     "p → e⁺ + π⁰, with the dimension-6 operators responsible arising from X and Y boson exchange. "
-                    "Decay rate: Γ(p → e⁺π⁰) ~ α_GUT² m_p⁵ / M_X⁴, where lifetime τ_p = 1/Γ = 8.15 × 10³⁴ years "
+                    "Decay rate: Γ(p → e⁺π⁰) ~ α<sub>GUT</sub>² m<sub>p</sub>⁵ / M<sub>X</sub>⁴, where lifetime τ<sub>p</sub> = 1/Γ = 8.15 × 10³⁴ years "
                     "(68% CI: [6.84, 9.64]×10³⁴ yr)."
                 )
             ),
@@ -687,8 +687,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Experiment", "Channel", "PM Prediction", "Sensitivity (years)", "Timeline"],
                 rows=[
-                    ["Hyper-Kamiokande", "p → e⁺π⁰", "τ_p = 8.15 × 10³⁴, BR = 25% (geometric)", "~ 1 × 10³⁴", "2027-2035"],
-                    ["DUNE", "p → K⁺ν̄", "τ_p = 8.15 × 10³⁴, BR ~ 75% (remaining)", "~ 3 × 10³⁴", "2030-2035"],
+                    ["Hyper-Kamiokande", "p → e⁺π⁰", "τ<sub>p</sub> = 8.15 × 10³⁴, BR = 25% (geometric)", "~ 1 × 10³⁴", "2027–2035"],
+                    ["DUNE", "p → K⁺ν̄", "τ<sub>p</sub> = 8.15 × 10³⁴, BR ~ 75% (remaining)", "~ 3 × 10³⁴", "2030–2035"],
                     ["Super-K (current)", "p → e⁺π⁰", "-", "τ > 1.67 × 10³⁴", "Established bound"],
                 ]
             ),
@@ -716,7 +716,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The redshift-dependent equation of state arises from thermal time scaling: "
-                    "w(z) = w₀ [1 + (α_T/3) ln(1+z)], where α_T ≈ 2.7 is derived from first principles "
+                    "w(z) = w₀ [1 + (α<sub>T</sub>/3) ln(1+z)], where α<sub>T</sub> ≈ 2.7 is derived from first principles "
                     "via Z₂-corrected Γ/H scaling. Logarithmic form distinguishes from CPL parameterization at high z."
                 )
             ),
@@ -725,8 +725,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 headers=["Parameter", "Value", "Status", "DESI 2024 Data"],
                 rows=[
                     ["w₀", "−23/24 ≈ -0.9583 (from b₃ = 24)", "DERIVED (MEP)", "DESI 2025 BAO-only: w₀ = -0.957 ± 0.067 (consistent)"],
-                    ["w_a,eff", "0.27 (from α_T = 2.7)", "DERIVED", "DESI: -0.75 ± 0.30 (0.66σ agreement)"],
-                    ["α_T", "≈ 2.7 (Z₂-corrected)", "DERIVED", "Consistent with w(z) logarithmic form"],
+                    ["w<sub>a,eff</sub>", "0.27 (from α<sub>T</sub> = 2.7)", "DERIVED", "DESI: −0.75 ± 0.30 (0.66σ agreement)"],
+                    ["α<sub>T</sub>", "≈ 2.7 (Z₂-corrected)", "DERIVED", "Consistent with w(z) logarithmic form"],
                     ["Planck tension", "Reduced 6σ → 1.3σ", "RESOLVED", "Frozen field mechanism via logarithmic w(z) evolution"],
                 ]
             ),
@@ -739,7 +739,7 @@ class PredictionsAggregatorV16(SimulationBase):
             ),
             ContentBlock(
                 type="heading",
-                content="Dark Matter from Hidden Sector (v16.0 Multi-Sector Framework)",
+                content="Dark Matter from Hidden Sector (v24.2 Multi-Sector Framework)",
                 level=3
             ),
             ContentBlock(
@@ -748,17 +748,17 @@ class PredictionsAggregatorV16(SimulationBase):
                     "The hidden sector naturally provides a dark matter candidate through pure geometric "
                     "confinement. Mirror baryons remain invisible to electromagnetic probes while clustering "
                     "gravitationally. The dark matter-to-baryon ratio is predicted from the relative volumes "
-                    "of shadow and observable G₂ cycles: Ω_DM / Ω_b ≈ Vol_shadow / Vol_observable ≈ f(b₂, b₃) ≈ 5. "
-                    "Observed: Ω_DM/Ω_b ≈ 5.3 | Predicted: ≈ 5 from geometry."
+                    "of shadow and observable G₂ cycles: Ω<sub>DM</sub> / Ω<sub>b</sub> ≈ Vol<sub>shadow</sub> / Vol<sub>observable</sub> ≈ f(b₂, b₃) ≈ 5. "
+                    "Observed: Ω<sub>DM</sub>/Ω<sub>b</sub> ≈ 5.3 | Predicted: ≈ 5 from geometry."
                 )
             ),
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>Mirror baryons:</strong> Contribute to Ω_DM with gravity-only coupling (no direct detection signals)",
+                    "<strong>Mirror baryons:</strong> Contribute to Ω<sub>DM</sub> with gravity-only coupling (no direct detection signals)",
                     "<strong>Mirror photons:</strong> Completely decoupled from visible sector (confined to hidden cycles)",
-                    "<strong>Mirror neutrinos:</strong> Additional dark radiation component (ΔN_eff) testable via CMB-S4",
-                    "<strong>v16.0:</strong> Multi-sector sampling with geometric width σ ≈ 0.25 predicts DM/baryon ratio ≈ 5.8 (7.9% from Planck 5.4)",
+                    "<strong>Mirror neutrinos:</strong> Additional dark radiation component (ΔN<sub>eff</sub>) testable via CMB-S4",
+                    "<strong>v24.2:</strong> Multi-sector sampling with geometric width σ ≈ 0.25 predicts DM/baryon ratio ≈ 5.8 (7.9% from Planck 5.4)",
                 ]
             ),
             ContentBlock(
@@ -769,7 +769,7 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The coupling between visible and mirror sectors is parameterized by λ_Z₂ < 10⁻², "
+                    "The coupling between visible and mirror sectors is parameterized by λ<sub>Z₂</sub> < 10⁻², "
                     "where the upper bound comes from Big Bang Nucleosynthesis constraints. Suppressed but "
                     "non-zero coupling enables dark energy dynamics."
                 )
@@ -778,10 +778,10 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Observable", "Prediction", "Test", "Timeline"],
                 rows=[
-                    ["ΔN_eff", "0.08 - 0.16 (mirror sector contribution)", "CMB-S4, Simons Observatory", "2027-2030"],
+                    ["ΔN<sub>eff</sub>", "0.08–0.16 (mirror sector contribution)", "CMB-S4, Simons Observatory", "2027–2030"],
                     ["Dark matter substructure", "Mirror-baryon acoustic oscillations", "Euclid weak lensing", "2026+"],
                     ["w(z) high-z behavior", "Deviation from CPL at z > 2", "Nancy Grace Roman Space Telescope", "2027+"],
-                    ["Gravitational lensing anomalies", "Mirror-baryon density fluctuations", "Euclid, Roman", "2026-2030"],
+                    ["Gravitational lensing anomalies", "Mirror-baryon density fluctuations", "Euclid, Roman", "2026–2030"],
                 ]
             ),
 
@@ -803,7 +803,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["m₁", "≈ 0.83 meV", "PREDICTED", "Lightest in NH"],
                     ["m₂", "≈ 9.0 meV", "PREDICTED", "√(m₁² + Δm²₂₁) ≈ 8.97 meV"],
                     ["m₃", "≈ 50 meV", "PREDICTED", "Heaviest in NH (from hybrid suppression)"],
-                    ["Σm_ν", "≈ 60 meV", "DERIVED", "< 120 meV (cosmology)"],
+                    ["Σm<sub>ν</sub>", "≈ 60 meV", "DERIVED", "< 120 meV (cosmology)"],
                     ["Normal Hierarchy", "m₁ < m₂ < m₃", "76% CONFIDENCE", "Testable by JUNO (2027) / DUNE (2030)"],
                 ]
             ),
@@ -811,7 +811,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The see-saw mechanism combined with the Atiyah-Singer index on associative 3-cycles "
-                    "determines both the mass scale and hierarchy: m_ν ~ -m_D M_R^{-1} m_D^T (Type-I seesaw), "
+                    "determines both the mass scale and hierarchy: m<sub>ν</sub> ~ −m<sub>D</sub> M<sub>R</sub>⁻¹ m<sub>D</sub><sup>T</sup> (Type-I seesaw), "
                     "where the index theorem on b₃ = 24 cycles determines the hierarchy structure."
                 )
             ),
@@ -828,7 +828,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "The reduction from the full SO(12,1) symmetry of the 13D bulk to the observed SO(3,1) "
                     "Lorentz symmetry in 4D generically introduces small residual Lorentz-violating effects. "
                     "Symmetry breaking chain: SO(12,1) → SO(3,1) × SO(8) → SO(3,1) × SO(10). The natural scale "
-                    "of Lorentz violation is δ_LV ~ (E/M_Pl)^n ~ 10⁻¹⁷ to 10⁻⁴³."
+                    "of Lorentz violation is δ<sub>LV</sub> ~ (E/M<sub>Pl</sub>)<sup>n</sup> ~ 10⁻¹⁷ to 10⁻⁴³."
                 )
             ),
             ContentBlock(
@@ -850,21 +850,21 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The Standard-Model Extension (SME) provides a comprehensive parameterization of all possible "
-                    "Lorentz and CPT violating effects in particle physics and gravity. The SME Lagrangian extends "
-                    "the Standard Model: L_SME = L_SM + L_gravity + Σ_d k^(d) O^(d), where k^(d) are SME coefficients "
-                    "of mass dimension (4-d) controlling each operator."
+                    "Lorentz- and CPT-violating effects in particle physics and gravity. The SME Lagrangian extends "
+                    "the Standard Model: L<sub>SME</sub> = L<sub>SM</sub> + L<sub>gravity</sub> + Σ<sub>d</sub> k<sup>(d)</sup> O<sup>(d)</sup>, where k<sup>(d)</sup> are SME coefficients "
+                    "of mass dimension (4−d) controlling each operator."
                 )
             ),
             ContentBlock(
                 type="table",
                 headers=["Coefficient", "Sector", "Observable Effect", "Current Bound"],
                 rows=[
-                    ["c_μν", "Fermion", "Modified dispersion relations", "|c| < 10⁻¹⁵"],
-                    ["a_μ", "Fermion (CPT-odd)", "Sidereal variations in atomic clocks", "|a| < 10⁻²⁷ GeV"],
-                    ["k_F", "Photon", "Birefringence in vacuum", "|k_F| < 10⁻³²"],
-                    ["s_μν", "Gravity", "Gravitational wave dispersion", "|s| < 10⁻¹⁴"],
-                    ["q_μνρσ", "Gravity (CPT-even)", "Short-range gravity tests", "|q| < 10⁻⁹"],
-                    ["k_AF", "Photon (CPT-odd)", "Photon polarization rotation", "|k_AF| < 10⁻⁴³ GeV"],
+                    ["c<sub>μν</sub>", "Fermion", "Modified dispersion relations", "|c| < 10⁻¹⁵"],
+                    ["a<sub>μ</sub>", "Fermion (CPT-odd)", "Sidereal variations in atomic clocks", "|a| < 10⁻²⁷ GeV"],
+                    ["k<sub>F</sub>", "Photon", "Birefringence in vacuum", "|k<sub>F</sub>| < 10⁻³²"],
+                    ["s<sub>μν</sub>", "Gravity", "Gravitational wave dispersion", "|s| < 10⁻¹⁴"],
+                    ["q<sub>μνρσ</sub>", "Gravity (CPT-even)", "Short-range gravity tests", "|q| < 10⁻⁹"],
+                    ["k<sub>AF</sub>", "Photon (CPT-odd)", "Photon polarization rotation", "|k<sub>AF</sub>| < 10⁻⁴³ GeV"],
                 ]
             ),
             ContentBlock(
@@ -889,10 +889,10 @@ class PredictionsAggregatorV16(SimulationBase):
                     "Gravitational waves provide a clean probe of Lorentz invariance in the "
                     "gravitational sector. The framework predicts a modified dispersion relation "
                     "with a geometrically derived coupling from torsion flux: "
-                    "ω² = k²(1 + ξ²(k/M_Pl)² + η k Δt_ortho/c), where η = exp(|T_ω|)/b₃ ≈ 0.113. "
+                    "ω² = k²(1 + ξ²(k/M<sub>Pl</sub>)² + η k Δt<sub>ortho</sub>/c), where η = exp(|T<sub>ω</sub>|)/b₃ ≈ 0.113. "
                     "The observable dispersion effect is Planck-suppressed: the dominant term "
-                    "ξ²(k/M_Pl)² is O(10⁻³⁸) at LIGO frequencies (~100 Hz), far below current "
-                    "sensitivity (|A_α| < 10⁻²⁰). This prediction targets next-generation "
+                    "ξ²(k/M<sub>Pl</sub>)² is O(10⁻³⁸) at LIGO frequencies (~100 Hz), far below current "
+                    "sensitivity (|A<sub>α</sub>| < 10⁻²⁰). This prediction targets next-generation "
                     "space-based detectors (LISA 2037+) observing massive BH mergers where "
                     "the accumulated phase shift over cosmological distances may become detectable."
                 )
@@ -905,7 +905,7 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "For a source at luminosity distance D: Δt ~ ξ · (D/c) · (k/M_Pl)^n. For binary black hole "
+                    "For a source at luminosity distance D: Δt ~ ξ · (D/c) · (k/M<sub>Pl</sub>)<sup>n</sup>. For binary black hole "
                     "mergers at z ~ 1, the accumulated phase shift can reach observable levels in the frequency "
                     "evolution of the gravitational wave signal."
                 )
@@ -928,10 +928,10 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Parameter", "Constraint", "Significance"],
                 rows=[
-                    ["GW speed (c_GW/c - 1)", "< 10⁻¹⁵", "From GW170817 + GRB 170817A"],
+                    ["GW speed (c<sub>GW</sub>/c − 1)", "< 10⁻¹⁵", "From GW170817 + GRB 170817A"],
                     ["Dispersion (A₀)", "< 10⁻²⁰ eV", "Frequency-independent mass bound"],
-                    ["Lorentz violation (A_α, α = 0.5)", "< 10⁻²⁰ eV^{1-α}", "Generic parameterization"],
-                    ["Lorentz violation (A_α, α = 1)", "< 10⁻²¹", "Linear dispersion"],
+                    ["Lorentz violation (A<sub>α</sub>, α = 0.5)", "< 10⁻²⁰ eV<sup>1−α</sup>", "Generic parameterization"],
+                    ["Lorentz violation (A<sub>α</sub>, α = 1)", "< 10⁻²¹", "Linear dispersion"],
                     ["Parity violation", "|κ| < 0.1", "Circular polarization amplitude"],
                 ]
             ),
@@ -960,7 +960,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "inequality—the canonical test of quantum nonlocality—through retrocausal effects mediated "
                     "by t_ortho. While standard quantum mechanics predicts CHSH = 2√2 ≈ 2.828, the orthogonal "
                     "time allows for advanced-wave correlations that slightly exceed this Tsirelson bound. "
-                    "Modified CHSH Prediction: CHSH = 2√2 × (1 + δ_ortho), where δ_ortho ~ ε_Z₂ × (Δt_ortho / τ_coh) ~ 10⁻⁵. "
+                    "Modified CHSH Prediction: CHSH = 2√2 × (1 + δ<sub>ortho</sub>), where δ<sub>ortho</sub> ~ ε<sub>Z₂</sub> × (Δt<sub>ortho</sub> / τ<sub>coh</sub>) ~ 10⁻⁵. "
                     "This predicts CHSH ≈ 2.828 × (1 + 10⁻⁵) ≈ 2.828028, a violation of the Tsirelson bound at "
                     "the ~10⁻⁵ level. While tiny, this is testable in delayed-choice quantum eraser experiments "
                     "with sufficient statistics."
@@ -968,12 +968,12 @@ class PredictionsAggregatorV16(SimulationBase):
             ),
             ContentBlock(
                 type="table",
-                headers=["Experiment Type", "Predicted δ_ortho", "Required Statistics", "Status"],
+                headers=["Experiment Type", "Predicted δ<sub>ortho</sub>", "Required Statistics", "Status"],
                 rows=[
-                    ["Delayed-choice eraser", "~10⁻⁵", "~10¹¹ photon pairs", "✓ FEASIBLE (achievable in 2025+)"],
-                    ["Loophole-free Bell test", "~10⁻⁵", "~10¹⁰ trials", "➤ CHALLENGING (requires space-like separation)"],
+                    ["Delayed-choice eraser", "~10⁻⁵", "~10¹¹ photon pairs", "FEASIBLE (achievable in 2025+)"],
+                    ["Loophole-free Bell test", "~10⁻⁵", "~10¹⁰ trials", "CHALLENGING (requires space-like separation)"],
                     ["Ion trap CHSH", "~10⁻⁶", "~10⁹ measurements", "Accessible with current tech (NIST, Vienna)"],
-                    ["Cosmic Bell test", "~10⁻⁷", "~10⁸ quasar pairs", "⚠ MARGINAL (statistical challenge)"],
+                    ["Cosmic Bell test", "~10⁻⁷", "~10⁸ quasar pairs", "MARGINAL (statistical challenge)"],
                 ]
             ),
             ContentBlock(
@@ -981,7 +981,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "Best current CHSH measurements: Loophole-free tests (Hensen et al. 2015, Giustina et al. 2015) "
                     "achieve CHSH = 2.42 ± 0.02 for electron spins and 2.70 ± 0.05 for photons, with statistical "
-                    "precision ~10⁻². To test δ_ortho ~ 10⁻⁵ requires 7 orders of magnitude improvement in "
+                    "precision ~10⁻². To test δ<sub>ortho</sub> ~ 10⁻⁵ requires 7 orders of magnitude improvement in "
                     "statistics—challenging but feasible with dedicated high-rate sources. Timeline: Achievable by "
                     "2027-2030 with existing quantum optics labs using frequency-multiplexed sources."
                 )
@@ -998,13 +998,13 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "The unified time framework with vacuum decay dynamics predicts observable signatures in the CMB "
                     "from bubble nucleation events during the early universe. Vacuum decay bubbles from tunneling "
-                    "between (13,1) sectors create characteristic cold spots: ΔT/T ~ -(r_b H)^{1/2}."
+                    "between (13,1) sectors create characteristic cold spots: ΔT/T ~ −(r<sub>b</sub> H)<sup>1/2</sup>."
                 )
             ),
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>Disk-like anomalies:</strong> Angular size θ ~ 1-10° depending on bubble nucleation time",
+                    "<strong>Disk-like anomalies:</strong> Angular size θ ~ 1–10° depending on bubble nucleation time",
                     "<strong>Non-Gaussian statistics:</strong> Kurtosis κ > 3 + 10⁹ from bubble wall interactions",
                     "<strong>Multiple cold spots:</strong> Potential evidence for multiple nucleation events",
                     "<strong>Asymmetric temperature profile:</strong> Due to relativistic bubble wall motion",
@@ -1032,8 +1032,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "The unified time framework provides a concrete mechanism for vacuum tunneling via Coleman-De Luccia "
                     "(CDL) instantons, with predictions testable through CMB anomaly searches. The bubble nucleation "
-                    "rate per unit four-volume: Γ ~ exp(-27π²σ⁴ / (2ΔV³)), where σ = surface tension of domain wall "
-                    "and ΔV = vacuum energy difference."
+                    "rate per unit four-volume: Γ ~ exp(−27π²σ⁴ / (2ΔV³)), where σ is the surface tension of the domain wall "
+                    "and ΔV is the vacuum energy difference."
                 )
             ),
             ContentBlock(
@@ -1042,7 +1042,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "This formula links the framework to the string landscape with ~10⁵⁰⁰ vacua: our universe occupies "
                     "one local minimum, tunneling connects to neighboring vacua, observable universe requires Γ < H⁴ "
                     "for stability, eternal inflation + CDL tunneling creates pocket universes, and Z₂ symmetry breaking "
-                    "sets σ ~ M_Pl³."
+                    "sets σ ~ M<sub>Pl</sub>³."
                 )
             ),
             ContentBlock(
@@ -1050,7 +1050,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 headers=["Observable", "Current Status", "Future Sensitivity"],
                 rows=[
                     ["CMB cold spot", "~3σ anomaly (debated)", "CMB-S4: definitive test (2027+)"],
-                    ["Non-Gaussianity (f_NL)", "f_NL = 0.8 ± 5.0 (Planck 2018)", "CMB-S4: σ(f_NL) < 1"],
+                    ["Non-Gaussianity (f<sub>NL</sub>)", "f<sub>NL</sub> = 0.8 ± 5.0 (Planck 2018)", "CMB-S4: σ(f<sub>NL</sub>) < 1"],
                     ["Hemispherical asymmetry", "~2σ detection (Planck)", "LiteBIRD polarization analysis"],
                     ["Bubble collision disk", "Not detected", "Higher resolution searches with CMB-S4"],
                 ]
@@ -1074,19 +1074,19 @@ class PredictionsAggregatorV16(SimulationBase):
                 headers=["Parameter", "Value", "Status", "Explanation"],
                 rows=[
                     ["w₀", "−23/24 ≈ -0.9583", "SEMI-DERIVED", "From Maximum Entropy Principle: w₀ = −1 + 1/b₃ = -23/24 for b₃ = 24"],
-                    ["w_a", "≈ -0.75", "DERIVED", "From unified time dynamics; exact DESI 2024 match"],
-                    ["Σm_ν", "0.060 eV", "NOT UNIQUE", "From oscillation data + m₁ → 0; standard result"],
-                    ["n_gen = 3", "χ<sub>eff</sub>/48 = 144/48", "DERIVED", "Genuine prediction from 𝔻 framework formula"],
+                    ["w<sub>a</sub>", "≈ −0.75", "DERIVED", "From unified time dynamics; exact DESI 2024 match"],
+                    ["Σm<sub>ν</sub>", "0.060 eV", "NOT UNIQUE", "From oscillation data + m₁ → 0; standard result"],
+                    ["n<sub>gen</sub> = 3", "χ<sub>eff</sub>/48 = 144/48", "DERIVED", "Genuine prediction from 𝔻 framework formula"],
                     ["Normal Hierarchy", "m₁ < m₂ < m₃", "PREDICTION", "Only genuinely unique falsifiable prediction"],
-                    ["CKM parameters (v15.0)", "ε = 0.2257, δ_CP = π/2, J = 3.06×10⁻⁵", "DERIVED", "From racetrack superpotential minimization (ε), cycle orientations (δ_CP), geometric computation (J)"],
+                    ["CKM parameters (v24.2)", "ε = 0.2257, δ<sub>CP</sub> = π/2, J = 3.06 × 10⁻⁵", "DERIVED", "From racetrack superpotential minimization (ε), cycle orientations (δ<sub>CP</sub>), geometric computation (J)"],
                 ]
             ),
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>v15.0 CKM Breakthrough:</strong> Cabibbo angle ε = 0.2257 is now <em>derived</em> from racetrack superpotential minimization (not an input parameter). CP phase δ_CP = π/2 (maximal) emerges from cycle orientations. Jarlskog invariant J = 3.06×10⁻⁵ computed geometrically from CKM structure.",
-                    "<strong>DESI Compatibility:</strong> Both w₀ = −23/24 (from MEP) and w_a = -0.75 (from unified time dynamics) are now derived. The w_a value is consistent with DESI 2025 (thawing) observations.",
-                    "<strong>Neutrino Mass Sum is NOT Unique:</strong> Any model predicting NH + minimal m₁ gives Σm_ν ≈ 0.06 eV. This value has no discriminatory power.",
+                    "<strong>v24.2 CKM Breakthrough:</strong> Cabibbo angle ε = 0.2257 is now <em>derived</em> from racetrack superpotential minimization (not an input parameter). CP phase δ<sub>CP</sub> = π/2 (maximal) emerges from cycle orientations. Jarlskog invariant J = 3.06 × 10⁻⁵ computed geometrically from CKM structure.",
+                    "<strong>DESI Compatibility:</strong> Both w₀ = −23/24 (from MEP) and w<sub>a</sub> = −0.75 (from unified time dynamics) are now derived. The w<sub>a</sub> value is consistent with DESI 2025 (thawing) observations.",
+                    "<strong>Neutrino Mass Sum is NOT Unique:</strong> Any model predicting NH + minimal m₁ gives Σm<sub>ν</sub> ≈ 0.06 eV. This value has no discriminatory power.",
                     "<strong>Mirror Sector Predictions:</strong> The unified time framework introduces qualitative predictions for the mirror sector, testable via precision cosmology (Euclid, Roman).",
                     "<strong>Primary Falsifiable Prediction:</strong> The normal neutrino mass hierarchy remains the cleanest test. If IH is confirmed at >3σ, the theory is falsified.",
                 ]
@@ -1109,14 +1109,14 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Parameter", "Value", "Status", "Derivation Source"],
                 rows=[
-                    ["α_T", "≈ 2.7 (Z₂-corrected)", "DERIVED", "Two-time Γ/H scaling"],
-                    ["w_a/w₀ ratio", "≈ 0.89", "DERIVED", "α_T/3 from thermal time"],
-                    ["sign(w_a)", "< 0", "DERIVED", "Thermal friction mechanism"],
-                    ["n_gen", "3", "DERIVED", "χ<sub>eff</sub>/48 = 144/48 from 𝔻 framework"],
+                    ["α<sub>T</sub>", "≈ 2.7 (Z₂-corrected)", "DERIVED", "Two-time Γ/H scaling"],
+                    ["w<sub>a</sub>/w₀ ratio", "≈ 0.89", "DERIVED", "α<sub>T</sub>/3 from thermal time"],
+                    ["sign(w<sub>a</sub>)", "< 0", "DERIVED", "Thermal friction mechanism"],
+                    ["n<sub>gen</sub>", "3", "DERIVED", "χ<sub>eff</sub>/48 = 144/48 from 𝔻 framework"],
                     ["Neutrino hierarchy", "Normal", "DERIVED", "Sequential dominance in SO(10)"],
-                    ["w_a", "≈ -0.75", "DERIVED", "Two-time dynamics; exact DESI match"],
+                    ["w<sub>a</sub>", "≈ −0.75", "DERIVED", "Two-time dynamics; exact DESI match"],
                     ["w₀", "−23/24 ≈ -0.9583", "DERIVED (MEP)", "From Maximum Entropy Principle"],
-                    ["V₀", "~ (2.3 meV)⁴", "UNEXPLAINED", "Cosmological constant problem"],
+                    ["V₀", "~ (2.3 meV)⁴", "UNEXPLAINED", "Cosmological constant problem remains open"],
                 ]
             ),
 
@@ -1140,11 +1140,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Prediction", "Experimental Setup", "Observable Signature", "Falsification Criterion"],
                 rows=[
-                    ["Normal hierarchy", "JUNO: 20 kton liquid scintillator, 53 km baseline from Yangjiang/Taishan reactors", "Oscillation pattern in reactor antineutrino spectrum (2-8 MeV) distinguishes NH vs IH at 3-4 sigma after 6 years", "IH confirmed at >3 sigma falsifies PM"],
-                    ["KK graviton 5.0 TeV", "HL-LHC: pp collisions at sqrt(s) = 14 TeV, 3000 fb^-1 integrated luminosity", "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section sigma*BR(gamma gamma) ~ 0.10 fb", "No excess above 7 TeV challenges geometric derivation"],
-                    ["Proton decay p->e+pi0", "Hyper-K: 260 kton water Cherenkov detector, 10 yr exposure", "Back-to-back e+ and pi0 (each ~459 MeV); Cherenkov ring topology distinguishes from atmospheric nu background", "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10) scale"],
-                    ["w0 = -23/24", "DESI: 5000 fibre spectroscopic survey, 14000 deg^2, BAO measurements at z = 0.1-3.5", "BAO peak positions + RSD amplitude vs redshift constrain w0 to +/-0.02 (DR3)", "w0 outside [-0.99, -0.92] at 3 sigma falsifies MEP derivation"],
-                    ["GW dispersion n=2", "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission", "Planck-suppressed: Delta_t ~ 10^{-42} s at LISA frequencies, requiring post-LISA sensitivity", "n != 2 or xi_2 off by >10x challenges CY4 compactification geometry"],
+                    ["Normal hierarchy", "JUNO: 20 kton liquid scintillator, 53 km baseline from Yangjiang/Taishan reactors", "Oscillation pattern in reactor antineutrino spectrum (2–8 MeV) distinguishes NH vs IH at 3–4σ after 6 years", "IH confirmed at >3σ falsifies PM"],
+                    ["KK graviton 5.0 TeV", "HL-LHC: pp collisions at √s = 14 TeV, 3000 fb⁻¹ integrated luminosity", "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section σ × BR(γγ) ~ 0.10 fb", "No excess above 7 TeV challenges geometric derivation"],
+                    ["Proton decay p → e⁺π⁰", "Hyper-K: 260 kton water Cherenkov detector, 10 yr exposure", "Back-to-back e⁺ and π⁰ (each ~459 MeV); Cherenkov ring topology distinguishes from atmospheric ν background", "τ<sub>p</sub> > 10³⁶ yr falsifies; τ<sub>p</sub> < 10³³ yr challenges SO(10) scale"],
+                    ["w₀ = −23/24", "DESI: 5000 fibre spectroscopic survey, 14000 deg², BAO measurements at z = 0.1–3.5", "BAO peak positions + RSD amplitude vs redshift constrain w₀ to ±0.02 (DR3)", "w₀ outside [−0.99, −0.92] at 3σ falsifies MEP derivation"],
+                    ["GW dispersion n = 2", "LISA: 2.5 Gm arm-length space interferometer, 4 yr mission", "Planck-suppressed: Δt ~ 10⁻⁴² s at LISA frequencies, requiring post-LISA sensitivity", "n ≠ 2 or ξ₂ off by >10× challenges CY4 compactification geometry"],
                 ]
             ),
 
@@ -1158,21 +1158,21 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Prediction", "Status", "Notes"],
                 rows=[
-                    ["Dark energy w₀, w_a", "✓ CONSISTENT", "DESI 2025 BAO-only: < 1σ (w₀), 0.66σ (w_a)"],
-                    ["Neutrino mixing", "✓ CONFIRMED", "NuFIT 6.0: all angles 0.00-0.24σ"],
-                    ["Fermion generations", "✓ CONFIRMED", "n_gen = 3 (exact from χ<sub>eff</sub>/48)"],
-                    ["Dark matter ratio", "✓ CONFIRMED", "Planck 2018: Ω_DM/Ω_b = 5.38±0.15 vs 5.4"],
-                    ["CKM parameters", "✓ CONFIRMED", "ε = 0.2257 exact match (v15.0 derived)"],
-                    ["Proton decay", "⊙ CONSISTENT", "τ_p = 8.15×10³⁴ yr (4.9× Super-K bound)"],
-                    ["Neutrino hierarchy", "⊙ PREDICTED", "Normal hierarchy (76% confidence) - JUNO/DUNE 2027-2030"],
-                    ["KK gravitons", "○ UNTESTED", "m_KK = 5.0 TeV - HL-LHC searches 2029-2030"],
-                    ["GUT scale", "○ UNTESTED", "M_GUT = 2.118×10¹⁶ GeV (geometric + 3-loop)"],
-                    ["GW dispersion", "○ UNTESTED", "Planck-suppressed dispersion (geometric) - far-future"],
-                    ["CHSH violations", "○ UNTESTED", "δ_ortho ~ 10⁻⁵ - feasible 2027-2030"],
-                    ["CMB bubbles", "○ UNTESTED", "Cold spot signatures - CMB-S4 2027+"],
-                    ["Cross-shadow phase shift", "○ UNTESTED", "δφ = α_leak × L/λ_dB, α_leak = 1/√6 - atom interferometry"],
-                    ["Vacuum noise excess", "○ UNTESTED", "P_noise/P_thermal = (1/144)e⁻¹² ≈ 6.9×10⁻⁸ - SQUID/cavity QED"],
-                    ["GW polarization anomaly", "○ UNTESTED", "δh/h ~ T_ω² = 1/6 - LIGO O5 / LISA polarization"],
+                    ["Dark energy w₀, w<sub>a</sub>", "✓ CONSISTENT", "DESI 2025 BAO-only: < 1σ (w₀), 0.66σ (w<sub>a</sub>)"],
+                    ["Neutrino mixing", "✓ CONFIRMED", "NuFIT 6.0: all angles 0.00–0.24σ"],
+                    ["Fermion generations", "✓ CONFIRMED", "n<sub>gen</sub> = 3 (exact from χ<sub>eff</sub>/48)"],
+                    ["Dark matter ratio", "✓ CONFIRMED", "Planck 2018: Ω<sub>DM</sub>/Ω<sub>b</sub> = 5.38 ± 0.15 vs 5.4"],
+                    ["CKM parameters", "✓ CONFIRMED", "ε = 0.2257 exact match (v24.2 derived)"],
+                    ["Proton decay", "⊙ CONSISTENT", "τ<sub>p</sub> = 8.15 × 10³⁴ yr (4.9× Super-K bound)"],
+                    ["Neutrino hierarchy", "⊙ PREDICTED", "Normal hierarchy (76% confidence) — JUNO/DUNE 2027–2030"],
+                    ["KK gravitons", "○ UNTESTED", "m<sub>KK</sub> = 5.0 TeV — HL-LHC searches 2029–2030"],
+                    ["GUT scale", "○ UNTESTED", "M<sub>GUT</sub> = 2.118 × 10¹⁶ GeV (geometric + 3-loop)"],
+                    ["GW dispersion", "○ UNTESTED", "Planck-suppressed dispersion (geometric) — far-future"],
+                    ["CHSH violations", "○ UNTESTED", "δ<sub>ortho</sub> ~ 10⁻⁵ — feasible 2027–2030"],
+                    ["CMB bubbles", "○ UNTESTED", "Cold spot signatures — CMB-S4 2027+"],
+                    ["Cross-shadow phase shift", "○ UNTESTED", "δφ = α<sub>leak</sub> × L/λ<sub>dB</sub>, α<sub>leak</sub> = 1/√6 — atom interferometry"],
+                    ["Vacuum noise excess", "○ UNTESTED", "P<sub>noise</sub>/P<sub>thermal</sub> = (1/144)e⁻¹² ≈ 6.9 × 10⁻⁸ — SQUID/cavity QED"],
+                    ["GW polarization anomaly", "○ UNTESTED", "δh/h ~ T<sub>ω</sub>² = 1/6 — LIGO O5 / LISA polarization"],
                 ]
             ),
 
@@ -1187,14 +1187,14 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "**Dark Force Leakage Predictions (Two-Layer OR)**\n\n"
                     "The dual-shadow bridge structure predicts dark force leakage across shadows:\n\n"
-                    "| Force | Leakage Strength \u03b1_leak | Probability P_leak | Status |\n"
+                    "| Force | Leakage Strength α<sub>leak</sub> | Probability P<sub>leak</sub> | Status |\n"
                     "|-------|------------------------|-------------------|--------|\n"
-                    "| Strong (SU(3)_C) | ~10\u207b\u00b3\u2077 | ~10\u207b\u2077\u2075 | Zero |\n"
-                    "| Weak (SU(2)_L) | ~0 | ~0 | Zero |\n"
-                    "| Electromagnetic (U(1)) | ~0.00248 | ~6.9\u00d710\u207b\u2076 | Testable |\n"
-                    "| Gravity (gravitons) | ~0.00248 | ~6.9\u00d710\u207b\u2076 | Testable |\n\n"
-                    "Strong force leakage is impossible (confinement + instanton cost S_inst \u2248 80). "
-                    "Weak force leakage is impossible (mass barrier m_W r_bridge ~ 10\u2075). "
+                    "| Strong (SU(3)<sub>C</sub>) | ~10\u207b\u00b3\u2077 | ~10\u207b\u2077\u2075 | Zero |\n"
+                    "| Weak (SU(2)<sub>L</sub>) | ~0 | ~0 | Zero |\n"
+                    "| Electromagnetic (U(1)) | ~0.00248 | ~6.9 × 10⁻⁸ | Testable |\n"
+                    "| Gravity (gravitons) | ~0.00248 | ~6.9 × 10⁻⁸ | Testable |\n\n"
+                    "Strong force leakage is impossible (confinement + instanton cost S<sub>inst</sub> \u2248 80). "
+                    "Weak force leakage is impossible (mass barrier m<sub>W</sub> r<sub>bridge</sub> ~ 10\u2075). "
                     "EM and gravity leak at ~230\u00d7 weaker than dark matter portal (~0.57)."
                 )
             ),
@@ -1235,83 +1235,83 @@ class PredictionsAggregatorV16(SimulationBase):
                 rows=[
                     [
                         "Dark matter (axion)",
-                        "m_a ~ 6 microeV, g_{a gamma gamma} ~ 10^{-12} GeV^{-1}",
+                        "m<sub>a</sub> ~ 6 μeV, g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹",
                         "ADMX Phase III/IV",
-                        "g < 10^{-12} GeV^{-1} at 5-7 microeV",
-                        "2026-2030",
-                        "Full exclusion at 6 microeV constrains G2 moduli sector",
+                        "g < 10⁻¹² GeV⁻¹ at 5–7 μeV",
+                        "2026–2030",
+                        "Full exclusion at 6 μeV constrains G₂ moduli sector",
                         "TESTING",
                     ],
                     [
                         "Sterile neutrinos",
-                        "Delta N_eff ~ 0.08-0.16 (mirror neutrinos)",
+                        "ΔN<sub>eff</sub> ~ 0.08–0.16 (mirror neutrinos)",
                         "CMB-S4",
-                        "sigma(N_eff) ~ 0.03",
-                        "2027-2030",
-                        "Delta N_eff < 0.06 at >2 sigma constrains mirror sector",
+                        "σ(N<sub>eff</sub>) ~ 0.03",
+                        "2027–2030",
+                        "ΔN<sub>eff</sub> < 0.06 at >2σ constrains mirror sector",
                         "PENDING",
                     ],
                     [
-                        "Dark energy (w_0)",
-                        "w_0 = -23/24 ~ -0.958",
+                        "Dark energy (w₀)",
+                        "w₀ = −23/24 ≈ −0.958",
                         "DESI DR2/DR3 BAO",
-                        "sigma(w_0) ~ 0.02",
-                        "2025-2028",
-                        "w_0 outside [-0.99, -0.92] at 3 sigma falsifies MEP",
+                        "σ(w₀) ~ 0.02",
+                        "2025–2028",
+                        "w₀ outside [−0.99, −0.92] at 3σ falsifies MEP",
                         "CONSISTENT (within BAO-only uncertainty)",
                     ],
                     [
                         "Direct detection",
-                        "sigma_SI ~ 10^{-47} cm^2 (mirror baryon portal)",
+                        "σ<sub>SI</sub> ~ 10⁻⁴⁷ cm²  (mirror baryon portal)",
                         "XENONnT / LZ / PandaX-4T",
-                        "~ 10^{-48} cm^2 at 40 GeV",
-                        "2025-2028",
-                        "Null result below 10^{-48} cm^2 excludes portal mediator",
+                        "~ 10⁻⁴⁸ cm² at 40 GeV",
+                        "2025–2028",
+                        "Null result below 10⁻⁴⁸ cm² excludes portal mediator",
                         "TESTING",
                     ],
                     [
                         "Collider (monojet)",
-                        "TeV-scale portal mediator (m ~ 1-5 TeV)",
+                        "TeV-scale portal mediator (m ~ 1–5 TeV)",
                         "LHC Run 3 / HL-LHC monojet",
                         "m > 3.5 TeV (current ATLAS/CMS)",
-                        "2025-2035",
+                        "2025–2035",
                         "No excess above 7 TeV challenges geometric compactification",
                         "TESTING",
                     ],
                     [
                         "GW torsion",
-                        "eta ~ 0.10 (torsion polarization anomaly)",
+                        "η ~ 0.10 (torsion polarization anomaly)",
                         "LIGO O5 / Virgo / KAGRA",
-                        "delta_h/h ~ 10^{-2}",
-                        "2027-2030",
-                        "No anomaly at 10^{-2} level constrains G2 torsion coupling",
+                        "δh/h ~ 10⁻²",
+                        "2027–2030",
+                        "No anomaly at 10⁻² level constrains G₂ torsion coupling",
                         "PENDING",
                     ],
                     [
                         "Fifth forces",
-                        "Yukawa coupling alpha_5 ~ 10^{-3} at r < 100 micrometers",
+                        "Yukawa coupling α₅ ~ 10⁻³ at r < 100 μm",
                         "Eot-Wash torsion balance (sub-mm)",
-                        "alpha < 10^{-3} at 50 micrometers",
-                        "2025-2028",
-                        "Null result below 50 micrometers constrains extra-dim. radius",
+                        "α < 10⁻³ at 50 μm",
+                        "2025–2028",
+                        "Null result below 50 μm constrains extra-dim. radius",
                         "TESTING",
                     ],
                     [
                         "Proton decay",
-                        "tau_p = 8.15 x 10^34 yr (p -> e+ pi0)",
+                        "τ<sub>p</sub> = 8.15 × 10³⁴ yr (p → e⁺π⁰)",
                         "Hyper-Kamiokande",
-                        "~ 10^35 yr sensitivity",
-                        "2027-2035",
-                        "tau_p > 10^36 yr falsifies; tau_p < 10^33 yr challenges SO(10)",
+                        "~ 10³⁵ yr sensitivity",
+                        "2027–2035",
+                        "τ<sub>p</sub> > 10³⁶ yr falsifies; τ<sub>p</sub> < 10³³ yr challenges SO(10)",
                         "PENDING",
                     ],
                     [
                         "Neutrino hierarchy",
                         "Normal ordering (76% confidence)",
                         "JUNO / DUNE",
-                        "3-4 sigma NH/IH discrimination",
-                        "2027-2030",
-                        "Inverted hierarchy at >3 sigma falsifies PM",
+                        "3–4σ NH/IH discrimination",
+                        "2027–2030",
+                        "Inverted hierarchy at >3σ falsifies PM",
                         "PENDING",
                     ],
                 ]
@@ -1326,14 +1326,14 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "CRITICAL FALSIFICATION WINDOW: ADMX Phase III/IV will probe the "
-                    "QCD axion parameter space at m_a ~ 5-7 microeV with coupling sensitivity "
-                    "g_{a gamma gamma} < 10^{-12} GeV^{-1}. The PM framework predicts axion-like "
-                    "particles in this mass window from G2 moduli stabilization, with the axion "
-                    "decay constant f_a ~ 10^{11}-10^{12} GeV set by the compactification volume. "
+                    "QCD axion parameter space at m<sub>a</sub> ~ 5–7 μeV with coupling sensitivity "
+                    "g<sub>aγγ</sub> < 10⁻¹² GeV⁻¹. The PM framework predicts axion-like "
+                    "particles in this mass window from G₂ moduli stabilization, with the axion "
+                    "decay constant f<sub>a</sub> ~ 10¹¹–10¹² GeV set by the compactification volume. "
                     "If ADMX excludes this window entirely, the PM dark matter axion channel "
                     "is constrained, requiring the framework to rely exclusively on mirror "
                     "baryon dark matter. This test is independent of all other falsification "
-                    "channels and provides a direct probe of the G2 moduli sector."
+                    "channels and provides a direct probe of the G₂ moduli sector."
                 )
             ),
             # ── CMB-S4 Sterile Sector Callout ─────────────────────────────
@@ -1346,11 +1346,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number "
-                    "of neutrino species N_eff to unprecedented precision (sigma ~ 0.03). The PM "
-                    "mirror sector predicts Delta N_eff ~ 0.08-0.16 from thermalized mirror "
+                    "of neutrino species N<sub>eff</sub> to unprecedented precision (σ ~ 0.03). The PM "
+                    "mirror sector predicts ΔN<sub>eff</sub> ~ 0.08–0.16 from thermalized mirror "
                     "neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes "
-                    "Delta N_eff < 0.06 at >2 sigma confidence, the mirror neutrino contribution "
-                    "is excluded, constraining the Z2 sector coupling or requiring the mirror "
+                    "ΔN<sub>eff</sub> < 0.06 at >2σ confidence, the mirror neutrino contribution "
+                    "is excluded, constraining the Z₂ sector coupling or requiring the mirror "
                     "sector temperature to fall below T'/T < 0.5. This provides the most direct "
                     "cosmological test of the PM hidden sector architecture."
                 )
@@ -1365,12 +1365,12 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports "
-                    "w_0 = -0.957 ± 0.067, within which the PM prediction "
-                    "w_0 = -23/24 ≈ -0.9583 falls. DESI DR3 (expected 2027-2028) will tighten "
-                    "the constraint to sigma(w_0) ~ 0.02, providing a definitive test of "
+                    "w₀ = −0.957 ± 0.067, within which the PM prediction "
+                    "w₀ = −23/24 ≈ −0.9583 falls. DESI DR3 (expected 2027–2028) will tighten "
+                    "the constraint to σ(w₀) ~ 0.02, providing a definitive test of "
                     "the breathing dark energy mechanism derived from the Maximum Entropy "
-                    "Principle with b_3 = 24. The logarithmic evolution "
-                    "w(z) = w_0[1 + (alpha_T/3) ln(1+z)] further distinguishes PM from "
+                    "Principle with b₃ = 24. The logarithmic evolution "
+                    "w(z) = w₀[1 + (α<sub>T</sub>/3) ln(1+z)] further distinguishes PM from "
                     "standard CPL parameterization at z > 2, testable by Euclid and the "
                     "Nancy Grace Roman Space Telescope."
                 )
@@ -1387,12 +1387,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "MULTI-CHANNEL TEST: Three independent experimental programs probe "
                     "the PM framework at different scales: (1) XENONnT, LZ, and PandaX-4T "
                     "direct detection experiments target spin-independent cross-sections "
-                    "sigma_SI ~ 10^{-47} cm^2 for mirror baryon portal mediators, with "
-                    "sensitivity reaching 10^{-48} cm^2 by 2028; (2) LHC monojet searches "
+                    "σ<sub>SI</sub> ~ 10⁻⁴⁷ cm² for mirror baryon portal mediators, with "
+                    "sensitivity reaching 10⁻⁴⁸ cm² by 2028; (2) LHC monojet searches "
                     "constrain TeV-scale portal mediators connecting visible and mirror "
                     "sectors, with current bounds at m > 3.5 TeV; (3) Eot-Wash torsion "
                     "balance experiments test sub-millimeter fifth forces with Yukawa "
-                    "coupling sensitivity alpha < 10^{-3} at 50 micrometers, directly "
+                    "coupling sensitivity α < 10⁻³ at 50 μm, directly "
                     "probing the extra-dimensional compactification radius. A null result "
                     "in all three channels below their respective thresholds would strongly "
                     "constrain the PM portal mediator sector."
@@ -1409,11 +1409,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous "
                     "cross-polarization in gravitational wave signals. The PM framework "
-                    "predicts eta ~ 0.10 from G2 torsion coupling to GW polarization "
-                    "(T_omega^2 = 1/6 ~ 0.167 at the fundamental level). This is a large "
-                    "fractional effect compared to GR expectations (eta = 0), making it "
+                    "predicts η ~ 0.10 from G₂ torsion coupling to GW polarization "
+                    "(T<sub>ω</sub>² = 1/6 ≈ 0.167 at the fundamental level). This is a large "
+                    "fractional effect compared to GR expectations (η = 0), making it "
                     "a high-priority target for O5 runs beginning 2027. The Einstein Telescope "
-                    "and LISA will extend sensitivity to the 10^{-3} level, providing "
+                    "and LISA will extend sensitivity to the 10⁻³ level, providing "
                     "definitive confirmation or exclusion by 2037."
                 )
             ),
@@ -1429,8 +1429,8 @@ class PredictionsAggregatorV16(SimulationBase):
                 content=(
                     "The two-layer OR bridge structure yields three primary experimental signatures, "
                     "each derived from the base leakage parameters: coupling strength "
-                    "\u03b1_leak = 1/\u221a6 \u2248 0.408, bridge probability P_leak = (1/144) \u00b7 e\u207b\u00b9\u00b2 \u2248 6.9\u00d710\u207b\u2078, "
-                    "and torsion parameter T_\u03c9 = 1/\u221a6 \u2248 0.408. These observables provide "
+                    "α<sub>leak</sub> = 1/√6 ≈ 0.408, bridge probability P<sub>leak</sub> = (1/144) · e⁻¹² ≈ 6.9×10⁻⁸, "
+                    "and torsion parameter T<sub>ω</sub> = 1/√6 ≈ 0.408. These observables provide "
                     "independent, falsifiable tests of the dual-shadow bridge mechanism."
                 )
             ),
@@ -1443,15 +1443,15 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The cross-shadow interference produces a measurable phase shift "
-                    "\u03b4\u03c6 = \u03b1_leak \u00d7 L/\u03bb_dB, where \u03b1_leak = 1/\u221a6 \u2248 0.408 is the "
-                    "leakage coupling, L is the propagation path length, and \u03bb_dB is the "
+                    "δφ = α<sub>leak</sub> × L/λ<sub>dB</sub>, where α<sub>leak</sub> = 1/√6 ≈ 0.408 is the "
+                    "leakage coupling, L is the propagation path length, and λ<sub>dB</sub> is the "
                     "de Broglie wavelength of the probe particle. For cold-atom interferometry "
-                    "(L ~ 1 m, \u03bb_dB ~ 10\u207b\u2079 m), the predicted shift is \u03b4\u03c6 ~ 10\u207b\u00b9\u2070 to 10\u207b\u2078 rad."
+                    "(L ~ 1 m, λ<sub>dB</sub> ~ 10⁻⁹ m), the predicted shift is δφ ~ 10⁻¹⁰ to 10⁻⁸ rad."
                 )
             ),
             ContentBlock(
                 type="table",
-                headers=["Platform", "Path Length L", "\u03bb_dB", "Predicted \u03b4\u03c6 (rad)", "Current Sensitivity"],
+                headers=["Platform", "Path Length L", "λ<sub>dB</sub>", "Predicted δφ (rad)", "Current Sensitivity"],
                 rows=[
                     ["Cold atom interferometer", "1 m", "~10\u207b\u2079 m", "~4 \u00d7 10\u207b\u00b9\u2070", "~10\u207b\u2079 rad/\u221aHz"],
                     ["Neutron interferometer", "0.1 m", "~10\u207b\u00b9\u2070 m", "~4 \u00d7 10\u207b\u2078", "~10\u207b\u2076 rad"],
@@ -1467,7 +1467,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The bridge leaks vacuum fluctuations from the dark sector, producing an excess "
-                    "noise power P_noise = (1/144) \u00d7 e\u207b\u00b9\u00b2 \u00d7 P_thermal \u2248 6.9\u00d710\u207b\u2078 \u00d7 P_thermal. "
+                    "noise power P<sub>noise</sub> = (1/144) \u00d7 e\u207b\u00b9\u00b2 \u00d7 P<sub>thermal</sub> \u2248 6.9 \u00d7 10\u207b\u2078 \u00d7 P<sub>thermal</sub>. "
                     "This fractional noise excess above the thermal background is detectable in "
                     "millikelvin cavity QED experiments and superconducting qubit readout circuits, "
                     "where thermal noise is minimized to reveal the bridge leakage floor."
@@ -1475,7 +1475,7 @@ class PredictionsAggregatorV16(SimulationBase):
             ),
             ContentBlock(
                 type="table",
-                headers=["Detector", "Temperature", "P_noise/P_thermal", "Sensitivity Threshold", "Status"],
+                headers=["Detector", "Temperature", "P<sub>noise</sub>/P<sub>thermal</sub>", "Sensitivity Threshold", "Status"],
                 rows=[
                     ["SQUID amplifier", "10 mK", "~6.9 \u00d7 10\u207b\u2078", "~10\u207b\u2079", "REACHABLE"],
                     ["Superconducting qubit", "15 mK", "~6.9 \u00d7 10\u207b\u2078", "~10\u207b\u2077", "ACCESSIBLE"],
@@ -1490,16 +1490,16 @@ class PredictionsAggregatorV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "G\u2082 torsion couples to gravitational wave polarization through the torsion "
-                    "parameter T_\u03c9 = 1/\u221a6 \u2248 0.408, producing a fractional anomaly "
-                    "\u03b4h/h ~ T_\u03c9\u00b2 = 1/6 \u2248 0.167 in the plus-cross polarization ratio. "
+                    "G₂ torsion couples to gravitational wave polarization through the torsion "
+                    "parameter T<sub>ω</sub> = 1/√6 ≈ 0.408, producing a fractional anomaly "
+                    "δh/h ~ T<sub>ω</sub>² = 1/6 ≈ 0.167 in the plus-cross polarization ratio. "
                     "This is a large fractional effect that should be detectable by cross-correlating "
                     "polarization channels in current and next-generation GW observatories."
                 )
             ),
             ContentBlock(
                 type="table",
-                headers=["Observatory", "Band", "Sensitivity to \u03b4h/h", "Timeline", "Status"],
+                headers=["Observatory", "Band", "Sensitivity to δh/h", "Timeline", "Status"],
                 rows=[
                     ["LIGO O5", "10\u2013300 Hz", "~10\u207b\u00b2", "2027+", "DETECTABLE"],
                     ["Einstein Telescope", "1\u2013300 Hz", "~10\u207b\u00b3", "2035+", "HIGH SENSITIVITY"],
@@ -1511,10 +1511,10 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "Additional observables from the two-layer OR bridge include: "
-                    "CMB polarization excess \u0394P ~ P_leak \u00b7 \u210f\u03c9_CMB/(kT_CMB) \u2248 10\u207b\u2077 (CMB-S4), "
-                    "QED vacuum correction \u03b4_QED ~ P_leak \u00b7 \u03b1 \u2248 10\u207b\u2078 (next-gen g-2), "
-                    "and chirality reversal probability P_reverse \u2248 3\u00d710\u207b\u2076 (cross-shadow chirality flip). "
-                    "All predictions trace to base probability P_leak = (1/144) \u00b7 e\u207b\u00b9\u00b2 \u2248 6.9\u00d710\u207b\u2078."
+                    "CMB polarization excess ΔP ~ P<sub>leak</sub> · ℏω<sub>CMB</sub>/(kT<sub>CMB</sub>) ≈ 10⁻⁷ (CMB-S4), "
+                    "QED vacuum correction δ<sub>QED</sub> ~ P<sub>leak</sub> · α ≈ 10⁻⁸ (next-gen g-2), "
+                    "and chirality reversal probability P<sub>reverse</sub> ≈ 3×10⁻⁶ (cross-shadow chirality flip). "
+                    "All predictions trace to base probability P<sub>leak</sub> = (1/144) · e⁻¹² ≈ 6.9×10⁻⁸."
                 )
             ),
         ]
@@ -1585,7 +1585,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 id="predictions-summary-count",
                 label="(8.1)",
                 latex=r"N_{\text{predictions}} = \sum_{i} \mathbb{1}[\sigma_i \leq 3\sigma_{\text{exp}}]",
-                plain_text="N_predictions = count of predictions within 3-sigma of experimental values",
+                plain_text="N_predictions = count of predictions within 3σ of experimental values",
                 category="DERIVED",
                 description=(
                     "Total count of falsifiable predictions aggregated across all simulation sectors "
@@ -1615,8 +1615,8 @@ class PredictionsAggregatorV16(SimulationBase):
             Formula(
                 id="dark-force-leakage-prediction",
                 label="(8.2)",
-                latex=r"P_{\text{leak}} = \frac{1}{144} e^{-12} \approx 6.9 \times 10^{-6}",
-                plain_text="P_leak = (1/144) * exp(-12) ≈ 6.9e-6",
+                latex=r"P_{\text{leak}} = \frac{1}{144} e^{-12} \approx 6.9 \times 10^{-8}",
+                plain_text="P_leak = (1/144) × exp(-12) ≈ 6.9 × 10⁻⁸",
                 category="PREDICTED",
                 description=(
                     "Dark force leakage probability — testable prediction from two-layer OR structure. "
@@ -1630,8 +1630,8 @@ class PredictionsAggregatorV16(SimulationBase):
                     "steps": [
                         "Bridge OR creates dual shadows separated by 12 Möbius double-cover operators",
                         "Each operator contributes suppression factor e^{-1}, total suppression e^{-12}",
-                        "144 = chi_eff from G2 topology provides geometric normalization",
-                        "P_leak = (1/144) * e^{-12} ≈ 6.9e-6 for EM and gravity",
+                        "144 = χ_eff from G₂ topology provides geometric normalization",
+                        "P_leak = (1/144) × e^{-12} ≈ 6.9 × 10⁻⁸ for EM and gravity",
                         "Strong force: additional confinement + instanton barrier S_inst ≈ 80 → P ≈ 0",
                         "Weak force: mass barrier m_W * r_bridge ~ 10^5 → P ≈ 0"
                     ],
@@ -1640,7 +1640,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 },
                 terms={
                     r"P_{\text{leak}}": "Dark force leakage probability across shadows",
-                    "144": "Effective Euler characteristic chi_eff from G2 manifold topology",
+                    "144": "Effective Euler characteristic χ_eff from G₂ manifold topology",
                     "e^{-12}": "Suppression from 12 Möbius double-cover bridge operators",
                 }
             ),
@@ -1649,14 +1649,14 @@ class PredictionsAggregatorV16(SimulationBase):
                 id="cross-shadow-phase-shift",
                 label="(8.3)",
                 latex=r"\delta\varphi = \alpha_{\text{leak}} \times \frac{L}{\lambda_{\text{dB}}}",
-                plain_text="delta_phi = alpha_leak * L / lambda_dB",
+                plain_text="δφ = α_leak × L / λ_dB",
                 category="PREDICTED",
                 description=(
                     "Cross-shadow phase shift from two-layer OR bridge interference. "
-                    "The leakage coupling alpha_leak = 1/sqrt(6) ~ 0.408 induces a measurable "
+                    "The leakage coupling α_leak = 1/√6 ≈ 0.408 induces a measurable "
                     "phase shift proportional to propagation length L divided by de Broglie "
-                    "wavelength lambda_dB. Testable in atom interferometry at L ~ 1 m with "
-                    "cold atoms (lambda_dB ~ 10^{-9} m), yielding delta_phi ~ 4 x 10^{-10} rad."
+                    "wavelength λ_dB. Testable in atom interferometry at L ≈ 1 m with "
+                    "cold atoms (λ_dB ≈ 10⁻⁹ m), yielding δφ ≈ 4 × 10⁻¹⁰ rad."
                 ),
                 inputParams=["predictions.cross_shadow_phase_shift"],
                 outputParams=["predictions.cross_shadow_phase_shift"],
@@ -1664,18 +1664,18 @@ class PredictionsAggregatorV16(SimulationBase):
                 output_params=["predictions.cross_shadow_phase_shift"],
                 derivation={
                     "steps": [
-                        "Two-layer OR bridge creates cross-shadow coupling with strength alpha_leak = 1/sqrt(6)",
-                        "Phase accumulation over path length L: delta_phi = alpha_leak * (L / lambda_dB)",
-                        "For atom interferometry: L ~ 1 m, lambda_dB ~ 10^{-9} m (cold atoms)",
-                        "Predicted shift: delta_phi ~ 0.408 * 10^9 * P_leak ~ 10^{-10} to 10^{-8} rad",
-                        "Sensitivity threshold: current atom interferometers reach ~10^{-9} rad/sqrt(Hz)"
+                        "Two-layer OR bridge creates cross-shadow coupling with strength α_leak = 1/√6",
+                        "Phase accumulation over path length L: δφ = α_leak × (L / λ_dB)",
+                        "For atom interferometry: L ≈ 1 m, λ_dB ≈ 10⁻⁹ m (cold atoms)",
+                        "Predicted shift: δφ ≈ 0.408 × 10⁹ × P_leak ≈ 10⁻¹⁰ to 10⁻⁸ rad",
+                        "Sensitivity threshold: current atom interferometers reach ≈ 10⁻⁹ rad/√Hz"
                     ],
                     "method": "cross_shadow_interference",
                     "parentFormulas": ["dark-force-leakage-prediction"]
                 },
                 terms={
                     r"\delta\varphi": "Cross-shadow phase shift (radians)",
-                    r"\alpha_{\text{leak}}": "Leakage coupling strength = 1/sqrt(6) ~ 0.408",
+                    r"\alpha_{\text{leak}}": "Leakage coupling strength = 1/√6 ≈ 0.408",
                     "L": "Propagation path length",
                     r"\lambda_{\text{dB}}": "de Broglie wavelength of probe particle",
                 }
@@ -1684,11 +1684,11 @@ class PredictionsAggregatorV16(SimulationBase):
                 id="vacuum-noise-excess",
                 label="(8.4)",
                 latex=r"P_{\text{noise}} = \frac{1}{144} e^{-12} \, P_{\text{thermal}}",
-                plain_text="P_noise = (1/144) * exp(-12) * P_thermal ≈ 6.9e-8 * P_thermal",
+                plain_text="P_noise = (1/144) × exp(-12) × P_thermal ≈ 6.9 × 10⁻⁸ × P_thermal",
                 category="PREDICTED",
                 description=(
                     "Dark sector vacuum noise excess from two-layer OR bridge leakage. "
-                    "The bridge probability P_leak = (1/144)*e^{-12} ~ 6.9e-8 sets the "
+                    "The bridge probability P_leak = (1/144) × e⁻¹² ≈ 6.9 × 10⁻⁸ sets the "
                     "fractional noise power above thermal background. Detectable in "
                     "next-generation cavity QED experiments and superconducting qubit systems "
                     "operating at millikelvin temperatures where thermal noise is minimized."
@@ -1700,9 +1700,9 @@ class PredictionsAggregatorV16(SimulationBase):
                 derivation={
                     "steps": [
                         "Two-layer OR bridge leaks vacuum fluctuations across shadows",
-                        "Leakage probability: P_leak = (1/144) * e^{-12} ~ 6.9e-8",
+                        "Leakage probability: P_leak = (1/144) × e⁻¹² ≈ 6.9 × 10⁻⁸",
                         "Noise power excess: P_noise = P_leak * P_thermal",
-                        "At T ~ 10 mK: P_thermal ~ kT * bandwidth, P_noise/P_thermal ~ 6.9e-8",
+                        "At T ≈ 10 mK: P_thermal ≈ kT × bandwidth, P_noise/P_thermal ≈ 6.9 × 10⁻⁸",
                         "Sensitivity threshold: SQUID amplifiers reach ~10^{-9} noise fraction"
                     ],
                     "method": "bridge_vacuum_noise_leakage",
@@ -1711,7 +1711,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 terms={
                     r"P_{\text{noise}}": "Excess vacuum noise power from dark sector leakage",
                     r"P_{\text{thermal}}": "Thermal noise power at detector temperature",
-                    "1/144": "Geometric normalization from chi_eff = 144",
+                    "1/144": "Geometric normalization from χ_eff = 144",
                     "e^{-12}": "Bridge suppression from 12 Möbius operators",
                 }
             ),
@@ -1719,7 +1719,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 id="gw-polarization-anomaly",
                 label="(8.5)",
                 latex=r"\frac{\delta h}{h} \sim T_\omega^2 = \frac{1}{6}",
-                plain_text="delta_h / h ~ T_omega^2 = 1/6 ≈ 0.167",
+                plain_text="δh / h ≈ T_ω² = 1/6 ≈ 0.167",
                 category="PREDICTED",
                 description=(
                     "Gravitational wave polarization anomaly from G2 torsion coupling. "
@@ -1748,7 +1748,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 terms={
                     r"\delta h": "Anomalous polarization amplitude shift",
                     "h": "Gravitational wave strain amplitude",
-                    r"T_\omega": "G2 torsion parameter = 1/sqrt(6) ~ 0.408",
+                    r"T_\omega": "G₂ torsion parameter = 1/√6 ≈ 0.408",
                     "1/6": "Quadratic torsion correction to polarization",
                 }
             ),
@@ -1762,8 +1762,8 @@ class PredictionsAggregatorV16(SimulationBase):
                     r" \Rightarrow f_a > 10^{12}\,\text{GeV}"
                 ),
                 plain_text=(
-                    "If g_{a gamma gamma} < 1e-12 GeV^{-1} at m_a ~ 6 microeV "
-                    "then f_a > 1e12 GeV"
+                    "If g_{a gamma gamma} < 10⁻¹² GeV⁻¹ at m_a ≈ 6 microeV "
+                    "then f_a > 10¹² GeV"
                 ),
                 category="PREDICTED",
                 description=(
@@ -1805,7 +1805,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     r" \Rightarrow \text{sterile sector constrained}"
                 ),
                 plain_text=(
-                    "Delta N_eff < 0.06 implies sterile neutrino sector constrained"
+                    "ΔN_eff < 0.06 implies sterile neutrino sector constrained"
                 ),
                 category="PREDICTED",
                 description=(
@@ -1846,7 +1846,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     r" \text{ (PM prediction)}"
                 ),
                 plain_text=(
-                    "w_0 = -23/24 ~ -0.958 (PM prediction from b3 = 24)"
+                    "w₀ = -23/24 ≈ -0.958 (PM prediction from b₃ = 24)"
                 ),
                 category="PREDICTED",
                 description=(
@@ -1916,9 +1916,9 @@ class PredictionsAggregatorV16(SimulationBase):
                 units="dimensionless",
                 status="PREDICTED",
                 description=(
-                    "Leakage coupling strength alpha_leak = 1/sqrt(6) ~ 0.408 from two-layer OR "
+                    "Leakage coupling strength α_leak = 1/√6 ≈ 0.408 from two-layer OR "
                     "bridge cross-shadow interference. The predicted phase shift is "
-                    "delta_phi = alpha_leak * L / lambda_dB. Testable in atom interferometry "
+                    "δφ = α_leak × L / λ_dB. Testable in atom interferometry "
                     "and neutron interferometry experiments."
                 ),
                 derivation_formula="cross-shadow-phase-shift",
@@ -1931,7 +1931,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 status="PREDICTED",
                 description=(
                     "Fractional vacuum noise excess from dark sector bridge leakage: "
-                    "P_noise/P_thermal = (1/144) * e^{-12} ~ 6.9e-8. Detectable in "
+                    "P_noise/P_thermal = (1/144) × e⁻¹² ≈ 6.9 × 10⁻⁸. Detectable in "
                     "millikelvin cavity QED experiments and SQUID amplifier systems "
                     "where thermal noise is minimized."
                 ),
@@ -2059,8 +2059,8 @@ class PredictionsAggregatorV16(SimulationBase):
             {
                 "topic": "Proton Decay Experiments",
                 "url": "https://en.wikipedia.org/wiki/Proton_decay",
-                "relevance": "Key PM prediction: proton lifetime ~3.9e34 years (testable at Hyper-K)",
-                "validation_hint": "Current bound: tau_p > 2.4e34 years (Super-Kamiokande)",
+                "relevance": "Key PM prediction: proton lifetime ≈ 3.9 × 10³⁴ years (testable at Hyper-K)",
+                "validation_hint": "Current bound: τ_p > 2.4 × 10³⁴ years (Super-Kamiokande)",
             },
             {
                 "topic": "Dark Energy Equation of State",
@@ -2166,12 +2166,12 @@ def main():
     registry = PMRegistry()
 
     # Add sample predictions
-    registry.set_param("gauge.M_GUT", 2.12e16, "gauge_unification_v16_0", "DERIVED")
-    registry.set_param("gauge.ALPHA_GUT_INV", 42.7, "gauge_unification_v16_0", "DERIVED")
-    registry.set_param("proton_decay.tau_p_years", 3.9e34, "proton_decay_v16_0", "PREDICTED")
-    registry.set_param("neutrino.theta_12_pred", 33.34, "neutrino_mixing_v16_0", "PREDICTED")
-    registry.set_param("cosmology.w_eff", -_reg.tzimtzum_pressure, "multi_sector_v16_0", "PREDICTED")
-    registry.set_param("topology.n_gen", 3, "g2_geometry_v16_0", "GEOMETRIC")
+    registry.set_param("gauge.M_GUT", 2.12e16, "gauge_unification_v24_2", "DERIVED")
+    registry.set_param("gauge.ALPHA_GUT_INV", 42.7, "gauge_unification_v24_2", "DERIVED")
+    registry.set_param("proton_decay.tau_p_years", 3.9e34, "proton_decay_v24_2", "PREDICTED")
+    registry.set_param("neutrino.theta_12_pred", 33.34, "neutrino_mixing_v24_2", "PREDICTED")
+    registry.set_param("cosmology.w_eff", -_reg.tzimtzum_pressure, "multi_sector_v24_2", "PREDICTED")
+    registry.set_param("topology.n_gen", 3, "g2_geometry_v24_2", "GEOMETRIC")
 
     # Create and run simulation
     sim = PredictionsAggregatorV16()

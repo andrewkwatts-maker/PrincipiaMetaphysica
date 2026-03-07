@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix B: The Global Sum Rule
+PRINCIPIA METAPHYSICA v24.2 - Appendix B: The Global Sum Rule
 ==============================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: The mathematical constraint that locks the 125 residues.
+v24.2 STERILE MODEL: The mathematical constraint that locks the 125 residues.
 
 This appendix provides the mathematical "glue" that converts the 125 residues
 from a list of constants into a Rigid Geometric System via the Spectral Trace.
@@ -66,7 +66,7 @@ class AppendixBSumRule(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_b_sum_rule_v23_1",
-            version="23.1",
+            version="24.2",
             domain="appendices",
             title="Appendix B: Algebraic Foundations of S_PR(2)",
             description="The mathematical constraint that locks the 125 residues via S_PR(2) gauge",
@@ -119,7 +119,7 @@ class AppendixBSumRule(SimulationBase):
                 content=(
                     "Appendix B provides the mathematical 'glue' that converts the 125 residues "
                     "from a list of constants into a <strong>Rigid Geometric System</strong>. "
-                    "In the v23.1 Sterile Model, the 125 values are not independent; they are "
+                    "In the v24.2 Sterile Model, the 125 values are not independent; they are "
                     "constrained by the Spectral Trace of the V₇ manifold."
                 )
             ),
@@ -225,7 +225,7 @@ class AppendixBSumRule(SimulationBase):
             # B.4 Verification
             ContentBlock(
                 type="heading",
-                content="B.4 Verification via sum_rule_check.py",
+                content="B.4 Verification via Sum Rule Check",
                 level=3
             ),
             ContentBlock(

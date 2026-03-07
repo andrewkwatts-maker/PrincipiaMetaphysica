@@ -105,8 +105,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_s_spectral_residue_v19",
-            version="19.0",
+            id="appendix_s_spectral_residue_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix S: Spectral Residue Methodology",
             description=(
@@ -253,8 +253,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
             title="Appendix S: Spectral Residue Methodology",
             abstract=(
                 "This appendix documents the spectral methodology for extracting "
-                "physical constants from the eigenvalue spectrum of the G2 holonomy "
-                "manifold Laplacian. The 125 eigenvalues of V_7 encode all Standard "
+                "physical constants from the eigenvalue spectrum of the G<sub>2</sub> holonomy "
+                "manifold Laplacian. The 125 eigenvalues of V<sub>7</sub> encode all Standard "
                 "Model parameters through spectral zeta functions and trace formulas."
             ),
             content_blocks=[
@@ -269,9 +269,9 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Mark Kac famously asked 'Can one hear the shape of a drum?' - whether "
+                        "Mark Kac famously asked 'Can one hear the shape of a drum?' -- whether "
                         "the spectrum of the Laplacian determines the geometry. In Principia "
-                        "Metaphysica, we turn this around: the geometry of V_7 (the G2 holonomy "
+                        "Metaphysica, we turn this around: the geometry of V<sub>7</sub> (the G<sub>2</sub> holonomy "
                         "internal manifold) determines the spectrum, and the spectrum determines "
                         "all physical constants."
                     )
@@ -289,7 +289,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="note",
                     content=(
-                        "<strong>Central Result:</strong> The 125 eigenvalues of the V_7 "
+                        "<strong>Central Result:</strong> The 125 eigenvalues of the V<sub>7</sub> "
                         "Laplacian map bijectively to the 125 physical parameters of the "
                         "Standard Model extended with neutrino masses."
                     ),
@@ -301,13 +301,13 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 # =========================================================
                 ContentBlock(
                     type="heading",
-                    content="S.2 The Laplacian Eigenvalue Problem on V_7",
+                    content="S.2 The Laplacian Eigenvalue Problem on V<sub>7</sub>",
                     level=2
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "On the G2 manifold V_7, the Laplace-Beltrami operator Delta acts on "
+                        "On the G<sub>2</sub> manifold V<sub>7</sub>, the Laplace-Beltrami operator &Delta; acts on "
                         "scalar functions. Its eigenvalue equation is:"
                     )
                 ),
@@ -321,10 +321,10 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     type="paragraph",
                     content=(
                         "For a compact manifold, the spectrum is discrete with eigenvalues "
-                        "approaching infinity. The first eigenvalue lambda_1 = 0 corresponds "
-                        "to the constant function. For G2 manifolds, Weyl's law gives the "
-                        "asymptotic behavior: N(lambda) ~ c_d * Vol(V_7) * lambda^{d/2} where "
-                        "d = 7 and c_7 = (4*pi)^{-7/2} / Gamma(7/2 + 1)."
+                        "approaching infinity. The first eigenvalue &lambda;<sub>1</sub> = 0 corresponds "
+                        "to the constant function. For G<sub>2</sub> manifolds, Weyl's law gives the "
+                        "asymptotic behaviour: N(&lambda;) ~ c<sub>d</sub> &middot; Vol(V<sub>7</sub>) &middot; &lambda;<sup>d/2</sup> where "
+                        "d = 7 and c<sub>7</sub> = (4&pi;)<sup>&minus;7/2</sup> / &Gamma;(7/2 + 1)."
                     )
                 ),
                 ContentBlock(
@@ -377,15 +377,15 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "zeta_V(s) = (1/Gamma(s)) * integral_0^infinity t^{s-1} [Tr(e^{-t*Delta}) - 1] dt"
+                        "&zeta;<sub>V</sub>(s) = (1/&Gamma;(s)) &middot; &int;<sub>0</sub><sup>&infin;</sup> t<sup>s&minus;1</sup> [Tr(e<sup>&minus;t&Delta;</sup>) &minus; 1] dt"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The poles of the zeta function occur at s = (d-k)/2 for non-negative "
+                        "The poles of the zeta function occur at s = (d &minus; k)/2 for non-negative "
                         "integers k, corresponding to the heat kernel asymptotic expansion "
-                        "coefficients a_k(Delta)."
+                        "coefficients a<sub>k</sub>(&Delta;)."
                     )
                 ),
 
@@ -400,8 +400,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The residues of zeta_V(s) at its poles encode geometric and "
-                        "topological information about V_7. The general formula is:"
+                        "The residues of &zeta;<sub>V</sub>(s) at its poles encode geometric and "
+                        "topological information about V<sub>7</sub>. The general formula is:"
                     )
                 ),
                 ContentBlock(
@@ -413,7 +413,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The heat kernel coefficients a_k encode increasingly refined "
+                        "The heat kernel coefficients a<sub>k</sub> encode increasingly refined "
                         "geometric data. The first few are:"
                     )
                 ),
@@ -433,8 +433,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This residue encodes the compactification volume. Since Vol(V_7) "
-                        "determines M_Planck via the 26D reduction, this residue sets the "
+                        "This residue encodes the compactification volume. Since Vol(V<sub>7</sub>) "
+                        "determines M<sub>Planck</sub> via the 26D reduction, this residue sets the "
                         "overall mass scale of physics."
                     )
                 ),
@@ -454,7 +454,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "For G2 holonomy manifolds, the scalar curvature R vanishes identically "
+                        "For G<sub>2</sub> holonomy manifolds, the scalar curvature R vanishes identically "
                         "(Ricci-flatness). However, the subleading corrections involving "
                         "Weyl curvature do contribute and encode gauge coupling information."
                     )
@@ -476,8 +476,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     type="paragraph",
                     content=(
                         "This residue is proportional to the effective Euler characteristic, "
-                        "which determines the number of fermion generations via chi_eff/48 = 3. "
-                        "The factor 48 = 6 x 8 arises from flux quantization (6) times "
+                        "which determines the number of fermion generations via &chi;<sub>eff</sub>/48 = 3. "
+                        "The factor 48 = 6 &times; 8 arises from flux quantization (6) times "
                         "spinor degrees of freedom (8)."
                     )
                 ),
@@ -506,8 +506,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Here h is a test function, tilde{h} its Fourier transform, gamma sums "
-                        "over closed geodesics with lengths L_gamma, and P_gamma is the Poincare "
+                        "Here h is a test function, h&#771; its Fourier transform, &gamma; sums "
+                        "over closed geodesics with lengths L<sub>&gamma;</sub>, and P<sub>&gamma;</sub> is the Poincar&eacute; "
                         "map. The trace formula provides an exact relationship between:"
                     )
                 ),
@@ -521,7 +521,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "In the PM framework, the periodic orbits on V_7 correspond to "
+                        "In the PM framework, the periodic orbits on V<sub>7</sub> correspond to "
                         "gauge field configurations, and their lengths encode coupling "
                         "constants. This provides a geometric origin for gauge interactions."
                     )
@@ -560,7 +560,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     type="paragraph",
                     content=(
                         "For practical calculations, we use the heat kernel regularization "
-                        "with cutoff mu:"
+                        "with cutoff &mu;:"
                     )
                 ),
                 ContentBlock(
@@ -572,9 +572,9 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The asymptotic expansion coefficients a_k are the same heat kernel "
+                        "The asymptotic expansion coefficients a<sub>k</sub> are the same heat kernel "
                         "invariants that appear in the zeta function residues. The "
-                        "regularization scale mu = k_gimel = 12 + 1/pi ensures consistency "
+                        "regularization scale &mu; = k<sub>&#x2137;</sub> = 12 + 1/&pi; ensures consistency "
                         "with the holonomy warp factor."
                     )
                 ),
@@ -604,7 +604,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     type="paragraph",
                     content=(
                         "The compactification scale L is determined by the Planck mass and "
-                        "the G2 volume. Each eigenvalue lambda_n maps to a specific particle "
+                        "the G<sub>2</sub> volume. Each eigenvalue &lambda;<sub>n</sub> maps to a specific particle "
                         "mass. The hierarchy of eigenvalues (spanning many orders of magnitude) "
                         "naturally produces the observed mass hierarchy from electron to top quark."
                     )
@@ -614,7 +614,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                     content=(
                         "For coupling constants, the mapping involves the zeta function "
                         "residues at subleading poles. The gauge couplings are encoded in "
-                        "the Weyl curvature contributions to a_2, while Yukawa couplings "
+                        "the Weyl curvature contributions to a<sub>2</sub>, while Yukawa couplings "
                         "come from intersection forms on calibrated cycles."
                     )
                 ),

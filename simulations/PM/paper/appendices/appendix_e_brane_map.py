@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix E: The Brane-Intersection Map
+PRINCIPIA METAPHYSICA v24.2 - Appendix E: The Brane-Intersection Map
 =====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: Detailed node coordinates in the V_7 manifold.
+v24.2 STERILE MODEL: Detailed node coordinates in the V_7 manifold.
 
-This appendix provides the physical "topography" of the v23.1 Sterile Model,
+This appendix provides the physical "topography" of the v24.2 Sterile Model,
 documenting the spatial coordinates where ancestral p-branes intersect.
 
 APPENDIX: E (The Brane-Intersection Map - Detailed Node Coordinates)
@@ -63,7 +63,7 @@ class AppendixEBraneMap(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_e_brane_map_v16_2",
-            version="23.1",
+            version="24.2",
             domain="appendices",
             title="Appendix E: The Brane-Intersection Map",
             description="Node coordinates and brane intersection topology in the V_7 manifold",
@@ -108,7 +108,7 @@ class AppendixEBraneMap(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix E provides the physical 'topography' of the v23.1 Sterile Model. "
+                    "Appendix E provides the physical 'topography' of the v24.2 Sterile Model. "
                     "While previous appendices focused on the spectral values (the 'what') and "
                     "the math (the 'why'), Appendix E documents the spatial coordinates (the 'where')."
                 )
@@ -138,7 +138,7 @@ class AppendixEBraneMap(SimulationBase):
                 type="paragraph",
                 content=(
                     "In the sterile model, these coordinates are static. They represent the "
-                    "'Brane-Anchors' that were frozen during the 26D -> 4D symmetry breaking."
+                    "'Brane-Anchors' that were frozen during the 26D → 4D symmetry breaking."
                 )
             ),
 
@@ -160,9 +160,9 @@ class AppendixEBraneMap(SimulationBase):
                 content=(
                     "<table style='width:100%'>"
                     "<tr><th>Shell</th><th>Depth (r)</th><th>Node Range</th><th>Characteristic</th></tr>"
-                    "<tr><td>Surface (Skin)</td><td>r -> 1.0</td><td>080-125</td><td>High-energy (Top, Higgs)</td></tr>"
+                    "<tr><td>Surface (Skin)</td><td>r → 1.0</td><td>080-125</td><td>High-energy (Top, Higgs)</td></tr>"
                     "<tr><td>Mantle (Fold)</td><td>0.2 < r < 0.8</td><td>019-079</td><td>Standard Model gauge</td></tr>"
-                    "<tr><td>Core (Singularity)</td><td>r -> 0</td><td>001-018</td><td>Cosmological (H0, w0)</td></tr>"
+                    "<tr><td>Core (Singularity)</td><td>r → 0</td><td>001-018</td><td>Cosmological (H₀, w₀)</td></tr>"
                     "</table>"
                 ),
                 label="shell-distribution"

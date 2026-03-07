@@ -56,8 +56,8 @@ class AppendixEProtonDecay(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="appendix_e_proton_v16_0",
-            version="16.0",
+            id="appendix_e_proton_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix E: Proton Decay Calculation",
             description=(
@@ -186,9 +186,9 @@ class AppendixEProtonDecay(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where Q denotes quark doublets, L denotes lepton doublets, and c_ijkl are "
+                        "where Q denotes quark doublets, L denotes lepton doublets, and c<sub>ijkl</sub> are "
                         "Wilson coefficients determined by the GUT symmetry breaking pattern. "
-                        "The indices i,j,k,l run over flavors and color/weak charges."
+                        "The indices i, j, k, l run over flavours and colour/weak charges."
                     )
                 ),
                 ContentBlock(
@@ -237,9 +237,9 @@ class AppendixEProtonDecay(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "where Δ_QL is the geodesic separation between quark and lepton cycles, "
-                        "and ℓ_string is the fundamental string length. For the TCS G₂ manifold #187, "
-                        "the typical separation is Δ_QL ≈ 0.5 in Planck units, giving S_geom ≈ 0.007."
+                        "where &#916;<sub>QL</sub> is the geodesic separation between quark and lepton cycles, "
+                        "and &#8467;<sub>string</sub> is the fundamental string length. For the TCS G₂ manifold #187, "
+                        "the typical separation is &#916;<sub>QL</sub> &#8776; 0.5 in Planck units, giving S<sub>geom</sub> &#8776; 0.007."
                     )
                 ),
                 ContentBlock(
@@ -262,8 +262,8 @@ class AppendixEProtonDecay(SimulationBase):
                     type="paragraph",
                     content=(
                         "This prediction is within reach of the Hyper-Kamiokande experiment (2027+), "
-                        "which has a projected sensitivity of τ_p > 10³⁴ years for the p → π⁰e⁺ channel. "
-                        "The current Super-Kamiokande limit is τ_p > 1.6 × 10³⁴ years (90% CL)."
+                        "which has a projected sensitivity of &#964;<sub>p</sub> &gt; 10<sup>34</sup> years for the p &#8594; &#960;&#8304;e&#8314; channel. "
+                        "The current Super-Kamiokande limit is &#964;<sub>p</sub> &gt; 1.6 &#215; 10<sup>34</sup> years (90% CL)."
                     )
                 ),
                 ContentBlock(

@@ -490,10 +490,10 @@ class DarkEnergyV16(SimulationBase):
             subsection_id="5.2",
             title="Dark Energy from Dimensional Reduction",
             abstract=(
-                f"We derive the dark energy equation of state from G2 thawing "
-                f"quintessence dynamics. The b₃={b3} associative 3-cycles determine "
-                f"the equation of state via w₀ = -1 + 1/b₃ = {w0_frac} ≈ {w0:.4f}, "
-                f"in excellent agreement with DESI 2025 thawing measurements ({deviation:.2f}σ)."
+                f"We derive the dark energy equation of state from G₂ thawing "
+                f"quintessence dynamics. The b₃ = {b3} associative 3-cycles determine "
+                f"the equation of state via w₀ = -1 + 1/b₃ = {w0_frac} \u2248 {w0:.4f}, "
+                f"in excellent agreement with DESI 2025 thawing measurements ({deviation:.2f}\u03c3)."
             ),
             content_blocks=[
                 ContentBlock(
@@ -506,7 +506,7 @@ class DarkEnergyV16(SimulationBase):
                         "this to 10 dimensions. The heterotic string, constructed from a hybrid of "
                         "bosonic (left-movers in 26D) and superstring (right-movers in 10D) sectors, "
                         "effectively operates in 13 dimensions due to this asymmetric left-right "
-                        "construction. G2 holonomy compactification on a 7-dimensional internal "
+                        "construction. G₂ holonomy compactification on a 7-dimensional internal "
                         "manifold reduces this to 4D spacetime, but the reduction is not absolute: "
                         "residual degrees of freedom from the compactified dimensions persist as "
                         "moduli fields and contribute to the effective dimensionality and vacuum "
@@ -536,8 +536,8 @@ class DarkEnergyV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        f"In v16.2, we use the thawing quintessence formula directly from "
-                        f"G2 topology. The b₃={b3} associative 3-cycles determine the "
+                        f"In v24.2, we use the thawing quintessence formula directly from "
+                        f"G₂ topology. The b₃ = {b3} associative 3-cycles determine the "
                         f"equation of state through:"
                     )
                 ),
@@ -565,24 +565,24 @@ class DarkEnergyV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        f"The evolution parameter w_a = {wa:.4f} arises from the 26D to 13D "
+                        f"The evolution parameter w\u2090 = {wa:.4f} arises from the 26D to 13D "
                         f"shadow projection where the bridge dimensions create "
-                        f"thawing behavior as the G2 manifold relaxes."
+                        f"thawing behavior as the G₂ manifold relaxes."
                     )
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="Connection to G2 Holonomy and Physical Interpretation"
+                    content="Connection to G₂ Holonomy and Physical Interpretation"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        f"The key physical insight is that b3 = {b3} associative 3-cycles of the "
-                        f"G2 manifold directly determine the dark energy equation of state. Each "
-                        f"3-cycle contributes 1/b3 of 'thawing energy' from the relaxation of "
+                        f"The key physical insight is that the b₃ = {b3} associative 3-cycles of the "
+                        f"G₂ manifold directly determine the dark energy equation of state. Each "
+                        f"3-cycle contributes 1/b₃ of 'thawing energy' from the relaxation of "
                         f"the compactification moduli. The sum over all cycles gives the total "
                         f"departure from the cosmological constant (w = -1), yielding "
-                        f"w0 = -1 + 1/b3 = {w0_frac}. This connection between topology "
+                        f"w₀ = -1 + 1/b₃ = {w0_frac}. This connection between topology "
                         f"and cosmology is a central prediction of the PM framework, "
                         f"directly testable by next-generation surveys such as DESI, Euclid, "
                         f"and the Vera Rubin Observatory (LSST)."
@@ -593,11 +593,11 @@ class DarkEnergyV16(SimulationBase):
                     callout_type="info",
                     title="Testable Prediction",
                     content=(
-                        f"The PM framework predicts w0 = {w0_frac} = {w0:.6f} from purely "
-                        f"topological input (b3 = {b3}). Current DESI 2025 thawing constraint: "
-                        f"w0 = {desi_w0_target} +/- {desi_w0_sigma} ({deviation:.2f}sigma agreement). "
+                        f"The PM framework predicts w₀ = {w0_frac} = {w0:.6f} from purely "
+                        f"topological input (b₃ = {b3}). Current DESI 2025 thawing constraint: "
+                        f"w₀ = {desi_w0_target} \u00b1 {desi_w0_sigma} ({deviation:.2f}\u03c3 agreement). "
                         f"This is a falsifiable prediction: if future surveys constrain "
-                        f"w0 < -0.98 at 3sigma, the G2 thawing mechanism would be ruled out."
+                        f"w₀ < -0.98 at 3σ, the G₂ thawing mechanism would be ruled out."
                     )
                 ),
                 ContentBlock(
@@ -608,26 +608,26 @@ class DarkEnergyV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The PM prediction w0 = -23/24 = -0.9583 is validated against "
+                        "The PM prediction w₀ = -23/24 = -0.9583 is validated against "
                         "DESI 2024 BAO measurements (DESI Collaboration 2024, arXiv:2404.03002). "
                         "DESI Year 1 data, combined with CMB and Type Ia supernovae, reports "
-                        "a thawing quintessence fit with w0 = -0.957 +/- 0.067. The PM value "
+                        "a thawing quintessence fit with w₀ = -0.957 \u00b1 0.067. The PM value "
                         "falls within the BAO-only uncertainty range, providing "
-                        "experimental support for the G2 thawing mechanism."
+                        "experimental support for the G₂ thawing mechanism."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "In the four-face interpretation, the exact fraction w0 = -23/24 has "
+                        "In the four-face interpretation, the exact fraction w₀ = -23/24 has "
                         "a precise geometric meaning. The 24 associative 3-cycles distribute "
-                        "as 6 per Kahler face across the h^{1,1} = 4 faces. The deviation "
-                        "from the cosmological constant, Delta_w = 1/b3 = 1/24, represents "
-                        "vacuum energy leakage from the lightest Kahler face modulus T_4. "
+                        "as 6 per K\u00e4hler face across the h(1,1) = 4 faces. The deviation "
+                        "from the cosmological constant, \u0394w = 1/b₃ = 1/24, represents "
+                        "vacuum energy leakage from the lightest K\u00e4hler face modulus T₄. "
                         "This leakage is topologically protected: it cannot be zero because "
-                        "b3 is finite, and it cannot exceed 1/b3 at leading order because "
+                        "b₃ is finite, and it cannot exceed 1/b₃ at leading order because "
                         "only one cycle tunnels per Hubble time. The resulting equation of "
-                        "state w0 = -(b3 - 1)/b3 = -23/24 is therefore a sharp, falsifiable "
+                        "state w₀ = -(b₃ - 1)/b₃ = -23/24 is therefore a sharp, falsifiable "
                         "prediction of the framework."
                     )
                 ),
@@ -640,13 +640,13 @@ class DarkEnergyV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "**Two-Layer OR Connection to Dark Energy**\n\n"
-                        "The dark energy equation of state w\u2080 = -23/24 emerges from the bridge warping potential "
+                        "The dark energy equation of state w₀ = -23/24 emerges from the bridge warping potential "
                         "V_bridge through torsion T_\u03c9 = 1/\u221a6. The two-layer OR structure provides:\n\n"
                         "- 12 bridge pairs \u00d7 4 faces per shadow = 48 channels (= \u03c7_eff/3)\n"
                         "- Breathing variance reduction: \u03c3_eff = \u03c3_single/\u221a12 from 4-face \u00d7 3-generation pairing\n"
-                        "- Bridge warping potential V_bridge \u2192 w\u2080 = -1 + T_\u03c9\u00b2/(4\u03c0) \u2248 -1 + 1/24 = -23/24\n\n"
-                        "Dark matter as hidden faces: The three hidden faces (f=2,3,4) per shadow provide "
-                        "multi-component dark matter with portal coupling \u03b1_leak = 1/\u221a6 \u2248 0.408 from G\u2082 volume ratio (\u03b1_sample \u2248 0.57 with flux corrections)."
+                        "- Bridge warping potential V_bridge \u2192 w₀ = -1 + T_\u03c9\u00b2/(4\u03c0) \u2248 -1 + 1/24 = -23/24\n\n"
+                        "Dark matter as hidden faces: The three hidden faces (f = 2, 3, 4) per shadow provide "
+                        "multi-component dark matter with portal coupling \u03b1_leak = 1/\u221a6 \u2248 0.408 from G₂ volume ratio (\u03b1_sample \u2248 0.57 with flux corrections)."
                     )
                 ),
             ],

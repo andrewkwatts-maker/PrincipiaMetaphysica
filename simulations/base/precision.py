@@ -4,7 +4,7 @@
 precision.py - Sterile Decimal-50 Precision Engine
 ===================================================
 
-Principia Metaphysica v23.1 "Demon-Lock" Precision Framework
+Principia Metaphysica v24.2 "Demon-Lock" Precision Framework
 
 This module enforces 50-decimal precision for all topological calculations.
 Without this, the Unity Seal (Certificate 42) will drift due to float leakage
@@ -240,7 +240,7 @@ def get_sterile_constants() -> dict:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA - DEMON-LOCK PRECISION ENGINE v23.1")
+    print("PRINCIPIA METAPHYSICA - DEMON-LOCK PRECISION ENGINE v24.2")
     print("=" * 70)
 
     result = verify_precision()

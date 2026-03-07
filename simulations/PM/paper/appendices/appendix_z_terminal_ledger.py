@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix Z: Terminal Constant Ledger
+PRINCIPIA METAPHYSICA v24.2 - Appendix Z: Terminal Constant Ledger
 ====================================================================
 
 DOI: 10.5281/zenodo.18079602
@@ -105,8 +105,8 @@ class AppendixZTerminalLedger(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_z_terminal_ledger_v16_2",
-            version="23.1",
+            id="appendix_z_terminal_ledger_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix Z: Terminal Constant Ledger",
             description=(
@@ -627,50 +627,107 @@ class AppendixZTerminalLedger(SimulationBase):
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
-        """Return section content for Appendix Z."""
+        """Return section content for Appendix Z (v24.2)."""
         content_blocks = [
             ContentBlock(
+                type="heading",
+                content="Terminal Constant Ledger (v24.2)",
+                level=2,
+                label="Z"
+            ),
+            ContentBlock(
                 type="paragraph",
-                content=f"""All constants derived from Yod-Nun-Dalet ({self.YOD}-{self.NUN}-{self.DALET}) geometry with ZERO free parameters.
-
-HEBREW LETTER NAMING:
-- {self.YOD} (Yod): 288 Ancestral Roots (Yod₁ - Yod₂₈₈)
-- {self.NUN} (Nun Sofit): 24 Torsion Pins (Nun₁ - Nun₂₄), 12/12 shadow split
-- {self.DALET} (Dalet): 4 Spacetime Dimensions (Dalet₁ - Dalet₄)
-
-Projection Hierarchy: Yod (288) → Nun (24) → Dalet (4)
-
-The 7 Primary Gates:
-- C02-R: Root Parity (Yod_active + Yod_hidden = 288)
-- C19-T: Torsion Lock (Nun = 24)
-- C44: 4-Pattern ([6,6,6,6] Nun per Dalet)
-- C125: Saturation (Yod_active = 125)
-- C-ZETA: Temporal Sync (H0 matches geometry)
-- C-EPSILON: Bulk Insulation (Yod_hidden = 163)
-- C-OMEGA: Terminal State (All certificates pass)
-
-Closure Equations:
-- Structural: SO(24) + Nun - Tax = Yod (276 + 24 - 12 = 288)
-- Partition: Yod_active + Yod_hidden = Yod (125 + 163 = 288)
-- 4-Pattern: Var([6,6,6,6]) = 0
-
-The H0 Unwinding Scale Factor (10.1) is the only temporal variable.
-It projects H0_geometric = 7.24 to H0_physical = 73.1 km/s/Mpc.
-
-FREE PARAMETERS: 0"""
-            )
+                content=(
+                    f"All constants are derived from the Yod-Nun-Dalet ({self.YOD}-{self.NUN}-{self.DALET}) "
+                    "geometry with <strong>zero free parameters</strong>."
+                )
+            ),
+            ContentBlock(
+                type="heading",
+                content="Z.1 Hebrew Letter Naming Convention",
+                level=3
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<ul>"
+                    f"<li><strong>{self.YOD} (Yod)</strong>: 288 Ancestral Roots (Yod&#x2081; &ndash; Yod&#x2082;&#x2088;&#x2088;)</li>"
+                    f"<li><strong>{self.NUN} (Nun Sofit)</strong>: 24 Torsion Pins (Nun&#x2081; &ndash; Nun&#x2082;&#x2084;), 12/12 shadow split</li>"
+                    f"<li><strong>{self.DALET} (Dalet)</strong>: 4 Spacetime Dimensions (Dalet&#x2081; &ndash; Dalet&#x2084;)</li>"
+                    "</ul>"
+                ),
+                label="hebrew-naming"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="<strong>Projection Hierarchy</strong>: Yod (288) &rarr; Nun (24) &rarr; Dalet (4)"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Z.2 The Seven Primary Gates",
+                level=3
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<ul>"
+                    "<li><strong>C02-R</strong>: Root Parity (Yod<sub>active</sub> + Yod<sub>hidden</sub> = 288)</li>"
+                    "<li><strong>C19-T</strong>: Torsion Lock (Nun = 24)</li>"
+                    "<li><strong>C44</strong>: 4-Pattern ([6, 6, 6, 6] Nun per Dalet)</li>"
+                    "<li><strong>C125</strong>: Saturation (Yod<sub>active</sub> = 125)</li>"
+                    "<li><strong>C-ZETA</strong>: Temporal Sync (H<sub>0</sub> matches geometry)</li>"
+                    "<li><strong>C-EPSILON</strong>: Bulk Insulation (Yod<sub>hidden</sub> = 163)</li>"
+                    "<li><strong>C-OMEGA</strong>: Terminal State (all certificates pass)</li>"
+                    "</ul>"
+                ),
+                label="seven-primary-gates"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Z.3 Closure Equations",
+                level=3
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<ul>"
+                    "<li><strong>Structural</strong>: SO(24) + Nun &minus; Tax = Yod &nbsp;(276 + 24 &minus; 12 = 288)</li>"
+                    "<li><strong>Partition</strong>: Yod<sub>active</sub> + Yod<sub>hidden</sub> = Yod &nbsp;(125 + 163 = 288)</li>"
+                    "<li><strong>4-Pattern</strong>: Var([6, 6, 6, 6]) = 0</li>"
+                    "</ul>"
+                ),
+                label="closure-equations"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Z.4 H&#x2080; Unwinding Scale Factor",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The H<sub>0</sub> Unwinding Scale Factor (10.1) is the only temporal variable. "
+                    "It projects H<sub>0,geom</sub> = 7.24 to H<sub>0,phys</sub> = 73.1 km/s/Mpc."
+                )
+            ),
+            ContentBlock(
+                type="callout",
+                content="<strong>Free parameters: 0</strong>",
+                callout_type="success",
+                title="Sterile Model Status (v24.2)"
+            ),
         ]
 
         return SectionContent(
             section_id="Z",
             subsection_id=None,
-            title="Appendix Z: Terminal Constant Ledger",
+            title="Appendix Z: Terminal Constant Ledger (v24.2)",
             abstract=(
                 "The Terminal Constant Ledger containing all geometrically derived constants "
-                "with complete derivation chains. Proves the sterile model has ZERO free parameters "
+                "with complete derivation chains. Proves the sterile model has zero free parameters "
                 "by deriving each physical constant from the Yod-Nun-Dalet (288-24-4) geometry: "
-                "manifold tax, fermion generations, theta_QCD, Omega, G, gauge sum, hierarchy ratio, "
-                "speed of light, Cabibbo angle, terminal closure, and H0 unwinding scale."
+                "manifold tax, fermion generations, &theta;<sub>QCD</sub>, &Omega;, G, gauge sum, hierarchy ratio, "
+                "speed of light, Cabibbo angle, terminal closure, and H<sub>0</sub> unwinding scale."
             ),
             content_blocks=content_blocks,
             formula_refs=self.output_formulas,

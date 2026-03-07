@@ -177,9 +177,9 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Each bosonic coordinate contributes c_matter = +1 to the central charge. "
+                        "Each bosonic coordinate contributes c<sub>matter</sub> = +1 to the central charge. "
                         "The b,c ghost system (with conformal weights 2 and -1) contributes "
-                        "c_ghost = -26. For anomaly cancellation, c_total = D - 26 = 0, requiring D = 26."
+                        "c<sub>ghost</sub> = -26. For anomaly cancellation, c<sub>total</sub> = D - 26 = 0, requiring D = 26."
                     )
                 ),
                 ContentBlock(
@@ -229,7 +229,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.3 Bridge Subalgebra Signature (24,1) and Euclidean Sampler Data Fields S^{2,0}"
+                    content="A.3 Bridge Subalgebra Signature (24,1) and Euclidean Sampler Data Fields S<sup>(2,0)</sup>"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -262,16 +262,16 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The D = 26 bosonic string constraint and bridge+time signature (24,1) [before S^{2,0} extension] enable the PM framework's dimensional reduction:"
+                        "The D = 26 bosonic string constraint and bridge+time signature (24,1) [before S<sup>(2,0)</sup> extension] enable the PM framework's dimensional reduction:"
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "- Bridge+time bulk: 25D with signature (24,1) = 12×(2,0) + (0,1) automatically satisfies Virasoro anomaly cancellation [full 27D(24,1,2) includes additional S^{2,0} sampler data fields]\n\n"
-                        "- Euclidean bridge: Reduces the 12×(2,0) pairs → shadows (12,1) via OR reconstruction\n\n"
+                        "- Bridge+time bulk: 25D with signature (24,1) = 12×(2,0) + (0,1) automatically satisfies Virasoro anomaly cancellation [full 27D(24,1,2) includes additional S<sup>(2,0)</sup> sampler data fields]\n\n"
+                        "- Euclidean bridge: Reduces the 12×(2,0) pairs to shadows (12,1) via OR reconstruction\n\n"
                         "- Shadow reduction: Yields 13-dimensional intermediate spacetime with unified time\n\n"
-                        "- Compactification: 9 spatial dimensions (from bridge reduction) + 13 shadow dimensions compactify on T^15 x G₂(7D)\n\n"
+                        "- Compactification: 9 spatial dimensions (from bridge reduction) + 13 shadow dimensions compactify on T<sup>15</sup> × G₂(7D)\n\n"
                         "- Observable physics: Effective 4D Minkowski (3,1) after full reduction"
                     )
                 ),
@@ -377,7 +377,7 @@ class AppendixAMathFoundations(SimulationBase):
                     type="paragraph",
                     content=(
                         "The third Betti number b₃ = 24 counts associative 3-cycles and "
-                        "determines the number of fermion generations: n_gen = b₃/8 = 3."
+                        "determines the number of fermion generations: n<sub>gen</sub> = b₃/8 = 3."
                     )
                 ),
                 ContentBlock(
@@ -400,7 +400,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The structure constants f_ijk are totally antisymmetric and define "
+                        "The structure constants f<sub>ijk</sub> are totally antisymmetric and define "
                         "the associative 3-form φ in local coordinates."
                     )
                 ),

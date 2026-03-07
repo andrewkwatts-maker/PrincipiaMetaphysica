@@ -408,9 +408,9 @@ class CKMMatrixSimulation(SimulationBase):
             title="CKM Matrix and Quark Mixing",
             abstract=(
                 "We derive the CKM matrix elements from topological phase overlaps "
-                "in the G2 manifold. The Cabibbo angle emerges as lambda = epsilon ~ 0.223, "
+                "in the G₂ manifold. The Cabibbo angle emerges as λ = ε ~ 0.223, "
                 "directly connecting quark mixing to the Yukawa hierarchy. CP violation "
-                "arises from non-trivial holonomy phases with Jarlskog invariant J ~ 3e-5."
+                "arises from non-trivial holonomy phases with Jarlskog invariant J ~ 3 × 10<sup>−5</sup>."
             ),
             content_blocks=[
                 ContentBlock(
@@ -420,14 +420,14 @@ class CKMMatrixSimulation(SimulationBase):
                         "mix between mass and weak eigenstates. In the Standard Model, the "
                         "nine independent parameters of this 3×3 unitary matrix are free "
                         "phenomenological inputs. In Principia Metaphysica, they emerge from "
-                        "the geometric structure of the G2 manifold."
+                        "the geometric structure of the G₂ manifold."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
                         "Quark mass eigenstates localize on different associative 3-cycles "
-                        "in the internal G2 space, separated by topological distances Q_f. "
+                        "in the internal G₂ space, separated by topological distances Q<sub>f</sub>. "
                         "When the W boson mediates flavor-changing transitions, the CKM "
                         "elements are determined by overlap integrals of these localized "
                         "wave functions:"
@@ -443,7 +443,7 @@ class CKMMatrixSimulation(SimulationBase):
                     type="paragraph",
                     content=(
                         "These overlaps follow the same geometric suppression pattern as the "
-                        "Yukawa couplings, with epsilon = exp(-lambda) ~ 0.223 controlling the "
+                        "Yukawa couplings, with ε = e<sup>−3/2</sup> ~ 0.223 controlling the "
                         "hierarchy. The CKM matrix elements exhibit a hierarchical structure:"
                     )
                 ),
@@ -464,8 +464,8 @@ class CKMMatrixSimulation(SimulationBase):
                     content=(
                         "where A ~ 0.81 is a geometric coefficient from angular overlaps in "
                         "the associative 3-cycle configuration. The remarkable feature is that "
-                        "the Cabibbo angle V_us = 0.2257 ± 0.0009 (PDG 2024) matches precisely "
-                        "the Froggatt-Nielsen parameter epsilon, unifying quark masses and mixing."
+                        "the Cabibbo angle V<sub>us</sub> = 0.2245 ± 0.0008 (PDG 2024) matches precisely "
+                        "the Froggatt-Nielsen parameter ε, unifying quark masses and mixing."
                     )
                 ),
                 ContentBlock(
@@ -484,10 +484,10 @@ class CKMMatrixSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The parameter eta ~ sin(delta_CP) where delta_CP is a CP-violating phase. "
+                        "The parameter η ~ sin(δ<sub>CP</sub>) where δ<sub>CP</sub> is a CP-violating phase. "
                         "In our framework, this phase arises from the topological structure of the "
-                        "G2 holonomy. For TCS G2 manifold #187 with K=4 matching fibres, the "
-                        "holonomy phase is delta_CP ~ pi/6 (30 degrees), giving:"
+                        "G₂ holonomy. For TCS G₂ manifold #187 with K = 4 matching fibres, the "
+                        "holonomy phase is δ<sub>CP</sub> ~ π/6 (30 degrees), giving:"
                     )
                 ),
                 ContentBlock(
@@ -498,9 +498,9 @@ class CKMMatrixSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This matches the experimental value J = (3.0 ± 0.3) × 10^-5 (PDG 2024) "
+                        "This matches the experimental value J = (3.0 ± 0.3) × 10<sup>−5</sup> (PDG 2024) "
                         "with no free parameters. The CP phase emerges purely from the topology "
-                        "of the compact G2 manifold."
+                        "of the compact G₂ manifold."
                     )
                 ),
                 ContentBlock(
@@ -525,7 +525,7 @@ class CKMMatrixSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "with Wolfenstein parameters directly related to G2 geometry:"
+                        "with Wolfenstein parameters directly related to G₂ geometry:"
                     )
                 ),
                 ContentBlock(
@@ -533,7 +533,7 @@ class CKMMatrixSimulation(SimulationBase):
                     content=(
                         r"\begin{aligned} "
                         r"\lambda &= \epsilon = e^{-1.5} \approx 0.223\\ "
-                        r"A &\approx 0.81/\epsilon \approx 3.6\\ "
+                        r"A &\approx 0.81 \\ "
                         r"\rho + i\eta &\sim e^{i\delta_{\text{CP}}} \cdot \epsilon^3/\lambda^3"
                         r" \end{aligned}"
                     ),
@@ -543,7 +543,7 @@ class CKMMatrixSimulation(SimulationBase):
                     type="paragraph",
                     content=(
                         "The unitarity of the CKM matrix is guaranteed by the completeness of "
-                        "the G2 holonomy structure. We verify:"
+                        "the G₂ holonomy structure. We verify:"
                     )
                 ),
                 ContentBlock(

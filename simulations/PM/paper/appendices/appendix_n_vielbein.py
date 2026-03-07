@@ -322,8 +322,8 @@ class AppendixNVielbein(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_n_vielbein_v19",
-            version="19.0",
+            id="appendix_n_vielbein_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix N: Vielbein and Spin Connection",
             description=(
@@ -416,10 +416,10 @@ class AppendixNVielbein(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In General Relativity, we describe gravity using the metric tensor g_munu, "
+                    "In General Relativity, we describe gravity using the metric tensor g<sub>&#956;&#957;</sub>, "
                     "which tells us about distances and angles in curved spacetime. Vectors and "
                     "tensors transform under general coordinate transformations (diffeomorphisms). "
-                    "But there's a problem: <strong>spinors are not tensors</strong>."
+                    "But there is a problem: <strong>spinors are not tensors</strong>."
                 )
             ),
             ContentBlock(
@@ -437,10 +437,10 @@ class AppendixNVielbein(SimulationBase):
                 content=(
                     "<h4>Key Insight: Two Types of Indices</h4>"
                     "<ul>"
-                    "<li><strong>Curved indices</strong> (Greek: mu, nu, ...): Transform under diffeomorphisms</li>"
+                    "<li><strong>Curved indices</strong> (Greek: &#956;, &#957;, ...): Transform under diffeomorphisms</li>"
                     "<li><strong>Flat indices</strong> (Latin: A, B, ...): Transform under local Lorentz</li>"
                     "</ul>"
-                    "<p>The vielbein e^A_mu has one of each type - it's the bridge between the two worlds!</p>"
+                    "<p>The vielbein e<sup>A</sup><sub>&#956;</sub> has one of each type - it is the bridge between the two worlds!</p>"
                 ),
                 label="index-types"
             ),
@@ -454,8 +454,8 @@ class AppendixNVielbein(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The vielbein e^A_mu is a set of four orthonormal vector fields (in 4D). "
-                    "At each point x, the vectors e^A(x) for A = 0, 1, 2, 3 form an orthonormal "
+                    "The vielbein e<sup>A</sup><sub>&#956;</sub> is a set of four orthonormal vector fields (in 4D). "
+                    "At each point x, the vectors e<sup>A</sup>(x) for A = 0, 1, 2, 3 form an orthonormal "
                     "basis for the tangent space, satisfying:"
                 )
             ),
@@ -468,7 +468,7 @@ class AppendixNVielbein(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Here eta_AB is the Minkowski metric diag(+1, -1, -1, -1) in the flat tangent "
+                    "Here &#951;<sub>AB</sub> is the Minkowski metric diag(+1, &#8722;1, &#8722;1, &#8722;1) in the flat tangent "
                     "space. The vielbein 'solders' the flat tangent space to curved spacetime."
                 )
             ),
@@ -506,8 +506,8 @@ class AppendixNVielbein(SimulationBase):
                     "<h4>Counting Degrees of Freedom</h4>"
                     "<p>In 4D:</p>"
                     "<ul>"
-                    "<li>Metric g_munu: 10 independent components (symmetric 4x4)</li>"
-                    "<li>Vielbein e^A_mu: 16 components (general 4x4)</li>"
+                    "<li>Metric g<sub>&#956;&#957;</sub>: 10 independent components (symmetric 4&#215;4)</li>"
+                    "<li>Vielbein e<sup>A</sup><sub>&#956;</sub>: 16 components (general 4&#215;4)</li>"
                     "<li>Local Lorentz: 6 gauge freedoms (SO(1,3) rotations)</li>"
                     "<li>Net vielbein: 16 - 6 = 10 (matches metric!)</li>"
                     "</ul>"
@@ -524,7 +524,7 @@ class AppendixNVielbein(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The inverse vielbein E_A^mu allows us to go from curved to flat indices. "
+                    "The inverse vielbein E<sub>A</sub><sup>&#956;</sup> allows us to go from curved to flat indices. "
                     "It satisfies two completeness relations:"
                 )
             ),
@@ -545,7 +545,7 @@ class AppendixNVielbein(SimulationBase):
                 content=(
                     "Equation (N.3) says: sum over Lorentz indices gives identity in spacetime. "
                     "Equation (N.4) says: sum over spacetime indices gives identity in tangent space. "
-                    "These let us freely convert indices: V^A = e^A_mu V^mu and V^mu = E_A^mu V^A."
+                    "These let us freely convert indices: V<sup>A</sup> = e<sup>A</sup><sub>&#956;</sub> V<sup>&#956;</sup> and V<sup>&#956;</sup> = E<sub>A</sub><sup>&#956;</sup> V<sup>A</sup>."
                 )
             ),
 
@@ -559,7 +559,7 @@ class AppendixNVielbein(SimulationBase):
                 type="paragraph",
                 content=(
                     "When we have local Lorentz symmetry, we need a gauge field to define covariant "
-                    "derivatives. This gauge field is the spin connection omega^A_B_mu. It's "
+                    "derivatives. This gauge field is the spin connection &#969;<sup>A</sup><sub>B&#956;</sub>. It is "
                     "antisymmetric in the Lorentz indices (because the Lorentz algebra is antisymmetric):"
                 )
             ),
@@ -601,7 +601,7 @@ class AppendixNVielbein(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This is the <strong>first Cartan structure equation</strong> with T^A = 0. "
+                    "This is the <strong>first Cartan structure equation</strong> with T<sup>A</sup> = 0. "
                     "In components:"
                 )
             ),
@@ -614,7 +614,7 @@ class AppendixNVielbein(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This can be solved for omega in terms of e and its derivatives. The result "
+                    "This can be solved for &omega; in terms of e and its derivatives. The result "
                     "is sometimes called the 'Levi-Civita spin connection' or 'Ricci rotation coefficients'."
                 )
             ),
@@ -652,7 +652,7 @@ class AppendixNVielbein(SimulationBase):
                 type="paragraph",
                 content=(
                     "This is related to the usual Riemann tensor with spacetime indices by: "
-                    "R^rho_sigma_mu_nu = E_A^rho e^B_sigma R^A_B_mu_nu."
+                    "R<sup>&#961;</sup><sub>&#963;&#956;&#957;</sub> = E<sub>A</sub><sup>&#961;</sup> e<sup>B</sup><sub>&#963;</sub> R<sup>A</sup><sub>B&#956;&#957;</sub>."
                 )
             ),
 

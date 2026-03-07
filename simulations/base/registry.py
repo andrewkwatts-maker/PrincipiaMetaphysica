@@ -905,10 +905,10 @@ class PMRegistry:
 
             # Use 'id' as expected by website renderer (not 'section_id')
             # Determine order based on appendix flag
-            # v23.1: Special section ordering for non-numeric section_ids
+            # v24.2: Special section ordering for non-numeric section_ids
             SPECIAL_SECTION_ORDER = {
                 "validation": 8,     # After Discussion (7), before Appendices
-                "thermal-time": 1,   # With Foundations section
+                "thermal-time": 1.5, # After Foundations (1), before Methodology (2)
             }
 
             if s.appendix and s.subsection_id:

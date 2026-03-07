@@ -252,18 +252,18 @@ if SCHEMA_AVAILABLE:
                 subsection_id="3.1",
                 title="Fine Structure Constant from G2 Geometry",
                 abstract=(
-                    "The fine structure constant alpha is NOT a free parameter in PM. "
+                    "The fine structure constant α is NOT a free parameter in PM. "
                     "It emerges from the intersection topology of the 3-form and dual "
-                    "4-form on the G2 manifold, yielding alpha^-1 = 137.036 with zero adjustable parameters."
+                    "4-form on the G₂ manifold, yielding α<sup>−1</sup> = 137.036 with zero adjustable parameters."
                 ),
                 content_blocks=[
                     ContentBlock(
                         type="paragraph",
                         content=(
                             "In the Principia Metaphysica framework, the fine structure constant "
-                            "emerges as the topological coupling ratio - the geometric probability "
+                            "emerges as the topological coupling ratio -- the geometric probability "
                             "of a photon interacting with the 7D bulk. The derivation uses only "
-                            "the fixed topological anchors b3=24, k_gimel, and C_kaf."
+                            "the fixed topological anchors b₃ = 24, k<sub>ℷ</sub>, and C<sub>kaf</sub>."
                         )
                     ),
                     ContentBlock(
@@ -274,9 +274,9 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The derived value alpha^-1 = 137.036 matches the CODATA 2022 "
+                            "The derived value α<sup>−1</sup> = 137.036 matches the CODATA 2022 "
                             "experimental value to within 0.008%, demonstrating that "
-                            "electromagnetism is a structural property of the b3=24 G2 manifold."
+                            "electromagnetism is a structural property of the b₃ = 24 G₂ manifold."
                         )
                     )
                 ],

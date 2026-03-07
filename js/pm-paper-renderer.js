@@ -469,7 +469,7 @@
             if (!parentSection) continue;
 
             const displayNum = group.parent ? group.parent.id : majorNum;
-            const displayTitle = group.parent ? group.parent.title : `Section ${majorNum}`;
+            const displayTitle = group.parent ? (group.parent.title || `Section ${majorNum}`) : `Section ${majorNum}`;
 
             li.innerHTML = `
                 <a href="#section-${parentSection.id}" class="toc-link">
@@ -498,7 +498,7 @@
                     subLi.innerHTML = `
                         <a href="#section-${subsection.id}" class="toc-link">
                             <span class="toc-number">${subsection.id}</span>
-                            <span class="toc-title">${subsection.title}</span>
+                            <span class="toc-title">${subsection.title || ''}</span>
                         </a>
                     `;
                     subList.appendChild(subLi);
@@ -526,7 +526,7 @@
                 const appendixId = getAppendixId(appendix);
                 li.innerHTML = `
                     <a href="#section-${appendixId}" class="toc-link">
-                        <span class="toc-title">${appendix.title}</span>
+                        <span class="toc-title">${appendix.title || ''}</span>
                     </a>
                 `;
                 appendixList.appendChild(li);
@@ -699,7 +699,7 @@
         header.innerHTML = `
             <h2 class="section-title">
                 <span class="section-number">${sectionId}</span>
-                ${sectionTitle}
+                ${sectionTitle || ''}
             </h2>
         `;
         sectionDiv.appendChild(header);
@@ -708,7 +708,10 @@
         if (sectionAbstract) {
             const abstractDiv = document.createElement('div');
             abstractDiv.className = 'section-abstract';
-            abstractDiv.innerHTML = `<p>${sectionAbstract}</p>`;
+            const abstractText = typeof sectionAbstract === 'object'
+                ? JSON.stringify(sectionAbstract)
+                : String(sectionAbstract);
+            abstractDiv.innerHTML = `<p>${abstractText}</p>`;
             sectionDiv.appendChild(abstractDiv);
         }
 
@@ -808,7 +811,7 @@
         header.className = 'subsection-title';
         header.innerHTML = `
             <span class="subsection-number">${subsection.number || ''}</span>
-            ${subsection.title}
+            ${subsection.title || ''}
         `;
         subDiv.appendChild(header);
 
@@ -1800,6 +1803,13 @@
                     el.textContent = formatValue(value, format);
                     el.classList.add('pm-loaded');
                     el.classList.remove('pm-loading', 'pm-error');
+                } else if (!el.textContent.trim()) {
+                    // Mark as error only if there is no fallback text already present
+                    el.classList.add('pm-error');
+                    el.classList.remove('pm-loading');
+                    if (PaperRenderer._debug) {
+                        console.warn(`PMPaperRenderer: Parameter not found: ${path}`);
+                    }
                 }
             }
         });

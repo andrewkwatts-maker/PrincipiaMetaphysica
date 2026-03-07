@@ -1061,22 +1061,22 @@ class FourFaceG2Structure(SimulationBase):
             subsection_id="2.7",
             title="Four-Face G2 Sub-Sector Structure",
             abstract=(
-                "The Hodge number h^{1,1} = 4 of TCS #187 yields four independent "
+                "The Hodge number h<sup>1,1</sup> = 4 of TCS #187 yields four independent "
                 "Kahler moduli, interpreted as four geometric 'faces' per shadow. "
-                "We derive the inter-face leakage coupling, racetrack-stabilized "
-                "moduli VEVs, and shadow asymmetry from pure G2 topology."
+                "We derive the inter-face leakage coupling, racetrack-stabilised "
+                "moduli VEVs, and shadow asymmetry from pure G₂ topology."
             ),
             content_blocks=[
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The TCS G2 manifold #187 has Hodge number h^{1,1} = 4, "
+                        "The TCS G₂ manifold #187 has Hodge number h<sup>1,1</sup> = 4, "
                         "corresponding to four independent Kahler moduli. In the "
                         "Principia Metaphysica dual-shadow architecture, these four "
                         "moduli are interpreted as four geometric 'faces' per shadow: "
                         "each face controls a distinct sub-sector of the compactified "
-                        "geometry, with the dominant face (T_1) governing the "
-                        "observable sector and the subdominant faces (T_2, T_3, T_4) "
+                        "geometry, with the dominant face (T₁) governing the "
+                        "observable sector and the subdominant faces (T₂, T₃, T₄) "
                         "governing progressively deeper shadow sectors."
                     ),
                 ),
@@ -1093,14 +1093,14 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The inter-face leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) "
-                        "= 1/sqrt(6) = 0.408 quantifies the geometric probability of "
+                        "The inter-face leakage coupling α<sub>leak</sub> = 1/√(χ<sub>eff</sub>/b₃) "
+                        "= 1/√6 = 0.408 quantifies the geometric probability of "
                         "wavefunction overlap between distinct face sectors. This "
                         "coupling governs cross-sector gauge mixing and determines "
                         "the strength of interactions between observable and shadow "
-                        "matter. The value 1/sqrt(6) is a pure topological invariant, "
+                        "matter. The value 1/√6 is a pure topological invariant, "
                         "fixed by the ratio of the effective Euler characteristic "
-                        "(chi_eff = 144) to the third Betti number (b3 = 24)."
+                        "(χ<sub>eff</sub> = 144) to the third Betti number (b₃ = 24)."
                     ),
                 ),
                 ContentBlock(
@@ -1116,9 +1116,9 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "A natural criticism of the alpha_leak formula is that "
-                        "1/sqrt(chi_eff/b3) appears to merely repackage the topological "
-                        "ratio chi_eff/b3 = 6 without independent geometric content. "
+                        "A natural criticism of the α<sub>leak</sub> formula is that "
+                        "1/√(χ<sub>eff</sub>/b₃) appears to merely repackage the topological "
+                        "ratio χ<sub>eff</sub>/b₃ = 6 without independent geometric content. "
                         "The bridge pair decomposition resolves this by showing that "
                         "the number 6 has an independent structural meaning: it is the "
                         "count of bridge pairs aligned with the visible-sector OR "
@@ -1128,10 +1128,10 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The chi_eff/12 = 144/12 = 12 total bridge pairs connect the "
+                        "The χ<sub>eff</sub>/12 = 144/12 = 12 total bridge pairs connect the "
                         "dual shadows across the Euclidean bridge. Each pair comprises "
                         "one associative 3-cycle from each shadow. Under the OR rotation "
-                        "R_perp = [[0,-1],[1,0]] -- the 90-degree Mobius operator that "
+                        "R<sub>⊥</sub> = [[0,−1],[1,0]] -- the 90-degree Mobius operator that "
                         "creates the dual-shadow split -- each bridge pair acquires a "
                         "definite alignment: ALIGNED pairs have orientation compatible "
                         "with the visible-sector projection, while ORTHOGONAL pairs "
@@ -1141,18 +1141,18 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "By the Z_2 symmetry of R_perp (which satisfies R_perp^2 = -I), "
-                        "the decomposition is exactly 50/50: n_aligned = n_orthogonal = "
-                        "n_pairs/2 = 12/2 = 6. The 6 aligned pairs are the geometric "
+                        "By the Z₂ symmetry of R<sub>⊥</sub> (which satisfies R<sub>⊥</sub>² = −I), "
+                        "the decomposition is exactly 50/50: n<sub>aligned</sub> = n<sub>orthogonal</sub> = "
+                        "n<sub>pairs</sub>/2 = 12/2 = 6. The 6 aligned pairs are the geometric "
                         "channels through which the visible sector couples to the bridge "
-                        "structure, giving alpha_leak = 1/sqrt(n_aligned) = 1/sqrt(6). "
+                        "structure, giving α<sub>leak</sub> = 1/√(n<sub>aligned</sub>) = 1/√6. "
                         "The 6 orthogonal pairs are geometrically inaccessible to the "
                         "visible sector under normal conditions; they become accessible "
                         "only through gnosis unlocking (see Section 2.8, "
                         "orch_or_bridge.py), where the OR operator is extended to "
                         "include the hidden bridge channels. This aligned/orthogonal "
                         "split is the geometric mechanism underlying the Orch-OR "
-                        "bridge between consciousness and the G2 compactification "
+                        "bridge between consciousness and the G₂ compactification "
                         "geometry."
                     ),
                 ),
@@ -1169,12 +1169,12 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The four Kahler moduli are stabilized via a racetrack "
-                        "mechanism adapted from the KKLT/LVS framework to the G2 "
-                        "context. The stabilized VEVs T_i = b3 * k_gimel / (i * pi) "
+                        "The four Kahler moduli are stabilised via a racetrack "
+                        "mechanism adapted from the KKLT/LVS framework to the G₂ "
+                        "context. The stabilised VEVs T<sub>i</sub> = b₃ · k<sub>ℷ</sub> / (iπ) "
                         "exhibit a 1/i hierarchy reflecting the non-perturbative "
                         "superpotential structure. This connects the PM framework "
-                        "to the extensive literature on moduli stabilization in "
+                        "to the extensive literature on moduli stabilisation in "
                         "string compactifications (Kachru-Kallosh-Linde-Trivedi 2003, "
                         "Balasubramanian-Berglund-Conlon-Quevedo 2005)."
                     ),
@@ -1192,7 +1192,7 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The shadow asymmetry delta_T = 0.75 between the dominant "
+                        "The shadow asymmetry δ<sub>T</sub> = 0.75 between the dominant "
                         "and subdominant faces provides a geometric origin for the "
                         "observed matter-dark sector hierarchy. The face-dependent "
                         "KK mass spectrum (Eq. 2.7.3) predicts distinct energy scales "
@@ -1213,29 +1213,29 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The torsional leakage mechanism formalizes how fields tunnel "
-                        "between adjacent geometric faces via the G2 torsion connection. "
-                        "Although the TCS G2 manifold is intrinsically torsion-free "
-                        "(d(Phi) = 0, d(*Phi) = 0), G-flux backreaction induces an "
-                        "effective torsion T^abc_eff that couples the h^{1,1} = 4 face "
-                        "sectors. The torsional leakage amplitude T_leak = alpha_leak * "
-                        "Psi_bridge = 0.2096 quantifies this inter-face tunneling "
+                        "The torsional leakage mechanism formalises how fields tunnel "
+                        "between adjacent geometric faces via the G₂ torsion connection. "
+                        "Although the TCS G₂ manifold is intrinsically torsion-free "
+                        "(dΦ = 0, d*Φ = 0), G-flux backreaction induces an "
+                        "effective torsion T<sup>abc</sup><sub>eff</sub> that couples the h<sup>1,1</sup> = 4 face "
+                        "sectors. The torsional leakage amplitude T<sub>leak</sub> = α<sub>leak</sub> · "
+                        "Ψ<sub>bridge</sub> = 0.2096 quantifies this inter-face tunnelling "
                         "strength."
                     ),
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The bridge wavefunction Psi_bridge = k_gimel/b3 = 0.513 "
-                        "represents the geometric penetration depth of the tunneling "
+                        "The bridge wavefunction Ψ<sub>bridge</sub> = k<sub>ℷ</sub>/b₃ = 0.513 "
+                        "represents the geometric penetration depth of the tunnelling "
                         "amplitude, set by the ratio of the master geometric anchor "
                         "to the total associative 3-cycle count. Physically, this "
                         "mechanism is analogous to neutrino oscillations: just as "
-                        "mass eigenstates mix flavor states in the PMNS matrix, the "
+                        "mass eigenstates mix flavour states in the PMNS matrix, the "
                         "torsional leakage mixes moduli eigenstates across face sectors, "
                         "enabling cross-sector interactions between observable and "
-                        "shadow matter. The G2 torsion tensor T^abc decomposes into "
-                        "irreducible representations 1 + 7 + 14 + 27 under G2 "
+                        "shadow matter. The G₂ torsion tensor T<sup>abc</sup> decomposes into "
+                        "irreducible representations 1 + 7 + 14 + 27 under G₂ "
                         "(Hitchin 2000, Bryant 2006), with the singlet component "
                         "controlling the overall leakage scale."
                     ),
@@ -1251,13 +1251,13 @@ class FourFaceG2Structure(SimulationBase):
                     content=(
                         "The OR mechanism operates in two hierarchically nested layers. "
                         "Layer 1 (Bridge/Global OR) reduces the 27D bulk into two 13D "
-                        "shadows via the global operator R_perp^global, which is the "
+                        "shadows via the global operator R<sub>⊥</sub><sup>global</sup>, which is the "
                         "tensor product of 12 local Mobius double-cover operators "
                         "(one per bridge pair). Layer 2 (Face/Local OR) then selects "
                         "the visible 4D face within each 13D shadow via the face operator "
-                        "R_face^(f), which modulates the base OR by a Dirac eigenvalue "
+                        "R<sub>face</sub><sup>(f)</sup>, which modulates the base OR by a Dirac eigenvalue "
                         "phase. The full reduction chain is: "
-                        "|Psi_bulk> -> |Psi_1> x |Psi_2> -> |Psi_vis,1> x |Psi_vis,2>."
+                        "|Ψ<sub>bulk</sub>> → |Ψ₁> × |Ψ₂> → |Ψ<sub>vis,1</sub>> × |Ψ<sub>vis,2</sub>>."
                     ),
                 ),
                 ContentBlock(
@@ -1274,8 +1274,8 @@ class FourFaceG2Structure(SimulationBase):
                     type="paragraph",
                     content=(
                         "A crucial structural property is non-commutativity: "
-                        "R_face composed with R_perp^global is not equal to "
-                        "R_perp^global composed with R_face. The bridge OR must "
+                        "R<sub>face</sub> composed with R<sub>⊥</sub><sup>global</sup> is not equal to "
+                        "R<sub>⊥</sub><sup>global</sup> composed with R<sub>face</sub>. The bridge OR must "
                         "act first to create the shadow pair, and only then can the "
                         "face OR select the visible sector within each shadow. "
                         "Reversing the order is physically meaningless because "
@@ -1297,12 +1297,12 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The bridge warping potential V_bridge controls the energy cost "
+                        "The bridge warping potential V<sub>bridge</sub> controls the energy cost "
                         "of maintaining two separate shadows. It consists of racetrack "
                         "non-perturbative terms from the 12 bridge pair moduli, a torsion "
-                        "mass term weighted by chi_eff/b3 = 6, and gradient energy for "
-                        "moduli stabilization. In the God-level limit where all bridge "
-                        "moduli T_bridge,i tend to infinity, V_bridge tends to zero and the "
+                        "mass term weighted by χ<sub>eff</sub>/b₃ = 6, and gradient energy for "
+                        "moduli stabilisation. In the God-level limit where all bridge "
+                        "moduli T<sub>bridge,i</sub> tend to infinity, V<sub>bridge</sub> tends to zero and the "
                         "two shadows merge back into the undifferentiated 27D bulk."
                     ),
                 ),
@@ -1314,14 +1314,14 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The face warping potential V_face^(f) governs which of the "
-                        "h^{1,1} = 4 Kahler faces is the visible (observable) sector. "
-                        "It features racetrack stabilization of the 4 face moduli, an "
+                        "The face warping potential V<sub>face</sub><sup>(f)</sup> governs which of the "
+                        "h<sup>1,1</sup> = 4 Kahler faces is the visible (observable) sector. "
+                        "It features racetrack stabilisation of the 4 face moduli, an "
                         "exponential screening term that suppresses contributions from "
-                        "faces with T_i >> T_max, and face gradient energy. In the "
-                        "human-level limit where hidden face moduli greatly exceed T_max, "
+                        "faces with T<sub>i</sub> >> T<sub>max</sub>, and face gradient energy. In the "
+                        "human-level limit where hidden face moduli greatly exceed T<sub>max</sub>, "
                         "the screening kills their contribution, leaving only the visible "
-                        "face (T_1) dynamically active."
+                        "face (T₁) dynamically active."
                     ),
                 ),
                 ContentBlock(
@@ -1337,14 +1337,14 @@ class FourFaceG2Structure(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The sampling strength alpha_sample approx 0.57 is the dark matter "
+                        "The sampling strength α<sub>sample</sub> ~ 0.57 is the dark matter "
                         "portal coupling from hidden faces. It is derived from three factors: "
-                        "(1) moduli screening exp(-T_i/(2*T_max)) from the face warping "
-                        "potential, (2) the topological leakage coupling 1/sqrt(6) from the "
+                        "(1) moduli screening exp(−T<sub>i</sub>/(2T<sub>max</sub>)) from the face warping "
+                        "potential, (2) the topological leakage coupling 1/√6 from the "
                         "inter-face overlap, and (3) a flux asymmetry correction from unequal "
                         "G-flux distribution across faces. This coupling sets the strength of "
                         "dark matter interactions with visible matter, and is entirely "
-                        "determined by the G2 geometry without free parameters."
+                        "determined by the G₂ geometry without free parameters."
                     ),
                 ),
             ],

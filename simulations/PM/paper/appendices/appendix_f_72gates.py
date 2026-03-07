@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix F: The Gates of Integrity
+PRINCIPIA METAPHYSICA v24.2 - Appendix F: The Gates of Integrity
 ====================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: Complete Gate framework for geometric auditing.
+v24.2 STERILE MODEL: Complete Gate framework for geometric auditing.
 
 The Gates represent the transition from "soft checks" (42 Certificates)
 to "hard locks" that seal the manifold against any mathematical deviation.
@@ -1640,8 +1640,8 @@ class Appendix72Gates(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_f_72gates_v23_1",
-            version="23.1",
+            id="appendix_f_72gates_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix F: The Gates of Integrity",
             description="Complete sterile certification framework with hard locks",
@@ -1716,7 +1716,7 @@ class Appendix72Gates(SimulationBase):
                     "<tr><td>B: Torsion Cage</td><td>G13-G24</td><td>Pin Alignment</td><td>24-pin orthogonality</td></tr>"
                     "<tr><td>C: Gauge Sector</td><td>G25-G36</td><td>Force Unification</td><td>αs, αw, αe ratio stability</td></tr>"
                     "<tr><td>D: Residue Bank</td><td>G37-G48</td><td>Matter Identity</td><td>125 masses & mixing angles</td></tr>"
-                    "<tr><td>E: Metric Sector</td><td>G49-G60</td><td>Spacetime Anchor</td><td>G, Λ, H0, w0 projection tax</td></tr>"
+                    "<tr><td>E: Metric Sector</td><td>G49-G60</td><td>Spacetime Anchor</td><td>G, Λ, H₀, w₀ projection tax</td></tr>"
                     "<tr><td>F: Omega Closure</td><td>G61-G72</td><td>Recursive Parity</td><td>Entropy, bit-parity, 26D restoration</td></tr>"
                     "</table>"
                 ),
@@ -2005,7 +2005,7 @@ if __name__ == "__main__":
     sim = Appendix72Gates()
 
     print("=" * 70)
-    print("GATE INTEGRITY AUDIT - v23.1 STERILE MODEL")
+    print("GATE INTEGRITY AUDIT - v24.2 STERILE MODEL")
     print("=" * 70)
 
     results = sim.run(registry)

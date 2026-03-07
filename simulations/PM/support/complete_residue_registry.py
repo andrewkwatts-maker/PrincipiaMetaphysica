@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Complete Spectral Decomposition v23.1
+Complete Spectral Decomposition v24.2
 ======================================
 
 Registry of 125 spectral residues from the G₂ manifold Laplace-Beltrami operator.
@@ -638,7 +638,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 "Catalogues 125 PM-derived spectral residues from the G₂ manifold "
                 "Laplace-Beltrami operator and maps each eigenvalue to its physical "
                 "interpretation (particle masses, mixing angles, couplings, cosmological "
-                "parameters) under v23.1 M^{27}(24,1,2) dual-shadow framework. Registry entries "
+                "parameters) under v24.2 M^{27}(24,1,2) dual-shadow framework. Registry entries "
                 "include PDG/NuFIT reference values for orientation but are not "
                 "independent experimental fits."
             ),

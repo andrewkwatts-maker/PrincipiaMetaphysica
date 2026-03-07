@@ -410,9 +410,9 @@ class GeometricAnchorsSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Gimel constant k_gimel encodes the warping between the "
+                        "The Gimel constant k<sub>ℷ</sub> encodes the warping between the "
                         "26D string frame and the 4D Einstein frame. It combines the "
-                        "purely topological b3/2 with the transcendental 1/π factor."
+                        "purely topological b₃/2 with the transcendental 1/π factor."
                     )
                 ),
                 ContentBlock(
@@ -450,11 +450,11 @@ class GeometricAnchorsSimulation(SimulationBase):
                     callout_type="info",
                     title="Consistency Check",
                     content=(
-                        "The spectral index n_s = 1 - 2/55 = 0.9636 from the geometric "
-                        "anchor derivation is within 0.3 sigma of Planck 2018 "
-                        "(0.9649 +/- 0.0042). This represents a non-trivial consistency "
-                        "check: the golden-modulated e-fold count N_eff = chi_eff/phi^2 = 55 "
-                        "is derived purely from G2 topology, not fitted to CMB data."
+                        "The spectral index n<sub>s</sub> = 1 − 2/55 = 0.9636 from the geometric "
+                        "anchor derivation is within 0.3σ of Planck 2018 "
+                        "(0.9649 ± 0.0042). This represents a non-trivial consistency "
+                        "check: the golden-modulated e-fold count N<sub>eff</sub> = χ<sub>eff</sub>/φ² = 55 "
+                        "is derived purely from G₂ topology, not fitted to CMB data."
                     )
                 ),
                 ContentBlock(
@@ -483,29 +483,29 @@ class GeometricAnchorsSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Hodge number h^{1,1} = 4 of TCS #187 corresponds to four independent "
+                        "The Hodge number h<sup>1,1</sup> = 4 of TCS #187 corresponds to four independent "
                         "Kahler moduli, interpreted as four geometric 'faces' per shadow in the "
                         "dual-shadow architecture. In the TCS (Twisted Connected Sum) construction, "
-                        "h^{1,1} = b2 counts the independent 2-cycles arising from the K3 matching "
+                        "h<sup>1,1</sup> = b₂ counts the independent 2-cycles arising from the K3 matching "
                         "fibres of the Kovalev gluing. Each 2-cycle controls a distinct K3 fibre, and "
-                        "the corresponding Kahler modulus T_i determines the volume of that cycle. "
+                        "the corresponding Kahler modulus T<sub>i</sub> determines the volume of that cycle. "
                         "The four faces are not an arbitrary decomposition but a direct consequence "
                         "of the TCS topology: each face corresponds to a K3 matching fibre sector "
-                        "with its own racetrack-stabilized VEV."
+                        "with its own racetrack-stabilised VEV."
                     )
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The inter-face leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) "
+                        "The inter-face leakage coupling α<sub>leak</sub> = 1/√(χ<sub>eff</sub>/b₃) = 1/√6 "
                         "= 0.408 quantifies the geometric probability of wavefunction overlap between "
-                        "distinct face sectors. The ratio chi_eff/b3 = 144/24 = 6 counts the average "
+                        "distinct face sectors. The ratio χ<sub>eff</sub>/b₃ = 144/24 = 6 counts the average "
                         "number of associative 3-cycles per Kahler modulus sector; its inverse square "
-                        "root gives the tunneling amplitude. The torsional leakage mechanism "
-                        "T_leak = alpha_leak * Psi_bridge (where Psi_bridge = k_gimel/b3) formalizes "
-                        "how the G2 torsion tensor mediates cross-face field propagation. "
+                        "root gives the tunnelling amplitude. The torsional leakage mechanism "
+                        "T<sub>leak</sub> = α<sub>leak</sub> · Ψ<sub>bridge</sub> (where Ψ<sub>bridge</sub> = k<sub>ℷ</sub>/b₃) formalises "
+                        "how the G₂ torsion tensor mediates cross-face field propagation. "
                         "See the four_face_g2_structure simulation (Section 2.7) for the complete "
-                        "derivation of racetrack-stabilized moduli VEVs, shadow asymmetry, and "
+                        "derivation of racetrack-stabilised moduli VEVs, shadow asymmetry, and "
                         "face-dependent KK mass spectrum."
                     )
                 ),

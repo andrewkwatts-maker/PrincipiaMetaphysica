@@ -511,27 +511,27 @@ class S8SuppressionV16(SimulationBase):
         return SectionContent(
             section_id="5",
             subsection_id="5.4",
-            title="S8 Tension Analysis with Dynamical Dark Energy",
+            title="S₈ Tension Analysis with Dynamical Dark Energy",
             abstract=(
-                "The S8 ≡ σ8 × (Ωm/0.3)^0.5 tension between CMB (Planck: 0.832±0.013) "
-                "and weak lensing surveys (KiDS-1000: 0.766±0.020, DES Y3: 0.776±0.017) "
+                "The S₈ \u2261 \u03c3₈ \u00d7 \u221a(\u03a9_m/0.3) tension between CMB (Planck: 0.832 \u00b1 0.013) "
+                "and weak lensing surveys (KiDS-1000: 0.766 \u00b1 0.020, DES Y3: 0.776 \u00b1 0.017) "
                 "is a significant challenge for ΛCDM cosmology. We analyze PM's prediction "
-                "for S8 given dynamical dark energy with w₀ = -1 + 1/b₃ = -23/24 and DESI 2025's"
-                "σ8 = 0.827 ± 0.011. PM predicts S8 ≈ 0.837, intermediate between Planck "
+                "for S₈ given dynamical dark energy with w₀ = -1 + 1/b₃ = -23/24 and DESI 2025's "
+                "\u03c3₈ = 0.827 \u00b1 0.011. PM predicts S₈ \u2248 0.837, intermediate between Planck "
                 "and weak lensing, representing the integrated expansion history with "
                 "time-evolving dark energy."
             ),
             content_blocks=[
                 ContentBlock(
                     type="heading",
-                    content="The S8 Tension",
+                    content="The S₈ Tension",
                     level=3
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The S8 parameter quantifies the amplitude of matter clustering "
-                        "at 8 h⁻¹ Mpc scales, weighted by the matter density:"
+                        "The S₈ parameter quantifies the amplitude of matter clustering "
+                        "at 8 h\u207b\u00b9 Mpc scales, weighted by the matter density:"
                     )
                 ),
                 ContentBlock(
@@ -543,8 +543,8 @@ class S8SuppressionV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "CMB observations (Planck) infer S8 from early-universe physics "
-                        "by evolving initial density perturbations forward to z=0. Weak "
+                        "CMB observations (Planck) infer S₈ from early-universe physics "
+                        "by evolving initial density perturbations forward to z = 0. Weak "
                         "lensing surveys (KiDS, DES) directly measure late-time matter "
                         "distribution. The discrepancy suggests either systematic errors "
                         "or new physics affecting structure growth."
@@ -559,7 +559,7 @@ class S8SuppressionV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "PM's dark energy with w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 (derived geometrically in Section 5.2) "
-                        "and w_a ≈ 0.29 evolves according to w(a) = w₀ + w_a(1-a). At high redshift (small a), "
+                        "and wₐ ≈ 0.29 evolves according to w(a) = w₀ + wₐ(1-a). At high redshift (small a), "
                         "w becomes more negative, approaching phantom-like behavior. This "
                         "affects the integrated expansion history and growth rate:"
                     )
@@ -598,9 +598,9 @@ class S8SuppressionV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The growth factor at z~0.5 (typical weak lensing redshift) is "
-                        "nearly identical to ΛCDM (β ≈ 0.994), with the growth index "
-                        "γ_PM ≈ 0.550 compared to γ_ΛCDM ≈ 0.550. The primary difference "
+                        "The growth factor at z \u2248 0.5 (typical weak lensing redshift) is "
+                        "nearly identical to \u039bCDM (\u03b2 \u2248 0.994), with the growth index "
+                        "\u03b3_PM \u2248 0.550 compared to \u03b3_\u039bCDM \u2248 0.550. The primary difference "
                         "comes from the time-integrated expansion history rather than the "
                         "instantaneous growth rate."
                     )
@@ -613,7 +613,7 @@ class S8SuppressionV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "Using DESI 2025's σ8 = 0.827 ± 0.011 and Ωm = 0.3069 ± 0.0050, "
+                        "Using DESI 2025's \u03c3₈ = 0.827 \u00b1 0.011 and \u03a9_m = 0.3069 \u00b1 0.0050, "
                         "we predict:"
                     )
                 ),
@@ -625,25 +625,25 @@ class S8SuppressionV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="table",
-                    headers=["Survey", "S8 Measured", "sigma from Planck", "sigma from PM", "PM Position"],
+                    headers=["Survey", "S₈ Measured", "\u03c3 from Planck", "\u03c3 from PM", "PM Position"],
                     rows=[
-                        ["Planck 2018", "0.832 +/- 0.013", "--", "0.4 sigma", "Slightly high"],
-                        ["KiDS-1000", "0.766 +/- 0.020", "3.3 sigma low", "3.5 sigma high", "Between"],
-                        ["DES Y3", "0.776 +/- 0.017", "3.3 sigma low", "3.6 sigma high", "Between"],
-                        ["HSC-Y3", "0.769 +/- 0.032", "2.0 sigma low", "2.0 sigma high", "Between"],
-                        ["DESI sigma8 (input)", "0.827 +/- 0.011", "0.5 sigma low", "Used", "Consistent"],
+                        ["Planck 2018", "0.832 \u00b1 0.013", "\u2014", "0.4\u03c3", "Slightly high"],
+                        ["KiDS-1000", "0.766 \u00b1 0.020", "3.3\u03c3 low", "3.5\u03c3 high", "Between"],
+                        ["DES Y3", "0.776 \u00b1 0.017", "3.3\u03c3 low", "3.6\u03c3 high", "Between"],
+                        ["HSC-Y3", "0.769 \u00b1 0.032", "2.0\u03c3 low", "2.0\u03c3 high", "Between"],
+                        ["DESI \u03c3₈ (input)", "0.827 \u00b1 0.011", "0.5\u03c3 low", "Used", "Consistent"],
                     ]
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "PM's S8 = 0.837 +/- 0.014 (combining sigma_8 and Omega_m uncertainties "
-                        "in quadrature: delta_S8^2 ~ (0.011)^2 + (0.008)^2) lies between "
-                        "Planck's high value (0.832) and weak lensing's low values (0.766-0.776). "
-                        "The PM growth suppression of ~0.6% (beta ~ 0.994) is well below the "
-                        "~1.7% statistical uncertainty, making PM indistinguishable from LCDM "
+                        "PM's S₈ = 0.837 \u00b1 0.014 (combining \u03c3₈ and \u03a9_m uncertainties "
+                        "in quadrature: \u03b4S₈\u00b2 \u2248 (0.011)\u00b2 + (0.008)\u00b2) lies between "
+                        "Planck's high value (0.832) and weak lensing's low values (0.766\u20130.776). "
+                        "The PM growth suppression of ~0.6% (\u03b2 \u2248 0.994) is well below the "
+                        "~1.7% statistical uncertainty, making PM indistinguishable from \u039bCDM "
                         "with current data. Stage-IV surveys (Rubin/LSST, Euclid, Roman) "
-                        "will reduce S8 uncertainty to ~0.005, potentially resolving this."
+                        "will reduce S₈ uncertainty to ~0.005, potentially resolving this."
                     )
                 ),
                 ContentBlock(
@@ -651,26 +651,26 @@ class S8SuppressionV16(SimulationBase):
                     callout_type="warning",
                     title="Systematic Uncertainties",
                     content=(
-                        "Weak lensing S8 measurements are subject to systematic uncertainties "
+                        "Weak lensing S₈ measurements are subject to systematic uncertainties "
                         "from: (i) baryonic feedback on small-scale power spectrum, (ii) "
                         "intrinsic galaxy alignments not from lensing, (iii) photometric "
                         "redshift bias, and (iv) shear calibration multiplicative bias. "
-                        "These systematics may account for part of the S8 tension; the "
+                        "These systematics may account for part of the S₈ tension; the "
                         "KiDS-1000, DES Y3, and HSC-Y3 teams are actively quantifying them."
                     )
                 ),
                 ContentBlock(
                     type="callout",
                     callout_type="info",
-                    title="S8 Tension Status",
+                    title="S₈ Tension Status",
                     content=(
-                        "PM's w0 = -1 + 1/b3 = -23/24 gives S8 ~ 0.837 +/- 0.014, intermediate "
+                        "PM's w₀ = -1 + 1/b₃ = -23/24 gives S₈ \u2248 0.837 \u00b1 0.014, intermediate "
                         "between Planck (0.832) and weak lensing (0.77). The 0.6% growth "
-                        "suppression from LCDM is too small to resolve the ~8% weak lensing "
+                        "suppression from \u039bCDM is too small to resolve the ~8% weak lensing "
                         "discrepancy given current error bars (~1.7%). Stage-IV surveys will "
                         "reach ~0.6% precision, enabling a definitive test. Future work: "
-                        "(1) neutrino mass effects (sum m_nu ~ 0.06 eV from PM prediction), "
-                        "(2) early dark energy contributions from w_a ~ 0.29, "
+                        "(1) neutrino mass effects (\u03a3m_\u03bd \u2248 0.06 eV from PM prediction), "
+                        "(2) early dark energy contributions from w\u2090 \u2248 0.29, "
                         "(3) systematic error reduction in KiDS, DES, HSC, Euclid."
                     )
                 ),

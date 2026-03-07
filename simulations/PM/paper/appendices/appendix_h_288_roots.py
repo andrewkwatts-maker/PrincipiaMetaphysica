@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix H: The 288-Root Basis
+PRINCIPIA METAPHYSICA v24.2 - Appendix H: The 288-Root Basis
 ==============================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: The 288 Ancestral Roots and 24 Shadow Torsion.
+v24.2 STERILE MODEL: The 288 Ancestral Roots and 24 Shadow Torsion.
 
 This appendix provides the mathematical foundation proving that the 125
 observable residues are derived from a 288-generator symmetry in the 26D bulk.
@@ -77,8 +77,8 @@ class AppendixH288Roots(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_h_288_roots_v16_2",
-            version="23.1",
+            id="appendix_h_288_roots_v24_2",
+            version="24.2",
             domain="appendices",
             title="Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
             description=(
@@ -350,7 +350,7 @@ class AppendixH288Roots(SimulationBase):
                 type="paragraph",
                 content=(
                     "The factor of 4 reflects the quaternionic polarization structure inherent to G2 holonomy. "
-                    "This 144 directly determines the generation count via the index theorem: n_gen = χ<sub>eff</sub> / (4·b₃) = 144/48 = 3, "
+                    "This 144 directly determines the generation count via the index theorem: n<sub>gen</sub> = χ<sub>eff</sub> / (4·b₃) = 144/48 = 3, "
                     "providing a geometric derivation of the three fermion families with zero free parameters."
                 )
             ),
@@ -616,12 +616,12 @@ class AppendixH288Roots(SimulationBase):
                 plain_text="chi_pressure = b3^2 / 4 = 24^2 / 4 = 576/4 = 144",
                 category="GEOMETRIC",
                 description=(
-                    "Pressure divisor formula relating the Betti number b3 to the effective Euler "
-                    "characteristic χ<sub>eff</sub> through geometric pressure. The factor of 4 arises from "
+                    "Pressure divisor formula relating the Betti number b₃ to the effective Euler "
+                    "characteristic χ_eff through geometric pressure. The factor of 4 arises from "
                     "the quaternionic structure of the G2 holonomy manifold (4 real polarizations "
                     "per complex plane). This 144 represents the dual-shadow total Euler characteristic "
-                    "(72 per shadow × 2 shadows), and also appears as the mephorash_chi parameter "
-                    "governing fermion generation count: n_gen = χ<sub>eff</sub> / (4·b3) = 144/48 = 3."
+                    "(72 per shadow x 2 shadows), and also appears as the mephorash_chi parameter "
+                    "governing fermion generation count: n_gen = χ_eff / (4 b₃) = 144/48 = 3."
                 ),
                 input_params=["topology.elder_kads"],
                 output_params=["topology.pressure_divisor"],

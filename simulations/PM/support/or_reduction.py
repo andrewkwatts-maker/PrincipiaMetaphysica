@@ -293,10 +293,10 @@ class ORReductionV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The OR operator R_perp performs a 90-degree counter-clockwise "
+                        "The OR operator R<sub>⊥</sub> performs a 90-degree counter-clockwise "
                         "rotation in the bridge plane, mapping normal shadow coordinates "
-                        "to their mirror view. Geometrically, R_perp sends (x, y) to "
-                        "(-y, x): the x-axis maps to the y-axis and the y-axis maps to "
+                        "to their mirror view. Geometrically, R<sub>⊥</sub> sends (x, y) to "
+                        "(−y, x): the x-axis maps to the y-axis and the y-axis maps to "
                         "the negative x-axis. This is the simplest non-trivial rotation "
                         "that swaps the two bridge coordinates while preserving the "
                         "Euclidean metric:"
@@ -339,11 +339,11 @@ class ORReductionV21(SimulationBase):
                     callout_type="info",
                     title="Geometric Picture",
                     content=(
-                        "R_perp acts on bridge coordinates as: (1,0) -> (0,1), "
-                        "(0,1) -> (-1,0), (1,1) -> (-1,1). Every vector rotates "
+                        "R<sub>⊥</sub> acts on bridge coordinates as: (1,0) → (0,1), "
+                        "(0,1) → (−1,0), (1,1) → (−1,1). Every vector rotates "
                         "exactly 90 degrees counter-clockwise. The key property "
-                        "det(R_perp) = +1 ensures orientation preservation, while "
-                        "R_perp^2 = -I (not +I) means the rotation is a square root "
+                        "det(R<sub>⊥</sub>) = +1 ensures orientation preservation, while "
+                        "R<sub>⊥</sub>² = −I (not +I) means the rotation is a square root "
                         "of negation, not identity -- this is the algebraic origin "
                         "of the spinor double-cover in bridge geometry."
                     )
@@ -351,7 +351,7 @@ class ORReductionV21(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The Mobius property R_perp^2 = -I ensures spinor "
+                        "The Mobius property R<sub>⊥</sub>² = −I ensures spinor "
                         "double-cover: one loop flips, two loops return identity."
                     )
                 ),

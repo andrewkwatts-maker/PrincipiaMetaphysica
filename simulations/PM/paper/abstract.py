@@ -1,18 +1,18 @@
 """
-PRINCIPIA METAPHYSICA v23.1 - Abstract
+PRINCIPIA METAPHYSICA v24.2 - Abstract
 ======================================
 
 DOI: 10.5281/zenodo.18079602
 
 Licensed under the MIT License. See LICENSE file for details.
 
-v23.1: M^{27}(24,1,2) structure with S^(2,0) sampler data fields.
+v24.2: M^{27}(24,1,2) structure with S^(2,0) sampler data fields.
        4096-component Primordial Spinor Field from Cl(26,1).
        Dual 13D(12,1) shadows with OR reduction operator R_perp.
 
 Provides section content for the Abstract (Section 0).
 
-This simulation provides the abstract narrative for Principia Metaphysica v23.1,
+This simulation provides the abstract narrative for Principia Metaphysica v24.2,
 the M^{27}(24,1,2) dual-shadow framework with Euclidean bridge where 125 physical
 constants are proposed to emerge as spectral residues of G2 manifold compactification. It does
 not compute physics parameters, but instead generates the narrative content and
@@ -20,7 +20,7 @@ cross-references for the paper's abstract section.
 
 SECTION: 0 (Abstract)
 
-v24.1 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
+v24.2 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
 
 OUTPUTS:
     - abstract.total_constants (125)
@@ -57,7 +57,7 @@ if TYPE_CHECKING:
 
 class AbstractV17_2(SimulationBase):
     """
-    Abstract section (Section 0) for Principia Metaphysica v23.1.
+    Abstract section (Section 0) for Principia Metaphysica v24.2.
 
     This simulation provides the abstract narrative content that summarizes
     the M^{27}(24,1,2) dual-shadow framework with Euclidean bridge. It describes
@@ -81,10 +81,10 @@ class AbstractV17_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="abstract_v17_2",
-            version="23.1",
+            version="24.2",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v23.1 M^{27}(24,1,2) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification with EDOF=3 (3 geometric seeds)",
+            description="Paper abstract for Principia Metaphysica v24.2 M^{27}(24,1,2) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification with EDOF=3 (3 geometric seeds)",
             section_id="0",
             subsection_id=None
         )
@@ -166,10 +166,10 @@ class AbstractV17_2(SimulationBase):
 
         return {
             # Framework version parameters (dynamic versioning system)
-            "framework.version":               "23.1",    # Full version number
-            "framework.version_major":         "23",      # Major version only
-            "framework.version_label":         "v23.1",   # Formatted with 'v' prefix
-            "framework.version_major_label":   "v23",     # Formatted major version
+            "framework.version":               "24.2",    # Full version number
+            "framework.version_major":         "24",      # Major version only
+            "framework.version_label":         "v24.2",   # Formatted with 'v' prefix
+            "framework.version_major_label":   "v24",     # Formatted major version
             # Framework summary counts
             "abstract.total_constants":        125,  # DERIVED: visible_sector = 5^3 from V₇ spectral decomposition
             "abstract.pure_predictions":       55,
@@ -191,7 +191,7 @@ class AbstractV17_2(SimulationBase):
             "abstract.tau_p_display":          round(tau_p / 1e34, 1),         # 4.8
             "abstract.tau_p_bound_display":    round(tau_p_bound / 1e34, 2),   # 1.67
             # Dark force leakage probability
-            "abstract.dark_force_pleak":       6.9e-6,
+            "abstract.dark_force_pleak":       "6.9\u00d710\u207b\u2076",
             # Alpha^-1 comparison values (echoed for display spans)
             "abstract.alpha_inv_pred":         round(alpha_inv_p, 4),          # 137.0367
             "abstract.alpha_inv_codata":       round(alpha_inv_c, 4),          # 137.036
@@ -238,7 +238,7 @@ class AbstractV17_2(SimulationBase):
                 content=(
                     'The framework achieves <strong>116:1 compression ratio</strong> (125 constants from 3 geometric seeds). '
                     'Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. '
-                    '<strong><span class="pm-value" data-pm-value="abstract.pure_predictions">55</span> parameters are pure predictions</strong>; <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds '
+                    '<strong><span class="pm-value" data-pm-value="abstract.pure_predictions">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds '
                     '(VEV coefficient <span class="pm-value" data-pm-value="abstract.vev_coefficient">1.5859</span>, 1/\u03b1<sub>GUT</sub> coefficient 1/(10\u03c0) \u2248 <span class="pm-value" data-pm-value="abstract.alpha_gut_coefficient">0.0318</span>, '
                     'Re(T) = 7.086 from Higgs mass). Two PMNS parameters (\u03b8\u2081\u2083, \u03b4<sub>CP</sub>) '
                     'are fitted to NuFIT 6.0 pending explicit Yukawa calculation.'
@@ -256,7 +256,7 @@ class AbstractV17_2(SimulationBase):
                     'data (see Section 3 for full comparison table), with '
                     '<strong><span class="pm-value" data-pm-value="validation.exact_matches">3</span> within '
                     '0.1\u03c3 of experimental central values</strong> (within theory uncertainty), including the fine structure '
-                    'constant \u03b1<sup>\u22121</sup> = <span class="pm-value" data-pm-value="abstract.alpha_inv_pred">137.0367</span> (\u03b1<sup>\u22121</sup><sub>pred</sub> vs CODATA 2018: <span class="pm-value" data-pm-value="abstract.alpha_inv_codata">137.036</span>; '
+                    'constant \u03b1<sup>\u22121</sup> = <span class="pm-value" data-pm-value="abstract.alpha_inv_pred">137.0367</span> (\u03b1<sup>\u22121</sup><sub>pred</sub> vs CODATA 2022: <span class="pm-value" data-pm-value="abstract.alpha_inv_codata">137.036</span>; '
                     '~<span class="pm-value" data-pm-value="abstract.alpha_inv_theory_sigma">0.05</span>\u03c3 theory-level comparison\u2014note: CODATA experimental precision is sub-ppb) and '
                     '\u03b8\u2082\u2083 = <span class="pm-value" data-pm-value="pmns_matrix.theta_23">49.75</span>\u00b0 '
                     '(from G\u2082 holonomy SU(3) symmetry; NuFIT 6.0 IO: <span class="pm-value" data-pm-value="abstract.theta23_io_central">49.3</span>\u00b0, <span class="pm-value" data-pm-value="abstract.theta23_sigma_io">0.45</span>\u03c3). '
@@ -277,7 +277,7 @@ class AbstractV17_2(SimulationBase):
                 content=(
                     '<strong>Topologically Anchored Framework (116:1 Compression)</strong>: '
                     'We frame this derivation through the lens of Minimal Description Length (MDL). '
-                    'The 125 observed constants represent the most efficient topological compression of the M\u2082\u2087 bulk, '
+                    'The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, '
                     'achieved with <strong>EDOF=3</strong> (3 geometric seeds: b\u2083, \u03c6, \u03b8\u2081\u2083). '
                     'The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits \u2192 69 bits), '
                     'demonstrating this is information reduction rather than parameter fitting. '
@@ -310,7 +310,7 @@ class AbstractV17_2(SimulationBase):
                     'multi-component dark matter with portal coupling \u03b1<sub>leak</sub> = 1/\u221a6 \u2248 <span class="pm-value" data-pm-value="geometry.alpha_leak">0.408</span> derived from G\u2082 volume ratio '
                     '(6 = 12/2 aligned bridge pairs under OR rotation). '
                     'Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, '
-                    'EM and gravity at P<sub>leak</sub> \u2248 <span class="pm-value" data-pm-value="abstract.dark_force_pleak">6.9e-6</span>.'
+                    'EM and gravity at P<sub>leak</sub> ≈ <span class="pm-value" data-pm-value="abstract.dark_force_pleak">6.9×10⁻⁶</span>.'
                 ),
                 label="abstract-two-layer-or"
             ),
@@ -321,7 +321,7 @@ class AbstractV17_2(SimulationBase):
                     '<strong>The Principia Metric</strong>: '
                     'Finally, we present a definitive, falsifiable prediction: the existence of a '
                     'topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = <span class="pm-value" data-pm-value="alp.mass_meV">3.51</span> meV. '
-                    'This "Principia Metric" emerges as an unavoidable consequence of the vacuum residue of the M\u00b2\u2077 \u2192 M\u2074 projection '
+                    'This "Principia Metric" emerges as an unavoidable consequence of the vacuum residue of the M<sup>27</sup> \u2192 M<sup>4</sup> projection '
                     'and the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, with '
                     'g<sub>a\u03b3\u03b3</sub> ~ <span class="pm-value" data-pm-value="alp.coupling_GeV_inv">10\u207b\u00b9\u00b9</span> GeV\u207b\u00b9. '
                     'This prediction is currently within the detection window of the upcoming IAXO and BabyIAXO experiments (2025-2028), '
@@ -438,7 +438,7 @@ class AbstractV17_2(SimulationBase):
                 name="Framework Version Number",
                 no_experimental_value=True,
                 units="version",
-                description="Current Principia Metaphysica version number (e.g., '23.1')",
+                description="Current Principia Metaphysica version number (e.g., '24.2')",
                 status="SYSTEM"
             ),
             Parameter(
@@ -446,7 +446,7 @@ class AbstractV17_2(SimulationBase):
                 name="Framework Major Version",
                 no_experimental_value=True,
                 units="version",
-                description="Major version number only (e.g., '23')",
+                description="Major version number only (e.g., '24')",
                 status="SYSTEM"
             ),
             Parameter(
@@ -454,7 +454,7 @@ class AbstractV17_2(SimulationBase):
                 name="Framework Version Label",
                 no_experimental_value=True,
                 units="version",
-                description="Formatted version with 'v' prefix (e.g., 'v23.1')",
+                description="Formatted version with 'v' prefix (e.g., 'v24.2')",
                 status="SYSTEM"
             ),
             Parameter(
@@ -462,7 +462,7 @@ class AbstractV17_2(SimulationBase):
                 name="Framework Major Version Label",
                 no_experimental_value=True,
                 units="version",
-                description="Formatted major version with 'v' prefix (e.g., 'v23')",
+                description="Formatted major version with 'v' prefix (e.g., 'v24')",
                 status="SYSTEM"
             ),
             # Content tracking parameters
@@ -584,18 +584,18 @@ class AbstractV17_2(SimulationBase):
                 description="PM framework prediction for alpha^-1 (echoed from constants.alpha_inverse_pred for abstract display)",
                 experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                 bound_type="measured",
-                bound_source="CODATA2018",
+                bound_source="CODATA2022",
                 status="PREDICTED"
             ),
             Parameter(
                 path="abstract.alpha_inv_codata",
-                name="CODATA 2018 Alpha^-1",
+                name="CODATA 2022 Alpha^-1",
                 no_experimental_value=False,
                 units="dimensionless",
-                description="CODATA 2018 experimental value of alpha^-1 (echoed for abstract display spans)",
+                description="CODATA 2022 experimental value of alpha^-1 (echoed for abstract display spans)",
                 experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                 bound_type="measured",
-                bound_source="CODATA2018",
+                bound_source="CODATA2022",
                 status="SYSTEM"
             ),
             Parameter(
@@ -1005,7 +1005,7 @@ class AbstractV17_2(SimulationBase):
                     "formula_count": len(formulas),
                     "reference_count": len(refs),
                     "section_type": "narrative_abstract",
-                    "note": "Paper abstract for Principia Metaphysica v23.1 M^{27}(24,1,2) dual-shadow framework"
+                    "note": "Paper abstract for Principia Metaphysica v24.2 M^{27}(24,1,2) dual-shadow framework"
                 }
             },
         ]

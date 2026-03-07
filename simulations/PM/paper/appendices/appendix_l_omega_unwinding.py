@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v23.1 - Appendix L: The Omega Unwinding Map
+PRINCIPIA METAPHYSICA v24.2 - Appendix L: The Omega Unwinding Map
 ==================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v23.1 STERILE MODEL: Terminal State Phase Diagram.
+v24.2 STERILE MODEL: Terminal State Phase Diagram.
 
 This appendix provides the final visualization representing the 3 States
 of the End. It is a phase-space diagram showing three "Basins of Attraction"
@@ -54,7 +54,7 @@ class TerminalBasinAnalysis:
     """
     Analyzes the three terminal basins of attraction.
 
-    In the v23.1 Sterile Model, the universe doesn't "end" randomly—
+    In the v24.2 Sterile Model, the universe doesn't "end" randomly—
     it follows one of three geometric trajectories determined by
     the entropy gradient of the 288-root system.
     """
@@ -303,7 +303,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="appendix_l_omega_unwinding_v16_2",
-            version="23.1",
+            version="24.2",
             domain="appendices",
             title="Appendix L: The Omega Unwinding Map",
             description="Terminal State Phase Diagram showing the three basins of attraction",
@@ -385,7 +385,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix L provides the final visualization of the v23.1 Sterile Model: "
+                    "Appendix L provides the final visualization of the v24.2 Sterile Model: "
                     "the <strong>Omega Unwinding Map</strong>. This is a phase-space diagram "
                     "showing the three 'Basins of Attraction' that determine how the universe "
                     "terminates. The map proves that the 'End' is as predictable as the "
@@ -402,7 +402,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v23.1 Sterile Model, the universe doesn't end randomly. It follows "
+                    "In the v24.2 Sterile Model, the universe doesn't end randomly. It follows "
                     "one of three geometric trajectories determined by the entropy gradient of "
                     "the 288-root system:"
                 )
@@ -560,7 +560,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Declaration of Terminal Predictability (v23.1)</h4>"
+                    "<h4>Declaration of Terminal Predictability (v24.2)</h4>"
                     "<p><em>\"The universe is mapped as a closed V₇ manifold. Its past, present, "
                     "and eventual unwinding into the Three Final States are mathematically "
                     "necessitated. The Omega Unwinding Map represents the end of cosmological "
@@ -783,7 +783,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                     "system. Format: OMEGA-XXXX-YYYY-ZZZZ (SHA-256 hash of model state). "
                     "Generated from: v23-Roots{288}-Pins{24}-Nodes{125}-Signature(26,1)-"
                     "Bridge12x(2,0)-Hidden{163}-Pairs{12}-Angle{θ_sterile}-Sum{Σ_residues}. "
-                    "This seal locks the v23.1 terminal state and will change if any "
+                    "This seal locks the v24.2 terminal state and will change if any "
                     "parameters are modified, providing tamper-evident verification that "
                     "the model remains in its sterile configuration. Current seal is "
                     "dynamically computed from simulation output and serves as a geometric "

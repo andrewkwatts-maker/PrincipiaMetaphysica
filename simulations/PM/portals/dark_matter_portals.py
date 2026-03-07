@@ -765,26 +765,26 @@ class DarkMatterPortalsV23(SimulationBase):
             subsection_id="7.3",
             title="Dark Matter Portal Physics from G2 Hidden Faces",
             abstract=(
-                "The four-face G2 sub-sector structure naturally generates dark matter "
+                "The four-face G₂ sub-sector structure naturally generates dark matter "
                 "portal interactions. The visible sector (Face 1) communicates with "
                 "three hidden faces (f = 2, 3, 4) via the face sampling strength "
-                "alpha_leak ~ 0.57, derived entirely from G2 geometry. We compute the "
-                "portal coupling g_portal, spin-independent nucleon cross-section "
-                "sigma_SI, and KK mediator mass m_KK, predicting multi-component dark "
+                "α<sub>leak</sub> ~ 0.57, derived entirely from G₂ geometry. We compute the "
+                "portal coupling g<sub>portal</sub>, spin-independent nucleon cross-section "
+                "σ<sub>SI</sub>, and KK mediator mass m<sub>KK</sub>, predicting multi-component dark "
                 "matter (KK modes, ALPs, sterile neutrinos) with total relic density "
-                "Omega_DM h^2 ~ 0.12. The predicted sigma_SI is below current XENONnT "
+                "Ω<sub>DM</sub> h² ~ 0.12. The predicted σ<sub>SI</sub> is below current XENONnT "
                 "bounds but testable by DARWIN and XLZD."
             ),
             content_blocks=[
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The TCS G2 manifold #187 admits four geometric faces per shadow, "
+                        "The TCS G₂ manifold #187 admits four geometric faces per shadow, "
                         "with Face 1 hosting the visible (Standard Model) sector and Faces "
                         "2, 3, 4 hosting distinct shadow sectors. The inter-face coupling "
-                        "alpha_leak ~ 0.57 derived in Section 2.7 from the face sampling "
+                        "α<sub>leak</sub> ~ 0.57 derived in Section 2.7 from the face sampling "
                         "strength provides a natural dark matter portal: hidden face "
-                        "excitations can tunnel into the visible sector through the G2 "
+                        "excitations can tunnel into the visible sector through the G₂ "
                         "torsion connection, producing dark matter interactions at a strength "
                         "controlled entirely by the compactification geometry."
                     ),
@@ -803,13 +803,13 @@ class DarkMatterPortalsV23(SimulationBase):
                     type="paragraph",
                     content=(
                         "The effective portal coupling for dark matter-nucleon scattering "
-                        "is g_portal = alpha_leak * sqrt(chi_eff/b3) / (4*pi) ~ 0.11. The "
-                        "face sampling strength alpha_leak ~ 0.57 is the fundamental "
+                        "is g<sub>portal</sub> = α<sub>leak</sub> · √(χ<sub>eff</sub>/b₃) / (4π) ~ 0.11. The "
+                        "face sampling strength α<sub>leak</sub> ~ 0.57 is the fundamental "
                         "geometric quantity, measuring the wavefunction overlap between the "
                         "visible and hidden face sectors. The topological enhancement factor "
-                        "sqrt(chi_eff/b3) = sqrt(6) arises from the total associative cycle "
-                        "structure of the G2 manifold, and the 4*pi normalization converts "
-                        "to a standard Yukawa-type coupling. The resulting g_portal ~ 0.11 "
+                        "√(χ<sub>eff</sub>/b₃) = √6 arises from the total associative cycle "
+                        "structure of the G₂ manifold, and the 4π normalization converts "
+                        "to a standard Yukawa-type coupling. The resulting g<sub>portal</sub> ~ 0.11 "
                         "is safely perturbative, ensuring the validity of the Born "
                         "approximation in cross-section computations."
                     ),
@@ -833,14 +833,14 @@ class DarkMatterPortalsV23(SimulationBase):
                     type="paragraph",
                     content=(
                         "The portal is mediated by the lightest Kaluza-Klein excitation of "
-                        "the compactified geometry. The mediator mass m_KK is set by the "
+                        "the compactified geometry. The mediator mass m<sub>KK</sub> is set by the "
                         "Planck scale suppressed by the face sampling strength and the "
-                        "square of k_gimel, reflecting the 2-cycle volume dependence. "
-                        "The spin-independent cross-section sigma_SI = g_portal^2 * m_N^2 / "
-                        "(4*pi * m_KK^4) is computed in the Born approximation from "
-                        "t-channel moduli exchange. The m_N^2 factor comes from the nucleon "
+                        "square of k<sub>ℷ</sub>, reflecting the 2-cycle volume dependence. "
+                        "The spin-independent cross-section σ<sub>SI</sub> = g<sub>portal</sub>² · m<sub>N</sub>² / "
+                        "(4π · m<sub>KK</sub>⁴) is computed in the Born approximation from "
+                        "t-channel moduli exchange. The m<sub>N</sub>² factor comes from the nucleon "
                         "matrix element of the moduli coupling operator. The predicted "
-                        "sigma_SI is well below the current XENONnT bound but within the "
+                        "σ<sub>SI</sub> is well below the current XENONnT bound but within the "
                         "projected sensitivity of DARWIN and XLZD, making this a testable "
                         "prediction of the PM framework."
                     ),
@@ -865,9 +865,9 @@ class DarkMatterPortalsV23(SimulationBase):
                         "Face 3 produces axion-like particles (ALPs) from the Peccei-Quinn "
                         "symmetry of that cycle, and Face 4 produces sterile neutrinos "
                         "from the right-handed neutrino sector of the deepest shadow. The "
-                        "relic density per face scales as (T_1/T_f)^2 = f^2, giving "
+                        "relic density per face scales as (T₁/T<sub>f</sub>)² = f², giving "
                         "Face 4 as the dominant component (55%), followed by Face 3 (31%) "
-                        "and Face 2 (14%). The total Omega_DM h^2 = 0.120 matches the "
+                        "and Face 2 (14%). The total Ω<sub>DM</sub> h² = 0.120 matches the "
                         "Planck 2018 measurement."
                     ),
                 ),
@@ -876,11 +876,11 @@ class DarkMatterPortalsV23(SimulationBase):
                     callout_type="testable",
                     title="Dark Matter Portal Predictions",
                     content=(
-                        "PM predicts from G2 portal physics:\n"
-                        "- Portal coupling: g_portal ~ 0.11 (perturbative)\n"
-                        "- Cross-section: sigma_SI below XENONnT bound\n"
-                        "- Multi-component DM: KK + ALP + sterile nu\n"
-                        "- Total relic: Omega_DM h^2 = 0.120\n"
+                        "PM predicts from G₂ portal physics:\n"
+                        "- Portal coupling: g<sub>portal</sub> ~ 0.11 (perturbative)\n"
+                        "- Cross-section: σ<sub>SI</sub> below XENONnT bound\n"
+                        "- Multi-component DM: KK + ALP + sterile ν\n"
+                        "- Total relic: Ω<sub>DM</sub> h² = 0.120\n"
                         "Testable by: DARWIN, XLZD (next-generation direct detection)"
                     ),
                 ),
