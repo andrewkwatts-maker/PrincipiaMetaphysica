@@ -202,7 +202,7 @@
             errorDiv.setAttribute('data-field-error', '');
             errorDiv.innerHTML = `
                 <span>⚠️</span>
-                <span>${message}</span>
+                <span>${this.escapeHtml(message)}</span>
             `;
 
             // Insert after field
@@ -312,9 +312,9 @@
                         justify-content: center;
                         font-size: 2rem;
                         color: var(--success);
-                    ">${icon}</div>
-                    <h3 style="color: var(--success); margin: 0; font-size: 1.25rem;">${title}</h3>
-                    <p style="color: var(--text-secondary); margin: 0;">${message}</p>
+                    ">${this.escapeHtml(icon)}</div>
+                    <h3 style="color: var(--success); margin: 0; font-size: 1.25rem;">${this.escapeHtml(title)}</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">${this.escapeHtml(message)}</p>
                 </div>
             `;
 

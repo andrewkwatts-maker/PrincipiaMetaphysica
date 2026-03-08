@@ -1252,10 +1252,8 @@
                     metaEl.style.color = '#dc3545';
                 }
 
-                // Trigger MathJax
-                if (window.MathJax && window.MathJax.typesetPromise) {
-                    await window.MathJax.typesetPromise();
-                }
+                // Note: MathJax typesetting is handled inside renderPaper() on the container.
+                // Calling typesetPromise() again here would double-typeset equations.
 
                 // Handle hash navigation after content is rendered
                 if (window.location.hash) {

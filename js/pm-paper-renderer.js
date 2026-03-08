@@ -18,7 +18,7 @@
  *   await renderPaper('paper-container');
  *
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
- * Version: 1.1.0 - Enhanced error handling, loading states, and memory management
+ * Version: 24.2 - Enhanced error handling, loading states, and memory management
  */
 
 (function() {
@@ -126,7 +126,7 @@
         container.innerHTML = '';
         container.classList.add('pm-paper-container');
 
-        // 4. Render paper components
+        // 5. Render paper components
         try {
             // Title and metadata (skip if page already has a static header)
             if (renderTitleSection && PaperRenderer._data.metadata) {
@@ -779,6 +779,15 @@
         if (contentBlocks.length > 0) {
             const blocksDiv = renderContentBlocks(contentBlocks);
             sectionDiv.appendChild(blocksDiv);
+
+            // Process formulas, parameters, and equation references in content blocks
+            if (loadFormulas) {
+                processFormulas(blocksDiv);
+            }
+            if (loadParameters) {
+                processParameters(blocksDiv);
+            }
+            processEquationReferences(blocksDiv);
         }
 
         // Key takeaways (if available)
@@ -1479,12 +1488,14 @@
                 }
 
                 if (formulaData.sigma_deviation !== undefined) {
-                    const sigma = formulaData.sigma_deviation;
-                    const sigmaClass = Math.abs(sigma) < 1 ? 'excellent' : Math.abs(sigma) < 2 ? 'good' : 'fair';
-                    html += `<div class="value-item value-deviation ${sigmaClass}">`;
-                    html += `<span class="value-label">Deviation:</span> `;
-                    html += `<span class="value-number">${sigma.toFixed(2)}σ</span>`;
-                    html += `</div>`;
+                    const sigma = Number(formulaData.sigma_deviation);
+                    if (!isNaN(sigma)) {
+                        const sigmaClass = Math.abs(sigma) < 1 ? 'excellent' : Math.abs(sigma) < 2 ? 'good' : 'fair';
+                        html += `<div class="value-item value-deviation ${sigmaClass}">`;
+                        html += `<span class="value-label">Deviation:</span> `;
+                        html += `<span class="value-number">${sigma.toFixed(2)}σ</span>`;
+                        html += `</div>`;
+                    }
                 }
 
                 html += '</div></div>';
@@ -2022,8 +2033,7 @@
             // Text dashes - minimal rendering (captions extracted separately)
             .replace(/—/g, ' \\text{—} ')
             .replace(/–/g, ' \\text{–} ')
-            // Newlines become line breaks
-            .replace(/\n/g, ' \\\\ ')
+            // Note: newline replacement is deferred to after hierarchy detection
             // Mathematical Greek (U+1D6AA-U+1D6E1)
             .replace(/𝛤/g, '\\Gamma ')
             .replace(/𝛥/g, '\\Delta ')
@@ -2077,8 +2087,8 @@
             .replace(/⁹/g, '^{9}')
             .replace(/⁺/g, '^{+}')
             .replace(/⁻/g, '^{-}')
-            .replace(/⁽/g, '^{(')
-            .replace(/⁾/g, ')}')
+            .replace(/⁽/g, '^{(}')
+            .replace(/⁾/g, '^{)}')
             // Unicode subscript digits to LaTeX
             .replace(/₀/g, '_{0}')
             .replace(/₁/g, '_{1}')
@@ -2092,8 +2102,8 @@
             .replace(/₉/g, '_{9}')
             .replace(/₊/g, '_{+}')
             .replace(/₋/g, '_{-}')
-            .replace(/₍/g, '_{(')
-            .replace(/₎/g, ')}')
+            .replace(/₍/g, '_{(}')
+            .replace(/₎/g, '_{)}')
             // Common subscript letters
             .replace(/ₐ/g, '_{a}')
             .replace(/ₑ/g, '_{e}')
@@ -2112,17 +2122,16 @@
             .replace(/ᵤ/g, '_{u}')
             .replace(/ᵥ/g, '_{v}')
             .replace(/ₓ/g, '_{x}')
-            // Merge adjacent braces: ^{5}^{(} -> ^{5(}
-            .replace(/\}\^?\{/g, '')
-            .replace(/\}_?\{/g, '')
+            // Merge adjacent superscript braces: ^{5}^{(} -> ^{5(}
+            .replace(/\}\^\{/g, '')
+            // Merge adjacent subscript braces: _{1}_{2} -> _{12}
+            .replace(/\}_\{/g, '')
             // Common gauge group patterns: SU(3)C -> SU(3)_C
             .replace(/SU\((\d)\)([CLRYW])/g, 'SU($1)_{$2}')
             .replace(/U\(1\)([CLRYW])/g, 'U(1)_{$1}')
             .replace(/SO\((\d+)\)([CLRYW])/g, 'SO($1)_{$2}')
-            .replace(/Spin\((\d+),(\d+)\)([CLRYW])?/g, (m, a, b, c) => c ? `\\text{Spin}($1,$2)_{${c}}` : `\\text{Spin}(${a},${b})`)
-            // Direct product notation
-            .replace(/⊕/g, '\\oplus ')
-            .replace(/⊗/g, '\\otimes ')
+            .replace(/Spin\((\d+),(\d+)\)([CLRYW])?/g, (m, a, b, c) => c ? `\\text{Spin}(${a},${b})_{${c}}` : `\\text{Spin}(${a},${b})`)
+            // Direct product notation (⊕ and ⊗ already handled above)
             .replace(/⊖/g, '\\ominus ')
             // Fix common patterns like 8s, 8c, 8v -> 8_s, 8_c, 8_v (spinor/conjugate/vector)
             .replace(/(\d+)([scv])(?=\s|\)|,|\}|$)/g, '$1_{$2}');
@@ -2138,7 +2147,7 @@
                 line = line.replace(/^(Level \d+[^:]*:)/g, '\\textbf{$1} & ');
                 // Convert arrows to proper alignment
                 line = line.replace(/^↓\s*(.*)$/g, '& \\downarrow \\text{$1}');
-                line = line.replace(/^—\s*(.*)$/g, '& \\text{— $1}');
+                line = line.replace(/^(?:—|\\text\{—\}\s*)\s*(.*)$/g, '& \\text{— $1}');
                 return line;
             }).filter(line => line);
 
@@ -2295,6 +2304,6 @@
         module.exports = API;
     }
 
-    console.log('PMPaperRenderer: Ready (v1.1.0 - Enhanced error handling & loading states)');
+    console.log('PMPaperRenderer: Ready (v24.2 - Enhanced error handling & loading states)');
 
 })();

@@ -432,7 +432,7 @@
         });
         // Expandable formula handling is now in js/formula-expansion.js
   </script>
-  <link rel="stylesheet" href="css/auth.css">
+  <link href="css/auth.css" rel="stylesheet"/>
   </head>
  <body class="auth-loading">
   <div id="main-content" style="display: none;">
@@ -624,7 +624,7 @@
        </div>
        <!-- Plain text version -->
        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.9rem; color: var(--text-muted);">
-        <strong>Plain text:</strong> S_11D = integral d^11 x sqrt|G_(10,1)| [M_*^9 R_11 + Psi_P (i Gamma^M nabla_M - m) Psi_P]
+        <strong>Plain text:</strong> S_13D = integral d^13 x sqrt|G_(12,1)| [M_*^11 R_13 + Psi_P (i Gamma^M nabla_M - m) Psi_P]
        </div>
        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem;">
         The 4096-component <span class="pm-value" data-pm-value="dimensions.D_bulk">27</span>D spinor splits to 2×64 components via dual-shadow framework.
@@ -795,7 +795,7 @@
     <h2 style="text-align: center; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
      Key Theoretical Features &amp; Validations
     </h2>
-    <!-- v20.20 Validation Summary Banner - HONEST STATUS -->
+    <!-- v24.2 Validation Summary Banner - HONEST STATUS -->
     <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(139, 127, 255, 0.4); border-radius: 12px; padding: 1.25rem; margin: 0 auto 1.5rem auto; max-width: 900px; text-align: center;">
      <div style="font-size: 1.1rem; font-weight: 600; color: #8b7fff; margin-bottom: 0.5rem;">
       72-Gate Registry: <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">40</span> VERIFIED</span> | <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pending_count">0</span> PENDING</span> | <span style="color: #888;"><span class="pm-value" data-pm-value="framework_statistics.not_testable_count">30</span> FOUNDATIONAL</span> | <span style="color: #74c0fc;"><span class="pm-value" data-pm-value="framework_statistics.mathematical_count">2</span> MATHEMATICAL</span>
@@ -844,23 +844,23 @@
       Calibration Transparency
      </h4>
      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-      <strong>V12.8 Transparency Statement:</strong> 55 parameters are pure predictions; 3 constrain the theory:
+      <strong>Transparency Statement:</strong> 55 parameters are pure predictions; 3 constrain the theory:
      </p>
      <ul style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin: 0.75rem 0 0 1.5rem;">
-      <li><strong>VEV coefficient</strong> = 1.5859 (<a href="simulations/vev_coefficient_v12_8.py" style="color: #8b7fff;">semi-derived from ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ + |T<sub>ω</sub>|/b₃</a>)</li>
-      <li><strong>1/α<sub>GUT</sub> coefficient</strong> = 1/(10π) ≈ 0.0318 (<a href="simulations/derive_alpha_gut.py" style="color: #8b7fff;">geometric from 5-cycle measure</a>)</li>
+      <li><strong>VEV coefficient</strong> = 1.5859 (<a href="simulations/PM/particle/higgs_vev_refined.py" style="color: #8b7fff;">semi-derived from ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ + |T<sub>ω</sub>|/b₃</a>)</li>
+      <li><strong>1/α<sub>GUT</sub> coefficient</strong> = 1/(10π) ≈ 0.0318 (<a href="simulations/PM/gauge/gauge_unification.py" style="color: #8b7fff;">geometric from 5-cycle measure</a>)</li>
       <li><strong>Higgs mass</strong>: m<sub>h</sub> = <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV">125.10</span> GeV fixes Re(T) = 7.086 (observational constraint)</li>
      </ul>
      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem; font-style: italic;">
-      <strong>Calibrated (pending Yukawa calculation):</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0; geometric derivation from triple cycle intersections planned for v13.0.
+      <strong>Calibrated (pending Yukawa calculation):</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0; geometric derivation from triple cycle intersections planned for future release.
      </p>
      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
       <strong>Derivation Files:</strong>
-      <a href="simulations/derive_theta23_g2_v12_8.py" style="color: #8b7fff;">θ₂₃ from G₂ holonomy</a> (Joyce 2000, Acharya-Witten 2001) |
-      <a href="simulations/zero_modes_gen_v12_8.py" style="color: #8b7fff;">n<sub>gen</sub>=3 with Z₂</a> (Bars 2006) |
-      <a href="simulations/torsion_effective_v12_8.py" style="color: #8b7fff;">T<sub>ω</sub> from G-flux</a> |
-      <a href="simulations/derive_d_eff_v12_8.py" style="color: #8b7fff;">d<sub>eff</sub> ghost coefficient</a> |
-      <a href="simulations/dim_decomp_v12_8.py" style="color: #8b7fff;">27D decomposition</a>
+      <a href="simulations/PM/particle/neutrino_mixing.py" style="color: #8b7fff;">θ₂₃ from G₂ holonomy</a> (Joyce 2000, Acharya-Witten 2001) |
+      <a href="simulations/PM/particle/fermion_generations.py" style="color: #8b7fff;">n<sub>gen</sub>=3 with Z₂</a> (Bars 2006) |
+      <a href="simulations/PM/geometry/torsional_constants.py" style="color: #8b7fff;">T<sub>ω</sub> from G-flux</a> |
+      <a href="simulations/PM/geometry/g2_geometry.py" style="color: #8b7fff;">d<sub>eff</sub> ghost coefficient</a> |
+      <a href="simulations/PM/geometry/g2_compactification.py" style="color: #8b7fff;">27D decomposition</a>
      </p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.5rem; margin: 0 auto 2rem auto; max-width: 900px;">
@@ -871,7 +871,7 @@
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">VEV (v24.2)</div>
        <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><span class="pm-value" data-pm-value="parameters.electroweak.v_higgs.value">246.22</span> GeV</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.007\(\sigma\) = tree\(\times(1-1/1728)\)</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">0.007σ = tree × (1−1/1728)</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Higgs Mass</div>
@@ -1030,10 +1030,10 @@
        Four key parameters now include geometric corrections from G₂ manifold curvature:
       </p>
       <ul style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem; padding-left: 1.2rem;">
-       <li>\(\alpha^{-1} = \text{tree} - 7/9963\) → <strong style="color: #51cf66;">4.39σ</strong> (from 33,461σ)</li>
-       <li>\(v = \text{tree} \times (1 - 1/1728)\) → <strong style="color: #51cf66;">0.007σ</strong> (from 0.29σ)</li>
-       <li>\(\sin^2\theta_W = \text{tree} - 7/9963\) → <strong style="color: #51cf66;">0.20σ</strong> (from 17.37σ)</li>
-       <li>\(T_{\text{CMB}} = \text{tree} - \varphi/144\) → <strong style="color: #51cf66;">0.16σ</strong> (from 18.56σ)</li>
+       <li>α⁻¹ = tree − 7/9963 → <strong style="color: #51cf66;">4.39σ</strong> (from 33,461σ)</li>
+       <li>v = tree × (1 − 1/1728) → <strong style="color: #51cf66;">0.007σ</strong> (from 0.29σ)</li>
+       <li>sin²θ<sub>W</sub> = tree − 7/9963 → <strong style="color: #51cf66;">0.20σ</strong> (from 17.37σ)</li>
+       <li>T<sub>CMB</sub> = tree − φ/144 → <strong style="color: #51cf66;">0.16σ</strong> (from 18.56σ)</li>
       </ul>
      </div>
      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffd43b; border: 2px solid rgba(255, 212, 59, 0.3);">
@@ -1162,7 +1162,7 @@
      v24.2 Dimensional Reduction: 27D(24,1,2) = 24 physics + 1 time + 2 sampler data fields → 2×13D(12,1) → G₂ → 4D
     </div>
     <div style="background: rgba(139, 127, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
-     <img src="images/dimensional-reduction-pathway.svg" alt="v24.2 Dimensional Reduction: 27D(24,1,2) = 24 physics + 1 time + 2 sampler data fields → 12×(2,0) warps to 2×13D(12,1) shadows → G₂ → 4D" style="width: 100%; max-width: 1400px; height: auto; border-radius: 8px; margin: 0 auto; display: block;">
+     <img src="Pages/images/dimensional-reduction-pathway.svg" alt="v24.2 Dimensional Reduction: 27D(24,1,2) = 24 physics + 1 time + 2 sampler data fields → 12×(2,0) warps to 2×13D(12,1) shadows → G₂ → 4D" style="width: 100%; max-width: 1400px; height: auto; border-radius: 8px; margin: 0 auto; display: block;">
     </div>
     <div class="diagram-caption" style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">
      <strong>v24.2 Dimensional Reduction:</strong> 27D(24,1,2) = 24 physics + 1 time + 2 sampler data fields. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection. Each shadow compactifies on G₂, yielding 4D with three fermion generations.
@@ -1244,7 +1244,7 @@
      <strong>Core Mechanism:</strong> The primordial spinor field Ψ<sub>P</sub> (Pneuma) generates all physics.
      Its condensates form spacetime geometry, its statistics yield emergent time, and its gauge structure contains the Standard Model.
      For the complete dimensional reduction pathway (<span class="pm-value" data-pm-value="dimensions.D_bulk">27</span>D → 13D → 6D → 4D via G₂ compactification), see the
-     <a href="images/dimensional-reduction-pathway.svg" target="_blank" style="color: var(--accent-primary);">dimensional reduction diagram</a>.
+     <a href="Pages/images/dimensional-reduction-pathway.svg" target="_blank" style="color: var(--accent-primary);">dimensional reduction diagram</a>.
     </div>
    </section>
    <section id="key-concepts">
