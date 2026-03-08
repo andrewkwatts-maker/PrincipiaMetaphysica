@@ -15,6 +15,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principia Metaphysica - Theory Diagrams</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
     <style>
         /* SVG Diagram Styles */
         .diagram-container {
@@ -152,12 +156,13 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="../css/auth.css">
     <script src="../js/pm-constants-loader.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
 <body class="auth-loading">
     <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
+
     <div class="diagram-container">
         <a href="../index.html" class="back-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1133,8 +1138,8 @@
 
         <!-- Navigation footer -->
         <div style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid var(--border-primary, #2a2f4a);">
-            <p style="color: var(--text-muted, #6c757d); margin-bottom: 1rem;">These diagrams illustrate the key concepts of Principia Metaphysica.</p>
-            <a href="../Pages/paper.html" style="color: var(--accent-primary, #8b7fff); text-decoration: none; font-weight: 500;">
+            <p style="color: var(--text-muted, #6c757d); margin-bottom: 1rem;">These diagrams illustrate the key concepts of Principia Metaphysica v24.2.</p>
+            <a href="paper.html" style="color: var(--accent-primary, #8b7fff); text-decoration: none; font-weight: 500;">
                 Read the full paper &rarr;
             </a>
         </div>
@@ -1157,8 +1162,16 @@
     <script src="../js/site-config.js"></script>
 
     <script type="module">
+      import { injectHeader } from '../js/pm-header.js';
       import { setupAuthGuard } from '../js/auth-guard.js';
-      setupAuthGuard('diagrams-theory-diagrams');
+
+      // Inject header first
+      document.addEventListener('DOMContentLoaded', () => {
+          injectHeader('theory-diagrams');
+      });
+
+      // Setup auth after header
+      setupAuthGuard('theory-diagrams');
     </script>
 </body>
 </html>

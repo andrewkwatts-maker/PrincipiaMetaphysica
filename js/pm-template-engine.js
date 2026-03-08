@@ -109,6 +109,7 @@ export async function loadExperimentalData() {
 
   if (docSnap.exists()) {
     cache.experimentalData = docSnap.data();
+    cache.cacheTime = Date.now();
     return cache.experimentalData;
   }
 
@@ -131,6 +132,7 @@ export async function loadConstants() {
   });
 
   cache.constants = constants;
+  cache.cacheTime = Date.now();
   return constants;
 }
 
@@ -270,13 +272,17 @@ export async function renderExperimentalComparisonHTML(pmPath, experimentalSourc
   const pmValue = await getPMValue(pmPath);
   const experimental = await loadExperimentalData();
 
+  if (pmValue === null || pmValue === undefined) {
+    return `<span class="comparison-error">PM value not found: ${pmPath}</span>`;
+  }
+
   if (!experimental || !experimental[experimentalSource]) {
     return `<span class="comparison-error">Experimental data not found</span>`;
   }
 
   const parts = pmPath.split('.');
   const key = parts[parts.length - 1];
-  const expData = experimental[experimentalSource].parameters[key];
+  const expData = experimental[experimentalSource].parameters?.[key];
 
   if (!expData) {
     return `<span class="comparison-error">Parameter ${key} not in ${experimentalSource}</span>`;

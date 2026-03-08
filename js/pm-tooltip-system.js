@@ -22,7 +22,7 @@
  *       data-param="tau_p_median"
  *       data-format="scientific:2"></span>
  *
- * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
 (function() {
@@ -299,11 +299,12 @@
         const expSource = param.experimental_source || '';
 
         // Sigma deviation
-        const sigma = param.agreement_sigma !== undefined ? param.agreement_sigma : null;
-        const sigmaText = param.agreement_text || param.agreement || (sigma !== null ? `${sigma.toFixed(2)}sigma` : '');
+        const sigmaRaw = param.agreement_sigma !== undefined ? param.agreement_sigma : null;
+        const sigma = sigmaRaw !== null && typeof sigmaRaw === 'number' ? sigmaRaw : (sigmaRaw !== null ? parseFloat(sigmaRaw) : null);
+        const sigmaText = param.agreement_text || param.agreement || (sigma !== null && !isNaN(sigma) ? `${sigma.toFixed(2)}sigma` : '');
 
         // Color for sigma (green < 1, yellow < 3, red >= 3)
-        const sigmaColor = sigma !== null
+        const sigmaColor = sigma !== null && !isNaN(sigma)
             ? (sigma < 1 ? '#4caf50' : sigma < 3 ? '#ff9800' : '#f44336')
             : '#4caf50';
 

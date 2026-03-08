@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--
-    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
     This is the intellectual property of Andrew Keith Watts. Unauthorized
     reproduction, distribution, or modification of this code, in whole or in part,
@@ -14,8 +14,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Principia Metaphysica Simulation Code - Python implementations of the theoretical framework">
-    <title>Simulations - Principia Metaphysica</title>
+    <title>Simulations - Principia Metaphysica v24.2</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-common.css">
     <link rel="stylesheet" href="../css/auth.css">
 
     <!-- Prism.js for syntax highlighting -->
@@ -572,8 +573,8 @@
 
         <footer>
             <div class="footer-content">
-                <p>&copy; 2025 Andrew Keith Watts. All rights reserved.</p>
-                <p>Principia Metaphysica - A Unified Geometric Theory</p>
+                <p>&copy; 2025-2026 Andrew Keith Watts. All rights reserved.</p>
+                <p>Principia Metaphysica v24.2 - A Unified Geometric Theory</p>
             </div>
         </footer>
     </div>
@@ -706,7 +707,6 @@
                 }
 
                 githubFolderCache = folders;
-                    folders.map(f => f.displayName).join(', '));
                 return githubFolderCache;
             } catch (error) {
                 console.warn('Error fetching GitHub folder structure:', error);
