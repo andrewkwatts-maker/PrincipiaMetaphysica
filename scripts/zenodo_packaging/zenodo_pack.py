@@ -370,8 +370,9 @@ def strip_auth_from_html(file_path: Path) -> bool:
     # Remove onAuthStateChanged usage
     content = re.sub(r'onAuthStateChanged\(auth,[^}]+\}\);', '', content, flags=re.DOTALL)
 
-    # Remove auth.css link tags (various path patterns)
-    content = re.sub(r'\s*<link rel="stylesheet" href="[^"]*auth\.css">\s*\n?', '\n', content)
+    # Remove auth.css link tags (various attribute orderings and path patterns)
+    content = re.sub(r'\s*<link rel="stylesheet" href="[^"]*auth\.css"[^>]*>\s*\n?', '\n', content)
+    content = re.sub(r'\s*<link href="[^"]*auth\.css" rel="stylesheet"[^>]*>\s*\n?', '\n', content)
 
     # Show main-content by default (was hidden waiting for auth)
     content = content.replace('id="main-content" style="display: none;"', 'id="main-content"')
@@ -408,27 +409,30 @@ def strip_login_ui_from_header(file_path: Path) -> bool:
 
     original = content
 
-    # Remove the user-controls-nav li element
-    old_nav = '''          <ul role="list">
-            ${navItems}
-            <li class="user-controls-nav">
-              <div class="user-controls" style="display: none;">
-                <img id="user-avatar" src="${basePath}images/default-avatar.svg" alt="User" class="user-avatar">
-                <span id="user-email" class="user-email"></span>
-                <button id="logout-btn" class="logout-btn">Logout</button>
-              </div>
-              <button id="header-login-btn" class="header-login-btn" style="display: none;">
-                <img src="${basePath}images/google-icon.svg" alt="G" class="google-icon-small">
-                Login
-              </button>
-            </li>
-          </ul>'''
+    # v24.2 header structure: Remove user-info-controls div from header-top-row
+    # This contains the hardcoded user name, email, and logout button
+    content = re.sub(
+        r'\s*<div class="user-info-controls">.*?</div>\s*',
+        '\n        ',
+        content,
+        flags=re.DOTALL
+    )
 
-    new_nav = '''          <ul role="list">
-            ${navItems}
-          </ul>'''
+    # Legacy header structure: Remove user-controls-nav li element (pre-v24.2)
+    content = re.sub(
+        r'\s*<li class="user-controls-nav">.*?</li>\s*',
+        '\n            ',
+        content,
+        flags=re.DOTALL
+    )
 
-    content = content.replace(old_nav, new_nav)
+    # Remove any header-login-btn elements
+    content = re.sub(
+        r'\s*<button id="header-login-btn"[^>]*>.*?</button>\s*',
+        '',
+        content,
+        flags=re.DOTALL
+    )
 
     # Remove the updateHeaderUserDisplay function entirely (includes JSDoc comment)
     content = re.sub(
