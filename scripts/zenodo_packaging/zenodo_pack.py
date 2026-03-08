@@ -48,7 +48,7 @@ from typing import Set, Dict, List, Optional
 # CONFIGURATION
 # ============================================================================
 
-VERSION = "23.3.2"
+VERSION = "24.2"
 RELEASE_DATE = datetime.datetime.now().strftime("%Y%m%d")
 
 # Source and build directories
@@ -1325,7 +1325,7 @@ Examples:
     print("-" * 70)
     print(f"""
 Title: Principia Metaphysica v{VERSION}: A G2-Manifold Residue Model
-       with 0.48sigma Cosmological Alignment
+       with 1.43sigma Cosmological Alignment
 
 Description: This release marks the transition to a pure-geometry model,
              replacing 125 empirical constants with derived residues.
