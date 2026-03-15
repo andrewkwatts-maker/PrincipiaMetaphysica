@@ -1,0 +1,27 @@
+{
+  "Name": "Charm Quark",
+  "Symbol": "c",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Quark", "Fundamental Particle"],
+  "Charge_e": 0.6666666667, // +2/3 e
+  "Mass_MeVc2": 1270.0, // Current quark mass, approximate
+  "Mass_kg": 2.264627e-27,
+  "Mass_amu": 1.3626,
+  "Spin_hbar": 0.5,
+  "ConstituentMass_MeV": 1550.0,
+  "MagneticDipoleMoment_J_T": null, // Complex for free quarks
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0.3333333333, // +1/3 B
+  "Isospin_I": 0.0,
+  "Isospin_I3": 0.0,
+  "Parity_P": null,
+  "Composition": [], // Fundamental
+  "Stability": "Stable", // Only exists bound in hadrons (color confinement)
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Anticharm Quark",
+    "Symbol": "c̅"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

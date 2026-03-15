@@ -1,0 +1,26 @@
+{
+  "Name": "Photon",
+  "Symbol": "γ",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Gauge Boson", "Force Carrier", "Fundamental Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 0.0, // Exactly zero
+  "Mass_kg": 0.0,
+  "Mass_amu": 0.0,
+  "Spin_hbar": 1.0,
+  "MagneticDipoleMoment_J_T": 0.0, // Does not have a magnetic moment
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": -1, // Conventionally -1 for real photons
+  "Composition": [], // Fundamental
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Photon",
+    "Symbol": "γ" // Its own antiparticle
+  },
+  "InteractionForces": ["Electromagnetic", "Gravitational"] // Mediates the electromagnetic force
+}

@@ -68,6 +68,12 @@ class G2GeometryV16(SimulationBase):
 
     Root simulation computing fundamental G2 topology parameters.
     No external dependencies - all inputs are ESTABLISHED constants.
+
+    Note on octonionic geometry:
+        G₂ = Aut(O) is the automorphism group of the 8-dimensional octonion
+        algebra O. G₂ acts on the 7-dimensional imaginary part Im(O) ≅ R⁷,
+        where the G₂ 3-form φ and metric are defined. The 8D origin is the
+        full octonion algebra; the G₂ holonomy geometry is inherently 7D.
     """
 
     def __init__(self):
@@ -120,6 +126,72 @@ class G2GeometryV16(SimulationBase):
         """
         r_7d = np.sqrt(self._k_gimel) * 1.616e-35
         return r_7d > 1e-35  # Returns True if stable
+
+    def verify_lattice_consistency(self) -> Dict[str, Any]:
+        """Supplementary cross-check of TCS #187 values against lattice chain.
+
+        Uses LatticeBridgeConnector to derive topology from algebraic
+        structures (E8 → Octonions → G2 → Leech → Bridges → Faces)
+        and verifies consistency with the hardcoded TCS #187 invariants.
+
+        Also verifies Hitchin's identity: φ_{iab}φ_{jab} = 6δ_{ij}
+        for both the local G2 3-form and the lattice-derived 3-form.
+
+        This is supplementary — the ROOT simulation works without it.
+
+        Returns:
+            Dict with consistency checks, or None if lattice modules unavailable.
+        """
+        try:
+            from simulations.PM.algebra.lattice_bridge import LatticeBridgeConnector
+        except ImportError:
+            return None
+
+        checks = {}
+        connector = LatticeBridgeConnector()
+        chain = connector.derive_all()
+
+        # Cross-check topology values
+        checks['h11_matches'] = (
+            chain['four_faces']['num_faces'] == self.h11
+        )
+        checks['n_gen_matches'] = (
+            chain['four_faces']['bridges_per_face'] == self._n_gen
+        )
+        checks['b3_consistent'] = (
+            chain['bridge_decomposition']['total_dim'] == self._b3
+        )
+        checks['num_bridges_matches'] = (
+            chain['bridge_decomposition']['num_bridges'] == self._b3 // 2
+        )
+
+        # Hitchin identity: φ_{iab}φ_{jab} = 6δ_{ij}
+        # Verify on the local G2 3-form
+        phi_local = self._construct_g2_three_form()
+        hitchin_local = np.einsum('iab,jab->ij', phi_local, phi_local)
+        checks['hitchin_local'] = bool(
+            np.allclose(hitchin_local, 6.0 * np.eye(7))
+        )
+
+        # Verify on the lattice-derived G2 3-form (from octonions)
+        phi_lattice = connector.octonions.g2_structure_as_3form()
+        hitchin_lattice = np.einsum('iab,jab->ij', phi_lattice, phi_lattice)
+        checks['hitchin_lattice'] = bool(
+            np.allclose(hitchin_lattice, 6.0 * np.eye(7))
+        )
+
+        # Cross-check: both 3-forms are identical
+        checks['phi_matches'] = bool(np.allclose(phi_local, phi_lattice))
+
+        # G2 from E8 compatibility
+        checks['g2_e8_compatible'] = chain['g2_from_e8']['e8_compatible']
+
+        # Chain overall validity
+        checks['chain_valid'] = chain['chain_valid']
+
+        checks['all_consistent'] = all(checks.values())
+
+        return checks
 
     @property
     def metadata(self) -> SimulationMetadata:
@@ -231,6 +303,12 @@ class G2GeometryV16(SimulationBase):
         # Cycle separation
         d_over_R = self._compute_cycle_separation()
 
+        # Supplementary lattice cross-check (non-critical)
+        try:
+            lattice_verification = self.verify_lattice_consistency()
+        except Exception:
+            lattice_verification = None
+
         return {
             "topology.b2": self._b2,
             "topology.elder_kads": self._b3,
@@ -243,6 +321,7 @@ class G2GeometryV16(SimulationBase):
             "_holonomy_valid": holonomy_valid,
             "_betti_numbers": betti_numbers,
             "_chi_topological": chi,
+            "_lattice_verification": lattice_verification,
         }
 
     def _validate_g2_holonomy(self) -> bool:

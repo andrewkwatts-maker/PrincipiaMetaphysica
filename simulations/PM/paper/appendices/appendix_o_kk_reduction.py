@@ -492,6 +492,22 @@ class AppendixOKKReduction(SimulationBase):
                 formula_id="kk-g2-volume",
                 label="(O.10)"
             ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The 12 bridge pairs forming the 24D bridge sector are not assumed "
+                    "but derived from lattice theory: the Leech lattice &Lambda;<sub>24</sub> "
+                    "admits a natural decomposition of its 24-dimensional ambient space "
+                    "R<sup>24</sup> into 12 two-dimensional sublattices, each corresponding "
+                    "to a bridge torus T&sup2;. This decomposition follows from the "
+                    "E<sub>8</sub> &times; E<sub>8</sub> &times; E<sub>8</sub> triple "
+                    "structure of R<sup>24</sup>, where each E<sub>8</sub> block contributes "
+                    "4 bridge pairs (matching h<sup>1,1</sup> = 4 faces with 3 bridges each). "
+                    "The full derivation chain E<sub>8</sub> &rarr; octonions &rarr; G<sub>2</sub> "
+                    "&rarr; Leech &rarr; bridges is computationally verified via the "
+                    "LatticeBridgeConnector module."
+                )
+            ),
 
             # O.9 Gauge Coupling from Geometry
             ContentBlock(

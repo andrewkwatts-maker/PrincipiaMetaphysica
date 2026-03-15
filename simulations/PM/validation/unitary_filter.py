@@ -330,6 +330,31 @@ class UnitaryFilter:
 
         return cls(b3_val=int(b3), dim_total=dim_total)
 
+    def verify_lattice_anomaly(self) -> Optional[Dict[str, Any]]:
+        """Cross-verify Weyl anomaly cancellation against Leech lattice bridge decomposition.
+
+        Returns dict of checks, or None if lattice_bridge imports are unavailable.
+        """
+        try:
+            from simulations.PM.algebra.lattice_bridge import LatticeBridgeConnector
+        except ImportError:
+            return None
+        connector = LatticeBridgeConnector()
+        chain = connector.derive_all()
+        bd = chain['bridge_decomposition']
+        leech_dim = bd['total_dim']
+        num_bridges = bd['num_bridges']
+        sampler_fields = 2
+        d_total = leech_dim + sampler_fields
+        return {
+            'leech_dim_24': leech_dim == 24,
+            'weyl_d_total_26': d_total == 26,
+            'num_bridges_12': num_bridges == 12,
+            'leech_dim': leech_dim,
+            'd_total': d_total,
+            'num_bridges': num_bridges,
+        }
+
     def __repr__(self) -> str:
         """Return string representation of the filter."""
         is_stable, message = self.check_stability()

@@ -1,0 +1,27 @@
+{
+  "Name": "Up Quark",
+  "Symbol": "u",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Quark", "Fundamental Particle"],
+  "Charge_e": 0.6666666667, // +2/3 e
+  "Mass_MeVc2": 2.2, // Current quark mass, approximate
+  "Mass_kg": 3.921856e-30,
+  "Mass_amu": 0.000002359,
+  "Spin_hbar": 0.5,
+  "ConstituentMass_MeV": 336.0,
+  "MagneticDipoleMoment_J_T": null, // Complex, not a simple fixed value for a free quark
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0.3333333333, // +1/3 B
+  "Isospin_I": 0.5,
+  "Isospin_I3": 0.5,
+  "Parity_P": null, // Intrinsic parity is defined for composite particles in context
+  "Composition": [], // Fundamental
+  "Stability": "Stable", // Only exists bound in hadrons (due to color confinement)
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Antiup Quark",
+    "Symbol": "u̅"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

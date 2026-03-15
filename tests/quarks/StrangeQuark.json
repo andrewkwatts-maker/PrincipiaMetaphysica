@@ -1,0 +1,27 @@
+{
+  "Name": "Strange Quark",
+  "Symbol": "s",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Quark", "Fundamental Particle"],
+  "Charge_e": -0.3333333333, // -1/3 e
+  "Mass_MeVc2": 95.0, // Current quark mass, approximate
+  "Mass_kg": 1.693529e-28,
+  "Mass_amu": 0.10198,
+  "Spin_hbar": 0.5,
+  "ConstituentMass_MeV": 509.0,
+  "MagneticDipoleMoment_J_T": null, // Complex, not a simple fixed value for a free quark
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0.3333333333, // +1/3 B
+  "Isospin_I": 0.0, // Often assigned 0 for isospin, or can contribute to hadron isospin
+  "Isospin_I3": 0.0,
+  "Parity_P": null, // Intrinsic parity defined for composite particles in context
+  "Composition": [], // Fundamental
+  "Stability": "Stable", // Only exists bound in hadrons (due to color confinement)
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Antistrange Quark",
+    "Symbol": "s̅"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

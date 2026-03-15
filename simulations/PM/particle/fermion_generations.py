@@ -236,7 +236,31 @@ class FermionGenerationsV16(SimulationBase):
             "_lambda_curvature": self.lambda_curvature,
         }
 
+        # Lattice cross-verification (optional)
+        results["_lattice_verification"] = self.verify_lattice_consistency(b3, int(n_gen))
+
         return results
+
+    def verify_lattice_consistency(self, b3: int, n_gen: int) -> Optional[Dict[str, Any]]:
+        """Verify hardcoded topological values against the lattice chain."""
+        try:
+            from simulations.PM.algebra.leech_lattice import LeechLattice
+            from simulations.PM.algebra.lattice_bridge import LatticeBridgeConnector
+        except ImportError:
+            return None
+
+        checks = {}
+        leech = LeechLattice(compute_minimal=False)
+        checks["b3_matches_leech_dim"] = (b3 == leech.dimension)
+
+        connector = LatticeBridgeConnector()
+        chain = connector.derive_all()
+        checks["n_gen_matches_bridges_per_face"] = (
+            n_gen == chain["four_faces"]["bridges_per_face"]
+        )
+
+        checks["all_passed"] = all(checks.values())
+        return checks
 
     def get_section_content(self) -> Optional[SectionContent]:
         """

@@ -1,0 +1,26 @@
+{
+  "Name": "Tau Neutrino",
+  "Symbol": "ν_τ",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 0.0000182, // Estimated upper limit (18.2 MeV/c² converted)
+  "Mass_kg": 3.245452e-32,
+  "Mass_amu": 1.954e-08,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 1, // Specifically tau lepton number
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": null,
+  "Composition": [], // Fundamental
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Tau Antineutrino",
+    "Symbol": "ν̅_τ"
+  },
+  "InteractionForces": ["Weak", "Gravitational"]
+}

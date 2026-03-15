@@ -17,7 +17,7 @@ Dedicated To:
 """
 
 import numpy as np
-from typing import Dict, Any
+from typing import Dict, Any, Optional
 
 # Import SSOT dimensional params (v20.3)
 try:
@@ -1136,6 +1136,22 @@ class GeometricAnchors:
         Should equal ~1.0.
         """
         return self.k_gimel * self.phi / (self.elder_kads - 4)  # ≈ 0.997
+
+    def verify_lattice_origin(self) -> Optional[Dict[str, Any]]:
+        """Verify b3 matches Leech lattice dimension."""
+        try:
+            from simulations.PM.algebra.leech_lattice import LeechLattice
+        except ImportError:
+            return None
+
+        leech = LeechLattice(compute_minimal=False)
+        b3_matches = (self.elder_kads == leech.dimension)
+        return {
+            "b3_matches_leech_dim": b3_matches,
+            "elder_kads": self.elder_kads,
+            "leech_dimension": leech.dimension,
+            "all_passed": b3_matches,
+        }
 
     def verify_stability(self) -> Dict[str, Any]:
         """

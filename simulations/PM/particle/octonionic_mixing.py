@@ -227,6 +227,64 @@ class OctonionicMixing(SimulationBase):
             "mixing-dimension-ratio",
         ]
 
+    def verify_lattice_octonions(self) -> Dict[str, Any]:
+        """Cross-verify local octonionic structure against lattice-chain OctonionAlgebra.
+
+        Compares the G2 3-form (associative structure constants) used in this
+        simulation with those from the verified lattice algebra module, and
+        checks the Hitchin identity phi_{iab} phi_{jab} = 6 delta_{ij} on both.
+
+        Returns:
+            Dict with boolean check results; empty dict if lattice module unavailable.
+        """
+        try:
+            from simulations.PM.algebra.octonions import OctonionAlgebra, FANO_TRIPLES
+        except ImportError:
+            return {"lattice_available": False}
+
+        checks: Dict[str, Any] = {"lattice_available": True}
+
+        # Build the local G2 3-form (all-positive Fano orientation)
+        local_phi = np.zeros((7, 7, 7), dtype=np.float64)
+        fano_triples_local = [
+            (0, 1, 2), (0, 3, 4), (0, 5, 6),
+            (1, 3, 5), (1, 4, 6), (2, 3, 6), (2, 4, 5),
+        ]
+        for (i, j, k) in fano_triples_local:
+            local_phi[i, j, k] = +1.0
+            local_phi[j, k, i] = +1.0
+            local_phi[k, i, j] = +1.0
+            local_phi[i, k, j] = -1.0
+            local_phi[k, j, i] = -1.0
+            local_phi[j, i, k] = -1.0
+
+        # Get lattice-verified G2 3-form (use _C_geom per Gemini review)
+        algebra = OctonionAlgebra()
+        lattice_phi = algebra.g2_structure_as_3form()
+
+        # Check 1: Structure constants agree
+        checks["structure_constants_match"] = bool(np.allclose(local_phi, lattice_phi))
+
+        # Check 2: Fano triples agree
+        checks["fano_triples_match"] = (fano_triples_local == list(FANO_TRIPLES))
+
+        # Check 3: Hitchin identity phi_{iab} phi_{jab} = 6 delta_{ij}
+        def hitchin_check(phi: np.ndarray) -> bool:
+            gram = np.einsum("iab,jab->ij", phi, phi)
+            return bool(np.allclose(gram, 6.0 * np.eye(7)))
+
+        checks["hitchin_local"] = hitchin_check(local_phi)
+        checks["hitchin_lattice"] = hitchin_check(lattice_phi)
+
+        # Check 4: Lattice algebra self-verification
+        algebra_checks = algebra.verify()
+        checks["lattice_algebra_valid"] = all(algebra_checks.values())
+
+        checks["all_passed"] = all(
+            v for k, v in checks.items() if k != "lattice_available"
+        )
+        return checks
+
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
         """Execute the octonionic mixing simulation."""
         # Load inputs from registry
@@ -251,6 +309,9 @@ class OctonionicMixing(SimulationBase):
         results.update(ckm_result)
         results.update(pmns_result)
         results.update(triality_result)
+
+        # Lattice cross-verification (supplementary, does not affect physics)
+        results["_lattice_verification"] = self.verify_lattice_octonions()
 
         return results
 

@@ -325,6 +325,34 @@ class AppendixH288Roots(SimulationBase):
                     "algebra classification, complementing the geometric SO(24) derivation (276 + 24 - 12 = 288)."
                 )
             ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<strong>Lattice verification:</strong> The Leech lattice ambient space "
+                    "R<sup>24</sup> decomposes into three orthogonal R<sup>8</sup> blocks, each "
+                    "endowed with E<sub>8</sub>-structured symmetries (verified via E<sub>8</sub> "
+                    "Cartan matrix recovery per block). The first two blocks yield an "
+                    "E<sub>8</sub>×E<sub>8</sub> heterotic structure with 480 roots (240 + 240) "
+                    "in R<sup>16</sup>, while the third block provides the compactified sector. "
+                    "The 480-root intermediate symmetry projects to the effective 288-generator "
+                    "ancestral symmetry via the compactification mechanism: one full E<sub>8</sub> "
+                    "contributes 240 roots, while the second undergoes partial compactification "
+                    "to yield 48 chiral roots. This triple decomposition is computationally "
+                    "verified end-to-end by the LatticeBridgeConnector derivation chain."
+                )
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<h4>Note: Ambient Space vs. Lattice Distinction</h4>"
+                    "<p>The E<sub>8</sub>-structured blocks describe the <em>ambient space</em> "
+                    "R<sup>24</sup> in which the Leech lattice resides. The Leech lattice itself "
+                    "has no norm-2 vectors (roots), unlike the E<sub>8</sub> lattice. "
+                    "The E<sub>8</sub> structure characterizes the geometry of each 8D block, "
+                    "not a sublattice embedding within Λ<sub>24</sub>.</p>"
+                ),
+                label="ambient-space-note"
+            ),
 
             # H.7 Pressure Divisor and Generation Counting
             ContentBlock(

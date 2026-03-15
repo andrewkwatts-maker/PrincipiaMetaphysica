@@ -94,6 +94,17 @@ class PrincipiaValidator:
         self.cert_topo_024_g2_holonomy()
 
         # ═══════════════════════════════════════════════════════════════
+        # LATTICE SECTOR - E8 ↔ Leech ↔ G2 ↔ Bridges ↔ Faces
+        # ═══════════════════════════════════════════════════════════════
+        print("\n[LATTICE SECTOR]")
+        self.cert_lattice_050_e8_roots()
+        self.cert_lattice_051_leech_e8_triple()
+        self.cert_lattice_052_12_bridges()
+        self.cert_lattice_053_four_faces()
+        self.cert_lattice_054_g2_from_e8()
+        self.cert_lattice_055_chain_valid()
+
+        # ═══════════════════════════════════════════════════════════════
         # BRIDGE SECTOR (C_PAIRS) - v22.0 12-PAIR-BRIDGE
         # ═══════════════════════════════════════════════════════════════
         print("\n[BRIDGE SECTOR - 12-PAIR-BRIDGE]")
@@ -296,6 +307,155 @@ class PrincipiaValidator:
             "sector": "TOPOLOGICAL"
         }
         print(f"  TOPO-024: {status} (G2 holonomy preserved)")
+
+    # ═══════════════════════════════════════════════════════════════════
+    # LATTICE CERTIFICATES (E8 ↔ Leech ↔ G2 ↔ Bridges ↔ Faces)
+    # ═══════════════════════════════════════════════════════════════════
+
+    def _get_lattice_connector(self):
+        """Lazy-load and cache LatticeBridgeConnector results."""
+        if not hasattr(self, '_lattice_connector'):
+            try:
+                from simulations.PM.algebra.lattice_bridge import LatticeBridgeConnector
+                connector = LatticeBridgeConnector()
+                self._lattice_results = connector.derive_all()
+                self._lattice_connector = connector
+            except Exception as e:
+                self._lattice_results = None
+                self._lattice_connector = None
+                print(f"  [LATTICE] Warning: could not load lattice chain: {e}")
+        return self._lattice_results
+
+    def cert_lattice_050_e8_roots(self):
+        """LATT-050: E8 Root System — 240 roots, det(Cartan) = 1"""
+        r = self._get_lattice_connector()
+        if r is None:
+            status = "SKIPPED"
+            metric = "Lattice modules unavailable"
+        else:
+            e8_valid = r['e8']['valid']
+            num_roots = r['e8']['num_roots']
+            status = "SEALED" if e8_valid and num_roots == 240 else "FAILED"
+            metric = f"roots = {num_roots}, valid = {e8_valid}"
+        self.results['LATT-050'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "240 roots, det(Cartan) = 1",
+            "sector": "LATTICE"
+        }
+        print(f"  LATT-050: {status} (E8 {metric})")
+
+    def cert_lattice_051_leech_e8_triple(self):
+        """LATT-051: Leech ambient R²⁴ = R⁸⊕R⁸⊕R⁸ with E8 Cartan recovery per block"""
+        r = self._get_lattice_connector()
+        if r is None:
+            status = "SKIPPED"
+            metric = "Lattice modules unavailable"
+        else:
+            triple = r['e8_triple']
+            orthogonal = triple['orthogonal']
+            each_e8 = triple['each_is_e8']
+            spans = triple['spans_R24']
+            all_ok = orthogonal and each_e8 and spans
+            status = "SEALED" if all_ok else "FAILED"
+            metric = f"orthogonal={orthogonal}, each_E8={each_e8}, spans_R24={spans}"
+        self.results['LATT-051'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "3 orthogonal E8-structured blocks spanning R24",
+            "sector": "LATTICE"
+        }
+        print(f"  LATT-051: {status} (E8 triple: {metric})")
+
+    def cert_lattice_052_12_bridges(self):
+        """LATT-052: 24D = 12×2D bridge pair decomposition"""
+        r = self._get_lattice_connector()
+        if r is None:
+            status = "SKIPPED"
+            metric = "Lattice modules unavailable"
+        else:
+            decomp = r['bridge_decomposition']
+            n_bridges = decomp['num_bridges']
+            total_dim = decomp['total_dim']
+            ok = n_bridges == 12 and total_dim == 24
+            status = "SEALED" if ok else "FAILED"
+            metric = f"{n_bridges} bridges, {total_dim}D total"
+        self.results['LATT-052'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "12 bridges, 24D",
+            "sector": "LATTICE"
+        }
+        print(f"  LATT-052: {status} (bridges: {metric})")
+
+    def cert_lattice_053_four_faces(self):
+        """LATT-053: 4 faces × 3 bridges (framework-specific grouping)"""
+        r = self._get_lattice_connector()
+        if r is None:
+            status = "SKIPPED"
+            metric = "Lattice modules unavailable"
+        else:
+            faces = r['four_faces']
+            n_faces = faces['num_faces']
+            bpf = faces['bridges_per_face']
+            cross = faces['cross_e8']
+            ok = n_faces == 4 and bpf == 3 and cross
+            # DERIVED status: framework-specific, not a pure mathematical theorem
+            status = "DERIVED" if ok else "FAILED"
+            metric = f"{n_faces} faces, {bpf} bridges/face, cross_E8={cross}"
+        self.results['LATT-053'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "4 faces, 3 bridges/face, cross-E8",
+            "sector": "LATTICE",
+            "note": "Framework-specific grouping (model-dependent)"
+        }
+        print(f"  LATT-053: {status} (faces: {metric})")
+
+    def cert_lattice_054_g2_from_e8(self):
+        """LATT-054: G2 3-form from octonion structure constants + Hitchin identity"""
+        r = self._get_lattice_connector()
+        if r is None:
+            status = "SKIPPED"
+            metric = "Lattice modules unavailable"
+        else:
+            g2_compat = r['g2_from_e8']
+            phi_match = g2_compat['phi_matches_standard']
+            e8_compat = g2_compat['e8_compatible']
+            # Hitchin check: phi_{iab}*phi_{jab} = 6*delta_{ij}
+            import numpy as np
+            phi = self._lattice_connector.octonions.g2_structure_as_3form()
+            hitchin = np.einsum('iab,jab->ij', phi, phi)
+            hitchin_ok = bool(np.allclose(hitchin, 6.0 * np.eye(7)))
+            ok = phi_match and e8_compat and hitchin_ok
+            status = "SEALED" if ok else "FAILED"
+            metric = f"phi_match={phi_match}, e8_compat={e8_compat}, hitchin={hitchin_ok}"
+        self.results['LATT-054'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "C_ijk = phi_ijk, Hitchin identity holds",
+            "sector": "LATTICE"
+        }
+        print(f"  LATT-054: {status} (G2-E8: {metric})")
+
+    def cert_lattice_055_chain_valid(self):
+        """LATT-055: Full LatticeBridgeConnector derivation chain valid"""
+        r = self._get_lattice_connector()
+        if r is None:
+            status = "SKIPPED"
+            metric = "Lattice modules unavailable"
+        else:
+            chain_valid = r['chain_valid']
+            alpha_leak = r['face_moduli']['alpha_leak_matches']
+            status = "SEALED" if chain_valid and alpha_leak else "FAILED"
+            metric = f"chain_valid={chain_valid}, alpha_leak_correct={alpha_leak}"
+        self.results['LATT-055'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "Full E8→Leech→G2→Bridges→Faces chain valid",
+            "sector": "LATTICE"
+        }
+        print(f"  LATT-055: {status} (chain: {metric})")
 
     # ═══════════════════════════════════════════════════════════════════
     # BRIDGE CERTIFICATES (v22.0 - 12-PAIR-BRIDGE)

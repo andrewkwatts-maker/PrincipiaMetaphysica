@@ -1,0 +1,27 @@
+{
+  "Name": "Top Quark",
+  "Symbol": "t",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Quark", "Fundamental Particle"],
+  "Charge_e": 0.6666666667, // +2/3 e
+  "Mass_MeVc2": 173000.0, // Current quark mass, approximate, ~173 GeV/c²
+  "Mass_kg": 3.085025e-22,
+  "Mass_amu": 185.71,
+  "Spin_hbar": 0.5,
+  "ConstituentMass_MeV": 173000.0,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0.3333333333, // +1/3 B
+  "Isospin_I": 0.0,
+  "Isospin_I3": 0.0,
+  "Parity_P": null,
+  "Composition": [], // Fundamental
+  "Stability": "Unstable", // Decays before hadronizing due to very short lifetime
+  "HalfLife_s": 5.0e-25, // Very short half-life
+  "DecayProducts": ["Bottom Quark", "W Boson"], // Dominant decay mode
+  "Antiparticle": {
+    "Name": "Antitop Quark",
+    "Symbol": "t̅"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

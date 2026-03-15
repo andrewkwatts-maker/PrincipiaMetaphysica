@@ -1,0 +1,26 @@
+{
+  "Name": "Electron Neutrino",
+  "Symbol": "ν_e",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 0.0000000022, // Estimated upper limit (2.2 eV/c² converted to MeV/c²). Actual mass is non-zero but extremely tiny.
+  "Mass_kg": 3.921856e-36,
+  "Mass_amu": 2.359e-12,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": null, // Extremely small, effectively zero for practical purposes
+  "LeptonNumber_L": 1, // Specifically electron lepton number
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": null, // Not simply assigned an intrinsic parity in standard context
+  "Composition": [], // Fundamental
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Electron Antineutrino",
+    "Symbol": "ν̅_e"
+  },
+  "InteractionForces": ["Weak", "Gravitational"] // Only interacts via weak and gravitational forces
+}

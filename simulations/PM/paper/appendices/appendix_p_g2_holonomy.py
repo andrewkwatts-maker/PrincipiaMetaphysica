@@ -313,6 +313,22 @@ class AppendixPG2Holonomy(SimulationBase):
                         "diagram for imaginary octonions."
                     )
                 ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The G<sub>2</sub> 3-form &phi; that defines the holonomy structure is not "
+                        "merely postulated but emerges from the E<sub>8</sub> root system via the "
+                        "octonion algebra. Since G<sub>2</sub> = Aut(O), the automorphism group of "
+                        "the octonions, it acts naturally on Im(O) &cong; R<sup>7</sup>. The structure "
+                        "constants C<sub>ijk</sub> of the octonion algebra, defined by the Fano plane "
+                        "triples, directly yield the G<sub>2</sub> 3-form: &phi; = &Sigma; C<sub>ijk</sub> "
+                        "e<sup>i</sup> &wedge; e<sup>j</sup> &wedge; e<sup>k</sup>. This construction "
+                        "satisfies the Hitchin identity &phi;<sub>iab</sub>&phi;<sub>jab</sub> = "
+                        "6&delta;<sub>ij</sub>, verified computationally. The E<sub>8</sub> root system "
+                        "in R<sup>8</sup> projects naturally onto Im(O) = R<sup>7</sup>, providing the "
+                        "algebraic origin of G<sub>2</sub> holonomy from Lie theory."
+                    )
+                ),
 
                 # Section P.5: The Coassociative 4-Form
                 ContentBlock(
