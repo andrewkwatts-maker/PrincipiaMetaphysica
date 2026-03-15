@@ -107,12 +107,12 @@ class ToleranceSweepRunner:
 
         # Map simulation names to files
         simulation_files = {
-            "adversarial": "adversarial_axiom_tester_v24_1.py",
-            "statistical": "statistical_rigor_validator_v24_1.py",
-            "unitary": "unitary_closure_checker_v24_1.py",
-            "observer": "observer_integrator_v24_1.py",
-            "information": "information_bottleneck_distiller_v24_1.py",
-            "falsification": "falsification_oracle_v24_1.py"
+            "adversarial": "adversarial_axiom_tester.py",
+            "statistical": "statistical_rigor_validator.py",
+            "unitary": "unitary_closure_checker.py",
+            "observer": "observer_integrator.py",
+            "information": "information_bottleneck_distiller.py",
+            "falsification": "falsification_oracle.py"
         }
 
         if simulation_name not in simulation_files:

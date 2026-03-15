@@ -4933,7 +4933,7 @@
     },
     "unitary.central_charge": {
       "value": 0,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486913",
@@ -4947,13 +4947,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.is_ghost_free": {
       "value": true,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486918",
@@ -4967,13 +4967,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.status": {
       "value": "UNITARY_STABLE: GHOST_FREE",
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486922",
@@ -4987,13 +4987,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.c_transverse": {
       "value": 24,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486926",
@@ -5004,13 +5004,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.c_bridge": {
       "value": 2,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486930",
@@ -5021,13 +5021,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.c_ghost": {
       "value": -26,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486933",
@@ -5038,7 +5038,7 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
@@ -9812,7 +9812,7 @@
     },
     "funnel.survival_rate": {
       "value": 0.434,
-      "source": "appendix_j_torsion_funnel_v16_2",
+      "source": "appendix_j_torsion_funnel",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.527423",
@@ -9826,13 +9826,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "funnel.compression_ratio": {
       "value": 2.3,
-      "source": "appendix_j_torsion_funnel_v16_2",
+      "source": "appendix_j_torsion_funnel",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.527427",
@@ -9846,7 +9846,7 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
@@ -12454,14 +12454,14 @@
           "Total: c_total = c_matter + c_ghost = 26 - 26 = 0",
           "Unitarity: c_total = 0 ensures no negative-norm states"
         ],
-        "source": "unitary_filter_v16_2"
+        "source": "unitary_filter_legacy"
       },
       "terms": {
         "c_total": "Total central charge (must be 0 for unitarity)",
         "c_matter": "Matter sector contribution = 26",
         "c_ghost": "Ghost sector contribution = -26"
       },
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "timestamp": "2026-03-08T10:44:54.486950"
     },
     "central-charge-unitarity": {
@@ -12490,13 +12490,13 @@
           "Ghost bc system contributes -26",
           "c = 24 + 2 - 26 = 0 [GHOST-FREE]"
         ],
-        "source": "unitary_filter_v16_2"
+        "source": "unitary_filter_legacy"
       },
       "terms": {
         "b3": "Third Betti number of G2 manifold = 24",
         "c": "Central charge (must equal 0 for ghost-free theory)"
       },
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "timestamp": "2026-03-08T10:44:54.486951"
     },
     "leech-dimension-uniqueness": {
@@ -24098,7 +24098,7 @@
           "shadow-torsion-sum",
           "ancestral-roots-derivation"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "276": "SO(24) generators from 24 transverse dimensions",
@@ -24106,7 +24106,7 @@
         "12": "Manifold projection cost for 4D bridge",
         "288": "Total ancestral roots entering the funnel"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527448"
     },
     "torsion-funnel-bottleneck": {
@@ -24133,14 +24133,14 @@
         "parentFormulas": [
           "shadow-torsion-sum"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "4": "Number of spacetime dimensions (t, x, y, z)",
         "6": "Torsion pins per dimension",
         "24": "Total torsion pins at the bottleneck"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527449"
     },
     "torsion-funnel-exit": {
@@ -24168,14 +24168,14 @@
           "torsion-funnel-entry",
           "hidden-support-count"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "125": "Active observable residues (particles)",
         "163": "Hidden structural supports (bulk scaffolding)",
         "288": "Total ancestral roots (conserved)"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527450"
     },
     "survival-rate-formula": {
@@ -24204,14 +24204,14 @@
           "torsion-funnel-entry",
           "torsion-funnel-exit"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "125": "Active residues surviving the torsion filter",
         "288": "Total ancestral roots entering the funnel",
         "43.4\\%": "Survival rate (sterile saturation fraction)"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527451"
     },
     "bottleneck-pressure": {
@@ -24240,7 +24240,7 @@
           "torsion-funnel-entry",
           "torsion-funnel-bottleneck"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "P_{\\text{entry}}": "Entry pressure at the torsion bottleneck",
@@ -24248,7 +24248,7 @@
         "24": "Torsion pin channels at the bottleneck",
         "12": "Degrees of freedom per pin (compression ratio)"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527452"
     },
     "c-torsion-derivation": {
@@ -43781,7 +43781,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Kolmogorov complexity K(x) measures the length of the shortest program that generates x. For the PM framework, the information bottleneck analysis (compression_report_v24.json) yields:"
+          "content": "Kolmogorov complexity K(x) measures the length of the shortest program that generates x. For the PM framework, the information bottleneck analysis (compression_report.json) yields:"
         },
         {
           "type": "list",
@@ -44156,7 +44156,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Kolmogorov complexity K(x) measures the length of the shortest program that generates x. For the PM framework, the information bottleneck analysis (compression_report_v24.json) yields:"
+          "content": "Kolmogorov complexity K(x) measures the length of the shortest program that generates x. For the PM framework, the information bottleneck analysis (compression_report.json) yields:"
         },
         {
           "type": "list",
@@ -52148,22 +52148,22 @@
       "four_face_g2_structure"
     ],
     "unitary.central_charge": [
-      "unitary_filter_v16_2"
+      "unitary_filter_legacy"
     ],
     "unitary.is_ghost_free": [
-      "unitary_filter_v16_2"
+      "unitary_filter_legacy"
     ],
     "unitary.status": [
-      "unitary_filter_v16_2"
+      "unitary_filter_legacy"
     ],
     "unitary.c_transverse": [
-      "unitary_filter_v16_2"
+      "unitary_filter_legacy"
     ],
     "unitary.c_bridge": [
-      "unitary_filter_v16_2"
+      "unitary_filter_legacy"
     ],
     "unitary.c_ghost": [
-      "unitary_filter_v16_2"
+      "unitary_filter_legacy"
     ],
     "topology.n_gen_leech": [
       "leech_partition_v16_2"
@@ -52877,10 +52877,10 @@
       "appendix_i_terminal_states_v16_2"
     ],
     "funnel.survival_rate": [
-      "appendix_j_torsion_funnel_v16_2"
+      "appendix_j_torsion_funnel"
     ],
     "funnel.compression_ratio": [
-      "appendix_j_torsion_funnel_v16_2"
+      "appendix_j_torsion_funnel"
     ],
     "sterile.all_verified": [
       "appendix_k_sterile_constants_v16_2"
@@ -53343,7 +53343,7 @@
         ]
       },
       {
-        "simulation_id": "unitary_filter_v16_2",
+        "simulation_id": "unitary_filter_legacy",
         "phase": 1,
         "status": "PASSED",
         "execution_time_ms": 0.058,
@@ -54073,7 +54073,7 @@
         ]
       },
       {
-        "simulation_id": "appendix_j_torsion_funnel_v16_2",
+        "simulation_id": "appendix_j_torsion_funnel",
         "phase": 6,
         "status": "PASSED",
         "execution_time_ms": 0.056,
@@ -54445,7 +54445,7 @@
         "keyTakeaway": "The UnitaryFilter is the 'Guardian' that ensures PM never produces unphysical predictions by blocking any simulation where the Weyl anomaly is not perfectly cancelled.",
         "technicalDetail": "Central charge calculation: c = b3 + 2 - 26, where b3 = 24 is the third Betti number (transverse modes from G2 compactification), 2 comes from unified time (1) + Euclidean bridge (0) for timeless substrate in dual-shadow structure, and -26 is the bc ghost system contribution. For c = 0, the Weyl anomaly cancels and the theory is unitary (ghost-free). For c != 0, negative-norm states appear and all predictions are invalid. The Guardian enforces c = 0 before any simulation runs.",
         "prediction": "If b3 is ever measured or computed to be anything other than 24, or if the spacetime dimension differs from 26, the entire PM framework would require fundamental revision. The Guardian would block all simulations until the geometry is corrected.",
-        "simulation_id": "unitary_filter_v16_2",
+        "simulation_id": "unitary_filter_legacy",
         "domain": "validation",
         "section": "validation"
       },
@@ -54996,7 +54996,7 @@
       "year": 1998,
       "type": "book",
       "url": "https://doi.org/10.1017/CBO9780511816079",
-      "source_simulation": "unitary_filter_v16_2"
+      "source_simulation": "unitary_filter_legacy"
     },
     {
       "id": "polyakov1981",
@@ -55008,7 +55008,7 @@
       "year": 1981,
       "type": "journal",
       "doi": "10.1016/0370-2693(81)90743-7",
-      "source_simulation": "unitary_filter_v16_2"
+      "source_simulation": "unitary_filter_legacy"
     },
     {
       "id": "bars2006",
@@ -55018,7 +55018,7 @@
       "year": 2006,
       "type": "preprint",
       "url": "https://arxiv.org/abs/hep-th/0604012",
-      "source_simulation": "unitary_filter_v16_2"
+      "source_simulation": "unitary_filter_legacy"
     },
     {
       "id": "conway1969",
@@ -56510,7 +56510,7 @@
       "year": "1963",
       "doi": "10.1515/9781400881802",
       "type": "monograph",
-      "source_simulation": "appendix_j_torsion_funnel_v16_2"
+      "source_simulation": "appendix_j_torsion_funnel"
     },
     {
       "id": "bott-tu-1982",
@@ -56519,7 +56519,7 @@
       "year": "1982",
       "doi": "10.1007/978-1-4757-3951-0",
       "type": "monograph",
-      "source_simulation": "appendix_j_torsion_funnel_v16_2"
+      "source_simulation": "appendix_j_torsion_funnel"
     },
     {
       "id": "nist-codata-2018",
@@ -57442,7 +57442,7 @@
       "wolfram_query": null,
       "wolfram_result": "OFFLINE",
       "sector": "foundational",
-      "simulation_source": "unitary_filter_v16_2"
+      "simulation_source": "unitary_filter_legacy"
     },
     {
       "id": "leech_partition_n_gen_3",
@@ -59071,7 +59071,7 @@
       "status": "PASS",
       "wolfram_query": "N/A",
       "wolfram_result": "N/A",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "id": "cert-funnel-bottleneck",
@@ -59081,7 +59081,7 @@
       "status": "PASS",
       "wolfram_query": "N/A",
       "wolfram_result": "N/A",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "id": "cert-funnel-exit",
@@ -59091,7 +59091,7 @@
       "status": "PASS",
       "wolfram_query": "N/A",
       "wolfram_result": "N/A",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "id": "cert-compression-ratio",
@@ -59101,7 +59101,7 @@
       "status": "PASS",
       "wolfram_query": "288/24",
       "wolfram_result": "12",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "id": "cert-sterile-all-geometric",
@@ -59921,7 +59921,7 @@
       "url": "https://en.wikipedia.org/wiki/Conformal_anomaly",
       "relevance": "Central charge cancellation ensures ghost-free spectrum in bosonic string theory",
       "validation_hint": "Verify c_total = D_matter + 2 - 26 = 0 for physical consistency",
-      "simulation_source": "unitary_filter_v16_2"
+      "simulation_source": "unitary_filter_legacy"
     },
     {
       "topic": "Leech Lattice",
@@ -60943,21 +60943,21 @@
       "url": "https://en.wikipedia.org/wiki/Torsion_tensor",
       "relevance": "Torsion funnel describes how torsion pins filter ancestral roots",
       "validation_hint": "Torsion is the antisymmetric part of the connection",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "topic": "Morse Theory and Critical Points",
       "url": "https://en.wikipedia.org/wiki/Morse_theory",
       "relevance": "Funnel topology as a Morse-theoretic flow from 288 to 24 to 125",
       "validation_hint": "Critical points correspond to bottleneck transitions",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "topic": "Sankey Diagrams for Flow Visualization",
       "url": "https://en.wikipedia.org/wiki/Sankey_diagram",
       "relevance": "Visual representation of the 288 -> 24 -> 125 torsion flow",
       "validation_hint": "Flow conservation: total input equals total output",
-      "simulation_source": "appendix_j_torsion_funnel_v16_2"
+      "simulation_source": "appendix_j_torsion_funnel"
     },
     {
       "topic": "Fundamental Physical Constants",
@@ -62515,21 +62515,21 @@
     },
     {
       "gate_id": "G07",
-      "simulation_id": "appendix_j_torsion_funnel_v16_2",
+      "simulation_id": "appendix_j_torsion_funnel",
       "assertion": "Torsion orthogonality: 24 pins are mutually orthogonal",
       "result": true,
       "timestamp": "2026-03-08T00:44:54.546261+00:00"
     },
     {
       "gate_id": "G10",
-      "simulation_id": "appendix_j_torsion_funnel_v16_2",
+      "simulation_id": "appendix_j_torsion_funnel",
       "assertion": "Torsion tension floor: minimum tension maintained through funnel",
       "result": true,
       "timestamp": "2026-03-08T00:44:54.546261+00:00"
     },
     {
       "gate_id": "G69",
-      "simulation_id": "appendix_j_torsion_funnel_v16_2",
+      "simulation_id": "appendix_j_torsion_funnel",
       "assertion": "Topological soliton check: funnel flow preserves topological charge",
       "result": true,
       "timestamp": "2026-03-08T00:44:54.546261+00:00"
@@ -63133,7 +63133,7 @@
       ]
     },
     {
-      "simulation_id": "unitary_filter_v16_2",
+      "simulation_id": "unitary_filter_legacy",
       "passed": true,
       "checks": [
         {
@@ -65385,7 +65385,7 @@
       ]
     },
     {
-      "simulation_id": "appendix_j_torsion_funnel_v16_2",
+      "simulation_id": "appendix_j_torsion_funnel",
       "passed": true,
       "checks": [
         {

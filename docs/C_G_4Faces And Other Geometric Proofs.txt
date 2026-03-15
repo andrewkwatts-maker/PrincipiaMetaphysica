@@ -37,7 +37,7 @@ Chirality (Page 5-6): Condensate <ΨΓ...Ψ> generates geometry, but no Lagrangi
 Overall: Many steps assume topology (e.g., h^{1,1}=4 for moduli) without deriving from first principles. Simulations validate post-hoc (e.g., sigma_validator_final_v16_2.py checks <3σ), but circular if inputs tuned.
 
 Review of Simulation Files
-The repo has ~20 core simulations in simulations/ (Python, no notebooks). run_all_simulations.py orchestrates in phases (0-6), importing modules like g2_geometry_v16_0.py (computes b₃=24, χ=144 symbolically), ckm_matrix_v16_2.py (Yukawa hierarchies via ε=0.2257 from racetrack), and validators (e.g., CERTIFICATES_v16_2.py for 72 gates: 100% pass if <3σ). Data in data/experimental/ (JSON from PDG/etc.). Outputs: JSON with provenance (derivation chains, git hashes), plots (e.g., torsion_funnel_v16_2.png).
+The repo has ~20 core simulations in simulations/ (Python, no notebooks). run_all_simulations.py orchestrates in phases (0-6), importing modules like g2_geometry_v16_0.py (computes b₃=24, χ=144 symbolically), ckm_matrix_v16_2.py (Yukawa hierarchies via ε=0.2257 from racetrack), and validators (e.g., CERTIFICATES_v16_2.py for 72 gates: 100% pass if <3σ). Data in data/experimental/ (JSON from PDG/etc.). Outputs: JSON with provenance (derivation chains, git hashes), plots (e.g., torsion_funnel.png).
 
 Positive: Modular, traceable (e.g., "derivation_chain": ["topology.chi_eff", "gauge.alpha_GUT"]). UQ mode (Monte Carlo) propagates uncertainties.
 Issues: Hardcodes like b₃=24, α_shadow=0.576 (calibrated). No error if data changes (e.g., if DESI updates, fails). Speculative modules (e.g., orch_or_geometry_v16_2.py for consciousness) dilute focus. No full G₂ eigenvalue solver (uses approximations).

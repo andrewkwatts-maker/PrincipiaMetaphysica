@@ -19,9 +19,9 @@ sys.path.insert(0, str(REPO_ROOT))
 
 # Define visualization scripts to run
 VISUALIZATION_SCRIPTS = [
-    "simulations/visualizations/certificate_dashboard_v16_2.py",
-    "simulations/visualizations/four_pattern_orthogonality_v16_2.py",
-    "simulations/visualizations/torsion_funnel_v16_2.py",
+    "simulations/visualizations/certificate_dashboard.py",
+    "simulations/visualizations/four_pattern_orthogonality.py",
+    "simulations/visualizations/torsion_funnel.py",
     # Add others as needed
 ]
 

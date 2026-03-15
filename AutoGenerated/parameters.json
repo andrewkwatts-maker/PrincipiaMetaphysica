@@ -4341,7 +4341,7 @@
     },
     "unitary.central_charge": {
       "value": 0,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486913",
@@ -4355,13 +4355,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.is_ghost_free": {
       "value": true,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486918",
@@ -4375,13 +4375,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.status": {
       "value": "UNITARY_STABLE: GHOST_FREE",
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486922",
@@ -4395,13 +4395,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.c_transverse": {
       "value": 24,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486926",
@@ -4412,13 +4412,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.c_bridge": {
       "value": 2,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486930",
@@ -4429,13 +4429,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "unitary.c_ghost": {
       "value": -26,
-      "source": "unitary_filter_v16_2",
+      "source": "unitary_filter_legacy",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.486933",
@@ -4446,7 +4446,7 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
@@ -9226,7 +9226,7 @@
     },
     "funnel.survival_rate": {
       "value": 0.434,
-      "source": "appendix_j_torsion_funnel_v16_2",
+      "source": "appendix_j_torsion_funnel",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.527423",
@@ -9240,13 +9240,13 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },
     "funnel.compression_ratio": {
       "value": 2.3,
-      "source": "appendix_j_torsion_funnel_v16_2",
+      "source": "appendix_j_torsion_funnel",
       "uncertainty": null,
       "status": "DERIVED",
       "timestamp": "2026-03-08T10:44:54.527427",
@@ -9260,7 +9260,7 @@
       "bound_type": null,
       "sigma_deviation": null,
       "validation_status": "NO_DATA",
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "derivation_chain": [],
       "git_commit": "9a5a49e660741b6e2bb39f70218d88038349aadd"
     },

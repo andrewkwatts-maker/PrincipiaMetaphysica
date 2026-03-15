@@ -101,7 +101,7 @@ C) Full transparency: "8 total inputs (3 calibration + 2 PMNS + 3 geometric seed
 ### 6. EDOF=3 Statistical Rigor
 
 **Current State** (from audit):
-- `statistical_rigor_validator_v24_1.py` performs SVD to calculate "Independence Rank"
+- `statistical_rigor_validator.py` performs SVD to calculate "Independence Rank"
 - Claims χ²_reduced = 0.23 with EDOF=3 interpretation
 - Code exists but mathematical proof not fully explicit
 

@@ -364,9 +364,9 @@ PrincipiaMetaphysica/
 │   │   └── appendices/          # Supporting calculations
 │   │
 │   ├── visualizations/          # Plot generation scripts
-│   │   ├── certificate_dashboard_v16_2.py
-│   │   ├── torsion_funnel_v16_2.py
-│   │   └── entropy_basin_terminal_map_v16_2.py
+│   │   ├── certificate_dashboard.py
+│   │   ├── torsion_funnel.py
+│   │   └── entropy_basin_terminal_map.py
 │   │
 │   └── data/                    # Experimental reference data
 │       └── experimental/
@@ -381,8 +381,8 @@ PrincipiaMetaphysica/
 │   ├── simulations.json         # Simulation results
 │   ├── metadata.json            # Version and build info
 │   └── plots/                   # Generated visualizations
-│       ├── certificate_dashboard_v16_2.png
-│       ├── torsion_funnel_v16_2.png
+│       ├── certificate_dashboard.png
+│       ├── torsion_funnel.png
 │       └── ...
 │
 ├── Pages/                       # HTML documentation pages

@@ -120,11 +120,11 @@ function toggleSigmaSort() {
 5. ✅ Created `scripts/generate_all_plots.py` for reproducibility
 
 **Generated Plots:**
-1. `certificate_dashboard_v16_2.png` (423KB) - 42 gates grid
+1. `certificate_dashboard.png` (423KB) - 42 gates grid
 2. `primary_gates_v16_2.png` (250KB) - 7 primary gates focus
-3. `four_pattern_orthogonality_v16_2.png` (245KB) - G₂ pattern independence
+3. `four_pattern_orthogonality.png` (245KB) - G₂ pattern independence
 4. `four_pattern_stability_v16_2.png` (211KB) - Stability heatmap
-5. `torsion_funnel_v16_2.png` (462KB) - 288→24→125 flow
+5. `torsion_funnel.png` (462KB) - 288→24→125 flow
 
 **Removed (No Longer Generated):**
 - hubble_evolution_v16_1.png
@@ -140,12 +140,12 @@ function toggleSigmaSort() {
   "plots": [
     {
       "id": "certificate-dashboard",
-      "file": "certificate_dashboard_v16_2.png",
+      "file": "certificate_dashboard.png",
       "title": "Certificate Dashboard - 42 Gates Grid",
       "description": "...",
       "category": "validation",
       "size_kb": 423,
-      "script": "simulations/visualizations/certificate_dashboard_v16_2.py"
+      "script": "simulations/visualizations/certificate_dashboard.py"
     }
   ],
   "categories": { ... }

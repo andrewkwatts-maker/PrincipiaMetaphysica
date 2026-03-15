@@ -282,7 +282,7 @@ The 288-24-4 architecture mirrors this ancient understanding:
 ## Related Documentation
 
 - [Appendix H: The 288-Root Basis](../simulations/v16/appendices/appendix_h_288_roots_v16_2.py)
-- [Appendix J: The Torsion Funnel](../simulations/v16/appendices/appendix_j_torsion_funnel_v16_2.py)
+- [Appendix J: The Torsion Funnel](../simulations/v16/appendices/appendix_j_torsion_funnel.py)
 - [Appendix Z: Terminal Constant Ledger](../simulations/v16/appendices/appendix_z_terminal_ledger_v16_2.py)
 - [FAQ Q42: Hebrew Letter Naming](../Pages/faq.html#sterile-model)
 

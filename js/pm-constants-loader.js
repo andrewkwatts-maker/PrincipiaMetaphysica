@@ -7,7 +7,7 @@
  *
  * Data Sources:
  *   - parameters.json, simulations.json: Core physics values
- *   - GATES_72_CERTIFICATES.json: Gate verification statistics (pass_count, pending_count, etc.)
+ *   - GATES_CERTIFICATES.json: Gate verification statistics (pass_count, pending_count, etc.)
  *   - statistics.json: Validation statistics (within_1sigma, exact_matches, etc.)
  *   - named_constants.json: Ten Pillars (Sacred Heptagon + Mechanical Triad)
  *
@@ -218,7 +218,7 @@
             'parameters.gauge.alpha_gut_inv': 'gauge.ALPHA_GUT_INV',
 
             // ================================================================
-            // Statistics - from statistics.json / GATES_72_CERTIFICATES.json
+            // Statistics - from statistics.json / GATES_CERTIFICATES.json
             // ================================================================
             'statistics.certificates_total': '_dynamic.total_gates',
             'statistics.certificates_verified': '_dynamic.pass_count',
@@ -337,7 +337,7 @@
             'n_gen': 3,                        // chi_eff / 48 = 144 / 48 = 3 (topological)
             'phi': 1.6180339887,               // Golden ratio (mathematical constant)
             'H0_local': 71.55,                 // H0 = (288/4) - (163/144) + 0.6819 (O'Dowd formula)
-            // certificates_total: removed - now loaded dynamically from GATES_72_CERTIFICATES.json via _getDynamicValue()
+            // certificates_total: removed - now loaded dynamically from GATES_CERTIFICATES.json via _getDynamicValue()
             'D_observable': 4,                 // Observable spacetime dimensions (topological)
         },
 
@@ -491,7 +491,7 @@
             }
 
             // Check for dynamically-loaded values (paths starting with _dynamic.)
-            // These come from statistics.json and GATES_72_CERTIFICATES.json
+            // These come from statistics.json and GATES_CERTIFICATES.json
             if (path.startsWith('_dynamic.')) {
                 const key = path.replace('_dynamic.', '');
                 return this._getDynamicValue(key);
@@ -879,7 +879,7 @@
                     loadComponent('statistics', basePath),
                     loadComponent('metadata', basePath),
                     loadComponent('named_constants', basePath),
-                    loadComponent('GATES_72_CERTIFICATES', basePath)
+                    loadComponent('GATES_CERTIFICATES', basePath)
                 ]);
 
                 // Store named constants for access via getNamedConstant()
@@ -890,7 +890,7 @@
 
                 // If we got at least parameters or simulations, use split files
                 if (parameters || simulations) {
-                    // Extract gate statistics from GATES_72_CERTIFICATES.json
+                    // Extract gate statistics from GATES_CERTIFICATES.json
                     const gateStats = gates72?.summary || {};
 
                     PM._data = {
@@ -909,7 +909,7 @@
                         },
                         framework_statistics: {
                             ...(statistics?.framework_statistics || {}),
-                            // Dynamic gate statistics from GATES_72_CERTIFICATES.json
+                            // Dynamic gate statistics from GATES_CERTIFICATES.json
                             // Fallback values used only when JSON is unavailable
                             pass_count: gateStats.verified ?? 40,
                             pending_count: gateStats.pending_lock ?? 0,

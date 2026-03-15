@@ -419,7 +419,7 @@ def main():
 
     # Generate HTML visualization
     output_dir = os.path.dirname(os.path.abspath(__file__))
-    html_path = os.path.join(output_dir, "stability_heatmap_v16_2.html")
+    html_path = os.path.join(output_dir, "stability_heatmap.html")
     generator.generate_plotly_html(html_path)
 
     # Save data as JSON

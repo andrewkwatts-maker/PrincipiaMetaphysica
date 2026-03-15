@@ -775,12 +775,12 @@ These DERIVED parameters should have experimental validation data:
 - `topology.b2` (GEOMETRIC, g2_geometry_v16_0): N/A
 - `topology.K_MATCHING` (GEOMETRIC, g2_geometry_v16_0): N/A
 - `topology.d_over_R` (GEOMETRIC, g2_geometry_v16_0): N/A
-- `unitary.central_charge` (DERIVED, unitary_filter_v16_2): N/A
-- `unitary.is_ghost_free` (DERIVED, unitary_filter_v16_2): N/A
-- `unitary.status` (DERIVED, unitary_filter_v16_2): N/A
-- `unitary.c_transverse` (DERIVED, unitary_filter_v16_2): N/A
-- `unitary.c_bridge` (DERIVED, unitary_filter_v16_2): N/A
-- `unitary.c_ghost` (DERIVED, unitary_filter_v16_2): N/A
+- `unitary.central_charge` (DERIVED, unitary_filter_legacy): N/A
+- `unitary.is_ghost_free` (DERIVED, unitary_filter_legacy): N/A
+- `unitary.status` (DERIVED, unitary_filter_legacy): N/A
+- `unitary.c_transverse` (DERIVED, unitary_filter_legacy): N/A
+- `unitary.c_bridge` (DERIVED, unitary_filter_legacy): N/A
+- `unitary.c_ghost` (DERIVED, unitary_filter_legacy): N/A
 - `topology.n_gen_leech` (DERIVED, leech_partition_v16_2): N/A
 - `topology.leech_dim` (ESTABLISHED, leech_partition_v16_2): N/A
 - `topology.octonion_dim` (ESTABLISHED, leech_partition_v16_2): N/A
@@ -1005,8 +1005,8 @@ These DERIVED parameters should have experimental validation data:
 - `terminal.gauge_ghost_potential` (DERIVED, appendix_i_terminal_states_v16_2): N/A
 - `terminal.restoration_potential` (DERIVED, appendix_i_terminal_states_v16_2): N/A
 - `terminal.unwinding_status` (DERIVED, appendix_i_terminal_states_v16_2): N/A
-- `funnel.survival_rate` (DERIVED, appendix_j_torsion_funnel_v16_2): N/A
-- `funnel.compression_ratio` (DERIVED, appendix_j_torsion_funnel_v16_2): N/A
+- `funnel.survival_rate` (DERIVED, appendix_j_torsion_funnel): N/A
+- `funnel.compression_ratio` (DERIVED, appendix_j_torsion_funnel): N/A
 - `sterile.all_verified` (DERIVED, appendix_k_sterile_constants_v16_2): N/A
 - `terminal.dominant_basin` (DERIVED, appendix_l_omega_unwinding_v16_2): N/A
 - `terminal.restoration_probability` (DERIVED, appendix_l_omega_unwinding_v16_2): N/A
@@ -1159,7 +1159,7 @@ The following simulations need to provide validation data for DERIVED parameters
 - `terminal.restoration_potential`: N/A = 1.0
 - `terminal.unwinding_status`: N/A = GEOMETRICALLY_DEFINED
 
-### appendix_j_torsion_funnel_v16_2
+### appendix_j_torsion_funnel
 
 **Parameters needing validation:** 2
 
@@ -1559,7 +1559,7 @@ The following simulations need to provide validation data for DERIVED parameters
 - `thermal.modular_temperature`: N/A = 1.1717937850534085e+17
 - `thermal.entropy_gradient`: N/A = 1.1196236631610107e-05
 
-### unitary_filter_v16_2
+### unitary_filter_legacy
 
 **Parameters needing validation:** 6
 

@@ -31,7 +31,7 @@ If b3 != 24 or D_total != 26, the Weyl anomaly does NOT cancel, leading to:
 This filter BLOCKS any simulation that would violate unitarity.
 
 Usage:
-    from simulations.validation.unitary_filter_v16_2 import UnitaryFilter
+    from simulations.validation.unitary_filter_legacy import UnitaryFilter
 
     # Create filter with default values (b3=24, dim_total=26)
     guardian = UnitaryFilter()
@@ -361,7 +361,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
         if SimulationMetadata is None:
             return None
         return SimulationMetadata(
-            id="unitary_filter_v16_2",
+            id="unitary_filter_legacy",
             version="16.2",
             domain="validation",
             title="Ghost-Free Stability Check (The Guardian)",
@@ -777,7 +777,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
 # ============================================================================
 
 REQUIRED_VALIDATION = {
-    "id": "unitary_filter_v16_2",
+    "id": "unitary_filter_legacy",
     "type": "required_validation",
     "version": "16.2",
     "title": "Ghost-Free Stability Check (The Guardian)",

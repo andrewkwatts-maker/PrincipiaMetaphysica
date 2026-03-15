@@ -105,7 +105,7 @@ Status: CREDIBLE
    - 288/24/4 structure derived (not arbitrary)
    - 116:1 data compression proves no overfitting
 
-3. **Updated information_bottleneck_distiller_v24_1.py**:
+3. **Updated information_bottleneck_distiller.py**:
    - Added `analyze_code_theoretical_integrity()` method
    - Changed test name to "Topological Compression via Algorithmic Symmetry"
    - Added `mdl_satisfied` field to results

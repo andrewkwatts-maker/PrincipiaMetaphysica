@@ -33,12 +33,12 @@
 | `index.json` | 663 B | Feb 22 14:49 | split_theory_output.py | ✅ ACTIVE |
 | `references.json` | 98 KB | Feb 22 14:49 | run_all_simulations.py | ✅ ACTIVE |
 | `beginner-guide.json` | 53 KB | Feb 22 14:49 | run_all_simulations.py | ✅ ACTIVE |
-| `compression_report_v24.json` | 11 KB | Feb 22 16:41 | information_bottleneck_distiller_v24_1.py | ✅ ACTIVE |
-| `adversarial_report_v24.json` | 1.6 KB | Feb 22 16:41 | adversarial_axiom_tester_v24_1.py | ✅ ACTIVE |
-| `statistical_rigor_report_v24.json` | 15 KB | Feb 22 16:41 | statistical_rigor_validator_v24_1.py | ✅ ACTIVE |
-| `observer_report_v24.json` | 2.4 KB | Feb 22 11:06 | observer_integrator_v24_1.py | ✅ ACTIVE |
-| `unitary_report_v24.json` | 2.5 KB | Feb 22 10:59 | unitary_closure_checker_v24_1.py | ✅ ACTIVE |
-| `falsification_report_v24.json` | 3.8 KB | Feb 22 09:07 | falsification_oracle_v24_1.py | ✅ ACTIVE |
+| `compression_report_v24.json` | 11 KB | Feb 22 16:41 | information_bottleneck_distiller.py | ✅ ACTIVE |
+| `adversarial_report_v24.json` | 1.6 KB | Feb 22 16:41 | adversarial_axiom_tester.py | ✅ ACTIVE |
+| `statistical_rigor_report_v24.json` | 15 KB | Feb 22 16:41 | statistical_rigor_validator.py | ✅ ACTIVE |
+| `observer_report_v24.json` | 2.4 KB | Feb 22 11:06 | observer_integrator.py | ✅ ACTIVE |
+| `unitary_report_v24.json` | 2.5 KB | Feb 22 10:59 | unitary_closure_checker.py | ✅ ACTIVE |
+| `falsification_report_v24.json` | 3.8 KB | Feb 22 09:07 | falsification_oracle.py | ✅ ACTIVE |
 | `radiative_corrections_v24_1_report.md` | 8.4 KB | Feb 22 13:31 | Unknown (v24 script) | ⚠️ VERIFY |
 | `27D_terminology_audit_v24.json` | 28 KB | Feb 22 14:53 | Unknown (v24 script) | ⚠️ VERIFY |
 | `plots-manifest.json` | 3.2 KB | Feb 21 18:30 | Unknown (plots generator) | ⚠️ VERIFY |

@@ -907,14 +907,14 @@
           "Total: c_total = c_matter + c_ghost = 26 - 26 = 0",
           "Unitarity: c_total = 0 ensures no negative-norm states"
         ],
-        "source": "unitary_filter_v16_2"
+        "source": "unitary_filter_legacy"
       },
       "terms": {
         "c_total": "Total central charge (must be 0 for unitarity)",
         "c_matter": "Matter sector contribution = 26",
         "c_ghost": "Ghost sector contribution = -26"
       },
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "timestamp": "2026-03-08T10:44:54.486950"
     },
     "central-charge-unitarity": {
@@ -943,13 +943,13 @@
           "Ghost bc system contributes -26",
           "c = 24 + 2 - 26 = 0 [GHOST-FREE]"
         ],
-        "source": "unitary_filter_v16_2"
+        "source": "unitary_filter_legacy"
       },
       "terms": {
         "b3": "Third Betti number of G2 manifold = 24",
         "c": "Central charge (must equal 0 for ghost-free theory)"
       },
-      "source_simulation": "unitary_filter_v16_2",
+      "source_simulation": "unitary_filter_legacy",
       "timestamp": "2026-03-08T10:44:54.486951"
     },
     "leech-dimension-uniqueness": {
@@ -12551,7 +12551,7 @@
           "shadow-torsion-sum",
           "ancestral-roots-derivation"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "276": "SO(24) generators from 24 transverse dimensions",
@@ -12559,7 +12559,7 @@
         "12": "Manifold projection cost for 4D bridge",
         "288": "Total ancestral roots entering the funnel"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527448"
     },
     "torsion-funnel-bottleneck": {
@@ -12586,14 +12586,14 @@
         "parentFormulas": [
           "shadow-torsion-sum"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "4": "Number of spacetime dimensions (t, x, y, z)",
         "6": "Torsion pins per dimension",
         "24": "Total torsion pins at the bottleneck"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527449"
     },
     "torsion-funnel-exit": {
@@ -12621,14 +12621,14 @@
           "torsion-funnel-entry",
           "hidden-support-count"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "125": "Active observable residues (particles)",
         "163": "Hidden structural supports (bulk scaffolding)",
         "288": "Total ancestral roots (conserved)"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527450"
     },
     "survival-rate-formula": {
@@ -12657,14 +12657,14 @@
           "torsion-funnel-entry",
           "torsion-funnel-exit"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "125": "Active residues surviving the torsion filter",
         "288": "Total ancestral roots entering the funnel",
         "43.4\\%": "Survival rate (sterile saturation fraction)"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527451"
     },
     "bottleneck-pressure": {
@@ -12693,7 +12693,7 @@
           "torsion-funnel-entry",
           "torsion-funnel-bottleneck"
         ],
-        "source": "appendix_j_torsion_funnel_v16_2"
+        "source": "appendix_j_torsion_funnel"
       },
       "terms": {
         "P_{\\text{entry}}": "Entry pressure at the torsion bottleneck",
@@ -12701,7 +12701,7 @@
         "24": "Torsion pin channels at the bottleneck",
         "12": "Degrees of freedom per pin (compression ratio)"
       },
-      "source_simulation": "appendix_j_torsion_funnel_v16_2",
+      "source_simulation": "appendix_j_torsion_funnel",
       "timestamp": "2026-03-08T10:44:54.527452"
     },
     "c-torsion-derivation": {

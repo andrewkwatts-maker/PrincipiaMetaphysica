@@ -531,7 +531,7 @@ For N particles: $\tau_{GRW} = \frac{1}{N \cdot \lambda}$
 
 Full implementation: `simulations/consciousness/orch_or_pair_shielding.py`
 
-Visualizations: `simulations/visualizations/microtubule_12pair_v22.py`
+Visualizations: `simulations/visualizations/microtubule_12pair.py`
 
 ---
 

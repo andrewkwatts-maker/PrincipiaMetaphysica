@@ -65,7 +65,7 @@ class ParameterCategory(str, Enum):
 ## COMPONENT 2: Explicit Jacobian Rank Proof (EDOF=3)
 
 ### Current State
-- `statistical_rigor_validator_v24_1.py` does SVD-based "Independence Rank" calc
+- `statistical_rigor_validator.py` does SVD-based "Independence Rank" calc
 - Claims EDOF=3 but mathematical proof not fully explicit
 - External critique: "post-hoc statistical fudging"
 

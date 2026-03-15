@@ -104,7 +104,7 @@ M_obs⁴(3,1) = Standard Model spacetime
 
 ### 4. ✅ Adversarial Tester Refinement
 
-**File**: [simulations/PM/validation/adversarial_axiom_tester_v24_1.py](H:\Github\PrincipiaMetaphysica\simulations\PM\validation\adversarial_axiom_tester_v24_1.py)
+**File**: [simulations/PM/validation/adversarial_axiom_tester.py](H:\Github\PrincipiaMetaphysica\simulations\PM\validation\adversarial_axiom_tester.py)
 
 **Original Problem**: 100% holonomy violation rate (1000/1000 rejected)
 

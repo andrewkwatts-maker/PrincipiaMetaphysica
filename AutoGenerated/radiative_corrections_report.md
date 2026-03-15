@@ -90,7 +90,7 @@ Conclusion: Unity Identity is a global attractor in G₂-preserving configuratio
 
 ## Files Modified
 
-### 1. adversarial_axiom_tester_v24_1.py
+### 1. adversarial_axiom_tester.py
 
 **Added Method:**
 ```python
@@ -193,7 +193,7 @@ Both formulations capture the same physics: QCD vacuum polarization screening in
 
 ## Success Criteria - All Met ✓
 
-- [x] adversarial_axiom_tester_v24_1.py runs without errors
+- [x] adversarial_axiom_tester.py runs without errors
 - [x] Formula includes k_rad = 1 + α_s/π term
 - [x] formulas.json updated with radiative correction derivation
 - [x] Deviation from target (137.036) is physically justified (~0.17%)
