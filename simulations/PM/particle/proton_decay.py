@@ -30,6 +30,52 @@ References:
 - Corti-Haskins-Nordstrom-Pacini (2015): TCS G2 construction
 - Friedmann-Witten (2002): Brane models and proton stability
 
+Independent Assessment (Claude Opus 4.6 vs Gemini 2.5 Flash, 2026-03-16):
+=========================================================================
+VERDICT: PHENOMENOLOGICAL -- standard SU(5) GUT with geometric window dressing.
+
+C_PREFACTOR = 3.82e33 years:
+  - Classification: CALIBRATED/FITTED, not DERIVED.
+  - The code itself labels this "calibrated to SU(5)" (line 73).
+  - It absorbs hadronic matrix elements, phase space factors, and RG running
+    -- all standard SU(5) inputs, none derived from G2 topology.
+  - This is the dominant factor in the lifetime prediction and is NOT
+    traceable to the Ten Pillar Seeds or any topological invariant.
+
+BR = (12/24)^2 = 0.25:
+  - Classification: AD HOC assertion, not a legitimate geometric derivation.
+  - No established mapping exists in the literature from "orientations of
+    associative 3-cycles" to proton decay branching ratios.
+  - Standard GUT branching ratios depend on Clebsch-Gordan coefficients,
+    CKM mixing, and representation content -- not cycle counting.
+  - The squaring operation (12/24)^2 lacks physical justification: it is
+    unclear whether the ratio represents an amplitude or a probability.
+  - Hardcoded from the first commit; never derived or justified in code.
+
+S = exp(1/K) ~ 1.284 (K=4):
+  - Classification: PLAUSIBLE but ad hoc in its specific form.
+  - The general idea of wavefunction overlap suppression across a TCS neck
+    has qualitative support from Acharya et al. (2008), who studied proton
+    decay in M-theory on G2 manifolds.
+  - However, the specific formula d/R = 1/(2*pi*K) and the choice K=4
+    ("TCS G2 #187") are not from the literature and appear model-specific.
+  - This is the ONLY genuinely PM-specific contribution, providing a modest
+    28% lifetime enhancement -- far less significant than the choice of
+    M_GUT and alpha_GUT values.
+
+Formula structure:
+  - tau_p = C * (M_GUT/10^16)^4 * (0.03/alpha_GUT)^2 * S
+  - This is entirely standard SU(5) GUT, with S appended as a multiplier.
+  - The prediction's value (~4.9e34 years) is dominated by the choice of
+    M_GUT = 2.118e16 GeV and alpha_GUT^{-1} = 23.54, not by topology.
+
+Consensus (both models agree):
+  - C_PREFACTOR is a fitted constant, not derivable from PM topology.
+  - The simulation should be classified as PHENOMENOLOGICAL, not DERIVED.
+  - The elaborate TCS narrative added in git history polishes the
+    presentation but does not change the underlying calculation, which
+    remains standard SU(5) with a small geometric correction factor.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
