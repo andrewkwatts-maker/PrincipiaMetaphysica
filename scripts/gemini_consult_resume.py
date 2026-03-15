@@ -7,7 +7,7 @@ This script completes the missing phases 2 and 5 from the rate-limited consultat
 Uses Gemini 1.5 Flash model with higher rate limits.
 
 Usage:
-    python scripts/gemini_v24_2_consult_resume.py
+    python scripts/gemini_consult_resume.py
 """
 
 import json

@@ -478,7 +478,7 @@ Are these the same category or fundamentally different?
   "formula": "χ²_red = χ²/EDOF = 5.751/3 = 1.917, p = 0.124",
   "verification_status": "VERIFIED",
   "derivation_status": "RIGOROUS",
-  "note": "Effective DOF = 3 (b₃, φ, θ₁₃) reflects true topological independence. Traditional DOF = 25 assumes statistical independence violated by G₂ topology. Reduced χ² = 1.917 near ideal value 1.0. p-value = 0.124 in Trust Zone [0.05, 0.95] proves credible fit without overfitting (p ≈ 1.0 would indicate suspiciously perfect fit). Correlation matrix shows 61 high-correlation pairs (|ρ| > 0.99) validating EDOF approach. Per PDG §39.4.3: 'Correlated measurements require effective DOF accounting.' See statistical_rigor_validator_v24_1.py."
+  "note": "Effective DOF = 3 (b₃, φ, θ₁₃) reflects true topological independence. Traditional DOF = 25 assumes statistical independence violated by G₂ topology. Reduced χ² = 1.917 near ideal value 1.0. p-value = 0.124 in Trust Zone [0.05, 0.95] proves credible fit without overfitting (p ≈ 1.0 would indicate suspiciously perfect fit). Correlation matrix shows 61 high-correlation pairs (|ρ| > 0.99) validating EDOF approach. Per PDG §39.4.3: 'Correlated measurements require effective DOF accounting.' See statistical_rigor_validator.py."
 }
 ```
 
@@ -496,7 +496,7 @@ Are these the same category or fundamentally different?
   "formula": "Compression = L(Data)/L(Theory) = 8000 bits / 69 bits ≈ 116:1",
   "verification_status": "VERIFIED",
   "derivation_status": "RIGOROUS",
-  "note": "Topological Compression via Minimal Description Length (MDL) principle. Framework compresses 125 physical constants (8000 bits @ 64-bit precision) into 3 topological seeds + 3 experimental anchors + geometric rules (69 bits total). Compression ratio 116:1 with 99.1% efficiency proves framework achieves optimal information compression—the exact opposite of overfitting. Comparison: Overfitting has L(Theory) >> L(Data); Standard Model has L(Theory) ≈ L(Data); PM has L(Theory) << L(Data). The 288/24/4 structure is not arbitrary but derived from E₈ roots (288), G₂ Betti number (24), and spacetime dimensions (4). See information_bottleneck_distiller_v24_1.py."
+  "note": "Topological Compression via Minimal Description Length (MDL) principle. Framework compresses 125 physical constants (8000 bits @ 64-bit precision) into 3 topological seeds + 3 experimental anchors + geometric rules (69 bits total). Compression ratio 116:1 with 99.1% efficiency proves framework achieves optimal information compression—the exact opposite of overfitting. Comparison: Overfitting has L(Theory) >> L(Data); Standard Model has L(Theory) ≈ L(Data); PM has L(Theory) << L(Data). The 288/24/4 structure is not arbitrary but derived from E₈ roots (288), G₂ Betti number (24), and spacetime dimensions (4). See information_bottleneck_distiller.py."
 }
 ```
 

@@ -123,7 +123,7 @@ k_gimel = b3/2 + 1/π = 24/2 + 1/π = 12.3183098862...
 
 **Code Reference:** `simulations/fermion/fine_structure_constant_v16_1.py`
 
-**Symbolic Proof:** `PROOFS/Mirror_Brane_Resonance_v16_2.wl` (Wolfram Mathematica)
+**Symbolic Proof:** `PROOFS/Mirror_Brane_Resonance.wl` (Wolfram Mathematica)
 
 **Status:** VALIDATED (9 decimal place agreement)
 
@@ -346,7 +346,7 @@ to accelerate scrutiny, not bypass it. Errors should be reported to the author.
 | File | Content | Status |
 |------|---------|--------|
 | `Mirror_Brane_Metric_Derivation_v16_2.md` | w0 = -23/24 thawing proof | Validated |
-| `Mirror_Brane_Resonance_v16_2.wl` | Wolfram Mathematica symbolic validation | Complete |
+| `Mirror_Brane_Resonance.wl` | Wolfram Mathematica symbolic validation | Complete |
 | `Holonomy_Phase_Strain_v16_2.md` | delta_CP mass ordering analysis | Documented |
 | `Hopf_Fibration_Residue_v16_2.md` | Neutrino mass sum Hopf dressing (Appendix K) | Validated |
 | `Precision_Uncertainty_v16_2.md` | Theory vs experimental uncertainty limits | Documented |

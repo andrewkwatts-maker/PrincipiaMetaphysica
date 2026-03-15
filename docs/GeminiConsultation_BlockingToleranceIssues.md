@@ -45,7 +45,7 @@ Where:
 
 ### Proposed Solution:
 
-1. **Create verification script** (final_verification_script_v24_1.py):
+1. **Create verification script** (final_verification_script.py):
    - Scan all JSON files for "27D" mentions
    - Flag any lacking (24+1) or (0,2) context
    - Force terminology: "M²⁷ bulk manifold where (24+1) kinetic sector..."
@@ -84,7 +84,7 @@ Where:
 
 ### Issue: Current Formula Too Sensitive to Perturbations
 
-**Current Implementation** (adversarial_axiom_tester_v24_1.py):
+**Current Implementation** (adversarial_axiom_tester.py):
 ```python
 # Unity Identity: α⁻¹ = χ_eff × k_geometric
 k_geometric = 0.9514 * (1 - total_correction)
@@ -203,7 +203,7 @@ After:  chi² ≈ 18-22, p ≈ 0.60-0.80 (APPROPRIATE)
 
 ### Implementation Required:
 
-**File**: `simulations/PM/validation/statistical_rigor_validator_v24_1.py`
+**File**: `simulations/PM/validation/statistical_rigor_validator.py`
 
 **Current (Line 65-66)**:
 ```python
@@ -433,7 +433,7 @@ CKM |V_cb|:
 ## IX. RECOMMENDED IMPLEMENTATION ORDER
 
 ### Week 1 (Critical Fixes):
-1. **Create verification script** (final_verification_script_v24_1.py)
+1. **Create verification script** (final_verification_script.py)
 2. **Run audit** on all JSON files
 3. **Fix flagged entries** (enforce (24+1)⊕(0,2) terminology)
 4. **Implement p-value fix** (add 1% theory uncertainty)

@@ -42,7 +42,7 @@ Fix 58 flagged 27D terminology violations across JSON files to ensure all "27D" 
 ======================================================================
 ```
 
-**Command**: `python simulations/PM/validation/final_verification_script_v24_1.py`
+**Command**: `python simulations/PM/validation/final_verification_script.py`
 **Result**: **0 flags** - All 27D references now include topological context
 **Status**: **PUBLICATION READY** ✅
 

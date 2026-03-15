@@ -11,7 +11,7 @@
 ## Executive Summary
 
 ✅ **STATUS: PUBLICATION READY**
-✅ **0 unverified 27D mentions flagged** (verified by final_verification_script_v24_1.py)
+✅ **0 unverified 27D mentions flagged** (verified by final_verification_script.py)
 ✅ **All JSON files remain valid** after modifications
 
 ---

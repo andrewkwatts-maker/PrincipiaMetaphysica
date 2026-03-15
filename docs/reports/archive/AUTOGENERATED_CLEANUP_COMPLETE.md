@@ -173,11 +173,11 @@ docs/
 
 | Plot File | Generation Script | Status |
 |-----------|------------------|--------|
-| `certificate_dashboard_v16_2.png` | `simulations/visualizations/certificate_dashboard_v16_2.py` | ✅ REGENERATED |
-| `primary_gates_v16_2.png` | `simulations/visualizations/certificate_dashboard_v16_2.py` | ✅ REGENERATED |
-| `four_pattern_orthogonality_v16_2.png` | `simulations/visualizations/four_pattern_orthogonality_v16_2.py` | ✅ REGENERATED |
-| `four_pattern_stability_v16_2.png` | `simulations/visualizations/four_pattern_orthogonality_v16_2.py` | ✅ REGENERATED |
-| `torsion_funnel_v16_2.png` | `simulations/visualizations/torsion_funnel_v16_2.py` | ✅ REGENERATED |
+| `certificate_dashboard.png` | `simulations/visualizations/certificate_dashboard.py` | ✅ REGENERATED |
+| `primary_gates_v16_2.png` | `simulations/visualizations/certificate_dashboard.py` | ✅ REGENERATED |
+| `four_pattern_orthogonality.png` | `simulations/visualizations/four_pattern_orthogonality.py` | ✅ REGENERATED |
+| `four_pattern_stability_v16_2.png` | `simulations/visualizations/four_pattern_orthogonality.py` | ✅ REGENERATED |
+| `torsion_funnel.png` | `simulations/visualizations/torsion_funnel.py` | ✅ REGENERATED |
 | `figure1_m27_decomposition.{png,pdf}` | `scripts/generate_submission_figures.py` | ✅ REGENERATED |
 | `figure2_convergence_scatter.{png,pdf}` | `scripts/generate_submission_figures.py` | ✅ REGENERATED |
 | `figure3_alp_discovery_window.{png,pdf}` | `scripts/generate_submission_figures.py` | ✅ REGENERATED |
@@ -276,7 +276,7 @@ python test_visualization_generation.py
 
 ```bash
 # Certificate dashboards
-python simulations/visualizations/certificate_dashboard_v16_2.py
+python simulations/visualizations/certificate_dashboard.py
 
 # Publication figures (v24.1)
 python scripts/generate_submission_figures.py

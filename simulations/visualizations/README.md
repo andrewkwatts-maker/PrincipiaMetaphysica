@@ -25,9 +25,9 @@ These visualizations are compatible with the v22+ unified (24,1) framework:
 
 | File | Description | Output |
 |------|-------------|--------|
-| `descent_chain_v21.py` | Dimensional descent chain visualization | descent-chain.png |
-| `microtubule_12pair_v22.py` | 12-pair Euclidean bridge microtubule structure | microtubule-12pair.png |
-| `gnosis_progression_v22_2.py` | Gnosis progression diagrams | gnosis-progression.png |
+| `descent_chain.py` | Dimensional descent chain visualization | descent-chain.png |
+| `microtubule_12pair.py` | 12-pair Euclidean bridge microtubule structure | microtubule-12pair.png |
+| `gnosis_progression.py` | Gnosis progression diagrams | gnosis-progression.png |
 | `particle_diagrams.py` | Standard Model particle representations | particle-*.png |
 | `gauge_theory_diagrams.py` | Gauge group structures and breaking | gauge-*.png |
 | `theory_overview_diagrams.py` | Theory overview and summary | theory-overview.png |
@@ -47,11 +47,11 @@ These use v16.2 parameters but are signature-agnostic:
 
 | File | Description |
 |------|-------------|
-| `torsion_funnel_v16_2.py` | Torsion funnel visualization |
-| `four_pattern_orthogonality_v16_2.py` | Four-pattern orthogonality |
-| `entropy_basin_terminal_map_v16_2.py` | Entropy basin mapping |
-| `stability_heatmap_v16_2.py` | Parameter stability heatmap |
-| `certificate_dashboard_v16_2.py` | Validation certificate dashboard |
+| `torsion_funnel.py` | Torsion funnel visualization |
+| `four_pattern_orthogonality.py` | Four-pattern orthogonality |
+| `entropy_basin_terminal_map.py` | Entropy basin mapping |
+| `stability_heatmap.py` | Parameter stability heatmap |
+| `certificate_dashboard.py` | Validation certificate dashboard |
 
 ---
 

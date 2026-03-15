@@ -14,7 +14,7 @@ Features:
   - Structured output to GEMINI_V24_2_CONSULTATION_RESULTS.md
 
 Usage:
-    python scripts/gemini_v24_2_consult.py
+    python scripts/gemini_consult.py
 
 Environment:
     GEMINI_API_KEY or GOOGLE_API_KEY must be set in .env file

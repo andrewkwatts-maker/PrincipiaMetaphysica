@@ -69,7 +69,7 @@ This audit reviews all 72 gates for compliance with v24.1 theory state, focusing
   "formula": "χ²_red = 1.917, p = 0.124",
   "verification_status": "VERIFIED",
   "derivation_status": "RIGOROUS",
-  "note": "Effective DOF = 3 (b₃, φ, θ₁₃) reflects true topological independence. Traditional DOF = 25 assumes statistical independence violated by G₂ topology. p = 0.124 in Trust Zone [0.05, 0.95] proves credible fit without overfitting. See statistical_rigor_validator_v24_1.py."
+  "note": "Effective DOF = 3 (b₃, φ, θ₁₃) reflects true topological independence. Traditional DOF = 25 assumes statistical independence violated by G₂ topology. p = 0.124 in Trust Zone [0.05, 0.95] proves credible fit without overfitting. See statistical_rigor_validator.py."
 }
 ```
 
@@ -140,7 +140,7 @@ This audit reviews all 72 gates for compliance with v24.1 theory state, focusing
   "formula": "L(Data) / L(Theory) = 8000 bits / 69 bits ≈ 116:1",
   "verification_status": "VERIFIED",
   "derivation_status": "RIGOROUS",
-  "note": "Topological Compression via Minimal Description Length (MDL) principle. Framework compresses 125 constants (8000 bits) into 3 seeds + 3 anchors (69 bits). Compression ratio 116:1 proves framework is optimal information compression, NOT overfitting. See information_bottleneck_distiller_v24_1.py."
+  "note": "Topological Compression via Minimal Description Length (MDL) principle. Framework compresses 125 constants (8000 bits) into 3 seeds + 3 anchors (69 bits). Compression ratio 116:1 proves framework is optimal information compression, NOT overfitting. See information_bottleneck_distiller.py."
 }
 ```
 

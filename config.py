@@ -1577,7 +1577,7 @@ class CoreFormulas:
             ],
             verification_page="sections.html#2"
         ),
-        simulation_file="simulations/v21/bridge/bridge_pressure_v21.py",
+        simulation_file="simulations/v21/bridge/bridge_pressure.py",
         units="dimensionless",
         related_formulas=["virasoro-anomaly", "v21-or-reduction"],
         learning_resources=[
@@ -2079,7 +2079,7 @@ class CoreFormulas:
             "V(phi)": FormulaTerm("Bridge Potential", "Stabilizes bridge geometry"),
             "kappa": FormulaTerm("Bridge Coupling", "Curvature coupling constant"),
         },
-        simulation_file="simulations/v21/bridge/bridge_pressure_v21.py",
+        simulation_file="simulations/v21/bridge/bridge_pressure.py",
         related_formulas=["v21-or-reduction", "lagrangian-13d-effective"],
         references=[
             FormulaReference(

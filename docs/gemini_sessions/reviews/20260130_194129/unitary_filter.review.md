@@ -1,4 +1,4 @@
-# Gemini Peer Review: unitary_filter_v16_2
+# Gemini Peer Review: unitary_filter_legacy
 **File:** `simulations\PM\validation\unitary_filter.py`
 **Date:** 2026-01-30
 **Model:** gemini-2.5-flash

@@ -223,8 +223,8 @@ mv *_AUDIT_*.md *_REPORT.md *_SUMMARY.md docs/reports/archive/
 - ✅ .env (updated Gemini API key)
 
 ### Scripts Created
-- ✅ scripts/gemini_v24_2_consult.py (systematic consultation)
-- ✅ scripts/gemini_v24_2_consult_resume.py (resume after rate limit)
+- ✅ scripts/gemini_consult.py (systematic consultation)
+- ✅ scripts/gemini_consult_resume.py (resume after rate limit)
 
 ---
 

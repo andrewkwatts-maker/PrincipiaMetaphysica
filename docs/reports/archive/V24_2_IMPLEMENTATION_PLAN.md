@@ -194,7 +194,7 @@ Components 1-5 not yet reviewed by Gemini due to API rate limits:
 - Component 5: IAXO ALP sensitivity plot
 
 **Action**: Wait 24 hours for rate limit reset, then:
-1. Resume Gemini consultation (use `scripts/gemini_v24_2_consult_resume.py`)
+1. Resume Gemini consultation (use `scripts/gemini_consult_resume.py`)
 2. Get feedback on Components 1-5 + Critical Methodological Questions
 3. Decide implementation based on full review
 

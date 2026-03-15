@@ -256,9 +256,9 @@ This is the framework's "1919 Eclipse moment"—a sharp, pre-experimental predic
 
 | Validator | Command | Runtime | Status | Key Result |
 |-----------|---------|---------|--------|------------|
-| Statistical Rigor | `statistical_rigor_validator_v24_1.py` | ~15s | ✅ CREDIBLE | p = 0.1244 |
-| Adversarial Testing | `adversarial_axiom_tester_v24_1.py` | ~6s | ✅ HIGHLY ROBUST | 0/1000 violations |
-| Information Bottleneck | `information_bottleneck_distiller_v24_1.py` | ~7s | ✅ MDL SATISFIED | 116:1 compression |
+| Statistical Rigor | `statistical_rigor_validator.py` | ~15s | ✅ CREDIBLE | p = 0.1244 |
+| Adversarial Testing | `adversarial_axiom_tester.py` | ~6s | ✅ HIGHLY ROBUST | 0/1000 violations |
+| Information Bottleneck | `information_bottleneck_distiller.py` | ~7s | ✅ MDL SATISFIED | 116:1 compression |
 | Unity Identity | (part of adversarial) | ~6s | ✅ VALIDATED | 0.0007% deviation |
 | Parameter Independence | (part of statistical) | ~15s | ✅ FULL RANK | 27/27 |
 | 72-Gate Certification | `CERTIFICATES.py` | ~30s | ✅ LOCKED | 72/72 |

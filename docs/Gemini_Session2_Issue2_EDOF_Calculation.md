@@ -186,7 +186,7 @@ From `simulations/core/FormulasRegistry.py`, PM has exactly **10 fundamental inp
 
 ## IMPLEMENTATION PLAN
 
-### Step 1: Update statistical_rigor_validator_v24_1.py
+### Step 1: Update statistical_rigor_validator.py
 
 ```python
 def calculate_effective_dof(self) -> int:
@@ -255,7 +255,7 @@ def calculate_rigorous_p_value_with_edof(self) -> Dict[str, Any]:
 ### Step 2: Verify calculation
 
 ```bash
-python simulations/PM/validation/statistical_rigor_validator_v24_1.py
+python simulations/PM/validation/statistical_rigor_validator.py
 ```
 
 **Expected output**:
@@ -265,7 +265,7 @@ python simulations/PM/validation/statistical_rigor_validator_v24_1.py
 - p-value ≈ 0.44
 - Status: CREDIBLE ✓
 
-### Step 3: Update statistical_rigor_report_v24.json
+### Step 3: Update statistical_rigor_report.json
 
 Add EDOF explanation to report:
 ```json
@@ -332,9 +332,9 @@ Add EDOF explanation to report:
 
 ## NEXT STEPS (After Gemini Confirmation)
 
-1. Implement EDOF calculation in statistical_rigor_validator_v24_1.py
+1. Implement EDOF calculation in statistical_rigor_validator.py
 2. Re-run validator and verify p-value ≈ 0.44
-3. Regenerate statistical_rigor_report_v24.json
+3. Regenerate statistical_rigor_report.json
 4. Update paper discussion section with EDOF justification
 5. Git commit + push
 6. Mark Issue #2 as COMPLETE ✓

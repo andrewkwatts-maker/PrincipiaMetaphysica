@@ -35,14 +35,14 @@
 | `index.json` | split_theory_output.py | Feb 22 14:49 | ✓ ACTIVE |
 | `references.json` | run_all_simulations.py | Feb 22 14:49 | ✓ ACTIVE |
 | `beginner-guide.json` | run_all_simulations.py | Feb 22 14:49 | ✓ ACTIVE |
-| `compression_report_v24.json` | information_bottleneck_distiller_v24_1.py | Feb 22 16:41 | ✓ ACTIVE |
-| `adversarial_report_v24.json` | adversarial_axiom_tester_v24_1.py | Feb 22 16:41 | ✓ ACTIVE |
-| `statistical_rigor_report_v24.json` | statistical_rigor_validator_v24_1.py | Feb 22 16:41 | ✓ ACTIVE |
+| `compression_report_v24.json` | information_bottleneck_distiller.py | Feb 22 16:41 | ✓ ACTIVE |
+| `adversarial_report_v24.json` | adversarial_axiom_tester.py | Feb 22 16:41 | ✓ ACTIVE |
+| `statistical_rigor_report_v24.json` | statistical_rigor_validator.py | Feb 22 16:41 | ✓ ACTIVE |
 | `27D_terminology_audit_v24.json` | Unknown (v24 validation) | Feb 22 14:53 | ⚠ CHECK |
 | `radiative_corrections_v24_1_report.md` | Unknown (v24 validation) | Feb 22 13:31 | ⚠ CHECK |
-| `observer_report_v24.json` | observer_integrator_v24_1.py | Feb 22 11:06 | ✓ ACTIVE |
-| `unitary_report_v24.json` | unitary_closure_checker_v24_1.py | Feb 22 10:59 | ✓ ACTIVE |
-| `falsification_report_v24.json` | falsification_oracle_v24_1.py | Feb 22 09:07 | ✓ ACTIVE |
+| `observer_report_v24.json` | observer_integrator.py | Feb 22 11:06 | ✓ ACTIVE |
+| `unitary_report_v24.json` | unitary_closure_checker.py | Feb 22 10:59 | ✓ ACTIVE |
+| `falsification_report_v24.json` | falsification_oracle.py | Feb 22 09:07 | ✓ ACTIVE |
 | `plots-manifest.json` | Unknown (plots generator) | Feb 21 18:30 | ⚠ CHECK |
 | **Subdirectories to KEEP:** | | | |
 | `certificates/` | Certificate validation system | Various | ✓ ACTIVE |

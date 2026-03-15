@@ -617,7 +617,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "Kolmogorov complexity K(x) measures the length of the shortest program that generates x. "
-                    "For the PM framework, the information bottleneck analysis (compression_report_v24.json) "
+                    "For the PM framework, the information bottleneck analysis (compression_report.json) "
                     "yields:"
                 )
             ),
