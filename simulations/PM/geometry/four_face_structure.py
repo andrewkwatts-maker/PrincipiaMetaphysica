@@ -13,6 +13,29 @@ inter-face leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6).
 Racetrack stabilization of the four moduli VEVs follows the KKLT/LVS
 mechanism adapted to the G2 context: T_i = b3 * k_gimel / (i * pi).
 
+Assertion Assessment (Sprint 2, WP 2.3)
+- Assertion: h^{1,1}=4 and {i,i+4,i+8} face grouping are natural/unique
+- Git History: h11=4 stable since initial commit (v23.7.0, 2026-01-31). Face
+  grouping {i,i+4,i+8} introduced in same commit, never modified. Lattice
+  bridge methods added in Sprint 1 (0c03f140). No value changes across 9
+  commits.
+- Lattice Result: 15400 total 4x3 groupings of 12 bridges; 576 satisfy the
+  cross-E8 property (each face spans all 3 E8 blocks). The standard grouping
+  is one of 576, NOT unique by cross-E8 alone.
+- Gemini Verdict: "The standard grouping is one of many [576]. The cross-E8
+  property alone does not select the standard grouping." On n_gen=3: "It
+  absolutely depends on selecting a manifold (TCS #187) that happens to yield
+  chi_eff=144 and h^{1,1}=4." On classification: "This construction should be
+  unequivocally labeled DERIVED (framework-specific construction)." Gemini
+  confirmed h^{1,1}=4 is correct for TCS #187 but noted n_faces=h^{1,1} is
+  "not standard in the general G2 literature."
+- Classification: FITTED
+- Evidence: h^{1,1}=4 is a real Hodge number from TCS #187, but the face
+  grouping {i,i+4,i+8} is one of 576 cross-E8-valid options (not unique).
+  The derivation n_gen=3=12/4 depends on selecting TCS #187 specifically
+  because it yields the desired generation count. The stride-4 convention
+  is a labeling choice, not a mathematical necessity.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:

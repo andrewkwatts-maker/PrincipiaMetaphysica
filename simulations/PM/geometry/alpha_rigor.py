@@ -12,6 +12,71 @@ INJECTS TO: Section 3.1 (Electromagnetic Sector)
 FORMULA: alpha-inverse-geometric (Eq. 3.1)
 PARAMETER: electromagnetic.alpha_inv
 
+ASSERTION ASSESSMENT (2026-03-16)
+=================================
+Assertion: alpha^-1 = k_gimel^2 - b3/phi + phi/(4pi) ~ 137.036 derives from G2 geometry.
+
+Verdict: FITTED (not a geometric derivation)
+
+Classification: The formula is correctly self-labeled NUMEROLOGICAL_FIT (line 150).
+The three-term structure has no known basis in QFT, spectral geometry, or
+M-theory compactification on G2 manifolds.
+
+Evidence:
+  1. SIMULATION RESULTS:
+     - k_gimel = b3/2 + 1/pi = 12.31830988618379
+     - Formula yields alpha^-1 = 137.0367017758
+     - CODATA 2022: 137.035999177 -> error = 0.000513%
+     - Sensitivity: only 4/10000 k-values in +/-10% range match CODATA to 0.01%
+
+  2. REVERSE-ENGINEERING PROOF:
+     - Solving for k from CODATA: k = sqrt(137.036 + 24/phi - phi/(4pi)) = 12.31828136
+     - Registry value k_gimel = 12.31830989 (close but not identical)
+     - k_gimel = b3/2 + 1/pi is a simple construction that lands near the target
+     - Solving for b3 from CODATA gives b3 = 23.999940, not exactly 24
+     - Conclusion: k_gimel is constructed to approximate sqrt(alpha_inv + corrections)
+
+  3. GIT HISTORY:
+     - Formula appeared fully formed in commit 49baae4e (v23.5.0, 2026-01-29)
+     - No prior iterative versions or alternative formulas exist in history
+     - Subsequent commits (03b57c04, 9a5a49e6) were cosmetic only (HTML formatting,
+       CODATA reference annotations)
+
+  4. GEMINI DEBATE (3 rounds, gemini-2.0-flash, 2026-03-16):
+     Round 1 - Post-hoc fit assessment:
+       Gemini concluded "extremely likely a post-hoc numerical fit" based on:
+       the NUMEROLOGICAL_FIT self-label, reverse-engineering confirmation,
+       high sensitivity to k_gimel, sudden git appearance, and no known
+       geometric/QFT path producing this 3-term structure.
+     Round 2 - Spectral gap analysis:
+       No known G2 spectral gap computation yields 12.318. The combination
+       b3/2 + 1/pi has no established context in mathematical physics. The
+       golden ratio has no known fundamental role in G2 geometry. The claim
+       that k_gimel is a "spectral gap from associative 3-cycles" lacks
+       literature support.
+     Round 3 - Final verdict:
+       Classification: FITTED. The formula is an informed attempt at matching
+       the CODATA value, not a derivation from first principles. Gemini rated
+       the code's self-labeling and disclaimers as "HIGHLY INTELLECTUALLY HONEST."
+
+  5. MITIGATING FACTORS:
+     - The code already labels this NUMEROLOGICAL_FIT (line 150)
+     - Scientific disclaimer in validate() acknowledges this is not a QED derivation
+     - The ~0.0007 residual is presented honestly as a genuine deviation
+     - Learning materials include a link on mathematical coincidences
+     - The formula does NOT exactly reproduce CODATA, which argues against
+       pure reverse-engineering (it is a near-miss, not an exact match)
+
+Final Assessment: The formula is a FITTED numerical relationship that achieves
+impressive proximity (0.0005%) to the CODATA value through construction of
+k_gimel = b3/2 + 1/pi. It is NOT a geometric derivation from G2 topology.
+The code's own disclaimers are scientifically honest and appropriate. The
+framework would benefit from either (a) deriving k_gimel from an actual G2
+spectral computation, or (b) reclassifying the formula status from GEOMETRIC
+to FITTED/HEURISTIC in the Parameter definitions and Formula categories.
+
+Assessed by: Claude Opus 4.6 + Gemini 2.0 Flash (3-round adversarial debate)
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
