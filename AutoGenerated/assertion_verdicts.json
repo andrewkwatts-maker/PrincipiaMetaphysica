@@ -1,0 +1,187 @@
+{
+  "metadata": {
+    "assessment_date": "2026-03-16",
+    "method": "Lattice simulation + recursive Gemini debate (3+ rounds per assertion)",
+    "assessors": "Claude Opus 4.6 + Gemini 2.5 Flash",
+    "gemini_final_review_score": "1/10",
+    "gemini_final_review_status": "Gemini 2.0 Flash reviewed complete verdict table and largely agreed with all classifications. Suggested WP 3.2 may be too generous (PHENOMENOLOGICAL -> FITTED). Rated overall scientific validity 1/10. Full review in gemini_final_verdict_review.json.",
+    "total_assertions": 24,
+    "verdicts": {
+      "PROVEN": 2,
+      "PLAUSIBLE": 3,
+      "PARTIALLY_SUPPORTED": 1,
+      "OVERCLAIMED": 1,
+      "FITTED": 5,
+      "NUMEROLOGICAL": 2,
+      "PHENOMENOLOGICAL": 1,
+      "RETROFITTED": 1,
+      "UNFOUNDED": 5,
+      "REFUTED": 1,
+      "NUMEROLOGICAL_REVERSE_ENGINEERED": 1,
+      "CIRCULAR_NUMEROLOGY": 1
+    }
+  },
+  "assertions": [
+    {
+      "wp": "1.1",
+      "sprint": 1,
+      "file": "simulations/PM/algebra/e8_root_system.py",
+      "assertion": "E8 root system is mathematically correct: 240 roots, det(Cartan)=1, correct Dynkin diagram, all inner products valid.",
+      "verdict": "PROVEN",
+      "key_evidence": "All 7 verification checks PASS exhaustively (240 roots, all norm sqrt(2), det(Cartan)=1, Weyl closure 1920 reflections, root string integrality 57600 pairs, closed under negation, 120 positive roots). Cartan matrix matches known E8 exactly. Gemini confirmed: 'mathematically correct E8 despite non-standard numbering.' Minor bug: highest_root() uses np.sum(inner) as proxy for height (works accidentally)."
+    },
+    {
+      "wp": "1.2",
+      "sprint": 1,
+      "file": "simulations/PM/algebra/octonions.py",
+      "assertion": "Octonion algebra is mathematically correct with Aut(O) = G2.",
+      "verdict": "PROVEN",
+      "key_evidence": "All 8 verification checks PASS (antisymmetric, norm_multiplicative, left_alternative, right_alternative, not_associative, conjugate_norm, seven_triples, geom_antisymmetric). All 3 Moufang identities hold. Hitchin identity verified. Gemini: 'Your implementation does define a valid octonion algebra.' G2 = Aut(O) is mathematical fact."
+    },
+    {
+      "wp": "1.3",
+      "sprint": 1,
+      "file": "simulations/PM/geometry/g2_differential.py",
+      "assertion": "G2 3-form correctly derived from E8 via octonions for physics.",
+      "verdict": "PLAUSIBLE",
+      "key_evidence": "G2 3-form construction from E8 via octonion structure constants is mathematically standard and algebraically correct on flat R^7. However, flat R^7 has trivial holonomy {e}, not G2 holonomy. M-theory compactification requires a compact G2 manifold that this code does not construct. Gemini: 'the flat R^7 case is absolutely not sufficient for M-theory compactification physics.'"
+    },
+    {
+      "wp": "2.1",
+      "sprint": 2,
+      "file": "simulations/PM/algebra/leech_lattice.py",
+      "assertion": "Leech ambient R^24 = R^8+R^8+R^8 with E8-structured blocks.",
+      "verdict": "PLAUSIBLE",
+      "key_evidence": "E8 triple decomposition of R^24 is valid and standard in Leech lattice theory (Construction B). Cartan matrix recovered in all 3 blocks. However, decomposition is of the ambient space, not the Leech lattice itself. All sub-decompositions are framework choices, not theorems. Gemini: 'The Leech lattice is NOT E8+E8+E8 but is constructed from it via gluing.'"
+    },
+    {
+      "wp": "2.2",
+      "sprint": 2,
+      "file": "simulations/PM/algebra/lattice_bridge.py",
+      "assertion": "E8->Leech->Bridges->Faces chain is a valid derivation.",
+      "verdict": "PLAUSIBLE",
+      "key_evidence": "Mathematical foundations (E8, octonions, G2=Aut(O), Leech=E8^3) are proven theorems and correctly implemented. However, 12x2D decomposition and 4x3 face grouping are choices among many valid alternatives. alpha_leak=1/sqrt(6) is hardcoded (ratio=6.0) rather than computed from moduli. Gemini classified as FITTED; upgraded to PLAUSIBLE because E8->G2->Leech connections are genuine mathematics."
+    },
+    {
+      "wp": "2.3",
+      "sprint": 2,
+      "file": "simulations/PM/geometry/four_face_structure.py",
+      "assertion": "h^{1,1}=4 and {i,i+4,i+8} face grouping are natural/unique.",
+      "verdict": "FITTED",
+      "key_evidence": "15400 total 4x3 groupings exist; 576 satisfy cross-E8 property. Standard grouping is one of 576, NOT unique. h^{1,1}=4 is correct for TCS #187 but n_faces=h^{1,1} is not standard in G2 literature. n_gen=3=12/4 depends on selecting TCS #187 specifically. Gemini: 'This construction should be unequivocally labeled DERIVED (framework-specific construction).'"
+    },
+    {
+      "wp": "3.1",
+      "sprint": 3,
+      "file": "simulations/PM/geometry/alpha_rigor.py",
+      "assertion": "alpha^-1 = k_gimel^2 - b3/phi + phi/(4pi) ~ 137.036 derives from G2 geometry.",
+      "verdict": "FITTED",
+      "key_evidence": "Formula yields 137.0367 (0.0005% from CODATA). Code self-labels NUMEROLOGICAL_FIT (line 150). k_gimel = b3/2 + 1/pi is constructed to approximate sqrt(alpha_inv + corrections). 3-term structure has no known basis in QFT, spectral geometry, or M-theory. Gemini (3 rounds): 'extremely likely a post-hoc numerical fit.' No known G2 spectral gap computation yields 12.318."
+    },
+    {
+      "wp": "3.2",
+      "sprint": 3,
+      "file": "simulations/PM/particle/proton_decay.py",
+      "assertion": "Proton lifetime derived from TCS G2 cycle separation geometry.",
+      "verdict": "PHENOMENOLOGICAL",
+      "key_evidence": "C_PREFACTOR = 3.82e33 years is calibrated to SU(5), not derived from topology. BR = (12/24)^2 = 0.25 is ad hoc. S = exp(1/K) ~ 1.284 is plausible but specific form not from literature. Formula tau_p = C*(M_GUT/10^16)^4*(0.03/alpha_GUT)^2*S is entirely standard SU(5) GUT with S appended. Both models agree: standard SU(5) with geometric window dressing."
+    },
+    {
+      "wp": "3.3",
+      "sprint": 3,
+      "file": "simulations/PM/gauge/gauge_unification.py",
+      "assertion": "M_GUT ~ 2e16 GeV and alpha_GUT ~ 1/25.3 derived from G2 geometry.",
+      "verdict": "UNFOUNDED",
+      "key_evidence": "M_GUT_GEOMETRIC = 2.1e16 GeV and alpha_GUT_GEOMETRIC = 1/23.54 are HARDCODED literals, not computed from any geometric calculation. RG evolution from PDG inputs yields M_GUT = 6.3e15 (factor-of-3 discrepancy). alpha* = 1/24 = 1/b3 is ad hoc numerical identification. KK threshold corrections divided by 100, rendering them negligible. Values closely match standard MSSM predictions relabeled as 'geometric.'"
+    },
+    {
+      "wp": "4.1",
+      "sprint": 4,
+      "file": "simulations/PM/geometry/geometric_anchors_core.py",
+      "assertion": "base_instanton = 45.714 comes from Planck-scale baseline from topology.",
+      "verdict": "FITTED",
+      "key_evidence": "45.714 = 320/7 truncated. Sole purpose: produce s_mem = 45.714 * 7/8 = 40.0 exactly. Reverse-engineered from round-number target. No linear/multiplicative combination of b3, k_gimel, phi matches 45.714. Standard instanton action gives 152.7, not 45.714. 320 has no established significance in G2 topology. Gemini: 'reverse-engineered to ensure s_mem evaluates to exactly 40.0.'"
+    },
+    {
+      "wp": "4.2",
+      "sprint": 4,
+      "file": "simulations/PM/particle/mass_ratio.py",
+      "assertion": "m_p/m_e = 1836.15 derived from G2 manifold topology with zero free parameters.",
+      "verdict": "FITTED",
+      "key_evidence": "holonomy_correction = 1.5427971665 changed from 1.280145 in commit 70e87ab9 with message 'Fixed 20% error' against CODATA. Back-computation from CODATA gives h = 1.5427971668 (10 significant digits match). T^7 Dirac eigenvalue ratios yield neither 1.280 nor 1.543. Gemini: 'probability of theoretically derived value coincidentally matching CODATA to such precision is astronomically low.'"
+    },
+    {
+      "wp": "4.3",
+      "sprint": 4,
+      "file": "simulations/PM/particle/higgs_brane_partition.py",
+      "assertion": "m_higgs = 125.1 GeV derived from brane partition geometry on G2 manifold.",
+      "verdict": "UNFOUNDED",
+      "key_evidence": "m_bulk = 414.22 GeV is HARDCODED (line 151), never computed from any formula. overlap = 13/11 has no basis in string theory (26D = 13D+13D decomposition is fabricated). holonomy_correction fine-tunes the result. 3 free parameters for 1 prediction = zero predictive power. Git history shows overlap formula CHANGED while output stayed at ~125 GeV. Gemini: 'theoretical framework (414 GeV bulk tension, 13/11 brane overlap, 26D=13+13 mirror symmetry) does not exist in the string theory literature.'"
+    },
+    {
+      "wp": "4.4",
+      "sprint": 4,
+      "file": "simulations/PM/cosmology/speed_of_light.py",
+      "assertion": "Speed of light c derived from E8xE8 root lattice and G2 topology.",
+      "verdict": "NUMEROLOGICAL_REVERSE_ENGINEERED",
+      "key_evidence": "Original code used explicit Gnostic names: B_v = (ENNOIA/BARBELO)*(CHRISTOS/SOPHIA). Later rewritten with physics labels. 288 is NOT an E8 root count (E8 has 240 roots). 163 is a Heegner number with no E8 connection. 153 is biblical (John 21:11). 135 = 153-18 has no Lie algebra origin. 5 multiplicative factors with chosen integers provide far more degrees of freedom than needed. Gemini: 'fundamentally numerological, reverse-engineered with fabricated physics justifications.'"
+    },
+    {
+      "wp": "5.1",
+      "sprint": 5,
+      "file": "simulations/PM/particle/fermion_generations.py",
+      "assertion": "3 fermion generations from n_gen = b3/(2*h11) = 24/8 = 3, derived from G2 topology.",
+      "verdict": "NUMEROLOGICAL",
+      "key_evidence": "Formula n_gen = b3/(2*h11) not in standard G2 literature (Acharya-Witten 2001, Joyce 2000). Code actually computes n_gen = 144/48 = 3, which is circular (chi_eff = 6*b3 by definition). spinor_DOF=8 misapplied (relates to SUSY preservation, not generation counting). chi_eff is framework-defined, not standard topology. 18 hidden fitted parameters in Yukawa sector. Gemini: 'formula is engineered to give 3 by choosing divisors.'"
+    },
+    {
+      "wp": "5.2",
+      "sprint": 5,
+      "file": "simulations/PM/cosmology/cosmological_constant.py",
+      "assertion": "Cosmological constant Lambda derived from bridge moduli and racetrack stabilization.",
+      "verdict": "UNFOUNDED",
+      "key_evidence": "CIRCULAR DEPENDENCY: Formula uses R_horizon = c/H0 where H0 is OBSERVED (assumes the answer). Racetrack gives V_min = 3.7e-5 Planck units vs observed Lambda ~ 10^-122 (118-order discrepancy). Post-hoc factors (8*pi)^2 and projection_factor=3 not derived. Historical 87-order unit conversion bug fixed by removing the conversion entirely. Gemini: 'circular dependency, 118-order discrepancy, suspicious unit bug fix.'"
+    },
+    {
+      "wp": "5.3a",
+      "sprint": 5,
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "assertion": "CKM mixing matrix derived from G2 holonomy / octonion structure.",
+      "verdict": "OVERCLAIMED",
+      "key_evidence": "1/4 parameters genuinely predicted: lambda = epsilon = exp(-3/2) = 0.2231 (matches PDG 0.2245 at 1.71 sigma). Remaining 3 parameters (A=0.81, rho=0.14, eta=0.36, delta_CP=pi/6) are all hardcoded/fitted. Uses standard Wolfenstein parameterization, not novel octonionic derivation. No published octonionic mixing method followed. Gemini concurs: 'standard Wolfenstein with fitted coefficients dressed in G2 language.'"
+    },
+    {
+      "wp": "5.3b",
+      "sprint": 5,
+      "file": "simulations/PM/particle/neutrino_mixing.py",
+      "assertion": "PMNS mixing matrix derived from G2 holonomy / octonion structure.",
+      "verdict": "PARTIALLY_SUPPORTED",
+      "key_evidence": "3/6 parameters genuinely predicted (theta_12: 33.44 vs 33.41 deg, theta_13: 8.65 vs 8.63 deg, theta_23: 49.75 vs 49.0 deg) from topological inputs b2=4, b3=24 with no additional fitting. 2 parameters fitted (parity_offset=45.9 deg for delta_CP, m_base=0.049 eV for mass splittings). Net: 3-4 genuine predictions from 2 inputs. Formulas are novel but ad hoc -- not found in published literature. Results contingent on manifold choice (b2=4, b3=24)."
+    },
+    {
+      "wp": "6.1",
+      "sprint": 6,
+      "file": "simulations/PM/cosmology/dark_energy.py",
+      "assertion": "w0 != -1 predicted from bridge moduli dynamics, testable prediction.",
+      "verdict": "RETROFITTED",
+      "key_evidence": "Formula CHANGED in v16.2 (Dec 2025) from w0 = -11/13 = -0.846 to w0 = -23/24 = -0.9583 explicitly to match DESI 2025 data (1.76 sigma -> 0.02 sigma). b3=24 is not uniquely selected among G2 manifolds. No rigorous derivation connecting b3 to dark energy EoS in literature. alpha_shadow = 0.576 hardcoded. w_a prediction (-0.204 vs DESI -0.6, 2.5 sigma tension) was NOT adjusted -- a more honest test that performs poorly."
+    },
+    {
+      "wp": "6.2",
+      "sprint": 6,
+      "file": "simulations/PM/cosmology/hubble_tension.py",
+      "assertion": "PM resolves Hubble tension via KK modes from bridge dimensions.",
+      "verdict": "REFUTED",
+      "key_evidence": "47-order-of-magnitude mass scale mismatch: lightest KK mass = 4.44 Planck masses vs required ~10^{-28} eV. Bridge radii bounded to 0.1-10 Planck lengths, far too small. Actual Hubble tension code uses entirely different mechanisms (Ricci flow interpolation, O'Dowd formula, EDE with boost=95) -- none use KK modes, none are mutually consistent. Gemini: 'quantitatively unsupportable (47 orders of magnitude mass mismatch).'"
+    },
+    {
+      "wp": "6.3",
+      "sprint": 6,
+      "file": "simulations/PM/cosmology/s8_suppression.py",
+      "assertion": "S8 tension resolved via bridge-mediated dark energy suppression.",
+      "verdict": "UNFOUNDED",
+      "key_evidence": "PM predicts S8 ~ 0.837, HIGHER than Planck (0.832), going in the WRONG direction (weak lensing: ~0.766). w0 = -0.9583 > -1 means LESS acceleration, MORE structure growth. Growth suppression beta = 0.994 (0.6%) vs ~8% needed. No bridge-mediated mechanism actually computed. Code itself admits PM is 'indistinguishable from LCDM.' Git history: original beta~0.97 was an error."
+    }
+  ],
+  "summary": "Of 24 assertions assessed across 6 sprints, only 2 are PROVEN (E8 root system and octonion algebra -- both pure mathematics implementations, not physics claims). 3 are PLAUSIBLE (G2 3-form on flat R^7, Leech decomposition, and lattice-bridge chain -- mathematically valid but insufficient for claimed physics). 1 is PARTIALLY SUPPORTED (PMNS neutrino mixing -- 3-4 genuine predictions contingent on manifold choice). The remaining 18 assertions range from FITTED (5), OVERCLAIMED (1), NUMEROLOGICAL (2), PHENOMENOLOGICAL (1), RETROFITTED (1), UNFOUNDED (5), to REFUTED (1). The framework's core mathematical foundations (E8, octonions, G2=Aut(O)) are correctly implemented, but the chain from topology to physical predictions consistently relies on hardcoded constants, reverse-engineered parameters, post-hoc formula changes, and circular reasoning. The claimed 'zero free parameters' is not supported: most predictions contain at least 1-3 fitted constants disguised with topological labels. The most honest sector is PMNS neutrino mixing, which achieves 3-4 genuine predictions from 2 topological inputs."
+}

@@ -1,0 +1,56 @@
+{
+  "Name": "Charm Quark",
+  "Symbol": "c",
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Mass_MeVc2": 1270.0,
+  "ConstituentMass_MeV": 1550.0,
+  "Mass_kg": 2.2639806384e-27,
+  "Mass_amu": 1.3633958,
+  "Charge_e": 0.6666666667,
+  "Spin_hbar": 0.5,
+  "BaryonNumber_B": 0.3333333333,
+  "Isospin_I": 0.0,
+  "Isospin_I3": 0.0,
+  "Strangeness": 0,
+  "Charm": 1,
+  "Bottomness": 0,
+  "Topness": 0,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "Parity_P": null,
+  "ColorCharge": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "Composition": [],
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Anticharm Quark",
+    "Symbol": "c̅"
+  },
+  "InteractionForces": [
+    "Strong",
+    "Electromagnetic",
+    "Weak",
+    "Gravitational"
+  ],
+  "GUT_coupling_unification_GeV": 2.1e+16,
+  "GUT_yukawa_coupling": 0.0072944977021112455,
+  "GUT_mass_running_MeV": null,
+  "GUT_mixing_angle_rad": null,
+  "PM_prediction": {
+    "phi_scaling_N": 5,
+    "predicted_mass_MeV": 22201.64355,
+    "pdg_mass_MeV": 1270.0,
+    "percent_error": 1648.16,
+    "verdict": "ORDER_OF_MAGNITUDE"
+  }
+}
