@@ -62,6 +62,74 @@ FLUX CORRECTION MECHANISM (NEW):
     Formula: delta_flux = (S_orient/b3) × (b2×chi_eff)/(b3×n_gen)
            = (12/24) × (4×144)/(24×3) = 0.5 × 8 = 4.0°
 
+ASSERTION ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
+=======================================================================
+Assertion: "PMNS mixing matrix derived from G2 holonomy / octonion structure."
+Verdict: PARTIALLY SUPPORTED -- stronger than CKM but with caveats.
+
+Parameter-by-parameter classification (6 PMNS mixing parameters):
+  5. PMNS theta_12: GENUINELY PREDICTED (if b2, b3 accepted as topological)
+     - sin(theta_12) = 1/sqrt(3) * (1 - (b3-b2*n_gen)/(2*chi_eff))
+     - Uses only b2=4, b3=24, chi_eff=144, n_gen=3 -- all interdependent
+       topological constants (chi_eff=b3^2/4, n_gen=chi_eff/48).
+     - Tribimaximal base 1/sqrt(3) is from discrete symmetry (A4/S4),
+       not uniquely octonionic.
+     - Prediction: 33.44 deg vs NuFIT 33.41 +/- 0.75 deg (0.04 sigma).
+  6. PMNS theta_13: GENUINELY PREDICTED (if b2, b3 accepted)
+     - sin(theta_13) = sqrt(b2*n_gen)/b3 * (1 + S_orient/(2*chi_eff))
+     - Formula appears ad hoc -- not found in published literature.
+     - Prediction: 8.65 deg vs NuFIT 8.63 +/- 0.11 deg (0.16 sigma).
+  7. PMNS theta_23: GENUINELY PREDICTED (if b2, b3 accepted)
+     - 45 + (b2-n_gen)*n_gen/b2 + (S_orient/b3)*(b2*chi_eff)/(b3*n_gen)
+     - Base 45 deg from G2 ~ Aut(O) is a legitimate structural argument.
+     - Prediction: 49.75 deg vs NuFIT 49.0 +/- 1.5 deg (0.50 sigma).
+  8. PMNS delta_CP: FITTED
+     - Uses parity_offset = 45.9 degrees -- hardcoded, not derived.
+     - Without this offset, bare phase = 232.5 deg (wrong by ~46 deg).
+     - The offset is tuned to match NuFIT IO: 278 +/- 22 deg.
+  9. dm2_21 (solar splitting): FITTED
+     - m_base = 0.049 eV explicitly marked "FITTED to atmospheric splitting"
+       in code comments. No topological derivation.
+  10. dm2_32 (atmospheric splitting): FITTED
+     - Same m_base = 0.049 eV sets the scale. Not derived.
+
+Free parameter count: 2 fitted (parity_offset, m_base) for 6 observables.
+Net predictive power: 3-4 genuine predictions (theta_12, theta_13, theta_23,
+  and arguably mass ordering = IO from b3=24 even parity).
+
+Critical caveat -- the "topological inputs" question:
+  The entire PMNS derivation rests on b2=4 and b3=24 being the correct
+  Betti numbers of THE specific G2 manifold that describes our universe.
+  These values are plausible for TCS (Twisted Connected Sum) G2 manifolds
+  (Corti-Haskins-Nordstrom-Pacini 2015 catalogue), but:
+  - No unique selection mechanism picks TCS #187 from the landscape.
+  - b2 and b3 are effectively model-selection parameters, not predictions.
+  - If b2 or b3 were different, all PMNS predictions would change.
+
+Methodology assessment:
+  - The PMNS sector is stronger than CKM: 3 angles from 2 inputs (b2, b3)
+    with no additional fitting, giving genuine net predictions.
+  - The tribimaximal starting point is standard phenomenology (A4 symmetry).
+  - The correction formulas (sqrt(b2*n_gen)/b3 etc.) are novel but ad hoc --
+    no published derivation connects G2 cycle intersections to these
+    specific functional forms.
+  - The suspiciously precise matches (0.04, 0.16, 0.50 sigma) for 3 angles
+    from just 2 inputs could indicate either a deep truth or overfitting
+    to a small integer system (b2=4, b3=24 generate many rational fractions).
+
+Overall verdict on combined assertion:
+  CKM: OVERCLAIMED. 1/4 parameters genuinely predicted. Standard Wolfenstein
+    parameterization with fitted coefficients dressed in G2 language.
+  PMNS: PARTIALLY SUPPORTED. 3/6 parameters genuinely predicted from
+    topological inputs, but the formulas connecting topology to mixing
+    angles are novel constructions without independent derivation, and
+    the "topological inputs" themselves are model-selection choices.
+  Combined: The assertion that mixing matrices are "derived from G2 holonomy /
+    octonion structure" is an overstatement. A more accurate claim would be:
+    "Mixing parameters are constrained by a G2-inspired ansatz with
+    4-6 genuinely predicted values out of 10, contingent on the choice
+    of G2 manifold (b2=4, b3=24)."
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
