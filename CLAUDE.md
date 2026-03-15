@@ -280,8 +280,10 @@ Tests enforce architectural integrity:
 - **test_ssot_compliance.py**: Enforces Single Source of Truth
 - **test_sterility_audit.py**: Ensures no parameter contamination
 - **test_latex_registry.py**: Validates LaTeX rendering completeness
-
-83/87 tests should pass (4 known failures in SSOT compliance under review).
+- **test_formulas_registry_core.py**: Ten Pillar Seeds, derived quantities, precision context
+- **test_demon_lock_guard.py**: Parameter immutability enforcement
+- **test_dependency_resolver.py**: DAG operations, cycle detection, topological sort
+- **test_import_health.py**: Smoke test importing all ~108 PM simulation modules
 
 ## Special Notes
 
@@ -310,14 +312,19 @@ These are documented in [config.py](config.py) header but should not be used in 
 
 ### Consciousness Extensions
 
-The Orch-OR consciousness bridge ([simulations/PM/rigorous_derivations/orch_or_extended/](simulations/PM/rigorous_derivations/orch_or_extended/)) is explicitly SPECULATIVE and marked as such. It explores microtubule quantum coherence but is not part of the core physics validation.
+The Orch-OR consciousness bridge (archived to [archive/unused_modules/PM/rigorous_derivations/orch_or_extended/](archive/unused_modules/PM/rigorous_derivations/orch_or_extended/)) is explicitly SPECULATIVE. It explores microtubule quantum coherence but is not part of the core physics validation.
+
+### Archive Directory
+
+Unused simulation modules and historical documentation are archived in `archive/`:
+- `archive/unused_modules/PM/` - Unused simulation modules (geometry, support, rigorous_derivations, etc.)
+- `archive/docs/` - Historical reports, session summaries, and review PDFs
 
 ### Known Issues
 
-1. Some v23 simulations have import errors due to config.py parameter renaming
-2. 4 SSOT compliance tests fail (under review for canonical naming migration)
-3. Wolframclient version locked to 1.1.0 (compatibility with PM calculations)
-4. Windows-specific path handling in some scripts (use `Path` from `pathlib`)
+1. 4 SSOT compliance tests fail (under review for canonical naming migration)
+2. Wolframclient version locked to 1.1.0 (compatibility with PM calculations)
+3. Windows-specific path handling in some scripts (use `Path` from `pathlib`)
 
 ## Output Files
 
