@@ -49,6 +49,48 @@ These systematics are being actively addressed by Stage-IV surveys (Rubin/LSST,
 Euclid, Roman) which will reduce S8 uncertainty to ~0.005, potentially
 distinguishing PM's 0.6% suppression from LCDM.
 
+INDEPENDENT ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
+=========================================================================
+Assertion evaluated: "S8 tension resolved via bridge-mediated dark energy
+suppression."
+
+Classification: UNFOUNDED
+
+Evidence:
+1. PM predicts S8 ~ 0.837, which is HIGHER than Planck (0.832), going in the
+   WRONG direction to resolve the S8 tension with weak lensing (~0.766). The
+   8% suppression needed is not achieved; only 0.6% is produced.
+
+2. w0 = -1 + 1/b3 = -23/24 = -0.9583 > -1 means LESS cosmic acceleration
+   than LCDM, allowing MORE structure growth, predicting HIGHER S8 -- the
+   opposite of what is needed to resolve the tension.
+
+3. Growth suppression factor beta = 0.994 (0.6%) is far below the ~8%
+   required. The code itself admits PM is "indistinguishable from LCDM."
+
+4. No "bridge-mediated" suppression mechanism is actually computed. The
+   suppression comes entirely from standard CPL dark energy cosmology
+   (w(a) = w0 + wa*(1-a)) with PM-derived w0. The bridge coupling matrix
+   (diagonal, no cross-coupling) plays no role in the S8 calculation.
+
+5. Git history reveals the original beta ~ 0.97 (3% suppression, S8 ~ 0.788)
+   was an error, corrected to beta ~ 0.994 (0.6%). The corrected version
+   does not support the "resolution" claim.
+
+6. wa ~ 0.29 derivation from G2 topology is not shown in the code; it may
+   be a free parameter rather than a topological derivation.
+
+7. The title "S8 Tension Resolution" is misleading. The content honestly
+   documents that PM does NOT resolve the tension, but the assertion and
+   title suggest otherwise.
+
+Credit: The docstring (lines 16-20, 38-40) already honestly acknowledges
+these limitations. The issue is the framing as "resolution" when the
+mechanism produces negligible and wrong-direction effects.
+
+Consensus: Both Claude and Gemini independently classify this as UNFOUNDED.
+The w0 derivation from b3=24 is genuine but does not produce S8 suppression.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:

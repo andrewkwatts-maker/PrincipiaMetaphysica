@@ -40,6 +40,55 @@ NOTE: v16.2 changed from the D_eff formula (w₀ = -(D-1)/(D+1) = -11/13) to
 the thawing quintessence formula (w₀ = -1 + 1/b₃ = -23/24) based on DESI 2025
 thawing cosmology constraints.
 
+INDEPENDENT ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
+=========================================================================
+Assertion: "w₀ != -1 predicted from bridge moduli dynamics, providing a
+testable prediction."
+
+VERDICT: RETROFITTED, NOT A GENUINE A PRIORI PREDICTION. Conditionally
+falsifiable by future data.
+
+Evidence:
+1. FORMULA CHANGE HISTORY: The w₀ formula was changed in v16.2 (Dec 2025,
+   commit 2fdeed45) from w₀ = -(D-1)/(D+1) = -11/13 = -0.846 to
+   w₀ = -1 + 1/b₃ = -23/24 = -0.9583. The commit message explicitly states
+   the change was made to match DESI 2025 data, improving agreement from
+   1.76 sigma to 0.02 sigma. This is textbook post-hoc fitting.
+
+2. NON-UNIQUE MANIFOLD CHOICE: b₃ = 24 is not the only valid Betti number
+   for compact G₂ manifolds. Joyce and Kovalev TCS constructions yield
+   b₃ in {0, 4, 8, 12, 24, 36, ...}. Different choices give very different
+   w₀ values (e.g., b₃=4 gives w₀=-0.75, b₃=36 gives w₀=-0.972). No
+   independent theoretical principle uniquely selects b₃=24 for dark energy.
+
+3. NO RIGOROUS DERIVATION: The formula w₀ = -1 + 1/b₃ has no derivation
+   in the string theory or M-theory literature connecting G₂ Betti numbers
+   to the dark energy equation of state. Standard thawing quintessence
+   models derive w₀ from the quintessence potential V(phi), not from
+   topology directly. The formula is numerologically motivated.
+
+4. HARDCODED PARAMETER: alpha_shadow = 0.576 is hardcoded (lines 305, 314),
+   not derived from the topological framework, undermining the claim of
+   a purely geometric derivation.
+
+5. FALSIFIABILITY ASSESSMENT: The prediction IS falsifiable in principle.
+   The deviation |w₀ - (-1)| = 1/24 = 0.0417 exceeds projected future
+   survey precision (~0.01 by 2030 from DESI Year 3 + Euclid + LSST).
+   If future data converges on w₀ = -1.00 +/- 0.01, this prediction
+   would be ruled out at >4 sigma. However, if the formula is changed
+   again to match new data (as it was in v16.2), falsifiability is moot.
+
+CLASSIFICATION: The numerical value w₀ = -0.9583 is testable and
+distinguishable from Lambda-CDM (w₀ = -1) with next-generation surveys.
+However, the prediction was retrofitted to DESI 2025 data, not derived
+a priori. The w_a prediction (-0.204 vs DESI -0.6 +/- 0.3, ~2.5 sigma
+tension) was NOT adjusted, suggesting it may be a more honest test of
+the framework -- and it performs poorly.
+
+SCORE: 2/10 (retrofitted formula, non-unique topology, no rigorous
+derivation, one hardcoded parameter; partial credit for falsifiability
+and correct thawing sign).
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
