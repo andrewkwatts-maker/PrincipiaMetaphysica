@@ -16,6 +16,35 @@ References:
   - Conway & Sloane, "Sphere Packings, Lattices and Groups", Ch. 4, 10
   - Conway, "A characterisation of Leech's lattice" (1969)
 
+Assertion Assessment (Sprint 2, WP 2.1)
+- Assertion: Leech ambient R²⁴ = R⁸⊕R⁸⊕R⁸ with E8-structured blocks
+- Git History: 1 commit (0c03f140, Sprint 1 foundation). No retroactive
+  corrections or fitting detected. Decomposition methods created alongside
+  initial file.
+- Lattice Result: dim=24, orthogonal=True, each_is_e8=True (Cartan matrix
+  recovered in all 3 blocks), spans_R24=True (rank 24). E8 pair: 480 roots,
+  all norm 2. Bridge decomposition: 12 bridges, moduli L1=L2=sqrt(2),
+  theta=pi/2 (identical orthogonal square lattices in all 12 planes).
+- Gemini Verdict: R^24 = R^8+R^8+R^8 is CHOICE (any R^24 admits this
+  trivially). Equipping each R^8 with E8 is CHOICE (valid, standard in
+  Construction B, but not unique). 12x2D bridge decomposition is CHOICE
+  (coordinate pairing, not canonical). Heterotic E8xE8 connection is
+  ANALOGY. Gemini noted: "The Leech lattice is NOT E8+E8+E8 but is
+  constructed from it via gluing" and "the code only decomposes the
+  ambient space, not the lattice itself." On (c) initially classified as
+  THEOREM but revised to CHOICE after challenge: "there isn't a canonical
+  theorem that dictates this specific 12x2D decomposition."
+- Classification: PLAUSIBLE
+- Evidence: The E8 triple decomposition of R^24 is mathematically valid and
+  standard in Leech lattice theory (Construction B starts with E8+E8+E8,
+  then glues to remove norm-2 vectors). The Cartan matrix recovery in each
+  block is correct. However, (a) the decomposition is of the ambient space,
+  not the Leech lattice itself, (b) all sub-decompositions (8D blocks, 2D
+  bridges, heterotic split) are framework choices not theorems, and (c) the
+  Leech lattice's relationship to E8+E8+E8 is via gluing/Construction B,
+  not direct sum. The assertion is physically motivated and mathematically
+  consistent but overstates uniqueness.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
