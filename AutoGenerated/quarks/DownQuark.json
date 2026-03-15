@@ -1,0 +1,56 @@
+{
+  "Name": "Down Quark",
+  "Symbol": "d",
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Mass_MeVc2": 4.67,
+  "ConstituentMass_MeV": 340.0,
+  "Mass_kg": 8.3250311664e-30,
+  "Mass_amu": 0.0050134318,
+  "Charge_e": -0.3333333333,
+  "Spin_hbar": 0.5,
+  "BaryonNumber_B": 0.3333333333,
+  "Isospin_I": 0.5,
+  "Isospin_I3": -0.5,
+  "Strangeness": 0,
+  "Charm": 0,
+  "Bottomness": 0,
+  "Topness": 0,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "Parity_P": null,
+  "ColorCharge": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "Composition": [],
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Antidown Quark",
+    "Symbol": "d̅"
+  },
+  "InteractionForces": [
+    "Strong",
+    "Electromagnetic",
+    "Weak",
+    "Gravitational"
+  ],
+  "GUT_coupling_unification_GeV": 2.1e+16,
+  "GUT_yukawa_coupling": 2.6823074227448438e-05,
+  "GUT_mass_running_MeV": null,
+  "GUT_mixing_angle_rad": null,
+  "PM_prediction": {
+    "phi_scaling_N": 11,
+    "predicted_mass_MeV": 1237.25519,
+    "pdg_mass_MeV": 4.67,
+    "percent_error": 26393.69,
+    "verdict": "ORDER_OF_MAGNITUDE"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "Name": "Up Quark",
+  "Symbol": "u",
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Mass_MeVc2": 2.16,
+  "ConstituentMass_MeV": 336.0,
+  "Mass_kg": 3.8505497472000006e-30,
+  "Mass_amu": 0.0023188464,
+  "Charge_e": 0.6666666667,
+  "Spin_hbar": 0.5,
+  "BaryonNumber_B": 0.3333333333,
+  "Isospin_I": 0.5,
+  "Isospin_I3": 0.5,
+  "Strangeness": 0,
+  "Charm": 0,
+  "Bottomness": 0,
+  "Topness": 0,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "Parity_P": null,
+  "ColorCharge": [
+    "red",
+    "green",
+    "blue"
+  ],
+  "Composition": [],
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Antiup Quark",
+    "Symbol": "u̅"
+  },
+  "InteractionForces": [
+    "Strong",
+    "Electromagnetic",
+    "Weak",
+    "Gravitational"
+  ],
+  "GUT_coupling_unification_GeV": 2.1e+16,
+  "GUT_yukawa_coupling": 1.2406389792567159e-05,
+  "GUT_mass_running_MeV": null,
+  "GUT_mixing_angle_rad": null,
+  "PM_prediction": {
+    "phi_scaling_N": 12,
+    "predicted_mass_MeV": 764.66576,
+    "pdg_mass_MeV": 2.16,
+    "percent_error": 35301.19,
+    "verdict": "ORDER_OF_MAGNITUDE"
+  }
+}
