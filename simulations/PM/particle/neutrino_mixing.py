@@ -225,6 +225,9 @@ class NeutrinoMixingSimulation(SimulationBase):
         # Verify experimental match
         is_io, dm2_32 = self.verify_experimental_match(mass_results)
 
+        # Lattice cross-verification
+        lattice_check = self.verify_lattice_consistency()
+
         # Return results
         return {
             "neutrino.theta_12_pred": theta_12,
@@ -240,7 +243,47 @@ class NeutrinoMixingSimulation(SimulationBase):
             "neutrino.ordering": mass_results["ordering"],
             "neutrino.k_gimel": self._k_gimel,
             "neutrino.C_kaf": self._c_kaf,
+            "_lattice_verification": lattice_check,
         }
+
+    def verify_lattice_consistency(self) -> Optional[Dict[str, Any]]:
+        """Cross-verify topological constants against Leech lattice decomposition.
+
+        Checks that R24 = R8+R8+R8 bridge decomposition reproduces the
+        same invariants (b3=24, orientation_sum=12, b2=4, n_gen=3) used
+        by the PMNS derivation.  Returns None when lattice module is
+        unavailable so the simulation remains standalone.
+        """
+        try:
+            from simulations.PM.algebra.lattice_bridge import LatticeBridgeConnector
+        except ImportError:
+            return None
+
+        connector = LatticeBridgeConnector()
+        chain = connector.derive_all()
+
+        checks = {
+            "num_bridges_eq_orientation_sum": (
+                chain["bridge_decomposition"]["num_bridges"] == 12
+            ),
+            "total_dim_eq_b3": (
+                chain["bridge_decomposition"]["total_dim"] == 24
+            ),
+            "num_faces_eq_b2": (
+                chain["four_faces"]["num_faces"] == 4
+            ),
+            "bridges_per_face_eq_n_gen": (
+                chain["four_faces"]["bridges_per_face"] == 3
+            ),
+            "e8_triple_dim_eq_24": (
+                chain["e8_triple"]["total_dim"] == 24
+            ),
+            "all_passed": True,  # updated below
+        }
+        checks["all_passed"] = all(
+            v for k, v in checks.items() if k != "all_passed"
+        )
+        return checks
 
     def _compute_theta_13(self) -> float:
         """

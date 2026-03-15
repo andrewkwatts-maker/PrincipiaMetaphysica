@@ -1,0 +1,27 @@
+{
+  "Name": "Bottom Quark",
+  "Symbol": "b",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Quark", "Fundamental Particle"],
+  "Charge_e": -0.3333333333, // -1/3 e
+  "Mass_MeVc2": 4180.0, // Current quark mass, approximate
+  "Mass_kg": 7.449767e-27,
+  "Mass_amu": 4.484,
+  "Spin_hbar": 0.5,
+  "ConstituentMass_MeV": 4730.0,
+  "MagneticDipoleMoment_J_T": null,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0.3333333333, // +1/3 B
+  "Isospin_I": 0.0,
+  "Isospin_I3": 0.0,
+  "Parity_P": null,
+  "Composition": [], // Fundamental
+  "Stability": "Unstable", // Decays via the weak force
+  "HalfLife_s": 1.638e-12, // Half-life
+  "DecayProducts": ["Charm Quark", "W Boson"], // Dominant decay mode
+  "Antiparticle": {
+    "Name": "Antibottom Quark",
+    "Symbol": "b̅"
+  },
+  "InteractionForces": ["Strong", "Electromagnetic", "Weak", "Gravitational"]
+}

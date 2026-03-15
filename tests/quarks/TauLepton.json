@@ -1,0 +1,26 @@
+{
+  "Name": "Tau Lepton",
+  "Symbol": "τ⁻",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 1776.86,
+  "Mass_kg": 3.16781e-27,
+  "Mass_amu": 1.90792,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": null, // Expected to be similar to electron/muon, but short-lived. Experimental value is challenging.
+  "LeptonNumber_L": 1, // Specifically tau lepton number
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": 1, // Conventionally +1
+  "Composition": [], // Fundamental
+  "Stability": "Unstable",
+  "HalfLife_s": 2.903e-13, // 290.3 femtoseconds
+  "DecayProducts": ["Electron", "Electron Antineutrino", "Tau Neutrino", "Muon", "Muon Antineutrino", "Tau Neutrino", "Hadrons"], // Many decay modes
+  "Antiparticle": {
+    "Name": "Positive Tau (Antitau)",
+    "Symbol": "τ⁺"
+  },
+  "InteractionForces": ["Electromagnetic", "Weak", "Gravitational"]
+}

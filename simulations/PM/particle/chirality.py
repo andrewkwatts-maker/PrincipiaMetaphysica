@@ -210,7 +210,49 @@ class ChiralitySpinorSimulation(SimulationBase):
             "_is_integer_generations": is_integer_generations,
             "_is_complete_saturation": is_complete_saturation,
             "_matches_observed": matches_observed,
+            "_lattice_verification": self.verify_lattice_chirality(),
         }
+
+    def verify_lattice_chirality(self) -> Optional[Dict[str, Any]]:
+        """Cross-verify G2 3-form against lattice-derived phi from E8.
+
+        Constructs G2DifferentialGeometry from E8 root system, retrieves
+        the lattice-verified phi, and checks Hitchin metric identity.
+        Returns None if required modules are unavailable.
+        """
+        try:
+            from simulations.PM.geometry.g2_differential import G2DifferentialGeometry
+            from simulations.PM.algebra.e8_root_system import E8RootSystem
+            from simulations.PM.algebra.octonions import OctonionAlgebra
+        except ImportError:
+            return None
+
+        try:
+            e8 = E8RootSystem()
+            g2_lattice = G2DifferentialGeometry.from_e8(e8)
+            lattice_phi = g2_lattice.phi
+
+            # Compare with octonion-derived 3-form
+            octonions = OctonionAlgebra()
+            octonion_phi = octonions.g2_structure_as_3form()
+            phi_consistent = bool(np.allclose(lattice_phi, octonion_phi, atol=1e-12))
+
+            # Hitchin identity: g_{ij} = (1/6) phi_{iab} phi_{jab} should give I_7
+            g = g2_lattice.compute_metric()
+            hitchin_valid = bool(np.allclose(g, np.eye(7), atol=1e-10))
+
+            # Full verification suite from G2DifferentialGeometry
+            full_checks = g2_lattice.verify()
+
+            return {
+                'phi_consistent': phi_consistent,
+                'hitchin_valid': hitchin_valid,
+                'phi_shape': list(lattice_phi.shape),
+                'metric_positive_definite': full_checks.get('metric_positive_definite', False),
+                'torsion_free': full_checks.get('torsion_free', False),
+            }
+        except Exception:
+            return None
 
     def get_section_content(self) -> Optional[SectionContent]:
         """

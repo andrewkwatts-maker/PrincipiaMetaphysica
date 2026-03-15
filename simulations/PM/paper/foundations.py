@@ -83,6 +83,7 @@ class FoundationsV16_2(SimulationBase):
         "g2-holonomy-foundations",
         "b3-generations",
         "calabi-yau-projection",
+        "leech-e8-decomposition",
     ]
 
     # Dynamic parameter paths referenced by this section
@@ -196,6 +197,47 @@ class FoundationsV16_2(SimulationBase):
                 type="equation",
                 content=r"\text{Structure}(M^{27}) = (24, 1, 2) \quad \Rightarrow \quad ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2) + ds_1^2 + ds_2^2",
                 label="27d-signature"
+            ),
+            ContentBlock(
+                type="heading",
+                content="1.1.1a The E8–G2 Connection via Octonions",
+                level=4
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The connection between the exceptional Lie group G<sub>2</sub> and the "
+                    "E<sub>8</sub> root system is mediated by the octonion algebra "
+                    "<strong>O</strong>. G<sub>2</sub> is the automorphism group of the "
+                    "8-dimensional octonions, Aut(<strong>O</strong>), and acts faithfully on the "
+                    "7-dimensional imaginary part Im(<strong>O</strong>) ≅ R<sup>7</sup>, "
+                    "preserving the octonionic structure constants C<sub>ijk</sub>. These structure "
+                    "constants define the G<sub>2</sub> associative 3-form φ<sub>ijk</sub> = C<sub>ijk</sub>, "
+                    "from which the G<sub>2</sub> metric is derived via Hitchin's formula "
+                    "g<sub>ij</sub> = φ<sub>iab</sub>φ<sub>jab</sub>/6 = δ<sub>ij</sub>. "
+                    "The E<sub>8</sub> root system (240 roots in R<sup>8</sup> ≅ <strong>O</strong>) "
+                    "thus provides the algebraic origin for G<sub>2</sub> holonomy geometry."
+                )
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The 24-dimensional ambient space of the Leech lattice, R<sup>24</sup>, "
+                    "is partitioned into three orthogonal 8-dimensional blocks, each endowed with "
+                    "E<sub>8</sub>-structured symmetries. It is important to distinguish these "
+                    "E<sub>8</sub>-structured blocks of the <em>ambient space</em> from "
+                    "sublattices of the Leech lattice itself (which has no norm-2 vectors). "
+                    "The coordinate pairing of this 24D space yields 12 bridge pairs "
+                    "(24/2 = 12), which are then grouped into 4 faces of 3 bridges each — "
+                    "one bridge from each E<sub>8</sub> block per face. This grouping "
+                    "recovers h<sup>1,1</sup> = 4 (Kähler moduli) and n<sub>gen</sub> = 3 "
+                    "(fermion generations per face) as framework-consistent identifications."
+                )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"\mathbb{R}^{24} = \mathbb{R}^8 \oplus \mathbb{R}^8 \oplus \mathbb{R}^8 \;\;\Rightarrow\;\; 12\text{ bridges} = 4\text{ faces} \times 3\text{ bridges/face}",
+                label="leech-e8-decomposition"
             ),
             ContentBlock(
                 type="heading",

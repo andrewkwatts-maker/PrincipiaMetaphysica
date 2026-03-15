@@ -308,6 +308,24 @@ class PneumaMechanismV16(SimulationBase):
         hessian = self._potential_second_derivative(vev)
         return hessian > 0
 
+    def verify_lattice_bridges(self) -> Optional[Dict[str, Any]]:
+        """Verify 12 bridge pair count against the lattice chain."""
+        try:
+            from simulations.PM.algebra.lattice_bridge import LatticeBridgeConnector
+        except ImportError:
+            return None
+
+        connector = LatticeBridgeConnector()
+        chain = connector.derive_all()
+        num_bridges = chain["bridge_decomposition"]["num_bridges"]
+        matches = (num_bridges == 12)
+        return {
+            "bridges_match": matches,
+            "expected": 12,
+            "lattice_value": num_bridges,
+            "all_passed": matches,
+        }
+
     def _apply_or_reduction(self, y1: float, y2: float) -> tuple:
         """
         Apply per-pair OR reduction operator R_perp to bridge coordinates.

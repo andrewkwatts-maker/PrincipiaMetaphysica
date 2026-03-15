@@ -1,0 +1,26 @@
+{
+  "Name": "Muon Neutrino",
+  "Symbol": "ν_μ",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 0.000000170, // Estimated upper limit (0.17 MeV/c²). Actual mass is non-zero but extremely tiny.
+  "Mass_kg": 3.030525e-34,
+  "Mass_amu": 0.0000001825,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": null, // Extremely small, effectively zero for practical purposes
+  "LeptonNumber_L": 1, // Specifically muon lepton number
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": null, // Not simply assigned an intrinsic parity in standard context
+  "Composition": [], // Fundamental
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Muon Antineutrino",
+    "Symbol": "ν̅_μ"
+  },
+  "InteractionForces": ["Weak", "Gravitational"] // Only interacts via weak and gravitational forces
+}

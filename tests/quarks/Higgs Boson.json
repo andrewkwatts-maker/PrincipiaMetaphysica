@@ -1,0 +1,26 @@
+{
+  "Name": "Higgs Boson",
+  "Symbol": "H",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Scalar Boson", "Fundamental Particle"],
+  "Charge_e": 0,
+  "Mass_MeVc2": 125100.0, // ~125.1 GeV/c²
+  "Mass_kg": 2.230713e-25,
+  "Mass_amu": 134.186,
+  "Spin_hbar": 0.0, // A scalar boson
+  "MagneticDipoleMoment_J_T": 0.0,
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0,
+  "Isospin_I3": 0,
+  "Parity_P": 1, // Even parity
+  "Composition": [], // Fundamental
+  "Stability": "Unstable",
+  "HalfLife_s": 1.6e-22, // Very short half-life
+  "DecayProducts": ["Bottom Quark", "Antibottom Quark", "W Boson", "W Boson", "Tau Lepton", "Anti-Tau Lepton", "Photon", "Photon", "Gluon", "Gluon"], // Dominant decay modes
+  "Antiparticle": {
+    "Name": "Higgs Boson",
+    "Symbol": "H" // Its own antiparticle
+  },
+  "InteractionForces": ["Weak", "Gravitational"] // Interacts with particles that have mass via the Higgs field
+}

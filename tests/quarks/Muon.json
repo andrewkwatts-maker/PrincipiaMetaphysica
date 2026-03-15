@@ -1,0 +1,26 @@
+{
+  "Name": "Muon",
+  "Symbol": "μ⁻",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 105.6583755,
+  "Mass_kg": 1.883531594e-28,
+  "Mass_amu": 0.1134289267,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": 4.841297e-25, // Muon magnetic dipole moment
+  "LeptonNumber_L": 1, // Specifically for muon family
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0, // Leptons are not assigned isospin
+  "Isospin_I3": 0,
+  "Parity_P": 1, // Conventionally +1
+  "Composition": [], // Fundamental
+  "Stability": "Unstable",
+  "HalfLife_s": 2.1969811e-6, // 2.1969811 microseconds
+  "DecayProducts": ["Electron", "Electron Antineutrino", "Muon Neutrino"],
+  "Antiparticle": {
+    "Name": "Positive Muon (Antimuon)",
+    "Symbol": "μ⁺"
+  },
+  "InteractionForces": ["Electromagnetic", "Weak", "Gravitational"]
+}

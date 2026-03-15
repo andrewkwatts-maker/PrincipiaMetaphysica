@@ -1,0 +1,26 @@
+{
+  "Name": "Electron",
+  "Symbol": "e⁻",
+  "Type": "Subatomic Particle",
+  "Classification": ["Fermion", "Lepton", "Fundamental Particle"],
+  "Charge_e": -1,
+  "Mass_MeVc2": 0.51099895000,
+  "Mass_kg": 9.1093837015e-31,
+  "Mass_amu": 0.000548579909065,
+  "Spin_hbar": 0.5,
+  "MagneticDipoleMoment_J_T": 9.2847643005e-24, // Experimental value for electron's anomalous magnetic dipole moment
+  "LeptonNumber_L": 1,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 0, // Leptons are not assigned isospin
+  "Isospin_I3": 0,
+  "Parity_P": 1, // Conventionally +1 for fundamental fermions like electron
+  "Composition": [], // Electrons are fundamental, not composed of smaller particles
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Positron",
+    "Symbol": "e⁺"
+  },
+  "InteractionForces": ["Electromagnetic", "Weak", "Gravitational"]
+}

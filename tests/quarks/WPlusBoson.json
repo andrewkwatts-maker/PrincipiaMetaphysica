@@ -1,0 +1,26 @@
+{
+  "Name": "W Plus Boson",
+  "Symbol": "W⁺",
+  "Type": "Subatomic Particle",
+  "Classification": ["Boson", "Gauge Boson", "Force Carrier", "Fundamental Particle"],
+  "Charge_e": 1,
+  "Mass_MeVc2": 80379.0, // ~80.379 GeV/c²
+  "Mass_kg": 1.43285e-25,
+  "Mass_amu": 86.299,
+  "Spin_hbar": 1.0,
+  "MagneticDipoleMoment_J_T": null, // Complex, due to being a gauge boson with self-interaction
+  "LeptonNumber_L": 0,
+  "BaryonNumber_B": 0,
+  "Isospin_I": 1.0,
+  "Isospin_I3": 1.0,
+  "Parity_P": null, // More complex for massive gauge bosons in weak interaction
+  "Composition": [], // Fundamental
+  "Stability": "Unstable",
+  "HalfLife_s": 3.1e-25, // Very short half-life
+  "DecayProducts": ["Electron", "Electron Antineutrino", "Muon", "Muon Antineutrino", "Tau", "Tau Antineutrino", "Quark-Antiquark pairs"], // Many possible decay channels
+  "Antiparticle": {
+    "Name": "W Minus Boson",
+    "Symbol": "W⁻"
+  },
+  "InteractionForces": ["Weak", "Electromagnetic", "Gravitational"] // Mediates weak force, charged so interacts electromagnetically
+}

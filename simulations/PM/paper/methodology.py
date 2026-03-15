@@ -57,6 +57,7 @@ class MethodologyV16_2(SimulationBase):
         "trace-formula",
         "spectral-trace-sterile-proof",
         "global-sum-rule",
+        "lattice-derivation-chain",
     ]
 
     # Dynamic parameter paths referenced by this section
@@ -669,6 +670,51 @@ class MethodologyV16_2(SimulationBase):
                     "The 72 reproducibility certificates are <strong>mathematical proofs</strong> that "
                     "the constraints are satisfied. Each certificate verifies a predicted value against "
                     "experimental data within stated uncertainties. These are proofs, not simulation outputs."
+                )
+            ),
+
+            # ================================================================
+            # 2.7 The Lattice-Algebraic Derivation Chain
+            # ================================================================
+            ContentBlock(
+                type="heading",
+                content="The Lattice-Algebraic Derivation Chain",
+                level=2,
+                label="2.7"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "Complementing the spectral geometry framework, the lattice-algebraic derivation "
+                    "chain provides an independent algebraic confirmation of the topological inputs. "
+                    "Each step in the chain is mathematically connected to the next, with consistency "
+                    "verified at every transition: (1) the <strong>E<sub>8</sub> root system</strong> "
+                    "(240 roots in R<sup>8</sup>) establishes the exceptional algebraic structure; "
+                    "(2) the <strong>octonion algebra O</strong> identifies R<sup>8</sup> ≅ O, with "
+                    "G<sub>2</sub> = Aut(O) acting on Im(O) ≅ R<sup>7</sup>; "
+                    "(3) the <strong>G<sub>2</sub> 3-form</strong> φ<sub>ijk</sub> is derived from "
+                    "the octonion structure constants C<sub>ijk</sub>, satisfying Hitchin's identity "
+                    "φ<sub>iab</sub>φ<sub>jab</sub> = 6δ<sub>ij</sub>; "
+                    "(4) the <strong>Leech lattice</strong> ambient space R<sup>24</sup> decomposes into "
+                    "three orthogonal E<sub>8</sub>-structured blocks; "
+                    "(5) coordinate pairing yields <strong>12 bridge pairs</strong>; "
+                    "(6) grouping into <strong>4 faces × 3 bridges</strong> recovers "
+                    "h<sup>1,1</sup> = 4 and n<sub>gen</sub> = 3."
+                )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"E_8 \xrightarrow{\mathrm{Aut}(\mathbb{O})} G_2 \qquad \mathbb{R}^{24} = \mathbb{R}^8 \oplus \mathbb{R}^8 \oplus \mathbb{R}^8 \;\xrightarrow{12 \times 2D}\; 4 \times 3",
+                label="lattice-derivation-chain"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "This chain is computationally verified end-to-end by the LatticeBridgeConnector, "
+                    "with 6 dedicated LATTICE certificates (LATT-050 through LATT-055) validating each "
+                    "step. The derivation provides an algebraic cross-check of the topological inputs "
+                    "b<sub>3</sub> = 24, h<sup>1,1</sup> = 4, and n<sub>gen</sub> = 3 used throughout "
+                    "the spectral geometry framework."
                 )
             ),
         ]

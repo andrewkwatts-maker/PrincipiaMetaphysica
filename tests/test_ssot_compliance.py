@@ -455,9 +455,9 @@ class TestSSOTComplianceCoreFiles:
 
     def test_core_files_no_legacy_get_latex(self):
         """Core Python files don't use legacy names in get_latex()."""
-        core_dir = self.project_root / "core"
+        core_dir = self.project_root / "simulations" / "core"
         if not core_dir.exists():
-            pytest.skip("core/ directory not found")
+            pytest.skip("simulations/core/ directory not found")
 
         violations = scan_directory(str(core_dir), self.registered)
         legacy = [v for v in violations if v.is_legacy and v.call_type == 'get_latex']
