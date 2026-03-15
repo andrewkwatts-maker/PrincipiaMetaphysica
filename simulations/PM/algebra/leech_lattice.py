@@ -804,6 +804,118 @@ class LeechLattice:
             'h11_consistent': 4 == len(faces),
         }
 
+    def compute_axion_alignment_matrix(self) -> dict:
+        """Compute the KNP alignment matrix Q_{ij} from Leech lattice structure.
+
+        In KNP (Kim-Nilles-Peloso) alignment, N axions with individual
+        decay constants f_i produce an effective decay constant:
+            f_eff^2 = sum_{ij} Q_{ij} f_i f_j
+
+        For identical f_i = f_sub:
+            f_eff = f_sub * sqrt(sum_{ij} Q_{ij})
+
+        The alignment matrix Q comes from the inner product structure
+        of the Leech lattice generator matrix when decomposed into
+        12 bridge pairs. Specifically:
+
+            Q_{ij} = sum_k  <gen_k|_pair_i , gen_k|_pair_j>
+
+        where gen_k is the k-th generator row and |_pair_i denotes
+        projection onto the 2D coordinate plane of bridge pair i.
+
+        Result:
+            sum Q_{ij} = 242 (not 288 = 12 * 24)
+            f_eff_factor = sqrt(242) ≈ 15.56
+            Ratio to sqrt(N_ax * b3) = sqrt(242/288) = 11/12 ≈ 0.917
+
+        The factor 11/12 arises because the Golay-based generator matrix
+        has off-diagonal couplings between bridge pairs (via the parity
+        check matrix B), and these couplings redistribute the total norm
+        relative to the naive product N_ax * b3 = 12 * 24.
+
+        Honesty assessment: The alignment matrix is CONSTRUCTED, not
+        DERIVED in a physics sense. The decomposition of R^24 into
+        12 coordinate pairs is a CHOICE (see decompose_bridge_pairs
+        docstring). The Q_{ij} entries depend on this choice and on
+        the particular generator matrix used. A different but equally
+        valid Leech generator would give a different Q. The sqrt(N*b3)
+        factor in the KNP formula is dimensional analysis (counting
+        degrees of freedom), and the Leech lattice provides a specific
+        geometric realization that modifies this by the factor 11/12.
+
+        Gemini debate summary (WP 2.3, 2026-03-16):
+        - Round 1: Gemini argued 11/12 is "not an artifact of basis choice
+          but a direct consequence of the specific algebraic and geometric
+          properties of the Leech lattice as defined by Construction A and
+          the Golay code." Claims it reflects inherent correlations when
+          projected onto coordinate pairs.
+        - Round 2: When challenged on basis dependence, Gemini pivoted to
+          spherical design properties: the norm-4 shell of the Leech lattice
+          forms a spherical 11-design, making certain averages over all
+          196,560 minimal vectors basis-independent. However, this is a
+          different (and more canonical) computation than our generator-
+          based Q_{ij}. A basis-independent alignment would use the full
+          minimal vector set, not the generator matrix.
+        - Round 3: Classification: CONSTRUCTED. "The specific Construction A
+          generator and the way pairs are defined and projected introduce
+          non-canonical choices. The resulting numerical values are derived
+          from this specific construction, rather than being inherent,
+          axiomatically necessary properties of the Leech lattice."
+
+        Returns:
+            dict with:
+            - Q: (12,12) alignment matrix
+            - f_eff_factor: sqrt(sum Q_{ij}) = effective enhancement
+            - sqrt_N_b3: sqrt(12*24) for comparison
+            - comparison_ratio: f_eff_factor / sqrt(N*b3)
+            - ratio_exact: '11/12' if ratio matches
+            - trace: trace of Q
+            - diagonal: diagonal entries of Q
+            - derivation_honest: False — depends on generator choice
+        """
+        gen = self._generator_matrix()  # (24, 24) scaled generator
+
+        # Compute alignment matrix Q_{ij}
+        # Q_{ij} = sum over generator rows k of the dot product
+        # between the 2D projections onto bridge pair i and pair j
+        Q = np.zeros((12, 12), dtype=np.float64)
+        for i in range(12):
+            ci = slice(2 * i, 2 * i + 2)
+            for j in range(12):
+                cj = slice(2 * j, 2 * j + 2)
+                for k in range(24):
+                    Q[i, j] += np.dot(gen[k, ci], gen[k, cj])
+
+        # Derived quantities
+        q_sum = float(np.sum(Q))
+        f_eff_factor = float(np.sqrt(q_sum))
+        sqrt_N_b3 = float(np.sqrt(12.0 * 24.0))
+        ratio = f_eff_factor / sqrt_N_b3
+
+        # Check if ratio is exactly 11/12
+        ratio_exact = None
+        if abs(ratio - 11.0 / 12.0) < 1e-10:
+            ratio_exact = '11/12'
+
+        return {
+            'Q': Q,
+            'Q_sum': q_sum,
+            'f_eff_factor': f_eff_factor,
+            'sqrt_N_b3': sqrt_N_b3,
+            'comparison_ratio': ratio,
+            'ratio_exact': ratio_exact,
+            'trace': float(np.trace(Q)),
+            'diagonal': np.diag(Q).tolist(),
+            'derivation_honest': False,
+            'honesty_note': (
+                'The alignment matrix Q depends on the choice of Leech '
+                'generator matrix and the coordinate-pair decomposition '
+                'of R^24. Different valid generators yield different Q. '
+                'The 11/12 ratio is an artifact of this particular '
+                'Construction A generator, not a canonical lattice invariant.'
+            ),
+        }
+
     def __repr__(self):
         return (f"LeechLattice(dim={self.dimension}, "
                 f"kissing={self.kissing_number}, "
