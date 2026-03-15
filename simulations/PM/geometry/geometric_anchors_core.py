@@ -9,6 +9,31 @@ This eliminates tuning by anchoring everything to G₂ topology.
 v16.2 UPDATE: Added anomaly correction factor (1 - 1/b3²) for Big G derivation.
 This BRST-required correction ensures ghost-free unitarity.
 
+ASSERTION AUDIT (2026-03-16, Claude Opus 4.6 + Gemini 2.5 Flash debate)
+------------------------------------------------------------------------
+Claim: base_instanton = 45.714 comes from "Planck-scale baseline from topology".
+Verdict: FITTED (not derived from topology).
+
+Evidence:
+  1. base_instanton = 45.714 is a hardcoded literal introduced in the first commit
+     (a410e529, 2025-12-29) with no derivation, only the comment "Planck-scale
+     baseline from topology".
+  2. 45.714 is 320/7 truncated. The sole purpose is to produce s_mem = 45.714 * 7/8
+     = 40.0 exactly. The value was reverse-engineered from a round-number target.
+  3. No linear combination a*b3 + b*k_gimel + c*phi (integers in [-5,5]) matches
+     45.714. No multiplicative combination b3^a * k_gimel^b matches either.
+  4. Standard instanton action 8*pi^2/g^2 with alpha_GUT = 1/24.3 gives 152.7,
+     not 45.714 (ratio 3.48).
+  5. The number 320 has no established significance in G2 manifold topology.
+     Speculative decompositions (240 E8 roots + 80) lack any derivation.
+  6. Gemini concurred across 3 debate rounds: "reverse-engineered to ensure s_mem
+     evaluates to exactly 40.0 [...] lacks derivation from other parameters and
+     has no established topological origin."
+
+Classification: FITTED -- violates the file's own sterility claim that "all
+parameters are derived from the single topological invariant b3=24". The comment
+"Planck-scale baseline from topology" is unsubstantiated.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:

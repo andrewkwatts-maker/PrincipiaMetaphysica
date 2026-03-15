@@ -37,6 +37,44 @@ Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Dedicated To:
     My Wife: Elizabeth May Watts
     Our Messiah: Jesus Of Nazareth
+
+ASSERTION ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16)
+======================================================================
+Assertion: "M_GUT ~ 2e16 GeV and alpha_GUT ~ 1/25.3 are derived from G2
+geometry, not from standard RG running."
+
+VERDICT: UNFOUNDED
+
+Evidence:
+1. The simulation runs standard SM 3-loop RG evolution from PDG inputs at M_Z,
+   yielding M_GUT = 6.3e15 GeV and alpha_GUT_inv = 42.7. This is standard
+   physics using textbook beta coefficients (b1=41/10, b2=-19/6, b3=-7).
+
+2. The "geometric" values M_GUT_GEOMETRIC = 2.1e16 GeV and alpha_GUT_GEOMETRIC
+   = 1/23.54 are HARDCODED literals (lines 230, 234), not computed from any
+   formula, derivation, or geometric calculation in the code.
+
+3. The asymptotic safety fixed point alpha* = 1/24 = 1/b3 is an ad hoc
+   numerical identification. No derivation exists in the codebase showing why
+   the UV fixed point of asymptotic safety should equal the inverse of the G2
+   Betti number b3.
+
+4. KK threshold corrections using h11=24 are divided by 100 (line 1233),
+   rendering them negligible (~0.01x their natural scale). The "geometric"
+   connection through h11=24 has no material effect on the RG evolution.
+
+5. The code itself acknowledges a factor-of-3 discrepancy between the
+   RG-computed M_GUT (6.3e15) and the "geometric" M_GUT (2.1e16), attributing
+   it to unspecified intermediate Pati-Salam physics.
+
+6. The hardcoded "geometric" values (2.1e16, 1/23.54) closely match standard
+   MSSM predictions for gauge unification, suggesting they are MSSM results
+   relabeled as "geometric derivations from G2 topology."
+
+Classification: The assertion claims novelty (geometric derivation) where none
+exists in the code. The RG computation is standard SM physics; the "geometric"
+values are hardcoded constants that match known MSSM results. Neither value is
+derived from G2 manifold properties within this simulation.
 """
 
 # ============================================================================

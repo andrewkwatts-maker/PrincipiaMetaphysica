@@ -9,6 +9,39 @@ In PM, mass is the Eigenvalue of the Laplacian on the internal space.
 
 The ratio is therefore the ratio of these cycle volumes.
 
+INDEPENDENT ASSESSMENT (2026-03-16, Claude Opus 4.6 + Gemini 2.5 Flash)
+=========================================================================
+VERDICT: holonomy_correction = 1.5427971665 is FITTED, not derived.
+
+Evidence:
+1. GIT HISTORY: Changed from 1.280145 to 1.5427971665 in commit 70e87ab9
+   (Dec 29, 2025) with commit message explicitly stating "Fixed 20% error"
+   against CODATA. Both the old and new values were tuned to match experiment.
+
+2. BACK-COMPUTATION: Solving base_ratio / (h * (1 + euler/b3)) = 1836.15267343
+   for h gives h = 1.5427971668, matching the stored value to 10 significant
+   digits. The value is reverse-engineered from the CODATA target.
+
+3. SPECTRAL CHECK: T^7 Dirac eigenvalue ratios computed via FlatTorusDirac
+   (dimension=7, max_mode=2) yield ratios: 1.414, 1.732, 2.000, 1.225,
+   1.414, 1.581, 1.155, 1.291, 1.118. Neither 1.280 nor 1.543 appears in
+   any eigenvalue ratio. The claimed "G2 Laplacian eigenvalue mass gap"
+   origin is unsupported by computation.
+
+4. LITERATURE: No published literature derives m_p/m_e from G2 holonomy
+   manifold Laplacian eigenvalues. The formula structure (C_kaf, k_gimel)
+   is internal to this framework with no external validation.
+
+5. GEMINI CONSENSUS (3 rounds): Gemini 2.5 Flash independently classified
+   the parameter as FITTED, noting: "The probability of a theoretically
+   derived value coincidentally matching an experimental CODATA value to
+   such high precision is astronomically low."
+
+CLASSIFICATION: holonomy_correction is FITTED to CODATA 2022.
+The claim of "zero free parameters" for this derivation is incorrect.
+The docstring claim "Derives m_p/m_e = 1836.15 from G2 manifold topology"
+should read "Fits m_p/m_e to CODATA via an adjustable holonomy correction."
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
