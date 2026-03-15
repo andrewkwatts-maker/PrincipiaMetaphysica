@@ -69,6 +69,44 @@ v23.0 SAMPLER DATA FIELDS NOTE:
 
     See: simulations/v21/geometric/central_sampler_v23.py for details.
 
+ASSERTION ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
+=======================================================================
+Assertion: "CKM mixing matrix derived from G2 holonomy / octonion structure."
+Verdict: OVERCLAIMED -- partially constrained, not derived.
+
+Parameter-by-parameter classification (4 CKM mixing parameters):
+  1. CKM theta_12 (V_us = lambda): GENUINELY PREDICTED
+     - lambda = epsilon = exp(-3/2) = 0.2231, claimed from G2 curvature scale.
+     - This is the single genuine topological prediction in the CKM sector.
+     - Matches PDG V_us = 0.2245 +/- 0.0008 at 1.71 sigma.
+  2. CKM theta_23 (V_cb = A*lambda^2): FITTED
+     - A = 0.81 is hardcoded as GEOMETRIC_A class constant.
+     - Git history confirms A=0.81 present from earliest commits, never derived.
+     - With lambda derived but A fitted, V_cb has 1 free parameter.
+  3. CKM theta_13 (V_ub): FITTED
+     - Depends on A, rho=0.14, eta=0.36 -- all hardcoded/fitted.
+  4. CKM delta_CP: FITTED
+     - Hardcoded as pi/6 (TOPOLOGICAL_PHASE), labeled "from K=4 matching"
+       but no derivation connects K=4 to this specific phase value.
+     - eta=0.36 and rho=0.14 are explicitly "calibrated for J~3e-5."
+
+Free parameter count: 4 fitted (A, rho, eta, delta_CP) for 4 CKM observables.
+Net predictive power: 1 genuine prediction (lambda = exp(-3/2)).
+The remaining 3 CKM parameters consume 3+ fitted constants, yielding
+zero net predictions beyond the Cabibbo angle.
+
+Methodology assessment:
+  - Uses standard Wolfenstein parameterization, not a novel octonionic derivation.
+  - The claim of "cycle overlap integrals" in the docstring is aspirational;
+    the code implements V_ij = standard Wolfenstein formulas with fitted coefficients.
+  - No published octonionic mixing method (Furey, Dixon, Todorov) is followed.
+  - The Froggatt-Nielsen mechanism (epsilon hierarchy) is well-established
+    phenomenology, not specific to G2/octonions.
+
+Honest assessment: The CKM sector has 1 genuinely derived parameter (lambda)
+and 3 fitted parameters dressed in topological language. The claim of
+"derivation from G2 holonomy" is not supported by the implementation.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
