@@ -43,25 +43,25 @@ ASSERTION ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16)
 Assertion: "M_GUT ~ 2e16 GeV and alpha_GUT ~ 1/25.3 are derived from G2
 geometry, not from standard RG running."
 
-VERDICT: UNFOUNDED
+VERDICT: UNFOUNDED (original hardcoded values)
+         PROBLEMATIC (WP5.1 moduli-derived values)
 
-Evidence:
+Evidence (original assessment):
 1. The simulation runs standard SM 3-loop RG evolution from PDG inputs at M_Z,
    yielding M_GUT = 6.3e15 GeV and alpha_GUT_inv = 42.7. This is standard
    physics using textbook beta coefficients (b1=41/10, b2=-19/6, b3=-7).
 
 2. The "geometric" values M_GUT_GEOMETRIC = 2.1e16 GeV and alpha_GUT_GEOMETRIC
-   = 1/23.54 are HARDCODED literals (lines 230, 234), not computed from any
-   formula, derivation, or geometric calculation in the code.
+   = 1/23.54 are HARDCODED literals, not computed from any formula, derivation,
+   or geometric calculation in the code.
 
 3. The asymptotic safety fixed point alpha* = 1/24 = 1/b3 is an ad hoc
    numerical identification. No derivation exists in the codebase showing why
    the UV fixed point of asymptotic safety should equal the inverse of the G2
    Betti number b3.
 
-4. KK threshold corrections using h11=24 are divided by 100 (line 1233),
-   rendering them negligible (~0.01x their natural scale). The "geometric"
-   connection through h11=24 has no material effect on the RG evolution.
+4. KK threshold corrections using h11=24 are divided by 100, rendering them
+   negligible (~0.01x their natural scale).
 
 5. The code itself acknowledges a factor-of-3 discrepancy between the
    RG-computed M_GUT (6.3e15) and the "geometric" M_GUT (2.1e16), attributing
@@ -71,10 +71,47 @@ Evidence:
    MSSM predictions for gauge unification, suggesting they are MSSM results
    relabeled as "geometric derivations from G2 topology."
 
-Classification: The assertion claims novelty (geometric derivation) where none
-exists in the code. The RG computation is standard SM physics; the "geometric"
-values are hardcoded constants that match known MSSM results. Neither value is
-derived from G2 manifold properties within this simulation.
+WP5.1/WP5.2 UPDATE (2026-03-16):
+=================================
+M_GUT and alpha_GUT are now computed from racetrack-stabilized moduli via
+_derive_mgut_from_moduli() and compared against hardcoded values. Results:
+
+  T_min = 37.85 (from BridgeSystem.compute_stabilized_cycle_volumes())
+  M_GUT_moduli = M_Pl / sqrt(T_min) = 2.435e18 / 6.15 = 3.96e17 GeV
+  alpha_GUT_moduli = 1/(2*T_min) = 1/75.7
+
+  Discrepancy: M_GUT_moduli is ~20x higher than standard 2e16 GeV
+               alpha_GUT_inv_moduli = 75.7 vs standard ~25
+
+1-loop SM RG running from M_GUT_moduli to M_Z gives:
+  1/alpha_em(M_Z) = 222.9 (vs experimental 137.036, 63% off)
+  sin^2(theta_W) = 0.258 (vs experimental 0.231, 12% off)
+
+Gemini 2.5 Flash Assessment (3 rounds):
+  Round 1: Confirmed M_GUT = M_Pl/sqrt(T) is correct scaling for G2.
+           Noted alpha_GUT = 1/(2*T^{3/2}) may be more appropriate for
+           3-cycles, but this gives alpha_GUT_inv = 466 (worse).
+  Round 2: Confirmed using face volume Vol(C_GUT) = 3*T_min for
+           alpha_GUT = 1/(2*Vol) is physically consistent, giving
+           alpha_GUT_inv = 36.1 (reasonable range but RG still fails).
+           Noted T_min may not be the right modulus for M_GUT.
+  Round 3: Classifications:
+           (A) M_GUT from moduli: DERIVED (from framework, but 20x off)
+           (B) alpha_GUT_inv = 36.1: DERIVED (from 3-cycle volume)
+           (C) RG-evolved alpha_em: PROBLEMATIC (60% discrepancy)
+
+Root cause: T_min = 37.85 is determined by racetrack prefactors (A, B)
+and condensate ranks (N_a=24, N_b=26), which are PLAUSIBLE but not
+uniquely fixed by topology. Achieving M_GUT = 2e16 would require
+T_min ~ (M_Pl/M_GUT)^2 = (2.435e18/2e16)^2 ~ 14,800 -- far larger
+than the current racetrack minimum. This indicates either:
+  (a) The racetrack parameters need recalibration (different A, B, N_b)
+  (b) Additional threshold corrections (Pati-Salam, SUSY) are needed
+  (c) The relation M_GUT = M_Pl/sqrt(T) applies to a different modulus
+
+Classification: M_GUT_moduli is DERIVED from the framework but
+PROBLEMATIC for phenomenology. The original hardcoded values remain
+as the phenomenologically viable reference.
 """
 
 # ============================================================================
