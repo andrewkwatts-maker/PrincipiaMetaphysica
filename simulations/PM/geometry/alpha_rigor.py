@@ -18,7 +18,7 @@ Assertion: alpha^-1 = k_gimel^2 - b3/phi + phi/(4pi) ~ 137.036 derives from G2 g
 
 Verdict: FITTED (not a geometric derivation)
 
-Classification: The formula is correctly self-labeled NUMEROLOGICAL_FIT (line 150).
+Classification: The formula is correctly self-labeled NUMEROLOGICAL_FIT (line ~215).
 The three-term structure has no known basis in QFT, spectral geometry, or
 M-theory compactification on G2 manifolds.
 
@@ -60,7 +60,7 @@ Evidence:
        the code's self-labeling and disclaimers as "HIGHLY INTELLECTUALLY HONEST."
 
   5. MITIGATING FACTORS:
-     - The code already labels this NUMEROLOGICAL_FIT (line 150)
+     - The code already labels this NUMEROLOGICAL_FIT (line ~215)
      - Scientific disclaimer in validate() acknowledges this is not a QED derivation
      - The ~0.0007 residual is presented honestly as a genuine deviation
      - Learning materials include a link on mathematical coincidences
@@ -76,6 +76,60 @@ spectral computation, or (b) reclassifying the formula status from GEOMETRIC
 to FITTED/HEURISTIC in the Parameter definitions and Formula categories.
 
 Assessed by: Claude Opus 4.6 + Gemini 2.0 Flash (3-round adversarial debate)
+
+WP5.3 UPDATE (2026-03-16): RG-DERIVED ALTERNATIVE PATH
+========================================================
+A proper derivation of alpha would use RG running from moduli-derived M_GUT
+(Sprint 5.1-5.2) rather than the numerological formula.
+
+Comparison of two approaches:
+  (A) NUMEROLOGICAL: alpha_inv = k^2 - b3/phi + phi/(4pi) = 137.037
+      - Matches CODATA to 0.0005% BY CONSTRUCTION
+      - No derivation chain from QFT or M-theory
+      - holonomy_correction (1.5427971665) is back-computed from CODATA (FITTED)
+      - k_gimel = b3/2 + 1/pi has an unexplained 1/pi term
+      - Status: NUMEROLOGICAL_FIT (correctly self-labeled)
+
+  (B) RG FROM MODULI: alpha_GUT_inv = 2*T_min, then SM RG to M_Z
+      - T_min = 37.85 from racetrack stabilization (bridge_geometry.py)
+      - alpha_GUT_inv = 75.7, M_GUT = 3.96e17 GeV
+      - 1-loop SM running with SU(5) relation gives alpha_em_inv = 165.3
+      - 20.65% off from CODATA -- but has a legitimate derivation chain
+      - Known missing corrections: threshold (5-15%), 2-loop (1-2%),
+        coefficient normalization in alpha_GUT = 1/(2*T_min)
+      - Status: PLAUSIBLE (see Gemini debate below)
+
+The RG path is scientifically superior despite lower accuracy because it has
+a genuine derivation chain: moduli stabilization -> alpha_GUT -> RG running.
+The numerological formula has no such chain.
+
+GEMINI DEBATE ON RG PATH (3 rounds, gemini-2.5-flash, 2026-03-16):
+  Round 1 - Scientific legitimacy:
+    Gemini: "Approach (B) is significantly more scientifically legitimate than
+    (A), despite its current inaccuracy." Reasons: (B) is embedded in a
+    well-defined theoretical framework (G2 compactifications of M-theory),
+    uses standard RG running (experimentally verified), is falsifiable and
+    testable, and its inaccuracy guides further research. (A) is "merely a
+    numerical observation without any underlying physical explanation."
+
+  Round 2 - Improvement paths:
+    Gemini identified four physically motivated improvements to close the gap:
+    (1) Rigorous derivation of the gauge coupling-moduli coefficient (not just 2),
+    (2) GUT threshold corrections from specific heavy particle spectrum (5-15%),
+    (3) 2-loop beta functions (1-2%),
+    (4) Understanding the high M_GUT = 3.96e17 GeV and possible intermediate
+    physics. All four are "physically motivated" not "fitting" -- provided
+    the corrections are derived from the framework rather than tuned to data.
+
+  Round 3 - Classification:
+    Gemini classified approach (B) as PLAUSIBLE: "The approach uses specific
+    framework inputs (T_min, M_GUT relation) but acknowledges known
+    approximations. The sum of known corrections (threshold up to 15%,
+    2-loop 1-2%, coefficient normalization) is quantitatively sufficient
+    to plausibly close the 20.65% gap." Not DERIVED (approximations remain),
+    not DISCREPANT (gap is explainable by known missing physics).
+
+Assessed by: Claude Opus 4.6 + Gemini 2.5 Flash (3-round adversarial debate)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -132,9 +186,86 @@ class AlphaRigorSolver:
         """Golden ratio φ = (1 + √5)/2 ≈ 1.618033988749895."""
         return (1.0 + np.sqrt(5.0)) / 2.0
 
+    def _compute_alpha_from_rg(self) -> dict:
+        """Attempt to derive alpha from gauge coupling RG running.
+
+        The proper derivation:
+        1. alpha_GUT from stabilized moduli (bridge_geometry.py)
+        2. RG run from M_GUT to M_Z with SM beta coefficients
+        3. alpha_em(M_Z) from SU(5) unification relations
+
+        This replaces the numerological formula alpha_inv = k^2 - b3/phi + phi/(4pi).
+
+        The result (alpha_em_inv ~ 165.3) is 20.65% off from CODATA, but has a
+        legitimate derivation chain. Known missing corrections (threshold 5-15%,
+        2-loop 1-2%, coefficient normalization) could plausibly close the gap.
+
+        Gemini classification: PLAUSIBLE (2026-03-16, gemini-2.5-flash).
+
+        Returns:
+            dict with alpha_em_inv_rg, gap_percent, derivation chain, and status.
+        """
+        try:
+            from simulations.PM.geometry.bridge_geometry import BridgeSystem
+            bs = BridgeSystem()
+            result = bs.compute_stabilized_cycle_volumes()
+            T_min = result['T_min']
+
+            # alpha_GUT from cycle volume: 1/g^2 = Vol(C) / (2*pi*l_M^3)
+            # Simplified: alpha_GUT_inv = 2 * T_min (leading-order M-theory relation)
+            alpha_GUT_inv = 2.0 * T_min  # ~ 75.7
+
+            # RG running from M_GUT to M_Z using 1-loop SM beta coefficients
+            import math
+            M_Planck = 2.435e18  # GeV (reduced Planck mass)
+            M_GUT = M_Planck / math.sqrt(T_min)
+            M_Z = 91.1876  # GeV
+
+            # SM 1-loop beta coefficients (b_i for U(1)_Y, SU(2)_L, SU(3)_c)
+            b1 = 41.0 / 10.0   # U(1)_Y
+            b2 = -19.0 / 6.0   # SU(2)_L
+
+            alpha_1_inv = alpha_GUT_inv - b1 / (2 * math.pi) * math.log(M_Z / M_GUT)
+            alpha_2_inv = alpha_GUT_inv - b2 / (2 * math.pi) * math.log(M_Z / M_GUT)
+
+            # alpha_em from SU(5): 1/alpha_em = 5/3 * 1/alpha_1
+            # at lowest order with sin^2(theta_W) = 3/8 at GUT scale
+            alpha_em_inv = (5.0 / 3.0) * alpha_1_inv  # approximate
+
+            gap_pct = abs(alpha_em_inv - 137.036) / 137.036 * 100
+
+            return {
+                'alpha_em_inv_rg': alpha_em_inv,
+                'alpha_em_inv_codata': 137.036,
+                'gap_percent': gap_pct,
+                'alpha_GUT_inv': alpha_GUT_inv,
+                'M_GUT': M_GUT,
+                'T_min': T_min,
+                'alpha_1_inv': alpha_1_inv,
+                'alpha_2_inv': alpha_2_inv,
+                'derivation_chain': [
+                    f'T_min = {T_min:.4f} (racetrack stabilization, a=2pi/24, b=2pi/26)',
+                    f'alpha_GUT_inv = 2*T_min = {alpha_GUT_inv:.4f}',
+                    f'M_GUT = M_Planck/sqrt(T_min) = {M_GUT:.4e} GeV',
+                    f'1-loop SM RG: alpha_1_inv(M_Z) = {alpha_1_inv:.4f}',
+                    f'SU(5): alpha_em_inv = (5/3)*alpha_1_inv = {alpha_em_inv:.4f}',
+                    f'Gap vs CODATA: {gap_pct:.2f}%',
+                ],
+                'missing_corrections': [
+                    'GUT threshold corrections (5-15%)',
+                    '2-loop beta functions (1-2%)',
+                    'Coefficient normalization in alpha_GUT = 1/(2*T_min)',
+                    'Possible intermediate-scale physics between M_GUT and conventional GUT scale',
+                ],
+                'status': 'RG_DERIVED' if gap_pct < 10 else 'RG_PLAUSIBLE',
+                'gemini_classification': 'PLAUSIBLE',
+            }
+        except Exception as e:
+            return {'error': str(e), 'status': 'UNAVAILABLE'}
+
     def derive_alpha_inverse_geometric(self) -> float:
         """
-        Derives the inverse fine structure constant using PURE GEOMETRY.
+        Derives the inverse fine structure constant using the numerological formula.
 
         Formula: α⁻¹ = k_gimel² - b3/φ + φ/(4π)
 
@@ -143,14 +274,15 @@ class AlphaRigorSolver:
         - φ = (1 + √5)/2 = 1.618... (Golden Ratio)
         - b3 = 24 (Third Betti number of G2 manifold)
 
-        This derivation uses ONLY:
-        - The topological integer b3 = 24
-        - Mathematical constants (π, φ)
-
-        NO magic numbers, NO reverse engineering from experimental data!
+        NOTE (WP5.3): This formula is correctly self-labeled NUMEROLOGICAL_FIT.
+        It achieves ~0.0005% agreement with CODATA by construction, but has no
+        known derivation from QFT, spectral geometry, or M-theory. The proper
+        derivation path is via RG running from moduli-derived alpha_GUT -- see
+        _compute_alpha_from_rg() which implements the RG approach (currently
+        giving alpha_em_inv ~ 165.3, status PLAUSIBLE pending threshold corrections).
 
         Returns:
-            float: α⁻¹ ≈ 137.0367 (honest geometric prediction)
+            float: α⁻¹ ≈ 137.0367 (numerological fit, not a physics derivation)
         """
         return self.k_gimel**2 - self.elder_kads/self.phi + self.phi/(4.0 * np.pi)
 

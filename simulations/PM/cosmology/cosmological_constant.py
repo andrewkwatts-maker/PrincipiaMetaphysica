@@ -1,5 +1,5 @@
 """
-Cosmological Constant from Entropy Density v16.1
+Cosmological Constant from Entropy Density v16.2
 =================================================
 
 Derives Lambda (cosmological constant) from G2 manifold entropy density.
@@ -13,59 +13,75 @@ Lambda = k_gimel / (b3^3 * R_horizon^2)
 This gives Lambda ~ 10^-52 m^-2 naturally, solving the cosmological
 constant problem geometrically.
 
-INDEPENDENT ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16)
-========================================================================
+INDEPENDENT ASSESSMENT v2 (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16)
+===========================================================================
+
+--- ORIGINAL ASSESSMENT (v1, 2026-03-16): UNFOUNDED (CIRCULAR NUMEROLOGY) ---
+
 Assertion: "Cosmological constant Lambda derived from bridge moduli and
 racetrack stabilization."
 
-Verdict: UNFOUNDED (CIRCULAR NUMEROLOGY)
+Original Verdict: UNFOUNDED (CIRCULAR NUMEROLOGY)
 
-Classification: The assertion is unfounded. The cosmological constant is NOT
-derived from bridge moduli or racetrack stabilization. It is derived from a
-separate numerological formula that achieves the correct magnitude through
-circular reasoning and post-hoc factor selection.
+The original formula Lambda = (8*pi)^2 * k_gimel^2 / (3 * b3^3 * R_horizon^2)
+was circular because R_horizon = c/H0 depends on Lambda through the Friedmann
+equations. The derivation assumed the answer to derive the answer.
 
-Evidence:
+Evidence of circularity (preserved for record):
 
-1. CIRCULAR DEPENDENCY: The formula Lambda = (8*pi)^2 * k_gimel^2 /
-   (3 * b3^3 * R_horizon^2) uses R_horizon = c/H0 where H0 = 67.4 km/s/Mpc
-   is an OBSERVED INPUT from DESI. But H0 depends on Lambda through the
-   Friedmann equations. The derivation assumes the answer to derive the answer.
+1. CIRCULAR DEPENDENCY: R_horizon = c/H0 where H0 = 67.4 km/s/Mpc is an
+   OBSERVED INPUT from DESI. But H0 depends on Lambda through the Friedmann
+   equations. The derivation assumes the answer to derive the answer.
 
 2. DISCONNECTED FROM BRIDGE MODULI: The bridge moduli racetrack stabilization
    (BridgeSystem.stabilize_moduli()) gives V_min = 3.7e-5 in Planck units.
    The observed Lambda ~ 10^-122 M_Pl^4. This is a 118-order-of-magnitude
    discrepancy. The racetrack result is completely disconnected from the
-   Lambda formula used in this file.
+   Lambda formula used in the original code.
 
 3. POST-HOC FACTORS: The factors (8*pi)^2 ~ 631.5 and projection_factor = 3
    are described as arising from "26D -> 4D projection" but no rigorous
    derivation exists. These appear chosen to make the numerics work out.
 
-4. HISTORICAL 87-ORDER BUG: Git commit 3a6d7d1 ("Fix rho_vacuum unit
-   conversion bug - 87 orders of magnitude error") removed a J/m^3 to GeV^4
-   conversion entirely rather than fixing it. The original code had
-   rho_vacuum = 1.17e+77 J/m^3 (should be 5.4e-10). Simply removing the
-   conversion line "fixed" it, suggesting the derivation chain is fragile
-   and not grounded in consistent dimensional analysis.
+4. HISTORICAL 87-ORDER BUG: Git commit 3a6d7d1 removed a J/m^3 to GeV^4
+   conversion entirely rather than fixing it, suggesting the derivation
+   chain was fragile and not grounded in consistent dimensional analysis.
 
-5. NO PREDICTIVE POWER: The formula gets Lambda ~ 10^-52 m^-2 by
-   construction: k_gimel^2/b3^3 ~ 10^-2, (8*pi)^2/3 ~ 200, and
-   1/R_horizon^2 ~ 10^-52 m^-2. The R_horizon^2 factor does all the work,
-   and R_horizon is an observed quantity.
+5. NO PREDICTIVE POWER: The R_horizon^2 factor does all the work, and
+   R_horizon is an observed quantity.
 
-Gemini 2.5 Flash concurrence (3-round debate):
-- R1: "118-order discrepancy is a fundamental flaw. Suspicious unit bug fix.
-  Ad-hoc factors undermine the claim of principled derivation."
-- R2: "Circular dependency on H0/R_horizon undermines zero-free-parameters
-  claim. Framework faces significant challenges in self-consistency."
-- R3: Classification as UNFOUNDED/NUMEROLOGY/CIRCULAR.
+--- UPDATED ASSESSMENT (v2, 2026-03-16): SPECULATIVE ---
 
-The cosmological constant problem remains unsolved in this framework. The
-formula achieves numerical agreement through circularity (using observed H0)
-and post-hoc factor selection, not through genuine topological derivation.
-The racetrack stabilization, which would be a legitimate approach, gives a
-result 118 orders of magnitude too large.
+WP4.2 Update: The circular H0 dependency has been identified and a dynamical
+relaxation mechanism is introduced as a replacement:
+
+    V_eff = V_racetrack - (1/b3) * rho_sampler + V_torsion * exp(-S_Pneuma)
+
+This removes the circular dependency on H0 but introduces a new challenge:
+the racetrack potential gives V_min ~ 3.7e-5 in Planck units, while the
+observed Lambda ~ 10^-122 M_Pl^4. The sampler and torsion terms must cancel
+117 orders of magnitude -- which may constitute fine-tuning in disguise.
+
+Updated Verdict: SPECULATIVE (circularity removed, 117-order gap remains)
+
+The module now honestly tracks both the old (circular) and new (dynamical)
+approaches, reporting them side by side for transparent comparison.
+
+Gemini 2.5 Flash concurrence (3-round debate, WP4.2 update):
+- R1: "Removing circular dependency genuinely and dramatically improves
+  epistemological status. Circular reasoning rendered the old derivation a
+  tautology. The new approach allows genuine comparison with observation."
+- R2: "The 117-order cancellation problem IS fine-tuning in disguise. It
+  shifts the problem from initial value to precise cancellation of multiple
+  independent contributions."
+- R3: Classification as SPECULATIVE. "The mechanism is proposed but not
+  quantitatively confirmed. To upgrade to DERIVED, a physically motivated
+  resolution to the 117-order gap is needed without new fine-tuning."
+
+Remaining gap: The cosmological constant problem is not fully solved. The
+dynamical relaxation mechanism removes circularity (a genuine improvement)
+but the 117-order gap between V_racetrack and observed Lambda remains an
+open problem requiring a natural cancellation mechanism.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -95,6 +111,16 @@ from simulations.base import (
 from simulations.core.FormulasRegistry import get_registry
 _REG = get_registry()
 
+# WP4.2: Try to import dynamical lambda module (created by WP4.1)
+# This provides the non-circular V_eff derivation
+_DYNAMICAL_LAMBDA_AVAILABLE = False
+_dynamical_lambda_module = None
+try:
+    from simulations.PM.cosmology import dynamical_lambda as _dynamical_lambda_module
+    _DYNAMICAL_LAMBDA_AVAILABLE = True
+except ImportError:
+    pass  # Module not yet available; fall back to legacy computation
+
 
 class CosmologicalConstantV16(SimulationBase):
     """
@@ -105,7 +131,13 @@ class CosmologicalConstantV16(SimulationBase):
 
     In our framework, Lambda emerges from the G2 manifold's entropy
     density - the information content of the compact dimensions.
-    This naturally gives the observed small value without fine-tuning.
+
+    WP4.2 UPDATE (v16.2): The original derivation had a circular dependency
+    on H0 (used R_horizon = c/H0 to derive Lambda, but H0 depends on Lambda
+    via Friedmann equations). This version adds a dynamical relaxation
+    approach via V_eff that removes the circularity, while keeping the
+    legacy method for comparison. Classification updated from UNFOUNDED
+    to SPECULATIVE (circularity fixed, 117-order gap remains).
     """
 
     def __init__(self):
@@ -113,6 +145,7 @@ class CosmologicalConstantV16(SimulationBase):
         self.Lambda_derived = None
         self.rho_vacuum = None
         self.entropy_density = None
+        self._dynamical_result = None  # WP4.2: dynamical relaxation results
 
     # -------------------------------------------------------------------------
     # SimulationBase Interface - Metadata
@@ -160,6 +193,11 @@ class CosmologicalConstantV16(SimulationBase):
             "cosmology.entropy_density",     # G2 entropy density
             "cosmology.Lambda_ratio",        # Lambda / Lambda_Planck (the 10^-122 number)
             "cosmology.Lambda_deviation_log", # log10 deviation from observed
+            # WP4.2: Dynamical relaxation outputs
+            "cosmology.V_eff_dynamical",     # V_eff from dynamical relaxation (Planck units)
+            "cosmology.dynamical_classification",  # Honest classification
+            "cosmology.dynamical_gap_orders",      # Orders of magnitude gap
+            "cosmology.circular_dependency_removed",  # Flag: circularity fixed
         ]
 
     @property
@@ -220,12 +258,23 @@ class CosmologicalConstantV16(SimulationBase):
         Lambda_observed = 1.1e-52  # m^-2 (from DESI/Planck)
         log_deviation = np.log10(self.Lambda_derived / Lambda_observed)
 
+        # Step 7 (WP4.2): Compute dynamical Lambda (non-circular)
+        dynamical_result = self._compute_lambda_dynamical(
+            b3=b3, k_gimel=k_gimel, registry=registry,
+        )
+        self._dynamical_result = dynamical_result
+
         return {
             "cosmology.Lambda_derived": self.Lambda_derived,
             "cosmology.rho_vacuum": self.rho_vacuum,
             "cosmology.entropy_density": self.entropy_density,
             "cosmology.Lambda_ratio": Lambda_ratio,
             "cosmology.Lambda_deviation_log": log_deviation,
+            # WP4.2: Dynamical relaxation results
+            "cosmology.V_eff_dynamical": dynamical_result.get("V_eff"),
+            "cosmology.dynamical_classification": dynamical_result.get("classification"),
+            "cosmology.dynamical_gap_orders": dynamical_result.get("log10_gap_orders"),
+            "cosmology.circular_dependency_removed": True,
         }
 
     def _compute_entropy_density(
@@ -267,7 +316,13 @@ class CosmologicalConstantV16(SimulationBase):
         R_horizon: float
     ) -> float:
         """
-        Derive cosmological constant from G2 geometry (v16.2 Demon-Lock).
+        LEGACY: Derive cosmological constant from G2 geometry (v16.2 Demon-Lock).
+
+        WARNING (WP4.2): This method has a CIRCULAR DEPENDENCY on H0.
+        R_horizon = c/H0 is an observed quantity, and H0 depends on Lambda
+        via the Friedmann equations. This method is retained for backward
+        compatibility and comparison with the new dynamical approach.
+        See _compute_lambda_dynamical() for the non-circular replacement.
 
         The key formula from Mirror Brane geometry:
 
@@ -315,6 +370,133 @@ class CosmologicalConstantV16(SimulationBase):
         )
 
         return Lambda_final
+
+    # -------------------------------------------------------------------------
+    # WP4.2: Dynamical Lambda (Non-Circular)
+    # -------------------------------------------------------------------------
+
+    def _compute_lambda_dynamical(
+        self,
+        b3: int,
+        k_gimel: float,
+        registry: 'PMRegistry' = None,
+    ) -> Dict[str, Any]:
+        """
+        Compute Lambda via dynamical relaxation V_eff (WP4.2).
+
+        Replaces the circular H0-dependent derivation with:
+
+            V_eff = V_racetrack - (1/b3) * rho_sampler + V_torsion * exp(-S_Pneuma)
+
+        where:
+        - V_racetrack: racetrack superpotential minimum from bridge moduli
+          stabilization (BridgeSystem.stabilize_moduli())
+        - rho_sampler: sampler entropy field energy density from S^{2,0}
+        - V_torsion: torsion contribution from G2 holonomy
+        - S_Pneuma: Pneuma field action (modular entropy)
+
+        This removes the circular dependency on H0 but faces a 117-order
+        gap: V_racetrack ~ 3.7e-5 M_Pl^4 vs observed Lambda ~ 10^-122 M_Pl^4.
+
+        Returns:
+            Dict with V_eff components, comparison to old method, and
+            honest assessment of the remaining gap.
+        """
+        result = {
+            "method": "dynamical_relaxation_V_eff",
+            "circular_dependency_removed": True,
+            "dynamical_lambda_module_available": _DYNAMICAL_LAMBDA_AVAILABLE,
+        }
+
+        # --- Component 1: V_racetrack from bridge moduli ---
+        # The racetrack superpotential gives V_min ~ 3.7e-5 in Planck units.
+        # This is the dominant term and the source of the 117-order problem.
+        try:
+            from simulations.PM.geometry.bridge_geometry import BridgeSystem
+            bridge = BridgeSystem()
+            opt_moduli, V_min_racetrack = bridge.stabilize_moduli()
+            result["V_racetrack"] = float(V_min_racetrack)
+            result["V_racetrack_source"] = "BridgeSystem.stabilize_moduli()"
+        except Exception:
+            # Fallback: use known value from bridge geometry
+            V_min_racetrack = 3.7e-5  # Planck units (from prior runs)
+            result["V_racetrack"] = V_min_racetrack
+            result["V_racetrack_source"] = "fallback_constant"
+
+        # --- Component 2: rho_sampler from sampler entropy dynamics ---
+        # The sampler S^{2,0} fields contribute a negative pressure term
+        rho_sampler = 0.0
+        try:
+            if registry and registry.has_param("sampler_entropy.rho_sampler"):
+                rho_sampler = registry.get_param("sampler_entropy.rho_sampler")
+                result["rho_sampler_source"] = "registry"
+            else:
+                # Estimate from sampler entropy dynamics module
+                from simulations.PM.field_dynamics.sampler_entropy_dynamics import (
+                    SamplerEntropyDynamics,
+                )
+                sampler = SamplerEntropyDynamics()
+                rho_sampler = sampler.compute_rho_sampler()
+                result["rho_sampler_source"] = "SamplerEntropyDynamics.compute_rho_sampler()"
+        except Exception:
+            rho_sampler = 0.0
+            result["rho_sampler_source"] = "unavailable (set to 0)"
+        result["rho_sampler"] = float(rho_sampler)
+
+        # --- Component 3: V_torsion * exp(-S_Pneuma) ---
+        # Torsion contribution with Pneuma suppression
+        # S_Pneuma is the Pneuma field action; exp(-S_Pneuma) provides
+        # exponential suppression similar to instanton effects
+        # For a G2 manifold with b3 3-cycles, the torsion scale is set by
+        # the associative calibration
+        S_Pneuma = 2.0 * np.pi * b3  # ~ 150.8 for b3=24
+        V_torsion = k_gimel / (b3 ** 2)  # Torsion scale ~ 0.0214
+        V_torsion_suppressed = V_torsion * np.exp(-S_Pneuma)
+        result["V_torsion"] = float(V_torsion)
+        result["S_Pneuma"] = float(S_Pneuma)
+        result["V_torsion_suppressed"] = float(V_torsion_suppressed)
+        result["exp_minus_S_Pneuma"] = float(np.exp(-S_Pneuma))
+
+        # --- Combine into V_eff ---
+        sampler_contribution = (1.0 / b3) * rho_sampler
+        V_eff = V_min_racetrack - sampler_contribution + V_torsion_suppressed
+        result["V_eff"] = float(V_eff)
+
+        # --- If dynamical_lambda module is available, use its result ---
+        if _DYNAMICAL_LAMBDA_AVAILABLE and _dynamical_lambda_module is not None:
+            try:
+                dl_result = _dynamical_lambda_module.compute_dynamical_lambda(
+                    b3=b3, k_gimel=k_gimel
+                )
+                result["dynamical_lambda_result"] = dl_result
+                if "V_eff" in dl_result:
+                    V_eff = dl_result["V_eff"]
+                    result["V_eff"] = float(V_eff)
+                    result["V_eff_source"] = "dynamical_lambda module"
+            except Exception as e:
+                result["dynamical_lambda_error"] = str(e)
+
+        # --- Gap analysis ---
+        Lambda_observed_planck = 2.9e-122  # Lambda/Lambda_Pl (observed)
+        log_gap = np.log10(abs(V_eff) / abs(Lambda_observed_planck)) if V_eff != 0 else float('inf')
+        result["Lambda_observed_planck_units"] = Lambda_observed_planck
+        result["log10_gap_orders"] = float(log_gap)
+        result["gap_assessment"] = (
+            f"V_eff ~ {V_eff:.2e} vs observed Lambda ~ {Lambda_observed_planck:.2e} "
+            f"in Planck units: {log_gap:.0f}-order gap remains. "
+            f"The dynamical mechanism removes circularity but does not yet "
+            f"explain the 117-order hierarchy."
+        )
+
+        # --- Classification ---
+        if abs(log_gap) < 2:
+            result["classification"] = "DERIVED"
+        elif abs(log_gap) < 10:
+            result["classification"] = "PARTIAL_DERIVATION"
+        else:
+            result["classification"] = "SPECULATIVE"
+
+        return result
 
     # -------------------------------------------------------------------------
     # Section Content
@@ -1127,18 +1309,32 @@ if __name__ == "__main__":
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
     print("\n" + "=" * 70)
-    print(" COSMOLOGICAL CONSTANT FROM ENTROPY DENSITY v16.1")
+    print(" COSMOLOGICAL CONSTANT FROM ENTROPY DENSITY v16.2 (WP4.2)")
     print("=" * 70)
 
     results = export_cosmological_constant_v16()
+    outputs = results['outputs']
+
+    print("\n" + "-" * 70)
+    print(" LEGACY METHOD (circular H0 dependency)")
+    print("-" * 70)
+    print(f"  Lambda_derived:  {outputs['cosmology.Lambda_derived']:.2e} m^-2")
+    print(f"  Lambda_observed: 1.1e-52 m^-2")
+    print(f"  Lambda/Lambda_Pl: {outputs['cosmology.Lambda_ratio']:.2e}")
+    print(f"  Log deviation:   {outputs['cosmology.Lambda_deviation_log']:.2f}")
+    print(f"  NOTE: Uses R_horizon = c/H0 (CIRCULAR)")
+
+    print("\n" + "-" * 70)
+    print(" DYNAMICAL RELAXATION (WP4.2, non-circular)")
+    print("-" * 70)
+    V_eff = outputs.get('cosmology.V_eff_dynamical')
+    classification = outputs.get('cosmology.dynamical_classification', 'UNKNOWN')
+    gap = outputs.get('cosmology.dynamical_gap_orders')
+    print(f"  V_eff (Planck):   {V_eff:.2e}" if V_eff else "  V_eff: unavailable")
+    print(f"  Gap (orders):     {gap:.0f}" if gap else "  Gap: unavailable")
+    print(f"  Classification:   {classification}")
+    print(f"  Circular dep:     REMOVED")
 
     print("\n" + "=" * 70)
-    print(" COSMOLOGICAL CONSTANT PROBLEM RESOLVED")
-    print("=" * 70)
-    print(f"  Lambda_derived:  {results['outputs']['cosmology.Lambda_derived']:.2e} m^-2")
-    print(f"  Lambda_observed: 1.1e-52 m^-2")
-    print(f"  Lambda/Lambda_Pl: {results['outputs']['cosmology.Lambda_ratio']:.2e}")
-    print(f"  Log deviation:   {results['outputs']['cosmology.Lambda_deviation_log']:.2f}")
-    print("=" * 70)
-    print(" STATUS: 120 ORDERS OF MAGNITUDE EXPLAINED")
+    print(f" STATUS: {classification} -- circularity fixed, gap remains")
     print("=" * 70)
