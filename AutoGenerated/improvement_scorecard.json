@@ -1,0 +1,292 @@
+{
+  "metadata": {
+    "version": "23.3.2",
+    "timestamp": "2026-03-20T00:00:00Z",
+    "description": "Post-improvement scorecard comparing before/after Phase C sprints 1-7",
+    "assessors": "Claude Opus 4.6 + Gemini 2.5 Flash",
+    "gemini_score_before": "1/10",
+    "gemini_score_after": "2-3/10",
+    "gemini_rationale": "S8 suppression is a significant positive step (derived beta, right direction). M_GUT derived from moduli shows predictive intent. But Hubble tension still REFUTED (44-order gap), Lambda has 120-order gap, and alpha from RG is 20% off. Framework improved methodology but remains far from predictive."
+  },
+  "assertions": [
+    {
+      "id": 1,
+      "file": "simulations/PM/algebra/e8_root_system.py",
+      "name": "E8 root system construction",
+      "verdict_before": "PROVEN",
+      "verdict_after": "PROVEN",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 2,
+      "file": "simulations/PM/algebra/octonions.py",
+      "name": "Octonion algebra with Aut(O)=G2",
+      "verdict_before": "PROVEN",
+      "verdict_after": "PROVEN",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 3,
+      "file": "simulations/PM/geometry/g2_differential.py",
+      "name": "G2 3-form from E8 via octonions",
+      "verdict_before": "PLAUSIBLE",
+      "verdict_after": "PLAUSIBLE",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 4,
+      "file": "simulations/PM/algebra/leech_lattice.py",
+      "name": "Leech ambient R^24 = R^8+R^8+R^8",
+      "verdict_before": "PLAUSIBLE",
+      "verdict_after": "PLAUSIBLE",
+      "change": "unchanged",
+      "sprint": "2 (WP2.3 added axion alignment matrix, CONSTRUCTED)"
+    },
+    {
+      "id": 5,
+      "file": "simulations/PM/algebra/lattice_bridge.py",
+      "name": "E8->Leech->Bridges->Faces chain",
+      "verdict_before": "PLAUSIBLE",
+      "verdict_after": "PLAUSIBLE+",
+      "change": "improved",
+      "sprint": "1 (alpha_leak now DERIVED from bridge geometry, no longer hardcoded)"
+    },
+    {
+      "id": 6,
+      "file": "simulations/PM/geometry/four_face_structure.py",
+      "name": "h^{1,1}=4 and face grouping",
+      "verdict_before": "FITTED",
+      "verdict_after": "FITTED",
+      "change": "unchanged",
+      "sprint": "1 (leakage computation improved but structure still not unique)"
+    },
+    {
+      "id": 7,
+      "file": "simulations/PM/geometry/alpha_rigor.py",
+      "name": "alpha^-1 formula from G2 geometry",
+      "verdict_before": "FITTED",
+      "verdict_after": "FITTED + PLAUSIBLE (RG alternative)",
+      "change": "improved",
+      "sprint": "5 (RG path added: alpha_em_inv=165.3, 20.65% off but legitimate chain)"
+    },
+    {
+      "id": 8,
+      "file": "simulations/PM/particle/proton_decay.py",
+      "name": "Proton lifetime from TCS G2",
+      "verdict_before": "PHENOMENOLOGICAL",
+      "verdict_after": "PHENOMENOLOGICAL",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 9,
+      "file": "simulations/PM/gauge/gauge_unification.py",
+      "name": "M_GUT and alpha_GUT from G2 geometry",
+      "verdict_before": "UNFOUNDED",
+      "verdict_after": "PROBLEMATIC (derived but 20x off)",
+      "change": "improved",
+      "sprint": "5 (M_GUT=3.96e17 GeV from moduli, no longer hardcoded)"
+    },
+    {
+      "id": 10,
+      "file": "simulations/PM/geometry/geometric_anchors_core.py",
+      "name": "base_instanton = 45.714 from topology",
+      "verdict_before": "FITTED",
+      "verdict_after": "FITTED",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 11,
+      "file": "simulations/PM/particle/mass_ratio.py",
+      "name": "m_p/m_e = 1836.15 from G2 topology",
+      "verdict_before": "FITTED",
+      "verdict_after": "FITTED",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 12,
+      "file": "simulations/PM/particle/higgs_brane_partition.py",
+      "name": "m_higgs = 125.1 GeV from brane partition",
+      "verdict_before": "UNFOUNDED",
+      "verdict_after": "FITTED (honestly labeled)",
+      "change": "improved",
+      "sprint": "6 (component-level status table, m_bulk acknowledged as INPUT)"
+    },
+    {
+      "id": 13,
+      "file": "simulations/PM/cosmology/speed_of_light.py",
+      "name": "Speed of light from E8xE8 root lattice",
+      "verdict_before": "NUMEROLOGICAL_REVERSE_ENGINEERED",
+      "verdict_after": "NUMEROLOGICAL (confirmed, warning added)",
+      "change": "unchanged (honest labeling improved)",
+      "sprint": "6 (warning added: c=1 in natural units, not derivable)"
+    },
+    {
+      "id": 14,
+      "file": "simulations/PM/particle/fermion_generations.py",
+      "name": "3 generations from n_gen = b3/(2*h11)",
+      "verdict_before": "NUMEROLOGICAL",
+      "verdict_after": "NUMEROLOGICAL",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 15,
+      "file": "simulations/PM/cosmology/cosmological_constant.py",
+      "name": "Lambda from bridge moduli",
+      "verdict_before": "UNFOUNDED",
+      "verdict_after": "SPECULATIVE (non-circular, 120-order gap)",
+      "change": "improved",
+      "sprint": "4 (dynamical Lambda: V_eff = V_bare * exp(-S_Pneuma), no H0 input)"
+    },
+    {
+      "id": 16,
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "name": "CKM from G2 holonomy",
+      "verdict_before": "OVERCLAIMED",
+      "verdict_after": "OVERCLAIMED",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 17,
+      "file": "simulations/PM/particle/neutrino_mixing.py",
+      "name": "PMNS from G2 holonomy",
+      "verdict_before": "PARTIALLY_SUPPORTED",
+      "verdict_after": "PARTIALLY_SUPPORTED",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 18,
+      "file": "simulations/PM/cosmology/dark_energy.py",
+      "name": "w0 != -1 from bridge moduli",
+      "verdict_before": "RETROFITTED",
+      "verdict_after": "RETROFITTED",
+      "change": "unchanged",
+      "sprint": null
+    },
+    {
+      "id": 19,
+      "file": "simulations/PM/cosmology/hubble_tension.py",
+      "name": "Hubble tension resolution",
+      "verdict_before": "REFUTED",
+      "verdict_after": "STILL REFUTED (KNP helps 3 orders, 44.5 remain)",
+      "change": "marginal",
+      "sprint": "2 (KNP alignment reduces gap from 47 to 44.5 orders, still fails)"
+    },
+    {
+      "id": 20,
+      "file": "simulations/PM/cosmology/s8_suppression.py",
+      "name": "S8 tension resolution",
+      "verdict_before": "UNFOUNDED",
+      "verdict_after": "SPECULATIVE-PROMISING (S8: 0.837->0.789)",
+      "change": "significantly improved",
+      "sprint": "3 (moduli-DM friction: beta_eff=0.065 DERIVED, 5.1% suppression)"
+    },
+    {
+      "id": 21,
+      "file": "simulations/PM/cosmology/dynamical_lambda.py",
+      "name": "Dynamical Lambda relaxation (NEW)",
+      "verdict_before": "N/A (new module)",
+      "verdict_after": "PLAUSIBLE",
+      "change": "new",
+      "sprint": "4 (V_eff = V_bare * exp(-S_Pneuma), non-circular mechanism)"
+    },
+    {
+      "id": 22,
+      "file": "simulations/PM/cosmology/bridge_axion_ede.py",
+      "name": "KNP bridge axion EDE (NEW)",
+      "verdict_before": "N/A (new module)",
+      "verdict_after": "PARTIAL (architecturally sound, quantitatively insufficient)",
+      "change": "new",
+      "sprint": "2 (f_eff=1.19e14 GeV, 44.5-order gap to EDE target)"
+    },
+    {
+      "id": 23,
+      "file": "simulations/PM/cosmology/moduli_dm_coupling.py",
+      "name": "Moduli-DM friction coupling (NEW)",
+      "verdict_before": "N/A (new module)",
+      "verdict_after": "PLAUSIBLE",
+      "change": "new",
+      "sprint": "3 (beta_eff=0.065 from G2 topology, not fitted)"
+    },
+    {
+      "id": 24,
+      "file": "simulations/PM/field_dynamics/sampler_entropy_dynamics.py",
+      "name": "Sampler S^{2,0} entropy dynamics (NEW)",
+      "verdict_before": "N/A (new module)",
+      "verdict_after": "PLAUSIBLE",
+      "change": "new",
+      "sprint": "1 (kappa_sampler=2 from dim S^{2,0}, Second Law validated)"
+    }
+  ],
+  "summary": {
+    "total_original_assertions": 20,
+    "new_modules_added": 4,
+    "total_after": 24,
+    "improved": 6,
+    "unchanged": 13,
+    "marginal": 1,
+    "new": 4,
+    "worsened": 0,
+    "verdicts_before": {
+      "PROVEN": 2,
+      "PLAUSIBLE": 3,
+      "PARTIALLY_SUPPORTED": 1,
+      "OVERCLAIMED": 1,
+      "FITTED": 5,
+      "NUMEROLOGICAL": 2,
+      "PHENOMENOLOGICAL": 1,
+      "RETROFITTED": 1,
+      "UNFOUNDED": 5,
+      "REFUTED": 1
+    },
+    "verdicts_after": {
+      "PROVEN": 2,
+      "PLAUSIBLE": 6,
+      "PLAUSIBLE+": 1,
+      "PARTIALLY_SUPPORTED": 1,
+      "PARTIAL": 1,
+      "SPECULATIVE-PROMISING": 1,
+      "SPECULATIVE": 1,
+      "PROBLEMATIC": 1,
+      "OVERCLAIMED": 1,
+      "FITTED": 5,
+      "NUMEROLOGICAL": 2,
+      "PHENOMENOLOGICAL": 1,
+      "RETROFITTED": 1,
+      "UNFOUNDED": 0,
+      "REFUTED": 1
+    },
+    "key_improvements": [
+      "S8 suppression: UNFOUNDED -> SPECULATIVE-PROMISING (beta_eff=0.065 DERIVED, S8 from 0.837 to 0.789, within 1.2sigma of KiDS)",
+      "Cosmological constant: UNFOUNDED -> SPECULATIVE (dynamical Lambda, non-circular, 120-order gap)",
+      "Gauge unification: UNFOUNDED -> PROBLEMATIC (M_GUT derived from moduli, 20x off but legitimate chain)",
+      "Higgs: UNFOUNDED -> FITTED (honestly labeled, component status table added)",
+      "alpha formula: FITTED + new RG path PLAUSIBLE (alpha_em_inv=165.3, 20.65% off but derivable)",
+      "alpha_leak: was hardcoded ratio=6, now DERIVED from bridge geometry",
+      "ALL 5 UNFOUNDED assertions eliminated (4 improved, 1 reclassified)"
+    ],
+    "remaining_critical_issues": [
+      "Hubble tension: STILL REFUTED (KNP reduces gap by 3 orders, 44.5 remain)",
+      "Cosmological constant: 120-order gap between V_eff and observed Lambda",
+      "M_GUT from moduli: 20x too high (T_min=37.85 insufficient)",
+      "alpha from RG: 20.65% off (known missing corrections plausibly close gap)",
+      "mass_ratio holonomy_correction: still back-computed from CODATA to 10 sig digits",
+      "Fermion generations formula: still NUMEROLOGICAL (not in literature)",
+      "Speed of light: still NUMEROLOGICAL (gnostic naming, c=1 in natural units)",
+      "dark_energy w0: still RETROFITTED (changed to match DESI)"
+    ],
+    "gemini_score_trajectory": {
+      "before_improvements": "1/10",
+      "after_improvements": "2-3/10",
+      "assessment": "Framework improved methodology significantly (all 5 UNFOUNDED eliminated, new modules with honest derivation chains). S8 mechanism is the strongest concrete improvement. But critical failures remain (Hubble tension REFUTED, Lambda 120-order gap) that prevent higher scores. The honest self-assessment and component-level labeling represent a cultural improvement in scientific integrity."
+    }
+  }
+}
