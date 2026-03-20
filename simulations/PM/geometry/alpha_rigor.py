@@ -219,7 +219,7 @@ class AlphaRigorSolver:
             import math
             M_Planck = 2.435e18  # GeV (reduced Planck mass)
             M_GUT = M_Planck / math.sqrt(T_min)
-            M_Z = 91.1876  # GeV
+            M_Z = 91.1876  # PDG 2024
 
             # SM 1-loop beta coefficients (b_i for U(1)_Y, SU(2)_L, SU(3)_c)
             b1 = 41.0 / 10.0   # U(1)_Y
@@ -232,11 +232,12 @@ class AlphaRigorSolver:
             # at lowest order with sin^2(theta_W) = 3/8 at GUT scale
             alpha_em_inv = (5.0 / 3.0) * alpha_1_inv  # approximate
 
-            gap_pct = abs(alpha_em_inv - 137.036) / 137.036 * 100
+            alpha_inv_codata = 137.036  # CODATA 2022
+            gap_pct = abs(alpha_em_inv - alpha_inv_codata) / alpha_inv_codata * 100
 
             return {
                 'alpha_em_inv_rg': alpha_em_inv,
-                'alpha_em_inv_codata': 137.036,
+                'alpha_em_inv_codata': alpha_inv_codata,
                 'gap_percent': gap_pct,
                 'alpha_GUT_inv': alpha_GUT_inv,
                 'M_GUT': M_GUT,

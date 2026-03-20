@@ -210,8 +210,8 @@ class ModuliDMCouplingV24(SimulationBase):
         """Return required input parameter paths."""
         return [
             "geometry.alpha_leak",       # 1/sqrt(6) from four_face_structure
-            "geometry.chi_eff",          # 144
-            "geometry.b3",               # 24
+            "geometry.mephorash_chi",    # 144 (chi_eff canonical name)
+            "geometry.elder_kads",       # 24  (b3 canonical name)
             "cosmology.w0_derived",      # -23/24
             "cosmology.wa_derived",      # ~0.29
             "desi.sigma8",               # 0.827 +/- 0.011
@@ -259,8 +259,8 @@ class ModuliDMCouplingV24(SimulationBase):
         kappa_sampler = 2  # dim(S^{2,0}), fixed by compactification architecture
 
         # Validate alpha_leak against expected derivation
-        chi_eff = registry.get_param("geometry.chi_eff")
-        b3 = registry.get_param("geometry.b3")
+        chi_eff = registry.get_param("geometry.mephorash_chi")
+        b3 = registry.get_param("geometry.elder_kads")
         alpha_leak_check = 1.0 / math.sqrt(chi_eff / b3)
         if abs(alpha_leak - alpha_leak_check) > 1e-10:
             raise ValueError(

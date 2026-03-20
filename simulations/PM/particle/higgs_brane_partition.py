@@ -9,28 +9,82 @@ v22 COMPATIBILITY: Uses Cl(24,1) Clifford algebra with unified time signature.
                    4-brane partition from (24,1) bulk symmetry structure.
                    Euclidean bridge enables mirror brane overlap calculation.
 
-Derives the Higgs mass using the 4-Brane Partition mechanism from 26D bulk.
+Computes the Higgs mass using a brane-partition ansatz from 26D bulk.
 
-KEY INSIGHT:
-The 414 GeV "failure" is actually the TOTAL MANIFOLD TENSION of the 26D bulk.
-Our 4D observable universe sits on one of 4 primary branes (from Cl(24,1) symmetry).
-The observed 125 GeV Higgs is the LOCAL BRANE SLICE of this bulk tension.
+COMPONENT STATUS TABLE:
+    m_bulk = 414.22 GeV    → INPUT (hardcoded, not derivable from topology)
+    k_gimel / pi = 3.92    → DERIVED (from Ten Pillar Seeds)
+    overlap = 13/11         → FITTED (changed historically to maintain output)
+    holonomy_correction     → FITTED (fine-tuning term, no independent derivation)
+    m_higgs_local = 125.1   → FITTED (from 3 free params → 1 output, underconstrained)
 
-DERIVATION:
-    M_H_bulk = 414.22 GeV (Raw G2 attractor)
-    Projection_factor = k_gimel / π ≈ 3.92
-    Fine-structure_overlap = 1.185 (from 13D Mirror Brane)
-    Effective_scaling = Projection_factor / overlap ≈ 3.31
+OVERALL CLASSIFICATION: FITTED (not a derivation — honest about being a fit)
 
-    M_H_local = M_H_bulk / Effective_scaling = 125.1 GeV
+NOTE: A genuine topology-derived m_bulk would require m_bulk ~ M_GUT * sqrt(1/b3),
+giving ~8.1e16 GeV (14 orders of magnitude above 414.22 GeV). The value 414.22 GeV
+cannot be derived from G2 topology — it is reverse-engineered from the known Higgs mass.
 
-This dual-output approach transforms a "phenomenological input" into a
-"topological proof" by showing WHY the local value is what it is.
+CALCULATION:
+    M_H_bulk = 414.22 GeV (INPUT: reverse-engineered attractor value)
+    Projection_factor = k_gimel / pi = 3.92 (DERIVED from Ten Pillar Seeds)
+    Fine-structure_overlap = 13/11 = 1.1818 (FITTED: changed between versions)
+    Effective_scaling = Projection_factor / overlap = 3.31
+
+    M_H_local = M_H_bulk / Effective_scaling = 125.1 GeV (FITTED overall)
 
 OUTPUTS:
     higgs.m_higgs_bulk: 414.22 GeV (Total 26D manifold tension)
     higgs.m_higgs_local: 125.1 GeV (4D brane projection)
     higgs.brane_partition_ratio: 0.302 (local/bulk)
+
+ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
+    Original Classification: UNFOUNDED
+    Updated Classification: FITTED (WP6.1, 2026-03-18)
+
+    The assertion that m_higgs = 125.1 GeV is "derived" from brane partition
+    geometry on a G2 manifold is not supported by the code or the literature.
+    Reclassified from UNFOUNDED to FITTED: the fit is internally consistent
+    but uses 3 free parameters for 1 output (zero predictive power).
+
+    Gemini 2.5 Flash (WP6.1, 2026-03-18): FITTED is correct reclassification.
+    "The process described (changing formulas, hardcoding values to match an
+    output) is precisely what 'fitting' entails." Component-level labeling
+    (INPUT + DERIVED + FITTED = overall FITTED) endorsed as "essential for
+    scientific transparency."
+
+    Evidence:
+    1. m_bulk = 414.22 GeV is HARDCODED on line 151. The docstring claims it
+       comes from "sqrt(8*pi^2 * v^2 * lambda_eff)" via a "moduli attractor",
+       but this formula is never evaluated anywhere in the codebase. No string
+       theory or M-theory literature derives 414.22 GeV as a bulk Higgs tension
+       from G2 moduli stabilization. Standard G2 compactifications (Acharya et al.)
+       yield gravitino masses and soft SUSY-breaking terms, not a specific bulk
+       Higgs mass.
+
+    2. overlap = 13/11 = 1.1818 is claimed to arise from "13D mirror brane
+       geometry", but the 26D = 13D + 13D decomposition has no basis in string
+       theory. Bosonic string theory is 26D but admits no such mirror split.
+       G2 manifolds are 7-dimensional; the number 13 plays no special role.
+       Git history shows the overlap formula CHANGED from (alpha*b3)^(1/4) to
+       13/11 between versions while the output stayed at ~125 GeV -- evidence
+       of reverse-engineering.
+
+    3. holonomy_correction = 1 + 2/(b3*pi*13) = 1.00204 was added as a
+       fine-tuning term with no independent derivation.
+
+    4. The calculation uses 3 free parameters (m_bulk, 13/11 ratio, holonomy
+       correction formula) to produce 1 prediction. This is underconstrained
+       and provides zero predictive power.
+
+    5. The projection chain k_gimel/pi / (13/11 * hol_corr) = 3.311 is
+       arithmetically arranged so that 414.22 / 3.311 = 125.10 GeV. The
+       agreement with experiment (0.87 sigma) is a consequence of tuning,
+       not derivation.
+
+    Gemini consensus (3 rounds): UNFOUNDED. The theoretical framework claimed
+    (414 GeV bulk tension, 13/11 brane overlap, 26D=13+13 mirror symmetry)
+    does not exist in the string theory literature. The fitting is performed
+    within a fabricated theoretical context.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
