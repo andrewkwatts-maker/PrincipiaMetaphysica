@@ -86,6 +86,25 @@ ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
     does not exist in the string theory literature. The fitting is performed
     within a fabricated theoretical context.
 
+WILSON-LINE HIGGS ATTEMPT (Sprint 6, 2026-03-20):
+    A Wilson-line zero-mode derivation was attempted using:
+        m_H^2 = (2*pi/b3) * (chi_eff/V_cycle) * kappa_sampler
+        lambda = 1/24 (claimed "G2 triality")
+
+    Result: REFUTED.
+    - The formula gives m_H ~ 1.41 M_Planck ~ 3.4e18 GeV (super-Planckian)
+    - Gap from observed 125 GeV: ~16 orders of magnitude
+    - lambda=1/24 from "G2 triality" is incorrect: triality is SO(8)/Spin(8),
+      not G2. SM quartic is lambda~0.13, not 0.042.
+    - Wilson-line Higgs IS legitimate in G2 compactification (Acharya et al.),
+      but actual mass comes from non-perturbative moduli stabilization + SUSY
+      breaking, not a simple topological ratio.
+    - See compute_higgs_wilson_line() method for full analysis.
+
+    Conclusion: Neither the brane-partition fit nor the Wilson-line formula
+    constitutes a genuine derivation of m_H = 125 GeV from G2 topology.
+    The module remains classified FITTED.
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 Dedicated To:
@@ -182,6 +201,151 @@ class HiggsBranePartitionSimulation(SimulationBase):
             "higgs-local-mass",
         ]
 
+    def compute_higgs_wilson_line(self) -> Dict[str, Any]:
+        """
+        Attempt Wilson-line Higgs derivation from G2 geometry.
+
+        In G2 compactification, the Higgs can arise as a Wilson-line modulus
+        along an associative 3-cycle (Acharya, Witten 2001; Acharya, Bobkov,
+        Kane, Kumar, Shao 2007). This is a legitimate mechanism in the
+        literature.
+
+        However, the specific mass formula proposed here:
+            m_H^2 = (2*pi/b3) * (chi_eff/V_cycle) * kappa_sampler
+        is novel and not found in the G2 compactification literature.
+
+        HONESTY ASSESSMENT (Sprint 6, 2026-03-20):
+
+        1. lambda = 1/24 is claimed from "G2 triality", but G2 has NO triality.
+           Triality is a property of SO(8)/Spin(8), arising from the outer
+           automorphism group S3 of the D4 Dynkin diagram. G2 is a rank-2
+           exceptional Lie group with no such symmetry. The coincidence that
+           1/24 involves b3=24 does not constitute a derivation. Moreover,
+           the SM Higgs quartic coupling is lambda_SM ~ 0.13 at M_Z, while
+           1/24 ~ 0.042 -- off by a factor of ~3.
+
+        2. The mass formula gives m_H ~ 1.41 M_Planck ~ 3.4e18 GeV, which is
+           ~16 orders of magnitude above the observed 125 GeV. This is not
+           even GUT-scale (~10^16 GeV) -- it is super-Planckian, which signals
+           the formula is dimensionally misapplied or missing crucial
+           suppression factors.
+
+        3. In the actual G2 literature (Acharya et al. 2007, "The G2-MSSM"),
+           Wilson-line moduli acquire masses through non-perturbative effects
+           (gaugino condensation, membrane instantons). The resulting soft
+           SUSY-breaking masses are at the TeV scale, but this requires the
+           full machinery of moduli stabilization and SUSY breaking -- not a
+           simple topological ratio.
+
+        4. The "sampler entropy damping" Delta_sampler * exp(-entropy) term
+           would need to provide ~16 orders of magnitude of suppression to
+           bridge the gap. This is not a derivation -- it is hiding the
+           hierarchy problem inside an exponential.
+
+        COMPARISON WITH EXISTING FIT:
+            The current brane-partition fit (414.22/3.31 = 125.1 GeV) is
+            classified FITTED with 3 free parameters for 1 output. The
+            Wilson-line attempt does not improve on this: it replaces explicit
+            fitting with a formula that misses by 16 orders of magnitude,
+            then would require a new fitted parameter (V_cycle or entropy)
+            to close the gap.
+
+            Neither approach constitutes a genuine derivation of the Higgs
+            mass from topology alone.
+
+        Returns:
+            Dictionary with Wilson-line computation results and honest gap analysis.
+        """
+        # G2 topological inputs
+        b3 = 24                  # Betti number (Ten Pillar Seed)
+        chi_eff = 144            # Euler characteristic
+        kappa_sampler = 2        # Sampler coupling
+        T_min = 37.85            # Racetrack-stabilized modulus
+
+        # Cycle volume from stabilized moduli (in Planck units)
+        V_cycle = T_min
+
+        # =============================================
+        # Proposed mass formula (novel -- not in literature)
+        # =============================================
+        m_H_sq_planck = (2 * np.pi / b3) * (chi_eff / V_cycle) * kappa_sampler
+        m_H_planck = np.sqrt(m_H_sq_planck)
+
+        # Convert to GeV
+        M_Planck_reduced = 2.435e18  # GeV (reduced Planck mass)
+        m_H_GeV = m_H_planck * M_Planck_reduced
+
+        # Observed value
+        m_H_observed = 125.10  # GeV, PDG 2024
+
+        # Gap analysis
+        gap_orders = np.log10(m_H_GeV / m_H_observed)
+
+        # =============================================
+        # Proposed quartic coupling
+        # =============================================
+        lambda_proposed = 1.0 / 24.0   # Claimed "G2 triality" -- G2 has no triality
+        lambda_SM = 0.129               # SM Higgs quartic at M_Z (PDG)
+        lambda_ratio = lambda_proposed / lambda_SM
+
+        # =============================================
+        # What suppression would be needed?
+        # =============================================
+        # To get from ~3.4e18 GeV down to 125 GeV:
+        suppression_needed = m_H_observed / m_H_GeV
+        log_suppression = np.log10(suppression_needed)
+        # If this came from exp(-entropy), what entropy is needed?
+        entropy_needed = -np.log(suppression_needed)  # natural log
+
+        return {
+            # Raw Wilson-line computation
+            'm_H_sq_planck_units': m_H_sq_planck,
+            'm_H_planck_units': m_H_planck,
+            'm_H_GeV': m_H_GeV,
+            'm_H_observed_GeV': m_H_observed,
+            'gap_orders_of_magnitude': gap_orders,
+
+            # Quartic coupling comparison
+            'lambda_proposed': lambda_proposed,
+            'lambda_SM': lambda_SM,
+            'lambda_ratio': lambda_ratio,
+            'lambda_discrepancy': 'Factor ~3.1x too small; "G2 triality" is misattributed (triality is SO(8), not G2)',
+
+            # Suppression analysis
+            'suppression_factor_needed': suppression_needed,
+            'log10_suppression': log_suppression,
+            'entropy_needed_for_damping': entropy_needed,
+
+            # Inputs used
+            'inputs': {
+                'b3': b3,
+                'chi_eff': chi_eff,
+                'V_cycle': V_cycle,
+                'kappa_sampler': kappa_sampler,
+                'M_Planck_reduced_GeV': M_Planck_reduced,
+            },
+
+            # Verdict
+            'classification': 'REFUTED',
+            'verdict': (
+                'Wilson-line mass formula gives m_H ~ 3.4e18 GeV (super-Planckian), '
+                'not 125 GeV. Gap is ~16 orders of magnitude. The formula is not from '
+                'the G2 compactification literature. lambda=1/24 from "G2 triality" is '
+                'incorrect (triality is SO(8)/Spin(8), not G2). Getting 125 GeV would '
+                'require hiding the hierarchy problem in an exponential damping factor.'
+            ),
+            'comparison_with_brane_fit': (
+                'The existing brane-partition fit (414.22/3.31 = 125.1 GeV) is FITTED '
+                'but at least arithmetically correct. The Wilson-line attempt misses by '
+                '16 orders of magnitude before any tuning. Neither is a genuine derivation.'
+            ),
+            'literature_references': [
+                'Acharya, Witten (2001): hep-th/0109152 -- G2 compactification framework',
+                'Acharya, Bobkov, Kane, Kumar, Shao (2007): 0801.0478 -- G2-MSSM with moduli stabilization',
+                'Friedmann, Witten (2002): hep-th/0211269 -- Unification scale from G2 manifolds',
+            ],
+        }
+
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
         """
         Execute the Higgs brane-partition calculation.
@@ -252,6 +416,14 @@ class HiggsBranePartitionSimulation(SimulationBase):
         else:
             status = "TENSION"
 
+        # ==========================================
+        # STEP 5: WILSON-LINE DERIVATION ATTEMPT
+        # ==========================================
+        # Sprint 6 (2026-03-20): Test whether Wilson-line zero mode
+        # on associative 3-cycle can derive m_H from topology.
+        # Result: REFUTED -- gives super-Planckian mass.
+        wilson_line = self.compute_higgs_wilson_line()
+
         return {
             "higgs.m_higgs_bulk": m_higgs_bulk,
             "higgs.m_higgs_local": m_higgs_local,
@@ -261,6 +433,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
             "higgs.effective_scaling": effective_scaling,
             "higgs.sigma_local": sigma_local,
             "higgs.status": status,
+            "higgs.wilson_line_analysis": wilson_line,
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
@@ -628,6 +801,33 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 "url": "https://arxiv.org/abs/hep-th/0212294",
                 "notes": "Moduli stabilization in M-theory on G2 manifolds."
             },
+            {
+                "id": "acharya_witten2001",
+                "authors": "Acharya, B.S. and Witten, E.",
+                "title": "Chiral Fermions from Manifolds of G2 Holonomy",
+                "year": 2001,
+                "arxiv": "hep-th/0109152",
+                "url": "https://arxiv.org/abs/hep-th/0109152",
+                "notes": (
+                    "Foundational paper on G2 compactification. Wilson-line moduli "
+                    "can give rise to Higgs-like scalars, but mass scale depends on "
+                    "non-perturbative moduli stabilization, not simple topological ratios."
+                )
+            },
+            {
+                "id": "acharya_g2mssm2007",
+                "authors": "Acharya, B.S., Bobkov, K., Kane, G.L., Kumar, P., Shao, J.",
+                "title": "The G2-MSSM: An M Theory motivated model of Particle Physics",
+                "year": 2007,
+                "arxiv": "0801.0478",
+                "url": "https://arxiv.org/abs/0801.0478",
+                "notes": (
+                    "G2-MSSM framework. Wilson-line moduli acquire TeV-scale masses "
+                    "through gaugino condensation and membrane instantons, not from "
+                    "simple b3/chi_eff ratios. Demonstrates that the hierarchy problem "
+                    "persists in G2 compactifications and requires SUSY breaking."
+                )
+            },
         ]
 
     def get_certificates(self) -> List[Dict[str, Any]]:
@@ -845,6 +1045,19 @@ def run_higgs_brane_partition(verbose: bool = True) -> Dict[str, Any]:
         print(f"\nExperimental: 125.25 ± 0.17 GeV (PDG 2024)")
         print(f"Sigma Deviation:                   {results['higgs.sigma_local']:.2f} sigma")
         print(f"Status:                            {results['higgs.status']}")
+        print()
+        print("-" * 70)
+        print(" WILSON-LINE DERIVATION ATTEMPT (Sprint 6)")
+        print("-" * 70)
+        wl = results['higgs.wilson_line_analysis']
+        print(f"  m_H from formula:                {wl['m_H_GeV']:.3e} GeV")
+        print(f"  m_H observed:                    {wl['m_H_observed_GeV']:.2f} GeV")
+        print(f"  Gap:                             {wl['gap_orders_of_magnitude']:.1f} orders of magnitude")
+        print(f"  lambda proposed (1/24):          {wl['lambda_proposed']:.4f}")
+        print(f"  lambda SM:                       {wl['lambda_SM']:.4f}")
+        print(f"  lambda ratio:                    {wl['lambda_ratio']:.2f}x")
+        print(f"  Classification:                  {wl['classification']}")
+        print(f"  Verdict: {wl['verdict']}")
         print("=" * 70)
 
     return results

@@ -1,5 +1,5 @@
 """
-S8 Suppression via Moduli-DM Coupling v24.2
+S8 Suppression via Moduli-DM Coupling v24.3
 ============================================
 
 Implements hidden-face friction for S8 suppression through moduli-dark matter
@@ -23,10 +23,37 @@ The modified growth equation:
   delta'' + (2H + beta_eff/M_Pl * phi_dot) * delta' - (3/2)*H^2*Omega_m*delta = 0
 
 The extra friction term (beta_eff/M_Pl * phi_dot) suppresses DM perturbation
-growth relative to LCDM, yielding S8 ~ 0.766-0.776 for beta_eff ~ 0.065.
-This is consistent with the coupled quintessence literature (Amendola 2000,
-Pettorino & Baccigalupi 2008) where beta ~ 0.05-0.1 produces ~8% S8
-suppression.
+growth relative to LCDM, yielding S8 ~ 0.800 for beta_eff ~ 0.065 with
+phi_dot_frac = 0.03. This is consistent with the coupled quintessence
+literature (Amendola 2000, Pettorino & Baccigalupi 2008) where
+beta ~ 0.05-0.1 is the physical range.
+
+Entropy-Modulated Extension (v24.3):
+------------------------------------
+An entropy-modulated correction from the SamplerEntropyDynamics module:
+
+  beta_entropy = beta_base * (1 + |entropy_gradient|)
+               = 0.065 * (1 + 0.0825) = 0.0704
+
+This uses |dS_total/dt| = 0.0825 (dimensionless entropy gradient from the
+sampler's von Neumann entropy dynamics with alpha_T = 2.7).
+
+HONEST ASSESSMENT OF ENTROPY EXTENSION:
+  - The entropy gradient provides only an 8.2% enhancement to beta (0.065 -> 0.070).
+  - Numerical integration shows this changes S8 by < 0.001 (from 0.8004 to 0.8004).
+  - The S8 suppression is DOMINATED by the dark energy EoS (w0, wa), NOT by beta.
+  - Even increasing beta from 0.065 to 0.500 (8x!) only changes S8 from 0.8004
+    to 0.7983 -- a 0.2% change. The bottleneck is phi_dot_frac = 0.03.
+  - To reach S8 ~ 0.77, one would need to increase phi_dot_frac (the modulus
+    rolling velocity), which is a MODEL ASSUMPTION, not derived from topology.
+  - The entropy extension CANNOT bridge the gap from S8 = 0.80 to S8 = 0.77.
+
+FAILED ORIGINAL PROPOSAL:
+  The original formula beta(t) = beta_base * (1 + dS/dt / S_eq) with
+  dS/dt = -0.0825 and S_eq = 9.35e-05 gives beta ~ 57, which is absurdly
+  unphysical. Gemini confirmed this is dimensionally inconsistent (dS/dt / S_eq
+  has dimensions of 1/time, not dimensionless) and the physical range for
+  coupled quintessence beta is 0.01-0.3 at most.
 
 INDEPENDENT ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16):
 =========================================================================
@@ -76,6 +103,53 @@ ROUND 3 (Classification):
   Consensus: Both Claude and Gemini classify as PLAUSIBLE. The mechanism is
   physically motivated and produces the correct order of magnitude, but
   the 1/(4pi) factor is a modeling choice, not a unique derivation from G2.
+
+ENTROPY-MODULATED FRICTION DEBATE (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-20):
+====================================================================================
+Three-round adversarial debate on adding entropy-modulated time-dependent friction.
+
+ROUND 1 (Gemini analysis of original formula):
+  - The formula beta(t) = beta_base * (1 + dS/dt / S_eq) is DIMENSIONALLY
+    INCONSISTENT. dS/dt / S_eq has dimensions of 1/time, not dimensionless.
+    Cannot add to the dimensionless "1" in the parentheses.
+  - The resulting beta ~ 57 is "completely unphysical" in any viable coupled
+    quintessence model. Physical range: 0.01 to ~0.3 at most.
+  - Fixing requires either: (a) multiply by a characteristic timescale H^{-1},
+    or (b) use a dimensionless entropy rate directly.
+  - A scaling constant k ~ 10^{-5} to 10^{-4} would be needed to get O(0.01-0.1)
+    corrections, but this is a TUNABLE parameter.
+
+ROUND 2 (Corrected formula using |entropy_gradient| directly):
+  - Using beta = beta_base * (1 + |entropy_gradient|) = 0.065 * 1.0825 = 0.0704
+    is "significantly more physically reasonable."
+  - Gemini confirms dimensional consistency IF entropy_gradient is defined as
+    dimensionless (which it is in the sampler module).
+  - Physical interpretation: the coupling is enhanced when the universe is
+    actively evolving thermodynamically (non-equilibrium strengthens friction).
+  - On the value 0.0825 being "conveniently O(0.1)": Gemini notes it is
+    "natural" for a perturbative correction but "slightly suspicious" --
+    the niceness "might warrant further investigation into the model's
+    assumptions."
+
+ROUND 3 (Classification of entropy extension):
+  VERDICT: TUNED
+  - Gemini classifies the entropy extension as TUNED, not DERIVED.
+  - The entropy_gradient depends on alpha_T = 2.7 from the sampler module,
+    whose derivation is not provided -- making it a tunable parameter.
+  - The formula change from dS/dt/S_eq to |dS/dt| was "an ad hoc rescue"
+    to avoid the absurd beta=57 result.
+  - "The specific entropy-modulated extension, with its ad hoc formula
+    correction and reliance on parameters like alpha_T whose derivation
+    is not provided, is primarily TUNED."
+
+CRITICAL NUMERICAL FINDING (Claude Opus 4.6, 2026-03-20):
+  The entropy modulation is NUMERICALLY IRRELEVANT to S8. With phi_dot_frac=0.03:
+    - beta = 0.065: S8 = 0.8004, suppression = 4.31%
+    - beta = 0.070: S8 = 0.8004, suppression = 4.31%  (indistinguishable!)
+    - beta = 0.500: S8 = 0.7983, suppression = 4.56%  (8x beta, only 0.25% more)
+  The friction term Gamma = beta * phi_dot/(H*M_Pl) is tiny because phi_dot_frac=0.03
+  is small. S8 suppression is dominated by the dark energy EoS, not by beta.
+  No physically reasonable modification to beta can bridge S8 from 0.80 to 0.77.
 
 References:
   - Amendola, L. (2000). "Coupled quintessence." PRD 62, 043511.
@@ -190,7 +264,7 @@ class ModuliDMCouplingV24(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="moduli_dm_coupling_v24",
-            version="24.2",
+            version="24.3",
             domain="cosmology",
             title="S8 Suppression via Moduli-DM Coupling",
             description=(
@@ -278,6 +352,133 @@ class ModuliDMCouplingV24(SimulationBase):
         beta_eff = alpha_leak * loop_factor * kappa_sampler
 
         return beta_eff
+
+    # -----------------------------------------------------------------------
+    # Entropy-modulated coupling (v24.3)
+    # -----------------------------------------------------------------------
+
+    def compute_beta_with_entropy(
+        self,
+        beta_base: float,
+        entropy_gradient: float = -0.0825,
+        S_eq: float = 9.35e-05,
+    ) -> Dict[str, Any]:
+        """
+        Compute entropy-modulated beta using sampler entropy dynamics.
+
+        Explores two formulas:
+
+        1. ORIGINAL (user-proposed):
+           beta(t) = beta_base * (1 + dS/dt / S_eq)
+           With dS/dt = -0.0825 and S_eq = 9.35e-05:
+             |dS/dt| / S_eq = 882.4
+             beta = 0.065 * (1 + 882) ~ 57.4  => ABSURD, UNPHYSICAL.
+           This formula is DIMENSIONALLY INCONSISTENT (Gemini Round 1):
+             dS/dt / S_eq has dimensions of 1/time, not dimensionless.
+
+        2. CORRECTED (using |entropy_gradient| directly):
+           beta(t) = beta_base * (1 + |entropy_gradient|)
+           With |entropy_gradient| = 0.0825 (dimensionless):
+             beta = 0.065 * 1.0825 = 0.0704
+           This is dimensionally consistent and in the physical range.
+
+        HOWEVER: Numerical integration reveals this correction is IRRELEVANT
+        to S8. With phi_dot_frac = 0.03:
+          - beta = 0.065 gives S8 = 0.8004
+          - beta = 0.070 gives S8 = 0.8004 (indistinguishable)
+          - beta = 0.500 gives S8 = 0.7983 (8x beta, only 0.2% more suppression)
+        The bottleneck is phi_dot_frac, not beta.
+
+        Epistemological status: TUNED (Gemini Round 3 verdict).
+        The formula change from dS/dt/S_eq to |dS/dt| was an "ad hoc rescue."
+
+        Args:
+            beta_base: Base coupling from derive_beta_eff() (~ 0.065).
+            entropy_gradient: dS_total/dt from SamplerEntropyDynamics (~ -0.0825).
+            S_eq: Equilibrium entropy from SamplerEntropyDynamics (~ 9.35e-05).
+
+        Returns:
+            Dictionary with all computed values and honest assessment.
+        """
+        # ---------------------------------------------------------------
+        # Formula 1: ORIGINAL (broken)
+        # beta = beta_base * (1 + dS/dt / S_eq)
+        # ---------------------------------------------------------------
+        ratio_original = entropy_gradient / S_eq  # = -882.4
+        beta_original = beta_base * (1.0 + ratio_original)  # ~ -57.3
+
+        # ---------------------------------------------------------------
+        # Formula 2: CORRECTED (using |entropy_gradient| directly)
+        # beta = beta_base * (1 + |entropy_gradient|)
+        # ---------------------------------------------------------------
+        abs_gradient = abs(entropy_gradient)
+        beta_corrected = beta_base * (1.0 + abs_gradient)  # ~ 0.0704
+        enhancement_pct = abs_gradient * 100.0  # 8.25%
+
+        # ---------------------------------------------------------------
+        # Formula 3: WITH SCALING CONSTANT (what would be needed)
+        # beta = beta_base * (1 + k * |dS/dt| / S_eq)
+        # For epsilon = 0.05 correction: k = 0.05 / 882.4 ~ 5.7e-05
+        # ---------------------------------------------------------------
+        target_epsilon = 0.05  # 5% correction
+        ratio_abs = abs_gradient / S_eq  # 882.4
+        k_required = target_epsilon / ratio_abs  # ~ 5.7e-05
+        beta_scaled = beta_base * (1.0 + target_epsilon)  # ~ 0.0682
+
+        # ---------------------------------------------------------------
+        # S8 impact assessment (from numerical integration)
+        # ---------------------------------------------------------------
+        # These values are from actual ODE integration:
+        s8_with_base_beta = 0.8004       # beta = 0.065
+        s8_with_corrected_beta = 0.8004  # beta = 0.070 (indistinguishable)
+        s8_with_8x_beta = 0.7983         # beta = 0.500
+        s8_target_kids = 0.766
+        s8_target_des = 0.776
+        s8_gap_remaining = s8_with_corrected_beta - s8_target_des  # ~ 0.024
+
+        return {
+            # Original (broken) formula
+            "original_ratio_dSdt_over_Seq": ratio_original,
+            "original_beta": beta_original,
+            "original_is_physical": abs(beta_original) < 0.5,  # False
+
+            # Corrected formula
+            "corrected_abs_gradient": abs_gradient,
+            "corrected_beta": beta_corrected,
+            "corrected_enhancement_pct": enhancement_pct,
+            "corrected_is_physical": 0.01 < beta_corrected < 0.3,  # True
+
+            # Scaled formula (with tuning constant k)
+            "scaled_k_required": k_required,
+            "scaled_beta": beta_scaled,
+
+            # S8 impact (honest assessment)
+            "s8_base_beta": s8_with_base_beta,
+            "s8_corrected_beta": s8_with_corrected_beta,
+            "s8_delta": s8_with_corrected_beta - s8_with_base_beta,
+            "s8_gap_to_des": s8_gap_remaining,
+            "entropy_correction_is_relevant_to_s8": False,
+
+            # Epistemological classification
+            "formula_status": "TUNED",
+            "gemini_verdict": (
+                "TUNED: The entropy extension introduces an ad hoc formula "
+                "correction (dropping S_eq to avoid beta=57) and relies on "
+                "alpha_T=2.7 whose derivation is not provided. Moreover, the "
+                "correction is numerically irrelevant: changing beta from "
+                "0.065 to 0.070 does not measurably change S8."
+            ),
+            "honest_summary": (
+                "The entropy-modulated friction is a theoretically motivated "
+                "but practically IRRELEVANT extension. The S8 suppression in "
+                "this model is dominated by the dark energy equation of state "
+                "(w0=-23/24, wa=0.29), not by the moduli-DM coupling beta. "
+                "Increasing beta by 8% (or even 8x) changes S8 by < 0.3%. "
+                "To reach S8 ~ 0.77, one would need to increase phi_dot_frac "
+                "(modulus rolling velocity), which is an independent model "
+                "assumption unrelated to entropy dynamics."
+            ),
+        }
 
     # -----------------------------------------------------------------------
     # Core: Face-3 modulus rolling velocity
@@ -1050,8 +1251,8 @@ def _standalone_solve_growth(z_array, H_array, Omega_m, beta_eff=0.0,
 
 def main():
     """Run the moduli-DM coupling simulation standalone."""
-    print("Moduli-DM Coupling S8 Suppression v24.2")
-    print("=" * 50)
+    print("Moduli-DM Coupling S8 Suppression v24.3")
+    print("=" * 60)
 
     # Quick standalone calculation (no registry)
     alpha_leak = 1.0 / math.sqrt(6.0)
@@ -1063,8 +1264,9 @@ def main():
     print(f"kappa_sampler          = {kappa_sampler}")
     print(f"1/(4*pi)               = {loop_factor:.6f}")
     print(f"beta_eff               = {beta_eff:.6f}")
-    print(f"\nTarget range for 8% S8 suppression: beta ~ 0.05 - 0.10")
-    print(f"Computed beta_eff = {beta_eff:.4f} is {'IN' if 0.05 <= beta_eff <= 0.10 else 'OUTSIDE'} range")
+    print(f"\nTarget range for coupled quintessence: beta ~ 0.01 - 0.30")
+    print(f"Computed beta_eff = {beta_eff:.4f} is "
+          f"{'IN' if 0.01 <= beta_eff <= 0.30 else 'OUTSIDE'} range")
 
     # Quick growth equation test
     print("\n--- Growth equation integration ---")
@@ -1090,7 +1292,7 @@ def main():
         beta_eff=0.0, phi_dot_profile=None,
     )
 
-    # Solve coupled growth
+    # Solve coupled growth (base beta)
     D_coupled = _standalone_solve_growth(
         z_grid, H_pm, Omega_m,
         beta_eff=beta_eff, phi_dot_profile=phi_dot,
@@ -1115,6 +1317,80 @@ def main():
     print(f"\nEpistemological status: PLAUSIBLE")
     print("  DERIVED:  alpha_leak, kappa_sampler")
     print("  ASSUMED:  1/(4pi) loop factor, phi_dot profile, f_DM = 1")
+
+    # ---------------------------------------------------------------
+    # Entropy-modulated extension (v24.3)
+    # ---------------------------------------------------------------
+    print("\n" + "=" * 60)
+    print("ENTROPY-MODULATED FRICTION EXTENSION (v24.3)")
+    print("=" * 60)
+
+    # Entropy values from SamplerEntropyDynamics
+    entropy_gradient = -0.0825    # dS_total/dt (dimensionless)
+    S_eq = 9.35e-05               # equilibrium entropy (dimensionless)
+
+    # Use the class method for full analysis
+    sim = ModuliDMCouplingV24(phi_dot_frac=phi_dot_frac)
+    entropy_results = sim.compute_beta_with_entropy(
+        beta_base=beta_eff,
+        entropy_gradient=entropy_gradient,
+        S_eq=S_eq,
+    )
+
+    print(f"\nEntropy inputs (from SamplerEntropyDynamics):")
+    print(f"  entropy_gradient (dS/dt) = {entropy_gradient}")
+    print(f"  S_eq                     = {S_eq}")
+
+    print(f"\n--- Formula 1: ORIGINAL (broken) ---")
+    print(f"  beta = beta_base * (1 + dS/dt / S_eq)")
+    print(f"  |dS/dt| / S_eq = {abs(entropy_gradient)/S_eq:.1f}")
+    print(f"  beta = {entropy_results['original_beta']:.1f}")
+    print(f"  Physical? {entropy_results['original_is_physical']}")
+    print(f"  VERDICT: ABSURD. Dimensionally inconsistent. REJECTED.")
+
+    print(f"\n--- Formula 2: CORRECTED (ad hoc) ---")
+    print(f"  beta = beta_base * (1 + |entropy_gradient|)")
+    print(f"  |entropy_gradient| = {entropy_results['corrected_abs_gradient']:.4f}")
+    print(f"  beta_corrected = {entropy_results['corrected_beta']:.6f}")
+    print(f"  Enhancement = {entropy_results['corrected_enhancement_pct']:.2f}%")
+    print(f"  Physical? {entropy_results['corrected_is_physical']}")
+
+    # Solve coupled growth with entropy-enhanced beta
+    beta_entropy = entropy_results['corrected_beta']
+    D_coupled_entropy = _standalone_solve_growth(
+        z_grid, H_pm, Omega_m,
+        beta_eff=beta_entropy, phi_dot_profile=phi_dot,
+    )
+    growth_ratio_entropy = D_coupled_entropy[0] / D_lcdm[0]
+    s8_entropy = sigma8_ref * growth_ratio_entropy * math.sqrt(Omega_m / 0.3)
+
+    print(f"\n--- ACTUAL S8 COMPARISON ---")
+    print(f"  S8 (base beta={beta_eff:.4f})     = {s8_coupled:.4f}")
+    print(f"  S8 (entropy beta={beta_entropy:.4f}) = {s8_entropy:.4f}")
+    print(f"  Delta S8                          = {s8_entropy - s8_coupled:.6f}")
+    print(f"  S8 gap to DES Y3 (0.776)          = {s8_entropy - 0.776:.4f}")
+
+    # Show beta is NOT the bottleneck
+    print(f"\n--- BETA SENSITIVITY SCAN (proving beta is not the bottleneck) ---")
+    for beta_test in [0.065, 0.100, 0.200, 0.500]:
+        D_test = _standalone_solve_growth(
+            z_grid, H_pm, Omega_m,
+            beta_eff=beta_test, phi_dot_profile=phi_dot,
+        )
+        ratio_test = D_test[0] / D_lcdm[0]
+        s8_test = sigma8_ref * ratio_test * math.sqrt(Omega_m / 0.3)
+        print(f"  beta={beta_test:.3f}: S8={s8_test:.4f}, "
+              f"suppression={100*(1-ratio_test):.2f}%")
+
+    print(f"\n--- HONEST ASSESSMENT ---")
+    print(f"  The entropy modulation (8.2% enhancement to beta) changes S8")
+    print(f"  by < 0.001, which is NUMERICALLY IRRELEVANT.")
+    print(f"  Even 8x beta (0.065 -> 0.500) only changes S8 by 0.002.")
+    print(f"  The S8 suppression is dominated by dark energy EoS, not beta.")
+    print(f"  The bottleneck is phi_dot_frac = {phi_dot_frac}, not beta.")
+    print(f"  Entropy-modulated friction CANNOT bridge S8 from 0.80 to 0.77.")
+    print(f"\n  Epistemological status: {entropy_results['formula_status']}")
+    print(f"  (Gemini Round 3 verdict: TUNED, ad hoc formula rescue)")
 
 
 if __name__ == "__main__":

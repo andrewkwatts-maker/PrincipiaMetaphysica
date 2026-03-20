@@ -117,6 +117,12 @@ class PrincipiaValidator:
         self.cert_g79_sampler_entropy()
 
         # ═══════════════════════════════════════════════════════════════
+        # LAMBDA SECTOR (G80) - Torsion Funnel Calibration
+        # ═══════════════════════════════════════════════════════════════
+        print("\n[LAMBDA SECTOR]")
+        self.cert_g80_torsion_funnel_lambda()
+
+        # ═══════════════════════════════════════════════════════════════
         # OPERATIONAL SECTOR (C34-C42)
         # ═══════════════════════════════════════════════════════════════
         print("\n[OPERATIONAL SECTOR]")
@@ -626,6 +632,125 @@ class PrincipiaValidator:
             "sector": "SAMPLER"
         }
         print(f"  G79-ENTROPY: {status} ({metric})")
+
+    # ═══════════════════════════════════════════════════════════════════
+    # LAMBDA CERTIFICATES (v24.3 - Torsion Funnel)
+    # ═══════════════════════════════════════════════════════════════════
+
+    def cert_g80_torsion_funnel_lambda(self):
+        """G80: Torsion Funnel Lambda Calibration.
+
+        Validates the dynamical Lambda relaxation mechanism:
+            V_eff = V_bare * exp(-S_Pneuma)
+
+        Tests:
+        1. V_bare > 0 (positive bare potential, required for positive Lambda)
+        2. S_naive > S_required (naive entropy overshoots, mechanism direction correct)
+        3. V_eff(S_corrected) matches Lambda_obs within 1 order of magnitude
+        4. Torsion integral classification is honestly reported as FITTED
+
+        HONESTY: The torsion funnel integral ~ 250 is FITTED to match Lambda_obs.
+        No natural G2 formula independently produces this value. Eight candidates
+        were evaluated; the closest (chi_eff * ln(T_min) ~ 523) deviates by >100%.
+
+        Gemini 2.5 Flash Debate (3 rounds, 2026-03-20):
+            Round 1: torsion_integral = 250 is circular.
+            Round 2: Mutual information alternative equally circular in value.
+            Round 3: CLASSIFICATION = FITTED.
+
+        Gate status:
+            LOCKED if mechanism works AND classification is honest (FITTED)
+            FAILED if V_bare <= 0 or mechanism direction wrong
+        """
+        try:
+            from simulations.PM.cosmology.dynamical_lambda import (
+                DynamicalLambdaRelaxation,
+            )
+            _module_available = True
+        except ImportError:
+            _module_available = False
+
+        if not _module_available:
+            status = "SKIPPED"
+            metric = "dynamical_lambda module unavailable"
+            self.results['G80-LAMBDA'] = {
+                "status": status,
+                "metric": metric,
+                "expected": "V_eff ~ Lambda_obs (FITTED)",
+                "sector": "LAMBDA"
+            }
+            print(f"  G80-LAMBDA: {status} ({metric})")
+            return
+
+        sim = DynamicalLambdaRelaxation()
+        tf = sim.compute_V_eff_with_torsion_funnel()
+
+        # Check for UNFOUNDED case (V_bare < 0)
+        if tf.get('status') == 'UNFOUNDED':
+            status = "FAILED"
+            metric = f"V_bare < 0 (AdS): {tf.get('reason', 'unknown')}"
+            self.results['G80-LAMBDA'] = {
+                "status": status,
+                "metric": metric,
+                "expected": "V_eff ~ Lambda_obs (FITTED)",
+                "sector": "LAMBDA"
+            }
+            print(f"  G80-LAMBDA: {status} ({metric})")
+            return
+
+        # Test 1: V_bare > 0
+        v_bare_ok = tf['V_bare'] > 0
+
+        # Test 2: S_naive > S_required (mechanism direction)
+        direction_ok = tf['S_naive'] > tf['S_required']
+
+        # Test 3: Corrected V_eff within 1 order of Lambda_obs
+        gap_ok = tf['gap_orders_corrected'] < 1.0
+
+        # Test 4: Classification honestly reports FITTED
+        honesty_ok = tf['classification'] == 'FITTED'
+
+        all_pass = v_bare_ok and direction_ok and gap_ok and honesty_ok
+
+        if all_pass:
+            status = "LOCKED"
+            metric = (
+                f"V_eff={tf['V_eff_corrected']:.2e}, "
+                f"gap={tf['gap_orders_corrected']:.2f}ord, "
+                f"I_torsion={tf['torsion_integral_needed']:.1f} [FITTED]"
+            )
+        else:
+            status = "FAILED"
+            failures = []
+            if not v_bare_ok:
+                failures.append(f"V_bare={tf['V_bare']:.2e}<=0")
+            if not direction_ok:
+                failures.append("S_naive<=S_required")
+            if not gap_ok:
+                failures.append(f"gap={tf['gap_orders_corrected']:.1f}ord>1")
+            if not honesty_ok:
+                failures.append(f"classification={tf['classification']}!=FITTED")
+            metric = "; ".join(failures)
+
+        self.results['G80-LAMBDA'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "V_eff ~ Lambda_obs (FITTED, not derived)",
+            "sector": "LAMBDA",
+            "honesty": {
+                "torsion_integral": tf['torsion_integral_needed'],
+                "classification": tf['classification'],
+                "closest_overall": tf['closest_candidate'],
+                "closest_overall_deviation_pct": tf['closest_deviation_pct'],
+                "closest_with_topological_motivation": tf['candidates'].get(
+                    'closest_natural_candidate', tf['closest_candidate']),
+                "closest_natural_deviation_pct": tf['candidates'].get(
+                    'closest_natural_deviation_pct', tf['closest_deviation_pct']),
+                "any_natural_match": tf['any_natural_match'],
+                "gemini_verdict": "FITTED (2026-03-20, 3 rounds)",
+            },
+        }
+        print(f"  G80-LAMBDA: {status} ({metric})")
 
     # ═══════════════════════════════════════════════════════════════════
     # OPERATIONAL CERTIFICATES
