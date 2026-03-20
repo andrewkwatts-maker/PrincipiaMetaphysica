@@ -1,5 +1,5 @@
 """
-Dynamical Lambda Relaxation via Sampler Entropy v24.2
+Dynamical Lambda Relaxation via Sampler Entropy v24.3
 =====================================================
 
 Derives the cosmological constant through dynamical relaxation of the
@@ -25,6 +25,14 @@ HONEST STATUS:
     gives S ~ 530. The factor-of-2 discrepancy in the exponent corresponds
     to a 108-order-of-magnitude error in the suppression factor. A rigorous
     derivation of S_Pneuma from first principles has not been completed.
+
+TORSION FUNNEL CALIBRATION (v24.3, 2026-03-20):
+    Sprint 3 added compute_V_eff_with_torsion_funnel() which attempts to
+    close the 108-order gap by subtracting a "torsion funnel integral" from
+    S_naive. The integral must equal ~250 for Lambda to match observation.
+    Eight candidate G2 formulas were evaluated; NONE independently produce 250.
+    Gemini 2.5 Flash debate (3 rounds) classified this as FITTED.
+    The mechanism remains PLAUSIBLE; the specific entropy value is FITTED.
 
 INDEPENDENT ASSESSMENT (Claude Opus 4.6 + Gemini 2.5 Flash, 2026-03-16)
 ========================================================================
@@ -63,6 +71,29 @@ Round 3 (Classification):
     mechanism starts with V_bare independently calculated from fundamental
     theory, proposes a physically motivated mechanism for suppression, and
     aims to derive S_Pneuma from topology independent of observed Lambda."
+
+INDEPENDENT ASSESSMENT #2 (Torsion Funnel, 2026-03-20)
+=======================================================
+
+Gemini Debate (3 rounds):
+
+Round 1 (Is torsion_integral = 250 natural?):
+    Gemini confirmed the correction is circular: "The correction of 250
+    appears to be circular (fitted to Lambda_obs). It is exactly the value
+    needed (530 - 280 = 250) and all candidate G2 formulas fail to produce
+    this value."
+
+Round 2 (Mutual information alternative):
+    "While the concept of mutual information reducing entropy due to quantum
+    correlations is highly plausible and a much more physically grounded
+    explanation, the specific value of 250 for that mutual information is
+    still being chosen to fit the desired outcome. The numerical value of
+    250 remains an input chosen to match the target, rather than an output
+    derived from a predictive model."
+
+Round 3 (Classification):
+    CLASSIFICATION: FITTED
+    "The value 250 is explicitly chosen to match Lambda_obs."
 
 SECTION: 5c (Dynamical Lambda Relaxation)
 
@@ -128,7 +159,7 @@ _REG = get_registry()
 
 class DynamicalLambdaRelaxation(SimulationBase):
     """
-    Dynamical Lambda relaxation via Pneuma entropy suppression (v24.2).
+    Dynamical Lambda relaxation via Pneuma entropy suppression (v24.3).
 
     Computes the effective cosmological constant through exponential
     suppression of the bare potential by the total Pneuma entropy:
@@ -185,7 +216,7 @@ class DynamicalLambdaRelaxation(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="dynamical_lambda_v24_2",
-            version="24.2",
+            version="24.3",
             domain="cosmology",
             title="Dynamical Lambda Relaxation via Sampler Entropy",
             description=(
@@ -220,6 +251,10 @@ class DynamicalLambdaRelaxation(SimulationBase):
             "dynamical_lambda.gap_orders_naive",
             "dynamical_lambda.gap_orders_target",
             "dynamical_lambda.classification",
+            "dynamical_lambda.torsion_funnel.S_corrected",
+            "dynamical_lambda.torsion_funnel.torsion_integral_needed",
+            "dynamical_lambda.torsion_funnel.V_eff_corrected",
+            "dynamical_lambda.torsion_funnel.classification",
         ]
 
     @property
@@ -230,6 +265,7 @@ class DynamicalLambdaRelaxation(SimulationBase):
             "dynamical-lambda-vbare",
             "dynamical-lambda-vtorsion",
             "dynamical-lambda-entropy-naive",
+            "dynamical-lambda-torsion-funnel",
         ]
 
     # =========================================================================
@@ -579,6 +615,251 @@ class DynamicalLambdaRelaxation(SimulationBase):
         }
 
     # =========================================================================
+    # TORSION FUNNEL CALIBRATION (v24.3)
+    # =========================================================================
+
+    def compute_torsion_funnel_candidates(self, T_min: float) -> dict:
+        """Exhaustively evaluate candidate torsion funnel integrals.
+
+        The torsion funnel hypothesis proposes that the naive entropy S ~ 530
+        can be reduced by subtracting a "torsion integral" arising from the
+        G2 manifold's torsion forms (Hitchin 2001, Joyce 2000). For V_eff to
+        match Lambda_obs, the integral must reduce S from ~530 to ~280,
+        requiring torsion_integral ~ 250.
+
+        This method evaluates ALL candidate formulas from G2 topology and
+        reports whether any naturally produce the required value.
+
+        HONESTY: None of the candidate formulas independently yield 250.
+        The closest natural candidates are chi_eff * ln(T_min) ~ 523
+        (too large, overshoots) and b3 * ln(T_min) ~ 87 (too small).
+
+        Args:
+            T_min: Stabilized Kahler modulus from racetrack
+
+        Returns:
+            dict with all candidate values and analysis
+        """
+        ln_T = math.log(T_min)
+        ln_T2 = math.log(T_min ** 2)
+
+        candidates = {
+            # (a) Full Euler characteristic times log modulus
+            'chi_eff_ln_T': {
+                'formula': 'chi_eff * ln(T_min) = 144 * ln(37.85)',
+                'value': self.CHI_EFF * ln_T,
+                'motivation': 'Integral of |T|^2 over G2 7-manifold with chi_eff torsion classes',
+            },
+            # (b) Betti number times log modulus
+            'b3_ln_T': {
+                'formula': 'b3 * ln(T_min) = 24 * ln(37.85)',
+                'value': self.B3 * ln_T,
+                'motivation': 'One torsion class per harmonic 3-form (b3 classes)',
+            },
+            # (c) Bridge count times log modulus squared
+            'N_bridges_ln_T2': {
+                'formula': 'N_bridges * ln(T_min^2) = 12 * 2*ln(37.85)',
+                'value': self.N_BRIDGES * ln_T2,
+                'motivation': 'Each bridge pair contributes torsion over (2,0) cycle',
+            },
+            # (d) (chi_eff - b3) times log modulus
+            'chi_minus_b3_ln_T': {
+                'formula': '(chi_eff - b3) * ln(T_min) = 120 * ln(37.85)',
+                'value': (self.CHI_EFF - self.B3) * ln_T,
+                'motivation': 'Non-harmonic torsion classes (total minus free part)',
+            },
+            # (e) b3^2 / ln(T_min)
+            'b3_sq_over_ln_T': {
+                'formula': 'b3^2 / ln(T_min) = 576 / ln(37.85)',
+                'value': self.B3 ** 2 / ln_T,
+                'motivation': 'Dual formulation: torsion squared over logarithmic volume',
+            },
+            # (f) (b3/2)^2 * ln(T_min) [= chi_eff * ln(T_min)]
+            'half_b3_sq_ln_T': {
+                'formula': '(b3/2)^2 * ln(T_min) = 144 * ln(37.85)',
+                'value': (self.B3 / 2) ** 2 * ln_T,
+                'motivation': 'Bridge-squared torsion (equivalent to candidate a)',
+            },
+            # (g) b3 * T_min / ln(T_min) -- ad hoc
+            'b3_T_over_ln_T': {
+                'formula': 'b3 * T_min / ln(T_min)',
+                'value': self.B3 * T_min / ln_T,
+                'motivation': 'Ad hoc ratio (no topological origin). NOTE: numerically '
+                              'close to target (~0.4% off) but this is a coincidence: '
+                              'T_min depends on b3 through the racetrack (a=2*pi/b3), '
+                              'creating an implicit circular dependency.',
+                'ad_hoc': True,
+            },
+            # (h) sqrt(chi_eff) * T_min / kappa
+            'sqrt_chi_T_over_kappa': {
+                'formula': 'sqrt(chi_eff) * T_min / kappa = 12 * T_min / 2',
+                'value': math.sqrt(self.CHI_EFF) * T_min / self.KAPPA_SAMPLER,
+                'motivation': 'Geometric mean torsion with sampler normalization',
+            },
+        }
+
+        # Compute target and deviations
+        S_naive = self.compute_naive_entropy(T_min)
+        S_required = 280.96  # -ln(Lambda_obs / V_bare) ~ 280.96
+        target_integral = S_naive - S_required
+
+        for key, cand in candidates.items():
+            cand['target'] = target_integral
+            cand['deviation'] = cand['value'] - target_integral
+            cand['deviation_pct'] = (
+                100.0 * (cand['value'] - target_integral) / target_integral
+                if target_integral != 0 else float('inf')
+            )
+
+        # Find closest candidate (excluding ad hoc ones for "natural match")
+        closest_key = min(candidates, key=lambda k: abs(candidates[k]['deviation']))
+        closest = candidates[closest_key]
+
+        # For "natural match", exclude ad hoc candidates (no topological origin)
+        non_adhoc = {k: v for k, v in candidates.items() if not v.get('ad_hoc', False)}
+        closest_natural_key = min(non_adhoc, key=lambda k: abs(non_adhoc[k]['deviation']))
+        closest_natural = non_adhoc[closest_natural_key]
+
+        return {
+            'candidates': candidates,
+            'target_integral': target_integral,
+            'S_naive': S_naive,
+            'S_required': S_required,
+            'closest_candidate': closest_key,
+            'closest_value': closest['value'],
+            'closest_deviation_pct': closest['deviation_pct'],
+            'closest_natural_candidate': closest_natural_key,
+            'closest_natural_value': closest_natural['value'],
+            'closest_natural_deviation_pct': closest_natural['deviation_pct'],
+            # A "natural match" requires a non-ad-hoc candidate within 5%
+            'any_natural_match': abs(closest_natural['deviation_pct']) < 5.0,
+            'note_on_closest': (
+                f'Closest overall is {closest_key} = {closest["value"]:.2f} '
+                f'({closest["deviation_pct"]:+.1f}%), but it is ad hoc '
+                f'(T_min depends on b3, creating implicit circularity). '
+                f'Closest with topological motivation: {closest_natural_key} '
+                f'= {closest_natural["value"]:.2f} '
+                f'({closest_natural["deviation_pct"]:+.1f}%).'
+            ) if closest.get('ad_hoc', False) else None,
+        }
+
+    def compute_V_eff_with_torsion_funnel(self) -> dict:
+        """Compute V_eff with torsion funnel correction to S_Pneuma.
+
+        S_corrected = S_naive - torsion_integral
+        V_eff = V_bare * exp(-S_corrected)
+
+        CRITICAL HONESTY CHECK (Gemini 2.5 Flash debate, 2026-03-20):
+        ================================================================
+        Round 1: Gemini confirmed that the torsion_integral = 250 is
+            circular because it equals EXACTLY 530 - 280 = the value needed
+            to match Lambda_obs. All candidate G2 formulas fail to produce 250.
+
+        Round 2: The alternative explanation (mutual information from bridge
+            entanglement reducing naive S) is conceptually more sound, but
+            the VALUE of 250 is still chosen to match the target, not
+            independently derived. "You've shifted from a conceptually vague
+            torsion integral to a conceptually sound mutual information,
+            which is progress. However, the numerical value of 250 remains
+            an input chosen to match the target."
+
+        Round 3: CLASSIFICATION = FITTED
+            "The value 250 is explicitly chosen to match Lambda_obs."
+
+        CONCLUSION: The torsion funnel correction is FITTED, not DERIVED.
+        We report all candidate formulas transparently and acknowledge that
+        none independently produces the required value.
+
+        Returns:
+            dict with corrected V_eff and full honesty analysis
+        """
+        # Get bare potential
+        bare = self.compute_V_bare()
+        T_min = bare['T_min']
+        V_bare = bare['V_bare']
+
+        if V_bare <= 0:
+            return {
+                'status': 'UNFOUNDED',
+                'reason': 'V_bare < 0 (AdS), cannot match positive Lambda',
+                'V_bare': V_bare,
+            }
+
+        # Compute naive entropy
+        S_naive = self.compute_naive_entropy(T_min)
+
+        # Required entropy for Lambda_obs
+        S_required = self.compute_required_entropy(V_bare)
+
+        # The torsion integral needed
+        torsion_integral_needed = S_naive - S_required
+
+        # Evaluate all candidate formulas
+        candidates = self.compute_torsion_funnel_candidates(T_min)
+
+        # ── FITTED correction: use the exact value needed ──
+        # We are TRANSPARENT that this is fitted, not derived
+        S_corrected = S_required  # = S_naive - torsion_integral_needed
+
+        V_eff_corrected = self.compute_effective_potential(S_corrected, V_bare)
+
+        # Gap with corrected S
+        if V_eff_corrected > 0:
+            gap_corrected = abs(math.log10(V_eff_corrected / self.LAMBDA_OBS_MPL4))
+        else:
+            gap_corrected = float('inf')
+
+        return {
+            # Core results
+            'V_bare': V_bare,
+            'T_min': T_min,
+            'S_naive': S_naive,
+            'S_required': S_required,
+            'torsion_integral_needed': torsion_integral_needed,
+            'S_corrected': S_corrected,
+            'V_eff_corrected': V_eff_corrected,
+            'Lambda_obs': self.LAMBDA_OBS_MPL4,
+            'gap_orders_corrected': gap_corrected,
+
+            # Candidate analysis
+            'candidates': candidates,
+            'any_natural_match': candidates['any_natural_match'],
+            'closest_candidate': candidates['closest_candidate'],
+            'closest_value': candidates['closest_value'],
+            'closest_deviation_pct': candidates['closest_deviation_pct'],
+
+            # Honesty
+            'classification': 'FITTED',
+            'classification_detail': (
+                f"The torsion funnel integral = {torsion_integral_needed:.2f} is "
+                f"FITTED to match Lambda_obs. No natural G2 formula independently "
+                f"produces this value. Closest candidate: "
+                f"{candidates['closest_candidate']} = "
+                f"{candidates['closest_value']:.2f} "
+                f"({candidates['closest_deviation_pct']:+.1f}% off). "
+                f"The mechanism (entropy suppression) is PLAUSIBLE; the specific "
+                f"entropy value is FITTED."
+            ),
+
+            # Gemini debate record
+            'gemini_debate': {
+                'date': '2026-03-20',
+                'model': 'gemini-2.5-flash',
+                'rounds': 3,
+                'round_1': (
+                    'Torsion integral = 250 is circular. All candidate G2 '
+                    'formulas fail to produce this value.'
+                ),
+                'round_2': (
+                    'Mutual information from bridge entanglement is conceptually '
+                    'sounder but the VALUE of 250 is still chosen to match target. '
+                    '"The numerical value of 250 remains an input."'
+                ),
+                'round_3': 'CLASSIFICATION: FITTED',
+            },
+        }
+
+    # =========================================================================
     # SAMPLER ENERGY DENSITY
     # =========================================================================
 
@@ -667,6 +948,10 @@ class DynamicalLambdaRelaxation(SimulationBase):
         # Also compute original formulation for comparison
         original = self.compute_effective_potential_original()
 
+        # Compute torsion funnel analysis
+        torsion_funnel = self.compute_V_eff_with_torsion_funnel()
+        self._torsion_funnel = torsion_funnel
+
         # Register outputs
         outputs = {
             "dynamical_lambda.V_racetrack": results['V_racetrack'],
@@ -680,6 +965,11 @@ class DynamicalLambdaRelaxation(SimulationBase):
             "dynamical_lambda.gap_orders_naive": results['gap_orders_naive'],
             "dynamical_lambda.gap_orders_target": results['gap_orders_target'],
             "dynamical_lambda.classification": results['classification'],
+            # Torsion funnel outputs
+            "dynamical_lambda.torsion_funnel.S_corrected": torsion_funnel.get('S_corrected', float('nan')),
+            "dynamical_lambda.torsion_funnel.torsion_integral_needed": torsion_funnel.get('torsion_integral_needed', float('nan')),
+            "dynamical_lambda.torsion_funnel.V_eff_corrected": torsion_funnel.get('V_eff_corrected', float('nan')),
+            "dynamical_lambda.torsion_funnel.classification": torsion_funnel.get('classification', 'UNFOUNDED'),
         }
 
         # Register all outputs
@@ -954,9 +1244,84 @@ class DynamicalLambdaRelaxation(SimulationBase):
                     "T_min": "Stabilized Kahler modulus ~ 37.85",
                 },
             ),
+            Formula(
+                id="dynamical-lambda-torsion-funnel",
+                label="(DL.5)",
+                latex=(
+                    r"S_{\text{corrected}} = S_{\text{naive}} - "
+                    r"\mathcal{I}_{\text{torsion}}, \quad "
+                    r"\mathcal{I}_{\text{torsion}} \approx 250 \;"
+                    r"\text{(FITTED)}"
+                ),
+                plain_text=(
+                    "S_corrected = S_naive - I_torsion, "
+                    "I_torsion ~ 250 (FITTED, not derived)"
+                ),
+                category="FITTED",
+                description=(
+                    "Torsion funnel correction to the naive entropy. "
+                    "Subtracts a torsion integral from S_naive ~ 530 to get "
+                    "S_corrected ~ 280, yielding exp(-280) ~ 10^{-122} = Lambda_obs. "
+                    "CRITICAL: The torsion integral ~ 250 is FITTED to match "
+                    "Lambda_obs. No natural G2 formula independently produces this "
+                    "value. Closest candidate: chi_eff * ln(T_min) ~ 523 (109% off). "
+                    "Gemini 2.5 Flash debate (3 rounds, 2026-03-20) classified this "
+                    "as FITTED."
+                ),
+                inputParams=[
+                    "dynamical_lambda.S_Pneuma_naive",
+                ],
+                outputParams=[
+                    "dynamical_lambda.torsion_funnel.S_corrected",
+                ],
+                input_params=[
+                    "dynamical_lambda.S_Pneuma_naive",
+                ],
+                output_params=[
+                    "dynamical_lambda.torsion_funnel.S_corrected",
+                ],
+                derivation={
+                    "method": "torsion_funnel_correction",
+                    "steps": [
+                        "S_naive = (N_bridges + kappa) * T_min ~ 530",
+                        "S_required = -ln(Lambda_obs / V_bare) ~ 280",
+                        "I_torsion = S_naive - S_required ~ 250",
+                        "FITTED: I_torsion chosen to match Lambda_obs",
+                        "No natural G2 formula gives 250 independently",
+                    ],
+                    "candidates_evaluated": [
+                        "chi_eff * ln(T_min) = 523 (109% off)",
+                        "b3 * ln(T_min) = 87 (-65% off)",
+                        "(chi_eff - b3) * ln(T_min) = 436 (75% off)",
+                        "b3^2 / ln(T_min) = 158 (-37% off)",
+                    ],
+                    "honesty": (
+                        "FITTED: The torsion integral = 250 is chosen to match "
+                        "Lambda_obs. This is honestly acknowledged. The entropy "
+                        "suppression MECHANISM is plausible (instanton analogy), "
+                        "but the specific entropy VALUE is not derived from "
+                        "first principles. Gemini 2.5 Flash (2026-03-20) concurs."
+                    ),
+                    "gemini_debate": {
+                        "date": "2026-03-20",
+                        "model": "gemini-2.5-flash",
+                        "classification": "FITTED",
+                        "summary": (
+                            "Round 1: torsion_integral=250 is circular. "
+                            "Round 2: Mutual information alternative also circular "
+                            "in value. Round 3: FITTED."
+                        ),
+                    },
+                },
+                terms={
+                    "S_naive": "Naive entropy ~ 530 (overestimate)",
+                    "I_torsion": "Torsion funnel integral ~ 250 (FITTED)",
+                    "S_corrected": "Corrected entropy ~ 280",
+                },
+            ),
         ]
 
-    def get_parameters(self) -> List[Parameter]:
+    def get_output_param_definitions(self) -> List[Parameter]:
         """Return parameter definitions for dynamical Lambda."""
         # Compute results if not already done
         if self._results is None:
@@ -1105,7 +1470,7 @@ def _run_standalone():
     """Run dynamical Lambda relaxation as standalone script."""
     print("=" * 72)
     print("DYNAMICAL LAMBDA RELAXATION via SAMPLER ENTROPY")
-    print("Principia Metaphysica v24.2")
+    print("Principia Metaphysica v24.3")
     print("=" * 72)
 
     sim = DynamicalLambdaRelaxation()
@@ -1141,6 +1506,31 @@ def _run_standalone():
     print()
     print(f"--- Classification ---")
     print(f"  {results['classification']}")
+
+    # Torsion funnel analysis
+    print()
+    print("--- Torsion Funnel Calibration (v24.3) ---")
+    tf = sim.compute_V_eff_with_torsion_funnel()
+    if tf.get('status') == 'UNFOUNDED':
+        print(f"  UNFOUNDED: {tf['reason']}")
+    else:
+        print(f"  S_naive:                 {tf['S_naive']:.2f}")
+        print(f"  S_required:              {tf['S_required']:.2f}")
+        print(f"  Torsion integral needed: {tf['torsion_integral_needed']:.2f}")
+        print(f"  S_corrected:             {tf['S_corrected']:.2f}")
+        print(f"  V_eff (corrected):       {tf['V_eff_corrected']:.6e} M_Pl^4")
+        print(f"  Gap (corrected):         {tf['gap_orders_corrected']:.2f} orders")
+        print()
+        print("  Candidate torsion integrals from G2 topology:")
+        for key, cand in tf['candidates']['candidates'].items():
+            print(f"    {key}: {cand['value']:.2f} ({cand['deviation_pct']:+.1f}% off)")
+        print()
+        print(f"  Closest: {tf['closest_candidate']} = {tf['closest_value']:.2f} "
+              f"({tf['closest_deviation_pct']:+.1f}% off)")
+        print(f"  Natural match found: {tf['any_natural_match']}")
+        print()
+        print(f"  CLASSIFICATION: {tf['classification']}")
+        print(f"  {tf['classification_detail']}")
 
     # Also show original formulation for comparison
     print()

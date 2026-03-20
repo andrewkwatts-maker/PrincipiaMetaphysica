@@ -1009,6 +1009,151 @@ class ProtonDecaySimulation(SimulationBase):
         }
 
 
+    # =========================================================================
+    # Sprint 5, Task A: Entropy-suppressed proton lifetime exploration
+    # =========================================================================
+    def compute_lifetime_with_entropy(self, verbose: bool = False) -> Dict[str, Any]:
+        """
+        Explore whether sampler entropy dynamics can enhance the proton lifetime
+        prediction beyond the standard GUT formula.
+
+        Two approaches are tested:
+          (1) Moduli M_GUT: Use M_GUT = M_Pl/sqrt(T_min) = 3.96e17 GeV and
+              alpha_GUT = 1/(2*T_min) = 1/75.7 from racetrack moduli stabilization,
+              then apply the standard C_PREFACTOR formula.
+          (2) Entropy correction: Multiply the current geometric-M_GUT lifetime
+              by exp(S_eq) where S_eq is the sampler equilibrium entropy.
+
+        Returns:
+            Dictionary with computed values and honest assessment.
+
+        HONEST ASSESSMENT (Sprint 5, 2026-03-20):
+        ==========================================
+        VERDICT: BOTH APPROACHES FAIL as meaningful predictions.
+
+        Approach (1) -- Moduli M_GUT = 3.96e17 GeV:
+          The moduli-derived M_GUT is ~19x larger than M_GUT_geometric = 2.1e16 GeV.
+          Since tau ~ M_GUT^4, this gives (3.96e17/2.1e16)^4 ~ 1.3e5 enhancement.
+          Result: tau ~ 6.2e40 years -- six orders of magnitude above any foreseeable
+          experimental reach. This is not a prediction; it is unfalsifiable.
+
+          Root cause: T_min = 37.85 from racetrack stabilization was tuned for
+          alpha_GUT and gauge coupling unification, not for proton decay. Using it
+          naively in the proton lifetime formula produces an absurdly large result
+          because the C_PREFACTOR was calibrated for M_GUT ~ 2e16 GeV.
+
+        Approach (2) -- Entropy correction exp(S_eq):
+          S_eq = 9.35e-05 from SamplerEntropyDynamics.compute_equilibrium_entropy().
+          exp(9.35e-05) = 1.0000935 -- a correction of 0.009%, completely negligible.
+
+          The user's proposal suggested exp(0.0825 * t_thermal), but "t_thermal"
+          has no defined integration range. If t_thermal ~ O(1), exp(0.0825) = 1.086,
+          still negligible. If t_thermal is cosmological, the result diverges.
+
+          The entropy rate 0.0825 is dS/dt at a single instant, not an integrated
+          quantity. There is no physical mechanism connecting sampler entropy to
+          proton decay operator coefficients. The proposal amounts to multiplying
+          by an arbitrary exponential with no theoretical basis.
+
+        Conclusion: Neither approach produces a meaningful improvement over the
+        existing phenomenological calculation. The proton decay sector remains
+        PHENOMENOLOGICAL, dominated by the fitted C_PREFACTOR and the choice of
+        M_GUT scale. No entropy-based correction changes this assessment.
+        """
+        # === Approach 1: Moduli-derived M_GUT ===
+        M_GUT_moduli = 3.96e17     # GeV, from M_Pl/sqrt(T_min), T_min=37.85
+        alpha_GUT_moduli = 1.0 / 75.7  # from 1/(2*T_min)
+        K = 4
+        S_geom = np.exp(1.0 / K)   # = exp(0.25) ~ 1.284
+
+        M_ratio_mod = M_GUT_moduli / 1e16   # = 39.6
+        alpha_ratio_mod = 0.03 / alpha_GUT_moduli  # = 0.03 * 75.7 = 2.271
+        tau_moduli = (self.C_PREFACTOR
+                      * (M_ratio_mod ** 4)
+                      * (alpha_ratio_mod ** 2)
+                      * S_geom)
+        # M_ratio^4 = 39.6^4 ~ 2.46e6
+        # alpha_ratio^2 = 2.271^2 ~ 5.16
+        # tau ~ 3.82e33 * 2.46e6 * 5.16 * 1.284 ~ 6.2e40 years
+
+        # === Approach 2: Entropy correction to geometric lifetime ===
+        # Current geometric lifetime (for reference)
+        M_GUT_geo = 2.1e16  # GeV
+        alpha_GUT_geo = 1.0 / 23.54
+        M_ratio_geo = M_GUT_geo / 1e16
+        alpha_ratio_geo = 0.03 / alpha_GUT_geo
+        tau_geometric = (self.C_PREFACTOR
+                         * (M_ratio_geo ** 4)
+                         * (alpha_ratio_geo ** 2)
+                         * S_geom)
+
+        # Equilibrium entropy from sampler dynamics
+        S_eq = 9.35e-05  # From SamplerEntropyDynamics with alpha_T=2.7, rho=I/2
+        entropy_correction = np.exp(S_eq)  # = 1.0000935
+        tau_entropy_corrected = tau_geometric * entropy_correction
+
+        # Entropy rate (instantaneous, NOT integrated)
+        entropy_rate = 0.0825
+        # Even with generous t_thermal = 1: exp(0.0825) = 1.086
+        tau_generous_entropy = tau_geometric * np.exp(entropy_rate)
+
+        results = {
+            # Approach 1: Moduli M_GUT
+            "moduli.M_GUT_GeV": M_GUT_moduli,
+            "moduli.alpha_GUT": alpha_GUT_moduli,
+            "moduli.alpha_GUT_inv": 75.7,
+            "moduli.tau_p_years": tau_moduli,
+            "moduli.log10_tau": np.log10(tau_moduli),
+            "moduli.verdict": "UNFALSIFIABLE -- tau ~ 10^40 years, six orders above any experiment",
+
+            # Approach 2: Entropy correction
+            "entropy.S_eq": S_eq,
+            "entropy.correction_factor": entropy_correction,
+            "entropy.tau_corrected_years": tau_entropy_corrected,
+            "entropy.correction_percent": (entropy_correction - 1.0) * 100,
+            "entropy.verdict": "NEGLIGIBLE -- 0.009% correction, physically meaningless",
+
+            # Generous entropy (t_thermal = 1)
+            "entropy_generous.correction_factor": np.exp(entropy_rate),
+            "entropy_generous.tau_years": tau_generous_entropy,
+            "entropy_generous.verdict": "AD HOC -- no defined integration range for entropy rate",
+
+            # Reference: current geometric prediction
+            "geometric.tau_p_years": tau_geometric,
+            "geometric.M_GUT_GeV": M_GUT_geo,
+
+            # Overall assessment
+            "overall_verdict": (
+                "FAILED: Neither moduli M_GUT (gives 10^40 years, unfalsifiable) "
+                "nor entropy correction (0.009% change, negligible) improves "
+                "the proton decay prediction. The sector remains PHENOMENOLOGICAL, "
+                "dominated by the fitted C_PREFACTOR = 3.82e33 years."
+            ),
+            "classification": "PHENOMENOLOGICAL",
+        }
+
+        if verbose:
+            print("\n" + "=" * 70)
+            print(" ENTROPY-SUPPRESSED PROTON LIFETIME EXPLORATION")
+            print("=" * 70)
+            print(f"\n--- Approach 1: Moduli M_GUT ---")
+            print(f"  M_GUT = {M_GUT_moduli:.2e} GeV (from M_Pl/sqrt(T_min))")
+            print(f"  alpha_GUT = 1/{75.7:.1f}")
+            print(f"  tau_p = {tau_moduli:.2e} years")
+            print(f"  log10(tau) = {np.log10(tau_moduli):.1f}")
+            print(f"  VERDICT: UNFALSIFIABLE (10^40 >> 10^35 experimental reach)")
+            print(f"\n--- Approach 2: Entropy Correction ---")
+            print(f"  S_eq = {S_eq:.2e}")
+            print(f"  exp(S_eq) = {entropy_correction:.7f}")
+            print(f"  tau_corrected = {tau_entropy_corrected:.2e} years")
+            print(f"  Correction = {(entropy_correction - 1.0) * 100:.4f}%")
+            print(f"  VERDICT: NEGLIGIBLE (0.009% is not physics)")
+            print(f"\n--- Overall ---")
+            print(f"  {results['overall_verdict']}")
+
+        return results
+
+
 def main():
     """Run the simulation standalone for testing."""
     import io

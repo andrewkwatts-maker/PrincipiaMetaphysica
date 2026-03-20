@@ -80,6 +80,55 @@ Round 3 (Final classification):
     CONSENSUS: PARTIAL mechanism -- architecturally valid, quantitatively
     insufficient by ~46 orders of magnitude.
 
+SPRINT 1 EXTENSION: Sampler Entropy Damping (v24.3)
+====================================================
+
+    Proposed extension: Q_eff = Q_Leech + kappa_sampler * 12 * (b3/24),
+    giving Tr(Q_eff) = 242 + 2*12 = 266. Then multiply m_eff by
+    exp(-0.5 * integrated_entropy_rate), where the sampler entropy
+    integrates over cosmological time.
+
+    RESULT: The entropy rate (0.0825 per thermal time unit) integrated
+    over the full cosmological age in thermal time (T_min * t_cosmic =
+    37.85 * 4.35e17 = 1.65e19 thermal units) gives integrated_entropy
+    = 1.36e18, producing exp(-6.8e17) -- catastrophic OVER-suppression
+    by ~3e17 orders of magnitude. The mechanism cannot deliver a precise
+    44.5-order suppression without tuning the integration timescale.
+
+    To achieve exactly 44.5 orders, one would need t_int ~ 1242 thermal
+    time units, but there is NO independent derivation of this timescale.
+
+GEMINI DEBATE (3 rounds, 2026-03-20):
+    Round 1: Gemini described the mechanism as a "textbook example of a
+        speculative, ill-justified attempt to force a fit." The exp(-8e17)
+        result is not "over-suppression" -- it is "annihilation." The
+        difference between 10^{-44.5} and 10^{-3.5e17} is so vast that
+        the model is "fundamentally broken and irrelevant to the problem."
+        Demanded rigorous derivation for every term in the exponential.
+
+    Round 2: Gemini confirmed the honest framing. Noted that achieving
+        exactly 44.5 orders requires t_int ~ 1242 thermal time units.
+        Suggested physically motivated intermediate timescales (decoupling,
+        EDE phase duration, phase transitions, Hubble expansion limit,
+        thermalization time) but noted NONE are independently derived in
+        the current framework. The key question: "identify a robust,
+        physically motivated reason why the integration time should be
+        ~1242 thermal time units."
+
+    Round 3: Classification: **FITTED**. "This is the textbook definition
+        of fitting. A parameter (t_thermal) is chosen precisely to achieve
+        the desired numerical outcome (44.5 orders) without any independent
+        theoretical or observational basis for that specific value." On
+        Q_eff (Tr=266 vs 242): "moving from a trace of 242 (which has a
+        deep connection to the Leech lattice) to 266, especially if the
+        extra 24 is not independently justified, represents a substantive
+        change" and "another instance of parameter fitting."
+
+    CONSENSUS: The entropy damping mechanism is FITTED, not DERIVED. The
+    individual components (entropy rate, racetrack T_min) are independently
+    computed, but the integration timescale required to close the gap lacks
+    independent motivation. Reporting honestly as FITTED/PARTIAL.
+
 SECTION: 7.2 (Bridge Axion EDE)
 
 OUTPUTS:
@@ -714,6 +763,148 @@ class BridgeAxionEDE(SimulationBase):
         }
 
     # ===================================================================
+    # 5. SAMPLER ENTROPY DAMPING (Sprint 1 extension)
+    # ===================================================================
+
+    def compute_m_eff_with_entropy_damping(self) -> Dict[str, Any]:
+        """
+        KNP + sampler entropy damping for Hubble tension.
+
+        Extension: Q_eff = Q_Leech + kappa * 12 * (b3/24)
+        m_eff_damped = m_eff_undamped * exp(-0.5 * integrated_entropy)
+
+        HONEST ASSESSMENT (Gemini-validated):
+            The entropy rate (0.0825) and integration time (1.65e19 thermal
+            units) are independently derived, but their combination produces
+            exp(-6.8e17) -- catastrophic over-suppression by ~3e17 orders.
+            To get exactly 44.5 orders, one needs t_int ~ 1242 thermal time
+            units, which lacks independent derivation.
+
+            Classification: FITTED (Gemini Round 3 consensus).
+            The mechanism demonstrates that sampler entropy CAN provide
+            exponential suppression, but the precise magnitude is not
+            uniquely determined by topology.
+
+        Returns:
+            Dict with enhanced alignment, entropy damping, and honest gap
+            assessment for both naive and tuned integration times.
+        """
+        # 1. Enhanced alignment matrix: Q_eff = Q_Leech + kappa * delta * (b3/24)
+        Q_leech_trace = 242  # from leech_lattice.compute_axion_alignment_matrix()
+        kappa_sampler = self.kappa_sampler  # = 2 = dim(S^{2,0})
+        delta_bridges = self.N_ax  # = 12
+        b3_factor = self.b3 / 24  # = 1 (normalization)
+        Q_eff_trace = Q_leech_trace + kappa_sampler * delta_bridges * b3_factor  # = 266
+
+        # 2. Enhanced f_eff using Q_eff trace
+        f_sub = self.M_Planck / self.k_gimel ** 6
+        f_eff_enhanced = f_sub * np.sqrt(Q_eff_trace)
+        # Compare: original f_eff uses sqrt(N_ax * b3) * kappa = sqrt(288) * 2 ~ 33.94 * f_sub
+
+        # 3. Racetrack mass (reuse existing computation)
+        knp = self.compute_knp_alignment()
+        racetrack = self.compute_racetrack_mass(knp.f_sub)
+        m_ind_ev = racetrack.m_ind_ev
+
+        # 4. Undamped effective mass with enhanced alignment
+        m_eff_undamped = m_ind_ev / Q_eff_trace  # mass suppressed by 1/Tr(Q_eff)
+
+        # 5. Entropy damping computation
+        from simulations.PM.field_dynamics.sampler_entropy_dynamics import SamplerEntropyDynamics
+        sed = SamplerEntropyDynamics()
+        alpha_T = 2.700
+        rho_matrices = [np.eye(2) / 2 for _ in range(12)]  # maximally mixed
+        gradient = sed.compute_entropy_gradient(alpha_T, rho_matrices)
+        entropy_rate = abs(gradient['entropy_gradient'])  # ~ 0.0825
+
+        # Target EDE mass
+        target_ev = 1e-28
+
+        # Integration time: T_min * t_cosmic (naive cosmological integration)
+        t_cosmic_seconds = 4.35e17  # 13.8 Gyr in seconds
+        T_min = racetrack.T_min  # ~ 37.85 (stabilized Kahler modulus)
+        t_thermal_naive = T_min * t_cosmic_seconds  # ~ 1.65e19
+
+        # Naive integrated entropy (full cosmological age)
+        integrated_entropy_naive = entropy_rate * t_thermal_naive
+        damping_naive = np.exp(-0.5 * integrated_entropy_naive)
+        m_eff_damped_naive = m_eff_undamped * damping_naive
+
+        # Required integration time to close the ACTUAL gap
+        # The actual gap is log10(m_eff_undamped / target_ev) orders
+        # Need: m_eff_undamped * exp(-0.5 * S) = target_ev
+        # => exp(-0.5 * S) = target_ev / m_eff_undamped
+        # => 0.5 * S = ln(m_eff_undamped / target_ev)
+        # => S = 2 * ln(m_eff_undamped / target_ev)
+        required_suppression_orders = np.log10(m_eff_undamped / target_ev)
+        S_required = 2.0 * required_suppression_orders * np.log(10)
+        t_required_corrected = S_required / entropy_rate
+        damping_tuned = np.exp(-0.5 * S_required)
+        m_eff_damped_tuned = m_eff_undamped * damping_tuned
+
+        # Gap assessments
+        if m_eff_damped_naive > 0 and np.isfinite(m_eff_damped_naive):
+            gap_naive = np.log10(m_eff_damped_naive / target_ev) if m_eff_damped_naive > 0 else float('-inf')
+        else:
+            gap_naive = float('-inf')  # over-suppressed to zero
+
+        gap_tuned = np.log10(m_eff_damped_tuned / target_ev) if m_eff_damped_tuned > 0 else float('inf')
+
+        # Undamped gap (for reference)
+        gap_undamped = np.log10(m_eff_undamped / target_ev)
+
+        return {
+            # Enhanced alignment
+            'Q_leech_trace': Q_leech_trace,
+            'Q_eff_trace': Q_eff_trace,
+            'f_sub_GeV': f_sub,
+            'f_eff_enhanced_GeV': f_eff_enhanced,
+
+            # Racetrack
+            'm_ind_eV': m_ind_ev,
+            'T_min': T_min,
+
+            # Undamped
+            'm_eff_undamped_eV': m_eff_undamped,
+            'gap_undamped_orders': gap_undamped,
+
+            # Entropy parameters
+            'entropy_rate': entropy_rate,
+            'entropy_gradient_full': gradient,
+
+            # Naive integration (full cosmological age)
+            't_thermal_naive': t_thermal_naive,
+            'integrated_entropy_naive': integrated_entropy_naive,
+            'damping_factor_naive': damping_naive,
+            'm_eff_damped_naive_eV': m_eff_damped_naive,
+            'gap_naive_orders': gap_naive,
+            'naive_status': 'OVER-SUPPRESSED (catastrophic)',
+
+            # Required (tuned) integration -- FITTED, not derived
+            't_required_thermal_units': t_required_corrected,
+            'S_required': S_required,
+            'damping_factor_tuned': damping_tuned,
+            'm_eff_damped_tuned_eV': m_eff_damped_tuned,
+            'gap_tuned_orders': gap_tuned,
+            'tuned_status': 'FITTED (t_int chosen to match target)',
+
+            # Target
+            'target_eV': target_ev,
+
+            # Overall assessment
+            'mechanism_classification': 'FITTED',
+            'honest_assessment': (
+                "Sampler entropy damping CAN provide exponential mass suppression, "
+                "but the integration timescale is not uniquely determined by topology. "
+                f"Naive cosmic-age integration gives exp(-{integrated_entropy_naive/2:.2e}), "
+                "catastrophically over-suppressing the mass to zero. Achieving exactly "
+                f"44.5 orders requires t_int ~ {t_required_corrected:.0f} thermal time "
+                "units, which lacks independent derivation. "
+                "Gemini classification: FITTED."
+            ),
+        }
+
+    # ===================================================================
     # MAIN EXECUTION
     # ===================================================================
 
@@ -875,6 +1066,34 @@ class BridgeAxionEDE(SimulationBase):
             }
         )
 
+        # Step 5: Entropy damping extension (Sprint 1)
+        entropy_result = self.compute_m_eff_with_entropy_damping()
+
+        # Register entropy-damped outputs
+        registry.set_param(
+            path="bridge_ede.entropy_damping.classification",
+            value=entropy_result['mechanism_classification'],
+            source=self._metadata.id,
+            status="FITTED",
+            metadata={
+                "note": "Sampler entropy damping -- FITTED per Gemini debate",
+                "Q_eff_trace": entropy_result['Q_eff_trace'],
+                "entropy_rate": entropy_result['entropy_rate'],
+                "t_required_thermal": entropy_result['t_required_thermal_units'],
+            }
+        )
+
+        registry.set_param(
+            path="bridge_ede.entropy_damping.m_eff_undamped",
+            value=entropy_result['m_eff_undamped_eV'],
+            source=self._metadata.id,
+            status="DERIVED",
+            metadata={
+                "derivation": "m_ind / Tr(Q_eff), Q_eff = Q_Leech + kappa*12",
+                "units": "eV",
+            }
+        )
+
         return {
             "bridge_ede.f_sub": result.knp.f_sub,
             "bridge_ede.f_eff": result.knp.f_eff,
@@ -886,6 +1105,7 @@ class BridgeAxionEDE(SimulationBase):
             "bridge_ede.f_ede_peak": result.ede.f_ede_peak,
             "bridge_ede.H0_shift": result.ede.H0_shift,
             "bridge_ede.status": result.status,
+            "_entropy_damping": entropy_result,
             "_knp_result": {
                 "f_sub_GeV": result.knp.f_sub,
                 "f_eff_GeV": result.knp.f_eff,
@@ -1386,8 +1606,47 @@ if __name__ == "__main__":
     print(f"  Classification:       {result.classification}")
     print(f"\n{result.honest_assessment}")
 
+    # Sprint 1: Entropy damping extension
+    print(f"\n{'=' * 72}")
+    print(f"Sprint 1: Sampler Entropy Damping Extension")
+    print(f"{'=' * 72}")
+
+    ed = sim.compute_m_eff_with_entropy_damping()
+    print(f"\n--- Enhanced Alignment ---")
+    print(f"  Q_Leech trace:        {ed['Q_leech_trace']}")
+    print(f"  Q_eff trace:          {ed['Q_eff_trace']}")
+    print(f"  f_eff (enhanced):     {ed['f_eff_enhanced_GeV']:.4e} GeV")
+
+    print(f"\n--- Undamped (Q_eff only) ---")
+    print(f"  m_eff_undamped:       {ed['m_eff_undamped_eV']:.4e} eV")
+    print(f"  Gap (undamped):       {ed['gap_undamped_orders']:.1f} orders")
+
+    print(f"\n--- Entropy Parameters ---")
+    print(f"  Entropy rate:         {ed['entropy_rate']:.4f}")
+    print(f"  Entropy gradient:     {ed['entropy_gradient_full']}")
+
+    print(f"\n--- Naive Integration (full cosmic age) ---")
+    print(f"  t_thermal (naive):    {ed['t_thermal_naive']:.4e}")
+    print(f"  Integrated entropy:   {ed['integrated_entropy_naive']:.4e}")
+    print(f"  Damping factor:       {ed['damping_factor_naive']}")
+    print(f"  m_eff_damped:         {ed['m_eff_damped_naive_eV']}")
+    print(f"  Status:               {ed['naive_status']}")
+
+    print(f"\n--- Required (Tuned) Integration ---")
+    print(f"  t_required:           {ed['t_required_thermal_units']:.1f} thermal units")
+    print(f"  S_required:           {ed['S_required']:.2f}")
+    print(f"  m_eff_damped (tuned): {ed['m_eff_damped_tuned_eV']:.4e} eV")
+    print(f"  Gap (tuned):          {ed['gap_tuned_orders']:.1f} orders")
+    print(f"  Status:               {ed['tuned_status']}")
+
+    print(f"\n--- Gemini Consensus ---")
+    print(f"  Classification:       {ed['mechanism_classification']}")
+    print(f"  {ed['honest_assessment']}")
+
     print(f"\n{'=' * 72}")
     print(f"VERDICT: {result.status} -- KNP alignment provides ~3 orders")
     print(f"  of mass suppression but falls short of EDE by")
     print(f"  ~{result.ede.mass_gap_orders:.0f} orders of magnitude.")
+    print(f"  Entropy damping: FITTED (not DERIVED). Integration timescale")
+    print(f"  not uniquely determined by topology.")
     print(f"{'=' * 72}")

@@ -1387,6 +1387,191 @@ class CKMMatrixSimulation(SimulationBase):
         return explanation
 
 
+    # =========================================================================
+    # Sprint 5, Task B: OR-averaged CKM angle from bridge phases
+    # =========================================================================
+    def compute_marginal_angle_from_bridge_phases(
+        self,
+        bridge_phases: Optional[List[float]] = None,
+        verbose: bool = False,
+    ) -> Dict[str, Any]:
+        """
+        Explore whether OR-averaged bridge axion phases can predict CKM angles.
+
+        The proposal: theta_CKM = arg(<R_perp * exp(i*theta_i)>_sampler)
+        where theta_i are moduli axion phases from the 12 bridge pairs.
+
+        We test multiple phase configurations:
+          (1) Uniformly spaced: theta_i = 2*pi*i/12 (symmetric vacuum)
+          (2) Random phases (generic moduli stabilization)
+          (3) User-supplied phases
+
+        In each case we compute:
+          theta_avg = arg( (1/12) * sum_{i=1}^{12} exp(i*theta_i) )
+        and compare with the CKM Cabibbo angle lambda = 0.2245.
+
+        Args:
+            bridge_phases: Optional list of 12 bridge axion phases (radians).
+                          If None, tests uniform and random configurations.
+            verbose: Print detailed output.
+
+        Returns:
+            Dictionary with computed values and honest assessment.
+
+        HONEST ASSESSMENT (Sprint 5, 2026-03-20):
+        ==========================================
+        VERDICT: RELABELING, NOT A PREDICTION.
+
+        The proposal theta_CKM = arg(<R_perp * exp(i*theta_i)>) fails on
+        multiple grounds:
+
+        1. DIMENSIONAL MISMATCH: arg() returns an angle in [-pi, pi], while
+           the Cabibbo angle lambda = V_us = 0.2245 is a dimensionless mixing
+           amplitude (not an angle in radians). The Cabibbo angle in radians
+           is arcsin(0.2245) = 0.2265 rad = 12.97 degrees. There is no reason
+           the average of 12 bridge phases should equal this specific value.
+
+        2. CONFIGURATION DEPENDENCE: For uniformly spaced phases, the resultant
+           is exactly zero (by symmetry of roots of unity). For random phases,
+           the resultant is a random angle with no connection to CKM physics.
+           To get lambda = 0.2245, one must CHOOSE specific phases -- which is
+           just fitting with extra steps.
+
+        3. NO LITERATURE SUPPORT: Acharya et al. (2008, 2019) study Yukawa
+           couplings from M-theory on G2 manifolds. The CKM matrix arises from
+           RATIOS of Yukawa couplings, not from averaged moduli phases. The
+           relevant quantities are overlap integrals of harmonic forms on
+           associative 3-cycles, not bulk axion field averages. No published
+           work connects "OR-averaged bridge phases" to quark mixing.
+
+        4. WRONG DEGREES OF FREEDOM: Bridge axion phases theta_i = Im(z_i)
+           are bulk moduli fields that parametrize the vacuum. CKM angles are
+           observables that depend on the LOCALIZED wavefunctions of quarks on
+           specific 3-cycles. These are different mathematical objects: moduli
+           phases live in the moduli space of the G2 manifold, while CKM angles
+           live in the space of 3x3 unitary matrices. There is no established
+           map between them.
+
+        5. EXISTING PREDICTION IS BETTER: The current lambda = exp(-3/2) = 0.2231
+           prediction, while modest (single parameter from Froggatt-Nielsen), has
+           a clear physical mechanism: geometric suppression from G2 curvature
+           scale controls the Yukawa hierarchy. The bridge phase proposal would
+           REPLACE this with something less well-motivated.
+
+        Net assessment: The CKM sector has 1/4 genuinely predicted parameters
+        (lambda). This proposal does not improve that count.
+        """
+        N_BRIDGES = 12
+        PDG_lambda = 0.2245   # Cabibbo angle (amplitude, not radians)
+        cabibbo_rad = np.arcsin(PDG_lambda)  # ~ 0.2265 rad = 12.97 deg
+        epsilon = np.exp(-1.5)  # Current prediction: 0.2231
+
+        results = {}
+
+        # --- Configuration 1: Uniformly spaced phases ---
+        phases_uniform = np.array([2.0 * np.pi * i / N_BRIDGES for i in range(N_BRIDGES)])
+        phasors_uniform = np.exp(1j * phases_uniform)
+        resultant_uniform = np.sum(phasors_uniform) / N_BRIDGES
+        theta_uniform = np.angle(resultant_uniform)
+        magnitude_uniform = np.abs(resultant_uniform)
+        # For roots of unity: sum = 0 exactly (by symmetry)
+
+        results["uniform.phases_rad"] = phases_uniform.tolist()
+        results["uniform.theta_avg_rad"] = float(theta_uniform)
+        results["uniform.theta_avg_deg"] = float(np.degrees(theta_uniform))
+        results["uniform.resultant_magnitude"] = float(magnitude_uniform)
+        results["uniform.verdict"] = (
+            "ZERO RESULTANT: uniformly spaced phases sum to zero by symmetry "
+            "(12th roots of unity). arg(0) is undefined. No CKM prediction possible."
+        )
+
+        # --- Configuration 2: Random phases (seed=42 for reproducibility) ---
+        rng = np.random.RandomState(42)
+        phases_random = rng.uniform(0, 2.0 * np.pi, N_BRIDGES)
+        phasors_random = np.exp(1j * phases_random)
+        resultant_random = np.sum(phasors_random) / N_BRIDGES
+        theta_random = np.angle(resultant_random)
+        magnitude_random = np.abs(resultant_random)
+
+        results["random.theta_avg_rad"] = float(theta_random)
+        results["random.theta_avg_deg"] = float(np.degrees(theta_random))
+        results["random.resultant_magnitude"] = float(magnitude_random)
+        results["random.matches_cabibbo"] = bool(abs(theta_random - cabibbo_rad) < 0.1)
+        results["random.verdict"] = (
+            f"Random phases give theta_avg = {np.degrees(theta_random):.1f} deg "
+            f"(magnitude = {magnitude_random:.4f}). This is a random angle with "
+            f"no connection to the Cabibbo angle ({np.degrees(cabibbo_rad):.1f} deg). "
+            f"Different random seeds give completely different results."
+        )
+
+        # --- Configuration 3: User-supplied phases ---
+        if bridge_phases is not None:
+            phases_user = np.array(bridge_phases[:N_BRIDGES])
+            phasors_user = np.exp(1j * phases_user)
+            resultant_user = np.sum(phasors_user) / N_BRIDGES
+            theta_user = np.angle(resultant_user)
+            magnitude_user = np.abs(resultant_user)
+
+            results["user.theta_avg_rad"] = float(theta_user)
+            results["user.theta_avg_deg"] = float(np.degrees(theta_user))
+            results["user.resultant_magnitude"] = float(magnitude_user)
+
+        # --- Comparison with existing prediction ---
+        results["comparison.existing_lambda"] = float(epsilon)
+        results["comparison.existing_deviation_sigma"] = float(
+            abs(epsilon - PDG_lambda) / 0.0008
+        )
+        results["comparison.PDG_lambda"] = PDG_lambda
+        results["comparison.cabibbo_angle_rad"] = float(cabibbo_rad)
+        results["comparison.cabibbo_angle_deg"] = float(np.degrees(cabibbo_rad))
+
+        # --- What WOULD be needed for a genuine prediction ---
+        results["what_would_work"] = (
+            "A genuine CKM prediction from G2 geometry would require: "
+            "(a) Computing Yukawa coupling matrices Y_u, Y_d from overlap integrals "
+            "of harmonic forms on specific associative 3-cycles (Acharya et al. 2008); "
+            "(b) Diagonalizing Y_u and Y_d to get mass eigenstates; "
+            "(c) Computing V_CKM = U_u^dagger * U_d where U_u, U_d are the "
+            "diagonalization matrices. This requires knowing the SPECIFIC G2 "
+            "manifold (not just topological invariants) and is an open problem "
+            "in string phenomenology."
+        )
+
+        # --- Overall verdict ---
+        results["overall_verdict"] = (
+            "FAILED: Bridge phase averaging is not a CKM prediction mechanism. "
+            "Uniform phases give zero resultant; random phases give random angles. "
+            "The existing lambda = exp(-3/2) prediction (1.71 sigma from PDG) is "
+            "better motivated than any phase-averaging scheme. The CKM sector "
+            "remains OVERCLAIMED at 1/4 predicted parameters."
+        )
+        results["classification"] = "OVERCLAIMED"
+        results["predicted_params"] = "1/4 (lambda only)"
+        results["fitted_params"] = "3/4 (A=0.81, rho=0.14, eta=0.36)"
+
+        if verbose:
+            print("\n" + "=" * 70)
+            print(" OR-AVERAGED CKM ANGLE FROM BRIDGE PHASES")
+            print("=" * 70)
+            print(f"\n--- Uniform phases (2*pi*i/12) ---")
+            print(f"  Resultant magnitude: {magnitude_uniform:.2e} (effectively zero)")
+            print(f"  theta_avg: UNDEFINED (zero vector)")
+            print(f"  VERDICT: No prediction possible")
+            print(f"\n--- Random phases (seed=42) ---")
+            print(f"  theta_avg = {np.degrees(theta_random):.1f} deg")
+            print(f"  Resultant magnitude = {magnitude_random:.4f}")
+            print(f"  Cabibbo angle = {np.degrees(cabibbo_rad):.1f} deg")
+            print(f"  Match: {'YES' if results['random.matches_cabibbo'] else 'NO'}")
+            print(f"\n--- Existing prediction ---")
+            print(f"  lambda = exp(-3/2) = {epsilon:.4f}")
+            print(f"  PDG lambda = {PDG_lambda}")
+            print(f"  Deviation = {results['comparison.existing_deviation_sigma']:.2f} sigma")
+            print(f"\n--- Overall ---")
+            print(f"  {results['overall_verdict']}")
+
+        return results
+
+
 def main():
     """Run the simulation standalone for testing."""
     import io
