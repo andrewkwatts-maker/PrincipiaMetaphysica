@@ -3,7 +3,7 @@
 Dark Matter Portal Physics v23.0
 =================================
 
-Derives dark matter portal coupling, cross-section, and mediator mass from the
+Computes dark matter portal coupling, cross-section, and mediator mass from the
 four-face G2 sub-sector structure (Topics 06 + 07 of Part 3).
 
 PHYSICS:
@@ -28,6 +28,8 @@ MULTI-COMPONENT DARK MATTER:
     - Face 4 (sterile nu):   Sterile neutrinos from the deepest shadow face
 
     Total relic density: Omega_DM h^2 ~ 0.12 from three hidden face contributions.
+    NOTE: The relic prefactor is FITTED (normalized to Planck). The face ratios
+    (4:9:16) follow from racetrack hierarchy but absolute normalization is not derived.
 
 PREDICTIONS:
     - g_portal ~ 0.044 (perturbative coupling)
@@ -292,6 +294,12 @@ class DarkMatterPortalsV23(SimulationBase):
         # where prefactor is chosen so the total matches Omega_DM = 0.12
         # This gives: prefactor * (4 + 9 + 16) = 0.12
         # prefactor = 0.12 / 29 ~ 0.00414
+        #
+        # HONESTY NOTE (Phase F Sprint 3): The relic prefactor is FITTED —
+        # it is chosen to reproduce Omega_DM h^2 = 0.12 by construction.
+        # The face *ratios* (4:9:16) follow from the racetrack hierarchy,
+        # but the absolute normalization is not derived from topology.
+        # See multi_sector.py for the geometric Omega_DM/Omega_b prediction.
         #
         # Physical interpretation: the alpha_leak^2 * (T_1/T_i)^2 factor
         # is the thermal freeze-out cross-section modifier for each face.

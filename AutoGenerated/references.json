@@ -1,6 +1,6 @@
 {
   "version": "24.2",
-  "count": 213,
+  "count": 214,
   "references": {
     "acharya_witten_2001": {
       "id": "acharya_witten_2001",
@@ -804,6 +804,16 @@
       "notes": "PDG 2024 combined: m_H = 125.25 +/- 0.17 GeV (ATLAS+CMS).",
       "source_simulation": "higgs_mass_v16_0"
     },
+    "acharya_g2mssm2007": {
+      "id": "acharya_g2mssm2007",
+      "authors": "Acharya, B.S., Bobkov, K., Kane, G.L., Kumar, P., Shao, J.",
+      "title": "The G2-MSSM: An M Theory motivated model of Particle Physics",
+      "year": 2007,
+      "arxiv": "0801.0478",
+      "url": "https://arxiv.org/abs/0801.0478",
+      "notes": "G2-MSSM framework. Wilson-line moduli acquire TeV-scale masses through gaugino condensation and membrane instantons, not from simple b3/chi_eff ratios. Demonstrates that the hierarchy problem persists in G2 compactifications and requires SUSY breaking.",
+      "source_simulation": "higgs_brane_partition_v16_2"
+    },
     "pdg2024_masses": {
       "id": "pdg2024_masses",
       "key": "pdg2024_masses",
@@ -1080,7 +1090,7 @@
       "arxiv": "1807.06209",
       "url": "https://arxiv.org/abs/1807.06209",
       "notes": "S8 = 0.832 ± 0.013",
-      "source_simulation": "s8_suppression_v16_1"
+      "source_simulation": "s8_suppression_v16_2"
     },
     "kids2021": {
       "id": "kids2021",
@@ -1093,7 +1103,7 @@
       "arxiv": "2007.15632",
       "url": "https://arxiv.org/abs/2007.15632",
       "notes": "S8 = 0.766 ± 0.020",
-      "source_simulation": "s8_suppression_v16_1"
+      "source_simulation": "s8_suppression_v16_2"
     },
     "des2022": {
       "id": "des2022",
@@ -1106,7 +1116,7 @@
       "arxiv": "2105.13549",
       "url": "https://arxiv.org/abs/2105.13549",
       "notes": "S8 = 0.776 ± 0.017",
-      "source_simulation": "s8_suppression_v16_1"
+      "source_simulation": "s8_suppression_v16_2"
     },
     "linder2005": {
       "id": "linder2005",
@@ -1119,7 +1129,7 @@
       "arxiv": "astro-ph/0507263",
       "url": "https://arxiv.org/abs/astro-ph/0507263",
       "notes": "Growth index formalism for dark energy models",
-      "source_simulation": "s8_suppression_v16_1"
+      "source_simulation": "s8_suppression_v16_2"
     },
     "nufit2024": {
       "id": "nufit2024",
@@ -1845,7 +1855,7 @@
       "year": "1963",
       "doi": "10.1515/9781400881802",
       "type": "monograph",
-      "source_simulation": "appendix_j_torsion_funnel"
+      "source_simulation": "appendix_j_torsion_funnel_v16_2"
     },
     "bott-tu-1982": {
       "id": "bott-tu-1982",
@@ -1854,7 +1864,7 @@
       "year": "1982",
       "doi": "10.1007/978-1-4757-3951-0",
       "type": "monograph",
-      "source_simulation": "appendix_j_torsion_funnel"
+      "source_simulation": "appendix_j_torsion_funnel_v16_2"
     },
     "nist-codata-2018": {
       "id": "nist-codata-2018",
