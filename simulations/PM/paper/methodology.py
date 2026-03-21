@@ -114,7 +114,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "In the v24.2 Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds), the transition from empirical observation to "
-                    "first-principles derivation is achieved through <strong>Spectral Geometry</strong> with <strong>116:1 compression ratio</strong>. "
+                    "first-principles computation is proposed through <strong>Spectral Geometry</strong> with <strong>116:1 compression ratio</strong>. "
                     "This methodology posits that the 'constants' of nature are not independent variables, "
                     "but emerge as discrete harmonic frequencies of the V₇ manifold from minimal phenomenological input. By treating the "
                     "universe as a resonant geometric body, we define physical constants as <strong>Laplacian Eigenvalues (λₙ)</strong> "
@@ -172,7 +172,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "Traditional physics relies on extensive parameter fitting to match theoretical values to "
-                    "experimental data. The Topologically Anchored Framework (<strong>EDOF=3</strong>) achieves <strong>116:1 compression</strong> "
+                    "experimental data. The Topologically Anchored Framework (<strong>EDOF=3</strong>) proposes <strong>116:1 compression</strong> "
                     "by showing that λₙ values are <strong>topological invariants</strong> anchored by 3 geometric seeds (b₃, φ, θ₁₃). "
                     "Because the G₂ manifold is Ricci-flat and torsion-free, its spectrum is rigid with minimal phenomenological input. "
                     "The electron mass and other constants emerge from the volume of the V₇ manifold, "

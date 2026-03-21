@@ -10,7 +10,7 @@ Planck-inferred value (~0.832) toward the weak lensing measurements (~0.77).
 
 Key Physics:
 -----------
-The coupling strength beta_eff is derived from three ingredients:
+The coupling strength beta_eff is motivated by three ingredients:
 
   1. alpha_leak = 1/sqrt(6) ~ 0.408  (G2 volume ratio: chi_eff/b3 = 144/24 = 6)
   2. kappa_sampler = 2               (dimension of S^{2,0} sampler fields)
@@ -61,7 +61,7 @@ Three-round adversarial debate on the epistemological status of this mechanism.
 
 ROUND 1 (Gemini assessment):
   - The 1/(4pi) loop factor is "well-justified" in the context of effective
-    couplings derived from higher-dimensional theory where quantum corrections
+    couplings motivated by higher-dimensional theory where quantum corrections
     or integration of heavy degrees of freedom generate the interaction.
   - beta ~ 0.05-0.1 is confirmed as the correct range for 8% S8 suppression
     per Amendola (2000) and Pettorino & Baccigalupi (2008).
@@ -270,7 +270,7 @@ class ModuliDMCouplingV24(SimulationBase):
             description=(
                 "Computes S8 suppression from hidden-face (Face-3) moduli rolling "
                 "coupled to dark matter perturbations. The coupling beta_eff ~ 0.065 "
-                "is derived from alpha_leak = 1/sqrt(6) (G2 volume ratio) and "
+                "is motivated by alpha_leak = 1/sqrt(6) (G2 volume ratio) and "
                 "kappa_sampler = 2 (sampler field dimension), with a 1/(4pi) "
                 "one-loop suppression factor. "
                 "Epistemological status: PLAUSIBLE (debate-verified)."
@@ -364,6 +364,8 @@ class ModuliDMCouplingV24(SimulationBase):
         S_eq: float = 9.35e-05,
     ) -> Dict[str, Any]:
         """
+        EXPLORATORY_DEPRECATED: Entropy extension changes S8 by <0.001 (numerically irrelevant).
+
         Compute entropy-modulated beta using sampler entropy dynamics.
 
         Explores two formulas:
@@ -1016,7 +1018,7 @@ class ModuliDMCouplingV24(SimulationBase):
                 content=(
                     f"The coupling $\\beta_{{\\text{{eff}}}} = {r.beta_eff:.4f}$ "
                     "is composed of: $\\alpha_{{\\text{{leak}}}} = 1/\\sqrt{{6}}$ "
-                    "(derived from the G2 volume ratio $\\chi_{{\\text{{eff}}}}/b_3 "
+                    "(motivated by the G2 volume ratio $\\chi_{{\\text{{eff}}}}/b_3 "
                     "= 144/24 = 6$), $\\kappa_{{\\text{{sampler}}}} = 2$ "
                     "(dimension of the $S^{{2,0}}$ sampler fields), and a "
                     "$1/(4\\pi)$ one-loop suppression factor. The loop factor "

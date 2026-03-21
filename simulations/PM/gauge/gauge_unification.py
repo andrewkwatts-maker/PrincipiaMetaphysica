@@ -410,8 +410,8 @@ class GaugeUnificationSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content="Near the Planck scale, the gravitational coupling becomes relevant and drives "
-                            "the system toward an asymptotically safe UV fixed point. This fixed point, "
-                            "predicted by quantum gravity, determines the unified coupling α<sub>GUT</sub>:"
+                            "the system toward an asymptotically safe UV fixed point. We identify the "
+                            "unified coupling with the G₂ topological value α<sub>GUT</sub>:"
                 ),
                 ContentBlock(
                     type="formula",
@@ -421,7 +421,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 ),
                 ContentBlock(
                     type="paragraph",
-                    content="The unification scale M<sub>GUT</sub> is determined by minimizing the spread of the "
+                    content="The unification scale M<sub>GUT</sub> is obtained by minimizing the spread of the "
                             "three evolved couplings:"
                 ),
                 ContentBlock(
