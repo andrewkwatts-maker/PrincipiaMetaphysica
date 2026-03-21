@@ -1,19 +1,33 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v22.0 - Pneuma Mechanism (Geometric Framework)
+PRINCIPIA METAPHYSICA v24.2 - Pneuma Mechanism (Geometric Framework)
 ====================================================================
+
+CLASSIFICATION SEPARATION (Phase G Sprint 3):
+  CORE PHYSICS (DERIVED):
+    - Parallel spinor on G2 holonomy manifold (Berger's theorem)
+    - Racetrack potential from competing instantons (standard flux compactification)
+    - Pneuma coupling, flow parameter, Lagrangian validity
+    - 12 bridge pairs from b3/2 = 24/2 = 12 (pure topology)
+    - Per-pair OR reduction operator (Clifford algebra Cl(2,0))
+  CONSCIOUSNESS I/O INTERPRETATION (SPECULATIVE):
+    - 12 bridge pairs as "neural gates" for consciousness flow
+    - Normal/mirror halves as perception/intuition channels
+    - The consciousness interpretation of the geometric structure is
+      not empirically validated. The mathematical bridge structure is sound;
+      the consciousness connection is frontier hypothesis.
 
 v22.0 CHANGES:
   - 12x(2,0) paired bridge system: M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
-  - Pneuma I/O mechanism via paired bridges as "neural gates"
+  - Pneuma I/O mechanism via paired bridges as "neural gates" (SPECULATIVE)
   - Per-pair OR reduction: R_perp^i = [[0,-1],[1,0]] for each pair
   - Full OR: tensor_{i=1}^{12} R_perp^i
 
-PNEUMA I/O MECHANISM (v22):
+PNEUMA I/O MECHANISM (v22, SPECULATIVE):
   Each bridge pair B_i = (y_{1i}, y_{2i}) serves as a "neural gate":
     - Input (y_{1i}): Perception channel from bulk time t
     - Output (y_{2i}): Intuition via cyclic feedback through OR
-  This creates 12 parallel consciousness channels.
+  This creates 12 parallel consciousness channels (SPECULATIVE interpretation).
 
 Licensed under the MIT License. See LICENSE file for details.
 

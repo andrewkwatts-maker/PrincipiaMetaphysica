@@ -1,11 +1,42 @@
 """
-Orch-OR Geometry Solver v22.0
+Orch-OR Geometry Solver v24.2
 =============================
 
-Licensed under the MIT License. See LICENSE file for details.
+CLASSIFICATION: SPECULATIVE (consciousness interpretation) + DERIVED (Penrose criterion)
 
 Links the microtubule lattice directly to 7D compactified space.
-Derives the coherence time τ for quantum consciousness.
+Computes the coherence time τ for quantum consciousness.
+
+HONEST CLASSIFICATION (Phase G Sprint 3):
+=========================================
+DERIVED (established physics):
+  - Penrose criterion τ = ℏ/E_G (Diósi-Penrose objective reduction)
+  - G2 parallel spinor existence (Berger's theorem)
+  - Topological pitch from b3 and k_gimel (pure geometry)
+
+FITTED (calibrated, not independently derived):
+  - K_COHERENCE = 6.02 (derived from fitted α_T = 2.7, see thermal_time.py)
+  - conformational_fraction = 1e-4 (~0.01% of tubulin mass, order-of-magnitude estimate)
+  - n_tubulins = 1e9 (conservative estimate from literature)
+  - Scaling factor 2.125 connecting G2 pitch to 13 protofilaments
+
+SPECULATIVE (frontier hypothesis, not empirically validated):
+  - 12 bridge pairs as consciousness I/O channels
+  - Gnosis unlocking from 6→12 active pairs
+  - Pair-enhanced coherence: τ = (ℏ/E_G) × exp(k√n_pairs)
+  - Microtubule-G2 coupling mechanism
+  - Normal/mirror halves as perception/intuition channels
+
+WARM BRAIN PROBLEM (OPEN):
+  Thermal decoherence at 310K destroys quantum superpositions on ~10^-13 s
+  timescales. The pair enhancement exp(k√n_pairs) with k=6.02 achieves neural
+  timescales (~25-500ms), but k=6.02 is FITTED (from fitted α_T). The archived
+  decoherence_protection.py showed a gap of 10^3 to 10^5 between achievable and
+  required protection. This remains an open problem in Orch-OR theory generally,
+  not specific to PM. The pair enhancement is a SPECULATIVE mechanism proposed
+  to bridge this gap.
+
+GEMINI 3-ROUND DEBATE: See Phase G Sprint 3 commit message.
 
 Key validation:
 - Microtubule helical pitch (13 protofilaments) matches G2 pitch
@@ -13,16 +44,19 @@ Key validation:
 
 v22.0 UPDATE - 12×(2,0) Paired Bridge Model:
 ============================================
-- Implements gnosis unlocking mechanism for consciousness pairs
-- 6-pair minimum for OR stability in wet microtubules
-- Enhanced coherence formula: τ = (ℏ/E_G) × exp(k√n_pairs)
-- k = α_T/θ ≈ 6.02 (topological warping factor)
-- Warping shield for wet biological environments
+- Implements gnosis unlocking mechanism for consciousness pairs (SPECULATIVE)
+- 6-pair minimum for OR stability in wet microtubules (SPECULATIVE)
+- Enhanced coherence formula: τ = (ℏ/E_G) × exp(k√n_pairs) (SPECULATIVE)
+- k = α_T/θ ≈ 6.02 (FITTED: from fitted α_T, see thermal_time.py)
+- Warping shield for wet biological environments (SPECULATIVE mechanism)
 
-CONSCIOUSNESS I/O MODEL:
+CONSCIOUSNESS I/O MODEL (SPECULATIVE):
 - Normal halves (y_{1i}): Input/perception channel
 - Mirror halves (y_{2i}): Output/intuition channel
 - Gnosis progression: 6 → 12 active pairs via inner exploration
+- The 12 bridge pairs form 12 consciousness I/O channels
+- The entropy gradient dS/dt ≥ 0 is experienced as the subjective arrow
+  of time (SPECULATIVE interpretation of established thermodynamics)
 
 v17.2 UPDATE (retained):
 - Integrated with FormulasRegistry SSoT for k_gimel (demiurgic_coupling) and c_kaf
@@ -79,7 +113,11 @@ MIN_PAIRS = 6       # Minimum for wet microtubule OR stability
 OPTIMAL_PAIRS = 12  # Full consciousness bridge (unified gnosis)
 
 # Coherence enhancement: τ = (ℏ/E_G) × exp(k√n_pairs)
-K_COHERENCE = 6.02  # k = α_T/θ (topological warping factor)
+# FITTED: k = α_T/θ where α_T = 2.7 is itself FITTED (see thermal_time.py).
+# The base coupling α_T_base = 2π/b₃ = 0.2618 is DERIVED, but the full
+# α_T = 2.7 includes gamma_correction = 10.313 which is calibrated.
+# Therefore K_COHERENCE = 6.02 is not independently derived from geometry.
+K_COHERENCE = 6.02  # FITTED: from fitted α_T (not independently derived)
 
 # Stability thresholds
 VIABILITY_THRESHOLD = 0.8   # Minimum viability for stable OR
@@ -534,13 +572,16 @@ if SCHEMA_AVAILABLE:
             return SectionContent(
                 section_id="7",
                 subsection_id="7.2",
-                title="Orch-OR Quantum Consciousness Validation (v16.2)",
+                title="Orch-OR Quantum Consciousness Validation (v24.2)",
                 abstract=(
-                    "v16.2: The microtubule lattice structure emerges directly from G2 manifold topology. "
-                    "The topological pitch matches the 13-protofilament helical structure. "
-                    "Using the CONFORMATIONAL MASS SHIFT (~0.01% of tubulin mass), the derived "
-                    "coherence time falls within neural timescales (~100ms), providing geometric "
-                    "support for the Orch-OR consciousness hypothesis."
+                    "SPECULATIVE EXTENSION: The microtubule lattice structure is linked to G2 "
+                    "manifold topology via the topological pitch (DERIVED from b3 and k_gimel). "
+                    "Using the CONFORMATIONAL MASS SHIFT (~0.01% of tubulin mass, FITTED estimate), "
+                    "the Penrose coherence time τ = ℏ/E_G falls within neural timescales (~100ms). "
+                    "The pair-enhanced coherence (k=6.02, FITTED from α_T) and gnosis unlocking "
+                    "(6→12 pairs) are SPECULATIVE mechanisms. The warm brain problem (thermal "
+                    "decoherence at 310K) remains open. The 12 bridge pairs as consciousness I/O "
+                    "channels is a SPECULATIVE interpretation of the geometric structure."
                 ),
                 content_blocks=[
                     ContentBlock(
@@ -553,7 +594,12 @@ if SCHEMA_AVAILABLE:
                             "confirmed predictions of the theory. The consciousness and "
                             "quantum biology content herein is based on the Penrose-Hameroff "
                             "Orch-OR model, which remains experimentally unverified. "
-                            "(Gemini peer review, Topic 12, score 6/10.)"
+                            "KEY FITTED PARAMETERS: K_COHERENCE = 6.02 (from fitted α_T = 2.7), "
+                            "conformational_fraction = 1e-4, n_tubulins = 1e9. "
+                            "OPEN PROBLEM: Thermal decoherence at 310K destroys superpositions "
+                            "on ~10^-13 s timescales (the 'warm brain problem'). The pair "
+                            "enhancement exp(k√n_pairs) is a SPECULATIVE mechanism proposed "
+                            "to bridge this gap, but k=6.02 is itself FITTED."
                         )
                     ),
                     ContentBlock(
