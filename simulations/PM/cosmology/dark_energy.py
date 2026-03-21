@@ -4,7 +4,7 @@ Dark Energy from Dimensional Reduction v22.0
 
 Licensed under the MIT License. See LICENSE file for details.
 
-Derives dark energy equation of state from G2 compactification and thawing
+Proposes dark energy equation of state from G2 compactification and thawing
 quintessence dynamics. The b₃=24 associative 3-cycles determine the equation
 of state via the thawing formula: w₀ = -1 + 1/b₃.
 

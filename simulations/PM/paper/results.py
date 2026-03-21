@@ -189,7 +189,7 @@ class ResultsV16_2(SimulationBase):
                     "DESI 2025 BAO-only data favor a slight deviation: w₀ = −0.957 ± 0.067 "
                     "(BAO-only) at 0.64σ from −1, consistent with thawing quintessence. "
                     "Principia Metaphysica v24.2 derives w₀ from G₂ manifold topology with "
-                    "<strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), achieving <strong>116:1 compression ratio</strong>. "
+                    "<strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), achieving <strong>116:1 compression ratio</strong> (with classifications ranging from DERIVED through MOTIVATED to FITTED). "
                     "(The complete geometric derivation from dimensional reduction is presented in Section 5.2; here we summarize the result and experimental comparison.)"
                 )
             ),

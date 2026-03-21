@@ -1850,7 +1850,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 ),
                 category="PREDICTED",
                 description=(
-                    "DESI dark energy equation of state test. The PM framework derives "
+                    "DESI dark energy equation of state test. The PM framework proposes "
                     "w_0 = -1 + 1/b_3 = -23/24 from the third Betti number b_3 = 24 of "
                     "the G2 compactification manifold via the Maximum Entropy Principle. "
                     "DESI DR2/DR3 BAO measurements constrain w_0 to +/-0.02. If DESI "

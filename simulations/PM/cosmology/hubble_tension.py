@@ -611,11 +611,12 @@ class HubbleTensionV16(SimulationBase):
             subsection_id="5.4",
             title="Hubble Tension: KNP-Aligned Bridge Axion EDE",
             abstract=(
-                f"We compute the Early Dark Energy (EDE) contribution from "
+                f"REFUTED. We compute the Early Dark Energy (EDE) contribution from "
                 f"KNP-aligned bridge axions in the G2 manifold framework. "
                 f"With b3=24 giving N=12 axion species and f_eff = {f_eff:.2e} GeV, "
                 f"the EDE fraction f_EDE = {f_ede:.2e} is ~8 orders of magnitude "
-                f"below the 5-10% required for Hubble tension resolution."
+                f"below the 5-10% required for Hubble tension resolution. "
+                f"This mechanism is quantitatively insufficient (46-order mass gap)."
             ),
             content_blocks=[
                 ContentBlock(

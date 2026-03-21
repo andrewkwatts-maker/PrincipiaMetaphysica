@@ -10,7 +10,7 @@ SimulationBase framework.
 
 Key Physics:
 - Geometric suppression factor S = exp(2*pi*d/R) from TCS neck topology
-- Cycle separation d/R ~ 0.12 derived from K=4 matching fibres
+- Cycle separation d/R ~ 0.12 obtained from K=4 matching fibres
 - Proton lifetime tau_p ~ 3.9 x 10^34 years (2.3x above Super-K bound)
 - Branching ratio BR(p -> e+pi0) = 0.25 from geometric orientation sum
 

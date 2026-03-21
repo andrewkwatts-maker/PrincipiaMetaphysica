@@ -161,7 +161,7 @@ class DiscussionV16(SimulationBase):
                     "The full theory lives in 27D with structure (24,1,2): twelve 2D bridge pairs B<sub>i</sub><sup>(2,0)</sup>, "
                     "2D sampler data fields S<sup>(2,0)</sup>, and a single timelike fiber T¹. The OR reduction "
                     "operator R<sub>⊥</sub> creates dual 13D(12,1) observable shadows, enabling mirror-sector "
-                    "dynamics (Z₂ symmetry) and deriving cosmological observables from pure topology."
+                    "dynamics (Z₂ symmetry) and proposing cosmological observables from pure topology."
                 )
             ),
             ContentBlock(
@@ -752,7 +752,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The PM framework derives all Standard Model parameters from a single TCS G₂ manifold with "
+                    "The PM framework proposes Standard Model parameters from a single TCS G₂ manifold with "
                     "one constraint (Higgs mass fixes Re(T) = 7.086). This section summarizes the parameter "
                     "derivations and presents testable predictions."
                 )
@@ -1045,7 +1045,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This framework derives Standard Model parameters from a single TCS G₂ manifold with "
+                    "This framework proposes Standard Model parameters from a single TCS G₂ manifold with "
                     "1 constraint (Higgs mass fixes Re(T)). The agreement with experimental data should be "
                     "interpreted with caution: while many predictions fall within experimental uncertainties, "
                     "the framework remains a theoretical proposal requiring experimental validation."
@@ -1195,7 +1195,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The M<sup>27</sup>(24,1,2) dual-shadow framework derives cosmological observables from the "
+                    "The M<sup>27</sup>(24,1,2) dual-shadow framework proposes cosmological observables from the "
                     "G₂ modulus dynamics and the Maximum Entropy Principle on the moduli space:"
                 )
             ),

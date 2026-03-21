@@ -567,7 +567,7 @@ class DynamicalLambdaRelaxation(SimulationBase):
         if V_bare <= 0:
             classification = "UNFOUNDED: V_bare < 0 (AdS), cannot match positive Lambda"
         elif abs(log_ratio_naive) < 1:
-            classification = "DERIVED: Naive entropy gives Lambda within 1 order"
+            classification = "SPECULATIVE: Naive entropy within 1 order (integration timescale not topological)"
         elif abs(log_ratio_naive) < 10:
             classification = "PLAUSIBLE: Naive entropy within 10 orders"
         elif math.isfinite(S_required) and abs(entropy_ratio - 1.0) < 0.1:
