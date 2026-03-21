@@ -521,6 +521,12 @@ class PrincipiaValidator:
     def cert_g79_sampler_entropy(self):
         """G79: Sampler Entropy Dynamics Validation.
 
+        NOTE: This gate validates the entropy dynamics ENGINE (self-consistency,
+        Second Law, topological kappa). It does NOT validate cosmological
+        applications of entropy (dynamical Lambda, EDE damping, etc.), which
+        depend on integration timescales not fixed by topology and are
+        classified SPECULATIVE.
+
         Tests:
         1. dS_Pneuma/dt_thermal >= 0 (Second Law) across random initial conditions
         2. Convergence to equilibrium S_eq within relaxation time

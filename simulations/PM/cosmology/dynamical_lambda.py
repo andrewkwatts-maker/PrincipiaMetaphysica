@@ -1014,7 +1014,20 @@ class DynamicalLambdaRelaxation(SimulationBase):
             ),
             ContentBlock(
                 type="heading",
-                content="Entropy Suppression Mechanism",
+                content="Entropy Suppression Mechanism (SPECULATIVE)",
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="warning",
+                title="Speculative Extension",
+                content=(
+                    "The following entropy suppression mechanism requires an integration "
+                    "timescale that is not fixed by G&#8322; topology. The entropy rate "
+                    "dS/dt is topological, but the total integrated entropy &int;dS depends on "
+                    "a thermal time parameter whose value is not independently derived. "
+                    "This section is classified SPECULATIVE pending derivation of the "
+                    "integration timescale from first principles."
+                ),
             ),
             ContentBlock(
                 type="paragraph",
