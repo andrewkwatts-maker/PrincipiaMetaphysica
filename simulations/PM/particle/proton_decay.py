@@ -1010,6 +1010,107 @@ class ProtonDecaySimulation(SimulationBase):
 
 
     # =========================================================================
+    # Asymptotic Safety UV Fixed Point — dimension-6 operator enhancement
+    # =========================================================================
+    def compute_lifetime_with_AS(self, registry: 'PMRegistry' = None,
+                                  verbose: bool = False) -> Dict[str, Any]:
+        """
+        Compute AS-corrected proton lifetime using pure G₂ topology.
+
+        The dimension-6 Wilson coefficient acquires a suppression factor
+        λ₆_eff = exp(−χ_eff / b₃) = exp(−6) ≈ 0.00248 from the topological
+        cycle ratio. Since τ_p ∝ 1/|C₆|², the lifetime is enhanced by
+        1/λ₆² = exp(12) ≈ 1.63 × 10⁵.
+
+        Both inputs are Pillar Seeds: b₃ = 24, χ_eff = 144.
+        ZERO fitted parameters enter the suppression factor.
+
+        Classification: TOPOLOGICAL_ARITHMETIC (suppression factor)
+                       MOTIVATED_IDENTIFICATION (α*⁻¹ = b₃)
+                       PHENOMENOLOGICAL (base lifetime via C_PREFACTOR)
+
+        Returns:
+            Dictionary with base, AS-enhanced, and classification results.
+        """
+        from simulations.PM.gauge.asymptotic_safety import (
+            get_lambda6_suppression,
+            get_as_enhancement_factor,
+            get_alpha_star_inv,
+        )
+
+        # Get AS quantities from FormulasRegistry (SSoT)
+        lambda_6 = get_lambda6_suppression()          # exp(-6) ≈ 0.00248
+        enhancement = get_as_enhancement_factor()      # exp(12) ≈ 162755
+        alpha_star_inv = get_alpha_star_inv()           # = b₃ = 24
+
+        # Base proton lifetime (standard GUT formula)
+        M_GUT = 2.1e16  # GeV, geometric
+        alpha_GUT = 1.0 / 23.54
+        K = 4
+        S_geom = np.exp(1.0 / K)
+
+        M_ratio = M_GUT / 1e16
+        alpha_ratio = 0.03 / alpha_GUT
+        tau_base = (self.C_PREFACTOR
+                    * (M_ratio ** 4)
+                    * (alpha_ratio ** 2)
+                    * S_geom)
+
+        # AS-enhanced lifetime: τ_p^AS = τ_p_base / λ₆²
+        tau_AS = tau_base * enhancement
+
+        # Check Hyper-K 2027 projected bound
+        hyper_k_bound = 1e35  # years (projected)
+        super_k_bound = 1.6e34  # years (current)
+
+        results = {
+            # Base (standard GUT)
+            "base.tau_p_years": tau_base,
+            "base.log10_tau": np.log10(tau_base),
+
+            # AS enhancement
+            "as.lambda_6_suppression": lambda_6,
+            "as.chi_eff_over_b3": 6,  # integer
+            "as.enhancement_factor": enhancement,
+            "as.alpha_star_inv": alpha_star_inv,
+
+            # AS-corrected lifetime
+            "as.tau_p_years": tau_AS,
+            "as.log10_tau": np.log10(tau_AS),
+
+            # Experimental comparison
+            "as.above_super_k": tau_AS > super_k_bound,
+            "as.super_k_ratio": tau_AS / super_k_bound,
+            "as.above_hyper_k": tau_AS > hyper_k_bound,
+            "as.hyper_k_ratio": tau_AS / hyper_k_bound,
+
+            # Classification
+            "as.suppression_classification": "TOPOLOGICAL_ARITHMETIC",
+            "as.coupling_classification": "MOTIVATED_IDENTIFICATION",
+            "as.base_classification": "PHENOMENOLOGICAL (C_PREFACTOR fitted)",
+            "as.fitted_params_in_suppression": 0,
+            "as.pillar_seeds_used": ["b3=24", "chi_eff=144"],
+        }
+
+        if verbose:
+            print("\n" + "=" * 70)
+            print(" ASYMPTOTIC SAFETY — PROTON LIFETIME ENHANCEMENT")
+            print("=" * 70)
+            print(f"\n  α*⁻¹ = b₃ = {alpha_star_inv:.0f} (MOTIVATED_IDENTIFICATION)")
+            print(f"  χ_eff / b₃ = 144/24 = 6 (integer)")
+            print(f"  λ₆_eff = exp(−6) = {lambda_6:.6f}")
+            print(f"  Enhancement = 1/λ₆² = exp(12) = {enhancement:.2f}")
+            print(f"\n  Base τ_p = {tau_base:.2e} years (PHENOMENOLOGICAL)")
+            print(f"  AS τ_p  = {tau_AS:.2e} years")
+            print(f"  log₁₀(τ_p^AS) = {np.log10(tau_AS):.2f}")
+            print(f"\n  Super-K ratio: {tau_AS / super_k_bound:.1f}× above bound")
+            print(f"  Hyper-K ratio: {tau_AS / hyper_k_bound:.1f}× above 2027 bound")
+            print(f"\n  Fitted params in suppression: ZERO")
+            print(f"  Pillar Seeds: b₃=24, χ_eff=144")
+
+        return results
+
+    # =========================================================================
     # Sprint 5, Task A: Entropy-suppressed proton lifetime exploration
     # =========================================================================
     def compute_lifetime_with_entropy(self, verbose: bool = False) -> Dict[str, Any]:

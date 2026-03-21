@@ -123,6 +123,12 @@ class PrincipiaValidator:
         self.cert_g80_torsion_funnel_lambda()
 
         # ═══════════════════════════════════════════════════════════════
+        # ASYMPTOTIC SAFETY SECTOR (G81) — Pure G₂ Topology
+        # ═══════════════════════════════════════════════════════════════
+        print("\n[ASYMPTOTIC SAFETY SECTOR]")
+        self.cert_g81_asymptotic_safety_fixed_point()
+
+        # ═══════════════════════════════════════════════════════════════
         # OPERATIONAL SECTOR (C34-C42)
         # ═══════════════════════════════════════════════════════════════
         print("\n[OPERATIONAL SECTOR]")
@@ -751,6 +757,145 @@ class PrincipiaValidator:
             },
         }
         print(f"  G80-LAMBDA: {status} ({metric})")
+
+    # ═══════════════════════════════════════════════════════════════════
+    # ASYMPTOTIC SAFETY SECTOR (G81) — Pure G₂ Topology
+    # ═══════════════════════════════════════════════════════════════════
+
+    def cert_g81_asymptotic_safety_fixed_point(self):
+        """G81: Asymptotic Safety UV Fixed Point from G₂ Topology.
+
+        Validates the AS fixed point derivation:
+            α*⁻¹ = b₃ = dim(H³(X, ℝ)) = 24
+            λ₆_eff = exp(−χ_eff / b₃) = exp(−6) ≈ 0.00248
+
+        Tests:
+        1. α*⁻¹ = b₃ (exact integer equality, from FormulasRegistry)
+        2. χ_eff / b₃ is an integer (topological ratio)
+        3. λ₆_eff = exp(−χ_eff/b₃) matches expected (tolerance 1e-10)
+        4. λ₆_eff > 1e-3 (suppression is non-trivial but not catastrophic)
+        5. AS-enhanced proton lifetime > 10³⁵ years (Hyper-K 2027 bound)
+
+        Classification: MOTIVATED_IDENTIFICATION
+            α*⁻¹ = b₃ is an identification, not a theorem. No published
+            result connects AS fixed points to Betti numbers. The exponential
+            suppression exp(−6) is TOPOLOGICAL_ARITHMETIC (both inputs are
+            Pillar Seeds, ratio is integer, zero fitted parameters).
+
+        Gate status:
+            LOCKED if all 5 tests pass
+            FAILED if any test fails
+        """
+        import math
+
+        try:
+            from simulations.PM.gauge.asymptotic_safety import (
+                AsymptoticSafetySimulation,
+                get_alpha_star_inv,
+                get_lambda6_suppression,
+                get_as_enhancement_factor,
+            )
+            from simulations.PM.particle.proton_decay import ProtonDecaySimulation
+            _module_available = True
+        except ImportError:
+            _module_available = False
+
+        if not _module_available:
+            status = "SKIPPED"
+            metric = "asymptotic_safety module unavailable"
+            self.results['G81-AS'] = {
+                "status": status,
+                "metric": metric,
+                "expected": "α*⁻¹ = b₃, λ₆ = exp(−6)",
+                "sector": "ASYMPTOTIC_SAFETY"
+            }
+            print(f"  G81-AS: {status} ({metric})")
+            return
+
+        # Retrieve values from SSoT
+        alpha_star_inv = get_alpha_star_inv()       # Should = b₃ = 24
+        lambda_6 = get_lambda6_suppression()        # Should = exp(-6)
+        enhancement = get_as_enhancement_factor()   # Should = exp(12)
+
+        # Get b₃ and χ_eff from FormulasRegistry directly
+        from simulations.core.FormulasRegistry import get_registry
+        reg = get_registry()
+        b3 = reg.elder_kads       # = 24
+        chi_eff = reg.mephorash_chi  # = 72 (per-sector)
+        chi_eff_total = reg._chi_eff_total  # = 144 (total manifold)
+
+        # Test 1: α*⁻¹ = b₃ (exact integer equality)
+        test1_pass = alpha_star_inv == float(b3)
+
+        # Test 2: χ_eff_total / b₃ is an integer
+        ratio = chi_eff_total / b3
+        test2_pass = abs(ratio - round(ratio)) < 1e-10
+
+        # Test 3: λ₆ = exp(−χ_eff_total/b₃) (tolerance 1e-10)
+        expected_lambda = math.exp(-chi_eff_total / b3)
+        test3_pass = abs(lambda_6 - expected_lambda) < 1e-10
+
+        # Test 4: λ₆ > 1e-3 (non-trivial suppression)
+        test4_pass = lambda_6 > 1e-3
+
+        # Test 5: AS-enhanced proton lifetime > 10³⁵ years
+        sim = ProtonDecaySimulation()
+        as_results = sim.compute_lifetime_with_AS(verbose=False)
+        tau_AS = as_results['as.tau_p_years']
+        hyper_k_bound = 1e35
+        test5_pass = tau_AS > hyper_k_bound
+
+        all_pass = test1_pass and test2_pass and test3_pass and test4_pass and test5_pass
+
+        if all_pass:
+            status = "LOCKED"
+            metric = (
+                f"α*⁻¹=b₃={alpha_star_inv:.0f}, "
+                f"λ₆=exp(−{ratio:.0f})={lambda_6:.6f}, "
+                f"τ_p^AS={tau_AS:.2e}yr"
+            )
+        else:
+            status = "FAILED"
+            failures = []
+            if not test1_pass:
+                failures.append(f"α*⁻¹={alpha_star_inv}≠b₃={b3}")
+            if not test2_pass:
+                failures.append(f"χ_eff/b₃={ratio} not integer")
+            if not test3_pass:
+                failures.append(f"λ₆={lambda_6}≠exp(−{ratio:.0f})")
+            if not test4_pass:
+                failures.append(f"λ₆={lambda_6}<1e-3")
+            if not test5_pass:
+                failures.append(f"τ_p^AS={tau_AS:.2e}<10³⁵")
+            metric = "; ".join(failures)
+
+        self.results['G81-AS'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "α*⁻¹ = b₃ = 24, λ₆ = exp(−6), τ_p > 10³⁵ yr",
+            "sector": "ASYMPTOTIC_SAFETY",
+            "honesty": {
+                "alpha_star_inv": alpha_star_inv,
+                "classification": "MOTIVATED_IDENTIFICATION",
+                "b3_source": "Pillar Seed (FormulasRegistry)",
+                "chi_eff_source": "Pillar Seed (FormulasRegistry)",
+                "chi_eff_over_b3": int(ratio),
+                "lambda_6_suppression": lambda_6,
+                "as_enhancement_factor": enhancement,
+                "tau_p_AS_years": tau_AS,
+                "fitted_params_in_suppression": 0,
+                "what_IS_derived": (
+                    "exp(−χ_eff/b₃) = exp(−6) is purely topological arithmetic. "
+                    "Both inputs are Pillar Seeds, ratio is integer."
+                ),
+                "what_is_NOT_derived": (
+                    "α*⁻¹ = b₃ is an identification, not a theorem. "
+                    "No published result connects AS fixed points to Betti numbers."
+                ),
+                "gemini_verdict": "MOTIVATED_IDENTIFICATION (2026-03-21, 3 rounds, 9/10 for honest labeling)",
+            },
+        }
+        print(f"  G81-AS: {status} ({metric})")
 
     # ═══════════════════════════════════════════════════════════════════
     # OPERATIONAL CERTIFICATES
