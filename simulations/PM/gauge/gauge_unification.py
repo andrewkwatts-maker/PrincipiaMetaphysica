@@ -1356,8 +1356,9 @@ class GaugeRGRunner:
         Returns:
             Dictionary with AS-corrected couplings
         """
-        # Target fixed point value: 1/alpha* ~ 24 (from G2 topology)
-        alpha_star_inv_target = 24.0
+        # α*⁻¹ = b₃ from G₂ moduli space dimension (MOTIVATED_IDENTIFICATION)
+        from simulations.PM.gauge.asymptotic_safety import get_alpha_star_inv
+        alpha_star_inv_target = get_alpha_star_inv()  # = b₃ from FormulasRegistry
 
         # Current mean coupling
         mean_current = np.mean([
@@ -1538,9 +1539,10 @@ class GaugeRGRunner:
         # ===================================================================
         # Step 3: Asymptotic safety fixed point correction
         # ===================================================================
-        # Claimed: 1/alpha* = b3 = 24 is the UV fixed point
-        alpha_star_inv = 24.0  # = b3
-        AS_weight = 0.15  # 15% correction weight (same as existing code)
+        # α*⁻¹ = b₃ from G₂ moduli space dimension (MOTIVATED_IDENTIFICATION)
+        from simulations.PM.gauge.asymptotic_safety import get_alpha_star_inv
+        alpha_star_inv = get_alpha_star_inv()  # = b₃ from FormulasRegistry
+        AS_weight = 0.15  # FITTED mixing weight (not derived from topology)
         Delta_AS = AS_weight * (alpha_star_inv - alpha_GUT_inv_moduli)
 
         # ===================================================================
@@ -1749,7 +1751,7 @@ if __name__ == "__main__":
     print("=" * 80)
 
     # Create a runner with SM couplings
-    alpha_em = 1.0 / 137.036
+    alpha_em = 1.0 / 137.036  # CODATA 2022
     sin2_tw = 0.231
     cos2_tw = 1.0 - sin2_tw
     a1 = (5.0 / 3.0) * alpha_em / cos2_tw

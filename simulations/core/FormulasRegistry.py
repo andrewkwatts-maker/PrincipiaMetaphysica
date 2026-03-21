@@ -5902,6 +5902,36 @@ class FormulasRegistry:
             "logic_closure": self.logic_closure  # = visible_gates + delta_jc = 288
         }
 
+    # ===================================================================
+    # Asymptotic Safety UV Fixed Point (from G₂ topology)
+    # ===================================================================
+
+    @property
+    def alpha_star_inv_AS(self) -> float:
+        """UV fixed-point inverse coupling α*⁻¹ = b₃.
+
+        Classification: MOTIVATED_IDENTIFICATION.
+        Source: dim(H³(X, ℝ)) = b₃ from Hitchin functional moduli space.
+        """
+        return float(self._b3)
+
+    @property
+    def lambda_6_suppression(self) -> float:
+        """Dimension-6 operator suppression: exp(−χ_eff / b₃) = exp(−6).
+
+        Classification: TOPOLOGICAL_ARITHMETIC.
+        Both χ_eff = 144 and b₃ = 24 are Pillar Seeds. Ratio is integer.
+        """
+        return math.exp(-self._chi_eff_total / self._b3)
+
+    @property
+    def as_enhancement_factor(self) -> float:
+        """Proton lifetime enhancement 1/λ₆² = exp(2 × χ_eff / b₃) = exp(12).
+
+        Classification: TOPOLOGICAL_ARITHMETIC.
+        """
+        return 1.0 / (self.lambda_6_suppression ** 2)
+
     def get_all_derived(self) -> Dict[str, float]:
         """Return all derived values as a dictionary."""
         return {
@@ -5913,7 +5943,10 @@ class FormulasRegistry:
             "c_kaf": self.c_kaf,
             "mass_ratio": self.mass_ratio,
             "alpha_inverse": self.alpha_inverse,
-            "sterile_ratio": self.sterile_ratio
+            "sterile_ratio": self.sterile_ratio,
+            "alpha_star_inv_AS": self.alpha_star_inv_AS,
+            "lambda_6_suppression": self.lambda_6_suppression,
+            "as_enhancement_factor": self.as_enhancement_factor,
         }
 
     def __repr__(self) -> str:
