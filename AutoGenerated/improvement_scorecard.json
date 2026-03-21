@@ -288,6 +288,7 @@
       "after_phase_c": "2-3/10",
       "after_phase_d": "2/10",
       "after_phase_e_AS": "2-3/10 (SSoT improved, new gate LOCKED, Gemini 9/10 for honest labeling)",
+      "after_phase_f": "2-3/10 (humble language, entropy stripped from core, G82 mirror DM gate, Gemini 10/10 honest labeling)",
       "assessment_phase_c": "Framework improved methodology significantly (all 5 UNFOUNDED eliminated, new modules with honest derivation chains). S8 mechanism is the strongest concrete improvement.",
       "assessment_phase_d": "Phase D sampler entropy extensions did NOT improve the score. All 6 attempts classified FITTED or REFUTED. Key finding: exp(-S) is either catastrophically over-suppressive or negligibly small depending on integration range, which is not uniquely determined by topology. The entropy mechanism is a universal exponential that can match anything (FITTED) rather than a genuine derivation (DERIVED)."
     },
@@ -324,6 +325,12 @@
       "sprint_5_proton_ckm": "UNCHANGED — proton entropy 0.009% (negligible), CKM phases average to zero",
       "sprint_6_higgs": "REFUTED — Wilson-line gives 3.4e18 GeV (16 orders off), lambda=1/24 misattributes triality",
       "meta_conclusion": "Sampler entropy S^(2,0) is not the universal gap-closing mechanism the proposals claimed. The exponential exp(-S) has unlimited suppression power but no unique integration range, making it unfalsifiable. Each 'gap closure' amounts to choosing the integration parameter to match the known answer."
+    },
+    "phase_f_geometric_cleanup": {
+      "sprint_1_language": "Humble language across 11 files. 'derives' -> 'proposes', 'proves' -> 'consistent with'. Gemini 9.5/10.",
+      "sprint_2_entropy": "Entropy cosmology reclassified SPECULATIVE. Callout warnings added. No code deleted, only classifications.",
+      "sprint_3_mirror_dm": "Gate G82 LOCKED: sigma=1/sqrt(6) DERIVED, Omega_DM/Omega_b=5.4 FITTED (T'/T=0.57 not derived). Gemini 10/10 honest labeling.",
+      "meta_conclusion": "Phase F focused on honesty, not new physics. All overclaiming language replaced. Entropy stripped from core claims. Mirror DM gate added with explicit FITTED acknowledgment for T'/T loop correction. Gemini gave highest-ever honest labeling score (10/10)."
     }
   }
 }

@@ -522,8 +522,10 @@ class MultiSectorV16(SimulationBase):
                 "We analyze the cosmological implications of the multi-sector structure "
                 "arising from G2 holonomy compactification. The modulation width between "
                 "sectors is derived from wavefunction overlap geometry, eliminating the "
-                "last phenomenological parameter. Dark matter abundance emerges as a "
-                "geometric prediction: Omega_DM/Omega_b ~ 5.4 from temperature asymmetry."
+                "last phenomenological parameter. The modulation width sigma = 1/sqrt(6) "
+                "is geometric; the mirror temperature ratio T'/T = 0.57 involves loop "
+                "corrections (FITTED). The resulting Omega_DM/Omega_b ~ 5.4 is a "
+                "motivated identification, consistent with Planck to 0.1 sigma."
             ),
             content_blocks=[
                 ContentBlock(
@@ -575,8 +577,12 @@ class MultiSectorV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "This prediction agrees with Planck 2018 measurements to within "
-                        "observational uncertainties, with no free parameters tuned to "
-                        "achieve this agreement."
+                        "0.1 sigma (5.40 vs 5.38 +/- 0.15). The geometric ingredient — "
+                        "modulation width sigma = sqrt(b3/chi_eff) = 1/sqrt(6) — is "
+                        "parameter-free. However, the loop-corrected temperature ratio "
+                        "T'/T = 0.57 is not independently derived from topology; the "
+                        "tree-level value 1/sqrt(6) would predict Omega_DM/Omega_b ~ 14.7. "
+                        "The full prediction is therefore classified MOTIVATED_IDENTIFICATION."
                     )
                 ),
                 ContentBlock(
@@ -1076,8 +1082,8 @@ class MultiSectorV16(SimulationBase):
                 "url": "https://en.wikipedia.org/wiki/Mirror_matter",
                 "relevance": (
                     "Mirror matter theories posit a hidden sector with identical particle "
-                    "content but different temperature. This simulation derives Omega_DM/Omega_b "
-                    "from the temperature ratio T'/T = 0.57."
+                    "content but different temperature. This simulation computes Omega_DM/Omega_b "
+                    "from the temperature ratio T'/T = 0.57 (loop-corrected, FITTED)."
                 ),
                 "validation_hint": (
                     "Verify Planck 2018 Omega_DM/Omega_b = 5.38 +/- 0.15. "
