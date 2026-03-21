@@ -1482,7 +1482,9 @@ class BridgeAxionEDE(SimulationBase):
                 "provides ~3 orders of mass suppression, but the remaining gap "
                 "to EDE-relevant masses (~10^{-27} eV) is ~46 orders of magnitude. "
                 "The mechanism is architecturally coherent but quantitatively "
-                "insufficient. Classification: PARTIAL."
+                "insufficient. Classification: PARTIAL. Entropy damping extensions "
+                "require a thermal integration timescale not fixed by topology "
+                "(classified FITTED by Gemini 3-round debate)."
             ),
             blocks=[],
         )
