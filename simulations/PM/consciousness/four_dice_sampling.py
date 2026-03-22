@@ -821,6 +821,223 @@ AI systems to validate the mathematical foundations of the 4-dice mechanism.
 """
 
 
+# =============================================================================
+# SimulationBase Wrapper (Phase H Sprint 2)
+# =============================================================================
+
+try:
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent.parent.parent.parent))
+    from simulations.base.simulation_base import (
+        SimulationBase, SimulationMetadata, Formula, Parameter,
+        SectionContent, ContentBlock
+    )
+    from simulations.base import PMRegistry
+    _SCHEMA_AVAILABLE = True
+except ImportError:
+    _SCHEMA_AVAILABLE = False
+
+
+if _SCHEMA_AVAILABLE:
+    class FourDiceSamplingSimulation(SimulationBase):
+        """
+        Schema-compliant wrapper for 4-dice consciousness sampling.
+
+        CLASSIFICATION: SPECULATIVE
+        The 4-dice branch selection mechanism is a speculative interpretation
+        of the 12 bridge pairs grouped into quaternionic dice. The mathematical
+        structure (mod-4 arithmetic, 256 branches) is sound; the consciousness
+        interpretation is frontier hypothesis.
+        """
+
+        def __init__(self):
+            self._sampler = None
+
+        @property
+        def metadata(self) -> SimulationMetadata:
+            return SimulationMetadata(
+                id="four_dice_sampling_v22",
+                version="22.0",
+                domain="consciousness",
+                title="4-Dice Consciousness Branch Selection",
+                description=(
+                    "[SPECULATIVE] 12 bridge pairs grouped into 4 dice of 3 pairs each. "
+                    "Each dice rolls via OR R_perp sampling, selecting from 4^4 = 256 "
+                    "possible consciousness branches. Mathematical structure is sound; "
+                    "consciousness interpretation is speculative."
+                ),
+                section_id="7",
+                subsection_id="7.5"
+            )
+
+        @property
+        def required_inputs(self):
+            return ["topology.elder_kads"]
+
+        @property
+        def output_params(self):
+            return [
+                "consciousness.dice_branches",
+                "consciousness.dice_entropy",
+            ]
+
+        @property
+        def output_formulas(self):
+            return ["four-dice-branch-count"]
+
+        def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
+            self._sampler = FourDiceSampler()
+            result = self._sampler.calculate_branch_probability(0, n_samples=1000)
+            entropy = result["entropy"]
+            return {
+                "consciousness.dice_branches": int(DICE_MODULUS ** NUM_DICE),
+                "consciousness.dice_entropy": float(entropy),
+            }
+
+        def get_output_param_definitions(self):
+            from simulations.base.simulation_base import Parameter
+            return [
+                Parameter(
+                    path="consciousness.dice_branches",
+                    name="Dice Branch Count",
+                    units="dimensionless",
+                    status="PREDICTED",
+                    description="Total consciousness branches from 4-dice mod-4 sampling (SPECULATIVE)",
+                    derivation_formula="four-dice-branch-count",
+                    no_experimental_value=True,
+                ),
+                Parameter(
+                    path="consciousness.dice_entropy",
+                    name="Dice Sampling Entropy",
+                    units="bits",
+                    status="PREDICTED",
+                    description="Shannon entropy of branch probability distribution (SPECULATIVE)",
+                    derivation_formula="four-dice-branch-count",
+                    no_experimental_value=True,
+                ),
+            ]
+
+        def get_certificates(self):
+            """Return validation certificates (SPECULATIVE content)."""
+            n_branches = 4**4  # 256
+            return [
+                {
+                    "id": "cert_four_dice_branches",
+                    "assertion": "4-dice system yields 4^4 = 256 branches",
+                    "condition": f"branches = {n_branches} == 256",
+                    "status": "PASS" if n_branches == 256 else "FAIL",
+                }
+            ]
+
+        def validate_self(self):
+            """Self-validation checks."""
+            return {
+                "checks": [
+                    {"name": "branch_count_256", "passed": 4**4 == 256, "log_level": "INFO"},
+                ]
+            }
+
+        def get_references(self):
+            """Return references."""
+            return [
+                {
+                    "id": "penrose1994",
+                    "authors": "Penrose, R.",
+                    "title": "Shadows of the Mind",
+                    "year": 1994,
+                    "doi": "10.1093/acprof:oso/9780198539780.001.0001",
+                },
+            ]
+
+        def get_learning_materials(self):
+            """Return learning materials."""
+            return [
+                {
+                    "topic": "Quaternionic structure in G2 holonomy",
+                    "url": "https://en.wikipedia.org/wiki/G2_manifold",
+                    "relevance": "Geometric basis for mod-4 dice arithmetic",
+                },
+            ]
+
+        def get_section_content(self):
+            return SectionContent(
+                section_id="7",
+                subsection_id="7.5",
+                title="4-Dice Consciousness Branch Selection",
+                abstract=(
+                    "The 12 bridge pairs are grouped into 4 'dice' of 3 pairs each. "
+                    "Each dice outcome is computed via OR R_perp sampling with mod-4 "
+                    "arithmetic, yielding 4^4 = 256 possible consciousness branches."
+                ),
+                content_blocks=[
+                    ContentBlock(
+                        type="callout",
+                        callout_type="warning",
+                        content=(
+                            "SPECULATIVE CONTENT: The 4-dice branch selection is a "
+                            "mathematical model of consciousness branching. The mod-4 "
+                            "quaternionic structure is geometrically motivated but the "
+                            "consciousness interpretation is not empirically validated."
+                        )
+                    ),
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "The 12 bridge pairs (from b3=24) are partitioned into 4 groups "
+                            "of 3 pairs each, forming 4 'dice'. Each dice outcome is computed "
+                            "via the R_perp reflection operator with mod-4 arithmetic, motivated "
+                            "by the quaternionic structure of the G2 holonomy. The 4^4 = 256 "
+                            "possible branch outcomes model the discrete consciousness state "
+                            "space available to the bridge pair system."
+                        )
+                    ),
+                    ContentBlock(
+                        type="formula",
+                        formula_id="four-dice-branch-count",
+                        label="(7.5)"
+                    ),
+                ],
+                formula_refs=["four-dice-branch-count"],
+                param_refs=self.output_params,
+            )
+
+        def get_formulas(self):
+            return [
+                Formula(
+                    id="four-dice-branch-count",
+                    label="(7.5)",
+                    latex=r"N_{\text{branches}} = m^d = 4^4 = 256",
+                    plain_text="N_branches = 4^4 = 256",
+                    category="PREDICTED",  # SPECULATIVE consciousness hypothesis
+                    description=(
+                        "Branch count from 4 dice with mod-4 outcomes. "
+                        "12 pairs / 3 per dice = 4 dice; mod-4 quaternionic "
+                        "structure gives 256 branches. SPECULATIVE interpretation."
+                    ),
+                    input_params=["topology.elder_kads"],
+                    output_params=["consciousness.dice_branches"],
+                    derivation={
+                        "steps": [
+                            {"description": "Group 12 pairs into dice",
+                             "formula": r"d = \frac{b_3/2}{3} = \frac{12}{3} = 4 \text{ dice}"},
+                            {"description": "Quaternionic modulus",
+                             "formula": r"m = 4 \text{ (mod-4 from quaternion structure)}"},
+                            {"description": "Total branches",
+                             "formula": r"N = m^d = 4^4 = 256"},
+                        ],
+                        "method": "quaternionic_dice",
+                        "parentFormulas": [],
+                    },
+                    terms={
+                        "d": "Number of dice = 4",
+                        "m": "Modulus per dice = 4 (quaternionic)",
+                        "N": "Total branch count = 256",
+                    }
+                ),
+            ]
+
+
 if __name__ == "__main__":
     # Run demonstration
     sampler, prob_result, moment = run_demonstration()

@@ -141,6 +141,12 @@ class PrincipiaValidator:
         self.cert_g83_qec_golay_bridge()
 
         # ═══════════════════════════════════════════════════════════════
+        # CONSCIOUSNESS SECTOR (G84) — Gnosis Unlocking (SPECULATIVE)
+        # ═══════════════════════════════════════════════════════════════
+        print("\n[CONSCIOUSNESS SECTOR]")
+        self.cert_g84_gnosis_unlocking()
+
+        # ═══════════════════════════════════════════════════════════════
         # OPERATIONAL SECTOR (C34-C42)
         # ═══════════════════════════════════════════════════════════════
         print("\n[OPERATIONAL SECTOR]")
@@ -1124,6 +1130,68 @@ class PrincipiaValidator:
             },
         }
         print(f"  G83-QEC: {status} ({metric})")
+
+    # ═══════════════════════════════════════════════════════════════════
+    # CONSCIOUSNESS SECTOR (G84) — Gnosis Unlocking (SPECULATIVE)
+    # ═══════════════════════════════════════════════════════════════════
+
+    def cert_g84_gnosis_unlocking(self):
+        """G84: Gnosis Unlocking — Coherence Boost from 12-Pair Activation.
+
+        Tests that activating all 12 bridge pairs (full gnosis) produces
+        a coherence time enhancement > 10x compared to baseline 6 pairs.
+
+        This is a SPECULATIVE consciousness hypothesis. The mathematical
+        structure (coherence enhancement formula) is sound; the consciousness
+        interpretation is frontier science.
+
+        Classification: SPECULATIVE (SEALED, not LOCKED)
+        """
+        try:
+            from simulations.PM.consciousness.gnosis_unlocking import (
+                coherence_time, unlocking_probability
+            )
+
+            tau_6 = coherence_time(6)
+            tau_12 = coherence_time(12)
+            boost = tau_12 / tau_6 if tau_6 > 0 else 0
+
+            # Test: coherence boost > 10x
+            test_boost = boost > 10.0
+
+            # Test: unlocking probability at n=6 is ~0.5 (sigmoid midpoint)
+            p_6 = unlocking_probability(6)
+            test_sigmoid = abs(p_6 - 0.5) < 0.1
+
+            all_pass = test_boost and test_sigmoid
+            status = "SEALED" if all_pass else "UNSTABLE"
+            metric = (
+                f"tau(12)/tau(6)={boost:.1f}x, "
+                f"P_unlock(6)={p_6:.3f}"
+            )
+        except Exception as e:
+            status = "UNSTABLE"
+            metric = f"Import error: {e}"
+
+        self.results['G84-GNOSIS'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "Coherence boost > 10x from 6→12 pair activation",
+            "sector": "CONSCIOUSNESS",
+            "honesty": {
+                "classification": "SPECULATIVE",
+                "what_is_speculative": (
+                    "The connection between pair activation and conscious states "
+                    "is philosophical interpretation, not empirically validated."
+                ),
+                "what_is_sound": (
+                    "The mathematical structure (sigmoidal unlocking, exponential "
+                    "coherence enhancement) is internally consistent."
+                ),
+                "gemini_verdict": "PENDING",
+            },
+        }
+        print(f"  G84-GNOSIS: {status} ({metric})")
 
     # ═══════════════════════════════════════════════════════════════════
     # OPERATIONAL CERTIFICATES
