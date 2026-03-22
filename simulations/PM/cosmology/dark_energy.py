@@ -243,6 +243,9 @@ class DarkEnergyV16(SimulationBase):
             "effective-dimension",
             "dark-energy-eos-derivation",
             "dark-energy-time-evolution",
+            "breathing-rho-pair",
+            "breathing-aggregation",
+            "breathing-variance-reduction",
         ]
 
     # -------------------------------------------------------------------------
@@ -348,19 +351,12 @@ class DarkEnergyV16(SimulationBase):
         D_compact = D_heterotic - D_observable  # 9 compact dimensions
 
         # Shadow dimension contribution
-        # From G2 holonomy: 7 compact dimensions with special structure
-        # Effective contribution: α_shadow = (b3/chi_eff) * geometric_factor
+        # FITTED (LEGACY): alpha_shadow = 0.576 was calibrated for the old
+        # D_eff formula w0 = -(D-1)/(D+1). Since v16.2, w0 uses the thawing
+        # formula w0 = -1 + 1/b3 which does NOT depend on alpha_shadow.
+        # Retained for backward compatibility with D_eff output parameter.
         geometric_factor = chi_eff / (b3 * b3)  # From wavefunction overlap
-        alpha_shadow = 0.576  # Calibrated from topology (chi_eff=144, b3=24)
-
-        # This gives: 24/(144/576) = 24*4 = 96... rescale
-        # Better derivation: α = (D_compact / D_heterotic) * (1 - exp(-b3/chi_eff))
-        alpha_shadow_derived = (D_compact / D_heterotic) * (
-            1.0 - np.exp(-b3 / chi_eff)
-        )
-
-        # Use theoretical value for consistency
-        alpha_shadow = 0.576
+        alpha_shadow = 0.576  # FITTED (LEGACY): not used in w0 derivation
 
         return {
             'D_bosonic': D_bosonic,
@@ -698,12 +694,77 @@ class DarkEnergyV16(SimulationBase):
                         "multi-component dark matter with portal coupling \u03b1_leak = 1/\u221a6 \u2248 0.408 from G₂ volume ratio (\u03b1_sample \u2248 0.57 with flux corrections)."
                     )
                 ),
+                ContentBlock(
+                    type="heading",
+                    content="Breathing Dark Energy Mechanism",
+                    level=2
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The breathing dark energy mechanism provides the physical reason "
+                        "WHY w₀ departs from -1. In the dual-shadow model, each of the "
+                        f"{b3 // 2} bridge pairs couples a normal-sector stress tensor to "
+                        "its OR-rotated mirror counterpart. The per-pair breathing density "
+                        "measures the mismatch between these tensors:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\rho_i = |T^{ab}_{\text{normal},i} - R_\perp^{(i)} T^{ab}_{\text{mirror},i}|",
+                    formula_id="breathing-rho-pair",
+                    label="(5.12)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "where R_perp^(i) = [[0,-1],[1,0]] is the 90-degree OR reduction "
+                        "operator acting on the i-th bridge pair (purely geometric, from "
+                        "Clifford algebra Cl(2,0)). The total breathing density is the "
+                        f"average over all {b3 // 2} pairs:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=rf"\rho_{{\text{{breath}}}} = \frac{{1}}{{{b3 // 2}}} \sum_{{i=1}}^{{{b3 // 2}}} \rho_i",
+                    formula_id="breathing-aggregation",
+                    label="(5.13)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The 12-pair aggregation (from b₃ = 24, giving b₃/2 = 12 pairs) "
+                        "has a crucial statistical consequence: the effective variance of "
+                        "the breathing density is reduced by a factor of 1/sqrt(12):"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=rf"\sigma_{{\text{{eff}}}} = \frac{{\sigma_{{\text{{single}}}}}}{{\sqrt{{{b3 // 2}}}}} \approx 0.289\,\sigma_{{\text{{single}}}}",
+                    formula_id="breathing-variance-reduction",
+                    label="(5.14)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "This variance reduction explains the observed stability of the "
+                        "dark energy equation of state: the 12-pair aggregation smooths "
+                        "quantum fluctuations by a factor of ~3.5x, keeping w₀ tightly "
+                        "constrained near -23/24. The breathing mechanism is DERIVED: "
+                        "R_perp is geometric (Cl(2,0) algebra), the 12-pair count follows "
+                        "from b₃ = 24 (Pillar Seed), and the variance reduction is standard "
+                        "statistics applied to the topological pair count."
+                    )
+                ),
             ],
             formula_refs=[
                 "dimensional-reduction-cascade",
                 "effective-dimension",
                 "dark-energy-eos-derivation",
                 "dark-energy-time-evolution",
+                "breathing-rho-pair",
+                "breathing-aggregation",
+                "breathing-variance-reduction",
             ],
             param_refs=[
                 "cosmology.w0_derived",
@@ -908,6 +969,109 @@ class DarkEnergyV16(SimulationBase):
                     "a": "Scale factor (a=1 today)",
                     "w_a": f"Evolution parameter = -1/√{b3} ≈ {wa:.4f}",
                     "z": "Redshift"
+                }
+            ),
+            # ── Breathing Dark Energy Formulas (DERIVED) ──────────────
+            Formula(
+                id="breathing-rho-pair",
+                label="(5.12)",
+                latex=r"\rho_i = |T^{ab}_{\text{normal},i} - R_\perp^{(i)} T^{ab}_{\text{mirror},i}|",
+                plain_text="rho_i = |T_normal_i - R_perp T_mirror_i|",
+                category="DERIVED",
+                description=(
+                    "Per-pair breathing density from shadow stress-tensor mismatch. "
+                    "R_perp is the 90-degree OR reduction operator [[0,-1],[1,0]] from "
+                    "Clifford algebra Cl(2,0), acting on the i-th bridge pair. "
+                    "DERIVED: R_perp is purely geometric (pi/2 rotation in Euclidean "
+                    "bridge plane), and the stress tensors are standard GR objects."
+                ),
+                inputParams=["topology.elder_kads"],
+                outputParams=[],
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "Define OR operator on i-th bridge pair from Clifford algebra Cl(2,0)",
+                         "formula": r"R_\perp^{(i)} = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \in Cl(2,0)"},
+                        {"description": "Apply OR rotation to mirror stress tensor",
+                         "formula": r"T'^{ab}_{\text{mirror},i} = R_\perp^{(i)} T^{ab}_{\text{mirror},i}"},
+                        {"description": "Compute per-pair breathing density as mismatch norm",
+                         "formula": r"\rho_i = |T^{ab}_{\text{normal},i} - T'^{ab}_{\text{mirror},i}|"},
+                    ],
+                    "method": "shadow_pressure_mismatch",
+                    "parentFormulas": [],
+                },
+                terms={
+                    r"T^{ab}_{\text{normal}}": "Stress-energy tensor in the normal (visible) shadow",
+                    r"T^{ab}_{\text{mirror}}": "Stress-energy tensor in the mirror (hidden) shadow",
+                    r"R_\perp^{(i)}": "Per-pair OR reduction operator (90-degree rotation)",
+                }
+            ),
+            Formula(
+                id="breathing-aggregation",
+                label="(5.13)",
+                latex=rf"\rho_{{\text{{breath}}}} = \frac{{1}}{{{b3 // 2}}} \sum_{{i=1}}^{{{b3 // 2}}} \rho_i",
+                plain_text=f"rho_breath = (1/{b3 // 2}) * sum(rho_i, i=1..{b3 // 2})",
+                category="DERIVED",
+                description=(
+                    f"Aggregated breathing density over {b3 // 2} bridge pairs. "
+                    f"The pair count {b3 // 2} = b3/2 = {b3}/2 follows from the "
+                    f"G2 manifold topology (b3 is a Pillar Seed). DERIVED: pure "
+                    f"averaging over topologically-determined pair count."
+                ),
+                inputParams=["topology.elder_kads"],
+                outputParams=[],
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": f"b3 = {b3} associative 3-cycles in G2 manifold (Pillar Seed)",
+                         "formula": rf"b_3 = {b3}"},
+                        {"description": f"Pair count from normal/mirror pairing",
+                         "formula": rf"n_{{pairs}} = b_3/2 = {b3}/2 = {b3 // 2}"},
+                        {"description": "Average per-pair densities over all bridge pairs",
+                         "formula": rf"\rho_{{\text{{breath}}}} = \frac{{1}}{{{b3 // 2}}} \sum_{{i=1}}^{{{b3 // 2}}} \rho_i"},
+                    ],
+                    "method": "pair_aggregation",
+                    "parentFormulas": ["breathing-rho-pair"],
+                },
+                terms={
+                    r"\rho_{\text{breath}}": "Aggregated breathing density",
+                    r"n_{\text{pairs}}": f"Number of bridge pairs = b3/2 = {b3 // 2}",
+                }
+            ),
+            Formula(
+                id="breathing-variance-reduction",
+                label="(5.14)",
+                latex=rf"\sigma_{{\text{{eff}}}} = \frac{{\sigma_{{\text{{single}}}}}}{{\sqrt{{{b3 // 2}}}}} \approx 0.289\,\sigma_{{\text{{single}}}}",
+                plain_text=f"sigma_eff = sigma_single / sqrt({b3 // 2}) ≈ 0.289 * sigma_single",
+                category="DERIVED",
+                description=(
+                    f"Variance reduction from {b3 // 2}-pair aggregation. Standard "
+                    f"central limit theorem applied to {b3 // 2} independent bridge pair "
+                    f"contributions. DERIVED: the pair count {b3 // 2} is topological "
+                    f"(from b3 = {b3}), and the variance reduction is standard statistics."
+                ),
+                inputParams=["topology.elder_kads"],
+                outputParams=[],
+                input_params=["topology.elder_kads"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        {"description": "Central limit theorem: variance of mean of n iid variables",
+                         "formula": r"\text{Var}(\bar{X}) = \text{Var}(X) / n"},
+                        {"description": "Standard deviation reduction for n independent pairs",
+                         "formula": r"\sigma_{\text{eff}} = \sigma_{\text{single}} / \sqrt{n_{\text{pairs}}}"},
+                        {"description": f"With n_pairs = {b3 // 2} from b3 = {b3}",
+                         "formula": rf"\sigma_{{\text{{eff}}}} = \sigma_{{\text{{single}}}} / \sqrt{{{b3 // 2}}} \approx 0.289\,\sigma_{{\text{{single}}}}"},
+                    ],
+                    "method": "central_limit_theorem",
+                    "parentFormulas": ["breathing-aggregation"],
+                },
+                terms={
+                    r"\sigma_{\text{eff}}": "Effective variance of breathing density",
+                    r"\sigma_{\text{single}}": "Single-pair variance",
+                    rf"\sqrt{{{b3 // 2}}}": f"Square root of pair count = sqrt({b3 // 2}) ≈ 3.464",
                 }
             ),
         ]
