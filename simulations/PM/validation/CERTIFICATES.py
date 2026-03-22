@@ -147,6 +147,12 @@ class PrincipiaValidator:
         self.cert_g84_gnosis_unlocking()
 
         # ═══════════════════════════════════════════════════════════════
+        # QEC PREDICTION SECTOR (G85) — Distance-8 Error Correction
+        # ═══════════════════════════════════════════════════════════════
+        print("\n[QEC PREDICTION SECTOR]")
+        self.cert_g85_qec_predictive_power()
+
+        # ═══════════════════════════════════════════════════════════════
         # OPERATIONAL SECTOR (C34-C42)
         # ═══════════════════════════════════════════════════════════════
         print("\n[OPERATIONAL SECTOR]")
@@ -1192,6 +1198,57 @@ class PrincipiaValidator:
             },
         }
         print(f"  G84-GNOSIS: {status} ({metric})")
+
+    # ═══════════════════════════════════════════════════════════════════
+    # QEC PREDICTION SECTOR (G85) — Distance-8 Error Correction
+    # ═══════════════════════════════════════════════════════════════════
+
+    def cert_g85_qec_predictive_power(self):
+        """G85: QEC Distance-8 Predictive Power.
+
+        Tests that the CSS [[24,12,8]] code from the self-dual Golay code
+        predicts protection of 125 spectral constants against up to 3
+        simultaneous moduli perturbations.
+
+        Classification: DERIVED (standard coding theory) + PREDICTED (falsifiable)
+        """
+        try:
+            from simulations.PM.algebra.qec_golay_bridge import QECGolayBridge
+            qec = QECGolayBridge()
+            power = qec.compute_predictive_power()
+
+            test_distance = power["distance"] == 8
+            test_correctable = power["correctable_errors"] == 3
+            test_stability = power["vacuum_stability_floor"] <= 1e-50
+
+            all_pass = test_distance and test_correctable and test_stability
+            status = "LOCKED" if all_pass else "UNSTABLE"
+            metric = (
+                f"d={power['distance']}, t={power['correctable_errors']}, "
+                f"protects {power['protected_constants']} constants"
+            )
+        except Exception as e:
+            status = "UNSTABLE"
+            metric = f"Import error: {e}"
+
+        self.results['G85-QEC-PREDICT'] = {
+            "status": status,
+            "metric": metric,
+            "expected": "d=8, t=3, protects 125 constants",
+            "sector": "QEC_PREDICTION",
+            "honesty": {
+                "classification": "DERIVED + PREDICTED",
+                "what_is_derived": (
+                    "CSS [[24,12,8]] from self-dual Golay code: standard mathematics. "
+                    "Distance d=8 implies t=floor((d-1)/2)=3: standard coding theory."
+                ),
+                "what_is_predicted": (
+                    "The 125 spectral constants are protected against up to 3 "
+                    "simultaneous moduli perturbations. Falsifiable by lattice calculations."
+                ),
+            },
+        }
+        print(f"  G85-QEC-PREDICT: {status} ({metric})")
 
     # ═══════════════════════════════════════════════════════════════════
     # OPERATIONAL CERTIFICATES

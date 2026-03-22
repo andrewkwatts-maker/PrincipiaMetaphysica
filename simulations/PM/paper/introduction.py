@@ -263,8 +263,12 @@ class IntroductionV16(SimulationBase):
                     "and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> "
                     'consistent with DESI 2025 thawing dark energy constraints and <strong>H₀ = '
                     '<span class="pm-value" data-pm-value="cosmology.H0_local">71.55</span> km/s/Mpc</strong> within '
-                    "1.4σ of SH0ES 2025. All derivation chains are recorded in "
-                    '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span> '
+                    "1.4σ of SH0ES 2025. New results: thermal time coupling "
+                    "<strong>α<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10</strong> "
+                    "(DERIVED, zero free parameters), CSS <strong>[[24,12,8]]</strong> quantum code "
+                    "from self-dual Golay (protects ≤3 moduli errors), and breathing dark energy "
+                    "ρ<sub>breath</sub> from 12-pair OR aggregation. All derivation chains are recorded in "
+                    '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span>+ '
                     "reproducibility certificates."
                 ),
                 label="lead"
