@@ -580,6 +580,13 @@ try:
 except ImportError:
     APPENDIX_T_AVAILABLE = False
 
+# v24.0 Appendix U: Gamma Correction Geometric Candidate
+try:
+    from simulations.PM.paper.appendices.appendix_u_gamma_correction import AppendixUGammaCorrection
+    APPENDIX_U_AVAILABLE = True
+except ImportError:
+    APPENDIX_U_AVAILABLE = False
+
 # v18.0 Core Physics Simulations
 try:
     from simulations.PM.particle.yukawa_textures import YukawaTexturesV18
@@ -1074,7 +1081,8 @@ class SimulationRunner:
                 ([AppendixQIndexTheoremV19()] if APPENDIX_Q_V19_AVAILABLE else []) +
                 ([AppendixRVacuumStabilityV19()] if APPENDIX_R_V19_AVAILABLE else []) +
                 ([AppendixSSpectralResidueV19()] if APPENDIX_S_V19_AVAILABLE else []) +
-                ([AppendixTQECBridge()] if APPENDIX_T_AVAILABLE else [])
+                ([AppendixTQECBridge()] if APPENDIX_T_AVAILABLE else []) +
+                ([AppendixUGammaCorrection()] if APPENDIX_U_AVAILABLE else [])
             ),
             # ================================================================
             # v18.0 ADVANCED PHYSICS SIMULATIONS

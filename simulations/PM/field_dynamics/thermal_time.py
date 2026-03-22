@@ -11,13 +11,14 @@ CLASSIFICATION SEPARATION:
     and b3 = 24 cycles give the base coupling. This is standard Connes-Rovelli
     thermal time applied to G2 topology.
 
-    gamma_correction = 10.313 — FITTED. This correction factor is calibrated
-    to produce alpha_T = 2.7. No first-principles derivation of gamma_correction
-    exists. The factor absorbs: metric structure corrections, Pneuma modular
-    automorphism normalization, and G2 holonomy constraints.
+    gamma_correction = 27*24/(20*pi) = 10.31324... — FITTED with GEOMETRIC
+    CANDIDATE. Post-fit discovery: gamma = D_total*b3/(2*D_string*pi), which
+    simplifies to alpha_T = D_total/D_string = 27/10 = 2.7 (b3 and pi cancel).
+    STATUS: Still FITTED because the factor 2 in 2*D_string lacks independent
+    geometric derivation. The candidate is documented but not yet proven.
 
     Full alpha_T = alpha_T_base * gamma_correction = 2.7 — FITTED (one free
-    parameter, one target value).
+    parameter, one target value; geometric candidate documented).
 
 CONSCIOUSNESS CONNECTION (SPECULATIVE):
     The 12 bridge pairs provide 12 I/O channels through which the entropy
@@ -231,14 +232,24 @@ class ThermalTimeV16(SimulationBase):
         alpha_T_base = 2.0 * np.pi / b3  # = 0.2618 (DERIVED)
 
         # ─── Step 2 (FITTED): Full coupling with gamma correction ───
-        # gamma_correction = 10.313240 is FITTED (calibrated to target alpha_T = 2.7).
-        # It absorbs corrections from:
-        #   - M^{27}(24,1,2) metric with 12x(2,0) Euclidean bridge pairs
-        #   - Pneuma field modular automorphism normalization
-        #   - G2 holonomy group structure
-        # No first-principles derivation of gamma_correction exists.
-        gamma_correction = 10.313240  # FITTED: calibrated to alpha_T = 2.7
-        alpha_T = alpha_T_base * gamma_correction  # = 2.7 (FITTED)
+        # gamma_correction = 10.31324... is FITTED (calibrated to target alpha_T = 2.7).
+        #
+        # GEOMETRIC CANDIDATE (discovered post-fit, not yet fully derived):
+        #   gamma_correction = D_total * b3 / (2 * D_string * pi)
+        #                    = 27 * 24 / (20 * pi) = 10.31324031...
+        #   where D_total = 27 (PM spacetime dimension), D_string = 10 (Type IIA/IIB)
+        #
+        #   Substituting into alpha_T:
+        #     alpha_T = (2*pi/b3) * (D*b3)/(2*D_string*pi) = D_total/D_string = 27/10 = 2.7
+        #   The b3 and pi cancel completely (not engineered).
+        #
+        # STATUS: FITTED (not yet DERIVED). The factor 2 in 2*D_string lacks
+        # independent geometric derivation. Gemini debate inconclusive.
+        # See Appendix U for full analysis.
+        D_TOTAL = 27   # PM spacetime dimension M^{27}(24,1,2)
+        D_STRING = 10  # Type IIA/IIB superstring dimension
+        gamma_correction = D_TOTAL * b3 / (2.0 * D_STRING * np.pi)  # = 10.31324... (FITTED)
+        alpha_T = alpha_T_base * gamma_correction  # = D_TOTAL/D_STRING = 2.7 (FITTED)
 
         # ─── Step 3 (DERIVED): Entropy gradient (arrow of time) ───
         # dS/dt >= 0 from Lindblad monotonicity (established physics).
@@ -517,11 +528,11 @@ class ThermalTimeV16(SimulationBase):
                 plain_text="alpha_T = alpha_T_base * gamma_correction = 0.2618 * 10.313 = 2.7",
                 category="PREDICTED",  # gamma_correction is FITTED; formula produces a PREDICTED value
                 description=(
-                    "Full thermal time coupling including calibrated correction factor. "
-                    "gamma_correction = 10.313 absorbs metric structure corrections, Pneuma "
-                    "modular automorphism normalization, and G2 holonomy constraints. "
-                    "No first-principles derivation of gamma_correction exists; it is "
-                    "calibrated to produce alpha_T = 2.7."
+                    "Full thermal time coupling including correction factor. "
+                    "gamma_correction = D_total*b3/(2*D_string*pi) = 27*24/(20*pi) = 10.31324... "
+                    "GEOMETRIC CANDIDATE: alpha_T = D_total/D_string = 27/10 = 2.7 (b3 and pi "
+                    "cancel completely). Still classified FITTED because factor 2 in 2*D_string "
+                    "lacks independent derivation."
                 ),
                 inputParams=["topology.elder_kads", "thermal.alpha_T_base"],
                 outputParams=["thermal.alpha_T"],
@@ -532,9 +543,9 @@ class ThermalTimeV16(SimulationBase):
                     "parentFormulas": ["alpha-t-base"],
                     "steps": [
                         "Start with DERIVED base coupling: alpha_T_base = 2*pi/b3 = 0.2618",
-                        "Apply gamma_correction = 10.313 (FITTED: calibrated to alpha_T = 2.7)",
-                        "gamma_correction accounts for M^{27}(24,1,2) metric, Pneuma normalization, G2 holonomy",
-                        "Result: alpha_T = 0.2618 * 10.313 = 2.700 (FITTED — one free parameter, one target)"
+                        "Geometric candidate: gamma = D_total*b3/(2*D_string*pi) = 27*24/(20*pi) = 10.31324...",
+                        "Substituting: alpha_T = (2*pi/b3)*(D*b3)/(2*D_string*pi) = D_total/D_string = 27/10",
+                        "b3 and pi cancel completely; result is ratio of spacetime dimensions (FITTED — factor 2 unexplained)"
                     ],
                     "references": [
                         "PM framework: Thermal time calibration",
@@ -542,9 +553,9 @@ class ThermalTimeV16(SimulationBase):
                     ]
                 },
                 terms={
-                    "alpha_T": "Full thermal time coupling (FITTED)",
-                    "alpha_T_base": "Base coupling from KMS periodicity (DERIVED)",
-                    "gamma_correction": "Correction factor 10.313 (FITTED, not derived)"
+                    "alpha_T": "Full thermal time coupling = D_total/D_string = 27/10 = 2.7 (FITTED)",
+                    "alpha_T_base": "Base coupling from KMS periodicity = 2*pi/b3 (DERIVED)",
+                    "gamma_correction": "= D*b3/(2*D_string*pi) = 10.31324 (FITTED, geometric candidate)"
                 }
             ),
         ]
