@@ -305,6 +305,25 @@ try:
 except ImportError:
     ORCH_OR_AVAILABLE = False
 
+# Consciousness modules (SPECULATIVE) — Phase H Sprint 2
+try:
+    from simulations.PM.consciousness.gnosis_unlocking import GnosisUnlockingSimulationV22
+    GNOSIS_AVAILABLE = True
+except ImportError:
+    GNOSIS_AVAILABLE = False
+
+try:
+    from simulations.PM.consciousness.four_dice_sampling import FourDiceSamplingSimulation
+    FOUR_DICE_AVAILABLE = True
+except ImportError:
+    FOUR_DICE_AVAILABLE = False
+
+try:
+    from simulations.PM.consciousness.orch_or_pair_shielding import OrchORPairShieldingSimulation
+    PAIR_SHIELDING_AVAILABLE = True
+except ImportError:
+    PAIR_SHIELDING_AVAILABLE = False
+
 # Phase 2 - Core physics (depends on Phase 1)
 from simulations.PM.particle.fermion_generations import FermionGenerationsV16
 from simulations.PM.particle.chirality import ChiralitySpinorSimulation
@@ -966,7 +985,11 @@ class SimulationRunner:
                 PneumaMechanismV16(),
                 ThermalTimeV16(),  # Moved to Phase 4 - depends on Pneuma outputs
             ],
-            5: ([OrchORSimulation()] if ORCH_OR_AVAILABLE else []) + [
+            5: ([OrchORSimulation()] if ORCH_OR_AVAILABLE else []) +
+               # Consciousness modules (SPECULATIVE) — Phase H Sprint 2
+               ([GnosisUnlockingSimulationV22()] if GNOSIS_AVAILABLE else []) +
+               ([FourDiceSamplingSimulation()] if FOUR_DICE_AVAILABLE else []) +
+               ([OrchORPairShieldingSimulation()] if PAIR_SHIELDING_AVAILABLE else []) + [
                 DiscussionV16(),
                 PredictionsAggregatorV16(),
                 # ================================================================

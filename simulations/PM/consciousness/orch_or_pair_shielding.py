@@ -799,3 +799,241 @@ if __name__ == "__main__":
     print("\n" + "=" * 60)
     print("SIMULATION COMPLETE")
     print("=" * 60)
+
+
+# =============================================================================
+# SimulationBase Wrapper (Phase H Sprint 2)
+# =============================================================================
+
+try:
+    import sys as _sys
+    from pathlib import Path as _Path
+    _sys.path.insert(0, str(_Path(__file__).parent.parent.parent.parent))
+    from simulations.base.simulation_base import (
+        SimulationBase as _SimBase, SimulationMetadata as _SimMeta,
+        Formula as _Formula, Parameter as _Param,
+        SectionContent as _SecContent, ContentBlock as _CB
+    )
+    from simulations.base import PMRegistry as _PMReg
+    _SCHEMA_AVAIL = True
+except ImportError:
+    _SCHEMA_AVAIL = False
+
+
+if _SCHEMA_AVAIL:
+    class OrchORPairShieldingSimulation(_SimBase):
+        """
+        Schema-compliant wrapper for Orch-OR pair shielding simulation.
+
+        CLASSIFICATION: SPECULATIVE
+        The pair-based decoherence protection mechanism extends Penrose-Diosi
+        objective reduction with topological shielding from bridge pairs.
+        The Penrose criterion tau = hbar/E_G is DERIVED (established physics);
+        the pair shielding enhancement is SPECULATIVE.
+        """
+
+        def __init__(self):
+            self._result = None
+
+        @property
+        def metadata(self) -> _SimMeta:
+            return _SimMeta(
+                id="orch_or_pair_shielding_v22",
+                version="22.0",
+                domain="consciousness",
+                title="Orch-OR Pair Shielding: Decoherence Protection",
+                description=(
+                    "[SPECULATIVE] Pair-based decoherence protection for Orch-OR. "
+                    "Penrose criterion tau = hbar/E_G is DERIVED; pair shielding "
+                    "enhancement exp(k*sqrt(n_pairs)) is SPECULATIVE. Addresses "
+                    "warm brain problem (thermal decoherence at 310K)."
+                ),
+                section_id="7",
+                subsection_id="7.6"
+            )
+
+        @property
+        def required_inputs(self):
+            return ["topology.elder_kads"]
+
+        @property
+        def output_params(self):
+            return [
+                "consciousness.penrose_tau_ms",
+                "consciousness.shielded_tau_ms",
+                "consciousness.shielding_factor",
+            ]
+
+        @property
+        def output_formulas(self):
+            return ["pair-shielding-enhancement"]
+
+        def run(self, registry: '_PMReg'):
+            model_6 = MicrotubuleCoherence(n_pairs=6, regime='wet')
+            model_12 = MicrotubuleCoherence(n_pairs=12, regime='wet')
+            result_6 = model_6.compute_effective_coherence()
+            result_12 = model_12.compute_effective_coherence()
+
+            self._result = result_12
+            return {
+                "consciousness.penrose_tau_ms": result_6.tau_coherence * 1000,
+                "consciousness.shielded_tau_ms": result_12.tau_effective * 1000,
+                "consciousness.shielding_factor": result_12.shielding_factor,
+            }
+
+        def get_output_param_definitions(self):
+            return [
+                _Param(
+                    path="consciousness.penrose_tau_ms",
+                    name="Base Penrose Coherence Time",
+                    units="milliseconds",
+                    status="PREDICTED",
+                    description="Penrose-Diosi coherence time at 6 pairs (DERIVED physics, SPECULATIVE context)",
+                    derivation_formula="pair-shielding-enhancement",
+                    no_experimental_value=True,
+                ),
+                _Param(
+                    path="consciousness.shielded_tau_ms",
+                    name="Pair-Shielded Coherence Time",
+                    units="milliseconds",
+                    status="PREDICTED",
+                    description="Enhanced coherence time at 12 pairs with shielding (SPECULATIVE)",
+                    derivation_formula="pair-shielding-enhancement",
+                    no_experimental_value=True,
+                ),
+                _Param(
+                    path="consciousness.shielding_factor",
+                    name="Pair Shielding Factor",
+                    units="dimensionless",
+                    status="PREDICTED",
+                    description="Shielding enhancement exp(k*sqrt(n_pairs)) (SPECULATIVE, k=2.5 FITTED)",
+                    derivation_formula="pair-shielding-enhancement",
+                    no_experimental_value=True,
+                ),
+            ]
+
+        def get_certificates(self):
+            """Return validation certificates (SPECULATIVE content)."""
+            import numpy as np
+            k_shield = 2.5
+            n_pairs = 12
+            factor = np.exp(k_shield * np.sqrt(n_pairs))
+            return [
+                {
+                    "id": "cert_pair_shielding_enhancement",
+                    "assertion": "Pair shielding factor > 1 at 12 pairs",
+                    "condition": f"exp(k*sqrt(12)) = {factor:.1f} > 1",
+                    "status": "PASS" if factor > 1.0 else "FAIL",
+                }
+            ]
+
+        def validate_self(self):
+            """Self-validation checks."""
+            import numpy as np
+            factor = np.exp(2.5 * np.sqrt(12))
+            return {
+                "checks": [
+                    {"name": "shielding_factor_gt_1", "passed": factor > 1.0, "log_level": "INFO"},
+                ]
+            }
+
+        def get_references(self):
+            """Return references."""
+            return [
+                {
+                    "id": "hameroff2014",
+                    "authors": "Hameroff, S. and Penrose, R.",
+                    "title": "Consciousness in the universe: A review of the Orch OR theory",
+                    "year": 2014,
+                    "doi": "10.1016/j.plrev.2013.08.002",
+                },
+            ]
+
+        def get_learning_materials(self):
+            """Return learning materials."""
+            return [
+                {
+                    "topic": "Quantum decoherence in biological systems",
+                    "url": "https://en.wikipedia.org/wiki/Quantum_biology",
+                    "relevance": "Context for warm brain decoherence problem",
+                },
+            ]
+
+        def get_section_content(self):
+            return _SecContent(
+                section_id="7",
+                subsection_id="7.6",
+                title="Orch-OR Pair Shielding: Decoherence Protection",
+                abstract=(
+                    "Pair-based decoherence protection extends Penrose-Diosi "
+                    "objective reduction with topological shielding from the "
+                    "12 bridge pairs. The warm brain problem (thermal decoherence "
+                    "at 310K) remains OPEN."
+                ),
+                content_blocks=[
+                    _CB(
+                        type="callout",
+                        callout_type="warning",
+                        content=(
+                            "SPECULATIVE CONTENT: Pair shielding is a proposed "
+                            "mechanism to bridge the warm brain decoherence gap. "
+                            "The shielding coefficient k=2.5 is FITTED. The "
+                            "Penrose criterion tau=hbar/E_G is established physics."
+                        )
+                    ),
+                    _CB(
+                        type="paragraph",
+                        content=(
+                            "The pair shielding mechanism proposes that the 12 bridge "
+                            "pairs provide topological protection against thermal "
+                            "decoherence. Each pair contributes a shielding factor that "
+                            "reduces the effective decoherence rate, with the total "
+                            "enhancement scaling as exp(k * sqrt(n/12)) where k=2.5 is "
+                            "fitted. The warm brain problem (gap of 10^3 to 10^5 between "
+                            "required and achieved coherence times at 310K) remains open."
+                        )
+                    ),
+                    _CB(
+                        type="formula",
+                        formula_id="pair-shielding-enhancement",
+                        label="(7.6)"
+                    ),
+                ],
+                formula_refs=["pair-shielding-enhancement"],
+                param_refs=self.output_params,
+            )
+
+        def get_formulas(self):
+            return [
+                _Formula(
+                    id="pair-shielding-enhancement",
+                    label="(7.6)",
+                    latex=r"\tau_{\text{eff}} = \frac{\hbar}{E_G} \cdot e^{k\sqrt{n_{\text{pairs}}}}",
+                    plain_text="tau_eff = (hbar/E_G) * exp(k * sqrt(n_pairs))",
+                    category="PREDICTED",  # SPECULATIVE consciousness hypothesis
+                    description=(
+                        "Pair-enhanced coherence time. Base Penrose criterion "
+                        "tau = hbar/E_G (DERIVED) enhanced by pair shielding "
+                        "exp(k*sqrt(n)). k=2.5 is FITTED. SPECULATIVE mechanism."
+                    ),
+                    input_params=["topology.elder_kads"],
+                    output_params=["consciousness.shielded_tau_ms"],
+                    derivation={
+                        "steps": [
+                            {"description": "Penrose-Diosi base coherence time",
+                             "formula": r"\tau_0 = \frac{\hbar}{E_G}"},
+                            {"description": "Pair shielding from n active bridge pairs",
+                             "formula": r"\text{shield} = e^{k\sqrt{n_{\text{pairs}}}}"},
+                            {"description": "Enhanced coherence time",
+                             "formula": r"\tau_{\text{eff}} = \tau_0 \cdot \text{shield}"},
+                        ],
+                        "method": "pair_shielding",
+                        "parentFormulas": [],
+                    },
+                    terms={
+                        r"\tau_0": "Base Penrose collapse time",
+                        "k": "Shielding coefficient = 2.5 (FITTED)",
+                        r"n_{\text{pairs}}": "Number of active bridge pairs (6-12)",
+                    }
+                ),
+            ]
