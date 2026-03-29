@@ -1570,7 +1570,7 @@ class PneumaMechanismV16(SimulationBase):
             checks.append({
                 "name": "Pneuma VEV positivity from racetrack minimum",
                 "passed": vev_positive,
-                "confidence_interval": {"lower": 0.0, "upper": float('inf'), "sigma": 0.0},
+                "confidence_interval": {"lower": 0.0, "upper": 1e308, "sigma": 0.0},
                 "log_level": "INFO" if vev_positive else "ERROR",
                 "message": f"VEV = {vev:.6f} > 0" if vev_positive else f"VEV = {vev} is non-positive or non-finite",
             })
