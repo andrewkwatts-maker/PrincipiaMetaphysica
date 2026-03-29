@@ -152,6 +152,7 @@ import os
 import subprocess
 from pathlib import Path
 from typing import Dict, Any, List, Optional
+import math
 from datetime import datetime
 from dataclasses import dataclass, field
 import warnings
@@ -176,13 +177,16 @@ except ImportError:
 
 
 class NumpyJSONEncoder(json.JSONEncoder):
-    """Custom JSON encoder that handles numpy types."""
+    """Custom JSON encoder that handles numpy types and sanitizes inf/nan."""
     def default(self, obj):
         if NUMPY_AVAILABLE:
             if isinstance(obj, np.integer):
                 return int(obj)
             elif isinstance(obj, np.floating):
-                return float(obj)
+                val = float(obj)
+                if math.isinf(val) or math.isnan(val):
+                    return None
+                return val
             elif isinstance(obj, np.ndarray):
                 return obj.tolist()
             elif isinstance(obj, np.bool_):
@@ -190,6 +194,21 @@ class NumpyJSONEncoder(json.JSONEncoder):
         if isinstance(obj, (set, frozenset)):
             return list(obj)
         return super().default(obj)
+
+    def encode(self, o):
+        """Override encode to sanitize float inf/nan in all nested structures."""
+        return super().encode(self._sanitize(o))
+
+    def _sanitize(self, obj):
+        if isinstance(obj, float):
+            if math.isinf(obj) or math.isnan(obj):
+                return None
+            return obj
+        elif isinstance(obj, dict):
+            return {k: self._sanitize(v) for k, v in obj.items()}
+        elif isinstance(obj, (list, tuple)):
+            return [self._sanitize(v) for v in obj]
+        return obj
 
 
 # Project root is one level up from simulations/

@@ -1424,7 +1424,7 @@ class RigorCovarianceV16_1(SimulationBase):
         checks.append({
             "name": "covariance_positive_definite",
             "passed": pos_def_ok,
-            "confidence_interval": {"lower": 0.0, "upper": float('inf'), "sigma": 0.0},
+            "confidence_interval": {"lower": 0.0, "upper": 1e308, "sigma": 0.0},
             "log_level": "INFO" if pos_def_ok else "ERROR",
             "message": (
                 f"Minimum eigenvalue across both covariance matrices = {min_eigval:.6e}; "
