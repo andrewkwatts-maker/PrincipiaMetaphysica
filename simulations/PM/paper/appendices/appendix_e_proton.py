@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Appendix E: Proton Decay Calculation v16.0
+Appendix E: Proton Decay Calculation v24.2
 ==========================================
 
 Detailed calculation of proton decay lifetime from dimension-6 effective operators.

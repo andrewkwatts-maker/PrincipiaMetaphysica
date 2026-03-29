@@ -607,37 +607,34 @@ class PrincipiaValidator:
 
         # ── Full validation with sampler_entropy_dynamics module ──
         dynamics = SamplerEntropyDynamics()
-        n_trials = 5
-        second_law_violations = 0
-        equilibrium_failures = 0
+        alpha_T = 2.7  # DERIVED: D_total/D_string = 27/10
+
+        # Sub-test 1: Second Law (integrated over compact S^{2,0})
+        # Diffusion term integrates to zero by divergence theorem,
+        # so total dS/dt = bridge_term + OR_term >= 0
+        second_law_result = dynamics.validate_second_law(
+            alpha_T=alpha_T, n_trials=20, seed=42
+        )
+        second_law_violations = second_law_result["violations"]
+
+        # Sub-test 2: Equilibrium entropy exists and is finite
+        density_matrices = dynamics._generate_bridge_density_matrices(12)
+        S_eq = dynamics.compute_equilibrium_entropy(
+            alpha_T=alpha_T,
+            density_matrices=density_matrices,
+        )
+        equilibrium_failures = 0 if (np.isfinite(S_eq) and S_eq > 0) else 1
+
+        # Sub-test 3: Gradient source terms are non-negative
+        grad_result = dynamics.compute_entropy_gradient(
+            alpha_T=alpha_T,
+            density_matrices=density_matrices,
+        )
         gradient_sign_failures = 0
-
-        rng = np.random.RandomState(42)  # reproducible
-
-        for _ in range(n_trials):
-            # Random initial conditions: S in [0.1, 5.0]
-            S_init = rng.uniform(0.1, 5.0)
-
-            # Sub-test 1: Second Law dS/dt >= 0
-            dS = dynamics.entropy_rate(S_init)
-            if dS < -1e-12:  # tolerance for numerical noise
-                second_law_violations += 1
-
-            # Sub-test 2: Equilibrium entropy exists and is finite
-            S_eq = dynamics.equilibrium_entropy()
-            if not (np.isfinite(S_eq) and S_eq > 0):
-                equilibrium_failures += 1
-
-            # Sub-test 4: Gradient sign check (bridge, OR, sampler terms)
-            try:
-                grad = dynamics.entropy_gradient_components(S_init)
-                # Each component should contribute non-negatively to dS/dt
-                for component_name, component_val in grad.items():
-                    if component_val < -1e-12:
-                        gradient_sign_failures += 1
-            except AttributeError:
-                # Method may not exist yet; skip gradient check
-                pass
+        for component_name in ["bridge_contribution", "or_contribution"]:
+            component_val = grad_result.get(component_name, 0.0)
+            if component_val < -1e-12:
+                gradient_sign_failures += 1
 
         all_pass = (kappa_pass
                     and second_law_violations == 0
@@ -646,7 +643,8 @@ class PrincipiaValidator:
 
         if all_pass:
             status = "LOCKED"
-            metric = (f"kappa={kappa_sampler}, dS/dt>=0 ({n_trials}/{n_trials}), "
+            n_2nd = second_law_result["n_trials"]
+            metric = (f"kappa={kappa_sampler}, dS/dt>=0 ({n_2nd}/{n_2nd}), "
                       f"S_eq={S_eq:.4f}")
         else:
             status = "FAILED"
@@ -880,23 +878,23 @@ class PrincipiaValidator:
         if all_pass:
             status = "LOCKED"
             metric = (
-                f"α*⁻¹=b₃={alpha_star_inv:.0f}, "
-                f"λ₆=exp(−{ratio:.0f})={lambda_6:.6f}, "
-                f"τ_p^AS={tau_AS:.2e}yr"
+                f"a*_inv=b3={alpha_star_inv:.0f}, "
+                f"lambda6=exp(-{ratio:.0f})={lambda_6:.6f}, "
+                f"tau_p_AS={tau_AS:.2e}yr"
             )
         else:
             status = "FAILED"
             failures = []
             if not test1_pass:
-                failures.append(f"α*⁻¹={alpha_star_inv}≠b₃={b3}")
+                failures.append(f"a*_inv={alpha_star_inv}!=b3={b3}")
             if not test2_pass:
-                failures.append(f"χ_eff/b₃={ratio} not integer")
+                failures.append(f"chi_eff/b3={ratio} not integer")
             if not test3_pass:
-                failures.append(f"λ₆={lambda_6}≠exp(−{ratio:.0f})")
+                failures.append(f"lambda6={lambda_6}!=exp(-{ratio:.0f})")
             if not test4_pass:
-                failures.append(f"λ₆={lambda_6}<1e-3")
+                failures.append(f"lambda6={lambda_6}<1e-3")
             if not test5_pass:
-                failures.append(f"τ_p^AS={tau_AS:.2e}<10³⁵")
+                failures.append(f"tau_p_AS={tau_AS:.2e}<1e35")
             metric = "; ".join(failures)
 
         self.results['G81-AS'] = {

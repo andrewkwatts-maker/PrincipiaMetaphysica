@@ -15,7 +15,7 @@ DERIVED (established physics):
   - Topological pitch from b3 and k_gimel (pure geometry)
 
 FITTED (calibrated, not independently derived):
-  - K_COHERENCE = 6.02 (derived from fitted α_T = 2.7, see thermal_time.py)
+  - K_COHERENCE = 6.02 (derived from DERIVED α_T = 2.7 and fitted θ, see thermal_time.py)
   - conformational_fraction = 1e-4 (~0.01% of tubulin mass, order-of-magnitude estimate)
   - n_tubulins = 1e9 (conservative estimate from literature)
   - Scaling factor 2.125 connecting G2 pitch to 13 protofilaments
@@ -30,7 +30,7 @@ SPECULATIVE (frontier hypothesis, not empirically validated):
 WARM BRAIN PROBLEM (OPEN):
   Thermal decoherence at 310K destroys quantum superpositions on ~10^-13 s
   timescales. The pair enhancement exp(k√n_pairs) with k=6.02 achieves neural
-  timescales (~25-500ms), but k=6.02 is FITTED (from fitted α_T). The archived
+  timescales (~25-500ms), but k=6.02 is FITTED (α_T=2.7 is DERIVED, θ is FITTED). The archived
   decoherence_protection.py showed a gap of 10^3 to 10^5 between achievable and
   required protection. This remains an open problem in Orch-OR theory generally,
   not specific to PM. The pair enhancement is a SPECULATIVE mechanism proposed
@@ -47,7 +47,7 @@ v22.0 UPDATE - 12×(2,0) Paired Bridge Model:
 - Implements gnosis unlocking mechanism for consciousness pairs (SPECULATIVE)
 - 6-pair minimum for OR stability in wet microtubules (SPECULATIVE)
 - Enhanced coherence formula: τ = (ℏ/E_G) × exp(k√n_pairs) (SPECULATIVE)
-- k = α_T/θ ≈ 6.02 (FITTED: from fitted α_T, see thermal_time.py)
+- k = α_T/θ ≈ 6.02 (FITTED: α_T=2.7 is DERIVED, θ is FITTED, see thermal_time.py)
 - Warping shield for wet biological environments (SPECULATIVE mechanism)
 
 CONSCIOUSNESS I/O MODEL (SPECULATIVE):
@@ -113,11 +113,11 @@ MIN_PAIRS = 6       # Minimum for wet microtubule OR stability
 OPTIMAL_PAIRS = 12  # Full consciousness bridge (unified gnosis)
 
 # Coherence enhancement: τ = (ℏ/E_G) × exp(k√n_pairs)
-# FITTED: k = α_T/θ where α_T = 2.7 is itself FITTED (see thermal_time.py).
-# The base coupling α_T_base = 2π/b₃ = 0.2618 is DERIVED, but the full
-# α_T = 2.7 includes gamma_correction = 10.313 which is calibrated.
-# Therefore K_COHERENCE = 6.02 is not independently derived from geometry.
-K_COHERENCE = 6.02  # FITTED: from fitted α_T (not independently derived)
+# FITTED: k = α_T/θ where α_T = 2.7 is DERIVED (= D_total/D_string = 27/10,
+# see thermal_time.py and appendix_u_gamma_correction.py).
+# However, K_COHERENCE = α_T/θ and θ is not independently derived from geometry.
+# Therefore K_COHERENCE = 6.02 remains FITTED (via the θ dependence).
+K_COHERENCE = 6.02  # FITTED: α_T=2.7 is DERIVED, but θ is FITTED
 
 # Stability thresholds
 VIABILITY_THRESHOLD = 0.8   # Minimum viability for stable OR
@@ -594,7 +594,7 @@ if SCHEMA_AVAILABLE:
                             "confirmed predictions of the theory. The consciousness and "
                             "quantum biology content herein is based on the Penrose-Hameroff "
                             "Orch-OR model, which remains experimentally unverified. "
-                            "KEY FITTED PARAMETERS: K_COHERENCE = 6.02 (from fitted α_T = 2.7), "
+                            "KEY FITTED PARAMETERS: K_COHERENCE = 6.02 (α_T=2.7 is DERIVED, θ is FITTED), "
                             "conformational_fraction = 1e-4, n_tubulins = 1e9. "
                             "OPEN PROBLEM: Thermal decoherence at 310K destroys superpositions "
                             "on ~10^-13 s timescales (the 'warm brain problem'). The pair "

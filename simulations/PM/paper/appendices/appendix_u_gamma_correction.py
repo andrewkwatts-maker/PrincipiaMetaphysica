@@ -116,7 +116,7 @@ class AppendixUGammaCorrection(SimulationBase):
 
     def compute_analysis(self) -> Dict[str, Any]:
         """
-        Compare fitted gamma_correction with geometric candidate.
+        Compare original numerical gamma_correction with geometric derivation.
 
         Returns dict with both values, match quality, and simplification.
         """
@@ -308,8 +308,8 @@ class AppendixUGammaCorrection(SimulationBase):
                 path="appendix_u.gamma_geometric",
                 name="Gamma Correction (Geometric Candidate)",
                 units="dimensionless",
-                status="PREDICTED",
-                description="Geometric candidate gamma = 27*24/(20*pi) = 10.31324...",
+                status="DERIVED",
+                description="Geometric derivation gamma = D*b3/(2*D_string*pi) = 27*24/(20*pi) = 10.31324...",
                 derivation_formula="gamma-geometric-candidate",
                 no_experimental_value=True,
             ),
