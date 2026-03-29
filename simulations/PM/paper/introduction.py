@@ -403,7 +403,7 @@ class IntroductionV16(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content="M⁵ = M⁴ × S¹ → g<sub>MN</sub>⁽⁵⁾ → {g<sub>μν</sub>⁽⁴⁾, A<sub>μ</sub>, φ}",
+                content="M<sup>5</sup> = M<sup>4</sup> × S<sup>1</sup> → g<sub>MN</sub><sup>(5)</sup> → {g<sub>μν</sub><sup>(4)</sup>, A<sub>μ</sub>, φ}",
                 label="kk-decomposition"
             ),
             ContentBlock(
