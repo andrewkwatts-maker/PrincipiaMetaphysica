@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Appendix D: Parameter Tables v16.0
+Appendix D: Parameter Tables v24.2
 ===================================
 
 Comprehensive tables of all parameters used in Principia Metaphysica:

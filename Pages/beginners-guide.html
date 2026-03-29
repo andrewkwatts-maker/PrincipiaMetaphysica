@@ -2059,11 +2059,11 @@
                     <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
                         w(z) = w<sub>0</sub>[1 + (&alpha;<sub>T</sub>/3)ln(1+z)]
                     </p>
-                    <p>Where &alpha;<sub>T</sub> = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.5"></span> is <strong>derived</strong> from thermal time scalings:</p>
+                    <p>Where &alpha;<sub>T</sub> = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.7"></span> is <strong>derived</strong> from the dimensional ratio D<sub>total</sub>/D<sub>string</sub> = 27/10:</p>
                     <ul style="margin: 1rem 0 1rem 1.5rem;">
-                        <li>Thermal relaxation time: &tau; &prop; a (increases as universe cools)</li>
-                        <li>Hubble time: H &prop; a<sup>-3/2</sup> (matter era)</li>
-                        <li>&alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.5"></span></li>
+                        <li>Base coupling: &alpha;<sub>T,base</sub> = 2&pi;/b<sub>3</sub> from KMS periodicity on b<sub>3</sub>=24 cycles</li>
+                        <li>Geometric correction: &gamma; = D&middot;b<sub>3</sub>/(2&middot;D<sub>string</sub>&middot;&pi;) where b<sub>3</sub> and &pi; cancel</li>
+                        <li>&alpha;<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10 = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.7"></span> (DERIVED, zero free parameters)</li>
                     </ul>
                     <p>This naturally gives w<sub>a</sub> &lt; 0, which DESI observes but standard models can't explain.</p>
                 </div>

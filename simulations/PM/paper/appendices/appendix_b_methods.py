@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Appendix B: Computational Methods v16.0
+Appendix B: Computational Methods v24.2
 ========================================
 
 Comprehensive documentation of computational methods used throughout

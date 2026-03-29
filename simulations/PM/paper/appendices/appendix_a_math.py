@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Appendix A: Mathematical Foundations v16.0
+Appendix A: Mathematical Foundations v24.2
 ===========================================
 
 Comprehensive mathematical foundations for Principia Metaphysica, covering:

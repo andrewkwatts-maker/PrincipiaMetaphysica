@@ -1157,13 +1157,12 @@ class DarkEnergyV16(SimulationBase):
                 path="cosmology.alpha_shadow",
                 name="Shadow Dimension Contribution",
                 units="dimensionless",
-                status="DERIVED",
+                status="FITTED",
                 description=(
                     "Residual degrees of freedom from compact dimensions: alpha_shadow = 0.576. "
-                    "Analytically derived from G2 topology using the wavefunction overlap "
-                    "integral with chi_eff=144 and b₃=24. Represents the fractional "
-                    "contribution of incompletely integrated compact dimensions to the "
-                    "effective dimensionality of the observable universe."
+                    "FITTED (LEGACY): calibrated for old D_eff formula. Since v16.2, w0 uses "
+                    "w0 = -1 + 1/b3 which does NOT depend on alpha_shadow. Retained for "
+                    "backward compatibility with D_eff output parameter."
                 ),
                 derivation_formula="effective-dimension",
                 no_experimental_value=True

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Appendix C: Extended Derivations v16.0
+Appendix C: Extended Derivations v24.2
 =======================================
 
 Detailed derivations of key results referenced in the main text, including:
