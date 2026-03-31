@@ -257,16 +257,62 @@ class PrincipiaValidator:
         print(f"  C002-GEN: {status} (N_gen = {chi_eff}/48 = {n_gen})")
 
     def cert_c003_chi_effective(self):
-        """C003: Euler characteristic chi_eff = 144"""
-        chi = self._get_param('topology.mephorash_chi', 144)
-        status = "LOCKED" if chi == 144 else "FAILED"
+        """C003: Effective Euler characteristic chi_eff = 144
+
+        Validates the effective Euler characteristic for the TCS #187
+        G2 manifold, computed from Hodge numbers:
+
+            chi_eff = 2*(h^{1,1} - h^{2,1} + h^{3,1}) = 2*(4 - 0 + 68) = 144
+
+        This is the TOTAL manifold chi_eff (both shadows combined):
+            chi_eff_total = chi_eff_normal + chi_eff_mirror = 72 + 72 = 144
+
+        Equivalently: chi_eff = 6*b3 = 6*24 = 144 for TCS #187.
+
+        The value 144 = 12^2 determines the generation count via
+        n_gen = chi_eff/48 = 3 (Acharya 2002, arXiv:hep-th/0212294).
+
+        Gate explicitly FAILS if the registry lacks the parameter (no default),
+        preventing vacuous pass on empty/missing registry data.
+
+        Reference: Corti et al. (2015), arXiv:1207.3200
+        """
+        chi = self._get_param('topology.mephorash_chi')
+        b3 = self._get_param('geometry.elder_kads')
+
+        # Fail explicitly if registry data is missing (no vacuous pass)
+        if chi is None or b3 is None:
+            status = "FAILED"
+            missing = []
+            if chi is None:
+                missing.append("topology.mephorash_chi")
+            if b3 is None:
+                missing.append("geometry.elder_kads")
+            self.results['C003-CHI'] = {
+                "status": status,
+                "metric": f"{', '.join(missing)} NOT FOUND in registry",
+                "expected": 144,
+                "actual": None,
+                "sector": "FOUNDATIONAL"
+            }
+            print(f"  C003-CHI: {status} ({', '.join(missing)} missing from registry)")
+            return
+
+        # Primary check: chi_eff == 144
+        value_ok = (chi == 144)
+
+        # Cross-check: chi_eff == 6 * b3 (TCS consistency)
+        consistent = (chi == 6 * b3)
+
+        status = "LOCKED" if (value_ok and consistent) else "FAILED"
         self.results['C003-CHI'] = {
             "status": status,
-            "metric": f"chi_eff = {chi}",
+            "metric": f"chi_eff = {chi}, 6*b3 = {6 * b3}, consistent = {consistent}",
             "expected": 144,
+            "actual": chi,
             "sector": "FOUNDATIONAL"
         }
-        print(f"  C003-CHI: {status} (chi_eff = {chi})")
+        print(f"  C003-CHI: {status} (chi_eff = {chi}, 6*b3 = {6 * b3})")
 
     def cert_c004_k_gimel(self):
         """C004: Holonomy parameter k_gimel ≈ 12.318"""
