@@ -1331,8 +1331,8 @@ Examples:
 Title: Principia Metaphysica v{VERSION}: A G2-Manifold Residue Model
        with 1.43sigma Cosmological Alignment
 
-Description: This release marks the transition to a pure-geometry model,
-             replacing 125 empirical constants with derived residues.
+Description: G2 manifold unification framework deriving 125 SM constants
+             from EDOF=3 (1 geometric seed + 2 calibrations, 116:1 compression).
              Includes 72-gate integrity verification system.
 
 Keywords: G2 Manifold, Ricci Flow, 125-Parameter Port, Zenodo Archive
