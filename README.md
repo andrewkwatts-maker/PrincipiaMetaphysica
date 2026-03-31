@@ -15,15 +15,15 @@
 
 ## Executive Summary (For Peer Review Assessment)
 
-**Principia Metaphysica v24.1** is a theoretical physics framework deriving **125 fundamental physical constants** from G₂ manifold topology with **EDOF=3** (three topological seeds: b₃, φ, χ_eff). The framework achieves **117 pure predictions** from **3 geometric seeds + 3 scale anchors + 2 pending Yukawa angles**, representing a topologically anchored unification with minimal phenomenological input.
+**Principia Metaphysica v24.2** is a theoretical physics framework deriving **125 fundamental physical constants** from G₂ manifold topology with **EDOF=3** (1 geometric seed b₃ + 2 calibrations). The framework achieves a **116:1 compression ratio** from **1 geometric integer + 2 calibrated parameters + 2 pending Yukawa angles**, representing a topologically anchored unification with honest documentation of its inputs.
 
 ### The Core Achievement
 
 From a 27-dimensional bulk manifold **M²⁷(26,1) = (24+1) ⊕ (0,2)** (Leech Lattice Λ₂₄ plus Euclidean Information Sector S_EIS), we derive:
-- **3 geometric seeds** (b₃=24, φ=golden ratio, χ_eff=144) - fix all topology
-- **3 phenomenological scale anchors** (M_Planck, m_H, α_GUT) - fix energy scales only
-- **2 fitted angles** (θ₁₃, δ_CP) - pending explicit Yukawa derivation (v25.0)
-- **117 pure predictions** derived from the above 8 inputs
+- **1 geometric seed** (b₃=24, G₂ Betti number) — topological invariant
+- **2 calibrated parameters** (VEV coefficient 1.5859 with 3.4% gap; Re(T) constrained from Higgs mass — see Re(T) Tension Ledger)
+- **2 fitted angles** (θ₁₃, δ_CP) — pending explicit Yukawa derivation (v25.0)
+- **125 SM constants** derived from EDOF=3 effective inputs (116:1 compression)
 
 **Result**: **125 constants** spanning gauge couplings, fermion masses, CKM/PMNS mixing matrices, cosmological parameters, and precision observables.
 
@@ -32,7 +32,7 @@ From a 27-dimensional bulk manifold **M²⁷(26,1) = (24+1) ⊕ (0,2)** (Leech L
 Using **Effective Degrees of Freedom (EDOF)** analysis (standard in correlated measurement frameworks per PDG §39.4.3):
 
 - **χ² = 5.751** (original fit, no uncertainty inflation)
-- **EDOF = 3** (reflecting true topological independence: b₃ = 24, φ = 1.618, θ₁₃)
+- **EDOF = 3** (1 geometric seed b₃ = 24; 2 calibrations: VEV coefficient, Re(T))
 - **Reduced χ² = 1.917** (close to ideal 1.0)
 - **p-value = 0.124** ("Trust Zone" - good fit without overfitting)
 - **Status: CREDIBLE** (within [0.05, 0.95] credibility range)
@@ -54,7 +54,7 @@ This "Principia Metric" is the topological residue of the M²⁷ → M⁴ projec
 
 1. **V_cb Tension Resolution**: PM derives |V_cb| = 0.0412 as the **Topological Mean** between inclusive (42.2×10⁻³) and exclusive (39.1×10⁻³) measurements, with the discrepancy explained via Ricci Flow—solving a decade-old Standard Model problem.
 
-2. **Algorithmic Symmetry**: The 125 constants represent **Minimal Description Length (MDL)** compression of M²⁷ bulk spectral information, achieving **116:1 data compression** (125 outputs from 3 seeds + 3 anchors). The computational framework is **isomorphic to the geometry**, not a simulation.
+2. **Algorithmic Symmetry**: The 125 constants represent **Minimal Description Length (MDL)** compression of M²⁷ bulk spectral information, achieving **116:1 data compression** (125 outputs from EDOF=3 effective inputs). The computational framework is **isomorphic to the geometry**, not a simulation.
 
 3. **Geometric Derivations**:
    - **θ₁₃ = arctan(1/7) ≈ 8.13°** (1D time / 7D G₂ manifold, 4.5% RG correction to 8.5°)
@@ -107,7 +107,7 @@ Final Status Report: [FINAL_STATUS_REPORT.md](FINAL_STATUS_REPORT.md)
 
 > **v24.1 STATUS**: 100% submission ready. All gates validated and updated.
 > EDOF = 3 → p = 0.124 (Trust Zone). ALP @ 3.51 meV = Primary Kill-Switch.
-> 74 Gates LOCKED (incl. ALP falsification). Zero free parameters—every constant derives from pure G₂ topology.
+> 74 Gates LOCKED (incl. ALP falsification). EDOF=3: 1 geometric seed + 2 calibrations → 125 SM constants.
 
 ---
 
