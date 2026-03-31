@@ -18,7 +18,7 @@ the narrative content and cross-references for the paper's introduction.
 
 SECTION: 1 (Introduction)
 
-v24.2 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
+v24.2 TOPOLOGICALLY ANCHORED: 125 constants from EDOF=3 seeds (116:1 compression).
 
 OUTPUTS:
     - None (narrative content only)
@@ -68,7 +68,7 @@ class IntroductionV16(SimulationBase):
             version="24.2",
             domain="introduction",
             title="Introduction to Principia Metaphysica",
-            description="Narrative introduction to the PM v24.2 (24,1,2) Dual-Shadow framework - Topologically Anchored with EDOF=3 (3 geometric seeds)",
+            description="Narrative introduction to the PM v24.2 (24,1,2) Dual-Shadow framework - Topologically Anchored with EDOF=3 (1 geometric + 2 calibrations)",
             section_id="1",
             subsection_id=None
         )
@@ -246,7 +246,7 @@ class IntroductionV16(SimulationBase):
                 content=(
                     'This paper presents <strong>Principia Metaphysica <span class="pm-value" data-pm-value="framework.version_label">v24.2</span></strong>, a <strong>Topologically Anchored Framework</strong> '
                     "in which 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
-                    "under Ricci flow from <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), achieving <strong>116:1 compression ratio</strong>. "
+                    "under Ricci flow from <strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations), achieving <strong>116:1 compression ratio</strong>. "
                     "The bulk manifold <strong>M<sup>27</sup>(24,1,2)</strong> decomposes as: "
                     "<em>24</em> G₂ physics dimensions (12×(2,0) bridge pairs creating dual 13D shadows), "
                     "<em>1</em> unified timelike fiber T¹, and "
@@ -862,7 +862,7 @@ class IntroductionV16(SimulationBase):
                     "<p>The central claim is that a <strong>27D spacetime with structure (24,1,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)</strong>, "
                     "with 12 bridge pairs warping to create dual 13D(12,1) shadows, provides a <strong>ghost-free framework</strong> containing a 1 + 3 brane hierarchy. "
                     "The dual-shadow structure, with geometry emerging from the 4096-component Pneuma field, achieves <strong>116:1 compression ratio</strong> "
-                    "from <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃) to simultaneously explain: "
+                    "from <strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations) to simultaneously explain: "
                     "(1) the origin of gauge forces from 26D isometries, "
                     "(2) chiral structure via dual-shadow Möbius mechanism, "
                     "(3) emergence of time from modular flow, "
