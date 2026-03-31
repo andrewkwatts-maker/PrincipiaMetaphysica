@@ -205,17 +205,56 @@ class PrincipiaValidator:
         print(f"  C001-B3: {status} (b3 = {b3})")
 
     def cert_c002_three_generations(self):
-        """C002: Three fermion generations from b3/8"""
-        b3 = self._get_param('geometry.elder_kads', 24)
-        n_gen = b3 // 8
+        """C002: Three fermion generations from Atiyah-Singer index theorem.
+
+        Validates the foundational prediction: the number of chiral fermion
+        generations is fixed by the G2 manifold topology via the index theorem.
+
+        Canonical derivation (g2_geometry.py, FormulasRegistry):
+            chi_eff = 2*(h11 - h21 + h31) = 2*(4 - 0 + 68) = 144
+            n_gen = chi_eff / 48 = 144 / 48 = 3
+
+        The factor 48 arises from the dimension of the fundamental spinor
+        representation times topological normalization for 7D compactification
+        (Acharya 2002, arXiv:hep-th/0212294).
+
+        Equivalent shortcut: n_gen = b3/8 = 24/8 = 3 (since chi_eff = 6*b3
+        for TCS #187, and 6*b3/48 = b3/8). The canonical formula is preferred
+        because it generalizes to other G2 manifolds.
+
+        Gate explicitly FAILS if the registry lacks the parameter (no default),
+        preventing vacuous pass on missing registry data.
+        """
+        b3 = self._get_param('geometry.elder_kads')
+        chi_eff = self._get_param('topology.mephorash_chi')
+
+        if b3 is None or chi_eff is None:
+            status = "FAILED"
+            missing = []
+            if b3 is None:
+                missing.append("geometry.elder_kads")
+            if chi_eff is None:
+                missing.append("topology.mephorash_chi")
+            self.results['C002-GEN'] = {
+                "status": status,
+                "metric": f"{', '.join(missing)} NOT FOUND in registry",
+                "expected": 3,
+                "actual": None,
+                "sector": "FOUNDATIONAL"
+            }
+            print(f"  C002-GEN: {status} ({', '.join(missing)} missing from registry)")
+            return
+
+        n_gen = chi_eff // 48
         status = "LOCKED" if n_gen == 3 else "FAILED"
         self.results['C002-GEN'] = {
             "status": status,
-            "metric": f"N_gen = {n_gen}",
+            "metric": f"N_gen = chi_eff/48 = {chi_eff}/48 = {n_gen}",
             "expected": 3,
+            "actual": n_gen,
             "sector": "FOUNDATIONAL"
         }
-        print(f"  C002-GEN: {status} (N_gen = {n_gen})")
+        print(f"  C002-GEN: {status} (N_gen = {chi_eff}/48 = {n_gen})")
 
     def cert_c003_chi_effective(self):
         """C003: Euler characteristic chi_eff = 144"""
