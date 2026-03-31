@@ -499,16 +499,19 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
     print(f"  [CLAUDE] Prompt saved to: {prompt_file.name}")
 
     # Invoke Claude Code CLI
-    # --print mode outputs response; --dangerously-skip-permissions for automation
+    # --print mode: pipe prompt via stdin to avoid shell length limits
     try:
+        with open(prompt_file, 'r', encoding='utf-8') as pf:
+            prompt_text = pf.read()
+
         result = subprocess.run(
             [
                 "claude",
                 "--print",
                 "--dangerously-skip-permissions",
                 "--max-turns", "30",
-                "-p", str(prompt_file),
             ],
+            input=prompt_text,
             capture_output=True, text=True,
             cwd=str(PROJECT_ROOT),
             timeout=1800,  # 30 minute max per gate review
@@ -523,6 +526,16 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
                 f.write(result.stderr)
 
         print(f"  [CLAUDE] Response saved to: {response_file.name}")
+        print(f"  [CLAUDE] Exit code: {result.returncode}")
+        print(f"  [CLAUDE] Output length: {len(result.stdout)} chars")
+
+        if result.returncode != 0:
+            print(f"  [CLAUDE] ERROR (exit {result.returncode}): {result.stderr[:500]}")
+            return False
+
+        if len(result.stdout) < 50:
+            print(f"  [CLAUDE] WARNING: Very short response — likely an error")
+            return False
 
         # Check if Claude indicated no changes needed
         if "No changes needed" in result.stdout or "implementation is sound" in result.stdout:
