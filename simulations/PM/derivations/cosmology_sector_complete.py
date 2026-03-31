@@ -530,7 +530,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         N_eff_bary = self.elder_kads - 14  # = 10
         delta_b3_ratio = 0.12  # Cycle asymmetry
         cp_phase = np.pi / 6  # 30 degrees
-        Re_T = 7.086  # Moduli parameter
+        Re_T = 7.086  # [CALIBRATED] Moduli parameter — chosen for BBN match (not Higgs-derived 9.865)
 
         k_bary = J_quark / N_eff_bary  # 3.08e-6
 

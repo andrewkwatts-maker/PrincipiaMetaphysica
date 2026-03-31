@@ -1454,7 +1454,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                         "  Mode  4:     Z⁰ boson (λ₄ ∝ sin²θ_W / Vol(V₇))\n"
                         "  Modes 5–12:  8 gluons of SU(3)_C (degeneracy from G₂⊃SU(3) holonomy)\n\n"
                         "Bank II — Higgs Sector (Mode 13)\n"
-                        "  Mode 13: Higgs boson h (λ₁₃ = m_H²·L²; fixes Re(T) = 7.086)\n\n"
+                        "  Mode 13: Higgs boson h (λ₁₃ = m_H²·L²; constrains Re(T))\n\n"
                         "Bank III — Fermion Sector (Modes 14–31)\n"
                         "  3 generations × 6 quarks + 6 leptons: mass ratios from eigenvalue ratios\n"
                         "  Chiral structure from G₂ holonomy: index theorem gives n_gen = χ_eff/48 = 3\n\n"

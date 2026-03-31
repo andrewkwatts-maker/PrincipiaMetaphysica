@@ -175,8 +175,11 @@ class BaryonAsymmetryV18(SimulationBase):
         self.cp_phase = np.pi / 6  # 30 degrees
 
         # Moduli stabilization parameter
-        # Re(T) from KKLT-type stabilization
-        self.Re_T = 7.086
+        # CALIBRATED: Re(T) = 7.086 chosen to match BBN baryon asymmetry eta_b ~ 6.1e-10.
+        # This is NOT the Higgs-derived value (9.865) or the geometric value (1.833).
+        # The tension between these three Re(T) values is an open problem.
+        # See config.py HiggsMassParameters for full discussion.
+        self.Re_T = 7.086  # [CALIBRATED for baryon asymmetry]
 
         # v19.0: Jarlskog invariant (CKM CP violation measure)
         # PDG 2024: J = (3.08 +/- 0.15) * 10^-5

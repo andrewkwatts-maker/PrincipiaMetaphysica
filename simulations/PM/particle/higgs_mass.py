@@ -46,8 +46,8 @@ Dedicated To:
 #   The 27 sigma deviation arises from compounding uncertainties in:
 #   1. Tree-level quartic coupling lambda_0 = 0.129 (from SO(10) matching,
 #      has ~3% theoretical uncertainty from threshold corrections)
-#   2. Modulus Re(T) = 7.086 (stabilized value, sensitive to racetrack
-#      parameters A, B, a, b which have ~1% individual uncertainties)
+#   2. Modulus Re(T) (constrained from Higgs mass; open tension between
+#      9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)
 #   3. Top Yukawa y_t = 0.99 (loop correction coefficient, ~1% uncertainty)
 #   4. Higher-loop corrections beyond 1-loop not included
 #

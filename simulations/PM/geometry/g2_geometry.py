@@ -892,7 +892,7 @@ class G2GeometryV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="The Mashiach Field",
-                content="In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ = 7.086 is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the specific value fixed by the Higgs mass constraint m_h = 125.10 GeV. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
+                content="In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.10 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
             ),
             ContentBlock(
                 type="paragraph",
@@ -924,7 +924,7 @@ class G2GeometryV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV fixing Re(T) = 7.086), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
+                content="While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
             ),
             ContentBlock(
                 type="callout",
@@ -977,7 +977,7 @@ class G2GeometryV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Unified Derivation Chain — No Circular Inputs",
-                content="The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> = 7.086 → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
+                content="The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> (constrained from Higgs mass; value under tension) → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
             ),
             ContentBlock(
                 type="callout",

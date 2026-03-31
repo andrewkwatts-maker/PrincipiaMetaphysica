@@ -365,6 +365,45 @@ def test_odowd_hubble_formula():
     return is_valid
 
 
+def test_c44_isotropy_guard():
+    """
+    C44: The 4-Pattern must be isotropic (6 pins per dimension).
+
+    The 24 Torsion Pins (b₃ = 24) divide into 4 spacetime dimensions
+    with exactly 6 pins each. This isotropy is required for vacuum
+    stability and ghost-free compactification.
+
+    Any asymmetric distribution (e.g., 5,3,3,3) would break:
+    - The C44 gate in root_derivation.py
+    - The isotropic vacuum condition
+    - The 12-bridge-pair architecture (b₃/2 = 12)
+    """
+    if REGISTRY:
+        b3 = REGISTRY.b3
+    else:
+        b3 = 24
+
+    spacetime_dims = 4
+    pins_per_dim = b3 // spacetime_dims
+
+    # b3 must be divisible by 4
+    divisible = (b3 % spacetime_dims == 0)
+    # Exactly 6 pins per dimension
+    isotropic = (pins_per_dim == 6)
+    # 12 bridge pairs from b3/2
+    pairs_valid = (b3 // 2 == 12)
+
+    print(f"\n--- C44 ISOTROPY GUARD ---")
+    print(f"b3 = {b3}")
+    print(f"Spacetime dimensions: {spacetime_dims}")
+    print(f"Pins per dimension: {pins_per_dim} (must be 6)")
+    print(f"Divisibility: {'[PASS]' if divisible else '[FAIL]'}")
+    print(f"Isotropy (6 each): {'[PASS]' if isotropic else '[FAIL]'}")
+    print(f"Bridge pairs (12): {'[PASS]' if pairs_valid else '[FAIL]'}")
+
+    return divisible and isotropic and pairs_valid
+
+
 def run_all_tests():
     """Run all physics invariance tests."""
     print("=" * 60)
@@ -380,7 +419,8 @@ def run_all_tests():
         "Sterile Ratio": test_sterile_ratio(),
         "Tzimtzum Fraction": test_tzimtzum_fraction(),
         "Watts Guard Rail": test_watts_constant_guard_rail(),
-        "O'Dowd H0 Formula": test_odowd_hubble_formula()
+        "O'Dowd H0 Formula": test_odowd_hubble_formula(),
+        "C44 Isotropy": test_c44_isotropy_guard()
     }
 
     print("\n" + "=" * 60)

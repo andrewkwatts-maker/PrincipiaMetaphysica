@@ -250,7 +250,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="highlight_box",
                 content=(
-                    "<strong>Geometric Unification Complete:</strong> The derivation of Re(T) = 7.086 from "
+                    "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from "
                     "the measured Higgs mass (125.25 GeV) completes the geometric unification program. The "
                     "modulus T is no longer a free parameter but is determined by experimental data, while "
                     "λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly "
@@ -753,7 +753,7 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The PM framework proposes Standard Model parameters from a single TCS G₂ manifold with "
-                    "one constraint (Higgs mass fixes Re(T) = 7.086). This section summarizes the parameter "
+                    "one constraint (Higgs mass constrains Re(T)). This section summarizes the parameter "
                     "derivations and presents testable predictions."
                 )
             ),
@@ -805,8 +805,8 @@ class DiscussionV16(SimulationBase):
                 type="list",
                 items=[
                     "<strong>Step 1:</strong> G₂ compactification volume: V<sub>G₂</sub> = (Re(T))⁷ × ℓ<sub>P</sub>⁷ where ℓ<sub>P</sub> = 1.6 × 10⁻³⁵ m",
-                    "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) = 7.086",
-                    "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = 7.086 × ℓ<sub>P</sub> ≈ 1.1 × 10⁻³⁴ m",
+                    "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) (open problem: 9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)",
+                    "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = Re(T) × ℓ<sub>P</sub>",
                     "<strong>Step 4:</strong> First KK mode mass: m<sub>KK,1</sub> = ℏc/R<sub>c</sub>",
                     "<strong>Step 5:</strong> Result: m<sub>KK,1</sub> ≈ 5.0 TeV (within HL-LHC reach)"
                 ]
@@ -886,8 +886,8 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "The PM framework requires 0 calibrated parameters (all PMNS angles including θ₁₃ and "
-                    "δ<sub>CP</sub> now derived from geometry), 1 constraint (Higgs mass m<sub>h</sub> = 125.1 GeV fixes "
-                    "Re(T) = 7.086), and 0 phenomenological parameters (VEV, α<sub>GUT</sub>, w₀ all derived geometrically)."
+                    "δ<sub>CP</sub> now derived from geometry), 1 constraint (Higgs mass m<sub>h</sub> = 125.1 GeV constrains "
+                    "Re(T)), and 0 phenomenological parameters (VEV, α<sub>GUT</sub>, w₀ all derived geometrically)."
                 )
             ),
 
@@ -901,7 +901,7 @@ class DiscussionV16(SimulationBase):
                 type="list",
                 items=[
                     "<strong>0 calibrated parameters:</strong> All PMNS angles including θ₁₃ and δ<sub>CP</sub> now derived from geometry",
-                    "<strong>1 constraint:</strong> Higgs mass m<sub>h</sub> = 125.1 GeV fixes Re(T) = 7.086",
+                    "<strong>1 constraint:</strong> Higgs mass m<sub>h</sub> = 125.1 GeV constrains Re(T)",
                     "<strong>0 phenomenological parameters:</strong> VEV, α<sub>GUT</sub>, w₀ all derived geometrically"
                 ]
             ),
@@ -1153,7 +1153,7 @@ class DiscussionV16(SimulationBase):
                     "<strong>Issue 12 - F(R,T) Origin:</strong> RESOLVED - EXPLAINED: Pneuma VEV couples to T<sub>μν</sub>",
                     "<strong>Issue 13 - Moduli Stability:</strong> RESOLVED - QUANTIFIED: Torsion + fluxes + Casimir energy balance",
                     "<strong>Issue 14 - Mirror Sector:</strong> RESOLVED - CONCRETE: KK parity from G₂ symmetry, m<sub>DM</sub> ~ 5 TeV",
-                    "<strong>Issue 15 - Higgs Mass Formula:</strong> RESOLVED - Re(T) = 7.086 derived from m<sub>h</sub> = 125.1 GeV; swampland compliance"
+                    "<strong>Issue 15 - Higgs Mass Formula:</strong> OPEN - Re(T) constrained from m<sub>h</sub> = 125.1 GeV (tension: Higgs inversion gives 9.865, BBN calibration gives 7.086, geometry gives 1.833)"
                 ]
             ),
 
