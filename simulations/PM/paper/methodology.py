@@ -5,7 +5,7 @@ PRINCIPIA METAPHYSICA v24.2 - Section 2: The Sterile Extraction Methodology
 
 DOI: 10.5281/zenodo.18079602
 
-v24.2 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
+v24.2 TOPOLOGICALLY ANCHORED: 125 constants from EDOF=3 seeds (116:1 compression).
 
 This simulation generates the content for Section 2 of the paper:
   2.1 Principles of Spectral Geometry
@@ -113,7 +113,7 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the v24.2 Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds), the transition from empirical observation to "
+                    "In the v24.2 Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations), the transition from empirical observation to "
                     "first-principles computation is proposed through <strong>Spectral Geometry</strong> with <strong>116:1 compression ratio</strong>. "
                     "This methodology posits that the 'constants' of nature are not independent variables, "
                     "but emerge as discrete harmonic frequencies of the V₇ manifold from minimal phenomenological input. By treating the "
@@ -173,7 +173,7 @@ class MethodologyV16_2(SimulationBase):
                 content=(
                     "Traditional physics relies on extensive parameter fitting to match theoretical values to "
                     "experimental data. The Topologically Anchored Framework (<strong>EDOF=3</strong>) proposes <strong>116:1 compression</strong> "
-                    "by showing that λₙ values are <strong>topological invariants</strong> anchored by 3 geometric seeds (b₃, φ, θ₁₃). "
+                    "by showing that λₙ values are <strong>topological invariants</strong> anchored by <strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations. "
                     "Because the G₂ manifold is Ricci-flat and torsion-free, its spectrum is rigid with minimal phenomenological input. "
                     "The electron mass and other constants emerge from the volume of the V₇ manifold, "
                     "constrained by the Global Metric Lock."
@@ -220,7 +220,7 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds with <strong>116:1 compression ratio</strong>), "
+                    "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations, with <strong>116:1 compression ratio</strong>), "
                     "the 125 parameters of the Standard Model and ΛCDM are not 'points' in a data table, "
                     "but <strong>Physical Junctions</strong> in the higher-dimensional manifold. This section defines the Brane-Node Intersection "
                     "Lattice, the geometric structure that hosts the spectral eigenvalues derived in Section 2.1."
@@ -307,7 +307,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "The v24.2 Topologically Anchored Framework establishes a <strong>Metric Lock</strong> where "
-                    "residues are static geometric invariants anchored by <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃). "
+                    "residues are static geometric invariants anchored by <strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations. "
                     "This section details the mechanisms—both mathematical and computational—that ensure "
                     "the 125-residue registry achieves <strong>116:1 compression ratio</strong> and self-consistency."
                 )
@@ -323,7 +323,7 @@ class MethodologyV16_2(SimulationBase):
                     "In previous versions (v15.0–v16.1), the model utilized stochastic optimization "
                     "and gradient descent to minimize tension between theory and observation. In the "
                     "Topologically Anchored Framework (<strong>EDOF=3</strong>), these protocols are <strong>deprecated and physically removed</strong> "
-                    "from the engine. The framework achieves <strong>116:1 compression ratio</strong> from 3 geometric seeds (b₃, φ, θ₁₃)."
+                    "from the engine. The framework achieves <strong>116:1 compression ratio</strong> from <strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations."
                 )
             ),
             ContentBlock(
@@ -331,7 +331,7 @@ class MethodologyV16_2(SimulationBase):
                 content=(
                     "<h4>Topological Anchoring Logic</h4>"
                     "<p>If the residues are Laplacian eigenvalues of a rigid G₂ manifold anchored by "
-                    "<strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), then 'optimizing' them represents a category error. "
+                    "<strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), then 'optimizing' them represents a category error. "
                     "One does not 'optimize' the number π; one extracts it from topological constraints with minimal phenomenological input.</p>"
                 ),
                 label="sterile-logic"
@@ -723,7 +723,7 @@ class MethodologyV16_2(SimulationBase):
             section_id="2",
             subsection_id="2.6",  # v24.2: Code-Theoretical Integrity section
             title="The Topologically Anchored Methodology (EDOF=3)",
-            abstract="Spectral geometry principles with 116:1 compression ratio from 3 geometric seeds (b₃, φ, θ₁₃), the 125-residue port, and the global metric lock.",
+            abstract="Spectral geometry principles with 116:1 compression ratio from EDOF=3: 1 geometric seed b₃ + 2 calibrations, the 125-residue port, and the global metric lock.",
             content_blocks=content_blocks
         )
 

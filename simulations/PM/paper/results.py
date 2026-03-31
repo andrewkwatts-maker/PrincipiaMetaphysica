@@ -5,7 +5,7 @@ PRINCIPIA METAPHYSICA v24.2 - Section 3: Cosmological Results and Alignment
 
 DOI: 10.5281/zenodo.18079602
 
-v24.2 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
+v24.2 TOPOLOGICALLY ANCHORED: 125 constants from EDOF=3 seeds (116:1 compression).
 
 This simulation generates the content for Section 3 of the paper:
   3.1 The Hubble Tension: A 1.4σ Residual
@@ -115,7 +115,7 @@ class ResultsV16_2(SimulationBase):
                     "67.4 ± 0.5 km/s/Mpc) and that measured in the late universe via the "
                     "Cepheid–supernova distance ladder (SH0ES 2022: H₀ = 73.04 ± 1.04 km/s/Mpc). "
                     "At ~4–5σ, this tension either signals new physics or unresolved systematics. "
-                    "The PM Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds) provides a "
+                    "The PM Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations) provides a "
                     "geometrically motivated intermediate value, though it does not fully resolve the tension."
                 )
             ),
@@ -189,7 +189,7 @@ class ResultsV16_2(SimulationBase):
                     "DESI 2025 BAO-only data favor a slight deviation: w₀ = −0.957 ± 0.067 "
                     "(BAO-only) at 0.64σ from −1, consistent with thawing quintessence. "
                     "Principia Metaphysica v24.2 derives w₀ from G₂ manifold topology with "
-                    "<strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), achieving <strong>116:1 compression ratio</strong> (with classifications ranging from DERIVED through MOTIVATED to FITTED). "
+                    "<strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations), achieving <strong>116:1 compression ratio</strong> (with classifications ranging from DERIVED through MOTIVATED to FITTED). "
                     "(The complete geometric derivation from dimensional reduction is presented in Section 5.2; here we summarize the result and experimental comparison.)"
                 )
             ),
@@ -234,7 +234,7 @@ class ResultsV16_2(SimulationBase):
                 type="note",
                 content=(
                     "<h4>DESI 2025 Consistency (Topologically Anchored, EDOF=3)</h4>"
-                    "<p>PM predicts w₀ = −23/24 ≈ −0.9583 from <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), "
+                    "<p>PM predicts w₀ = −23/24 ≈ −0.9583 from <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), "
                     "consistent with DESI 2025 BAO-only (w₀ = −0.957 ± 0.067, 0.02σ deviation). "
                     "Both the PM framework and DESI independently favor thawing dark energy (w₀ > −1) over ΛCDM. "
                     "The combined DESI+CMB constraints (w₀ = −0.76 ± 0.09, from the wₐ sector) are tighter, "
@@ -260,7 +260,7 @@ class ResultsV16_2(SimulationBase):
                     "(ρ<sub>Λ</sub> ≈ 10⁻⁴⁷ GeV⁴) is 120 orders of magnitude smaller than the naive "
                     "Planck-scale estimate (ρ<sub>Pl</sub> ~ 10⁷⁴ GeV⁴)—is one of the deepest unsolved "
                     "problems in theoretical physics. Standard approaches require either "
-                    "extraordinary fine-tuning or anthropic selection. The PM Topologically Anchored Framework (<strong>EDOF=3</strong>: 3 geometric seeds with <strong>116:1 compression ratio</strong>) "
+                    "extraordinary fine-tuning or anthropic selection. The PM Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations with <strong>116:1 compression ratio</strong>) "
                     "offers a qualitative geometric mechanism: brane-tension cancellation within the G₂ compactification."
                 )
             ),
@@ -349,7 +349,7 @@ class ResultsV16_2(SimulationBase):
                     "independent confirmations. <strong>UNTESTED</strong> entries are genuine "
                     "predictions of yet-unmeasured quantities. σ values for CONSISTENT entries "
                     "are theory-level comparisons within PM's estimated theoretical uncertainty "
-                    "(the framework has <strong>EDOF=3</strong>: 3 geometric seeds with <strong>116:1 compression ratio</strong>); "
+                    "(the framework has <strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations with <strong>116:1 compression ratio</strong>); "
                     "they should not be interpreted as standard experimental σ values."
                 )
             ),
@@ -393,7 +393,7 @@ class ResultsV16_2(SimulationBase):
             title="Cosmological Results and Alignment",
             abstract=(
                 "Principia Metaphysica v24.2 derives three key cosmological predictions "
-                "from G₂ manifold topology with <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃), "
+                "from G₂ manifold topology with <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), "
                 "achieving <strong>116:1 compression ratio</strong>: H₀ = 71.55 km/s/Mpc "
                 "(1.4σ from SH0ES, between Planck and local distance ladder values), "
                 "w₀ = −23/24 ≈ −0.958 (0.02σ from DESI 2025 BAO-only, consistent with thawing dark energy), "

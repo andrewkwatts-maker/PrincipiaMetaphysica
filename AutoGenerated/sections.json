@@ -21,7 +21,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The framework achieves <strong>116:1 compression ratio</strong> (125 constants from 3 geometric seeds). Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. <strong><span class=\"pm-value\" data-pm-value=\"abstract.pure_predictions\">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient <span class=\"pm-value\" data-pm-value=\"abstract.vev_coefficient\">1.5859</span>, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ <span class=\"pm-value\" data-pm-value=\"abstract.alpha_gut_coefficient\">0.0318</span>, Re(T) = 7.086 from Higgs mass). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.",
+          "content": "The framework achieves <strong>116:1 compression ratio</strong> (125 constants from EDOF=3 effective seeds). Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. <strong><span class=\"pm-value\" data-pm-value=\"abstract.pure_predictions\">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient <span class=\"pm-value\" data-pm-value=\"abstract.vev_coefficient\">1.5859</span>, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ <span class=\"pm-value\" data-pm-value=\"abstract.alpha_gut_coefficient\">0.0318</span>, Re(T) constrained from Higgs mass). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.",
           "label": "abstract-predictions",
           "equationNumber": "abstract-predictions"
         },
@@ -33,7 +33,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>Topologically Anchored Framework (116:1 Compression)</strong>: We frame this derivation through the lens of Minimal Description Length (MDL). The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, achieved with <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃). The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits → 69 bits), demonstrating this is information reduction rather than parameter fitting. The code is isomorphic to the geometric constraints themselves, with the 288/24/4 structure derived from G₂ topology (minimal phenomenological input).",
+          "content": "<strong>Topologically Anchored Framework (116:1 Compression)</strong>: We frame this derivation through the lens of Minimal Description Length (MDL). The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, achieved with <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations: VEV coefficient, Re(T)). The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits → 69 bits), demonstrating this is information reduction rather than parameter fitting. The code is isomorphic to the geometric constraints themselves, with the 288/24/4 structure derived from G₂ topology (minimal phenomenological input).",
           "label": "abstract-mdl",
           "equationNumber": "abstract-mdl"
         },
@@ -65,7 +65,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The framework achieves <strong>116:1 compression ratio</strong> (125 constants from 3 geometric seeds). Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. <strong><span class=\"pm-value\" data-pm-value=\"abstract.pure_predictions\">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient <span class=\"pm-value\" data-pm-value=\"abstract.vev_coefficient\">1.5859</span>, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ <span class=\"pm-value\" data-pm-value=\"abstract.alpha_gut_coefficient\">0.0318</span>, Re(T) = 7.086 from Higgs mass). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.",
+          "content": "The framework achieves <strong>116:1 compression ratio</strong> (125 constants from EDOF=3 effective seeds). Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. <strong><span class=\"pm-value\" data-pm-value=\"abstract.pure_predictions\">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient <span class=\"pm-value\" data-pm-value=\"abstract.vev_coefficient\">1.5859</span>, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ <span class=\"pm-value\" data-pm-value=\"abstract.alpha_gut_coefficient\">0.0318</span>, Re(T) constrained from Higgs mass). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.",
           "label": "abstract-predictions",
           "equationNumber": "abstract-predictions"
         },
@@ -77,7 +77,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>Topologically Anchored Framework (116:1 Compression)</strong>: We frame this derivation through the lens of Minimal Description Length (MDL). The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, achieved with <strong>EDOF=3</strong> (3 geometric seeds: b₃, φ, θ₁₃). The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits → 69 bits), demonstrating this is information reduction rather than parameter fitting. The code is isomorphic to the geometric constraints themselves, with the 288/24/4 structure derived from G₂ topology (minimal phenomenological input).",
+          "content": "<strong>Topologically Anchored Framework (116:1 Compression)</strong>: We frame this derivation through the lens of Minimal Description Length (MDL). The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, achieved with <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations: VEV coefficient, Re(T)). The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits → 69 bits), demonstrating this is information reduction rather than parameter fitting. The code is isomorphic to the geometric constraints themselves, with the 288/24/4 structure derived from G₂ topology (minimal phenomenological input).",
           "label": "abstract-mdl",
           "equationNumber": "abstract-mdl"
         },
@@ -166,7 +166,7 @@
         "alp.mass_meV",
         "alp.coupling_GeV_inv"
       ],
-      "timestamp": "2026-03-31T18:55:50.006077"
+      "timestamp": "2026-04-01T07:12:44.627847"
     },
     "1": {
       "id": "1",
@@ -438,9 +438,15 @@
         },
         {
           "type": "note",
-          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to derive Re(T) = 7.086 from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. This ensures swampland compliance (Δφ = 1.958 > 0.816) and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The framework achieves <strong>116:1 compression ratio</strong> with three calibration seeds: VEV factor 1.5859 (semi-derived via ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃), α<sub>GUT</sub> coefficient 0.032177, and Re(T)=7.086 from Higgs mass—all documented. With the derivation of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ Standard Model + compactification parameters as pure geometric predictions</strong>. Racetrack moduli stabilization dynamically derives the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenological input). Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
+          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to constrain Re(T) from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The framework achieves <strong>116:1 compression ratio</strong> with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. With the derivation of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ Standard Model + compactification parameters as pure geometric predictions</strong>. Racetrack moduli stabilization dynamically derives the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenological input). Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
           "label": "derived-modulus",
           "equationNumber": "derived-modulus"
+        },
+        {
+          "type": "table",
+          "content": "<h4>Seed Hierarchy (EDOF = 3)</h4><table style='width:100%; border-collapse:collapse; margin:1rem 0;'><tr style='border-bottom:2px solid #555;'><th style='text-align:left; padding:0.5rem;'>Seed</th><th style='text-align:left; padding:0.5rem;'>Value</th><th style='text-align:left; padding:0.5rem;'>Status</th><th style='text-align:left; padding:0.5rem;'>Role</th></tr><tr style='border-bottom:1px solid #333;'><td style='padding:0.5rem;'>b₃</td><td style='padding:0.5rem;'>24</td><td style='padding:0.5rem;'><strong>GEOMETRIC</strong></td><td style='padding:0.5rem;'>G₂ Betti number — topological invariant</td></tr><tr style='border-bottom:1px solid #333;'><td style='padding:0.5rem;'>VEV coefficient</td><td style='padding:0.5rem;'>1.5859</td><td style='padding:0.5rem;'>CALIBRATED</td><td style='padding:0.5rem;'>Scale anchor (3.4% gap from ln(M<sub>Pl</sub>/v)/b₃ — open)</td></tr><tr style='border-bottom:1px solid #333;'><td style='padding:0.5rem;'>Re(T)</td><td style='padding:0.5rem;'>9.865 / 7.086</td><td style='padding:0.5rem;'>CONSTRAINED</td><td style='padding:0.5rem;'>Kähler modulus — Higgs inversion (9.865) vs BBN calibrated (7.086)</td></tr></table><p><strong>Honest compression:</strong> 125 SM constants from 1 geometric integer + 2 calibrations → 116:1 ratio. True geometric prediction: b₃ = 24 only. The other two seeds are phenomenological anchors.</p>",
+          "label": "seed-hierarchy-table",
+          "equationNumber": "seed-hierarchy-table"
         },
         {
           "type": "note",
@@ -748,9 +754,15 @@
         },
         {
           "type": "note",
-          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to derive Re(T) = 7.086 from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. This ensures swampland compliance (Δφ = 1.958 > 0.816) and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The framework achieves <strong>116:1 compression ratio</strong> with three calibration seeds: VEV factor 1.5859 (semi-derived via ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃), α<sub>GUT</sub> coefficient 0.032177, and Re(T)=7.086 from Higgs mass—all documented. With the derivation of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ Standard Model + compactification parameters as pure geometric predictions</strong>. Racetrack moduli stabilization dynamically derives the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenological input). Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
+          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to constrain Re(T) from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The framework achieves <strong>116:1 compression ratio</strong> with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. With the derivation of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ Standard Model + compactification parameters as pure geometric predictions</strong>. Racetrack moduli stabilization dynamically derives the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenological input). Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
           "label": "derived-modulus",
           "equationNumber": "derived-modulus"
+        },
+        {
+          "type": "table",
+          "content": "<h4>Seed Hierarchy (EDOF = 3)</h4><table style='width:100%; border-collapse:collapse; margin:1rem 0;'><tr style='border-bottom:2px solid #555;'><th style='text-align:left; padding:0.5rem;'>Seed</th><th style='text-align:left; padding:0.5rem;'>Value</th><th style='text-align:left; padding:0.5rem;'>Status</th><th style='text-align:left; padding:0.5rem;'>Role</th></tr><tr style='border-bottom:1px solid #333;'><td style='padding:0.5rem;'>b₃</td><td style='padding:0.5rem;'>24</td><td style='padding:0.5rem;'><strong>GEOMETRIC</strong></td><td style='padding:0.5rem;'>G₂ Betti number — topological invariant</td></tr><tr style='border-bottom:1px solid #333;'><td style='padding:0.5rem;'>VEV coefficient</td><td style='padding:0.5rem;'>1.5859</td><td style='padding:0.5rem;'>CALIBRATED</td><td style='padding:0.5rem;'>Scale anchor (3.4% gap from ln(M<sub>Pl</sub>/v)/b₃ — open)</td></tr><tr style='border-bottom:1px solid #333;'><td style='padding:0.5rem;'>Re(T)</td><td style='padding:0.5rem;'>9.865 / 7.086</td><td style='padding:0.5rem;'>CONSTRAINED</td><td style='padding:0.5rem;'>Kähler modulus — Higgs inversion (9.865) vs BBN calibrated (7.086)</td></tr></table><p><strong>Honest compression:</strong> 125 SM constants from 1 geometric integer + 2 calibrations → 116:1 ratio. True geometric prediction: b₃ = 24 only. The other two seeds are phenomenological anchors.</p>",
+          "label": "seed-hierarchy-table",
+          "equationNumber": "seed-hierarchy-table"
         },
         {
           "type": "note",
@@ -828,7 +840,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-03-31T18:55:50.006169"
+      "timestamp": "2026-04-01T07:12:44.627944"
     },
     "2": {
       "id": "2",
@@ -1140,7 +1152,7 @@
         },
         {
           "type": "callout",
-          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ = 7.086 is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the specific value fixed by the Higgs mass constraint m_h = 125.10 GeV. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
+          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.10 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
         },
         {
           "type": "paragraph",
@@ -1168,7 +1180,7 @@
         },
         {
           "type": "paragraph",
-          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV fixing Re(T) = 7.086), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
+          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
         },
         {
           "type": "callout",
@@ -1208,7 +1220,7 @@
         },
         {
           "type": "callout",
-          "content": "The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> = 7.086 → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
+          "content": "The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> (constrained from Higgs mass; value under tension) → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
         },
         {
           "type": "callout",
@@ -1748,7 +1760,7 @@
         },
         {
           "type": "callout",
-          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ = 7.086 is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the specific value fixed by the Higgs mass constraint m_h = 125.10 GeV. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
+          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.10 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
         },
         {
           "type": "paragraph",
@@ -1776,7 +1788,7 @@
         },
         {
           "type": "paragraph",
-          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV fixing Re(T) = 7.086), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
+          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
         },
         {
           "type": "callout",
@@ -1816,7 +1828,7 @@
         },
         {
           "type": "callout",
-          "content": "The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> = 7.086 → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
+          "content": "The KK mass scale is derived from flux quantisation and moduli stabilisation: N<sub>flux</sub> = 24 (from χ<sub>eff</sub> = 144) → racetrack coefficients a, b → T<sub>min</sub> (constrained from Higgs mass; value under tension) → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 → k<sub>eff</sub> = b₃/(2+ε) ~ 10.80 → M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ~ 4.5 TeV. Deep Connection: The parameter λ = T<sub>min</sub> ~ 1.4885 is the OUTPUT of racetrack moduli stabilisation, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavour physics → IR phenomenology."
         },
         {
           "type": "callout",
@@ -2086,7 +2098,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-03-31T18:55:50.215747"
+      "timestamp": "2026-04-01T07:12:44.840603"
     },
     "2.7": {
       "id": "2",
@@ -2476,7 +2488,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-03-31T18:55:50.215868"
+      "timestamp": "2026-04-01T07:12:44.840778"
     },
     "V.1": {
       "id": "validation",
@@ -2598,7 +2610,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-03-31T18:55:50.215990"
+      "timestamp": "2026-04-01T07:12:44.840941"
     },
     "3.4": {
       "id": "3",
@@ -2762,7 +2774,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-03-31T18:55:50.216049"
+      "timestamp": "2026-04-01T07:12:44.841022"
     },
     "3.6": {
       "id": "3",
@@ -2934,7 +2946,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-03-31T18:55:50.216127"
+      "timestamp": "2026-04-01T07:12:44.841130"
     },
     "3": {
       "id": "3",
@@ -3138,7 +3150,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-03-31T18:55:50.246051"
+      "timestamp": "2026-04-01T07:12:44.876621"
     },
     "3.2": {
       "id": "3",
@@ -3624,7 +3636,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-03-31T18:55:50.246309"
+      "timestamp": "2026-04-01T07:12:44.876891"
     },
     "3.1": {
       "id": "3",
@@ -3682,7 +3694,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-03-31T18:55:50.246442"
+      "timestamp": "2026-04-01T07:12:44.877042"
     },
     "4.2": {
       "id": "4",
@@ -3812,7 +3824,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-03-31T18:55:50.448637"
+      "timestamp": "2026-04-01T07:12:45.079803"
     },
     "4.1": {
       "id": "4",
@@ -4100,7 +4112,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-03-31T18:55:50.638494"
+      "timestamp": "2026-04-01T07:12:45.270968"
     },
     "4.3": {
       "id": "4",
@@ -4340,7 +4352,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-03-31T18:55:50.638672"
+      "timestamp": "2026-04-01T07:12:45.271165"
     },
     "4.6": {
       "id": "4",
@@ -4528,7 +4540,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-03-31T18:55:50.638765"
+      "timestamp": "2026-04-01T07:12:45.271262"
     },
     "4.4": {
       "id": "4",
@@ -4710,7 +4722,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-03-31T18:55:50.666312"
+      "timestamp": "2026-04-01T07:12:45.305832"
     },
     "4.9": {
       "id": "4",
@@ -4812,7 +4824,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-03-31T18:55:50.666447"
+      "timestamp": "2026-04-01T07:12:45.306029"
     },
     "6.1.1": {
       "id": "6",
@@ -4926,7 +4938,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-03-31T18:55:50.666667"
+      "timestamp": "2026-04-01T07:12:45.306293"
     },
     "4.2.1": {
       "id": "4",
@@ -5000,7 +5012,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-03-31T18:55:50.666736"
+      "timestamp": "2026-04-01T07:12:45.306374"
     },
     "4.8": {
       "id": "4",
@@ -5058,7 +5070,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-03-31T18:55:50.666788"
+      "timestamp": "2026-04-01T07:12:45.306475"
     },
     "5.1": {
       "id": "5",
@@ -5398,7 +5410,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-03-31T18:55:50.666850"
+      "timestamp": "2026-04-01T07:12:45.306562"
     },
     "5.2": {
       "id": "5",
@@ -5692,7 +5704,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-03-31T18:55:50.666979"
+      "timestamp": "2026-04-01T07:12:45.306746"
     },
     "5.6": {
       "id": "5",
@@ -6016,7 +6028,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-03-31T18:55:50.667209"
+      "timestamp": "2026-04-01T07:12:45.307019"
     },
     "5.7": {
       "id": "5",
@@ -6160,7 +6172,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-03-31T18:55:50.669856"
+      "timestamp": "2026-04-01T07:12:45.317907"
     },
     "5.4": {
       "id": "5",
@@ -6480,7 +6492,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-03-31T18:55:50.671375"
+      "timestamp": "2026-04-01T07:12:45.319451"
     },
     "5.9": {
       "id": "5",
@@ -6642,7 +6654,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-03-31T18:55:50.672347"
+      "timestamp": "2026-04-01T07:12:45.320442"
     },
     "4.5": {
       "id": "4",
@@ -6902,7 +6914,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-03-31T18:55:50.873938"
+      "timestamp": "2026-04-01T07:12:45.524022"
     },
     "4.7": {
       "id": "4",
@@ -7154,7 +7166,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-03-31T18:55:50.874621"
+      "timestamp": "2026-04-01T07:12:45.524766"
     },
     "5.3": {
       "id": "5",
@@ -7312,7 +7324,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-03-31T18:55:50.874784"
+      "timestamp": "2026-04-01T07:12:45.524943"
     },
     "5.8": {
       "id": "5",
@@ -7634,7 +7646,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-03-31T18:55:50.874884"
+      "timestamp": "2026-04-01T07:12:45.525058"
     },
     "6.1": {
       "id": "6",
@@ -7694,7 +7706,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.874974"
+      "timestamp": "2026-04-01T07:12:45.525159"
     },
     "6.2": {
       "id": "6",
@@ -7742,7 +7754,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875018"
+      "timestamp": "2026-04-01T07:12:45.525210"
     },
     "6.3": {
       "id": "6",
@@ -7834,7 +7846,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875064"
+      "timestamp": "2026-04-01T07:12:45.525262"
     },
     "6.4": {
       "id": "6",
@@ -7886,7 +7898,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875101"
+      "timestamp": "2026-04-01T07:12:45.525303"
     },
     "6.5": {
       "id": "6",
@@ -7938,7 +7950,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875131"
+      "timestamp": "2026-04-01T07:12:45.525339"
     },
     "6.6": {
       "id": "6",
@@ -7990,7 +8002,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875160"
+      "timestamp": "2026-04-01T07:12:45.525377"
     },
     "6.7": {
       "id": "6",
@@ -8042,7 +8054,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875187"
+      "timestamp": "2026-04-01T07:12:45.525414"
     },
     "6.8": {
       "id": "6",
@@ -8086,7 +8098,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875212"
+      "timestamp": "2026-04-01T07:12:45.525443"
     },
     "6.9": {
       "id": "6",
@@ -8130,7 +8142,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.875323"
+      "timestamp": "2026-04-01T07:12:45.525579"
     },
     "5.5": {
       "id": "5",
@@ -8284,7 +8296,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-03-31T18:55:50.888745"
+      "timestamp": "2026-04-01T07:12:45.541901"
     },
     "2.8": {
       "id": "2",
@@ -8715,7 +8727,7 @@
         },
         {
           "type": "callout",
-          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> sampler data fields provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> sampler data fields provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) is constrained from the measured Higgs mass (125.10 GeV); the exact value is an open problem (9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)."
         },
         {
           "type": "heading",
@@ -9172,7 +9184,7 @@
         },
         {
           "type": "callout",
-          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> sampler data fields provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> sampler data fields provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) is constrained from the measured Higgs mass (125.10 GeV); the exact value is an open problem (9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)."
         },
         {
           "type": "heading",
@@ -9230,7 +9242,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-03-31T18:55:50.888934"
+      "timestamp": "2026-04-01T07:12:45.542100"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -9362,7 +9374,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-03-31T18:55:50.889052"
+      "timestamp": "2026-04-01T07:12:45.542215"
     },
     "7.2": {
       "id": "7",
@@ -9478,7 +9490,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-03-31T18:55:50.889188"
+      "timestamp": "2026-04-01T07:12:45.542350"
     },
     "7.4": {
       "id": "7",
@@ -9596,7 +9608,7 @@
         "portals.sterile_mass_scale_gev",
         "portals.sterile_n_eff_contribution"
       ],
-      "timestamp": "2026-03-31T18:55:50.958869"
+      "timestamp": "2026-04-01T07:12:45.613105"
     },
     "7.5": {
       "id": "7",
@@ -9756,7 +9768,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-03-31T18:55:50.958939"
+      "timestamp": "2026-04-01T07:12:45.613192"
     },
     "7.6": {
       "id": "7",
@@ -9826,7 +9838,7 @@
         "consciousness.shielded_tau_ms",
         "consciousness.shielding_factor"
       ],
-      "timestamp": "2026-03-31T18:55:50.954346"
+      "timestamp": "2026-04-01T07:12:45.608556"
     },
     "7": {
       "id": "7",
@@ -9922,7 +9934,7 @@
         },
         {
           "type": "highlight_box",
-          "content": "<strong>Geometric Unification Complete:</strong> The derivation of Re(T) = 7.086 from the measured Higgs mass (125.25 GeV) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
+          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.25 GeV) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
         },
         {
           "type": "list",
@@ -10404,7 +10416,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The PM framework proposes Standard Model parameters from a single TCS G₂ manifold with one constraint (Higgs mass fixes Re(T) = 7.086). This section summarizes the parameter derivations and presents testable predictions."
+          "content": "The PM framework proposes Standard Model parameters from a single TCS G₂ manifold with one constraint (Higgs mass constrains Re(T)). This section summarizes the parameter derivations and presents testable predictions."
         },
         {
           "type": "heading",
@@ -10510,8 +10522,8 @@
           "content": null,
           "items": [
             "<strong>Step 1:</strong> G₂ compactification volume: V<sub>G₂</sub> = (Re(T))⁷ × ℓ<sub>P</sub>⁷ where ℓ<sub>P</sub> = 1.6 × 10⁻³⁵ m",
-            "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) = 7.086",
-            "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = 7.086 × ℓ<sub>P</sub> ≈ 1.1 × 10⁻³⁴ m",
+            "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) (open problem: 9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)",
+            "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = Re(T) × ℓ<sub>P</sub>",
             "<strong>Step 4:</strong> First KK mode mass: m<sub>KK,1</sub> = ℏc/R<sub>c</sub>",
             "<strong>Step 5:</strong> Result: m<sub>KK,1</sub> ≈ 5.0 TeV (within HL-LHC reach)"
           ]
@@ -10519,6 +10531,49 @@
         {
           "type": "paragraph",
           "content": "<strong>Signature at HL-LHC:</strong> Missing transverse energy + dijets from pp → G⁽¹⁾ → γγ, ZZ, W⁺W⁻"
+        },
+        {
+          "type": "heading",
+          "content": "Re(T) Modulus: Open Tension Ledger",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The Kähler modulus Re(T) enters multiple calculation chains with incompatible values. This tension is the framework's principal open problem (Issue 15)."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Re(T) Value",
+            "Source",
+            "Physics Role",
+            "Status"
+          ],
+          "rows": [
+            [
+              "1.833",
+              "TCS #187 geometric attractor",
+              "Naïve moduli stabilization",
+              "GEOMETRIC — predicts m<sub>h</sub> ≈ 414 GeV (fails)"
+            ],
+            [
+              "7.086",
+              "BBN calibration",
+              "Baryon asymmetry η<sub>b</sub> ≈ 6.1×10⁻¹⁰ (Gate 50)",
+              "CALIBRATED — tuned to match BBN observation"
+            ],
+            [
+              "9.865",
+              "Higgs mass inversion m<sub>h</sub> = 125.1 GeV",
+              "Electroweak symmetry breaking",
+              "CONSTRAINED — inverted from experiment"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "<strong>Resolution pathway:</strong> A unified Re(T) requires either (a) a racetrack superpotential with multiple condensates that stabilizes the modulus at a single value consistent with both Higgs mass and baryon asymmetry, or (b) a lattice G₂ computation of the full non-perturbative potential V(T). Until resolved, the framework carries EDOF=3 honestly: one geometric integer b₃ plus two calibration parameters."
         },
         {
           "type": "heading",
@@ -10595,7 +10650,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The PM framework requires 0 calibrated parameters (all PMNS angles including θ₁₃ and δ<sub>CP</sub> now derived from geometry), 1 constraint (Higgs mass m<sub>h</sub> = 125.1 GeV fixes Re(T) = 7.086), and 0 phenomenological parameters (VEV, α<sub>GUT</sub>, w₀ all derived geometrically)."
+          "content": "The PM framework operates with EDOF=3: one geometric integer (b₃ = 24), plus two calibration parameters (VEV coefficient 1.5859 with 3.4% gap from ln(M<sub>Pl</sub>/v)/b₃, and Re(T) which takes different values in different calculation chains — see Re(T) Tension Ledger above). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation."
         },
         {
           "type": "heading",
@@ -10606,9 +10661,10 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>0 calibrated parameters:</strong> All PMNS angles including θ₁₃ and δ<sub>CP</sub> now derived from geometry",
-            "<strong>1 constraint:</strong> Higgs mass m<sub>h</sub> = 125.1 GeV fixes Re(T) = 7.086",
-            "<strong>0 phenomenological parameters:</strong> VEV, α<sub>GUT</sub>, w₀ all derived geometrically"
+            "<strong>1 geometric seed:</strong> b₃ = 24 (G₂ Betti number — topological invariant)",
+            "<strong>2 calibrations:</strong> VEV coefficient 1.5859 (3.4% gap from base ratio); Re(T) (open — see Tension Ledger)",
+            "<strong>2 fitted:</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0 (pending explicit Yukawa derivation)",
+            "<strong>Compression:</strong> 125 SM constants from EDOF=3 effective inputs (116:1 ratio)"
           ]
         },
         {
@@ -10805,7 +10861,7 @@
             "<strong>Issue 12 - F(R,T) Origin:</strong> RESOLVED - EXPLAINED: Pneuma VEV couples to T<sub>μν</sub>",
             "<strong>Issue 13 - Moduli Stability:</strong> RESOLVED - QUANTIFIED: Torsion + fluxes + Casimir energy balance",
             "<strong>Issue 14 - Mirror Sector:</strong> RESOLVED - CONCRETE: KK parity from G₂ symmetry, m<sub>DM</sub> ~ 5 TeV",
-            "<strong>Issue 15 - Higgs Mass Formula:</strong> RESOLVED - Re(T) = 7.086 derived from m<sub>h</sub> = 125.1 GeV; swampland compliance"
+            "<strong>Issue 15 - Higgs Mass Formula:</strong> OPEN - Re(T) constrained from m<sub>h</sub> = 125.1 GeV (tension: Higgs inversion gives 9.865, BBN calibration gives 7.086, geometry gives 1.833)"
           ]
         },
         {
@@ -11216,7 +11272,7 @@
         },
         {
           "type": "highlight_box",
-          "content": "<strong>Geometric Unification Complete:</strong> The derivation of Re(T) = 7.086 from the measured Higgs mass (125.25 GeV) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
+          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.25 GeV) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
         },
         {
           "type": "list",
@@ -11698,7 +11754,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The PM framework proposes Standard Model parameters from a single TCS G₂ manifold with one constraint (Higgs mass fixes Re(T) = 7.086). This section summarizes the parameter derivations and presents testable predictions."
+          "content": "The PM framework proposes Standard Model parameters from a single TCS G₂ manifold with one constraint (Higgs mass constrains Re(T)). This section summarizes the parameter derivations and presents testable predictions."
         },
         {
           "type": "heading",
@@ -11804,8 +11860,8 @@
           "content": null,
           "items": [
             "<strong>Step 1:</strong> G₂ compactification volume: V<sub>G₂</sub> = (Re(T))⁷ × ℓ<sub>P</sub>⁷ where ℓ<sub>P</sub> = 1.6 × 10⁻³⁵ m",
-            "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) = 7.086",
-            "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = 7.086 × ℓ<sub>P</sub> ≈ 1.1 × 10⁻³⁴ m",
+            "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) (open problem: 9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)",
+            "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = Re(T) × ℓ<sub>P</sub>",
             "<strong>Step 4:</strong> First KK mode mass: m<sub>KK,1</sub> = ℏc/R<sub>c</sub>",
             "<strong>Step 5:</strong> Result: m<sub>KK,1</sub> ≈ 5.0 TeV (within HL-LHC reach)"
           ]
@@ -11813,6 +11869,49 @@
         {
           "type": "paragraph",
           "content": "<strong>Signature at HL-LHC:</strong> Missing transverse energy + dijets from pp → G⁽¹⁾ → γγ, ZZ, W⁺W⁻"
+        },
+        {
+          "type": "heading",
+          "content": "Re(T) Modulus: Open Tension Ledger",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The Kähler modulus Re(T) enters multiple calculation chains with incompatible values. This tension is the framework's principal open problem (Issue 15)."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "Re(T) Value",
+            "Source",
+            "Physics Role",
+            "Status"
+          ],
+          "rows": [
+            [
+              "1.833",
+              "TCS #187 geometric attractor",
+              "Naïve moduli stabilization",
+              "GEOMETRIC — predicts m<sub>h</sub> ≈ 414 GeV (fails)"
+            ],
+            [
+              "7.086",
+              "BBN calibration",
+              "Baryon asymmetry η<sub>b</sub> ≈ 6.1×10⁻¹⁰ (Gate 50)",
+              "CALIBRATED — tuned to match BBN observation"
+            ],
+            [
+              "9.865",
+              "Higgs mass inversion m<sub>h</sub> = 125.1 GeV",
+              "Electroweak symmetry breaking",
+              "CONSTRAINED — inverted from experiment"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "content": "<strong>Resolution pathway:</strong> A unified Re(T) requires either (a) a racetrack superpotential with multiple condensates that stabilizes the modulus at a single value consistent with both Higgs mass and baryon asymmetry, or (b) a lattice G₂ computation of the full non-perturbative potential V(T). Until resolved, the framework carries EDOF=3 honestly: one geometric integer b₃ plus two calibration parameters."
         },
         {
           "type": "heading",
@@ -11889,7 +11988,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The PM framework requires 0 calibrated parameters (all PMNS angles including θ₁₃ and δ<sub>CP</sub> now derived from geometry), 1 constraint (Higgs mass m<sub>h</sub> = 125.1 GeV fixes Re(T) = 7.086), and 0 phenomenological parameters (VEV, α<sub>GUT</sub>, w₀ all derived geometrically)."
+          "content": "The PM framework operates with EDOF=3: one geometric integer (b₃ = 24), plus two calibration parameters (VEV coefficient 1.5859 with 3.4% gap from ln(M<sub>Pl</sub>/v)/b₃, and Re(T) which takes different values in different calculation chains — see Re(T) Tension Ledger above). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation."
         },
         {
           "type": "heading",
@@ -11900,9 +11999,10 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>0 calibrated parameters:</strong> All PMNS angles including θ₁₃ and δ<sub>CP</sub> now derived from geometry",
-            "<strong>1 constraint:</strong> Higgs mass m<sub>h</sub> = 125.1 GeV fixes Re(T) = 7.086",
-            "<strong>0 phenomenological parameters:</strong> VEV, α<sub>GUT</sub>, w₀ all derived geometrically"
+            "<strong>1 geometric seed:</strong> b₃ = 24 (G₂ Betti number — topological invariant)",
+            "<strong>2 calibrations:</strong> VEV coefficient 1.5859 (3.4% gap from base ratio); Re(T) (open — see Tension Ledger)",
+            "<strong>2 fitted:</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0 (pending explicit Yukawa derivation)",
+            "<strong>Compression:</strong> 125 SM constants from EDOF=3 effective inputs (116:1 ratio)"
           ]
         },
         {
@@ -12099,7 +12199,7 @@
             "<strong>Issue 12 - F(R,T) Origin:</strong> RESOLVED - EXPLAINED: Pneuma VEV couples to T<sub>μν</sub>",
             "<strong>Issue 13 - Moduli Stability:</strong> RESOLVED - QUANTIFIED: Torsion + fluxes + Casimir energy balance",
             "<strong>Issue 14 - Mirror Sector:</strong> RESOLVED - CONCRETE: KK parity from G₂ symmetry, m<sub>DM</sub> ~ 5 TeV",
-            "<strong>Issue 15 - Higgs Mass Formula:</strong> RESOLVED - Re(T) = 7.086 derived from m<sub>h</sub> = 125.1 GeV; swampland compliance"
+            "<strong>Issue 15 - Higgs Mass Formula:</strong> OPEN - Re(T) constrained from m<sub>h</sub> = 125.1 GeV (tension: Higgs inversion gives 9.865, BBN calibration gives 7.086, geometry gives 1.833)"
           ]
         },
         {
@@ -12430,7 +12530,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.954463"
+      "timestamp": "2026-04-01T07:12:45.608686"
     },
     "6": {
       "id": "6",
@@ -15336,7 +15436,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-03-31T18:55:50.954597"
+      "timestamp": "2026-04-01T07:12:45.608835"
     },
     "1.1": {
       "id": "1",
@@ -16004,7 +16104,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.954707"
+      "timestamp": "2026-04-01T07:12:45.608975"
     },
     "2.6": {
       "id": "2",
@@ -16812,7 +16912,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.954814"
+      "timestamp": "2026-04-01T07:12:45.609058"
     },
     "3.7": {
       "id": "3",
@@ -17290,7 +17390,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.954882"
+      "timestamp": "2026-04-01T07:12:45.609111"
     },
     "4": {
       "id": "4",
@@ -17598,7 +17698,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-03-31T18:55:50.954952"
+      "timestamp": "2026-04-01T07:12:45.609166"
     },
     "A": {
       "id": "A",
@@ -17808,7 +17908,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-03-31T18:55:50.955018"
+      "timestamp": "2026-04-01T07:12:45.609231"
     },
     "B": {
       "id": "B",
@@ -18044,7 +18144,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-03-31T18:55:50.955083"
+      "timestamp": "2026-04-01T07:12:45.609288"
     },
     "C": {
       "id": "C",
@@ -18250,7 +18350,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-03-31T18:55:50.955154"
+      "timestamp": "2026-04-01T07:12:45.609346"
     },
     "D": {
       "id": "D",
@@ -18448,7 +18548,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-03-31T18:55:50.955217"
+      "timestamp": "2026-04-01T07:12:45.609395"
     },
     "E": {
       "id": "E",
@@ -18650,7 +18750,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-03-31T18:55:50.955276"
+      "timestamp": "2026-04-01T07:12:45.609446"
     },
     "F": {
       "id": "F",
@@ -18860,7 +18960,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-03-31T18:55:50.955929"
+      "timestamp": "2026-04-01T07:12:45.610121"
     },
     "G": {
       "id": "G",
@@ -19208,7 +19308,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-03-31T18:55:50.956714"
+      "timestamp": "2026-04-01T07:12:45.610809"
     },
     "H": {
       "id": "H",
@@ -19598,7 +19698,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-03-31T18:55:50.956821"
+      "timestamp": "2026-04-01T07:12:45.610916"
     },
     "I": {
       "id": "I",
@@ -19952,7 +20052,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-03-31T18:55:50.956929"
+      "timestamp": "2026-04-01T07:12:45.611019"
     },
     "J": {
       "id": "J",
@@ -20234,7 +20334,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-03-31T18:55:50.957033"
+      "timestamp": "2026-04-01T07:12:45.611121"
     },
     "K": {
       "id": "K",
@@ -20650,7 +20750,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-03-31T18:55:50.957116"
+      "timestamp": "2026-04-01T07:12:45.611198"
     },
     "L": {
       "id": "L",
@@ -20942,7 +21042,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-03-31T18:55:50.957322"
+      "timestamp": "2026-04-01T07:12:45.611405"
     },
     "Z": {
       "id": "Z",
@@ -21132,7 +21232,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-03-31T18:55:50.957415"
+      "timestamp": "2026-04-01T07:12:45.611519"
     },
     "2.2": {
       "id": "2",
@@ -21474,7 +21574,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-03-31T18:55:50.957647"
+      "timestamp": "2026-04-01T07:12:45.611790"
     },
     "R.1": {
       "id": "R",
@@ -22030,7 +22130,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-03-31T18:55:50.957810"
+      "timestamp": "2026-04-01T07:12:45.611958"
     },
     "S.1": {
       "id": "S",
@@ -22744,7 +22844,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-03-31T18:55:50.957917"
+      "timestamp": "2026-04-01T07:12:45.612066"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -22820,7 +22920,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-03-31T18:55:50.958161"
+      "timestamp": "2026-04-01T07:12:45.612328"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -22906,7 +23006,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-03-31T18:55:50.958201"
+      "timestamp": "2026-04-01T07:12:45.612381"
     },
     "5.1.1": {
       "id": "5",
@@ -23072,7 +23172,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-03-31T18:55:50.958277"
+      "timestamp": "2026-04-01T07:12:45.612467"
     },
     "2.3": {
       "id": "2",
@@ -23136,7 +23236,7 @@
         },
         {
           "type": "callout",
-          "content": "Bank I  — Gauge Sector (Modes 1–12)\n  Modes 1–3:   Photon γ, W⁺, W⁻ (massless gauge bosons; λ₁=λ₂=λ₃=0)\n  Mode  4:     Z⁰ boson (λ₄ ∝ sin²θ_W / Vol(V₇))\n  Modes 5–12:  8 gluons of SU(3)_C (degeneracy from G₂⊃SU(3) holonomy)\n\nBank II — Higgs Sector (Mode 13)\n  Mode 13: Higgs boson h (λ₁₃ = m_H²·L²; fixes Re(T) = 7.086)\n\nBank III — Fermion Sector (Modes 14–31)\n  3 generations × 6 quarks + 6 leptons: mass ratios from eigenvalue ratios\n  Chiral structure from G₂ holonomy: index theorem gives n_gen = χ_eff/48 = 3\n\nBank IV  — Mixing Parameters (Modes 32–44)\n  CKM quark mixing (3 angles + 1 CP phase) and PMNS lepton mixing\n  Derived from associative 3-cycle intersections on V₇\n\nBank V   — Couplings (Modes 45–48)\n  α (EM), G_F (weak), α_s (strong), α_GUT (unification)\n\nBank VI  — Neutrino Sector (Modes 49–52)\n  m₁, m₂, m₃ (mass eigenstates) and Σm_ν from G₂ see-saw mechanism\n\nBanks VII–IX — Heavy Physics (Modes 53–125)\n  Mass scales (M_Pl, M_GUT, Λ_QCD), cosmological parameters, KK tower"
+          "content": "Bank I  — Gauge Sector (Modes 1–12)\n  Modes 1–3:   Photon γ, W⁺, W⁻ (massless gauge bosons; λ₁=λ₂=λ₃=0)\n  Mode  4:     Z⁰ boson (λ₄ ∝ sin²θ_W / Vol(V₇))\n  Modes 5–12:  8 gluons of SU(3)_C (degeneracy from G₂⊃SU(3) holonomy)\n\nBank II — Higgs Sector (Mode 13)\n  Mode 13: Higgs boson h (λ₁₃ = m_H²·L²; constrains Re(T))\n\nBank III — Fermion Sector (Modes 14–31)\n  3 generations × 6 quarks + 6 leptons: mass ratios from eigenvalue ratios\n  Chiral structure from G₂ holonomy: index theorem gives n_gen = χ_eff/48 = 3\n\nBank IV  — Mixing Parameters (Modes 32–44)\n  CKM quark mixing (3 angles + 1 CP phase) and PMNS lepton mixing\n  Derived from associative 3-cycle intersections on V₇\n\nBank V   — Couplings (Modes 45–48)\n  α (EM), G_F (weak), α_s (strong), α_GUT (unification)\n\nBank VI  — Neutrino Sector (Modes 49–52)\n  m₁, m₂, m₃ (mass eigenstates) and Σm_ν from G₂ see-saw mechanism\n\nBanks VII–IX — Heavy Physics (Modes 53–125)\n  Mass scales (M_Pl, M_GUT, Λ_QCD), cosmological parameters, KK tower"
         },
         {
           "type": "paragraph",
@@ -23264,7 +23364,7 @@
         },
         {
           "type": "callout",
-          "content": "Bank I  — Gauge Sector (Modes 1–12)\n  Modes 1–3:   Photon γ, W⁺, W⁻ (massless gauge bosons; λ₁=λ₂=λ₃=0)\n  Mode  4:     Z⁰ boson (λ₄ ∝ sin²θ_W / Vol(V₇))\n  Modes 5–12:  8 gluons of SU(3)_C (degeneracy from G₂⊃SU(3) holonomy)\n\nBank II — Higgs Sector (Mode 13)\n  Mode 13: Higgs boson h (λ₁₃ = m_H²·L²; fixes Re(T) = 7.086)\n\nBank III — Fermion Sector (Modes 14–31)\n  3 generations × 6 quarks + 6 leptons: mass ratios from eigenvalue ratios\n  Chiral structure from G₂ holonomy: index theorem gives n_gen = χ_eff/48 = 3\n\nBank IV  — Mixing Parameters (Modes 32–44)\n  CKM quark mixing (3 angles + 1 CP phase) and PMNS lepton mixing\n  Derived from associative 3-cycle intersections on V₇\n\nBank V   — Couplings (Modes 45–48)\n  α (EM), G_F (weak), α_s (strong), α_GUT (unification)\n\nBank VI  — Neutrino Sector (Modes 49–52)\n  m₁, m₂, m₃ (mass eigenstates) and Σm_ν from G₂ see-saw mechanism\n\nBanks VII–IX — Heavy Physics (Modes 53–125)\n  Mass scales (M_Pl, M_GUT, Λ_QCD), cosmological parameters, KK tower"
+          "content": "Bank I  — Gauge Sector (Modes 1–12)\n  Modes 1–3:   Photon γ, W⁺, W⁻ (massless gauge bosons; λ₁=λ₂=λ₃=0)\n  Mode  4:     Z⁰ boson (λ₄ ∝ sin²θ_W / Vol(V₇))\n  Modes 5–12:  8 gluons of SU(3)_C (degeneracy from G₂⊃SU(3) holonomy)\n\nBank II — Higgs Sector (Mode 13)\n  Mode 13: Higgs boson h (λ₁₃ = m_H²·L²; constrains Re(T))\n\nBank III — Fermion Sector (Modes 14–31)\n  3 generations × 6 quarks + 6 leptons: mass ratios from eigenvalue ratios\n  Chiral structure from G₂ holonomy: index theorem gives n_gen = χ_eff/48 = 3\n\nBank IV  — Mixing Parameters (Modes 32–44)\n  CKM quark mixing (3 angles + 1 CP phase) and PMNS lepton mixing\n  Derived from associative 3-cycle intersections on V₇\n\nBank V   — Couplings (Modes 45–48)\n  α (EM), G_F (weak), α_s (strong), α_GUT (unification)\n\nBank VI  — Neutrino Sector (Modes 49–52)\n  m₁, m₂, m₃ (mass eigenstates) and Σm_ν from G₂ see-saw mechanism\n\nBanks VII–IX — Heavy Physics (Modes 53–125)\n  Mass scales (M_Pl, M_GUT, Λ_QCD), cosmological parameters, KK tower"
         },
         {
           "type": "paragraph",
@@ -23388,7 +23488,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-03-31T18:55:50.958496"
+      "timestamp": "2026-04-01T07:12:45.612699"
     },
     "5.2.1": {
       "id": "5",
@@ -23554,7 +23654,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-03-31T18:55:50.958591"
+      "timestamp": "2026-04-01T07:12:45.612802"
     },
     "6.2.1": {
       "id": "6",
@@ -23704,7 +23804,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-03-31T18:55:50.958646"
+      "timestamp": "2026-04-01T07:12:45.612866"
     },
     "7.1": {
       "id": "7",
@@ -23856,7 +23956,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-03-31T18:55:50.958700"
+      "timestamp": "2026-04-01T07:12:45.612928"
     },
     "7.3": {
       "id": "7",
@@ -24020,7 +24120,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-03-31T18:55:50.958773"
+      "timestamp": "2026-04-01T07:12:45.613007"
     }
   }
 }
