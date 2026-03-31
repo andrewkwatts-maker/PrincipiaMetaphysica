@@ -171,13 +171,35 @@ class PrincipiaValidator:
     # ═══════════════════════════════════════════════════════════════════
 
     def cert_c001_b3_topology(self):
-        """C001: Third Betti Number b3 = 24"""
-        b3 = self._get_param('geometry.elder_kads', 24)
+        """C001: Third Betti Number b3 = 24
+
+        Validates the foundational topological invariant: the third Betti number
+        b3 = dim(H^3(X, R)) = 24 for the TCS G2 manifold (Joyce-Karigiannis).
+
+        For TCS construction: b3 = b2(K3) + 2 = 22 + 2 = 24.
+        This is Pillar Seed #1 and the single geometric input in EDOF=3.
+
+        Gate explicitly FAILS if the registry lacks the parameter (no default),
+        preventing vacuous pass on empty/missing registry data.
+        """
+        b3 = self._get_param('geometry.elder_kads')
+        if b3 is None:
+            status = "FAILED"
+            self.results['C001-B3'] = {
+                "status": status,
+                "metric": "geometry.elder_kads NOT FOUND in registry",
+                "expected": 24,
+                "actual": None,
+                "sector": "FOUNDATIONAL"
+            }
+            print(f"  C001-B3: {status} (geometry.elder_kads missing from registry)")
+            return
         status = "LOCKED" if b3 == 24 else "FAILED"
         self.results['C001-B3'] = {
             "status": status,
             "metric": f"b3 = {b3}",
             "expected": 24,
+            "actual": b3,
             "sector": "FOUNDATIONAL"
         }
         print(f"  C001-B3: {status} (b3 = {b3})")
