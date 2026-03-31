@@ -509,7 +509,7 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
                 "claude",
                 "--print",
                 "--dangerously-skip-permissions",
-                "--max-turns", "30",
+                "--max-turns", "50",
             ],
             input=prompt_text,
             capture_output=True, text=True,
@@ -517,13 +517,17 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
             timeout=1800,  # 30 minute max per gate review
         )
 
-        # Save response log
+        # Save response log (always, even on error)
         response_file = LOG_DIR / f"response_{gate_id}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
+        output_text = result.stdout or ""
+        stderr_text = result.stderr or ""
         with open(response_file, 'w', encoding='utf-8') as f:
-            f.write(result.stdout)
-            if result.stderr:
+            f.write(f"# Claude Response for {gate_id}\n")
+            f.write(f"Exit code: {result.returncode}\n\n")
+            f.write(output_text)
+            if stderr_text:
                 f.write("\n\n--- STDERR ---\n")
-                f.write(result.stderr)
+                f.write(stderr_text)
 
         print(f"  [CLAUDE] Response saved to: {response_file.name}")
         print(f"  [CLAUDE] Exit code: {result.returncode}")
