@@ -240,7 +240,7 @@ class AbstractV17_2(SimulationBase):
                     'Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. '
                     '<strong><span class="pm-value" data-pm-value="abstract.pure_predictions">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds '
                     '(VEV coefficient <span class="pm-value" data-pm-value="abstract.vev_coefficient">1.5859</span>, 1/\u03b1<sub>GUT</sub> coefficient 1/(10\u03c0) \u2248 <span class="pm-value" data-pm-value="abstract.alpha_gut_coefficient">0.0318</span>, '
-                    'Re(T) = 7.086 from Higgs mass). Two PMNS parameters (\u03b8\u2081\u2083, \u03b4<sub>CP</sub>) '
+                    'Re(T) constrained from Higgs mass). Two PMNS parameters (\u03b8\u2081\u2083, \u03b4<sub>CP</sub>) '
                     'are fitted to NuFIT 6.0 pending explicit Yukawa calculation.'
                 ),
                 label="abstract-predictions"

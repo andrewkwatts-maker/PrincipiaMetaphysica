@@ -808,13 +808,14 @@ class IntroductionV16(SimulationBase):
                 content=(
                     "<h4>Key Feature: Derived Modulus</h4>"
                     "<p>A significant advancement was achieved by inverting the Higgs mass formula to "
-                    "derive Re(T) = 7.086 from the measured Higgs mass (125.25 GeV), rather than choosing "
-                    "it arbitrarily. This ensures swampland compliance (Δφ = 1.958 > 0.816) and completes "
+                    "constrain Re(T) from the measured Higgs mass (125.25 GeV), rather than choosing "
+                    "it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 "
+                    "and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes "
                     "the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from "
                     "experimental data) are now fully determined.</p>"
                     "<p><strong>EDOF=3 Statistical Framework:</strong> The framework achieves <strong>116:1 compression ratio</strong> "
-                    "with three calibration seeds: VEV factor 1.5859 (semi-derived via ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃), "
-                    "α<sub>GUT</sub> coefficient 0.032177, and Re(T)=7.086 from Higgs mass—all documented. "
+                    "with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), "
+                    "α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. "
                     "With the derivation of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), "
                     "Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), "
                     "this leaves <strong>58+ Standard Model + compactification parameters as pure geometric predictions</strong>. "
@@ -822,6 +823,37 @@ class IntroductionV16(SimulationBase):
                     "(minimal phenomenological input). Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles.</p>"
                 ),
                 label="derived-modulus"
+            ),
+            ContentBlock(
+                type="table",
+                content=(
+                    "<h4>Seed Hierarchy (EDOF = 3)</h4>"
+                    "<table style='width:100%; border-collapse:collapse; margin:1rem 0;'>"
+                    "<tr style='border-bottom:2px solid #555;'>"
+                    "<th style='text-align:left; padding:0.5rem;'>Seed</th>"
+                    "<th style='text-align:left; padding:0.5rem;'>Value</th>"
+                    "<th style='text-align:left; padding:0.5rem;'>Status</th>"
+                    "<th style='text-align:left; padding:0.5rem;'>Role</th></tr>"
+                    "<tr style='border-bottom:1px solid #333;'>"
+                    "<td style='padding:0.5rem;'>b₃</td>"
+                    "<td style='padding:0.5rem;'>24</td>"
+                    "<td style='padding:0.5rem;'><strong>GEOMETRIC</strong></td>"
+                    "<td style='padding:0.5rem;'>G₂ Betti number — topological invariant</td></tr>"
+                    "<tr style='border-bottom:1px solid #333;'>"
+                    "<td style='padding:0.5rem;'>VEV coefficient</td>"
+                    "<td style='padding:0.5rem;'>1.5859</td>"
+                    "<td style='padding:0.5rem;'>CALIBRATED</td>"
+                    "<td style='padding:0.5rem;'>Scale anchor (3.4% gap from ln(M<sub>Pl</sub>/v)/b₃ — open)</td></tr>"
+                    "<tr style='border-bottom:1px solid #333;'>"
+                    "<td style='padding:0.5rem;'>Re(T)</td>"
+                    "<td style='padding:0.5rem;'>9.865 / 7.086</td>"
+                    "<td style='padding:0.5rem;'>CONSTRAINED</td>"
+                    "<td style='padding:0.5rem;'>Kähler modulus — Higgs inversion (9.865) vs BBN calibrated (7.086)</td></tr>"
+                    "</table>"
+                    "<p><strong>Honest compression:</strong> 125 SM constants from 1 geometric integer + 2 calibrations → 116:1 ratio. "
+                    "True geometric prediction: b₃ = 24 only. The other two seeds are phenomenological anchors.</p>"
+                ),
+                label="seed-hierarchy-table"
             ),
             ContentBlock(
                 type="note",

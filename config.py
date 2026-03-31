@@ -34,10 +34,10 @@ CHANGELOG v12.5:
   * Fixes 20% inconsistency between PhenomenologyParameters and ModuliParameters
   * All formulas now use M_PLANCK_REDUCED consistently
   * Added dual derivations for Higgs mass and M_GUT
-- v12.5: Re(T) = 7.086 derived from Higgs mass constraint
-  * Discovered v11.0-v12.4 bug: Re(T) = 1.833 gave m_h = 414 GeV (hidden)
-  * Inverted formula: Re(T) = (λ₀ - λ_eff) / (κ y_t²) with m_h = 125.10 GeV
-  * Result: m_h EXACT match, swampland VALID, dual UV↔IR <1% agreement
+- v12.5: Re(T) constrained from Higgs mass (OPEN PROBLEM — see HiggsMassParameters)
+  * Three competing Re(T) values: 1.833 (geometric), 7.086 (baryon asymmetry), 9.865 (Higgs inversion)
+  * Inverted formula: Re(T) = (λ₀ - λ_eff) / (κ y_t²) with m_h = 125.10 GeV → 9.865
+  * Baryon asymmetry uses Re(T) = 7.086 (calibrated for BBN match)
   * All rigor gaps resolved: Wilson phases, thermal friction, CKM CP, flux unification
 - v12.9: Pneuma racetrack vacuum selection (dynamically selected via G2 topology)
 - v13.0: Fermion chirality mechanism resolved (n_gen = 24/8 = 3 from spinor saturation)
@@ -3645,7 +3645,7 @@ class CoreFormulas:
         id="higgs-mass",
         input_params=['pneuma.VEV'],
         label="(5.7) Higgs Boson Mass",
-        html="m<sub>h</sub> = 125.10 GeV (fixes Re(T) = 7.086)",
+        html="m<sub>h</sub> = 125.10 GeV (constrains Re(T) = 9.865 via inversion)",
         latex="m_h = 125.10\\,\\text{GeV}",
         plain_text="m_h = 125.10 GeV",
         category=FormulaCategory.ESTABLISHED,  # Experimental input, not derived
@@ -3665,19 +3665,19 @@ class CoreFormulas:
                 name="Volume Modulus",
                 description="Real part of Kähler modulus T controlling G₂ volume",
                 symbol="Re(T)",
-                value="7.086",
+                value="9.865 (Higgs inversion) / 7.086 (baryon asymmetry)",
                 units="dimensionless",
-                contribution="Derived value from m_h constraint"
+                contribution="CONSTRAINED from m_h; baryon asymmetry uses calibrated 7.086"
             ),
         },
         info_title="Higgs Mass Constrains Moduli",
-        info_meaning="The Higgs mass is NOT a prediction—it is an experimental INPUT. The measured value m_h = 125.10 GeV from the LHC constrains the volume modulus Re(T) = 7.086, which then determines other quantities like Yukawa couplings.",
+        info_meaning="The Higgs mass is NOT a prediction—it is an experimental INPUT. Inverting the formula yields Re(T) = 9.865. Note: the baryon asymmetry calculation uses a calibrated Re(T) = 7.086 (this tension is an open problem).",
         info_grid=[
             FormulaInfoItem(title="LHC Measurement", content="125.10 ± 0.14 GeV"),
             FormulaInfoItem(title="Role", content="INPUT (not prediction)"),
-            FormulaInfoItem(title="Constrains", content="Re(T) = 7.086"),
+            FormulaInfoItem(title="Constrains", content="Re(T) = 9.865 (Higgs) / 7.086 (BBN)"),
         ],
-        expansion_title="m_h = 125.10\\,\\text{GeV} \\Rightarrow \\text{Re}(T) = 7.086",
+        expansion_title="m_h = 125.10\\,\\text{GeV} \\Rightarrow \\text{Re}(T) = 9.865",
         sub_components=[
             FormulaSubComponent(symbol="m_h", name="Higgs Mass", description="Measured at LHC", badge="ESTABLISHED", badge_type="established"),
             FormulaSubComponent(symbol="Re(T)", name="Volume Modulus", description="From scalar potential minimum", badge="CONSTRAINED", badge_type="theory"),
@@ -3686,13 +3686,13 @@ class CoreFormulas:
             FormulaDerivationStep(title="LHC Discovery (2012)", badge="EXPERIMENTAL", badge_type="established"),
             FormulaDerivationStep(title="Modulus Constraint", badge="DERIVED", badge_type="theory"),
         ],
-        discussion="The Higgs mass m_h = 125.10 GeV is experimental INPUT that fixes the volume modulus Re(T) = 7.086 via the scalar potential. This modulus then determines fermion masses and couplings.",
+        discussion="The Higgs mass m_h = 125.10 GeV is experimental INPUT. Inverting the scalar potential yields Re(T) = 9.865. The baryon asymmetry uses a different calibrated value Re(T) = 7.086 — this tension is an open problem.",
         computed_value=125.10,  # PDG 2024: m_H = 125.20 +/- 0.11 GeV (INPUT, not prediction)
         units="GeV",
         experimental_value=125.10,  # Source: PDG 2024 m_H = 125.10 ± 0.14 GeV (ATLAS+CMS combined)
         experimental_error=0.14,
         sigma_deviation=0.0,
-        notes="NOT a prediction - this is INPUT. The Re(T) = 7.086 value IS derived from m_h.",
+        notes="NOT a prediction — m_h is INPUT. Higgs inversion gives Re(T) = 9.865; baryon asymmetry uses calibrated 7.086.",
         related_formulas=["higgs-vev", "higgs-potential"],
         simulation_file="simulations/higgs_mass_v12_4_moduli_stabilization.py"
     )
@@ -6730,26 +6730,20 @@ class BreakingChainParameters:
 
 class HiggsMassParameters:
     """
-    v12.6: Higgs mass - CIRCULAR CONSTRAINT RESOLVED
+    v24.2: Higgs mass — THREE COMPETING Re(T) VALUES (OPEN PROBLEM)
 
-    CRITICAL ISSUE: The Higgs mass calculation contains a CIRCULAR DEPENDENCY!
+    The Higgs mass formula m_h² = 8π² v² (λ₀ - κ Re(T) y_t²) connects
+    the Higgs mass to the Kähler modulus Re(T). Three values exist:
 
-    The Problem:
-    1. m_h = 125.10 GeV (experimental) is used to CONSTRAIN Re(T) = 7.086
-    2. Then Re(T) = 7.086 is used to "predict" m_h = 125.10 GeV
-    3. This is CIRCULAR - we're not predicting anything!
+    1. RE_T_ATTRACTOR = 1.833  (GEOMETRIC — from TCS #187 attractor mechanism)
+       → Gives m_h ≈ 414 GeV (FAILS experiment)
+    2. RE_T_PHENOMENOLOGICAL = 9.865  (CONSTRAINED — inverted from m_h = 125.10 GeV)
+       → Circular: m_h is INPUT, Re(T) is OUTPUT
+    3. Re(T) = 7.086  (CALIBRATED — used in baryon asymmetry for BBN match)
+       → Gives exp(-7.086) ≈ 8.4e-4 damping, η_b ≈ 6.1e-10
 
-    Two Conflicting Re(T) Values:
-    - RE_T_ATTRACTOR = 1.833 (from TCS G₂ attractor mechanism - GEOMETRIC)
-    - RE_T_PHENOMENOLOGICAL = 9.865 (inverted from m_h constraint - PHENOMENOLOGICAL)
-
-    The Truth:
-    - m_h is NOT predicted - it's an experimental input (PDG 2024)
-    - Re(T) = 9.865 is DERIVED FROM m_h (by inverting the formula)
-    - Re(T) = 1.833 is the TRUE geometric prediction from TCS #187
-    - The attractor value Re(T) = 1.833 gives m_h ≈ 504 GeV (WRONG!)
-
-    This means the moduli stabilization story FAILS to predict the Higgs mass.
+    The tension: values (2) and (3) disagree. This is an OPEN PROBLEM.
+    The geometric prediction (1) fails for the Higgs mass entirely.
     We must be honest about what is geometric vs. phenomenological.
 
     Formula: m_h² = 8π² v² (λ₀ - κ Re(T) y_t²)
@@ -6789,7 +6783,8 @@ class HiggsMassParameters:
     #                                Re(T) = (0.129 - 0.00655) / (κ × 0.99²) = 9.865
     #                                This is NOT a prediction - it's circular!
     #
-    # OLD INCORRECT VALUE: 7.086 (gave m_h = 313 GeV - calculation error!)
+    # NOTE: Re(T) = 7.086 is used in baryon_asymmetry.py (CALIBRATED for BBN).
+    # It is NOT the Higgs-derived value (9.865) — this tension is an open problem.
 
     # For backward compatibility, keep old names but mark them clearly
     RE_T_MODULUS = RE_T_PHENOMENOLOGICAL  # [CIRCULAR] Uses experimental m_h as input
@@ -6803,9 +6798,9 @@ class HiggsMassParameters:
     @staticmethod
     def higgs_mass_constrained():
         """
-        Calculate m_h using PHENOMENOLOGICAL Re(T) = 7.086
+        Calculate m_h using PHENOMENOLOGICAL Re(T) = 9.865
 
-        WARNING: This is CIRCULAR! The value Re(T) = 7.086 was obtained
+        WARNING: This is CIRCULAR! The value Re(T) = 9.865 was obtained
         by inverting this very formula with m_h = 125.10 GeV as input.
         This is NOT a prediction - it's a consistency check.
 
@@ -8363,7 +8358,7 @@ class SMParameterRegistry:
         # === MODULI (4) ===
         're_t': {'name': 'Complex structure modulus Re(T)', 'status': 'INPUT', 'category': 'moduli', 'sigma': 0.0},
         'im_t': {'name': 'Complex structure modulus Im(T)', 'status': 'DERIVED', 'category': 'moduli', 'sigma': 0.5},
-        'vev_coefficient': {'name': 'VEV coefficient', 'status': 'DERIVED', 'category': 'moduli', 'sigma': 0.1},
+        'vev_coefficient': {'name': 'VEV coefficient', 'status': 'CALIBRATED', 'category': 'moduli', 'sigma': 0.1},
         'tcs_volume': {'name': 'TCS manifold volume', 'status': 'DERIVED', 'category': 'moduli', 'sigma': 0.3},
 
         # === COSMOLOGICAL (4) ===
@@ -8600,7 +8595,7 @@ CORRECTLY DERIVED (have validated simulations):
 PHENOMENOLOGICAL INPUTS (not predictions):
 1. Higgs mass
    - Simulation: higgs_mass_v12_4_moduli_stabilization.py
-   - Status: Circular - Re(T)=7.086 was DERIVED from m_h=125 GeV
+   - Status: Circular — Higgs inversion gives Re(T)=9.865; baryon asymmetry uses calibrated 7.086
    - The Higgs mass is INPUT to constrain moduli, not a prediction
 
 HARDCODED BUT DERIVABLE (need new simulations):
