@@ -500,9 +500,13 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
 
     # Invoke Claude Code CLI
     # --print mode: pipe prompt via stdin to avoid shell length limits
+    # Use shell=True on Windows because 'claude' is an npm .cmd wrapper
     try:
         with open(prompt_file, 'r', encoding='utf-8') as pf:
             prompt_text = pf.read()
+
+        import platform
+        use_shell = platform.system() == "Windows"
 
         result = subprocess.run(
             [
@@ -515,6 +519,7 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
             capture_output=True, text=True,
             cwd=str(PROJECT_ROOT),
             timeout=1800,  # 30 minute max per gate review
+            shell=use_shell,
         )
 
         # Save response log (always, even on error)
@@ -552,8 +557,9 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
         print(f"  [CLAUDE] Timeout after 30 minutes for {gate_id}")
         return False
     except FileNotFoundError:
-        print("  [CLAUDE] ERROR: 'claude' CLI not found in PATH!")
+        print("  [CLAUDE] ERROR: 'claude' CLI not found!")
         print("  [CLAUDE] Install: npm install -g @anthropic-ai/claude-code")
+        print("  [CLAUDE] On Windows, ensure Claude .cmd is in PATH")
         return False
     except Exception as e:
         print(f"  [CLAUDE] Error: {e}")
