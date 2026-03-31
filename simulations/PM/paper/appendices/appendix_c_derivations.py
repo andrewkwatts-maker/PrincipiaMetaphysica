@@ -371,6 +371,43 @@ class AppendixCExtendedDerivations(SimulationBase):
                     label="(C.5)"
                 ),
                 ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "<strong>C.4.1 Golden Ratio Scaling Ansatz.</strong> "
+                        "The wavefunction overlap mechanism predicts exponential hierarchies but does not fix "
+                        "the absolute scale. In the PM framework, the observed 6-order-of-magnitude mass "
+                        "hierarchy is parameterized as m<sub>f</sub> ∝ φ<sup>−N<sub>f</sub></sup>, where "
+                        "φ = (1+√5)/2 is the golden ratio from G₂ minimal surface geometry, and N<sub>f</sub> "
+                        "is the generation quantum number. This φ-scaling provides the best fit among tested "
+                        "bases (φ, e, 2, 3) — see yukawa_textures module for RMS analysis."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "<strong>C.4.2 Torsion Harmonic Corrections.</strong> "
+                        "The base φ<sup>−N</sup> scaling receives perturbative corrections from torsion "
+                        "harmonics on the associative 3-cycles. These corrections arise from the non-trivial "
+                        "torsion class τ ∈ H³(M₇, ℤ) and modify the effective wavefunction localization "
+                        "widths λ<sub>i</sub>. In the current implementation, the uncorrected "
+                        "Y<sub>ij</sub><sup>(0)</sup> from φ-scaling is used without torsion modification."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "<strong>C.4.3 Open Problem: Full 7D Overlap Integration.</strong> "
+                        "The Yukawa coupling is formally Y<sub>ij</sub> = ∫<sub>K</sub> η<sub>i</sub> ∧ η<sub>j</sub> "
+                        "∧ Φ₃, where Φ₃ is the associative 3-form and η<sub>i</sub> are harmonic forms on "
+                        "the G₂ manifold K. Computing this integral exactly requires the full metric on a "
+                        "compact G₂ manifold, which is not known analytically for any smooth compact example. "
+                        "Lattice discretization of the Joyce construction or machine-learning approaches to "
+                        "G₂ metrics (cf. Anderson et al. 2020) may eventually provide numerical evaluation. "
+                        "Until then, the φ-scaling ansatz provides an effective parameterization consistent with "
+                        "the observed mass spectrum."
+                    )
+                ),
+                ContentBlock(
                     type="subsection",
                     content="C.5 Tribimaximal Neutrino Mixing from Discrete Symmetry"
                 ),

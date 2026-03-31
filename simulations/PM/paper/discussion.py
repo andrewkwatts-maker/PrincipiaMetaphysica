@@ -819,6 +819,39 @@ class DiscussionV16(SimulationBase):
                 )
             ),
 
+            # Re(T) Tension Ledger
+            ContentBlock(
+                type="heading",
+                content="Re(T) Modulus: Open Tension Ledger",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The Kähler modulus Re(T) enters multiple calculation chains with incompatible values. "
+                    "This tension is the framework's principal open problem (Issue 15)."
+                )
+            ),
+            ContentBlock(
+                type="table",
+                headers=["Re(T) Value", "Source", "Physics Role", "Status"],
+                rows=[
+                    ["1.833", "TCS #187 geometric attractor", "Naïve moduli stabilization", "GEOMETRIC — predicts m<sub>h</sub> ≈ 414 GeV (fails)"],
+                    ["7.086", "BBN calibration", "Baryon asymmetry η<sub>b</sub> ≈ 6.1×10⁻¹⁰ (Gate 50)", "CALIBRATED — tuned to match BBN observation"],
+                    ["9.865", "Higgs mass inversion m<sub>h</sub> = 125.1 GeV", "Electroweak symmetry breaking", "CONSTRAINED — inverted from experiment"]
+                ]
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<strong>Resolution pathway:</strong> A unified Re(T) requires either (a) a racetrack superpotential "
+                    "with multiple condensates that stabilizes the modulus at a single value consistent with both "
+                    "Higgs mass and baryon asymmetry, or (b) a lattice G₂ computation of the full non-perturbative "
+                    "potential V(T). Until resolved, the framework carries EDOF=3 honestly: one geometric integer b₃ "
+                    "plus two calibration parameters."
+                )
+            ),
+
             # 8.3 Hidden Sector Particles
             ContentBlock(
                 type="heading",
@@ -885,9 +918,10 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The PM framework requires 0 calibrated parameters (all PMNS angles including θ₁₃ and "
-                    "δ<sub>CP</sub> now derived from geometry), 1 constraint (Higgs mass m<sub>h</sub> = 125.1 GeV constrains "
-                    "Re(T)), and 0 phenomenological parameters (VEV, α<sub>GUT</sub>, w₀ all derived geometrically)."
+                    "The PM framework operates with EDOF=3: one geometric integer (b₃ = 24), "
+                    "plus two calibration parameters (VEV coefficient 1.5859 with 3.4% gap from ln(M<sub>Pl</sub>/v)/b₃, "
+                    "and Re(T) which takes different values in different calculation chains — see Re(T) Tension Ledger above). "
+                    "Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation."
                 )
             ),
 
@@ -900,9 +934,10 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>0 calibrated parameters:</strong> All PMNS angles including θ₁₃ and δ<sub>CP</sub> now derived from geometry",
-                    "<strong>1 constraint:</strong> Higgs mass m<sub>h</sub> = 125.1 GeV constrains Re(T)",
-                    "<strong>0 phenomenological parameters:</strong> VEV, α<sub>GUT</sub>, w₀ all derived geometrically"
+                    "<strong>1 geometric seed:</strong> b₃ = 24 (G₂ Betti number — topological invariant)",
+                    "<strong>2 calibrations:</strong> VEV coefficient 1.5859 (3.4% gap from base ratio); Re(T) (open — see Tension Ledger)",
+                    "<strong>2 fitted:</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0 (pending explicit Yukawa derivation)",
+                    "<strong>Compression:</strong> 125 SM constants from EDOF=3 effective inputs (116:1 ratio)"
                 ]
             ),
 

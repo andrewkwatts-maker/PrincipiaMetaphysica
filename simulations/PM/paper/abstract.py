@@ -20,7 +20,7 @@ cross-references for the paper's abstract section.
 
 SECTION: 0 (Abstract)
 
-v24.2 TOPOLOGICALLY ANCHORED: 125 constants from 3 geometric seeds (116:1 compression).
+v24.2 TOPOLOGICALLY ANCHORED: 125 constants from EDOF=3 seeds (116:1 compression).
 
 OUTPUTS:
     - abstract.total_constants (125)
@@ -84,7 +84,7 @@ class AbstractV17_2(SimulationBase):
             version="24.2",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v24.2 M^{27}(24,1,2) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification with EDOF=3 (3 geometric seeds)",
+            description="Paper abstract for Principia Metaphysica v24.2 M^{27}(24,1,2) dual-shadow framework with Euclidean bridge - 125 spectral residues from G2 compactification with EDOF=3 (1 geometric + 2 calibrations)",
             section_id="0",
             subsection_id=None
         )
@@ -236,7 +236,7 @@ class AbstractV17_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    'The framework achieves <strong>116:1 compression ratio</strong> (125 constants from 3 geometric seeds). '
+                    'The framework achieves <strong>116:1 compression ratio</strong> (125 constants from EDOF=3 effective seeds). '
                     'Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. '
                     '<strong><span class="pm-value" data-pm-value="abstract.pure_predictions">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds '
                     '(VEV coefficient <span class="pm-value" data-pm-value="abstract.vev_coefficient">1.5859</span>, 1/\u03b1<sub>GUT</sub> coefficient 1/(10\u03c0) \u2248 <span class="pm-value" data-pm-value="abstract.alpha_gut_coefficient">0.0318</span>, '
@@ -278,7 +278,7 @@ class AbstractV17_2(SimulationBase):
                     '<strong>Topologically Anchored Framework (116:1 Compression)</strong>: '
                     'We frame this derivation through the lens of Minimal Description Length (MDL). '
                     'The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, '
-                    'achieved with <strong>EDOF=3</strong> (3 geometric seeds: b\u2083, \u03c6, \u03b8\u2081\u2083). '
+                    'achieved with <strong>EDOF=3</strong> (1 geometric seed b\u2083 + 2 calibrations: VEV coefficient, Re(T)). '
                     'The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits \u2192 69 bits), '
                     'demonstrating this is information reduction rather than parameter fitting. '
                     'The code is isomorphic to the geometric constraints themselves, '
