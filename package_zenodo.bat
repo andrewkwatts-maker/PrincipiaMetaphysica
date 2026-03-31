@@ -12,7 +12,7 @@ if errorlevel 1 (
 )
 echo.
 echo Step 2: Creating Zenodo submission package...
-python scripts\packaging\zenodo_pack.py %*
+python scripts\zenodo_packaging\zenodo_pack.py %*
 echo.
 echo Done. Check zenodo_package/ for the output.
 pause
