@@ -468,6 +468,19 @@ class PrincipiaValidator:
             print(f"  COSMO-013: {status} (geometry.elder_kads missing from registry)")
             return
 
+        # b3 cross-check: must be exactly 24 (TCS G2: b2(K3)+2 = 22+2 = 24)
+        if b3 != 24:
+            status = "FAILED"
+            self.results['COSMO-013'] = {
+                "status": status,
+                "metric": f"b3 cross-check failed: got {b3}, expected 24",
+                "expected": 24,
+                "actual": b3,
+                "sector": "COSMOLOGICAL"
+            }
+            print(f"  COSMO-013: {status} (b3 = {b3} != 24, cross-check failed)")
+            return
+
         # wa = -1/sqrt(b3): leading-order from G2 moduli rolling dynamics
         # This is the SAME formula used by dark_energy.py and wa_from_b3()
         wa_theory = -1 / math.sqrt(b3)
