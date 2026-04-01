@@ -1020,11 +1020,26 @@ class PrincipiaValidator:
     def cert_lattice_055_chain_valid(self):
         """LATT-055: Full LatticeBridgeConnector derivation chain valid.
 
-        Uses verify_chain() for comprehensive 19-check validation covering:
+        Uses verify_chain() for comprehensive 21-check validation covering:
           E8 roots, octonions, G2-from-E8, E8 triple decomposition,
-          E8×E8 pair (heterotic), bridge decomposition (12×2D, 24D total,
-          E8-consistent), bridges from Leech (signature, moduli),
-          four faces (4×3, cross-E8, n_gen, h11), and alpha_leak.
+          E8×E8 pair (heterotic, 480 roots, all norm-2), bridge decomposition
+          (12×2D, 24D total, covers all 24 coords, E8-consistent), bridges
+          from Leech (signature (26,1), moduli valid), four faces (4×3,
+          cross-E8, n_gen=3, h11=4), alpha_leak=1/√6, and chain_valid
+          composite.
+
+        Classification: PLAUSIBLE
+            Steps 1-4 (E8, octonions, G2=Aut(O), Leech=E8³) are proven
+            mathematical theorems. Steps 5-7 (12×2D decomposition, 4×3 face
+            grouping, alpha_leak) are framework-specific choices among valid
+            alternatives, selected for consistency with h^{1,1}=4, n_gen=3.
+            The alpha_leak=1/√6 follows from n_aligned = n_bridges/2 = 6,
+            which equals chi_eff/b3 = 144/24.
+
+        Note: The 21st check (chain_valid) is a composite boolean from
+        derive_all() covering a 10-condition subset. It is redundant when
+        all 20 individual checks pass, but can distinguish partial failures
+        where the composite conditions are met but extra checks are not.
         """
         r = self._get_lattice_connector()
         if r is None:
@@ -1044,8 +1059,9 @@ class PrincipiaValidator:
         self.results['LATT-055'] = {
             "status": status,
             "metric": metric,
-            "expected": "Full E8→Octonions→G2→Leech→Bridges→Faces chain: all checks pass",
-            "sector": "LATTICE"
+            "expected": "Full E8→Octonions→G2→Leech→Bridges→Faces chain: all 21 checks pass",
+            "sector": "LATTICE",
+            "note": "PLAUSIBLE: E8/octonions/G2/Leech are theorems; 12×2D and 4×3 are framework choices"
         }
         print(f"  LATT-055: {status} (chain: {metric})")
 

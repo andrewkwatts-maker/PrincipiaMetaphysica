@@ -24,7 +24,7 @@ Assertion Assessment (Sprint 2, WP 2.2)
 - Assertion: E8->Leech->Bridges->Faces chain is a valid derivation
 - Git History: Single commit (0c03f14), no subsequent modifications. Chain created
   in one pass alongside all algebra/geometry modules. No iterative tuning observed.
-- Lattice Result: chain_valid=True, all 19/19 checks PASS. E8 (240 roots, dim 248),
+- Lattice Result: chain_valid=True, all 21/21 checks PASS. E8 (240 roots, dim 248),
   octonions valid, G2 from E8 compatible, E8 triple orthogonal/each_e8/spans_R24,
   12 bridges in 24D, signature (26,1), 4 faces x 3 bridges, alpha_leak=0.408248
   matches 1/sqrt(6) exactly.
