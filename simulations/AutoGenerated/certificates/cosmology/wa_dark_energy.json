@@ -3,78 +3,74 @@
   "cert_id": "CERT-COSMO-013",
   "label": "Dark Energy Evolution Parameter w_a",
   "category": "COSMOLOGICAL",
-  "version": "23.0",
+  "version": "23.3",
   "status": "LOCKED",
-  "wolfram_code": "With[{\n  (* G₂ manifold topology - fundamental constant *)\n  b3 = 24  (* Third Betti number *)\n},\n  (* v16.2: w_a from moduli rolling dynamics *)\n  (* Formula: w_a = -1/√b₃ = -1/√24 *)\n  \n  waGeometric = -1/Sqrt[b3];\n  \n  (* DESI DR2 2025 result *)\n  desi2025 = -0.816;\n  desiUncertainty = 0.25;\n  \n  deviation = (waGeometric - desi2025) / desiUncertainty;\n  \n  {N[waGeometric, 6], N[deviation, 3]}\n]",
-  "expected_result": "{-0.816497, 0.002σ}",
+  "wolfram_code": "With[{\n  (* G\u2082 manifold topology - Pillar Seed *)\n  b3 = 24  (* Third Betti number *)\n},\n  (* w_a from moduli rolling dynamics *)\n  (* Formula: w_a = -1/\u221ab\u2083 = -1/\u221a24 *)\n  \n  waGeometric = -1/Sqrt[b3];\n  \n  (* DESI 2025 (BAO+CMB+DESY5+PantheonPlus) *)\n  desi2025 = -0.99;\n  desiUncertainty = 0.32;\n  \n  tension = Abs[waGeometric - desi2025] / desiUncertainty;\n  \n  {\"wa_theory\" -> N[waGeometric, 10],\n   \"wa_desi\" -> desi2025,\n   \"sigma_desi\" -> desiUncertainty,\n   \"tension_sigma\" -> N[tension, 4],\n   \"status\" -> If[tension < 3.0, \"LOCKED\", \"TENSION\"]}\n]",
+  "expected_result": "{wa_theory -> -0.2041241452, tension_sigma -> 2.456, status -> LOCKED}",
   "verification_status": "verified",
-  "mathematical_goal": "Derive w_a = -1/√b₃ = -1/√24 ≈ -0.8165 from G₂ moduli dynamics, matching DESI DR2 2025 (w_a = -0.816 ± 0.25) to < 0.01σ",
-  "theoretical_significance": "v16.2 derives the dark energy evolution parameter w_a from the square root of the third Betti number b₃ = 24. The formula w_a = -1/√b₃ emerges from the rate of moduli rolling in the G₂ potential landscape. This predicts w_a = -0.8165, in precise agreement with DESI DR2 2025 measurement w_a = -0.816 ± 0.25 (deviation: < 0.01σ). Combined with w₀ = -23/24, this describes a thawing dark energy model with CPL parameterization w(a) = w₀ + w_a(1-a), where both parameters are geometric predictions with no tuning.",
+  "mathematical_goal": "Derive w_a = -1/\u221ab\u2083 = -1/\u221a24 \u2248 -0.2041 from G\u2082 moduli dynamics. Compare against DESI 2025 (wa = -0.99 \u00b1 0.32). The ~2.5\u03c3 tension is a known leading-order limitation.",
+  "theoretical_significance": "The dark energy evolution parameter w_a = -1/\u221ab\u2083 = -0.2041 is a leading-order geometric prediction from G\u2082 moduli rolling dynamics. The formula captures the correct thawing sign (wa < 0) and order of magnitude. The ~2.5\u03c3 tension with DESI 2025 (wa = -0.99 \u00b1 0.32) indicates the leading-order approximation underestimates the amplitude of dark energy evolution. Non-linear thawing corrections and 12-pair breathing aggregation may improve agreement.",
   "experimental_comparison": {
-    "DESI_DR2_2025": {
-      "best_fit": -0.816,
-      "uncertainty": 0.25,
-      "range_1sigma": [-1.066, -0.566],
-      "range_2sigma": [-1.316, -0.316]
+    "DESI_2025": {
+      "best_fit": -0.99,
+      "uncertainty": 0.32,
+      "dataset": "BAO+CMB+DESY5+PantheonPlus",
+      "source": "desi_2025.csv (SSoT)"
     },
-    "PM_prediction": -0.816497,
-    "deviation_sigma": 0.002,
-    "agreement": "EXCELLENT (< 0.01σ)",
+    "PM_prediction": -0.2041241452,
+    "deviation_sigma": 2.456,
+    "agreement": "TENSION (~2.5\u03c3, leading-order limitation)",
     "cosmological_constant": {
       "value": 0.0,
-      "note": "ΛCDM has w_a = 0 by definition",
-      "tension_with_DESI": "3.3σ (ΛCDM disfavored)"
+      "note": "\u039bCDM has w_a = 0 by definition",
+      "tension_with_DESI": "3.1\u03c3 (\u039bCDM disfavored)"
     }
   },
   "cpl_parameterization": {
-    "formula": "w(a) = w₀ + w_a(1 - a)",
+    "formula": "w(a) = w\u2080 + w_a (1 - a)",
     "w0": "-23/24 = -0.9583",
-    "wa": "-1/√24 = -0.8165",
-    "present_day_a1": "w(1) = w₀ = -0.9583",
-    "high_redshift_a0": "w(0) = w₀ + w_a = -1.775",
-    "phantom_crossing": "w = -1 occurs at a_cross ≈ 0.949 (z ≈ 0.054)",
+    "wa": "-1/\u221a24 = -0.2041",
+    "present_day_a1": "w(1) = w\u2080 = -0.9583",
+    "high_redshift_a0": "w(0) = w\u2080 + w_a = -1.162",
+    "phantom_crossing": "w = -1 occurs at a_cross \u2248 0.796 (z \u2248 0.257)",
     "interpretation": "Thawing from phantom (w < -1) at early times to quintessence (w > -1) at late times"
   },
   "geometry": {
-    "fundamental_constant": "b₃ = 24 (third Betti number of TCS G₂)",
-    "formula": "w_a = -1/√b₃",
-    "exact_value": "-1/√24",
+    "fundamental_constant": "b\u2083 = 24 (third Betti number of TCS G\u2082)",
+    "formula": "w_a = -1/\u221ab\u2083",
+    "exact_value": "-1/\u221a24",
     "decimal": -0.2041241452,
-    "corrected_formula": "w_a = -1/√b₃ × 4 = -4/√24 ≈ -0.8165",
-    "physical_interpretation": "Rate of moduli rolling in G₂ potential landscape",
-    "mechanism": "Moduli kinetic energy contribution scales as 1/√b₃"
+    "physical_interpretation": "Rate of moduli rolling in G\u2082 potential landscape",
+    "mechanism": "Moduli kinetic energy contribution scales as 1/\u221ab\u2083"
   },
   "derivation_chain": [
-    "G₂ manifold: b₃ = 24 (third Betti number, counts 3-cycles)",
-    "Moduli dynamics: φ̈ + 3Hφ̇ + V'(φ) = 0 in expanding universe",
-    "Rolling rate: dw/da ~ -1/√b₃ from potential curvature",
-    "Evolution parameter: w_a = -1/√24 = -0.2041... (base value)",
-    "Factor 4 enhancement: from 4D reduction × CPL normalization",
-    "Final result: w_a = -4/√24 ≈ -0.8165",
-    "DESI DR2 2025: w_a = -0.816 ± 0.25 (< 0.01σ agreement)"
+    "G\u2082 manifold: b\u2083 = 24 (third Betti number, counts 3-cycles)",
+    "Moduli dynamics: \u03c6\u0308 + 3H\u03c6\u0307 + V'(\u03c6) = 0 in expanding universe",
+    "Rolling rate: dw/da ~ -1/\u221ab\u2083 from potential curvature",
+    "Evolution parameter: w_a = -1/\u221a24 = -0.2041...",
+    "DESI 2025: w_a = -0.99 \u00b1 0.32 (~2.5\u03c3 tension, leading-order limitation)"
   ],
-  "comparison_to_v16_1": {
-    "old_prediction": "w_a ≈ -0.02 to -0.03 (various approximations)",
-    "new_prediction": "w_a = -1/√b₃ = -0.8165",
-    "old_tension": "2.6σ from DESI",
-    "new_tension": "< 0.01σ from DESI",
-    "improvement": "From marginal to excellent agreement",
-    "reason": "Direct topological derivation replaces phenomenological corrections"
+  "honesty": {
+    "classification": "PREDICTED",
+    "fitted_params": 0,
+    "known_limitation": "Leading-order formula underestimates |wa|. Non-linear thawing corrections from moduli-quintessence coupling may reduce the 2.5\u03c3 tension.",
+    "correction_from_v23_2": "Removed unjustified x4 'CPL factor' that was previously applied to the base wa value. The factor had no rigorous derivation and artificially matched an outdated DESI DR2 value (wa = -0.816). Now uses honest leading-order prediction against SSoT DESI 2025 data.",
+    "previous_claim": "wa = -4/\u221a24 = -0.8165 vs DESI DR2 wa = -0.816 (0.002\u03c3)",
+    "corrected_claim": "wa = -1/\u221a24 = -0.2041 vs DESI 2025 wa = -0.99 (2.5\u03c3)"
   },
   "combined_w0_wa": {
     "w0_value": -0.958333,
-    "wa_value": -0.816497,
-    "w0_source": "-23/24 = -1 + 1/b₃",
-    "wa_source": "-1/√24 × 4",
-    "correlation": "Both from b₃ = 24 with no free parameters",
-    "chi2_combined": "< 0.01 (excellent joint fit to DESI)"
+    "wa_value": -0.204124,
+    "w0_source": "-23/24 = -1 + 1/b\u2083",
+    "wa_source": "-1/\u221a24",
+    "correlation": "Both from b\u2083 = 24 with no free parameters"
   },
   "implications": {
-    "strong_evolution": "w_a ≈ -0.82 indicates significant dark energy evolution",
-    "thawing_quintessence": "Scalar field becoming more active with cosmic time",
-    "topological_origin": "Evolution rate encoded in G₂ 3-cycle structure",
-    "predictive_power": "No free parameters - w_a fixed by b₃ alone"
+    "thawing_direction": "w_a < 0 confirms thawing dark energy (correct sign)",
+    "amplitude_gap": "|wa_theory| < |wa_DESI| suggests higher-order moduli dynamics contribute",
+    "topological_origin": "Evolution rate encoded in G\u2082 3-cycle structure",
+    "predictive_power": "No free parameters - w_a fixed by b\u2083 alone"
   },
-  "timestamp": "2026-01-01T00:00:00Z",
-  "hash": "v16_2_wa_sqrt_b3"
+  "timestamp": "2026-04-01T22:30:00Z",
+  "hash": "v23_3_wa_honest_leading_order"
 }
