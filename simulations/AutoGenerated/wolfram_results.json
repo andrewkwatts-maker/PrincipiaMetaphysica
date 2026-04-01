@@ -135,12 +135,14 @@
     },
     "k_gimel_derivation": {
       "status": "SUCCESS",
-      "result": "{?, ?}",
-      "expected_result": "{12.31831, 12, 0.318310, \"LOCKED\"}",
-      "matches_expected": false,
+      "result": "{12.3183098862, 12, 0.318310, \"LOCKED\"}",
+      "expected_result": "{12.3183098862, 12, 0.318310, \"LOCKED\"}",
+      "matches_expected": true,
       "execution_method": "local_approximation",
+      "formula": "k_gimel = b3/2 + 1/Pi = 24/2 + 1/Pi = 12 + 1/Pi",
+      "wolfram_numeric": 12.31830988618379,
       "code_hash": "9c419eab003298b0",
-      "executed_at": "2026-01-01T04:48:09.371823Z"
+      "executed_at": "2026-04-01T19:57:45Z"
     },
     "kk_mass_gap": {
       "status": "SUCCESS",
