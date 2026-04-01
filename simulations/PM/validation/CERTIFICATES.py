@@ -982,6 +982,7 @@ class PrincipiaValidator:
            (6 = number of ordered pairs (a,b) per Fano triple incident to i;
             each imaginary unit appears in 3 of 7 triples, each triple
             contributes 2 ordered pairs, giving 3×2 = 6)
+        5. phi_structure: exactly 42 nonzero entries (7 Fano triples × 6 permutations)
         """
         r = self._get_lattice_connector()
         if r is None:
@@ -1000,14 +1001,18 @@ class PrincipiaValidator:
             expected = 6.0 * np.eye(7)
             hitchin_dev = float(np.max(np.abs(hitchin - expected)))
             hitchin_ok = bool(hitchin_dev < 1e-14)
-            ok = phi_match and e8_compat and g2_valid and hitchin_ok
+            # Structural invariant: 7 Fano triples × 6 signed permutations = 42 nonzero entries
+            n_nonzero = int(np.count_nonzero(phi))
+            phi_structure_ok = (n_nonzero == 42)
+            ok = phi_match and e8_compat and g2_valid and hitchin_ok and phi_structure_ok
             status = "SEALED" if ok else "FAILED"
             metric = (f"phi_match={phi_match}, e8_compat={e8_compat}, "
-                      f"g2_valid={g2_valid}, hitchin_dev={hitchin_dev:.1e}")
+                      f"g2_valid={g2_valid}, hitchin_dev={hitchin_dev:.1e}, "
+                      f"nnz={n_nonzero}")
         self.results['LATT-054'] = {
             "status": status,
             "metric": metric,
-            "expected": "C_ijk = phi_ijk, Hitchin φ_{iab}φ_{jab} = 6δ_{ij}, G2 geometry valid",
+            "expected": "C_ijk = phi_ijk, Hitchin φ_{iab}φ_{jab} = 6δ_{ij}, G2 valid, nnz=42",
             "sector": "LATTICE"
         }
         print(f"  LATT-054: {status} (G2-E8: {metric})")
