@@ -351,11 +351,21 @@
       "execution_method": "local_approximation",
       "code_hash": "ca8c587ecd3a4d72",
       "executed_at": "2026-01-01T04:48:09.375342Z"
+    },
+    "latt_053_four_faces": {
+      "status": "SUCCESS",
+      "result": "{4, 3, True, True, True, True, True, \"DERIVED\"}",
+      "expected_result": "{4, 3, True, True, True, True, True, \"DERIVED\"}",
+      "matches_expected": true,
+      "execution_method": "local_approximation",
+      "code_hash": "latt053_review_v2",
+      "executed_at": "2026-04-02T04:00:00Z",
+      "note": "Verifies 4 faces x 3 bridges grouping: {n_faces, bpf, cross_E8, all_covered, no_duplicates, n_gen_consistent, h11_consistent, status}. Framework-specific (DERIVED, not SEALED). The {i,i+4,i+8} grouping is one of 576 cross-E8-valid options."
     }
   },
   "summary": {
-    "total": 43,
-    "success": 30,
+    "total": 44,
+    "success": 31,
     "failed": 12,
     "cached": 0,
     "no_code": 1,

@@ -737,24 +737,43 @@ class LeechLattice:
 
             moduli[b] = [L1, L2, theta]
 
-        # Verify: 12 pairs × 2D = 24D
-        total_dim = len(pairs) * 2
+        # Verify: bridge pairs partition all 24 coordinates exactly
+        all_coords = set()
+        for c0, c1 in pairs:
+            all_coords.add(c0)
+            all_coords.add(c1)
+        covers_all_24 = (all_coords == set(range(24)))
 
-        # Check within each E8 triple block
+        num_bridges = len(pairs)
+        total_dim = num_bridges * 2
+
+        # Check within each E8 triple block:
+        # Bridge b spans coords (2b, 2b+1), so it lives in E8 block floor(2b/8) = floor(b/4)
         e8_grouping = {
             0: list(range(0, 4)),    # bridges 0-3 in E8 copy 0
             1: list(range(4, 8)),    # bridges 4-7 in E8 copy 1
             2: list(range(8, 12)),   # bridges 8-11 in E8 copy 2
         }
 
+        # Verify E8 triple consistency: each bridge's coords must lie
+        # entirely within one 8D E8 block ([0:8], [8:16], [16:24])
+        e8_consistent = True
+        for b_idx, (c0, c1) in enumerate(pairs):
+            block_c0 = c0 // 8
+            block_c1 = c1 // 8
+            expected_block = b_idx // 4
+            if block_c0 != block_c1 or block_c0 != expected_block:
+                e8_consistent = False
+
         return {
             'pairs': pairs,
             'sublattice_bases': sublattice_bases,
             'moduli': moduli,
             'total_dim': total_dim,
-            'num_bridges': 12,
+            'num_bridges': num_bridges,
+            'covers_all_24': covers_all_24,
             'e8_grouping': e8_grouping,
-            'consistent_with_e8_triple': True,
+            'consistent_with_e8_triple': e8_consistent,
         }
 
     def four_face_grouping(self) -> dict:

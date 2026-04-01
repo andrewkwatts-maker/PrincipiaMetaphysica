@@ -894,7 +894,16 @@ class PrincipiaValidator:
         print(f"  LATT-051: {status} (E8 triple: {metric})")
 
     def cert_lattice_052_12_bridges(self):
-        """LATT-052: 24D = 12×2D bridge pair decomposition"""
+        """LATT-052: 24D = 12×2D bridge pair decomposition
+
+        Validates that the Leech lattice R²⁴ decomposes into exactly 12
+        non-overlapping 2D coordinate planes (bridge pairs) that partition
+        all 24 coordinate indices, with each bridge residing in exactly
+        one E8 block of the R⁸⊕R⁸⊕R⁸ triple structure.
+
+        Classification: PLAUSIBLE -- the 12x2D decomposition is a valid
+        framework choice among alternatives (8x3D, 6x4D, etc).
+        """
         r = self._get_lattice_connector()
         if r is None:
             status = "SKIPPED"
@@ -903,19 +912,35 @@ class PrincipiaValidator:
             decomp = r['bridge_decomposition']
             n_bridges = decomp['num_bridges']
             total_dim = decomp['total_dim']
-            ok = n_bridges == 12 and total_dim == 24
+            e8_ok = decomp['consistent_with_e8_triple']
+            covers = decomp.get('covers_all_24', False)
+            ok = (n_bridges == 12 and total_dim == 24
+                  and e8_ok and covers)
             status = "SEALED" if ok else "FAILED"
-            metric = f"{n_bridges} bridges, {total_dim}D total"
+            metric = (f"{n_bridges} bridges, {total_dim}D total, "
+                      f"covers_24={covers}, E8-consistent={e8_ok}")
         self.results['LATT-052'] = {
             "status": status,
             "metric": metric,
-            "expected": "12 bridges, 24D",
-            "sector": "LATTICE"
+            "expected": "12 bridges covering all 24 coords, E8-triple consistent",
+            "sector": "LATTICE",
+            "note": "Framework-specific decomposition choice (PLAUSIBLE, not unique)"
         }
         print(f"  LATT-052: {status} (bridges: {metric})")
 
     def cert_lattice_053_four_faces(self):
-        """LATT-053: 4 faces × 3 bridges (framework-specific grouping)"""
+        """LATT-053: 4 faces × 3 bridges (framework-specific grouping)
+
+        Validates that the 12 bridge pairs group into exactly 4 faces
+        of 3 bridges each, where each face draws one bridge from each
+        E8 copy (cross-E8 property). Also verifies that the grouping
+        partitions all 12 bridges without overlap and that the face/bridge
+        counts are consistent with h^{1,1}=4 and n_gen=3.
+
+        Classification: DERIVED -- the {i,i+4,i+8} face grouping is one
+        of 576 cross-E8-valid options (not unique). The identification
+        n_faces=h^{1,1} and n_bridges_per_face=n_gen is framework-specific.
+        """
         r = self._get_lattice_connector()
         if r is None:
             status = "SKIPPED"
@@ -925,16 +950,24 @@ class PrincipiaValidator:
             n_faces = faces['num_faces']
             bpf = faces['bridges_per_face']
             cross = faces['cross_e8']
-            ok = n_faces == 4 and bpf == 3 and cross
+            covered = faces['all_bridges_covered']
+            no_dup = faces['no_duplicates']
+            n_gen_ok = faces['n_gen_consistent']
+            h11_ok = faces['h11_consistent']
+            ok = (n_faces == 4 and bpf == 3 and cross
+                  and covered and no_dup
+                  and n_gen_ok and h11_ok)
             # DERIVED status: framework-specific, not a pure mathematical theorem
             status = "DERIVED" if ok else "FAILED"
-            metric = f"{n_faces} faces, {bpf} bridges/face, cross_E8={cross}"
+            metric = (f"{n_faces} faces, {bpf} bridges/face, cross_E8={cross}, "
+                      f"all_covered={covered}, no_dup={no_dup}, "
+                      f"n_gen={n_gen_ok}, h11={h11_ok}")
         self.results['LATT-053'] = {
             "status": status,
             "metric": metric,
-            "expected": "4 faces, 3 bridges/face, cross-E8",
+            "expected": "4 faces, 3 bridges/face, cross-E8, complete partition, n_gen=3, h11=4",
             "sector": "LATTICE",
-            "note": "Framework-specific grouping (model-dependent)"
+            "note": "Framework-specific grouping: one of 576 cross-E8-valid options (model-dependent)"
         }
         print(f"  LATT-053: {status} (faces: {metric})")
 
