@@ -766,16 +766,62 @@ class PrincipiaValidator:
     # ═══════════════════════════════════════════════════════════════════
 
     def cert_topo_023_cs_level(self):
-        """TOPO-023: Chern-Simons Level k = 24"""
-        k = 24  # Fixed by theory
-        status = "SEALED"
+        """TOPO-023: Chern-Simons Level k = 24
+
+        Validates that the Chern-Simons level k is topologically fixed by
+        anomaly cancellation to equal b3.  For the TCS G2 manifold with
+        b3 = 24, k = 24 is not a free parameter but a topological requirement:
+
+        1. Anomaly cancellation in M-theory on G2: k = b3
+        2. Integer quantization: k must be a non-negative integer
+        3. Modular constraint: b3 ≡ 0 (mod 24) — satisfied by b3 = 24
+
+        Gate explicitly FAILS if the registry lacks b3, preventing vacuous pass.
+        """
+        b3 = self._get_param('geometry.elder_kads')
+        if b3 is None:
+            status = "FAILED"
+            self.results['TOPO-023'] = {
+                "status": status,
+                "metric": "geometry.elder_kads NOT FOUND in registry",
+                "expected": 24,
+                "actual": None,
+                "sector": "TOPOLOGICAL"
+            }
+            print(f"  TOPO-023: {status} (geometry.elder_kads missing from registry)")
+            return
+
+        # Anomaly cancellation: k = b3 (not a choice — topologically fixed)
+        k = b3
+
+        # Three independent checks:
+        # 1. k equals the expected CS level (24)
+        value_ok = (k == 24)
+        # 2. Integer quantization (CS level must be an integer)
+        integer_ok = isinstance(k, int) or (isinstance(k, float) and k == int(k))
+        # 3. Modular invariance: b3 ≡ 0 (mod 24)
+        modular_ok = (b3 % 24 == 0)
+
+        status = "SEALED" if (value_ok and integer_ok and modular_ok) else "FAILED"
         self.results['TOPO-023'] = {
             "status": status,
-            "metric": f"k = {k}",
+            "metric": f"k = b3 = {k}",
             "expected": 24,
-            "sector": "TOPOLOGICAL"
+            "actual": k,
+            "checks": {
+                "k_equals_24": value_ok,
+                "integer_quantized": integer_ok,
+                "b3_mod_24_zero": modular_ok,
+            },
+            "sector": "TOPOLOGICAL",
+            "note": (
+                "Chern-Simons level k is fixed by anomaly cancellation (k = b3). "
+                "Integer quantization protects all derived parameters from "
+                "continuous drift. b3 ≡ 0 (mod 24) from modular invariance."
+            ),
         }
-        print(f"  TOPO-023: {status} (CS Level k = {k})")
+        print(f"  TOPO-023: {status} (CS level k = b3 = {k}, "
+              f"integer={integer_ok}, b3 mod 24 = {b3 % 24})")
 
     def cert_topo_024_g2_holonomy(self):
         """TOPO-024: G2 Holonomy Verification"""
