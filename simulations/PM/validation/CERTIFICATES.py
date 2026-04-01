@@ -972,7 +972,17 @@ class PrincipiaValidator:
         print(f"  LATT-053: {status} (faces: {metric})")
 
     def cert_lattice_054_g2_from_e8(self):
-        """LATT-054: G2 3-form from octonion structure constants + Hitchin identity"""
+        """LATT-054: G2 3-form from octonion structure constants + Hitchin identity.
+
+        Validates the E8 → Octonion → G2 derivation chain:
+        1. phi_match: octonion-derived φ_{ijk} matches the standard G2 3-form
+        2. e8_compat: E8 root projections respect G2 structure
+        3. g2_valid: full G2 geometry checks (metric, Hodge, torsion, Λ²)
+        4. hitchin: contraction identity φ_{iab}φ_{jab} = 6δ_{ij}
+           (6 = number of ordered pairs (a,b) per Fano triple incident to i;
+            each imaginary unit appears in 3 of 7 triples, each triple
+            contributes 2 ordered pairs, giving 3×2 = 6)
+        """
         r = self._get_lattice_connector()
         if r is None:
             status = "SKIPPED"
@@ -981,18 +991,23 @@ class PrincipiaValidator:
             g2_compat = r['g2_from_e8']
             phi_match = g2_compat['phi_matches_standard']
             e8_compat = g2_compat['e8_compatible']
-            # Hitchin check: phi_{iab}*phi_{jab} = 6*delta_{ij}
+            g2_valid = g2_compat['g2_valid']
+            # Hitchin contraction identity: φ_{iab}φ_{jab} = 6δ_{ij}
+            # The factor 6 is exact for the standard G2 3-form (not a tunable parameter).
             import numpy as np
             phi = self._lattice_connector.octonions.g2_structure_as_3form()
             hitchin = np.einsum('iab,jab->ij', phi, phi)
-            hitchin_ok = bool(np.allclose(hitchin, 6.0 * np.eye(7)))
-            ok = phi_match and e8_compat and hitchin_ok
+            expected = 6.0 * np.eye(7)
+            hitchin_dev = float(np.max(np.abs(hitchin - expected)))
+            hitchin_ok = bool(hitchin_dev < 1e-14)
+            ok = phi_match and e8_compat and g2_valid and hitchin_ok
             status = "SEALED" if ok else "FAILED"
-            metric = f"phi_match={phi_match}, e8_compat={e8_compat}, hitchin={hitchin_ok}"
+            metric = (f"phi_match={phi_match}, e8_compat={e8_compat}, "
+                      f"g2_valid={g2_valid}, hitchin_dev={hitchin_dev:.1e}")
         self.results['LATT-054'] = {
             "status": status,
             "metric": metric,
-            "expected": "C_ijk = phi_ijk, Hitchin identity holds",
+            "expected": "C_ijk = phi_ijk, Hitchin φ_{iab}φ_{jab} = 6δ_{ij}, G2 geometry valid",
             "sector": "LATTICE"
         }
         print(f"  LATT-054: {status} (G2-E8: {metric})")
