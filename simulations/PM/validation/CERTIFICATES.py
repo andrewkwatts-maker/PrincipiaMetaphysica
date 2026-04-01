@@ -394,10 +394,10 @@ class PrincipiaValidator:
     def cert_stab_005(self):
         """STAB-005: Lambda Stability via Symplectic Screening"""
         b3 = self._get_param('geometry.elder_kads', 24)
-        k = 24  # Chern-Simons level
+        k = b3  # Chern-Simons level (k = b3 by anomaly cancellation, cf. TOPO-023)
 
         # beta(Lambda) = 1/(b3^2 * k^2)^4
-        # With b3=24, k=24: beta = (576*576)^-4 ~ 8e-23
+        # With b3=24, k=b3=24: beta = (576*576)^-4 ~ 8e-23
         # This is still 20+ orders of magnitude below detection (~1e-20)
         beta_lambda = (b3**2 * k**2)**-4
 
