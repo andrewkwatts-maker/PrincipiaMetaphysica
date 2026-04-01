@@ -1071,36 +1071,78 @@ class PrincipiaValidator:
 
     def cert_pairs_bridge(self):
         """
-        C_PAIRS: 12-PAIR-BRIDGE Validation
+        C_PAIRS: 12-PAIR-BRIDGE Dimensional Consistency
 
-        Validates the 12 x (2,0) paired bridge structure for shadow brane coupling.
-        The v22.0 architecture requires either exactly 12 pairs or a minimum of 6.
+        Validates the 12 x (2,0) paired bridge structure and its dimensional
+        consistency with the M^{27}(24,1,2) manifold architecture:
+          - pairs = b3/2 = 24/2 = 12 (derived from Betti number)
+          - pairs × 2 = 24 = D_physics_core
+          - Total: 24 (bridges) + 1 (time) + 2 (sampler) = 27D
+          - Signature: (26,1) = (24 + 2 spacelike, 1 timelike)
 
-        Gate Logic:
-            pairs == 12 (full 12-PAIR-BRIDGE) OR pairs >= 6 (minimum stability)
+        Classification: GEOMETRIC — the pair count 12 = b3/2 follows from
+        the G2 manifold Betti number b3 = 24. The 12×(2,0) decomposition
+        is a framework choice (PLAUSIBLE), but the dimensional arithmetic
+        is forced once the decomposition is adopted.
+
+        Gate Logic (5 checks):
+            1. pairs == 12
+            2. pairs == b3 // 2 (derivation from Betti number)
+            3. pairs × 2 == 24 (physics core dimension)
+            4. pairs × 2 + 1 + 2 == 27 (total bulk dimension)
+            5. signature = (26, 1) (spacelike + timelike = 27)
         """
         pairs = self._get_param('seal.bridge_pairs', self.pairs)
+        b3 = self._get_param('geometry.elder_kads', 24)
 
-        # C_PAIRS validation: 12 pairs (full) or minimum 6 pairs (stable)
-        full_bridge = pairs == 12
-        minimum_stable = pairs >= 6
+        # Dimensional constants from the M^{27}(24,1,2) architecture
+        dims_per_pair = 2       # Each bridge pair is (2,0) Euclidean
+        d_time = 1              # Unified T^1 fiber
+        d_sampler = 2           # S^{2,0} sampler data fields
+        d_physics_core = 24     # G2 physics core
+        d_bulk = 27             # Total M^{27}
 
-        if full_bridge:
+        # Check 1: Pair count
+        count_ok = (pairs == 12)
+        # Check 2: Derivation chain — pairs = b3/2
+        derivation_ok = (pairs == b3 // 2)
+        # Check 3: Dimensional consistency (pairs × 2 = 24D physics core)
+        dim_ok = (pairs * dims_per_pair == d_physics_core)
+        # Check 4: Total bulk dimension (24 + 1 + 2 = 27)
+        bulk_ok = (pairs * dims_per_pair + d_time + d_sampler == d_bulk)
+        # Check 5: Signature consistency (26 spacelike, 1 timelike)
+        d_spacelike = pairs * dims_per_pair + d_sampler  # 24 + 2 = 26
+        sig_ok = (d_spacelike + d_time == d_bulk) and (d_spacelike == 26)
+
+        all_ok = count_ok and derivation_ok and dim_ok and bulk_ok and sig_ok
+
+        if all_ok:
             status = "LOCKED"
-            bridge_status = "FULL 12-PAIR-BRIDGE"
-        elif minimum_stable:
-            status = "LOCKED"
-            bridge_status = f"STABLE ({pairs}-PAIR-BRIDGE)"
+            bridge_status = "FULL 12-PAIR-BRIDGE (dim+sig consistent)"
+        elif count_ok and not derivation_ok:
+            status = "TENSION"
+            bridge_status = f"pairs={pairs} but b3/2={b3 // 2} (derivation mismatch)"
+        elif count_ok and not (dim_ok and bulk_ok and sig_ok):
+            status = "TENSION"
+            bridge_status = f"12 pairs but dimensional/signature mismatch"
         else:
             status = "FAILED"
-            bridge_status = f"UNSTABLE ({pairs} pairs < 6 minimum)"
+            bridge_status = f"FAILED (pairs={pairs}, expected 12=b3/2={b3}//2)"
+
+        checks_str = (f"count={count_ok}, "
+                      f"b3/2={b3}//2={b3 // 2}=={pairs}:{derivation_ok}, "
+                      f"{pairs}×2={pairs*dims_per_pair}=={d_physics_core}:{dim_ok}, "
+                      f"{pairs*dims_per_pair}+{d_time}+{d_sampler}=={d_bulk}:{bulk_ok}, "
+                      f"sig({d_spacelike},{d_time}):{sig_ok}")
 
         self.results['C_PAIRS'] = {
             "status": status,
-            "metric": f"pairs = {pairs}, Bridge12x(2,0)",
-            "expected": "12 pairs or >= 6",
+            "metric": f"pairs={pairs}, dim={pairs*dims_per_pair}, sig=({d_spacelike},{d_time}), checks=[{checks_str}]",
+            "expected": "12=b3/2 pairs, 12×2=24D core, 24+1+2=27D bulk, sig(26,1)",
             "sector": "BRIDGE",
             "bridge_architecture": "12-PAIR-BRIDGE",
+            "classification": "GEOMETRIC",
+            "note": "12 = b3/2 follows from G2 Betti number; 12×(2,0) decomposition is framework choice (PLAUSIBLE)"
         }
         print(f"  C_PAIRS: {status} ({bridge_status})")
 
