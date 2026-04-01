@@ -1018,20 +1018,33 @@ class PrincipiaValidator:
         print(f"  LATT-054: {status} (G2-E8: {metric})")
 
     def cert_lattice_055_chain_valid(self):
-        """LATT-055: Full LatticeBridgeConnector derivation chain valid"""
+        """LATT-055: Full LatticeBridgeConnector derivation chain valid.
+
+        Uses verify_chain() for comprehensive 19-check validation covering:
+          E8 roots, octonions, G2-from-E8, E8 triple decomposition,
+          E8×E8 pair (heterotic), bridge decomposition (12×2D, 24D total,
+          E8-consistent), bridges from Leech (signature, moduli),
+          four faces (4×3, cross-E8, n_gen, h11), and alpha_leak.
+        """
         r = self._get_lattice_connector()
         if r is None:
             status = "SKIPPED"
             metric = "Lattice modules unavailable"
         else:
-            chain_valid = r['chain_valid']
-            alpha_leak = r['face_moduli']['alpha_leak_matches']
-            status = "SEALED" if chain_valid and alpha_leak else "FAILED"
-            metric = f"chain_valid={chain_valid}, alpha_leak_correct={alpha_leak}"
+            checks = self._lattice_connector.verify_chain()
+            n_pass = sum(1 for v in checks.values() if v)
+            n_total = len(checks)
+            all_pass = (n_pass == n_total)
+            failed_names = [k for k, v in checks.items() if not v]
+            status = "SEALED" if all_pass else "FAILED"
+            if all_pass:
+                metric = f"{n_pass}/{n_total} checks passed"
+            else:
+                metric = f"{n_pass}/{n_total} passed, failed: {failed_names}"
         self.results['LATT-055'] = {
             "status": status,
             "metric": metric,
-            "expected": "Full E8→Leech→G2→Bridges→Faces chain valid",
+            "expected": "Full E8→Octonions→G2→Leech→Bridges→Faces chain: all checks pass",
             "sector": "LATTICE"
         }
         print(f"  LATT-055: {status} (chain: {metric})")
