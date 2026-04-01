@@ -523,25 +523,101 @@ class PrincipiaValidator:
         print(f"  COSMO-013: {status} (wa = {wa_theory:.6f}, DESI = {wa_desi}, tension = {tension:.2f}sigma)")
 
     def cert_cosmo_014_neutrino_sum(self):
-        """COSMO-014: Neutrino Mass Sum from Hopf Fibration"""
-        k_gimel = self._get_param('geometry.k_gimel', 12.31831)
-        b3 = self._get_param('geometry.elder_kads', 24)
+        """COSMO-014: Neutrino Mass Sum from Hopf Fibration
 
-        # Sum(m_nu) = k_gimel/(2*pi*b3)
+        Validates Sum(m_nu) = k_gimel / (2*pi*b3) against cosmological bounds.
+
+        Formula: Sum(m_nu) = k_gimel / (2*pi*b3) = 12.3183... / (2*pi*24) = 0.0817 eV
+        This arises from the S3 Hopf Fibration residue in the G2 compactification
+        (see docs/validation_archives/proofs/Hopf_Fibration_Residue_v16_2.md).
+
+        Experimental constraints:
+          - Oscillation lower bound (NH): >= 0.058 eV (from dm^2 splittings)
+          - Planck+BAO 2018: < 0.12 eV (95% CL)
+          - DESI+CMB+BAO 2024: < 0.072 eV (95% CL, tighter)
+
+        The prediction 0.0817 eV satisfies the Planck bound but sits above the
+        DESI+CMB+BAO 2024 bound. This is noted as a near-term falsification risk.
+
+        Gate explicitly FAILS if the registry lacks k_gimel or b3 (no defaults),
+        preventing vacuous pass on empty/missing registry data.
+
+        Classification: PREDICTED (geometric derivation from Pillar Seeds, no fitted parameters)
+        """
+        k_gimel = self._get_param('geometry.k_gimel')
+        b3 = self._get_param('geometry.elder_kads')
+
+        # Guard: fail on missing registry parameters (prevent vacuous pass)
+        if k_gimel is None or b3 is None:
+            status = "FAILED"
+            missing = []
+            if k_gimel is None:
+                missing.append("geometry.k_gimel")
+            if b3 is None:
+                missing.append("geometry.elder_kads")
+            self.results['COSMO-014'] = {
+                "status": status,
+                "metric": f"Missing registry params: {', '.join(missing)}",
+                "expected": "Sum(m_nu) = k_gimel / (2*pi*b3)",
+                "actual": None,
+                "sector": "COSMOLOGICAL"
+            }
+            print(f"  COSMO-014: {status} ({', '.join(missing)} missing from registry)")
+            return
+
+        # b3 cross-check: must be exactly 24 (TCS G2: b2(K3)+2 = 22+2 = 24)
+        if b3 != 24:
+            status = "FAILED"
+            self.results['COSMO-014'] = {
+                "status": status,
+                "metric": f"b3 cross-check failed: got {b3}, expected 24",
+                "expected": 24,
+                "actual": b3,
+                "sector": "COSMOLOGICAL"
+            }
+            print(f"  COSMO-014: {status} (b3 = {b3} != 24, cross-check failed)")
+            return
+
+        # Sum(m_nu) = k_gimel / (2*pi*b3): Hopf fibration residue in G2 manifold
         sum_m_nu = k_gimel / (2 * math.pi * b3)
-        sum_m_nu_ev = sum_m_nu  # Already in eV-like units
 
-        # Planck + DESI bound
-        bound = 0.12  # eV
+        # Bounds from established experimental data
+        upper_bound = self._get_param('bounds.sum_m_nu_upper', 0.12)  # Planck+BAO 2018 (eV)
+        osc_lower = 0.058  # eV, oscillation floor for NH (from NuFit 6.0 dm^2 splittings)
 
-        status = "LOCKED" if sum_m_nu_ev < bound else "EXCEEDED"
+        # Sigma tension against DESI+CMB+BAO 2024 central value
+        desi_central = 0.072  # eV (DESI+CMB+BAO 2024 95% CL upper bound, used as reference)
+        desi_sigma = 0.02     # eV (approximate 1-sigma from NuFit 6.0)
+        tension = abs(sum_m_nu - desi_central) / desi_sigma
+        self.global_tension += tension**2
+
+        # Gate passes if prediction is within the Planck+BAO window AND above oscillation floor
+        in_window = osc_lower < sum_m_nu < upper_bound
+        status = "LOCKED" if in_window else "FAILED"
+
         self.results['COSMO-014'] = {
             "status": status,
-            "metric": f"Sum(m_nu) = {sum_m_nu_ev:.4f} eV",
-            "expected": f"< {bound} eV",
-            "sector": "COSMOLOGICAL"
+            "metric": f"Sum(m_nu) = {sum_m_nu:.4f} eV, tension = {tension:.2f}sigma",
+            "expected": f"{osc_lower} < Sum(m_nu) < {upper_bound} eV",
+            "actual": sum_m_nu,
+            "sector": "COSMOLOGICAL",
+            "honesty": {
+                "classification": "PREDICTED",
+                "formula": "Sum(m_nu) = k_gimel / (2*pi*b3)",
+                "k_gimel_source": "Pillar Seed (FormulasRegistry: b3/2 + 1/pi)",
+                "b3_source": "Pillar Seed (FormulasRegistry)",
+                "fitted_params": 0,
+                "desi_note": (
+                    "Prediction 0.0817 eV exceeds DESI+CMB+BAO 2024 bound "
+                    "(< 0.072 eV at 95% CL) but satisfies Planck+BAO 2018 "
+                    "(< 0.12 eV). This is a near-term falsification risk "
+                    "as bounds tighten with CMB-S4 and DESI full survey."
+                ),
+            },
         }
-        print(f"  COSMO-014: {status} (Sum(m_nu) = {sum_m_nu_ev:.4f} eV < {bound} eV)")
+        print(f"  COSMO-014: {status} (Sum(m_nu) = {sum_m_nu:.4f} eV, "
+              f"{osc_lower} < {sum_m_nu:.4f} < {upper_bound}, "
+              f"tension = {tension:.2f}sigma)")
 
     def cert_cosmo_015_h0(self):
         """COSMO-015: Hubble Constant (Early Universe)"""
