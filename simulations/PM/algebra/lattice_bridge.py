@@ -141,6 +141,7 @@ class LatticeBridgeConnector:
         self.bridge_decomposition = self.leech.decompose_bridge_pairs()
         results['bridge_decomposition'] = {
             'num_bridges': self.bridge_decomposition['num_bridges'],
+            'covers_all_24': self.bridge_decomposition['covers_all_24'],
             'total_dim': self.bridge_decomposition['total_dim'],
             'consistent_with_e8_triple': self.bridge_decomposition['consistent_with_e8_triple'],
         }
@@ -162,6 +163,7 @@ class LatticeBridgeConnector:
             'num_faces': self.face_grouping['num_faces'],
             'bridges_per_face': self.face_grouping['bridges_per_face'],
             'all_bridges_covered': self.face_grouping['all_bridges_covered'],
+            'no_duplicates': self.face_grouping['no_duplicates'],
             'cross_e8': self.face_grouping['cross_e8'],
             'n_gen_consistent': self.face_grouping['n_gen_consistent'],
             'h11_consistent': self.face_grouping['h11_consistent'],
@@ -231,7 +233,9 @@ class LatticeBridgeConnector:
 
         # Bridge decomposition
         checks['12_bridges'] = r['bridge_decomposition']['num_bridges'] == 12
+        checks['covers_all_24'] = r['bridge_decomposition']['covers_all_24']
         checks['24D_total'] = r['bridge_decomposition']['total_dim'] == 24
+        checks['e8_triple_consistent'] = r['bridge_decomposition']['consistent_with_e8_triple']
 
         # Bridges from Leech
         checks['signature_26_1'] = r['bridges_from_leech']['signature_26_1']
