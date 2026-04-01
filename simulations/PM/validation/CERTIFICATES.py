@@ -532,12 +532,18 @@ class PrincipiaValidator:
         (see docs/validation_archives/proofs/Hopf_Fibration_Residue_v16_2.md).
 
         Experimental constraints:
-          - Oscillation lower bound (NH): >= 0.058 eV (from dm^2 splittings)
+          - Oscillation lower bound (NH): >= 0.058 eV (from NuFit 6.0 dm^2 splittings)
+          - Oscillation lower bound (IO): >= 0.098 eV (from NuFit 6.0 dm^2 splittings)
           - Planck+BAO 2018: < 0.12 eV (95% CL)
           - DESI+CMB+BAO 2024: < 0.072 eV (95% CL, tighter)
 
         The prediction 0.0817 eV satisfies the Planck bound but sits above the
-        DESI+CMB+BAO 2024 bound. This is noted as a near-term falsification risk.
+        DESI+CMB+BAO 2024 bound. This value is consistent with Normal Hierarchy
+        (NH floor ~0.058 eV) but NOT with Inverted Ordering (IO floor ~0.098 eV).
+
+        INTERNAL TENSION: The neutrino_mixing.py simulation predicts Inverted
+        Ordering with Sum(m_nu) ~ 0.10 eV, while this Hopf formula gives 0.0817 eV
+        (consistent only with NH). This discrepancy is documented as an open problem.
 
         Gate explicitly FAILS if the registry lacks k_gimel or b3 (no defaults),
         preventing vacuous pass on empty/missing registry data.
@@ -578,27 +584,47 @@ class PrincipiaValidator:
             print(f"  COSMO-014: {status} (b3 = {b3} != 24, cross-check failed)")
             return
 
+        # k_gimel cross-check: must equal b3/2 + 1/pi (FormulasRegistry derivation)
+        k_gimel_expected = b3 / 2 + 1 / math.pi
+        if abs(k_gimel - k_gimel_expected) > 1e-6:
+            status = "FAILED"
+            self.results['COSMO-014'] = {
+                "status": status,
+                "metric": (f"k_gimel cross-check failed: got {k_gimel}, "
+                           f"expected b3/2+1/pi = {k_gimel_expected}"),
+                "expected": k_gimel_expected,
+                "actual": k_gimel,
+                "sector": "COSMOLOGICAL"
+            }
+            print(f"  COSMO-014: {status} (k_gimel = {k_gimel} != {k_gimel_expected})")
+            return
+
         # Sum(m_nu) = k_gimel / (2*pi*b3): Hopf fibration residue in G2 manifold
         sum_m_nu = k_gimel / (2 * math.pi * b3)
 
         # Bounds from established experimental data
         upper_bound = self._get_param('bounds.sum_m_nu_upper', 0.12)  # Planck+BAO 2018 (eV)
-        osc_lower = 0.058  # eV, oscillation floor for NH (from NuFit 6.0 dm^2 splittings)
+        # Oscillation floor for NH: sqrt(dm2_21) + sqrt(dm2_31) ~ 0.058 eV (NuFit 6.0)
+        # Note: IO floor is ~0.098 eV, which EXCEEDS this prediction (see honesty block)
+        osc_lower_nh = 0.058  # eV, NH oscillation floor (NuFit 6.0 dm^2 splittings)
 
-        # Sigma tension against DESI+CMB+BAO 2024 central value
-        desi_central = 0.072  # eV (DESI+CMB+BAO 2024 95% CL upper bound, used as reference)
-        desi_sigma = 0.02     # eV (approximate 1-sigma from NuFit 6.0)
-        tension = abs(sum_m_nu - desi_central) / desi_sigma
+        # Comparison against DESI+CMB+BAO 2024 bound
+        # NOTE: 0.072 eV is a 95% CL UPPER BOUND, not a Gaussian central value.
+        # The tension metric treats it as a reference point for comparison purposes;
+        # the 0.02 eV denominator is an approximate scale from cosmological analyses.
+        desi_bound = 0.072    # eV (DESI+CMB+BAO 2024, 95% CL upper bound)
+        approx_scale = 0.02   # eV (approximate analysis scale, NOT a 1-sigma measurement)
+        tension = abs(sum_m_nu - desi_bound) / approx_scale
         self.global_tension += tension**2
 
-        # Gate passes if prediction is within the Planck+BAO window AND above oscillation floor
-        in_window = osc_lower < sum_m_nu < upper_bound
+        # Gate passes if prediction is within the Planck+BAO window AND above NH osc floor
+        in_window = osc_lower_nh < sum_m_nu < upper_bound
         status = "LOCKED" if in_window else "FAILED"
 
         self.results['COSMO-014'] = {
             "status": status,
             "metric": f"Sum(m_nu) = {sum_m_nu:.4f} eV, tension = {tension:.2f}sigma",
-            "expected": f"{osc_lower} < Sum(m_nu) < {upper_bound} eV",
+            "expected": f"{osc_lower_nh} < Sum(m_nu) < {upper_bound} eV",
             "actual": sum_m_nu,
             "sector": "COSMOLOGICAL",
             "honesty": {
@@ -607,16 +633,26 @@ class PrincipiaValidator:
                 "k_gimel_source": "Pillar Seed (FormulasRegistry: b3/2 + 1/pi)",
                 "b3_source": "Pillar Seed (FormulasRegistry)",
                 "fitted_params": 0,
+                "ordering_note": (
+                    "The Hopf formula predicts Sum(m_nu) = 0.0817 eV, which is "
+                    "compatible with Normal Hierarchy (NH floor ~0.058 eV) but "
+                    "INCOMPATIBLE with Inverted Ordering (IO floor ~0.098 eV). "
+                    "However, the neutrino_mixing.py simulation predicts IO with "
+                    "Sum(m_nu) ~ 0.10 eV. This internal tension between the Hopf "
+                    "formula and the seesaw mechanism is an unresolved open problem."
+                ),
                 "desi_note": (
                     "Prediction 0.0817 eV exceeds DESI+CMB+BAO 2024 bound "
                     "(< 0.072 eV at 95% CL) but satisfies Planck+BAO 2018 "
-                    "(< 0.12 eV). This is a near-term falsification risk "
-                    "as bounds tighten with CMB-S4 and DESI full survey."
+                    "(< 0.12 eV). The 0.48sigma tension metric uses the DESI "
+                    "bound as a reference point, not as a Gaussian measurement. "
+                    "Near-term falsification risk as bounds tighten with "
+                    "CMB-S4 and DESI full survey."
                 ),
             },
         }
         print(f"  COSMO-014: {status} (Sum(m_nu) = {sum_m_nu:.4f} eV, "
-              f"{osc_lower} < {sum_m_nu:.4f} < {upper_bound}, "
+              f"{osc_lower_nh} < {sum_m_nu:.4f} < {upper_bound}, "
               f"tension = {tension:.2f}sigma)")
 
     def cert_cosmo_015_h0(self):

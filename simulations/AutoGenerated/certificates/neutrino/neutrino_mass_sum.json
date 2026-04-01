@@ -6,11 +6,11 @@
   "version": "23.0",
   "doi": "10.5281/zenodo.18079602",
   "status": "LOCKED",
-  "wolfram_code": "Module[{b3, kGimel, sumMnu, planckBound, oscLower, desiCentral, desiSigma, tension, inWindow, status},\n  (* G2 manifold Pillar Seeds *)\n  b3 = 24;\n  kGimel = b3/2 + 1/Pi; (* = 12.31831... from FormulasRegistry *)\n\n  (* Hopf fibration formula: Sum(m_nu) = k_gimel / (2*Pi*b3) *)\n  sumMnu = kGimel / (2*Pi*b3);\n\n  (* Experimental bounds *)\n  planckBound = 0.12;   (* eV, Planck+BAO 2018, 95% CL *)\n  oscLower = 0.058;      (* eV, oscillation floor NH from NuFit 6.0 *)\n  desiCentral = 0.072;   (* eV, DESI+CMB+BAO 2024 reference *)\n  desiSigma = 0.02;      (* eV, approximate 1-sigma *)\n\n  tension = Abs[sumMnu - desiCentral] / desiSigma;\n  inWindow = (oscLower < sumMnu < planckBound);\n  status = If[inWindow, \"LOCKED\", \"FAILED\"];\n\n  {N[sumMnu, 4], N[tension, 2], status}\n]",
+  "wolfram_code": "Module[{b3, kGimel, kGimelExpected, sumMnu, planckBound, oscLowerNH, oscLowerIO, desiBound, approxScale, tension, inWindow, status},\n  (* G2 manifold Pillar Seeds *)\n  b3 = 24;\n  kGimel = b3/2 + 1/Pi; (* = 12.31831... from FormulasRegistry *)\n\n  (* k_gimel cross-check *)\n  kGimelExpected = 24/2 + 1/Pi;\n  Assert[kGimel == kGimelExpected];\n\n  (* Hopf fibration formula: Sum(m_nu) = k_gimel / (2*Pi*b3) *)\n  sumMnu = kGimel / (2*Pi*b3);\n\n  (* Experimental bounds *)\n  planckBound = 0.12;    (* eV, Planck+BAO 2018, 95% CL *)\n  oscLowerNH = 0.058;    (* eV, oscillation floor NH from NuFit 6.0 *)\n  oscLowerIO = 0.098;    (* eV, oscillation floor IO from NuFit 6.0 *)\n  desiBound = 0.072;     (* eV, DESI+CMB+BAO 2024, 95% CL upper bound *)\n  approxScale = 0.02;    (* eV, approximate analysis scale *)\n\n  tension = Abs[sumMnu - desiBound] / approxScale;\n  inWindow = (oscLowerNH < sumMnu < planckBound);\n  status = If[inWindow, \"LOCKED\", \"FAILED\"];\n\n  (* Note: sumMnu < oscLowerIO means this prediction is incompatible with IO *)\n  {N[sumMnu, 4], N[tension, 2], status}\n]",
   "expected_result": "{0.0817, 0.48, \"LOCKED\"}",
   "verification_status": "LOCKED",
   "mathematical_goal": "Derive the neutrino mass sum from Hopf Fibration geometry embedded in the G2 manifold",
-  "theoretical_significance": "The Hopf Fibration S3 -> S2 with S1 fiber is the simplest non-trivial fiber bundle. In v16.2, neutrino masses emerge from this structure: Sum(m_nu) = k_gimel/(2*pi*b3) = 0.0817 eV. This value lies within the Planck+BAO cosmological window (0.058-0.12 eV). Tension with DESI+CMB+BAO 2024 (< 0.072 eV) is 0.48 sigma — a documented near-term falsification risk as bounds tighten.",
+  "theoretical_significance": "The Hopf Fibration S3 -> S2 with S1 fiber is the simplest non-trivial fiber bundle. In v16.2, neutrino masses emerge from this structure: Sum(m_nu) = k_gimel/(2*pi*b3) = 0.0817 eV. This value lies within the Planck+BAO cosmological window (0.058-0.12 eV). Tension with DESI+CMB+BAO 2024 (< 0.072 eV) is 0.48 sigma. ORDERING NOTE: This value is compatible only with Normal Hierarchy (NH floor ~0.058 eV), NOT Inverted Ordering (IO floor ~0.098 eV). The neutrino_mixing.py simulation separately predicts IO with Sum(m_nu) ~ 0.10 eV — this internal tension is an unresolved open problem.",
   "geometry": {
     "hopf_fibration": "S3 -> S2 with S1 fiber",
     "winding_number": 1,
@@ -22,6 +22,7 @@
     "lightest_mass_ev": 0.0,
     "hierarchy": "Normal",
     "deviation_sigma": 0.48,
+    "ordering_tension": "Hopf formula implies NH (0.0817 eV < IO floor 0.098 eV) but neutrino_mixing.py predicts IO (Sum ~ 0.10 eV) — unresolved",
     "falsification_risk": "DESI+CMB+BAO 2024 bound (< 0.072 eV) already below prediction; CMB-S4 will be decisive"
   },
   "experimental_data": {
@@ -36,13 +37,20 @@
       "upper_bound": {
         "value": 0.072,
         "cl": "95%",
-        "source": "DESI+CMB+BAO 2024"
+        "source": "DESI+CMB+BAO 2024",
+        "note": "This is a 95% CL upper bound, not a Gaussian central value"
       }
     },
     "oscillation_floor_NH": {
       "lower_bound": {
         "value": 0.058,
         "source": "NuFit 6.0 (dm^2 splittings, normal hierarchy, m1=0)"
+      }
+    },
+    "oscillation_floor_IO": {
+      "lower_bound": {
+        "value": 0.098,
+        "source": "NuFit 6.0 (dm^2 splittings, inverted ordering, m3=0)"
       }
     },
     "NuFit_6_0": {
@@ -62,6 +70,6 @@
     "g2_holonomy_group.json"
   ],
   "validation_code": "sum_mnu = k_gimel / (2 * pi * b3); return 0.058 < sum_mnu < 0.12",
-  "timestamp": "2026-04-01T22:48:01Z",
+  "timestamp": "2026-04-01T22:50:08Z",
   "hash": "v16_2_cosmo_014_locked_sha256_c3d4e5f6a1b2"
 }
