@@ -315,18 +315,81 @@ class PrincipiaValidator:
         print(f"  C003-CHI: {status} (chi_eff = {chi}, 6*b3 = {6 * b3})")
 
     def cert_c004_k_gimel(self):
-        """C004: Holonomy parameter k_gimel ≈ 12.318"""
-        k_gimel = self._get_param('geometry.k_gimel', 12.31831)
-        expected = 12.31831
-        tolerance = 0.001
-        status = "LOCKED" if abs(k_gimel - expected) < tolerance else "DRIFT"
+        """C004: Holonomy parameter k_gimel = b3/2 + 1/pi
+
+        Validates the G2 holonomy warp factor, derived purely from
+        Pillar Seed b3 = 24 and the transcendental constant pi:
+
+            k_gimel = b3/2 + 1/pi = 12 + 0.31831... = 12.31831...
+
+        The discrete part (b3/2 = 12) comes from half the Betti number;
+        the continuous correction (1/pi) arises from the holonomy volume
+        of the associative 3-cycle.
+
+        This parameter appears in:
+        - Fine structure constant: alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi)
+        - Higgs VEV: v_tree = k_gimel * (b3 - 4)
+        - Neutrino mass sum: Sum(m_nu) = k_gimel / (2*pi*b3)
+        - CMB temperature: T_tree = phi * k_gimel / (2*pi + 1)
+
+        Gate explicitly FAILS if the registry lacks the parameter (no default),
+        preventing vacuous pass on empty/missing registry data.
+
+        Cross-check: verifies k_gimel = b3/2 + 1/pi from b3 registry value.
+        """
+        k_gimel = self._get_param('geometry.k_gimel')
+        b3 = self._get_param('geometry.elder_kads')
+
+        # Also try topology.* keys (canonical registration path)
+        if k_gimel is None:
+            k_gimel = self._get_param('topology.k_gimel')
+        if b3 is None:
+            b3 = self._get_param('topology.elder_kads')
+
+        # Fail explicitly if registry data is missing (no vacuous pass)
+        if k_gimel is None or b3 is None:
+            status = "FAILED"
+            missing = []
+            if k_gimel is None:
+                missing.append("k_gimel")
+            if b3 is None:
+                missing.append("b3 (elder_kads)")
+            self.results['C004-KGIM'] = {
+                "status": status,
+                "metric": f"{', '.join(missing)} NOT FOUND in registry",
+                "expected": "b3/2 + 1/pi",
+                "actual": None,
+                "sector": "FOUNDATIONAL"
+            }
+            print(f"  C004-KGIM: {status} ({', '.join(missing)} missing from registry)")
+            return
+
+        # Compute expected value from formula (no magic numbers)
+        expected = b3 / 2 + 1 / math.pi  # = 12.31830988618379...
+
+        # Primary check: k_gimel matches b3/2 + 1/pi
+        # Both sides are computed from the same formula, so agreement should be
+        # exact to floating-point precision (~1e-14). Tolerance 1e-10 allows for
+        # any intermediate rounding while still catching genuine drift.
+        tolerance = 1e-10
+        value_ok = abs(k_gimel - expected) < tolerance
+
+        # Cross-check: transcendental part = 1/pi (not just integer floor)
+        transcendental_part = k_gimel - b3 / 2
+        cross_ok = abs(transcendental_part - 1 / math.pi) < 1e-10
+
+        status = "LOCKED" if (value_ok and cross_ok) else "DRIFT"
         self.results['C004-KGIM'] = {
             "status": status,
-            "metric": f"k_gimel = {k_gimel:.5f}",
+            "metric": (f"k_gimel = {k_gimel:.10f}, "
+                       f"b3/2+1/pi = {expected:.10f}, "
+                       f"delta = {abs(k_gimel - expected):.2e}"),
             "expected": expected,
+            "actual": k_gimel,
             "sector": "FOUNDATIONAL"
         }
-        print(f"  C004-KGIM: {status} (k_gimel = {k_gimel:.5f})")
+        print(f"  C004-KGIM: {status} (k_gimel = {k_gimel:.10f}, "
+              f"b3/2+1/pi = {expected:.10f})")
 
     def cert_stab_005(self):
         """STAB-005: Lambda Stability via Symplectic Screening"""
