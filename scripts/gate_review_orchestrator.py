@@ -499,27 +499,31 @@ def invoke_claude(prompt: str, gate_id: str) -> bool:
     print(f"  [CLAUDE] Prompt saved to: {prompt_file.name}")
 
     # Invoke Claude Code CLI
-    # --print mode: pipe prompt via stdin to avoid shell length limits
+    # Write prompt to temp file, then cat|pipe to claude to avoid Windows encoding issues
     # Use shell=True on Windows because 'claude' is an npm .cmd wrapper
     try:
-        with open(prompt_file, 'r', encoding='utf-8') as pf:
-            prompt_text = pf.read()
-
         import platform
         use_shell = platform.system() == "Windows"
 
+        # Set UTF-8 encoding for subprocess
+        env = os.environ.copy()
+        env["PYTHONIOENCODING"] = "utf-8"
+
+        # Use file-based approach: cat the prompt file into claude via shell pipe
+        if use_shell:
+            cmd = f'type "{prompt_file}" | claude --print --dangerously-skip-permissions --max-turns 50'
+        else:
+            cmd = f'cat "{prompt_file}" | claude --print --dangerously-skip-permissions --max-turns 50'
+
         result = subprocess.run(
-            [
-                "claude",
-                "--print",
-                "--dangerously-skip-permissions",
-                "--max-turns", "50",
-            ],
-            input=prompt_text,
+            cmd,
             capture_output=True, text=True,
             cwd=str(PROJECT_ROOT),
             timeout=1800,  # 30 minute max per gate review
-            shell=use_shell,
+            shell=True,
+            env=env,
+            encoding='utf-8',
+            errors='replace',
         )
 
         # Save response log (always, even on error)
