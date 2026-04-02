@@ -228,7 +228,7 @@ Principia Metaphysica derives predictions from G2 topology that match experiment
 | Evolution w_a | -0.204 (-1/√24) | -0.99 +/- 0.32 | 2.4 sigma |
 
 ### Key Features
-- **72 Gates of Integrity**: Complete sterile certification - all gates LOCKED
+- **72 Gates of Integrity**: Complete sterile certification - all gates LOCKED ([Gate Review Assessment](docs/gemini_sessions/gate_review_assessment_for_gemini.md))
 - **Reduced Parameter Count**: ~5 fitted parameters vs Standard Model's 19+
 - **DESI 2025 Alignment**: w0 = -23/24 = -0.9583 consistent with DESI thawing constraint
 - **Hubble Tension**: H0 prediction bridges CMB and local measurements (exploratory)
