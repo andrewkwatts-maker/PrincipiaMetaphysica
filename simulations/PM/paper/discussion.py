@@ -1188,7 +1188,8 @@ class DiscussionV16(SimulationBase):
                     "<strong>Issue 12 - F(R,T) Origin:</strong> RESOLVED - EXPLAINED: Pneuma VEV couples to T<sub>μν</sub>",
                     "<strong>Issue 13 - Moduli Stability:</strong> RESOLVED - QUANTIFIED: Torsion + fluxes + Casimir energy balance",
                     "<strong>Issue 14 - Mirror Sector:</strong> RESOLVED - CONCRETE: KK parity from G₂ symmetry, m<sub>DM</sub> ~ 5 TeV",
-                    "<strong>Issue 15 - Higgs Mass Formula:</strong> OPEN - Re(T) constrained from m<sub>h</sub> = 125.1 GeV (tension: Higgs inversion gives 9.865, BBN calibration gives 7.086, geometry gives 1.833)"
+                    "<strong>Issue 15 - Higgs Mass Formula:</strong> OPEN - Re(T) constrained from m<sub>h</sub> = 125.1 GeV (tension: Higgs inversion gives 9.865, BBN calibration gives 7.086, geometry gives 1.833)",
+                    "<strong>Issue 16 - Neutrino Mass Ordering:</strong> OPEN - Hopf formula gives Σm<sub>ν</sub> = 0.0817 eV (compatible with NH only, below IO floor ~0.098 eV), but neutrino_mixing.py predicts IO with Σm<sub>ν</sub> ~ 0.10 eV. Internal inconsistency between two geometric derivation chains."
                 ]
             ),
 
