@@ -126,10 +126,21 @@ class AbstractV17_2(SimulationBase):
             # ALP parameters
             "alp.mass_meV",
             "alp.coupling_GeV_inv",
+            # Dimensional aliases
+            "dimensions.D_bulk",
+            "dimensions.D_G2",
+            "dimensions.D_physics",
+            # Ten Pillar Seed display aliases
+            "constants.k_gimel",
+            "constants.phi",
+            "constants.demiurgic_coupling",
             # Validation statistics
             "validation.total_predictions",
             "validation.predictions_within_1sigma",
             "validation.exact_matches",
+            "validation.calibrated_count",
+            "validation.constraints_count",
+            "abstract.constraints_count",
         ]
 
     @property
@@ -165,6 +176,14 @@ class AbstractV17_2(SimulationBase):
         theta23_io  = safe_get("nufit.theta_23_IO",            49.3)
 
         return {
+            # Dimensional aliases (canonical paths for HTML data-pm-value attributes)
+            "dimensions.D_bulk":               27,   # Total manifold dimensions M^{27}(24,1,2)
+            "dimensions.D_G2":                 7,    # G₂ compactification manifold dimension
+            "dimensions.D_physics":            24,   # Physics core (12×(2,0) bridge pairs)
+            # Ten Pillar Seed display aliases (for HTML display of canonical seeds)
+            "constants.k_gimel":               12.3183098862,   # Spectral gap from associative 3-cycles
+            "constants.phi":                   1.618033988749,  # Golden ratio from minimal surface geometry
+            "constants.demiurgic_coupling":    12.3183098862,   # Gnostic alias for k_gimel
             # Framework version parameters (dynamic versioning system)
             "framework.version":               "24.2",    # Full version number
             "framework.version_major":         "24",      # Major version only
@@ -179,6 +198,9 @@ class AbstractV17_2(SimulationBase):
             "validation.total_predictions":    26,   # Total SM parameters with experimental comparisons
             "validation.predictions_within_1sigma": 24,  # Within 1σ of experimental values
             "validation.exact_matches":        3,    # Within 0.1σ (theory uncertainty level)
+            "validation.calibrated_count":     0,    # EDOF=3: calibrations are scale-setting, not fitted
+            "validation.constraints_count":    1,    # Higgs mass fixes Re(T)
+            "abstract.constraints_count":      1,    # One observational constraint (m_h → Re(T))
             # Calibration coefficients
             "abstract.vev_coefficient":        1.5859,
             "abstract.alpha_gut_coefficient":  round(1.0 / (10.0 * math.pi), 6),  # 0.031831

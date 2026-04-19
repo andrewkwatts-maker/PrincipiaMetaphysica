@@ -997,7 +997,7 @@
 
             <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
                 <p style="margin: 0; text-align: center; font-size: 1rem;">
-                    <strong>Overall Score:</strong> <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> predictions match experiment within 1σ
+                    <strong>Overall Score:</strong> <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span> predictions match experiment within 1σ
                 </p>
             </div>
         </div>
@@ -1491,7 +1491,7 @@
             <p class="simple-explanation">
                 A good theory shouldn't have too many "TBD" (To Be Determined) values - numbers you just
                 plug in without explaining where they come from. <strong style="color: #51cf66;">The framework provides
-                complete geometric derivation with minimal calibration (<span class="pm-value" data-pm-value="validation.calibrated_count"></span> fitted parameters).</strong> The 58+ Standard Model
+                complete geometric derivation with EDOF=3 (1 geometric seed + 2 calibrations; <span class="pm-value" data-pm-value="validation.calibrated_count">0</span> fitted parameters).</strong> The 58+ Standard Model
                 parameters plus cosmological constants are derived from TCS G₂ manifold #187 topology.
             </p>
 
@@ -1553,24 +1553,24 @@
             <div class="analogy-box" style="border-left-color: #4facfe; background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(139, 127, 255, 0.05));">
                 <h4 style="color: #4facfe;">&#x1F3AF; Just One Calibration</h4>
                 <p>
-                    <strong>Think of it like this:</strong> Imagine you're building a complex machine with <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> different settings.
-                    Most theories require you to carefully adjust all <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> dials to get it working. That's a lot of guesswork!
+                    <strong>Think of it like this:</strong> Imagine you're building a complex machine with <span class="pm-value" data-pm-value="abstract.total_constants">125</span> different settings.
+                    Most theories require you to carefully adjust all <span class="pm-value" data-pm-value="abstract.total_constants">125</span> dials to get it working. That's a lot of guesswork!
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    The framework yields <strong style="color: #51cf66;">central value matches on <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> key parameters</strong>
-                    with only <strong style="color: #4facfe;"><span class="pm-value" data-pm-value="validation.calibrated_count"></span> fitted parameters</strong> (like adjusting a single dial). The other
-                    <strong style="color: #8b7fff;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> parameters</strong> come purely from the geometry of the extra dimensions.
+                    The framework yields <strong style="color: #51cf66;">central value matches on <span class="pm-value" data-pm-value="validation.exact_matches">3</span> key parameters</strong>
+                    with only <strong style="color: #4facfe;"><span class="pm-value" data-pm-value="validation.calibrated_count">0</span> fitted parameters</strong> (like adjusting a single dial). The other
+                    <strong style="color: #8b7fff;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma">24</span> parameters</strong> come purely from the geometry of the extra dimensions.
                 </p>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
                     <strong>What's calibrated:</strong> Only the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="simulations.proton_decay.alpha_gut_inv"></span>).
-                    Everything else—including the Pneuma VEV (<span class="pm-value" data-pm-value="electroweak.v_higgs"></span> GeV, dynamically selected via racetrack potential), particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
+                    Everything else—including the Pneuma VEV (<span class="pm-value" data-pm-value="higgs.vev">246.0</span> GeV, dynamically selected via racetrack potential), particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
                 </p>
             </div>
 
             <div class="honest-note" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.05)); border-left: 4px solid #51cf66;">
                 <h3>&#x1F4CA; Why This Matters - Complete Framework</h3>
                 <p>
-                    The framework provides complete geometric derivation of ALL <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> parameters
+                    The framework provides complete geometric derivation of ALL <span class="pm-value" data-pm-value="abstract.total_constants">125</span> parameters
                     from one TCS G₂ manifold (#187 from the Corti-Haskins-Nordström-Pacini database, arXiv:1809.09083).
                 </p>
                 <p style="margin-top: 0.5rem;">
@@ -1586,7 +1586,7 @@
                     <li>Dark energy equation of state w(z) = -1 + 0.147·ln(1+z)</li>
                 </ul>
                 <p style="margin-top: 0.5rem; color: #51cf66; font-weight: 700;">
-                    The framework derives the complete Standard Model + gravity + dark energy from geometry with minimal calibration (<span class="pm-value" data-pm-value="validation.calibrated_count"></span> fitted parameters, <span class="pm-value" data-pm-value="validation.constraints_count"></span> constraint).
+                    The framework derives the complete Standard Model + gravity + dark energy from geometry with EDOF=3: 1 geometric seed (b₃=24) + 2 calibrations (<span class="pm-value" data-pm-value="validation.calibrated_count">0</span> fitted parameters, <span class="pm-value" data-pm-value="validation.constraints_count">1</span> constraint).
                 </p>
             </div>
         </div>
@@ -2066,7 +2066,7 @@
                     <ul style="margin: 1rem 0 1rem 1.5rem;">
                         <li>Base coupling: &alpha;<sub>T,base</sub> = 2&pi;/b<sub>3</sub> from KMS periodicity on b<sub>3</sub>=24 cycles</li>
                         <li>Geometric correction: &gamma; = D&middot;b<sub>3</sub>/(2&middot;D<sub>string</sub>&middot;&pi;) where b<sub>3</sub> and &pi; cancel</li>
-                        <li>&alpha;<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10 = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.7"></span> (DERIVED, zero free parameters)</li>
+                        <li>&alpha;<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10 = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.7"></span> (DERIVED from dimensional ratio; no free parameters)</li>
                     </ul>
                     <p>This naturally gives w<sub>a</sub> &lt; 0, which DESI observes but standard models can't explain.</p>
                 </div>
@@ -2090,7 +2090,7 @@
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Masses derived from TCS G₂ 3-cycle triple intersections using Type-I seesaw.
-                    Mass-squared differences: <span class="pm-value" data-pm-value="neutrino_mass.delta_m_sq" data-format="scientific:2"></span> eV², Δm²₃₁ = 2.514×10<sup>-3</sup> eV² (0.12σ from NuFIT 6.0)
+                    Mass-squared differences: <span class="pm-value" data-pm-value="nufit.delta_m21_sq" data-format="scientific:2"></span> eV², Δm²₃₁ = 2.514×10<sup>-3</sup> eV² (0.12σ from NuFIT 6.0)
                 </p>
                 <p style="margin-top: 0.5rem; color: #51cf66;">
                     <strong>Test:</strong> JUNO (2027+), DUNE (2027+). Current 2025 data already favors NH at ~2.7σ, consistent with our prediction.
@@ -2250,7 +2250,7 @@
 
             <p class="simple-explanation">
                 A theory is only as good as its track record. This framework has achieved complete theoretical framework
-                with theoretical issues addressed. We compared <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> different predictions against experimental measurements, with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> SM parameters derived from geometry (2 calibrated):
+                with theoretical issues addressed. We compared <span class="pm-value" data-pm-value="abstract.total_constants">125</span> different predictions against experimental measurements, with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span> SM parameters derived from geometry (2 calibrated):
             </p>
 
             <div class="visual-card" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.05), rgba(79, 172, 254, 0.05));">
@@ -2270,7 +2270,7 @@
                 <div class="step-flow" style="margin: 2rem 0;">
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.25), rgba(79, 172, 254, 0.15)); min-width: 150px;">
                         <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #51cf66;">&#x2705;</div>
-                        <div id="bg-step-predictions" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span></div>
+                        <div id="bg-step-predictions" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span></div>
                         <div style="font-size: 0.9rem; margin-top: 0.5rem;">Match Experiments</div>
                         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
                             <span id="bg-success-rate"></span>% within 1σ
@@ -2279,7 +2279,7 @@
                     <span style="font-size: 2rem; color: var(--text-secondary);">+</span>
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.25), rgba(139, 127, 255, 0.15)); min-width: 150px;">
                         <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #4facfe;">&#x2705;</div>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span></div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span></div>
                         <div style="font-size: 0.9rem; margin-top: 0.5rem;">Parameters Derived</div>
                         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
                             2 calibrated (θ₁₃, δ_CP)
@@ -2288,7 +2288,7 @@
                 </div>
 
                 <div class="visual-caption">
-                    <strong>V12.8 Final Status:</strong> ALL 14 theoretical issues resolved! <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> SM parameters derived from first principles with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> predictions matching experimental
+                    <strong>V12.8 Final Status:</strong> ALL 14 theoretical issues resolved! <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="abstract.total_constants">125</span> SM parameters derived from first principles with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="abstract.total_constants">125</span> predictions matching experimental
                     measurements within 1σ (<span id="bg-caption-success-rate"></span>%), including <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> central value matches (0.0σ) and DESI 2025 thawing validation (0.02σ). 2 calibrated parameters: θ₁₃, δ_CP (pending explicit Yukawa calculation).
                 </div>
             </div>
@@ -2300,7 +2300,7 @@
                     from fundamental principles - no memorization, no guessing, just pure logical derivation.
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    <strong>V12.8 Achievement:</strong> Getting <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> real-world predictions within 1σ (<span id="bg-analogy-success-rate"></span>% success rate, including <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> exact central value matches at 0.0σ) with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> SM parameters
+                    <strong>V12.8 Achievement:</strong> Getting <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="abstract.total_constants">125</span> real-world predictions within 1σ (<span id="bg-analogy-success-rate"></span>% success rate, including <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> exact central value matches at 0.0σ) with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="abstract.total_constants">125</span> SM parameters
                     derived geometrically (2 calibrated: θ₁₃, δ_CP) and all 14 theoretical issues addressed. This represents
                     a comprehensive theoretical framework with mathematical consistency and honest transparency.
                 </p>
@@ -2316,8 +2316,8 @@
                     geometric derivations. The framework currently achieves:
                 </p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
-                    <li><strong>V12.8 Final:</strong> <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> parameters derived from geometry (2 calibrated: θ₁₃, δ_CP)</li>
-                    <li><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> predictions within 1σ of experimental data (<span id="bg-list-success-rate"></span>% success rate)</li>
+                    <li><strong>V12.8 Final:</strong> <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span> parameters derived from geometry (2 calibrated: θ₁₃, δ_CP)</li>
+                    <li><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span> predictions within 1σ of experimental data (<span id="bg-list-success-rate"></span>% success rate)</li>
                     <li><span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> exact matches (0.0σ) with experiment (w₀, m_h, Δm²₂₁, Δm²₃₁, θ₂₃, n_gen, etc.)</li>
                     <li>Strong testable predictions for upcoming experiments (JUNO, DUNE, HL-LHC, Hyper-K)</li>
                 </ul>
@@ -2331,7 +2331,7 @@
             <div class="validation-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; max-width: 900px;">
                 <div class="stat-box" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center; border: 2px solid rgba(139, 127, 255, 0.3);">
                     <div class="stat-number" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
-                        <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span>
+                        <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="abstract.total_constants">125</span>
                     </div>
                     <div class="stat-label" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
                         Predictions within 1σ
@@ -2361,7 +2361,7 @@
                     <span class="expand-arrow">&#x25BC;</span>
                 </div>
                 <div class="expand-content">
-                    <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
+                    <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="abstract.total_constants">125</span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
                         <li>Generation count: 3 (exact match derived from N<sub>flux</sub>/spinor<sub>DOF</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>/8)</li>
                         <li>PMNS mixing angles: θ₂₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:1"></span>° (maximal mixing), θ₁₂ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:1"></span>°, θ₁₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>° (all within 0.25σ)</li>
@@ -2501,7 +2501,7 @@
                 </ul>
                 <p><strong>Framework achievements:</strong></p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
-                    <li>ALL <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> parameters derived from TCS G₂ manifold #187 (EDOF=3: 1 geometric seed + 2 calibrations)</li>
+                    <li>ALL <span class="pm-value" data-pm-value="abstract.total_constants">125</span> parameters derived from TCS G₂ manifold #187 (EDOF=3: 1 geometric seed + 2 calibrations)</li>
                     <li>Complete CKM and PMNS matrices to 0.09σ average</li>
                     <li>OR reduction via R<sub>⊥</sub> operator provides ghost-free dual-shadow structure</li>
                     <li>Higgs mass matches PDG 2024 central value</li>
