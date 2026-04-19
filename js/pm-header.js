@@ -125,16 +125,21 @@ function createHeaderHTML(activePageId = '') {
   // Site title always links to root
   const homeHref = isInPages ? '../index.html' : 'index.html';
 
+  // Only render user controls when auth is required
+  const authRequired = window.PM_CONFIG?.AUTH_REQUIRED ?? true;
+  const userControlsHTML = authRequired ? `
+        <div class="user-info-controls">
+          <span class="user-name">Andrew Watts</span>
+          <span class="user-email-static">andrewkwatts@gmail.com</span>
+          <button id="logout-btn" class="logout-btn-inline">Logout</button>
+        </div>` : '';
+
   return `
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <header class="pm-header">
       <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
-        <div class="user-info-controls">
-          <span class="user-name">Andrew Watts</span>
-          <span class="user-email-static">andrewkwatts@gmail.com</span>
-          <button id="logout-btn" class="logout-btn-inline">Logout</button>
-        </div>
+        ${userControlsHTML}
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
           <span></span>
