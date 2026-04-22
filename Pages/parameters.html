@@ -16,7 +16,6 @@
     <title>Theory Parameters - Principia Metaphysica v24.2</title>
     <link href="../css/styles.css" rel="stylesheet"/>
     <link href="../css/pm-common.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
@@ -840,7 +839,7 @@
     </style>
     <script src="../js/pm-constants-loader.js"></script>
 </head>
-<body class="auth-loading">
+<body>
     <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
@@ -1108,13 +1107,10 @@
         </p>
     </footer>
     </div>
-
-    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
     <script src="../js/site-config.js"></script>
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
-        import { setupAuthGuard } from '../js/auth-guard.js';
 
         // Inject header first
         document.addEventListener('DOMContentLoaded', () => {
@@ -1122,14 +1118,12 @@
         });
 
         // Setup auth after header
-        setupAuthGuard('parameters');
     </script>
 
     <script>
         // ====================================================================
         // PARAMETERS PAGE - Dynamic Loading from parameters.json
         // ====================================================================
-
 
         let allParameters = [];
         let parametersByCategory = {};
@@ -1429,7 +1423,6 @@
                 'theory_output.json',
                 '../theory_output.json'
             ];
-
 
             for (const path of paths) {
                 try {
@@ -2079,7 +2072,6 @@
                 totalRendered += params.length;
             }
 
-
             // Trigger MathJax rendering (with proper check for async loading)
             if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
                 MathJax.typesetPromise().then(() => {
@@ -2723,7 +2715,6 @@
             ).length;
             const within1sigma = allParameters.filter(p => p.sigma !== null && p.sigma < 1).length;
 
-
             document.getElementById('stat-total').textContent = total;
             document.getElementById('stat-visible').textContent = total;
             document.getElementById('stat-categories').textContent = categories;
@@ -2769,7 +2760,6 @@
             if (mainContent && mainContent.style.display === 'none') {
                 console.warn('[PARAMETERS] Auth guard timeout - forcing content visible');
                 mainContent.style.display = 'block';
-                document.body.classList.remove('auth-loading');
             }
         }, 2000);
     </script>

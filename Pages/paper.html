@@ -1166,43 +1166,19 @@
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
-        import { auth } from '../js/firebase-config.js';
-        import { onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/12.6.0/firebase-auth.js';
 
-        // Inject header
         document.addEventListener('DOMContentLoaded', () => {
             injectHeader('paper');
-        });
 
-        // Function to update download metadata
-        function updateDownloadMetadata(user) {
             const userEl = document.getElementById('download-user');
             const dateEl = document.getElementById('download-date');
-
-            if (userEl && dateEl) {
-                // Get user display name from authenticated user or default to Guest Reader
-                let displayName = 'Guest Reader';
-                if (user) {
-                    displayName = user.displayName ||
-                                  (user.email ? user.email.split('@')[0] : 'Authenticated User');
-                }
-                userEl.textContent = `Downloaded by: ${displayName}`;
-
-                const now = new Date();
-                const dateStr = now.toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric',
-                    hour: '2-digit',
-                    minute: '2-digit'
+            if (userEl) userEl.textContent = 'Downloaded by: Guest Reader';
+            if (dateEl) {
+                dateEl.textContent = new Date().toLocaleDateString('en-US', {
+                    year: 'numeric', month: 'long', day: 'numeric',
+                    hour: '2-digit', minute: '2-digit'
                 });
-                dateEl.textContent = dateStr;
             }
-        }
-
-        // Listen for authentication state changes
-        onAuthStateChanged(auth, (user) => {
-            updateDownloadMetadata(user);
         });
     </script>
 

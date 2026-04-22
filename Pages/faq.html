@@ -16,7 +16,6 @@
     <title>FAQ - Principia Metaphysica v24.2</title>
     <meta name="description" content="Frequently Asked Questions about Principia Metaphysica - a unified geometric theory deriving fundamental constants from G2 topology.">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
@@ -255,7 +254,7 @@
         }
     </style>
 </head>
-<body class="auth-loading">
+<body>
   <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
@@ -1149,13 +1148,10 @@
 
   <script src="../js/pm-tooltip-system.js"></script>
   <script src="../js/pm-constants-loader.js"></script>
-
-  <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
   <script src="../js/site-config.js"></script>
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
-    import { setupAuthGuard } from '../js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
@@ -1163,7 +1159,6 @@
     });
 
     // Setup auth guard
-    setupAuthGuard('faq');
   </script>
 </body>
 </html>

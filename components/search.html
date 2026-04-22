@@ -21,10 +21,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Components</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/auth.css">
 
 </head>
-<body class="auth-loading" style="padding: var(--space-8); background: var(--color-background);">
+<body style="padding: var(--space-8); background: var(--color-background);">
     <div id="main-content" style="display: none;">
     <div id="theme-picker-container"></div>
 
@@ -520,13 +519,9 @@
         }
     </style>
     </div>
-
-    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
     <script src="../js/site-config.js"></script>
 
     <script type="module">
-      import { setupAuthGuard } from '../js/auth-guard.js';
-      setupAuthGuard('components-search');
     </script>
 </body>
 </html>

@@ -50,7 +50,6 @@
     <script src="../js/pm-tooltip-system.js"></script>
 
     <!-- Common Shared Styles -->
-    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-common.css">
     <link rel="stylesheet" href="../css/pm-scientific-typography.css">
     <link rel="stylesheet" href="../css/pm-header.css">
@@ -1347,7 +1346,6 @@
             color: #fff;
         }
 
-
         /* Responsive Design */
         @media (max-width: 768px) {
             /* Section cards on mobile */
@@ -1410,7 +1408,7 @@
         }
     </style>
 </head>
-<body class="auth-loading">
+<body>
     <div class="app-container">
         <!-- Header injected by pm-header.js -->
 
@@ -2086,7 +2084,6 @@
                 `;
             }
 
-
             /**
              * Setup breadcrumb dropdown toggle
              */
@@ -2400,7 +2397,6 @@
                     return;
                 }
 
-
                 // Log section breakdown
                 const numbered = allSections.filter(s => /^\d+$/.test(s.id)).length;
                 const appendices = allSections.filter(s => /^[A-Z]$/.test(s.id)).length;
@@ -2428,13 +2424,10 @@
             }
         })();
     </script>
-
-    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
     <script src="../js/site-config.js"></script>
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
-        import { setupAuthGuard } from '../js/auth-guard.js';
 
         // Inject header first (no breadcrumbs - we have custom dynamic ones)
         document.addEventListener('DOMContentLoaded', () => {
@@ -2445,7 +2438,6 @@
         });
 
         // Setup auth after header
-        setupAuthGuard('sections');
 
         /**
          * Setup expandable sections for formulas and other content
