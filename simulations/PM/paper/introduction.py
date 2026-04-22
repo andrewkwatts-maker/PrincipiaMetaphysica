@@ -743,10 +743,10 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The proof is immediate: given the constraints, the only possible sum is "
+                    "This follows from the Hurwitz theorem: given the normed division algebra constraint, the only possible sum is "
                     "D = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>) = "
-                    "1 + 4 + 8 = 13. This is a theorem, not a choice. The Hurwitz theorem constrains the "
-                    "building blocks, and the physical requirements select exactly D = 13."
+                    "1 + 4 + 8 = 13. The Hurwitz theorem limits the available normed division algebras, "
+                    "and the physical requirements of this construction favour D = 13."
                 )
             ),
             ContentBlock(

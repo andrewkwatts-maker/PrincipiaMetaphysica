@@ -341,9 +341,9 @@ class AbstractV17_2(SimulationBase):
                 type="paragraph",
                 content=(
                     '<strong>The Principia Metric</strong>: '
-                    'Finally, we present a definitive, falsifiable prediction: the existence of a '
+                    'Finally, we present a testable prediction: the existence of a '
                     'topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = <span class="pm-value" data-pm-value="alp.mass_meV">3.51</span> meV. '
-                    'This "Principia Metric" emerges as an unavoidable consequence of the vacuum residue of the M<sup>27</sup> \u2192 M<sup>4</sup> projection '
+                    'This "Principia Metric" is predicted to arise from the vacuum residue of the M<sup>27</sup> \u2192 M<sup>4</sup> projection '
                     'and the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, with '
                     'g<sub>a\u03b3\u03b3</sub> ~ <span class="pm-value" data-pm-value="alp.coupling_GeV_inv">10\u207b\u00b9\u00b9</span> GeV\u207b\u00b9. '
                     'This prediction is currently within the detection window of the upcoming IAXO and BabyIAXO experiments (2025-2028), '
@@ -738,14 +738,14 @@ class AbstractV17_2(SimulationBase):
                         "3 families (electron/muon/tau and their associated particles). "
                         "This theory derives n_gen = 3 from the topology of the internal "
                         "manifold: chi_eff/(4*b3) = 144/48 = 3. The number 3 is not "
-                        "put in by hand -- it is forced by the geometry."
+                        "put in by hand -- it is derived from the geometry."
                     )
                 },
             ],
             "why_it_matters": (
                 "If correct, this framework would represent a fundamental advance in "
                 "theoretical physics: it would mean that the constants of nature are not "
-                "arbitrary but are as mathematically inevitable as the digits of pi. The "
+                "arbitrary but are fixed by topological and geometric constraints within this framework. The "
                 "theory makes specific, falsifiable predictions that upcoming experiments "
                 "can test."
             )

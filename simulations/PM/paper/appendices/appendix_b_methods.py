@@ -298,7 +298,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     content=(
                         "**Step 5: Compute generation number**\n"
                         "n<sub>gen</sub> = |&#967;<sub>eff</sub>| / PM<sub>divisor</sub> = 144 / 48 = 3\n\n"
-                        "Result: Exactly 3 generations (perfect agreement with Standard Model)."
+                        "Result: n<sub>gen</sub> = 3, consistent with the Standard Model observation of three fermion generations."
                     )
                 ),
                 ContentBlock(

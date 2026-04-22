@@ -1049,7 +1049,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="table",
                 headers=["Observable", "Current Status", "Future Sensitivity"],
                 rows=[
-                    ["CMB cold spot", "~3σ anomaly (debated)", "CMB-S4: definitive test (2027+)"],
+                    ["CMB cold spot", "~3σ anomaly (debated)", "CMB-S4: critical test (2027+)"],
                     ["Non-Gaussianity (f<sub>NL</sub>)", "f<sub>NL</sub> = 0.8 ± 5.0 (Planck 2018)", "CMB-S4: σ(f<sub>NL</sub>) < 1"],
                     ["Hemispherical asymmetry", "~2σ detection (Planck)", "LiteBIRD polarization analysis"],
                     ["Bubble collision disk", "Not detected", "Higher resolution searches with CMB-S4"],
@@ -1162,7 +1162,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     ["Neutrino mixing", "✓ CONFIRMED", "NuFIT 6.0: all angles 0.00–0.24σ"],
                     ["Fermion generations", "✓ CONFIRMED", "n<sub>gen</sub> = 3 (exact from χ<sub>eff</sub>/48)"],
                     ["Dark matter ratio", "✓ CONFIRMED", "Planck 2018: Ω<sub>DM</sub>/Ω<sub>b</sub> = 5.38 ± 0.15 vs 5.4"],
-                    ["CKM parameters", "✓ CONFIRMED", "ε = 0.2257 exact match (v24.2 derived)"],
+                    ["CKM parameters", "✓ CONFIRMED", "ε = 0.2257, within 0.1σ (v24.2 derived)"],
                     ["Proton decay", "⊙ CONSISTENT", "τ<sub>p</sub> = 8.15 × 10³⁴ yr (4.9× Super-K bound)"],
                     ["Neutrino hierarchy", "⊙ PREDICTED", "Normal hierarchy (76% confidence) — JUNO/DUNE 2027–2030"],
                     ["KK gravitons", "○ UNTESTED", "m<sub>KK</sub> = 5.0 TeV — HL-LHC searches 2029–2030"],
@@ -1212,7 +1212,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "quantitative observable, a detection experiment, a timeline, and an explicit "
                     "falsification criterion. This section consolidates all falsification windows "
                     "into a single reference table and identifies the critical tests that will "
-                    "definitively confirm or rule out the framework by 2035."
+                    "confirm or rule out the framework by 2035."
                 )
             ),
             # ── Comprehensive Falsifiability Table ────────────────────────
@@ -1346,7 +1346,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number "
-                    "of neutrino species N<sub>eff</sub> to unprecedented precision (σ ~ 0.03). The PM "
+                    "of neutrino species N<sub>eff</sub> to high precision (σ ~ 0.03). The PM "
                     "mirror sector predicts ΔN<sub>eff</sub> ~ 0.08–0.16 from thermalized mirror "
                     "neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes "
                     "ΔN<sub>eff</sub> < 0.06 at >2σ confidence, the mirror neutrino contribution "
@@ -1367,7 +1367,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports "
                     "w₀ = −0.957 ± 0.067, within which the PM prediction "
                     "w₀ = −23/24 ≈ −0.9583 falls. DESI DR3 (expected 2027–2028) will tighten "
-                    "the constraint to σ(w₀) ~ 0.02, providing a definitive test of "
+                    "the constraint to σ(w₀) ~ 0.02, providing a critical test of "
                     "the breathing dark energy mechanism derived from the Maximum Entropy "
                     "Principle with b₃ = 24. The logarithmic evolution "
                     "w(z) = w₀[1 + (α<sub>T</sub>/3) ln(1+z)] further distinguishes PM from "
@@ -1414,7 +1414,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "fractional effect compared to GR expectations (η = 0), making it "
                     "a high-priority target for O5 runs beginning 2027. The Einstein Telescope "
                     "and LISA will extend sensitivity to the 10⁻³ level, providing "
-                    "definitive confirmation or exclusion by 2037."
+                    "confirmation or exclusion by 2037."
                 )
             ),
 
@@ -1812,7 +1812,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "CMB-S4 sensitivity to sterile neutrino sector. The PM mirror "
                     "sector predicts Delta N_eff ~ 0.08-0.16 from mirror neutrinos "
                     "contributing as dark radiation. CMB-S4 will measure N_eff to "
-                    "sigma(N_eff) ~ 0.03, providing a definitive test. If "
+                    "sigma(N_eff) ~ 0.03, providing a critical test. If "
                     "Delta N_eff < 0.06 is confirmed at >2 sigma, the mirror neutrino "
                     "contribution is constrained, requiring either suppressed Z2 coupling "
                     "or revised mirror sector temperature."

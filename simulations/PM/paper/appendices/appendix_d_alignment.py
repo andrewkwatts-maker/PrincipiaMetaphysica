@@ -116,7 +116,7 @@ class AppendixDAlignment(SimulationBase):
                 content=(
                     "Appendix D presents the final empirical verification of the v24.2 Sterile Model. "
                     "While Appendices A, B, and C establish the internal mathematical consistency, "
-                    "Appendix D proves that the locked residues accurately describe the observable universe."
+                    "Appendix D demonstrates that the locked residues are consistent with observable universe parameters to within stated uncertainties."
                 )
             ),
 
