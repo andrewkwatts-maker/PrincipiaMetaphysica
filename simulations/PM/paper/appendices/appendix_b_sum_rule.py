@@ -216,8 +216,8 @@ class AppendixBSumRule(SimulationBase):
                     "<li>The large residues (Bank IV) represent the high-frequency 'Ultraviolet' modes</li>"
                     "<li>The small residues (Bank I) represent the low-frequency 'Infrared' modes</li>"
                     "</ul>"
-                    "<p>The Trace Formula proves that you cannot have the high-energy particles "
-                    "without the low-energy vacuum floor; they are two ends of the same geometric string.</p>"
+                    "<p>The Trace Formula implies that the high-energy (UV) modes and the low-energy vacuum floor "
+                    "are coupled within the same geometric spectrum; suppressing one necessarily affects the other.</p>"
                 ),
                 label="hierarchy-resolution"
             ),

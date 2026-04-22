@@ -3,8 +3,8 @@
 PRINCIPIA METAPHYSICA v19.0 - Appendix R: Vacuum Stability Analysis
 ====================================================================
 
-This appendix proves vacuum stability of the Principia Metaphysica framework,
-demonstrating that the PM electroweak vacuum is absolutely stable - in contrast
+This appendix analyses vacuum stability within the Principia Metaphysica framework,
+arguing that the PM electroweak vacuum is absolutely stable — in contrast
 to the Standard Model's metastability problem.
 
 The Standard Model predicts that the Higgs potential becomes unstable at high
@@ -381,10 +381,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
             appendix=True,
             title="Appendix R: Vacuum Stability Analysis",
             abstract=(
-                "This appendix proves that the Principia Metaphysica framework provides "
-                "an absolutely stable electroweak vacuum. We show that G2 portal coupling "
-                "at the GUT scale resolves the Standard Model metastability problem, "
-                "yielding a vacuum lifetime far exceeding 10^100 years."
+                "This appendix analyses vacuum stability within the Principia Metaphysica framework. "
+                "We argue that G2 portal coupling at the GUT scale resolves the Standard Model "
+                "metastability problem within this construction, yielding a predicted vacuum "
+                "lifetime far exceeding 10^100 years."
             ),
             content_blocks=[
                 # =========================================================

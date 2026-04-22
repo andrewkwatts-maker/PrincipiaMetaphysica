@@ -6,8 +6,8 @@ PRINCIPIA METAPHYSICA v24.2 - Appendix Z: Terminal Constant Ledger
 DOI: 10.5281/zenodo.18079602
 
 This appendix registers the Terminal Constant Ledger formulas.
-These are the foundational derivations that prove the sterile model
-has ZERO free parameters.
+These are the foundational derivations establishing that the sterile model
+has no free parameters within its defined construction.
 
 HEBREW LETTER NAMING CONVENTIONS:
     י (Yod)      - The 288 Ancestral Roots (Yod₁ - Yod₂₈₈)
@@ -80,7 +80,7 @@ class AppendixZTerminalLedger(SimulationBase):
     Appendix Z: Terminal Constant Ledger
 
     Registers all terminal constant formulas with complete geometric derivations.
-    This appendix proves the model has ZERO free parameters.
+    This appendix establishes that the model has no free parameters within its defined construction.
 
     Hebrew Letter Naming:
         Yod (י) = 288 ancestral roots
@@ -111,7 +111,7 @@ class AppendixZTerminalLedger(SimulationBase):
             title="Appendix Z: Terminal Constant Ledger",
             description=(
                 "The Terminal Constant Ledger containing all derived constants "
-                "with complete geometric derivations. Proves ZERO free parameters. "
+                "with complete geometric derivations. Establishes zero free parameters within the framework. "
                 "DOI: 10.5281/zenodo.18079602"
             ),
             section_id="Z",
@@ -314,7 +314,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 latex=r"\text{C30-S}: 1 + 12 + 112 = 125",
                 plain_text="C30-S: Shell 1 (1) + Shell 2 (12) + Shell 3 (112) = 125",
                 category="DERIVED",
-                description="Shell Saturation proves 3 generations from geometric packing.",
+                description="Shell Saturation predicts 3 generations from geometric packing.",
                 input_params=["registry.node_count"],
                 output_params=["terminal.generation_count"],
                 derivation={

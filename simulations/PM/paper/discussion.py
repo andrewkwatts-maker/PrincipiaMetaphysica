@@ -404,7 +404,7 @@ class DiscussionV16(SimulationBase):
                     "<strong>The Principia Metric - Primary Kill-Switch:</strong> "
                     "The structural integrity of the M²⁷ framework rests on the detection of a "
                     "topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = 3.51 ± 0.02 meV. "
-                    "This particle is the unavoidable consequence of the Euclidean Information Sector (S<sub>EIS</sub>) "
+                    "This particle is a predicted consequence of the Euclidean Information Sector (S<sub>EIS</sub>) "
                     "coupling to the photon field, yielding g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹. We define the following "
                     "experimental constraints:"
                 )
@@ -422,10 +422,10 @@ class DiscussionV16(SimulationBase):
                 type="paragraph",
                 content=(
                     "This 'Principia Metric' (analogous to the Eddington Eclipse observation for General Relativity) "
-                    "provides a definitive, time-bound test: if IAXO reaches its projected sensitivity of "
+                    "provides a falsifiable, time-bound test: if IAXO reaches its projected sensitivity of "
                     "g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹ by 2028 and finds no signal in the predicted mass range, "
-                    "the theory is falsified. This is not a parameter to be adjusted—it is the direct, unavoidable "
-                    "output of the 27D → 4D dimensional projection."
+                    "the theory is falsified. This is not a free parameter—it is the direct "
+                    "output of the 27D → 4D dimensional projection within this framework."
                 )
             ),
             ContentBlock(

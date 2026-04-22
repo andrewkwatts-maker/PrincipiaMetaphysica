@@ -17,8 +17,8 @@ THE THREE TERMINAL BASINS:
 - Basin 3 (Restoration): The final singularity where 125 residues merge
                           with the 163 hidden supports
 
-The Omega Unwinding Map proves that the "End" is as predictable as the
-"Beginning" - both are geometric necessities of the V₇ manifold structure.
+The Omega Unwinding Map suggests that the "End" is as constrained as the
+"Beginning" - both follow from the V₇ manifold structure within this framework.
 
 APPENDIX: L (The Omega Unwinding Map - Terminal State Phase Diagram)
 
@@ -274,8 +274,8 @@ class AppendixLOmegaUnwinding(SimulationBase):
     - Gauge Ghost: 24 pins lock permanently (8.33% potential)
     - Ancestral Restoration: Full 288-root unification (100% potential)
 
-    The map proves that the "End" is as predictable as the "Beginning"—
-    both are geometric necessities of the V₇ manifold structure.
+    The map suggests the terminal state is as constrained as the initial state—
+    both follow from the V₇ manifold structure within this framework.
 
     SOLID Principles:
     - Single Responsibility: Handles terminal state visualization
@@ -388,8 +388,8 @@ class AppendixLOmegaUnwinding(SimulationBase):
                     "Appendix L provides the final visualization of the v24.2 Sterile Model: "
                     "the <strong>Omega Unwinding Map</strong>. This is a phase-space diagram "
                     "showing the three 'Basins of Attraction' that determine how the universe "
-                    "terminates. The map proves that the 'End' is as predictable as the "
-                    "'Beginning'—both are geometric necessities."
+                    "terminates. The map suggests the terminal state is as constrained as the "
+                    "initial state—both follow from the manifold geometry."
                 )
             ),
 

@@ -203,8 +203,8 @@ class MethodologyV16_2(SimulationBase):
                 content=(
                     "If the sum of the residues deviates from the manifold's volume, the system "
                     "is flagged as 'Non-Sterile.' This mathematical closure provides the ultimate "
-                    "proof that the 125 observed parameters are the only consistent artifacts of "
-                    "the universe's geometric identity."
+                    "internal consistency check: the 125 residues are the only parameters consistent "
+                    "with the manifold's geometric constraints within this construction."
                 )
             ),
 
@@ -635,9 +635,9 @@ class MethodologyV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This massive compression proves PM is <em>not</em> overfitting. Overfitting would "
-                    "require L(Theory) > L(Data), but we achieve L(Theory) << L(Data). The framework "
-                    "satisfies the MDL criterion with high confidence."
+                    "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would "
+                    "require L(Theory) > L(Data), whereas the framework achieves L(Theory) &lt;&lt; L(Data). The result "
+                    "satisfies the MDL bound, providing evidence against parameter overfitting."
                 )
             ),
 
@@ -768,7 +768,7 @@ class MethodologyV16_2(SimulationBase):
                     "steps": [
                         "Apply Selberg trace formula to G2 manifold: spectral side = geometric side",
                         "Sum over all 125 eigenvalues with test function f converges to Vol(V7)",
-                        "Convergence proves closure: no additional spectral residues are needed"
+                        "Convergence is consistent with closure: no additional spectral residues are required within this construction"
                     ],
                     "parentFormulas": ["laplacian-eigenvalue"]
                 },

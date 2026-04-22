@@ -502,7 +502,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 content=(
                     "The Omega Seal is not merely a cryptographic hash—it is anchored to the "
                     "288-Root Checksum derived from the SO(24) transverse symmetry. This value "
-                    "proves that the 125 residues are mathematically derived from the ancestral geometry."
+                    "provides a checksum confirming that the 125 residues are derived from the ancestral geometry within this construction."
                 )
             ),
             ContentBlock(
