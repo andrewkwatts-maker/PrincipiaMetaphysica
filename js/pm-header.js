@@ -125,21 +125,11 @@ function createHeaderHTML(activePageId = '') {
   // Site title always links to root
   const homeHref = isInPages ? '../index.html' : 'index.html';
 
-  // Only render user controls when auth is required
-  const authRequired = window.PM_CONFIG?.AUTH_REQUIRED ?? true;
-  const userControlsHTML = authRequired ? `
-        <div class="user-info-controls">
-          <span class="user-name">Andrew Watts</span>
-          <span class="user-email-static">andrewkwatts@gmail.com</span>
-          <button id="logout-btn" class="logout-btn-inline">Logout</button>
-        </div>` : '';
-
   return `
     <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <header class="pm-header">
       <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
-        ${userControlsHTML}
         <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
           <span></span>
@@ -292,41 +282,6 @@ function setupMobileMenu() {
     // Check if we're on mobile before setting aria-hidden
     if (window.matchMedia('(max-width: 768px)').matches) {
       nav.setAttribute('aria-hidden', 'true');
-    }
-  }
-}
-
-/**
- * Update user display in header (called by auth-guard)
- * @param {Object|null} user - Firebase user object or null
- */
-export function updateHeaderUserDisplay(user) {
-  const userAvatar = document.getElementById('user-avatar');
-  const userEmail = document.getElementById('user-email');
-  const userControls = document.querySelector('.pm-header .user-controls');
-  const loginBtn = document.getElementById('header-login-btn');
-
-  const basePath = getBasePath();
-  if (user) {
-    if (userAvatar) {
-      userAvatar.src = user.photoURL || `${basePath}images/default-avatar.svg`;
-      userAvatar.alt = user.displayName || 'User';
-    }
-    if (userEmail) {
-      userEmail.textContent = user.email;
-    }
-    if (userControls) {
-      userControls.style.display = 'flex';
-    }
-    if (loginBtn) {
-      loginBtn.style.display = 'none';
-    }
-  } else {
-    if (userControls) {
-      userControls.style.display = 'none';
-    }
-    if (loginBtn) {
-      loginBtn.style.display = 'flex';
     }
   }
 }

@@ -432,9 +432,8 @@
         });
         // Expandable formula handling is now in js/formula-expansion.js
   </script>
-  <link href="css/auth.css" rel="stylesheet"/>
   </head>
- <body class="auth-loading">
+ <body>
   <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
   <main>
@@ -1654,7 +1653,6 @@
 
   <script type="module">
     import { injectHeader } from './js/pm-header.js';
-    import { setupAuthGuard } from './js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
@@ -1662,7 +1660,6 @@
     });
 
     // Setup auth after header
-    setupAuthGuard('index');
   </script>
 </body>
 </html>

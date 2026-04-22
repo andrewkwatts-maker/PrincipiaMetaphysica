@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
-    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-tooltip.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
     <link rel="stylesheet" href="../css/formula-display-fix.css">
@@ -1743,7 +1742,7 @@
     <script src="../js/pm-parameter-component.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body class="auth-loading">
+<body>
   <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
@@ -1864,13 +1863,10 @@
         </p>
     </footer>
   </div>
-
-  <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
   <script src="../js/site-config.js"></script>
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
-    import { setupAuthGuard } from '../js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
@@ -1878,7 +1874,6 @@
     });
 
     // Setup auth after header
-    setupAuthGuard('formulas');
   </script>
 
   <!-- Formula Database Logic -->
@@ -1990,7 +1985,6 @@
             if (!allFormulas || allFormulas.length === 0) {
                 throw new Error('No formulas found in the loaded data');
             }
-
 
             // Derive section from label for each formula (if not already present)
             allFormulas.forEach(formula => {
@@ -2254,7 +2248,6 @@
         const container = document.getElementById('formula-container');
         const emptyState = document.getElementById('empty-state');
 
-
         if (filteredFormulas.length === 0) {
             console.warn('No formulas to display after filtering');
             container.style.display = 'none';
@@ -2324,7 +2317,6 @@
         }
 
         container.innerHTML = html;
-
 
         // Re-render MathJax with error handling
         if (window.MathJax && window.MathJax.typesetPromise) {

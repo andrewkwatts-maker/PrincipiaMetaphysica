@@ -16,7 +16,6 @@
     <meta name="description" content="Boltzmann Entropy - Learn the statistical foundation of thermodynamics with diagrams, explanations, and educational resources">
     <title>Boltzmann Entropy - Foundational Physics</title>
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-header.css">
     <script src="../js/pm-constants-loader.js"></script>
     <script src="../js/pm-formula-loader.js"></script>
@@ -35,7 +34,7 @@
         });
     </script>
 </head>
-<body class="auth-loading">
+<body>
     <div id="main-content" style="display: none;">
 
     <main>
@@ -862,13 +861,9 @@
             margin: 0;
         }
     </style>
-
-    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
     <script src="../js/site-config.js"></script>
 
     <script type="module">
-        import { setupAuthGuard } from '../js/auth-guard.js';
-        setupAuthGuard('foundations-boltzmann-entropy');
     </script>
 </body>
 </html>

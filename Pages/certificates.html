@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
-    <link rel="stylesheet" href="../css/auth.css">
 
     <!-- MathJax for LaTeX rendering -->
     <script>
@@ -680,7 +679,7 @@
         }
     </style>
 </head>
-<body class="auth-loading">
+<body>
   <div id="main-content" style="display: none;">
     <main>
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -816,17 +815,13 @@
         </p>
     </footer>
   </div>
-
-  <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
   <script src="../js/site-config.js"></script>
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
-    import { setupAuthGuard } from '../js/auth-guard.js';
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('certificates');
     });
-    setupAuthGuard('certificates');
   </script>
 
   <script>

@@ -16,9 +16,8 @@
     <title>Components - Index</title>
     <!-- PM Project CSS -->
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/auth.css">
 </head>
-<body class="auth-loading">
+<body>
     <div id="main-content" style="display: none;">
     <div id="theme-picker-container"></div>
 
@@ -27,11 +26,6 @@
         <h1>Components</h1>
     </div>
 
-    <div class="user-controls">
-      <img id="user-avatar" src="../images/default-avatar.svg" alt="User">
-      <span id="user-email"></span>
-      <button id="logout-btn">Logout</button>
-    </div>
   </header>
 <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/index.html">Home</a> → <span aria-current="page">Components</span>
@@ -119,13 +113,9 @@
         </p>
     </footer>
     </div>
-
-    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
     <script src="../js/site-config.js"></script>
 
     <script type="module">
-      import { setupAuthGuard } from '../js/auth-guard.js';
-      setupAuthGuard('components-index');
     </script>
 </body>
 </html>

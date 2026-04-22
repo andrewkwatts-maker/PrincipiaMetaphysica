@@ -14,7 +14,6 @@
 
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pm-header.css">
-    <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
 
@@ -314,7 +313,7 @@
         }
     </style>
 </head>
-<body class="auth-loading">
+<body>
     <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
@@ -975,13 +974,10 @@
         // Make function globally available
         window.toggleAppendix = toggleAppendix;
     </script>
-
-    <!-- Site configuration (auth/offline flags) - must load before auth-guard -->
     <script src="../js/site-config.js"></script>
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
-        import { setupAuthGuard } from '../js/auth-guard.js';
 
         // Inject header first
         document.addEventListener('DOMContentLoaded', () => {
@@ -989,7 +985,6 @@
         });
 
         // Setup auth after header
-        setupAuthGuard('appendices');
     </script>
 </body>
 </html>
