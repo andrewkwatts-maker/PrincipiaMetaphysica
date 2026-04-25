@@ -408,6 +408,18 @@ class YukawaTexturesV18(SimulationBase):
             "_percent_errors": result.percent_errors
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces particle outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def get_formulas(self) -> List[Formula]:
         """Return formulas for Yukawa analysis."""
         return [

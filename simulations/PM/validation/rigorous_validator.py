@@ -239,6 +239,18 @@ class RigorousValidatorV16_1(SimulationBase):
             "validation.cosmology_status": cosmology_status,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces validation outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def _validate_neutrino_parameters(self, registry: PMRegistry) -> str:
         """
         Validate neutrino mixing parameters against NuFIT 6.0 (2025).

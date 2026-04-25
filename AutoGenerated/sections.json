@@ -1,173 +1,7 @@
 {
   "version": "24.2",
-  "count": 75,
+  "count": 74,
   "sections": {
-    "0": {
-      "id": "0",
-      "appendix": false,
-      "subsection_id": null,
-      "type": "section",
-      "section_type": "abstract",
-      "title": "Abstract",
-      "shortTitle": "Abstract",
-      "order": 0,
-      "abstract": "Unified mathematical framework proposing geometric expressions for 125 fundamental physical constants and cosmological observables as spectral residues of a M^{27}(24,1,2) dual-shadow G2 manifold compactification with Euclidean bridge. Predicts 26 Standard Model parameters (24 within 1-sigma) and proton decay lifetime testable by Hyper-K. All derivation chains recorded in reproducibility certificates.",
-      "contentBlocks": [
-        {
-          "type": "paragraph",
-          "content": "We introduce a unified mathematical framework that proposes geometric expressions for <span class=\"pm-value\" data-pm-value=\"abstract.total_constants\">125</span> fundamental physical constants and cosmological observables from the topological invariants of a <span class=\"pm-value\" data-pm-value=\"dimensions.D_bulk\">27</span>-dimensional manifold <strong>M<sup>27</sup>(24,1,2)</strong>—where <em>24</em> denotes the G₂ physics core (12×(2,0) bridge pairs creating dual 13D shadows), <em>1</em> the unified timelike fiber T¹, and <em>2</em> the <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector providing global cross-shadow averaging). <strong>Principia Metaphysica <span class=\"pm-value\" data-pm-value=\"framework.version_label\">v24.2</span></strong> realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and the sampler data fields S<sup>(2,0)</sup> (ds² = ds₁² + ds₂²) enable coherent cross-shadow objective reduction (OR). Each shadow compactifies on G₂(7,0) to <span class=\"pm-value\" data-pm-value=\"dimensions.D_observable\">4</span>D, yielding exactly three chiral fermion generations from n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = <span class=\"pm-value\" data-pm-value=\"topology.n_gen\">3</span> per shadow, consistent with M-theory phenomenology (Acharya-Witten 2001).",
-          "label": "abstract-lead",
-          "equationNumber": "abstract-lead"
-        },
-        {
-          "type": "paragraph",
-          "content": "The framework achieves <strong>116:1 compression ratio</strong> (125 constants from EDOF=3 effective seeds). Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. <strong><span class=\"pm-value\" data-pm-value=\"abstract.pure_predictions\">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient <span class=\"pm-value\" data-pm-value=\"abstract.vev_coefficient\">1.5859</span>, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ <span class=\"pm-value\" data-pm-value=\"abstract.alpha_gut_coefficient\">0.0318</span>, Re(T) constrained from Higgs mass). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.",
-          "label": "abstract-predictions",
-          "equationNumber": "abstract-predictions"
-        },
-        {
-          "type": "paragraph",
-          "content": "Of <span class=\"pm-value\" data-pm-value=\"validation.total_predictions\">26</span> Standard Model parameter comparisons, <strong><span class=\"pm-value\" data-pm-value=\"validation.predictions_within_1sigma\">24</span></strong> lie within 1σ of current experimental data (see Section 3 for full comparison table), with <strong><span class=\"pm-value\" data-pm-value=\"validation.exact_matches\">3</span> within 0.1σ of experimental central values</strong> (within theory uncertainty), including the fine structure constant α<sup>−1</sup> = <span class=\"pm-value\" data-pm-value=\"abstract.alpha_inv_pred\">137.0367</span> (α<sup>−1</sup><sub>pred</sub> vs CODATA 2022: <span class=\"pm-value\" data-pm-value=\"abstract.alpha_inv_codata\">137.036</span>; ~<span class=\"pm-value\" data-pm-value=\"abstract.alpha_inv_theory_sigma\">0.05</span>σ theory-level comparison—note: CODATA experimental precision is sub-ppb) and θ₂₃ = <span class=\"pm-value\" data-pm-value=\"pmns_matrix.theta_23\">49.75</span>° (from G₂ holonomy SU(3) symmetry; NuFIT 6.0 IO: <span class=\"pm-value\" data-pm-value=\"abstract.theta23_io_central\">49.3</span>°, <span class=\"pm-value\" data-pm-value=\"abstract.theta23_sigma_io\">0.45</span>σ). The model predicts thawing dark energy w₀ = -23/24 ≈ <span class=\"pm-value\" data-pm-value=\"cosmology.w0_derived\">-0.9583</span>, consistent with DESI 2025 thawing dark energy constraints (BAO-only: w₀ = <span class=\"pm-value\" data-pm-value=\"desi.w0\">−0.957</span> ± <span class=\"pm-value\" data-pm-value=\"abstract.desi_w0_uncertainty\">0.067</span>), and proton decay lifetime τ<sub>p</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.tau_p_display\">4.8</span>×10<sup>34</sup> years (Super-K bound: ><span class=\"pm-value\" data-pm-value=\"abstract.tau_p_bound_display\">1.67</span>×10<sup>34</sup> yr; Hyper-K testable). All derivation chains are recorded in <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span> reproducibility certificates.",
-          "label": "abstract-validation",
-          "equationNumber": "abstract-validation"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Topologically Anchored Framework (116:1 Compression)</strong>: We frame this derivation through the lens of Minimal Description Length (MDL). The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, achieved with <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations: VEV coefficient, Re(T)). The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits → 69 bits), demonstrating this is information reduction rather than parameter fitting. The code is isomorphic to the geometric constraints themselves, with the 288/24/4 structure derived from G₂ topology (minimal phenomenological input).",
-          "label": "abstract-mdl",
-          "equationNumber": "abstract-mdl"
-        },
-        {
-          "type": "note",
-          "content": "<sup>†</sup> The fields are named \"Primordial Spinor Field\" (Ψ<sub>P</sub>) and \"Attractor Scalar\" (Φ<sub>M</sub>). Historical names \"Pneuma\" and \"Mashiach\" reflect philosophical inspiration but are not used in technical discussions.",
-          "label": "abstract-note",
-          "equationNumber": "abstract-note"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> derived from G₂ volume ratio (6 = 12/2 aligned bridge pairs under OR rotation). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">6.9×10⁻⁶</span>.",
-          "label": "abstract-two-layer-or",
-          "equationNumber": "abstract-two-layer-or"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>The Principia Metric</strong>: Finally, we present a definitive, falsifiable prediction: the existence of a topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = <span class=\"pm-value\" data-pm-value=\"alp.mass_meV\">3.51</span> meV. This \"Principia Metric\" emerges as an unavoidable consequence of the vacuum residue of the M<sup>27</sup> → M<sup>4</sup> projection and the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, with g<sub>aγγ</sub> ~ <span class=\"pm-value\" data-pm-value=\"alp.coupling_GeV_inv\">10⁻¹¹</span> GeV⁻¹. This prediction is currently within the detection window of the upcoming IAXO and BabyIAXO experiments (2025-2028), providing a clear falsification criterion for the G₂ compactification framework.",
-          "label": "abstract-principia-metric",
-          "equationNumber": "abstract-principia-metric"
-        }
-      ],
-      "content_blocks": [
-        {
-          "type": "paragraph",
-          "content": "We introduce a unified mathematical framework that proposes geometric expressions for <span class=\"pm-value\" data-pm-value=\"abstract.total_constants\">125</span> fundamental physical constants and cosmological observables from the topological invariants of a <span class=\"pm-value\" data-pm-value=\"dimensions.D_bulk\">27</span>-dimensional manifold <strong>M<sup>27</sup>(24,1,2)</strong>—where <em>24</em> denotes the G₂ physics core (12×(2,0) bridge pairs creating dual 13D shadows), <em>1</em> the unified timelike fiber T¹, and <em>2</em> the <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector providing global cross-shadow averaging). <strong>Principia Metaphysica <span class=\"pm-value\" data-pm-value=\"framework.version_label\">v24.2</span></strong> realizes a dual-shadow structure where the unified time eliminates ghosts/CTCs, and the sampler data fields S<sup>(2,0)</sup> (ds² = ds₁² + ds₂²) enable coherent cross-shadow objective reduction (OR). Each shadow compactifies on G₂(7,0) to <span class=\"pm-value\" data-pm-value=\"dimensions.D_observable\">4</span>D, yielding exactly three chiral fermion generations from n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = <span class=\"pm-value\" data-pm-value=\"topology.n_gen\">3</span> per shadow, consistent with M-theory phenomenology (Acharya-Witten 2001).",
-          "label": "abstract-lead",
-          "equationNumber": "abstract-lead"
-        },
-        {
-          "type": "paragraph",
-          "content": "The framework achieves <strong>116:1 compression ratio</strong> (125 constants from EDOF=3 effective seeds). Standard Model parameters emerge from manifold topology, flux quantization, and effective torsion. <strong><span class=\"pm-value\" data-pm-value=\"abstract.pure_predictions\">55</span> parameters are pure predictions</strong>. <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient <span class=\"pm-value\" data-pm-value=\"abstract.vev_coefficient\">1.5859</span>, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ <span class=\"pm-value\" data-pm-value=\"abstract.alpha_gut_coefficient\">0.0318</span>, Re(T) constrained from Higgs mass). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.",
-          "label": "abstract-predictions",
-          "equationNumber": "abstract-predictions"
-        },
-        {
-          "type": "paragraph",
-          "content": "Of <span class=\"pm-value\" data-pm-value=\"validation.total_predictions\">26</span> Standard Model parameter comparisons, <strong><span class=\"pm-value\" data-pm-value=\"validation.predictions_within_1sigma\">24</span></strong> lie within 1σ of current experimental data (see Section 3 for full comparison table), with <strong><span class=\"pm-value\" data-pm-value=\"validation.exact_matches\">3</span> within 0.1σ of experimental central values</strong> (within theory uncertainty), including the fine structure constant α<sup>−1</sup> = <span class=\"pm-value\" data-pm-value=\"abstract.alpha_inv_pred\">137.0367</span> (α<sup>−1</sup><sub>pred</sub> vs CODATA 2022: <span class=\"pm-value\" data-pm-value=\"abstract.alpha_inv_codata\">137.036</span>; ~<span class=\"pm-value\" data-pm-value=\"abstract.alpha_inv_theory_sigma\">0.05</span>σ theory-level comparison—note: CODATA experimental precision is sub-ppb) and θ₂₃ = <span class=\"pm-value\" data-pm-value=\"pmns_matrix.theta_23\">49.75</span>° (from G₂ holonomy SU(3) symmetry; NuFIT 6.0 IO: <span class=\"pm-value\" data-pm-value=\"abstract.theta23_io_central\">49.3</span>°, <span class=\"pm-value\" data-pm-value=\"abstract.theta23_sigma_io\">0.45</span>σ). The model predicts thawing dark energy w₀ = -23/24 ≈ <span class=\"pm-value\" data-pm-value=\"cosmology.w0_derived\">-0.9583</span>, consistent with DESI 2025 thawing dark energy constraints (BAO-only: w₀ = <span class=\"pm-value\" data-pm-value=\"desi.w0\">−0.957</span> ± <span class=\"pm-value\" data-pm-value=\"abstract.desi_w0_uncertainty\">0.067</span>), and proton decay lifetime τ<sub>p</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.tau_p_display\">4.8</span>×10<sup>34</sup> years (Super-K bound: ><span class=\"pm-value\" data-pm-value=\"abstract.tau_p_bound_display\">1.67</span>×10<sup>34</sup> yr; Hyper-K testable). All derivation chains are recorded in <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span> reproducibility certificates.",
-          "label": "abstract-validation",
-          "equationNumber": "abstract-validation"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Topologically Anchored Framework (116:1 Compression)</strong>: We frame this derivation through the lens of Minimal Description Length (MDL). The 125 observed constants represent the most efficient topological compression of the M<sup>27</sup> bulk, achieved with <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations: VEV coefficient, Re(T)). The computational implementation achieves <strong>116:1 compression ratio</strong> (8000 bits → 69 bits), demonstrating this is information reduction rather than parameter fitting. The code is isomorphic to the geometric constraints themselves, with the 288/24/4 structure derived from G₂ topology (minimal phenomenological input).",
-          "label": "abstract-mdl",
-          "equationNumber": "abstract-mdl"
-        },
-        {
-          "type": "note",
-          "content": "<sup>†</sup> The fields are named \"Primordial Spinor Field\" (Ψ<sub>P</sub>) and \"Attractor Scalar\" (Φ<sub>M</sub>). Historical names \"Pneuma\" and \"Mashiach\" reflect philosophical inspiration but are not used in technical discussions.",
-          "label": "abstract-note",
-          "equationNumber": "abstract-note"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> derived from G₂ volume ratio (6 = 12/2 aligned bridge pairs under OR rotation). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">6.9×10⁻⁶</span>.",
-          "label": "abstract-two-layer-or",
-          "equationNumber": "abstract-two-layer-or"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>The Principia Metric</strong>: Finally, we present a definitive, falsifiable prediction: the existence of a topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = <span class=\"pm-value\" data-pm-value=\"alp.mass_meV\">3.51</span> meV. This \"Principia Metric\" emerges as an unavoidable consequence of the vacuum residue of the M<sup>27</sup> → M<sup>4</sup> projection and the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, with g<sub>aγγ</sub> ~ <span class=\"pm-value\" data-pm-value=\"alp.coupling_GeV_inv\">10⁻¹¹</span> GeV⁻¹. This prediction is currently within the detection window of the upcoming IAXO and BabyIAXO experiments (2025-2028), providing a clear falsification criterion for the G₂ compactification framework.",
-          "label": "abstract-principia-metric",
-          "equationNumber": "abstract-principia-metric"
-        }
-      ],
-      "formulaRefs": [
-        "abstract-framework-overview"
-      ],
-      "paramRefs": [
-        "topology.elder_kads",
-        "topology.n_gen",
-        "dimensions.D_bulk",
-        "dimensions.D_observable",
-        "validation.total_predictions",
-        "validation.predictions_within_1sigma",
-        "validation.exact_matches",
-        "statistics.certificates_total",
-        "abstract.total_constants",
-        "abstract.pure_predictions",
-        "abstract.calibration_inputs",
-        "abstract.fitted_pmns",
-        "abstract.vev_coefficient",
-        "abstract.alpha_gut_coefficient",
-        "abstract.alpha_inv_theory_sigma",
-        "abstract.theta23_sigma_io",
-        "abstract.desi_w0_uncertainty",
-        "abstract.tau_p_display",
-        "abstract.tau_p_bound_display",
-        "abstract.dark_force_pleak",
-        "abstract.alpha_inv_pred",
-        "abstract.alpha_inv_codata",
-        "abstract.theta23_io_central",
-        "cosmology.w0_derived",
-        "desi.w0",
-        "geometry.alpha_leak",
-        "alp.mass_meV",
-        "alp.coupling_GeV_inv"
-      ],
-      "formula_refs": [
-        "abstract-framework-overview"
-      ],
-      "param_refs": [
-        "topology.elder_kads",
-        "topology.n_gen",
-        "dimensions.D_bulk",
-        "dimensions.D_observable",
-        "validation.total_predictions",
-        "validation.predictions_within_1sigma",
-        "validation.exact_matches",
-        "statistics.certificates_total",
-        "abstract.total_constants",
-        "abstract.pure_predictions",
-        "abstract.calibration_inputs",
-        "abstract.fitted_pmns",
-        "abstract.vev_coefficient",
-        "abstract.alpha_gut_coefficient",
-        "abstract.alpha_inv_theory_sigma",
-        "abstract.theta23_sigma_io",
-        "abstract.desi_w0_uncertainty",
-        "abstract.tau_p_display",
-        "abstract.tau_p_bound_display",
-        "abstract.dark_force_pleak",
-        "abstract.alpha_inv_pred",
-        "abstract.alpha_inv_codata",
-        "abstract.theta23_io_central",
-        "cosmology.w0_derived",
-        "desi.w0",
-        "geometry.alpha_leak",
-        "alp.mass_meV",
-        "alp.coupling_GeV_inv"
-      ],
-      "timestamp": "2026-04-19T16:53:14.589245"
-    },
     "1": {
       "id": "1",
       "appendix": false,
@@ -411,7 +245,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The proof is immediate: given the constraints, the only possible sum is D = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>) = 1 + 4 + 8 = 13. This is a theorem, not a choice. The Hurwitz theorem constrains the building blocks, and the physical requirements select exactly D = 13."
+          "content": "This follows from the Hurwitz theorem: given the normed division algebra constraint, the only possible sum is D = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>) = 1 + 4 + 8 = 13. The Hurwitz theorem limits the available normed division algebras, and the physical requirements of this construction favour D = 13."
         },
         {
           "type": "paragraph",
@@ -727,7 +561,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The proof is immediate: given the constraints, the only possible sum is D = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>) = 1 + 4 + 8 = 13. This is a theorem, not a choice. The Hurwitz theorem constrains the building blocks, and the physical requirements select exactly D = 13."
+          "content": "This follows from the Hurwitz theorem: given the normed division algebra constraint, the only possible sum is D = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>) = 1 + 4 + 8 = 13. The Hurwitz theorem limits the available normed division algebras, and the physical requirements of this construction favour D = 13."
         },
         {
           "type": "paragraph",
@@ -840,7 +674,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-04-19T16:53:14.589342"
+      "timestamp": "2026-04-25T20:09:01.609638"
     },
     "2": {
       "id": "2",
@@ -2098,7 +1932,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-04-19T16:53:14.796002"
+      "timestamp": "2026-04-25T20:09:01.822305"
     },
     "2.7": {
       "id": "2",
@@ -2488,7 +2322,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-04-19T16:53:14.796147"
+      "timestamp": "2026-04-25T20:09:01.822452"
     },
     "V.1": {
       "id": "validation",
@@ -2610,7 +2444,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-04-19T16:53:14.796273"
+      "timestamp": "2026-04-25T20:09:01.822581"
     },
     "3.4": {
       "id": "3",
@@ -2774,7 +2608,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-04-19T16:53:14.796342"
+      "timestamp": "2026-04-25T20:09:01.822650"
     },
     "3.6": {
       "id": "3",
@@ -2946,7 +2780,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-04-19T16:53:14.796431"
+      "timestamp": "2026-04-25T20:09:01.822741"
     },
     "3": {
       "id": "3",
@@ -3150,7 +2984,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-04-19T16:53:14.826405"
+      "timestamp": "2026-04-25T20:09:01.853175"
     },
     "3.2": {
       "id": "3",
@@ -3636,7 +3470,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-04-19T16:53:14.826674"
+      "timestamp": "2026-04-25T20:09:01.853434"
     },
     "3.1": {
       "id": "3",
@@ -3694,7 +3528,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-04-19T16:53:14.826832"
+      "timestamp": "2026-04-25T20:09:01.853585"
     },
     "4.2": {
       "id": "4",
@@ -3824,7 +3658,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-04-19T16:53:15.031534"
+      "timestamp": "2026-04-25T20:09:02.057492"
     },
     "4.1": {
       "id": "4",
@@ -4112,7 +3946,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-04-19T16:53:15.224897"
+      "timestamp": "2026-04-25T20:09:02.251363"
     },
     "4.3": {
       "id": "4",
@@ -4352,7 +4186,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-04-19T16:53:15.225086"
+      "timestamp": "2026-04-25T20:09:02.251559"
     },
     "4.6": {
       "id": "4",
@@ -4540,7 +4374,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-04-19T16:53:15.225187"
+      "timestamp": "2026-04-25T20:09:02.251666"
     },
     "4.4": {
       "id": "4",
@@ -4722,7 +4556,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-04-19T16:53:15.261973"
+      "timestamp": "2026-04-25T20:09:02.251763"
     },
     "4.9": {
       "id": "4",
@@ -4824,7 +4658,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-04-19T16:53:15.262124"
+      "timestamp": "2026-04-25T20:09:02.281726"
     },
     "6.1.1": {
       "id": "6",
@@ -4938,7 +4772,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-04-19T16:53:15.262350"
+      "timestamp": "2026-04-25T20:09:02.281989"
     },
     "4.2.1": {
       "id": "4",
@@ -5012,7 +4846,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-04-19T16:53:15.262423"
+      "timestamp": "2026-04-25T20:09:02.282058"
     },
     "4.8": {
       "id": "4",
@@ -5070,7 +4904,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-04-19T16:53:15.262519"
+      "timestamp": "2026-04-25T20:09:02.282147"
     },
     "5.1": {
       "id": "5",
@@ -5410,7 +5244,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-04-19T16:53:15.262598"
+      "timestamp": "2026-04-25T20:09:02.282221"
     },
     "5.2": {
       "id": "5",
@@ -5704,7 +5538,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-04-19T16:53:15.262747"
+      "timestamp": "2026-04-25T20:09:02.282358"
     },
     "5.6": {
       "id": "5",
@@ -6028,7 +5862,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-04-19T16:53:15.262976"
+      "timestamp": "2026-04-25T20:09:02.282582"
     },
     "5.7": {
       "id": "5",
@@ -6172,7 +6006,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-04-19T16:53:15.265384"
+      "timestamp": "2026-04-25T20:09:02.285018"
     },
     "5.4": {
       "id": "5",
@@ -6492,7 +6326,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-04-19T16:53:15.266868"
+      "timestamp": "2026-04-25T20:09:02.286526"
     },
     "5.9": {
       "id": "5",
@@ -6654,7 +6488,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-04-19T16:53:15.267868"
+      "timestamp": "2026-04-25T20:09:02.287538"
     },
     "4.5": {
       "id": "4",
@@ -6914,7 +6748,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-04-19T16:53:15.469913"
+      "timestamp": "2026-04-25T20:09:02.493024"
     },
     "4.7": {
       "id": "4",
@@ -7166,7 +7000,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-04-19T16:53:15.470620"
+      "timestamp": "2026-04-25T20:09:02.493732"
     },
     "5.3": {
       "id": "5",
@@ -7324,7 +7158,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-04-19T16:53:15.470797"
+      "timestamp": "2026-04-25T20:09:02.493913"
     },
     "5.8": {
       "id": "5",
@@ -7646,7 +7480,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-04-19T16:53:15.470906"
+      "timestamp": "2026-04-25T20:09:02.494024"
     },
     "6.1": {
       "id": "6",
@@ -7706,7 +7540,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471009"
+      "timestamp": "2026-04-25T20:09:02.494121"
     },
     "6.2": {
       "id": "6",
@@ -7754,7 +7588,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471060"
+      "timestamp": "2026-04-25T20:09:02.494172"
     },
     "6.3": {
       "id": "6",
@@ -7846,7 +7680,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471113"
+      "timestamp": "2026-04-25T20:09:02.494224"
     },
     "6.4": {
       "id": "6",
@@ -7898,7 +7732,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471157"
+      "timestamp": "2026-04-25T20:09:02.494266"
     },
     "6.5": {
       "id": "6",
@@ -7950,7 +7784,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471194"
+      "timestamp": "2026-04-25T20:09:02.494302"
     },
     "6.6": {
       "id": "6",
@@ -8002,7 +7836,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471230"
+      "timestamp": "2026-04-25T20:09:02.494337"
     },
     "6.7": {
       "id": "6",
@@ -8054,7 +7888,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471274"
+      "timestamp": "2026-04-25T20:09:02.494375"
     },
     "6.8": {
       "id": "6",
@@ -8098,7 +7932,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471304"
+      "timestamp": "2026-04-25T20:09:02.494405"
     },
     "6.9": {
       "id": "6",
@@ -8142,7 +7976,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.471437"
+      "timestamp": "2026-04-25T20:09:02.494533"
     },
     "5.5": {
       "id": "5",
@@ -8296,7 +8130,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-04-19T16:53:15.484273"
+      "timestamp": "2026-04-25T20:09:02.507260"
     },
     "2.8": {
       "id": "2",
@@ -9242,7 +9076,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-04-19T16:53:15.484431"
+      "timestamp": "2026-04-25T20:09:02.507445"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -9374,7 +9208,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-04-19T16:53:15.484522"
+      "timestamp": "2026-04-25T20:09:02.507562"
     },
     "7.2": {
       "id": "7",
@@ -9490,7 +9324,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-04-19T16:53:15.484684"
+      "timestamp": "2026-04-25T20:09:02.507688"
     },
     "7.4": {
       "id": "7",
@@ -9608,7 +9442,7 @@
         "portals.sterile_mass_scale_gev",
         "portals.sterile_n_eff_contribution"
       ],
-      "timestamp": "2026-04-19T16:53:15.556136"
+      "timestamp": "2026-04-25T20:09:02.576707"
     },
     "7.5": {
       "id": "7",
@@ -9768,7 +9602,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-04-19T16:53:15.556489"
+      "timestamp": "2026-04-25T20:09:02.576783"
     },
     "7.6": {
       "id": "7",
@@ -9838,7 +9672,7 @@
         "consciousness.shielded_tau_ms",
         "consciousness.shielding_factor"
       ],
-      "timestamp": "2026-04-19T16:53:15.551959"
+      "timestamp": "2026-04-25T20:09:02.572606"
     },
     "7": {
       "id": "7",
@@ -10110,7 +9944,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>The Principia Metric - Primary Kill-Switch:</strong> The structural integrity of the M²⁷ framework rests on the detection of a topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = 3.51 ± 0.02 meV. This particle is the unavoidable consequence of the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, yielding g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹. We define the following experimental constraints:"
+          "content": "<strong>The Principia Metric - Primary Kill-Switch:</strong> The structural integrity of the M²⁷ framework rests on the detection of a topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = 3.51 ± 0.02 meV. This particle is a predicted consequence of the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, yielding g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹. We define the following experimental constraints:"
         },
         {
           "type": "list",
@@ -10124,7 +9958,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This 'Principia Metric' (analogous to the Eddington Eclipse observation for General Relativity) provides a definitive, time-bound test: if IAXO reaches its projected sensitivity of g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹ by 2028 and finds no signal in the predicted mass range, the theory is falsified. This is not a parameter to be adjusted—it is the direct, unavoidable output of the 27D → 4D dimensional projection."
+          "content": "This 'Principia Metric' (analogous to the Eddington Eclipse observation for General Relativity) provides a falsifiable, time-bound test: if IAXO reaches its projected sensitivity of g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹ by 2028 and finds no signal in the predicted mass range, the theory is falsified. This is not a free parameter—it is the direct output of the 27D → 4D dimensional projection within this framework."
         },
         {
           "type": "heading",
@@ -11449,7 +11283,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>The Principia Metric - Primary Kill-Switch:</strong> The structural integrity of the M²⁷ framework rests on the detection of a topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = 3.51 ± 0.02 meV. This particle is the unavoidable consequence of the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, yielding g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹. We define the following experimental constraints:"
+          "content": "<strong>The Principia Metric - Primary Kill-Switch:</strong> The structural integrity of the M²⁷ framework rests on the detection of a topologically induced Axion-Like Particle (ALP) at m<sub>a</sub> = 3.51 ± 0.02 meV. This particle is a predicted consequence of the Euclidean Information Sector (S<sub>EIS</sub>) coupling to the photon field, yielding g<sub>aγγ</sub> ~ 10⁻¹¹ GeV⁻¹. We define the following experimental constraints:"
         },
         {
           "type": "list",
@@ -11463,7 +11297,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This 'Principia Metric' (analogous to the Eddington Eclipse observation for General Relativity) provides a definitive, time-bound test: if IAXO reaches its projected sensitivity of g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹ by 2028 and finds no signal in the predicted mass range, the theory is falsified. This is not a parameter to be adjusted—it is the direct, unavoidable output of the 27D → 4D dimensional projection."
+          "content": "This 'Principia Metric' (analogous to the Eddington Eclipse observation for General Relativity) provides a falsifiable, time-bound test: if IAXO reaches its projected sensitivity of g<sub>aγγ</sub> ~ 10⁻¹² GeV⁻¹ by 2028 and finds no signal in the predicted mass range, the theory is falsified. This is not a free parameter—it is the direct output of the 27D → 4D dimensional projection within this framework."
         },
         {
           "type": "heading",
@@ -12532,7 +12366,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.552091"
+      "timestamp": "2026-04-25T20:09:02.572736"
     },
     "6": {
       "id": "6",
@@ -13335,7 +13169,7 @@
             [
               "CMB cold spot",
               "~3σ anomaly (debated)",
-              "CMB-S4: definitive test (2027+)"
+              "CMB-S4: critical test (2027+)"
             ],
             [
               "Non-Gaussianity (f<sub>NL</sub>)",
@@ -13579,7 +13413,7 @@
             [
               "CKM parameters",
               "✓ CONFIRMED",
-              "ε = 0.2257 exact match (v24.2 derived)"
+              "ε = 0.2257, within 0.1σ (v24.2 derived)"
             ],
             [
               "Proton decay",
@@ -13649,7 +13483,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Principia Metaphysica framework submits itself to rigorous experimental falsification across seven independent channels. Each prediction specifies a quantitative observable, a detection experiment, a timeline, and an explicit falsification criterion. This section consolidates all falsification windows into a single reference table and identifies the critical tests that will definitively confirm or rule out the framework by 2035."
+          "content": "The Principia Metaphysica framework submits itself to rigorous experimental falsification across seven independent channels. Each prediction specifies a quantitative observable, a detection experiment, a timeline, and an explicit falsification criterion. This section consolidates all falsification windows into a single reference table and identifies the critical tests that will confirm or rule out the framework by 2035."
         },
         {
           "type": "heading",
@@ -13768,7 +13602,7 @@
         },
         {
           "type": "paragraph",
-          "content": "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number of neutrino species N<sub>eff</sub> to unprecedented precision (σ ~ 0.03). The PM mirror sector predicts ΔN<sub>eff</sub> ~ 0.08–0.16 from thermalized mirror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes ΔN<sub>eff</sub> < 0.06 at >2σ confidence, the mirror neutrino contribution is excluded, constraining the Z₂ sector coupling or requiring the mirror sector temperature to fall below T'/T < 0.5. This provides the most direct cosmological test of the PM hidden sector architecture."
+          "content": "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number of neutrino species N<sub>eff</sub> to high precision (σ ~ 0.03). The PM mirror sector predicts ΔN<sub>eff</sub> ~ 0.08–0.16 from thermalized mirror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes ΔN<sub>eff</sub> < 0.06 at >2σ confidence, the mirror neutrino contribution is excluded, constraining the Z₂ sector coupling or requiring the mirror sector temperature to fall below T'/T < 0.5. This provides the most direct cosmological test of the PM hidden sector architecture."
         },
         {
           "type": "heading",
@@ -13777,7 +13611,7 @@
         },
         {
           "type": "paragraph",
-          "content": "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports w₀ = −0.957 ± 0.067, within which the PM prediction w₀ = −23/24 ≈ −0.9583 falls. DESI DR3 (expected 2027–2028) will tighten the constraint to σ(w₀) ~ 0.02, providing a definitive test of the breathing dark energy mechanism derived from the Maximum Entropy Principle with b₃ = 24. The logarithmic evolution w(z) = w₀[1 + (α<sub>T</sub>/3) ln(1+z)] further distinguishes PM from standard CPL parameterization at z > 2, testable by Euclid and the Nancy Grace Roman Space Telescope."
+          "content": "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports w₀ = −0.957 ± 0.067, within which the PM prediction w₀ = −23/24 ≈ −0.9583 falls. DESI DR3 (expected 2027–2028) will tighten the constraint to σ(w₀) ~ 0.02, providing a critical test of the breathing dark energy mechanism derived from the Maximum Entropy Principle with b₃ = 24. The logarithmic evolution w(z) = w₀[1 + (α<sub>T</sub>/3) ln(1+z)] further distinguishes PM from standard CPL parameterization at z > 2, testable by Euclid and the Nancy Grace Roman Space Telescope."
         },
         {
           "type": "heading",
@@ -13795,7 +13629,7 @@
         },
         {
           "type": "paragraph",
-          "content": "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous cross-polarization in gravitational wave signals. The PM framework predicts η ~ 0.10 from G₂ torsion coupling to GW polarization (T<sub>ω</sub>² = 1/6 ≈ 0.167 at the fundamental level). This is a large fractional effect compared to GR expectations (η = 0), making it a high-priority target for O5 runs beginning 2027. The Einstein Telescope and LISA will extend sensitivity to the 10⁻³ level, providing definitive confirmation or exclusion by 2037."
+          "content": "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous cross-polarization in gravitational wave signals. The PM framework predicts η ~ 0.10 from G₂ torsion coupling to GW polarization (T<sub>ω</sub>² = 1/6 ≈ 0.167 at the fundamental level). This is a large fractional effect compared to GR expectations (η = 0), making it a high-priority target for O5 runs beginning 2027. The Einstein Telescope and LISA will extend sensitivity to the 10⁻³ level, providing confirmation or exclusion by 2037."
         },
         {
           "type": "heading",
@@ -14738,7 +14572,7 @@
             [
               "CMB cold spot",
               "~3σ anomaly (debated)",
-              "CMB-S4: definitive test (2027+)"
+              "CMB-S4: critical test (2027+)"
             ],
             [
               "Non-Gaussianity (f<sub>NL</sub>)",
@@ -14982,7 +14816,7 @@
             [
               "CKM parameters",
               "✓ CONFIRMED",
-              "ε = 0.2257 exact match (v24.2 derived)"
+              "ε = 0.2257, within 0.1σ (v24.2 derived)"
             ],
             [
               "Proton decay",
@@ -15052,7 +14886,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Principia Metaphysica framework submits itself to rigorous experimental falsification across seven independent channels. Each prediction specifies a quantitative observable, a detection experiment, a timeline, and an explicit falsification criterion. This section consolidates all falsification windows into a single reference table and identifies the critical tests that will definitively confirm or rule out the framework by 2035."
+          "content": "The Principia Metaphysica framework submits itself to rigorous experimental falsification across seven independent channels. Each prediction specifies a quantitative observable, a detection experiment, a timeline, and an explicit falsification criterion. This section consolidates all falsification windows into a single reference table and identifies the critical tests that will confirm or rule out the framework by 2035."
         },
         {
           "type": "heading",
@@ -15171,7 +15005,7 @@
         },
         {
           "type": "paragraph",
-          "content": "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number of neutrino species N<sub>eff</sub> to unprecedented precision (σ ~ 0.03). The PM mirror sector predicts ΔN<sub>eff</sub> ~ 0.08–0.16 from thermalized mirror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes ΔN<sub>eff</sub> < 0.06 at >2σ confidence, the mirror neutrino contribution is excluded, constraining the Z₂ sector coupling or requiring the mirror sector temperature to fall below T'/T < 0.5. This provides the most direct cosmological test of the PM hidden sector architecture."
+          "content": "CRITICAL FALSIFICATION WINDOW: CMB-S4 will measure the effective number of neutrino species N<sub>eff</sub> to high precision (σ ~ 0.03). The PM mirror sector predicts ΔN<sub>eff</sub> ~ 0.08–0.16 from thermalized mirror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes ΔN<sub>eff</sub> < 0.06 at >2σ confidence, the mirror neutrino contribution is excluded, constraining the Z₂ sector coupling or requiring the mirror sector temperature to fall below T'/T < 0.5. This provides the most direct cosmological test of the PM hidden sector architecture."
         },
         {
           "type": "heading",
@@ -15180,7 +15014,7 @@
         },
         {
           "type": "paragraph",
-          "content": "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports w₀ = −0.957 ± 0.067, within which the PM prediction w₀ = −23/24 ≈ −0.9583 falls. DESI DR3 (expected 2027–2028) will tighten the constraint to σ(w₀) ~ 0.02, providing a definitive test of the breathing dark energy mechanism derived from the Maximum Entropy Principle with b₃ = 24. The logarithmic evolution w(z) = w₀[1 + (α<sub>T</sub>/3) ln(1+z)] further distinguishes PM from standard CPL parameterization at z > 2, testable by Euclid and the Nancy Grace Roman Space Telescope."
+          "content": "VALIDATION IN PROGRESS: DESI 2025 BAO-only analysis reports w₀ = −0.957 ± 0.067, within which the PM prediction w₀ = −23/24 ≈ −0.9583 falls. DESI DR3 (expected 2027–2028) will tighten the constraint to σ(w₀) ~ 0.02, providing a critical test of the breathing dark energy mechanism derived from the Maximum Entropy Principle with b₃ = 24. The logarithmic evolution w(z) = w₀[1 + (α<sub>T</sub>/3) ln(1+z)] further distinguishes PM from standard CPL parameterization at z > 2, testable by Euclid and the Nancy Grace Roman Space Telescope."
         },
         {
           "type": "heading",
@@ -15198,7 +15032,7 @@
         },
         {
           "type": "paragraph",
-          "content": "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous cross-polarization in gravitational wave signals. The PM framework predicts η ~ 0.10 from G₂ torsion coupling to GW polarization (T<sub>ω</sub>² = 1/6 ≈ 0.167 at the fundamental level). This is a large fractional effect compared to GR expectations (η = 0), making it a high-priority target for O5 runs beginning 2027. The Einstein Telescope and LISA will extend sensitivity to the 10⁻³ level, providing definitive confirmation or exclusion by 2037."
+          "content": "NEXT-GENERATION TEST: LIGO O5 and Virgo will search for anomalous cross-polarization in gravitational wave signals. The PM framework predicts η ~ 0.10 from G₂ torsion coupling to GW polarization (T<sub>ω</sub>² = 1/6 ≈ 0.167 at the fundamental level). This is a large fractional effect compared to GR expectations (η = 0), making it a high-priority target for O5 runs beginning 2027. The Einstein Telescope and LISA will extend sensitivity to the 10⁻³ level, providing confirmation or exclusion by 2037."
         },
         {
           "type": "heading",
@@ -15438,7 +15272,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-04-19T16:53:15.552241"
+      "timestamp": "2026-04-25T20:09:02.572882"
     },
     "1.1": {
       "id": "1",
@@ -16106,7 +15940,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.552382"
+      "timestamp": "2026-04-25T20:09:02.573018"
     },
     "2.6": {
       "id": "2",
@@ -16184,7 +16018,7 @@
         },
         {
           "type": "paragraph",
-          "content": "If the sum of the residues deviates from the manifold's volume, the system is flagged as 'Non-Sterile.' This mathematical closure provides the ultimate proof that the 125 observed parameters are the only consistent artifacts of the universe's geometric identity."
+          "content": "If the sum of the residues deviates from the manifold's volume, the system is flagged as 'Non-Sterile.' This mathematical closure provides the ultimate internal consistency check: the 125 residues are the only parameters consistent with the manifold's geometric constraints within this construction."
         },
         {
           "type": "heading",
@@ -16466,7 +16300,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This massive compression proves PM is <em>not</em> overfitting. Overfitting would require L(Theory) > L(Data), but we achieve L(Theory) << L(Data). The framework satisfies the MDL criterion with high confidence."
+          "content": "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would require L(Theory) > L(Data), whereas the framework achieves L(Theory) &lt;&lt; L(Data). The result satisfies the MDL bound, providing evidence against parameter overfitting."
         },
         {
           "type": "heading",
@@ -16580,7 +16414,7 @@
         },
         {
           "type": "paragraph",
-          "content": "If the sum of the residues deviates from the manifold's volume, the system is flagged as 'Non-Sterile.' This mathematical closure provides the ultimate proof that the 125 observed parameters are the only consistent artifacts of the universe's geometric identity."
+          "content": "If the sum of the residues deviates from the manifold's volume, the system is flagged as 'Non-Sterile.' This mathematical closure provides the ultimate internal consistency check: the 125 residues are the only parameters consistent with the manifold's geometric constraints within this construction."
         },
         {
           "type": "heading",
@@ -16862,7 +16696,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This massive compression proves PM is <em>not</em> overfitting. Overfitting would require L(Theory) > L(Data), but we achieve L(Theory) << L(Data). The framework satisfies the MDL criterion with high confidence."
+          "content": "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would require L(Theory) > L(Data), whereas the framework achieves L(Theory) &lt;&lt; L(Data). The result satisfies the MDL bound, providing evidence against parameter overfitting."
         },
         {
           "type": "heading",
@@ -16914,7 +16748,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.552461"
+      "timestamp": "2026-04-25T20:09:02.573096"
     },
     "3.7": {
       "id": "3",
@@ -17392,7 +17226,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.552514"
+      "timestamp": "2026-04-25T20:09:02.573149"
     },
     "4": {
       "id": "4",
@@ -17700,7 +17534,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-04-19T16:53:15.552572"
+      "timestamp": "2026-04-25T20:09:02.573204"
     },
     "A": {
       "id": "A",
@@ -17910,7 +17744,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-04-19T16:53:15.552628"
+      "timestamp": "2026-04-25T20:09:02.573260"
     },
     "B": {
       "id": "B",
@@ -17994,7 +17828,7 @@
         },
         {
           "type": "note",
-          "content": "<ul><li>The large residues (Bank IV) represent the high-frequency 'Ultraviolet' modes</li><li>The small residues (Bank I) represent the low-frequency 'Infrared' modes</li></ul><p>The Trace Formula proves that you cannot have the high-energy particles without the low-energy vacuum floor; they are two ends of the same geometric string.</p>",
+          "content": "<ul><li>The large residues (Bank IV) represent the high-frequency 'Ultraviolet' modes</li><li>The small residues (Bank I) represent the low-frequency 'Infrared' modes</li></ul><p>The Trace Formula implies that the high-energy (UV) modes and the low-energy vacuum floor are coupled within the same geometric spectrum; suppressing one necessarily affects the other.</p>",
           "label": "hierarchy-resolution",
           "equationNumber": "hierarchy-resolution"
         },
@@ -18093,7 +17927,7 @@
         },
         {
           "type": "note",
-          "content": "<ul><li>The large residues (Bank IV) represent the high-frequency 'Ultraviolet' modes</li><li>The small residues (Bank I) represent the low-frequency 'Infrared' modes</li></ul><p>The Trace Formula proves that you cannot have the high-energy particles without the low-energy vacuum floor; they are two ends of the same geometric string.</p>",
+          "content": "<ul><li>The large residues (Bank IV) represent the high-frequency 'Ultraviolet' modes</li><li>The small residues (Bank I) represent the low-frequency 'Infrared' modes</li></ul><p>The Trace Formula implies that the high-energy (UV) modes and the low-energy vacuum floor are coupled within the same geometric spectrum; suppressing one necessarily affects the other.</p>",
           "label": "hierarchy-resolution",
           "equationNumber": "hierarchy-resolution"
         },
@@ -18146,7 +17980,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-04-19T16:53:15.552687"
+      "timestamp": "2026-04-25T20:09:02.573319"
     },
     "C": {
       "id": "C",
@@ -18352,7 +18186,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-04-19T16:53:15.552745"
+      "timestamp": "2026-04-25T20:09:02.573382"
     },
     "D": {
       "id": "D",
@@ -18374,7 +18208,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Appendix D presents the final empirical verification of the v24.2 Sterile Model. While Appendices A, B, and C establish the internal mathematical consistency, Appendix D proves that the locked residues accurately describe the observable universe."
+          "content": "Appendix D presents the final empirical verification of the v24.2 Sterile Model. While Appendices A, B, and C establish the internal mathematical consistency, Appendix D demonstrates that the locked residues are consistent with observable universe parameters to within stated uncertainties."
         },
         {
           "type": "heading",
@@ -18454,7 +18288,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Appendix D presents the final empirical verification of the v24.2 Sterile Model. While Appendices A, B, and C establish the internal mathematical consistency, Appendix D proves that the locked residues accurately describe the observable universe."
+          "content": "Appendix D presents the final empirical verification of the v24.2 Sterile Model. While Appendices A, B, and C establish the internal mathematical consistency, Appendix D demonstrates that the locked residues are consistent with observable universe parameters to within stated uncertainties."
         },
         {
           "type": "heading",
@@ -18550,7 +18384,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-04-19T16:53:15.552797"
+      "timestamp": "2026-04-25T20:09:02.573437"
     },
     "E": {
       "id": "E",
@@ -18752,7 +18586,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-04-19T16:53:15.552846"
+      "timestamp": "2026-04-25T20:09:02.573484"
     },
     "F": {
       "id": "F",
@@ -18962,7 +18796,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-04-19T16:53:15.553319"
+      "timestamp": "2026-04-25T20:09:02.573955"
     },
     "G": {
       "id": "G",
@@ -18997,7 +18831,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Omega Seal is not merely a cryptographic hash—it is anchored to the 288-Root Checksum derived from the SO(24) transverse symmetry. This value proves that the 125 residues are mathematically derived from the ancestral geometry."
+          "content": "The Omega Seal is not merely a cryptographic hash—it is anchored to the 288-Root Checksum derived from the SO(24) transverse symmetry. This value provides a checksum confirming that the 125 residues are derived from the ancestral geometry within this construction."
         },
         {
           "type": "formula",
@@ -19145,7 +18979,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Omega Seal is not merely a cryptographic hash—it is anchored to the 288-Root Checksum derived from the SO(24) transverse symmetry. This value proves that the 125 residues are mathematically derived from the ancestral geometry."
+          "content": "The Omega Seal is not merely a cryptographic hash—it is anchored to the 288-Root Checksum derived from the SO(24) transverse symmetry. This value provides a checksum confirming that the 125 residues are derived from the ancestral geometry within this construction."
         },
         {
           "type": "formula",
@@ -19310,7 +19144,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-04-19T16:53:15.553909"
+      "timestamp": "2026-04-25T20:09:02.574534"
     },
     "H": {
       "id": "H",
@@ -19700,7 +19534,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-04-19T16:53:15.553997"
+      "timestamp": "2026-04-25T20:09:02.574618"
     },
     "I": {
       "id": "I",
@@ -20054,7 +19888,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-04-19T16:53:15.554079"
+      "timestamp": "2026-04-25T20:09:02.574710"
     },
     "J": {
       "id": "J",
@@ -20336,7 +20170,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-04-19T16:53:15.554161"
+      "timestamp": "2026-04-25T20:09:02.574795"
     },
     "K": {
       "id": "K",
@@ -20752,7 +20586,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-04-19T16:53:15.554225"
+      "timestamp": "2026-04-25T20:09:02.574862"
     },
     "L": {
       "id": "L",
@@ -20774,7 +20608,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Appendix L provides the final visualization of the v24.2 Sterile Model: the <strong>Omega Unwinding Map</strong>. This is a phase-space diagram showing the three 'Basins of Attraction' that determine how the universe terminates. The map proves that the 'End' is as predictable as the 'Beginning'—both are geometric necessities."
+          "content": "Appendix L provides the final visualization of the v24.2 Sterile Model: the <strong>Omega Unwinding Map</strong>. This is a phase-space diagram showing the three 'Basins of Attraction' that determine how the universe terminates. The map suggests the terminal state is as constrained as the initial state—both follow from the manifold geometry."
         },
         {
           "type": "heading",
@@ -20900,7 +20734,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Appendix L provides the final visualization of the v24.2 Sterile Model: the <strong>Omega Unwinding Map</strong>. This is a phase-space diagram showing the three 'Basins of Attraction' that determine how the universe terminates. The map proves that the 'End' is as predictable as the 'Beginning'—both are geometric necessities."
+          "content": "Appendix L provides the final visualization of the v24.2 Sterile Model: the <strong>Omega Unwinding Map</strong>. This is a phase-space diagram showing the three 'Basins of Attraction' that determine how the universe terminates. The map suggests the terminal state is as constrained as the initial state—both follow from the manifold geometry."
         },
         {
           "type": "heading",
@@ -21044,7 +20878,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-04-19T16:53:15.554405"
+      "timestamp": "2026-04-25T20:09:02.575035"
     },
     "Z": {
       "id": "Z",
@@ -21234,7 +21068,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-04-19T16:53:15.554502"
+      "timestamp": "2026-04-25T20:09:02.575134"
     },
     "2.2": {
       "id": "2",
@@ -21576,7 +21410,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-04-19T16:53:15.554769"
+      "timestamp": "2026-04-25T20:09:02.575383"
     },
     "R.1": {
       "id": "R",
@@ -21587,7 +21421,7 @@
       "title": "Appendix R: Vacuum Stability Analysis",
       "shortTitle": "Appendix R: Vacuum Stability Analysis",
       "order": 117,
-      "abstract": "This appendix proves that the Principia Metaphysica framework provides an absolutely stable electroweak vacuum. We show that G2 portal coupling at the GUT scale resolves the Standard Model metastability problem, yielding a vacuum lifetime far exceeding 10^100 years.",
+      "abstract": "This appendix analyses vacuum stability within the Principia Metaphysica framework. We argue that G2 portal coupling at the GUT scale resolves the Standard Model metastability problem within this construction, yielding a predicted vacuum lifetime far exceeding 10^100 years.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -22132,7 +21966,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-04-19T16:53:15.554946"
+      "timestamp": "2026-04-25T20:09:02.575559"
     },
     "S.1": {
       "id": "S",
@@ -22846,7 +22680,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-04-19T16:53:15.555056"
+      "timestamp": "2026-04-25T20:09:02.575666"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -22922,7 +22756,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-04-19T16:53:15.555322"
+      "timestamp": "2026-04-25T20:09:02.575920"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -23008,7 +22842,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-04-19T16:53:15.555376"
+      "timestamp": "2026-04-25T20:09:02.575973"
     },
     "5.1.1": {
       "id": "5",
@@ -23174,7 +23008,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-04-19T16:53:15.555462"
+      "timestamp": "2026-04-25T20:09:02.576057"
     },
     "2.3": {
       "id": "2",
@@ -23490,7 +23324,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-04-19T16:53:15.555730"
+      "timestamp": "2026-04-25T20:09:02.576292"
     },
     "5.2.1": {
       "id": "5",
@@ -23656,7 +23490,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-04-19T16:53:15.555831"
+      "timestamp": "2026-04-25T20:09:02.576394"
     },
     "6.2.1": {
       "id": "6",
@@ -23806,7 +23640,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-04-19T16:53:15.555893"
+      "timestamp": "2026-04-25T20:09:02.576459"
     },
     "7.1": {
       "id": "7",
@@ -23958,7 +23792,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-04-19T16:53:15.555956"
+      "timestamp": "2026-04-25T20:09:02.576523"
     },
     "7.3": {
       "id": "7",
@@ -24122,7 +23956,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-04-19T16:53:15.556037"
+      "timestamp": "2026-04-25T20:09:02.576602"
     }
   }
 }

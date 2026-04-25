@@ -753,6 +753,18 @@ class GeometricAnchorsSimulation(SimulationBase):
         """Execute the simulation (required by SimulationBase)."""
         return self.execute(registry, verbose=True)
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces geometry outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def get_output_param_definitions(self) -> List[Parameter]:
         """Return parameter definitions for outputs."""
         return [

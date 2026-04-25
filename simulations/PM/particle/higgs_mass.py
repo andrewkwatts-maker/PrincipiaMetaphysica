@@ -254,6 +254,69 @@ class HiggsMassSimulation(SimulationBase):
             "higgs.quartic_correction": delta_lambda_pheno,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — Higgs mass via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          δλ = κ × Re(T) × y_top²   →  ops.mul(kappa, ops.mul(re_t, ops.sqr(y_top)))
+          λ_eff = λ₀ − δλ            →  ops.sub(lambda0, delta_lambda)
+          m_h² = 8π² v² λ_eff        →  ops.mul(8π², ops.mul(v², lambda_eff))
+          m_h  = √(m_h²)             →  ops.sqrt(m_h_sq)
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_mul, eml_sub, eml_sqrt, eml_sqr, eml_pi,
+        )
+
+        self.validate_inputs(registry)
+        chi_eff = registry.get_param("topology.mephorash_chi")
+        b3 = registry.get_param("topology.elder_kads")
+        t_omega = registry.get_param("topology.T_OMEGA")
+        v_yukawa = registry.get_param("higgs.vev_yukawa")
+        y_top = registry.get_param("yukawa.y_top")
+        re_t_attractor = registry.get_param("moduli.re_t_attractor")
+        re_t_pheno = registry.get_param("moduli.re_t_phenomenological")
+
+        lambda_0 = HiggsMassParameters.LAMBDA_0
+        kappa = HiggsMassParameters.KAPPA
+        vev = HiggsVEVs.V_EW
+
+        kappa_pt = eml_scalar(float(kappa))
+        y_top_pt = eml_scalar(float(y_top))
+        v_pt = eml_scalar(float(v_yukawa))
+        lam0_pt = eml_scalar(float(lambda_0))
+
+        # δλ_pheno = κ × Re(T_pheno) × y_top²
+        delta_lam_pheno = eml_compute(eml_mul(kappa_pt, eml_mul(eml_scalar(float(re_t_pheno)), eml_sqr(y_top_pt))))
+        # δλ_geo = κ × Re(T_attractor) × y_top²
+        delta_lam_geo = eml_compute(eml_mul(kappa_pt, eml_mul(eml_scalar(float(re_t_attractor)), eml_sqr(y_top_pt))))
+
+        lam_eff_pheno = eml_compute(eml_sub(lam0_pt, eml_scalar(delta_lam_pheno)))
+        lam_eff_geo = eml_compute(eml_sub(lam0_pt, eml_scalar(delta_lam_geo)))
+
+        # 8π²
+        eight_pi2 = eml_compute(eml_mul(eml_scalar(8.0), eml_sqr(eml_pi())))
+
+        m_h_pheno_sq = eight_pi2 * float(v_yukawa) ** 2 * lam_eff_pheno
+        m_h_geo_sq = eight_pi2 * float(v_yukawa) ** 2 * lam_eff_geo
+
+        m_h_pheno = eml_compute(eml_sqrt(eml_scalar(m_h_pheno_sq))) if m_h_pheno_sq > 0 else 0.0
+        m_h_geo = eml_compute(eml_sqrt(eml_scalar(m_h_geo_sq))) if m_h_geo_sq > 0 else 0.0
+
+        stabilization_status = "RESOLVED" if abs(m_h_pheno - HiggsMassParameters.M_HIGGS_EXPERIMENTAL) < 1.0 else "NEEDS_REVIEW"
+
+        return {
+            "higgs.m_higgs_pred": m_h_pheno,
+            "higgs.m_higgs_geometric": m_h_geo,
+            "higgs.vev": float(vev),
+            "higgs.lambda_0": float(lambda_0),
+            "higgs.lambda_eff_pheno": lam_eff_pheno,
+            "higgs.lambda_eff_geometric": lam_eff_geo,
+            "moduli.stabilization_status": stabilization_status,
+            "higgs.quartic_correction": delta_lam_pheno,
+        }
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Return section content for Section 4.4.

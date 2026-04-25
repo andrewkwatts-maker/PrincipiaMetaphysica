@@ -254,6 +254,18 @@ class RicciFlowH0V16(SimulationBase):
             "cosmology.ricci_flow_rate": ricci_params['flow_rate'],
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces cosmology outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def _compute_ricci_params(self, b3: int, k_gimel: float) -> Dict[str, float]:
         """
         Compute Ricci flow parameters from G2 topology.

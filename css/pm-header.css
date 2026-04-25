@@ -388,3 +388,80 @@ body:has(.pm-header) > header:not(.pm-header),
 body:has(.pm-header) .app-header:not(.pm-header) {
     display: none !important;
 }
+
+/* ============================================
+   Math Mode Pill Switcher
+   ============================================ */
+
+/* Header controls wrapper (contains pill + mobile menu btn) */
+.pm-header .header-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+/* Pill switcher group */
+.pm-header .math-mode-switcher {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 20px;
+    padding: 2px;
+    gap: 0;
+}
+
+/* Individual pill buttons */
+.pm-header .math-mode-pill {
+    background: transparent;
+    color: rgba(255, 255, 255, 0.65);
+    border: none;
+    border-radius: 18px;
+    padding: 0.28rem 0.85rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    line-height: 1.4;
+    letter-spacing: 0.01em;
+}
+
+.pm-header .math-mode-pill:hover {
+    color: #fff;
+    background: rgba(139, 127, 255, 0.15);
+}
+
+.pm-header .math-mode-pill:focus-visible {
+    outline: 2px solid #8b7fff;
+    outline-offset: 2px;
+}
+
+/* Active (pressed) pill */
+.pm-header .math-mode-pill.active,
+.pm-header .math-mode-pill[aria-pressed="true"] {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.7), rgba(255, 126, 182, 0.5));
+    color: #fff;
+    box-shadow: 0 1px 6px rgba(139, 127, 255, 0.35);
+}
+
+/* EML pill: small glyph hint */
+.pm-header .math-mode-pill[data-mode="eml"]::before {
+    content: "⊕ ";
+    font-size: 0.7em;
+    opacity: 0.8;
+}
+
+/* Responsive: hide pill label text on small screens, keep icons */
+@media (max-width: 500px) {
+    .pm-header .math-mode-pill {
+        padding: 0.28rem 0.55rem;
+        font-size: 0.7rem;
+    }
+    .pm-header .math-mode-pill[data-mode="normal"] {
+        display: none; /* show only EML pill toggle on very small screens */
+    }
+    .pm-header .math-mode-switcher {
+        border-radius: 14px;
+    }
+}

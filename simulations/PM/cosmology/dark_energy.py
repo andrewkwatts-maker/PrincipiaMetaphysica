@@ -309,6 +309,74 @@ class DarkEnergyV16(SimulationBase):
             "cosmology.w0_validation": validation,  # Full validation result
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — dark energy via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          w₀ = -1 + 1/b₃  →  ops.add(-1, ops.inv(b3_pt))
+          wₐ = -1/√b₃     →  ops.neg(ops.inv(ops.sqrt(b3_pt)))
+          D_eff = 12 + α   →  ops.add(12, alpha_shadow)
+
+        Both paths produce numerically identical results (cross-check verified).
+        <Normal>
+        Standard arithmetic: w₀ = -1 + 1/b₃
+        </Normal>
+        <EML>
+        EML operator tree: w₀ = ops.add(eml_scalar(-1), ops.inv(eml_scalar(b₃)))
+        </EML>
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_add, eml_sub, eml_mul,
+            eml_div, eml_sqrt, eml_neg, eml_inv,
+        )
+
+        self.validate_inputs(registry)
+
+        chi_eff = self._get_chi_eff(registry)
+        b3 = self._get_b3(registry)
+
+        # EML: w₀ = -1 + 1/b₃  (thawing dark energy from G₂ topology)
+        b3_pt = eml_scalar(b3)
+        neg1_pt = eml_scalar(-1.0)
+        w0_pt = eml_add(neg1_pt, eml_inv(b3_pt))
+        w0_derived = eml_compute(w0_pt)
+
+        # EML: wₐ = -1/√b₃
+        if self.include_time_evolution:
+            wa_pt = eml_neg(eml_inv(eml_sqrt(b3_pt)))
+            wa_derived = eml_compute(wa_pt)
+        else:
+            wa_derived = 0.0
+
+        # EML: D_eff = 12 + α_shadow (α_shadow = 0.576, legacy fitted value)
+        alpha_shadow = 0.576
+        d_eff_pt = eml_add(eml_scalar(12.0), eml_scalar(alpha_shadow))
+        D_eff = eml_compute(d_eff_pt)
+
+        self.w0_derived = w0_derived
+        self.wa_derived = wa_derived
+        self.D_eff = D_eff
+
+        # Deviation uses same comparison logic
+        validation = self._compute_deviation(w0_derived, registry)
+        deviation_sigma = validation.get('sigma', 0.0)
+
+        # EML: geometric_factor = chi_eff / b3²
+        chi_pt = eml_scalar(chi_eff)
+        b3sq_pt = eml_mul(b3_pt, b3_pt)
+        geometric_factor = eml_compute(eml_div(chi_pt, b3sq_pt))
+
+        return {
+            "cosmology.w0_derived": w0_derived,
+            "cosmology.wa_derived": wa_derived,
+            "cosmology.D_eff": D_eff,
+            "cosmology.alpha_shadow": alpha_shadow,
+            "cosmology.w0_deviation": deviation_sigma,
+            "cosmology.w0_validation": validation,
+        }
+
     def _get_chi_eff(self, registry: PMRegistry) -> float:
         """Get effective Euler characteristic."""
         try:

@@ -584,6 +584,63 @@ class HubbleTensionV16(SimulationBase):
             "cosmology.knp_f_eff_GeV": self.knp_params['f_eff_GeV'],
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — Hubble tension via Mirror Phase Mathematics.
+
+        The numerical KNP/EDE/sound-horizon integrals delegate to normal path.
+        Key EML derivations for the final arithmetic:
+          δH₀/H₀ = −δr_s/r_s   →  ops.neg(ops.div(delta_rs, r_s_lcdm))
+          H₀_EDE = H₀ × (1 − δr_s/r_s)
+          tension = (H₀_SH0ES − H₀_EDE) / σ  →  ops.div(ops.sub(...), sigma)
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_sub, eml_mul, eml_div,
+        )
+
+        self.validate_inputs(registry)
+        b3 = self._get_b3(registry)
+
+        # Delegate numerical integrations to normal path
+        self.knp_params = compute_knp_parameters(b3=int(b3))
+        rho_ede = compute_ede_energy_density(
+            self.knp_params['m_required_eV'], self.knp_params['f_eff_eV']
+        )
+        H0_eV = H0_PLANCK * H0_EV_FACTOR
+        z_peak = 3500.0
+        rho_crit = compute_critical_density_eV4(z_peak, H0_eV)
+        self.f_ede_peak = rho_ede / rho_crit
+        self.r_s_lcdm = compute_sound_horizon(H0_PLANCK, OMEGA_M, OMEGA_R, OMEGA_B, Z_DEC, f_ede_peak=0.0)
+        self.r_s_ede = compute_sound_horizon(H0_PLANCK, OMEGA_M, OMEGA_R, OMEGA_B, Z_DEC, f_ede_peak=self.f_ede_peak, z_peak=z_peak)
+
+        # EML: final arithmetic
+        rs_lcdm_pt = eml_scalar(self.r_s_lcdm)
+        rs_ede_pt = eml_scalar(self.r_s_ede)
+
+        # δr_s / r_s
+        delta_rs_frac = eml_compute(eml_div(eml_sub(rs_ede_pt, rs_lcdm_pt), rs_lcdm_pt))
+
+        # H0_EDE = H0_PLANCK × (1 − δr_s/r_s)
+        H0_ede = eml_compute(eml_mul(eml_scalar(H0_PLANCK), eml_sub(eml_scalar(1.0), eml_scalar(delta_rs_frac))))
+        delta_H0 = H0_ede - H0_PLANCK
+
+        # Tension in sigma
+        tension_lcdm = eml_compute(eml_div(eml_sub(eml_scalar(H0_SHOES), eml_scalar(H0_PLANCK)), eml_scalar(H0_SHOES_ERR)))
+        tension_ede = eml_compute(eml_div(eml_sub(eml_scalar(H0_SHOES), eml_scalar(H0_ede)), eml_scalar(H0_SHOES_ERR)))
+
+        return {
+            "cosmology.H0_ede": H0_ede,
+            "cosmology.f_ede_peak": self.f_ede_peak,
+            "cosmology.r_s_lcdm": self.r_s_lcdm,
+            "cosmology.r_s_ede": self.r_s_ede,
+            "cosmology.delta_H0": delta_H0,
+            "cosmology.tension_sigma_lcdm": tension_lcdm,
+            "cosmology.tension_sigma_ede": tension_ede,
+            "cosmology.knp_S_required": self.knp_params['S_required'],
+            "cosmology.knp_f_eff_GeV": self.knp_params['f_eff_GeV'],
+        }
+
     def _get_b3(self, registry: PMRegistry) -> float:
         """Get number of associative 3-cycles from registry."""
         try:

@@ -289,6 +289,54 @@ class FermionGenerationsV16(SimulationBase):
 
         return results
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — fermion generation count via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          n_flux  = χ_eff / 6   →  ops.div(chi_eff, 6)
+          n_gen   = n_flux / 8  →  ops.div(n_flux, spinor_dof)
+          ε       = exp(-λ)     →  ops.exp(ops.neg(lambda_pt))
+          chiral  = 7/8         →  ops.div(7, 8)
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_div, eml_neg, eml_exp,
+        )
+
+        chi_eff = registry.get_param("topology.mephorash_chi")
+        b3 = registry.get_param("topology.elder_kads")
+
+        chi_pt = eml_scalar(float(chi_eff))
+        n_flux = eml_compute(eml_div(chi_pt, eml_scalar(6.0)))
+
+        n_gen_pt = eml_div(eml_scalar(n_flux), eml_scalar(float(self.spinor_dof)))
+        n_gen = eml_compute(n_gen_pt)
+
+        lam_pt = eml_scalar(self.lambda_curvature)
+        epsilon = eml_compute(eml_exp(eml_neg(lam_pt)))
+
+        chiral_filter_strength = eml_compute(
+            eml_div(eml_scalar(float(self.spin7_active)), eml_scalar(float(self.spin7_total)))
+        )
+
+        is_exact = abs(n_gen - 3.0) < 1e-10
+        results = {
+            "fermion.n_generations": int(round(n_gen)),
+            "fermion.yukawa_hierarchy": float(epsilon),
+            "fermion.chiral_filter_strength": float(chiral_filter_strength),
+            "fermion.n_flux": float(n_flux),
+            "fermion.epsilon_fn": float(epsilon),
+            "_chi_eff": chi_eff,
+            "_b3": b3,
+            "_spinor_dof": self.spinor_dof,
+            "_is_exact": is_exact,
+            "_matches_observed": (int(round(n_gen)) == 3),
+            "_lambda_curvature": self.lambda_curvature,
+        }
+        results["_lattice_verification"] = self.verify_lattice_consistency(b3, int(round(n_gen)))
+        return results
+
     def verify_lattice_consistency(self, b3: int, n_gen: int) -> Optional[Dict[str, Any]]:
         """Verify hardcoded topological values against the lattice chain."""
         try:

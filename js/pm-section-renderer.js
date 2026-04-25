@@ -452,6 +452,14 @@ class PMSectionRenderer extends HTMLElement {
     processTextContent(text) {
         if (!text || typeof text !== 'string') return text;
 
+        // Convert <EML>...</EML> and <Normal>...</Normal> blocks to mode-switching divs
+        text = text.replace(/<Normal>([\s\S]*?)<\/Normal>/g, (_, content) =>
+            `<div class="math-mode-block" data-mode="normal">${content.trim()}</div>`
+        );
+        text = text.replace(/<EML>([\s\S]*?)<\/EML>/g, (_, content) =>
+            `<div class="math-mode-block" data-mode="eml">${content.trim()}</div>`
+        );
+
         // Replace formula references: {{formula:id}}
         text = text.replace(/\{\{formula:([^}]+)\}\}/g, (match, id) => {
             // Validate that id is not empty, undefined, or null

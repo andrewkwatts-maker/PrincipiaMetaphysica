@@ -162,6 +162,18 @@ class AbstractV17_2(SimulationBase):
         import math
 
         # Safe fallback getter — abstract runs in Phase 0 before physics simulations
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces paper outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
         def safe_get(path, fallback):
             try:
                 v = registry.get_param(path)

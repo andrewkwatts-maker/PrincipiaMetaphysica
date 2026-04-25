@@ -344,6 +344,87 @@ class GaugeUnificationSimulation(SimulationBase):
             "gauge.sin2_theta_W_gut": sin2_theta_W_gut,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — gauge unification via Mirror Phase Mathematics.
+
+        Key EML derivations (arithmetic steps that use EML operators):
+          α₁(MZ) = (5/3) × α_em / cos²θ_W
+              → ops.mul(ops.div(5, 3), ops.div(alpha_em, cos2_theta_W))
+          α₂(MZ) = α_em / sin²θ_W
+              → ops.div(alpha_em, sin2_theta_W)
+          sin²θ_W(GUT) = 3/8  →  ops.div(3, 8)  [SO(10) topological prediction]
+          α_GUT_geometric = 1/23.54  →  ops.inv(23.54)
+
+        The RG running engine (GaugeRGRunner) is a complex numerical solver;
+        its internal arithmetic is delegated back to the normal path for this step.
+        <Normal>
+        α_GUT = 1/α_GUT_inv  (from RG running of SM couplings)
+        </Normal>
+        <EML>
+        α_GUT_geometric = ops.inv(eml_scalar(23.54))
+        sin²θ_W(GUT) = ops.div(eml_scalar(3), eml_scalar(8)) = 3/8
+        </EML>
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_mul, eml_div, eml_inv, eml_sub,
+        )
+
+        # Read inputs
+        M_PLANCK = registry.get_param("constants.M_PLANCK")
+        alpha_s_MZ = registry.get_param("pdg.alpha_s_MZ")
+        sin2_theta_W_MZ = registry.get_param("pdg.sin2_theta_W")
+        M_Z = registry.get_param("pdg.m_Z")
+        alpha_em = registry.get_param("constants.alpha_em")
+
+        # EML: coupling normalization at M_Z
+        sin2_pt = eml_scalar(float(sin2_theta_W_MZ))
+        alpha_em_pt = eml_scalar(float(alpha_em))
+        cos2_pt = eml_sub(eml_scalar(1.0), sin2_pt)
+
+        # EML: α₁(MZ) = (5/3) × α_em / cos²θ_W
+        five_thirds = eml_div(eml_scalar(5.0), eml_scalar(3.0))
+        alpha_1_MZ = eml_compute(eml_mul(five_thirds, eml_div(alpha_em_pt, cos2_pt)))
+
+        # EML: α₂(MZ) = α_em / sin²θ_W
+        alpha_2_MZ = eml_compute(eml_div(alpha_em_pt, sin2_pt))
+
+        # α₃(MZ) = α_s (measured directly)
+        alpha_3_MZ = float(alpha_s_MZ)
+
+        # RG running uses GaugeRGRunner (numerical solver — not pure arithmetic)
+        runner = GaugeRGRunner(
+            alpha_1_MZ=alpha_1_MZ,
+            alpha_2_MZ=alpha_2_MZ,
+            alpha_3_MZ=alpha_3_MZ,
+            M_Z=M_Z,
+            M_Planck=M_PLANCK,
+        )
+        result = runner.find_M_GUT()
+
+        M_GUT = result['M_GUT']
+        alpha_GUT = result['alpha_GUT']
+        alpha_GUT_inv = result['alpha_GUT_inv']
+
+        # EML: sin²θ_W(GUT) = 3/8  (SO(10) topological prediction)
+        sin2_theta_W_gut = eml_compute(eml_div(eml_scalar(3.0), eml_scalar(8.0)))
+
+        # EML: geometric M_GUT (torsion-derived constant)
+        M_GUT_GEOMETRIC = 2.1e16
+
+        # EML: α_GUT_geometric = 1/23.54
+        ALPHA_GUT_GEOMETRIC = eml_compute(eml_inv(eml_scalar(23.54)))
+
+        return {
+            "gauge.M_GUT": M_GUT,
+            "gauge.M_GUT_GEOMETRIC": M_GUT_GEOMETRIC,
+            "gauge.ALPHA_GUT": alpha_GUT,
+            "gauge.ALPHA_GUT_INV": alpha_GUT_inv,
+            "gauge.ALPHA_GUT_GEOMETRIC": ALPHA_GUT_GEOMETRIC,
+            "gauge.sin2_theta_W_gut": sin2_theta_W_gut,
+        }
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Generate section content for Section 3: Gauge Unification.

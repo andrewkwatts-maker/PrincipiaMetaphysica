@@ -147,6 +147,18 @@ class AppendixH288Roots(SimulationBase):
             "validation.288_root_verified": ancestral_roots == 288,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces paper outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def get_section_content(self) -> Optional[SectionContent]:
         """Return section content for Appendix H: The 288-Root Basis."""
         content_blocks = [

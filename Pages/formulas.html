@@ -2348,22 +2348,27 @@
 
     }
 
-    // Render interactive formula with hoverable terms
+    // Render interactive formula with hoverable terms (mode-aware)
     function renderInteractiveFormula(formula) {
-        // Priority 1: If we have interactive HTML (with pre-built tooltips), use it
-        // This provides the best user experience with hover tooltips
-        if (formula.html) {
-            // HTML already has formula-var spans with var-tooltip, just return it
-            return `<div class="formula-display interactive">${formula.html}</div>`;
-        }
+        const normalContent = (() => {
+            if (formula.html) return `<div class="formula-display interactive">${formula.html}</div>`;
+            if (formula.latex) return `$$${formula.latex}$$`;
+            return escapeHtml(formula.plainText || formula.plain_text || 'No equation available');
+        })();
 
-        // Priority 2: If we have LaTeX, render with MathJax
-        if (formula.latex) {
-            return `$$${formula.latex}$$`;
-        }
+        const eml_latex = formula.eml_latex || formula.emlLatex;
+        const eml_tree = formula.eml_tree_str || formula.emlTreeStr;
+        const emlContent = eml_latex
+            ? `<div class="formula-display">\$\$${escapeHtml(eml_latex)}\$\$</div>`
+            : eml_tree
+            ? `<div class="formula-display"><code class="eml-tree-code">${escapeHtml(eml_tree)}</code></div>`
+            : `<div class="formula-display" style="opacity:0.6;font-size:0.85em;">
+                <span class="eml-mode-badge">&#8853; EML</span>
+                Equivalent EML computation path — same numerical result via Mirror Phase operators.
+               </div>`;
 
-        // Fallback to plain text (support both plainText and plain_text)
-        return escapeHtml(formula.plainText || formula.plain_text || 'No equation available');
+        return `<div class="normal-formula">${normalContent}</div>
+                <div class="eml-formula">${emlContent}</div>`;
     }
 
     // Wrap formula terms with hoverable tooltips

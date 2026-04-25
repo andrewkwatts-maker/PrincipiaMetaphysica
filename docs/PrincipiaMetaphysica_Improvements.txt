@@ -1,0 +1,397 @@
+# PrincipiaMetaphysica Improvements — Library Function Reference
+
+This file maps each conceptual improvement from the PrincipiaMetaphysica design
+discussions to the concrete eml-math library functions that implement the
+underlying mathematics. Use these library APIs as the computational backbone
+for each PM concept.
+
+All referenced functions/classes are being added as part of the v0.5.0 roadmap.
+Existing (v0.4.0a0) functions are marked [EXISTING].
+
+==============================================================================
+CONCEPT: The 4 Frames of Reference
+==============================================================================
+
+The idea that any EML pair (exp(x), ln(y)) can be expressed in 4 canonical
+orientations — rotated by {×1, ×i, ×-1, ×-i} — while the distance Δ between
+the points remains invariant.
+
+Library functions:
+  EMLPoint.canonical_frame(k: int) -> EMLPair
+      Returns the pair coordinates rotated to frame k ∈ {0, 1, 2, 3}.
+      Frame 0: (exp(x),  ln(y))   — identity
+      Frame 1: (-ln(y),  exp(x))  — ×i rotation
+      Frame 2: (-exp(x), -ln(y))  — ×-1 rotation
+      Frame 3: (ln(y),  -exp(x))  — ×-i rotation
+
+  EMLPair.frames(self) -> list[EMLPair]
+      Returns all 4 frame variants of the current pair in one call.
+
+  EMLPoint.pair(self) -> EMLPair        [AXIOM 8 SAFE]
+      Returns the canonical (exp(x), ln(|y|)) coordinate pair as an EMLPair.
+      This is the raw geometric vector that all 4 frames rotate.
+
+Key invariant: EMLPoint.euclidean_delta() is identical across all 4 frames.
+
+
+==============================================================================
+CONCEPT: The Invariant Δ (Euclidean)
+==============================================================================
+
+The Euclidean distance Δ = √(exp(x)² + (ln y)²) is rotationally invariant
+under the 4-frame group and forms the geometric foundation for calculus,
+analytic geometry, and continuous mathematics.
+
+Library functions:
+  EMLPoint.euclidean_delta(self) -> float
+      The invariant Euclidean length: sqrt(exp(2x) + (ln y)^2).
+      Corresponds to EMLPair.modulus on the pair. [EXISTING via modulus]
+
+  EMLPair.modulus                         [EXISTING]
+      Direct access to the Euclidean Δ from the pair side.
+
+  From Δ you can rebuild:
+    - Euclidean geometry (distances, circles, Pythagoras)
+    - Calculus (limits as Δ → 0)
+    - Coordinate geometry (analytic geometry of the plane)
+    - Complex numbers (rotations preserving Δ)
+
+
+==============================================================================
+CONCEPT: The Minkowski Invariant Δ_M (Relativistic Interval)
+==============================================================================
+
+Replace the Euclidean metric with the Minkowski signature (+,-,-,-) to obtain
+the spacetime interval ds² = exp(2x) - c²·(ln y)². This is the fundamental
+invariant of special relativity: all inertial observers agree on Δ_M.
+
+Library functions:
+  EMLPoint.minkowski_delta(signature="+---", c=1.0) -> float
+      The Minkowski invariant interval: sqrt(|exp(2x) - (c·ln y)^2|).
+      Reduces to proper time τ for timelike worldlines.
+
+  EMLPoint.is_timelike(c=1.0) -> bool
+      True when exp(2x) > (c·ln y)^2.
+
+  EMLPoint.is_spacelike(c=1.0) -> bool
+      True when exp(2x) < (c·ln y)^2.
+
+  EMLPoint.is_lightlike(c=1.0, tol=1e-9) -> bool
+      True when the interval is ≈ 0 (on the light cone).
+
+  EMLPoint.rest_energy(c=1.0) -> float
+      Δ_M interpreted as rest energy E₀ = m·c² (natural units: c=1, E₀ = m).
+
+  EMLPoint.proper_time(c=1.0) -> float
+      Proper time τ = Δ_M / c for timelike worldlines.
+
+  EMLState.minkowski_pulse(n_pulses, signature="+---") -> list[EMLState]
+      Runs Mirror-Pulse simulation tracking Δ_M at each step.
+      Note: access Δ_M at each step via state.point.minkowski_delta().
+
+  simulation.verify_conservation(traj, check_minkowski=True) -> bool
+      Extends the existing Axiom 10 check to also verify Δ_M conservation.
+
+
+==============================================================================
+CONCEPT: Lorentz Boosts and Rapidity
+==============================================================================
+
+A Lorentz boost by rapidity φ is a hyperbolic rotation of the pair coordinates:
+  (t', x') = (t·cosh(φ) - x·sinh(φ),  x·cosh(φ) - t·sinh(φ))
+where t = exp(x_coord) and x = ln(y_coord). The invariant Δ_M is unchanged.
+Rapidity is native to EML because cosh, sinh, tanh are already in the 36-op tree.
+
+Library functions:
+  EMLPoint.boost(phi: float, c=1.0, pure_eml=False) -> EMLPoint
+      Apply Lorentz boost by rapidity φ. Returns new EMLPoint with identical Δ_M.
+      pure_eml=True uses ops.cosh/ops.sinh symbolic trees (fully self-bootstrapped).
+
+  EMLPoint.boost_velocity(v: float, c=1.0) -> EMLPoint
+      Convenience: boost by ordinary velocity v (internally converts to rapidity).
+
+  EMLPoint.rapidity(self) -> float
+      Extract the rapidity φ = atanh(space/time) of the current point.
+      (Raises ValueError for spacelike points where |space| ≥ |time|.)
+
+  FourMomentum.boost(phi: float) -> FourMomentum
+      Boost the full 4-momentum object preserving invariant mass.
+
+Key insight: Rapidity is generated by ops.atanh() from the existing 36-op tree,
+making Lorentz boosts a fully self-bootstrapped EML computation.
+
+
+==============================================================================
+CONCEPT: The Light Cone and Causality
+==============================================================================
+
+Events in spacetime are classified by their relationship to the light cone:
+timelike (causally connected), spacelike (causally disconnected), or lightlike
+(on the cone itself). Null coordinates (u, v) = (t+x, t-x) parametrise null
+rays (photon worldlines).
+
+Library functions:
+  EMLPoint.light_cone_coordinates(c=1.0) -> tuple[float, float]
+      Returns (u, v) = (t + x/c, t - x/c) in light-cone gauge.
+
+  EMLPoint.light_cone_type(c=1.0) -> str
+      Returns "timelike", "spacelike", or "lightlike".
+
+  EMLPoint.future_light_cone(c=1.0) -> bool
+      True if the event is in the causal future of the origin.
+
+
+==============================================================================
+CONCEPT: Four-Momentum and E = mc²
+==============================================================================
+
+The relativistic 4-momentum p^μ = (E/c, p_x, p_y, p_z) is built from the EML
+pair coordinates. The invariant mass m = Δ_M / c² arises naturally. E = mc²
+follows when momentum p = 0 (rest frame).
+
+Library functions:
+  FourMomentum (eml_math.momentum.FourMomentum)
+      .point      — the underlying EMLPoint
+      .energy     — E = exp(x) in pair-space
+      .momentum   — p = ln(|y|) / c
+      .mass       — m = Δ_M / c² (automatically computed)
+      .gamma()    — Lorentz factor γ = E / (mc²)
+      .boost(phi) — boost preserving invariant mass
+
+  FourMomentum.from_mass_velocity(mass, v, c=1.0) -> FourMomentum
+      Construct from classical rest mass and velocity.
+
+  MinkowskiFourVector (eml_math.fourvector.MinkowskiFourVector)
+      Full 3+1D generalization with .t, .x, .y, .z EMLPoint components.
+      .minkowski_norm() — Δ_M in 3+1D
+      .boost(phi, direction="x") — full 3+1D boost
+
+
+==============================================================================
+CONCEPT: Planck-Scale Discrete Lattice Metric
+==============================================================================
+
+In discrete D-mode (Planck quantization), the continuous Δ_M is rounded to the
+nearest Planck unit (1/D). This creates a natural lattice metric for quantized
+spacetime — a toy quantum gravity model where distance is an integer multiple
+of the Planck length.
+
+Library functions:
+  discrete.planck_delta(point, D=PLANCK_D) -> float
+      Quantized Δ_M: round(Δ_M × D) / D.
+
+  discrete.lattice_distance(p1, p2, D=PLANCK_D) -> float
+      Discrete invariant distance between two quantized EMLPoints.
+
+  discrete.is_lattice_neighbor(p1, p2, D=PLANCK_D) -> bool
+      True if the two points are exactly one Planck step apart.
+
+  constants.PLANCK_D = 6.187e34                        [EXISTING]
+  EMLPoint(..., D=PLANCK_D)                            [EXISTING]
+      D-mode quantization on any EMLPoint.
+
+
+==============================================================================
+CONCEPT: Curved Spacetime (General Relativity)
+==============================================================================
+
+Replace the flat Minkowski metric with a curved metric g_{μν}(p) defined at
+each EMLPoint. Geodesics follow the equation:
+  d²x^μ/dτ² + Γ^μ_{αβ} (dx^α/dτ)(dx^β/dτ) = 0
+where Γ are the Christoffel symbols of the second kind. Δ_M is conserved
+automatically along geodesic solutions.
+
+Library functions:
+  MetricTensor (eml_math.metric.MetricTensor)
+      .ds2(p, dx, dy)         — line element ds² at point p
+      .proper_time(p, dx, dy) — √|ds²|
+      .is_curved()            — check if non-flat
+      .christoffel(lam, mu, nu, p) — numeric Γ via finite differences
+
+  MetricTensor.flat()                   — flat Minkowski (+,-) in 2D
+  MetricTensor.schwarzschild(rs=2.0)    — Schwarzschild black-hole metric
+  MetricTensor.flrw(scale_factor_a, k=0) — FLRW expanding universe
+  MetricTensor.ads5_x_s5(L=1.0)        — AdS₅ × S⁵ (holographic)
+  MetricTensor.klebanov_strassler(gsM)  — warped deformed conifold
+  MetricTensor.calabi_yau_3(kahler_potential) — CY3 Kähler manifold
+  MetricTensor.g2_holonomy()            — G₂-holonomy 7-manifold (M-theory)
+  MetricTensor.heterotic_e8x8(radius)   — E₈ × E₈ torus (heterotic strings)
+
+  EMLState.geodesic_step(metric, dtau=0.01) -> EMLState
+      One proper-time step along a geodesic, updating the EMLState trajectory.
+
+
+==============================================================================
+CONCEPT: N-Dimensional Geometry, E₈ and Leech Lattices
+==============================================================================
+
+Extension from 2D EML pairs to N-dimensional vectors, enabling exceptional
+geometry (G₂, E₈, F₄) and lattice mathematics (E₈ in 8D, Leech in 24D).
+The invariant norm is the N-dimensional generalization of Δ.
+
+Library functions:
+  EMLNDVector (eml_math.ndim.EMLNDVector)
+      .coords            — numpy array of real components
+      .eml_coords        — list of EMLPoints (symbolic trees preserved)
+      .euclidean_norm()  — √(Σ xᵢ²)
+      .minkowski_norm_nd(signature) — generalized Δ_M with N-dim signature
+
+  ndim.e8_lattice_points(n_points=10, scale=1.0) -> list[EMLNDVector]
+      E₈ root lattice vectors in 8D (even unimodular, min norm = √2).
+
+  ndim.e8_min_norm() -> float         — returns √2
+
+  ndim.leech_lattice_points(n_points=5, scale=1.0) -> list[EMLNDVector]
+      Leech lattice vectors in 24D (196560 minimal vectors, min norm = 2).
+
+  ndim.leech_min_norm() -> float      — returns 2
+
+
+==============================================================================
+CONCEPT: Octonion Algebra and G₂ Automorphisms
+==============================================================================
+
+The octonions (𝕆) are the 8-dimensional non-associative normed division algebra
+with basis {1, e₁…e₇} and multiplication table given by the Fano plane.
+G₂ is exactly the automorphism group of the octonions (the group preserving
+the multiplication table). E₈ root lattice lives inside the octonions.
+
+Library functions:
+  Octonion (eml_math.octonion.Octonion)
+      .components   — 8 EMLPoints (symbolic)
+      .__mul__(other) -> Octonion     — non-associative Fano-table product
+      .conjugate()  -> Octonion      — flip signs of e₁…e₇
+      .norm()       -> float         — |o| = √(o·ō), multiplicative
+      .to_ndvector() -> EMLNDVector  — bridge to lattice machinery
+
+  octonion.basis_octonion(i: int) -> Octonion
+      Returns the i-th basis element e_i (i=0 is real unit, i=1..7 imaginaries).
+
+  octonion.is_g2_automorphism(o1, o2, g2_map) -> bool
+      Verify whether a given linear map preserves the octonion product.
+
+  MetricTensor.g2_holonomy(octo_structure=None) -> MetricTensor
+      G₂-holonomy metric induced by the octonion associative 3-form φ.
+
+
+==============================================================================
+CONCEPT: Geometric (Clifford) Algebra — The Unified Operator
+==============================================================================
+
+The geometric product ab = a·b + a∧b (inner + outer) is the single bilinear
+operator that unifies all previous constructions:
+  - Euclidean/Minkowski Δ → quadratic form v·v
+  - 4-frame rotations, boosts → rotors R = exp(-Bθ/2)
+  - FourMomentum, 4-vectors → grade-1 multivectors
+  - All metric tensors → signature of the algebra
+  - Octonions/G₂/E₈/Leech → subalgebras / grade-restricted elements
+  - Geodesic parallel transport → rotor sandwich R·v·R̃
+
+This is the capstone: EML provides the scalar/analysis layer, Clifford provides
+the geometry/physics layer — both self-consistent under one EML primitive.
+
+Library functions:
+  EMLMultivector (eml_math.geometric_algebra.EMLMultivector)
+      .components    — list[EMLPoint] (symbolic trees)
+      .signature     — tuple[int, ...] (e.g. (1,-1,-1,-1) for Minkowski)
+      .__mul__(other) — THE geometric product (inner + outer)
+      .quadratic()   — v·v in any signature (replaces all Δ methods)
+      .reverse()     — grade reversal ~A
+      .rotor(angle, plane) -> EMLMultivector  — R = exp(-Bθ/2)
+      .rotate(R) -> EMLMultivector            — sandwich R·v·R̃
+      .exp()         — element-wise exp via EML ops trees
+
+  EMLMultivector.spacetime(comps) — (1,-1,-1,-1) Minkowski STA
+  EMLMultivector.g2(comps)        — (1,)*7 for G₂/octonion subalgebra
+  EMLMultivector.flrw(comps, scale_factor) — FLRW cosmology signature
+  EMLMultivector.e8(comps)        — (1,)*8 for E₈ lattice
+  EMLMultivector.leech(comps)     — (1,)*24 for Leech lattice
+
+How previous PM concepts collapse into EMLMultivector:
+  4-frame rotations    → v.rotor(π/2, (0,1))
+  Boost by rapidity φ  → v.rotor(φ, (0,1)) with Minkowski signature
+  Euclidean Δ          → v.quadratic() with Euclidean signature
+  Minkowski Δ_M        → v.quadratic() with Minkowski signature
+  Octonion product     → EMLMultivector(comps, (1,)*7).__mul__(...)
+  Geodesic step        → state.rotate(connection_rotor)
+
+
+==============================================================================
+CONCEPT: String Theory Metrics
+==============================================================================
+
+All the following string/M-theory geometries are available as MetricTensor
+factory methods. Each uses EMLPoint coordinates, respects the D-mode discrete
+quantization, and conserves the appropriate generalized Δ_M automatically
+through the geodesic integrator.
+
+Library functions by physics context:
+  M-theory (11D) compactified on G₂:
+      MetricTensor.g2_holonomy()           — Ricci-flat 7-manifold
+      EMLMultivector.g2(comps)             — octonionic 7D algebra
+
+  Type IIA/IIB on Calabi-Yau 3-fold:
+      MetricTensor.calabi_yau_3(kahler_potential)
+      (CY3 Kähler metrics from ∂∂̄K; mirror symmetry = EML frame duality)
+
+  Flux compactifications (Klebanov-Strassler throat):
+      MetricTensor.klebanov_strassler(gsM) — warped deformed conifold
+      (radial coordinate = exp(x), warping = pure EML tree)
+
+  Heterotic E₈ × E₈ on torus:
+      MetricTensor.heterotic_e8x8(radius)
+      ndim.e8_lattice_points()             — root lattice vectors
+
+  Holographic AdS/CFT (Maldacena):
+      MetricTensor.ads5_x_s5(L)            — AdS₅ × S⁵ in 10D
+      EMLState.geodesic_step(metric)       — bulk geodesics → boundary correlators
+
+  Cosmology (FLRW):
+      MetricTensor.flrw(scale_factor_a, k) — expanding universe
+      EMLMultivector.flrw(comps, a)        — time-dependent signature
+
+
+==============================================================================
+QUICK-REFERENCE: PM CONCEPT → LIBRARY FUNCTION MAP
+==============================================================================
+
+PM Concept                       | eml-math function/class
+---------------------------------|----------------------------------------
+4 frames of reference            | EMLPoint.canonical_frame(k)
+                                 | EMLPair.frames()
+Invariant Δ (Euclidean)          | EMLPoint.euclidean_delta()
+                                 | EMLPair.modulus  [EXISTING]
+Invariant Δ_M (Minkowski)        | EMLPoint.minkowski_delta()
+Timelike / spacelike / lightlike | EMLPoint.is_timelike/spacelike/lightlike()
+Event classification             | EMLPoint.light_cone_type()
+Light-cone coordinates           | EMLPoint.light_cone_coordinates()
+Lorentz boost                    | EMLPoint.boost(phi)
+Velocity boost                   | EMLPoint.boost_velocity(v)
+Rapidity                         | EMLPoint.rapidity()
+Rest energy E₀ = mc²             | EMLPoint.rest_energy()
+Proper time τ                    | EMLPoint.proper_time()
+4-momentum vector                | FourMomentum (eml_math.momentum)
+Full 3+1D 4-vector               | MinkowskiFourVector (eml_math.fourvector)
+Planck lattice metric            | discrete.planck_delta()
+Planck neighbour check           | discrete.is_lattice_neighbor()
+Lorentz-conservation pulses      | EMLState.minkowski_pulse()
+Curved spacetime                 | MetricTensor (eml_math.metric)
+Schwarzschild black hole         | MetricTensor.schwarzschild()
+FLRW cosmology                   | MetricTensor.flrw()
+Geodesic integration             | EMLState.geodesic_step(metric)
+N-dimensional vectors            | EMLNDVector (eml_math.ndim)
+E₈ lattice (8D)                  | ndim.e8_lattice_points()
+Leech lattice (24D)              | ndim.leech_lattice_points()
+Octonion algebra                 | Octonion (eml_math.octonion)
+G₂ automorphism                  | octonion.is_g2_automorphism()
+G₂-holonomy metric               | MetricTensor.g2_holonomy()
+Calabi-Yau 3-fold                | MetricTensor.calabi_yau_3()
+Klebanov-Strassler throat        | MetricTensor.klebanov_strassler()
+Heterotic E₈ × E₈               | MetricTensor.heterotic_e8x8()
+AdS₅ × S⁵ holography            | MetricTensor.ads5_x_s5()
+Geometric (Clifford) product     | EMLMultivector.__mul__ (eml_math.geometric_algebra)
+Rotor (rotation/boost unified)   | EMLMultivector.rotor(angle, plane)
+Sandwich product (transport)     | EMLMultivector.rotate(R)
+Spacetime algebra STA            | EMLMultivector.spacetime(comps)
+G₂ Clifford algebra              | EMLMultivector.g2(comps)
+Capstone unification             | EMLMultivector (all above derived from one op)
