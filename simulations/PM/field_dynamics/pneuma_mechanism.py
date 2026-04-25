@@ -256,6 +256,67 @@ class PneumaMechanismV16(SimulationBase):
     # HELPER METHODS
     # =========================================================================
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — Pneuma mechanism via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          N_flux   = χ/6                                  →  ops.div(chi_eff, 6)
+          mass     = M_Planck / √χ                        →  ops.div(M_P, ops.sqrt(chi))
+          coupling = √(b₃/24) × g₂_norm × m_h/M_P       →  ops.mul(sqrt_topo, hierarchy)
+          VEV      = ln(Bb/Aa)/(b−a)                      →  ops.div(ops.ln(...), ops.sub(b,a))
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_div, eml_sqrt, eml_mul, eml_ln, eml_sub,
+        )
+
+        M_PLANCK = registry.get_param("constants.M_PLANCK")
+        m_higgs = registry.get_param("pdg.m_higgs")
+        chi_eff = registry.get_param("topology.mephorash_chi") if registry.has_param("topology.mephorash_chi") else 144
+        b3 = registry.get_param("topology.elder_kads") if registry.has_param("topology.elder_kads") else 24
+
+        M_P = float(M_PLANCK)
+        m_h = float(m_higgs)
+        chi_f = float(chi_eff)
+        b3_f = float(b3)
+
+        # Initialize racetrack coefficients (same as run())
+        N_flux = int(chi_f) // 6
+        self.a = 2 * 3.141592653589793 / N_flux
+        self.b = 2 * 3.141592653589793 / (N_flux - 1)
+
+        # mass_scale = M_Planck / √χ
+        mass_scale = eml_compute(eml_div(eml_scalar(M_P), eml_sqrt(eml_scalar(chi_f))))
+
+        # coupling = √(b3/24) × g2_norm × m_h/M_P
+        topo_pt = eml_sqrt(eml_div(eml_scalar(b3_f), eml_scalar(24.0)))
+        hier_pt = eml_div(eml_scalar(m_h), eml_scalar(M_P))
+        coupling = eml_compute(eml_mul(topo_pt, eml_mul(eml_scalar(self.g2_norm), hier_pt)))
+
+        # VEV = ln(B×b / (A×a)) / (b − a)
+        A_f = float(self.A)
+        B_f = float(self.B)
+        a_f = self.a
+        b_f = self.b
+        num_ln = eml_ln(eml_div(eml_mul(eml_scalar(B_f), eml_scalar(b_f)), eml_mul(eml_scalar(A_f), eml_scalar(a_f))))
+        denom = eml_sub(eml_scalar(b_f), eml_scalar(a_f))
+        vev = eml_compute(eml_div(num_ln, denom))
+
+        flow_parameter = self._compute_flow_parameter()
+        lagrangian_valid = self._validate_lagrangian(vev)
+        n_bridge_pairs = int(b3_f) // 2
+
+        return {
+            "pneuma.coupling": coupling,
+            "pneuma.flow_parameter": float(flow_parameter),
+            "pneuma.lagrangian_valid": bool(lagrangian_valid),
+            "pneuma.vev": vev,
+            "pneuma.mass_scale": mass_scale,
+            "pneuma.n_bridge_pairs": n_bridge_pairs,
+            "pneuma.neural_gate_active": bool(lagrangian_valid and n_bridge_pairs == self.N_BRIDGE_PAIRS),
+        }
+
     def _superpotential_derivative(self, psi: float) -> float:
         """
         Derivative dW/dPsi of racetrack superpotential.

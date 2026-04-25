@@ -1046,3 +1046,15 @@ if __name__ == "__main__":
 
     # Optionally generate visualizations (uncomment to run)
     # generate_visualizations(show=True)
+
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces consciousness outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)

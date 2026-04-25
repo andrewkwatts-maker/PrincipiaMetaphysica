@@ -22,7 +22,7 @@ Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 import math
 import numpy as np
-from typing import Optional, List, Tuple
+from typing import Optional, List, Tuple, Dict, Any
 
 from simulations.PM.algebra.e8_root_system import E8RootSystem
 from simulations.PM.algebra.leech_lattice import LeechLattice
@@ -356,6 +356,18 @@ class PlanckLatticeSimulation:
         }
 
         return results
+
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces geometry outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
 
     def verify(self) -> dict:
         """Verify all simulation properties."""

@@ -810,3 +810,98 @@ html {
     background: rgba(139, 127, 255, 0.3);
     color: var(--text-primary);
 }
+
+/* ============================================
+   Math Mode Switching — Global Rules
+   ============================================
+
+   Apply [data-math-mode="normal|eml"] to <html> via js/math-mode.js.
+   CSS handles all show/hide logic; no JS re-render needed after mode switch.
+
+   Usage in HTML:
+     <div class="math-mode-block" data-mode="normal">Standard formula here</div>
+     <div class="math-mode-block" data-mode="eml">EML formula here</div>
+
+     <span class="math-mode-inline" data-mode="normal">α⁻¹ = b₃/(4πk)</span>
+     <span class="math-mode-inline" data-mode="eml">ops.div(b3, ops.mul(4π, k))</span>
+
+   For formula cards with separate displays:
+     <div class="formula-display normal-formula">LaTeX here</div>
+     <div class="formula-display eml-formula">EML LaTeX here</div>
+   ============================================ */
+
+/* Block-level math mode sections */
+.math-mode-block {
+    display: block;
+}
+
+/* Default (no data-math-mode set): show normal, hide eml */
+:not([data-math-mode]) .math-mode-block[data-mode="eml"],
+[data-math-mode="normal"] .math-mode-block[data-mode="eml"] {
+    display: none !important;
+}
+
+[data-math-mode="eml"] .math-mode-block[data-mode="normal"] {
+    display: none !important;
+}
+
+/* Inline math mode spans */
+.math-mode-inline {
+    display: inline;
+}
+
+:not([data-math-mode]) .math-mode-inline[data-mode="eml"],
+[data-math-mode="normal"] .math-mode-inline[data-mode="eml"] {
+    display: none !important;
+}
+
+[data-math-mode="eml"] .math-mode-inline[data-mode="normal"] {
+    display: none !important;
+}
+
+/* Formula display panels (for formula cards) */
+:not([data-math-mode]) .eml-formula,
+[data-math-mode="normal"] .eml-formula {
+    display: none !important;
+}
+
+[data-math-mode="eml"] .normal-formula {
+    display: none !important;
+}
+
+/* EML mode indicator badge (shown in EML mode) */
+.eml-mode-badge {
+    display: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #8b7fff;
+    background: rgba(139, 127, 255, 0.12);
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 10px;
+    padding: 0.1rem 0.5rem;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+}
+
+[data-math-mode="eml"] .eml-mode-badge {
+    display: inline;
+}
+
+/* EML formula code blocks (inline code style) */
+.eml-tree-code {
+    font-family: 'Source Code Pro', 'Courier New', monospace;
+    font-size: 0.82em;
+    color: #a394ff;
+    background: rgba(139, 127, 255, 0.08);
+    border-radius: 4px;
+    padding: 0.1em 0.4em;
+}
+
+/* Smooth transition hint — prevents jarring flash on mode switch */
+.math-mode-block,
+.math-mode-inline,
+.normal-formula,
+.eml-formula {
+    transition: opacity 0.15s ease;
+}

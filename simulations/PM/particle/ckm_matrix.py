@@ -430,6 +430,100 @@ class CKMMatrixSimulation(SimulationBase):
             "_K_matching": K_matching,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — CKM matrix via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          V_ub = √(V_ub_real² + V_ub_imag²)  →  ops.hypot(real, imag)
+          V_ud = √(1 − V_us² − V_ub²)        →  ops.sqrt(ops.sub(1, ops.add(sq1, sq2)))
+          J    = A² λ⁶ η                      →  ops.mul(ops.sqr(A), ops.mul(pow6, eta))
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_mul, eml_sub, eml_sqr, eml_sqrt,
+            eml_pow, eml_add, eml_hypot,
+        )
+
+        epsilon = registry.get_param("fermion.epsilon_fn")
+        n_gen = registry.get_param("fermion.n_generations")
+        K_matching = registry.get_param("topology.K_MATCHING")
+
+        lam = float(epsilon)
+        A_w = self.GEOMETRIC_A
+        delta_cp = self.TOPOLOGICAL_PHASE
+        eta_w = 0.36
+        rho_w = 0.14
+
+        # V_us = λ
+        V_us = lam
+
+        # V_ub = hypot(A λ³ ρ, A λ³ η)
+        lam3_pt = eml_pow(eml_scalar(lam), eml_scalar(3.0))
+        A_pt = eml_scalar(float(A_w))
+        V_ub_real = eml_compute(eml_mul(A_pt, eml_mul(lam3_pt, eml_scalar(rho_w))))
+        V_ub_imag = eml_compute(eml_mul(A_pt, eml_mul(lam3_pt, eml_scalar(eta_w))))
+        V_ub = eml_compute(eml_hypot(eml_scalar(V_ub_real), eml_scalar(V_ub_imag)))
+
+        # V_ud = √(1 − V_us² − V_ub²)
+        V_ud = eml_compute(eml_sqrt(eml_sub(eml_scalar(1.0), eml_add(eml_sqr(eml_scalar(V_us)), eml_sqr(eml_scalar(V_ub))))))
+
+        # V_cd = λ,  V_cb = A λ²
+        V_cd = lam
+        lam2_pt = eml_pow(eml_scalar(lam), eml_scalar(2.0))
+        V_cb = eml_compute(eml_mul(A_pt, lam2_pt))
+
+        # V_cs = √(1 − V_cd² − V_cb²)
+        V_cs = eml_compute(eml_sqrt(eml_sub(eml_scalar(1.0), eml_add(eml_sqr(eml_scalar(V_cd)), eml_sqr(eml_scalar(V_cb))))))
+
+        # V_td = hypot(A λ³ (1−ρ), A λ³ η)
+        V_td_real = eml_compute(eml_mul(A_pt, eml_mul(lam3_pt, eml_sub(eml_scalar(1.0), eml_scalar(rho_w)))))
+        V_td_imag = eml_compute(eml_mul(A_pt, eml_mul(lam3_pt, eml_scalar(eta_w))))
+        V_td = eml_compute(eml_hypot(eml_scalar(V_td_real), eml_scalar(V_td_imag)))
+
+        V_ts = V_cb
+
+        # V_tb = √(1 − V_td² − V_ts²)
+        V_tb = eml_compute(eml_sqrt(eml_sub(eml_scalar(1.0), eml_add(eml_sqr(eml_scalar(V_td)), eml_sqr(eml_scalar(V_ts))))))
+
+        # Jarlskog: J = A² λ⁶ η
+        lam6_pt = eml_pow(eml_scalar(lam), eml_scalar(6.0))
+        J = eml_compute(eml_mul(eml_sqr(A_pt), eml_mul(lam6_pt, eml_scalar(eta_w))))
+
+        unitarity_row1 = V_ud**2 + V_us**2 + V_ub**2
+        unitarity_col1 = V_ud**2 + V_cd**2 + V_td**2
+        unitarity_test = max(abs(unitarity_row1 - 1.0), abs(unitarity_col1 - 1.0))
+
+        return {
+            "ckm.V_us": V_us, "ckm.V_cb": V_cb, "ckm.V_ub": V_ub,
+            "ckm.V_td": V_td, "ckm.V_ts": V_ts, "ckm.V_tb": V_tb,
+            "ckm.V_ud": V_ud, "ckm.V_cd": V_cd, "ckm.V_cs": V_cs,
+            "ckm.jarlskog_invariant": J,
+            "ckm.lambda_wolfenstein": lam, "ckm.A_wolfenstein": A_w,
+            "ckm.rho_wolfenstein": rho_w, "ckm.eta_wolfenstein": eta_w,
+            "ckm.delta_cp": delta_cp,
+            "ckm.unitarity_test": unitarity_test,
+            "ckm.unitarity_row1": unitarity_row1,
+            "ckm.unitarity_col1": unitarity_col1,
+            "_V_us_sigma": abs(V_us - self.PDG_V_us) / self.PDG_V_us_err,
+            "_V_cb_sigma": abs(V_cb - self.PDG_V_cb) / self.PDG_V_cb_err,
+            "_V_ub_sigma": abs(V_ub - self.PDG_V_ub) / self.PDG_V_ub_err,
+            "_V_td_sigma": abs(V_td - self.PDG_V_td) / self.PDG_V_td_err,
+            "_V_ts_sigma": abs(V_ts - self.PDG_V_ts) / self.PDG_V_ts_err,
+            "_V_tb_sigma": abs(V_tb - self.PDG_V_tb) / self.PDG_V_tb_err,
+            "_J_sigma": abs(J - self.PDG_J) / self.PDG_J_err,
+            "_all_within_3sigma": all([
+                abs(V_us - self.PDG_V_us) / self.PDG_V_us_err < 3.0,
+                abs(V_cb - self.PDG_V_cb) / self.PDG_V_cb_err < 3.0,
+                abs(V_ub - self.PDG_V_ub) / self.PDG_V_ub_err < 3.0,
+                abs(V_td - self.PDG_V_td) / self.PDG_V_td_err < 3.0,
+                abs(V_ts - self.PDG_V_ts) / self.PDG_V_ts_err < 3.0,
+                abs(V_tb - self.PDG_V_tb) / self.PDG_V_tb_err < 3.0,
+                abs(J - self.PDG_J) / self.PDG_J_err < 3.0,
+            ]),
+            "_epsilon": epsilon, "_K_matching": K_matching,
+        }
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Return section content for Section 4.3 - CKM Matrix and Quark Mixing.

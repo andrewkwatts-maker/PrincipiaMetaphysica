@@ -373,6 +373,18 @@ class S8SuppressionV16(SimulationBase):
             "cosmology.s8_improvement_factor": improvement_factor,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces cosmology outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def _get_experimental_measurements(self) -> Dict[str, S8Measurement]:
         """
         Return experimental S8 measurements from literature.

@@ -136,6 +136,9 @@ class Formula:
         output_params: List of output parameter paths (snake_case for Python - legacy)
         derivation: Optional derivation dict with steps
         terms: Dictionary of term definitions
+        eml_latex: LaTeX representation using EML operator notation (ops.div, ops.mul, ...)
+        eml_tree_str: Python ops tree string for EML mode display
+        eml_description: Description of the formula in EML/Mirror Phase Mathematics language
     """
     id: str
     label: str
@@ -150,6 +153,9 @@ class Formula:
     output_params: List[str] = field(default_factory=list)
     derivation: Optional[Dict[str, Any]] = None
     terms: Dict[str, Any] = field(default_factory=dict)
+    eml_latex: str = ""          # LaTeX in EML operator notation
+    eml_tree_str: str = ""       # Python ops tree string for display
+    eml_description: str = ""    # EML-mode description
 
     def __post_init__(self):
         """Generate title from description if not provided. Sync param field conventions."""
@@ -331,6 +337,29 @@ class SimulationBase(ABC):
             Dictionary mapping parameter paths to computed values
         """
         pass
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path using Mirror Phase Mathematics.
+
+        Computes the same parameters as run() but via the EML Sheffer operator
+        eml(x, y) = exp(x) - ln(y) and the eml_math library.
+
+        Results MUST agree with run() to within rtol=1e-6 (verified by
+        the EML cross-check system in simulations/core/eml_cross_check.py).
+
+        Subclasses should override this method to provide a genuine EML
+        implementation. The default raises NotImplementedError so the
+        cross-check can flag unimplemented simulations clearly.
+
+        Returns:
+            Dictionary mapping the same parameter paths as run() to computed
+            values via EML operators.
+        """
+        raise NotImplementedError(
+            f"{self.__class__.__name__}.run_eml() is not yet implemented. "
+            "Add an EML Math computation path using simulations.core.eml_integration helpers."
+        )
 
     def inject_outputs(self, registry: 'PMRegistry', results: Dict[str, Any]) -> None:
         """

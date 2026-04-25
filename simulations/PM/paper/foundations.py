@@ -128,6 +128,18 @@ class FoundationsV16_2(SimulationBase):
         """Execute - returns empty dict as this is narrative only."""
         return {}
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces paper outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Return section content for Section 1: Foundations of Dimensional Descent.

@@ -314,6 +314,98 @@ class NeutrinoMixingSimulation(SimulationBase):
             "_lattice_verification": lattice_check,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — PMNS mixing angles via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          sin(θ₁₃) = √(b₂·n_gen)/b₃ × (1 + S/(2χ))   →  ops.mul(ops.sqrt(...), correction)
+          sin(θ₁₂) = 1/√3 × (1 − perturbation)         →  ops.mul(inv_sqrt3, factor)
+          θ₂₃      = 45° + Kähler + flux_shift          →  ops.add(45, ops.add(kc, fs))
+          δ_CP     = π × phase_factor + parity_offset    →  ops.add(ops.mul(π, pf), offset)
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_div, eml_mul, eml_sub, eml_add,
+            eml_sqrt, eml_inv, eml_arcsin, eml_pi,
+        )
+        import math
+
+        # Load inputs (same as run())
+        b2 = registry.get_param("topology.b2")
+        b3 = registry.get_param("topology.elder_kads")
+        chi_eff = registry.get_param("topology.mephorash_chi")
+        n_gen = registry.get_param("topology.n_gen")
+        orientation_sum = registry.get_param("topology.orientation_sum")
+
+        # Replicate state so helper methods work
+        self._b2 = b2
+        self._b3 = b3
+        self._chi_eff = chi_eff
+        self._n_gen = n_gen
+        self._orientation_sum = orientation_sum
+
+        b2_f = float(b2)
+        b3_f = float(b3)
+        chi_f = float(chi_eff)
+        n_gen_f = float(n_gen)
+        s_f = float(orientation_sum)
+
+        # k_gimel = χ / (b2 × b3)
+        k_gimel = eml_compute(eml_div(eml_scalar(chi_f), eml_mul(eml_scalar(b2_f), eml_scalar(b3_f))))
+        # C_kaf = b3 / (b2 × n_gen)
+        c_kaf = eml_compute(eml_div(eml_scalar(b3_f), eml_mul(eml_scalar(b2_f), eml_scalar(n_gen_f))))
+
+        # θ₁₃: sin = √(b2·n_gen)/b3 × (1 + S/(2χ))
+        base_13 = eml_compute(eml_div(eml_sqrt(eml_mul(eml_scalar(b2_f), eml_scalar(n_gen_f))), eml_scalar(b3_f)))
+        correction_13 = eml_compute(eml_add(eml_scalar(1.0), eml_div(eml_scalar(s_f), eml_mul(eml_scalar(2.0), eml_scalar(chi_f)))))
+        sin_13 = base_13 * correction_13
+        theta_13 = math.degrees(eml_compute(eml_arcsin(eml_scalar(sin_13))))
+
+        # δ_CP: π × ((n+b2)/(2n) + n/b3) + 45.9°
+        lepton_phase = eml_compute(eml_div(eml_add(eml_scalar(n_gen_f), eml_scalar(b2_f)), eml_mul(eml_scalar(2.0), eml_scalar(n_gen_f))))
+        topo_phase = eml_compute(eml_div(eml_scalar(n_gen_f), eml_scalar(b3_f)))
+        phase_factor = lepton_phase + topo_phase
+        delta_cp = (math.degrees(eml_compute(eml_mul(eml_pi(), eml_scalar(phase_factor)))) + 45.9) % 360
+
+        # θ₁₂: sin = 1/√3 × (1 − (b3 − b2·n_gen)/(2χ))
+        inv_sqrt3 = eml_compute(eml_inv(eml_sqrt(eml_scalar(3.0))))
+        perturbation = eml_compute(eml_div(eml_sub(eml_scalar(b3_f), eml_mul(eml_scalar(b2_f), eml_scalar(n_gen_f))), eml_mul(eml_scalar(2.0), eml_scalar(chi_f))))
+        sin_12 = inv_sqrt3 * (1.0 - perturbation)
+        theta_12 = math.degrees(eml_compute(eml_arcsin(eml_scalar(sin_12))))
+
+        # θ₂₃: 45° + (b2−n_gen)×n_gen/b2 + flux_shift
+        kahler = eml_compute(eml_div(eml_mul(eml_sub(eml_scalar(b2_f), eml_scalar(n_gen_f)), eml_scalar(n_gen_f)), eml_scalar(b2_f)))
+        flux_w = eml_compute(eml_div(eml_scalar(s_f), eml_scalar(b3_f)))
+        flux_amp = eml_compute(eml_div(eml_mul(eml_scalar(b2_f), eml_scalar(chi_f)), eml_mul(eml_scalar(b3_f), eml_scalar(n_gen_f))))
+        flux_shift = flux_w * flux_amp
+        theta_23 = 45.0 + kahler + flux_shift
+
+        # k_gimel and c_kaf stored on self for derive_inverted_masses
+        self._k_gimel = k_gimel
+        self._c_kaf = c_kaf
+
+        mass_results = self.derive_inverted_masses()
+        _, dm2_32 = self.verify_experimental_match(mass_results)
+        lattice_check = self.verify_lattice_consistency()
+
+        return {
+            "neutrino.theta_12_pred": theta_12,
+            "neutrino.theta_13_pred": theta_13,
+            "neutrino.theta_23_pred": theta_23,
+            "neutrino.delta_CP_pred": delta_cp,
+            "neutrino.m1": mass_results["m1"],
+            "neutrino.m2": mass_results["m2"],
+            "neutrino.m3": mass_results["m3"],
+            "neutrino.mass_sum": mass_results["mass_sum"],
+            "neutrino.dm2_21": mass_results["dm2_21"],
+            "neutrino.dm2_32": mass_results["dm2_32"],
+            "neutrino.ordering": mass_results["ordering"],
+            "neutrino.k_gimel": k_gimel,
+            "neutrino.C_kaf": c_kaf,
+            "_lattice_verification": lattice_check,
+        }
+
     def verify_lattice_consistency(self) -> Optional[Dict[str, Any]]:
         """Cross-verify topological constants against Leech lattice decomposition.
 

@@ -221,6 +221,63 @@ class ProtonDecaySimulation(SimulationBase):
             "proton_decay.status": status,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — proton lifetime via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          d/R = 1/(2πK)           →  ops.inv(ops.mul(2π, K))
+          S   = exp(2πd/R)        →  ops.exp(ops.mul(2π, d_over_R))
+          τ   = C × (M/10¹⁶)⁴ × (0.03/α)²  →  ops.mul(C, ops.mul(pow4, pow2))
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_inv, eml_mul, eml_exp, eml_pow, eml_two_pi,
+        )
+
+        M_GUT = registry.get_param("gauge.M_GUT_GEOMETRIC")
+        ALPHA_GUT = registry.get_param("gauge.ALPHA_GUT_GEOMETRIC")
+        K_MATCHING = registry.get_param("topology.K_MATCHING")
+        tau_proton_bound = registry.get_param("bounds.tau_proton_lower")
+
+        two_pi = eml_two_pi()
+        K_pt = eml_scalar(float(K_MATCHING))
+
+        # d/R = 1 / (2π × K)
+        d_over_R = eml_compute(eml_inv(eml_mul(two_pi, K_pt)))
+
+        # S = exp(2π × d/R)
+        suppression_factor = eml_compute(eml_exp(eml_mul(eml_two_pi(), eml_scalar(d_over_R))))
+
+        # τ = C × (M_GUT/10^16)^4 × (0.03/α_GUT)^2
+        M_GUT_16 = eml_compute(eml_scalar(float(M_GUT) / 1e16))
+        alpha_ratio = eml_compute(eml_scalar(0.03 / float(ALPHA_GUT)))
+        pow4 = eml_compute(eml_pow(eml_scalar(M_GUT_16), eml_scalar(4.0)))
+        pow2 = eml_compute(eml_pow(eml_scalar(alpha_ratio), eml_scalar(2.0)))
+        tau_base = eml_compute(eml_mul(eml_scalar(self.C_PREFACTOR), eml_mul(eml_scalar(pow4), eml_scalar(pow2))))
+
+        tau_p_years = tau_base * suppression_factor
+        super_k_ratio = tau_p_years / float(tau_proton_bound)
+        above_bound = tau_p_years > float(tau_proton_bound)
+
+        if above_bound and super_k_ratio > 1.5:
+            status = "CONSISTENT - Well above Super-K bound"
+        elif above_bound:
+            status = "MARGINAL - Slightly above Super-K bound"
+        else:
+            status = "EXCLUDED - Below Super-K bound"
+
+        return {
+            "proton_decay.tau_p_years": tau_p_years,
+            "proton_decay.tau_p_base": tau_base,
+            "proton_decay.d_over_R": d_over_R,
+            "proton_decay.suppression_factor": suppression_factor,
+            "proton_decay.super_k_ratio": super_k_ratio,
+            "proton_decay.above_bound": above_bound,
+            "proton_decay.br_e_pi0": self.BR_E_PI0,
+            "proton_decay.status": status,
+        }
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Return section content for Section 4.6 - Proton Decay.

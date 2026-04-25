@@ -161,6 +161,18 @@ class ModularInvarianceV16(SimulationBase):
             "topology.modular_weight": modular_weight,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces geometry outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def _compute_modular_constraint(self) -> int:
         """
         Compute required b₃ from modular transformation properties.

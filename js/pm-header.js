@@ -1,8 +1,8 @@
 /**
  * Principia Metaphysica - Centralized Header Component
  *
- * Injects a consistent header across all pages.
- * Single source of truth for navigation and user controls.
+ * Injects a consistent header across all pages, including the
+ * Normal Math / EML Math pill switcher.
  *
  * Usage:
  *   import { injectHeader } from './js/pm-header.js';
@@ -10,6 +10,25 @@
  *
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
+
+// Math-mode module path resolution: works from any page depth because
+// getBasePath() is used at runtime. We resolve lazily on first use.
+let _mathMode = null;
+async function _getMathModeModule() {
+  if (_mathMode) return _mathMode;
+  const basePath = getBasePath();
+  try {
+    _mathMode = await import(`${basePath}js/math-mode.js`);
+  } catch {
+    // Fallback: no-op stubs if module can't load
+    _mathMode = {
+      getMathMode: () => 'normal',
+      setMathMode: () => {},
+      initMathMode: () => {},
+    };
+  }
+  return _mathMode;
+}
 
 /**
  * Navigation links - single source of truth
@@ -130,11 +149,17 @@ function createHeaderHTML(activePageId = '') {
     <header class="pm-header">
       <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
-        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="header-controls">
+          <div class="math-mode-switcher" role="group" aria-label="Math notation mode">
+            <button class="math-mode-pill" data-mode="normal" aria-pressed="true" title="Standard mathematical notation">Normal Math</button>
+            <button class="math-mode-pill" data-mode="eml" aria-pressed="false" title="EML Mirror Phase Mathematics notation">EML Math</button>
+          </div>
+          <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
       </div>
       <nav class="main-nav-row" role="navigation" aria-label="Main navigation">
         <ul role="list">
@@ -234,7 +259,47 @@ export function injectHeader(activePageId = '', options = {}) {
   // Setup mobile menu toggle
   setupMobileMenu();
 
+  // Initialize math mode (applies data-math-mode to <html> from localStorage)
+  _getMathModeModule().then(mm => {
+    mm.initMathMode();
+    setupMathModeSwitcher(mm);
+  });
+
   console.log(`[PM Header] Injected header for page: ${activePageId}`);
+}
+
+/**
+ * Sync pill button pressed states to the current math mode.
+ * @param {string} mode
+ */
+function syncPillUI(mode) {
+  document.querySelectorAll('.math-mode-pill').forEach(btn => {
+    const isActive = btn.dataset.mode === mode;
+    btn.setAttribute('aria-pressed', String(isActive));
+    btn.classList.toggle('active', isActive);
+  });
+}
+
+/**
+ * Setup math mode pill switcher click handlers.
+ * @param {Object} mm - math-mode module
+ */
+function setupMathModeSwitcher(mm) {
+  // Sync initial state
+  syncPillUI(mm.getMathMode());
+
+  // Wire pill buttons
+  document.querySelectorAll('.math-mode-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      mm.setMathMode(btn.dataset.mode);
+      syncPillUI(btn.dataset.mode);
+    });
+  });
+
+  // Keep pills synced if mode changes elsewhere
+  window.addEventListener('pm-math-mode-changed', e => {
+    syncPillUI(e.detail.mode);
+  });
 }
 
 /**

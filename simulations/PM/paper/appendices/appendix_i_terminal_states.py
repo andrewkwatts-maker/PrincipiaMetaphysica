@@ -138,6 +138,18 @@ class AppendixITerminalStates(SimulationBase):
             "terminal.unwinding_status": "GEOMETRICALLY_DEFINED" if unwinding_complete else "ERROR",
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces paper outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def simulate_unwinding_curve(self, time_steps: int = 100) -> Dict[str, np.ndarray]:
         """
         Simulate the terminal geodesic curve showing expansion flattening.

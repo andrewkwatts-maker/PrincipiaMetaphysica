@@ -138,6 +138,18 @@ class AppendixAMathFoundations(SimulationBase):
             "math.validation_status": "CONSISTENT",
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces paper outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Return section content for Appendix A - Mathematical Foundations.

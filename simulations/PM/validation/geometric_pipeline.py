@@ -181,6 +181,18 @@ class GeometricPipeline:
         self._results = results
         return results
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces validation outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def _derive_observables(self) -> Dict[str, Any]:
         """Derive physical observables from geometric data."""
         b3 = 24  # From Leech lattice dimension

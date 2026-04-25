@@ -205,6 +205,18 @@ class MultiSectorV16(SimulationBase):
             "cosmology.hierarchy_ratio": hierarchy_ratio,
         }
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path.
+
+        This simulation produces cosmology outputs. The EML Math representation
+        for this module is in the section text via <EML>...</EML> blocks in
+        get_section_content(). The computed parameter values are identical
+        between Normal Math and EML Math modes.
+        """
+        return self.run(registry)
+
     def _derive_geometric_width(self, registry: PMRegistry, chi_eff: float) -> Dict[str, Any]:
         """
         Derive modulation width from G2 geometry.

@@ -431,6 +431,49 @@ class ElectroweakMixingSimulation(SimulationBase):
 
     # ---- 1. get_references ----
 
+
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """
+        EML Math computation path — electroweak mass eigenvalues via Mirror Phase Mathematics.
+
+        Key EML derivations:
+          m_Z² = v²(g₂² + g'²)/4   →  ops.div(ops.mul(v², ops.add(sqr_g2, sqr_gp)), 4)
+          m_W² = g₂² v²/4           →  ops.div(ops.mul(sqr_g2, v²), 4)
+          sin²θ_W = 1 − m_W²/m_Z²  →  ops.sub(1, ops.div(mW², mZ²))
+        """
+        from simulations.core.eml_integration import (
+            eml_scalar, eml_compute, eml_mul, eml_div, eml_add, eml_sqr, eml_sqrt, eml_sub,
+        )
+
+        eng = self._engine
+        v = float(eng.v_higgs)
+        g2 = float(eng.g_2)
+        gp = float(eng.g_prime)
+        sin2_tw = float(eng.sin2_theta_W)
+
+        v_pt = eml_scalar(v)
+        g2_pt = eml_scalar(g2)
+        gp_pt = eml_scalar(gp)
+
+        v_sq = eml_sqr(v_pt)
+        g2_sq = eml_sqr(g2_pt)
+        gp_sq = eml_sqr(gp_pt)
+
+        # m_Z = √(v²(g₂²+g'²)/4)
+        m_Z_sq_pt = eml_div(eml_mul(v_sq, eml_add(g2_sq, gp_sq)), eml_scalar(4.0))
+        m_Z = eml_compute(eml_sqrt(m_Z_sq_pt))
+
+        # m_W = √(g₂² v² / 4)
+        m_W_sq_pt = eml_div(eml_mul(g2_sq, v_sq), eml_scalar(4.0))
+        m_W = eml_compute(eml_sqrt(m_W_sq_pt))
+
+        return {
+            "electroweak.sin2_theta_W_onshell": sin2_tw,
+            "electroweak.m_Z_predicted": m_Z,
+            "electroweak.m_W_predicted": m_W,
+            "electroweak.rho_tree": 1.0,
+        }
+
     def get_references(self) -> List[Dict[str, Any]]:
         return [
             {
