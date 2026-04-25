@@ -348,6 +348,14 @@
          * @returns {*} The value or null
          */
         _getDynamicValue(key) {
+            // For within_1sigma, prefer the abstract-computed value (validation.predictions_within_1sigma)
+            // over the generate_statistics.py value (validation.within_1sigma) which may undercount
+            if (key === 'within_1sigma') {
+                const v = this._data?.parameters?.['validation.predictions_within_1sigma'];
+                if (v !== null && v !== undefined) {
+                    return typeof v === 'object' ? (v.value ?? v) : v;
+                }
+            }
             // Try framework_statistics first (from statistics.json)
             if (this._data?.framework_statistics?.[key] !== undefined) {
                 return this._data.framework_statistics[key];
