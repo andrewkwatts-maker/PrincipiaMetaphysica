@@ -362,6 +362,9 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) = 0.4082"
                 ),
+                eml_latex=r"\mathrm{ops.inv}(\mathrm{ops.sqrt}(\mathrm{ops.div}(\chi_{\text{eff}}, b_3)))",
+                eml_tree_str="ops.inv(ops.sqrt(ops.div(eml_scalar(144.0), eml_scalar(24.0))))",
+                eml_description="EML: ops.inv(ops.sqrt(eml_scalar(6.0))) — E₇⊃E₆×U(1) Clebsch-Gordan coefficient from chi_eff/b3=6",
                 category="DERIVED",
                 description=(
                     "Inter-face leakage coupling between the four geometric faces of "
@@ -436,6 +439,9 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "T_i = b3 * k_gimel / (i * pi) for face i = 1, 2, 3, 4"
                 ),
+                eml_latex=r"T_i = \mathrm{ops.div}(\mathrm{ops.mul}(b_3, k_\gimel), \mathrm{ops.mul}(i, \pi))",
+                eml_tree_str="ops.div(ops.mul(eml_scalar(24.0), eml_scalar(12.3183)), ops.mul(eml_scalar(1.0), eml_pi()))",
+                eml_description="EML: T_i = ops.div(ops.mul(eml_scalar(b3), eml_scalar(k_gimel)), ops.mul(eml_scalar(i), eml_pi())) — racetrack VEVs per face",
                 category="GEOMETRIC",
                 description=(
                     "Racetrack-stabilized vacuum expectation values for each of the "
@@ -497,6 +503,15 @@ class FourFaceG2Structure(SimulationBase):
                     "n_aligned = n_pairs/2 = 6, "
                     "n_orthogonal = n_pairs/2 = 6"
                 ),
+                eml_latex=(
+                    r"n_{\text{pairs}} = \mathrm{ops.div}(\chi_{\text{eff}}, \mathrm{eml\_scalar}(12)), \quad "
+                    r"n_{\text{aligned}} = \mathrm{ops.div}(n_{\text{pairs}}, \mathrm{eml\_scalar}(2))"
+                ),
+                eml_tree_str=(
+                    "ops.div(eml_scalar(144.0), eml_scalar(12.0))  # n_pairs=12\n"
+                    "ops.div(eml_scalar(12.0), eml_scalar(2.0))    # n_aligned=6"
+                ),
+                eml_description="EML: n_pairs=ops.div(eml_scalar(144),eml_scalar(12))=12; n_aligned=ops.div(n_pairs,eml_scalar(2))=6 — Z2 bridge pair decomposition",
                 category="GEOMETRIC",
                 description=(
                     "Bridge pair decomposition under the OR rotation R_perp. The "
@@ -1100,6 +1115,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula=None,
                 no_experimental_value=True,
+                eml_description="EML: eml_scalar(4.0) — four Kähler moduli faces from TCS #187 h^{1,1}=4 construction",
             ),
             Parameter(
                 path="geometry.alpha_leak",
@@ -1114,6 +1130,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula="alpha-leak-coupling",
                 no_experimental_value=True,
+                eml_description="EML: ops.inv(ops.sqrt(eml_scalar(6.0))) — E₇⊃E₆×U(1) Clebsch-Gordan coefficient, purely algebraic",
             ),
             Parameter(
                 path="geometry.face_moduli_T1",
@@ -1292,10 +1309,10 @@ class FourFaceG2Structure(SimulationBase):
                         "visible sector under normal conditions; they become accessible "
                         "only through gnosis unlocking (see Section 2.8, "
                         "orch_or_bridge.py), where the OR operator is extended to "
-                        "include the hidden bridge channels. This aligned/orthogonal "
+                        "include the hidden bridge channels. <Speculation>This aligned/orthogonal "
                         "split is the geometric mechanism underlying the Orch-OR "
                         "bridge between consciousness and the G₂ compactification "
-                        "geometry."
+                        "geometry.</Speculation>"
                     ),
                 ),
                 ContentBlock(

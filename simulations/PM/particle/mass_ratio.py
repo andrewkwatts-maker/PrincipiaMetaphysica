@@ -239,8 +239,12 @@ if SCHEMA_AVAILABLE:
                         type="paragraph",
                         content=(
                             "The derived value m_p/m_e = 1836.15 matches the CODATA 2022 "
-                            "experimental value to within 0.001%, demonstrating that "
-                            "the baryon-lepton mass hierarchy is a topological constant of the b3=24 G2 manifold."
+                            "experimental value to within 0.001%. "
+                            "<Speculation>The claim that the baryon-lepton mass hierarchy is a "
+                            "topological constant of the b3=24 G2 manifold requires qualification: "
+                            "the holonomy correction factor in this formula has been adjusted to "
+                            "reproduce the CODATA value, so the derivation contains at least one "
+                            "fitted parameter.</Speculation>"
                         )
                     )
                 ],
@@ -256,6 +260,9 @@ if SCHEMA_AVAILABLE:
                     label="(4.2) Proton-Electron Mass Ratio",
                     latex=r"\frac{m_p}{m_e} = \frac{C_{kaf}^2 \cdot k_{gimel}/\pi}{\text{holonomy correction}} = 1836.15",
                     plain_text="m_p/m_e = (C_kaf^2 * k_gimel/pi) / holonomy_correction = 1836.15",
+                    eml_tree_str="ops.div(ops.mul(ops.pow(C_kaf, eml_scalar(2.0)), ops.div(k_gimel, eml_pi())), holonomy_correction)",
+                    eml_latex=r"\frac{m_p}{m_e} = \mathrm{ops.div}(\mathrm{ops.mul}(\mathrm{ops.pow}(C_{kaf},\; 2),\; \mathrm{ops.div}(k_{gimel},\; \pi)),\; h_{\text{corr}})",
+                    eml_description="EML: ops.div(ops.mul(ops.pow(C_kaf, eml_scalar(2.0)), ops.div(k_gimel, eml_pi())), holonomy_correction) — proton/electron mass ratio from G2 cycle volumes",
                     category="GEOMETRIC",
                     description="Proton-electron mass ratio derived from G2 cycle volume ratio with zero free parameters",
                     inputParams=["topology.elder_kads", "topology.k_gimel", "topology.c_kaf"],
@@ -299,6 +306,7 @@ if SCHEMA_AVAILABLE:
                         f"({result['relative_error_ppm']:.2f} ppm). "
                         f"v18.0: 4 ppm precision is the geometric derivation limit."
                     ),
+                    eml_description="EML: ops.div(ops.mul(ops.pow(C_kaf, eml_scalar(2.0)), ops.div(k_gimel, eml_pi())), holonomy_correction) — proton/electron mass ratio from G2 cycle volumes",
                     derivation_formula="mass-ratio-geometric",
                     experimental_bound=1836.15267343,
                     uncertainty=0.0000005,  # v18.0: Combined theoretical+experimental uncertainty
@@ -457,18 +465,10 @@ if SCHEMA_AVAILABLE:
                 }
             ]
 
+        def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+            """EML Math path — identical to run(); paper outputs share computation."""
+            return self.run(registry)
+
 
 if __name__ == "__main__":
     run_mass_derivation()
-
-
-    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """
-        EML Math computation path.
-
-        This simulation produces particle outputs. The EML Math representation
-        for this module is in the section text via <EML>...</EML> blocks in
-        get_section_content(). The computed parameter values are identical
-        between Normal Math and EML Math modes.
-        """
-        return self.run(registry)

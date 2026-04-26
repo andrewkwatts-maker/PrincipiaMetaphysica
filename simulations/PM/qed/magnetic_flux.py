@@ -149,6 +149,11 @@ class MagneticFluxV17(SimulationBase):
                     "Phi_0 = h/(2e) governs flux quantization in superconducting loops (London "
                     "equations), the Josephson voltage-frequency relation, and SQUID sensitivity."
                 ),
+                eml_tree_str="ops.mul(flux_bulk, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Direct Expansion: Phi_0 = ops.mul(flux_bulk, ops.add(eml_scalar(1.0), epsilon)). "
+                    "Phi_0 = h/(2e) inherits h's expansion since e is topologically invariant."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -178,6 +183,7 @@ class MagneticFluxV17(SimulationBase):
                 status="DERIVED",
                 description="Magnetic flux quantum in bulk (before expansion)",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(flux_manifest, ops.add(eml_scalar(1.0), epsilon))",
             ),
             Parameter(
                 path="qed.manifest_magnetic_flux",
@@ -188,6 +194,7 @@ class MagneticFluxV17(SimulationBase):
                 experimental_bound=CODATA_FLUX,
                 bound_type="measured",
                 bound_source="CODATA2022",
+                eml_description="EML: ops.mul(flux_bulk, ops.add(eml_scalar(1.0), epsilon)) — h/(2e) expands with h",
             ),
         ]
 

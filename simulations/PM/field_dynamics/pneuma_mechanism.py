@@ -746,7 +746,14 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content='The <span class="pm-value" data-pm-value="framework.version_label">v24.2</span> framework introduces the 12×(2,0) paired bridge system where each bridge pair B<sub>i</sub> = (y<sub>1i</sub>, y<sub>2i</sub>) serves as a \'neural gate\' for consciousness flow between shadows. The pairing arises from b₃ = 24/2 = 12 pairs.'
+                content=(
+                    'The <span class="pm-value" data-pm-value="framework.version_label">v24.2</span> '
+                    'framework introduces the 12×(2,0) paired bridge system where each bridge pair '
+                    'B<sub>i</sub> = (y<sub>1i</sub>, y<sub>2i</sub>) provides a geometrically distinct '
+                    'I/O channel. The pairing arises from b₃ = 24/2 = 12 pairs (pure topology). '
+                    '<Speculation>In the speculative consciousness interpretation, each bridge pair '
+                    'serves as a \'neural gate\' for consciousness flow between shadows.</Speculation>'
+                )
             ),
             ContentBlock(
                 type="heading",
@@ -754,7 +761,11 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="Each neural gate has distinct input and output channels:"
+                content=(
+                    "Each bridge pair has geometrically distinct input and output channels. "
+                    "<Speculation>Each neural gate has distinct channels: perception (y<sub>1i</sub>) "
+                    "and intuition (y<sub>2i</sub>), forming 12 parallel consciousness channels.</Speculation>"
+                )
             ),
             ContentBlock(
                 type="formula",
@@ -778,7 +789,17 @@ class PneumaMechanismV16(SimulationBase):
                 type="callout",
                 callout_type="info",
                 title="Neural Gate Dynamics",
-                content="The 12 bridge pairs create 12 parallel channels for consciousness flow: y<sub>1i</sub> coordinates aggregate to form the normal shadow (perception input), y<sub>2i</sub> coordinates aggregate to form the mirror shadow (intuition output). Each shadow maintains independent G&#8322; compactification while being connected through the OR reduction mechanism."
+                content=(
+                    "The 12 bridge pairs create 12 parallel geometric I/O channels: "
+                    "y<sub>1i</sub> coordinates aggregate to form the normal shadow, "
+                    "y<sub>2i</sub> coordinates aggregate to form the mirror shadow. "
+                    "Each shadow maintains independent G&#8322; compactification while "
+                    "being connected through the OR reduction mechanism. "
+                    "<Speculation>In the Orch-OR interpretation, these 12 channels correspond "
+                    "to 12 parallel streams of conscious experience (perception input / "
+                    "intuition output), making the bridge structure the substrate of "
+                    "consciousness flow.</Speculation>"
+                )
             ),
             ContentBlock(
                 type="callout",
@@ -1048,6 +1069,18 @@ class PneumaMechanismV16(SimulationBase):
                 outputParams=["pneuma.coupling"],
                 input_params=["topology.mephorash_chi", "topology.elder_kads"],
                 output_params=["pneuma.coupling"],
+                eml_latex=r"\mathcal{L}_P = \mathrm{ops.add}(\mathrm{ops.mul}(\tfrac{1}{2}, \mathrm{ops.pow}(\partial\Psi_P, 2)),\; \mathrm{ops.neg}(V(\Psi_P)))",
+                eml_tree_str=(
+                    "# Pneuma Lagrangian in EML operator tree:\n"
+                    "# kinetic = ops.mul(eml_scalar(0.5), ops.pow(partial_Phi, eml_scalar(2.0)))\n"
+                    "# potential = V_Phi  (racetrack: |dW/dPsi|^2)\n"
+                    "# L_pneuma = ops.add(kinetic, ops.neg(V_Phi))"
+                ),
+                eml_description=(
+                    "EML: ops.add(ops.mul(eml_scalar(0.5), ops.pow(partial_Phi, eml_scalar(2.0))), "
+                    "ops.neg(V_Phi)) — kinetic plus racetrack potential; "
+                    "condensate energy: ops.mul(eml_scalar(0.5), ops.mul(lambda_P, ops.pow(phi_0, eml_scalar(4.0))))"
+                ),
                 derivation={
                     "source": "G2 holonomy geometry",
                     "method": "dimensional_reduction",
@@ -1150,6 +1183,16 @@ class PneumaMechanismV16(SimulationBase):
                 outputParams=["pneuma.vev"],
                 input_params=["pneuma.flow_parameter"],
                 output_params=["pneuma.vev"],
+                eml_latex=r"\dot{\Psi}_P = \mathrm{ops.neg}(\mathrm{ops.mul}(\lambda, \partial_{\Psi} V))",
+                eml_tree_str=(
+                    "# Pneuma gradient flow in EML operator tree:\n"
+                    "# dPsi_dt = ops.neg(ops.mul(lambda_P, dV_dPsi))\n"
+                    "# 27D condensate scale: ops.mul(phi_0, ops.exp(ops.neg(ops.div(m_phi, H_0))))"
+                ),
+                eml_description=(
+                    "EML: ops.neg(ops.mul(lambda_P, dV_dPsi)) — gradient flow on racetrack potential; "
+                    "27D condensate scale: ops.mul(phi_0, ops.exp(ops.neg(ops.div(m_phi, H_0))))"
+                ),
                 derivation={
                     "source": "Gradient flow on potential",
                     "method": "variational_calculus",
@@ -1299,6 +1342,11 @@ class PneumaMechanismV16(SimulationBase):
                 description="Coupling constant between Pneuma field and spacetime geometry",
                 derivation_formula="pneuma-lagrangian",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(ops.sqrt(ops.div(b3, eml_scalar(24.0))), "
+                    "ops.mul(g2_norm, ops.div(m_higgs, M_Planck))) — "
+                    "topological factor × G2 norm × hierarchy factor"
+                ),
             ),
             Parameter(
                 path="pneuma.flow_parameter",
@@ -1308,6 +1356,10 @@ class PneumaMechanismV16(SimulationBase):
                 description="Characteristic frequency governing Pneuma field evolution",
                 derivation_formula="pneuma-flow",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.sqrt(ops.mul(eml_scalar(2.0), V_double_prime_vev)) — "
+                    "sqrt(2 V''(<Psi>)) from curvature at racetrack minimum"
+                ),
             ),
             Parameter(
                 path="pneuma.lagrangian_valid",
@@ -1326,6 +1378,11 @@ class PneumaMechanismV16(SimulationBase):
                 description="Vacuum expectation value of Pneuma field from racetrack minimum",
                 derivation_formula="pneuma-flow",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.ln(ops.div(ops.mul(B, b_coeff), ops.mul(A, a_coeff))), "
+                    "ops.sub(b_coeff, a_coeff)) — VEV from racetrack analytic minimum; "
+                    "condensate: ops.mul(phi_0, ops.exp(ops.neg(ops.div(m_phi, H_0))))"
+                ),
             ),
             Parameter(
                 path="pneuma.mass_scale",
@@ -1335,6 +1392,11 @@ class PneumaMechanismV16(SimulationBase):
                 description="Characteristic mass scale of Pneuma field (m_P ~ M_Planck / sqrt(chi_eff))",
                 derivation_formula="pneuma-lagrangian",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(M_Planck, ops.sqrt(chi_eff)) — "
+                    "Planck mass / sqrt(Euler characteristic); "
+                    "ops.div(eml_scalar(M_P), ops.sqrt(eml_scalar(144.0))) for TCS G2 #187"
+                ),
             ),
             # v22.0: Neural gate parameters
             Parameter(

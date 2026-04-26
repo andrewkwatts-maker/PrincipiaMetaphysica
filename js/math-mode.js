@@ -1,21 +1,63 @@
 /**
- * Math Mode Manager
- * =================
- * Global state for switching between Normal Math and EML Math display modes.
+ * Math Mode Manager + Speculation Toggle
+ * =======================================
+ * Global state for switching between Normal Math and EML Math display modes,
+ * and for showing/hiding speculative content blocks.
  *
  * Usage:
- *   import { getMathMode, setMathMode, initMathMode } from './math-mode.js';
+ *   import { getMathMode, setMathMode, initMathMode,
+ *            getSpeculationMode, setSpeculationMode, initSpeculationMode } from './math-mode.js';
  *
- * The mode is persisted in localStorage and applied as a data attribute on
- * <html data-math-mode="normal|eml"> so CSS can switch formula/text blocks.
+ * Math mode: persisted in localStorage, applied as data-math-mode="normal|eml" on <html>.
+ * Speculation: persisted in localStorage, applied as data-speculation="show" on <html>.
+ *   Default is OFF (no attribute) — speculation blocks hidden by CSS.
  *
- * Event: 'pm-math-mode-changed' dispatched on window whenever mode changes.
- *   event.detail = { mode: 'normal' | 'eml', previous: 'normal' | 'eml' }
+ * Events:
+ *   'pm-math-mode-changed'    → { mode, previous }
+ *   'pm-speculation-changed'  → { show: boolean }
  */
 
 const STORAGE_KEY = 'pm-math-mode';
 const VALID_MODES = ['normal', 'eml'];
 const DEFAULT_MODE = 'normal';
+
+// ── Speculation toggle ──────────────────────────────────────────────────────
+
+const SPECULATION_KEY = 'pm-speculation';
+
+/** Returns true if speculation content should be visible. */
+export function getSpeculationMode() {
+    return localStorage.getItem(SPECULATION_KEY) === 'show';
+}
+
+/** Show or hide speculation blocks. Persists choice. */
+export function setSpeculationMode(show) {
+    if (show) {
+        localStorage.setItem(SPECULATION_KEY, 'show');
+        document.documentElement.setAttribute('data-speculation', 'show');
+    } else {
+        localStorage.removeItem(SPECULATION_KEY);
+        document.documentElement.removeAttribute('data-speculation');
+    }
+    window.dispatchEvent(new CustomEvent('pm-speculation-changed', {
+        detail: { show },
+        bubbles: false,
+    }));
+}
+
+/** Apply stored speculation preference to DOM on page load. */
+export function initSpeculationMode() {
+    if (getSpeculationMode()) {
+        document.documentElement.setAttribute('data-speculation', 'show');
+    } else {
+        document.documentElement.removeAttribute('data-speculation');
+    }
+}
+
+/** Toggle speculation visibility. */
+export function toggleSpeculationMode() {
+    setSpeculationMode(!getSpeculationMode());
+}
 
 /**
  * Get the current math display mode.

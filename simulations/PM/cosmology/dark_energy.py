@@ -902,7 +902,10 @@ class DarkEnergyV16(SimulationBase):
                     "D_heterotic": "Effective heterotic dimension (13)",
                     "D_observable": "Observable spacetime dimensions (4)",
                     "alpha_shadow": "Shadow dimension contribution (0.576)"
-                }
+                },
+                eml_latex=r"26 \xrightarrow{\mathrm{ops.div}(\mathrm{eml\_scalar}(26)+\mathrm{eml\_scalar}(10), \mathrm{eml\_scalar}(2))} 13 \xrightarrow{\mathrm{ops.sub}(\mathrm{eml\_scalar}(13), \mathrm{eml\_scalar}(9))} 4",
+                eml_tree_str="ops.sub(eml_scalar(13.0), eml_scalar(9.0))  # 26D -> 13D (heterotic avg) -> 4D (G2 compactification)",
+                eml_description="EML: ops.sub(eml_scalar(13), eml_scalar(9)) — dimensional cascade 26D -> 13D -> 4D",
             ),
             Formula(
                 id="effective-dimension",
@@ -946,7 +949,10 @@ class DarkEnergyV16(SimulationBase):
                     "alpha_shadow": "Residual degrees of freedom from compact dimensions (0.576), derived from G2 topology",
                     "chi_eff": "Effective Euler characteristic (144)",
                     "b3": f"Number of associative 3-cycles ({b3})"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{eml\_scalar}(12),\, \alpha_{shadow})",
+                eml_tree_str="ops.add(eml_scalar(12.0), alpha_shadow)",
+                eml_description="EML: D_eff = ops.add(eml_scalar(12), alpha_shadow) — effective dimension from G2 reduction",
             ),
             Formula(
                 id="dark-energy-eos-derivation",
@@ -993,7 +999,10 @@ class DarkEnergyV16(SimulationBase):
                     "w_0": "Dark energy equation of state at present (z=0)",
                     "b_3": f"Number of associative 3-cycles in G2 manifold ({b3})",
                     "sigma": f"Standard deviation from DESI thawing measurement ({deviation:.2f}σ)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(1)),\, \mathrm{ops.inv}(\mathrm{eml\_scalar}(24)))",
+                eml_tree_str="ops.add(ops.neg(eml_scalar(1.0)), ops.inv(eml_scalar(24.0)))",
+                eml_description="EML: w0 = ops.add(ops.neg(1), ops.inv(b3)) = -23/24 from G2 topology",
             ),
             Formula(
                 id="dark-energy-time-evolution",
@@ -1037,7 +1046,10 @@ class DarkEnergyV16(SimulationBase):
                     "a": "Scale factor (a=1 today)",
                     "w_a": f"Evolution parameter = -1/√{b3} ≈ {wa:.4f}",
                     "z": "Redshift"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(w_0,\, \mathrm{ops.mul}(\mathrm{ops.neg}(\mathrm{ops.inv}(\mathrm{ops.sqrt}(\mathrm{eml\_scalar}(24)))),\, \mathrm{ops.sub}(\mathrm{eml\_scalar}(1), a)))",
+                eml_tree_str="ops.add(w0, ops.mul(ops.neg(ops.inv(ops.sqrt(eml_scalar(24.0)))), ops.sub(eml_scalar(1.0), a)))",
+                eml_description="EML: w(a) = ops.add(w0, ops.mul(wa, ops.sub(1, a))) — CPL dark energy time evolution",
             ),
             # ── Breathing Dark Energy Formulas (DERIVED) ──────────────
             Formula(
@@ -1106,7 +1118,10 @@ class DarkEnergyV16(SimulationBase):
                 terms={
                     r"\rho_{\text{breath}}": "Aggregated breathing density",
                     r"n_{\text{pairs}}": f"Number of bridge pairs = b3/2 = {b3 // 2}",
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.inv}(\mathrm{eml\_scalar}(12)),\, \mathrm{ops.sum}(\rho_i, i=1..12))",
+                eml_tree_str="ops.mul(ops.inv(eml_scalar(12.0)), rho_sum_12_pairs)",
+                eml_description="EML: rho_breath = ops.mul(ops.inv(n_pairs), sum_rho_i) — 12-pair breathing aggregation",
             ),
             Formula(
                 id="breathing-variance-reduction",
@@ -1140,7 +1155,10 @@ class DarkEnergyV16(SimulationBase):
                     r"\sigma_{\text{eff}}": "Effective variance of breathing density",
                     r"\sigma_{\text{single}}": "Single-pair variance",
                     rf"\sqrt{{{b3 // 2}}}": f"Square root of pair count = sqrt({b3 // 2}) ≈ 3.464",
-                }
+                },
+                eml_latex=r"\mathrm{ops.div}(\sigma_{\mathrm{single}},\, \mathrm{ops.sqrt}(\mathrm{eml\_scalar}(12)))",
+                eml_tree_str="ops.div(sigma_single, ops.sqrt(eml_scalar(12.0)))",
+                eml_description="EML: sigma_eff = ops.div(sigma_single, ops.sqrt(n_pairs)) — CLT variance reduction over 12 pairs",
             ),
         ]
 
@@ -1721,14 +1739,14 @@ class DarkEnergyV16(SimulationBase):
                 f"Equation of state: w = -1 + (1/φ²) × ⟨ρ_breath⟩/max(ρ_breath) ≈ {w0:.4f}\n"
                 f"WHY {n_pairs} PAIRS: b₃ = {b3} → {b3}/2 = {n_pairs} normal/mirror pairs\n"
                 f"Variance reduction: σ_eff = σ_single/√{n_pairs} ≈ 0.29 σ_single\n"
-                f"Consciousness: {n_pairs} I/O channels for robust experience"
+                f"<Speculation>Consciousness: {n_pairs} I/O channels for robust experience</Speculation>"
             ),
             "prediction": (
                 f"v22 predictions: (1) w₀ = {w0_frac} exactly from b₃ formula, "
                 f"(2) Stability from 12-pair aggregation (σ reduced by √12), "
                 f"(3) w_a = -1/√{b3} ≈ {wa:.4f} from 2T projection, "
                 f"(4) Target: w ≈ -0.958 ± 0.003 (matches DESI 2025 at {deviation:.2f}σ), "
-                f"(5) Consciousness connection: 12 I/O channels. "
+                f"<Speculation>(5) Consciousness connection: 12 I/O channels.</Speculation> "
                 f"Future surveys (Euclid, Vera Rubin LSST) will test stability predictions."
             )
         }

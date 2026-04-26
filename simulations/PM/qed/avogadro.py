@@ -138,6 +138,11 @@ class AvogadroV17(SimulationBase):
                     "with epsilon = 1/28800 encodes the fractional volume excess of the "
                     "compactified internal dimensions."
                 ),
+                eml_tree_str="ops.div(na_bulk, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Inverse Cubic: N_A = ops.div(na_bulk, ops.add(eml_scalar(1.0), epsilon)). "
+                    "Particle counts are extensive quantities that dilute under dimensional projection."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine with epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -165,6 +170,7 @@ class AvogadroV17(SimulationBase):
                 status="DERIVED",
                 description="Avogadro number in bulk (before contraction)",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(na_manifest, ops.add(eml_scalar(1.0), epsilon))",
             ),
             Parameter(
                 path="qed.manifest_avogadro",
@@ -176,6 +182,7 @@ class AvogadroV17(SimulationBase):
                 bound_type="measured",
                 bound_source="CODATA2022",
                 uncertainty=0.0,  # Exact since 2019 SI redefinition
+                eml_description="EML: ops.div(na_bulk, ops.add(eml_scalar(1.0), epsilon)) — extensive count dilutes under projection",
             ),
         ]
 

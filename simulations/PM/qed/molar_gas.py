@@ -111,6 +111,12 @@ class MolarGasV17(SimulationBase):
                 input_params=["topology.elder_kads", "topology.ancestral_roots"],
                 output_params=["qed.manifest_molar_gas_constant"],
                 description="Molar gas constant is invariant because N_A contraction cancels k_B expansion exactly.",
+                eml_tree_str="ops.mul(ops.div(na_bulk, ops.add(eml_scalar(1.0), epsilon)), ops.mul(kb_bulk, ops.add(eml_scalar(1.0), epsilon)))",
+                eml_description=(
+                    "EML Neutral Bridge: R = ops.mul(ops.div(na_bulk, ops.add(1, epsilon)), "
+                    "ops.mul(kb_bulk, ops.add(1, epsilon))). The (1+epsilon) factors cancel: "
+                    "N_A contraction and k_B expansion are exact inverses, yielding R = R_bulk (invariant)."
+                ),
                 derivation={
                     "steps": [
                         "Identify the Decad-Cubic epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -141,6 +147,7 @@ class MolarGasV17(SimulationBase):
                 experimental_bound=CODATA_R,
                 bound_type="measured",
                 bound_source="CODATA2022",
+                eml_description="EML: R = ops.mul(na, kb) — invariant under projection since ops.div(na_bulk, 1+eps) * ops.mul(kb_bulk, 1+eps) = na_bulk*kb_bulk",
             ),
         ]
 

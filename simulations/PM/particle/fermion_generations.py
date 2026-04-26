@@ -412,7 +412,11 @@ class FermionGenerationsV16(SimulationBase):
                     "distance (graph hops in the cycle network), and A_f are O(1) geometric "
                     "coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees "
                     "with the Cabibbo angle V_us = 0.2257, providing a geometric origin for "
-                    "the flavor hierarchy m_t >> m_c >> m_u."
+                    "the flavor hierarchy m_t >> m_c >> m_u. "
+                    "<Speculation>The numerical coincidence between epsilon = exp(-3/2) and the "
+                    "Cabibbo angle may reflect a deeper connection between G2 compactification "
+                    "geometry and quark flavor mixing, or may be an artifact of the specific "
+                    "cycle distance assignments chosen for this manifold.</Speculation>"
                 )
             ),
             ContentBlock(
@@ -475,6 +479,9 @@ class FermionGenerationsV16(SimulationBase):
                 label="(4.2.1)",
                 latex=r"n_{\text{gen}} = \frac{N_{\text{flux}}}{\text{spinor DOF}} = \frac{\chi_{\text{eff}}/6}{8} = \frac{144}{48} = 3",
                 plain_text="n_gen = N_flux / spinor_DOF = (chi_eff/6) / 8 = 144 / 48 = 3",
+                eml_tree_str="ops.div(ops.div(chi_eff, eml_scalar(6.0)), eml_scalar(8.0))",
+                eml_latex=r"n_{\text{gen}} = \mathrm{ops.div}(\mathrm{ops.div}(\chi_{\text{eff}},\; \mathrm{eml\_scalar}(6)),\; \mathrm{eml\_scalar}(8))",
+                eml_description="EML: ops.div(ops.div(eml_scalar(144.0), eml_scalar(6.0)), eml_scalar(8.0)) = eml_scalar(3.0) — flux quantization then spinor saturation",
                 category="DERIVED",
                 description="Number of fermion generations from spinor saturation on G2 manifold",
                 inputParams=["topology.mephorash_chi", "topology.elder_kads"],
@@ -533,6 +540,9 @@ class FermionGenerationsV16(SimulationBase):
                 label="(4.2.2)",
                 latex=r"Y_f = A_f \cdot \epsilon^{Q_f}, \quad \epsilon = e^{-\lambda} \approx 0.223",
                 plain_text="Y_f = A_f * exp(-lambda)^Q_f, epsilon = exp(-1.5) ~ 0.223",
+                eml_tree_str="ops.mul(A_f, ops.pow(ops.exp(ops.neg(lambda_curvature)), Q_f))",
+                eml_latex=r"Y_f = \mathrm{ops.mul}(A_f,\; \mathrm{ops.pow}(\mathrm{ops.exp}(\mathrm{ops.neg}(\lambda)),\; Q_f))",
+                eml_description="EML: Y_f = ops.mul(A_f, ops.pow(ops.exp(ops.neg(eml_scalar(1.5))), eml_scalar(Q_f))); epsilon = ops.exp(ops.neg(eml_scalar(1.5)))",
                 category="DERIVED",
                 description="Yukawa coupling texture from geometric Froggatt-Nielsen mechanism",
                 inputParams=["topology.mephorash_chi"],
@@ -597,6 +607,9 @@ class FermionGenerationsV16(SimulationBase):
                 label="(4.2.3)",
                 latex=r"D_{\text{eff}} = \gamma^\mu \left(\partial_\mu + igA_\mu + \gamma^5 T_\mu\right)",
                 plain_text="D_eff = gamma^mu (d_mu + igA_mu + gamma^5 T_mu)",
+                eml_tree_str="ops.mul(gamma_mu, ops.add(d_mu, ops.add(ops.mul(i_g, A_mu), ops.mul(gamma_5, T_mu))))",
+                eml_latex=r"D_{\text{eff}} = \mathrm{ops.mul}(\gamma^\mu,\; \mathrm{ops.add}(\partial_\mu,\; igA_\mu,\; \gamma^5 T_\mu))",
+                eml_description="EML: D_eff = ops.mul(gamma_mu, ops.add(partial_mu, ops.mul(i_g, A_mu), ops.mul(gamma_5, T_mu))); chiral filter = ops.div(eml_scalar(7.0), eml_scalar(8.0))",
                 category="DERIVED",
                 description="Modified Dirac operator with Pneuma-induced axial torsion coupling",
                 inputParams=["fermion.pneuma_condensate_gradient", "geometry.g2_holonomy", "gauge.g_coupling"],
@@ -675,6 +688,7 @@ class FermionGenerationsV16(SimulationBase):
                     "Number of fermion generations derived from G2 topology via spinor "
                     "saturation. Computed as n_gen = N_flux / spinor_DOF = 24 / 8 = 3."
                 ),
+                eml_description="EML: ops.div(ops.div(eml_scalar(144.0), eml_scalar(6.0)), eml_scalar(8.0)) = eml_scalar(3.0) — chi_eff flux then spinor saturation",
                 derivation_formula="generation-number",
                 experimental_bound=3,
                 uncertainty=0,
@@ -692,6 +706,7 @@ class FermionGenerationsV16(SimulationBase):
                     "hierarchy in Yukawa couplings Y_f = A_f * epsilon^Q_f. "
                     "Geometric derivation parameter from G2 curvature."
                 ),
+                eml_description="EML: ops.exp(ops.neg(eml_scalar(1.5))) — Froggatt-Nielsen epsilon from G2 curvature scale lambda=1.5",
                 derivation_formula="yukawa-texture",
                 no_experimental_value=True
             ),
@@ -706,6 +721,7 @@ class FermionGenerationsV16(SimulationBase):
                     "components that couple to axial torsion. "
                     "Theoretical geometric parameter, no experimental measurement."
                 ),
+                eml_description="EML: ops.div(eml_scalar(7.0), eml_scalar(8.0)) — Spin(7) active/total spinor component ratio",
                 derivation_formula="pneuma-chiral-filter",
                 no_experimental_value=True
             ),
@@ -720,6 +736,7 @@ class FermionGenerationsV16(SimulationBase):
                     "N_flux = chi_eff / 6 = 24 from the effective Euler characteristic. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
+                eml_description="EML: ops.div(eml_scalar(144.0), eml_scalar(6.0)) = eml_scalar(24.0) — flux quantization from chi_eff",
                 derivation_formula="generation-number",
                 no_experimental_value=True
             ),
@@ -734,6 +751,7 @@ class FermionGenerationsV16(SimulationBase):
                     "fermion.yukawa_hierarchy, provided for compatibility. "
                     "Geometric derivation parameter from G2 curvature scale."
                 ),
+                eml_description="EML: ops.exp(ops.neg(eml_scalar(1.5))) — same as fermion.yukawa_hierarchy; FN epsilon from G2 curvature",
                 derivation_formula="yukawa-texture",
                 no_experimental_value=True
             ),

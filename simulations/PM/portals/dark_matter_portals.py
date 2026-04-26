@@ -407,6 +407,14 @@ class DarkMatterPortalsV23(SimulationBase):
                     "g_portal = alpha_leak * sqrt(chi_eff/b3) / (4*pi) "
                     "= 0.57 * sqrt(6) / (4*pi) = 0.111"
                 ),
+                eml_tree_str=(
+                    "ops.div(ops.mul(alpha_leak, ops.sqrt(ops.div(chi_eff_full, b3))), "
+                    "ops.mul(eml_scalar(4.0), eml_pi()))"
+                ),
+                eml_description=(
+                    "EML: g_portal = ops.div(ops.mul(alpha_leak, ops.sqrt(ops.div(chi_eff_full, b3))), "
+                    "ops.mul(eml_scalar(4.0), eml_pi())) — portal coupling from face sampling strength"
+                ),
                 category="PREDICTED",
                 description=(
                     "Dark matter portal coupling from the face sampling strength. "
@@ -490,6 +498,15 @@ class DarkMatterPortalsV23(SimulationBase):
                 plain_text=(
                     "sigma_SI = g_portal^2 * m_N^2 / (4*pi * m_KK^4)"
                 ),
+                eml_tree_str=(
+                    "ops.div(ops.mul(ops.pow(g_portal, eml_scalar(2.0)), ops.pow(m_N, eml_scalar(2.0))), "
+                    "ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(m_KK, eml_scalar(4.0))))"
+                ),
+                eml_description=(
+                    "EML: sigma_SI = ops.div(ops.mul(ops.pow(g_portal, eml_scalar(2.0)), "
+                    "ops.pow(m_N, eml_scalar(2.0))), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), "
+                    "ops.pow(m_KK, eml_scalar(4.0)))) — Born approximation moduli exchange cross-section"
+                ),
                 category="PREDICTED",
                 description=(
                     "Spin-independent dark matter-nucleon cross-section from "
@@ -569,6 +586,14 @@ class DarkMatterPortalsV23(SimulationBase):
                 ),
                 plain_text=(
                     "m_KK = M_Pl * alpha_leak / (4*pi * k_gimel^2)"
+                ),
+                eml_tree_str=(
+                    "ops.div(ops.mul(M_Pl, alpha_leak), "
+                    "ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(k_gimel, eml_scalar(2.0))))"
+                ),
+                eml_description=(
+                    "EML: m_KK = ops.div(ops.mul(M_Pl, alpha_leak), ops.mul(ops.mul(eml_scalar(4.0), "
+                    "eml_pi()), ops.pow(k_gimel, eml_scalar(2.0)))) — moduli-mediated KK mediator mass"
                 ),
                 category="PREDICTED",
                 description=(
@@ -650,6 +675,16 @@ class DarkMatterPortalsV23(SimulationBase):
                 plain_text=(
                     "Omega_DM h^2 = sum(Omega_f, f=2..4), "
                     "Omega_f proportional to (T_1/T_f)^2 = f^2"
+                ),
+                eml_tree_str=(
+                    "ops.mul(ops.div(Omega_DM, eml_scalar(29.0)), "
+                    "ops.add(ops.add(ops.pow(eml_scalar(2.0), eml_scalar(2.0)), "
+                    "ops.pow(eml_scalar(3.0), eml_scalar(2.0))), "
+                    "ops.pow(eml_scalar(4.0), eml_scalar(2.0))))"
+                ),
+                eml_description=(
+                    "EML: Omega_f = ops.mul(ops.div(Omega_DM, eml_scalar(29.0)), ops.pow(f, eml_scalar(2.0))) "
+                    "— multi-component relic density from three hidden faces (4+9+16=29)"
                 ),
                 category="PREDICTED",
                 description=(

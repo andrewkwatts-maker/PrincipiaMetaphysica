@@ -261,12 +261,16 @@ class G2GeometryV16(SimulationBase):
 
                 param_def = param_defs.get(param_path)
                 status = param_def.status if param_def else "DERIVED"
+                metadata = {}
+                if param_def and param_def.eml_description:
+                    metadata['eml_description'] = param_def.eml_description
 
                 registry.set_param(
                     path=param_path,
                     value=results[param_path],
                     source=self.metadata.id,
-                    status=status
+                    status=status,
+                    metadata=metadata if metadata else None
                 )
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
@@ -1279,7 +1283,10 @@ class G2GeometryV16(SimulationBase):
                 r"\subseteq": {
                     "description": "Subgroup inclusion: Hol(g) is contained in G2 as a subgroup of SO(7)"
                 }
-            }
+            },
+            eml_latex=r"\mathrm{ops.parallel\_spinor}(\eta,\, g) \Rightarrow \mathrm{Hol}(g) \subseteq G_2",
+            eml_tree_str="ops.hol_g2(ops.parallel_spinor(eta, g))",
+            eml_description="EML: parallel spinor condition encoded as operator predicate on spin bundle",
         ))
 
         # Euler characteristic
@@ -1331,7 +1338,10 @@ class G2GeometryV16(SimulationBase):
                     "symbol": "h^{3,1}",
                     "value": "68"
                 }
-            }
+            },
+            eml_latex=r"\mathrm{ops.mul}(\mathrm{eml\_scalar}(2),\, \mathrm{ops.add}(h^{11}, \mathrm{ops.neg}(h^{21}), h^{31}))",
+            eml_tree_str="ops.mul(eml_scalar(2.0), ops.add(eml_scalar(4.0), ops.neg(eml_scalar(0.0)), eml_scalar(68.0)))",
+            eml_description="EML: chi_eff = ops.mul(2, ops.add(h11, ops.neg(h21), h31)) = 144",
         ))
 
         # Betti numbers
@@ -1378,7 +1388,10 @@ class G2GeometryV16(SimulationBase):
                 r"b_0": {
                     "description": "Zeroth Betti number: number of connected components (always 1 for a connected manifold)"
                 }
-            }
+            },
+            eml_latex=r"[b_k] = \mathrm{eml\_vec}(1, 0, 4, 24, 24, 4, 0, 1),\quad b_3 = \mathrm{eml\_scalar}(24)",
+            eml_tree_str="eml_vec([1, 0, 4, 24, 24, 4, 0, 1])  # b3 = eml_scalar(24.0) is the seed",
+            eml_description="EML: Betti sequence as vector; b3=eml_scalar(24) is the foundational seed",
         ))
 
         # Three generations
@@ -1425,7 +1438,10 @@ class G2GeometryV16(SimulationBase):
                 r"48": {
                     "description": "Normalization factor from the spinor representation dimension and topological index density in 7 dimensions"
                 }
-            }
+            },
+            eml_latex=r"\mathrm{ops.div}(\chi_{\text{eff}},\, \mathrm{eml\_scalar}(48)) = \mathrm{ops.div}(\mathrm{eml\_scalar}(144),\, \mathrm{eml\_scalar}(48))",
+            eml_tree_str="ops.div(eml_scalar(144.0), eml_scalar(48.0))",
+            eml_description="EML: n_gen = ops.div(chi_eff, 48) = ops.div(eml_scalar(144), eml_scalar(48)) = 3",
         ))
 
         # Cycle matching
@@ -1469,7 +1485,10 @@ class G2GeometryV16(SimulationBase):
                     "description": "Second Betti number, equal to h^{1,1} for the G2 TCS manifold",
                     "value": "4"
                 }
-            }
+            },
+            eml_latex=r"K_{\text{matching}} = \mathrm{ops.id}(b_2) = \mathrm{ops.id}(\mathrm{eml\_scalar}(4))",
+            eml_tree_str="ops.id(eml_scalar(4.0))  # K_matching = b2 = h11 = 4",
+            eml_description="EML: K_matching is the identity map on b2; K_matching = ops.id(eml_scalar(4))",
         ))
 
         return formulas
@@ -1491,7 +1510,8 @@ class G2GeometryV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Number of independent 2-cycles (Kahler moduli); equals h^{1,1} = 4 for TCS #187. Topological invariant: no experimental measurement exists since this is a pure mathematical property of the internal G2 manifold.",
                 derivation_formula="betti-numbers",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar(4) — b2 = h11 = 4 from TCS Hodge data"
             ),
             Parameter(
                 path="topology.elder_kads",
@@ -1500,7 +1520,8 @@ class G2GeometryV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Number of associative 3-cycles (b3 = 24) where chiral matter fields localize in M-theory. Topological invariant of the TCS G2 construction; no direct experimental measurement exists for internal manifold topology.",
                 derivation_formula="betti-numbers",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar(24) — b3 is the foundational topological seed of the entire framework"
             ),
             Parameter(
                 path="topology.mephorash_chi",
@@ -1509,7 +1530,8 @@ class G2GeometryV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Effective Euler characteristic chi_eff = 2(h11 - h21 + h31) = 144 from TCS #187 Hodge numbers. Topological invariant governing the chiral index; no direct experimental observable.",
                 derivation_formula="euler-characteristic",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_scalar(2), ops.add(eml_scalar(4), ops.neg(eml_scalar(0)), eml_scalar(68))) = 144"
             ),
             Parameter(
                 path="topology.n_gen",
@@ -1521,7 +1543,8 @@ class G2GeometryV16(SimulationBase):
                 experimental_bound=3,
                 bound_type="measured",
                 bound_source="PDG2024",
-                uncertainty=0.0
+                uncertainty=0.0,
+                eml_description="EML: ops.div(eml_scalar(144), eml_scalar(48)) = 3 generations"
             ),
             Parameter(
                 path="topology.k_gimel",
@@ -1530,7 +1553,8 @@ class G2GeometryV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Geometric anchor k_gimel = b3/2 + 1/pi = 12.3183... Derived purely from the topological integer b3 = 24 and the transcendental constant pi. No direct experimental measurement; validated through downstream predictions (alpha, w0, etc.).",
                 derivation_formula=None,
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) — Gimel constant from b3 and 1/π",
             ),
             Parameter(
                 path="topology.K_MATCHING",

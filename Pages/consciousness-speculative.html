@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Consciousness & Quantum Biology — Speculative extensions of Principia Metaphysica exploring Orch-OR, gnosis unlocking, and bridge-pair coherence.">
+    <title>Consciousness Extensions (Speculative) - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+
+    <!-- Tooltip / formula hover -->
+    <link rel="stylesheet" href="../css/pm-tooltip.css">
+    <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
+
+    <!-- MathJax -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true
+            },
+            options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'] }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        /* ───────────────────────────────
+           Speculation block component
+        ─────────────────────────────── */
+        .speculation-outer {
+            border: 2px solid rgba(255, 180, 50, 0.45);
+            border-radius: 14px;
+            margin: 2.5rem 0;
+            background: rgba(255, 165, 0, 0.04);
+            overflow: hidden;
+        }
+
+        .speculation-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.9rem 1.4rem;
+            background: rgba(255, 165, 0, 0.10);
+            cursor: pointer;
+            user-select: none;
+            border-bottom: 1px solid rgba(255, 180, 50, 0.25);
+            transition: background 0.2s;
+        }
+
+        .speculation-header:hover { background: rgba(255, 165, 0, 0.16); }
+
+        .speculation-header .spec-label {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #ffb833;
+            font-weight: 700;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .speculation-header .spec-title {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-left: 0.5rem;
+        }
+
+        .speculation-header .spec-chevron {
+            color: #ffb833;
+            font-size: 1.1rem;
+            transition: transform 0.25s;
+        }
+
+        .speculation-header[aria-expanded="false"] .spec-chevron {
+            transform: rotate(-90deg);
+        }
+
+        .speculation-body {
+            padding: 1.5rem 1.6rem 1.6rem;
+        }
+
+        .speculation-body.collapsed { display: none; }
+
+        /* Physics foundation (non-speculative) */
+        .physics-derived {
+            background: rgba(80, 200, 120, 0.08);
+            border: 1px solid rgba(80, 200, 120, 0.3);
+            border-left: 4px solid #50c878;
+            border-radius: 10px;
+            padding: 1.2rem 1.4rem;
+            margin: 1.2rem 0;
+        }
+
+        .physics-derived h5 {
+            color: #50c878;
+            margin: 0 0 0.5rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Page-level warning */
+        .page-warning {
+            background: rgba(255, 180, 50, 0.10);
+            border: 1px solid rgba(255, 180, 50, 0.35);
+            border-radius: 12px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0 2.5rem;
+        }
+
+        .page-warning h4 {
+            color: #ffb833;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Formula box */
+        .formula-box {
+            background: rgba(10, 10, 20, 0.65);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            border-radius: 10px;
+            padding: 1rem 1.4rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            overflow-x: auto;
+        }
+
+        .formula-label {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            margin-bottom: 0.35rem;
+            font-family: var(--font-body, sans-serif);
+        }
+
+        /* Open question badge */
+        .open-question {
+            background: rgba(255, 107, 107, 0.08);
+            border: 1px solid rgba(255, 107, 107, 0.25);
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin: 0.75rem 0;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .open-question::before {
+            content: "❓ ";
+            font-style: normal;
+        }
+
+        /* Summary table */
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+
+        .spec-table th {
+            background: rgba(139, 127, 255, 0.12);
+            color: var(--accent-primary);
+            padding: 0.6rem 0.9rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(139, 127, 255, 0.25);
+        }
+
+        .spec-table td {
+            padding: 0.55rem 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .spec-table tr:last-child td { border-bottom: none; }
+
+        .badge-derived  { color: #50c878; font-weight: 600; }
+        .badge-speculative { color: #ffb833; font-weight: 600; }
+        .badge-fitted   { color: #ff6b9d; font-weight: 600; }
+        .badge-open     { color: #ff6b6b; font-weight: 600; }
+
+        /* Section number chip */
+        .section-chip {
+            display: inline-block;
+            background: rgba(139, 127, 255, 0.18);
+            color: var(--accent-primary);
+            border-radius: 6px;
+            padding: 0.15rem 0.55rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+  <div id="main-content">
+    <!-- Header injected by pm-header.js -->
+
+    <main class="container" style="max-width: 1020px; padding: 2rem;">
+
+        <h1 style="text-align: center; margin-bottom: 0.4rem;">Consciousness &amp; Quantum Biology</h1>
+        <p style="text-align: center; color: var(--text-muted); margin-bottom: 0.5rem;">
+            Speculative Extensions of the Principia Metaphysica Framework
+        </p>
+        <p style="text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 2rem;">
+            These ideas are preserved here outside the main simulation pipeline.<br>
+            Content marked <span style="color: #ffb833; font-weight: 700;">SPECULATION</span> goes beyond what the physics derivations currently support.
+        </p>
+
+        <!-- Page-level warning -->
+        <div class="page-warning">
+            <h4>&#x26A0; Speculative Content Notice</h4>
+            <p style="color: var(--text-secondary); margin: 0; line-height: 1.7;">
+                This page explores how the G₂ manifold topology of Principia Metaphysica
+                <em>might</em> relate to quantum biology and consciousness.
+                The <strong>physics foundations</strong> (Penrose-Diosi collapse criterion,
+                G₂ topological pitch, microtubule structure) are established science.
+                The <strong>consciousness interpretations</strong> — pair activation maps to awareness,
+                gnosis unlocking, dice-branch selection — are speculative and not experimentally validated.
+                They are preserved for intellectual exploration, clearly labelled.
+            </p>
+        </div>
+
+        <!-- ─────────────────────────────────────
+             PHYSICS FOUNDATION (non-speculative)
+        ───────────────────────────────────── -->
+        <h2 style="margin-top: 2.5rem;">Physics Foundation</h2>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+            Two results connecting G₂ topology to quantum biology rest on
+            established physics — not speculation.
+        </p>
+
+        <div class="physics-derived">
+            <h5>&#x2705; Derived — G₂ Topological Pitch → Microtubule Protofilament Count</h5>
+            <p style="margin: 0; color: var(--text-secondary); line-height: 1.7;">
+                The pitch of the G₂ manifold, computed from the Betti number $b_3 = 24$ and
+                the spectral stiffness $k_\gimel$, yields:
+            </p>
+            <div class="formula-box" style="margin: 0.8rem 0 0.5rem;">
+                <div class="formula-label">Formula (7.2b) — Topological Pitch</div>
+                $$p_{G_2} = \frac{b_3}{k_\gimel / \pi} = \frac{24}{k_\gimel / \pi} \approx 6.12$$
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                    Scaled by the Penrose–Hameroff bridge constant $\Phi_{PH} = 13/\phi^2 \approx 2.125$:
+                    $\;p_{G_2} \times 2.125 \approx 13\;$ — matching the 13-protofilament helical repeat of
+                    mammalian microtubules (Amos &amp; Klug, 1974).
+                </p>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.82rem; margin: 0.3rem 0 0; font-style: italic;">
+                Note: the 2.125 scaling factor is still fitted, so this is suggestive rather than a clean prediction.
+            </p>
+        </div>
+
+        <div class="physics-derived">
+            <h5>&#x2705; Established Physics — Penrose-Diosi Objective Reduction Criterion</h5>
+            <p style="margin: 0; color: var(--text-secondary); line-height: 1.7;">
+                The gravitational self-energy $E_G$ sets the timescale for quantum state reduction
+                (Penrose 1996, Diósi 1989). Using the <em>conformational</em> mass shift
+                $M_\text{eff} = N \cdot m_\text{tubulin} \cdot f_\text{conf}$ (fraction $f_\text{conf} \approx 10^{-4}$
+                rather than total mass) brings the coherence time into the neural gamma band:
+            </p>
+            <div class="formula-box" style="margin: 0.8rem 0 0.5rem;">
+                <div class="formula-label">Formula (7.2) — Penrose-Diosi Coherence Time</div>
+                $$\tau = \frac{\hbar}{E_G}, \quad E_G = \frac{G_N \, M_\text{eff}^2}{r_\Delta}$$
+                $$M_\text{eff} = N \cdot m_\text{tubulin} \cdot f_\text{conf}, \quad f_\text{conf} \approx 10^{-4}$$
+                <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                    With $N \approx 10^9$ coherent tubulins, $m_\text{tubulin} \approx 1.8 \times 10^{-22}$ kg,
+                    $r_\Delta \approx 0.25$ nm: $\;\tau \approx 100$ ms — matching observed neural gamma synchrony.
+                </p>
+            </div>
+        </div>
+
+        <!-- Parameter classification table -->
+        <h3 style="margin-top: 2rem;">Parameter Classification Summary</h3>
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th>Value</th>
+                    <th>Status</th>
+                    <th>Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$b_3$ — G₂ Betti number</td>
+                    <td>24</td>
+                    <td><span class="badge-derived">DERIVED</span></td>
+                    <td>Topology of TCS #187</td>
+                </tr>
+                <tr>
+                    <td>$p_{G_2}$ — topological pitch</td>
+                    <td>≈ 6.12</td>
+                    <td><span class="badge-derived">DERIVED</span></td>
+                    <td>$b_3 / (k_\gimel/\pi)$</td>
+                </tr>
+                <tr>
+                    <td>$\Phi_{PH}$ — protofilament count</td>
+                    <td>13</td>
+                    <td><span class="badge-fitted">FITTED (×2.125)</span></td>
+                    <td>Scaled pitch; 2.125 is fitted</td>
+                </tr>
+                <tr>
+                    <td>$\tau \approx 100$ ms (dry)</td>
+                    <td>~100 ms</td>
+                    <td><span class="badge-derived">DERIVED</span></td>
+                    <td>Penrose-Diosi with $f_\text{conf}$</td>
+                </tr>
+                <tr>
+                    <td>$K_\text{coherence} = 6.02$</td>
+                    <td>6.02</td>
+                    <td><span class="badge-fitted">FITTED</span></td>
+                    <td>Pair-enhancement exponent</td>
+                </tr>
+                <tr>
+                    <td>$k = 3.2$ (gnosis steepness)</td>
+                    <td>3.2</td>
+                    <td><span class="badge-fitted">FITTED</span></td>
+                    <td>Sigmoid steepness; no derivation</td>
+                </tr>
+                <tr>
+                    <td>Warm-brain coherence gap</td>
+                    <td>$10^3$–$10^5$ short</td>
+                    <td><span class="badge-open">OPEN PROBLEM</span></td>
+                    <td>Tegmark 2000; unresolved</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ─────────────────────────────────────
+             SPECULATION 1 — Orch-OR Pair Enhancement
+        ───────────────────────────────────── -->
+        <h2 style="margin-top: 3rem;">Speculative Extensions</h2>
+        <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 0;">
+            The sections below are wrapped in
+            <span style="color: #ffb833; font-weight: 700;">SPECULATION</span> blocks.
+            They extend the physics foundation into untested territory.
+            Expand each block to read the ideas.
+        </p>
+
+        <!-- SPECULATION 1 -->
+        <div class="speculation-outer">
+            <div class="speculation-header" role="button" tabindex="0"
+                 aria-expanded="false" onclick="toggleSpeculation(this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')toggleSpeculation(this)">
+                <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                    <span class="spec-label">&#x1F9EA; Speculation</span>
+                    <span class="section-chip">7.3</span>
+                    <span class="spec-title">Orch-OR Pair Enhancement — Decoherence Shielding</span>
+                </div>
+                <span class="spec-chevron">&#x25BE;</span>
+            </div>
+            <div class="speculation-body collapsed">
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The 12 bridge pairs of M²⁷(24,1,2) are proposed as topological
+                    shields that protect microtubule quantum coherence against thermal
+                    decoherence at 310 K. Each additional active pair contributes an
+                    exponential enhancement to the effective coherence time:
+                </p>
+
+                <div class="formula-box">
+                    <div class="formula-label">Formula (7.6) — Pair-Shielding Enhancement</div>
+                    $$\tau_\text{eff} = \frac{\hbar}{E_G} \cdot \exp\!\left(k\sqrt{n_\text{pairs}}\right)$$
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                        $k = 2.5$ (dimensionless shielding coefficient, not yet derived from first principles).
+                        At $n = 6$ (baseline): factor $\approx 5.9\times$. At $n = 12$ (full activation): factor $\approx 48.7\times$.
+                    </p>
+                </div>
+
+                <table class="spec-table" style="margin: 1.25rem 0;">
+                    <thead><tr><th>Regime</th><th>$n_\text{pairs}$</th><th>$\tau_\text{eff}$</th><th>Warm-brain target</th></tr></thead>
+                    <tbody>
+                        <tr><td>Dry reference (12 pairs)</td><td>12</td><td>≥ 25 ms</td><td>&#x2705; met (dry)</td></tr>
+                        <tr><td>Baseline consciousness</td><td>6</td><td>≈ 0.09 ms</td><td>&#x274C; gap 100–1000×</td></tr>
+                        <tr><td>Full gnosis</td><td>12</td><td>≈ 1–10 ms</td><td>&#x26A0; gap ~10×</td></tr>
+                    </tbody>
+                </table>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    Comparison with GRW theory: the Ghirardi-Rimini-Weber spontaneous collapse rate
+                    $\lambda_\text{GRW} = 10^{-16}$ s$^{-1}$ per particle predicts effectively no collapse
+                    in microtubules on neural timescales, whereas the Penrose-Diosi mechanism with
+                    pair shielding gives $\tau_\text{eff}$ in the millisecond range.
+                </p>
+
+                <div class="open-question">
+                    What is the physical mechanism by which bridge pairs protect quantum coherence?
+                    Geometric isolation, topological error correction, and zero-mode resonance are
+                    candidate mechanisms — none yet derived from first principles.
+                </div>
+                <div class="open-question">
+                    The warm-brain gap ($10^3$–$10^5$) between the shielded coherence time and
+                    what thermal noise requires at 310 K is the primary open problem.
+                    Tegmark (2000) sets the decoherence timescale at $\sim 10^{-13}$ s for isolated tubulins.
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-top: 1rem;">
+                    Simulation source: <code>simulations/PM/consciousness/orch_or_pair_shielding.py</code>
+                    (OrchORPairShieldingSimulation v22.0) — retained for reference.
+                </p>
+            </div>
+        </div>
+
+        <!-- SPECULATION 2 -->
+        <div class="speculation-outer">
+            <div class="speculation-header" role="button" tabindex="0"
+                 aria-expanded="false" onclick="toggleSpeculation(this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')toggleSpeculation(this)">
+                <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                    <span class="spec-label">&#x1F9EA; Speculation</span>
+                    <span class="section-chip">7.4</span>
+                    <span class="spec-title">Gnosis Unlocking — Progressive Pair Activation (6 → 12)</span>
+                </div>
+                <span class="spec-chevron">&#x25BE;</span>
+            </div>
+            <div class="speculation-body collapsed">
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    At baseline, 6 of the 12 bridge pairs are active (the minimum for stable
+                    M²⁷ geometry). Activation of additional pairs from 6 to 12 is modelled
+                    as a phase transition in awareness — from ordinary perception to heightened
+                    cognitive integration ("gnosis"). The unlocking probability follows a logistic curve:
+                </p>
+
+                <div class="formula-box">
+                    <div class="formula-label">Formula (7.4a) — Unlocking Probability</div>
+                    $$P_\text{unlock}(n) = \frac{1}{1 + e^{-0.9\,(n - 6)}}$$
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                        $n$ = number of active pairs (6–12).
+                        Steepness 0.9 is not derived from topology; it is fitted to produce
+                        $P = 0.5$ at $n = 6$ and $P > 0.97$ at $n = 10$.
+                    </p>
+                </div>
+
+                <div class="formula-box">
+                    <div class="formula-label">Formula (7.4b) — Coherence Time Enhancement</div>
+                    $$\tau(n) = \tau_0 \cdot \exp\!\left(k\sqrt{n/12}\right) \cdot \left(\frac{n}{6}\right)^2$$
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                        $\tau_0 = 25$ ms (gamma threshold baseline),
+                        $k = 3.2$ (fitted exponential steepness).
+                        $\tau(6) \approx 89$ ms; $\tau(12) \approx 605$ ms.
+                        Boost $= \tau(12)/\tau(6) \approx 6.8\times$ (criterion was $> 10\times$; currently borderline).
+                    </p>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The four-stage model maps consciousness channels onto bridge-pair groups:
+                </p>
+
+                <table class="spec-table">
+                    <thead><tr><th>Stage</th><th>Pairs</th><th>$P_\text{unlock}$</th><th>$\tau$ (approx.)</th></tr></thead>
+                    <tbody>
+                        <tr><td>Sensory</td><td>1–3</td><td>—</td><td>baseline 25 ms</td></tr>
+                        <tr><td>Cognitive</td><td>4–6</td><td>0.50</td><td>≈ 89 ms</td></tr>
+                        <tr><td>Emotional</td><td>7–9</td><td>0.92</td><td>≈ 220 ms</td></tr>
+                        <tr><td>Gnosis</td><td>10–12</td><td>&gt; 0.97</td><td>≈ 605 ms</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="open-question">
+                    The mapping of bridge-pair groups to "sensory", "cognitive", "emotional", and
+                    "gnosis" states has no independent physical derivation — it is a conceptual
+                    interpretation inspired by contemplative traditions and EEG meditation studies
+                    (Lutz et al. 2004; Braboszcz et al. 2017), not a prediction of the G₂ framework.
+                </div>
+                <div class="open-question">
+                    $k = 3.2$ is fitted with no derivation. A value derived from $b_3$, $k_\gimel$,
+                    or $\phi$ would be required to promote this from speculation to prediction.
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-top: 1rem;">
+                    Simulation source: <code>simulations/PM/consciousness/gnosis_unlocking.py</code>
+                    (GnosisUnlockingSimulationV22 v22.2) — retained for reference.
+                </p>
+            </div>
+        </div>
+
+        <!-- SPECULATION 3 -->
+        <div class="speculation-outer">
+            <div class="speculation-header" role="button" tabindex="0"
+                 aria-expanded="false" onclick="toggleSpeculation(this)"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')toggleSpeculation(this)">
+                <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                    <span class="spec-label">&#x1F9EA; Speculation</span>
+                    <span class="section-chip">7.5</span>
+                    <span class="spec-title">Four-Dice Consciousness Branch Selection (4⁴ = 256 Branches)</span>
+                </div>
+                <span class="spec-chevron">&#x25BE;</span>
+            </div>
+            <div class="speculation-body collapsed">
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The 12 bridge pairs can be grouped into four "dice" of three pairs each,
+                    corresponding naturally to the four spacetime dimensions $(t, x, y, z)$ of
+                    the emergent 4D observer frame. Each die outcome is computed via
+                    mod-4 arithmetic on the G₂ spectral flux:
+                </p>
+
+                <div class="formula-box">
+                    <div class="formula-label">Formula (7.5) — Branch Index</div>
+                    $$\mathcal{B} = d_0 + 4\,d_1 + 16\,d_2 + 64\,d_3, \quad d_i = \left(\sum_j f_j \cdot x_j \cdot k_\gimel\right) \bmod 4$$
+                    $$|\mathcal{B}| = 4^4 = 256 \quad (\text{8 bits of "consciousness information"})$$
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                        The perpendicular rotation operator $R_\perp = \bigl(\begin{smallmatrix}0&-1\\1&0\end{smallmatrix}\bigr)$
+                        selects coordinate projections in each bridge-pair $(2,0)$ plane.
+                    </p>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    Dice structure:
+                </p>
+                <table class="spec-table">
+                    <thead><tr><th>Die</th><th>Bridge pairs</th><th>Spacetime axis (speculative)</th></tr></thead>
+                    <tbody>
+                        <tr><td>$d_0$</td><td>0, 1, 2</td><td>$t$ (temporal)</td></tr>
+                        <tr><td>$d_1$</td><td>3, 4, 5</td><td>$x$ (spatial 1)</td></tr>
+                        <tr><td>$d_2$</td><td>6, 7, 8</td><td>$y$ (spatial 2)</td></tr>
+                        <tr><td>$d_3$</td><td>9, 10, 11</td><td>$z$ (spatial 3)</td></tr>
+                    </tbody>
+                </table>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The quaternionic structure is appealing: $R_\perp^2 = -I$, the mod-4 group is isomorphic
+                    to $\mathbb{Z}_4$, and 256 = $16^2$ has natural connections to the 4D spinor structure.
+                    At a gamma frequency of 40 Hz, this gives a notional "consciousness bandwidth" of
+                    $256 \times 40 \approx 10{,}240$ bits/s — an evocative but entirely unvalidated figure.
+                </p>
+
+                <div class="open-question">
+                    There is no physical mechanism connecting mod-4 arithmetic on bridge-pair flux
+                    to branch selection in objective reduction. The dice metaphor is a mathematical
+                    curiosity, not a prediction.
+                </div>
+                <div class="open-question">
+                    The 4×3 factorization of 12 pairs into four groups of three does not follow
+                    uniquely from G₂ topology — other groupings (2×6, 3×4, 12×1) are equally natural.
+                    A physical reason to prefer the 4×3 grouping has not been identified.
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-top: 1rem;">
+                    Simulation source: <code>simulations/PM/consciousness/four_dice_sampling.py</code>
+                    (FourDiceSamplingSimulation v22.0) — retained for reference.
+                </p>
+            </div>
+        </div>
+
+        <!-- SECTION: orch_or_geometry (most rigorous — collapsed but richer content) -->
+        <div class="speculation-outer" style="border-color: rgba(139, 127, 255, 0.5); background: rgba(139, 127, 255, 0.03);">
+            <div class="speculation-header" role="button" tabindex="0"
+                 aria-expanded="false" onclick="toggleSpeculation(this)"
+                 style="background: rgba(139, 127, 255, 0.10);"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')toggleSpeculation(this)">
+                <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+                    <span class="spec-label" style="color: #a89fff;">&#x1F52C; Speculative (most rigorous)</span>
+                    <span class="section-chip">7.2</span>
+                    <span class="spec-title">Orch-OR Geometry — G₂ Topology and Neural Coherence (v24.2)</span>
+                </div>
+                <span class="spec-chevron" style="color: #a89fff;">&#x25BE;</span>
+            </div>
+            <div class="speculation-body collapsed">
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    This is the most mathematically grounded of the four consciousness extensions.
+                    Three <em>purely topological</em> results connect G₂ geometry to microtubule physics:
+                </p>
+
+                <ol style="color: var(--text-secondary); line-height: 2; padding-left: 1.5rem;">
+                    <li>
+                        <strong>Topological pitch $p_{G_2} \approx 6.12$</strong> — derived from $b_3 / (k_\gimel/\pi)$,
+                        scales (with fitted factor 2.125) to 13 protofilaments.
+                    </li>
+                    <li>
+                        <strong>Conformational Penrose time $\tau \approx 100$ ms</strong> — derived from Penrose-Diosi
+                        with $f_\text{conf} \approx 10^{-4}$, landing in the neural gamma band.
+                        This key fix (using conformational rather than total mass) removes the 9-orders-of-magnitude
+                        discrepancy that originally invalidated the Orch-OR model.
+                    </li>
+                    <li>
+                        <strong>$c_\kaf$ constraint → displacement radius</strong>
+                        $r_\Delta \approx 0.25$ nm derived from $b_3 \cdot (b_3 - 7)/(b_3 - 9)$,
+                        matching measured tubulin conformational displacement (Hameroff 2014).
+                    </li>
+                </ol>
+
+                <div class="formula-box">
+                    <div class="formula-label">Formula (7.2) — G₂-corrected Penrose-Diosi time</div>
+                    $$\tau = \frac{\hbar}{E_G}, \quad E_G = \frac{G_\text{eff}\, M_\text{eff}^2}{r_\Delta}$$
+                    $$G_\text{eff} = G_N \cdot k_\gimel, \quad M_\text{eff} = N \cdot m_\text{tub} \cdot f_\text{conf}$$
+                    <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0.5rem 0 0; font-family: sans-serif;">
+                        $k_\gimel$ warp-corrects Newton's constant through the G₂ spectral gap.
+                        This is speculative: $G_\text{eff} \neq G_N$ has no independent experimental support.
+                    </p>
+                </div>
+
+                <div class="formula-box">
+                    <div class="formula-label">Formula (7.2b) — Topological Pitch</div>
+                    $$p_{G_2} = \frac{b_3}{k_\gimel / \pi} \approx 6.12 \xrightarrow{\times\,\Phi_{PH}} 13 \text{ protofilaments}$$
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7; margin-top: 1.2rem;">
+                    <strong>Gnosis progression (speculative layer):</strong>
+                    Beyond the base Penrose time, the simulation adds an exponential pair-enhancement
+                    $\tau \to \tau \cdot \exp(K \sqrt{n_\text{pairs}})$ with $K_\text{coherence} = 6.02$ (fitted).
+                    This is the speculative part — the pure Penrose result is defensible; the pair
+                    exponent is not yet derived from the G₂ algebra.
+                </p>
+
+                <table class="spec-table">
+                    <thead><tr><th>Pairs Active</th><th>Level</th><th>$\tau_\text{conscious}$</th></tr></thead>
+                    <tbody>
+                        <tr><td>6</td><td>BASELINE_DUALITY</td><td>~100 ms</td></tr>
+                        <tr><td>8</td><td>AWAKENING</td><td>~130 ms</td></tr>
+                        <tr><td>10</td><td>ILLUMINATION</td><td>~165 ms</td></tr>
+                        <tr><td>12</td><td>FULL_GNOSIS</td><td>~200+ ms</td></tr>
+                    </tbody>
+                </table>
+
+                <div class="open-question">
+                    The "Consciousness I/O" interpretation — normal halves ($y_{1i}$) as perception,
+                    mirror halves ($y_{2i}$) as intuition — has no physical grounding beyond the
+                    geometric Z₂ symmetry of the bridge pairs. It remains an evocative metaphor.
+                </div>
+
+                <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic; margin-top: 1rem;">
+                    Simulation source: <code>simulations/PM/field_dynamics/orch_or_geometry.py</code>
+                    (OrchORSimulation v22.0) — the most physically grounded consciousness module;
+                    retained in the main simulation suite with speculative sections clearly labelled.
+                </p>
+            </div>
+        </div>
+
+        <!-- ─────────────────────────────────────
+             OPEN PROBLEMS & FALSIFIABILITY
+        ───────────────────────────────────── -->
+        <h2 style="margin-top: 3rem;">Open Problems &amp; Falsifiability</h2>
+        <p style="color: var(--text-secondary); line-height: 1.7;">
+            For these ideas to graduate from speculation to prediction, specific
+            experimental and theoretical milestones would need to be met:
+        </p>
+
+        <table class="spec-table">
+            <thead>
+                <tr>
+                    <th>Claim</th>
+                    <th>What's needed to validate</th>
+                    <th>Current status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$p_{G_2} \to 13$ protofilaments</td>
+                    <td>Derive the 2.125 scaling factor from G₂ algebra (not fitted)</td>
+                    <td><span class="badge-open">OPEN</span></td>
+                </tr>
+                <tr>
+                    <td>Pair shielding closes warm-brain gap</td>
+                    <td>Physical mechanism for decoherence suppression at 310 K</td>
+                    <td><span class="badge-open">OPEN</span></td>
+                </tr>
+                <tr>
+                    <td>$k = 3.2$ gnosis steepness</td>
+                    <td>Derive from $b_3$, $k_\gimel$, or $\phi$ without fitting</td>
+                    <td><span class="badge-open">OPEN</span></td>
+                </tr>
+                <tr>
+                    <td>$G_\text{eff} = G_N \cdot k_\gimel$</td>
+                    <td>Measurement of gravitational coupling in low-energy G₂ geometry</td>
+                    <td><span class="badge-open">OPEN</span></td>
+                </tr>
+                <tr>
+                    <td>Dice branch selection</td>
+                    <td>Any physical prediction distinguishing 256 branches from a uniform distribution</td>
+                    <td><span class="badge-open">OPEN</span></td>
+                </tr>
+                <tr>
+                    <td>$\tau \approx 100$ ms (Penrose-Diosi)</td>
+                    <td>Experimental measurement of quantum coherence in microtubules at gamma frequency</td>
+                    <td><span class="badge-speculative">IN PROGRESS (Craddock et al.)</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ─────────────────────────────────────
+             REFERENCES
+        ───────────────────────────────────── -->
+        <h2 style="margin-top: 3rem;">Key References</h2>
+        <ul style="color: var(--text-secondary); line-height: 2; list-style: none; padding: 0;">
+            <li>&#x1F4D6; Penrose, R. (1996). <em>On gravity's role in quantum state reduction.</em> Gen. Rel. Grav. 28, 581–600.</li>
+            <li>&#x1F4D6; Diósi, L. (1989). <em>Models for universal reduction of macroscopic quantum fluctuations.</em> Phys. Rev. A 40, 1165.</li>
+            <li>&#x1F4D6; Hameroff, S. &amp; Penrose, R. (2014). <em>Consciousness in the Universe: a review of the 'Orch OR' theory.</em> Phys. Life Rev. 11, 39–78.</li>
+            <li>&#x1F4D6; Tegmark, M. (2000). <em>Importance of quantum decoherence in brain processes.</em> Phys. Rev. E 61, 4194.</li>
+            <li>&#x1F4D6; Amos, L.A. &amp; Klug, A. (1974). <em>Arrangement of subunits in flagellar microtubules.</em> J. Cell Sci. 14, 523–549.</li>
+            <li>&#x1F4D6; Lutz, A. et al. (2004). <em>Long-term meditators self-induce high-amplitude gamma synchrony.</em> PNAS 101, 16369–16373.</li>
+            <li>&#x1F4D6; Braboszcz, C. et al. (2017). <em>Increased gamma brainwave amplitude compared to control in three different meditation traditions.</em> PLOS ONE.</li>
+        </ul>
+
+        <p style="color: var(--text-muted); font-size: 0.82rem; margin-top: 3rem; text-align: center;">
+            These ideas are preserved for intellectual exploration.<br>
+            They are not part of the main 72-Gate certification pipeline.
+        </p>
+    </main>
+  </div>
+
+    <!-- pm-header injection -->
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        injectHeader('consciousness-speculative', {
+            breadcrumbs: [{ label: 'Philosophy', href: 'philosophical-implications.html' }]
+        });
+    </script>
+
+    <!-- pm-values -->
+    <script src="../js/pm-value-loader.js" defer></script>
+
+    <script>
+        function toggleSpeculation(header) {
+            const body = header.nextElementSibling;
+            const expanded = header.getAttribute('aria-expanded') === 'true';
+            header.setAttribute('aria-expanded', String(!expanded));
+            body.classList.toggle('collapsed', expanded);
+        }
+    </script>
+</body>
+</html>

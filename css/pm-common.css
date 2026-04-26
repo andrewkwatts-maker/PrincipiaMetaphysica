@@ -905,3 +905,108 @@ html {
 .eml-formula {
     transition: opacity 0.15s ease;
 }
+
+/* ============================================================
+   SPECULATION BLOCKS
+   Toggle via [data-speculation="show"] on <html>.
+   Default OFF — speculation content is hidden.
+
+   Usage in HTML/templates:
+     <div class="speculation-block">Speculative claim here</div>
+
+   In Python section content use <Speculation>...</Speculation> tags;
+   pm-section-renderer.js converts them to .speculation-block divs.
+   ============================================================ */
+
+/* Hidden by default */
+html:not([data-speculation="show"]) .speculation-block {
+    display: none !important;
+}
+
+/* Shown when speculation mode is active */
+[data-speculation="show"] .speculation-block {
+    display: block;
+    border-left: 3px solid var(--color-amber, #f59e0b);
+    background: rgba(245, 158, 11, 0.06);
+    border-radius: 0 6px 6px 0;
+    padding: 0.6rem 1rem;
+    margin: 0.5rem 0;
+    font-style: italic;
+    color: var(--text-secondary, #b0b0c0);
+    position: relative;
+}
+
+[data-speculation="show"] .speculation-block::before {
+    content: '◈ Speculation';
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-amber, #f59e0b);
+    margin-bottom: 0.3rem;
+    font-style: normal;
+}
+
+/* Inline speculation spans */
+html:not([data-speculation="show"]) .speculation-inline {
+    display: none !important;
+}
+
+[data-speculation="show"] .speculation-inline {
+    color: var(--color-amber, #f59e0b);
+    font-style: italic;
+    opacity: 0.75;
+}
+
+/* Speculation mode indicator badge */
+.speculation-badge {
+    display: none;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    border-radius: 10px;
+    padding: 0.1rem 0.5rem;
+    letter-spacing: 0.04em;
+    vertical-align: middle;
+    margin-left: 0.4rem;
+}
+
+[data-speculation="show"] .speculation-badge {
+    display: inline;
+}
+
+/* Speculation toggle button (header control) */
+.speculation-toggle-btn {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.65rem;
+    border-radius: 12px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    background: transparent;
+    color: var(--text-muted, #888);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+}
+
+.speculation-toggle-btn:hover {
+    border-color: #f59e0b;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.08);
+}
+
+[data-speculation="show"] .speculation-toggle-btn {
+    border-color: #f59e0b;
+    color: #f59e0b;
+    background: rgba(245, 158, 11, 0.12);
+}
+
+/* Smooth transition */
+.speculation-block,
+.speculation-inline {
+    transition: opacity 0.15s ease;
+}

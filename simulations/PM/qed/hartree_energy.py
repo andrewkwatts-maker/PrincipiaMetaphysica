@@ -266,6 +266,12 @@ class HartreeEnergyV17(SimulationBase):
                 input_params=["topology.elder_kads", "topology.ancestral_roots"],
                 output_params=["qed.bulk_hartree_energy"],
                 description="Derives the bulk Hartree energy via Inverse Double-Gate from CODATA",
+                eml_tree_str="ops.div(codata_hartree, ops.mul(ops.add(eml_scalar(1.0), epsilon), ops.pow(ops.sub(eml_scalar(1.0), epsilon), eml_scalar(2.0))))",
+                eml_description=(
+                    "EML Inverse Double-Gate (bulk): E_h_bulk = ops.div(E_h_CODATA, "
+                    "ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2))). "
+                    "E_h is inversely proportional to a_0 which expands via the direct double-gate."
+                ),
                 derivation={
                     "steps": [
                         "Begin with CODATA 2022 Hartree energy: E_h = 4.3597447222071(85) x 10^-18 J",
@@ -296,6 +302,12 @@ class HartreeEnergyV17(SimulationBase):
                 input_params=["topology.elder_kads", "topology.ancestral_roots"],
                 output_params=["qed.manifest_hartree_energy"],
                 description="Projects bulk Hartree energy to manifest 3D value via double-gate round-trip",
+                eml_tree_str="ops.mul(bulk_hartree, ops.mul(ops.add(eml_scalar(1.0), epsilon), ops.pow(ops.sub(eml_scalar(1.0), epsilon), eml_scalar(2.0))))",
+                eml_description=(
+                    "EML Inverse Double-Gate (manifest): E_h_manifest = ops.mul(E_h_bulk, "
+                    "ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2))). "
+                    "Round-trip recovers CODATA value to machine precision."
+                ),
                 derivation={
                     "steps": [
                         "Start from the bulk Hartree energy E_h_bulk computed in eq. (6.3a)",
@@ -326,6 +338,7 @@ class HartreeEnergyV17(SimulationBase):
                 status="DERIVED",
                 description="Bulk Hartree energy in Pleroma (before projection via Inverse Double-Gate)",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(E_h_CODATA, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))",
             ),
             Parameter(
                 path="qed.manifest_hartree_energy",
@@ -337,6 +350,7 @@ class HartreeEnergyV17(SimulationBase):
                 bound_type="measured",
                 bound_source="CODATA2022",
                 uncertainty=CODATA_HARTREE_SIGMA,
+                eml_description="EML: ops.mul(E_h_bulk, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))",
             ),
             Parameter(
                 path="qed.hartree_variance_j",

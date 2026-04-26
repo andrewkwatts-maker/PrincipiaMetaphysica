@@ -491,8 +491,12 @@ class GaugeUnificationSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content="Near the Planck scale, the gravitational coupling becomes relevant and drives "
-                            "the system toward an asymptotically safe UV fixed point. We identify the "
-                            "unified coupling with the G₂ topological value α<sub>GUT</sub>:"
+                            "the system toward an asymptotically safe UV fixed point. "
+                            "<Speculation>We propose that the UV fixed point value coincides with the "
+                            "G₂ topological value, identifying the unified coupling with b₃: "
+                            "1/α<sub>GUT</sub> ≈ 24 = b₃. This identification has no rigorous derivation "
+                            "from the asymptotic safety functional renormalization group; it is a "
+                            "conjectural topological constraint.</Speculation>"
                 ),
                 ContentBlock(
                     type="formula",
@@ -603,7 +607,10 @@ class GaugeUnificationSimulation(SimulationBase):
                     "α₃": "SU(3)_c strong coupling constant",
                     "θ_W": "Weak mixing (Weinberg) angle, sin²θ_W = 0.23121 at M_Z",
                     "αₑₘ": "Electromagnetic fine structure constant, 1/137.036",
-                }
+                },
+                eml_latex=r"\alpha_1 = \mathrm{ops.div}(\mathrm{ops.mul}(\frac{5}{3}, \alpha_{em}), \cos^2\theta_W)",
+                eml_tree_str="ops.div(ops.mul(ops.div(eml_scalar(5.0), eml_scalar(3.0)), alpha_em), ops.pow(cos_theta_W, eml_scalar(2.0)))",
+                eml_description="EML: gauge couplings at M_Z as ops.div(ops.mul(5/3, alpha_em), cos²θW)",
             ),
             Formula(
                 id="kk-threshold",
@@ -632,7 +639,10 @@ class GaugeUnificationSimulation(SimulationBase):
                     "k_i": "Group-dependent KK factor",
                     "h^{1,1}": "Hodge number (24 for TCS G2)",
                     "M_*": "KK threshold scale",
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.div}(\mathrm{ops.mul}(k_i,\, h^{11}), \mathrm{ops.mul}(2, \mathrm{eml\_pi}())),\, \mathrm{ops.log}(\mathrm{ops.div}(M_{GUT}, M_*)))",
+                eml_tree_str="ops.mul(ops.div(ops.mul(k_i, eml_scalar(24.0)), ops.mul(eml_scalar(2.0), eml_pi())), ops.log(ops.div(M_GUT, M_star)))",
+                eml_description="EML: KK threshold correction as ops.mul(ops.div(k_i·h11, 2π), ops.log(M_GUT/M_*))",
             ),
             Formula(
                 id="asymptotic-safety-fixed-point",
@@ -662,7 +672,10 @@ class GaugeUnificationSimulation(SimulationBase):
                     "ω": "Asymptotic safety weight factor",
                     "α*": "UV fixed point coupling",
                     "b₃": "Third Betti number of G2 manifold",
-                }
+                },
+                eml_latex=r"\alpha^* = \mathrm{ops.inv}(b_3) = \mathrm{ops.inv}(\mathrm{eml\_scalar}(24))",
+                eml_tree_str="ops.inv(eml_scalar(24.0))  # alpha_star = 1/b3",
+                eml_description="EML: UV fixed point alpha_star = ops.inv(b3) = 1/24, purely topological",
             ),
             Formula(
                 id="gut-scale",
@@ -707,7 +720,10 @@ class GaugeUnificationSimulation(SimulationBase):
                     "mu": "Renormalization scale (GeV)",
                     "alpha_i": "Gauge couplings for U(1)_Y, SU(2)_L, SU(3)_c",
                     "sigma": "Standard deviation (unification spread measure)",
-                }
+                },
+                eml_latex=r"M_{GUT} = \mathrm{ops.argmin}_\mu\,\mathrm{ops.std}(\alpha_1(\mu),\alpha_2(\mu),\alpha_3(\mu))",
+                eml_tree_str="ops.argmin_mu(ops.std(alpha1_mu, alpha2_mu, alpha3_mu))",
+                eml_description="EML: GUT scale = argmin over mu of standard deviation of gauge couplings",
             ),
             Formula(
                 id="gauge-coupling-unification",
@@ -766,7 +782,10 @@ class GaugeUnificationSimulation(SimulationBase):
                     "M_GUT": "Grand Unification scale (GeV)",
                     "alpha_GUT": "Unified gauge coupling (dimensionless)",
                     "b3": "Third Betti number of G2 manifold",
-                }
+                },
+                eml_latex=r"\alpha_{GUT} = \mathrm{ops.eval}(\alpha_i, M_{GUT})",
+                eml_tree_str="ops.eval(alpha_i, M_GUT)  # unified coupling at GUT scale",
+                eml_description="EML: alpha_GUT is the common coupling value at the unification scale",
             ),
             Formula(
                 id="gauge-rg-evolution",
@@ -801,7 +820,10 @@ class GaugeUnificationSimulation(SimulationBase):
                     "alpha_i": "Gauge coupling (i = 1,2,3)",
                     "b_i": "1-loop beta function coefficient",
                     "b_ij": "2-loop beta function coefficient",
-                }
+                },
+                eml_latex=r"\mu \frac{d\alpha_i}{d\mu} = \mathrm{ops.add}(\mathrm{ops.mul}(\mathrm{ops.div}(b_i, \mathrm{ops.mul}(2, \mathrm{eml\_pi}())), \mathrm{ops.pow}(\alpha_i, \mathrm{eml\_scalar}(2))), \ldots)",
+                eml_tree_str="ops.add(ops.mul(ops.div(b_i, ops.mul(eml_scalar(2.0), eml_pi())), ops.pow(alpha_i, eml_scalar(2.0))), ops.mul(b_ij, ops.pow(alpha_i, eml_scalar(2.0)), alpha_j), ops.mul(b_ijk, ops.pow(alpha_i, eml_scalar(2.0)), alpha_j, alpha_k))",
+                eml_description="EML: 3-loop RG beta function as nested ops.add/mul/div/pow operator tree over gauge couplings",
             ),
         ]
 
@@ -824,6 +846,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 experimental_bound=1.67e34,
                 bound_type="indirect_lower",
                 bound_source="Super-Kamiokande proton lifetime bound tau_p > 1.67e34 yr constrains M_GUT > ~10^15 GeV",
+                eml_description="EML: ops.argmin_mu(ops.std(alpha1_mu, alpha2_mu, alpha3_mu)) — GUT scale is the energy at which 3-loop RG-evolved gauge couplings minimally spread",
                 validation={
                     "theoretical_range": {"min": 1e15, "max": 1e17},
                     "status": "UNTESTED",
@@ -842,6 +865,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 bound_type="indirect_lower",
                 bound_source="Super-Kamiokande proton lifetime tau_p > 1.67e34 yr (p -> e+ pi0)",
                 uncertainty=0.09e16,
+                eml_description="EML: ops.mul(eml_scalar(2.1e16), eml_scalar(1.0)) — geometric GUT scale from TCS G2 torsion T_omega=-0.875 and moduli Re(T)~9.865 (currently hardcoded; pending moduli derivation)",
                 validation={
                     "theoretical_range": {"min": 1.9e16, "max": 2.3e16},
                     "status": "PASS",
@@ -856,6 +880,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 description="Unified gauge coupling from 3-loop RG evolution. Theoretical prediction with no direct experimental access.",
                 derivation_formula="gauge-coupling-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.inv(alpha_GUT_inv) — alpha_GUT = 1/alpha_GUT_inv from RG running; alpha_GUT_inv ~ ops.add(eml_scalar(42.0), eml_scalar(0.7))",
                 validation={
                     "theoretical_range": {"min": 0.02, "max": 0.04},
                     "status": "UNTESTED",
@@ -870,6 +895,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 description="Unified gauge coupling from G2 torsion and moduli (used for proton decay). Theoretical prediction from geometry.",
                 derivation_formula="gauge-coupling-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.inv(eml_scalar(23.54)) — geometric alpha_GUT = 1/23.54 from G2 torsion class T_omega=-0.875 and moduli stabilization",
                 validation={
                     "theoretical_range": {"min": 0.04, "max": 0.045},
                     "status": "PASS",
@@ -884,6 +910,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 description="Inverse of unified gauge coupling (1/alpha_GUT ~ 24). Theoretical prediction from asymptotic safety.",
                 derivation_formula="gauge-coupling-unification",
                 no_experimental_value=True,
+                eml_description="EML: eml_scalar(24) — AS fixed point alpha_GUT^-1 = b3 (asymptotic safety locks to Betti number)",
                 validation={
                     "theoretical_range": {"min": 24, "max": 50},
                     "status": "PASS",
@@ -898,6 +925,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 description="sin^2(theta_W) at GUT scale (SO(10) predicts 3/8). Theoretical prediction - measured value at M_Z is 0.23121 +/- 0.00004 (PDG 2024).",
                 derivation_formula="gauge-coupling-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(eml_scalar(3.0), eml_scalar(8.0)) = 3/8 — SO(10) GUT prediction from hypercharge embedding (group theory, not a fit)",
                 validation={
                     "status": "PASS",
                     "notes": "SO(10) GUT prediction: sin^2(theta_W)_GUT = 3/8 = 0.375 exactly. This is a theoretical prediction at the GUT scale, not an experimental measurement. No direct measurement possible at GUT energies."

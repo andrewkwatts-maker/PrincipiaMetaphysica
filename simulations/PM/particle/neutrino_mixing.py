@@ -1047,6 +1047,17 @@ class NeutrinoMixingSimulation(SimulationBase):
                         "NuFIT 6.0 (2024) arXiv:2111.03086"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.div(ops.sqrt(ops.mul(b2, n_gen)), b3), "
+                    "ops.add(eml_scalar(1.0), ops.div(S_orient, ops.mul(eml_scalar(2.0), chi_eff)))"
+                    ")"
+                ),
+                eml_description=(
+                    "EML: ops.mul(ops.div(ops.sqrt(ops.mul(b2, n_gen)), b3), "
+                    "ops.add(eml_scalar(1.0), ops.div(S_orient, ops.mul(eml_scalar(2.0), chi_eff)))) "
+                    "— CALIBRATED to NuFIT 6.0 IO"
+                ),
                 terms={
                     "b2": "Kähler moduli count (h^{1,1})",
                     "b3": "Associative 3-cycle count",
@@ -1086,6 +1097,18 @@ class NeutrinoMixingSimulation(SimulationBase):
                         "Cycle intersection complex phases in G2 geometry"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_pi(), "
+                    "ops.add("
+                    "ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), "
+                    "ops.div(n_gen, b3)"
+                    "))"
+                ),
+                eml_description=(
+                    "EML: ops.mul(eml_pi(), ops.add("
+                    "ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), "
+                    "ops.div(n_gen, b3))) — CP phase from cycle intersection complex structure"
+                ),
                 terms={
                     "n_gen": "Number of fermion generations",
                     "b2": "Kähler moduli count",
@@ -1129,6 +1152,20 @@ class NeutrinoMixingSimulation(SimulationBase):
                         "Tri-bimaximal mixing from discrete symmetries"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.inv(ops.sqrt(eml_scalar(3.0))), "
+                    "ops.add(eml_scalar(1.0), ops.neg("
+                    "ops.div(ops.add(b3, ops.neg(ops.mul(b2, n_gen))), "
+                    "ops.mul(eml_scalar(2.0), chi_eff))"
+                    "))"
+                    ")"
+                ),
+                eml_description=(
+                    "EML: ops.mul(ops.inv(ops.sqrt(eml_scalar(3.0))), "
+                    "ops.add(eml_scalar(1.0), ops.neg(ops.div(ops.add(b3, ops.neg(ops.mul(b2, n_gen))), "
+                    "ops.mul(eml_scalar(2.0), chi_eff))))) — CALIBRATED to NuFIT 6.0"
+                ),
                 terms={
                     r"\theta_{12}": "Solar neutrino mixing angle",
                     r"\frac{1}{\sqrt{3}}": "Tri-bimaximal base value (sin(theta_12) ~ 0.577)",
@@ -1202,6 +1239,19 @@ class NeutrinoMixingSimulation(SimulationBase):
                         "Metric back-reaction from G4 flux (arXiv:hep-th/0502058)"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.add(eml_scalar(45.0), ops.add("
+                    "ops.div(ops.mul(ops.add(b2, ops.neg(n_gen)), n_gen), b2), "
+                    "ops.mul(ops.div(S_orient, b3), "
+                    "ops.div(ops.mul(b2, chi_eff), ops.mul(b3, n_gen)))"
+                    "))"
+                ),
+                eml_description=(
+                    "EML: ops.add(eml_scalar(45.0), ops.add("
+                    "ops.div(ops.mul(ops.add(b2, ops.neg(n_gen)), n_gen), b2), "
+                    "ops.mul(ops.div(S_orient, b3), ops.div(ops.mul(b2, chi_eff), ops.mul(b3, n_gen))))) "
+                    "— CALIBRATED to NuFIT 6.0"
+                ),
                 terms={
                     "b2": "Kähler moduli count (h^{1,1})",
                     "b3": "Associative 3-cycle count",
@@ -1248,6 +1298,14 @@ class NeutrinoMixingSimulation(SimulationBase):
                         "Neutrino mass ordering from cycle orientations"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.sqrt(ops.add(ops.pow(m2, eml_scalar(2.0)), "
+                    "ops.neg(delta_m21_sq)))"
+                ),
+                eml_description=(
+                    "EML: ops.sqrt(ops.add(ops.pow(m2, eml_scalar(2.0)), ops.neg(delta_m21_sq))) "
+                    "— mass eigenvalues from Yukawa texture on G2 3-cycles"
+                ),
                 terms={
                     "Y_nu": "Neutrino Yukawa coupling matrix",
                     "M_nu": "Neutrino mass matrix (Majorana)",
@@ -1294,6 +1352,13 @@ class NeutrinoMixingSimulation(SimulationBase):
                         "DESI 2024 + CMB: Σm_ν < 0.072 eV (95% CL)"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.add(m1, ops.add(m2, m3))"
+                ),
+                eml_description=(
+                    "EML: ops.add(m1, ops.add(m2, m3)) "
+                    "— neutrino mass sum from geometric seesaw: Σm_ν ≈ 0.10 eV"
+                ),
                 terms={
                     "Σm_ν": "Sum of neutrino mass eigenvalues",
                     "m_base": "Geometric seesaw mass scale (~0.049 eV)",
@@ -1365,6 +1430,10 @@ class NeutrinoMixingSimulation(SimulationBase):
                 uncertainty=nufit_theta_12[1],
                 bound_type="measured",
                 bound_source="NuFIT6.0",
+                eml_description=(
+                    "EML: ops.mul(eml_scalar(33.44), ops.div(eml_pi(), eml_scalar(180.0))) "
+                    "— CALIBRATED to NuFIT 6.0"
+                ),
                 validation={
                     "experimental_value": nufit_theta_12[0],
                     "uncertainty_plus": 0.75,
@@ -1388,6 +1457,10 @@ class NeutrinoMixingSimulation(SimulationBase):
                 uncertainty=nufit_theta_13_io[1],
                 bound_type="measured",
                 bound_source="NuFIT6.0",
+                eml_description=(
+                    "EML: ops.mul(eml_scalar(8.57), ops.div(eml_pi(), eml_scalar(180.0))) "
+                    "— CALIBRATED to NuFIT 6.0"
+                ),
                 validation={
                     "experimental_value": nufit_theta_13_io[0],
                     "uncertainty_plus": 0.11,
@@ -1411,6 +1484,10 @@ class NeutrinoMixingSimulation(SimulationBase):
                 uncertainty=nufit_theta_23_io[1],
                 bound_type="measured",
                 bound_source="NuFIT6.0",
+                eml_description=(
+                    "EML: ops.mul(eml_scalar(49.2), ops.div(eml_pi(), eml_scalar(180.0))) "
+                    "— CALIBRATED to NuFIT 6.0"
+                ),
                 validation={
                     "experimental_value": nufit_theta_23_io[0],
                     "uncertainty_plus": 1.0,
@@ -1434,6 +1511,11 @@ class NeutrinoMixingSimulation(SimulationBase):
                 uncertainty=nufit_delta_cp_io[1],
                 bound_type="measured",
                 bound_source="NuFIT6.0",
+                eml_description=(
+                    "EML: ops.mul(eml_pi(), ops.add("
+                    "ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), "
+                    "ops.div(n_gen, b3))) — CALIBRATED to NuFIT 6.0 IO"
+                ),
                 validation={
                     "experimental_value": nufit_delta_cp_io[0],
                     "uncertainty_plus": 22.0,
@@ -1523,6 +1605,10 @@ class NeutrinoMixingSimulation(SimulationBase):
                 uncertainty=0.21e-5,  # +0.21/-0.20, using larger uncertainty
                 bound_type="measured",
                 bound_source="NuFIT6.0",
+                eml_description=(
+                    "EML: ops.add(ops.pow(m2, eml_scalar(2.0)), "
+                    "ops.neg(ops.pow(m1, eml_scalar(2.0)))) — solar mass-squared splitting"
+                ),
                 validation={
                     "experimental_value": 7.42e-5,
                     "uncertainty_plus": 0.21e-5,
@@ -1545,6 +1631,10 @@ class NeutrinoMixingSimulation(SimulationBase):
                 uncertainty=0.028e-3,  # ±0.028
                 bound_type="measured",
                 bound_source="NuFIT6.0_IO",
+                eml_description=(
+                    "EML: ops.add(ops.pow(m3, eml_scalar(2.0)), "
+                    "ops.neg(ops.pow(m2, eml_scalar(2.0)))) — atmospheric splitting (negative = IO)"
+                ),
                 validation={
                     "experimental_value": -2.404e-3,
                     "uncertainty_plus": 0.028e-3,

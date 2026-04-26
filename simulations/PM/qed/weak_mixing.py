@@ -117,6 +117,13 @@ class WeakMixingV17(SimulationBase):
                 input_params=["topology.elder_kads", "topology.ancestral_roots"],
                 output_params=["qed.bulk_weak_mixing", "qed.manifest_weak_mixing"],
                 description="Weak mixing angle sin^2(theta_W) = g'^2/(g^2+g'^2) contracts via Torsion Gate (inverse cubic projection). The physical mechanism: in the Weinberg formalism, sin^2(theta_W) is a dimensionless ratio of U(1)_Y to electroweak coupling strengths. During bulk-to-manifest dimensional projection, both g and g' expand by (1+epsilon), so their squared ratio contracts by 1/(1+epsilon). This reproduces the PDG Z-pole value 0.23122 to high precision.",
+                eml_tree_str="ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Torsion Gate (Inverse Cubic): sin^2(theta_W) = "
+                    "ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon)). "
+                    "Dimensionless coupling ratios contract: both g and g' expand by (1+epsilon), "
+                    "making g'^2/(g^2+g'^2) contract by 1/(1+epsilon)."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -145,6 +152,7 @@ class WeakMixingV17(SimulationBase):
                 status="DERIVED",
                 description="sin^2(theta_W) in bulk (before Torsion Gate)",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(weak_manifest, ops.add(eml_scalar(1.0), epsilon))",
             ),
             Parameter(
                 path="qed.manifest_weak_mixing",
@@ -155,6 +163,7 @@ class WeakMixingV17(SimulationBase):
                 experimental_bound=CODATA_WEAK,
                 bound_type="measured",
                 bound_source="PDG2024",
+                eml_description="EML: ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon)) — coupling ratio contracts under projection",
             ),
         ]
 

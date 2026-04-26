@@ -535,6 +535,25 @@ class SpeedOfLightV17(SimulationBase):
                     f"Weyl rescaling combine to yield c = {c_derived:,.2f} m/s "
                     f"({accuracy:.5f}% of CODATA exact value)."
                 ),
+                eml_latex=(
+                    r"c = \mathrm{ops.mul}(C_{\text{geo}},\; \mathrm{ops.mul}(S_f,\; \mathrm{ops.mul}(B_v,\; "
+                    r"\mathrm{ops.mul}(\chi_{gc},\; \mathrm{ops.mul}(10^7,\; P_{3D})))))"
+                ),
+                eml_tree_str=(
+                    "# Speed of light chain in EML operator tree:\n"
+                    "# C_geo = ops.div(eml_scalar(18.0), eml_scalar(24.0))  # Δ_eff/b₃ = 3/4\n"
+                    "# S_f   = ops.add(eml_scalar(10.0), ops.div(eml_scalar(24.0), eml_scalar(10.0)))  # Z₆·b₃ + 1/Z₆\n"
+                    "# B_v   = ops.mul(ops.div(eml_scalar(288.0), eml_scalar(163.0)), ops.div(eml_scalar(153.0), eml_scalar(135.0)))\n"
+                    "# chi_gc = ops.div(ops.sub(eml_scalar(288.0), eml_scalar(24.0)), ops.add(eml_scalar(163.0), eml_scalar(1.0)))\n"
+                    "# P_3D  = ops.add(eml_scalar(1.0), ops.inv(eml_scalar(28800.0)))\n"
+                    "# c = ops.mul(C_geo, ops.mul(S_f, ops.mul(B_v, ops.mul(chi_gc, ops.mul(eml_scalar(1e7), P_3D)))))"
+                ),
+                eml_description=(
+                    "EML: ops.div(eml_scalar(1.0), ops.sqrt(ops.mul(epsilon_0, mu_0))) — "
+                    "c from G₂ metric as KK-reduction product of harmonic cycle fraction, "
+                    "Ricci flow stretching, and bulk metric ratio; "
+                    "chain: ops.mul(C_geo, ops.mul(S_f, ops.mul(B_v, ops.mul(chi_gc, ops.mul(1e7, P_3D)))))"
+                ),
                 inputParams=[
                     "topology.elder_kads",
                     "topology.nitzotzin_roots",

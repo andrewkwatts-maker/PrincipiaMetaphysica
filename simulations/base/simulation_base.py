@@ -197,6 +197,7 @@ class Parameter:
         uncertainty: Experimental uncertainty (1-sigma)
         no_experimental_value: Set True if no experimental measurement exists (e.g., topological params)
         validation: Optional validation metadata dict
+        eml_description: Optional EML/Mirror-Phase-Mathematics description of how the parameter is computed
 
     Dynamic Descriptions:
         Use description_template with {value} placeholder for descriptions that reference
@@ -218,6 +219,7 @@ class Parameter:
     theory_uncertainty: Optional[float] = None  # Theoretical precision limit (1σ)
     no_experimental_value: bool = False
     validation: Optional[Dict[str, Any]] = None
+    eml_description: str = ""  # EML/Mirror Phase Mathematics description of derivation path
 
 
 class SimulationBase(ABC):
@@ -415,6 +417,10 @@ class SimulationBase(ABC):
                 # Add theory_uncertainty to metadata if present in param_def
                 if param_def and param_def.theory_uncertainty is not None:
                     metadata['theory_uncertainty'] = param_def.theory_uncertainty
+
+                # Propagate eml_description from param_def to metadata
+                if param_def and param_def.eml_description:
+                    metadata['eml_description'] = param_def.eml_description
 
                 # Extract experimental comparison data from parameter definition
                 exp_value = None

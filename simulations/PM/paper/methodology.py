@@ -765,6 +765,9 @@ class MethodologyV16_2(SimulationBase):
                     "Psi": "Eigenfunction (harmonic mode) on V7",
                     "lambda_n": "n-th spectral eigenvalue encoding a physical constant"
                 },
+                eml_tree_str="ops.mul(Delta_V7, Psi_n)",
+                eml_latex=r"\mathrm{ops.mul}(\Delta_{V_7},\; \Psi_n) = \lambda_n \cdot \Psi_n",
+                eml_description="EML: ops.mul(Delta_V7, Psi_n) = ops.mul(lambda_n, Psi_n) — Laplacian acting on eigenfunction as operator-tree multiplication",
             ),
             Formula(
                 id="trace-formula",
@@ -789,6 +792,9 @@ class MethodologyV16_2(SimulationBase):
                     "Vol(V7)": "Volume of the G2 holonomy manifold V7",
                     "125": "Total number of spectral residues (visible sector)"
                 },
+                eml_tree_str="ops.sum_n(ops.apply(f, lambda_n), eml_scalar(1.0), eml_scalar(125.0))",
+                eml_latex=r"\mathrm{ops.sum\_n}(\mathrm{ops.apply}(f, \lambda_n),\; 1,\; 125) \approx \mathrm{Vol}(V_7)",
+                eml_description="EML: ops.sum_n(f(lambda_n), 1, 125) ≈ Vol(V7) — Selberg trace as EML summation over 125 spectral residues",
             ),
             # STERILE PROOF: Spectral Trace
             Formula(
@@ -816,6 +822,9 @@ class MethodologyV16_2(SimulationBase):
                     "Vol(V7)": "Volume of the G2 holonomy manifold",
                     "125": "Total number of spectral residues",
                 },
+                eml_tree_str="ops.div(Vol_V7, ops.pow(ops.mul(eml_scalar(4.0), ops.mul(eml_pi(), t)), eml_scalar(3.5)))",
+                eml_latex=r"\mathrm{ops.div}(\mathrm{Vol}(V_7),\; \mathrm{ops.pow}(\mathrm{ops.mul}(4,\; \mathrm{ops.mul}(\pi,\; t)),\; 3.5))",
+                eml_description="EML: leading heat-kernel term ops.div(Vol_V7, ops.pow(4πt, 7/2)) — Minakshisundaram-Pleijel expansion of Tr(e^{-tΔ})",
             ),
             Formula(
                 id="global-sum-rule",
@@ -841,6 +850,9 @@ class MethodologyV16_2(SimulationBase):
                     "R_n": {"symbol": "\\mathcal{R}_n", "description": "Spectral residue at eigenvalue n"},
                     "Φ_G2": {"symbol": "\\Phi_{G_2}", "description": "G₂ holonomy invariant (total geometric closure)"},
                 },
+                eml_tree_str="ops.sum_n(ops.mul(omega_n, ops.pow(R_n, eml_scalar(2.0))), eml_scalar(1.0), eml_scalar(125.0))",
+                eml_latex=r"\mathrm{ops.sum\_n}(\mathrm{ops.mul}(\omega_n,\; \mathrm{ops.pow}(\mathcal{R}_n, 2)),\; 1,\; 125) = \Phi_{G_2}",
+                eml_description="EML: ops.sum_n(ops.mul(omega_n, ops.pow(R_n, 2)), 1, 125) = Phi_G2 — weighted residue checksum as EML operator tree",
             ),
         ]
 
@@ -853,7 +865,8 @@ class MethodologyV16_2(SimulationBase):
                 no_experimental_value=True,
                 units="residues",
                 description="Total number of spectral residues in the visible sector (Laplacian eigenvalues of V7)",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(125) — visible-sector spectral residue count fixed by G₂ V₇ topology (5³)"
             ),
         ]
 

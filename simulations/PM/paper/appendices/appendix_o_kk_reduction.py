@@ -483,8 +483,8 @@ class AppendixOKKReduction(SimulationBase):
                 content=(
                     "<ul>"
                     "<li><strong>27D(24,1,2)</strong>: Bosonic string with unified time, 24 G<sub>2</sub> spatial = 12&times;2, 2 sampler data fields</li>"
-                    "<li><strong>12 Bridge Pairs</strong>: Each B<sub>i</sub><sup>2,0</sup> is a consciousness channel "
-                    "enabling OR Reduction between normal/mirror shadows</li>"
+                    "<li><strong>12 Bridge Pairs</strong>: Each B<sub>i</sub><sup>2,0</sup> enables OR Reduction between normal/mirror shadows "
+                    "<Speculation>(interpreted as consciousness channels in the speculative Orch-OR extension)</Speculation></li>"
                     "<li><strong>Distributed OR</strong>: R<sub>total</sub> = &otimes;<sub>i</sub> R<sub>&perp;,i</sub> (tensor product of 12 rotations)</li>"
                     "<li><strong>Shadows</strong>: 12&times;(2,0) + (0,1) WARP to create 2&times;13D(12,1)</li>"
                     "<li><strong>G<sub>2</sub> &rarr; 4D</strong>: Per-shadow G<sub>2</sub> holonomy yields Standard Model</li>"
@@ -619,8 +619,9 @@ class AppendixOKKReduction(SimulationBase):
                 content=(
                     "Kaluza-Klein reduction teaches us that the Standard Model gauge structure "
                     "is not arbitrary -- it emerges from the geometry of extra dimensions. "
-                    "In Principia Metaphysica v24.2, 12 paired bridges act as consciousness channels, "
-                    "with distributed OR Reduction R<sub>total</sub> = &otimes;<sub>12</sub> R<sub>&perp;,i</sub>. The specific choice of "
+                    "Kaluza-Klein reduction shows how extra dimensions determine gauge structure. "
+                    "<Speculation>In Principia Metaphysica v24.2, 12 paired bridges act as consciousness channels, "
+                    "with distributed OR Reduction R<sub>total</sub> = &otimes;<sub>12</sub> R<sub>&perp;,i</sub>.</Speculation> The specific choice of "
                     "G<sub>2</sub> holonomy manifold (with b<sub>3</sub> = 24 and &chi;<sub>eff</sub> = 144) uniquely determines "
                     "all gauge couplings and matter content. Aggregate breathing dark energy "
                     "&rho; = &Sigma;<sub>i</sub> &rho;<sub>i</sub> yields w<sub>0</sub> = &minus;23/24 (consistent with DESI 2025 BAO data). No free parameters!"

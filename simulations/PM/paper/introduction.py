@@ -881,7 +881,7 @@ class IntroductionV16(SimulationBase):
                     "(4) <strong>specific values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ 4.5 TeV, "
                     "Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli stabilization), "
                     "δ<sub>CP</sub> = π/2 as geometric predictions</strong> from topology (b₃=24, λ=1.5 with minimal phenomenological input), "
-                    "and (5) may address aspects of the quantum measurement problem through geometric correlations in the mirror shadow.</p>"
+                    "and <Speculation>(5) may address aspects of the quantum measurement problem through geometric correlations in the mirror shadow.</Speculation></p>"
                 ),
                 label="central-thesis"
             ),
@@ -963,7 +963,7 @@ class IntroductionV16(SimulationBase):
                     "<li><strong>G₂ triple overlap integrals</strong> for Yukawa textures from explicit 7D Monte Carlo</li>"
                     "<li><strong>Racetrack-blended sector sampling</strong> for cosmological ratios (DM/baryon ~5.8 predicted)</li>"
                     "<li><strong>χ<sub>eff</sub> = 144 flux quantization</strong> determining n<sub>gen</sub> = 3 parameter-free</li>"
-                    "<li><strong>Pneuma-microtubule coupling</strong> inspired by Orch-OR quantum biology (speculative appendix)</li>"
+                    "<li><Speculation><strong>Pneuma-microtubule coupling</strong> inspired by Orch-OR quantum biology (speculative appendix)</Speculation></li>"
                     "<li><strong>Thermal time hypothesis</strong> for emergent time from modular flow on G₂</li>"
                     "</ul>"
                     "<p>The framework is rooted in M-theory-inspired phenomenology, building on established "
@@ -1030,6 +1030,9 @@ class IntroductionV16(SimulationBase):
                     "to each physical role, with the exclusion of dim 2 (complex numbers) reflecting the "
                     "absence of a fundamental worldsheet degree of freedom in the observable sector."
                 ),
+                eml_tree_str="ops.add(eml_scalar(1.0), ops.add(eml_scalar(4.0), eml_scalar(8.0)))",
+                eml_latex=r"D = \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\; \mathrm{ops.add}(\mathrm{eml\_scalar}(4),\; \mathrm{eml\_scalar}(8)))",
+                eml_description="EML: D = ops.add(dim_R=1, ops.add(dim_H=4, dim_O=8)) — Hurwitz decomposition of shadow dimension into division algebra factors",
                 input_params=[
                     "dimensions.D_bulk",
                     "topology.elder_kads",
@@ -1065,7 +1068,8 @@ class IntroductionV16(SimulationBase):
                 no_experimental_value=True,
                 units="sections",
                 description="Number of subsections in the introduction (1.1 through 1.6)",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(6) — count of introduction subsections (1.1 through 1.6)"
             )
         ]
 

@@ -497,7 +497,10 @@ class FRTTauGravityV18(SimulationBase):
                     "T": "Stress-energy trace (matter coupling)",
                     "tau": "G2 modulus field (cycle volume)",
                     "(d_tau)R": "Kinetic mixing from flux dynamics"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(R,\, \mathrm{ops.add}(\mathrm{ops.mul}(\alpha_F, \mathrm{ops.pow}(R, \mathrm{eml\_scalar}(2))),\, \mathrm{ops.add}(\mathrm{ops.mul}(\beta_F, T),\, \mathrm{ops.add}(\mathrm{ops.mul}(\gamma_F, \mathrm{ops.mul}(R, \tau)),\, \mathrm{ops.mul}(\delta_F, \mathrm{ops.mul}(\partial\tau, R))))))",
+                eml_tree_str="ops.add(R, ops.add(ops.mul(alpha_F, ops.pow(R, eml_scalar(2.0))), ops.add(ops.mul(beta_F, T), ops.mul(gamma_F, ops.mul(R, tau)))))",
+                eml_description="EML: L_grav = ops.add(R, ops.add(alpha_F*R^2, ops.add(beta_F*T, gamma_F*R*tau))) — f(R,T,tau) Lagrangian",
             ),
             Formula(
                 id="alpha-f-derivation-v18",
@@ -539,7 +542,10 @@ class FRTTauGravityV18(SimulationBase):
                 terms={
                     "b3": "Third Betti number = 24",
                     "chi_eff": "Effective Euler characteristic = 144"
-                }
+                },
+                eml_latex=r"\alpha_F = \mathrm{ops.inv}(\mathrm{ops.pow}(\mathrm{eml\_scalar}(24), \mathrm{eml\_scalar}(2))),\quad \beta_F = \mathrm{ops.inv}(\mathrm{eml\_scalar}(144))",
+                eml_tree_str="ops.inv(ops.pow(eml_scalar(24.0), eml_scalar(2.0)))  # alpha_F = 1/b3^2",
+                eml_description="EML: alpha_F = ops.inv(ops.pow(b3, 2)) = 1/576, beta_F = ops.inv(chi_eff) = 1/144",
             ),
             Formula(
                 id="w0-from-modified-gravity-v18",
@@ -582,7 +588,10 @@ class FRTTauGravityV18(SimulationBase):
                     "chi_eff": "Effective Euler characteristic (144)",
                     "alpha_F": "R^2 coefficient (1/576)",
                     "delta_attractor": "Attractor correction (~0.034)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(1)),\, \mathrm{ops.mul}(\mathrm{ops.div}(\mathrm{eml\_scalar}(2), \mathrm{ops.mul}(\mathrm{eml\_scalar}(3), \mathrm{ops.sqrt}(\mathrm{eml\_scalar}(144)))),\, \mathrm{ops.sub}(\mathrm{eml\_scalar}(1), \mathrm{ops.mul}(\mathrm{eml\_scalar}(12), \alpha_F))))",
+                eml_tree_str="ops.add(ops.neg(eml_scalar(1.0)), ops.mul(ops.div(eml_scalar(2.0), ops.mul(eml_scalar(3.0), ops.sqrt(eml_scalar(144.0)))), ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(12.0), alpha_F))))",
+                eml_description="EML: w0 = ops.add(-1, ops.mul(2/(3*sqrt(chi_eff)), ops.sub(1, 12*alpha_F))) — modified gravity w0",
             ),
             Formula(
                 id="gw-speed-modified-gravity-v18",

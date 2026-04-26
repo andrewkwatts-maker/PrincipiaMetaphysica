@@ -725,6 +725,17 @@ class MultiSectorV16(SimulationBase):
                 outputParams=["cosmology.modulation_width"],
                 input_params=["topology.mephorash_chi", "topology.elder_kads"],
                 output_params=["cosmology.modulation_width"],
+                eml_latex=r"\sigma = \mathrm{ops.sqrt}(\mathrm{ops.div}(b_3,\; \chi_{eff})) = \mathrm{ops.sqrt}(\mathrm{ops.div}(24,\; 144))",
+                eml_tree_str=(
+                    "# Modulation width in EML operator tree:\n"
+                    "# sigma_width = ops.sqrt(ops.div(eml_scalar(24.0), eml_scalar(144.0)))\n"
+                    "# = ops.sqrt(eml_scalar(1.0/6.0)) ≈ 0.408"
+                ),
+                eml_description=(
+                    "EML: ops.sqrt(ops.div(eml_scalar(24.0), eml_scalar(144.0))) — "
+                    "L_G2 × sqrt(b3/chi_eff) = sqrt(24/144) = 1/sqrt(6) ≈ 0.408; "
+                    "same wavefunction overlap as Yukawa sector"
+                ),
                 derivation={
                     "steps": [
                         {
@@ -821,6 +832,17 @@ class MultiSectorV16(SimulationBase):
                 outputParams=["cosmology.Omega_DM_over_b"],
                 input_params=["cosmology.T_mirror_ratio"],
                 output_params=["cosmology.Omega_DM_over_b"],
+                eml_latex=r"\frac{\Omega_{DM}}{\Omega_b} = \mathrm{ops.pow}(\mathrm{ops.inv}(T'/T),\; 3)",
+                eml_tree_str=(
+                    "# DM abundance in EML operator tree:\n"
+                    "# Omega_DM_over_b = ops.pow(ops.inv(T_prime_over_T), eml_scalar(3.0))\n"
+                    "# multi-sector CDM: ops.add(omega_face2, omega_face3, omega_face4)"
+                ),
+                eml_description=(
+                    "EML: ops.pow(ops.inv(T_prime_over_T), eml_scalar(3.0)) — "
+                    "(T/T')³ from entropy dilution; "
+                    "multi-sector CDM density: ops.add(omega_face2, ops.add(omega_face3, omega_face4))"
+                ),
                 derivation={
                     "steps": [
                         {
@@ -885,7 +907,12 @@ class MultiSectorV16(SimulationBase):
                 experimental_bound=5.38,
                 bound_type="central_value",
                 bound_source="Planck2018",
-                uncertainty=0.15
+                uncertainty=0.15,
+                eml_description=(
+                    "EML: ops.pow(ops.inv(T_prime_over_T), eml_scalar(3.0)) — "
+                    "(T/T')³ = (1/0.57)³ ≈ 5.4; "
+                    "multi-sector: ops.add(omega_face2, ops.add(omega_face3, omega_face4))"
+                ),
             ),
             Parameter(
                 path="cosmology.T_mirror_ratio",
@@ -894,7 +921,12 @@ class MultiSectorV16(SimulationBase):
                 status="DERIVED",
                 description="Ratio of mirror to visible sector temperature (T'/T)",
                 derivation_formula="sector-temperature-ratio",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(ops.pow(g_ratio, ops.div(eml_scalar(1.0), eml_scalar(3.0))), "
+                    "ops.sqrt(decay_asymmetry)) — "
+                    "(g_*/g'_*)^(1/3) × (Γ'/Γ)^(1/2) from asymmetric reheating"
+                ),
             ),
             Parameter(
                 path="cosmology.modulation_width",
@@ -908,7 +940,12 @@ class MultiSectorV16(SimulationBase):
                     "eliminating the phenomenological gap between particle physics and cosmology."
                 ),
                 derivation_formula="moduli-potential",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.sqrt(ops.div(eml_scalar(24.0), eml_scalar(144.0))) — "
+                    "sqrt(b3/chi_eff) = sqrt(24/144) = 1/sqrt(6) ≈ 0.408; "
+                    "transfer function: ops.mul(T_CDM, ops.pow(k_over_k_eq, ops.neg(eml_scalar(2.0))))"
+                ),
             ),
             Parameter(
                 path="cosmology.sm_weight",

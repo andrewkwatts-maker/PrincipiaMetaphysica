@@ -134,6 +134,11 @@ class FaradayV17(SimulationBase):
                     "topological (invariant) and extensive (diluting) quantities in the PM "
                     "projection framework."
                 ),
+                eml_tree_str="ops.div(f_bulk, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Inverse Cubic: F = ops.div(f_bulk, ops.add(eml_scalar(1.0), epsilon)). "
+                    "F = N_A * e inherits N_A contraction; e is topologically invariant (KK winding number)."
+                ),
                 derivation={
                     "steps": [
                         "Start with the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -163,6 +168,7 @@ class FaradayV17(SimulationBase):
                 status="DERIVED",
                 description="Faraday constant in bulk (before contraction)",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(f_manifest, ops.add(eml_scalar(1.0), epsilon))",
             ),
             Parameter(
                 path="qed.manifest_faraday",
@@ -173,6 +179,7 @@ class FaradayV17(SimulationBase):
                 experimental_bound=CODATA_FARADAY,
                 bound_type="measured",
                 bound_source="CODATA2022",
+                eml_description="EML: ops.div(f_bulk, ops.add(eml_scalar(1.0), epsilon)) — F=N_A*e, e invariant",
             ),
         ]
 

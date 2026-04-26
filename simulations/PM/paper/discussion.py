@@ -1130,7 +1130,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "As a speculative interpretive extension, the PM dual-shadow geometry raises the possibility "
+                    "<Speculation>As a speculative interpretive extension, the PM dual-shadow geometry raises the possibility "
                     "of a connection to the Penrose-Hameroff Orchestrated Objective Reduction (Orch-OR) theory "
                     "of consciousness. The two-layer OR hierarchy (bridge OR creating dual shadows, face OR "
                     "selecting visible faces) suggests a structural analogue to the observer-selection problem "
@@ -1139,7 +1139,7 @@ class DiscussionV16(SimulationBase):
                     "masses, dark energy parameters) stand independently of any consciousness interpretation. "
                     "The Orch-OR bridge explored in Appendix 7.2 should be understood as an exploratory "
                     "extension whose claims are considerably more speculative than the physics derivations "
-                    "in the main body of this work."
+                    "in the main body of this work.</Speculation>"
                 )
             ),
 

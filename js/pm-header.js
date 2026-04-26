@@ -56,6 +56,7 @@ const NAV_LINKS = [
   { href: 'certificates.html', label: 'Certificates', id: 'certificates' },
   { href: 'appendices.html', label: 'Appendices', id: 'appendices' },
   { href: 'philosophical-implications.html', label: 'Philosophy', id: 'philosophical-implications' },
+  { href: 'consciousness-speculative.html', label: 'Consciousness', id: 'consciousness-speculative' },
   { href: 'visualization-index.html', label: 'Visualizations', id: 'visualization-index' },
   { href: 'faq.html', label: 'FAQ', id: 'faq' }
 ];
@@ -154,6 +155,7 @@ function createHeaderHTML(activePageId = '') {
             <button class="math-mode-pill" data-mode="normal" aria-pressed="true" title="Standard mathematical notation">Normal Math</button>
             <button class="math-mode-pill" data-mode="eml" aria-pressed="false" title="EML Mirror Phase Mathematics notation">EML Math</button>
           </div>
+          <button class="speculation-toggle-btn" id="speculation-toggle-btn" aria-pressed="false" title="Show/hide speculative content (consciousness bridges, philosophical extensions, open hypotheses)">◈ Speculation</button>
           <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -262,7 +264,9 @@ export function injectHeader(activePageId = '', options = {}) {
   // Initialize math mode (applies data-math-mode to <html> from localStorage)
   _getMathModeModule().then(mm => {
     mm.initMathMode();
+    mm.initSpeculationMode();
     setupMathModeSwitcher(mm);
+    setupSpeculationToggle(mm);
   });
 
   console.log(`[PM Header] Injected header for page: ${activePageId}`);
@@ -300,6 +304,32 @@ function setupMathModeSwitcher(mm) {
   window.addEventListener('pm-math-mode-changed', e => {
     syncPillUI(e.detail.mode);
   });
+}
+
+/**
+ * Setup speculation toggle button.
+ * @param {Object} mm - math-mode module
+ */
+function setupSpeculationToggle(mm) {
+  const btn = document.getElementById('speculation-toggle-btn');
+  if (!btn) return;
+
+  function syncBtn() {
+    const show = mm.getSpeculationMode();
+    btn.setAttribute('aria-pressed', String(show));
+    btn.title = show
+      ? 'Speculation content visible — click to hide'
+      : 'Show speculative content (consciousness bridges, philosophical extensions, open hypotheses)';
+  }
+
+  syncBtn();
+
+  btn.addEventListener('click', () => {
+    mm.toggleSpeculationMode();
+    syncBtn();
+  });
+
+  window.addEventListener('pm-speculation-changed', () => syncBtn());
 }
 
 /**
