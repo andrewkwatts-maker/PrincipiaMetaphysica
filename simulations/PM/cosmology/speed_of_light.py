@@ -653,7 +653,13 @@ class SpeedOfLightV17(SimulationBase):
                     "Z_6": "Pneuma Tensioner (10/24)",
                     "D_10": "Residual Pressure Key (10)",
                     "b_3": "Betti-3 dimension (24)",
-                }
+                },
+                eml_tree_str=(
+                    "ops.div(eml_scalar(10.0), eml_vec('b3'))"
+                ),
+                eml_description=(
+                    "EML: Z_6 = D_10 / b3 = 10 / 24 — residual dimension ratio as Pneuma Tensioner"
+                ),
             ),
             Formula(
                 id="decad3-projection",
@@ -696,7 +702,13 @@ class SpeedOfLightV17(SimulationBase):
                     "P_3D": f"Spatial projection factor = {spatial_proj:.10f}",
                     "288": "Logic Closure total",
                     "D_10": "Residual Pressure Key (10)",
-                }
+                },
+                eml_tree_str=(
+                    "ops.add(eml_scalar(1.0), ops.inv(ops.mul(eml_vec('N_root'), ops.pow(eml_scalar(10.0), eml_scalar(2.0)))))"
+                ),
+                eml_description=(
+                    "EML: P_3D = 1 + 1/(N_root * D_10^2) = 1 + 1/(288 * 100) — Decad3 spatial projection factor"
+                ),
             ),
             Formula(
                 id="speed-of-light-chain",
@@ -739,7 +751,13 @@ class SpeedOfLightV17(SimulationBase):
                     "c": f"Derived speed of light = {c_derived:,.2f} m/s",
                     "variance": f"Variance from CODATA = {variance:.2f} m/s",
                     "accuracy": f"Accuracy = {accuracy:.5f}%",
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('c_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_vec('scale_e7'), eml_vec('P_3D'))))))"
+                ),
+                eml_description=(
+                    "EML: c = c_geo * S_f * B_v * chi_gc * 10^7 * P_3D — full geometric chain product for speed of light"
+                ),
             ),
         ]
 

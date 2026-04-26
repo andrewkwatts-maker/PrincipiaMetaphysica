@@ -936,6 +936,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.8)",
                 latex=r"-\Delta_{V_7} \phi_n = \lambda_n \phi_n",
                 plain_text="-Delta_V7 phi_n = lambda_n phi_n",
+                eml_tree_str="ops.mul(ops.pow(eml_vec('n'), eml_scalar(2.0)), ops.inv(ops.pow(eml_vec('R'), eml_scalar(2.0))))",
                 category="ESTABLISHED",
                 description=(
                     "Laplacian eigenvalue equation on G2 manifold V_7. "
@@ -967,6 +968,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.9)",
                 latex=r"m_n^2 = \frac{\lambda_n}{L^2}",
                 plain_text="m_n^2 = lambda_n / L^2",
+                eml_tree_str="ops.div(eml_vec('lambda_n'), ops.pow(eml_vec('L'), eml_scalar(2.0)))",
                 category="DERIVED",
                 description=(
                     "Mass spectrum from Laplacian eigenvalues. "
@@ -998,6 +1000,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.10)",
                 latex=r"\zeta_V(s) = \sum_{n=1}^{\infty} \lambda_n^{-s}",
                 plain_text="zeta_V(s) = sum_{n=1}^{inf} lambda_n^{-s}",
+                eml_tree_str="ops.pow(eml_vec('lambda_n'), ops.neg(eml_vec('s')))",
                 category="DERIVED",
                 description=(
                     "Spectral zeta function of G2 Laplacian. "
@@ -1029,6 +1032,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.11)",
                 latex=r"m_\nu \sim \frac{k_\gimel}{\sqrt{\chi_{\rm eff}}} \cdot \frac{v^2}{M_{\rm GUT}} \sim 10^{-3}\,\text{eV}",
                 plain_text="m_nu ~ (k_gimel/sqrt(chi_eff)) * (v^2/M_GUT) ~ 10^-3 eV",
+                eml_tree_str="ops.div(ops.pow(eml_vec('m_D'), eml_scalar(2.0)), eml_vec('M_R'))",
                 category="PREDICTED",
                 description=(
                     "Neutrino mass scale from G2 see-saw mechanism. Right-handed neutrinos "
@@ -1062,6 +1066,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.12)",
                 latex=r"\sum m_\nu = m_1 + \sqrt{\Delta m^2_{21} + m_1^2} + \sqrt{\Delta m^2_{31} + m_1^2} \approx 0.06\,\text{eV}",
                 plain_text="sum(m_nu) = m1 + sqrt(Dm2_21 + m1^2) + sqrt(Dm2_31 + m1^2) ~ 0.06 eV",
+                eml_tree_str="ops.add(eml_vec('m1'), ops.add(ops.sqrt(ops.add(eml_vec('Dm2_21'), ops.pow(eml_vec('m1'), eml_scalar(2.0)))), ops.sqrt(ops.add(eml_vec('Dm2_31'), ops.pow(eml_vec('m1'), eml_scalar(2.0))))))",
                 category="PREDICTED",
                 description=(
                     "Sum of neutrino masses in normal hierarchy. PM predicts lightest mass "
@@ -1097,6 +1102,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.13)",
                 latex=r"\tau_p \sim \frac{M_{\rm GUT}^4}{\alpha_{\rm GUT}^2 m_p^5} \cdot e^{-\chi_{\rm eff}/12} \sim 10^{34}\,\text{yr}",
                 plain_text="tau_p ~ M_GUT^4 / (alpha_GUT^2 * m_p^5) * exp(-chi_eff/12) ~ 10^34 yr",
+                eml_tree_str="ops.mul(ops.div(ops.pow(eml_vec('M_GUT'), eml_scalar(4.0)), ops.mul(ops.pow(eml_vec('alpha_GUT'), eml_scalar(2.0)), ops.pow(eml_vec('m_p'), eml_scalar(5.0)))), ops.exp(ops.neg(ops.div(eml_vec('chi_eff'), eml_scalar(12.0)))))",
                 category="PREDICTED",
                 description=(
                     "Proton lifetime from dimension-6 operators with G2 instanton suppression. "
@@ -1131,6 +1137,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 label="(2.14)",
                 latex=r"M_{\rm GUT}^{\rm eff} = \frac{M_{\rm Pl}}{\sqrt{b_3}} \cdot e^{-\chi_{\rm eff}/48} \approx 2 \times 10^{17}\,\text{GeV}",
                 plain_text="M_GUT_eff = M_Pl/sqrt(b3) * exp(-chi_eff/48) ~ 2e17 GeV",
+                eml_tree_str="ops.mul(ops.div(eml_vec('M_Pl'), ops.sqrt(eml_vec('b3'))), ops.exp(ops.neg(ops.div(eml_vec('chi_eff'), eml_scalar(48.0)))))",
                 category="DERIVED",
                 description=(
                     "Effective GUT scale from G2 geometry with instanton suppression. "

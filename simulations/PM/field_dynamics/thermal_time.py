@@ -459,7 +459,13 @@ class ThermalTimeV16(SimulationBase):
                     "K": "Modular Hamiltonian (generator of time flow)",
                     "rho": "Thermal density matrix",
                     "Z": "Partition function"
-                }
+                },
+                eml_tree_str=(
+                    "ops.neg(ops.add(ops.mul(eml_vec('rho'), ops.log(eml_vec('rho'))), ops.log(eml_vec('Z'))))"
+                ),
+                eml_description=(
+                    "EML: K = -log(rho) - log(Z) — modular Hamiltonian from density matrix and partition function"
+                ),
             ),
             Formula(
                 id="thermal-flow",
@@ -491,7 +497,13 @@ class ThermalTimeV16(SimulationBase):
                     "A": "Algebra element (observable)",
                     "K": "Modular Hamiltonian",
                     "t": "Thermal time parameter"
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(ops.exp(ops.mul(eml_vec('i_K_t'), eml_vec('A'))), ops.exp(ops.neg(ops.mul(eml_vec('i_K_t'), eml_scalar(1.0)))))"
+                ),
+                eml_description=(
+                    "EML: alpha_t(A) = exp(iKt) * A * exp(-iKt) — modular automorphism (unitary conjugation by thermal flow)"
+                ),
             ),
             Formula(
                 id="entropy-gradient",
@@ -523,7 +535,13 @@ class ThermalTimeV16(SimulationBase):
                     "S_Pneuma": "Entropy of Pneuma field state",
                     "t_thermal": "Thermal time parameter",
                     ">=": "Non-negative (second law)"
-                }
+                },
+                eml_tree_str=(
+                    "ops.neg(ops.mul(eml_vec('rho'), ops.log(eml_vec('rho'))))"
+                ),
+                eml_description=(
+                    "EML: dS/dt = -Tr(rho * log(rho)) >= 0 — von Neumann entropy gradient, thermodynamic arrow of time"
+                ),
             ),
             Formula(
                 id="alpha-t-base",

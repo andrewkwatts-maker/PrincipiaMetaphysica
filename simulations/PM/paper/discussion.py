@@ -1616,7 +1616,13 @@ class DiscussionV16(SimulationBase):
                     "x_i^exp": "Experimental measurement for observable i",
                     "sigma_i^exp": "Experimental uncertainty for observable i",
                     "pull_i": "Per-observable deviation in sigma units",
-                }
+                },
+                eml_tree_str=(
+                    "ops.div(eml_vec('sum_pulls'), eml_vec('N_pred'))"
+                ),
+                eml_description=(
+                    "EML: sigma_bar = (1/N_pred) * sum_i |x_i^PM - x_i^exp| / sigma_i^exp — mean pull over all validated PM predictions"
+                ),
             )
         ]
 
