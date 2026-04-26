@@ -621,6 +621,17 @@ class AppendixITerminalStates(SimulationBase):
                 eml_description="eml_scalar(0.8)",
                 no_experimental_value=True,
             ),
+            Parameter(
+                path="terminal.unwinding_status",
+                name="Unwinding Status",
+                units="string",
+                status="TERMINAL",
+                description="Status flag: GEOMETRICALLY_DEFINED when terminal closure is verified (276+24-12=288)",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.eq(eml_vec('terminal.closure_verified'), eml_scalar(1.0)) — unwinding status = True if terminal closure verified (276+24-12=288)"
+                ),
+            ),
         ]
 
     # ── SSOT Protocol Methods ──────────────────────────────────────────

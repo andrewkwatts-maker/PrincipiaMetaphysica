@@ -1240,7 +1240,8 @@ class DarkEnergyV16(SimulationBase):
                     f"the b₃={b3} associative 3-cycles, independent of D_eff."
                 ),
                 derivation_formula="effective-dimension",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.add(eml_scalar(12.0), eml_vec('cosmology.alpha_shadow')) — D_eff = 12 + alpha_shadow from G2 shadow sector projection"
             ),
             Parameter(
                 path="cosmology.alpha_shadow",
@@ -1254,7 +1255,8 @@ class DarkEnergyV16(SimulationBase):
                     "backward compatibility with D_eff output parameter."
                 ),
                 derivation_formula="effective-dimension",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar(0.576) — alpha_shadow fitted residual DOF from G2 compactification (legacy parameter for D_eff)"
             ),
             Parameter(
                 path="cosmology.w0_deviation",
@@ -1265,7 +1267,20 @@ class DarkEnergyV16(SimulationBase):
                     f"Deviation of predicted w₀ = {w0_derived:.4f} from DESI 2025: "
                     f"{deviation_sigma:.2f}σ. {'Excellent' if deviation_sigma < 1 else 'Good'} agreement."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(ops.abs(ops.sub(eml_vec('cosmology.w0_derived'), eml_scalar(-0.957))), eml_scalar(0.067)) — sigma deviation of w0 from DESI 2025 thawing"
+            ),
+            Parameter(
+                path="cosmology.w0_validation",
+                name="Dark Energy w0 Validation Result",
+                units="dimensionless",
+                status="VALIDATION",
+                description=(
+                    "Full validation result dictionary for dark energy equation of state: "
+                    "includes derived w0, DESI target, sigma deviation, and pass/fail status."
+                ),
+                no_experimental_value=True,
+                eml_description="EML: eml_vec('cosmology.w0_derived') — w0 validation bundle; key scalar: ops.sub(eml_vec('cosmology.w0_derived'), eml_scalar(-1.0)) gives deviation from Lambda-CDM"
             ),
         ]
 

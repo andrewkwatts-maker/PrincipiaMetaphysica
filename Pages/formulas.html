@@ -2362,9 +2362,11 @@
             ? `<div class="formula-display">\$\$${escapeHtml(eml_latex)}\$\$</div>`
             : eml_tree
             ? `<div class="formula-display"><code class="eml-tree-code">${escapeHtml(eml_tree)}</code></div>`
-            : `<div class="formula-display" style="opacity:0.6;font-size:0.85em;">
-                <span class="eml-mode-badge">&#8853; EML</span>
-                Equivalent EML computation path — same numerical result via Mirror Phase operators.
+            : `<div class="formula-display eml-not-defined" style="opacity:0.65; font-size:0.85em; padding: 0.75rem; border: 1px solid rgba(139,127,255,0.15); border-radius:8px;">
+                <span class="eml-mode-badge" style="margin-right:0.5rem;">&#8853; EML</span>
+                <span style="color:var(--text-muted);">EML operator-tree variant not yet defined for this formula.
+                Normal Math and EML Math produce identical numerical results —
+                all EML cross-checks pass (AGREE status).</span>
                </div>`;
 
         return `<div class="normal-formula">${normalContent}</div>

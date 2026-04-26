@@ -1957,6 +1957,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "the source simulation has not yet been executed."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: eml_scalar(0.0) — structured dict aggregate; numeric EML representation not applicable (returns full predictions summary dict)",
             ),
             Parameter(
                 path="predictions.falsifiable_count",
@@ -1968,6 +1969,7 @@ class PredictionsAggregatorV16(SimulationBase):
                     "from all sectors. Computed as the count of registry-resolved predictions."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: eml_scalar(N) — integer count of registry-resolved falsifiable predictions (non-None sector values across gauge, proton-decay, neutrino, cosmology, topology)",
             ),
             # ── TwoLayerOR Experimental Signatures (Topic 11) ──────────────
             Parameter(
@@ -1983,6 +1985,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 ),
                 derivation_formula="cross-shadow-phase-shift",
                 no_experimental_value=True,
+                eml_description="EML: ops.inv(ops.sqrt(eml_scalar(6.0))) — cross-shadow leakage coupling alpha_leak = 1/sqrt(6) ≈ 0.408 (two-layer OR bridge coupling strength)",
             ),
             Parameter(
                 path="predictions.vacuum_noise_fraction",
@@ -1997,6 +2000,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 ),
                 derivation_formula="vacuum-noise-excess",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.div(eml_scalar(1.0), eml_scalar(144.0)), ops.exp(ops.neg(eml_scalar(12.0)))) — vacuum noise fraction = (1/chi_eff) * exp(-12) = (1/144)*exp(-12) ≈ 6.9e-8",
             ),
             Parameter(
                 path="predictions.gw_torsion_anomaly",
@@ -2011,6 +2015,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 ),
                 derivation_formula="gw-polarization-anomaly",
                 no_experimental_value=True,
+                eml_description="EML: ops.pow(ops.inv(ops.sqrt(eml_scalar(6.0))), eml_scalar(2.0)) — GW torsion anomaly = T_omega^2 = (1/sqrt(6))^2 = 1/6 ≈ 0.167",
             ),
         ]
 

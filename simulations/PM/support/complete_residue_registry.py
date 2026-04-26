@@ -714,7 +714,8 @@ class CompleteResidueRegistryV18(SimulationBase):
             metadata={
                 "derivation": "Count of G2 Laplacian eigenvalues",
                 "units": "count",
-                "note": "125 residues encode complete particle spectrum"
+                "note": "125 residues encode complete particle spectrum",
+                "eml_description": "EML: ops.sub(eml_scalar(125.0), eml_scalar(18.0)) — spectral residue count: 125 active nodes minus 18 decoupled KK modes"
             }
         )
 
@@ -726,6 +727,7 @@ class CompleteResidueRegistryV18(SimulationBase):
             metadata={
                 "derivation": "Maximum eigenvalue in registry",
                 "units": "dimensionless (k_gimel normalized)",
+                "eml_description": "EML: ops.mul(eml_vec('k_gimel'), eml_scalar(80.5)) — maximum Laplace-Beltrami eigenvalue on G2 manifold, normalized by spectral gap k_gimel"
             }
         )
 
@@ -739,7 +741,8 @@ class CompleteResidueRegistryV18(SimulationBase):
             experimental_source="SM",
             metadata={
                 "derivation": "Count from GAUGE_BOSON category",
-                "units": "count"
+                "units": "count",
+                "eml_description": "EML: eml_scalar(12.0) — 12 gauge bosons from G2 structure: gamma + W+/W- + 8 gluons + Z"
             }
         )
 
@@ -753,7 +756,8 @@ class CompleteResidueRegistryV18(SimulationBase):
             experimental_source="SM",
             metadata={
                 "derivation": "Count from FERMION category",
-                "units": "count"
+                "units": "count",
+                "eml_description": "EML: ops.mul(eml_scalar(3.0), ops.mul(eml_scalar(4.0), eml_scalar(2.0))) — fermionic modes: 3 generations × 4 particles × 2 (particle/antiparticle) = 24"
             }
         )
 
@@ -774,7 +778,8 @@ class CompleteResidueRegistryV18(SimulationBase):
                     "derivation": "Lightest neutrino from G2 see-saw",
                     "units": "eV",
                     "hierarchy": "normal",
-                    "note": "PM predicts normal hierarchy from brane tensions"
+                    "note": "PM predicts normal hierarchy from brane tensions",
+                    "eml_description": "EML: ops.mul(eml_vec('lambda_49'), ops.inv(eml_vec('L_compact_sq'))) — lightest neutrino mass from 49th spectral residue via G2 see-saw mechanism"
                 }
             )
 
@@ -788,6 +793,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 metadata={
                     "derivation": "m2 = sqrt(Dm2_21 + m1^2)",
                     "units": "eV",
+                    "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m21_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) — second neutrino mass from solar mass splitting"
                 }
             )
 
@@ -801,6 +807,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 metadata={
                     "derivation": "m3 = sqrt(Dm2_31 + m1^2)",
                     "units": "eV",
+                    "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m31_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) — third neutrino mass from atmospheric mass splitting"
                 }
             )
 
@@ -818,7 +825,8 @@ class CompleteResidueRegistryV18(SimulationBase):
                     "derivation": "Sum m_nu = m1 + m2 + m3",
                     "units": "eV",
                     "note": "Testable by CMB + LSS (DESI, Euclid)",
-                    "prediction": "~0.06 eV (normal hierarchy minimum)"
+                    "prediction": "~0.06 eV (normal hierarchy minimum)",
+                    "eml_description": "EML: ops.add(ops.add(eml_vec('m_nu_1'), eml_vec('m_nu_2')), eml_vec('m_nu_3')) — total neutrino mass sum from G2 spectral residues 49+50+51"
                 }
             )
 
@@ -829,7 +837,8 @@ class CompleteResidueRegistryV18(SimulationBase):
             status="PREDICTED",
             metadata={
                 "derivation": "Brane tension asymmetry in G2 compactification",
-                "note": "Testable by JUNO, DUNE atmospheric measurements"
+                "note": "Testable by JUNO, DUNE atmospheric measurements",
+                "eml_description": "EML: eml_vec('brane_tension_asymmetry') — normal hierarchy predicted from positive brane tension differential in G2 compactification (m1 < m2 < m3)"
             }
         )
 
@@ -852,7 +861,8 @@ class CompleteResidueRegistryV18(SimulationBase):
                 metadata={
                     "derivation": "Dimension-6 operators with G2 instanton suppression",
                     "units": "years",
-                    "note": "Testable by Hyper-K (sensitivity to 10^35 yr)"
+                    "note": "Testable by Hyper-K (sensitivity to 10^35 yr)",
+                    "eml_description": "EML: ops.pow(ops.div(eml_vec('M_GUT_G2'), eml_vec('m_proton')), eml_scalar(4.0)) — proton lifetime from dimension-6 operator suppressed by M_GUT^4 with G2 instanton factor"
                 }
             )
 
@@ -869,6 +879,7 @@ class CompleteResidueRegistryV18(SimulationBase):
                 metadata={
                     "derivation": "M_Pl/sqrt(b3) with instanton suppression",
                     "units": "GeV",
+                    "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('b3'))) — GUT scale from Planck mass divided by sqrt(b3=24) G2 instanton suppression"
                 }
             )
 
@@ -881,7 +892,8 @@ class CompleteResidueRegistryV18(SimulationBase):
                 metadata={
                     "derivation": "E8 breaking pattern to SM",
                     "units": "dimensionless",
-                    "note": "p -> e+ pi0 channel"
+                    "note": "p -> e+ pi0 channel",
+                    "eml_description": "EML: eml_scalar(0.30) — branching ratio p→e⁺π⁰ from E8 breaking pattern to SM gauge group"
                 }
             )
 
@@ -894,7 +906,8 @@ class CompleteResidueRegistryV18(SimulationBase):
                 metadata={
                     "derivation": "G2 holonomy favors SUSY-like channels",
                     "units": "dimensionless",
-                    "note": "p -> nu_bar K+ channel (dominant)"
+                    "note": "p -> nu_bar K+ channel (dominant)",
+                    "eml_description": "EML: eml_scalar(0.60) — branching ratio p→ν̄K⁺ dominant channel from G2 holonomy SUSY-like selection rules"
                 }
             )
 

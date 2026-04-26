@@ -358,6 +358,7 @@ class HartreeEnergyV17(SimulationBase):
                 units="J",
                 status="DERIVED",
                 description="Variance from CODATA",
+                eml_description="EML: ops.abs(ops.sub(eml_vec('qed.hartree_bulk'), eml_scalar(4.3597447222071e-18))) — |E_h_predicted − E_h_CODATA| in J",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -366,6 +367,7 @@ class HartreeEnergyV17(SimulationBase):
                 units="sigma",
                 status="DERIVED",
                 description="Sigma-equivalent deviation from CODATA",
+                eml_description="EML: ops.div(eml_vec('qed.hartree_variance_j'), eml_scalar(1.3e-30)) — σ = variance / CODATA uncertainty (1.3×10⁻³⁰ J)",
                 no_experimental_value=True,
             ),
         ]

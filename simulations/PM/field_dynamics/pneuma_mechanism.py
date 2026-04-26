@@ -1401,6 +1401,10 @@ class PneumaMechanismV16(SimulationBase):
                 description="Boolean flag indicating whether Pneuma Lagrangian has stable vacuum",
                 derivation_formula="pneuma-lagrangian",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.gt(V_double_prime_vev, eml_scalar(0.0)) — "
+                    "True iff V''(⟨Ψ⟩) > 0 at racetrack minimum (stable vacuum condition)"
+                ),
             ),
             Parameter(
                 path="pneuma.vev",
@@ -1439,6 +1443,10 @@ class PneumaMechanismV16(SimulationBase):
                 description="v22.0: Number of (2,0) paired bridges. n = b3/2 = 24/2 = 12 pairs.",
                 derivation_formula="pneuma-neural-gate",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)) — "
+                    "n = b3/2 = 12 bridge pairs from 12×(2,0) paired bridge system in M²⁷"
+                ),
             ),
             Parameter(
                 path="pneuma.neural_gate_active",
@@ -1448,6 +1456,11 @@ class PneumaMechanismV16(SimulationBase):
                 description="v22.0: Boolean flag indicating 12 neural gates are active for consciousness I/O.",
                 derivation_formula="pneuma-neural-gate",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.and_(eml_vec('pneuma.lagrangian_valid'), "
+                    "ops.eq(eml_vec('pneuma.n_bridge_pairs'), eml_scalar(12.0))) — "
+                    "True iff Lagrangian is stable and all 12 bridge pairs are active"
+                ),
             ),
         ]
 

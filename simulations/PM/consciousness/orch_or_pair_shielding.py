@@ -891,6 +891,10 @@ if _SCHEMA_AVAIL:
                     description="Penrose-Diosi coherence time at 6 pairs (DERIVED physics, SPECULATIVE context)",
                     derivation_formula="pair-shielding-enhancement",
                     no_experimental_value=True,
+                    eml_description=(
+                        "EML: ops.mul(ops.div(eml_scalar(1.054571817e-34), E_G_6pairs), "
+                        "eml_scalar(1000.0)) — τ_Penrose = ℏ/E_G in ms at 6 active pairs (baseline)"
+                    ),
                 ),
                 _Param(
                     path="consciousness.shielded_tau_ms",
@@ -900,6 +904,10 @@ if _SCHEMA_AVAIL:
                     description="Enhanced coherence time at 12 pairs with shielding (SPECULATIVE)",
                     derivation_formula="pair-shielding-enhancement",
                     no_experimental_value=True,
+                    eml_description=(
+                        "EML: ops.mul(tau_base_ms, eml_vec('consciousness.shielding_factor')) — "
+                        "τ_shielded = τ_base·shielding_factor at 12 pairs; SPECULATIVE k=2.5 FITTED"
+                    ),
                 ),
                 _Param(
                     path="consciousness.shielding_factor",
@@ -909,6 +917,11 @@ if _SCHEMA_AVAIL:
                     description="Shielding enhancement exp(k*sqrt(n_pairs)) (SPECULATIVE, k=2.5 FITTED)",
                     derivation_formula="pair-shielding-enhancement",
                     no_experimental_value=True,
+                    eml_description=(
+                        "EML: ops.mul(ops.exp(ops.mul(eml_scalar(2.5), ops.sqrt(ops.div(n_pairs, eml_scalar(12.0))))), "
+                        "ops.pow(ops.div(n_pairs, eml_scalar(6.0)), eml_scalar(2.0))) — "
+                        "exp(k·√(n/12))·(n/6)² shielding at n=12 pairs; k=2.5 FITTED, SPECULATIVE"
+                    ),
                 ),
             ]
 

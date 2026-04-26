@@ -708,6 +708,7 @@ class AppendixH288Roots(SimulationBase):
                     "This is the total symmetry budget available before sterile filtering."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: eml_scalar(288.0) — total ancestral root count = 276 + 24 - 12 = 288 (SO(24) generators + shadow torsion - manifold cost)",
             ),
             Parameter(
                 path="topology.so24_generators",
@@ -719,6 +720,7 @@ class AppendixH288Roots(SimulationBase):
                     "in 26D bosonic string theory. Computed as dim(SO(n)) = n(n-1)/2 = 24*23/2 = 276."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_scalar(24.0), ops.sub(eml_scalar(24.0), eml_scalar(1.0))), eml_scalar(2.0)) — SO(24) generators = 24×23/2 = 276",
             ),
             Parameter(
                 path="topology.shadow_torsion_total",
@@ -731,6 +733,7 @@ class AppendixH288Roots(SimulationBase):
                     "and distributes isotropically as [6,6,6,6] across the 4 spacetime dimensions."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: ops.add(eml_scalar(12.0), eml_scalar(12.0)) — total shadow torsion = tau_A + tau_B = 12 + 12 = 24 (12 pins per 13D shadow brane)",
             ),
             Parameter(
                 path="topology.hidden_supports",
@@ -743,6 +746,7 @@ class AppendixH288Roots(SimulationBase):
                     "These are not observable but provide topological reinforcement for the 125 active modes."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: ops.sub(eml_scalar(288.0), eml_scalar(125.0)) — hidden structural supports = ancestral_roots - active_residues = 288 - 125 = 163",
             ),
             Parameter(
                 path="topology.sterile_ratio",
@@ -755,6 +759,7 @@ class AppendixH288Roots(SimulationBase):
                     "remains hidden as structural supports."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: ops.div(eml_scalar(125.0), eml_scalar(288.0)) — sterile saturation ratio = active_residues / ancestral_roots = 125/288 ≈ 0.4340",
             ),
         ]
 

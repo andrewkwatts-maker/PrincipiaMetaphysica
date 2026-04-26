@@ -1270,7 +1270,11 @@ class DarkEnergyEvolution(SimulationBase):
                     f"(w0 = {w0_desi} +/- {w0_desi_unc}): {abs(sigma_w0):.2f} sigma. "
                     f"Excellent agreement within 1 sigma."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.sub(eml_vec('cosmology.w0_thawing'), eml_scalar(-0.957)), "
+                    "eml_scalar(0.067)) — σ-deviation of predicted w₀ from DESI 2025 thawing value"
+                ),
             ),
             Parameter(
                 path="cosmology.wa_desi_sigma",
@@ -1284,7 +1288,11 @@ class DarkEnergyEvolution(SimulationBase):
                     f"experimental limits. Close monitoring with future improved "
                     f"precision from DESI Year 3+ data releases is warranted."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.sub(eml_vec('cosmology.wa_thawing'), eml_scalar(-0.99)), "
+                    "eml_scalar(0.32)) — σ-deviation of predicted wₐ from DESI 2025 measurement"
+                ),
             ),
             Parameter(
                 path="cosmology.thawing_validated",
@@ -1295,7 +1303,12 @@ class DarkEnergyEvolution(SimulationBase):
                     "Overall validation status: True if both w0 and wa "
                     "are within 3 sigma of DESI 2025 measurements."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.and_(ops.lt(ops.abs(eml_vec('cosmology.w0_desi_sigma')), eml_scalar(3.0)), "
+                    "ops.lt(ops.abs(eml_vec('cosmology.wa_desi_sigma')), eml_scalar(3.0))) — "
+                    "True iff both w₀ and wₐ deviations are within 3σ of DESI 2025"
+                ),
             ),
         ]
 

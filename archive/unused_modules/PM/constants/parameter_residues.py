@@ -1,4 +1,4 @@
-"""
+r"""
 Principia Metaphysica - Parameter Residue Extraction v17.2
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -67,7 +67,7 @@ class ParameterResidueResult:
 
 
 class ParameterResidueExtractor:
-    """
+    r"""
     Extract fundamental constants as spectral residues (\mathcal{R}) from G2 geometry.
 
     The \text{ק}_{\text{כה}} (125) parameters are not independent or tuned - they are
@@ -153,7 +153,7 @@ class ParameterResidueExtractor:
         }
 
     def compute_trace_formula(self) -> Dict[str, Any]:
-        """
+        r"""
         Selberg-type trace formula verification.
 
         \sum_{n=1}^{\text{ק}_{\text{כה}}} f(\lambda_n) \sim \mathrm{Vol}(V_7)

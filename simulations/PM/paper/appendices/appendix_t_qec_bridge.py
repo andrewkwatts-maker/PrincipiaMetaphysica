@@ -328,6 +328,9 @@ class AppendixTQECBridge(SimulationBase):
                 description="Mean Hamming weight of stabilizer generators",
                 derivation_formula="syndrome-extraction-formula",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(eml_vec('appendix_t.total_weight'), eml_vec('appendix_t.n_stabilizers')) — mean stabilizer weight = total_weight/n_stabilizers"
+                ),
             ),
             Parameter(
                 path="appendix_t.syndrome_example_valid",
@@ -337,6 +340,9 @@ class AppendixTQECBridge(SimulationBase):
                 description="True if worked syndrome example detects the error",
                 derivation_formula="syndrome-extraction-formula",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.eq(ops.mod(eml_vec('syndrome_pattern'), eml_scalar(2.0)), eml_scalar(0.0)) — syndrome valid if error pattern has even weight (parity check)"
+                ),
             ),
         ]
 

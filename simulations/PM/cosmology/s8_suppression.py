@@ -1499,7 +1499,11 @@ class S8SuppressionV16(SimulationBase):
                     "not the instantaneous growth rate."
                 ),
                 derivation_formula="growth-suppression-factor",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.add(eml_scalar(0.55), ops.mul(eml_scalar(0.005), eml_vec('w0_pm'))) — "
+                    "growth index gamma_PM ≈ 0.55 + 0.005*w0; Linder formula for PM dark energy"
+                ),
             ),
             Parameter(
                 path="cosmology.growth_index_lcdm",
@@ -1508,7 +1512,79 @@ class S8SuppressionV16(SimulationBase):
                 status="DERIVED",
                 description="Growth index γ for ΛCDM: γ_ΛCDM ≈ 0.55 (standard value).",
                 derivation_formula="growth-suppression-factor",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: eml_scalar(0.55) — standard LCDM growth index gamma = 6/11 ≈ 0.545"
+                ),
+            ),
+            Parameter(
+                path="cosmology.s8_pm_baseline",
+                name="PM S8 Baseline (no friction)",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "PM S8 prediction from dark energy alone (without moduli-DM friction): "
+                    "S8_baseline ≈ 0.837. The w0 = -23/24 dark energy gives ~0.6% suppression "
+                    "relative to LCDM, pushing S8 slightly higher than Planck (wrong direction). "
+                    "The friction mechanism (v16.2) corrects this to S8 ~ 0.789."
+                ),
+                derivation_formula="growth-suppression-factor",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(eml_vec('sigma8'), ops.mul(ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3))), eml_vec('suppression_factor'))) — "
+                    "S8 baseline from dark energy growth suppression only, before moduli-DM friction"
+                ),
+            ),
+            Parameter(
+                path="cosmology.s8_friction_beta_eff",
+                name="Moduli-DM Friction Coefficient",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Effective friction coefficient beta_eff ≈ 0.065 for moduli-DM coupling. "
+                    "Derived from alpha_leak/(4*pi) * kappa_sampler = (1/4pi) * 1/sqrt(b3). "
+                    "Produces ~5.1% suppression of sigma_8 via DM peculiar velocity drag."
+                ),
+                derivation_formula="s8-friction-suppression",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_vec('pi'))), ops.inv(ops.sqrt(eml_vec('b3')))) — "
+                    "beta_eff = alpha_leak/(4pi) * 1/sqrt(b3) from sampler-bridge moduli coupling"
+                ),
+            ),
+            Parameter(
+                path="cosmology.s8_friction_kernel",
+                name="Integrated Friction Kernel I(z)",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Integrated friction kernel I(z) over the growth history. "
+                    "I(z) = integral from 0 to z of H(z')/H0 * f(z') dz'/(1+z'). "
+                    "Controls how much total DM drag accumulates up to redshift z."
+                ),
+                derivation_formula="s8-friction-suppression",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.integrate(ops.mul(eml_vec('H_z'), eml_vec('f_growth')), eml_vec('z_grid')) — "
+                    "friction kernel I(z) integrated over growth history for DM drag suppression"
+                ),
+            ),
+            Parameter(
+                path="cosmology.s8_friction_suppression_pct",
+                name="Friction Suppression Percentage",
+                units="percent",
+                status="DERIVED",
+                description=(
+                    "Percentage suppression of S8 from moduli-DM friction: ~5.1%. "
+                    "S8_friction/S8_baseline - 1 = exp(-beta_eff * I(z)) - 1 ≈ -5.1%. "
+                    "Resolved the wrong-direction problem of dark energy alone."
+                ),
+                derivation_formula="s8-friction-suppression",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(eml_scalar(100.0), ops.sub(ops.exp(ops.neg(ops.mul(eml_vec('beta_eff'), eml_vec('I_z')))), eml_scalar(1.0))) — "
+                    "friction suppression percent = 100*(exp(-beta_eff * I(z)) - 1)"
+                ),
             ),
             Parameter(
                 path="cosmology.s8_tension_kids",
@@ -1519,7 +1595,11 @@ class S8SuppressionV16(SimulationBase):
                     "Statistical tension with KiDS-1000 measurement. "
                     "PM: 1.1σ vs ΛCDM: 3.1σ. Improvement factor: 2.8×."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020)) — "
+                    "sigma tension = |S8_PM - S8_KiDS| / sigma_KiDS"
+                ),
             ),
             Parameter(
                 path="cosmology.s8_tension_des",
@@ -1530,7 +1610,11 @@ class S8SuppressionV16(SimulationBase):
                     "Statistical tension with DES Y3 measurement. "
                     "PM: 0.7σ vs ΛCDM: 2.7σ. Improvement factor: 3.9×."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017)) — "
+                    "sigma tension = |S8_PM - S8_DES| / sigma_DES"
+                ),
             ),
             Parameter(
                 path="cosmology.s8_tension_planck",
@@ -1541,7 +1625,41 @@ class S8SuppressionV16(SimulationBase):
                     "Statistical tension with Planck CMB inference. "
                     "PM: 3.4σ vs ΛCDM: 0.3σ. Expected: PM predicts less late-time growth."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013)) — "
+                    "sigma tension = |S8_PM - S8_Planck| / sigma_Planck"
+                ),
+            ),
+            Parameter(
+                path="cosmology.s8_tension_kids_baseline",
+                name="S8 Tension with KiDS-1000 (baseline, no friction)",
+                units="sigma",
+                status="VALIDATION",
+                description=(
+                    "KiDS-1000 tension for baseline S8 without moduli-DM friction. "
+                    "Demonstrates that dark energy alone is insufficient (~3.6σ)."
+                ),
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_baseline'), eml_scalar(0.766))), eml_scalar(0.020)) — "
+                    "baseline sigma tension (no friction) = |S8_base - S8_KiDS| / sigma_KiDS"
+                ),
+            ),
+            Parameter(
+                path="cosmology.s8_tension_des_baseline",
+                name="S8 Tension with DES Y3 (baseline, no friction)",
+                units="sigma",
+                status="VALIDATION",
+                description=(
+                    "DES Y3 tension for baseline S8 without moduli-DM friction. "
+                    "Demonstrates that dark energy alone is insufficient (~3.6σ)."
+                ),
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_baseline'), eml_scalar(0.776))), eml_scalar(0.017)) — "
+                    "baseline sigma tension (no friction) = |S8_base - S8_DES| / sigma_DES"
+                ),
             ),
             Parameter(
                 path="cosmology.s8_improvement_factor",
@@ -1552,7 +1670,11 @@ class S8SuppressionV16(SimulationBase):
                     "Average improvement in weak lensing agreement: ~3×. "
                     "Quantifies how much better PM fits late-time observations."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(eml_vec('tension_lcdm_avg'), eml_vec('tension_pm_avg')) — "
+                    "improvement = sigma_LCDM / sigma_PM; ratio of tension reductions"
+                ),
             ),
         ]
 

@@ -274,6 +274,7 @@ class E7RepresentationSimulation(SimulationBase):
                 bound_type="central_value",
                 bound_source="E7_algebraic_branching",
                 uncertainty=0.0,
+                eml_description="EML: ops.inv(ops.sqrt(eml_scalar(6.0))) — α_leak = 1/√6 from E₇ ⊃ E₆×U(1) Clebsch-Gordan coefficient fixed by dim(27)=27",
             ),
             Parameter(
                 path="algebra.e7_56d_quartic",
@@ -283,6 +284,7 @@ class E7RepresentationSimulation(SimulationBase):
                 description="E₇ quartic invariant on the 56D representation evaluated on the Pneuma condensate pair.",
                 derivation_formula="e7-quartic-invariant",
                 no_experimental_value=True,
+                eml_description="EML: ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm'))) — quartic q(x,y) = ⟨x,y⟩²−4N(x)N(y)",
             ),
             Parameter(
                 path="algebra.e7_symplectic",
@@ -291,6 +293,7 @@ class E7RepresentationSimulation(SimulationBase):
                 status="DERIVED",
                 description="Symplectic bilinear form on the 56D E₇ representation (Jordan inner product).",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_scalar(3.0), ops.pow(ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)), eml_scalar(2.0))) — symplectic form ⟨x,y⟩ = 3s² with s=b₃/27",
             ),
             Parameter(
                 path="algebra.e7_alp_mass_gev",
@@ -303,6 +306,7 @@ class E7RepresentationSimulation(SimulationBase):
                 ),
                 derivation_formula="e7-alp-mass",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.sqrt(ops.abs(eml_vec('algebra.e7_56d_quartic'))), eml_scalar(1.22e19)) — ALP mass m_a = √|q_E₇|/M_Planck",
             ),
         ]
 

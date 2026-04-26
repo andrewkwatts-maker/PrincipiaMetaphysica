@@ -335,6 +335,10 @@ class ComptonWavelengthV17(SimulationBase):
                 status="DERIVED",
                 description="Variance from CODATA",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), "
+                    "eml_scalar(2.42631023867e-12))) — |λ_manifest − λ_CODATA| absolute variance in metres"
+                ),
             ),
             Parameter(
                 path="qed.compton_sigma_deviation",
@@ -343,6 +347,11 @@ class ComptonWavelengthV17(SimulationBase):
                 status="DERIVED",
                 description="Sigma-equivalent deviation from CODATA",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), "
+                    "eml_scalar(2.42631023867e-12))), eml_scalar(7.3e-22)) — "
+                    "σ-deviation from CODATA2022 λ_C, uncertainty = 7.3×10⁻²² m"
+                ),
             ),
         ]
 

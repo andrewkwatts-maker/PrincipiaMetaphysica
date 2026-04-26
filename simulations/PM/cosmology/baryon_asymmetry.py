@@ -567,6 +567,28 @@ class BaryonAsymmetryV18(SimulationBase):
                 no_experimental_value=True,
                 eml_description="EML: ops.div(J_jarlskog, ops.mul(eml_scalar(2.0), ops.sub(b3, eml_scalar(14.0))))",
             ),
+            Parameter(
+                path="cosmology.delta_b3_asymmetry",
+                name="B3 Cycle Asymmetry",
+                units="dimensionless",
+                status="GEOMETRIC",
+                description="Flux mismatch fraction between associative and coassociative 3-cycles (0.12).",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(eml_scalar(1.0), eml_vec('b3')) — δ_b3 = 1/b₃ = 1/24 topological baryon asymmetry seed"
+                ),
+            ),
+            Parameter(
+                path="cosmology.cp_phase_sterile",
+                name="Sterile CP Phase",
+                units="radians",
+                status="GEOMETRIC",
+                description="G2 triality-linked CP phase δ_CP = π/6 from Z3 triality of the G2 root system.",
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(eml_pi(), eml_scalar(6.0)) — δ_CP_sterile = π/6 from K=4 TCS matching fibres (same as quark sector)"
+                ),
+            ),
         ]
 
     def get_section_content(self) -> Optional[SectionContent]:

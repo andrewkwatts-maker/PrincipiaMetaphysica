@@ -888,7 +888,8 @@ class EvolutionEngineV16(SimulationBase):
                 experimental_bound=67.4,
                 bound_type="central_value",
                 bound_source="Planck2018",
-                uncertainty=0.5
+                uncertainty=0.5,
+                eml_description="EML: ops.div(eml_vec('cosmology.H0_late_evolved'), eml_vec('cosmology.relaxation_z1100')) — H0_early inferred from H(z=1100) / E(z=1100) normalization"
             ),
             Parameter(
                 path="cosmology.relaxation_z1100",
@@ -900,7 +901,8 @@ class EvolutionEngineV16(SimulationBase):
                     "relaxation(1100) = 1 + ln(1101)/24 = 1.292."
                 ),
                 derivation_formula="relaxation-factor",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.add(eml_scalar(1.0), ops.div(ops.log(eml_scalar(1101.0)), eml_scalar(24.0))) — relaxation(1100) = 1 + ln(1101)/b3 from G2 log-scaling"
             ),
             Parameter(
                 path="cosmology.ricci_flow_consistency",
@@ -912,7 +914,8 @@ class EvolutionEngineV16(SimulationBase):
                     "Values > 0.9 indicate geometric consistency."
                 ),
                 derivation_formula="ricci-flow-evolution",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.corrcoef(eml_vec('relaxation_array'), ops.inv(eml_vec('R_array'))) — Pearson correlation between log-scaling relaxation and inverse Ricci curvature"
             ),
             Parameter(
                 path="cosmology.h_evolution_sigma",
@@ -923,7 +926,8 @@ class EvolutionEngineV16(SimulationBase):
                     "Maximum sigma deviation from target H0 values. "
                     "Values < 2 indicate successful tension resolution."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.max(eml_vec('cosmology.H0_early_deviation_sigma'), eml_scalar(0.0)) — max sigma among H0_early and H0_late deviations from targets"
             ),
         ]
 

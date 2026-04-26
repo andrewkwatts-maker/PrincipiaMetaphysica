@@ -1079,6 +1079,7 @@ if SCHEMA_AVAILABLE:
                     description="Ratio tau(12)/tau(6): coherence enhancement from full gnosis activation (SPECULATIVE)",
                     derivation_formula="gnosis-coherence-enhancement",
                     no_experimental_value=True,
+                    eml_description="EML: ops.div(eml_vec('consciousness.tau_gnosis'), eml_vec('consciousness.tau_baseline')) — coherence boost tau(12)/tau(6) = ratio of full-gnosis to baseline coherence time",
                 ),
                 Parameter(
                     path="consciousness.tau_baseline",
@@ -1088,6 +1089,7 @@ if SCHEMA_AVAILABLE:
                     description="Coherence time with 6 active pairs (baseline consciousness, SPECULATIVE)",
                     derivation_formula="gnosis-coherence-enhancement",
                     no_experimental_value=True,
+                    eml_description="EML: eml_scalar(25.0) — baseline Orch-OR coherence time tau_baseline = 25ms (EEG/MEG gamma scale, 6 active pairs)",
                 ),
                 Parameter(
                     path="consciousness.tau_gnosis",
@@ -1097,6 +1099,7 @@ if SCHEMA_AVAILABLE:
                     description="Coherence time with all 12 pairs active (full gnosis, SPECULATIVE)",
                     derivation_formula="gnosis-coherence-enhancement",
                     no_experimental_value=True,
+                    eml_description="EML: ops.mul(eml_scalar(25.0), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(eml_scalar(1.0)))), ops.pow(eml_scalar(2.0), eml_scalar(2.0)))) — full gnosis coherence time tau(12) = tau_0 * exp(3.2*sqrt(12/12)) * (12/6)^2",
                 ),
                 Parameter(
                     path="consciousness.unlocking_probability_6",
@@ -1106,6 +1109,7 @@ if SCHEMA_AVAILABLE:
                     description="Sigmoid midpoint probability at baseline (SPECULATIVE)",
                     derivation_formula="gnosis-unlocking-probability",
                     no_experimental_value=True,
+                    eml_description="EML: ops.inv(ops.add(eml_scalar(1.0), ops.exp(eml_scalar(0.0)))) — sigmoid at n=6: 1/(1+exp(-0.9*(6-6))) = 1/(1+1) = 0.5 (midpoint)",
                 ),
                 Parameter(
                     path="consciousness.unlocking_probability_10",
@@ -1115,6 +1119,7 @@ if SCHEMA_AVAILABLE:
                     description="Unlocking probability at near-gnosis state (SPECULATIVE)",
                     derivation_formula="gnosis-unlocking-probability",
                     no_experimental_value=True,
+                    eml_description="EML: ops.inv(ops.add(eml_scalar(1.0), ops.exp(ops.neg(ops.mul(eml_scalar(0.9), ops.sub(eml_scalar(10.0), eml_scalar(6.0))))))) — sigmoid at n=10: 1/(1+exp(-0.9*(10-6))) ≈ 0.973",
                 ),
             ]
 

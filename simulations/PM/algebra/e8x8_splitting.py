@@ -254,6 +254,7 @@ class E8xE8SplittingSimulation(SimulationBase):
                 description="L2 norm of the change in the 27D Pneuma condensate under visible E₈ root generators.",
                 derivation_formula="e8x8-visible-action",
                 no_experimental_value=True,
+                eml_description="EML: ops.sqrt(ops.sum(ops.pow(eml_vec('delta_psi_i'), eml_scalar(2.0)) for i in range(27))) — L2 norm |Ψ'−Ψ| of condensate shift under 10 visible E₈ root generators",
             ),
             Parameter(
                 path="algebra.e8_hidden_condensate",
@@ -263,6 +264,7 @@ class E8xE8SplittingSimulation(SimulationBase):
                 description="Hidden sector non-perturbative superpotential W_np(N₁=24) from gaugino condensation.",
                 derivation_formula="e8x8-hidden-condensate",
                 no_experimental_value=True,
+                eml_description="EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('topology.elder_kads')))) — W_np = exp(−2π/b₃) hidden E₈' gaugino condensate with b₃=24",
             ),
             Parameter(
                 path="algebra.e8_portal_coupling",
@@ -278,6 +280,7 @@ class E8xE8SplittingSimulation(SimulationBase):
                 bound_type="central_value",
                 bound_source="E7_algebraic_branching",
                 uncertainty=0.0,
+                eml_description="EML: ops.inv(ops.sqrt(eml_scalar(6.0))) — portal coupling α_leak = 1/√6 from E₇⊃E₆×U(1) shared between visible E₈ and hidden E₈'",
             ),
             Parameter(
                 path="algebra.e8_heterotic_spectral_proxy",
@@ -289,6 +292,7 @@ class E8xE8SplittingSimulation(SimulationBase):
                     "visible action norm × hidden condensate × portal coupling."
                 ),
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_vec('algebra.e8_visible_action_norm'), eml_vec('algebra.e8_hidden_condensate'), eml_vec('algebra.e8_portal_coupling')) — spectral proxy = visible_norm × W_np × α_leak",
             ),
         ]
 

@@ -689,6 +689,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                     "Total Higgs manifold tension in the 26D bulk from G2 attractor mechanism. "
                     "This is the raw vacuum energy before brane projection."
                 ),
+                eml_description="EML: eml_scalar(414.22) — M_H_bulk is a hardcoded INPUT from G2 moduli attractor; no ops chain, raw 26D vacuum tension value",
                 derivation_formula="higgs-bulk-attractor",
                 no_experimental_value=True,
                 validation={
@@ -727,6 +728,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Ratio of local to bulk Higgs mass: M_H_local / M_H_bulk ≈ 0.302",
+                eml_description="EML: ops.div(eml_vec('higgs.m_higgs_local'), eml_vec('higgs.m_higgs_bulk')) — brane partition ratio = M_H_local / M_H_bulk",
                 derivation_formula="higgs-brane-projection",
                 no_experimental_value=True,
             ),
@@ -736,6 +738,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Projection factor k_gimel/π ≈ 3.92 from G2 torsion",
+                eml_description="EML: ops.div(eml_vec('topology.k_gimel'), eml_pi()) — projection factor = k_gimel / π from G2 holonomy torsion",
                 derivation_formula="higgs-brane-projection",
                 no_experimental_value=True,
             ),
@@ -745,6 +748,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="13D Mirror overlap factor η = (α × b3)^(1/4) ≈ 1.185",
+                eml_description="EML: ops.mul(ops.div(eml_scalar(13.0), eml_scalar(11.0)), ops.add(eml_scalar(1.0), ops.div(eml_scalar(2.0), ops.mul(eml_vec('topology.elder_kads'), ops.mul(eml_pi(), eml_scalar(13.0)))))) — η = (13/11) × (1 + 2/(b3·π·13)) mirror brane overlap with holonomy correction",
                 derivation_formula="higgs-brane-projection",
                 no_experimental_value=True,
             ),
@@ -754,6 +758,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Effective scaling = projection_factor / mirror_overlap ≈ 3.31",
+                eml_description="EML: ops.div(eml_vec('higgs.projection_factor'), eml_vec('higgs.mirror_overlap')) — effective scaling = (k_gimel/π) / η combining projection and overlap",
                 derivation_formula="higgs-brane-projection",
                 no_experimental_value=True,
             ),
@@ -763,6 +768,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Standard deviation from PDG 2024 measurement: |M_local - 125.25| / 0.17",
+                eml_description="EML: ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.25))), eml_scalar(0.17)) — sigma = |M_local − 125.25| / 0.17 vs PDG 2024",
                 derivation_formula="higgs-local-mass",
                 no_experimental_value=True,
             ),

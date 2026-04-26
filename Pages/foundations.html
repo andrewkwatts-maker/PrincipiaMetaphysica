@@ -408,6 +408,34 @@
             color: var(--text-secondary);
         }
 
+        /* EML Foundations Showcase */
+        .eml-foundations-showcase {
+            margin-bottom: 2rem;
+        }
+
+        .eml-showcase-header {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border-secondary);
+        }
+
+        .eml-showcase-card {
+            margin-bottom: 1.5rem;
+        }
+
+        /* math-mode-block inside dynamically rendered foundation cards */
+        .formula-card .math-mode-block[data-mode="eml"] .formula-content {
+            border-left-color: var(--accent-secondary);
+            background: rgba(255, 126, 182, 0.05);
+        }
+
+        /* eml-not-defined class (formulas.html fallback badge) */
+        .eml-not-defined {
+            display: inline-block;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             main {
@@ -472,6 +500,100 @@
 
             <label for="search-filter">Search:</label>
             <input type="text" id="search-filter" placeholder="Search equations, authors, descriptions...">
+        </div>
+
+        <!-- EML Math Mode: Featured Equation Explanations -->
+        <div class="eml-foundations-showcase">
+            <div class="eml-showcase-header">
+                <span class="math-mode-inline" data-mode="normal">
+                    Foundational Equations — Standard Notation
+                </span>
+                <span class="math-mode-inline" data-mode="eml">
+                    Foundational Equations — EML Mirror Phase Operator Form
+                </span>
+            </div>
+
+            <!-- Einstein Field Equations EML showcase -->
+            <div class="formula-card eml-showcase-card">
+                <div class="formula-header">
+                    <div>
+                        <div class="formula-label">Einstein Field Equations</div>
+                        <div class="formula-author">Albert Einstein <span class="formula-year">(1915)</span></div>
+                    </div>
+                    <span class="category-badge general_relativity">General Relativity</span>
+                </div>
+                <div class="math-mode-block" data-mode="normal">
+                    <div class="formula-content">
+                        $$G_{\mu\nu} + \Lambda g_{\mu\nu} = \frac{8\pi G}{c^4} T_{\mu\nu}$$
+                    </div>
+                    <div class="formula-description">
+                        The Einstein field equations relate the curvature of spacetime (encoded in the Einstein tensor
+                        G<sub>μν</sub>) to the energy-momentum content (T<sub>μν</sub>). The cosmological constant Λ
+                        drives the accelerated expansion measured by DESI 2025, consistent with the PM prediction
+                        w₀ = −23/24 ≈ −0.9583.
+                    </div>
+                </div>
+                <div class="math-mode-block" data-mode="eml">
+                    <div class="formula-content" style="text-align:left; font-family: monospace; font-size: 0.9em;">
+                        <code style="color:var(--accent-secondary);">
+                            G_uv = ops.sub(ops.ricci_tensor(g_uv), ops.mul(ops.div(1,2), ops.mul(ops.ricci_scalar(g_uv), g_uv)))<br>
+                            EFE  = ops.add(G_uv, ops.mul(Lambda, g_uv)) == ops.mul(ops.div(ops.mul(8, pi_val), ops.pow(c, 4)), T_uv)
+                        </code>
+                    </div>
+                    <div class="formula-description" style="color:var(--text-muted);">
+                        <span style="color:var(--accent-secondary);">EML Mirror Phase form:</span>
+                        Curvature ops (ops.ricci_tensor, ops.ricci_scalar) act on the metric tensor g_uv.
+                        The cosmological constant term ops.mul(Lambda, g_uv) enters as an additive operator.
+                        In PM: Λ is not a free parameter — it is constrained by the b₃=24 topology via
+                        <code>Lambda = ops.inv(ops.mul(b3, Vol_V7))</code> (vacuum residue after G₂ compactification).
+                        <span style="color:var(--text-muted); font-size:0.85em; display:block; margin-top:0.4rem;">
+                            Mirror Phase Mathematics form — same numerical result as standard notation.
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dirac Equation EML showcase -->
+            <div class="formula-card eml-showcase-card">
+                <div class="formula-header">
+                    <div>
+                        <div class="formula-label">Dirac Equation</div>
+                        <div class="formula-author">Paul Dirac <span class="formula-year">(1928)</span></div>
+                    </div>
+                    <span class="category-badge quantum_field_theory">Quantum Field Theory</span>
+                </div>
+                <div class="math-mode-block" data-mode="normal">
+                    <div class="formula-content">
+                        $$(i \gamma^\mu \partial_\mu - m)\psi = 0$$
+                    </div>
+                    <div class="formula-description">
+                        The Dirac equation describes relativistic spin-½ fermions. In the PM framework, the
+                        4096-component Primordial Spinor Field Ψ<sub>P</sub> arises from the Clifford algebra
+                        Cl(26,1) of the M<sup>27</sup>(24,1,2) bulk. The three fermion generations
+                        (n<sub>gen</sub> = χ<sub>eff</sub>/(4·b₃) = 144/48 = 3) are spectral residues of the
+                        Dirac operator on the G₂ holonomy manifold V₇.
+                    </div>
+                </div>
+                <div class="math-mode-block" data-mode="eml">
+                    <div class="formula-content" style="text-align:left; font-family: monospace; font-size: 0.9em;">
+                        <code style="color:var(--accent-secondary);">
+                            dirac_op = ops.sub(ops.mul(ops.mul(i_unit, gamma_mu), partial_mu), m_fermion)<br>
+                            dirac_eq = ops.apply(dirac_op, psi) == eml_scalar(0)
+                        </code>
+                    </div>
+                    <div class="formula-description" style="color:var(--text-muted);">
+                        <span style="color:var(--accent-secondary);">EML Mirror Phase form:</span>
+                        The Dirac operator is built from ops.mul of the imaginary unit, gamma matrices, and
+                        the partial derivative operator, minus the mass term. In PM:
+                        <code>n_gen = ops.div(chi_eff, ops.mul(eml_scalar(4), b3))</code>
+                        = ops.div(eml_scalar(144), eml_scalar(48)) = eml_scalar(3) — three generations
+                        from G₂ topology, not a free parameter.
+                        <span style="color:var(--text-muted); font-size:0.85em; display:block; margin-top:0.4rem;">
+                            Mirror Phase Mathematics form — same numerical result as standard notation.
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Formulas Grid -->
@@ -586,6 +708,9 @@
                 const source = foundation.source || '';
                 const references = foundation.references || [];
 
+                const eml_ops = foundation.eml_ops || '';
+                const eml_description = foundation.eml_description || '';
+
                 html += `
                     <div class="formula-card" id="${foundation.id}" data-category="${category}" data-id="${foundation.id}">
                         <div class="formula-header">
@@ -596,11 +721,23 @@
                             <span class="category-badge ${category}">${formatCategory(category)}</span>
                         </div>
 
+                        ${eml_ops ? `
+                        <div class="math-mode-block" data-mode="normal">
+                            <div class="formula-content">$$${latex}$$</div>
+                            ${description ? `<div class="formula-description">${description}</div>` : ''}
+                        </div>
+                        <div class="math-mode-block" data-mode="eml">
+                            <div class="formula-content" style="text-align:left; font-family:monospace; font-size:0.9em;">
+                                <code style="color:var(--accent-secondary);">${eml_ops}</code>
+                            </div>
+                            ${eml_description ? `<div class="formula-description" style="color:var(--text-muted);">${eml_description}</div>` : ''}
+                        </div>
+                        ` : `
                         <div class="formula-content">
                             $$${latex}$$
                         </div>
-
                         ${description ? `<div class="formula-description">${description}</div>` : ''}
+                        `}
 
                         ${source || references.length > 0 ? `
                             <div class="formula-source">

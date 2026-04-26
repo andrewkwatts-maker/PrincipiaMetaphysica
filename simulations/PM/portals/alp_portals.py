@@ -707,7 +707,8 @@ class ALPPortalsV23(SimulationBase):
                     "Predicted m_ALP ~ meV, testable by ALPS-II light-shining-through-wall, "
                     "IAXO helioscope, and CAST helioscope experiments."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.div(ops.pow(eml_scalar(0.217), eml_scalar(2.0)), eml_vec('f_a_alp_gev')), eml_scalar(1.0e9)) — m_ALP = Lambda_QCD^2 / f_a^ALP (converted to eV) from Face 3 moduli"
             ),
             Parameter(
                 path="portals.alp_photon_coupling_gev_inv",
@@ -723,7 +724,8 @@ class ALPPortalsV23(SimulationBase):
                 experimental_bound=6.6e-11,
                 bound_type="upper",
                 bound_source="CAST2017",
-                uncertainty=None
+                uncertainty=None,
+                eml_description="EML: ops.div(ops.mul(eml_vec('geometry.alpha_leak'), eml_scalar(72.0)), ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), eml_vec('f_a_alp_gev'))) — g_agammagamma = alpha_leak * chi_eff / (24*pi*f_a_ALP) Primakoff coupling"
             ),
             Parameter(
                 path="portals.alp_nucleon_coupling_gev_inv",
@@ -737,7 +739,8 @@ class ALPPortalsV23(SimulationBase):
                     "in torsion balance experiments (Eotvos group) and spin-precession "
                     "measurements (CASPEr, ARIADNE)."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('geometry.alpha_leak'), eml_vec('f_a_alp_gev')) — g_aN = alpha_leak / f_a^ALP minimal inter-face leakage nucleon coupling"
             ),
             Parameter(
                 path="portals.alp_fifth_force_range_m",
@@ -751,7 +754,8 @@ class ALPPortalsV23(SimulationBase):
                     "including Eotvos-type torsion balances, Casimir force measurements, "
                     "and neutron scattering experiments."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_scalar(1.97e-7), eml_vec('portals.alp_mass_ev')) — lambda = hbar*c / m_ALP (in eV) gives Compton wavelength fifth-force range in meters"
             ),
         ]
 

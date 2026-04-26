@@ -317,7 +317,16 @@ if SCHEMA_AVAILABLE:
                         "experimental_uncertainty": 1.1e-7,  # CODATA 2022
                         "note": "v18.0: Use combined uncertainty; geometric limit is 4 ppm"
                     }
-                )
+                ),
+                Parameter(
+                    path="fermion.mass_ratio_error",
+                    name="Proton/Electron Mass Ratio Absolute Error",
+                    units="dimensionless",
+                    status="DERIVED",
+                    description="Absolute error |predicted - CODATA 2022| for proton/electron mass ratio",
+                    eml_description="EML: ops.abs(ops.sub(eml_vec('fermion.mass_ratio_proton_electron'), eml_scalar(1836.15267343))) — |μ_pe_predicted − μ_pe_CODATA|",
+                    no_experimental_value=True,
+                ),
             ]
 
         def get_references(self) -> List[Dict[str, Any]]:

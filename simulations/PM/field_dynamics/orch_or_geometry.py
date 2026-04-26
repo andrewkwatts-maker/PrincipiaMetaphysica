@@ -907,6 +907,11 @@ if SCHEMA_AVAILABLE:
                     experimental_bound=25.0,
                     bound_type="lower",
                     bound_source="Hameroff & Penrose 2014 (gamma synchrony 25-500 ms)",
+                    eml_description=(
+                        "EML: ops.mul(ops.div(eml_scalar(1.054571817e-34), "
+                        "eml_vec('quantum_bio.eg_joules')), eml_scalar(1000.0)) — "
+                        "τ = ℏ/E_G in milliseconds, Penrose criterion with PM warp-corrected G_eff"
+                    ),
                 ),
                 Parameter(
                     path="quantum_bio.topological_pitch",
@@ -923,6 +928,11 @@ if SCHEMA_AVAILABLE:
                     experimental_bound=13.0,
                     bound_type="measured",
                     bound_source="Microtubule crystallography (Amos & Klug 1974)",
+                    eml_description=(
+                        "EML: ops.div(eml_vec('topology.elder_kads'), "
+                        "ops.div(eml_vec('topology.k_gimel'), eml_pi())) — "
+                        "p = b3/(k_ℷ/π) G2 topological winding pitch; ×2.125 matches 13-protofilament biology"
+                    ),
                 ),
                 Parameter(
                     path="quantum_bio.eg_joules",
@@ -936,6 +946,11 @@ if SCHEMA_AVAILABLE:
                     ),
                     derivation_formula="orch-or-coherence-time",
                     no_experimental_value=True,
+                    eml_description=(
+                        "EML: ops.div(ops.mul(ops.mul(G_N, k_gimel), ops.pow(M_eff, eml_scalar(2.0))), "
+                        "r_delta) — E_G = G_eff·M_eff²/r_δ with G_eff = G_N·k_ℷ, "
+                        "M_eff = N_tubulins·m_single·conformational_fraction"
+                    ),
                 ),
             ]
 

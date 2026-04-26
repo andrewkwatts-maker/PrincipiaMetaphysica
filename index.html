@@ -506,28 +506,58 @@
      </div>
      <div class="formula-expansion">
       <div style="background: rgba(139, 127, 255, 0.08); padding: 1.5rem; border-radius: 12px; overflow: visible; position: relative;">
-       <span class="formula-hint" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 0.75rem;">Hover over terms for definitions</span>
-       <div class="formula-display" style="font-family: 'Crimson Text', serif; font-size: 1.3rem; text-align: center; line-height: 2.2; position: relative; z-index: 1000; overflow: visible;">
-        <span class="formula-var" data-term="S" style="position: relative;">S<span class="var-tooltip" style="z-index: 9999;">S - Action<br/>27D Pneuma master action functional</span></span>
-        <span class="formula-op"> = </span>
-        <span class="formula-var" data-term="integral">∫d<sup>27</sup>X<span class="var-tooltip"><span class="var-name">∫d<sup>27</sup>X - Integration</span><span class="var-description">Integration over 27-dimensional spacetime M<sup>27</sup>(24,1,2)</span></span></span>
-        <span class="formula-var" data-term="sqrt-G">√(-G)<span class="var-tooltip"><span class="var-name">√(-G) - Metric Determinant</span><span class="var-description">Square root of negative metric determinant for covariant volume element</span></span></span>
-        <span class="formula-op">[</span>
-        <a class="formula-var highlight" href="Pages/paper.html#einstein-hilbert" style="text-decoration: none; color: inherit;">R<span class="var-tooltip"><span class="var-name">R - Ricci Scalar</span><span class="var-description">27D Einstein-Hilbert scalar curvature - gravity sector</span><span class="var-units">Length<sup>-2</sup></span><span style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem; display: block;">Click for details</span></span></a>
-        <span class="formula-op"> + </span>
-        <a class="formula-var highlight" href="Pages/paper.html#pneuma-field" style="text-decoration: none; color: inherit;"><span style="text-decoration: overline;">Ψ</span><sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub><span class="var-tooltip"><span class="var-name">Ψ<sub>P</sub> - Pneuma Spinor</span><span class="var-description">4096-component Pneuma spinor from Cl(24,1) Clifford algebra. Source of all fermionic matter.</span><span class="var-units">Mass<sup>13</sup></span><span style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem; display: block;">Click for Pneuma field theory</span></span></a>
-        <span class="formula-op"> + </span>
-        <span class="formula-var" data-term="lambda">λ(<span style="text-decoration: overline;">Ψ</span><sub>P</sub>Ψ<sub>P</sub>)<sup>2</sup><span class="var-tooltip"><span class="var-name">λ - Quartic Term</span><span class="var-description">Quartic self-interaction for fermion condensation and mass generation</span></span></span>
-        <span class="formula-op"> + </span>
-        <span class="formula-var" data-term="bridge">g·Φ<sub>bridge</sub>·<span style="text-decoration: overline;">Ψ</span><sub>P</sub>Ψ<sub>P</sub><span class="var-tooltip"><span class="var-name">Φ<sub>bridge</sub> - Bridge Coupling</span><span class="var-description">Euclidean bridge coupling between dual shadows via R<sub>⊥</sub> reduction</span></span></span>
-        <span class="formula-op"> + </span>
-        <a class="formula-var" href="Pages/paper.html#bridge-mechanism" style="text-decoration: none; color: inherit;"><i>L</i><sub>bridge</sub><span class="var-tooltip"><span class="var-name"><i>L</i><sub>bridge</sub> - Bridge Lagrangian</span><span class="var-description">v24.2: 12×(2,0) bridge pairs + S<sup>(2,0)</sup> sampler data fields warp to create dual 13D(12,1) shadows</span><span style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem; display: block;">Click for bridge details</span></span></a>
-        <span class="formula-op">]</span>
-       </div>
-       <!-- Plain text version -->
-       <div style="background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
-        <strong>LaTeX:</strong> S = ∫d²⁷X √(-G) [R + Ψ̄ₚ(iΓᴹDₘ - m)Ψₚ + λ(Ψ̄ₚΨₚ)² + g·Φ_bridge·Ψ̄ₚΨₚ + ℒ_{bridge}]
-       </div>
+
+       <!-- ── Normal Math mode ── -->
+       <div class="math-mode-block" data-mode="normal">
+        <span class="formula-hint" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 0.75rem;">Hover over terms for definitions</span>
+        <div class="formula-display" style="font-family: 'Crimson Text', serif; font-size: 1.3rem; text-align: center; line-height: 2.2; position: relative; z-index: 1000; overflow: visible;">
+         <span class="formula-var" data-term="S" style="position: relative;">S<span class="var-tooltip" style="z-index: 9999;">S - Action<br/>27D Pneuma master action functional</span></span>
+         <span class="formula-op"> = </span>
+         <span class="formula-var" data-term="integral">∫d<sup>27</sup>X<span class="var-tooltip"><span class="var-name">∫d<sup>27</sup>X - Integration</span><span class="var-description">Integration over 27-dimensional spacetime M<sup>27</sup>(24,1,2)</span></span></span>
+         <span class="formula-var" data-term="sqrt-G">√(-G)<span class="var-tooltip"><span class="var-name">√(-G) - Metric Determinant</span><span class="var-description">Square root of negative metric determinant for covariant volume element</span></span></span>
+         <span class="formula-op">[</span>
+         <a class="formula-var highlight" href="Pages/paper.html#einstein-hilbert" style="text-decoration: none; color: inherit;">R<span class="var-tooltip"><span class="var-name">R - Ricci Scalar</span><span class="var-description">27D Einstein-Hilbert scalar curvature - gravity sector</span><span class="var-units">Length<sup>-2</sup></span><span style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem; display: block;">Click for details</span></span></a>
+         <span class="formula-op"> + </span>
+         <a class="formula-var highlight" href="Pages/paper.html#pneuma-field" style="text-decoration: none; color: inherit;"><span style="text-decoration: overline;">Ψ</span><sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub><span class="var-tooltip"><span class="var-name">Ψ<sub>P</sub> - Pneuma Spinor</span><span class="var-description">4096-component Pneuma spinor from Cl(24,1) Clifford algebra. Source of all fermionic matter.</span><span class="var-units">Mass<sup>13</sup></span><span style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem; display: block;">Click for Pneuma field theory</span></span></a>
+         <span class="formula-op"> + </span>
+         <span class="formula-var" data-term="lambda">λ(<span style="text-decoration: overline;">Ψ</span><sub>P</sub>Ψ<sub>P</sub>)<sup>2</sup><span class="var-tooltip"><span class="var-name">λ - Quartic Term</span><span class="var-description">Quartic self-interaction for fermion condensation and mass generation</span></span></span>
+         <span class="formula-op"> + </span>
+         <span class="formula-var" data-term="bridge">g·Φ<sub>bridge</sub>·<span style="text-decoration: overline;">Ψ</span><sub>P</sub>Ψ<sub>P</sub><span class="var-tooltip"><span class="var-name">Φ<sub>bridge</sub> - Bridge Coupling</span><span class="var-description">Euclidean bridge coupling between dual shadows via R<sub>⊥</sub> reduction</span></span></span>
+         <span class="formula-op"> + </span>
+         <a class="formula-var" href="Pages/paper.html#bridge-mechanism" style="text-decoration: none; color: inherit;"><i>L</i><sub>bridge</sub><span class="var-tooltip"><span class="var-name"><i>L</i><sub>bridge</sub> - Bridge Lagrangian</span><span class="var-description">v24.2: 12×(2,0) bridge pairs + S<sup>(2,0)</sup> sampler data fields warp to create dual 13D(12,1) shadows</span><span style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem; display: block;">Click for bridge details</span></span></a>
+         <span class="formula-op">]</span>
+        </div>
+        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.85rem; color: var(--text-muted);">
+         <strong>LaTeX:</strong> S = ∫d²⁷X √(-G) [R + Ψ̄ₚ(iΓᴹDₘ - m)Ψₚ + λ(Ψ̄ₚΨₚ)² + g·Φ_bridge·Ψ̄ₚΨₚ + ℒ_{bridge}]
+        </div>
+       </div><!-- /normal -->
+
+       <!-- ── EML Math mode ── -->
+       <div class="math-mode-block" data-mode="eml">
+        <span class="formula-hint" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 0.75rem;">EML operator-tree form — Mirror Phase Mathematics</span>
+        <div class="formula-display" style="font-family: monospace; font-size: 1.0rem; text-align: center; line-height: 2.0; color: var(--accent-secondary);">
+         <code style="font-size: 1.05rem;">S = ops.integral_27d(</code><br/>
+         <code style="padding-left: 2rem;">ops.mul(</code><br/>
+         <code style="padding-left: 4rem;">ops.sqrt(ops.neg(det_G)),</code><br/>
+         <code style="padding-left: 4rem;">ops.add(</code><br/>
+         <code style="padding-left: 6rem;">R_scalar,</code><br/>
+         <code style="padding-left: 6rem;">ops.kinetic_dirac(Psi_P, Gamma_M, D_M, m),</code><br/>
+         <code style="padding-left: 6rem;">ops.mul(eml_scalar(lambda), ops.pow(ops.bilinear(Psi_P, Psi_P), eml_scalar(2))),</code><br/>
+         <code style="padding-left: 6rem;">ops.mul(eml_scalar(g), Phi_bridge, ops.bilinear(Psi_P, Psi_P)),</code><br/>
+         <code style="padding-left: 6rem;">L_bridge_12pairs</code><br/>
+         <code style="padding-left: 4rem;">)</code><br/>
+         <code style="padding-left: 2rem;">)</code><br/>
+         <code>)</code>
+        </div>
+        <div style="background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.82rem; color: var(--text-muted);">
+         <strong>EML Tree (flat):</strong> ops.integral_27d(ops.mul(ops.sqrt(ops.neg(det_G)), ops.add(R, L_dirac(Psi_P), ops.mul(lambda, ops.pow(ops.bilinear(Psi_P,Psi_P),2)), L_bridge)))
+        </div>
+        <div style="margin-top: 0.6rem; padding: 0.5rem 0.8rem; background: rgba(139,127,255,0.08); border-radius: 6px; font-size: 0.82rem; color: var(--text-muted);">
+         <span style="color: var(--accent-secondary); font-weight: 600;">EML identity:</span>
+         ops.add(A, B) ≡ eml(eml(A, 1), eml(1, B)) — all arithmetic via Sheffer NAND operator
+        </div>
+       </div><!-- /eml -->
+
        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem;">
         This is the fundamental action of Principia Metaphysica v24.2. The 4096-component Pneuma spinor Ψ<sub>P</sub>
         from Cl(24,1) unifies gravity, matter, and gauge forces in 27D spacetime M<sup>27</sup>(24,1,2).

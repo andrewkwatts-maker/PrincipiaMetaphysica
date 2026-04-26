@@ -391,7 +391,8 @@ class YukawaTexturesV18(SimulationBase):
             metadata={
                 "derivation": "J = sin(delta_CP) * lambda_12 * lambda_23 * lambda_13^2",
                 "note": "v19.0: From texture N-values and G2 triality phase",
-                "units": "dimensionless"
+                "units": "dimensionless",
+                "eml_description": "EML: ops.mul(ops.sin(ops.div(eml_pi(), eml_scalar(6.0))), ops.mul(eml_vec('lambda_12'), ops.mul(eml_vec('lambda_23'), ops.pow(eml_vec('lambda_13'), eml_scalar(2.0))))) — J = sin(π/6)·λ_12·λ_23·λ_13² Jarlskog invariant from G₂ triality phase"
             }
         )
 
@@ -553,6 +554,7 @@ class YukawaTexturesV18(SimulationBase):
                     "Inter-generation Yukawa suppression factor. "
                     "Best fit: λ = φ ≈ 1.618 (Golden Ratio)."
                 ),
+                eml_description="EML: eml_scalar(phi) — λ_eff = φ = (1+√5)/2 ≈ 1.618; best-fit geometric suppression base from phi^(-N) scaling of fermion masses",
                 no_experimental_value=True
             ),
             Parameter(
@@ -564,6 +566,7 @@ class YukawaTexturesV18(SimulationBase):
                     "Which geometric factor best explains the mass hierarchy. "
                     "Options: phi, gimel, sqrt_b3."
                 ),
+                eml_description="EML: categorical — best_scaling is the argmin over {phi, gimel, sqrt_b3} of RMS log10 error; no numeric ops chain (string selector)",
                 no_experimental_value=True
             ),
             Parameter(
@@ -572,6 +575,7 @@ class YukawaTexturesV18(SimulationBase):
                 units="dex (log10 RMS)",
                 status="DERIVED",
                 description="RMS error in log10 for φ scaling hypothesis.",
+                eml_description="EML: ops.sqrt(ops.div(ops.sum(ops.pow(ops.sub(ops.log10(m_pred), ops.log10(m_obs)), eml_scalar(2.0))), eml_scalar(N_fermions))) — RMS log10 error of φ^(-N) mass predictions vs PDG",
                 no_experimental_value=True
             ),
             Parameter(
@@ -580,7 +584,24 @@ class YukawaTexturesV18(SimulationBase):
                 units="dex (log10 RMS)",
                 status="DERIVED",
                 description="RMS error in log10 for k_gimel scaling hypothesis.",
+                eml_description="EML: ops.sqrt(ops.div(ops.sum(ops.pow(ops.sub(ops.log10(m_pred), ops.log10(m_obs)), eml_scalar(2.0))), eml_scalar(N_fermions))) — RMS log10 error of k_gimel^(-N) mass predictions vs PDG",
                 no_experimental_value=True
+            ),
+            Parameter(
+                path="yukawa.jarlskog_geometric",
+                name="Geometric Jarlskog Invariant",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Geometric Jarlskog CP-violation invariant from texture N-values and G2 triality phase. "
+                    "J = sin(π/6) × λ_12 × λ_23 × λ_13² where λ_ij = φ^(−ΔN_ij/2)."
+                ),
+                eml_description="EML: ops.mul(ops.sin(ops.div(eml_pi(), eml_scalar(6.0))), ops.mul(eml_vec('lambda_12'), ops.mul(eml_vec('lambda_23'), ops.pow(eml_vec('lambda_13'), eml_scalar(2.0))))) — J = sin(δ_CP) × λ_12 × λ_23 × λ_13² from G2 triality phase and phi-scaling CKM mixing angles",
+                no_experimental_value=False,
+                experimental_bound=3.08e-5,
+                uncertainty=0.15e-5,
+                bound_type="measured",
+                bound_source="PDG2024_CKM",
             ),
         ]
 

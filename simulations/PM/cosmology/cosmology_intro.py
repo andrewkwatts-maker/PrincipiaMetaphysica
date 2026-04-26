@@ -765,7 +765,8 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="9-dimensional internal volume V9 = V7(G2) × V2(T²)",
                 derivation_formula="einstein-hilbert-14D",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.pow(eml_vec('chi_eff'), eml_scalar(7.0/6.0)), eml_scalar(39.478)) — V9 = chi_eff^(7/6) × (2π)² in Planck units"
             ),
             Parameter(
                 path="cosmology.breathing_mode_vev",
@@ -774,7 +775,8 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="Breathing mode VEV ⟨σ⟩ = φ₀ ≈ 0.075 M_Pl from racetrack stabilization",
                 derivation_formula="breathing-mode",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_scalar(0.075), eml_vec('M_PLANCK')) — ⟨σ⟩ = 0.075 × M_Pl, VEV from racetrack superpotential minimum at T_min=1.4885"
             ),
             Parameter(
                 path="cosmology.epsilon_KK",
@@ -790,7 +792,8 @@ class CosmologyIntroV16(SimulationBase):
                     "the KK spectrum spacing dynamically via racetrack stabilization."
                 ),
                 derivation_formula="breathing-mode",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.inv(ops.pow(eml_vec('Vol_K3_over_S3'), eml_scalar(1.0))) — ε_KK = 0.2257 from Vol(K3)/Vol(S3)=4.43 via racetrack stabilization at T_min=1.4885"
             ),
             Parameter(
                 path="cosmology.D_eff_shadow",
@@ -799,7 +802,8 @@ class CosmologyIntroV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Effective dimension D_eff = 12 + (Shadow_ק + Shadow_ח)/2 = 12.576",
                 derivation_formula="sp2r-constraint",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.add(eml_scalar(12.0), ops.mul(eml_scalar(0.5), ops.add(eml_scalar(0.576152), eml_scalar(0.576152)))) — D_eff = 12 + (Shadow_aleph + Shadow_heth)/2 from TCS G2 shadow fractions"
             ),
             Parameter(
                 path="cosmology.brane_tension_5_2",
@@ -808,7 +812,8 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="BPS-saturated tension for (5,1) brane per shadow from SO(24,1) Casimir (v21)",
                 derivation_formula="bps-bound",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.sqrt(ops.mul(eml_scalar(6.0), ops.div(ops.mul(eml_scalar(6.0), eml_scalar(29.0)), eml_scalar(4.0)))), ops.pow(eml_vec('M_PLANCK'), eml_scalar(6.0))) — T_BPS = sqrt(C2) × M_Pl^6, C2 = p(p+23)/4 = 43.5 for p=6"
             ),
             Parameter(
                 path="cosmology.pneuma_components_4D",
@@ -817,7 +822,8 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="Effective 4D Pneuma components: 64 (reduced from 8192 in 26D)",
                 derivation_formula="pneuma-reduction",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_scalar(4.0), eml_scalar(16.0)) — 64 = 4 (4D Dirac) × 16 (SO(10) spinor), reduced from 8192 = 2^12×2 in 26D via SO(10)→G_SM breaking"
             ),
         ]
 
