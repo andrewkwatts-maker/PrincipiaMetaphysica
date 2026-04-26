@@ -1617,6 +1617,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "statistical_aggregation",
                     "parentFormulas": []
                 },
+                eml_tree_str=(
+                    "ops.add(eml_vec('N_within_3sigma'), eml_scalar(0.0))"
+                ),
+                eml_description=(
+                    "Prediction count: number of predictions with deviation sigma_i within 3*sigma_exp."
+                ),
                 terms={
                     r"N_{\text{predictions}}": "Total number of falsifiable predictions",
                     r"\sigma_i": "Deviation of prediction i from experimental value",
@@ -1650,6 +1656,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "two_layer_or_bridge_suppression",
                     "parentFormulas": ["abstract-framework-overview"]
                 },
+                eml_tree_str=(
+                    "ops.mul(ops.div(eml_scalar(1.0), eml_scalar(144.0)), ops.exp(ops.neg(eml_scalar(12.0))))"
+                ),
+                eml_description=(
+                    "Dark force leakage: (1/chi_eff) * exp(-12) = (1/144) * exp(-12) ~ 6.9e-8."
+                ),
                 terms={
                     r"P_{\text{leak}}": "Dark force leakage probability across shadows",
                     "144": "Effective Euler characteristic χ_eff from G₂ manifold topology",
@@ -1685,6 +1697,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "cross_shadow_interference",
                     "parentFormulas": ["dark-force-leakage-prediction"]
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('alpha_leak'), ops.div(eml_vec('L'), eml_vec('lambda_dB')))"
+                ),
+                eml_description=(
+                    "Cross-shadow phase shift: alpha_leak times L divided by de Broglie wavelength."
+                ),
                 terms={
                     r"\delta\varphi": "Cross-shadow phase shift (radians)",
                     r"\alpha_{\text{leak}}": "Leakage coupling strength = 1/√6 ≈ 0.408",
@@ -1720,6 +1738,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "bridge_vacuum_noise_leakage",
                     "parentFormulas": ["dark-force-leakage-prediction"]
                 },
+                eml_tree_str=(
+                    "ops.mul(ops.mul(ops.div(eml_scalar(1.0), eml_scalar(144.0)), ops.exp(ops.neg(eml_scalar(12.0)))), eml_vec('P_thermal'))"
+                ),
+                eml_description=(
+                    "Vacuum noise excess: (1/144)*exp(-12)*P_thermal, bridge leakage times thermal noise power."
+                ),
                 terms={
                     r"P_{\text{noise}}": "Excess vacuum noise power from dark sector leakage",
                     r"P_{\text{thermal}}": "Thermal noise power at detector temperature",
@@ -1757,6 +1781,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "torsion_gw_polarization_coupling",
                     "parentFormulas": ["dark-force-leakage-prediction"]
                 },
+                eml_tree_str=(
+                    "ops.pow(eml_vec('T_omega'), eml_scalar(2.0))"
+                ),
+                eml_description=(
+                    "GW polarization anomaly: T_omega^2 = 1/6 torsion quadratic correction."
+                ),
                 terms={
                     r"\delta h": "Anomalous polarization amplitude shift",
                     "h": "Gravitational wave strain amplitude",
@@ -1802,6 +1832,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "axion_exclusion_criterion",
                     "parentFormulas": []
                 },
+                eml_tree_str=(
+                    "ops.div(eml_vec('alpha'), ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('f_a')))"
+                ),
+                eml_description=(
+                    "ADMX axion-photon coupling: alpha/(2*pi*f_a); exclusion below 1e-12 GeV^-1 constrains f_a."
+                ),
                 terms={
                     r"g_{a\gamma\gamma}": "Axion-photon coupling constant (GeV^{-1})",
                     r"m_a": "Axion mass (~6 microeV from G2 moduli)",
@@ -1844,6 +1880,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "cmb_s4_neff_exclusion",
                     "parentFormulas": []
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_scalar(3.0), ops.pow(eml_vec('T_prime_over_T'), eml_scalar(4.0)))"
+                ),
+                eml_description=(
+                    "CMB-S4 sterile test: Delta_N_eff = 3*(T'/T)^4 from mirror neutrino dark radiation."
+                ),
                 terms={
                     r"\Delta N_{\text{eff}}": "Effective number of extra neutrino species beyond SM",
                     "0.06": "Critical threshold below which mirror sector is constrained",
@@ -1886,6 +1928,12 @@ class PredictionsAggregatorV16(SimulationBase):
                     "method": "desi_bao_w0_validation",
                     "parentFormulas": ["predictions-summary-count"]
                 },
+                eml_tree_str=(
+                    "ops.add(ops.neg(eml_scalar(1.0)), ops.div(eml_scalar(1.0), eml_scalar(24.0)))"
+                ),
+                eml_description=(
+                    "DESI w0 prediction: -1 + 1/b3 = -1 + 1/24 = -23/24 from MEP and G2 topology."
+                ),
                 terms={
                     r"w_0": "Dark energy equation of state parameter at z=0",
                     r"-\frac{23}{24}": "Exact PM prediction from b_3 = 24",

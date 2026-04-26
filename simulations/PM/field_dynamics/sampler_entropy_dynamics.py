@@ -853,6 +853,12 @@ class SamplerEntropyDynamics(SimulationBase):
                         "PM framework: M^{27}(24,1,2) sampler sector",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.add(ops.mul(ops.div(eml_vec('alpha_T'), eml_scalar(12.0)), eml_vec('S_bridge')), ops.add(eml_vec('S_or'), ops.mul(eml_scalar(2.0), eml_vec('S_sampler_laplacian'))))"
+                ),
+                eml_description=(
+                    "Entropy gradient: (alpha_T/12)*S_bridge plus S_or plus kappa_sampler*laplacian(S_sampler)."
+                ),
                 terms={
                     "alpha_T": "Thermal time coupling (~2.7 from G2 topology)",
                     "S_vN(rho_i)": "Von Neumann entropy of bridge i density matrix",
@@ -894,6 +900,12 @@ class SamplerEntropyDynamics(SimulationBase):
                         "Standard scalar field theory on compact manifolds",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.mul(ops.div(eml_scalar(2.0), eml_scalar(2.0)), ops.pow(eml_vec('nabla_S_sampler'), eml_scalar(2.0)))"
+                ),
+                eml_description=(
+                    "Sampler energy density: (kappa_sampler/2) * |nabla S_sampler|^2, kappa_sampler=2 giving unit normalization."
+                ),
                 terms={
                     "rho_sampler": "Sampler entropy field energy density",
                     "kappa_sampler": "= 2 = dim(S^{2,0})",
@@ -938,6 +950,12 @@ class SamplerEntropyDynamics(SimulationBase):
                         "Standard fixed-point theory for diffusion equations",
                     ],
                 },
+                eml_tree_str=(
+                    "eml_scalar(0.0)"
+                ),
+                eml_description=(
+                    "Equilibrium condition: entropy gradient equals zero at fixed point S_eq."
+                ),
                 terms={
                     "S_eq": "Equilibrium entropy amplitude",
                     "dS/dt": "Total entropy gradient",

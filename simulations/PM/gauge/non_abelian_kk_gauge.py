@@ -462,6 +462,16 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     "in SU(3)_C. In the G2 framework, f^{abc} are inherited from the "
                     "ADE singularity classification at the corresponding cycle locus."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.sub(ops.mul(eml_vec('D_mu'), eml_vec('A_nu_a')), ops.mul(eml_vec('D_nu'), eml_vec('A_mu_a'))), "
+                    "ops.mul(eml_vec('g'), ops.mul(eml_vec('f_abc'), ops.mul(eml_vec('A_mu_b'), eml_vec('A_nu_c'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "General non-Abelian field strength F^a: antisymmetric derivative "
+                    "plus g*f^{abc}*A^b*A^c self-coupling from Lie algebra structure constants."
+                ),
                 inputParams=[],
                 outputParams=[],
                 input_params=[],
@@ -499,6 +509,17 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     "In PM's G2 framework, the analogous term arises from the ADE singular "
                     "cycle volume. Canonical normalization Tr(T^a T^b) = (1/2) delta^{ab}."
                 ),
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), "
+                    "ops.pow(eml_vec('F_munu_a'), eml_scalar(2.0))"
+                    ")"
+                ),
+                eml_description=(
+                    "Canonical Yang-Mills Lagrangian -1/4 F^a_{mu nu} F^{a mu nu}: "
+                    "negative quarter times squared non-Abelian field strength. "
+                    "Cycle volume r from G2 ADE singularity fixes coupling."
+                ),
                 inputParams=["topology.cycle_volume_su2", "topology.cycle_volume_su3"],
                 outputParams=["gauge.su2_canonical_coeff", "gauge.su3_canonical_coeff"],
                 input_params=["topology.cycle_volume_su2", "topology.cycle_volume_su3"],
@@ -535,6 +556,7 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     "Corresponds to three W bosons (W^1, W^2, W^3) in the electroweak sector."
                 ),
                 no_experimental_value=True,
+                eml_description="eml_scalar(3.0) — SU(2) adjoint dim = N^2 - 1 = 3.",
             ),
             Parameter(
                 path="gauge.su3_adjoint_dim",
@@ -546,6 +568,7 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     "Corresponds to eight gluon fields mediating the strong force."
                 ),
                 no_experimental_value=True,
+                eml_description="eml_scalar(8.0) — SU(3) adjoint dim = N^2 - 1 = 8.",
             ),
             Parameter(
                 path="gauge.su2_canonical_coeff",
@@ -558,6 +581,10 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="na-kk-yang-mills-kinetic",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_vec('r_SU2'), eml_scalar(4.0)) — SU(2) kinetic coefficient r/4; "
+                    "canonical = 1/4 when r = 1."
+                ),
             ),
             Parameter(
                 path="gauge.su3_canonical_coeff",
@@ -570,6 +597,10 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="na-kk-yang-mills-kinetic",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_vec('r_SU3'), eml_scalar(4.0)) — SU(3) kinetic coefficient r/4; "
+                    "canonical = 1/4 when r = 1."
+                ),
             ),
         ]
 

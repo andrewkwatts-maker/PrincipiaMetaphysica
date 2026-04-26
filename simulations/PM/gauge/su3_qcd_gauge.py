@@ -511,6 +511,16 @@ class SU3QCDGaugeSimulation(SimulationBase):
                     "SU(3)_C gluon field strength tensor with totally antisymmetric "
                     "structure constants f^{abc}. Self-interactions produce gluon-gluon vertices."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.sub(ops.mul(eml_vec('D_mu'), eml_vec('G_nu_a')), ops.mul(eml_vec('D_nu'), eml_vec('G_mu_a'))), "
+                    "ops.mul(eml_vec('g_s'), ops.mul(eml_vec('f_abc'), ops.mul(eml_vec('G_mu_b'), eml_vec('G_nu_c'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "G^a gluon field strength: antisymmetric derivative part plus "
+                    "SU(3) self-coupling via structure constants f^{abc}."
+                ),
                 inputParams=[],
                 outputParams=[],
                 input_params=[],
@@ -540,6 +550,16 @@ class SU3QCDGaugeSimulation(SimulationBase):
                 description=(
                     "QCD gluon kinetic Lagrangian with canonical normalization. "
                     "The color cycle volume r_C from G2 spectral residues determines g_s."
+                ),
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), "
+                    "ops.pow(eml_vec('G_munu_a'), eml_scalar(2.0))"
+                    ")"
+                ),
+                eml_description=(
+                    "Canonical -1/4 G^a_{mu nu} G^{a mu nu}: negative quarter times "
+                    "squared SU(3) gluon field strength summed over color adjoint index a."
                 ),
                 inputParams=["topology.color_cycle_volume"],
                 outputParams=["gauge.su3_color_cycle_volume"],
@@ -572,6 +592,17 @@ class SU3QCDGaugeSimulation(SimulationBase):
                 description=(
                     "Quark kinetic Lagrangian with SU(3)_C covariant derivative. "
                     "Quarks carry color charge in the fundamental 3 representation."
+                ),
+                eml_tree_str=(
+                    "ops.add("
+                    "eml_vec('partial_mu'), "
+                    "ops.neg(ops.mul(ops.mul(eml_vec('i'), eml_vec('g_s')), "
+                    "ops.mul(eml_vec('t_a'), eml_vec('G_mu_a'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "QCD covariant derivative: partial_mu minus i*g_s*t^a*G^a_mu, "
+                    "coupling quark color-triplet fields to eight gluon modes."
                 ),
                 inputParams=["pdg.alpha_s_MZ"],
                 outputParams=["gauge.su3_alpha_s_predicted"],
@@ -609,6 +640,7 @@ class SU3QCDGaugeSimulation(SimulationBase):
                     "Gluons carry color-anticolor charge and mediate the strong interaction."
                 ),
                 no_experimental_value=True,
+                eml_description="eml_scalar(8.0) — adjoint dimension of SU(3): N^2 - 1 = 8.",
             ),
             Parameter(
                 path="gauge.su3_alpha_s_predicted",
@@ -624,6 +656,11 @@ class SU3QCDGaugeSimulation(SimulationBase):
                 bound_type="central_value",
                 bound_source="PDG2024",
                 uncertainty=0.0009,
+                eml_description=(
+                    "ops.div(ops.pow(eml_vec('g_s'), eml_scalar(2.0)), "
+                    "ops.mul(eml_scalar(4.0), eml_pi())) "
+                    "— alpha_s = g_s^2 / (4 pi) from color cycle volume spectral residue."
+                ),
             ),
             Parameter(
                 path="gauge.su3_color_cycle_volume",
@@ -636,6 +673,10 @@ class SU3QCDGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="su3-qcd-kinetic",
                 no_experimental_value=True,
+                eml_description=(
+                    "eml_vec('r_C') — G2 associative 3-cycle volume (largest gauge cycle); "
+                    "determines g_s via ops.inv(eml_vec('r_C'))."
+                ),
             ),
         ]
 

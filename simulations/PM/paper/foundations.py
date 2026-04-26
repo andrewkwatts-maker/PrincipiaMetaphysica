@@ -673,6 +673,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": []
                 },
+                eml_tree_str=(
+                    "ops.add(eml_scalar(24.0), eml_scalar(1.0))"
+                ),
+                eml_description=(
+                    "Bulk signature (24,1): 24 spacelike dimensions plus 1 timelike."
+                ),
                 terms={
                     "M^{24,1}": "25-dimensional manifold with signature (24,1)",
                     "ds^2": "Line element of the bulk metric",
@@ -697,6 +703,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": ["26d-signature"]
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_scalar(12.0), eml_scalar(2.0))"
+                ),
+                eml_description=(
+                    "Bridge bulk: 12 bridge pairs times 2 dimensions each = 24D spatial sector."
+                ),
                 terms={
                     "T^1": "1-dimensional unified timelike fiber",
                     "B_i^{2,0}": "i-th Euclidean bridge pair with (2,0) signature",
@@ -721,6 +733,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": ["euclidean-bridge"]
                 },
+                eml_tree_str=(
+                    "ops.pow(eml_vec('R_perp_i'), eml_scalar(12.0))"
+                ),
+                eml_description=(
+                    "Full OR reduction operator: tensor product of 12 per-pair R_perp^i operators."
+                ),
                 terms={
                     "R_perp^i": "Per-pair orthogonal reduction operator (90-deg rotation)",
                     "R_perp^full": "Full tensor product OR operator over 12 pairs",
@@ -745,6 +763,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": ["euclidean-bridge", "or-reduction-tensor"]
                 },
+                eml_tree_str=(
+                    "ops.add(ops.mul(ops.inv(eml_scalar(12.0)), eml_vec('sum_p_i')), ops.mul(ops.sqrt(ops.div(eml_vec('n_local'), eml_scalar(12.0))), eml_vec('phi')))"
+                ),
+                eml_description=(
+                    "Central sampler: (1/12)*sum(p_i) plus sqrt(n_local/12)*phi golden ratio scaling."
+                ),
                 terms={
                     "p_anc": "Ancestral probability from sampler data fields",
                     "p_i": "Local probability from bridge pair i",
@@ -770,6 +794,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": []
                 },
+                eml_tree_str=(
+                    "eml_vec('G2_holonomy')"
+                ),
+                eml_description=(
+                    "G2 holonomy condition: Hol(g) subset G2 iff a parallel 3-form eta exists with nabla eta = 0."
+                ),
                 terms={
                     "Hol(g)": "Holonomy group of the Riemannian metric g",
                     "G_2": "Exceptional Lie group, Aut(O), dim=14",
@@ -796,6 +826,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": ["g2-holonomy-foundations"]
                 },
+                eml_tree_str=(
+                    "ops.div(eml_scalar(24.0), eml_scalar(8.0))"
+                ),
+                eml_description=(
+                    "Three fermion generations: b3=24 divided by 8 flux quantization divisor."
+                ),
                 terms={
                     "N_gen": "Number of fermion generations",
                     "b_3": "Third Betti number of G2 manifold (24)",
@@ -820,6 +856,12 @@ class FoundationsV16_2(SimulationBase):
                     ],
                     "parentFormulas": ["g2-holonomy-foundations", "b3-generations"]
                 },
+                eml_tree_str=(
+                    "ops.sub(eml_scalar(7.0), eml_scalar(3.0))"
+                ),
+                eml_description=(
+                    "CY projection: 7D G2 minus 3 internal compactified dimensions yields 4D Minkowski."
+                ),
                 terms={
                     "V_7": "7-dimensional G2 holonomy manifold",
                     "CY_3": "Calabi-Yau 3-fold intermediate",

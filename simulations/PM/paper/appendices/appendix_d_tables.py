@@ -435,6 +435,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of fundamental constants in Table D.1",
+                eml_description="Integer count of fundamental physical constants listed in Table D.1; includes Planck mass, fine structure constant, and 8 others from PDG 2024.",
                 no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
             Parameter(
@@ -443,6 +444,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of experimental inputs in Table D.2",
+                eml_description="Integer count of PDG experimental input values in Table D.2; covers boson masses, fermion masses, gauge couplings, and mixing angles.",
                 no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
             Parameter(
@@ -451,6 +453,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of topology parameters in Table D.3",
+                eml_description="Integer count of geometric and topological parameters in Table D.3; includes Betti numbers, Hodge numbers, and cycle separations for TCS G2 #187.",
                 no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
             Parameter(
@@ -459,6 +462,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of theory predictions in Table D.7",
+                eml_description="Integer count of new physics predictions in Table D.7; includes proton lifetime, dark matter relic density, and inflation scale predictions.",
                 no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
         ]

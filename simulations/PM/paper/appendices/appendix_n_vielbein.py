@@ -819,6 +819,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.2)",
                 latex=r"g_{\mu\nu} = \eta_{AB} e^A_\mu e^B_\nu",
                 plain_text="Metric from vielbein: g_munu = eta_AB e^A_mu e^B_nu",
+                eml_tree_str="ops.mul(ops.mul(eml_vec('eta_AB'), eml_vec('e_A_mu')), eml_vec('e_B_nu'))",
                 category="ESTABLISHED",
                 description=(
                     "Metric tensor constructed from vielbein (tetrad) fields. "
@@ -846,6 +847,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.1)",
                 latex=r"\eta_{AB} = g_{\mu\nu} e^{\mu}_A e^{\nu}_B",
                 plain_text="Vielbein orthonormality: eta_AB = g_munu e^mu_A e^nu_B",
+                eml_tree_str="ops.mul(ops.mul(eml_vec('g_munu'), eml_vec('e_mu_A')), eml_vec('e_nu_B'))",
                 category="ESTABLISHED",
                 description=(
                     "Orthonormality condition for vielbein. The vielbein vectors form "
@@ -873,6 +875,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.3a)",
                 latex=r"E_A^\mu = (e^{-1})_A^\mu",
                 plain_text="Inverse vielbein: E_A^mu = (e^(-1))_A^mu",
+                eml_tree_str="ops.inv(eml_vec('e_A_mu'))",
                 category="ESTABLISHED",
                 description=(
                     "The inverse vielbein allows conversion from flat Lorentz indices "
@@ -899,6 +902,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.3)",
                 latex=r"e^A_\mu E_A^\nu = \delta^\nu_\mu",
                 plain_text="Spacetime completeness: e^A_mu E_A^nu = delta^nu_mu",
+                eml_tree_str="ops.mul(eml_vec('e_A_mu'), eml_vec('E_A_nu'))",
                 category="ESTABLISHED",
                 description=(
                     "Completeness relation in spacetime. Summing over Lorentz indices "
@@ -926,6 +930,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.4)",
                 latex=r"e^A_\mu E_B^\mu = \delta^A_B",
                 plain_text="Tangent space completeness: e^A_mu E_B^mu = delta^A_B",
+                eml_tree_str="ops.mul(eml_vec('e_A_mu'), eml_vec('E_B_mu'))",
                 category="ESTABLISHED",
                 description=(
                     "Completeness relation in tangent space. Summing over spacetime indices "
@@ -953,6 +958,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.5)",
                 latex=r"\omega_{AB\mu} = -\omega_{BA\mu}",
                 plain_text="Spin connection antisymmetry: omega_ABmu = -omega_BAmu",
+                eml_tree_str="ops.neg(eml_vec('omega_BA_mu'))",
                 category="ESTABLISHED",
                 description=(
                     "Antisymmetry of spin connection in Lorentz indices. This follows from "
@@ -980,6 +986,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.6)",
                 latex=r"T^A = de^A + \omega^A{}_B \wedge e^B = 0",
                 plain_text="Torsion-free: T^A = de^A + omega^A_B wedge e^B = 0",
+                eml_tree_str="ops.add(eml_vec('de_A'), ops.mul(eml_vec('omega_A_B'), eml_vec('e_B')))",
                 category="ESTABLISHED",
                 description=(
                     "Torsion-free condition (first Cartan structure equation with T=0). "
@@ -1007,6 +1014,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.7)",
                 latex=r"\partial_\mu e^A_\nu - \partial_\nu e^A_\mu + \omega^A{}_{B\mu} e^B_\nu - \omega^A{}_{B\nu} e^B_\mu = 0",
                 plain_text="First Cartan in components",
+                eml_tree_str="ops.add(ops.sub(eml_vec('d_mu_eA_nu'), eml_vec('d_nu_eA_mu')), ops.sub(ops.mul(eml_vec('omega_A_Bmu'), eml_vec('eB_nu')), ops.mul(eml_vec('omega_A_Bnu'), eml_vec('eB_mu'))))",
                 category="ESTABLISHED",
                 description=(
                     "Component form of the first Cartan structure equation (torsion-free). "
@@ -1034,6 +1042,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.8)",
                 latex=r"R^A{}_B = d\omega^A{}_B + \omega^A{}_C \wedge \omega^C{}_B",
                 plain_text="Curvature 2-form: R^A_B = d omega + omega wedge omega",
+                eml_tree_str="ops.add(eml_vec('d_omega_A_B'), ops.mul(eml_vec('omega_A_C'), eml_vec('omega_C_B')))",
                 category="ESTABLISHED",
                 description=(
                     "Second Cartan structure equation defining curvature from spin connection. "
@@ -1061,6 +1070,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.9)",
                 latex=r"R^A{}_{B\mu\nu} = \partial_\mu \omega^A{}_{B\nu} - \partial_\nu \omega^A{}_{B\mu} + \omega^A{}_{C\mu} \omega^C{}_{B\nu} - \omega^A{}_{C\nu} \omega^C{}_{B\mu}",
                 plain_text="Riemann tensor from spin connection",
+                eml_tree_str="ops.sub(ops.add(ops.sub(eml_vec('d_mu_omega_ABnu'), eml_vec('d_nu_omega_ABmu')), ops.mul(eml_vec('omega_ACmu'), eml_vec('omega_CBnu'))), ops.mul(eml_vec('omega_ACnu'), eml_vec('omega_CBmu')))",
                 category="ESTABLISHED",
                 description=(
                     "Component form of Riemann curvature tensor with Lorentz indices, "
@@ -1088,6 +1098,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.10)",
                 latex=r"D_\mu \psi = \partial_\mu \psi + \frac{1}{4} \omega^{AB}{}_\mu \Sigma_{AB} \psi",
                 plain_text="Spinor covariant derivative: D_mu psi = partial_mu psi + (1/4) omega Sigma psi",
+                eml_tree_str="ops.add(eml_vec('partial_mu_psi'), ops.mul(ops.mul(ops.inv(eml_scalar(4.0)), ops.mul(eml_vec('omega_AB_mu'), eml_vec('Sigma_AB'))), eml_vec('psi')))",
                 category="ESTABLISHED",
                 description=(
                     "Covariant derivative of a Dirac spinor in curved spacetime. "
@@ -1115,6 +1126,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.11)",
                 latex=r"\Sigma_{AB} = \frac{1}{4} [\gamma_A, \gamma_B]",
                 plain_text="Lorentz generator: Sigma_AB = (1/4)[gamma_A, gamma_B]",
+                eml_tree_str="ops.mul(ops.inv(eml_scalar(4.0)), ops.sub(ops.mul(eml_vec('gamma_A'), eml_vec('gamma_B')), ops.mul(eml_vec('gamma_B'), eml_vec('gamma_A'))))",
                 category="ESTABLISHED",
                 description=(
                     "Lorentz algebra generators in the spinor representation. "
@@ -1142,6 +1154,7 @@ class AppendixNVielbein(SimulationBase):
                 label="(N.12)",
                 latex=r"\omega^A{}_{B\mu} = e^A_\nu E_B^\rho \Gamma^\nu_{\rho\mu} + e^A_\nu \partial_\mu E_B^\nu",
                 plain_text="Spin connection from Christoffel: omega = e E Gamma + e partial E",
+                eml_tree_str="ops.add(ops.mul(ops.mul(eml_vec('e_A_nu'), eml_vec('E_B_rho')), eml_vec('Gamma_nu_rho_mu')), ops.mul(eml_vec('e_A_nu'), eml_vec('d_mu_E_B_nu')))",
                 category="ESTABLISHED",
                 description=(
                     "Relation between spin connection and Christoffel symbols. "
@@ -1175,6 +1188,7 @@ class AppendixNVielbein(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of spacetime (D=4 for standard applications)",
+                eml_description="eml_scalar(4.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1183,6 +1197,7 @@ class AppendixNVielbein(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of local Lorentz group SO(1,3): D(D-1)/2 = 6",
+                eml_description="eml_scalar(6.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1191,6 +1206,7 @@ class AppendixNVielbein(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of Dirac spinor in 4D: 2^(D/2) = 4",
+                eml_description="eml_scalar(4.0)",
                 no_experimental_value=True,
             ),
         ]

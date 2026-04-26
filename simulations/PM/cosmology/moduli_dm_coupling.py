@@ -1092,6 +1092,12 @@ class ModuliDMCouplingV24(SimulationBase):
                     "leakage. alpha_leak = 1/sqrt(6) from volume ratio, "
                     "kappa_sampler = 2 from sampler dimensions."
                 ),
+                eml_tree_str=(
+                    "ops.mul(ops.div(eml_vec('alpha_leak'), ops.mul(eml_scalar(4.0), eml_pi())), eml_scalar(2.0))"
+                ),
+                eml_description=(
+                    "Effective coupling: (alpha_leak / 4pi) times kappa_sampler=2."
+                ),
                 domain="cosmology",
             ),
             Formula(
@@ -1105,6 +1111,12 @@ class ModuliDMCouplingV24(SimulationBase):
                     "Modified linear growth equation with friction from "
                     "Face-3 modulus rolling coupled to DM perturbations."
                 ),
+                eml_tree_str=(
+                    "ops.sub(ops.mul(ops.mul(eml_scalar(1.5), ops.pow(eml_vec('H'), eml_scalar(2.0))), ops.mul(eml_vec('Omega_m'), eml_vec('delta'))), ops.mul(ops.add(ops.mul(eml_scalar(2.0), eml_vec('H')), ops.mul(ops.div(eml_vec('beta_eff'), eml_vec('M_Pl')), eml_vec('phi_dot'))), eml_vec('delta_dot')))"
+                ),
+                eml_description=(
+                    "Modified growth equation: (3/2)H^2*Omega_m*delta minus (2H + beta_eff*phi_dot/M_Pl)*delta_dot friction term."
+                ),
                 domain="cosmology",
             ),
             Formula(
@@ -1117,6 +1129,12 @@ class ModuliDMCouplingV24(SimulationBase):
                 description=(
                     "S8 prediction with moduli-DM coupling suppression "
                     "relative to LCDM growth factor."
+                ),
+                eml_tree_str=(
+                    "ops.mul(ops.mul(eml_vec('sigma8_ref'), ops.div(eml_vec('D_coupled'), eml_vec('D_lcdm'))), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3))))"
+                ),
+                eml_description=(
+                    "S8 with coupling: sigma8_ref times D_coupled/D_lcdm growth ratio times sqrt(Omega_m/0.3)."
                 ),
                 domain="cosmology",
             ),

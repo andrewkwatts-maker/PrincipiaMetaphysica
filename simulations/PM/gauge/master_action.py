@@ -393,6 +393,17 @@ class MasterActionSimulationV22(SimulationBase):
                     "12×(2,0) + S^{2,0} + (0,1) WARP to create 2×13D(12,1) shadows via distributed OR. "
                     "Each L_bridge^i contributes to OR reduction via local R_perp_i operator."
                 ),
+                eml_tree_str=(
+                    "ops.mul(eml_vec('sqrt_neg_G'), "
+                    "ops.add(eml_vec('R_27D'), "
+                    "ops.add(ops.mul(eml_vec('Psi_bar_P'), ops.mul(eml_vec('i_Gamma_D'), eml_vec('Psi_P'))), "
+                    "ops.add(ops.mul(eml_vec('lambda'), ops.pow(ops.mul(eml_vec('Psi_bar_P'), eml_vec('Psi_P')), eml_scalar(2.0))), "
+                    "ops.add(eml_vec('L_bridge_sum_12'), eml_vec('L_C'))))))"
+                ),
+                eml_description=(
+                    "27D Pneuma master action integrand: sqrt(-G) times [R + Dirac kinetic + "
+                    "quartic self-interaction + sum of 12 bridge Lagrangians + sampler L_C]."
+                ),
                 inputParams=["geometry.D_bulk", "bridge.n_pairs", "topology.elder_kads"],
                 outputParams=["bridge.n_pairs"],
                 derivation={
@@ -428,6 +439,17 @@ class MasterActionSimulationV22(SimulationBase):
                     "Total: 1 (time) + 24 (bridges) + 2 (sampler) = 27D(24,1,2), Cl(24,1) spinors. "
                     "Each pair (y_{1i}, y_{2i}) spans a 2D Euclidean bridge plane."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.neg(ops.pow(eml_vec('dt'), eml_scalar(2.0))), "
+                    "ops.mul(eml_vec('sum_i_1_12'), "
+                    "ops.add(ops.pow(eml_vec('dy1_i'), eml_scalar(2.0)), ops.pow(eml_vec('dy2_i'), eml_scalar(2.0))))"
+                    ")"
+                ),
+                eml_description=(
+                    "27D metric: -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2); "
+                    "signature (24,1,2) with 12 Euclidean bridge pairs."
+                ),
                 inputParams=["geometry.D_bulk", "bridge.n_pairs", "topology.elder_kads"],
                 outputParams=["bridge.n_pairs"],
                 derivation={
@@ -455,6 +477,15 @@ class MasterActionSimulationV22(SimulationBase):
                     "v22.0: Total bridge Lagrangian summed over 12 pairs. Each pair i "
                     "contributes its local breathing mode rho_breath^i and OR reduction "
                     "operator OR^i acting on the Pneuma spinor."
+                ),
+                eml_tree_str=(
+                    "ops.mul(eml_vec('sum_i_1_12'), "
+                    "ops.mul(eml_vec('sqrt_g_2_0_i'), "
+                    "ops.add(eml_vec('rho_breath_i'), eml_vec('OR_i_Psi_P'))))"
+                ),
+                eml_description=(
+                    "Bridge Lagrangian: sum over 12 pairs of sqrt(g_{(2,0)}^i) * "
+                    "[breathing mode rho_breath^i + local OR reduction OR^i(Psi_P)]."
                 ),
                 inputParams=["bridge.n_pairs", "bridge.breathing_mode", "bridge.or_operator"],
                 outputParams=["bridge.n_pairs", "bridge.breathing_aggregation"],
@@ -486,6 +517,13 @@ class MasterActionSimulationV22(SimulationBase):
                     "R_perp^i matrices. Each R_perp^i is a 2x2 pi/2 rotation. Total dimension: "
                     "2^12 = 4096, matching the Pneuma spinor dimension from Cl(24,1)."
                 ),
+                eml_tree_str=(
+                    "ops.mul(eml_vec('tensor_prod_i_1_12'), eml_vec('R_perp_i'))"
+                ),
+                eml_description=(
+                    "R_perp = tensor_{i=1}^{12} R_perp^i: Kronecker product of 12 "
+                    "2x2 pi/2 rotation matrices; total rank 2^12 = 4096 matching Cl(24,1) spinor."
+                ),
                 inputParams=["bridge.n_pairs", "bridge.local_or_matrix"],
                 outputParams=["bridge.distributed_or_rank"],
                 derivation={
@@ -513,6 +551,17 @@ class MasterActionSimulationV22(SimulationBase):
                     "v22.0: Aggregated breathing mode averaging normal-mirror tension across "
                     "all 12 bridge pairs. Each pair i contributes its local tension between "
                     "normal and rotated mirror sectors. Drives collective OR transitions."
+                ),
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.div(eml_scalar(1.0), eml_scalar(12.0)), "
+                    "ops.mul(eml_vec('sum_i_1_12'), "
+                    "ops.sub(eml_vec('T_normal_i'), ops.mul(eml_vec('R_perp_i'), eml_vec('T_mirror_i'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "rho_breath = (1/12) * sum_{i=1}^{12} |T_normal^i - R_perp^i * T_mirror^i|: "
+                    "average normal-mirror tension across 12 bridge pairs."
                 ),
                 inputParams=["bridge.n_pairs", "bridge.normal_mirror_tension", "bridge.distributed_or_rank"],
                 outputParams=["bridge.breathing_aggregation"],
@@ -545,6 +594,17 @@ class MasterActionSimulationV22(SimulationBase):
                     "5D Kaluza-Klein metric ansatz. Reduction yields 4D GR + U(1) gauge. "
                     "Demonstrates mechanism used in full G2 reduction."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.mul(eml_vec('g_munu'), ops.mul(eml_vec('dx_mu'), eml_vec('dx_nu'))), "
+                    "ops.mul(ops.pow(eml_vec('R'), eml_scalar(2.0)), "
+                    "ops.pow(ops.add(eml_vec('dy'), ops.mul(eml_vec('k'), ops.mul(eml_vec('A_mu'), eml_vec('dx_mu')))), eml_scalar(2.0)))"
+                    ")"
+                ),
+                eml_description=(
+                    "5D KK ansatz: g_{mu nu} dx^mu dx^nu + R^2 (dy + k A_mu dx^mu)^2; "
+                    "off-diagonal A_mu becomes 4D U(1) gauge field."
+                ),
                 inputParams=["geometry.D_bulk", "gauge.compact_radius", "gauge.kk_normalization"],
                 outputParams=["gauge.kk_planck_factor", "gauge.kk_gauge_kinetic_coeff"],
                 derivation={
@@ -574,6 +634,16 @@ class MasterActionSimulationV22(SimulationBase):
                     "SU(3)_C QCD Lagrangian from G2 associative 3-cycle reduction. "
                     "8 gluons with self-interactions; quarks in color triplet."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.mul(ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), ops.pow(eml_vec('G_munu_a'), eml_scalar(2.0))), "
+                    "ops.mul(eml_vec('sum_f'), ops.mul(eml_vec('q_bar_f'), ops.sub(ops.mul(eml_vec('i_gamma_D'), eml_vec('q_f')), ops.mul(eml_vec('m_f'), eml_vec('q_f')))))"
+                    ")"
+                ),
+                eml_description=(
+                    "QCD: -1/4 G^a^2 (gluon kinetic) plus sum_f qbar_f (i gamma D - m_f) q_f (quark). "
+                    "SU(3) from G2 associative 3-cycle; alpha_s locked by cycle volume."
+                ),
                 inputParams=["gauge.g_s_coupling", "geometry.associative_3cycle_volume"],
                 outputParams=["gauge.qcd_gluon_count", "gauge.qcd_alpha_s_mz"],
                 derivation={
@@ -597,6 +667,16 @@ class MasterActionSimulationV22(SimulationBase):
                 id="su2-weak-lagrangian-v22",
                 label="(3.3)",
                 latex=r"\mathcal{L}_{\text{weak}} = -\frac{1}{4}W^a_{\mu\nu}W^{a\mu\nu} + \bar{\psi}_L i\gamma^\mu D_\mu \psi_L",
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.mul(ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), ops.pow(eml_vec('W_munu_a'), eml_scalar(2.0))), "
+                    "ops.mul(eml_vec('psi_bar_L'), ops.mul(eml_vec('i_gamma_D'), eml_vec('psi_L')))"
+                    ")"
+                ),
+                eml_description=(
+                    "SU(2) weak: -1/4 W^a^2 plus left-handed chiral current psi_bar_L i gamma D psi_L. "
+                    "Chirality enforced by CY3 Hodge structure."
+                ),
                 plain_text="L_weak = -1/4 W^a_mn W^a^mn + psi-bar_L i*gamma^mu*D_mu psi_L",
                 category="DERIVED",
                 description=(
@@ -631,6 +711,17 @@ class MasterActionSimulationV22(SimulationBase):
                     "U(1)_Y hypercharge from residual Abelian cycle. "
                     "Hypercharge assignments from fermion node structure."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.mul(ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), ops.pow(eml_vec('B_munu'), eml_scalar(2.0))), "
+                    "ops.mul(eml_vec('psi_bar'), ops.mul(eml_vec('i_gamma'), "
+                    "ops.sub(eml_vec('partial_mu'), ops.mul(ops.mul(eml_vec('i'), eml_vec('g_prime')), ops.mul(eml_vec('Y'), eml_vec('B_mu'))))))"
+                    ")"
+                ),
+                eml_description=(
+                    "U(1)_Y: -1/4 B^2 (Abelian kinetic) plus fermion coupling via "
+                    "covariant derivative partial_mu - i g' Y B_mu."
+                ),
                 inputParams=["gauge.gp_hypercharge_coupling", "geometry.residual_abelian_cycle_volume"],
                 outputParams=["gauge.hypercharge_coupling_gp"],
                 derivation={
@@ -658,6 +749,16 @@ class MasterActionSimulationV22(SimulationBase):
                 description=(
                     "Weinberg angle from G2 cycle volume ratio. "
                     "Determines W^3-B mixing to photon and Z boson."
+                ),
+                eml_tree_str=(
+                    "ops.div("
+                    "ops.pow(eml_vec('g_prime'), eml_scalar(2.0)), "
+                    "ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))"
+                    ")"
+                ),
+                eml_description=(
+                    "sin^2(theta_W) = g'^2 / (g_2^2 + g'^2): Weinberg mixing angle "
+                    "locked by G2 cycle volume ratio r_W / r_Y."
                 ),
                 inputParams=["gauge.weak_coupling_g2", "gauge.hypercharge_coupling_gp"],
                 outputParams=["gauge.sin2_theta_w", "gauge.m_z_gev", "gauge.m_w_gev"],
@@ -696,6 +797,16 @@ class MasterActionSimulationV22(SimulationBase):
                     "(T^YM_{mu nu} + T^Dirac_{mu nu} + T^bridge_{mu nu} + T^Pneuma_{mu nu})"
                 ),
                 category="DERIVED",
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.div(ops.mul(eml_scalar(8.0), ops.mul(eml_pi(), eml_vec('G_27'))), ops.pow(eml_vec('c'), eml_scalar(4.0))), "
+                    "ops.add(eml_vec('T_YM'), ops.add(eml_vec('T_Dirac'), ops.add(eml_vec('T_bridge'), eml_vec('T_Pneuma'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "27D Einstein field equations: G_{mu nu} + Lambda_eff g_{mu nu} = "
+                    "(8 pi G_27 / c^4)(T^YM + T^Dirac + T^bridge + T^Pneuma)."
+                ),
                 description=(
                     "Einstein field equations from metric variation of the full 27D master "
                     "action. The left-hand side contains the Einstein tensor G_{mu nu} = "
@@ -747,6 +858,16 @@ class MasterActionSimulationV22(SimulationBase):
                     "nabla^mu T_{mu nu} = 0"
                 ),
                 category="DERIVED",
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.neg(ops.div(eml_scalar(2.0), eml_vec('sqrt_neg_g'))), "
+                    "ops.div(eml_vec('delta_S_matter'), eml_vec('delta_g_munu'))"
+                    ")"
+                ),
+                eml_description=(
+                    "T_{mu nu} = -(2/sqrt(-g)) * delta S_matter / delta g^{mu nu}: "
+                    "stress-energy tensor from metric variation; covariantly conserved."
+                ),
                 description=(
                     "Stress-energy tensor definition from the metric variation of the matter "
                     "action, and its covariant conservation law. The factor of -2/sqrt(-g) "
@@ -796,6 +917,14 @@ class MasterActionSimulationV22(SimulationBase):
                     "flips chirality) with face OR. P_reverse is the cross-shadow chirality flip "
                     "probability."
                 ),
+                eml_tree_str=(
+                    "ops.mul(eml_vec('R_perp_global'), "
+                    "ops.mul(eml_vec('P_LR'), eml_vec('R_face_f')))"
+                ),
+                eml_description=(
+                    "R_chirality = R_perp_global * P_LR * R_face^(f): composed operator "
+                    "for cross-shadow chirality flip; P_reverse ~ 3e-6 suppressed by volume ratio."
+                ),
                 inputParams=["bridge.distributed_or_rank", "gauge.electroweak_mixing_angle", "geometry.tcs_face_count"],
                 outputParams=["gauge.chirality_reversal_probability"],
                 derivation={
@@ -825,6 +954,14 @@ class MasterActionSimulationV22(SimulationBase):
                 description=(
                     "Dark matter portal Lagrangian -- hidden face coupling from volume ratio "
                     "(1/sqrt(6)), torsion, and flux asymmetry corrections."
+                ),
+                eml_tree_str=(
+                    "ops.mul(eml_vec('alpha_leak'), "
+                    "ops.mul(eml_vec('phi_vis'), ops.mul(eml_vec('phi_dark'), eml_vec('phi_mod'))))"
+                ),
+                eml_description=(
+                    "L_portal = alpha_leak * phi_vis * phi_dark * phi_mod: "
+                    "trilinear visible-dark-moduli coupling; alpha_leak ~ 1/sqrt(6) ~ 0.57."
                 ),
                 inputParams=["geometry.alpha_leak", "topology.mephorash_chi", "topology.elder_kads"],
                 outputParams=["gauge.dark_portal_coupling"],
@@ -863,6 +1000,16 @@ class MasterActionSimulationV22(SimulationBase):
                     "[ R_13 + Psi-bar_P i*gamma^m D_m Psi_P + V_face^(f) ]"
                 ),
                 category="DERIVED",
+                eml_tree_str=(
+                    "ops.mul(eml_vec('sqrt_neg_g_13'), "
+                    "ops.add(eml_vec('R_13'), "
+                    "ops.add(ops.mul(eml_vec('Psi_bar_P'), ops.mul(eml_vec('i_gamma_D_13'), eml_vec('Psi_P'))), "
+                    "eml_vec('V_face_f'))))"
+                ),
+                eml_description=(
+                    "13D shadow action integrand: sqrt(-g_13) * [R_13 + Psi-bar_P i gamma D Psi_P + V_face^(f)]; "
+                    "emerges from 27D bulk via bridge OR reduction."
+                ),
                 description=(
                     "13D shadow action after bridge/global OR reduction from the 27D master "
                     "action. Each shadow inherits 13 dimensions: 12 spatial (from the 12 bridge "
@@ -921,6 +1068,16 @@ class MasterActionSimulationV22(SimulationBase):
                     "[ -(M_Pl^2 / 2) R + L_SM + L_portal + L_DM ]"
                 ),
                 category="DERIVED",
+                eml_tree_str=(
+                    "ops.mul(eml_vec('sqrt_neg_g'), "
+                    "ops.add("
+                    "ops.neg(ops.mul(ops.div(ops.pow(eml_vec('M_Pl'), eml_scalar(2.0)), eml_scalar(2.0)), eml_vec('R_4D'))), "
+                    "ops.add(eml_vec('L_SM'), ops.add(eml_vec('L_portal'), eml_vec('L_DM')))))"
+                ),
+                eml_description=(
+                    "4D effective action: sqrt(-g) * [-(M_Pl^2/2) R + L_SM + L_portal + L_DM]; "
+                    "emerges from 13D shadow after G2 compactification."
+                ),
                 description=(
                     "4D effective action after face/local OR and compactification of the "
                     "internal 9 dimensions of the 13D shadow. The 4D Planck mass is determined "
@@ -989,6 +1146,16 @@ class MasterActionSimulationV22(SimulationBase):
                     "(T^SM_{mu nu} + T^portal_{mu nu})"
                 ),
                 category="DERIVED",
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.inv(ops.pow(eml_vec('M_Pl'), eml_scalar(2.0))), "
+                    "ops.add(eml_vec('T_SM'), eml_vec('T_portal'))"
+                    ")"
+                ),
+                eml_description=(
+                    "4D EOM: G_{mu nu} + Lambda g_{mu nu} = (1/M_Pl^2)(T^SM + T^portal); "
+                    "portal stress-energy from dark matter/hidden face backreaction."
+                ),
                 description=(
                     "Euler-Lagrange equations of motion for the 4D effective action. Varying "
                     "S_4 with respect to the inverse metric g^{mu nu} yields the modified "
@@ -1055,6 +1222,7 @@ class MasterActionSimulationV22(SimulationBase):
                 status="DERIVED",
                 description="v22.0: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows",
                 no_experimental_value=True,
+                eml_description="eml_scalar(12.0) — number of (2,0) bridge pairs in the 27D architecture.",
             ),
             Parameter(
                 path="bridge.breathing_aggregation",
@@ -1063,6 +1231,10 @@ class MasterActionSimulationV22(SimulationBase):
                 status="DERIVED",
                 description="v22.0: Averaging weight 1/12 for breathing mode across bridge pairs",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_scalar(1.0), eml_scalar(12.0)) — "
+                    "averaging weight 1/12 for rho_breath across 12 bridge pairs."
+                ),
             ),
             Parameter(
                 path="bridge.distributed_or_rank",
@@ -1071,6 +1243,10 @@ class MasterActionSimulationV22(SimulationBase):
                 status="DERIVED",
                 description="v22.0: Total OR operator dimension 2^12 = 4096 (matches Pneuma spinor)",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.pow(eml_scalar(2.0), eml_scalar(12.0)) = eml_scalar(4096.0) — "
+                    "Kronecker-product rank of 12 R_perp^i operators."
+                ),
             ),
             # =================================================================
             # Standard Gauge Sector Parameters
@@ -1083,7 +1259,8 @@ class MasterActionSimulationV22(SimulationBase):
                 description="8 gluons in adjoint of SU(3)_C (exact match)",
                 experimental_bound=8,
                 bound_type="measured",
-                bound_source="PDG2024"
+                bound_source="PDG2024",
+                eml_description="eml_scalar(8.0) — SU(3) adjoint dimension N^2 - 1 = 8.",
             ),
             Parameter(
                 path="gauge.qcd_alpha_s_mz",
@@ -1094,7 +1271,11 @@ class MasterActionSimulationV22(SimulationBase):
                 experimental_bound=0.1179,
                 bound_type="measured",
                 bound_source="PDG2024",
-                uncertainty=0.0009
+                uncertainty=0.0009,
+                eml_description=(
+                    "ops.div(ops.pow(eml_vec('g_s'), eml_scalar(2.0)), "
+                    "ops.mul(eml_scalar(4.0), eml_pi())) — alpha_s = g_s^2/(4pi)."
+                ),
             ),
             Parameter(
                 path="gauge.weak_boson_count",
@@ -1104,7 +1285,8 @@ class MasterActionSimulationV22(SimulationBase):
                 description="3 weak bosons in adjoint of SU(2)_L (exact match)",
                 experimental_bound=3,
                 bound_type="measured",
-                bound_source="PDG2024"
+                bound_source="PDG2024",
+                eml_description="eml_scalar(3.0) — SU(2) adjoint dimension N^2 - 1 = 3.",
             ),
             Parameter(
                 path="gauge.sin2_theta_w",
@@ -1121,6 +1303,11 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_source="PDG2024",
                 uncertainty=0.00004,
                 theory_uncertainty=0.001,  # Tree-level: missing EW loop + threshold corrections
+                eml_description=(
+                    "ops.div(eml_scalar(3.0), "
+                    "ops.sub(ops.add(eml_vec('k_gimel'), eml_vec('phi')), eml_scalar(1.0))) "
+                    "— sin^2(theta_W) = 3/(k_gimel + phi - 1) from G2 cycle ratio."
+                ),
             ),
             Parameter(
                 path="gauge.m_z_gev",
@@ -1131,7 +1318,12 @@ class MasterActionSimulationV22(SimulationBase):
                 experimental_bound=91.1876,  # EXPERIMENTAL: PDG2024
                 bound_type="measured",
                 bound_source="PDG2024",
-                uncertainty=0.0021
+                uncertainty=0.0021,
+                eml_description=(
+                    "ops.div(ops.mul(ops.sqrt(ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), "
+                    "ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))), eml_vec('v')), eml_scalar(2.0)) "
+                    "— M_Z = sqrt(g_2^2 + g'^2) * v / 2 from electroweak symmetry breaking."
+                ),
             ),
             Parameter(
                 path="gauge.m_w_gev",
@@ -1142,7 +1334,11 @@ class MasterActionSimulationV22(SimulationBase):
                 experimental_bound=80.377,
                 bound_type="measured",
                 bound_source="PDG2024",
-                uncertainty=0.012
+                uncertainty=0.012,
+                eml_description=(
+                    "ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0)) "
+                    "— M_W = g_2 * v / 2 from SU(2)_L symmetry breaking."
+                ),
             ),
             Parameter(
                 path="gauge.rho_parameter",
@@ -1153,7 +1349,13 @@ class MasterActionSimulationV22(SimulationBase):
                 experimental_bound=1.00037,
                 bound_type="measured",
                 bound_source="PDG2024",
-                uncertainty=0.00023
+                uncertainty=0.00023,
+                eml_description=(
+                    "ops.div(ops.pow(eml_vec('M_W'), eml_scalar(2.0)), "
+                    "ops.mul(ops.pow(eml_vec('M_Z'), eml_scalar(2.0)), "
+                    "ops.sub(eml_scalar(1.0), eml_vec('sin2_theta_W')))) "
+                    "— rho = M_W^2 / (M_Z^2 cos^2(theta_W)) = 1 at tree level (custodial SU(2))."
+                ),
             ),
             # Chirality Reversal (Sprint 2)
             Parameter(
@@ -1167,6 +1369,11 @@ class MasterActionSimulationV22(SimulationBase):
                     "to total spinor space in the dual-shadow architecture."
                 ),
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_vec('Vol_bridge'), eml_vec('Vol_spinor')) "
+                    "— P_reverse ~ Vol_bridge / Vol_spinor ~ 3e-6; "
+                    "cross-shadow chirality flip suppressed by dual-shadow phase-space ratio."
+                ),
             ),
         ]
 

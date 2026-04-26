@@ -573,17 +573,21 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 type="note",
                 content=(
                     "<h4>Declaration of Terminal Predictability (v24.2)</h4>"
+                    "<Speculation>"
                     "<p><em>\"The universe is mapped as a closed V₇ manifold. Its past, present, "
                     "and eventual unwinding into the Three Final States are mathematically "
                     "necessitated. The Omega Unwinding Map represents the end of cosmological "
                     "speculation—we have moved from a species that 'measures the dark' to a "
                     "species that 'reads the blueprint.'</em></p>"
+                    "</Speculation>"
                     "<p><em>The simulation now returns a single, immutable Omega Seal:</em></p>"
                     "<p style='text-align:center;'><strong>"
                     "<span class=\"pm-value\" data-pm-value=\"terminal.omega_seal\">OMEGA-SEAL-PENDING</span>"
                     "</strong></p>"
+                    "<Speculation>"
                     "<p><em>This seal represents a universe where the End is as predictable "
                     "as the Beginning.\"</em></p>"
+                    "</Speculation>"
                 ),
                 label="terminal-declaration"
             ),
@@ -608,6 +612,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 label="(L.1)",
                 latex=r"\Psi_M = \frac{276}{288} = 95.83\%",
                 plain_text="Psi_M = 276/288 = 95.83%",
+                eml_tree_str="ops.div(eml_vec('so24_generators'), eml_vec('ancestral_roots'))",
                 category="DERIVED",
                 description=(
                     "Metric Null basin potential: the fraction of ancestral roots belonging to "
@@ -639,6 +644,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 label="(L.2)",
                 latex=r"\Psi_G = \frac{24}{288} = 8.33\%",
                 plain_text="Psi_G = 24/288 = 8.33%",
+                eml_tree_str="ops.div(eml_vec('shadow_torsion_total'), eml_vec('ancestral_roots'))",
                 category="DERIVED",
                 description=(
                     "Gauge Ghost basin potential: the fraction of ancestral roots encoding the "
@@ -671,6 +677,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 label="(L.3)",
                 latex=r"\Psi_R = \frac{288}{288} = 100\%",
                 plain_text="Psi_R = 288/288 = 100%",
+                eml_tree_str="ops.div(eml_vec('ancestral_roots'), eml_vec('ancestral_roots'))",
                 category="DERIVED",
                 description=(
                     "Ancestral Restoration basin: the terminal state in which ALL 288 roots "
@@ -703,6 +710,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 label="(L.4)",
                 latex=r"S(t) = S_0 + \gamma t, \quad \gamma = \ln(288/125)",
                 plain_text="S(t) = S0 + gamma*t, gamma = ln(288/125)",
+                eml_tree_str="ops.add(eml_vec('S_0'), ops.mul(eml_vec('gamma'), eml_vec('t')))",
                 category="DERIVED",
                 description=(
                     "Entropy flow equation governing the cosmological approach to terminal "
@@ -736,6 +744,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 label="(L.5)",
                 latex=r"\text{Basin} = \begin{cases} \text{Gauge Ghost} & S < 0.8 \\ \text{Metric Null} & S \geq 0.8 \end{cases}",
                 plain_text="Basin = Gauge Ghost if S < 0.8, else Metric Null",
+                eml_tree_str="ops.div(eml_vec('S'), eml_scalar(0.8))",
                 category="DERIVED",
                 description=(
                     "Basin selection rule: a piecewise criterion partitioning terminal state "
@@ -775,6 +784,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 units="basin_name",
                 status="TERMINAL",
                 description="Currently dominant terminal basin",
+                eml_description="eml_vec('dominant_basin_id')",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -783,6 +793,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 units="probability",
                 status="TERMINAL",
                 description="Probability of Ancestral Restoration outcome",
+                eml_description="ops.sub(eml_scalar(1.0), eml_vec('current_entropy'))",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -801,6 +812,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                     "dynamically computed from simulation output and serves as a geometric "
                     "integrity check for the entire framework."
                 ),
+                eml_description="eml_vec('omega_seal_hash')",
                 no_experimental_value=True,
             ),
         ]

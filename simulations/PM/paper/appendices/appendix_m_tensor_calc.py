@@ -686,6 +686,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.1)",
                 latex=r"V'^\mu = \frac{\partial x'^\mu}{\partial x^\nu} V^\nu",
                 plain_text="V'^mu = (dx'^mu/dx^nu) V^nu",
+                eml_tree_str="ops.mul(eml_vec('J_mu_nu'), eml_vec('V_nu'))",
                 category="ESTABLISHED",
                 description=(
                     "Contravariant vector transformation law. Upper-index components "
@@ -714,6 +715,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.2)",
                 latex=r"W'_\mu = \frac{\partial x^\nu}{\partial x'^\mu} W_\nu",
                 plain_text="W'_mu = (dx^nu/dx'^mu) W_nu",
+                eml_tree_str="ops.mul(eml_vec('J_inv_nu_mu'), eml_vec('W_nu'))",
                 category="ESTABLISHED",
                 description=(
                     "Covariant vector transformation law. Lower-index components "
@@ -742,6 +744,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.3)",
                 latex=r"g'_{\mu\nu} = \frac{\partial x^\alpha}{\partial x'^\mu} \frac{\partial x^\beta}{\partial x'^\nu} g_{\alpha\beta}",
                 plain_text="g'_munu transforms as (0,2) tensor",
+                eml_tree_str="ops.mul(ops.mul(eml_vec('J_inv_a_mu'), eml_vec('J_inv_b_nu')), eml_vec('g_ab'))",
                 category="ESTABLISHED",
                 description=(
                     "Metric tensor covariant transformation law. The metric is a "
@@ -771,6 +774,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.4)",
                 latex=r"T'^\mu{}_\nu = \frac{\partial x'^\mu}{\partial x^\alpha} \frac{\partial x^\beta}{\partial x'^\nu} T^\alpha{}_\beta",
                 plain_text="T'^mu_nu = (dx'^mu/dx^a)(dx^b/dx'^nu) T^a_b",
+                eml_tree_str="ops.mul(ops.mul(eml_vec('J_mu_a'), eml_vec('J_inv_b_nu')), eml_vec('T_a_b'))",
                 category="ESTABLISHED",
                 description=(
                     "Mixed tensor transformation law. Upper indices transform with "
@@ -799,6 +803,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.5)",
                 latex=r"A^\mu B_\mu \equiv \sum_{\mu=0}^{n-1} A^\mu B_\mu",
                 plain_text="A^mu B_mu = sum over mu of A^mu * B_mu",
+                eml_tree_str="ops.mul(eml_vec('A_mu'), eml_vec('B_mu'))",
                 category="ESTABLISHED",
                 description=(
                     "Einstein summation convention. Repeated indices (one upper, one lower) "
@@ -827,6 +832,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.6)",
                 latex=r"V_\mu = g_{\mu\nu} V^\nu",
                 plain_text="V_mu = g_munu V^nu (lowering index)",
+                eml_tree_str="ops.mul(eml_vec('g_munu'), eml_vec('V_nu'))",
                 category="ESTABLISHED",
                 description=(
                     "Index lowering operation. The metric tensor converts contravariant "
@@ -855,6 +861,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.7)",
                 latex=r"V^\mu = g^{\mu\nu} V_\nu",
                 plain_text="V^mu = g^munu V_nu (raising index)",
+                eml_tree_str="ops.mul(eml_vec('g_inv_munu'), eml_vec('V_nu'))",
                 category="ESTABLISHED",
                 description=(
                     "Index raising operation. The inverse metric tensor converts covariant "
@@ -883,6 +890,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.8)",
                 latex=r"\nabla_\mu V^\nu = \partial_\mu V^\nu + \Gamma^\nu_{\mu\lambda} V^\lambda",
                 plain_text="nabla_mu V^nu = partial_mu V^nu + Gamma^nu_mu,lambda V^lambda",
+                eml_tree_str="ops.add(eml_vec('partial_mu_V_nu'), ops.mul(eml_vec('Gamma_nu_mu_lam'), eml_vec('V_lam')))",
                 category="ESTABLISHED",
                 description=(
                     "Covariant derivative of a contravariant vector. The connection "
@@ -912,6 +920,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.9)",
                 latex=r"\Gamma_{\mu\nu\lambda} = \frac{1}{2} \left( \partial_\nu g_{\mu\lambda} + \partial_\lambda g_{\mu\nu} - \partial_\mu g_{\nu\lambda} \right)",
                 plain_text="Gamma_mu,nu,lambda = (1/2)(dg_mu,lambda/dx^nu + dg_mu,nu/dx^lambda - dg_nu,lambda/dx^mu)",
+                eml_tree_str="ops.mul(ops.inv(eml_scalar(2.0)), ops.sub(ops.add(eml_vec('dg_mu_lam_nu'), eml_vec('dg_mu_nu_lam')), eml_vec('dg_nu_lam_mu')))",
                 category="ESTABLISHED",
                 description=(
                     "Christoffel symbol of the first kind. All indices covariant, "
@@ -941,6 +950,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.10)",
                 latex=r"\Gamma^\lambda_{\mu\nu} = \frac{1}{2} g^{\lambda\sigma} \left( \partial_\mu g_{\nu\sigma} + \partial_\nu g_{\mu\sigma} - \partial_\sigma g_{\mu\nu} \right)",
                 plain_text="Gamma^lambda_mu,nu = (1/2) g^lambda,sigma (dg_nu,sigma/dx^mu + dg_mu,sigma/dx^nu - dg_mu,nu/dx^sigma)",
+                eml_tree_str="ops.mul(eml_vec('g_inv_lam_sig'), ops.mul(ops.inv(eml_scalar(2.0)), ops.sub(ops.add(eml_vec('dg_nu_sig_mu'), eml_vec('dg_mu_sig_nu')), eml_vec('dg_mu_nu_sig'))))",
                 category="ESTABLISHED",
                 description=(
                     "Christoffel symbol of the second kind. One upper index, obtained "
@@ -969,6 +979,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.11)",
                 latex=r"\nabla_\lambda g_{\mu\nu} = 0",
                 plain_text="nabla_lambda g_munu = 0 (metric compatibility)",
+                eml_tree_str="eml_scalar(0.0)",
                 category="ESTABLISHED",
                 description=(
                     "Metric compatibility condition. The covariant derivative of the "
@@ -996,6 +1007,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.12)",
                 latex=r"u^\mu \nabla_\mu V^\nu = \frac{dV^\nu}{d\lambda} + \Gamma^\nu_{\mu\sigma} u^\mu V^\sigma = 0",
                 plain_text="dV^nu/dlambda + Gamma^nu_mu,sigma u^mu V^sigma = 0",
+                eml_tree_str="ops.add(eml_vec('dV_nu_dlam'), ops.mul(ops.mul(eml_vec('Gamma_nu_mu_sig'), eml_vec('u_mu')), eml_vec('V_sig')))",
                 category="ESTABLISHED",
                 description=(
                     "Parallel transport equation. A vector is parallel transported "
@@ -1026,6 +1038,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.13)",
                 latex=r"\frac{d^2 x^\mu}{d\lambda^2} + \Gamma^\mu_{\alpha\beta} \frac{dx^\alpha}{d\lambda} \frac{dx^\beta}{d\lambda} = 0",
                 plain_text="d^2 x^mu / dlambda^2 + Gamma^mu_ab (dx^a/dlambda)(dx^b/dlambda) = 0",
+                eml_tree_str="ops.add(eml_vec('d2x_mu_dlam2'), ops.mul(eml_vec('Gamma_mu_ab'), ops.mul(eml_vec('u_a'), eml_vec('u_b'))))",
                 category="ESTABLISHED",
                 description=(
                     "Geodesic equation. Describes the straightest possible path in "
@@ -1056,6 +1069,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.14)",
                 latex=r"[\nabla_\mu, \nabla_\nu] V^\lambda = R^\lambda{}_{\sigma\mu\nu} V^\sigma",
                 plain_text="[nabla_mu, nabla_nu] V^lambda = R^lambda_sigma,mu,nu V^sigma",
+                eml_tree_str="ops.mul(eml_vec('R_lam_sig_mu_nu'), eml_vec('V_sig'))",
                 category="ESTABLISHED",
                 description=(
                     "Riemann tensor from covariant derivative commutator. The failure "
@@ -1086,6 +1100,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.15)",
                 latex=r"R^\lambda{}_{\sigma\mu\nu} = \partial_\mu \Gamma^\lambda_{\nu\sigma} - \partial_\nu \Gamma^\lambda_{\mu\sigma} + \Gamma^\lambda_{\mu\rho} \Gamma^\rho_{\nu\sigma} - \Gamma^\lambda_{\nu\rho} \Gamma^\rho_{\mu\sigma}",
                 plain_text="R^lambda_sigma,mu,nu = d_mu Gamma^lambda_nu,sigma - d_nu Gamma^lambda_mu,sigma + Gamma*Gamma - Gamma*Gamma",
+                eml_tree_str="ops.sub(ops.add(ops.sub(eml_vec('d_mu_Gam_lam_nu_sig'), eml_vec('d_nu_Gam_lam_mu_sig')), ops.mul(eml_vec('Gam_lam_mu_rho'), eml_vec('Gam_rho_nu_sig'))), ops.mul(eml_vec('Gam_lam_nu_rho'), eml_vec('Gam_rho_mu_sig')))",
                 category="ESTABLISHED",
                 description=(
                     "Riemann tensor in terms of Christoffel symbols. This formula "
@@ -1116,6 +1131,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 label="(M.16)",
                 latex=r"R_{\mu\nu} = R^\lambda{}_{\mu\lambda\nu}",
                 plain_text="R_munu = R^lambda_mu,lambda,nu (Ricci tensor)",
+                eml_tree_str="eml_vec('R_lam_mu_lam_nu')",
                 category="ESTABLISHED",
                 description=(
                     "Ricci tensor as contraction of Riemann tensor. Appears in "
@@ -1154,6 +1170,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of observable spacetime (4D Minkowski)",
+                eml_description="eml_scalar(4.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1162,6 +1179,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Signature of the spacetime metric: (+,-,-,-) mostly minus convention",
+                eml_description="eml_vec('metric_signature')",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1170,6 +1188,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Number of independent Riemann tensor components in 4D (20)",
+                eml_description="eml_scalar(20.0)",
                 no_experimental_value=True,
             ),
         ]

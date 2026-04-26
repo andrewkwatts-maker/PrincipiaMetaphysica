@@ -808,7 +808,13 @@ if SCHEMA_AVAILABLE:
                                    "description": "Fractional mass redistribution during alpha-helix to beta-sheet transition; carries order-of-magnitude uncertainty"},
                         "r_delta": {"name": "Displacement Radius", "value": "~0.25 nm",
                                     "description": "Spatial separation between superposed mass centroids, set by c_kaf flux constraint"}
-                    }
+                    },
+                    eml_tree_str=(
+                        "ops.div(eml_vec('hbar'), ops.div(ops.mul(eml_vec('G_eff'), ops.pow(eml_vec('M_eff'), eml_scalar(2.0))), eml_vec('r_delta')))"
+                    ),
+                    eml_description=(
+                        "Orch-OR coherence time: hbar divided by E_G, where E_G = G_eff*M_eff^2/r_delta."
+                    ),
                 ),
                 Formula(
                     id="microtubule-topological-pitch",
@@ -873,7 +879,13 @@ if SCHEMA_AVAILABLE:
                                "description": "Circle constant; enters as the angular normalization of k_gimel"},
                         "Phi_PH": {"name": "Penrose-Hameroff Bridge", "value": 13,
                                    "description": "Fibonacci bridge constant matching biological protofilament count"}
-                    }
+                    },
+                    eml_tree_str=(
+                        "ops.div(eml_scalar(24.0), ops.div(eml_vec('k_gimel'), eml_pi()))"
+                    ),
+                    eml_description=(
+                        "Microtubule topological pitch: b3=24 divided by (k_gimel / pi)."
+                    ),
                 )
             ]
 

@@ -677,6 +677,16 @@ class ElectroweakMixingSimulation(SimulationBase):
                     "Neutral gauge boson mass matrix in the (W^3, B) basis after Higgs VEV insertion. "
                     "Diagonalization yields a massless photon and the Z boson mass."
                 ),
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.div(ops.pow(eml_vec('v'), eml_scalar(2.0)), eml_scalar(4.0)), "
+                    "eml_vec('M2_matrix_W3B')"
+                    ")"
+                ),
+                eml_description=(
+                    "EW mass matrix: (v^2/4) times the 2x2 coupling matrix in (W^3, B) basis. "
+                    "det = 0 guarantees one zero eigenvalue (massless photon)."
+                ),
                 inputParams=["higgs.v_higgs", "gauge.g_2", "gauge.g_prime"],
                 outputParams=["electroweak.m_Z_predicted"],
                 input_params=["higgs.v_higgs", "gauge.g_2", "gauge.g_prime"],
@@ -708,6 +718,16 @@ class ElectroweakMixingSimulation(SimulationBase):
                 description=(
                     "Weinberg angle definition from gauge coupling ratio. In PM, theta_W is "
                     "locked by the G2 cycle volume ratio r_W / r_Y with no free parameter."
+                ),
+                eml_tree_str=(
+                    "ops.div("
+                    "ops.pow(eml_vec('g_prime'), eml_scalar(2.0)), "
+                    "ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))"
+                    ")"
+                ),
+                eml_description=(
+                    "sin^2(theta_W) = g'^2 / (g_2^2 + g'^2): Weinberg angle from coupling ratio, "
+                    "locked by G2 cycle volume ratio Vol(C_W)/Vol(C_Y)."
                 ),
                 inputParams=["gauge.g_2", "gauge.g_prime"],
                 outputParams=["electroweak.sin2_theta_W_onshell"],
@@ -751,6 +771,15 @@ class ElectroweakMixingSimulation(SimulationBase):
                     "W and Z boson masses from Higgs mechanism with G2-locked parameters. "
                     "Tree-level predictions match PDG 2024 experimental values."
                 ),
+                eml_tree_str=(
+                    "ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0))"
+                ),
+                eml_description=(
+                    "m_W = g_2*v/2; m_Z = v*sqrt(g_2^2 + g'^2)/2. "
+                    "ops.div(ops.mul(eml_vec('v'), ops.sqrt(ops.add("
+                    "ops.pow(eml_vec('g_2'), eml_scalar(2.0)), "
+                    "ops.pow(eml_vec('g_prime'), eml_scalar(2.0))))), eml_scalar(2.0))."
+                ),
                 inputParams=["higgs.v_higgs", "gauge.g_2", "gauge.g_prime"],
                 outputParams=["electroweak.m_W_predicted", "electroweak.m_Z_predicted"],
                 input_params=["higgs.v_higgs", "gauge.g_2", "gauge.g_prime"],
@@ -791,6 +820,12 @@ class ElectroweakMixingSimulation(SimulationBase):
                 bound_type="central_value",
                 bound_source="PDG2024",
                 uncertainty=0.00004,
+                eml_description=(
+                    "ops.sub(eml_scalar(1.0), "
+                    "ops.div(ops.pow(eml_vec('m_W'), eml_scalar(2.0)), "
+                    "ops.pow(eml_vec('m_Z'), eml_scalar(2.0)))) "
+                    "— on-shell sin^2(theta_W) = 1 - M_W^2/M_Z^2."
+                ),
             ),
             Parameter(
                 path="electroweak.m_Z_predicted",
@@ -806,6 +841,12 @@ class ElectroweakMixingSimulation(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.0021,
+                eml_description=(
+                    "ops.div(ops.mul(eml_vec('v'), "
+                    "ops.sqrt(ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), "
+                    "ops.pow(eml_vec('g_prime'), eml_scalar(2.0))))), eml_scalar(2.0)) "
+                    "— m_Z = v sqrt(g_2^2 + g'^2) / 2."
+                ),
             ),
             Parameter(
                 path="electroweak.m_W_predicted",
@@ -821,6 +862,10 @@ class ElectroweakMixingSimulation(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.012,
+                eml_description=(
+                    "ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0)) "
+                    "— m_W = g_2 * v / 2 from charged current mass term."
+                ),
             ),
             Parameter(
                 path="electroweak.rho_tree",
@@ -836,6 +881,12 @@ class ElectroweakMixingSimulation(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.00020,
+                eml_description=(
+                    "ops.div(ops.pow(eml_vec('m_W'), eml_scalar(2.0)), "
+                    "ops.mul(ops.pow(eml_vec('m_Z'), eml_scalar(2.0)), "
+                    "ops.pow(eml_vec('cos_theta_W'), eml_scalar(2.0)))) = 1 "
+                    "— custodial SU(2) symmetry enforces rho_tree = 1."
+                ),
             ),
         ]
 

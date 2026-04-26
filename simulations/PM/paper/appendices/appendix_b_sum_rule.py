@@ -209,10 +209,10 @@ class AppendixBSumRule(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The Sum Rule provides the first-principles resolution to the "
+                    "<Speculation>The Sum Rule provides the first-principles resolution to the "
                     "<strong>Hierarchy Problem</strong> (the 10³⁸ difference between gravity "
                     "and the weak force). In the Trace Formula, these discrepancies are revealed "
-                    "as <strong>Spectral Gaps</strong>:"
+                    "as <strong>Spectral Gaps</strong>:</Speculation>"
                 )
             ),
             ContentBlock(
@@ -287,6 +287,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.1)",
                 latex=r"Z(t) = \text{Tr}(e^{-t\Delta_{V_7}}) = \sum_{n=1}^{\text{ק}_{\text{כה}}} e^{-t\lambda_n}",
                 plain_text="Z(t) = Tr(exp(-tΔ_V₇)) = Σexp(-tλₙ)",
+                eml_tree_str="ops.mul(eml_vec('Tr'), ops.exp(ops.neg(ops.mul(eml_vec('t'), eml_vec('Delta_V7')))))",
                 category="ESTABLISHED",
                 description=(
                     "Heat kernel partition function of V₇ manifold. Converges to "
@@ -315,6 +316,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.2)",
                 latex=r"\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \cdot \mathcal{R}_n^2 = \Phi_{G_2}",
                 plain_text="Σ_{n=1}^{ק_כה} ω_n · R_n² = Φ_{G₂}",
+                eml_tree_str="ops.add(eml_vec('sigma_T'), eml_vec('eta_S'))",
                 category="DERIVED",
                 description=(
                     "Global sum rule ensuring metric rigidity. The weighted sum of "
@@ -344,6 +346,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.4)",
                 latex=r"\Delta\Phi = \left|\sum_{n=1}^{\text{ק}_{\text{כה}}} \omega_n \mathcal{R}_n^2 - \Phi_{G_2}\right| < \epsilon_{\text{sterile}}",
                 plain_text="|Σ_{n=1}^{ק_כה} ω_n·R_n² - Φ_{G₂}| < ε_sterile",
+                eml_tree_str="ops.sub(ops.mul(eml_vec('omega_n'), ops.pow(eml_vec('R_n'), eml_scalar(2.0))), eml_vec('Phi_G2'))",
                 category="DERIVED",
                 description=(
                     "Closure condition for trace formula verification. Variance must "
@@ -372,6 +375,7 @@ class AppendixBSumRule(SimulationBase):
                 label="(B.3)",
                 latex=r"\Delta\lambda_{UV-IR} = \lambda_{\text{ק}_{\text{כה}}} - \lambda_1 \propto \log(M_{Pl}/m_e)",
                 plain_text="Δλ_UV-IR ∝ log(M_Pl/m_e)",
+                eml_tree_str="ops.sub(eml_vec('lambda_UV'), eml_vec('lambda_IR'))",
                 category="ESTABLISHED",
                 description=(
                     "Spectral gap explaining the hierarchy problem. The UV-IR "
@@ -406,6 +410,7 @@ class AppendixBSumRule(SimulationBase):
                 units="status",
                 status="VALIDATION",
                 description="Pass/Fail status of Global Sum Rule verification",
+                eml_description="String status flag ('PASS' or 'FAIL') indicating whether the weighted sum of squared residues closes to Phi_G2 within sterile tolerance.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -414,6 +419,7 @@ class AppendixBSumRule(SimulationBase):
                 units="boolean",
                 status="VALIDATION",
                 description="Whether the spectral trace converges to expected Vol(V₇)",
+                eml_description="Boolean flag indicating convergence of the spectral trace Tr(exp(-t*Delta_V7)) to the geometric volume invariant of the V7 manifold.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -422,6 +428,7 @@ class AppendixBSumRule(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Total invariant Φ_G₂ from ancestral 25D bulk",
+                eml_description="Dimensionless G2 holonomy invariant Phi_G2 = Vol(V7) * chi / b3; serves as the right-hand side target of the global sum rule.",
                 no_experimental_value=True,
             ),
         ]

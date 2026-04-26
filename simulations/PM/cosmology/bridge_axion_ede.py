@@ -1195,6 +1195,12 @@ class BridgeAxionEDE(SimulationBase):
                     "method": "geometric_ansatz",
                     "parentFormulas": ["axion-decay-constant-v18"]
                 },
+                eml_tree_str=(
+                    "ops.div(eml_vec('M_Pl'), ops.pow(eml_vec('k_gimel'), eml_scalar(6.0)))"
+                ),
+                eml_description=(
+                    "Individual bridge axion decay constant: M_Pl divided by k_gimel^6."
+                ),
                 terms={
                     "M_Pl": "Planck mass = 1.22e19 GeV",
                     "k_gimel": "Holonomy warp factor = b3/2 + 1/pi ~ 12.318",
@@ -1249,6 +1255,12 @@ class BridgeAxionEDE(SimulationBase):
                     "method": "knp_alignment",
                     "parentFormulas": ["bridge-ede-f-sub-v24"]
                 },
+                eml_tree_str=(
+                    "ops.mul(ops.sqrt(ops.mul(eml_scalar(12.0), eml_scalar(24.0))), eml_scalar(2.0))"
+                ),
+                eml_description=(
+                    "KNP enhancement: sqrt(N_ax * b3) * kappa_sampler = sqrt(12*24) * 2."
+                ),
                 terms={
                     "N_ax": "Number of bridge axions = 12 = b3/2",
                     "b_3": "Third Betti number = 24",
@@ -1295,6 +1307,12 @@ class BridgeAxionEDE(SimulationBase):
                         "bridge-ede-knp-enhancement-v24"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('f_sub'), eml_vec('enhancement'))"
+                ),
+                eml_description=(
+                    "Effective axion decay constant: f_sub multiplied by KNP enhancement factor."
+                ),
                 terms={
                     "f_sub": "Individual decay constant ~ 3.5e12 GeV",
                     "E_KNP": "KNP enhancement ~ 33.94"
@@ -1355,6 +1373,12 @@ class BridgeAxionEDE(SimulationBase):
                         "bridge-ede-f-sub-v24"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.div(eml_vec('m_ind'), ops.pow(eml_vec('enhancement'), eml_scalar(2.0)))"
+                ),
+                eml_description=(
+                    "Effective axion mass after KNP suppression: m_ind divided by enhancement squared."
+                ),
                 terms={
                     "m_ind": "Individual racetrack mass ~ 10^13 GeV",
                     "E_KNP": "KNP enhancement ~ 33.94",

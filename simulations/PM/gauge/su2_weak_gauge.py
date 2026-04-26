@@ -478,6 +478,16 @@ class SU2WeakGaugeSimulation(SimulationBase):
                     "SU(2)_L weak field strength tensor with Levi-Civita structure constants. "
                     "Self-interaction terms produce cubic and quartic W boson vertices."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.sub(ops.mul(eml_vec('D_mu'), eml_vec('W_nu_a')), ops.mul(eml_vec('D_nu'), eml_vec('W_mu_a'))), "
+                    "ops.mul(eml_vec('g_2'), ops.mul(eml_vec('epsilon_abc'), ops.mul(eml_vec('W_mu_b'), eml_vec('W_nu_c'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "W^a field strength: antisymmetric derivative difference plus SU(2) "
+                    "self-coupling via Levi-Civita epsilon^{abc} structure constants."
+                ),
                 inputParams=[],
                 outputParams=[],
                 input_params=[],
@@ -507,6 +517,16 @@ class SU2WeakGaugeSimulation(SimulationBase):
                 description=(
                     "SU(2)_L Yang-Mills kinetic Lagrangian with canonical normalization. "
                     "The cycle volume r_W from G2 spectral residues determines the weak coupling g_2."
+                ),
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), "
+                    "ops.pow(eml_vec('W_munu_a'), eml_scalar(2.0))"
+                    ")"
+                ),
+                eml_description=(
+                    "Canonical -1/4 W^a_{mu nu} W^{a mu nu}: the negative quarter times "
+                    "the squared SU(2) field strength summed over adjoint index a."
                 ),
                 inputParams=["topology.weak_cycle_volume"],
                 outputParams=["gauge.su2_weak_cycle_volume"],
@@ -539,6 +559,17 @@ class SU2WeakGaugeSimulation(SimulationBase):
                 description=(
                     "SU(2)_L covariant derivative acting only on left-handed fermion doublets. "
                     "The chirality projector P_L enforces V-A structure (parity violation)."
+                ),
+                eml_tree_str=(
+                    "ops.add("
+                    "eml_vec('partial_mu'), "
+                    "ops.neg(ops.mul(ops.mul(eml_vec('i'), ops.div(eml_vec('g_2'), eml_scalar(2.0))), "
+                    "ops.mul(eml_vec('tau_a'), eml_vec('W_mu_a'))))"
+                    ")"
+                ),
+                eml_description=(
+                    "Left-chiral SU(2) covariant derivative: partial_mu minus i*g_2/2 * tau^a * W^a_mu, "
+                    "acting exclusively on P_L-projected (left-handed) fermion doublets."
                 ),
                 inputParams=["pdg.sin2_theta_W"],
                 outputParams=["gauge.su2_sin2_theta_W"],
@@ -576,6 +607,7 @@ class SU2WeakGaugeSimulation(SimulationBase):
                     "After electroweak symmetry breaking, W^1,2 form W+/- and W^3 mixes with B to form Z and photon."
                 ),
                 no_experimental_value=True,
+                eml_description="eml_scalar(3.0) — adjoint dimension of SU(2): N^2 - 1 = 3.",
             ),
             Parameter(
                 path="gauge.su2_sin2_theta_W",
@@ -591,6 +623,11 @@ class SU2WeakGaugeSimulation(SimulationBase):
                 bound_type="central_value",
                 bound_source="PDG2024",
                 uncertainty=0.00004,
+                eml_description=(
+                    "ops.div(ops.pow(eml_vec('g_prime'), eml_scalar(2.0)), "
+                    "ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))) "
+                    "— Weinberg angle from G2 cycle volume ratio r_W / r_Y."
+                ),
             ),
             Parameter(
                 path="gauge.su2_weak_cycle_volume",
@@ -603,6 +640,10 @@ class SU2WeakGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="su2-weak-kinetic",
                 no_experimental_value=True,
+                eml_description=(
+                    "eml_vec('r_W') — G2 weak cycle volume from spectral residue; "
+                    "determines g_2 via ops.inv(eml_vec('r_W'))."
+                ),
             ),
         ]
 
