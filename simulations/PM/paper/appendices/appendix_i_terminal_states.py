@@ -431,6 +431,7 @@ class AppendixITerminalStates(SimulationBase):
                 label="(I.2)",
                 latex=r"\Psi_M = \frac{276}{288} \approx 95.83\%",
                 plain_text="Psi_M = 276/288 ≈ 95.83%",
+                eml_tree_str="ops.div(eml_vec('so24_generators'), eml_vec('ancestral_roots'))",
                 category="DERIVED",
                 description="Metric Null State: Dissolution of spatial scale from SO(24) decoupling.",
                 input_params=["topology.so24_generators", "topology.ancestral_roots"],

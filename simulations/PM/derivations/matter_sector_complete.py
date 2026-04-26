@@ -820,6 +820,12 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "The tachyonic mass mu^2 < 0 triggers EWSB, while lambda is "
                 "fixed by the measured Higgs mass."
             ),
+            eml_tree_str=(
+                "ops.add("
+                "ops.neg(ops.mul(eml_vec('mu_sq'), ops.mul(eml_vec('H_conj'), eml_vec('H')))),"
+                "ops.mul(eml_vec('lambda'), ops.pow(ops.mul(eml_vec('H_conj'), eml_vec('H')), eml_scalar(2.0)))"
+                ")"
+            ),
             inputParams=["topology.mephorash_chi", "higgs.vev_geometric"],
             outputParams=["higgs.mu_squared", "higgs.lambda_quartic"],
             terms={
@@ -838,6 +844,12 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Higgs quartic coupling derived from measured Higgs mass. "
                 "The value lambda ~ 0.129 is set by m_H and v_EW."
+            ),
+            eml_tree_str=(
+                "ops.div("
+                "ops.pow(eml_vec('m_H'), eml_scalar(2.0)),"
+                "ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0)))"
+                ")"
             ),
             inputParams=["higgs.m_higgs_experimental"],
             outputParams=["higgs.lambda_quartic"],

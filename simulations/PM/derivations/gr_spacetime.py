@@ -852,6 +852,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.1)",
             latex=r"g_{\mu\nu} = \eta_{AB} e^A_\mu e^B_\nu",
             plain_text="g_munu = eta_AB e^A_mu e^B_nu",
+            eml_tree_str="ops.mul(eml_vec('eta_AB'), ops.mul(eml_vec('e_A_mu'), eml_vec('e_B_nu')))",
             category="ESTABLISHED",
             description=(
                 "Metric tensor from vielbein (tetrad) field. The vielbein e^A_mu maps "
@@ -885,6 +886,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.2)",
             latex=r"\sqrt{-g} = \det(e^A_\mu) = e",
             plain_text="sqrt(-g) = det(e^A_mu) = e",
+            eml_tree_str="ops.sqrt(ops.neg(eml_vec('g_det')))",
             category="ESTABLISHED",
             description=(
                 "Volume element from vielbein determinant. The vielbein determinant e "
@@ -913,6 +915,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.3)",
             latex=r"D_\mu e^A_\nu = \partial_\mu e^A_\nu + \omega^A{}_{B\mu} e^B_\nu - \Gamma^\rho_{\mu\nu} e^A_\rho = 0",
             plain_text="D_mu e^A_nu = d_mu e^A_nu + omega^A_Bmu e^B_nu - Gamma^rho_munu e^A_rho = 0",
+            eml_tree_str="ops.add(ops.add(eml_vec('d_mu_e'), ops.mul(eml_vec('omega_ABmu'), eml_vec('e_B_nu'))), ops.neg(ops.mul(eml_vec('Gamma_rho_munu'), eml_vec('e_A_rho'))))",
             category="ESTABLISHED",
             description=(
                 "Tetrad postulate relating spin connection omega and Christoffel symbols Gamma. "
@@ -946,6 +949,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             label="(2.2.4)",
             latex=r"\omega^{AB}_\mu = e^{A\nu}\left(\partial_\mu e^B_\nu + \Gamma^\lambda_{\mu\nu} e^B_\lambda\right)",
             plain_text="omega^AB_mu = e^{A nu}(d_mu e^B_nu + Gamma^lambda_munu e^B_lambda)",
+            eml_tree_str="ops.mul(eml_vec('e_A_nu'), ops.add(eml_vec('d_mu_e_B_nu'), ops.mul(eml_vec('Gamma_lam_munu'), eml_vec('e_B_lam'))))",
             category="DERIVED",
             description=(
                 "Spin connection in terms of vielbein and Christoffel symbols. This is derived "
