@@ -513,6 +513,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                     "ghost-free unitarity. Non-zero values indicate broken conformal "
                     "invariance and presence of negative-norm states."
                 ),
+                eml_description="EML: ops.add(ops.add(eml_vec('b3'), eml_scalar(2.0)), ops.neg(eml_scalar(26.0))) — central charge c = b₃ + 2 − 26 = 0 (Weyl anomaly cancellation)",
                 derivation_formula="central-charge-unitarity",
                 no_experimental_value=True
             ),
@@ -525,6 +526,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                     "True if c = 0 (ghost-free and unitary). False if c != 0 "
                     "(ghosts present, theory is inconsistent)."
                 ),
+                eml_description="EML: ops.eq(eml_vec('central_charge'), eml_scalar(0.0)) — boolean ghost-free check: True iff c = 0",
                 derivation_formula="weyl-anomaly-cancellation",
                 no_experimental_value=True
             ),
@@ -537,6 +539,46 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                     "Status message: 'UNITARY_STABLE: GHOST_FREE' if c = 0, "
                     "or 'ANOMALY_DETECTED: C=X' if c = X != 0."
                 ),
+                eml_description="EML: eml_vec('is_ghost_free') — unitarity status string derived from ghost-free boolean condition on central charge",
+                derivation_formula="weyl-anomaly-cancellation",
+                no_experimental_value=True
+            ),
+            Parameter(
+                path="unitary.c_transverse",
+                name="Transverse Central Charge",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Transverse sector central charge = b3 = 24, from 24 transverse "
+                    "coordinates of the G2 manifold (TCS third Betti number)."
+                ),
+                eml_description="EML: eml_scalar(24.0) — transverse central charge = b₃ = 24 from G₂ Betti number (24 transverse modes)",
+                derivation_formula="central-charge-unitarity",
+                no_experimental_value=True
+            ),
+            Parameter(
+                path="unitary.c_bridge",
+                name="Bridge Central Charge",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Bridge sector central charge = 2, from unified time (1) plus "
+                    "Euclidean bridge (0) contribution for timeless substrate."
+                ),
+                eml_description="EML: eml_scalar(2.0) — bridge central charge = 2 from unified time (1) + Euclidean bridge (0) for timeless substrate",
+                derivation_formula="central-charge-unitarity",
+                no_experimental_value=True
+            ),
+            Parameter(
+                path="unitary.c_ghost",
+                name="Ghost Central Charge",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "Ghost sector central charge = -26, from the bc ghost system "
+                    "that cancels the matter sector to ensure Weyl anomaly cancellation."
+                ),
+                eml_description="EML: ops.neg(eml_scalar(26.0)) — ghost central charge = −26 from bc ghost system (ghost-free condition: c_total = 0)",
                 derivation_formula="weyl-anomaly-cancellation",
                 no_experimental_value=True
             ),

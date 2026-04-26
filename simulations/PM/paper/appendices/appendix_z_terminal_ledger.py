@@ -171,6 +171,7 @@ class AppendixZTerminalLedger(SimulationBase):
                     "Determined algebraically from 276 + 24 - tau = 288, giving the only "
                     "integer that balances the root budget equation. Equals Nun/2 = 24/2."
                 ),
+                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(2.0)) — τ = b₃/2 = 24/2 = 12 (stabilizing integer from root budget 276+24−τ=288)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -183,6 +184,7 @@ class AppendixZTerminalLedger(SimulationBase):
                     "manifold: 3 shells (1 + 12 + 112 = 125 = 5^3). The cubic structure "
                     "forces exactly 3 generations with no fourth generation possible."
                 ),
+                eml_description="EML: eml_scalar(3.0) — 3 generations from G₂ shell saturation (1+12+112=125=5³ forces exactly 3)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -191,6 +193,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="rad",
                 status="TERMINAL",
                 description="Strong CP violation angle theta_QCD, forced to zero by isotropic [6,6,6,6] torsion pin distribution.",
+                eml_description="EML: eml_scalar(0.0) — θ_QCD = 0 forced by isotropic [6,6,6,6] torsion pin distribution",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -199,6 +202,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Curvature invariant Omega = (125+163)/288 = 1.0 exactly; flatness from root budget saturation.",
+                eml_description="EML: ops.div(ops.add(eml_scalar(125.0), eml_scalar(163.0)), eml_scalar(288.0)) — Ω = (125+163)/288 = 1 (flatness from root budget)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -207,6 +211,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Gravitational constant as zero-point residue: G = (1/288)*sin^4(theta_s).",
+                eml_description="EML: ops.mul(ops.inv(eml_scalar(288.0)), ops.pow(ops.sin(eml_vec('theta_s')), eml_scalar(4.0))) — G = sin⁴(θ_s)/288 (zero-point residue)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -215,6 +220,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Sum of gauge couplings alpha_s + alpha_w + alpha_e = 2/3 from 24-pin torsion ratios.",
+                eml_description="EML: ops.div(eml_scalar(2.0), eml_scalar(3.0)) — Σαᵢ = 2/3 from 24-pin torsion ratios (8+8+8=24 pins per group)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -223,6 +229,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Mass hierarchy ratio (288/24)^2 = 144 = chi_eff linking mass hierarchy to topology.",
+                eml_description="EML: ops.pow(ops.div(eml_scalar(288.0), eml_scalar(24.0)), eml_scalar(2.0)) — (288/24)² = 144 = χ_eff (mass hierarchy from topology)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -231,6 +238,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="m/s",
                 status="TERMINAL",
                 description="Speed of light in geometric units: c = 288/24 = 12 (root-to-pin causal ratio).",
+                eml_description="EML: ops.div(eml_scalar(288.0), eml_scalar(24.0)) — c_geom = 288/24 = 12 (root-to-pin causal ratio)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -239,6 +247,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="degrees",
                 status="TERMINAL",
                 description="Cabibbo quark mixing angle from torsion geometry: arcsin(sqrt(1/24)).",
+                eml_description="EML: ops.arcsin(ops.sqrt(ops.inv(eml_scalar(24.0)))) — θ_C = arcsin(1/√24) from torsion pin geometry",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -247,6 +256,7 @@ class AppendixZTerminalLedger(SimulationBase):
                 units="boolean",
                 status="TERMINAL",
                 description="Boolean: both sides of the closure equation equal 288 (276+24-12 = 125+163).",
+                eml_description="EML: ops.eq(ops.sub(ops.add(eml_scalar(276.0), eml_scalar(24.0)), eml_scalar(12.0)), ops.add(eml_scalar(125.0), eml_scalar(163.0))) — closure: 276+24−12 = 125+163 = 288",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -260,6 +270,7 @@ class AppendixZTerminalLedger(SimulationBase):
                     "to physical units: H0_phys = 7.24 * 10.1 = 73.1 km/s/Mpc. "
                     "Locked to the 24-pin (Nun) torsion unwinding cycle rate."
                 ),
+                eml_description="EML: ops.mul(ops.mul(ops.div(eml_scalar(125.0), eml_scalar(288.0)), ops.inv(eml_scalar(24.0))), eml_scalar(400.0)) — H0_geom = (125/288)/24 × 400; ×κ=10.1 → H0_phys",
                 no_experimental_value=True,
             ),
         ]

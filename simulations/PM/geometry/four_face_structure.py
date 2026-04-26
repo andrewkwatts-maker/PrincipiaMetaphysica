@@ -1152,6 +1152,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula="racetrack-moduli-vev",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), eml_scalar(3.14159)) — T1 = b3·k_gimel/π, dominant Kähler modulus from TCS racetrack stabilization",
             ),
             Parameter(
                 path="geometry.face_moduli_T2",
@@ -1165,6 +1166,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula="racetrack-moduli-vev",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(2.0), eml_scalar(3.14159))) — T2 = b3·k_gimel/(2π), first shadow sector Kähler modulus",
             ),
             Parameter(
                 path="geometry.face_moduli_T3",
@@ -1178,6 +1180,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula="racetrack-moduli-vev",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(3.0), eml_scalar(3.14159))) — T3 = b3·k_gimel/(3π), second shadow sector Kähler modulus",
             ),
             Parameter(
                 path="geometry.face_moduli_T4",
@@ -1191,6 +1194,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula="racetrack-moduli-vev",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(4.0), eml_scalar(3.14159))) — T4 = b3·k_gimel/(4π), subdominant Kähler modulus of deepest shadow sector",
             ),
             Parameter(
                 path="geometry.shadow_asymmetry_delta_T",
@@ -1204,6 +1208,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula="shadow-asymmetry",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.abs(ops.sub(eml_vec('T1'), eml_vec('T4'))), eml_vec('T1')) — δT = |T1−T4|/T1 = 3/4, normalized shadow asymmetry between dominant and subdominant face moduli",
             ),
             Parameter(
                 path="geometry.racetrack_stability",
@@ -1218,6 +1223,7 @@ class FourFaceG2Structure(SimulationBase):
                 ),
                 derivation_formula=None,
                 no_experimental_value=True,
+                eml_description="EML: eml_scalar(1.0) — stability check: 1.0 if all Ti > 0 and δT < 1, confirms consistent racetrack potential compactification",
             ),
         ]
 

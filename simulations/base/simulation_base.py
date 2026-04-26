@@ -376,12 +376,15 @@ class SimulationBase(ABC):
 
         for param_path in self.output_params:
             if param_path in results:
-                # Skip if already registered (avoid duplicate/conflict warnings)
-                # This allows GeometricAnchors to be the source of truth
+                param_def = param_defs.get(param_path)
+
+                # Always propagate eml_description even for already-registered params
+                if param_def and param_def.eml_description and registry.has_param(param_path):
+                    registry.patch_eml_description(param_path, param_def.eml_description)
+
+                # Skip full registration if already registered (GeometricAnchors is source of truth)
                 if registry.has_param(param_path):
                     continue
-
-                param_def = param_defs.get(param_path)
                 computed_value = results[param_path]
 
                 # Build metadata dictionary with units

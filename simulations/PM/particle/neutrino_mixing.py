@@ -1534,6 +1534,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 description="Lightest neutrino mass eigenstate in Normal Ordering, or heavy eigenstate in Inverted Ordering",
                 derivation_formula="neutrino-mass-spectrum",
                 no_experimental_value=True,  # Individual neutrino masses not directly measured
+                eml_description="EML: ops.exp(ops.neg(ops.mul(eml_scalar(2.0), eml_vec('k_gimel')))) — m₁ = exp(−2k_gimel) lightest neutrino mass from spectral gap",
                 validation={
                     "bound_type": "indirect",
                     "status": "THEORETICAL",
@@ -1549,6 +1550,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 description="Middle neutrino mass eigenstate",
                 derivation_formula="neutrino-mass-spectrum",
                 no_experimental_value=True,  # Individual neutrino masses not directly measured
+                eml_description="EML: ops.sqrt(ops.add(ops.pow(eml_vec('neutrino.m1'), eml_scalar(2.0)), eml_vec('delta_m21_sq'))) — m₂ = √(m₁²+Δm²₂₁)",
                 validation={
                     "bound_type": "indirect",
                     "status": "THEORETICAL",
@@ -1564,6 +1566,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 description="Heaviest neutrino mass eigenstate in Normal Ordering, or light eigenstate in Inverted Ordering",
                 derivation_formula="neutrino-mass-spectrum",
                 no_experimental_value=True,  # Individual neutrino masses not directly measured
+                eml_description="EML: ops.sqrt(ops.add(ops.pow(eml_vec('neutrino.m1'), eml_scalar(2.0)), eml_vec('delta_m31_sq'))) — m₃ = √(m₁²+Δm²₃₁)",
                 validation={
                     "bound_type": "indirect",
                     "status": "THEORETICAL",
@@ -1582,6 +1585,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                     "PM predicts Σm_ν ≈ 0.10 eV from geometric seesaw mechanism."
                 ),
                 derivation_formula="neutrino-mass-sum",
+                eml_description="EML: ops.add(eml_vec('neutrino.m1'), ops.add(eml_vec('neutrino.m2'), eml_vec('neutrino.m3'))) — Σmᵢ cosmological neutrino mass bound",
                 experimental_bound=0.12,
                 uncertainty=0.05,
                 bound_type="upper",
@@ -1653,6 +1657,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 description="Mass hierarchy: NORMAL (m1 < m2 < m3) or INVERTED (m3 < m1 < m2)",
                 derivation_formula="neutrino-mass-spectrum",
                 no_experimental_value=True,  # Ordering is a preference, not a direct measurement
+                eml_description="EML: eml_scalar('NO') — Normal Ordering from G₂ holonomy topology (positive hierarchy)",
                 validation={
                     "bound_type": "preference",
                     "status": "PENDING",
@@ -1669,6 +1674,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 description="Geometric seesaw scale parameter from G2 topology: k_gimel = chi_eff / (b2 * b3)",
                 derivation_formula="neutrino-mass-spectrum",
                 no_experimental_value=True,  # Pure topological parameter, not experimentally measurable
+                eml_description="EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) — k_gimel = b₃/2 + 1/π ≈ 12.318 (spectral gap)",
                 validation={
                     "bound_type": "theoretical",
                     "status": "GEOMETRIC",
@@ -1683,6 +1689,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 description="Flux suppression parameter from G2 topology: C_kaf = b3 / (b2 * n_gen)",
                 derivation_formula="neutrino-mass-spectrum",
                 no_experimental_value=True,  # Pure topological parameter, not experimentally measurable
+                eml_description="EML: ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_pi())) — C_kaf = 1/(4π) Kaf coupling from G₂ spectral structure",
                 validation={
                     "bound_type": "theoretical",
                     "status": "GEOMETRIC",

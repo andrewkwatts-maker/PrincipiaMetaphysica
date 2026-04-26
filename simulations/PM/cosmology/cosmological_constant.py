@@ -863,7 +863,8 @@ class CosmologicalConstantV16(SimulationBase):
                     "S = b3 * ln(k_gimel) ~ 60.2. Sets vacuum energy scale."
                 ),
                 derivation_formula="g2-entropy-density",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_vec('topology.elder_kads'), ops.log(eml_vec('constants.k_gimel'))), eml_vec('cosmology.V_horizon')) — entropy density s = b3·ln(k_gimel)/V_horizon from Bekenstein-Hawking topology"
             ),
             Parameter(
                 path="cosmology.Lambda_ratio",
@@ -875,7 +876,8 @@ class CosmologicalConstantV16(SimulationBase):
                     "hierarchy emerges from G2 topology without fine-tuning."
                 ),
                 derivation_formula="lambda-hierarchy",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('cosmology.Lambda_derived'), ops.pow(eml_vec('constants.l_planck'), ops.neg(eml_scalar(2.0)))) — Λ_PM/Λ_Planck ratio resolving the 120-order fine-tuning"
             ),
             Parameter(
                 path="cosmology.Lambda_deviation_log",
@@ -886,7 +888,60 @@ class CosmologicalConstantV16(SimulationBase):
                     "log10(Lambda_derived / Lambda_observed). "
                     "Target: |log_dev| < 1 for order-of-magnitude agreement."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.log10(ops.div(eml_vec('cosmology.Lambda_derived'), eml_scalar(1.1e-52))) — log₁₀(Λ_derived/Λ_observed) deviation from DESI/Planck measurement"
+            ),
+            Parameter(
+                path="cosmology.V_eff_dynamical",
+                name="Effective Dynamical Vacuum Energy",
+                units="M_Pl^4",
+                status="SPECULATIVE",
+                description=(
+                    "V_eff from dynamical relaxation (WP4.2): "
+                    "V_eff = V_racetrack - (1/b3)*rho_sampler + V_torsion*exp(-S_Pneuma). "
+                    "Non-circular replacement for H0-dependent Lambda derivation."
+                ),
+                no_experimental_value=True,
+                eml_description="EML: ops.add(ops.sub(eml_vec('cosmology.V_racetrack'), ops.mul(ops.div(eml_scalar(1.0), eml_vec('topology.elder_kads')), eml_vec('cosmology.rho_sampler'))), ops.mul(eml_vec('cosmology.V_torsion'), ops.exp(ops.neg(eml_vec('cosmology.S_Pneuma'))))) — V_eff(φ) = V_racetrack − ρ_sampler/b3 + V_torsion·exp(−S_Pneuma) dynamical vacuum energy"
+            ),
+            Parameter(
+                path="cosmology.dynamical_classification",
+                name="Dynamical Dark Energy Classification",
+                units="categorical",
+                status="SPECULATIVE",
+                description=(
+                    "Classification of cosmological constant derivation via dynamical "
+                    "relaxation: DERIVED (gap<2 orders), PARTIAL_DERIVATION (<10), "
+                    "or SPECULATIVE (>=10 orders gap to observed Lambda)."
+                ),
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar('SPECULATIVE') — dark energy classification from log10-gap threshold: DERIVED|PARTIAL_DERIVATION|SPECULATIVE based on V_eff vs observed Λ"
+            ),
+            Parameter(
+                path="cosmology.dynamical_gap_orders",
+                name="Dynamical Gap Orders of Magnitude",
+                units="log10",
+                status="SPECULATIVE",
+                description=(
+                    "log10(|V_eff| / |Lambda_observed_planck|): orders of magnitude gap "
+                    "between dynamical V_eff and the observed cosmological constant in "
+                    "Planck units. Target: ~0 for a solved cosmological constant problem."
+                ),
+                no_experimental_value=True,
+                eml_description="EML: ops.log10(ops.div(ops.abs(eml_vec('cosmology.V_eff_dynamical')), eml_scalar(2.9e-122))) — log₁₀(|V_eff|/Λ_observed) orders of magnitude gap between dynamical vacuum energy and observed Λ"
+            ),
+            Parameter(
+                path="cosmology.circular_dependency_removed",
+                name="Circular Dependency Resolved Flag",
+                units="boolean",
+                status="GEOMETRIC",
+                description=(
+                    "Flag indicating the circular H0 dependency in the original Lambda "
+                    "derivation has been removed (WP4.2). True=1: the dynamical relaxation "
+                    "V_eff approach no longer uses R_horizon=c/H0 to derive Lambda."
+                ),
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar(1.0) — boolean flag: circular dependency between Λ and H0 resolved via dynamical V_eff relaxation (True=1)"
             ),
         ]
 

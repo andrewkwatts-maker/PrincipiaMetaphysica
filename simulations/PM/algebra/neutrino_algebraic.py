@@ -413,6 +413,10 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                     f"NuFIT 6.0 (NO): {_THETA13_NUFIT}° ± {_THETA13_1SIGMA}°. "
                     f"Gap: ~12%; DERIVED approximation, zero free parameters."
                 ),
+                eml_description=(
+                    "EML: ops.arcsin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0)))) — "
+                    "θ₁₃ = arcsin(1/√b₃) from b₃=24 torsion structure"
+                ),
                 derivation_formula="pmns-theta13-derived",
                 experimental_bound=_THETA13_NUFIT,
                 bound_type="central_value",
@@ -433,6 +437,10 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                     f"Derived value lies within the 1σ favoured region (~0.4σ from best fit). "
                     f"DERIVED approximation, zero free parameters."
                 ),
+                eml_description=(
+                    "EML: ops.div(eml_pi(), eml_scalar(6.0)) — "
+                    "δ_CP = π/6 from K=4 TCS matching fibres"
+                ),
                 derivation_formula="pmns-delta-CP-derived",
                 experimental_bound=_DELTA_CP_NUFIT,
                 bound_type="central_value",
@@ -448,6 +456,10 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                 description=(
                     f"sin(θ₁₃) = α_leak/√(2 n_gen) = (1/√6)/√6 = 1/6 ≈ {_SIN_THETA13:.6f}. "
                     "DERIVED from E₇ branching and G₂ generation counting."
+                ),
+                eml_description=(
+                    "EML: ops.div(eml_scalar(1.0), ops.mul(eml_scalar(6.0), eml_scalar(1.0))) — "
+                    "sin(θ₁₃) = α_leak / √(2·n_gen) = (1/√6) / √6 = 1/6 from E₇ branching"
                 ),
                 derivation_formula="pmns-theta13-derived",
                 experimental_bound=math.sin(math.radians(_THETA13_NUFIT)),
@@ -466,6 +478,10 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                     "to each lepton generation in the G₂ manifold. "
                     "Purely topological: b₃=24 and n_gen=3."
                 ),
+                eml_description=(
+                    "EML: ops.div(eml_scalar(24.0), eml_scalar(3.0)) — "
+                    "8 associative 3-cycles per generation (b₃=24 / 3 generations)"
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
@@ -476,6 +492,10 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                 description=(
                     "Elementary holonomy angle φ_assoc = 2π/(b₃/n_gen) = 2π/8 = π/4. "
                     "Sets the CP phase scale in the lepton sector."
+                ),
+                eml_description=(
+                    "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(8.0)) — "
+                    "φ_assoc = 2π / (b₃/n_gen) = 2π/8 = π/4 elementary holonomy angle"
                 ),
                 no_experimental_value=True,
             ),
@@ -489,6 +509,11 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                     f"Derived: {_THETA13_DEG:.2f}°, NuFIT: {_THETA13_NUFIT}°. "
                     f"Expected ≈ {(_THETA13_DEG - _THETA13_NUFIT)/_THETA13_1SIGMA:.1f}σ."
                 ),
+                eml_description=(
+                    "EML: ops.div(ops.sub(eml_vec('theta13_derived'), eml_scalar(8.57)), "
+                    "eml_scalar(0.25)) — "
+                    "σ-deviation = (θ₁₃_derived − 8.57°) / 0.25° from NuFIT 6.0"
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
@@ -500,6 +525,11 @@ class NeutrinoAlgebraicSimulation(SimulationBase):
                     f"(δ_CP_derived − δ_CP_NuFIT) / {_DELTA_CP_1SIGMA}°. "
                     f"Derived: {_DELTA_CP_DEG:.1f}°, NuFIT: {_DELTA_CP_NUFIT}°. "
                     f"Expected ≈ {(_DELTA_CP_DEG - _DELTA_CP_NUFIT)/_DELTA_CP_1SIGMA:.2f}σ."
+                ),
+                eml_description=(
+                    "EML: ops.div(ops.sub(eml_vec('delta_CP_derived'), eml_scalar(-107.0)), "
+                    "eml_scalar(40.0)) — "
+                    "σ-deviation = (δ_CP_derived − (−107°)) / 40° from NuFIT 6.0"
                 ),
                 no_experimental_value=True,
             ),
