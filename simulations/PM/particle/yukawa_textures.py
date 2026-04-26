@@ -428,11 +428,13 @@ class YukawaTexturesV18(SimulationBase):
                 label="(6.1)",
                 latex=r"m_n = v \times \lambda^{-N_n}, \quad \lambda = \phi \approx 1.618",
                 plain_text="m_n = v × λ^(-N), λ = φ ~ 1.618",
+                eml_tree_str="ops.div(v_higgs, ops.pow(phi, eml_scalar(float(N_n))))",
+                eml_latex=r"m_n = \mathrm{ops.div}(v,\; \mathrm{ops.pow}(\phi,\; N_n))",
+                eml_description="EML: m_n = ops.div(eml_scalar(246.22), ops.pow(eml_scalar(phi), eml_scalar(float(N_n)))) — mass from Higgs VEV suppressed by phi^N",
                 category="DERIVED",
                 description=(
                     "Fermion mass hierarchy from geometric suppression. "
-                    "The Golden Ratio φ provides the best fit to observed masses, "
-                    "suggesting a deep connection to G2 holonomy."
+                    "The Golden Ratio φ provides the best fit to observed masses."
                 ),
                 inputParams=["higgs.vev_geometric"],
                 outputParams=["yukawa.lambda_eff"],
@@ -464,6 +466,9 @@ class YukawaTexturesV18(SimulationBase):
                 label="(6.2)",
                 latex=r"Y = \left(\begin{smallmatrix} \lambda^{-2} & 0 & 0 \\ 0 & \lambda^{-1} & 0 \\ 0 & 0 & 1 \end{smallmatrix}\right)",
                 plain_text="Y = diag(λ^-2, λ^-1, 1)",
+                eml_tree_str="ops.pow(lambda_W, eml_scalar(float(i + j)))",
+                eml_latex=r"Y_{ij} = \mathrm{ops.pow}(\lambda,\; \mathrm{eml\_scalar}(i+j))",
+                eml_description="EML: Y_ij = ops.pow(eml_scalar(phi), eml_scalar(float(-(2-i)))) for diagonal entries; Y_33=1, Y_22=ops.inv(phi), Y_11=ops.pow(phi, eml_scalar(-2.0))",
                 category="DERIVED",
                 description=(
                     "Diagonal Yukawa texture matrix from G2 wavefunction overlaps. "
@@ -493,6 +498,9 @@ class YukawaTexturesV18(SimulationBase):
                 label="(Y.4F)",
                 latex=r"Y_{ij}^{4F} = Y_{ij}^{(0)} \times \left(1 + \alpha_{\text{leak}} \cdot \delta_{ij}^{\text{face}}\right), \quad \alpha_{\text{leak}} = \frac{1}{\sqrt{6}} \approx 0.4082",
                 plain_text="Y_ij^(4F) = Y_ij^(0) * (1 + alpha_leak * delta_ij^face), alpha_leak = 1/sqrt(6) ~ 0.4082",
+                eml_tree_str="ops.mul(Y_ij_base, ops.add(eml_scalar(1.0), ops.mul(alpha_leak, delta_face)))",
+                eml_latex=r"Y_{ij}^{4F} = \mathrm{ops.mul}(Y_{ij}^{(0)},\; \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\; \mathrm{ops.mul}(\alpha_{\text{leak}},\; \delta_{ij}^{\text{face}})))",
+                eml_description="EML: alpha_leak = ops.inv(ops.sqrt(eml_scalar(6.0))) = ops.div(eml_scalar(1.0), ops.sqrt(ops.div(chi_eff, b3))); correction = ops.mul(Y_base, ops.add(eml_scalar(1.0), ops.mul(alpha_leak, delta_face)))",
                 category="PREDICTED",
                 description=(
                     "Four-face texture correction to Yukawa couplings from G2 sub-sector "
@@ -850,8 +858,11 @@ class YukawaTexturesV18(SimulationBase):
                         "1. Golden Ratio (φ ≈ 1.618): Best fit\n"
                         "2. Gimel (k_gimel ≈ 12.318): Too aggressive\n"
                         "3. Betti (√b3 ≈ 4.899): Moderate fit\n\n"
-                        "The φ-scaling has deep connections to Fibonacci structure "
-                        "in G2 geometry and may reflect the icosahedral holonomy."
+                        "<Speculation>The φ-scaling has deep connections to Fibonacci structure "
+                        "in G2 geometry and may reflect the icosahedral holonomy. The appearance "
+                        "of the golden ratio as the best-fit suppression factor could indicate "
+                        "a geometric origin in G2 minimal surface structure, or could be a "
+                        "numerical coincidence given the approximate nature of the fit.</Speculation>"
                     )
                 ),
                 ContentBlock(

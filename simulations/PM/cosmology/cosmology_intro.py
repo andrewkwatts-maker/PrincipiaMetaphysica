@@ -426,7 +426,7 @@ class CosmologyIntroV16(SimulationBase):
                         "Step 4: 12-Pair Aggregation (Key v24.2 Change)\n"
                         "Aggregated breathing energy: \u03c1_breath = (1/12) \u2211ᵢ₌₁¹² \u03c1ᵢ\n"
                         "This aggregation REDUCES variance: \u03c3_eff = \u03c3_single/\u221a12 \u2248 0.29 \u03c3_single\n"
-                        "Connection to consciousness: 12 I/O channels provide robust experience.\n\n"
+                        "<Speculation>Connection to consciousness: 12 I/O channels provide robust experience.</Speculation>\n\n"
                         "Step 5: Equation of State from Aggregated Breathing\n"
                         "w = \u22121 + (1/\u03c6²) \u00d7 \u27e8\u03c1_breath\u27e9 / max(\u03c1_breath)\n"
                         "Target: w \u2248 \u22120.958 \u00b1 0.003 (matches DESI 2025 thawing constraint)."
@@ -583,7 +583,10 @@ class CosmologyIntroV16(SimulationBase):
                     "g_mn": "Internal space metric on K_Pneuma",
                     "A_μ^a": "Gauge fields from off-diagonal components",
                     "K_a^m": "Killing vectors of SO(10) isometry"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(g_{\mu\nu}dx^\mu dx^\nu,\, \mathrm{ops.add}(g_{mn}dy^m dy^n,\, \mathrm{ops.mul}(\mathrm{eml\_scalar}(2), A_\mu^a K_a^m dx^\mu dy^m)))",
+                eml_tree_str="ops.add(g_4D_term, ops.add(g_internal_term, ops.mul(eml_scalar(2.0), gauge_term)))",
+                eml_description="EML: ds² = ops.add(g_4D, ops.add(g_internal, ops.mul(2, gauge_term))) — KK metric decomposition",
             ),
             Formula(
                 id="einstein-hilbert-14D",
@@ -609,7 +612,10 @@ class CosmologyIntroV16(SimulationBase):
                     "kappa_14": "14D gravitational constant",
                     "R_14": "14D Ricci scalar",
                     "V_9": "9-dimensional internal volume"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.inv}(\mathrm{ops.mul}(\mathrm{eml\_scalar}(2),\, \kappa_{14}^2)),\, \mathrm{ops.mul}(\sqrt{-G},\, R_{14}))",
+                eml_tree_str="ops.mul(ops.inv(ops.mul(eml_scalar(2.0), kappa14_sq)), ops.mul(sqrt_neg_G, R14))",
+                eml_description="EML: S_14 = ops.mul(ops.inv(2*kappa14^2), sqrt(-G)*R14) — 14D Einstein-Hilbert action",
             ),
             Formula(
                 id="sp2r-constraint",
@@ -638,7 +644,10 @@ class CosmologyIntroV16(SimulationBase):
                     "13D(12,1)": "Per-shadow signature (12 space + 1 time)",
                     "12×(2,0)": "12 Euclidean bridge pairs (positive-definite each)",
                     "b₃ = 24": "Associative 3-cycles, giving 12 normal/mirror pairs"
-                }
+                },
+                eml_latex=r"R_{\perp,i} = \mathrm{ops.neg}(\mathrm{ops.inv}(R_{\perp,i})),\quad R_{\perp,i}^2 = \mathrm{ops.neg}(I)",
+                eml_tree_str="ops.neg(I)  # R_perp^2 = -I (Moebius property of OR reduction operator)",
+                eml_description="EML: R_perp^2 = ops.neg(I) — Clifford algebra Moebius property, 12 OR reduction operators",
             ),
             Formula(
                 id="breathing-mode",
@@ -664,7 +673,10 @@ class CosmologyIntroV16(SimulationBase):
                     "σ": "Breathing mode field",
                     "g⁰_mn": "Fixed internal metric",
                     "T": "Volume modulus"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.exp}(\mathrm{ops.mul}(\mathrm{eml\_scalar}(2), \sigma(x))),\, g_{mn}^{(0)}(y))",
+                eml_tree_str="ops.mul(ops.exp(ops.mul(eml_scalar(2.0), sigma_x)), g_internal_0)",
+                eml_description="EML: g_mn = ops.mul(exp(2*sigma), g0_mn) — breathing mode volume modulation",
             ),
             Formula(
                 id="bps-bound",
@@ -690,7 +702,10 @@ class CosmologyIntroV16(SimulationBase):
                     "T_BPS": "BPS-saturated brane tension",
                     "Z_p,q": "Central charge",
                     "V_p": "Brane worldvolume per shadow"
-                }
+                },
+                eml_latex=r"\mathrm{ops.div}(\lvert Z_{p,q}\rvert,\, V_p)",
+                eml_tree_str="ops.div(Z_pq_abs, V_p)",
+                eml_description="EML: T_BPS = ops.div(|Z_pq|, V_p) — BPS bound on brane tensions from SO(24,1) central charge",
             ),
             Formula(
                 id="pneuma-reduction",
@@ -717,7 +732,10 @@ class CosmologyIntroV16(SimulationBase):
                     "Ψ_26D": "26D Pneuma spinor (8192 components)",
                     "Ψ_4D": "4D Dirac spinor (4 components)",
                     "χ_SO(10)": "SO(10) spinor (16 components)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\Psi_{4D},\, \mathrm{ops.mul}(\chi_{SO(10)},\, \eta_{mirror}))",
+                eml_tree_str="ops.mul(Psi_4D, ops.mul(chi_SO10, eta_mirror))",
+                eml_description="EML: Psi_26D = ops.mul(Psi_4D, ops.mul(chi_SO10, eta_mirror)) — Pneuma spinor reduction 8192 -> 64",
             ),
         ]
 
@@ -1170,7 +1188,7 @@ class CosmologyIntroV16(SimulationBase):
                 "13D(12,1) shadows (each: 12 spatial from bridge + 1 shared time). Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}). "
                 "Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²). Per-pair energy: ρ_i = |T_normal_i - R_⊥_i T_mirror_i|. "
                 "Aggregated: ρ_breath = (1/12) ∑ρ_i. Why 12 pairs: b₃ = 24 associative 3-cycles → 24/2 = 12 normal/mirror pairs. "
-                "Aggregation reduces variance: σ_eff = σ_single/√12. Consciousness connection: 12 I/O channels."
+                "Aggregation reduces variance: σ_eff = σ_single/√12. <Speculation>Consciousness connection: 12 I/O channels.</Speculation>"
             ),
             "prediction": (
                 "12-pair bridge pressure aggregation drives breathing dark energy with equation of state "

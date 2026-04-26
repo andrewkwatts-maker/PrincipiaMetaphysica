@@ -457,6 +457,13 @@ class ALPPortalsV23(SimulationBase):
                     + r"\,\text{eV}"
                 ),
                 plain_text=f"m_ALP = Lambda_QCD^2 / f_a^ALP ~ {result.m_alp:.2e} eV",
+                eml_tree_str=(
+                    "ops.div(ops.pow(Lambda_QCD, eml_scalar(2.0)), f_a_ALP)"
+                ),
+                eml_description=(
+                    "EML: m_ALP = ops.div(ops.pow(Lambda_QCD, eml_scalar(2.0)), f_a_ALP) "
+                    "— ALP mass from Face 3 moduli stabilization"
+                ),
                 category="PREDICTED",
                 description=(
                     "ALP mass from Face 3 moduli stabilization. Unlike the QCD axion "
@@ -517,6 +524,15 @@ class ALPPortalsV23(SimulationBase):
                     f"g_{{a gamma gamma}} = alpha_leak * chi_eff / (24 * pi * f_a) "
                     f"~ {result.g_a_gamma_gamma:.2e} GeV^-1"
                 ),
+                eml_tree_str=(
+                    "ops.div(ops.mul(alpha_leak, chi_eff), "
+                    "ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), f_a_ALP))"
+                ),
+                eml_description=(
+                    "EML: g_agammagamma = ops.div(ops.mul(alpha_leak, chi_eff), "
+                    "ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), f_a_ALP)) "
+                    "— ALP-photon coupling via Primakoff process"
+                ),
                 category="PREDICTED",
                 description=(
                     "ALP-photon coupling from Primakoff process enhanced by inter-face "
@@ -568,6 +584,13 @@ class ALPPortalsV23(SimulationBase):
                     + r"\,\text{GeV}^{-1}"
                 ),
                 plain_text=f"g_aN = alpha_leak / f_a ~ {result.g_a_N:.2e} GeV^-1",
+                eml_tree_str=(
+                    "ops.div(alpha_leak, f_a_ALP)"
+                ),
+                eml_description=(
+                    "EML: g_aN = ops.div(alpha_leak, f_a_ALP) "
+                    "— ALP-nucleon coupling from minimal inter-face leakage"
+                ),
                 category="PREDICTED",
                 description=(
                     "ALP-nucleon coupling from inter-face leakage. This coupling "
@@ -618,6 +641,13 @@ class ALPPortalsV23(SimulationBase):
                 ),
                 plain_text=(
                     f"lambda = hbar*c / m_ALP ~ {result.fifth_force_range*1e3:.2f} mm"
+                ),
+                eml_tree_str=(
+                    "ops.div(hbar_c, m_ALP_ev)"
+                ),
+                eml_description=(
+                    "EML: lambda = ops.div(hbar_c, m_ALP_ev) "
+                    "— fifth-force Compton wavelength from ALP exchange"
                 ),
                 category="PREDICTED",
                 description=(

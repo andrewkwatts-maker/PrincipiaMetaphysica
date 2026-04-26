@@ -1117,6 +1117,16 @@ class S8SuppressionV16(SimulationBase):
                 outputParams=["cosmology.s8_pm_predicted"],
                 input_params=["desi.sigma8", "desi.Omega_m"],
                 output_params=["cosmology.s8_pm_predicted"],
+                eml_latex=r"S_8 = \mathrm{ops.mul}(\sigma_8,\; \mathrm{ops.sqrt}(\mathrm{ops.div}(\Omega_m,\; 0.3)))",
+                eml_tree_str=(
+                    "# S8 definition in EML operator tree:\n"
+                    "# S8 = ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3))))"
+                ),
+                eml_description=(
+                    "EML: ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3)))) — "
+                    "S8 = σ8 × √(Ω_m/0.3); variance reduction: "
+                    "ops.inv(ops.sqrt(eml_scalar(48.0))) = 1/√(12×4) from 12 bridges × 4 faces"
+                ),
                 derivation={
                     "steps": [
                         {
@@ -1285,6 +1295,17 @@ class S8SuppressionV16(SimulationBase):
                     "beta_eff is DERIVED from PM topological quantities (not fitted). "
                     "The coupling form (Yukawa) is ASSUMED from string compactification theory."
                 ),
+                eml_latex=r"\sigma_{8,\text{fric}} = \mathrm{ops.mul}(\sigma_{8,\text{base}},\; \mathrm{ops.exp}(\mathrm{ops.neg}(\mathrm{ops.mul}(\beta_{\text{eff}},\; I(z)))))",
+                eml_tree_str=(
+                    "# S8 friction suppression in EML operator tree:\n"
+                    "# sigma8_fric = ops.mul(sigma8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z))))\n"
+                    "# S8_PM = ops.mul(sigma8_base, ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(48.0))))"
+                ),
+                eml_description=(
+                    "EML: ops.mul(sigma8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z)))) — "
+                    "moduli-DM friction suppression; variance reduction factor: "
+                    "ops.inv(ops.sqrt(eml_scalar(48.0))) = 1/sqrt(12 bridges × 4 faces)"
+                ),
                 inputParams=[
                     "cosmology.s8_suppression_factor",
                     "cosmology.s8_friction_beta_eff",
@@ -1415,7 +1436,12 @@ class S8SuppressionV16(SimulationBase):
                 experimental_bound=0.827,  # DESI 2025 sigma8
                 bound_type="central_value",
                 bound_source="DESI2025",
-                uncertainty=0.011
+                uncertainty=0.011,
+                eml_description=(
+                    "EML: ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3)))) — "
+                    "S8 from 48-channel variance reduction; "
+                    "with friction: ops.mul(S8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z))))"
+                ),
             ),
             Parameter(
                 path="cosmology.s8_suppression_factor",
@@ -1429,7 +1455,12 @@ class S8SuppressionV16(SimulationBase):
                     f"between PM's w0 = -23/24 and LCDM's w = -1."
                 ),
                 derivation_formula="growth-suppression-factor",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.inv(ops.sqrt(eml_scalar(48.0))) — "
+                    "1/sqrt(12 bridges × 4 faces) = sigma8 variance reduction factor; "
+                    "full suppression: ops.div(D_PM_z, D_LCDM_z)"
+                ),
             ),
             Parameter(
                 path="cosmology.growth_index_pm",

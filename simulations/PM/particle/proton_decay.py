@@ -495,6 +495,8 @@ class ProtonDecaySimulation(SimulationBase):
                 latex=r"S = \exp\left(2\pi \frac{d}{R}\right) = \exp\left(\frac{1}{K}\right)",
                 plain_text="S = exp(2*pi*d/R) = exp(1/K)",
                 category="DERIVED",
+                eml_tree_str="ops.exp(ops.inv(K_matching))",
+                eml_description="EML: S = exp(1/K) — TCS cycle separation suppression as ops.exp(ops.inv(K_matching))",
                 description=(
                     "Geometric suppression factor from TCS neck topology. In the "
                     "twisted connected sum G2 construction, two asymptotically "
@@ -552,6 +554,8 @@ class ProtonDecaySimulation(SimulationBase):
                 ),
                 plain_text="tau_p = C * (M_GUT/10^16)^4 * (0.03/alpha_GUT)^2 * S",
                 category="PREDICTED",
+                eml_tree_str="ops.mul(C_prefactor, ops.mul(ops.pow(ops.div(M_GUT, eml_scalar(1e16)), eml_scalar(4.0)), ops.mul(ops.pow(ops.div(eml_scalar(0.03), alpha_GUT), eml_scalar(2.0)), S)))",
+                eml_description="EML: τ_p = C·(M_GUT/10¹⁶)⁴·(0.03/α_GUT)²·S — proton lifetime as ops.mul chain with ops.pow(M_ratio, 4) and ops.pow(alpha_ratio, 2)",
                 description=(
                     "Proton lifetime including TCS geometric suppression from "
                     "dimension-6 operator analysis. In GUTs, integrating out heavy "
@@ -630,6 +634,7 @@ class ProtonDecaySimulation(SimulationBase):
                     "Predicted proton lifetime from TCS geometric suppression. "
                     "Includes cycle separation selection rule and GUT unification scale."
                 ),
+                eml_description="EML: ops.mul(C_prefactor, ops.mul(ops.pow(M_GUT_ratio, eml_scalar(4.0)), ops.mul(ops.pow(alpha_ratio, eml_scalar(2.0)), S))) — Super-K bound >2.4e34 yr",
                 derivation_formula="proton-lifetime",
                 experimental_bound=2.4e34,
                 bound_type="lower",

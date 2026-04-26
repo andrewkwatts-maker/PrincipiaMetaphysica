@@ -581,6 +581,18 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                     "method": "bridge_mediated_seesaw",
                     "parentFormulas": [],
                 },
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.mul(eml_scalar(4.0), ops.pow(y_as, eml_scalar(2.0))), "
+                    "ops.mul(ops.div(ops.pow(v_higgs, eml_scalar(2.0)), ops.pow(M_s, eml_scalar(2.0))), "
+                    "ops.mul(ops.div(b3, chi_eff), ops.exp(ops.neg(ops.mul(eml_pi(), alpha_leak))))))"
+                ),
+                eml_description=(
+                    "EML: ops.mul(ops.mul(eml_scalar(4.0), ops.pow(y_as, eml_scalar(2.0))), "
+                    "ops.mul(ops.div(ops.pow(v, eml_scalar(2.0)), ops.pow(M_s, eml_scalar(2.0))), "
+                    "ops.mul(ops.div(b3, chi_eff), ops.exp(ops.neg(ops.mul(eml_pi(), alpha_leak)))))) "
+                    "— active-sterile mixing angle from bridge seesaw"
+                ),
                 terms={
                     "y_as": "Dirac Yukawa coupling from bridge mixing ~ alpha_leak ~ 0.57",
                     "v": "Higgs VEV = 246 GeV",
@@ -639,6 +651,14 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                     "method": "hidden_face_moduli_vev",
                     "parentFormulas": [],
                 },
+                eml_tree_str=(
+                    "ops.mul(M_Planck, ops.exp(ops.neg(ops.div(T_modulus, eml_scalar(2.0)))))"
+                ),
+                eml_description=(
+                    "EML: ops.mul(M_KK, ops.sqrt(alpha_leak)) — sterile mass from portal; "
+                    "equivalently ops.mul(M_Planck, ops.exp(ops.neg(ops.div(T_i, eml_scalar(2.0))))) "
+                    "— Majorana mass from hidden-face moduli suppression"
+                ),
                 terms={
                     "M_Pl": "Planck mass = 1.22e19 GeV",
                     "T_i": "Hidden-face Kahler modulus ~ 69",
@@ -721,6 +741,15 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                     "method": "dodelson_widrow_thermalization",
                     "parentFormulas": ["portal-sterile-mixing-v23"],
                 },
+                eml_tree_str=(
+                    "ops.mul(n_sterile_eff, ops.mul(sin2_2theta, "
+                    "ops.div(chi_eff, ops.mul(eml_scalar(4.0), ops.mul(eml_pi(), b3)))))"
+                ),
+                eml_description=(
+                    "EML: ops.mul(n_sterile_eff, ops.mul(sin2_2theta, "
+                    "ops.div(chi_eff, ops.mul(eml_scalar(4.0), ops.mul(eml_pi(), b3))))) "
+                    "— Delta N_eff from incomplete thermalization"
+                ),
                 terms={
                     "n_sterile_eff": "Total sterile neutrino count from 3 hidden faces ~ 5.13",
                     "sin^2(2*theta)": "Active-sterile mixing angle",
@@ -763,6 +792,9 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 ),
                 derivation_formula="portal-sterile-mass-v23",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(M_KK, ops.sqrt(alpha_leak)) — sterile mass from portal"
+                ),
             ),
             Parameter(
                 path="portals.sterile_n_eff_contribution",

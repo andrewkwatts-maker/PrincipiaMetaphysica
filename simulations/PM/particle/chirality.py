@@ -486,7 +486,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                         "This derivation is completely parameter-free and follows purely "
                         "from the topology of the TCS G2 manifold. The saturation is "
                         "exact: 3 generations × 8 DOF = 24 flux units, with no remainder. "
-                        "This explains why nature has exactly three generations of fermions."
+                        "<Speculation>This may explain why nature has exactly three generations "
+                        "of fermions, if the G2 manifold topology is the correct compactification "
+                        "for the physical universe.</Speculation>"
                     )
                 ),
 
@@ -540,6 +542,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                 label="(4.1.1)",
                 latex=r"\nabla_\mu \eta = 0, \quad \eta \in \Gamma(S), \quad \dim(S) = 8",
                 plain_text="∇_μ η = 0, η ∈ Γ(S), dim(S) = 8",
+                eml_tree_str="ops.add(ops.mul(nabla_mu, eta), ops.neg(ops.mul(eml_scalar(0.0), eta)))",
+                eml_latex=r"\mathrm{ops.add}(\nabla_\mu \cdot \eta,\; \mathrm{ops.neg}(\mathrm{eml\_scalar}(0)))",
+                eml_description="EML: parallel spinor condition — ops.mul(nabla_mu, eta) = eml_scalar(0); spinor_dim = eml_scalar(8.0) from Spin(7) representation",
                 category="ESTABLISHED",
                 description=(
                     "Parallel spinor condition for G2 holonomy. G2 ⊂ Spin(7) preserves "
@@ -583,6 +588,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                 label="(4.1.2)",
                 latex=r"P_L = \frac{1 + *\Phi}{2}, \quad P_R = \frac{1 - *\Phi}{2}",
                 plain_text="P_L = (1 + *Φ)/2, P_R = (1 - *Φ)/2",
+                eml_tree_str="ops.mul(ops.add(eml_scalar(1.0), ops.neg(gamma_5)), ops.div(eml_scalar(1.0), eml_scalar(2.0)))",
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.add}(\mathrm{eml\_scalar}(1),\; *\Phi),\; \mathrm{ops.div}(\mathrm{eml\_scalar}(1),\; \mathrm{eml\_scalar}(2)))",
+                eml_description="EML: P_L = ops.div(ops.add(eml_scalar(1.0), star_Phi), eml_scalar(2.0)) — chirality projector from associative 4-form Hodge dual",
                 category="DERIVED",
                 description=(
                     "Chirality projection operators from associative 4-form. The Hodge "
@@ -629,6 +637,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                 label="(4.1.3)",
                 latex=r"\not{D} = \gamma^\mu D_\mu = \gamma^\mu (\nabla_\mu + igA_\mu)",
                 plain_text="∂/ = γ^μ D_μ = γ^μ (∇_μ + igA_μ)",
+                eml_tree_str="ops.add(ops.mul(gamma_mu, ops.mul(D_mu, psi)), ops.mul(ops.neg(m), psi))",
+                eml_latex=r"\mathrm{ops.add}(\gamma^\mu \cdot D_\mu \cdot \psi,\; \mathrm{ops.neg}(m \cdot \psi))",
+                eml_description="EML: Dirac operator D-slash = ops.mul(gamma_mu, D_mu); zero-mode condition ops.mul(gamma_mu, D_mu, psi) = eml_scalar(0.0)",
                 category="DERIVED",
                 description=(
                     "Dirac operator on G2 manifold with gauge connection. Zero modes "
@@ -676,6 +687,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                 label="(4.1.4)",
                 latex=r"\text{index}(\not{D}) = n_L - n_R = \frac{1}{(2\pi)^3} \int_{M_7} \Phi \wedge F \wedge F",
                 plain_text="index(∂/) = n_L - n_R = (2π)^(-3) ∫ Φ ∧ F ∧ F",
+                eml_tree_str="ops.div(chi_eff, eml_scalar(24.0))",
+                eml_latex=r"\mathrm{ops.div}(\chi_{\text{eff}},\; \mathrm{eml\_scalar}(24))",
+                eml_description="EML: index = ops.div(chi_eff, eml_scalar(24.0)) = ops.div(eml_scalar(144.0), eml_scalar(24.0)) = eml_scalar(6.0)",
                 category="DERIVED",
                 description=(
                     "Atiyah-Singer index theorem for Dirac operator on G2 manifold. "
@@ -725,6 +739,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                 label="(4.1.6)",
                 latex=r"n_{\text{gen}} = \frac{b_3}{\text{spinor DOF}} = \frac{24}{8} = 3",
                 plain_text="n_gen = b_3 / spinor_DOF = 24 / 8 = 3",
+                eml_tree_str="ops.div(eml_scalar(24.0), eml_scalar(8.0))",
+                eml_latex=r"n_{\text{gen}} = \mathrm{ops.div}(\mathrm{eml\_scalar}(24),\; \mathrm{eml\_scalar}(8))",
+                eml_description="EML: n_gen = ops.div(b3, spinor_dof) = ops.div(eml_scalar(24.0), eml_scalar(8.0)) = eml_scalar(3.0)",
                 category="PREDICTED",
                 description=(
                     "Number of fermion generations from spinor saturation on G2 manifold. "
@@ -794,6 +811,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "This is a fixed mathematical property of the Clifford algebra Cl(7). "
                     "Theoretical geometric constant, no experimental measurement."
                 ),
+                eml_description="EML: eml_scalar(8.0) — fixed Spin(7) spinor representation dimension from Clifford algebra Cl(7)",
                 derivation_formula="g2-spinor-preservation",
                 no_experimental_value=True
             ),
@@ -809,6 +827,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "of G2 manifolds. Contrast with SU(3) (2 spinors) or generic "
                     "Spin(7) (0 spinors). Theoretical geometric constant."
                 ),
+                eml_description="EML: eml_scalar(1.0) — G2 holonomy singlet from 8=1+7 Spin(7) decomposition",
                 derivation_formula="g2-spinor-preservation",
                 no_experimental_value=True
             ),
@@ -824,6 +843,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "Represents the net chirality imbalance from topology. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
+                eml_description="EML: ops.div(chi_eff, eml_scalar(24.0)) = ops.div(eml_scalar(144.0), eml_scalar(24.0)) — Atiyah-Singer index from chi_eff",
                 derivation_formula="chirality-index-theorem",
                 no_experimental_value=True
             ),
@@ -839,6 +859,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "can be large, but their difference is fixed by topology. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
+                eml_description="EML: ops.div(chi_eff, eml_scalar(24.0)) — left-handed zero modes equal chiral index in minimal scenario",
                 derivation_formula="dirac-zero-modes",
                 no_experimental_value=True
             ),
@@ -854,6 +875,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "difference is always 6 from topology. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
+                eml_description="EML: eml_scalar(0.0) — minimal scenario n_R = 0; general case ops.sub(n_L, eml_scalar(6.0))",
                 derivation_formula="dirac-zero-modes",
                 no_experimental_value=True
             ),
@@ -869,6 +891,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "For TCS G2 #187: imbalance = 6 (from chi_eff = 144). "
                     "Topological derivation parameter, no experimental measurement."
                 ),
+                eml_description="EML: ops.sub(n_L, n_R) = ops.div(chi_eff, eml_scalar(24.0)) — topological chirality imbalance",
                 derivation_formula="chirality-index-theorem",
                 no_experimental_value=True
             ),
@@ -884,6 +907,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "prediction from topology that perfectly matches the observed 3 "
                     "generations."
                 ),
+                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(8.0)) = eml_scalar(3.0) — b3/spinor_DOF generation count",
                 derivation_formula="spinor-saturation-generations",
                 experimental_bound=3,
                 uncertainty=0,
@@ -901,6 +925,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "ratio = (3 x 8) / 24 = 1 exactly (complete saturation). "
                     "Topological derivation parameter, no experimental measurement."
                 ),
+                eml_description="EML: ops.div(ops.mul(eml_scalar(3.0), eml_scalar(8.0)), eml_scalar(24.0)) = eml_scalar(1.0) — completeness check",
                 derivation_formula="spinor-saturation-generations",
                 no_experimental_value=True
             ),

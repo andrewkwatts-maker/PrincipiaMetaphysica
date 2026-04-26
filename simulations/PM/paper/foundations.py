@@ -372,7 +372,7 @@ class FoundationsV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "The pairing structure arises naturally from the b₃ = 24 Betti number: 24/2 = 12 pairs. "
-                    "Each pair serves as a 'neural gate' for consciousness flow between shadows."
+                    "<Speculation>Each pair serves as a 'neural gate' for consciousness flow between shadows.</Speculation>"
                 )
             ),
             ContentBlock(

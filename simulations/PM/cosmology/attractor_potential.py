@@ -450,7 +450,10 @@ class AttractorPotentialV18(SimulationBase):
                     "omega": "Frequency = 2*pi/sqrt(chi_eff) ~ 0.524",
                     "f": "Decay constant = M_Pl/sqrt(chi_eff) ~ 2e17 GeV",
                     "phi_M": "G2 modulus field (volume proxy)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(V_0,\, \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.mul}(A,\, \mathrm{ops.cos}(\mathrm{ops.mul}(\omega, \mathrm{ops.div}(\phi_M, f))))))",
+                eml_tree_str="ops.mul(V0, ops.add(eml_scalar(1.0), ops.mul(A, ops.cos(ops.mul(omega, ops.div(phi_M, f))))))",
+                eml_description="EML: V(phi_M) = ops.mul(V0, ops.add(1, ops.mul(A, cos(omega*phi_M/f)))) — cosine attractor potential",
             ),
             Formula(
                 id="decay-constant-v18",
@@ -494,7 +497,10 @@ class AttractorPotentialV18(SimulationBase):
                     "M_Pl": "Reduced Planck mass = 2.435e18 GeV",
                     "chi_eff": "Effective Euler characteristic = 144",
                     "f": "Super-Planckian decay constant for modulus field"
-                }
+                },
+                eml_latex=r"\mathrm{ops.div}(M_{\rm Pl},\, \mathrm{ops.sqrt}(\mathrm{eml\_scalar}(144)))",
+                eml_tree_str="ops.div(M_Pl, ops.sqrt(eml_scalar(144.0)))",
+                eml_description="EML: f = ops.div(M_Pl, ops.sqrt(chi_eff)) = M_Pl/12 ~ 2.03e17 GeV",
             ),
             Formula(
                 id="w0-attractor-v18",
@@ -541,7 +547,10 @@ class AttractorPotentialV18(SimulationBase):
                     "epsilon_eff": "Effective slow-roll parameter ~ epsilon/chi_eff",
                     "delta_Ricci": "Ricci flow correction ~ 0.016",
                     "b_3": "Third Betti number (24 for TCS G2)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(1)),\, \mathrm{ops.inv}(\mathrm{eml\_scalar}(24)))",
+                eml_tree_str="ops.add(ops.neg(eml_scalar(1.0)), ops.inv(eml_scalar(24.0)))",
+                eml_description="EML: w0 = ops.add(ops.neg(1), ops.inv(b3)) = -23/24 — attractor fixed point from G2 topology",
             ),
         ]
 

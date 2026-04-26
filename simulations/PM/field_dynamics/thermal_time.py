@@ -347,9 +347,10 @@ class ThermalTimeV16(SimulationBase):
                     "&alpha;<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10 = 2.7 where &gamma; = D&middot;b&#8323;/(2D<sub>s</sub>&pi;) "
                     "is DERIVED (b&#8323; and &pi; cancel algebraically; factor 2 from T&sup1; signature). "
                     "The 12 bridge pairs provide 12 I/O channels through which "
-                    "the entropy gradient dS/dt &ge; 0 establishes a thermodynamic arrow of time. In the "
-                    "speculative Orch-OR interpretation, this gradient is experienced as the subjective "
-                    "forward flow of conscious time (SPECULATIVE)."
+                    "the entropy gradient dS/dt &ge; 0 establishes a thermodynamic arrow of time. "
+                    "<Speculation>In the speculative Orch-OR interpretation, this gradient is experienced as the subjective "
+                    "forward flow of conscious time — the 12 I/O channels may correspond to 12 parallel "
+                    "streams of conscious experience.</Speculation>"
                 )
             ),
             ContentBlock(
@@ -357,6 +358,29 @@ class ThermalTimeV16(SimulationBase):
                 content=r"\alpha_T = \frac{D_{\text{total}}}{D_{\text{string}}} = \frac{27}{10} = 2.7",
                 formula_id="alpha-t-derivation",
                 label="(TT.4)"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "<Normal>"
+                    "The algebraic cancellation in α_T is exact: "
+                    "α_T = (2π/b₃) × (D·b₃ / (2·D_s·π)) = D/D_s = 27/10. "
+                    "The b₃=24 and π factors appear in both numerator and denominator "
+                    "and cancel completely — this is an algebraic identity, not a numerical coincidence."
+                    "</Normal>"
+                    "<EML>"
+                    "EML symbolic proof of the cancellation:\n"
+                    "alpha_T_base = ops.div(ops.mul(2, π), b₃)\n"
+                    "gamma       = ops.div(ops.mul(D, b₃), ops.mul(2, D_s, π))\n"
+                    "alpha_T     = ops.mul(alpha_T_base, gamma)\n"
+                    "            = ops.mul(ops.div(ops.mul(2,π),b₃), ops.div(ops.mul(D,b₃),ops.mul(2,D_s,π)))\n"
+                    "            = ops.div(D, D_s)  ← b₃ and π cancel in the EML tree\n"
+                    "            = ops.div(27, 10)  = 2.7\n"
+                    "The EML operator tree makes the cancellation explicit: the b₃ leaf in "
+                    "alpha_T_base's denominator and the b₃ leaf in gamma's numerator are "
+                    "identical subtrees that reduce to 1 under EML simplification."
+                    "</EML>"
+                ),
             ),
             ContentBlock(
                 type="formula",
@@ -517,6 +541,12 @@ class ThermalTimeV16(SimulationBase):
                 outputParams=["thermal.alpha_T_base"],
                 input_params=["topology.elder_kads"],
                 output_params=["thermal.alpha_T_base"],
+                eml_latex=r"\mathrm{ops.div}(2\pi,\; b_3) = \mathrm{ops.div}(\mathrm{ops.mul}(2, \pi),\; 24)",
+                eml_tree_str="ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0))",
+                eml_description=(
+                    "EML operator tree: ops.div(ops.mul(eml_scalar(2), eml_pi()), eml_scalar(b3)). "
+                    "The b₃=24 and 2π are both EML leaves — no free parameters."
+                ),
                 derivation={
                     "method": "topological_derivation",
                     "parentFormulas": ["modular-hamiltonian", "thermal-flow"],
@@ -553,6 +583,30 @@ class ThermalTimeV16(SimulationBase):
                 outputParams=["thermal.alpha_T"],
                 input_params=["topology.elder_kads", "thermal.alpha_T_base"],
                 output_params=["thermal.alpha_T"],
+                eml_latex=(
+                    r"\alpha_T = \mathrm{ops.div}(D_{\text{total}}, D_{\text{string}}) "
+                    r"= \mathrm{ops.div}(27, 10) = 2.7"
+                    "\n"
+                    r"\text{Cancellation: } "
+                    r"\frac{2\pi}{b_3} \cdot \frac{D \cdot b_3}{2 D_s \pi} "
+                    r"= \frac{D}{D_s} \quad (b_3, \pi \text{ cancel algebraically})"
+                ),
+                eml_tree_str=(
+                    "# Symbolic cancellation in EML operator trees:\n"
+                    "# alpha_T_base = ops.div(ops.mul(2, pi), b3)   [b3=24, pi=π]\n"
+                    "# gamma = ops.div(ops.mul(D, b3), ops.mul(2, D_s, pi))\n"
+                    "# alpha_T = ops.mul(alpha_T_base, gamma)\n"
+                    "#         = ops.mul(ops.div(ops.mul(2,pi),b3), ops.div(ops.mul(D,b3),ops.mul(2,D_s,pi)))\n"
+                    "#         = ops.div(D, D_s)   ← b3 and pi cancel in the EML tree"
+                ),
+                eml_description=(
+                    "EML symbolic proof of α_T = 27/10: "
+                    "alpha_T_base = ops.div(2π, b₃); "
+                    "gamma = ops.div(ops.mul(D, b₃), ops.mul(2, D_s, π)); "
+                    "alpha_T = ops.mul(alpha_T_base, gamma) → b₃ and π cancel exactly in the EML tree "
+                    "→ ops.div(D_total, D_string) = ops.div(27, 10) = 2.7. "
+                    "This is an algebraic identity — the cancellation is exact, not numerical."
+                ),
                 derivation={
                     "method": "dimensional_ratio",
                     "parentFormulas": ["alpha-t-base"],
@@ -560,7 +614,8 @@ class ThermalTimeV16(SimulationBase):
                         "Base coupling: alpha_T_base = 2*pi/b3 = 0.2618 (DERIVED from KMS periodicity)",
                         "gamma = D_total*b3/(2*D_string*pi); factor 2 from T^1 timelike fiber signature",
                         "alpha_T = (2*pi/b3)*(D*b3)/(2*D_string*pi) = D_total/D_string (b3 and pi cancel exactly)",
-                        "Result: alpha_T = 27/10 = 2.7 (DERIVED — ratio of PM and string dimensions)"
+                        "EML tree: ops.mul(ops.div(2π,b3), ops.div(D·b3, 2·D_s·π)) = ops.div(D, D_s)",
+                        "Result: alpha_T = 27/10 = 2.7 (DERIVED — ratio of PM and string dimensions; b3 and pi cancel)"
                     ],
                     "references": [
                         "PM framework: Thermal time calibration",
@@ -596,6 +651,10 @@ class ThermalTimeV16(SimulationBase):
                 ),
                 derivation_formula="alpha-t-base",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)) "
+                    "— KMS period 2π divided by b₃=24 associative 3-cycles"
+                ),
             ),
             Parameter(
                 path="thermal.alpha_T",
@@ -609,6 +668,11 @@ class ThermalTimeV16(SimulationBase):
                 ),
                 derivation_formula="alpha-t-derivation",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(eml_scalar(27.0), eml_scalar(10.0)) — D_total/D_string = 27/10; "
+                    "b₃ and π cancel algebraically in the full tree: "
+                    "ops.mul(ops.div(2π,b₃), ops.div(D·b₃, 2·D_s·π)) = ops.div(27,10)"
+                ),
             ),
             Parameter(
                 path="thermal.modular_temperature",
@@ -621,6 +685,11 @@ class ThermalTimeV16(SimulationBase):
                 ),
                 derivation_formula="modular-hamiltonian",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(m_P_scale, vev_Pneuma) — "
+                    "inverse temperature from surface gravity: "
+                    "ops.div(ops.mul(eml_scalar(2.0), eml_pi()), kappa_surface)"
+                ),
             ),
             Parameter(
                 path="thermal.entropy_gradient",
@@ -633,6 +702,11 @@ class ThermalTimeV16(SimulationBase):
                 ),
                 derivation_formula="entropy-gradient",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.mul(alpha_T, ops.inv(T_local)) — "
+                    "thermal time correlation from modular flow; "
+                    "dS/dt >= 0 guaranteed by Lindblad monotonicity"
+                ),
             ),
             Parameter(
                 path="thermal.two_time_metric_signature",

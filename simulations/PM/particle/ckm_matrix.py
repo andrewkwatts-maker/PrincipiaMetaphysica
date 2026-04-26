@@ -631,8 +631,11 @@ class CKMMatrixSimulation(SimulationBase):
                     type="paragraph",
                     content=(
                         "This matches the experimental value J = (3.0 ± 0.3) × 10<sup>−5</sup> (PDG 2024) "
-                        "with no free parameters. The CP phase emerges purely from the topology "
-                        "of the compact G₂ manifold."
+                        "with no free parameters. "
+                        "<Speculation>The CP phase is claimed to emerge purely from the topology "
+                        "of the compact G₂ manifold via the K=4 matching fibres, though the "
+                        "specific connection between K=4 and delta_CP = pi/6 has not been derived "
+                        "from first principles in the published M-theory literature.</Speculation>"
                     )
                 ),
                 ContentBlock(
@@ -735,6 +738,9 @@ class CKMMatrixSimulation(SimulationBase):
                 label="(4.3.1)",
                 latex=r"V_{ij} = \int_{G_2} \psi_{u^i}^* \cdot W_\mu \cdot \psi_{d^j} \, d^7x",
                 plain_text="V_ij = integral(psi_u^i* · W_mu · psi_d^j) over G2",
+                eml_tree_str="ops.pow(epsilon, eml_scalar(float(Q_i + Q_j)))",
+                eml_latex=r"V_{ij} \approx \mathrm{ops.pow}(\epsilon,\; Q_i + Q_j)",
+                eml_description="EML: V_ij ~ ops.pow(ops.exp(ops.neg(eml_scalar(1.5))), eml_scalar(float(Q_i + Q_j))) — wavefunction overlap suppression by topological distance",
                 category="DERIVED",
                 description=(
                     "CKM matrix elements as overlap integrals of quark wave functions "
@@ -773,6 +779,13 @@ class CKMMatrixSimulation(SimulationBase):
                     r"V_{\text{ub}} \sim A\epsilon^3"
                 ),
                 plain_text="V_us ~ epsilon, V_cb ~ A*epsilon^2, V_ub ~ A*epsilon^3",
+                eml_tree_str="ops.add(lambda_W, ops.mul(ops.pow(lambda_W, eml_scalar(3.0)), ops.div(rho_bar, eml_scalar(2.0))))",
+                eml_latex=(
+                    r"V_{\text{us}} = \mathrm{eml\_scalar}(\epsilon),\quad "
+                    r"V_{\text{cb}} = \mathrm{ops.mul}(A,\; \mathrm{ops.pow}(\epsilon,\; 2)),\quad "
+                    r"V_{\text{ub}} = \mathrm{ops.mul}(A,\; \mathrm{ops.pow}(\epsilon,\; 3))"
+                ),
+                eml_description="EML: V_us = epsilon; V_cb = ops.mul(eml_scalar(A), ops.pow(epsilon, eml_scalar(2.0))); V_ub = ops.mul(eml_scalar(A), ops.pow(epsilon, eml_scalar(3.0)))",
                 category="DERIVED",
                 description=(
                     "Hierarchical structure of CKM matrix elements from geometric "
@@ -808,6 +821,9 @@ class CKMMatrixSimulation(SimulationBase):
                 label="(4.3.3)",
                 latex=r"J = \text{Im}(V_{\text{us}} V_{\text{cb}} V_{\text{ub}}^* V_{\text{cs}}^*) = A^2 \epsilon^6 \eta",
                 plain_text="J = Im(V_us * V_cb * V_ub* * V_cs*) = A^2 * epsilon^6 * eta",
+                eml_tree_str="ops.mul(ops.pow(A_param, eml_scalar(2.0)), ops.mul(ops.pow(lambda_W, eml_scalar(6.0)), eta_bar))",
+                eml_latex=r"J = \mathrm{ops.mul}(\mathrm{ops.pow}(A,\; 2),\; \mathrm{ops.mul}(\mathrm{ops.pow}(\epsilon,\; 6),\; \eta))",
+                eml_description="EML: J = ops.mul(ops.pow(eml_scalar(A), eml_scalar(2.0)), ops.mul(ops.pow(lambda_W, eml_scalar(6.0)), eml_scalar(eta)))",
                 category="PREDICTED",
                 description=(
                     "Jarlskog invariant measuring CP violation in quark sector. "
@@ -854,6 +870,9 @@ class CKMMatrixSimulation(SimulationBase):
                     "V_CKM matrix in Wolfenstein parametrization with "
                     "lambda, A, rho, eta from G2 geometry"
                 ),
+                eml_tree_str="ops.pow(racetrack_epsilon, ops.inv(eml_scalar(3.0)))",
+                eml_latex=r"\lambda = \mathrm{ops.pow}(\epsilon_{\text{racetrack}},\; \mathrm{ops.inv}(\mathrm{eml\_scalar}(3)))",
+                eml_description="EML: lambda = ops.pow(racetrack_epsilon, ops.inv(n_gen)); A = ops.div(Vcb, ops.pow(lambda_W, eml_scalar(2.0)))",
                 category="DERIVED",
                 description=(
                     "Complete CKM matrix in Wolfenstein parametrization. All four "
@@ -899,6 +918,9 @@ class CKMMatrixSimulation(SimulationBase):
                 label="(4.3.7)",
                 latex=r"\sum_{j=1}^{3} |V_{ij}|^2 = 1 \quad \forall i \in \{1,2,3\}",
                 plain_text="sum_j |V_ij|^2 = 1 for all i (unitarity constraint)",
+                eml_tree_str="ops.add(Vud_sq, ops.add(Vus_sq, Vub_sq))",
+                eml_latex=r"\mathrm{ops.add}(|V_{ud}|^2,\; |V_{us}|^2,\; |V_{ub}|^2) = \mathrm{eml\_scalar}(1.0)",
+                eml_description="EML: ops.add(ops.pow(V_ud, eml_scalar(2.0)), ops.pow(V_us, eml_scalar(2.0)), ops.pow(V_ub, eml_scalar(2.0))) = eml_scalar(1.0)",
                 category="DERIVED",
                 description=(
                     "Unitarity constraint on CKM matrix. Automatically satisfied "
@@ -1058,6 +1080,7 @@ class CKMMatrixSimulation(SimulationBase):
                     f"PDG 2024: J = ({self.PDG_J:.1e} ± {self.PDG_J_err:.1e}). "
                     "Geometric prediction within 3%."
                 ),
+                eml_description="EML: ops.mul(ops.pow(eml_scalar(A), eml_scalar(2.0)), ops.mul(ops.pow(lambda_W, eml_scalar(6.0)), eml_scalar(eta)))",
                 derivation_formula="jarlskog-invariant",
                 experimental_bound=self.PDG_J,
                 uncertainty=self.PDG_J_err,
@@ -1073,6 +1096,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "Wolfenstein lambda parameter (Cabibbo angle). Equals Froggatt-Nielsen "
                     "epsilon = exp(-1.5) ~ 0.223 from G2 curvature scale."
                 ),
+                eml_description="EML: ops.pow(racetrack_epsilon, ops.inv(eml_scalar(3.0))) — from N1=24/N2=23 racetrack; numerically = ops.exp(ops.neg(eml_scalar(1.5)))",
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=0.2245,
                 uncertainty=0.0008,
@@ -1088,6 +1112,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "Wolfenstein A parameter derived from geometric overlap "
                     "coefficient. Geometric derivation parameter, no direct experimental measurement."
                 ),
+                eml_description="EML: ops.div(Vcb, ops.pow(lambda_W, eml_scalar(2.0))) — geometric overlap coefficient A ~ V_cb/lambda^2",
                 derivation_formula="wolfenstein-parametrization",
                 no_experimental_value=True
             ),

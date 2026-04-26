@@ -249,6 +249,12 @@ class ComptonWavelengthV17(SimulationBase):
                 input_params=["topology.elder_kads", "topology.ancestral_roots"],
                 output_params=["qed.bulk_compton_wavelength"],
                 description="Derives the bulk (pre-projection) Compton wavelength from the CODATA manifest value by inverting the inverse cubic contraction: lambda_C_bulk = lambda_C_CODATA * (1 + epsilon). This represents the Compton wavelength in the higher-dimensional Pleroma before dimensional reduction contracts it.",
+                eml_tree_str="ops.mul(codata_compton, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Bulk Expansion: lambda_C_bulk = ops.mul(codata_compton, "
+                    "ops.add(eml_scalar(1.0), epsilon)). "
+                    "Inverts the inverse cubic contraction to recover the pre-projection value."
+                ),
                 derivation={
                     "steps": [
                         "Begin with CODATA 2022 electron Compton wavelength: lambda_C = 2.42631023867(73) x 10^-12 m",
@@ -274,6 +280,12 @@ class ComptonWavelengthV17(SimulationBase):
                 input_params=["topology.elder_kads", "topology.ancestral_roots"],
                 output_params=["qed.manifest_compton_wavelength"],
                 description="Projects the bulk Compton wavelength to the manifest (observed) 3D value via inverse cubic contraction: lambda_C = h/(m_e*c) contracts as 1/(1+epsilon) because h expands once while m_e and c each expand once in the denominator, yielding net contraction. This recovers the CODATA 2022 value to machine precision.",
+                eml_tree_str="ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Inverse Cubic: lambda_C_manifest = ops.div(compton_bulk, "
+                    "ops.add(eml_scalar(1.0), epsilon)). "
+                    "lambda_C = h/(m_e*c): h expands (numerator +1), m_e and c each expand (denominator +2), net: -1/(1+eps)."
+                ),
                 derivation={
                     "steps": [
                         "Start from the bulk Compton wavelength lambda_C_bulk computed in eq. (6.1a)",
@@ -302,6 +314,7 @@ class ComptonWavelengthV17(SimulationBase):
                 status="DERIVED",
                 description="Bulk Compton wavelength in Pleroma (before projection)",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))",
             ),
             Parameter(
                 path="qed.manifest_compton_wavelength",
@@ -313,6 +326,7 @@ class ComptonWavelengthV17(SimulationBase):
                 bound_type="measured",
                 bound_source="CODATA2022",
                 uncertainty=CODATA_COMPTON_SIGMA,
+                eml_description="EML: ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon)) — h/(m_e*c) contracts net 1/(1+eps)",
             ),
             Parameter(
                 path="qed.compton_variance_m",

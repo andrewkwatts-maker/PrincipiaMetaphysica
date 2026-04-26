@@ -291,6 +291,12 @@ class AppendixTQECBridge(SimulationBase):
                     "For the [[24,12,8]] code, all single-qubit errors produce unique "
                     "non-zero syndromes (detectable and correctable up to weight 3)."
                 ),
+                eml_tree_str="ops.mod(ops.mul(H_row_i, error_vec_j), eml_scalar(2.0))",
+                eml_description=(
+                    "EML syndrome: s_i = ops.mod(ops.dot(H_row_i, e_j), 2). "
+                    "Inner product of i-th stabilizer generator with error vector, mod 2. "
+                    "For single-qubit X-error on qubit j, result is j-th column of H."
+                ),
                 inputParams=["qec.code_n", "qec.code_d"],
                 outputParams=["appendix_t.syndrome_example_valid"],
                 input_params=["qec.code_n", "qec.code_d"],

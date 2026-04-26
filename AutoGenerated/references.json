@@ -1,6 +1,6 @@
 {
   "version": "24.2",
-  "count": 217,
+  "count": 230,
   "references": {
     "acharya_witten_2001": {
       "id": "acharya_witten_2001",
@@ -900,6 +900,118 @@
       "notes": "G2 holonomy manifolds and their role in particle physics.",
       "source_simulation": "higgs_vev_refined_v18"
     },
+    "freudenthal1954": {
+      "id": "freudenthal1954",
+      "authors": "Freudenthal, H.",
+      "title": "Beziehungen der E7 und E8 zur Oktavenebene I-II",
+      "year": 1954,
+      "url": "https://link.springer.com/article/10.1007/BF02564513",
+      "source_simulation": "freudenthal_triple_v1_0"
+    },
+    "brown1969": {
+      "id": "brown1969",
+      "authors": "Brown, R.B.",
+      "title": "Groups of type E7",
+      "year": 1969,
+      "doi": "10.1515/crll.1969.236.79",
+      "source_simulation": "freudenthal_triple_v1_0"
+    },
+    "cartan1894": {
+      "id": "cartan1894",
+      "authors": "Cartan, E.",
+      "title": "Sur la structure des groupes de transformations finis et continus",
+      "year": 1894,
+      "url": "https://gallica.bnf.fr/ark:/12148/bpt6k9762066h",
+      "source_simulation": "e7_representation_v1_0"
+    },
+    "cremmer_julia1978": {
+      "id": "cremmer_julia1978",
+      "authors": "Cremmer, E. & Julia, B.",
+      "title": "The N=8 supergravity theory. I. The Lagrangian",
+      "year": 1978,
+      "doi": "10.1016/0370-2693(78)90303-9",
+      "source_simulation": "e7_representation_v1_0"
+    },
+    "krasnikov1987": {
+      "id": "krasnikov1987",
+      "authors": "Krasnikov, N.V.",
+      "title": "On supersymmetry breaking in superstring theories",
+      "year": 1987,
+      "doi": "10.1016/0370-2693(87)91274-2",
+      "source_simulation": "gaugino_condensation_v1_0"
+    },
+    "dine1985": {
+      "id": "dine1985",
+      "authors": "Dine, M., Rohm, R., Seiberg, N., & Witten, E.",
+      "title": "Gluino condensation in superstring models",
+      "year": 1985,
+      "doi": "10.1016/0370-2693(85)91354-1",
+      "source_simulation": "gaugino_condensation_v1_0"
+    },
+    "gross1985": {
+      "id": "gross1985",
+      "authors": "Gross, D.J., Harvey, J.A., Martinec, E., & Rohm, R.",
+      "title": "Heterotic string theory. I. The free heterotic string",
+      "year": 1985,
+      "doi": "10.1016/0550-3213(85)90394-3",
+      "source_simulation": "e8x8_splitting_v1_0"
+    },
+    "candelas1985": {
+      "id": "candelas1985",
+      "authors": "Candelas, P., Horowitz, G.T., Strominger, A., & Witten, E.",
+      "title": "Vacuum configurations for superstrings",
+      "year": 1985,
+      "doi": "10.1016/0550-3213(85)90322-6",
+      "source_simulation": "e8x8_splitting_v1_0"
+    },
+    "clifford1878": {
+      "id": "clifford1878",
+      "authors": "Clifford, W.K.",
+      "title": "Applications of Grassmann's Extensive Algebra",
+      "year": 1878,
+      "doi": "10.2307/2369379",
+      "source_simulation": "clifford_unification_v1_0"
+    },
+    "hestenes1966": {
+      "id": "hestenes1966",
+      "authors": "Hestenes, D.",
+      "title": "Space-Time Algebra",
+      "year": 1966,
+      "url": "https://link.springer.com/book/10.1007/978-3-319-18413-5",
+      "source_simulation": "clifford_unification_v1_0"
+    },
+    "lounesto2001": {
+      "id": "lounesto2001",
+      "authors": "Lounesto, P.",
+      "title": "Clifford Algebras and Spinors",
+      "year": 2001,
+      "url": "https://www.cambridge.org/9780521005517",
+      "source_simulation": "clifford_algebra_appendix_v1_0"
+    },
+    "doran_lasenby2003": {
+      "id": "doran_lasenby2003",
+      "authors": "Doran, C. & Lasenby, A.",
+      "title": "Geometric Algebra for Physicists",
+      "year": 2003,
+      "url": "https://www.cambridge.org/9780521715959",
+      "source_simulation": "clifford_algebra_appendix_v1_0"
+    },
+    "nufit6_2024": {
+      "id": "nufit6_2024",
+      "authors": "Esteban, I., Gonzalez-Garcia, M.C., Maltoni, M., Schwetz, T., Zhou, A.",
+      "title": "NuFIT 6.0: Global analysis of three-neutrino oscillation parameters",
+      "year": 2024,
+      "url": "https://www.nu-fit.org",
+      "source_simulation": "neutrino_algebraic_v24_0"
+    },
+    "buras1978": {
+      "id": "buras1978",
+      "authors": "Buras, A.J., Ellis, J., Gaillard, M.K., Nanopoulos, D.V.",
+      "title": "Aspects of the Grand Unification of Strong, Weak and Electromagnetic Interactions",
+      "year": 1978,
+      "doi": "10.1016/0550-3213(78)90168-6",
+      "source_simulation": "neutrino_algebraic_v24_0"
+    },
     "joyce2007": {
       "id": "joyce2007",
       "authors": "Joyce, D.D.",
@@ -953,17 +1065,6 @@
       "publisher": "Cambridge University Press",
       "year": 1987,
       "url": "https://doi.org/10.1017/CBO9781139248570",
-      "source_simulation": "dark_energy_v16_0"
-    },
-    "gross1985": {
-      "id": "gross1985",
-      "authors": "Gross, D.J., Harvey, J.A., Martinec, E., Rohm, R.",
-      "title": "Heterotic String Theory",
-      "journal": "Nucl. Phys. B",
-      "volume": "256",
-      "year": 1985,
-      "pages": "253-284",
-      "url": "https://doi.org/10.1016/0550-3213(85)90394-3",
       "source_simulation": "dark_energy_v16_0"
     },
     "chevallier2001": {

@@ -460,6 +460,11 @@ class PMSectionRenderer extends HTMLElement {
             `<div class="math-mode-block" data-mode="eml">${content.trim()}</div>`
         );
 
+        // Convert <Speculation>...</Speculation> blocks to toggleable speculation divs
+        text = text.replace(/<Speculation>([\s\S]*?)<\/Speculation>/g, (_, content) =>
+            `<div class="speculation-block">${content.trim()}</div>`
+        );
+
         // Replace formula references: {{formula:id}}
         text = text.replace(/\{\{formula:([^}]+)\}\}/g, (match, id) => {
             // Validate that id is not empty, undefined, or null

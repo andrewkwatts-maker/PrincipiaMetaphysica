@@ -813,6 +813,9 @@ class PMRegistry:
         """
         result = {}
         for path, entry in self._parameters.items():
+            # eml_description is stored in ParameterEntry.metadata if set by simulation
+            eml_desc = (entry.metadata or {}).get('eml_description', '')
+
             result[path] = {
                 'value': entry.value,
                 'source': entry.source,
@@ -828,6 +831,8 @@ class PMRegistry:
                 # Validation results
                 'sigma_deviation': entry.sigma_deviation,
                 'validation_status': entry.validation_status,
+                # EML Mirror Phase description
+                'eml_description': eml_desc,
             }
         return result
 
@@ -866,6 +871,9 @@ class PMRegistry:
                 'output_params': f.output_params or f.outputParams,
                 'derivation': derivation,
                 'terms': f.terms,
+                'eml_latex': getattr(f, 'eml_latex', ''),
+                'eml_tree_str': getattr(f, 'eml_tree_str', ''),
+                'eml_description': getattr(f, 'eml_description', ''),
                 'source_simulation': entry.source,
                 'timestamp': entry.timestamp,
             }

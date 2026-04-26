@@ -526,6 +526,8 @@ class HiggsMassSimulation(SimulationBase):
                     "evaluating the second derivative of the Higgs potential at the "
                     "electroweak vacuum expectation value minimum"
                 ),
+                eml_tree_str="ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), lambda_eff)))",
+                eml_description="EML: m_h = sqrt(8π² v² λ_eff) — Higgs mass from moduli potential via ops.sqrt of ops.mul chain",
                 inputParams=["higgs.vev_yukawa", "higgs.lambda_eff_pheno"],
                 outputParams=["higgs.m_higgs_pred"],
                 input_params=["higgs.vev_yukawa", "higgs.lambda_eff_pheno"],
@@ -576,6 +578,8 @@ class HiggsMassSimulation(SimulationBase):
                     "from SUGRA top-quark loop with modulus exchange, reducing the "
                     "tree-level SO(10) matching value by Delta-lambda = kappa Re(T) y_t^2"
                 ),
+                eml_tree_str="ops.sub(lambda_0, ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(re_T, ops.pow(y_t, eml_scalar(2.0)))))",
+                eml_description="EML: λ_eff = λ_0 − (1/8π²)·Re(T)·y_t² — one-loop moduli correction via ops.sub(lambda_0, ops.mul(kappa, ops.mul(re_T, ops.sqr(y_t))))",
                 inputParams=["moduli.re_t_phenomenological", "yukawa.y_top"],
                 outputParams=["higgs.lambda_eff_pheno"],
                 input_params=["moduli.re_t_phenomenological", "yukawa.y_top"],
@@ -633,6 +637,8 @@ class HiggsMassSimulation(SimulationBase):
                     "from two competing gaugino condensates in hidden-sector gauge groups "
                     "of ranks N1 and N2 on the G2 compactification manifold"
                 ),
+                eml_tree_str="ops.add(ops.mul(A, ops.exp(ops.neg(ops.mul(a, T)))), ops.mul(B, ops.exp(ops.neg(ops.mul(b, T)))))",
+                eml_description="EML: W(T) = A·exp(−a·T) + B·exp(−b·T) — racetrack superpotential as ops.add of two ops.mul(prefactor, ops.exp(ops.neg(...))) terms",
                 inputParams=["topology.elder_kads", "topology.mephorash_chi"],
                 outputParams=["moduli.re_t_attractor"],
                 input_params=["topology.elder_kads", "topology.mephorash_chi"],
@@ -695,6 +701,8 @@ class HiggsMassSimulation(SimulationBase):
                     "electroweak doublets at fixed points while projecting color "
                     "triplets to the shadow sector at GUT-scale masses"
                 ),
+                eml_tree_str="ops.div(M_GUT, v_ew)",
+                eml_description="EML: M_triplet/M_doublet = ops.div(M_GUT, v_ew) — mass hierarchy ratio from Z2×Z2 topological projection",
                 inputParams=["gauge.M_GUT", "higgs.vev"],
                 outputParams=["higgs.dt_splitting_ratio"],
                 input_params=["gauge.M_GUT", "higgs.vev"],
@@ -762,6 +770,7 @@ class HiggsMassSimulation(SimulationBase):
                     "This uses the experimental value m_h = 125.10 GeV as input to fix "
                     "Re(T) = 9.865, then verifies consistency."
                 ),
+                eml_description="EML: ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), lambda_eff_pheno))) — Higgs mass from phenomenological moduli",
                 derivation_formula="higgs-mass",
                 experimental_bound=125.25,  # Higgs mass (PDG 2024)
                 bound_type="measured",
@@ -850,6 +859,7 @@ class HiggsMassSimulation(SimulationBase):
                     "Effective Higgs quartic coupling with moduli corrections, using "
                     "phenomenologically constrained Re(T) = 9.865."
                 ),
+                eml_description="EML: ops.sub(lambda_0, ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(re_T_pheno, ops.pow(y_t, eml_scalar(2.0))))) — effective quartic with pheno Re(T)",
                 derivation_formula="higgs-quartic-coupling",
                 no_experimental_value=True,
                 validation={
@@ -1209,7 +1219,8 @@ class HiggsMassSimulation(SimulationBase):
                 "This is one of the framework's current tensions: pure G2 geometry doesn't predict the correct Higgs "
                 "mass. However, it provides a *mechanism* connecting the mass to moduli stabilization, which is more "
                 "than the Standard Model offers (where m_h is a free parameter). Future work on racetrack corrections "
-                "or anthropic selection could resolve this."
+                "could reduce the tension. <Speculation>Anthropic selection from the string theory landscape could "
+                "also resolve this, but this is not a prediction of the framework.</Speculation>"
             )
         }
 

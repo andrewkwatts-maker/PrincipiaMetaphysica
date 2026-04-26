@@ -415,7 +415,19 @@ class BaryonAsymmetryV18(SimulationBase):
                     "chi_eff": "Effective Euler characteristic = 72 (per-sector in v24.2 dual-shadow architecture)",
                     "delta_CP": "CP phase pi/6 from Z3 triality of G2 root system (leading-order; measured CKM delta_CP ~ 1.36 rad is larger)",
                     "Re(T)": "Moduli parameter (7.086)"
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(ops.div(J_jarlskog, N_eff), "
+                    "ops.mul(delta_b3, ops.mul(ops.div(b3, chi_eff), "
+                    "ops.mul(ops.sin(delta_cp), ops.exp(ops.neg(Re_T))))))"
+                ),
+                eml_description=(
+                    "EML baryon asymmetry: ops.mul(ops.div(J, N_eff), "
+                    "ops.mul(delta_b3, ops.mul(ops.div(b3, chi_eff), "
+                    "ops.mul(ops.sin(delta_cp), ops.exp(ops.neg(Re_T)))))). "
+                    "Five factors: Jarlskog normalization, cycle asymmetry, topological suppression, "
+                    "CP violation, and moduli damping."
+                ),
             ),
             Formula(
                 id="cp-phase-sterile-v18",
@@ -462,7 +474,12 @@ class BaryonAsymmetryV18(SimulationBase):
                     "J": "Jarlskog invariant ~ 3.08×10⁻⁵ (CKM CP violation)",
                     "N_eff": "2*(b₃ - 14) = 2*10 = 20 (v24.2)",
                     "2*7": "14 modes absorbed into gauge + matter sectors"
-                }
+                },
+                eml_tree_str="ops.div(J_jarlskog, ops.mul(eml_scalar(2.0), ops.sub(b3, eml_scalar(14.0))))",
+                eml_description=(
+                    "EML k_bary: ops.div(J_jarlskog, ops.mul(2, ops.sub(b3, 14))). "
+                    "Derived from Jarlskog invariant divided by effective baryogenesis cycle count."
+                ),
             ),
             Formula(
                 id="moduli-damping-v18",
@@ -511,7 +528,12 @@ class BaryonAsymmetryV18(SimulationBase):
                     "W": "Racetrack superpotential with two exponentials",
                     "Re(T)": "Real part of stabilized modulus = 7.086",
                     "f_damp": "Exponential suppression ~ 8.38e-4"
-                }
+                },
+                eml_tree_str="ops.exp(ops.neg(Re_T))",
+                eml_description=(
+                    "EML moduli damping: ops.exp(ops.neg(Re_T)) = ops.exp(ops.neg(eml_scalar(7.086))). "
+                    "Sakharov condition 3: out-of-equilibrium suppression via KKLT racetrack moduli stabilization."
+                ),
             ),
         ]
 
@@ -530,7 +552,11 @@ class BaryonAsymmetryV18(SimulationBase):
                 experimental_bound=6.12e-10,
                 bound_type="measured",
                 bound_source="Planck2018_BBN",
-                uncertainty=0.04e-10
+                uncertainty=0.04e-10,
+                eml_description=(
+                    "EML: ops.mul(ops.div(J, N_eff), ops.mul(delta_b3, "
+                    "ops.mul(ops.div(b3, chi_eff), ops.mul(sin_delta_cp, exp_neg_ReT))))"
+                ),
             ),
             Parameter(
                 path="cosmology.k_bary_normalization",
@@ -538,7 +564,8 @@ class BaryonAsymmetryV18(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="k_bary = J/N_eff = J/(2*(b3-14)) = 3.08×10⁻⁵/20. v24.2: χ_eff = 72 per-sector, N_eff = 20.",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(J_jarlskog, ops.mul(eml_scalar(2.0), ops.sub(b3, eml_scalar(14.0))))",
             ),
         ]
 

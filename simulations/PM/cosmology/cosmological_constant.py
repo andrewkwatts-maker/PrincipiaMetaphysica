@@ -645,6 +645,9 @@ class CosmologicalConstantV16(SimulationBase):
                 outputParams=["cosmology.entropy_density"],
                 input_params=["topology.elder_kads", "constants.k_gimel"],
                 output_params=["cosmology.entropy_density"],
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{eml\_scalar}(b_3),\, \mathrm{ops.log}(\mathrm{eml\_scalar}(k_{\gimel})))",
+                eml_tree_str="ops.mul(eml_scalar(24.0), ops.log(eml_scalar(12.318)))",
+                eml_description="EML: S_G2 = ops.mul(b3, ops.log(k_gimel)) — G2 entropy from 3-cycle count",
                 derivation={
                     "steps": [
                         {
@@ -676,6 +679,9 @@ class CosmologicalConstantV16(SimulationBase):
                 latex=r"\Lambda = \frac{k_{\gimel} \cdot [\ln(k_{\gimel})]^2}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2 \cdot e^{-2\pi D_{crit}}",
                 plain_text="Lambda = (k_gimel * ln(k_gimel)^2 / b3^3) * (l_Pl/R_H)^2 * exp(-2*pi*D_crit)",
                 category="PREDICTED",
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.div}(\mathrm{ops.mul}(k_{\gimel}, \mathrm{ops.pow}(\mathrm{ops.log}(k_{\gimel}), \mathrm{eml\_scalar}(2))), \mathrm{ops.pow}(b_3, \mathrm{eml\_scalar}(3))),\, \mathrm{ops.mul}(\mathrm{ops.pow}(l_{Pl}/R_H, \mathrm{eml\_scalar}(2)),\, \mathrm{ops.exp}(\mathrm{ops.neg}(\mathrm{ops.mul}(\mathrm{eml\_scalar}(2), \mathrm{ops.mul}(\mathrm{eml\_pi}(), \mathrm{eml\_scalar}(26))))))))",
+                eml_tree_str="ops.mul(ops.div(ops.mul(k_gimel, ops.pow(ops.log(k_gimel), eml_scalar(2.0))), ops.pow(eml_scalar(24.0), eml_scalar(3.0))), ops.mul(ops.pow(l_Pl_over_R_H, eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(eml_scalar(2.0), ops.mul(eml_pi(), eml_scalar(26.0)))))))",
+                eml_description="EML: Lambda = ops.mul(ops.div(k_gimel*log(k_gimel)^2, b3^3), (l_Pl/R_H)^2 * exp(-2*pi*26))",
                 description=(
                     "v16.2: Cosmological constant with instanton suppression. "
                     "The e^{-2*pi*26} factor (~10^-71) solves the 120-order hierarchy problem."
@@ -730,6 +736,9 @@ class CosmologicalConstantV16(SimulationBase):
                 plain_text="rho_Lambda = Lambda * c^4 / (8*pi*G)",
                 category="DERIVED",
                 description="Vacuum energy density from cosmological constant",
+                eml_latex=r"\mathrm{ops.div}(\mathrm{ops.mul}(\Lambda,\, \mathrm{ops.pow}(c, \mathrm{eml\_scalar}(4))),\, \mathrm{ops.mul}(\mathrm{eml\_scalar}(8),\, \mathrm{ops.mul}(\mathrm{eml\_pi}(), G)))",
+                eml_tree_str="ops.div(ops.mul(Lambda, ops.pow(c, eml_scalar(4.0))), ops.mul(eml_scalar(8.0), ops.mul(eml_pi(), G)))",
+                eml_description="EML: rho_Lambda = ops.div(ops.mul(Lambda, c^4), ops.mul(8, ops.mul(pi, G)))",
                 inputParams=["cosmology.Lambda_derived"],
                 outputParams=["cosmology.rho_vacuum"],
                 input_params=["cosmology.Lambda_derived"],
@@ -766,6 +775,9 @@ class CosmologicalConstantV16(SimulationBase):
                 plain_text="Lambda/Lambda_Pl ~ 10^-122",
                 category="DERIVED",
                 description="Hierarchy between Planck and observed Lambda",
+                eml_latex=r"\mathrm{ops.div}(\Lambda,\, \mathrm{ops.pow}(l_{Pl}, \mathrm{ops.neg}(\mathrm{eml\_scalar}(2))))",
+                eml_tree_str="ops.div(Lambda_derived, ops.pow(l_Pl, ops.neg(eml_scalar(2.0))))",
+                eml_description="EML: Lambda/Lambda_Pl = ops.div(Lambda, ops.pow(l_Pl, -2)) — 120-order hierarchy ratio",
                 inputParams=["topology.elder_kads", "constants.k_gimel"],
                 outputParams=["cosmology.Lambda_ratio"],
                 input_params=["topology.elder_kads", "constants.k_gimel"],
@@ -821,7 +833,8 @@ class CosmologicalConstantV16(SimulationBase):
                 experimental_bound=1.1e-52,
                 bound_type="measured",
                 bound_source="DESI2025",
-                uncertainty=0.1e-52
+                uncertainty=0.1e-52,
+                eml_description="EML: ops.mul(ops.div(k_gimel*log(k_gimel)^2, b3^3), (l_Pl/R_H)^2 * exp(-2*pi*26)) — cosmological constant from G2 entropy"
             ),
             Parameter(
                 path="cosmology.rho_vacuum",
@@ -837,7 +850,8 @@ class CosmologicalConstantV16(SimulationBase):
                 experimental_bound=5.4e-10,
                 bound_type="measured",
                 bound_source="Planck2018",
-                uncertainty=0.3e-10
+                uncertainty=0.3e-10,
+                eml_description="EML: ops.div(ops.mul(Lambda, c^4), ops.mul(eml_scalar(8), ops.mul(eml_pi(), G))) — vacuum energy density"
             ),
             Parameter(
                 path="cosmology.entropy_density",

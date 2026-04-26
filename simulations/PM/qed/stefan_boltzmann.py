@@ -170,6 +170,12 @@ class StefanBoltzmannV17(SimulationBase):
                     "the full 4D projection factor rather than the linear or quadratic forms used for "
                     "constants governed by fewer dimensional dependencies."
                 ),
+                eml_tree_str="ops.mul(sigma_bulk, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))",
+                eml_description=(
+                    "EML Quad-Gate: sigma_manifest = ops.mul(sigma_bulk, "
+                    "ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0))). "
+                    "The fourth-power node reflects T^4 thermal radiation sampling all 4 spacetime dimensions."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -198,6 +204,7 @@ class StefanBoltzmannV17(SimulationBase):
                 status="DERIVED",
                 description="Stefan-Boltzmann constant in bulk (before Quad-Gate expansion)",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(sigma_manifest, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))",
             ),
             Parameter(
                 path="qed.manifest_stefan_boltzmann",
@@ -208,6 +215,7 @@ class StefanBoltzmannV17(SimulationBase):
                 experimental_bound=CODATA_STEFAN,
                 bound_type="measured",
                 bound_source="CODATA2022",
+                eml_description="EML: ops.mul(sigma_bulk, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))",
             ),
         ]
 

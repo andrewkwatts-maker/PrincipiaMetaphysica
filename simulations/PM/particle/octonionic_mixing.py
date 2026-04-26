@@ -744,9 +744,9 @@ class OctonionicMixing(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This is the deep answer to why quark mixing is small and lepton mixing "
+                    "<Speculation>This is the deep answer to why quark mixing is small and lepton mixing "
                     "is large: it is NOT separate physics, but the SAME octonionic structure "
-                    "viewed through different dimensional projections."
+                    "viewed through different dimensional projections.</Speculation>"
                 )
             ),
             ContentBlock(
@@ -835,6 +835,13 @@ class OctonionicMixing(SimulationBase):
                         "Wilson (2009): Octonions, in 'The Princeton Companion to Mathematics'"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.arctan(ops.inv(phi_golden))"
+                ),
+                eml_description=(
+                    "EML: ops.arctan(ops.inv(phi_golden)) "
+                    "— golden angle from octonionic Fano plane geometry"
+                ),
                 terms={
                     "theta_g": "Golden angle ~ 31.72 degrees",
                     "phi": "Golden ratio (1+sqrt(5))/2 ~ 1.618",
@@ -881,6 +888,13 @@ class OctonionicMixing(SimulationBase):
                         "Acharya et al. (2008): Yukawa couplings from M-theory"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.mul(Sigma_triality, psi)"
+                ),
+                eml_description=(
+                    "EML: ops.mul(Sigma_triality, psi) — triality automorphism acting on CKM sector; "
+                    "V_us = ops.mul(eml_scalar(0.223), xi_epsilon)"
+                ),
                 terms={
                     "V_us": "Cabibbo angle ~ 0.223",
                     "V_cb": "c-b mixing ~ 0.040",
@@ -930,6 +944,13 @@ class OctonionicMixing(SimulationBase):
                         "Harrison-Perkins-Scott (2002): Tribimaximal mixing"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.add(V_CKM, ops.mul(ops.neg(eml_scalar(1.0)), U_PMNS))"
+                ),
+                eml_description=(
+                    "EML: ops.add(V_CKM, ops.mul(ops.neg(eml_scalar(1.0)), U_PMNS)) "
+                    "— CKM/PMNS unification: both from same G2 octonionic structure"
+                ),
                 terms={
                     "theta_23": "Atmospheric angle ~ 49.75 degrees",
                     "theta_12": "Solar angle ~ 33.59 degrees",
@@ -971,6 +992,13 @@ class OctonionicMixing(SimulationBase):
                         "Joyce (2000): Compact manifolds with special holonomy"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.mul(Sigma_triality, psi)"
+                ),
+                eml_description=(
+                    "EML: ops.mul(Sigma_triality, psi) — triality automorphism split: "
+                    "3D associative (quarks) vs 4D co-associative (leptons)"
+                ),
                 terms={
                     "Phi": "Associative 3-form on G2 manifold",
                     "*Phi": "Co-associative 4-form (Hodge dual)",
@@ -1006,6 +1034,13 @@ class OctonionicMixing(SimulationBase):
                         "This work: Dimensional scaling of mixing"
                     ]
                 },
+                eml_tree_str=(
+                    "ops.pow(ops.div(eml_scalar(4.0), eml_scalar(3.0)), eml_scalar(1.5))"
+                ),
+                eml_description=(
+                    "EML: ops.pow(ops.div(eml_scalar(4.0), eml_scalar(3.0)), eml_scalar(1.5)) "
+                    "— dimensional ratio (4/3)^(3/2) ≈ 1.54 for PMNS/CKM mixing magnitude"
+                ),
                 terms={
                     "4/3": "Dimension ratio (4D leptons / 3D quarks)",
                     "3/2": "Scaling exponent from rotational degrees of freedom",

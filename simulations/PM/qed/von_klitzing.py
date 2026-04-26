@@ -160,6 +160,11 @@ class VonKlitzingV17(SimulationBase):
                     "R_K = h/e^2 sets the quantum of Hall resistance via the TKNN (Chern number) "
                     "invariant; its topological protection explains ~10^-10 relative precision."
                 ),
+                eml_tree_str="ops.mul(rk_bulk, ops.add(eml_scalar(1.0), epsilon))",
+                eml_description=(
+                    "EML Direct Expansion: R_K = ops.mul(rk_bulk, ops.add(eml_scalar(1.0), epsilon)). "
+                    "Reflects R_K = h/e^2 where h expands by (1+epsilon) and e is topologically invariant."
+                ),
                 derivation={
                     "steps": [
                         "Start from the Decad-Cubic Projection Engine: epsilon = 1/(ENNOIA * DECAD^2) = 1/28800",
@@ -189,6 +194,7 @@ class VonKlitzingV17(SimulationBase):
                 status="DERIVED",
                 description="Von Klitzing constant in bulk (before expansion)",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(rk_manifest, ops.add(eml_scalar(1.0), epsilon))",
             ),
             Parameter(
                 path="qed.manifest_von_klitzing",
@@ -199,6 +205,7 @@ class VonKlitzingV17(SimulationBase):
                 experimental_bound=CODATA_RK,
                 bound_type="measured",
                 bound_source="CODATA2022",
+                eml_description="EML: ops.mul(rk_bulk, ops.add(eml_scalar(1.0), epsilon)) — h/e^2 expands with h",
             ),
         ]
 

@@ -514,11 +514,13 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This dual-mass interpretation transforms what was previously a "
-                        "'phenomenological input' into a topological proof. The Higgs boson "
-                        "detected at the LHC is the LOCAL BRANE PROJECTION of the 26D vacuum "
-                        "tension, validating both the higher-dimensional structure and the "
-                        "specific b₃=24 G₂ topology."
+                        "<Speculation>This dual-mass interpretation has been proposed as transforming "
+                        "what was previously a 'phenomenological input' into a topological derivation. "
+                        "However, the brane partition calculation is classified FITTED (3 free parameters "
+                        "for 1 output), so the agreement with the 125 GeV measurement reflects parameter "
+                        "tuning rather than a parameter-free topological proof. The Higgs boson "
+                        "detected at the LHC may be the local 4D projection of a higher-dimensional "
+                        "vacuum tension, but this identification requires independent confirmation.</Speculation>"
                     )
                 ),
             ],
@@ -539,6 +541,8 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 plain_text="M_H_bulk = sqrt(8π² v² λ_eff) ≈ 414 GeV",
                 category="GEOMETRIC",
                 description="Total 26D manifold Higgs tension from G2 attractor mechanism",
+                eml_tree_str="ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), lambda_eff_attractor)))",
+                eml_description="EML: M_H_bulk = sqrt(8π²·v²·λ_eff) — 26D bulk tension from attractor via ops.sqrt of ops.mul chain",
                 inputParams=["moduli.re_t_attractor", "higgs.vev_yukawa", "yukawa.y_top"],
                 outputParams=["higgs.m_higgs_bulk"],
                 input_params=["moduli.re_t_attractor", "higgs.vev_yukawa", "yukawa.y_top"],
@@ -590,6 +594,8 @@ class HiggsBranePartitionSimulation(SimulationBase):
                     "with the ratio k_gimel/pi encoding the G2 holonomy contribution and the "
                     "mirror overlap eta capturing the dual-shadow geometry correction."
                 ),
+                eml_tree_str="ops.div(ops.div(k_gimel, eml_pi()), eta)",
+                eml_description="EML: Scaling = (k_gimel/π)/η — brane partition factor as ops.div(ops.div(k_gimel, eml_pi()), mirror_overlap)",
                 inputParams=["topology.k_gimel"],
                 outputParams=["higgs.effective_scaling"],
                 input_params=["topology.k_gimel"],
@@ -628,6 +634,8 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 plain_text="M_H_local = M_H_bulk / Scaling = 414.2 / 3.31 = 125.1 GeV",
                 category="GEOMETRIC",
                 description="Observed Higgs mass as 4D brane projection of 26D bulk tension",
+                eml_tree_str="ops.div(M_H_bulk, ops.div(ops.div(k_gimel, eml_pi()), eta))",
+                eml_description="EML: M_H_local = ops.div(M_H_bulk, Scaling) — 4D Higgs mass as brane projection of 26D bulk tension",
                 inputParams=["higgs.m_higgs_bulk", "higgs.effective_scaling"],
                 outputParams=["higgs.m_higgs_local"],
                 input_params=["higgs.m_higgs_bulk", "higgs.effective_scaling"],
@@ -698,6 +706,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                     "Observable Higgs mass as 4D brane projection of bulk tension. "
                     "M_H_local = M_H_bulk / (k_gimel/π/η) = 414.2/3.31 = 125.1 GeV"
                 ),
+                eml_description="EML: ops.div(M_H_bulk, ops.div(ops.div(k_gimel, eml_pi()), eta)) — 4D brane-projected Higgs mass (FITTED: 3 free params for 1 output)",
                 derivation_formula="higgs-local-mass",
                 experimental_bound=125.25,
                 uncertainty=0.17,

@@ -763,7 +763,10 @@ class EvolutionEngineV16(SimulationBase):
                     "H0_late": "Local Hubble constant (73.04 km/s/Mpc)",
                     "b3": "Third Betti number (24)",
                     "z": "Cosmological redshift"
-                }
+                },
+                eml_latex=r"\mathrm{ops.div}(\mathrm{ops.mul}(H_0^{late},\, \mathrm{ops.pow}(\mathrm{ops.add}(\mathrm{eml\_scalar}(1), z),\, \mathrm{eml\_scalar}(1.5))),\, \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.div}(\mathrm{ops.log}(\mathrm{ops.add}(\mathrm{eml\_scalar}(1), z)),\, \mathrm{eml\_scalar}(24))))",
+                eml_tree_str="ops.div(ops.mul(H0_late, ops.pow(ops.add(eml_scalar(1.0), z), eml_scalar(1.5))), ops.add(eml_scalar(1.0), ops.div(ops.log(ops.add(eml_scalar(1.0), z)), eml_scalar(24.0))))",
+                eml_description="EML: H(z) = ops.div(H0_late*(1+z)^1.5, ops.add(1, ops.div(log(1+z), b3))) — log-scaling Hubble evolution",
             ),
             Formula(
                 id="relaxation-factor",
@@ -800,7 +803,10 @@ class EvolutionEngineV16(SimulationBase):
                 terms={
                     "relaxation": "Denominator correction factor",
                     "b3": "Third Betti number (24)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.div}(\mathrm{ops.log}(\mathrm{ops.add}(\mathrm{eml\_scalar}(1), z)),\, \mathrm{eml\_scalar}(24)))",
+                eml_tree_str="ops.add(eml_scalar(1.0), ops.div(ops.log(ops.add(eml_scalar(1.0), z)), eml_scalar(24.0)))",
+                eml_description="EML: relaxation(z) = ops.add(1, ops.div(log(1+z), b3)) — logarithmic Ricci flow relaxation",
             ),
             Formula(
                 id="ricci-flow-evolution",
@@ -839,7 +845,10 @@ class EvolutionEngineV16(SimulationBase):
                     "R(z)": "Ricci curvature at redshift z",
                     "R0": "Initial curvature = b3/k_gimel^2",
                     "tau_ricci": "Flow timescale = k_gimel/b3 = 0.513"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(R_0,\, \mathrm{ops.exp}(\mathrm{ops.neg}(\mathrm{ops.div}(z, \tau_{Ricci}))))",
+                eml_tree_str="ops.mul(R0, ops.exp(ops.neg(ops.div(z, tau_ricci))))",
+                eml_description="EML: R(z) = ops.mul(R0, ops.exp(ops.neg(ops.div(z, tau_ricci)))) — Ricci curvature decay",
             ),
         ]
 
@@ -863,7 +872,8 @@ class EvolutionEngineV16(SimulationBase):
                 experimental_bound=73.04,
                 bound_type="central_value",
                 bound_source="SH0ES 2025",
-                uncertainty=1.04
+                uncertainty=1.04,
+                eml_description="EML: ops.div(H0_late * ops.pow(1+z, 1.5), ops.add(1, ops.div(log(1+z), b3))) at z=0 — unified evolution engine H0"
             ),
             Parameter(
                 path="cosmology.H0_early_normalized",

@@ -343,6 +343,49 @@ try:
 except ImportError:
     PAIR_SHIELDING_AVAILABLE = False
 
+# v1.0 — Exceptional Algebra: Freudenthal/E7/E8/Clifford (depends on Phase 1)
+try:
+    from simulations.PM.algebra.freudenthal_triple import FreudenthalTripleSimulation
+    FREUDENTHAL_AVAILABLE = True
+except ImportError:
+    FREUDENTHAL_AVAILABLE = False
+
+try:
+    from simulations.PM.algebra.e7_representation import E7RepresentationSimulation
+    E7_REP_AVAILABLE = True
+except ImportError:
+    E7_REP_AVAILABLE = False
+
+try:
+    from simulations.PM.algebra.gaugino_condensation import GauginoCondensationSimulation
+    GAUGINO_AVAILABLE = True
+except ImportError:
+    GAUGINO_AVAILABLE = False
+
+try:
+    from simulations.PM.algebra.e8x8_splitting import E8xE8SplittingSimulation
+    E8XE8_AVAILABLE = True
+except ImportError:
+    E8XE8_AVAILABLE = False
+
+try:
+    from simulations.PM.algebra.clifford_unification import CliffordUnificationSimulation
+    CLIFFORD_UNIFICATION_AVAILABLE = True
+except ImportError:
+    CLIFFORD_UNIFICATION_AVAILABLE = False
+
+try:
+    from simulations.PM.paper.appendices.appendix_clifford_algebra import CliffordAlgebraAppendix
+    CLIFFORD_APPENDIX_AVAILABLE = True
+except ImportError:
+    CLIFFORD_APPENDIX_AVAILABLE = False
+
+try:
+    from simulations.PM.algebra.neutrino_algebraic import NeutrinoAlgebraicSimulation
+    NEUTRINO_ALGEBRAIC_AVAILABLE = True
+except ImportError:
+    NEUTRINO_ALGEBRAIC_AVAILABLE = False
+
 # Phase 2 - Core physics (depends on Phase 1)
 from simulations.PM.particle.fermion_generations import FermionGenerationsV16
 from simulations.PM.particle.chirality import ChiralitySpinorSimulation
@@ -991,7 +1034,17 @@ class SimulationRunner:
                 ProtonDecaySimulation(),
                 HiggsMassSimulation(),
                 HiggsBranePartitionSimulation(),  # v16.2: Brane-partition local Higgs mass
-            ] + ([YukawaTexturesV18()] if YUKAWA_V18_AVAILABLE else []) + ([HiggsVEVRefinedV18()] if HIGGS_VEV_V18_AVAILABLE else []) + ([MassRatioSimulation()] if MASS_RATIO_AVAILABLE else []),
+            ] + ([YukawaTexturesV18()] if YUKAWA_V18_AVAILABLE else []) + ([HiggsVEVRefinedV18()] if HIGGS_VEV_V18_AVAILABLE else []) + ([MassRatioSimulation()] if MASS_RATIO_AVAILABLE else []) + (
+                # v1.0 Exceptional Algebra: Freudenthal/E7/E8/Clifford (depend on topology.elder_kads)
+                # Dependency order: freudenthal → e7_rep → gaugino → e8x8 → clifford → clifford_appendix
+                ([FreudenthalTripleSimulation()] if FREUDENTHAL_AVAILABLE else []) +
+                ([E7RepresentationSimulation()] if E7_REP_AVAILABLE else []) +
+                ([GauginoCondensationSimulation()] if GAUGINO_AVAILABLE else []) +
+                ([E8xE8SplittingSimulation()] if E8XE8_AVAILABLE else []) +
+                ([CliffordUnificationSimulation()] if CLIFFORD_UNIFICATION_AVAILABLE else []) +
+                ([CliffordAlgebraAppendix()] if CLIFFORD_APPENDIX_AVAILABLE else []) +
+                ([NeutrinoAlgebraicSimulation()] if NEUTRINO_ALGEBRAIC_AVAILABLE else [])
+            ),
             3: [
                 CosmologyIntroV16(),
                 DarkEnergyV16(),
@@ -1269,19 +1322,22 @@ class SimulationRunner:
 
             if not self.registry.has_param("topology.elder_kads"):
                 self.registry.set_param("topology.elder_kads", 24,
-                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
+                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC",
+                                         metadata={"eml_description": "EML: eml_scalar(24) — b3 is the foundational topological seed; all PM constants derive from it"})
 
             # Canonical chi_eff = 144 (full manifold Euler characteristic)
             # mephorash_chi = 144 gives n_gen = 3: 144/48 = 3
             if not self.registry.has_param("topology.mephorash_chi"):
                 self.registry.set_param("topology.mephorash_chi", 144,
-                                         source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC")
+                                         source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC",
+                                         metadata={"eml_description": "EML: ops.mul(eml_scalar(2), ops.add(h11, ops.neg(h21), h31)) = ops.mul(eml_scalar(2), eml_scalar(72)) = 144"})
 
             # Pre-compute k_gimel for early use
             k_gimel = 24 / 2 + 1 / np.pi
             if not self.registry.has_param("topology.k_gimel"):
                 self.registry.set_param("topology.k_gimel", k_gimel,
-                                         source="GEOMETRIC:k_gimel_formula", status="GEOMETRIC")
+                                         source="GEOMETRIC:k_gimel_formula", status="GEOMETRIC",
+                                         metadata={"eml_description": "EML: ops.add(ops.div(eml_scalar(24), eml_scalar(2)), ops.inv(eml_pi())) = b3/2 + 1/π"})
 
             if self.verbose:
                 print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")

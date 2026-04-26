@@ -855,7 +855,10 @@ class DarkEnergyEvolution(SimulationBase):
                     "w0": "Present-day equation of state",
                     "b3": "Third Betti number (24 for TCS G2)",
                     "Phi": "G2 associative 3-form"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(1)),\, \mathrm{ops.inv}(\mathrm{eml\_scalar}(24)))",
+                eml_tree_str="ops.add(ops.neg(eml_scalar(1.0)), ops.inv(eml_scalar(24.0)))",
+                eml_description="EML: w0 = ops.add(ops.neg(1), ops.inv(b3)) — dark energy equation of state from b3 topology",
             ),
             Formula(
                 id="thawing-wa-derivation",
@@ -898,7 +901,10 @@ class DarkEnergyEvolution(SimulationBase):
                     "b3": "Third Betti number (24)",
                     "Φ": "Associative 3-form on G2",
                     "Ψ": "Co-associative 4-form, Ψ = *Φ"
-                }
+                },
+                eml_latex=r"\mathrm{ops.neg}(\mathrm{ops.inv}(\mathrm{ops.sqrt}(\mathrm{eml\_scalar}(24))))",
+                eml_tree_str="ops.neg(ops.inv(ops.sqrt(eml_scalar(24.0))))",
+                eml_description="EML: w_a = ops.neg(ops.inv(ops.sqrt(b3))) — dynamical dark energy amplitude",
             ),
             Formula(
                 id="cpl-parametrization",
@@ -940,7 +946,10 @@ class DarkEnergyEvolution(SimulationBase):
                     "z": "Cosmological redshift",
                     "w0": "Present-day value (-0.958)",
                     "wa": "Evolution parameter (-0.816, from 4-form projection)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(w_0,\, \mathrm{ops.mul}(w_a,\, \mathrm{ops.div}(z,\, \mathrm{ops.add}(\mathrm{eml\_scalar}(1), z))))",
+                eml_tree_str="ops.add(w0, ops.mul(wa, ops.div(z, ops.add(eml_scalar(1.0), z))))",
+                eml_description="EML: CPL redshift evolution as nested ops tree",
             ),
             Formula(
                 id="torsional-leakage-formula",
@@ -977,7 +986,10 @@ class DarkEnergyEvolution(SimulationBase):
                     "epsilon_T": "Torsional leakage coefficient (0.133)",
                     "b3": "Third Betti number (24)",
                     "chi_eff": "Effective Euler characteristic (144)"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.div}(\mathrm{eml\_scalar}(b_3), \chi_{\mathrm{eff}}),\, \mathrm{ops.sub}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.inv}(\mathrm{ops.sqrt}(\mathrm{eml\_scalar}(24)))))",
+                eml_tree_str="ops.mul(ops.div(eml_scalar(24.0), chi_eff), ops.sub(eml_scalar(1.0), ops.inv(ops.sqrt(eml_scalar(24.0)))))",
+                eml_description="EML: epsilon_T = ops.mul(ops.div(b3, chi_eff), ops.sub(1, ops.inv(ops.sqrt(b3)))) — torsional leakage coefficient",
             ),
             Formula(
                 id="ricci-thawing-mechanism",
@@ -1020,7 +1032,10 @@ class DarkEnergyEvolution(SimulationBase):
                     "Ric": "Ricci curvature",
                     "Phi": "Associative 3-form",
                     "tau_Phi": "Relaxation timescale"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(2)),\, \mathrm{Ric}(g)) \implies \mathrm{ops.mul}(\mathrm{ops.neg}(\tau_\Phi),\, \Phi)",
+                eml_tree_str="ops.mul(ops.neg(eml_scalar(2.0)), Ric_g)  # dg/dt = -2*Ric(g) drives dPhi/dt = -tau_Phi*Phi",
+                eml_description="EML: Ricci flow dg/dt = ops.mul(ops.neg(2), Ric_g) implies 3-form relaxation dPhi/dt = ops.mul(ops.neg(tau_Phi), Phi)",
             ),
             Formula(
                 id="breathing-variance-reduction",
@@ -1063,7 +1078,10 @@ class DarkEnergyEvolution(SimulationBase):
                     r"n_{\text{faces}}": {"description": "Number of Kahler faces per shadow = h^{1,1} = 4"},
                     r"n_{\text{gen}}": {"description": "Number of fermion generations = chi_eff/48 = 3"},
                     r"\chi_{\text{eff}}": {"description": "Effective Euler characteristic = 144"}
-                }
+                },
+                eml_latex=r"\mathrm{ops.div}(\sigma_{\mathrm{single}},\, \mathrm{ops.sqrt}(\mathrm{ops.mul}(\mathrm{eml\_scalar}(12),\, \mathrm{eml\_scalar}(4))))",
+                eml_tree_str="ops.div(sigma_single, ops.sqrt(ops.mul(eml_scalar(12.0), eml_scalar(4.0))))",
+                eml_description="EML: sigma_eff = ops.div(sigma_single, ops.sqrt(ops.mul(n_pairs, n_faces))) — variance reduction over 48 independent bridge channels",
             ),
             Formula(
                 id="4face-w0-prediction",
@@ -1093,7 +1111,10 @@ class DarkEnergyEvolution(SimulationBase):
                 terms={
                     r"w_0": {"description": "Dark energy equation of state at z=0; w=-1 is pure cosmological constant"},
                     r"b_3": {"description": "Third Betti number = 24 (total associative 3-cycles across all faces)"}
-                }
+                },
+                eml_latex=r"\mathrm{ops.div}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(23)),\, \mathrm{eml\_scalar}(24))",
+                eml_tree_str="ops.div(ops.neg(eml_scalar(23.0)), eml_scalar(24.0))",
+                eml_description="EML: w0 = ops.div(ops.neg(23), 24) = -23/24 from face-ratio topology",
             ),
             Formula(
                 id="wa-nonlinear-correction",
@@ -1142,7 +1163,10 @@ class DarkEnergyEvolution(SimulationBase):
                     r"\varepsilon_{\text{NL}}": {"description": "Non-linear face-face interaction parameter = 1/4"},
                     r"n_{\text{faces}}": {"description": "Number of Kahler faces = h^{1,1} = 4"},
                     r"b_3": {"description": "Third Betti number = 24"}
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(w_a,\, \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.mul}(\alpha_{\mathrm{leak}}, \varepsilon_{NL})))",
+                eml_tree_str="ops.mul(wa, ops.add(eml_scalar(1.0), ops.mul(alpha_leak, eps_NL)))",
+                eml_description="EML: nonlinear wa correction via ops.mul(wa, ops.add(1, ops.mul(alpha_leak, eps)))",
             ),
         ]
 
@@ -1184,7 +1208,8 @@ class DarkEnergyEvolution(SimulationBase):
                 experimental_bound=w0_desi,
                 bound_type="central_value",
                 bound_source="DESI2025",
-                uncertainty=w0_desi_unc
+                uncertainty=w0_desi_unc,
+                eml_description="EML: ops.add(ops.neg(eml_scalar(1)), ops.inv(eml_scalar(24))) = -23/24 ≈ -0.9583"
             ),
             Parameter(
                 path="cosmology.wa_thawing",
@@ -1203,7 +1228,8 @@ class DarkEnergyEvolution(SimulationBase):
                 experimental_bound=wa_desi,
                 bound_type="central_value",
                 bound_source="DESI2025",
-                uncertainty=wa_desi_unc
+                uncertainty=wa_desi_unc,
+                eml_description="EML: ops.mul(ops.neg(ops.inv(ops.sqrt(eml_scalar(24)))), eml_scalar(4)) — 4-form projection"
             ),
             Parameter(
                 path="cosmology.z_thaw",
@@ -1216,7 +1242,8 @@ class DarkEnergyEvolution(SimulationBase):
                     "Beyond this redshift, w(z) approaches w0 + wa."
                 ),
                 derivation_formula="cpl-parametrization",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.sqrt(eml_scalar(24.0)) — thawing redshift from sqrt(b3)"
             ),
             Parameter(
                 path="cosmology.torsional_leakage",
@@ -1230,7 +1257,8 @@ class DarkEnergyEvolution(SimulationBase):
                     "(~13.3% per Hubble time). Connects to v15.2 torsional coupling."
                 ),
                 derivation_formula="torsional-leakage-formula",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.div(b3, chi_eff), ops.add(1, ops.neg(ops.inv(ops.sqrt(b3))))) — torsional leakage coefficient"
             ),
             Parameter(
                 path="cosmology.w0_desi_sigma",
@@ -1683,7 +1711,7 @@ class DarkEnergyEvolution(SimulationBase):
                 f"Equation of state: w = -1 + (1/φ²) × ⟨ρ_breath⟩/max(ρ_breath) ≈ -0.958\n"
                 f"Variance reduction: σ_eff = σ_single/√{n_pairs} ≈ 0.29 σ_single\n"
                 f"WHY {n_pairs} PAIRS: b₃ = {b3} associative 3-cycles → {b3}/2 = {n_pairs} normal/mirror pairs\n"
-                f"Consciousness connection: {n_pairs} I/O channels for robust experience"
+                f"<Speculation>Consciousness connection: {n_pairs} I/O channels for robust experience</Speculation>"
             ),
             "prediction": (
                 f"v22 Testable predictions: (1) w0 = -23/{b3} exactly from topology. "

@@ -301,6 +301,13 @@ class AxionDMV18(SimulationBase):
                 label="(7.1)",
                 latex=r"f_a = \frac{M_{\rm Pl}}{k_\gimel^6} \approx 3.5 \times 10^{12}\,\text{GeV}",
                 plain_text="f_a = M_Pl / k_gimel^6 ~ 3.5e12 GeV",
+                eml_tree_str=(
+                    "ops.div(M_Pl, ops.pow(k_gimel, eml_scalar(6.0)))"
+                ),
+                eml_description=(
+                    "EML: f_a = ops.div(M_Pl, ops.pow(k_gimel, eml_scalar(6.0))) "
+                    "— axion decay constant from 6D moduli space of the associative 3-cycle"
+                ),
                 category="PREDICTED",
                 description=(
                     "Axion decay constant derived from the Planck scale as "
@@ -348,6 +355,13 @@ class AxionDMV18(SimulationBase):
                 label="(7.2)",
                 latex=r"m_a = 5.7\,\mu\text{eV} \times \frac{10^{12}\,\text{GeV}}{f_a} \approx 1.6\,\mu\text{eV}",
                 plain_text="m_a = 5.7 μeV × (10^12 GeV / f_a) ~ 1.6 μeV",
+                eml_tree_str=(
+                    "ops.mul(eml_scalar(5.7e-6), ops.div(eml_scalar(1.0e12), f_a))"
+                ),
+                eml_description=(
+                    "EML: m_a = ops.mul(eml_scalar(5.7e-6), ops.div(eml_scalar(1.0e12), f_a)) "
+                    "— QCD axion mass from instanton dynamics"
+                ),
                 category="PREDICTED",
                 description=(
                     "QCD axion mass from instanton dynamics. "
@@ -390,6 +404,17 @@ class AxionDMV18(SimulationBase):
                 label="(7.3)",
                 latex=r"\Omega_a h^2 = 0.12 \times \left(\frac{f_a}{10^{12}}\right)^{1.167} \times \theta_i^2",
                 plain_text="Omega_a h^2 = 0.12 × (f_a / 10^12)^1.167 × theta_i^2",
+                eml_tree_str=(
+                    "ops.mul(ops.mul(eml_scalar(0.12), "
+                    "ops.pow(ops.div(f_a, eml_scalar(1.0e12)), eml_scalar(1.167))), "
+                    "ops.pow(theta_i, eml_scalar(2.0)))"
+                ),
+                eml_description=(
+                    "EML: Omega_a = ops.mul(ops.mul(eml_scalar(0.12), "
+                    "ops.pow(ops.div(f_a, eml_scalar(1.0e12)), eml_scalar(1.167))), "
+                    "ops.pow(theta_i, eml_scalar(2.0))) "
+                    "— axion relic density from vacuum misalignment mechanism"
+                ),
                 category="PREDICTED",
                 description=(
                     "Axion relic density from misalignment mechanism. "
@@ -438,6 +463,15 @@ class AxionDMV18(SimulationBase):
                     r" = \frac{1.08}{f_a}"
                 ),
                 plain_text="g_agg = (alpha_leak / (pi * f_a)) * (chi_eff / 24) = 1.08 / f_a",
+                eml_tree_str=(
+                    "ops.mul(ops.div(alpha_leak, ops.mul(eml_pi(), f_a)), "
+                    "ops.div(chi_eff, eml_scalar(24.0)))"
+                ),
+                eml_description=(
+                    "EML: g_agg = ops.mul(ops.div(alpha_leak, ops.mul(eml_pi(), f_a)), "
+                    "ops.div(chi_eff, eml_scalar(24.0))) "
+                    "— axion-gluon portal coupling from G2 flux threading"
+                ),
                 category="PREDICTED",
                 description=(
                     "Axion-gluon portal coupling from G2 flux threading. In the G2 "
@@ -519,6 +553,13 @@ class AxionDMV18(SimulationBase):
                     "g_{a gamma gamma} = g_agg * (alpha_em / pi) * (E/N) "
                     "where E/N ~ 1.92 (Primakoff coupling)"
                 ),
+                eml_tree_str=(
+                    "ops.mul(ops.mul(g_agg, ops.div(alpha_em, eml_pi())), E_over_N)"
+                ),
+                eml_description=(
+                    "EML: g_agammagamma = ops.mul(ops.mul(g_agg, ops.div(alpha_em, eml_pi())), E_over_N) "
+                    "— axion-photon Primakoff coupling via electromagnetic dressing"
+                ),
                 category="PREDICTED",
                 description=(
                     "Axion-photon (Primakoff) coupling derived from the axion-gluon "
@@ -595,6 +636,17 @@ class AxionDMV18(SimulationBase):
                 plain_text=(
                     "Omega_a h^2 |_{3-face} = 3 * alpha_leak^2 * 0.12 "
                     "* (f_a / 10^12)^2 * (m_a / 6 ueV)^{1/2}"
+                ),
+                eml_tree_str=(
+                    "ops.mul(ops.mul(ops.mul(eml_scalar(3.0), ops.pow(alpha_leak, eml_scalar(2.0))), "
+                    "ops.mul(eml_scalar(0.12), ops.pow(ops.div(f_a, eml_scalar(1.0e12)), eml_scalar(2.0)))), "
+                    "ops.pow(ops.div(m_a, eml_scalar(6.0e-6)), eml_scalar(0.5)))"
+                ),
+                eml_description=(
+                    "EML: Omega_3face = ops.mul(eml_scalar(3.0), ops.mul(ops.pow(alpha_leak, eml_scalar(2.0)), "
+                    "ops.mul(eml_scalar(0.12), ops.mul(ops.pow(ops.div(f_a, eml_scalar(1.0e12)), eml_scalar(2.0)), "
+                    "ops.pow(ops.div(m_a, eml_scalar(6.0e-6)), eml_scalar(0.5)))))) "
+                    "— three hidden-face relic density from misalignment"
                 ),
                 category="PREDICTED",
                 description=(

@@ -1,25 +1,25 @@
 {
   "version": "24.2",
-  "generated_at": "2026-04-25T10:09:08.197337+00:00",
+  "generated_at": "2026-04-26T00:24:30.831779+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
-    "total_simulations": 78,
-    "agreed": 70,
+    "total_simulations": 85,
+    "agreed": 81,
     "failed": 0,
-    "not_implemented": 7,
+    "not_implemented": 4,
     "errors": 0,
-    "skipped": 1,
+    "skipped": 0,
     "global_max_deviation": 3.808798771726061e-12,
     "all_agree": true
   },
   "simulations": {
     "abstract_v17_2": {
-      "status": "SKIP",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 33,
+      "params_agreed": 33,
       "max_deviation": 0.0,
-      "note": "run() returned None \u2014 no numeric outputs to compare"
+      "note": ""
     },
     "introduction_v16_0": {
       "status": "AGREE",
@@ -50,11 +50,11 @@
       "note": ""
     },
     "unitary_filter_legacy": {
-      "status": "NOT_IMPLEMENTED",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 6,
+      "params_agreed": 6,
       "max_deviation": 0.0,
-      "note": "UnitaryFilterSimulation.run_eml() not yet implemented"
+      "note": ""
     },
     "leech_partition_v16_2": {
       "status": "AGREE",
@@ -85,11 +85,11 @@
       "note": ""
     },
     "alpha_rigor_v16_1": {
-      "status": "NOT_IMPLEMENTED",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 3,
+      "params_agreed": 3,
       "max_deviation": 0.0,
-      "note": "AlphaRigorSimulation.run_eml() not yet implemented"
+      "note": ""
     },
     "fermion_generations_v16_0": {
       "status": "AGREE",
@@ -148,11 +148,60 @@
       "note": ""
     },
     "mass_ratio_v23_0": {
-      "status": "NOT_IMPLEMENTED",
+      "status": "AGREE",
+      "params_checked": 3,
+      "params_agreed": 3,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "freudenthal_triple_v1_0": {
+      "status": "AGREE",
+      "params_checked": 4,
+      "params_agreed": 4,
+      "max_deviation": 1.249000902703301e-16,
+      "note": ""
+    },
+    "e7_representation_v1_0": {
+      "status": "AGREE",
+      "params_checked": 4,
+      "params_agreed": 4,
+      "max_deviation": 1.3597399555105182e-16,
+      "note": ""
+    },
+    "gaugino_condensation_v1_0": {
+      "status": "AGREE",
+      "params_checked": 8,
+      "params_agreed": 8,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "e8x8_splitting_v1_0": {
+      "status": "AGREE",
+      "params_checked": 4,
+      "params_agreed": 4,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "clifford_unification_v1_0": {
+      "status": "AGREE",
+      "params_checked": 4,
+      "params_agreed": 4,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "clifford_algebra_appendix_v1_0": {
+      "status": "AGREE",
       "params_checked": 0,
       "params_agreed": 0,
       "max_deviation": 0.0,
-      "note": "MassRatioSimulation.run_eml() not yet implemented"
+      "note": ""
+    },
+    "neutrino_algebraic_v24_0": {
+      "status": "AGREE",
+      "params_checked": 7,
+      "params_agreed": 7,
+      "max_deviation": 1.7346079028797854e-15,
+      "note": ""
     },
     "cosmology_intro_v16_0": {
       "status": "AGREE",

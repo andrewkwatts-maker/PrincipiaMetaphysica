@@ -256,6 +256,11 @@ class AppendixUGammaCorrection(SimulationBase):
                     "Factor 2 from T^1 timelike fiber signature normalization. "
                     "alpha_T = D_total/D_string = 27/10 = 2.7 (algebraic identity)."
                 ),
+                eml_tree_str="ops.div(ops.mul(eml_scalar(27.0), eml_scalar(24.0)), ops.mul(eml_scalar(2.0), ops.mul(eml_scalar(10.0), eml_pi())))",
+                eml_description=(
+                    "EML gamma_correction: ops.div(ops.mul(D_total, b3), ops.mul(2, ops.mul(D_string, pi))). "
+                    "= ops.div(ops.mul(27, 24), ops.mul(20, pi)). b3 and pi cancel in the alpha_T simplification."
+                ),
                 inputParams=["topology.elder_kads"],
                 outputParams=["appendix_u.gamma_geometric"],
                 input_params=["topology.elder_kads"],
@@ -285,6 +290,11 @@ class AppendixUGammaCorrection(SimulationBase):
                     "Thermal time coupling as ratio of spacetime dimensions. "
                     "b3 and pi cancel completely — algebraic identity. DERIVED: "
                     "factor 2 from T^1 timelike fiber signature."
+                ),
+                eml_tree_str="ops.div(eml_scalar(27.0), eml_scalar(10.0))",
+                eml_description=(
+                    "EML alpha_T simplification: ops.div(D_total, D_string) = ops.div(eml_scalar(27), eml_scalar(10)) = 2.7. "
+                    "b3 and pi cancel algebraically from the gamma_correction formula — pure dimensional ratio."
                 ),
                 inputParams=["topology.elder_kads"],
                 outputParams=["appendix_u.gamma_fitted"],

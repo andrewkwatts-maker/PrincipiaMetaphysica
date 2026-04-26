@@ -340,7 +340,12 @@ class LeechPartitionV16(SimulationBase):
                     type="paragraph",
                     content=(
                         "Since G₂ holonomy preserves octonionic structure, the "
-                        "24-dimensional vacuum state decomposes into octonionic sectors:"
+                        "24-dimensional vacuum state decomposes into octonionic sectors. "
+                        "<Speculation>The physical identification of each octonionic sector "
+                        "with a fermion generation is a conjecture: while the arithmetic "
+                        "24/8 = 3 is exact, the correspondence between lattice sectors "
+                        "and SM generations requires a dynamical mechanism that has not "
+                        "yet been derived from first principles within this framework.</Speculation>"
                     )
                 ),
                 ContentBlock(
@@ -410,7 +415,10 @@ class LeechPartitionV16(SimulationBase):
                 terms={
                     "Lambda_24": "Leech lattice, unique 24D even unimodular lattice with no norm-2 vectors",
                     "Niemeier": "Classification of even unimodular lattices in 24D"
-                }
+                },
+                eml_latex=r"\dim(\Lambda_{24}) = \mathrm{eml\_scalar}(24)",
+                eml_tree_str="eml_scalar(24.0)",
+                eml_description="EML: eml_scalar(24) — Leech lattice dimension is a fixed mathematical constant (Conway 1969 uniqueness theorem)",
             ),
             Formula(
                 id="g2-automorphism-relation",
@@ -437,7 +445,10 @@ class LeechPartitionV16(SimulationBase):
                     "G_2": "Exceptional Lie group of dimension 14 and rank 2",
                     "O": "Octonion algebra, 8D non-associative division algebra",
                     "Aut": "Automorphism group"
-                }
+                },
+                eml_latex=r"\dim(\mathbb{O}) = \mathrm{eml\_scalar}(8),\quad \dim(G_2) = \mathrm{eml\_scalar}(14)",
+                eml_tree_str="eml_scalar(8.0)  # octonion dimension; G2 = Aut(O) is a structural identity not an arithmetic expression",
+                eml_description="EML: eml_scalar(8) for octonion dimension; G2=Aut(O) is a Lie group identity, dim(G2)=eml_scalar(14) — both fixed mathematical constants",
             ),
             Formula(
                 id="octonionic-partition",
@@ -465,7 +476,10 @@ class LeechPartitionV16(SimulationBase):
                     "n_gen": "Number of fermion generations (predicted: 3)",
                     "Lambda_24": "Leech lattice dimension (24)",
                     "O": "Octonion dimension (8)"
-                }
+                },
+                eml_latex=r"n_{gen} = \mathrm{ops.div}(\mathrm{eml\_scalar}(24),\, \mathrm{eml\_scalar}(8)) = 3",
+                eml_tree_str="ops.div(eml_scalar(24.0), eml_scalar(8.0))",
+                eml_description="EML: n_gen = ops.div(eml_scalar(24), eml_scalar(8)) = 3 — exact integer division of Leech dimension by octonion dimension",
             ),
             Formula(
                 id="generation-theorem",
@@ -492,7 +506,10 @@ class LeechPartitionV16(SimulationBase):
                     "24": "Leech lattice dimension (b3)",
                     "3": "Number of fermion generations",
                     "8": "Octonion dimension"
-                }
+                },
+                eml_latex=r"\mathrm{ops.mul}(\mathrm{eml\_scalar}(3),\, \mathrm{eml\_scalar}(8)) = \mathrm{eml\_scalar}(24)",
+                eml_tree_str="ops.eq(ops.mul(eml_scalar(3.0), eml_scalar(8.0)), eml_scalar(24.0))",
+                eml_description="EML: ops.mul(eml_scalar(3), eml_scalar(8)) = 24 — exact partition verifying 3 generations × 8D octonions = 24D Leech lattice with no remainder",
             ),
         ]
 
@@ -518,7 +535,8 @@ class LeechPartitionV16(SimulationBase):
                 experimental_bound=3,
                 bound_type="exact",
                 bound_source="PDG2024",
-                uncertainty=0
+                uncertainty=0,
+                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(8.0)) = 3 — exact integer partition of Leech lattice by octonion dimension",
             ),
             Parameter(
                 path="topology.leech_dim",
@@ -526,7 +544,8 @@ class LeechPartitionV16(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of unique even unimodular lattice: 24",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar(24) — Leech lattice dimension (fixed mathematical constant, Conway 1969)",
             ),
             Parameter(
                 path="topology.octonion_dim",
@@ -534,7 +553,8 @@ class LeechPartitionV16(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of largest normed division algebra: 8",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: eml_scalar(8) — octonion algebra dimension (fixed by Hurwitz theorem, largest normed division algebra)",
             ),
             Parameter(
                 path="topology.partition_exact",
@@ -542,7 +562,8 @@ class LeechPartitionV16(SimulationBase):
                 units="boolean",
                 status="DERIVED",
                 description="Whether 24/8 is exactly integer (True)",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.eq(ops.mod(eml_scalar(24.0), eml_scalar(8.0)), eml_scalar(0.0)) — True because 24 mod 8 = 0",
             ),
             Parameter(
                 path="topology.g2_compatible",
@@ -550,7 +571,8 @@ class LeechPartitionV16(SimulationBase):
                 units="boolean",
                 status="DERIVED",
                 description="Whether G₂ = Aut(O) is satisfied (True)",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: structural boolean — G2=Aut(O) is a Lie group theorem, not an arithmetic expression; evaluates to True by Cartan classification",
             ),
         ]
 

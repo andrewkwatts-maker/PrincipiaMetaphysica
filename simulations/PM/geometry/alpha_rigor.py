@@ -473,8 +473,11 @@ if SCHEMA_AVAILABLE:
                         type="paragraph",
                         content=(
                             "The derived value α<sup>−1</sup> = 137.036 matches the CODATA 2022 "
-                            "experimental value to within 0.008%, demonstrating that "
-                            "electromagnetism is a structural property of the b₃ = 24 G₂ manifold."
+                            "experimental value to within 0.008%. "
+                            "<Speculation>This proximity suggests that electromagnetism may be "
+                            "a structural property of the b₃ = 24 G₂ manifold, though the "
+                            "formula is currently classified as a numerological fit without a "
+                            "rigorous derivation from QFT or M-theory compactification.</Speculation>"
                         )
                     )
                 ],
@@ -538,7 +541,10 @@ if SCHEMA_AVAILABLE:
                             "value": phi,
                             "formula": "(1 + sqrt(5))/2"
                         }
-                    }
+                    },
+                    eml_latex=r"\alpha^{-1} = \mathrm{ops.add}(\mathrm{ops.pow}(k_{\gimel}, 2),\, \mathrm{ops.neg}(\mathrm{ops.div}(b_3, \varphi)),\, \mathrm{ops.div}(\varphi, \mathrm{ops.mul}(4, \pi)))",
+                    eml_tree_str="ops.add(ops.pow(ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())), eml_scalar(2.0)), ops.neg(ops.div(eml_scalar(24.0), ops.div(ops.add(eml_scalar(1.0), ops.sqrt(eml_scalar(5.0))), eml_scalar(2.0)))), ops.div(ops.div(ops.add(eml_scalar(1.0), ops.sqrt(eml_scalar(5.0))), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_pi())))",
+                    eml_description="EML: alpha^-1 = ops.add(ops.pow(k_gimel, 2), ops.neg(ops.div(b3, phi)), ops.div(phi, 4*pi)) where k_gimel = ops.add(ops.div(b3, 2), ops.inv(pi)) — numerological fit using G2 Betti number b3=24",
                 )
             ]
 
@@ -564,7 +570,8 @@ if SCHEMA_AVAILABLE:
                     bound_source="CODATA2022",
                     # Theoretical tolerance: ~0.0005% of value (intrinsic formula precision)
                     # This gives sigma ~ 1.0 for the Geometric Anchors derivation
-                    uncertainty=0.0007
+                    uncertainty=0.0007,
+                    eml_description="EML: ops.add(ops.pow(k_gimel, 2), ops.neg(ops.div(b3, phi)), ops.div(phi, ops.mul(eml_scalar(4.0), eml_pi()))) — Geometric Anchors formula for alpha^-1 using b3=24",
                 ),
                 Parameter(
                     path="electromagnetic.alpha_inv_error",
@@ -578,7 +585,8 @@ if SCHEMA_AVAILABLE:
                         f"(v22.5 adds a 4th term for exact alignment)."
                     ),
                     derivation_formula="alpha-inverse-geometric",
-                    no_experimental_value=True
+                    no_experimental_value=True,
+                    eml_description="EML: ops.abs(ops.add(alpha_inv_derived, ops.neg(eml_scalar(137.035999177)))) — absolute difference from CODATA target",
                 ),
             ]
 
@@ -884,18 +892,10 @@ if SCHEMA_AVAILABLE:
                 },
             ]
 
+        def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+            """EML Math path — identical to run(); paper outputs share computation."""
+            return self.run(registry)
+
 
 if __name__ == "__main__":
     run_alpha_derivation()
-
-
-    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """
-        EML Math computation path.
-
-        This simulation produces geometry outputs. The EML Math representation
-        for this module is in the section text via <EML>...</EML> blocks in
-        get_section_content(). The computed parameter values are identical
-        between Normal Math and EML Math modes.
-        """
-        return self.run(registry)

@@ -771,6 +771,10 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
             )
         }
 
+    def run_eml(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """EML Math path — identical to run(); unitarity check has no separate EML form."""
+        return self.run(registry)
+
 
 # ============================================================================
 # Required Validation Entry for theory_output.json

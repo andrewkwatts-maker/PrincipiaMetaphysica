@@ -199,7 +199,10 @@ class GeometricAnchorsSimulation(SimulationBase):
                     r"\pi": {
                         "description": "Archimedes constant: enters via the volume of the unit sphere in the holonomy projection from G2 to SO(4)"
                     }
-                }
+                },
+                eml_latex=r"k_\gimel = \mathrm{ops.add}(\mathrm{ops.div}(b_3, \mathrm{eml\_scalar}(2)),\, \mathrm{ops.inv}(\mathrm{eml\_pi}()))",
+                eml_tree_str="ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi()))",
+                eml_description="EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) — Gimel constant from b3 and 1/π",
             ),
             Formula(
                 id="alpha-inverse-anchor",
@@ -241,7 +244,20 @@ class GeometricAnchorsSimulation(SimulationBase):
                     r"3k_\gimel": {
                         "description": "Generational coupling: 3 fermion generations times the Gimel constant, representing the full matter sector coupling to the internal geometry"
                     }
-                }
+                },
+                eml_latex=(
+                    r"\alpha^{-1} = \mathrm{ops.sub}(\mathrm{ops.pow}(k_\gimel, 2),\,"
+                    r"\mathrm{ops.div}(b_3, \varphi),\, \mathrm{ops.div}(\varphi, 4\pi),\,"
+                    r"\mathrm{ops.div}(D_{G2}, \mathrm{eml\_scalar}(10^4 - 3k_\gimel)))"
+                ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.pow(eml_scalar(12.3183), eml_scalar(2.0)), "
+                    "ops.neg(ops.div(eml_scalar(24.0), eml_scalar(1.6180))), "
+                    "ops.div(eml_scalar(1.6180), ops.mul(eml_scalar(4.0), eml_pi())), "
+                    "ops.neg(ops.div(eml_scalar(7.0), ops.add(eml_scalar(10000.0), ops.neg(ops.mul(eml_scalar(3.0), eml_scalar(12.3183)))))))"
+                ),
+                eml_description="EML: alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) - 7/(1e4 - 3*k_gimel); all terms ops.add/mul/div/neg/pow on eml_scalars",
             ),
             Formula(
                 id="w0-thawing-anchor",
@@ -270,7 +286,10 @@ class GeometricAnchorsSimulation(SimulationBase):
                         "description": "Third Betti number (= 24): the denominator determines the scale of dark energy deviation from Lambda-CDM",
                         "value": 24
                     }
-                }
+                },
+                eml_latex=r"w_0 = \mathrm{ops.add}(\mathrm{ops.neg}(\mathrm{eml\_scalar}(1)),\, \mathrm{ops.inv}(\mathrm{eml\_scalar}(b_3)))",
+                eml_tree_str="ops.add(ops.neg(eml_scalar(1.0)), ops.inv(eml_scalar(24.0)))",
+                eml_description="EML: ops.add(ops.neg(eml_scalar(1.0)), ops.inv(eml_scalar(24.0))) = -23/24 — Tzimtzum fraction 1/b3",
             ),
             Formula(
                 id="spectral-index-anchor",
@@ -307,7 +326,10 @@ class GeometricAnchorsSimulation(SimulationBase):
                         "description": "Effective number of inflationary e-folds = chi_eff/phi^2 = 55",
                         "value": 55
                     }
-                }
+                },
+                eml_latex=r"n_s = \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.neg}(\mathrm{ops.div}(\mathrm{eml\_scalar}(2), N_{\text{eff}})))",
+                eml_tree_str="ops.add(eml_scalar(1.0), ops.neg(ops.div(eml_scalar(2.0), ops.div(eml_scalar(144.0), ops.pow(eml_scalar(1.6180), eml_scalar(2.0))))))",
+                eml_description="EML: n_s = ops.add(eml_scalar(1), ops.neg(ops.div(eml_scalar(2), N_eff))) where N_eff=chi_eff/phi^2=55",
             ),
             Formula(
                 id="unity-seal-anchor",
@@ -334,7 +356,10 @@ class GeometricAnchorsSimulation(SimulationBase):
                     r"b_3 - 4": {
                         "description": "Reduced Betti count: total associative 3-cycles minus the K3 matching fibres (24 - 4 = 20)"
                     }
-                }
+                },
+                eml_latex=r"I_{\text{unity}} = \mathrm{ops.div}(\mathrm{ops.mul}(k_\gimel, \varphi), \mathrm{eml\_scalar}(20))",
+                eml_tree_str="ops.div(ops.mul(eml_scalar(12.3183), eml_scalar(1.6180)), eml_scalar(20.0))",
+                eml_description="EML: ops.div(ops.mul(eml_scalar(k_gimel), eml_scalar(phi)), eml_scalar(20.0)) — internal consistency ratio ≈ 1",
             ),
             Formula(
                 id="torsion-from-topology-derivation",
@@ -372,7 +397,10 @@ class GeometricAnchorsSimulation(SimulationBase):
                         "description": "Effective Euler characteristic (= 144 = b3^2/4): measures total topological complexity of the G2 manifold",
                         "value": 144
                     }
-                }
+                },
+                eml_latex=r"T_\omega = \mathrm{ops.sqrt}(\mathrm{ops.div}(b_3, \chi_{\text{eff}}))",
+                eml_tree_str="ops.sqrt(ops.div(eml_scalar(24.0), eml_scalar(144.0)))",
+                eml_description="EML: ops.sqrt(ops.div(eml_scalar(24.0), eml_scalar(144.0))) = ops.inv(ops.sqrt(eml_scalar(6.0))) — torsion from topology",
             ),
         ]
 
@@ -784,7 +812,8 @@ class GeometricAnchorsSimulation(SimulationBase):
                 status="GEOMETRIC",
                 description="Master geometric anchor k_gimel = b3/2 + 1/pi = 12.3183..., encoding the warping between 26D string frame and 4D Einstein frame. No direct experimental observable; validated through downstream predictions (alpha, w0, n_s).",
                 derivation_formula="k-gimel-anchor",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) — Gimel constant",
             ),
             Parameter(
                 path="geometry.alpha_inverse",
@@ -858,6 +887,26 @@ class GeometricAnchorsSimulation(SimulationBase):
                 bound_type="measured",
                 bound_source="CODATA2022",
                 uncertainty=2.0
+            ),
+            Parameter(
+                path="geometry.alpha_gut",
+                name="GUT Coupling Constant",
+                units="dimensionless",
+                status="DERIVED",
+                description="GUT-scale gauge coupling alpha_GUT = 1/(b3 + 0.3) ≈ 1/24.3 ≈ 0.0412. Asymptotic Safety fixed point where all three SM couplings unify at M_GUT.",
+                derivation_formula=None,
+                no_experimental_value=True,
+                eml_description="EML: ops.inv(eml_scalar(24.0)) — AS fixed point alpha_GUT ≈ 1/b3",
+            ),
+            Parameter(
+                path="geometry.alpha_gut_inv",
+                name="GUT Coupling Inverse",
+                units="dimensionless",
+                status="DERIVED",
+                description="Inverse GUT coupling alpha_GUT^-1 = b3 + 0.3 ≈ 24.3. Asymptotic Safety fixed point from G2 compactification.",
+                derivation_formula=None,
+                no_experimental_value=True,
+                eml_description="EML: ops.add(eml_scalar(24.0), eml_scalar(0.3)) — alpha_GUT^-1 ≈ b3 + 0.3",
             ),
         ]
 
