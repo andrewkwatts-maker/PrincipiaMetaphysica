@@ -712,7 +712,13 @@ class MultiSectorV16(SimulationBase):
                     "D_eff": "Effective dimension from shadow projection",
                     "w_eff": "Effective dark energy equation of state",
                     "alpha_shadow": "Shadow dimension contribution (0.576)"
-                }
+                },
+                eml_tree_str=(
+                    "ops.neg(ops.div(ops.sub(eml_vec('D_eff'), eml_scalar(1.0)), ops.add(eml_vec('D_eff'), eml_scalar(1.0))))"
+                ),
+                eml_description=(
+                    "EML: w_eff = -(D_eff - 1)/(D_eff + 1) — dark energy EoS from dimensional reduction"
+                ),
             ),
             Formula(
                 id="moduli-potential",
@@ -819,7 +825,13 @@ class MultiSectorV16(SimulationBase):
                     "Gamma": "Inflaton decay rate",
                     "chi_eff": "Effective Euler characteristic (144)",
                     "b_3": "Number of 3-cycles (24)"
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(ops.pow(ops.div(eml_vec('g_star'), eml_vec('g_star_mirror')), ops.div(eml_scalar(1.0), eml_scalar(3.0))), ops.sqrt(ops.div(eml_vec('Gamma_mirror'), eml_vec('Gamma'))))"
+                ),
+                eml_description=(
+                    "EML: T'/T = (g_*/g'_*)^(1/3) * sqrt(Gamma'/Gamma) — asymmetric reheating temperature ratio"
+                ),
             ),
             Formula(
                 id="dark-matter-abundance",

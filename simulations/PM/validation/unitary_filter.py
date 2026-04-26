@@ -480,6 +480,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                 label="(V.1)",
                 latex=r"c_{\text{total}} = c_{\text{matter}} + c_{\text{ghost}} = 26 - 26 = 0",
                 plain_text="c_total = c_matter + c_ghost = 26 - 26 = 0",
+                eml_tree_str="ops.add(eml_vec('c_left'), ops.neg(eml_vec('c_right')))",
                 category="DERIVED",
                 description=(
                     "Weyl anomaly cancellation in 26D. The matter contribution (26 from "
@@ -521,6 +522,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                 label="(V.2)",
                 latex=r"c = b_3 + 2 - 26 = 24 + 2 - 26 = 0",
                 plain_text="c = b3 + 2 - 26 = 24 + 2 - 26 = 0",
+                eml_tree_str="ops.sub(eml_vec('c_matter'), eml_scalar(26.0))",
                 category="DERIVED",
                 description=(
                     "Unitarity requirement in terms of the G2 geometry. The third Betti "

@@ -600,6 +600,7 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "m_KK^(i) = M_Pl / (T_i * V_G2^{1/7})"
                 ),
+                eml_tree_str="ops.mul(eml_vec('n_KK'), ops.div(eml_vec('k_gimel'), eml_vec('R_face')))",
                 category="PREDICTED",
                 description=(
                     "Kaluza-Klein mass spectrum per geometric face. Each face has a "
@@ -656,6 +657,7 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "delta_T = |T_shadow1 - T_shadow2| / T_1 = |T_1 - T_4| / T_1"
                 ),
+                eml_tree_str="ops.div(ops.sub(eml_vec('T_visible'), eml_vec('T_shadow')), ops.add(eml_vec('T_visible'), eml_vec('T_shadow')))",
                 category="GEOMETRIC",
                 description=(
                     "Shadow asymmetry parameter measuring the normalized difference "
@@ -699,6 +701,7 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "T_leak = alpha_leak * Psi_bridge = (1/sqrt(chi_eff/b3)) * (k_gimel/b3)"
                 ),
+                eml_tree_str="ops.mul(ops.inv(ops.sqrt(ops.div(eml_vec('chi_eff'), eml_vec('b3')))), ops.div(eml_vec('k_gimel'), eml_vec('b3')))",
                 category="DERIVED",
                 description=(
                     "Torsional leakage mechanism formalizing how the G2 torsion tensor "
@@ -779,6 +782,7 @@ class FourFaceG2Structure(SimulationBase):
                 plain_text=(
                     "R_perp_global = tensor_product(R_perp_i, i=1..12), R_perp_i^2 = -I"
                 ),
+                eml_tree_str="ops.mul(eml_vec('Gamma_OR'), ops.div(eml_vec('E_G'), eml_vec('hbar')))",
                 category="GEOMETRIC",
                 description=(
                     "Bridge/Global OR operator — tensor product of 12 Mobius "
@@ -831,6 +835,7 @@ class FourFaceG2Structure(SimulationBase):
                     "R_face^(f) = exp(-i*lambda_f*t/b3) * R_OR, "
                     "lambda_f = (n_f/(c7*sqrt(6)))^(2/7)"
                 ),
+                eml_tree_str="ops.mul(ops.exp(ops.neg(ops.div(ops.mul(eml_vec('lambda_f'), eml_vec('t')), eml_vec('b3')))), eml_vec('R_OR'))",
                 category="GEOMETRIC",
                 description=(
                     "Face/Local OR operator — selects visible face within each shadow "
@@ -889,6 +894,7 @@ class FourFaceG2Structure(SimulationBase):
                     "+ T_omega^2/2 * chi_eff/b3 "
                     "+ kappa * sum(|grad(T_bridge_i)|^2)"
                 ),
+                eml_tree_str="ops.add(ops.mul(eml_vec('Lambda'), ops.exp(ops.neg(ops.mul(eml_vec('a'), eml_vec('T_bridge'))))), ops.mul(ops.div(ops.pow(eml_vec('T_omega'), eml_scalar(2.0)), eml_scalar(2.0)), ops.div(eml_vec('chi_eff'), eml_vec('b3'))))",
                 category="GEOMETRIC",
                 description=(
                     "Bridge warping potential — governs shadow creation/separation "
@@ -964,6 +970,7 @@ class FourFaceG2Structure(SimulationBase):
                     "+ T_omega^2/2 * exp(-T_i^(f)/T_max) "
                     "+ kappa_f * sum(|grad(T_i^(f))|^2)"
                 ),
+                eml_tree_str="ops.add(ops.mul(eml_vec('Lambda'), ops.exp(ops.neg(ops.mul(eml_vec('a'), eml_vec('T_face'))))), ops.mul(ops.div(ops.pow(eml_vec('T_omega'), eml_scalar(2.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.div(eml_vec('T_face'), eml_vec('T_max'))))))",
                 category="GEOMETRIC",
                 description=(
                     "Face warping potential — governs visible face selection "
@@ -1037,6 +1044,7 @@ class FourFaceG2Structure(SimulationBase):
                     "alpha_sample^(f) = exp(-T_i^(f)/(2*T_max)) * 1/sqrt(6) "
                     "* (1 + Delta_F_f/F0)^(-1/2) approx 0.57"
                 ),
+                eml_tree_str="ops.mul(ops.exp(ops.neg(ops.div(eml_vec('T_face'), ops.mul(eml_scalar(2.0), eml_vec('T_max'))))), ops.mul(ops.inv(ops.sqrt(eml_scalar(6.0))), ops.pow(ops.add(eml_scalar(1.0), ops.div(eml_vec('Delta_F'), eml_vec('F0'))), ops.neg(eml_scalar(0.5)))))",
                 category="GEOMETRIC",
                 description=(
                     "Sampling strength from visible sector to hidden faces — "

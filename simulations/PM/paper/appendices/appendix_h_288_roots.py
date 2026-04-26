@@ -452,6 +452,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.1)",
                 latex=r"\text{dim}(SO(24)) = \frac{24 \times 23}{2} = 276",
                 plain_text="dim(SO(24)) = 24*23/2 = 276",
+                eml_tree_str="ops.mul(eml_vec('b3'), ops.sub(eml_vec('b3'), eml_scalar(1.0)))",
                 category="GEOMETRIC",
                 description=(
                     "Number of independent generators of SO(24), the transverse rotation group "
@@ -482,6 +483,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.2)",
                 latex=r"\tau_{\text{total}} = \tau_A + \tau_B = 12 + 12 = 24",
                 plain_text="tau_total = 12 + 12 = 24",
+                eml_tree_str="ops.add(eml_vec('T_visible'), eml_vec('T_hidden'))",
                 category="GEOMETRIC",
                 description=(
                     "Total shadow torsion pins from the dual 13D shadow brane architecture. "
@@ -514,6 +516,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.3)",
                 latex=r"R_{\text{ancestral}} = 276 + 24 - 12 = 288",
                 plain_text="R_ancestral = 276 + 24 - 12 = 288",
+                eml_tree_str="ops.sub(ops.add(eml_vec('so24_generators'), eml_vec('shadow_torsion_total')), eml_vec('manifold_cost'))",
                 category="DERIVED",
                 description=(
                     "Total ancestral root count from the 26D bulk symmetry budget. Each root "
@@ -554,6 +557,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.4)",
                 latex=r"\theta_{\text{sterile}} = \arcsin\left(\frac{125}{288}\right) \approx 25.72°",
                 plain_text="theta_sterile = arcsin(125/288) ≈ 25.72°",
+                eml_tree_str="ops.div(eml_vec('node_count'), eml_vec('ancestral_roots'))",
                 category="DERIVED",
                 description=(
                     "Sterile angle determining which ancestral roots manifest as observable "
@@ -586,6 +590,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.5)",
                 latex=r"N_{\text{hidden}} = 288 - 125 = 163",
                 plain_text="N_hidden = 288 - 125 = 163",
+                eml_tree_str="ops.sub(eml_vec('ancestral_roots'), eml_vec('node_count'))",
                 category="DERIVED",
                 description=(
                     "Count of hidden structural supports (163) that enforce the Metric Lock. These "
@@ -616,6 +621,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.6)",
                 latex=r"R_{\text{ancestral}} = |E_8| + |\tilde{E}_8| = 240 + 48 = 288",
                 plain_text="R_ancestral = |E8| + |E8_tilde| = 240 + 48 = 288",
+                eml_tree_str="ops.add(eml_scalar(240.0), eml_scalar(48.0))",
                 category="GEOMETRIC",
                 description=(
                     "E8×E8 heterotic root decomposition showing how 288 ancestral roots arise from "
@@ -654,6 +660,7 @@ class AppendixH288Roots(SimulationBase):
                 label="(H.7)",
                 latex=r"\chi_{\text{pressure}} = \frac{b_3^2}{4} = \frac{24^2}{4} = \frac{576}{4} = 144",
                 plain_text="chi_pressure = b3^2 / 4 = 24^2 / 4 = 576/4 = 144",
+                eml_tree_str="ops.div(ops.pow(eml_vec('b3'), eml_scalar(2.0)), eml_scalar(4.0))",
                 category="GEOMETRIC",
                 description=(
                     "Pressure divisor formula relating the Betti number b₃ to the effective Euler "

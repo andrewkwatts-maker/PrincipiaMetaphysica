@@ -812,6 +812,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.1)",
                 latex=r"V_{\text{eff}}(\phi) = -\mu^2 |\phi|^2 + \lambda(\mu) |\phi|^4 + \frac{\beta_\lambda}{64\pi^2} |\phi|^4 \ln\frac{|\phi|^2}{v^2}",
                 plain_text="V_eff(phi) = -mu^2 |phi|^2 + lambda(mu) |phi|^4 + radiative corrections",
+                eml_tree_str="ops.add(ops.neg(ops.mul(eml_vec('mu_sq'), ops.pow(eml_vec('phi'), eml_scalar(2.0)))), ops.add(ops.mul(eml_vec('lambda'), ops.pow(eml_vec('phi'), eml_scalar(4.0))), ops.mul(ops.div(eml_vec('beta_lambda'), ops.mul(eml_scalar(64.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(ops.pow(eml_vec('phi'), eml_scalar(4.0)), eml_vec('log_phi_over_v')))))",
                 category="ESTABLISHED",
                 description=(
                     "The one-loop effective potential for the Higgs field, including "
@@ -850,6 +851,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.2)",
                 latex=r"\beta_\lambda = \frac{1}{16\pi^2}\left[ 24\lambda^2 - 6y_t^4 + \frac{9}{5}g_1^4 + \frac{9}{4}g_2^4 + \lambda(12y_t^2 - \frac{9}{5}g_1^2 - 9g_2^2) \right]",
                 plain_text="beta_lambda = (1/16pi^2) [24*lambda^2 - 6*y_t^4 + gauge terms]",
+                eml_tree_str="ops.mul(ops.inv(ops.mul(eml_scalar(16.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.add(ops.sub(ops.mul(eml_scalar(24.0), ops.pow(eml_vec('lambda'), eml_scalar(2.0))), ops.mul(eml_scalar(6.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0)))), eml_vec('gauge_terms')))",
                 category="ESTABLISHED",
                 description=(
                     "One-loop beta function for the Higgs quartic coupling in the Standard Model. "
@@ -884,6 +886,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.3)",
                 latex=r"\lambda(\mu) \approx \lambda(M_Z) - \frac{3y_t^4}{8\pi^2} \ln\frac{\mu}{M_Z}",
                 plain_text="lambda(mu) ~ lambda(M_Z) - (3*y_t^4)/(8*pi^2) * ln(mu/M_Z)",
+                eml_tree_str="ops.sub(eml_vec('lambda_MZ'), ops.mul(ops.div(ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))), ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), eml_vec('log_mu_over_MZ')))",
                 category="DERIVED",
                 description=(
                     "Approximate solution to the RG equation for lambda, keeping only "
@@ -917,6 +920,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.4)",
                 latex=r"\Lambda_I = M_Z \exp\left[\frac{8\pi^2 \lambda(M_Z)}{3y_t^4}\right] \approx 10^{10.5}\,\text{GeV}",
                 plain_text="Lambda_I = M_Z * exp[8*pi^2 * lambda(M_Z) / (3*y_t^4)] ~ 10^10.5 GeV",
+                eml_tree_str="ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
                 category="DERIVED",
                 description=(
                     "The energy scale at which the running quartic coupling becomes zero "
@@ -949,6 +953,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.5)",
                 latex=r"B = \frac{27\pi^2 \sigma^4}{2\epsilon^3}",
                 plain_text="B = 27*pi^2 * sigma^4 / (2*epsilon^3)",
+                eml_tree_str="ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
                 category="ESTABLISHED",
                 description=(
                     "The Euclidean bounce action in the thin-wall approximation, "
@@ -984,6 +989,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.6)",
                 latex=r"\frac{\Gamma}{V} \sim A \cdot e^{-B}, \quad A \sim M_P^4",
                 plain_text="Gamma/V ~ M_P^4 * exp(-B)",
+                eml_tree_str="ops.mul(eml_vec('A_prefactor'), ops.exp(ops.neg(eml_vec('B_action'))))",
                 category="DERIVED",
                 description=(
                     "The vacuum decay rate per unit volume. The prefactor A is of order "
@@ -1016,6 +1022,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.7)",
                 latex=r"\tau = \frac{1}{(\Gamma/V) \cdot V_H} \sim \frac{e^B}{M_P^4 V_H}",
                 plain_text="tau = exp(B) / (M_P^4 * V_Hubble)",
+                eml_tree_str="ops.div(ops.exp(eml_vec('B_action')), ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), eml_vec('V_H')))",
                 category="DERIVED",
                 description=(
                     "The lifetime of the metastable vacuum, computed as the inverse of "
@@ -1049,6 +1056,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 label="(R.8)",
                 latex=r"\Delta\lambda_{G_2} = \frac{g_{\text{portal}}^2}{16\pi^2 b_3} = \frac{g_{\text{portal}}^2}{16\pi^2 \cdot 24}",
                 plain_text="Delta_lambda_G2 = g_portal^2 / (16*pi^2 * b_3)",
+                eml_tree_str="ops.div(ops.pow(eml_vec('g_portal'), eml_scalar(2.0)), ops.mul(ops.mul(eml_scalar(16.0), ops.pow(eml_pi(), eml_scalar(2.0))), eml_vec('b3')))",
                 category="DERIVED",
                 description=(
                     "The positive threshold correction to the Higgs quartic coupling from "
@@ -1090,6 +1098,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Quartic Coupling at EW Scale",
                 units="dimensionless",
                 status="DERIVED",
+                eml_description="ops.div(ops.pow(eml_vec('m_H'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0))))",
                 description=(
                     "Higgs quartic coupling at the electroweak scale. "
                     "lambda(M_Z) = m_H^2 / (2*v^2) ~ 0.13."
@@ -1104,6 +1113,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Quartic Coupling at GUT Scale",
                 units="dimensionless",
                 status="DERIVED",
+                eml_description="ops.add(eml_vec('lambda_MZ'), ops.add(ops.mul(eml_vec('beta_coeff'), eml_vec('log_MGUT_over_MZ')), eml_vec('delta_lambda_G2')))",
                 description=(
                     "Higgs quartic coupling at the GUT/compactification scale. "
                     "In SM: negative. In PM: positive due to G2 portal correction."
@@ -1116,6 +1126,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Quartic Coupling at Planck Scale",
                 units="dimensionless",
                 status="PREDICTIONS",
+                eml_description="ops.add(eml_vec('lambda_gut_pm'), ops.mul(eml_vec('beta_pm_above_gut'), eml_vec('log_MP_over_MGUT')))",
                 description=(
                     "Higgs quartic coupling at the Planck scale. PM predicts "
                     "lambda(M_P) > 0, ensuring absolute stability."
@@ -1128,6 +1139,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="SM Instability Scale",
                 units="GeV",
                 status="DERIVED",
+                eml_description="ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
                 description=(
                     "Energy scale at which lambda becomes negative in the Standard Model. "
                     "Lambda_I ~ 10^10.5 GeV for measured m_H and m_t. "
@@ -1143,6 +1155,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="PM Instability Scale",
                 units="GeV",
                 status="PREDICTIONS",
+                eml_description="ops.mul(eml_vec('Lambda_I_SM'), ops.exp(ops.div(eml_vec('delta_lambda_G2'), eml_vec('beta_coeff_sm'))))",
                 description=(
                     "Energy scale at which lambda would become negative in PM framework. "
                     "PM predicts Lambda_I > M_P (absolute stability)."
@@ -1155,6 +1168,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Euclidean Bounce Action",
                 units="dimensionless",
                 status="DERIVED",
+                eml_description="ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
                 description=(
                     "The Euclidean action of the tunneling instanton. Controls vacuum "
                     "decay rate via Gamma ~ exp(-B). PM has B >> 400."
@@ -1167,6 +1181,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Vacuum Tunneling Rate",
                 units="GeV^4",
                 status="DERIVED",
+                eml_description="ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), ops.exp(ops.neg(eml_vec('B_action'))))",
                 description=(
                     "Rate of vacuum decay per unit 4-volume. For PM with B > 10^6, "
                     "this is effectively zero."
@@ -1179,6 +1194,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Vacuum Lifetime",
                 units="years",
                 status="PREDICTIONS",
+                eml_description="ops.div(ops.exp(eml_vec('B_action')), ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), eml_vec('V_H')))",
                 description=(
                     "Expected lifetime of the electroweak vacuum. PM predicts "
                     "tau >> 10^100 years (absolutely stable)."
@@ -1197,6 +1213,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Vacuum Stability Flag",
                 units="boolean",
                 status="PREDICTIONS",
+                eml_description="ops.mul(eml_vec('bounce_gt_crit'), eml_vec('instability_gt_MP'))",
                 description=(
                     "Whether the vacuum is absolutely stable. PM predicts True."
                 ),

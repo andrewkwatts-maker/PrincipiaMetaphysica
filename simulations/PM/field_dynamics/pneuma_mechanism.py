@@ -1136,7 +1136,13 @@ class PneumaMechanismV16(SimulationBase):
                     "y_{2i}": "Mirror shadow component: intuition output channel",
                     "b_3": "Third Betti number (24 associative 3-cycles)",
                     "(2,0)": "Euclidean signature of each bridge pair"
-                }
+                },
+                eml_tree_str=(
+                    "ops.div(eml_vec('b3'), eml_scalar(2.0))"
+                ),
+                eml_description=(
+                    "EML: n_bridge_pairs = b3 / 2 = 24 / 2 = 12; each B_i = (y_{1i}, y_{2i}) pair"
+                ),
             ),
             # v22.0: Per-Pair OR Reduction Formula
             Formula(
@@ -1170,7 +1176,14 @@ class PneumaMechanismV16(SimulationBase):
                     r"\bigotimes": "Tensor product over 12 bridge pairs",
                     "Cl(2,0)": "Clifford algebra generating the rotation",
                     "SO(2)": "Orientation-preserving rotation subgroup"
-                }
+                },
+                eml_tree_str=(
+                    "ops.pow(eml_vec('R_perp_i'), eml_scalar(12.0))"
+                ),
+                eml_description=(
+                    "EML: full OR operator as tensor product of 12 per-pair rotations — "
+                    "R_perp^full = (R_perp^i)^{otimes 12}; each R_perp^i is the 2x2 rotation [[0,-1],[1,0]]"
+                ),
             ),
             Formula(
                 id="pneuma-flow",
@@ -1246,6 +1259,13 @@ class PneumaMechanismV16(SimulationBase):
                     "P^M": {"symbol": "P^M", "description": "Conjugate momenta to embedding coordinates"},
                     "M": {"symbol": "\\mathcal{M}", "description": "Invariant mass parameter", "param_id": "particle.invariant_mass"},
                 },
+                eml_tree_str=(
+                    "ops.add(ops.mul(eml_vec('X_M'), eml_vec('X_upper_M')), ops.add(ops.mul(eml_vec('X_M'), eml_vec('P_upper_M')), ops.add(ops.mul(eml_vec('P_M'), eml_vec('P_upper_M')), ops.pow(eml_vec('M_inv'), eml_scalar(2.0)))))"
+                ),
+                eml_description=(
+                    "EML: three 2T null constraints as ops.add chain — "
+                    "X^M X_M = 0, X^M P_M = 0, P^M P_M + M^2 = 0"
+                ),
             ),
             # NEW: 4D Fermion Lagrangian with Yukawa
             Formula(
@@ -1282,6 +1302,12 @@ class PneumaMechanismV16(SimulationBase):
                     "Φ": {"symbol": "\\Phi", "description": "Higgs doublet field"},
                     "D_μ": {"symbol": "D_\\mu", "description": "Gauge covariant derivative"},
                 },
+                eml_tree_str=(
+                    "ops.add(ops.mul(eml_vec('psi_bar'), ops.mul(eml_vec('gamma_mu'), ops.mul(eml_vec('D_mu'), eml_vec('psi')))), ops.mul(eml_vec('Y_ij'), ops.mul(eml_vec('psi_bar'), ops.mul(eml_vec('Phi'), eml_vec('psi')))))"
+                ),
+                eml_description=(
+                    "EML: KK fermion sector — kinetic ops.mul(psi_bar, gamma_mu, D_mu, psi) plus Yukawa ops.mul(Y_ij, psi_bar, Phi, psi)"
+                ),
             ),
             # NEW: Complete Lagrangian Hierarchy
             Formula(
@@ -1322,6 +1348,12 @@ class PneumaMechanismV16(SimulationBase):
                     "γ_F": {"symbol": "\\gamma_F", "description": "Two-time coupling coefficient", "param_id": "gravity.gamma_F"},
                     "V(φ_M)": {"symbol": "V(\\phi_M)", "description": "Mashiach attractor potential"},
                 },
+                eml_tree_str=(
+                    "ops.add(eml_vec('S_27_bulk'), ops.add(eml_vec('L_13_shadow'), ops.add(ops.add(eml_vec('R_4D'), ops.mul(eml_vec('alpha_F'), ops.pow(eml_vec('R_4D'), eml_scalar(2.0)))), ops.neg(ops.add(ops.mul(eml_scalar(0.5), ops.pow(eml_vec('partial_phi'), eml_scalar(2.0))), eml_vec('V_phi_M'))))))"
+                ),
+                eml_description=(
+                    "EML: 4-level descent L1(27D bulk) + L2(13D shadow) + L3(f(R,T,tau)) + L4(DE quintessence)"
+                ),
             ),
         ]
 

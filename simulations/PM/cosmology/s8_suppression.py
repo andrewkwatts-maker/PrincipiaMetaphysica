@@ -1193,7 +1193,13 @@ class S8SuppressionV16(SimulationBase):
                     "a": "Scale factor a = 1/(1+z)",
                     "H": "Hubble parameter",
                     "Omega_m": "Matter density fraction"
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(ops.div(eml_scalar(3.0), eml_scalar(2.0)), ops.mul(eml_vec('Omega_m_a'), eml_vec('D')))"
+                ),
+                eml_description=(
+                    "EML: growth source term (3/2) Omega_m(a) D on the right-hand side of the growth ODE"
+                ),
             ),
             Formula(
                 id="pm-dark-energy-density",
@@ -1237,7 +1243,13 @@ class S8SuppressionV16(SimulationBase):
                     "w0": "Dark energy EoS at z=0 (PM: -23/24)",
                     "wa": "Evolution parameter (PM: ~0.29)",
                     "a": "Scale factor"
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(ops.pow(eml_vec('H0'), eml_scalar(2.0)), ops.add(ops.mul(eml_vec('Omega_m'), ops.pow(eml_vec('one_plus_z'), eml_scalar(3.0))), ops.mul(eml_vec('Omega_DE'), ops.mul(ops.pow(eml_vec('a'), ops.neg(ops.mul(eml_scalar(3.0), ops.add(eml_scalar(1.0), ops.add(eml_vec('w0'), eml_vec('wa')))))), ops.exp(ops.mul(eml_scalar(3.0), ops.mul(eml_vec('wa'), ops.sub(eml_vec('a'), eml_scalar(1.0)))))))))"
+                ),
+                eml_description=(
+                    "EML: H^2 = H0^2 [Omega_m(1+z)^3 + Omega_DE * a^{-3(1+w0+wa)} * exp(3wa(a-1))] — CPL dark energy Hubble evolution"
+                ),
             ),
             Formula(
                 id="growth-suppression-factor",
@@ -1281,7 +1293,13 @@ class S8SuppressionV16(SimulationBase):
                     "D_PM": "Growth factor for PM cosmology",
                     "D_ΛCDM": "Growth factor for ΛCDM",
                     "gamma": "Growth index"
-                }
+                },
+                eml_tree_str=(
+                    "ops.div(eml_vec('D_PM'), eml_vec('D_LCDM'))"
+                ),
+                eml_description=(
+                    "EML: beta(z) = D_PM(z) / D_LCDM(z) — ratio of growth factors for PM vs LCDM cosmology"
+                ),
             ),
             Formula(
                 id="s8-friction-suppression",
@@ -1401,7 +1419,13 @@ class S8SuppressionV16(SimulationBase):
                     "S8_PM": "PM prediction for S8",
                     "beta": "Growth suppression factor",
                     "z_eff": "Effective weak lensing redshift (~0.5)"
-                }
+                },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('sigma_8'), ops.mul(ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3))), ops.mul(eml_vec('beta_z_eff'), ops.exp(ops.neg(ops.mul(eml_vec('beta_eff'), eml_vec('I_z_eff')))))))"
+                ),
+                eml_description=(
+                    "EML: S8_PM = sigma_8 * sqrt(Omega_m/0.3) * beta(z_eff) * exp(-beta_eff * I(z_eff)) — S8 with growth suppression and moduli-DM friction"
+                ),
             ),
         ]
 
