@@ -731,6 +731,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.1)",
                 latex=r"\text{ind}(D) = n_+ - n_-",
                 plain_text="ind(D) = n+ - n-",
+                eml_tree_str="ops.sub(eml_vec('n_plus'), eml_vec('n_minus'))",
                 category="ESTABLISHED",
                 description=(
                     "Definition of the Dirac operator index as the difference between "
@@ -762,6 +763,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.2)",
                 latex=r"\text{ind}(D) = \int_M \hat{A}(M) \cdot \text{ch}(E)",
                 plain_text="ind(D) = integral of A-roof genus times Chern character",
+                eml_tree_str="ops.mul(eml_vec('A_hat_M'), eml_vec('ch_E'))",
                 category="ESTABLISHED",
                 description=(
                     "The Atiyah-Singer index theorem expressing the index as an "
@@ -797,6 +799,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.3)",
                 latex=r"\hat{A}(M) = 1 - \frac{p_1}{24} + \frac{7p_1^2 - 4p_2}{5760} + \ldots",
                 plain_text="A-hat(M) = 1 - p1/24 + (7*p1^2 - 4*p2)/5760 + ...",
+                eml_tree_str="ops.sub(eml_scalar(1.0), ops.div(eml_vec('p1'), eml_scalar(24.0)))",
                 category="ESTABLISHED",
                 description=(
                     "The A-roof (A-hat) genus as a polynomial in Pontryagin classes. "
@@ -825,6 +828,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.4)",
                 latex=r"\text{ch}(E) = \text{rank}(E) + c_1(E) + \frac{1}{2}(c_1^2 - 2c_2) + \ldots",
                 plain_text="ch(E) = rank(E) + c1(E) + (1/2)(c1^2 - 2*c2) + ...",
+                eml_tree_str="ops.add(eml_vec('rank_E'), eml_vec('c1_E'))",
                 category="ESTABLISHED",
                 description=(
                     "The Chern character of a vector bundle E, encoding how the "
@@ -854,6 +858,7 @@ class AppendixQIndexTheorem(SimulationBase):
                 label="(Q.5)",
                 latex=r"n_+ - n_- = \frac{1}{(2\pi)^{n/2}} \int_M \text{ch}(E) \wedge \hat{A}(TM)",
                 plain_text="n+ - n- = (1/(2*pi)^(n/2)) integral(ch(E) wedge A-hat(TM))",
+                eml_tree_str="ops.mul(ops.inv(ops.pow(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('n_half'))), ops.mul(eml_vec('ch_E'), eml_vec('A_hat_TM')))",
                 category="DERIVED",
                 description=(
                     "Fermion zero mode counting from the index theorem. The integral "

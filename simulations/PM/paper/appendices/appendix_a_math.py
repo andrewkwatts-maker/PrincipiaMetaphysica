@@ -450,6 +450,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.1)",
                 latex=r"\nabla \varphi = 0",
                 plain_text="∇φ = 0",
+                eml_tree_str="ops.mul(eml_vec('nabla'), eml_vec('phi'))",
                 category="ESTABLISHED",
                 description=(
                     "G2 holonomy condition: parallel 3-form. The existence of a "
@@ -476,6 +477,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.2)",
                 latex=r"\varphi \in \Omega^3(M), \quad \text{stabilizer}(\varphi) = G_2",
                 plain_text="φ ∈ Ω³(M), stab(φ) = G2",
+                eml_tree_str="ops.mul(eml_vec('phi'), eml_vec('Omega3_M'))",
                 category="ESTABLISHED",
                 description=(
                     "Associative calibration: the fundamental 3-form defining G2 structure. "
@@ -503,6 +505,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.3)",
                 latex=r"\psi = *\varphi",
                 plain_text="ψ = *φ",
+                eml_tree_str="ops.mul(eml_vec('hodge_star'), eml_vec('phi'))",
                 category="ESTABLISHED",
                 description=(
                     "Coassociative calibration: Hodge dual of φ. Calibrates coassociative "
@@ -530,6 +533,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.4)",
                 latex=r"\nabla_X \eta = 0 \quad \forall X \in TM",
                 plain_text="∇_X η = 0 for all X",
+                eml_tree_str="ops.mul(eml_vec('nabla_X'), eml_vec('eta'))",
                 category="ESTABLISHED",
                 description=(
                     "Parallel spinor condition on G2 manifolds. Equivalent to holonomy "
@@ -558,6 +562,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.5)",
                 latex=r"\gamma(X)\gamma(Y) + \gamma(Y)\gamma(X) = 2g(X,Y)",
                 plain_text="γ(X)γ(Y) + γ(Y)γ(X) = 2g(X,Y)",
+                eml_tree_str="ops.add(ops.mul(eml_vec('gamma_X'), eml_vec('gamma_Y')), ops.mul(eml_vec('gamma_Y'), eml_vec('gamma_X')))",
                 category="ESTABLISHED",
                 description=(
                     "Clifford algebra relation for spinors in 7D. Defines the action of "
@@ -584,6 +589,7 @@ class AppendixAMathFoundations(SimulationBase):
                 label="(A.6)",
                 latex=r"\text{Ric}(g) = 0",
                 plain_text="Ric(g) = 0",
+                eml_tree_str="eml_vec('Ric_g')",
                 category="ESTABLISHED",
                 description=(
                     "Ricci-flatness of G2 manifolds. Automatic consequence of holonomy "
@@ -621,6 +627,7 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of G2 holonomy manifolds (always 7)",
+                eml_description="Integer dimension of the G2 exceptional holonomy manifold; fixed topological constant equal to 7.",
                 no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
@@ -629,6 +636,7 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of minimal real spinor representation in SO(7)",
+                eml_description="Integer dimension of the minimal real spinor bundle over the G2 manifold; equals 2^3 = 8 from Clifford algebra in 7D.",
                 no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
@@ -637,6 +645,7 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of the octonion division algebra",
+                eml_description="Integer dimension of the Cayley octonion algebra O over R; equals 8, and G2 is its automorphism group.",
                 no_experimental_value=True,  # Mathematical structure - no experimental measurement
             ),
         ]

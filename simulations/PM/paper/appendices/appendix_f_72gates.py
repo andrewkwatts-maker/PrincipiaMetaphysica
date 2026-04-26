@@ -1762,6 +1762,7 @@ class Appendix72Gates(SimulationBase):
                 label=f"(G{gate_id:02d})",
                 latex=f"\\text{{{gate.name}}}",
                 plain_text=gate.name,
+                eml_tree_str="ops.div(eml_vec('chi_eff'), eml_vec('b3'))",
                 category="DERIVED",
                 description=f"{gate.logic}. {gate.validation}",
                 input_params=gate_inputs,
@@ -1787,6 +1788,7 @@ class Appendix72Gates(SimulationBase):
             label="(Ω)",
             latex=r"\Omega_{\text{hash}} = \prod_{n=1}^{72} G_n \equiv 0.000...",
             plain_text="Omega_hash = Product(G1...G72) = 0.000...",
+            eml_tree_str="ops.mul(eml_vec('G1_status'), eml_vec('G72_status'))",
             category="DERIVED",
             description="The Omega Hash is the binary sum of all gates, locked when variance = 0.",
             inputParams=[f"gates.g{n:02d}_status" for n in range(1, 73)],
@@ -1819,6 +1821,7 @@ class Appendix72Gates(SimulationBase):
                 units="count",
                 status="VALIDATION",
                 description="Number of gates that passed validation",
+                eml_description="Integer count of the 72 gates that returned PASS status; equals 72 when the model reaches sterile terminal state.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1827,6 +1830,7 @@ class Appendix72Gates(SimulationBase):
                 units="count",
                 status="VALIDATION",
                 description="Number of gates that failed validation",
+                eml_description="Integer count of the 72 gates that returned FAIL status; must equal 0 for the Omega seal to be issued.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1835,6 +1839,7 @@ class Appendix72Gates(SimulationBase):
                 units="variance",
                 status="VALIDATION",
                 description="Terminal variance (0.000... when sterile)",
+                eml_description="Floating-point terminal variance from the Omega Hash protocol; equals 0.000... (machine precision) when all 72 gates pass and the model is sterile.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1843,6 +1848,7 @@ class Appendix72Gates(SimulationBase):
                 units="status",
                 status="VALIDATION",
                 description="STERILE or NON-TERMINAL",
+                eml_description="String status flag indicating overall gate certification; 'STERILE' when all 72 gates pass, 'NON-TERMINAL' otherwise.",
                 no_experimental_value=True,
             ),
         ]

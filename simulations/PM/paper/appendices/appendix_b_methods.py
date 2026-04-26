@@ -269,7 +269,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     type="paragraph",
                     content=(
                         "The Z₂ doubles the divisor in the index theorem (24 → 48) while simultaneously "
-                        "providing the hidden variable structure that evades Bell's theorem. "
+                        "<Speculation>providing the hidden variable structure that evades Bell's theorem.</Speculation> "
                         "See simulations/zero_modes_gen_v12_8.py."
                     )
                 ),
@@ -604,6 +604,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 label="(B.1)",
                 latex=r"\mu \frac{d\alpha_i}{d\mu} = \beta_i(\alpha_1, \alpha_2, \alpha_3)",
                 plain_text="μ dα_i/dμ = β_i(α₁, α₂, α₃)",
+                eml_tree_str="ops.mul(eml_vec('mu'), ops.div(eml_vec('d_alpha_i'), eml_vec('d_mu')))",
                 category="ESTABLISHED",
                 description=(
                     "Renormalization group β-function governing the energy scale "
@@ -622,6 +623,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 label="(B.3)",
                 latex=r"b^{(1)} = \left(\frac{41}{10}, -\frac{19}{6}, -7\right)",
                 plain_text="b^(1) = (41/10, -19/6, -7)",
+                eml_tree_str="ops.div(eml_scalar(41.0), eml_scalar(10.0))",
                 category="ESTABLISHED",
                 description=(
                     "One-loop beta function coefficients for Standard Model gauge "
@@ -641,6 +643,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     r"\log\left(1 + \frac{m_n^2}{\mu^2}\right)"
                 ),
                 plain_text="Δ_i^KK(μ) = (1/2π) Σ_n log(1 + m_n²/μ²)",
+                eml_tree_str="ops.mul(ops.inv(ops.mul(eml_scalar(2.0), eml_pi())), ops.mul(eml_vec('N_max'), ops.add(eml_scalar(1.0), ops.div(ops.pow(eml_vec('m_n'), eml_scalar(2.0)), ops.pow(eml_vec('mu'), eml_scalar(2.0))))))",
                 category="DERIVED",
                 description=(
                     "Kaluza-Klein tower threshold correction to gauge coupling running. "
@@ -671,6 +674,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     r"\left(1 - \frac{\mu^2}{M_{\text{Pl}}^2}\right)^{\gamma}"
                 ),
                 plain_text="β_i^AS(μ) = β_i(μ) × (1 - μ²/M_Pl²)^γ",
+                eml_tree_str="ops.mul(eml_vec('beta_i'), ops.pow(ops.sub(eml_scalar(1.0), ops.div(ops.pow(eml_vec('mu'), eml_scalar(2.0)), ops.pow(eml_vec('M_Pl'), eml_scalar(2.0)))), eml_vec('gamma')))",
                 category="DERIVED",
                 description=(
                     "Asymptotic safety correction applied to gauge coupling beta functions "
@@ -704,6 +708,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     r"\sum_i C_i y_i^2 - \sum_a C_a \alpha_a \right]"
                 ),
                 plain_text="μ dy_f/dμ = y_f/(16π²) [Σ_i C_i y_i² - Σ_a C_a α_a]",
+                eml_tree_str="ops.mul(ops.div(eml_vec('y_f'), ops.mul(eml_scalar(16.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.sub(ops.mul(eml_vec('C_i'), ops.pow(eml_vec('y_i'), eml_scalar(2.0))), ops.mul(eml_vec('C_a'), eml_vec('alpha_a'))))",
                 category="ESTABLISHED",
                 description=(
                     "Renormalization group equation for Yukawa couplings. Includes "
@@ -725,6 +730,7 @@ class AppendixBComputationalMethods(SimulationBase):
                     r"\frac{4\alpha_s(\bar{m})}{3\pi} + \mathcal{O}(\alpha_s^2) \right]"
                 ),
                 plain_text="m_pole = m̄(m̄) [1 + 4α_s(m̄)/(3π) + O(α_s²)]",
+                eml_tree_str="ops.mul(eml_vec('m_msbar'), ops.add(eml_scalar(1.0), ops.div(ops.mul(eml_scalar(4.0), eml_vec('alpha_s')), ops.mul(eml_scalar(3.0), eml_pi()))))",
                 category="ESTABLISHED",
                 description=(
                     "Relation between pole mass and running MS-bar mass for quarks. "
@@ -754,6 +760,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 units="dimensionless",
                 status="COMPUTATIONAL",
                 description="Perturbative order for RG beta functions (3-loop)",
+                eml_description="Integer loop order used in the perturbative RG beta function expansion; set to 3 for three-loop precision.",
                 no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
@@ -762,6 +769,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 units="dimensionless",
                 status="COMPUTATIONAL",
                 description="Numerical integration algorithm (LSODA)",
+                eml_description="String identifier for the numerical ODE integration algorithm; uses scipy odeint (LSODA) with automatic stiff/non-stiff switching.",
                 no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
@@ -770,6 +778,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 units="dimensionless",
                 status="COMPUTATIONAL",
                 description="Relative tolerance for numerical integration (10⁻⁶)",
+                eml_description="Dimensionless relative tolerance threshold for RG integration convergence; set to 1e-6 ensuring sub-0.1% numerical accuracy.",
                 no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
         ]

@@ -207,9 +207,9 @@ class AppendixASpectralRegistry(SimulationBase):
                 type="paragraph",
                 content=(
                     "The distribution of the 125 residues follows a <strong>Log-Harmonic Spacing</strong>. "
-                    "This explains the 'Hierarchy Problem' (why gravity is so much weaker than "
+                    "<Speculation>This explains the 'Hierarchy Problem' (why gravity is so much weaker than "
                     "electromagnetism). In a V₇ manifold, eigenvalues cluster according to the "
-                    "depth of the brane intersection:"
+                    "depth of the brane intersection.</Speculation>"
                 )
             ),
             ContentBlock(
@@ -276,6 +276,7 @@ class AppendixASpectralRegistry(SimulationBase):
                 label="(A.1)",
                 latex=r"\lambda_n = \Delta_{V_7}(\Psi_n)",
                 plain_text="lambda_n = Delta_V7(Psi_n)",
+                eml_tree_str="ops.mul(eml_scalar(125.0), eml_vec('lambda_spectral'))",
                 category="ESTABLISHED",
                 description=(
                     "Extraction of spectral eigenvalues from the Laplace-Beltrami operator "
@@ -308,6 +309,7 @@ class AppendixASpectralRegistry(SimulationBase):
                 label="(A.4)",
                 latex=r"\text{SHA-256}(\text{registry.json}) = \Omega_{\text{seal}}",
                 plain_text="SHA-256(registry.json) = Omega_seal",
+                eml_tree_str="ops.mul(eml_vec('SHA256_registry'), eml_vec('Omega_seal'))",
                 category="DERIVED",
                 description=(
                     "Cryptographic hash verification ensuring registry immutability. "
@@ -336,6 +338,7 @@ class AppendixASpectralRegistry(SimulationBase):
                 label="(A.2)",
                 latex=r"N(E) = \frac{\text{Vol}(V_7)}{(4\pi)^{7/2} \Gamma(9/2)} E^{7/2} + O(E^{5/2})",
                 plain_text="N(E) = Vol(V7)/(4*pi)^(7/2) * Gamma(9/2)^-1 * E^(7/2) + O(E^(5/2))",
+                eml_tree_str="ops.mul(ops.div(eml_vec('Vol_V7'), ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), eml_scalar(3.5))), ops.pow(eml_vec('E'), eml_scalar(3.5)))",
                 category="ESTABLISHED",
                 description=(
                     "Weyl eigenvalue counting function for the V7 manifold. Gives the "
@@ -365,6 +368,7 @@ class AppendixASpectralRegistry(SimulationBase):
                 label="(A.3)",
                 latex=r"r(n) = e^{-\kappa \cdot \lambda_n}",
                 plain_text="r(n) = exp(-kappa * lambda_n)",
+                eml_tree_str="ops.exp(ops.neg(ops.mul(eml_vec('kappa'), eml_vec('lambda_n'))))",
                 category="ESTABLISHED",
                 description=(
                     "Log-harmonic spacing function determining node depth in V7 manifold. "
@@ -398,6 +402,7 @@ class AppendixASpectralRegistry(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Total number of residue nodes in the spectral registry (125)",
+                eml_description="Integer count of spectral eigenvalue nodes extracted from the V7 Laplacian; equals 125 by topological constraint.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -406,6 +411,7 @@ class AppendixASpectralRegistry(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Distribution of 125 nodes across the four Symmetry Banks",
+                eml_description="Dictionary mapping symmetry bank names (metric, gauge, matter, scalar) to their respective node counts summing to 125.",
                 no_experimental_value=True,
             ),
         ]

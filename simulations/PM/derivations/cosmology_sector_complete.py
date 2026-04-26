@@ -721,6 +721,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.mephorash_chi"],
             outputParams=["cosmology.dm_thermal_relic"],
+            eml_tree_str=(
+                "ops.add(ops.mul(eml_vec('chi_bar'), ops.mul(eml_vec('i_gamma_D_minus_m'), eml_vec('chi'))), ops.mul(ops.div(eml_vec('epsilon'), eml_scalar(2.0)), ops.mul(eml_vec('F_mn'), eml_vec('F_prime_mn'))))"
+            ),
             terms={
                 "chi": "Shadow sector Dirac fermion (DM candidate)",
                 "m_chi": "DM mass (~100 GeV for WIMP)",
@@ -744,6 +747,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["geometry.barbelo_modulus", "geometry.logic_closure"],
             outputParams=["cosmology.omega_dm_geometric"],
+            eml_tree_str=(
+                "ops.mul(ops.div(eml_scalar(163.0), eml_scalar(288.0)), ops.mul(eml_vec('Omega_m'), eml_vec('f_corr')))"
+            ),
             terms={
                 "163": "Sterile (shadow) sector states",
                 "288": "Logic closure (total states)",
@@ -766,6 +772,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["geometry.sophian_modulus", "geometry.barbelo_modulus"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(eml_vec('visible_parity_plus1'), eml_vec('shadow_parity_minus1'))"
+            ),
             terms={
                 "125": "Visible SM sector states",
                 "163": "Shadow (sterile) sector states",
@@ -788,6 +797,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["cosmology.omega_dm_geometric"],
             outputParams=["cosmology.dm_thermal_relic"],
+            eml_tree_str=(
+                "ops.mul(eml_scalar(0.1), ops.mul(ops.div(eml_vec('g_eff'), eml_scalar(100.0)), ops.pow(ops.div(eml_vec('T_f'), eml_vec('m_chi')), eml_scalar(2.0))))"
+            ),
             terms={
                 "T_f": "Freeze-out temperature ~ m_chi/20",
                 "g_eff": "Effective degrees of freedom at freeze-out",
@@ -815,6 +827,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.elder_kads"],
             outputParams=["cosmology.w0_tzimtzum"],
+            eml_tree_str=(
+                "ops.neg(ops.sub(eml_scalar(1.0), ops.inv(eml_vec('b3'))))"
+            ),
             terms={
                 "b3": "Third Betti number = 24",
                 "tzimtzum": "Contraction principle (23/24)",
@@ -838,6 +853,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["cosmology.H0_cmb"],
             outputParams=["cosmology.H0_odowd"],
+            eml_tree_str=(
+                "ops.mul(eml_vec('H_CMB'), ops.add(eml_scalar(1.0), ops.div(ops.pow(eml_vec('sin_theta_mix'), eml_scalar(2.0)), eml_scalar(2.0))))"
+            ),
             terms={
                 "H_CMB": "Planck CMB value = 67.36 km/s/Mpc",
                 "theta_mix": "13D/25D mixing angle = 31.0 degrees (v22)",
@@ -860,6 +878,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.elder_kads", "topology.mephorash_chi"],
             outputParams=["cosmology.alpha_F_r2", "cosmology.beta_F_trace"],
+            eml_tree_str=(
+                "ops.add(ops.add(ops.add(eml_vec('R'), ops.mul(ops.inv(ops.pow(eml_vec('b3'), eml_scalar(2.0))), ops.pow(eml_vec('R'), eml_scalar(2.0)))), ops.mul(ops.inv(eml_vec('chi_eff')), eml_vec('T_trace'))), ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_vec('b3'), ops.sqrt(eml_vec('chi_eff')))), ops.mul(eml_vec('R'), eml_vec('tau'))))"
+            ),
             terms={
                 "R": "4D Ricci scalar",
                 "T": "Stress-energy trace",
@@ -883,6 +904,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.mephorash_chi"],
             outputParams=["cosmology.attractor_fixed_point"],
+            eml_tree_str=(
+                "ops.mul(eml_vec('V_0'), ops.add(eml_scalar(1.0), ops.mul(eml_vec('A'), ops.mul(eml_vec('cos_omega_tau_over_f'), eml_scalar(1.0)))))"
+            ),
             terms={
                 "V_0": "Vacuum energy scale ~ rho_Lambda",
                 "A": "Amplitude ~ 1/sqrt(b3) ~ 0.2",
@@ -906,6 +930,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["cosmology.H0_odowd"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.sub(eml_vec('H0_local'), eml_vec('H0_CMB'))"
+            ),
             terms={
                 "71.55": "PM prediction from geometry",
                 "67.36": "Planck CMB measurement",
@@ -932,6 +959,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.elder_kads", "topology.mephorash_chi"],
             outputParams=["cosmology.eta_baryon_geometric"],
+            eml_tree_str=(
+                "ops.mul(ops.div(eml_vec('J'), eml_vec('N_eff')), ops.mul(eml_vec('delta_b3'), ops.mul(ops.div(eml_vec('b3'), eml_vec('chi_eff')), ops.mul(eml_vec('sin_delta_CP'), ops.exp(ops.neg(eml_vec('Re_T')))))))"
+            ),
             terms={
                 "J": "Jarlskog invariant ~ 3.08e-5",
                 "N_eff": "Effective cycles = b3 - 14 = 10",
@@ -955,6 +985,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=["cosmology.n_bbn_neutrino"],
+            eml_tree_str=(
+                "ops.add(eml_scalar(3.046), eml_vec('delta_N_eff'))"
+            ),
             terms={
                 "3.046": "SM prediction for effective neutrino number",
                 "delta_N_eff": "Extra light species (PM predicts 0)"
@@ -975,6 +1008,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["cosmology.omega_dm_geometric"],
             outputParams=["cosmology.omega_dm_total"],
+            eml_tree_str=(
+                "ops.add(eml_vec('Omega_b'), eml_vec('Omega_DM'))"
+            ),
             terms={
                 "Omega_b": "Baryon density = 0.049",
                 "Omega_DM": "Dark matter density = 0.266",
@@ -1004,6 +1040,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Omega_DM from 163/288 sterile ratio ~ 0.27",
+            eml_description="Dark matter density parameter Omega_DM = (163/288) * Omega_m * f_corr derived from the ratio of sterile shadow states to total G2 root lattice states",
             derivation_formula="dm-omega-sterile-ratio-v19",
             experimental_bound=0.261,
             bound_type="measured",
@@ -1017,6 +1054,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="GEOMETRIC",
             description="163/288 = sterile states / total states ~ 0.566",
+            eml_description="Sterile sector fraction 163/288 from G2 root lattice: 163 shadow/sterile states out of 288 total (Ennoia=288, Barbelo=163); determines dark matter abundance",
             derivation_formula="dm-omega-sterile-ratio-v19",
             no_experimental_value=True
         ))
@@ -1027,6 +1065,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="GEOMETRIC",
             description="163/125 = shadow sector / visible sector ~ 1.3",
+            eml_description="Ratio of shadow/sterile sector states (163) to visible SM sector states (125) from G2 topology; determines DM-to-baryon abundance ratio",
             no_experimental_value=True
         ))
 
@@ -1036,6 +1075,7 @@ class CosmologySectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Omega_chi h^2 ~ 0.12 from WIMP freeze-out",
+            eml_description="Thermal relic dark matter density Omega_chi h^2 = 0.1 * (g_eff/100) * (T_f/m_chi)^2 from WIMP freeze-out mechanism; matches observed 0.120 from Planck",
             derivation_formula="dm-thermal-relic-v19",
             experimental_bound=0.120,
             bound_type="measured",

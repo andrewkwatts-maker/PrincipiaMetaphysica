@@ -872,6 +872,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "Electroweak symmetry breaking via potential minimization. "
                 "The VEV v = 246 GeV is the stable minimum of V(H)."
             ),
+            eml_tree_str=(
+                "ops.div(eml_vec('mu'), ops.sqrt(eml_vec('lambda')))"
+            ),
             inputParams=["higgs.mu_squared", "higgs.lambda_quartic"],
             outputParams=["higgs.v_ew_derived"],
             terms={
@@ -889,6 +892,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Higgs boson mass from second derivative of potential at minimum. "
                 "With lambda ~ 0.129 and v = 246 GeV, this gives m_H = 125 GeV."
+            ),
+            eml_tree_str=(
+                "ops.sqrt(ops.mul(eml_scalar(2.0), ops.mul(eml_vec('lambda'), ops.pow(eml_vec('v_ew'), eml_scalar(2.0)))))"
             ),
             inputParams=["higgs.lambda_quartic", "higgs.v_ew_derived"],
             outputParams=["higgs.m_higgs_derived"],
@@ -911,6 +917,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Higgs doublet emerges from a specific Kahler modulus "
                 "that couples to visible sector fermions via 3-cycle overlaps."
+            ),
+            eml_tree_str=(
+                "ops.add(eml_vec('Vol_Sigma_H3'), ops.mul(eml_vec('i'), eml_vec('C_3')))"
             ),
             inputParams=["topology.elder_kads"],
             outputParams=[],
@@ -935,6 +944,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "Number of fermion generations from G2 topology. The formula "
                 "N_gen = b3/8 yields exactly 3 generations with NO free parameters."
             ),
+            eml_tree_str=(
+                "ops.div(eml_vec('b3'), eml_scalar(8.0))"
+            ),
             inputParams=["topology.elder_kads"],
             outputParams=["yukawa.n_generations"],
             terms={
@@ -955,6 +967,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Yukawa coupling hierarchy via geometric Froggatt-Nielsen mechanism. "
                 "The suppression factor epsilon ~ Cabibbo angle arises from G2 curvature."
+            ),
+            eml_tree_str=(
+                "ops.mul(eml_vec('A_f'), ops.pow(eml_vec('epsilon'), eml_vec('Q_f')))"
             ),
             inputParams=["topology.elder_kads"],
             outputParams=["yukawa.epsilon_fn"],
@@ -978,6 +993,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "Froggatt-Nielsen parameter matches Cabibbo angle to 1%. "
                 "This unifies quark mixing with mass hierarchy."
             ),
+            eml_tree_str=(
+                "ops.exp(ops.neg(eml_scalar(1.5)))"
+            ),
             inputParams=[],
             outputParams=["yukawa.epsilon_fn"],
             terms={
@@ -998,6 +1016,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Top Yukawa coupling y_t ~ 1 because top quark is at Q_t = 0 "
                 "(same cycle as Higgs). This explains why top is uniquely heavy."
+            ),
+            eml_tree_str=(
+                "ops.mul(eml_vec('A_t'), ops.pow(eml_vec('epsilon'), eml_scalar(0.0)))"
             ),
             inputParams=["yukawa.epsilon_fn"],
             outputParams=["yukawa.y_top"],
@@ -1022,6 +1043,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "Third generation (top/bottom/tau) least suppressed; first generation "
                 "(up/down/electron) most suppressed."
             ),
+            eml_tree_str=(
+                "ops.mul(eml_vec('A_ij'), ops.pow(eml_vec('epsilon'), eml_vec('Q_ij')))"
+            ),
             inputParams=["yukawa.epsilon_fn"],
             outputParams=["yukawa.y_top", "yukawa.y_bottom", "yukawa.y_tau"],
             terms={
@@ -1040,6 +1064,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Christ constant 153 encodes flavor structure: chi_eff = 144 (geometric) "
                 "plus dim(SU(3))=9 (flavor Cartan). Appears in total flavor parameter count."
+            ),
+            eml_tree_str=(
+                "ops.add(eml_vec('chi_eff'), eml_scalar(9.0))"
             ),
             inputParams=["topology.mephorash_chi"],
             outputParams=[],
@@ -1065,6 +1092,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "Type-I seesaw formula for light neutrino masses. "
                 "Heavy right-handed Majorana mass M_R suppresses light masses."
             ),
+            eml_tree_str=(
+                "ops.neg(ops.mul(ops.mul(eml_vec('m_D_T'), ops.inv(eml_vec('M_R'))), eml_vec('m_D')))"
+            ),
             inputParams=["neutrino.m_r_scale", "higgs.v_ew_derived"],
             outputParams=["neutrino.m_nu_lightest"],
             terms={
@@ -1087,6 +1117,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
                 "Right-handed Majorana mass scale from G2 compactification. "
                 "Natural seesaw scale M_R ~ M_GUT/sqrt(chi) ~ 10^15 GeV."
             ),
+            eml_tree_str=(
+                "ops.div(eml_vec('M_GUT'), ops.sqrt(eml_vec('chi_eff')))"
+            ),
             inputParams=["gauge.M_GUT", "topology.mephorash_chi"],
             outputParams=["neutrino.m_r_scale"],
             terms={
@@ -1107,6 +1140,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             description=(
                 "Light neutrino mass scale from seesaw. Naturally sub-eV "
                 "due to huge M_R suppression."
+            ),
+            eml_tree_str=(
+                "ops.div(ops.mul(ops.pow(eml_vec('v_ew'), eml_scalar(2.0)), ops.pow(eml_vec('Y_nu'), eml_scalar(2.0))), eml_vec('M_R'))"
             ),
             inputParams=["higgs.v_ew_derived", "neutrino.m_r_scale"],
             outputParams=["neutrino.m_nu_lightest"],
@@ -1131,6 +1167,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["neutrino.m_nu_lightest"],
             outputParams=["neutrino.ordering"],
+            eml_tree_str=(
+                "ops.sub(eml_vec('m3'), eml_vec('m1'))"
+            ),
             terms={
                 "Delta_m31^2": "Atmospheric mass-squared difference (NEGATIVE for IO)",
                 "Delta_m21^2": "Solar mass-squared difference ~ 7.4e-5 eV^2"
@@ -1156,6 +1195,9 @@ class MatterSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.b2", "topology.elder_kads"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.div(ops.sqrt(ops.mul(eml_vec('b2'), eml_vec('n_gen'))), eml_vec('b3'))"
+            ),
             terms={
                 "theta_12": "Solar angle ~ 33.4 deg",
                 "theta_23": "Atmospheric angle ~ 49 deg (upper octant)",
@@ -1185,6 +1227,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="GeV^2",
             status="DERIVED",
             description="Tachyonic Higgs mass parameter from moduli stabilization",
+            eml_description="Higgs tachyonic mass parameter mu^2 derived from G2 moduli potential; negative value triggers EWSB",
             derivation_formula="higgs-potential-moduli-v19",
             no_experimental_value=True
         ))
@@ -1195,6 +1238,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="lambda = m_H^2 / (2*v^2) ~ 0.129",
+            eml_description="Higgs quartic self-coupling lambda computed from G2 associative cycle volumes; fixes Higgs potential stability",
             derivation_formula="higgs-quartic-from-geometry-v19",
             experimental_bound=0.129,
             bound_type="measured",
@@ -1208,6 +1252,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="GeV",
             status="DERIVED",
             description="Higgs VEV from potential minimization",
+            eml_description="Electroweak vacuum expectation value v = mu/sqrt(lambda) derived from G2 moduli; sets the EWSB scale at 246 GeV",
             derivation_formula="higgs-vev-minimization-v19",
             experimental_bound=246.22,  # PDG 2024: Higgs VEV (experimental)
             bound_type="measured",
@@ -1221,6 +1266,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="GeV",
             status="DERIVED",
             description="Higgs mass from potential curvature",
+            eml_description="Higgs boson mass m_H = sqrt(2*lambda)*v derived from the second derivative of the G2 moduli potential",
             derivation_formula="higgs-mass-from-potential-v19",
             experimental_bound=125.10,  # PDG 2024: Higgs mass (experimental)
             bound_type="measured",
@@ -1235,6 +1281,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="y_t ~ 1 from Q_t = 0 (top at Higgs cycle)",
+            eml_description="Top quark Yukawa coupling y_t ~ 1 because the top sits at the Higgs-generating associative cycle with zero FN charge suppression",
             derivation_formula="yukawa-top-normalization-v19",
             experimental_bound=0.995,
             bound_type="measured",
@@ -1247,6 +1294,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="y_b from geometric suppression with Q_b = 2",
+            eml_description="Bottom quark Yukawa coupling y_b = A_b * epsilon^2 suppressed by two powers of the Froggatt-Nielsen parameter from G2 cycle geometry",
             derivation_formula="yukawa-froggatt-nielsen-v19",
             experimental_bound=0.024,
             bound_type="measured",
@@ -1259,6 +1307,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="y_tau from geometric suppression",
+            eml_description="Tau lepton Yukawa coupling y_tau = A_tau * epsilon^Q_tau suppressed by Froggatt-Nielsen mechanism from G2 topology",
             derivation_formula="yukawa-froggatt-nielsen-v19",
             experimental_bound=0.0102,
             bound_type="measured",
@@ -1271,6 +1320,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="epsilon = exp(-1.5) ~ 0.223 ~ Cabibbo angle",
+            eml_description="Froggatt-Nielsen suppression parameter epsilon = exp(-3/2) derived from the G2 associative cycle geodesic length; numerically equals the Cabibbo angle",
             derivation_formula="yukawa-epsilon-cabibbo-v19",
             experimental_bound=0.2257,
             bound_type="measured",
@@ -1283,6 +1333,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="count",
             status="DERIVED",
             description="N_gen = b3/8 = 24/8 = 3 (exact)",
+            eml_description="Number of SM fermion generations N_gen = b3/8 = 24/8 = 3 derived exactly from the G2 manifold third Betti number",
             derivation_formula="fermion-generations-v19",
             experimental_bound=3,
             bound_type="measured",
@@ -1296,6 +1347,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="eV",
             status="DERIVED",
             description="m3 (lightest in IO) from seesaw formula",
+            eml_description="Lightest neutrino mass m3 (inverted ordering) computed via type-I seesaw m_nu = v^2 Y_nu^2 / M_R",
             derivation_formula="light-neutrino-masses-v19",
             no_experimental_value=True
         ))
@@ -1306,6 +1358,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="GeV",
             status="DERIVED",
             description="M_R ~ M_GUT/sqrt(chi) ~ 1.7e15 GeV",
+            eml_description="Right-handed neutrino Majorana mass scale M_R = M_GUT / sqrt(chi_eff) set by G2 compactification geometry near the GUT scale",
             derivation_formula="majorana-scale-v19",
             no_experimental_value=True
         ))
@@ -1316,6 +1369,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="categorical",
             status="DERIVED",
             description="INVERTED (3.6 sigma preference, NuFIT 6.0)",
+            eml_description="Neutrino mass ordering categorical parameter: INVERTED (m3 < m1 < m2) predicted from G2 cycle winding numbers; 3.6 sigma NuFIT 6.0 preference",
             derivation_formula="neutrino-mass-hierarchy-v19",
             no_experimental_value=True
         ))
@@ -1326,6 +1380,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             units="eV",
             status="DERIVED",
             description="Sum(m_nu) from seesaw, should be < 0.12 eV (cosmo)",
+            eml_description="Sum of three neutrino masses from seesaw mechanism; constrained below 0.12 eV by Planck CMB data",
             derivation_formula="light-neutrino-masses-v19",
             experimental_bound=0.12,
             bound_type="upper",

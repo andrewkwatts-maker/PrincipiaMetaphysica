@@ -194,11 +194,11 @@ class AppendixDAlignment(SimulationBase):
                 content=(
                     "The table below compares the v24.2 sterile extraction against the two "
                     "conflicting standard measurements of the Hubble constant: Planck (CMB-derived, "
-                    "early universe) and SH0ES (Cepheid distance ladder, local universe). The "
-                    "0.48σ combined alignment suggests that the v24.2 geometric model provides "
+                    "early universe) and SH0ES (Cepheid distance ladder, local universe). "
+                    "<Speculation>The 0.48σ combined alignment suggests that the v24.2 geometric model provides "
                     "a resolution to the Hubble tension by deriving H₀ from the V₇ manifold's "
                     "spectral structure, effectively reconciling the discrepancy between early "
-                    "and late universe measurements through a fixed geometric residue:"
+                    "and late universe measurements through a fixed geometric residue.</Speculation>"
                 )
             ),
             ContentBlock(
@@ -255,6 +255,7 @@ class AppendixDAlignment(SimulationBase):
                 label="(D.1)",
                 latex=r"\chi^2 = \sum \frac{(R_{\text{model}} - V_{\text{obs}})^2}{\sigma_{\text{obs}}^2}",
                 plain_text="chi^2 = Sum[(R_model - V_obs)^2 / sigma_obs^2]",
+                eml_tree_str="ops.div(ops.pow(ops.sub(eml_vec('R_model'), eml_vec('V_obs')), eml_scalar(2.0)), ops.pow(eml_vec('sigma_obs'), eml_scalar(2.0)))",
                 category="DERIVED",
                 description="Global chi-squared convergence metric for sterile verification.",
                 input_params=self.PARAM_REFS,
@@ -281,6 +282,7 @@ class AppendixDAlignment(SimulationBase):
                 label="(D.3)",
                 latex=r"H_0^{\text{geo}} = 70.42 \text{ km/s/Mpc}",
                 plain_text="H0_geo = 70.42 km/s/Mpc",
+                eml_tree_str="ops.mul(eml_scalar(70.42), eml_vec('H0_ratio'))",
                 category="PREDICTED",
                 description="Geometric Hubble residue derived from the V7 manifold's spectral structure, offering a resolution to the Planck-SH0ES Hubble tension. The value H0 = 70.42 km/s/Mpc emerges as a fixed geometric quantity, positioned between the early-universe (Planck CMB: 67.4) and local-universe (SH0ES Cepheids: 73.0) measurements, aligning with both within combined statistical uncertainties.",
                 input_params=["topology.elder_kads"],
@@ -303,6 +305,7 @@ class AppendixDAlignment(SimulationBase):
                 label="(D.2)",
                 latex=r"\sigma_{w_0} = \frac{|w_{0,\text{geo}} - w_{0,\text{DESI}}|}{\sigma_{\text{DESI}}} = 0.02",
                 plain_text="sigma_w0 = |w0_geo - w0_DESI| / sigma_DESI = 0.02",
+                eml_tree_str="ops.div(ops.sub(eml_vec('w0_geo'), eml_vec('w0_DESI')), eml_vec('sigma_DESI'))",
                 category="DERIVED",
                 description="w0 alignment with DESI BAO measurements (within BAO-only uncertainty).",
                 input_params=["cosmology.w0_geometric", "observational.w0_desi"],
@@ -333,6 +336,7 @@ class AppendixDAlignment(SimulationBase):
                 units="dimensionless",
                 status="VALIDATION",
                 description="Global chi-squared statistic against observational data",
+                eml_description="Total chi-squared value computed as sigma_global^2; equals 0.48^2 = 0.2304 for the v24.2 sterile model against DESI/Planck data.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -341,6 +345,7 @@ class AppendixDAlignment(SimulationBase):
                 units="status",
                 status="VALIDATION",
                 description="Pass/Fail status of observational alignment check",
+                eml_description="String status flag ('PASS' or 'FAIL') indicating whether the global sigma alignment is below the 1-sigma threshold for sterile certification.",
                 no_experimental_value=True,
             ),
         ]

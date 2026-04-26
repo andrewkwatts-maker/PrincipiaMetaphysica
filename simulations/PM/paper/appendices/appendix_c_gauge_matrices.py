@@ -123,10 +123,10 @@ class AppendixCGaugeMatrices(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix C details the mathematical 'filter' that bridges the gap between "
+                    "<Speculation>Appendix C details the mathematical 'filter' that bridges the gap between "
                     "the 13-Dimensional Ancestral Registry and the 4-Dimensional Physical World-Sheet. "
                     "While the G₂ manifold (Appendix B) provides the rigidity, the S<sub>PR</sub>(2) "
-                    "Gauge provides the logic for symmetry breaking."
+                    "Gauge provides the logic for symmetry breaking.</Speculation>"
                 )
             ),
 
@@ -265,6 +265,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 label="(C.1)",
                 latex=r"R_4 = \mathbf{P}_{13 \to 4} \times S_{PR}(2) \times V_{13}",
                 plain_text="R_4 = P_{13->4} x S_PR(2) x V_13",
+                eml_tree_str="ops.mul(ops.mul(eml_vec('P_13_to_4'), eml_vec('S_PR2')), eml_vec('V_13'))",
                 category="ESTABLISHED",
                 description=(
                     "Dimensional projection from 13D ancestral registry to 4D observables. "
@@ -293,6 +294,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 label="(C.2)",
                 latex=r"\mathbf{P}_{13 \to 4}^\dagger \mathbf{P}_{13 \to 4} = \mathbf{I}_{13}",
                 plain_text="P_dagger * P = I_13",
+                eml_tree_str="ops.mul(eml_vec('P_dagger'), eml_vec('P_13_to_4'))",
                 category="DERIVED",
                 description="Unitarity condition ensuring lossless projection from 13D to 4D.",
                 input_params=["gauge.projection_matrix_13_to_4", "dimensions.D_after_sp2r"],
@@ -316,6 +318,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 label="(C.3)",
                 latex=r"G_{13} \xrightarrow{S_{PR}(2)} SU(3)_C \times SU(2)_L \times U(1)_Y",
                 plain_text="G_13 -> SU(3)_C x SU(2)_L x U(1)_Y via S_PR(2)",
+                eml_tree_str="ops.mul(ops.mul(eml_vec('SU3_C'), eml_vec('SU2_L')), eml_vec('U1_Y'))",
                 category="ESTABLISHED",
                 description="Symmetry shattering rule based on the S_PR(2) gauge, dictating how the initial 13D gauge group G_13 breaks down into the Standard Model gauge groups SU(3)_C x SU(2)_L x U(1)_Y through a cascade of maximal subgroup reductions. Each Standard Model factor corresponds to a specific sector of the 125-node spectral registry.",
                 input_params=["dimensions.D_after_sp2r"],
@@ -347,6 +350,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Rank of the 13D→4D projection matrix",
+                eml_description="Integer rank of the dimensional projection tensor P_{13->4}; equals 13 - 4 = 9 internal degrees removed during S_PR(2) reduction.",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -355,6 +359,7 @@ class AppendixCGaugeMatrices(SimulationBase):
                 units="boolean",
                 status="VALIDATION",
                 description="Whether gauge projection matrices satisfy unitarity",
+                eml_description="Boolean flag indicating that P_dagger * P = I_13 is satisfied to machine precision, confirming lossless gauge projection.",
                 no_experimental_value=True,
             ),
         ]

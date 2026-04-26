@@ -386,12 +386,12 @@ class AppendixCExtendedDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "<strong>C.4.1 Golden Ratio Scaling Ansatz.</strong> "
-                        "The wavefunction overlap mechanism predicts exponential hierarchies but does not fix "
+                        "<Speculation>The wavefunction overlap mechanism predicts exponential hierarchies but does not fix "
                         "the absolute scale. In the PM framework, the observed 6-order-of-magnitude mass "
                         "hierarchy is parameterized as m<sub>f</sub> ∝ φ<sup>−N<sub>f</sub></sup>, where "
                         "φ = (1+√5)/2 is the golden ratio from G₂ minimal surface geometry, and N<sub>f</sub> "
                         "is the generation quantum number. This φ-scaling provides the best fit among tested "
-                        "bases (φ, e, 2, 3) — see yukawa_textures module for RMS analysis."
+                        "bases (φ, e, 2, 3) — see yukawa_textures module for RMS analysis.</Speculation>"
                     )
                 ),
                 ContentBlock(
@@ -409,14 +409,14 @@ class AppendixCExtendedDerivations(SimulationBase):
                     type="paragraph",
                     content=(
                         "<strong>C.4.3 Open Problem: Full 7D Overlap Integration.</strong> "
-                        "The Yukawa coupling is formally Y<sub>ij</sub> = ∫<sub>K</sub> η<sub>i</sub> ∧ η<sub>j</sub> "
+                        "<Speculation>The Yukawa coupling is formally Y<sub>ij</sub> = ∫<sub>K</sub> η<sub>i</sub> ∧ η<sub>j</sub> "
                         "∧ Φ₃, where Φ₃ is the associative 3-form and η<sub>i</sub> are harmonic forms on "
                         "the G₂ manifold K. Computing this integral exactly requires the full metric on a "
                         "compact G₂ manifold, which is not known analytically for any smooth compact example. "
                         "Lattice discretization of the Joyce construction or machine-learning approaches to "
                         "G₂ metrics (cf. Anderson et al. 2020) may eventually provide numerical evaluation. "
                         "Until then, the φ-scaling ansatz provides an effective parameterization consistent with "
-                        "the observed mass spectrum."
+                        "the observed mass spectrum.</Speculation>"
                     )
                 ),
                 ContentBlock(
@@ -608,6 +608,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                 label="(C.1)",
                 latex=r"\nabla \eta = 0 \quad \Longrightarrow \quad \text{Hol}(g) \subseteq G_2 \quad \Longrightarrow \quad \nabla\varphi = 0",
                 plain_text="∇η = 0 ⟹ Hol(g) ⊆ G2 ⟹ ∇φ = 0",
+                eml_tree_str="ops.mul(eml_vec('nabla'), eml_vec('eta'))",
                 category="ESTABLISHED",
                 description=(
                     "Derivation of G2 holonomy from parallel spinor condition. "
@@ -639,6 +640,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                     r"\alpha_3^{-1}(M_{\text{GUT}}) = \alpha_{\text{GUT}}^{-1} \approx 23.5"
                 ),
                 plain_text="α₁⁻¹(M_GUT) = α₂⁻¹(M_GUT) = α₃⁻¹(M_GUT) ≈ 23.5",
+                eml_tree_str="ops.inv(eml_vec('alpha_GUT'))",
                 category="DERIVED",
                 description=(
                     "Gauge coupling unification condition with 3-loop RG evolution "
@@ -666,6 +668,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                 label="(C.3)",
                 latex=r"y_i \sim \exp\left(-\frac{d_i^2}{2\lambda^2}\right) \quad \Rightarrow \quad \frac{m_i}{m_j} \sim \exp\left(-\frac{d_i^2 - d_j^2}{2\lambda^2}\right)",
                 plain_text="y_i ~ exp(-d_i²/(2λ²)) ⟹ m_i/m_j ~ exp(-(d_i²-d_j²)/(2λ²))",
+                eml_tree_str="ops.exp(ops.neg(ops.div(ops.pow(eml_vec('d_i'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('lambda'), eml_scalar(2.0))))))",
                 category="DERIVED",
                 description=(
                     "Derivation of fermion mass hierarchies from wavefunction overlap "
@@ -700,6 +703,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                     r"\end{smallmatrix}\right)"
                 ),
                 plain_text="U_TB tribimaximal mixing matrix from A4 symmetry",
+                eml_tree_str="ops.mul(eml_vec('U_TB'), eml_vec('nu_mass_eigenstates'))",
                 category="DERIVED",
                 description=(
                     "Derivation of tribimaximal neutrino mixing matrix from A₄ "
@@ -726,6 +730,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                 label="(C.5)",
                 latex=r"m_h^2 = 2\lambda v^2 \approx \frac{g^2 M_{\text{KK}}^2}{4\pi^2}",
                 plain_text="m_h² = 2λv² ≈ g²M_KK²/(4π²)",
+                eml_tree_str="ops.mul(eml_scalar(2.0), ops.mul(eml_vec('lambda'), ops.pow(eml_vec('v'), eml_scalar(2.0))))",
                 category="DERIVED",
                 description=(
                     "Derivation of Higgs mass from G2 moduli stabilization and "
@@ -757,6 +762,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                     r"\exp\left(\frac{1}{K}\right)"
                 ),
                 plain_text="τ_p = C M_GUT⁴/(m_p⁵ α_GUT²) × exp(1/K)",
+                eml_tree_str="ops.mul(ops.div(ops.mul(eml_vec('C'), ops.pow(eml_vec('M_GUT'), eml_scalar(4.0))), ops.mul(ops.pow(eml_vec('m_p'), eml_scalar(5.0)), ops.pow(eml_vec('alpha_GUT'), eml_scalar(2.0)))), ops.exp(ops.inv(eml_vec('K'))))",
                 category="PREDICTED",
                 description=(
                     "Derivation of proton lifetime including geometric suppression "
@@ -797,6 +803,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                 units="dimensionless",
                 status="VALIDATED",
                 description="Overall validation status for extended derivations",
+                eml_description="String status flag ('VALIDATED' or 'INCONSISTENT') summarizing internal consistency of all extended derivations in this appendix.",
                 no_experimental_value=True,  # Validation status - no experimental measurement
             ),
         ]

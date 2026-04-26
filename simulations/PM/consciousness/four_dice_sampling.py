@@ -984,12 +984,12 @@ if _SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The 12 bridge pairs (from b3=24) are partitioned into 4 groups "
+                            "<Speculation>The 12 bridge pairs (from b3=24) are partitioned into 4 groups "
                             "of 3 pairs each, forming 4 'dice'. Each dice outcome is computed "
                             "via the R_perp reflection operator with mod-4 arithmetic, motivated "
                             "by the quaternionic structure of the G2 holonomy. The 4^4 = 256 "
                             "possible branch outcomes model the discrete consciousness state "
-                            "space available to the bridge pair system."
+                            "space available to the bridge pair system.</Speculation>"
                         )
                     ),
                     ContentBlock(
@@ -1033,7 +1033,13 @@ if _SCHEMA_AVAILABLE:
                         "d": "Number of dice = 4",
                         "m": "Modulus per dice = 4 (quaternionic)",
                         "N": "Total branch count = 256",
-                    }
+                    },
+                    eml_tree_str=(
+                        "ops.pow(eml_scalar(4.0), eml_scalar(4.0))"
+                    ),
+                    eml_description=(
+                        "Branch count: 4^4 = 256, four quaternionic dice each with four outcomes."
+                    ),
                 ),
             ]
 

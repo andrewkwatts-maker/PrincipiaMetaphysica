@@ -988,6 +988,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=[],
+            eml_tree_str=(
+                "ops.add(eml_vec('d_mu_e_A_nu_antisym'), ops.mul(eml_vec('omega_A_B_mu_antisym'), eml_vec('e_B_nu')))"
+            ),
             derivation={
                 "method": "Torsion-free constraint from Riemannian geometry",
                 "steps": [
@@ -1019,6 +1022,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=[],
+            eml_tree_str=(
+                "ops.add(eml_vec('nabla_mu_g_nu_rho'), ops.neg(eml_scalar(0.0)))"
+            ),
             derivation={
                 "method": "Metric preservation under parallel transport",
                 "steps": [
@@ -1051,6 +1057,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=[],
+            eml_tree_str=(
+                "ops.mul(eml_scalar(0.5), ops.mul(eml_vec('g_inv_rho_sigma'), ops.add(ops.add(eml_vec('d_mu_g_sigma_nu'), eml_vec('d_nu_g_mu_sigma')), ops.neg(eml_vec('d_sigma_g_mu_nu')))))"
+            ),
             derivation={
                 "method": "Unique solution from torsion-free plus metric compatibility",
                 "steps": [
@@ -1084,6 +1093,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=["gravity.riemann_independent_4d"],
+            eml_tree_str=(
+                "ops.add(ops.add(ops.sub(eml_vec('d_mu_Gamma_rho_nu_sigma'), eml_vec('d_nu_Gamma_rho_mu_sigma')), ops.mul(eml_vec('Gamma_rho_mu_lam'), eml_vec('Gamma_lam_nu_sigma'))), ops.neg(ops.mul(eml_vec('Gamma_rho_nu_lam'), eml_vec('Gamma_lam_mu_sigma'))))"
+            ),
             derivation={
                 "method": "Commutator of covariant derivatives acting on a vector",
                 "steps": [
@@ -1115,6 +1127,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=["gravity.ricci_components_4d"],
+            eml_tree_str=(
+                "eml_vec('R_rho_mu_rho_nu')"
+            ),
             derivation={
                 "method": "Contraction of Riemann tensor on first and third indices",
                 "steps": [
@@ -1143,6 +1158,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=[],
+            eml_tree_str=(
+                "ops.mul(eml_vec('g_inv_mu_nu'), eml_vec('R_mu_nu'))"
+            ),
             derivation={
                 "method": "Full contraction of Ricci tensor with inverse metric",
                 "steps": [
@@ -1175,6 +1193,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["constants.M_PLANCK"],
             output_params=[],
+            eml_tree_str=(
+                "ops.mul(ops.div(ops.pow(eml_vec('M_Pl'), eml_scalar(2.0)), eml_scalar(2.0)), ops.mul(eml_vec('sqrt_neg_g'), eml_vec('R')))"
+            ),
             derivation={
                 "method": "Gravitational action from Ricci scalar integrated over spacetime",
                 "steps": [
@@ -1210,6 +1231,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["geometry.D_bulk"],
             output_params=[],
+            eml_tree_str=(
+                "ops.sub(eml_vec('R_mu_nu'), ops.mul(eml_scalar(0.5), ops.mul(eml_vec('g_mu_nu'), eml_vec('R'))))"
+            ),
             derivation={
                 "method": "Trace reversal of the Ricci tensor",
                 "steps": [
@@ -1240,6 +1264,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["constants.G_NEWTON"],
             output_params=[],
+            eml_tree_str=(
+                "ops.mul(ops.mul(eml_scalar(8.0), ops.mul(eml_pi(), eml_vec('G_N'))), eml_vec('T_mu_nu'))"
+            ),
             derivation={
                 "method": "Variational principle applied to Einstein-Hilbert plus matter action",
                 "steps": [
@@ -1278,6 +1305,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["topology.mephorash_chi", "topology.elder_kads"],
             output_params=["gravity.newton_constant_theory"],
+            eml_tree_str=(
+                "ops.inv(ops.mul(ops.pow(eml_vec('M_26D'), eml_scalar(24.0)), eml_vec('Vol_X22')))"
+            ),
             derivation={
                 "method": "Dimensional reduction of 26D gravitational action over compact space",
                 "steps": [
@@ -1309,6 +1339,9 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             ),
             input_params=["topology.mephorash_chi", "topology.elder_kads"],
             output_params=["gravity.planck_mass_from_g2"],
+            eml_tree_str=(
+                "ops.mul(eml_vec('M_26D'), ops.mul(ops.pow(eml_vec('Vol_G2'), ops.neg(ops.div(eml_scalar(1.0), eml_scalar(5.0)))), eml_vec('f_chi_b3')))"
+            ),
             derivation={
                 "method": "G2 compactification with topological correction factors",
                 "steps": [
@@ -1349,6 +1382,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="dimensionless",
             status="ESTABLISHED",
             description="Rank of vielbein matrix in 4D spacetime (equals dimension D=4)",
+            eml_description="Rank of the vielbein (tetrad) e^A_mu matrix in 4D spacetime; equals spacetime dimension D=4, mapping between curved and flat frame indices",
             no_experimental_value=True
         ))
 
@@ -1358,6 +1392,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Number of spin connection components: D * D(D-1)/2 = 4*6 = 24 in 4D",
+            eml_description="Number of independent spin connection components omega^AB_mu in 4D = D * D(D-1)/2 = 4 * 6 = 24; determines fermion-gravity coupling degrees of freedom",
             no_experimental_value=True
         ))
 
@@ -1367,6 +1402,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Independent Riemann tensor components: D^2(D^2-1)/12 = 20 in 4D",
+            eml_description="Number of algebraically independent components of the Riemann curvature tensor R^rho_sigma_mu_nu in D=4: N = D^2(D^2-1)/12 = 20",
             experimental_bound=20,
             bound_type="exact",
             bound_source="Mathematical (tensor symmetries)"
@@ -1378,6 +1414,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Symmetric Ricci tensor components: D(D+1)/2 = 10 in 4D",
+            eml_description="Number of independent components of the symmetric Ricci tensor R_mu_nu in D=4: N = D(D+1)/2 = 10; these appear directly in Einstein's field equations",
             experimental_bound=10,
             bound_type="exact",
             bound_source="Mathematical (symmetric tensor)"
@@ -1389,6 +1426,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="GeV^-2",
             status="DERIVED",
             description="G_N = 1/M_Pl^2 from G2 compactification geometry",
+            eml_description="Newton's gravitational constant G_N = 1/M_Pl^2 derived from G2 dimensional reduction: G_N = 1/(M_26D^24 * Vol(X_22))",
             derivation_formula="gr-newton-from-g2-v19",
             experimental_bound=6.70883e-39,  # Natural units (GeV^-2), converted from CODATA 2018
             bound_type="measured",
@@ -1402,6 +1440,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="GeV",
             status="DERIVED",
             description="M_Pl from G2 compactification: 1.22e19 GeV",
+            eml_description="4D Planck mass M_Pl = M_26D * Vol(G2)^(-1/5) * f(chi_eff, b3) from G2 compactification; topological invariants chi_eff=144 and b3=24 fix the gravitational scale",
             derivation_formula="gr-planck-from-compactification-v19",
             experimental_bound=1.220890e19,
             bound_type="measured",
@@ -1414,6 +1453,7 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Physical graviton polarizations: D(D-3)/2 = 2 in 4D (tensor modes)",
+            eml_description="Number of physical graviton helicity states in 4D = D(D-3)/2 = 2 (plus and cross polarizations); confirmed by LIGO/Virgo gravitational wave observations",
             experimental_bound=2,
             bound_type="measured",
             bound_source="GW observations (LIGO/Virgo)"

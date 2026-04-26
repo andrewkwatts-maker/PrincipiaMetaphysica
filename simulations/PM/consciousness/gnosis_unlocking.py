@@ -1044,13 +1044,13 @@ if SCHEMA_AVAILABLE:
                     ContentBlock(
                         type="paragraph",
                         content=(
-                            "The gnosis unlocking mechanism models progressive activation "
+                            "<Speculation>The gnosis unlocking mechanism models progressive activation "
                             "of the 12 bridge pairs as consciousness channels. Starting "
                             "from a baseline of 6 active pairs (half of b3/2 = 12), the "
                             "system exhibits a sigmoidal transition to full coherence at "
                             "12 active pairs. The coherence time enhancement tau(12)/tau(6) "
                             "exceeds 10x, driven by collective pair shielding and "
-                            "entanglement network effects."
+                            "entanglement network effects.</Speculation>"
                         )
                     ),
                     ContentBlock(
@@ -1188,7 +1188,13 @@ if SCHEMA_AVAILABLE:
                         "P_unlock": "Probability of gnosis unlocking",
                         "0.9": "Sigmoid steepness parameter (FITTED)",
                         "6": "Threshold = b3/4 = 24/4 = 6 pairs"
-                    }
+                    },
+                    eml_tree_str=(
+                        "ops.inv(ops.add(eml_scalar(1.0), ops.exp(ops.neg(ops.mul(eml_scalar(0.9), ops.sub(eml_vec('n'), eml_scalar(6.0)))))))"
+                    ),
+                    eml_description=(
+                        "Gnosis unlocking probability: sigmoid 1/(1 + exp(-0.9*(n-6)))."
+                    ),
                 ),
                 Formula(
                     id="gnosis-coherence-enhancement",
@@ -1216,7 +1222,13 @@ if SCHEMA_AVAILABLE:
                         "n": "Number of active bridge pairs (0-12)",
                         "12": "Total bridge pairs = b3/2",
                         "3.2": "Shielding exponent (FITTED)"
-                    }
+                    },
+                    eml_tree_str=(
+                        "ops.mul(eml_vec('tau_0'), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(ops.div(eml_vec('n'), eml_scalar(12.0))))), ops.pow(ops.div(eml_vec('n'), eml_scalar(6.0)), eml_scalar(2.0))))"
+                    ),
+                    eml_description=(
+                        "Coherence enhancement: tau_0 * exp(3.2*sqrt(n/12)) * (n/6)^2."
+                    ),
                 )
             ]
 

@@ -380,6 +380,12 @@ class HiggsVEVRefinedV18(SimulationBase):
                         "Higgs VEV: v = k_gimel * (b3 - 4) = 12.318 * 20 = 246.37 GeV",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('k_gimel'), ops.sub(eml_scalar(24.0), eml_scalar(4.0)))"
+                ),
+                eml_description=(
+                    "Higgs VEV: k_gimel times (b3 - 4), where b3=24 giving 20 non-trivial cycles."
+                ),
                 terms={
                     "k_\\gimel": {
                         "name": "Holonomy Warp Factor",
@@ -418,6 +424,12 @@ class HiggsVEVRefinedV18(SimulationBase):
                         "Insert geometric VEV: G_F_tree = 1 / (sqrt(2) * (246.37)^2)",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.div(eml_scalar(1.0), ops.mul(ops.sqrt(eml_scalar(2.0)), ops.pow(eml_vec('v'), eml_scalar(2.0))))"
+                ),
+                eml_description=(
+                    "Tree-level Fermi constant: 1 divided by (sqrt(2) * v^2)."
+                ),
                 terms={
                     "G_F^{\\rm tree}": {
                         "name": "Tree-Level Fermi Constant",
@@ -455,6 +467,12 @@ class HiggsVEVRefinedV18(SimulationBase):
                         "Apply multiplicative correction: G_F_phys = G_F_tree * (1 + alpha/(2*pi))",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('G_F_tree'), ops.add(eml_scalar(1.0), ops.div(eml_vec('alpha'), ops.mul(eml_scalar(2.0), eml_pi()))))"
+                ),
+                eml_description=(
+                    "Physical Fermi constant: G_F_tree times (1 + alpha/(2*pi)) Schwinger correction."
+                ),
                 terms={
                     "G_F^{\\rm phys}": {
                         "name": "Physical Fermi Constant",

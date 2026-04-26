@@ -561,6 +561,17 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                     "Standard 5D Kaluza-Klein metric ansatz with compact circle S^1 of "
                     "radius R. The off-diagonal component A_mu becomes the 4D U(1) gauge field."
                 ),
+                eml_tree_str=(
+                    "ops.add("
+                    "ops.mul(eml_vec('g_munu'), ops.mul(eml_vec('dx_mu'), eml_vec('dx_nu'))), "
+                    "ops.mul(ops.pow(eml_vec('R'), eml_scalar(2.0)), "
+                    "ops.pow(ops.add(eml_vec('dy'), ops.mul(eml_vec('k'), ops.mul(eml_vec('A_mu'), eml_vec('dx_mu')))), eml_scalar(2.0)))"
+                    ")"
+                ),
+                eml_description=(
+                    "5D KK metric: 4D piece g_{mu nu} dx^mu dx^nu plus R^2 times "
+                    "the squared circle fiber (dy + k A_mu dx^mu)^2."
+                ),
                 inputParams=["topology.compact_radius"],
                 outputParams=[],
                 input_params=["topology.compact_radius"],
@@ -597,6 +608,19 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                     "off-diagonal components of the 5D metric. The internal curvature contribution "
                     "vanishes identically due to the intrinsic flatness of the S^1 circle "
                     "compactification (zero Riemann tensor on S^1)."
+                ),
+                eml_tree_str=(
+                    "ops.sub("
+                    "eml_vec('R_4D'), "
+                    "ops.mul("
+                    "ops.div(ops.mul(ops.pow(eml_vec('k'), eml_scalar(2.0)), ops.pow(eml_vec('R'), eml_scalar(2.0))), eml_scalar(4.0)), "
+                    "ops.pow(eml_vec('F_munu'), eml_scalar(2.0))"
+                    ")"
+                    ")"
+                ),
+                eml_description=(
+                    "R^(5) = R^(4) - (k^2 R^2 / 4) F^2: 5D Ricci scalar splits into "
+                    "4D curvature plus gauge kinetic term from off-diagonal metric."
                 ),
                 inputParams=["topology.compact_radius"],
                 outputParams=["kk.gauge_kinetic_coefficient"],
@@ -635,6 +659,14 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                     "This geometric unification of gravity and gauge interactions extends to the "
                     "full G2 compactification with cycle volumes replacing the single radius R."
                 ),
+                eml_tree_str=(
+                    "ops.div(ops.pow(eml_vec('k'), eml_scalar(2.0)), ops.pow(eml_vec('R'), eml_scalar(2.0)))"
+                ),
+                eml_description=(
+                    "g_YM^2 = k^2 / R^2 from KK matching; "
+                    "M_Pl^2 = M_*^3 * 2pi*R from EH volume integration. "
+                    "Both quantities emerge from compact dimension geometry."
+                ),
                 inputParams=["topology.compact_radius", "constants.M_PLANCK"],
                 outputParams=["kk.planck_factor"],
                 input_params=["topology.compact_radius", "constants.M_PLANCK"],
@@ -672,6 +704,11 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="kk-gauge-coupling-relation",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.mul(ops.pow(eml_vec('M_star'), eml_scalar(3.0)), "
+                    "ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('R'))) "
+                    "— M_Pl^2 = M_*^3 * 2pi*R from S^1 compactification volume."
+                ),
             ),
             Parameter(
                 path="kk.gauge_kinetic_coefficient",
@@ -684,6 +721,11 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="kk-ricci-decomposition",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.div(ops.mul(ops.pow(eml_vec('k'), eml_scalar(2.0)), "
+                    "ops.pow(eml_vec('R'), eml_scalar(2.0))), eml_scalar(4.0)) "
+                    "— kinetic coefficient k^2 R^2 / 4; canonical = 1/4 when k*R = 1."
+                ),
             ),
             Parameter(
                 path="kk.canonical_normalization",
@@ -696,6 +738,11 @@ class KKReductionGRGaugeSimulation(SimulationBase):
                 ),
                 derivation_formula="kk-ricci-decomposition",
                 no_experimental_value=True,
+                eml_description=(
+                    "True iff ops.pow(eml_vec('k'), eml_scalar(2.0)) * "
+                    "ops.pow(eml_vec('R'), eml_scalar(2.0)) = eml_scalar(1.0); "
+                    "canonical -1/4 F^2 normalization condition."
+                ),
             ),
         ]
 

@@ -984,13 +984,13 @@ if _SCHEMA_AVAIL:
                     _CB(
                         type="paragraph",
                         content=(
-                            "The pair shielding mechanism proposes that the 12 bridge "
+                            "<Speculation>The pair shielding mechanism proposes that the 12 bridge "
                             "pairs provide topological protection against thermal "
                             "decoherence. Each pair contributes a shielding factor that "
                             "reduces the effective decoherence rate, with the total "
                             "enhancement scaling as exp(k * sqrt(n/12)) where k=2.5 is "
                             "fitted. The warm brain problem (gap of 10^3 to 10^5 between "
-                            "required and achieved coherence times at 310K) remains open."
+                            "required and achieved coherence times at 310K) remains open.</Speculation>"
                         )
                     ),
                     _CB(
@@ -1001,7 +1001,7 @@ if _SCHEMA_AVAIL:
                     _CB(
                         type="paragraph",
                         content=(
-                            "Biological Falsifiability Table (predicted vs measured coherence):\n"
+                            "<Speculation>Biological Falsifiability Table (predicted vs measured coherence):\n"
                             "| Condition | Predicted tau | Measured tau | Status |\n"
                             "|-----------|--------------|-------------|--------|\n"
                             "| Dry microtubule (isolated) | ~25 ms (Penrose) | 10-100 ms (in vitro) | CONSISTENT |\n"
@@ -1012,7 +1012,7 @@ if _SCHEMA_AVAIL:
                             "in the 1-10 ms range under biological conditions (310K, wet). This is "
                             "a falsifiable claim: if future single-microtubule quantum coherence "
                             "measurements at 310K show tau < 0.1 ms with optimal conditions, the "
-                            "pair shielding mechanism is ruled out."
+                            "pair shielding mechanism is ruled out.</Speculation>"
                         )
                     ),
                 ],
@@ -1051,7 +1051,13 @@ if _SCHEMA_AVAIL:
                         r"\tau_0": "Base Penrose collapse time",
                         "k": "Shielding coefficient = 2.5 (FITTED)",
                         r"n_{\text{pairs}}": "Number of active bridge pairs (6-12)",
-                    }
+                    },
+                    eml_tree_str=(
+                        "ops.mul(ops.div(eml_vec('hbar'), eml_vec('E_G')), ops.exp(ops.mul(eml_vec('k'), ops.sqrt(eml_vec('n_pairs')))))"
+                    ),
+                    eml_description=(
+                        "Pair-shielded coherence time: (hbar/E_G) times exp(k*sqrt(n_pairs)) enhancement."
+                    ),
                 ),
             ]
 

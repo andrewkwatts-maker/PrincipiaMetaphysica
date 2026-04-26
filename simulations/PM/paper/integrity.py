@@ -392,6 +392,12 @@ class IntegrityV16_2(SimulationBase):
                     "method": "topological_rigidity",
                     "parentFormulas": ["g2-holonomy", "laplacian-eigenvalue"]
                 },
+                eml_tree_str=(
+                    "eml_scalar(0.0)"
+                ),
+                eml_description=(
+                    "Hysteresis lock: d(alpha)/dt = 0, all physical constants are time-invariant topological eigenvalues."
+                ),
                 terms={
                     "alpha": "Any physical constant (e.g., fine structure constant)",
                     "d/dt": "Time derivative",
@@ -417,6 +423,12 @@ class IntegrityV16_2(SimulationBase):
                     "method": "binary_enforcement",
                     "parentFormulas": ["hysteresis-lock"]
                 },
+                eml_tree_str=(
+                    "ops.pow(eml_vec('C_n'), eml_scalar(42.0))"
+                ),
+                eml_description=(
+                    "Certificate validation: product of 42 binary certificate outcomes C_n; all must equal 1."
+                ),
                 terms={
                     "C_n": "n-th certificate of integrity (binary: 0=fail, 1=pass)",
                     "42": "Total number of validation certificates across 3 tiers",
@@ -444,6 +456,12 @@ class IntegrityV16_2(SimulationBase):
                     "method": "cryptographic_verification",
                     "parentFormulas": ["certificate-validation"]
                 },
+                eml_tree_str=(
+                    "ops.add(eml_vec('registry_hash'), ops.add(eml_vec('coords_hash'), eml_vec('tensors_hash')))"
+                ),
+                eml_description=(
+                    "Omega seal: SHA-256 hash of concatenated registry, coordinates, and projection tensors."
+                ),
                 terms={
                     "Omega_seal": "SHA-256 hash of the terminal state (256-bit digest)",
                     "registry": "Frozen 125-residue registry (registry.json)",

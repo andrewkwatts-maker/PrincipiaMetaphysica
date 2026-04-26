@@ -235,9 +235,9 @@ class AppendixEProtonDecay(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "In the G₂ M-theory framework, quarks and leptons are localized on different "
+                        "<Speculation>In the G₂ M-theory framework, quarks and leptons are localized on different "
                         "associative 3-cycles. The wavefunction overlap between these cycles provides "
-                        "an additional geometric suppression factor:"
+                        "an additional geometric suppression factor:</Speculation>"
                     )
                 ),
                 ContentBlock(
@@ -353,6 +353,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 label="(E.2)",
                 latex=r"\Gamma_{p \to \pi^0 e^+} \sim \frac{\alpha_{\text{GUT}}^2}{M_{\text{GUT}}^4} m_p^5 \cdot |\langle \pi^0 e^+ | \mathcal{O}_6 | p \rangle|^2",
                 plain_text="Γ_p ∝ (α_GUT²/M_GUT⁴) m_p⁵ |⟨π⁰e⁺|O₆|p⟩|²",
+                eml_tree_str="ops.mul(ops.div(ops.pow(eml_vec('alpha_GUT'), eml_scalar(2.0)), ops.pow(eml_vec('M_GUT'), eml_scalar(4.0))), ops.pow(eml_vec('m_p'), eml_scalar(5.0)))",
                 category="PREDICTED",
                 description=(
                     "Proton decay rate from dimension-6 effective operators. "
@@ -376,6 +377,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 label="(E.4)",
                 latex=r"\tau_{p \to \pi^0 e^+} = \frac{\hbar}{\Gamma_p} \approx 1.3 \times 10^{35} \text{ years}",
                 plain_text="τ_p = ℏ/Γ_p ≈ 1.3 × 10³⁵ years",
+                eml_tree_str="ops.div(eml_vec('hbar'), eml_vec('Gamma_p'))",
                 category="PREDICTED",
                 description=(
                     "Predicted proton lifetime for p → π⁰e⁺ channel. "
@@ -398,6 +400,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 label="(E.3)",
                 latex=r"S_{\text{geom}} = \exp\left(-\frac{\Delta_{QL}}{\ell_{\text{string}}}\right)",
                 plain_text="S_geom = exp(-Δ_QL/ℓ_string)",
+                eml_tree_str="ops.exp(ops.neg(ops.div(eml_vec('Delta_QL'), eml_vec('l_string'))))",
                 category="GEOMETRIC",
                 description=(
                     "Geometric suppression from wavefunction overlap between quark "
@@ -431,6 +434,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="years",
                 status="PREDICTED",
                 description="Predicted lifetime for p → π⁰e⁺ decay channel",
+                eml_description="Predicted proton lifetime in years for the p → π⁰e⁺ channel; derived from dimension-6 GUT operator suppression and geometric wavefunction overlap.",
                 experimental_bound=2.4e34,  # Super-K lower bound (years)
                 bound_type="lower",
                 bound_source="Super-K",
@@ -441,6 +445,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="GeV",
                 status="PREDICTED",
                 description="Total decay rate for proton (all channels)",
+                eml_description="Total proton decay rate in natural units (GeV); computed from alpha_GUT^2 * m_p^5 / M_GUT^4 times hadronic matrix element and geometric suppression.",
                 no_experimental_value=True,  # Future test - no direct measurement yet
             ),
             Parameter(
@@ -449,6 +454,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="dimensionless",
                 status="DERIVED",
                 description="Wavefunction overlap suppression from G₂ cycle separation",
+                eml_description="Dimensionless geometric suppression S_geom = exp(-Delta_QL / l_string) from wavefunction overlap between quark and lepton cycles on the G2 manifold.",
                 no_experimental_value=True,  # Geometric quantity - no experimental measurement
             ),
         ]

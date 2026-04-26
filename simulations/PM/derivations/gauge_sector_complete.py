@@ -834,6 +834,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.elder_kads"],
             outputParams=["gauge.qcd_gluon_count", "gauge.qcd_alpha_s_mz"],
+            eml_tree_str=(
+                "ops.add(ops.mul(ops.neg(eml_scalar(0.25)), ops.mul(eml_vec('G_a_mn'), eml_vec('G_a_mn_up'))), ops.mul(eml_vec('q_bar_f'), ops.mul(eml_vec('i_gamma_D'), eml_vec('q_f'))))"
+            ),
             terms={
                 "G^a_mn": "Gluon field strength tensor (8 color components)",
                 "q_f": "Quark fields in fundamental representation (6 flavors, 3 colors)",
@@ -860,6 +863,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(ops.sub(eml_vec('d_mu_G_nu'), eml_vec('d_nu_G_mu')), ops.mul(eml_vec('g_s'), ops.mul(eml_vec('f_abc'), ops.mul(eml_vec('G_b_mu'), eml_vec('G_c_nu')))))"
+            ),
             terms={
                 "G^a_mu": "Gluon gauge field (a = 1...8)",
                 "f^{abc}": "SU(3) structure constants",
@@ -879,6 +885,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=["gauge.qcd_gluon_count"],
+            eml_tree_str=(
+                "ops.sub(ops.pow(eml_scalar(3.0), eml_scalar(2.0)), eml_scalar(1.0))"
+            ),
             terms={
                 "dim(SU(N))": "N^2 - 1 for SU(N) Lie algebra dimension",
                 "Adjoint": "Gauge bosons transform in adjoint representation"
@@ -902,6 +911,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.elder_kads"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.exp(ops.neg(ops.mul(eml_vec('sigma'), eml_vec('Area_C'))))"
+            ),
             terms={
                 "W(C)": "Wilson loop operator around contour C",
                 "sigma": "QCD string tension (flux tube tension)",
@@ -930,6 +942,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=["gauge.weak_boson_count", "gauge.weak_coupling_g2"],
+            eml_tree_str=(
+                "ops.add(ops.mul(ops.neg(eml_scalar(0.25)), ops.mul(eml_vec('W_a_mn'), eml_vec('W_a_mn_up'))), ops.mul(eml_vec('psi_bar_L'), ops.mul(eml_vec('i_gamma_D'), eml_vec('psi_L'))))"
+            ),
             terms={
                 "W^a_mn": "Weak field strength tensor (a = 1, 2, 3)",
                 "psi_L": "Left-handed fermion doublets",
@@ -955,6 +970,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(ops.sub(eml_vec('d_mu_W_nu'), eml_vec('d_nu_W_mu')), ops.mul(eml_vec('g_2'), ops.mul(eml_vec('eps_abc'), ops.mul(eml_vec('W_b_mu'), eml_vec('W_c_nu')))))"
+            ),
             terms={
                 "W^a_mu": "Weak gauge field (a = 1, 2, 3)",
                 "epsilon^{abc}": "Levi-Civita symbol (SU(2) structure constants)",
@@ -979,6 +997,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            eml_tree_str=(
+                "ops.mul(ops.sub(eml_vec('d_mu'), ops.mul(ops.mul(eml_vec('i'), eml_vec('g_2')), ops.mul(eml_vec('tau_a_over_2'), eml_vec('W_a_mu')))), ops.mul(eml_vec('P_L'), eml_vec('psi')))"
+            ),
             terms={
                 "tau^a": "Pauli matrices (generators of SU(2))",
                 "P_L": "Left-handed chirality projector",
@@ -1007,6 +1028,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.mephorash_chi"],
             outputParams=["gauge.hypercharge_y_ratio", "gauge.hypercharge_coupling_gp"],
+            eml_tree_str=(
+                "ops.add(ops.mul(ops.neg(eml_scalar(0.25)), ops.mul(eml_vec('B_mn'), eml_vec('B_mn_up'))), ops.mul(eml_vec('psi_bar'), ops.mul(eml_vec('i_gamma_mu'), ops.mul(ops.sub(eml_vec('d_mu'), ops.mul(ops.mul(eml_vec('i'), eml_vec('gp')), ops.mul(eml_vec('Y'), eml_vec('B_mu')))), eml_vec('psi')))))"
+            ),
             terms={
                 "B_mn": "Hypercharge field strength (Abelian)",
                 "Y": "Hypercharge quantum number (varies by field)",
@@ -1029,6 +1053,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.mephorash_chi"],
             outputParams=["gauge.hypercharge_y_ratio"],
+            eml_tree_str=(
+                "ops.div(eml_scalar(125.0), eml_scalar(144.0))"
+            ),
             terms={
                 "chi_visible": "Visible sector contribution = 125",
                 "chi_eff": "Total effective Euler characteristic = 144"
@@ -1053,6 +1080,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=[],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(ops.add(ops.add(ops.add(ops.mul(eml_scalar(3.0), ops.mul(eml_scalar(2.0), eml_vec('Y_QL'))), ops.mul(eml_scalar(3.0), eml_vec('Y_uR'))), ops.mul(eml_scalar(3.0), eml_vec('Y_dR'))), ops.mul(eml_scalar(2.0), eml_vec('Y_LL'))), eml_vec('Y_eR'))"
+            ),
             terms={
                 "Q_L": "Quark doublet (3 colors, 2 components): Y = +1/6",
                 "u_R": "Up-type singlet (3 colors): Y = +2/3",
@@ -1081,6 +1111,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["topology.elder_kads"],
             outputParams=["gauge.sin2_theta_w"],
+            eml_tree_str=(
+                "ops.mul(ops.div(eml_scalar(12.0), eml_vec('b3')), eml_vec('f_RG'))"
+            ),
             terms={
                 "12": "Visible gauge generators: 1 (U(1)) + 3 (SU(2)) + 8 (SU(3))",
                 "24": "Total b3 Betti number",
@@ -1099,6 +1132,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["gauge.sin2_theta_w"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(ops.mul(eml_vec('B_mu'), eml_vec('cos_tW')), ops.mul(eml_vec('W3_mu'), eml_vec('sin_tW')))"
+            ),
             terms={
                 "A_mu": "Photon field (massless)",
                 "B_mu": "Hypercharge gauge field",
@@ -1118,6 +1154,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["gauge.sin2_theta_w"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(ops.mul(ops.neg(eml_vec('B_mu')), eml_vec('sin_tW')), ops.mul(eml_vec('W3_mu'), eml_vec('cos_tW')))"
+            ),
             terms={
                 "Z_mu": "Z boson field (massive)",
                 "M_Z": "Z boson mass = g_2 v / (2 cos(theta_W))"
@@ -1144,6 +1183,9 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             ),
             inputParams=["gauge.sin2_theta_w", "gauge.cos_theta_w"],
             outputParams=[],
+            eml_tree_str=(
+                "ops.add(ops.mul(eml_vec('cos_tW'), eml_vec('B_mu')), ops.mul(eml_vec('sin_tW'), eml_vec('W3_mu')))"
+            ),
             terms={
                 "Rotation": "SO(2) rotation in neutral gauge boson space",
                 "theta_W": "Weinberg angle ~ 28.7 degrees"
@@ -1172,6 +1214,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="count",
             status="DERIVED",
             description="8 gluons from SU(3) adjoint: dim = 3^2 - 1 = 8",
+            eml_description="Gluon count N_gluon = 3^2 - 1 = 8 from dimension of SU(3) adjoint representation; derived from A2 singularity resolution on G2 associative 3-cycles",
             derivation_formula="su3-gluon-count-v19",
             experimental_bound=8,
             bound_type="measured",
@@ -1184,6 +1227,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="alpha_s(M_Z) from G2 3-cycle volume spectral residue",
+            eml_description="Strong coupling constant alpha_s at the Z-boson mass scale derived from the volume of associative 3-cycles in the G2 manifold",
             derivation_formula="su3-qcd-lagrangian-g2-v19",
             experimental_bound=0.1179,
             bound_type="measured",
@@ -1197,6 +1241,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="string",
             status="GEOMETRIC",
             description="Associative 3-cycle with A2 singularity",
+            eml_description="Categorical label identifying QCD as emerging from A2 singularity resolution on G2 associative 3-cycles",
             no_experimental_value=True
         ))
 
@@ -1207,6 +1252,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="count",
             status="DERIVED",
             description="3 weak bosons from SU(2) adjoint: dim = 2^2 - 1 = 3",
+            eml_description="Weak gauge boson count N_W = 2^2 - 1 = 3 (W+, W-, Z) from A1 singularity resolution on G2 co-associative 4-cycles",
             derivation_formula="su2-weak-lagrangian-g2-v19",
             experimental_bound=3,
             bound_type="measured",
@@ -1219,6 +1265,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="SU(2)_L coupling from co-associative 4-cycle volume",
+            eml_description="SU(2)_L gauge coupling g_2 derived from the volume of co-associative 4-cycles in the G2 manifold; related to Weinberg angle by g_2 sin(theta_W) = e",
             derivation_formula="su2-weak-lagrangian-g2-v19",
             experimental_bound=0.6517,
             bound_type="measured",
@@ -1232,6 +1279,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="string",
             status="GEOMETRIC",
             description="Co-associative 4-cycle with A1 singularity",
+            eml_description="Categorical label identifying SU(2)_L weak force as arising from A1 singularity resolution on G2 co-associative 4-cycles",
             no_experimental_value=True
         ))
 
@@ -1242,6 +1290,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="Y = 125/144 from visible/total chi_eff ratio",
+            eml_description="Hypercharge normalization Y = chi_visible / chi_eff = 125/144 from ratio of visible-sector Euler characteristic to total G2 effective chi",
             derivation_formula="u1-hypercharge-ratio-v19",
             no_experimental_value=True
         ))
@@ -1252,6 +1301,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="U(1)_Y coupling from residual Abelian cycle",
+            eml_description="U(1)_Y hypercharge coupling g-prime derived from the residual Abelian cycle after SU(3)xSU(2) extraction from G2 holonomy",
             derivation_formula="u1-hypercharge-lagrangian-v19",
             experimental_bound=0.3578,
             bound_type="measured",
@@ -1266,6 +1316,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="sin^2(theta_W) = 0.2312 from 12/24 shadow tilt + RG running",
+            eml_description="Weinberg mixing angle sin^2(theta_W) = (12/b3) * f_RG derived from the shadow tilt ratio of visible gauge generators to total G2 Betti number",
             derivation_formula="ew-weinberg-angle-v19",
             experimental_bound=0.23121,
             bound_type="measured",
@@ -1279,6 +1330,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="dimensionless",
             status="DERIVED",
             description="cos(theta_W) = sqrt(1 - sin^2(theta_W))",
+            eml_description="Cosine of Weinberg angle cos(theta_W) = sqrt(1 - sin^2(theta_W)) used in electroweak boson mass matrix and Z/photon mixing",
             derivation_formula="ew-weinberg-angle-v19",
             experimental_bound=0.8768,
             bound_type="measured",
@@ -1291,6 +1343,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="degrees",
             status="DERIVED",
             description="theta_W ~ 28.7 degrees from geometric derivation",
+            eml_description="Weinberg angle theta_W in degrees derived from G2 shadow-tilt geometry; equals arcsin(sqrt(12/b3 * f_RG))",
             derivation_formula="ew-weinberg-angle-v19",
             experimental_bound=28.75,
             bound_type="measured",
@@ -1303,6 +1356,7 @@ class GaugeSectorCompleteDerivations(SimulationBase):
             units="boolean",
             status="DERIVED",
             description="True if electroweak mixing matches PDG values",
+            eml_description="Boolean flag set to True when the derived Weinberg angle and EW mixing matrix reproduce PDG-2024 values within uncertainty",
             no_experimental_value=True
         ))
 

@@ -1148,6 +1148,12 @@ class DynamicalLambdaRelaxation(SimulationBase):
                         "S ~ 530, a factor-of-2 discrepancy in the exponent."
                     ),
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_vec('V_bare'), ops.exp(ops.neg(eml_vec('S_Pneuma'))))"
+                ),
+                eml_description=(
+                    "Effective cosmological constant: V_bare times exp(-S_Pneuma) entropy suppression."
+                ),
                 terms={
                     "V_bare": "Bare potential = V_racetrack + V_torsion",
                     "S_Pneuma": "Total Pneuma entropy (bridge + OR + sampler)",
@@ -1183,6 +1189,12 @@ class DynamicalLambdaRelaxation(SimulationBase):
                         "V_bare = V_racetrack + V_torsion",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.add(eml_vec('V_racetrack'), eml_vec('V_torsion'))"
+                ),
+                eml_description=(
+                    "Bare potential: sum of racetrack minimum and torsion uplift."
+                ),
                 terms={
                     "V_racetrack": "F-term SUGRA racetrack minimum ~ -3.7e-5 M_Pl^4",
                     "V_torsion": "G2 torsion potential ~ 0.01042 M_Pl^4",
@@ -1215,6 +1227,12 @@ class DynamicalLambdaRelaxation(SimulationBase):
                         "V_torsion = chi_eff / b3^3 = 144/13824",
                     ],
                 },
+                eml_tree_str=(
+                    "ops.mul(ops.div(eml_scalar(144.0), ops.pow(eml_scalar(24.0), eml_scalar(3.0))), ops.pow(eml_vec('M_Pl'), eml_scalar(4.0)))"
+                ),
+                eml_description=(
+                    "Torsion potential: (chi_eff / b3^3) * M_Pl^4 = (144 / 24^3) * M_Pl^4."
+                ),
                 terms={
                     "chi_eff": "= 144 = b3^2/4, effective Euler characteristic",
                     "b3": "= 24, third Betti number of G2 manifold",
@@ -1263,6 +1281,12 @@ class DynamicalLambdaRelaxation(SimulationBase):
                         "correlations between bridges, partial thermalization."
                     ),
                 },
+                eml_tree_str=(
+                    "ops.mul(eml_scalar(14.0), eml_vec('T_min'))"
+                ),
+                eml_description=(
+                    "Naive entropy: (N_bridges + kappa_sampler) * T_min = 14 * T_min."
+                ),
                 terms={
                     "N_bridges": "= 12 = b3/2, bridge pair count",
                     "kappa_sampler": "= 2 = dim(S^{2,0}), sampler diffusion",
@@ -1338,6 +1362,12 @@ class DynamicalLambdaRelaxation(SimulationBase):
                         ),
                     },
                 },
+                eml_tree_str=(
+                    "ops.sub(eml_vec('S_naive'), eml_vec('I_torsion'))"
+                ),
+                eml_description=(
+                    "Corrected entropy: S_naive minus torsion funnel integral I_torsion (FITTED)."
+                ),
                 terms={
                     "S_naive": "Naive entropy ~ 530 (overestimate)",
                     "I_torsion": "Torsion funnel integral ~ 250 (FITTED)",

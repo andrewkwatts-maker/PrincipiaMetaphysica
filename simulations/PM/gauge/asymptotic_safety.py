@@ -402,29 +402,40 @@ class AsymptoticSafetySimulation(SimulationBase):
         return [
             Formula(
                 id="hitchin-fixed-point",
+                label="(3.4.1)",
                 latex=(
                     r"\alpha_*^{-1} = \dim\bigl(H^3(X, \mathbb{R})\bigr) = b_3"
                 ),
+                plain_text="alpha*^{-1} = dim(H^3(X, R)) = b_3",
+                category="GEOMETRIC",
                 description=(
                     "UV fixed-point inverse coupling from G₂ moduli space dimension"
                 ),
-                domain="gauge",
-                classification="MOTIVATED_IDENTIFICATION",
-                source="Hitchin functional moduli counting",
-                pillar_seeds=["b3"],
+                eml_tree_str="ops.inv(eml_vec('b3'))",
+                eml_description=(
+                    "alpha*^{-1} = b_3: inverse fixed-point coupling equals the G2 Betti "
+                    "number (Hitchin functional moduli space dimension). "
+                    "MOTIVATED_IDENTIFICATION — not a theorem."
+                ),
             ),
             Formula(
                 id="as-operator-enhancement",
+                label="(3.4.2)",
                 latex=(
                     r"\lambda_{6,\text{eff}} = \exp\!\left(-\frac{\chi_{\text{eff}}}{b_3}\right)"
                 ),
+                plain_text="lambda_6_eff = exp(-chi_eff / b_3)",
+                category="GEOMETRIC",
                 description=(
                     "Dimension-6 operator suppression from topological cycle ratio"
                 ),
-                domain="gauge",
-                classification="TOPOLOGICAL_ARITHMETIC",
-                source="χ_eff / b₃ instanton analogy",
-                pillar_seeds=["b3", "chi_eff"],
+                eml_tree_str=(
+                    "ops.exp(ops.neg(ops.div(eml_vec('chi_eff'), eml_vec('b3'))))"
+                ),
+                eml_description=(
+                    "lambda_6_eff = exp(-chi_eff / b_3) = exp(-6): exponential suppression "
+                    "from integer ratio 144/24 = 6. Proton lifetime enhanced by 1/lambda_6^2."
+                ),
             ),
         ]
 

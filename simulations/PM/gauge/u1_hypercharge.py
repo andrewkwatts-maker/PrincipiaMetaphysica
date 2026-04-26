@@ -507,6 +507,16 @@ class U1HyperchargeSimulation(SimulationBase):
                     "U(1)_Y hypercharge field strength tensor (Abelian). Unlike SU(2) and SU(3), "
                     "there is no self-interaction term because U(1) structure constants vanish."
                 ),
+                eml_tree_str=(
+                    "ops.sub("
+                    "ops.mul(eml_vec('partial_mu'), eml_vec('B_nu')), "
+                    "ops.mul(eml_vec('partial_nu'), eml_vec('B_mu'))"
+                    ")"
+                ),
+                eml_description=(
+                    "Abelian B field strength: simple antisymmetric derivative "
+                    "partial_mu B_nu - partial_nu B_mu with no non-Abelian self-coupling."
+                ),
                 inputParams=[],
                 outputParams=[],
                 input_params=[],
@@ -535,6 +545,16 @@ class U1HyperchargeSimulation(SimulationBase):
                 description=(
                     "U(1)_Y hypercharge kinetic Lagrangian with canonical normalization. "
                     "The cycle volume r_Y (smallest gauge cycle) determines the coupling g'."
+                ),
+                eml_tree_str=(
+                    "ops.mul("
+                    "ops.neg(ops.div(eml_scalar(1.0), eml_scalar(4.0))), "
+                    "ops.pow(eml_vec('B_munu'), eml_scalar(2.0))"
+                    ")"
+                ),
+                eml_description=(
+                    "Canonical -1/4 B_{mu nu} B^{mu nu}: Abelian hypercharge kinetic term "
+                    "with no self-interaction. Coupling g' set by smallest G2 cycle volume r_Y."
                 ),
                 inputParams=["topology.hypercharge_cycle_volume"],
                 outputParams=["gauge.u1_hypercharge_cycle_volume"],
@@ -565,6 +585,14 @@ class U1HyperchargeSimulation(SimulationBase):
                     "Gell-Mann-Nishijima formula relating electric charge Q to weak isospin T^3 "
                     "and hypercharge Y. After electroweak symmetry breaking, the electromagnetic "
                     "coupling e is determined by the Weinberg angle."
+                ),
+                eml_tree_str=(
+                    "ops.add(eml_vec('T3'), eml_vec('Y'))"
+                ),
+                eml_description=(
+                    "Electric charge Q = T^3 + Y (Gell-Mann-Nishijima): "
+                    "sum of third isospin component and hypercharge. "
+                    "Electromagnetic coupling: ops.mul(eml_vec('g_2'), eml_vec('sin_theta_W'))."
                 ),
                 inputParams=["pdg.sin2_theta_W", "constants.alpha_em"],
                 outputParams=["gauge.u1_anomaly_cancellation"],
@@ -604,6 +632,10 @@ class U1HyperchargeSimulation(SimulationBase):
                 ),
                 derivation_formula="u1-hypercharge-kinetic",
                 no_experimental_value=True,
+                eml_description=(
+                    "eml_vec('r_Y') — smallest G2 Abelian cycle volume; "
+                    "g' determined via ops.inv(eml_vec('r_Y'))."
+                ),
             ),
             Parameter(
                 path="gauge.u1_canonical_coefficient",
@@ -616,6 +648,10 @@ class U1HyperchargeSimulation(SimulationBase):
                 ),
                 derivation_formula="u1-hypercharge-kinetic",
                 no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_vec('r_Y'), eml_scalar(4.0)) — kinetic coefficient r_Y/4 "
+                    "from KK reduction over the hypercharge Abelian cycle."
+                ),
             ),
             Parameter(
                 path="gauge.u1_anomaly_cancellation",
@@ -629,6 +665,10 @@ class U1HyperchargeSimulation(SimulationBase):
                 ),
                 derivation_formula="u1-electric-charge-formula",
                 no_experimental_value=True,
+                eml_description=(
+                    "Tr(Y^3) = 0 per generation — verified by summing "
+                    "ops.pow(eml_vec('Y_f'), eml_scalar(3.0)) over all chiral fermions f."
+                ),
             ),
         ]
 

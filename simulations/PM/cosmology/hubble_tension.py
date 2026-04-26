@@ -735,6 +735,15 @@ class HubbleTensionV16(SimulationBase):
                     "from KNP-aligned bridge axions. The EDE term f_EDE(z) is modeled "
                     "as a Gaussian profile centered at z_peak ~ 3500."
                 ),
+                eml_tree_str=(
+                    "ops.mul(ops.pow(eml_vec('H0'), eml_scalar(2.0)), "
+                    "ops.add(ops.mul(eml_vec('Omega_r'), ops.pow(ops.add(eml_scalar(1.0), eml_vec('z')), eml_scalar(4.0))), "
+                    "ops.add(ops.mul(eml_vec('Omega_m'), ops.pow(ops.add(eml_scalar(1.0), eml_vec('z')), eml_scalar(3.0))), "
+                    "ops.add(eml_vec('Omega_Lambda'), eml_vec('f_EDE')))))"
+                ),
+                eml_description=(
+                    "Modified Friedmann equation: H0^2 times sum of radiation, matter, Lambda, and EDE terms."
+                ),
                 input_params=["topology.elder_kads"],
                 output_params=["cosmology.H0_ede"],
             ),
@@ -753,6 +762,12 @@ class HubbleTensionV16(SimulationBase):
                     "early times, reducing r_s and requiring higher H0 to maintain "
                     "the observed CMB angular scale theta_* = r_s / D_A(z_dec)."
                 ),
+                eml_tree_str=(
+                    "ops.div(eml_vec('c_s'), eml_vec('H_z'))"
+                ),
+                eml_description=(
+                    "Sound horizon integrand: sound speed c_s divided by Hubble rate H(z)."
+                ),
                 input_params=["cosmology.H0_ede", "cosmology.f_ede_peak"],
                 output_params=["cosmology.r_s_ede"],
             ),
@@ -770,6 +785,12 @@ class HubbleTensionV16(SimulationBase):
                     "from the fixed CMB angular scale constraint. A decrease in r_s "
                     "requires a proportional increase in H0."
                 ),
+                eml_tree_str=(
+                    "ops.neg(ops.div(eml_vec('delta_r_s'), eml_vec('r_s')))"
+                ),
+                eml_description=(
+                    "H0 shift from BAO: negative ratio of sound horizon shift to sound horizon."
+                ),
                 input_params=["cosmology.r_s_lcdm", "cosmology.r_s_ede"],
                 output_params=["cosmology.delta_H0"],
             ),
@@ -786,6 +807,12 @@ class HubbleTensionV16(SimulationBase):
                     f"Racetrack superpotential axion mass. The required instanton "
                     f"action S ~ {S_req:.0f} is extreme compared to typical values "
                     f"S ~ 1-10 in G2 compactifications, indicating severe fine-tuning."
+                ),
+                eml_tree_str=(
+                    "ops.mul(ops.div(ops.pow(eml_vec('M_string'), eml_scalar(2.0)), eml_vec('f_eff')), ops.exp(ops.neg(eml_vec('S'))))"
+                ),
+                eml_description=(
+                    "KNP axion mass: (M_string^2 / f_eff) times exp(-S) instanton suppression."
                 ),
                 input_params=["topology.elder_kads"],
                 output_params=["cosmology.knp_S_required"],

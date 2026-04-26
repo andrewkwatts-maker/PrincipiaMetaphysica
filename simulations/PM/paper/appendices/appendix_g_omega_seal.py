@@ -715,6 +715,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.1)",
                 latex=r"\Omega_{\text{seal}} = \text{SHA-256}\left(R_{288} \| \tau_{24} \| P_{12} \| \text{registry}\right)",
                 plain_text="Omega_seal = SHA-256(R_288 || tau_24 || P_12 || registry)",
+                eml_tree_str="ops.add(eml_vec('OMEGA_failures'), eml_vec('OMEGA_tensions'))",
                 category="DERIVED",
                 description=(
                     "Geometric seal anchored to 288 ancestral roots, 24 torsion pins, and 12 bridge pairs. "
@@ -745,6 +746,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.2)",
                 latex=r"\tau_{\text{per-dim}} = \frac{24}{4} = 6 \quad \Rightarrow \quad \text{Isotropic}",
                 plain_text="tau_per_dim = 24/4 = 6 => Isotropic",
+                eml_tree_str="ops.div(eml_scalar(24.0), eml_scalar(4.0))",
                 category="DERIVED",
                 description=(
                     "4-fold stabilizer verification: the 24 torsion pins divide evenly among "
@@ -774,6 +776,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.3)",
                 latex=r"\Omega_{\text{seal}} = \text{SHA-256}(\text{registry} \| \text{coords} \| \text{tensors})",
                 plain_text="Omega_seal = SHA-256(registry || coords || tensors)",
+                eml_tree_str="ops.mul(eml_vec('SHA256_registry'), eml_vec('SHA256_coords'))",
                 category="DERIVED",
                 description=(
                     "Terminal hash generation from all locked data files. Serializes the 125-node "
@@ -804,6 +807,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.4)",
                 latex=r"\text{Holonomy}(\{R_n\}) = \sum_n \omega_n R_n^2 = \Phi_{G_2}",
                 plain_text="Holonomy({Rn}) = Sum(omega_n * Rn^2) = Phi_G2",
+                eml_tree_str="ops.mul(eml_vec('omega_n'), ops.pow(eml_vec('R_n'), eml_scalar(2.0)))",
                 category="DERIVED",
                 description=(
                     "Holonomy checksum for runtime consistency verification. Computes the "
@@ -833,6 +837,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.5)",
                 latex=r"\text{v24.2} \xrightarrow{\Delta > \epsilon} \text{FALSIFIED}",
                 plain_text="v24.2 -> FALSIFIED (if Delta > epsilon)",
+                eml_tree_str="ops.sub(eml_vec('Delta_sigma'), eml_vec('epsilon_threshold'))",
                 category="DERIVED",
                 description=(
                     "Dead man's switch: the model is discarded (not adjusted) if future "
@@ -863,6 +868,7 @@ class AppendixGOmegaSeal(SimulationBase):
                 label="(G.6)",
                 latex=r"\text{Sterile} \equiv \frac{125}{288} \cdot \left(\frac{24}{4}\right) = 43.4\% \times 6",
                 plain_text="Sterile = (125/288) * (24/4) = 43.4% x 6 = LOCKED",
+                eml_tree_str="ops.mul(ops.div(eml_scalar(125.0), eml_scalar(288.0)), ops.div(eml_scalar(24.0), eml_scalar(4.0)))",
                 category="DERIVED",
                 description=(
                     "Sterile rigidity declaration: the product of the observable ratio "
@@ -902,6 +908,7 @@ class AppendixGOmegaSeal(SimulationBase):
                     "the 4-fold stabilizer passes (24/4 = 6 pins per dimension), and the "
                     "12-PAIR-BRIDGE architecture is valid. False triggers model falsification."
                 ),
+                eml_description="Boolean flag that is True when all 288 ancestral roots, 24 torsion pins, and 12 bridge pairs pass cryptographic verification; False triggers model falsification.",
                 experimental_bound=True,
                 bound_type="exact",
                 bound_source="Geometric necessity",
@@ -916,6 +923,7 @@ class AppendixGOmegaSeal(SimulationBase):
                     "all 8 master gates pass and the 288-root geometric seal is intact. "
                     "COMPROMISED triggers the dead man's switch (model falsification)."
                 ),
+                eml_description="String status flag; 'TERMINAL_LOCKED' when all 8 master gates pass and the 288-root geometric seal is intact, 'COMPROMISED' when any gate fails.",
                 experimental_bound="TERMINAL_LOCKED",
                 bound_type="exact",
                 bound_source="Geometric necessity",
@@ -929,6 +937,7 @@ class AppendixGOmegaSeal(SimulationBase):
                     "Number of (2,0) Euclidean bridge pairs in the 12-PAIR-BRIDGE architecture. "
                     "Each pair couples one Normal shadow coordinate to one Mirror shadow coordinate."
                 ),
+                eml_description="Integer count of (2,0) Euclidean paired bridges in the 12-PAIR-BRIDGE architecture; always equals 12 by construction of the M^{27}(24,1,2) framework.",
                 experimental_bound=12,
                 bound_type="exact",
                 bound_source="Geometric necessity",
@@ -942,6 +951,7 @@ class AppendixGOmegaSeal(SimulationBase):
                     "Identifier for the bridge coupling architecture: 12-PAIR-BRIDGE denotes "
                     "12 x (2,0) Euclidean paired bridges connecting dual 13D(12,1) shadow branes."
                 ),
+                eml_description="String label identifying the bridge coupling scheme; '12-PAIR-BRIDGE' encodes 12 pairs of (2,0) Euclidean bridges connecting dual 13D shadow branes.",
                 no_experimental_value=True,
             ),
         ]
