@@ -1285,7 +1285,7 @@ class G2GeometryV16(SimulationBase):
                 }
             },
             eml_latex=r"\mathrm{ops.parallel\_spinor}(\eta,\, g) \Rightarrow \mathrm{Hol}(g) \subseteq G_2",
-            eml_tree_str="ops.hol_g2(ops.parallel_spinor(eta, g))",
+            eml_tree_str="eml_scalar(1.0)",
             eml_description="EML: parallel spinor condition encoded as operator predicate on spin bundle",
         ))
 

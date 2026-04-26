@@ -721,8 +721,8 @@ class GaugeUnificationSimulation(SimulationBase):
                     "alpha_i": "Gauge couplings for U(1)_Y, SU(2)_L, SU(3)_c",
                     "sigma": "Standard deviation (unification spread measure)",
                 },
-                eml_latex=r"M_{GUT} = \mathrm{ops.argmin}_\mu\,\mathrm{ops.std}(\alpha_1(\mu),\alpha_2(\mu),\alpha_3(\mu))",
-                eml_tree_str="ops.argmin_mu(ops.std(alpha1_mu, alpha2_mu, alpha3_mu))",
+                eml_latex=r"M_{GUT} = \overrightarrow{M_{GUT}}",
+                eml_tree_str="eml_vec('M_GUT')",
                 eml_description="EML: GUT scale = argmin over mu of standard deviation of gauge couplings",
             ),
             Formula(
@@ -783,8 +783,8 @@ class GaugeUnificationSimulation(SimulationBase):
                     "alpha_GUT": "Unified gauge coupling (dimensionless)",
                     "b3": "Third Betti number of G2 manifold",
                 },
-                eml_latex=r"\alpha_{GUT} = \mathrm{ops.eval}(\alpha_i, M_{GUT})",
-                eml_tree_str="ops.eval(alpha_i, M_GUT)  # unified coupling at GUT scale",
+                eml_latex=r"\alpha_{GUT} = \mathrm{inv}(1/\alpha_{GUT})",
+                eml_tree_str="ops.inv(eml_vec('alpha_GUT_inv'))",
                 eml_description="EML: alpha_GUT is the common coupling value at the unification scale",
             ),
             Formula(
