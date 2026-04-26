@@ -330,53 +330,63 @@ def generate_statistics() -> Dict[str, Any]:
             params_data['parameters']['framework_statistics.pass_count'] = {
                 'value': fs['pass_count'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_pass) — count of LOCKED gates passing experimental validation'
             }
             params_data['parameters']['framework_statistics.pending_count'] = {
                 'value': fs['pending_count'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_pending) — count of gates in PENDING_LOCK state'
             }
             params_data['parameters']['framework_statistics.not_testable_count'] = {
                 'value': fs['not_testable_count'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_axiom) — count of axiomatic/untestable gates (mathematical constraints)'
             }
             params_data['parameters']['framework_statistics.mathematical_count'] = {
                 'value': fs['mathematical_count'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_math) — count of gates with mathematical (algebraic) status'
             }
             params_data['parameters']['framework_statistics.total_gates'] = {
                 'value': fs['total_gates'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(72) — total number of certification gates (72 Gates system)'
             }
             params_data['parameters']['framework_statistics.testable_count'] = {
                 'value': fs['testable_count'],
                 'status': 'COMPUTED',
                 'source': 'generate_statistics.py',
-                'description': 'Number of testable gates (total - axioms)'
+                'description': 'Number of testable gates (total - axioms)',
+                'eml_description': 'EML: ops.sub(eml_scalar(72), eml_vec(\'framework_statistics.not_testable_count\')) — testable = total_gates − axioms'
             }
             params_data['parameters']['framework_statistics.chi_squared_reduced'] = {
                 'value': fs['chi_squared_reduced'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: ops.div(eml_vec(\'chi_squared\'), eml_vec(\'framework_statistics.degrees_of_freedom\')) — χ²_red = Σσᵢ²/dof'
             }
             params_data['parameters']['framework_statistics.degrees_of_freedom'] = {
                 'value': fs['degrees_of_freedom'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: ops.sub(eml_vec(\'validation.total_predictions\'), eml_scalar(N_fitted)) — dof = N_pred − N_fitted_params'
             }
             params_data['parameters']['framework_statistics.status'] = {
                 'value': fs['status'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(status_string) — overall framework validation status label (PASS/FAIL/PARTIAL)'
             }
             params_data['parameters']['framework_statistics.exact_matches'] = {
                 'value': fs['exact_matches'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_exact) — count of predictions with σ-deviation = 0 (exact match to PDG value)'
             }
 
             # Also add validation section
@@ -384,22 +394,26 @@ def generate_statistics() -> Dict[str, Any]:
             params_data['parameters']['validation.within_1sigma'] = {
                 'value': vs['within_1sigma'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_1σ) — count of predictions within 1σ of experimental value'
             }
             params_data['parameters']['validation.within_2sigma'] = {
                 'value': vs['within_2sigma'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_2σ) — count of predictions within 2σ of experimental value'
             }
             params_data['parameters']['validation.total_predictions'] = {
                 'value': vs['total_predictions'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: eml_scalar(N_pred) — total number of verifiable predicted observables'
             }
             params_data['parameters']['validation.success_rate'] = {
                 'value': vs['success_rate'],
                 'status': 'COMPUTED',
-                'source': 'generate_statistics.py'
+                'source': 'generate_statistics.py',
+                'eml_description': 'EML: ops.mul(ops.div(eml_vec(\'validation.within_2sigma\'), eml_vec(\'validation.total_predictions\')), eml_scalar(100.0)) — success rate = within_2σ/total × 100%'
             }
 
             with open(PARAMETERS_FILE, 'w', encoding='utf-8') as f:

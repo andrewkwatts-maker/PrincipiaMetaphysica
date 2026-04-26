@@ -980,6 +980,7 @@ class CKMMatrixSimulation(SimulationBase):
                     f"PDG 2024: {self.PDG_V_us} ± {self.PDG_V_us_err}. "
                     "Geometric prediction differs by 1.2% (2.9 sigma), within theoretical uncertainties."
                 ),
+                eml_description="EML: ops.exp(ops.neg(eml_scalar(1.5))) — V_us = ε = exp(-1.5) from G₂ Froggatt-Nielsen suppression",
                 derivation_formula="ckm-hierarchy",
                 experimental_bound=0.2245,
                 uncertainty=0.0008,
@@ -997,6 +998,7 @@ class CKMMatrixSimulation(SimulationBase):
                     f"PDG 2024: {self.PDG_V_cb} ± {self.PDG_V_cb_err}. "
                     "Agreement within experimental error."
                 ),
+                eml_description="EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0))) — V_cb = Aλ² from 2nd-gen geometric overlap",
                 derivation_formula="ckm-hierarchy",
                 experimental_bound=0.0410,
                 uncertainty=0.0014,
@@ -1014,6 +1016,7 @@ class CKMMatrixSimulation(SimulationBase):
                     f"PDG 2024: {self.PDG_V_ub} ± {self.PDG_V_ub_err}. "
                     "Matches inclusive measurement."
                 ),
+                eml_description="EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0))) — V_ub = Aλ³ from 3rd-gen geometric suppression",
                 derivation_formula="ckm-hierarchy",
                 experimental_bound=0.00382,
                 uncertainty=0.00024,
@@ -1030,6 +1033,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "parametrization with geometric CP phase. "
                     f"PDG 2024: {self.PDG_V_td} ± {self.PDG_V_td_err} from B_d mixing."
                 ),
+                eml_description="EML: ops.mul(eml_vec('A_wolfenstein'), ops.mul(ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0)), ops.sqrt(ops.add(ops.pow(eml_vec('rho_wolfenstein'), eml_scalar(2.0)), ops.pow(eml_vec('eta_wolfenstein'), eml_scalar(2.0)))))) — V_td = Aλ³√(ρ²+η²)",
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_td,
                 uncertainty=self.PDG_V_td_err,
@@ -1046,6 +1050,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "~ 0.040 from geometric overlap structure. "
                     f"PDG 2024: {self.PDG_V_ts} ± {self.PDG_V_ts_err} from B_s mixing."
                 ),
+                eml_description="EML: ops.neg(ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0)))) — V_ts ≈ −Aλ² from Wolfenstein parametrization",
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_ts,
                 uncertainty=self.PDG_V_ts_err,
@@ -1062,6 +1067,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "generation diagonal dominance in CKM matrix. "
                     f"PDG 2024: {self.PDG_V_tb} ± {self.PDG_V_tb_err} from single top production."
                 ),
+                eml_description="EML: ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(0.5), ops.pow(eml_vec('A_wolfenstein'), eml_scalar(2.0)))) — V_tb ≈ 1 − A²λ⁴/2 (diagonal dominance)",
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_tb,
                 uncertainty=self.PDG_V_tb_err,
@@ -1125,6 +1131,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "Real Wolfenstein parameter rho. Emerges from geometric "
                     "CP phase structure. Geometric derivation parameter from unitarity triangle."
                 ),
+                eml_description="EML: ops.mul(eml_vec('V_ub'), ops.cos(eml_vec('delta_cp'))) — ρ ≈ |V_ub|cos(δ_CP) from unitarity triangle geometry",
                 derivation_formula="wolfenstein-parametrization",
                 no_experimental_value=True
             ),
@@ -1138,6 +1145,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "magnitude, derived from topological phase delta_CP ~ pi/6. "
                     "Geometric derivation parameter."
                 ),
+                eml_description="EML: ops.mul(eml_vec('V_ub'), ops.sin(eml_vec('delta_cp'))) — η ≈ |V_ub|sin(δ_CP) from δ_CP ~ π/6 topological phase",
                 derivation_formula="wolfenstein-parametrization",
                 no_experimental_value=True
             ),
@@ -1151,6 +1159,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "from K=4 topological matching fibres in TCS G2 manifold. "
                     "Topological derivation parameter."
                 ),
+                eml_description="EML: ops.div(eml_pi(), eml_scalar(6.0)) — δ_CP = π/6 from K=4 TCS matching fibres topology",
                 derivation_formula="jarlskog-invariant",
                 no_experimental_value=True
             ),
@@ -1164,6 +1173,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "for exact geometric construction. Tests completeness of G2 eigenstates. "
                     "Mathematical constraint, no experimental measurement."
                 ),
+                eml_description="EML: ops.sub(eml_scalar(1.0), ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0))))) — unitarity deviation = 1 − (|V_ud|²+|V_us|²+|V_ub|²)",
                 derivation_formula="ckm-unitarity",
                 no_experimental_value=True
             ),

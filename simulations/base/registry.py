@@ -396,6 +396,15 @@ class PMRegistry:
         if self._dependency_resolver is not None:
             self._dependency_resolver.invalidate(path)
 
+    def patch_eml_description(self, path: str, eml_description: str) -> None:
+        """Patch eml_description into an already-registered parameter's metadata."""
+        if path in self._parameters and eml_description:
+            entry = self._parameters[path]
+            if entry.metadata is None:
+                entry.metadata = {}
+            if not entry.metadata.get('eml_description'):
+                entry.metadata['eml_description'] = eml_description
+
     # -------------------------------------------------------------------------
     # Dependency Resolution (v20)
     # -------------------------------------------------------------------------

@@ -698,6 +698,7 @@ class FRTTauGravityV18(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="R^2 coefficient from b3=24 associative 3-cycles.",
+                eml_description="EML: ops.inv(ops.pow(eml_scalar(24.0), eml_scalar(2.0))) — α_F = 1/b₃² = 1/576 from b₃=24 associative 3-cycles",
                 no_experimental_value=True
             ),
             Parameter(
@@ -706,6 +707,7 @@ class FRTTauGravityV18(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Matter coupling from chi_eff=144 flux quanta.",
+                eml_description="EML: ops.inv(eml_vec('chi_eff')) — β_F = 1/χ_eff = 1/144 from flux quanta count",
                 no_experimental_value=True
             ),
             Parameter(
@@ -714,6 +716,7 @@ class FRTTauGravityV18(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Holonomy-scalar cross-coupling from mixed reduction.",
+                eml_description="EML: ops.mul(eml_vec('gravity.alpha_F_r2'), ops.inv(eml_vec('chi_eff'))) — γ_F = α_F/χ_eff (holonomy-scalar cross-coupling)",
                 no_experimental_value=True
             ),
             Parameter(
@@ -722,6 +725,7 @@ class FRTTauGravityV18(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="(d_tau)R kinetic mixing, suppressed at large volume.",
+                eml_description="EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_vec('gravity.beta_F_trace')) — δ_F = α_F × β_F (kinetic mixing, suppressed at large volume)",
                 no_experimental_value=True
             ),
             # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
@@ -734,6 +738,7 @@ class FRTTauGravityV18(SimulationBase):
                     "Dark energy equation of state from f(R,T,tau) attractor. "
                     "Predicts w_0 = -0.9583, consistent with DESI 2025."
                 ),
+                eml_description="EML: ops.add(eml_scalar(-1.0), ops.mul(ops.div(eml_scalar(2.0), ops.mul(eml_scalar(3.0), ops.sqrt(eml_vec('chi_eff')))), ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(12.0), eml_vec('gravity.alpha_F_r2'))))) — w₀ = −1 + 2/(3√χ_eff) × (1 − 12α_F)",
                 experimental_bound=-0.958,
                 bound_type="measured",
                 bound_source="DESI_2025",
@@ -748,6 +753,7 @@ class FRTTauGravityV18(SimulationBase):
                     "eta_G = Psi/Phi ratio. Modified gravity predicts eta ~ 1.0007, "
                     "a testable deviation from GR (eta = 1 exactly)."
                 ),
+                eml_description="EML: ops.add(eml_scalar(1.0), ops.mul(eml_scalar(2.0), eml_vec('gravity.alpha_F_r2'))) — η_G = 1 + 2α_F (gravitational slip from R² term)",
                 experimental_bound=1.0,
                 bound_type="measured",
                 bound_source="theory_GR",
@@ -764,6 +770,7 @@ class FRTTauGravityV18(SimulationBase):
                     "f(R,T,tau) predicts v_gw/c = 1 - O(10^-125), effectively equal to c. "
                     "Well within GW170817 constraint: |v_gw - c| < 10^-15."
                 ),
+                eml_description="EML: ops.sub(eml_scalar(1.0), ops.mul(eml_vec('gravity.alpha_F_r2'), eml_vec('R_0'))) — v_gw/c = 1 − α_F·R₀ (GW speed from f(R) R² term)",
                 experimental_bound=1.0,
                 bound_type="measured",
                 bound_source="GW170817",
@@ -778,6 +785,7 @@ class FRTTauGravityV18(SimulationBase):
                     "Correction to GW dispersion: omega^2 = c^2 k^2 (1 + correction). "
                     "Value ~10^-125 at cosmological curvature, negligible for current experiments."
                 ),
+                eml_description="EML: ops.mul(eml_scalar(2.0), ops.mul(eml_vec('gravity.alpha_F_r2'), eml_vec('R_0'))) — dispersion correction = 2α_F·R₀ ~ 10⁻¹²⁵",
                 no_experimental_value=True
             ),
             Parameter(
@@ -790,6 +798,7 @@ class FRTTauGravityV18(SimulationBase):
                     "For NS mergers: A ~ 10^-9. Potentially detectable by LISA, Einstein Telescope, "
                     "or Cosmic Explorer. A positive detection would distinguish f(R) from GR."
                 ),
+                eml_description="EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_scalar(1e-9)) — scalar breathing mode A ~ α_F × (NS merger strain) ~ 10⁻⁹",
                 no_experimental_value=True
             ),
         ]

@@ -474,7 +474,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="version",
                 description="Current Principia Metaphysica version number (e.g., '24.2')",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_vec('framework_version') — PM framework version identifier string"
             ),
             Parameter(
                 path="framework.version_major",
@@ -482,7 +483,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="version",
                 description="Major version number only (e.g., '24')",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_vec('framework_version_major') — PM framework major version identifier"
             ),
             Parameter(
                 path="framework.version_label",
@@ -490,7 +492,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="version",
                 description="Formatted version with 'v' prefix (e.g., 'v24.2')",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_vec('framework_version_label') — PM framework version label with 'v' prefix"
             ),
             Parameter(
                 path="framework.version_major_label",
@@ -498,7 +501,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="version",
                 description="Formatted major version with 'v' prefix (e.g., 'v24')",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_vec('framework_version_major_label') — PM framework major version label with 'v' prefix"
             ),
             # Content tracking parameters
             Parameter(
@@ -507,7 +511,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="words",
                 description="Approximate word count of the abstract section content",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_vec('abstract_word_count') — bookkeeping count of abstract narrative word length"
             ),
             Parameter(
                 path="abstract.total_constants",
@@ -533,7 +538,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="dimensionless",
                 description="Number of scale calibration inputs required by the theory (VEV, alpha_GUT, Re(T))",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(3.0) — number of calibrated inputs (θ₁₃, δ_CP, DM normalization) setting physical scales"
             ),
             Parameter(
                 path="abstract.fitted_pmns",
@@ -541,7 +547,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="dimensionless",
                 description="Number of PMNS parameters fitted to NuFIT 6.0 pending explicit Yukawa calculation",
-                status="CALIBRATED"
+                status="CALIBRATED",
+                eml_description="EML: eml_scalar(2.0) — count of PMNS parameters (θ₁₃, δ_CP) fitted to NuFIT 6.0 pending Yukawa derivation"
             ),
             Parameter(
                 path="abstract.vev_coefficient",
@@ -549,7 +556,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="dimensionless",
                 description="Dimensionless coefficient relating the G2 spectral scale to the electroweak VEV",
-                status="CALIBRATED"
+                status="CALIBRATED",
+                eml_description="EML: eml_scalar(1.5859) — dimensionless VEV coefficient relating G₂ spectral scale to electroweak VEV"
             ),
             Parameter(
                 path="abstract.alpha_gut_coefficient",
@@ -566,7 +574,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="dimensionless",
                 description="Deviation of PM alpha^-1 prediction from CODATA in units of the framework's theory uncertainty (NOT CODATA experimental precision)",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(0.0497) — σ-deviation of α⁻¹ prediction from CODATA at theory uncertainty level"
             ),
             Parameter(
                 path="abstract.theta23_sigma_io",
@@ -574,7 +583,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="degrees",
                 description="Deviation of PM theta_23 prediction from NuFIT 6.0 inverted ordering central value in theory sigma units",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(0.45) — σ-deviation of θ₂₃ prediction from NuFIT 6.0 IO central value"
             ),
             Parameter(
                 path="abstract.desi_w0_uncertainty",
@@ -585,7 +595,8 @@ class AbstractV17_2(SimulationBase):
                 experimental_bound=0.067,
                 bound_type="range",
                 bound_source="DESI2025",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(0.067) — 1σ uncertainty on w₀ from DESI 2025 BAO-only analysis (input)"
             ),
             Parameter(
                 path="abstract.tau_p_display",
@@ -593,7 +604,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="1e34_years",
                 description="Proton lifetime coefficient for display (tau_p = value × 10^34 years)",
-                status="PREDICTED"
+                status="PREDICTED",
+                eml_description="EML: ops.div(eml_vec('proton_decay.tau_p_years'), eml_scalar(1e34)) — proton lifetime display coefficient in units of 10³⁴ yr"
             ),
             Parameter(
                 path="abstract.tau_p_bound_display",
@@ -604,7 +616,8 @@ class AbstractV17_2(SimulationBase):
                 experimental_bound=1.67,
                 bound_type="lower",
                 bound_source="SuperK2020",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(1.67) — Super-K lower bound on τ_p in units of 10³⁴ yr (PDG 2024 input)"
             ),
             Parameter(
                 path="abstract.dark_force_pleak",
@@ -612,7 +625,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="dimensionless",
                 description="Cross-shadow leakage probability for EM and gravity (strong/weak effectively zero)",
-                status="PREDICTED"
+                status="PREDICTED",
+                eml_description="EML: eml_vec('dark_force_pleak') — cross-shadow leakage probability P_leak ≈ 6.9×10⁻⁶ for EM and gravity"
             ),
             Parameter(
                 path="abstract.alpha_inv_pred",
@@ -635,7 +649,8 @@ class AbstractV17_2(SimulationBase):
                 experimental_bound=137.035999177,  # alpha inverse (CODATA 2022 full)
                 bound_type="measured",
                 bound_source="CODATA2022",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(137.035999177) — CODATA 2022 inverse fine structure constant (input, echoed for display)"
             ),
             Parameter(
                 path="abstract.theta23_io_central",
@@ -646,7 +661,8 @@ class AbstractV17_2(SimulationBase):
                 experimental_bound=49.3,
                 bound_type="measured",
                 bound_source="NuFIT6.0",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(49.3) — NuFIT 6.0 IO central value for θ₂₃ in degrees (input, echoed for display)"
             ),
             # ALP Principia Metric Parameters
             Parameter(
@@ -655,7 +671,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="meV",
                 description="Axion-Like Particle mass from M²⁷ → M⁴ vacuum residue - the primary falsifiability kill-switch for the G₂ compactification framework (PREDICTED: awaiting IAXO/BabyIAXO 2025-2028)",
-                status="PREDICTED"
+                status="PREDICTED",
+                eml_description="EML: eml_scalar(3.51) — ALP mass in meV from M²⁷ → M⁴ vacuum residue (Principia Metric kill-switch)"
             ),
             Parameter(
                 path="alp.coupling_GeV_inv",
@@ -663,7 +680,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="GeV^-1",
                 description="ALP-photon coupling strength g_aγγ from Euclidean Information Sector (S_EIS) coupling - testable by IAXO/BabyIAXO 2025-2028 (PREDICTED: no current experimental bound)",
-                status="PREDICTED"
+                status="PREDICTED",
+                eml_description="EML: eml_vec('alp_coupling_GeV_inv') — g_aγγ ~ 10⁻¹¹ GeV⁻¹ from S_EIS–photon coupling (PREDICTED)"
             ),
             # Validation Statistics
             Parameter(
@@ -672,7 +690,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="count",
                 description="Total number of Standard Model parameters with both theoretical predictions and experimental comparison data",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(26) — total SM parameter comparisons in validation table"
             ),
             Parameter(
                 path="validation.predictions_within_1sigma",
@@ -680,7 +699,8 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="count",
                 description="Number of Standard Model parameter predictions within 1σ of experimental central values",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(24) — count of SM predictions agreeing within 1σ of experimental values"
             ),
             Parameter(
                 path="validation.exact_matches",
@@ -688,7 +708,91 @@ class AbstractV17_2(SimulationBase):
                 no_experimental_value=True,
                 units="count",
                 description="Number of predictions within 0.1σ of experimental values (within theory-level uncertainty)",
-                status="SYSTEM"
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(3) — count of predictions within 0.1σ theory uncertainty (exact matches)"
+            ),
+            Parameter(
+                path="validation.calibrated_count",
+                name="Calibrated Parameter Count",
+                no_experimental_value=True,
+                units="count",
+                description="Number of calibrated (scale-setting) parameters; EDOF=3 are scale-setting, not fitted free parameters",
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(0) — EDOF=3 calibrations are scale-setting constraints, not free-parameter fits"
+            ),
+            Parameter(
+                path="validation.constraints_count",
+                name="Observational Constraints Count",
+                no_experimental_value=True,
+                units="count",
+                description="Number of observational constraints applied (m_h → Re(T))",
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(1) — one Higgs mass observational constraint fixing Re(T) modulus"
+            ),
+            Parameter(
+                path="abstract.constraints_count",
+                name="Abstract Constraints Count (alias)",
+                no_experimental_value=True,
+                units="count",
+                description="Alias of validation.constraints_count for abstract display",
+                status="SYSTEM",
+                eml_description="EML: eml_scalar(1) — one observational constraint (m_h → Re(T)) alias for abstract display"
+            ),
+            # Dimensional parameters
+            Parameter(
+                path="dimensions.D_bulk",
+                name="Bulk Spacetime Dimension",
+                no_experimental_value=True,
+                units="dimensionless",
+                description="Total ancestral bulk dimension M^{27}(24,1,2) = 24 physics core + 1 time + 2 sampler fields",
+                status="GEOMETRIC",
+                eml_description="EML: eml_scalar(27.0) — ancestral manifold dimension D_bulk = 24+1+2 = 27"
+            ),
+            Parameter(
+                path="dimensions.D_G2",
+                name="G₂ Manifold Dimension",
+                no_experimental_value=True,
+                units="dimensionless",
+                description="Dimension of the G₂ holonomy compactification manifold V₇",
+                status="GEOMETRIC",
+                eml_description="EML: eml_scalar(7.0) — G₂ holonomy manifold dimension D_G2 = 7"
+            ),
+            Parameter(
+                path="dimensions.D_physics",
+                name="Physics Core Dimension",
+                no_experimental_value=True,
+                units="dimensionless",
+                description="Physics core dimension = 12 bridge pairs × 2 = 24 spatial dimensions",
+                status="GEOMETRIC",
+                eml_description="EML: ops.mul(eml_scalar(12.0), eml_scalar(2.0)) — physics core D_physics = 12×2 = 24"
+            ),
+            # Seed display aliases (registered by abstract to ensure display consistency)
+            Parameter(
+                path="constants.k_gimel",
+                name="Spectral Gap k_gimel",
+                no_experimental_value=True,
+                units="dimensionless",
+                description="Spectral gap from associative 3-cycles of the G₂ manifold; one of the Ten Pillar Seeds",
+                status="GEOMETRIC",
+                eml_description="EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) — k_gimel = b₃/2 + 1/π ≈ 12.318"
+            ),
+            Parameter(
+                path="constants.phi",
+                name="Golden Ratio φ",
+                no_experimental_value=True,
+                units="dimensionless",
+                description="Golden ratio from minimal surface geometry; one of the Ten Pillar Seeds",
+                status="GEOMETRIC",
+                eml_description="EML: ops.div(ops.add(eml_scalar(1.0), ops.sqrt(eml_scalar(5.0))), eml_scalar(2.0)) — φ = (1+√5)/2"
+            ),
+            Parameter(
+                path="constants.demiurgic_coupling",
+                name="Demiurgic Coupling (k_gimel alias)",
+                no_experimental_value=True,
+                units="dimensionless",
+                description="Gnostic alias for k_gimel — spectral gap from associative 3-cycles",
+                status="GEOMETRIC",
+                eml_description="EML: eml_vec('k_gimel') — demiurgic_coupling = k_gimel ≈ 12.318 (alias)"
             ),
         ]
 

@@ -1249,6 +1249,46 @@ class MasterActionSimulationV22(SimulationBase):
                 ),
             ),
             # =================================================================
+            # KK Reduction Parameters
+            # =================================================================
+            Parameter(
+                path="gauge.kk_planck_factor",
+                name="KK Planck Scale Factor",
+                units="dimensionless",
+                status="DERIVED",
+                description="KK tower contribution to Planck scale from 5D→4D reduction",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.div(ops.pow(eml_vec('M_5'), eml_scalar(3.0)), "
+                    "ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('M_Pl'), eml_scalar(2.0)))) "
+                    "— KK tower factor M_5^3 / (R_KK M_Pl^2) from 5D→4D Planck scale relation."
+                ),
+            ),
+            Parameter(
+                path="gauge.kk_gauge_kinetic_coeff",
+                name="KK Gauge Kinetic Coefficient",
+                units="dimensionless",
+                status="DERIVED",
+                description="Gauge kinetic coefficient from KK reduction over G2 compactification radius",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('g_5'), eml_scalar(2.0))) "
+                    "— gauge kinetic coefficient R_KK g_5^2 from dimensional reduction of 5D action."
+                ),
+            ),
+            Parameter(
+                path="gauge.kk_canonical",
+                name="KK Canonical Normalization",
+                units="dimensionless",
+                status="DERIVED",
+                description="Boolean flag: KK gauge fields are canonically normalized after reduction",
+                no_experimental_value=True,
+                eml_description=(
+                    "eml_scalar(1.0) — canonical normalization flag; "
+                    "KK gauge kinetic term rescaled to standard form (1/4) F_mu_nu^2."
+                ),
+            ),
+            # =================================================================
             # Standard Gauge Sector Parameters
             # =================================================================
             Parameter(
@@ -1278,6 +1318,18 @@ class MasterActionSimulationV22(SimulationBase):
                 ),
             ),
             Parameter(
+                path="gauge.qcd_canonical",
+                name="QCD Canonical Normalization",
+                units="dimensionless",
+                status="DERIVED",
+                description="Boolean flag: QCD (SU(3)_C) gauge fields are canonically normalized",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.inv(eml_vec('alpha_s_inv')) "
+                    "— QCD canonical coupling g_s = 1/α_s⁻¹ at GUT scale."
+                ),
+            ),
+            Parameter(
                 path="gauge.weak_boson_count",
                 name="Number of Weak Bosons",
                 units="count",
@@ -1287,6 +1339,30 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG2024",
                 eml_description="eml_scalar(3.0) — SU(2) adjoint dimension N^2 - 1 = 3.",
+            ),
+            Parameter(
+                path="gauge.weak_coupling_g2",
+                name="Weak SU(2) Coupling g₂",
+                units="dimensionless",
+                status="DERIVED",
+                description="SU(2)_L gauge coupling g_2 from electroweak mixing",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.mul(ops.sqrt(eml_scalar(2.0)), eml_vec('g_weak')) "
+                    "— weak coupling g₂ from SU(2) gauge group."
+                ),
+            ),
+            Parameter(
+                path="gauge.weak_canonical",
+                name="Weak Canonical Normalization",
+                units="dimensionless",
+                status="DERIVED",
+                description="Boolean flag: SU(2)_L gauge fields are canonically normalized",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_vec('g_2'), ops.sqrt(eml_scalar(2.0))) "
+                    "— canonical weak coupling g₂/√2 after SU(2)_L normalization."
+                ),
             ),
             Parameter(
                 path="gauge.sin2_theta_w",
@@ -1355,6 +1431,31 @@ class MasterActionSimulationV22(SimulationBase):
                     "ops.mul(ops.pow(eml_vec('M_Z'), eml_scalar(2.0)), "
                     "ops.sub(eml_scalar(1.0), eml_vec('sin2_theta_W')))) "
                     "— rho = M_W^2 / (M_Z^2 cos^2(theta_W)) = 1 at tree level (custodial SU(2))."
+                ),
+            ),
+            # U(1)_Y Hypercharge Parameters
+            Parameter(
+                path="gauge.hypercharge_coupling_gp",
+                name="Hypercharge U(1) Coupling g'",
+                units="dimensionless",
+                status="DERIVED",
+                description="U(1)_Y hypercharge gauge coupling g' from electroweak mixing",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.mul(eml_vec('g_2'), ops.sqrt(eml_vec('sin2_theta_W'))) "
+                    "— hypercharge coupling g' = g₂ tan(θ_W) from U(1)_Y embedding."
+                ),
+            ),
+            Parameter(
+                path="gauge.hypercharge_canonical",
+                name="Hypercharge Canonical Normalization",
+                units="dimensionless",
+                status="DERIVED",
+                description="Boolean flag: U(1)_Y hypercharge fields are canonically normalized",
+                no_experimental_value=True,
+                eml_description=(
+                    "ops.div(eml_vec('g_prime'), ops.sqrt(eml_scalar(2.0))) "
+                    "— canonical hypercharge coupling g'/√2 after U(1)_Y normalization."
                 ),
             ),
             # Chirality Reversal (Sprint 2)

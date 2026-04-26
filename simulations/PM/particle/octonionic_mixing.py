@@ -1065,6 +1065,7 @@ class OctonionicMixing(SimulationBase):
                     "Cabibbo angle derived from golden angle on associative 3-form. "
                     "V_us = sin(theta_g/2) * xi ~ 0.223. The 3D rigidity constrains mixing."
                 ),
+                eml_description="EML: ops.mul(ops.sin(ops.div(eml_vec('theta_g'), eml_scalar(2.0))), eml_vec('xi_epsilon')) — V_us from sin(θ_g/2) × flux correction",
                 derivation_formula="ckm-from-theta-g",
                 experimental_bound=0.2245,
                 uncertainty=0.0008,
@@ -1079,6 +1080,7 @@ class OctonionicMixing(SimulationBase):
                 description=(
                     "c-b mixing from second power of golden angle. V_cb = V_us^2 * xi_b ~ 0.040."
                 ),
+                eml_description="EML: ops.mul(ops.pow(eml_vec('V_us_triality'), eml_scalar(2.0)), eml_vec('xi_b')) — V_cb ~ V_us² × geometric correction",
                 derivation_formula="ckm-from-theta-g",
                 experimental_bound=0.0410,
                 uncertainty=0.0014,
@@ -1093,6 +1095,7 @@ class OctonionicMixing(SimulationBase):
                 description=(
                     "u-b mixing from third power of golden angle. V_ub = V_us^3 * xi_t ~ 0.004."
                 ),
+                eml_description="EML: ops.mul(ops.pow(eml_vec('V_us_triality'), eml_scalar(3.0)), eml_vec('xi_t')) — V_ub ~ V_us³ × geometric correction",
                 derivation_formula="ckm-from-theta-g",
                 experimental_bound=0.00382,
                 uncertainty=0.00024,
@@ -1107,6 +1110,7 @@ class OctonionicMixing(SimulationBase):
                 description=(
                     "CP violation measure from octonionic structure. J ~ V_us * V_cb * V_ub * sin(delta)."
                 ),
+                eml_description="EML: ops.mul(eml_vec('V_us_triality'), ops.mul(eml_vec('V_cb_triality'), ops.mul(eml_vec('V_ub_triality'), ops.sin(eml_vec('delta_cp'))))) — J = V_us·V_cb·V_ub·sin(δ)",
                 derivation_formula="ckm-from-theta-g",
                 experimental_bound=3.0e-5,
                 uncertainty=0.3e-5,
@@ -1123,6 +1127,7 @@ class OctonionicMixing(SimulationBase):
                     "Solar mixing angle from tribimaximal base on 4-form. "
                     "theta_12 = arcsin(1/sqrt(3)) * (1 - delta) ~ 33.59 degrees."
                 ),
+                eml_description="EML: ops.mul(ops.asin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(3.0)))), eml_scalar(57.2958)) — θ₁₂ = arcsin(1/√3) ≈ 33.6° (tribimaximal)",
                 derivation_formula="pmns-from-triality",
                 experimental_bound=33.41,
                 uncertainty=0.75,
@@ -1138,6 +1143,7 @@ class OctonionicMixing(SimulationBase):
                     "Atmospheric mixing angle from maximal base + golden enhancement. "
                     "theta_23 = pi/4 + theta_g/2 + corrections ~ 49.75 degrees."
                 ),
+                eml_description="EML: ops.mul(ops.add(ops.div(eml_pi(), eml_scalar(4.0)), ops.div(eml_vec('theta_g_rad'), eml_scalar(2.0))), eml_scalar(57.2958)) — θ₂₃ = π/4 + θ_g/2 ≈ 49.75°",
                 derivation_formula="pmns-from-triality",
                 experimental_bound=49.3,
                 uncertainty=1.0,
@@ -1153,6 +1159,7 @@ class OctonionicMixing(SimulationBase):
                     "Reactor mixing angle from cycle intersection geometry. "
                     "theta_13 = sqrt(b2*n_gen)/b3 * correction ~ 8.33 degrees."
                 ),
+                eml_description="EML: ops.mul(ops.div(ops.sqrt(ops.mul(eml_scalar(4.0), eml_scalar(3.0))), eml_scalar(24.0)), eml_scalar(57.2958)) — θ₁₃ = √(h₁₁·n_gen)/b₃ × rad→deg",
                 derivation_formula="pmns-from-triality",
                 experimental_bound=8.63,
                 uncertainty=0.11,
@@ -1169,6 +1176,7 @@ class OctonionicMixing(SimulationBase):
                     "Fundamental mixing angle from octonionic structure. "
                     "theta_g = arctan(1/phi) ~ 31.72 degrees where phi is golden ratio."
                 ),
+                eml_description="EML: ops.mul(ops.arctan(ops.inv(eml_vec('phi'))), eml_scalar(57.2958)) — θ_g = arctan(1/φ) ≈ 31.72°",
                 derivation_formula="golden-angle",
                 no_experimental_value=True
             ),
@@ -1181,6 +1189,7 @@ class OctonionicMixing(SimulationBase):
                     "Golden ratio phi = (1 + sqrt(5))/2 ~ 1.618. Appears in octonionic "
                     "multiplication and Fano plane structure."
                 ),
+                eml_description="EML: ops.div(ops.add(eml_scalar(1.0), ops.sqrt(eml_scalar(5.0))), eml_scalar(2.0)) — φ = (1+√5)/2 ≈ 1.618",
                 derivation_formula="golden-angle",
                 no_experimental_value=True
             ),
@@ -1193,6 +1202,7 @@ class OctonionicMixing(SimulationBase):
                     "Dimension of associative 3-cycles (calibrated by Phi). "
                     "dim = 3, which is rigid and constrains mixing."
                 ),
+                eml_description="EML: eml_scalar(3.0) — associative 3-cycle dimension (rigid, constrains CKM quark mixing)",
                 derivation_formula="triality-split",
                 no_experimental_value=True
             ),
@@ -1205,6 +1215,7 @@ class OctonionicMixing(SimulationBase):
                     "Dimension of co-associative 4-cycles (calibrated by *Phi). "
                     "dim = 4, which is flexible and allows large mixing."
                 ),
+                eml_description="EML: eml_scalar(4.0) — co-associative 4-cycle dimension (flexible, allows large PMNS mixing)",
                 derivation_formula="triality-split",
                 no_experimental_value=True
             ),
@@ -1217,6 +1228,7 @@ class OctonionicMixing(SimulationBase):
                     "Ratio of lepton to quark mixing magnitudes. "
                     "Geometric prediction (4/3)^(3/2) ~ 1.54, observed ~ 2.5."
                 ),
+                eml_description="EML: ops.pow(ops.div(eml_scalar(4.0), eml_scalar(3.0)), eml_scalar(1.5)) — mixing ratio (4/3)^(3/2) ≈ 1.54 from co-assoc/assoc cycle ratio",
                 derivation_formula="mixing-dimension-ratio",
                 no_experimental_value=True
             ),

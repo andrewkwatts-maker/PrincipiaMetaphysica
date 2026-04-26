@@ -567,7 +567,8 @@ class AttractorPotentialV18(SimulationBase):
                     "V_0 = rho_Lambda ~ 2.846e-47 GeV^4. This is the zero-point of the "
                     "attractor potential V(phi_M) from G2 manifold scalar curvature integration."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: eml_vec('rho_Lambda') — V₀ = ρ_Λ ~ 2.846×10⁻⁴⁷ GeV⁴ vacuum energy scale (cosmological constant)"
             ),
             Parameter(
                 path="cosmology.A_amplitude",
@@ -579,7 +580,8 @@ class AttractorPotentialV18(SimulationBase):
                     "A = 1/sqrt(b3) = 1/sqrt(24) ~ 0.204. Satisfies the small oscillation "
                     "limit (A < 1) required for stable attractor behavior."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.inv(ops.sqrt(eml_vec('b3'))) — A = 1/√b₃ = 1/√24 ≈ 0.204 amplitude from associative 3-cycle count"
             ),
             Parameter(
                 path="cosmology.omega_frequency",
@@ -591,7 +593,8 @@ class AttractorPotentialV18(SimulationBase):
                     "omega = 2*pi/sqrt(chi_eff) = 2*pi/sqrt(144) = pi/6 ~ 0.524. Determines "
                     "the periodicity of modulus field oscillations around the attractor."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), ops.sqrt(eml_vec('chi_eff'))) — ω = 2π/√χ_eff = π/6 ≈ 0.524 oscillation frequency"
             ),
             Parameter(
                 path="cosmology.f_decay_constant",
@@ -603,7 +606,8 @@ class AttractorPotentialV18(SimulationBase):
                     "f = M_Pl/sqrt(chi_eff) = 2.435e18/12 ~ 2.03e17 GeV. Sets the natural "
                     "scale for modulus field variations; f > M_Pl/12 ensures slow-roll stability."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('chi_eff'))) — f = M_Pl/√χ_eff ~ 2.03×10¹⁷ GeV super-Planckian decay constant"
             ),
             Parameter(
                 path="cosmology.phi_star_attractor",
@@ -615,7 +619,8 @@ class AttractorPotentialV18(SimulationBase):
                     "phi_star = (pi/2) * f / omega ~ 6.12e17 GeV. The G2 modulus evolves "
                     "toward this point under Ricci flow, driving late-time acceleration."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.div(eml_pi(), eml_scalar(2.0)), ops.div(eml_vec('cosmology.f_decay_constant'), eml_vec('cosmology.omega_frequency'))) — φ* = (π/2)·f/ω ~ 6.12×10¹⁷ GeV attractor fixed point (V′=0)"
             ),
             Parameter(
                 path="cosmology.w_0_attractor",
@@ -630,7 +635,8 @@ class AttractorPotentialV18(SimulationBase):
                 experimental_bound=-0.958,
                 bound_type="measured",
                 bound_source="DESI_2025",
-                uncertainty=0.02
+                uncertainty=0.02,
+                eml_description="EML: ops.add(eml_scalar(-1.0), ops.add(ops.mul(ops.div(eml_scalar(2.0), eml_scalar(3.0)), eml_vec('epsilon_eff')), eml_scalar(0.016))) — w₀ = −1 + (2/3)ε_eff + δ_Ricci from slow-roll + Ricci flow correction"
             ),
             Parameter(
                 path="cosmology.w_a_thawing",
@@ -644,7 +650,8 @@ class AttractorPotentialV18(SimulationBase):
                 experimental_bound=0.0,
                 bound_type="measured",
                 bound_source="DESI2024",
-                uncertainty=0.2
+                uncertainty=0.2,
+                eml_description="EML: ops.add(ops.mul(eml_scalar(2.0), ops.mul(eml_vec('epsilon_eff'), ops.sub(eml_scalar(1.0), eml_vec('eta_eff')))), eml_scalar(0.09)) — w_a = 2ε_eff(1−η_eff) + δ_Ricci thawing CPL parameter"
             ),
         ]
 

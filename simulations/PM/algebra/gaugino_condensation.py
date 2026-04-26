@@ -428,6 +428,10 @@ class GauginoCondensationSimulation(SimulationBase):
                 status="DERIVED",
                 description="Non-perturbative superpotential W_np(N₁) = exp(−2π/24). Dominant term from b₃=24.",
                 derivation_formula="gaugino-racetrack-superpotential",
+                eml_description=(
+                    "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) "
+                    "— W_np₁ = exp(−2π/24) dominant condensate from N₁=b₃=24 cycles"
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
@@ -437,6 +441,10 @@ class GauginoCondensationSimulation(SimulationBase):
                 status="DERIVED",
                 description="Non-perturbative superpotential W_np(N₂) = exp(−2π/23). Sub-dominant term from N₂=b₃−1.",
                 derivation_formula="gaugino-racetrack-superpotential",
+                eml_description=(
+                    "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)))) "
+                    "— W_np₂ = exp(−2π/23) sub-dominant condensate from N₂=b₃−1=23 cycles"
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
@@ -446,6 +454,10 @@ class GauginoCondensationSimulation(SimulationBase):
                 status="DERIVED",
                 description="Effective Yukawa suppression λ_eff = exp(−2π/24) ≈ 0.7697 at the racetrack minimum.",
                 derivation_formula="gaugino-lambda-eff",
+                eml_description=(
+                    "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) "
+                    "— λ_eff = exp(−2π/24) ≈ 0.7676 Yukawa texture suppression"
+                ),
                 experimental_bound=0.7697,
                 bound_type="central_value",
                 bound_source="racetrack_minimum_N1_24",
@@ -463,6 +475,10 @@ class GauginoCondensationSimulation(SimulationBase):
                     "Note: exact value requires racetrack minimization with SM matter content."
                 ),
                 derivation_formula="gaugino-cabibbo-proxy",
+                eml_description=(
+                    "EML: ops.pow(eml_vec('algebra.gaugino_lambda_eff'), eml_scalar(3.0)) "
+                    "— Cabibbo proxy = λ_eff³ from racetrack minimum"
+                ),
                 experimental_bound=0.2257,
                 bound_type="central_value",
                 bound_source="CKM_PDG2024",
@@ -482,6 +498,10 @@ class GauginoCondensationSimulation(SimulationBase):
                     "Residual gap (0.208 vs 0.226) from loop corrections and SU(5) embedding."
                 ),
                 derivation_formula="gaugino-cabibbo-proxy",
+                eml_description=(
+                    "EML: ops.exp(ops.neg(ops.div(eml_pi(), eml_scalar(2.0)))) "
+                    "— refined Cabibbo angle = exp(−π/2) = λ_eff^(N₁/4) from racetrack minimum with 6 cycles"
+                ),
                 experimental_bound=0.2257,
                 bound_type="central_value",
                 bound_source="CKM_PDG2024",
@@ -494,6 +514,13 @@ class GauginoCondensationSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Analytic racetrack minimum T_min = ln(a₂/a₁)/(a₂−a₁) where aᵢ=2π/Nᵢ.",
+                eml_description=(
+                    "EML: ops.div(ops.log(ops.div(eml_vec('a2'), eml_vec('a1'))), "
+                    "ops.add(eml_vec('a2'), ops.neg(eml_vec('a1')))) "
+                    "where a1=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), "
+                    "a2=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)) "
+                    "— T_min = ln(a₂/a₁)/(a₂−a₁) modulus at racetrack potential minimum"
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
@@ -502,6 +529,10 @@ class GauginoCondensationSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Ratio of dominant to sub-dominant condensate strengths.",
+                eml_description=(
+                    "EML: ops.div(eml_vec('algebra.gaugino_W_np_1'), eml_vec('algebra.gaugino_W_np_2')) "
+                    "— ratio W_np₁/W_np₂ = exp(−2π/24)/exp(−2π/23) of dominant to sub-dominant condensates"
+                ),
                 no_experimental_value=True,
             ),
             Parameter(
