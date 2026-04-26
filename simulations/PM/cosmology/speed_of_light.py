@@ -791,6 +791,7 @@ class SpeedOfLightV17(SimulationBase):
                 bound_type="central_value",
                 bound_source="CODATA2022",
                 uncertainty=float(CODATA_C_SIGMA_EQUIVALENT),  # ~1ppm equivalent
+                eml_description="EML: ops.mul(eml_vec('C_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_scalar(1e7), eml_vec('P_3D')))))) — c = C_geo × S_f × B_v × chi_gc × 10⁷ × P_3D from G₂ KK reduction; yields 299,792,423 m/s (99.99999% of CODATA)"
             ),
             Parameter(
                 path="cosmology.c_variance_ms",
@@ -801,7 +802,8 @@ class SpeedOfLightV17(SimulationBase):
                     f"Absolute variance between derived and CODATA speed of light: "
                     f"{variance:.2f} m/s."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.abs(ops.sub(eml_vec('cosmology.speed_of_light_derived'), eml_scalar(299792458.0))) — |c_derived − c_CODATA| in m/s"
             ),
             Parameter(
                 path="cosmology.c_accuracy_percent",
@@ -812,7 +814,8 @@ class SpeedOfLightV17(SimulationBase):
                     f"Accuracy of derived speed of light relative to CODATA: "
                     f"{accuracy:.5f}%."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(ops.sub(eml_scalar(1.0), ops.div(eml_vec('cosmology.c_variance_ms'), eml_scalar(299792458.0))), eml_scalar(100.0)) — (1 − |Δc|/c_CODATA) × 100%; fraction of CODATA c correctly reproduced"
             ),
             Parameter(
                 path="cosmology.c_sigma_deviation",
@@ -823,7 +826,8 @@ class SpeedOfLightV17(SimulationBase):
                     f"Sigma-equivalent deviation from CODATA (framework-specific calibration: ~300 m/s ≈ 1ppm as 1σ): "
                     f"{sigma_equiv:.2f}σ. {'Excellent' if sigma_equiv < 1 else 'Good'} agreement."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('cosmology.c_variance_ms'), eml_scalar(300.0)) — |Δc| / (300 m/s), where 300 m/s ≈ 1 ppm of c used as 1σ equivalent for this defined constant"
             ),
             Parameter(
                 path="cosmology.spatial_projection",
@@ -838,7 +842,8 @@ class SpeedOfLightV17(SimulationBase):
                     f"from the CODATA value."
                 ),
                 derivation_formula="decad3-projection",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.add(eml_scalar(1.0), ops.inv(ops.mul(eml_scalar(288.0), ops.pow(eml_scalar(10.0), eml_scalar(2.0))))) — P_3D = 1 + 1/(N_root × D_10²) = 1 + 1/28800; KK tower projection onto 3 spatial dimensions"
             ),
         ]
 

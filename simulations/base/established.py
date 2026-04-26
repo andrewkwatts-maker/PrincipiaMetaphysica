@@ -62,6 +62,7 @@ class EstablishedParameter:
     source: str                  # e.g., "ESTABLISHED:PDG2024"
     status: str = "ESTABLISHED"
     description: str = ""
+    eml_description: str = ""    # EML/Mirror Phase Mathematics description
 
 
 class EstablishedPhysics:
@@ -123,7 +124,8 @@ class EstablishedPhysics:
                 uncertainty=3.0e15,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Reduced Planck mass (M_Pl / sqrt(8*pi)) - INPUT for 26D string tension"
+                description="Reduced Planck mass (M_Pl / sqrt(8*pi)) - INPUT for 26D string tension",
+                eml_description="EML: eml_scalar(2.435e18) — reduced Planck mass M_Pl/√(8π) in GeV (input)"
             ),
             EstablishedParameter(
                 path="constants.alpha_em",
@@ -131,7 +133,8 @@ class EstablishedPhysics:
                 uncertainty=1.5e-10,
                 units="dimensionless",
                 source="ESTABLISHED:CODATA2018",
-                description="Fine structure constant"
+                description="Fine structure constant",
+                eml_description="EML: eml_scalar(7.2973525693e-3) — fine structure constant α ≈ 1/137 (CODATA 2018 input)"
             ),
             EstablishedParameter(
                 path="constants.m_proton",
@@ -139,7 +142,8 @@ class EstablishedPhysics:
                 uncertainty=0.000001,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Proton mass"
+                description="Proton mass",
+                eml_description="EML: eml_scalar(0.938272) — proton mass in GeV (PDG 2024 input)"
             ),
             # Additional fundamental constants
             EstablishedParameter(
@@ -148,7 +152,8 @@ class EstablishedPhysics:
                 uncertainty=1e-33,
                 units="GeV·s",
                 source="ESTABLISHED:CODATA2018",
-                description="Reduced Planck constant"
+                description="Reduced Planck constant",
+                eml_description="EML: eml_scalar(6.582119569e-25) — reduced Planck constant ℏ in GeV·s (CODATA 2018 input)"
             ),
             EstablishedParameter(
                 path="constants.G_NEWTON",
@@ -156,7 +161,8 @@ class EstablishedPhysics:
                 uncertainty=3e-44,
                 units="GeV^-2",
                 source="ESTABLISHED:CODATA2018",
-                description="Newton's gravitational constant"
+                description="Newton's gravitational constant",
+                eml_description="EML: eml_scalar(6.70883e-39) — Newton's gravitational constant G in GeV⁻² (CODATA 2018 input)"
             ),
         ]
 
@@ -174,7 +180,8 @@ class EstablishedPhysics:
                 uncertainty=0.14,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Higgs boson mass"
+                description="Higgs boson mass",
+                eml_description="EML: eml_scalar(125.1) — Higgs boson mass in GeV (PDG 2024)"
             ),
             # Leptons
             EstablishedParameter(
@@ -183,7 +190,8 @@ class EstablishedPhysics:
                 uncertainty=3.1e-12,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Electron mass"
+                description="Electron mass",
+                eml_description="EML: eml_scalar(0.000511) — electron mass in GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_muon",
@@ -191,7 +199,8 @@ class EstablishedPhysics:
                 uncertainty=2.4e-6,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Muon mass"
+                description="Muon mass",
+                eml_description="EML: eml_scalar(0.1057) — muon mass in GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_tau",
@@ -199,7 +208,8 @@ class EstablishedPhysics:
                 uncertainty=0.00012,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Tau mass"
+                description="Tau mass",
+                eml_description="EML: eml_scalar(1.77686) — tau lepton mass in GeV (PDG 2024)"
             ),
             # Quarks
             EstablishedParameter(
@@ -208,7 +218,8 @@ class EstablishedPhysics:
                 uncertainty=0.49e-3,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Up quark mass (MS-bar, 2 GeV)"
+                description="Up quark mass (MS-bar, 2 GeV)",
+                eml_description="EML: eml_scalar(2.16e-3) — up quark MS-bar mass at 2 GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_down",
@@ -216,7 +227,8 @@ class EstablishedPhysics:
                 uncertainty=0.48e-3,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Down quark mass (MS-bar, 2 GeV)"
+                description="Down quark mass (MS-bar, 2 GeV)",
+                eml_description="EML: eml_scalar(4.67e-3) — down quark MS-bar mass at 2 GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_strange",
@@ -224,7 +236,8 @@ class EstablishedPhysics:
                 uncertainty=8.6e-3,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Strange quark mass"
+                description="Strange quark mass",
+                eml_description="EML: eml_scalar(0.0934) — strange quark MS-bar mass in GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_charm",
@@ -232,7 +245,8 @@ class EstablishedPhysics:
                 uncertainty=0.02,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Charm quark mass"
+                description="Charm quark mass",
+                eml_description="EML: eml_scalar(1.27) — charm quark MS-bar mass in GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_bottom",
@@ -240,7 +254,8 @@ class EstablishedPhysics:
                 uncertainty=0.03,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Bottom quark mass"
+                description="Bottom quark mass",
+                eml_description="EML: eml_scalar(4.18) — bottom quark MS-bar mass in GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_top",
@@ -248,7 +263,8 @@ class EstablishedPhysics:
                 uncertainty=0.30,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Top quark mass"
+                description="Top quark mass",
+                eml_description="EML: eml_scalar(172.69) — top quark pole mass in GeV (PDG 2024)"
             ),
             # Gauge couplings
             EstablishedParameter(
@@ -257,7 +273,8 @@ class EstablishedPhysics:
                 uncertainty=0.0010,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="Strong coupling at M_Z"
+                description="Strong coupling at M_Z",
+                eml_description="EML: eml_scalar(0.118) — strong coupling constant α_s at M_Z scale (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.sin2_theta_W",
@@ -265,7 +282,8 @@ class EstablishedPhysics:
                 uncertainty=0.00004,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="Weak mixing angle"
+                description="Weak mixing angle",
+                eml_description="EML: eml_scalar(0.23121) — weak mixing angle sin²θ_W (PDG 2024)"
             ),
             # W and Z masses
             EstablishedParameter(
@@ -274,7 +292,8 @@ class EstablishedPhysics:
                 uncertainty=0.012,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="W boson mass"
+                description="W boson mass",
+                eml_description="EML: eml_scalar(80.377) — W boson mass in GeV (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.m_Z",
@@ -282,7 +301,8 @@ class EstablishedPhysics:
                 uncertainty=0.0021,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Z boson mass"
+                description="Z boson mass",
+                eml_description="EML: eml_scalar(91.19) — Z boson mass in GeV (PDG 2024)"
             ),
         ]
 
@@ -306,7 +326,8 @@ class EstablishedPhysics:
                 uncertainty=0.0008,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="CKM |V_us| Cabibbo angle"
+                description="CKM |V_us| Cabibbo angle",
+                eml_description="EML: eml_scalar(0.2245) — CKM matrix element |V_us| Cabibbo angle (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.V_cb",
@@ -314,7 +335,8 @@ class EstablishedPhysics:
                 uncertainty=0.0014,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="CKM |V_cb|"
+                description="CKM |V_cb|",
+                eml_description="EML: eml_scalar(0.041) — CKM matrix element |V_cb| (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.V_ub",
@@ -322,7 +344,8 @@ class EstablishedPhysics:
                 uncertainty=0.00024,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="CKM |V_ub|"
+                description="CKM |V_ub|",
+                eml_description="EML: eml_scalar(0.00382) — CKM matrix element |V_ub| (PDG 2024)"
             ),
             EstablishedParameter(
                 path="pdg.J_ckm",
@@ -330,7 +353,8 @@ class EstablishedPhysics:
                 uncertainty=0.15e-5,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="Jarlskog invariant J"
+                description="Jarlskog invariant J",
+                eml_description="EML: eml_scalar(3.08e-5) — CKM Jarlskog CP-violation invariant J (PDG 2024)"
             ),
         ]
 
@@ -359,7 +383,8 @@ class EstablishedPhysics:
                 uncertainty=0.75,
                 units="degrees",
                 source="ESTABLISHED:NuFIT6.0",
-                description="Solar mixing angle"
+                description="Solar mixing angle",
+                eml_description="EML: eml_scalar(33.41) — solar mixing angle θ₁₂ in degrees (NuFIT 6.0)"
             ),
             EstablishedParameter(
                 path="nufit.theta_23",
@@ -367,7 +392,8 @@ class EstablishedPhysics:
                 uncertainty=1.0,
                 units="degrees",
                 source="ESTABLISHED:NuFIT6.0",
-                description="Atmospheric mixing angle"
+                description="Atmospheric mixing angle",
+                eml_description="EML: eml_scalar(45.0) — atmospheric mixing angle θ₂₃ in degrees (NuFIT 6.0 NO)"
             ),
             EstablishedParameter(
                 path="nufit.theta_13",
@@ -375,7 +401,8 @@ class EstablishedPhysics:
                 uncertainty=0.12,
                 units="degrees",
                 source="ESTABLISHED:NuFIT6.0",
-                description="Reactor mixing angle"
+                description="Reactor mixing angle",
+                eml_description="EML: eml_scalar(8.54) — reactor mixing angle θ₁₃ in degrees (NuFIT 6.0)"
             ),
             EstablishedParameter(
                 path="nufit.delta_CP",
@@ -383,7 +410,8 @@ class EstablishedPhysics:
                 uncertainty=25.0,
                 units="degrees",
                 source="ESTABLISHED:NuFIT6.0",
-                description="CP-violating phase"
+                description="CP-violating phase",
+                eml_description="EML: eml_scalar(194.0) — Dirac CP-violating phase δ_CP in degrees (NuFIT 6.0 NO)"
             ),
             EstablishedParameter(
                 path="nufit.delta_m21_sq",
@@ -391,7 +419,8 @@ class EstablishedPhysics:
                 uncertainty=0.21e-5,
                 units="eV^2",
                 source="ESTABLISHED:NuFIT6.0",
-                description="Solar mass splitting"
+                description="Solar mass splitting",
+                eml_description="EML: eml_scalar(7.42e-5) — solar neutrino mass splitting Δm²₂₁ in eV² (NuFIT 6.0)"
             ),
             EstablishedParameter(
                 path="nufit.delta_m31_sq",
@@ -399,7 +428,8 @@ class EstablishedPhysics:
                 uncertainty=0.028e-3,
                 units="eV^2",
                 source="ESTABLISHED:NuFIT6.0",
-                description="Atmospheric mass splitting (Normal Ordering convention)"
+                description="Atmospheric mass splitting (Normal Ordering convention)",
+                eml_description="EML: eml_scalar(2.515e-3) — atmospheric mass splitting Δm²₃₁ in eV² (NuFIT 6.0 NO)"
             ),
             # Inverted Ordering values - PM predicts IO
             EstablishedParameter(
@@ -408,7 +438,8 @@ class EstablishedPhysics:
                 uncertainty=0.028e-3,
                 units="eV^2",
                 source="ESTABLISHED:NuFIT6.0_IO",
-                description="Atmospheric mass splitting (Inverted Ordering: dm2_32 < 0)"
+                description="Atmospheric mass splitting (Inverted Ordering: dm2_32 < 0)",
+                eml_description="EML: eml_scalar(-2.404e-3) — atmospheric mass splitting Δm²₃₂ in eV² (NuFIT 6.0 IO)"
             ),
             EstablishedParameter(
                 path="nufit.theta_23_IO",
@@ -416,7 +447,8 @@ class EstablishedPhysics:
                 uncertainty=1.0,
                 units="degrees",
                 source="ESTABLISHED:NuFIT6.0_IO",
-                description="Atmospheric mixing angle (IO best fit, upper octant)"
+                description="Atmospheric mixing angle (IO best fit, upper octant)",
+                eml_description="EML: eml_scalar(49.3) — atmospheric mixing angle θ₂₃ in degrees (NuFIT 6.0 IO upper octant)"
             ),
             EstablishedParameter(
                 path="nufit.delta_CP_IO",
@@ -424,7 +456,8 @@ class EstablishedPhysics:
                 uncertainty=26.0,
                 units="degrees",
                 source="ESTABLISHED:NuFIT6.0_IO",
-                description="CP-violating phase (Inverted Ordering)"
+                description="CP-violating phase (Inverted Ordering)",
+                eml_description="EML: eml_scalar(278.0) — Dirac CP-violating phase δ_CP in degrees (NuFIT 6.0 IO)"
             ),
         ]
 
@@ -483,7 +516,8 @@ class EstablishedPhysics:
                 uncertainty=w0_unc,
                 units="dimensionless",
                 source="ESTABLISHED:DESI_2025",
-                description="Dark energy equation of state at z=0 (standard w0-wa constraint)"
+                description="Dark energy equation of state at z=0 (standard w0-wa constraint)",
+                eml_description="EML: eml_scalar(-0.957) — dark energy w₀ at z=0 from DESI 2025 standard w0-wa analysis (input)"
             ),
             EstablishedParameter(
                 path="desi.wa",
@@ -491,7 +525,8 @@ class EstablishedPhysics:
                 uncertainty=wa_unc,
                 units="dimensionless",
                 source="ESTABLISHED:DESI_2025",
-                description="Dark energy evolution parameter (standard w0-wa constraint)"
+                description="Dark energy evolution parameter (standard w0-wa constraint)",
+                eml_description="EML: eml_scalar(-0.99) — dark energy evolution parameter w_a from DESI 2025 (input)"
             ),
             # Thawing quintessence constraint - matches PM prediction
             EstablishedParameter(
@@ -500,7 +535,8 @@ class EstablishedPhysics:
                 uncertainty=w0_thawing_unc,
                 units="dimensionless",
                 source="ESTABLISHED:DESI_2025_THAWING",
-                description="Dark energy w0 from thawing quintessence model (v16.2: -0.957±0.067)"
+                description="Dark energy w0 from thawing quintessence model (v16.2: -0.957±0.067)",
+                eml_description="EML: eml_scalar(-0.957) — DESI 2025 thawing quintessence w₀ (BAO-only; matches PM prediction -23/24)"
             ),
             EstablishedParameter(
                 path="desi.wa_thawing",
@@ -508,7 +544,8 @@ class EstablishedPhysics:
                 uncertainty=wa_thawing_unc,
                 units="dimensionless",
                 source="ESTABLISHED:DESI_2025_THAWING",
-                description="Dark energy wa from thawing quintessence model"
+                description="Dark energy wa from thawing quintessence model",
+                eml_description="EML: eml_scalar(-0.99) — DESI 2025 thawing quintessence w_a evolution parameter (input)"
             ),
             EstablishedParameter(
                 path="desi.sigma8",
@@ -516,7 +553,8 @@ class EstablishedPhysics:
                 uncertainty=sigma8_unc,
                 units="dimensionless",
                 source="ESTABLISHED:DESI_2025",
-                description="RMS matter fluctuation amplitude at 8 h^-1 Mpc (from desi_2025_constraints.json)"
+                description="RMS matter fluctuation amplitude at 8 h^-1 Mpc (from desi_2025_constraints.json)",
+                eml_description="EML: eml_scalar(0.827) — σ₈ matter fluctuation amplitude at 8 h⁻¹ Mpc (DESI 2025 / Planck 2018 input)"
             ),
             EstablishedParameter(
                 path="desi.H0",
@@ -524,7 +562,8 @@ class EstablishedPhysics:
                 uncertainty=0.5,
                 units="km/s/Mpc",
                 source="ESTABLISHED:Planck2018",
-                description="Hubble constant"
+                description="Hubble constant",
+                eml_description="EML: eml_scalar(67.4) — Hubble constant H₀ in km/s/Mpc (Planck 2018 input)"
             ),
             EstablishedParameter(
                 path="desi.Omega_m",
@@ -532,7 +571,8 @@ class EstablishedPhysics:
                 uncertainty=0.0056,
                 units="dimensionless",
                 source="ESTABLISHED:Planck2018",
-                description="Matter density parameter"
+                description="Matter density parameter",
+                eml_description="EML: eml_scalar(0.3111) — matter density parameter Ω_m (Planck 2018 input)"
             ),
             EstablishedParameter(
                 path="planck.S8",
@@ -540,7 +580,8 @@ class EstablishedPhysics:
                 uncertainty=S8_unc,
                 units="dimensionless",
                 source="ESTABLISHED:Planck2018",
-                description="S8 parameter from Planck 2018 CMB (S8 = sigma8 * sqrt(Omega_m/0.3))"
+                description="S8 parameter from Planck 2018 CMB (S8 = sigma8 * sqrt(Omega_m/0.3))",
+                eml_description="EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) — S₈ = σ₈√(Ω_m/0.3) (Planck 2018)"
             ),
             EstablishedParameter(
                 path="desi.S8",
@@ -548,7 +589,8 @@ class EstablishedPhysics:
                 uncertainty=S8_unc,
                 units="dimensionless",
                 source="ESTABLISHED:Planck2018",
-                description="S8 = sigma8 * sqrt(Omega_m/0.3) - loaded from desi_2025_constraints.json"
+                description="S8 = sigma8 * sqrt(Omega_m/0.3) - loaded from desi_2025_constraints.json",
+                eml_description="EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) — S₈ = σ₈√(Ω_m/0.3) (DESI/Planck input)"
             ),
         ]
 
@@ -570,7 +612,8 @@ class EstablishedPhysics:
                 uncertainty=0.03e34,
                 units="years",
                 source="ESTABLISHED:SuperK_2024",
-                description="Proton lifetime lower bound"
+                description="Proton lifetime lower bound",
+                eml_description="EML: eml_scalar(1.67e34) — Super-K lower bound on proton lifetime τ_p > 1.67×10³⁴ yr (PDG 2024 input)"
             ),
             EstablishedParameter(
                 path="bounds.sum_m_nu_upper",
@@ -578,7 +621,8 @@ class EstablishedPhysics:
                 uncertainty=0,
                 units="eV",
                 source="ESTABLISHED:Planck2018",
-                description="Sum of neutrino masses upper bound"
+                description="Sum of neutrino masses upper bound",
+                eml_description="EML: eml_scalar(0.12) — Planck 2018 upper bound Σm_ν < 0.12 eV (cosmological input)"
             ),
         ]
 
@@ -607,7 +651,8 @@ class EstablishedPhysics:
                 uncertainty=0.01,
                 units="GeV",
                 source="ESTABLISHED:SM_EW",
-                description="Yukawa coupling scale v/√2 = 174 GeV (NOT the EW VEV)"
+                description="Yukawa coupling scale v/√2 = 174 GeV (NOT the EW VEV)",
+                eml_description="EML: ops.div(eml_scalar(246.22), ops.sqrt(eml_scalar(2.0))) — Yukawa scale v/√2 ≈ 174 GeV (SM electroweak input)"
             ),
             EstablishedParameter(
                 path="yukawa.y_top",
@@ -615,7 +660,8 @@ class EstablishedPhysics:
                 uncertainty=0.003,
                 units="dimensionless",
                 source="ESTABLISHED:PDG2024",
-                description="Top quark Yukawa coupling"
+                description="Top quark Yukawa coupling",
+                eml_description="EML: ops.div(ops.mul(eml_scalar(172.69), ops.sqrt(eml_scalar(2.0))), eml_scalar(246.22)) — top Yukawa y_t = m_t√2/v (PDG 2024)"
             ),
             EstablishedParameter(
                 path="gauge.g_gut",
@@ -623,7 +669,8 @@ class EstablishedPhysics:
                 uncertainty=0.01,
                 units="dimensionless",
                 source="ESTABLISHED:GUT_THEORY",
-                description="GUT gauge coupling"
+                description="GUT gauge coupling",
+                eml_description="EML: ops.sqrt(ops.div(ops.mul(eml_scalar(4.0), eml_pi()), eml_scalar(24.3))) — GUT gauge coupling from α_GUT ≈ 1/24.3"
             ),
             # Moduli stabilization parameters
             # RE_T_ATTRACTOR: From TCS G2 flux/membrane instanton geometry
@@ -634,7 +681,8 @@ class EstablishedPhysics:
                 uncertainty=0.05,
                 units="dimensionless",
                 source="ESTABLISHED:G2_GEOMETRY",
-                description="Attractor value for Re(T) from G2 flux instantons"
+                description="Attractor value for Re(T) from G2 flux instantons",
+                eml_description="EML: eml_scalar(1.833) — Re(T) attractor from TCS #187 G₂ flux instanton geometry (geometric input)"
             ),
             EstablishedParameter(
                 path="moduli.re_t_phenomenological",
@@ -642,7 +690,8 @@ class EstablishedPhysics:
                 uncertainty=0.1,
                 units="dimensionless",
                 source="CONSTRAINED:HIGGS_MASS",
-                description="Re(T) constrained by m_H = 125.10 GeV (phenomenological input)"
+                description="Re(T) constrained by m_H = 125.10 GeV (phenomenological input)",
+                eml_description="EML: eml_scalar(9.865) — Re(T) constrained by m_H = 125.10 GeV with v_yukawa = 174 GeV (observational constraint)"
             ),
             # Topology parameters (from G2 geometry)
             EstablishedParameter(
@@ -651,7 +700,8 @@ class EstablishedPhysics:
                 uncertainty=0.02,
                 units="dimensionless",
                 source="ESTABLISHED:G2_TORSION",
-                description="Torsion class parameter from TCS construction"
+                description="Torsion class parameter from TCS construction",
+                eml_description="EML: eml_scalar(0.12) — torsion class parameter T_Ω from TCS G₂ construction (geometric input)"
             ),
             EstablishedParameter(
                 path="topology.orientation_sum",
@@ -659,7 +709,8 @@ class EstablishedPhysics:
                 uncertainty=0.5,
                 units="dimensionless",
                 source="ESTABLISHED:V21_BRIDGE_REDUCTION",
-                description="Orientation sum from v21 dual-shadow bridge - determines flux winding in theta_23"
+                description="Orientation sum from v21 dual-shadow bridge - determines flux winding in theta_23",
+                eml_description="EML: eml_scalar(12) — orientation sum from v21 dual-shadow bridge (12 bridge pairs, geometric input)"
             ),
             # Consciousness parameters for Appendix M (Speculative Extensions)
             EstablishedParameter(
@@ -668,7 +719,8 @@ class EstablishedPhysics:
                 uncertainty=0.5e-5,
                 units="dimensionless",
                 source="INPUT:SPECULATIVE",
-                description="Fraction of neurons in quantum-coherent state (Penrose-Hameroff Orch-OR)"
+                description="Fraction of neurons in quantum-coherent state (Penrose-Hameroff Orch-OR)",
+                eml_description="EML: eml_scalar(1e-5) — speculative coherent neuron fraction for Orch-OR (Penrose-Hameroff, speculative input)"
             ),
             EstablishedParameter(
                 path="consciousness.neuron_count",
@@ -676,7 +728,8 @@ class EstablishedPhysics:
                 uncertainty=10e9,
                 units="count",
                 source="ESTABLISHED:NEUROSCIENCE",
-                description="Total neuron count in human brain"
+                description="Total neuron count in human brain",
+                eml_description="EML: eml_scalar(86e9) — total neuron count in human brain (neuroscience input)"
             ),
         ]
 
@@ -723,7 +776,8 @@ class EstablishedPhysics:
                     uncertainty=alpha_inv.get("uncertainty", 0.01),
                     units=alpha_inv.get("units", "dimensionless"),
                     source="ESTABLISHED:CODATA2022",
-                    description=alpha_inv.get("description", "Inverse fine structure constant")
+                    description=alpha_inv.get("description", "Inverse fine structure constant"),
+                    eml_description="EML: eml_scalar(137.035999177) — α⁻¹ from CODATA 2022 (input)"
                 ),
             ]
 
@@ -736,7 +790,8 @@ class EstablishedPhysics:
                     uncertainty=mu_pe.get("uncertainty", 2.0),
                     units=mu_pe.get("units", "dimensionless"),
                     source="ESTABLISHED:CODATA2022",
-                    description=mu_pe.get("description", "Proton-to-electron mass ratio")
+                    description=mu_pe.get("description", "Proton-to-electron mass ratio"),
+                    eml_description="EML: eml_scalar(1836.15267343) — μ_pe proton-to-electron mass ratio from CODATA 2022 (input)"
                 )
             )
 
@@ -749,7 +804,8 @@ class EstablishedPhysics:
                     uncertainty=m_planck.get("uncertainty", 1.9e15),
                     units=m_planck.get("units", "GeV"),
                     source="ESTABLISHED:CODATA2022",
-                    description=m_planck.get("description", "Planck mass")
+                    description=m_planck.get("description", "Planck mass"),
+                    eml_description="EML: eml_scalar(1.220890e19) — M_Pl full Planck mass in GeV from CODATA 2022 (input)"
                 )
             )
         else:
@@ -761,7 +817,8 @@ class EstablishedPhysics:
                     uncertainty=0.01,  # Theory uncertainty
                     units="dimensionless",
                     source="ESTABLISHED:CODATA2022",
-                    description="Inverse fine structure constant"
+                    description="Inverse fine structure constant",
+                    eml_description="EML: eml_scalar(137.035999177) — α⁻¹ from CODATA 2022 (input)"
                 ),
                 EstablishedParameter(
                     path="codata.mu_pe",
@@ -769,7 +826,8 @@ class EstablishedPhysics:
                     uncertainty=2.0,  # Theory uncertainty
                     units="dimensionless",
                     source="ESTABLISHED:CODATA2022",
-                    description="Proton-to-electron mass ratio"
+                    description="Proton-to-electron mass ratio",
+                    eml_description="EML: eml_scalar(1836.15267343) — μ_pe proton-to-electron mass ratio from CODATA 2022 (input)"
                 ),
                 EstablishedParameter(
                     path="codata.M_PLANCK",
@@ -777,7 +835,8 @@ class EstablishedPhysics:
                     uncertainty=1.9e15,
                     units="GeV",
                     source="ESTABLISHED:CODATA2022",
-                    description="Planck mass"
+                    description="Planck mass",
+                    eml_description="EML: eml_scalar(1.220890e19) — M_Pl full Planck mass in GeV from CODATA 2022 (input)"
                 ),
             ]
 
@@ -791,13 +850,16 @@ class EstablishedPhysics:
         For ESTABLISHED parameters, the value IS the experimental value.
         We set experimental_value = value to indicate this is a measured constant.
         """
+        meta = {'description': param.description, 'units': param.units}
+        if param.eml_description:
+            meta['eml_description'] = param.eml_description
         registry.set_param(
             path=param.path,
             value=param.value,
             source=param.source,
             uncertainty=param.uncertainty,
             status=param.status,
-            metadata={'description': param.description, 'units': param.units},
+            metadata=meta,
             # For established physics, the value IS the experimental measurement
             experimental_value=param.value,
             experimental_uncertainty=param.uncertainty,

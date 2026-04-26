@@ -658,6 +658,7 @@ class ProtonDecaySimulation(SimulationBase):
                     "matter and Higgs fields on separated 3-cycles. S = exp(1/K) "
                     "for K=4 matching fibres gives S ~ 1.28. Theoretical geometric factor, no direct experimental measurement."
                 ),
+                eml_description="EML: ops.exp(ops.inv(eml_vec('topology.K_MATCHING'))) — S = exp(1/K) TCS neck wavefunction overlap suppression from K3 fibre matching number",
                 derivation_formula="cycle-separation-suppression",
                 no_experimental_value=True,
                 validation={
@@ -678,6 +679,7 @@ class ProtonDecaySimulation(SimulationBase):
                     "Ratio of predicted lifetime to Super-Kamiokande lower bound. "
                     "Values > 1 are consistent with experiment. Predicted value ~1.6. Derived ratio, no direct measurement."
                 ),
+                eml_description="EML: ops.div(eml_vec('proton_decay.tau_p_years'), eml_vec('bounds.tau_proton_lower')) — ratio = τ_p / τ_SuperK; must exceed eml_scalar(1.0) for experimental consistency",
                 no_experimental_value=True,
                 validation={
                     "experimental_value": 1.0,
@@ -697,6 +699,7 @@ class ProtonDecaySimulation(SimulationBase):
                     "Experimental status: CONSISTENT (>1.5x bound), MARGINAL (1-1.5x), "
                     "or EXCLUDED (<1x). Categorical status indicator, no direct measurement."
                 ),
+                eml_description="EML: categorical — status = ops.cond(ops.gt(super_k_ratio, eml_scalar(1.5)), 'CONSISTENT', ops.cond(ops.gt(super_k_ratio, eml_scalar(1.0)), 'MARGINAL', 'EXCLUDED')); string result from ratio threshold comparison",
                 no_experimental_value=True,
                 validation={
                     "experimental_value": "CONSISTENT",

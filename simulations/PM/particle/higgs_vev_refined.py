@@ -503,6 +503,7 @@ class HiggsVEVRefinedV18(SimulationBase):
                     "Higgs VEV from geometric derivation: v = k_gimel × (b3-4). "
                     "v18.0: Pure derivation with 0.06% accuracy (0.3σ from PDG)."
                 ),
+                eml_description="EML: ops.mul(eml_vec('geometry.k_gimel'), ops.sub(eml_vec('topology.elder_kads'), eml_scalar(4.0))) — v = k_gimel × (b3 − 4) = 12.318 × 20 = 246.37 GeV Higgs VEV from G2 holonomy warp factor",
                 experimental_bound=246.22,  # EXPERIMENTAL: PDG2024
                 bound_type="measured",
                 bound_source="PDG2024",
@@ -517,6 +518,7 @@ class HiggsVEVRefinedV18(SimulationBase):
                     "Tree-level Fermi constant from geometric VEV. "
                     "Raw geometric prediction before radiative corrections."
                 ),
+                eml_description="EML: ops.div(eml_scalar(1.0), ops.mul(ops.sqrt(eml_scalar(2.0)), ops.pow(eml_vec('higgs.vev_geometric'), eml_scalar(2.0)))) — G_F^tree = 1 / (√2 × v²) tree-level Fermi constant from geometric VEV",
                 no_experimental_value=True  # Tree-level not directly measurable
             ),
             Parameter(
@@ -529,6 +531,7 @@ class HiggsVEVRefinedV18(SimulationBase):
                     "v18.2: Now includes α/(2π) radiative correction for proper "
                     "comparison to PDG measurements. Low sigma validates tree-level derivation."
                 ),
+                eml_description="EML: ops.mul(eml_vec('constants.G_F_tree'), ops.add(eml_scalar(1.0), ops.div(eml_vec('constants.alpha_em'), ops.mul(eml_scalar(2.0), eml_pi())))) — G_F^phys = G_F^tree × (1 + α/(2π)) Schwinger 1-loop QED correction",
                 experimental_bound=1.1663788e-5,
                 bound_type="measured",
                 bound_source="PDG2024",

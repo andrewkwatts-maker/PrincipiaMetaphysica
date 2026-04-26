@@ -907,7 +907,8 @@ class MultiSectorV16(SimulationBase):
                 experimental_bound=-0.957,  # DESI 2025 thawing quintessence
                 bound_type="central_value",
                 bound_source="DESI2025_THAWING",
-                uncertainty=0.067
+                uncertainty=0.067,
+                eml_description="EML: ops.neg(ops.div(ops.sub(eml_vec('D_eff'), eml_scalar(1.0)), ops.add(eml_vec('D_eff'), eml_scalar(1.0)))) — w_eff = -(D_eff-1)/(D_eff+1) from dimensional reduction"
             ),
             Parameter(
                 path="cosmology.Omega_DM_over_b",
@@ -965,7 +966,8 @@ class MultiSectorV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Relative weight of Standard Model sector in multi-sector blend",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_vec('gaussian_weight_sm'), eml_vec('jacobian_sm')) — SM sector Gaussian weight × G2 metric Jacobian at sampling position 0.5"
             ),
             Parameter(
                 path="cosmology.mirror_weight",
@@ -973,7 +975,8 @@ class MultiSectorV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Relative weight of mirror sector in multi-sector blend",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_vec('gaussian_weight_mirror'), eml_vec('jacobian_mirror')) — mirror sector Gaussian weight × G2 metric Jacobian (adjacent to SM face)"
             ),
             Parameter(
                 path="cosmology.hierarchy_ratio",
@@ -981,7 +984,8 @@ class MultiSectorV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Mass hierarchy ratio after sector blending",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('cosmology.sm_weight'), ops.add(eml_vec('cosmology.sm_weight'), eml_vec('cosmology.mirror_weight'))) — sm_weight / (sm_weight + mirror_weight) sector dominance ratio"
             ),
         ]
 

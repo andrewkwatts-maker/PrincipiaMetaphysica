@@ -2166,7 +2166,16 @@
             `;
 
             if (param.description) {
-                html += `<div class="param-description">${param.description}</div>`;
+                const emlDesc = param.eml_description || (param.metadata && param.metadata.eml_description) || '';
+                if (emlDesc) {
+                    html += `
+                        <div class="param-description math-mode-block" data-mode="normal">${param.description}</div>
+                        <div class="param-description math-mode-block" data-mode="eml" style="font-family:monospace; color:var(--accent-secondary); font-size:0.85em;">
+                            <span style="color:var(--text-muted); font-family:var(--font-body); margin-right:0.4rem;">⊕ EML:</span>${emlDesc}
+                        </div>`;
+                } else {
+                    html += `<div class="param-description">${param.description}</div>`;
+                }
             }
 
             // Show comparison if both computed and experimental exist

@@ -325,6 +325,11 @@ class AppendixUGammaCorrection(SimulationBase):
                 description="gamma = D*b3/(2*D_string*pi) = 10.31324... (originally fitted, now DERIVED)",
                 derivation_formula="gamma-geometric-candidate",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: eml_scalar(10.31324) — original fitted numerical value of γ_correction; "
+                    "now recovered by ops.div(ops.mul(eml_scalar(27.0), eml_scalar(24.0)), "
+                    "ops.mul(eml_scalar(20.0), eml_pi()))"
+                ),
             ),
             Parameter(
                 path="appendix_u.gamma_geometric",
@@ -334,6 +339,10 @@ class AppendixUGammaCorrection(SimulationBase):
                 description="Geometric derivation gamma = D*b3/(2*D_string*pi) = 27*24/(20*pi) = 10.31324...",
                 derivation_formula="gamma-geometric-candidate",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.mul(eml_scalar(27.0), eml_scalar(24.0)), "
+                    "ops.mul(eml_scalar(20.0), eml_pi())) — γ = D·b₃/(2·D_string·π) = 27·24/(2·10·π)"
+                ),
             ),
             Parameter(
                 path="appendix_u.match_sigma",
@@ -343,6 +352,11 @@ class AppendixUGammaCorrection(SimulationBase):
                 description="Match quality between fitted and geometric gamma values",
                 derivation_formula="gamma-geometric-candidate",
                 no_experimental_value=True,
+                eml_description=(
+                    "EML: ops.div(ops.abs(ops.sub(eml_vec('appendix_u.gamma_fitted'), "
+                    "eml_vec('appendix_u.gamma_geometric'))), eml_scalar(5e-7)) — "
+                    "|γ_fitted − γ_geometric| / σ_fit where σ_fit = 0.5×10⁻⁶ (last digit precision)"
+                ),
             ),
         ]
 

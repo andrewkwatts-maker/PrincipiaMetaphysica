@@ -748,7 +748,8 @@ class AxionDMV18(SimulationBase):
                     "Axion decay constant from G2 geometry: M_Pl/k_gimel^6 ~ 3.5e12 GeV. "
                     "In the anthropic window for dark matter."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('M_Planck'), ops.pow(eml_vec('geometry.k_gimel'), eml_scalar(6.0))) — f_a = M_Pl / k_gimel^6 from 6D moduli of associative 3-cycle"
             ),
             Parameter(
                 path="axion.m_a",
@@ -758,7 +759,8 @@ class AxionDMV18(SimulationBase):
                 description=(
                     "QCD axion mass ~ 1.6 μeV. Testable by ADMX, ABRACADABRA, CASPEr."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_scalar(5.7e-6), ops.div(eml_scalar(1.0e12), eml_vec('axion.f_a'))) — m_a = 5.7 ueV × (10^12 GeV / f_a) from QCD instanton dynamics"
             ),
             Parameter(
                 path="axion.omega_h2",
@@ -772,7 +774,8 @@ class AxionDMV18(SimulationBase):
                 experimental_bound=0.120,
                 bound_type="measured",
                 bound_source="Planck2018",
-                uncertainty=0.001
+                uncertainty=0.001,
+                eml_description="EML: ops.mul(ops.mul(eml_scalar(0.12), ops.pow(ops.div(eml_vec('axion.f_a'), eml_scalar(1.0e12)), eml_scalar(1.167))), ops.pow(eml_vec('axion.theta_i'), eml_scalar(2.0))) — Omega_a h^2 from vacuum misalignment mechanism"
             ),
             Parameter(
                 path="axion.theta_i",
@@ -783,7 +786,8 @@ class AxionDMV18(SimulationBase):
                     "Initial axion field angle required for correct DM density. "
                     "O(1) value indicates natural dark matter candidate."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.sqrt(ops.div(eml_scalar(0.12), ops.mul(eml_scalar(0.12), ops.pow(ops.div(eml_vec('axion.f_a'), eml_scalar(1.0e12)), eml_scalar(1.167))))) — theta_i = sqrt(Omega_DM / omega_prefactor) required for exact DM density"
             ),
         ]
 

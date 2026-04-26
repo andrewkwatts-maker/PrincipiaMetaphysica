@@ -1289,7 +1289,8 @@ class SimulationRunner:
                                          metadata={
                                              "description": "Framework version number",
                                              "is_scientific": False,
-                                             "display_in_params": False
+                                             "display_in_params": False,
+                                             "eml_description": "EML: eml_scalar(version_string) — PM framework version identifier (system metadata)"
                                          })
             # Register pm.version for simulation access (canonical version param)
             if not self.registry.has_param("pm.version"):
@@ -1299,7 +1300,8 @@ class SimulationRunner:
                                          metadata={
                                              "description": "PM framework version (full)",
                                              "is_scientific": False,
-                                             "display_in_params": False
+                                             "display_in_params": False,
+                                             "eml_description": "EML: eml_scalar(version_string) — PM framework canonical version label (system metadata)"
                                          })
             if not self.registry.has_param("pm.version.short"):
                 self.registry.set_param("pm.version.short", FormulasRegistry.VERSION_SHORT,
@@ -1308,7 +1310,8 @@ class SimulationRunner:
                                          metadata={
                                              "description": "PM framework version (short)",
                                              "is_scientific": False,
-                                             "display_in_params": False
+                                             "display_in_params": False,
+                                             "eml_description": "EML: eml_scalar(version_short) — PM framework short version label (system metadata)"
                                          })
         except Exception as e:
             if self.verbose:

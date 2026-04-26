@@ -217,6 +217,15 @@ class StefanBoltzmannV17(SimulationBase):
                 bound_source="CODATA2022",
                 eml_description="EML: ops.mul(sigma_bulk, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))",
             ),
+            Parameter(
+                path="qed.stefan_variance",
+                name="Stefan-Boltzmann Variance",
+                units="W/(m^2 K^4)",
+                status="DERIVED",
+                description="Absolute variance |sigma_manifest - sigma_CODATA|",
+                eml_description="EML: ops.abs(ops.sub(eml_vec('qed.manifest_stefan_boltzmann'), eml_scalar(5.670374419e-8))) — |σ_predicted − σ_CODATA| absolute variance",
+                no_experimental_value=True,
+            ),
         ]
 
 

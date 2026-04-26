@@ -736,6 +736,7 @@ class ThermalTimeV16(SimulationBase):
                     "Dimensional structure: T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ⁽²˒⁰⁾ ⊕ S⁽²˒⁰⁾). 12 pairs from b₃ = 24/2. "
                     "Metric: ds² = -dt² + ∑ᵢ₌₁¹²(dy₁ᵢ² + dy₂ᵢ²) + ds₁² + ds₂²."
                 ),
+                eml_description="EML: ops.add(ops.mul(eml_scalar(12.0), eml_scalar(2.0)), ops.add(eml_scalar(1.0), eml_scalar(2.0))) — M²⁷ = 12×2 + 1 + 2 = 27D metric signature (24,1,2)",
                 no_experimental_value=True,
             ),
         ]

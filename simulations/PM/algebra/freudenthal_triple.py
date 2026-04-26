@@ -228,6 +228,7 @@ class FreudenthalTripleSimulation(SimulationBase):
                             "Equals V_bridge / V_face in the racetrack potential.",
                 derivation_formula="freudenthal-cubic-norm",
                 no_experimental_value=True,
+                eml_description="EML: ops.pow(eml_scalar(condensate_scale), eml_scalar(3.0)) — cubic norm N(A) = s³ for the symmetric Pneuma element with diagonal entries s = b₃/27",
             ),
             Parameter(
                 path="algebra.freudenthal_quartic",
@@ -238,6 +239,7 @@ class FreudenthalTripleSimulation(SimulationBase):
                             "Proxy for E₇ quartic Casimir; encodes ALP mass scale.",
                 derivation_formula="freudenthal-quartic-invariant",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(ops.mul(ops.pow(eml_vec('algebra.freudenthal_jordan_trace'), eml_scalar(2.0)), ops.mul(eml_scalar(3.0), ops.pow(eml_scalar(condensate_scale), eml_scalar(2.0)))), eml_scalar(4.0)) — quartic q(A) = Tr(A)²·3s²/4",
             ),
             Parameter(
                 path="algebra.freudenthal_jordan_trace",
@@ -248,6 +250,7 @@ class FreudenthalTripleSimulation(SimulationBase):
                             "Equals 3 × (b₃/27) = b₃/9.",
                 derivation_formula="freudenthal-cubic-norm",
                 no_experimental_value=True,
+                eml_description="EML: ops.mul(eml_scalar(3.0), ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0))) — Jordan trace Tr(A) = 3·(b₃/27) = b₃/9",
             ),
             Parameter(
                 path="algebra.pneuma_27d_condensate_scale",
@@ -256,6 +259,7 @@ class FreudenthalTripleSimulation(SimulationBase):
                 status="DERIVED",
                 description="Condensate scale = b₃/27 for the symmetric Pneuma element in J₃(𝕆).",
                 no_experimental_value=True,
+                eml_description="EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)) — condensate scale s = b₃/27 (b₃=24 gives s≈0.888…)",
             ),
         ]
 

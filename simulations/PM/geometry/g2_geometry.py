@@ -1563,7 +1563,10 @@ class G2GeometryV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Number of independent K3 matching fibres in TCS gluing: K = h^{1,1} = b2 = 4. Topological invariant controlling the rank of the gauge sector; no direct experimental observable.",
                 derivation_formula="cycle-matching",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: eml_scalar(4) — K = h^{1,1} = b2 = 4 K3 matching fibres in TCS #187 gluing"
+                ),
             ),
             Parameter(
                 path="topology.d_over_R",
@@ -1572,7 +1575,11 @@ class G2GeometryV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Ratio of associative 3-cycle separation distance to compactification radius: d/R = 0.12 for TCS #187. Controls Yukawa coupling suppression and proton decay amplitude via wavefunction overlap. Constrained indirectly by proton lifetime bounds (Super-K: tau_p > 2.4e34 yr).",
                 derivation_formula=None,
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description=(
+                    "EML: eml_scalar(0.12) — d/R = 0.12 associative 3-cycle separation ratio for TCS #187; "
+                    "Yukawa suppression ~ ops.exp(ops.neg(ops.mul(eml_scalar(2.0), ops.mul(eml_pi(), d_over_R))))"
+                ),
             ),
         ]
 

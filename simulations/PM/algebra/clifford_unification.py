@@ -245,6 +245,7 @@ class CliffordUnificationSimulation(SimulationBase):
                 description="G₂ quadratic form v·v in Cl(7,0) ≡ Euclidean 7D invariant.",
                 derivation_formula="clifford-quadratic-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.quadratic(eml_vec('g2_multivector'), eml_signature('+++++++')) — G₂ holonomy invariant v·v = Σ vᵢ² in Cl(7,0) positive-definite signature",
             ),
             Parameter(
                 path="algebra.clifford_boost_conservation",
@@ -254,6 +255,7 @@ class CliffordUnificationSimulation(SimulationBase):
                 description="Deviation |s_before − s_after| for Lorentz boost in Cl(1,3). Should be < 0.1.",
                 derivation_formula="clifford-quadratic-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.abs(ops.sub(ops.quadratic(eml_vec('v'), eml_signature('+-−−')), ops.quadratic(ops.rotate(eml_vec('v'), eml_rotor(rapidity, (0,1))), eml_signature('+-−−')))) — Minkowski interval deviation |s_before−s_after| under Lorentz boost in Cl(1,3)",
             ),
             Parameter(
                 path="algebra.clifford_flrw_invariant",
@@ -263,6 +265,7 @@ class CliffordUnificationSimulation(SimulationBase):
                 description="FLRW quadratic form e₀·e₀ = −1 in Cl(0,1) with signature (−1,+1,+1,+1).",
                 derivation_formula="clifford-quadratic-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.quadratic(eml_vec('flrw_multivector'), eml_signature('-+++')) — FLRW cosmological quadratic form e₀·e₀=−a² in Cl(0,3) with signature (−1,+1,+1,+1)",
             ),
             Parameter(
                 path="algebra.clifford_rotation_check",
@@ -272,6 +275,7 @@ class CliffordUnificationSimulation(SimulationBase):
                 description="Error |e₂_component − 1| after π/2 rotation of e₁ in 2D Euclidean. Should be ~0.",
                 derivation_formula="clifford-quadratic-unification",
                 no_experimental_value=True,
+                eml_description="EML: ops.abs(ops.sub(ops.component(ops.rotate(eml_vec('e1'), eml_rotor(eml_pi_half(), (0,1))), eml_scalar(2)), eml_scalar(1.0))) — π/2 rotation error |e₂_component−1| for e₁→e₂ in Cl(2,0)",
             ),
         ]
 

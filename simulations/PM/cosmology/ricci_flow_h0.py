@@ -725,7 +725,8 @@ class RicciFlowH0V16(SimulationBase):
                 experimental_bound=67.4,
                 bound_type="central_value",
                 bound_source="Planck2018",
-                uncertainty=0.5
+                uncertainty=0.5,
+                eml_description="EML: ops.mul(eml_vec('cosmology.H0_local'), ops.sub(eml_scalar(1.0), eml_vec('f_z_cmb'))) — H0_early = H0_local * (1 - f(z_CMB)) from Ricci flow interpolation"
             ),
             Parameter(
                 path="cosmology.z_transition",
@@ -737,7 +738,8 @@ class RicciFlowH0V16(SimulationBase):
                     f"z_* = {z_trans:.2f}. Corresponds to Ricci flow timescale."
                 ),
                 derivation_formula="hubble-tension-resolution",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.inv(ops.div(eml_vec('geometry.k_gimel'), eml_scalar(24.0))) — z_* = 1/tau = b3/k_gimel ~ 1.95, transition redshift from Ricci flow timescale"
             ),
             Parameter(
                 path="cosmology.H0_tension_sigma",
@@ -748,7 +750,8 @@ class RicciFlowH0V16(SimulationBase):
                     "Maximum sigma deviation from either SH0ES or Planck. "
                     "Values < 2 indicate tension resolution."
                 ),
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.max(ops.div(ops.abs(ops.sub(eml_vec('cosmology.H0_local'), eml_scalar(73.04))), eml_scalar(1.04)), ops.div(ops.abs(ops.sub(eml_vec('cosmology.H0_early'), eml_scalar(67.4))), eml_scalar(0.5))) — max sigma from SH0ES and Planck targets"
             ),
             Parameter(
                 path="cosmology.ricci_flow_rate",
@@ -760,7 +763,8 @@ class RicciFlowH0V16(SimulationBase):
                     "1/tau = b3/k_gimel. Determines H(z) evolution timescale."
                 ),
                 derivation_formula="effective-curvature-evolution",
-                no_experimental_value=True
+                no_experimental_value=True,
+                eml_description="EML: ops.div(eml_scalar(24.0), eml_vec('geometry.k_gimel')) — flow_rate = b3/k_gimel = 1/tau from G2 Ricci flow topology"
             ),
         ]
 

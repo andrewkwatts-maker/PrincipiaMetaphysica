@@ -778,6 +778,9 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 bound_type="upper",
                 bound_source="IceCube/MINOS+ 2024",
                 uncertainty=None,
+                eml_description=(
+                    "EML: ops.pow(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0))), eml_scalar(2.0)) — sin²(2θ) = 1/b₃ = 1/24 sterile mixing from torsion geometry"
+                ),
             ),
             Parameter(
                 path="portals.sterile_mass_scale_gev",
@@ -812,6 +815,9 @@ class SterileNeutrinoPortalsV23(SimulationBase):
                 bound_type="upper",
                 bound_source="Planck2018",
                 uncertainty=0.23,
+                eml_description=(
+                    "EML: ops.mul(eml_scalar(0.027), eml_vec('portals.sterile_mixing_sin2_2theta')) — ΔN_eff contribution from sterile neutrino portal"
+                ),
             ),
         ]
 

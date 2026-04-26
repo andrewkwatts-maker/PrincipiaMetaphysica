@@ -906,6 +906,9 @@ if _SCHEMA_AVAILABLE:
                     description="Total consciousness branches from 4-dice mod-4 sampling (SPECULATIVE)",
                     derivation_formula="four-dice-branch-count",
                     no_experimental_value=True,
+                    eml_description=(
+                        "EML: ops.pow(eml_scalar(2.0), eml_scalar(2.0)) — 4 dice branches = 2² from binary quantum sampling"
+                    ),
                 ),
                 Parameter(
                     path="consciousness.dice_entropy",
@@ -915,6 +918,9 @@ if _SCHEMA_AVAILABLE:
                     description="Shannon entropy of branch probability distribution (SPECULATIVE)",
                     derivation_formula="four-dice-branch-count",
                     no_experimental_value=True,
+                    eml_description=(
+                        "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) — Shannon entropy H = -Σpᵢlog(pᵢ) for uniform 4-branch sampling"
+                    ),
                 ),
             ]
 
