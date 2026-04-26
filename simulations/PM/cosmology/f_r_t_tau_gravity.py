@@ -635,7 +635,10 @@ class FRTTauGravityV18(SimulationBase):
                     "alpha_F": "R^2 coefficient from b3=24 cycles",
                     "R_0": "Background curvature (cosmological: ~H_0^2)",
                     "GW170817": "Observational constraint: |v_gw - c| < 10^-15"
-                }
+                },
+                eml_latex=r"\mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.neg}(\mathrm{ops.mul}(\alpha_F,\, R_0)))",
+                eml_tree_str="ops.add(eml_scalar(1.0), ops.neg(ops.mul(alpha_F, R_0)))",
+                eml_description="EML: v_gw/c = ops.add(1, ops.neg(ops.mul(alpha_F, R_0))) — GW speed deviation from f(R) R^2 term",
             ),
             Formula(
                 id="tensor-mode-dispersion-v18",
@@ -679,7 +682,10 @@ class FRTTauGravityV18(SimulationBase):
                     "k": "Wave number",
                     "A_breathing": "Scalar breathing mode amplitude",
                     "R_source": "Curvature at GW source (~10^-6 M_Pl^2 for NS merger)"
-                }
+                },
+                eml_latex=r"\omega^2 = \mathrm{ops.mul}(c^2 k^2,\, \mathrm{ops.add}(\mathrm{eml\_scalar}(1),\, \mathrm{ops.mul}(\mathrm{eml\_scalar}(2),\, \mathrm{ops.mul}(\alpha_F,\, R_0))))",
+                eml_tree_str="ops.mul(ops.mul(c_sq, k_sq), ops.add(eml_scalar(1.0), ops.mul(eml_scalar(2.0), ops.mul(alpha_F, R_0))))",
+                eml_description="EML: omega^2 = ops.mul(c^2*k^2, ops.add(1, ops.mul(2, ops.mul(alpha_F, R_0)))) — tensor mode dispersion with R^2 correction",
             ),
         ]
 

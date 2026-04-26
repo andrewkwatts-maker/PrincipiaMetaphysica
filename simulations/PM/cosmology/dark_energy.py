@@ -1085,7 +1085,10 @@ class DarkEnergyV16(SimulationBase):
                     r"T^{ab}_{\text{normal}}": "Stress-energy tensor in the normal (visible) shadow",
                     r"T^{ab}_{\text{mirror}}": "Stress-energy tensor in the mirror (hidden) shadow",
                     r"R_\perp^{(i)}": "Per-pair OR reduction operator (90-degree rotation)",
-                }
+                },
+                eml_latex=r"\mathrm{ops.abs}(\mathrm{ops.add}(T_{\text{normal}},\, \mathrm{ops.neg}(\mathrm{ops.mul}(R_\perp,\, T_{\text{mirror}}))))",
+                eml_tree_str="ops.sqrt(ops.mul(T_diff, T_diff))  # |T_normal - R_perp T_mirror| via norm",
+                eml_description="EML: rho_i = ops.sqrt(ops.mul(T_diff, T_diff)) — per-pair breathing density as norm of stress-tensor mismatch",
             ),
             Formula(
                 id="breathing-aggregation",
