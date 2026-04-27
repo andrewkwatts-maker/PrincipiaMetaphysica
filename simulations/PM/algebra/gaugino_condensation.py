@@ -550,9 +550,9 @@ class GauginoCondensationSimulation(SimulationBase):
                 ),
                 derivation_formula="gaugino-cabibbo-derived",
                 eml_description=(
-                    "ops.pow(ops.abs(ops.add("
-                    "ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(24)))))), "
-                    "ops.neg(ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(23))))))))), "
+                    "EML: ops.pow(ops.abs(ops.add("
+                    "ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(eml_vec('T_min'), eml_scalar(24)))))), "
+                    "ops.neg(ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(eml_vec('T_min'), eml_scalar(23))))))))), "
                     "ops.inv(eml_scalar(3)))"
                 ),
                 experimental_bound=0.2257,

@@ -1082,7 +1082,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 name="Number of Physical Eigenvalues",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                eml_description="eml_scalar(125.0)",
+                eml_description="EML: eml_scalar(125.0)",
                 description=(
                     "Number of physically relevant Laplacian eigenvalues on V_7. "
                     "The value 125 matches the SM parameter count."
@@ -1094,7 +1094,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 name="Leading Zeta Pole",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                eml_description="ops.div(eml_vec('d'), eml_scalar(2.0))",
+                eml_description="EML: ops.div(eml_vec('d'), eml_scalar(2.0))",
                 description=(
                     "Position of the leading pole of the spectral zeta function. "
                     "For 7D manifolds: s = d/2 = 7/2 = 3.5."
@@ -1106,7 +1106,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 name="Volume Residue",
                 units="dimensionless",
                 status="DERIVED",
-                eml_description="ops.div(eml_vec('Vol_V7'), ops.mul(ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), ops.div(eml_scalar(7.0), eml_scalar(2.0))), eml_vec('Gamma_7_2')))",
+                eml_description="EML: ops.div(eml_vec('Vol_V7'), ops.mul(ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), ops.div(eml_scalar(7.0), eml_scalar(2.0))), eml_vec('Gamma_7_2')))",
                 description=(
                     "Residue of spectral zeta at s = 7/2, encoding the G2 volume "
                     "and thereby the Planck mass."
@@ -1119,7 +1119,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 name="Curvature Residue",
                 units="dimensionless",
                 status="DERIVED",
-                eml_description="ops.div(eml_vec('b3'), ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), eml_scalar(2.0)))",
+                eml_description="EML: ops.div(eml_vec('b3'), ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), eml_scalar(2.0)))",
                 description=(
                     "Residue at s = 5/2, vanishing for Ricci-flat G2 but with "
                     "Weyl contributions encoding gauge couplings."
@@ -1132,7 +1132,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 name="Euler Residue",
                 units="dimensionless",
                 status="DERIVED",
-                eml_description="ops.div(eml_vec('chi_eff'), ops.mul(ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), ops.div(eml_scalar(3.0), eml_scalar(2.0))), eml_vec('Gamma_3_2')))",
+                eml_description="EML: ops.div(eml_vec('chi_eff'), ops.mul(ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), ops.div(eml_scalar(3.0), eml_scalar(2.0))), eml_vec('Gamma_3_2')))",
                 description=(
                     "Residue at s = 3/2, proportional to effective Euler characteristic "
                     "chi_eff = 144, determining N_gen = 3."
@@ -1145,7 +1145,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
                 name="Regularization Scale",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                eml_description="ops.add(eml_scalar(12.0), ops.inv(eml_pi()))",
+                eml_description="EML: ops.add(eml_scalar(12.0), ops.inv(eml_pi()))",
                 description=(
                     "Scale for zeta regularization: k_gimel = 12 + 1/pi, "
                     "consistent with holonomy warp factor."

@@ -1341,7 +1341,7 @@ class G2GeometryV16(SimulationBase):
             },
             eml_latex=r"\mathrm{ops.mul}(\mathrm{eml\_scalar}(2),\, \mathrm{ops.add}(h^{11}, \mathrm{ops.neg}(h^{21}), h^{31}))",
             eml_tree_str="ops.mul(eml_scalar(2.0), ops.add(eml_scalar(4.0), ops.neg(eml_scalar(0.0)), eml_scalar(68.0)))",
-            eml_description="EML: chi_eff = ops.mul(2, ops.add(h11, ops.neg(h21), h31)) = 144",
+            eml_description="EML: ops.mul(eml_scalar(2), ops.add(eml_scalar(4), ops.neg(eml_scalar(0)), eml_scalar(68)))",
         ))
 
         # Betti numbers
@@ -1531,7 +1531,7 @@ class G2GeometryV16(SimulationBase):
                 description="Effective Euler characteristic chi_eff = 2(h11 - h21 + h31) = 144 from TCS #187 Hodge numbers. Topological invariant governing the chiral index; no direct experimental observable.",
                 derivation_formula="euler-characteristic",
                 no_experimental_value=True,
-                eml_description="EML: ops.mul(eml_scalar(2), ops.add(eml_scalar(4), ops.neg(eml_scalar(0)), eml_scalar(68))) = 144"
+                eml_description="EML: ops.mul(eml_scalar(2), ops.add(eml_scalar(4), ops.neg(eml_scalar(0)), eml_scalar(68)))"
             ),
             Parameter(
                 path="topology.n_gen",
@@ -1544,7 +1544,7 @@ class G2GeometryV16(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.0,
-                eml_description="EML: ops.div(eml_scalar(144), eml_scalar(48)) = 3 generations"
+                eml_description="EML: ops.div(eml_scalar(144), eml_scalar(48))"
             ),
             Parameter(
                 path="topology.k_gimel",

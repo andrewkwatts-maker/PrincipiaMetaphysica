@@ -1188,7 +1188,7 @@ class AppendixNVielbein(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of spacetime (D=4 for standard applications)",
-                eml_description="eml_scalar(4.0)",
+                eml_description="EML: eml_scalar(4.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1197,7 +1197,7 @@ class AppendixNVielbein(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of local Lorentz group SO(1,3): D(D-1)/2 = 6",
-                eml_description="eml_scalar(6.0)",
+                eml_description="EML: eml_scalar(6.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1206,7 +1206,7 @@ class AppendixNVielbein(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of Dirac spinor in 4D: 2^(D/2) = 4",
-                eml_description="eml_scalar(4.0)",
+                eml_description="EML: eml_scalar(4.0)",
                 no_experimental_value=True,
             ),
         ]

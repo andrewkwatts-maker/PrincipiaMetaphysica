@@ -688,7 +688,7 @@ class FermionGenerationsV16(SimulationBase):
                     "Number of fermion generations derived from G2 topology via spinor "
                     "saturation. Computed as n_gen = N_flux / spinor_DOF = 24 / 8 = 3."
                 ),
-                eml_description="EML: ops.div(ops.div(eml_scalar(144.0), eml_scalar(6.0)), eml_scalar(8.0)) = eml_scalar(3.0) — chi_eff flux then spinor saturation",
+                eml_description="EML: ops.div(ops.div(eml_scalar(144.0), eml_scalar(6.0)), eml_scalar(8.0)) — chi_eff flux then spinor saturation",
                 derivation_formula="generation-number",
                 experimental_bound=3,
                 uncertainty=0,
@@ -736,7 +736,7 @@ class FermionGenerationsV16(SimulationBase):
                     "N_flux = chi_eff / 6 = 24 from the effective Euler characteristic. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
-                eml_description="EML: ops.div(eml_scalar(144.0), eml_scalar(6.0)) = eml_scalar(24.0) — flux quantization from chi_eff",
+                eml_description="EML: ops.div(eml_scalar(144.0), eml_scalar(6.0)) — flux quantization from chi_eff",
                 derivation_formula="generation-number",
                 no_experimental_value=True
             ),

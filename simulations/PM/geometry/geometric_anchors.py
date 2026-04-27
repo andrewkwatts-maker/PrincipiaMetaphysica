@@ -1261,7 +1261,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                     metadata={
                         "alias_of": source_path,
                         "derivation": "Alias for geometric anchor",
-                        "eml_description": f"EML: alias for {source_path}"
+                        "eml_description": f"EML: eml_vec('{source_path}')"
                     }
                 )
                 results[alias_path] = value

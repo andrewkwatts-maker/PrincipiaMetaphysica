@@ -627,7 +627,7 @@ class AppendixJTorsionFunnel(SimulationBase):
                 units="fraction",
                 status="DERIVED",
                 description="Fraction of roots that become active residues (43.4%)",
-                eml_description="ops.div(eml_vec('active_residues'), eml_vec('ancestral_roots'))",
+                eml_description="EML: ops.div(eml_vec('active_residues'), eml_vec('ancestral_roots'))",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -636,7 +636,7 @@ class AppendixJTorsionFunnel(SimulationBase):
                 units="ratio",
                 status="DERIVED",
                 description="Entry pressure / exit pressure at bottleneck",
-                eml_description="ops.div(eml_vec('ancestral_roots'), eml_vec('torsion_pins'))",
+                eml_description="EML: ops.div(eml_vec('ancestral_roots'), eml_vec('torsion_pins'))",
                 no_experimental_value=True,
             ),
         ]

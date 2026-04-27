@@ -1098,7 +1098,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Quartic Coupling at EW Scale",
                 units="dimensionless",
                 status="DERIVED",
-                eml_description="ops.div(ops.pow(eml_vec('m_H'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0))))",
+                eml_description="EML: ops.div(ops.pow(eml_vec('m_H'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0))))",
                 description=(
                     "Higgs quartic coupling at the electroweak scale. "
                     "lambda(M_Z) = m_H^2 / (2*v^2) ~ 0.13."
@@ -1113,7 +1113,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Quartic Coupling at GUT Scale",
                 units="dimensionless",
                 status="DERIVED",
-                eml_description="ops.add(eml_vec('lambda_MZ'), ops.add(ops.mul(eml_vec('beta_coeff'), eml_vec('log_MGUT_over_MZ')), eml_vec('delta_lambda_G2')))",
+                eml_description="EML: ops.add(eml_vec('lambda_MZ'), ops.add(ops.mul(eml_vec('beta_coeff'), eml_vec('log_MGUT_over_MZ')), eml_vec('delta_lambda_G2')))",
                 description=(
                     "Higgs quartic coupling at the GUT/compactification scale. "
                     "In SM: negative. In PM: positive due to G2 portal correction."
@@ -1126,7 +1126,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Quartic Coupling at Planck Scale",
                 units="dimensionless",
                 status="PREDICTIONS",
-                eml_description="ops.add(eml_vec('lambda_gut_pm'), ops.mul(eml_vec('beta_pm_above_gut'), eml_vec('log_MP_over_MGUT')))",
+                eml_description="EML: ops.add(eml_vec('lambda_gut_pm'), ops.mul(eml_vec('beta_pm_above_gut'), eml_vec('log_MP_over_MGUT')))",
                 description=(
                     "Higgs quartic coupling at the Planck scale. PM predicts "
                     "lambda(M_P) > 0, ensuring absolute stability."
@@ -1139,7 +1139,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="SM Instability Scale",
                 units="GeV",
                 status="DERIVED",
-                eml_description="ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
+                eml_description="EML: ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
                 description=(
                     "Energy scale at which lambda becomes negative in the Standard Model. "
                     "Lambda_I ~ 10^10.5 GeV for measured m_H and m_t. "
@@ -1155,7 +1155,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="PM Instability Scale",
                 units="GeV",
                 status="PREDICTIONS",
-                eml_description="ops.mul(eml_vec('Lambda_I_SM'), ops.exp(ops.div(eml_vec('delta_lambda_G2'), eml_vec('beta_coeff_sm'))))",
+                eml_description="EML: ops.mul(eml_vec('Lambda_I_SM'), ops.exp(ops.div(eml_vec('delta_lambda_G2'), eml_vec('beta_coeff_sm'))))",
                 description=(
                     "Energy scale at which lambda would become negative in PM framework. "
                     "PM predicts Lambda_I > M_P (absolute stability)."
@@ -1168,7 +1168,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Euclidean Bounce Action",
                 units="dimensionless",
                 status="DERIVED",
-                eml_description="ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
+                eml_description="EML: ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
                 description=(
                     "The Euclidean action of the tunneling instanton. Controls vacuum "
                     "decay rate via Gamma ~ exp(-B). PM has B >> 400."
@@ -1181,7 +1181,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Vacuum Tunneling Rate",
                 units="GeV^4",
                 status="DERIVED",
-                eml_description="ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), ops.exp(ops.neg(eml_vec('B_action'))))",
+                eml_description="EML: ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), ops.exp(ops.neg(eml_vec('B_action'))))",
                 description=(
                     "Rate of vacuum decay per unit 4-volume. For PM with B > 10^6, "
                     "this is effectively zero."
@@ -1194,7 +1194,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Vacuum Lifetime",
                 units="years",
                 status="PREDICTIONS",
-                eml_description="ops.div(ops.exp(eml_vec('B_action')), ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), eml_vec('V_H')))",
+                eml_description="EML: ops.div(ops.exp(eml_vec('B_action')), ops.mul(ops.pow(eml_vec('M_P'), eml_scalar(4.0)), eml_vec('V_H')))",
                 description=(
                     "Expected lifetime of the electroweak vacuum. PM predicts "
                     "tau >> 10^100 years (absolutely stable)."
@@ -1213,7 +1213,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
                 name="Vacuum Stability Flag",
                 units="boolean",
                 status="PREDICTIONS",
-                eml_description="ops.mul(eml_vec('bounce_gt_crit'), eml_vec('instability_gt_MP'))",
+                eml_description="EML: ops.mul(eml_vec('bounce_gt_crit'), eml_vec('instability_gt_MP'))",
                 description=(
                     "Whether the vacuum is absolutely stable. PM predicts True."
                 ),

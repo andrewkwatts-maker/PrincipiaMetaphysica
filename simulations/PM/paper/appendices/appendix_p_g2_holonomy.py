@@ -971,7 +971,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of the exceptional Lie group G2 (always 14)",
-                eml_description="eml_scalar(14.0)",
+                eml_description="EML: eml_scalar(14.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -980,7 +980,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of SO(7) = 7*6/2 = 21",
-                eml_description="eml_scalar(21.0)",
+                eml_description="EML: eml_scalar(21.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -989,7 +989,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Number of imaginary octonion basis elements e1..e7 (always 7)",
-                eml_description="eml_scalar(7.0)",
+                eml_description="EML: eml_scalar(7.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -998,7 +998,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Second Betti number of compact G2 manifold (always 0)",
-                eml_description="eml_scalar(0.0)",
+                eml_description="EML: eml_scalar(0.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1007,7 +1007,7 @@ class AppendixPG2Holonomy(SimulationBase):
                 units="dimensionless",
                 status="PREDICTIONS",
                 description="Number of fermion generations = b3/8",
-                eml_description="ops.div(eml_vec('b3'), eml_scalar(8.0))",
+                eml_description="EML: ops.div(eml_vec('b3'), eml_scalar(8.0))",
                 experimental_bound=3,
                 bound_type="measured",
                 bound_source="PDG2024",

@@ -147,7 +147,7 @@ class MolarGasV17(SimulationBase):
                 experimental_bound=CODATA_R,
                 bound_type="measured",
                 bound_source="CODATA2022",
-                eml_description="EML: R = ops.mul(na, kb) — invariant under projection since ops.div(na_bulk, 1+eps) * ops.mul(kb_bulk, 1+eps) = na_bulk*kb_bulk",
+                eml_description="EML: ops.mul(eml_vec('na'), eml_vec('kb')) — R = N_A * k; invariant under projection since eps factors cancel",
             ),
         ]
 

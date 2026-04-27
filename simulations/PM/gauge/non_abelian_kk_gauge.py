@@ -556,7 +556,7 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     "Corresponds to three W bosons (W^1, W^2, W^3) in the electroweak sector."
                 ),
                 no_experimental_value=True,
-                eml_description="eml_scalar(3.0) — SU(2) adjoint dim = N^2 - 1 = 3.",
+                eml_description="EML: eml_scalar(3.0) — SU(2) adjoint dim = N^2 - 1 = 3.",
             ),
             Parameter(
                 path="gauge.su3_adjoint_dim",
@@ -568,7 +568,7 @@ class NonAbelianKKGaugeSimulation(SimulationBase):
                     "Corresponds to eight gluon fields mediating the strong force."
                 ),
                 no_experimental_value=True,
-                eml_description="eml_scalar(8.0) — SU(3) adjoint dim = N^2 - 1 = 8.",
+                eml_description="EML: eml_scalar(8.0) — SU(3) adjoint dim = N^2 - 1 = 8.",
             ),
             Parameter(
                 path="gauge.su2_canonical_coeff",

@@ -640,7 +640,7 @@ class SU3QCDGaugeSimulation(SimulationBase):
                     "Gluons carry color-anticolor charge and mediate the strong interaction."
                 ),
                 no_experimental_value=True,
-                eml_description="eml_scalar(8.0) — adjoint dimension of SU(3): N^2 - 1 = 8.",
+                eml_description="EML: eml_scalar(8.0) — adjoint dimension of SU(3): N^2 - 1 = 8.",
             ),
             Parameter(
                 path="gauge.su3_alpha_s_predicted",

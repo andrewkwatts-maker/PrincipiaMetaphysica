@@ -925,7 +925,7 @@ class GaugeUnificationSimulation(SimulationBase):
                 description="sin^2(theta_W) at GUT scale (SO(10) predicts 3/8). Theoretical prediction - measured value at M_Z is 0.23121 +/- 0.00004 (PDG 2024).",
                 derivation_formula="gauge-coupling-unification",
                 no_experimental_value=True,
-                eml_description="EML: ops.div(eml_scalar(3.0), eml_scalar(8.0)) = 3/8 — SO(10) GUT prediction from hypercharge embedding (group theory, not a fit)",
+                eml_description="EML: ops.div(eml_scalar(3.0), eml_scalar(8.0)) — SO(10) GUT prediction from hypercharge embedding (group theory, not a fit)",
                 validation={
                     "status": "PASS",
                     "notes": "SO(10) GUT prediction: sin^2(theta_W)_GUT = 3/8 = 0.375 exactly. This is a theoretical prediction at the GUT scale, not an experimental measurement. No direct measurement possible at GUT energies."

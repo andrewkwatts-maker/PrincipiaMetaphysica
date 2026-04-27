@@ -591,7 +591,7 @@ class AppendixITerminalStates(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Fraction of roots in Metric Null state (276/288 = 95.83%)",
-                eml_description="ops.div(eml_vec('so24_generators'), eml_vec('ancestral_roots'))",
+                eml_description="EML: ops.div(eml_vec('so24_generators'), eml_vec('ancestral_roots'))",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -600,7 +600,7 @@ class AppendixITerminalStates(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Fraction of roots in Gauge Ghost state (24/288 = 8.33%)",
-                eml_description="ops.div(eml_vec('shadow_torsion_total'), eml_vec('ancestral_roots'))",
+                eml_description="EML: ops.div(eml_vec('shadow_torsion_total'), eml_vec('ancestral_roots'))",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -609,7 +609,7 @@ class AppendixITerminalStates(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Fraction at full restoration (288/288 = 100%)",
-                eml_description="ops.div(ops.add(eml_vec('active_residues'), eml_vec('hidden_supports')), eml_vec('ancestral_roots'))",
+                eml_description="EML: ops.div(ops.add(eml_vec('active_residues'), eml_vec('hidden_supports')), eml_vec('ancestral_roots'))",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -618,7 +618,7 @@ class AppendixITerminalStates(SimulationBase):
                 units="dimensionless",
                 status="TERMINAL",
                 description="Threshold at which gauge stability breaks (0.8)",
-                eml_description="eml_scalar(0.8)",
+                eml_description="EML: eml_scalar(0.8)",
                 no_experimental_value=True,
             ),
             Parameter(

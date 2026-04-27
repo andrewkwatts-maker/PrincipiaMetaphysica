@@ -1102,7 +1102,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "Wolfenstein lambda parameter (Cabibbo angle). Equals Froggatt-Nielsen "
                     "epsilon = exp(-1.5) ~ 0.223 from G2 curvature scale."
                 ),
-                eml_description="EML: ops.pow(racetrack_epsilon, ops.inv(eml_scalar(3.0))) — from N1=24/N2=23 racetrack; numerically = ops.exp(ops.neg(eml_scalar(1.5)))",
+                eml_description="EML: ops.exp(ops.neg(eml_scalar(1.5))) — from N1=24/N2=23 racetrack; lambda_wolfenstein = racetrack_epsilon^(1/3)",
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=0.2245,
                 uncertainty=0.0008,

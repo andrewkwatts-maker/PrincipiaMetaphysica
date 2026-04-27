@@ -479,7 +479,7 @@ class LeechPartitionV16(SimulationBase):
                 },
                 eml_latex=r"n_{gen} = \mathrm{ops.div}(\mathrm{eml\_scalar}(24),\, \mathrm{eml\_scalar}(8)) = 3",
                 eml_tree_str="ops.div(eml_scalar(24.0), eml_scalar(8.0))",
-                eml_description="EML: n_gen = ops.div(eml_scalar(24), eml_scalar(8)) = 3 — exact integer division of Leech dimension by octonion dimension",
+                eml_description="EML: ops.div(eml_scalar(24), eml_scalar(8)) — exact integer division of Leech dimension by octonion dimension",
             ),
             Formula(
                 id="generation-theorem",
@@ -509,7 +509,7 @@ class LeechPartitionV16(SimulationBase):
                 },
                 eml_latex=r"\mathrm{ops.mul}(\mathrm{eml\_scalar}(3),\, \mathrm{eml\_scalar}(8)) = \mathrm{eml\_scalar}(24)",
                 eml_tree_str="ops.eq(ops.mul(eml_scalar(3.0), eml_scalar(8.0)), eml_scalar(24.0))",
-                eml_description="EML: ops.mul(eml_scalar(3), eml_scalar(8)) = 24 — exact partition verifying 3 generations × 8D octonions = 24D Leech lattice with no remainder",
+                eml_description="EML: ops.mul(eml_scalar(3), eml_scalar(8)) — exact partition verifying 3 generations × 8D octonions = 24D Leech lattice with no remainder",
             ),
         ]
 
@@ -536,7 +536,7 @@ class LeechPartitionV16(SimulationBase):
                 bound_type="exact",
                 bound_source="PDG2024",
                 uncertainty=0,
-                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(8.0)) = 3 — exact integer partition of Leech lattice by octonion dimension",
+                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(8.0)) — exact integer partition of Leech lattice by octonion dimension",
             ),
             Parameter(
                 path="topology.leech_dim",

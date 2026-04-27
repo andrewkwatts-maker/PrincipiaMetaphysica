@@ -1222,7 +1222,7 @@ class MasterActionSimulationV22(SimulationBase):
                 status="DERIVED",
                 description="v22.0: 12×(2,0) + (0,1) WARP to create 2×13D(12,1) shadows",
                 no_experimental_value=True,
-                eml_description="eml_scalar(12.0) — number of (2,0) bridge pairs in the 27D architecture.",
+                eml_description="EML: eml_scalar(12.0) — number of (2,0) bridge pairs in the 27D architecture.",
             ),
             Parameter(
                 path="bridge.breathing_aggregation",
@@ -1232,7 +1232,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="v22.0: Averaging weight 1/12 for breathing mode across bridge pairs",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.div(eml_scalar(1.0), eml_scalar(12.0)) — "
+                    "EML: ops.div(eml_scalar(1.0), eml_scalar(12.0)) — "
                     "averaging weight 1/12 for rho_breath across 12 bridge pairs."
                 ),
             ),
@@ -1244,7 +1244,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="v22.0: Total OR operator dimension 2^12 = 4096 (matches Pneuma spinor)",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.pow(eml_scalar(2.0), eml_scalar(12.0)) = eml_scalar(4096.0) — "
+                    "EML: ops.pow(eml_scalar(2.0), eml_scalar(12.0)) — "
                     "Kronecker-product rank of 12 R_perp^i operators."
                 ),
             ),
@@ -1259,7 +1259,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="KK tower contribution to Planck scale from 5D→4D reduction",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.div(ops.pow(eml_vec('M_5'), eml_scalar(3.0)), "
+                    "EML: ops.div(ops.pow(eml_vec('M_5'), eml_scalar(3.0)), "
                     "ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('M_Pl'), eml_scalar(2.0)))) "
                     "— KK tower factor M_5^3 / (R_KK M_Pl^2) from 5D→4D Planck scale relation."
                 ),
@@ -1272,7 +1272,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="Gauge kinetic coefficient from KK reduction over G2 compactification radius",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('g_5'), eml_scalar(2.0))) "
+                    "EML: ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('g_5'), eml_scalar(2.0))) "
                     "— gauge kinetic coefficient R_KK g_5^2 from dimensional reduction of 5D action."
                 ),
             ),
@@ -1284,7 +1284,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="Boolean flag: KK gauge fields are canonically normalized after reduction",
                 no_experimental_value=True,
                 eml_description=(
-                    "eml_scalar(1.0) — canonical normalization flag; "
+                    "EML: eml_scalar(1.0) — canonical normalization flag; "
                     "KK gauge kinetic term rescaled to standard form (1/4) F_mu_nu^2."
                 ),
             ),
@@ -1300,7 +1300,7 @@ class MasterActionSimulationV22(SimulationBase):
                 experimental_bound=8,
                 bound_type="measured",
                 bound_source="PDG2024",
-                eml_description="eml_scalar(8.0) — SU(3) adjoint dimension N^2 - 1 = 8.",
+                eml_description="EML: eml_scalar(8.0) — SU(3) adjoint dimension N^2 - 1 = 8.",
             ),
             Parameter(
                 path="gauge.qcd_alpha_s_mz",
@@ -1313,7 +1313,7 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_source="PDG2024",
                 uncertainty=0.0009,
                 eml_description=(
-                    "ops.div(ops.pow(eml_vec('g_s'), eml_scalar(2.0)), "
+                    "EML: ops.div(ops.pow(eml_vec('g_s'), eml_scalar(2.0)), "
                     "ops.mul(eml_scalar(4.0), eml_pi())) — alpha_s = g_s^2/(4pi)."
                 ),
             ),
@@ -1325,7 +1325,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="Boolean flag: QCD (SU(3)_C) gauge fields are canonically normalized",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.inv(eml_vec('alpha_s_inv')) "
+                    "EML: ops.inv(eml_vec('alpha_s_inv')) "
                     "— QCD canonical coupling g_s = 1/α_s⁻¹ at GUT scale."
                 ),
             ),
@@ -1338,7 +1338,7 @@ class MasterActionSimulationV22(SimulationBase):
                 experimental_bound=3,
                 bound_type="measured",
                 bound_source="PDG2024",
-                eml_description="eml_scalar(3.0) — SU(2) adjoint dimension N^2 - 1 = 3.",
+                eml_description="EML: eml_scalar(3.0) — SU(2) adjoint dimension N^2 - 1 = 3.",
             ),
             Parameter(
                 path="gauge.weak_coupling_g2",
@@ -1348,7 +1348,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="SU(2)_L gauge coupling g_2 from electroweak mixing",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.mul(ops.sqrt(eml_scalar(2.0)), eml_vec('g_weak')) "
+                    "EML: ops.mul(ops.sqrt(eml_scalar(2.0)), eml_vec('g_weak')) "
                     "— weak coupling g₂ from SU(2) gauge group."
                 ),
             ),
@@ -1360,7 +1360,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="Boolean flag: SU(2)_L gauge fields are canonically normalized",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.div(eml_vec('g_2'), ops.sqrt(eml_scalar(2.0))) "
+                    "EML: ops.div(eml_vec('g_2'), ops.sqrt(eml_scalar(2.0))) "
                     "— canonical weak coupling g₂/√2 after SU(2)_L normalization."
                 ),
             ),
@@ -1380,7 +1380,7 @@ class MasterActionSimulationV22(SimulationBase):
                 uncertainty=0.00004,
                 theory_uncertainty=0.001,  # Tree-level: missing EW loop + threshold corrections
                 eml_description=(
-                    "ops.div(eml_scalar(3.0), "
+                    "EML: ops.div(eml_scalar(3.0), "
                     "ops.sub(ops.add(eml_vec('k_gimel'), eml_vec('phi')), eml_scalar(1.0))) "
                     "— sin^2(theta_W) = 3/(k_gimel + phi - 1) from G2 cycle ratio."
                 ),
@@ -1396,7 +1396,7 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_source="PDG2024",
                 uncertainty=0.0021,
                 eml_description=(
-                    "ops.div(ops.mul(ops.sqrt(ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), "
+                    "EML: ops.div(ops.mul(ops.sqrt(ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), "
                     "ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))), eml_vec('v')), eml_scalar(2.0)) "
                     "— M_Z = sqrt(g_2^2 + g'^2) * v / 2 from electroweak symmetry breaking."
                 ),
@@ -1412,7 +1412,7 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_source="PDG2024",
                 uncertainty=0.012,
                 eml_description=(
-                    "ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0)) "
+                    "EML: ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0)) "
                     "— M_W = g_2 * v / 2 from SU(2)_L symmetry breaking."
                 ),
             ),
@@ -1427,7 +1427,7 @@ class MasterActionSimulationV22(SimulationBase):
                 bound_source="PDG2024",
                 uncertainty=0.00023,
                 eml_description=(
-                    "ops.div(ops.pow(eml_vec('M_W'), eml_scalar(2.0)), "
+                    "EML: ops.div(ops.pow(eml_vec('M_W'), eml_scalar(2.0)), "
                     "ops.mul(ops.pow(eml_vec('M_Z'), eml_scalar(2.0)), "
                     "ops.sub(eml_scalar(1.0), eml_vec('sin2_theta_W')))) "
                     "— rho = M_W^2 / (M_Z^2 cos^2(theta_W)) = 1 at tree level (custodial SU(2))."
@@ -1442,7 +1442,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="U(1)_Y hypercharge gauge coupling g' from electroweak mixing",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.mul(eml_vec('g_2'), ops.sqrt(eml_vec('sin2_theta_W'))) "
+                    "EML: ops.mul(eml_vec('g_2'), ops.sqrt(eml_vec('sin2_theta_W'))) "
                     "— hypercharge coupling g' = g₂ tan(θ_W) from U(1)_Y embedding."
                 ),
             ),
@@ -1454,7 +1454,7 @@ class MasterActionSimulationV22(SimulationBase):
                 description="Boolean flag: U(1)_Y hypercharge fields are canonically normalized",
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.div(eml_vec('g_prime'), ops.sqrt(eml_scalar(2.0))) "
+                    "EML: ops.div(eml_vec('g_prime'), ops.sqrt(eml_scalar(2.0))) "
                     "— canonical hypercharge coupling g'/√2 after U(1)_Y normalization."
                 ),
             ),
@@ -1471,7 +1471,7 @@ class MasterActionSimulationV22(SimulationBase):
                 ),
                 no_experimental_value=True,
                 eml_description=(
-                    "ops.div(eml_vec('Vol_bridge'), eml_vec('Vol_spinor')) "
+                    "EML: ops.div(eml_vec('Vol_bridge'), eml_vec('Vol_spinor')) "
                     "— P_reverse ~ Vol_bridge / Vol_spinor ~ 3e-6; "
                     "cross-shadow chirality flip suppressed by dual-shadow phase-space ratio."
                 ),
