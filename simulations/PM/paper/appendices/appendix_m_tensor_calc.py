@@ -1170,7 +1170,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Dimension of observable spacetime (4D Minkowski)",
-                eml_description="eml_scalar(4.0)",
+                eml_description="EML: eml_scalar(4.0)",
                 no_experimental_value=True,
             ),
             Parameter(
@@ -1188,7 +1188,7 @@ class AppendixMTensorCalculus(SimulationBase):
                 units="dimensionless",
                 status="ESTABLISHED",
                 description="Number of independent Riemann tensor components in 4D (20)",
-                eml_description="eml_scalar(20.0)",
+                eml_description="EML: eml_scalar(20.0)",
                 no_experimental_value=True,
             ),
         ]

@@ -843,7 +843,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "Represents the net chirality imbalance from topology. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
-                eml_description="EML: ops.div(chi_eff, eml_scalar(24.0)) = ops.div(eml_scalar(144.0), eml_scalar(24.0)) — Atiyah-Singer index from chi_eff",
+                eml_description="EML: ops.div(eml_scalar(144.0), eml_scalar(24.0)) — Atiyah-Singer index from chi_eff",
                 derivation_formula="chirality-index-theorem",
                 no_experimental_value=True
             ),
@@ -859,7 +859,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "can be large, but their difference is fixed by topology. "
                     "Topological derivation parameter, no experimental measurement."
                 ),
-                eml_description="EML: ops.div(chi_eff, eml_scalar(24.0)) — left-handed zero modes equal chiral index in minimal scenario",
+                eml_description="EML: ops.div(eml_scalar(144.0), eml_scalar(24.0)) — left-handed zero modes equal chiral index in minimal scenario",
                 derivation_formula="dirac-zero-modes",
                 no_experimental_value=True
             ),
@@ -891,7 +891,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "For TCS G2 #187: imbalance = 6 (from chi_eff = 144). "
                     "Topological derivation parameter, no experimental measurement."
                 ),
-                eml_description="EML: ops.sub(n_L, n_R) = ops.div(chi_eff, eml_scalar(24.0)) — topological chirality imbalance",
+                eml_description="EML: ops.div(eml_scalar(144.0), eml_scalar(24.0)) — topological chirality imbalance",
                 derivation_formula="chirality-index-theorem",
                 no_experimental_value=True
             ),
@@ -907,7 +907,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "prediction from topology that perfectly matches the observed 3 "
                     "generations."
                 ),
-                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(8.0)) = eml_scalar(3.0) — b3/spinor_DOF generation count",
+                eml_description="EML: ops.div(eml_scalar(24.0), eml_scalar(8.0)) — b3/spinor_DOF generation count",
                 derivation_formula="spinor-saturation-generations",
                 experimental_bound=3,
                 uncertainty=0,
@@ -925,7 +925,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "ratio = (3 x 8) / 24 = 1 exactly (complete saturation). "
                     "Topological derivation parameter, no experimental measurement."
                 ),
-                eml_description="EML: ops.div(ops.mul(eml_scalar(3.0), eml_scalar(8.0)), eml_scalar(24.0)) = eml_scalar(1.0) — completeness check",
+                eml_description="EML: ops.div(ops.mul(eml_scalar(3.0), eml_scalar(8.0)), eml_scalar(24.0)) — completeness check",
                 derivation_formula="spinor-saturation-generations",
                 no_experimental_value=True
             ),

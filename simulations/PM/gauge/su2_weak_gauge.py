@@ -607,7 +607,7 @@ class SU2WeakGaugeSimulation(SimulationBase):
                     "After electroweak symmetry breaking, W^1,2 form W+/- and W^3 mixes with B to form Z and photon."
                 ),
                 no_experimental_value=True,
-                eml_description="eml_scalar(3.0) — adjoint dimension of SU(2): N^2 - 1 = 3.",
+                eml_description="EML: eml_scalar(3.0) — adjoint dimension of SU(2): N^2 - 1 = 3.",
             ),
             Parameter(
                 path="gauge.su2_sin2_theta_W",

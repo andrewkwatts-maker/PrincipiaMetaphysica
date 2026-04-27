@@ -793,7 +793,7 @@ class AppendixLOmegaUnwinding(SimulationBase):
                 units="probability",
                 status="TERMINAL",
                 description="Probability of Ancestral Restoration outcome",
-                eml_description="ops.sub(eml_scalar(1.0), eml_vec('current_entropy'))",
+                eml_description="EML: ops.sub(eml_scalar(1.0), eml_vec('current_entropy'))",
                 no_experimental_value=True,
             ),
             Parameter(

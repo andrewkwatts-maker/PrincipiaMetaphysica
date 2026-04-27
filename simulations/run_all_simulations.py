@@ -1333,14 +1333,14 @@ class SimulationRunner:
             if not self.registry.has_param("topology.mephorash_chi"):
                 self.registry.set_param("topology.mephorash_chi", 144,
                                          source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC",
-                                         metadata={"eml_description": "EML: ops.mul(eml_scalar(2), ops.add(h11, ops.neg(h21), h31)) = ops.mul(eml_scalar(2), eml_scalar(72)) = 144"})
+                                         metadata={"eml_description": "EML: ops.mul(eml_scalar(2), eml_scalar(72))"})
 
             # Pre-compute k_gimel for early use
             k_gimel = 24 / 2 + 1 / np.pi
             if not self.registry.has_param("topology.k_gimel"):
                 self.registry.set_param("topology.k_gimel", k_gimel,
                                          source="GEOMETRIC:k_gimel_formula", status="GEOMETRIC",
-                                         metadata={"eml_description": "EML: ops.add(ops.div(eml_scalar(24), eml_scalar(2)), ops.inv(eml_pi())) = b3/2 + 1/π"})
+                                         metadata={"eml_description": "EML: ops.add(ops.div(eml_scalar(24), eml_scalar(2)), ops.inv(eml_pi())) — b3/2 + 1/π"})
 
             if self.verbose:
                 print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")

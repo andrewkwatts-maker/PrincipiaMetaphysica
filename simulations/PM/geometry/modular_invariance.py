@@ -568,7 +568,7 @@ class ModularInvarianceV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="E₀ = -b₃/24 = -1",
-                eml_description="EML: ops.neg(ops.div(eml_scalar(24.0), eml_scalar(24.0))) = −1 — zeta-regularized vacuum energy",
+                eml_description="EML: ops.neg(ops.div(eml_scalar(24.0), eml_scalar(24.0))) — zeta-regularized vacuum energy",
                 derivation_formula="vacuum-energy-formula",
                 no_experimental_value=True
             ),
@@ -578,7 +578,7 @@ class ModularInvarianceV16(SimulationBase):
                 units="boolean",
                 status="DERIVED",
                 description="Whether all anomalies cancel (True for b₃=24)",
-                eml_description="EML: boolean result of ops.eq(ops.mod(b3, 24), 0) AND ops.eq(E0, ops.neg(eml_scalar(1.0)))",
+                eml_description="EML: ops.mul(ops.eq(ops.mod(eml_vec('b3'), eml_scalar(24.0)), eml_scalar(0.0)), ops.eq(eml_vec('vacuum_energy'), ops.neg(eml_scalar(1.0)))) — anomaly cancellation: b3 mod 24 = 0 AND E0 = -1",
                 no_experimental_value=True
             ),
             Parameter(
@@ -597,7 +597,7 @@ class ModularInvarianceV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Weight of η^(-b₃) under modular transformations: -12",
-                eml_description="EML: ops.neg(ops.div(eml_scalar(24.0), eml_scalar(2.0))) = −12 — modular weight of η^(−b3)",
+                eml_description="EML: ops.neg(ops.div(eml_scalar(24.0), eml_scalar(2.0))) — modular weight of η^(−b3)",
                 no_experimental_value=True
             ),
         ]

@@ -699,7 +699,7 @@ class ProtonDecaySimulation(SimulationBase):
                     "Experimental status: CONSISTENT (>1.5x bound), MARGINAL (1-1.5x), "
                     "or EXCLUDED (<1x). Categorical status indicator, no direct measurement."
                 ),
-                eml_description="EML: categorical — status = ops.cond(ops.gt(super_k_ratio, eml_scalar(1.5)), 'CONSISTENT', ops.cond(ops.gt(super_k_ratio, eml_scalar(1.0)), 'MARGINAL', 'EXCLUDED')); string result from ratio threshold comparison",
+                eml_description="EML: ops.cond(ops.gt(eml_vec('super_k_ratio'), eml_scalar(1.5)), eml_scalar(1.0), ops.cond(ops.gt(eml_vec('super_k_ratio'), eml_scalar(1.0)), eml_scalar(0.5), eml_scalar(0.0))) — status: CONSISTENT if >1.5x bound, MARGINAL if 1-1.5x, EXCLUDED if <1x",
                 no_experimental_value=True,
                 validation={
                     "experimental_value": "CONSISTENT",
