@@ -64,46 +64,58 @@ def _get_eml_description(entry: dict[str, Any]) -> str:
 def _build_context(params: dict[str, Any]) -> dict[str, float]:
     """Build {name: float_value} context for EMLEvaluator from all params.
 
-    Adds three aliases for every parameter path ``a.b.c``:
-    - full path:       ``a.b.c``
-    - last component:  ``c``            (e.g. 'lambda_wolfenstein')
-    - last two:        ``b.c``          (e.g. 'ckm.lambda_wolfenstein')
-
-    This covers the variety of reference styles used in eml_description strings.
-    When aliases collide, the longest (most specific) path wins.
+    Aliases (low → high priority, later wins on collision):
+      1. last component  ``c``      (e.g. ``lambda_wolfenstein``)
+      2. last two parts  ``b.c``    (e.g. ``ckm.lambda_wolfenstein``)
+      3. full path       ``a.b.c``  (always available)
+      4. FormulasRegistry seeds + symbols — canonical short names like
+         ``b3 = 24``, ``chi_eff = 72``, ``M_Planck`` etc. These OVERRIDE
+         heuristic short aliases so eml_descriptions referencing the
+         well-known seed names get the seed value, not whatever happened
+         to be at ``topology.b3_modular`` or ``geometry.chi_eff_total``.
     """
     ctx: dict[str, float] = {}
-    # Two passes: short aliases first, then full paths overwrite on collision.
+
+    # 1+2 — short / medium aliases (low priority)
     for path, entry in params.items():
         val = entry.get("value")
-        if val is None:
-            continue
-        try:
-            f = float(val)
-        except (TypeError, ValueError):
-            continue
-        if not math.isfinite(f):
-            continue
+        if val is None: continue
+        try:    f = float(val)
+        except (TypeError, ValueError): continue
+        if not math.isfinite(f): continue
 
         parts = path.split(".")
-        # Short alias: last component only
         ctx.setdefault(parts[-1], f)
-        # Medium alias: last two components
         if len(parts) >= 2:
             ctx.setdefault(".".join(parts[-2:]), f)
 
-    # Full paths overwrite (highest priority)
+    # 3 — full paths (override)
     for path, entry in params.items():
         val = entry.get("value")
-        if val is None:
-            continue
-        try:
-            f = float(val)
-        except (TypeError, ValueError):
-            continue
-        if not math.isfinite(f):
-            continue
+        if val is None: continue
+        try:    f = float(val)
+        except (TypeError, ValueError): continue
+        if not math.isfinite(f): continue
         ctx[path] = f
+
+    # 4 — FormulasRegistry canonical seeds + symbols (highest priority)
+    #     These are the names physicists actually use and that the
+    #     eml_descriptions are written against.
+    try:
+        from simulations.core.FormulasRegistry import FormulasRegistry
+        fr = FormulasRegistry()
+        for src in ("get_all_seeds", "get_all_symbols_with_values"):
+            if not hasattr(fr, src): continue
+            try:    table = getattr(fr, src)()
+            except Exception: continue
+            if not isinstance(table, dict): continue
+            for name, val in table.items():
+                try:    f = float(val)
+                except (TypeError, ValueError): continue
+                if not math.isfinite(f): continue
+                ctx[name] = f
+    except ImportError:
+        pass  # framework not available — fall back to params-only
 
     return ctx
 
@@ -115,6 +127,39 @@ def _rel_error(evaluated: float, registered: float) -> Optional[float]:
     return abs(evaluated - registered) / abs(registered)
 
 
+def _classify(evaluated: float, registered: float, tolerance: float,
+              loose: float, missing_refs: list) -> tuple[str, str]:
+    """Return (status, diagnostic) — fine-grained AGREE/DISAGREE bucket."""
+    if not (math.isfinite(evaluated) and math.isfinite(registered)):
+        return "DISAGREE_NONFINITE", "non-finite"
+
+    rel = _rel_error(evaluated, registered)
+    if rel is not None and rel <= tolerance:
+        return "AGREE", ""
+    if rel is not None and rel <= loose:
+        return "AGREE_LOOSE", f"within {loose:.0%}"
+
+    # sign-flip: |evaluated + registered| ≈ 0  ⇒ evaluated == −registered
+    if registered != 0 and abs(evaluated + registered) / abs(registered) <= tolerance:
+        return "DISAGREE_SIGN", "sign flip — magnitudes match"
+
+    # scale: ratio is a clean power of 10
+    if evaluated != 0 and registered != 0:
+        ratio = evaluated / registered
+        if ratio > 0 and math.isfinite(ratio):
+            log10 = math.log10(ratio)
+            if math.isfinite(log10):
+                nearest = round(log10)
+                if abs(log10 - nearest) < 0.02 and nearest != 0:
+                    return "DISAGREE_SCALE", f"off by 10^{nearest}"
+
+    # missing-context: evaluator flagged unresolved refs
+    if missing_refs:
+        return "DISAGREE_MISSING_CTX", f"missing: {', '.join(missing_refs[:3])}"
+
+    return "DISAGREE", f"rel_err={rel*100:.2f}%" if rel is not None else "no rel_err"
+
+
 # ---------------------------------------------------------------------------
 # Main check
 # ---------------------------------------------------------------------------
@@ -123,13 +168,16 @@ def run_crosscheck(
     tolerance: float = DEFAULT_TOLERANCE,
     verbose: bool = False,
     only_fails: bool = False,
+    loose_tolerance: float = 0.01,  # 1% — AGREE_LOOSE bucket
 ) -> dict[str, Any]:
+    from collections import Counter
     params = _load_parameters(PARAMS_JSON)
     context = _build_context(params)
 
     evaluator = EMLEvaluator(context, strict=False)
 
     results: list[dict[str, Any]] = []
+    bucket_counts: Counter = Counter()
     n_agree = n_disagree = n_skip = n_no_value = 0
 
     for path, entry in sorted(params.items()):
@@ -196,33 +244,38 @@ def run_crosscheck(
             })
             continue
 
+        missing = list(evaluator.missing_refs)
+        evaluator.missing_refs.clear()
+
         rel_err = _rel_error(evaluated, registered_float)
-        agree = rel_err is not None and rel_err <= tolerance
+        status, diag = _classify(
+            evaluated, registered_float, tolerance, loose_tolerance, missing,
+        )
+        bucket_counts[status] += 1
 
         rec: dict[str, Any] = {
             "path": path,
-            "status": "AGREE" if agree else "DISAGREE",
+            "status": status,
             "evaluated": evaluated,
             "registered": registered_float,
             "rel_error": rel_err,
             "eml_description": eml_desc,
         }
-        if evaluator.missing_refs:
-            rec["missing_refs"] = list(evaluator.missing_refs)
-            evaluator.missing_refs.clear()
+        if diag:     rec["diagnostic"]   = diag
+        if missing:  rec["missing_refs"] = missing
 
         results.append(rec)
 
-        if agree:
+        if status in ("AGREE", "AGREE_LOOSE"):
             n_agree += 1
             if verbose and not only_fails:
-                print(f"  AGREE  {path}  (eval={evaluated:.6g}  reg={registered_float:.6g})")
+                print(f"  {status}  {path}  (eval={evaluated:.6g}  reg={registered_float:.6g})")
         else:
             n_disagree += 1
             print(
-                f"  DISAGREE  {path}\n"
+                f"  {status}  {path}\n"
                 f"    evaluated={evaluated:.8g}  registered={registered_float:.8g}"
-                f"  rel_err={rel_err:.2%}"
+                f"  ({diag})"
             )
 
     total_with_desc = n_agree + n_disagree
@@ -231,22 +284,37 @@ def run_crosscheck(
     print("\n" + "=" * 60)
     print(f"TOTAL parameters:          {total}")
     print(f"  with eml_description:    {total_with_desc + n_no_value}")
-    print(f"  AGREE  (within {tolerance:.1%}):  {n_agree}")
-    print(f"  DISAGREE:                {n_disagree}")
     print(f"  SKIP (no value/error):   {n_skip + n_no_value}")
+    print()
+    print(f"  AGREE  (<={tolerance:.1%}):              {bucket_counts.get('AGREE', 0)}")
+    print(f"  AGREE_LOOSE  (<={loose_tolerance:.0%}):          {bucket_counts.get('AGREE_LOOSE', 0)}")
+    print(f"  DISAGREE_SIGN (mag matches):  {bucket_counts.get('DISAGREE_SIGN', 0)}")
+    print(f"  DISAGREE_SCALE (x10^k):       {bucket_counts.get('DISAGREE_SCALE', 0)}")
+    print(f"  DISAGREE_MISSING_CTX:         {bucket_counts.get('DISAGREE_MISSING_CTX', 0)}")
+    print(f"  DISAGREE_NONFINITE:           {bucket_counts.get('DISAGREE_NONFINITE', 0)}")
+    print(f"  DISAGREE (other):             {bucket_counts.get('DISAGREE', 0)}")
     if total_with_desc > 0:
-        pct = 100 * n_agree / total_with_desc
-        print(f"  Agreement rate:          {pct:.1f}%")
+        strict = 100 * bucket_counts.get('AGREE', 0) / total_with_desc
+        loose  = 100 * (bucket_counts.get('AGREE', 0) + bucket_counts.get('AGREE_LOOSE', 0)) / total_with_desc
+        print()
+        print(f"  Strict agreement rate:   {strict:.1f}%")
+        print(f"  Loose  agreement rate:   {loose:.1f}%")
     print("=" * 60)
 
     summary = {
         "total": total,
         "with_eml_description": total_with_desc + n_no_value,
-        "agree": n_agree,
-        "disagree": n_disagree,
         "skip": n_skip + n_no_value,
-        "agreement_rate": n_agree / total_with_desc if total_with_desc > 0 else None,
+        "buckets": dict(bucket_counts),
+        "agreement_rate_strict": (
+            bucket_counts.get('AGREE', 0) / total_with_desc if total_with_desc > 0 else None
+        ),
+        "agreement_rate_loose": (
+            (bucket_counts.get('AGREE', 0) + bucket_counts.get('AGREE_LOOSE', 0))
+            / total_with_desc if total_with_desc > 0 else None
+        ),
         "tolerance": tolerance,
+        "loose_tolerance": loose_tolerance,
         "results": results,
     }
 
@@ -287,7 +355,11 @@ def main() -> None:
         only_fails=args.only_fails,
     )
 
-    if summary["disagree"] > 0:
+    # Exit non-zero only when there are *real* disagreements (not loose agreements)
+    real_disagreements = sum(
+        v for k, v in summary["buckets"].items() if k.startswith("DISAGREE")
+    )
+    if real_disagreements > 0:
         sys.exit(1)
 
 

@@ -2360,14 +2360,31 @@
             return escapeHtml(formula.plainText || formula.plain_text || 'No equation available');
         })();
 
-        const eml_latex = formula.eml_latex || formula.emlLatex;
         const eml_tree = formula.eml_tree_str || formula.emlTreeStr;
         const formulaId = formula.id || formula.label || '';
-        const treeData  = emlTrees[formulaId];
+        // emlTrees entry can be either {tree, latex} (current schema) or a bare
+        // tree dict (legacy). Normalise.
+        const _entry = emlTrees[formulaId];
+        const treeData  = _entry && _entry.tree  ? _entry.tree  : _entry;
+        const treeLatex = _entry && _entry.latex ? _entry.latex : null;
+        // Prefer auto-generated LaTeX (guaranteed consistent with the evaluator)
+        // over the manually-authored eml_latex field, which can drift.
+        const eml_latex = treeLatex || formula.eml_latex || formula.emlLatex;
 
         let emlContent;
-        if (eml_latex) {
-            emlContent = `<div class="formula-display">\$\$${escapeHtml(eml_latex)}\$\$</div>`;
+        if (eml_latex && treeData) {
+            // Show LaTeX *and* the SVG tree — both come from the same EML source
+            const svgStr = renderEmlTreeSvg(JSON.parse(JSON.stringify(treeData)));
+            const rawStr = eml_tree || '';
+            emlContent = `
+                <div class="formula-display">$$${eml_latex}$$</div>
+                <details style="margin-top:0.5rem">
+                    <summary style="cursor:pointer;font-size:0.8em;color:var(--text-muted)">Operator tree</summary>
+                    <div class="eml-tree-visual" style="overflow-x:auto;padding:0.5rem 0">${svgStr}</div>
+                    ${rawStr ? `<code class="eml-tree-code" style="font-size:0.78em;display:block;margin-top:0.5rem">${escapeHtml(rawStr)}</code>` : ''}
+                </details>`;
+        } else if (eml_latex) {
+            emlContent = `<div class="formula-display">$$${eml_latex}$$</div>`;
         } else if (treeData) {
             // Render the EML operator tree as SVG
             const svgStr = renderEmlTreeSvg(JSON.parse(JSON.stringify(treeData)));

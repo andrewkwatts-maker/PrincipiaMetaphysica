@@ -1,11 +1,19 @@
 {
   "total": 620,
   "with_eml_description": 495,
-  "agree": 325,
-  "disagree": 138,
   "skip": 157,
-  "agreement_rate": 0.7019438444924406,
+  "buckets": {
+    "AGREE": 336,
+    "AGREE_LOOSE": 10,
+    "DISAGREE": 51,
+    "DISAGREE_MISSING_CTX": 57,
+    "DISAGREE_SIGN": 1,
+    "DISAGREE_SCALE": 8
+  },
+  "agreement_rate_strict": 0.7257019438444925,
+  "agreement_rate_loose": 0.7473002159827213,
   "tolerance": 0.001,
+  "loose_tolerance": 0.01,
   "results": [
     {
       "path": "abstract.alpha_gut_coefficient",
@@ -95,11 +103,12 @@
     },
     {
       "path": "abstract.tau_p_display",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 4.7573991295955835,
       "registered": 4.8,
       "rel_error": 0.008875181334253395,
-      "eml_description": "EML: ops.div(eml_vec('proton_decay.tau_p_years'), eml_scalar(1e34)) \u2014 proton lifetime display coefficient in units of 10\u00b3\u2074 yr"
+      "eml_description": "EML: ops.div(eml_vec('proton_decay.tau_p_years'), eml_scalar(1e34)) \u2014 proton lifetime display coefficient in units of 10\u00b3\u2074 yr",
+      "diagnostic": "within 1%"
     },
     {
       "path": "abstract.theta23_io_central",
@@ -164,7 +173,7 @@
     {
       "path": "algebra.e7_56d_quartic",
       "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm')))\": mul() takes 2 positional arguments but 3 were given",
+      "reason": "Failed to evaluate EML expression \"ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm')))\": _SignedOps.mul() takes 2 positional arguments but 3 were given",
       "registered": 14.057331398754732,
       "eml_description": "EML: ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm'))) \u2014 quartic q(x,y) = \u27e8x,y\u27e9\u00b2\u22124N(x)N(y)"
     },
@@ -189,12 +198,13 @@
       "evaluated": 2.370370370370371,
       "registered": 6.662305592366983,
       "rel_error": 0.6442117015637786,
-      "eml_description": "EML: ops.mul(eml_scalar(3.0), ops.pow(ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)), eml_scalar(2.0))) \u2014 symplectic form \u27e8x,y\u27e9 = 3s\u00b2 with s=b\u2083/27"
+      "eml_description": "EML: ops.mul(eml_scalar(3.0), ops.pow(ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)), eml_scalar(2.0))) \u2014 symplectic form \u27e8x,y\u27e9 = 3s\u00b2 with s=b\u2083/27",
+      "diagnostic": "rel_err=64.42%"
     },
     {
       "path": "algebra.e8_heterotic_spectral_proxy",
       "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.mul(eml_vec('algebra.e8_visible_action_norm'), eml_vec('algebra.e8_hidden_condensate'), eml_vec('algebra.e8_portal_coupling'))\": mul() takes 2 positional arguments but 3 were given",
+      "reason": "Failed to evaluate EML expression \"ops.mul(eml_vec('algebra.e8_visible_action_norm'), eml_vec('algebra.e8_hidden_condensate'), eml_vec('algebra.e8_portal_coupling'))\": _SignedOps.mul() takes 2 positional arguments but 3 were given",
       "registered": 2.565575426799177e-06,
       "eml_description": "EML: ops.mul(eml_vec('algebra.e8_visible_action_norm'), eml_vec('algebra.e8_hidden_condensate'), eml_vec('algebra.e8_portal_coupling')) \u2014 spectral proxy = visible_norm \u00d7 W_np \u00d7 \u03b1_leak"
     },
@@ -329,11 +339,12 @@
     },
     {
       "path": "appendix_t.stabilizer_weight_mean",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
       "registered": 8.333333333333334,
       "rel_error": 0.88,
       "eml_description": "EML: ops.div(eml_vec('appendix_t.total_weight'), eml_vec('appendix_t.n_stabilizers')) \u2014 mean stabilizer weight = total_weight/n_stabilizers",
+      "diagnostic": "missing: appendix_t.total_weight, appendix_t.n_stabilizers",
       "missing_refs": [
         "appendix_t.total_weight",
         "appendix_t.n_stabilizers"
@@ -375,11 +386,12 @@
     },
     {
       "path": "axion.f_a",
-      "status": "DISAGREE",
-      "evaluated": 2.8621556541993317e-307,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 3491829898123.246,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.pow(eml_vec('geometry.k_gimel'), eml_scalar(6.0))) \u2014 f_a = M_Pl / k_gimel^6 from 6D moduli of associative 3-cycle",
+      "diagnostic": "missing: M_Planck",
       "missing_refs": [
         "M_Planck"
       ]
@@ -398,7 +410,8 @@
       "evaluated": 0.12000000000000001,
       "registered": 0.5163262314273449,
       "rel_error": 0.767588798135882,
-      "eml_description": "EML: ops.mul(ops.mul(eml_scalar(0.12), ops.pow(ops.div(eml_vec('axion.f_a'), eml_scalar(1.0e12)), eml_scalar(1.167))), ops.pow(eml_vec('axion.theta_i'), eml_scalar(2.0))) \u2014 Omega_a h^2 from vacuum misalignment mechanism"
+      "eml_description": "EML: ops.mul(ops.mul(eml_scalar(0.12), ops.pow(ops.div(eml_vec('axion.f_a'), eml_scalar(1.0e12)), eml_scalar(1.167))), ops.pow(eml_vec('axion.theta_i'), eml_scalar(2.0))) \u2014 Omega_a h^2 from vacuum misalignment mechanism",
+      "diagnostic": "rel_err=76.76%"
     },
     {
       "path": "axion.theta_i",
@@ -529,11 +542,12 @@
     },
     {
       "path": "ckm.V_cb_triality",
-      "status": "DISAGREE",
-      "evaluated": 5.040028879107901e-302,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.040867549778280866,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us_triality'), eml_scalar(2.0)), eml_vec('xi_b')) \u2014 V_cb ~ V_us\u00b2 \u00d7 geometric correction",
+      "diagnostic": "missing: xi_b",
       "missing_refs": [
         "xi_b"
       ]
@@ -544,7 +558,8 @@
       "evaluated": 0.67195,
       "registered": 0.9991512959968505,
       "rel_error": 0.32747922892939113,
-      "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(0.5), ops.pow(eml_vec('A_wolfenstein'), eml_scalar(2.0)))) \u2014 V_tb \u2248 1 \u2212 A\u00b2\u03bb\u2074/2 (diagonal dominance)"
+      "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(0.5), ops.pow(eml_vec('A_wolfenstein'), eml_scalar(2.0)))) \u2014 V_tb \u2248 1 \u2212 A\u00b2\u03bb\u2074/2 (diagonal dominance)",
+      "diagnostic": "rel_err=32.75%"
     },
     {
       "path": "ckm.V_td",
@@ -552,15 +567,17 @@
       "evaluated": 0.0034757158300444497,
       "registered": 0.008389183792439896,
       "rel_error": 0.585690823322208,
-      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.mul(ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0)), ops.sqrt(ops.add(ops.pow(eml_vec('rho_wolfenstein'), eml_scalar(2.0)), ops.pow(eml_vec('eta_wolfenstein'), eml_scalar(2.0)))))) \u2014 V_td = A\u03bb\u00b3\u221a(\u03c1\u00b2+\u03b7\u00b2)"
+      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.mul(ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0)), ops.sqrt(ops.add(ops.pow(eml_vec('rho_wolfenstein'), eml_scalar(2.0)), ops.pow(eml_vec('eta_wolfenstein'), eml_scalar(2.0)))))) \u2014 V_td = A\u03bb\u00b3\u221a(\u03c1\u00b2+\u03b7\u00b2)",
+      "diagnostic": "rel_err=58.57%"
     },
     {
       "path": "ckm.V_ts",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SIGN",
       "evaluated": -0.04032752537796981,
       "registered": 0.04032752537796979,
       "rel_error": 2.0000000000000004,
-      "eml_description": "EML: ops.neg(ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0)))) \u2014 V_ts \u2248 \u2212A\u03bb\u00b2 from Wolfenstein parametrization"
+      "eml_description": "EML: ops.neg(ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0)))) \u2014 V_ts \u2248 \u2212A\u03bb\u00b2 from Wolfenstein parametrization",
+      "diagnostic": "sign flip \u2014 magnitudes match"
     },
     {
       "path": "ckm.V_ub",
@@ -568,15 +585,17 @@
       "evaluated": 0.008998287195976284,
       "registered": 0.0034757158300444454,
       "rel_error": 1.5889018653924938,
-      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0))) \u2014 V_ub = A\u03bb\u00b3 from 3rd-gen geometric suppression"
+      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0))) \u2014 V_ub = A\u03bb\u00b3 from 3rd-gen geometric suppression",
+      "diagnostic": "rel_err=158.89%"
     },
     {
       "path": "ckm.V_ub_triality",
-      "status": "DISAGREE",
-      "evaluated": 1.1314869187897593e-302,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.003750070930845949,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us_triality'), eml_scalar(3.0)), eml_vec('xi_t')) \u2014 V_ub ~ V_us\u00b3 \u00d7 geometric correction",
+      "diagnostic": "missing: xi_t",
       "missing_refs": [
         "xi_t"
       ]
@@ -591,11 +610,12 @@
     },
     {
       "path": "ckm.V_us_triality",
-      "status": "DISAGREE",
-      "evaluated": 1.5020333493651186e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.22450008639436136,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.sin(ops.div(eml_vec('theta_g'), eml_scalar(2.0))), eml_vec('xi_epsilon')) \u2014 V_us from sin(\u03b8_g/2) \u00d7 flux correction",
+      "diagnostic": "missing: xi_epsilon",
       "missing_refs": [
         "xi_epsilon"
       ]
@@ -614,7 +634,8 @@
       "evaluated": 0.0019099999999999996,
       "registered": 0.36,
       "rel_error": 0.9946944444444443,
-      "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.sin(eml_vec('delta_cp'))) \u2014 \u03b7 \u2248 |V_ub|sin(\u03b4_CP) from \u03b4_CP ~ \u03c0/6 topological phase"
+      "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.sin(eml_vec('delta_cp'))) \u2014 \u03b7 \u2248 |V_ub|sin(\u03b4_CP) from \u03b4_CP ~ \u03c0/6 topological phase",
+      "diagnostic": "rel_err=99.47%"
     },
     {
       "path": "ckm.jarlskog_invariant",
@@ -629,7 +650,8 @@
       "evaluated": 1.720301624195006e-05,
       "registered": 3.143181574832559e-05,
       "rel_error": 0.4526877995310695,
-      "eml_description": "EML: ops.mul(eml_vec('V_us_triality'), ops.mul(eml_vec('V_cb_triality'), ops.mul(eml_vec('V_ub_triality'), ops.sin(eml_vec('delta_cp'))))) \u2014 J = V_us\u00b7V_cb\u00b7V_ub\u00b7sin(\u03b4)"
+      "eml_description": "EML: ops.mul(eml_vec('V_us_triality'), ops.mul(eml_vec('V_cb_triality'), ops.mul(eml_vec('V_ub_triality'), ops.sin(eml_vec('delta_cp'))))) \u2014 J = V_us\u00b7V_cb\u00b7V_ub\u00b7sin(\u03b4)",
+      "diagnostic": "rel_err=45.27%"
     },
     {
       "path": "ckm.lambda_wolfenstein",
@@ -645,15 +667,17 @@
       "evaluated": 0.003308217042456557,
       "registered": 0.14,
       "rel_error": 0.9763698782681673,
-      "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.cos(eml_vec('delta_cp'))) \u2014 \u03c1 \u2248 |V_ub|cos(\u03b4_CP) from unitarity triangle geometry"
+      "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.cos(eml_vec('delta_cp'))) \u2014 \u03c1 \u2248 |V_ub|cos(\u03b4_CP) from unitarity triangle geometry",
+      "diagnostic": "rel_err=97.64%"
     },
     {
       "path": "ckm.unitarity_test",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.9502008510316048,
       "registered": 5.829780417210273e-05,
       "rel_error": 16298.084751571223,
       "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0))))) \u2014 unitarity deviation = 1 \u2212 (|V_ud|\u00b2+|V_us|\u00b2+|V_ub|\u00b2)",
+      "diagnostic": "missing: ckm.V_ud",
       "missing_refs": [
         "ckm.V_ud"
       ]
@@ -704,15 +728,17 @@
       "evaluated": 4.000000000000001,
       "registered": 256.0,
       "rel_error": 0.984375,
-      "eml_description": "EML: ops.pow(eml_scalar(2.0), eml_scalar(2.0)) \u2014 4 dice branches = 2\u00b2 from binary quantum sampling"
+      "eml_description": "EML: ops.pow(eml_scalar(2.0), eml_scalar(2.0)) \u2014 4 dice branches = 2\u00b2 from binary quantum sampling",
+      "diagnostic": "rel_err=98.44%"
     },
     {
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
-      "evaluated": -0.3465735902799726,
+      "evaluated": 0.3465735902799726,
       "registered": 7.804226876408821,
-      "rel_error": 1.0444084463161392,
-      "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling"
+      "rel_error": 0.9555915536838607,
+      "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
+      "diagnostic": "rel_err=95.56%"
     },
     {
       "path": "consciousness.neuron_count",
@@ -745,19 +771,21 @@
     },
     {
       "path": "consciousness.tau_baseline",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 25.0,
       "registered": 0.24023497927432072,
       "rel_error": 103.06477889072464,
-      "eml_description": "EML: eml_scalar(25.0) \u2014 baseline Orch-OR coherence time tau_baseline = 25ms (EEG/MEG gamma scale, 6 active pairs)"
+      "eml_description": "EML: eml_scalar(25.0) \u2014 baseline Orch-OR coherence time tau_baseline = 25ms (EEG/MEG gamma scale, 6 active pairs)",
+      "diagnostic": "off by 10^2"
     },
     {
       "path": "consciousness.tau_gnosis",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 2453.253019710934,
       "registered": 2.4532530197109352,
       "rel_error": 998.9999999999994,
-      "eml_description": "EML: ops.mul(eml_scalar(25.0), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(eml_scalar(1.0)))), ops.pow(eml_scalar(2.0), eml_scalar(2.0)))) \u2014 full gnosis coherence time tau(12) = tau_0 * exp(3.2*sqrt(12/12)) * (12/6)^2"
+      "eml_description": "EML: ops.mul(eml_scalar(25.0), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(eml_scalar(1.0)))), ops.pow(eml_scalar(2.0), eml_scalar(2.0)))) \u2014 full gnosis coherence time tau(12) = tau_0 * exp(3.2*sqrt(12/12)) * (12/6)^2",
+      "diagnostic": "off by 10^3"
     },
     {
       "path": "consciousness.unlocking_probability_10",
@@ -897,14 +925,11 @@
     },
     {
       "path": "cosmology.A_amplitude",
-      "status": "DISAGREE",
-      "evaluated": 9.999999999999882e+149,
+      "status": "AGREE",
+      "evaluated": 0.2041241452319315,
       "registered": 0.20412414523193154,
-      "rel_error": 4.898979485566298e+150,
-      "eml_description": "EML: ops.inv(ops.sqrt(eml_vec('b3'))) \u2014 A = 1/\u221ab\u2083 = 1/\u221a24 \u2248 0.204 amplitude from associative 3-cycle count",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 1.3597399555105182e-16,
+      "eml_description": "EML: ops.inv(ops.sqrt(eml_vec('b3'))) \u2014 A = 1/\u221ab\u2083 = 1/\u221a24 \u2248 0.204 amplitude from associative 3-cycle count"
     },
     {
       "path": "cosmology.D_eff",
@@ -924,11 +949,12 @@
     },
     {
       "path": "cosmology.H0_early",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 76.33940416705775,
       "registered": 67.4,
       "rel_error": 0.13263210930352737,
       "eml_description": "EML: ops.mul(eml_vec('cosmology.H0_local'), ops.sub(eml_scalar(1.0), eml_vec('f_z_cmb'))) \u2014 H0_early = H0_local * (1 - f(z_CMB)) from Ricci flow interpolation",
+      "diagnostic": "missing: f_z_cmb",
       "missing_refs": [
         "f_z_cmb"
       ]
@@ -939,7 +965,8 @@
       "evaluated": 56.53984848102767,
       "registered": 67.40001769345331,
       "rel_error": 0.16113006471036145,
-      "eml_description": "EML: ops.div(eml_vec('cosmology.H0_late_evolved'), eml_vec('cosmology.relaxation_z1100')) \u2014 H0_early inferred from H(z=1100) / E(z=1100) normalization"
+      "eml_description": "EML: ops.div(eml_vec('cosmology.H0_late_evolved'), eml_vec('cosmology.relaxation_z1100')) \u2014 H0_early inferred from H(z=1100) / E(z=1100) normalization",
+      "diagnostic": "rel_err=16.11%"
     },
     {
       "path": "cosmology.H0_late_evolved",
@@ -978,11 +1005,12 @@
     },
     {
       "path": "cosmology.Lambda_ratio",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 8.87864301679511e-56,
       "registered": 3.203289916527108e-122,
       "rel_error": 2.771726333912672e+66,
       "eml_description": "EML: ops.div(eml_vec('cosmology.Lambda_derived'), ops.pow(eml_vec('constants.l_planck'), ops.neg(eml_scalar(2.0)))) \u2014 \u039b_PM/\u039b_Planck ratio resolving the 120-order fine-tuning",
+      "diagnostic": "missing: constants.l_planck",
       "missing_refs": [
         "constants.l_planck"
       ]
@@ -1027,11 +1055,12 @@
     },
     {
       "path": "cosmology.V_0_vacuum_scale",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 2.846e-47,
       "rel_error": 1.0,
       "eml_description": "EML: eml_vec('rho_Lambda') \u2014 V\u2080 = \u03c1_\u039b ~ 2.846\u00d710\u207b\u2074\u2077 GeV\u2074 vacuum energy scale (cosmological constant)",
+      "diagnostic": "missing: rho_Lambda",
       "missing_refs": [
         "rho_Lambda"
       ]
@@ -1039,21 +1068,20 @@
     {
       "path": "cosmology.V_9_internal",
       "status": "DISAGREE",
-      "evaluated": 3.947800000000264e-299,
+      "evaluated": 5797.53067529045,
       "registered": 13015.153988690734,
-      "rel_error": 1.0,
+      "rel_error": 0.5545553529118363,
       "eml_description": "EML: ops.mul(ops.pow(eml_vec('chi_eff'), eml_scalar(7.0/6.0)), eml_scalar(39.478)) \u2014 V9 = chi_eff^(7/6) \u00d7 (2\u03c0)\u00b2 in Planck units",
-      "missing_refs": [
-        "chi_eff"
-      ]
+      "diagnostic": "rel_err=55.46%"
     },
     {
       "path": "cosmology.V_eff_dynamical",
-      "status": "DISAGREE",
-      "evaluated": 9.583333333333561e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": -0.029987249615199076,
       "rel_error": 1.0,
       "eml_description": "EML: ops.add(ops.sub(eml_vec('cosmology.V_racetrack'), ops.mul(ops.div(eml_scalar(1.0), eml_vec('topology.elder_kads')), eml_vec('cosmology.rho_sampler'))), ops.mul(eml_vec('cosmology.V_torsion'), ops.exp(ops.neg(eml_vec('cosmology.S_Pneuma'))))) \u2014 V_eff(\u03c6) = V_racetrack \u2212 \u03c1_sampler/b3 + V_torsion\u00b7exp(\u2212S_Pneuma) dynamical vacuum energy",
+      "diagnostic": "missing: cosmology.V_racetrack, cosmology.rho_sampler, cosmology.V_torsion",
       "missing_refs": [
         "cosmology.V_racetrack",
         "cosmology.rho_sampler",
@@ -1075,7 +1103,8 @@
       "evaluated": 3.367549955832648e+111,
       "registered": 1.3747965125203362e+111,
       "rel_error": 1.4494897427831777,
-      "eml_description": "EML: ops.mul(ops.sqrt(ops.mul(eml_scalar(6.0), ops.div(ops.mul(eml_scalar(6.0), eml_scalar(29.0)), eml_scalar(4.0)))), ops.pow(eml_vec('M_PLANCK'), eml_scalar(6.0))) \u2014 T_BPS = sqrt(C2) \u00d7 M_Pl^6, C2 = p(p+23)/4 = 43.5 for p=6"
+      "eml_description": "EML: ops.mul(ops.sqrt(ops.mul(eml_scalar(6.0), ops.div(ops.mul(eml_scalar(6.0), eml_scalar(29.0)), eml_scalar(4.0)))), ops.pow(eml_vec('M_PLANCK'), eml_scalar(6.0))) \u2014 T_BPS = sqrt(C2) \u00d7 M_Pl^6, C2 = p(p+23)/4 = 43.5 for p=6",
+      "diagnostic": "rel_err=144.95%"
     },
     {
       "path": "cosmology.breathing_mode_vev",
@@ -1127,13 +1156,11 @@
     {
       "path": "cosmology.delta_b3_asymmetry",
       "status": "DISAGREE",
-      "evaluated": 9.999999999999763e+299,
+      "evaluated": 0.041666666666666664,
       "registered": 0.12,
-      "rel_error": 8.333333333333136e+300,
+      "rel_error": 0.6527777777777778,
       "eml_description": "EML: ops.div(eml_scalar(1.0), eml_vec('b3')) \u2014 \u03b4_b3 = 1/b\u2083 = 1/24 topological baryon asymmetry seed",
-      "missing_refs": [
-        "b3"
-      ]
+      "diagnostic": "rel_err=65.28%"
     },
     {
       "path": "cosmology.dynamical_classification",
@@ -1150,22 +1177,24 @@
     },
     {
       "path": "cosmology.entropy_density",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 6.026608233918989e+301,
       "registered": 5.563065417483114e-78,
       "rel_error": "inf",
       "eml_description": "EML: ops.div(ops.mul(eml_vec('topology.elder_kads'), ops.log(eml_vec('constants.k_gimel'))), eml_vec('cosmology.V_horizon')) \u2014 entropy density s = b3\u00b7ln(k_gimel)/V_horizon from Bekenstein-Hawking topology",
+      "diagnostic": "missing: cosmology.V_horizon",
       "missing_refs": [
         "cosmology.V_horizon"
       ]
     },
     {
       "path": "cosmology.epsilon_KK",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 9.999999999999763e+299,
       "registered": 0.2257,
       "rel_error": 4.430660168364981e+300,
       "eml_description": "EML: ops.inv(ops.pow(eml_vec('Vol_K3_over_S3'), eml_scalar(1.0))) \u2014 \u03b5_KK = 0.2257 from Vol(K3)/Vol(S3)=4.43 via racetrack stabilization at T_min=1.4885",
+      "diagnostic": "missing: Vol_K3_over_S3",
       "missing_refs": [
         "Vol_K3_over_S3"
       ]
@@ -1187,14 +1216,14 @@
     },
     {
       "path": "cosmology.f_decay_constant",
-      "status": "DISAGREE",
-      "evaluated": 1.0000000000000118e-150,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 2.0291666666666666e+17,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('chi_eff'))) \u2014 f = M_Pl/\u221a\u03c7_eff ~ 2.03\u00d710\u00b9\u2077 GeV super-Planckian decay constant",
+      "diagnostic": "missing: M_Planck",
       "missing_refs": [
-        "M_Planck",
-        "chi_eff"
+        "M_Planck"
       ]
     },
     {
@@ -1207,11 +1236,12 @@
     },
     {
       "path": "cosmology.growth_index_pm",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.55,
       "registered": 0.5589982991426107,
       "rel_error": 0.016097185190745995,
       "eml_description": "EML: ops.add(eml_scalar(0.55), ops.mul(eml_scalar(0.005), eml_vec('w0_pm'))) \u2014 growth index gamma_PM \u2248 0.55 + 0.005*w0; Linder formula for PM dark energy",
+      "diagnostic": "missing: w0_pm",
       "missing_refs": [
         "w0_pm"
       ]
@@ -1222,7 +1252,8 @@
       "evaluated": 7.2337962962962985,
       "registered": 10.1,
       "rel_error": 0.28378254492115856,
-      "eml_description": "EML: ops.mul(ops.mul(ops.div(eml_scalar(125.0), eml_scalar(288.0)), ops.inv(eml_scalar(24.0))), eml_scalar(400.0)) \u2014 H0_geom = (125/288)/24 \u00d7 400; \u00d7\u03ba=10.1 \u2192 H0_phys"
+      "eml_description": "EML: ops.mul(ops.mul(ops.div(eml_scalar(125.0), eml_scalar(288.0)), ops.inv(eml_scalar(24.0))), eml_scalar(400.0)) \u2014 H0_geom = (125/288)/24 \u00d7 400; \u00d7\u03ba=10.1 \u2192 H0_phys",
+      "diagnostic": "rel_err=28.38%"
     },
     {
       "path": "cosmology.h_evolution_sigma",
@@ -1248,11 +1279,12 @@
     },
     {
       "path": "cosmology.mirror_weight",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 0.0003107342392717563,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('gaussian_weight_mirror'), eml_vec('jacobian_mirror')) \u2014 mirror sector Gaussian weight \u00d7 G2 metric Jacobian (adjacent to SM face)",
+      "diagnostic": "missing: gaussian_weight_mirror, jacobian_mirror",
       "missing_refs": [
         "gaussian_weight_mirror",
         "jacobian_mirror"
@@ -1277,13 +1309,11 @@
     {
       "path": "cosmology.omega_frequency",
       "status": "DISAGREE",
-      "evaluated": 6.283185307179617e+150,
+      "evaluated": 0.7404804896930612,
       "registered": 0.5235987755982988,
-      "rel_error": 1.200000000000006e+151,
+      "rel_error": 0.4142135623730956,
       "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), ops.sqrt(eml_vec('chi_eff'))) \u2014 \u03c9 = 2\u03c0/\u221a\u03c7_eff = \u03c0/6 \u2248 0.524 oscillation frequency",
-      "missing_refs": [
-        "chi_eff"
-      ]
+      "diagnostic": "rel_err=41.42%"
     },
     {
       "path": "cosmology.omega_total",
@@ -1341,14 +1371,14 @@
     },
     {
       "path": "cosmology.s8_friction_beta_eff",
-      "status": "DISAGREE",
-      "evaluated": 1034.7769974862006,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 2.0412414523193795e+299,
       "registered": 0.065,
-      "rel_error": 15918.646115172314,
+      "rel_error": 3.140371465106738e+300,
       "eml_description": "EML: ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_vec('pi'))), ops.inv(ops.sqrt(eml_vec('b3')))) \u2014 beta_eff = alpha_leak/(4pi) * 1/sqrt(b3) from sampler-bridge moduli coupling",
+      "diagnostic": "missing: pi",
       "missing_refs": [
-        "pi",
-        "b3"
+        "pi"
       ]
     },
     {
@@ -1360,11 +1390,12 @@
     },
     {
       "path": "cosmology.s8_friction_suppression_pct",
-      "status": "DISAGREE",
-      "evaluated": 1.0000000000000046e-298,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 5.183731632555877,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_scalar(100.0), ops.sub(ops.exp(ops.neg(ops.mul(eml_vec('beta_eff'), eml_vec('I_z')))), eml_scalar(1.0))) \u2014 friction suppression percent = 100*(exp(-beta_eff * I(z)) - 1)",
+      "diagnostic": "missing: beta_eff, I_z",
       "missing_refs": [
         "beta_eff",
         "I_z"
@@ -1372,11 +1403,12 @@
     },
     {
       "path": "cosmology.s8_improvement_factor",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
       "registered": 2.2586489565773444,
       "rel_error": 0.5572574493756856,
       "eml_description": "EML: ops.div(eml_vec('tension_lcdm_avg'), eml_vec('tension_pm_avg')) \u2014 improvement = sigma_LCDM / sigma_PM; ratio of tension reductions",
+      "diagnostic": "missing: tension_lcdm_avg, tension_pm_avg",
       "missing_refs": [
         "tension_lcdm_avg",
         "tension_pm_avg"
@@ -1388,7 +1420,8 @@
       "evaluated": 1.0813555366653325,
       "registered": 0.8468398523494727,
       "rel_error": 0.2769303826044788,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.mul(ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3))), eml_vec('suppression_factor'))) \u2014 S8 baseline from dark energy growth suppression only, before moduli-DM friction"
+      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.mul(ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3))), eml_vec('suppression_factor'))) \u2014 S8 baseline from dark energy growth suppression only, before moduli-DM friction",
+      "diagnostic": "rel_err=27.69%"
     },
     {
       "path": "cosmology.s8_pm_predicted",
@@ -1403,7 +1436,8 @@
       "evaluated": 0.14433756729740643,
       "registered": 1.005556320203449,
       "rel_error": 0.8564599869769568,
-      "eml_description": "EML: ops.inv(ops.sqrt(eml_scalar(48.0))) \u2014 1/sqrt(12 bridges \u00d7 4 faces) = sigma8 variance reduction factor; full suppression: ops.div(D_PM_z, D_LCDM_z)"
+      "eml_description": "EML: ops.inv(ops.sqrt(eml_scalar(48.0))) \u2014 1/sqrt(12 bridges \u00d7 4 faces) = sigma8 variance reduction factor; full suppression: ops.div(D_PM_z, D_LCDM_z)",
+      "diagnostic": "rel_err=85.65%"
     },
     {
       "path": "cosmology.s8_tension_des",
@@ -1450,11 +1484,12 @@
     },
     {
       "path": "cosmology.sm_weight",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 0.0021089953617339126,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('gaussian_weight_sm'), eml_vec('jacobian_sm')) \u2014 SM sector Gaussian weight \u00d7 G2 metric Jacobian at sampling position 0.5",
+      "diagnostic": "missing: gaussian_weight_sm, jacobian_sm",
       "missing_refs": [
         "gaussian_weight_sm",
         "jacobian_sm"
@@ -1470,18 +1505,11 @@
     },
     {
       "path": "cosmology.speed_of_light_derived",
-      "status": "DISAGREE",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 299792423.1632492,
       "registered": 299792423.16324997,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('C_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_scalar(1e7), eml_vec('P_3D')))))) \u2014 c = C_geo \u00d7 S_f \u00d7 B_v \u00d7 chi_gc \u00d7 10\u2077 \u00d7 P_3D from G\u2082 KK reduction; yields 299,792,423 m/s (99.99999% of CODATA)",
-      "missing_refs": [
-        "C_geo",
-        "S_f",
-        "B_v",
-        "chi_gc",
-        "P_3D"
-      ]
+      "rel_error": 2.584656322878891e-15,
+      "eml_description": "EML: ops.mul(eml_vec('C_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_scalar(1e7), eml_vec('P_3D')))))) \u2014 c = C_geo \u00d7 S_f \u00d7 B_v \u00d7 chi_gc \u00d7 10\u2077 \u00d7 P_3D from G\u2082 KK reduction; yields 299,792,423 m/s (99.99999% of CODATA)"
     },
     {
       "path": "cosmology.thawing_validated",
@@ -1508,10 +1536,11 @@
     {
       "path": "cosmology.w0_desi_sigma",
       "status": "DISAGREE",
-      "evaluated": 0.019900497512438938,
+      "evaluated": -0.019900497512438938,
       "registered": -0.021164021164022356,
-      "rel_error": 1.940298507462687,
-      "eml_description": "EML: ops.div(ops.sub(eml_vec('cosmology.w0_thawing'), eml_scalar(-0.957)), eml_scalar(0.067)) \u2014 \u03c3-deviation of predicted w\u2080 from DESI 2025 thawing value"
+      "rel_error": 0.05970149253731315,
+      "eml_description": "EML: ops.div(ops.sub(eml_vec('cosmology.w0_thawing'), eml_scalar(-0.957)), eml_scalar(0.067)) \u2014 \u03c3-deviation of predicted w\u2080 from DESI 2025 thawing value",
+      "diagnostic": "rel_err=5.97%"
     },
     {
       "path": "cosmology.w0_deviation",
@@ -1535,22 +1564,24 @@
     },
     {
       "path": "cosmology.w_0_attractor",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": -0.984,
       "registered": -0.9801922822526661,
       "rel_error": 0.0038846640769125973,
       "eml_description": "EML: ops.add(eml_scalar(-1.0), ops.add(ops.mul(ops.div(eml_scalar(2.0), eml_scalar(3.0)), eml_vec('epsilon_eff')), eml_scalar(0.016))) \u2014 w\u2080 = \u22121 + (2/3)\u03b5_eff + \u03b4_Ricci from slow-roll + Ricci flow correction",
+      "diagnostic": "within 1%",
       "missing_refs": [
         "epsilon_eff"
       ]
     },
     {
       "path": "cosmology.w_a_thawing",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 0.09,
       "registered": 0.009369692847857367,
       "rel_error": 8.605437602000041,
       "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.mul(eml_vec('epsilon_eff'), ops.sub(eml_scalar(1.0), eml_vec('eta_eff')))), eml_scalar(0.09)) \u2014 w_a = 2\u03b5_eff(1\u2212\u03b7_eff) + \u03b4_Ricci thawing CPL parameter",
+      "diagnostic": "off by 10^1",
       "missing_refs": [
         "epsilon_eff",
         "eta_eff"
@@ -1558,11 +1589,12 @@
     },
     {
       "path": "cosmology.w_eff",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": -0.8571428571428573,
       "registered": -0.8526812021213906,
       "rel_error": 0.005232500740448473,
-      "eml_description": "EML: ops.neg(ops.div(ops.sub(eml_vec('D_eff'), eml_scalar(1.0)), ops.add(eml_vec('D_eff'), eml_scalar(1.0)))) \u2014 w_eff = -(D_eff-1)/(D_eff+1) from dimensional reduction"
+      "eml_description": "EML: ops.neg(ops.div(ops.sub(eml_vec('D_eff'), eml_scalar(1.0)), ops.add(eml_vec('D_eff'), eml_scalar(1.0)))) \u2014 w_eff = -(D_eff-1)/(D_eff+1) from dimensional reduction",
+      "diagnostic": "within 1%"
     },
     {
       "path": "cosmology.wa_derived",
@@ -1582,10 +1614,10 @@
     },
     {
       "path": "cosmology.wa_thawing",
-      "status": "DISAGREE",
-      "evaluated": 0.8164965809277258,
+      "status": "AGREE",
+      "evaluated": -0.8164965809277258,
       "registered": -0.8164965809277261,
-      "rel_error": 1.9999999999999998,
+      "rel_error": 4.0792198665315547e-16,
       "eml_description": "EML: ops.mul(ops.neg(ops.inv(ops.sqrt(eml_scalar(24)))), eml_scalar(4)) \u2014 4-form projection"
     },
     {
@@ -1602,7 +1634,8 @@
       "evaluated": 1.9483192273737477,
       "registered": 10.0,
       "rel_error": 0.8051680772626252,
-      "eml_description": "EML: ops.inv(ops.div(eml_vec('geometry.k_gimel'), eml_scalar(24.0))) \u2014 z_* = 1/tau = b3/k_gimel ~ 1.95, transition redshift from Ricci flow timescale"
+      "eml_description": "EML: ops.inv(ops.div(eml_vec('geometry.k_gimel'), eml_scalar(24.0))) \u2014 z_* = 1/tau = b3/k_gimel ~ 1.95, transition redshift from Ricci flow timescale",
+      "diagnostic": "rel_err=80.52%"
     },
     {
       "path": "desi.H0",
@@ -1626,7 +1659,8 @@
       "evaluated": 0.8421605387335602,
       "registered": 0.832,
       "rel_error": 0.012212185977836857,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (DESI/Planck input)"
+      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (DESI/Planck input)",
+      "diagnostic": "rel_err=1.22%"
     },
     {
       "path": "desi.sigma8",
@@ -1762,11 +1796,12 @@
     },
     {
       "path": "framework.version",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 24.2,
       "rel_error": 1.0,
       "eml_description": "EML: eml_vec('framework_version') \u2014 PM framework version identifier string",
+      "diagnostic": "missing: framework_version",
       "missing_refs": [
         "framework_version"
       ]
@@ -1779,11 +1814,12 @@
     },
     {
       "path": "framework.version_major",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 24.0,
       "rel_error": 1.0,
       "eml_description": "EML: eml_vec('framework_version_major') \u2014 PM framework major version identifier",
+      "diagnostic": "missing: framework_version_major",
       "missing_refs": [
         "framework_version_major"
       ]
@@ -1796,11 +1832,12 @@
     },
     {
       "path": "framework_statistics.chi_squared_reduced",
-      "status": "DISAGREE",
-      "evaluated": 2.50000000000005e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.0887,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
+      "diagnostic": "missing: chi_squared",
       "missing_refs": [
         "chi_squared"
       ]
@@ -1859,7 +1896,8 @@
       "evaluated": 42.0,
       "registered": 43.0,
       "rel_error": 0.023255813953488372,
-      "eml_description": "EML: ops.sub(eml_scalar(72), eml_vec('framework_statistics.not_testable_count')) \u2014 testable = total_gates \u2212 axioms"
+      "eml_description": "EML: ops.sub(eml_scalar(72), eml_vec('framework_statistics.not_testable_count')) \u2014 testable = total_gates \u2212 axioms",
+      "diagnostic": "rel_err=2.33%"
     },
     {
       "path": "framework_statistics.total_gates",
@@ -1867,26 +1905,29 @@
       "evaluated": 72.0,
       "registered": 73.0,
       "rel_error": 0.0136986301369863,
-      "eml_description": "EML: eml_scalar(72) \u2014 total number of certification gates (72 Gates system)"
+      "eml_description": "EML: eml_scalar(72) \u2014 total number of certification gates (72 Gates system)",
+      "diagnostic": "rel_err=1.37%"
     },
     {
       "path": "funnel.compression_ratio",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 2.8799999999997815e+302,
       "registered": 2.3,
       "rel_error": 1.2521739130433834e+302,
       "eml_description": "EML: ops.div(eml_vec('ancestral_roots'), eml_vec('torsion_pins'))",
+      "diagnostic": "missing: torsion_pins",
       "missing_refs": [
         "torsion_pins"
       ]
     },
     {
       "path": "funnel.survival_rate",
-      "status": "DISAGREE",
-      "evaluated": 3.472222222222486e-303,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.434,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('active_residues'), eml_vec('ancestral_roots'))",
+      "diagnostic": "missing: active_residues",
       "missing_refs": [
         "active_residues"
       ]
@@ -1938,7 +1979,8 @@
       "evaluated": 24.0,
       "registered": 42.730467973109285,
       "rel_error": 0.43833987460414797,
-      "eml_description": "EML: eml_scalar(24) \u2014 AS fixed point alpha_GUT^-1 = b3 (asymptotic safety locks to Betti number)"
+      "eml_description": "EML: eml_scalar(24) \u2014 AS fixed point alpha_GUT^-1 = b3 (asymptotic safety locks to Betti number)",
+      "diagnostic": "rel_err=43.83%"
     },
     {
       "path": "gauge.M_GUT",
@@ -1957,11 +1999,12 @@
     },
     {
       "path": "gauge.chirality_reversal_probability",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
       "registered": 3e-06,
       "rel_error": 333332.3333333333,
       "eml_description": "EML: ops.div(eml_vec('Vol_bridge'), eml_vec('Vol_spinor')) \u2014 P_reverse ~ Vol_bridge / Vol_spinor ~ 3e-6; cross-shadow chirality flip suppressed by dual-shadow phase-space ratio.",
+      "diagnostic": "missing: Vol_bridge, Vol_spinor",
       "missing_refs": [
         "Vol_bridge",
         "Vol_spinor"
@@ -1977,22 +2020,24 @@
     },
     {
       "path": "gauge.hypercharge_canonical",
-      "status": "DISAGREE",
-      "evaluated": 7.071067811865837e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 1.0,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('g_prime'), ops.sqrt(eml_scalar(2.0))) \u2014 canonical hypercharge coupling g'/\u221a2 after U(1)_Y normalization.",
+      "diagnostic": "missing: g_prime",
       "missing_refs": [
         "g_prime"
       ]
     },
     {
       "path": "gauge.hypercharge_coupling_gp",
-      "status": "DISAGREE",
-      "evaluated": 4.808430097235337e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.34961100456254207,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('g_2'), ops.sqrt(eml_vec('sin2_theta_W'))) \u2014 hypercharge coupling g' = g\u2082 tan(\u03b8_W) from U(1)_Y embedding.",
+      "diagnostic": "missing: g_2",
       "missing_refs": [
         "g_2"
       ]
@@ -2007,11 +2052,12 @@
     },
     {
       "path": "gauge.kk_gauge_kinetic_coeff",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 0.25,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('g_5'), eml_scalar(2.0))) \u2014 gauge kinetic coefficient R_KK g_5^2 from dimensional reduction of 5D action.",
+      "diagnostic": "missing: R_kk, g_5",
       "missing_refs": [
         "R_kk",
         "g_5"
@@ -2019,11 +2065,12 @@
     },
     {
       "path": "gauge.kk_planck_factor",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
       "registered": 6.283185307179586,
       "rel_error": 0.8408450569081046,
       "eml_description": "EML: ops.div(ops.pow(eml_vec('M_5'), eml_scalar(3.0)), ops.mul(eml_vec('R_kk'), ops.pow(eml_vec('M_Pl'), eml_scalar(2.0)))) \u2014 KK tower factor M_5^3 / (R_KK M_Pl^2) from 5D\u21924D Planck scale relation.",
+      "diagnostic": "missing: M_5, R_kk, M_Pl",
       "missing_refs": [
         "M_5",
         "R_kk",
@@ -2032,11 +2079,12 @@
     },
     {
       "path": "gauge.m_w_gev",
-      "status": "DISAGREE",
-      "evaluated": 5.000000000000393e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 80.3782125,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0)) \u2014 M_W = g_2 * v / 2 from SU(2)_L symmetry breaking.",
+      "diagnostic": "missing: g_2, v",
       "missing_refs": [
         "g_2",
         "v"
@@ -2044,11 +2092,12 @@
     },
     {
       "path": "gauge.m_z_gev",
-      "status": "DISAGREE",
-      "evaluated": 5.000000000000393e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 91.18886460803577,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(ops.mul(ops.sqrt(ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))), eml_vec('v')), eml_scalar(2.0)) \u2014 M_Z = sqrt(g_2^2 + g'^2) * v / 2 from electroweak symmetry breaking.",
+      "diagnostic": "missing: g_2, g_prime, v",
       "missing_refs": [
         "g_2",
         "g_prime",
@@ -2064,22 +2113,24 @@
     },
     {
       "path": "gauge.qcd_alpha_s_mz",
-      "status": "DISAGREE",
-      "evaluated": 7.957747154594808e-302,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.117,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(ops.pow(eml_vec('g_s'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 alpha_s = g_s^2/(4pi).",
+      "diagnostic": "missing: g_s",
       "missing_refs": [
         "g_s"
       ]
     },
     {
       "path": "gauge.qcd_canonical",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 9.999999999999763e+299,
       "registered": 1.0,
       "rel_error": 9.999999999999763e+299,
       "eml_description": "EML: ops.inv(eml_vec('alpha_s_inv')) \u2014 QCD canonical coupling g_s = 1/\u03b1_s\u207b\u00b9 at GUT scale.",
+      "diagnostic": "off by 10^300",
       "missing_refs": [
         "alpha_s_inv"
       ]
@@ -2094,10 +2145,10 @@
     },
     {
       "path": "gauge.rho_parameter",
-      "status": "DISAGREE",
-      "evaluated": 1.3007453270724099,
+      "status": "AGREE",
+      "evaluated": 1.0,
       "registered": 1.0,
-      "rel_error": 0.30074532707240986,
+      "rel_error": 0.0,
       "eml_description": "EML: ops.div(ops.pow(eml_vec('M_W'), eml_scalar(2.0)), ops.mul(ops.pow(eml_vec('M_Z'), eml_scalar(2.0)), ops.sub(eml_scalar(1.0), eml_vec('sin2_theta_W')))) \u2014 rho = M_W^2 / (M_Z^2 cos^2(theta_W)) = 1 at tree level (custodial SU(2)).",
       "missing_refs": [
         "M_W",
@@ -2137,22 +2188,24 @@
     },
     {
       "path": "gauge.weak_canonical",
-      "status": "DISAGREE",
-      "evaluated": 7.071067811865837e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 1.0,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('g_2'), ops.sqrt(eml_scalar(2.0))) \u2014 canonical weak coupling g\u2082/\u221a2 after SU(2)_L normalization.",
+      "diagnostic": "missing: g_2",
       "missing_refs": [
         "g_2"
       ]
     },
     {
       "path": "gauge.weak_coupling_g2",
-      "status": "DISAGREE",
-      "evaluated": 1.4142135623730897e-300,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.6525,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.sqrt(eml_scalar(2.0)), eml_vec('g_weak')) \u2014 weak coupling g\u2082 from SU(2) gauge group.",
+      "diagnostic": "missing: g_weak",
       "missing_refs": [
         "g_weak"
       ]
@@ -2187,7 +2240,8 @@
       "evaluated": 26.0,
       "registered": 27.0,
       "rel_error": 0.037037037037037035,
-      "eml_description": "EML: eml_scalar(26.0) \u2014 ancestral spacetime D_ancestral = 26"
+      "eml_description": "EML: eml_scalar(26.0) \u2014 ancestral spacetime D_ancestral = 26",
+      "diagnostic": "rel_err=3.70%"
     },
     {
       "path": "geometry.D_bulk",
@@ -2195,7 +2249,8 @@
       "evaluated": 26.0,
       "registered": 27.0,
       "rel_error": 0.037037037037037035,
-      "eml_description": "EML: eml_scalar(26.0) \u2014 Virasoro anomaly-cancellation bulk dimension D_bulk = 26 (c = D-26 = 0)"
+      "eml_description": "EML: eml_scalar(26.0) \u2014 Virasoro anomaly-cancellation bulk dimension D_bulk = 26 (c = D-26 = 0)",
+      "diagnostic": "rel_err=3.70%"
     },
     {
       "path": "geometry.D_compact",
@@ -2203,7 +2258,8 @@
       "evaluated": 22.0,
       "registered": 23.0,
       "rel_error": 0.043478260869565216,
-      "eml_description": "EML: ops.sub(eml_scalar(26.0), eml_scalar(4.0)) \u2014 compact internal dimensions D_compact = D_bulk - D_visible = 22"
+      "eml_description": "EML: ops.sub(eml_scalar(26.0), eml_scalar(4.0)) \u2014 compact internal dimensions D_compact = D_bulk - D_visible = 22",
+      "diagnostic": "rel_err=4.35%"
     },
     {
       "path": "geometry.D_eff",
@@ -2375,11 +2431,12 @@
     },
     {
       "path": "geometry.S8",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.8297681860876744,
       "registered": 0.833256660630941,
       "rel_error": 0.004186554645269847,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.mul(ops.sqrt(ops.div(eml_scalar(0.315), eml_scalar(0.3))), ops.sub(eml_scalar(1.0), ops.div(eml_scalar(1.0), ops.mul(eml_scalar(2.0), eml_vec('elder_kads')))))) \u2014 structure growth S8 = \u03c38\u221a(\u03a9_m/0.3)\u00d7(1-1/(2b\u2083)) \u2248 0.829"
+      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.mul(ops.sqrt(ops.div(eml_scalar(0.315), eml_scalar(0.3))), ops.sub(eml_scalar(1.0), ops.div(eml_scalar(1.0), ops.mul(eml_scalar(2.0), eml_vec('elder_kads')))))) \u2014 structure growth S8 = \u03c38\u221a(\u03a9_m/0.3)\u00d7(1-1/(2b\u2083)) \u2248 0.829",
+      "diagnostic": "within 1%"
     },
     {
       "path": "geometry.T_CMB",
@@ -2391,19 +2448,21 @@
     },
     {
       "path": "geometry.V_cb",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.040824202499999976,
       "registered": 0.04075299298827878,
       "rel_error": 0.0017473443420873858,
-      "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us'), eml_scalar(2.0)), eml_scalar(0.81)) \u2014 CKM |V_cb| \u2248 A \u03bb\u00b2 \u2248 0.041 from octonionic triality"
+      "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us'), eml_scalar(2.0)), eml_scalar(0.81)) \u2014 CKM |V_cb| \u2248 A \u03bb\u00b2 \u2248 0.041 from octonionic triality",
+      "diagnostic": "within 1%"
     },
     {
       "path": "geometry.V_ub",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.0037339025212500014,
       "registered": 0.0037241372333371775,
       "rel_error": 0.002622161134506124,
-      "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us'), eml_scalar(3.0)), eml_scalar(0.33)) \u2014 CKM |V_ub| \u2248 A \u03bb\u00b3(1-\u03c1-i\u03b7) \u2248 0.0037"
+      "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us'), eml_scalar(3.0)), eml_scalar(0.33)) \u2014 CKM |V_ub| \u2248 A \u03bb\u00b3(1-\u03c1-i\u03b7) \u2248 0.0037",
+      "diagnostic": "within 1%"
     },
     {
       "path": "geometry.V_us",
@@ -2597,47 +2656,35 @@
     },
     {
       "path": "geometry.face_moduli_T1",
-      "status": "DISAGREE",
-      "evaluated": 3.9210431298113767e-300,
+      "status": "AGREE",
+      "evaluated": 94.10503511547061,
       "registered": 94.10495562834782,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), eml_scalar(3.14159)) \u2014 T1 = b3\u00b7k_gimel/\u03c0, dominant K\u00e4hler modulus from TCS racetrack stabilization",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 8.446645796585086e-07,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), eml_scalar(3.14159)) \u2014 T1 = b3\u00b7k_gimel/\u03c0, dominant K\u00e4hler modulus from TCS racetrack stabilization"
     },
     {
       "path": "geometry.face_moduli_T2",
-      "status": "DISAGREE",
-      "evaluated": 1.960521564905796e-300,
+      "status": "AGREE",
+      "evaluated": 47.052517557735285,
       "registered": 47.05247781417391,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(2.0), eml_scalar(3.14159))) \u2014 T2 = b3\u00b7k_gimel/(2\u03c0), first shadow sector K\u00e4hler modulus",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 8.446645792054765e-07,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(2.0), eml_scalar(3.14159))) \u2014 T2 = b3\u00b7k_gimel/(2\u03c0), first shadow sector K\u00e4hler modulus"
     },
     {
       "path": "geometry.face_moduli_T3",
-      "status": "DISAGREE",
-      "evaluated": 1.3070143766038696e-300,
+      "status": "AGREE",
+      "evaluated": 31.368345038490197,
       "registered": 31.368318542782607,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(3.0), eml_scalar(3.14159))) \u2014 T3 = b3\u00b7k_gimel/(3\u03c0), second shadow sector K\u00e4hler modulus",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 8.446645794697453e-07,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(3.0), eml_scalar(3.14159))) \u2014 T3 = b3\u00b7k_gimel/(3\u03c0), second shadow sector K\u00e4hler modulus"
     },
     {
       "path": "geometry.face_moduli_T4",
-      "status": "DISAGREE",
-      "evaluated": 9.802607824528405e-301,
+      "status": "AGREE",
+      "evaluated": 23.52625877886765,
       "registered": 23.526238907086956,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(4.0), eml_scalar(3.14159))) \u2014 T4 = b3\u00b7k_gimel/(4\u03c0), subdominant K\u00e4hler modulus of deepest shadow sector",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 8.446645795074979e-07,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(4.0), eml_scalar(3.14159))) \u2014 T4 = b3\u00b7k_gimel/(4\u03c0), subdominant K\u00e4hler modulus of deepest shadow sector"
     },
     {
       "path": "geometry.flux_reduction",
@@ -2729,11 +2776,12 @@
     },
     {
       "path": "geometry.landscape_entropy",
-      "status": "DISAGREE",
-      "evaluated": 16578.612669557133,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": -16578.612669557133,
       "registered": 1314.8335055546956,
-      "rel_error": 11.608906450526622,
+      "rel_error": 13.608906450526622,
       "eml_description": "EML: ops.mul(eml_vec('elder_kads'), ops.log(eml_vec('landscape_factorial_b3'))) \u2014 landscape entropy S = b\u2083 ln(b\u2083!) \u2248 1300",
+      "diagnostic": "missing: landscape_factorial_b3",
       "missing_refs": [
         "landscape_factorial_b3"
       ]
@@ -3033,10 +3081,10 @@
     },
     {
       "path": "geometry.wa",
-      "status": "DISAGREE",
-      "evaluated": 0.8164965809277258,
+      "status": "AGREE",
+      "evaluated": -0.8164965809277258,
       "registered": -0.8164965809277261,
-      "rel_error": 1.9999999999999998,
+      "rel_error": 4.0792198665315547e-16,
       "eml_description": "EML: ops.mul(ops.neg(ops.div(eml_scalar(1.0), ops.sqrt(eml_vec('elder_kads')))), eml_scalar(4.0)) \u2014 dark energy wa = -4/\u221ab\u2083 \u2248 -0.816 (co-associative 4-form scaling)"
     },
     {
@@ -3066,13 +3114,11 @@
     {
       "path": "gravity.beta_F_trace",
       "status": "DISAGREE",
-      "evaluated": 9.999999999999763e+299,
+      "evaluated": 0.013888888888888888,
       "registered": 0.006944444444444444,
-      "rel_error": 1.439999999999966e+302,
+      "rel_error": 1.0,
       "eml_description": "EML: ops.inv(eml_vec('chi_eff')) \u2014 \u03b2_F = 1/\u03c7_eff = 1/144 from flux quanta count",
-      "missing_refs": [
-        "chi_eff"
-      ]
+      "diagnostic": "rel_err=100.00%"
     },
     {
       "path": "gravity.delta_F_kinetic",
@@ -3080,26 +3126,26 @@
       "evaluated": 1.2056327160493801e-05,
       "registered": 0.00010000000000000006,
       "rel_error": 0.879436728395062,
-      "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_vec('gravity.beta_F_trace')) \u2014 \u03b4_F = \u03b1_F \u00d7 \u03b2_F (kinetic mixing, suppressed at large volume)"
+      "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_vec('gravity.beta_F_trace')) \u2014 \u03b4_F = \u03b1_F \u00d7 \u03b2_F (kinetic mixing, suppressed at large volume)",
+      "diagnostic": "rel_err=87.94%"
     },
     {
       "path": "gravity.eta_gravitational_slip",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 1.0034722222222223,
       "registered": 1.0006944444444446,
       "rel_error": 0.002775850104094369,
-      "eml_description": "EML: ops.add(eml_scalar(1.0), ops.mul(eml_scalar(2.0), eml_vec('gravity.alpha_F_r2'))) \u2014 \u03b7_G = 1 + 2\u03b1_F (gravitational slip from R\u00b2 term)"
+      "eml_description": "EML: ops.add(eml_scalar(1.0), ops.mul(eml_scalar(2.0), eml_vec('gravity.alpha_F_r2'))) \u2014 \u03b7_G = 1 + 2\u03b1_F (gravitational slip from R\u00b2 term)",
+      "diagnostic": "within 1%"
     },
     {
       "path": "gravity.gamma_F_cross",
       "status": "DISAGREE",
-      "evaluated": 1.7361111111110586e+297,
+      "evaluated": 2.4112654320987606e-05,
       "registered": 0.003472222222222222,
-      "rel_error": 4.999999999999849e+299,
+      "rel_error": 0.9930555555555555,
       "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), ops.inv(eml_vec('chi_eff'))) \u2014 \u03b3_F = \u03b1_F/\u03c7_eff (holonomy-scalar cross-coupling)",
-      "missing_refs": [
-        "chi_eff"
-      ]
+      "diagnostic": "rel_err=99.31%"
     },
     {
       "path": "gravity.graviton_dof_4d",
@@ -3138,11 +3184,12 @@
     },
     {
       "path": "gravity.scalar_breathing_amplitude",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 1.7361111111111135e-12,
       "registered": 1.7361111111111109e-09,
       "rel_error": 0.999,
-      "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_scalar(1e-9)) \u2014 scalar breathing mode A ~ \u03b1_F \u00d7 (NS merger strain) ~ 10\u207b\u2079"
+      "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_scalar(1e-9)) \u2014 scalar breathing mode A ~ \u03b1_F \u00d7 (NS merger strain) ~ 10\u207b\u2079",
+      "diagnostic": "off by 10^-3"
     },
     {
       "path": "gravity.spin_connection_components",
@@ -3153,11 +3200,12 @@
     },
     {
       "path": "gravity.tensor_mode_correction",
-      "status": "DISAGREE",
-      "evaluated": 3.472222222222091e-303,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 2.902445579145392e-124,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_scalar(2.0), ops.mul(eml_vec('gravity.alpha_F_r2'), eml_vec('R_0'))) \u2014 dispersion correction = 2\u03b1_F\u00b7R\u2080 ~ 10\u207b\u00b9\u00b2\u2075",
+      "diagnostic": "missing: R_0",
       "missing_refs": [
         "R_0"
       ]
@@ -3183,13 +3231,11 @@
     {
       "path": "gravity.w_0_modified",
       "status": "DISAGREE",
-      "evaluated": 6.527777777777908e+149,
+      "evaluated": -0.923069401120908,
       "registered": -0.9796018518518519,
-      "rel_error": 6.663705019991248e+149,
+      "rel_error": 0.05770962011155273,
       "eml_description": "EML: ops.add(eml_scalar(-1.0), ops.mul(ops.div(eml_scalar(2.0), ops.mul(eml_scalar(3.0), ops.sqrt(eml_vec('chi_eff')))), ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(12.0), eml_vec('gravity.alpha_F_r2'))))) \u2014 w\u2080 = \u22121 + 2/(3\u221a\u03c7_eff) \u00d7 (1 \u2212 12\u03b1_F)",
-      "missing_refs": [
-        "chi_eff"
-      ]
+      "diagnostic": "rel_err=5.77%"
     },
     {
       "path": "higgs.brane_partition_ratio",
@@ -3217,11 +3263,12 @@
     },
     {
       "path": "higgs.lambda_eff_geometric",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.129,
       "registered": 0.10616029694119695,
       "rel_error": 0.21514354911284908,
       "eml_description": "EML: ops.sub(eml_vec('lambda_0'), ops.mul(eml_vec('kappa'), ops.mul(eml_vec('re_t_attractor'), ops.pow(eml_vec('y_top'), eml_scalar(2.0))))) \u2014 effective quartic with geometric Re(T) = 1.833 from attractor",
+      "diagnostic": "missing: kappa",
       "missing_refs": [
         "kappa"
       ]
@@ -3280,11 +3327,12 @@
     },
     {
       "path": "higgs.quartic_correction",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 0.1229207150436945,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('kappa'), ops.mul(eml_vec('re_t_pheno'), ops.pow(eml_vec('y_top'), eml_scalar(2.0)))) \u2014 quartic correction \u0394\u03bb = \u03ba\u00b7Re(T)\u00b7y_t\u00b2 from one-loop SUGRA moduli exchange",
+      "diagnostic": "missing: kappa, re_t_pheno",
       "missing_refs": [
         "kappa",
         "re_t_pheno"
@@ -3357,7 +3405,8 @@
       "evaluated": 0.07957747154594767,
       "registered": 2.0,
       "rel_error": 0.9602112642270262,
-      "eml_description": "EML: ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 C_kaf = 1/(4\u03c0) Kaf coupling from G\u2082 spectral structure"
+      "eml_description": "EML: ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 C_kaf = 1/(4\u03c0) Kaf coupling from G\u2082 spectral structure",
+      "diagnostic": "rel_err=96.02%"
     },
     {
       "path": "neutrino.cycles_per_gen",
@@ -3373,7 +3422,8 @@
       "evaluated": 0.5235987755982989,
       "registered": -90.0,
       "rel_error": 1.0058177641733144,
-      "eml_description": "EML: ops.div(eml_pi(), eml_scalar(6.0)) \u2014 \u03b4_CP = \u03c0/6 from K=4 TCS matching fibres"
+      "eml_description": "EML: ops.div(eml_pi(), eml_scalar(6.0)) \u2014 \u03b4_CP = \u03c0/6 from K=4 TCS matching fibres",
+      "diagnostic": "rel_err=100.58%"
     },
     {
       "path": "neutrino.delta_CP_pred",
@@ -3410,7 +3460,8 @@
       "evaluated": 12.31830988618379,
       "registered": 1.5,
       "rel_error": 7.212206590789194,
-      "eml_description": "EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) \u2014 k_gimel = b\u2083/2 + 1/\u03c0 \u2248 12.318 (spectral gap)"
+      "eml_description": "EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) \u2014 k_gimel = b\u2083/2 + 1/\u03c0 \u2248 12.318 (spectral gap)",
+      "diagnostic": "rel_err=721.22%"
     },
     {
       "path": "neutrino.m1",
@@ -3418,7 +3469,8 @@
       "evaluated": 1.9973399106029944e-11,
       "registered": 0.04831157627577474,
       "rel_error": 0.9999999995865712,
-      "eml_description": "EML: ops.exp(ops.neg(ops.mul(eml_scalar(2.0), eml_vec('k_gimel')))) \u2014 m\u2081 = exp(\u22122k_gimel) lightest neutrino mass from spectral gap"
+      "eml_description": "EML: ops.exp(ops.neg(ops.mul(eml_scalar(2.0), eml_vec('k_gimel')))) \u2014 m\u2081 = exp(\u22122k_gimel) lightest neutrino mass from spectral gap",
+      "diagnostic": "rel_err=100.00%"
     },
     {
       "path": "neutrino.m2",
@@ -3434,7 +3486,8 @@
       "evaluated": 0.06952703360743936,
       "registered": 0.002,
       "rel_error": 33.76351680371968,
-      "eml_description": "EML: ops.sqrt(ops.add(ops.pow(eml_vec('neutrino.m1'), eml_scalar(2.0)), eml_vec('delta_m31_sq'))) \u2014 m\u2083 = \u221a(m\u2081\u00b2+\u0394m\u00b2\u2083\u2081)"
+      "eml_description": "EML: ops.sqrt(ops.add(ops.pow(eml_vec('neutrino.m1'), eml_scalar(2.0)), eml_vec('delta_m31_sq'))) \u2014 m\u2083 = \u221a(m\u2081\u00b2+\u0394m\u00b2\u2083\u2081)",
+      "diagnostic": "rel_err=3376.35%"
     },
     {
       "path": "neutrino.mass_sum",
@@ -3472,7 +3525,8 @@
       "evaluated": 0.20556893116117386,
       "registered": 9.594068226860465,
       "rel_error": 0.9785733302807204,
-      "eml_description": "EML: ops.arcsin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0)))) \u2014 \u03b8\u2081\u2083 = arcsin(1/\u221ab\u2083) from b\u2083=24 torsion structure"
+      "eml_description": "EML: ops.arcsin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0)))) \u2014 \u03b8\u2081\u2083 = arcsin(1/\u221ab\u2083) from b\u2083=24 torsion structure",
+      "diagnostic": "rel_err=97.86%"
     },
     {
       "path": "neutrino.theta13_sigma",
@@ -3488,7 +3542,8 @@
       "evaluated": 0.583638101866903,
       "registered": 33.59329049922625,
       "rel_error": 0.9826263490955033,
-      "eml_description": "EML: ops.mul(eml_scalar(33.44), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0"
+      "eml_description": "EML: ops.mul(eml_scalar(33.44), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
+      "diagnostic": "rel_err=98.26%"
     },
     {
       "path": "neutrino.theta_13_pred",
@@ -3496,7 +3551,8 @@
       "evaluated": 0.1495747168959139,
       "registered": 8.647304725338865,
       "rel_error": 0.9827027355173894,
-      "eml_description": "EML: ops.mul(eml_scalar(8.57), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0"
+      "eml_description": "EML: ops.mul(eml_scalar(8.57), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
+      "diagnostic": "rel_err=98.27%"
     },
     {
       "path": "neutrino.theta_23_pred",
@@ -3504,7 +3560,8 @@
       "evaluated": 0.8587019919812091,
       "registered": 49.75,
       "rel_error": 0.9827396584526391,
-      "eml_description": "EML: ops.mul(eml_scalar(49.2), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0"
+      "eml_description": "EML: ops.mul(eml_scalar(49.2), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
+      "diagnostic": "rel_err=98.27%"
     },
     {
       "path": "nufit.delta_CP",
@@ -3528,15 +3585,17 @@
       "evaluated": 7.42e-05,
       "registered": 7.5e-05,
       "rel_error": 0.010666666666666566,
-      "eml_description": "EML: eml_scalar(7.42e-5) \u2014 solar neutrino mass splitting \u0394m\u00b2\u2082\u2081 in eV\u00b2 (NuFIT 6.0)"
+      "eml_description": "EML: eml_scalar(7.42e-5) \u2014 solar neutrino mass splitting \u0394m\u00b2\u2082\u2081 in eV\u00b2 (NuFIT 6.0)",
+      "diagnostic": "rel_err=1.07%"
     },
     {
       "path": "nufit.delta_m31_sq",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.002515,
       "registered": 0.0025,
       "rel_error": 0.005999999999999929,
-      "eml_description": "EML: eml_scalar(2.515e-3) \u2014 atmospheric mass splitting \u0394m\u00b2\u2083\u2081 in eV\u00b2 (NuFIT 6.0 NO)"
+      "eml_description": "EML: eml_scalar(2.515e-3) \u2014 atmospheric mass splitting \u0394m\u00b2\u2083\u2081 in eV\u00b2 (NuFIT 6.0 NO)",
+      "diagnostic": "within 1%"
     },
     {
       "path": "nufit.delta_m32_sq_IO",
@@ -3736,15 +3795,17 @@
       "evaluated": 0.20556893116117386,
       "registered": 11.778232154550615,
       "rel_error": 0.9825467074800567,
-      "eml_description": "EML: ops.arcsin(ops.sqrt(ops.inv(eml_scalar(24.0)))) \u2014 \u03b8_C = arcsin(1/\u221a24) from torsion pin geometry"
+      "eml_description": "EML: ops.arcsin(ops.sqrt(ops.inv(eml_scalar(24.0)))) \u2014 \u03b8_C = arcsin(1/\u221a24) from torsion pin geometry",
+      "diagnostic": "rel_err=98.25%"
     },
     {
       "path": "physics.g_residue",
-      "status": "DISAGREE",
-      "evaluated": 3.472222222222486e-303,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.00012321898108661332,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.inv(eml_scalar(288.0)), ops.pow(ops.sin(eml_vec('theta_s')), eml_scalar(4.0))) \u2014 G = sin\u2074(\u03b8_s)/288 (zero-point residue)",
+      "diagnostic": "missing: theta_s",
       "missing_refs": [
         "theta_s"
       ]
@@ -3779,7 +3840,8 @@
       "evaluated": 0.8421605387335602,
       "registered": 0.832,
       "rel_error": 0.012212185977836857,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (Planck 2018)"
+      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (Planck 2018)",
+      "diagnostic": "rel_err=1.22%"
     },
     {
       "path": "pm.version",
@@ -3800,7 +3862,8 @@
       "evaluated": 35.264402292036756,
       "registered": 33.59329049922625,
       "rel_error": 0.049745403560541274,
-      "eml_description": "EML: ops.mul(ops.asin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(3.0)))), eml_scalar(57.2958)) \u2014 \u03b8\u2081\u2082 = arcsin(1/\u221a3) \u2248 33.6\u00b0 (tribimaximal)"
+      "eml_description": "EML: ops.mul(ops.asin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(3.0)))), eml_scalar(57.2958)) \u2014 \u03b8\u2081\u2082 = arcsin(1/\u221a3) \u2248 33.6\u00b0 (tribimaximal)",
+      "diagnostic": "rel_err=4.97%"
     },
     {
       "path": "pmns.theta_13_triality",
@@ -3808,15 +3871,17 @@
       "evaluated": 8.269936388358737,
       "registered": 8.647304725338865,
       "rel_error": 0.04363999523161709,
-      "eml_description": "EML: ops.mul(ops.div(ops.sqrt(ops.mul(eml_scalar(4.0), eml_scalar(3.0))), eml_scalar(24.0)), eml_scalar(57.2958)) \u2014 \u03b8\u2081\u2083 = \u221a(h\u2081\u2081\u00b7n_gen)/b\u2083 \u00d7 rad\u2192deg"
+      "eml_description": "EML: ops.mul(ops.div(ops.sqrt(ops.mul(eml_scalar(4.0), eml_scalar(3.0))), eml_scalar(24.0)), eml_scalar(57.2958)) \u2014 \u03b8\u2081\u2083 = \u221a(h\u2081\u2081\u00b7n_gen)/b\u2083 \u00d7 rad\u2192deg",
+      "diagnostic": "rel_err=4.36%"
     },
     {
       "path": "pmns.theta_23_triality",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 45.00001609038752,
       "registered": 49.75,
       "rel_error": 0.09547706350979862,
       "eml_description": "EML: ops.mul(ops.add(ops.div(eml_pi(), eml_scalar(4.0)), ops.div(eml_vec('theta_g_rad'), eml_scalar(2.0))), eml_scalar(57.2958)) \u2014 \u03b8\u2082\u2083 = \u03c0/4 + \u03b8_g/2 \u2248 49.75\u00b0",
+      "diagnostic": "missing: theta_g_rad",
       "missing_refs": [
         "theta_g_rad"
       ]
@@ -3881,33 +3946,36 @@
     },
     {
       "path": "portals.alp_mass_ev",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 4.708900000000265e+307,
       "registered": 0.003506780042504594,
       "rel_error": "inf",
       "eml_description": "EML: ops.mul(ops.div(ops.pow(eml_scalar(0.217), eml_scalar(2.0)), eml_vec('f_a_alp_gev')), eml_scalar(1.0e9)) \u2014 m_ALP = Lambda_QCD^2 / f_a^ALP (converted to eV) from Face 3 moduli",
+      "diagnostic": "missing: f_a_alp_gev",
       "missing_refs": [
         "f_a_alp_gev"
       ]
     },
     {
       "path": "portals.alp_nucleon_coupling_gev_inv",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 4.0824829046385346e+299,
       "registered": 3.040278955563494e-11,
       "rel_error": "inf",
       "eml_description": "EML: ops.div(eml_vec('geometry.alpha_leak'), eml_vec('f_a_alp_gev')) \u2014 g_aN = alpha_leak / f_a^ALP minimal inter-face leakage nucleon coupling",
+      "diagnostic": "missing: f_a_alp_gev",
       "missing_refs": [
         "f_a_alp_gev"
       ]
     },
     {
       "path": "portals.alp_photon_coupling_gev_inv",
-      "status": "DISAGREE",
-      "evaluated": 3.898484006168001e+299,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 2.93938769133958e+301,
       "registered": 2.9032525449371696e-11,
       "rel_error": "inf",
       "eml_description": "EML: ops.div(ops.mul(eml_vec('geometry.alpha_leak'), eml_scalar(72.0)), ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), eml_vec('f_a_alp_gev'))) \u2014 g_agammagamma = alpha_leak * chi_eff / (24*pi*f_a_ALP) Primakoff coupling",
+      "diagnostic": "missing: f_a_alp_gev",
       "missing_refs": [
         "f_a_alp_gev"
       ]
@@ -3942,11 +4010,12 @@
     },
     {
       "path": "portals.sterile_mixing_sin2_2theta",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 0.041666666666666644,
       "registered": 4.276717531403905e-05,
       "rel_error": 973.267446019257,
-      "eml_description": "EML: ops.pow(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0))), eml_scalar(2.0)) \u2014 sin\u00b2(2\u03b8) = 1/b\u2083 = 1/24 sterile mixing from torsion geometry"
+      "eml_description": "EML: ops.pow(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0))), eml_scalar(2.0)) \u2014 sin\u00b2(2\u03b8) = 1/b\u2083 = 1/24 sterile mixing from torsion geometry",
+      "diagnostic": "off by 10^3"
     },
     {
       "path": "portals.sterile_n_eff_contribution",
@@ -3954,7 +4023,8 @@
       "evaluated": 1.1547137334790544e-06,
       "registered": 4.833118603041767e-05,
       "rel_error": 0.9761083095963686,
-      "eml_description": "EML: ops.mul(eml_scalar(0.027), eml_vec('portals.sterile_mixing_sin2_2theta')) \u2014 \u0394N_eff contribution from sterile neutrino portal"
+      "eml_description": "EML: ops.mul(eml_scalar(0.027), eml_vec('portals.sterile_mixing_sin2_2theta')) \u2014 \u0394N_eff contribution from sterile neutrino portal",
+      "diagnostic": "rel_err=97.61%"
     },
     {
       "path": "predictions.cross_shadow_phase_shift",
@@ -4098,7 +4168,8 @@
       "evaluated": 0.0005925938290422202,
       "registered": 9.063199738292875e-05,
       "rel_error": 5.53846153846147,
-      "eml_description": "EML: ops.div(eml_vec('qed.hartree_variance_j'), eml_scalar(1.3e-30)) \u2014 \u03c3 = variance / CODATA uncertainty (1.3\u00d710\u207b\u00b3\u2070 J)"
+      "eml_description": "EML: ops.div(eml_vec('qed.hartree_variance_j'), eml_scalar(1.3e-30)) \u2014 \u03c3 = variance / CODATA uncertainty (1.3\u00d710\u207b\u00b3\u2070 J)",
+      "diagnostic": "rel_err=553.85%"
     },
     {
       "path": "qed.hartree_variance_j",
@@ -4144,11 +4215,12 @@
     },
     {
       "path": "qed.manifest_molar_gas_constant",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 8.314462618,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('na'), eml_vec('kb')) \u2014 R = N_A * k; invariant under projection since eps factors cancel",
+      "diagnostic": "missing: na, kb",
       "missing_refs": [
         "na",
         "kb"
@@ -4262,36 +4334,33 @@
     },
     {
       "path": "spectral.M_GUT_G2",
-      "status": "DISAGREE",
-      "evaluated": 1.0000000000000118e-150,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 1.2398546184516635e+17,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('b3'))) \u2014 GUT scale from Planck mass divided by sqrt(b3=24) G2 instanton suppression",
+      "diagnostic": "missing: M_Planck",
       "missing_refs": [
-        "M_Planck",
-        "b3"
+        "M_Planck"
       ]
     },
     {
       "path": "spectral.curvature_residue",
-      "status": "DISAGREE",
-      "evaluated": 6.332573977646025e-303,
+      "status": "AGREE",
+      "evaluated": 0.1519817754635067,
       "registered": 0.15198177546350666,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(eml_vec('b3'), ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), eml_scalar(2.0)))",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 1.8262436750051974e-16,
+      "eml_description": "EML: ops.div(eml_vec('b3'), ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), eml_scalar(2.0)))"
     },
     {
       "path": "spectral.euler_residue",
-      "status": "DISAGREE",
-      "evaluated": 0.022448390265645195,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 7.199999999999426e+301,
       "registered": 3.64756261112416,
-      "rel_error": 0.9938456463510227,
+      "rel_error": 1.9739208802177144e+301,
       "eml_description": "EML: ops.div(eml_vec('chi_eff'), ops.mul(ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), ops.div(eml_scalar(3.0), eml_scalar(2.0))), eml_vec('Gamma_3_2')))",
+      "diagnostic": "missing: Gamma_3_2",
       "missing_refs": [
-        "chi_eff",
         "Gamma_3_2"
       ]
     },
@@ -4301,7 +4370,8 @@
       "evaluated": 24.000000000000014,
       "registered": 22.0,
       "rel_error": 0.09090909090909155,
-      "eml_description": "EML: ops.mul(eml_scalar(3.0), ops.mul(eml_scalar(4.0), eml_scalar(2.0))) \u2014 fermionic modes: 3 generations \u00d7 4 particles \u00d7 2 (particle/antiparticle) = 24"
+      "eml_description": "EML: ops.mul(eml_scalar(3.0), ops.mul(eml_scalar(4.0), eml_scalar(2.0))) \u2014 fermionic modes: 3 generations \u00d7 4 particles \u00d7 2 (particle/antiparticle) = 24",
+      "diagnostic": "rel_err=9.09%"
     },
     {
       "path": "spectral.gauge_boson_count",
@@ -4319,19 +4389,21 @@
     },
     {
       "path": "spectral.lambda_max",
-      "status": "DISAGREE",
+      "status": "DISAGREE_SCALE",
       "evaluated": 991.6239458377953,
       "registered": 9.903956072483217e+17,
       "rel_error": 0.999999999999999,
-      "eml_description": "EML: ops.mul(eml_vec('k_gimel'), eml_scalar(80.5)) \u2014 maximum Laplace-Beltrami eigenvalue on G2 manifold, normalized by spectral gap k_gimel"
+      "eml_description": "EML: ops.mul(eml_vec('k_gimel'), eml_scalar(80.5)) \u2014 maximum Laplace-Beltrami eigenvalue on G2 manifold, normalized by spectral gap k_gimel",
+      "diagnostic": "off by 10^-15"
     },
     {
       "path": "spectral.m_nu_1",
-      "status": "DISAGREE",
-      "evaluated": 1.0,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 0.0010000000000000002,
-      "rel_error": 998.9999999999998,
+      "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('lambda_49'), ops.inv(eml_vec('L_compact_sq'))) \u2014 lightest neutrino mass from 49th spectral residue via G2 see-saw mechanism",
+      "diagnostic": "missing: lambda_49, L_compact_sq",
       "missing_refs": [
         "lambda_49",
         "L_compact_sq"
@@ -4339,19 +4411,21 @@
     },
     {
       "path": "spectral.m_nu_2",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.008717797887081349,
       "registered": 0.008671793355471519,
       "rel_error": 0.0053050770151023925,
-      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m21_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 second neutrino mass from solar mass splitting"
+      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m21_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 second neutrino mass from solar mass splitting",
+      "diagnostic": "within 1%"
     },
     {
       "path": "spectral.m_nu_3",
-      "status": "DISAGREE",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.05000999900019992,
       "registered": 0.05015974481593781,
       "rel_error": 0.002985378340487616,
-      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m31_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 third neutrino mass from atmospheric mass splitting"
+      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m31_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 third neutrino mass from atmospheric mass splitting",
+      "diagnostic": "within 1%"
     },
     {
       "path": "spectral.n_eigenvalues",
@@ -4391,15 +4465,17 @@
       "evaluated": 3.0490744683599024e+68,
       "registered": 1e+34,
       "rel_error": 3.0490744683599027e+34,
-      "eml_description": "EML: ops.pow(ops.div(eml_vec('M_GUT_G2'), eml_vec('m_proton')), eml_scalar(4.0)) \u2014 proton lifetime from dimension-6 operator suppressed by M_GUT^4 with G2 instanton factor"
+      "eml_description": "EML: ops.pow(ops.div(eml_vec('M_GUT_G2'), eml_vec('m_proton')), eml_scalar(4.0)) \u2014 proton lifetime from dimension-6 operator suppressed by M_GUT^4 with G2 instanton factor",
+      "diagnostic": "rel_err=3049074468359902922231325578452008960.00%"
     },
     {
       "path": "spectral.volume_residue",
-      "status": "DISAGREE",
-      "evaluated": 0.00014215609203627988,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 1.0,
       "registered": 0.006159589352810603,
-      "rel_error": 0.9769211738163334,
+      "rel_error": 161.34848505667068,
       "eml_description": "EML: ops.div(eml_vec('Vol_V7'), ops.mul(ops.pow(ops.mul(eml_scalar(4.0), eml_pi()), ops.div(eml_scalar(7.0), eml_scalar(2.0))), eml_vec('Gamma_7_2')))",
+      "diagnostic": "missing: Vol_V7, Gamma_7_2",
       "missing_refs": [
         "Vol_V7",
         "Gamma_7_2"
@@ -4407,11 +4483,12 @@
     },
     {
       "path": "spectral.zeta_pole_dim",
-      "status": "DISAGREE",
-      "evaluated": 5.000000000000393e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 3.5,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('d'), eml_scalar(2.0))",
+      "diagnostic": "missing: d",
       "missing_refs": [
         "d"
       ]
@@ -4483,22 +4560,24 @@
     },
     {
       "path": "terminal.restoration_potential",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.5659722222222221,
       "registered": 1.0,
       "rel_error": 0.4340277777777779,
       "eml_description": "EML: ops.div(ops.add(eml_vec('active_residues'), eml_vec('hidden_supports')), eml_vec('ancestral_roots'))",
+      "diagnostic": "missing: active_residues",
       "missing_refs": [
         "active_residues"
       ]
     },
     {
       "path": "terminal.restoration_probability",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
       "registered": 0.8848,
       "rel_error": 0.13019891500904154,
       "eml_description": "EML: ops.sub(eml_scalar(1.0), eml_vec('current_entropy'))",
+      "diagnostic": "missing: current_entropy",
       "missing_refs": [
         "current_entropy"
       ]
@@ -4575,10 +4654,7 @@
       "evaluated": 1.0,
       "registered": 1.0,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.mul(ops.eq(ops.mod(eml_vec('b3'), eml_scalar(24.0)), eml_scalar(0.0)), ops.eq(eml_vec('vacuum_energy'), ops.neg(eml_scalar(1.0)))) \u2014 anomaly cancellation: b3 mod 24 = 0 AND E0 = -1",
-      "missing_refs": [
-        "b3"
-      ]
+      "eml_description": "EML: ops.mul(ops.eq(ops.mod(eml_vec('b3'), eml_scalar(24.0)), eml_scalar(0.0)), ops.eq(eml_vec('vacuum_energy'), ops.neg(eml_scalar(1.0)))) \u2014 anomaly cancellation: b3 mod 24 = 0 AND E0 = -1"
     },
     {
       "path": "topology.b2",
@@ -4602,7 +4678,8 @@
       "evaluated": 27.0,
       "registered": 26.0,
       "rel_error": 0.038461538461538464,
-      "eml_description": "EML: ops.add(eml_scalar(26.0), eml_scalar(1.0)) \u2014 bosonic critical dimension 26 plus timelike fiber = 27 total (or ops.add(b3, eml_scalar(2)) = 26 for the bosonic string)"
+      "eml_description": "EML: ops.add(eml_scalar(26.0), eml_scalar(1.0)) \u2014 bosonic critical dimension 26 plus timelike fiber = 27 total (or ops.add(b3, eml_scalar(2)) = 26 for the bosonic string)",
+      "diagnostic": "rel_err=3.85%"
     },
     {
       "path": "topology.d_over_R",
@@ -4761,7 +4838,8 @@
       "evaluated": 1.5396007178390017,
       "registered": 2.464560334295213,
       "rel_error": 0.375304107424386,
-      "eml_description": "EML: ops.pow(ops.div(eml_scalar(4.0), eml_scalar(3.0)), eml_scalar(1.5)) \u2014 mixing ratio (4/3)^(3/2) \u2248 1.54 from co-assoc/assoc cycle ratio"
+      "eml_description": "EML: ops.pow(ops.div(eml_scalar(4.0), eml_scalar(3.0)), eml_scalar(1.5)) \u2014 mixing ratio (4/3)^(3/2) \u2248 1.54 from co-assoc/assoc cycle ratio",
+      "diagnostic": "rel_err=37.53%"
     },
     {
       "path": "triality.phi_golden",
@@ -4805,14 +4883,11 @@
     },
     {
       "path": "unitary.central_charge",
-      "status": "DISAGREE",
-      "evaluated": -24.0,
+      "status": "AGREE",
+      "evaluated": 0.0,
       "registered": 0.0,
-      "rel_error": 24.0,
-      "eml_description": "EML: ops.add(ops.add(eml_vec('b3'), eml_scalar(2.0)), ops.neg(eml_scalar(26.0))) \u2014 central charge c = b\u2083 + 2 \u2212 26 = 0 (Weyl anomaly cancellation)",
-      "missing_refs": [
-        "b3"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.add(ops.add(eml_vec('b3'), eml_scalar(2.0)), ops.neg(eml_scalar(26.0))) \u2014 central charge c = b\u2083 + 2 \u2212 26 = 0 (Weyl anomaly cancellation)"
     },
     {
       "path": "unitary.is_ghost_free",
@@ -4830,11 +4905,12 @@
     },
     {
       "path": "vacuum.bounce_action",
-      "status": "DISAGREE",
-      "evaluated": 133.2396594147091,
+      "status": "DISAGREE_SCALE",
+      "evaluated": 1.0,
       "registered": 10000000000.0,
-      "rel_error": 0.999999986676034,
+      "rel_error": 0.9999999999,
       "eml_description": "EML: ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
+      "diagnostic": "off by 10^-10",
       "missing_refs": [
         "sigma",
         "epsilon"
@@ -4844,17 +4920,18 @@
       "path": "vacuum.instability_scale_pm",
       "status": "SKIP",
       "reason": "non-finite value",
-      "evaluated": 2.7182818284591097e-300,
+      "evaluated": 0.0,
       "registered": "inf",
       "eml_description": "EML: ops.mul(eml_vec('Lambda_I_SM'), ops.exp(ops.div(eml_vec('delta_lambda_G2'), eml_vec('beta_coeff_sm'))))"
     },
     {
       "path": "vacuum.instability_scale_sm",
-      "status": "DISAGREE",
-      "evaluated": 2.6926047849487124e-289,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 36214886.378817104,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
+      "diagnostic": "missing: Lambda_I_SM, delta_lambda_G2, beta_coeff_sm",
       "missing_refs": [
         "Lambda_I_SM",
         "delta_lambda_G2",
@@ -4866,11 +4943,12 @@
     },
     {
       "path": "vacuum.is_stable",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 1.0,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('bounce_gt_crit'), eml_vec('instability_gt_MP'))",
+      "diagnostic": "missing: bounce_gt_crit, instability_gt_MP",
       "missing_refs": [
         "bounce_gt_crit",
         "instability_gt_MP"
@@ -4878,11 +4956,12 @@
     },
     {
       "path": "vacuum.lambda_ew",
-      "status": "DISAGREE",
-      "evaluated": 0.5000000000000275,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 1.0,
       "registered": 0.12892061895276025,
-      "rel_error": 2.878355565320704,
+      "rel_error": 6.756711130640981,
       "eml_description": "EML: ops.div(ops.pow(eml_vec('m_H'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0))))",
+      "diagnostic": "missing: m_H, v_ew",
       "missing_refs": [
         "m_H",
         "v_ew"
@@ -4890,11 +4969,12 @@
     },
     {
       "path": "vacuum.lambda_gut",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 0.16021764696232305,
       "rel_error": 1.0,
       "eml_description": "EML: ops.add(eml_vec('lambda_MZ'), ops.add(ops.mul(eml_vec('beta_coeff'), eml_vec('log_MGUT_over_MZ')), eml_vec('delta_lambda_G2')))",
+      "diagnostic": "missing: lambda_MZ, beta_coeff, log_MGUT_over_MZ",
       "missing_refs": [
         "lambda_MZ",
         "beta_coeff",
@@ -4904,11 +4984,12 @@
     },
     {
       "path": "vacuum.lambda_planck",
-      "status": "DISAGREE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
       "registered": 0.18998395850462166,
       "rel_error": 1.0,
       "eml_description": "EML: ops.add(eml_vec('lambda_gut_pm'), ops.mul(eml_vec('beta_pm_above_gut'), eml_vec('log_MP_over_MGUT')))",
+      "diagnostic": "missing: lambda_gut_pm, beta_pm_above_gut, log_MP_over_MGUT",
       "missing_refs": [
         "lambda_gut_pm",
         "beta_pm_above_gut",
@@ -5027,11 +5108,12 @@
     },
     {
       "path": "yukawa.jarlskog_geometric",
-      "status": "DISAGREE",
-      "evaluated": 5.000000000000393e-301,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 9.925401841510336e-06,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.sin(ops.div(eml_pi(), eml_scalar(6.0))), ops.mul(eml_vec('lambda_12'), ops.mul(eml_vec('lambda_23'), ops.pow(eml_vec('lambda_13'), eml_scalar(2.0))))) \u2014 J = sin(\u03c0/6)\u00b7\u03bb_12\u00b7\u03bb_23\u00b7\u03bb_13\u00b2 Jarlskog invariant from G\u2082 triality phase",
+      "diagnostic": "missing: lambda_12, lambda_23, lambda_13",
       "missing_refs": [
         "lambda_12",
         "lambda_23",

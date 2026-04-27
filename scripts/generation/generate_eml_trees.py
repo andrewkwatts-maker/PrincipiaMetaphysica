@@ -46,7 +46,7 @@ def main() -> None:
 
     formulas: dict = data.get("formulas", data)
 
-    trees: dict = {}
+    entries: dict = {}
     n_ok = n_err = n_skip = 0
 
     for fid, formula in formulas.items():
@@ -55,15 +55,24 @@ def main() -> None:
             n_skip += 1
             continue
         try:
-            tree = parse_eml_tree(expr, pure_eml=True)
-            trees[fid] = tree.to_dict()
+            # pure-eml tree (binary eml(L, R) primitive throughout) for the SVG renderer
+            pure_tree = parse_eml_tree(expr, pure_eml=True)
+            # compact-mode tree → drives LaTeX rendering (preserves operator labels)
+            compact_tree = parse_eml_tree(expr, expand_eml=False)
+            entries[fid] = {
+                "tree":  pure_tree.to_dict(),
+                "latex": compact_tree.to_latex(),
+            }
             n_ok += 1
         except (ParseError, Exception) as exc:
-            trees[fid] = {"label": f"<error: {exc}>", "kind": "unknown"}
+            entries[fid] = {
+                "tree":  {"label": f"<error: {exc}>", "kind": "unknown"},
+                "latex": "",
+            }
             n_err += 1
 
     with open(OUTPUT_JSON, "w", encoding="utf-8") as f:
-        json.dump(trees, f, ensure_ascii=False, indent=2)
+        json.dump(entries, f, ensure_ascii=False, indent=2)
 
     print(f"EML tree generation complete:")
     print(f"  Parsed:  {n_ok}")

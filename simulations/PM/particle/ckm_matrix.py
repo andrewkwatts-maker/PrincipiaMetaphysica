@@ -1050,7 +1050,7 @@ class CKMMatrixSimulation(SimulationBase):
                     "~ 0.040 from geometric overlap structure. "
                     f"PDG 2024: {self.PDG_V_ts} ± {self.PDG_V_ts_err} from B_s mixing."
                 ),
-                eml_description="EML: ops.neg(ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0)))) — V_ts ≈ −Aλ² from Wolfenstein parametrization",
+                eml_description="EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0))) — |V_ts| ≈ Aλ² from Wolfenstein parametrization (PDG magnitude convention)",
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_ts,
                 uncertainty=self.PDG_V_ts_err,
