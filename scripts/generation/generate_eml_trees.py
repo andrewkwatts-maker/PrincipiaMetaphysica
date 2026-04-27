@@ -55,7 +55,7 @@ def main() -> None:
             n_skip += 1
             continue
         try:
-            tree = parse_eml_tree(expr)
+            tree = parse_eml_tree(expr, expand_eml=True)
             trees[fid] = tree.to_dict()
             n_ok += 1
         except (ParseError, Exception) as exc:
