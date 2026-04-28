@@ -731,7 +731,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 # Geometric constants
                 "k_gimel": (
                     "EML: ops.add(ops.div(eml_vec('elder_kads'), eml_scalar(2.0)),"
-                    " ops.div(eml_scalar(1.0), eml_scalar(3.14159265358979)))"
+                    " ops.div(eml_scalar(1.0), eml_pi()))"
                     " — spectral gap k_gimel = b₃/2 + 1/π ≈ 12.318"
                 ),
                 "c_kaf": (
@@ -751,7 +751,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "delta_lamed": (
                     "EML: ops.div(ops.log(eml_vec('k_gimel')),"
                     " ops.div(ops.mul(eml_scalar(2.0),"
-                    " eml_scalar(3.14159265358979)), eml_vec('elder_kads')))"
+                    " eml_pi()), eml_vec('elder_kads')))"
                     " — threshold correction δ_lamed = ln(k_gimel) / (2π/b₃)"
                 ),
                 "k_matching": (
@@ -947,7 +947,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "M_star": (
                     "EML: ops.div(eml_vec('m_planck_4d'),"
                     " ops.sqrt(ops.mul(eml_scalar(8.0),"
-                    " eml_scalar(3.14159265358979))))"
+                    " eml_pi())))"
                     " — reduced Planck mass M* = M_Pl/√(8π) ≈ 2.44×10¹⁸ GeV"
                 ),
                 "tau_proton": (
@@ -957,7 +957,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 # Thermal time / modified gravity
                 "alpha_T": (
                     "EML: ops.div(ops.mul(eml_scalar(2.0),"
-                    " ops.mul(eml_scalar(3.14159265358979), eml_vec('k_gimel'))),"
+                    " ops.mul(eml_pi(), eml_vec('k_gimel'))),"
                     " ops.sub(eml_vec('elder_kads'), eml_scalar(1.0)))"
                     " — thermal time scaling α_T = 2π k_gimel/(b₃-1) ≈ 3.36"
                 ),
@@ -1047,7 +1047,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                     " — LISA typical wavenumber k ≈ 10⁻³ rad/m (milliHertz band)"
                 ),
                 "theta_45deg": (
-                    "EML: ops.div(eml_scalar(3.14159265358979), eml_scalar(4.0))"
+                    "EML: ops.div(eml_pi(), eml_scalar(4.0))"
                     " — 45° in radians = π/4 ≈ 0.7854"
                 ),
                 # Swampland / landscape
@@ -1088,7 +1088,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                     " ops.div(eml_vec('elder_kads'), eml_vec('phi'))),"
                     " ops.div(eml_vec('phi'),"
                     " ops.mul(eml_scalar(4.0),"
-                    " eml_scalar(3.14159265358979))))"
+                    " eml_pi())))"
                     " — fine structure constant inverse α⁻¹ = k_gimel² - b₃/φ + φ/(4π)"
                     " ≈ 137.037 (Cert C02)"
                 ),
@@ -1096,12 +1096,12 @@ class GeometricAnchorsSimulation(SimulationBase):
                     "EML: ops.mul("
                     " ops.div(eml_vec('k_gimel'),"
                     " ops.add(ops.mul(eml_vec('elder_kads'),"
-                    " ops.add(eml_scalar(3.14159265358979), eml_scalar(1.0))),"
+                    " ops.add(eml_pi(), eml_scalar(1.0))),"
                     " ops.div(eml_vec('k_gimel'), eml_scalar(2.0)))),"
                     " ops.add(eml_scalar(1.0),"
                     " ops.div(eml_scalar(1.0),"
                     " ops.mul(eml_vec('elder_kads'),"
-                    " eml_scalar(3.14159265358979)))))"
+                    " eml_pi()))))"
                     " — strong coupling αs(MZ) ≈ 0.1182 (Cert C03)"
                 ),
                 "sin2_theta_W": (
@@ -1123,7 +1123,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "mu_pe": (
                     "EML: ops.div("
                     " ops.mul(ops.pow(eml_vec('c_kaf'), eml_scalar(2.0)),"
-                    " ops.div(eml_vec('k_gimel'), eml_scalar(3.14159265358979))),"
+                    " ops.div(eml_vec('k_gimel'), eml_pi())),"
                     " ops.mul(eml_scalar(1.5427972),"
                     " ops.add(eml_scalar(1.0),"
                     " ops.div(eml_scalar(0.57721566), eml_vec('elder_kads')))))"
@@ -1141,13 +1141,13 @@ class GeometricAnchorsSimulation(SimulationBase):
                     " ops.add(eml_scalar(1.0),"
                     " ops.div(ops.div(eml_scalar(1.0), eml_vec('alpha_inverse')),"
                     " ops.mul(eml_scalar(2.0),"
-                    " eml_scalar(3.14159265358979)))))"
+                    " eml_pi()))))"
                     " — Schwinger-corrected Fermi constant G_F × (1+α/2π) (Cert C08b)"
                 ),
                 "T_CMB": (
                     "EML: ops.div(ops.mul(eml_vec('phi'), eml_vec('k_gimel')),"
                     " ops.add(ops.mul(eml_scalar(2.0),"
-                    " eml_scalar(3.14159265358979)), eml_scalar(1.0)))"
+                    " eml_pi()), eml_scalar(1.0)))"
                     " — CMB temperature T_CMB = φ k_gimel/(2π+1) ≈ 2.737 K (Cert C18)"
                 ),
                 "eta_baryon": (
@@ -1185,7 +1185,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "sum_m_nu": (
                     "EML: ops.div(eml_vec('k_gimel'),"
                     " ops.mul(ops.mul(eml_scalar(2.0),"
-                    " eml_scalar(3.14159265358979)), eml_vec('elder_kads')))"
+                    " eml_pi()), eml_vec('elder_kads')))"
                     " — neutrino mass sum Σmν = k_gimel/(2π b₃) ≈ 0.082 eV"
                     " (Hopf fibration, DESI 2025)"
                 ),

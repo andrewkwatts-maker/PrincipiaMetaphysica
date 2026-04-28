@@ -91,7 +91,7 @@ def eml_compute(expr: "EMLPoint") -> float:
 def eml_pi() -> "EMLPoint":
     """π as an EMLPoint literal."""
     require_eml()
-    return eml_scalar(math.pi)
+    return eml_pi()
 
 
 def eml_e() -> "EMLPoint":
