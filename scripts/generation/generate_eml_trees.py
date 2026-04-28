@@ -55,19 +55,22 @@ def main() -> None:
             n_skip += 1
             continue
         try:
-            # pure-eml tree (binary eml(L, R) primitive throughout) for the SVG renderer
+            # pure-eml tree (binary eml(L, R) primitive throughout) for the operator-tree SVG
             pure_tree = parse_eml_tree(expr, pure_eml=True)
-            # compact-mode tree → drives LaTeX rendering (preserves operator labels)
+            # compact-mode tree → drives LaTeX rendering and the flow diagram
+            #   (preserves operator labels — gives the cleanest top-down flow view)
             compact_tree = parse_eml_tree(expr, expand_eml=False)
             entries[fid] = {
-                "tree":  pure_tree.to_dict(),
-                "latex": compact_tree.to_latex(),
+                "tree":     pure_tree.to_dict(),
+                "latex":    compact_tree.to_latex(),
+                "flow_svg": compact_tree.flow_svg(width=720, height=440),
             }
             n_ok += 1
         except (ParseError, Exception) as exc:
             entries[fid] = {
-                "tree":  {"label": f"<error: {exc}>", "kind": "unknown"},
-                "latex": "",
+                "tree":     {"label": f"<error: {exc}>", "kind": "unknown"},
+                "latex":    "",
+                "flow_svg": "",
             }
             n_err += 1
 
