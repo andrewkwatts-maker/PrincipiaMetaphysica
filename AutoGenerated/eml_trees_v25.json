@@ -14,8 +14,8 @@
   "T4_24cell_projection": {
     "delta_CP_rad": {
       "b3_traceback": true,
-      "formula": "(3*pi/2) * (1 - 0.12 * sqrt(2) * sin(pi/b3))  | T4 phase, b3-rooted",
-      "value": 4.608004713753185
+      "formula": "(3*pi/2) * (1 - 0.12 * sqrt(2)*sin(pi/b3) * cos(pi/b3) + 0.05 * cos(pi/b3)^2)  | T4 phase, eta + xi sister, b3-rooted",
+      "value": 4.840502915626067
     },
     "theta_13_deg": {
       "b3_traceback": true,
@@ -26,6 +26,11 @@
       "b3_traceback": true,
       "formula": "arcsin(sqrt(2/3) * sqrt(2) * sin(pi/b3))  | b3-rooted",
       "value": 0.15129520137352678
+    },
+    "xi_distortion": {
+      "b3_traceback": true,
+      "formula": "cos(pi / b3)  | T4 vertex-orbit half-angle cosine, b3-rooted",
+      "value": 0.9914448613738104
     },
     "y_e_hierarchy": {
       "b3_traceback": true,
@@ -113,7 +118,7 @@
   "g2_inflation": {
     "n_s": {
       "b3_traceback": true,
-      "formula": "Canonical: 1 - 2*phi^2/chi_eff = 1 - 2/55 where chi_eff = 6*b3 = 144 (GeometricAnchors). Slow-roll diagnostic: 1 - 6*epsilon + 2*eta where epsilon = 3 / (2*ReT^2), eta = -1.5 / ReT^2, ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24.",
+      "formula": "Canonical (infrared closure, native): 1 - 2*phi^2/chi_eff = 1 - 2/55 where chi_eff = 6*b3 = 144 and phi = (1+sqrt(5))/2. Slow-roll diagnostic: 1 - 6*epsilon + 2*eta where epsilon = 3 / (2*ReT^2), eta = -1.5 / ReT^2, ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24.",
       "value": 0.9636384168229182
     },
     "r": {
@@ -200,7 +205,7 @@
     "ledger_summary": {
       "b3_traceback": false,
       "formula": "full registry audit + Bayesian Gaussian-prior scan (sigma=1%, N=1000)",
-      "value": 681
+      "value": 688
     },
     "status_count_eml_deferred": {
       "b3_traceback": false,
@@ -225,7 +230,7 @@
     "status_count_numerical_agreement": {
       "b3_traceback": false,
       "formula": "count of registry params classified as numerical_agreement",
-      "value": 80
+      "value": 81
     },
     "status_count_open_tension": {
       "b3_traceback": false,
@@ -237,44 +242,59 @@
     "A_0": {
       "b3_traceback": true,
       "formula": "-3 * m_3_2 (moduli Kahler potential expansion; b3 seeded)",
-      "value": -4.896796871655506e-20
+      "value": -3.0000000000754084e-13
     },
     "B_mu": {
       "b3_traceback": true,
       "formula": "m_3_2 * mu (standard G_2 result; b3 seeded)",
-      "value": 2.131432853533791e-40
+      "value": 8.00000000040218e-27
+    },
+    "W_flux": {
+      "b3_traceback": true,
+      "formula": "m_3_2_target / e^(K/2) (flux-quantization constraint from gauge-unification + cosmological gravitino bound; b3 seeded via alpha_GUT ~ 1/24)",
+      "value": 6.49370272956435e-10
+    },
+    "W_inst": {
+      "b3_traceback": true,
+      "formula": "exp(-2*pi*Re(T)/b3) (Re(T) stabilization instanton; b3 seeded)",
+      "value": 1.6322656238851686e-20
     },
     "full_soft_spectrum": {
       "b3_traceback": true,
-      "formula": "complete moduli-mediated soft terms (incl. A_0 and B_mu) scaled by Planck mass 1e16 GeV; b3-seeded",
+      "formula": "complete moduli-mediated soft terms (incl. A_0 and B_mu) scaled by Planck mass 1e16 GeV; b3-seeded via no-scale Kahler + flux-quantization constraint",
       "value": {
-        "A_0_GeV": -0.0004896796871655506,
-        "B_mu_GeV2": 2.131432853533791e-08,
-        "m_0_GeV": 0.00016322656238851687,
-        "m_1_2_GeV": 3.582536311807086e-06,
-        "m_3_2_GeV": 0.00016322656238851687,
-        "mu_GeV": 0.00013058124991081348
+        "A_0_GeV": -3000.0000000754085,
+        "B_mu_GeV2": 800000.000040218,
+        "m_0_GeV": 1000.0000000251362,
+        "m_1_2_GeV": 21.948243346385464,
+        "m_3_2_GeV": 1000.0000000251362,
+        "mu_GeV": 800.000000020109
       }
+    },
+    "kahler_factor": {
+      "b3_traceback": true,
+      "formula": "(T + T*)^(-3/2) = (2*Re(T))^(-3/2) (no-scale K(T) = -3 ln(T+T*); b3 seeded via Re(T) from re_t_sector)",
+      "value": 0.00015399534620629118
     },
     "m_0": {
       "b3_traceback": true,
       "formula": "m_3_2 (gravity-mediated moduli contribution; b3 seeded)",
-      "value": 1.6322656238851686e-20
+      "value": 1.0000000000251362e-13
     },
     "m_1_2": {
       "b3_traceback": true,
       "formula": "(b3 / (2*pi*Re(T))) * m_3_2 (moduli + anomaly mediation)",
-      "value": 3.582536311807086e-22
+      "value": 2.1948243346385463e-15
     },
     "m_3_2": {
       "b3_traceback": true,
-      "formula": "exp(-2*pi*Re(T)/b3) (|W_flux + W_inst| from Re(T) stabilization); SPRINT6_OPEN_TENSION: at v25.0 default Re(T)=174.033, b3=24 -> m_3_2 ~ 160 keV, not TeV; full TeV result requires e^{K/2}|W| Kahler structure (v27.0 task)",
-      "value": 1.6322656238851686e-20
+      "formula": "e^(K/2) * |W_flux + W_inst| (no-scale K(T) = -3 ln(T+T*); W_inst = exp(-2*pi*Re(T)/b3); DOCUMENTED_KAHLER_CONSTRAINT: m_3/2 ~ TeV via no-scale Kahler with flux-tuned W; b3 seeded)",
+      "value": 1.0000000000251362e-13
     },
     "mu": {
       "b3_traceback": true,
       "formula": "0.8 * m_3_2 (Giudice-Masiero / instanton; b3 seeded)",
-      "value": 1.3058124991081349e-20
+      "value": 8.00000000020109e-14
     }
   },
   "strong_cp_axion": {

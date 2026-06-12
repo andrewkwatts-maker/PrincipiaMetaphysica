@@ -1,16 +1,16 @@
 {
-  "total": 687,
-  "with_eml_description": 504,
-  "skip": 216,
+  "total": 688,
+  "with_eml_description": 503,
+  "skip": 218,
   "buckets": {
-    "AGREE": 347,
+    "AGREE": 346,
     "AGREE_LOOSE": 10,
     "DISAGREE": 49,
     "DISAGREE_MISSING_CTX": 58,
     "DISAGREE_SCALE": 7
   },
-  "agreement_rate_strict": 0.7367303609341825,
-  "agreement_rate_loose": 0.7579617834394905,
+  "agreement_rate_strict": 0.7361702127659574,
+  "agreement_rate_loose": 0.7574468085106383,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -803,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.790411079213009,
-      "rel_error": 0.95551279813658,
+      "registered": 7.764933823535628,
+      "rel_error": 0.9553668327179424,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.55%"
+      "diagnostic": "rel_err=95.54%"
     },
     {
       "path": "consciousness.neuron_count",
@@ -1277,8 +1277,8 @@
     {
       "path": "cosmology.eta_baryon_pred",
       "status": "AGREE",
-      "evaluated": 6e-10,
-      "registered": 6e-10,
+      "evaluated": 6.185164569435048e-10,
+      "registered": 6.185164569435048e-10,
       "rel_error": 0.0,
       "eml_description": "EML: eml_vec('geometry.eta_baryon')"
     },
@@ -2706,11 +2706,10 @@
     },
     {
       "path": "geometry.eta_baryon",
-      "status": "AGREE",
-      "evaluated": 5.999999999999995e-10,
-      "registered": 6e-10,
-      "rel_error": 8.616464714094038e-16,
-      "eml_description": "EML: ops.div(eml_vec('elder_kads'), ops.mul(eml_scalar(4.0), eml_scalar(1e10))) \u2014 baryon/photon ratio \u03b7 = b\u2083/(4\u00d710\u00b9\u2070) = 6.0\u00d710\u207b\u00b9\u2070"
+      "status": "ERROR",
+      "reason": "Failed to evaluate EML expression \"ops.mul(ops.div(J_jarlskog, ops.mul(eml_scalar(2.0), ops.sub(eml_vec('elder_kads'), eml_scalar(14.0)))), ops.mul(ops.mul(eml_scalar(0.12), eml_vec('elder_kads')), ops.mul(ops.div(eml_vec('elder_kads'), eml_scalar(72.0)), ops.mul(ops.sin(ops.div(eml_pi(), eml_scalar(6.0))), ops.exp(ops.neg(eml_scalar(7.086)))))))\": name 'J_jarlskog' is not defined",
+      "registered": 6.185164569435048e-10,
+      "eml_description": "EML: ops.mul(ops.div(J_jarlskog, ops.mul(eml_scalar(2.0), ops.sub(eml_vec('elder_kads'), eml_scalar(14.0)))), ops.mul(ops.mul(eml_scalar(0.12), eml_vec('elder_kads')), ops.mul(ops.div(eml_vec('elder_kads'), eml_scalar(72.0)), ops.mul(ops.sin(ops.div(eml_pi(), eml_scalar(6.0))), ops.exp(ops.neg(eml_scalar(7.086))))))) \u2014 Sprint T4 #6 canonical: \u03b7_B = (J/N_eff) \u00d7 \u0394b\u2083 \u00d7 (b\u2083/\u03c7_eff) \u00d7 sin(\u03b4_CP) \u00d7 exp(-Re(T)) \u2248 6.185\u00d710\u207b\u00b9\u2070"
     },
     {
       "path": "geometry.f_heh",

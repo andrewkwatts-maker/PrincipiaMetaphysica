@@ -343,9 +343,162 @@
     line-height: 1.6;
 }
 
+/* ─────────────────────────────────────
+   Kill criteria + Bayesian band (T3.6)
+───────────────────────────────────── */
+.falsification-detail {
+    background: rgba(10, 10, 20, 0.55);
+    border: 1px solid rgba(255, 90, 150, 0.30);
+    border-left: 4px solid #ff5a96;
+    border-radius: 14px;
+    padding: 1.5rem 1.7rem;
+    margin: 2.5rem 0;
+}
+
+.falsification-detail h2 {
+    color: #ff7eb6;
+    margin: 0 0 0.7rem;
+    font-size: 1.25rem;
+}
+
+.falsification-detail h3 {
+    color: var(--accent-primary, #8b7fff);
+    margin: 1.4rem 0 0.5rem;
+    font-size: 1.05rem;
+}
+
+.bayes-band-wrap {
+    background: rgba(255, 90, 150, 0.05);
+    border: 1px solid rgba(255, 90, 150, 0.25);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0 1.5rem;
+}
+
+.bayes-band-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-bottom: 0.9rem;
+}
+
+.bayes-band-title {
+    color: #ff7eb6;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.bayes-band-source {
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.82rem;
+}
+
+.bayes-band-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.6rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.bayes-band-cell {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid #ff5a96;
+    border-radius: 6px;
+    padding: 0.55rem 0.8rem;
+}
+
+.bayes-band-cell .label {
+    display: block;
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.2rem;
+}
+
+.bayes-band-cell .value {
+    display: block;
+    color: var(--text-primary, #f5f5fb);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.92rem;
+    font-weight: 600;
+}
+
+.bayes-band-svg {
+    width: 100%;
+    height: auto;
+    max-height: 110px;
+    display: block;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
+}
+
+.kill-outcomes {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.kill-outcomes li {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid rgba(139, 127, 255, 0.45);
+    border-radius: 6px;
+    padding: 0.7rem 0.95rem;
+    margin: 0.5rem 0;
+    line-height: 1.55;
+}
+
+.verdict-confirm  { color: #5dd692; font-weight: 700; }
+.verdict-kill     { color: #ff5a5a; font-weight: 700; }
+.verdict-marginal { color: #ffb833; font-weight: 700; }
+
+/* ─────────────────────────────────────
+   IAXO Timeline graphic
+───────────────────────────────────── */
+.iaxo-timeline {
+    background: rgba(10, 10, 20, 0.55);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 14px;
+    padding: 1.5rem 1.7rem;
+    margin: 2.5rem 0;
+}
+
+.iaxo-timeline h2 {
+    color: var(--accent-primary, #8b7fff);
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
+}
+
+.iaxo-timeline .caption {
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+}
+
+.iaxo-timeline-svg {
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    display: block;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    margin: 0.5rem 0 1rem;
+}
+
+.timeline-note {
+    color: var(--text-secondary, #c9c9d6);
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin: 0.6rem 0 0;
+}
+
 @media (max-width: 720px) {
     .falsification-container { padding: 1.2rem; }
     .prediction-grid { grid-template-columns: 1fr; }
     .sensitivity-table { font-size: 0.84rem; }
     .sensitivity-table th, .sensitivity-table td { padding: 0.5rem 0.55rem; }
+    .bayes-band-grid { grid-template-columns: 1fr; }
+    .falsification-detail, .iaxo-timeline { padding: 1.2rem; }
 }
