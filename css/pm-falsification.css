@@ -1,0 +1,351 @@
+/*
+ * Principia Metaphysica - Falsification page styles
+ *
+ * BabyIAXO 2028 / IAXO 2030 kill-shot sensitivity page.
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+ */
+
+.falsification-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+    color: var(--text-secondary, #c9c9d6);
+    line-height: 1.7;
+}
+
+/* ─────────────────────────────────────
+   Headline & headline strip
+───────────────────────────────────── */
+.fals-headline {
+    text-align: center;
+    margin: 1.5rem 0 0.5rem;
+    font-size: clamp(1.6rem, 3.2vw, 2.1rem);
+    line-height: 1.3;
+    color: var(--text-primary, #f5f5fb);
+}
+
+.fals-headline .seed-chip {
+    display: inline-block;
+    padding: 0.1rem 0.55rem;
+    border-radius: 6px;
+    background: rgba(139, 127, 255, 0.18);
+    color: var(--accent-primary, #8b7fff);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 700;
+    font-size: 0.95em;
+}
+
+.fals-subhead {
+    text-align: center;
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+}
+
+/* ─────────────────────────────────────
+   Banner (FALSIFIABLE / awaiting IAXO)
+───────────────────────────────────── */
+.fals-banner {
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    margin: 1.5rem 0 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    border: 2px solid transparent;
+}
+
+.fals-banner .banner-mark {
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.fals-banner.banner-falsifiable {
+    background: rgba(80, 200, 120, 0.10);
+    border-color: rgba(80, 200, 120, 0.55);
+    color: #5dd692;
+}
+
+.fals-banner.banner-awaiting {
+    background: rgba(255, 180, 50, 0.10);
+    border-color: rgba(255, 180, 50, 0.55);
+    color: #ffb833;
+}
+
+.fals-banner.banner-loading {
+    background: rgba(139, 127, 255, 0.08);
+    border-color: rgba(139, 127, 255, 0.35);
+    color: var(--accent-primary, #8b7fff);
+}
+
+/* ─────────────────────────────────────
+   Prediction block
+───────────────────────────────────── */
+.prediction-block {
+    background: rgba(10, 10, 20, 0.55);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 14px;
+    padding: 1.5rem 1.7rem;
+    margin: 1.5rem 0;
+}
+
+.prediction-block h2 {
+    margin: 0 0 1rem;
+    color: var(--accent-primary, #8b7fff);
+    font-size: 1.25rem;
+    letter-spacing: 0.02em;
+}
+
+.prediction-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem 1.5rem;
+}
+
+.prediction-cell {
+    background: rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--accent-primary, #8b7fff);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+}
+
+.prediction-cell .label {
+    display: block;
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.3rem;
+}
+
+.prediction-cell .value {
+    display: block;
+    color: var(--text-primary, #f5f5fb);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.prediction-cell .units {
+    font-size: 0.85rem;
+    color: var(--text-muted, #8a8a9a);
+    margin-left: 0.3rem;
+    font-weight: 400;
+}
+
+/* ─────────────────────────────────────
+   Sensitivity matrix
+───────────────────────────────────── */
+.sensitivity-section {
+    margin: 2.5rem 0;
+}
+
+.sensitivity-section h2 {
+    color: var(--accent-primary, #8b7fff);
+    margin-bottom: 0.5rem;
+}
+
+.sensitivity-section .caption {
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+}
+
+.sensitivity-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 0.93rem;
+}
+
+.sensitivity-table th {
+    background: rgba(139, 127, 255, 0.14);
+    color: var(--accent-primary, #8b7fff);
+    text-align: left;
+    padding: 0.7rem 0.95rem;
+    border-bottom: 2px solid rgba(139, 127, 255, 0.3);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.03em;
+}
+
+.sensitivity-table td {
+    padding: 0.65rem 0.95rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary, #c9c9d6);
+    vertical-align: top;
+}
+
+.sensitivity-table tr.row-prediction {
+    background: rgba(139, 127, 255, 0.07);
+}
+
+.sensitivity-table tr.row-prediction td {
+    color: var(--text-primary, #f5f5fb);
+    font-weight: 600;
+}
+
+.sensitivity-table td.numeric {
+    font-family: 'Source Code Pro', monospace;
+    white-space: nowrap;
+}
+
+.verdict-reach    { color: #5dd692; font-weight: 600; }
+.verdict-out      { color: #ffb833; font-weight: 600; }
+.verdict-wrongmass { color: #ff7eb6; font-weight: 600; }
+.verdict-future   { color: #8b7fff; font-weight: 600; }
+
+/* ─────────────────────────────────────
+   SVG plot
+───────────────────────────────────── */
+.fals-plot-wrap {
+    background: rgba(10, 10, 20, 0.55);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 14px;
+    padding: 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.fals-plot-wrap h2 {
+    color: var(--accent-primary, #8b7fff);
+    margin: 0 0 0.5rem;
+}
+
+.fals-plot-wrap .plot-caption {
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+}
+
+#fals-svg {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    display: block;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+#fals-svg .axis-line {
+    stroke: rgba(255, 255, 255, 0.35);
+    stroke-width: 1.2;
+    fill: none;
+}
+
+#fals-svg .grid-line {
+    stroke: rgba(255, 255, 255, 0.07);
+    stroke-width: 1;
+    fill: none;
+}
+
+#fals-svg .axis-label {
+    fill: var(--text-secondary, #c9c9d6);
+    font-family: sans-serif;
+    font-size: 12px;
+}
+
+#fals-svg .tick-label {
+    fill: var(--text-muted, #8a8a9a);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+}
+
+#fals-svg .annotation {
+    fill: var(--text-primary, #f5f5fb);
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+#fals-svg .babyiaxo-region {
+    fill: url(#babyiaxoHatch);
+    stroke: rgba(80, 200, 120, 0.85);
+    stroke-width: 1.5;
+    stroke-dasharray: 5 3;
+}
+
+#fals-svg .iaxo-region {
+    fill: rgba(139, 127, 255, 0.06);
+    stroke: rgba(139, 127, 255, 0.65);
+    stroke-width: 1.3;
+    stroke-dasharray: 3 4;
+}
+
+#fals-svg .prediction-point {
+    fill: #ff6b9d;
+    stroke: white;
+    stroke-width: 2;
+}
+
+#fals-svg .prediction-errorbar {
+    stroke: #ff6b9d;
+    stroke-width: 2;
+    fill: none;
+}
+
+#fals-svg .legend-text {
+    fill: var(--text-secondary, #c9c9d6);
+    font-family: sans-serif;
+    font-size: 11px;
+}
+
+/* ─────────────────────────────────────
+   Trace-to-b₃
+───────────────────────────────────── */
+.trace-block {
+    background: rgba(80, 200, 120, 0.06);
+    border: 1px solid rgba(80, 200, 120, 0.28);
+    border-left: 4px solid #50c878;
+    border-radius: 10px;
+    padding: 1.2rem 1.5rem;
+    margin: 2.5rem 0;
+}
+
+.trace-block h3 {
+    color: #5dd692;
+    margin: 0 0 0.6rem;
+    font-size: 1.05rem;
+}
+
+.trace-chain {
+    font-family: 'Source Code Pro', monospace;
+    color: var(--text-primary, #f5f5fb);
+    font-size: 0.92rem;
+    line-height: 1.9;
+    margin: 0.6rem 0;
+}
+
+.trace-chain .arrow { color: var(--accent-primary, #8b7fff); margin: 0 0.4rem; }
+.trace-chain .seed  { color: #50c878; font-weight: 700; }
+.trace-chain .obs   { color: #ff6b9d; font-weight: 700; }
+
+.trace-block .ref-links a {
+    color: var(--accent-primary, #8b7fff);
+    text-decoration: none;
+    margin-right: 1.2rem;
+    border-bottom: 1px dotted rgba(139, 127, 255, 0.4);
+}
+
+.trace-block .ref-links a:hover {
+    color: #b4a9ff;
+    border-bottom-color: #b4a9ff;
+}
+
+/* ─────────────────────────────────────
+   Footnote
+───────────────────────────────────── */
+.fals-footnote {
+    color: var(--text-muted, #8a8a9a);
+    font-size: 0.82rem;
+    text-align: center;
+    margin: 3rem 0 1rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+    .falsification-container { padding: 1.2rem; }
+    .prediction-grid { grid-template-columns: 1fr; }
+    .sensitivity-table { font-size: 0.84rem; }
+    .sensitivity-table th, .sensitivity-table td { padding: 0.5rem 0.55rem; }
+}

@@ -1,0 +1,62 @@
+{
+  "Name": "Antitop Quark",
+  "Symbol": "t̅",
+  "Charge_e": -0.6666666666666666,
+  "BaryonNumber_B": -0.3333333333333333,
+  "LeptonNumber_L": 0,
+  "Spin_hbar": 0.5,
+  "Isospin_I": 0.0,
+  "Isospin_I3": -0.0,
+  "ConstituentMass_MeV": 173000.0,
+  "Stability": "Unstable",
+  "HalfLife_s": 5e-25,
+  "DecayProducts": [
+    "AntiBottom Quark",
+    "W Boson"
+  ],
+  "Antiparticle": {
+    "Name": "Top Quark",
+    "Symbol": "t"
+  },
+  "Mass_MeVc2": 172690.0,
+  "Mass_kg": 3.0784788696480003e-25,
+  "Mass_amu": 185.39033102985343,
+  "MagneticDipoleMoment_J_T": null,
+  "Parity_P": null,
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Composition": [],
+  "InteractionForces": [
+    "Strong",
+    "Electromagnetic",
+    "Weak",
+    "Gravitational"
+  ],
+  "pm_prediction": {
+    "phi_scaling_N": 0,
+    "predicted_mass_GeV": 246.22,
+    "pdg_mass_GeV": 172.69,
+    "percent_error": 42.57918814059876,
+    "verdict": "FAIR",
+    "eml_expression": "EML: ops.div(eml_scalar(246.22), ops.pow(eml_scalar(1.618034), eml_scalar(0)))",
+    "ckm_couplings": {
+      "V_td": 0.00854,
+      "V_ts": 0.0405,
+      "V_tb": 0.999105
+    },
+    "derivation_notes": "Mass from G2 phi-scaling: m_n = v_higgs / phi^N, where v=246.22 GeV is the electroweak VEV and phi=(1+√5)/2 is the golden ratio. For top, N=0. CKM mixing from Froggatt-Nielsen + Wolfenstein parameterisation; geometric Jarlskog J ~ sin(δ_CP) * λ_12 * λ_23 * λ_13² with λ_ij = phi^(-Δ_N/2)."
+  },
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.107067+00:00",
+    "sources": [
+      "PDG2024",
+      "yukawa_textures_v19",
+      "ckm_matrix_v16"
+    ]
+  }
+}

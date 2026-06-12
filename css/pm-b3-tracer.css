@@ -1,0 +1,299 @@
+/* ============================================================================
+ * pm-b3-tracer.css
+ *
+ * Sprint 6 task 5 — Walk-to-b3 widget.
+ *
+ * Styles the modal overlay and SVG dependency graph used to trace any
+ * formula back to the Sprint 3.4 / 3.5 root seed b3 = 24. Two side-by-side
+ * columns: Arithma symbolic chain (left) and EML op-token chain (right).
+ *
+ * No external CSS framework. Uses the same CSS custom properties that
+ * `pm-common.css` / `pm-glass-theme.css` define so the modal blends with
+ * the rest of the site.
+ * ============================================================================ */
+
+/* Modal scaffolding ---------------------------------------------------------*/
+.pm-b3-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.pm-b3-modal.is-open {
+    display: flex;
+}
+
+.pm-b3-modal__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+}
+
+.pm-b3-modal__panel {
+    position: relative;
+    z-index: 1;
+    width: min(1100px, 100%);
+    max-height: 90vh;
+    background: var(--bg-card, #1a1a2e);
+    border: 1px solid var(--border-primary, rgba(139, 127, 255, 0.32));
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pm-b3-modal__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.25rem 0.75rem;
+    border-bottom: 1px solid var(--border-secondary, rgba(255, 255, 255, 0.08));
+}
+
+.pm-b3-modal__title {
+    margin: 0;
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.35rem;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.pm-b3-modal__subtitle {
+    margin: 0.15rem 0 0 0;
+    font-size: 0.85rem;
+    color: var(--text-muted, #888);
+}
+
+.pm-b3-modal__close {
+    background: transparent;
+    border: 1px solid var(--border-secondary, rgba(255, 255, 255, 0.18));
+    color: var(--text-primary, #e0e0e0);
+    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.pm-b3-modal__close:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--accent-secondary, #ff7eb6);
+}
+
+.pm-b3-modal__body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 1rem 1.25rem;
+}
+
+.pm-b3-modal__footer {
+    border-top: 1px solid var(--border-secondary, rgba(255, 255, 255, 0.08));
+    padding: 0.75rem 1.25rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary, #b0b0b0);
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Two-column layout ---------------------------------------------------------*/
+.pm-b3-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 760px) {
+    .pm-b3-cols {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pm-b3-col {
+    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--border-secondary, rgba(255, 255, 255, 0.08));
+    border-radius: 10px;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px;
+}
+
+.pm-b3-col__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.pm-b3-col__title {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--accent-primary, #8b7fff);
+    letter-spacing: 0.02em;
+}
+
+.pm-b3-col__meta {
+    font-size: 0.75rem;
+    color: var(--text-muted, #888);
+}
+
+.pm-b3-col__svg {
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 280px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+}
+
+.pm-b3-col__empty {
+    color: var(--text-muted, #888);
+    font-style: italic;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* SVG node styling ----------------------------------------------------------*/
+.pm-b3-node rect {
+    fill: var(--bg-secondary, #16172e);
+    stroke: var(--accent-primary, #8b7fff);
+    stroke-width: 1.4;
+    rx: 6;
+    ry: 6;
+}
+
+.pm-b3-node--root rect {
+    fill: rgba(139, 127, 255, 0.18);
+    stroke: var(--accent-primary, #8b7fff);
+    stroke-width: 2;
+}
+
+.pm-b3-node--b3 rect {
+    fill: rgba(81, 207, 102, 0.18);
+    stroke: var(--accent-success, #51cf66);
+    stroke-width: 2.4;
+}
+
+.pm-b3-node--op rect {
+    fill: rgba(79, 172, 254, 0.10);
+    stroke: var(--accent-info, #4facfe);
+    stroke-dasharray: 4 3;
+    stroke-width: 1.1;
+}
+
+.pm-b3-node text {
+    fill: var(--text-primary, #e0e0e0);
+    font-family: 'Source Code Pro', 'Menlo', monospace;
+    font-size: 12px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+    pointer-events: none;
+}
+
+.pm-b3-node--b3 text.pm-b3-label {
+    fill: var(--accent-success, #51cf66);
+    font-weight: 700;
+}
+
+.pm-b3-node text.pm-b3-sub {
+    fill: var(--text-muted, #888);
+    font-size: 10px;
+}
+
+.pm-b3-edge {
+    stroke: var(--text-muted, #888);
+    stroke-width: 1.2;
+    fill: none;
+    marker-end: url(#pm-b3-arrow);
+}
+
+.pm-b3-edge--via text {
+    fill: var(--text-secondary, #b0b0b0);
+    font-family: 'Source Code Pro', monospace;
+    font-size: 10px;
+}
+
+/* Foundations-page demo panel ----------------------------------------------*/
+.pm-b3-demo {
+    margin: 2rem 0;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg,
+        rgba(139, 127, 255, 0.10),
+        rgba(255, 126, 182, 0.06));
+    border: 1px solid var(--border-primary, rgba(139, 127, 255, 0.32));
+    border-radius: 12px;
+}
+
+.pm-b3-demo__title {
+    margin: 0 0 0.35rem 0;
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.4rem;
+    color: var(--text-primary, #e0e0e0);
+}
+
+.pm-b3-demo__lede {
+    margin: 0 0 1rem 0;
+    color: var(--text-secondary, #b0b0b0);
+    font-size: 0.95rem;
+}
+
+.pm-b3-demo__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.75rem;
+}
+
+.pm-b3-demo__card {
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid var(--border-secondary, rgba(255, 255, 255, 0.08));
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+}
+
+.pm-b3-demo__label {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted, #888);
+    letter-spacing: 0.03em;
+}
+
+.pm-b3-demo__name {
+    font-size: 1.05rem;
+    color: var(--text-primary, #e0e0e0);
+    font-weight: 600;
+}
+
+.pm-b3-demo__desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary, #b0b0b0);
+    line-height: 1.4;
+    flex: 1 1 auto;
+}
+
+.pm-b3-demo__btn {
+    align-self: flex-start;
+    background: var(--accent-primary, #8b7fff);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.pm-b3-demo__btn:hover {
+    background: var(--accent-secondary, #ff7eb6);
+}

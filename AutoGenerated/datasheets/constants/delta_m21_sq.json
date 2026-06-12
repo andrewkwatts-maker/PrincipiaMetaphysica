@@ -1,0 +1,19 @@
+{
+  "name": "delta_m21_sq",
+  "canonical_path": "neutrino.dm2_21",
+  "value": 7.419999999999996e-05,
+  "units": null,
+  "uncertainty": null,
+  "source": "neutrino_mixing_v17_2",
+  "status": "PREDICTED",
+  "description": null,
+  "eml_expression": "EML: ops.add(ops.pow(m2, eml_scalar(2.0)), ops.neg(ops.pow(m1, eml_scalar(2.0)))) — solar mass-squared splitting",
+  "kind": "physics",
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.512672+00:00",
+    "sources": [
+      "neutrino_mixing_v17_2"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "M_GUT",
+  "canonical_path": "gauge.M_GUT",
+  "value": 6324555320336760.0,
+  "units": null,
+  "uncertainty": null,
+  "source": "gauge_unification_v16_0",
+  "status": "DERIVED",
+  "description": null,
+  "eml_expression": "EML: ops.argmin_mu(ops.std(alpha1_mu, alpha2_mu, alpha3_mu)) — GUT scale is the energy at which 3-loop RG-evolved gauge couplings minimally spread",
+  "kind": "physics",
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.481939+00:00",
+    "sources": [
+      "gauge_unification_v16_0"
+    ]
+  }
+}

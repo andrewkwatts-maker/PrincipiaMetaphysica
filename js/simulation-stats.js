@@ -109,19 +109,6 @@
             }
 
             console.warn('SimulationStats: Could not load theory_output.json from any path');
-
-            // Fallback to Firebase if available (only in online mode)
-            if (typeof firebase !== 'undefined' && firebase.database && !window.PM_OFFLINE) {
-                try {
-                    const snapshot = await firebase.database().ref('/simulations').once('value');
-                    this._data = { simulations: snapshot.val() };
-                    this._lastUpdate = new Date().toISOString();
-                    return true;
-                } catch (e) {
-                    console.warn('SimulationStats: Could not load from Firebase:', e);
-                }
-            }
-
             return false;
         },
 

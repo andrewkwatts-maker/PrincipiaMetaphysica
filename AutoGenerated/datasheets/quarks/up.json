@@ -1,0 +1,59 @@
+{
+  "Name": "Up Quark",
+  "Symbol": "u",
+  "Charge_e": 0.6666666666666666,
+  "BaryonNumber_B": 0.3333333333333333,
+  "LeptonNumber_L": 0,
+  "Spin_hbar": 0.5,
+  "Isospin_I": 0.5,
+  "Isospin_I3": 0.5,
+  "ConstituentMass_MeV": 336.0,
+  "Stability": "Stable",
+  "HalfLife_s": null,
+  "DecayProducts": [],
+  "Antiparticle": {
+    "Name": "Antiup Quark",
+    "Symbol": "u̅"
+  },
+  "Mass_MeVc2": 2.16,
+  "Mass_kg": 3.8505497472e-30,
+  "Mass_amu": 0.0023188552610138597,
+  "MagneticDipoleMoment_J_T": null,
+  "Parity_P": null,
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Composition": [],
+  "InteractionForces": [
+    "Strong",
+    "Electromagnetic",
+    "Weak",
+    "Gravitational"
+  ],
+  "pm_prediction": {
+    "phi_scaling_N": 12,
+    "predicted_mass_GeV": 0.7646657601282281,
+    "pdg_mass_GeV": 0.00216,
+    "percent_error": 35301.19259852907,
+    "verdict": "POOR",
+    "eml_expression": "EML: ops.div(eml_scalar(246.22), ops.pow(eml_scalar(1.618034), eml_scalar(12)))",
+    "ckm_couplings": {
+      "V_ud": 0.97435,
+      "V_us": 0.225,
+      "V_ub": 0.00382
+    },
+    "derivation_notes": "Mass from G2 phi-scaling: m_n = v_higgs / phi^N, where v=246.22 GeV is the electroweak VEV and phi=(1+√5)/2 is the golden ratio. For up, N=12. CKM mixing from Froggatt-Nielsen + Wolfenstein parameterisation; geometric Jarlskog J ~ sin(δ_CP) * λ_12 * λ_23 * λ_13² with λ_ij = phi^(-Δ_N/2)."
+  },
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.101008+00:00",
+    "sources": [
+      "PDG2024",
+      "yukawa_textures_v19",
+      "ckm_matrix_v16"
+    ]
+  }
+}

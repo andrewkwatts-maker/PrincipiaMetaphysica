@@ -122,6 +122,15 @@
             'parameters.pmns.theta_13': 'neutrino.theta_13_pred',
             'parameters.pmns.delta_CP': 'neutrino.delta_CP_pred',
 
+            // Direct neutrino-prediction object aliases (HTML uses neutrino.theta_X_pred, JSON has the same key)
+            'neutrino.theta_23_pred': 'neutrino.theta_23_pred',
+            'neutrino.theta_13_pred': 'neutrino.theta_13_pred',
+            'neutrino.delta_CP_pred': 'neutrino.delta_CP_pred',
+
+            // Topology + cosmology + fitted aliases used in HTML
+            'parameters.topology.n_gen': 'topology.n_gen',
+            'cosmology.alpha_T': 'thermal.alpha_T',
+
             // ================================================================
             // Dark Energy
             // HTML uses dark_energy.X, JSON uses cosmology.X or desi.X
@@ -330,7 +339,9 @@
         // and accessed via _getDynamicValue() method
         _hardcodedValues: {
             // === TRULY STATIC VALUES (topological/geometric constants) ===
-            'kk_m1_TeV': '5.0 TeV',           // KK graviton mass prediction
+            // Numeric only — the HTML supplies the "TeV" unit suffix
+            // (otherwise we get "5.0 TeV TeV").
+            'kk_m1_TeV': 5.0,                  // KK graviton mass prediction
             'kk_hl_lhc': '5σ discovery potential',
             'BR_epi0': 0.45,                   // Proton decay branching ratio
             'bulk_signature': '(24,2)',        // 26D = 24 + 2 signature (topological)
@@ -513,7 +524,7 @@
             }
 
             // Handle special field suffixes - extract specific fields from parameter objects
-            const fieldSuffixes = ['.uncertainty', '.sigma_deviation', '.experimental_value', '.experimental_uncertainty'];
+            const fieldSuffixes = ['.value', '.uncertainty', '.sigma_deviation', '.experimental_value', '.experimental_uncertainty'];
             for (const suffix of fieldSuffixes) {
                 if (path.endsWith(suffix)) {
                     extractField = suffix.substring(1);  // Remove leading dot

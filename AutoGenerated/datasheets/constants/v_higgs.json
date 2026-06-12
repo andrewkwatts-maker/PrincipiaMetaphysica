@@ -1,0 +1,19 @@
+{
+  "name": "v_higgs",
+  "canonical_path": "geometry.higgs_vev",
+  "value": 246.3661977236758,
+  "units": null,
+  "uncertainty": null,
+  "source": "geometric_anchors_v16_2",
+  "status": "GEOMETRIC",
+  "description": null,
+  "eml_expression": "EML: ops.mul(eml_vec('k_gimel'), ops.sub(eml_vec('elder_kads'), eml_scalar(4.0))) — Higgs VEV v = k_gimel×(b₃-4) ≈ 246.37 GeV (Cert C07)",
+  "kind": "physics",
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.569769+00:00",
+    "sources": [
+      "geometric_anchors_v16_2"
+    ]
+  }
+}

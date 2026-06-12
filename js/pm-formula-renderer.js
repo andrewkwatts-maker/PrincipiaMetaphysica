@@ -645,6 +645,319 @@
         },
 
         /**
+         * Normalize a LaTeX string for cross-check comparison.
+         * Strategy: strip whitespace and lowercase. This is intentionally lossy
+         * - we just want to surface the obvious Sprint 2 disagreements
+         * (e.g. n_gen = chi_eff/(4 b_3) vs the buggy chi_eff/(4*b_3*) form,
+         * the dark-force leakage discrepancy, etc).
+         * @param {string} s - LaTeX source
+         * @returns {string} - normalized string
+         */
+        normalizeLatex(s) {
+            if (!s || typeof s !== 'string') return '';
+            return s.replace(/\s+/g, '').toLowerCase();
+        },
+
+        /**
+         * Detect mismatch between Arithma and EML LaTeX renderings.
+         * @param {Object} formula - formula record
+         * @returns {boolean} - true if both views exist AND disagree
+         */
+        isMismatch(formula) {
+            if (!formula) return false;
+            const arithma = formula.arithma_latex || '';
+            const eml = formula.eml_latex || formula.emlLatex || '';
+            if (!arithma || !eml) return false;
+            return this.normalizeLatex(arithma) !== this.normalizeLatex(eml);
+        },
+
+        /**
+         * Format a numeric value for the "Value" panel.
+         * Uses scientific notation for very large/small numbers and respects
+         * sensible precision. Returns an HTML snippet (number + units + rel).
+         * @param {Object} formula - formula record
+         * @returns {string} - HTML
+         */
+        formatValueBlock(formula) {
+            if (!formula) return '';
+            const raw = formula.value;
+            const computed = formula.computedValue;
+            const v = (raw !== undefined && raw !== null) ? raw : computed;
+
+            if (v === undefined || v === null) {
+                return '<div class="pm-tv-panel__empty">No evaluated value</div>';
+            }
+
+            let numStr;
+            if (typeof v === 'number') {
+                const absv = Math.abs(v);
+                if (absv === 0) {
+                    numStr = '0';
+                } else if (absv < 1e-3 || absv >= 1e5) {
+                    numStr = v.toExponential(6);
+                } else {
+                    numStr = v.toPrecision(8);
+                }
+            } else {
+                numStr = String(v);
+            }
+
+            const units = formula.units || '';
+            const rel = formula.rel_tolerance || formula.relTolerance ||
+                        (formula.uncertainty != null ? `±${formula.uncertainty}` : '');
+
+            let html = `<span class="pm-tv-value__number">${this.escapeHtml(numStr)}</span>`;
+            if (units) {
+                const formattedUnits = String(units)
+                    .replace(/\^(-?\d+)/g, '<sup>$1</sup>')
+                    .replace(/\*\*/g, '');
+                html += `<span class="pm-tv-value__units">${formattedUnits}</span>`;
+            }
+            if (rel) {
+                html += `<span class="pm-tv-value__rel">rel = ${this.escapeHtml(String(rel))}</span>`;
+            }
+            return html;
+        },
+
+        /**
+         * Escape HTML for safe insertion.
+         */
+        escapeHtml(s) {
+            if (s === null || s === undefined) return '';
+            return String(s)
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        },
+
+        /**
+         * Pick the best EML LaTeX source available on a formula.
+         * Preference: cached eml_latex -> eml_tree_compact.x -> eml_tree_str
+         */
+        getEmlLatex(formula) {
+            if (!formula) return '';
+            if (formula.eml_latex) return formula.eml_latex;
+            if (formula.emlLatex) return formula.emlLatex;
+            const compact = formula.eml_tree_compact;
+            if (compact && typeof compact === 'object') {
+                if (compact.x) return compact.x;
+                if (compact.latex) return compact.latex;
+            }
+            return '';
+        },
+
+        /**
+         * Render the three-column triple-view (Arithma / EML / Value).
+         *
+         * Layout:
+         *   +---------------+---------------+----------------+
+         *   | Arithma LaTeX | EML LaTeX     | Value (float)  |
+         *   +---------------+---------------+----------------+
+         *
+         * Graceful degradation:
+         *   - arithma_latex missing -> 2 columns (EML + Value)
+         *   - both LaTeX missing    -> 1 column (Value only)
+         *
+         * @param {Object} formula - formula record from formulas.json
+         * @param {Object} options
+         *   - graphHref: URL the "Trace to b3" button should point to (default '#')
+         *   - showActions: render the action row (default true)
+         * @returns {string} - HTML string
+         */
+        renderTripleView(formula, options = {}) {
+            if (!formula) return '';
+            const { graphHref = '#', showActions = true } = options;
+
+            const arithma = formula.arithma_latex || '';
+            const eml = this.getEmlLatex(formula);
+            const hasArithma = !!arithma;
+            const hasEml = !!eml;
+            const mismatch = this.isMismatch(formula);
+
+            // Determine grid mode
+            let gridMode = '';
+            if (!hasArithma && hasEml) gridMode = 'pm-triple-view--no-arithma';
+            if (!hasArithma && !hasEml) gridMode = 'pm-triple-view--value-only';
+
+            const formulaId = formula.id || formula.label || 'unknown';
+            const status = formula.triple_status || (hasArithma && hasEml ? 'TRIPLE' : 'PARTIAL');
+            const statusClass = mismatch
+                ? 'pm-triple-status__badge--mismatch'
+                : (status === 'TRIPLE' ? 'pm-triple-status__badge--triple' :
+                   (status === 'PARTIAL' ? 'pm-triple-status__badge--missing' : ''));
+
+            const b3Rooted = !!(formula.b3_rooted || formula.b3Rooted ||
+                                (formula.derivation && formula.derivation.b3_rooted));
+
+            // Status banner
+            let bannerHtml = `<div class="pm-triple-status">
+                <span class="pm-triple-status__item">
+                    <strong>Formula:</strong> <code>${this.escapeHtml(formulaId)}</code>
+                </span>
+                <span class="pm-triple-status__item">
+                    b<sub>3</sub>-rooted:
+                    ${b3Rooted
+                        ? '<span class="pm-triple-status__check">&#x2713;</span>'
+                        : '<span class="pm-triple-status__cross">&#x2717;</span>'}
+                </span>
+                <span class="pm-triple-status__item">
+                    status:
+                    <span class="pm-triple-status__badge ${statusClass}">${this.escapeHtml(status)}</span>
+                </span>
+                ${mismatch ? '<span class="pm-triple-status__badge pm-triple-status__badge--mismatch" title="Arithma LaTeX and EML LaTeX disagree after normalization">MISMATCH</span>' : ''}
+            </div>`;
+
+            // Build the three panels
+            const arithmaPanel = `
+                <div class="pm-tv-panel pm-tv-panel--arithma">
+                    <div class="pm-tv-panel__label">
+                        <span>Arithma</span>
+                        <span class="pm-tv-tag">LaTeX</span>
+                    </div>
+                    <div class="pm-tv-panel__body">
+                        ${hasArithma ? `\\(${arithma}\\)` : '<div class="pm-tv-panel__empty">No Arithma rendering</div>'}
+                    </div>
+                </div>`;
+
+            const emlPanel = `
+                <div class="pm-tv-panel pm-tv-panel--eml">
+                    <div class="pm-tv-panel__label">
+                        <span>EML</span>
+                        <span class="pm-tv-tag">LaTeX</span>
+                    </div>
+                    <div class="pm-tv-panel__body">
+                        ${hasEml ? `\\(${eml}\\)` : '<div class="pm-tv-panel__empty">No EML rendering</div>'}
+                    </div>
+                </div>`;
+
+            const valuePanel = `
+                <div class="pm-tv-panel pm-tv-panel--value">
+                    <div class="pm-tv-panel__label">
+                        <span>Value</span>
+                        <span class="pm-tv-tag">float</span>
+                    </div>
+                    <div class="pm-tv-panel__body">
+                        ${this.formatValueBlock(formula)}
+                    </div>
+                </div>`;
+
+            // Assemble grid
+            let gridContent;
+            if (!hasArithma && !hasEml) {
+                gridContent = valuePanel;
+            } else if (!hasArithma) {
+                gridContent = emlPanel + valuePanel;
+            } else {
+                gridContent = arithmaPanel + emlPanel + valuePanel;
+            }
+
+            const tripleViewHtml = `
+                ${bannerHtml}
+                <div class="pm-triple-view ${gridMode}" data-formula-id="${this.escapeHtml(formulaId)}">
+                    ${gridContent}
+                </div>`;
+
+            // Action row
+            let actionsHtml = '';
+            if (showActions) {
+                const safeId = this.escapeHtml(formulaId);
+                const safeGraph = this.escapeHtml(graphHref);
+                actionsHtml = `
+                    <div class="pm-card-actions">
+                        <a class="pm-card-actions__btn pm-card-actions__btn--primary"
+                           href="${safeGraph}"
+                           data-pm-trace="${safeId}"
+                           title="Open the dependency graph for this formula">
+                            &#x21B3; Trace to b<sub>3</sub>
+                        </a>
+                        <button type="button" class="pm-card-actions__btn" data-pm-show-json="${safeId}">
+                            Show JSON
+                        </button>
+                        <button type="button" class="pm-card-actions__btn" data-pm-show-alts="${safeId}">
+                            Show alternatives
+                        </button>
+                    </div>
+                    <pre class="pm-card-reveal" data-pm-reveal-json="${safeId}"></pre>
+                    <div class="pm-card-reveal" data-pm-reveal-alts="${safeId}"></div>`;
+            }
+
+            return tripleViewHtml + actionsHtml;
+        },
+
+        /**
+         * Wire up the action-row buttons for a container.
+         * Idempotent - safe to call repeatedly after re-renders.
+         * @param {HTMLElement|Document} root - element to scan for buttons
+         * @param {Object} formulaIndex - { [id]: formulaRecord }
+         */
+        bindTripleViewActions(root, formulaIndex) {
+            if (!root) root = document;
+            if (!formulaIndex) formulaIndex = window.PM_FORMULAS || {};
+
+            // Show JSON
+            root.querySelectorAll('[data-pm-show-json]').forEach(btn => {
+                if (btn.dataset.pmBound === '1') return;
+                btn.dataset.pmBound = '1';
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const id = btn.getAttribute('data-pm-show-json');
+                    const target = root.querySelector(`[data-pm-reveal-json="${CSS.escape(id)}"]`);
+                    if (!target) return;
+                    if (target.classList.contains('open')) {
+                        target.classList.remove('open');
+                        return;
+                    }
+                    const f = formulaIndex[id] ||
+                              (typeof window.findFormulaById === 'function' && window.findFormulaById(id));
+                    target.textContent = JSON.stringify(f || { error: 'Not found', id }, null, 2);
+                    target.classList.add('open');
+                });
+            });
+
+            // Show alternatives (collapsed details: arithma_compact, eml_tree_str)
+            root.querySelectorAll('[data-pm-show-alts]').forEach(btn => {
+                if (btn.dataset.pmBound === '1') return;
+                btn.dataset.pmBound = '1';
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const id = btn.getAttribute('data-pm-show-alts');
+                    const target = root.querySelector(`[data-pm-reveal-alts="${CSS.escape(id)}"]`);
+                    if (!target) return;
+                    if (target.classList.contains('open')) {
+                        target.classList.remove('open');
+                        return;
+                    }
+                    const f = formulaIndex[id] || {};
+                    const lines = [];
+                    if (f.arithma_compact) lines.push(`arithma_compact:\n${JSON.stringify(f.arithma_compact, null, 2)}`);
+                    if (f.eml_tree_str) lines.push(`eml_tree_str:\n${f.eml_tree_str}`);
+                    if (f.eml_tree_compact) lines.push(`eml_tree_compact:\n${JSON.stringify(f.eml_tree_compact, null, 2)}`);
+                    if (f.plainText || f.plain_text) lines.push(`plain_text:\n${f.plainText || f.plain_text}`);
+                    target.textContent = lines.length
+                        ? lines.join('\n\n')
+                        : 'No alternative representations on record.';
+                    target.classList.add('open');
+                });
+            });
+
+            // Trace to b3 - delegate to graph viewer if present, otherwise no-op
+            root.querySelectorAll('[data-pm-trace]').forEach(btn => {
+                if (btn.dataset.pmBound === '1') return;
+                btn.dataset.pmBound = '1';
+                btn.addEventListener('click', (e) => {
+                    const id = btn.getAttribute('data-pm-trace');
+                    if (typeof window.PMTraceToB3 === 'function') {
+                        e.preventDefault();
+                        window.PMTraceToB3(id);
+                    }
+                    // else: fall through to default href (S3.7 will wire up the page)
+                });
+            });
+        },
+
+        /**
          * Batch render formulas
          * Useful for rendering multiple formulas at once
          */

@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
+    <!-- Sprint 3.6 trio styles (pm-tv-panel*) + Sprint 6.5 b3-tracer modal -->
+    <link rel="stylesheet" href="../css/pm-formula-card.css">
+    <link rel="stylesheet" href="../css/pm-b3-tracer.css">
 
     <!-- MathJax for LaTeX rendering -->
     <script>
@@ -677,6 +680,137 @@
             .stats-bar { gap: 1.5rem; }
             .stat-value { font-size: 2rem; }
         }
+
+        /* Sprint T2 #9 - Gate-card Arithma+EML+Computed trio */
+        .pm-cert-trio {
+            margin-top: 0.9rem;
+            padding: 0.9rem;
+            background: rgba(17, 20, 38, 0.55);
+            border: 1px solid rgba(139, 127, 255, 0.18);
+            border-radius: 10px;
+        }
+        .pm-cert-trio__head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.55rem;
+            font-size: 0.75rem;
+        }
+        .pm-cert-trio__label {
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+        .pm-cert-trio__rooted {
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            padding: 0.18rem 0.55rem;
+            border-radius: 6px;
+            background: rgba(80, 200, 120, 0.18);
+            color: var(--locked-color);
+            border: 1px solid rgba(80, 200, 120, 0.35);
+        }
+        .pm-cert-trio__rooted--no {
+            background: rgba(255, 193, 7, 0.18);
+            color: var(--marginal-color);
+            border-color: rgba(255, 193, 7, 0.35);
+        }
+        .pm-cert-trio .pm-triple-view {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 0.55rem;
+        }
+        .pm-cert-trio .pm-tv-panel {
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 8px;
+            padding: 0.55rem 0.65rem;
+            min-height: 78px;
+        }
+        .pm-cert-trio .pm-tv-panel__label {
+            font-size: 0.66rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .pm-cert-trio .pm-tv-tag {
+            font-size: 0.6rem;
+            opacity: 0.75;
+            font-weight: 500;
+        }
+        .pm-cert-trio .pm-tv-panel__body {
+            font-size: 0.78rem;
+            line-height: 1.35;
+            color: var(--text-primary);
+            overflow-x: auto;
+            max-height: 110px;
+        }
+        .pm-cert-trio .pm-tv-panel__empty {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+        .pm-cert-trio__code {
+            display: inline-block;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.72rem;
+            color: #a99aff;
+            word-break: break-word;
+        }
+        .pm-cert-trio__code--eml { color: #ff9ad7; }
+        .pm-cert-trio .pm-tv-value__number {
+            display: block;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.95rem;
+            color: var(--locked-color);
+            margin-bottom: 0.15rem;
+        }
+        .pm-cert-trio .pm-tv-value__number--label {
+            color: var(--accent-primary);
+            font-size: 0.85rem;
+        }
+        .pm-cert-trio .pm-tv-value__units,
+        .pm-cert-trio .pm-tv-value__rel {
+            display: block;
+            font-size: 0.68rem;
+            color: var(--text-muted);
+        }
+        .pm-cert-trio__actions {
+            margin-top: 0.65rem;
+            display: flex;
+            gap: 0.45rem;
+            flex-wrap: wrap;
+        }
+        .pm-cert-trio__btn {
+            padding: 0.4rem 0.85rem;
+            background: rgba(139, 127, 255, 0.15);
+            border: 1px solid rgba(139, 127, 255, 0.35);
+            border-radius: 7px;
+            color: var(--accent-primary);
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.18s ease;
+        }
+        .pm-cert-trio__btn:hover {
+            background: rgba(139, 127, 255, 0.28);
+            border-color: var(--accent-primary);
+            transform: translateY(-1px);
+        }
+        .pm-cert-trio__btn--primary {
+            background: linear-gradient(135deg, rgba(80, 200, 120, 0.25), rgba(139, 127, 255, 0.25));
+            color: var(--text-primary);
+            border-color: rgba(80, 200, 120, 0.45);
+        }
+
+        @media (max-width: 720px) {
+            .pm-cert-trio .pm-triple-view {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -795,7 +929,7 @@
                     <p style="color: var(--text-secondary);">
                         Wolfram Mathematica symbolic validation of fine structure constant derivation.
                     </p>
-                    <a href="../simulations/data/wolfram/Mirror_Brane_Resonance.wl" class="proof-link">View Notebook</a>
+                    <a href="https://github.com/andrewkwatts-maker/metaphysica/blob/main/src/metaphysica/simulations/data/wolfram/Mirror_Brane_Resonance.wl" class="proof-link">View Notebook</a>
                 </div>
                 <div class="proof-card">
                     <h3>Proof Manifest v16.2</h3>
@@ -816,6 +950,10 @@
     </footer>
   </div>
   <script src="../js/site-config.js"></script>
+  <!-- Sprint 6.5 b3-tracer (provides window.PMTraceToB3 and click delegation) -->
+  <script src="../js/pm-b3-tracer.js"></script>
+  <!-- Sprint T2 #9: Gate-card Arithma+EML+Computed trio hydrator -->
+  <script src="../js/pm-certificates.js"></script>
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';

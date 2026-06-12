@@ -1,333 +1,66 @@
-# Principia Metaphysica
-**Philosophiæ Metaphysicæ Principia Mathematica**
+# Principia Metaphysica — generated static site
 
-[![Version](https://img.shields.io/badge/version-24.2-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
-[![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/PM/validation/CERTIFICATES.py)
-[![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
+This repository is **auto-generated** by the [`metaphysica`](https://github.com/<your-org>/metaphysica) PyPI library.
+It contains the published static website (HTML, JSON, plots) for the Principia Metaphysica framework.
 
-**Repository**: https://github.com/andrewkwatts-maker/PrincipiaMetaphysica
-
-**Live Site**: [https://www.metaphysicæ.com](https://www.metaphysicæ.com)
-
-*Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.*
+> **Do not edit generated files directly** — they are overwritten on each build.
+> To make changes, edit the source in the `metaphysica` library and rebuild.
 
 ---
 
-## Overview
+## Live site
 
-**Principia Metaphysica v24.2** is a theoretical physics framework deriving 125 fundamental physical constants from G₂ manifold topology. The framework implements a 27-dimensional spacetime M²⁷(24,1,2) with a 12×(2,0) paired bridge system plus sampler data fields S²⁰.
-
-The framework derives all physical constants from a small number of topological inputs through a "72 Gates" certification system, aiming for zero fitted parameters beyond a defined set of seeds.
-
-### Core Architecture
-
-From a 27-dimensional bulk manifold **M²⁷(26,1) = (24+1) ⊕ (0,2)** (G₂ core plus Euclidean Information Sector S_EIS):
-
-- **1 geometric seed**: b₃ = 24 (G₂ Betti number — topological invariant)
-- **2 calibrated inputs**: VEV coefficient, Re(T) constrained from Higgs mass
-- **2 fitted angles**: θ₁₃, δ_CP (pending explicit Yukawa derivation)
-- **125 constants** derived from these inputs (116:1 compression ratio)
-
-### Statistical Summary
-
-Using Effective Degrees of Freedom (EDOF) analysis (PDG §39.4.3):
-
-- **χ² = 5.751**, **EDOF = 3**, **reduced χ² = 1.917**, **p = 0.124**
-- **24 of 26** non-calibrated predictions within 1σ of experimental data
-- **3 predictions** within 0.1σ (w₀, n_gen, and one mass splitting)
-- Status: CREDIBLE (p within [0.05, 0.95] range)
-
-### Primary Falsification Criterion
-
-The framework provides a falsifiable, time-bound experimental test:
-
-- **Axion-Like Particle (ALP)** predicted at **m_a = 3.51 ± 0.02 meV**
-- **Coupling**: g_aγγ ~ 10⁻¹¹ GeV⁻¹
-- **Detection window**: IAXO/BabyIAXO (2025–2028)
-- Should IAXO exclude this mass range, the G₂ compactification hypothesis is falsified
+Visit the URL pointed to by [`CNAME`](CNAME).
 
 ---
 
-## Key Validated Predictions (v24.2)
+## Rebuild locally
 
-### Fundamental Constants
-| Prediction | PM Value | Experiment | Agreement |
-|------------|----------|------------|-----------|
-| Fine Structure Constant (α⁻¹) | 137.036 | 137.035999177 (CODATA 2022) | < 0.01% |
-| Weinberg Angle (sin²θ_W) | 0.2222 | 0.2229 (PDG 2024) | 0.3% |
-| Generation Count (n_gen) | 3 | 3 observed | < 0.1σ |
+**Windows:**
 
-### Neutrino Physics (NuFIT 6.0)
-| Parameter | PM Prediction | NuFIT 6.0 (IO) | Deviation |
-|-----------|---------------|----------------|-----------|
-| θ₁₂ (solar) | 33.59° | 33.41 ± 0.75° | 0.24σ |
-| θ₁₃ (reactor) | 8.65° | 8.63 ± 0.11° | 0.16σ |
-| θ₂₃ (atmospheric) | 49.75° | 49.3 ± 1.0° | 0.45σ |
-| Σmν | 0.099 eV | < 0.12 eV (Planck 2018) | consistent |
-
-### Cosmology (DESI 2025)
-| Parameter | PM Prediction | DESI 2025 | Agreement |
-|-----------|--------------|-----------|-----------|
-| Dark Energy w₀ | −23/24 ≈ −0.9583 | −0.957 ± 0.067 | 0.02σ |
-| Evolution wₐ | −1/√24 ≈ −0.204 | −0.99 ± 0.32 | 2.4σ |
-
-### Key Features
-- **72 Gates of Integrity**: Complete sterile certification — all gates LOCKED
-- **116:1 compression**: 125 constants from EDOF = 3 effective inputs
-- **DESI 2025 alignment**: w₀ = −23/24 consistent with thawing constraint
-- **V_cb resolution**: |V_cb| = 0.0412 as topological mean between inclusive/exclusive measurements
-
----
-
-## Dimensional Architecture (v24.2)
-
-```
-M²⁷(24,1,2) = T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ²⁰) ⊕ S²⁰
-
-Metric: ds² = -dt² + Σᵢ₌₁¹² (dy²₁ᵢ + dy²₂ᵢ) + (ds₁² + ds₂²)
+```bat
+build.bat
 ```
 
-- **24 G₂ core dimensions**: 12 bridge pairs × 2 dimensions
-- **1 timelike dimension**: unified time fiber T¹
-- **2 sampler fields**: S²⁰ (architecturally separate averaging sector)
-- **Total**: 27D with signature (26,1)
-
-### Why 3 Generations?
-
-The effective Euler characteristic χ_eff = 144 of the flux-dressed G₂ manifold yields:
-```
-n_gen = χ_eff / (4 · b₃) = 144 / 48 = 3
-```
-This is derived from the topology — not a fitted parameter.
-
----
-
-## Quick Start
-
-### Prerequisites
+**Any platform:**
 
 ```bash
-pip install -r requirements.txt
-# Core: numpy>=1.24, scipy>=1.10, sympy>=1.12, pytest>=7.4
+pip install -U metaphysica[full]
+python -c "import metaphysica; metaphysica.build(out_dir='.')"
 ```
 
-### Run Simulations (Validates 72 Gates)
-
-```bash
-python simulations/run_all_simulations.py
-# Expected: "72/72 GATES LOCKED"
-# Generates: AutoGenerated/*.json
-```
-
-### Run Tests
-
-```bash
-python -m pytest tests/ -v
-```
-
-### Start Web Server
-
-```bash
-python serve.py
-# or: python -m http.server 8000
-# Open: http://localhost:8000
-```
-
-### Build Zenodo Archive
-
-```bash
-python scripts/zenodo_pack_v16.py --validate --full
-```
+Both paths regenerate `AutoGenerated/`, `Pages/`, and all derived assets in place.
 
 ---
 
-## Project Structure
+## Source files (hand-maintained — survive each build)
 
-```
-PrincipiaMetaphysica/
-│
-├── README.md                       # This file
-├── CLAUDE.md                       # Development guidance
-├── LICENSE
-├── requirements.txt
-├── serve.py                        # Local development server
-│
-├── simulations/                    # Core physics simulations
-│   ├── run_all_simulations.py      # Master runner (validates 72 gates)
-│   ├── core/                       # Infrastructure
-│   │   ├── FormulasRegistry.py     # SSoT for all physical constants
-│   │   ├── dependency_resolver.py  # DAG execution ordering
-│   │   └── demon_lock_guard.py     # Parameter immutability enforcement
-│   │
-│   ├── PM/                         # Main physics modules
-│   │   ├── constants/              # Physical constants
-│   │   ├── geometry/               # G₂ manifold geometry
-│   │   ├── gauge/                  # Gauge unification
-│   │   ├── cosmology/              # Dark energy, Hubble tension
-│   │   ├── particle/               # Fermion masses, mixing matrices
-│   │   ├── paper/                  # Paper section generators
-│   │   └── validation/             # Certificate validators (72 gates)
-│   │
-│   └── base/                       # PMRegistry runtime
-│
-├── AutoGenerated/                  # Outputs (do not edit manually)
-│   ├── parameters.json             # All parameter values + experimental comparisons
-│   ├── formulas.json               # 116 formula definitions with LaTeX
-│   ├── sections.json               # Paper content
-│   ├── simulations.json            # Simulation results
-│   ├── statistics.json             # Validation statistics
-│   └── plots/                      # Generated visualizations (PNG/PDF)
-│
-├── Pages/                          # Web interface pages
-│   ├── paper.html                  # Full academic paper
-│   ├── parameters.html             # Interactive parameter explorer
-│   ├── certificates.html           # 72-Gate certificate viewer
-│   ├── formulas.html               # Formula explorer
-│   ├── sections.html               # Paper sections
-│   └── simulations.html            # Simulation results
-│
-├── foundations/                    # Mathematical foundation pages
-├── components/                     # Reusable UI components
-│
-├── js/                             # JavaScript modules
-│   ├── pm-constants-loader.js      # Data loading and PM global
-│   ├── pm-header.js                # Site header injection
-│   └── simulation-stats.js         # Dynamic statistics
-│
-├── css/                            # Stylesheets
-│
-├── tests/                          # Test suite
-│   ├── test_physics_invariants.py
-│   ├── test_ssot_compliance.py
-│   ├── test_sterility_audit.py
-│   └── test_formulas_registry_core.py
-│
-├── scripts/                        # Build and utility scripts
-│   └── zenodo_packaging/           # Zenodo archive tools
-│
-└── archive/                        # Historical/unused modules
-```
+These are the only files in this repository that are **not** regenerated:
+
+| File | Purpose |
+|------|---------|
+| `README.md` | This notice |
+| `LICENSE` | MIT license |
+| `CNAME` | Custom domain for GitHub Pages / Netlify |
+| `_redirects` | Netlify redirect rules |
+| `.gitignore` | Git exclusion rules |
+| `.gitattributes` | Git attribute rules (line endings, LFS, etc.) |
+| `CLAUDE.md` | Development guidance for Claude Code |
+| `build.bat` | Windows rebuild entrypoint |
+
+Everything else (`AutoGenerated/`, `Pages/`, `foundations/`, `components/`, `js/`, `css/`, simulation outputs, plots, JSON manifests) is **produced by the build** and should be modified upstream in the `metaphysica` library.
 
 ---
 
-## Testing
+## Where to file issues / contribute
 
-```bash
-# Full test suite
-python -m pytest tests/ -v
-
-# Specific test areas
-python -m pytest tests/test_physics_invariants.py -v   # Gauge symmetries, integer closures
-python -m pytest tests/test_ssot_compliance.py -v      # Single Source of Truth enforcement
-python -m pytest tests/test_sterility_audit.py -v      # No parameter contamination
-
-# With coverage
-python -m pytest tests/ --cov=simulations --cov-report=html
-```
-
-| Test Module | Purpose |
-|-------------|---------|
-| `test_physics_invariants.py` | Gauge symmetries, integer closures |
-| `test_ssot_compliance.py` | Single Source of Truth enforcement |
-| `test_sterility_audit.py` | No magic numbers / parameter contamination |
-| `test_formulas_registry_core.py` | Ten Pillar Seeds, precision context |
-| `test_demon_lock_guard.py` | Parameter immutability enforcement |
-| `test_import_health.py` | Smoke test all ~108 PM modules |
-
----
-
-## Scientific Status and Caveats
-
-**Important**: Principia Metaphysica is a speculative theoretical framework, not an established physical theory.
-
-1. **Fitted parameters**: θ₁₃ and δ_CP are currently fitted (pending explicit Yukawa derivation in v25.0)
-2. **VEV gap**: VEV coefficient has a 3.4% unresolved gap documented in the Re(T) Tension Ledger
-3. **Mass tension**: The neutrino mass sum Σmν ~ 0.099 eV is in potential tension with DESI 2024 (< 0.072 eV, 95% CL)
-4. **Speculative content**: The Orch-OR consciousness extension is explicitly speculative and archived; it is not part of the core physics validation
-5. **Derivation completeness**: Some formulas achieve numerical agreement but the derivation chain requires further rigor
-
-See [CLAUDE.md](CLAUDE.md) for development guidance and known issues.
-
----
-
-## Known Open Problems
-
-1. **VEV coefficient gap**: 3.4% discrepancy documented in Re(T) Tension Ledger — mechanism unclear
-2. **Yukawa derivation**: θ₁₃ and δ_CP not yet derived from first principles
-3. **Mirror DM relic abundance**: Z₂ dark matter candidate needs quantitative predictions
-4. **Landscape size**: Predicted vacua (~10^(10^8)) exceed anthropic bound
-5. **SSOT compliance**: 4 compliance tests currently under review for canonical naming migration
-
----
-
-## Validation Architecture: The 72 Gates
-
-All predictions are validated through 72 independent certification gates:
-
-- **~88% DERIVED/GEOMETRIC**: Pure topological derivations
-- **~7% FITTED**: Phenomenological parameters
-- **~4% INPUT**: Experimental values used as anchors
-
-Gate categories: TCS (twisted connected sum), CERT (experimental validation), MASTER (critical unification predictions).
-
----
-
-## Zenodo Archive
-
-DOI: [10.5281/zenodo.18079602](https://doi.org/10.5281/zenodo.18079602)
-
-```bash
-python scripts/zenodo_pack_v16.py --validate --full
-# Creates: principia_metaphysica_v16_2.zip
-```
-
----
-
-## Citation
-
-```bibtex
-@software{watts2026pm,
-  author       = {Watts, Andrew Keith},
-  title        = {Principia Metaphysica: G2-Manifold Unification Framework},
-  version      = {24.2},
-  year         = {2026},
-  publisher    = {Zenodo},
-  doi          = {10.5281/zenodo.18079602},
-  url          = {https://github.com/andrewkwatts-maker/PrincipiaMetaphysica}
-}
-```
-
-### Theoretical Background
-
-- Joyce, D. (2000). *Compact Manifolds with Special Holonomy*. Oxford University Press.
-- Acharya, B.S. (2002). "M Theory, G2-manifolds and Four Dimensional Physics." arXiv:hep-th/0212294.
-- PDG (2024). *Review of Particle Physics*. PTEP 2022, 083C01.
-- DESI Collaboration (2025). "DESI 2024 VI: Cosmological Constraints." arXiv:2404.03002.
+- **Source code, physics, simulations, theory bugs:** open issues in the [`metaphysica`](https://github.com/<your-org>/metaphysica) repo.
+- **Site/deployment problems specific to this generated output** (broken `CNAME`, redirect rules, etc.): open issues here.
 
 ---
 
 ## License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT — see [LICENSE](LICENSE).
 
----
-
-## Author
-
-**Andrew Keith Watts** — Independent Researcher
-
-- Email: AndrewKWatts@Gmail.com
-- GitHub: [andrewkwatts-maker](https://github.com/andrewkwatts-maker)
-- Repository: https://github.com/andrewkwatts-maker/PrincipiaMetaphysica
-
----
-
-## Acknowledgments
-
-This work uses:
-- CODATA 2022 recommended values (NIST)
-- Particle Data Group 2024 Review
-- NuFIT 6.0 neutrino oscillation analysis
-- DESI 2025 dark energy survey results
-- Mathematical foundations from the G₂ manifold literature (Joyce, Acharya)
+*Copyright (c) 2025-2026 Andrew Keith Watts.*

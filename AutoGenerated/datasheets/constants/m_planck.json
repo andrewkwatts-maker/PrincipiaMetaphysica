@@ -1,0 +1,19 @@
+{
+  "name": "m_planck",
+  "canonical_path": "constants.M_PLANCK",
+  "value": 2.435e+18,
+  "units": null,
+  "uncertainty": 3000000000000000.0,
+  "source": "ESTABLISHED:PDG2024",
+  "status": "ESTABLISHED",
+  "description": null,
+  "eml_expression": "EML: eml_scalar(2.435e18) — reduced Planck mass M_Pl/√(8π) in GeV (input)",
+  "kind": "physics",
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.546191+00:00",
+    "sources": [
+      "ESTABLISHED:PDG2024"
+    ]
+  }
+}

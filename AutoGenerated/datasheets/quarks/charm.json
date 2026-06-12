@@ -1,0 +1,62 @@
+{
+  "Name": "Charm Quark",
+  "Symbol": "c",
+  "Charge_e": 0.6666666666666666,
+  "BaryonNumber_B": 0.3333333333333333,
+  "LeptonNumber_L": 0,
+  "Spin_hbar": 0.5,
+  "Isospin_I": 0.0,
+  "Isospin_I3": 0.0,
+  "ConstituentMass_MeV": 1500.0,
+  "Stability": "Unstable",
+  "HalfLife_s": 1e-12,
+  "DecayProducts": [
+    "Strange Quark",
+    "W Boson"
+  ],
+  "Antiparticle": {
+    "Name": "Anticharm Quark",
+    "Symbol": "c̅"
+  },
+  "Mass_MeVc2": 1270.0,
+  "Mass_kg": 2.2639806384e-27,
+  "Mass_amu": 1.3634010099479639,
+  "MagneticDipoleMoment_J_T": null,
+  "Parity_P": null,
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Composition": [],
+  "InteractionForces": [
+    "Strong",
+    "Electromagnetic",
+    "Weak",
+    "Gravitational"
+  ],
+  "pm_prediction": {
+    "phi_scaling_N": 5,
+    "predicted_mass_GeV": 22.201643549995545,
+    "pdg_mass_GeV": 1.27,
+    "percent_error": 1648.1609094484681,
+    "verdict": "POOR",
+    "eml_expression": "EML: ops.div(eml_scalar(246.22), ops.pow(eml_scalar(1.618034), eml_scalar(5)))",
+    "ckm_couplings": {
+      "V_cd": 0.22486,
+      "V_cs": 0.97349,
+      "V_cb": 0.041
+    },
+    "derivation_notes": "Mass from G2 phi-scaling: m_n = v_higgs / phi^N, where v=246.22 GeV is the electroweak VEV and phi=(1+√5)/2 is the golden ratio. For charm, N=5. CKM mixing from Froggatt-Nielsen + Wolfenstein parameterisation; geometric Jarlskog J ~ sin(δ_CP) * λ_12 * λ_23 * λ_13² with λ_ij = phi^(-Δ_N/2)."
+  },
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.102243+00:00",
+    "sources": [
+      "PDG2024",
+      "yukawa_textures_v19",
+      "ckm_matrix_v16"
+    ]
+  }
+}

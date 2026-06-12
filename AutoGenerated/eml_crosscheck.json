@@ -1,17 +1,16 @@
 {
-  "total": 620,
-  "with_eml_description": 495,
-  "skip": 157,
+  "total": 687,
+  "with_eml_description": 504,
+  "skip": 216,
   "buckets": {
-    "AGREE": 336,
+    "AGREE": 347,
     "AGREE_LOOSE": 10,
-    "DISAGREE": 51,
-    "DISAGREE_MISSING_CTX": 57,
-    "DISAGREE_SIGN": 1,
-    "DISAGREE_SCALE": 8
+    "DISAGREE": 49,
+    "DISAGREE_MISSING_CTX": 58,
+    "DISAGREE_SCALE": 7
   },
-  "agreement_rate_strict": 0.7257019438444925,
-  "agreement_rate_loose": 0.7473002159827213,
+  "agreement_rate_strict": 0.7367303609341825,
+  "agreement_rate_loose": 0.7579617834394905,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -56,6 +55,14 @@
       "eml_description": "EML: eml_scalar(3.0) \u2014 number of calibrated inputs (\u03b8\u2081\u2083, \u03b4_CP, DM normalization) setting physical scales"
     },
     {
+      "path": "abstract.compression_ratio",
+      "status": "AGREE",
+      "evaluated": 131.0,
+      "registered": 131.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(131) \u2014 compression ratio after 13 new DERIVED items in v25/v26 (S5.10)"
+    },
+    {
       "path": "abstract.constraints_count",
       "status": "AGREE",
       "evaluated": 1.0,
@@ -66,8 +73,8 @@
     {
       "path": "abstract.dark_force_pleak",
       "status": "SKIP",
-      "reason": "non-numeric value: '6.9\u00d710\u207b\u2076'",
-      "eml_description": "EML: eml_vec('dark_force_pleak') \u2014 cross-shadow leakage probability P_leak \u2248 6.9\u00d710\u207b\u2076 for EM and gravity"
+      "reason": "non-numeric value: '6.9\u00d710\u207b\u2078'",
+      "eml_description": "EML: eml_vec('dark_force_pleak') \u2014 cross-shadow leakage probability P_leak \u2248 6.9\u00d710\u207b\u2078 for EM and gravity"
     },
     {
       "path": "abstract.desi_w0_uncertainty",
@@ -84,6 +91,54 @@
       "registered": 2.0,
       "rel_error": 0.0,
       "eml_description": "EML: eml_scalar(2.0) \u2014 count of PMNS parameters (\u03b8\u2081\u2083, \u03b4_CP) fitted to NuFIT 6.0 pending Yukawa derivation"
+    },
+    {
+      "path": "abstract.ledger_derived",
+      "status": "AGREE",
+      "evaluated": 571.0,
+      "registered": 571.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(571) \u2014 fully derived ledger entries (92.1%)"
+    },
+    {
+      "path": "abstract.ledger_derived_pct",
+      "status": "AGREE",
+      "evaluated": 92.09677419354843,
+      "registered": 92.1,
+      "rel_error": 3.5025042905182815e-05,
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(571), eml_scalar(620)), eml_scalar(100)) \u2014 derived percentage"
+    },
+    {
+      "path": "abstract.ledger_fitted",
+      "status": "AGREE",
+      "evaluated": 14.0,
+      "registered": 14.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(14) \u2014 fitted ledger entries (legacy \u03b8\u2081\u2083 / \u03b4_CP markers)"
+    },
+    {
+      "path": "abstract.ledger_numerical",
+      "status": "AGREE",
+      "evaluated": 28.0,
+      "registered": 28.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(28) \u2014 ledger numerical-agreement entries"
+    },
+    {
+      "path": "abstract.ledger_open",
+      "status": "AGREE",
+      "evaluated": 7.0,
+      "registered": 7.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(7) \u2014 documented open-tension ledger entries"
+    },
+    {
+      "path": "abstract.ledger_total",
+      "status": "AGREE",
+      "evaluated": 620.0,
+      "registered": 620.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(620) \u2014 total tracked parameters in proof-completeness ledger"
     },
     {
       "path": "abstract.pure_predictions",
@@ -133,6 +188,14 @@
       "registered": 125.0,
       "rel_error": 0.0,
       "eml_description": "EML: eml_scalar(125) \u2014 spectral residue count fixed by G\u2082 topology (5\u00b3 from V\u2087 spectral decomposition)"
+    },
+    {
+      "path": "abstract.v25_v26_closures",
+      "status": "AGREE",
+      "evaluated": 13.0,
+      "registered": 13.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(13) \u2014 v25.0+v26.0 newly closed DERIVED items"
     },
     {
       "path": "abstract.vev_coefficient",
@@ -328,6 +391,12 @@
       "status": "SKIP",
       "reason": "non-numeric value: '10\u207b\u00b9\u00b9'",
       "eml_description": "EML: eml_vec('alp_coupling_GeV_inv') \u2014 g_a\u03b3\u03b3 ~ 10\u207b\u00b9\u00b9 GeV\u207b\u00b9 from S_EIS\u2013photon coupling (PREDICTED)"
+    },
+    {
+      "path": "alp.coupling_GeV_inv_value",
+      "status": "SKIP",
+      "reason": "non-numeric value: '2.9\u00d710\u207b\u00b9\u00b9'",
+      "eml_description": "EML: eml_vec('alp_coupling_GeV_inv_value') \u2014 g_a\u03b3\u03b3 \u2248 2.9\u00d710\u207b\u00b9\u00b9 GeV\u207b\u00b9 (BabyIAXO 2028 reach)"
     },
     {
       "path": "alp.mass_meV",
@@ -572,12 +641,11 @@
     },
     {
       "path": "ckm.V_ts",
-      "status": "DISAGREE_SIGN",
-      "evaluated": -0.04032752537796981,
+      "status": "AGREE",
+      "evaluated": 0.04032752537796981,
       "registered": 0.04032752537796979,
-      "rel_error": 2.0000000000000004,
-      "eml_description": "EML: ops.neg(ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0)))) \u2014 V_ts \u2248 \u2212A\u03bb\u00b2 from Wolfenstein parametrization",
-      "diagnostic": "sign flip \u2014 magnitudes match"
+      "rel_error": 5.161904063444832e-16,
+      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0))) \u2014 |V_ts| \u2248 A\u03bb\u00b2 from Wolfenstein parametrization (PDG magnitude convention)"
     },
     {
       "path": "ckm.V_ub",
@@ -735,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.804226876408821,
-      "rel_error": 0.9555915536838607,
+      "registered": 7.790411079213009,
+      "rel_error": 0.95551279813658,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.56%"
+      "diagnostic": "rel_err=95.55%"
     },
     {
       "path": "consciousness.neuron_count",
@@ -1892,21 +1960,19 @@
     },
     {
       "path": "framework_statistics.testable_count",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 42.0,
-      "registered": 43.0,
-      "rel_error": 0.023255813953488372,
-      "eml_description": "EML: ops.sub(eml_scalar(72), eml_vec('framework_statistics.not_testable_count')) \u2014 testable = total_gates \u2212 axioms",
-      "diagnostic": "rel_err=2.33%"
+      "registered": 42.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.sub(eml_scalar(72), eml_vec('framework_statistics.not_testable_count')) \u2014 testable = total_gates \u2212 axioms"
     },
     {
       "path": "framework_statistics.total_gates",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 72.0,
-      "registered": 73.0,
-      "rel_error": 0.0136986301369863,
-      "eml_description": "EML: eml_scalar(72) \u2014 total number of certification gates (72 Gates system)",
-      "diagnostic": "rel_err=1.37%"
+      "registered": 72.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(72) \u2014 total number of certification gates (Gates system)"
     },
     {
       "path": "funnel.compression_ratio",
@@ -2323,7 +2389,7 @@
       "evaluated": 1.1663445423391954e-05,
       "registered": 1.166344535402083e-05,
       "rel_error": 5.947738608661701e-09,
-      "eml_description": "EML: ops.mul(eml_vec('G_F'), ops.add(eml_scalar(1.0), ops.div(ops.div(eml_scalar(1.0), eml_vec('alpha_inverse')), ops.mul(eml_scalar(2.0), eml_scalar(3.14159265358979))))) \u2014 Schwinger-corrected Fermi constant G_F \u00d7 (1+\u03b1/2\u03c0) (Cert C08b)"
+      "eml_description": "EML: ops.mul(eml_vec('G_F'), ops.add(eml_scalar(1.0), ops.div(ops.div(eml_scalar(1.0), eml_vec('alpha_inverse')), ops.mul(eml_scalar(2.0), eml_pi())))) \u2014 Schwinger-corrected Fermi constant G_F \u00d7 (1+\u03b1/2\u03c0) (Cert C08b)"
     },
     {
       "path": "geometry.H0_early",
@@ -2376,10 +2442,10 @@
     {
       "path": "geometry.M_star",
       "status": "AGREE",
-      "evaluated": 2.4351825309632804e+18,
+      "evaluated": 2.435182530963263e+18,
       "registered": 2.4351825309632645e+18,
-      "rel_error": 6.51778657172021e-15,
-      "eml_description": "EML: ops.div(eml_vec('m_planck_4d'), ops.sqrt(ops.mul(eml_scalar(8.0), eml_scalar(3.14159265358979)))) \u2014 reduced Planck mass M* = M_Pl/\u221a(8\u03c0) \u2248 2.44\u00d710\u00b9\u2078 GeV"
+      "rel_error": 6.3075353919873e-16,
+      "eml_description": "EML: ops.div(eml_vec('m_planck_4d'), ops.sqrt(ops.mul(eml_scalar(8.0), eml_pi()))) \u2014 reduced Planck mass M* = M_Pl/\u221a(8\u03c0) \u2248 2.44\u00d710\u00b9\u2078 GeV"
     },
     {
       "path": "geometry.M_string",
@@ -2441,10 +2507,10 @@
     {
       "path": "geometry.T_CMB",
       "status": "AGREE",
-      "evaluated": 2.7366383305035904,
+      "evaluated": 2.736638330503587,
       "registered": 2.736638330505101,
-      "rel_error": 5.520610725462821e-13,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('phi'), eml_vec('k_gimel')), ops.add(ops.mul(eml_scalar(2.0), eml_scalar(3.14159265358979)), eml_scalar(1.0))) \u2014 CMB temperature T_CMB = \u03c6 k_gimel/(2\u03c0+1) \u2248 2.737 K (Cert C18)"
+      "rel_error": 5.533592761266378e-13,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('phi'), eml_vec('k_gimel')), ops.add(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(1.0))) \u2014 CMB temperature T_CMB = \u03c6 k_gimel/(2\u03c0+1) \u2248 2.737 K (Cert C18)"
     },
     {
       "path": "geometry.V_cb",
@@ -2499,10 +2565,10 @@
     {
       "path": "geometry.alpha_T",
       "status": "AGREE",
-      "evaluated": 3.365140160267607,
+      "evaluated": 3.36514016026761,
       "registered": 3.36514016026761,
-      "rel_error": 9.23772657571335e-16,
-      "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), ops.mul(eml_scalar(3.14159265358979), eml_vec('k_gimel'))), ops.sub(eml_vec('elder_kads'), eml_scalar(1.0))) \u2014 thermal time scaling \u03b1_T = 2\u03c0 k_gimel/(b\u2083-1) \u2248 3.36"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), ops.mul(eml_pi(), eml_vec('k_gimel'))), ops.sub(eml_vec('elder_kads'), eml_scalar(1.0))) \u2014 thermal time scaling \u03b1_T = 2\u03c0 k_gimel/(b\u2083-1) \u2248 3.36"
     },
     {
       "path": "geometry.alpha_T_phenomenological",
@@ -2534,7 +2600,7 @@
       "evaluated": 137.0367017757477,
       "registered": 137.03670177575597,
       "rel_error": 6.03540317088308e-14,
-      "eml_description": "EML: ops.add(ops.sub( ops.pow(eml_vec('k_gimel'), eml_scalar(2.0)), ops.div(eml_vec('elder_kads'), eml_vec('phi'))), ops.div(eml_vec('phi'), ops.mul(eml_scalar(4.0), eml_scalar(3.14159265358979)))) \u2014 fine structure constant inverse \u03b1\u207b\u00b9 = k_gimel\u00b2 - b\u2083/\u03c6 + \u03c6/(4\u03c0) \u2248 137.037 (Cert C02)"
+      "eml_description": "EML: ops.add(ops.sub( ops.pow(eml_vec('k_gimel'), eml_scalar(2.0)), ops.div(eml_vec('elder_kads'), eml_vec('phi'))), ops.div(eml_vec('phi'), ops.mul(eml_scalar(4.0), eml_pi()))) \u2014 fine structure constant inverse \u03b1\u207b\u00b9 = k_gimel\u00b2 - b\u2083/\u03c6 + \u03c6/(4\u03c0) \u2248 137.037 (Cert C02)"
     },
     {
       "path": "geometry.alpha_leak",
@@ -2547,10 +2613,10 @@
     {
       "path": "geometry.alpha_s",
       "status": "AGREE",
-      "evaluated": 0.11824551449975558,
+      "evaluated": 0.11824551449975537,
       "registered": 0.11824551449975534,
-      "rel_error": 1.9951910542309314e-15,
-      "eml_description": "EML: ops.mul( ops.div(eml_vec('k_gimel'), ops.add(ops.mul(eml_vec('elder_kads'), ops.add(eml_scalar(3.14159265358979), eml_scalar(1.0))), ops.div(eml_vec('k_gimel'), eml_scalar(2.0)))), ops.add(eml_scalar(1.0), ops.div(eml_scalar(1.0), ops.mul(eml_vec('elder_kads'), eml_scalar(3.14159265358979))))) \u2014 strong coupling \u03b1s(MZ) \u2248 0.1182 (Cert C03)"
+      "rel_error": 2.347283593212861e-16,
+      "eml_description": "EML: ops.mul( ops.div(eml_vec('k_gimel'), ops.add(ops.mul(eml_vec('elder_kads'), ops.add(eml_pi(), eml_scalar(1.0))), ops.div(eml_vec('k_gimel'), eml_scalar(2.0)))), ops.add(eml_scalar(1.0), ops.div(eml_scalar(1.0), ops.mul(eml_vec('elder_kads'), eml_pi())))) \u2014 strong coupling \u03b1s(MZ) \u2248 0.1182 (Cert C03)"
     },
     {
       "path": "geometry.anomaly_correction",
@@ -2601,10 +2667,10 @@
     {
       "path": "geometry.delta_lamed",
       "status": "AGREE",
-      "evaluated": 9.591644905060653,
+      "evaluated": 9.591644905060644,
       "registered": 9.591644905060644,
-      "rel_error": 9.259917652200758e-16,
-      "eml_description": "EML: ops.div(ops.log(eml_vec('k_gimel')), ops.div(ops.mul(eml_scalar(2.0), eml_scalar(3.14159265358979)), eml_vec('elder_kads'))) \u2014 threshold correction \u03b4_lamed = ln(k_gimel) / (2\u03c0/b\u2083)"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.div(ops.log(eml_vec('k_gimel')), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('elder_kads'))) \u2014 threshold correction \u03b4_lamed = ln(k_gimel) / (2\u03c0/b\u2083)"
     },
     {
       "path": "geometry.dm21_squared",
@@ -2657,34 +2723,34 @@
     {
       "path": "geometry.face_moduli_T1",
       "status": "AGREE",
-      "evaluated": 94.10503511547061,
+      "evaluated": 94.10495562834791,
       "registered": 94.10495562834782,
-      "rel_error": 8.446645796585086e-07,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), eml_scalar(3.14159)) \u2014 T1 = b3\u00b7k_gimel/\u03c0, dominant K\u00e4hler modulus from TCS racetrack stabilization"
+      "rel_error": 9.060641676295215e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), eml_pi()) \u2014 T1 = b3\u00b7k_gimel/\u03c0, dominant K\u00e4hler modulus from TCS racetrack stabilization"
     },
     {
       "path": "geometry.face_moduli_T2",
       "status": "AGREE",
-      "evaluated": 47.052517557735285,
+      "evaluated": 47.052477814173926,
       "registered": 47.05247781417391,
-      "rel_error": 8.446645792054765e-07,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(2.0), eml_scalar(3.14159))) \u2014 T2 = b3\u00b7k_gimel/(2\u03c0), first shadow sector K\u00e4hler modulus"
+      "rel_error": 3.020213892098405e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(2.0), eml_pi())) \u2014 T2 = b3\u00b7k_gimel/(2\u03c0), first shadow sector K\u00e4hler modulus"
     },
     {
       "path": "geometry.face_moduli_T3",
       "status": "AGREE",
-      "evaluated": 31.368345038490197,
+      "evaluated": 31.368318542782625,
       "registered": 31.368318542782607,
-      "rel_error": 8.446645794697453e-07,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(3.0), eml_scalar(3.14159))) \u2014 T3 = b3\u00b7k_gimel/(3\u03c0), second shadow sector K\u00e4hler modulus"
+      "rel_error": 5.662901047684509e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())) \u2014 T3 = b3\u00b7k_gimel/(3\u03c0), second shadow sector K\u00e4hler modulus"
     },
     {
       "path": "geometry.face_moduli_T4",
       "status": "AGREE",
-      "evaluated": 23.52625877886765,
+      "evaluated": 23.52623890708697,
       "registered": 23.526238907086956,
-      "rel_error": 8.446645795074979e-07,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(4.0), eml_scalar(3.14159))) \u2014 T4 = b3\u00b7k_gimel/(4\u03c0), subdominant K\u00e4hler modulus of deepest shadow sector"
+      "rel_error": 6.04042778419681e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('k_gimel')), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 T4 = b3\u00b7k_gimel/(4\u03c0), subdominant K\u00e4hler modulus of deepest shadow sector"
     },
     {
       "path": "geometry.flux_reduction",
@@ -2748,7 +2814,7 @@
       "evaluated": 12.31830988618379,
       "registered": 12.31830988618379,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.add(ops.div(eml_vec('elder_kads'), eml_scalar(2.0)), ops.div(eml_scalar(1.0), eml_scalar(3.14159265358979))) \u2014 spectral gap k_gimel = b\u2083/2 + 1/\u03c0 \u2248 12.318"
+      "eml_description": "EML: ops.add(ops.div(eml_vec('elder_kads'), eml_scalar(2.0)), ops.div(eml_scalar(1.0), eml_pi())) \u2014 spectral gap k_gimel = b\u2083/2 + 1/\u03c0 \u2248 12.318"
     },
     {
       "path": "geometry.k_matching",
@@ -2829,10 +2895,10 @@
     {
       "path": "geometry.mu_pe",
       "status": "AGREE",
-      "evaluated": 1836.1526339633704,
+      "evaluated": 1836.1526339633672,
       "registered": 1836.1526738332332,
-      "rel_error": 2.1713805922254475e-08,
-      "eml_description": "EML: ops.div( ops.mul(ops.pow(eml_vec('c_kaf'), eml_scalar(2.0)), ops.div(eml_vec('k_gimel'), eml_scalar(3.14159265358979))), ops.mul(eml_scalar(1.5427972), ops.add(eml_scalar(1.0), ops.div(eml_scalar(0.57721566), eml_vec('elder_kads'))))) \u2014 proton/electron mass ratio \u03bc = c_kaf\u00b2 k_gimel/(\u03c0 \u00d7 holonomy) \u2248 1836.15 (Cert C13)"
+      "rel_error": 2.171380765589651e-08,
+      "eml_description": "EML: ops.div( ops.mul(ops.pow(eml_vec('c_kaf'), eml_scalar(2.0)), ops.div(eml_vec('k_gimel'), eml_pi())), ops.mul(eml_scalar(1.5427972), ops.add(eml_scalar(1.0), ops.div(eml_scalar(0.57721566), eml_vec('elder_kads'))))) \u2014 proton/electron mass ratio \u03bc = c_kaf\u00b2 k_gimel/(\u03c0 \u00d7 holonomy) \u2248 1836.15 (Cert C13)"
     },
     {
       "path": "geometry.n_faces",
@@ -3002,10 +3068,10 @@
     {
       "path": "geometry.sum_m_nu",
       "status": "AGREE",
-      "evaluated": 0.08168832953849649,
+      "evaluated": 0.08168832953849635,
       "registered": 0.08168832953849638,
-      "rel_error": 1.3590962514442823e-15,
-      "eml_description": "EML: ops.div(eml_vec('k_gimel'), ops.mul(ops.mul(eml_scalar(2.0), eml_scalar(3.14159265358979)), eml_vec('elder_kads'))) \u2014 neutrino mass sum \u03a3m\u03bd = k_gimel/(2\u03c0 b\u2083) \u2248 0.082 eV (Hopf fibration, DESI 2025)"
+      "rel_error": 3.3977406286107057e-16,
+      "eml_description": "EML: ops.div(eml_vec('k_gimel'), ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('elder_kads'))) \u2014 neutrino mass sum \u03a3m\u03bd = k_gimel/(2\u03c0 b\u2083) \u2248 0.082 eV (Hopf fibration, DESI 2025)"
     },
     {
       "path": "geometry.tau_proton",
@@ -3042,10 +3108,10 @@
     {
       "path": "geometry.theta_45deg",
       "status": "AGREE",
-      "evaluated": 0.7853981633974475,
+      "evaluated": 0.7853981633974484,
       "registered": 0.7853981633974483,
-      "rel_error": 9.895059008997609e-16,
-      "eml_description": "EML: ops.div(eml_scalar(3.14159265358979), eml_scalar(4.0)) \u2014 45\u00b0 in radians = \u03c0/4 \u2248 0.7854"
+      "rel_error": 1.4135798584282297e-16,
+      "eml_description": "EML: ops.div(eml_pi(), eml_scalar(4.0)) \u2014 45\u00b0 in radians = \u03c0/4 \u2248 0.7854"
     },
     {
       "path": "geometry.unity_seal",
@@ -3396,8 +3462,8 @@
     {
       "path": "moduli.stabilization_status",
       "status": "SKIP",
-      "reason": "non-numeric value: 'NEEDS_REVIEW'",
-      "eml_description": "EML: eml_vec('is_ghost_free') \u2014 moduli stabilization status: RESOLVED when ops.lt(ops.abs(ops.sub(eml_vec('m_higgs_pred'), eml_scalar(125.25))), eml_scalar(1.0))"
+      "reason": "non-numeric value: 'PARTIAL'",
+      "eml_description": "EML: eml_vec('is_ghost_free') \u2014 moduli stabilization status: PARTIAL when ops.lt(ops.abs(ops.sub(eml_vec('m_higgs_pred'), eml_scalar(125.25))), eml_scalar(1.0)) \u2014 Re(T) closed by S4.3 but K\u00e4hler gravitino sector (S6.3) open"
     },
     {
       "path": "neutrino.C_kaf",
@@ -4061,7 +4127,7 @@
       "evaluated": 4.2668141342556896e-08,
       "registered": 4.266814134255701e-08,
       "rel_error": 2.6365470762844832e-15,
-      "eml_description": "EML: ops.mul(ops.div(eml_scalar(1.0), eml_scalar(144.0)), ops.exp(ops.neg(eml_scalar(12.0)))) \u2014 vacuum noise fraction = (1/chi_eff) * exp(-12) = (1/144)*exp(-12) \u2248 6.9e-8"
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(1.0), eml_scalar(144.0)), ops.exp(ops.neg(eml_scalar(12.0)))) \u2014 vacuum noise fraction = (1/chi_eff) * exp(-12) = (1/144)*exp(-12) \u2248 4.27e-8"
     },
     {
       "path": "proton_decay.status",
@@ -4905,15 +4971,14 @@
     },
     {
       "path": "vacuum.bounce_action",
-      "status": "DISAGREE_SCALE",
-      "evaluated": 1.0,
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
       "registered": 10000000000.0,
-      "rel_error": 0.9999999999,
+      "rel_error": 1.0,
       "eml_description": "EML: ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
-      "diagnostic": "off by 10^-10",
+      "diagnostic": "missing: sigma",
       "missing_refs": [
-        "sigma",
-        "epsilon"
+        "sigma"
       ]
     },
     {

@@ -25,6 +25,29 @@
     'use strict';
 
     // ========================================================================
+    // SLUG ALIAS HELPER
+    // ========================================================================
+    // Generates safe URL fragment IDs from a section title, plus shorter
+    // 2-word slices, so external anchors like #einstein-hilbert or
+    // #pneuma-field land on whatever section best matches.
+    function _generateSlugAliases(title) {
+        if (!title) return [];
+        const cleaned = String(title)
+            .toLowerCase()
+            .replace(/[^\w\s-]/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+        if (!cleaned) return [];
+        const words = cleaned.split(' ').filter(w => w.length > 1);
+        if (words.length === 0) return [];
+        const slugs = new Set();
+        slugs.add(words.join('-'));                    // full title slug
+        if (words.length >= 2) slugs.add(words.slice(0, 2).join('-'));   // first-two
+        if (words.length >= 3) slugs.add(words.slice(0, 3).join('-'));   // first-three
+        return Array.from(slugs);
+    }
+
+    // ========================================================================
     // STATE MANAGEMENT
     // ========================================================================
 
@@ -691,6 +714,20 @@
             appendixAlias.id = `appendix-${sectionId.toLowerCase()}`;
             appendixAlias.className = 'appendix-anchor';
             sectionDiv.insertBefore(appendixAlias, sectionDiv.firstChild);
+        }
+
+        // Title-slug aliases: an inline <a id="..."> for every meaningful
+        // word slice of the section title, so external links like
+        // #einstein-hilbert / #pneuma-field land on the right section
+        // regardless of which numeric ID it has.
+        if (sectionTitle) {
+            const slugs = _generateSlugAliases(sectionTitle);
+            slugs.forEach(slug => {
+                const aliasAnchor = document.createElement('a');
+                aliasAnchor.id = slug;
+                aliasAnchor.className = 'section-slug-anchor';
+                sectionDiv.insertBefore(aliasAnchor, sectionDiv.firstChild);
+            });
         }
 
         // Section header

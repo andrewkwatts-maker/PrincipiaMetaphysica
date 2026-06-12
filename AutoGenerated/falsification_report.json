@@ -1,20 +1,20 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-02-22T09:07:01.149311",
-  "falsifiability_status": "HIGHLY FALSIFIABLE (Multiple near-term tests)",
+  "test_date": "2026-06-11T07:25:35.133065",
+  "falsifiability_status": "FALSIFIABLE (Predictions within experimental reach)",
   "summary": {
     "total_predictions": 5,
     "testable_within_5_years": 5,
-    "high_risk": 2,
+    "high_risk": 1,
     "medium_risk": 3
   },
   "primary_kill_switches": [
     {
-      "test": "ALP_Coupling",
-      "experiment": "ALPS-II / IAXO",
-      "verdict": "Should be detected by ALPS-II (2026)",
-      "risk_level": "HIGH",
-      "timeline": "2026-2028"
+      "test": "ALP_Principia_Metric",
+      "experiment": "BabyIAXO (2025) / IAXO (2028) - THE PRIMARY KILL-SWITCH",
+      "verdict": "THE PRINCIPIA METRIC: Detectable by IAXO (2028) - Definitive falsification test",
+      "risk_level": "CRITICAL",
+      "timeline": "2025-2028 (BabyIAXO \u2192 IAXO)"
     },
     {
       "test": "Fifth_Force",
@@ -46,13 +46,16 @@
     }
   ],
   "detailed_risk_analysis": {
-    "ALP_Coupling": {
-      "status": "IMMINENT_DANGER",
-      "verdict": "Should be detected by ALPS-II (2026)",
-      "falsification_risk": "HIGH",
-      "predicted_value": 2.9e-11,
-      "experimental_limit": 2e-11,
-      "ratio": 1.4500000000000002
+    "ALP_Principia_Metric": {
+      "status": "TESTABLE",
+      "verdict": "THE PRINCIPIA METRIC: Detectable by IAXO (2028) - Definitive falsification test",
+      "falsification_risk": "CRITICAL",
+      "predicted_mass_meV": 3.5100000000000002,
+      "predicted_coupling": 1e-11,
+      "iaxo_limit": 1e-12,
+      "ratio": 10.0,
+      "timeline": "2028",
+      "note": "If IAXO excludes this mass/coupling, G\u2082 compactification is falsified."
     },
     "Fifth_Force": {
       "status": "VIABLE",
@@ -89,6 +92,12 @@
   },
   "experimental_timeline": [
     {
+      "year": 2025,
+      "experiment": "BabyIAXO",
+      "test": "ALP Principia Metric (FIRST TEST)",
+      "priority": "CRITICAL"
+    },
+    {
       "year": 2026,
       "experiment": "ALPS-II",
       "test": "ALP coupling"
@@ -101,7 +110,8 @@
     {
       "year": 2028,
       "experiment": "IAXO",
-      "test": "ALP mass"
+      "test": "ALP Principia Metric (DEFINITIVE)",
+      "priority": "CRITICAL"
     },
     {
       "year": 2028,
@@ -115,14 +125,16 @@
     }
   ],
   "peer_review_response": {
-    "falsifiability_criterion": "This theory makes 5 predictions testable within 5 years. Specifically, if ALPS-II / IAXO sets a limit below the predicted value and finds nothing, the ALP_Coupling sector of this theory is immediately falsified. This satisfies Popper's criterion for scientific falsifiability.",
+    "principia_metric_statement": "THE PRINCIPIA METRIC: This framework predicts a topologically induced ALP at m_a = 3.51 \u00b1 0.02 meV with coupling g_a\u03b3\u03b3 ~ 10\u207b\u00b9\u00b9 GeV\u207b\u00b9. This is not a tunable parameter\u2014it is the unavoidable consequence of the M\u00b2\u2077 \u2192 M\u2074 dimensional projection and the (24+1)\u2295(0,2) decomposition. BabyIAXO (2025) and IAXO (2028) will test this prediction. If they exclude this mass range at the predicted coupling strength, the G\u2082 compactification framework is falsified. This is the 'Eddington Eclipse' moment for Principia Metaphysica.",
+    "falsifiability_criterion": "This theory makes 5 predictions testable within 5 years, with the ALP Principia Metric as the primary kill-switch. Specifically, if BabyIAXO/IAXO reach their projected sensitivities and find no signal at 3.51 meV, the theory is immediately falsified. This satisfies Popper's criterion for scientific falsifiability with a clear, time-bound experimental test.",
     "key_experiments": [
-      "ALPS-II / IAXO",
+      "BabyIAXO (2025) / IAXO (2028) - THE PRIMARY KILL-SWITCH",
       "Eot-Wash / Next-gen torsion balance",
       "Hyper-Kamiokande",
       "DUNE",
       "HL-LHC"
     ],
-    "earliest_test": "2026"
+    "earliest_test": "2025 (BabyIAXO commissioning)",
+    "definitive_test": "2028 (IAXO full sensitivity)"
   }
 }

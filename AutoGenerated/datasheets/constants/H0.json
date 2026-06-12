@@ -1,0 +1,19 @@
+{
+  "name": "H0",
+  "canonical_path": "cosmology.H0_local",
+  "value": 76.33940416705774,
+  "units": null,
+  "uncertainty": null,
+  "source": "ricci_flow_h0_v16_1",
+  "status": "PREDICTED",
+  "description": null,
+  "eml_expression": "EML: ops.add(H0_GR, ops.mul(alpha_leak, ops.mul(H0_torsion, epsilon_T))) — Ricci flow correction to Hubble tension",
+  "kind": "physics",
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.476086+00:00",
+    "sources": [
+      "ricci_flow_h0_v16_1"
+    ]
+  }
+}

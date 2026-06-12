@@ -1,0 +1,19 @@
+{
+  "name": "delta_m32_sq",
+  "canonical_path": "neutrino.dm2_32",
+  "value": -0.0024042084022500004,
+  "units": null,
+  "uncertainty": null,
+  "source": "neutrino_mixing_v17_2",
+  "status": "PREDICTED",
+  "description": null,
+  "eml_expression": "EML: ops.add(ops.pow(m3, eml_scalar(2.0)), ops.neg(ops.pow(m2, eml_scalar(2.0)))) — atmospheric splitting (negative = IO)",
+  "kind": "physics",
+  "_provenance": {
+    "metaphysica_version": "2.0.37",
+    "generated_at": "2026-06-09T23:13:58.516594+00:00",
+    "sources": [
+      "neutrino_mixing_v17_2"
+    ]
+  }
+}

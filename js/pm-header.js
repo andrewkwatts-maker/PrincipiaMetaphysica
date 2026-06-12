@@ -17,14 +17,26 @@ let _mathMode = null;
 async function _getMathModeModule() {
   if (_mathMode) return _mathMode;
   const basePath = getBasePath();
+  // ES-module dynamic-import paths must start with ./, ../, or be absolute —
+  // bare paths like "js/math-mode.js" are treated as bare specifiers and
+  // fail in browsers without an import map. Force a leading "./" when
+  // basePath is empty (page is at site root).
+  const modPath = (basePath || './') + 'js/math-mode.js';
   try {
-    _mathMode = await import(`${basePath}js/math-mode.js`);
-  } catch {
-    // Fallback: no-op stubs if module can't load
+    _mathMode = await import(modPath);
+  } catch (err) {
+    console.warn('[PM Header] Failed to load math-mode.js:', err);
+    // Fallback: no-op stubs if module can't load. Cover the full surface
+    // pm-header.js calls (math + speculation) so subsequent setup doesn't
+    // throw.
     _mathMode = {
       getMathMode: () => 'normal',
       setMathMode: () => {},
       initMathMode: () => {},
+      getSpeculationMode: () => false,
+      setSpeculationMode: () => {},
+      toggleSpeculationMode: () => {},
+      initSpeculationMode: () => {},
     };
   }
   return _mathMode;
@@ -54,6 +66,7 @@ const NAV_LINKS = [
   { href: 'paper.html', label: 'Paper', id: 'paper' },
   { href: 'simulations.html', label: 'Simulations', id: 'simulations' },
   { href: 'certificates.html', label: 'Certificates', id: 'certificates' },
+  { href: 'falsification.html', label: 'Falsification', id: 'falsification' },
   { href: 'appendices.html', label: 'Appendices', id: 'appendices' },
   { href: 'philosophical-implications.html', label: 'Philosophy', id: 'philosophical-implications' },
   { href: 'consciousness-speculative.html', label: 'Consciousness', id: 'consciousness-speculative' },

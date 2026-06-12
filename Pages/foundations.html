@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../css/formula-hover.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
+    <link rel="stylesheet" href="../css/pm-b3-tracer.css">
 
     <!-- MathJax Configuration -->
     <script>
@@ -491,6 +492,60 @@
             </div>
         </header>
 
+        <!-- Walk-to-b3 demo panel (Sprint 6.5) -->
+        <section class="pm-b3-demo" aria-labelledby="pm-b3-demo-title">
+            <h2 class="pm-b3-demo__title" id="pm-b3-demo-title">Trace any formula back to b<sub>3</sub></h2>
+            <p class="pm-b3-demo__lede">
+                Every prediction in Principia Metaphysica is reducible to one topological
+                seed: the third Betti number of the G<sub>2</sub> manifold,
+                <strong>b<sub>3</sub> = 24</strong>. Click any of the examples below to
+                open an interactive dependency graph showing the symbolic (Arithma) and
+                operator-token (EML) walks side by side. Each graph terminates at the
+                same root: <code>b<sub>3</sub> = 24</code>.
+            </p>
+            <div class="pm-b3-demo__grid">
+                <div class="pm-b3-demo__card">
+                    <span class="pm-b3-demo__label">Dark energy</span>
+                    <span class="pm-b3-demo__name">w<sub>0</sub> equation of state</span>
+                    <span class="pm-b3-demo__desc">
+                        Derives the DESI-measured w<sub>0</sub> directly from
+                        <code>-23/24</code>, where 24 = b<sub>3</sub>.
+                    </span>
+                    <button type="button" class="pm-b3-demo__btn"
+                            data-action="trace-b3"
+                            data-pm-b3-trace="dark-energy-eos-derivation">
+                        Trace w<sub>0</sub> &#x21B3; b<sub>3</sub>
+                    </button>
+                </div>
+                <div class="pm-b3-demo__card">
+                    <span class="pm-b3-demo__label">Three generations</span>
+                    <span class="pm-b3-demo__name">n<sub>gen</sub> from topology</span>
+                    <span class="pm-b3-demo__desc">
+                        Three fermion generations arise as
+                        χ<sub>eff</sub>/(4&middot;b<sub>3</sub>) = 144/48 = 3.
+                    </span>
+                    <button type="button" class="pm-b3-demo__btn"
+                            data-action="trace-b3"
+                            data-pm-b3-trace="three-generations">
+                        Trace n<sub>gen</sub> &#x21B3; b<sub>3</sub>
+                    </button>
+                </div>
+                <div class="pm-b3-demo__card">
+                    <span class="pm-b3-demo__label">Fine-structure constant</span>
+                    <span class="pm-b3-demo__name">&alpha;<sup>-1</sup> geometric</span>
+                    <span class="pm-b3-demo__desc">
+                        &alpha;<sup>-1</sup> resolves to a closed-form expression rooted in
+                        b<sub>3</sub> via the G<sub>2</sub> volume.
+                    </span>
+                    <button type="button" class="pm-b3-demo__btn"
+                            data-action="trace-b3"
+                            data-pm-b3-trace="alpha-inverse-geometric">
+                        Trace &alpha;<sup>-1</sup> &#x21B3; b<sub>3</sub>
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- Filter Controls -->
         <div class="filter-controls">
             <label for="category-filter">Physics Domain:</label>
@@ -878,6 +933,7 @@
         }
     </script>
     <script src="../js/site-config.js"></script>
+    <script src="../js/pm-b3-tracer.js"></script>
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
