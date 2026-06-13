@@ -2401,9 +2401,15 @@
                 ${treeBlock}`;
         } else if (eml_latex) {
             emlContent = `<div class="formula-display">$$${eml_latex}$$</div>`;
-        } else if (treeData) {
-            // Render the EML operator tree as SVG
-            const svgStr = renderEmlTreeSvg(JSON.parse(JSON.stringify(treeData)));
+        } else if (purePm || flowPm) {
+            // Render the EML operator tree as SVG (latex unknown but a tree
+            // is available). Prefer the pure-eml binary tree if present;
+            // fall back to the flow tree otherwise. (Previously referenced
+            // an undefined `treeData` left over from a pre-compact-schema
+            // refactor — that was triggering "treeData is not defined" in
+            // production whenever a formula had a tree but no LaTeX.)
+            const _tree = purePm || flowPm;
+            const svgStr = renderEmlTreeSvg(inflateCompactTree(JSON.parse(JSON.stringify(_tree))));
             const rawStr = eml_tree || '';
             emlContent = `
                 <div class="eml-tree-visual" style="overflow-x:auto;padding:0.5rem 0">
