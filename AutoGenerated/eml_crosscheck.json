@@ -803,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.8019356661673624,
-      "rel_error": 0.9555785121655298,
+      "registered": 7.788966799459297,
+      "rel_error": 0.955504549036718,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.56%"
+      "diagnostic": "rel_err=95.55%"
     },
     {
       "path": "consciousness.neuron_count",

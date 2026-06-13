@@ -1,9 +1,9 @@
 {
   "version": "24.2-27D",
-  "timestamp": "2026-03-15T15:37:06.465491Z",
-  "session_id": "PM20260315153706",
+  "timestamp": "2026-06-13T11:31:33.721412Z",
+  "session_id": "PM20260613113133",
   "volatility": {
-    "generated_at": "2026-03-15T15:37:06.465491Z",
+    "generated_at": "2026-06-13T11:31:33.721412Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "24.2-27D",
@@ -611,7 +611,7 @@
       "formula": "288/(153-135) = 288/18 = 16",
       "expanded": "Quadrant divisor = 16.0000000000",
       "gnostic_name": "The Quadrant Lock",
-      "gnostic_role": "Integer symmetry lock; divides 288 into four 72-gate sectors",
+      "gnostic_role": "Integer symmetry lock; divides 288 into four gate sectors of 18",
       "derived_from": [
         "roots_total",
         "christ_constant",
