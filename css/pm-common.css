@@ -835,13 +835,23 @@ html {
     display: block;
 }
 
-/* Default (no data-math-mode set): show normal, hide eml */
-:not([data-math-mode]) .math-mode-block[data-mode="eml"],
-[data-math-mode="normal"] .math-mode-block[data-mode="eml"] {
+/* Default (no data-math-mode set): show normal, hide eml.
+ *
+ * CRITICAL: the negation selector MUST be scoped to :root (i.e. <html>) —
+ * not the bare `:not([data-math-mode])`. The bare form descends through every
+ * ancestor in the tree, and since <body>, <main>, <section>, etc. don't
+ * carry the data-math-mode attribute, the selector matched even when
+ * html[data-math-mode="eml"] was set, hiding the EML block in BOTH modes.
+ * Tested in production on Pages/foundations.html: clicking the EML pill
+ * switched html[data-math-mode] to "eml" but kept the EML block hidden
+ * because body still matched :not([data-math-mode]).
+ */
+:root:not([data-math-mode]) .math-mode-block[data-mode="eml"],
+:root[data-math-mode="normal"] .math-mode-block[data-mode="eml"] {
     display: none !important;
 }
 
-[data-math-mode="eml"] .math-mode-block[data-mode="normal"] {
+:root[data-math-mode="eml"] .math-mode-block[data-mode="normal"] {
     display: none !important;
 }
 
@@ -850,22 +860,22 @@ html {
     display: inline;
 }
 
-:not([data-math-mode]) .math-mode-inline[data-mode="eml"],
-[data-math-mode="normal"] .math-mode-inline[data-mode="eml"] {
+:root:not([data-math-mode]) .math-mode-inline[data-mode="eml"],
+:root[data-math-mode="normal"] .math-mode-inline[data-mode="eml"] {
     display: none !important;
 }
 
-[data-math-mode="eml"] .math-mode-inline[data-mode="normal"] {
+:root[data-math-mode="eml"] .math-mode-inline[data-mode="normal"] {
     display: none !important;
 }
 
 /* Formula display panels (for formula cards) */
-:not([data-math-mode]) .eml-formula,
-[data-math-mode="normal"] .eml-formula {
+:root:not([data-math-mode]) .eml-formula,
+:root[data-math-mode="normal"] .eml-formula {
     display: none !important;
 }
 
-[data-math-mode="eml"] .normal-formula {
+:root[data-math-mode="eml"] .normal-formula {
     display: none !important;
 }
 

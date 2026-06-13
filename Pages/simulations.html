@@ -589,11 +589,25 @@
     <script src="../js/pm-simulation-loader.js"></script>
 
     <script>
-        // GitHub API configuration (kept for backwards compatibility)
-        const GITHUB_REPO = 'andrewkwatts-maker/PrincipiaMetaphysica';
+        // GitHub API configuration. Simulation source files live in the
+        // metaphysica PyPI lib repo (PrincipiaMetaphysica is now a pure
+        // generated-output repo with no .py files). All paths reaching
+        // the GitHub API/raw URLs are routed through the SOURCE_PREFIX
+        // so simulations-index.json's relative paths
+        // ("simulations/PM/...") land at the correct wheel-layout blob
+        // ("src/metaphysica/simulations/PM/...").
+        const GITHUB_REPO = 'andrewkwatts-maker/metaphysica';
         const GITHUB_BRANCH = 'main';
+        const GITHUB_SOURCE_PREFIX = 'src/metaphysica/';
         const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
         const GITHUB_API_BASE = `https://api.github.com/repos/${GITHUB_REPO}/contents`;
+
+        // Resolve any sim-relative path to the lib's wheel layout.
+        function libPath(p) {
+            if (!p) return p;
+            const s = String(p).replace(/^\/+/, '');
+            return s.startsWith(GITHUB_SOURCE_PREFIX) ? s : GITHUB_SOURCE_PREFIX + s;
+        }
 
         // File cache for loaded content
         const fileCache = new Map();
@@ -608,7 +622,7 @@
             try {
 
                 // Fetch main simulations folder
-                const response = await fetch(`${GITHUB_API_BASE}/simulations`);
+                const response = await fetch(`${GITHUB_API_BASE}/${libPath('simulations')}`);
                 if (!response.ok) {
                     // Check for rate limiting
                     const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
@@ -803,7 +817,7 @@
                     resolvedPath = `simulations/${filename}`;
                 }
 
-                const response = await fetch(`${GITHUB_RAW_BASE}/${resolvedPath}`);
+                const response = await fetch(`${GITHUB_RAW_BASE}/${libPath(resolvedPath)}`);
                 if (!response.ok) {
                     throw new Error(`Failed to load file: ${response.status}`);
                 }
@@ -1095,7 +1109,7 @@
 
             // Process root-level files in simulations directory
             try {
-                const rootResponse = await fetch(`${GITHUB_API_BASE}/simulations`);
+                const rootResponse = await fetch(`${GITHUB_API_BASE}/${libPath('simulations')}`);
                 if (rootResponse.ok) {
                     const rootItems = await rootResponse.json();
                     const rootFiles = rootItems
