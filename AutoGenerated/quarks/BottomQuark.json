@@ -1,56 +1,62 @@
 {
   "Name": "Bottom Quark",
   "Symbol": "b",
+  "Charge_e": -0.3333333333333333,
+  "BaryonNumber_B": 0.3333333333333333,
+  "LeptonNumber_L": 0,
+  "Spin_hbar": 0.5,
+  "Isospin_I": 0.0,
+  "Isospin_I3": 0.0,
+  "ConstituentMass_MeV": 4200.0,
+  "Stability": "Unstable",
+  "HalfLife_s": 1.5e-12,
+  "DecayProducts": [
+    "Charm Quark",
+    "W Boson"
+  ],
+  "Antiparticle": {
+    "Name": "Antibottom Quark",
+    "Symbol": "b̅"
+  },
+  "Mass_MeVc2": 4180.0,
+  "Mass_kg": 7.4515268256e-27,
+  "Mass_amu": 4.487414347702747,
+  "MagneticDipoleMoment_J_T": null,
+  "Parity_P": null,
   "Type": "Subatomic Particle",
   "Classification": [
     "Fermion",
     "Quark",
     "Fundamental Particle"
   ],
-  "Mass_MeVc2": 4180.0,
-  "ConstituentMass_MeV": 4920.0,
-  "Mass_kg": 7.4515268256e-27,
-  "Mass_amu": 4.4873972,
-  "Charge_e": -0.3333333333,
-  "Spin_hbar": 0.5,
-  "BaryonNumber_B": 0.3333333333,
-  "Isospin_I": 0.0,
-  "Isospin_I3": 0.0,
-  "Strangeness": 0,
-  "Charm": 0,
-  "Bottomness": -1,
-  "Topness": 0,
-  "MagneticDipoleMoment_J_T": null,
-  "LeptonNumber_L": 0,
-  "Parity_P": null,
-  "ColorCharge": [
-    "red",
-    "green",
-    "blue"
-  ],
   "Composition": [],
-  "Stability": "Stable",
-  "HalfLife_s": null,
-  "DecayProducts": [],
-  "Antiparticle": {
-    "Name": "Antibottom Quark",
-    "Symbol": "b̅"
-  },
   "InteractionForces": [
     "Strong",
     "Electromagnetic",
     "Weak",
     "Gravitational"
   ],
-  "GUT_coupling_unification_GeV": 2.1e+16,
-  "GUT_yukawa_coupling": 0.024008661728208668,
-  "GUT_mass_running_MeV": null,
-  "GUT_mixing_angle_rad": null,
-  "PM_prediction": {
+  "pm_prediction": {
     "phi_scaling_N": 4,
-    "predicted_mass_MeV": 35923.01387,
-    "pdg_mass_MeV": 4180.0,
-    "percent_error": 759.4,
-    "verdict": "ORDER_OF_MAGNITUDE"
+    "predicted_mass_GeV": 35.92301387000266,
+    "pdg_mass_GeV": 4.18,
+    "percent_error": 759.4022456938437,
+    "verdict": "POOR",
+    "eml_expression": "EML: ops.div(eml_scalar(246.22), ops.pow(eml_scalar(1.618034), eml_scalar(4)))",
+    "ckm_couplings": {
+      "V_ub": 0.00382,
+      "V_cb": 0.041,
+      "V_tb": 0.999105
+    },
+    "derivation_notes": "Mass from G2 phi-scaling: m_n = v_higgs / phi^N, where v=246.22 GeV is the electroweak VEV and phi=(1+√5)/2 is the golden ratio. For bottom, N=4. CKM mixing from Froggatt-Nielsen + Wolfenstein parameterisation; geometric Jarlskog J ~ sin(δ_CP) * λ_12 * λ_23 * λ_13² with λ_ij = phi^(-Δ_N/2)."
+  },
+  "_provenance": {
+    "metaphysica_version": "2.1.1",
+    "generated_at": "2026-06-13T02:11:46.639620+00:00",
+    "sources": [
+      "PDG2024",
+      "yukawa_textures_v19",
+      "ckm_matrix_v16"
+    ]
   }
 }

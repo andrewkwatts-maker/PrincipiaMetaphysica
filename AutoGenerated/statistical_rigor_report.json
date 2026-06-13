@@ -1,109 +1,39 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-02-22T16:41:10.454351",
+  "test_date": "2026-06-13T12:11:57.441721",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "edof_analysis": {
-    "chi_squared": 5.751238742139963,
+    "chi_squared": 0.23,
     "effective_dof": 3,
     "traditional_dof": 25,
-    "reduced_chi_squared": 1.917079580713321,
-    "p_value": 0.12436056074929214,
-    "status": "CREDIBLE",
-    "is_credible": true,
-    "interpretation": "Good fit without overfitting. Model has appropriate predictive power.",
+    "reduced_chi_squared": 0.07666666666666667,
+    "p_value": 0.9726068598301141,
+    "status": "TOO_GOOD",
+    "is_credible": false,
+    "interpretation": "Suspiciously perfect fit. May indicate overfitting or overestimated uncertainties.",
     "justification": "PM's 25 testable parameters derive from only 3 truly independent seeds: b\u2083 (Betti number), \u03c6 (golden ratio), and \u03b8\u2081\u2083 (fitted mixing angle). All other 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF = 25 assumes independence, which violates PM's topological ancestry structure. EDOF = 3 reflects true statistical independence per rigorous Gemini analysis (2026-02-14).",
     "comparison": {
       "traditional_approach": {
         "dof": 25,
-        "reduced_chi_sq": 0.23004954968559851,
+        "reduced_chi_sq": 0.0092,
         "issue": "Assumes independence - inappropriate for topologically unified theory"
       },
       "edof_approach": {
         "edof": 3,
-        "reduced_chi_sq": 1.917079580713321,
+        "reduced_chi_sq": 0.07666666666666667,
         "advantage": "Properly accounts for topological correlation structure"
       }
     }
   },
-  "theory_uncertainty_correction_deprecated": {
-    "old_statistics": {
-      "chi_squared": 5.84048874372967,
-      "reduced_chi_squared": 0.22463418245114117,
-      "p_value": 1.2236223434348773e-05,
-      "dof": 26
-    },
-    "new_statistics": {
-      "chi_squared": 3.339839627249959,
-      "reduced_chi_squared": 0.12845537027884457,
-      "p_value": 2.6926210401684044e-08,
-      "dof": 26
-    },
-    "theory_uncertainty_percent": 1.2,
-    "tail_used": "lower (for too-good fit)",
-    "status": "TOO_GOOD (suspiciously perfect fit)",
-    "is_credible": false,
-    "recommendation": "The fit is better than statistically expected. This could indicate: 1) Theory is genuinely predictive, 2) Hidden overfitting, or 3) Experimental uncertainties overestimated. Consider SVD analysis to rule out overfitting.",
-    "detailed_results": [
-      {
-        "parameter": "Dark Energy EoS w0",
-        "predicted": -0.9583333333333334,
-        "experimental": -0.957,
-        "sigma_exp": 0.067,
-        "sigma_theory": 0.011500000000000002,
-        "sigma_total": 0.06797977640445724,
-        "chi_sq_old": 0.00039602980124258806,
-        "chi_sq_new": 0.00038469630030359283
-      },
-      {
-        "parameter": "Dark Energy Evolution wa",
-        "predicted": -0.8164965809277261,
-        "experimental": -0.99,
-        "sigma_exp": 0.32,
-        "sigma_theory": 0.009797958971132713,
-        "sigma_total": 0.32014996486021985,
-        "chi_sq_old": 0.29397887138446366,
-        "chi_sq_new": 0.293703524330404
-      },
-      {
-        "parameter": "Hubble Constant (local)",
-        "predicted": 73.04,
-        "experimental": 73.04,
-        "sigma_exp": 1.04,
-        "sigma_theory": 0.8764800000000001,
-        "sigma_total": 1.360079847067811,
-        "chi_sq_old": 0.0,
-        "chi_sq_new": 0.0
-      },
-      {
-        "parameter": "Matter Fluctuation sigma8",
-        "predicted": 0.830476836658301,
-        "experimental": 0.827,
-        "sigma_exp": 0.011,
-        "sigma_theory": 0.009965722039899611,
-        "sigma_total": 0.014843032566714284,
-        "chi_sq_old": 0.09990407560748531,
-        "chi_sq_new": 0.05486852625447393
-      },
-      {
-        "parameter": "Structure Growth S8",
-        "predicted": 0.833256660630941,
-        "experimental": 0.832,
-        "sigma_exp": 0.013,
-        "sigma_theory": 0.009999079927571292,
-        "sigma_total": 0.016400658505010067,
-        "chi_sq_old": 0.009344354682585793,
-        "chi_sq_new": 0.0058710184819020786
-      }
-    ]
-  },
+  "theory_uncertainty_correction_deprecated": {},
   "summary": {
-    "status": "CREDIBLE",
+    "status": "TOO_GOOD",
     "effective_rank": 27,
     "full_dimensional_independence": true,
-    "p_value_old": 1.2236223434348773e-05,
-    "p_value_new": 2.6926210401684044e-08,
-    "chi_squared_reduced_old": 0.22463418245114117,
-    "chi_squared_reduced_new": 0.12845537027884457,
+    "p_value_old": 0.0,
+    "p_value_new": 0.0,
+    "chi_squared_reduced_old": 0.0,
+    "chi_squared_reduced_new": 0.0,
     "theory_uncertainty_percent": 1.2
   },
   "jacobian_analysis": {
@@ -113,23 +43,23 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        12.418384620298756,
-        5.138752468909783,
-        4.954539952341685,
-        4.716197141624673,
-        4.535588410055954,
-        4.442808029429762,
-        4.367120020568144,
-        4.263468927247302,
-        4.181952447627517,
-        4.029918789056344
+        13.174473520048936,
+        5.468661438426601,
+        5.251689705759154,
+        4.711124965794682,
+        4.606565853029164,
+        4.550004771223333,
+        4.413624339567786,
+        4.304364414602326,
+        4.154303961843,
+        3.93705086482686
       ],
-      "condition_number": 8.175768721017128,
-      "p_value": 0.12436056074929214,
-      "chi_squared": 5.751238742139963,
+      "condition_number": 6.689163583585788,
+      "p_value": 0.9726068598301141,
+      "chi_squared": 0.23,
       "degrees_of_freedom": 25,
       "effective_dof": 3,
-      "rigor_status": "CREDIBLE",
+      "rigor_status": "TOO_GOOD",
       "dimensions_for_95_variance": 22,
       "interpretation": {
         "full_rank": true,
@@ -137,128 +67,58 @@
         "hidden_redundancies": false
       },
       "edof_analysis": {
-        "chi_squared": 5.751238742139963,
+        "chi_squared": 0.23,
         "effective_dof": 3,
         "traditional_dof": 25,
-        "reduced_chi_squared": 1.917079580713321,
-        "p_value": 0.12436056074929214,
-        "status": "CREDIBLE",
-        "is_credible": true,
-        "interpretation": "Good fit without overfitting. Model has appropriate predictive power.",
+        "reduced_chi_squared": 0.07666666666666667,
+        "p_value": 0.9726068598301141,
+        "status": "TOO_GOOD",
+        "is_credible": false,
+        "interpretation": "Suspiciously perfect fit. May indicate overfitting or overestimated uncertainties.",
         "justification": "PM's 25 testable parameters derive from only 3 truly independent seeds: b\u2083 (Betti number), \u03c6 (golden ratio), and \u03b8\u2081\u2083 (fitted mixing angle). All other 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF = 25 assumes independence, which violates PM's topological ancestry structure. EDOF = 3 reflects true statistical independence per rigorous Gemini analysis (2026-02-14).",
         "comparison": {
           "traditional_approach": {
             "dof": 25,
-            "reduced_chi_sq": 0.23004954968559851,
+            "reduced_chi_sq": 0.0092,
             "issue": "Assumes independence - inappropriate for topologically unified theory"
           },
           "edof_approach": {
             "edof": 3,
-            "reduced_chi_sq": 1.917079580713321,
+            "reduced_chi_sq": 0.07666666666666667,
             "advantage": "Properly accounts for topological correlation structure"
           }
         }
       },
-      "theory_uncertainty_results": {
-        "old_statistics": {
-          "chi_squared": 5.84048874372967,
-          "reduced_chi_squared": 0.22463418245114117,
-          "p_value": 1.2236223434348773e-05,
-          "dof": 26
-        },
-        "new_statistics": {
-          "chi_squared": 3.339839627249959,
-          "reduced_chi_squared": 0.12845537027884457,
-          "p_value": 2.6926210401684044e-08,
-          "dof": 26
-        },
-        "theory_uncertainty_percent": 1.2,
-        "tail_used": "lower (for too-good fit)",
-        "status": "TOO_GOOD (suspiciously perfect fit)",
-        "is_credible": false,
-        "recommendation": "The fit is better than statistically expected. This could indicate: 1) Theory is genuinely predictive, 2) Hidden overfitting, or 3) Experimental uncertainties overestimated. Consider SVD analysis to rule out overfitting.",
-        "detailed_results": [
-          {
-            "parameter": "Dark Energy EoS w0",
-            "predicted": -0.9583333333333334,
-            "experimental": -0.957,
-            "sigma_exp": 0.067,
-            "sigma_theory": 0.011500000000000002,
-            "sigma_total": 0.06797977640445724,
-            "chi_sq_old": 0.00039602980124258806,
-            "chi_sq_new": 0.00038469630030359283
-          },
-          {
-            "parameter": "Dark Energy Evolution wa",
-            "predicted": -0.8164965809277261,
-            "experimental": -0.99,
-            "sigma_exp": 0.32,
-            "sigma_theory": 0.009797958971132713,
-            "sigma_total": 0.32014996486021985,
-            "chi_sq_old": 0.29397887138446366,
-            "chi_sq_new": 0.293703524330404
-          },
-          {
-            "parameter": "Hubble Constant (local)",
-            "predicted": 73.04,
-            "experimental": 73.04,
-            "sigma_exp": 1.04,
-            "sigma_theory": 0.8764800000000001,
-            "sigma_total": 1.360079847067811,
-            "chi_sq_old": 0.0,
-            "chi_sq_new": 0.0
-          },
-          {
-            "parameter": "Matter Fluctuation sigma8",
-            "predicted": 0.830476836658301,
-            "experimental": 0.827,
-            "sigma_exp": 0.011,
-            "sigma_theory": 0.009965722039899611,
-            "sigma_total": 0.014843032566714284,
-            "chi_sq_old": 0.09990407560748531,
-            "chi_sq_new": 0.05486852625447393
-          },
-          {
-            "parameter": "Structure Growth S8",
-            "predicted": 0.833256660630941,
-            "experimental": 0.832,
-            "sigma_exp": 0.013,
-            "sigma_theory": 0.009999079927571292,
-            "sigma_total": 0.016400658505010067,
-            "chi_sq_old": 0.009344354682585793,
-            "chi_sq_new": 0.0058710184819020786
-          }
-        ]
-      },
+      "theory_uncertainty_results": {},
       "recommended_approach": "EDOF",
       "recommendation_rationale": "The EDOF approach properly accounts for PM's topological correlation structure. Theory uncertainty injection (deprecated) makes the fit appear MORE suspicious by tightening effective error bars."
     },
-    "redundant_parameters": 61,
+    "redundant_parameters": 68,
     "redundancy_pairs": [
       [
         0,
-        12,
-        0.9926958951807513
+        24,
+        0.9981592270819867
       ],
       [
         0,
-        36,
-        0.9995071343457721
+        48,
+        0.999433902017031
       ],
       [
         1,
-        25,
-        0.9925544359954802
+        13,
+        0.999507530696093
       ],
       [
         1,
         37,
-        0.9978839482666055
+        0.9952001113108239
       ],
       [
-        2,
-        14,
-        0.9996176569832936
+        1,
+        49,
+        0.9950938233475999
       ]
     ]
   },
@@ -267,27 +127,27 @@
     "effective_dof": 27,
     "claimed_dof": 25,
     "dof_ratio": 1.08,
-    "supports_low_chi_squared": true,
-    "recommendation": "Proceed to submission - fit quality is appropriate",
-    "peer_review_response": "The effective rank is 27/27, demonstrating full dimensional independence. The p-value of 0.1244 indicates an appropriate fit quality. The low chi_squared reflects the strength of topological constraints, not over-fitting."
+    "supports_low_chi_squared": false,
+    "recommendation": "Verify experimental error bars - fit is very good",
+    "peer_review_response": "The effective rank is 27/27, demonstrating full dimensional independence. The p-value of 0.9726 indicates an appropriate fit quality. The low chi_squared reflects the strength of topological constraints, not over-fitting."
   },
   "peer_review_defense": {
     "too_good_concern": "Traditional DOF counting gives \u03c7\u00b2_reduced = 0.23 which appears suspiciously perfect",
     "solution": "Effective Degrees of Freedom (EDOF) approach",
     "analysis": "PM's 25 testable parameters are NOT statistically independent - they all derive from the same M\u00b2\u2077 bulk topology with only 3 independent inputs: b\u2083 (Betti number), \u03c6 (golden ratio), and \u03b8\u2081\u2083 (fitted mixing angle). All other 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF = 25 assumes independence, which violates PM's fundamental premise. EDOF = 3 reflects the true number of independent topological seeds per rigorous Gemini analysis.",
-    "finding": "Using EDOF = 3: \u03c7\u00b2 = 5.751, reduced \u03c7\u00b2 = 1.917, p-value = 0.1244. Status: CREDIBLE. This properly accounts for the topological correlation structure.",
+    "finding": "Using EDOF = 3: \u03c7\u00b2 = 0.230, reduced \u03c7\u00b2 = 0.077, p-value = 0.9726. Status: TOO_GOOD. This properly accounts for the topological correlation structure.",
     "response": "The EDOF approach resolves the 'too good' concern through proper statistical treatment: \n\n1. **Rigorous Topological Analysis**: PM's 25 parameters derive from only 3 truly independent seeds: b\u2083 = 24 (Betti number), \u03c6 = 1.618... (golden ratio), and \u03b8\u2081\u2083 \u2248 8.5\u00b0 (fitted mixing angle). All other apparent 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF counting ignores these derivation relationships. \n\n2. **EDOF = 3 is Rigorously Justified**: Following Particle Data Group guidelines (Section 39.4.3), when measurements share common systematic sources, EDOF = number of independent sources. Gemini consultation (2026-02-14) confirmed through detailed mathematical analysis that only b\u2083, \u03c6, and \u03b8\u2081\u2083 are truly independent - all other 'seeds' have explicit derivation formulas. \n\n3. **Optimal p-value (Trust Zone)**: With EDOF = 3, p-value \u2248 0.11 (within [0.05, 0.95] credible range). This is in the 'Trust Zone' - not too good (which would suggest overfitting) and not too poor. Reduced \u03c7\u00b2 \u2248 1.92 is reasonably close to the ideal value of 1.0. \n\n4. **Mathematical Derivations**: \u03b8\u2081\u2083 = arctan(1/7) \u2248 8.13\u00b0 (1D time / 7D G\u2082 ratio, ~4.5% from experiment due to RG flow); k_gimel = b\u2083/2 + 1/\u03c6\u00b2 = 12.382 (matches spectral gap to 0.5%); \u03b4_CP = 2\u03c0/\u03c6\u00b2 \u2248 222.5\u00b0 (within 1\u03c3 of 230\u00b0 \u00b1 40\u00b0 experimental value). \n\n5. **Full Dimensional Independence**: SVD analysis confirms effective rank = 27/27, demonstrating that all 27 manifold dimensions contribute independently at the geometric level. The EDOF reduction reflects correlation at the PHYSICS level (multiple observables from same topology).",
     "supporting_evidence": [
       "Effective rank = 27/27 (proves full dimensional independence)",
       "Zero fitted parameters - all predictions from topology",
-      "Lower-tail p-value = 0.000012 (fit better than random chance)",
+      "Lower-tail p-value = 0.000000 (fit better than random chance)",
       "Adding 1.2% theory uncertainty makes \u03c7\u00b2 smaller (confirming errors not underestimated)",
-      "61 parameter pairs show high correlation",
+      "68 parameter pairs show high correlation",
       "Geometric constraints naturally produce tight predictions - low \u03c7\u00b2 is EXPECTED, not suspicious"
     ]
   },
   "recommendations": {
-    "immediate_action": "The fit is better than statistically expected. This could indicate: 1) Theory is genuinely predictive, 2) Hidden overfitting, or 3) Experimental uncertainties overestimated. Consider SVD analysis to rule out overfitting.",
+    "immediate_action": "Review required",
     "for_submission": [
       "Include theory uncertainty justification in methodology section",
       "Reference O(\u03b1\u00b2) loop corrections as systematic uncertainty source",

@@ -1,7 +1,7 @@
 {
-  "total": 688,
+  "total": 703,
   "with_eml_description": 503,
-  "skip": 218,
+  "skip": 233,
   "buckets": {
     "AGREE": 346,
     "AGREE_LOOSE": 10,
@@ -803,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.788966799459297,
-      "rel_error": 0.955504549036718,
+      "registered": 7.8036920063958215,
+      "rel_error": 0.955588509900708,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.55%"
+      "diagnostic": "rel_err=95.56%"
     },
     {
       "path": "consciousness.neuron_count",

@@ -1,34 +1,13 @@
 {
   "Name": "Down Quark",
   "Symbol": "d",
-  "Type": "Subatomic Particle",
-  "Classification": [
-    "Fermion",
-    "Quark",
-    "Fundamental Particle"
-  ],
-  "Mass_MeVc2": 4.67,
-  "ConstituentMass_MeV": 340.0,
-  "Mass_kg": 8.3250311664e-30,
-  "Mass_amu": 0.0050134318,
-  "Charge_e": -0.3333333333,
+  "Charge_e": -0.3333333333333333,
+  "BaryonNumber_B": 0.3333333333333333,
+  "LeptonNumber_L": 0,
   "Spin_hbar": 0.5,
-  "BaryonNumber_B": 0.3333333333,
   "Isospin_I": 0.5,
   "Isospin_I3": -0.5,
-  "Strangeness": 0,
-  "Charm": 0,
-  "Bottomness": 0,
-  "Topness": 0,
-  "MagneticDipoleMoment_J_T": null,
-  "LeptonNumber_L": 0,
-  "Parity_P": null,
-  "ColorCharge": [
-    "red",
-    "green",
-    "blue"
-  ],
-  "Composition": [],
+  "ConstituentMass_MeV": 340.0,
   "Stability": "Stable",
   "HalfLife_s": null,
   "DecayProducts": [],
@@ -36,21 +15,45 @@
     "Name": "Antidown Quark",
     "Symbol": "d̅"
   },
+  "Mass_MeVc2": 4.67,
+  "Mass_kg": 8.3250311664e-30,
+  "Mass_amu": 0.00501345095784015,
+  "MagneticDipoleMoment_J_T": null,
+  "Parity_P": null,
+  "Type": "Subatomic Particle",
+  "Classification": [
+    "Fermion",
+    "Quark",
+    "Fundamental Particle"
+  ],
+  "Composition": [],
   "InteractionForces": [
     "Strong",
     "Electromagnetic",
     "Weak",
     "Gravitational"
   ],
-  "GUT_coupling_unification_GeV": 2.1e+16,
-  "GUT_yukawa_coupling": 2.6823074227448438e-05,
-  "GUT_mass_running_MeV": null,
-  "GUT_mixing_angle_rad": null,
-  "PM_prediction": {
+  "pm_prediction": {
     "phi_scaling_N": 11,
-    "predicted_mass_MeV": 1237.25519,
-    "pdg_mass_MeV": 4.67,
-    "percent_error": 26393.69,
-    "verdict": "ORDER_OF_MAGNITUDE"
+    "predicted_mass_GeV": 1.2372551899207473,
+    "pdg_mass_GeV": 0.00467,
+    "percent_error": 26393.687150337206,
+    "verdict": "POOR",
+    "eml_expression": "EML: ops.div(eml_scalar(246.22), ops.pow(eml_scalar(1.618034), eml_scalar(11)))",
+    "ckm_couplings": {
+      "V_ud": 0.97435,
+      "V_cd": 0.22486,
+      "V_td": 0.00854
+    },
+    "derivation_notes": "Mass from G2 phi-scaling: m_n = v_higgs / phi^N, where v=246.22 GeV is the electroweak VEV and phi=(1+√5)/2 is the golden ratio. For down, N=11. CKM mixing from Froggatt-Nielsen + Wolfenstein parameterisation; geometric Jarlskog J ~ sin(δ_CP) * λ_12 * λ_23 * λ_13² with λ_ij = phi^(-Δ_N/2)."
+  },
+  "_provenance": {
+    "metaphysica_version": "2.1.1",
+    "generated_at": "2026-06-13T02:11:46.636465+00:00",
+    "sources": [
+      "PDG2024",
+      "yukawa_textures_v19",
+      "ckm_matrix_v16"
+    ]
   }
 }

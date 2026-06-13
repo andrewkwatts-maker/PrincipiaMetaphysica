@@ -1,11 +1,11 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-02-22T10:59:54.227308",
+  "test_date": "2026-06-13T12:11:55.683136",
   "test_name": "Unitary Closure and Ghost-Freedom Verification",
   "manifold": {
-    "structure": "M^{27}(26,1)",
+    "structure": "M^{27}(24,1,2)",
     "bridges": "12 \u00d7 (2,0)",
-    "central_sampler": "C^(2,0)",
+    "sampler_data_fields": "S^(2,0)",
     "time": "(0,1)"
   },
   "test_parameters": {
@@ -58,6 +58,6 @@
   },
   "interpretation": {
     "conclusion": "Theory satisfies all consistency requirements for quantum stability",
-    "peer_review_response": "The M^{27}(26,1) framework satisfies unitarity (||S\u2020S - I|| = 6.88e-16), spectral purity (max |\u03bb| deviation = 4.44e-16), and is ghost-free (0/100 negative-norm states). The theory is quantum mechanically consistent."
+    "peer_review_response": "The M^{27}(24,1) framework satisfies unitarity (||S\u2020S - I|| = 6.88e-16), spectral purity (max |\u03bb| deviation = 4.44e-16), and is ghost-free (0/100 negative-norm states). The theory is quantum mechanically consistent."
   }
 }

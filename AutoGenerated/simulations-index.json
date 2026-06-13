@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-06-13T01:31:46.685761Z",
+  "generated_at": "2026-06-13T02:12:03.220258Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
   "total_scripts": 259,
@@ -343,7 +343,16 @@
           "description": null,
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "cosmology.H0_baseline_km_s_Mpc",
+            "cosmology.H0_resolved_km_s_Mpc",
+            "cosmology.H0_tension_remaining_sigma",
+            "cosmology.S8_baseline",
+            "cosmology.S8_resolved",
+            "cosmology.S8_tension_remaining_sigma",
+            "cosmology.cosmological_tensions_status",
+            "cosmology.delta_w_mirror"
+          ]
         },
         {
           "file": "cosmology_intro.py",
@@ -1746,7 +1755,11 @@
           "description": null,
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "particle.higgs_sector_status",
+            "particle.m_h_GeV",
+            "particle.v_EW_GeV"
+          ]
         },
         {
           "file": "higgs_vev_refined.py",
@@ -1817,7 +1830,12 @@
           "description": null,
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "particle.hierarchy",
+            "particle.neutrino_sector_status",
+            "particle.sigma_m_base_eV",
+            "particle.sigma_m_refined_eV"
+          ]
         },
         {
           "file": "octonionic_mixing.py",
