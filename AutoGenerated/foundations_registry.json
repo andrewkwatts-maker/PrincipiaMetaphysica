@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "note": "The foundations registry is not currently emitted by a dedicated generator (planned as a `metaphysica.generators.generate_foundations_registry` module in a future release). This placeholder ships with the wheel so `Pages/foundations.html` and `js/pm-foundations-loader.js` resolve to a valid empty payload instead of a 404. The page's static content still renders; only the dynamically-added foundational-equation cards are empty.",
+  "foundations": [],
+  "fundamental_constants": [],
+  "experimental_masses": [],
+  "neutrino_parameters": [],
+  "cosmological_parameters": [],
+  "generated_at": null,
+  "generator": "placeholder"
+}

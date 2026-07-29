@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "note": "The full validation report is emitted by `metaphysica.simulations.PM.validation.statistical_rigor_validator` when the build runs its validation suite. This placeholder ships with the wheel so the certificates page's fetch resolves to a valid empty payload instead of a 404 when the validator hasn't run for the current build.",
+  "validations": [],
+  "framework": "Principia Metaphysica",
+  "generated_at": null,
+  "generator": "placeholder"
+}

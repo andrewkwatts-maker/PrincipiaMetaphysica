@@ -1,0 +1,20 @@
+# Netlify Redirects Configuration
+# Redirect old root-level pages to Pages folder
+# https://docs.netlify.com/routing/redirects/
+
+# Main content pages
+/paper.html                    /Pages/paper.html                    301
+/formulas.html                 /Pages/formulas.html                 301
+/parameters.html               /Pages/parameters.html               301
+/sections.html                 /Pages/sections.html                 301
+/beginners-guide.html          /Pages/beginners-guide.html          301
+/simulations.html              /Pages/simulations.html              301
+/references.html               /Pages/references.html               301
+/foundations.html              /Pages/foundations.html              301
+
+# Wildcard redirects
+/foundations/*                 /Pages/foundations.html              301
+/Website/*                     /Pages/:splat                        301
+
+# Fallback for any other Pages-related requests
+/Pages/*                       /Pages/:splat                        200

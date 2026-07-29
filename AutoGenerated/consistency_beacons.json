@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "count": 8,
+  "n_pass": 8,
+  "n_fail": 0,
+  "beacons": [
+    {
+      "id": "beacon.km_unitarity",
+      "name": "CKM row-1 unitarity",
+      "reference": "PDG 2024 CKM review, Eq. 12.16",
+      "value": 0.9999975149000001,
+      "expected": 1.0,
+      "delta_pct": 0.00024850999998937695,
+      "tolerance": 0.5,
+      "status": "PASS",
+      "note": "Sum |V_ud|^2 + |V_us|^2 + |V_ub|^2 for the CKM matrix's first row must equal 1."
+    },
+    {
+      "id": "beacon.nufit_delta_m21_squared",
+      "name": "NuFIT 6.0 delta m^2_21",
+      "reference": "NuFIT 6.0 (Esteban et al. 2024, JHEP 09, 178)",
+      "value": 7.42e-05,
+      "expected": 7.42e-05,
+      "delta_pct": 0.0,
+      "tolerance": 0.1,
+      "status": "PASS",
+      "note": "Solar neutrino mass-squared splitting anchor from NuFIT 6.0 global fit."
+    },
+    {
+      "id": "beacon.nufit_delta_m31_squared",
+      "name": "NuFIT 6.0 delta m^2_31",
+      "reference": "NuFIT 6.0 (Esteban et al. 2024, JHEP 09, 178)",
+      "value": 0.00251,
+      "expected": 0.00251,
+      "delta_pct": 0.0,
+      "tolerance": 0.1,
+      "status": "PASS",
+      "note": "Atmospheric neutrino mass-squared splitting anchor from NuFIT 6.0 global fit."
+    },
+    {
+      "id": "beacon.e8_freudenthal_dimension",
+      "name": "E8 Freudenthal dimension identity",
+      "reference": "Kac (1990) Infinite-Dimensional Lie Algebras, Ch. 6; Serre",
+      "value": 248.0,
+      "expected": 248.0,
+      "delta_pct": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS",
+      "note": "dim(E8) = 240 non-zero roots + 8 Cartan generators = 248 (integer exact)."
+    },
+    {
+      "id": "beacon.alpha_em_running_ratio",
+      "name": "alpha_em Thomson-vs-M_Z running ratio",
+      "reference": "Peskin-Schroeder, Introduction to QFT, Ch. 10; PDG 2024",
+      "value": 1.07059374284375,
+      "expected": 1.070593742,
+      "delta_pct": 7.881140396110083e-08,
+      "tolerance": 0.5,
+      "status": "PASS",
+      "note": "Ratio alpha_em(0) / alpha_em(M_Z) ~ 1.071 is a QED-running consistency check."
+    },
+    {
+      "id": "beacon.jarlskog_bound",
+      "name": "Jarlskog invariant order-of-magnitude bound",
+      "reference": "PDG 2024 CKM review, Sec. 12.3; Jarlskog (1985)",
+      "value": 3.08e-05,
+      "expected": 2.4729734410000004e-05,
+      "delta_pct": 24.54642451617012,
+      "tolerance": 100.0,
+      "status": "PASS",
+      "note": "PDG J_CP (~3e-5) must sit well below the eps^4 bound (~2.5e-3)."
+    },
+    {
+      "id": "beacon.g2_spinor_bundle_dimension",
+      "name": "G2 spinor bundle dimension identity",
+      "reference": "Salamon (1989) Riemannian Geometry and Holonomy Groups; Atiyah-Segal",
+      "value": 8.0,
+      "expected": 8.0,
+      "delta_pct": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS",
+      "note": "dim(Cl(7)) = 2^7 = 128; irreducible spinor rep dim = 8 (integer exact)."
+    },
+    {
+      "id": "beacon.weyl_character_g2_fundamental",
+      "name": "G2 fundamental representation dimension via Weyl formula",
+      "reference": "Fulton-Harris (1991) Representation Theory: A First Course, Ch. 22",
+      "value": 7.0,
+      "expected": 7.0,
+      "delta_pct": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS",
+      "note": "G2 fundamental irrep has dim = 7 by the Weyl character/dimension formula."
+    }
+  ],
+  "note": "Textbook consistency beacons: cross-checks against standard physics references. NOT predictions of the Principia Metaphysica model \u2014 these are independent identities the framework should satisfy to be consistent with the textbooks. Failures here indicate a drift bug, not a novel prediction."
+}

@@ -1,0 +1,19 @@
+{
+  "proof_id": "G72_the_omega_hash",
+  "gate_id": 72,
+  "gate_name": "The Omega Hash",
+  "label": "Binary sum of all 71 gates",
+  "category": "FOUNDATIONAL_ASSUMPTION",
+  "phase": 5,
+  "block": "F",
+  "version": "23.3",
+  "wl_code": "N/A",
+  "result": "N/A",
+  "formula": "Ω = Π(G₁...G₇₁) ≡ 0",
+  "verification_status": "NOT_TESTABLE",
+  "derivation_status": "RIGOROUS",
+  "reason": "Omega Hash is the verification seal itself",
+  "note": "FOUNDATIONAL: Binary sum of all 71 gates. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-25T09:21:29.505090Z",
+  "hash": "ff3e30dffbcd8e0d"
+}

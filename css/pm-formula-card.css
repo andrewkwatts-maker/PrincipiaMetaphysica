@@ -1,0 +1,310 @@
+/*
+ * pm-formula-card.css
+ * ===================
+ *
+ * Triple-view formula card styling for Sprint 3.6.
+ *
+ * Renders the three SSoT representations of every formula side-by-side:
+ *
+ *   1. Arithma rendered LaTeX  (from formula.arithma_latex)
+ *   2. EML rendered LaTeX      (from formula.eml_latex / eml_tree_compact)
+ *   3. Evaluated float         (from formula.value)
+ *
+ * Plus a fourth action row that hosts:
+ *   - [Trace to b3]  - opens dependency graph (Sprint 3.7 owns the graph)
+ *   - [Show JSON]    - inspect the raw formula record
+ *   - [Show alternatives] - swaps in alternative representations
+ *
+ * The card border turns yellow when arithma_latex and eml_latex differ after a
+ * normalization pass (strip whitespace, lowercase) - this surfaces the
+ * Sprint 2 cross-check disagreements (e.g. n_gen = chi_eff / (4 * b3),
+ * dark-force leakage, etc).
+ *
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+ */
+
+/* ============================================================
+ * Triple-view container
+ * ============================================================ */
+
+.pm-triple-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr minmax(180px, 0.7fr);
+    gap: 1rem;
+    margin: 1rem 0 1.25rem 0;
+    align-items: stretch;
+}
+
+/* Graceful degradation: when arithma_latex is missing we drop to two columns
+ * (EML + Value) and let the Normal/EML stack span the LaTeX panel.
+ * When both arithma and eml are missing (legacy formulas), the value panel
+ * spans the full width. */
+.pm-triple-view.pm-triple-view--no-arithma {
+    grid-template-columns: 1fr minmax(180px, 0.7fr);
+}
+
+.pm-triple-view.pm-triple-view--value-only {
+    grid-template-columns: 1fr;
+}
+
+.pm-tv-panel {
+    background: rgba(17, 20, 38, 0.55);
+    border: 1px solid rgba(139, 127, 255, 0.22);
+    border-radius: 10px;
+    padding: 0.9rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 110px;
+    overflow-x: auto;
+    overflow-y: visible;
+    position: relative;
+}
+
+.pm-tv-panel__label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted, #8b8fa8);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.pm-tv-panel__label .pm-tv-tag {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.62rem;
+    border: 1px solid currentColor;
+    opacity: 0.7;
+}
+
+/* Per-view accent colours */
+.pm-tv-panel--arithma { border-left: 3px solid #60a5fa; }
+.pm-tv-panel--arithma .pm-tv-panel__label { color: #60a5fa; }
+
+.pm-tv-panel--eml { border-left: 3px solid #8b7fff; }
+.pm-tv-panel--eml .pm-tv-panel__label { color: #8b7fff; }
+
+.pm-tv-panel--value { border-left: 3px solid #4ade80; }
+.pm-tv-panel--value .pm-tv-panel__label { color: #4ade80; }
+
+.pm-tv-panel__body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 1.05rem;
+    color: #f8f9fa;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.pm-tv-panel--value .pm-tv-panel__body {
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.95rem;
+    color: #4ade80;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.pm-tv-value__number {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.pm-tv-value__rel {
+    font-size: 0.72rem;
+    color: var(--text-muted, #8b8fa8);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.pm-tv-value__units {
+    font-size: 0.78rem;
+    color: #a99aff;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.pm-tv-panel__empty {
+    color: var(--text-muted, #6b7080);
+    font-style: italic;
+    font-size: 0.85rem;
+    text-align: center;
+    opacity: 0.7;
+}
+
+/* ============================================================
+ * Triple-status banner (b3-rooted + status indicators)
+ * ============================================================ */
+
+.pm-triple-status {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.5rem 0 0.75rem 0;
+    padding: 0.45rem 0.75rem;
+    background: rgba(17, 20, 38, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(139, 127, 255, 0.15);
+    font-size: 0.8rem;
+}
+
+.pm-triple-status__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--text-secondary, #c0c0d0);
+}
+
+.pm-triple-status__check {
+    color: #4ade80;
+    font-weight: 700;
+}
+
+.pm-triple-status__cross {
+    color: #f87171;
+    font-weight: 700;
+}
+
+.pm-triple-status__badge {
+    display: inline-block;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    background: rgba(139, 127, 255, 0.18);
+    color: #a99aff;
+    border: 1px solid rgba(139, 127, 255, 0.35);
+}
+
+.pm-triple-status__badge--triple {
+    background: rgba(74, 222, 128, 0.18);
+    color: #4ade80;
+    border-color: rgba(74, 222, 128, 0.4);
+}
+
+.pm-triple-status__badge--mismatch {
+    background: rgba(250, 204, 21, 0.18);
+    color: #facc15;
+    border-color: rgba(250, 204, 21, 0.5);
+}
+
+.pm-triple-status__badge--missing {
+    background: rgba(248, 113, 113, 0.15);
+    color: #f87171;
+    border-color: rgba(248, 113, 113, 0.4);
+}
+
+/* ============================================================
+ * Mismatch state: yellow border on the whole card
+ * ============================================================ */
+
+.formula-card.pm-card--mismatch,
+.parameter-card.pm-card--mismatch {
+    border-color: rgba(250, 204, 21, 0.55) !important;
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(250, 204, 21, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.formula-card.pm-card--mismatch::before,
+.parameter-card.pm-card--mismatch::before {
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(250, 204, 21, 0.5),
+        transparent
+    );
+}
+
+/* ============================================================
+ * Action row
+ * ============================================================ */
+
+.pm-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(139, 127, 255, 0.18);
+}
+
+.pm-card-actions__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 6px;
+    background: rgba(139, 127, 255, 0.12);
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    color: #a99aff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: inherit;
+}
+
+.pm-card-actions__btn:hover {
+    background: rgba(139, 127, 255, 0.22);
+    border-color: rgba(139, 127, 255, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(139, 127, 255, 0.18);
+}
+
+.pm-card-actions__btn--primary {
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.4);
+    color: #60a5fa;
+}
+
+.pm-card-actions__btn--primary:hover {
+    background: rgba(96, 165, 250, 0.25);
+    border-color: rgba(96, 165, 250, 0.6);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.22);
+}
+
+/* JSON / alternatives reveal panels */
+.pm-card-reveal {
+    display: none;
+    margin-top: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(139, 127, 255, 0.18);
+    border-radius: 8px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    font-size: 0.78rem;
+    color: #c0c0d0;
+    max-height: 320px;
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.pm-card-reveal.open {
+    display: block;
+}
+
+/* ============================================================
+ * Responsive: stack columns on narrow screens
+ * ============================================================ */
+
+@media (max-width: 900px) {
+    .pm-triple-view,
+    .pm-triple-view.pm-triple-view--no-arithma,
+    .pm-triple-view.pm-triple-view--value-only {
+        grid-template-columns: 1fr;
+    }
+
+    .pm-tv-panel {
+        min-height: auto;
+    }
+}

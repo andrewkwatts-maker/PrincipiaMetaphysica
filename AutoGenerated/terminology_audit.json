@@ -1,0 +1,187 @@
+{
+  "framework": "Principia Metaphysica",
+  "audit_type": "27D Terminology Compliance",
+  "generated_at": "2026-07-29T10:26:21.138270Z",
+  "total_files_scanned": 4,
+  "files_scanned": [
+    "formulas.json",
+    "sections.json",
+    "parameters.json",
+    "theory_output.json"
+  ],
+  "total_flags": 19,
+  "status": "REVISION REQUIRED",
+  "canonical_terminology": {
+    "manifold": "M^{27}(24,1,2)",
+    "signature": "(26,1)",
+    "decomposition": "24 (G2 core, = b3) + 1 (unified time T^1) + 2 (sampler S^{2,0})",
+    "seed": "b3 = 24"
+  },
+  "deprecated_patterns": [
+    {
+      "pattern": "\\b27D\\(26,1\\)\\b",
+      "suggestion": "Use M^{27}(24,1,2)"
+    },
+    {
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2"
+    },
+    {
+      "pattern": "\\b26D\\(25,1\\)\\b",
+      "suggestion": "Pre-v24 notation; use M^{27}(24,1,2)"
+    },
+    {
+      "pattern": "Consciousness Field",
+      "suggestion": "Use S_EIS (Euclidean Information Sector)"
+    },
+    {
+      "pattern": "\\bn_gen\\s*=\\s*chi_eff\\s*/\\s*\\(4\\*b3\\)",
+      "suggestion": "Verify chi_eff=144, b3=24 -> 3"
+    }
+  ],
+  "canonical_keyword_hits": {
+    "M^{27}": 45,
+    "24+1+2": 4,
+    "b3 = 24": 123,
+    "G2 holonomy": 318,
+    "twisted connected sum": 26,
+    "S^{2,0}": 22,
+    "T^1": 52
+  },
+  "flagged_entries": [
+    {
+      "path": "formulas.json['formulas']['abstract-framework-overview']['description']",
+      "pattern": "\\bn_gen\\s*=\\s*chi_eff\\s*/\\s*\\(4\\*b3\\)",
+      "suggestion": "Verify chi_eff=144, b3=24 -> 3",
+      "snippet": "Framework overview: the M^{27}(24,1,2) ancestral bulk decomposes as T^1 (unified time) x S^(2,0) (sampler data fields) x 12 bridge pairs B_i^(2,0). The OR reduction operator R_perp = tensor product of...",
+      "file": "formulas.json"
+    },
+    {
+      "path": "sections.json['sections']['2.8']['contentBlocks'][52]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean b...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['2.8']['contentBlocks'][82]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows \u2014 each shadow has 12 spatial dimensions (from bridge ...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['2.8']['content_blocks'][52]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean b...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['2.8']['content_blocks'][82]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows \u2014 each shadow has 12 spatial dimensions (from bridge ...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['1.1']['contentBlocks'][4]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "<strong>Why (24,1,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,1)) are required for modular invariance...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['1.1']['content_blocks'][4]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "<strong>Why (24,1,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,1)) are required for modular invariance...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['C']['contentBlocks'][5]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "file": "sections.json"
+    },
+    {
+      "path": "sections.json['sections']['C']['content_blocks'][5]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "file": "sections.json"
+    },
+    {
+      "path": "theory_output.json['formulas']['abstract-framework-overview']['description']",
+      "pattern": "\\bn_gen\\s*=\\s*chi_eff\\s*/\\s*\\(4\\*b3\\)",
+      "suggestion": "Verify chi_eff=144, b3=24 -> 3",
+      "snippet": "Framework overview: the M^{27}(24,1,2) ancestral bulk decomposes as T^1 (unified time) x S^(2,0) (sampler data fields) x 12 bridge pairs B_i^(2,0). The OR reduction operator R_perp = tensor product of...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['2.8']['contentBlocks'][52]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean b...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['2.8']['contentBlocks'][82]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows \u2014 each shadow has 12 spatial dimensions (from bridge ...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['2.8']['content_blocks'][52]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean b...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['2.8']['content_blocks'][82]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows \u2014 each shadow has 12 spatial dimensions (from bridge ...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['1.1']['contentBlocks'][4]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "<strong>Why (24,1,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,1)) are required for modular invariance...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['1.1']['content_blocks'][4]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "<strong>Why (24,1,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,1)) are required for modular invariance...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['C']['contentBlocks'][5]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['sections']['C']['content_blocks'][5]['content']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['beginnerGuide']['topics'][13]['technicalDetail']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "v23+ uses 27D = 24 + 1 + 2",
+      "snippet": "Starting from 25D with (24,1) = 12\u00d7(2,0) + (0,1) signature (no ghosts), 12 bridge pairs warp to create dual 13D(12,1) shadows (each: 12 spatial from bridge + 1 shared time). Dimensional structure: T\u00b9 ...",
+      "file": "theory_output.json"
+    }
+  ],
+  "seed_provenance": "All terminology terms trace back to seed b3 = 24 (G2 manifold third Betti number)."
+}

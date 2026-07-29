@@ -1,0 +1,899 @@
+/**
+ * Mobile Responsiveness Enhancements for Principia Metaphysica
+ * ==============================================================
+ *
+ * Comprehensive mobile-first responsive design for:
+ * - Mobile breakpoints: 320px, 480px, 768px
+ * - Touch-friendly tap targets (min 44-48px)
+ * - Readable font sizes (min 16px base)
+ * - Responsive tables with horizontal scrolling
+ * - Proper image scaling
+ * - MathJax/LaTeX formula overflow handling
+ * - Code block wrapping/scrolling
+ * - No horizontal overflow
+ *
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+ */
+
+/* ============================================
+   BASE MOBILE STYLES (All screens)
+   ============================================ */
+
+/* Prevent horizontal overflow */
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+/* Images - always responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Code blocks - horizontal scroll with touch support */
+pre {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    white-space: pre;
+}
+
+code {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Long URLs and text that might overflow */
+a {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* MathJax overflow prevention */
+.MathJax,
+.MathJax_Display,
+.MathJax_Preview,
+mjx-container {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100% !important;
+}
+
+/* Ensure MathJax doesn't break layout */
+.mjx-chtml {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* ============================================
+   TABLETS AND SMALL DESKTOPS (≤768px)
+   ============================================ */
+@media screen and (max-width: 768px) {
+    /* Base font size for readability */
+    body {
+        font-size: 16px; /* iOS Safari won't zoom if >= 16px */
+    }
+
+    /* Main paper container */
+    .paper {
+        padding: 20px 15px !important;
+        font-size: 10pt;
+        overflow-x: hidden;
+        max-width: 100%;
+    }
+
+    /* Headings */
+    h1 {
+        font-size: 18pt;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+
+    h2 {
+        font-size: 12pt;
+        line-height: 1.3;
+        word-wrap: break-word;
+    }
+
+    h3 {
+        font-size: 11pt;
+        line-height: 1.3;
+    }
+
+    h4 {
+        font-size: 10pt;
+        line-height: 1.3;
+    }
+
+    /* Formulas and equations */
+    .equation,
+    .formula-display,
+    .formula-inline {
+        font-size: 9pt;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.75rem;
+        max-width: 100%;
+    }
+
+    /* Tables - horizontal scroll wrapper */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 9pt;
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    thead, tbody, tr {
+        display: table;
+        width: 100%;
+    }
+
+    th, td {
+        white-space: nowrap;
+        min-width: 80px;
+        padding: 0.4rem;
+        font-size: 9pt;
+    }
+
+    /* Grid layouts */
+    .formula-def-grid,
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Touch-friendly buttons (min 44px per iOS HIG) */
+    .download-btn,
+    button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 12px 20px;
+        font-size: 10pt;
+        cursor: pointer;
+    }
+
+    /* Links - touch targets */
+    a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        padding: 8px;
+    }
+
+    /* Code blocks */
+    pre {
+        font-size: 8pt;
+        padding: 0.75rem;
+        overflow-x: auto;
+        line-height: 1.4;
+    }
+
+    code {
+        font-size: 8pt;
+    }
+
+    /* Info boxes */
+    .warning-box,
+    .success-box,
+    .danger-box {
+        padding: 0.75rem;
+        font-size: 9pt;
+        margin: 0.75rem 0;
+    }
+
+    /* Table of contents */
+    .toc {
+        padding: 1rem;
+        font-size: 9pt;
+    }
+
+    /* Abstract */
+    .abstract {
+        padding: 1rem;
+        font-size: 9pt;
+    }
+
+    /* Author info */
+    .author,
+    .affiliation,
+    .date {
+        font-size: 10pt;
+    }
+
+    /* Grade box */
+    .grade-box {
+        padding: 0.75rem;
+    }
+
+    .grade {
+        font-size: 18pt;
+    }
+}
+
+/* ============================================
+   SMALL PHONES (≤480px)
+   ============================================ */
+@media screen and (max-width: 480px) {
+    /* Maintain 16px base for no-zoom */
+    body {
+        font-size: 16px;
+    }
+
+    .paper {
+        padding: 10px !important;
+        font-size: 9pt;
+        max-width: 100%;
+    }
+
+    /* Headings - smaller but readable */
+    h1 {
+        font-size: 16pt;
+        word-wrap: break-word;
+        margin: 0.75rem 0;
+    }
+
+    h2 {
+        font-size: 11pt;
+        margin: 0.5rem 0;
+    }
+
+    h3 {
+        font-size: 10pt;
+        margin: 0.5rem 0;
+    }
+
+    h4 {
+        font-size: 9.5pt;
+    }
+
+    /* Formulas */
+    .equation,
+    .formula-display {
+        font-size: 8pt;
+        padding: 0.5rem;
+        overflow-x: auto;
+    }
+
+    /* Tables */
+    table {
+        font-size: 8pt;
+    }
+
+    th, td {
+        padding: 0.35rem;
+        font-size: 8pt;
+        min-width: 70px;
+    }
+
+    /* Code */
+    pre {
+        font-size: 7pt;
+        padding: 0.5rem;
+    }
+
+    code {
+        font-size: 7pt;
+    }
+
+    /* Full-width buttons */
+    .download-btn {
+        width: 100%;
+        margin: 0.5rem 0;
+        font-size: 9pt;
+    }
+
+    /* Compact spacing */
+    ul, ol {
+        margin: 0.5rem 0 0.5rem 1.5rem;
+    }
+
+    li {
+        margin-bottom: 0.25rem;
+        font-size: 9pt;
+    }
+
+    p {
+        margin: 0.5rem 0;
+    }
+
+    /* Info boxes */
+    .warning-box,
+    .success-box,
+    .danger-box {
+        padding: 0.5rem;
+        font-size: 8pt;
+    }
+
+    /* TOC */
+    .toc {
+        padding: 0.75rem;
+        font-size: 8pt;
+    }
+
+    /* Abstract */
+    .abstract {
+        padding: 0.75rem;
+        font-size: 8pt;
+    }
+
+    .abstract-title {
+        font-size: 10pt;
+    }
+}
+
+/* ============================================
+   EXTRA SMALL PHONES (≤320px)
+   ============================================ */
+@media screen and (max-width: 320px) {
+    .paper {
+        padding: 8px !important;
+        font-size: 8pt;
+    }
+
+    h1 {
+        font-size: 14pt;
+    }
+
+    h2 {
+        font-size: 10pt;
+    }
+
+    h3 {
+        font-size: 9pt;
+    }
+
+    .equation,
+    .formula-display {
+        font-size: 7pt;
+        padding: 0.4rem;
+    }
+
+    table {
+        font-size: 7pt;
+    }
+
+    th, td {
+        padding: 0.25rem;
+        font-size: 7pt;
+        min-width: 60px;
+    }
+
+    pre, code {
+        font-size: 6.5pt;
+    }
+
+    .download-btn {
+        font-size: 8pt;
+        padding: 10px;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger tap targets for touch (48px iOS standard) */
+    a,
+    button,
+    .pm-value,
+    input,
+    select,
+    textarea {
+        min-height: 48px;
+        min-width: 48px;
+        padding: 12px;
+    }
+
+    /* Disable transform effects that feel wrong on touch */
+    a:hover,
+    button:hover,
+    .card:hover {
+        transform: none !important;
+    }
+
+    /* Make tooltips tappable instead of hoverable */
+    .pm-value,
+    .formula-var {
+        cursor: pointer;
+    }
+
+    /* Increase spacing for touch accuracy */
+    nav a,
+    nav button {
+        padding: 12px 16px;
+        margin: 4px;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION (phones)
+   ============================================ */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+    .paper {
+        padding: 15px 20px !important;
+    }
+
+    h1 {
+        font-size: 16pt;
+    }
+
+    h2 {
+        font-size: 11pt;
+    }
+
+    /* Use horizontal space better */
+    table {
+        font-size: 9pt;
+    }
+}
+
+/* ============================================
+   SPECIFIC COMPONENT FIXES
+   ============================================ */
+
+/* Auth overlay mobile */
+@media screen and (max-width: 768px) {
+    .auth-overlay {
+        padding: 10px;
+    }
+
+    .auth-card {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .google-login-btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    header .user-controls {
+        position: relative;
+        right: auto;
+        transform: none;
+        margin: 8px 0;
+    }
+}
+
+/* Tooltip mobile adjustments */
+@media screen and (max-width: 768px) {
+    .pm-tooltip-popup,
+    .var-tooltip {
+        max-width: 90vw !important;
+        min-width: 250px;
+        font-size: 12px;
+        left: 5vw !important;
+        right: 5vw !important;
+        transform: none !important;
+    }
+
+    .pm-tooltip-value {
+        font-size: 14px;
+    }
+}
+
+/* Interactive formula mobile - SCALE TO FIT, no scroll boxes */
+@media screen and (max-width: 768px) {
+    .interactive-formula {
+        padding: 0.5rem;
+        margin: 1rem 0;
+        overflow: visible;
+        position: relative;
+        z-index: 10;
+    }
+
+    .formula-display {
+        font-size: clamp(0.6rem, 2.5vw, 0.95rem);
+        overflow: visible !important;
+        white-space: normal;
+        word-wrap: break-word;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        line-height: 1.8;
+    }
+
+    .formula-display.large {
+        font-size: clamp(0.55rem, 2.2vw, 0.85rem);
+    }
+
+    .formula-var {
+        padding: 0.1rem 0.2rem;
+        font-size: inherit;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .formula-op {
+        font-size: inherit;
+        padding: 0 0.15rem;
+    }
+
+    .expandable-formula {
+        margin: 1rem 0;
+        overflow: visible;
+    }
+
+    .sub-components {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Formula tooltips - MUST appear above everything */
+    .var-tooltip {
+        position: fixed !important;
+        left: 5vw !important;
+        right: 5vw !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 90vw !important;
+        max-width: 90vw !important;
+        z-index: 100000 !important;
+        font-size: 0.85rem;
+        padding: 1rem;
+        background: var(--bg-secondary, #1a1a2e) !important;
+        border: 1px solid rgba(139, 127, 255, 0.4) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .formula-var:hover .var-tooltip,
+    .formula-var:focus .var-tooltip,
+    .formula-var.touched .var-tooltip {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Extra small screens - even more compact formulas */
+@media screen and (max-width: 480px) {
+    .interactive-formula {
+        padding: 0.4rem;
+    }
+
+    .formula-display {
+        font-size: clamp(0.5rem, 2vw, 0.75rem);
+        gap: 0.15rem;
+    }
+
+    .formula-display.large {
+        font-size: clamp(0.45rem, 1.8vw, 0.7rem);
+    }
+
+    .formula-var {
+        padding: 0.08rem 0.15rem;
+    }
+
+    .var-tooltip {
+        font-size: 0.8rem;
+        padding: 0.75rem;
+    }
+}
+
+/* Diagram mobile - SCALE TO FIT, no scroll boxes */
+@media screen and (max-width: 768px) {
+    .diagram-container {
+        padding: 0.75rem;
+        overflow: hidden; /* No scroll boxes */
+        max-width: 100%;
+    }
+
+    /* SVG scaling - fit to container width */
+    .diagram-svg,
+    svg:not(.google-icon):not(.google-icon-small) {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-width: unset !important;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Ensure SVG viewBox scales properly */
+    svg[viewBox] {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Inline SVGs in flow diagrams */
+    .flow-diagram,
+    .scale-ladder,
+    .coset-diagram {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .flow-diagram svg,
+    .scale-ladder svg,
+    .coset-diagram svg {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
+    }
+
+    .slider-control {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .calc-inputs {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Extra small screens - even more aggressive SVG scaling */
+@media screen and (max-width: 480px) {
+    .diagram-container {
+        padding: 0.5rem;
+    }
+
+    /* Scale down SVG text for readability */
+    svg text {
+        font-size: 80% !important;
+    }
+
+    /* Ensure all SVG artwork scales */
+    .diagram-svg,
+    svg:not(.google-icon):not(.google-icon-small) {
+        transform-origin: top left;
+    }
+}
+
+/* ============================================
+   PRINT MEDIA - OVERRIDE MOBILE
+   ============================================ */
+@media print {
+    /* Reset all mobile styles for printing */
+    body {
+        font-size: 11pt !important;
+        overflow-x: visible !important;
+    }
+
+    .paper {
+        padding: 0 !important;
+        max-width: none !important;
+        overflow-x: visible !important;
+    }
+
+    table {
+        display: table !important;
+        font-size: 9pt !important;
+        overflow: visible !important;
+    }
+
+    thead, tbody, tr {
+        display: table-row-group !important;
+    }
+
+    tr {
+        display: table-row !important;
+    }
+
+    th, td {
+        display: table-cell !important;
+        white-space: normal !important;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+    }
+
+    table, figure, img, .equation, .formula-display {
+        page-break-inside: avoid;
+    }
+
+    /* Hide mobile-only elements */
+    .download-btn,
+    .user-controls,
+    .auth-overlay {
+        display: none !important;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Focus visible for keyboard navigation */
+@media (hover: hover) and (pointer: fine) {
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+        outline: 2px solid #8b7fff;
+        outline-offset: 2px;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ============================================
+   ADDITIONAL MOBILE UX IMPROVEMENTS
+   ============================================ */
+
+/* Mobile header and hamburger menu fixes */
+@media screen and (max-width: 768px) {
+    /* Ensure hamburger menu is visible and clickable */
+    .pm-header .mobile-menu-btn {
+        display: flex !important;
+        z-index: 1001;
+        touch-action: manipulation;
+    }
+
+    /* Mobile nav dropdown improvements */
+    .pm-header .main-nav.mobile-open {
+        display: block !important;
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better touch targets for mobile nav links */
+    .pm-header .main-nav a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0.875rem 1rem;
+        margin: 2px 0;
+    }
+
+    /* Cards and grids stack on mobile */
+    .section-nav,
+    .index-grid,
+    .viz-grid,
+    .formula-grid,
+    .param-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Hero section mobile adjustments */
+    .hero,
+    .sim-hero,
+    .paper-hero {
+        padding: 1.5rem 1rem !important;
+        margin: 1rem 0 !important;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+
+    /* Fix content overflow */
+    .paper,
+    .content,
+    .main-content,
+    main {
+        max-width: 100vw;
+        overflow-x: hidden;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Simulation code blocks scroll */
+    .sim-code,
+    .code-block,
+    pre.language-python {
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 0.75rem;
+    }
+
+    /* Better spacing for section cards */
+    .section-card {
+        padding: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Navigation buttons stack */
+    .nav-buttons,
+    .downloads,
+    .button-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-buttons a,
+    .download-btn,
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Extra small screens - more aggressive fixes */
+@media screen and (max-width: 480px) {
+    /* Very compact header */
+    .pm-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .pm-header .site-title {
+        font-size: 1rem;
+    }
+
+    /* Hide long text, show icons only if available */
+    .pm-header .user-email {
+        display: none !important;
+    }
+
+    /* Compact hero */
+    .hero h1 {
+        font-size: 1.25rem !important;
+    }
+
+    .hero .subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    /* Smaller section numbers */
+    .section-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+
+    /* Tighter formula display */
+    .interactive-formula,
+    .formula-display {
+        padding: 0.5rem;
+        font-size: 0.7rem !important;
+    }
+
+    /* Fix long equations */
+    .equation-highlight,
+    .formula-plaintext {
+        font-size: 0.65rem;
+        padding: 0.75rem 0.5rem;
+        overflow-x: auto;
+    }
+}
+
+/* iOS safe area support for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .pm-header {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Fix sticky header on mobile */
+@media screen and (max-width: 768px) {
+    .pm-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    /* Ensure content doesn't get hidden behind sticky header */
+    main,
+    #main-content {
+        scroll-margin-top: 80px;
+    }
+}
