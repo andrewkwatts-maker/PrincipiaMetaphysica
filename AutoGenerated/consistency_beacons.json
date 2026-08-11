@@ -11,9 +11,9 @@
       "value": 0.9999975149000001,
       "expected": 1.0,
       "delta_pct": 0.00024850999998937695,
-      "tolerance": 0.5,
+      "tolerance": 0.01,
       "status": "PASS",
-      "note": "Sum |V_ud|^2 + |V_us|^2 + |V_ub|^2 for the CKM matrix's first row must equal 1."
+      "note": "Sum |V_ud|^2 + |V_us|^2 + |V_ub|^2 for the CKM matrix's first row must equal 1 (tolerance 0.01% = ppm-scale)."
     },
     {
       "id": "beacon.nufit_delta_m21_squared",
@@ -61,14 +61,14 @@
     },
     {
       "id": "beacon.jarlskog_bound",
-      "name": "Jarlskog invariant order-of-magnitude bound",
+      "name": "Jarlskog invariant vs Wolfenstein parameterisation",
       "reference": "PDG 2024 CKM review, Sec. 12.3; Jarlskog (1985)",
       "value": 3.08e-05,
-      "expected": 2.4729734410000004e-05,
-      "delta_pct": 24.54642451617012,
-      "tolerance": 100.0,
+      "expected": 3.168701144815224e-05,
+      "delta_pct": 2.799290332581864,
+      "tolerance": 5.0,
       "status": "PASS",
-      "note": "PDG J_CP (~3e-5) must sit well below the eps^4 bound (~2.5e-3)."
+      "note": "PDG J_CP compared to Wolfenstein J = A^2 * eta * lambda^6; tolerance 5% matches PDG uncertainty on eta."
     },
     {
       "id": "beacon.g2_spinor_bundle_dimension",

@@ -56,6 +56,18 @@
                 return `<div class="math-mode-block" data-mode="${mode}">${inner.trim()}</div>`;
             });
         }
+        // Also convert <Speculation>...</Speculation> to collapsible
+        // <details> panels so the header speculation-toggle (which sets
+        // `open` on every .speculation-block) auto-expands / auto-
+        // collapses them. Each panel remains individually clickable.
+        out = out.replace(/<Speculation>([\s\S]*?)<\/Speculation>/gi, (_, inner) => {
+            return (
+                '<details class="speculation-block">' +
+                '<summary>◈ Speculation — click to expand</summary>' +
+                `<div class="speculation-body">${inner.trim()}</div>` +
+                '</details>'
+            );
+        });
         return out;
     }
 

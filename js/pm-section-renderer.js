@@ -510,6 +510,56 @@ class PMSectionRenderer extends HTMLElement {
                 background: rgba(255, 126, 182, 0.24);
                 color: #ffd7ea;
             }
+
+            /* Speculation panels — replicate pm-common.css since the
+               shadow-DOM boundary blocks external stylesheets. */
+            details.speculation-block {
+                display: block;
+                margin: 0.75rem 0;
+                border: 1px solid rgba(245, 158, 11, 0.35);
+                border-left: 3px solid #f59e0b;
+                border-radius: 0 6px 6px 0;
+                background: rgba(245, 158, 11, 0.05);
+                padding: 0;
+                overflow: hidden;
+            }
+            details.speculation-block > summary {
+                cursor: pointer;
+                list-style: none;
+                padding: 0.4rem 0.85rem;
+                font-size: 0.72rem;
+                font-weight: 700;
+                letter-spacing: 0.08em;
+                text-transform: uppercase;
+                color: #f59e0b;
+                background: rgba(245, 158, 11, 0.09);
+                user-select: none;
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                transition: background 0.15s ease;
+            }
+            details.speculation-block > summary::-webkit-details-marker,
+            details.speculation-block > summary::marker { display: none; }
+            details.speculation-block > summary::before {
+                content: '\\25B8'; /* ▸ */
+                display: inline-block;
+                font-size: 0.9em;
+                transition: transform 0.15s ease;
+                color: #f59e0b;
+            }
+            details.speculation-block[open] > summary::before {
+                transform: rotate(90deg);
+            }
+            details.speculation-block > summary:hover {
+                background: rgba(245, 158, 11, 0.16);
+            }
+            details.speculation-block > .speculation-body,
+            details.speculation-block > :not(summary) {
+                padding: 0.6rem 1rem 0.75rem;
+                font-style: italic;
+                color: #b0b0c0;
+            }
         `;
     }
 
@@ -552,10 +602,20 @@ class PMSectionRenderer extends HTMLElement {
             return `<div class="math-mode-block" data-mode="eml">${content.trim()}</div>`;
         });
 
-        // Convert <Speculation>...</Speculation> blocks to toggleable speculation divs
-        text = text.replace(/<Speculation>([\s\S]*?)<\/Speculation>/g, (_, content) =>
-            `<div class="speculation-block">${content.trim()}</div>`
-        );
+        // Convert <Speculation>...</Speculation> blocks to collapsible
+        // <details> panels. The summary chip stays visible always (so
+        // readers see where speculation lives); the body expands/
+        // collapses. `js/math-mode.js` sets `open` on every panel when
+        // the header speculation-toggle flips.
+        text = text.replace(/<Speculation>([\s\S]*?)<\/Speculation>/gi, (_, content) => {
+            this._hasSpeculation = true;
+            return (
+                '<details class="speculation-block">' +
+                '<summary>◈ Speculation — click to expand</summary>' +
+                `<div class="speculation-body">${content.trim()}</div>` +
+                '</details>'
+            );
+        });
 
         // Replace formula references: {{formula:id}}
         text = text.replace(/\{\{formula:([^}]+)\}\}/g, (match, id) => {

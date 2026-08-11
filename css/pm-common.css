@@ -951,48 +951,83 @@ html {
 }
 
 /* ============================================================
-   SPECULATION BLOCKS
-   Toggle via [data-speculation="show"] on <html>.
-   Default OFF — speculation content is hidden.
+   SPECULATION PANELS
+   Every speculative claim ships as a collapsible <details> panel.
+   The summary chip ("◈ Speculation — click to expand") is ALWAYS
+   visible so readers can see where speculation is. The `open`
+   attribute controls per-panel expansion.
 
-   Usage in HTML/templates:
-     <div class="speculation-block">Speculative claim here</div>
+   The header speculation-toggle is an "auto expand / auto collapse
+   all" switch: flipping it sets/removes the `open` attribute on
+   every .speculation-block on the page (see js/math-mode.js).
+   Users can still expand/collapse individual panels by clicking
+   the summary.
 
-   In Python section content use <Speculation>...</Speculation> tags;
-   pm-section-renderer.js converts them to .speculation-block divs.
+   Usage in HTML (Python authors — write <Speculation>...</Speculation>
+   in paragraph strings; the renderers convert them to this markup):
+     <details class="speculation-block">
+       <summary>◈ Speculation — click to expand</summary>
+       <div class="speculation-body">Speculative claim here</div>
+     </details>
    ============================================================ */
 
-/* Hidden by default */
-html:not([data-speculation="show"]) .speculation-block {
-    display: none !important;
-}
-
-/* Shown when speculation mode is active */
-[data-speculation="show"] .speculation-block {
+.speculation-block {
     display: block;
+    margin: 0.75rem 0;
+    border: 1px solid rgba(245, 158, 11, 0.35);
     border-left: 3px solid var(--color-amber, #f59e0b);
-    background: rgba(245, 158, 11, 0.06);
     border-radius: 0 6px 6px 0;
-    padding: 0.6rem 1rem;
-    margin: 0.5rem 0;
-    font-style: italic;
-    color: var(--text-secondary, #b0b0c0);
-    position: relative;
+    background: rgba(245, 158, 11, 0.05);
+    padding: 0;
+    overflow: hidden;
 }
 
-[data-speculation="show"] .speculation-block::before {
-    content: '◈ Speculation';
-    display: block;
-    font-size: 0.7rem;
+.speculation-block > summary {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.4rem 0.85rem;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-amber, #f59e0b);
-    margin-bottom: 0.3rem;
-    font-style: normal;
+    background: rgba(245, 158, 11, 0.09);
+    user-select: none;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background 0.15s ease;
 }
 
-/* Inline speculation spans */
+.speculation-block > summary::-webkit-details-marker,
+.speculation-block > summary::marker { display: none; }
+
+.speculation-block > summary::before {
+    content: '▸';
+    display: inline-block;
+    font-size: 0.9em;
+    transition: transform 0.15s ease;
+    color: var(--color-amber, #f59e0b);
+}
+
+.speculation-block[open] > summary::before {
+    transform: rotate(90deg);
+}
+
+.speculation-block > summary:hover {
+    background: rgba(245, 158, 11, 0.16);
+}
+
+.speculation-block > .speculation-body,
+.speculation-block > :not(summary) {
+    padding: 0.6rem 1rem 0.75rem;
+    font-style: italic;
+    color: var(--text-secondary, #b0b0c0);
+}
+
+/* Inline speculation spans — kept as amber italic when speculation
+ * mode is on, hidden when off (they can't collapse to a summary
+ * because they live mid-sentence). */
 html:not([data-speculation="show"]) .speculation-inline {
     display: none !important;
 }
