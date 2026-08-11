@@ -30,6 +30,35 @@
     // Generates safe URL fragment IDs from a section title, plus shorter
     // 2-word slices, so external anchors like #einstein-hilbert or
     // #pneuma-field land on whatever section best matches.
+    // ========================================================================
+    // MATH-MODE TAG PROCESSING
+    // ========================================================================
+    // Content strings authored in Python may embed <Normal>…</Normal> and
+    // <EML>…</EML> tags to mark up dual-mode math variants. Convert them to
+    // math-mode-block divs so the per-section CSS scope (see pm-common.css)
+    // can toggle between the two on click. Sets `hasMathModes` to true when
+    // any conversion happens so the caller can wrap the section in a
+    // `.math-scope` with a Normal/EML toggle pill.
+    const _mathModeState = { hasMathModes: false };
+    function _processMathModeTags(html) {
+        if (!html || typeof html !== 'string') return html;
+        let out = html;
+        // Handle both <Normal>/<EML> (as authored) and browser-lowercased
+        // <normal>/<eml> variants (some pages inject via innerHTML which
+        // lowercases unknown-element tag names).
+        const patterns = [
+            [/<Normal>([\s\S]*?)<\/Normal>/gi, 'normal'],
+            [/<EML>([\s\S]*?)<\/EML>/gi, 'eml'],
+        ];
+        for (const [rx, mode] of patterns) {
+            out = out.replace(rx, (_, inner) => {
+                _mathModeState.hasMathModes = true;
+                return `<div class="math-mode-block" data-mode="${mode}">${inner.trim()}</div>`;
+            });
+        }
+        return out;
+    }
+
     function _generateSlugAliases(title) {
         if (!title) return [];
         const cleaned = String(title)
@@ -684,6 +713,9 @@
      */
     async function renderSection(section, options = {}) {
         const { loadFormulas = true, loadParameters = true, useJsonContent = true } = options;
+        // Reset the math-mode-detection flag; _processMathModeTags flips it
+        // when it finds <Normal>/<EML> tags anywhere in this section's content.
+        _mathModeState.hasMathModes = false;
 
         // Handle both flat structure and metadata/content wrapper
         // For appendices, use subsection_id (e.g., "A") instead of id (which may be "2")
@@ -748,7 +780,7 @@
             const abstractText = typeof sectionAbstract === 'object'
                 ? JSON.stringify(sectionAbstract)
                 : String(sectionAbstract);
-            abstractDiv.innerHTML = `<p>${abstractText}</p>`;
+            abstractDiv.innerHTML = `<p>${_processMathModeTags(abstractText)}</p>`;
             sectionDiv.appendChild(abstractDiv);
         }
 
@@ -834,10 +866,38 @@
             takeawaysDiv.innerHTML = `
                 <h3>Key Takeaways</h3>
                 <ul>
-                    ${section.keyTakeaways.map(item => `<li>${item}</li>`).join('')}
+                    ${section.keyTakeaways.map(item => `<li>${_processMathModeTags(String(item))}</li>`).join('')}
                 </ul>
             `;
             sectionDiv.appendChild(takeawaysDiv);
+        }
+
+        // If any <Normal>/<EML> tag was processed while rendering, turn this
+        // section into a math-mode scope with a Normal / EML toggle pill so
+        // the reader can flip the section's variant. pm-math-toggle.js
+        // handles the click via document-delegation.
+        if (_mathModeState.hasMathModes) {
+            sectionDiv.classList.add('math-scope');
+            sectionDiv.setAttribute('data-math-mode', 'normal');
+            const togglePill = document.createElement('div');
+            togglePill.className = 'math-toggle';
+            togglePill.setAttribute('role', 'group');
+            togglePill.setAttribute('aria-label', 'Math notation for this section');
+            togglePill.style.margin = '0.5rem 0 1rem';
+            togglePill.innerHTML =
+                '<button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>' +
+                '<button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>';
+            // Insert the pill after the section header (index 0) so it
+            // sits under the title rather than at the very top. If no
+            // header rendered, prepend it.
+            const headerEl = sectionDiv.querySelector(':scope > .section-header');
+            if (headerEl && headerEl.nextSibling) {
+                sectionDiv.insertBefore(togglePill, headerEl.nextSibling);
+            } else if (headerEl) {
+                sectionDiv.appendChild(togglePill);
+            } else {
+                sectionDiv.insertBefore(togglePill, sectionDiv.firstChild);
+            }
         }
 
         return sectionDiv;
@@ -984,7 +1044,7 @@
         switch (block.type) {
             case 'paragraph':
             case 'text':
-                blockDiv.innerHTML = `<p>${safeStringify(block.content || block.text, 'text/content')}</p>`;
+                blockDiv.innerHTML = `<p>${_processMathModeTags(safeStringify(block.content || block.text, 'text/content'))}</p>`;
                 break;
 
             case 'heading':
@@ -1046,7 +1106,7 @@
                 }
                 const listType = isOrdered ? 'ol' : 'ul';
                 const listItems = (listItemsArray || []).map((item, idx) =>
-                    `<li>${safeStringify(item, `list.items[${idx}]`)}</li>`
+                    `<li>${_processMathModeTags(safeStringify(item, `list.items[${idx}]`))}</li>`
                 ).join('');
                 blockDiv.innerHTML = `<${listType}>${listItems}</${listType}>`;
                 break;
@@ -1066,7 +1126,7 @@
 
             case 'quote':
             case 'blockquote':
-                blockDiv.innerHTML = `<blockquote>${safeStringify(block.content, 'quote.content')}</blockquote>`;
+                blockDiv.innerHTML = `<blockquote>${_processMathModeTags(safeStringify(block.content, 'quote.content'))}</blockquote>`;
                 break;
 
             case 'table':
@@ -1084,7 +1144,7 @@
             case 'note':
                 // Academic note/aside
                 blockDiv.className = 'academic-note';
-                blockDiv.innerHTML = `<div class="note-content">${safeStringify(block.content, 'note.content')}</div>`;
+                blockDiv.innerHTML = `<div class="note-content">${_processMathModeTags(safeStringify(block.content, 'note.content'))}</div>`;
                 blockDiv.setAttribute('role', 'note');
                 break;
 
