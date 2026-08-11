@@ -358,6 +358,9 @@ class PMSectionRenderer extends HTMLElement {
 
     async renderHTML(section, level) {
         const styles = await this.getStyles();
+        // Reset per-render flag; processTextContent flips it when it sees
+        // <Normal>/<EML> tags anywhere in the section content.
+        this._hasMathModes = false;
 
         let content = '';
 
@@ -428,7 +431,20 @@ class PMSectionRenderer extends HTMLElement {
             content += this.renderNavigationHTML(section);
         }
 
-        this.shadowRoot.innerHTML = `<style>${styles}</style><section class="pm-section">${content}</section>`;
+        const emlToggle = this._hasMathModes ? `
+            <div class="math-toggle" role="group" aria-label="Math notation for this section">
+                <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+            </div>` : '';
+        const scopeAttr = this._hasMathModes ? ' class="pm-section math-scope" data-math-mode="normal"' : ' class="pm-section"';
+
+        this.shadowRoot.innerHTML = `<style>${styles}${this._mathModeStyles()}</style><section${scopeAttr}>${emlToggle}${content}</section>`;
+
+        // Wire per-section math toggle inside shadow DOM (document-level
+        // delegation cannot reach into a closed shadow tree's target).
+        if (this._hasMathModes) {
+            this._wireShadowMathToggle();
+        }
 
         // Trigger MathJax after rendering
         if (typeof window !== 'undefined' && window.MathJax && window.MathJax.typesetPromise) {
@@ -445,6 +461,78 @@ class PMSectionRenderer extends HTMLElement {
         }
     }
 
+    /** CSS injected into the shadow root so the per-section math scope +
+     *  toggle behave the same as light-DOM cards (see pm-common.css). */
+    _mathModeStyles() {
+        return `
+            .math-mode-block { display: block; }
+            .math-mode-inline { display: inline; }
+            .math-mode-block[data-mode="eml"],
+            .eml-formula,
+            .math-mode-inline[data-mode="eml"] { display: none; }
+            [data-math-mode="eml"] .math-mode-block[data-mode="normal"],
+            [data-math-mode="eml"] .math-mode-inline[data-mode="normal"],
+            [data-math-mode="eml"] .normal-formula { display: none; }
+            [data-math-mode="eml"] .math-mode-block[data-mode="eml"],
+            [data-math-mode="eml"] .eml-formula { display: block; }
+            [data-math-mode="eml"] .math-mode-inline[data-mode="eml"] { display: inline; }
+
+            .math-toggle {
+                display: inline-flex;
+                gap: 0;
+                background: rgba(17, 20, 38, 0.5);
+                border: 1px solid rgba(139, 127, 255, 0.25);
+                border-radius: 999px;
+                padding: 2px;
+                align-items: center;
+                font-size: 0.72rem;
+                line-height: 1;
+                user-select: none;
+                margin: 0 0 1rem 0;
+            }
+            .math-toggle-btn {
+                background: transparent;
+                color: #9ba4c7;
+                border: none;
+                padding: 0.32rem 0.72rem;
+                border-radius: 999px;
+                cursor: pointer;
+                font: inherit;
+                font-weight: 600;
+                letter-spacing: 0.02em;
+                transition: background 0.15s ease, color 0.15s ease;
+            }
+            .math-toggle-btn[aria-pressed="true"] {
+                background: rgba(139, 127, 255, 0.28);
+                color: #eaeaff;
+            }
+            .math-toggle-btn[data-mode="eml"][aria-pressed="true"] {
+                background: rgba(255, 126, 182, 0.24);
+                color: #ffd7ea;
+            }
+        `;
+    }
+
+    _wireShadowMathToggle() {
+        const scope = this.shadowRoot.querySelector('.pm-section.math-scope');
+        if (!scope) return;
+        const buttons = scope.querySelectorAll('.math-toggle .math-toggle-btn');
+        const syncPressed = (mode) => {
+            buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
+        };
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const mode = btn.dataset.mode;
+                if (mode !== 'normal' && mode !== 'eml') return;
+                scope.setAttribute('data-math-mode', mode);
+                syncPressed(mode);
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([scope]).catch(() => {});
+                }
+            });
+        });
+    }
+
     /**
      * Process text to detect and replace formula/parameter references
      * Supports: {{formula:id}}, {{param:id}}, <pm-formula>, <pm-param>
@@ -452,13 +540,17 @@ class PMSectionRenderer extends HTMLElement {
     processTextContent(text) {
         if (!text || typeof text !== 'string') return text;
 
-        // Convert <EML>...</EML> and <Normal>...</Normal> blocks to mode-switching divs
-        text = text.replace(/<Normal>([\s\S]*?)<\/Normal>/g, (_, content) =>
-            `<div class="math-mode-block" data-mode="normal">${content.trim()}</div>`
-        );
-        text = text.replace(/<EML>([\s\S]*?)<\/EML>/g, (_, content) =>
-            `<div class="math-mode-block" data-mode="eml">${content.trim()}</div>`
-        );
+        // Convert <EML>...</EML> and <Normal>...</Normal> blocks to mode-switching divs.
+        // Track whether the section carries any EML/Normal variants so renderHTML
+        // knows to emit a per-section math-mode toggle.
+        text = text.replace(/<Normal>([\s\S]*?)<\/Normal>/g, (_, content) => {
+            this._hasMathModes = true;
+            return `<div class="math-mode-block" data-mode="normal">${content.trim()}</div>`;
+        });
+        text = text.replace(/<EML>([\s\S]*?)<\/EML>/g, (_, content) => {
+            this._hasMathModes = true;
+            return `<div class="math-mode-block" data-mode="eml">${content.trim()}</div>`;
+        });
 
         // Convert <Speculation>...</Speculation> blocks to toggleable speculation divs
         text = text.replace(/<Speculation>([\s\S]*?)<\/Speculation>/g, (_, content) =>

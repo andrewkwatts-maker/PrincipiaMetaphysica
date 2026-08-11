@@ -1111,6 +1111,7 @@
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
+        import '../js/pm-math-toggle.js';
 
         // Inject header first
         document.addEventListener('DOMContentLoaded', () => {
@@ -2166,9 +2167,15 @@
                 const emlDesc = param.eml_description || (param.metadata && param.metadata.eml_description) || '';
                 if (emlDesc) {
                     html += `
-                        <div class="param-description math-mode-block" data-mode="normal">${param.description}</div>
-                        <div class="param-description math-mode-block" data-mode="eml" style="font-family:monospace; color:var(--accent-secondary); font-size:0.85em;">
-                            <span style="color:var(--text-muted); font-family:var(--font-body); margin-right:0.4rem;">⊕ EML:</span>${emlDesc}
+                        <div class="math-scope" data-math-mode="normal" style="margin-top:0.35rem;">
+                            <div class="math-toggle" role="group" aria-label="Description notation" style="margin-bottom:0.4rem;">
+                                <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                                <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+                            </div>
+                            <div class="param-description math-mode-block" data-mode="normal">${param.description}</div>
+                            <div class="param-description math-mode-block" data-mode="eml" style="font-family:monospace; color:var(--accent-secondary); font-size:0.85em;">
+                                <span style="color:var(--text-muted); font-family:var(--font-body); margin-right:0.4rem;">⊕ EML:</span>${emlDesc}
+                            </div>
                         </div>`;
                 } else {
                     html += `<div class="param-description">${param.description}</div>`;

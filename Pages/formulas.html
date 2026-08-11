@@ -1867,6 +1867,7 @@
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
+    import '../js/pm-math-toggle.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
@@ -2374,6 +2375,10 @@
         const _rawName = (formula.shortName || formula.name || formula.label || formulaId || 'Out').toString();
         const _outLbl  = _rawName.includes('.') ? _rawName.split('.').slice(-1)[0] : _rawName;
 
+        // Whether this formula has a genuine EML variant to show. When
+        // false, the toggle is suppressed so cards don't sprout dead pills.
+        const hasEmlVariant = !!(eml_latex || purePm || flowPm || eml_tree);
+
         let emlContent;
         if (eml_latex && (purePm || flowPm)) {
             // Render flow client-side from the compact tree array.
@@ -2426,8 +2431,17 @@
                </div>`;
         }
 
-        return `<div class="normal-formula">${normalContent}</div>
-                <div class="eml-formula">${emlContent}</div>`;
+        const togglePill = hasEmlVariant ? `
+            <div class="math-toggle" role="group" aria-label="Math notation for this formula">
+                <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+            </div>` : '';
+
+        return `<div class="math-scope" data-math-mode="normal">
+                    ${togglePill}
+                    <div class="normal-formula">${normalContent}</div>
+                    <div class="eml-formula">${emlContent}</div>
+                </div>`;
     }
 
     // Wrap formula terms with hoverable tooltips

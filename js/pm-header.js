@@ -1,8 +1,9 @@
 /**
  * Principia Metaphysica - Centralized Header Component
  *
- * Injects a consistent header across all pages, including the
- * Normal Math / EML Math pill switcher.
+ * Injects a consistent header across all pages. Math-mode switching is
+ * per-card (see js/pm-math-toggle.js) rather than global, so the header
+ * no longer carries a Normal Math / EML Math pill.
  *
  * Usage:
  *   import { injectHeader } from './js/pm-header.js';
@@ -11,29 +12,16 @@
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
-// Math-mode module path resolution: works from any page depth because
-// getBasePath() is used at runtime. We resolve lazily on first use.
+// Speculation-toggle module (still global; only math mode went per-card).
 let _mathMode = null;
 async function _getMathModeModule() {
   if (_mathMode) return _mathMode;
-  // math-mode.js sits next to pm-header.js in the same js/ directory, so
-  // resolve module-relative rather than page-relative. Previously this
-  // used getBasePath() + 'js/math-mode.js', which doubled the js/ segment
-  // (page fetched /js/pm-header.js, whose (basePath='')+'js/math-mode.js'
-  // computed against the *module URL* produced /js/js/math-mode.js -> 404,
-  // breaking the Normal Math / EML Math header toggle across the site).
   const modPath = './math-mode.js';
   try {
     _mathMode = await import(modPath);
   } catch (err) {
     console.warn('[PM Header] Failed to load math-mode.js:', err);
-    // Fallback: no-op stubs if module can't load. Cover the full surface
-    // pm-header.js calls (math + speculation) so subsequent setup doesn't
-    // throw.
     _mathMode = {
-      getMathMode: () => 'normal',
-      setMathMode: () => {},
-      initMathMode: () => {},
       getSpeculationMode: () => false,
       setSpeculationMode: () => {},
       toggleSpeculationMode: () => {},
@@ -165,10 +153,6 @@ function createHeaderHTML(activePageId = '') {
       <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
         <div class="header-controls">
-          <div class="math-mode-switcher" role="group" aria-label="Math notation mode">
-            <button class="math-mode-pill" data-mode="normal" aria-pressed="true" title="Standard mathematical notation">Normal Math</button>
-            <button class="math-mode-pill" data-mode="eml" aria-pressed="false" title="EML Mirror Phase Mathematics notation">EML Math</button>
-          </div>
           <button class="speculation-toggle-btn" id="speculation-toggle-btn" aria-pressed="false" title="Show/hide speculative content (consciousness bridges, philosophical extensions, open hypotheses)">◈ Speculation</button>
           <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
@@ -275,49 +259,13 @@ export function injectHeader(activePageId = '', options = {}) {
   // Setup mobile menu toggle
   setupMobileMenu();
 
-  // Initialize math mode (applies data-math-mode to <html> from localStorage)
+  // Initialize speculation mode (math mode is now per-card, see pm-math-toggle.js).
   _getMathModeModule().then(mm => {
-    mm.initMathMode();
     mm.initSpeculationMode();
-    setupMathModeSwitcher(mm);
     setupSpeculationToggle(mm);
   });
 
   console.log(`[PM Header] Injected header for page: ${activePageId}`);
-}
-
-/**
- * Sync pill button pressed states to the current math mode.
- * @param {string} mode
- */
-function syncPillUI(mode) {
-  document.querySelectorAll('.math-mode-pill').forEach(btn => {
-    const isActive = btn.dataset.mode === mode;
-    btn.setAttribute('aria-pressed', String(isActive));
-    btn.classList.toggle('active', isActive);
-  });
-}
-
-/**
- * Setup math mode pill switcher click handlers.
- * @param {Object} mm - math-mode module
- */
-function setupMathModeSwitcher(mm) {
-  // Sync initial state
-  syncPillUI(mm.getMathMode());
-
-  // Wire pill buttons
-  document.querySelectorAll('.math-mode-pill').forEach(btn => {
-    btn.addEventListener('click', () => {
-      mm.setMathMode(btn.dataset.mode);
-      syncPillUI(btn.dataset.mode);
-    });
-  });
-
-  // Keep pills synced if mode changes elsewhere
-  window.addEventListener('pm-math-mode-changed', e => {
-    syncPillUI(e.detail.mode);
-  });
 }
 
 /**

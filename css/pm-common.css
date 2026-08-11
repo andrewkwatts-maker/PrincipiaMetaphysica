@@ -812,74 +812,108 @@ html {
 }
 
 /* ============================================
-   Math Mode Switching — Global Rules
+   Math Mode Switching — Per-card scope
    ============================================
 
-   Apply [data-math-mode="normal|eml"] to <html> via js/math-mode.js.
-   CSS handles all show/hide logic; no JS re-render needed after mode switch.
+   Every card that renders both a Normal-Math and an EML variant wraps
+   itself in a `.math-scope` element carrying `data-math-mode="normal"`
+   (default) or `"eml"`. A companion `.math-toggle` group inside the
+   scope flips the attribute on click (handled by js/pm-math-toggle.js).
+
+   Default state (no ancestor scope): show normal, hide EML.
+   Scope="normal": same as default.
+   Scope="eml": hide normal, show EML.
 
    Usage in HTML:
-     <div class="math-mode-block" data-mode="normal">Standard formula here</div>
-     <div class="math-mode-block" data-mode="eml">EML formula here</div>
+     <div class="math-scope" data-math-mode="normal">
+       <div class="math-toggle" role="group" aria-label="Math notation">
+         <button class="math-toggle-btn" data-mode="normal">Normal</button>
+         <button class="math-toggle-btn" data-mode="eml">EML</button>
+       </div>
+       <div class="math-mode-block" data-mode="normal">Standard formula here</div>
+       <div class="math-mode-block" data-mode="eml">EML formula here</div>
+     </div>
 
+   Inline variant:
      <span class="math-mode-inline" data-mode="normal">α⁻¹ = b₃/(4πk)</span>
      <span class="math-mode-inline" data-mode="eml">ops.div(b3, ops.mul(4π, k))</span>
 
-   For formula cards with separate displays:
+   Formula-card panels (interactive formula):
      <div class="formula-display normal-formula">LaTeX here</div>
      <div class="formula-display eml-formula">EML LaTeX here</div>
    ============================================ */
 
-/* Block-level math mode sections */
+/* Block-level math variants */
 .math-mode-block {
     display: block;
 }
-
-/* Default (no data-math-mode set): show normal, hide eml.
- *
- * CRITICAL: the negation selector MUST be scoped to :root (i.e. <html>) —
- * not the bare `:not([data-math-mode])`. The bare form descends through every
- * ancestor in the tree, and since <body>, <main>, <section>, etc. don't
- * carry the data-math-mode attribute, the selector matched even when
- * html[data-math-mode="eml"] was set, hiding the EML block in BOTH modes.
- * Tested in production on Pages/foundations.html: clicking the EML pill
- * switched html[data-math-mode] to "eml" but kept the EML block hidden
- * because body still matched :not([data-math-mode]).
- */
-:root:not([data-math-mode]) .math-mode-block[data-mode="eml"],
-:root[data-math-mode="normal"] .math-mode-block[data-mode="eml"] {
-    display: none !important;
-}
-
-:root[data-math-mode="eml"] .math-mode-block[data-mode="normal"] {
-    display: none !important;
-}
-
-/* Inline math mode spans */
 .math-mode-inline {
     display: inline;
 }
 
-:root:not([data-math-mode]) .math-mode-inline[data-mode="eml"],
-:root[data-math-mode="normal"] .math-mode-inline[data-mode="eml"] {
-    display: none !important;
+/* Default: hide EML content, show normal content. Applies globally
+ * unless overridden by a `[data-math-mode="eml"]` scope wrapper. */
+.math-mode-block[data-mode="eml"],
+.eml-formula {
+    display: none;
+}
+.math-mode-inline[data-mode="eml"] {
+    display: none;
 }
 
-:root[data-math-mode="eml"] .math-mode-inline[data-mode="normal"] {
-    display: none !important;
+/* Inside an EML scope: swap. `.math-scope` is the canonical wrapper,
+ * but any ancestor carrying data-math-mode="eml" works. */
+[data-math-mode="eml"] .math-mode-block[data-mode="normal"],
+[data-math-mode="eml"] .math-mode-inline[data-mode="normal"],
+[data-math-mode="eml"] .normal-formula {
+    display: none;
+}
+[data-math-mode="eml"] .math-mode-block[data-mode="eml"],
+[data-math-mode="eml"] .eml-formula {
+    display: block;
+}
+[data-math-mode="eml"] .math-mode-inline[data-mode="eml"] {
+    display: inline;
 }
 
-/* Formula display panels (for formula cards) */
-:root:not([data-math-mode]) .eml-formula,
-:root[data-math-mode="normal"] .eml-formula {
-    display: none !important;
+/* ── Per-card toggle pill (.math-toggle + .math-toggle-btn) ────────────── */
+.math-toggle {
+    display: inline-flex;
+    gap: 0;
+    background: rgba(17, 20, 38, 0.5);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 999px;
+    padding: 2px;
+    align-items: center;
+    font-size: 0.72rem;
+    line-height: 1;
+    user-select: none;
+}
+.math-toggle-btn {
+    background: transparent;
+    color: var(--text-muted, #9ba4c7);
+    border: none;
+    padding: 0.32rem 0.72rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+.math-toggle-btn:hover:not([aria-pressed="true"]) {
+    color: var(--text-primary, #eaeaff);
+}
+.math-toggle-btn[aria-pressed="true"] {
+    background: rgba(139, 127, 255, 0.28);
+    color: var(--text-primary, #eaeaff);
+}
+.math-toggle-btn[data-mode="eml"][aria-pressed="true"] {
+    background: rgba(255, 126, 182, 0.24);
+    color: #ffd7ea;
 }
 
-:root[data-math-mode="eml"] .normal-formula {
-    display: none !important;
-}
-
-/* EML mode indicator badge (shown in EML mode) */
+/* EML mode indicator badge (shown when inside an EML scope) */
 .eml-mode-badge {
     display: none;
     font-size: 0.7rem;

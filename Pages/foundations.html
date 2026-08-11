@@ -560,22 +560,23 @@
         <!-- EML Math Mode: Featured Equation Explanations -->
         <div class="eml-foundations-showcase">
             <div class="eml-showcase-header">
-                <span class="math-mode-inline" data-mode="normal">
-                    Foundational Equations — Standard Notation
-                </span>
-                <span class="math-mode-inline" data-mode="eml">
-                    Foundational Equations — EML Mirror Phase Operator Form
-                </span>
+                Featured Foundational Equations (Normal / EML toggle per card)
             </div>
 
             <!-- Einstein Field Equations EML showcase -->
-            <div class="formula-card eml-showcase-card">
+            <div class="formula-card eml-showcase-card math-scope" data-math-mode="normal">
                 <div class="formula-header">
                     <div>
                         <div class="formula-label">Einstein Field Equations</div>
                         <div class="formula-author">Albert Einstein <span class="formula-year">(1915)</span></div>
                     </div>
-                    <span class="category-badge general_relativity">General Relativity</span>
+                    <div style="display:flex; align-items:center; gap:0.6rem;">
+                        <div class="math-toggle" role="group" aria-label="Math notation for this equation">
+                            <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                            <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+                        </div>
+                        <span class="category-badge general_relativity">General Relativity</span>
+                    </div>
                 </div>
                 <div class="math-mode-block" data-mode="normal">
                     <div class="formula-content">
@@ -609,13 +610,19 @@
             </div>
 
             <!-- Dirac Equation EML showcase -->
-            <div class="formula-card eml-showcase-card">
+            <div class="formula-card eml-showcase-card math-scope" data-math-mode="normal">
                 <div class="formula-header">
                     <div>
                         <div class="formula-label">Dirac Equation</div>
                         <div class="formula-author">Paul Dirac <span class="formula-year">(1928)</span></div>
                     </div>
-                    <span class="category-badge quantum_field_theory">Quantum Field Theory</span>
+                    <div style="display:flex; align-items:center; gap:0.6rem;">
+                        <div class="math-toggle" role="group" aria-label="Math notation for this equation">
+                            <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                            <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+                        </div>
+                        <span class="category-badge quantum_field_theory">Quantum Field Theory</span>
+                    </div>
                 </div>
                 <div class="math-mode-block" data-mode="normal">
                     <div class="formula-content">
@@ -766,14 +773,25 @@
                 const eml_ops = foundation.eml_ops || '';
                 const eml_description = foundation.eml_description || '';
 
+                const cardScopeClass = eml_ops ? ' math-scope' : '';
+                const cardScopeAttr  = eml_ops ? ' data-math-mode="normal"' : '';
+                const togglePill = eml_ops ? `
+                            <div class="math-toggle" role="group" aria-label="Math notation for this equation">
+                                <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                                <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+                            </div>` : '';
+
                 html += `
-                    <div class="formula-card" id="${foundation.id}" data-category="${category}" data-id="${foundation.id}">
+                    <div class="formula-card${cardScopeClass}" id="${foundation.id}" data-category="${category}" data-id="${foundation.id}"${cardScopeAttr}>
                         <div class="formula-header">
                             <div>
                                 <div class="formula-label">${title}</div>
                                 <div class="formula-author">${author}${year ? ` <span class="formula-year">(${year})</span>` : ''}</div>
                             </div>
-                            <span class="category-badge ${category}">${formatCategory(category)}</span>
+                            <div style="display:flex; align-items:center; gap:0.6rem;">
+                                ${togglePill}
+                                <span class="category-badge ${category}">${formatCategory(category)}</span>
+                            </div>
                         </div>
 
                         ${eml_ops ? `
@@ -937,6 +955,7 @@
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
+        import '../js/pm-math-toggle.js';
 
         // Inject header first
         document.addEventListener('DOMContentLoaded', () => {

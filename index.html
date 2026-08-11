@@ -633,7 +633,12 @@
       </div>
      </div>
      <div class="formula-expansion">
-      <div style="background: rgba(139, 127, 255, 0.08); padding: 1.5rem; border-radius: 12px; overflow: visible; position: relative;">
+      <div class="math-scope" data-math-mode="normal" style="background: rgba(139, 127, 255, 0.08); padding: 1.5rem; border-radius: 12px; overflow: visible; position: relative;">
+
+       <div class="math-toggle" role="group" aria-label="Math notation for the master action" style="margin-bottom: 0.75rem;">
+        <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+        <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+       </div>
 
        <!-- ── Normal Math mode ── -->
        <div class="math-mode-block" data-mode="normal">
@@ -1858,6 +1863,7 @@
 
   <script type="module">
     import { injectHeader } from './js/pm-header.js';
+    import './js/pm-math-toggle.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {

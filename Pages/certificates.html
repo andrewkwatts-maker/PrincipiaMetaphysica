@@ -957,6 +957,7 @@
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
+    import '../js/pm-math-toggle.js';
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('certificates');
     });
@@ -1471,14 +1472,23 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
           return 'fail';
         };
 
+        const emlToggleAvailable = hasWolfram || hasWolframValidation;
+        const cardClasses = `cert-card ${isVerified ? 'locked' : isNotTestable ? 'marginal' : 'locked'}${emlToggleAvailable ? ' math-scope' : ''}`;
+
         return `
-          <div class="cert-card ${isVerified ? 'locked' : isNotTestable ? 'marginal' : 'locked'}">
+          <div class="${cardClasses}"${emlToggleAvailable ? ' data-math-mode="normal"' : ''}>
             <div class="cert-card-header">
               <div class="cert-number">${isGate ? `G${String(gate.id).padStart(2, '0')}` : `C${String(gate.id).padStart(2, '0')}`}</div>
               <div class="cert-title-group">
                 <div class="cert-name">${gate.name}</div>
                 <div class="cert-symbol">${gate.formula || ''}</div>
               </div>
+              ${emlToggleAvailable ? `
+                <div class="math-toggle" role="group" aria-label="Verification notation" style="margin-right: 0.5rem;">
+                  <button type="button" class="math-toggle-btn" data-mode="normal" aria-pressed="true">Normal</button>
+                  <button type="button" class="math-toggle-btn" data-mode="eml" aria-pressed="false">EML</button>
+                </div>
+              ` : ''}
               <span class="cert-domain">${gate.domain || `Phase ${gate.phase} / Block ${gate.block}`}</span>
             </div>
             <div class="cert-card-body">
@@ -1563,8 +1573,8 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
                 return `
                 <button class="cert-expand-btn" onclick="toggleWolframGate(${gate.id})">
                   <span class="arrow">▼</span>
-                  <span class="math-mode-block" data-mode="normal" style="display:inline;">Wolfram Validation</span>
-                  <span class="math-mode-block" data-mode="eml" style="display:none;">EML Verification</span>
+                  <span class="math-mode-inline" data-mode="normal">Wolfram Validation</span>
+                  <span class="math-mode-inline" data-mode="eml">EML Verification</span>
                   <span class="wolfram-result ${wolframResult.match ? '' : 'pending'}" style="margin-left: auto;">
                     ${wolframResult.match ? '✓ Verified' : '~ Pending'}
                   </span>
@@ -1620,8 +1630,8 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
                 return `
                 <button class="cert-expand-btn" onclick="toggleCode(${gate.id})">
                   <span class="arrow">▼</span>
-                  <span class="math-mode-block" data-mode="normal" style="display:inline;">Mathematica Code</span>
-                  <span class="math-mode-block" data-mode="eml" style="display:none;">EML Operator Tree</span>
+                  <span class="math-mode-inline" data-mode="normal">Mathematica Code</span>
+                  <span class="math-mode-inline" data-mode="eml">EML Operator Tree</span>
                 </button>
                 <div class="cert-code-section" id="code-${gate.id}">
                   <div class="math-mode-block" data-mode="normal">
