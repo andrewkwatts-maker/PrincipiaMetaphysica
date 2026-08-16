@@ -2,7 +2,7 @@
   "ReT_nonperturbative": {
     "ReT_stabilized": {
       "b3_traceback": true,
-      "formula": "solve(D_T W = 0 | W_flux + W_inst \u2212 v_target) where W_flux = ReT, W_inst = (flux\u00b7A / b3) \u00b7 exp(\u22122\u03c0\u00b7ReT / b3), b3 = 24",
+      "formula": "solve(D_T W = 0 | W_flux + W_inst \u2212 v_target) where W_flux = ReT, W_inst = (flux\u00b7A / b3) \u00b7 exp(\u22122\u03c0\u00b7ReT / b3), b3 = 24 \u2014 CALIBRATED (tautological anchor: W_inst \u2248 1e-20 makes the equation an identity)",
       "value": 174.033
     },
     "VEV_gap_percent": {
@@ -132,9 +132,9 @@
       "b3_traceback": true,
       "formula": "derived from Re(T) soft terms + MSSM potential; b3-seeded",
       "value": {
-        "higgs_sector_status": "matches observed 125 GeV within radiative corrections (predicted 125.08 GeV vs observed 125.10 +/- 0.14 GeV)",
+        "higgs_sector_status": "matches observed 125 GeV within radiative corrections (predicted 125.08 GeV vs observed 125.20 +/- 0.11 GeV)",
         "m_h_GeV": 125.07986037465686,
-        "status": "matches observed 125 GeV within radiative corrections (predicted 125.08 GeV vs observed 125.10 +/- 0.14 GeV)",
+        "status": "matches observed 125 GeV within radiative corrections (predicted 125.08 GeV vs observed 125.20 +/- 0.11 GeV)",
         "v_EW_GeV": 174.0
       }
     },
@@ -175,7 +175,7 @@
     },
     "omega_mirror_h2": {
       "b3_traceback": true,
-      "formula": "solve Boltzmann + bridge_coupling from G2 cycles | b3=24 rooted via re_t_sector",
+      "formula": "solve Boltzmann + bridge_coupling from G2 cycles | b3=24 rooted via re_t_sector | CALIBRATED: IC-dominated (see Y_INITIAL note)",
       "value": 9.618304682770812e-05
     }
   },
@@ -193,12 +193,12 @@
     "refined_neutrino_sum_mass": {
       "b3_traceback": true,
       "formula": "geometric PMNS sum + Z2 mirror correction from G2 bridge [b3 = 24]",
-      "value": 0.04247210804887944
+      "value": 0.04251665543611838
     },
     "sigma_m_base_eV": {
       "b3_traceback": true,
       "formula": "m1 + m2 + m3 (inverted) from geometric Yukawas + G2 cycles [b3 = 24]",
-      "value": 0.06047210804887943
+      "value": 0.06051665543611837
     }
   },
   "proof_completeness": {
@@ -225,7 +225,7 @@
     "status_count_fully_derived": {
       "b3_traceback": false,
       "formula": "count of registry params classified as fully_derived",
-      "value": 532
+      "value": 527
     },
     "status_count_numerical_agreement": {
       "b3_traceback": false,
@@ -235,7 +235,7 @@
     "status_count_open_tension": {
       "b3_traceback": false,
       "formula": "count of registry params classified as open_tension",
-      "value": 6
+      "value": 11
     }
   },
   "soft_susy_breaking": {

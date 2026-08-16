@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "note": "SSOT drift audit: config.py Formula literals cross-checked against the simulation registry (parameters.json). DRIFT = literal disagrees with registry; ORPHAN = no registry source exists for the literal. Roadmap: replace config literals with registry lookups so every displayed number traces to the b3=24 derivation chain or a cited experimental dataset.",
+  "summary": {
+    "checked": 34,
+    "match": 12,
+    "drift": 11,
+    "orphan": 11
+  },
+  "findings": [
+    {
+      "formula_id": "generation-number",
+      "verdict": "MATCH",
+      "registry_path": "topology.n_gen",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 3.0,
+          "registry": 3.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "gut-scale",
+      "verdict": "DRIFT",
+      "registry_path": "gauge.M_GUT",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 2.118e+16,
+          "registry": 6324555320336760.0,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "dark-energy-w0",
+      "verdict": "MATCH",
+      "registry_path": "cosmology.w0_derived",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": -0.9583,
+          "registry": -0.9583333333333334,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "proton-lifetime",
+      "verdict": "DRIFT",
+      "registry_path": "proton_decay.tau_p_years",
+      "registry_status": "PREDICTED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 8.15e+34,
+          "registry": 4.757399129595567e+34,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "theta23-maximal",
+      "verdict": "DRIFT",
+      "registry_path": "neutrino.theta_23_pred",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 45.0,
+          "registry": 49.75,
+          "ok": false
+        },
+        {
+          "field": "experimental_value",
+          "config": 45.2,
+          "registry": 49.3,
+          "ok": false
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.15,
+          "registry": 0.45000000000000284,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "kk-graviton-mass",
+      "verdict": "DRIFT",
+      "registry_path": "geometry.m_KK",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 5.0,
+          "registry": 3352262024757155.5,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "virasoro-anomaly",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 26.0,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "pneuma-vev",
+      "verdict": "ORPHAN",
+      "output_params": [
+        "pneuma.VEV"
+      ],
+      "config_value": 1.076,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "primordial-spinor-13d",
+      "verdict": "MATCH",
+      "registry_path": "geometry.spinor_13d",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 64.0,
+          "registry": 64.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "effective-euler",
+      "verdict": "MATCH",
+      "registry_path": "geometry.chi_eff_total",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 144.0,
+          "registry": 144.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "flux-quantization",
+      "verdict": "MATCH",
+      "registry_path": "fermion.n_flux",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 24.0,
+          "registry": 24.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "effective-torsion",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": -1.0,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "mirror-dm-ratio",
+      "verdict": "ORPHAN",
+      "output_params": [
+        "mirror_sector.dm_baryon_ratio"
+      ],
+      "config_value": 5.8,
+      "config_experimental": 5.4,
+      "config_sigma": 0.7,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "gut-coupling",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 23.54,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "weak-mixing-angle",
+      "verdict": "DRIFT",
+      "registry_path": "gauge.sin2_theta_w",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 0.2312022,
+          "registry": 0.23190478152123015,
+          "ok": false
+        },
+        {
+          "field": "experimental_value",
+          "config": 0.23122,
+          "registry": 0.23122,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.45,
+          "registry": 0.6842343525281191,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "higgs-vev",
+      "verdict": "DRIFT",
+      "registry_path": "higgs.vev",
+      "registry_status": "ESTABLISHED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 173.97,
+          "registry": 246.0,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "top-quark-mass",
+      "verdict": "MATCH",
+      "registry_path": "pdg.m_top",
+      "registry_status": "ESTABLISHED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 172.7,
+          "registry": 172.57,
+          "ok": true
+        },
+        {
+          "field": "experimental_value",
+          "config": 172.69,
+          "registry": 172.57,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.06,
+          "registry": 0.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "strong-coupling",
+      "verdict": "DRIFT",
+      "registry_path": "constants.alpha_s_pred",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 0.1179,
+          "registry": 0.11824551449975534,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "neutrino-mass-21",
+      "verdict": "DRIFT",
+      "registry_path": "neutrino.dm2_21",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 7.97e-05,
+          "registry": 7.419999999999996e-05,
+          "ok": false
+        },
+        {
+          "field": "experimental_value",
+          "config": 7.42e-05,
+          "registry": 7.42e-05,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 2.62,
+          "registry": 1.9360753080098294e-14,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "neutrino-mass-31",
+      "verdict": "DRIFT",
+      "registry_path": "neutrino.dm2_32",
+      "registry_status": "PREDICTED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 0.002525,
+          "registry": -0.0024042084022500004,
+          "ok": false
+        },
+        {
+          "field": "experimental_value",
+          "config": 0.002515,
+          "registry": -0.002498,
+          "ok": false
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.4,
+          "registry": 3.3496999196428368,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "cp-phase-geometric",
+      "verdict": "DRIFT",
+      "registry_path": "neutrino.delta_CP_pred",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 90.0,
+          "registry": 278.4,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "effective-dimension",
+      "verdict": "MATCH",
+      "registry_path": "cosmology.D_eff",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 12.576,
+          "registry": 12.576,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "dark-energy-wa",
+      "verdict": "MATCH",
+      "registry_path": "cosmology.wa_derived",
+      "registry_status": "GEOMETRIC",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": -0.8165,
+          "registry": -0.8164965809277261,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "gw-dispersion-coeff",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 0.113,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "proton-branching",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 0.25,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "ghost-coefficient",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 0.5,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "kappa-gut-coefficient",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 1.46,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "effective-torsion-spinor",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": -0.875,
+      "config_experimental": -0.884,
+      "config_sigma": 1.02,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "gw-dispersion-alt",
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 0.101,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
+    },
+    {
+      "formula_id": "mirror-temp-ratio",
+      "verdict": "MATCH",
+      "registry_path": "cosmology.T_mirror_ratio",
+      "registry_status": "DERIVED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 0.57,
+          "registry": 0.57,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "higgs-quartic",
+      "verdict": "DRIFT",
+      "registry_path": "higgs.lambda_0",
+      "registry_status": "CALIBRATED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 0.1296,
+          "registry": 0.129,
+          "ok": false
+        }
+      ]
+    },
+    {
+      "formula_id": "bottom-quark-mass",
+      "verdict": "MATCH",
+      "registry_path": "pdg.m_bottom",
+      "registry_status": "ESTABLISHED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 4.18,
+          "registry": 4.18,
+          "ok": true
+        },
+        {
+          "field": "experimental_value",
+          "config": 4.18,
+          "registry": 4.18,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.0,
+          "registry": 0.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "tau-lepton-mass",
+      "verdict": "MATCH",
+      "registry_path": "pdg.m_tau",
+      "registry_status": "ESTABLISHED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 1.777,
+          "registry": 1.77693,
+          "ok": true
+        },
+        {
+          "field": "experimental_value",
+          "config": 1.77686,
+          "registry": 1.77693,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.01,
+          "registry": 0.0,
+          "ok": true
+        }
+      ]
+    },
+    {
+      "formula_id": "higgs-mass",
+      "verdict": "MATCH",
+      "registry_path": "pdg.m_higgs",
+      "registry_status": "ESTABLISHED",
+      "checks": [
+        {
+          "field": "computed_value",
+          "config": 125.1,
+          "registry": 125.2,
+          "ok": true
+        },
+        {
+          "field": "experimental_value",
+          "config": 125.1,
+          "registry": 125.2,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.0,
+          "registry": 0.0,
+          "ok": true
+        }
+      ]
+    }
+  ]
+}

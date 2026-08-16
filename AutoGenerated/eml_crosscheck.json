@@ -1,16 +1,16 @@
 {
   "total": 703,
-  "with_eml_description": 503,
-  "skip": 234,
+  "with_eml_description": 501,
+  "skip": 236,
   "buckets": {
-    "AGREE": 346,
-    "AGREE_LOOSE": 10,
-    "DISAGREE": 49,
+    "AGREE": 349,
+    "AGREE_LOOSE": 8,
+    "DISAGREE": 46,
     "DISAGREE_MISSING_CTX": 57,
     "DISAGREE_SCALE": 7
   },
-  "agreement_rate_strict": 0.7377398720682303,
-  "agreement_rate_loose": 0.7590618336886994,
+  "agreement_rate_strict": 0.7473233404710921,
+  "agreement_rate_loose": 0.7644539614561028,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -770,8 +770,8 @@
       "path": "codata.mu_pe",
       "status": "AGREE",
       "evaluated": 1836.15267343,
-      "registered": 1836.15267343,
-      "rel_error": 0.0,
+      "registered": 1836.152673426,
+      "rel_error": 2.1784450477824296e-12,
       "eml_description": "EML: eml_scalar(1836.15267343) \u2014 \u03bc_pe proton-to-electron mass ratio from CODATA 2022 (input)"
     },
     {
@@ -803,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.805837165052014,
-      "rel_error": 0.955600714830225,
+      "registered": 7.8285140746734365,
+      "rel_error": 0.9557293265396052,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.56%"
+      "diagnostic": "rel_err=95.57%"
     },
     {
       "path": "consciousness.neuron_count",
@@ -874,9 +874,9 @@
     {
       "path": "constants.G_F_physical",
       "status": "AGREE",
-      "evaluated": 1.1663445423391954e-05,
+      "evaluated": 1.1663445423391893e-05,
       "registered": 1.166344542339195e-05,
-      "rel_error": 2.904915028128857e-16,
+      "rel_error": 4.938355547819057e-15,
       "eml_description": "EML: ops.mul(eml_vec('constants.G_F_tree'), ops.add(eml_scalar(1.0), ops.div(eml_vec('constants.alpha_em'), ops.mul(eml_scalar(2.0), eml_pi())))) \u2014 G_F^phys = G_F^tree \u00d7 (1 + \u03b1/(2\u03c0)) Schwinger 1-loop QED correction"
     },
     {
@@ -901,15 +901,15 @@
       "evaluated": 6.70883e-39,
       "registered": 6.70883e-39,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(6.70883e-39) \u2014 Newton's gravitational constant G in GeV\u207b\u00b2 (CODATA 2018 input)"
+      "eml_description": "EML: eml_scalar(6.70883e-39) \u2014 Newton's gravitational constant (GeV^-2; from pdg_2024_values.json)"
     },
     {
       "path": "constants.HBAR",
       "status": "AGREE",
-      "evaluated": 6.582119569e-25,
+      "evaluated": 6.58212e-25,
       "registered": 6.582119569e-25,
-      "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(6.582119569e-25) \u2014 reduced Planck constant \u210f in GeV\u00b7s (CODATA 2018 input)"
+      "rel_error": 6.548042708434392e-08,
+      "eml_description": "EML: eml_scalar(6.58212e-25) \u2014 Reduced Planck constant (exact since 2019 SI redefinition) (GeV\u00b7s; from pdg_2024_values.json)"
     },
     {
       "path": "constants.M_PLANCK",
@@ -917,15 +917,15 @@
       "evaluated": 2.435e+18,
       "registered": 2.435e+18,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(2.435e18) \u2014 reduced Planck mass M_Pl/\u221a(8\u03c0) in GeV (input)"
+      "eml_description": "EML: eml_scalar(2.435e+18) \u2014 Reduced Planck mass (M_Pl / sqrt(8*pi)) - INPUT for the bulk string tension (GeV; from pdg_2024_values.json)"
     },
     {
       "path": "constants.alpha_em",
       "status": "AGREE",
-      "evaluated": 0.0072973525693,
-      "registered": 0.0072973525643314245,
-      "rel_error": 6.80873762660219e-10,
-      "eml_description": "EML: eml_scalar(7.2973525693e-3) \u2014 fine structure constant \u03b1 \u2248 1/137 (CODATA 2018 input)"
+      "evaluated": 0.00729735,
+      "registered": 0.0072973525643,
+      "rel_error": 3.514014126597941e-07,
+      "eml_description": "EML: eml_scalar(0.00729735) \u2014 Fine structure constant (CODATA 2022) (dimensionless; from pdg_2024_values.json)"
     },
     {
       "path": "constants.alpha_inverse_pred",
@@ -963,9 +963,9 @@
       "path": "constants.m_proton",
       "status": "AGREE",
       "evaluated": 0.938272,
-      "registered": 0.938272,
-      "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.938272) \u2014 proton mass in GeV (PDG 2024 input)"
+      "registered": 0.938272088,
+      "rel_error": 9.37894253480987e-08,
+      "eml_description": "EML: eml_scalar(0.938272) \u2014 Proton mass (GeV; from pdg_2024_values.json)"
     },
     {
       "path": "constants.mu_pe_pred",
@@ -1441,8 +1441,8 @@
       "path": "cosmology.s8_friction_beta_eff",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 2.0412414523193795e+299,
-      "registered": 0.065,
-      "rel_error": 3.140371465106738e+300,
+      "registered": 0.06497473343613969,
+      "rel_error": 3.141592653589892e+300,
       "eml_description": "EML: ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_vec('pi'))), ops.inv(ops.sqrt(eml_vec('b3')))) \u2014 beta_eff = alpha_leak/(4pi) * 1/sqrt(b3) from sampler-bridge moduli coupling",
       "diagnostic": "missing: pi",
       "missing_refs": [
@@ -1460,7 +1460,7 @@
       "path": "cosmology.s8_friction_suppression_pct",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 5.183731632555877,
+      "registered": 5.181769763625798,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_scalar(100.0), ops.sub(ops.exp(ops.neg(ops.mul(eml_vec('beta_eff'), eml_vec('I_z')))), eml_scalar(1.0))) \u2014 friction suppression percent = 100*(exp(-beta_eff * I(z)) - 1)",
       "diagnostic": "missing: beta_eff, I_z",
@@ -1473,8 +1473,8 @@
       "path": "cosmology.s8_improvement_factor",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
-      "registered": 2.2586489565773444,
-      "rel_error": 0.5572574493756856,
+      "registered": 2.25742889332452,
+      "rel_error": 0.5570181621414007,
       "eml_description": "EML: ops.div(eml_vec('tension_lcdm_avg'), eml_vec('tension_pm_avg')) \u2014 improvement = sigma_LCDM / sigma_PM; ratio of tension reductions",
       "diagnostic": "missing: tension_lcdm_avg, tension_pm_avg",
       "missing_refs": [
@@ -1495,7 +1495,7 @@
       "path": "cosmology.s8_pm_predicted",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3))))': name 'sigma8' is not defined",
-      "registered": 0.8029419470461436,
+      "registered": 0.8029585609340943,
       "eml_description": "EML: ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3)))) \u2014 S8 from 48-channel variance reduction; with friction: ops.mul(S8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z))))"
     },
     {
@@ -1511,7 +1511,7 @@
       "path": "cosmology.s8_tension_des",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 1.5848204144790359,
+      "registered": 1.5857977020055483,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017)) \u2014 sigma tension = |S8_PM - S8_DES| / sigma_DES"
     },
     {
@@ -1525,7 +1525,7 @@
       "path": "cosmology.s8_tension_kids",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 1.847097352307181,
+      "registered": 1.8479280467047166,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020)) \u2014 sigma tension = |S8_PM - S8_KiDS| / sigma_KiDS"
     },
     {
@@ -1539,7 +1539,7 @@
       "path": "cosmology.s8_tension_planck",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 2.235234842604333,
+      "registered": 2.233956851223509,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013)) \u2014 sigma tension = |S8_PM - S8_Planck| / sigma_Planck"
     },
     {
@@ -2022,7 +2022,7 @@
       "path": "gauge.ALPHA_GUT",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.inv(alpha_GUT_inv)': name 'alpha_GUT_inv' is not defined",
-      "registered": 0.023402505224827168,
+      "registered": 0.023402420319250224,
       "eml_description": "EML: ops.inv(alpha_GUT_inv) \u2014 alpha_GUT = 1/alpha_GUT_inv from RG running; alpha_GUT_inv ~ ops.add(eml_scalar(42.0), eml_scalar(0.7))"
     },
     {
@@ -2037,8 +2037,8 @@
       "path": "gauge.ALPHA_GUT_INV",
       "status": "DISAGREE",
       "evaluated": 24.0,
-      "registered": 42.730467973109285,
-      "rel_error": 0.43833987460414797,
+      "registered": 42.73062300216127,
+      "rel_error": 0.43834191233799463,
       "eml_description": "EML: eml_scalar(24) \u2014 AS fixed point alpha_GUT^-1 = b3 (asymptotic safety locks to Betti number)",
       "diagnostic": "rel_err=43.83%"
     },
@@ -2094,7 +2094,7 @@
       "path": "gauge.hypercharge_coupling_gp",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 0.34961100456254207,
+      "registered": 0.3497087018481249,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('g_2'), ops.sqrt(eml_vec('sin2_theta_W'))) \u2014 hypercharge coupling g' = g\u2082 tan(\u03b8_W) from U(1)_Y embedding.",
       "diagnostic": "missing: g_2",
@@ -2141,7 +2141,7 @@
       "path": "gauge.m_w_gev",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 80.3782125,
+      "registered": 80.365894,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(ops.mul(eml_vec('g_2'), eml_vec('v')), eml_scalar(2.0)) \u2014 M_W = g_2 * v / 2 from SU(2)_L symmetry breaking.",
       "diagnostic": "missing: g_2, v",
@@ -2154,7 +2154,7 @@
       "path": "gauge.m_z_gev",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 91.18886460803577,
+      "registered": 91.18369180906208,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(ops.mul(ops.sqrt(ops.add(ops.pow(eml_vec('g_2'), eml_scalar(2.0)), ops.pow(eml_vec('g_prime'), eml_scalar(2.0)))), eml_vec('v')), eml_scalar(2.0)) \u2014 M_Z = sqrt(g_2^2 + g'^2) * v / 2 from electroweak symmetry breaking.",
       "diagnostic": "missing: g_2, g_prime, v",
@@ -2262,7 +2262,7 @@
       "path": "gauge.weak_coupling_g2",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 0.6525,
+      "registered": 0.6524,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(ops.sqrt(eml_scalar(2.0)), eml_vec('g_weak')) \u2014 weak coupling g\u2082 from SU(2) gauge group.",
       "diagnostic": "missing: g_weak",
@@ -2284,7 +2284,7 @@
       "evaluated": 0.5881250000000003,
       "registered": 0.588125,
       "rel_error": 5.663199275452445e-16,
-      "eml_description": "EML: ops.div(eml_vec('Omega_DM'), eml_vec('Omega_baryon')) \u2014 DM/baryon ratio \u03a9_DM/\u03a9_b \u2248 5.35"
+      "eml_description": "EML: ops.div(eml_vec('Omega_DM'), eml_vec('Omega_baryon')) \u2014 DM/baryon ratio \u03a9_DM/\u03a9_b \u2248 0.59 (observed ~5.4 \u2014 mismatch, \u03a9_b anchor over-predicts)"
     },
     {
       "path": "geometry.D_G2",
@@ -2455,7 +2455,7 @@
       "evaluated": 0.11665289256198347,
       "registered": 0.11665289256198347,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.sub(eml_vec('Omega_matter'), eml_vec('Omega_baryon')) \u2014 dark matter density \u03a9_DM = \u03a9_m - \u03a9_b \u2248 0.265"
+      "eml_description": "EML: ops.sub(eml_vec('Omega_matter'), eml_vec('Omega_baryon')) \u2014 dark matter density \u03a9_DM = \u03a9_m - \u03a9_b = 0.315 - 0.198 \u2248 0.117"
     },
     {
       "path": "geometry.Omega_Lambda",
@@ -2463,7 +2463,7 @@
       "evaluated": 0.7,
       "registered": 0.7,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_vec('Omega_Lambda') \u2014 dark energy density \u03a9_\u039b from G\u2082 topology with Leech enhancement \u2248 0.685"
+      "eml_description": "EML: eml_vec('Omega_Lambda') \u2014 dark energy density \u03a9_\u039b from G\u2082 topology with Leech enhancement = 0.70 (clamped; raw product 0.94 \u2014 cap is an ANSATZ, observed \u03a9_\u039b = 0.685)"
     },
     {
       "path": "geometry.Omega_baryon",
@@ -2471,7 +2471,7 @@
       "evaluated": 0.19834710743801667,
       "registered": 0.19834710743801653,
       "rel_error": 6.996718019773122e-16,
-      "eml_description": "EML: ops.div(eml_vec('elder_kads'), ops.add(ops.mul(eml_scalar(5.0), eml_vec('elder_kads')), eml_scalar(1.0))) \u2014 baryon density \u03a9_b = b\u2083/(5b\u2083+1) \u2248 0.0496"
+      "eml_description": "EML: ops.div(eml_vec('elder_kads'), ops.add(ops.mul(eml_scalar(5.0), eml_vec('elder_kads')), eml_scalar(1.0))) \u2014 baryon density \u03a9_b = b\u2083/(5b\u2083+1) = 24/121 \u2248 0.1983 (NOTE: observed \u03a9_b \u2248 0.0493 \u2014 this anchor over-predicts \u00d74)"
     },
     {
       "path": "geometry.Omega_matter",
@@ -2509,18 +2509,18 @@
     {
       "path": "geometry.V_cb",
       "status": "AGREE_LOOSE",
-      "evaluated": 0.040824202499999976,
+      "evaluated": 0.04100624999999996,
       "registered": 0.04075299298827878,
-      "rel_error": 0.0017473443420873858,
+      "rel_error": 0.006214439557703656,
       "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us'), eml_scalar(2.0)), eml_scalar(0.81)) \u2014 CKM |V_cb| \u2248 A \u03bb\u00b2 \u2248 0.041 from octonionic triality",
       "diagnostic": "within 1%"
     },
     {
       "path": "geometry.V_ub",
       "status": "AGREE_LOOSE",
-      "evaluated": 0.0037339025212500014,
+      "evaluated": 0.0037589062499999992,
       "registered": 0.0037241372333371775,
-      "rel_error": 0.002622161134506124,
+      "rel_error": 0.009336126593719924,
       "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us'), eml_scalar(3.0)), eml_scalar(0.33)) \u2014 CKM |V_ub| \u2248 A \u03bb\u00b3(1-\u03c1-i\u03b7) \u2248 0.0037",
       "diagnostic": "within 1%"
     },
@@ -2819,11 +2819,12 @@
     },
     {
       "path": "geometry.lambda_Wolfenstein",
-      "status": "AGREE",
-      "evaluated": 0.2245,
+      "status": "AGREE_LOOSE",
+      "evaluated": 0.225,
       "registered": 0.22430411726619373,
-      "rel_error": 0.0008732908525874696,
-      "eml_description": "EML: eml_vec('V_us') \u2014 Wolfenstein parameter \u03bb = V_us \u2248 0.225"
+      "rel_error": 0.0031024073132836574,
+      "eml_description": "EML: eml_vec('V_us') \u2014 Wolfenstein parameter \u03bb = V_us \u2248 0.225",
+      "diagnostic": "within 1%"
     },
     {
       "path": "geometry.lambda_swampland",
@@ -2851,7 +2852,7 @@
       "evaluated": 3352262024757170.5,
       "registered": 3352262024757155.5,
       "rel_error": 4.474590556830542e-15,
-      "eml_description": "EML: ops.div(eml_vec('m_planck_4d'), ops.mul(eml_vec('elder_kads'), ops.pow(eml_vec('k_gimel'), eml_scalar(2.0)))) \u2014 KK mass m_KK = M_Pl/(b\u2083 \u00d7 k_gimel\u00b2) \u2248 4.1 TeV"
+      "eml_description": "EML: ops.div(eml_vec('m_planck_4d'), ops.mul(eml_vec('elder_kads'), ops.pow(eml_vec('k_gimel'), eml_scalar(2.0)))) \u2014 KK mass m_KK = M_Pl/(b\u2083 \u00d7 k_gimel\u00b2) \u2248 3.4e15 GeV (NOTE: the TeV-scale KK claim elsewhere uses the warped form M_Pl\u00b7exp(\u2212k_eff\u00b7\u03c0), not this ratio)"
     },
     {
       "path": "geometry.m_KK_bound",
@@ -2979,7 +2980,7 @@
       "evaluated": 288.00000000000006,
       "registered": 288.0,
       "rel_error": 1.9737298215558337e-16,
-      "eml_description": "EML: ops.mul(eml_vec('elder_kads'), eml_scalar(12.0)) \u2014 E8\u00d7E8 root total = b\u2083 \u00d7 D_shadow_space = 24\u00d712 = 288"
+      "eml_description": "EML: ops.mul(eml_vec('elder_kads'), eml_scalar(12.0)) \u2014 sector count b\u2083 \u00d7 D_shadow_space = 24\u00d712 = 288 (NOT an E8\u00d7E8 root count \u2014 E8\u00d7E8 has 480 roots)"
     },
     {
       "path": "geometry.s8_viscosity_scale",
@@ -3401,7 +3402,7 @@
       "path": "higgs.sigma_local",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.25))), eml_scalar(0.17))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 0.8680828240571258,
+      "registered": 0.8870370917246749,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.25))), eml_scalar(0.17)) \u2014 sigma = |M_local \u2212 125.25| / 0.17 vs PDG 2024"
     },
     {
@@ -3460,12 +3461,10 @@
     },
     {
       "path": "neutrino.C_kaf",
-      "status": "DISAGREE",
-      "evaluated": 0.07957747154594767,
+      "status": "ERROR",
+      "reason": "Failed to evaluate EML expression 'ops.div(b3, ops.mul(b2, n_gen))': name 'b3' is not defined",
       "registered": 2.0,
-      "rel_error": 0.9602112642270262,
-      "eml_description": "EML: ops.div(eml_scalar(1.0), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 C_kaf = 1/(4\u03c0) Kaf coupling from G\u2082 spectral structure",
-      "diagnostic": "rel_err=96.02%"
+      "eml_description": "EML: ops.div(b3, ops.mul(b2, n_gen)) \u2014 C_kaf = b\u2083/(b\u2082\u00b7n_gen) = 24/(4\u00b73) = 2.0 (module value)"
     },
     {
       "path": "neutrino.cycles_per_gen",
@@ -3487,9 +3486,9 @@
     {
       "path": "neutrino.delta_CP_pred",
       "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3)))': name 'n_gen' is not defined",
+      "reason": "Failed to evaluate EML expression 'ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3))) + FITTED +45.9\u00b0 parity offset (\u03b4_parity)': invalid character '\u00b0' (U+00B0) (<string>, line 1)",
       "registered": 278.4,
-      "eml_description": "EML: ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3))) \u2014 CALIBRATED to NuFIT 6.0 IO"
+      "eml_description": "EML: ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3))) + FITTED +45.9\u00b0 parity offset (\u03b4_parity) \u2014 CALIBRATED to NuFIT 6.0 IO"
     },
     {
       "path": "neutrino.delta_CP_sigma",
@@ -3515,12 +3514,10 @@
     },
     {
       "path": "neutrino.k_gimel",
-      "status": "DISAGREE",
-      "evaluated": 12.31830988618379,
+      "status": "ERROR",
+      "reason": "Failed to evaluate EML expression 'ops.div(chi_eff, ops.mul(b2, b3))': name 'chi_eff' is not defined",
       "registered": 1.5,
-      "rel_error": 7.212206590789194,
-      "eml_description": "EML: ops.add(ops.div(eml_scalar(24.0), eml_scalar(2.0)), ops.inv(eml_pi())) \u2014 k_gimel = b\u2083/2 + 1/\u03c0 \u2248 12.318 (spectral gap)",
-      "diagnostic": "rel_err=721.22%"
+      "eml_description": "EML: ops.div(chi_eff, ops.mul(b2, b3)) \u2014 k_gimel = \u03c7/(b\u2082\u00b7b\u2083) = 144/(4\u00b724) = 1.5 (this module's local k_gimel \u2014 name collision with the Higgs-VEV k_gimel = b\u2083/2 + 1/\u03c0 \u2248 12.318)"
     },
     {
       "path": "neutrino.m1",
@@ -3534,19 +3531,19 @@
     {
       "path": "neutrino.m2",
       "status": "AGREE",
-      "evaluated": 0.04908165036192244,
+      "evaluated": 0.049073500000000034,
       "registered": 0.049073500000000006,
-      "rel_error": 0.00016608478959998573,
+      "rel_error": 5.655919307901191e-16,
       "eml_description": "EML: ops.sqrt(ops.add(ops.pow(eml_vec('neutrino.m1'), eml_scalar(2.0)), eml_vec('delta_m21_sq'))) \u2014 m\u2082 = \u221a(m\u2081\u00b2+\u0394m\u00b2\u2082\u2081)"
     },
     {
       "path": "neutrino.m3",
       "status": "DISAGREE",
-      "evaluated": 0.06952703360743936,
+      "evaluated": 0.06963482176504798,
       "registered": 0.002,
-      "rel_error": 33.76351680371968,
+      "rel_error": 33.81741088252399,
       "eml_description": "EML: ops.sqrt(ops.add(ops.pow(eml_vec('neutrino.m1'), eml_scalar(2.0)), eml_vec('delta_m31_sq'))) \u2014 m\u2083 = \u221a(m\u2081\u00b2+\u0394m\u00b2\u2083\u2081)",
-      "diagnostic": "rel_err=3376.35%"
+      "diagnostic": "rel_err=3381.74%"
     },
     {
       "path": "neutrino.mass_sum",
@@ -3560,7 +3557,7 @@
       "path": "neutrino.ordering",
       "status": "SKIP",
       "reason": "non-numeric value: 'INVERTED'",
-      "eml_description": "EML: eml_scalar('NO') \u2014 Normal Ordering from G\u2082 holonomy topology (positive hierarchy)"
+      "eml_description": "EML: eml_scalar('IO') \u2014 Inverted Ordering predicted by G\u2082 holonomy topology; see line 1515 comment."
     },
     {
       "path": "neutrino.phi_assoc",
@@ -3581,11 +3578,11 @@
     {
       "path": "neutrino.theta13_derived",
       "status": "DISAGREE",
-      "evaluated": 0.20556893116117386,
+      "evaluated": 0.16744807921968935,
       "registered": 9.594068226860465,
-      "rel_error": 0.9785733302807204,
-      "eml_description": "EML: ops.arcsin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0)))) \u2014 \u03b8\u2081\u2083 = arcsin(1/\u221ab\u2083) from b\u2083=24 torsion structure",
-      "diagnostic": "rel_err=97.86%"
+      "rel_error": 0.9825467074800568,
+      "eml_description": "EML: ops.asin(ops.div(eml_scalar(1.0), eml_scalar(6.0))) \u2014 \u03b8\u2081\u2083 = asin(1/6) = asin(\u03b1_leak/\u221a(2\u00b7n_gen)) \u2248 9.59\u00b0",
+      "diagnostic": "rel_err=98.25%"
     },
     {
       "path": "neutrino.theta13_sigma",
@@ -3598,37 +3595,37 @@
     {
       "path": "neutrino.theta_12_pred",
       "status": "DISAGREE",
-      "evaluated": 0.583638101866903,
+      "evaluated": 0.5862560957448946,
       "registered": 33.59329049922625,
-      "rel_error": 0.9826263490955033,
-      "eml_description": "EML: ops.mul(eml_scalar(33.44), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
-      "diagnostic": "rel_err=98.26%"
+      "rel_error": 0.982548417048982,
+      "eml_description": "EML: ops.mul(eml_scalar(33.59), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
+      "diagnostic": "rel_err=98.25%"
     },
     {
       "path": "neutrino.theta_13_pred",
       "status": "DISAGREE",
-      "evaluated": 0.1495747168959139,
+      "evaluated": 0.15097098029750933,
       "registered": 8.647304725338865,
-      "rel_error": 0.9827027355173894,
-      "eml_description": "EML: ops.mul(eml_scalar(8.57), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
-      "diagnostic": "rel_err=98.27%"
+      "rel_error": 0.9825412674708773,
+      "eml_description": "EML: ops.mul(eml_scalar(8.65), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
+      "diagnostic": "rel_err=98.25%"
     },
     {
       "path": "neutrino.theta_23_pred",
       "status": "DISAGREE",
-      "evaluated": 0.8587019919812091,
+      "evaluated": 0.8683013028671781,
       "registered": 49.75,
-      "rel_error": 0.9827396584526391,
-      "eml_description": "EML: ops.mul(eml_scalar(49.2), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
-      "diagnostic": "rel_err=98.27%"
+      "rel_error": 0.9825467074800567,
+      "eml_description": "EML: ops.mul(eml_scalar(49.75), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
+      "diagnostic": "rel_err=98.25%"
     },
     {
       "path": "nufit.delta_CP",
       "status": "AGREE",
-      "evaluated": 194.0,
-      "registered": 194.0,
+      "evaluated": 232.0,
+      "registered": 232.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(194.0) \u2014 Dirac CP-violating phase \u03b4_CP in degrees (NuFIT 6.0 NO)"
+      "eml_description": "EML: eml_scalar(232) \u2014 CP-violating phase (degrees; from nufit_6_0_parameters.json normal_ordering)"
     },
     {
       "path": "nufit.delta_CP_IO",
@@ -3636,33 +3633,31 @@
       "evaluated": 278.0,
       "registered": 278.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(278.0) \u2014 Dirac CP-violating phase \u03b4_CP in degrees (NuFIT 6.0 IO)"
+      "eml_description": "EML: eml_scalar(278) \u2014 CP-violating phase (Inverted Ordering) (degrees; from nufit_6_0_parameters.json inverted_ordering)"
     },
     {
       "path": "nufit.delta_m21_sq",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 7.42e-05,
-      "registered": 7.5e-05,
-      "rel_error": 0.010666666666666566,
-      "eml_description": "EML: eml_scalar(7.42e-5) \u2014 solar neutrino mass splitting \u0394m\u00b2\u2082\u2081 in eV\u00b2 (NuFIT 6.0)",
-      "diagnostic": "rel_err=1.07%"
+      "registered": 7.42e-05,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(7.42e-05) \u2014 Solar mass splitting (eV^2; from nufit_6_0_parameters.json normal_ordering)"
     },
     {
       "path": "nufit.delta_m31_sq",
-      "status": "AGREE_LOOSE",
+      "status": "AGREE",
       "evaluated": 0.002515,
-      "registered": 0.0025,
-      "rel_error": 0.005999999999999929,
-      "eml_description": "EML: eml_scalar(2.515e-3) \u2014 atmospheric mass splitting \u0394m\u00b2\u2083\u2081 in eV\u00b2 (NuFIT 6.0 NO)",
-      "diagnostic": "within 1%"
+      "registered": 0.002515,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.002515) \u2014 Atmospheric mass splitting (Normal Ordering convention) (eV^2; from nufit_6_0_parameters.json normal_ordering)"
     },
     {
       "path": "nufit.delta_m32_sq_IO",
       "status": "AGREE",
-      "evaluated": -0.002404,
-      "registered": -0.002404,
+      "evaluated": -0.002498,
+      "registered": -0.002498,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(-2.404e-3) \u2014 atmospheric mass splitting \u0394m\u00b2\u2083\u2082 in eV\u00b2 (NuFIT 6.0 IO)"
+      "eml_description": "EML: eml_scalar(-0.002498) \u2014 Atmospheric mass splitting (Inverted Ordering: dm2_32 < 0) (eV^2; from nufit_6_0_parameters.json inverted_ordering)"
     },
     {
       "path": "nufit.theta_12",
@@ -3670,23 +3665,23 @@
       "evaluated": 33.41,
       "registered": 33.41,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(33.41) \u2014 solar mixing angle \u03b8\u2081\u2082 in degrees (NuFIT 6.0)"
+      "eml_description": "EML: eml_scalar(33.41) \u2014 Solar mixing angle (degrees; from nufit_6_0_parameters.json normal_ordering)"
     },
     {
       "path": "nufit.theta_13",
       "status": "AGREE",
-      "evaluated": 8.54,
-      "registered": 8.54,
+      "evaluated": 8.58,
+      "registered": 8.58,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(8.54) \u2014 reactor mixing angle \u03b8\u2081\u2083 in degrees (NuFIT 6.0)"
+      "eml_description": "EML: eml_scalar(8.58) \u2014 Reactor mixing angle (degrees; from nufit_6_0_parameters.json normal_ordering)"
     },
     {
       "path": "nufit.theta_23",
       "status": "AGREE",
-      "evaluated": 45.0,
-      "registered": 45.0,
+      "evaluated": 42.2,
+      "registered": 42.2,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(45.0) \u2014 atmospheric mixing angle \u03b8\u2082\u2083 in degrees (NuFIT 6.0 NO)"
+      "eml_description": "EML: eml_scalar(42.2) \u2014 Atmospheric mixing angle (degrees; from nufit_6_0_parameters.json normal_ordering)"
     },
     {
       "path": "nufit.theta_23_IO",
@@ -3694,15 +3689,15 @@
       "evaluated": 49.3,
       "registered": 49.3,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(49.3) \u2014 atmospheric mixing angle \u03b8\u2082\u2083 in degrees (NuFIT 6.0 IO upper octant)"
+      "eml_description": "EML: eml_scalar(49.3) \u2014 Atmospheric mixing angle (IO best fit, upper octant) (degrees; from nufit_6_0_parameters.json inverted_ordering)"
     },
     {
       "path": "pdg.J_ckm",
       "status": "AGREE",
-      "evaluated": 3.08e-05,
-      "registered": 3.08e-05,
+      "evaluated": 3.12e-05,
+      "registered": 3.12e-05,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(3.08e-5) \u2014 CKM Jarlskog CP-violation invariant J (PDG 2024)"
+      "eml_description": "EML: eml_scalar(3.12e-05) \u2014 Jarlskog invariant J (PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.V_cb",
@@ -3710,7 +3705,7 @@
       "evaluated": 0.041,
       "registered": 0.041,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.041) \u2014 CKM matrix element |V_cb| (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.041) \u2014 CKM |V_cb| (PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.V_ub",
@@ -3718,15 +3713,15 @@
       "evaluated": 0.00382,
       "registered": 0.00382,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.00382) \u2014 CKM matrix element |V_ub| (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.00382) \u2014 CKM |V_ub| (PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.V_us",
       "status": "AGREE",
-      "evaluated": 0.2245,
-      "registered": 0.2245,
+      "evaluated": 0.225,
+      "registered": 0.225,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.2245) \u2014 CKM matrix element |V_us| Cabibbo angle (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.225) \u2014 CKM |V_us| Cabibbo angle (PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.alpha_s_MZ",
@@ -3734,23 +3729,23 @@
       "evaluated": 0.118,
       "registered": 0.118,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.118) \u2014 strong coupling constant \u03b1_s at M_Z scale (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.118) \u2014 Strong coupling at M_Z (dimensionless, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_W",
       "status": "AGREE",
-      "evaluated": 80.377,
-      "registered": 80.377,
+      "evaluated": 80.3692,
+      "registered": 80.3692,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(80.377) \u2014 W boson mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(80.3692) \u2014 W boson mass (PDG 2024 world average, excluding CDF 2022) (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_Z",
       "status": "AGREE",
-      "evaluated": 91.19,
-      "registered": 91.1876,
-      "rel_error": 2.631936798418213e-05,
-      "eml_description": "EML: eml_scalar(91.19) \u2014 Z boson mass in GeV (PDG 2024)"
+      "evaluated": 91.188,
+      "registered": 91.188,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(91.188) \u2014 Z boson mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_bottom",
@@ -3758,7 +3753,7 @@
       "evaluated": 4.18,
       "registered": 4.18,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(4.18) \u2014 bottom quark MS-bar mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(4.18) \u2014 Bottom quark mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_charm",
@@ -3766,7 +3761,7 @@
       "evaluated": 1.27,
       "registered": 1.27,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(1.27) \u2014 charm quark MS-bar mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(1.27) \u2014 Charm quark mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_down",
@@ -3774,31 +3769,31 @@
       "evaluated": 0.00467,
       "registered": 0.00467,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(4.67e-3) \u2014 down quark MS-bar mass at 2 GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.00467) \u2014 Down quark mass (MS-bar, 2 GeV) (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_electron",
       "status": "AGREE",
-      "evaluated": 0.000511,
-      "registered": 0.0005109989461,
-      "rel_error": 2.0624308679576662e-06,
-      "eml_description": "EML: eml_scalar(0.000511) \u2014 electron mass in GeV (PDG 2024)"
+      "evaluated": 0.000510999,
+      "registered": 0.00051099895069,
+      "rel_error": 9.649726291404325e-08,
+      "eml_description": "EML: eml_scalar(0.000510999) \u2014 Electron mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_higgs",
       "status": "AGREE",
-      "evaluated": 125.1,
-      "registered": 125.1,
+      "evaluated": 125.2,
+      "registered": 125.2,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(125.1) \u2014 Higgs boson mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(125.2) \u2014 Higgs boson mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_muon",
       "status": "AGREE",
-      "evaluated": 0.1057,
-      "registered": 0.1056583745,
-      "rel_error": 0.0003939630928166816,
-      "eml_description": "EML: eml_scalar(0.1057) \u2014 muon mass in GeV (PDG 2024)"
+      "evaluated": 0.105658,
+      "registered": 0.1056583755,
+      "rel_error": 3.5539066185684676e-06,
+      "eml_description": "EML: eml_scalar(0.105658) \u2014 Muon mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_strange",
@@ -3806,23 +3801,23 @@
       "evaluated": 0.0934,
       "registered": 0.0934,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.0934) \u2014 strange quark MS-bar mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.0934) \u2014 Strange quark mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_tau",
       "status": "AGREE",
-      "evaluated": 1.77686,
-      "registered": 1.77686,
+      "evaluated": 1.77693,
+      "registered": 1.77693,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(1.77686) \u2014 tau lepton mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(1.77693) \u2014 Tau mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_top",
       "status": "AGREE",
-      "evaluated": 172.69,
-      "registered": 172.69,
+      "evaluated": 172.57,
+      "registered": 172.57,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(172.69) \u2014 top quark pole mass in GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(172.57) \u2014 Top quark mass (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.m_up",
@@ -3830,15 +3825,15 @@
       "evaluated": 0.00216,
       "registered": 0.00216,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(2.16e-3) \u2014 up quark MS-bar mass at 2 GeV (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.00216) \u2014 Up quark mass (MS-bar, 2 GeV) (GeV, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "pdg.sin2_theta_W",
       "status": "AGREE",
-      "evaluated": 0.23121,
-      "registered": 0.23121,
+      "evaluated": 0.23122,
+      "registered": 0.23122,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.23121) \u2014 weak mixing angle sin\u00b2\u03b8_W (PDG 2024)"
+      "eml_description": "EML: eml_scalar(0.23122) \u2014 Weak mixing angle sin\u00b2\u03b8_W at Z-pole, MS-bar scheme (PDG 2024) (dimensionless, PDG 2024, from pdg_2024_values.json)"
     },
     {
       "path": "physics.c_geometric",
@@ -3949,7 +3944,7 @@
       "path": "pneuma.coupling",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(ops.sqrt(ops.div(b3, eml_scalar(24.0))), ops.mul(g2_norm, ops.div(m_higgs, M_Planck)))': name 'b3' is not defined",
-      "registered": 7.847778500191315e-17,
+      "registered": 7.85405170442808e-17,
       "eml_description": "EML: ops.mul(ops.sqrt(ops.div(b3, eml_scalar(24.0))), ops.mul(g2_norm, ops.div(m_higgs, M_Planck))) \u2014 topological factor \u00d7 G2 norm \u00d7 hierarchy factor"
     },
     {
@@ -4111,7 +4106,7 @@
     {
       "path": "predictions.summary",
       "status": "SKIP",
-      "reason": "non-numeric value: {'gauge_unification': {'M_GUT': 6324555320336760.0, 'alpha_GUT_inv': 42.730467973109285}, 'proton_decay': {'tau_p_years': 4.757399129595567e+34}, 'neutrino_mixing': {'theta_12': 33.59329049922625, 'theta_13': 8.647304725338865, 'theta_23': 49.75, 'delta_CP': 278.4}, 'cosmology': {'w_eff': -0.8526812021213906, 'Omega_DM_over_b': 5.399772129616132}, 'topology': {'n_gen': 3}}",
+      "reason": "non-numeric value: {'gauge_unification': {'M_GUT': 6324555320336760.0, 'alpha_GUT_inv': 42.73062300216127}, 'proton_decay': {'tau_p_years': 4.757399129595567e+34}, 'neutrino_mixing': {'theta_12': 33.59329049922625, 'theta_13': 8.647304725338865, 'theta_23': 49.75, 'delta_CP': 278.4}, 'cosmology': {'w_eff': -0.8526812021213906, 'Omega_DM_over_b': 5.399772129616132}, 'topology': {'n_gen': 3}}",
       "eml_description": "EML: eml_scalar(0.0) \u2014 structured dict aggregate; numeric EML representation not applicable (returns full predictions summary dict)"
     },
     {
@@ -4162,7 +4157,7 @@
       "path": "qed.bulk_compton_wavelength",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'lambda_manifest' is not defined",
-      "registered": 2.426394485553287e-12,
+      "registered": 2.4263944822631727e-12,
       "eml_description": "EML: ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))"
     },
     {
@@ -4176,7 +4171,7 @@
       "path": "qed.bulk_hartree_energy",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.div(E_h_CODATA, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))': name 'E_h_CODATA' is not defined",
-      "registered": 4.3598961127450435e-18,
+      "registered": 4.3598961127439434e-18,
       "eml_description": "EML: ops.div(E_h_CODATA, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))"
     },
     {
@@ -4204,29 +4199,29 @@
       "path": "qed.bulk_weak_mixing",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(weak_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'weak_manifest' is not defined",
-      "registered": 0.23121802812499997,
+      "registered": 0.2312280284722222,
       "eml_description": "EML: ops.mul(weak_manifest, ops.add(eml_scalar(1.0), epsilon))"
     },
     {
       "path": "qed.compton_sigma_deviation",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12))), eml_scalar(7.3e-22))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 0.0,
+      "registered": 4.506849061389332,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12))), eml_scalar(7.3e-22)) \u2014 \u03c3-deviation from CODATA2022 \u03bb_C, uncertainty = 7.3\u00d710\u207b\u00b2\u00b2 m"
     },
     {
       "path": "qed.compton_variance_m",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12)))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 0.0,
+      "registered": 3.2899998148142125e-21,
       "eml_description": "EML: ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12))) \u2014 |\u03bb_manifest \u2212 \u03bb_CODATA| absolute variance in metres"
     },
     {
       "path": "qed.hartree_sigma_deviation",
       "status": "DISAGREE",
-      "evaluated": 0.0005925938290422202,
-      "registered": 9.063199738292875e-05,
-      "rel_error": 5.53846153846147,
+      "evaluated": 0.8462239878723016,
+      "registered": 0.12942249226282226,
+      "rel_error": 5.538461538461554,
       "eml_description": "EML: ops.div(eml_vec('qed.hartree_variance_j'), eml_scalar(1.3e-30)) \u2014 \u03c3 = variance / CODATA uncertainty (1.3\u00d710\u207b\u00b3\u2070 J)",
       "diagnostic": "rel_err=553.85%"
     },
@@ -4234,7 +4229,7 @@
       "path": "qed.hartree_variance_j",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.abs(ops.sub(eml_vec('qed.hartree_bulk'), eml_scalar(4.3597447222071e-18)))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 7.703719777548943e-34,
+      "registered": 1.1000911842339891e-30,
       "eml_description": "EML: ops.abs(ops.sub(eml_vec('qed.hartree_bulk'), eml_scalar(4.3597447222071e-18))) \u2014 |E_h_predicted \u2212 E_h_CODATA| in J"
     },
     {
@@ -4248,7 +4243,7 @@
       "path": "qed.manifest_compton_wavelength",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'compton_bulk' is not defined",
-      "registered": 2.42631023867e-12,
+      "registered": 2.42631023538e-12,
       "eml_description": "EML: ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 h/(m_e*c) contracts net 1/(1+eps)"
     },
     {
@@ -4262,7 +4257,7 @@
       "path": "qed.manifest_hartree_energy",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(E_h_bulk, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))': name 'E_h_bulk' is not defined",
-      "registered": 4.359744722207099e-18,
+      "registered": 4.359744722206e-18,
       "eml_description": "EML: ops.mul(E_h_bulk, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))"
     },
     {
@@ -4303,7 +4298,7 @@
       "path": "qed.manifest_weak_mixing",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'weak_bulk' is not defined",
-      "registered": 0.23121,
+      "registered": 0.23122,
       "eml_description": "EML: ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 coupling ratio contracts under projection"
     },
     {
@@ -4470,21 +4465,19 @@
     },
     {
       "path": "spectral.m_nu_2",
-      "status": "AGREE_LOOSE",
-      "evaluated": 0.008717797887081349,
+      "status": "AGREE",
+      "evaluated": 0.008671793355471523,
       "registered": 0.008671793355471519,
-      "rel_error": 0.0053050770151023925,
-      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m21_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 second neutrino mass from solar mass splitting",
-      "diagnostic": "within 1%"
+      "rel_error": 4.0008413597223767e-16,
+      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m21_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 second neutrino mass from solar mass splitting"
     },
     {
       "path": "spectral.m_nu_3",
-      "status": "AGREE_LOOSE",
-      "evaluated": 0.05000999900019992,
+      "status": "AGREE",
+      "evaluated": 0.050159744815937796,
       "registered": 0.05015974481593781,
-      "rel_error": 0.002985378340487616,
-      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m31_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 third neutrino mass from atmospheric mass splitting",
-      "diagnostic": "within 1%"
+      "rel_error": 2.7667181838223614e-16,
+      "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m31_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 third neutrino mass from atmospheric mass splitting"
     },
     {
       "path": "spectral.n_eigenvalues",
@@ -4521,11 +4514,11 @@
     {
       "path": "spectral.tau_proton",
       "status": "DISAGREE",
-      "evaluated": 3.0490744683599024e+68,
+      "evaluated": 3.049073324476275e+68,
       "registered": 1e+34,
-      "rel_error": 3.0490744683599027e+34,
+      "rel_error": 3.0490733244762752e+34,
       "eml_description": "EML: ops.pow(ops.div(eml_vec('M_GUT_G2'), eml_vec('m_proton')), eml_scalar(4.0)) \u2014 proton lifetime from dimension-6 operator suppressed by M_GUT^4 with G2 instanton factor",
-      "diagnostic": "rel_err=3049074468359902922231325578452008960.00%"
+      "diagnostic": "rel_err=3049073324476275206496195363752378368.00%"
     },
     {
       "path": "spectral.volume_residue",
@@ -4986,7 +4979,7 @@
       "path": "vacuum.instability_scale_sm",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 36214886.378817104,
+      "registered": 36969516.507910416,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
       "diagnostic": "missing: Lambda_I_SM, delta_lambda_G2, beta_coeff_sm",
@@ -5016,8 +5009,8 @@
       "path": "vacuum.lambda_ew",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
-      "registered": 0.12892061895276025,
-      "rel_error": 6.756711130640981,
+      "registered": 0.12912680943394128,
+      "rel_error": 6.744325166739136,
       "eml_description": "EML: ops.div(ops.pow(eml_vec('m_H'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0))))",
       "diagnostic": "missing: m_H, v_ew",
       "missing_refs": [
@@ -5029,7 +5022,7 @@
       "path": "vacuum.lambda_gut",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 0.16021764696232305,
+      "registered": 0.1604238813090212,
       "rel_error": 1.0,
       "eml_description": "EML: ops.add(eml_vec('lambda_MZ'), ops.add(ops.mul(eml_vec('beta_coeff'), eml_vec('log_MGUT_over_MZ')), eml_vec('delta_lambda_G2')))",
       "diagnostic": "missing: lambda_MZ, beta_coeff, log_MGUT_over_MZ",
@@ -5044,7 +5037,7 @@
       "path": "vacuum.lambda_planck",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 0.18998395850462166,
+      "registered": 0.19019019285131977,
       "rel_error": 1.0,
       "eml_description": "EML: ops.add(eml_vec('lambda_gut_pm'), ops.mul(eml_vec('beta_pm_above_gut'), eml_vec('log_MP_over_MGUT')))",
       "diagnostic": "missing: lambda_gut_pm, beta_pm_above_gut, log_MP_over_MGUT",

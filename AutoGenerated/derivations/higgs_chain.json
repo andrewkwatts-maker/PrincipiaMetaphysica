@@ -56,12 +56,12 @@
       "equation": {
         "latex": "v_{\\text{EW}} = \\frac{2 M_W}{g_2}",
         "plain_text": "v_EW = 2 M_W / g_2",
-        "wolfram": "v = 2 * 80.377 / (Sqrt[4*Pi/137.036] / Sqrt[0.23122])"
+        "wolfram": "v = 2 * 80.3692 / (Sqrt[4*Pi/137.036] / Sqrt[0.23122])"
       },
       "description": "Derive Higgs vacuum expectation value from measured W boson mass and electroweak coupling constant",
       "inputs": {
         "M_W": {
-          "value": 80.377,
+          "value": 80.3692,
           "unit": "GeV",
           "description": "W boson mass",
           "reference": "PDG 2024"
@@ -101,7 +101,7 @@
       },
       "validation": {
         "status": "VALIDATED",
-        "wolfram_query": "N[2 * 80.377 / (Sqrt[4*Pi/137.036] / Sqrt[0.23122]), 5]",
+        "wolfram_query": "N[2 * 80.3692 / (Sqrt[4*Pi/137.036] / Sqrt[0.23122]), 5]",
         "expected_result": "~246 GeV",
         "tolerance": "± 1 GeV"
       },
@@ -621,7 +621,7 @@
     }
   ],
   "wolfram_language_code": {
-    "full_notebook": "(* Principia Metaphysica - Higgs Sector Derivations *)\n\n(* Step 1: Electroweak VEV *)\nMW = 80.377; (* GeV *)\nsin2ThetaW = 0.23122;\nalphaEM = 1/137.036;\ne = Sqrt[4*Pi*alphaEM];\ng2 = e / Sqrt[sin2ThetaW];\nvEW = 2*MW/g2;\nPrint[\"v_EW = \", N[vEW, 5], \" GeV\"];\n\n(* Step 2: Higgs Quartic *)\nmH = 125.10; (* GeV *)\nlambdaMZ = mH^2 / (2*vEW^2);\nPrint[\"λ(M_Z) = \", N[lambdaMZ, 5]];\n\n(* Step 3: Higgs Potential *)\nmuSquared = lambdaMZ * vEW^2;\nmu = Sqrt[muSquared];\nmHCheck = Sqrt[2*muSquared];\nPrint[\"μ = \", N[mu, 5], \" GeV\"];\nPrint[\"m_H (check) = \", N[mHCheck, 5], \" GeV\"];\n\n(* Step 4: Moduli Constraint *)\nvYukawa = 174.0; (* GeV *)\nlambda0 = 0.129;\nkappa = 0.00189;\nyTop = 0.995;\nlambdaEff = mH^2 / (8*Pi^2*vYukawa^2);\nReT = (lambda0 - lambdaEff) / (kappa * yTop^2);\nPrint[\"Re(T) = \", N[ReT, 5]];\n\n(* Step 5: Doublet-Triplet Splitting *)\ndOverR = 0.12;\nb2 = 4;\netaDT = Exp[-Pi * dOverR * Sqrt[b2]];\nPrint[\"η_DT = \", N[etaDT, 5]];\n\n(* Step 6: Yukawa Couplings *)\nmTop = yTop * vEW / Sqrt[2];\nPrint[\"m_top = \", N[mTop, 5], \" GeV\"];\n\n(* Step 7: Vacuum Stability *)\nMZ = 91.1876; (* GeV *)\nMPl = 2.435*10^18; (* GeV *)\nbetaTop = -6 * yTop^4 / (16*Pi^2);\nbetaSelf = 12 * lambdaMZ^2 / (16*Pi^2);\nbetaMix = 12 * lambdaMZ * yTop^2 / (16*Pi^2);\nbetaPneuma = kappa * ReT * yTop^2 / (16*Pi^2);\nbetaTotal = betaSelf + betaMix + betaTop + betaPneuma;\nt = Log[MPl / MZ];\nlambdaMPl = lambdaMZ + betaTotal * t;\nPrint[\"λ(M_Pl) = \", N[lambdaMPl, 5]];\nPrint[\"Vacuum stable: \", lambdaMPl > 0];"
+    "full_notebook": "(* Principia Metaphysica - Higgs Sector Derivations *)\n\n(* Step 1: Electroweak VEV *)\nMW = 80.3692; (* GeV *)\nsin2ThetaW = 0.23122;\nalphaEM = 1/137.036;\ne = Sqrt[4*Pi*alphaEM];\ng2 = e / Sqrt[sin2ThetaW];\nvEW = 2*MW/g2;\nPrint[\"v_EW = \", N[vEW, 5], \" GeV\"];\n\n(* Step 2: Higgs Quartic *)\nmH = 125.10; (* GeV *)\nlambdaMZ = mH^2 / (2*vEW^2);\nPrint[\"λ(M_Z) = \", N[lambdaMZ, 5]];\n\n(* Step 3: Higgs Potential *)\nmuSquared = lambdaMZ * vEW^2;\nmu = Sqrt[muSquared];\nmHCheck = Sqrt[2*muSquared];\nPrint[\"μ = \", N[mu, 5], \" GeV\"];\nPrint[\"m_H (check) = \", N[mHCheck, 5], \" GeV\"];\n\n(* Step 4: Moduli Constraint *)\nvYukawa = 174.0; (* GeV *)\nlambda0 = 0.129;\nkappa = 0.00189;\nyTop = 0.995;\nlambdaEff = mH^2 / (8*Pi^2*vYukawa^2);\nReT = (lambda0 - lambdaEff) / (kappa * yTop^2);\nPrint[\"Re(T) = \", N[ReT, 5]];\n\n(* Step 5: Doublet-Triplet Splitting *)\ndOverR = 0.12;\nb2 = 4;\netaDT = Exp[-Pi * dOverR * Sqrt[b2]];\nPrint[\"η_DT = \", N[etaDT, 5]];\n\n(* Step 6: Yukawa Couplings *)\nmTop = yTop * vEW / Sqrt[2];\nPrint[\"m_top = \", N[mTop, 5], \" GeV\"];\n\n(* Step 7: Vacuum Stability *)\nMZ = 91.1876; (* GeV *)\nMPl = 2.435*10^18; (* GeV *)\nbetaTop = -6 * yTop^4 / (16*Pi^2);\nbetaSelf = 12 * lambdaMZ^2 / (16*Pi^2);\nbetaMix = 12 * lambdaMZ * yTop^2 / (16*Pi^2);\nbetaPneuma = kappa * ReT * yTop^2 / (16*Pi^2);\nbetaTotal = betaSelf + betaMix + betaTop + betaPneuma;\nt = Log[MPl / MZ];\nlambdaMPl = lambdaMZ + betaTotal * t;\nPrint[\"λ(M_Pl) = \", N[lambdaMPl, 5]];\nPrint[\"Vacuum stable: \", lambdaMPl > 0];"
   },
   "cross_validations": {
     "internal_consistency": [
