@@ -1,7 +1,7 @@
 {
   "framework": "Principia Metaphysica",
   "audit_type": "27D Terminology Compliance",
-  "generated_at": "2026-08-16T14:22:43.383841Z",
+  "generated_at": "2026-08-16T22:00:48.364132Z",
   "total_files_scanned": 4,
   "files_scanned": [
     "formulas.json",
@@ -9,7 +9,7 @@
     "parameters.json",
     "theory_output.json"
   ],
-  "total_flags": 19,
+  "total_flags": 17,
   "status": "REVISION REQUIRED",
   "canonical_terminology": {
     "manifold": "M^{27}(24,1,2)",
@@ -49,13 +49,6 @@
     "T^1": 52
   },
   "flagged_entries": [
-    {
-      "path": "formulas.json['formulas']['abstract-framework-overview']['description']",
-      "pattern": "\\bn_gen\\s*=\\s*chi_eff\\s*/\\s*\\(4\\*b3\\)",
-      "suggestion": "Verify chi_eff=144, b3=24 -> 3",
-      "snippet": "Framework overview: the M^{27}(24,1,2) ancestral bulk decomposes as T^1 (unified time) x S^(2,0) (sampler data fields) x 12 bridge pairs B_i^(2,0). The OR reduction operator R_perp = tensor product of...",
-      "file": "formulas.json"
-    },
     {
       "path": "sections.json['sections']['2.8']['contentBlocks'][52]['content']",
       "pattern": "\\b25D\\b",
@@ -111,13 +104,6 @@
       "suggestion": "v23+ uses 27D = 24 + 1 + 2",
       "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
       "file": "sections.json"
-    },
-    {
-      "path": "theory_output.json['formulas']['abstract-framework-overview']['description']",
-      "pattern": "\\bn_gen\\s*=\\s*chi_eff\\s*/\\s*\\(4\\*b3\\)",
-      "suggestion": "Verify chi_eff=144, b3=24 -> 3",
-      "snippet": "Framework overview: the M^{27}(24,1,2) ancestral bulk decomposes as T^1 (unified time) x S^(2,0) (sampler data fields) x 12 bridge pairs B_i^(2,0). The OR reduction operator R_perp = tensor product of...",
-      "file": "theory_output.json"
     },
     {
       "path": "theory_output.json['sections']['2.8']['contentBlocks'][52]['content']",

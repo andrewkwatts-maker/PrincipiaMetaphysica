@@ -81,9 +81,15 @@
             return;
         }
 
+        // Only entries a browser can actually draw. PDF entries carry a
+        // preview_file pointing at their PNG sibling; entries with no
+        // renderable form are skipped rather than shown as broken images.
+        const displayable = state.manifest.plots.filter(
+            p => p.renderable !== false || p.preview_file
+        );
         const plots = category
-            ? state.manifest.plots.filter(p => p.category === category)
-            : state.manifest.plots;
+            ? displayable.filter(p => p.category === category)
+            : displayable;
 
         if (plots.length === 0) {
             container.innerHTML = '<p style="color: var(--text-muted);">No plots available</p>';
@@ -94,7 +100,7 @@
             <div class="plot-card" data-plot-id="${plot.id}">
                 <div class="plot-image-wrapper">
                     <img
-                        src="${CONFIG.PLOTS_DIR}${plot.file}"
+                        src="${CONFIG.PLOTS_DIR}${plot.preview_file || plot.file}"
                         alt="${plot.title}"
                         class="plot-thumbnail"
                         loading="lazy"
@@ -162,7 +168,7 @@
         }
 
         // Update lightbox content
-        lightbox.querySelector('.lightbox-image').src = CONFIG.PLOTS_DIR + plot.file;
+        lightbox.querySelector('.lightbox-image').src = CONFIG.PLOTS_DIR + (plot.preview_file || plot.file);
         lightbox.querySelector('.lightbox-title').textContent = plot.title;
         lightbox.querySelector('.lightbox-description').textContent = plot.description;
         lightbox.classList.add('active');
