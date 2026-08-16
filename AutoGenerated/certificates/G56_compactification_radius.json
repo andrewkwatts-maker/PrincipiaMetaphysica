@@ -7,12 +7,12 @@
   "phase": 5,
   "block": "F",
   "version": "24.2",
-  "wl_code": "R_c = 1/M_KK; M_KK = M_Pl/(b3 * k_gimel^2); N[M_KK/1000, 4]",
-  "result": "M_KK ~ 5 TeV (R ~ 2e-4 GeV^-1)",
+  "wl_code": "m_KK(warped) = M_Pl_red * Exp[-k_eff * Pi]",
+  "result": "M_KK ~ 4.5 TeV (warped/exponential form)",
   "formula": "R_7 \u223c l_P",
   "verification_status": "VERIFIED",
   "derivation_status": "RIGOROUS",
-  "note": "Gate 56: Compactification radius derived from G2 manifold geometry: m_KK = M_Pl/(b3 * k_gimel^2) ~ 4.1-5.0 TeV. R_shared = 1/M_KK ~ 2e-4 GeV^-1 from TCS topology. LHC bound: > 3.5 TeV (ATLAS/CMS). See geometric_anchors_v16_1.py and config.py SharedDimensionsParameters.. 7 extra dimensions at Planck scale",
-  "timestamp": "2026-08-16T11:50:11.537096Z",
-  "hash": "ec186e408d1f9995"
+  "note": "Gate 56: TeV-scale KK mass comes from the warped/exponential suppression m_KK = M_Pl_red*exp(-k_eff*pi) ~ 4.5 TeV. NOTE: the ratio form M_Pl/(b3*k_gimel^2) previously quoted here evaluates to ~3.4e15 GeV, not TeV \u2014 removed as arithmetically false (see geometric_anchors_core audit note). LHC bound: > 3.5 TeV (ATLAS/CMS).. 7 extra dimensions at Planck scale",
+  "timestamp": "2026-08-16T14:22:36.717972Z",
+  "hash": "05279230f562a6f2"
 }

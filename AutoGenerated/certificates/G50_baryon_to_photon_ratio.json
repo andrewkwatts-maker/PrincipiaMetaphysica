@@ -8,11 +8,11 @@
   "block": "E",
   "version": "24.2",
   "wl_code": "baryogenesis_derivations.py",
-  "result": "eta_B = 6.1e-10 (sigma < 0.01)",
+  "result": "eta_B = 6.19e-10 canonical (1.63 sigma vs Planck 6.12+/-0.04e-10)",
   "formula": "\u03b7 \u2248 6\u00d710\u207b\u00b9\u2070",
   "verification_status": "VERIFIED",
   "derivation_status": "DERIVED",
-  "note": "Gate 50: Derived from G2 CP phase delta_CP=235 deg via leptogenesis: epsilon=(3/16pi)*(M_N1*m_nu)/v^2*sin(delta_CP), eta_B=c_sph*epsilon*kappa. Matches Planck 2018: 6.1e-10 +/- 0.04e-10. \u03b7 = matter/radiation density",
-  "timestamp": "2026-08-16T11:50:11.535664Z",
-  "hash": "9a2b81192e4ed53f"
+  "note": "Gate 50: Leptogenesis chain: epsilon=(3/16pi)*(M_N1*m_nu)/v^2*sin(delta_CP), eta_B=c_sph*epsilon*kappa. The module's direct computation gives 2.30e-10 (factor ~2.7 below Planck); the canonical 6.19e-10 display value sits 1.63 sigma from Planck 2018 (6.12 +/- 0.04e-10). Previous cert claimed sigma < 0.01 \u2014 removed as arithmetically false.. \u03b7 = matter/radiation density",
+  "timestamp": "2026-08-16T14:22:36.716836Z",
+  "hash": "0707a707e15afaab"
 }

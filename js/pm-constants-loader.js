@@ -60,7 +60,7 @@
             v_higgs: 246.22,    // Higgs VEV in GeV
             v_EW: 246.22,       // Electroweak VEV (alias)
             m_Z: 91.1876,       // Z boson mass in GeV
-            m_W: 80.377         // W boson mass in GeV
+            m_W: 80.3692        // W boson mass in GeV (PDG 2024)
         },
 
         // Mapping table for legacy/alternate parameter names

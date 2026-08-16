@@ -208,7 +208,7 @@
         "abstract.ledger_open",
         "abstract.v25_v26_closures"
       ],
-      "timestamp": "2026-08-16T21:50:04.628572"
+      "timestamp": "2026-08-17T00:22:30.254825"
     },
     "1": {
       "id": "1",
@@ -962,7 +962,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-08-16T21:50:04.639900"
+      "timestamp": "2026-08-17T00:22:30.272736"
     },
     "2": {
       "id": "2",
@@ -2220,7 +2220,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-08-16T21:50:04.844151"
+      "timestamp": "2026-08-17T00:22:30.479260"
     },
     "2.7": {
       "id": "2",
@@ -2610,7 +2610,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-08-16T21:50:04.844427"
+      "timestamp": "2026-08-17T00:22:30.479536"
     },
     "V.1": {
       "id": "validation",
@@ -2732,7 +2732,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-08-16T21:50:04.844936"
+      "timestamp": "2026-08-17T00:22:30.480046"
     },
     "3.4": {
       "id": "3",
@@ -2896,7 +2896,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-08-16T21:50:04.845004"
+      "timestamp": "2026-08-17T00:22:30.480116"
     },
     "3.6": {
       "id": "3",
@@ -3068,7 +3068,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-08-16T21:50:04.845151"
+      "timestamp": "2026-08-17T00:22:30.480262"
     },
     "3": {
       "id": "3",
@@ -3272,7 +3272,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-08-16T21:50:04.884237"
+      "timestamp": "2026-08-17T00:22:30.521407"
     },
     "3.2": {
       "id": "3",
@@ -3679,7 +3679,7 @@
         }
       ],
       "formulaRefs": [
-        "pneuma-master-action-v22",
+        "pneuma-master-action-v23",
         "bridge-12-pair-metric-v22",
         "bridge-lagrangian-v22",
         "distributed-or-reduction-v22",
@@ -3719,7 +3719,7 @@
         "gauge.chirality_reversal_probability"
       ],
       "formula_refs": [
-        "pneuma-master-action-v22",
+        "pneuma-master-action-v23",
         "bridge-12-pair-metric-v22",
         "bridge-lagrangian-v22",
         "distributed-or-reduction-v22",
@@ -3758,7 +3758,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-08-16T21:50:04.884617"
+      "timestamp": "2026-08-17T00:22:30.521782"
     },
     "3.1": {
       "id": "3",
@@ -3816,7 +3816,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-08-16T21:50:04.884891"
+      "timestamp": "2026-08-17T00:22:30.522011"
     },
     "4.2": {
       "id": "4",
@@ -3946,7 +3946,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-08-16T21:50:05.088439"
+      "timestamp": "2026-08-17T00:22:30.726105"
     },
     "4.1": {
       "id": "4",
@@ -4234,7 +4234,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-08-16T21:50:05.277674"
+      "timestamp": "2026-08-17T00:22:30.916376"
     },
     "4.3": {
       "id": "4",
@@ -4474,7 +4474,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-08-16T21:50:05.278046"
+      "timestamp": "2026-08-17T00:22:30.916739"
     },
     "4.6": {
       "id": "4",
@@ -4498,7 +4498,7 @@
         {
           "type": "formula",
           "content": "\\frac{d}{R} \\approx \\frac{1}{2\\pi K} = \\frac{1}{8\\pi} \\approx 0.12",
-          "formula_id": "cycle-separation",
+          "formula_id": "cycle-separation-suppression",
           "label": "(4.6.1)",
           "equationNumber": "(4.6.1)"
         },
@@ -4573,7 +4573,7 @@
         {
           "type": "formula",
           "content": "\\frac{d}{R} \\approx \\frac{1}{2\\pi K} = \\frac{1}{8\\pi} \\approx 0.12",
-          "formula_id": "cycle-separation",
+          "formula_id": "cycle-separation-suppression",
           "label": "(4.6.1)",
           "equationNumber": "(4.6.1)"
         },
@@ -4637,7 +4637,6 @@
         }
       ],
       "formulaRefs": [
-        "cycle-separation",
         "cycle-separation-suppression",
         "proton-lifetime"
       ],
@@ -4650,7 +4649,6 @@
         "bounds.tau_proton_lower"
       ],
       "formula_refs": [
-        "cycle-separation",
         "cycle-separation-suppression",
         "proton-lifetime"
       ],
@@ -4662,7 +4660,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-08-16T21:50:05.278194"
+      "timestamp": "2026-08-17T00:22:30.916955"
     },
     "4.4": {
       "id": "4",
@@ -4844,7 +4842,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-08-16T21:50:05.278657"
+      "timestamp": "2026-08-17T00:22:30.917528"
     },
     "4.9": {
       "id": "4",
@@ -4946,7 +4944,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-08-16T21:50:05.278783"
+      "timestamp": "2026-08-17T00:22:30.917667"
     },
     "6.1.1": {
       "id": "6",
@@ -5060,7 +5058,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-08-16T21:50:05.279024"
+      "timestamp": "2026-08-17T00:22:30.917914"
     },
     "4.2.1": {
       "id": "4",
@@ -5134,7 +5132,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-08-16T21:50:05.279203"
+      "timestamp": "2026-08-17T00:22:30.918098"
     },
     "4.8": {
       "id": "4",
@@ -5192,7 +5190,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-08-16T21:50:05.279478"
+      "timestamp": "2026-08-17T00:22:30.918384"
     },
     "A2": {
       "id": "A2",
@@ -5264,7 +5262,7 @@
         "algebra.freudenthal_jordan_trace",
         "algebra.pneuma_27d_condensate_scale"
       ],
-      "timestamp": "2026-08-16T21:50:05.280176"
+      "timestamp": "2026-08-17T00:22:30.919441"
     },
     "A3": {
       "id": "A3",
@@ -5350,7 +5348,7 @@
         "algebra.e7_symplectic",
         "algebra.e7_alp_mass_gev"
       ],
-      "timestamp": "2026-08-16T21:50:05.280400"
+      "timestamp": "2026-08-17T00:22:30.919704"
     },
     "A4": {
       "id": "A4",
@@ -5460,7 +5458,7 @@
         "algebra.gaugino_condensate_ratio",
         "algebra.gaugino_cabibbo_derived"
       ],
-      "timestamp": "2026-08-16T21:50:05.280501"
+      "timestamp": "2026-08-17T00:22:30.919824"
     },
     "A5": {
       "id": "A5",
@@ -5592,7 +5590,7 @@
         "algebra.e8_portal_coupling",
         "algebra.e8_heterotic_spectral_proxy"
       ],
-      "timestamp": "2026-08-16T21:50:05.327407"
+      "timestamp": "2026-08-17T00:22:30.966832"
     },
     "A6": {
       "id": "A6",
@@ -5830,7 +5828,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-16T21:50:05.327597"
+      "timestamp": "2026-08-17T00:22:30.967037"
     },
     "A7": {
       "id": "A7",
@@ -6078,7 +6076,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-16T21:50:05.327641"
+      "timestamp": "2026-08-17T00:22:30.967082"
     },
     "neutrino-algebraic": {
       "id": "neutrino-algebraic",
@@ -6244,7 +6242,7 @@
         "neutrino.theta13_sigma",
         "neutrino.delta_CP_sigma"
       ],
-      "timestamp": "2026-08-16T21:50:05.327735"
+      "timestamp": "2026-08-17T00:22:30.967173"
     },
     "5.1": {
       "id": "5",
@@ -6584,7 +6582,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-08-16T21:50:05.327842"
+      "timestamp": "2026-08-17T00:22:30.967275"
     },
     "5.2": {
       "id": "5",
@@ -6878,7 +6876,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-08-16T21:50:05.327991"
+      "timestamp": "2026-08-17T00:22:30.967424"
     },
     "5.6": {
       "id": "5",
@@ -7202,7 +7200,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-08-16T21:50:05.328220"
+      "timestamp": "2026-08-17T00:22:30.967658"
     },
     "5.7": {
       "id": "5",
@@ -7346,7 +7344,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-08-16T21:50:05.330215"
+      "timestamp": "2026-08-17T00:22:30.969720"
     },
     "5.4": {
       "id": "5",
@@ -7666,7 +7664,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-08-16T21:50:05.331717"
+      "timestamp": "2026-08-17T00:22:30.971224"
     },
     "5.9": {
       "id": "5",
@@ -7828,7 +7826,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-08-16T21:50:05.332750"
+      "timestamp": "2026-08-17T00:22:30.972247"
     },
     "4.5": {
       "id": "4",
@@ -8088,7 +8086,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-08-16T21:50:05.533674"
+      "timestamp": "2026-08-17T00:22:31.178520"
     },
     "4.7": {
       "id": "4",
@@ -8340,7 +8338,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-08-16T21:50:05.534841"
+      "timestamp": "2026-08-17T00:22:31.179641"
     },
     "5.3": {
       "id": "5",
@@ -8498,7 +8496,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-08-16T21:50:05.535164"
+      "timestamp": "2026-08-17T00:22:31.179937"
     },
     "5.8": {
       "id": "5",
@@ -8820,7 +8818,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-08-16T21:50:05.535277"
+      "timestamp": "2026-08-17T00:22:31.180055"
     },
     "6.1": {
       "id": "6",
@@ -8880,7 +8878,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535379"
+      "timestamp": "2026-08-17T00:22:31.180173"
     },
     "6.2": {
       "id": "6",
@@ -8928,7 +8926,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535437"
+      "timestamp": "2026-08-17T00:22:31.180224"
     },
     "6.3": {
       "id": "6",
@@ -9020,7 +9018,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535489"
+      "timestamp": "2026-08-17T00:22:31.180274"
     },
     "6.4": {
       "id": "6",
@@ -9072,7 +9070,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535530"
+      "timestamp": "2026-08-17T00:22:31.180314"
     },
     "6.5": {
       "id": "6",
@@ -9124,7 +9122,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535565"
+      "timestamp": "2026-08-17T00:22:31.180445"
     },
     "6.6": {
       "id": "6",
@@ -9176,7 +9174,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535600"
+      "timestamp": "2026-08-17T00:22:31.180487"
     },
     "6.7": {
       "id": "6",
@@ -9228,7 +9226,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535774"
+      "timestamp": "2026-08-17T00:22:31.180555"
     },
     "6.8": {
       "id": "6",
@@ -9272,7 +9270,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535807"
+      "timestamp": "2026-08-17T00:22:31.180586"
     },
     "6.9": {
       "id": "6",
@@ -9316,7 +9314,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.535843"
+      "timestamp": "2026-08-17T00:22:31.180623"
     },
     "5.5": {
       "id": "5",
@@ -9470,7 +9468,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-08-16T21:50:05.558179"
+      "timestamp": "2026-08-17T00:22:31.204175"
     },
     "2.8": {
       "id": "2",
@@ -10416,7 +10414,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-08-16T21:50:05.558360"
+      "timestamp": "2026-08-17T00:22:31.204361"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -10556,7 +10554,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-16T21:50:05.558647"
+      "timestamp": "2026-08-17T00:22:31.204656"
     },
     "7.2": {
       "id": "7",
@@ -10672,7 +10670,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-08-16T21:50:05.558881"
+      "timestamp": "2026-08-17T00:22:31.204894"
     },
     "7.4": {
       "id": "7",
@@ -10790,7 +10788,7 @@
         "portals.sterile_mass_scale_gev",
         "portals.sterile_n_eff_contribution"
       ],
-      "timestamp": "2026-08-16T21:50:05.630831"
+      "timestamp": "2026-08-17T00:22:31.277579"
     },
     "7.5": {
       "id": "7",
@@ -10950,7 +10948,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-08-16T21:50:05.630979"
+      "timestamp": "2026-08-17T00:22:31.277719"
     },
     "7.6": {
       "id": "7",
@@ -11020,7 +11018,7 @@
         "consciousness.shielded_tau_ms",
         "consciousness.shielding_factor"
       ],
-      "timestamp": "2026-08-16T21:50:05.624678"
+      "timestamp": "2026-08-17T00:22:31.271503"
     },
     "7": {
       "id": "7",
@@ -13868,7 +13866,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.624815"
+      "timestamp": "2026-08-17T00:22:31.271635"
     },
     "6": {
       "id": "6",
@@ -16774,7 +16772,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-08-16T21:50:05.624994"
+      "timestamp": "2026-08-17T00:22:31.271810"
     },
     "1.1": {
       "id": "1",
@@ -17442,7 +17440,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.625235"
+      "timestamp": "2026-08-17T00:22:31.272058"
     },
     "2.6": {
       "id": "2",
@@ -18322,7 +18320,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.625415"
+      "timestamp": "2026-08-17T00:22:31.272241"
     },
     "3.7": {
       "id": "3",
@@ -18962,7 +18960,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.625590"
+      "timestamp": "2026-08-17T00:22:31.272403"
     },
     "4": {
       "id": "4",
@@ -19480,7 +19478,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-16T21:50:05.626861"
+      "timestamp": "2026-08-17T00:22:31.273641"
     },
     "A": {
       "id": "A",
@@ -19690,7 +19688,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-08-16T21:50:05.626936"
+      "timestamp": "2026-08-17T00:22:31.273716"
     },
     "B": {
       "id": "B",
@@ -19926,7 +19924,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-08-16T21:50:05.626995"
+      "timestamp": "2026-08-17T00:22:31.273774"
     },
     "C": {
       "id": "C",
@@ -20132,7 +20130,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-08-16T21:50:05.627056"
+      "timestamp": "2026-08-17T00:22:31.273834"
     },
     "D": {
       "id": "D",
@@ -20330,7 +20328,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-08-16T21:50:05.627106"
+      "timestamp": "2026-08-17T00:22:31.273881"
     },
     "E": {
       "id": "E",
@@ -20532,7 +20530,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-08-16T21:50:05.627154"
+      "timestamp": "2026-08-17T00:22:31.273930"
     },
     "F": {
       "id": "F",
@@ -20742,7 +20740,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-08-16T21:50:05.627617"
+      "timestamp": "2026-08-17T00:22:31.274409"
     },
     "G": {
       "id": "G",
@@ -21090,7 +21088,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-08-16T21:50:05.628172"
+      "timestamp": "2026-08-17T00:22:31.274932"
     },
     "H": {
       "id": "H",
@@ -21480,7 +21478,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-08-16T21:50:05.628261"
+      "timestamp": "2026-08-17T00:22:31.275025"
     },
     "I": {
       "id": "I",
@@ -21834,7 +21832,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-08-16T21:50:05.628347"
+      "timestamp": "2026-08-17T00:22:31.275112"
     },
     "J": {
       "id": "J",
@@ -22116,7 +22114,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-08-16T21:50:05.628433"
+      "timestamp": "2026-08-17T00:22:31.275196"
     },
     "K": {
       "id": "K",
@@ -22532,7 +22530,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-08-16T21:50:05.628502"
+      "timestamp": "2026-08-17T00:22:31.275265"
     },
     "L": {
       "id": "L",
@@ -22824,7 +22822,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-08-16T21:50:05.628675"
+      "timestamp": "2026-08-17T00:22:31.275441"
     },
     "Z": {
       "id": "Z",
@@ -23014,7 +23012,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-08-16T21:50:05.628811"
+      "timestamp": "2026-08-17T00:22:31.275573"
     },
     "2.2": {
       "id": "2",
@@ -23356,7 +23354,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-08-16T21:50:05.629072"
+      "timestamp": "2026-08-17T00:22:31.275836"
     },
     "R.1": {
       "id": "R",
@@ -23912,7 +23910,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-08-16T21:50:05.629322"
+      "timestamp": "2026-08-17T00:22:31.276090"
     },
     "S.1": {
       "id": "S",
@@ -24626,7 +24624,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-16T21:50:05.629468"
+      "timestamp": "2026-08-17T00:22:31.276236"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -24702,7 +24700,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-08-16T21:50:05.629759"
+      "timestamp": "2026-08-17T00:22:31.276536"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -24788,7 +24786,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-08-16T21:50:05.629820"
+      "timestamp": "2026-08-17T00:22:31.276594"
     },
     "5.1.1": {
       "id": "5",
@@ -24954,7 +24952,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-08-16T21:50:05.629920"
+      "timestamp": "2026-08-17T00:22:31.276689"
     },
     "2.3": {
       "id": "2",
@@ -25270,7 +25268,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-08-16T21:50:05.630099"
+      "timestamp": "2026-08-17T00:22:31.276860"
     },
     "5.2.1": {
       "id": "5",
@@ -25436,7 +25434,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-08-16T21:50:05.630224"
+      "timestamp": "2026-08-17T00:22:31.276980"
     },
     "6.2.1": {
       "id": "6",
@@ -25586,7 +25584,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-08-16T21:50:05.630289"
+      "timestamp": "2026-08-17T00:22:31.277044"
     },
     "7.1": {
       "id": "7",
@@ -25738,7 +25736,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-08-16T21:50:05.630356"
+      "timestamp": "2026-08-17T00:22:31.277109"
     },
     "7.3": {
       "id": "7",
@@ -25902,7 +25900,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-08-16T21:50:05.630482"
+      "timestamp": "2026-08-17T00:22:31.277252"
     }
   }
 }

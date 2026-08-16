@@ -4,8 +4,8 @@
   "summary": {
     "files_scanned": 185,
     "dataset_values": 333,
-    "exact_dup": 369,
-    "stale_dup": 355,
+    "exact_dup": 373,
+    "stale_dup": 360,
     "files_with_findings": 83
   },
   "worst_files": [
@@ -38,6 +38,10 @@
       24
     ],
     [
+      "simulations/PM/validation/consistency_beacons.py",
+      20
+    ],
+    [
       "simulations/PM/particle/higgs_brane_partition.py",
       18
     ],
@@ -64,10 +68,6 @@
     [
       "simulations/PM/particle/ckm_matrix.py",
       14
-    ],
-    [
-      "simulations/PM/particle/higgs_vev_refined.py",
-      13
     ]
   ],
   "findings": [
@@ -1121,7 +1121,7 @@
     },
     {
       "file": "simulations/PM/cosmology/speed_of_light.py",
-      "line": 1064,
+      "line": 1160,
       "literal": 0.999,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1129,7 +1129,7 @@
     },
     {
       "file": "simulations/PM/cosmology/speed_of_light.py",
-      "line": 1064,
+      "line": 1160,
       "literal": 1.001,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -5049,7 +5049,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 106,
+      "line": 140,
       "literal": 0.97435,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -5057,7 +5057,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 107,
+      "line": 141,
       "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -5065,7 +5065,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 108,
+      "line": 142,
       "literal": 0.00382,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
       "dataset_value": 0.00382,
@@ -5073,23 +5073,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 123,
-      "literal": 7.42e-05,
-      "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
-      "dataset_value": 7.42e-05,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 137,
-      "literal": 0.00251,
-      "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
-      "dataset_value": 0.002515,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 181,
+      "line": 233,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -5097,7 +5081,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 206,
+      "line": 258,
       "literal": 0.2251,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -5105,7 +5089,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 207,
+      "line": 259,
       "literal": 0.826,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
       "dataset_value": 0.827,
@@ -5113,7 +5097,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 210,
+      "line": 262,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -5121,7 +5105,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 129,
+      "line": 164,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -5129,10 +5113,98 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 143,
-      "literal": 0.00251,
+      "line": 354,
+      "literal": 80.3692,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
+      "dataset_value": 80.3692,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 355,
+      "literal": 0.23122,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 356,
+      "literal": 1.1663788e-05,
+      "dataset_key": "pdg_2024_values.constants.G_F.value",
+      "dataset_value": 1.1663788e-05,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 382,
+      "literal": 0.315,
+      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
+      "dataset_value": 0.3111,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 383,
+      "literal": 0.685,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
+      "dataset_value": 0.6931,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 411,
+      "literal": 6.582119569e-25,
+      "dataset_key": "pdg_2024_values.fundamental_constants.HBAR.value",
+      "dataset_value": 6.582119569e-25,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 170,
+      "literal": 7.42e-05,
+      "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
+      "dataset_value": 7.42e-05,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 192,
+      "literal": 0.002498,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 328,
+      "literal": 33.59,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
+      "dataset_value": 33.41,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 329,
+      "literal": 8.65,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
+      "dataset_value": 8.63,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 353,
+      "literal": 137.035999,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/consistency_beacons.py",
+      "line": 420,
+      "literal": 197.3269804,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.delta_CP.value",
+      "dataset_value": 194.0,
       "class": "STALE_DUP"
     },
     {

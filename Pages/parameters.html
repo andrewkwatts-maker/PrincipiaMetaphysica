@@ -1965,6 +1965,17 @@
             if (value === null || value === undefined) return '—';
             if (typeof value === 'boolean') return value ? 'Yes' : 'No';
             if (Array.isArray(value)) return value.map(v => escapeHtml(String(v))).join(', ');
+            if (typeof value === 'object') {
+                // Structured record registered as a parameter value (e.g.
+                // documented_divergence, shell_distribution). Render a
+                // compact key:value summary instead of "[object Object]".
+                const parts = Object.entries(value).slice(0, 4).map(([k, v]) => {
+                    const vs = (typeof v === 'object' && v !== null) ? '…' : String(v);
+                    return `${escapeHtml(k)}: ${escapeHtml(vs.length > 24 ? vs.slice(0, 24) + '…' : vs)}`;
+                });
+                const more = Object.keys(value).length > 4 ? ', …' : '';
+                return `<span class="structured-value" style="font-size:0.78em; font-family:monospace;">{ ${parts.join(', ')}${more} }</span>`;
+            }
 
             if (typeof value === 'number') {
                 const abs = Math.abs(value);

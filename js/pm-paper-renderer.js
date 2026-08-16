@@ -219,6 +219,13 @@
                 await MathJax.typesetPromise([container]);
             }
 
+            // Late-content sweep: pm-formula/pm-param web components and
+            // lazy section-file fetches keep injecting TeX after the pass
+            // above (audit measured ~630 equations arriving late — half the
+            // paper rendered as raw $$…$$ without this). Re-typeset on a
+            // debounced MutationObserver until the DOM settles.
+            _scheduleLateTypeset(container);
+
             console.log('%cPMPaperRenderer: Paper rendered successfully', 'color: green; font-weight: bold');
             return true;
 
@@ -226,6 +233,59 @@
             console.error('PMPaperRenderer: Error during rendering:', error);
             return false;
         }
+    }
+
+    /**
+     * Keep typesetting late-arriving TeX until the container settles.
+     *
+     * Guards against a feedback loop: MathJax's own DOM insertions
+     * (mjx-* elements) are ignored, and no re-typeset is scheduled while
+     * one is already running. The observer disconnects after a quiet
+     * period so it never lingers past initial page hydration.
+     * @private
+     */
+    function _scheduleLateTypeset(container) {
+        if (typeof MathJax === 'undefined' || !MathJax.typesetPromise) return;
+
+        let pending = null;
+        let typesetting = false;
+        let lifeTimer = null;
+
+        const isMathJaxNode = (node) =>
+            node.nodeType === 1 && (
+                (node.tagName && node.tagName.toLowerCase().startsWith('mjx-')) ||
+                (node.closest && node.closest('mjx-container'))
+            );
+
+        const run = () => {
+            pending = null;
+            typesetting = true;
+            MathJax.typesetPromise([container])
+                .catch(() => {})
+                .finally(() => { typesetting = false; });
+        };
+
+        const extendLife = () => {
+            if (lifeTimer) clearTimeout(lifeTimer);
+            lifeTimer = setTimeout(() => obs.disconnect(), 15000);
+        };
+
+        const obs = new MutationObserver((muts) => {
+            if (typesetting) return;
+            const relevant = muts.some(m =>
+                Array.from(m.addedNodes).some(n => n.nodeType === 1 && !isMathJaxNode(n))
+            );
+            if (!relevant) return;
+            if (pending) clearTimeout(pending);
+            pending = setTimeout(run, 400);
+            extendLife();
+        });
+        obs.observe(container, { childList: true, subtree: true });
+        extendLife();
+
+        // Safety sweep for content that landed between the awaited typeset
+        // and observer installation.
+        setTimeout(run, 800);
     }
 
     /**
@@ -1370,6 +1430,11 @@
                     displayValue = Math.abs(value) >= 1000 || (Math.abs(value) < 0.01 && value !== 0)
                         ? value.toExponential(3)
                         : Number.isInteger(value) ? value.toString() : value.toPrecision(5);
+                } else if (typeof value === 'object') {
+                    // Structured record registered as a parameter value —
+                    // summarize instead of leaking "[object Object]".
+                    const keys = Object.keys(value);
+                    displayValue = `{${keys.slice(0, 3).join(', ')}${keys.length > 3 ? ', …' : ''}}`;
                 } else {
                     displayValue = String(value);
                 }
