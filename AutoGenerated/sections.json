@@ -57,7 +57,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling <Normal>α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> (E₇ ⊃ E₆×U(1) branching)</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6))) — E₇ Clebsch–Gordan coefficient</EML> derived algebraically from E₇ ⊃ E₆ × U(1) group branching (zero free parameters: the U(1) Clebsch–Gordan coefficient is 1/√6 by necessity). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">6.9×10⁻⁸</span>.",
+          "content": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling <Normal>α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> (E₇ ⊃ E₆×U(1) branching)</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6))) — E₇ Clebsch–Gordan coefficient</EML> derived algebraically from E₇ ⊃ E₆ × U(1) group branching (zero free parameters: the U(1) Clebsch–Gordan coefficient is 1/√6 by necessity). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">4.27×10⁻⁸</span>.",
           "label": "abstract-two-layer-or",
           "equationNumber": "abstract-two-layer-or"
         },
@@ -113,7 +113,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling <Normal>α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> (E₇ ⊃ E₆×U(1) branching)</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6))) — E₇ Clebsch–Gordan coefficient</EML> derived algebraically from E₇ ⊃ E₆ × U(1) group branching (zero free parameters: the U(1) Clebsch–Gordan coefficient is 1/√6 by necessity). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">6.9×10⁻⁸</span>.",
+          "content": "<strong>Two-Layer Objective Reduction</strong>: The theory introduces a hierarchical two-layer OR structure: (i) Bridge/Global OR (R<sub>⊥</sub><sup>global</sup>) creates dual shadows from the 27D bulk via tensor product of 12 Möbius double-cover operators, and (ii) Face/Local OR (R<sub>face</sub><sup>(f)</sup>) selects the visible sector within each shadow from 4 Kähler moduli faces. The master action explicitly captures both layers through warping potentials V<sub>bridge</sub> (shadow creation) and V<sub>face</sub> (face selection). Hidden faces (f=2,3,4) provide multi-component dark matter with portal coupling <Normal>α<sub>leak</sub> = 1/√6 ≈ <span class=\"pm-value\" data-pm-value=\"geometry.alpha_leak\">0.408</span> (E₇ ⊃ E₆×U(1) branching)</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6))) — E₇ Clebsch–Gordan coefficient</EML> derived algebraically from E₇ ⊃ E₆ × U(1) group branching (zero free parameters: the U(1) Clebsch–Gordan coefficient is 1/√6 by necessity). Dark force leakage across shadows is predicted to be asymmetric: strong/weak forces effectively zero, EM and gravity at P<sub>leak</sub> ≈ <span class=\"pm-value\" data-pm-value=\"abstract.dark_force_pleak\">4.27×10⁻⁸</span>.",
           "label": "abstract-two-layer-or",
           "equationNumber": "abstract-two-layer-or"
         },
@@ -208,7 +208,7 @@
         "abstract.ledger_open",
         "abstract.v25_v26_closures"
       ],
-      "timestamp": "2026-08-17T21:36:41.767314"
+      "timestamp": "2026-08-18T08:13:37.584723"
     },
     "1": {
       "id": "1",
@@ -223,7 +223,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "This paper presents <strong>Principia Metaphysica <span class=\"pm-value\" data-pm-value=\"framework.version_label\">v24.2</span></strong>, a <strong>Topologically Anchored Framework</strong> in which 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow from <strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations), achieving <strong>116:1 compression ratio</strong>. The bulk manifold <strong>M<sup>27</sup>(24,1,2)</strong> decomposes as: <em>24</em> G₂ physics dimensions (12×(2,0) bridge pairs creating dual 13D shadows), <em>1</em> unified timelike fiber T¹, and <em>2</em> <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector providing global cross-shadow objective reduction averaging). The framework splits into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean bridges</strong>, with each shadow compactifying via G₂ holonomy through 11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.elder_kads\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.mephorash_chi\">144</span></strong> provides all structure: fermion generations (χ<sub>eff</sub>/48 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> consistent with DESI 2025 thawing dark energy constraints and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2025. New results: thermal time coupling <strong>α<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10</strong> (DERIVED, zero free parameters), CSS <strong>[[24,12,8]]</strong> quantum code from self-dual Golay (protects ≤3 moduli errors), and breathing dark energy ρ<sub>breath</sub> from 12-pair OR aggregation. All derivation chains are recorded in <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span>+ reproducibility certificates.",
+          "content": "This paper presents <strong>Principia Metaphysica <span class=\"pm-value\" data-pm-value=\"framework.version_label\">v24.2</span></strong>, a <strong>Topologically Anchored Framework</strong> in which 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow from <strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations), achieving <strong>116:1 compression ratio</strong>. The bulk manifold <strong>M<sup>27</sup>(24,1,2)</strong> decomposes as: <em>24</em> G₂ physics dimensions (12×(2,0) bridge pairs creating dual 13D shadows), <em>1</em> unified timelike fiber T¹, and <em>2</em> <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector providing global cross-shadow objective reduction averaging). The framework splits into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean bridges</strong>, with each shadow compactifying via G₂ holonomy through 11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.elder_kads\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.mephorash_chi\">144</span></strong> provides all structure: fermion generations (χ<sub>eff</sub>/48 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> consistent with DESI 2025 thawing dark energy constraints and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2022. New results: thermal time coupling <strong>α<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10</strong> (DERIVED, zero free parameters), CSS <strong>[[24,12,8]]</strong> quantum code from self-dual Golay (protects ≤3 moduli errors), and breathing dark energy ρ<sub>breath</sub> from 12-pair OR aggregation. All derivation chains are recorded in <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span>+ reproducibility certificates.",
           "label": "lead",
           "equationNumber": "lead"
         },
@@ -338,7 +338,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 27D theory with structure (24,1,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> sampler data fields, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(26,1). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 shared time), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257.</p>",
+          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 27D theory with structure (24,1,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> sampler data fields, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(26,1). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 shared time), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313).</p>",
           "label": "pneuma-postulate",
           "equationNumber": "pneuma-postulate"
         },
@@ -480,7 +480,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to constrain Re(T) from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The model proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact, not an independently validated result) with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. With the proposed derivations of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5, an ansatz following Froggatt-Nielsen 1979), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>~58 Standard Model + compactification parameters as candidate topology-first predictions</strong>. Racetrack moduli stabilization proposes the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenological input). Yukawa overlap magnitudes are cross-checked via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
+          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to constrain Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024), rather than choosing it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The model proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact, not an independently validated result) with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. With the proposed derivations of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5, an ansatz following Froggatt-Nielsen 1979), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>~58 Standard Model + compactification parameters as candidate topology-first predictions</strong>. Racetrack moduli stabilization proposes a racetrack variant ε = 0.2257 of the Cabibbo angle from flux competition (canonical: e^{-3/2} = 0.22313) (minimal phenomenological input). Yukawa overlap magnitudes are cross-checked via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
           "label": "derived-modulus",
           "equationNumber": "derived-modulus"
         },
@@ -492,7 +492,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Central proposal: topologically anchored candidate model (EDOF=3)</h4><p>The central proposal is that a <strong>27D spacetime with structure (24,1,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, is a <strong>ghost-free candidate framework</strong> containing a 1 + 3 brane hierarchy. The dual-shadow structure, with geometry proposed to emerge from the 4096-component Pneuma field, proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact) from <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), aiming to jointly account for: (1) the origin of gauge forces from 26D isometries, (2) chiral structure via a proposed dual-shadow Möbius mechanism, (3) emergence of time from modular flow, (4) <strong>candidate values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ 4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli stabilization; Yukawa φ-scaling is an ansatz following Froggatt-Nielsen 1979), δ<sub>CP</sub> = π/2 as candidate topology-first predictions</strong> from topology (b₃=24, λ=1.5 with minimal phenomenological input), and <Speculation>(5) may address aspects of the quantum measurement problem through geometric correlations in the mirror shadow.</Speculation></p>",
+          "content": "<h4>Central proposal: topologically anchored candidate model (EDOF=3)</h4><p>The central proposal is that a <strong>27D spacetime with structure (24,1,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, is a <strong>ghost-free candidate framework</strong> containing a 1 + 3 brane hierarchy. The dual-shadow structure, with geometry proposed to emerge from the 4096-component Pneuma field, proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact) from <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), aiming to jointly account for: (1) the origin of gauge forces from 26D isometries, (2) chiral structure via a proposed dual-shadow Möbius mechanism, (3) emergence of time from modular flow, (4) <strong>candidate values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ 4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 (racetrack variant; canonical e^{-3/2}) from racetrack moduli stabilization; Yukawa φ-scaling is an ansatz following Froggatt-Nielsen 1979), δ<sub>CP</sub> = π/2 as candidate topology-first predictions</strong> from topology (b₃=24, λ=1.5 with minimal phenomenological input), and <Speculation>(5) may address aspects of the quantum measurement problem through geometric correlations in the mirror shadow.</Speculation></p>",
           "label": "central-thesis",
           "equationNumber": "central-thesis"
         },
@@ -579,7 +579,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "This paper presents <strong>Principia Metaphysica <span class=\"pm-value\" data-pm-value=\"framework.version_label\">v24.2</span></strong>, a <strong>Topologically Anchored Framework</strong> in which 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow from <strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations), achieving <strong>116:1 compression ratio</strong>. The bulk manifold <strong>M<sup>27</sup>(24,1,2)</strong> decomposes as: <em>24</em> G₂ physics dimensions (12×(2,0) bridge pairs creating dual 13D shadows), <em>1</em> unified timelike fiber T¹, and <em>2</em> <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector providing global cross-shadow objective reduction averaging). The framework splits into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean bridges</strong>, with each shadow compactifying via G₂ holonomy through 11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.elder_kads\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.mephorash_chi\">144</span></strong> provides all structure: fermion generations (χ<sub>eff</sub>/48 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> consistent with DESI 2025 thawing dark energy constraints and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2025. New results: thermal time coupling <strong>α<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10</strong> (DERIVED, zero free parameters), CSS <strong>[[24,12,8]]</strong> quantum code from self-dual Golay (protects ≤3 moduli errors), and breathing dark energy ρ<sub>breath</sub> from 12-pair OR aggregation. All derivation chains are recorded in <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span>+ reproducibility certificates.",
+          "content": "This paper presents <strong>Principia Metaphysica <span class=\"pm-value\" data-pm-value=\"framework.version_label\">v24.2</span></strong>, a <strong>Topologically Anchored Framework</strong> in which 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow from <strong>EDOF=3</strong> (EDOF=3: 1 geometric seed b₃ + 2 calibrations), achieving <strong>116:1 compression ratio</strong>. The bulk manifold <strong>M<sup>27</sup>(24,1,2)</strong> decomposes as: <em>24</em> G₂ physics dimensions (12×(2,0) bridge pairs creating dual 13D shadows), <em>1</em> unified timelike fiber T¹, and <em>2</em> <strong>sampler data fields</strong> S<sup>(2,0)</sup> (an architecturally separate Euclidean sector providing global cross-shadow objective reduction averaging). The framework splits into <strong>dual 13D(12,1) shadows</strong> connected by <strong>12×(2,0) Euclidean bridges</strong>, with each shadow compactifying via G₂ holonomy through 11D → 7D → 4D descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.elder_kads\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.mephorash_chi\">144</span></strong> provides all structure: fermion generations (χ<sub>eff</sub>/48 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> consistent with DESI 2025 thawing dark energy constraints and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2022. New results: thermal time coupling <strong>α<sub>T</sub> = D<sub>total</sub>/D<sub>string</sub> = 27/10</strong> (DERIVED, zero free parameters), CSS <strong>[[24,12,8]]</strong> quantum code from self-dual Golay (protects ≤3 moduli errors), and breathing dark energy ρ<sub>breath</sub> from 12-pair OR aggregation. All derivation chains are recorded in <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span>+ reproducibility certificates.",
           "label": "lead",
           "equationNumber": "lead"
         },
@@ -694,7 +694,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 27D theory with structure (24,1,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> sampler data fields, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(26,1). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 shared time), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257.</p>",
+          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 27D theory with structure (24,1,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> sampler data fields, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(26,1). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 shared time), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313).</p>",
           "label": "pneuma-postulate",
           "equationNumber": "pneuma-postulate"
         },
@@ -836,7 +836,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to constrain Re(T) from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The model proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact, not an independently validated result) with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. With the proposed derivations of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5, an ansatz following Froggatt-Nielsen 1979), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>~58 Standard Model + compactification parameters as candidate topology-first predictions</strong>. Racetrack moduli stabilization proposes the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenological input). Yukawa overlap magnitudes are cross-checked via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
+          "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to constrain Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024), rather than choosing it arbitrarily. (Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value 7.086 and geometric value 1.833 remain in tension.) This ensures swampland compliance and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>EDOF=3 Statistical Framework:</strong> The model proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact, not an independently validated result) with three calibration seeds: VEV factor 1.5859 (calibrated; base ratio ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ ≈ 1.534, 3.4% gap open), α<sub>GUT</sub> coefficient 0.032177, and Re(T) constrained from Higgs mass (9.865 via inversion; 7.086 calibrated for BBN)—all documented. With the proposed derivations of KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5, an ansatz following Froggatt-Nielsen 1979), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>~58 Standard Model + compactification parameters as candidate topology-first predictions</strong>. Racetrack moduli stabilization proposes a racetrack variant ε = 0.2257 of the Cabibbo angle from flux competition (canonical: e^{-3/2} = 0.22313) (minimal phenomenological input). Yukawa overlap magnitudes are cross-checked via 7D Monte Carlo on explicit G₂ associative cycles.</p>",
           "label": "derived-modulus",
           "equationNumber": "derived-modulus"
         },
@@ -848,7 +848,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Central proposal: topologically anchored candidate model (EDOF=3)</h4><p>The central proposal is that a <strong>27D spacetime with structure (24,1,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, is a <strong>ghost-free candidate framework</strong> containing a 1 + 3 brane hierarchy. The dual-shadow structure, with geometry proposed to emerge from the 4096-component Pneuma field, proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact) from <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), aiming to jointly account for: (1) the origin of gauge forces from 26D isometries, (2) chiral structure via a proposed dual-shadow Möbius mechanism, (3) emergence of time from modular flow, (4) <strong>candidate values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ 4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli stabilization; Yukawa φ-scaling is an ansatz following Froggatt-Nielsen 1979), δ<sub>CP</sub> = π/2 as candidate topology-first predictions</strong> from topology (b₃=24, λ=1.5 with minimal phenomenological input), and <Speculation>(5) may address aspects of the quantum measurement problem through geometric correlations in the mirror shadow.</Speculation></p>",
+          "content": "<h4>Central proposal: topologically anchored candidate model (EDOF=3)</h4><p>The central proposal is that a <strong>27D spacetime with structure (24,1,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)</strong>, with 12 bridge pairs warping to create dual 13D(12,1) shadows, is a <strong>ghost-free candidate framework</strong> containing a 1 + 3 brane hierarchy. The dual-shadow structure, with geometry proposed to emerge from the 4096-component Pneuma field, proposes a <strong>~116:1 compression ratio</strong> (model-internal artifact) from <strong>EDOF=3</strong> (1 geometric seed b₃ + 2 calibrations), aiming to jointly account for: (1) the origin of gauge forces from 26D isometries, (2) chiral structure via a proposed dual-shadow Möbius mechanism, (3) emergence of time from modular flow, (4) <strong>candidate values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204, M<sub>KK</sub> ≈ 4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 (racetrack variant; canonical e^{-3/2}) from racetrack moduli stabilization; Yukawa φ-scaling is an ansatz following Froggatt-Nielsen 1979), δ<sub>CP</sub> = π/2 as candidate topology-first predictions</strong> from topology (b₃=24, λ=1.5 with minimal phenomenological input), and <Speculation>(5) may address aspects of the quantum measurement problem through geometric correlations in the mirror shadow.</Speculation></p>",
           "label": "central-thesis",
           "equationNumber": "central-thesis"
         },
@@ -962,7 +962,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-08-17T21:36:41.785045"
+      "timestamp": "2026-08-18T08:13:37.600493"
     },
     "2": {
       "id": "2",
@@ -973,7 +973,7 @@
       "title": "Geometric Framework",
       "shortTitle": "Geometric Framework",
       "order": 2,
-      "abstract": "This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the 26-dimensional action with signature (24,2) decomposing as M_26 = M_A^14 ⊗_T M_B^14, where each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, projecting onto an effective 13D (12,1) shadow. We derive the 4D effective action through Kaluza-Klein dimensional reduction on a TCS (Twisted Connected Sum) G₂ manifold with h1,1=4 Kähler moduli sectors. Racetrack moduli stabilization across these sectors dynamically derives ε ≈ 0.2257 (Cabibbo angle) from flux quantization N₁=24, N₂=23. The 26D→13D shadow framework provides a Z₂ mirror brane structure with geometrically-derived generation count n_gen = 3. The Pneuma-Vielbein bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+).",
+      "abstract": "This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the 26-dimensional action with signature (24,2) decomposing as M_26 = M_A^14 ⊗_T M_B^14, where each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, projecting onto an effective 13D (12,1) shadow. We derive the 4D effective action through Kaluza-Klein dimensional reduction on a TCS (Twisted Connected Sum) G₂ manifold with h1,1=4 Kähler moduli sectors. Racetrack moduli stabilization across these sectors dynamically derives ε ≈ 0.2257 (racetrack variant of the Cabibbo angle; canonical e^{-3/2} = 0.22313) from flux quantization N₁=24, N₂=23. The 26D→13D shadow framework provides a Z₂ mirror brane structure with geometrically-derived generation count n_gen = 3. The Pneuma-Vielbein bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+).",
       "contentBlocks": [
         {
           "type": "heading",
@@ -1274,7 +1274,7 @@
         },
         {
           "type": "callout",
-          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.10 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
+          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.20 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
         },
         {
           "type": "paragraph",
@@ -1302,7 +1302,7 @@
         },
         {
           "type": "paragraph",
-          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
+          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.20 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
         },
         {
           "type": "callout",
@@ -1882,7 +1882,7 @@
         },
         {
           "type": "callout",
-          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.10 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
+          "content": "In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the value constrained by the Higgs mass (m_h = 125.20 GeV). Open problem: Higgs inversion yields Re(T) ≈ 9.865; the BBN-calibrated value is 7.086; the geometric value is 1.833. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
         },
         {
           "type": "paragraph",
@@ -1910,7 +1910,7 @@
         },
         {
           "type": "paragraph",
-          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
+          "content": "While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.20 GeV constraining Re(T)), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
         },
         {
           "type": "callout",
@@ -2220,7 +2220,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-08-17T21:36:41.991898"
+      "timestamp": "2026-08-18T08:13:37.806396"
     },
     "2.7": {
       "id": "2",
@@ -2610,7 +2610,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-08-17T21:36:41.992193"
+      "timestamp": "2026-08-18T08:13:37.806663"
     },
     "V.1": {
       "id": "validation",
@@ -2732,7 +2732,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-08-17T21:36:41.992744"
+      "timestamp": "2026-08-18T08:13:37.807186"
     },
     "3.4": {
       "id": "3",
@@ -2896,7 +2896,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-08-17T21:36:41.992815"
+      "timestamp": "2026-08-18T08:13:37.807260"
     },
     "3.6": {
       "id": "3",
@@ -3068,7 +3068,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-08-17T21:36:41.992973"
+      "timestamp": "2026-08-18T08:13:37.807407"
     },
     "3": {
       "id": "3",
@@ -3272,7 +3272,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-08-17T21:36:42.034027"
+      "timestamp": "2026-08-18T08:13:37.848021"
     },
     "3.2": {
       "id": "3",
@@ -3760,7 +3760,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-08-17T21:36:42.034416"
+      "timestamp": "2026-08-18T08:13:37.848375"
     },
     "3.1": {
       "id": "3",
@@ -3786,7 +3786,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The derived value α<sup>−1</sup> = 137.036 matches the CODATA 2022 experimental value to within 0.008%. <Speculation>This proximity suggests that electromagnetism may be a structural property of the b₃ = 24 G₂ manifold, though the formula is currently classified as a numerological fit without a rigorous derivation from QFT or M-theory compactification.</Speculation>"
+          "content": "The derived value α<sup>−1</sup> = 137.036 matches the CODATA 2022 experimental value to within 0.0005%. <Speculation>This proximity suggests that electromagnetism may be a structural property of the b₃ = 24 G₂ manifold, though the formula is currently classified as a numerological fit without a rigorous derivation from QFT or M-theory compactification.</Speculation>"
         }
       ],
       "content_blocks": [
@@ -3803,7 +3803,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The derived value α<sup>−1</sup> = 137.036 matches the CODATA 2022 experimental value to within 0.008%. <Speculation>This proximity suggests that electromagnetism may be a structural property of the b₃ = 24 G₂ manifold, though the formula is currently classified as a numerological fit without a rigorous derivation from QFT or M-theory compactification.</Speculation>"
+          "content": "The derived value α<sup>−1</sup> = 137.036 matches the CODATA 2022 experimental value to within 0.0005%. <Speculation>This proximity suggests that electromagnetism may be a structural property of the b₃ = 24 G₂ manifold, though the formula is currently classified as a numerological fit without a rigorous derivation from QFT or M-theory compactification.</Speculation>"
         }
       ],
       "formulaRefs": [
@@ -3818,7 +3818,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-08-17T21:36:42.034647"
+      "timestamp": "2026-08-18T08:13:37.848601"
     },
     "4.2": {
       "id": "4",
@@ -3948,7 +3948,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-08-17T21:36:42.239917"
+      "timestamp": "2026-08-18T08:13:38.051065"
     },
     "4.1": {
       "id": "4",
@@ -3982,7 +3982,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where η is the parallel spinor, ∇ is the Levi-Civita connection, and S is the spinor bundle. The existence of exactly one parallel spinor (up to scaling) is equivalent to G2 holonomy. This is in contrast to generic 7-manifolds (with Spin(7) holonomy) which preserve no spinors, or Calabi-Yau 3-folds (with SU(3) holonomy) which preserve two spinors of opposite chirality."
+          "content": "where η is the parallel spinor, ∇ is the Levi-Civita connection, and S is the spinor bundle. The existence of exactly one parallel spinor (up to scaling) is equivalent to G2 holonomy. This is in contrast to generic 7-manifolds (with full SO(7) holonomy) which preserve no spinors, or Calabi-Yau 3-folds (with SU(3) holonomy) which preserve two spinors of opposite chirality."
         },
         {
           "type": "heading",
@@ -4105,7 +4105,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where η is the parallel spinor, ∇ is the Levi-Civita connection, and S is the spinor bundle. The existence of exactly one parallel spinor (up to scaling) is equivalent to G2 holonomy. This is in contrast to generic 7-manifolds (with Spin(7) holonomy) which preserve no spinors, or Calabi-Yau 3-folds (with SU(3) holonomy) which preserve two spinors of opposite chirality."
+          "content": "where η is the parallel spinor, ∇ is the Levi-Civita connection, and S is the spinor bundle. The existence of exactly one parallel spinor (up to scaling) is equivalent to G2 holonomy. This is in contrast to generic 7-manifolds (with full SO(7) holonomy) which preserve no spinors, or Calabi-Yau 3-folds (with SU(3) holonomy) which preserve two spinors of opposite chirality."
         },
         {
           "type": "heading",
@@ -4236,7 +4236,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-08-17T21:36:42.432606"
+      "timestamp": "2026-08-18T08:13:38.245269"
     },
     "4.3": {
       "id": "4",
@@ -4476,7 +4476,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-08-17T21:36:42.432970"
+      "timestamp": "2026-08-18T08:13:38.245631"
     },
     "4.6": {
       "id": "4",
@@ -4662,7 +4662,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-08-17T21:36:42.433119"
+      "timestamp": "2026-08-18T08:13:38.245781"
     },
     "4.4": {
       "id": "4",
@@ -4729,7 +4729,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning. The resulting proton lifetime prediction is tau_p > 10^{34} years, comfortably above the current Super-Kamiokande bound of tau_p > 1.6 x 10^{34} years (p -> e+ pi^0). This is a direct consequence of the M_T ~ M_GUT suppression: the dimension-6 operators mediating proton decay are suppressed by (M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that no residual dimension-5 operators survive the compactification."
+          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning. The resulting proton lifetime prediction is tau_p = 4.8 x 10^{34} years, a factor ~2 above the current Super-Kamiokande bound of tau_p > 2.4 x 10^{34} years (p -> e+ pi^0, PDG 2024). This is a direct consequence of the M_T ~ M_GUT suppression: the dimension-6 operators mediating proton decay are suppressed by (M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that no residual dimension-5 operators survive the compactification."
         },
         {
           "type": "paragraph",
@@ -4799,7 +4799,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning. The resulting proton lifetime prediction is tau_p > 10^{34} years, comfortably above the current Super-Kamiokande bound of tau_p > 1.6 x 10^{34} years (p -> e+ pi^0). This is a direct consequence of the M_T ~ M_GUT suppression: the dimension-6 operators mediating proton decay are suppressed by (M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that no residual dimension-5 operators survive the compactification."
+          "content": "The Z2 x Z2 orbifold projection on the TCS manifold localizes the electroweak doublets at fixed points while projecting the color triplets into the shadow sector, yielding a mass hierarchy M_T ~ M_GUT ~ 2 x 10^16 GeV versus M_H ~ M_EW ~ 246 GeV. This topological protection eliminates dangerous dimension-5 proton decay operators without fine-tuning. The resulting proton lifetime prediction is tau_p = 4.8 x 10^{34} years, a factor ~2 above the current Super-Kamiokande bound of tau_p > 2.4 x 10^{34} years (p -> e+ pi^0, PDG 2024). This is a direct consequence of the M_T ~ M_GUT suppression: the dimension-6 operators mediating proton decay are suppressed by (M_GUT)^{-2}, and the topological Z2 x Z2 projection ensures that no residual dimension-5 operators survive the compactification."
         },
         {
           "type": "paragraph",
@@ -4844,7 +4844,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-08-17T21:36:42.433595"
+      "timestamp": "2026-08-18T08:13:38.246260"
     },
     "4.9": {
       "id": "4",
@@ -4946,7 +4946,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-08-17T21:36:42.433721"
+      "timestamp": "2026-08-18T08:13:38.246388"
     },
     "6.1.1": {
       "id": "6",
@@ -4984,7 +4984,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. The face assignment of fermion generations is: gen1 -> face1, gen2 -> face2, gen3 -> face3. The 4th face carries no dedicated generation but mediates cross-generation mixing. The leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.4082 produces a ~4% correction to same-face (diagonal) Yukawa entries while leaving cross-face entries unchanged."
+          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. The face assignment of fermion generations is: gen1 -> face1, gen2 -> face2, gen3 -> face3. The 4th face carries no dedicated generation but mediates cross-generation mixing. The leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.4082 produces a ~41% correction to same-face (diagonal) Yukawa entries while leaving cross-face entries unchanged."
         },
         {
           "type": "callout",
@@ -5024,7 +5024,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. The face assignment of fermion generations is: gen1 -> face1, gen2 -> face2, gen3 -> face3. The 4th face carries no dedicated generation but mediates cross-generation mixing. The leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.4082 produces a ~4% correction to same-face (diagonal) Yukawa entries while leaving cross-face entries unchanged."
+          "content": "The four-face G2 sub-sector structure introduces a potential correction to Yukawa textures through inter-face leakage. The face assignment of fermion generations is: gen1 -> face1, gen2 -> face2, gen3 -> face3. The 4th face carries no dedicated generation but mediates cross-generation mixing. The leakage coupling alpha_leak = 1/sqrt(chi_eff/b3) = 1/sqrt(6) ~ 0.4082 produces a ~41% correction to same-face (diagonal) Yukawa entries while leaving cross-face entries unchanged."
         },
         {
           "type": "callout",
@@ -5060,7 +5060,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-08-17T21:36:42.433964"
+      "timestamp": "2026-08-18T08:13:38.246630"
     },
     "4.2.1": {
       "id": "4",
@@ -5134,7 +5134,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-08-17T21:36:42.434137"
+      "timestamp": "2026-08-18T08:13:38.246809"
     },
     "4.8": {
       "id": "4",
@@ -5192,7 +5192,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-08-17T21:36:42.434410"
+      "timestamp": "2026-08-18T08:13:38.247087"
     },
     "A2": {
       "id": "A2",
@@ -5264,7 +5264,7 @@
         "algebra.freudenthal_jordan_trace",
         "algebra.pneuma_27d_condensate_scale"
       ],
-      "timestamp": "2026-08-17T21:36:42.435261"
+      "timestamp": "2026-08-18T08:13:38.248480"
     },
     "A3": {
       "id": "A3",
@@ -5350,7 +5350,7 @@
         "algebra.e7_symplectic",
         "algebra.e7_alp_mass_gev"
       ],
-      "timestamp": "2026-08-17T21:36:42.435621"
+      "timestamp": "2026-08-18T08:13:38.248794"
     },
     "A4": {
       "id": "A4",
@@ -5381,7 +5381,7 @@
         },
         {
           "type": "callout",
-          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2257)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
+          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2250)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
         },
         {
           "type": "paragraph",
@@ -5414,7 +5414,7 @@
         },
         {
           "type": "callout",
-          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2257)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
+          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2250)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
         },
         {
           "type": "paragraph",
@@ -5460,7 +5460,7 @@
         "algebra.gaugino_condensate_ratio",
         "algebra.gaugino_cabibbo_derived"
       ],
-      "timestamp": "2026-08-17T21:36:42.435749"
+      "timestamp": "2026-08-18T08:13:38.248947"
     },
     "A5": {
       "id": "A5",
@@ -5592,7 +5592,7 @@
         "algebra.e8_portal_coupling",
         "algebra.e8_heterotic_spectral_proxy"
       ],
-      "timestamp": "2026-08-17T21:36:42.482283"
+      "timestamp": "2026-08-18T08:13:38.294971"
     },
     "A6": {
       "id": "A6",
@@ -5830,7 +5830,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-17T21:36:42.482477"
+      "timestamp": "2026-08-18T08:13:38.295143"
     },
     "A7": {
       "id": "A7",
@@ -6078,7 +6078,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-17T21:36:42.482521"
+      "timestamp": "2026-08-18T08:13:38.295186"
     },
     "neutrino-algebraic": {
       "id": "neutrino-algebraic",
@@ -6244,7 +6244,7 @@
         "neutrino.theta13_sigma",
         "neutrino.delta_CP_sigma"
       ],
-      "timestamp": "2026-08-17T21:36:42.482610"
+      "timestamp": "2026-08-18T08:13:38.295271"
     },
     "5.1": {
       "id": "5",
@@ -6584,7 +6584,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-08-17T21:36:42.482711"
+      "timestamp": "2026-08-18T08:13:38.295371"
     },
     "5.2": {
       "id": "5",
@@ -6677,7 +6677,7 @@
         },
         {
           "type": "paragraph",
-          "content": "**Two-Layer OR Connection to Dark Energy**\n\nThe dark energy equation of state w₀ = -23/24 emerges from the bridge warping potential V_bridge through torsion T_ω = 1/√6. The two-layer OR structure provides:\n\n- 12 bridge pairs × 4 faces per shadow = 48 channels (= χ_eff/3)\n- Breathing variance reduction: σ_eff = σ_single/√12 from 4-face × 3-generation pairing\n- Bridge warping potential V_bridge → w₀ = -1 + T_ω²/(4π) ≈ -1 + 1/24 = -23/24\n\nDark matter as hidden faces: The three hidden faces (f = 2, 3, 4) per shadow provide multi-component dark matter with portal coupling α_leak = 1/√6 ≈ 0.408 from G₂ volume ratio (α_sample ≈ 0.57 with flux corrections)."
+          "content": "**Two-Layer OR Connection to Dark Energy**\n\nThe dark energy equation of state w₀ = -23/24 emerges from the bridge warping potential V_bridge through torsion T_ω = 1/√6. The two-layer OR structure provides:\n\n- 12 bridge pairs × 4 faces per shadow = 48 channels (= χ_eff/3)\n- Breathing variance reduction: σ_eff = σ_single/√12 from 4-face × 3-generation pairing\n- Bridge warping potential V_bridge → w₀ = -1 + T_ω²/(4π) ≈ -1 + 1/(24 pi) = -0.987, NOT -23/24 (the bridge form is off by pi); canonical route: Delta-w = 1/b3\n\nDark matter as hidden faces: The three hidden faces (f = 2, 3, 4) per shadow provide multi-component dark matter with portal coupling α_leak = 1/√6 ≈ 0.408 from G₂ volume ratio (α_sample ≈ 0.57 with flux corrections)."
         },
         {
           "type": "heading",
@@ -6803,7 +6803,7 @@
         },
         {
           "type": "paragraph",
-          "content": "**Two-Layer OR Connection to Dark Energy**\n\nThe dark energy equation of state w₀ = -23/24 emerges from the bridge warping potential V_bridge through torsion T_ω = 1/√6. The two-layer OR structure provides:\n\n- 12 bridge pairs × 4 faces per shadow = 48 channels (= χ_eff/3)\n- Breathing variance reduction: σ_eff = σ_single/√12 from 4-face × 3-generation pairing\n- Bridge warping potential V_bridge → w₀ = -1 + T_ω²/(4π) ≈ -1 + 1/24 = -23/24\n\nDark matter as hidden faces: The three hidden faces (f = 2, 3, 4) per shadow provide multi-component dark matter with portal coupling α_leak = 1/√6 ≈ 0.408 from G₂ volume ratio (α_sample ≈ 0.57 with flux corrections)."
+          "content": "**Two-Layer OR Connection to Dark Energy**\n\nThe dark energy equation of state w₀ = -23/24 emerges from the bridge warping potential V_bridge through torsion T_ω = 1/√6. The two-layer OR structure provides:\n\n- 12 bridge pairs × 4 faces per shadow = 48 channels (= χ_eff/3)\n- Breathing variance reduction: σ_eff = σ_single/√12 from 4-face × 3-generation pairing\n- Bridge warping potential V_bridge → w₀ = -1 + T_ω²/(4π) ≈ -1 + 1/(24 pi) = -0.987, NOT -23/24 (the bridge form is off by pi); canonical route: Delta-w = 1/b3\n\nDark matter as hidden faces: The three hidden faces (f = 2, 3, 4) per shadow provide multi-component dark matter with portal coupling α_leak = 1/√6 ≈ 0.408 from G₂ volume ratio (α_sample ≈ 0.57 with flux corrections)."
         },
         {
           "type": "heading",
@@ -6878,7 +6878,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-08-17T21:36:42.482860"
+      "timestamp": "2026-08-18T08:13:38.295527"
     },
     "5.6": {
       "id": "5",
@@ -7202,7 +7202,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-08-17T21:36:42.483084"
+      "timestamp": "2026-08-18T08:13:38.295754"
     },
     "5.7": {
       "id": "5",
@@ -7346,7 +7346,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-08-17T21:36:42.485117"
+      "timestamp": "2026-08-18T08:13:38.297727"
     },
     "5.4": {
       "id": "5",
@@ -7666,7 +7666,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-08-17T21:36:42.486578"
+      "timestamp": "2026-08-18T08:13:38.299597"
     },
     "5.9": {
       "id": "5",
@@ -7828,7 +7828,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-08-17T21:36:42.487729"
+      "timestamp": "2026-08-18T08:13:38.300996"
     },
     "4.5": {
       "id": "4",
@@ -8088,7 +8088,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-08-17T21:36:42.696937"
+      "timestamp": "2026-08-18T08:13:38.518757"
     },
     "4.7": {
       "id": "4",
@@ -8340,7 +8340,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-08-17T21:36:42.698149"
+      "timestamp": "2026-08-18T08:13:38.520680"
     },
     "5.3": {
       "id": "5",
@@ -8498,7 +8498,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-08-17T21:36:42.698464"
+      "timestamp": "2026-08-18T08:13:38.521153"
     },
     "5.8": {
       "id": "5",
@@ -8820,7 +8820,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-08-17T21:36:42.698585"
+      "timestamp": "2026-08-18T08:13:38.521323"
     },
     "6.1": {
       "id": "6",
@@ -8880,7 +8880,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.698707"
+      "timestamp": "2026-08-18T08:13:38.521500"
     },
     "6.2": {
       "id": "6",
@@ -8928,7 +8928,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.698759"
+      "timestamp": "2026-08-18T08:13:38.521555"
     },
     "6.3": {
       "id": "6",
@@ -9020,7 +9020,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.698814"
+      "timestamp": "2026-08-18T08:13:38.521639"
     },
     "6.4": {
       "id": "6",
@@ -9072,7 +9072,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.698966"
+      "timestamp": "2026-08-18T08:13:38.521851"
     },
     "6.5": {
       "id": "6",
@@ -9124,7 +9124,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.699005"
+      "timestamp": "2026-08-18T08:13:38.521914"
     },
     "6.6": {
       "id": "6",
@@ -9176,7 +9176,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.699042"
+      "timestamp": "2026-08-18T08:13:38.521965"
     },
     "6.7": {
       "id": "6",
@@ -9228,7 +9228,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.699118"
+      "timestamp": "2026-08-18T08:13:38.522045"
     },
     "6.8": {
       "id": "6",
@@ -9272,7 +9272,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.699152"
+      "timestamp": "2026-08-18T08:13:38.522104"
     },
     "6.9": {
       "id": "6",
@@ -9316,7 +9316,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.699192"
+      "timestamp": "2026-08-18T08:13:38.522157"
     },
     "5.5": {
       "id": "5",
@@ -9470,7 +9470,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-08-17T21:36:42.724052"
+      "timestamp": "2026-08-18T08:13:38.551545"
     },
     "2.8": {
       "id": "2",
@@ -10416,7 +10416,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-08-17T21:36:42.724261"
+      "timestamp": "2026-08-18T08:13:38.551762"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -10556,7 +10556,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-17T21:36:42.724583"
+      "timestamp": "2026-08-18T08:13:38.552135"
     },
     "7.2": {
       "id": "7",
@@ -10672,7 +10672,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-08-17T21:36:42.724847"
+      "timestamp": "2026-08-18T08:13:38.552450"
     },
     "7.4": {
       "id": "7",
@@ -10790,7 +10790,7 @@
         "portals.sterile_mass_scale_gev",
         "portals.sterile_n_eff_contribution"
       ],
-      "timestamp": "2026-08-17T21:36:42.804651"
+      "timestamp": "2026-08-18T08:13:38.641327"
     },
     "7.5": {
       "id": "7",
@@ -10950,7 +10950,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-08-17T21:36:42.804800"
+      "timestamp": "2026-08-18T08:13:38.641472"
     },
     "7.6": {
       "id": "7",
@@ -11020,7 +11020,7 @@
         "consciousness.shielded_tau_ms",
         "consciousness.shielding_factor"
       ],
-      "timestamp": "2026-08-17T21:36:42.796959"
+      "timestamp": "2026-08-18T08:13:38.634498"
     },
     "7": {
       "id": "7",
@@ -11116,15 +11116,15 @@
         },
         {
           "type": "highlight_box",
-          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.25 GeV) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
+          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
         },
         {
           "type": "list",
           "content": null,
           "items": [
-            "✅ Higgs mass: 125.25 GeV (matches PDG 2024)",
+            "✅ Higgs mass anchor: 125.20 GeV (PDG 2024: 125.20 ± 0.11)",
             "✅ VEV: 246.22 GeV (0.017% error)",
-            "✅ 1/α<sub>GUT</sub>: 23.54 (matches NuFIT 6.0)",
+            "✅ 1/α<sub>GUT</sub>: 23.54 (geometric unification value; no direct measurement exists — NuFIT constrains neutrino mixing, not gauge couplings)",
             "✅ w₀: −0.8528 (0.38σ from DESI)",
             "✅ Proton lifetime: 8.15×10³⁴ years",
             "✅ Swampland valid: Δφ<sub>Higgs</sub> = 1.958 > 0.816",
@@ -11318,8 +11318,8 @@
           "content": null,
           "items": [
             "<strong>Proton decay NOT observed by 2035:</strong> Framework falsified if τ<sub>p</sub> > 10³⁶ years (upper bound from geometric uncertainties)",
-            "<strong>KK gravitons NOT detected at HL-LHC:</strong> Requires M<sub>KK</sub> > 7 TeV, challenging geometric derivation",
-            "<strong>DESI DR3 finds w₀ < −0.95 or w₀ > −0.75:</strong> Would require re-examination of MEP derivation from 13D shadow",
+            "<strong>KK gravitons NOT detected at HL-LHC:</strong> Non-detection up to ~7 TeV would exclude the predicted 4.5–5 TeV mode, falsifying the geometric derivation",
+            "<strong>DESI DR3 excludes w₀ = −23/24 ≈ −0.958 (e.g. finds w₀ < −1.02 or w₀ > −0.88):</strong> Would require re-examination of MEP derivation from 13D shadow",
             "<strong>JUNO measures Σm<sub>ν</sub> > 0.10 eV:</strong> Inverted hierarchy or additional sterile neutrinos required",
             "<strong>LISA finds n ≠ 2 in GW dispersion:</strong> Alternative compactification geometry required"
           ]
@@ -11696,7 +11696,7 @@
         },
         {
           "type": "heading",
-          "content": "Derivation: KK Graviton Mass M<sub>KK</sub> = 5.0 TeV",
+          "content": "Derivation sketch: KK Graviton Mass M<sub>KK</sub> (canonical 4.5 TeV, warped form)",
           "level": 3
         },
         {
@@ -11707,7 +11707,7 @@
             "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) (open problem: 9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)",
             "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = Re(T) × ℓ<sub>P</sub>",
             "<strong>Step 4:</strong> First KK mode mass: m<sub>KK,1</sub> = ℏc/R<sub>c</sub>",
-            "<strong>Step 5:</strong> Result: m<sub>KK,1</sub> ≈ 5.0 TeV (within HL-LHC reach)"
+            "<strong>Step 5:</strong> As printed, Steps 1–4 give ℏc/R<sub>c</sub> ≈ 1.7 × 10¹⁸ GeV, not TeV; the 4.5 TeV value comes from the warped form M<sub>Pl</sub>e<sup>−k<sub>eff</sub>π</sup>, not this chain"
           ]
         },
         {
@@ -11889,7 +11889,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell texture gives 8.67°; older octonionic-mixing chain gives 8.65°. Both within ~1σ of NuFIT 6.0 IO 8.54° ± 0.12°.",
+            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell texture gives 8.67°; older octonionic-mixing chain gives 8.65°. Both within ~1σ of NuFIT 6.0 IO 8.63° ± 0.11°.",
             "<strong>θ_QCD.</strong> New geometric mechanism and older assignment both give 0.",
             "<strong>Re(T) stabilization.</strong> New ReT⋆ minimum agrees with the existing <code>moduli</code> location.",
             "<strong>Σm<sub>ν</sub>.</strong> Refined neutrino sector gives 0.0425 eV, comfortably below the DESI 2026 + Planck PR4 bound (&lt; 0.072 eV at 95% CL)."
@@ -11908,7 +11908,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.5σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
+            "<strong>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
             "<strong>η_B:</strong> new G<sub>2</sub>-entropy-dilution formula gives 2.3&times;10⁻¹⁰ (factor 2.6 low); older <code>cosmology.eta_baryon_geometric = 6.19&times;10⁻¹⁰</code> sits within 3% of observed 6&times;10⁻¹⁰. Status: <strong>PARTIAL (factor 2.6)</strong>.",
             "<strong>H<sub>0</sub> and S<sub>8</sub> tensions:</strong> Sprint 5.5 claimed resolution at H<sub>0</sub> = 73.0 via mirror-sector dark-energy coupling, but the required coupling is ~10<sup>13</sup>× larger than the geometric value the bridge sector can supply. Status: <strong>OPEN TENSION (magnitude gap)</strong>; live <code>cosmology.H0_tension_sigma = 3.17σ</code> remains the honest figure until the coupling magnitude is closed (Tier 3 T3.4)."
           ]
@@ -12188,7 +12188,7 @@
             [
               "θ₁₃ PMNS Angle",
               "8.61° (cycle asymmetry)",
-              "8.60° ± 0.12° (NuFIT 6.0)",
+              "8.63° ± 0.11° (NuFIT 6.0 IO)",
               "Agreement"
             ],
             [
@@ -12532,15 +12532,15 @@
         },
         {
           "type": "highlight_box",
-          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.25 GeV) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
+          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
         },
         {
           "type": "list",
           "content": null,
           "items": [
-            "✅ Higgs mass: 125.25 GeV (matches PDG 2024)",
+            "✅ Higgs mass anchor: 125.20 GeV (PDG 2024: 125.20 ± 0.11)",
             "✅ VEV: 246.22 GeV (0.017% error)",
-            "✅ 1/α<sub>GUT</sub>: 23.54 (matches NuFIT 6.0)",
+            "✅ 1/α<sub>GUT</sub>: 23.54 (geometric unification value; no direct measurement exists — NuFIT constrains neutrino mixing, not gauge couplings)",
             "✅ w₀: −0.8528 (0.38σ from DESI)",
             "✅ Proton lifetime: 8.15×10³⁴ years",
             "✅ Swampland valid: Δφ<sub>Higgs</sub> = 1.958 > 0.816",
@@ -12734,8 +12734,8 @@
           "content": null,
           "items": [
             "<strong>Proton decay NOT observed by 2035:</strong> Framework falsified if τ<sub>p</sub> > 10³⁶ years (upper bound from geometric uncertainties)",
-            "<strong>KK gravitons NOT detected at HL-LHC:</strong> Requires M<sub>KK</sub> > 7 TeV, challenging geometric derivation",
-            "<strong>DESI DR3 finds w₀ < −0.95 or w₀ > −0.75:</strong> Would require re-examination of MEP derivation from 13D shadow",
+            "<strong>KK gravitons NOT detected at HL-LHC:</strong> Non-detection up to ~7 TeV would exclude the predicted 4.5–5 TeV mode, falsifying the geometric derivation",
+            "<strong>DESI DR3 excludes w₀ = −23/24 ≈ −0.958 (e.g. finds w₀ < −1.02 or w₀ > −0.88):</strong> Would require re-examination of MEP derivation from 13D shadow",
             "<strong>JUNO measures Σm<sub>ν</sub> > 0.10 eV:</strong> Inverted hierarchy or additional sterile neutrinos required",
             "<strong>LISA finds n ≠ 2 in GW dispersion:</strong> Alternative compactification geometry required"
           ]
@@ -13112,7 +13112,7 @@
         },
         {
           "type": "heading",
-          "content": "Derivation: KK Graviton Mass M<sub>KK</sub> = 5.0 TeV",
+          "content": "Derivation sketch: KK Graviton Mass M<sub>KK</sub> (canonical 4.5 TeV, warped form)",
           "level": 3
         },
         {
@@ -13123,7 +13123,7 @@
             "<strong>Step 2:</strong> Modulus from Higgs constraint: Re(T) (open problem: 9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)",
             "<strong>Step 3:</strong> Compactification radius: R<sub>c</sub> = V<sub>G₂</sub><sup>1/7</sup> = Re(T) × ℓ<sub>P</sub>",
             "<strong>Step 4:</strong> First KK mode mass: m<sub>KK,1</sub> = ℏc/R<sub>c</sub>",
-            "<strong>Step 5:</strong> Result: m<sub>KK,1</sub> ≈ 5.0 TeV (within HL-LHC reach)"
+            "<strong>Step 5:</strong> As printed, Steps 1–4 give ℏc/R<sub>c</sub> ≈ 1.7 × 10¹⁸ GeV, not TeV; the 4.5 TeV value comes from the warped form M<sub>Pl</sub>e<sup>−k<sub>eff</sub>π</sup>, not this chain"
           ]
         },
         {
@@ -13305,7 +13305,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell texture gives 8.67°; older octonionic-mixing chain gives 8.65°. Both within ~1σ of NuFIT 6.0 IO 8.54° ± 0.12°.",
+            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell texture gives 8.67°; older octonionic-mixing chain gives 8.65°. Both within ~1σ of NuFIT 6.0 IO 8.63° ± 0.11°.",
             "<strong>θ_QCD.</strong> New geometric mechanism and older assignment both give 0.",
             "<strong>Re(T) stabilization.</strong> New ReT⋆ minimum agrees with the existing <code>moduli</code> location.",
             "<strong>Σm<sub>ν</sub>.</strong> Refined neutrino sector gives 0.0425 eV, comfortably below the DESI 2026 + Planck PR4 bound (&lt; 0.072 eV at 95% CL)."
@@ -13324,7 +13324,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.5σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
+            "<strong>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
             "<strong>η_B:</strong> new G<sub>2</sub>-entropy-dilution formula gives 2.3&times;10⁻¹⁰ (factor 2.6 low); older <code>cosmology.eta_baryon_geometric = 6.19&times;10⁻¹⁰</code> sits within 3% of observed 6&times;10⁻¹⁰. Status: <strong>PARTIAL (factor 2.6)</strong>.",
             "<strong>H<sub>0</sub> and S<sub>8</sub> tensions:</strong> Sprint 5.5 claimed resolution at H<sub>0</sub> = 73.0 via mirror-sector dark-energy coupling, but the required coupling is ~10<sup>13</sup>× larger than the geometric value the bridge sector can supply. Status: <strong>OPEN TENSION (magnitude gap)</strong>; live <code>cosmology.H0_tension_sigma = 3.17σ</code> remains the honest figure until the coupling magnitude is closed (Tier 3 T3.4)."
           ]
@@ -13604,7 +13604,7 @@
             [
               "θ₁₃ PMNS Angle",
               "8.61° (cycle asymmetry)",
-              "8.60° ± 0.12° (NuFIT 6.0)",
+              "8.63° ± 0.11° (NuFIT 6.0 IO)",
               "Agreement"
             ],
             [
@@ -13868,7 +13868,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.797105"
+      "timestamp": "2026-08-18T08:13:38.634655"
     },
     "6": {
       "id": "6",
@@ -14185,7 +14185,7 @@
               "Super-K (current)",
               "p → e⁺π⁰",
               "-",
-              "τ > 1.67 × 10³⁴",
+              "τ > 2.4 × 10³⁴",
               "Established bound"
             ]
           ]
@@ -14228,7 +14228,7 @@
               "w<sub>a,eff</sub>",
               "0.27 (from α<sub>T</sub> = 2.7)",
               "DERIVED",
-              "DESI: −0.75 ± 0.30 (0.66σ agreement)"
+              "DESI: −0.75 ± 0.30 — 3.4σ away (disfavored; canonical w_a = −1/√24 ≈ −0.204 sits at 1.9σ)"
             ],
             [
               "α<sub>T</sub>",
@@ -14341,9 +14341,9 @@
             ],
             [
               "m₂",
-              "≈ 9.0 meV",
+              "≈ 8.7 meV",
               "PREDICTED",
-              "√(m₁² + Δm²₂₁) ≈ 8.97 meV"
+              "√(m₁² + Δm²₂₁) ≈ 8.65 meV (NuFIT Δm²₂₁ = 7.49×10⁻⁵ eV²)"
             ],
             [
               "m₃",
@@ -14856,7 +14856,7 @@
               "KK graviton 5.0 TeV",
               "HL-LHC: pp collisions at √s = 14 TeV, 3000 fb⁻¹ integrated luminosity",
               "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section σ × BR(γγ) ~ 0.10 fb",
-              "No excess above 7 TeV challenges geometric derivation"
+              "No excess at the predicted 5.0 TeV (HL-LHC reach ~7 TeV) falsifies the geometric derivation"
             ],
             [
               "Proton decay p → e⁺π⁰",
@@ -14895,7 +14895,7 @@
             [
               "Dark energy w₀, w<sub>a</sub>",
               "✓ CONSISTENT",
-              "DESI 2025 BAO-only: < 1σ (w₀), 0.66σ (w<sub>a</sub>)"
+              "DESI 2025 BAO-only: 0.02σ (w₀), 3.4σ (w<sub>a,eff</sub>=+0.27; canonical −1/√24 is 1.9σ)"
             ],
             [
               "Neutrino mixing",
@@ -15047,7 +15047,7 @@
               "LHC Run 3 / HL-LHC monojet",
               "m > 3.5 TeV (current ATLAS/CMS)",
               "2025–2035",
-              "No excess above 7 TeV challenges geometric compactification",
+              "No excess at the predicted 5.0 TeV falsifies geometric compactification",
               "TESTING"
             ],
             [
@@ -15588,7 +15588,7 @@
               "Super-K (current)",
               "p → e⁺π⁰",
               "-",
-              "τ > 1.67 × 10³⁴",
+              "τ > 2.4 × 10³⁴",
               "Established bound"
             ]
           ]
@@ -15631,7 +15631,7 @@
               "w<sub>a,eff</sub>",
               "0.27 (from α<sub>T</sub> = 2.7)",
               "DERIVED",
-              "DESI: −0.75 ± 0.30 (0.66σ agreement)"
+              "DESI: −0.75 ± 0.30 — 3.4σ away (disfavored; canonical w_a = −1/√24 ≈ −0.204 sits at 1.9σ)"
             ],
             [
               "α<sub>T</sub>",
@@ -15744,9 +15744,9 @@
             ],
             [
               "m₂",
-              "≈ 9.0 meV",
+              "≈ 8.7 meV",
               "PREDICTED",
-              "√(m₁² + Δm²₂₁) ≈ 8.97 meV"
+              "√(m₁² + Δm²₂₁) ≈ 8.65 meV (NuFIT Δm²₂₁ = 7.49×10⁻⁵ eV²)"
             ],
             [
               "m₃",
@@ -16259,7 +16259,7 @@
               "KK graviton 5.0 TeV",
               "HL-LHC: pp collisions at √s = 14 TeV, 3000 fb⁻¹ integrated luminosity",
               "Diphoton resonance at 5.0 TeV with spin-2 angular distribution; cross-section σ × BR(γγ) ~ 0.10 fb",
-              "No excess above 7 TeV challenges geometric derivation"
+              "No excess at the predicted 5.0 TeV (HL-LHC reach ~7 TeV) falsifies the geometric derivation"
             ],
             [
               "Proton decay p → e⁺π⁰",
@@ -16298,7 +16298,7 @@
             [
               "Dark energy w₀, w<sub>a</sub>",
               "✓ CONSISTENT",
-              "DESI 2025 BAO-only: < 1σ (w₀), 0.66σ (w<sub>a</sub>)"
+              "DESI 2025 BAO-only: 0.02σ (w₀), 3.4σ (w<sub>a,eff</sub>=+0.27; canonical −1/√24 is 1.9σ)"
             ],
             [
               "Neutrino mixing",
@@ -16450,7 +16450,7 @@
               "LHC Run 3 / HL-LHC monojet",
               "m > 3.5 TeV (current ATLAS/CMS)",
               "2025–2035",
-              "No excess above 7 TeV challenges geometric compactification",
+              "No excess at the predicted 5.0 TeV falsifies geometric compactification",
               "TESTING"
             ],
             [
@@ -16774,7 +16774,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-08-17T21:36:42.797303"
+      "timestamp": "2026-08-18T08:13:38.634864"
     },
     "1.1": {
       "id": "1",
@@ -17005,7 +17005,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The V₇ manifold is unique because it is the only 7D structure that supports a <strong>torsion-free, Ricci-flat metric</strong>. This G₂ holonomy implies that the extraction of physical residues is 'Path Independent.' Whether a particle mass is derived through the lepton sector or the gauge sector, the resulting value is identical because it is anchored to the manifold's global geometry. This eliminates the 'Fine-Tuning' problem; the numbers are not adjusted to match—they are locked by the manifold's inability to be anything other than itself."
+          "content": "The V₇ manifold is distinguished as a 7D space with holonomy exactly G₂, carrying a <strong>torsion-free, Ricci-flat metric</strong> (T⁷ and K3×T³ are also Ricci-flat, with larger spinor content). This G₂ holonomy implies that the extraction of physical residues is 'Path Independent.' Whether a particle mass is derived through the lepton sector or the gauge sector, the resulting value is identical because it is anchored to the manifold's global geometry. This eliminates the 'Fine-Tuning' problem; the numbers are not adjusted to match—they are locked by the manifold's inability to be anything other than itself."
         },
         {
           "type": "equation",
@@ -17331,7 +17331,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The V₇ manifold is unique because it is the only 7D structure that supports a <strong>torsion-free, Ricci-flat metric</strong>. This G₂ holonomy implies that the extraction of physical residues is 'Path Independent.' Whether a particle mass is derived through the lepton sector or the gauge sector, the resulting value is identical because it is anchored to the manifold's global geometry. This eliminates the 'Fine-Tuning' problem; the numbers are not adjusted to match—they are locked by the manifold's inability to be anything other than itself."
+          "content": "The V₇ manifold is distinguished as a 7D space with holonomy exactly G₂, carrying a <strong>torsion-free, Ricci-flat metric</strong> (T⁷ and K3×T³ are also Ricci-flat, with larger spinor content). This G₂ holonomy implies that the extraction of physical residues is 'Path Independent.' Whether a particle mass is derived through the lepton sector or the gauge sector, the resulting value is identical because it is anchored to the manifold's global geometry. This eliminates the 'Fine-Tuning' problem; the numbers are not adjusted to match—they are locked by the manifold's inability to be anything other than itself."
         },
         {
           "type": "equation",
@@ -17442,7 +17442,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.797568"
+      "timestamp": "2026-08-18T08:13:38.635129"
     },
     "2.6": {
       "id": "2",
@@ -17531,7 +17531,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations, with <strong>116:1 compression ratio</strong>), the 125 parameters of the Standard Model and ΛCDM are not 'points' in a data table, but <strong>Physical Junctions</strong> in the higher-dimensional manifold. This section defines the Brane-Node Intersection Lattice, the geometric structure that hosts the spectral eigenvalues derived in Section 2.1."
+          "content": "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations, with <strong>116:1 compression ratio</strong>), the 125 registry parameters (~26 SM+ν and ~6 ΛCDM parameters plus derived constants) are not 'points' in a data table, but <strong>Physical Junctions</strong> in the higher-dimensional manifold. This section defines the Brane-Node Intersection Lattice, the geometric structure that hosts the spectral eigenvalues derived in Section 2.1."
         },
         {
           "type": "heading",
@@ -17743,7 +17743,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Without the theory, encoding the 125 constants independently requires 125 × 64 bits = 8000 bits of storage, but provides <em>no predictive power</em>. PM satisfies MDL because the theory enables predictions beyond the initial data, achieving <strong>116:1 data compression ratio</strong>."
+          "content": "Without the theory, encoding the 125 constants independently requires 125 × 64 bits = 8000 bits of storage, but provides <em>no predictive power</em>. PM satisfies MDL because the theory enables predictions beyond the initial data, the 116:1 ratio uses only the 69-bit seed, not the 32,640-bit ledger (see 2.6.4)."
         },
         {
           "type": "heading",
@@ -17756,7 +17756,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Why 288/24/4 is Not Arbitrary</h4><p>The key structural numbers emerge from pure topology:</p><ul><li><strong>288:</strong> Total roots in dual-shadow G₂ × G₂ (14 roots per G₂, dual shadows with 12 bridges → 144 per shadow → 288 total)</li><li><strong>24:</strong> Third Betti number b₃ of G₂ manifold (topological invariant, Joyce 2000)</li><li><strong>4:</strong> Kähler moduli faces in twisted connected sum (required for gluing compatibility, Kovalev-Lee 2016)</li></ul><p>None of these are free parameters—they are mathematical necessities of the G₂ geometry.</p>",
+          "content": "<h4>Why 288/24/4 is Not Arbitrary</h4><p>The key structural numbers emerge from pure topology:</p><ul><li><strong>288:</strong> 2 × χ<sub>eff</sub> = 2 × 144 (G₂ has 12 roots — 14 is dim G₂ — so 288 is not a root count; dual shadows with 12 bridges → 144 per shadow → 288 total)</li><li><strong>24:</strong> Third Betti number b₃ of G₂ manifold (topological invariant, Joyce 2000)</li><li><strong>4:</strong> Kähler moduli faces in twisted connected sum (required for gluing compatibility, Kovalev-Lee 2016)</li></ul><p>None of these are free parameters—they are mathematical necessities of the G₂ geometry.</p>",
           "label": "288-24-4-derivation",
           "equationNumber": "288-24-4-derivation"
         },
@@ -17802,7 +17802,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would require L(Theory) > L(Data), whereas the framework achieves L(Theory) &lt;&lt; L(Data). The result satisfies the MDL bound, providing evidence against parameter overfitting."
+          "content": "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would require L(Theory) > L(Data); the ledger above gives L(Theory) = 32,640 bits &gt; L(Data) = 8000 bits, so the naive test FAILS as printed. The result favors the theory only under the 69-bit axiom-seed accounting of 2.6.4, with the 116 constraints charged to shared mathematics; the full-ledger MDL comparison does not support the compression claim."
         },
         {
           "type": "heading",
@@ -17963,7 +17963,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations, with <strong>116:1 compression ratio</strong>), the 125 parameters of the Standard Model and ΛCDM are not 'points' in a data table, but <strong>Physical Junctions</strong> in the higher-dimensional manifold. This section defines the Brane-Node Intersection Lattice, the geometric structure that hosts the spectral eigenvalues derived in Section 2.1."
+          "content": "In the Topologically Anchored Framework (<strong>EDOF=3</strong>: 1 geometric seed b₃ + 2 calibrations, with <strong>116:1 compression ratio</strong>), the 125 registry parameters (~26 SM+ν and ~6 ΛCDM parameters plus derived constants) are not 'points' in a data table, but <strong>Physical Junctions</strong> in the higher-dimensional manifold. This section defines the Brane-Node Intersection Lattice, the geometric structure that hosts the spectral eigenvalues derived in Section 2.1."
         },
         {
           "type": "heading",
@@ -18175,7 +18175,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Without the theory, encoding the 125 constants independently requires 125 × 64 bits = 8000 bits of storage, but provides <em>no predictive power</em>. PM satisfies MDL because the theory enables predictions beyond the initial data, achieving <strong>116:1 data compression ratio</strong>."
+          "content": "Without the theory, encoding the 125 constants independently requires 125 × 64 bits = 8000 bits of storage, but provides <em>no predictive power</em>. PM satisfies MDL because the theory enables predictions beyond the initial data, the 116:1 ratio uses only the 69-bit seed, not the 32,640-bit ledger (see 2.6.4)."
         },
         {
           "type": "heading",
@@ -18188,7 +18188,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Why 288/24/4 is Not Arbitrary</h4><p>The key structural numbers emerge from pure topology:</p><ul><li><strong>288:</strong> Total roots in dual-shadow G₂ × G₂ (14 roots per G₂, dual shadows with 12 bridges → 144 per shadow → 288 total)</li><li><strong>24:</strong> Third Betti number b₃ of G₂ manifold (topological invariant, Joyce 2000)</li><li><strong>4:</strong> Kähler moduli faces in twisted connected sum (required for gluing compatibility, Kovalev-Lee 2016)</li></ul><p>None of these are free parameters—they are mathematical necessities of the G₂ geometry.</p>",
+          "content": "<h4>Why 288/24/4 is Not Arbitrary</h4><p>The key structural numbers emerge from pure topology:</p><ul><li><strong>288:</strong> 2 × χ<sub>eff</sub> = 2 × 144 (G₂ has 12 roots — 14 is dim G₂ — so 288 is not a root count; dual shadows with 12 bridges → 144 per shadow → 288 total)</li><li><strong>24:</strong> Third Betti number b₃ of G₂ manifold (topological invariant, Joyce 2000)</li><li><strong>4:</strong> Kähler moduli faces in twisted connected sum (required for gluing compatibility, Kovalev-Lee 2016)</li></ul><p>None of these are free parameters—they are mathematical necessities of the G₂ geometry.</p>",
           "label": "288-24-4-derivation",
           "equationNumber": "288-24-4-derivation"
         },
@@ -18234,7 +18234,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would require L(Theory) > L(Data), whereas the framework achieves L(Theory) &lt;&lt; L(Data). The result satisfies the MDL bound, providing evidence against parameter overfitting."
+          "content": "This compression ratio is consistent with the MDL criterion against overfitting. Overfitting would require L(Theory) > L(Data); the ledger above gives L(Theory) = 32,640 bits &gt; L(Data) = 8000 bits, so the naive test FAILS as printed. The result favors the theory only under the 69-bit axiom-seed accounting of 2.6.4, with the 116 constraints charged to shared mathematics; the full-ledger MDL comparison does not support the compression claim."
         },
         {
           "type": "heading",
@@ -18322,7 +18322,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.797749"
+      "timestamp": "2026-08-18T08:13:38.635322"
     },
     "3.7": {
       "id": "3",
@@ -18367,11 +18367,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The PM prediction H₀ = 71.55 km/s/Mpc is 1.4σ below SH0ES 2022 and 1.6σ above Planck 2018. It lies within the DESI 2025 BAO-only range (H₀ = 68.5 ± 2.0 km/s/Mpc) at 1.5σ. The global alignment of the framework across Planck 2018, DESI 2025, and NuFIT 6.0 gives a weighted mean deviation of 0.48σ across all 26 compared Standard Model parameters. The PM framework <em>does not eliminate</em> the Hubble tension; rather, it contributes a geometric prediction that must be compared against future high-precision measurements. A DESI or CMB-S4 measurement at H₀ ≈ 71–72 km/s/Mpc would strongly favor this framework over ΛCDM."
+          "content": "The PM prediction H₀ = 71.55 km/s/Mpc is 1.4σ below SH0ES 2022 and 8.3σ above Planck 2018. It lies within the DESI 2025 BAO-only range (H₀ = 68.5 ± 2.0 km/s/Mpc) at 1.5σ. The global alignment of the framework across Planck 2018, DESI 2025, and NuFIT 6.0 gives a weighted mean deviation of 0.48σ across all 26 compared Standard Model parameters. The PM framework <em>does not eliminate</em> the Hubble tension; rather, it contributes a geometric prediction that must be compared against future high-precision measurements. A DESI or CMB-S4 measurement at H₀ ≈ 71–72 km/s/Mpc would strongly favor this framework over ΛCDM."
         },
         {
           "type": "note",
-          "content": "<h4>Caveat: Hubble Tension Status</h4><p>PM predicts H₀ = 71.55 km/s/Mpc from the G₂ topology without a free parameter. This is 1.4σ from SH0ES and 1.6σ from Planck. The 0.48σ global alignment figure refers to the full 26-parameter comparison table, not to H₀ alone. Independent resolution of the Hubble tension would require the O'Dowd formula derivation to match both CMB and local distance ladder — currently not achieved. This remains an open prediction.</p>",
+          "content": "<h4>Caveat: Hubble Tension Status</h4><p>PM predicts H₀ = 71.55 km/s/Mpc from the G₂ topology without a free parameter. This is 1.4σ from SH0ES and 8.3σ from Planck. The 0.48σ global alignment figure refers to the full 26-parameter comparison table, not to H₀ alone. Independent resolution of the Hubble tension would require the O'Dowd formula derivation to match both CMB and local distance ladder — currently not achieved. This remains an open prediction.</p>",
           "label": "hubble-caveat",
           "equationNumber": "hubble-caveat"
         },
@@ -18501,7 +18501,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell Yukawa texture in <code>particle/yukawa_derivation.py</code> gives <Normal>θ₁₃ ≈ <span class=\"pm-value\" data-pm-value=\"particle.theta_13_deg\">8.67</span>°</Normal>; older <code>neutrino.theta_13_pred</code> (octonionic mixing) gives 8.65°. Both within ~1σ of NuFIT 6.0 IO (8.54° ± 0.12°).",
+            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell Yukawa texture in <code>particle/yukawa_derivation.py</code> gives <Normal>θ₁₃ ≈ <span class=\"pm-value\" data-pm-value=\"particle.theta_13_deg\">8.67</span>°</Normal>; older <code>neutrino.theta_13_pred</code> (octonionic mixing) gives 8.65°. Both within ~1σ of NuFIT 6.0 IO (8.63° ± 0.11°).",
             "<strong>Strong CP θ_QCD.</strong> Both the new <code>strong_cp_axion</code> module and the older <code>physics.theta_qcd</code> assignment give exactly 0; the new module supplies the geometric mechanism the older value lacked.",
             "<strong>Re(T) stabilization.</strong> The new <code>re_t_sector.close_vev_gap</code> sets ReT⋆ = 174.033 GeV consistent with v_EW = 246 GeV; the existing <code>moduli</code> module flags the stabilization status separately but agrees on the minimum location.",
             "<strong>Σm<sub>ν</sub> consistency with DESI 2026.</strong> <code>neutrino_sector.refine_neutrino_sector</code> tightens <Normal>Σm_ν = <span class=\"pm-value\" data-pm-value=\"particle.sum_m_nu_eV\">0.0425</span> eV</Normal>, comfortably below the DESI 2026 + Planck PR4 bound (Σm_ν &lt; 0.072 eV at 95% CL)."
@@ -18520,7 +18520,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>n<sub>s</sub> (scalar spectral index).</strong> New <code>inflation.derive_observables</code> Re(T) slow-roll formula gives <Normal>n_s = <span class=\"pm-value\" data-pm-value=\"cosmology.n_s\">0.9996</span></Normal>, which is 8.5σ from Planck 2018 (0.9649 ± 0.0042). The older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible at &lt;0.4σ. The older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 item T3.3).",
+            "<strong>n<sub>s</sub> (scalar spectral index).</strong> New <code>inflation.derive_observables</code> Re(T) slow-roll formula gives <Normal>n_s = <span class=\"pm-value\" data-pm-value=\"cosmology.n_s\">0.9996</span></Normal>, which is 8.3σ from Planck 2018 (0.9649 ± 0.0042). The older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible at &lt;0.4σ. The older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 item T3.3).",
             "<strong>η_B (baryon asymmetry).</strong> New <code>baryogenesis.compute_eta_B</code> with G<sub>2</sub> entropy dilution gives <Normal>η_B = <span class=\"pm-value\" data-pm-value=\"cosmology.eta_B\">2.3&times;10⁻¹⁰</span></Normal>, a factor 2.6 below the observed 6&times;10⁻¹⁰. The older <code>cosmology.eta_baryon_geometric = 6.19&times;10⁻¹⁰</code> sits within 3%. Status: <strong>PARTIAL (factor 2.6)</strong>.",
             "<strong>H<sub>0</sub> and S<sub>8</sub> tensions.</strong> Sprint 5.5's <code>cosmological_tensions</code> module asserts that a mirror-sector dark-energy coupling shifts H<sub>0</sub> from 67.4 to 73.0 km/s/Mpc &mdash; but the required coupling is ~10<sup>13</sup>× larger than the geometric value the bridge sector can supply. The claim \"tensions resolved\" does not survive a quantitative check. Live <code>cosmology.H0_tension_sigma = 3.17σ</code> remains the honest status until the magnitude gap is closed."
           ]
@@ -18584,7 +18584,7 @@
             [
               "sin θ<sub>C</sub> (Cabibbo angle)",
               "exp(−π/2) ≈ 0.208 (racetrack, N₁=24, k=6)",
-              "PDG 2024: 0.2257 ± 0.0010",
+              "PDG 2024: 0.22500 ± 0.00067",
               "~8% (topology only)",
               "CONSISTENT"
             ],
@@ -18612,7 +18612,7 @@
             [
               "τ<sub>p</sub> (proton decay lifetime)",
               "≈ 4.8 × 10³⁴ yr",
-              "Super-K: > 1.67 × 10³⁴ yr",
+              "Super-K: > 2.4 × 10³⁴ yr (p→e⁺π⁰, PDG 2024)",
               "Above current bound",
               "UNTESTED"
             ],
@@ -18641,7 +18641,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Interpretation Note: EDOF=3 Statistical Framework</h4><p><strong>CONSISTENT</strong> entries compare PM geometric predictions against already-measured quantities (postdictions). While 24/26 parameters lie within 1σ of data, this does not constitute statistical confirmation: the framework has not been subjected to a rigorous Bayesian model comparison against alternatives. <strong>UNTESTED</strong> entries (τ<sub>p</sub>, m<sub>KK</sub>, m<sub>a</sub>, Σm<sub>ν</sub>) represent genuine falsifiable forecasts. The framework has <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient, α<sub>GUT</sub> coefficient, Re(T) from Higgs mass) anchor the honest <strong>121:1 compression ratio</strong> (125 constants from 3 seeds); two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending full Yukawa derivation. Note: <Normal>α<sub>leak</sub> = 1/√6 ≈ 0.408</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6)))</EML> is now <em>derived</em> from E₇ ⊃ E₆ × U(1) algebraic branching (not a fit); the ALP mass scale is derived from the E₇ quartic invariant; and the Cabibbo angle is constrained to within 8% by racetrack topology (<Normal>sin θ<sub>C</sub> = exp(−π/2) ≈ 0.208</Normal><EML>sin θ<sub>C</sub> = ops.exp(ops.neg(ops.div(pi, 2))) ≈ 0.208</EML> vs measured 0.2257).</p>",
+          "content": "<h4>Interpretation Note: EDOF=3 Statistical Framework</h4><p><strong>CONSISTENT</strong> entries compare PM geometric predictions against already-measured quantities (postdictions). While 24/26 parameters lie within 1σ of data, this does not constitute statistical confirmation: the framework has not been subjected to a rigorous Bayesian model comparison against alternatives. <strong>UNTESTED</strong> entries (τ<sub>p</sub>, m<sub>KK</sub>, m<sub>a</sub>, Σm<sub>ν</sub>) represent genuine falsifiable forecasts. The framework has <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient, α<sub>GUT</sub> coefficient, Re(T) from Higgs mass) anchor the honest <strong>121:1 compression ratio</strong> (125 constants from 3 seeds); two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending full Yukawa derivation. Note: <Normal>α<sub>leak</sub> = 1/√6 ≈ 0.408</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6)))</EML> is now <em>derived</em> from E₇ ⊃ E₆ × U(1) algebraic branching (not a fit); the ALP mass scale is derived from the E₇ quartic invariant; and the Cabibbo angle is constrained to within 8% by racetrack topology (<Normal>sin θ<sub>C</sub> = exp(−π/2) ≈ 0.208</Normal><EML>sin θ<sub>C</sub> = ops.exp(ops.neg(ops.div(pi, 2))) ≈ 0.208</EML> vs measured 0.22500).</p>",
           "label": "predictions-interpretation",
           "equationNumber": "predictions-interpretation"
         }
@@ -18679,11 +18679,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The PM prediction H₀ = 71.55 km/s/Mpc is 1.4σ below SH0ES 2022 and 1.6σ above Planck 2018. It lies within the DESI 2025 BAO-only range (H₀ = 68.5 ± 2.0 km/s/Mpc) at 1.5σ. The global alignment of the framework across Planck 2018, DESI 2025, and NuFIT 6.0 gives a weighted mean deviation of 0.48σ across all 26 compared Standard Model parameters. The PM framework <em>does not eliminate</em> the Hubble tension; rather, it contributes a geometric prediction that must be compared against future high-precision measurements. A DESI or CMB-S4 measurement at H₀ ≈ 71–72 km/s/Mpc would strongly favor this framework over ΛCDM."
+          "content": "The PM prediction H₀ = 71.55 km/s/Mpc is 1.4σ below SH0ES 2022 and 8.3σ above Planck 2018. It lies within the DESI 2025 BAO-only range (H₀ = 68.5 ± 2.0 km/s/Mpc) at 1.5σ. The global alignment of the framework across Planck 2018, DESI 2025, and NuFIT 6.0 gives a weighted mean deviation of 0.48σ across all 26 compared Standard Model parameters. The PM framework <em>does not eliminate</em> the Hubble tension; rather, it contributes a geometric prediction that must be compared against future high-precision measurements. A DESI or CMB-S4 measurement at H₀ ≈ 71–72 km/s/Mpc would strongly favor this framework over ΛCDM."
         },
         {
           "type": "note",
-          "content": "<h4>Caveat: Hubble Tension Status</h4><p>PM predicts H₀ = 71.55 km/s/Mpc from the G₂ topology without a free parameter. This is 1.4σ from SH0ES and 1.6σ from Planck. The 0.48σ global alignment figure refers to the full 26-parameter comparison table, not to H₀ alone. Independent resolution of the Hubble tension would require the O'Dowd formula derivation to match both CMB and local distance ladder — currently not achieved. This remains an open prediction.</p>",
+          "content": "<h4>Caveat: Hubble Tension Status</h4><p>PM predicts H₀ = 71.55 km/s/Mpc from the G₂ topology without a free parameter. This is 1.4σ from SH0ES and 8.3σ from Planck. The 0.48σ global alignment figure refers to the full 26-parameter comparison table, not to H₀ alone. Independent resolution of the Hubble tension would require the O'Dowd formula derivation to match both CMB and local distance ladder — currently not achieved. This remains an open prediction.</p>",
           "label": "hubble-caveat",
           "equationNumber": "hubble-caveat"
         },
@@ -18813,7 +18813,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell Yukawa texture in <code>particle/yukawa_derivation.py</code> gives <Normal>θ₁₃ ≈ <span class=\"pm-value\" data-pm-value=\"particle.theta_13_deg\">8.67</span>°</Normal>; older <code>neutrino.theta_13_pred</code> (octonionic mixing) gives 8.65°. Both within ~1σ of NuFIT 6.0 IO (8.54° ± 0.12°).",
+            "<strong>PMNS θ₁₃.</strong> New T<sub>4</sub>/24-cell Yukawa texture in <code>particle/yukawa_derivation.py</code> gives <Normal>θ₁₃ ≈ <span class=\"pm-value\" data-pm-value=\"particle.theta_13_deg\">8.67</span>°</Normal>; older <code>neutrino.theta_13_pred</code> (octonionic mixing) gives 8.65°. Both within ~1σ of NuFIT 6.0 IO (8.63° ± 0.11°).",
             "<strong>Strong CP θ_QCD.</strong> Both the new <code>strong_cp_axion</code> module and the older <code>physics.theta_qcd</code> assignment give exactly 0; the new module supplies the geometric mechanism the older value lacked.",
             "<strong>Re(T) stabilization.</strong> The new <code>re_t_sector.close_vev_gap</code> sets ReT⋆ = 174.033 GeV consistent with v_EW = 246 GeV; the existing <code>moduli</code> module flags the stabilization status separately but agrees on the minimum location.",
             "<strong>Σm<sub>ν</sub> consistency with DESI 2026.</strong> <code>neutrino_sector.refine_neutrino_sector</code> tightens <Normal>Σm_ν = <span class=\"pm-value\" data-pm-value=\"particle.sum_m_nu_eV\">0.0425</span> eV</Normal>, comfortably below the DESI 2026 + Planck PR4 bound (Σm_ν &lt; 0.072 eV at 95% CL)."
@@ -18832,7 +18832,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>n<sub>s</sub> (scalar spectral index).</strong> New <code>inflation.derive_observables</code> Re(T) slow-roll formula gives <Normal>n_s = <span class=\"pm-value\" data-pm-value=\"cosmology.n_s\">0.9996</span></Normal>, which is 8.5σ from Planck 2018 (0.9649 ± 0.0042). The older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible at &lt;0.4σ. The older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 item T3.3).",
+            "<strong>n<sub>s</sub> (scalar spectral index).</strong> New <code>inflation.derive_observables</code> Re(T) slow-roll formula gives <Normal>n_s = <span class=\"pm-value\" data-pm-value=\"cosmology.n_s\">0.9996</span></Normal>, which is 8.3σ from Planck 2018 (0.9649 ± 0.0042). The older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible at &lt;0.4σ. The older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 item T3.3).",
             "<strong>η_B (baryon asymmetry).</strong> New <code>baryogenesis.compute_eta_B</code> with G<sub>2</sub> entropy dilution gives <Normal>η_B = <span class=\"pm-value\" data-pm-value=\"cosmology.eta_B\">2.3&times;10⁻¹⁰</span></Normal>, a factor 2.6 below the observed 6&times;10⁻¹⁰. The older <code>cosmology.eta_baryon_geometric = 6.19&times;10⁻¹⁰</code> sits within 3%. Status: <strong>PARTIAL (factor 2.6)</strong>.",
             "<strong>H<sub>0</sub> and S<sub>8</sub> tensions.</strong> Sprint 5.5's <code>cosmological_tensions</code> module asserts that a mirror-sector dark-energy coupling shifts H<sub>0</sub> from 67.4 to 73.0 km/s/Mpc &mdash; but the required coupling is ~10<sup>13</sup>× larger than the geometric value the bridge sector can supply. The claim \"tensions resolved\" does not survive a quantitative check. Live <code>cosmology.H0_tension_sigma = 3.17σ</code> remains the honest status until the magnitude gap is closed."
           ]
@@ -18896,7 +18896,7 @@
             [
               "sin θ<sub>C</sub> (Cabibbo angle)",
               "exp(−π/2) ≈ 0.208 (racetrack, N₁=24, k=6)",
-              "PDG 2024: 0.2257 ± 0.0010",
+              "PDG 2024: 0.22500 ± 0.00067",
               "~8% (topology only)",
               "CONSISTENT"
             ],
@@ -18924,7 +18924,7 @@
             [
               "τ<sub>p</sub> (proton decay lifetime)",
               "≈ 4.8 × 10³⁴ yr",
-              "Super-K: > 1.67 × 10³⁴ yr",
+              "Super-K: > 2.4 × 10³⁴ yr (p→e⁺π⁰, PDG 2024)",
               "Above current bound",
               "UNTESTED"
             ],
@@ -18953,7 +18953,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Interpretation Note: EDOF=3 Statistical Framework</h4><p><strong>CONSISTENT</strong> entries compare PM geometric predictions against already-measured quantities (postdictions). While 24/26 parameters lie within 1σ of data, this does not constitute statistical confirmation: the framework has not been subjected to a rigorous Bayesian model comparison against alternatives. <strong>UNTESTED</strong> entries (τ<sub>p</sub>, m<sub>KK</sub>, m<sub>a</sub>, Σm<sub>ν</sub>) represent genuine falsifiable forecasts. The framework has <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient, α<sub>GUT</sub> coefficient, Re(T) from Higgs mass) anchor the honest <strong>121:1 compression ratio</strong> (125 constants from 3 seeds); two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending full Yukawa derivation. Note: <Normal>α<sub>leak</sub> = 1/√6 ≈ 0.408</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6)))</EML> is now <em>derived</em> from E₇ ⊃ E₆ × U(1) algebraic branching (not a fit); the ALP mass scale is derived from the E₇ quartic invariant; and the Cabibbo angle is constrained to within 8% by racetrack topology (<Normal>sin θ<sub>C</sub> = exp(−π/2) ≈ 0.208</Normal><EML>sin θ<sub>C</sub> = ops.exp(ops.neg(ops.div(pi, 2))) ≈ 0.208</EML> vs measured 0.2257).</p>",
+          "content": "<h4>Interpretation Note: EDOF=3 Statistical Framework</h4><p><strong>CONSISTENT</strong> entries compare PM geometric predictions against already-measured quantities (postdictions). While 24/26 parameters lie within 1σ of data, this does not constitute statistical confirmation: the framework has not been subjected to a rigorous Bayesian model comparison against alternatives. <strong>UNTESTED</strong> entries (τ<sub>p</sub>, m<sub>KK</sub>, m<sub>a</sub>, Σm<sub>ν</sub>) represent genuine falsifiable forecasts. The framework has <strong>EDOF=3</strong> (effective degrees of freedom): three calibration seeds (VEV coefficient, α<sub>GUT</sub> coefficient, Re(T) from Higgs mass) anchor the honest <strong>121:1 compression ratio</strong> (125 constants from 3 seeds); two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending full Yukawa derivation. Note: <Normal>α<sub>leak</sub> = 1/√6 ≈ 0.408</Normal><EML>α<sub>leak</sub> = ops.inv(ops.sqrt(eml_scalar(6)))</EML> is now <em>derived</em> from E₇ ⊃ E₆ × U(1) algebraic branching (not a fit); the ALP mass scale is derived from the E₇ quartic invariant; and the Cabibbo angle is constrained to within 8% by racetrack topology (<Normal>sin θ<sub>C</sub> = exp(−π/2) ≈ 0.208</Normal><EML>sin θ<sub>C</sub> = ops.exp(ops.neg(ops.div(pi, 2))) ≈ 0.208</EML> vs measured 0.22500).</p>",
           "label": "predictions-interpretation",
           "equationNumber": "predictions-interpretation"
         }
@@ -18962,7 +18962,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.799796"
+      "timestamp": "2026-08-18T08:13:38.636990"
     },
     "4": {
       "id": "4",
@@ -19144,7 +19144,7 @@
               "PMNS θ₁₃",
               "OPEN (fitted to NuFIT 6.0)",
               "DERIVED (cross-consistent) — <span class=\"pm-value\" data-pm-value=\"particle.theta_13_deg\">8.67</span>°",
-              "T<sub>4</sub>/24-cell Yukawa texture (<code>particle/yukawa_derivation.py</code>) agrees with older <code>neutrino.theta_13_pred = 8.65°</code>; both within ~1σ of NuFIT 6.0 IO 8.54°"
+              "T<sub>4</sub>/24-cell Yukawa texture (<code>particle/yukawa_derivation.py</code>) agrees with older <code>neutrino.theta_13_pred = 8.65°</code>; both within ~1σ of NuFIT 6.0 IO 8.63°"
             ],
             [
               "PMNS δ<sub>CP</sub>",
@@ -19191,7 +19191,7 @@
             [
               "Inflation n_s, r",
               "QUALITATIVE (slow-roll asserted)",
-              "OPEN (older derivation Planck-compatible) — new <code>inflation</code> module gives n_s = 0.9996 (8.5σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> Planck-compatible",
+              "OPEN (older derivation Planck-compatible) — new <code>inflation</code> module gives n_s = 0.9996 (Re(T) slow-roll variant, FALSIFIED at 8.3 sigma; canonical n_s = 0.964) (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> Planck-compatible",
               "Older chain remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3); r prediction unchanged"
             ],
             [
@@ -19395,7 +19395,7 @@
               "PMNS θ₁₃",
               "OPEN (fitted to NuFIT 6.0)",
               "DERIVED (cross-consistent) — <span class=\"pm-value\" data-pm-value=\"particle.theta_13_deg\">8.67</span>°",
-              "T<sub>4</sub>/24-cell Yukawa texture (<code>particle/yukawa_derivation.py</code>) agrees with older <code>neutrino.theta_13_pred = 8.65°</code>; both within ~1σ of NuFIT 6.0 IO 8.54°"
+              "T<sub>4</sub>/24-cell Yukawa texture (<code>particle/yukawa_derivation.py</code>) agrees with older <code>neutrino.theta_13_pred = 8.65°</code>; both within ~1σ of NuFIT 6.0 IO 8.63°"
             ],
             [
               "PMNS δ<sub>CP</sub>",
@@ -19442,7 +19442,7 @@
             [
               "Inflation n_s, r",
               "QUALITATIVE (slow-roll asserted)",
-              "OPEN (older derivation Planck-compatible) — new <code>inflation</code> module gives n_s = 0.9996 (8.5σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> Planck-compatible",
+              "OPEN (older derivation Planck-compatible) — new <code>inflation</code> module gives n_s = 0.9996 (Re(T) slow-roll variant, FALSIFIED at 8.3 sigma; canonical n_s = 0.964) (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> Planck-compatible",
               "Older chain remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3); r prediction unchanged"
             ],
             [
@@ -19480,7 +19480,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-17T21:36:42.799997"
+      "timestamp": "2026-08-18T08:13:38.637213"
     },
     "A": {
       "id": "A",
@@ -19690,7 +19690,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-08-17T21:36:42.800096"
+      "timestamp": "2026-08-18T08:13:38.637300"
     },
     "B": {
       "id": "B",
@@ -19926,7 +19926,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-08-17T21:36:42.800170"
+      "timestamp": "2026-08-18T08:13:38.637365"
     },
     "C": {
       "id": "C",
@@ -19968,11 +19968,11 @@
         },
         {
           "type": "paragraph",
-          "content": "Where P<sub>13→4</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V₁₃ bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</strong>, meaning the 'Energy Budget' of the 25D ancestral state is perfectly accounted for in the 125 residues."
+          "content": "Where P<sub>13→4</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V₁₃ bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is a rank-4 <strong>co-isometry</strong> (PP† = I₄; 9 of 13 directions are discarded), and the 'Energy Budget' of the 25D ancestral state is perfectly accounted for in the 125 residues."
         },
         {
           "type": "formula",
-          "content": "\\mathbf{P}_{13 \\to 4}^\\dagger \\mathbf{P}_{13 \\to 4} = \\mathbf{I}_{13}",
+          "content": "\\mathbf{P}_{13 \\to 4} \\mathbf{P}_{13 \\to 4}^\\dagger = \\mathbf{I}_{4}",
           "formula_id": "gauge-unitarity-condition",
           "label": "(C.2)",
           "equationNumber": "(C.2)"
@@ -20054,11 +20054,11 @@
         },
         {
           "type": "paragraph",
-          "content": "Where P<sub>13→4</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V₁₃ bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</strong>, meaning the 'Energy Budget' of the 25D ancestral state is perfectly accounted for in the 125 residues."
+          "content": "Where P<sub>13→4</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V₁₃ bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is a rank-4 <strong>co-isometry</strong> (PP† = I₄; 9 of 13 directions are discarded), and the 'Energy Budget' of the 25D ancestral state is perfectly accounted for in the 125 residues."
         },
         {
           "type": "formula",
-          "content": "\\mathbf{P}_{13 \\to 4}^\\dagger \\mathbf{P}_{13 \\to 4} = \\mathbf{I}_{13}",
+          "content": "\\mathbf{P}_{13 \\to 4} \\mathbf{P}_{13 \\to 4}^\\dagger = \\mathbf{I}_{4}",
           "formula_id": "gauge-unitarity-condition",
           "label": "(C.2)",
           "equationNumber": "(C.2)"
@@ -20132,7 +20132,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-08-17T21:36:42.800236"
+      "timestamp": "2026-08-18T08:13:38.637432"
     },
     "D": {
       "id": "D",
@@ -20183,7 +20183,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The primary test of the w₀ = -0.9583 residue (Node 002) is the BAO distance scale provided by DESI Year 5 data. The DESI 2025 data shows preference for w₀ > -1, moving away from standard ΛCDM. The v24.2 residue sits precisely within the 1σ contour of the DESI Y5 w₀/wₐ plane."
+          "content": "The primary test of the w₀ = -0.9583 residue (Node 002) is the BAO distance scale provided by DESI DR2 (2025) BAO data, which shows preference for w₀ > -1, moving away from standard ΛCDM. The v24.2 residue sits precisely within the 1σ contour of the DESI DR2 w₀/wₐ plane."
         },
         {
           "type": "formula",
@@ -20210,7 +20210,7 @@
         },
         {
           "type": "note",
-          "content": "<table style='width:100%'><tr><th>Source</th><th>H₀ (km/s/Mpc)</th><th>Variance from v24.2</th></tr><tr><td>Planck (CMB - Early Universe)</td><td>67.4 ± 0.5</td><td>2.8σ</td></tr><tr><td>SH0ES (Cepheids - Local)</td><td>73.0 ± 1.0</td><td>2.6σ</td></tr><tr><td>v24.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48σ (Combined)</td></tr></table>",
+          "content": "<table style='width:100%'><tr><th>Source</th><th>H₀ (km/s/Mpc)</th><th>Variance from v24.2</th></tr><tr><td>Planck (CMB - Early Universe)</td><td>67.4 ± 0.5</td><td>6.04σ</td></tr><tr><td>SH0ES (Cepheids - Local)</td><td>73.0 ± 1.0</td><td>2.6σ</td></tr><tr><td>v24.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48σ (Combined)</td></tr></table>",
           "label": "h0-comparison-table",
           "equationNumber": "h0-comparison-table"
         },
@@ -20263,7 +20263,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The primary test of the w₀ = -0.9583 residue (Node 002) is the BAO distance scale provided by DESI Year 5 data. The DESI 2025 data shows preference for w₀ > -1, moving away from standard ΛCDM. The v24.2 residue sits precisely within the 1σ contour of the DESI Y5 w₀/wₐ plane."
+          "content": "The primary test of the w₀ = -0.9583 residue (Node 002) is the BAO distance scale provided by DESI DR2 (2025) BAO data, which shows preference for w₀ > -1, moving away from standard ΛCDM. The v24.2 residue sits precisely within the 1σ contour of the DESI DR2 w₀/wₐ plane."
         },
         {
           "type": "formula",
@@ -20290,7 +20290,7 @@
         },
         {
           "type": "note",
-          "content": "<table style='width:100%'><tr><th>Source</th><th>H₀ (km/s/Mpc)</th><th>Variance from v24.2</th></tr><tr><td>Planck (CMB - Early Universe)</td><td>67.4 ± 0.5</td><td>2.8σ</td></tr><tr><td>SH0ES (Cepheids - Local)</td><td>73.0 ± 1.0</td><td>2.6σ</td></tr><tr><td>v24.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48σ (Combined)</td></tr></table>",
+          "content": "<table style='width:100%'><tr><th>Source</th><th>H₀ (km/s/Mpc)</th><th>Variance from v24.2</th></tr><tr><td>Planck (CMB - Early Universe)</td><td>67.4 ± 0.5</td><td>6.04σ</td></tr><tr><td>SH0ES (Cepheids - Local)</td><td>73.0 ± 1.0</td><td>2.6σ</td></tr><tr><td>v24.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48σ (Combined)</td></tr></table>",
           "label": "h0-comparison-table",
           "equationNumber": "h0-comparison-table"
         },
@@ -20330,7 +20330,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-08-17T21:36:42.800305"
+      "timestamp": "2026-08-18T08:13:38.637484"
     },
     "E": {
       "id": "E",
@@ -20532,7 +20532,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-08-17T21:36:42.800369"
+      "timestamp": "2026-08-18T08:13:38.637536"
     },
     "F": {
       "id": "F",
@@ -20742,7 +20742,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-08-17T21:36:42.800908"
+      "timestamp": "2026-08-18T08:13:38.638070"
     },
     "G": {
       "id": "G",
@@ -21090,7 +21090,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-08-17T21:36:42.801512"
+      "timestamp": "2026-08-18T08:13:38.638617"
     },
     "H": {
       "id": "H",
@@ -21480,7 +21480,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-08-17T21:36:42.801610"
+      "timestamp": "2026-08-18T08:13:38.638711"
     },
     "I": {
       "id": "I",
@@ -21834,7 +21834,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-08-17T21:36:42.801706"
+      "timestamp": "2026-08-18T08:13:38.638798"
     },
     "J": {
       "id": "J",
@@ -22116,7 +22116,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-08-17T21:36:42.801804"
+      "timestamp": "2026-08-18T08:13:38.638883"
     },
     "K": {
       "id": "K",
@@ -22251,7 +22251,7 @@
         },
         {
           "type": "paragraph",
-          "content": "G is the first eigenvalue of the V₇ Laplacian—the 'Metric Anchor' that sets the strength of gravitational coupling. It is Node 001 in the spectral registry."
+          "content": "G is set by the V₇ volume via (K.2) — not by the Laplacian's first eigenvalue, which is λ₁ = 0 — the 'Metric Anchor' that sets the strength of gravitational coupling. It is Node 001 in the spectral registry."
         },
         {
           "type": "heading",
@@ -22439,7 +22439,7 @@
         },
         {
           "type": "paragraph",
-          "content": "G is the first eigenvalue of the V₇ Laplacian—the 'Metric Anchor' that sets the strength of gravitational coupling. It is Node 001 in the spectral registry."
+          "content": "G is set by the V₇ volume via (K.2) — not by the Laplacian's first eigenvalue, which is λ₁ = 0 — the 'Metric Anchor' that sets the strength of gravitational coupling. It is Node 001 in the spectral registry."
         },
         {
           "type": "heading",
@@ -22532,7 +22532,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-08-17T21:36:42.801879"
+      "timestamp": "2026-08-18T08:13:38.638950"
     },
     "L": {
       "id": "L",
@@ -22824,7 +22824,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-08-17T21:36:42.802088"
+      "timestamp": "2026-08-18T08:13:38.639130"
     },
     "Z": {
       "id": "Z",
@@ -23014,7 +23014,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-08-17T21:36:42.802261"
+      "timestamp": "2026-08-18T08:13:38.639265"
     },
     "2.2": {
       "id": "2",
@@ -23356,7 +23356,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-08-17T21:36:42.802644"
+      "timestamp": "2026-08-18T08:13:38.639593"
     },
     "R.1": {
       "id": "R",
@@ -23912,7 +23912,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-08-17T21:36:42.802835"
+      "timestamp": "2026-08-18T08:13:38.639769"
     },
     "S.1": {
       "id": "S",
@@ -23940,7 +23940,7 @@
         },
         {
           "type": "note",
-          "content": "<strong>Central Result:</strong> The 125 eigenvalues of the V<sub>7</sub> Laplacian map bijectively to the 125 physical parameters of the Standard Model extended with neutrino masses.",
+          "content": "<strong>Central Result:</strong> The 125 eigenvalues of the V<sub>7</sub> Laplacian map bijectively to the 125 registry parameters (the ~26 couplings of the Standard Model extended with neutrino masses, plus cosmological and derived constants).",
           "label": "spectral-central-result",
           "equationNumber": "spectral-central-result"
         },
@@ -24270,7 +24270,7 @@
         },
         {
           "type": "note",
-          "content": "<strong>Central Result:</strong> The 125 eigenvalues of the V<sub>7</sub> Laplacian map bijectively to the 125 physical parameters of the Standard Model extended with neutrino masses.",
+          "content": "<strong>Central Result:</strong> The 125 eigenvalues of the V<sub>7</sub> Laplacian map bijectively to the 125 registry parameters (the ~26 couplings of the Standard Model extended with neutrino masses, plus cosmological and derived constants).",
           "label": "spectral-central-result",
           "equationNumber": "spectral-central-result"
         },
@@ -24626,7 +24626,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-17T21:36:42.802988"
+      "timestamp": "2026-08-18T08:13:38.639936"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -24702,7 +24702,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-08-17T21:36:42.803340"
+      "timestamp": "2026-08-18T08:13:38.640238"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -24788,7 +24788,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-08-17T21:36:42.803401"
+      "timestamp": "2026-08-18T08:13:38.640298"
     },
     "5.1.1": {
       "id": "5",
@@ -24954,7 +24954,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-08-17T21:36:42.803507"
+      "timestamp": "2026-08-18T08:13:38.640393"
     },
     "2.3": {
       "id": "2",
@@ -24965,7 +24965,7 @@
       "title": "Complete Spectral Decomposition",
       "shortTitle": "Complete Spectral Decomposition",
       "order": 2,
-      "abstract": "The 125 fundamental physical constants of the Standard Model and cosmology are proposed to emerge as spectral residues of the Laplace-Beltrami operator on the compact G₂ holonomy manifold V₇. This section presents the mathematical framework underlying that identification, catalogs the 125 residues with their physical assignments, and derives the key falsifiable predictions for neutrino masses and proton decay from the spectral structure.",
+      "abstract": "The 125 registry constants (SM+ν couplings, ΛCDM parameters, and derived quantities) are proposed to emerge as spectral residues of the Laplace-Beltrami operator on the compact G₂ holonomy manifold V₇. This section presents the mathematical framework underlying that identification, catalogs the 125 residues with their physical assignments, and derives the key falsifiable predictions for neutrino masses and proton decay from the spectral structure.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -25003,7 +25003,7 @@
         },
         {
           "type": "callout",
-          "content": "The count of 125 is not a choice: it follows from the G₂ manifold topology. The holonomy group G₂ ⊂ SO(7) decomposes the tangent bundle of V₇ into representations of the 14-dimensional Lie group G₂, generating exactly χ_eff = 144 zero modes in the full compactification. After accounting for the dual-shadow OR reduction and the S^(2,0) sampler data fields (which removes 19 redundant ghost modes), 125 physical modes remain. This matches the dimension of the exceptional Jordan algebra J₃(O) over the octonions—a coincidence with deep algebraic significance (see Appendix B)."
+          "content": "The count of 125 is not a choice: it follows from the G₂ manifold topology. The holonomy group G₂ ⊂ SO(7) decomposes the tangent bundle of V₇ into representations of the 14-dimensional Lie group G₂, generating exactly χ_eff = 144 zero modes in the full compactification. After accounting for the dual-shadow OR reduction and the S^(2,0) sampler data fields (which removes 19 redundant ghost modes), 125 physical modes remain. This matches the claimed dimension of the exceptional Jordan algebra J₃(O) — but dim J₃(O) = 27, not 125; no such algebraic identification holds (see Appendix B)."
         },
         {
           "type": "heading",
@@ -25131,7 +25131,7 @@
         },
         {
           "type": "callout",
-          "content": "The count of 125 is not a choice: it follows from the G₂ manifold topology. The holonomy group G₂ ⊂ SO(7) decomposes the tangent bundle of V₇ into representations of the 14-dimensional Lie group G₂, generating exactly χ_eff = 144 zero modes in the full compactification. After accounting for the dual-shadow OR reduction and the S^(2,0) sampler data fields (which removes 19 redundant ghost modes), 125 physical modes remain. This matches the dimension of the exceptional Jordan algebra J₃(O) over the octonions—a coincidence with deep algebraic significance (see Appendix B)."
+          "content": "The count of 125 is not a choice: it follows from the G₂ manifold topology. The holonomy group G₂ ⊂ SO(7) decomposes the tangent bundle of V₇ into representations of the 14-dimensional Lie group G₂, generating exactly χ_eff = 144 zero modes in the full compactification. After accounting for the dual-shadow OR reduction and the S^(2,0) sampler data fields (which removes 19 redundant ghost modes), 125 physical modes remain. This matches the claimed dimension of the exceptional Jordan algebra J₃(O) — but dim J₃(O) = 27, not 125; no such algebraic identification holds (see Appendix B)."
         },
         {
           "type": "heading",
@@ -25270,7 +25270,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-08-17T21:36:42.803703"
+      "timestamp": "2026-08-18T08:13:38.640564"
     },
     "5.2.1": {
       "id": "5",
@@ -25314,12 +25314,12 @@
         },
         {
           "type": "heading",
-          "content": "Super-Planckian Decay Constant",
+          "content": "Sub-Planckian Decay Constant",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The decay constant f = M_Pl / sqrt(chi_eff) ~ 2.03e17 GeV is super-Planckian by a factor of 1/sqrt(144) ~ 1/12. This is a generic feature of string-theory axion-like fields, where the periodicity of the internal-space geometry sets an effective Planck-suppressed decay constant. The super-Planckian value ensures slow-roll (epsilon_V << 1) is maintained over cosmological timescales without fine-tuning the initial conditions."
+          "content": "The decay constant f = M_Pl / sqrt(chi_eff) ~ 2.03e17 GeV is sub-Planckian by a factor of 1/sqrt(144) ~ 1/12. This is a generic feature of string-theory axion-like fields, where the periodicity of the internal-space geometry sets an effective Planck-suppressed decay constant. This sub-Planckian value ensures slow-roll (epsilon_V << 1) is maintained over cosmological timescales without fine-tuning the initial conditions."
         },
         {
           "type": "formula",
@@ -25333,7 +25333,7 @@
         },
         {
           "type": "paragraph",
-          "content": "At the attractor, the modulus is displaced from the potential minimum by a fraction 1/b3 = 1/24 of the oscillation period. The Maximum Entropy Principle applied to the G2 moduli space selects this fractional displacement, giving the equation of state w_0 = -(1 - 1/b3) = -23/24 ~ -0.9583. An earlier draft quoted a sub-leading CPL parameter w_a ~ +0.1 from the time-variation of the modulus (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204). The derivation gives:"
+          "content": "At the attractor, the modulus is displaced from the potential minimum by a fraction 1/b3 = 1/24 of the oscillation period. The Maximum Entropy Principle applied to the G2 moduli space selects this fractional displacement, giving the equation of state w_0 = -(1 - 1/b3) = -23/24 ~ -0.9583. An earlier draft quoted a sub-leading CPL parameter w_a ~ +0.1 (SUPERSEDED attractor estimate; canonical w_a = -1/√24) from the time-variation of the modulus (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204). The derivation gives:"
         },
         {
           "type": "formula",
@@ -25342,7 +25342,7 @@
         },
         {
           "type": "callout",
-          "content": "The attractor dynamics predict w_0 = -23/24 = -0.9583 exactly, with w_a ~ +0.1 from residual modulus evolution (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204; DESI prefers w_a < 0, so the positive-w_a discriminator failed). DESI DR1 (2024) combined with CMB and SNIa gives w_0 ~ -0.83 +/- 0.07, in 1.8 sigma tension with LCDM. The PM prediction w_0 = -0.9583 is within 1.8 sigma of DESI and within 0.3 sigma of the Planck+BAO w = -1.01 +/- 0.04 constraint. Future surveys (DESI full DR, Euclid, Roman) will precisely measure w_a; the originally proposed positive-w_a discriminator (w_a > 0 at 3 sigma) failed -- DESI measures w_a < 0, consistent in sign with the registry-canonical w_a = -0.204."
+          "content": "The attractor dynamics predict w_0 = -23/24 = -0.9583 exactly, with w_a ~ +0.1 (SUPERSEDED attractor estimate; canonical w_a = -1/√24) from residual modulus evolution (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204; DESI prefers w_a < 0, so the positive-w_a discriminator failed). DESI DR1 (2024) combined with CMB and SNIa gives w_0 ~ -0.83 +/- 0.07, in 1.8 sigma tension with LCDM. The PM prediction w_0 = -0.9583 is within 1.8 sigma of DESI and within 0.3 sigma of the Planck+BAO w = -1.01 +/- 0.04 constraint. Future surveys (DESI full DR, Euclid, Roman) will precisely measure w_a; the originally proposed positive-w_a discriminator (w_a > 0 at 3 sigma) failed -- DESI measures w_a < 0, consistent in sign with the registry-canonical w_a = -0.204."
         }
       ],
       "content_blocks": [
@@ -25377,12 +25377,12 @@
         },
         {
           "type": "heading",
-          "content": "Super-Planckian Decay Constant",
+          "content": "Sub-Planckian Decay Constant",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The decay constant f = M_Pl / sqrt(chi_eff) ~ 2.03e17 GeV is super-Planckian by a factor of 1/sqrt(144) ~ 1/12. This is a generic feature of string-theory axion-like fields, where the periodicity of the internal-space geometry sets an effective Planck-suppressed decay constant. The super-Planckian value ensures slow-roll (epsilon_V << 1) is maintained over cosmological timescales without fine-tuning the initial conditions."
+          "content": "The decay constant f = M_Pl / sqrt(chi_eff) ~ 2.03e17 GeV is sub-Planckian by a factor of 1/sqrt(144) ~ 1/12. This is a generic feature of string-theory axion-like fields, where the periodicity of the internal-space geometry sets an effective Planck-suppressed decay constant. This sub-Planckian value ensures slow-roll (epsilon_V << 1) is maintained over cosmological timescales without fine-tuning the initial conditions."
         },
         {
           "type": "formula",
@@ -25396,7 +25396,7 @@
         },
         {
           "type": "paragraph",
-          "content": "At the attractor, the modulus is displaced from the potential minimum by a fraction 1/b3 = 1/24 of the oscillation period. The Maximum Entropy Principle applied to the G2 moduli space selects this fractional displacement, giving the equation of state w_0 = -(1 - 1/b3) = -23/24 ~ -0.9583. An earlier draft quoted a sub-leading CPL parameter w_a ~ +0.1 from the time-variation of the modulus (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204). The derivation gives:"
+          "content": "At the attractor, the modulus is displaced from the potential minimum by a fraction 1/b3 = 1/24 of the oscillation period. The Maximum Entropy Principle applied to the G2 moduli space selects this fractional displacement, giving the equation of state w_0 = -(1 - 1/b3) = -23/24 ~ -0.9583. An earlier draft quoted a sub-leading CPL parameter w_a ~ +0.1 (SUPERSEDED attractor estimate; canonical w_a = -1/√24) from the time-variation of the modulus (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204). The derivation gives:"
         },
         {
           "type": "formula",
@@ -25405,7 +25405,7 @@
         },
         {
           "type": "callout",
-          "content": "The attractor dynamics predict w_0 = -23/24 = -0.9583 exactly, with w_a ~ +0.1 from residual modulus evolution (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204; DESI prefers w_a < 0, so the positive-w_a discriminator failed). DESI DR1 (2024) combined with CMB and SNIa gives w_0 ~ -0.83 +/- 0.07, in 1.8 sigma tension with LCDM. The PM prediction w_0 = -0.9583 is within 1.8 sigma of DESI and within 0.3 sigma of the Planck+BAO w = -1.01 +/- 0.04 constraint. Future surveys (DESI full DR, Euclid, Roman) will precisely measure w_a; the originally proposed positive-w_a discriminator (w_a > 0 at 3 sigma) failed -- DESI measures w_a < 0, consistent in sign with the registry-canonical w_a = -0.204."
+          "content": "The attractor dynamics predict w_0 = -23/24 = -0.9583 exactly, with w_a ~ +0.1 (SUPERSEDED attractor estimate; canonical w_a = -1/√24) from residual modulus evolution (SUPERSEDED: registry canonical w_a = -1/sqrt(24) = -0.204; DESI prefers w_a < 0, so the positive-w_a discriminator failed). DESI DR1 (2024) combined with CMB and SNIa gives w_0 ~ -0.83 +/- 0.07, in 1.8 sigma tension with LCDM. The PM prediction w_0 = -0.9583 is within 1.8 sigma of DESI and within 0.3 sigma of the Planck+BAO w = -1.01 +/- 0.04 constraint. Future surveys (DESI full DR, Euclid, Roman) will precisely measure w_a; the originally proposed positive-w_a discriminator (w_a > 0 at 3 sigma) failed -- DESI measures w_a < 0, consistent in sign with the registry-canonical w_a = -0.204."
         }
       ],
       "formulaRefs": [
@@ -25436,7 +25436,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-08-17T21:36:42.803826"
+      "timestamp": "2026-08-18T08:13:38.640675"
     },
     "6.2.1": {
       "id": "6",
@@ -25447,7 +25447,7 @@
       "title": "Baryon Asymmetry from G₂ Cycles + Jarlskog",
       "shortTitle": "Baryon Asymmetry from G₂ Cycles + Jarlskog",
       "order": 6,
-      "abstract": "The observed matter-antimatter asymmetry η_b ≈ 6 × 10⁻¹⁰ is derived from a flux mismatch between associative and coassociative 3-cycles in the TCS G₂ manifold, coupled with CP violation quantified by the Jarlskog invariant J ≈ 3.08 × 10⁻⁵. The cycle imbalance (Δb₃ = 0.12 × b₃) provides the B−L violation; the CP-violating phase δ_CP = π/6 arises from the Z₃ triality symmetry of the G₂ root system acting on the Yukawa sector; and moduli damping exp(−Re(T)) ensures departure from equilibrium (Sakharov condition 3). The normalization k_bary = J/N_eff replaces all calibration constants, predicting η_b in sub-2σ agreement with Planck+BBN.",
+      "abstract": "The observed matter-antimatter asymmetry η_b ≈ 6 × 10⁻¹⁰ is derived from a flux mismatch between associative and coassociative 4-cycles in the TCS G₂ manifold, coupled with CP violation quantified by the Jarlskog invariant J ≈ 3.08 × 10⁻⁵. The cycle imbalance (Δb₃ = 0.12 × b₃) provides the B−L violation; the CP-violating phase δ_CP = π/6 arises from the Z₃ triality symmetry of the G₂ root system acting on the Yukawa sector; and moduli damping exp(−Re(T)) ensures departure from equilibrium (Sakharov condition 3). The normalization k_bary = J/N_eff replaces all calibration constants, predicting η_b in sub-2σ agreement with Planck+BBN.",
       "contentBlocks": [
         {
           "type": "subsection",
@@ -25455,7 +25455,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G₂ compactification. The three Sakharov conditions are satisfied by distinct geometric mechanisms: (1) B−L violation arises from the cycle asymmetry Δb₃ = 0.12 × b₃, a flux mismatch between the 24 associative and coassociative 3-cycles of the TCS G₂ manifold — the torsion in the neck region of the twisted connected sum breaks the symmetry between cycle types, generating a net baryon-number-violating current; (2) CP violation enters through the Jarlskog invariant J ≈ 3.08 × 10⁻⁵, with the leading-order CP phase δ_CP = π/6 determined by the Z₃ triality symmetry of G₂ (the three roots of the G₂ Dynkin diagram permute the three fermion generations, imposing a 2π/6 = π/3 phase rotation whose sine gives sin(π/6) = 0.5); (3) departure from thermal equilibrium via moduli damping exp(−Re(T)) from KKLT-type stabilization of the volume modulus."
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G₂ compactification. The three Sakharov conditions are satisfied by distinct geometric mechanisms: (1) B−L violation arises from the cycle asymmetry Δb₃ = 0.12 × b₃, a flux mismatch between the 24 associative and coassociative 4-cycles of the TCS G₂ manifold — the torsion in the neck region of the twisted connected sum breaks the symmetry between cycle types, generating a net baryon-number-violating current; (2) CP violation enters through the Jarlskog invariant J ≈ 3.08 × 10⁻⁵, with the leading-order CP phase δ_CP = π/6 determined by the Z₃ triality symmetry of G₂ (the three roots of the G₂ Dynkin diagram permute the three fermion generations, imposing a 2π/6 = π/3 phase rotation whose sine gives sin(π/6) = 0.5); (3) departure from thermal equilibrium via moduli damping exp(−Re(T)) from KKLT-type stabilization of the volume modulus."
         },
         {
           "type": "subsection",
@@ -25512,7 +25512,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G₂ compactification. The three Sakharov conditions are satisfied by distinct geometric mechanisms: (1) B−L violation arises from the cycle asymmetry Δb₃ = 0.12 × b₃, a flux mismatch between the 24 associative and coassociative 3-cycles of the TCS G₂ manifold — the torsion in the neck region of the twisted connected sum breaks the symmetry between cycle types, generating a net baryon-number-violating current; (2) CP violation enters through the Jarlskog invariant J ≈ 3.08 × 10⁻⁵, with the leading-order CP phase δ_CP = π/6 determined by the Z₃ triality symmetry of G₂ (the three roots of the G₂ Dynkin diagram permute the three fermion generations, imposing a 2π/6 = π/3 phase rotation whose sine gives sin(π/6) = 0.5); (3) departure from thermal equilibrium via moduli damping exp(−Re(T)) from KKLT-type stabilization of the volume modulus."
+          "content": "Baryogenesis in the PM framework occurs via leptogenesis at 4-brane intersections in the G₂ compactification. The three Sakharov conditions are satisfied by distinct geometric mechanisms: (1) B−L violation arises from the cycle asymmetry Δb₃ = 0.12 × b₃, a flux mismatch between the 24 associative and coassociative 4-cycles of the TCS G₂ manifold — the torsion in the neck region of the twisted connected sum breaks the symmetry between cycle types, generating a net baryon-number-violating current; (2) CP violation enters through the Jarlskog invariant J ≈ 3.08 × 10⁻⁵, with the leading-order CP phase δ_CP = π/6 determined by the Z₃ triality symmetry of G₂ (the three roots of the G₂ Dynkin diagram permute the three fermion generations, imposing a 2π/6 = π/3 phase rotation whose sine gives sin(π/6) = 0.5); (3) departure from thermal equilibrium via moduli damping exp(−Re(T)) from KKLT-type stabilization of the volume modulus."
         },
         {
           "type": "subsection",
@@ -25586,7 +25586,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-08-17T21:36:42.803912"
+      "timestamp": "2026-08-18T08:13:38.640745"
     },
     "7.1": {
       "id": "7",
@@ -25738,7 +25738,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-08-17T21:36:42.804027"
+      "timestamp": "2026-08-18T08:13:38.640833"
     },
     "7.3": {
       "id": "7",
@@ -25792,7 +25792,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The portal is mediated by the lightest Kaluza-Klein excitation of the compactified geometry. The mediator mass m<sub>KK</sub> is set by the Planck scale suppressed by the face sampling strength and the square of k<sub>ℷ</sub>, reflecting the 2-cycle volume dependence. The spin-independent cross-section σ<sub>SI</sub> = g<sub>portal</sub>² · m<sub>N</sub>² / (4π · m<sub>KK</sub>⁴) is computed in the Born approximation from t-channel moduli exchange. The m<sub>N</sub>² factor comes from the nucleon matrix element of the moduli coupling operator. The predicted σ<sub>SI</sub> is well below the current XENONnT bound but within the projected sensitivity of DARWIN and XLZD, making this a testable prediction of the PM framework."
+          "content": "The portal is mediated by the lightest Kaluza-Klein excitation of the compactified geometry. The mediator mass m<sub>KK</sub> is set by the Planck scale suppressed by the face sampling strength and the square of k<sub>ℷ</sub>, reflecting the 2-cycle volume dependence. The spin-independent cross-section σ<sub>SI</sub> = g<sub>portal</sub>² · m<sub>N</sub>² / (4π · m<sub>KK</sub>⁴) is computed in the Born approximation from t-channel moduli exchange. The m<sub>N</sub>² factor comes from the nucleon matrix element of the moduli coupling operator. The predicted σ<sub>SI</sub> (~10⁻⁹³ cm²) is ~46 orders below the XENONnT bound — far beyond the reach of any planned detector (DARWIN/XLZD gain ~1 order); direct detection cannot test this prediction of the PM framework."
         },
         {
           "type": "heading",
@@ -25812,7 +25812,7 @@
         },
         {
           "type": "callout",
-          "content": "PM predicts from G₂ portal physics:\n- Portal coupling: g<sub>portal</sub> ~ 0.11 (perturbative)\n- Cross-section: σ<sub>SI</sub> below XENONnT bound\n- Multi-component DM: KK + ALP + sterile ν\n- Total relic: Ω<sub>DM</sub> h² = 0.120\nTestable by: DARWIN, XLZD (next-generation direct detection)"
+          "content": "PM predicts from G₂ portal physics:\n- Portal coupling: g<sub>portal</sub> ~ 0.11 (perturbative)\n- Cross-section: σ<sub>SI</sub> below XENONnT bound\n- Multi-component DM: KK + ALP + sterile ν\n- Total relic: Ω<sub>DM</sub> h² = 0.120\nNot testable by planned direct detection (~46 orders below current bounds)"
         }
       ],
       "content_blocks": [
@@ -25857,7 +25857,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The portal is mediated by the lightest Kaluza-Klein excitation of the compactified geometry. The mediator mass m<sub>KK</sub> is set by the Planck scale suppressed by the face sampling strength and the square of k<sub>ℷ</sub>, reflecting the 2-cycle volume dependence. The spin-independent cross-section σ<sub>SI</sub> = g<sub>portal</sub>² · m<sub>N</sub>² / (4π · m<sub>KK</sub>⁴) is computed in the Born approximation from t-channel moduli exchange. The m<sub>N</sub>² factor comes from the nucleon matrix element of the moduli coupling operator. The predicted σ<sub>SI</sub> is well below the current XENONnT bound but within the projected sensitivity of DARWIN and XLZD, making this a testable prediction of the PM framework."
+          "content": "The portal is mediated by the lightest Kaluza-Klein excitation of the compactified geometry. The mediator mass m<sub>KK</sub> is set by the Planck scale suppressed by the face sampling strength and the square of k<sub>ℷ</sub>, reflecting the 2-cycle volume dependence. The spin-independent cross-section σ<sub>SI</sub> = g<sub>portal</sub>² · m<sub>N</sub>² / (4π · m<sub>KK</sub>⁴) is computed in the Born approximation from t-channel moduli exchange. The m<sub>N</sub>² factor comes from the nucleon matrix element of the moduli coupling operator. The predicted σ<sub>SI</sub> (~10⁻⁹³ cm²) is ~46 orders below the XENONnT bound — far beyond the reach of any planned detector (DARWIN/XLZD gain ~1 order); direct detection cannot test this prediction of the PM framework."
         },
         {
           "type": "heading",
@@ -25877,7 +25877,7 @@
         },
         {
           "type": "callout",
-          "content": "PM predicts from G₂ portal physics:\n- Portal coupling: g<sub>portal</sub> ~ 0.11 (perturbative)\n- Cross-section: σ<sub>SI</sub> below XENONnT bound\n- Multi-component DM: KK + ALP + sterile ν\n- Total relic: Ω<sub>DM</sub> h² = 0.120\nTestable by: DARWIN, XLZD (next-generation direct detection)"
+          "content": "PM predicts from G₂ portal physics:\n- Portal coupling: g<sub>portal</sub> ~ 0.11 (perturbative)\n- Cross-section: σ<sub>SI</sub> below XENONnT bound\n- Multi-component DM: KK + ALP + sterile ν\n- Total relic: Ω<sub>DM</sub> h² = 0.120\nNot testable by planned direct detection (~46 orders below current bounds)"
         }
       ],
       "formulaRefs": [
@@ -25902,7 +25902,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-08-17T21:36:42.804172"
+      "timestamp": "2026-08-18T08:13:38.640937"
     }
   }
 }

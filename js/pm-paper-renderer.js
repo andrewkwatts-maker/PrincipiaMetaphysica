@@ -1573,26 +1573,30 @@
             html += '<div class="equation-metadata-panel always-expanded">';
             html += '<div class="metadata-content">';
 
-            // Input/Output Parameters - dynamic rendering with values from PM registry
-            if ((formulaData.input_params && formulaData.input_params.length > 0) ||
-                (formulaData.output_params && formulaData.output_params.length > 0)) {
+            // Input/Output Parameters - dynamic rendering with values from PM registry.
+            // Falsy/blank entries are filtered so a label never renders
+            // above an empty chip list (the "empty OUTPUTS:" blocks the
+            // 2026-08 PDF audit flagged).
+            const inputParams = (formulaData.input_params || []).filter(p => p && String(p).trim());
+            const outputParams = (formulaData.output_params || []).filter(p => p && String(p).trim());
+            if (inputParams.length > 0 || outputParams.length > 0) {
                 html += '<div class="metadata-params-grid">';
 
-                if (formulaData.input_params && formulaData.input_params.length > 0) {
+                if (inputParams.length > 0) {
                     html += '<div class="params-column params-inputs">';
                     html += '<span class="params-label">Inputs:</span>';
                     html += '<div class="params-list">';
-                    for (const param of formulaData.input_params) {
+                    for (const param of inputParams) {
                         html += renderParamChip(param, 'input');
                     }
                     html += '</div></div>';
                 }
 
-                if (formulaData.output_params && formulaData.output_params.length > 0) {
+                if (outputParams.length > 0) {
                     html += '<div class="params-column params-outputs">';
                     html += '<span class="params-label">Outputs:</span>';
                     html += '<div class="params-list">';
-                    for (const param of formulaData.output_params) {
+                    for (const param of outputParams) {
                         html += renderParamChip(param, 'output');
                     }
                     html += '</div></div>';

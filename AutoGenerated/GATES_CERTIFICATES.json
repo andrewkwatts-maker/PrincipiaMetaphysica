@@ -1,7 +1,7 @@
 {
   "version": "24.2",
   "title": "Gates Certificate Registry",
-  "timestamp": "2026-08-17T11:36:48.262332Z",
+  "timestamp": "2026-08-17T22:13:48.019893Z",
   "summary": {
     "total_gates": 72,
     "verified": 40,
@@ -63,7 +63,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 1: If sum deviates by \u00b11, manifold identity rejected. Verifies total potential = 288 exactly",
-      "timestamp": "2026-08-17T11:36:48.238153Z",
+      "timestamp": "2026-08-17T22:13:47.956087Z",
       "hash": "91478cdb7ab380a3"
     },
     {
@@ -82,7 +82,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Holonomy closure is a geometric definition, not a testable prediction",
       "note": "FOUNDATIONAL: Parallel transport around V7 returns to origin. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248315Z",
+      "timestamp": "2026-08-17T22:13:48.005479Z",
       "hash": "e3bf0c0d4e3f1287"
     },
     {
@@ -106,7 +106,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 3: Primary conservation law of the manifold. Partition: 125 Active + 163 Hidden = 288",
-      "timestamp": "2026-08-17T11:36:48.248337Z",
+      "timestamp": "2026-08-17T22:13:48.005501Z",
       "hash": "df369a9e1cac58f4"
     },
     {
@@ -132,7 +132,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 4: \u039b \u2248 12/288\u00b2 as baseline. 12\u03b4 vacuum pressure from 25D\u21924D projection",
-      "timestamp": "2026-08-17T11:36:48.248533Z",
+      "timestamp": "2026-08-17T22:13:48.005698Z",
       "hash": "15954d35a9346c77"
     },
     {
@@ -151,7 +151,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Metric continuity is an assumption of smooth manifolds",
       "note": "FOUNDATIONAL: Smooth 25D\u21924D coordinate mapping. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248584Z",
+      "timestamp": "2026-08-17T22:13:48.005752Z",
       "hash": "228ccea62523ff82"
     },
     {
@@ -175,7 +175,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 6: Left/right potential balanced at source. Bifurcation of 24 pins into 12+12 chiral sets",
-      "timestamp": "2026-08-17T11:36:48.248595Z",
+      "timestamp": "2026-08-17T22:13:48.005762Z",
       "hash": "b5fed762df1186b5"
     },
     {
@@ -194,7 +194,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Torsion orthogonality is a geometric constraint, not measurable",
       "note": "FOUNDATIONAL: Each pin orthogonal (\u03c0/2) to 288-root bulk. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248639Z",
+      "timestamp": "2026-08-17T22:13:48.005807Z",
       "hash": "1ef3b79f78f8d4b0"
     },
     {
@@ -220,7 +220,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 8: Tilt required to view matter from 25D bulk. \u03b8s = arcsin(125/288) \u2248 25.72\u00b0",
-      "timestamp": "2026-08-17T11:36:48.248648Z",
+      "timestamp": "2026-08-17T22:13:48.005816Z",
       "hash": "f08513010f0e224e"
     },
     {
@@ -239,7 +239,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Pin distribution is a structural assumption",
       "note": "FOUNDATIONAL: 24 pins distributed as 4\u00d76 matrix. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248700Z",
+      "timestamp": "2026-08-17T22:13:48.005869Z",
       "hash": "83cdeb9a528d2a83"
     },
     {
@@ -258,7 +258,7 @@
       "derivation_status": "DERIVED",
       "reason": "Torsion tension floor defines vacuum, cannot be independently measured",
       "note": "FOUNDATIONAL: Minimum vibration constant of 24 pins. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248708Z",
+      "timestamp": "2026-08-17T22:13:48.005877Z",
       "hash": "18bfe6bd84755a68"
     },
     {
@@ -284,7 +284,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 11: Topological ratio 8/125 verified. \u03b1s anchored to 8 gluon roots / active manifold",
-      "timestamp": "2026-08-17T11:36:48.248715Z",
+      "timestamp": "2026-08-17T22:13:48.005885Z",
       "hash": "a3544639fb72da7b"
     },
     {
@@ -308,7 +308,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 12: Geometric sin\u00b2\u03b8_W = 0.23190 vs PDG 2024 0.23122\u00b10.00003 \u2014 0.68\u03c3 using the module's 0.001 theory uncertainty. (Previous cert showed Sin[ArcTan[12/24]]\u00b2=0.20 labelled 0.2312 \u2014 removed as arithmetically false.). \u03b8w locked to Shadow-A/B tilt",
-      "timestamp": "2026-08-17T11:36:48.248736Z",
+      "timestamp": "2026-08-17T22:13:48.005906Z",
       "hash": "4af56fe6ffcb0ad7"
     },
     {
@@ -332,7 +332,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 13: Experimental fact confirmed. U(1) gauge node has zero transverse tax",
-      "timestamp": "2026-08-17T11:36:48.248770Z",
+      "timestamp": "2026-08-17T22:13:48.005940Z",
       "hash": "0c10c53a6e6cd938"
     },
     {
@@ -358,7 +358,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 14: \u03a3(72\u00d73) group bridge to Lie Algebra. Gate symmetry \u2248 continuous SU(3)",
-      "timestamp": "2026-08-17T11:36:48.248788Z",
+      "timestamp": "2026-08-17T22:13:48.005957Z",
       "hash": "d4799c96183e82f7"
     },
     {
@@ -377,7 +377,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Gauge invariance is a QFT axiom, not a PM-specific prediction",
       "note": "FOUNDATIONAL: All physical states are gauge singlets. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248807Z",
+      "timestamp": "2026-08-17T22:13:48.005976Z",
       "hash": "b0262932d9d5cf79"
     },
     {
@@ -396,7 +396,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Dirac spinor structure is a spacetime axiom, not a PM-specific prediction",
       "note": "FOUNDATIONAL: Each node supports 4-component spinor. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.248814Z",
+      "timestamp": "2026-08-17T22:13:48.005983Z",
       "hash": "5a8c6484fa95b3eb"
     },
     {
@@ -420,7 +420,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 17: n_gen=3 exact. 125 nodes fold into 3 generations",
-      "timestamp": "2026-08-17T11:36:48.248821Z",
+      "timestamp": "2026-08-17T22:13:48.005992Z",
       "hash": "7bc62a0e2dbd93dc"
     },
     {
@@ -439,7 +439,7 @@
       "derivation_status": "FITTED",
       "reason": "Mathematical theorem about discrete mass spectrum from 288-root structure",
       "note": "MATHEMATICAL: No overlapping mass coordinates. This is a mathematical constraint derivable from the 288-root manifold.",
-      "timestamp": "2026-08-17T11:36:48.248836Z",
+      "timestamp": "2026-08-17T22:13:48.006007Z",
       "hash": "ffaebc7e7b3c8401"
     },
     {
@@ -463,7 +463,7 @@
       },
       "derivation_status": "FITTED",
       "note": "Gate 19: PMNS matches NuFIT. Majorana/Dirac status from torsion twist",
-      "timestamp": "2026-08-17T11:36:48.248846Z",
+      "timestamp": "2026-08-17T22:13:48.006017Z",
       "hash": "34b6742e46c2a8d0"
     },
     {
@@ -487,7 +487,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 20: Consequence of G06+G07+G09. Left-handed bias prevents vacuum absorption",
-      "timestamp": "2026-08-17T11:36:48.248867Z",
+      "timestamp": "2026-08-17T22:13:48.006038Z",
       "hash": "aba6694e8f0fd957"
     },
     {
@@ -511,7 +511,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 21: All 3-node clusters sum to color-neutral. All 3-node clusters sum to color-neutral",
-      "timestamp": "2026-08-17T11:36:48.248875Z",
+      "timestamp": "2026-08-17T22:13:48.006047Z",
       "hash": "34d2d7e577c23ab5"
     },
     {
@@ -535,7 +535,7 @@
       },
       "derivation_status": "FITTED",
       "note": "Gate 22: Quark separation energy from 24-pin density. Quark separation energy \u2192 24-pin density",
-      "timestamp": "2026-08-17T11:36:48.248894Z",
+      "timestamp": "2026-08-17T22:13:48.006065Z",
       "hash": "2914b1552e7be952"
     },
     {
@@ -559,7 +559,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 23: Canonical tau_p = 4.757e34 yr vs Super-K p->e+pi0 bound 2.4e34 yr (PDG 2024) \u2014 evaluated against the live registry value.. Baryon\u2192meson decay forbidden by SO(24)",
-      "timestamp": "2026-08-17T11:36:48.248909Z",
+      "timestamp": "2026-08-17T22:13:48.006080Z",
       "hash": "6c8c3bd8c45196fd"
     },
     {
@@ -583,7 +583,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 24: Virtual nodes from 163 bulk included. Virtual nodes from 163 bulk included",
-      "timestamp": "2026-08-17T11:36:48.248935Z",
+      "timestamp": "2026-08-17T22:13:48.006105Z",
       "hash": "e328788287dd8a86"
     },
     {
@@ -607,7 +607,7 @@
       },
       "derivation_status": "FITTED",
       "note": "Gate 25: 3-loop RG + asymptotic safety fixed point from G2 topology. High-energy tension \u2192 0",
-      "timestamp": "2026-08-17T11:36:48.248953Z",
+      "timestamp": "2026-08-17T22:13:48.006123Z",
       "hash": "81ff992e07e239d3"
     },
     {
@@ -631,7 +631,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 26: Derives m_p/m_e from G2 cycle volumes with < 0.001% error vs CODATA 2022. me locked to EM coupling geometrically",
-      "timestamp": "2026-08-17T11:36:48.248961Z",
+      "timestamp": "2026-08-17T22:13:48.006131Z",
       "hash": "1c1205d8314c4134"
     },
     {
@@ -685,7 +685,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 27: PMNS parameters vs NuFIT dataset (registry-tier evaluation; theta_13 and delta_CP carry FITTED inputs per the honesty convention). Neutrino mixing from hidden rotation",
-      "timestamp": "2026-08-17T11:36:48.248968Z",
+      "timestamp": "2026-08-17T22:13:48.006138Z",
       "hash": "7f5aab5d35ad97d3"
     },
     {
@@ -709,7 +709,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 28: Every lepton has anti-node in 163. Every lepton has anti-node in 163",
-      "timestamp": "2026-08-17T11:36:48.248985Z",
+      "timestamp": "2026-08-17T22:13:48.006156Z",
       "hash": "2a463529778b1f54"
     },
     {
@@ -733,7 +733,7 @@
       },
       "derivation_status": "INPUT",
       "note": "Gate 29: U(1) hypercharge from Shadow handedness. U(1) hypercharge \u2192 Shadow handedness",
-      "timestamp": "2026-08-17T11:36:48.248999Z",
+      "timestamp": "2026-08-17T22:13:48.006171Z",
       "hash": "c538300c566ab781"
     },
     {
@@ -757,7 +757,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 30: m_mu/m_e ~ chi_eff = 144, m_tau/m_mu ~ b3/2 = 12. \u03bc/\u03c4 = higher harmonics of electron",
-      "timestamp": "2026-08-17T11:36:48.249013Z",
+      "timestamp": "2026-08-17T22:13:48.006186Z",
       "hash": "60c22b8ff14890e2"
     },
     {
@@ -790,7 +790,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 31: DERIVED: Appendix J derives v = k_gimel \u00d7 (b3-4) from G2 topology. k_gimel = b3/2 + 1/\u03c0 = 12.318; (b3-4) = 20 = EW DOF. 0.06% from PDG 2024 (246.22 GeV). No kRc tuning required.. Background tension of V7 manifold",
-      "timestamp": "2026-08-17T11:36:48.249023Z",
+      "timestamp": "2026-08-17T22:13:48.006195Z",
       "hash": "cb896ab1ba3c8054"
     },
     {
@@ -814,7 +814,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 32: W/Z mass ratio from SO(10) prediction. \u03c1-parameter from Shadow-A/B split",
-      "timestamp": "2026-08-17T11:36:48.249034Z",
+      "timestamp": "2026-08-17T22:13:48.006205Z",
       "hash": "b09f78f31d471b0d"
     },
     {
@@ -833,7 +833,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Goldstone absorption is standard SM Higgs mechanism, not PM-specific prediction",
       "note": "FOUNDATIONAL: Extra DOF eaten by W/Z. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249047Z",
+      "timestamp": "2026-08-17T22:13:48.006214Z",
       "hash": "1f7fa7c5d5b60867"
     },
     {
@@ -852,7 +852,7 @@
       "derivation_status": "DERIVED",
       "reason": "Gluon octet count is QCD axiom (SU(3) has 8 generators), not PM-specific prediction",
       "note": "FOUNDATIONAL: Exactly 8 gluon states. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249055Z",
+      "timestamp": "2026-08-17T22:13:48.006221Z",
       "hash": "490129a18b372363"
     },
     {
@@ -876,7 +876,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 35: Weinberg angle from shadow sector geometry. \u03b3 and Z orthogonal despite ancestry",
-      "timestamp": "2026-08-17T11:36:48.249061Z",
+      "timestamp": "2026-08-17T22:13:48.006227Z",
       "hash": "128b4307aa6ee5d9"
     },
     {
@@ -900,7 +900,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 36: Module's own unitarity test outputs 5.8e-5 (previous cert claimed < 1e-10 \u2014 corrected). V_us = exp(-3/2) = 0.22313 vs PDG 0.22500 +/- 0.00067 is 2.79 sigma (honest).. Quark mixing probabilities sum to 1",
-      "timestamp": "2026-08-17T11:36:48.249077Z",
+      "timestamp": "2026-08-17T22:13:48.006242Z",
       "hash": "e6c8a1f41ba04594"
     },
     {
@@ -924,7 +924,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 37: Jarlskog invariant from K=4 topology, PDG 2024: J=(3.0\u00b10.3)e-5. 1/288 Jarlskog spiral twist",
-      "timestamp": "2026-08-17T11:36:48.249084Z",
+      "timestamp": "2026-08-17T22:13:48.006251Z",
       "hash": "8996f297f29bf53d"
     },
     {
@@ -943,7 +943,7 @@
       "derivation_status": "INPUT",
       "reason": "GIM mechanism is standard SM structure (Glashow-Iliopoulos-Maiani), not PM-specific prediction",
       "note": "FOUNDATIONAL: Neutral bosons cannot change flavor. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249092Z",
+      "timestamp": "2026-08-17T22:13:48.006258Z",
       "hash": "d33ba57a891dc760"
     },
     {
@@ -967,7 +967,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 39: PMNS angles from 24-pin cage geometry. \u03b812, \u03b823, \u03b813 = principal axes",
-      "timestamp": "2026-08-17T11:36:48.249099Z",
+      "timestamp": "2026-08-17T22:13:48.006265Z",
       "hash": "3489e1b6bb4100f2"
     },
     {
@@ -991,7 +991,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 40: Sterile-active mixing bounded seal for observable universe. Maximum leakage to 163 bulk",
-      "timestamp": "2026-08-17T11:36:48.249116Z",
+      "timestamp": "2026-08-17T22:13:48.006280Z",
       "hash": "6c5714bb93588019"
     },
     {
@@ -1017,7 +1017,7 @@
       },
       "derivation_status": "EXPLORATORY",
       "note": "Gate 41: G ~ 1/288^4 density anchor: topological scaling from 288-root system via dimensional reduction G4=G7/Vol(X). See gravity_residue.py and master_action_derivations.py. G = 1/288\u2074 density anchor",
-      "timestamp": "2026-08-17T11:36:48.249129Z",
+      "timestamp": "2026-08-17T22:13:48.006293Z",
       "hash": "d8d9c3b36d055949"
     },
     {
@@ -1036,7 +1036,7 @@
       "derivation_status": "DERIVED",
       "reason": "Equivalence principle is foundational physics, not PM-specific",
       "note": "FOUNDATIONAL: Inertial = Gravitational mass. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249153Z",
+      "timestamp": "2026-08-17T22:13:48.006315Z",
       "hash": "363f9b73ec911e6e"
     },
     {
@@ -1055,7 +1055,7 @@
       "derivation_status": "FITTED",
       "reason": "Schwarzschild quantization requires quantum gravity theory. The claim that black hole formation shifts matter to '163 hidden bulk' is not derivable from PM topology alone - it requires experimental quantum gravity data that does not exist.",
       "note": "FOUNDATIONAL: Density limit \u2192 163 hidden collapse. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249160Z",
+      "timestamp": "2026-08-17T22:13:48.006322Z",
       "hash": "10643bb00eed545f"
     },
     {
@@ -1074,7 +1074,7 @@
       "derivation_status": "DERIVED",
       "reason": "Frame-dragging (Lense-Thirring effect) is standard GR confirmed by Gravity Probe B. Gate validation returns True unconditionally without deriving frame-dragging from 24-pin torsion topology. No simulation exists that computes frame-dragging from PM geometry.",
       "note": "FOUNDATIONAL: Rotating nodes twist local pins. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249166Z",
+      "timestamp": "2026-08-17T22:13:48.006328Z",
       "hash": "a33489a2e427d32b"
     },
     {
@@ -1093,7 +1093,7 @@
       "derivation_status": "DERIVED",
       "reason": "Geodesic deviation equation (d^2x/dt^2 + Gamma = 0) is standard GR, not a PM-specific prediction. Gate validation returns True unconditionally. The V7 geodesic claim is not computationally verified from the 288-root manifold.",
       "note": "FOUNDATIONAL: Test nodes follow shortest V7 path. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249173Z",
+      "timestamp": "2026-08-17T22:13:48.006336Z",
       "hash": "376ad6dc05c219c6"
     },
     {
@@ -1119,7 +1119,7 @@
       },
       "derivation_status": "INPUT",
       "note": "Gate 46: No runaway expansion/collapse. Vacuum energy = 12/288\u2074 constant",
-      "timestamp": "2026-08-17T11:36:48.249182Z",
+      "timestamp": "2026-08-17T22:13:48.006346Z",
       "hash": "5d879f0fe106b374"
     },
     {
@@ -1152,7 +1152,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 47: H0 from O'Dowd formula: (288/4) - (163/144) + eta_S = 72 - 1.1319 + 0.6819 = 71.55 km/s/Mpc. Within 1.43 sigma of SH0ES 2022 (Riess et al., 73.04 +/- 1.04). NOTE: the ricci-flow module publishes a competing H0 = 76.34 (3.17 sigma) \u2014 see validation_report.json; canonicalization pending.. H0 = (288/4) - (163/72) + 0.6820083682008368 = 71.55 (O'Dowd formula)",
-      "timestamp": "2026-08-17T11:36:48.249212Z",
+      "timestamp": "2026-08-17T22:13:48.006374Z",
       "hash": "da6dd2a35ca81d73"
     },
     {
@@ -1185,7 +1185,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 48: Dark energy EoS from b3 topology: w0 = -1 + 1/b3 = -23/24 = -0.9583. DESI 2025: w0 = -0.957 +/- 0.067 (0.02sigma agreement). Core prediction derived from b3 = 24 (thawing quintessence). w = -\u03c3_T = -0.9583 (Tzimtzum Seal)",
-      "timestamp": "2026-08-17T11:36:48.249223Z",
+      "timestamp": "2026-08-17T22:13:48.006385Z",
       "hash": "3e7204dae91afdf2"
     },
     {
@@ -1211,7 +1211,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 49: Dark matter bulk pressure from 163/288 hidden sector fraction. Same topological ratio as G40 (sterile-active mixing). The 163 hidden nodes of the 288-root system represent 'shadow gravity' providing dark matter effects. Wolfram-validated: 163/288 = 0.5659722.... 163 hidden = shadow gravity",
-      "timestamp": "2026-08-17T11:36:48.249232Z",
+      "timestamp": "2026-08-17T22:13:48.006393Z",
       "hash": "831564b115667ad2"
     },
     {
@@ -1244,7 +1244,7 @@
       },
       "derivation_status": "DERIVED",
       "note": "Gate 50: Leptogenesis chain: epsilon=(3/16pi)*(M_N1*m_nu)/v^2*sin(delta_CP), eta_B=c_sph*epsilon*kappa. The module's direct computation gives 2.30e-10 (factor ~2.7 below Planck); the canonical 6.19e-10 display value sits 1.63 sigma from Planck 2018 (6.12 +/- 0.04e-10). Previous cert claimed sigma < 0.01 \u2014 removed as arithmetically false.. \u03b7 = matter/radiation density",
-      "timestamp": "2026-08-17T11:36:48.249252Z",
+      "timestamp": "2026-08-17T22:13:48.006413Z",
       "hash": "0707a707e15afaab"
     },
     {
@@ -1263,7 +1263,7 @@
       "derivation_status": "INPUT",
       "reason": "Unitary time evolution is quantum mechanical axiom",
       "note": "FOUNDATIONAL: Information conserved Tn \u2192 Tn+1. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249262Z",
+      "timestamp": "2026-08-17T22:13:48.006422Z",
       "hash": "54823cf2c0afb8b9"
     },
     {
@@ -1282,7 +1282,7 @@
       "derivation_status": "INPUT",
       "reason": "Entropy floor is thermodynamic assumption",
       "note": "FOUNDATIONAL: S growth \u221d V7 surface area. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249269Z",
+      "timestamp": "2026-08-17T22:13:48.006431Z",
       "hash": "431694989034df19"
     },
     {
@@ -1301,7 +1301,7 @@
       "derivation_status": "INPUT",
       "reason": "Causality horizon is relativistic constraint",
       "note": "FOUNDATIONAL: No interaction > pin vibration speed. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249275Z",
+      "timestamp": "2026-08-17T22:13:48.006437Z",
       "hash": "1759978f46787992"
     },
     {
@@ -1320,7 +1320,7 @@
       "derivation_status": "INPUT",
       "reason": "CPT invariance is fundamental symmetry assumption",
       "note": "FOUNDATIONAL: C+P+T reversal = identical state. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249281Z",
+      "timestamp": "2026-08-17T22:13:48.006443Z",
       "hash": "98b10e216e039e39"
     },
     {
@@ -1339,7 +1339,7 @@
       "derivation_status": "INPUT",
       "reason": "Decoherence threshold is QM axiom (Copenhagen/decoherence interpretation boundary). The quantum-to-classical transition is foundational to QM, not a PM-specific prediction. PM uses standard decoherence theory as input. quantum_decoherence_solver.py calculates coherence times for Orch-OR but does not verify G55.",
       "note": "FOUNDATIONAL: Hidden\u2192Active observation boundary. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249287Z",
+      "timestamp": "2026-08-17T22:13:48.006449Z",
       "hash": "02bb682c5005a3be"
     },
     {
@@ -1363,7 +1363,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 56: TeV-scale KK mass comes from the warped/exponential suppression m_KK = M_Pl_red*exp(-k_eff*pi) ~ 4.5 TeV. NOTE: the ratio form M_Pl/(b3*k_gimel^2) previously quoted here evaluates to ~3.4e15 GeV, not TeV \u2014 removed as arithmetically false (see geometric_anchors_core audit note). LHC bound: > 3.5 TeV (ATLAS/CMS).. 7 extra dimensions at Planck scale",
-      "timestamp": "2026-08-17T11:36:48.249294Z",
+      "timestamp": "2026-08-17T22:13:48.006456Z",
       "hash": "05279230f562a6f2"
     },
     {
@@ -1382,7 +1382,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Calabi-Yau parity h^{2,1}=3 is a structural assumption about extra dimensions. Hodge numbers of compactified dimensions cannot be experimentally measured. PM derives 3 generations from b3=24, but the CY topology itself is a framework input. No experiment can measure the Hodge diamond of hidden dimensions.",
       "note": "FOUNDATIONAL: Internal holes = 3 generations. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249319Z",
+      "timestamp": "2026-08-17T22:13:48.006481Z",
       "hash": "575164bd437b24a5"
     },
     {
@@ -1401,7 +1401,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Brane-world boundary (matter confined to 4D brane) is a Randall-Sundrum-type assumption. While brane-world models have testable consequences (KK gravitons at G56), the confinement axiom itself is an input, not a PM derivation. brane_diagrams.py is a visualization, not a derivation.",
       "note": "FOUNDATIONAL: 125 matter trapped on 4D brane. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249327Z",
+      "timestamp": "2026-08-17T22:13:48.006489Z",
       "hash": "07c3419a36f37c5b"
     },
     {
@@ -1425,7 +1425,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 59: Racetrack potential minimized via scipy.optimize. Re(T)=7.086 anchored to the Higgs mass (m_h=125.20 GeV, PDG 2024). Vacuum stable with bounce action B > 400. NOTE: sector modules quote other Re(T) values (3.739, 9.865, 37.85, 174.03) \u2014 canonicalization pending (see geometry audit).. No runaway in shape/size fields",
-      "timestamp": "2026-08-17T11:36:48.249334Z",
+      "timestamp": "2026-08-17T22:13:48.006495Z",
       "hash": "0ec0d8d8d958ea38"
     },
     {
@@ -1458,7 +1458,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 60: CANONICAL ruling (2026-08): wa = -1/sqrt(b3) = -0.204, the pure zero-spare-variable form \u2014 1.88 sigma from DESI DR1 (-0.75 +/- 0.29), an honest tension. The x4 co-associative projection (-0.8165, 0.23 sigma) was a post-DESI graft and is retained only as the RETRODICTED variant cosmology.wa_projection_x4.. w_a = -4/sqrt(b3) thawing evolution (FITTED dim(Psi)=4 projection)",
-      "timestamp": "2026-08-17T11:36:48.249342Z",
+      "timestamp": "2026-08-17T22:13:48.006503Z",
       "hash": "5e9d912e2c24592b"
     },
     {
@@ -1477,7 +1477,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Bit parity is information theoretic axiom",
       "note": "FOUNDATIONAL: State changes sum to 0 in registry. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249351Z",
+      "timestamp": "2026-08-17T22:13:48.006512Z",
       "hash": "d72400ab1ed1ae70"
     },
     {
@@ -1496,7 +1496,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Von Neumann entropy ceiling assumes QM entropy axioms. No derivation from 288-root structure - gate validation just returns True unconditionally. Entropy bounds are not computed from the framework.",
       "note": "FOUNDATIONAL: Max entanglement 125\u2194163 limited. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249358Z",
+      "timestamp": "2026-08-17T22:13:48.006518Z",
       "hash": "9a2806603a27c14d"
     },
     {
@@ -1515,7 +1515,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Bell's Gate assumes QM violates Bell inequalities. Gate validation only checks torsion=24, does not derive Bell violations from V7 connectivity. CHSH predictions exist separately in predictions_aggregator but G63 does not verify them.",
       "note": "FOUNDATIONAL: Non-local limits from V7 connectivity. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249364Z",
+      "timestamp": "2026-08-17T22:13:48.006523Z",
       "hash": "59cf26b88879d682"
     },
     {
@@ -1534,7 +1534,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Holographic bound S<=A/(4G) is Bekenstein-Hawking physics (1970s-1990s), not PM-derived. PM uses this bound as input to derive Lambda, not as an output.",
       "note": "FOUNDATIONAL: S \u2264 A/4 for any volume. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249370Z",
+      "timestamp": "2026-08-17T22:13:48.006529Z",
       "hash": "9a87e8bafbe7d629"
     },
     {
@@ -1553,7 +1553,7 @@
       "derivation_status": "DERIVED",
       "reason": "Landauer's principle is fundamental thermodynamics, not PM-specific",
       "note": "FOUNDATIONAL: Heat from erasing info in 163. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249376Z",
+      "timestamp": "2026-08-17T22:13:48.006535Z",
       "hash": "0d5ef9c47d97e686"
     },
     {
@@ -1577,7 +1577,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 66: Active/sterile sectors orthogonal from 288-root geometry. 125 (left-handed, observable) perpendicular to 163 (right-handed, structural). Chiral split from G2 holonomy preserving 1 spinor. Consequence of G03+G06+G20: 1/288 twist is sole source of baryon asymmetry.. 1/288 twist = sole baryon asymmetry",
-      "timestamp": "2026-08-17T11:36:48.249383Z",
+      "timestamp": "2026-08-17T22:13:48.006542Z",
       "hash": "a75ea4af6021933a"
     },
     {
@@ -1601,7 +1601,7 @@
       },
       "derivation_status": "RIGOROUS",
       "note": "Gate 67: Electroweak symmetry breaking derived from G2 geometry: (1) EWSB from Higgs potential minimization in higgs_derivations.py, (2) Force separation verified via 3-loop RG running from M_GUT to M_Z in renormalization_group_runner.py, (3) Higgs VEV v=246 GeV from G2 manifold. All three gauge couplings match PDG 2024 at M_Z.. Force freezing at geometric nodes",
-      "timestamp": "2026-08-17T11:36:48.249444Z",
+      "timestamp": "2026-08-17T22:13:48.006597Z",
       "hash": "b833ed79cb00875f"
     },
     {
@@ -1620,7 +1620,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Omega point recovery is philosophical/teleological",
       "note": "FOUNDATIONAL: All 125 info re-absorbable by 163. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249453Z",
+      "timestamp": "2026-08-17T22:13:48.006606Z",
       "hash": "cf577585a6dfc3c3"
     },
     {
@@ -1639,7 +1639,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Topological soliton stability (pi_3(S^2)->125 knots) is a framework consistency constraint. The 125 value comes from visible_sector partition (5^3=125), not derived from homotopy theory. Verifying cosmic string/domain wall/monopole soliton stability requires cosmological observations of topological defects which are not currently accessible. Gate validation only checks active==125, not actual soliton physics.",
       "note": "FOUNDATIONAL: Only 125 knots stable. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249459Z",
+      "timestamp": "2026-08-17T22:13:48.006613Z",
       "hash": "6734d75f7e9868ff"
     },
     {
@@ -1658,7 +1658,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Mathematical consequence of G18 (Mass-Gap Quantization). The spectral gap \u0394m >= 1/288 is the same theorem restated - discrete eigenvalue spectrum with gaps > 0 is guaranteed by G18's theorem.",
       "note": "MATHEMATICAL: No ghost nodes between 125. This is a mathematical constraint derivable from the 288-root manifold.",
-      "timestamp": "2026-08-17T11:36:48.249465Z",
+      "timestamp": "2026-08-17T22:13:48.006619Z",
       "hash": "e598194f099f79e9"
     },
     {
@@ -1677,7 +1677,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Recursive logical loop is self-referential closure",
       "note": "FOUNDATIONAL: End state \u2192 initial conditions. This is a framework assumption, not an empirical prediction.",
-      "timestamp": "2026-08-17T11:36:48.249472Z",
+      "timestamp": "2026-08-17T22:13:48.006626Z",
       "hash": "019d9c7eddb7fa8b"
     },
     {
@@ -1696,7 +1696,7 @@
       "derivation_status": "RIGOROUS",
       "reason": "Omega Hash is the verification seal itself",
       "note": "Gate 72: computed aggregate over 16 executed evaluations \u2014 ALL PASS. No longer an asserted seal.",
-      "timestamp": "2026-08-17T11:36:48.249478Z",
+      "timestamp": "2026-08-17T22:13:48.006632Z",
       "hash": "ff3e30dffbcd8e0d",
       "evaluation_status": "COMPUTED_PASS",
       "evaluation": {

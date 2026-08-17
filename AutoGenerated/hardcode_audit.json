@@ -4,8 +4,8 @@
   "summary": {
     "files_scanned": 185,
     "dataset_values": 333,
-    "exact_dup": 377,
-    "stale_dup": 360,
+    "exact_dup": 379,
+    "stale_dup": 358,
     "files_with_findings": 83
   },
   "worst_files": [
@@ -1378,10 +1378,10 @@
     {
       "file": "simulations/PM/derivations/matter_sector_complete.py",
       "line": 1327,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/derivations/matter_sector_complete.py",
@@ -2810,10 +2810,10 @@
     {
       "file": "simulations/PM/paper/predictions_aggregator.py",
       "line": 354,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/paper/predictions_aggregator.py",
@@ -2914,9 +2914,9 @@
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
       "line": 237,
-      "literal": 3.08e-05,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
-      "dataset_value": 3.08e-05,
+      "literal": 3.12e-05,
+      "dataset_key": "pdg_2024_values.ckm.jarlskog.value",
+      "dataset_value": 3.12e-05,
       "class": "EXACT_DUP"
     },
     {
@@ -4034,9 +4034,9 @@
     {
       "file": "simulations/PM/particle/yukawa_derivation.py",
       "line": 302,
-      "literal": 8.54,
-      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_13.value",
-      "dataset_value": 8.54,
+      "literal": 8.58,
+      "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
+      "dataset_value": 8.58,
       "class": "EXACT_DUP"
     },
     {
@@ -4161,7 +4161,7 @@
     },
     {
       "file": "simulations/PM/portals/sterile_neutrino_portals.py",
-      "line": 162,
+      "line": 164,
       "literal": 1.22e+19,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
       "dataset_value": 1.22e+19,
@@ -4169,7 +4169,7 @@
     },
     {
       "file": "simulations/PM/portals/sterile_neutrino_portals.py",
-      "line": 163,
+      "line": 165,
       "literal": 246.0,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,

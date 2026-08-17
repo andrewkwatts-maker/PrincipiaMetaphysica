@@ -1,7 +1,7 @@
 {
   "framework": "Principia Metaphysica",
   "audit_type": "27D Terminology Compliance",
-  "generated_at": "2026-08-17T11:36:56.416477Z",
+  "generated_at": "2026-08-17T22:13:55.884186Z",
   "total_files_scanned": 4,
   "files_scanned": [
     "formulas.json",
@@ -95,14 +95,14 @@
       "path": "sections.json['sections']['C']['contentBlocks'][5]['content']",
       "pattern": "\\b25D\\b",
       "suggestion": "v23+ uses 27D = 24 + 1 + 2",
-      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is a rank-4 <strong>co-isometry</...",
       "file": "sections.json"
     },
     {
       "path": "sections.json['sections']['C']['content_blocks'][5]['content']",
       "pattern": "\\b25D\\b",
       "suggestion": "v23+ uses 27D = 24 + 1 + 2",
-      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is a rank-4 <strong>co-isometry</...",
       "file": "sections.json"
     },
     {
@@ -151,14 +151,14 @@
       "path": "theory_output.json['sections']['C']['contentBlocks'][5]['content']",
       "pattern": "\\b25D\\b",
       "suggestion": "v23+ uses 27D = 24 + 1 + 2",
-      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is a rank-4 <strong>co-isometry</...",
       "file": "theory_output.json"
     },
     {
       "path": "theory_output.json['sections']['C']['content_blocks'][5]['content']",
       "pattern": "\\b25D\\b",
       "suggestion": "v23+ uses 27D = 24 + 1 + 2",
-      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is <strong>unitary and lossless</...",
+      "snippet": "Where P<sub>13\u21924</sub> is a rank-ordered tensor that maps the internal degrees of freedom of the V\u2081\u2083 bulk onto the 4D Minkowski space. In the v24.2 model, this matrix is a rank-4 <strong>co-isometry</...",
       "file": "theory_output.json"
     },
     {

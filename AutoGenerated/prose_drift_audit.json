@@ -3,272 +3,164 @@
   "note": "Prose-drift audit (S-1 guard): superseded numerals from the canonical-value rulings found in section content. Every hit is prose that must be rewritten to the canonical value or explicitly framed as a retired candidate.",
   "summary": {
     "tokens_scanned": 30,
-    "hits": 69
+    "hits": 46
   },
   "hits": [
     {
       "section": "1",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "i stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without tuning. The Prim"
+      "context": "racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without tuning. The Primordial Spinor F"
     },
     {
       "section": "1",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "ermines the vacuum structure and derives ε ≈ 0.2257.</p>"
-    },
-    {
-      "section": "1",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "es from G₂ triality; Yukawa hierarchies (ε = 0.2257 from racetrack); mixing angle derivations. <"
-    },
-    {
-      "section": "1",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "stabilization proposes the Cabibbo angle ε = 0.2257 from flux competition (minimal phenomenologi"
-    },
-    {
-      "section": "1",
-      "token": "125.25",
-      "ruling": "stale m_H (canonical 125.20)",
-      "context": "onstrain Re(T) from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. ("
-    },
-    {
-      "section": "1",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "a textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli stabilization; Yukawa"
-    },
-    {
-      "section": "2",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "across these sectors dynamically derives ε ≈ 0.2257 (Cabibbo angle) from flux quantization N₁=24"
-    },
-    {
-      "section": "2",
-      "token": "125.10",
-      "ruling": "stale m_H (canonical 125.20)",
-      "context": "e value constrained by the Higgs mass (m_h = 125.10 GeV). Open problem: Higgs inversion yields R"
-    },
-    {
-      "section": "2",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "Froggatt-Nielsen suppression parameter: ε ≈ 0.2257 (CALIBRATED: quoted constants do not reprodu"
-    },
-    {
-      "section": "2",
-      "token": "125.10",
-      "ruling": "stale m_H (canonical 125.20)",
-      "context": "confirmed by the Higgs mass constraint m_h = 125.10 GeV constraining Re(T)), the Casimir contrib"
-    },
-    {
-      "section": "2",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "tension) → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 (CALIBRATED: quoted constants do not reprodu"
-    },
-    {
-      "section": "2.7",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "The sampling strength α<sub>sample</sub> ~ 0.57 is the dark matter portal coupling from hidd"
+      "context": "and PMNS matrices from G₂ triality; Yukawa hierarchies (ε = 0.2257 from racetrack); mixing angle derivations. <strong>Section"
     },
     {
       "section": "3.2",
       "token": "0.23189",
       "ruling": "geometric sin2 presented as sin2_theta_w (scheme ruling)",
-      "context": "on. The Weinberg angle sin²(θ<sub>W</sub>) = 0.23189 is locked by the G₂ cycle volume ratio, not"
+      "context": "d massive Z boson. The Weinberg angle sin²(θ<sub>W</sub>) = 0.23189 is locked by the G₂ cycle volume ratio, not fit to data."
     },
     {
       "section": "3.2",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "i, with a portal coupling α<sub>leak</sub> ~ 0.57 determined by the volume ratio 1/√6, torsion"
+      "context": "gh shared moduli, with a portal coupling α<sub>leak</sub> ~ 0.57 determined by the volume ratio 1/√6, torsion corrections fr"
     },
     {
       "section": "4.2",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "~ 0.223 agrees with the Cabibbo angle V_us = 0.2257, providing a geometric origin for the flavor"
+      "context": "value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.2257, providing a geometric origin for the flavor hierarchy m_t"
     },
     {
       "section": "4.4",
       "token": "125.10",
       "ruling": "stale m_H (canonical 125.20)",
-      "context": "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a phenomenological INPUT to c"
+      "context": "**Critical Note**: The Higgs mass m_h = 125.10 GeV is used as a phenomenological INPUT to constrain Re(T)"
     },
     {
       "section": "4.4",
       "token": "125.25",
       "ruling": "stale m_H (canonical 125.20)",
-      "context": "nsion with the PDG 2024 combined value m_h = 125.25 +/- 0.17 GeV is consistent with missing two-"
+      "context": "The 27-sigma tension with the PDG 2024 combined value m_h = 125.25 +/- 0.17 GeV is consistent with missing two-loop QCD correc"
     },
     {
       "section": "A4",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "in parameter λ_W = ε_rt^(1/3) ≈ 0.2502 (PDG: 0.2257) follows from the racetrack moduli minimum —"
+      "context": "braic Wolfenstein parameter λ_W = ε_rt^(1/3) ≈ 0.2502 (PDG: 0.2257) follows from the racetrack moduli minimum — DERIVED, zero"
     },
     {
       "section": "A4",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2257)\nRacetrack minimum T_min ≈ 3.739012\nAlgebrai"
+      "context": ")| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
     },
     {
       "section": "A4",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "gen) = ε_rt^(1/3) ≈ 0.2502. The PDG value is 0.2257 — agreement ≈ 89%, purely from topology (N₁="
+      "context": "_W = ε_rt^(1/n_gen) = ε_rt^(1/3) ≈ 0.2502. The PDG value is 0.2257 — agreement ≈ 89%, purely from topology (N₁=b₃=24, N₂=23, n"
     },
     {
       "section": "neutrino-algebraic",
       "token": "9.5941",
       "ruling": "theta13_deg: asin(1/6) — the zero-var elegant candidate, FALSIFIED at 4.1-8.8 sigma; retained in neutrino_algebraic as a documented falsified candidate",
-      "context": ") = (1/√6) / √6 = 1/6 ≈ 0.1667\nθ₁₃_derived ≈ 9.5941°\nNuFIT 6.0 (NO): 8.57° ± 0.25°\nSigma deviati"
+      "context": "eak / √(2 n_gen) = (1/√6) / √6 = 1/6 ≈ 0.1667\nθ₁₃_derived ≈ 9.5941°\nNuFIT 6.0 (NO): 8.57° ± 0.25°\nSigma deviation: +4.10σ  (~1"
     },
     {
       "section": "5.1",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "via racetrack superpotential determines ε = 0.2257 dynamically, making it a prediction rather t"
+      "context": "s stabilization via racetrack superpotential determines ε = 0.2257 dynamically, making it a prediction rather than an input. B"
     },
     {
       "section": "5.1",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
+      "context": "aT) + B·exp(−bT), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
     },
     {
       "section": "5.1",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "ixes the Kaluza-Klein spectrum parameter ε = 0.2257, making it a derived quantity rather than a"
-    },
-    {
-      "section": "5.2",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "/√6 ≈ 0.408 from G₂ volume ratio (α_sample ≈ 0.57 with flux corrections)."
-    },
-    {
-      "section": "5.6",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "en faces (f=2,3,4): suppressed by α_sample ≈ 0.57\n- Total breathing: weighted average across 4"
+      "context": "This in turn fixes the Kaluza-Klein spectrum parameter ε = 0.2257, making it a derived quantity rather than a free input. See"
     },
     {
       "section": "5.9",
       "token": "76.34",
       "ruling": "H0_km_s_Mpc: ricci-flow variant (3.17 sigma SH0ES) -> cosmology.H0_ricci_variant",
-      "context": "At z=0 (local): H0 = 76.34 km/s/Mpc (3.17 sigma above SH0ES 73.04 +/- 1"
+      "context": "At z=0 (local): H0 = 76.34 km/s/Mpc (3.17 sigma above SH0ES 73.04 +/- 1.04). At z=1089"
     },
     {
       "section": "4.7",
       "token": "8.33",
       "ruling": "stale theta13 section text (canonical 8.65)",
-      "context": "{b_2 \\times n_{gen}}}{b_3}(1 + \\eta) \\approx 8.33^\\circ\\end{aligned}"
-    },
-    {
-      "section": "5.3",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "ometric; the mirror temperature ratio T'/T = 0.57 involves loop corrections (FITTED). The resu"
-    },
-    {
-      "section": "5.3",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "T'/T = 0.57"
-    },
-    {
-      "section": "5.3",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "the loop-corrected temperature ratio T'/T = 0.57 is not independently derived from topology;"
+      "context": "&= \\frac{\\sqrt{b_2 \\times n_{gen}}}{b_3}(1 + \\eta) \\approx 8.33^\\circ\\end{aligned}"
     },
     {
       "section": "2.8",
       "token": "125.10",
       "ruling": "stale m_H (canonical 125.20)",
-      "context": "is constrained from the measured Higgs mass (125.10 GeV); the exact value is an open problem (9."
+      "context": "modulus Re(T) is constrained from the measured Higgs mass (125.10 GeV); the exact value is an open problem (9.865 from Higgs"
     },
     {
       "section": "7.4",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "c Yukawa y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57 through cross-shadow wave-function overlap."
+      "context": "enerates a Dirac Yukawa y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57 through cross-shadow wave-function overlap. Hidden-face Käh"
     },
     {
       "section": "7.4",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "coupling y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57, entirely determined by the geometric portal"
+      "context": "a Dirac Yukawa coupling y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57, entirely determined by the geometric portal coupling."
     },
     {
       "section": "7",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "0) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabi"
-    },
-    {
-      "section": "7",
-      "token": "125.25",
-      "ruling": "stale m_H (canonical 125.20)",
-      "context": "raint of Re(T) from the measured Higgs mass (125.25 GeV) completes the geometric unification pro"
-    },
-    {
-      "section": "7",
-      "token": "125.25",
-      "ruling": "stale m_H (canonical 125.20)",
-      "context": "✅ Higgs mass: 125.25 GeV (matches PDG 2024)"
+      "context": "comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with z"
     },
     {
       "section": "7",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "v15.0: Racetrack moduli stabilization — ε = 0.2257 DERIVED (not input)"
+      "context": "✅ v15.0: Racetrack moduli stabilization — ε = 0.2257 DERIVED (not input)"
     },
     {
       "section": "7",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "- Racetrack stabilization: Cabibbo angle ε = 0.2257 now DERIVED from moduli dynamics with zero t"
+      "context": "v15.0 - Racetrack stabilization: Cabibbo angle ε = 0.2257 now DERIVED from moduli dynamics with zero tuning"
     },
     {
       "section": "7",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "/48 = 144/48 = 3), and the Cabibbo angle ε = 0.2257 from racetrack moduli stabilization. The fra"
+      "context": "χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle ε = 0.2257 from racetrack moduli stabilization. The framework makes sh"
     },
     {
       "section": "7",
       "token": "0.9996",
       "ruling": "n_s: Re(T) slow-roll variant, FALSIFIED at 8.3 sigma",
-      "context": ":</strong> new Re(T) slow-roll formula gives 0.9996 (8.5σ from Planck); older <code>cosmology.n_"
+      "context": "g>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636"
     },
     {
       "section": "7",
       "token": "0.967",
       "ruling": "n_s: rounding drift",
-      "context": "trong> n<sub>s</sub> = 1 − 2/N<sub>e</sub> = 0.967 for N<sub>e</sub> = 60 e-folds (Planck: 0.96"
-    },
-    {
-      "section": "7",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "face sampling strength α<sub>sample</sub> ≈ 0.57 (base coupling α<sub>leak</sub> = 1/√6 ≈ 0.4"
+      "context": "ctral index:</strong> n<sub>s</sub> = 1 − 2/N<sub>e</sub> = 0.967 for N<sub>e</sub> = 60 e-folds (Planck: 0.965 ± 0.004)"
     },
     {
       "section": "6",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where ε ≈ 0.2257 is the dynamically derived Cabibbo angle fro"
+      "context": "etrically via k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where ε ≈ 0.2257 is the dynamically derived Cabibbo angle from the racetrack"
     },
     {
       "section": "6",
@@ -280,7 +172,13 @@
       "section": "6",
       "token": "0.2257",
       "ruling": "stale V_us (canonical 0.22500)",
-      "context": "CKM Breakthrough:</strong> Cabibbo angle ε = 0.2257 is now <em>derived</em> from racetrack super"
+      "context": "<strong>v24.2 CKM Breakthrough:</strong> Cabibbo angle ε = 0.2257 is now <em>derived</em> from racetrack superpotential minim"
+    },
+    {
+      "section": "6",
+      "token": "+0.27",
+      "ruling": "wa: thermal alpha_T form (wrong sign vs data)",
+      "context": "DESI 2025 BAO-only: 0.02σ (w₀), 3.4σ (w<sub>a,eff</sub>=+0.27; canonical −1/√24 is 1.9σ)"
     },
     {
       "section": "6",
@@ -292,55 +190,31 @@
       "section": "6",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "ak at ~230× weaker than dark matter portal (~0.57)."
-    },
-    {
-      "section": "6",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "rror neutrinos with temperature ratio T'/T ~ 0.57. If CMB-S4 establishes ΔN<sub>eff</sub> < 0."
+      "context": "and gravity leak at ~230× weaker than dark matter portal (~0.57)."
     },
     {
       "section": "3.7",
       "token": "0.9996",
       "ruling": "n_s: Re(T) slow-roll variant, FALSIFIED at 8.3 sigma",
-      "context": "ass=\"pm-value\" data-pm-value=\"cosmology.n_s\">0.9996</span></Normal>, which is 8.5σ from Planck 2"
-    },
-    {
-      "section": "3.7",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "PDG 2024: 0.2257 ± 0.0010"
-    },
-    {
-      "section": "3.7",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "5.4 (T'/T ~ 0.57)"
-    },
-    {
-      "section": "3.7",
-      "token": "0.2257",
-      "ruling": "stale V_us (canonical 0.22500)",
-      "context": "g(ops.div(pi, 2))) ≈ 0.208</EML> vs measured 0.2257).</p>"
+      "context": ">n_s = <span class=\"pm-value\" data-pm-value=\"cosmology.n_s\">0.9996</span></Normal>, which is 8.3σ from Planck 2018 (0.9649 ± 0"
     },
     {
       "section": "4",
       "token": "0.9996",
       "ruling": "n_s: Re(T) slow-roll variant, FALSIFIED at 8.3 sigma",
-      "context": "ew <code>inflation</code> module gives n_s = 0.9996 (8.5σ from Planck); older <code>cosmology.n_"
+      "context": "compatible) — new <code>inflation</code> module gives n_s = 0.9996 (Re(T) slow-roll variant, FALSIFIED at 8.3 sigma; canonical"
     },
     {
       "section": "D",
       "token": "70.42",
       "ruling": "H0_km_s_Mpc: sterile extraction (2.5 sigma SH0ES, 6.0 Planck)",
-      "context": "H_0^{\\text{geo}} = 70.42 \\text{ km/s/Mpc} \\quad \\sigma_{\\text{combine"
+      "context": "H_0^{\\text{geo}} = 70.42 \\text{ km/s/Mpc} \\quad \\sigma_{\\text{combined}} = 0.48"
     },
     {
       "section": "D",
       "token": "70.42",
       "ruling": "H0_km_s_Mpc: sterile extraction (2.5 sigma SH0ES, 6.0 Planck)",
-      "context": "/tr><tr><td>v24.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48σ (Combined)</td></tr></"
+      "context": "><td>2.6σ</td></tr><tr><td>v24.2 Sterile Extraction</td><td>70.42 (Fixed)</td><td>0.48σ (Combined)</td></tr></table>"
     },
     {
       "section": "I",
@@ -352,7 +226,7 @@
       "section": "L",
       "token": "8.33",
       "ruling": "stale theta13 section text (canonical 8.65)",
-      "context": "ssolves</td></tr><tr><td>Gauge Ghost</td><td>8.33%</td><td>24 pins lock permanently</td><td>Fo"
+      "context": "0, spacetime dissolves</td></tr><tr><td>Gauge Ghost</td><td>8.33%</td><td>24 pins lock permanently</td><td>Forces freeze, ti"
     },
     {
       "section": "L",
@@ -364,61 +238,49 @@
       "section": "5.1.1",
       "token": "-0.980",
       "ruling": "w0: a z-evolution output misquoted as w0",
-      "context": "edicting dark energy equation of state w_0 = -0.980."
+      "context": "tive cycles, predicting dark energy equation of state w_0 = -0.980."
     },
     {
       "section": "5.1.1",
       "token": "-0.980",
       "ruling": "w0: a z-evolution output misquoted as w0",
-      "context": "ied gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observati"
+      "context": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.0"
     },
     {
       "section": "5.2.1",
       "token": "+0.1",
       "ruling": "wa: attractor estimate (wrong sign vs data)",
-      "context": "aft quoted a sub-leading CPL parameter w_a ~ +0.1 from the time-variation of the modulus (SUPE"
+      "context": ". An earlier draft quoted a sub-leading CPL parameter w_a ~ +0.1 (SUPERSEDED attractor estimate; canonical w_a = -1/√24) fro"
     },
     {
       "section": "5.2.1",
       "token": "+0.1",
       "ruling": "wa: attractor estimate (wrong sign vs data)",
-      "context": "t w_0 = -23/24 = -0.9583 exactly, with w_a ~ +0.1 from residual modulus evolution (SUPERSEDED:"
+      "context": "dynamics predict w_0 = -23/24 = -0.9583 exactly, with w_a ~ +0.1 (SUPERSEDED attractor estimate; canonical w_a = -1/√24) fro"
     },
     {
       "section": "7.1",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "the inter-face leakage coupling alpha_leak ~ 0.57, this gives the axion-gluon vertex g_agg = ("
-    },
-    {
-      "section": "7.1",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "will cover the axion-nucleon coupling g_aN ~ 0.57/f_a across the relevant mass range. The conv"
-    },
-    {
-      "section": "7.1",
-      "token": "0.57",
-      "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "f_a, g_{a gamma gamma} via Primakoff, g_aN ~ 0.57/f_a"
+      "context": "Combined with the inter-face leakage coupling alpha_leak ~ 0.57, this gives the axion-gluon vertex g_agg = (alpha_leak / (p"
     },
     {
       "section": "7.3",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "he face sampling strength α<sub>leak</sub> ~ 0.57, derived entirely from G₂ geometry. We compu"
+      "context": "2, 3, 4) via the face sampling strength α<sub>leak</sub> ~ 0.57, derived entirely from G₂ geometry. We compute the portal c"
     },
     {
       "section": "7.3",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": ". The inter-face coupling α<sub>leak</sub> ~ 0.57 derived in Section 2.7 from the face samplin"
+      "context": "shadow sectors. The inter-face coupling α<sub>leak</sub> ~ 0.57 derived in Section 2.7 from the face sampling strength prov"
     },
     {
       "section": "7.3",
       "token": "0.57",
       "ruling": "alpha_leak: alpha_sample ANSATZ mis-labelled as alpha_leak",
-      "context": "he face sampling strength α<sub>leak</sub> ~ 0.57 is the fundamental geometric quantity, measu"
+      "context": "(4π) ~ 0.11. The face sampling strength α<sub>leak</sub> ~ 0.57 is the fundamental geometric quantity, measuring the wavefu"
     }
   ]
 }
