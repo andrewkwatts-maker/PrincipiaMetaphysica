@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-16T22:01:07.249056Z",
+  "generated_at": "2026-08-17T09:52:03.475691Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 260,
+  "total_scripts": 261,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -554,6 +554,7 @@
           "parameters_contributed": [
             "cosmology.H0_early",
             "cosmology.H0_local",
+            "cosmology.H0_ricci_variant",
             "cosmology.H0_tension_sigma",
             "cosmology.ricci_flow_rate",
             "cosmology.z_transition"
@@ -826,6 +827,7 @@
             "gauge.qcd_gluon_count",
             "gauge.rho_parameter",
             "gauge.sin2_theta_w",
+            "gauge.sin2_theta_w_geometric",
             "gauge.weak_boson_count",
             "gauge.weak_canonical",
             "gauge.weak_coupling_g2"
@@ -956,6 +958,7 @@
             "cosmology.sigma8_pred",
             "cosmology.w0_derived",
             "cosmology.wa_derived",
+            "cosmology.wa_projection_x4",
             "geometry.A_Wolfenstein",
             "geometry.DM_to_baryon_ratio",
             "geometry.D_G2",
@@ -1056,6 +1059,7 @@
             "geometry.w_zero",
             "geometry.wa",
             "geometry.wa_observed_DESI",
+            "geometry.wa_projection_x4",
             "geometry.xi_breathing",
             "higgs.vev_pred",
             "topology.n_gen"
@@ -2594,7 +2598,7 @@
     },
     "core": {
       "title": "core",
-      "count": 12,
+      "count": 13,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2609,6 +2613,16 @@
             "pm.version.short",
             "system.version"
           ]
+        },
+        {
+          "file": "canonical_values.py",
+          "path": "simulations/core/canonical_values.py",
+          "category": "core",
+          "title": null,
+          "description": "Canonical-value rulings for every contested quantity (2026-08 review).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "demon_lock_guard.py",

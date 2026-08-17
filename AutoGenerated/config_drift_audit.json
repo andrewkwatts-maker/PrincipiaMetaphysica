@@ -199,13 +199,13 @@
       "formula_id": "weak-mixing-angle",
       "verdict": "DRIFT",
       "registry_path": "gauge.sin2_theta_w",
-      "registry_status": "DERIVED",
+      "registry_status": "ESTABLISHED",
       "checks": [
         {
           "field": "computed_value",
           "config": 0.2312022,
-          "registry": 0.23190478152123015,
-          "ok": false
+          "registry": 0.23122,
+          "ok": true
         },
         {
           "field": "experimental_value",
@@ -216,7 +216,7 @@
         {
           "field": "sigma_deviation",
           "config": 0.45,
-          "registry": 0.6842343525281191,
+          "registry": 0.0,
           "ok": false
         }
       ]
@@ -363,8 +363,8 @@
       "checks": [
         {
           "field": "computed_value",
-          "config": -0.8165,
-          "registry": -0.8164965809277261,
+          "config": -0.2041,
+          "registry": -0.20412414523193154,
           "ok": true
         }
       ]

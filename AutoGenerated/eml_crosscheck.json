@@ -1,16 +1,16 @@
 {
-  "total": 703,
-  "with_eml_description": 501,
+  "total": 707,
+  "with_eml_description": 505,
   "skip": 235,
   "buckets": {
-    "AGREE": 349,
-    "AGREE_LOOSE": 8,
-    "DISAGREE": 46,
-    "DISAGREE_MISSING_CTX": 58,
+    "AGREE": 352,
+    "AGREE_LOOSE": 9,
+    "DISAGREE": 47,
+    "DISAGREE_MISSING_CTX": 57,
     "DISAGREE_SCALE": 7
   },
-  "agreement_rate_strict": 0.7457264957264957,
-  "agreement_rate_loose": 0.7628205128205128,
+  "agreement_rate_strict": 0.7457627118644068,
+  "agreement_rate_loose": 0.7648305084745762,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -803,8 +803,8 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.814474974944668,
-      "rel_error": 0.9556497920345024,
+      "registered": 7.808318123819027,
+      "rel_error": 0.9556148219393418,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
       "diagnostic": "rel_err=95.56%"
     },
@@ -1018,9 +1018,9 @@
     {
       "path": "cosmology.H0_early",
       "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 76.33940416705775,
+      "evaluated": 71.55006392375641,
       "registered": 67.4,
-      "rel_error": 0.13263210930352737,
+      "rel_error": 0.061573648720421446,
       "eml_description": "EML: ops.mul(eml_vec('cosmology.H0_local'), ops.sub(eml_scalar(1.0), eml_vec('f_z_cmb'))) \u2014 H0_early = H0_local * (1 - f(z_CMB)) from Ricci flow interpolation",
       "diagnostic": "missing: f_z_cmb",
       "missing_refs": [
@@ -1045,6 +1045,14 @@
     },
     {
       "path": "cosmology.H0_local",
+      "status": "AGREE",
+      "evaluated": 71.5500639237564,
+      "registered": 71.5500639237564,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.add(ops.sub(ops.div(eml_scalar(288.0), eml_scalar(4.0)), ops.div(eml_scalar(163.0), eml_scalar(144.0))), eml_vec('eta_S')) \u2014 O'Dowd composite (fitted inputs)"
+    },
+    {
+      "path": "cosmology.H0_ricci_variant",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.add(H0_GR, ops.mul(alpha_leak, ops.mul(H0_torsion, epsilon_T)))': name 'H0_GR' is not defined",
       "registered": 76.33940416705774,
@@ -1304,12 +1312,12 @@
     },
     {
       "path": "cosmology.growth_index_pm",
-      "status": "DISAGREE_MISSING_CTX",
+      "status": "AGREE_LOOSE",
       "evaluated": 0.55,
-      "registered": 0.5589982991426107,
-      "rel_error": 0.016097185190745995,
+      "registered": 0.5528745747856527,
+      "rel_error": 0.005199325338422614,
       "eml_description": "EML: ops.add(eml_scalar(0.55), ops.mul(eml_scalar(0.005), eml_vec('w0_pm'))) \u2014 growth index gamma_PM \u2248 0.55 + 0.005*w0; Linder formula for PM dark energy",
-      "diagnostic": "missing: w0_pm",
+      "diagnostic": "within 1%",
       "missing_refs": [
         "w0_pm"
       ]
@@ -1453,14 +1461,14 @@
       "path": "cosmology.s8_friction_kernel",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.integrate(ops.mul(eml_vec('H_z'), eml_vec('f_growth')), eml_vec('z_grid'))\": module 'eml_math.operators' has no attribute 'integrate'",
-      "registered": 0.1394648793699075,
+      "registered": 0.13470310280473333,
       "eml_description": "EML: ops.integrate(ops.mul(eml_vec('H_z'), eml_vec('f_growth')), eml_vec('z_grid')) \u2014 friction kernel I(z) integrated over growth history for DM drag suppression"
     },
     {
       "path": "cosmology.s8_friction_suppression_pct",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 5.181769763625798,
+      "registered": 5.130944181205244,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_scalar(100.0), ops.sub(ops.exp(ops.neg(ops.mul(eml_vec('beta_eff'), eml_vec('I_z')))), eml_scalar(1.0))) \u2014 friction suppression percent = 100*(exp(-beta_eff * I(z)) - 1)",
       "diagnostic": "missing: beta_eff, I_z",
@@ -1473,8 +1481,8 @@
       "path": "cosmology.s8_improvement_factor",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
-      "registered": 2.25742889332452,
-      "rel_error": 0.5570181621414007,
+      "registered": 2.543537616125376,
+      "rel_error": 0.6068467815611389,
       "eml_description": "EML: ops.div(eml_vec('tension_lcdm_avg'), eml_vec('tension_pm_avg')) \u2014 improvement = sigma_LCDM / sigma_PM; ratio of tension reductions",
       "diagnostic": "missing: tension_lcdm_avg, tension_pm_avg",
       "missing_refs": [
@@ -1486,60 +1494,60 @@
       "path": "cosmology.s8_pm_baseline",
       "status": "DISAGREE",
       "evaluated": 1.0813555366653325,
-      "registered": 0.8468398523494727,
-      "rel_error": 0.2769303826044788,
+      "registered": 0.8427501875050468,
+      "rel_error": 0.2831270199614838,
       "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.mul(ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3))), eml_vec('suppression_factor'))) \u2014 S8 baseline from dark energy growth suppression only, before moduli-DM friction",
-      "diagnostic": "rel_err=27.69%"
+      "diagnostic": "rel_err=28.31%"
     },
     {
       "path": "cosmology.s8_pm_predicted",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3))))': name 'sigma8' is not defined",
-      "registered": 0.8029585609340943,
+      "registered": 0.7995091457971604,
       "eml_description": "EML: ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3)))) \u2014 S8 from 48-channel variance reduction; with friction: ops.mul(S8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z))))"
     },
     {
       "path": "cosmology.s8_suppression_factor",
       "status": "DISAGREE",
       "evaluated": 0.14433756729740643,
-      "registered": 1.005556320203449,
-      "rel_error": 0.8564599869769568,
+      "registered": 1.0007001619576876,
+      "rel_error": 0.855763421667649,
       "eml_description": "EML: ops.inv(ops.sqrt(eml_scalar(48.0))) \u2014 1/sqrt(12 bridges \u00d7 4 faces) = sigma8 variance reduction factor; full suppression: ops.div(D_PM_z, D_LCDM_z)",
-      "diagnostic": "rel_err=85.65%"
+      "diagnostic": "rel_err=85.58%"
     },
     {
       "path": "cosmology.s8_tension_des",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 1.5857977020055483,
+      "registered": 1.3828909292447262,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017)) \u2014 sigma tension = |S8_PM - S8_DES| / sigma_DES"
     },
     {
       "path": "cosmology.s8_tension_des_baseline",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_baseline'), eml_scalar(0.776))), eml_scalar(0.017))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 4.1670501382042735,
+      "registered": 3.9264816179439292,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_baseline'), eml_scalar(0.776))), eml_scalar(0.017)) \u2014 baseline sigma tension (no friction) = |S8_base - S8_DES| / sigma_DES"
     },
     {
       "path": "cosmology.s8_tension_kids",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 1.8479280467047166,
+      "registered": 1.6754572898580178,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020)) \u2014 sigma tension = |S8_PM - S8_KiDS| / sigma_KiDS"
     },
     {
       "path": "cosmology.s8_tension_kids_baseline",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_baseline'), eml_scalar(0.766))), eml_scalar(0.020))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 4.041992617473633,
+      "registered": 3.83750937525234,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_baseline'), eml_scalar(0.766))), eml_scalar(0.020)) \u2014 baseline sigma tension (no friction) = |S8_base - S8_KiDS| / sigma_KiDS"
     },
     {
       "path": "cosmology.s8_tension_planck",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 2.233956851223509,
+      "registered": 2.4992964771415074,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013)) \u2014 sigma tension = |S8_PM - S8_Planck| / sigma_Planck"
     },
     {
@@ -1667,8 +1675,8 @@
     {
       "path": "cosmology.wa_derived",
       "status": "AGREE",
-      "evaluated": -0.8164965809277261,
-      "registered": -0.8164965809277261,
+      "evaluated": -0.20412414523193154,
+      "registered": -0.20412414523193154,
       "rel_error": 0.0,
       "eml_description": "EML: eml_vec('geometry.wa')"
     },
@@ -1679,6 +1687,14 @@
       "registered": 0.5421981846008558,
       "rel_error": 0.0,
       "eml_description": "EML: ops.div(ops.sub(eml_vec('cosmology.wa_thawing'), eml_scalar(-0.99)), eml_scalar(0.32)) \u2014 \u03c3-deviation of predicted w\u2090 from DESI 2025 measurement"
+    },
+    {
+      "path": "cosmology.wa_projection_x4",
+      "status": "AGREE",
+      "evaluated": -0.8164965809277261,
+      "registered": -0.8164965809277261,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_vec('geometry.wa_projection_x4')"
     },
     {
       "path": "cosmology.wa_thawing",
@@ -1902,7 +1918,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 23414.6418,
+      "registered": 23011.0018,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -1914,7 +1930,7 @@
       "path": "framework_statistics.degrees_of_freedom",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted))\": name 'N_fitted' is not defined",
-      "registered": 57.0,
+      "registered": 58.0,
       "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted)) \u2014 dof = N_pred \u2212 N_fitted_params"
     },
     {
@@ -2231,6 +2247,14 @@
     },
     {
       "path": "gauge.sin2_theta_w",
+      "status": "AGREE",
+      "evaluated": 0.23122,
+      "registered": 0.23122,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.23122) \u2014 PDG 2024 MS-bar weak mixing angle at the Z pole (ESTABLISHED input)."
+    },
+    {
+      "path": "gauge.sin2_theta_w_geometric",
       "status": "AGREE",
       "evaluated": 0.23190478152124616,
       "registered": 0.23190478152123015,
@@ -3147,11 +3171,12 @@
     },
     {
       "path": "geometry.wa",
-      "status": "AGREE",
+      "status": "DISAGREE",
       "evaluated": -0.8164965809277258,
-      "registered": -0.8164965809277261,
-      "rel_error": 4.0792198665315547e-16,
-      "eml_description": "EML: ops.mul(ops.neg(ops.div(eml_scalar(1.0), ops.sqrt(eml_vec('elder_kads')))), eml_scalar(4.0)) \u2014 dark energy wa = -4/\u221ab\u2083 \u2248 -0.816 (co-associative 4-form scaling)"
+      "registered": -0.20412414523193154,
+      "rel_error": 2.9999999999999982,
+      "eml_description": "EML: ops.mul(ops.neg(ops.div(eml_scalar(1.0), ops.sqrt(eml_vec('elder_kads')))), eml_scalar(4.0)) \u2014 dark energy wa = -4/\u221ab\u2083 \u2248 -0.816 (co-associative 4-form scaling)",
+      "diagnostic": "rel_err=300.00%"
     },
     {
       "path": "geometry.wa_observed_DESI",
@@ -3160,6 +3185,14 @@
       "registered": -0.99,
       "rel_error": 0.0,
       "eml_description": "EML: eml_scalar(-0.99) \u2014 DESI 2025 thawing wa = -0.99 \u00b1 0.33"
+    },
+    {
+      "path": "geometry.wa_projection_x4",
+      "status": "AGREE",
+      "evaluated": -0.8164965809277261,
+      "registered": -0.8164965809277261,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_vec('wa_projection_x4') \u2014 geometric anchor from G\u2082 TCS topology"
     },
     {
       "path": "geometry.xi_breathing",
@@ -5113,7 +5146,7 @@
     {
       "path": "validation.success_rate",
       "status": "SKIP",
-      "reason": "non-numeric value: '81.0%'",
+      "reason": "non-numeric value: '81.4%'",
       "eml_description": "EML: ops.mul(ops.div(eml_vec('validation.within_2sigma'), eml_vec('validation.total_predictions')), eml_scalar(100.0)) \u2014 success rate = within_2\u03c3/total \u00d7 100%"
     },
     {
@@ -5126,7 +5159,7 @@
       "path": "validation.total_predictions",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_pred)': name 'N_pred' is not defined",
-      "registered": 58.0,
+      "registered": 59.0,
       "eml_description": "EML: eml_scalar(N_pred) \u2014 total number of verifiable predicted observables"
     },
     {
@@ -5147,7 +5180,7 @@
       "path": "validation.within_2sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_2\u03c3)': name 'N_2\u03c3' is not defined",
-      "registered": 47.0,
+      "registered": 48.0,
       "eml_description": "EML: eml_scalar(N_2\u03c3) \u2014 count of predictions within 2\u03c3 of experimental value"
     },
     {

@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "note": "Canonical-value rulings (2026-08 peer review, C-1). Chosen under the minimal-spare-variables principle: the candidate derived from b3=24 + structural integers with fewest extra inputs wins unless data falsified it — falsified elegant candidates stay on the books labelled FALSIFIED. Prose and displays must read this table, never restate values.",
+  "rulings": {
+    "w0": {
+      "value": -0.9583333333333334,
+      "form": "-(b3-1)/b3 = -23/24",
+      "status": "PREDICTED",
+      "spare_vars": 0,
+      "comparison": {
+        "dataset": "DESI thawing anchor",
+        "exp": -0.957,
+        "unc": 0.067
+      },
+      "superseded": {
+        "-0.8528": "thermal-time alpha_T=4.5 mechanism (retired pre-DESI candidate)",
+        "-0.980": "a z-evolution output misquoted as w0",
+        "-1.0": "the LambdaCDM limit, not a framework value"
+      }
+    },
+    "wa": {
+      "value": -0.20412414523193154,
+      "form": "-1/sqrt(b3)",
+      "status": "PREDICTED",
+      "spare_vars": 0,
+      "comparison": {
+        "dataset": "DESI DR1 w0waCDM",
+        "exp": -0.75,
+        "unc": 0.29
+      },
+      "note": "Ruling: the pure form is canonical despite the x4 projection fitting better (0.23 vs 1.88 sigma) — the multiplier was introduced after DESI and is exactly the 'spare variable' the elegance principle excludes. The projection stays registered as cosmology.wa_projection_x4, status RETRODICTED.",
+      "superseded": {
+        "-0.8165": "x b2 projection, post-DESI graft -> kept as RETRODICTED variant",
+        "+0.27": "thermal alpha_T form (wrong sign vs data)",
+        "+0.1": "attractor estimate (wrong sign vs data)",
+        "+0.29": "sign-error copy of 1/sqrt(12)"
+      }
+    },
+    "H0_km_s_Mpc": {
+      "value": 71.55,
+      "form": "O'Dowd composite: 288/4 - 163/144 + eta_S",
+      "status": "FITTED_COMPOSITE",
+      "spare_vars": 3,
+      "comparison": {
+        "dataset": "SH0ES 2022",
+        "exp": 73.04,
+        "unc": 1.04
+      },
+      "note": "Ruling: H0 is NOT a topology-first prediction in the current framework. The minimal candidate (Planck x golden-angle correction, 1 var) lands 3.5 sigma from SH0ES and 18.6 from Planck — dead. The O'Dowd composite (3 fitted inputs, 1.43 sigma SH0ES / 8.3 Planck) is the canonical DISPLAY value; the ricci-flow variant is registered separately as cosmology.H0_ricci_variant and all 'Hubble tension resolved' claims are retired.",
+      "superseded": {
+        "76.34": "ricci-flow variant (3.17 sigma SH0ES) -> cosmology.H0_ricci_variant",
+        "70.42": "sterile extraction (2.5 sigma SH0ES, 6.0 Planck)"
+      }
+    },
+    "theta13_deg": {
+      "value": 8.6473,
+      "form": "neutrino_mixing arcsin form",
+      "status": "TOPOLOGY_CANDIDATE",
+      "spare_vars": 2,
+      "comparison": {
+        "dataset": "NuFIT IO",
+        "exp": 8.63,
+        "unc": 0.11
+      },
+      "superseded": {
+        "9.5941": "asin(1/6) — the zero-var elegant candidate, FALSIFIED at 4.1-8.8 sigma; retained in neutrino_algebraic as a documented falsified candidate",
+        "8.33": "stale section-text value"
+      }
+    },
+    "lambda_cabibbo": {
+      "value": 0.22313016014842982,
+      "form": "exp(-3/2)",
+      "status": "TOPOLOGY_CANDIDATE",
+      "spare_vars": 1,
+      "comparison": {
+        "dataset": "PDG 2024 V_us",
+        "exp": 0.225,
+        "unc": 0.00067
+      },
+      "superseded": {
+        "0.20788": "exp(-pi/2), the zero-var candidate, FALSIFIED at 25.5 sigma",
+        "0.2257": "stale 2008-era PDG copy"
+      }
+    },
+    "sin2_theta_w": {
+      "value": 0.23122,
+      "form": "PDG 2024 MS-bar at M_Z (ESTABLISHED input)",
+      "status": "ESTABLISHED",
+      "spare_vars": null,
+      "comparison": {
+        "dataset": "PDG 2024",
+        "exp": 0.23122,
+        "unc": 3e-05
+      },
+      "note": "Scheme ruling: the registered tree ratio from (g', g2) gives 0.2232 — comparing that against MS-bar 0.23122 without Delta-r radiative corrections manufactured a fake 267-sigma clash. gauge.sin2_theta_w now carries the PDG scheme value used in EW formulas; the geometric candidate 0.23190 is registered separately as gauge.sin2_theta_w_geometric (0.68 sigma with its 0.001 theory uncertainty).",
+      "superseded": {
+        "0.23190": "geometric spectral candidate -> gauge.sin2_theta_w_geometric",
+        "0.2232": "tree-level ratio of registered g',g2 (scheme-inequivalent; keep as consistency row only)"
+      }
+    },
+    "tau_p_years": {
+      "value": 4.757e+34,
+      "form": "registry proton_decay chain",
+      "status": "PREDICTED",
+      "spare_vars": 2,
+      "comparison": {
+        "dataset": "Super-K p->e+pi0 bound (PDG 2024)",
+        "exp": 2.4e+34,
+        "unc": null,
+        "kind": "lower_bound",
+        "ratio": 1.9820833333333336
+      },
+      "superseded": {
+        "3.9e34": "prose rounding drift",
+        "8.15e34": "stale config literal",
+        "1.0e34": "wrong output binding"
+      }
+    },
+    "sum_mnu_eV": {
+      "value": 0.0994,
+      "form": "IO chain from fitted m_base",
+      "status": "TENSION",
+      "spare_vars": 1,
+      "comparison": {
+        "dataset": "DESI 2024 bound",
+        "exp": 0.072,
+        "unc": null,
+        "kind": "upper_bound"
+      },
+      "note": "Ruling: the framework's actual claim is inverted ordering; it EXCEEDS the DESI bound and is displayed as TENSION/FAIL rather than silently switching to the passing NO scenario (0.0598, documented alternative). Prose contradictions (85.5% IH vs NH 76%) collapse to: framework prefers IO; global data prefer NO.",
+      "superseded": {
+        "0.0598": "normal-ordering alternative scenario (passes bound; not the framework's claim)"
+      }
+    },
+    "M_GUT_GeV": {
+      "value": 2.118e+16,
+      "form": "RG-crossing unification scale",
+      "status": "DERIVED_RG",
+      "spare_vars": 2,
+      "comparison": null,
+      "note": "Three distinct scales were being conflated — named apart:",
+      "related": {
+        "M_GUT_geometric": 6325000000000000.0,
+        "M_GUT_threshold_eff": 1.24e+17
+      },
+      "superseded": {
+        "2e17": "rounding of the threshold scale misquoted as M_GUT"
+      }
+    },
+    "alpha_leak": {
+      "value": 0.4082482904638631,
+      "form": "1/sqrt(chi_eff/b3) = 1/sqrt(6)",
+      "status": "DERIVED",
+      "spare_vars": 0,
+      "comparison": null,
+      "note": "Naming ruling: only 1/sqrt(6) is alpha_leak. 0.57 is alpha_sample (ANSATZ, four_face); 1/(4pi)-family factors are alpha_moduli (PHENOMENOLOGICAL); the per-force table values are alpha_leak_i couplings. The four were sharing one symbol.",
+      "superseded": {
+        "0.57": "alpha_sample ANSATZ mis-labelled as alpha_leak",
+        "0.0796": "moduli loop factor 1/(4pi), different quantity"
+      }
+    },
+    "MKK_TeV": {
+      "value": 4.5,
+      "form": "warped exponential M_Pl_red*exp(-k_eff*pi)",
+      "status": "PREDICTED",
+      "spare_vars": 1,
+      "comparison": {
+        "dataset": "LHC lower bound",
+        "exp": 3.5,
+        "unc": null,
+        "kind": "lower_bound"
+      },
+      "superseded": {
+        "5.0": "tower-table drift",
+        "3.4e15 GeV": "ratio form M_Pl/(b3*k_gimel^2) — a different (and mislabelled) quantity"
+      }
+    },
+    "n_s": {
+      "value": 0.964,
+      "form": "canonical inflation mechanism (n_s_canonical_source)",
+      "status": "TOPOLOGY_CANDIDATE",
+      "spare_vars": 1,
+      "comparison": {
+        "dataset": "Planck 2018",
+        "exp": 0.9649,
+        "unc": 0.0042
+      },
+      "superseded": {
+        "0.9996": "Re(T) slow-roll variant, FALSIFIED at 8.3 sigma",
+        "0.967": "rounding drift"
+      }
+    },
+    "bulk": {
+      "value": 27,
+      "form": "M^27(24,1,2) = 24 core + 1 time + 2 sampler",
+      "status": "STRUCTURAL",
+      "spare_vars": 0,
+      "comparison": null,
+      "note": "D_crit = 26 = b3+2 is the string CRITICAL dimension (a different object), never the bulk. (24,1) totals 25 and must not be labelled '26D'. Clifford algebra of the physics core is Cl(24,1) with spinor dim 2^12 = 4096 (never Cl(26,1)/8192). Shadow bookkeeping: 13 = 4 (spacetime) + 7 (V7) + 2 (T2) — the '9-dimensional internal G2xT2' text is correct, the '8-dimensional' text is the error. chi_eff = 144 total, 72 per shadow (chi_sector) — '72' texts refer to the sector value, never a rival total.",
+      "superseded": {}
+    },
+    "root_split_288": {
+      "value": null,
+      "form": "TWO distinct fitted decompositions, never interchangeable",
+      "status": "FITTED",
+      "spare_vars": 2,
+      "comparison": null,
+      "note": "sector split S_vis+S_shadow = 135+153 (mirror-DM cosmology) and residue split R_active+R_hidden = 125+163 (parameter registry / sterile angle). Both fitted; cross-use is a bug. Known offender: speed-of-light B_v mixes 163 with 153/135 in one formula (already labelled FITTED).",
+      "superseded": {}
+    },
+    "compression_ratio": {
+      "value": null,
+      "form": "computed from the proof ledger each build",
+      "status": "POLICY",
+      "spare_vars": null,
+      "comparison": null,
+      "note": "116:1 / 121:1 / 131:1 / 152:1 / 2.3:1 hand-claims all retired; emit one ratio from ledger counts.",
+      "superseded": {}
+    },
+    "residue_count": {
+      "value": null,
+      "form": "'125 slots, N populated' with N = len(registry) computed",
+      "status": "POLICY",
+      "spare_vars": null,
+      "comparison": null,
+      "note": "Narrative said 125/121; emission is 107. State both truthfully, computed.",
+      "superseded": {}
+    },
+    "certificate_count": {
+      "value": null,
+      "form": "'72 gates + 25 named certificates'",
+      "status": "POLICY",
+      "spare_vars": null,
+      "comparison": null,
+      "superseded": {
+        "42": "sector-matrix subtotal misquoted as total",
+        "196": "unknown provenance; retired"
+      }
+    }
+  },
+  "registry_drift": []
+}

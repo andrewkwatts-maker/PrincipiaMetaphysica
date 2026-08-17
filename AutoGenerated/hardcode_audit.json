@@ -4,7 +4,7 @@
   "summary": {
     "files_scanned": 185,
     "dataset_values": 333,
-    "exact_dup": 373,
+    "exact_dup": 377,
     "stale_dup": 360,
     "files_with_findings": 83
   },
@@ -31,7 +31,7 @@
     ],
     [
       "simulations/PM/cosmology/ricci_flow_h0.py",
-      26
+      28
     ],
     [
       "simulations/PM/particle/octonionic_mixing.py",
@@ -46,15 +46,15 @@
       18
     ],
     [
+      "simulations/PM/gauge/master_action.py",
+      17
+    ],
+    [
       "simulations/PM/particle/higgs_mass.py",
       16
     ],
     [
       "simulations/PM/cosmology/s8_suppression.py",
-      15
-    ],
-    [
-      "simulations/PM/gauge/master_action.py",
       15
     ],
     [
@@ -793,7 +793,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 806,
+      "line": 839,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -801,7 +801,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 807,
+      "line": 840,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -809,7 +809,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 808,
+      "line": 841,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -817,7 +817,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 967,
+      "line": 1000,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -825,7 +825,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 381,
+      "line": 390,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -833,7 +833,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 714,
+      "line": 723,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -841,7 +841,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 804,
+      "line": 837,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -849,7 +849,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 905,
+      "line": 938,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -857,7 +857,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 965,
+      "line": 998,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -865,7 +865,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1128,
+      "line": 1161,
       "literal": 0.311,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -873,7 +873,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1130,
+      "line": 1163,
       "literal": 0.689,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
       "dataset_value": 0.6931,
@@ -881,7 +881,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 189,
+      "line": 190,
       "literal": 0.3111,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -889,23 +889,23 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 238,
+      "line": 239,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 239,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
       "line": 240,
+      "literal": 67.4,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
+      "dataset_value": 67.4,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/cosmology/ricci_flow_h0.py",
+      "line": 241,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -913,7 +913,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 319,
+      "line": 328,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -921,7 +921,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 712,
+      "line": 721,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -929,7 +929,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 802,
+      "line": 835,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -937,7 +937,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 903,
+      "line": 936,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -945,7 +945,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 963,
+      "line": 996,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -953,7 +953,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 729,
+      "line": 741,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -961,7 +961,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 732,
+      "line": 744,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -969,7 +969,23 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 746,
+      "line": 762,
+      "literal": 73.04,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
+      "dataset_value": 73.04,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/cosmology/ricci_flow_h0.py",
+      "line": 765,
+      "literal": 1.04,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
+      "dataset_value": 1.04,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/cosmology/ricci_flow_h0.py",
+      "line": 779,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -977,7 +993,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 968,
+      "line": 1001,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -985,7 +1001,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 983,
+      "line": 1016,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -993,7 +1009,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 984,
+      "line": 1017,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -1569,7 +1585,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 334,
+      "line": 335,
       "literal": 0.117,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -1577,7 +1593,15 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 1341,
+      "line": 362,
+      "literal": 0.23122,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/gauge/master_action.py",
+      "line": 1347,
       "literal": 0.1179,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -1585,7 +1609,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 1407,
+      "line": 1416,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1593,7 +1617,15 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 1424,
+      "line": 1441,
+      "literal": 0.23122,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/gauge/master_action.py",
+      "line": 1456,
       "literal": 91.1876,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
       "dataset_value": 91.1876,
@@ -1601,7 +1633,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 1440,
+      "line": 1472,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -1609,7 +1641,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 1443,
+      "line": 1475,
       "literal": 0.0133,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
       "dataset_value": 0.0133,
@@ -1617,7 +1649,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 1455,
+      "line": 1487,
       "literal": 1.00037,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1625,7 +1657,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2173,
+      "line": 2205,
       "literal": 0.23189,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1633,7 +1665,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2174,
+      "line": 2206,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1641,7 +1673,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2085,
+      "line": 2117,
       "literal": 0.23022,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1649,7 +1681,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2086,
+      "line": 2118,
       "literal": 0.23222,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1657,7 +1689,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2096,
+      "line": 2128,
       "literal": 91.1855,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
       "dataset_value": 91.1876,
@@ -1665,7 +1697,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2097,
+      "line": 2129,
       "literal": 91.1897,
       "dataset_key": "pdg_2024_values.gauge_bosons.m_Z.value",
       "dataset_value": 91.188,
@@ -1673,7 +1705,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2118,
+      "line": 2150,
       "literal": 0.999,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1681,7 +1713,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 2119,
+      "line": 2151,
       "literal": 1.001,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1849,7 +1881,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 779,
+      "line": 780,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
@@ -1857,7 +1889,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 786,
+      "line": 787,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -1865,7 +1897,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 793,
+      "line": 794,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1873,7 +1905,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 807,
+      "line": 808,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1881,7 +1913,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 818,
+      "line": 819,
       "literal": 1.1663788e-05,
       "dataset_key": "pdg_2024_values.constants.G_F.value",
       "dataset_value": 1.1663788e-05,
@@ -1889,7 +1921,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 829,
+      "line": 830,
       "literal": 2.7255,
       "dataset_key": "planck_2018.T_CMB.value",
       "dataset_value": 2.7255,
@@ -1897,7 +1929,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 838,
+      "line": 839,
       "literal": 6.12e-10,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
       "dataset_value": 6.12e-10,
@@ -1905,7 +1937,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 358,
+      "line": 359,
       "literal": 137.03599917931578,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1913,7 +1945,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 460,
+      "line": 461,
       "literal": 0.9636384168229182,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1921,7 +1953,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 514,
+      "line": 515,
       "literal": 0.9965722039899612,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1929,7 +1961,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 800,
+      "line": 801,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1937,7 +1969,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1498,
+      "line": 1500,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1945,7 +1977,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1522,
+      "line": 1524,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1953,7 +1985,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1546,
+      "line": 1548,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
@@ -1961,7 +1993,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1559,
+      "line": 1561,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -1969,122 +2001,10 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1831,
+      "line": 1833,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1835,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1851,
-      "literal": 0.9649,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1855,
-      "literal": 0.9649,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1910,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 400,
-      "literal": 0.9583333333333334,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1510,
-      "literal": 0.957,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1841,
-      "literal": 0.957,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1845,
-      "literal": 0.957,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 284,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 423,
-      "literal": 0.9649,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1911,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 381,
-      "literal": 0.957,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1727,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1747,
-      "literal": 0.9649,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
       "class": "EXACT_DUP"
     },
     {
@@ -2097,7 +2017,23 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1906,
+      "line": 1853,
+      "literal": 0.9649,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1857,
+      "literal": 0.9649,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1912,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2105,7 +2041,103 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1737,
+      "line": 401,
+      "literal": 0.9583333333333334,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1512,
+      "literal": 0.957,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1843,
+      "literal": 0.957,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1847,
+      "literal": 0.957,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 285,
+      "literal": 137.035999177,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 424,
+      "literal": 0.9649,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1913,
+      "literal": 137.035999177,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 382,
+      "literal": 0.957,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1729,
+      "literal": 137.035999177,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1749,
+      "literal": 0.9649,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1839,
+      "literal": 137.035999177,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1908,
+      "literal": 137.035999177,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/geometric_anchors.py",
+      "line": 1739,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2193,7 +2225,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 1141,
+      "line": 1152,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,

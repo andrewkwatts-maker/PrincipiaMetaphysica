@@ -4,10 +4,10 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set).",
   "summary": {
-    "total": 163,
+    "total": 165,
     "fail": 11,
-    "marginal": 11,
-    "pass": 107,
+    "marginal": 12,
+    "pass": 108,
     "tension": 3,
     "unbounded": 31
   },
@@ -48,7 +48,7 @@
       "verdict": "FAIL"
     },
     {
-      "path": "cosmology.H0_local",
+      "path": "cosmology.H0_ricci_variant",
       "sigma": 3.172504006786279,
       "verdict": "FAIL"
     },
@@ -64,7 +64,7 @@
     },
     {
       "path": "cosmology.s8_pm_predicted",
-      "sigma": 2.185585369627783,
+      "sigma": 2.499168563894508,
       "verdict": "TENSION"
     },
     {
@@ -665,13 +665,27 @@
     },
     {
       "path": "cosmology.H0_local",
+      "value": 71.5500639237564,
+      "experimental_value": 73.04,
+      "experimental_uncertainty": 1.04,
+      "experimental_source": "SH0ES 2022 (Riess et al.)",
+      "sigma": 1.4326308425419316,
+      "verdict": "MARGINAL",
+      "registry_status": "DERIVED",
+      "units": "km/s/Mpc",
+      "source_simulation": "ricci_flow_h0_v16_1",
+      "bound_type": "central_value",
+      "relative_margin": null
+    },
+    {
+      "path": "cosmology.H0_ricci_variant",
       "value": 76.33940416705774,
       "experimental_value": 73.04,
       "experimental_uncertainty": 1.04,
       "experimental_source": "SH0ES 2022 (Riess et al.)",
       "sigma": 3.172504006786279,
       "verdict": "FAIL",
-      "registry_status": "PREDICTED",
+      "registry_status": "DERIVED",
       "units": "km/s/Mpc",
       "source_simulation": "ricci_flow_h0_v16_1",
       "bound_type": "central_value",
@@ -735,11 +749,11 @@
     },
     {
       "path": "cosmology.s8_pm_predicted",
-      "value": 0.8029585609340943,
+      "value": 0.7995091457971604,
       "experimental_value": 0.827,
       "experimental_uncertainty": 0.011,
       "experimental_source": "DESI2025",
-      "sigma": 2.185585369627783,
+      "sigma": 2.499168563894508,
       "verdict": "TENSION",
       "registry_status": "PREDICTED",
       "units": "dimensionless",
@@ -1099,6 +1113,20 @@
     },
     {
       "path": "gauge.sin2_theta_w",
+      "value": 0.23122,
+      "experimental_value": 0.23122,
+      "experimental_uncertainty": 3e-05,
+      "experimental_source": "PDG2024",
+      "sigma": 0.0,
+      "verdict": "PASS",
+      "registry_status": "ESTABLISHED",
+      "units": "dimensionless",
+      "source_simulation": "master_action_simulation_v22_0",
+      "bound_type": "measured",
+      "relative_margin": null
+    },
+    {
+      "path": "gauge.sin2_theta_w_geometric",
       "value": 0.23190478152123015,
       "experimental_value": 0.23122,
       "experimental_uncertainty": 4e-05,
