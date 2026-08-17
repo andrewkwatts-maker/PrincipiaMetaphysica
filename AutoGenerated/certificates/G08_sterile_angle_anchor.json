@@ -11,8 +11,16 @@
   "result": "25.7234",
   "formula": "\u03b8_s = arcsin(125/288)",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": 25.723445992028612,
+    "stated": 25.7234,
+    "rel_delta": 1.7879451631760205e-06,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 8: Tilt required to view matter from 25D bulk. \u03b8s = arcsin(125/288) \u2248 25.72\u00b0",
-  "timestamp": "2026-08-17T09:51:40.269153Z",
+  "timestamp": "2026-08-17T11:36:48.248648Z",
   "hash": "f08513010f0e224e"
 }

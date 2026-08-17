@@ -7,12 +7,18 @@
   "phase": 2,
   "block": "C",
   "version": "24.2",
-  "wl_code": "tau_p > 10^34",
-  "result": "3.9e34 yr",
+  "wl_code": "tau_p > 2.4*10^34",
+  "result": "4.757e34 yr (ratio 2.0 above the bound)",
   "formula": "\u03c4_p > 10\u00b3\u2074 yr",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
-  "note": "Gate 23: proton_decay_v16_0.py confirms tau_p ~ 3.9e34 years > Super-K bound. Baryon\u2192meson decay forbidden by SO(24)",
-  "timestamp": "2026-08-17T09:51:40.272198Z",
-  "hash": "155c1691d832481c"
+  "note": "Gate 23: Canonical tau_p = 4.757e34 yr vs Super-K p->e+pi0 bound 2.4e34 yr (PDG 2024) \u2014 evaluated against the live registry value.. Baryon\u2192meson decay forbidden by SO(24)",
+  "timestamp": "2026-08-17T11:36:48.248909Z",
+  "hash": "6c8c3bd8c45196fd"
 }

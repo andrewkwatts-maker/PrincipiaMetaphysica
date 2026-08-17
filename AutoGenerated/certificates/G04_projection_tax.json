@@ -11,8 +11,16 @@
   "result": "1.44676e-4",
   "formula": "\u039b_base = 12/288\u00b2",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": 0.00014467592592592592,
+    "stated": 0.000144676,
+    "rel_delta": 5.119997378780736e-07,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 4: \u039b \u2248 12/288\u00b2 as baseline. 12\u03b4 vacuum pressure from 25D\u21924D projection",
-  "timestamp": "2026-08-17T09:51:40.268196Z",
+  "timestamp": "2026-08-17T11:36:48.248533Z",
   "hash": "15954d35a9346c77"
 }

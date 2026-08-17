@@ -11,8 +11,16 @@
   "result": "0.5660",
   "formula": "DM = 163/288 of total",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": 0.5659722222222222,
+    "stated": 0.566,
+    "rel_delta": 4.90773458970631e-05,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 49: Dark matter bulk pressure from 163/288 hidden sector fraction. Same topological ratio as G40 (sterile-active mixing). The 163 hidden nodes of the 288-root system represent 'shadow gravity' providing dark matter effects. Wolfram-validated: 163/288 = 0.5659722.... 163 hidden = shadow gravity",
-  "timestamp": "2026-08-17T09:51:40.277206Z",
+  "timestamp": "2026-08-17T11:36:48.249232Z",
   "hash": "831564b115667ad2"
 }

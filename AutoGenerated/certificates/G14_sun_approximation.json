@@ -11,8 +11,16 @@
   "result": "216",
   "formula": "\u03a3(72\u00d73) = 216",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": 216,
+    "stated": 216.0,
+    "rel_delta": 0.0,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "RIGOROUS",
   "note": "Gate 14: \u03a3(72\u00d73) group bridge to Lie Algebra. Gate symmetry \u2248 continuous SU(3)",
-  "timestamp": "2026-08-17T09:51:40.270502Z",
+  "timestamp": "2026-08-17T11:36:48.248788Z",
   "hash": "d4799c96183e82f7"
 }

@@ -11,8 +11,14 @@
   "result": "True",
   "formula": "L conserved",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 28: Every lepton has anti-node in 163. Every lepton has anti-node in 163",
-  "timestamp": "2026-08-17T09:51:40.273146Z",
+  "timestamp": "2026-08-17T11:36:48.248985Z",
   "hash": "2a463529778b1f54"
 }

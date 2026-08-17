@@ -3,9 +3,9 @@
   "note": "SSOT drift audit: config.py Formula literals cross-checked against the simulation registry (parameters.json). DRIFT = literal disagrees with registry; ORPHAN = no registry source exists for the literal. Roadmap: replace config literals with registry lookups so every displayed number traces to the b3=24 derivation chain or a cited experimental dataset.",
   "summary": {
     "checked": 34,
-    "match": 12,
-    "drift": 11,
-    "orphan": 11
+    "match": 15,
+    "drift": 7,
+    "orphan": 12
   },
   "findings": [
     {
@@ -52,15 +52,15 @@
     },
     {
       "formula_id": "proton-lifetime",
-      "verdict": "DRIFT",
+      "verdict": "MATCH",
       "registry_path": "proton_decay.tau_p_years",
       "registry_status": "PREDICTED",
       "checks": [
         {
           "field": "computed_value",
-          "config": 8.15e+34,
+          "config": 4.757e+34,
           "registry": 4.757399129595567e+34,
-          "ok": false
+          "ok": true
         }
       ]
     },
@@ -78,13 +78,13 @@
         },
         {
           "field": "experimental_value",
-          "config": 45.2,
+          "config": 49.3,
           "registry": 49.3,
-          "ok": false
+          "ok": true
         },
         {
           "field": "sigma_deviation",
-          "config": 0.15,
+          "config": 4.3,
           "registry": 0.45000000000000284,
           "ok": false
         }
@@ -92,17 +92,12 @@
     },
     {
       "formula_id": "kk-graviton-mass",
-      "verdict": "DRIFT",
-      "registry_path": "geometry.m_KK",
-      "registry_status": "GEOMETRIC",
-      "checks": [
-        {
-          "field": "computed_value",
-          "config": 5.0,
-          "registry": 3352262024757155.5,
-          "ok": false
-        }
-      ]
+      "verdict": "ORPHAN",
+      "output_params": [],
+      "config_value": 4.5,
+      "config_experimental": null,
+      "config_sigma": null,
+      "detail": "no registry path found — config literal has no authoritative source to check against"
     },
     {
       "formula_id": "virasoro-anomaly",
@@ -197,13 +192,13 @@
     },
     {
       "formula_id": "weak-mixing-angle",
-      "verdict": "DRIFT",
+      "verdict": "MATCH",
       "registry_path": "gauge.sin2_theta_w",
       "registry_status": "ESTABLISHED",
       "checks": [
         {
           "field": "computed_value",
-          "config": 0.2312022,
+          "config": 0.23122,
           "registry": 0.23122,
           "ok": true
         },
@@ -215,23 +210,23 @@
         },
         {
           "field": "sigma_deviation",
-          "config": 0.45,
+          "config": 0.0,
           "registry": 0.0,
-          "ok": false
+          "ok": true
         }
       ]
     },
     {
       "formula_id": "higgs-vev",
-      "verdict": "DRIFT",
+      "verdict": "MATCH",
       "registry_path": "higgs.vev",
       "registry_status": "ESTABLISHED",
       "checks": [
         {
           "field": "computed_value",
-          "config": 173.97,
+          "config": 246.03,
           "registry": 246.0,
-          "ok": false
+          "ok": true
         }
       ]
     },

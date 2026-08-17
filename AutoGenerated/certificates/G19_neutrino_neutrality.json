@@ -11,8 +11,14 @@
   "result": "Matches NuFIT",
   "formula": "\u03bd type from torsion",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "FITTED",
   "note": "Gate 19: PMNS matches NuFIT. Majorana/Dirac status from torsion twist",
-  "timestamp": "2026-08-17T09:51:40.271469Z",
+  "timestamp": "2026-08-17T11:36:48.248846Z",
   "hash": "34b6742e46c2a8d0"
 }

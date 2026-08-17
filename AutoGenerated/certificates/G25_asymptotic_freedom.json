@@ -11,8 +11,14 @@
   "result": "UV fixed point alpha* = 1/24",
   "formula": "\u03b1_s(E\u2192\u221e) \u2192 0",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "FITTED",
   "note": "Gate 25: 3-loop RG + asymptotic safety fixed point from G2 topology. High-energy tension \u2192 0",
-  "timestamp": "2026-08-17T09:51:40.272561Z",
+  "timestamp": "2026-08-17T11:36:48.248953Z",
   "hash": "81ff992e07e239d3"
 }

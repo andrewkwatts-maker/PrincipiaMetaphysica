@@ -11,8 +11,16 @@
   "result": "0.064",
   "formula": "\u03b1_s = 8/125 \u00d7 correction",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": 0.064,
+    "stated": 0.064,
+    "rel_delta": 0.0,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 11: Topological ratio 8/125 verified. \u03b1s anchored to 8 gluon roots / active manifold",
-  "timestamp": "2026-08-17T09:51:40.269898Z",
+  "timestamp": "2026-08-17T11:36:48.248715Z",
   "hash": "a3544639fb72da7b"
 }

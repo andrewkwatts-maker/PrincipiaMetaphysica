@@ -8,11 +8,47 @@
   "block": "C",
   "version": "24.2",
   "wl_code": "neutrino_mixing_v16_0.py",
-  "result": "theta_12=33.59, theta_13=8.33, theta_23=49.75, delta_CP=278.4",
+  "result": "theta_12=33.59, theta_13=8.65, theta_23=49.75, delta_CP=278.4",
   "formula": "U_PMNS from geometry",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "registry",
+    "source": "NuFIT dataset (5.2-era values, IO block)",
+    "checks": [
+      {
+        "path": "neutrino.theta_12_pred",
+        "value": 33.59329049922625,
+        "expected": 33.41,
+        "sigma": 0.2443873323016703,
+        "ok": true
+      },
+      {
+        "path": "neutrino.theta_13_pred",
+        "value": 8.647304725338865,
+        "expected": 8.63,
+        "sigma": 0.15731568489876224,
+        "ok": true
+      },
+      {
+        "path": "neutrino.theta_23_pred",
+        "value": 49.75,
+        "expected": 49.3,
+        "sigma": 0.45000000000000284,
+        "ok": true
+      },
+      {
+        "path": "neutrino.delta_CP_pred",
+        "value": 278.4,
+        "expected": 278.0,
+        "sigma": 0.01538461538461451,
+        "ok": true
+      }
+    ],
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
-  "note": "Gate 27: All 4 PMNS parameters match NuFIT 6.0. Neutrino mixing from hidden rotation",
-  "timestamp": "2026-08-17T09:51:40.272941Z",
-  "hash": "ab3efb912bf22459"
+  "note": "Gate 27: PMNS parameters vs NuFIT dataset (registry-tier evaluation; theta_13 and delta_CP carry FITTED inputs per the honesty convention). Neutrino mixing from hidden rotation",
+  "timestamp": "2026-08-17T11:36:48.248968Z",
+  "hash": "7f5aab5d35ad97d3"
 }

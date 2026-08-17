@@ -7,12 +7,27 @@
   "phase": 5,
   "block": "F",
   "version": "24.2",
-  "wl_code": "With[{b3=24}, wa = -4/Sqrt[b3]; desi_wa = -0.99; sigma = (wa - desi_wa)/0.32; {N[wa,4], N[sigma,2]}]",
-  "result": "{-0.8165, 0.54sigma}",
+  "wl_code": "wa = -1/Sqrt[24]",
+  "result": "-0.2041",
   "formula": "w_a = -4/\u221a24 = -0.8165",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "registry",
+    "source": "DESI DR1 w0waCDM",
+    "checks": [
+      {
+        "path": "cosmology.wa_derived",
+        "value": -0.20412414523193154,
+        "expected": -0.75,
+        "sigma": 1.8823305336829947,
+        "ok": true
+      }
+    ],
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "RIGOROUS",
-  "note": "Gate 60: PM w0=-0.9583 (0.02sigma vs DESI w0=-0.957+/-0.067); PM wa=-0.816 vs DESI wa=-0.99+/-0.32, 0.54sigma agreement (thawing quintessence from G2 4-form projection). w_a = -4/sqrt(b3) thawing evolution (FITTED dim(Psi)=4 projection)",
-  "timestamp": "2026-08-17T09:51:40.279455Z",
-  "hash": "edd264dbdb1ead2b"
+  "note": "Gate 60: CANONICAL ruling (2026-08): wa = -1/sqrt(b3) = -0.204, the pure zero-spare-variable form \u2014 1.88 sigma from DESI DR1 (-0.75 +/- 0.29), an honest tension. The x4 co-associative projection (-0.8165, 0.23 sigma) was a post-DESI graft and is retained only as the RETRODICTED variant cosmology.wa_projection_x4.. w_a = -4/sqrt(b3) thawing evolution (FITTED dim(Psi)=4 projection)",
+  "timestamp": "2026-08-17T11:36:48.249342Z",
+  "hash": "5e9d912e2c24592b"
 }

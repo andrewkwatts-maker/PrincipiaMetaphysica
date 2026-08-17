@@ -11,8 +11,14 @@
   "result": "0.0833",
   "formula": "\u03c3 = 24/288 tension",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "FITTED",
   "note": "Gate 22: Quark separation energy from 24-pin density. Quark separation energy \u2192 24-pin density",
-  "timestamp": "2026-08-17T09:51:40.272023Z",
+  "timestamp": "2026-08-17T11:36:48.248894Z",
   "hash": "2914b1552e7be952"
 }

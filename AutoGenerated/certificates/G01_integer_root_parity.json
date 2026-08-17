@@ -11,8 +11,14 @@
   "result": "LOCKED",
   "formula": "N_total = 288",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "RIGOROUS",
   "note": "Gate 1: If sum deviates by \u00b11, manifold identity rejected. Verifies total potential = 288 exactly",
-  "timestamp": "2026-08-17T09:51:40.267305Z",
+  "timestamp": "2026-08-17T11:36:48.238153Z",
   "hash": "91478cdb7ab380a3"
 }

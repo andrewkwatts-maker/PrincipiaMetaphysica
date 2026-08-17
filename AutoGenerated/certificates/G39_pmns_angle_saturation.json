@@ -11,8 +11,14 @@
   "result": "theta_12~33, theta_23~45, theta_13~8.5",
   "formula": "\u03b8_ij from 24-pin axes",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 39: PMNS angles from 24-pin cage geometry. \u03b812, \u03b823, \u03b813 = principal axes",
-  "timestamp": "2026-08-17T09:51:40.275171Z",
+  "timestamp": "2026-08-17T11:36:48.249099Z",
   "hash": "3489e1b6bb4100f2"
 }

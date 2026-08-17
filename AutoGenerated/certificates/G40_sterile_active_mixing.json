@@ -11,8 +11,14 @@
   "result": "0.566",
   "formula": "\u03b8_sterile = 163/288",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 40: Sterile-active mixing bounded seal for observable universe. Maximum leakage to 163 bulk",
-  "timestamp": "2026-08-17T09:51:40.275436Z",
+  "timestamp": "2026-08-17T11:36:48.249116Z",
   "hash": "6c5714bb93588019"
 }

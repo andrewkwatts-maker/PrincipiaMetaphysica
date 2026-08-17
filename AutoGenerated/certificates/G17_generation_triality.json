@@ -11,8 +11,14 @@
   "result": "3",
   "formula": "125 \u2192 3 generations",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 17: n_gen=3 exact. 125 nodes fold into 3 generations",
-  "timestamp": "2026-08-17T09:51:40.271085Z",
+  "timestamp": "2026-08-17T11:36:48.248821Z",
   "hash": "7bc62a0e2dbd93dc"
 }

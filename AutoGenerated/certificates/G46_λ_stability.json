@@ -11,8 +11,16 @@
   "result": "-8.7585",
   "formula": "\u039b = 12/288\u2074",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": -8.758388704989299,
+    "stated": -8.7585,
+    "rel_delta": 1.270708576819425e-05,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "INPUT",
   "note": "Gate 46: No runaway expansion/collapse. Vacuum energy = 12/288\u2074 constant",
-  "timestamp": "2026-08-17T09:51:40.276631Z",
+  "timestamp": "2026-08-17T11:36:48.249182Z",
   "hash": "5d879f0fe106b374"
 }

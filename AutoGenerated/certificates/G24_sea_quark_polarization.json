@@ -11,8 +11,14 @@
   "result": "True",
   "formula": "m_B includes 163 sea",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 24: Virtual nodes from 163 bulk included. Virtual nodes from 163 bulk included",
-  "timestamp": "2026-08-17T09:51:40.272388Z",
+  "timestamp": "2026-08-17T11:36:48.248935Z",
   "hash": "e328788287dd8a86"
 }

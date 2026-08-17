@@ -11,8 +11,14 @@
   "result": "True",
   "formula": "24 = 12_L + 12_R",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": true,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "RIGOROUS",
   "note": "Gate 6: Left/right potential balanced at source. Bifurcation of 24 pins into 12+12 chiral sets",
-  "timestamp": "2026-08-17T09:51:40.268681Z",
+  "timestamp": "2026-08-17T11:36:48.248595Z",
   "hash": "b5fed762df1186b5"
 }

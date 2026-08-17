@@ -11,8 +11,14 @@
   "result": "sin\u00b2\u03b8_W_GUT = 3/8",
   "formula": "\u03c1 = M_W\u00b2/(M_Z\u00b2 cos\u00b2\u03b8_W)",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 32: W/Z mass ratio from SO(10) prediction. \u03c1-parameter from Shadow-A/B split",
-  "timestamp": "2026-08-17T09:51:40.273938Z",
+  "timestamp": "2026-08-17T11:36:48.249034Z",
   "hash": "b09f78f31d471b0d"
 }

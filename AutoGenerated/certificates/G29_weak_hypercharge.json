@@ -11,8 +11,14 @@
   "result": "0.868",
   "formula": "Y_W from shadow",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "INPUT",
   "note": "Gate 29: U(1) hypercharge from Shadow handedness. U(1) hypercharge \u2192 Shadow handedness",
-  "timestamp": "2026-08-17T09:51:40.273336Z",
+  "timestamp": "2026-08-17T11:36:48.248999Z",
   "hash": "c538300c566ab781"
 }

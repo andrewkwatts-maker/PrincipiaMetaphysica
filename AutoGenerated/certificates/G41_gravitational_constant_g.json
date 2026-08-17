@@ -11,8 +11,16 @@
   "result": "1.4527e-10",
   "formula": "G \u221d 1/288\u2074",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": 1.4535502460086115e-10,
+    "stated": 1.4527e-10,
+    "rel_delta": 0.0005852867134380596,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "EXPLORATORY",
   "note": "Gate 41: G ~ 1/288^4 density anchor: topological scaling from 288-root system via dimensional reduction G4=G7/Vol(X). See gravity_residue.py and master_action_derivations.py. G = 1/288\u2074 density anchor",
-  "timestamp": "2026-08-17T09:51:40.275615Z",
+  "timestamp": "2026-08-17T11:36:48.249129Z",
   "hash": "d8d9c3b36d055949"
 }

@@ -11,8 +11,14 @@
   "result": "Force separation verified via RG running",
   "formula": "T_c from geometry",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "RIGOROUS",
   "note": "Gate 67: Electroweak symmetry breaking derived from G2 geometry: (1) EWSB from Higgs potential minimization in higgs_derivations.py, (2) Force separation verified via 3-loop RG running from M_GUT to M_Z in renormalization_group_runner.py, (3) Higgs VEV v=246 GeV from G2 manifold. All three gauge couplings match PDG 2024 at M_Z.. Force freezing at geometric nodes",
-  "timestamp": "2026-08-17T09:51:40.280846Z",
+  "timestamp": "2026-08-17T11:36:48.249444Z",
   "hash": "b833ed79cb00875f"
 }

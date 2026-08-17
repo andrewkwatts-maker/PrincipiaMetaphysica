@@ -11,8 +11,14 @@
   "result": "chi_eff = 144",
   "formula": "m_\u03bc/m_e, m_\u03c4/m_e ratios",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 30: m_mu/m_e ~ chi_eff = 144, m_tau/m_mu ~ b3/2 = 12. \u03bc/\u03c4 = higher harmonics of electron",
-  "timestamp": "2026-08-17T09:51:40.273517Z",
+  "timestamp": "2026-08-17T11:36:48.249013Z",
   "hash": "60c22b8ff14890e2"
 }

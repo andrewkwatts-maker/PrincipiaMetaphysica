@@ -11,8 +11,14 @@
   "result": "True",
   "formula": "125 + 163 = 288",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "arithmetic",
+    "computed": true,
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "RIGOROUS",
   "note": "Gate 3: Primary conservation law of the manifold. Partition: 125 Active + 163 Hidden = 288",
-  "timestamp": "2026-08-17T09:51:40.267965Z",
+  "timestamp": "2026-08-17T11:36:48.248337Z",
   "hash": "df369a9e1cac58f4"
 }

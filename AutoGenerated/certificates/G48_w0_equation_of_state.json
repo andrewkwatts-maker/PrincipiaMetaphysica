@@ -11,8 +11,23 @@
   "result": "-0.9583",
   "formula": "w\u2080 = -1 + 1/24 = -23/24",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "registry",
+    "source": "DESI thawing anchor",
+    "checks": [
+      {
+        "path": "cosmology.w0_derived",
+        "value": -0.9583333333333334,
+        "expected": -0.957,
+        "sigma": 0.01990049751243893,
+        "ok": true
+      }
+    ],
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 48: Dark energy EoS from b3 topology: w0 = -1 + 1/b3 = -23/24 = -0.9583. DESI 2025: w0 = -0.957 +/- 0.067 (0.02sigma agreement). Core prediction derived from b3 = 24 (thawing quintessence). w = -\u03c3_T = -0.9583 (Tzimtzum Seal)",
-  "timestamp": "2026-08-17T09:51:40.277014Z",
+  "timestamp": "2026-08-17T11:36:48.249223Z",
   "hash": "3e7204dae91afdf2"
 }

@@ -11,8 +11,14 @@
   "result": "m_p/m_e = 1836.15",
   "formula": "m_e/e geometric",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 26: Derives m_p/m_e from G2 cycle volumes with < 0.001% error vs CODATA 2022. me locked to EM coupling geometrically",
-  "timestamp": "2026-08-17T09:51:40.272738Z",
+  "timestamp": "2026-08-17T11:36:48.248961Z",
   "hash": "1c1205d8314c4134"
 }

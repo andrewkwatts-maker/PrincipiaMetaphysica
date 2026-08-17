@@ -11,8 +11,23 @@
   "result": "eta_B = 6.19e-10 canonical (1.63 sigma vs Planck 6.12+/-0.04e-10)",
   "formula": "\u03b7 \u2248 6\u00d710\u207b\u00b9\u2070",
   "verification_status": "VERIFIED",
+  "evaluation_status": "COMPUTED_PASS",
+  "evaluation": {
+    "tier": "registry",
+    "source": "Planck 2018",
+    "checks": [
+      {
+        "path": "geometry.eta_baryon",
+        "value": 6.185164569435048e-10,
+        "expected": 6.12e-10,
+        "sigma": 1.6291142358762039,
+        "ok": true
+      }
+    ],
+    "status": "COMPUTED_PASS"
+  },
   "derivation_status": "DERIVED",
   "note": "Gate 50: Leptogenesis chain: epsilon=(3/16pi)*(M_N1*m_nu)/v^2*sin(delta_CP), eta_B=c_sph*epsilon*kappa. The module's direct computation gives 2.30e-10 (factor ~2.7 below Planck); the canonical 6.19e-10 display value sits 1.63 sigma from Planck 2018 (6.12 +/- 0.04e-10). Previous cert claimed sigma < 0.01 \u2014 removed as arithmetically false.. \u03b7 = matter/radiation density",
-  "timestamp": "2026-08-17T09:51:40.277400Z",
+  "timestamp": "2026-08-17T11:36:48.249252Z",
   "hash": "0707a707e15afaab"
 }

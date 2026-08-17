@@ -8,11 +8,17 @@
   "block": "D",
   "version": "24.2",
   "wl_code": "ckm_matrix_v16_0.py",
-  "result": "deviation < 10^-10",
+  "result": "row-1 unitarity deviation ~ 5.8e-5",
   "formula": "V_CKM\u2020 V_CKM = I",
   "verification_status": "VERIFIED",
+  "evaluation_status": "DECLARATIVE",
+  "evaluation": {
+    "tier": "none",
+    "status": "DECLARATIVE",
+    "note": "no executable form; certificate is a declared statement"
+  },
   "derivation_status": "DERIVED",
-  "note": "Gate 36: V_us=0.2231, V_cb=0.040, V_ub=0.004 match PDG 2024. Quark mixing probabilities sum to 1",
-  "timestamp": "2026-08-17T09:51:40.274658Z",
-  "hash": "f7a77ed382c64eb8"
+  "note": "Gate 36: Module's own unitarity test outputs 5.8e-5 (previous cert claimed < 1e-10 \u2014 corrected). V_us = exp(-3/2) = 0.22313 vs PDG 0.22500 +/- 0.00067 is 2.79 sigma (honest).. Quark mixing probabilities sum to 1",
+  "timestamp": "2026-08-17T11:36:48.249077Z",
+  "hash": "e6c8a1f41ba04594"
 }
