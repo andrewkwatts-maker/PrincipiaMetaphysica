@@ -1,13 +1,13 @@
 {
   "version": "24.2",
-  "generated_at": "2026-08-17T22:13:46.416398+00:00",
+  "generated_at": "2026-08-18T10:24:12.954077+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
     "total_simulations": 85,
-    "agreed": 81,
+    "agreed": 82,
     "failed": 0,
-    "not_implemented": 4,
+    "not_implemented": 3,
     "errors": 0,
     "skipped": 0,
     "global_max_deviation": 3.808798771726061e-12,
@@ -365,11 +365,11 @@
       "note": "OrchORSimulation.run_eml() not yet implemented"
     },
     "gnosis_unlocking_v22_2": {
-      "status": "NOT_IMPLEMENTED",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 5,
+      "params_agreed": 5,
       "max_deviation": 0.0,
-      "note": "GnosisUnlockingSimulationV22.run_eml() not yet implemented"
+      "note": ""
     },
     "four_dice_sampling_v22": {
       "status": "NOT_IMPLEMENTED",

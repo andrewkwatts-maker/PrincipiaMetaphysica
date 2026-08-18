@@ -4,14 +4,14 @@
   "summary": {
     "files_scanned": 185,
     "dataset_values": 333,
-    "exact_dup": 379,
-    "stale_dup": 358,
+    "exact_dup": 375,
+    "stale_dup": 328,
     "files_with_findings": 83
   },
   "worst_files": [
     [
       "simulations/PM/support/complete_residue_registry.py",
-      101
+      74
     ],
     [
       "simulations/base/established.py",
@@ -27,7 +27,7 @@
     ],
     [
       "simulations/PM/paper/appendices/appendix_d_tables.py",
-      29
+      30
     ],
     [
       "simulations/PM/cosmology/ricci_flow_h0.py",
@@ -40,10 +40,6 @@
     [
       "simulations/PM/validation/consistency_beacons.py",
       20
-    ],
-    [
-      "simulations/PM/particle/higgs_brane_partition.py",
-      18
     ],
     [
       "simulations/PM/gauge/master_action.py",
@@ -68,6 +64,10 @@
     [
       "simulations/PM/particle/ckm_matrix.py",
       14
+    ],
+    [
+      "simulations/PM/particle/higgs_vev_refined.py",
+      13
     ]
   ],
   "findings": [
@@ -2337,7 +2337,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 617,
+      "line": 691,
       "literal": 0.938,
       "dataset_key": "pdg_2024_values.baryons.m_proton.value",
       "dataset_value": 0.938272088,
@@ -2345,15 +2345,23 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 151,
-      "literal": 1.221e+19,
-      "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
-      "dataset_value": 1.22089e+19,
-      "class": "STALE_DUP"
+      "line": 191,
+      "literal": 1.1663788e-05,
+      "dataset_key": "pdg_2024_values.constants.G_F.value",
+      "dataset_value": 1.1663788e-05,
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 152,
+      "line": 192,
+      "literal": 0.938272088,
+      "dataset_key": "pdg_2024_values.baryons.m_proton.value",
+      "dataset_value": 0.938272088,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 196,
       "literal": 2.435e+18,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
       "dataset_value": 2.435e+18,
@@ -2361,31 +2369,23 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 155,
-      "literal": 1.166e-05,
-      "dataset_key": "pdg_2024_values.constants.G_F.value",
-      "dataset_value": 1.1663788e-05,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 160,
-      "literal": 0.938,
-      "dataset_key": "pdg_2024_values.baryons.m_proton.value",
-      "dataset_value": 0.938272088,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 166,
-      "literal": 91.188,
-      "dataset_key": "pdg_2024_values.gauge_bosons.m_Z.value",
-      "dataset_value": 91.188,
+      "line": 198,
+      "literal": 0.0072973525643,
+      "dataset_key": "experiment_ref.parameters.electromagnetic.alpha_em.value",
+      "dataset_value": 0.0072973525693,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 167,
+      "line": 220,
+      "literal": 91.1876,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
+      "dataset_value": 91.1876,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 221,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -2393,7 +2393,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 167,
+      "line": 221,
       "literal": 0.0133,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
       "dataset_value": 0.0133,
@@ -2401,7 +2401,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 168,
+      "line": 222,
       "literal": 125.2,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
@@ -2409,7 +2409,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 169,
+      "line": 223,
       "literal": 172.69,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -2417,7 +2417,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 170,
+      "line": 224,
       "literal": 4.18,
       "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
       "dataset_value": 4.18,
@@ -2425,7 +2425,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 171,
+      "line": 225,
       "literal": 1.27,
       "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
       "dataset_value": 1.27,
@@ -2433,7 +2433,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 173,
+      "line": 227,
       "literal": 0.00467,
       "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
       "dataset_value": 0.00467,
@@ -2441,7 +2441,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 174,
+      "line": 228,
       "literal": 0.00216,
       "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
       "dataset_value": 0.00216,
@@ -2449,31 +2449,31 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 175,
-      "literal": 1.777,
+      "line": 229,
+      "literal": 1.77693,
       "dataset_key": "pdg_2024_values.leptons.m_tau.value",
       "dataset_value": 1.77693,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 176,
-      "literal": 0.1057,
+      "line": 230,
+      "literal": 0.1056583755,
       "dataset_key": "pdg_2024_values.leptons.m_muon.value",
       "dataset_value": 0.1056583755,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 177,
-      "literal": 0.000511,
+      "line": 231,
+      "literal": 0.00051099895069,
       "dataset_key": "pdg_2024_values.leptons.m_electron.value",
       "dataset_value": 0.00051099895069,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 178,
+      "line": 232,
       "literal": 0.118,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -2481,7 +2481,47 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 179,
+      "line": 234,
+      "literal": 33.41,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
+      "dataset_value": 33.41,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 235,
+      "literal": 49.1,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
+      "dataset_value": 49.3,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 236,
+      "literal": 8.63,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
+      "dataset_value": 8.63,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 237,
+      "literal": 7.42e-05,
+      "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
+      "dataset_value": 7.42e-05,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 238,
+      "literal": 0.002515,
+      "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
+      "dataset_value": 0.002515,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 253,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -2489,7 +2529,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 183,
+      "line": 257,
       "literal": 1.196,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -2497,31 +2537,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 184,
-      "literal": 33.45,
-      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
-      "dataset_value": 33.41,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 186,
-      "literal": 8.62,
-      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
-      "dataset_value": 8.63,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 187,
-      "literal": 7.53e-05,
-      "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
-      "dataset_value": 7.42e-05,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 218,
+      "line": 292,
       "literal": 29.58,
       "dataset_key": "nufit_6_0.inverted_ordering.delta_CP.uncertainty_minus",
       "dataset_value": 30.0,
@@ -2529,7 +2545,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 219,
+      "line": 293,
       "literal": 8.47,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_13.value",
       "dataset_value": 8.54,
@@ -2537,15 +2553,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 154,
-      "literal": 137.036,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 621,
+      "line": 695,
       "literal": 0.93727,
       "dataset_key": "pdg_2024_values.baryons.m_proton.value",
       "dataset_value": 0.938272088,
@@ -2553,7 +2561,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 621,
+      "line": 695,
       "literal": 0.93927,
       "dataset_key": "pdg_2024_values.baryons.m_neutron.value",
       "dataset_value": 0.939565421,
@@ -2561,7 +2569,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
-      "line": 620,
+      "line": 694,
       "literal": 0.93827,
       "dataset_key": "pdg_2024_values.baryons.m_proton.value",
       "dataset_value": 0.938272088,
@@ -3097,7 +3105,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 170,
+      "line": 154,
       "literal": 125.2,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
@@ -3105,7 +3113,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 290,
+      "line": 315,
       "literal": 2.435e+18,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
       "dataset_value": 2.435e+18,
@@ -3113,7 +3121,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 294,
+      "line": 1070,
       "literal": 125.1,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
@@ -3121,63 +3129,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 742,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 969,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 974,
-      "literal": 125.08,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 974,
-      "literal": 125.42,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 1023,
-      "literal": 125.1,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 1025,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 1037,
-      "literal": 125.1,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 1038,
+      "line": 1071,
       "literal": 0.302,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.uncertainty",
       "dataset_value": 0.3,
@@ -3185,7 +3137,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 653,
+      "line": 680,
       "literal": 1.185,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -3193,15 +3145,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 747,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 651,
+      "line": 678,
       "literal": 1.185,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -3209,7 +3153,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 652,
+      "line": 679,
       "literal": 1.185,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -3217,7 +3161,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 705,
+      "line": 732,
       "literal": 1.185,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -3225,7 +3169,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 703,
+      "line": 730,
       "literal": 1.185,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -3233,7 +3177,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
-      "line": 704,
+      "line": 731,
       "literal": 1.185,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
       "dataset_value": 1.2,
@@ -4193,7 +4137,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 342,
+      "line": 397,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -4201,7 +4145,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 343,
+      "line": 398,
       "literal": 0.002515,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -4209,7 +4153,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 347,
+      "line": 402,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -4217,7 +4161,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 408,
+      "line": 463,
       "literal": 1.22e+19,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
       "dataset_value": 1.22e+19,
@@ -4225,7 +4169,79 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 415,
+      "line": 201,
+      "literal": 125.2,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 225,
+      "literal": 0.000511,
+      "dataset_key": "pdg_2024_values.leptons.m_electron.value",
+      "dataset_value": 0.00051099895069,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 227,
+      "literal": 0.00216,
+      "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
+      "dataset_value": 0.00216,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 229,
+      "literal": 0.00467,
+      "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
+      "dataset_value": 0.00467,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 255,
+      "literal": 0.1057,
+      "dataset_key": "pdg_2024_values.leptons.m_muon.value",
+      "dataset_value": 0.1056583755,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 257,
+      "literal": 1.27,
+      "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
+      "dataset_value": 1.27,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 284,
+      "literal": 1.777,
+      "dataset_key": "pdg_2024_values.leptons.m_tau.value",
+      "dataset_value": 1.77693,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 286,
+      "literal": 172.69,
+      "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
+      "dataset_value": 172.69,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 288,
+      "literal": 4.18,
+      "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
+      "dataset_value": 4.18,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 471,
       "literal": 0.938,
       "dataset_key": "pdg_2024_values.baryons.m_proton.value",
       "dataset_value": 0.938272088,
@@ -4233,7 +4249,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 425,
+      "line": 481,
       "literal": 6.582e-25,
       "dataset_key": "pdg_2024_values.fundamental_constants.HBAR.value",
       "dataset_value": 6.582119569e-25,
@@ -4241,471 +4257,15 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 121,
-      "literal": 80.3692,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
-      "dataset_value": 80.3692,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 122,
-      "literal": 80.3692,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
-      "dataset_value": 80.3692,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 123,
-      "literal": 0.0133,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
-      "dataset_value": 0.0133,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 132,
-      "literal": 80.3692,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
-      "dataset_value": 80.3692,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 133,
-      "literal": 80.3692,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
-      "dataset_value": 80.3692,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 134,
-      "literal": 0.0133,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
-      "dataset_value": 0.0133,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 157,
-      "literal": 91.1876,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
-      "dataset_value": 91.1876,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 158,
-      "literal": 91.1876,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
-      "dataset_value": 91.1876,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 172,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 173,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 189,
-      "literal": 0.000511,
-      "dataset_key": "pdg_2024_values.leptons.m_electron.value",
-      "dataset_value": 0.00051099895069,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 189,
-      "literal": 0.000511,
-      "dataset_key": "pdg_2024_values.leptons.m_electron.value",
-      "dataset_value": 0.00051099895069,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 191,
-      "literal": 0.00216,
-      "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
-      "dataset_value": 0.00216,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 191,
-      "literal": 0.00216,
-      "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
-      "dataset_value": 0.00216,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 192,
-      "literal": 0.00467,
-      "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
-      "dataset_value": 0.00467,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 192,
-      "literal": 0.00467,
-      "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
-      "dataset_value": 0.00467,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 193,
-      "literal": 0.00216,
-      "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
-      "dataset_value": 0.00216,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 193,
-      "literal": 0.00216,
-      "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
-      "dataset_value": 0.00216,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 194,
-      "literal": 0.00467,
-      "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
-      "dataset_value": 0.00467,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 194,
-      "literal": 0.00467,
-      "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
-      "dataset_value": 0.00467,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 213,
-      "literal": 0.1057,
-      "dataset_key": "pdg_2024_values.leptons.m_muon.value",
-      "dataset_value": 0.1056583755,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 213,
-      "literal": 0.1057,
-      "dataset_key": "pdg_2024_values.leptons.m_muon.value",
-      "dataset_value": 0.1056583755,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 215,
-      "literal": 1.27,
-      "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
-      "dataset_value": 1.27,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 215,
-      "literal": 1.27,
-      "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
-      "dataset_value": 1.27,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 217,
-      "literal": 1.27,
-      "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
-      "dataset_value": 1.27,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 217,
-      "literal": 1.27,
-      "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
-      "dataset_value": 1.27,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 236,
-      "literal": 1.777,
-      "dataset_key": "pdg_2024_values.leptons.m_tau.value",
-      "dataset_value": 1.77693,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 236,
-      "literal": 1.777,
-      "dataset_key": "pdg_2024_values.leptons.m_tau.value",
-      "dataset_value": 1.77693,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 238,
-      "literal": 172.69,
-      "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
-      "dataset_value": 172.69,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 238,
-      "literal": 172.69,
-      "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
-      "dataset_value": 172.69,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 239,
-      "literal": 4.18,
-      "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
-      "dataset_value": 4.18,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 239,
-      "literal": 4.18,
-      "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
-      "dataset_value": 4.18,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 240,
-      "literal": 172.69,
-      "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
-      "dataset_value": 172.69,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 240,
-      "literal": 172.69,
-      "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
-      "dataset_value": 172.69,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 241,
-      "literal": 4.18,
-      "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
-      "dataset_value": 4.18,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 241,
-      "literal": 4.18,
-      "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
-      "dataset_value": 4.18,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 264,
-      "literal": 0.97373,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 264,
-      "literal": 0.97373,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 265,
-      "literal": 0.2243,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 265,
-      "literal": 0.2243,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 266,
-      "literal": 0.00382,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
-      "dataset_value": 0.00382,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 266,
-      "literal": 0.00382,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
-      "dataset_value": 0.00382,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 267,
-      "literal": 0.221,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 267,
-      "literal": 0.221,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 268,
-      "literal": 0.975,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 268,
-      "literal": 0.975,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 269,
-      "literal": 0.0408,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
-      "dataset_value": 0.041,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 269,
-      "literal": 0.0408,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
-      "dataset_value": 0.041,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 271,
-      "literal": 0.0415,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
-      "dataset_value": 0.041,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 271,
-      "literal": 0.0415,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
-      "dataset_value": 0.041,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 272,
-      "literal": 1.014,
-      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
-      "dataset_value": 1.0,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 272,
-      "literal": 1.014,
-      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
-      "dataset_value": 1.0,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 290,
-      "literal": 0.307,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_m.value",
-      "dataset_value": 0.3069,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 290,
-      "literal": 0.307,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_m.value",
-      "dataset_value": 0.3069,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 455,
-      "literal": 0.1179,
+      "line": 512,
+      "literal": 0.118,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 455,
-      "literal": 0.1179,
-      "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
-      "dataset_value": 0.118,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 456,
-      "literal": 0.23122,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
-      "dataset_value": 0.23122,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 456,
-      "literal": 0.23122,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
-      "dataset_value": 0.23122,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 457,
+      "line": 514,
       "literal": 1.1663788e-05,
       "dataset_key": "pdg_2024_values.constants.G_F.value",
       "dataset_value": 1.1663788e-05,
@@ -4713,31 +4273,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 457,
-      "literal": 1.1663788e-05,
-      "dataset_key": "pdg_2024_values.constants.G_F.value",
-      "dataset_value": 1.1663788e-05,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 477,
-      "literal": 1.22e+19,
-      "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
-      "dataset_value": 1.22e+19,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 477,
-      "literal": 1.22e+19,
-      "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
-      "dataset_value": 1.22e+19,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 479,
+      "line": 540,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -4745,15 +4281,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 479,
-      "literal": 246.22,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 481,
+      "line": 542,
       "literal": 0.938272,
       "dataset_key": "pdg_2024_values.baryons.m_proton.value",
       "dataset_value": 0.938272088,
@@ -4761,15 +4289,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 481,
-      "literal": 0.938272,
-      "dataset_key": "pdg_2024_values.baryons.m_proton.value",
-      "dataset_value": 0.938272088,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 482,
+      "line": 544,
       "literal": 0.939565,
       "dataset_key": "pdg_2024_values.baryons.m_neutron.value",
       "dataset_value": 0.939565421,
@@ -4777,127 +4297,215 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 482,
-      "literal": 0.939565,
-      "dataset_key": "pdg_2024_values.baryons.m_neutron.value",
-      "dataset_value": 0.939565421,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 525,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
+      "line": 153,
+      "literal": 80.3692,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
+      "dataset_value": 80.3692,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 525,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
+      "line": 154,
+      "literal": 80.3692,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
+      "dataset_value": 80.3692,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 526,
-      "literal": 0.685,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
-      "dataset_value": 0.6931,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 526,
-      "literal": 0.685,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
-      "dataset_value": 0.6931,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 527,
-      "literal": 0.315,
-      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
-      "dataset_value": 0.3111,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 527,
-      "literal": 0.315,
-      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
-      "dataset_value": 0.3111,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 528,
-      "literal": 2.7255,
-      "dataset_key": "planck_2018.T_CMB.value",
-      "dataset_value": 2.7255,
+      "line": 155,
+      "literal": 0.0133,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
+      "dataset_value": 0.0133,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 528,
-      "literal": 2.7255,
-      "dataset_key": "planck_2018.T_CMB.value",
-      "dataset_value": 2.7255,
+      "line": 164,
+      "literal": 80.3692,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
+      "dataset_value": 80.3692,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 529,
-      "literal": 6.12e-10,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
-      "dataset_value": 6.12e-10,
+      "line": 165,
+      "literal": 80.3692,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
+      "dataset_value": 80.3692,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 529,
-      "literal": 6.12e-10,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
-      "dataset_value": 6.12e-10,
+      "line": 166,
+      "literal": 0.0133,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
+      "dataset_value": 0.0133,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 530,
-      "literal": 0.9649,
+      "line": 189,
+      "literal": 91.1876,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
+      "dataset_value": 91.1876,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 190,
+      "literal": 91.1876,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
+      "dataset_value": 91.1876,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 319,
+      "literal": 0.97373,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
-      "class": "EXACT_DUP"
+      "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 530,
-      "literal": 0.9649,
+      "line": 319,
+      "literal": 0.97373,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 320,
+      "literal": 0.2243,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 320,
+      "literal": 0.2243,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 321,
+      "literal": 0.00382,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
+      "dataset_value": 0.00382,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 532,
-      "literal": 0.811,
-      "dataset_key": "planck_2018.sigma8.value",
-      "dataset_value": 0.8102,
+      "line": 321,
+      "literal": 0.00382,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
+      "dataset_value": 0.00382,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 322,
+      "literal": 0.221,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 532,
-      "literal": 0.811,
-      "dataset_key": "planck_2018.sigma8.value",
-      "dataset_value": 0.8102,
+      "line": 322,
+      "literal": 0.221,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 454,
+      "line": 323,
+      "literal": 0.975,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 323,
+      "literal": 0.975,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 324,
+      "literal": 0.0408,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
+      "dataset_value": 0.041,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 324,
+      "literal": 0.0408,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
+      "dataset_value": 0.041,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 326,
+      "literal": 0.0415,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
+      "dataset_value": 0.041,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 326,
+      "literal": 0.0415,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
+      "dataset_value": 0.041,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 327,
+      "literal": 1.014,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
+      "dataset_value": 1.0,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 327,
+      "literal": 1.014,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
+      "dataset_value": 1.0,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 345,
+      "literal": 0.307,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_m.value",
+      "dataset_value": 0.3069,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 345,
+      "literal": 0.307,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_m.value",
+      "dataset_value": 0.3069,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 510,
       "literal": 137.036,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -4905,15 +4513,159 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 454,
-      "literal": 137.036,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
+      "line": 519,
+      "literal": 0.23122,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 519,
+      "literal": 0.23122,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 547,
+      "literal": 1.22e+19,
+      "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
+      "dataset_value": 1.22e+19,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 547,
+      "literal": 1.22e+19,
+      "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
+      "dataset_value": 1.22e+19,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 595,
+      "literal": 67.4,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
+      "dataset_value": 67.4,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 595,
+      "literal": 67.4,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
+      "dataset_value": 67.4,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 596,
+      "literal": 0.685,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
+      "dataset_value": 0.6931,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 531,
+      "line": 596,
+      "literal": 0.685,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
+      "dataset_value": 0.6931,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 597,
+      "literal": 0.315,
+      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
+      "dataset_value": 0.3111,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 597,
+      "literal": 0.315,
+      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
+      "dataset_value": 0.3111,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 598,
+      "literal": 2.7255,
+      "dataset_key": "planck_2018.T_CMB.value",
+      "dataset_value": 2.7255,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 598,
+      "literal": 2.7255,
+      "dataset_key": "planck_2018.T_CMB.value",
+      "dataset_value": 2.7255,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 599,
+      "literal": 6.12e-10,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
+      "dataset_value": 6.12e-10,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 599,
+      "literal": 6.12e-10,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
+      "dataset_value": 6.12e-10,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 600,
+      "literal": 0.9649,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 600,
+      "literal": 0.9649,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 602,
+      "literal": 0.811,
+      "dataset_key": "planck_2018.sigma8.value",
+      "dataset_value": 0.8102,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 602,
+      "literal": 0.811,
+      "dataset_key": "planck_2018.sigma8.value",
+      "dataset_value": 0.8102,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 2015,
+      "literal": 125.2,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/support/complete_residue_registry.py",
+      "line": 601,
       "literal": 0.9583,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -4921,7 +4673,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 531,
+      "line": 601,
       "literal": 0.958,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -4929,7 +4681,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1924,
+      "line": 1994,
       "literal": 0.0133,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
       "dataset_value": 0.0133,
@@ -4937,7 +4689,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1923,
+      "line": 1993,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -4945,15 +4697,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1945,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1930,
+      "line": 2000,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -4961,7 +4705,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1930,
+      "line": 2000,
       "literal": 0.0133,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
       "dataset_value": 0.0133,
@@ -4969,7 +4713,7 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1931,
+      "line": 2001,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -4977,27 +4721,11 @@
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1931,
+      "line": 2001,
       "literal": 0.0133,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.uncertainty",
       "dataset_value": 0.0133,
       "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1952,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/support/complete_residue_registry.py",
-      "line": 1953,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/susy/soft_susy_breaking.py",

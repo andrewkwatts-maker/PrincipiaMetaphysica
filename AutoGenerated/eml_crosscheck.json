@@ -803,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.7821480030196515,
-      "rel_error": 0.9554655616745539,
+      "registered": 7.802460054506127,
+      "rel_error": 0.9555814976483196,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.55%"
+      "diagnostic": "rel_err=95.56%"
     },
     {
       "path": "consciousness.neuron_count",
@@ -1918,7 +1918,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 23011.0169,
+      "registered": 23011.0175,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
