@@ -167,7 +167,7 @@ async function fetchFrameworkStats() {
 
 /**
  * Default statistics if theory_output.json is unavailable
- * Updated for v24.2 - 27D(24,1,2) Dual-Shadow Framework
+ * Updated for v24.2 - 26D(24,2) Dual-Shadow Framework
  */
 function getDefaultStats() {
   return {
@@ -638,7 +638,7 @@ function injectAuthOverlay() {
       <p class="auth-latin">Philosophiae Metaphysicae Principia Mathematica</p>
 
       <div class="auth-framework">
-        <h2>27D Dual-Shadow Framework</h2>
+        <h2>26D Dual-Shadow Framework</h2>
         <p>A First-Principles Geometric Theory</p>
       </div>
 

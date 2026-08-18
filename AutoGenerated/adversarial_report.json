@@ -8,7 +8,7 @@
   },
   "scaffold_note": "SCAFFOLD: _load_registry() returns synthetic logspace data, not PM residues. k_geometric_base=0.9514 is an ansatz tuned to reproduce alpha_inv~137, not derived from G2 topology. Holonomy constraints are designed to keep configurations near the target, so the failure rate is not an independent test of topological stability. Results are illustrative only.",
   "topology": {
-    "manifold": "M\u00b2\u2077(24,1,2)",
+    "manifold": "M\u00b2\u2076(24,2)",
     "structure": "12\u00d7(2,0) + S^(2,0) + (0,1)",
     "b3": 24,
     "chi_eff": 144
@@ -36,7 +36,7 @@
   },
   "violations": [],
   "interpretation": {
-    "peer_review_response": "The Unity Identity was subjected to 1000 adversarial perturbations in 27D configuration space. Status: HIGHLY ROBUST (failure rate: 0.00%). This demonstrates the identity emerges from global topological constraints, not from parameter tuning or circular reasoning.",
+    "peer_review_response": "The Unity Identity was subjected to 1000 adversarial perturbations in 26D configuration space. Status: HIGHLY ROBUST (failure rate: 0.00%). This demonstrates the identity emerges from global topological constraints, not from parameter tuning or circular reasoning.",
     "mathematical_significance": "A low failure rate indicates alpha_inv ~= 137.036 is a fixed point of the G2 descent dynamics, providing evidence for emergent physical constants from pure topology."
   }
 }

@@ -1,6 +1,6 @@
 /**
  * Centralized Formula Definitions for Principia Metaphysica
- * 27D(24,1,2) Framework - v24.2 (sampler data fields notation)
+ * 26D(24,2) Framework - v24.2 (shadow-time directions notation)
  *
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  *
@@ -25,17 +25,17 @@
  * - experimental_source: Source of measurement
  * - sigma: Agreement with experiment in standard deviations
  *
- * FRAMEWORK FEATURES (v24.2 / 27D):
- * - M^{27}(24,1,2): 24 physics + 1 time + 2 sampler data fields
- *   - 24 G2 core (12×(2,0) bridge pairs), 2 sampler data fields S^{2,0}
+ * FRAMEWORK FEATURES (v24.2 / 26D):
+ * - M^{26}(24,2): 24 space + 2 times (one per shadow)
+ *   - 24 G2 core (12×(2,0) bridge pairs), 2 shadow-time directions S^{2,0}
  * - 12×(2,0) bridge pairs connecting dual shadows
  * - Z₂ mirror brane structure: Normal Shadow ↔ Mirror Shadow
  * - Sampler data fields S^{2,0} (OR averaging sector)
  * - Observable 13D(12,1) per shadow via R⊥ coordinate selection
  *
  * HISTORICAL NOTE: v12.8-v20 used 26D(24,2) with two time dimensions.
- * v21-v23.0 used 25D(24,1). v23.1-v24.1 used 27D(26,1).
- * v24.2+ uses M^{27}(24,1,2) with sampler data fields.
+ * v21-v23.0 used 25D(24,1). v23.1-v24.1 used 26D(26,1).
+ * v24.2+ uses M^{26}(24,2) with shadow-time directions.
  */
 
 const PM_FORMULAS = {

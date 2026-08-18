@@ -1,10 +1,10 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-08-18T20:24:31.349025",
+  "test_date": "2026-08-19T03:42:47.670812",
   "test_name": "Unitary Closure and Ghost-Freedom Verification",
   "scaffold_note": "STRUCTURAL/ILLUSTRATIVE: S = exp(iH) with Hermitian H is unitary by construction (the unitarity and spectral tests cannot fail); the ghost scan samples random Gaussians that essentially never align with the single timelike direction; the BRST anomaly is asserted 0 with n_gen = 3 hardcoded. This report demonstrates intended structure \u2014 it is not an executed falsification test. See validation_report.json for computed value-vs-experiment checks.",
   "manifold": {
-    "structure": "M^{27}(24,1,2)",
+    "structure": "M^{26}(24,2)",
     "bridges": "12 \u00d7 (2,0)",
     "sampler_data_fields": "S^(2,0)",
     "time": "(0,1)"
@@ -19,16 +19,16 @@
     "overall_status": "UNITARY AND GHOST-FREE",
     "all_tests_pass": true,
     "unitarity_test": {
-      "unitarity_violation_frobenius": 6.877907783391007e-16,
-      "max_element_deviation": 4.440929015815787e-16,
+      "unitarity_violation_frobenius": 1.5204416718818117e-15,
+      "max_element_deviation": 1.1103772165842447e-15,
       "status": "PERFECT (Machine precision unitarity)",
       "passes_unitarity": true
     },
     "spectral_purity_test": {
       "max_deviation_from_unity": 4.440892098500626e-16,
-      "mean_deviation_from_unity": 4.11193712824132e-17,
+      "mean_deviation_from_unity": 5.124106267500723e-17,
       "eigenvalues_off_unit_circle": 0,
-      "total_eigenvalues": 27,
+      "total_eigenvalues": 26,
       "status": "PERFECT (All eigenvalues on unit circle)",
       "passes_spectral_test": true
     },
@@ -59,6 +59,6 @@
   },
   "interpretation": {
     "conclusion": "Theory satisfies all consistency requirements for quantum stability",
-    "peer_review_response": "The M^{27}(24,1) framework satisfies unitarity (||S\u2020S - I|| = 6.88e-16), spectral purity (max |\u03bb| deviation = 4.44e-16), and is ghost-free (0/100 negative-norm states). The theory is quantum mechanically consistent."
+    "peer_review_response": "The M^{26}(24,2) framework satisfies unitarity (||S\u2020S - I|| = 1.52e-15), spectral purity (max |\u03bb| deviation = 4.44e-16), and is ghost-free (0/100 negative-norm states). The theory is quantum mechanically consistent."
   }
 }

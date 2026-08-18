@@ -191,13 +191,16 @@
       }
     },
     "bulk": {
-      "value": 27,
-      "form": "M^27(24,1,2) = 24 core + 1 time + 2 sampler",
+      "value": 26,
+      "form": "M^26(24,2) = 24 space + 2 times (one per shadow)",
       "status": "STRUCTURAL",
       "spare_vars": 0,
       "comparison": null,
-      "note": "D_crit = 26 = b3+2 is the string CRITICAL dimension (a different object), never the bulk. (24,1) totals 25 and must not be labelled '26D'. Clifford algebra of the physics core is Cl(24,1) with spinor dim 2^12 = 4096 (never Cl(26,1)/8192). Shadow bookkeeping: 13 = 4 (spacetime) + 7 (V7) + 2 (T2) — the '9-dimensional internal G2xT2' text is correct, the '8-dimensional' text is the error. chi_eff = 144 total, 72 per shadow (chi_sector) — '72' texts refer to the sector value, never a rival total.",
-      "superseded": {}
+      "note": "TWO-TIME RULING (2026-08-19, author's adoption — see docs/TWO_TIME_ASSESSMENT.md): each 13D shadow carries its own time; bulk signature (24,2). Consequences, all recomputed: D_bulk = D_crit = 26 = b3 + 2 (one derivation — the former b3+3 insertion and the critical-vs-bulk terminological split are retired); shadows (12,1) + (12,1) = 26 exactly, each literally half the bulk including time — no sampler pair needed; the Pneuma spinor 4096 is the WEYL (chiral) spinor of Cl(24,2) (Dirac 2^13 = 8192, Weyl 8192/2 = 4096) — chiral, as the chirality gates require, where odd-D Cl(24,1) had no chirality. (s-t) mod 8 = 6: Majorana yes, Weyl yes, Majorana-Weyl no. Ghost control of the second time is the Sp(2,R) gauge constraint (Bars two-time physics; signature (d,2) required — exactly (24,2)); STRUCTURAL until derived in-framework. Inter-shadow correlations propagate in the other shadow's time (extra-time mediation per Pettini, arXiv:2606.12457) — causal, no spacelike-shortcut hazard. Shadow bookkeeping unchanged: 13 = 4 (spacetime) + 7 (V7) + 2 (T2). chi_eff = 144 total, 72 per shadow. CAUTION for migrations: dim J3(O) = 27 is the exceptional Jordan algebra — a legitimate 27, never a bulk reference.",
+      "superseded": {
+        "27": "M^27(24,1,2) sampler-pair formulation (one shared time + (0,2) spacelike sampler dims). Retired: required both b3+2 and b3+3 as 'forced', shadows summed to 25 != 27, spinor was non-chiral, and spacelike correlator bridges carry the superluminal-shortcut hazard (Pettini).",
+        "25": "(24,1) physics-core dimension mislabelled as a bulk"
+      }
     },
     "root_split_288": {
       "value": null,

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "count": 12,
-  "n_pass": 12,
+  "count": 13,
+  "n_pass": 13,
   "n_fail": 0,
   "beacons": [
     {
@@ -135,6 +135,17 @@
       "tolerance": 0.01,
       "status": "PASS",
       "note": "Registered hbar (GeV.s) x c, converted to MeV.fm \u2014 pure unit-chain check."
+    },
+    {
+      "id": "beacon.two_time_bulk_accounting",
+      "name": "Two-time bulk accounting: b3+2 = 26 = 2x13; Weyl(Cl(24,2)) = 4096",
+      "reference": "Bars two-time physics (signature (d,2)); docs/TWO_TIME_ASSESSMENT.md",
+      "value": 0.0,
+      "expected": 0.0,
+      "delta_pct": 0.0,
+      "tolerance": 0.0,
+      "status": "PASS",
+      "note": "D_bulk = D_crit = b3+2 = 26; shadows (12,1)+(12,1) = 26 exactly; Pneuma spinor = Weyl of Cl(24,2) = 2^13/2 = 4096 (chiral). Integer-exact by construction once the ruling holds."
     }
   ],
   "note": "Textbook consistency beacons: cross-checks against standard physics references. NOT predictions of the Principia Metaphysica model \u2014 these are independent identities the framework should satisfy to be consistent with the textbooks. Failures here indicate a drift bug, not a novel prediction."

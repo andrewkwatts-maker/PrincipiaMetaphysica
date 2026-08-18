@@ -2,8 +2,8 @@
   "schema_version": 1,
   "note": "Prose-drift audit (S-1 guard): superseded numerals from the canonical-value rulings found in section content. Every hit is prose that must be rewritten to the canonical value or explicitly framed as a retired candidate.",
   "summary": {
-    "tokens_scanned": 30,
-    "hits": 46
+    "tokens_scanned": 41,
+    "hits": 47
   },
   "hits": [
     {
@@ -47,6 +47,12 @@
       "token": "125.25",
       "ruling": "stale m_H (canonical 125.20)",
       "context": "The 27-sigma tension with the PDG 2024 combined value m_h = 125.25 +/- 0.17 GeV is consistent with missing two-loop QCD correc"
+    },
+    {
+      "section": "A2",
+      "token": "27D",
+      "ruling": "superseded bulk (two-time ruling: 26D (24,2))",
+      "context": "The exceptional Jordan algebra J₃(𝕆) models the 27D Pneuma condensate; its cubic norm encodes the racetrack pot"
     },
     {
       "section": "A4",

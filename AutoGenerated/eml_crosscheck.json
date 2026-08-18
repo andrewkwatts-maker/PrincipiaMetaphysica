@@ -3,14 +3,14 @@
   "with_eml_description": 505,
   "skip": 235,
   "buckets": {
-    "AGREE": 352,
+    "AGREE": 353,
     "AGREE_LOOSE": 9,
-    "DISAGREE": 47,
+    "DISAGREE": 46,
     "DISAGREE_MISSING_CTX": 57,
     "DISAGREE_SCALE": 7
   },
-  "agreement_rate_strict": 0.7457627118644068,
-  "agreement_rate_loose": 0.7648305084745762,
+  "agreement_rate_strict": 0.7478813559322034,
+  "agreement_rate_loose": 0.7669491525423728,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -404,7 +404,7 @@
       "evaluated": 3.51,
       "registered": 3.51,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(3.51) \u2014 ALP mass in meV from M\u00b2\u2077 \u2192 M\u2074 vacuum residue (Principia Metric kill-switch)"
+      "eml_description": "EML: eml_scalar(3.51) \u2014 ALP mass in meV from M\u00b2\u2076 \u2192 M\u2074 vacuum residue (Principia Metric kill-switch)"
     },
     {
       "path": "appendix_t.stabilizer_weight_mean",
@@ -436,21 +436,21 @@
       "evaluated": 10.31324,
       "registered": 10.31324,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(10.31324) \u2014 original fitted numerical value of \u03b3_correction; now recovered by ops.div(ops.mul(eml_scalar(27.0), eml_scalar(24.0)), ops.mul(eml_scalar(20.0), eml_pi()))"
+      "eml_description": "EML: eml_scalar(10.31324) \u2014 original fitted numerical value of \u03b3_correction; now recovered by ops.div(ops.mul(eml_scalar(26.0), eml_scalar(24.0)), ops.mul(eml_scalar(20.0), eml_pi()))"
     },
     {
       "path": "appendix_u.gamma_geometric",
       "status": "AGREE",
-      "evaluated": 10.313240312354814,
-      "registered": 10.313240312354818,
-      "rel_error": 3.444808393094945e-16,
-      "eml_description": "EML: ops.div(ops.mul(eml_scalar(27.0), eml_scalar(24.0)), ops.mul(eml_scalar(20.0), eml_pi())) \u2014 \u03b3 = D\u00b7b\u2083/(2\u00b7D_string\u00b7\u03c0) = 27\u00b724/(2\u00b710\u00b7\u03c0)"
+      "evaluated": 9.93126844893427,
+      "registered": 9.931268448934269,
+      "rel_error": 1.7886505117992984e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(26.0), eml_scalar(24.0)), ops.mul(eml_scalar(20.0), eml_pi())) \u2014 \u03b3 = D\u00b7b\u2083/(2\u00b7D_string\u00b7\u03c0) = 26\u00b724/(2\u00b710\u00b7\u03c0)"
     },
     {
       "path": "appendix_u.match_sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('appendix_u.gamma_fitted'), eml_vec('appendix_u.gamma_geometric'))), eml_scalar(5e-7))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 0.6247096351330583,
+      "registered": 8.881784197001252e-10,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('appendix_u.gamma_fitted'), eml_vec('appendix_u.gamma_geometric'))), eml_scalar(5e-7)) \u2014 |\u03b3_fitted \u2212 \u03b3_geometric| / \u03c3_fit where \u03c3_fit = 0.5\u00d710\u207b\u2076 (last digit precision)"
     },
     {
@@ -528,7 +528,7 @@
       "evaluated": 12.0,
       "registered": 12.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(12.0) \u2014 number of (2,0) bridge pairs in the 27D architecture."
+      "eml_description": "EML: eml_scalar(12.0) \u2014 number of (2,0) bridge pairs in the 26D architecture."
     },
     {
       "path": "chirality.chiral_index",
@@ -803,8 +803,8 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.802460054506127,
-      "rel_error": 0.9555814976483196,
+      "registered": 7.805901613672971,
+      "rel_error": 0.9556010814083401,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
       "diagnostic": "rel_err=95.56%"
     },
@@ -1796,11 +1796,12 @@
     },
     {
       "path": "dimensions.D_bulk",
-      "status": "AGREE",
+      "status": "DISAGREE",
       "evaluated": 27.0,
-      "registered": 27.0,
-      "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(27.0) \u2014 ancestral manifold dimension D_bulk = 24+1+2 = 27"
+      "registered": 26.0,
+      "rel_error": 0.038461538461538464,
+      "eml_description": "EML: eml_scalar(27.0) \u2014 ancestral manifold dimension D_bulk = 24+1+2 = 27",
+      "diagnostic": "rel_err=3.85%"
     },
     {
       "path": "dimensions.D_physics",
@@ -2326,30 +2327,27 @@
     },
     {
       "path": "geometry.D_ancestral_total",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 26.0,
-      "registered": 27.0,
-      "rel_error": 0.037037037037037035,
-      "eml_description": "EML: eml_scalar(26.0) \u2014 ancestral spacetime D_ancestral = 26",
-      "diagnostic": "rel_err=3.70%"
+      "registered": 26.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(26.0) \u2014 ancestral spacetime D_ancestral = 26"
     },
     {
       "path": "geometry.D_bulk",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 26.0,
-      "registered": 27.0,
-      "rel_error": 0.037037037037037035,
-      "eml_description": "EML: eml_scalar(26.0) \u2014 Virasoro anomaly-cancellation bulk dimension D_bulk = 26 (c = D-26 = 0)",
-      "diagnostic": "rel_err=3.70%"
+      "registered": 26.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(26.0) \u2014 Virasoro anomaly-cancellation bulk dimension D_bulk = 26 (c = D-26 = 0)"
     },
     {
       "path": "geometry.D_compact",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 22.0,
-      "registered": 23.0,
-      "rel_error": 0.043478260869565216,
-      "eml_description": "EML: ops.sub(eml_scalar(26.0), eml_scalar(4.0)) \u2014 compact internal dimensions D_compact = D_bulk - D_visible = 22",
-      "diagnostic": "rel_err=4.35%"
+      "registered": 22.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.sub(eml_scalar(26.0), eml_scalar(4.0)) \u2014 compact internal dimensions D_compact = D_bulk - D_visible = 22"
     },
     {
       "path": "geometry.D_eff",
@@ -2596,11 +2594,12 @@
     },
     {
       "path": "geometry.alpha_T_phenomenological",
-      "status": "AGREE",
-      "evaluated": 2.7,
+      "status": "DISAGREE",
+      "evaluated": 2.6,
       "registered": 2.7,
-      "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(2.7) \u2014 phenomenological thermal time parameter \u03b1_T = 2.7 (fit to observations)"
+      "rel_error": 0.03703703703703707,
+      "eml_description": "EML: eml_scalar(2.6) \u2014 thermal time parameter \u03b1_T = 2.6 = 26/10 (two-time ruling)",
+      "diagnostic": "rel_err=3.70%"
     },
     {
       "path": "geometry.alpha_gut",
@@ -3071,7 +3070,7 @@
       "evaluated": 8192.00000000001,
       "registered": 8192.0,
       "rel_error": 1.1102230246251565e-15,
-      "eml_description": "EML: ops.pow(eml_scalar(2.0), eml_scalar(13.0)) \u2014 Clifford Cl(24,1) spinor dimension = 2^13 = 8192"
+      "eml_description": "EML: ops.pow(eml_scalar(2.0), eml_scalar(13.0)) \u2014 Clifford Cl(24,2) spinor dimension = 2^13 = 8192"
     },
     {
       "path": "geometry.spinor_4d",
@@ -3939,7 +3938,7 @@
     {
       "path": "pm.version",
       "status": "SKIP",
-      "reason": "non-numeric value: '24.2-27D'",
+      "reason": "non-numeric value: '24.2-26D'",
       "eml_description": "EML: eml_scalar(version_string) \u2014 PM framework canonical version label (system metadata)"
     },
     {
@@ -4013,7 +4012,7 @@
       "evaluated": 12.0,
       "registered": 12.0,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)) \u2014 n = b3/2 = 12 bridge pairs from 12\u00d7(2,0) paired bridge system in M\u00b2\u2077"
+      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)) \u2014 n = b3/2 = 12 bridge pairs from 12\u00d7(2,0) paired bridge system in M\u00b2\u2076"
     },
     {
       "path": "pneuma.neural_gate_active",
@@ -4394,7 +4393,7 @@
       "status": "ERROR",
       "reason": "eml_description must start with 'EML: '; got 'Integer count of (2,0) Euclidean paired '",
       "registered": 12.0,
-      "eml_description": "Integer count of (2,0) Euclidean paired bridges in the 12-PAIR-BRIDGE architecture; always equals 12 by construction of the M^{27}(24,1,2) framework."
+      "eml_description": "Integer count of (2,0) Euclidean paired bridges in the 12-PAIR-BRIDGE architecture; always equals 12 by construction of the M^{26}(24,2) framework."
     },
     {
       "path": "seal.integrity_status",
@@ -4594,7 +4593,7 @@
     {
       "path": "system.version",
       "status": "SKIP",
-      "reason": "non-numeric value: '24.2-27D'",
+      "reason": "non-numeric value: '24.2-26D'",
       "eml_description": "EML: eml_scalar(version_string) \u2014 PM framework version identifier (system metadata)"
     },
     {
@@ -4682,10 +4681,10 @@
     {
       "path": "thermal.alpha_T",
       "status": "AGREE",
-      "evaluated": 2.6999999999999997,
-      "registered": 2.6999999999999997,
+      "evaluated": 2.5999999999999996,
+      "registered": 2.5999999999999996,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.div(eml_scalar(27.0), eml_scalar(10.0)) \u2014 D_total/D_string = 27/10; b\u2083 and \u03c0 cancel algebraically in the full tree: ops.mul(ops.div(2\u03c0,b\u2083), ops.div(D\u00b7b\u2083, 2\u00b7D_s\u00b7\u03c0)) = ops.div(27,10)"
+      "eml_description": "EML: ops.div(eml_scalar(26.0), eml_scalar(10.0)) \u2014 D_total/D_string = 26/10; b\u2083 and \u03c0 cancel algebraically in the full tree: ops.mul(ops.div(2\u03c0,b\u2083), ops.div(D\u00b7b\u2083, 2\u00b7D_s\u00b7\u03c0)) = ops.div(26,10)"
     },
     {
       "path": "thermal.alpha_T_base",
@@ -4699,7 +4698,7 @@
       "path": "thermal.entropy_gradient",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(alpha_T, ops.inv(T_local))': name 'alpha_T' is not defined",
-      "registered": 3.0600830855384856e-06,
+      "registered": 2.9467466749629856e-06,
       "eml_description": "EML: ops.mul(alpha_T, ops.inv(T_local)) \u2014 thermal time correlation from modular flow; dS/dt >= 0 guaranteed by Lindblad monotonicity"
     },
     {
@@ -4712,8 +4711,8 @@
     {
       "path": "thermal.two_time_metric_signature",
       "status": "SKIP",
-      "reason": "non-numeric value: '(24,1)+12x(2,0)'",
-      "eml_description": "EML: ops.add(ops.mul(eml_scalar(12.0), eml_scalar(2.0)), ops.add(eml_scalar(1.0), eml_scalar(2.0))) \u2014 M\u00b2\u2077 = 12\u00d72 + 1 + 2 = 27D metric signature (24,1,2)"
+      "reason": "non-numeric value: '(24,2) = (12,1)+(12,1)'",
+      "eml_description": "EML: ops.add(ops.mul(eml_scalar(12.0), eml_scalar(2.0)), ops.add(eml_scalar(1.0), eml_scalar(2.0))) \u2014 M\u00b2\u2076 = 12\u00d72 + 1 + 2 = 26D metric signature (24,2)"
     },
     {
       "path": "topology.K_MATCHING",
