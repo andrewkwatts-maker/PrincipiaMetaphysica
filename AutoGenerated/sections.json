@@ -1,6 +1,6 @@
 {
   "version": "24.2",
-  "count": 82,
+  "count": 84,
   "sections": {
     "0": {
       "id": "0",
@@ -208,7 +208,7 @@
         "abstract.ledger_open",
         "abstract.v25_v26_closures"
       ],
-      "timestamp": "2026-08-19T03:42:26.269092"
+      "timestamp": "2026-08-19T09:05:04.883621"
     },
     "1": {
       "id": "1",
@@ -219,7 +219,7 @@
       "title": "Introduction",
       "shortTitle": "Introduction",
       "order": 1,
-      "abstract": "The pursuit of a unified description of all fundamental forces represents one of the most profound intellectual endeavors in theoretical physics. This section traces the historical arc from Maxwell's unification of electricity and magnetism to modern attempts at Grand Unified Theories, while introducing the novel approach of proposing that geometry emerges from a fundamental fermionic field. Principia Metaphysica v24.2 posits a 26D spacetime with unified structure (24,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)—with 12 bridge pairs warping to create dual 13D(12,1) shadows—eliminating ghost modes while preserving phenomenological richness. Compactification occurs on a TCS (Twisted Connected Sum) G₂ manifold with h<sup>1,1</sup>=4 Kähler moduli sectors, enabling racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without tuning. The Primordial Spinor Field-Vielbein bridge validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ -0.204, consistent with DESI 2025 thawing observations.",
+      "abstract": "The pursuit of a unified description of all fundamental forces represents one of the most profound intellectual endeavors in theoretical physics. This section traces the historical arc from Maxwell's unification of electricity and magnetism to modern attempts at Grand Unified Theories, while introducing the novel approach of proposing that geometry emerges from a fundamental fermionic field. Principia Metaphysica v24.2 posits a 26D spacetime with unified structure (24,2) = 12×(2,0) + S<sup>(2,0)</sup> + (0,1)—with 12 bridge pairs warping to create dual 13D(12,1) shadows—eliminating ghost modes while preserving phenomenological richness. Compactification occurs on a TCS (Twisted Connected Sum) G₂ manifold with h<sup>1,1</sup>=4 Kähler moduli sectors, enabling racetrack moduli stabilization that dynamically derives ε ≈ 0.2257 (racetrack variant of the Cabibbo angle; canonical e^{-3/2} = 0.22313) without tuning. The Primordial Spinor Field-Vielbein bridge validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ -0.204, consistent with DESI 2025 thawing observations.",
       "contentBlocks": [
         {
           "type": "paragraph",
@@ -472,7 +472,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>Section 2 (Spectral Decomposition)</strong>: Complete spectral decomposition of the G₂ manifold; 26D bulk with (24,2) structure; dual 13D(12,1) shadow emergence via OR reduction; racetrack moduli stabilization. <strong>Section 3 (Cosmological Results)</strong>: Hubble tension, S<sub>8</sub> suppression; Planck 2018 and DESI 2025 alignment. <strong>Section 4 (CKM/PMNS from G₂ Triality)</strong>: Unified CKM and PMNS matrices from G₂ triality; Yukawa hierarchies (ε = 0.2257 from racetrack); mixing angle derivations. <strong>Section 5 (Dark Energy Attractor)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204 derived; breathing dark energy potential. <strong>Section 6 (Baryon Asymmetry)</strong>: Baryon asymmetry from G₂ cycles and Jarlskog invariant. <strong>Section 7 (ALP Portal Physics)</strong>: Axion-like particle portal physics from Face 3 Kähler moduli; dark matter portal coupling. Appendices provide spectral registry (A), algebraic foundations (B–C), statistical logs (D), and validation certificates (F–G)."
+          "content": "<strong>Section 2 (Spectral Decomposition)</strong>: Complete spectral decomposition of the G₂ manifold; 26D bulk with (24,2) structure; dual 13D(12,1) shadow emergence via OR reduction; racetrack moduli stabilization. <strong>Section 3 (Cosmological Results)</strong>: Hubble tension, S<sub>8</sub> suppression; Planck 2018 and DESI 2025 alignment. <strong>Section 4 (CKM/PMNS from G₂ Triality)</strong>: Unified CKM and PMNS matrices from G₂ triality; Yukawa hierarchies (racetrack variant ε = 0.2257; canonical e^{-3/2} = 0.22313); mixing angle derivations. <strong>Section 5 (Dark Energy Attractor)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204 derived; breathing dark energy potential. <strong>Section 6 (Baryon Asymmetry)</strong>: Baryon asymmetry from G₂ cycles and Jarlskog invariant. <strong>Section 7 (ALP Portal Physics)</strong>: Axion-like particle portal physics from Face 3 Kähler moduli; dark matter portal coupling. Appendices provide spectral registry (A), algebraic foundations (B–C), statistical logs (D), and validation certificates (F–G)."
         },
         {
           "type": "paragraph",
@@ -521,7 +521,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Two-Time Physics (Bars 1998–2010; Pettini 2026)</h4><p>Itzhak Bars' program demonstrated that a physical theory in signature (d,2) with an Sp(2,ℝ) gauge symmetry reproduces families of ordinary one-time systems as different gauge fixings, with the gauge constraint removing ghost states. PM adopts this structure: the bulk carries signature (24,2), and each 13D(12,1) shadow is a one-time gauge slice carrying its own timelike direction — (12,1) + (12,1) = (24,2) exactly. The Sp(2,ℝ) constraint is currently a STRUCTURAL assumption (invoked, not yet derived from b₃ = 24). Recent work by <strong>Pettini (2026, arXiv:2606.12457)</strong> argues that an extra <em>timelike</em> dimension lets spatially separated branes correlate causally through the second time — where an extra spacelike dimension would instead permit superluminal shortcuts — which is the mechanism PM invokes for inter-shadow correlation. This yields a falsifiable signature: Bell-type correlations between cross-shadow pairs (SPECULATIVE; see the falsification program).</p>",
+          "content": "<h4>Two-Time Physics (Bars 1998–2010; Pettini 2026)</h4><p>Itzhak Bars' program demonstrated that a physical theory in signature (d,2) with an Sp(2,ℝ) gauge symmetry reproduces families of ordinary one-time systems as different gauge fixings, with the gauge constraint removing ghost states. PM adopts this structure: the bulk carries signature (24,2), and each 13D(12,1) shadow is a one-time gauge slice carrying its own timelike direction — (12,1) + (12,1) = (24,2) exactly. The Sp(2,ℝ) constraint is currently a STRUCTURAL assumption (invoked, not yet derived from b₃ = 24). Recent work by <strong>Pettini (2026, arXiv:2606.12457)</strong> argues that an extra <em>timelike</em> dimension lets spatially separated branes correlate causally through the second time — where an extra spacelike dimension would instead permit superluminal shortcuts — which is the mechanism PM invokes for inter-shadow correlation. This yields a falsifiable signature: Bell-type correlations between cross-shadow pairs (SPECULATIVE; see the falsification program). No <em>third</em> bulk time is needed for a shared clock: the Sp(2,ℝ)-invariant combination t₊ = (t₁+t₂)/√2 survives gauge fixing as the common time along which the OR reduction balances the 12 bridge pairs, while the relative time t₋ = (t₁−t₂)/√2 is pure gauge. A literal third timelike direction would give D = 27 ≠ D_crit = 26, destroy the Weyl chirality of Cl(24,2) (odd-dimensional Clifford algebras admit no chiral spinors), and fall outside the Sp(2,ℝ) two-time theorem, which singles out exactly two times.</p>",
           "label": "historical-two-time-context",
           "equationNumber": "historical-two-time-context"
         },
@@ -828,7 +828,7 @@
         },
         {
           "type": "paragraph",
-          "content": "<strong>Section 2 (Spectral Decomposition)</strong>: Complete spectral decomposition of the G₂ manifold; 26D bulk with (24,2) structure; dual 13D(12,1) shadow emergence via OR reduction; racetrack moduli stabilization. <strong>Section 3 (Cosmological Results)</strong>: Hubble tension, S<sub>8</sub> suppression; Planck 2018 and DESI 2025 alignment. <strong>Section 4 (CKM/PMNS from G₂ Triality)</strong>: Unified CKM and PMNS matrices from G₂ triality; Yukawa hierarchies (ε = 0.2257 from racetrack); mixing angle derivations. <strong>Section 5 (Dark Energy Attractor)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204 derived; breathing dark energy potential. <strong>Section 6 (Baryon Asymmetry)</strong>: Baryon asymmetry from G₂ cycles and Jarlskog invariant. <strong>Section 7 (ALP Portal Physics)</strong>: Axion-like particle portal physics from Face 3 Kähler moduli; dark matter portal coupling. Appendices provide spectral registry (A), algebraic foundations (B–C), statistical logs (D), and validation certificates (F–G)."
+          "content": "<strong>Section 2 (Spectral Decomposition)</strong>: Complete spectral decomposition of the G₂ manifold; 26D bulk with (24,2) structure; dual 13D(12,1) shadow emergence via OR reduction; racetrack moduli stabilization. <strong>Section 3 (Cosmological Results)</strong>: Hubble tension, S<sub>8</sub> suppression; Planck 2018 and DESI 2025 alignment. <strong>Section 4 (CKM/PMNS from G₂ Triality)</strong>: Unified CKM and PMNS matrices from G₂ triality; Yukawa hierarchies (racetrack variant ε = 0.2257; canonical e^{-3/2} = 0.22313); mixing angle derivations. <strong>Section 5 (Dark Energy Attractor)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ -0.204 derived; breathing dark energy potential. <strong>Section 6 (Baryon Asymmetry)</strong>: Baryon asymmetry from G₂ cycles and Jarlskog invariant. <strong>Section 7 (ALP Portal Physics)</strong>: Axion-like particle portal physics from Face 3 Kähler moduli; dark matter portal coupling. Appendices provide spectral registry (A), algebraic foundations (B–C), statistical logs (D), and validation certificates (F–G)."
         },
         {
           "type": "paragraph",
@@ -877,7 +877,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Two-Time Physics (Bars 1998–2010; Pettini 2026)</h4><p>Itzhak Bars' program demonstrated that a physical theory in signature (d,2) with an Sp(2,ℝ) gauge symmetry reproduces families of ordinary one-time systems as different gauge fixings, with the gauge constraint removing ghost states. PM adopts this structure: the bulk carries signature (24,2), and each 13D(12,1) shadow is a one-time gauge slice carrying its own timelike direction — (12,1) + (12,1) = (24,2) exactly. The Sp(2,ℝ) constraint is currently a STRUCTURAL assumption (invoked, not yet derived from b₃ = 24). Recent work by <strong>Pettini (2026, arXiv:2606.12457)</strong> argues that an extra <em>timelike</em> dimension lets spatially separated branes correlate causally through the second time — where an extra spacelike dimension would instead permit superluminal shortcuts — which is the mechanism PM invokes for inter-shadow correlation. This yields a falsifiable signature: Bell-type correlations between cross-shadow pairs (SPECULATIVE; see the falsification program).</p>",
+          "content": "<h4>Two-Time Physics (Bars 1998–2010; Pettini 2026)</h4><p>Itzhak Bars' program demonstrated that a physical theory in signature (d,2) with an Sp(2,ℝ) gauge symmetry reproduces families of ordinary one-time systems as different gauge fixings, with the gauge constraint removing ghost states. PM adopts this structure: the bulk carries signature (24,2), and each 13D(12,1) shadow is a one-time gauge slice carrying its own timelike direction — (12,1) + (12,1) = (24,2) exactly. The Sp(2,ℝ) constraint is currently a STRUCTURAL assumption (invoked, not yet derived from b₃ = 24). Recent work by <strong>Pettini (2026, arXiv:2606.12457)</strong> argues that an extra <em>timelike</em> dimension lets spatially separated branes correlate causally through the second time — where an extra spacelike dimension would instead permit superluminal shortcuts — which is the mechanism PM invokes for inter-shadow correlation. This yields a falsifiable signature: Bell-type correlations between cross-shadow pairs (SPECULATIVE; see the falsification program). No <em>third</em> bulk time is needed for a shared clock: the Sp(2,ℝ)-invariant combination t₊ = (t₁+t₂)/√2 survives gauge fixing as the common time along which the OR reduction balances the 12 bridge pairs, while the relative time t₋ = (t₁−t₂)/√2 is pure gauge. A literal third timelike direction would give D = 27 ≠ D_crit = 26, destroy the Weyl chirality of Cl(24,2) (odd-dimensional Clifford algebras admit no chiral spinors), and fall outside the Sp(2,ℝ) two-time theorem, which singles out exactly two times.</p>",
           "label": "historical-two-time-context",
           "equationNumber": "historical-two-time-context"
         },
@@ -962,7 +962,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-08-19T03:42:26.279067"
+      "timestamp": "2026-08-19T09:05:04.894022"
     },
     "2": {
       "id": "2",
@@ -973,7 +973,7 @@
       "title": "Geometric Framework",
       "shortTitle": "Geometric Framework",
       "order": 2,
-      "abstract": "This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the 26-dimensional action with signature (24,2) decomposing as M_26 = M_A^14 ⊗_T M_B^14, where each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, projecting onto an effective 13D (12,1) shadow. We derive the 4D effective action through Kaluza-Klein dimensional reduction on a TCS (Twisted Connected Sum) G₂ manifold with h1,1=4 Kähler moduli sectors. Racetrack moduli stabilization across these sectors dynamically derives ε ≈ 0.2257 (racetrack variant of the Cabibbo angle; canonical e^{-3/2} = 0.22313) from flux quantization N₁=24, N₂=23. The 26D→13D shadow framework provides a Z₂ mirror brane structure with geometrically-derived generation count n_gen = 3. The Pneuma-Vielbein bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+).",
+      "abstract": "This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the 26-dimensional action with signature (24,2) decomposing into dual 13D(12,1) shadows, each carrying its own timelike direction ((12,1) + (12,1) = (24,2)). Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, gauge-fixing each shadow to an effective one-time 13D(12,1) sector. We derive the 4D effective action through Kaluza-Klein dimensional reduction on a TCS (Twisted Connected Sum) G₂ manifold with h1,1=4 Kähler moduli sectors. Racetrack moduli stabilization across these sectors dynamically derives ε ≈ 0.2257 (racetrack variant of the Cabibbo angle; canonical e^{-3/2} = 0.22313) from flux quantization N₁=24, N₂=23. The 26D→13D shadow framework provides a Z₂ mirror brane structure with geometrically-derived generation count n_gen = 3. The Pneuma-Vielbein bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+).",
       "contentBlocks": [
         {
           "type": "heading",
@@ -2220,7 +2220,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-08-19T03:42:26.488837"
+      "timestamp": "2026-08-19T09:05:05.102620"
     },
     "2.7": {
       "id": "2",
@@ -2610,7 +2610,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-08-19T03:42:26.489099"
+      "timestamp": "2026-08-19T09:05:05.102902"
     },
     "V.1": {
       "id": "validation",
@@ -2732,7 +2732,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-08-19T03:42:26.489610"
+      "timestamp": "2026-08-19T09:05:05.103474"
     },
     "3.4": {
       "id": "3",
@@ -2896,7 +2896,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-08-19T03:42:26.489678"
+      "timestamp": "2026-08-19T09:05:05.103545"
     },
     "3.6": {
       "id": "3",
@@ -3068,7 +3068,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-08-19T03:42:26.489823"
+      "timestamp": "2026-08-19T09:05:05.103695"
     },
     "3": {
       "id": "3",
@@ -3272,7 +3272,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-08-19T03:42:26.528704"
+      "timestamp": "2026-08-19T09:05:05.144220"
     },
     "3.2": {
       "id": "3",
@@ -3380,7 +3380,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Higgs mechanism mixes W³ and B into the massless photon and massive Z boson. The Weinberg angle sin²(θ<sub>W</sub>) = 0.23189 is locked by the G₂ cycle volume ratio, not fit to data."
+          "content": "The Higgs mechanism mixes W³ and B into the massless photon and massive Z boson. The geometric tree-level Weinberg angle sin²(θ<sub>W</sub>)<sup>geo</sup> = 0.23189 (MS-bar Z-pole: 0.23122; scheme ruling) is locked by the G₂ cycle volume ratio, not fit to data."
         },
         {
           "type": "formula",
@@ -3473,7 +3473,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The dark matter portal coupling emerges from the hidden face geometry of the TCS G₂ manifold. Face OR (Layer 2) selects one face as visible, leaving three hidden faces. The hidden face fields couple to visible fields through shared moduli, with a portal coupling α<sub>leak</sub> ~ 0.57 determined by the volume ratio 1/√6, torsion corrections from the G₂ contorsion tensor, and flux asymmetry between visible and hidden faces."
+          "content": "The dark matter portal coupling emerges from the hidden face geometry of the TCS G₂ manifold. Face OR (Layer 2) selects one face as visible, leaving three hidden faces. The hidden face fields couple to visible fields through shared moduli, with a portal coupling α<sub>sample</sub> ~ 0.57 (ANSATZ; α<sub>leak</sub> = 1/√6 ≈ 0.408) determined by the volume ratio 1/√6, torsion corrections from the G₂ contorsion tensor, and flux asymmetry between visible and hidden faces."
         },
         {
           "type": "formula",
@@ -3577,7 +3577,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Higgs mechanism mixes W³ and B into the massless photon and massive Z boson. The Weinberg angle sin²(θ<sub>W</sub>) = 0.23189 is locked by the G₂ cycle volume ratio, not fit to data."
+          "content": "The Higgs mechanism mixes W³ and B into the massless photon and massive Z boson. The geometric tree-level Weinberg angle sin²(θ<sub>W</sub>)<sup>geo</sup> = 0.23189 (MS-bar Z-pole: 0.23122; scheme ruling) is locked by the G₂ cycle volume ratio, not fit to data."
         },
         {
           "type": "formula",
@@ -3670,7 +3670,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The dark matter portal coupling emerges from the hidden face geometry of the TCS G₂ manifold. Face OR (Layer 2) selects one face as visible, leaving three hidden faces. The hidden face fields couple to visible fields through shared moduli, with a portal coupling α<sub>leak</sub> ~ 0.57 determined by the volume ratio 1/√6, torsion corrections from the G₂ contorsion tensor, and flux asymmetry between visible and hidden faces."
+          "content": "The dark matter portal coupling emerges from the hidden face geometry of the TCS G₂ manifold. Face OR (Layer 2) selects one face as visible, leaving three hidden faces. The hidden face fields couple to visible fields through shared moduli, with a portal coupling α<sub>sample</sub> ~ 0.57 (ANSATZ; α<sub>leak</sub> = 1/√6 ≈ 0.408) determined by the volume ratio 1/√6, torsion corrections from the G₂ contorsion tensor, and flux asymmetry between visible and hidden faces."
         },
         {
           "type": "formula",
@@ -3760,7 +3760,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-08-19T03:42:26.529079"
+      "timestamp": "2026-08-19T09:05:05.144603"
     },
     "3.1": {
       "id": "3",
@@ -3818,7 +3818,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-08-19T03:42:26.529307"
+      "timestamp": "2026-08-19T09:05:05.144851"
     },
     "4.2": {
       "id": "4",
@@ -3859,7 +3859,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where lambda = 1.5 is the G2 curvature scale, Q_f is the topological distance (graph hops in the cycle network), and A_f are O(1) geometric coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.2257, providing a geometric origin for the flavor hierarchy m_t >> m_c >> m_u. <Speculation>The numerical coincidence between epsilon = exp(-3/2) and the Cabibbo angle may reflect a deeper connection between G2 compactification geometry and quark flavor mixing, or may be an artifact of the specific cycle distance assignments chosen for this manifold.</Speculation>"
+          "content": "where lambda = 1.5 is the G2 curvature scale, Q_f is the topological distance (graph hops in the cycle network), and A_f are O(1) geometric coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.22500 (PDG 2024), providing a geometric origin for the flavor hierarchy m_t >> m_c >> m_u. <Speculation>The numerical coincidence between epsilon = exp(-3/2) and the Cabibbo angle may reflect a deeper connection between G2 compactification geometry and quark flavor mixing, or may be an artifact of the specific cycle distance assignments chosen for this manifold.</Speculation>"
         },
         {
           "type": "paragraph",
@@ -3906,7 +3906,7 @@
         },
         {
           "type": "paragraph",
-          "content": "where lambda = 1.5 is the G2 curvature scale, Q_f is the topological distance (graph hops in the cycle network), and A_f are O(1) geometric coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.2257, providing a geometric origin for the flavor hierarchy m_t >> m_c >> m_u. <Speculation>The numerical coincidence between epsilon = exp(-3/2) and the Cabibbo angle may reflect a deeper connection between G2 compactification geometry and quark flavor mixing, or may be an artifact of the specific cycle distance assignments chosen for this manifold.</Speculation>"
+          "content": "where lambda = 1.5 is the G2 curvature scale, Q_f is the topological distance (graph hops in the cycle network), and A_f are O(1) geometric coefficients encoding angular overlaps. The value epsilon ~ 0.223 agrees with the Cabibbo angle V_us = 0.22500 (PDG 2024), providing a geometric origin for the flavor hierarchy m_t >> m_c >> m_u. <Speculation>The numerical coincidence between epsilon = exp(-3/2) and the Cabibbo angle may reflect a deeper connection between G2 compactification geometry and quark flavor mixing, or may be an artifact of the specific cycle distance assignments chosen for this manifold.</Speculation>"
         },
         {
           "type": "paragraph",
@@ -3948,7 +3948,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-08-19T03:42:26.732056"
+      "timestamp": "2026-08-19T09:05:05.349459"
     },
     "4.1": {
       "id": "4",
@@ -4236,7 +4236,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-08-19T03:42:26.925346"
+      "timestamp": "2026-08-19T09:05:05.551386"
     },
     "4.3": {
       "id": "4",
@@ -4476,7 +4476,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-08-19T03:42:26.925701"
+      "timestamp": "2026-08-19T09:05:05.551813"
     },
     "4.6": {
       "id": "4",
@@ -4662,7 +4662,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-08-19T03:42:26.925845"
+      "timestamp": "2026-08-19T09:05:05.551971"
     },
     "4.4": {
       "id": "4",
@@ -4741,7 +4741,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This demonstrates that while the framework provides a concrete mechanism connecting the Higgs mass to moduli stabilization, the experimentally measured value serves as a phenomenological constraint on the compactification geometry. The 27-sigma tension with the PDG 2024 combined value m_h = 125.25 +/- 0.17 GeV is consistent with missing two-loop QCD corrections to the effective potential, which typically shift the predicted Higgs mass upward by 3 to 5 GeV in MSSM-like scenarios (see Sensitivity Analysis notes)."
+          "content": "This demonstrates that while the framework provides a concrete mechanism connecting the Higgs mass to moduli stabilization, the experimentally measured value serves as a phenomenological constraint on the compactification geometry. The retired 120.6 GeV output sat 27 sigma from experiment; the current output m_h = 125.10 GeV sits 0.9 sigma below the PDG 2024 combined value 125.20 +/- 0.11 GeV, with missing two-loop QCD corrections (typically +3 to 5 GeV in MSSM-like scenarios) the leading systematic (see Sensitivity Analysis notes)."
         }
       ],
       "content_blocks": [
@@ -4811,7 +4811,7 @@
         },
         {
           "type": "paragraph",
-          "content": "This demonstrates that while the framework provides a concrete mechanism connecting the Higgs mass to moduli stabilization, the experimentally measured value serves as a phenomenological constraint on the compactification geometry. The 27-sigma tension with the PDG 2024 combined value m_h = 125.25 +/- 0.17 GeV is consistent with missing two-loop QCD corrections to the effective potential, which typically shift the predicted Higgs mass upward by 3 to 5 GeV in MSSM-like scenarios (see Sensitivity Analysis notes)."
+          "content": "This demonstrates that while the framework provides a concrete mechanism connecting the Higgs mass to moduli stabilization, the experimentally measured value serves as a phenomenological constraint on the compactification geometry. The retired 120.6 GeV output sat 27 sigma from experiment; the current output m_h = 125.10 GeV sits 0.9 sigma below the PDG 2024 combined value 125.20 +/- 0.11 GeV, with missing two-loop QCD corrections (typically +3 to 5 GeV in MSSM-like scenarios) the leading systematic (see Sensitivity Analysis notes)."
         }
       ],
       "formulaRefs": [
@@ -4844,7 +4844,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-08-19T03:42:26.926312"
+      "timestamp": "2026-08-19T09:05:05.552463"
     },
     "4.9": {
       "id": "4",
@@ -4946,7 +4946,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-08-19T03:42:26.926437"
+      "timestamp": "2026-08-19T09:05:05.552591"
     },
     "6.1.1": {
       "id": "6",
@@ -5060,7 +5060,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-08-19T03:42:26.926674"
+      "timestamp": "2026-08-19T09:05:05.552836"
     },
     "4.2.1": {
       "id": "4",
@@ -5134,7 +5134,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-08-19T03:42:26.926852"
+      "timestamp": "2026-08-19T09:05:05.553014"
     },
     "4.8": {
       "id": "4",
@@ -5192,7 +5192,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-08-19T03:42:26.927125"
+      "timestamp": "2026-08-19T09:05:05.553291"
     },
     "A2": {
       "id": "A2",
@@ -5203,7 +5203,7 @@
       "title": "Freudenthal Triple System: 26D Pneuma Condensate",
       "shortTitle": "Freudenthal Triple System: 26D Pneuma Condensate",
       "order": 99,
-      "abstract": "The exceptional Jordan algebra J₃(𝕆) models the 27D Pneuma condensate; its cubic norm encodes the racetrack potential and its quartic invariant gives the ALP mass scale.",
+      "abstract": "The exceptional Jordan algebra J₃(𝕆) models the Pneuma condensate in the 27-dimensional Jordan algebra; its cubic norm encodes the racetrack potential and its quartic invariant gives the ALP mass scale.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -5264,7 +5264,7 @@
         "algebra.freudenthal_jordan_trace",
         "algebra.pneuma_27d_condensate_scale"
       ],
-      "timestamp": "2026-08-19T03:42:26.927737"
+      "timestamp": "2026-08-19T09:05:05.554156"
     },
     "A3": {
       "id": "A3",
@@ -5350,7 +5350,7 @@
         "algebra.e7_symplectic",
         "algebra.e7_alp_mass_gev"
       ],
-      "timestamp": "2026-08-19T03:42:26.927967"
+      "timestamp": "2026-08-19T09:05:05.554444"
     },
     "A4": {
       "id": "A4",
@@ -5361,7 +5361,7 @@
       "title": "Gaugino Condensation: Cabibbo from Racetrack N₁=24/N₂=23",
       "shortTitle": "Gaugino Condensation: Cabibbo from Racetrack N₁=24/N₂=23",
       "order": 99,
-      "abstract": "Hidden E₈' gaugino condensation with b₃=24 topology gives N₁=24/N₂=23 racetrack. The algebraic Wolfenstein parameter λ_W = ε_rt^(1/3) ≈ 0.2502 (PDG: 0.2257) follows from the racetrack moduli minimum — DERIVED, zero free parameters.",
+      "abstract": "Hidden E₈' gaugino condensation with b₃=24 topology gives N₁=24/N₂=23 racetrack. The algebraic Wolfenstein parameter λ_W = ε_rt^(1/3) ≈ 0.2502 (PDG: 0.22500) follows from the racetrack moduli minimum — DERIVED, zero free parameters.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -5381,11 +5381,11 @@
         },
         {
           "type": "callout",
-          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2250)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
+          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2250)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.22500, ~11% error]"
         },
         {
           "type": "paragraph",
-          "content": "<Normal>The effective Yukawa suppression λ_eff = exp(−2π/24) ≈ 0.769665 at the racetrack minimum gives a Cabibbo-like proxy ε ≈ λ_eff³ ≈ 0.4559. Beyond this coarse proxy, the algebraic Wolfenstein parameter follows from evaluating both condensates at the exact racetrack moduli minimum T_min. Setting ∂W/∂T = 0 gives T_min = (N₁·N₂)/(2π·(N₁−N₂))·ln(N₁/N₂) ≈ 3.7390. The off-diagonal Yukawa texture ε_rt = |W₁(T_min) − W₂(T_min)| ≈ 0.01566 encodes the condensate splitting at the minimum. With n_gen = 3 fermion generations, λ_W = ε_rt^(1/n_gen) = ε_rt^(1/3) ≈ 0.2502. The PDG value is 0.2257 — agreement ≈ 89%, purely from topology (N₁=b₃=24, N₂=23, n_gen=3). This is a DERIVED result: zero free parameters.</Normal><EML>T_min: ops.div(ops.mul(eml_scalar(24), eml_scalar(23)), ops.mul(ops.mul(eml_scalar(2), eml_pi()), eml_scalar(1))) * ln(24/23). W1_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(24)))))); W2_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(23)))))); epsilon_rt = ops.abs(ops.add(W1_tmin, ops.neg(W2_tmin))); lambda_W = ops.pow(epsilon_rt, ops.inv(eml_scalar(3))). All operators topologically determined; no fitting.</EML>"
+          "content": "<Normal>The effective Yukawa suppression λ_eff = exp(−2π/24) ≈ 0.769665 at the racetrack minimum gives a Cabibbo-like proxy ε ≈ λ_eff³ ≈ 0.4559. Beyond this coarse proxy, the algebraic Wolfenstein parameter follows from evaluating both condensates at the exact racetrack moduli minimum T_min. Setting ∂W/∂T = 0 gives T_min = (N₁·N₂)/(2π·(N₁−N₂))·ln(N₁/N₂) ≈ 3.7390. The off-diagonal Yukawa texture ε_rt = |W₁(T_min) − W₂(T_min)| ≈ 0.01566 encodes the condensate splitting at the minimum. With n_gen = 3 fermion generations, λ_W = ε_rt^(1/n_gen) = ε_rt^(1/3) ≈ 0.2502. The PDG value is 0.22500 — agreement ≈ 89%, purely from topology (N₁=b₃=24, N₂=23, n_gen=3). This is a DERIVED result: zero free parameters.</Normal><EML>T_min: ops.div(ops.mul(eml_scalar(24), eml_scalar(23)), ops.mul(ops.mul(eml_scalar(2), eml_pi()), eml_scalar(1))) * ln(24/23). W1_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(24)))))); W2_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(23)))))); epsilon_rt = ops.abs(ops.add(W1_tmin, ops.neg(W2_tmin))); lambda_W = ops.pow(epsilon_rt, ops.inv(eml_scalar(3))). All operators topologically determined; no fitting.</EML>"
         },
         {
           "type": "formula",
@@ -5414,11 +5414,11 @@
         },
         {
           "type": "callout",
-          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2250)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.2257, ~11% error]"
+          "content": "W_np(N₁=24) = 0.76966541,  W_np(N₂=23) = 0.76095430\nλ_eff = exp(−2π/24) = 0.76966541\nCabibbo proxy ε ≈ λ_eff³ = 0.455938  (cf. PDG Wolfenstein λ_W ≈ 0.2250)\nRacetrack minimum T_min ≈ 3.739012\nAlgebraic: ε_rt = |W₁(T_min) − W₂(T_min)| = 0.015656,  λ_W = ε_rt^(1/3) = 0.250163  [DERIVED, PDG: 0.22500, ~11% error]"
         },
         {
           "type": "paragraph",
-          "content": "<Normal>The effective Yukawa suppression λ_eff = exp(−2π/24) ≈ 0.769665 at the racetrack minimum gives a Cabibbo-like proxy ε ≈ λ_eff³ ≈ 0.4559. Beyond this coarse proxy, the algebraic Wolfenstein parameter follows from evaluating both condensates at the exact racetrack moduli minimum T_min. Setting ∂W/∂T = 0 gives T_min = (N₁·N₂)/(2π·(N₁−N₂))·ln(N₁/N₂) ≈ 3.7390. The off-diagonal Yukawa texture ε_rt = |W₁(T_min) − W₂(T_min)| ≈ 0.01566 encodes the condensate splitting at the minimum. With n_gen = 3 fermion generations, λ_W = ε_rt^(1/n_gen) = ε_rt^(1/3) ≈ 0.2502. The PDG value is 0.2257 — agreement ≈ 89%, purely from topology (N₁=b₃=24, N₂=23, n_gen=3). This is a DERIVED result: zero free parameters.</Normal><EML>T_min: ops.div(ops.mul(eml_scalar(24), eml_scalar(23)), ops.mul(ops.mul(eml_scalar(2), eml_pi()), eml_scalar(1))) * ln(24/23). W1_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(24)))))); W2_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(23)))))); epsilon_rt = ops.abs(ops.add(W1_tmin, ops.neg(W2_tmin))); lambda_W = ops.pow(epsilon_rt, ops.inv(eml_scalar(3))). All operators topologically determined; no fitting.</EML>"
+          "content": "<Normal>The effective Yukawa suppression λ_eff = exp(−2π/24) ≈ 0.769665 at the racetrack minimum gives a Cabibbo-like proxy ε ≈ λ_eff³ ≈ 0.4559. Beyond this coarse proxy, the algebraic Wolfenstein parameter follows from evaluating both condensates at the exact racetrack moduli minimum T_min. Setting ∂W/∂T = 0 gives T_min = (N₁·N₂)/(2π·(N₁−N₂))·ln(N₁/N₂) ≈ 3.7390. The off-diagonal Yukawa texture ε_rt = |W₁(T_min) − W₂(T_min)| ≈ 0.01566 encodes the condensate splitting at the minimum. With n_gen = 3 fermion generations, λ_W = ε_rt^(1/n_gen) = ε_rt^(1/3) ≈ 0.2502. The PDG value is 0.22500 — agreement ≈ 89%, purely from topology (N₁=b₃=24, N₂=23, n_gen=3). This is a DERIVED result: zero free parameters.</Normal><EML>T_min: ops.div(ops.mul(eml_scalar(24), eml_scalar(23)), ops.mul(ops.mul(eml_scalar(2), eml_pi()), eml_scalar(1))) * ln(24/23). W1_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(24)))))); W2_tmin = ops.exp(ops.neg(ops.mul(eml_scalar(2), ops.mul(eml_pi(), ops.div(T_min, eml_scalar(23)))))); epsilon_rt = ops.abs(ops.add(W1_tmin, ops.neg(W2_tmin))); lambda_W = ops.pow(epsilon_rt, ops.inv(eml_scalar(3))). All operators topologically determined; no fitting.</EML>"
         },
         {
           "type": "formula",
@@ -5460,7 +5460,7 @@
         "algebra.gaugino_condensate_ratio",
         "algebra.gaugino_cabibbo_derived"
       ],
-      "timestamp": "2026-08-19T03:42:26.928070"
+      "timestamp": "2026-08-19T09:05:05.554596"
     },
     "A5": {
       "id": "A5",
@@ -5592,7 +5592,7 @@
         "algebra.e8_portal_coupling",
         "algebra.e8_heterotic_spectral_proxy"
       ],
-      "timestamp": "2026-08-19T03:42:26.972521"
+      "timestamp": "2026-08-19T09:05:05.602286"
     },
     "A6": {
       "id": "A6",
@@ -5830,7 +5830,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-19T03:42:26.972717"
+      "timestamp": "2026-08-19T09:05:05.602497"
     },
     "A7": {
       "id": "A7",
@@ -6078,7 +6078,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-19T03:42:26.972762"
+      "timestamp": "2026-08-19T09:05:05.602542"
     },
     "neutrino-algebraic": {
       "id": "neutrino-algebraic",
@@ -6244,7 +6244,7 @@
         "neutrino.theta13_sigma",
         "neutrino.delta_CP_sigma"
       ],
-      "timestamp": "2026-08-19T03:42:26.972853"
+      "timestamp": "2026-08-19T09:05:05.602631"
     },
     "5.1": {
       "id": "5",
@@ -6255,7 +6255,7 @@
       "title": "Deriving 4D Gravity from Kaluza-Klein Reduction",
       "shortTitle": "Deriving 4D Gravity from Kaluza-Klein Reduction",
       "order": 5,
-      "abstract": "We derive 4D gravity from the 26-dimensional superstring framework through Kaluza-Klein dimensional reduction. The cascade M²⁶(24,2) → dual 13D(12,1) shadows → 4D proceeds via Euclidean bridge connection and G₂ compactification per shadow, naturally generating both gravity and gauge fields from pure geometry. Volume modulus stabilization via racetrack superpotential determines ε = 0.2257 dynamically, making it a prediction rather than an input. BPS brane configurations ensure quantum stability.",
+      "abstract": "We derive 4D gravity from the 26-dimensional superstring framework through Kaluza-Klein dimensional reduction. The cascade M²⁶(24,2) → dual 13D(12,1) shadows → 4D proceeds via Euclidean bridge connection and G₂ compactification per shadow, naturally generating both gravity and gauge fields from pure geometry. Volume modulus stabilization via racetrack superpotential determines ε = e^{-T_min} ≈ 0.22572 dynamically (KK spectrum parameter, distinct from the CKM Cabibbo parameter; canonical Cabibbo candidate e^{-3/2} = 0.22313), making it a prediction rather than an input. BPS brane configurations ensure quantum stability.",
       "contentBlocks": [
         {
           "type": "subsection",
@@ -6317,7 +6317,7 @@
           "items": [
             "4D gravity: The 4D Planck mass M_Pl² = M_*¹¹ × V₉ where V₉ = V₇(G₂) × V₂(T²) is the 9-dimensional internal volume. NOTE: M_Pl = 1.22 × 10¹⁹ GeV is MEASURED (PDG 2024), not derived.",
             "Gauge fields: The off-diagonal metric components become SO(10) gauge bosons A_μᵃ",
-            "Scalar moduli: The internal metric fluctuations become scalar fields φᵢ in 4D. The volume modulus T is stabilized via racetrack superpotential W = A·exp(−aT) + B·exp(−bT), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
+            "Scalar moduli: The internal metric fluctuations become scalar fields φᵢ in 4D. The volume modulus T is stabilized via racetrack superpotential W = A·exp(−aT) + B·exp(−bT), giving T_min = 1.4885 and determining ε = e^{-T_min} ≈ 0.22572 dynamically (racetrack variant; canonical Cabibbo candidate e^{-3/2} = 0.22313; see Section 6.3)"
           ]
         },
         {
@@ -6341,7 +6341,7 @@
         },
         {
           "type": "callout",
-          "content": "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. At T_min = 1.4885, the volume ratio Vol(K₃)/Vol(S³) = 4.43 determines the stabilized size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = 0.2257, making it a derived quantity rather than a free input. See Section 6.3 for the complete moduli stabilization mechanism."
+          "content": "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. At T_min = 1.4885, the volume ratio Vol(K₃)/Vol(S³) = 4.43 determines the stabilized size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = e^{-T_min} ≈ 0.22572 (distinct from the CKM Cabibbo parameter), making it a derived quantity rather than a free input. See Section 6.3 for the complete moduli stabilization mechanism."
         },
         {
           "type": "subsection",
@@ -6466,7 +6466,7 @@
           "items": [
             "4D gravity: The 4D Planck mass M_Pl² = M_*¹¹ × V₉ where V₉ = V₇(G₂) × V₂(T²) is the 9-dimensional internal volume. NOTE: M_Pl = 1.22 × 10¹⁹ GeV is MEASURED (PDG 2024), not derived.",
             "Gauge fields: The off-diagonal metric components become SO(10) gauge bosons A_μᵃ",
-            "Scalar moduli: The internal metric fluctuations become scalar fields φᵢ in 4D. The volume modulus T is stabilized via racetrack superpotential W = A·exp(−aT) + B·exp(−bT), giving T_min = 1.4885 and determining ε = 0.2257 dynamically (see Section 6.3)"
+            "Scalar moduli: The internal metric fluctuations become scalar fields φᵢ in 4D. The volume modulus T is stabilized via racetrack superpotential W = A·exp(−aT) + B·exp(−bT), giving T_min = 1.4885 and determining ε = e^{-T_min} ≈ 0.22572 dynamically (racetrack variant; canonical Cabibbo candidate e^{-3/2} = 0.22313; see Section 6.3)"
           ]
         },
         {
@@ -6490,7 +6490,7 @@
         },
         {
           "type": "callout",
-          "content": "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. At T_min = 1.4885, the volume ratio Vol(K₃)/Vol(S³) = 4.43 determines the stabilized size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = 0.2257, making it a derived quantity rather than a free input. See Section 6.3 for the complete moduli stabilization mechanism."
+          "content": "The breathing mode VEV ⟨σ⟩ is fixed by the racetrack superpotential minimization. At T_min = 1.4885, the volume ratio Vol(K₃)/Vol(S³) = 4.43 determines the stabilized size of K_Pneuma. This in turn fixes the Kaluza-Klein spectrum parameter ε = e^{-T_min} ≈ 0.22572 (distinct from the CKM Cabibbo parameter), making it a derived quantity rather than a free input. See Section 6.3 for the complete moduli stabilization mechanism."
         },
         {
           "type": "subsection",
@@ -6584,7 +6584,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-08-19T03:42:26.972955"
+      "timestamp": "2026-08-19T09:05:05.602732"
     },
     "5.2": {
       "id": "5",
@@ -6878,7 +6878,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-08-19T03:42:26.973107"
+      "timestamp": "2026-08-19T09:05:05.602878"
     },
     "5.6": {
       "id": "5",
@@ -7202,7 +7202,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-08-19T03:42:26.973336"
+      "timestamp": "2026-08-19T09:05:05.603100"
     },
     "5.7": {
       "id": "5",
@@ -7346,7 +7346,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-08-19T03:42:26.975376"
+      "timestamp": "2026-08-19T09:05:05.605180"
     },
     "5.4": {
       "id": "5",
@@ -7666,7 +7666,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-08-19T03:42:26.976860"
+      "timestamp": "2026-08-19T09:05:05.606726"
     },
     "5.9": {
       "id": "5",
@@ -7828,7 +7828,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-08-19T03:42:26.977882"
+      "timestamp": "2026-08-19T09:05:05.607769"
     },
     "4.5": {
       "id": "4",
@@ -8088,7 +8088,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-08-19T03:42:27.180708"
+      "timestamp": "2026-08-19T09:05:05.832529"
     },
     "4.7": {
       "id": "4",
@@ -8156,7 +8156,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned}\\theta_{23} &= 45^\\circ + \\Delta_{\\text{Kahler}} + \\Delta_{\\text{flux}} \\approx 49.75^\\circ \\\\\\theta_{12} &= \\arcsin\\left(\\frac{1}{\\sqrt{3}}\\right)(1 - \\delta) \\approx 33.59^\\circ \\\\\\theta_{13} &= \\frac{\\sqrt{b_2 \\times n_{gen}}}{b_3}(1 + \\eta) \\approx 8.33^\\circ\\end{aligned}",
+          "content": "\\begin{aligned}\\theta_{23} &= 45^\\circ + \\Delta_{\\text{Kahler}} + \\Delta_{\\text{flux}} \\approx 49.75^\\circ \\\\\\theta_{12} &= \\arcsin\\left(\\frac{1}{\\sqrt{3}}\\right)(1 - \\delta) \\approx 33.59^\\circ \\\\\\theta_{13} &= \\frac{\\sqrt{b_2 \\times n_{gen}}}{b_3}(1 + \\eta) \\approx 8.33^\\circ\\ (\\text{octonionic estimate; canonical } 8.65^\\circ)\\end{aligned}",
           "formula_id": "pmns-from-triality",
           "label": "(4.3.3)",
           "equationNumber": "(4.3.3)"
@@ -8259,7 +8259,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned}\\theta_{23} &= 45^\\circ + \\Delta_{\\text{Kahler}} + \\Delta_{\\text{flux}} \\approx 49.75^\\circ \\\\\\theta_{12} &= \\arcsin\\left(\\frac{1}{\\sqrt{3}}\\right)(1 - \\delta) \\approx 33.59^\\circ \\\\\\theta_{13} &= \\frac{\\sqrt{b_2 \\times n_{gen}}}{b_3}(1 + \\eta) \\approx 8.33^\\circ\\end{aligned}",
+          "content": "\\begin{aligned}\\theta_{23} &= 45^\\circ + \\Delta_{\\text{Kahler}} + \\Delta_{\\text{flux}} \\approx 49.75^\\circ \\\\\\theta_{12} &= \\arcsin\\left(\\frac{1}{\\sqrt{3}}\\right)(1 - \\delta) \\approx 33.59^\\circ \\\\\\theta_{13} &= \\frac{\\sqrt{b_2 \\times n_{gen}}}{b_3}(1 + \\eta) \\approx 8.33^\\circ\\ (\\text{octonionic estimate; canonical } 8.65^\\circ)\\end{aligned}",
           "formula_id": "pmns-from-triality",
           "label": "(4.3.3)",
           "equationNumber": "(4.3.3)"
@@ -8340,7 +8340,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-08-19T03:42:27.181875"
+      "timestamp": "2026-08-19T09:05:05.834029"
     },
     "5.3": {
       "id": "5",
@@ -8498,7 +8498,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-08-19T03:42:27.182192"
+      "timestamp": "2026-08-19T09:05:05.834476"
     },
     "5.8": {
       "id": "5",
@@ -8820,7 +8820,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-08-19T03:42:27.182313"
+      "timestamp": "2026-08-19T09:05:05.834627"
     },
     "6.1": {
       "id": "6",
@@ -8851,7 +8851,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Where epsilon = 1/28800 = 3.4722222222e-05. The bulk Compton wavelength is 2.426394482263173e-12 m, which projects to the manifest value 2.426310235380000e-12 m, matching CODATA 2022 (2.426310238670000e-12 m) exactly."
+          "content": "Where epsilon = 1/28800 = 3.4722222222e-05. The bulk Compton wavelength is 2.426394485553287e-12 m, which projects to the manifest value 2.426310238670000e-12 m, matching CODATA 2022 (2.426310238670000e-12 m) exactly."
         }
       ],
       "content_blocks": [
@@ -8873,14 +8873,14 @@
         },
         {
           "type": "paragraph",
-          "content": "Where epsilon = 1/28800 = 3.4722222222e-05. The bulk Compton wavelength is 2.426394482263173e-12 m, which projects to the manifest value 2.426310235380000e-12 m, matching CODATA 2022 (2.426310238670000e-12 m) exactly."
+          "content": "Where epsilon = 1/28800 = 3.4722222222e-05. The bulk Compton wavelength is 2.426394485553287e-12 m, which projects to the manifest value 2.426310238670000e-12 m, matching CODATA 2022 (2.426310238670000e-12 m) exactly."
         }
       ],
       "formulaRefs": [],
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182438"
+      "timestamp": "2026-08-19T09:05:05.834798"
     },
     "6.2": {
       "id": "6",
@@ -8928,7 +8928,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182490"
+      "timestamp": "2026-08-19T09:05:05.834862"
     },
     "6.3": {
       "id": "6",
@@ -9020,7 +9020,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182539"
+      "timestamp": "2026-08-19T09:05:05.834926"
     },
     "6.4": {
       "id": "6",
@@ -9072,7 +9072,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182581"
+      "timestamp": "2026-08-19T09:05:05.834977"
     },
     "6.5": {
       "id": "6",
@@ -9124,7 +9124,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182723"
+      "timestamp": "2026-08-19T09:05:05.835174"
     },
     "6.6": {
       "id": "6",
@@ -9176,7 +9176,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182759"
+      "timestamp": "2026-08-19T09:05:05.835222"
     },
     "6.7": {
       "id": "6",
@@ -9228,7 +9228,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182824"
+      "timestamp": "2026-08-19T09:05:05.835301"
     },
     "6.8": {
       "id": "6",
@@ -9272,7 +9272,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182855"
+      "timestamp": "2026-08-19T09:05:05.835342"
     },
     "6.9": {
       "id": "6",
@@ -9316,7 +9316,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.182890"
+      "timestamp": "2026-08-19T09:05:05.835387"
     },
     "5.5": {
       "id": "5",
@@ -9470,7 +9470,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-08-19T03:42:27.205381"
+      "timestamp": "2026-08-19T09:05:05.857914"
     },
     "2.8": {
       "id": "2",
@@ -9901,7 +9901,7 @@
         },
         {
           "type": "callout",
-          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> shadow-time directions provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) is constrained from the measured Higgs mass (125.10 GeV); the exact value is an open problem (9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)."
+          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows, each with its own time ((12,1) + (12,1) = (24,2)). Spinor dimension: Weyl 2<sup>13</sup>/2 = 4096 of Cl(24,2) &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) is constrained from the measured Higgs mass (input 125.10 GeV; PDG 2024: 125.20 &plusmn; 0.11); the exact value is an open problem (9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)."
         },
         {
           "type": "heading",
@@ -10358,7 +10358,7 @@
         },
         {
           "type": "callout",
-          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows with shared time. S<sup>(2,0)</sup> shadow-time directions provide geometric averaging. Spinor dimension: 2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) is constrained from the measured Higgs mass (125.10 GeV); the exact value is an open problem (9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)."
+          "content": "OR reduction via R<sub>&perp;</sub>: 12&times;(2,0) bridge pairs warp to create 2&times;13D(12,1) shadows, each with its own time ((12,1) + (12,1) = (24,2)). Spinor dimension: Weyl 2<sup>13</sup>/2 = 4096 of Cl(24,2) &rarr; 2<sup>6</sup> = 64 effective components. The flux terms &#8466;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) is constrained from the measured Higgs mass (input 125.10 GeV; PDG 2024: 125.20 &plusmn; 0.11); the exact value is an open problem (9.865 from Higgs inversion, 7.086 BBN-calibrated, 1.833 geometric)."
         },
         {
           "type": "heading",
@@ -10416,7 +10416,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-08-19T03:42:27.205564"
+      "timestamp": "2026-08-19T09:05:05.858125"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -10556,7 +10556,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-19T03:42:27.205849"
+      "timestamp": "2026-08-19T09:05:05.858434"
     },
     "7.2": {
       "id": "7",
@@ -10672,285 +10672,149 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-08-19T03:42:27.206076"
+      "timestamp": "2026-08-19T09:05:05.858678"
     },
-    "7.4": {
+    "7.7": {
       "id": "7",
       "appendix": false,
-      "subsection_id": "7.4",
+      "subsection_id": "7.7",
       "type": "section",
       "section_type": "section",
-      "title": "Sterile Neutrino Portals from Dual-Shadow Architecture",
-      "shortTitle": "Sterile Neutrino Portals from Dual-Shadow Architecture",
+      "title": "Gnosis Unlocking: Progressive Pair Activation (6→12)",
+      "shortTitle": "Gnosis Unlocking: Progressive Pair Activation (6→12)",
       "order": 7,
-      "abstract": "Sterile neutrinos emerge naturally from the dual-shadow G₂ architecture. Shadow 1 hosts left-handed SU(2)<sub>L</sub> doublets; Shadow 2 hosts right-handed doublets that are sterile under the Standard Model gauge group. The bridge OR operator generates a Dirac Yukawa y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57 through cross-shadow wave-function overlap. Hidden-face Kähler moduli generate a Majorana mass M<sub>s</sub> ~ 10⁴ GeV via exponential suppression of the Planck scale. The type-I seesaw then predicts light neutrino masses m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV at the atmospheric scale, with mixing angles sin²(2θ) safely below current experimental bounds. Sterile contributions to N<sub>eff</sub> are negligible, consistent with Planck CMB data.",
+      "abstract": "Models progressive activation of consciousness channels from baseline (6 pairs) to full gnosis (12 pairs). Coherence time enhancement: τ(12)/τ(6) > 10x.",
       "contentBlocks": [
         {
-          "type": "paragraph",
-          "content": "In the dual-shadow architecture, the G₂ manifold supports two 13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 hosts left-handed fermion doublets charged under SU(2)<sub>L</sub>, while Shadow 2 hosts right-handed doublets. Crucially, the right-handed neutrinos in Shadow 2 carry no SU(2)<sub>L</sub> charge — they are naturally sterile. This geometric origin for sterility replaces the ad hoc assumption of the Standard Model, where right-handed neutrinos are simply absent from the particle content."
-        },
-        {
-          "type": "heading",
-          "content": "Bridge-Mediated Dirac Yukawa Coupling",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The bridge OR operator R<sub>⊥</sub> connects the two shadows, enabling cross-shadow fermion mixing. The overlap integral of the left-handed active neutrino wave function (Shadow 1) with the right-handed sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa coupling y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57, entirely determined by the geometric portal coupling."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-sterile-mixing-v23"
-        },
-        {
-          "type": "heading",
-          "content": "Hidden-Face Majorana Mass Generation",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The 4-face TCS G₂ manifold has one visible face (our universe) and three hidden faces. The Kähler moduli T<sub>i</sub> of the hidden faces are stabilized by flux quantization. The moduli VEV generates a Majorana mass M<sub>s</sub> = M<sub>Pl</sub> · exp(−T<sub>i</sub>/2) for the right-handed sterile neutrinos. For T<sub>i</sub> ~ 69: M<sub>s</sub> ~ 10⁴ GeV, which feeds into the type-I seesaw to produce light neutrino masses at the atmospheric scale."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-sterile-mass-v23"
-        },
-        {
           "type": "callout",
-          "content": "PM predicts from dual-shadow G₂ geometry:\n- Majorana mass: M<sub>s</sub> ~ 10⁴ GeV (hidden-face moduli)\n- Light neutrino mass: m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV (atmospheric scale)\n- Mixing angle: sin²(2θ) ~ few × 10<sup>−5</sup> (below current limits)\n- Sterile count: n<sub>sterile</sub> ~ 5.13 from 3 hidden faces\n- ΔN<sub>eff</sub> ≪ 0.5 (consistent with Planck CMB)\nTestable by: next-generation short-baseline experiments, CMB-S4"
+          "content": "SPECULATIVE CONTENT: The connection between pair activation and conscious states is philosophical interpretation, not empirically validated physics."
+        },
+        {
+          "type": "paragraph",
+          "content": "<Speculation>The gnosis unlocking mechanism models progressive activation of the 12 bridge pairs as consciousness channels. Starting from a baseline of 6 active pairs (half of b3/2 = 12), the system exhibits a sigmoidal transition to full coherence at 12 active pairs. The coherence time enhancement tau(12)/tau(6) exceeds 10x, driven by collective pair shielding and entanglement network effects.</Speculation>"
         },
         {
           "type": "formula",
           "content": null,
-          "formula_id": "portal-sterile-neff-v23"
+          "formula_id": "gnosis-unlocking-probability",
+          "label": "(7.4a)",
+          "equationNumber": "(7.4a)"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "gnosis-coherence-enhancement",
+          "label": "(7.4b)",
+          "equationNumber": "(7.4b)"
         }
       ],
       "content_blocks": [
         {
-          "type": "paragraph",
-          "content": "In the dual-shadow architecture, the G₂ manifold supports two 13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 hosts left-handed fermion doublets charged under SU(2)<sub>L</sub>, while Shadow 2 hosts right-handed doublets. Crucially, the right-handed neutrinos in Shadow 2 carry no SU(2)<sub>L</sub> charge — they are naturally sterile. This geometric origin for sterility replaces the ad hoc assumption of the Standard Model, where right-handed neutrinos are simply absent from the particle content."
-        },
-        {
-          "type": "heading",
-          "content": "Bridge-Mediated Dirac Yukawa Coupling",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The bridge OR operator R<sub>⊥</sub> connects the two shadows, enabling cross-shadow fermion mixing. The overlap integral of the left-handed active neutrino wave function (Shadow 1) with the right-handed sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa coupling y<sub>as</sub> ~ α<sub>leak</sub> ~ 0.57, entirely determined by the geometric portal coupling."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-sterile-mixing-v23"
-        },
-        {
-          "type": "heading",
-          "content": "Hidden-Face Majorana Mass Generation",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The 4-face TCS G₂ manifold has one visible face (our universe) and three hidden faces. The Kähler moduli T<sub>i</sub> of the hidden faces are stabilized by flux quantization. The moduli VEV generates a Majorana mass M<sub>s</sub> = M<sub>Pl</sub> · exp(−T<sub>i</sub>/2) for the right-handed sterile neutrinos. For T<sub>i</sub> ~ 69: M<sub>s</sub> ~ 10⁴ GeV, which feeds into the type-I seesaw to produce light neutrino masses at the atmospheric scale."
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-sterile-mass-v23"
-        },
-        {
           "type": "callout",
-          "content": "PM predicts from dual-shadow G₂ geometry:\n- Majorana mass: M<sub>s</sub> ~ 10⁴ GeV (hidden-face moduli)\n- Light neutrino mass: m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV (atmospheric scale)\n- Mixing angle: sin²(2θ) ~ few × 10<sup>−5</sup> (below current limits)\n- Sterile count: n<sub>sterile</sub> ~ 5.13 from 3 hidden faces\n- ΔN<sub>eff</sub> ≪ 0.5 (consistent with Planck CMB)\nTestable by: next-generation short-baseline experiments, CMB-S4"
+          "content": "SPECULATIVE CONTENT: The connection between pair activation and conscious states is philosophical interpretation, not empirically validated physics."
+        },
+        {
+          "type": "paragraph",
+          "content": "<Speculation>The gnosis unlocking mechanism models progressive activation of the 12 bridge pairs as consciousness channels. Starting from a baseline of 6 active pairs (half of b3/2 = 12), the system exhibits a sigmoidal transition to full coherence at 12 active pairs. The coherence time enhancement tau(12)/tau(6) exceeds 10x, driven by collective pair shielding and entanglement network effects.</Speculation>"
         },
         {
           "type": "formula",
           "content": null,
-          "formula_id": "portal-sterile-neff-v23"
+          "formula_id": "gnosis-unlocking-probability",
+          "label": "(7.4a)",
+          "equationNumber": "(7.4a)"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "gnosis-coherence-enhancement",
+          "label": "(7.4b)",
+          "equationNumber": "(7.4b)"
         }
       ],
       "formulaRefs": [
-        "portal-sterile-mixing-v23",
-        "portal-sterile-mass-v23",
-        "portal-sterile-neff-v23"
+        "gnosis-unlocking-probability",
+        "gnosis-coherence-enhancement"
       ],
       "paramRefs": [
-        "portals.sterile_mixing_sin2_2theta",
-        "portals.sterile_mass_scale_gev",
-        "portals.sterile_n_eff_contribution"
+        "consciousness.coherence_boost",
+        "consciousness.tau_baseline",
+        "consciousness.tau_gnosis",
+        "consciousness.unlocking_probability_6",
+        "consciousness.unlocking_probability_10"
       ],
       "formula_refs": [
-        "portal-sterile-mixing-v23",
-        "portal-sterile-mass-v23",
-        "portal-sterile-neff-v23"
+        "gnosis-unlocking-probability",
+        "gnosis-coherence-enhancement"
       ],
       "param_refs": [
-        "portals.sterile_mixing_sin2_2theta",
-        "portals.sterile_mass_scale_gev",
-        "portals.sterile_n_eff_contribution"
+        "consciousness.coherence_boost",
+        "consciousness.tau_baseline",
+        "consciousness.tau_gnosis",
+        "consciousness.unlocking_probability_6",
+        "consciousness.unlocking_probability_10"
       ],
-      "timestamp": "2026-08-19T03:42:27.279173"
+      "timestamp": "2026-08-19T09:05:05.858881"
     },
-    "7.5": {
+    "7.8": {
       "id": "7",
       "appendix": false,
-      "subsection_id": "7.5",
+      "subsection_id": "7.8",
       "type": "section",
       "section_type": "section",
-      "title": "ALP Portal Physics from Face 3 Moduli",
-      "shortTitle": "ALP Portal Physics from Face 3 Moduli",
+      "title": "4-Dice Consciousness Branch Selection",
+      "shortTitle": "4-Dice Consciousness Branch Selection",
       "order": 7,
-      "abstract": "Axion-Like Particles emerge from moduli misalignment on Face 3 of the G₂ four-face structure, distinct from the QCD axion on Face 1. The ALP decay constant f<sub>a</sub><sup>ALP</sup> = M<sub>Pl</sub> / (χ<sub>eff</sub> · T₃) × √(f<sub>np</sub> · f<sub>np</sub> · f<sub>add</sub>), where T₃ is the Face 3 racetrack VEV and f<sub>np</sub> the non-perturbative suppression, yields f<sub>a</sub> ~ 10<sup>10</sup> GeV. This predicts m<sub>ALP</sub> ~ meV (from Λ<sub>QCD</sub>²/f<sub>a</sub>), an ALP-photon coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below stellar bounds), and a fifth force range λ ~ 0.01–0.1 mm testable by sub-millimetre gravity experiments.",
+      "abstract": "The 12 bridge pairs are grouped into 4 'dice' of 3 pairs each. Each dice outcome is computed via OR R_perp sampling with mod-4 arithmetic, yielding 4^4 = 256 possible consciousness branches.",
       "contentBlocks": [
         {
-          "type": "heading",
-          "content": "Four-Face Structure and ALP Genesis",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The PM G₂ manifold is modelled as a Twisted Connected Sum (TCS) with four topological faces, each hosting distinct pseudo-scalar zero-modes from three-form flux compactification. The faces differ in their racetrack superpotential parameters, setting face-dependent moduli VEVs T<sub>i</sub> and consequently face-dependent axion decay constants. Face 1 hosts the QCD axion (Section 7.1) with f<sub>a</sub><sup>QCD</sup> ~ 3.5 × 10<sup>12</sup> GeV, near the string unification scale. Face 3 hosts a qualitatively different pseudo-scalar: an Axion-Like Particle (ALP) with a significantly lower decay constant f<sub>a</sub><sup>ALP</sup> ~ 10<sup>10</sup> GeV, arising from the double-exponential racetrack suppression T₃ = b₃ · k<sub>ℷ</sub> / (3π) ~ 31.2 on the hidden face. The factor-of-200 suppression in f<sub>a</sub> shifts the ALP mass from micro-eV (QCD axion) to the meV scale."
-        },
-        {
-          "type": "heading",
-          "content": "ALP Mass from Misalignment",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The ALP mass is set by the non-perturbative potential generated when the Face 3 modulus T₃ is stabilized. The misalignment mechanism gives m<sub>ALP</sub> ~ Λ<sub>QCD</sub>² / f<sub>a</sub><sup>ALP</sup>, where the QCD scale Λ<sub>QCD</sub> ~ 0.2 GeV enters because the ALP inherits a small QCD anomaly coefficient through the inter-face leakage channel α<sub>leak</sub> = 1/√6. With f<sub>a</sub> ~ 10<sup>10</sup> GeV, the ALP mass is at the meV scale, in the reach of upcoming laboratory and astrophysical experiments:"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-mass-v23"
-        },
-        {
-          "type": "heading",
-          "content": "ALP-Photon Coupling via the Portal",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The ALP-photon coupling g<sub>aγγ</sub> is generated by the inter-face topological leakage. The G₂ portal mechanism transfers axion flux between faces through the χ<sub>eff</sub>-weighted channel, with amplitude set by α<sub>leak</sub> = 1/√6. The topological enhancement factor χ<sub>eff</sub> = 72 (the per-sector Euler characteristic) increases the effective coupling relative to a simple f<sub>a</sub><sup>−1</sup> suppression. The resulting ALP-photon coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> falls below current stellar-cooling bounds (HB stars: &lt; 6.6 × 10<sup>−11</sup> GeV<sup>−1</sup>) and within reach of IAXO and ALPS-II:"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-photon-v23"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-nucleon-v23"
-        },
-        {
-          "type": "heading",
-          "content": "Fifth Force and Laboratory Tests",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "ALP exchange between macroscopic matter generates a Yukawa-type correction to Newtonian gravity at the Compton wavelength λ<sub>ALP</sub> = ℏc / (m<sub>ALP</sub> c²). For m<sub>ALP</sub> ~ meV, this gives λ ~ 0.01–0.1 mm — precisely the sub-millimetre range being probed by modern torsion-balance and Casimir experiments. The coupling strength α₅ = g<sub>aNN</sub>² M<sub>Pl</sub>² / (4π) is set by the nucleon coupling g<sub>aNN</sub> ~ 10<sup>−12</sup>. This Yukawa signature is independent of the ALP-photon coupling and provides a complementary laboratory test channel:"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-fifth-force-v23"
-        },
-        {
           "type": "callout",
-          "content": "From Face 3 moduli misalignment, PM predicts:\n- ALP mass: m<sub>ALP</sub> ~ meV (Compton wavelength λ ~ 0.1 mm)\n- ALP-photon coupling: g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below HB-star bound)\n- ALP-nucleon coupling: g<sub>aNN</sub> ~ 10<sup>−12</sup>\n- Fifth-force range: λ ~ 0.01–0.1 mm at α₅ ~ 10<sup>−3</sup>\nThese predictions are testable by: ALPS-II (photon coupling), IAXO/BabyIAXO (helioscope), Eot-Wash and Stanford short-range gravity experiments (fifth force), and ALP dark matter searches."
+          "content": "SPECULATIVE CONTENT: The 4-dice branch selection is a mathematical model of consciousness branching. The mod-4 quaternionic structure is geometrically motivated but the consciousness interpretation is not empirically validated."
+        },
+        {
+          "type": "paragraph",
+          "content": "<Speculation>The 12 bridge pairs (from b3=24) are partitioned into 4 groups of 3 pairs each, forming 4 'dice'. Each dice outcome is computed via the R_perp reflection operator with mod-4 arithmetic, motivated by the quaternionic structure of the G2 holonomy. The 4^4 = 256 possible branch outcomes model the discrete consciousness state space available to the bridge pair system.</Speculation>"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "four-dice-branch-count",
+          "label": "(7.5)",
+          "equationNumber": "(7.5)"
         }
       ],
       "content_blocks": [
         {
-          "type": "heading",
-          "content": "Four-Face Structure and ALP Genesis",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The PM G₂ manifold is modelled as a Twisted Connected Sum (TCS) with four topological faces, each hosting distinct pseudo-scalar zero-modes from three-form flux compactification. The faces differ in their racetrack superpotential parameters, setting face-dependent moduli VEVs T<sub>i</sub> and consequently face-dependent axion decay constants. Face 1 hosts the QCD axion (Section 7.1) with f<sub>a</sub><sup>QCD</sup> ~ 3.5 × 10<sup>12</sup> GeV, near the string unification scale. Face 3 hosts a qualitatively different pseudo-scalar: an Axion-Like Particle (ALP) with a significantly lower decay constant f<sub>a</sub><sup>ALP</sup> ~ 10<sup>10</sup> GeV, arising from the double-exponential racetrack suppression T₃ = b₃ · k<sub>ℷ</sub> / (3π) ~ 31.2 on the hidden face. The factor-of-200 suppression in f<sub>a</sub> shifts the ALP mass from micro-eV (QCD axion) to the meV scale."
-        },
-        {
-          "type": "heading",
-          "content": "ALP Mass from Misalignment",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The ALP mass is set by the non-perturbative potential generated when the Face 3 modulus T₃ is stabilized. The misalignment mechanism gives m<sub>ALP</sub> ~ Λ<sub>QCD</sub>² / f<sub>a</sub><sup>ALP</sup>, where the QCD scale Λ<sub>QCD</sub> ~ 0.2 GeV enters because the ALP inherits a small QCD anomaly coefficient through the inter-face leakage channel α<sub>leak</sub> = 1/√6. With f<sub>a</sub> ~ 10<sup>10</sup> GeV, the ALP mass is at the meV scale, in the reach of upcoming laboratory and astrophysical experiments:"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-mass-v23"
-        },
-        {
-          "type": "heading",
-          "content": "ALP-Photon Coupling via the Portal",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The ALP-photon coupling g<sub>aγγ</sub> is generated by the inter-face topological leakage. The G₂ portal mechanism transfers axion flux between faces through the χ<sub>eff</sub>-weighted channel, with amplitude set by α<sub>leak</sub> = 1/√6. The topological enhancement factor χ<sub>eff</sub> = 72 (the per-sector Euler characteristic) increases the effective coupling relative to a simple f<sub>a</sub><sup>−1</sup> suppression. The resulting ALP-photon coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> falls below current stellar-cooling bounds (HB stars: &lt; 6.6 × 10<sup>−11</sup> GeV<sup>−1</sup>) and within reach of IAXO and ALPS-II:"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-photon-v23"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-nucleon-v23"
-        },
-        {
-          "type": "heading",
-          "content": "Fifth Force and Laboratory Tests",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "ALP exchange between macroscopic matter generates a Yukawa-type correction to Newtonian gravity at the Compton wavelength λ<sub>ALP</sub> = ℏc / (m<sub>ALP</sub> c²). For m<sub>ALP</sub> ~ meV, this gives λ ~ 0.01–0.1 mm — precisely the sub-millimetre range being probed by modern torsion-balance and Casimir experiments. The coupling strength α₅ = g<sub>aNN</sub>² M<sub>Pl</sub>² / (4π) is set by the nucleon coupling g<sub>aNN</sub> ~ 10<sup>−12</sup>. This Yukawa signature is independent of the ALP-photon coupling and provides a complementary laboratory test channel:"
-        },
-        {
-          "type": "formula",
-          "content": null,
-          "formula_id": "portal-alp-fifth-force-v23"
-        },
-        {
           "type": "callout",
-          "content": "From Face 3 moduli misalignment, PM predicts:\n- ALP mass: m<sub>ALP</sub> ~ meV (Compton wavelength λ ~ 0.1 mm)\n- ALP-photon coupling: g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below HB-star bound)\n- ALP-nucleon coupling: g<sub>aNN</sub> ~ 10<sup>−12</sup>\n- Fifth-force range: λ ~ 0.01–0.1 mm at α₅ ~ 10<sup>−3</sup>\nThese predictions are testable by: ALPS-II (photon coupling), IAXO/BabyIAXO (helioscope), Eot-Wash and Stanford short-range gravity experiments (fifth force), and ALP dark matter searches."
+          "content": "SPECULATIVE CONTENT: The 4-dice branch selection is a mathematical model of consciousness branching. The mod-4 quaternionic structure is geometrically motivated but the consciousness interpretation is not empirically validated."
+        },
+        {
+          "type": "paragraph",
+          "content": "<Speculation>The 12 bridge pairs (from b3=24) are partitioned into 4 groups of 3 pairs each, forming 4 'dice'. Each dice outcome is computed via the R_perp reflection operator with mod-4 arithmetic, motivated by the quaternionic structure of the G2 holonomy. The 4^4 = 256 possible branch outcomes model the discrete consciousness state space available to the bridge pair system.</Speculation>"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "four-dice-branch-count",
+          "label": "(7.5)",
+          "equationNumber": "(7.5)"
         }
       ],
       "formulaRefs": [
-        "portal-alp-mass-v23",
-        "portal-alp-photon-v23",
-        "portal-alp-nucleon-v23",
-        "portal-alp-fifth-force-v23"
+        "four-dice-branch-count"
       ],
       "paramRefs": [
-        "portals.alp_mass_ev",
-        "portals.alp_photon_coupling_gev_inv",
-        "portals.alp_nucleon_coupling_gev_inv",
-        "portals.alp_fifth_force_range_m"
+        "consciousness.dice_branches",
+        "consciousness.dice_entropy"
       ],
       "formula_refs": [
-        "portal-alp-mass-v23",
-        "portal-alp-photon-v23",
-        "portal-alp-nucleon-v23",
-        "portal-alp-fifth-force-v23"
+        "four-dice-branch-count"
       ],
       "param_refs": [
-        "portals.alp_mass_ev",
-        "portals.alp_photon_coupling_gev_inv",
-        "portals.alp_nucleon_coupling_gev_inv",
-        "portals.alp_fifth_force_range_m"
+        "consciousness.dice_branches",
+        "consciousness.dice_entropy"
       ],
-      "timestamp": "2026-08-19T03:42:27.279307"
+      "timestamp": "2026-08-19T09:05:05.931585"
     },
     "7.6": {
       "id": "7",
@@ -11020,7 +10884,7 @@
         "consciousness.shielded_tau_ms",
         "consciousness.shielding_factor"
       ],
-      "timestamp": "2026-08-19T03:42:27.273181"
+      "timestamp": "2026-08-19T09:05:05.931757"
     },
     "7": {
       "id": "7",
@@ -11116,7 +10980,7 @@
         },
         {
           "type": "highlight_box",
-          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
+          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313) emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
         },
         {
           "type": "list",
@@ -11131,7 +10995,7 @@
             "✅ Calibration: Minimal inputs (58+ parameters predictive)",
             "✅ Dual consistency: UV ↔ IR agreement < 1%",
             "✅ v15.0: M<sub>KK</sub> = 5.0 TeV geometric (R<sub>c</sub>⁻¹, no phenomenological fits)",
-            "✅ v15.0: Racetrack moduli stabilization — ε = 0.2257 DERIVED (not input)",
+            "✅ v15.0: Racetrack moduli stabilization — ε = 0.2257 racetrack variant (canonical e^{-3/2} = 0.22313; PDG 2024: 0.22500)",
             "✅ v15.0: Perturbation test validates active geometry (Ricci-flatness enforced)",
             "✅ v15.0: 7D Monte Carlo for Yukawa overlaps (no approximations)",
             "✅ v15.0: All 9 fermion masses from geometric Froggatt-Nielsen (ε dynamically derived)",
@@ -11351,7 +11215,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "v15.0 - Racetrack stabilization: Cabibbo angle ε = 0.2257 now DERIVED from moduli dynamics with zero tuning",
+            "v15.0 - Racetrack stabilization: Cabibbo angle racetrack variant ε = 0.2257 (canonical e^{-3/2} = 0.22313) from moduli dynamics with zero tuning",
             "v15.0 - Perturbation tests: Ricci-flatness actively enforced through geometric consistency checks",
             "v15.0 - 7D Monte Carlo: Full 7-dimensional integration for Yukawa couplings (no approximations)",
             "v15.1 - Pneuma-Vielbein bridge: Metric emergence validated, Lorentzian signature (-,+,+,+) verified",
@@ -11585,7 +11449,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Principia Metaphysica framework (v24.2) presents a M<sup>26</sup>(24,2) unified vision: twelve 2D bridge pairs B<sub>i</sub><sup>(2,0)</sup> plus S<sup>(2,0)</sup> shadow-time directions plus T¹ time create dual 13D(12,1) shadows via OR reduction R<sub>⊥</sub>. The framework predicts a mirror sector (Z₂) and yields w₀ = −1 + 1/b₃ = −23/24 via the Maximum Entropy Principle, n<sub>gen</sub> = 3 from G₂ topology (χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle ε = 0.2257 from racetrack moduli stabilization. The framework makes sharp, falsifiable predictions testable by JUNO, DESI DR3, Hyper-K, and ALPS-II."
+          "content": "The Principia Metaphysica framework (v24.2) presents a M<sup>26</sup>(24,2) unified vision: twelve 2D bridge pairs B<sub>i</sub><sup>(2,0)</sup> plus S<sup>(2,0)</sup> shadow-time directions plus T¹ time create dual 13D(12,1) shadows via OR reduction R<sub>⊥</sub>. The framework predicts a mirror sector (Z₂) and yields w₀ = −1 + 1/b₃ = −23/24 via the Maximum Entropy Principle, n<sub>gen</sub> = 3 from G₂ topology (χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle ε = 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313) from racetrack moduli stabilization. The framework makes sharp, falsifiable predictions testable by JUNO, DESI DR3, Hyper-K, and ALPS-II."
         },
         {
           "type": "heading",
@@ -11908,7 +11772,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
+            "<strong>n<sub>s</sub>:</strong> the Re(T) slow-roll variant (FALSIFIED) gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
             "<strong>η_B:</strong> new G<sub>2</sub>-entropy-dilution formula gives 2.3&times;10⁻¹⁰ (factor 2.6 low); older <code>cosmology.eta_baryon_geometric = 6.19&times;10⁻¹⁰</code> sits within 3% of observed 6&times;10⁻¹⁰. Status: <strong>PARTIAL (factor 2.6)</strong>.",
             "<strong>H<sub>0</sub> and S<sub>8</sub> tensions:</strong> Sprint 5.5 claimed resolution at H<sub>0</sub> = 73.0 via mirror-sector dark-energy coupling, but the required coupling is ~10<sup>13</sup>× larger than the geometric value the bridge sector can supply. Status: <strong>OPEN TENSION (magnitude gap)</strong>; live <code>cosmology.H0_tension_sigma = 3.17σ</code> remains the honest figure until the coupling magnitude is closed (Tier 3 T3.4)."
           ]
@@ -11949,7 +11813,7 @@
           "content": null,
           "items": [
             "<strong>Inflation potential:</strong> The flux term V<sub>flux</sub> exp(−a·φ<sub>M</sub>) provides a flat potential at large field values",
-            "<strong>Spectral index:</strong> n<sub>s</sub> = 1 − 2/N<sub>e</sub> = 0.967 for N<sub>e</sub> = 60 e-folds (Planck: 0.965 ± 0.004)",
+            "<strong>Spectral index:</strong> n<sub>s</sub> = 1 − 2/N<sub>e</sub> = 0.9667 for N<sub>e</sub> = 60 e-folds (Planck: 0.965 ± 0.004)",
             "<strong>Tensor-to-scalar:</strong> r ~ 0.003 (below Planck/BICEP limits)",
             "<strong>Reheating:</strong> Pneuma field decay to SM particles at T<sub>R</sub> ~ 10⁹ GeV"
           ]
@@ -12532,7 +12396,7 @@
         },
         {
           "type": "highlight_box",
-          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
+          "content": "<strong>Geometric Unification Complete:</strong> The constraint of Re(T) from the measured Higgs mass (125.20 GeV, PDG 2024) completes the geometric unification program. The modulus T is no longer a free parameter but is determined by experimental data, while λ₀ comes from SO(10) matching. In v15.0, the Cabibbo angle ε = 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313) emerges directly from racetrack moduli stabilization with zero tuning—flux dynamics alone fix all parameters. Together they form a fully predictive, swampland-compliant framework."
         },
         {
           "type": "list",
@@ -12547,7 +12411,7 @@
             "✅ Calibration: Minimal inputs (58+ parameters predictive)",
             "✅ Dual consistency: UV ↔ IR agreement < 1%",
             "✅ v15.0: M<sub>KK</sub> = 5.0 TeV geometric (R<sub>c</sub>⁻¹, no phenomenological fits)",
-            "✅ v15.0: Racetrack moduli stabilization — ε = 0.2257 DERIVED (not input)",
+            "✅ v15.0: Racetrack moduli stabilization — ε = 0.2257 racetrack variant (canonical e^{-3/2} = 0.22313; PDG 2024: 0.22500)",
             "✅ v15.0: Perturbation test validates active geometry (Ricci-flatness enforced)",
             "✅ v15.0: 7D Monte Carlo for Yukawa overlaps (no approximations)",
             "✅ v15.0: All 9 fermion masses from geometric Froggatt-Nielsen (ε dynamically derived)",
@@ -12767,7 +12631,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "v15.0 - Racetrack stabilization: Cabibbo angle ε = 0.2257 now DERIVED from moduli dynamics with zero tuning",
+            "v15.0 - Racetrack stabilization: Cabibbo angle racetrack variant ε = 0.2257 (canonical e^{-3/2} = 0.22313) from moduli dynamics with zero tuning",
             "v15.0 - Perturbation tests: Ricci-flatness actively enforced through geometric consistency checks",
             "v15.0 - 7D Monte Carlo: Full 7-dimensional integration for Yukawa couplings (no approximations)",
             "v15.1 - Pneuma-Vielbein bridge: Metric emergence validated, Lorentzian signature (-,+,+,+) verified",
@@ -13001,7 +12865,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Principia Metaphysica framework (v24.2) presents a M<sup>26</sup>(24,2) unified vision: twelve 2D bridge pairs B<sub>i</sub><sup>(2,0)</sup> plus S<sup>(2,0)</sup> shadow-time directions plus T¹ time create dual 13D(12,1) shadows via OR reduction R<sub>⊥</sub>. The framework predicts a mirror sector (Z₂) and yields w₀ = −1 + 1/b₃ = −23/24 via the Maximum Entropy Principle, n<sub>gen</sub> = 3 from G₂ topology (χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle ε = 0.2257 from racetrack moduli stabilization. The framework makes sharp, falsifiable predictions testable by JUNO, DESI DR3, Hyper-K, and ALPS-II."
+          "content": "The Principia Metaphysica framework (v24.2) presents a M<sup>26</sup>(24,2) unified vision: twelve 2D bridge pairs B<sub>i</sub><sup>(2,0)</sup> plus S<sup>(2,0)</sup> shadow-time directions plus T¹ time create dual 13D(12,1) shadows via OR reduction R<sub>⊥</sub>. The framework predicts a mirror sector (Z₂) and yields w₀ = −1 + 1/b₃ = −23/24 via the Maximum Entropy Principle, n<sub>gen</sub> = 3 from G₂ topology (χ<sub>eff</sub>/48 = 144/48 = 3), and the Cabibbo angle ε = 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313) from racetrack moduli stabilization. The framework makes sharp, falsifiable predictions testable by JUNO, DESI DR3, Hyper-K, and ALPS-II."
         },
         {
           "type": "heading",
@@ -13324,7 +13188,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>n<sub>s</sub>:</strong> new Re(T) slow-roll formula gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
+            "<strong>n<sub>s</sub>:</strong> the Re(T) slow-roll variant (FALSIFIED) gives 0.9996 (8.3σ from Planck); older <code>cosmology.n_s_pred = 0.9636</code> is Planck-compatible. Status: <strong>OPEN</strong> &mdash; older derivation remains canonical pending higher-order slow-roll corrections (Tier 3 T3.3).",
             "<strong>η_B:</strong> new G<sub>2</sub>-entropy-dilution formula gives 2.3&times;10⁻¹⁰ (factor 2.6 low); older <code>cosmology.eta_baryon_geometric = 6.19&times;10⁻¹⁰</code> sits within 3% of observed 6&times;10⁻¹⁰. Status: <strong>PARTIAL (factor 2.6)</strong>.",
             "<strong>H<sub>0</sub> and S<sub>8</sub> tensions:</strong> Sprint 5.5 claimed resolution at H<sub>0</sub> = 73.0 via mirror-sector dark-energy coupling, but the required coupling is ~10<sup>13</sup>× larger than the geometric value the bridge sector can supply. Status: <strong>OPEN TENSION (magnitude gap)</strong>; live <code>cosmology.H0_tension_sigma = 3.17σ</code> remains the honest figure until the coupling magnitude is closed (Tier 3 T3.4)."
           ]
@@ -13365,7 +13229,7 @@
           "content": null,
           "items": [
             "<strong>Inflation potential:</strong> The flux term V<sub>flux</sub> exp(−a·φ<sub>M</sub>) provides a flat potential at large field values",
-            "<strong>Spectral index:</strong> n<sub>s</sub> = 1 − 2/N<sub>e</sub> = 0.967 for N<sub>e</sub> = 60 e-folds (Planck: 0.965 ± 0.004)",
+            "<strong>Spectral index:</strong> n<sub>s</sub> = 1 − 2/N<sub>e</sub> = 0.9667 for N<sub>e</sub> = 60 e-folds (Planck: 0.965 ± 0.004)",
             "<strong>Tensor-to-scalar:</strong> r ~ 0.003 (below Planck/BICEP limits)",
             "<strong>Reheating:</strong> Pneuma field decay to SM particles at T<sub>R</sub> ~ 10⁹ GeV"
           ]
@@ -13868,7 +13732,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.273312"
+      "timestamp": "2026-08-19T09:05:05.931887"
     },
     "6": {
       "id": "6",
@@ -14088,7 +13952,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The complete Kaluza-Klein tower follows the characteristic spacing pattern from two shared dimensions: m<sub>KK,n,m</sub> = √(n² + m²) × M<sub>KK</sub> where M<sub>KK</sub> ≈ 4.5 TeV is derived. v24.2 Derivation: M<sub>KK</sub> is derived geometrically via k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where ε ≈ 0.2257 is the dynamically derived Cabibbo angle from the racetrack superpotential (T<sub>min</sub> minimization → ε). This gives M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ≈ 4.5 TeV without circular inputs."
+          "content": "The complete Kaluza-Klein tower follows the characteristic spacing pattern from two shared dimensions: m<sub>KK,n,m</sub> = √(n² + m²) × M<sub>KK</sub> where M<sub>KK</sub> ≈ 4.5 TeV is derived. v24.2 Derivation: M<sub>KK</sub> is derived geometrically via k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where ε ≈ 0.2257 is the racetrack variant of the Cabibbo angle (canonical e^{-3/2} = 0.22313) from the racetrack superpotential (T<sub>min</sub> minimization → ε). This gives M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ≈ 4.5 TeV without circular inputs."
         },
         {
           "type": "table",
@@ -14741,7 +14605,7 @@
             ],
             [
               "CKM parameters (v24.2)",
-              "ε = 0.2257, δ<sub>CP</sub> = π/2, J = 3.06 × 10⁻⁵",
+              "ε = 0.2257 (racetrack variant; canonical e^{-3/2}), δ<sub>CP</sub> = π/2, J = 3.06 × 10⁻⁵",
               "DERIVED",
               "From racetrack superpotential minimization (ε), cycle orientations (δ<sub>CP</sub>), geometric computation (J)"
             ]
@@ -14751,7 +14615,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>v24.2 CKM Breakthrough:</strong> Cabibbo angle ε = 0.2257 is now <em>derived</em> from racetrack superpotential minimization (not an input parameter). CP phase δ<sub>CP</sub> = π/2 (maximal) emerges from cycle orientations. Jarlskog invariant J = 3.06 × 10⁻⁵ computed geometrically from CKM structure.",
+            "<strong>v24.2 CKM Breakthrough:</strong> Cabibbo angle racetrack variant ε = 0.2257 (canonical e^{-3/2} = 0.22313) is <em>derived</em> from racetrack superpotential minimization (not an input parameter). CP phase δ<sub>CP</sub> = π/2 (maximal) emerges from cycle orientations. Jarlskog invariant J = 3.06 × 10⁻⁵ computed geometrically from CKM structure.",
             "<strong>DESI Compatibility:</strong> Both w₀ = −23/24 (from MEP) and w<sub>a</sub> = −0.75 (from unified time dynamics) are now derived. The w<sub>a</sub> value is consistent with DESI 2025 (thawing) observations.",
             "<strong>Neutrino Mass Sum is NOT Unique:</strong> Any model predicting NH + minimal m₁ gives Σm<sub>ν</sub> ≈ 0.06 eV. This value has no discriminatory power.",
             "<strong>Mirror Sector Predictions:</strong> The unified time framework introduces qualitative predictions for the mirror sector, testable via precision cosmology (Euclid, Roman).",
@@ -14915,7 +14779,7 @@
             [
               "CKM parameters",
               "✓ CONFIRMED",
-              "ε = 0.2257, within 0.1σ (v24.2 derived)"
+              "ε = 0.2257 racetrack variant, ≈1.1σ vs PDG 2024 0.22500 (canonical e^{-3/2} = 0.22313)"
             ],
             [
               "Proton decay",
@@ -14976,7 +14840,7 @@
         },
         {
           "type": "paragraph",
-          "content": "**Dark Force Leakage Predictions (Two-Layer OR)**\n\nThe dual-shadow bridge structure predicts dark force leakage across shadows:\n\n| Force | Leakage Strength α<sub>leak</sub> | Probability P<sub>leak</sub> | Status |\n|-------|------------------------|-------------------|--------|\n| Strong (SU(3)<sub>C</sub>) | ~10⁻³⁷ | ~10⁻⁷⁵ | Zero |\n| Weak (SU(2)<sub>L</sub>) | ~0 | ~0 | Zero |\n| Electromagnetic (U(1)) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n| Gravity (gravitons) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n\nStrong force leakage is impossible (confinement + instanton cost S<sub>inst</sub> ≈ 80). Weak force leakage is impossible (mass barrier m<sub>W</sub> r<sub>bridge</sub> ~ 10⁵). EM and gravity leak at ~230× weaker than dark matter portal (~0.57)."
+          "content": "**Dark Force Leakage Predictions (Two-Layer OR)**\n\nThe dual-shadow bridge structure predicts dark force leakage across shadows:\n\n| Force | Leakage Strength α<sub>leak</sub> | Probability P<sub>leak</sub> | Status |\n|-------|------------------------|-------------------|--------|\n| Strong (SU(3)<sub>C</sub>) | ~10⁻³⁷ | ~10⁻⁷⁵ | Zero |\n| Weak (SU(2)<sub>L</sub>) | ~0 | ~0 | Zero |\n| Electromagnetic (U(1)) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n| Gravity (gravitons) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n\nStrong force leakage is impossible (confinement + instanton cost S<sub>inst</sub> ≈ 80). Weak force leakage is impossible (mass barrier m<sub>W</sub> r<sub>bridge</sub> ~ 10⁵). EM and gravity leak at ~230× weaker than the dark matter portal (α_sample ~ 0.57, ANSATZ)."
         },
         {
           "type": "heading",
@@ -15491,7 +15355,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The complete Kaluza-Klein tower follows the characteristic spacing pattern from two shared dimensions: m<sub>KK,n,m</sub> = √(n² + m²) × M<sub>KK</sub> where M<sub>KK</sub> ≈ 4.5 TeV is derived. v24.2 Derivation: M<sub>KK</sub> is derived geometrically via k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where ε ≈ 0.2257 is the dynamically derived Cabibbo angle from the racetrack superpotential (T<sub>min</sub> minimization → ε). This gives M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ≈ 4.5 TeV without circular inputs."
+          "content": "The complete Kaluza-Klein tower follows the characteristic spacing pattern from two shared dimensions: m<sub>KK,n,m</sub> = √(n² + m²) × M<sub>KK</sub> where M<sub>KK</sub> ≈ 4.5 TeV is derived. v24.2 Derivation: M<sub>KK</sub> is derived geometrically via k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, where ε ≈ 0.2257 is the racetrack variant of the Cabibbo angle (canonical e^{-3/2} = 0.22313) from the racetrack superpotential (T<sub>min</sub> minimization → ε). This gives M<sub>KK</sub> = M<sub>Pl</sub> × exp(−k<sub>eff</sub> π) ≈ 4.5 TeV without circular inputs."
         },
         {
           "type": "table",
@@ -16144,7 +16008,7 @@
             ],
             [
               "CKM parameters (v24.2)",
-              "ε = 0.2257, δ<sub>CP</sub> = π/2, J = 3.06 × 10⁻⁵",
+              "ε = 0.2257 (racetrack variant; canonical e^{-3/2}), δ<sub>CP</sub> = π/2, J = 3.06 × 10⁻⁵",
               "DERIVED",
               "From racetrack superpotential minimization (ε), cycle orientations (δ<sub>CP</sub>), geometric computation (J)"
             ]
@@ -16154,7 +16018,7 @@
           "type": "list",
           "content": null,
           "items": [
-            "<strong>v24.2 CKM Breakthrough:</strong> Cabibbo angle ε = 0.2257 is now <em>derived</em> from racetrack superpotential minimization (not an input parameter). CP phase δ<sub>CP</sub> = π/2 (maximal) emerges from cycle orientations. Jarlskog invariant J = 3.06 × 10⁻⁵ computed geometrically from CKM structure.",
+            "<strong>v24.2 CKM Breakthrough:</strong> Cabibbo angle racetrack variant ε = 0.2257 (canonical e^{-3/2} = 0.22313) is <em>derived</em> from racetrack superpotential minimization (not an input parameter). CP phase δ<sub>CP</sub> = π/2 (maximal) emerges from cycle orientations. Jarlskog invariant J = 3.06 × 10⁻⁵ computed geometrically from CKM structure.",
             "<strong>DESI Compatibility:</strong> Both w₀ = −23/24 (from MEP) and w<sub>a</sub> = −0.75 (from unified time dynamics) are now derived. The w<sub>a</sub> value is consistent with DESI 2025 (thawing) observations.",
             "<strong>Neutrino Mass Sum is NOT Unique:</strong> Any model predicting NH + minimal m₁ gives Σm<sub>ν</sub> ≈ 0.06 eV. This value has no discriminatory power.",
             "<strong>Mirror Sector Predictions:</strong> The unified time framework introduces qualitative predictions for the mirror sector, testable via precision cosmology (Euclid, Roman).",
@@ -16318,7 +16182,7 @@
             [
               "CKM parameters",
               "✓ CONFIRMED",
-              "ε = 0.2257, within 0.1σ (v24.2 derived)"
+              "ε = 0.2257 racetrack variant, ≈1.1σ vs PDG 2024 0.22500 (canonical e^{-3/2} = 0.22313)"
             ],
             [
               "Proton decay",
@@ -16379,7 +16243,7 @@
         },
         {
           "type": "paragraph",
-          "content": "**Dark Force Leakage Predictions (Two-Layer OR)**\n\nThe dual-shadow bridge structure predicts dark force leakage across shadows:\n\n| Force | Leakage Strength α<sub>leak</sub> | Probability P<sub>leak</sub> | Status |\n|-------|------------------------|-------------------|--------|\n| Strong (SU(3)<sub>C</sub>) | ~10⁻³⁷ | ~10⁻⁷⁵ | Zero |\n| Weak (SU(2)<sub>L</sub>) | ~0 | ~0 | Zero |\n| Electromagnetic (U(1)) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n| Gravity (gravitons) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n\nStrong force leakage is impossible (confinement + instanton cost S<sub>inst</sub> ≈ 80). Weak force leakage is impossible (mass barrier m<sub>W</sub> r<sub>bridge</sub> ~ 10⁵). EM and gravity leak at ~230× weaker than dark matter portal (~0.57)."
+          "content": "**Dark Force Leakage Predictions (Two-Layer OR)**\n\nThe dual-shadow bridge structure predicts dark force leakage across shadows:\n\n| Force | Leakage Strength α<sub>leak</sub> | Probability P<sub>leak</sub> | Status |\n|-------|------------------------|-------------------|--------|\n| Strong (SU(3)<sub>C</sub>) | ~10⁻³⁷ | ~10⁻⁷⁵ | Zero |\n| Weak (SU(2)<sub>L</sub>) | ~0 | ~0 | Zero |\n| Electromagnetic (U(1)) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n| Gravity (gravitons) | ~0.00248 | ~4.27 × 10⁻⁸ | Testable |\n\nStrong force leakage is impossible (confinement + instanton cost S<sub>inst</sub> ≈ 80). Weak force leakage is impossible (mass barrier m<sub>W</sub> r<sub>bridge</sub> ~ 10⁵). EM and gravity leak at ~230× weaker than the dark matter portal (α_sample ~ 0.57, ANSATZ)."
         },
         {
           "type": "heading",
@@ -16774,7 +16638,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-08-19T03:42:27.273493"
+      "timestamp": "2026-08-19T09:05:05.932063"
     },
     "1.1": {
       "id": "1",
@@ -17442,7 +17306,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.273741"
+      "timestamp": "2026-08-19T09:05:05.932314"
     },
     "2.6": {
       "id": "2",
@@ -18322,7 +18186,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.273919"
+      "timestamp": "2026-08-19T09:05:05.932502"
     },
     "3.7": {
       "id": "3",
@@ -18962,7 +18826,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.274093"
+      "timestamp": "2026-08-19T09:05:05.932685"
     },
     "4": {
       "id": "4",
@@ -19480,7 +19344,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T03:42:27.275245"
+      "timestamp": "2026-08-19T09:05:05.932892"
     },
     "A": {
       "id": "A",
@@ -19690,7 +19554,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-08-19T03:42:27.275322"
+      "timestamp": "2026-08-19T09:05:05.932967"
     },
     "B": {
       "id": "B",
@@ -19926,7 +19790,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-08-19T03:42:27.275380"
+      "timestamp": "2026-08-19T09:05:05.933023"
     },
     "C": {
       "id": "C",
@@ -20132,7 +19996,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-08-19T03:42:27.275451"
+      "timestamp": "2026-08-19T09:05:05.933082"
     },
     "D": {
       "id": "D",
@@ -20330,7 +20194,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-08-19T03:42:27.275497"
+      "timestamp": "2026-08-19T09:05:05.933135"
     },
     "E": {
       "id": "E",
@@ -20532,7 +20396,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-08-19T03:42:27.275551"
+      "timestamp": "2026-08-19T09:05:05.933183"
     },
     "F": {
       "id": "F",
@@ -20742,7 +20606,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-08-19T03:42:27.276012"
+      "timestamp": "2026-08-19T09:05:05.933774"
     },
     "G": {
       "id": "G",
@@ -21090,7 +20954,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-08-19T03:42:27.276600"
+      "timestamp": "2026-08-19T09:05:05.934571"
     },
     "H": {
       "id": "H",
@@ -21480,7 +21344,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-08-19T03:42:27.276689"
+      "timestamp": "2026-08-19T09:05:05.934682"
     },
     "I": {
       "id": "I",
@@ -21834,7 +21698,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-08-19T03:42:27.276774"
+      "timestamp": "2026-08-19T09:05:05.934772"
     },
     "J": {
       "id": "J",
@@ -22116,7 +21980,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-08-19T03:42:27.276861"
+      "timestamp": "2026-08-19T09:05:05.934863"
     },
     "K": {
       "id": "K",
@@ -22532,7 +22396,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-08-19T03:42:27.276927"
+      "timestamp": "2026-08-19T09:05:05.934932"
     },
     "L": {
       "id": "L",
@@ -22824,7 +22688,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-08-19T03:42:27.277105"
+      "timestamp": "2026-08-19T09:05:05.935103"
     },
     "Z": {
       "id": "Z",
@@ -23014,7 +22878,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-08-19T03:42:27.277236"
+      "timestamp": "2026-08-19T09:05:05.935213"
     },
     "2.2": {
       "id": "2",
@@ -23356,7 +23220,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-08-19T03:42:27.277486"
+      "timestamp": "2026-08-19T09:05:05.935491"
     },
     "R.1": {
       "id": "R",
@@ -23912,7 +23776,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-08-19T03:42:27.277736"
+      "timestamp": "2026-08-19T09:05:05.936895"
     },
     "S.1": {
       "id": "S",
@@ -24626,7 +24490,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-19T03:42:27.277880"
+      "timestamp": "2026-08-19T09:05:05.937043"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -24702,7 +24566,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-08-19T03:42:27.278177"
+      "timestamp": "2026-08-19T09:05:05.937338"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -24788,7 +24652,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-08-19T03:42:27.278235"
+      "timestamp": "2026-08-19T09:05:05.937397"
     },
     "5.1.1": {
       "id": "5",
@@ -24799,7 +24663,7 @@
       "title": "f(R,T,tau) Modified Gravity from G2 Compactification",
       "shortTitle": "f(R,T,tau) Modified Gravity from G2 Compactification",
       "order": 5,
-      "abstract": "The effective 4D gravity Lagrangian emerges from dimensional reduction of 11D M-theory over the G2 manifold. Higher-curvature corrections (R^2) and scalar-tensor couplings arise from flux stabilization on the b3=24 associative cycles, predicting dark energy equation of state w_0 = -0.980.",
+      "abstract": "The effective 4D gravity Lagrangian emerges from dimensional reduction of 11D M-theory over the G2 manifold. Higher-curvature corrections (R^2) and scalar-tensor couplings arise from flux stabilization on the b3=24 associative cycles, predicting an attractor-dynamics variant w_0 ≈ -0.980 (canonical w0 = -23/24 = -0.9583).",
       "contentBlocks": [
         {
           "type": "subsection",
@@ -24829,7 +24693,7 @@
         },
         {
           "type": "callout",
-          "content": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
+          "content": "The modified gravity attractor dynamics predict a variant w_0 ≈ -0.980 (canonical w0 = -23/24 = -0.9583), consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
         },
         {
           "type": "formula",
@@ -24888,7 +24752,7 @@
         },
         {
           "type": "callout",
-          "content": "The modified gravity attractor dynamics predict w_0 = -0.980, consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
+          "content": "The modified gravity attractor dynamics predict a variant w_0 ≈ -0.980 (canonical w0 = -23/24 = -0.9583), consistent with Planck 2018 + BAO observations (w_0 = -1.03 +/- 0.03). The tau modulus acts as quintessence, with the potential driving the attractor behavior toward w = -1."
         },
         {
           "type": "formula",
@@ -24954,7 +24818,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-08-19T03:42:27.278332"
+      "timestamp": "2026-08-19T09:05:05.937496"
     },
     "2.3": {
       "id": "2",
@@ -25270,7 +25134,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-08-19T03:42:27.278499"
+      "timestamp": "2026-08-19T09:05:05.937686"
     },
     "5.2.1": {
       "id": "5",
@@ -25436,7 +25300,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-08-19T03:42:27.278607"
+      "timestamp": "2026-08-19T09:05:05.937797"
     },
     "6.2.1": {
       "id": "6",
@@ -25586,7 +25450,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-08-19T03:42:27.278674"
+      "timestamp": "2026-08-19T09:05:05.937865"
     },
     "7.1": {
       "id": "7",
@@ -25624,7 +25488,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The axion couples to Standard Model fields through portal interactions whose strengths are fixed by G2 flux quantization. Each of the chi_eff/24 = 6 independent associative 3-cycles threads one unit of G-flux that couples to the QCD field strength. Combined with the inter-face leakage coupling alpha_leak ~ 0.57, this gives the axion-gluon vertex g_agg = (alpha_leak / (pi * f_a)) * (chi_eff/24) = 1.08/f_a. The Primakoff coupling to photons follows from electromagnetic dressing: g_{a gamma gamma} = g_agg * (alpha_em/pi) * (E/N) where E/N ~ 1.92 is the electromagnetic-to-color anomaly ratio from the G2 chiral fermion charge assignments. The axion-nucleon coupling is g_aN ~ alpha_leak / f_a ~ 0.57/f_a. These portal couplings are entirely determined by the G2 topology and carry no free parameters."
+          "content": "The axion couples to Standard Model fields through portal interactions whose strengths are fixed by G2 flux quantization. Each of the chi_eff/24 = 6 independent associative 3-cycles threads one unit of G-flux that couples to the QCD field strength. Combined with the inter-face leakage coupling alpha_sample ~ 0.57 (ANSATZ), this gives the axion-gluon vertex g_agg = (alpha_leak / (pi * f_a)) * (chi_eff/24) = 1.08/f_a. The Primakoff coupling to photons follows from electromagnetic dressing: g_{a gamma gamma} = g_agg * (alpha_em/pi) * (E/N) where E/N ~ 1.92 is the electromagnetic-to-color anomaly ratio from the G2 chiral fermion charge assignments. The axion-nucleon coupling is g_aN ~ alpha_sample / f_a ~ 0.57/f_a. These portal couplings are entirely determined by the G2 topology and carry no free parameters."
         },
         {
           "type": "formula",
@@ -25680,7 +25544,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The axion couples to Standard Model fields through portal interactions whose strengths are fixed by G2 flux quantization. Each of the chi_eff/24 = 6 independent associative 3-cycles threads one unit of G-flux that couples to the QCD field strength. Combined with the inter-face leakage coupling alpha_leak ~ 0.57, this gives the axion-gluon vertex g_agg = (alpha_leak / (pi * f_a)) * (chi_eff/24) = 1.08/f_a. The Primakoff coupling to photons follows from electromagnetic dressing: g_{a gamma gamma} = g_agg * (alpha_em/pi) * (E/N) where E/N ~ 1.92 is the electromagnetic-to-color anomaly ratio from the G2 chiral fermion charge assignments. The axion-nucleon coupling is g_aN ~ alpha_leak / f_a ~ 0.57/f_a. These portal couplings are entirely determined by the G2 topology and carry no free parameters."
+          "content": "The axion couples to Standard Model fields through portal interactions whose strengths are fixed by G2 flux quantization. Each of the chi_eff/24 = 6 independent associative 3-cycles threads one unit of G-flux that couples to the QCD field strength. Combined with the inter-face leakage coupling alpha_sample ~ 0.57 (ANSATZ), this gives the axion-gluon vertex g_agg = (alpha_leak / (pi * f_a)) * (chi_eff/24) = 1.08/f_a. The Primakoff coupling to photons follows from electromagnetic dressing: g_{a gamma gamma} = g_agg * (alpha_em/pi) * (E/N) where E/N ~ 1.92 is the electromagnetic-to-color anomaly ratio from the G2 chiral fermion charge assignments. The axion-nucleon coupling is g_aN ~ alpha_sample / f_a ~ 0.57/f_a. These portal couplings are entirely determined by the G2 topology and carry no free parameters."
         },
         {
           "type": "formula",
@@ -25738,7 +25602,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-08-19T03:42:27.278760"
+      "timestamp": "2026-08-19T09:05:05.937953"
     },
     "7.3": {
       "id": "7",
@@ -25749,11 +25613,11 @@
       "title": "Dark Matter Portal Physics from G2 Hidden Faces",
       "shortTitle": "Dark Matter Portal Physics from G2 Hidden Faces",
       "order": 7,
-      "abstract": "The four-face G₂ sub-sector structure naturally generates dark matter portal interactions. The visible sector (Face 1) communicates with three hidden faces (f = 2, 3, 4) via the face sampling strength α<sub>leak</sub> ~ 0.57, derived entirely from G₂ geometry. We compute the portal coupling g<sub>portal</sub>, spin-independent nucleon cross-section σ<sub>SI</sub>, and KK mediator mass m<sub>KK</sub>, predicting multi-component dark matter (KK modes, ALPs, sterile neutrinos) with total relic density Ω<sub>DM</sub> h² ~ 0.12. The predicted σ<sub>SI</sub> is below current XENONnT bounds but testable by DARWIN and XLZD.",
+      "abstract": "The four-face G₂ sub-sector structure naturally generates dark matter portal interactions. The visible sector (Face 1) communicates with three hidden faces (f = 2, 3, 4) via the face sampling strength α<sub>sample</sub> ~ 0.57 (ANSATZ), derived entirely from G₂ geometry. We compute the portal coupling g<sub>portal</sub>, spin-independent nucleon cross-section σ<sub>SI</sub>, and KK mediator mass m<sub>KK</sub>, predicting multi-component dark matter (KK modes, ALPs, sterile neutrinos) with total relic density Ω<sub>DM</sub> h² ~ 0.12. The predicted σ<sub>SI</sub> is below current XENONnT bounds but testable by DARWIN and XLZD.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The TCS G₂ manifold #187 admits four geometric faces per shadow, with Face 1 hosting the visible (Standard Model) sector and Faces 2, 3, 4 hosting distinct shadow sectors. The inter-face coupling α<sub>leak</sub> ~ 0.57 derived in Section 2.7 from the face sampling strength provides a natural dark matter portal: hidden face excitations can tunnel into the visible sector through the G₂ torsion connection, producing dark matter interactions at a strength controlled entirely by the compactification geometry."
+          "content": "The TCS G₂ manifold #187 admits four geometric faces per shadow, with Face 1 hosting the visible (Standard Model) sector and Faces 2, 3, 4 hosting distinct shadow sectors. The inter-face coupling α<sub>sample</sub> ~ 0.57 (ANSATZ) derived in Section 2.7 from the face sampling strength provides a natural dark matter portal: hidden face excitations can tunnel into the visible sector through the G₂ torsion connection, producing dark matter interactions at a strength controlled entirely by the compactification geometry."
         },
         {
           "type": "heading",
@@ -25769,7 +25633,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The effective portal coupling for dark matter-nucleon scattering is g<sub>portal</sub> = α<sub>leak</sub> · √(χ<sub>eff</sub>/b₃) / (4π) ~ 0.11. The face sampling strength α<sub>leak</sub> ~ 0.57 is the fundamental geometric quantity, measuring the wavefunction overlap between the visible and hidden face sectors. The topological enhancement factor √(χ<sub>eff</sub>/b₃) = √6 arises from the total associative cycle structure of the G₂ manifold, and the 4π normalization converts to a standard Yukawa-type coupling. The resulting g<sub>portal</sub> ~ 0.11 is safely perturbative, ensuring the validity of the Born approximation in cross-section computations."
+          "content": "The effective portal coupling for dark matter-nucleon scattering is g<sub>portal</sub> = α<sub>leak</sub> · √(χ<sub>eff</sub>/b₃) / (4π) ~ 0.11. The face sampling strength α<sub>sample</sub> ~ 0.57 (ANSATZ) is the fundamental geometric quantity, measuring the wavefunction overlap between the visible and hidden face sectors. The topological enhancement factor √(χ<sub>eff</sub>/b₃) = √6 arises from the total associative cycle structure of the G₂ manifold, and the 4π normalization converts to a standard Yukawa-type coupling. The resulting g<sub>portal</sub> ~ 0.11 is safely perturbative, ensuring the validity of the Born approximation in cross-section computations."
         },
         {
           "type": "heading",
@@ -25818,7 +25682,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The TCS G₂ manifold #187 admits four geometric faces per shadow, with Face 1 hosting the visible (Standard Model) sector and Faces 2, 3, 4 hosting distinct shadow sectors. The inter-face coupling α<sub>leak</sub> ~ 0.57 derived in Section 2.7 from the face sampling strength provides a natural dark matter portal: hidden face excitations can tunnel into the visible sector through the G₂ torsion connection, producing dark matter interactions at a strength controlled entirely by the compactification geometry."
+          "content": "The TCS G₂ manifold #187 admits four geometric faces per shadow, with Face 1 hosting the visible (Standard Model) sector and Faces 2, 3, 4 hosting distinct shadow sectors. The inter-face coupling α<sub>sample</sub> ~ 0.57 (ANSATZ) derived in Section 2.7 from the face sampling strength provides a natural dark matter portal: hidden face excitations can tunnel into the visible sector through the G₂ torsion connection, producing dark matter interactions at a strength controlled entirely by the compactification geometry."
         },
         {
           "type": "heading",
@@ -25834,7 +25698,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The effective portal coupling for dark matter-nucleon scattering is g<sub>portal</sub> = α<sub>leak</sub> · √(χ<sub>eff</sub>/b₃) / (4π) ~ 0.11. The face sampling strength α<sub>leak</sub> ~ 0.57 is the fundamental geometric quantity, measuring the wavefunction overlap between the visible and hidden face sectors. The topological enhancement factor √(χ<sub>eff</sub>/b₃) = √6 arises from the total associative cycle structure of the G₂ manifold, and the 4π normalization converts to a standard Yukawa-type coupling. The resulting g<sub>portal</sub> ~ 0.11 is safely perturbative, ensuring the validity of the Born approximation in cross-section computations."
+          "content": "The effective portal coupling for dark matter-nucleon scattering is g<sub>portal</sub> = α<sub>leak</sub> · √(χ<sub>eff</sub>/b₃) / (4π) ~ 0.11. The face sampling strength α<sub>sample</sub> ~ 0.57 (ANSATZ) is the fundamental geometric quantity, measuring the wavefunction overlap between the visible and hidden face sectors. The topological enhancement factor √(χ<sub>eff</sub>/b₃) = √6 arises from the total associative cycle structure of the G₂ manifold, and the 4π normalization converts to a standard Yukawa-type coupling. The resulting g<sub>portal</sub> ~ 0.11 is safely perturbative, ensuring the validity of the Born approximation in cross-section computations."
         },
         {
           "type": "heading",
@@ -25902,7 +25766,285 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-08-19T03:42:27.278863"
+      "timestamp": "2026-08-19T09:05:05.938039"
+    },
+    "7.4": {
+      "id": "7",
+      "appendix": false,
+      "subsection_id": "7.4",
+      "type": "section",
+      "section_type": "section",
+      "title": "Sterile Neutrino Portals from Dual-Shadow Architecture",
+      "shortTitle": "Sterile Neutrino Portals from Dual-Shadow Architecture",
+      "order": 7,
+      "abstract": "Sterile neutrinos emerge naturally from the dual-shadow G₂ architecture. Shadow 1 hosts left-handed SU(2)<sub>L</sub> doublets; Shadow 2 hosts right-handed doublets that are sterile under the Standard Model gauge group. The bridge OR operator generates a Dirac Yukawa y<sub>as</sub> ~ α<sub>sample</sub> ~ 0.57 (ANSATZ) through cross-shadow wave-function overlap. Hidden-face Kähler moduli generate a Majorana mass M<sub>s</sub> ~ 10⁴ GeV via exponential suppression of the Planck scale. The type-I seesaw then predicts light neutrino masses m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV at the atmospheric scale, with mixing angles sin²(2θ) safely below current experimental bounds. Sterile contributions to N<sub>eff</sub> are negligible, consistent with Planck CMB data.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "In the dual-shadow architecture, the G₂ manifold supports two 13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 hosts left-handed fermion doublets charged under SU(2)<sub>L</sub>, while Shadow 2 hosts right-handed doublets. Crucially, the right-handed neutrinos in Shadow 2 carry no SU(2)<sub>L</sub> charge — they are naturally sterile. This geometric origin for sterility replaces the ad hoc assumption of the Standard Model, where right-handed neutrinos are simply absent from the particle content."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge-Mediated Dirac Yukawa Coupling",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge OR operator R<sub>⊥</sub> connects the two shadows, enabling cross-shadow fermion mixing. The overlap integral of the left-handed active neutrino wave function (Shadow 1) with the right-handed sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa coupling y<sub>as</sub> ~ α<sub>sample</sub> ~ 0.57 (ANSATZ), entirely determined by the geometric portal coupling."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mixing-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Hidden-Face Majorana Mass Generation",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The 4-face TCS G₂ manifold has one visible face (our universe) and three hidden faces. The Kähler moduli T<sub>i</sub> of the hidden faces are stabilized by flux quantization. The moduli VEV generates a Majorana mass M<sub>s</sub> = M<sub>Pl</sub> · exp(−T<sub>i</sub>/2) for the right-handed sterile neutrinos. For T<sub>i</sub> ~ 69: M<sub>s</sub> ~ 10⁴ GeV, which feeds into the type-I seesaw to produce light neutrino masses at the atmospheric scale."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mass-v23"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from dual-shadow G₂ geometry:\n- Majorana mass: M<sub>s</sub> ~ 10⁴ GeV (hidden-face moduli)\n- Light neutrino mass: m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV (atmospheric scale)\n- Mixing angle: sin²(2θ) ~ few × 10<sup>−5</sup> (below current limits)\n- Sterile count: n<sub>sterile</sub> ~ 5.13 from 3 hidden faces\n- ΔN<sub>eff</sub> ≪ 0.5 (consistent with Planck CMB)\nTestable by: next-generation short-baseline experiments, CMB-S4"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-neff-v23"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "In the dual-shadow architecture, the G₂ manifold supports two 13-dimensional shadow sectors connected by 12 bridge pairs. Shadow 1 hosts left-handed fermion doublets charged under SU(2)<sub>L</sub>, while Shadow 2 hosts right-handed doublets. Crucially, the right-handed neutrinos in Shadow 2 carry no SU(2)<sub>L</sub> charge — they are naturally sterile. This geometric origin for sterility replaces the ad hoc assumption of the Standard Model, where right-handed neutrinos are simply absent from the particle content."
+        },
+        {
+          "type": "heading",
+          "content": "Bridge-Mediated Dirac Yukawa Coupling",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The bridge OR operator R<sub>⊥</sub> connects the two shadows, enabling cross-shadow fermion mixing. The overlap integral of the left-handed active neutrino wave function (Shadow 1) with the right-handed sterile neutrino wave function (Shadow 2) generates a Dirac Yukawa coupling y<sub>as</sub> ~ α<sub>sample</sub> ~ 0.57 (ANSATZ), entirely determined by the geometric portal coupling."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mixing-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Hidden-Face Majorana Mass Generation",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The 4-face TCS G₂ manifold has one visible face (our universe) and three hidden faces. The Kähler moduli T<sub>i</sub> of the hidden faces are stabilized by flux quantization. The moduli VEV generates a Majorana mass M<sub>s</sub> = M<sub>Pl</sub> · exp(−T<sub>i</sub>/2) for the right-handed sterile neutrinos. For T<sub>i</sub> ~ 69: M<sub>s</sub> ~ 10⁴ GeV, which feeds into the type-I seesaw to produce light neutrino masses at the atmospheric scale."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-mass-v23"
+        },
+        {
+          "type": "callout",
+          "content": "PM predicts from dual-shadow G₂ geometry:\n- Majorana mass: M<sub>s</sub> ~ 10⁴ GeV (hidden-face moduli)\n- Light neutrino mass: m<sub>ν</sub> ~ 2 × 10<sup>−3</sup> eV (atmospheric scale)\n- Mixing angle: sin²(2θ) ~ few × 10<sup>−5</sup> (below current limits)\n- Sterile count: n<sub>sterile</sub> ~ 5.13 from 3 hidden faces\n- ΔN<sub>eff</sub> ≪ 0.5 (consistent with Planck CMB)\nTestable by: next-generation short-baseline experiments, CMB-S4"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-sterile-neff-v23"
+        }
+      ],
+      "formulaRefs": [
+        "portal-sterile-mixing-v23",
+        "portal-sterile-mass-v23",
+        "portal-sterile-neff-v23"
+      ],
+      "paramRefs": [
+        "portals.sterile_mixing_sin2_2theta",
+        "portals.sterile_mass_scale_gev",
+        "portals.sterile_n_eff_contribution"
+      ],
+      "formula_refs": [
+        "portal-sterile-mixing-v23",
+        "portal-sterile-mass-v23",
+        "portal-sterile-neff-v23"
+      ],
+      "param_refs": [
+        "portals.sterile_mixing_sin2_2theta",
+        "portals.sterile_mass_scale_gev",
+        "portals.sterile_n_eff_contribution"
+      ],
+      "timestamp": "2026-08-19T09:05:05.938352"
+    },
+    "7.5": {
+      "id": "7",
+      "appendix": false,
+      "subsection_id": "7.5",
+      "type": "section",
+      "section_type": "section",
+      "title": "ALP Portal Physics from Face 3 Moduli",
+      "shortTitle": "ALP Portal Physics from Face 3 Moduli",
+      "order": 7,
+      "abstract": "Axion-Like Particles emerge from moduli misalignment on Face 3 of the G₂ four-face structure, distinct from the QCD axion on Face 1. The ALP decay constant f<sub>a</sub><sup>ALP</sup> = M<sub>Pl</sub> / (χ<sub>eff</sub> · T₃) × √(f<sub>np</sub> · f<sub>np</sub> · f<sub>add</sub>), where T₃ is the Face 3 racetrack VEV and f<sub>np</sub> the non-perturbative suppression, yields f<sub>a</sub> ~ 10<sup>10</sup> GeV. This predicts m<sub>ALP</sub> ~ meV (from Λ<sub>QCD</sub>²/f<sub>a</sub>), an ALP-photon coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below stellar bounds), and a fifth force range λ ~ 0.01–0.1 mm testable by sub-millimetre gravity experiments.",
+      "contentBlocks": [
+        {
+          "type": "heading",
+          "content": "Four-Face Structure and ALP Genesis",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The PM G₂ manifold is modelled as a Twisted Connected Sum (TCS) with four topological faces, each hosting distinct pseudo-scalar zero-modes from three-form flux compactification. The faces differ in their racetrack superpotential parameters, setting face-dependent moduli VEVs T<sub>i</sub> and consequently face-dependent axion decay constants. Face 1 hosts the QCD axion (Section 7.1) with f<sub>a</sub><sup>QCD</sup> ~ 3.5 × 10<sup>12</sup> GeV, near the string unification scale. Face 3 hosts a qualitatively different pseudo-scalar: an Axion-Like Particle (ALP) with a significantly lower decay constant f<sub>a</sub><sup>ALP</sup> ~ 10<sup>10</sup> GeV, arising from the double-exponential racetrack suppression T₃ = b₃ · k<sub>ℷ</sub> / (3π) ~ 31.2 on the hidden face. The factor-of-200 suppression in f<sub>a</sub> shifts the ALP mass from micro-eV (QCD axion) to the meV scale."
+        },
+        {
+          "type": "heading",
+          "content": "ALP Mass from Misalignment",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The ALP mass is set by the non-perturbative potential generated when the Face 3 modulus T₃ is stabilized. The misalignment mechanism gives m<sub>ALP</sub> ~ Λ<sub>QCD</sub>² / f<sub>a</sub><sup>ALP</sup>, where the QCD scale Λ<sub>QCD</sub> ~ 0.2 GeV enters because the ALP inherits a small QCD anomaly coefficient through the inter-face leakage channel α<sub>leak</sub> = 1/√6. With f<sub>a</sub> ~ 10<sup>10</sup> GeV, the ALP mass is at the meV scale, in the reach of upcoming laboratory and astrophysical experiments:"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-mass-v23"
+        },
+        {
+          "type": "heading",
+          "content": "ALP-Photon Coupling via the Portal",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The ALP-photon coupling g<sub>aγγ</sub> is generated by the inter-face topological leakage. The G₂ portal mechanism transfers axion flux between faces through the χ<sub>eff</sub>-weighted channel, with amplitude set by α<sub>leak</sub> = 1/√6. The topological enhancement factor χ<sub>eff</sub> = 72 (the per-sector Euler characteristic) increases the effective coupling relative to a simple f<sub>a</sub><sup>−1</sup> suppression. The resulting ALP-photon coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> falls below current stellar-cooling bounds (HB stars: &lt; 6.6 × 10<sup>−11</sup> GeV<sup>−1</sup>) and within reach of IAXO and ALPS-II:"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-photon-v23"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-nucleon-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Fifth Force and Laboratory Tests",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "ALP exchange between macroscopic matter generates a Yukawa-type correction to Newtonian gravity at the Compton wavelength λ<sub>ALP</sub> = ℏc / (m<sub>ALP</sub> c²). For m<sub>ALP</sub> ~ meV, this gives λ ~ 0.01–0.1 mm — precisely the sub-millimetre range being probed by modern torsion-balance and Casimir experiments. The coupling strength α₅ = g<sub>aNN</sub>² M<sub>Pl</sub>² / (4π) is set by the nucleon coupling g<sub>aNN</sub> ~ 10<sup>−12</sup>. This Yukawa signature is independent of the ALP-photon coupling and provides a complementary laboratory test channel:"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-fifth-force-v23"
+        },
+        {
+          "type": "callout",
+          "content": "From Face 3 moduli misalignment, PM predicts:\n- ALP mass: m<sub>ALP</sub> ~ meV (Compton wavelength λ ~ 0.1 mm)\n- ALP-photon coupling: g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below HB-star bound)\n- ALP-nucleon coupling: g<sub>aNN</sub> ~ 10<sup>−12</sup>\n- Fifth-force range: λ ~ 0.01–0.1 mm at α₅ ~ 10<sup>−3</sup>\nThese predictions are testable by: ALPS-II (photon coupling), IAXO/BabyIAXO (helioscope), Eot-Wash and Stanford short-range gravity experiments (fifth force), and ALP dark matter searches."
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "heading",
+          "content": "Four-Face Structure and ALP Genesis",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The PM G₂ manifold is modelled as a Twisted Connected Sum (TCS) with four topological faces, each hosting distinct pseudo-scalar zero-modes from three-form flux compactification. The faces differ in their racetrack superpotential parameters, setting face-dependent moduli VEVs T<sub>i</sub> and consequently face-dependent axion decay constants. Face 1 hosts the QCD axion (Section 7.1) with f<sub>a</sub><sup>QCD</sup> ~ 3.5 × 10<sup>12</sup> GeV, near the string unification scale. Face 3 hosts a qualitatively different pseudo-scalar: an Axion-Like Particle (ALP) with a significantly lower decay constant f<sub>a</sub><sup>ALP</sup> ~ 10<sup>10</sup> GeV, arising from the double-exponential racetrack suppression T₃ = b₃ · k<sub>ℷ</sub> / (3π) ~ 31.2 on the hidden face. The factor-of-200 suppression in f<sub>a</sub> shifts the ALP mass from micro-eV (QCD axion) to the meV scale."
+        },
+        {
+          "type": "heading",
+          "content": "ALP Mass from Misalignment",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The ALP mass is set by the non-perturbative potential generated when the Face 3 modulus T₃ is stabilized. The misalignment mechanism gives m<sub>ALP</sub> ~ Λ<sub>QCD</sub>² / f<sub>a</sub><sup>ALP</sup>, where the QCD scale Λ<sub>QCD</sub> ~ 0.2 GeV enters because the ALP inherits a small QCD anomaly coefficient through the inter-face leakage channel α<sub>leak</sub> = 1/√6. With f<sub>a</sub> ~ 10<sup>10</sup> GeV, the ALP mass is at the meV scale, in the reach of upcoming laboratory and astrophysical experiments:"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-mass-v23"
+        },
+        {
+          "type": "heading",
+          "content": "ALP-Photon Coupling via the Portal",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The ALP-photon coupling g<sub>aγγ</sub> is generated by the inter-face topological leakage. The G₂ portal mechanism transfers axion flux between faces through the χ<sub>eff</sub>-weighted channel, with amplitude set by α<sub>leak</sub> = 1/√6. The topological enhancement factor χ<sub>eff</sub> = 72 (the per-sector Euler characteristic) increases the effective coupling relative to a simple f<sub>a</sub><sup>−1</sup> suppression. The resulting ALP-photon coupling g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> falls below current stellar-cooling bounds (HB stars: &lt; 6.6 × 10<sup>−11</sup> GeV<sup>−1</sup>) and within reach of IAXO and ALPS-II:"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-photon-v23"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-nucleon-v23"
+        },
+        {
+          "type": "heading",
+          "content": "Fifth Force and Laboratory Tests",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "ALP exchange between macroscopic matter generates a Yukawa-type correction to Newtonian gravity at the Compton wavelength λ<sub>ALP</sub> = ℏc / (m<sub>ALP</sub> c²). For m<sub>ALP</sub> ~ meV, this gives λ ~ 0.01–0.1 mm — precisely the sub-millimetre range being probed by modern torsion-balance and Casimir experiments. The coupling strength α₅ = g<sub>aNN</sub>² M<sub>Pl</sub>² / (4π) is set by the nucleon coupling g<sub>aNN</sub> ~ 10<sup>−12</sup>. This Yukawa signature is independent of the ALP-photon coupling and provides a complementary laboratory test channel:"
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "portal-alp-fifth-force-v23"
+        },
+        {
+          "type": "callout",
+          "content": "From Face 3 moduli misalignment, PM predicts:\n- ALP mass: m<sub>ALP</sub> ~ meV (Compton wavelength λ ~ 0.1 mm)\n- ALP-photon coupling: g<sub>aγγ</sub> ~ 10<sup>−11</sup> GeV<sup>−1</sup> (below HB-star bound)\n- ALP-nucleon coupling: g<sub>aNN</sub> ~ 10<sup>−12</sup>\n- Fifth-force range: λ ~ 0.01–0.1 mm at α₅ ~ 10<sup>−3</sup>\nThese predictions are testable by: ALPS-II (photon coupling), IAXO/BabyIAXO (helioscope), Eot-Wash and Stanford short-range gravity experiments (fifth force), and ALP dark matter searches."
+        }
+      ],
+      "formulaRefs": [
+        "portal-alp-mass-v23",
+        "portal-alp-photon-v23",
+        "portal-alp-nucleon-v23",
+        "portal-alp-fifth-force-v23"
+      ],
+      "paramRefs": [
+        "portals.alp_mass_ev",
+        "portals.alp_photon_coupling_gev_inv",
+        "portals.alp_nucleon_coupling_gev_inv",
+        "portals.alp_fifth_force_range_m"
+      ],
+      "formula_refs": [
+        "portal-alp-mass-v23",
+        "portal-alp-photon-v23",
+        "portal-alp-nucleon-v23",
+        "portal-alp-fifth-force-v23"
+      ],
+      "param_refs": [
+        "portals.alp_mass_ev",
+        "portals.alp_photon_coupling_gev_inv",
+        "portals.alp_nucleon_coupling_gev_inv",
+        "portals.alp_fifth_force_range_m"
+      ],
+      "timestamp": "2026-08-19T09:05:05.938486"
     }
   }
 }

@@ -3,8 +3,8 @@
   "note": "SSOT drift audit: config.py Formula literals cross-checked against the simulation registry (parameters.json). DRIFT = literal disagrees with registry; ORPHAN = no registry source exists for the literal. Roadmap: replace config literals with registry lookups so every displayed number traces to the b3=24 derivation chain or a cited experimental dataset.",
   "summary": {
     "checked": 34,
-    "match": 15,
-    "drift": 7,
+    "match": 14,
+    "drift": 8,
     "orphan": 12
   },
   "findings": [
@@ -500,7 +500,7 @@
     },
     {
       "formula_id": "higgs-mass",
-      "verdict": "MATCH",
+      "verdict": "DRIFT",
       "registry_path": "pdg.m_higgs",
       "registry_status": "ESTABLISHED",
       "checks": [
@@ -512,15 +512,15 @@
         },
         {
           "field": "experimental_value",
-          "config": 125.1,
+          "config": 125.2,
           "registry": 125.2,
           "ok": true
         },
         {
           "field": "sigma_deviation",
-          "config": 0.0,
+          "config": 0.91,
           "registry": 0.0,
-          "ok": true
+          "ok": false
         }
       ]
     }

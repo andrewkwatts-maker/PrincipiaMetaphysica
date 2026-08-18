@@ -1,13 +1,13 @@
 {
   "version": "24.2",
-  "generated_at": "2026-08-18T17:42:31.124235+00:00",
+  "generated_at": "2026-08-18T23:05:11.019511+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
     "total_simulations": 85,
-    "agreed": 82,
+    "agreed": 85,
     "failed": 0,
-    "not_implemented": 3,
+    "not_implemented": 0,
     "errors": 0,
     "skipped": 0,
     "global_max_deviation": 3.808798771726061e-12,
@@ -358,11 +358,11 @@
       "note": ""
     },
     "orch_or_geometry_v22_0": {
-      "status": "NOT_IMPLEMENTED",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 4,
+      "params_agreed": 4,
       "max_deviation": 0.0,
-      "note": "OrchORSimulation.run_eml() not yet implemented"
+      "note": ""
     },
     "gnosis_unlocking_v22_2": {
       "status": "AGREE",
@@ -372,18 +372,18 @@
       "note": ""
     },
     "four_dice_sampling_v22": {
-      "status": "NOT_IMPLEMENTED",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 2,
+      "params_agreed": 2,
       "max_deviation": 0.0,
-      "note": "FourDiceSamplingSimulation.run_eml() not yet implemented"
+      "note": ""
     },
     "orch_or_pair_shielding_v22": {
-      "status": "NOT_IMPLEMENTED",
-      "params_checked": 0,
-      "params_agreed": 0,
+      "status": "AGREE",
+      "params_checked": 3,
+      "params_agreed": 3,
       "max_deviation": 0.0,
-      "note": "OrchORPairShieldingSimulation.run_eml() not yet implemented"
+      "note": ""
     },
     "discussion_v16_0": {
       "status": "AGREE",

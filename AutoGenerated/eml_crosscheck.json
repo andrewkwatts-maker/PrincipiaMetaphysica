@@ -803,10 +803,10 @@
       "path": "consciousness.dice_entropy",
       "status": "DISAGREE",
       "evaluated": 0.3465735902799726,
-      "registered": 7.805901613672971,
-      "rel_error": 0.9556010814083401,
+      "registered": 7.789011045098871,
+      "rel_error": 0.9555048017940545,
       "eml_description": "EML: ops.neg(ops.mul(eml_scalar(0.25), ops.log(eml_scalar(0.25)))) \u2014 Shannon entropy H = -\u03a3p\u1d62log(p\u1d62) for uniform 4-branch sampling",
-      "diagnostic": "rel_err=95.56%"
+      "diagnostic": "rel_err=95.55%"
     },
     {
       "path": "consciousness.neuron_count",
@@ -1266,13 +1266,13 @@
     {
       "path": "cosmology.epsilon_KK",
       "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 9.999999999999763e+299,
-      "registered": 0.2257,
-      "rel_error": 4.430660168364981e+300,
-      "eml_description": "EML: ops.inv(ops.pow(eml_vec('Vol_K3_over_S3'), eml_scalar(1.0))) \u2014 \u03b5_KK = 0.2257 from Vol(K3)/Vol(S3)=4.43 via racetrack stabilization at T_min=1.4885",
-      "diagnostic": "missing: Vol_K3_over_S3",
+      "evaluated": 1.0,
+      "registered": 0.22571096819380504,
+      "rel_error": 3.4304448649626877,
+      "eml_description": "EML: ops.exp(ops.neg(eml_vec('T_min'))) \u2014 \u03b5_KK = e^{-T_min} = 0.22572 (= 1/Vol ratio) via racetrack stabilization at T_min=1.4885",
+      "diagnostic": "missing: T_min",
       "missing_refs": [
-        "Vol_K3_over_S3"
+        "T_min"
       ]
     },
     {
@@ -1919,7 +1919,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 23011.0175,
+      "registered": 2122.4012,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -1931,7 +1931,7 @@
       "path": "framework_statistics.degrees_of_freedom",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted))\": name 'N_fitted' is not defined",
-      "registered": 58.0,
+      "registered": 57.0,
       "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted)) \u2014 dof = N_pred \u2212 N_fitted_params"
     },
     {
@@ -3439,9 +3439,9 @@
     {
       "path": "higgs.sigma_local",
       "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.25))), eml_scalar(0.17))\": module 'eml_math.operators' has no attribute 'abs'",
+      "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.20))), eml_scalar(0.11))\": module 'eml_math.operators' has no attribute 'abs'",
       "registered": 0.8870370917246749,
-      "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.25))), eml_scalar(0.17)) \u2014 sigma = |M_local \u2212 125.25| / 0.17 vs PDG 2024"
+      "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('higgs.m_higgs_local'), eml_scalar(125.20))), eml_scalar(0.11)) \u2014 sigma = |M_local \u2212 125.20| / 0.11 vs PDG 2024"
     },
     {
       "path": "higgs.vev",
@@ -4195,7 +4195,7 @@
       "path": "qed.bulk_compton_wavelength",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'lambda_manifest' is not defined",
-      "registered": 2.4263944822631727e-12,
+      "registered": 2.426394485553287e-12,
       "eml_description": "EML: ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))"
     },
     {
@@ -4244,14 +4244,14 @@
       "path": "qed.compton_sigma_deviation",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12))), eml_scalar(7.3e-22))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 4.506849061389332,
+      "registered": 0.0,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12))), eml_scalar(7.3e-22)) \u2014 \u03c3-deviation from CODATA2022 \u03bb_C, uncertainty = 7.3\u00d710\u207b\u00b2\u00b2 m"
     },
     {
       "path": "qed.compton_variance_m",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12)))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 3.2899998148142125e-21,
+      "registered": 0.0,
       "eml_description": "EML: ops.abs(ops.sub(eml_vec('qed.manifest_compton_wavelength'), eml_scalar(2.42631023867e-12))) \u2014 |\u03bb_manifest \u2212 \u03bb_CODATA| absolute variance in metres"
     },
     {
@@ -4281,7 +4281,7 @@
       "path": "qed.manifest_compton_wavelength",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'compton_bulk' is not defined",
-      "registered": 2.42631023538e-12,
+      "registered": 2.42631023867e-12,
       "eml_description": "EML: ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 h/(m_e*c) contracts net 1/(1+eps)"
     },
     {
@@ -5145,7 +5145,7 @@
     {
       "path": "validation.success_rate",
       "status": "SKIP",
-      "reason": "non-numeric value: '81.4%'",
+      "reason": "non-numeric value: '82.8%'",
       "eml_description": "EML: ops.mul(ops.div(eml_vec('validation.within_2sigma'), eml_vec('validation.total_predictions')), eml_scalar(100.0)) \u2014 success rate = within_2\u03c3/total \u00d7 100%"
     },
     {
@@ -5158,7 +5158,7 @@
       "path": "validation.total_predictions",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_pred)': name 'N_pred' is not defined",
-      "registered": 59.0,
+      "registered": 58.0,
       "eml_description": "EML: eml_scalar(N_pred) \u2014 total number of verifiable predicted observables"
     },
     {

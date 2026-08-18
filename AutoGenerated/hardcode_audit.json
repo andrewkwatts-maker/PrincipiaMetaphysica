@@ -4,8 +4,8 @@
   "summary": {
     "files_scanned": 185,
     "dataset_values": 333,
-    "exact_dup": 375,
-    "stale_dup": 328,
+    "exact_dup": 382,
+    "stale_dup": 319,
     "files_with_findings": 83
   },
   "worst_files": [
@@ -90,42 +90,42 @@
     {
       "file": "simulations/PM/algebra/gaugino_condensation.py",
       "line": 482,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/algebra/gaugino_condensation.py",
       "line": 505,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/algebra/gaugino_condensation.py",
       "line": 558,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/algebra/gaugino_condensation.py",
       "line": 608,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/algebra/gaugino_condensation.py",
       "line": 608,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/algebra/neutrino_algebraic.py",
@@ -329,23 +329,7 @@
     },
     {
       "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 176,
-      "literal": 0.2257,
-      "dataset_key": "pdg_2024_values.ckm.V_us.value",
-      "dataset_value": 0.225,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 1105,
-      "literal": 0.2257,
-      "dataset_key": "pdg_2024_values.ckm.V_us.value",
-      "dataset_value": 0.225,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 756,
+      "line": 760,
       "literal": 2.435e+18,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
       "dataset_value": 2.435e+18,
@@ -353,8 +337,8 @@
     },
     {
       "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 1106,
-      "literal": 0.2257,
+      "line": 1112,
+      "literal": 0.22572,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
       "class": "STALE_DUP"
@@ -617,7 +601,7 @@
     },
     {
       "file": "simulations/PM/cosmology/f_r_t_tau_gravity.py",
-      "line": 742,
+      "line": 743,
       "literal": 0.958,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2289,7 +2273,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 743,
+      "line": 745,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2297,7 +2281,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 755,
+      "line": 757,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2305,7 +2289,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 767,
+      "line": 769,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3090,18 +3074,18 @@
     {
       "file": "simulations/PM/particle/fermion_generations.py",
       "line": 1082,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/particle/fermion_generations.py",
       "line": 1082,
-      "literal": 0.2257,
+      "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/particle/higgs_brane_partition.py",
@@ -3185,11 +3169,67 @@
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 1242,
+      "line": 1243,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
       "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 694,
+      "literal": 125.1,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 915,
+      "literal": 125.2,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 962,
+      "literal": 246.22,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
+      "dataset_value": 246.22,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 1248,
+      "literal": 245.72,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
+      "dataset_value": 246.22,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 1248,
+      "literal": 246.72,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
+      "dataset_value": 246.22,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 1304,
+      "literal": 246.22,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
+      "dataset_value": 246.22,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 692,
+      "literal": 125.1,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
@@ -3201,7 +3241,15 @@
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 914,
+      "line": 890,
+      "literal": 246.0,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
+      "dataset_value": 246.22,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 921,
       "literal": 125.2,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
@@ -3209,7 +3257,15 @@
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 961,
+      "line": 943,
+      "literal": 125.25,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_mass.py",
+      "line": 967,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -3217,42 +3273,10 @@
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 1247,
-      "literal": 245.72,
+      "line": 888,
+      "literal": 246.0,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 1247,
-      "literal": 246.72,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 1303,
-      "literal": 246.22,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 691,
-      "literal": 125.1,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 692,
-      "literal": 125.1,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
       "class": "STALE_DUP"
     },
     {
@@ -3265,47 +3289,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 920,
-      "literal": 125.2,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 942,
-      "literal": 125.25,
-      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
-      "dataset_value": 125.2,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 966,
-      "literal": 246.22,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 887,
-      "literal": 246.0,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 888,
-      "literal": 246.0,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_mass.py",
-      "line": 1304,
+      "line": 1305,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,

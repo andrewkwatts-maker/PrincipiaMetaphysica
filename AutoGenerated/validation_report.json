@@ -4,32 +4,27 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set).",
   "summary": {
-    "total": 165,
-    "fail": 11,
+    "total": 164,
+    "fail": 9,
     "marginal": 12,
-    "pass": 108,
+    "pass": 109,
     "tension": 3,
     "unbounded": 31
   },
   "worst_offenders": [
     {
       "path": "algebra.gaugino_cabibbo_proxy",
-      "sigma": 1151.1906388299813,
-      "verdict": "FAIL"
-    },
-    {
-      "path": "algebra.gaugino_cabibbo_refined",
-      "sigma": 89.1021182461904,
+      "sigma": 344.6837727850691,
       "verdict": "FAIL"
     },
     {
       "path": "algebra.gaugino_cabibbo_derived",
-      "sigma": 36.51228365153823,
+      "sigma": 37.55705977094122,
       "verdict": "FAIL"
     },
     {
-      "path": "qed.manifest_compton_wavelength",
-      "sigma": 4.506849061389332,
+      "path": "algebra.gaugino_cabibbo_refined",
+      "sigma": 25.552871118265784,
       "verdict": "FAIL"
     },
     {
@@ -86,6 +81,11 @@
       "path": "cosmology.rho_vacuum",
       "sigma": 1.6892651440922966,
       "verdict": "MARGINAL"
+    },
+    {
+      "path": "gauge.rho_parameter",
+      "sigma": 1.6086956521738323,
+      "verdict": "MARGINAL"
     }
   ],
   "validations": [
@@ -132,20 +132,6 @@
       "relative_margin": null
     },
     {
-      "path": "abstract.tau_p_bound_display",
-      "value": 1.67,
-      "experimental_value": 1.67,
-      "experimental_uncertainty": null,
-      "experimental_source": "SuperK2020",
-      "sigma": null,
-      "verdict": "FAIL",
-      "registry_status": "SYSTEM",
-      "units": "1e34_years",
-      "source_simulation": "abstract_v17_2",
-      "bound_type": "lower",
-      "relative_margin": 0.0
-    },
-    {
       "path": "abstract.theta23_io_central",
       "value": 49.3,
       "experimental_value": 49.3,
@@ -190,10 +176,10 @@
     {
       "path": "algebra.gaugino_cabibbo_derived",
       "value": 0.2501632300465306,
-      "experimental_value": 0.2257,
+      "experimental_value": 0.225,
       "experimental_uncertainty": 0.00067,
       "experimental_source": "CKM_PDG2024_Wolfenstein_lambda",
-      "sigma": 36.51228365153823,
+      "sigma": 37.55705977094122,
       "verdict": "FAIL",
       "registry_status": "DERIVED",
       "units": "dimensionless",
@@ -204,10 +190,10 @@
     {
       "path": "algebra.gaugino_cabibbo_proxy",
       "value": 0.4559381277659963,
-      "experimental_value": 0.2257,
-      "experimental_uncertainty": 0.0002,
+      "experimental_value": 0.225,
+      "experimental_uncertainty": 0.00067,
       "experimental_source": "CKM_PDG2024",
-      "sigma": 1151.1906388299813,
+      "sigma": 344.6837727850691,
       "verdict": "FAIL",
       "registry_status": "DERIVED",
       "units": "dimensionless",
@@ -218,10 +204,10 @@
     {
       "path": "algebra.gaugino_cabibbo_refined",
       "value": 0.20787957635076193,
-      "experimental_value": 0.2257,
-      "experimental_uncertainty": 0.0002,
+      "experimental_value": 0.225,
+      "experimental_uncertainty": 0.00067,
       "experimental_source": "CKM_PDG2024",
-      "sigma": 89.1021182461904,
+      "sigma": 25.552871118265784,
       "verdict": "FAIL",
       "registry_status": "DERIVED",
       "units": "dimensionless",
@@ -2093,12 +2079,12 @@
     },
     {
       "path": "qed.manifest_compton_wavelength",
-      "value": 2.42631023538e-12,
+      "value": 2.42631023867e-12,
       "experimental_value": 2.42631023867e-12,
       "experimental_uncertainty": 7.3e-22,
       "experimental_source": "CODATA2022",
-      "sigma": 4.506849061389332,
-      "verdict": "FAIL",
+      "sigma": 0.0,
+      "verdict": "PASS",
       "registry_status": "DERIVED",
       "units": "m",
       "source_simulation": "compton_wavelength_v17_2",
