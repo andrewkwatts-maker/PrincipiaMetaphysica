@@ -193,3 +193,80 @@ apply — needs a decision on whether to exempt non-scalar formulas.
    the honest scoreboard that the backfill fix just made possible.
 5. **Reconcile config drift** (2.2), starting with `gut-scale` (3.3×).
 6. **Then release** (Tier 3) once the headline numbers are settled.
+
+---
+
+## 2026-08-20 update — literature review + evidential audit
+
+Two research passes and a numerical search changed the picture materially.
+
+### The two-time bulk is challenged on three independent grounds (§1.8 escalated)
+Recorded in full as `canonical_values.CANON["bulk"]["challenge"]`; status moved
+`STRUCTURAL` → `STRUCTURAL_CHALLENGED`. **This needs an author ruling.**
+
+1. **Lattice obstruction (a theorem, verified here).** An even unimodular lattice
+   of signature (p,q) exists iff p − q ≡ 0 (mod 8). For **(24,2): 22 ≡ 6**, so no
+   even self-dual lattice exists — no modular-invariant lattice compactification
+   in this signature. Both alternatives pass: (25,1) → 24 ≡ 0 (the Lorentzian
+   Leech lattice bosonic string theory actually uses) and (26,2) → 24 ≡ 0.
+2. **Critical dimension.** Bars & Kounnas (hep-th/9705205) give the *two-time*
+   bosonic critical dimension as **27 or 28**, at (25,2)/(26,2) — a second time
+   *raises* it. D_crit = 26 belongs to the one-time string at (25,1), where
+   26 = 24 + 2 is 24 transverse plus a **lightcone pair** (one space + one time),
+   not two times. "D_bulk = D_crit = b₃ + 2" and "signature (24,2)" are claims
+   from two different theories.
+3. **Shadow counting.** Sp(2,ℝ) gauging removes exactly two dimensions:
+   (24,2) → **one 24D shadow of signature (23,1)**, not two 13D(12,1) shadows.
+   Bars' shadows are different gauge-fixings of the *same* bulk, not halves of it,
+   so the framework's shadows don't inherit his ghost-freedom theorem.
+
+**Options:** (a) (25,1) 26D one-time — matches D_crit and the lattice, abandons
+two-time; (b) (26,2) 28D two-time — matches Bars and the lattice, breaks b₃ + 2;
+(c) keep (24,2) — then drop the D_crit claim, drop the Bars ghost-freedom appeal,
+and answer the lattice obstruction independently.
+
+Also: the "+2" carries **three inconsistent readings** across the framework's own
+formulas (lightcone pair / two-time + bridge / 2×Sp(2,ℝ)). At most one is right.
+And `beacon.two_time_bulk_accounting` is integer-exact *by construction* — it
+tests bookkeeping, not physics, so it cannot adjudicate any of this.
+
+### θ₁₃ ruled NOT_PREDICTED (§1.1 resolved, negatively)
+A 6243-form enumeration over the framework's own seeds put **143 candidates inside
+the 1σ window with ~53 expected by chance** — no excess. An independent literature
+sweep found **18 framework-native expressions** within 1σ (π/(144−3), φ/(72+1),
+1/(72−27), …) plus 13 simple rationals. θ₁₃ is one O(0.15) number known to 1.3%;
+this integer inventory hits it by construction, so *any* relation adopted would
+have ~18 equally good siblings and carries no predictive content. No published
+mechanism yields 8.57° without fitting, and modular flavour symmetry is obstructed
+anyway: it needs SL(2,ℤ) on a **complex** modulus, while G₂ moduli are **real**.
+Quark-lepton complementarity is falsified (9.155°, +5.3σ).
+
+### Evidential audit — the tightest "successes" were the emptiest
+Ranking every test by discriminating power surfaced two systematic defects:
+
+- **Round-trip identities.** Four QED constants divided a CODATA value by a factor
+  and multiplied it straight back, reporting the floating-point residue as a
+  part-per-trillion confirmation. New `IDENTITY` verdict class now excludes them;
+  it also caught `neutrino.dm2_21` (solar splitting "predicted" as exactly its
+  input) which no one had flagged.
+- **Theory-uncertainty deflation.** Where a record declares its own theory
+  uncertainty, σ folds it in — legitimate for a tree-level derivation, but it can
+  deflate the deviation by orders of magnitude. Now reported dually:
+
+  | parameter | reported σ | σ vs experiment alone |
+  |---|---:|---:|
+  | `geometry.G_F_matched` | 0.02 | **57.1** |
+  | `higgs.m_higgs_pred` | 1.14 | **41.6** |
+  | `geometry.T_CMB` | 0.79 | **18.6** |
+  | `gauge.sin2_theta_w_geometric` | 0.68 | **17.1** |
+
+**Scoreboard after both fixes:** 45 pass · 13 marginal · 3 tension · 9 fail ·
+2 identity · 81 input · 17 unbounded.
+
+### Also fixed
+- `26d-signature` formula was internally contradictory — LaTeX said (24,1) with a
+  single `−dt²`, value 25.0, EML tree `b₃+1`, while the prose said (24,2)/26D.
+  Now consistent at (24,2), value 26, tree `b₃+2`.
+- `neutrino_algebraic` was anchored to **Normal** ordering while the framework
+  predicts **Inverted** and its sibling module scores against IO — the same
+  prediction was being graded on two different rulers. Anchored to IO.

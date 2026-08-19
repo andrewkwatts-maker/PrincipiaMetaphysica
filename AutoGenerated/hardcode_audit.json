@@ -4,8 +4,8 @@
   "summary": {
     "files_scanned": 185,
     "dataset_values": 339,
-    "exact_dup": 380,
-    "stale_dup": 331,
+    "exact_dup": 381,
+    "stale_dup": 330,
     "files_with_findings": 84
   },
   "worst_files": [
@@ -129,15 +129,15 @@
     },
     {
       "file": "simulations/PM/algebra/neutrino_algebraic.py",
-      "line": 83,
-      "literal": 8.57,
-      "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
-      "dataset_value": 8.58,
-      "class": "STALE_DUP"
+      "line": 89,
+      "literal": 8.63,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
+      "dataset_value": 8.63,
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/algebra/neutrino_algebraic.py",
-      "line": 85,
+      "line": 91,
       "literal": 197.0,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.delta_CP.value",
       "dataset_value": 194.0,

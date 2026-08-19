@@ -1920,7 +1920,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 1984.4764,
+      "registered": 1984.2916,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -3627,10 +3627,10 @@
       "path": "neutrino.theta13_sigma",
       "status": "DISAGREE",
       "evaluated": 4.096272907441856,
-      "registered": 9.309711153276949,
-      "rel_error": 0.5600000000000002,
+      "registered": 8.764256607822398,
+      "rel_error": 0.532616045976359,
       "eml_description": "EML: ops.div(ops.sub(eml_vec('theta13_derived'), eml_scalar(8.57)), eml_scalar(0.25)) \u2014 \u03c3-deviation = (\u03b8\u2081\u2083_derived \u2212 8.57\u00b0) / 0.25\u00b0 from NuFIT 6.0",
-      "diagnostic": "rel_err=56.00%"
+      "diagnostic": "rel_err=53.26%"
     },
     {
       "path": "neutrino.theta_12_pred",
