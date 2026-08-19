@@ -6,8 +6,8 @@
   "summary": {
     "total": 164,
     "fail": 9,
-    "marginal": 12,
-    "pass": 109,
+    "marginal": 13,
+    "pass": 108,
     "tension": 3,
     "unbounded": 31
   },
@@ -29,7 +29,7 @@
     },
     {
       "path": "neutrino.theta13_derived",
-      "sigma": 4.096272907441858,
+      "sigma": 9.309711153276949,
       "verdict": "FAIL"
     },
     {
@@ -73,6 +73,11 @@
       "verdict": "MARGINAL"
     },
     {
+      "path": "neutrino.delta_CP_derived",
+      "sigma": 1.825,
+      "verdict": "MARGINAL"
+    },
+    {
       "path": "ckm.V_cb",
       "sigma": 1.7558524965061326,
       "verdict": "MARGINAL"
@@ -80,11 +85,6 @@
     {
       "path": "cosmology.rho_vacuum",
       "sigma": 1.6892651440922966,
-      "verdict": "MARGINAL"
-    },
-    {
-      "path": "gauge.rho_parameter",
-      "sigma": 1.6086956521738323,
       "verdict": "MARGINAL"
     }
   ],
@@ -414,10 +414,10 @@
     {
       "path": "ckm.jarlskog_invariant",
       "value": 2.9148902086057355e-05,
-      "experimental_value": 3.12e-05,
+      "experimental_value": 3.08e-05,
       "experimental_uncertainty": 1.3e-06,
       "experimental_source": "PDG2024",
-      "sigma": 1.5777676261097264,
+      "sigma": 1.2700753184174216,
       "verdict": "MARGINAL",
       "registry_status": "DERIVED",
       "units": "dimensionless",
@@ -1352,8 +1352,8 @@
     {
       "path": "gravity.w_0_modified",
       "value": -0.9796018518518519,
-      "experimental_value": -0.958,
-      "experimental_uncertainty": 0.02,
+      "experimental_value": -0.752,
+      "experimental_uncertainty": 0.057,
       "experimental_source": "Planck2018+BAO",
       "sigma": null,
       "verdict": "UNBOUNDED",
@@ -1464,11 +1464,11 @@
     {
       "path": "neutrino.delta_CP_derived",
       "value": -90.0,
-      "experimental_value": -107.0,
+      "experimental_value": -163.0,
       "experimental_uncertainty": 40.0,
       "experimental_source": "NuFIT_6.0_NO_2024",
-      "sigma": 0.425,
-      "verdict": "PASS",
+      "sigma": 1.825,
+      "verdict": "MARGINAL",
       "registry_status": "DERIVED",
       "units": "degrees",
       "source_simulation": "neutrino_algebraic_v24_0",
@@ -1549,9 +1549,9 @@
       "path": "neutrino.theta13_derived",
       "value": 9.594068226860465,
       "experimental_value": 8.57,
-      "experimental_uncertainty": 0.25,
+      "experimental_uncertainty": 0.11,
       "experimental_source": "NuFIT_6.0_NO_2024",
-      "sigma": 4.096272907441858,
+      "sigma": 9.309711153276949,
       "verdict": "FAIL",
       "registry_status": "DERIVED",
       "units": "degrees",

@@ -5,8 +5,8 @@
     "files_scanned": 185,
     "dataset_values": 333,
     "exact_dup": 382,
-    "stale_dup": 319,
-    "files_with_findings": 83
+    "stale_dup": 329,
+    "files_with_findings": 84
   },
   "worst_files": [
     [
@@ -38,12 +38,12 @@
       24
     ],
     [
-      "simulations/PM/validation/consistency_beacons.py",
+      "simulations/PM/gauge/master_action.py",
       20
     ],
     [
-      "simulations/PM/gauge/master_action.py",
-      17
+      "simulations/PM/validation/consistency_beacons.py",
+      20
     ],
     [
       "simulations/PM/particle/higgs_mass.py",
@@ -133,6 +133,14 @@
       "literal": 8.57,
       "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
       "dataset_value": 8.58,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/algebra/neutrino_algebraic.py",
+      "line": 80,
+      "literal": 197.0,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.delta_CP.value",
+      "dataset_value": 194.0,
       "class": "STALE_DUP"
     },
     {
@@ -345,7 +353,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 600,
+      "line": 601,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -353,7 +361,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 860,
+      "line": 861,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -361,7 +369,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 1193,
+      "line": 1194,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -369,7 +377,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 1459,
+      "line": 1460,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -377,7 +385,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 1599,
+      "line": 1600,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -385,7 +393,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 1683,
+      "line": 1684,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -393,7 +401,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 1730,
+      "line": 1731,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -401,7 +409,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy.py",
-      "line": 1889,
+      "line": 1890,
       "literal": 0.727,
       "dataset_key": "nufit_6_0.normal_ordering.theta_12.uncertainty_minus",
       "dataset_value": 0.72,
@@ -593,15 +601,15 @@
     },
     {
       "file": "simulations/PM/cosmology/f_r_t_tau_gravity.py",
-      "line": 144,
-      "literal": 0.958,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
+      "line": 146,
+      "literal": 0.752,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.uncertainty",
+      "dataset_value": 0.75,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/cosmology/f_r_t_tau_gravity.py",
-      "line": 743,
+      "line": 745,
       "literal": 0.958,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1489,7 +1497,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1918,
+      "line": 1922,
       "literal": 0.231,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1497,7 +1505,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1922,
+      "line": 1926,
       "literal": 0.1179,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -1505,7 +1513,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1370,
+      "line": 1374,
       "literal": 91.2,
       "dataset_key": "pdg_2024_values.gauge_bosons.m_Z.value",
       "dataset_value": 91.188,
@@ -1513,7 +1521,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1371,
+      "line": 1375,
       "literal": 2.435e+18,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
       "dataset_value": 2.435e+18,
@@ -1521,7 +1529,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1917,
+      "line": 1921,
       "literal": 137.036,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1529,7 +1537,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1350,
+      "line": 1354,
       "literal": 0.118,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -1537,7 +1545,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1272,
+      "line": 1276,
       "literal": 0.375,
       "dataset_key": "pdg_2024_values.gauge.sin2_theta_W_gut.value",
       "dataset_value": 0.375,
@@ -1545,7 +1553,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 1273,
+      "line": 1277,
       "literal": 0.375,
       "dataset_key": "pdg_2024_values.gauge.sin2_theta_W_gut.value",
       "dataset_value": 0.375,
@@ -1553,7 +1561,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 621,
+      "line": 625,
       "literal": 0.118,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -1561,7 +1569,7 @@
     },
     {
       "file": "simulations/PM/gauge/gauge_unification.py",
-      "line": 826,
+      "line": 830,
       "literal": 42.7,
       "dataset_key": "nufit_6_0.normal_ordering.theta_23.value",
       "dataset_value": 42.2,
@@ -1582,6 +1590,14 @@
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
       "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/gauge/master_action.py",
+      "line": 809,
+      "literal": 0.23189,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
@@ -1654,6 +1670,22 @@
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
       "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/gauge/master_action.py",
+      "line": 809,
+      "literal": 0.23189,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/gauge/master_action.py",
+      "line": 809,
+      "literal": 0.23189,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
@@ -2704,6 +2736,54 @@
       "class": "EXACT_DUP"
     },
     {
+      "file": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+      "line": 373,
+      "literal": 125.0,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+      "line": 633,
+      "literal": 73.1,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
+      "dataset_value": 73.04,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+      "line": 373,
+      "literal": 125.0,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+      "line": 373,
+      "literal": 125.0,
+      "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
+      "dataset_value": 125.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+      "line": 633,
+      "literal": 73.1,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
+      "dataset_value": 73.04,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_z_terminal_ledger.py",
+      "line": 633,
+      "literal": 73.1,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
+      "dataset_value": 73.04,
+      "class": "STALE_DUP"
+    },
+    {
       "file": "simulations/PM/paper/methodology.py",
       "line": 905,
       "literal": 125.0,
@@ -2906,9 +2986,9 @@
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
       "line": 237,
-      "literal": 3.12e-05,
-      "dataset_key": "pdg_2024_values.ckm.jarlskog.value",
-      "dataset_value": 3.12e-05,
+      "literal": 3.08e-05,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
+      "dataset_value": 3.08e-05,
       "class": "EXACT_DUP"
     },
     {

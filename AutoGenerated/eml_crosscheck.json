@@ -1715,11 +1715,11 @@
     {
       "path": "cosmology.z_transition",
       "status": "DISAGREE",
-      "evaluated": 1.9483192273737477,
+      "evaluated": 0.5132629119243246,
       "registered": 10.0,
-      "rel_error": 0.8051680772626252,
-      "eml_description": "EML: ops.inv(ops.div(eml_vec('geometry.k_gimel'), eml_scalar(24.0))) \u2014 z_* = 1/tau = b3/k_gimel ~ 1.95, transition redshift from Ricci flow timescale",
-      "diagnostic": "rel_err=80.52%"
+      "rel_error": 0.9486737088075674,
+      "eml_description": "EML: ops.div(eml_vec('geometry.k_gimel'), eml_scalar(24.0)) \u2014 z_* = tau = k_gimel/b3 ~ 0.51, transition redshift from Ricci flow timescale",
+      "diagnostic": "rel_err=94.87%"
     },
     {
       "path": "desi.H0",
@@ -1796,12 +1796,11 @@
     },
     {
       "path": "dimensions.D_bulk",
-      "status": "DISAGREE",
-      "evaluated": 27.0,
+      "status": "AGREE",
+      "evaluated": 26.0,
       "registered": 26.0,
-      "rel_error": 0.038461538461538464,
-      "eml_description": "EML: eml_scalar(27.0) \u2014 ancestral manifold dimension D_bulk = 24+1+2 = 27",
-      "diagnostic": "rel_err=3.85%"
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(26.0) \u2014 ancestral manifold dimension D_bulk = 24+2 = 26"
     },
     {
       "path": "dimensions.D_physics",
@@ -1919,7 +1918,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 2122.4012,
+      "registered": 2123.6672,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -2045,7 +2044,7 @@
       "path": "gauge.ALPHA_GUT",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.inv(alpha_GUT_inv)': name 'alpha_GUT_inv' is not defined",
-      "registered": 0.023402420319250224,
+      "registered": 0.02442327058443111,
       "eml_description": "EML: ops.inv(alpha_GUT_inv) \u2014 alpha_GUT = 1/alpha_GUT_inv from RG running; alpha_GUT_inv ~ ops.add(eml_scalar(42.0), eml_scalar(0.7))"
     },
     {
@@ -2060,10 +2059,10 @@
       "path": "gauge.ALPHA_GUT_INV",
       "status": "DISAGREE",
       "evaluated": 24.0,
-      "registered": 42.73062300216127,
-      "rel_error": 0.43834191233799463,
+      "registered": 40.9445572223018,
+      "rel_error": 0.4138415059736534,
       "eml_description": "EML: eml_scalar(24) \u2014 AS fixed point alpha_GUT^-1 = b3 (asymptotic safety locks to Betti number)",
-      "diagnostic": "rel_err=43.83%"
+      "diagnostic": "rel_err=41.38%"
     },
     {
       "path": "gauge.M_GUT",
@@ -2451,7 +2450,7 @@
       "evaluated": 7.61313419361966e+16,
       "registered": 7.61313419361543e+16,
       "rel_error": 5.556712770868694e-13,
-      "eml_description": "EML: ops.mul(ops.div(eml_vec('k_gimel'), eml_vec('phi')), eml_scalar(1e16)) \u2014 GUT scale M_GUT = (k_gimel/\u03c6)\u00d710\u00b9\u2076 GeV \u2248 7.6\u00d710\u00b9\u2075 GeV"
+      "eml_description": "EML: ops.mul(ops.div(eml_vec('k_gimel'), eml_vec('phi')), eml_scalar(1e16)) \u2014 GUT scale M_GUT = (k_gimel/\u03c6)\u00d710\u00b9\u2076 GeV \u2248 7.6\u00d710\u00b9\u2076 GeV"
     },
     {
       "path": "geometry.M_GUT_geometric",
@@ -2594,12 +2593,11 @@
     },
     {
       "path": "geometry.alpha_T_phenomenological",
-      "status": "DISAGREE",
+      "status": "AGREE",
       "evaluated": 2.6,
-      "registered": 2.7,
-      "rel_error": 0.03703703703703707,
-      "eml_description": "EML: eml_scalar(2.6) \u2014 thermal time parameter \u03b1_T = 2.6 = 26/10 (two-time ruling)",
-      "diagnostic": "rel_err=3.70%"
+      "registered": 2.6,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(2.6) \u2014 thermal time parameter \u03b1_T = 2.6 = 26/10 (two-time ruling)"
     },
     {
       "path": "geometry.alpha_gut",
@@ -3530,11 +3528,12 @@
     },
     {
       "path": "neutrino.delta_CP_sigma",
-      "status": "AGREE",
+      "status": "DISAGREE",
       "evaluated": 0.42500000000000004,
-      "registered": 0.425,
-      "rel_error": 1.3061447348531254e-16,
-      "eml_description": "EML: ops.div(ops.sub(eml_vec('delta_CP_derived'), eml_scalar(-107.0)), eml_scalar(40.0)) \u2014 \u03c3-deviation = (\u03b4_CP_derived \u2212 (\u2212107\u00b0)) / 40\u00b0 from NuFIT 6.0"
+      "registered": 1.825,
+      "rel_error": 0.7671232876712328,
+      "eml_description": "EML: ops.div(ops.sub(eml_vec('delta_CP_derived'), eml_scalar(-107.0)), eml_scalar(40.0)) \u2014 \u03c3-deviation = (\u03b4_CP_derived \u2212 (\u2212107\u00b0)) / 40\u00b0 from NuFIT 6.0",
+      "diagnostic": "rel_err=76.71%"
     },
     {
       "path": "neutrino.dm2_21",
@@ -3624,11 +3623,12 @@
     },
     {
       "path": "neutrino.theta13_sigma",
-      "status": "AGREE",
+      "status": "DISAGREE",
       "evaluated": 4.096272907441856,
-      "registered": 4.096272907441858,
-      "rel_error": 4.3365197571994636e-16,
-      "eml_description": "EML: ops.div(ops.sub(eml_vec('theta13_derived'), eml_scalar(8.57)), eml_scalar(0.25)) \u2014 \u03c3-deviation = (\u03b8\u2081\u2083_derived \u2212 8.57\u00b0) / 0.25\u00b0 from NuFIT 6.0"
+      "registered": 9.309711153276949,
+      "rel_error": 0.5600000000000002,
+      "eml_description": "EML: ops.div(ops.sub(eml_vec('theta13_derived'), eml_scalar(8.57)), eml_scalar(0.25)) \u2014 \u03c3-deviation = (\u03b8\u2081\u2083_derived \u2212 8.57\u00b0) / 0.25\u00b0 from NuFIT 6.0",
+      "diagnostic": "rel_err=56.00%"
     },
     {
       "path": "neutrino.theta_12_pred",
@@ -4144,7 +4144,7 @@
     {
       "path": "predictions.summary",
       "status": "SKIP",
-      "reason": "non-numeric value: {'gauge_unification': {'M_GUT': 6324555320336760.0, 'alpha_GUT_inv': 42.73062300216127}, 'proton_decay': {'tau_p_years': 4.757399129595567e+34}, 'neutrino_mixing': {'theta_12': 33.59329049922625, 'theta_13': 8.647304725338865, 'theta_23': 49.75, 'delta_CP': 278.4}, 'cosmology': {'w_eff': -0.8526812021213906, 'Omega_DM_over_b': 5.399772129616132}, 'topology': {'n_gen': 3}}",
+      "reason": "non-numeric value: {'gauge_unification': {'M_GUT': 6324555320336760.0, 'alpha_GUT_inv': 40.9445572223018}, 'proton_decay': {'tau_p_years': 4.757399129595567e+34}, 'neutrino_mixing': {'theta_12': 33.59329049922625, 'theta_13': 8.647304725338865, 'theta_23': 49.75, 'delta_CP': 278.4}, 'cosmology': {'w_eff': -0.8526812021213906, 'Omega_DM_over_b': 5.399772129616132}, 'topology': {'n_gen': 3}}",
       "eml_description": "EML: eml_scalar(0.0) \u2014 structured dict aggregate; numeric EML representation not applicable (returns full predictions summary dict)"
     },
     {
@@ -5172,7 +5172,7 @@
       "path": "validation.within_1sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_1\u03c3)': name 'N_1\u03c3' is not defined",
-      "registered": 36.0,
+      "registered": 35.0,
       "eml_description": "EML: eml_scalar(N_1\u03c3) \u2014 count of predictions within 1\u03c3 of experimental value"
     },
     {

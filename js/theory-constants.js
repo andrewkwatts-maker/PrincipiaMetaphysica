@@ -33,7 +33,7 @@ const TheoryConstants = {
         // Brane hierarchy
         nBranes: 4,                  // Number of D-branes
         spatialDimsPerBrane: 3,      // Spatial dimensions per brane
-        timeDims: 1,                 // Shared time dimension
+        timeDims: 1,                 // One time per 13D shadow (bulk carries 2, one per shadow)
 
         // Derived
         get dEff() { return 12; },   // D_shadow: Effective spatial dimensions
