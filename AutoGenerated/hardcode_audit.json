@@ -3,9 +3,9 @@
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
     "files_scanned": 185,
-    "dataset_values": 333,
-    "exact_dup": 382,
-    "stale_dup": 329,
+    "dataset_values": 339,
+    "exact_dup": 380,
+    "stale_dup": 331,
     "files_with_findings": 84
   },
   "worst_files": [
@@ -15,7 +15,7 @@
     ],
     [
       "simulations/base/established.py",
-      44
+      43
     ],
     [
       "simulations/PM/geometry/geometric_anchors.py",
@@ -27,7 +27,7 @@
     ],
     [
       "simulations/PM/paper/appendices/appendix_d_tables.py",
-      30
+      31
     ],
     [
       "simulations/PM/cosmology/ricci_flow_h0.py",
@@ -50,11 +50,11 @@
       16
     ],
     [
-      "simulations/PM/cosmology/s8_suppression.py",
-      15
+      "simulations/PM/cosmology/evolution_engine.py",
+      14
     ],
     [
-      "simulations/PM/cosmology/evolution_engine.py",
+      "simulations/PM/cosmology/s8_suppression.py",
       14
     ],
     [
@@ -129,7 +129,7 @@
     },
     {
       "file": "simulations/PM/algebra/neutrino_algebraic.py",
-      "line": 78,
+      "line": 83,
       "literal": 8.57,
       "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
       "dataset_value": 8.58,
@@ -137,7 +137,7 @@
     },
     {
       "file": "simulations/PM/algebra/neutrino_algebraic.py",
-      "line": 80,
+      "line": 85,
       "literal": 197.0,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.delta_CP.value",
       "dataset_value": 194.0,
@@ -193,7 +193,7 @@
     },
     {
       "file": "simulations/PM/cosmology/axion_dm.py",
-      "line": 114,
+      "line": 115,
       "literal": 1.22e+19,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_full.value",
       "dataset_value": 1.22e+19,
@@ -337,15 +337,15 @@
     },
     {
       "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 760,
-      "literal": 2.435e+18,
-      "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
-      "dataset_value": 2.435e+18,
+      "line": 765,
+      "literal": 1.22089e+19,
+      "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
+      "dataset_value": 1.22089e+19,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 1112,
+      "line": 1117,
       "literal": 0.22572,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -723,15 +723,15 @@
       "file": "simulations/PM/cosmology/moduli_dm_coupling.py",
       "line": 202,
       "literal": 0.811,
-      "dataset_key": "planck_2018.sigma8.value",
-      "dataset_value": 0.8102,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_value": 0.8111,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/cosmology/moduli_dm_coupling.py",
       "line": 203,
       "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "EXACT_DUP"
     },
@@ -747,7 +747,7 @@
       "file": "simulations/PM/cosmology/moduli_dm_coupling.py",
       "line": 1342,
       "literal": 0.827,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_key": "desi_2025_constraints.framework_adopted_anchors.thawing_w0wa.sigma8.value",
       "dataset_value": 0.827,
       "class": "EXACT_DUP"
     },
@@ -785,7 +785,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 839,
+      "line": 843,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -793,7 +793,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 840,
+      "line": 844,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -801,7 +801,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 841,
+      "line": 845,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -809,7 +809,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1000,
+      "line": 1004,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -825,7 +825,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 723,
+      "line": 724,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -833,7 +833,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 837,
+      "line": 841,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -841,7 +841,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 938,
+      "line": 942,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -849,7 +849,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 998,
+      "line": 1002,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -857,7 +857,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1161,
+      "line": 1165,
       "literal": 0.311,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -865,7 +865,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1163,
+      "line": 1167,
       "literal": 0.689,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
       "dataset_value": 0.6931,
@@ -913,7 +913,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 721,
+      "line": 722,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -921,7 +921,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 835,
+      "line": 839,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -929,7 +929,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 936,
+      "line": 940,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -937,7 +937,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 996,
+      "line": 1000,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -945,7 +945,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 741,
+      "line": 742,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -953,7 +953,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 744,
+      "line": 745,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -961,7 +961,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 762,
+      "line": 763,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -969,7 +969,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 765,
+      "line": 766,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -977,15 +977,15 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 779,
-      "literal": 67.4,
+      "line": 783,
+      "literal": 67.36,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
-      "class": "EXACT_DUP"
+      "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1001,
+      "line": 1005,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -993,7 +993,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1016,
+      "line": 1020,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -1001,7 +1001,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1017,
+      "line": 1021,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -1009,55 +1009,55 @@
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1685,
+      "line": 1693,
       "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1792,
+      "line": 1800,
       "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1843,
+      "line": 1851,
       "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1847,
+      "line": 1855,
       "literal": 0.827,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_key": "desi_2025_constraints.framework_adopted_anchors.thawing_w0wa.sigma8.value",
       "dataset_value": 0.827,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 2086,
+      "line": 2094,
       "literal": 0.837,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1434,
+      "line": 1438,
       "literal": 0.837,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1435,
+      "line": 1439,
       "literal": 0.994,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1065,7 +1065,7 @@
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1682,
+      "line": 1690,
       "literal": 0.994,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1073,7 +1073,7 @@
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1790,
+      "line": 1798,
       "literal": 0.994,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1081,23 +1081,23 @@
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 2016,
+      "line": 2024,
       "literal": 0.827,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_key": "desi_2025_constraints.framework_adopted_anchors.thawing_w0wa.sigma8.value",
       "dataset_value": 0.827,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 2026,
+      "line": 2034,
       "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 2045,
+      "line": 2053,
       "literal": 0.288,
       "dataset_key": "pdg_2024_values.quarks.m_top.uncertainty",
       "dataset_value": 0.29,
@@ -1105,23 +1105,15 @@
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 411,
+      "line": 415,
       "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1454,
-      "literal": 0.827,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
-      "dataset_value": 0.827,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/cosmology/s8_suppression.py",
-      "line": 1849,
+      "line": 1857,
       "literal": 0.3069,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_m.value",
       "dataset_value": 0.3069,
@@ -1313,6 +1305,14 @@
     },
     {
       "file": "simulations/PM/derivations/gr_spacetime.py",
+      "line": 512,
+      "literal": 0.1973,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.wa.uncertainty_minus",
+      "dataset_value": 0.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/derivations/gr_spacetime.py",
       "line": 1501,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
@@ -1409,7 +1409,7 @@
     },
     {
       "file": "simulations/PM/field_dynamics/thermal_time.py",
-      "line": 1045,
+      "line": 1048,
       "literal": 2.435e+18,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
       "dataset_value": 2.435e+18,
@@ -1417,7 +1417,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 597,
+      "line": 600,
       "literal": 91.1876,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
       "dataset_value": 91.1876,
@@ -1425,7 +1425,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 598,
+      "line": 601,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -1433,7 +1433,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 656,
+      "line": 659,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1441,7 +1441,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 657,
+      "line": 660,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1449,7 +1449,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 834,
+      "line": 837,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1457,7 +1457,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 855,
+      "line": 858,
       "literal": 91.1876,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
       "dataset_value": 91.1876,
@@ -1465,7 +1465,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 876,
+      "line": 879,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -1473,7 +1473,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 895,
+      "line": 898,
       "literal": 1.00038,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -1481,7 +1481,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 611,
+      "line": 614,
       "literal": 1.02,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -1489,7 +1489,7 @@
     },
     {
       "file": "simulations/PM/gauge/electroweak_mixing.py",
-      "line": 622,
+      "line": 625,
       "literal": 1.02,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -1691,8 +1691,8 @@
       "file": "simulations/PM/gauge/master_action.py",
       "line": 2117,
       "literal": 0.23022,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
-      "dataset_value": 0.23122,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.wa.uncertainty_plus",
+      "dataset_value": 0.23,
       "class": "STALE_DUP"
     },
     {
@@ -1763,8 +1763,8 @@
       "file": "simulations/PM/gauge/su2_weak_gauge.py",
       "line": 424,
       "literal": 0.23022,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
-      "dataset_value": 0.23122,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.wa.uncertainty_plus",
+      "dataset_value": 0.23,
       "class": "STALE_DUP"
     },
     {
@@ -2545,6 +2545,14 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
+      "line": 256,
+      "literal": 0.201,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.wa.uncertainty_minus",
+      "dataset_value": 0.2,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/paper/appendices/appendix_d_tables.py",
       "line": 257,
       "literal": 1.196,
       "dataset_key": "nufit_6_0.inverted_ordering.theta_23.uncertainty_minus",
@@ -2993,7 +3001,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1246,
+      "line": 1248,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3001,7 +3009,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1656,
+      "line": 1659,
       "literal": 0.2245,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3009,11 +3017,51 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1784,
+      "line": 1787,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
       "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "line": 814,
+      "literal": 0.22313016014842982,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "line": 866,
+      "literal": 0.22313016014842982,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "line": 973,
+      "literal": 0.22313016014842982,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
+      "dataset_value": 0.2245,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "line": 1048,
+      "literal": 0.225,
+      "dataset_key": "pdg_2024_values.ckm.V_us.value",
+      "dataset_value": 0.225,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "line": 1170,
+      "literal": 0.225,
+      "dataset_key": "pdg_2024_values.ckm.V_us.value",
+      "dataset_value": 0.225,
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
@@ -3034,46 +3082,6 @@
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
       "line": 971,
-      "literal": 0.22313016014842982,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1046,
-      "literal": 0.225,
-      "dataset_key": "pdg_2024_values.ckm.V_us.value",
-      "dataset_value": 0.225,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1168,
-      "literal": 0.225,
-      "dataset_key": "pdg_2024_values.ckm.V_us.value",
-      "dataset_value": 0.225,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 810,
-      "literal": 0.22313016014842982,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 862,
-      "literal": 0.22313016014842982,
-      "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
-      "dataset_value": 0.2245,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 969,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3338,10 +3346,10 @@
     {
       "file": "simulations/PM/particle/higgs_mass.py",
       "line": 943,
-      "literal": 125.25,
+      "literal": 125.2,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
-      "class": "STALE_DUP"
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/particle/higgs_mass.py",
@@ -3569,7 +3577,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 733,
+      "line": 752,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -3577,7 +3585,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1927,
+      "line": 1946,
       "literal": 33.59,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3585,7 +3593,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1928,
+      "line": 1947,
       "literal": 33.41,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3593,7 +3601,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1940,
+      "line": 1959,
       "literal": 8.65,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3601,7 +3609,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1941,
+      "line": 1960,
       "literal": 8.63,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3609,7 +3617,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1953,
+      "line": 1972,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3617,7 +3625,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1966,
+      "line": 1985,
       "literal": 278.4,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -3625,7 +3633,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1967,
+      "line": 1986,
       "literal": 278.0,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -3633,7 +3641,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 215,
+      "line": 229,
       "literal": 33.41,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3641,7 +3649,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 216,
+      "line": 230,
       "literal": 42.2,
       "dataset_key": "nufit_6_0.normal_ordering.theta_23.value",
       "dataset_value": 42.2,
@@ -3649,7 +3657,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 217,
+      "line": 231,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3657,7 +3665,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 218,
+      "line": 232,
       "literal": 8.58,
       "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
       "dataset_value": 8.58,
@@ -3665,7 +3673,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 219,
+      "line": 233,
       "literal": 8.63,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3673,7 +3681,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 220,
+      "line": 234,
       "literal": 232.0,
       "dataset_key": "nufit_6_0.normal_ordering.delta_CP.value",
       "dataset_value": 232.0,
@@ -3681,7 +3689,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 221,
+      "line": 235,
       "literal": 278.0,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -3689,7 +3697,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 222,
+      "line": 236,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -3697,7 +3705,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 223,
+      "line": 237,
       "literal": 0.00251,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -3705,7 +3713,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1529,
+      "line": 1548,
       "literal": 33.41,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3713,7 +3721,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1530,
+      "line": 1549,
       "literal": 8.63,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3721,7 +3729,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1531,
+      "line": 1550,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3729,7 +3737,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1532,
+      "line": 1551,
       "literal": 278.0,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -3737,7 +3745,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 2229,
+      "line": 2248,
       "literal": 8.65,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3745,7 +3753,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 2241,
+      "line": 2260,
       "literal": 33.59,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3753,7 +3761,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 2253,
+      "line": 2272,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3761,7 +3769,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 224,
+      "line": 238,
       "literal": 0.002498,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -3769,7 +3777,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1733,
+      "line": 1752,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -3777,7 +3785,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1993,
+      "line": 2012,
       "literal": 33.59,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3785,7 +3793,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1994,
+      "line": 2013,
       "literal": 8.65,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3793,7 +3801,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1995,
+      "line": 2014,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3801,7 +3809,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1996,
+      "line": 2015,
       "literal": 278.4,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -3809,7 +3817,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1742,
+      "line": 1761,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -3817,7 +3825,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1759,
+      "line": 1778,
       "literal": 0.002498,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -3825,7 +3833,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 1768,
+      "line": 1787,
       "literal": 0.002498,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -3849,7 +3857,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1665,
+      "line": 1670,
       "literal": 0.22313,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3857,7 +3865,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 155,
+      "line": 160,
       "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -3865,7 +3873,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 161,
+      "line": 166,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -3873,7 +3881,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 165,
+      "line": 170,
       "literal": 33.41,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3881,7 +3889,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 167,
+      "line": 172,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3889,7 +3897,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 169,
+      "line": 174,
       "literal": 8.63,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3897,7 +3905,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1346,
+      "line": 1351,
       "literal": 0.2245,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3905,7 +3913,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1347,
+      "line": 1352,
       "literal": 0.2245,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3913,7 +3921,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1359,
+      "line": 1364,
       "literal": 0.0409,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
       "dataset_value": 0.041,
@@ -3921,7 +3929,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1571,
+      "line": 1576,
       "literal": 0.22313,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3929,7 +3937,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 940,
+      "line": 945,
       "literal": 0.223,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3937,7 +3945,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 998,
+      "line": 1003,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3945,7 +3953,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1116,
+      "line": 1121,
       "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -3953,7 +3961,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1161,
+      "line": 1166,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -3961,7 +3969,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1178,
+      "line": 1183,
       "literal": 33.41,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3969,7 +3977,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1194,
+      "line": 1199,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3977,7 +3985,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1210,
+      "line": 1215,
       "literal": 8.63,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3985,7 +3993,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1397,
+      "line": 1402,
       "literal": 0.2245,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3993,7 +4001,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1398,
+      "line": 1403,
       "literal": 0.0409,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_cb.value",
       "dataset_value": 0.041,
@@ -4001,7 +4009,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1399,
+      "line": 1404,
       "literal": 0.00375,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
       "dataset_value": 0.00382,
@@ -4009,7 +4017,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 938,
+      "line": 943,
       "literal": 0.223,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -4017,7 +4025,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 939,
+      "line": 944,
       "literal": 0.223,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -4025,7 +4033,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 996,
+      "line": 1001,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -4033,7 +4041,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 997,
+      "line": 1002,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -4041,7 +4049,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_derivation.py",
-      "line": 302,
+      "line": 311,
       "literal": 8.58,
       "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
       "dataset_value": 8.58,
@@ -4707,16 +4715,16 @@
       "file": "simulations/PM/support/complete_residue_registry.py",
       "line": 602,
       "literal": 0.811,
-      "dataset_key": "planck_2018.sigma8.value",
-      "dataset_value": 0.8102,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_value": 0.8111,
       "class": "STALE_DUP"
     },
     {
       "file": "simulations/PM/support/complete_residue_registry.py",
       "line": 602,
       "literal": 0.811,
-      "dataset_key": "planck_2018.sigma8.value",
-      "dataset_value": 0.8102,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_value": 0.8111,
       "class": "STALE_DUP"
     },
     {
@@ -4915,7 +4923,7 @@
       "file": "simulations/PM/validation/consistency_beacons.py",
       "line": 259,
       "literal": 0.826,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_key": "desi_2025_constraints.framework_adopted_anchors.thawing_w0wa.sigma8.value",
       "dataset_value": 0.827,
       "class": "STALE_DUP"
     },
@@ -5347,7 +5355,7 @@
       "file": "simulations/base/dynamic_metadata.py",
       "line": 48,
       "literal": 0.8461538461538461,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
+      "dataset_key": "experiment_ref.parameters.cosmology.S8.value",
       "dataset_value": 0.832,
       "class": "STALE_DUP"
     },
@@ -5377,7 +5385,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 310,
+      "line": 312,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -5385,7 +5393,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 454,
+      "line": 456,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -5393,7 +5401,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 456,
+      "line": 458,
       "literal": 172.69,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -5401,7 +5409,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 305,
+      "line": 307,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -5409,18 +5417,10 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 323,
-      "literal": 0.827,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
-      "dataset_value": 0.827,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/base/established.py",
       "line": 325,
-      "literal": 0.832,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.S8.value",
-      "dataset_value": 0.832,
+      "literal": 0.8111,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.sigma8.value",
+      "dataset_value": 0.8111,
       "class": "EXACT_DUP"
     },
     {
@@ -5658,9 +5658,9 @@
     {
       "file": "simulations/base/established.py",
       "line": 298,
-      "literal": 0.957,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
+      "literal": 0.752,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.uncertainty",
+      "dataset_value": 0.75,
       "class": "STALE_DUP"
     },
     {
@@ -5673,7 +5673,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 386,
+      "line": 388,
       "literal": 0.3111,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -5681,7 +5681,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 632,
+      "line": 634,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -5689,7 +5689,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 641,
+      "line": 643,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -5697,7 +5697,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 650,
+      "line": 652,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
@@ -5705,7 +5705,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 591,
+      "line": 593,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -5713,7 +5713,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 605,
+      "line": 607,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -5721,7 +5721,7 @@
     },
     {
       "file": "simulations/base/established.py",
-      "line": 619,
+      "line": 621,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,

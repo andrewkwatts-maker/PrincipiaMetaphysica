@@ -208,7 +208,7 @@
         "abstract.ledger_open",
         "abstract.v25_v26_closures"
       ],
-      "timestamp": "2026-08-19T19:36:35.728514"
+      "timestamp": "2026-08-19T20:41:29.846536"
     },
     "1": {
       "id": "1",
@@ -338,17 +338,17 @@
         },
         {
           "type": "note",
-          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 26D theory with structure (24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(24,2). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 time (its own)), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313).</p>",
+          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 26D theory with signature (24,2) = (12,1) + (12,1), one timelike direction per shadow shadow-time directions, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(24,2). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 time (its own)), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313).</p>",
           "label": "pneuma-postulate",
           "equationNumber": "pneuma-postulate"
         },
         {
           "type": "paragraph",
-          "content": "In the v24.2 framework, the full 26D bulk has structure (24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions, eliminating ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under Spin(26,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection, each bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = −I). Each shadow has Spin(12,1) symmetry with a 64-component spinor representation. Bilinear condensates of this field generate the geometric tensors that define the internal manifold structure."
+          "content": "In the v24.2 framework, the full 26D bulk has signature (24,2) = (12,1) + (12,1), one timelike direction per shadow shadow-time directions, eliminating ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under Spin(24,2). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection, each bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = −I). Each shadow has Spin(12,1) symmetry with a 64-component spinor representation. Bilinear condensates of this field generate the geometric tensors that define the internal manifold structure."
         },
         {
           "type": "equation",
-          "content": "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(26,1)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ 2 × <strong>64</strong><sub>Spin(12,1)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ ⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry",
+          "content": "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(24,2)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ 2 × <strong>64</strong><sub>Spin(12,1)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ ⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry",
           "label": "pneuma-condensate",
           "equationNumber": "pneuma-condensate"
         },
@@ -403,7 +403,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Framework: 26D → Dual 13D(12,1) Shadows</h4><p>In the v24.2 Principia Metaphysica framework, the fundamental theory lives in <strong>26D with structure (24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions</strong>. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial from bridge + 1 shared time). Each shadow compactifies on G₂ with the OR reduction operator R<sub>⊥</sub> providing cross-shadow coherence. This section explains why D = 13 = 1 + 4 + 8 is the unique division-algebra-consistent dimension for the observable sector.</p>",
+          "content": "<h4>Framework: 26D → Dual 13D(12,1) Shadows</h4><p>In the v24.2 Principia Metaphysica framework, the fundamental theory lives in <strong>26D with signature (24,2) = (12,1) + (12,1), one timelike direction per shadow shadow-time directions</strong>. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial from bridge + 1 shared time). Each shadow compactifies on G₂ with the OR reduction operator R<sub>⊥</sub> providing cross-shadow coherence. This section explains why D = 13 = 1 + 4 + 8 is the unique division-algebra-consistent dimension for the observable sector.</p>",
           "label": "framework-26d-dual-shadows",
           "equationNumber": "framework-26d-dual-shadows"
         },
@@ -468,7 +468,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The remainder of this paper develops the <strong>Principia Metaphysica</strong> theoretical framework systematically and derives its physical consequences. The central insight is the M<sup>26</sup>(24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions → dual 13D(12,1) shadows → 4D dimensional hierarchy, where the Euclidean bridge structure enables the derivation of key cosmological parameters. The structure is as follows:"
+          "content": "The remainder of this paper develops the <strong>Principia Metaphysica</strong> theoretical framework systematically and derives its physical consequences. The central insight is the M<sup>26</sup>(24,2) = 12×(2,0) bridge pairs + 2 shadow times + S<sup>(2,0)</sup> shadow-time directions → dual 13D(12,1) shadows → 4D dimensional hierarchy, where the Euclidean bridge structure enables the derivation of key cosmological parameters. The structure is as follows:"
         },
         {
           "type": "paragraph",
@@ -694,17 +694,17 @@
         },
         {
           "type": "note",
-          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 26D theory with structure (24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(24,2). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 time (its own)), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313).</p>",
+          "content": "<h4>The Pneuma Postulate (v24.2 Dual-Shadow Framework)</h4><p>In the full 26D theory with signature (24,2) = (12,1) + (12,1), one timelike direction per shadow shadow-time directions, the Pneuma field Ψ<sub>P</sub> is a <strong>4096-component spinor</strong> of Cl(24,2). Bridge pairs WARP to create <strong>dual 13D(12,1) shadows</strong> via coordinate selection (each: 12 spatial + 1 time (its own)), with positive-definite metric ds² = dy₁² + dy₂². Each shadow contains an effective 64-component spinor. The internal manifold is a <strong>7D TCS (Twisted Connected Sum) G₂ manifold</strong> K<sub>Pneuma</sub> with <strong>h<sup>1,1</sup>=4 Kähler moduli sectors</strong>—not a static background but a dynamic geometric structure formed from Pneuma condensates. Racetrack moduli stabilization across these four sectors dynamically determines the vacuum structure and derives ε ≈ 0.2257 (racetrack variant; canonical e^{-3/2} = 0.22313).</p>",
           "label": "pneuma-postulate",
           "equationNumber": "pneuma-postulate"
         },
         {
           "type": "paragraph",
-          "content": "In the v24.2 framework, the full 26D bulk has structure (24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions, eliminating ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under Spin(26,1). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection, each bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = −I). Each shadow has Spin(12,1) symmetry with a 64-component spinor representation. Bilinear condensates of this field generate the geometric tensors that define the internal manifold structure."
+          "content": "In the v24.2 framework, the full 26D bulk has signature (24,2) = (12,1) + (12,1), one timelike direction per shadow shadow-time directions, eliminating ghost modes and closed timelike curves. The Pneuma field Ψ<sub>P</sub> transforms under Spin(24,2). The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection, each bridge with OR reduction operator R<sub>⊥</sub> providing Möbius double-cover (R<sub>⊥</sub>² = −I). Each shadow has Spin(12,1) symmetry with a 64-component spinor representation. Bilinear condensates of this field generate the geometric tensors that define the internal manifold structure."
         },
         {
           "type": "equation",
-          "content": "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(26,1)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ 2 × <strong>64</strong><sub>Spin(12,1)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ ⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry",
+          "content": "Ψ<sub>P</sub> ∈ <strong>4096</strong><sub>Spin(24,2)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ 2 × <strong>64</strong><sub>Spin(12,1)</sub><br/>&nbsp;&nbsp;&nbsp;&nbsp;→ ⟨Ψ<sub>P</sub>Γ<sub>A...B</sub>Ψ<sub>P</sub>⟩ defines geometry",
           "label": "pneuma-condensate",
           "equationNumber": "pneuma-condensate"
         },
@@ -759,7 +759,7 @@
         },
         {
           "type": "note",
-          "content": "<h4>Framework: 26D → Dual 13D(12,1) Shadows</h4><p>In the v24.2 Principia Metaphysica framework, the fundamental theory lives in <strong>26D with structure (24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions</strong>. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial from bridge + 1 shared time). Each shadow compactifies on G₂ with the OR reduction operator R<sub>⊥</sub> providing cross-shadow coherence. This section explains why D = 13 = 1 + 4 + 8 is the unique division-algebra-consistent dimension for the observable sector.</p>",
+          "content": "<h4>Framework: 26D → Dual 13D(12,1) Shadows</h4><p>In the v24.2 Principia Metaphysica framework, the fundamental theory lives in <strong>26D with signature (24,2) = (12,1) + (12,1), one timelike direction per shadow shadow-time directions</strong>. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial from bridge + 1 shared time). Each shadow compactifies on G₂ with the OR reduction operator R<sub>⊥</sub> providing cross-shadow coherence. This section explains why D = 13 = 1 + 4 + 8 is the unique division-algebra-consistent dimension for the observable sector.</p>",
           "label": "framework-26d-dual-shadows",
           "equationNumber": "framework-26d-dual-shadows"
         },
@@ -824,7 +824,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The remainder of this paper develops the <strong>Principia Metaphysica</strong> theoretical framework systematically and derives its physical consequences. The central insight is the M<sup>26</sup>(24,2) = 12×(2,0) bridges + (0,1) time + S<sup>(2,0)</sup> shadow-time directions → dual 13D(12,1) shadows → 4D dimensional hierarchy, where the Euclidean bridge structure enables the derivation of key cosmological parameters. The structure is as follows:"
+          "content": "The remainder of this paper develops the <strong>Principia Metaphysica</strong> theoretical framework systematically and derives its physical consequences. The central insight is the M<sup>26</sup>(24,2) = 12×(2,0) bridge pairs + 2 shadow times + S<sup>(2,0)</sup> shadow-time directions → dual 13D(12,1) shadows → 4D dimensional hierarchy, where the Euclidean bridge structure enables the derivation of key cosmological parameters. The structure is as follows:"
         },
         {
           "type": "paragraph",
@@ -962,7 +962,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-08-19T19:36:35.739755"
+      "timestamp": "2026-08-19T20:41:29.866664"
     },
     "2": {
       "id": "2",
@@ -1003,7 +1003,7 @@
         },
         {
           "type": "callout",
-          "content": "The 26-dimensional spacetime decomposes as a tensor product of 13D shadow (from 26D bulk) connected via Euclidean bridge. Key Features: signature (24,1) → (12,1) effective after OR reduction; OR removes ghosts; 4096 → 64 components."
+          "content": "The 26-dimensional spacetime decomposes as a tensor product of 13D shadow (from 26D bulk) connected via Euclidean bridge. Key Features: signature (24,2) → (12,1) effective after OR reduction; OR removes ghosts; 4096 → 64 components."
         },
         {
           "type": "callout",
@@ -1504,7 +1504,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Update: The full dimensional reduction pathway 26D (24,1) → 13D (12,1) → 6D (5,1) → 4D (3,1) is now rigorously validated through 9 independent consistency checks, with clear distinction between OR reduction and compactification. This section documents the complete 4-stage chain and validation results."
+          "content": "Update: The full dimensional reduction pathway 26D (24,2) → 13D (12,1) → 6D (5,1) → 4D (3,1) is now rigorously validated through 9 independent consistency checks, with clear distinction between OR reduction and compactification. This section documents the complete 4-stage chain and validation results."
         },
         {
           "type": "callout",
@@ -1529,7 +1529,7 @@
               [
                 "2",
                 "Unified Time Ghost Elimination",
-                "OR reduction removes negative-norm states through gravitational self-energy threshold in (24,1) signature",
+                "OR reduction removes negative-norm states through gravitational self-energy threshold in (24,2) signature",
                 "PASS"
               ],
               [
@@ -1611,7 +1611,7 @@
         },
         {
           "type": "callout",
-          "content": "The 26-dimensional spacetime decomposes as a tensor product of 13D shadow (from 26D bulk) connected via Euclidean bridge. Key Features: signature (24,1) → (12,1) effective after OR reduction; OR removes ghosts; 4096 → 64 components."
+          "content": "The 26-dimensional spacetime decomposes as a tensor product of 13D shadow (from 26D bulk) connected via Euclidean bridge. Key Features: signature (24,2) → (12,1) effective after OR reduction; OR removes ghosts; 4096 → 64 components."
         },
         {
           "type": "callout",
@@ -2112,7 +2112,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Update: The full dimensional reduction pathway 26D (24,1) → 13D (12,1) → 6D (5,1) → 4D (3,1) is now rigorously validated through 9 independent consistency checks, with clear distinction between OR reduction and compactification. This section documents the complete 4-stage chain and validation results."
+          "content": "Update: The full dimensional reduction pathway 26D (24,2) → 13D (12,1) → 6D (5,1) → 4D (3,1) is now rigorously validated through 9 independent consistency checks, with clear distinction between OR reduction and compactification. This section documents the complete 4-stage chain and validation results."
         },
         {
           "type": "callout",
@@ -2137,7 +2137,7 @@
               [
                 "2",
                 "Unified Time Ghost Elimination",
-                "OR reduction removes negative-norm states through gravitational self-energy threshold in (24,1) signature",
+                "OR reduction removes negative-norm states through gravitational self-energy threshold in (24,2) signature",
                 "PASS"
               ],
               [
@@ -2220,7 +2220,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-08-19T19:36:35.947144"
+      "timestamp": "2026-08-19T20:41:30.097674"
     },
     "2.7": {
       "id": "2",
@@ -2610,7 +2610,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-08-19T19:36:35.947421"
+      "timestamp": "2026-08-19T20:41:30.098010"
     },
     "V.1": {
       "id": "validation",
@@ -2732,7 +2732,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-08-19T19:36:35.947944"
+      "timestamp": "2026-08-19T20:41:30.098721"
     },
     "3.4": {
       "id": "3",
@@ -2896,7 +2896,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-08-19T19:36:35.948021"
+      "timestamp": "2026-08-19T20:41:30.098800"
     },
     "3.6": {
       "id": "3",
@@ -3068,7 +3068,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-08-19T19:36:35.948175"
+      "timestamp": "2026-08-19T20:41:30.099027"
     },
     "3": {
       "id": "3",
@@ -3083,7 +3083,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The unification of gauge couplings provides a key prediction of Grand Unified Theories. In the Principia Metaphysica framework, gauge coupling unification emerges from the dimensional reduction of SO(24,1) bulk symmetry to SO(10) GUT symmetry, mediated by the G2 holonomy manifold."
+          "content": "The unification of gauge couplings provides a key prediction of Grand Unified Theories. In the Principia Metaphysica framework, gauge coupling unification emerges from the dimensional reduction of SO(24,2) bulk symmetry to SO(10) GUT symmetry, mediated by the G2 holonomy manifold."
         },
         {
           "type": "paragraph",
@@ -3163,7 +3163,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The unification of gauge couplings provides a key prediction of Grand Unified Theories. In the Principia Metaphysica framework, gauge coupling unification emerges from the dimensional reduction of SO(24,1) bulk symmetry to SO(10) GUT symmetry, mediated by the G2 holonomy manifold."
+          "content": "The unification of gauge couplings provides a key prediction of Grand Unified Theories. In the Principia Metaphysica framework, gauge coupling unification emerges from the dimensional reduction of SO(24,2) bulk symmetry to SO(10) GUT symmetry, mediated by the G2 holonomy manifold."
         },
         {
           "type": "paragraph",
@@ -3272,7 +3272,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-08-19T19:36:35.988308"
+      "timestamp": "2026-08-19T20:41:30.146459"
     },
     "3.2": {
       "id": "3",
@@ -3292,7 +3292,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Version <span class=\"pm-value\" data-pm-value=\"framework.version_major\">23</span> introduces a fundamental structural change: 26D(24,2) = 12×(2,0) bridges + (0,1) time + S<sup>2,0</sup> shadow-time directions. The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 time (its own)). The metric is: ds² = −dt² + Σ<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>² + dy<sub>2i</sub>²)."
+          "content": "Version <span class=\"pm-value\" data-pm-value=\"framework.version_major\">23</span> introduces a fundamental structural change: 26D(24,2) = 12×(2,0) bridge pairs + 2 shadow times + S<sup>2,0</sup> shadow-time directions. The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 time (its own)). The metric is: ds² = −dt² + Σ<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>² + dy<sub>2i</sub>²)."
         },
         {
           "type": "formula",
@@ -3489,7 +3489,7 @@
         },
         {
           "type": "paragraph",
-          "content": "Version <span class=\"pm-value\" data-pm-value=\"framework.version_major\">23</span> introduces a fundamental structural change: 26D(24,2) = 12×(2,0) bridges + (0,1) time + S<sup>2,0</sup> shadow-time directions. The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 time (its own)). The metric is: ds² = −dt² + Σ<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>² + dy<sub>2i</sub>²)."
+          "content": "Version <span class=\"pm-value\" data-pm-value=\"framework.version_major\">23</span> introduces a fundamental structural change: 26D(24,2) = 12×(2,0) bridge pairs + 2 shadow times + S<sup>2,0</sup> shadow-time directions. The 12 bridge pairs WARP to create 2×13D(12,1) shadows (12 spatial + 1 time (its own)). The metric is: ds² = −dt² + Σ<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>² + dy<sub>2i</sub>²)."
         },
         {
           "type": "formula",
@@ -3760,7 +3760,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-08-19T19:36:35.988704"
+      "timestamp": "2026-08-19T20:41:30.146854"
     },
     "3.1": {
       "id": "3",
@@ -3818,7 +3818,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-08-19T19:36:35.988995"
+      "timestamp": "2026-08-19T20:41:30.147126"
     },
     "4.2": {
       "id": "4",
@@ -3948,7 +3948,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-08-19T19:36:36.192704"
+      "timestamp": "2026-08-19T20:41:30.373028"
     },
     "4.1": {
       "id": "4",
@@ -4236,7 +4236,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-08-19T19:36:36.383064"
+      "timestamp": "2026-08-19T20:41:30.580365"
     },
     "4.3": {
       "id": "4",
@@ -4292,7 +4292,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The parameter η ~ sin(δ<sub>CP</sub>) where δ<sub>CP</sub> is a CP-violating phase. In our framework, this phase arises from the topological structure of the G₂ holonomy. For TCS G₂ manifold #187 with K = 4 matching fibres, the holonomy phase is δ<sub>CP</sub> ~ π/6 (30 degrees), giving:"
+          "content": "The parameter η ~ sin(δ<sub>CP</sub>) where δ<sub>CP</sub> is a CP-violating phase. In our framework, this phase arises from the topological structure of the G₂ holonomy. For TCS G₂ manifold #187 the holonomy phase is taken as δ<sub>CP</sub> ~ π/6 (30 degrees). CAVEAT: π/K with the stated K = 4 matching fibres gives π/4 = 45°, not π/6 — π/6 requires K = 6. The fibre-count-to-phase step is unresolved:"
         },
         {
           "type": "formula",
@@ -4385,7 +4385,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The parameter η ~ sin(δ<sub>CP</sub>) where δ<sub>CP</sub> is a CP-violating phase. In our framework, this phase arises from the topological structure of the G₂ holonomy. For TCS G₂ manifold #187 with K = 4 matching fibres, the holonomy phase is δ<sub>CP</sub> ~ π/6 (30 degrees), giving:"
+          "content": "The parameter η ~ sin(δ<sub>CP</sub>) where δ<sub>CP</sub> is a CP-violating phase. In our framework, this phase arises from the topological structure of the G₂ holonomy. For TCS G₂ manifold #187 the holonomy phase is taken as δ<sub>CP</sub> ~ π/6 (30 degrees). CAVEAT: π/K with the stated K = 4 matching fibres gives π/4 = 45°, not π/6 — π/6 requires K = 6. The fibre-count-to-phase step is unresolved:"
         },
         {
           "type": "formula",
@@ -4476,7 +4476,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-08-19T19:36:36.383425"
+      "timestamp": "2026-08-19T20:41:30.580799"
     },
     "4.6": {
       "id": "4",
@@ -4662,7 +4662,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-08-19T19:36:36.383576"
+      "timestamp": "2026-08-19T20:41:30.580972"
     },
     "4.4": {
       "id": "4",
@@ -4844,7 +4844,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-08-19T19:36:36.384191"
+      "timestamp": "2026-08-19T20:41:30.581537"
     },
     "4.9": {
       "id": "4",
@@ -4946,7 +4946,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-08-19T19:36:36.384325"
+      "timestamp": "2026-08-19T20:41:30.581673"
     },
     "6.1.1": {
       "id": "6",
@@ -5060,7 +5060,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-08-19T19:36:36.384578"
+      "timestamp": "2026-08-19T20:41:30.581934"
     },
     "4.2.1": {
       "id": "4",
@@ -5134,7 +5134,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-08-19T19:36:36.384777"
+      "timestamp": "2026-08-19T20:41:30.582126"
     },
     "4.8": {
       "id": "4",
@@ -5192,7 +5192,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-08-19T19:36:36.385066"
+      "timestamp": "2026-08-19T20:41:30.582422"
     },
     "A2": {
       "id": "A2",
@@ -5264,7 +5264,7 @@
         "algebra.freudenthal_jordan_trace",
         "algebra.pneuma_27d_condensate_scale"
       ],
-      "timestamp": "2026-08-19T19:36:36.385588"
+      "timestamp": "2026-08-19T20:41:30.583382"
     },
     "A3": {
       "id": "A3",
@@ -5350,7 +5350,7 @@
         "algebra.e7_symplectic",
         "algebra.e7_alp_mass_gev"
       ],
-      "timestamp": "2026-08-19T19:36:36.385806"
+      "timestamp": "2026-08-19T20:41:30.583656"
     },
     "A4": {
       "id": "A4",
@@ -5460,7 +5460,7 @@
         "algebra.gaugino_condensate_ratio",
         "algebra.gaugino_cabibbo_derived"
       ],
-      "timestamp": "2026-08-19T19:36:36.385906"
+      "timestamp": "2026-08-19T20:41:30.583770"
     },
     "A5": {
       "id": "A5",
@@ -5592,7 +5592,7 @@
         "algebra.e8_portal_coupling",
         "algebra.e8_heterotic_spectral_proxy"
       ],
-      "timestamp": "2026-08-19T19:36:36.430499"
+      "timestamp": "2026-08-19T20:41:30.636260"
     },
     "A6": {
       "id": "A6",
@@ -5830,7 +5830,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-19T19:36:36.430700"
+      "timestamp": "2026-08-19T20:41:30.636465"
     },
     "A7": {
       "id": "A7",
@@ -6078,7 +6078,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-08-19T19:36:36.430743"
+      "timestamp": "2026-08-19T20:41:30.636515"
     },
     "neutrino-algebraic": {
       "id": "neutrino-algebraic",
@@ -6244,7 +6244,7 @@
         "neutrino.theta13_sigma",
         "neutrino.delta_CP_sigma"
       ],
-      "timestamp": "2026-08-19T19:36:36.430831"
+      "timestamp": "2026-08-19T20:41:30.636607"
     },
     "5.1": {
       "id": "5",
@@ -6263,11 +6263,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The full dimensional cascade proceeds as follows: the 26D bulk spacetime with (24,1) unified time signature first splits into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. Each 13D shadow then decomposes as M¹³ = M⁴ × K_Pneuma, where K_Pneuma is a 9-dimensional internal space comprising a 7D G₂ holonomy manifold cross a 2D torus: K_Pneuma = G₂ × T². The 14D Einstein-Hilbert action arises at an intermediate step before the full KK reduction integrates out the internal dimensions to yield 4D gravity plus gauge fields plus scalar moduli."
+          "content": "The full dimensional cascade proceeds as follows: the 26D bulk spacetime with (24,2) unified time signature first splits into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. Each 13D shadow then decomposes as M¹³ = M⁴ × K_Pneuma, where K_Pneuma is a 9-dimensional internal space comprising a 7D G₂ holonomy manifold cross a 2D torus: K_Pneuma = G₂ × T². The 14D Einstein-Hilbert action arises at an intermediate step before the full KK reduction integrates out the internal dimensions to yield 4D gravity plus gauge fields plus scalar moduli."
         },
         {
           "type": "paragraph",
-          "content": "Each step in this cascade is physically necessary, not merely mathematically convenient. The initial 26D → 13D split is forced by the requirement that the (24,1) unified time signature must decompose into two copies of (12,1), the unique factorisation that preserves Lorentzian causality in each shadow while eliminating ghost modes from extra timelike dimensions. The subsequent 13D → 4D compactification on K_Pneuma = G₂ × T² is dictated by supersymmetry: G₂ holonomy is the UNIQUE holonomy group in 7 dimensions that preserves exactly one covariantly constant spinor, yielding N = 1 supersymmetry in 4D — the minimal amount compatible with a chiral fermion spectrum matching the Standard Model. The T² torus factor provides the two additional compact directions needed for the heterotic-like gauge sector embedding."
+          "content": "Each step in this cascade is physically necessary, not merely mathematically convenient. The initial 26D → 13D split is forced by the requirement that the (24,2) unified time signature must decompose into two copies of (12,1), the unique factorisation that preserves Lorentzian causality in each shadow while eliminating ghost modes from extra timelike dimensions. The subsequent 13D → 4D compactification on K_Pneuma = G₂ × T² is dictated by supersymmetry: G₂ holonomy is the UNIQUE holonomy group in 7 dimensions that preserves exactly one covariantly constant spinor, yielding N = 1 supersymmetry in 4D — the minimal amount compatible with a chiral fermion spectrum matching the Standard Model. The T² torus factor provides the two additional compact directions needed for the heterotic-like gauge sector embedding."
         },
         {
           "type": "paragraph",
@@ -6353,7 +6353,7 @@
         },
         {
           "type": "callout",
-          "content": "Step 1: 26D Bulk Metric (Unified Time)\nds²₂₆ = G_MN dX^M dX^N, M, N = 0, 1, ..., 25\nWith unified time signature (24,1): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\nStep 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\nM²⁶(24,2) = 12×(2,0) + (0,1) + S²·⁰ → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\nEach shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\nDimensional structure: T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ²·⁰)\nWHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\nStep 3: Per-Pair Breathing Energy Density\nEach bridge pair i contributes:\nρᵢ = |T_normal_i − R_⊥_i T_mirror_i|\nwhere R_⊥_i is the per-pair OR reduction operator with R_⊥² = −I (Möbius property).\n\nStep 4: 12-Pair Aggregation (Key v24.2 Change)\nAggregated breathing energy: ρ_breath = (1/12) ∑ᵢ₌₁¹² ρᵢ\nThis aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\n<Speculation>Connection to consciousness: 12 I/O channels provide robust experience.</Speculation>\n\nStep 5: Equation of State from Aggregated Breathing\nw = −1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\nTarget: w ≈ −0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
+          "content": "Step 1: 26D Bulk Metric (Unified Time)\nds²₂₆ = G_MN dX^M dX^N, M, N = 0, 1, ..., 25\nWith unified time signature (24,2): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\nStep 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\nM²⁶(24,2) = 12×(2,0) + (0,1) + S²·⁰ → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\nEach shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\nDimensional structure: T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ²·⁰)\nWHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\nStep 3: Per-Pair Breathing Energy Density\nEach bridge pair i contributes:\nρᵢ = |T_normal_i − R_⊥_i T_mirror_i|\nwhere R_⊥_i is the per-pair OR reduction operator with R_⊥² = −I (Möbius property).\n\nStep 4: 12-Pair Aggregation (Key v24.2 Change)\nAggregated breathing energy: ρ_breath = (1/12) ∑ᵢ₌₁¹² ρᵢ\nThis aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\n<Speculation>Connection to consciousness: 12 I/O channels provide robust experience.</Speculation>\n\nStep 5: Equation of State from Aggregated Breathing\nw = −1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\nTarget: w ≈ −0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
         },
         {
           "type": "formula",
@@ -6372,7 +6372,7 @@
         },
         {
           "type": "callout",
-          "content": "The v21 framework contains an enhanced brane structure after G₂ compactification:\n(5,1) + 3×(3,1) per shadow + bridge couplings\n\nThis notation indicates:\n• (5,1): One 5-brane with unified time (observable sector brane per shadow)\n• 3×(3,1): Three 3-branes, each with unified time (generational branes)\n• Bridge couplings: Cross-shadow interactions via Euclidean bridge\n\nThe unified time (24,1) signature eliminates ghost modes that would arise from (p,2) branes in the old two-time framework."
+          "content": "The v21 framework contains an enhanced brane structure after G₂ compactification:\n(5,1) + 3×(3,1) per shadow + bridge couplings\n\nThis notation indicates:\n• (5,1): One 5-brane with unified time (observable sector brane per shadow)\n• 3×(3,1): Three 3-branes, each with unified time (generational branes)\n• Bridge couplings: Cross-shadow interactions via Euclidean bridge\n\nThe unified time (24,2) signature eliminates ghost modes that would arise from (p,2) branes in the old two-time framework."
         },
         {
           "type": "formula",
@@ -6383,7 +6383,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,1) Casimir operator determines the brane tensions via T ∝ √C₂, ensuring consistency with the SO(24,1) invariance of the v24.2 bulk geometry."
+          "content": "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,2) Casimir operator determines the brane tensions via T ∝ √C₂, ensuring consistency with the SO(24,2) invariance of the v24.2 bulk geometry."
         },
         {
           "type": "subsection",
@@ -6391,11 +6391,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The Pneuma spinor field Ψ_P has 8192 components in the full 26D bulk (from Majorana-Weyl condition in (24,1) unified time signature). Upon dual-shadow splitting, G₂ compactification, and symmetry breaking, this reduces to 64 effective components per shadow in the 4D effective theory."
+          "content": "The Pneuma spinor field Ψ_P has 8192 components in the full 26D bulk (from Majorana-Weyl condition in (24,2) unified time signature). Upon dual-shadow splitting, G₂ compactification, and symmetry breaking, this reduces to 64 effective components per shadow in the 4D effective theory."
         },
         {
           "type": "callout",
-          "content": "Step 1: 26D Spinor Dimension (Unified Time)\nFor signature (24,1), the minimal spinor has dimension:\ndim(Ψ_26D) = 2^((26−1)/2) = 2^(12.5) → 8192 (Majorana-Weyl with real structure)\nThe unified time signature ensures no ghost modes.\n\nStep 2: Dual Shadow Split\nThe 26D spinor splits into per-shadow components via the Euclidean bridge:\nΨ₂₆D → 2 × [Ψ₄D ⊗ χ_SO(10) ⊗ η_shadow]\nwhere:\n• Ψ₄D: 4-component Dirac spinor (4D spacetime per shadow)\n• χ_SO(10): 16-dimensional spinor representation 16 of SO(10)\n• η_shadow: Shadow parity factor from OR reduction R_⊥\n\nStep 3: Effective Component Count Per Shadow\nAfter SO(10) → SU(5) → G_SM breaking and G₂ compactification:\ndim_eff = 4 × 16 = 64 components per shadow\n\nThese 64 components correspond to:\n• 3 generations × 16 (each generation in 16 of SO(10))\n• Plus sterile neutrinos and dark sector fermions\n\nThe per-shadow reduction factor is 8192/(2×64) = 64."
+          "content": "Step 1: 26D Spinor Dimension (Unified Time)\nFor signature (24,2), the minimal spinor has dimension:\ndim(Ψ_26D) = 2^((26−1)/2) = 2^(12.5) → 8192 (Majorana-Weyl with real structure)\nThe unified time signature ensures no ghost modes.\n\nStep 2: Dual Shadow Split\nThe 26D spinor splits into per-shadow components via the Euclidean bridge:\nΨ₂₆D → 2 × [Ψ₄D ⊗ χ_SO(10) ⊗ η_shadow]\nwhere:\n• Ψ₄D: 4-component Dirac spinor (4D spacetime per shadow)\n• χ_SO(10): 16-dimensional spinor representation 16 of SO(10)\n• η_shadow: Shadow parity factor from OR reduction R_⊥\n\nStep 3: Effective Component Count Per Shadow\nAfter SO(10) → SU(5) → G_SM breaking and G₂ compactification:\ndim_eff = 4 × 16 = 64 components per shadow\n\nThese 64 components correspond to:\n• 3 generations × 16 (each generation in 16 of SO(10))\n• Plus sterile neutrinos and dark sector fermions\n\nThe per-shadow reduction factor is 8192/(2×64) = 64."
         },
         {
           "type": "formula",
@@ -6412,11 +6412,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The full dimensional cascade proceeds as follows: the 26D bulk spacetime with (24,1) unified time signature first splits into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. Each 13D shadow then decomposes as M¹³ = M⁴ × K_Pneuma, where K_Pneuma is a 9-dimensional internal space comprising a 7D G₂ holonomy manifold cross a 2D torus: K_Pneuma = G₂ × T². The 14D Einstein-Hilbert action arises at an intermediate step before the full KK reduction integrates out the internal dimensions to yield 4D gravity plus gauge fields plus scalar moduli."
+          "content": "The full dimensional cascade proceeds as follows: the 26D bulk spacetime with (24,2) unified time signature first splits into dual 13D(12,1) shadows via 12 paired (2,0) Euclidean bridges. Each 13D shadow then decomposes as M¹³ = M⁴ × K_Pneuma, where K_Pneuma is a 9-dimensional internal space comprising a 7D G₂ holonomy manifold cross a 2D torus: K_Pneuma = G₂ × T². The 14D Einstein-Hilbert action arises at an intermediate step before the full KK reduction integrates out the internal dimensions to yield 4D gravity plus gauge fields plus scalar moduli."
         },
         {
           "type": "paragraph",
-          "content": "Each step in this cascade is physically necessary, not merely mathematically convenient. The initial 26D → 13D split is forced by the requirement that the (24,1) unified time signature must decompose into two copies of (12,1), the unique factorisation that preserves Lorentzian causality in each shadow while eliminating ghost modes from extra timelike dimensions. The subsequent 13D → 4D compactification on K_Pneuma = G₂ × T² is dictated by supersymmetry: G₂ holonomy is the UNIQUE holonomy group in 7 dimensions that preserves exactly one covariantly constant spinor, yielding N = 1 supersymmetry in 4D — the minimal amount compatible with a chiral fermion spectrum matching the Standard Model. The T² torus factor provides the two additional compact directions needed for the heterotic-like gauge sector embedding."
+          "content": "Each step in this cascade is physically necessary, not merely mathematically convenient. The initial 26D → 13D split is forced by the requirement that the (24,2) unified time signature must decompose into two copies of (12,1), the unique factorisation that preserves Lorentzian causality in each shadow while eliminating ghost modes from extra timelike dimensions. The subsequent 13D → 4D compactification on K_Pneuma = G₂ × T² is dictated by supersymmetry: G₂ holonomy is the UNIQUE holonomy group in 7 dimensions that preserves exactly one covariantly constant spinor, yielding N = 1 supersymmetry in 4D — the minimal amount compatible with a chiral fermion spectrum matching the Standard Model. The T² torus factor provides the two additional compact directions needed for the heterotic-like gauge sector embedding."
         },
         {
           "type": "paragraph",
@@ -6502,7 +6502,7 @@
         },
         {
           "type": "callout",
-          "content": "Step 1: 26D Bulk Metric (Unified Time)\nds²₂₆ = G_MN dX^M dX^N, M, N = 0, 1, ..., 25\nWith unified time signature (24,1): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\nStep 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\nM²⁶(24,2) = 12×(2,0) + (0,1) + S²·⁰ → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\nEach shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\nDimensional structure: T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ²·⁰)\nWHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\nStep 3: Per-Pair Breathing Energy Density\nEach bridge pair i contributes:\nρᵢ = |T_normal_i − R_⊥_i T_mirror_i|\nwhere R_⊥_i is the per-pair OR reduction operator with R_⊥² = −I (Möbius property).\n\nStep 4: 12-Pair Aggregation (Key v24.2 Change)\nAggregated breathing energy: ρ_breath = (1/12) ∑ᵢ₌₁¹² ρᵢ\nThis aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\n<Speculation>Connection to consciousness: 12 I/O channels provide robust experience.</Speculation>\n\nStep 5: Equation of State from Aggregated Breathing\nw = −1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\nTarget: w ≈ −0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
+          "content": "Step 1: 26D Bulk Metric (Unified Time)\nds²₂₆ = G_MN dX^M dX^N, M, N = 0, 1, ..., 25\nWith unified time signature (24,2): 24 spacelike + 1 timelike coordinate, eliminating ghosts.\n\nStep 2: Dual Shadow Split via 12×(2,0) Euclidean Bridge Pairs\nM²⁶(24,2) = 12×(2,0) + (0,1) + S²·⁰ → 12 bridge pairs WARP to create 2×13D(12,1) shadows:\nEach shadow: 12 spatial (from bridge coordinate selection) + 1 shared time = 13D(12,1)\nDimensional structure: T¹ ×_fiber (⊕ᵢ₌₁¹² Bᵢ²·⁰)\nWHY 12 PAIRS: From b₃ = 24 associative 3-cycles, each pair couples normal ↔ mirror.\n\nStep 3: Per-Pair Breathing Energy Density\nEach bridge pair i contributes:\nρᵢ = |T_normal_i − R_⊥_i T_mirror_i|\nwhere R_⊥_i is the per-pair OR reduction operator with R_⊥² = −I (Möbius property).\n\nStep 4: 12-Pair Aggregation (Key v24.2 Change)\nAggregated breathing energy: ρ_breath = (1/12) ∑ᵢ₌₁¹² ρᵢ\nThis aggregation REDUCES variance: σ_eff = σ_single/√12 ≈ 0.29 σ_single\n<Speculation>Connection to consciousness: 12 I/O channels provide robust experience.</Speculation>\n\nStep 5: Equation of State from Aggregated Breathing\nw = −1 + (1/φ²) × ⟨ρ_breath⟩ / max(ρ_breath)\nTarget: w ≈ −0.958 ± 0.003 (matches DESI 2025 thawing constraint)."
         },
         {
           "type": "formula",
@@ -6521,7 +6521,7 @@
         },
         {
           "type": "callout",
-          "content": "The v21 framework contains an enhanced brane structure after G₂ compactification:\n(5,1) + 3×(3,1) per shadow + bridge couplings\n\nThis notation indicates:\n• (5,1): One 5-brane with unified time (observable sector brane per shadow)\n• 3×(3,1): Three 3-branes, each with unified time (generational branes)\n• Bridge couplings: Cross-shadow interactions via Euclidean bridge\n\nThe unified time (24,1) signature eliminates ghost modes that would arise from (p,2) branes in the old two-time framework."
+          "content": "The v21 framework contains an enhanced brane structure after G₂ compactification:\n(5,1) + 3×(3,1) per shadow + bridge couplings\n\nThis notation indicates:\n• (5,1): One 5-brane with unified time (observable sector brane per shadow)\n• 3×(3,1): Three 3-branes, each with unified time (generational branes)\n• Bridge couplings: Cross-shadow interactions via Euclidean bridge\n\nThe unified time (24,2) signature eliminates ghost modes that would arise from (p,2) branes in the old two-time framework."
         },
         {
           "type": "formula",
@@ -6532,7 +6532,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,1) Casimir operator determines the brane tensions via T ∝ √C₂, ensuring consistency with the SO(24,1) invariance of the v24.2 bulk geometry."
+          "content": "For BPS states, this bound is saturated: T_BPS = |Z|/V. The SO(24,2) Casimir operator determines the brane tensions via T ∝ √C₂, ensuring consistency with the SO(24,2) invariance of the v24.2 bulk geometry."
         },
         {
           "type": "subsection",
@@ -6540,11 +6540,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The Pneuma spinor field Ψ_P has 8192 components in the full 26D bulk (from Majorana-Weyl condition in (24,1) unified time signature). Upon dual-shadow splitting, G₂ compactification, and symmetry breaking, this reduces to 64 effective components per shadow in the 4D effective theory."
+          "content": "The Pneuma spinor field Ψ_P has 8192 components in the full 26D bulk (from Majorana-Weyl condition in (24,2) unified time signature). Upon dual-shadow splitting, G₂ compactification, and symmetry breaking, this reduces to 64 effective components per shadow in the 4D effective theory."
         },
         {
           "type": "callout",
-          "content": "Step 1: 26D Spinor Dimension (Unified Time)\nFor signature (24,1), the minimal spinor has dimension:\ndim(Ψ_26D) = 2^((26−1)/2) = 2^(12.5) → 8192 (Majorana-Weyl with real structure)\nThe unified time signature ensures no ghost modes.\n\nStep 2: Dual Shadow Split\nThe 26D spinor splits into per-shadow components via the Euclidean bridge:\nΨ₂₆D → 2 × [Ψ₄D ⊗ χ_SO(10) ⊗ η_shadow]\nwhere:\n• Ψ₄D: 4-component Dirac spinor (4D spacetime per shadow)\n• χ_SO(10): 16-dimensional spinor representation 16 of SO(10)\n• η_shadow: Shadow parity factor from OR reduction R_⊥\n\nStep 3: Effective Component Count Per Shadow\nAfter SO(10) → SU(5) → G_SM breaking and G₂ compactification:\ndim_eff = 4 × 16 = 64 components per shadow\n\nThese 64 components correspond to:\n• 3 generations × 16 (each generation in 16 of SO(10))\n• Plus sterile neutrinos and dark sector fermions\n\nThe per-shadow reduction factor is 8192/(2×64) = 64."
+          "content": "Step 1: 26D Spinor Dimension (Unified Time)\nFor signature (24,2), the minimal spinor has dimension:\ndim(Ψ_26D) = 2^((26−1)/2) = 2^(12.5) → 8192 (Majorana-Weyl with real structure)\nThe unified time signature ensures no ghost modes.\n\nStep 2: Dual Shadow Split\nThe 26D spinor splits into per-shadow components via the Euclidean bridge:\nΨ₂₆D → 2 × [Ψ₄D ⊗ χ_SO(10) ⊗ η_shadow]\nwhere:\n• Ψ₄D: 4-component Dirac spinor (4D spacetime per shadow)\n• χ_SO(10): 16-dimensional spinor representation 16 of SO(10)\n• η_shadow: Shadow parity factor from OR reduction R_⊥\n\nStep 3: Effective Component Count Per Shadow\nAfter SO(10) → SU(5) → G_SM breaking and G₂ compactification:\ndim_eff = 4 × 16 = 64 components per shadow\n\nThese 64 components correspond to:\n• 3 generations × 16 (each generation in 16 of SO(10))\n• Plus sterile neutrinos and dark sector fermions\n\nThe per-shadow reduction factor is 8192/(2×64) = 64."
         },
         {
           "type": "formula",
@@ -6584,7 +6584,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-08-19T19:36:36.430933"
+      "timestamp": "2026-08-19T20:41:30.636720"
     },
     "5.2": {
       "id": "5",
@@ -6878,7 +6878,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-08-19T19:36:36.431082"
+      "timestamp": "2026-08-19T20:41:30.636881"
     },
     "5.6": {
       "id": "5",
@@ -7202,7 +7202,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-08-19T19:36:36.431306"
+      "timestamp": "2026-08-19T20:41:30.637140"
     },
     "5.7": {
       "id": "5",
@@ -7346,7 +7346,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-08-19T19:36:36.433310"
+      "timestamp": "2026-08-19T20:41:30.639354"
     },
     "5.4": {
       "id": "5",
@@ -7432,7 +7432,7 @@
         },
         {
           "type": "formula",
-          "content": "S_{8,PM} = \\sigma_8 \\sqrt{\\frac{\\Omega_m}{0.3}} \\times \\beta(z_{eff}) = 0.827 \\times 1.011 \\times 0.994 \\approx 0.831",
+          "content": "S_{8,PM} = \\sigma_8 \\sqrt{\\frac{\\Omega_m}{0.3}} \\times \\beta(z_{eff}) = 0.8111 \\times 1.011 \\times 0.994 \\approx 0.815",
           "formula_id": "s8-prediction-pm",
           "label": "(5.22)",
           "equationNumber": "(5.22)"
@@ -7572,7 +7572,7 @@
         },
         {
           "type": "formula",
-          "content": "S_{8,PM} = \\sigma_8 \\sqrt{\\frac{\\Omega_m}{0.3}} \\times \\beta(z_{eff}) = 0.827 \\times 1.011 \\times 0.994 \\approx 0.831",
+          "content": "S_{8,PM} = \\sigma_8 \\sqrt{\\frac{\\Omega_m}{0.3}} \\times \\beta(z_{eff}) = 0.8111 \\times 1.011 \\times 0.994 \\approx 0.815",
           "formula_id": "s8-prediction-pm",
           "label": "(5.22)",
           "equationNumber": "(5.22)"
@@ -7666,7 +7666,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-08-19T19:36:36.434787"
+      "timestamp": "2026-08-19T20:41:30.640926"
     },
     "5.9": {
       "id": "5",
@@ -7739,7 +7739,7 @@
         },
         {
           "type": "callout",
-          "content": "At z=0 (local): H0 = 76.34 km/s/Mpc (3.17 sigma above SH0ES 73.04 +/- 1.04). At z=1089 (CMB): H0 = 67.4 km/s/Mpc (matches Planck). The tension is not a contradiction but a natural consequence of G2 Ricci flow evolution."
+          "content": "At z=0 (local): H0 = 76.34 km/s/Mpc (3.17 sigma above SH0ES 73.04 +/- 1.04). At z=1089 (CMB): H0 = 67.4 km/s/Mpc (matches Planck). On this model the tension would not be a contradiction but a natural consequence of G2 Ricci flow evolution."
         }
       ],
       "content_blocks": [
@@ -7803,7 +7803,7 @@
         },
         {
           "type": "callout",
-          "content": "At z=0 (local): H0 = 76.34 km/s/Mpc (3.17 sigma above SH0ES 73.04 +/- 1.04). At z=1089 (CMB): H0 = 67.4 km/s/Mpc (matches Planck). The tension is not a contradiction but a natural consequence of G2 Ricci flow evolution."
+          "content": "At z=0 (local): H0 = 76.34 km/s/Mpc (3.17 sigma above SH0ES 73.04 +/- 1.04). At z=1089 (CMB): H0 = 67.4 km/s/Mpc (matches Planck). On this model the tension would not be a contradiction but a natural consequence of G2 Ricci flow evolution."
         }
       ],
       "formulaRefs": [
@@ -7828,7 +7828,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-08-19T19:36:36.435794"
+      "timestamp": "2026-08-19T20:41:30.642005"
     },
     "4.5": {
       "id": "4",
@@ -7839,7 +7839,7 @@
       "title": "Neutrino Mixing from G2 Geometry",
       "shortTitle": "Neutrino Mixing from G2 Geometry",
       "order": 4,
-      "abstract": "Derives the full Pontecorvo-Maki-Nakagawa-Sakata (PMNS) neutrino mixing matrix from the topological structure of associative 3-cycles on the G2 manifold. All four mixing parameters (theta_12, theta_13, theta_23, delta_CP) emerge from wavefunction overlaps on cycle intersections, with no free parameters or calibration to experimental data (except δ_CP parity offset 45.9° and m_base = 0.049 eV, both FITTED). The cross-shadow architecture (chi_eff_total = 144 from both 13D shadows) naturally produces the characteristically large PMNS mixing angles, in contrast to the small CKM angles arising from single-shadow quark confinement.",
+      "abstract": "Derives the full Pontecorvo-Maki-Nakagawa-Sakata (PMNS) neutrino mixing matrix from the topological structure of associative 3-cycles on the G2 manifold. All four mixing parameters (theta_12, theta_13, theta_23, delta_CP) emerge from wavefunction overlaps on cycle intersections, with no free parameters or calibration to experimental data (except δ_CP parity offset 45.9° and m_base = 0.049906 eV, both FITTED). The cross-shadow architecture (chi_eff_total = 144 from both 13D shadows) naturally produces the characteristically large PMNS mixing angles, in contrast to the small CKM angles arising from single-shadow quark confinement.",
       "contentBlocks": [
         {
           "type": "paragraph",
@@ -7847,7 +7847,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The TCS G₂ manifold construction #187 provides all necessary topological inputs to compute the mixing angles without any free parameters or calibration (except δ_CP parity offset 45.9° and m_base = 0.049 eV, both FITTED)."
+          "content": "The TCS G₂ manifold construction #187 provides all necessary topological inputs to compute the mixing angles without any free parameters or calibration (except δ_CP parity offset 45.9° and m_base = 0.049906 eV, both FITTED)."
         },
         {
           "type": "formula",
@@ -7895,7 +7895,7 @@
         },
         {
           "type": "paragraph",
-          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.65°, θ₂₃=49.75°, δ_CP=278.4°. The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters (except δ_CP parity offset 45.9° and m_base = 0.049 eV, both FITTED)."
+          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.65°, θ₂₃=49.75°, δ_CP=278.4°. The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters (except δ_CP parity offset 45.9° and m_base = 0.049906 eV, both FITTED)."
         },
         {
           "type": "heading",
@@ -7954,7 +7954,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The TCS G₂ manifold construction #187 provides all necessary topological inputs to compute the mixing angles without any free parameters or calibration (except δ_CP parity offset 45.9° and m_base = 0.049 eV, both FITTED)."
+          "content": "The TCS G₂ manifold construction #187 provides all necessary topological inputs to compute the mixing angles without any free parameters or calibration (except δ_CP parity offset 45.9° and m_base = 0.049906 eV, both FITTED)."
         },
         {
           "type": "formula",
@@ -8002,7 +8002,7 @@
         },
         {
           "type": "paragraph",
-          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.65°, θ₂₃=49.75°, δ_CP=278.4°. The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters (except δ_CP parity offset 45.9° and m_base = 0.049 eV, both FITTED)."
+          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.65°, θ₂₃=49.75°, δ_CP=278.4°. The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters (except δ_CP parity offset 45.9° and m_base = 0.049906 eV, both FITTED)."
         },
         {
           "type": "heading",
@@ -8088,7 +8088,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-08-19T19:36:36.644254"
+      "timestamp": "2026-08-19T20:41:30.872560"
     },
     "4.7": {
       "id": "4",
@@ -8340,7 +8340,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-08-19T19:36:36.645391"
+      "timestamp": "2026-08-19T20:41:30.873791"
     },
     "5.3": {
       "id": "5",
@@ -8498,7 +8498,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-08-19T19:36:36.645710"
+      "timestamp": "2026-08-19T20:41:30.874116"
     },
     "5.8": {
       "id": "5",
@@ -8820,7 +8820,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-08-19T19:36:36.645825"
+      "timestamp": "2026-08-19T20:41:30.874235"
     },
     "6.1": {
       "id": "6",
@@ -8880,7 +8880,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.645941"
+      "timestamp": "2026-08-19T20:41:30.874355"
     },
     "6.2": {
       "id": "6",
@@ -8928,7 +8928,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.645992"
+      "timestamp": "2026-08-19T20:41:30.874405"
     },
     "6.3": {
       "id": "6",
@@ -9020,7 +9020,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646043"
+      "timestamp": "2026-08-19T20:41:30.874479"
     },
     "6.4": {
       "id": "6",
@@ -9072,7 +9072,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646084"
+      "timestamp": "2026-08-19T20:41:30.874523"
     },
     "6.5": {
       "id": "6",
@@ -9124,7 +9124,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646225"
+      "timestamp": "2026-08-19T20:41:30.874667"
     },
     "6.6": {
       "id": "6",
@@ -9176,7 +9176,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646261"
+      "timestamp": "2026-08-19T20:41:30.874703"
     },
     "6.7": {
       "id": "6",
@@ -9228,7 +9228,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646322"
+      "timestamp": "2026-08-19T20:41:30.874766"
     },
     "6.8": {
       "id": "6",
@@ -9272,7 +9272,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646358"
+      "timestamp": "2026-08-19T20:41:30.874799"
     },
     "6.9": {
       "id": "6",
@@ -9316,7 +9316,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.646393"
+      "timestamp": "2026-08-19T20:41:30.874838"
     },
     "5.5": {
       "id": "5",
@@ -9470,7 +9470,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-08-19T19:36:36.669610"
+      "timestamp": "2026-08-19T20:41:30.898573"
     },
     "2.8": {
       "id": "2",
@@ -9485,7 +9485,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics — from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime M<sup>26</sup>(24,2) with signature (24,1) plus Euclidean bridge and S<sup>(2,0)</sup> shadow-time directions."
+          "content": "The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics — from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime M<sup>26</sup>(24,2) with signature (24,2) plus Euclidean bridge and S<sup>(2,0)</sup> shadow-time directions."
         },
         {
           "type": "formula",
@@ -9499,7 +9499,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 26D(24,2) spacetime M<sup>26</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;B<sub>i</sub><sup>(2,0)</sup> &oplus; S<sup>(2,0)</sup>). The spinor field couples to the 12&times;(2,0) bridge pairs and the T<sup>1</sup> time fiber — the Clifford algebra is Cl<sub>(24,1)</sub> (the bridge+time subalgebra, since S<sup>(2,0)</sup> is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
+          "content": "The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 26D(24,2) spacetime M<sup>26</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;B<sub>i</sub><sup>(2,0)</sup> &oplus; S<sup>(2,0)</sup>). The spinor field couples to the 12&times;(2,0) bridge pairs and the T<sup>1</sup> time fiber — the Clifford algebra is Cl<sub>(24,2)</sub> (the bridge+time subalgebra, since S<sup>(2,0)</sup> is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
         },
         {
           "type": "heading",
@@ -9515,7 +9515,7 @@
         },
         {
           "type": "paragraph",
-          "content": "A 4096-component Dirac spinor in the 26D(24,2) bulk (2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> sub-algebra of the bridge+time sector; the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute scalar rather than spinor modes). Reduces to a 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 &times; 16 under the 4D spacetime &times; internal manifold split."
+          "content": "A 4096-component Dirac spinor in the 26D(24,2) bulk (2<sup>12</sup> = 4096 from Cl<sub>(24,2)</sub> sub-algebra of the bridge+time sector; the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute scalar rather than spinor modes). Reduces to a 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 &times; 16 under the 4D spacetime &times; internal manifold split."
         },
         {
           "type": "heading",
@@ -9523,7 +9523,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over the 25 bridge+time dimensions (12&times;2+1; the Euclidean S<sup>(2,0)</sup> shadow-time directions decouple from spinor kinetics). &Gamma;<sup>M</sup> are 4096&times;4096 matrices in Cl<sub>(24,1)</sub>, reducing to 64&times;64 in the effective dual shadow Cl<sub>(12,1)</sub> after OR reduction."
+          "content": "The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over the 25 bridge+time dimensions (12&times;2+1; the Euclidean S<sup>(2,0)</sup> shadow-time directions decouple from spinor kinetics). &Gamma;<sup>M</sup> are 4096&times;4096 matrices in Cl<sub>(24,2)</sub>, reducing to 64&times;64 in the effective dual shadow Cl<sub>(12,1)</sub> after OR reduction."
         },
         {
           "type": "heading",
@@ -9539,7 +9539,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In 26D with signature (24,1) plus Euclidean bridge: coupling constant g times the bridge coordinates. The Euclidean bridge enables thermal time emergence and resolves causality issues via OR reduction to unified time."
+          "content": "In 26D with signature (24,2) plus Euclidean bridge: coupling constant g times the bridge coordinates. The Euclidean bridge enables thermal time emergence and resolves causality issues via OR reduction to unified time."
         },
         {
           "type": "heading",
@@ -9555,15 +9555,15 @@
         },
         {
           "type": "paragraph",
-          "content": "In the 26D(24,2) bulk, the spinor field uses the bridge+time subalgebra Cl<sub>(24,1)</sub> (dimension 2<sup>12</sup> = 4096) since the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute only scalar fluctuations. Upon OR reduction (R<sub>&perp;</sub> acting on bridge pairs), we obtain the effective Cl<sub>(12,1)</sub> algebra of the 13D observable shadow:"
+          "content": "In the 26D(24,2) bulk, the spinor field uses the bridge+time subalgebra Cl<sub>(24,2)</sub> (dimension 2<sup>12</sup> = 4096) since the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute only scalar fluctuations. Upon OR reduction (R<sub>&perp;</sub> acting on bridge pairs), we obtain the effective Cl<sub>(12,1)</sub> algebra of the 13D observable shadow:"
         },
         {
           "type": "heading",
-          "content": "Dimensional Reduction: Cl<sub>(24,1)</sub> &rarr; Cl<sub>(12,1)</sub>"
+          "content": "Dimensional Reduction: Cl<sub>(24,2)</sub> &rarr; Cl<sub>(12,1)</sub>"
         },
         {
           "type": "paragraph",
-          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,1)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
+          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,2)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
         },
         {
           "type": "paragraph",
@@ -9579,7 +9579,7 @@
         },
         {
           "type": "callout",
-          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,1)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
+          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,2)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
         },
         {
           "type": "heading",
@@ -9619,7 +9619,7 @@
         },
         {
           "type": "callout",
-          "content": "Pneuma field (&Psi;<sub>P</sub>): Chiral spinor field (4096-component in 26D from Cl<sub>(24,1)</sub>, 64-component in dual shadows). Mashiach (An Attractor Scalar) field (&chi;): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1&sigma; (93.8%), 12 exact matches."
+          "content": "Pneuma field (&Psi;<sub>P</sub>): Chiral spinor field (4096-component in 26D from Cl<sub>(24,2)</sub>, 64-component in dual shadows). Mashiach (An Attractor Scalar) field (&chi;): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1&sigma; (93.8%), 12 exact matches."
         },
         {
           "type": "heading",
@@ -9695,7 +9695,7 @@
         },
         {
           "type": "paragraph",
-          "content": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
+          "content": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,2). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
         },
         {
           "type": "heading",
@@ -9703,7 +9703,7 @@
         },
         {
           "type": "callout",
-          "content": "The signature (24,1) with Euclidean bridge arises naturally from the requirement that the Pneuma field generate both spacetime geometry and matter content consistently. The bridge coordinates are not directly observable but manifest through thermodynamic and entropic phenomena in the effective dual shadow theory."
+          "content": "The signature (24,2) with Euclidean bridge arises naturally from the requirement that the Pneuma field generate both spacetime geometry and matter content consistently. The bridge coordinates are not directly observable but manifest through thermodynamic and entropic phenomena in the effective dual shadow theory."
         },
         {
           "type": "heading",
@@ -9751,7 +9751,7 @@
         },
         {
           "type": "formula",
-          "content": "M<sup>(24,1)</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;<sub>i=1</sub><sup>12</sup> B<sub>i</sub><sup>(2,0)</sup>)\nds&sup2; = &minus;dt&sup2; + &sum;<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>&sup2; + dy<sub>2i</sub>&sup2;)\n-- 24 spacelike from 12&times;2 pairs, 1 timelike (unified)"
+          "content": "M<sup>(24,2)</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;<sub>i=1</sub><sup>12</sup> B<sub>i</sub><sup>(2,0)</sup>)\nds&sup2; = &minus;dt&sup2; + &sum;<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>&sup2; + dy<sub>2i</sub>&sup2;)\n-- 24 spacelike from 12&times;2 pairs, 1 timelike (unified)"
         },
         {
           "type": "heading",
@@ -9815,7 +9815,7 @@
         },
         {
           "type": "callout",
-          "content": "Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows — each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R<sub>&perp;</sub> produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action. The S<sup>(2,0)</sup> shadow-time directions provide additional geometric averaging."
+          "content": "Starting configuration: 25D with signature (24,2) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows — each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R<sub>&perp;</sub> produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action. The S<sup>(2,0)</sup> shadow-time directions provide additional geometric averaging."
         },
         {
           "type": "heading",
@@ -9842,7 +9842,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,1): T<sub>p</sub> = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
+          "content": "For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,2): T<sub>p</sub> = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
         },
         {
           "type": "callout",
@@ -9897,7 +9897,7 @@
         },
         {
           "type": "paragraph",
-          "content": "After OR reduction from 26D(24,2) = 12&times;(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl<sub>(24,1)</sub> reduces to effective 64 components:"
+          "content": "After OR reduction from 26D(24,2) = 12&times;(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl<sub>(24,2)</sub> reduces to effective 64 components:"
         },
         {
           "type": "callout",
@@ -9933,7 +9933,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned}\n\\textbf{Level 1} \\; (26D): \\quad & S_{27} = \\int d^{26}X \\sqrt{-G} \\left[ R_{27} + \\bar{\\Psi}_P (i\\Gamma^M D_M - m_P)\\Psi_P \\right] \\\\\n& \\text{Signature: } (24,2) = 12 \\times (2,0) \\oplus S^{2,0} \\oplus (0,1) \\\\[6pt]\n& \\downarrow \\; \\text{OR reduction via } R_\\perp = \\bigotimes_{i=1}^{12} R_\\perp^{(i)} \\\\[6pt]\n\\textbf{Level 2} \\; (2 \\times 13D): \\quad & \\mathcal{L}_{13} = M_*^{11} R_{13} + \\bar{\\Psi}_{64} (i\\gamma^\\mu \\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\\n& \\text{Dual shadows: } 2 \\times 13D(12,1) \\text{ with shared } T^1 \\\\[6pt]\n& \\downarrow \\; \\text{KK reduction over } G_2 \\\\[6pt]\n\\textbf{Level 3} \\; (4D): \\quad & f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F (\\partial_t \\tau)R \\\\[6pt]\n\\textbf{Level 4} \\; (DE): \\quad & \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\quad V = V_0\\left[1 + A\\cos(\\omega\\phi_M/f_\\phi)\\right]\n\\end{aligned}",
+          "content": "\\begin{aligned}\n\\textbf{Level 1} \\; (26D): \\quad & S_{26} = \\int d^{26}X \\sqrt{-G} \\left[ R_{26} + \\bar{\\Psi}_P (i\\Gamma^M D_M - m_P)\\Psi_P \\right] \\\\\n& \\text{Signature: } (24,2) = 12 \\times (2,0) \\oplus S^{2,0} \\oplus (0,1) \\\\[6pt]\n& \\downarrow \\; \\text{OR reduction via } R_\\perp = \\bigotimes_{i=1}^{12} R_\\perp^{(i)} \\\\[6pt]\n\\textbf{Level 2} \\; (2 \\times 13D): \\quad & \\mathcal{L}_{13} = M_*^{11} R_{13} + \\bar{\\Psi}_{64} (i\\gamma^\\mu \\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\\n& \\text{Dual shadows: } 2 \\times 13D(12,1) \\text{ with shared } T^1 \\\\[6pt]\n& \\downarrow \\; \\text{KK reduction over } G_2 \\\\[6pt]\n\\textbf{Level 3} \\; (4D): \\quad & f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F (\\partial_t \\tau)R \\\\[6pt]\n\\textbf{Level 4} \\; (DE): \\quad & \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\quad V = V_0\\left[1 + A\\cos(\\omega\\phi_M/f_\\phi)\\right]\n\\end{aligned}",
           "formula_id": "lagrangian-hierarchy-complete",
           "label": "(3.10)",
           "equationNumber": "(3.10)"
@@ -9942,7 +9942,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics — from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime M<sup>26</sup>(24,2) with signature (24,1) plus Euclidean bridge and S<sup>(2,0)</sup> shadow-time directions."
+          "content": "The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics — from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime M<sup>26</sup>(24,2) with signature (24,2) plus Euclidean bridge and S<sup>(2,0)</sup> shadow-time directions."
         },
         {
           "type": "formula",
@@ -9956,7 +9956,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 26D(24,2) spacetime M<sup>26</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;B<sub>i</sub><sup>(2,0)</sup> &oplus; S<sup>(2,0)</sup>). The spinor field couples to the 12&times;(2,0) bridge pairs and the T<sup>1</sup> time fiber — the Clifford algebra is Cl<sub>(24,1)</sub> (the bridge+time subalgebra, since S<sup>(2,0)</sup> is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
+          "content": "The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 26D(24,2) spacetime M<sup>26</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;B<sub>i</sub><sup>(2,0)</sup> &oplus; S<sup>(2,0)</sup>). The spinor field couples to the 12&times;(2,0) bridge pairs and the T<sup>1</sup> time fiber — the Clifford algebra is Cl<sub>(24,2)</sub> (the bridge+time subalgebra, since S<sup>(2,0)</sup> is Euclidean and contributes scalar degrees of freedom). The 12 bridge pairs create dual 13D(12,1) shadows via OR reduction. Each component has specific physical meaning:"
         },
         {
           "type": "heading",
@@ -9972,7 +9972,7 @@
         },
         {
           "type": "paragraph",
-          "content": "A 4096-component Dirac spinor in the 26D(24,2) bulk (2<sup>12</sup> = 4096 from Cl<sub>(24,1)</sub> sub-algebra of the bridge+time sector; the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute scalar rather than spinor modes). Reduces to a 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 &times; 16 under the 4D spacetime &times; internal manifold split."
+          "content": "A 4096-component Dirac spinor in the 26D(24,2) bulk (2<sup>12</sup> = 4096 from Cl<sub>(24,2)</sub> sub-algebra of the bridge+time sector; the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute scalar rather than spinor modes). Reduces to a 64-component effective spinor via OR reduction. Further decomposes as 64 = 4 &times; 16 under the 4D spacetime &times; internal manifold split."
         },
         {
           "type": "heading",
@@ -9980,7 +9980,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over the 25 bridge+time dimensions (12&times;2+1; the Euclidean S<sup>(2,0)</sup> shadow-time directions decouple from spinor kinetics). &Gamma;<sup>M</sup> are 4096&times;4096 matrices in Cl<sub>(24,1)</sub>, reducing to 64&times;64 in the effective dual shadow Cl<sub>(12,1)</sub> after OR reduction."
+          "content": "The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over the 25 bridge+time dimensions (12&times;2+1; the Euclidean S<sup>(2,0)</sup> shadow-time directions decouple from spinor kinetics). &Gamma;<sup>M</sup> are 4096&times;4096 matrices in Cl<sub>(24,2)</sub>, reducing to 64&times;64 in the effective dual shadow Cl<sub>(12,1)</sub> after OR reduction."
         },
         {
           "type": "heading",
@@ -9996,7 +9996,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In 26D with signature (24,1) plus Euclidean bridge: coupling constant g times the bridge coordinates. The Euclidean bridge enables thermal time emergence and resolves causality issues via OR reduction to unified time."
+          "content": "In 26D with signature (24,2) plus Euclidean bridge: coupling constant g times the bridge coordinates. The Euclidean bridge enables thermal time emergence and resolves causality issues via OR reduction to unified time."
         },
         {
           "type": "heading",
@@ -10012,15 +10012,15 @@
         },
         {
           "type": "paragraph",
-          "content": "In the 26D(24,2) bulk, the spinor field uses the bridge+time subalgebra Cl<sub>(24,1)</sub> (dimension 2<sup>12</sup> = 4096) since the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute only scalar fluctuations. Upon OR reduction (R<sub>&perp;</sub> acting on bridge pairs), we obtain the effective Cl<sub>(12,1)</sub> algebra of the 13D observable shadow:"
+          "content": "In the 26D(24,2) bulk, the spinor field uses the bridge+time subalgebra Cl<sub>(24,2)</sub> (dimension 2<sup>12</sup> = 4096) since the Euclidean S<sup>(2,0)</sup> shadow-time directions contribute only scalar fluctuations. Upon OR reduction (R<sub>&perp;</sub> acting on bridge pairs), we obtain the effective Cl<sub>(12,1)</sub> algebra of the 13D observable shadow:"
         },
         {
           "type": "heading",
-          "content": "Dimensional Reduction: Cl<sub>(24,1)</sub> &rarr; Cl<sub>(12,1)</sub>"
+          "content": "Dimensional Reduction: Cl<sub>(24,2)</sub> &rarr; Cl<sub>(12,1)</sub>"
         },
         {
           "type": "paragraph",
-          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,1)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
+          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,2)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
         },
         {
           "type": "paragraph",
@@ -10036,7 +10036,7 @@
         },
         {
           "type": "callout",
-          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,1)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
+          "content": "Full 26D: Spinor dimension = 2<sup>12</sup> = 4096 components from Cl<sub>(24,2)</sub>. Effective dual shadows: After OR reduction, the spinor reduces to 2<sup>6</sup> = 64 components. The 12 bridge pairs WARP to create dual 13D(12,1) shadows via coordinate selection (each: 12 spatial + 1 time (its own))."
         },
         {
           "type": "heading",
@@ -10076,7 +10076,7 @@
         },
         {
           "type": "callout",
-          "content": "Pneuma field (&Psi;<sub>P</sub>): Chiral spinor field (4096-component in 26D from Cl<sub>(24,1)</sub>, 64-component in dual shadows). Mashiach (An Attractor Scalar) field (&chi;): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1&sigma; (93.8%), 12 exact matches."
+          "content": "Pneuma field (&Psi;<sub>P</sub>): Chiral spinor field (4096-component in 26D from Cl<sub>(24,2)</sub>, 64-component in dual shadows). Mashiach (An Attractor Scalar) field (&chi;): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1&sigma; (93.8%), 12 exact matches."
         },
         {
           "type": "heading",
@@ -10152,7 +10152,7 @@
         },
         {
           "type": "paragraph",
-          "content": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
+          "content": "A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,2). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
         },
         {
           "type": "heading",
@@ -10160,7 +10160,7 @@
         },
         {
           "type": "callout",
-          "content": "The signature (24,1) with Euclidean bridge arises naturally from the requirement that the Pneuma field generate both spacetime geometry and matter content consistently. The bridge coordinates are not directly observable but manifest through thermodynamic and entropic phenomena in the effective dual shadow theory."
+          "content": "The signature (24,2) with Euclidean bridge arises naturally from the requirement that the Pneuma field generate both spacetime geometry and matter content consistently. The bridge coordinates are not directly observable but manifest through thermodynamic and entropic phenomena in the effective dual shadow theory."
         },
         {
           "type": "heading",
@@ -10208,7 +10208,7 @@
         },
         {
           "type": "formula",
-          "content": "M<sup>(24,1)</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;<sub>i=1</sub><sup>12</sup> B<sub>i</sub><sup>(2,0)</sup>)\nds&sup2; = &minus;dt&sup2; + &sum;<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>&sup2; + dy<sub>2i</sub>&sup2;)\n-- 24 spacelike from 12&times;2 pairs, 1 timelike (unified)"
+          "content": "M<sup>(24,2)</sup> = T<sup>1</sup> &times;<sub>fiber</sub> (&oplus;<sub>i=1</sub><sup>12</sup> B<sub>i</sub><sup>(2,0)</sup>)\nds&sup2; = &minus;dt&sup2; + &sum;<sub>i=1</sub><sup>12</sup> (dy<sub>1i</sub>&sup2; + dy<sub>2i</sub>&sup2;)\n-- 24 spacelike from 12&times;2 pairs, 1 timelike (unified)"
         },
         {
           "type": "heading",
@@ -10272,7 +10272,7 @@
         },
         {
           "type": "callout",
-          "content": "Starting configuration: 25D with signature (24,1) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows — each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R<sub>&perp;</sub> produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action. The S<sup>(2,0)</sup> shadow-time directions provide additional geometric averaging."
+          "content": "Starting configuration: 25D with signature (24,2) = 12&times;(2,0) + (0,1). The 12 Euclidean bridge pairs WARP to create 2&times;13D(12,1) shadows — each shadow has 12 spatial dimensions (from bridge coordinate selection) + 1 shared time = 13D(12,1). OR reduction via R<sub>&perp;</sub> produces this dual-shadow structure while preserving physical degrees of freedom. Bridge effects persist through Euclidean substrate coupling in the effective action. The S<sup>(2,0)</sup> shadow-time directions provide additional geometric averaging."
         },
         {
           "type": "heading",
@@ -10299,7 +10299,7 @@
         },
         {
           "type": "paragraph",
-          "content": "For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,1): T<sub>p</sub> = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
+          "content": "For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,2): T<sub>p</sub> = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
         },
         {
           "type": "callout",
@@ -10354,7 +10354,7 @@
         },
         {
           "type": "paragraph",
-          "content": "After OR reduction from 26D(24,2) = 12&times;(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl<sub>(24,1)</sub> reduces to effective 64 components:"
+          "content": "After OR reduction from 26D(24,2) = 12&times;(2,0) + (0,1) to dual 13D(12,1) shadows with unified time, the 4096-component spinor from Cl<sub>(24,2)</sub> reduces to effective 64 components:"
         },
         {
           "type": "callout",
@@ -10390,7 +10390,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned}\n\\textbf{Level 1} \\; (26D): \\quad & S_{27} = \\int d^{26}X \\sqrt{-G} \\left[ R_{27} + \\bar{\\Psi}_P (i\\Gamma^M D_M - m_P)\\Psi_P \\right] \\\\\n& \\text{Signature: } (24,2) = 12 \\times (2,0) \\oplus S^{2,0} \\oplus (0,1) \\\\[6pt]\n& \\downarrow \\; \\text{OR reduction via } R_\\perp = \\bigotimes_{i=1}^{12} R_\\perp^{(i)} \\\\[6pt]\n\\textbf{Level 2} \\; (2 \\times 13D): \\quad & \\mathcal{L}_{13} = M_*^{11} R_{13} + \\bar{\\Psi}_{64} (i\\gamma^\\mu \\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\\n& \\text{Dual shadows: } 2 \\times 13D(12,1) \\text{ with shared } T^1 \\\\[6pt]\n& \\downarrow \\; \\text{KK reduction over } G_2 \\\\[6pt]\n\\textbf{Level 3} \\; (4D): \\quad & f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F (\\partial_t \\tau)R \\\\[6pt]\n\\textbf{Level 4} \\; (DE): \\quad & \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\quad V = V_0\\left[1 + A\\cos(\\omega\\phi_M/f_\\phi)\\right]\n\\end{aligned}",
+          "content": "\\begin{aligned}\n\\textbf{Level 1} \\; (26D): \\quad & S_{26} = \\int d^{26}X \\sqrt{-G} \\left[ R_{26} + \\bar{\\Psi}_P (i\\Gamma^M D_M - m_P)\\Psi_P \\right] \\\\\n& \\text{Signature: } (24,2) = 12 \\times (2,0) \\oplus S^{2,0} \\oplus (0,1) \\\\[6pt]\n& \\downarrow \\; \\text{OR reduction via } R_\\perp = \\bigotimes_{i=1}^{12} R_\\perp^{(i)} \\\\[6pt]\n\\textbf{Level 2} \\; (2 \\times 13D): \\quad & \\mathcal{L}_{13} = M_*^{11} R_{13} + \\bar{\\Psi}_{64} (i\\gamma^\\mu \\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\\n& \\text{Dual shadows: } 2 \\times 13D(12,1) \\text{ with shared } T^1 \\\\[6pt]\n& \\downarrow \\; \\text{KK reduction over } G_2 \\\\[6pt]\n\\textbf{Level 3} \\; (4D): \\quad & f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F (\\partial_t \\tau)R \\\\[6pt]\n\\textbf{Level 4} \\; (DE): \\quad & \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\quad V = V_0\\left[1 + A\\cos(\\omega\\phi_M/f_\\phi)\\right]\n\\end{aligned}",
           "formula_id": "lagrangian-hierarchy-complete",
           "label": "(3.10)",
           "equationNumber": "(3.10)"
@@ -10416,7 +10416,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-08-19T19:36:36.669828"
+      "timestamp": "2026-08-19T20:41:30.898768"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -10427,7 +10427,7 @@
       "title": "The Thermal Time Hypothesis and Unified Time Framework",
       "shortTitle": "The Thermal Time Hypothesis and Unified Time Framework",
       "order": 1.5,
-      "abstract": "We implement the Connes-Rovelli thermal time hypothesis in the Principia Metaphysica framework. Time emerges from the Pneuma field's thermodynamic properties via the modular Hamiltonian. The base coupling &alpha;<sub>T,base</sub> = 2&pi;/b&#8323; is derived from KMS periodicity on G&#8322; topology (DERIVED). The full coupling &alpha;<sub>T</sub> = 2.6 = D<sub>total</sub>/D<sub>string</sub> = 26/10 (DERIVED, zero free parameters). The entropy gradient dS/dt &ge; 0 provides the thermodynamic arrow of time.",
+      "abstract": "We implement the Connes-Rovelli thermal time hypothesis in the Principia Metaphysica framework. Time emerges from the Pneuma field's thermodynamic properties via the modular Hamiltonian. The base coupling &alpha;<sub>T,base</sub> = 2&pi;/b&#8323; is derived from KMS periodicity on G&#8322; topology (DERIVED). The full coupling &alpha;<sub>T</sub> = 2.6 = D<sub>total</sub>/D<sub>string</sub> = 26/10 (STRUCTURAL: the γ correction is built so b₃ and π cancel, leaving the postulated ratio). The entropy gradient dS/dt &ge; 0 provides the thermodynamic arrow of time.",
       "contentBlocks": [
         {
           "type": "paragraph",
@@ -10556,7 +10556,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-19T19:36:36.670130"
+      "timestamp": "2026-08-19T20:41:30.899076"
     },
     "7.2": {
       "id": "7",
@@ -10672,7 +10672,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-08-19T19:36:36.670366"
+      "timestamp": "2026-08-19T20:41:30.899391"
     },
     "7.7": {
       "id": "7",
@@ -10754,7 +10754,7 @@
         "consciousness.unlocking_probability_6",
         "consciousness.unlocking_probability_10"
       ],
-      "timestamp": "2026-08-19T19:36:36.670581"
+      "timestamp": "2026-08-19T20:41:30.899696"
     },
     "7.8": {
       "id": "7",
@@ -10814,7 +10814,7 @@
         "consciousness.dice_branches",
         "consciousness.dice_entropy"
       ],
-      "timestamp": "2026-08-19T19:36:36.738039"
+      "timestamp": "2026-08-19T20:41:30.978759"
     },
     "7.6": {
       "id": "7",
@@ -10884,7 +10884,7 @@
         "consciousness.shielded_tau_ms",
         "consciousness.shielding_factor"
       ],
-      "timestamp": "2026-08-19T19:36:36.738189"
+      "timestamp": "2026-08-19T20:41:30.978945"
     },
     "7": {
       "id": "7",
@@ -13732,7 +13732,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.738318"
+      "timestamp": "2026-08-19T20:41:30.979091"
     },
     "6": {
       "id": "6",
@@ -16638,7 +16638,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-08-19T19:36:36.738493"
+      "timestamp": "2026-08-19T20:41:30.979290"
     },
     "1.1": {
       "id": "1",
@@ -16669,11 +16669,11 @@
         },
         {
           "type": "paragraph",
-          "content": "At the highest level, the framework connects to the algebraic structures of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong> via the bosonic string (26D parent, signature (24,1) before the S<sup>(2,0)</sup> extension). In PM v24.2, the actual bulk has structure <strong>M<sup>26</sup>(24,2)</strong>: twenty-four physics core dimensions from the 12×(2,0) bridge pairs, one unified timelike, and two shadow-time directions S<sup>(2,0)</sup>. This M<sup>26</sup>(24,2) configuration is ghost-free: the single timelike direction prevents closed timelike curves, and OR reduction to 13D(12,1) shadows removes all unphysical states."
+          "content": "At the highest level, the framework connects to the algebraic structures of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong> via the bosonic string (26D parent, signature (24,2) before the S<sup>(2,0)</sup> extension). In PM v24.2, the actual bulk has structure <strong>M<sup>26</sup>(24,2)</strong>: twenty-four physics core dimensions from the 12×(2,0) bridge pairs, one unified timelike, and two shadow-time directions S<sup>(2,0)</sup>. This M<sup>26</sup>(24,2) configuration is ghost-free: the single timelike direction prevents closed timelike curves, and OR reduction to 13D(12,1) shadows removes all unphysical states."
         },
         {
           "type": "paragraph",
-          "content": "<strong>Why (24,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,1)) are required for modular invariance (Polyakov 1981). The 24 transverse dimensions match the Leech lattice — the unique even unimodular lattice in 24D with no roots — connecting via Moonshine to the Monster Group (Borcherds 1992). PM extends the 25D bosonic string parent (signature (24,1)) by appending the S<sup>(2,0)</sup> shadow-time directions, which provide architectural averaging across the 12 bridge pairs and stabilize the dual-shadow construction, yielding the full M<sup>26</sup>(24,2) bulk. The resulting (24,2) structure preserves ghost-freedom (single timelike) while accommodating both the G₂ compactification and the shadow-time directions as independent geometric structures."
+          "content": "<strong>Why (24,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,2)) are required for modular invariance (Polyakov 1981). The 24 transverse dimensions match the Leech lattice — the unique even unimodular lattice in 24D with no roots — connecting via Moonshine to the Monster Group (Borcherds 1992). PM extends the 25D bosonic string parent (signature (24,2)) by appending the S<sup>(2,0)</sup> shadow-time directions, which provide architectural averaging across the 12 bridge pairs and stabilize the dual-shadow construction, yielding the full M<sup>26</sup>(24,2) bulk. The resulting (24,2) structure preserves ghost-freedom (single timelike) while accommodating both the G₂ compactification and the shadow-time directions as independent geometric structures."
         },
         {
           "type": "equation",
@@ -16848,7 +16848,7 @@
             "<strong>Dimensional Accounting:</strong> 24 core + 24 local + 2 central = 50 spacelike dimensions",
             "<strong>Local Level:</strong> 12×(2,0) pairs → micro-stability (per-branch selection)",
             "<strong>Central Level:</strong> 1×(2,0) pair → macro-precision (global averaging)",
-            "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,1) = 12×(2,0) + (0,1) [pre-S<sup>(2,0)</sup> extension]; full bulk is M<sup>26</sup>(24,2) with Euclidean shadow-time directions"
+            "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,2) = 12×(2,0) + (0,1) [pre-S<sup>(2,0)</sup> extension]; full bulk is M<sup>26</sup>(24,2) with Euclidean shadow-time directions"
           ]
         },
         {
@@ -16995,11 +16995,11 @@
         },
         {
           "type": "paragraph",
-          "content": "At the highest level, the framework connects to the algebraic structures of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong> via the bosonic string (26D parent, signature (24,1) before the S<sup>(2,0)</sup> extension). In PM v24.2, the actual bulk has structure <strong>M<sup>26</sup>(24,2)</strong>: twenty-four physics core dimensions from the 12×(2,0) bridge pairs, one unified timelike, and two shadow-time directions S<sup>(2,0)</sup>. This M<sup>26</sup>(24,2) configuration is ghost-free: the single timelike direction prevents closed timelike curves, and OR reduction to 13D(12,1) shadows removes all unphysical states."
+          "content": "At the highest level, the framework connects to the algebraic structures of the <strong>Monster Group</strong> and the <strong>Leech Lattice</strong> via the bosonic string (26D parent, signature (24,2) before the S<sup>(2,0)</sup> extension). In PM v24.2, the actual bulk has structure <strong>M<sup>26</sup>(24,2)</strong>: twenty-four physics core dimensions from the 12×(2,0) bridge pairs, one unified timelike, and two shadow-time directions S<sup>(2,0)</sup>. This M<sup>26</sup>(24,2) configuration is ghost-free: the single timelike direction prevents closed timelike curves, and OR reduction to 13D(12,1) shadows removes all unphysical states."
         },
         {
           "type": "paragraph",
-          "content": "<strong>Why (24,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,1)) are required for modular invariance (Polyakov 1981). The 24 transverse dimensions match the Leech lattice — the unique even unimodular lattice in 24D with no roots — connecting via Moonshine to the Monster Group (Borcherds 1992). PM extends the 25D bosonic string parent (signature (24,1)) by appending the S<sup>(2,0)</sup> shadow-time directions, which provide architectural averaging across the 12 bridge pairs and stabilize the dual-shadow construction, yielding the full M<sup>26</sup>(24,2) bulk. The resulting (24,2) structure preserves ghost-freedom (single timelike) while accommodating both the G₂ compactification and the shadow-time directions as independent geometric structures."
+          "content": "<strong>Why (24,2) specifically?</strong> The construction begins with the bosonic string: exactly 25 spacetime dimensions (24 spatial + 1 time, signature (24,2)) are required for modular invariance (Polyakov 1981). The 24 transverse dimensions match the Leech lattice — the unique even unimodular lattice in 24D with no roots — connecting via Moonshine to the Monster Group (Borcherds 1992). PM extends the 25D bosonic string parent (signature (24,2)) by appending the S<sup>(2,0)</sup> shadow-time directions, which provide architectural averaging across the 12 bridge pairs and stabilize the dual-shadow construction, yielding the full M<sup>26</sup>(24,2) bulk. The resulting (24,2) structure preserves ghost-freedom (single timelike) while accommodating both the G₂ compactification and the shadow-time directions as independent geometric structures."
         },
         {
           "type": "equation",
@@ -17174,7 +17174,7 @@
             "<strong>Dimensional Accounting:</strong> 24 core + 24 local + 2 central = 50 spacelike dimensions",
             "<strong>Local Level:</strong> 12×(2,0) pairs → micro-stability (per-branch selection)",
             "<strong>Central Level:</strong> 1×(2,0) pair → macro-precision (global averaging)",
-            "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,1) = 12×(2,0) + (0,1) [pre-S<sup>(2,0)</sup> extension]; full bulk is M<sup>26</sup>(24,2) with Euclidean shadow-time directions"
+            "<strong>Signature Preservation:</strong> Bridge+time subalgebra (24,2) = 12×(2,0) + (0,1) [pre-S<sup>(2,0)</sup> extension]; full bulk is M<sup>26</sup>(24,2) with Euclidean shadow-time directions"
           ]
         },
         {
@@ -17306,7 +17306,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.738749"
+      "timestamp": "2026-08-19T20:41:30.979586"
     },
     "2.6": {
       "id": "2",
@@ -17564,7 +17564,7 @@
           "label": "ghost-free-proof",
           "equationNumber": "ghost-free-proof",
           "items": [
-            "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R yields second-order equations of motion with a positive-definite kinetic term for the two physical graviton polarizations. The (26,1) unified-time signature eliminates the negative-norm temporal modes that would otherwise produce gravitational ghosts.",
+            "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R yields second-order equations of motion with a positive-definite kinetic term for the two physical graviton polarizations. The (24,2) unified-time signature eliminates the negative-norm temporal modes that would otherwise produce gravitational ghosts.",
             "<strong>Yang-Mills sector (F²):</strong> The gauge field strength F² = F<sub>μν</sub><sup>a</sup> F<sup>aμν</sup> is gauge-invariant by construction. Ghost-freedom follows from the standard Faddeev-Popov procedure: the unphysical longitudinal and temporal polarizations are exactly cancelled by the Faddeev-Popov ghost determinant, leaving only the D-2 physical transverse modes at each step of the KK reduction.",
             "<strong>Moduli potential sector V(T):</strong> The Kähler moduli potential V(T) is stabilised by the racetrack mechanism (dual non-perturbative exponentials), which guarantees that V(T) is bounded below. The moduli kinetic terms inherit positive-definiteness from the Kähler metric on moduli space. No flat directions remain after stabilisation, preventing runaway ghost modes.",
             "<strong>Absence of higher-derivative terms:</strong> The master Lagrangian contains no R², R<sub>μν</sub>R<sup>μν</sup>, or other higher-derivative gravity terms. This is structurally enforced: the G₂ holonomy compactification is Ricci-flat, so higher-curvature corrections vanish at leading order. Consequently, there are no Ostrogradsky ghosts (the massive spin-2 states that generically plague higher-derivative gravity theories)."
@@ -17996,7 +17996,7 @@
           "label": "ghost-free-proof",
           "equationNumber": "ghost-free-proof",
           "items": [
-            "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R yields second-order equations of motion with a positive-definite kinetic term for the two physical graviton polarizations. The (26,1) unified-time signature eliminates the negative-norm temporal modes that would otherwise produce gravitational ghosts.",
+            "<strong>Einstein-Hilbert sector (R):</strong> The Ricci scalar R yields second-order equations of motion with a positive-definite kinetic term for the two physical graviton polarizations. The (24,2) unified-time signature eliminates the negative-norm temporal modes that would otherwise produce gravitational ghosts.",
             "<strong>Yang-Mills sector (F²):</strong> The gauge field strength F² = F<sub>μν</sub><sup>a</sup> F<sup>aμν</sup> is gauge-invariant by construction. Ghost-freedom follows from the standard Faddeev-Popov procedure: the unphysical longitudinal and temporal polarizations are exactly cancelled by the Faddeev-Popov ghost determinant, leaving only the D-2 physical transverse modes at each step of the KK reduction.",
             "<strong>Moduli potential sector V(T):</strong> The Kähler moduli potential V(T) is stabilised by the racetrack mechanism (dual non-perturbative exponentials), which guarantees that V(T) is bounded below. The moduli kinetic terms inherit positive-definiteness from the Kähler metric on moduli space. No flat directions remain after stabilisation, preventing runaway ghost modes.",
             "<strong>Absence of higher-derivative terms:</strong> The master Lagrangian contains no R², R<sub>μν</sub>R<sup>μν</sup>, or other higher-derivative gravity terms. This is structurally enforced: the G₂ holonomy compactification is Ricci-flat, so higher-curvature corrections vanish at leading order. Consequently, there are no Ostrogradsky ghosts (the massive spin-2 states that generically plague higher-derivative gravity theories)."
@@ -18186,7 +18186,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.738928"
+      "timestamp": "2026-08-19T20:41:30.979782"
     },
     "3.7": {
       "id": "3",
@@ -18826,7 +18826,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.739101"
+      "timestamp": "2026-08-19T20:41:30.979971"
     },
     "4": {
       "id": "4",
@@ -19344,7 +19344,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-08-19T19:36:36.740138"
+      "timestamp": "2026-08-19T20:41:30.981555"
     },
     "A": {
       "id": "A",
@@ -19554,7 +19554,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-08-19T19:36:36.740212"
+      "timestamp": "2026-08-19T20:41:30.981633"
     },
     "B": {
       "id": "B",
@@ -19790,7 +19790,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-08-19T19:36:36.740268"
+      "timestamp": "2026-08-19T20:41:30.981698"
     },
     "C": {
       "id": "C",
@@ -19996,7 +19996,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-08-19T19:36:36.740326"
+      "timestamp": "2026-08-19T20:41:30.981758"
     },
     "D": {
       "id": "D",
@@ -20194,7 +20194,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-08-19T19:36:36.740375"
+      "timestamp": "2026-08-19T20:41:30.981808"
     },
     "E": {
       "id": "E",
@@ -20396,7 +20396,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-08-19T19:36:36.740428"
+      "timestamp": "2026-08-19T20:41:30.981859"
     },
     "F": {
       "id": "F",
@@ -20606,7 +20606,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-08-19T19:36:36.740896"
+      "timestamp": "2026-08-19T20:41:30.982351"
     },
     "G": {
       "id": "G",
@@ -20954,7 +20954,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-08-19T19:36:36.741494"
+      "timestamp": "2026-08-19T20:41:30.983062"
     },
     "H": {
       "id": "H",
@@ -21344,7 +21344,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-08-19T19:36:36.741591"
+      "timestamp": "2026-08-19T20:41:30.983164"
     },
     "I": {
       "id": "I",
@@ -21698,7 +21698,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-08-19T19:36:36.741684"
+      "timestamp": "2026-08-19T20:41:30.983263"
     },
     "J": {
       "id": "J",
@@ -21980,7 +21980,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-08-19T19:36:36.741775"
+      "timestamp": "2026-08-19T20:41:30.983362"
     },
     "K": {
       "id": "K",
@@ -22396,7 +22396,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-08-19T19:36:36.741847"
+      "timestamp": "2026-08-19T20:41:30.983453"
     },
     "L": {
       "id": "L",
@@ -22688,7 +22688,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-08-19T19:36:36.742021"
+      "timestamp": "2026-08-19T20:41:30.983649"
     },
     "Z": {
       "id": "Z",
@@ -22878,7 +22878,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-08-19T19:36:36.742124"
+      "timestamp": "2026-08-19T20:41:30.983767"
     },
     "2.2": {
       "id": "2",
@@ -23220,7 +23220,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-08-19T19:36:36.742407"
+      "timestamp": "2026-08-19T20:41:30.984076"
     },
     "R.1": {
       "id": "R",
@@ -23776,7 +23776,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-08-19T19:36:36.742654"
+      "timestamp": "2026-08-19T20:41:30.984368"
     },
     "S.1": {
       "id": "S",
@@ -24490,7 +24490,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-08-19T19:36:36.742794"
+      "timestamp": "2026-08-19T20:41:30.984540"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -24566,7 +24566,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-08-19T19:36:36.743095"
+      "timestamp": "2026-08-19T20:41:30.984878"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -24652,7 +24652,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-08-19T19:36:36.743153"
+      "timestamp": "2026-08-19T20:41:30.984944"
     },
     "5.1.1": {
       "id": "5",
@@ -24818,7 +24818,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-08-19T19:36:36.743250"
+      "timestamp": "2026-08-19T20:41:30.985055"
     },
     "2.3": {
       "id": "2",
@@ -25134,7 +25134,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-08-19T19:36:36.743417"
+      "timestamp": "2026-08-19T20:41:30.985237"
     },
     "5.2.1": {
       "id": "5",
@@ -25300,7 +25300,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-08-19T19:36:36.743522"
+      "timestamp": "2026-08-19T20:41:30.985361"
     },
     "6.2.1": {
       "id": "6",
@@ -25450,7 +25450,7 @@
         "cosmology.cp_phase_sterile",
         "cosmology.k_bary_normalization"
       ],
-      "timestamp": "2026-08-19T19:36:36.743591"
+      "timestamp": "2026-08-19T20:41:30.985451"
     },
     "7.1": {
       "id": "7",
@@ -25602,7 +25602,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-08-19T19:36:36.743678"
+      "timestamp": "2026-08-19T20:41:30.985547"
     },
     "7.3": {
       "id": "7",
@@ -25766,7 +25766,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-08-19T19:36:36.743762"
+      "timestamp": "2026-08-19T20:41:30.985646"
     },
     "7.4": {
       "id": "7",
@@ -25884,7 +25884,7 @@
         "portals.sterile_mass_scale_gev",
         "portals.sterile_n_eff_contribution"
       ],
-      "timestamp": "2026-08-19T19:36:36.744058"
+      "timestamp": "2026-08-19T20:41:30.985979"
     },
     "7.5": {
       "id": "7",
@@ -26044,7 +26044,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-08-19T19:36:36.744175"
+      "timestamp": "2026-08-19T20:41:30.986109"
     }
   }
 }

@@ -4,18 +4,22 @@
   "label": "DESI Dark Energy Alignment",
   "category": "COSMOLOGICAL",
   "version": "23.3",
-  "status": "LOCKED",
-  "wl_code": "With[{b3 = 24, w0DESI = -0.957, w0Sigma = 0.067}, w0Theory = -1 + 1/b3; waTheory = 0.0; w0Deviation = Abs[w0Theory - w0DESI]/w0Sigma; {N[w0Theory, 6], N[w0Deviation, 3], \"STERILE_STASIS\"}]",
-  "result": "{-0.958333, 0.020, STERILE_STASIS}",
-  "note": "Prediction: w0 = -23/24, wa = 0. DESI 2025: w0 = -0.957 +/- 0.067. Deviation: 0.02 sigma (consistent)",
-  "verification_status": "LOCKED",
+  "status": "TENSION",
+  "wl_code": "With[{b3 = 24, w0DESI = -0.752, w0Sigma = 0.057}, w0Theory = -1 + 1/b3; waTheory = -1/Sqrt[b3]; w0Deviation = Abs[w0Theory - w0DESI]/w0Sigma; {N[w0Theory, 6], N[waTheory, 4], N[w0Deviation, 3]}]",
+  "result": "{-0.958333, -0.2041, 3.62}",
+  "note": "Prediction: w0 = -23/24 = -0.9583, wa = -1/sqrt(b3) = -0.2041 (canonical; the earlier 'wa = 0' entry contradicted the registry). DESI DR2 w0waCDM headline (arXiv:2503.14738): w0 = -0.752 +/- 0.057, wa = -0.86 +/- 0.22. Deviations: 3.62 sigma (w0), 2.98 sigma (wa). Against the framework-adopted thawing anchor (w0 = -0.957 +/- 0.067, ATTRIBUTION UNVERIFIED) w0 would read 0.02 sigma.",
+  "verification_status": "TENSION",
   "experimental_data": {
     "DESI_DR2_2025": {
       "w0": {
-        "value": -0.957,
-        "uncertainty": 0.067
+        "value": -0.752,
+        "uncertainty": 0.057
       },
-      "source": "DESI Year 1 BAO + Planck + Pantheon+"
+      "wa": {
+        "value": -0.86,
+        "uncertainty": 0.22
+      },
+      "source": "DESI DR2 BAO + CMB + DESY5 (arXiv:2503.14738)"
     }
   },
   "pm_predictions": {

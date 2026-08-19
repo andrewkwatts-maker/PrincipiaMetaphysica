@@ -3,8 +3,8 @@
   "note": "SSOT drift audit: config.py Formula literals cross-checked against the simulation registry (parameters.json). DRIFT = literal disagrees with registry; ORPHAN = no registry source exists for the literal. Roadmap: replace config literals with registry lookups so every displayed number traces to the b3=24 derivation chain or a cited experimental dataset.",
   "summary": {
     "checked": 34,
-    "match": 14,
-    "drift": 8,
+    "match": 13,
+    "drift": 9,
     "orphan": 12
   },
   "findings": [
@@ -46,6 +46,18 @@
           "field": "computed_value",
           "config": -0.9583,
           "registry": -0.9583333333333334,
+          "ok": true
+        },
+        {
+          "field": "experimental_value",
+          "config": -0.957,
+          "registry": -0.957,
+          "ok": true
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 0.027,
+          "registry": 0.01990049751243893,
           "ok": true
         }
       ]
@@ -305,7 +317,7 @@
         {
           "field": "computed_value",
           "config": 0.002525,
-          "registry": -0.0024042084022500004,
+          "registry": -0.002494086266377881,
           "ok": false
         },
         {
@@ -317,7 +329,7 @@
         {
           "field": "sigma_deviation",
           "config": 0.4,
-          "registry": 3.3496999196428368,
+          "registry": 0.13977620078995368,
           "ok": false
         }
       ]
@@ -352,7 +364,7 @@
     },
     {
       "formula_id": "dark-energy-wa",
-      "verdict": "MATCH",
+      "verdict": "DRIFT",
       "registry_path": "cosmology.wa_derived",
       "registry_status": "GEOMETRIC",
       "checks": [
@@ -361,6 +373,18 @@
           "config": -0.2041,
           "registry": -0.20412414523193154,
           "ok": true
+        },
+        {
+          "field": "experimental_value",
+          "config": -0.75,
+          "registry": -0.86,
+          "ok": false
+        },
+        {
+          "field": "sigma_deviation",
+          "config": 1.88,
+          "registry": 2.981253885309402,
+          "ok": false
         }
       ]
     },

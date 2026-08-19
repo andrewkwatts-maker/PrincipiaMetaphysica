@@ -2,14 +2,14 @@
   "proof_id": "G60_desi_static_anchor",
   "gate_id": 60,
   "gate_name": "DESI Static Anchor",
-  "label": "w_a = -4/sqrt(b3) thawing evolution (FITTED dim(Psi)=4 projection)",
+  "label": "w_a = -1/sqrt(b3) (CANONICAL; the -4/sqrt(b3) = -0.8165 dim(Psi)=4 variant is FITTED and retired)",
   "category": "Cosmology",
   "phase": 5,
   "block": "F",
   "version": "24.2",
   "wl_code": "wa = -1/Sqrt[24]",
   "result": "-0.2041",
-  "formula": "w_a = -4/\u221a24 = -0.8165",
+  "formula": "w_a = -1/\u221a24 = -0.2041",
   "verification_status": "VERIFIED",
   "evaluation_status": "COMPUTED_PASS",
   "evaluation": {
@@ -27,7 +27,7 @@
     "status": "COMPUTED_PASS"
   },
   "derivation_status": "RIGOROUS",
-  "note": "Gate 60: CANONICAL ruling (2026-08): wa = -1/sqrt(b3) = -0.204, the pure zero-spare-variable form \u2014 1.88 sigma from DESI DR1 (-0.75 +/- 0.29), an honest tension. The x4 co-associative projection (-0.8165, 0.23 sigma) was a post-DESI graft and is retained only as the RETRODICTED variant cosmology.wa_projection_x4.. w_a = -4/sqrt(b3) thawing evolution (FITTED dim(Psi)=4 projection)",
-  "timestamp": "2026-08-19T09:36:42.182821Z",
+  "note": "Gate 60: CANONICAL ruling (2026-08): wa = -1/sqrt(b3) = -0.204, the pure zero-spare-variable form \u2014 1.88 sigma from DESI DR1 (-0.75 +/- 0.29), an honest tension. The x4 co-associative projection (-0.8165, 0.23 sigma) was a post-DESI graft and is retained only as the RETRODICTED variant cosmology.wa_projection_x4.. w_a = -1/sqrt(b3) (CANONICAL; the -4/sqrt(b3) = -0.8165 dim(Psi)=4 variant is FITTED and retired)",
+  "timestamp": "2026-08-19T10:41:37.113702Z",
   "hash": "5e9d912e2c24592b"
 }

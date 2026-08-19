@@ -2,7 +2,7 @@
   "version": "16.2",
   "title": "Gates of Integrity",
   "description": "Complete sterile certification framework with 72 hard locks organized into 6 symmetry blocks (12 gates each).",
-  "timestamp": "2026-08-19T19:36:41.347029",
+  "timestamp": "2026-08-19T20:41:36.125086",
   "architecture": {
     "total_gates": 72,
     "blocks": 6,
@@ -744,12 +744,12 @@
       "name": "DESI Static Anchor",
       "phase": 5,
       "block": "F",
-      "logic": "w_a = -4/sqrt(b3) thawing evolution (FITTED dim(Psi)=4 projection)",
-      "validation": "0.54 sigma vs DESI w_a = -0.99 +/- 0.32",
-      "formula": "w_a = -4/√24 = -0.8165",
+      "logic": "w_a = -1/sqrt(b3) (CANONICAL; the -4/sqrt(b3) = -0.8165 dim(Psi)=4 variant is FITTED and retired)",
+      "validation": "2.98 sigma vs DESI DR2 w_a = -0.86 +/- 0.22 (arXiv:2503.14738)",
+      "formula": "w_a = -1/√24 = -0.2041",
       "domain": "Cosmology",
-      "derived": -0.8165,
-      "experimental": -0.99,
+      "derived": -0.2041,
+      "experimental": -0.86,
       "units": ""
     },
     {
