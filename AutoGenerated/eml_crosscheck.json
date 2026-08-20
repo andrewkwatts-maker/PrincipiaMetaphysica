@@ -1,14 +1,18 @@
 {
   "total": 707,
   "with_eml_description": 505,
-  "skip": 235,
+  "skip": 108,
   "buckets": {
     "AGREE": 351,
     "AGREE_LOOSE": 10,
+    "ERROR": 127,
     "DISAGREE": 47,
     "DISAGREE_MISSING_CTX": 57,
     "DISAGREE_SCALE": 7
   },
+  "errors": 127,
+  "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
+  "agreement_rate_strict_all": 0.5859766277128547,
   "agreement_rate_strict": 0.7436440677966102,
   "agreement_rate_loose": 0.7648305084745762,
   "tolerance": 0.001,
