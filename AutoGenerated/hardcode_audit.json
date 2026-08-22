@@ -2,7 +2,7 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 185,
+    "files_scanned": 190,
     "dataset_values": 339,
     "exact_dup": 381,
     "stale_dup": 330,
@@ -201,7 +201,7 @@
     },
     {
       "file": "simulations/PM/cosmology/baryogenesis.py",
-      "line": 132,
+      "line": 134,
       "literal": 174.033,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -305,7 +305,7 @@
     },
     {
       "file": "simulations/PM/cosmology/cosmological_constant.py",
-      "line": 1380,
+      "line": 1393,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -457,7 +457,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy_thawing.py",
-      "line": 1769,
+      "line": 1782,
       "literal": 0.9583333,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -465,7 +465,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dark_energy_thawing.py",
-      "line": 1770,
+      "line": 1783,
       "literal": 0.816,
       "dataset_key": "desi_2025_constraints.alternative_datasets.BAO_only.wa.uncertainty",
       "dataset_value": 0.82,
@@ -545,7 +545,7 @@
     },
     {
       "file": "simulations/PM/cosmology/evolution_engine.py",
-      "line": 1236,
+      "line": 1249,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -553,7 +553,7 @@
     },
     {
       "file": "simulations/PM/cosmology/evolution_engine.py",
-      "line": 1260,
+      "line": 1273,
       "literal": 0.311,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -857,7 +857,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1165,
+      "line": 1178,
       "literal": 0.311,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -865,7 +865,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1167,
+      "line": 1180,
       "literal": 0.689,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
       "dataset_value": 0.6931,
@@ -3745,7 +3745,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 2248,
+      "line": 2261,
       "literal": 8.65,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -3753,7 +3753,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 2260,
+      "line": 2273,
       "literal": 33.59,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -3761,7 +3761,7 @@
     },
     {
       "file": "simulations/PM/particle/neutrino_mixing.py",
-      "line": 2272,
+      "line": 2285,
       "literal": 49.75,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -3857,7 +3857,7 @@
     },
     {
       "file": "simulations/PM/particle/octonionic_mixing.py",
-      "line": 1670,
+      "line": 1683,
       "literal": 0.22313,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -4881,7 +4881,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 140,
+      "line": 142,
       "literal": 0.97435,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -4889,7 +4889,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 141,
+      "line": 143,
       "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -4897,7 +4897,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 142,
+      "line": 144,
       "literal": 0.00382,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_ub.value",
       "dataset_value": 0.00382,
@@ -4905,7 +4905,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 233,
+      "line": 235,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -4913,7 +4913,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 258,
+      "line": 260,
       "literal": 0.2251,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -4921,7 +4921,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 259,
+      "line": 261,
       "literal": 0.826,
       "dataset_key": "desi_2025_constraints.framework_adopted_anchors.thawing_w0wa.sigma8.value",
       "dataset_value": 0.827,
@@ -4929,7 +4929,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 262,
+      "line": 264,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -4937,7 +4937,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 164,
+      "line": 166,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -4945,7 +4945,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 354,
+      "line": 356,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -4953,7 +4953,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 355,
+      "line": 357,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -4961,7 +4961,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 356,
+      "line": 358,
       "literal": 1.1663788e-05,
       "dataset_key": "pdg_2024_values.constants.G_F.value",
       "dataset_value": 1.1663788e-05,
@@ -4969,7 +4969,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 382,
+      "line": 384,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -4977,7 +4977,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 383,
+      "line": 385,
       "literal": 0.685,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
       "dataset_value": 0.6931,
@@ -4985,7 +4985,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 411,
+      "line": 413,
       "literal": 6.582119569e-25,
       "dataset_key": "pdg_2024_values.fundamental_constants.HBAR.value",
       "dataset_value": 6.582119569e-25,
@@ -4993,7 +4993,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 170,
+      "line": 172,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -5001,7 +5001,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 192,
+      "line": 194,
       "literal": 0.002498,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -5009,7 +5009,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 328,
+      "line": 330,
       "literal": 33.59,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -5017,7 +5017,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 329,
+      "line": 331,
       "literal": 8.65,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
       "dataset_value": 8.63,
@@ -5025,7 +5025,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 353,
+      "line": 355,
       "literal": 137.035999,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -5033,7 +5033,7 @@
     },
     {
       "file": "simulations/PM/validation/consistency_beacons.py",
-      "line": 420,
+      "line": 422,
       "literal": 197.3269804,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.delta_CP.value",
       "dataset_value": 194.0,

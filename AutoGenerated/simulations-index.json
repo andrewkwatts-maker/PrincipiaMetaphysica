@@ -2,15 +2,15 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-20T10:54:32.822700Z",
+  "generated_at": "2026-08-22T15:22:16.137183Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 261,
+  "total_scripts": 267,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
       "title": "PM/algebra",
-      "count": 12,
+      "count": 13,
       "scripts": [
         {
           "file": "_triple_helpers.py",
@@ -165,6 +165,16 @@
           "category": "PM/algebra",
           "title": null,
           "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "shadow_clifford.py",
+          "path": "simulations/PM/algebra/shadow_clifford.py",
+          "category": "PM/algebra",
+          "title": null,
+          "description": "Explicit Cl(12,1) shadow Clifford algebra and its conjugation operator.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -753,7 +763,7 @@
     },
     "PM/gauge": {
       "title": "PM/gauge",
-      "count": 9,
+      "count": 10,
       "scripts": [
         {
           "file": "asymptotic_safety.py",
@@ -864,6 +874,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "topological_terms.py",
+          "path": "simulations/PM/gauge/topological_terms.py",
+          "category": "PM/gauge",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "u1_hypercharge.py",
           "path": "simulations/PM/gauge/u1_hypercharge.py",
           "category": "PM/gauge",
@@ -877,7 +897,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 12,
+      "count": 13,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -898,6 +918,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Bridge Geometry and (2,0) Field Sampling",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "exterior_algebra.py",
+          "path": "simulations/PM/geometry/exterior_algebra.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -2177,7 +2207,7 @@
     },
     "PM/validation": {
       "title": "PM/validation",
-      "count": 17,
+      "count": 19,
       "scripts": [
         {
           "file": "CERTIFICATES.py",
@@ -2215,6 +2245,16 @@
           "category": "PM/validation",
           "title": null,
           "description": "Principia Metaphysica - Cosmology Validation v17.2",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "exterior_degree_gate.py",
+          "path": "simulations/PM/validation/exterior_degree_gate.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": "Reject Lagrangian terms whose form degrees cannot integrate over their domain.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -2275,6 +2315,16 @@
           "category": "PM/validation",
           "title": null,
           "description": "Principia Metaphysica - Residue Calculator v17.2",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "reflection_positivity_gate.py",
+          "path": "simulations/PM/validation/reflection_positivity_gate.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -2598,7 +2648,7 @@
     },
     "core": {
       "title": "core",
-      "count": 13,
+      "count": 14,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2690,6 +2740,16 @@
           "category": "core",
           "title": null,
           "description": "observable_groups.py \u2014 shared observable-group mapping (Sprint T2 #6).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "physics_config.py",
+          "path": "simulations/core/physics_config.py",
+          "category": "core",
+          "title": null,
+          "description": "Typed, immutable view of the framework's dimensional structure.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

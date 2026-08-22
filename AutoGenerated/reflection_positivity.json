@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "count": 1,
+  "n_pass": 0,
+  "n_fail": 0,
+  "verdict": "MARGINAL_VACUOUS",
+  "report": {
+    "gate": "reflection_positivity_bridge_sector",
+    "n_pairs": 12,
+    "involution": {
+      "operator": "shadow swap S, blockwise [[0,1],[1,0]]",
+      "S_squared_is_identity": true,
+      "note": "R_perp is NOT usable here: R_perp^2 = -I (order 4), and its Gram form is antisymmetric so its symmetric part vanishes identically - it would fail for algebraic reasons rather than physical ones.",
+      "r_perp_is_involution": false,
+      "r_perp_symmetric_part_norm": 0.0
+    },
+    "cross_block_eigenvalues": [
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17,
+      6.123233995736766e-17
+    ],
+    "min_eigenvalue": 6.123233995736766e-17,
+    "positive_semidefinite": true,
+    "verdict": "MARGINAL_VACUOUS",
+    "vacuous": true,
+    "max_abs_coupling": 6.123233995736766e-17,
+    "derived_constraint": {
+      "statement": "reflection positivity requires bridge angle theta <= 90 deg",
+      "reason": "cross block per pair is L1*L2*cos(theta); PSD iff cos(theta) >= 0",
+      "framework_theta_deg": 90.0,
+      "position": "boundary - RP holds marginally, with zero coupling",
+      "falsifiable": "any obtuse bridge angle (theta > 90 deg) introduces a ghost mode"
+    },
+    "offending_pairs": [],
+    "scope": "Quadratic/Gaussian sector only, from the 12 bridge-pair metrics. PASS does not establish RP for the full theory; FAIL rules it out for the quadratic sector and closes the modular route."
+  },
+  "note": "Reflection positivity on the bridge / shadow-coupling sector. MARGINAL_VACUOUS is reported -- rather than PASS -- when the cross block is identically zero, because a gate cannot certify positivity of something that is not there. The framework sits at theta = 90 degrees exactly, where cos(theta) = 0 switches the metric cross-coupling off, which is precisely that case."
+}

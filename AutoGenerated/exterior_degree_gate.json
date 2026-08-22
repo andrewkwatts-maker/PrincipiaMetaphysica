@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "count": 4,
+  "n_pass": 3,
+  "n_fail": 1,
+  "checks": [
+    {
+      "term_id": "flux-13d-original",
+      "expression": "int_{13D} C_3 ^ F_A ^ F_B",
+      "degrees": [
+        3,
+        2,
+        2
+      ],
+      "total_degree": 7,
+      "domain_dim": 13,
+      "status": "FAIL",
+      "note": "The originally proposed cross-shadow coupling. FAILS: a 7-form cannot be integrated over a 13-manifold. Retained as the gate's demonstration that it can reject."
+    },
+    {
+      "term_id": "flux-13d-path-a",
+      "expression": "int_{13D} C_3 ^ G_4 ^ G_4 ^ F_2",
+      "degrees": [
+        3,
+        4,
+        4,
+        2
+      ],
+      "total_degree": 13,
+      "domain_dim": 13,
+      "status": "PASS",
+      "note": "Path A: the well-formed 13D completion, generalising M-theory's 11D term by coupling the cross-shadow 2-form F_2 = F_A - F_B. Requires G_4 = dC_3, hence the symbolic exterior derivative."
+    },
+    {
+      "term_id": "flux-sigma7-path-b",
+      "expression": "int_{Sigma_7} C_3 ^ F_A ^ F_B",
+      "degrees": [
+        3,
+        2,
+        2
+      ],
+      "total_degree": 7,
+      "domain_dim": 7,
+      "status": "PASS",
+      "note": "Path B: the same 7-form, localised on the G2 associative cycle where it IS top degree. Computable with wedge alone -- no exterior derivative needed."
+    },
+    {
+      "term_id": "m-theory-cs-reference",
+      "expression": "int_{11} C_3 ^ G_4 ^ G_4",
+      "degrees": [
+        3,
+        4,
+        4
+      ],
+      "total_degree": 11,
+      "domain_dim": 11,
+      "status": "PASS",
+      "note": "Textbook anchor, not a framework claim: the standard M-theory Chern-Simons term. If this ever fails, the gate is broken."
+    }
+  ],
+  "note": "Form-degree validation for candidate action terms: a wedge product integrates over a domain only when its degrees sum to the domain dimension. The FAIL record is deliberate and permanent -- it is the originally proposed flux term, kept so the gate ships demonstrating it can reject. This checks that a term is WELL FORMED, which is necessary but not sufficient for it to be physically correct."
+}
