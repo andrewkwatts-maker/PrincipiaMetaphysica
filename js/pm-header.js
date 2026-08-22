@@ -1,9 +1,8 @@
 /**
  * Principia Metaphysica - Centralized Header Component
  *
- * Injects a consistent header across all pages. Math-mode switching is
- * per-card (see js/pm-math-toggle.js) rather than global, so the header
- * no longer carries a Normal Math / EML Math pill.
+ * Injects a consistent header across all pages, including the
+ * Normal Math / EML Math pill switcher.
  *
  * Usage:
  *   import { injectHeader } from './js/pm-header.js';
@@ -12,16 +11,28 @@
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
-// Speculation-toggle module (still global; only math mode went per-card).
+// Math-mode module path resolution: works from any page depth because
+// getBasePath() is used at runtime. We resolve lazily on first use.
 let _mathMode = null;
 async function _getMathModeModule() {
   if (_mathMode) return _mathMode;
-  const modPath = './math-mode.js';
+  const basePath = getBasePath();
+  // ES-module dynamic-import paths must start with ./, ../, or be absolute —
+  // bare paths like "js/math-mode.js" are treated as bare specifiers and
+  // fail in browsers without an import map. Force a leading "./" when
+  // basePath is empty (page is at site root).
+  const modPath = (basePath || './') + 'js/math-mode.js';
   try {
     _mathMode = await import(modPath);
   } catch (err) {
     console.warn('[PM Header] Failed to load math-mode.js:', err);
+    // Fallback: no-op stubs if module can't load. Cover the full surface
+    // pm-header.js calls (math + speculation) so subsequent setup doesn't
+    // throw.
     _mathMode = {
+      getMathMode: () => 'normal',
+      setMathMode: () => {},
+      initMathMode: () => {},
       getSpeculationMode: () => false,
       setSpeculationMode: () => {},
       toggleSpeculationMode: () => {},
@@ -153,6 +164,10 @@ function createHeaderHTML(activePageId = '') {
       <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
         <div class="header-controls">
+          <div class="math-mode-switcher" role="group" aria-label="Math notation mode">
+            <button class="math-mode-pill" data-mode="normal" aria-pressed="true" title="Standard mathematical notation">Normal Math</button>
+            <button class="math-mode-pill" data-mode="eml" aria-pressed="false" title="EML Mirror Phase Mathematics notation">EML Math</button>
+          </div>
           <button class="speculation-toggle-btn" id="speculation-toggle-btn" aria-pressed="false" title="Show/hide speculative content (consciousness bridges, philosophical extensions, open hypotheses)">◈ Speculation</button>
           <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
@@ -244,14 +259,41 @@ export function injectHeader(activePageId = '', options = {}) {
   if (target) {
     target.insertAdjacentHTML('afterbegin', headerHTML);
 
-    // If breadcrumbs, inject after header inside main content area
+    // Inject research-status notice at the top of main content (v2.2.0 honesty
+    // polish — every sub-page must carry the not-peer-reviewed disclaimer).
+    const mainContent = document.querySelector('main') ||
+                       document.querySelector('.app-main') ||
+                       document.querySelector('.content-wrapper') ||
+                       document.querySelector('#main-content');
+    if (mainContent && !mainContent.querySelector('.pm-research-notice')) {
+      mainContent.insertAdjacentHTML('afterbegin',
+        '<div class="pm-research-notice" role="note" aria-label="Research status" ' +
+        'style="max-width:900px;margin:1rem auto 2rem;padding:1.25rem 1.5rem;' +
+        'background:rgba(255,170,46,0.10);border:2px solid rgba(255,170,46,0.55);' +
+        'border-radius:12px;color:var(--text-primary);text-align:left;">' +
+        '<p style="margin:0;font-weight:700;color:#ffb554;font-size:1.05rem;' +
+        'text-transform:uppercase;letter-spacing:0.06em;">&#9888; Research status</p>' +
+        '<p style="margin:0.5rem 0 0;line-height:1.55;color:var(--text-primary);">' +
+        '<strong>Principia Metaphysica is a speculative theoretical model.</strong> ' +
+        'It has <strong>not</strong> been peer-reviewed and is <strong>not</strong> ' +
+        'scientifically validated. All derivations, predictions, and “closures” ' +
+        'documented on this site are candidate proposals awaiting experimental ' +
+        'confirmation and independent expert review. The framework is intended ' +
+        'for exploration and research purposes only; no claim on this site ' +
+        'represents established scientific fact.</p></div>'
+      );
+    }
+
+    // Breadcrumbs go ABOVE the notice: this is a second 'afterbegin' on the
+    // same element, so it lands on top of what was just inserted. That is the
+    // wanted result -- a thin nav strip above the banner is ordinary page
+    // furniture and does not bury it -- but it is the opposite of what the
+    // insertion order reads like, hence this note.
     if (breadcrumbHTML) {
-      const mainContent = document.querySelector('.app-main') ||
-                         document.querySelector('.content-wrapper') ||
-                         document.querySelector('main') ||
-                         document.querySelector('#main-content');
-      if (mainContent) {
-        mainContent.insertAdjacentHTML('afterbegin', breadcrumbHTML);
+      const bcTarget = mainContent ||
+                       document.querySelector('#main-content');
+      if (bcTarget) {
+        bcTarget.insertAdjacentHTML('afterbegin', breadcrumbHTML);
       }
     }
   }
@@ -259,13 +301,49 @@ export function injectHeader(activePageId = '', options = {}) {
   // Setup mobile menu toggle
   setupMobileMenu();
 
-  // Initialize speculation mode (math mode is now per-card, see pm-math-toggle.js).
+  // Initialize math mode (applies data-math-mode to <html> from localStorage)
   _getMathModeModule().then(mm => {
+    mm.initMathMode();
     mm.initSpeculationMode();
+    setupMathModeSwitcher(mm);
     setupSpeculationToggle(mm);
   });
 
   console.log(`[PM Header] Injected header for page: ${activePageId}`);
+}
+
+/**
+ * Sync pill button pressed states to the current math mode.
+ * @param {string} mode
+ */
+function syncPillUI(mode) {
+  document.querySelectorAll('.math-mode-pill').forEach(btn => {
+    const isActive = btn.dataset.mode === mode;
+    btn.setAttribute('aria-pressed', String(isActive));
+    btn.classList.toggle('active', isActive);
+  });
+}
+
+/**
+ * Setup math mode pill switcher click handlers.
+ * @param {Object} mm - math-mode module
+ */
+function setupMathModeSwitcher(mm) {
+  // Sync initial state
+  syncPillUI(mm.getMathMode());
+
+  // Wire pill buttons
+  document.querySelectorAll('.math-mode-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      mm.setMathMode(btn.dataset.mode);
+      syncPillUI(btn.dataset.mode);
+    });
+  });
+
+  // Keep pills synced if mode changes elsewhere
+  window.addEventListener('pm-math-mode-changed', e => {
+    syncPillUI(e.detail.mode);
+  });
 }
 
 /**
