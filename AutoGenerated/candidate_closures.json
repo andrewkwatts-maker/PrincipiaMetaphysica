@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "count": 14,
+  "n_pass": 0,
+  "n_fail": 10,
+  "verdict_counts": {
+    "FALSIFIED": 9,
+    "NEAR_MISS_NOTED": 1,
+    "ILL_FORMED": 1,
+    "PLAUSIBLE_UNTESTABLE": 1,
+    "ALREADY_INTEGRATED": 1,
+    "OPEN_PROPOSAL": 1
+  },
+  "candidates": [
+    {
+      "candidate_id": "vev-factor-dimension-ratio",
+      "expression": "(D_bulk/10) * (1 - 1/b3^2)^(3/2)",
+      "computed": 2.5932321062472927,
+      "claimed": 1.5859,
+      "anchor": 1.5859,
+      "anchor_source": "framework VEV calibration factor",
+      "verdict": "FALSIFIED",
+      "note": "Evaluates to 2.5932, not the claimed 1.5859 -- off by 64%. The proposal fails its own target before physics enters.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "alpha-gut-s5-volume",
+      "expression": "1 / (Vol(S^5) * k_beth / chi_eff)",
+      "computed": 0.03939325280406504,
+      "claimed": 0.032177,
+      "anchor": 0.03183098861837907,
+      "anchor_source": "framework GUT calibration 1/(10*pi)",
+      "verdict": "FALSIFIED",
+      "note": "Evaluates to 0.03939 vs the calibration 0.03183 -- 24% off. Separately noted: Vol(S^5)=pi^3 differs from 10*pi by exactly pi^2/10 = 0.9870 (1.3%), a coincidence recorded under NEAR_MISS below.",
+      "extras": {
+        "vol_s5_over_10pi": 0.9869604401089358
+      }
+    },
+    {
+      "candidate_id": "vol-s5-ten-pi-coincidence",
+      "expression": "Vol(S^5) = pi^3 vs 10*pi",
+      "computed": 31.006276680299816,
+      "claimed": null,
+      "anchor": 31.41592653589793,
+      "anchor_source": "framework GUT calibration denominator",
+      "verdict": "NEAR_MISS_NOTED",
+      "note": "pi^3 = 31.006 vs 10*pi = 31.416: 1.3% apart because pi^2/10 = 0.98696. Recorded, not adopted -- a 1.3% miss among the space of small closed forms is well inside the look-elsewhere trap this framework already documented for theta_13.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "majorana-eta-picard",
+      "expression": "pi*sqrt(-25/chi_eff) + 2*pi/b3, claimed = 5*pi/12",
+      "computed": null,
+      "claimed": 75.0,
+      "anchor": null,
+      "anchor_source": "no measurement of eta exists",
+      "verdict": "ILL_FORMED",
+      "note": "sqrt(-0.1736) is imaginary, so the expression is not a real angle as written. Even taking |det|: pi*(5/12) + pi/12 = pi/2 = 90 deg, not the claimed 75 deg. Twice inconsistent. The det(N+ n N-) = -25 input is also not derived from any lattice data present in this codebase.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "baryogenesis-golay-prefactor",
+      "expression": "J_CP / (Vol(G2)^2 * d^3) * (b3/chi_eff)",
+      "computed": 1.6710069444444446e-09,
+      "claimed": null,
+      "anchor": 6.12e-10,
+      "anchor_source": "Planck 2018 + BBN eta_B",
+      "verdict": "FALSIFIED",
+      "note": "Gives 1.67e-09 vs eta_B = 6.12e-10 -- a factor 2.7 off (and 19x off the baryon-to-entropy ratio). Order-of-magnitude proximity only; 'cleanly outputs a fixed coefficient' is not supported.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "lambda-golay-capacity",
+      "expression": "(b3/chi_eff) * k_beth / 2^b3",
+      "computed": 1.171169852612181e-06,
+      "claimed": 1.17e-120,
+      "anchor": 1.1e-120,
+      "anchor_source": "observed Lambda in Planck units (order)",
+      "verdict": "FALSIFIED",
+      "note": "Evaluates to 1.171e-06 -- the claimed 1.17e-120 fabricates 114 orders of magnitude. The mantissa happens to match, which makes the exponent error easy to miss on a skim; that is why this gate exists.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "hubble-shift-alpha-leak",
+      "expression": "H0_local * (1 - (23/24)^(1/sqrt(6)))",
+      "computed": 1.2324356459845036,
+      "claimed": 4.15,
+      "anchor": 4.1499999999999915,
+      "anchor_source": "SH0ES-vs-Planck gap using framework H0_local",
+      "verdict": "FALSIFIED",
+      "note": "Gives 1.23 km/s/Mpc, not the claimed 4.15; 71.55 - 1.23 = 70.32, which does not land on Planck's 67.4. The reconciliation claim rests on wrong arithmetic.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "weinberg-d5-running",
+      "expression": "(3/8) * (1 - 2/(b3*pi))",
+      "computed": 0.36505281605675655,
+      "claimed": 0.2312,
+      "anchor": 0.23122,
+      "anchor_source": "PDG 2024 sin^2(theta_W)(M_Z)",
+      "verdict": "FALSIFIED",
+      "note": "Evaluates to 0.36505, 1.58x the measured value. The claimed 'sub-sigma precision' is a 58% miss. (3/8 at the GUT scale is standard group theory; the proposed one-step correction is not a running calculation.)",
+      "extras": {}
+    },
+    {
+      "candidate_id": "soft-susy-golay-suppression",
+      "expression": "M_Pl_reduced * exp(-2*pi*chi_eff/(b3*d))",
+      "computed": 2.187431363645016e+16,
+      "claimed": 2.18e+16,
+      "anchor": 2e+16,
+      "anchor_source": "canonical GUT scale (no measured m_soft exists)",
+      "verdict": "PLAUSIBLE_UNTESTABLE",
+      "note": "The only proposal whose arithmetic survives: exponent -2pi*144/192 = -1.5*pi exactly, giving 2.19e+16 GeV, 1.09x the canonical GUT scale. But m_soft is unmeasured (SUSY unobserved), so this is a candidate, not a prediction that can currently be tested.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "pmns-theta13-leak",
+      "expression": "arcsin((1/sqrt(6)) / (b3*pi))",
+      "computed": 0.310233015960421,
+      "claimed": 8.618,
+      "anchor": 8.57,
+      "anchor_source": "NuFIT 6.0 theta_13",
+      "verdict": "FALSIFIED",
+      "note": "Evaluates to 0.310 deg -- the claim of 8.618 deg is a 28x arithmetic error in the proposal itself. The formula as written misses experiment by 27x.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "pmns-theta12-golden",
+      "expression": "arctan(1/sqrt(5))",
+      "computed": 24.094842552110702,
+      "claimed": 24.094,
+      "anchor": 33.44,
+      "anchor_source": "NuFIT 6.0 theta_12 (33.44 +/- 0.77 deg)",
+      "verdict": "FALSIFIED",
+      "note": "Arithmetic is fine (24.09 deg) but experiment says 33.44 deg -- a 12-sigma miss presented as a within-tolerance result.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "muon-g2-torsion",
+      "expression": "alpha_EM / (2*pi*b3*k_beth)",
+      "computed": 4.104716703007589e-07,
+      "claimed": 2.49e-09,
+      "anchor": 2.49e-09,
+      "anchor_source": "historical BNL+FNAL vs 2020 WP tension",
+      "verdict": "FALSIFIED",
+      "note": "Evaluates to 4.10e-07, 165x the claimed value. Also stale as a target: 2024-2025 lattice-HVP results have largely dissolved the g-2 tension, so 'resolving' it is no longer the win the proposal assumes.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "axion-babyiaxo-link",
+      "expression": "m_a(b3=24) ~ 3.51 meV in the BabyIAXO window",
+      "computed": null,
+      "claimed": 0.00351,
+      "anchor": null,
+      "anchor_source": "BabyIAXO 2028 sensitivity window",
+      "verdict": "ALREADY_INTEGRATED",
+      "note": "The b3-to-axion-mass link and its falsification window are already implemented and tested (tests/test_axion_photon_coupling.py asserts the BabyIAXO window). The proposal restates existing work.",
+      "extras": {}
+    },
+    {
+      "candidate_id": "running-ret-kahler-ricci",
+      "expression": "dg/dln(mu) = -2*R + grad(Phi)^2/(b3*pi) + ... ; W(T) += sum C_i exp(-2*pi*chi_i/(b3*T))",
+      "computed": null,
+      "claimed": null,
+      "anchor": null,
+      "anchor_source": "Re(T) tension: 9.865 (Higgs) vs 7.086 (BBN)",
+      "verdict": "OPEN_PROPOSAL",
+      "note": "Structural idea with no evaluable numbers: the C_i and chi_i per-cycle inputs do not exist in this codebase and would have to be invented to implement it. Whether to build a running-modulus sector is an author ruling; nothing here can be arithmetic-checked, so nothing is adopted or falsified.",
+      "extras": {}
+    }
+  ],
+  "note": "Externally proposed closed-form parameter closures, evaluated from SSOT inputs before any integration. Most fail their own claimed numbers; per the framework's standing rule, falsified candidates stay on the books labelled FALSIFIED so the same dead end is never explored twice. n_pass is 0 by construction: this gate records verdicts on proposals, it does not certify framework predictions."
+}

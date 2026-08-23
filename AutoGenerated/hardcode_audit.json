@@ -2,11 +2,11 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 190,
+    "files_scanned": 191,
     "dataset_values": 339,
-    "exact_dup": 381,
-    "stale_dup": 330,
-    "files_with_findings": 84
+    "exact_dup": 390,
+    "stale_dup": 336,
+    "files_with_findings": 85
   },
   "worst_files": [
     [
@@ -50,6 +50,10 @@
       16
     ],
     [
+      "simulations/PM/validation/candidate_closure_gate.py",
+      15
+    ],
+    [
       "simulations/PM/cosmology/evolution_engine.py",
       14
     ],
@@ -64,10 +68,6 @@
     [
       "simulations/PM/particle/ckm_matrix.py",
       14
-    ],
-    [
-      "simulations/PM/particle/higgs_vev_refined.py",
-      13
     ]
   ],
   "findings": [
@@ -4830,6 +4830,126 @@
       "dataset_key": "pdg_2024_values.baryons.m_neutron.value",
       "dataset_value": 0.939565421,
       "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 60,
+      "literal": 0.23122,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 62,
+      "literal": 33.44,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
+      "dataset_value": 33.41,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 65,
+      "literal": 8.57,
+      "dataset_key": "nufit_6_0.normal_ordering.theta_13.value",
+      "dataset_value": 8.58,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 67,
+      "literal": 6.12e-10,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
+      "dataset_value": 6.12e-10,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 69,
+      "literal": 3.08e-05,
+      "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
+      "dataset_value": 3.08e-05,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 71,
+      "literal": 2.435e+18,
+      "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
+      "dataset_value": 2.435e+18,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 75,
+      "literal": 0.0072973525693,
+      "dataset_key": "experiment_ref.parameters.electromagnetic.alpha_em.value",
+      "dataset_value": 0.0072973525693,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 79,
+      "literal": 2.49e-09,
+      "dataset_key": "experiment_ref.parameters.leptons.muon_g_minus_2_anomaly.value",
+      "dataset_value": 2.49e-09,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 81,
+      "literal": 67.4,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
+      "dataset_value": 67.4,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 216,
+      "literal": 4.15,
+      "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
+      "dataset_value": 4.18,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 230,
+      "literal": 0.2312,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
+      "dataset_value": 0.23122,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 259,
+      "literal": 8.618,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
+      "dataset_value": 8.63,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 286,
+      "literal": 2.49e-09,
+      "dataset_key": "experiment_ref.parameters.leptons.muon_g_minus_2_anomaly.value",
+      "dataset_value": 2.49e-09,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 263,
+      "literal": 8.618,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_13.value",
+      "dataset_value": 8.63,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/candidate_closure_gate.py",
+      "line": 289,
+      "literal": 2.49e-09,
+      "dataset_key": "experiment_ref.parameters.leptons.muon_g_minus_2_anomaly.value",
+      "dataset_value": 2.49e-09,
+      "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/validation/CERTIFICATES.py",

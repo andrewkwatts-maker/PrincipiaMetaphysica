@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-22T16:27:32.062214Z",
+  "generated_at": "2026-08-23T06:34:48.009173Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 267,
+  "total_scripts": 268,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -2207,7 +2207,7 @@
     },
     "PM/validation": {
       "title": "PM/validation",
-      "count": 19,
+      "count": 20,
       "scripts": [
         {
           "file": "CERTIFICATES.py",
@@ -2225,6 +2225,16 @@
           "category": "PM/validation",
           "title": null,
           "description": "Adversarial Axiom Tester - v24.1 Principia Metaphysica",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "candidate_closure_gate.py",
+          "path": "simulations/PM/validation/candidate_closure_gate.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": "Evaluate proposed closed-form \"parameter closures\" and record honest verdicts.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
