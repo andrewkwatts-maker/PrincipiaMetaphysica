@@ -35,7 +35,20 @@ geometric θ₁₃ derivation that survives contact with data.**
 2311.09282; fixed-point deviations 2604.04585 shift θ₁₃ by roughly the
 ~1° needed).
 
-### 1.2 Dark energy w₀ — **3.62σ** against the real DESI DR2 headline
+### 1.2 Dark energy (w₀, wₐ) — **3.2–3.4σ in the 2D plane** (updated 2026-08-24)
+The two 1D headlines (3.62σ on w₀ below, 2.98σ on wₐ in 1.3) double-count
+a single displacement: the DR2 posterior is strongly anti-correlated, and
+the framework point lies partly along the degeneracy. The honest number is
+the 2D Mahalanobis distance, computed by `PM/validation/de_plane_gate.py`
+with a ρ-sensitivity scan (the exact correlation needs the public chain):
+**3.19–3.41σ for every ρ ∈ [−0.95, −0.60]**. Robustly ~3σ — neither
+rescued nor overstated. Kill condition on record: w₀ < −0.99 in a
+tightened future fit kills −23/24 outright. Related: register 1.5's mass
+sums are evaluated conditionally in the same gate — they fail the ΛCDM
+bound but pass the relaxed bound of the cosmology this framework itself
+predicts.
+
+#### 1.2a Original w₀ headline — **3.62σ** (1D marginal, superseded above)
 w₀ = −23/24 = −0.9583 (pure b₃ topology, zero free parameters — the
 framework's most elegant result) vs DESI DR2 w0waCDM −0.752 ± 0.057.
 The previously advertised "0.027σ" agreement rested on an anchor
