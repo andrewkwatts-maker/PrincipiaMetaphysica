@@ -1025,67 +1025,7 @@ html {
     color: var(--text-secondary, #b0b0c0);
 }
 
-/* Inline speculation spans — kept as amber italic when speculation
- * mode is on, hidden when off (they can't collapse to a summary
- * because they live mid-sentence). */
-html:not([data-speculation="show"]) .speculation-inline {
-    display: none !important;
-}
-
-[data-speculation="show"] .speculation-inline {
-    color: var(--color-amber, #f59e0b);
-    font-style: italic;
-    opacity: 0.75;
-}
-
-/* Speculation mode indicator badge */
-.speculation-badge {
-    display: none;
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: #f59e0b;
-    background: rgba(245, 158, 11, 0.12);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    border-radius: 10px;
-    padding: 0.1rem 0.5rem;
-    letter-spacing: 0.04em;
-    vertical-align: middle;
-    margin-left: 0.4rem;
-}
-
-[data-speculation="show"] .speculation-badge {
-    display: inline;
-}
-
-/* Speculation toggle button (header control) */
-.speculation-toggle-btn {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 0.25rem 0.65rem;
-    border-radius: 12px;
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    background: transparent;
-    color: var(--text-muted, #888);
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-    letter-spacing: 0.02em;
-}
-
-.speculation-toggle-btn:hover {
-    border-color: #f59e0b;
-    color: #f59e0b;
-    background: rgba(245, 158, 11, 0.08);
-}
-
-[data-speculation="show"] .speculation-toggle-btn {
-    border-color: #f59e0b;
-    color: #f59e0b;
-    background: rgba(245, 158, 11, 0.12);
-}
-
-/* Smooth transition */
-.speculation-block,
-.speculation-inline {
-    transition: opacity 0.15s ease;
-}
+/* (The speculation-inline / speculation-badge / speculation-toggle-btn
+   rules that lived here were removed 2026-08-25 with the header toggle.
+   Nothing ever emitted those classes; speculation renders exclusively
+   as details.speculation-block panels above, collapsed by default.) */

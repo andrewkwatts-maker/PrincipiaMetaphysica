@@ -2,11 +2,11 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 191,
+    "files_scanned": 192,
     "dataset_values": 339,
     "exact_dup": 390,
-    "stale_dup": 336,
-    "files_with_findings": 85
+    "stale_dup": 337,
+    "files_with_findings": 86
   },
   "worst_files": [
     [
@@ -5205,6 +5205,14 @@
       "literal": 0.958,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/de_plane_gate.py",
+      "line": 60,
+      "literal": 0.752,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.uncertainty",
+      "dataset_value": 0.75,
       "class": "STALE_DUP"
     },
     {

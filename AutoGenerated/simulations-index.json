@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-23T15:13:56.310720Z",
+  "generated_at": "2026-08-24T21:38:24.209522Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 268,
+  "total_scripts": 269,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -2207,7 +2207,7 @@
     },
     "PM/validation": {
       "title": "PM/validation",
-      "count": 20,
+      "count": 21,
       "scripts": [
         {
           "file": "CERTIFICATES.py",
@@ -2255,6 +2255,16 @@
           "category": "PM/validation",
           "title": null,
           "description": "Principia Metaphysica - Cosmology Validation v17.2",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "de_plane_gate.py",
+          "path": "simulations/PM/validation/de_plane_gate.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": "Dark-energy verdict in the 2D (w0, wa) plane, with correlation sensitivity.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

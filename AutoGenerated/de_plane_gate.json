@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "framework_point": {
+    "w0": -0.9583333333333334,
+    "wa": -0.20412414523193154
+  },
+  "anchors": {
+    "w0": [
+      -0.752,
+      0.057
+    ],
+    "wa": [
+      -0.86,
+      0.215
+    ],
+    "source": "DESI DR2 BAO+CMB+DESY5 (2025)"
+  },
+  "one_d_marginals_sigma": {
+    "w0": 3.619883040935673,
+    "wa": 3.0505853710142716
+  },
+  "uncorrelated_2d_sigma": 4.350083799945152,
+  "rho_scan": [
+    {
+      "rho": -0.95,
+      "chi2": 14.650010891528604,
+      "p_value": 0.0006588560754213705,
+      "sigma_equivalent": 3.406151497717774
+    },
+    {
+      "rho": -0.9,
+      "chi2": 13.329748878263901,
+      "p_value": 0.0012749166958022674,
+      "sigma_equivalent": 3.221566955481573
+    },
+    {
+      "rho": -0.85,
+      "chi2": 13.10604869122971,
+      "p_value": 0.0014257969682760511,
+      "sigma_equivalent": 3.1893772097565343
+    },
+    {
+      "rho": -0.8,
+      "chi2": 13.17001315767318,
+      "p_value": 0.0013809182827349033,
+      "sigma_equivalent": 3.1986100246760882
+    },
+    {
+      "rho": -0.75,
+      "chi2": 13.361099341047874,
+      "p_value": 0.0012550878981004126,
+      "sigma_equivalent": 3.2260560173740673
+    },
+    {
+      "rho": -0.7,
+      "chi2": 13.62697487579323,
+      "p_value": 0.0010988540247602538,
+      "sigma_equivalent": 3.263911709463332
+    },
+    {
+      "rho": -0.65,
+      "chi2": 13.946378201905892,
+      "p_value": 0.0009366610310896623,
+      "sigma_equivalent": 3.3088915745637335
+    },
+    {
+      "rho": -0.6,
+      "chi2": 14.3098588071043,
+      "p_value": 0.0007810046895851536,
+      "sigma_equivalent": 3.3594404943552663
+    }
+  ],
+  "sigma_range": [
+    3.1893772097565343,
+    3.406151497717774
+  ],
+  "verdict": "TENSION_3SIGMA_ROBUST",
+  "kill_condition": "w0 < -0.99 in a future tightened fit, or 2D distance past 5 sigma under this same scan, kills w0 = -23/24 outright",
+  "mass_sum_conditional": [
+    {
+      "parameter": "neutrino.mass_sum",
+      "value_eV": 0.1012138384586706,
+      "lcdm_bound_eV": 0.072,
+      "under_lcdm": "FAIL",
+      "w0wa_bound_eV": 0.16,
+      "under_own_cosmology": "PASS"
+    },
+    {
+      "parameter": "geometry.sum_m_nu",
+      "value_eV": 0.08168832953849638,
+      "lcdm_bound_eV": 0.072,
+      "under_lcdm": "FAIL",
+      "w0wa_bound_eV": 0.16,
+      "under_own_cosmology": "PASS"
+    },
+    {
+      "parameter": "spectral.sum_m_nu",
+      "value_eV": 0.059831538171409335,
+      "lcdm_bound_eV": 0.072,
+      "under_lcdm": "PASS",
+      "w0wa_bound_eV": 0.16,
+      "under_own_cosmology": "PASS"
+    }
+  ],
+  "count": 4,
+  "n_pass": 0,
+  "n_fail": 2,
+  "note": "One honest number instead of two correlated ones: the register's 3.62-sigma (w0) and 2.98-sigma (wa) marginals double-count a single displacement. In the 2D plane the framework point sits at 3.19-3.41 sigma equivalent across the plausible correlation band -- a genuine, rho-robust ~3-sigma tension. This neither rescues the prediction nor overstates it. The exact rho awaits the public DR2 chain; the conclusion does not depend on it."
+}

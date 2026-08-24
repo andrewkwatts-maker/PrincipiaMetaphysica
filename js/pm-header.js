@@ -1,8 +1,10 @@
 /**
  * Principia Metaphysica - Centralized Header Component
  *
- * Injects a consistent header across all pages, including the
- * Normal Math / EML Math pill switcher.
+ * Injects a consistent header across all pages: site title, navigation,
+ * research-status notice, and the mobile menu. (The global Normal/EML
+ * math switcher and Speculation toggle were removed 2026-08-25 in favour
+ * of per-formula toggles and collapsed speculation panels.)
  *
  * Usage:
  *   import { injectHeader } from './js/pm-header.js';
@@ -11,36 +13,10 @@
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
-// Math-mode module path resolution: works from any page depth because
-// getBasePath() is used at runtime. We resolve lazily on first use.
-let _mathMode = null;
-async function _getMathModeModule() {
-  if (_mathMode) return _mathMode;
-  const basePath = getBasePath();
-  // ES-module dynamic-import paths must start with ./, ../, or be absolute —
-  // bare paths like "js/math-mode.js" are treated as bare specifiers and
-  // fail in browsers without an import map. Force a leading "./" when
-  // basePath is empty (page is at site root).
-  const modPath = (basePath || './') + 'js/math-mode.js';
-  try {
-    _mathMode = await import(modPath);
-  } catch (err) {
-    console.warn('[PM Header] Failed to load math-mode.js:', err);
-    // Fallback: no-op stubs if module can't load. Cover the full surface
-    // pm-header.js calls (math + speculation) so subsequent setup doesn't
-    // throw.
-    _mathMode = {
-      getMathMode: () => 'normal',
-      setMathMode: () => {},
-      initMathMode: () => {},
-      getSpeculationMode: () => false,
-      setSpeculationMode: () => {},
-      toggleSpeculationMode: () => {},
-      initSpeculationMode: () => {},
-    };
-  }
-  return _mathMode;
-}
+// (The lazy math-mode.js loader that lived here was removed 2026-08-25
+// along with the global switchers it served. Per-card toggles are
+// self-contained in js/pm-math-toggle.js; the speculation panels are
+// plain <details> elements needing no module.)
 
 /**
  * Navigation links - single source of truth
@@ -164,11 +140,12 @@ function createHeaderHTML(activePageId = '') {
       <div class="header-top-row">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
         <div class="header-controls">
-          <div class="math-mode-switcher" role="group" aria-label="Math notation mode">
-            <button class="math-mode-pill" data-mode="normal" aria-pressed="true" title="Standard mathematical notation">Normal Math</button>
-            <button class="math-mode-pill" data-mode="eml" aria-pressed="false" title="EML Mirror Phase Mathematics notation">EML Math</button>
-          </div>
-          <button class="speculation-toggle-btn" id="speculation-toggle-btn" aria-pressed="false" title="Show/hide speculative content (consciousness bridges, philosophical extensions, open hypotheses)">◈ Speculation</button>
+          <!-- The global Normal/EML pill switcher and the Speculation toggle
+               were removed 2026-08-25. Math notation is chosen per formula
+               card (js/pm-math-toggle.js, defaulting to normal), and
+               speculative content lives in coloured details.speculation-block
+               panels that are collapsed by default and expanded individually.
+               Global overrides duplicated both and confused the defaults. -->
           <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -301,75 +278,17 @@ export function injectHeader(activePageId = '', options = {}) {
   // Setup mobile menu toggle
   setupMobileMenu();
 
-  // Initialize math mode (applies data-math-mode to <html> from localStorage)
-  _getMathModeModule().then(mm => {
-    mm.initMathMode();
-    mm.initSpeculationMode();
-    setupMathModeSwitcher(mm);
-    setupSpeculationToggle(mm);
-  });
+  // Global math/speculation overrides retired 2026-08-25 (see the header
+  // template comment). Clear any persisted global speculation override so
+  // returning visitors get the collapsed-by-default panels too, instead of
+  // a state they can no longer change now that the button is gone.
+  try {
+    localStorage.removeItem('pm-speculation');
+  } catch (e) { /* storage unavailable (private mode) — default is correct */ }
+  document.documentElement.removeAttribute('data-speculation');
+  document.documentElement.removeAttribute('data-math-mode');
 
   console.log(`[PM Header] Injected header for page: ${activePageId}`);
-}
-
-/**
- * Sync pill button pressed states to the current math mode.
- * @param {string} mode
- */
-function syncPillUI(mode) {
-  document.querySelectorAll('.math-mode-pill').forEach(btn => {
-    const isActive = btn.dataset.mode === mode;
-    btn.setAttribute('aria-pressed', String(isActive));
-    btn.classList.toggle('active', isActive);
-  });
-}
-
-/**
- * Setup math mode pill switcher click handlers.
- * @param {Object} mm - math-mode module
- */
-function setupMathModeSwitcher(mm) {
-  // Sync initial state
-  syncPillUI(mm.getMathMode());
-
-  // Wire pill buttons
-  document.querySelectorAll('.math-mode-pill').forEach(btn => {
-    btn.addEventListener('click', () => {
-      mm.setMathMode(btn.dataset.mode);
-      syncPillUI(btn.dataset.mode);
-    });
-  });
-
-  // Keep pills synced if mode changes elsewhere
-  window.addEventListener('pm-math-mode-changed', e => {
-    syncPillUI(e.detail.mode);
-  });
-}
-
-/**
- * Setup speculation toggle button.
- * @param {Object} mm - math-mode module
- */
-function setupSpeculationToggle(mm) {
-  const btn = document.getElementById('speculation-toggle-btn');
-  if (!btn) return;
-
-  function syncBtn() {
-    const show = mm.getSpeculationMode();
-    btn.setAttribute('aria-pressed', String(show));
-    btn.title = show
-      ? 'Speculation content visible — click to hide'
-      : 'Show speculative content (consciousness bridges, philosophical extensions, open hypotheses)';
-  }
-
-  syncBtn();
-
-  btn.addEventListener('click', () => {
-    mm.toggleSpeculationMode();
-    syncBtn();
-  });
-
-  window.addEventListener('pm-speculation-changed', () => syncBtn());
 }
 
 /**
