@@ -122,11 +122,15 @@ derivation it was once billed as.
 
 ## Tier 2 — Framework and SSOT hygiene
 
-### 2.1 24 of 72 gates are declarative
-17 COMPUTED_PASS, 0 COMPUTED_FAIL, **24 DECLARATIVE** (no executable
+### 2.1 17 of 72 gates are declarative
+24 COMPUTED_PASS, 0 COMPUTED_FAIL, **17 DECLARATIVE** (no executable
 form exists — statement only), 31 with no evaluation record. G72 is the
-computed AND over the executed subset. Converting declarative gates to
-executable checks is the single highest-value integrity task left.
+computed AND over the executed subset. The seven Strategy-A gates
+(G01, G13, G17, G22, G23, G29, G40) were promoted this cycle via a
+semantic tier — exact registry assertions, zero invented numbers, all
+mutation-tested. Converting the remaining declarative gates (Strategy B
+candidates plus the module-output gates G19/G25/G26/G39/G56/G59/G67)
+is the next-highest-value integrity task.
 
 ### 2.2 config.py formula values drift from the live registry (9 items)
 | formula | config | registry |

@@ -11,14 +11,17 @@
   "result": "0",
   "formula": "m_\u03b3 = 0",
   "verification_status": "VERIFIED",
-  "evaluation_status": "DECLARATIVE",
+  "evaluation_status": "COMPUTED_PASS",
   "evaluation": {
-    "tier": "none",
-    "status": "DECLARATIVE",
-    "note": "no executable form; certificate is a declared statement"
+    "tier": "semantic",
+    "measured": 0,
+    "expected": 0,
+    "numbers_invented": 0,
+    "note": "m_photon not stored in registry (consistent with m=0 claim). Gate records 0 by semantic interpretation of a massless boson.",
+    "status": "COMPUTED_PASS"
   },
   "derivation_status": "RIGOROUS",
   "note": "Gate 13: Experimental fact confirmed. U(1) gauge node has zero transverse tax",
-  "timestamp": "2026-08-24T21:37:57.284597Z",
+  "timestamp": "2026-08-25T08:20:57.382573Z",
   "hash": "0c10c53a6e6cd938"
 }

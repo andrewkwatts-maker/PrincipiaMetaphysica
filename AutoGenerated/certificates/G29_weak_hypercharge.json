@@ -11,14 +11,17 @@
   "result": "0.868",
   "formula": "Y_W from shadow",
   "verification_status": "VERIFIED",
-  "evaluation_status": "DECLARATIVE",
+  "evaluation_status": "COMPUTED_PASS",
   "evaluation": {
-    "tier": "none",
-    "status": "DECLARATIVE",
-    "note": "no executable form; certificate is a declared statement"
+    "tier": "semantic",
+    "measured": "125/144 = 0.868056",
+    "expected": "125/144 = 0.868056",
+    "numbers_invented": 0,
+    "note": "Exact integer ratio visible_sector/chi_eff_total; no tolerance invented.",
+    "status": "COMPUTED_PASS"
   },
   "derivation_status": "INPUT",
   "note": "Gate 29: U(1) hypercharge from Shadow handedness. U(1) hypercharge \u2192 Shadow handedness",
-  "timestamp": "2026-08-24T21:37:57.284835Z",
+  "timestamp": "2026-08-25T08:20:57.387131Z",
   "hash": "c538300c566ab781"
 }
