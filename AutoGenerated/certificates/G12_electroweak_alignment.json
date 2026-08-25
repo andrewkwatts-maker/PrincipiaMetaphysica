@@ -11,14 +11,23 @@
   "result": "0.23190 vs 0.23122 (0.68 sigma with 0.001 theory uncertainty)",
   "formula": "sin\u00b2\u03b8_W from 12/24 shadow",
   "verification_status": "VERIFIED",
-  "evaluation_status": "DECLARATIVE",
+  "evaluation_status": "COMPUTED_FAIL",
   "evaluation": {
-    "tier": "none",
-    "status": "DECLARATIVE",
-    "note": "no executable form; certificate is a declared statement"
+    "tier": "registry",
+    "source": "PDG 2024 sin2(theta_W) MS-bar at M_Z; no theory buffer (R6 ruling -- fails honestly pending a cited theory unc)",
+    "checks": [
+      {
+        "path": "constants.sin2_theta_W_pred",
+        "value": 0.23190478152123015,
+        "expected": 0.23122,
+        "sigma": 17.119538030753443,
+        "ok": false
+      }
+    ],
+    "status": "COMPUTED_FAIL"
   },
   "derivation_status": "DERIVED",
   "note": "Gate 12: Geometric sin\u00b2\u03b8_W = 0.23190 vs PDG 2024 0.23122\u00b10.00003 \u2014 0.68\u03c3 using the module's 0.001 theory uncertainty. (Previous cert showed Sin[ArcTan[12/24]]\u00b2=0.20 labelled 0.2312 \u2014 removed as arithmetically false.). \u03b8w locked to Shadow-A/B tilt",
-  "timestamp": "2026-08-25T08:20:57.382541Z",
+  "timestamp": "2026-08-25T09:09:07.566561Z",
   "hash": "4af56fe6ffcb0ad7"
 }

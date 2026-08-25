@@ -24,16 +24,18 @@ These are real scientific gaps, not bookkeeping. Ranked by how badly the
 framework needs an answer. The `docs/ARXIV_IDEAS_REGISTER.md` companion
 lists 36 verified papers mapped to these.
 
-### 1.1 θ₁₃ has no surviving geometric derivation — **9.31σ**
-`neutrino.theta13_derived` = 9.594° vs NuFIT 6.0 NO 8.57° ± 0.11.
-The elegant zero-variable candidate asin(1/6) is decisively falsified
-(it read ~4σ only because the error band had been inflated to 0.25°;
-corrected to the real 0.11° it is 9.3σ). `neutrino.sin_theta13_derived`
-is the same failure at 3.53σ in sine form. **There is currently no
-geometric θ₁₃ derivation that survives contact with data.**
-→ Ideas: modular flavor symmetry (Feruglio 1706.08749; Ding & King
-2311.09282; fixed-point deviations 2604.04585 shift θ₁₃ by roughly the
-~1° needed).
+### 1.1 θ₁₃: asin(1/6) FALSIFIED by ruling (R1, 2026-08-25) — headline is 8.669°
+`neutrino.theta13_derived` = 9.594° now carries status **FALSIFIED** in
+the registry itself (was DERIVED): the zero-parameter asin(1/6) candidate
+is ~9σ from NuFIT 6.0 (8.57° ± 0.11°) and a 9σ miss with no knob is a
+falsification, not a tension. The row stays on the books labelled — it is
+the framework's proof its gates can kill an elegant candidate. Working
+headline: `particle.theta_13_deg` = 8.669° (0.8σ, derived); geometric
+cross-check `geometry.theta_13` = 8.54° (0.4σ). Their mutual 0.13° spread
+remains a registered shadow-derivation conflict. The CALIBRATED triality
+branch (8.647°, fitted_pmns = 2) stays labelled as a fit.
+→ Still open: no *zero-parameter* θ₁₃ derivation survives. Ideas: modular
+flavor symmetry (Feruglio 1706.08749; Ding & King 2311.09282).
 
 ### 1.2 Dark energy (w₀, wₐ) — **3.2–3.4σ in the 2D plane** (updated 2026-08-24)
 The two 1D headlines (3.62σ on w₀ below, 2.98σ on wₐ in 1.3) double-count
@@ -64,19 +66,37 @@ correct thawing sign and order of magnitude but not the magnitude.
 Two rival forms (−4/√b₃ = −0.8165 FITTED, and wₐ = 0) were retired this
 cycle — do not resurrect them without a derivation.
 
-### 1.4 S₈ over-suppression — **3.53σ**
-`cosmology.s8_pm_predicted` = 0.784 vs Planck 2018 S₈ = 0.830 ± 0.013.
-The moduli-DM friction mechanism suppresses too hard. Note the canonical
-growth-ODE value is 0.8004 (4.31% suppression); the 0.789/0.784 analytic
-variant assumes 5.1%. Reconciling the two would move this to ~2σ.
+### 1.4 S₈ — friction cannot rescue the weak-lensing tension (R2, 2026-08-25)
+The R2 ruling replaced the closed-form friction exponential with the
+growth-ODE evaluation, and the finding is larger than a numerical
+correction: the 5.1% suppression behind the old 0.784/0.789 headline is
+**reproduced by no declared version of the model** (it corresponds to
+friction acting back to z ≈ 3.5; the model declares z < 0.5). Honest
+numbers now registered: `cosmology.s8_pm_predicted` ≈ **0.821** (0.7%
+friction via the ODE under the declared window), band **0.784–0.821**
+across the underived window. Tensions: ~0.9σ vs Planck, ~2.7σ vs
+KiDS-1000, ~2.6σ vs DES-Y3. This matches moduli_dm_coupling.py's own
+2026-03 numerical verdict (β×8 moves S₈ by 0.2%; "friction cannot bridge
+0.80 to 0.77") — that verdict is now reflected in the registered numbers
+instead of contradicted by them. **Open problem:** derive the friction
+onset (moduli oscillation start) from the compactification; only onset
+z ≈ 3–4 recovers a weak-lensing-friendly value.
 
-### 1.5 Neutrino mass sum exceeds the DESI bound
-`neutrino.mass_sum` = 0.101 eV vs DESI 2024 Σ < 0.072 eV (ΛCDM).
-Flagged FALSIFICATION_RISK in-module. **Mitigating physics exists:** the
-bound relaxes to ~0.16 eV in w₀wₐ cosmologies — which is exactly the
-cosmology this framework predicts (Allali & Notari 2406.14554; Elbers et
-al. 2407.10965). Worth a formal note: the framework's own dark-energy
-sector loosens its own neutrino constraint.
+### 1.5 Neutrino mass sum — geometric 0.0817 eV canonical (R5, 2026-08-25)
+The R5 chain audit rejected the spectral branch's promotion: its headline
+0.0598 rested on a hardcoded m₁ = 0.001 eV that undercut its own formula
+(k_gimel·v²/(M_GUT·√χ_eff) = 0.0031 eV) by 3.1×, ~94% of the value is
+measured oscillation splittings, and under the unresolved GUT-scale ruling
+(register 2.2) the sum spans 0.062–0.074 eV — **crossing the DESI bound**.
+The spectral chain is now self-consistent (registered value 0.0625 eV,
+labelled: m₁ predicted + NuFIT splittings, M_GUT sensitivity declared).
+**Canonical headline: `geometry.sum_m_nu` = k_gimel/(2π·b₃) = 0.0817 eV**
+— genuinely zero-parameter, pure architecture. It fails the ΛCDM bound
+(< 0.072) but passes the w₀wₐCDM bound (~0.16) of exactly the cosmology
+this framework predicts (Allali & Notari 2406.14554; Elbers et al.
+2407.10965); the DE-plane gate reports every branch against both bounds.
+`neutrino.mass_sum` = 0.101 eV remains the register's third branch, also
+carried only by the conditional.
 
 ### 1.6 Cabibbo angle — **2.79σ**, with three falsified siblings
 `ckm.V_us` = e^{−3/2} = 0.22313 vs PDG 2024 λ = 0.22500 ± 0.00067.
@@ -122,15 +142,17 @@ derivation it was once billed as.
 
 ## Tier 2 — Framework and SSOT hygiene
 
-### 2.1 17 of 72 gates are declarative
-24 COMPUTED_PASS, 0 COMPUTED_FAIL, **17 DECLARATIVE** (no executable
-form exists — statement only), 31 with no evaluation record. G72 is the
-computed AND over the executed subset. The seven Strategy-A gates
-(G01, G13, G17, G22, G23, G29, G40) were promoted this cycle via a
-semantic tier — exact registry assertions, zero invented numbers, all
-mutation-tested. Converting the remaining declarative gates (Strategy B
-candidates plus the module-output gates G19/G25/G26/G39/G56/G59/G67)
-is the next-highest-value integrity task.
+### 2.1 14 of 72 gates are declarative — and the seal now fails honestly
+25 COMPUTED_PASS, **2 COMPUTED_FAIL (G12 + the G72 seal reporting it)**,
+14 DECLARATIVE, 31 with no evaluation record. The seven Strategy-A gates
+(G01, G13, G17, G22, G23, G29, G40) were promoted via a semantic tier;
+the R6/R7 rulings added G32 (semantic: sin²θ_W = 3/8 exact at GUT) and
+G36 (registry: framework first-row sum vs PDG 0.9985 ± 0.0007, two-sided,
+Cabibbo-anomaly-live), and converted G12 with the PDG uncertainty and no
+theory buffer — it reads **COMPUTED_FAIL at ~17σ** until a cited theory
+uncertainty exists, and the G72 seal honestly aggregates that failure
+(`failed_gates: [12]`). An honest FAIL outranks a declarative shrug.
+Remaining: G19/G25/G26/G39/G56/G59/G67 need module outputs persisted.
 
 ### 2.2 config.py formula values drift from the live registry (9 items)
 | formula | config | registry |

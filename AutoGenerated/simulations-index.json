@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-24T21:38:24.209522Z",
+  "generated_at": "2026-08-25T09:09:29.914833Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 269,
+  "total_scripts": 272,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -1725,6 +1725,7 @@
             "ckm.jarlskog_invariant",
             "ckm.lambda_wolfenstein",
             "ckm.rho_wolfenstein",
+            "ckm.unitarity_row1",
             "ckm.unitarity_test"
           ]
         },
@@ -2207,7 +2208,7 @@
     },
     "PM/validation": {
       "title": "PM/validation",
-      "count": 21,
+      "count": 24,
       "scripts": [
         {
           "file": "CERTIFICATES.py",
@@ -2375,6 +2376,36 @@
           "category": "PM/validation",
           "title": null,
           "description": "Statistical Rigor Validator - v24.1 Principia Metaphysica",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "strategy_a_semantic.py",
+          "path": "simulations/PM/validation/declarative_strategies/strategy_a_semantic.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": "Strategy A: Semantic \u2014 hand-written executable assertions per gate.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "strategy_b_data_driven.py",
+          "path": "simulations/PM/validation/declarative_strategies/strategy_b_data_driven.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": "Strategy B: Data-driven \u2014 bind each gate to parameters.json registry values.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "strategy_c_structural.py",
+          "path": "simulations/PM/validation/declarative_strategies/strategy_c_structural.py",
+          "category": "PM/validation",
+          "title": null,
+          "description": "Strategy C: Structural \u2014 assert internal consistency of certificate JSON.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

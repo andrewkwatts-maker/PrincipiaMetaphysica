@@ -217,3 +217,61 @@ what a gate is for.
 inventing a number (a tolerance, a correlation, an uncertainty) to reach
 PASS, it lost — an honest FAIL or a labelled FALSIFIED outranks a
 manufactured agreement on every axis that matters here.
+
+---
+
+## Addendum — outcomes after implementation (2026-08-25)
+
+The rulings were ratified and applied. Two audits changed the picture
+beyond what the tables above anticipated; both are recorded here so the
+assessment cannot silently drift from what was actually shipped.
+
+### R5 audit result: the spectral promotion FAILED its chain audit
+The contingency fired. Findings, in order of severity:
+1. **The chain contradicted itself**: the registered 0.0598 used a
+   hardcoded m₁ = 0.001 eV while the chain's own formula
+   (k_gimel·v²/(M_GUT·√χ_eff)) evaluates to 0.0031 eV — a silent 3.1×
+   undercut. The headline number had no derivation behind it.
+2. **~94% of the value is experimental**: the splittings-only floor is
+   0.0588 eV; the framework contributes only m₁. It is a prediction *of
+   m₁* converted to a sum via NuFIT data — legitimate, but not a
+   zero-parameter prediction of the sum.
+3. **The "passes ΛCDM unconditionally" selling point does not survive
+   the framework's own open GUT-scale ruling** (register 2.2, 3.3×
+   spread): the sum spans 0.062–0.074 eV across the M_GUT band, crossing
+   the DESI 0.072 bound.
+**Outcome**: fallback applied — **geometric 0.0817 eV is canonical**
+(zero-parameter, pure architecture, carried by the DE-plane conditional).
+The spectral chain was made self-consistent (now registers 0.0625 eV,
+honestly labelled) and stays as the cross-check.
+
+### R2 implementation result: worse than "approximation loses to ODE"
+The 5.1% friction exponential behind S₈ = 0.784 could not be reproduced
+from **any** declared version of the model: the growth ODE under the
+declared z < 0.5 window gives **0.71%** suppression (S₈ ≈ 0.815); the
+5.1% figure corresponds to friction acting back to z ≈ 3.5, which nothing
+declares. It was functioning as a knob. This confirms — rather than
+contradicts — moduli_dm_coupling.py's own 2026-03 finding (β×8 moves S₈
+by 0.2%; "friction cannot bridge 0.80 to 0.77").
+**Outcome**: growth-ODE evaluation shipped as the operative definition;
+S₈ ≈ 0.821 with declared band 0.784–0.821 (the underived window is the
+dominant systematic and is reported, not hidden). **Consequence accepted:
+the framework does not resolve the S₈ weak-lensing tension** (~2.7σ vs
+KiDS-1000, ~0.9σ vs Planck). The honest open problem is a derived moduli
+oscillation onset; only z ≈ 3–4 would recover a lensing-friendly value.
+
+### R1/R4/R6/R7: applied as assessed
+- R1: `neutrino.theta13_derived` and `sin_theta13_derived` now carry
+  status **FALSIFIED** in the registry; headline 8.669°, cross-check 8.54°.
+- R4: `cosmology.H0_baseline_km_s_Mpc` dispositioned **DISTINCT**
+  (anchor restatement).
+- R6: G12 evaluates against PDG with no theory buffer → **COMPUTED_FAIL**
+  (~17σ), and the G72 seal honestly reports the failing gate. G30 stays
+  DECLARATIVE. G32 became the **eighth semantic gate**: sin²θ_W = 3/8
+  exact at the GUT boundary, pinned there by ruling.
+- R7: G36 now checks the persisted `ckm.unitarity_row1` against PDG
+  first-row unitarity 0.9985 ± 0.0007, two-sided (~2.1σ today — live,
+  and it can fail in either direction). Note recorded: the framework's
+  row sum is exactly 1.0 *by construction* (V_ud is fixed by unitarity),
+  so this gate is a standing bet that the Cabibbo-anomaly deficit
+  resolves upward; it fails on data movement, not framework drift.

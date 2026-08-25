@@ -4,13 +4,13 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
-    "total": 170,
-    "fail": 9,
+    "total": 171,
+    "fail": 8,
     "identity": 2,
     "input": 81,
     "marginal": 13,
-    "pass": 45,
-    "tension": 3,
+    "pass": 46,
+    "tension": 4,
     "unbounded": 17
   },
   "worst_offenders": [
@@ -32,11 +32,6 @@
     {
       "path": "neutrino.theta13_derived",
       "sigma": 8.764256607822398,
-      "verdict": "FAIL"
-    },
-    {
-      "path": "cosmology.s8_pm_predicted",
-      "sigma": 3.5278701370963828,
       "verdict": "FAIL"
     },
     {
@@ -62,6 +57,11 @@
     {
       "path": "ckm.lambda_wolfenstein",
       "sigma": 2.79080574861222,
+      "verdict": "TENSION"
+    },
+    {
+      "path": "ckm.unitarity_row1",
+      "sigma": 2.1428571428570655,
       "verdict": "TENSION"
     },
     {
@@ -508,6 +508,22 @@
       "relative_margin": null
     },
     {
+      "path": "ckm.unitarity_row1",
+      "value": 1.0,
+      "experimental_value": 0.9985,
+      "experimental_uncertainty": 0.0007,
+      "experimental_source": "PDG_2024_first_row_unitarity",
+      "sigma": 2.1428571428570655,
+      "sigma_experimental_only": 2.1428571428570655,
+      "theory_uncertainty": null,
+      "verdict": "TENSION",
+      "registry_status": "DERIVED",
+      "units": "dimensionless",
+      "source_simulation": "ckm_matrix_v16_0",
+      "bound_type": "central_value",
+      "relative_margin": null
+    },
+    {
       "path": "codata.M_PLANCK",
       "value": 1.22089e+19,
       "experimental_value": 1.22089e+19,
@@ -845,14 +861,14 @@
     },
     {
       "path": "cosmology.s8_pm_predicted",
-      "value": 0.784137688217747,
+      "value": 0.8206689835184673,
       "experimental_value": 0.83,
       "experimental_uncertainty": 0.013,
       "experimental_source": "Planck2018_S8",
-      "sigma": 3.5278701370963828,
-      "sigma_experimental_only": 3.5278701370963828,
+      "sigma": 0.7177704985794364,
+      "sigma_experimental_only": 0.7177704985794364,
       "theory_uncertainty": null,
-      "verdict": "FAIL",
+      "verdict": "PASS",
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "s8_suppression_v16_2",
@@ -1797,7 +1813,7 @@
       "sigma_experimental_only": 3.322726422822558,
       "theory_uncertainty": null,
       "verdict": "FAIL",
-      "registry_status": "DERIVED",
+      "registry_status": "FALSIFIED",
       "units": "dimensionless",
       "source_simulation": "neutrino_algebraic_v24_0",
       "bound_type": "central_value",
@@ -1813,7 +1829,7 @@
       "sigma_experimental_only": 8.764256607822398,
       "theory_uncertainty": null,
       "verdict": "FAIL",
-      "registry_status": "DERIVED",
+      "registry_status": "FALSIFIED",
       "units": "degrees",
       "source_simulation": "neutrino_algebraic_v24_0",
       "bound_type": "central_value",
@@ -2685,12 +2701,12 @@
     },
     {
       "path": "spectral.sum_m_nu",
-      "value": 0.059831538171409335,
+      "value": 0.062516556873872,
       "experimental_value": 0.12,
       "experimental_uncertainty": 0.06,
       "experimental_source": "Planck2018_cosmology",
       "sigma": null,
-      "sigma_experimental_only": 1.0028076971431776,
+      "sigma_experimental_only": 0.9580573854354666,
       "theory_uncertainty": null,
       "verdict": "UNBOUNDED",
       "registry_status": "PREDICTED",

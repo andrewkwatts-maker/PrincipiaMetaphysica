@@ -1,0 +1,145 @@
+{
+  "version": "1.1",
+  "tolerance_pct": 2.0,
+  "tolerance_overrides": {
+    "g_a_gamma": 200.0,
+    "sigma_m_nu": 40.0,
+    "S8": 2.0
+  },
+  "observable_groups_checked": 8,
+  "undisposed_parameters": [],
+  "untriaged_parameters": [],
+  "n_conflicts": 3,
+  "n_consistent": 5,
+  "n_insufficient": 0,
+  "shadow_conflicts": [
+    {
+      "observable": "theta_13",
+      "values": {
+        "nufit.theta_13": 8.58,
+        "geometry.theta_13": 8.54,
+        "neutrino.theta_13_pred": 8.647304725338865,
+        "pmns.theta_13_triality": 8.647304725338865,
+        "particle.theta_13_deg": 8.668576499284981,
+        "neutrino.theta13_derived": 9.594068226860465
+      },
+      "max_pct_diff": 10.986665947500727,
+      "worst_pair": [
+        "geometry.theta_13",
+        "neutrino.theta13_derived"
+      ],
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONFLICT",
+      "skipped": {}
+    },
+    {
+      "observable": "n_s",
+      "values": {
+        "cosmology.n_s_pred": 0.9636384168229182,
+        "cosmology.n_s": 0.9636384168229182,
+        "geometry.n_s": 0.9636384168229182,
+        "cosmology.n_s_slow_roll": 0.9996037967508778
+      },
+      "max_pct_diff": 3.597963517631876,
+      "worst_pair": [
+        "cosmology.n_s_pred",
+        "cosmology.n_s_slow_roll"
+      ],
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONFLICT",
+      "skipped": {}
+    },
+    {
+      "observable": "H0_local",
+      "values": {
+        "geometry.H0_local": 73.04,
+        "cosmology.H0_resolved_km_s_Mpc": 73.0400000000035,
+        "cosmology.H0_late_evolved": 73.04,
+        "cosmology.H0_local": 71.5500639237564
+      },
+      "max_pct_diff": 2.0398905753655985,
+      "worst_pair": [
+        "cosmology.H0_resolved_km_s_Mpc",
+        "cosmology.H0_local"
+      ],
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONFLICT",
+      "skipped": {}
+    }
+  ],
+  "consistent_observables": [
+    {
+      "observable": "eta_B",
+      "values": {
+        "cosmology.eta_baryon_pred": 6.185164569435048e-10,
+        "cosmology.eta_baryon_geometric": 6.185164569435048e-10,
+        "cosmology.eta_B": 6.185164569435048e-10,
+        "geometry.eta_baryon": 6.185164569435048e-10
+      },
+      "max_pct_diff": 0.0,
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONSISTENT",
+      "skipped": {}
+    },
+    {
+      "observable": "S8",
+      "values": {
+        "cosmology.s8_pm_predicted": 0.8206689835184673,
+        "cosmology.S8_pred": 0.833256660630941,
+        "cosmology.S8_resolved": 0.8299999999999487,
+        "geometry.S8": 0.833256660630941
+      },
+      "max_pct_diff": 1.510660245180913,
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONSISTENT",
+      "skipped": {}
+    },
+    {
+      "observable": "m_higgs",
+      "values": {
+        "pdg.m_higgs": 125.2,
+        "particle.m_h_GeV": 125.07986037465686,
+        "higgs.m_higgs_local": 125.10242591991029
+      },
+      "max_pct_diff": 0.09595816720698291,
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONSISTENT",
+      "skipped": {
+        "higgs.m_h": "not_in_registry"
+      }
+    },
+    {
+      "observable": "g_a_gamma",
+      "values": {
+        "alp.coupling_GeV_inv": 1e-11,
+        "alp.coupling_GeV_inv_value": 2.8999999999999997e-11,
+        "portals.alp_photon_coupling_gev_inv": 2.9032525449371696e-11
+      },
+      "max_pct_diff": 65.55587278330825,
+      "tolerance_pct": 200.0,
+      "tolerance_used": 200.0,
+      "verdict": "CONSISTENT",
+      "skipped": {}
+    },
+    {
+      "observable": "sigma_m_nu",
+      "values": {
+        "geometry.sum_m_nu": 0.08168832953849638,
+        "spectral.sum_m_nu": 0.062516556873872,
+        "neutrino.mass_sum": 0.1012138384586706
+      },
+      "max_pct_diff": 38.233192391572175,
+      "tolerance_pct": 40.0,
+      "tolerance_used": 40.0,
+      "verdict": "CONSISTENT",
+      "skipped": {}
+    }
+  ],
+  "insufficient_data": []
+}

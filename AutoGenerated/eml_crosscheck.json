@@ -1,20 +1,20 @@
 {
-  "total": 707,
-  "with_eml_description": 505,
+  "total": 708,
+  "with_eml_description": 506,
   "skip": 108,
   "buckets": {
     "AGREE": 351,
     "AGREE_LOOSE": 10,
     "ERROR": 127,
     "DISAGREE": 47,
-    "DISAGREE_MISSING_CTX": 57,
+    "DISAGREE_MISSING_CTX": 58,
     "DISAGREE_SCALE": 7
   },
   "errors": 127,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.5859766277128547,
-  "agreement_rate_strict": 0.7436440677966102,
-  "agreement_rate_loose": 0.7648305084745762,
+  "agreement_rate_strict_all": 0.585,
+  "agreement_rate_strict": 0.7420718816067653,
+  "agreement_rate_loose": 0.7632135306553911,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -741,6 +741,18 @@
       "rel_error": 0.9763698782681673,
       "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.cos(eml_vec('delta_cp'))) \u2014 \u03c1 \u2248 |V_ub|cos(\u03b4_CP) from unitarity triangle geometry",
       "diagnostic": "rel_err=97.64%"
+    },
+    {
+      "path": "ckm.unitarity_row1",
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.049799148968395206,
+      "registered": 1.0,
+      "rel_error": 0.9502008510316048,
+      "eml_description": "EML: ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0)))) \u2014 first-row CKM unitarity sum",
+      "diagnostic": "missing: ckm.V_ud",
+      "missing_refs": [
+        "ckm.V_ud"
+      ]
     },
     {
       "path": "ckm.unitarity_test",
@@ -1472,7 +1484,7 @@
       "path": "cosmology.s8_friction_suppression_pct",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 5.130944181205244,
+      "registered": 0.7111980765459824,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_scalar(100.0), ops.sub(ops.exp(ops.neg(ops.mul(eml_vec('beta_eff'), eml_vec('I_z')))), eml_scalar(1.0))) \u2014 friction suppression percent = 100*(exp(-beta_eff * I(z)) - 1)",
       "diagnostic": "missing: beta_eff, I_z",
@@ -1485,8 +1497,8 @@
       "path": "cosmology.s8_improvement_factor",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 1.0,
-      "registered": 4.723386187292054,
-      "rel_error": 0.7882874784428106,
+      "registered": 1.1078004005125184,
+      "rel_error": 0.09731031010879311,
       "eml_description": "EML: ops.div(eml_vec('tension_lcdm_avg'), eml_vec('tension_pm_avg')) \u2014 improvement = sigma_LCDM / sigma_PM; ratio of tension reductions",
       "diagnostic": "missing: tension_lcdm_avg, tension_pm_avg",
       "missing_refs": [
@@ -1507,7 +1519,7 @@
       "path": "cosmology.s8_pm_predicted",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3))))': name 'sigma8' is not defined",
-      "registered": 0.784137688217747,
+      "registered": 0.8206689835184673,
       "eml_description": "EML: ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3)))) \u2014 S8 from 48-channel variance reduction; with friction: ops.mul(S8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z))))"
     },
     {
@@ -1523,7 +1535,7 @@
       "path": "cosmology.s8_tension_des",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 0.4786875422204096,
+      "registered": 2.627587265792192,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.776))), eml_scalar(0.017)) \u2014 sigma tension = |S8_PM - S8_DES| / sigma_DES"
     },
     {
@@ -1537,7 +1549,7 @@
       "path": "cosmology.s8_tension_kids",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 0.9068844108873486,
+      "registered": 2.7334491759233637,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.766))), eml_scalar(0.020)) \u2014 sigma tension = |S8_PM - S8_KiDS| / sigma_KiDS"
     },
     {
@@ -1551,7 +1563,7 @@
       "path": "cosmology.s8_tension_planck",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013))\": module 'eml_math.operators' has no attribute 'abs'",
-      "registered": 3.681716290942537,
+      "registered": 0.8716166524255904,
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('S8_PM'), eml_scalar(0.832))), eml_scalar(0.013)) \u2014 sigma tension = |S8_PM - S8_Planck| / sigma_Planck"
     },
     {
@@ -1924,7 +1936,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 1984.2916,
+      "registered": 1952.1685,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -1936,7 +1948,7 @@
       "path": "framework_statistics.degrees_of_freedom",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted))\": name 'N_fitted' is not defined",
-      "registered": 61.0,
+      "registered": 62.0,
       "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted)) \u2014 dof = N_pred \u2212 N_fitted_params"
     },
     {
@@ -4498,7 +4510,7 @@
       "path": "spectral.m_nu_1",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 0.0010000000000000002,
+      "registered": 0.003111619879752405,
       "rel_error": 1.0,
       "eml_description": "EML: ops.mul(eml_vec('lambda_49'), ops.inv(eml_vec('L_compact_sq'))) \u2014 lightest neutrino mass from 49th spectral residue via G2 see-saw mechanism",
       "diagnostic": "missing: lambda_49, L_compact_sq",
@@ -4510,17 +4522,17 @@
     {
       "path": "spectral.m_nu_2",
       "status": "AGREE",
-      "evaluated": 0.008671793355471523,
-      "registered": 0.008671793355471519,
-      "rel_error": 4.0008413597223767e-16,
+      "evaluated": 0.009158721432387294,
+      "registered": 0.009158721432387294,
+      "rel_error": 0.0,
       "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m21_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 second neutrino mass from solar mass splitting"
     },
     {
       "path": "spectral.m_nu_3",
       "status": "AGREE",
-      "evaluated": 0.050159744815937796,
-      "registered": 0.05015974481593781,
-      "rel_error": 2.7667181838223614e-16,
+      "evaluated": 0.050246215561732296,
+      "registered": 0.05024621556173231,
+      "rel_error": 2.76195682653239e-16,
       "eml_description": "EML: ops.sqrt(ops.add(eml_vec('delta_m31_sq'), ops.pow(eml_vec('m_nu_1'), eml_scalar(2.0)))) \u2014 third neutrino mass from atmospheric mass splitting"
     },
     {
@@ -4550,9 +4562,9 @@
     {
       "path": "spectral.sum_m_nu",
       "status": "AGREE",
-      "evaluated": 0.05983153817140933,
-      "registered": 0.059831538171409335,
-      "rel_error": 1.1597385118243538e-16,
+      "evaluated": 0.062516556873872,
+      "registered": 0.062516556873872,
+      "rel_error": 0.0,
       "eml_description": "EML: ops.add(ops.add(eml_vec('m_nu_1'), eml_vec('m_nu_2')), eml_vec('m_nu_3')) \u2014 total neutrino mass sum from G2 spectral residues 49+50+51"
     },
     {
@@ -5151,7 +5163,7 @@
     {
       "path": "validation.success_rate",
       "status": "SKIP",
-      "reason": "non-numeric value: '83.9%'",
+      "reason": "non-numeric value: '84.1%'",
       "eml_description": "EML: ops.mul(ops.div(eml_vec('validation.within_2sigma'), eml_vec('validation.total_predictions')), eml_scalar(100.0)) \u2014 success rate = within_2\u03c3/total \u00d7 100%"
     },
     {
@@ -5164,7 +5176,7 @@
       "path": "validation.total_predictions",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_pred)': name 'N_pred' is not defined",
-      "registered": 62.0,
+      "registered": 63.0,
       "eml_description": "EML: eml_scalar(N_pred) \u2014 total number of verifiable predicted observables"
     },
     {
@@ -5178,14 +5190,14 @@
       "path": "validation.within_1sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_1\u03c3)': name 'N_1\u03c3' is not defined",
-      "registered": 39.0,
+      "registered": 40.0,
       "eml_description": "EML: eml_scalar(N_1\u03c3) \u2014 count of predictions within 1\u03c3 of experimental value"
     },
     {
       "path": "validation.within_2sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_2\u03c3)': name 'N_2\u03c3' is not defined",
-      "registered": 52.0,
+      "registered": 53.0,
       "eml_description": "EML: eml_scalar(N_2\u03c3) \u2014 count of predictions within 2\u03c3 of experimental value"
     },
     {
