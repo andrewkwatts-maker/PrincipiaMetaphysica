@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-25T09:09:29.914833Z",
+  "generated_at": "2026-08-25T21:28:03.014862Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 272,
+  "total_scripts": 273,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -2699,7 +2699,7 @@
     },
     "core": {
       "title": "core",
-      "count": 14,
+      "count": 15,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2801,6 +2801,16 @@
           "category": "core",
           "title": null,
           "description": "Typed, immutable view of the framework's dimensional structure.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "registry_paths.py",
+          "path": "simulations/core/registry_paths.py",
+          "category": "core",
+          "title": null,
+          "description": "Typed access to canonical registry parameter paths.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
