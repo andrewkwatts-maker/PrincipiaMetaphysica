@@ -7,9 +7,9 @@
     "AGREE_LOOSE": 12,
     "ERROR": 88,
     "DISAGREE": 63,
-    "DISAGREE_MISSING_CTX": 61,
+    "DISAGREE_MISSING_CTX": 63,
     "DISAGREE_SIGN": 1,
-    "DISAGREE_SCALE": 7
+    "DISAGREE_SCALE": 5
   },
   "errors": 88,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
@@ -1740,12 +1740,12 @@
     },
     {
       "path": "cosmology.w_a_thawing",
-      "status": "DISAGREE_SCALE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.09,
       "registered": 0.009369692847857367,
       "rel_error": 8.605437602000041,
       "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.mul(eml_vec('epsilon_eff'), ops.sub(eml_scalar(1.0), eml_vec('eta_eff')))), eml_scalar(0.09)) \u2014 w_a = 2\u03b5_eff(1\u2212\u03b7_eff) + \u03b4_Ricci thawing CPL parameter",
-      "diagnostic": "off by 10^1",
+      "diagnostic": "missing: epsilon_eff, eta_eff",
       "missing_refs": [
         "epsilon_eff",
         "eta_eff"
@@ -2299,12 +2299,12 @@
     },
     {
       "path": "gauge.qcd_canonical",
-      "status": "DISAGREE_SCALE",
+      "status": "DISAGREE_MISSING_CTX",
       "evaluated": 9.999999999999763e+299,
       "registered": 1.0,
       "rel_error": 9.999999999999763e+299,
       "eml_description": "EML: ops.inv(eml_vec('alpha_s_inv')) \u2014 QCD canonical coupling g_s = 1/\u03b1_s\u207b\u00b9 at GUT scale.",
-      "diagnostic": "off by 10^300",
+      "diagnostic": "missing: alpha_s_inv",
       "missing_refs": [
         "alpha_s_inv"
       ]
