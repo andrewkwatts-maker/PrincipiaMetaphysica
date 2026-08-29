@@ -1,20 +1,20 @@
 {
   "total": 708,
-  "with_eml_description": 539,
+  "with_eml_description": 545,
   "skip": 108,
   "buckets": {
-    "AGREE": 367,
+    "AGREE": 370,
     "AGREE_LOOSE": 11,
-    "ERROR": 94,
-    "DISAGREE": 56,
-    "DISAGREE_MISSING_CTX": 65,
+    "ERROR": 88,
+    "DISAGREE": 58,
+    "DISAGREE_MISSING_CTX": 66,
     "DISAGREE_SCALE": 7
   },
-  "errors": 94,
+  "errors": 88,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.6116666666666667,
-  "agreement_rate_strict": 0.7252964426877471,
-  "agreement_rate_loose": 0.7470355731225297,
+  "agreement_rate_strict_all": 0.6166666666666667,
+  "agreement_rate_strict": 0.72265625,
+  "agreement_rate_loose": 0.744140625,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -239,10 +239,12 @@
     },
     {
       "path": "algebra.e7_56d_quartic",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm')))\": _SignedOps.mul() takes 2 positional arguments but 3 were given",
+      "status": "DISAGREE",
+      "evaluated": 16.37632786406514,
       "registered": 14.057331398754732,
-      "eml_description": "EML: ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm'))) \u2014 quartic q(x,y) = \u27e8x,y\u27e9\u00b2\u22124N(x)N(y)"
+      "rel_error": 0.16496704812094246,
+      "eml_description": "EML: ops.sub(ops.pow(eml_vec('algebra.e7_symplectic'), eml_scalar(2.0)), ops.mul(eml_scalar(4.0), eml_vec('algebra.freudenthal_cubic_norm'), eml_vec('algebra.freudenthal_cubic_norm'))) \u2014 quartic q(x,y) = \u27e8x,y\u27e9\u00b2\u22124N(x)N(y)",
+      "diagnostic": "rel_err=16.50%"
     },
     {
       "path": "algebra.e7_alp_mass_gev",
@@ -271,9 +273,10 @@
     },
     {
       "path": "algebra.e8_heterotic_spectral_proxy",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.mul(eml_vec('algebra.e8_visible_action_norm'), eml_vec('algebra.e8_hidden_condensate'), eml_vec('algebra.e8_portal_coupling'))\": _SignedOps.mul() takes 2 positional arguments but 3 were given",
+      "status": "AGREE",
+      "evaluated": 2.5655754267991786e-06,
       "registered": 2.565575426799177e-06,
+      "rel_error": 6.603064079944532e-16,
       "eml_description": "EML: ops.mul(eml_vec('algebra.e8_visible_action_norm'), eml_vec('algebra.e8_hidden_condensate'), eml_vec('algebra.e8_portal_coupling')) \u2014 spectral proxy = visible_norm \u00d7 W_np \u00d7 \u03b1_leak"
     },
     {
@@ -384,10 +387,18 @@
     },
     {
       "path": "algebra.gaugino_racetrack_T_min",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.div(ops.log(ops.div(eml_vec('a2'), eml_vec('a1'))), ops.add(eml_vec('a2'), ops.neg(eml_vec('a1')))) where a1=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), a2=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0))\": invalid syntax (<string>, line 1)",
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 1.0,
       "registered": 3.7390123019817274,
-      "eml_description": "EML: ops.div(ops.log(ops.div(eml_vec('a2'), eml_vec('a1'))), ops.add(eml_vec('a2'), ops.neg(eml_vec('a1')))) where a1=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), a2=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)) \u2014 T_min = ln(a\u2082/a\u2081)/(a\u2082\u2212a\u2081) modulus at racetrack potential minimum"
+      "rel_error": 0.7325496898017729,
+      "eml_description": "EML: ops.div(ops.log(ops.div(eml_vec('a2'), eml_vec('a1'))), ops.add(eml_vec('a2'), ops.neg(eml_vec('a1')))) where a1=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), a2=ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)) \u2014 T_min = ln(a\u2082/a\u2081)/(a\u2082\u2212a\u2081) modulus at racetrack potential minimum",
+      "diagnostic": "missing: a2, a1, a2",
+      "missing_refs": [
+        "a2",
+        "a1",
+        "a2",
+        "a1"
+      ]
     },
     {
       "path": "algebra.pneuma_27d_condensate_scale",
@@ -1065,7 +1076,7 @@
     {
       "path": "cosmology.H0_late_evolved",
       "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(H0_late * ops.pow(1+z, 1.5), ops.add(1, ops.div(log(1+z), b3))) at z=0': invalid syntax (<string>, line 1)",
+      "reason": "Failed to evaluate EML expression 'ops.div(H0_late * ops.pow(1+z, 1.5), ops.add(1, ops.div(log(1+z), b3)))': name 'H0_late' is not defined",
       "registered": 73.04,
       "eml_description": "EML: ops.div(H0_late * ops.pow(1+z, 1.5), ops.add(1, ops.div(log(1+z), b3))) at z=0 \u2014 unified evolution engine H0"
     },
@@ -1689,9 +1700,10 @@
     },
     {
       "path": "cosmology.w0_thawing",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.add(ops.neg(eml_scalar(1)), ops.inv(eml_scalar(24))) = -23/24 \u2248 -0.9583': invalid character '\u2248' (U+2248) (<string>, line 1)",
+      "status": "AGREE",
+      "evaluated": -0.9583333333333334,
       "registered": -0.9583333333333334,
+      "rel_error": 0.0,
       "eml_description": "EML: ops.add(ops.neg(eml_scalar(1)), ops.inv(eml_scalar(24))) = -23/24 \u2248 -0.9583"
     },
     {
@@ -1876,9 +1888,10 @@
     },
     {
       "path": "electromagnetic.alpha_inv",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.add(ops.pow(k_gimel, 2), ops.neg(ops.div(b3, phi)), ops.div(phi, ops.mul(eml_scalar(4.0), eml_pi())))': add() takes 2 positional arguments but 3 were given",
+      "status": "AGREE",
+      "evaluated": 137.0367017757477,
       "registered": 137.03670177575597,
+      "rel_error": 6.03540317088308e-14,
       "eml_description": "EML: ops.add(ops.pow(k_gimel, 2), ops.neg(ops.div(b3, phi)), ops.div(phi, ops.mul(eml_scalar(4.0), eml_pi()))) \u2014 Geometric Anchors formula for alpha^-1 using b3=24"
     },
     {
@@ -3595,10 +3608,12 @@
     },
     {
       "path": "neutrino.delta_CP_pred",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3))) + FITTED +45.9\u00b0 parity offset (\u03b4_parity)': invalid character '\u00b0' (U+00B0) (<string>, line 1)",
+      "status": "DISAGREE",
+      "evaluated": 4.057890510886816,
       "registered": 278.4,
-      "eml_description": "EML: ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3))) + FITTED +45.9\u00b0 parity offset (\u03b4_parity) \u2014 CALIBRATED to NuFIT 6.0 IO"
+      "rel_error": 0.9854242438545733,
+      "eml_description": "EML: ops.mul(eml_pi(), ops.add(ops.div(ops.add(n_gen, b2), ops.mul(eml_scalar(2.0), n_gen)), ops.div(n_gen, b3))) + FITTED +45.9\u00b0 parity offset (\u03b4_parity) \u2014 CALIBRATED to NuFIT 6.0 IO",
+      "diagnostic": "rel_err=98.54%"
     },
     {
       "path": "neutrino.delta_CP_sigma",
