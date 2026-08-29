@@ -119,6 +119,24 @@ three-way constraint rather than one scored value.
 → Ideas: M-theory G₂ localization (2002.11820); heterotic line bundles
 (2507.03076).
 
+### 1.6a Sterile mixing sin²(2θ) = 1/b₃ — **FALSIFIED, and still published**
+_(new 2026-08-30; `docs/SCALE_DISAGREEMENTS.md` §4)_
+
+`portals.sterile_mixing_sin2_2theta` registers **4.2767e-05**, which
+passes the IceCube/MINOS+ 2024 bound of 0.01 comfortably — the row reads
+PASS. But its `eml_description` states a different claim entirely:
+sin²(2θ) = 1/b₃ = 1/24 = **0.0417**, "sterile mixing from torsion
+geometry". That elegant zero-parameter claim **violates the same bound by
+4.17×**.
+
+So a falsified claim is currently the published description of a passing
+parameter. This is the θ₁₃ = asin(1/6) pattern (register 1.1) in a new
+place: highest geometric elegance, worst accuracy. **Recommended:** label
+the 1/b₃ claim FALSIFIED and keep it on the books per standing policy,
+then describe the derivation the registered value actually uses. The
+mismatch was invisible until the EML cross-check began evaluating
+descriptions rather than trusting them.
+
 ### 1.7 H₀ — three coexisting values, one at 3.17σ
 Canonical `H0_local` = 71.55 (1.43σ, FITTED_COMPOSITE), sterile-extraction
 variant 70.42, and `H0_ricci_variant` = 76.34 at **3.17σ** from SH0ES.

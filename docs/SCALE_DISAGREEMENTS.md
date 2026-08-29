@@ -1,0 +1,170 @@
+# The Five Scale Disagreements — Assessment
+
+**Prepared:** 2026-08-30 · **Status:** evidence + recommendation; the
+rulings are the author's.
+
+`DISAGREE_SCALE` marks a row whose EML expression and registered value
+differ by a near-exact power of ten. The label invites the assumption
+that all five are unit slips. They are not: **only one is**. Every
+registered value below was reconstructed numerically before judging, so
+each verdict rests on arithmetic rather than on reading the prose.
+
+Ranked by how much of the disagreement is presentation versus physics.
+
+---
+
+## 1. `consciousness.tau_gnosis` — pure unit mismatch, formula CONFIRMED
+
+| | |
+|---|---|
+| EML evaluates | 2453.253020 |
+| Registered | 2.453253 (units field: **seconds**) |
+| Ratio | **exactly 1000** |
+
+The EML expression `25 · exp(3.2·√1) · 2²` reproduces the registered
+value to **zero relative error** once divided by 1000. The formula is
+right; the expression works in milliseconds while the registry declares
+seconds.
+
+**Most robust of the five.** Nothing about the derivation is in question
+— an exact reconstruction is the strongest evidence available that the
+structure is correct. The defect is entirely in units.
+
+**Recommended fix:** convert in the expression (`ops.div(…, 1000)`) or
+correct the `units` field to milliseconds. Do **not** simply relabel to
+make the check pass — pick whichever is physically intended and make the
+other follow.
+
+---
+
+## 2. `gravity.scalar_breathing_amplitude` — result pasted into an input slot
+
+| | |
+|---|---|
+| EML evaluates | 1.73611e-12 |
+| Registered | 1.73611e-09 |
+| Ratio | **exactly 0.001** |
+
+The expression is `α_F_r2 × 1e-9` with the comment *"A ~ α_F × (NS merger
+strain) ~ 10⁻⁹"*. Since α_F_r2 ≈ 1.736e-3, a strain of 1e-9 gives 1.7e-12
+— but the comment says the **result** should be ~10⁻⁹. The `~10⁻⁹` from
+the prose was placed where the NS-merger strain belongs; the strain that
+yields the registered value is ~10⁻⁶.
+
+**Diagnosable with certainty**, because the docstring states the intended
+result independently of the expression. A transcription error, not a
+physics disagreement.
+
+**Recommended fix:** replace `eml_scalar(1e-9)` with the actual NS-merger
+strain (~1e-6) and cite it. The mantissa 1.73611 matching exactly on both
+sides confirms nothing else is wrong.
+
+---
+
+## 3. `consciousness.tau_baseline` — incomplete expression (two defects)
+
+| | |
+|---|---|
+| EML evaluates | 25 (the bare input constant) |
+| Registered | 0.240235 (seconds) |
+| Ratio | 104.065 — **not** a power of ten |
+
+Reconstructed exactly: `25 · exp(3.2·√(6/12)) = 240.235 ms = 0.240235 s`,
+matching the registered value to **0.0000%**. So the registry value is
+fully derivable — the EML expression simply does not express it. It
+carries the bare 25 ms seed with neither the six-pair enhancement factor
+(≈9.61) nor the ms→s conversion.
+
+Note this row was mislabelled: 104.065 is not a power of ten, so it is
+only in this bucket by the classifier's 0.02-dex tolerance. It is an
+*incomplete expression*, not a scale error.
+
+**Recommended fix:** write the full expression, mirroring `tau_gnosis`
+with `n_pairs = 6`. Both consciousness entries are flagged SPECULATIVE
+in-module, and the 3.2 and 2² are phenomenological Orch-OR parameters,
+not b₃-derived — internally consistent, but with **no geometric
+grounding**. Fixing the expression does not change that status.
+
+---
+
+## 4. `portals.sterile_mixing_sin2_2theta` — NOT a scale error. A falsification.
+
+| | |
+|---|---|
+| EML claims | sin²(2θ) = 1/b₃ = 1/24 = **4.1667e-02** |
+| Registered | **4.2767e-05** |
+| Ratio | 974.3 — not a power of ten |
+| Anchor | 0.01 (IceCube/MINOS+ 2024) |
+
+**This is the one with real physics content, and it is the most
+important finding of the five.**
+
+The registered value passes the experimental bound comfortably
+(4.28e-05 < 0.01). The EML's elegant geometric claim — sin²(2θ) = 1/b₃,
+"sterile mixing from torsion geometry" — evaluates to 0.0417, which
+**violates that same bound by 4.17×**.
+
+So this is not two spellings of one number. It is a zero-parameter b₃
+claim that the data excludes, sitting in the description field of a
+parameter whose registered value comes from different physics entirely
+and passes. The row reports PASS while carrying a falsified claim in its
+own description.
+
+**Geometric elegance is highest here and accuracy is worst** — precisely
+the combination the θ₁₃ = asin(1/6) ruling (register 1.1) already
+addressed. The same treatment applies.
+
+**Recommended ruling:** label the `sin²(2θ) = 1/b₃` claim **FALSIFIED**
+and keep it on the books per standing policy, then give the registered
+value an `eml_description` that describes the derivation actually used.
+Leaving a falsified claim as the published description of a passing
+parameter is the more serious defect of the two.
+
+---
+
+## 5. `spectral.lambda_max` — least resolvable, weakest grounding
+
+| | |
+|---|---|
+| EML evaluates | 991.624 (`k_gimel × 80.5`) |
+| Registered | 9.903956e+17 |
+| Ratio | 9.9876e14 — **0.124% off** an exact 1e15 |
+
+The units field says *"dimensionless (k_gimel normalized)"*, so the EML
+computes a normalised eigenvalue while the registry stores an
+unnormalised one. But the ratio is **not** a clean power of ten: it
+misses 1e15 by 0.124%, which is far outside anything a unit convention
+explains. Either the normalisation constant or the stored value carries
+an additional unexplained factor.
+
+The `80.5` traces to nothing in the registry — it is the least grounded
+number in this set, with the appearance of a fitted constant rather than
+a derived one.
+
+**Lowest confidence of the five.** Recommend deriving the normalisation
+explicitly, or relabelling `80.5` as CALIBRATED if it cannot be derived.
+Until then this row should not be read as a check of anything.
+
+---
+
+## Summary
+
+| # | Parameter | Nature | Robustness | Geometric grounding |
+|---|---|---|---|---|
+| 1 | `tau_gnosis` | unit only (×1000, exact) | **highest** — formula reproduced exactly | none (phenomenological) |
+| 2 | `scalar_breathing_amplitude` | result pasted into input slot | high — mantissa matches exactly | n/a (observational input) |
+| 3 | `tau_baseline` | incomplete expression | high — registry value reconstructed exactly | none (phenomenological) |
+| 4 | `sterile_mixing_sin2_2theta` | **falsified geometric claim** | claim excluded by data at 4.17× | **highest claim, worst accuracy** |
+| 5 | `spectral.lambda_max` | unexplained 0.124% residual | **lowest** | `80.5` traces to nothing |
+
+**Most robust and accurate:** `tau_gnosis` — an exact reconstruction
+leaves nothing in doubt but the unit.
+
+**Most geometrically consistent as *stated*:** `sterile_mixing` — and
+that is exactly why it matters that the data excludes it. Elegance
+without accuracy is the pattern this register exists to catch.
+
+**Cross-cutting caution:** four of these five are cheap to make "agree"
+by editing the `eml_description`. That would be making a check pass by
+editing the thing being checked. In every case the correction belongs on
+whichever side is actually wrong, decided on the physics.
