@@ -5,7 +5,7 @@
     "files_scanned": 196,
     "dataset_values": 339,
     "exact_dup": 391,
-    "stale_dup": 340,
+    "stale_dup": 341,
     "files_with_findings": 86
   },
   "worst_files": [
@@ -50,12 +50,12 @@
       17
     ],
     [
-      "simulations/PM/particle/higgs_mass.py",
+      "simulations/PM/particle/ckm_matrix.py",
       16
     ],
     [
-      "simulations/PM/particle/ckm_matrix.py",
-      15
+      "simulations/PM/particle/higgs_mass.py",
+      16
     ],
     [
       "simulations/PM/validation/candidate_closure_gate.py",
@@ -3025,7 +3025,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1269,
+      "line": 1322,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3033,7 +3033,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1680,
+      "line": 1733,
       "literal": 0.2245,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3041,7 +3041,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1808,
+      "line": 1861,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3049,7 +3049,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 815,
+      "line": 824,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3057,7 +3057,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 867,
+      "line": 876,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3065,7 +3065,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 974,
+      "line": 983,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3073,7 +3073,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1049,
+      "line": 1058,
       "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -3081,7 +3081,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1171,
+      "line": 1180,
       "literal": 0.225,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -3089,7 +3089,15 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 1259,
+      "line": 1266,
+      "literal": 0.97435,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/ckm_matrix.py",
+      "line": 1312,
       "literal": 0.9985,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -3097,7 +3105,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 813,
+      "line": 822,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3105,7 +3113,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 865,
+      "line": 874,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,
@@ -3113,7 +3121,7 @@
     },
     {
       "file": "simulations/PM/particle/ckm_matrix.py",
-      "line": 972,
+      "line": 981,
       "literal": 0.22313016014842982,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.V_us.value",
       "dataset_value": 0.2245,

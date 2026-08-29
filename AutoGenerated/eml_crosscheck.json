@@ -1,20 +1,21 @@
 {
-  "total": 708,
-  "with_eml_description": 545,
+  "total": 711,
+  "with_eml_description": 548,
   "skip": 108,
   "buckets": {
-    "AGREE": 370,
-    "AGREE_LOOSE": 11,
+    "AGREE": 371,
+    "AGREE_LOOSE": 12,
     "ERROR": 88,
-    "DISAGREE": 58,
-    "DISAGREE_MISSING_CTX": 66,
+    "DISAGREE": 63,
+    "DISAGREE_MISSING_CTX": 61,
+    "DISAGREE_SIGN": 1,
     "DISAGREE_SCALE": 7
   },
   "errors": 88,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.6166666666666667,
-  "agreement_rate_strict": 0.72265625,
-  "agreement_rate_loose": 0.744140625,
+  "agreement_rate_strict_all": 0.615257048092869,
+  "agreement_rate_strict": 0.7203883495145631,
+  "agreement_rate_loose": 0.7436893203883496,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -479,15 +480,12 @@
     },
     {
       "path": "axion.f_a",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "DISAGREE",
+      "evaluated": 696934901797.5515,
       "registered": 3491829898123.246,
-      "rel_error": 1.0,
+      "rel_error": 0.8004098360655731,
       "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.pow(eml_vec('geometry.k_gimel'), eml_scalar(6.0))) \u2014 f_a = M_Pl / k_gimel^6 from 6D moduli of associative 3-cycle",
-      "diagnostic": "missing: M_Planck",
-      "missing_refs": [
-        "M_Planck"
-      ]
+      "diagnostic": "rel_err=80.04%"
     },
     {
       "path": "axion.m_a",
@@ -646,6 +644,24 @@
       ]
     },
     {
+      "path": "ckm.V_cd",
+      "status": "DISAGREE_SIGN",
+      "evaluated": -0.22313016014842982,
+      "registered": 0.22313016014842982,
+      "rel_error": 2.0,
+      "eml_description": "EML: ops.neg(eml_vec('ckm.lambda_wolfenstein')) \u2014 V_cd = -lambda at leading Wolfenstein order",
+      "diagnostic": "sign flip \u2014 magnitudes match"
+    },
+    {
+      "path": "ckm.V_cs",
+      "status": "AGREE_LOOSE",
+      "evaluated": 0.975106465816068,
+      "registered": 0.9739541171580031,
+      "rel_error": 0.0011831652413231309,
+      "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(0.5), ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(2.0)))) \u2014 V_cs = 1 - lambda^2/2 at leading Wolfenstein order",
+      "diagnostic": "within 1%"
+    },
+    {
       "path": "ckm.V_tb",
       "status": "DISAGREE",
       "evaluated": 0.67195,
@@ -691,6 +707,14 @@
       "missing_refs": [
         "xi_t"
       ]
+    },
+    {
+      "path": "ckm.V_ud",
+      "status": "AGREE",
+      "evaluated": 0.9747824634407436,
+      "registered": 0.9747824634407437,
+      "rel_error": 1.1389443965849987e-16,
+      "eml_description": "EML: ops.sqrt(ops.sub(eml_scalar(1.0), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0))))) \u2014 V_ud from first-row unitarity"
     },
     {
       "path": "ckm.V_us",
@@ -764,27 +788,20 @@
     },
     {
       "path": "ckm.unitarity_row1",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.049799148968395206,
+      "status": "AGREE",
+      "evaluated": 0.9999999999999999,
       "registered": 1.0,
-      "rel_error": 0.9502008510316048,
-      "eml_description": "EML: ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0)))) \u2014 first-row CKM unitarity sum",
-      "diagnostic": "missing: ckm.V_ud",
-      "missing_refs": [
-        "ckm.V_ud"
-      ]
+      "rel_error": 1.1102230246251565e-16,
+      "eml_description": "EML: ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0)))) \u2014 first-row CKM unitarity sum"
     },
     {
       "path": "ckm.unitarity_test",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.9502008510316048,
+      "status": "DISAGREE",
+      "evaluated": 1.1102230246251565e-16,
       "registered": 5.829780417210273e-05,
-      "rel_error": 16298.084751571223,
+      "rel_error": 0.9999999999980956,
       "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0))))) \u2014 unitarity deviation = 1 \u2212 (|V_ud|\u00b2+|V_us|\u00b2+|V_ub|\u00b2)",
-      "diagnostic": "missing: ckm.V_ud",
-      "missing_refs": [
-        "ckm.V_ud"
-      ]
+      "diagnostic": "rel_err=100.00%"
     },
     {
       "path": "codata.M_PLANCK",
@@ -1334,15 +1351,12 @@
     },
     {
       "path": "cosmology.f_decay_constant",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "DISAGREE",
+      "evaluated": 2.8696750203154083e+17,
       "registered": 2.0291666666666666e+17,
-      "rel_error": 1.0,
+      "rel_error": 0.4142135623730966,
       "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('chi_eff'))) \u2014 f = M_Pl/\u221a\u03c7_eff ~ 2.03\u00d710\u00b9\u2077 GeV sub-Planckian (M_Pl/12) decay constant",
-      "diagnostic": "missing: M_Planck",
-      "missing_refs": [
-        "M_Planck"
-      ]
+      "diagnostic": "rel_err=41.42%"
     },
     {
       "path": "cosmology.growth_index_lcdm",
@@ -1996,7 +2010,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 1952.1685,
+      "registered": 1921.2977,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -2008,7 +2022,7 @@
       "path": "framework_statistics.degrees_of_freedom",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted))\": name 'N_fitted' is not defined",
-      "registered": 62.0,
+      "registered": 63.0,
       "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted)) \u2014 dof = N_pred \u2212 N_fitted_params"
     },
     {
@@ -2305,15 +2319,12 @@
     },
     {
       "path": "gauge.rho_parameter",
-      "status": "AGREE",
-      "evaluated": 1.0,
+      "status": "DISAGREE",
+      "evaluated": 1.0104197652859803,
       "registered": 1.0,
-      "rel_error": 0.0,
+      "rel_error": 0.01041976528598032,
       "eml_description": "EML: ops.div(ops.pow(eml_vec('M_W'), eml_scalar(2.0)), ops.mul(ops.pow(eml_vec('M_Z'), eml_scalar(2.0)), ops.sub(eml_scalar(1.0), eml_vec('sin2_theta_W')))) \u2014 rho = M_W^2 / (M_Z^2 cos^2(theta_W)) = 1 at tree level (custodial SU(2)).",
-      "missing_refs": [
-        "M_W",
-        "M_Z"
-      ]
+      "diagnostic": "rel_err=1.04%"
     },
     {
       "path": "gauge.sin2_theta_W_gut",
@@ -4532,15 +4543,12 @@
     },
     {
       "path": "spectral.M_GUT_G2",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "DISAGREE",
+      "evaluated": 4.9704229363975315e+17,
       "registered": 1.2398546184516635e+17,
-      "rel_error": 1.0,
+      "rel_error": 3.008875607209997,
       "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('b3'))) \u2014 GUT scale from Planck mass divided by sqrt(b3=24) G2 instanton suppression",
-      "diagnostic": "missing: M_Planck",
-      "missing_refs": [
-        "M_Planck"
-      ]
+      "diagnostic": "rel_err=300.89%"
     },
     {
       "path": "spectral.curvature_residue",
@@ -5122,16 +5130,15 @@
     {
       "path": "vacuum.instability_scale_sm",
       "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "evaluated": 247.87468337352348,
       "registered": 36969516.507910416,
-      "rel_error": 1.0,
+      "rel_error": 0.9999932951602621,
       "eml_description": "EML: ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
       "diagnostic": "missing: Lambda_I_SM, delta_lambda_G2, beta_coeff_sm",
       "missing_refs": [
         "Lambda_I_SM",
         "delta_lambda_G2",
         "beta_coeff_sm",
-        "M_Z",
         "lambda_MZ",
         "y_t"
       ]
@@ -5251,7 +5258,7 @@
     {
       "path": "validation.success_rate",
       "status": "SKIP",
-      "reason": "non-numeric value: '84.1%'",
+      "reason": "non-numeric value: '82.8%'",
       "eml_description": "EML: ops.mul(ops.div(eml_vec('validation.within_2sigma'), eml_vec('validation.total_predictions')), eml_scalar(100.0)) \u2014 success rate = within_2\u03c3/total \u00d7 100%"
     },
     {
@@ -5264,7 +5271,7 @@
       "path": "validation.total_predictions",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_pred)': name 'N_pred' is not defined",
-      "registered": 63.0,
+      "registered": 64.0,
       "eml_description": "EML: eml_scalar(N_pred) \u2014 total number of verifiable predicted observables"
     },
     {

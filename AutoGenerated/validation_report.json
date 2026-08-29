@@ -4,13 +4,13 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
-    "total": 171,
+    "total": 172,
     "fail": 8,
     "identity": 2,
     "input": 81,
     "marginal": 13,
     "pass": 46,
-    "tension": 4,
+    "tension": 5,
     "unbounded": 17
   },
   "worst_offenders": [
@@ -60,6 +60,11 @@
       "verdict": "TENSION"
     },
     {
+      "path": "ckm.V_ud",
+      "sigma": 2.7028965046478612,
+      "verdict": "TENSION"
+    },
+    {
       "path": "ckm.unitarity_row1",
       "sigma": 2.1428571428570655,
       "verdict": "TENSION"
@@ -82,11 +87,6 @@
     {
       "path": "ckm.V_cb",
       "sigma": 1.7558524965061326,
-      "verdict": "MARGINAL"
-    },
-    {
-      "path": "cosmology.rho_vacuum",
-      "sigma": 1.6892651440922966,
       "verdict": "MARGINAL"
     }
   ],
@@ -425,6 +425,22 @@
       "units": "dimensionless",
       "source_simulation": "octonionic_mixing_v23_1",
       "bound_type": "measured",
+      "relative_margin": null
+    },
+    {
+      "path": "ckm.V_ud",
+      "value": 0.9747824634407437,
+      "experimental_value": 0.97435,
+      "experimental_uncertainty": 0.00016,
+      "experimental_source": "PDG_2024_V_ud",
+      "sigma": 2.7028965046478612,
+      "sigma_experimental_only": 2.7028965046478612,
+      "theory_uncertainty": null,
+      "verdict": "TENSION",
+      "registry_status": "DERIVED",
+      "units": "dimensionless",
+      "source_simulation": "ckm_matrix_v16_0",
+      "bound_type": "central_value",
       "relative_margin": null
     },
     {

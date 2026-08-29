@@ -105,6 +105,17 @@ family is comprehensively dead: `gaugino_cabibbo_proxy` 344.68σ,
 `gaugino_cabibbo_derived` 37.56σ, `gaugino_cabibbo_refined` 25.55σ.
 They remain on the books labelled FALSIFIED per the standing ruling, but
 three ~10²σ entries dominate the "worst offenders" table.
+
+**New this cycle (2026-08-29): `ckm.V_ud` = 0.97478 vs PDG 0.97435 ±
+0.00016 — 2.70σ TENSION.** Not a new prediction: the CKM module has
+always computed V_ud from first-row unitarity, but never declared it as
+an output, so it never reached the registry and was never scored. Three
+of the nine matrix elements (V_ud, V_cd, V_cs) were being dropped on the
+way out. Publishing V_ud makes a tension visible that was previously
+invisible by omission, and it is the *same* tension as the entry above:
+V_us low ⟹ V_ud high, because unitarity ties them. Together with G36's
+first-row check against PDG 0.9985 ± 0.0007 this sector is now a genuine
+three-way constraint rather than one scored value.
 → Ideas: M-theory G₂ localization (2002.11820); heterotic line bundles
 (2507.03076).
 
