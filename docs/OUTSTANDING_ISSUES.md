@@ -208,9 +208,35 @@ non-associative complements, every physical channel is forbidden and this
 route dies — the rule permits 42 of 210, so it can rule the configuration
 out.
 
-**Still underived (two inputs, both declared):** which coordinate pairs
-the twelve physical bridges occupy, and — blocking the Path A vs Path B
-canonical-term ruling — any 3-form on the 13D shadow. Path A
+**Assignment narrowed (2026-08-30, `docs/BRIDGE_CHANNEL_ASSIGNMENT.md`).**
+The 21 unordered allowed couplings on the 21 coordinate pairs form a
+**2-regular graph — seven disjoint triangles**, one per coordinate *k*,
+whose three vertices are a perfect matching of the other six points and
+whose three edges are the three Fano lines through *k*. The selection rule
+is the Fano incidence of φ's associative triples, not a filter.
+
+Over **all C(21,12) = 293,930** placements of the twelve bridges the live
+coupling count runs **5 to 12 and is never zero**, with the maximum 12
+reached by exactly **35 = C(7,4)** placements — those taking four complete
+triangles. The framework independently carries **four faces of three
+bridges** (b₂ = 4), and `four_face_structure` records that its 4×3 grouping
+is *"one of 576, NOT unique by cross-E₈ alone"*. **Proposal: each face is a
+triangle**, which supplies the missing independent criterion. Falsifier
+stated: if the derived grouping does not give four complete triangles the
+identification is dead — 35 of 293,930 qualify.
+
+⚠ **Correction to this entry's own earlier kill condition.** It previously
+read "if the bridges sit only on non-associative complements every channel
+is forbidden and the route is dead". That event **cannot occur** (minimum
+5, never 0), so it was an unfalsifiable guard — the defect this register
+exists to catch, committed here. Retired in the artifact as
+`kill_condition_retired` and replaced. The correction *strengthens* the
+result: cross-shadow coupling is not merely non-zero at the vacuum, it is
+**structurally unavoidable**.
+
+**Still underived:** which four of the seven points the faces choose, and —
+blocking the Path A vs Path B canonical-term ruling — any 3-form on the 13D
+shadow. Path A
 (∫₁₃ C₃ ∧ G₄ ∧ G₄ ∧ F₂, G₄ = dC₃) is degree-valid and computable the
 moment C₃ exists, but the framework derives φ only on the 7D cycle; the
 13D side carries scalars. Evaluating it would mean inventing an ansatz,

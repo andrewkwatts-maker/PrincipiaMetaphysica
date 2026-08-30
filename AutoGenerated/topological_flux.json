@@ -135,6 +135,209 @@
   ],
   "scope": "Flat R^7 with constant coefficients: this is coefficient x volume, a number, not a topological invariant. It establishes that the integrand is non-vanishing, not that the term carries topological content -- that needs a compact G2 manifold.",
   "not_established": "Topological content. Flat R^7 has trivial holonomy and no non-trivial 7-cycles, so this integral is coefficient x volume. Harmonic representatives on a compact G2 manifold with b3 = 24 are required, and that is deferred DEC work. The assignment of the twelve physical bridges to coordinate channels is also a modelling input, not derived.",
-  "kill_condition": "If the bridge-to-channel assignment, once derived, places the physical bridges only on complementary NON-associative 4-sets, every physical channel is forbidden by the selection rule and this route is dead -- the rule permits 42 of 210, so it can rule the physical configuration out.",
+  "kill_condition_retired": "SUPERSEDED 2026-08-30. This report previously stated: 'if the bridge-to-channel assignment places the physical bridges only on complementary NON-associative 4-sets, every channel is forbidden and this route is dead'. Enumeration over all C(21,12) = 293930 placements shows that outcome CANNOT OCCUR -- the live-coupling count runs 5..12 and is never zero. A kill condition that cannot fire is not a kill condition, and it is retired here rather than left standing as an unfalsifiable guard. See coupling_graph / bridge_placement_spectrum.",
+  "kill_condition": "The coupling graph is seven disjoint triangles, and the maximum 12 live couplings is reached only by placements that take four COMPLETE triangles (35 of them, C(7,4)). The framework independently carries four faces of three bridges each. If the face grouping, once derived, does NOT correspond to four complete triangles, then faces and coupling channels are unrelated structures and the identification proposed in docs/BRIDGE_CHANNEL_ASSIGNMENT.md is dead -- 35 of the 293930 placements qualify, so the data can rule it out.",
+  "coupling_graph": {
+    "n_vertices": 21,
+    "n_edges": 21,
+    "degrees_present": [
+      2
+    ],
+    "is_two_regular": true,
+    "n_components": 7,
+    "component_sizes": [
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "components": [
+      {
+        "vertices": [
+          [
+            0,
+            1
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "support": [
+          0,
+          1,
+          3,
+          4,
+          5,
+          6
+        ],
+        "omitted_point": 2,
+        "edges_are_lines_through_omitted_point": true
+      },
+      {
+        "vertices": [
+          [
+            0,
+            2
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            6
+          ]
+        ],
+        "support": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "omitted_point": 1,
+        "edges_are_lines_through_omitted_point": true
+      },
+      {
+        "vertices": [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            5
+          ]
+        ],
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6
+        ],
+        "omitted_point": 4,
+        "edges_are_lines_through_omitted_point": true
+      },
+      {
+        "vertices": [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            6
+          ]
+        ],
+        "support": [
+          0,
+          1,
+          2,
+          4,
+          5,
+          6
+        ],
+        "omitted_point": 3,
+        "edges_are_lines_through_omitted_point": true
+      },
+      {
+        "vertices": [
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "omitted_point": 6,
+        "edges_are_lines_through_omitted_point": true
+      },
+      {
+        "vertices": [
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            4
+          ]
+        ],
+        "support": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "omitted_point": 5,
+        "edges_are_lines_through_omitted_point": true
+      },
+      {
+        "vertices": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            5,
+            6
+          ]
+        ],
+        "support": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "omitted_point": 0,
+        "edges_are_lines_through_omitted_point": true
+      }
+    ]
+  },
   "note": "Stage 4 of the action-layer plan. The topological route carries cross-shadow coupling at the orthogonal vacuum where the metric route is identically zero; the two are exactly complementary (area L1*L2*sin theta vs metric L1*L2*cos theta). This answers the question that gated Priority 1 in the affirmative, at the scope stated above and no wider."
 }
