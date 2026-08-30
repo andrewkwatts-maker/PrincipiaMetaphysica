@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "note": "Open decisions that can be executed either way. Defaults mirror the value adopted at each fork's source and are checked against it; this module stores no physics of its own. Comparisons report every option and never rank by agreement with anchors.",
+  "env_prefix": "METAPHYSICA_VARIANT_",
+  "forks": {
+    "render_policy": {
+      "question": "May a lone symbol be offered as a formula's EML diagram?",
+      "source": "generators.eml_render_validity.REQUIRE_OPERATOR",
+      "status": "RULED",
+      "selected": "strict",
+      "default": "strict",
+      "options": [
+        {
+          "id": "strict",
+          "summary": "a render must depict at least one operator",
+          "consequence": "Withholds every formula whose EML render is a lone symbol, because such a render misrepresents its own statement -- 'G2 = Aut(O)' would show as the glyph '8'. Currently ten fewer formulas offered than under 'permissive'.",
+          "adopted": true
+        },
+        {
+          "id": "permissive",
+          "summary": "any clean render may be offered",
+          "consequence": "Publishes those lone-symbol renders as if they were the formulas. Offers ten more, every one of them a truncation that misstates its formula.",
+          "adopted": false
+        }
+      ],
+      "notes": "Decided by running both against the live formula set (two branches, manually diffed). This fork exists partly to validate the machinery against an answer already known.",
+      "drift": null
+    },
+    "face_genericity": {
+      "question": "Must the four face labels avoid containing a Fano line?",
+      "source": "PM.gauge.topological_terms.face_assignment_candidates",
+      "status": "OPEN",
+      "selected": "generic",
+      "default": "generic",
+      "options": [
+        {
+          "id": "generic",
+          "summary": "no three of the four labels collinear (arcs only)",
+          "consequence": "35 -> 7 candidates, in bijection with the seven lines; the three unchosen triangles are exactly the omitted line. NOT derived -- nothing in the framework forbids collinear labels.",
+          "adopted": true
+        },
+        {
+          "id": "all",
+          "summary": "any 4-subset of the seven Fano points",
+          "consequence": "all 35 candidates remain; the residual choice is structural rather than a labelling.",
+          "adopted": false
+        }
+      ],
+      "notes": "See docs/BRIDGE_CHANNEL_ASSIGNMENT.md. Adopting 'generic' is a criterion, not a result; the orbit split 28/7 is the fact.",
+      "drift": null
+    }
+  }
+}

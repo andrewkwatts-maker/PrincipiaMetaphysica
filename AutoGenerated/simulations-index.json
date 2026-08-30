@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-08-30T17:29:19.301087Z",
+  "generated_at": "2026-08-30T22:10:06.130729Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 273,
+  "total_scripts": 274,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -2702,7 +2702,7 @@
     },
     "core": {
       "title": "core",
-      "count": 15,
+      "count": 16,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2844,6 +2844,16 @@
           "category": "core",
           "title": null,
           "description": "Triple-track formula validator: Arithma + EML-Math + float.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "variants.py",
+          "path": "simulations/core/variants.py",
+          "category": "core",
+          "title": null,
+          "description": "Executable forks: run the pipeline under a choice that is not yet ruled.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
