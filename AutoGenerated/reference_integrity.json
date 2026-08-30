@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "count": 3,
+  "n_pass": 2,
+  "n_fail": 1,
+  "totals": {
+    "references": 230,
+    "cited": 230,
+    "orphans": 0,
+    "distinct_titles": 182,
+    "duplicate_titles": 23,
+    "entries_in_duplicate_groups": 71,
+    "without_identifier": 0
+  },
+  "checks": [
+    {
+      "id": "every_reference_is_identifiable",
+      "claim": "each entry carries an arXiv id, DOI or URL a reader can follow",
+      "measured": 230,
+      "expected": 230,
+      "status": "PASS",
+      "note": "an entry nobody can look up cannot support a claim"
+    },
+    {
+      "id": "no_duplicate_titles",
+      "claim": "one paper appears under one id",
+      "measured": 71,
+      "expected": 0,
+      "status": "FAIL",
+      "note": "duplicates inflate the apparent breadth of the literature base and split citations of one paper"
+    },
+    {
+      "id": "references_are_cited",
+      "claim": "each entry is cited by a formula, section or parameter",
+      "measured": 230,
+      "expected": 230,
+      "status": "PASS",
+      "note": "source_simulation records which module registered an entry -- that is provenance, not citation; it does not say which claim the paper supports"
+    }
+  ],
+  "orphans": [],
+  "duplicate_groups": {
+    "chiral fermions from manifolds of g2 holonomy": [
+      "acharya2001",
+      "acharya2004",
+      "acharya_witten2001",
+      "acharya_witten_2001",
+      "ref-acharya-2004-g2"
+    ],
+    "planck 2018 results vi cosmological parameters": [
+      "planck-2018",
+      "planck2018",
+      "planck2018_bbn",
+      "planck2018_cosmo",
+      "planck2018_dm",
+      "planck2018_lambda",
+      "planck2018_neff",
+      "planck2020",
+      "planck_2018",
+      "planck_2020",
+      "ref-planck-2018"
+    ],
+    "a model of leptons": [
+      "weinberg1967",
+      "weinberg_1967"
+    ],
+    "unity of all elementary particle forces": [
+      "georgi1974",
+      "georgi1975",
+      "georgi_glashow_1974"
+    ],
+    "compact manifolds with special holonomy": [
+      "joyce-2000",
+      "joyce2000",
+      "joyce2000_g2",
+      "joyce_2000"
+    ],
+    "g2 manifolds and associative submanifolds via semi fano 3 folds": [
+      "chnp2015",
+      "corti2015",
+      "corti_haskins_2015"
+    ],
+    "desi 2024 vi cosmological constraints from the measurements of baryon acoustic oscillations": [
+      "desi2024",
+      "desi2024_bao",
+      "desi2025"
+    ],
+    "codata recommended values of the fundamental physical constants 2022": [
+      "codata2022",
+      "codata2022faraday",
+      "codata2022flux",
+      "codata2022hartree",
+      "codata2022r",
+      "codata2022rk",
+      "codata2022stefan"
+    ],
+    "m theory joyce orbifolds and super yang mills": [
+      "acharya2002",
+      "acharya2002_moduli"
+    ],
+    "de sitter vacua in string theory": [
+      "kachru2003",
+      "kklt2003"
+    ],
+    "review of particle physics": [
+      "pdg-2024",
+      "pdg2024",
+      "ref-pdg-2024"
+    ],
+    "calibrated geometries": [
+      "harvey_lawson1982",
+      "harveylawson1982"
+    ],
+    "review of particle physics electroweak model and constraints on new physics": [
+      "pdg2024_higgs_vev",
+      "pdg2024weak"
+    ],
+    "a comprehensive measurement of the local value of the hubble constant": [
+      "riess_2022",
+      "shoes2025"
+    ],
+    "on gravity s role in quantum state reduction": [
+      "penrose1996",
+      "penrose_1996_gravity_reduction"
+    ],
+    "statistical mechanics of gravity and the thermodynamical origin of time": [
+      "rovelli_1993",
+      "rovelli_1993_thermal_time"
+    ],
+    "noncommutative geometry": [
+      "connes1994",
+      "connes_1994_noncommutative_geometry"
+    ],
+    "consciousness in the universe a review of the orch or theory": [
+      "hameroff2014",
+      "hameroff_penrose2014",
+      "hameroff_penrose_2014",
+      "hameroff_penrose_2014_consciousness"
+    ],
+    "search for proton decay via p e pi0 and p mu pi0": [
+      "ref-nishino-2012-proton",
+      "super-k-2020"
+    ],
+    "harmonic analysis and discontinuous groups in weakly symmetric riemannian spaces with applications to dirichlet series": [
+      "selberg-1956",
+      "selberg1956"
+    ],
+    "some properties of the eigenfunctions of the laplace operator on riemannian manifolds": [
+      "minakshisundaram-pleijel-1949",
+      "minakshisundaram_pleijel_1949"
+    ],
+    "sur les groupes d holonomie homogene des varietes a connexion affine": [
+      "berger-1955",
+      "berger1966"
+    ],
+    "axions in string theory": [
+      "svrcek_witten2006",
+      "svrcek_witten_2006"
+    ]
+  },
+  "without_identifier": [],
+  "references_per_simulation": {
+    "g2_geometry_v16_0": 8,
+    "geometric_anchors": 7,
+    "master_action_simulation_v22_0": 7,
+    "dark_energy_v16_0": 7,
+    "gauge_unification_v16_0": 6,
+    "appendix_r_vacuum_stability_v24_2": 6,
+    "appendix_s_spectral_residue_v24_2": 6,
+    "ckm_matrix_v16_0": 5,
+    "cosmological_constant_v16_1": 5,
+    "thermal_time_v22_0": 5,
+    "orch_or_geometry_v22_0": 5,
+    "predictions_aggregator_v24_2": 5,
+    "complete_residue_registry_v18": 5,
+    "sterile_neutrino_portals_v23": 5,
+    "alp_portals_v23": 5,
+    "abstract_v17_2": 4,
+    "introduction_v16_0": 4,
+    "chirality_v16_0": 4,
+    "higgs_mass_v16_0": 4,
+    "yukawa_textures_v18": 4,
+    "s8_suppression_v16_2": 4,
+    "neutrino_mixing_v17_2": 4,
+    "gr_spacetime_derivations_v19": 4,
+    "f_r_t_tau_gravity_v18": 4,
+    "dark_matter_portals_v23": 4,
+    "unitary_filter_legacy": 3,
+    "leech_partition_v16_2": 3,
+    "fermion_generations_v16_0": 3,
+    "proton_decay_v17_2": 3,
+    "higgs_vev_refined_v18": 3,
+    "cosmology_intro_v16_0": 3,
+    "evolution_engine_v16_2": 3,
+    "multi_sector_v16_0": 3,
+    "pneuma_mechanism_v22_0": 3,
+    "integrity_v16_2": 3,
+    "appendix_h_288_roots_v24_2": 3,
+    "appendix_i_terminal_states_v16_2": 3,
+    "baryon_asymmetry_v18": 3,
+    "axion_dm_v18": 3,
+    "four_face_g2_structure": 2,
+    "alpha_rigor_v16_1": 2,
+    "freudenthal_triple_v1_0": 2,
+    "e7_representation_v1_0": 2,
+    "gaugino_condensation_v1_0": 2,
+    "e8x8_splitting_v1_0": 2,
+    "clifford_unification_v1_0": 2,
+    "clifford_algebra_appendix_v1_0": 2,
+    "neutrino_algebraic_v24_0": 2,
+    "dark_energy_thawing_v16_2": 2,
+    "octonionic_mixing_v23_1": 2,
+    "stefan_boltzmann_v17_2": 2,
+    "hartree_energy_v17_2": 2,
+    "magnetic_flux_v17_2": 2,
+    "von_klitzing_v17_2": 2,
+    "foundations_v16_2": 2,
+    "methodology_v16_2": 2,
+    "results_v16_2": 2,
+    "appendix_b_sum_rule_v23_1": 2,
+    "appendix_f_72gates_v24_2": 2,
+    "appendix_j_torsion_funnel_v16_2": 2,
+    "appendix_k_sterile_constants_v16_2": 2,
+    "appendix_l_omega_unwinding_v16_2": 2,
+    "appendix_t_qec_bridge_v24": 2,
+    "modular_invariance_v16_2": 1,
+    "higgs_brane_partition_v16_2": 1,
+    "speed_of_light_v17_2": 1,
+    "compton_wavelength_v17_2": 1,
+    "faraday_v17_2": 1,
+    "molar_gas_v17_2": 1,
+    "weak_mixing_v17_2": 1,
+    "gnosis_unlocking_v22_2": 1,
+    "orch_or_pair_shielding_v22": 1,
+    "discussion_v16_0": 1,
+    "appendix_a_spectral_registry_v23_1": 1,
+    "appendix_g_omega_seal_v24_2": 1,
+    "attractor_potential_v18": 1
+  },
+  "note": "Reports, does not repair. Collapsing duplicate ids is an editorial decision about which id is canonical, and orphan entries may be genuinely relevant background that simply has no citation site yet. Both are surfaced so the choice is deliberate rather than accidental.",
+  "duplicate_caveat": "Detection is by normalised title, so it cannot distinguish an accidental duplicate from a deliberate one. The seven CODATA 2022 entries (codata2022faraday, codata2022hartree, ...) cite one release for seven different constants, which is a defensible convention; the eleven Planck 2018 VI ids are the same paper reached by inconsistent id spellings, which is not. The count is a starting point for that judgement, not a verdict."
+}

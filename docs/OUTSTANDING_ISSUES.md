@@ -123,11 +123,22 @@ three-way constraint rather than one scored value.
 _(new 2026-08-30; `docs/SCALE_DISAGREEMENTS.md` §4)_
 
 `portals.sterile_mixing_sin2_2theta` registers **4.2767e-05**, which
-passes the IceCube/MINOS+ 2024 bound of 0.01 comfortably — the row reads
+passes the registry's declared bound of 0.01 comfortably — the row reads
 PASS. But its `eml_description` states a different claim entirely:
 sin²(2θ) = 1/b₃ = 1/24 = **0.0417**, "sterile mixing from torsion
-geometry". That elegant zero-parameter claim **violates the same bound by
-4.17×**.
+geometry". That elegant zero-parameter claim **exceeds the bound**.
+
+Two caveats on the bound itself, checked against the literature rather
+than taken from the registry: published MINOS/MINOS+ and IceCube 90% CL
+limits are sin²(2θ₂₄) ≲ **0.02** at Δm²₄₁ ~ 0.3 eV² (Adamson et al.,
+[1705.05064](https://arxiv.org/pdf/1705.05064); IceCube
+[1605.01990](https://arxiv.org/abs/1605.01990)), so the registry's 0.01 is
+the tighter of the two. The 1/b₃ claim exceeds the registry anchor by
+4.2× and the published 90% CL by ~2.1× — **falsified either way**, but
+the multiplier depends on which is used. More importantly the limit is
+strongly **Δm²-dependent**, so a single scalar anchor with no mass
+splitting attached is itself under-specified; `bounds.*` should record the
+Δm² at which the limit applies.
 
 So a falsified claim is currently the published description of a passing
 parameter. This is the θ₁₃ = asin(1/6) pattern (register 1.1) in a new

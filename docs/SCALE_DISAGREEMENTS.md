@@ -99,10 +99,18 @@ grounding**. Fixing the expression does not change that status.
 **This is the one with real physics content, and it is the most
 important finding of the five.**
 
-The registered value passes the experimental bound comfortably
+The registered value passes the declared bound comfortably
 (4.28e-05 < 0.01). The EML's elegant geometric claim — sin²(2θ) = 1/b₃,
 "sterile mixing from torsion geometry" — evaluates to 0.0417, which
-**violates that same bound by 4.17×**.
+**exceeds it by 4.17×**.
+
+*Bound checked against the literature, not just the registry:* published
+MINOS/MINOS+ and IceCube 90% CL limits are sin²(2θ₂₄) ≲ 0.02 at
+Δm²₄₁ ~ 0.3 eV², so the registry's 0.01 is the tighter figure and the
+1/b₃ claim exceeds the published limit by ~2.1× rather than 4.17×.
+Falsified on either, but the factor depends on the anchor — and the real
+limit is Δm²-dependent, so the registry storing a bare scalar with no
+mass splitting is a separate defect worth fixing.
 
 So this is not two spellings of one number. It is a zero-parameter b₃
 claim that the data excludes, sitting in the description field of a
@@ -168,3 +176,33 @@ without accuracy is the pattern this register exists to catch.
 by editing the `eml_description`. That would be making a check pass by
 editing the thing being checked. In every case the correction belongs on
 whichever side is actually wrong, decided on the physics.
+
+---
+
+## Methodological note
+
+The pattern in row 4 is not incidental to this framework, and it has a
+literature. Hossenfelder, *Screams for Explanation: Finetuning and
+Naturalness in the Foundations of Physics*
+([arXiv:1801.02176](https://arxiv.org/abs/1801.02176), Synthese 2019)
+argues that finetuning and naturalness arguments carry far less
+evidential weight than they are given, and explicitly discusses
+**numerological coincidences** — small-integer relations that look
+explanatory but are not.
+
+That is the exact failure mode this register keeps recording, three times
+now and always in the same direction:
+
+| Claim | Form | Outcome |
+|---|---|---|
+| θ₁₃ = asin(1/6) | small-integer, zero-parameter | ~9σ, FALSIFIED (reg. 1.1) |
+| sin²(2θ) = 1/b₃ | small-integer, zero-parameter | exceeds the bound, §4 above |
+| S₈ friction 5.1% | closed form matching no declared model | retired (reg. 1.4, R2) |
+
+Each was maximally elegant, and each was wrong. The relevant discipline
+is not "distrust b₃ relations" — b₃ = 24 genuinely fixes several things —
+but that **an integer ratio landing near a measured value is weak
+evidence on its own**, and needs a derivation chain independent of the
+coincidence. The framework's falsification-first posture already
+implements this; the citation gives it published footing rather than
+being merely a house style.
