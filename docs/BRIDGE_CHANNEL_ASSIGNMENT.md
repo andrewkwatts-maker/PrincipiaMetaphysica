@@ -90,6 +90,63 @@ geometry rather than only in the Kähler moduli count.
 
 ---
 
+## Narrowing 35 → 7 (criterion, not derivation)
+
+Each triangle *T_k* is labelled by the coordinate *k* it omits, so choosing
+four faces means choosing a **4-subset of the seven Fano points**. Under the
+Fano symmetry those 35 subsets fall into exactly two orbits — computed, not
+asserted:
+
+| Orbit | Count | Description |
+|---|---|---|
+| contains a line | **28** | three of the four labels are collinear |
+| arc (no 3 collinear) | **7** | each is the complement of one line |
+
+All seven arcs leave exactly a **line** unchosen — verified for all seven. So
+requiring the four face labels to be *generic* picks out seven candidates in
+bijection with the seven lines, and the residual freedom becomes a labelling
+(which line is omitted) rather than a further structural decision.
+
+**This is a criterion with a name, not a result.** Nothing in the framework
+forbids three collinear face labels, so the genericity assumption is stated
+and carried as `status: CRITERION_STATED_NOT_DERIVED`. Adopt it and the
+choice is 35 → 7; decline it and the choice remains 35. What *is* established
+is that the space has exactly two orbits, so any future physical argument
+only has to decide between two cases rather than among thirty-five.
+
+---
+
+## Which flux term the consciousness architecture needs
+
+Under the **person-within-a-face** reading (the author's, 2026-08-31), the
+argument that appeared to force Path A dissolves, and it is worth being
+explicit about why.
+
+A triangle is K₃ — complete. A face whose three bridges occupy one triangle
+has all three internal pairwise couplings live, which is exactly the
+condition for those three to reduce *jointly* rather than as three
+independent events. Path B (Σ₇, degrees 3+2+2) supplies that.
+
+And the framework's own OR operator is a **tensor product**,
+`⊗_{i=1}^{12} R⊥_i` (`master_action.compute_distributed_or_reduction`), which
+has no cross-terms by construction and factorises as 2¹² = (2³)⁴ — three
+bridges per face, four faces. A central reduction across all twelve is
+therefore the product of the four face-level ones and needs **no** inter-face
+coupling.
+
+So: **Path B is sufficient for the consciousness architecture under this
+reading.** Path A would have been forced only under the alternative reading
+in which a person integrates *across* faces — because the seven triangles are
+disjoint components, inter-face coupling is structurally impossible in the
+Σ₇ channel for every one of the 293,930 placements. That constraint is worth
+keeping on record, since it means the two readings are experimentally
+distinguishable in principle rather than a matter of taste.
+
+Path A may still be required for reasons in the 13D sector; it is simply not
+required by *this* argument, and it remains blocked on an underived C₃.
+
+---
+
 ## Falsifier
 
 **If the face grouping, once derived, does not correspond to four complete

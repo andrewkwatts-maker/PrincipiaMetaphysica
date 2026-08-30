@@ -339,5 +339,114 @@
       }
     ]
   },
+  "face_assignment": {
+    "n_choices_total": 35,
+    "n_line_containing": 28,
+    "n_generic": 7,
+    "generic_candidates": [
+      {
+        "face_labels": [
+          0,
+          1,
+          3,
+          6
+        ],
+        "unchosen_triangles": [
+          2,
+          4,
+          5
+        ],
+        "unchosen_is_a_line": true
+      },
+      {
+        "face_labels": [
+          0,
+          1,
+          4,
+          5
+        ],
+        "unchosen_triangles": [
+          2,
+          3,
+          6
+        ],
+        "unchosen_is_a_line": true
+      },
+      {
+        "face_labels": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "unchosen_triangles": [
+          1,
+          4,
+          6
+        ],
+        "unchosen_is_a_line": true
+      },
+      {
+        "face_labels": [
+          0,
+          2,
+          4,
+          6
+        ],
+        "unchosen_triangles": [
+          1,
+          3,
+          5
+        ],
+        "unchosen_is_a_line": true
+      },
+      {
+        "face_labels": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "unchosen_triangles": [
+          0,
+          5,
+          6
+        ],
+        "unchosen_is_a_line": true
+      },
+      {
+        "face_labels": [
+          1,
+          2,
+          5,
+          6
+        ],
+        "unchosen_triangles": [
+          0,
+          3,
+          4
+        ],
+        "unchosen_is_a_line": true
+      },
+      {
+        "face_labels": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "unchosen_triangles": [
+          0,
+          1,
+          2
+        ],
+        "unchosen_is_a_line": true
+      }
+    ],
+    "criterion": "no three of the four face labels are collinear in the Fano plane, i.e. no three form an associative triple of phi",
+    "residual_freedom": "which of the seven lines is the omitted one; the candidates are in bijection with the lines, so the remaining choice is a labelling rather than a further structural decision",
+    "status": "CRITERION_STATED_NOT_DERIVED",
+    "caveat": "The 7/28 orbit split is computed. That the generic orbit is the physical one is NOT derived -- nothing in the framework forbids three collinear face labels. Adopting it narrows 35 -> 7; without it the choice remains 35."
+  },
   "note": "Stage 4 of the action-layer plan. The topological route carries cross-shadow coupling at the orthogonal vacuum where the metric route is identically zero; the two are exactly complementary (area L1*L2*sin theta vs metric L1*L2*cos theta). This answers the question that gated Priority 1 in the affirmative, at the scope stated above and no wider."
 }
