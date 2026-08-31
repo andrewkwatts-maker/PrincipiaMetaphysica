@@ -4,14 +4,14 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
-    "total": 174,
+    "total": 178,
     "fail": 12,
     "identity": 2,
-    "input": 81,
+    "input": 84,
     "marginal": 13,
-    "pass": 44,
-    "tension": 5,
-    "unbounded": 17
+    "pass": 47,
+    "tension": 6,
+    "unbounded": 14
   },
   "theory_uncertainty_policy": {
     "active": "cited_only",
@@ -24,20 +24,20 @@
     "scoreboard_if_always": {
       "FAIL": 8,
       "IDENTITY": 2,
-      "INPUT": 81,
+      "INPUT": 84,
       "MARGINAL": 13,
-      "PASS": 48,
-      "TENSION": 5,
-      "UNBOUNDED": 17
+      "PASS": 51,
+      "TENSION": 6,
+      "UNBOUNDED": 14
     },
     "scoreboard_if_experimental_only": {
       "FAIL": 12,
       "IDENTITY": 2,
-      "INPUT": 81,
+      "INPUT": 84,
       "MARGINAL": 13,
-      "PASS": 44,
-      "TENSION": 5,
-      "UNBOUNDED": 17
+      "PASS": 47,
+      "TENSION": 6,
+      "UNBOUNDED": 14
     },
     "load_bearing_rows": [
       {
@@ -135,6 +135,11 @@
       "verdict": "TENSION"
     },
     {
+      "path": "cosmology.s8_pm_vs_lensing",
+      "sigma": 2.7334491759233637,
+      "verdict": "TENSION"
+    },
+    {
       "path": "ckm.V_ud",
       "sigma": 2.7028965046478612,
       "verdict": "TENSION"
@@ -157,11 +162,6 @@
     {
       "path": "neutrino.delta_CP_derived",
       "sigma": 1.825,
-      "verdict": "MARGINAL"
-    },
-    {
-      "path": "ckm.V_cb",
-      "sigma": 1.7558524965061326,
       "verdict": "MARGINAL"
     }
   ],
@@ -1167,6 +1167,26 @@
       "relative_margin": null
     },
     {
+      "path": "cosmology.s8_pm_vs_lensing",
+      "value": 0.8206689835184673,
+      "experimental_value": 0.766,
+      "experimental_uncertainty": 0.02,
+      "experimental_source": "KiDS-1000 (Heymans et al. 2021)",
+      "sigma": 2.7334491759233637,
+      "sigma_experimental_only": 2.7334491759233637,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "TENSION",
+      "verdict_with_theory": "TENSION",
+      "verdict_experimental_only": "TENSION",
+      "registry_status": "PREDICTED",
+      "units": "dimensionless",
+      "source_simulation": "s8_suppression_v16_2",
+      "bound_type": "central_value",
+      "relative_margin": null
+    },
+    {
       "path": "cosmology.speed_of_light_derived",
       "value": 299792423.16324997,
       "experimental_value": 299792458.0,
@@ -1549,42 +1569,42 @@
     {
       "path": "gauge.M_GUT",
       "value": 6324555320336760.0,
-      "experimental_value": 1.67e+34,
+      "experimental_value": 1000000000000000.0,
       "experimental_uncertainty": null,
-      "experimental_source": "Super-Kamiokande proton lifetime bound tau_p > 1.67e34 yr constrains M_GUT > ~10^15 GeV",
+      "experimental_source": "Indirect: Super-Kamiokande tau_p > 1.67e34 yr (p -> e+ pi0) constrains M_GUT above ~1e15 GeV. This is an inference, not a measurement of M_GUT -- no direct measurement is possible at this scale.",
       "sigma": null,
       "sigma_experimental_only": null,
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "UNBOUNDED",
-      "verdict_with_theory": "UNBOUNDED",
-      "verdict_experimental_only": "UNBOUNDED",
+      "verdict": "PASS",
+      "verdict_with_theory": "PASS",
+      "verdict_experimental_only": "PASS",
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "gauge_unification_v16_0",
-      "bound_type": "indirect_lower",
-      "relative_margin": null
+      "bound_type": "lower",
+      "relative_margin": 5.32455532033676
     },
     {
       "path": "gauge.M_GUT_GEOMETRIC",
       "value": 2.1e+16,
-      "experimental_value": 1.67e+34,
+      "experimental_value": 1000000000000000.0,
       "experimental_uncertainty": 900000000000000.0,
-      "experimental_source": "Super-Kamiokande proton lifetime tau_p > 1.67e34 yr (p -> e+ pi0)",
+      "experimental_source": "Indirect: Super-Kamiokande tau_p > 1.67e34 yr (p -> e+ pi0) constrains M_GUT above ~1e15 GeV. This is an inference, not a measurement of M_GUT.",
       "sigma": null,
-      "sigma_experimental_only": 1.8555555555555557e+19,
+      "sigma_experimental_only": 22.22222222222222,
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "UNBOUNDED",
-      "verdict_with_theory": "UNBOUNDED",
-      "verdict_experimental_only": "UNBOUNDED",
+      "verdict": "PASS",
+      "verdict_with_theory": "PASS",
+      "verdict_experimental_only": "PASS",
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "gauge_unification_v16_0",
-      "bound_type": "indirect_lower",
-      "relative_margin": null
+      "bound_type": "lower",
+      "relative_margin": 20.0
     },
     {
       "path": "gauge.g_gut",
@@ -2203,6 +2223,66 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:SM_EW",
+      "bound_type": "measured",
+      "relative_margin": null
+    },
+    {
+      "path": "lensing.S8_des_y3",
+      "value": 0.776,
+      "experimental_value": 0.776,
+      "experimental_uncertainty": 0.017,
+      "experimental_source": "DES Y3 (DES Collaboration 2022)",
+      "sigma": 0.0,
+      "sigma_experimental_only": 0.0,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "INPUT",
+      "verdict_with_theory": "INPUT",
+      "verdict_experimental_only": "INPUT",
+      "registry_status": "ESTABLISHED",
+      "units": "dimensionless",
+      "source_simulation": "s8_suppression_v16_2",
+      "bound_type": "measured",
+      "relative_margin": null
+    },
+    {
+      "path": "lensing.S8_hsc_y3",
+      "value": 0.769,
+      "experimental_value": 0.769,
+      "experimental_uncertainty": 0.032,
+      "experimental_source": "HSC Y3 (Li et al. 2023)",
+      "sigma": 0.0,
+      "sigma_experimental_only": 0.0,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "INPUT",
+      "verdict_with_theory": "INPUT",
+      "verdict_experimental_only": "INPUT",
+      "registry_status": "ESTABLISHED",
+      "units": "dimensionless",
+      "source_simulation": "s8_suppression_v16_2",
+      "bound_type": "measured",
+      "relative_margin": null
+    },
+    {
+      "path": "lensing.S8_kids1000",
+      "value": 0.766,
+      "experimental_value": 0.766,
+      "experimental_uncertainty": 0.02,
+      "experimental_source": "KiDS-1000 (Heymans et al. 2021)",
+      "sigma": 0.0,
+      "sigma_experimental_only": 0.0,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "INPUT",
+      "verdict_with_theory": "INPUT",
+      "verdict_experimental_only": "INPUT",
+      "registry_status": "ESTABLISHED",
+      "units": "dimensionless",
+      "source_simulation": "s8_suppression_v16_2",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3497,14 +3577,14 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "UNBOUNDED",
-      "verdict_with_theory": "UNBOUNDED",
-      "verdict_experimental_only": "UNBOUNDED",
+      "verdict": "PASS",
+      "verdict_with_theory": "PASS",
+      "verdict_experimental_only": "PASS",
       "registry_status": "PREDICTED",
       "units": "eV",
       "source_simulation": "complete_residue_registry_v18",
-      "bound_type": null,
-      "relative_margin": null
+      "bound_type": "upper",
+      "relative_margin": 0.4790286927177333
     },
     {
       "path": "spectral.tau_proton",

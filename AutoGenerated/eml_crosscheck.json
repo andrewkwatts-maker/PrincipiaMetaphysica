@@ -1,9 +1,9 @@
 {
-  "total": 711,
-  "with_eml_description": 548,
+  "total": 715,
+  "with_eml_description": 552,
   "skip": 108,
   "buckets": {
-    "AGREE": 372,
+    "AGREE": 376,
     "AGREE_LOOSE": 12,
     "ERROR": 88,
     "DISAGREE": 63,
@@ -12,9 +12,9 @@
   },
   "errors": 88,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.6169154228855721,
-  "agreement_rate_strict": 0.7223300970873786,
-  "agreement_rate_loose": 0.7456310679611651,
+  "agreement_rate_strict_all": 0.6194398682042833,
+  "agreement_rate_strict": 0.7244701348747592,
+  "agreement_rate_loose": 0.7475915221579962,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -1566,6 +1566,14 @@
       "rel_error": 0.006458239567121456,
       "eml_description": "EML: ops.mul(sigma8, ops.sqrt(ops.div(Omega_m, eml_scalar(0.3)))) \u2014 S8 from 48-channel variance reduction; with friction: ops.mul(S8_base, ops.exp(ops.neg(ops.mul(beta_eff, I_z))))",
       "diagnostic": "within 1%"
+    },
+    {
+      "path": "cosmology.s8_pm_vs_lensing",
+      "status": "AGREE",
+      "evaluated": 0.8206689835184673,
+      "registered": 0.8206689835184673,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_vec('cosmology.s8_pm_predicted') \u2014 same prediction, weak-lensing anchor"
     },
     {
       "path": "cosmology.s8_suppression_factor",
@@ -3567,6 +3575,30 @@
       "registered": 174.10383166375172,
       "rel_error": 1.6324574340957128e-16,
       "eml_description": "EML: ops.div(eml_scalar(246.22), ops.sqrt(eml_scalar(2.0))) \u2014 Yukawa scale v/\u221a2 \u2248 174 GeV (SM electroweak input)"
+    },
+    {
+      "path": "lensing.S8_des_y3",
+      "status": "AGREE",
+      "evaluated": 0.776,
+      "registered": 0.776,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.776) \u2014 DES Y3 S8"
+    },
+    {
+      "path": "lensing.S8_hsc_y3",
+      "status": "AGREE",
+      "evaluated": 0.769,
+      "registered": 0.769,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.769) \u2014 HSC Y3 S8"
+    },
+    {
+      "path": "lensing.S8_kids1000",
+      "status": "AGREE",
+      "evaluated": 0.766,
+      "registered": 0.766,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.766) \u2014 KiDS-1000 S8"
     },
     {
       "path": "moduli.re_t_attractor",

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "count": 3,
+  "count": 4,
   "n_pass": 2,
-  "n_fail": 1,
+  "n_fail": 2,
   "totals": {
     "references": 230,
     "cited": 230,
@@ -28,6 +28,14 @@
       "expected": 0,
       "status": "FAIL",
       "note": "duplicates inflate the apparent breadth of the literature base and split citations of one paper"
+    },
+    {
+      "id": "no_conflicting_identifiers",
+      "claim": "entries from different years do not share an identifier",
+      "measured": 13,
+      "expected": 0,
+      "status": "FAIL",
+      "note": "a shared TITLE splits one paper's citations, which is untidy; a shared IDENTIFIER between works of different years sends the reader to the wrong document, which breaks the citation. This check exists because the title check flagged the deliberate PDG and CODATA groups while missing berger1966 carrying Berger 1955's DOI and penrose_2004_road_to_reality carrying a 1996 identifier"
     },
     {
       "id": "references_are_cited",
@@ -156,6 +164,79 @@
     "axions in string theory": [
       "svrcek_witten2006",
       "svrcek_witten_2006"
+    ]
+  },
+  "identifier_conflicts": {
+    "https://physics.nist.gov/cuu/constants/": [
+      {
+        "id": "codata2022",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "codata2022faraday",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "codata2022flux",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "codata2022hartree",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "codata2022r",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "codata2022rk",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "codata2022stefan",
+        "year": 2024,
+        "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022"
+      },
+      {
+        "id": "nist-codata-2018",
+        "year": "2018",
+        "title": "CODATA Internationally Recommended Values of the Fundamental Physical Constants"
+      }
+    ],
+    "10.24033/bsmf.1464": [
+      {
+        "id": "berger-1955",
+        "year": 1955,
+        "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine"
+      },
+      {
+        "id": "berger1955",
+        "year": 1955,
+        "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine et des varietes riemanniennes"
+      },
+      {
+        "id": "berger1966",
+        "year": "1966",
+        "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine"
+      }
+    ],
+    "https://doi.org/10.1093/oso/9780198539957.001.0001": [
+      {
+        "id": "penrose_1996_gravity_reduction",
+        "year": 1996,
+        "title": "On Gravity's Role in Quantum State Reduction"
+      },
+      {
+        "id": "penrose_2004_road_to_reality",
+        "year": 2004,
+        "title": "The Road to Reality: A Complete Guide to the Laws of the Universe"
+      }
     ]
   },
   "without_identifier": [],
