@@ -148,6 +148,49 @@ then describe the derivation the registered value actually uses. The
 mismatch was invisible until the EML cross-check began evaluating
 descriptions rather than trusting them.
 
+### 1.6b Theory-uncertainty deflation — four PASSes were buffer-driven
+_(new 2026-08-31; `validation_report.json` → `theory_uncertainty_policy`)_
+
+The registry folds a declared theory uncertainty into σ in quadrature. That
+is legitimate for a tree-level prediction, but four rows carried a buffer
+**23× to 2333×** the experimental uncertainty, which discards the
+measurement's precision entirely:
+
+| parameter | σ reported | σ vs experiment | buffer / σ_exp |
+|---|---|---|---|
+| `geometry.G_F_matched` | 0.024 | **57.11** | 2333× |
+| `higgs.m_higgs_pred` | 1.144 | **41.61** | 36× |
+| `geometry.T_CMB` | 0.795 | **18.56** | 23× |
+| `gauge.sin2_theta_w_geometric` | 0.684 | **17.12** | 25× |
+
+Two were defined as a **percentage of the value under test** ("0.12% of
+G_F", "0.5% of T_CMB value") — a tolerance proportional to the answer. None
+of the four was cited; `theory_uncertainty_source` holds category names
+("geometric_vev_precision"), not references.
+
+**The sharpest consequence:** `gauge.sin2_theta_w_geometric` and
+`constants.sin2_theta_W_pred` are the *same number*, 0.23190478152123015.
+G12 evaluates it with no buffer and reports COMPUTED_FAIL at 17.1σ, while
+the validation row reported **PASS at 0.68σ**. One prediction, two published
+verdicts — R6 honoured in the gate layer and contradicted in the validation
+layer, using an uncited buffer for the very quantity R6 was about.
+
+**Rule adopted:** an uncited theory uncertainty may not change a verdict —
+R6 generalised from one gate to the whole validation layer. It deletes
+nothing: **ten of the fifteen** rows carrying a theory uncertainty are not
+load-bearing (the allowance is modest and the answer is the same either way)
+and are untouched. Only where a buffer decides the answer does its
+provenance matter. Fully **reversible** — supplying a real citation restores
+the folded verdict.
+
+Effect on the scoreboard: PASS 46→42, FAIL 8→12, MARGINAL 13 (one demoted,
+one promoted). `geometry.eta_baryon` also moves PASS→MARGINAL (0.22→1.63σ).
+
+Selectable as the `theory_uncertainty_policy` fork
+(`cited_only` / `always` / `experimental_only`); all three scoreboards are
+published side by side in the report so the choice's cost is visible without
+a rebuild.
+
 ### 1.7 H₀ — three coexisting values, one at 3.17σ
 Canonical `H0_local` = 71.55 (1.43σ, FITTED_COMPOSITE), sterile-extraction
 variant 70.42, and `H0_ricci_variant` = 76.34 at **3.17σ** from SH0ES.

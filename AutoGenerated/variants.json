@@ -26,6 +26,35 @@
       "notes": "Decided by running both against the live formula set (two branches, manually diffed). This fork exists partly to validate the machinery against an answer already known.",
       "drift": null
     },
+    "theory_uncertainty_policy": {
+      "question": "May an UNCITED theory uncertainty change a verdict?",
+      "source": "generators.generate_validation_certificates.DEFAULT_THEORY_UNCERTAINTY_POLICY",
+      "status": "OPEN",
+      "selected": "cited_only",
+      "default": "cited_only",
+      "options": [
+        {
+          "id": "cited_only",
+          "summary": "a theory uncertainty may only change a verdict if cited",
+          "consequence": "Fifteen rows carry a theory uncertainty; for ten it makes no difference to the verdict and is unaffected. Five are load-bearing and none is cited, so they revert to the experimental verdict: G_F_matched 0.02->57.1 sigma, m_higgs_pred 1.14->41.6, T_CMB 0.79->18.6, sin2_theta_w_geometric 0.68->17.1 (all PASS or MARGINAL -> FAIL) and eta_baryon 0.22->1.63 (PASS -> MARGINAL). Reversible: supplying a citation restores the folded verdict.",
+          "adopted": true
+        },
+        {
+          "id": "always",
+          "summary": "fold theory uncertainty in regardless of provenance",
+          "consequence": "The behaviour before this fork existed. Keeps the four extreme deflations as PASS/MARGINAL, including sin2_theta_w_geometric at 0.68 sigma -- the same number G12 reports as COMPUTED_FAIL at 17.1 sigma with no buffer. One prediction, two published verdicts.",
+          "adopted": false
+        },
+        {
+          "id": "experimental_only",
+          "summary": "verdict from experimental uncertainty alone, always",
+          "consequence": "Ignores theory uncertainty entirely. Honest about measurement, but overstates failure for a genuinely tree-level prediction, which does not claim the experiment's precision. Also demotes the ten rows where the allowance is modest and was doing no work.",
+          "adopted": false
+        }
+      ],
+      "notes": "Generalises the R6 ruling (G12 converts with no invented theory buffer and fails honestly) from one gate to the whole validation layer. All three verdicts are exported per row in validation_report.json, so the comparison needs no rebuild.",
+      "drift": null
+    },
     "face_genericity": {
       "question": "Must the four face labels avoid containing a Fano line?",
       "source": "PM.gauge.topological_terms.face_assignment_candidates",
