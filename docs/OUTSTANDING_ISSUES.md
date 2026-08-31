@@ -12,9 +12,23 @@ consistency beacons 13/13 PASS · canonical registry drift 0 ·
 triple-track mismatches 1 · `formulas.json` / `sections.json` scan clean
 for stale geometry.
 
-**Honest validation scoreboard (170 records):** 47 PASS · 13 MARGINAL ·
-3 TENSION · 9 FAIL · 81 INPUT (experimental anchors, excluded from the
-tally) · 17 UNBOUNDED (predictions with no declared anchor).
+**Honest validation scoreboard (174 records):** 44 PASS · 13 MARGINAL ·
+5 TENSION · 12 FAIL · 81 INPUT (experimental anchors, excluded from the
+tally) · 17 UNBOUNDED (predictions with no declared anchor) · 2 IDENTITY.
+
+**Global fit (computed from the rows, not asserted):** chi^2 =
+126,677 over 64 scoring rows (reduced
+1,979); excluding the 5 withdrawn candidates,
+chi^2 = 5,719 over 59 (reduced
+96.9). Both are published in
+`statistical_rigor_report.json`; neither is a good fit. The previously
+advertised "chi^2 = 0.23, TOO_GOOD" was a v23.9 literal reached through a
+`.get(..., 0.23)` default on a key the report has never contained — see
+1.6c.
+
+**Gate dashboard:** 41/43 locked (95.3%), open ['12', '72'],
+29 axiomatic, 45 declarative (no executable form, never
+run). This replaces "42/42 LOCKED (100.0%), open_gate_ids: []" — see 2.6.
 
 ---
 
@@ -191,6 +205,75 @@ Selectable as the `theory_uncertainty_policy` fork
 published side by side in the report so the choice's cost is visible without
 a rebuild.
 
+### 1.6c The global fit was a literal, and four other numbers were too — ✅ CLOSED 2026-09-01
+`statistical_rigor_validator` read `summary.get("global_chi_squared", 0.23)`
+from a report whose summary block has never carried that key, so the 0.23
+default — a value carried over from v23.9 — fired on **every** run, together
+with a `degrees_of_freedom` default of 25. The p-value, the EDOF comparison
+and the headline verdict were all computed from those two literals rather
+than from the 136 rows in the same file. Three further faults compounded it:
+
+* with the file **absent** it set the same literals, set the row list to
+  empty, and still published a full report including "Full Independence:
+  True" — a complete statistical analysis of no data;
+* the p-value **tail** was chosen from the data but **interpreted** from the
+  `use_lower_tail` flag, so an upper-tail p ≈ 0 was reported as "TOO_GOOD
+  (suspiciously perfect fit)" — the conclusion inverted;
+* `recalculate_with_theory_uncertainty` summed only `PASS` and `MARGINAL`
+  rows, measuring fit quality over exactly the rows that already agreed.
+
+Same code, same file, now: **χ² = 126,677 over 64 scoring rows, p = 0,
+POOR_FIT**. `UNBOUNDED` rows are excluded — `gauge.M_GUT_GEOMETRIC` compares
+2.1e16 GeV against 1.67e34, a proton *lifetime*, and contributed 3.4e38 by
+itself. The three `algebra.gaugino_cabibbo_*` rows are 95.4% of what remains;
+they are now labelled FALSIFIED, and the fit is published both with and
+without the withdrawn candidates rather than either being chosen silently.
+Excluding them does not rescue it: reduced χ² is still 96.9.
+
+**Still open:** the EDOF = 3 ansatz and the `np.random` Jacobian remain
+scaffolds, and say so in `scaffold_notes`. Read `chi_squared_from_rows`,
+which depends on neither.
+
+### 1.6d Twenty statuses were being upgraded at export — ✅ CLOSED 2026-09-01
+The export whitelist preserved seven status names and rewrote everything
+else to `DERIVED`. An AST walk over every `Parameter(status=...)` literal
+found **27 declared, 7 surviving** — and the rewrite always ran in the same
+direction, because DERIVED is stronger than nearly all of them. `FITTED` (19
+parameters), `ANSATZ` (7, including `gauge.su2_sin2_theta_W` and
+`gauge.su3_alpha_s_predicted`), `SPECULATIVE` (3), `PLAUSIBLE` (6),
+`TOPOLOGY_CANDIDATE` and `RETRODICTED_VARIANT` all shipped as derivations.
+`FALSIFIED` and `MEASURED` were each found separately and are the same bug.
+
+This subsumes §1.3's `wa_thawing` concern: the framework had already labelled
+it `FITTED` — its own description reads "dim(Psi)=4 multiplier introduced
+post-hoc" — and the export was overwriting that label. 21 statuses now ship
+where 7 did; DERIVED falls 338 → 275.
+
+### 1.6e Twenty anchors claimed to be tuning-free consequences of b₃ — ✅ CLOSED 2026-09-01
+`geometric_anchors.py` registered every anchor `GEOMETRIC` with
+`"fundamental": True` and `"tuning_free": True`, without exception. Twenty
+are raw experimental input: the three NuFIT mixing angles, the SH0ES H₀, the
+Planck matter density, the DESI w₀/wₐ, the PDG Wolfenstein A and Jarlskog,
+and two openly phenomenological fit values.
+
+The correct classification **already existed** — a `measured_params` set with
+a docstring explaining exactly this distinction — inside a method named
+`register_to_registry` that is not defined on the class and is called from
+nowhere. The whole block was dead code; the right answer sat in the
+repository and never ran.
+
+`geometry.theta_13` is the sharpest case and settles §1.1's cross-check
+question: the producer returns a hardcoded `8.54` whose own comment reads
+`8.54 deg (NuFIT)`, and its `eml_description` is the bare literal
+`eml_scalar(8.54)`. It is the anchor restated, so it is **deliberately left
+unscored** — binding it would publish a ~0σ PASS measuring nothing. The
+register's "0.4σ cross-check" claim is withdrawn.
+
+`particle.theta_13_deg` **is** a derivation and is now scored for the first
+time: **0.805σ PASS** against NuFIT 6.0 8.58 ± 0.11, confirming the prose
+"0.8σ" as a computed row. `geometry.sum_m_nu` clears the 0.12 eV bound with
+32% margin. Scored rows 172 → 174.
+
 ### 1.7 H₀ — three coexisting values, one at 3.17σ
 Canonical `H0_local` = 71.55 (1.43σ, FITTED_COMPOSITE), sterile-extraction
 variant 70.42, and `H0_ricci_variant` = 76.34 at **3.17σ** from SH0ES.
@@ -329,6 +412,21 @@ datasources" goal.
 `portals.sterile_n_eff_contribution`, `spectral.fermion_count`.
 Several (M_GUT, vev, η_baryon, Σmν, Jarlskog) have obvious anchors and
 should be bound so they appear on the scoreboard.
+
+### 2.6a The dashboard contradicted the gates — ✅ CLOSED 2026-09-01
+`improvement_scorecard.json` published "42/42 testable gates LOCKED (100.0%
+complete), open_gate_ids: []" with G12 among the locked ids, while
+`evaluation_summary` in the same directory reported G12 COMPUTED_FAIL at
+17.1σ and the G72 seal failing on it. The generator read
+`verification_status` — what a certificate *asserts* about itself — and never
+looked at `evaluation_status`, which records what happened when the gate was
+executed. A gate could be VERIFIED and COMPUTED_FAIL at once, and the
+dashboard showed the first.
+
+Now **41/43 locked (95.3%), open ['12', '72']**, with 45 gates counted
+separately as declarative (no executable form, never run) so a completion
+figure is not mistaken for an execution rate. The `summary` block is a
+legitimate declarative tally and now says so.
 
 ### 2.5 Ledger: 17 "still fitted (legacy marker)" + 9 open tensions
 Of 707 audited parameters: 533 fully EML-derived, 96 numerical agreement,
