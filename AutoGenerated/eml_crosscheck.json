@@ -3,19 +3,18 @@
   "with_eml_description": 548,
   "skip": 108,
   "buckets": {
-    "AGREE": 371,
+    "AGREE": 372,
     "AGREE_LOOSE": 12,
     "ERROR": 88,
     "DISAGREE": 63,
     "DISAGREE_MISSING_CTX": 63,
-    "DISAGREE_SIGN": 1,
     "DISAGREE_SCALE": 5
   },
   "errors": 88,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.615257048092869,
-  "agreement_rate_strict": 0.7203883495145631,
-  "agreement_rate_loose": 0.7436893203883496,
+  "agreement_rate_strict_all": 0.6169154228855721,
+  "agreement_rate_strict": 0.7223300970873786,
+  "agreement_rate_loose": 0.7456310679611651,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -645,12 +644,11 @@
     },
     {
       "path": "ckm.V_cd",
-      "status": "DISAGREE_SIGN",
+      "status": "AGREE",
       "evaluated": -0.22313016014842982,
-      "registered": 0.22313016014842982,
-      "rel_error": 2.0,
-      "eml_description": "EML: ops.neg(eml_vec('ckm.lambda_wolfenstein')) \u2014 V_cd = -lambda at leading Wolfenstein order",
-      "diagnostic": "sign flip \u2014 magnitudes match"
+      "registered": -0.22313016014842982,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.neg(eml_vec('ckm.lambda_wolfenstein')) \u2014 V_cd = -lambda at leading Wolfenstein order"
     },
     {
       "path": "ckm.V_cs",
@@ -2010,7 +2008,7 @@
       "path": "framework_statistics.chi_squared_reduced",
       "status": "DISAGREE_MISSING_CTX",
       "evaluated": 0.0,
-      "registered": 1921.2977,
+      "registered": 467.3593,
       "rel_error": 1.0,
       "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
       "diagnostic": "missing: chi_squared",
@@ -2022,7 +2020,7 @@
       "path": "framework_statistics.degrees_of_freedom",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression \"ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted))\": name 'N_fitted' is not defined",
-      "registered": 63.0,
+      "registered": 4.0,
       "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted)) \u2014 dof = N_pred \u2212 N_fitted_params"
     },
     {
@@ -5258,7 +5256,7 @@
     {
       "path": "validation.success_rate",
       "status": "SKIP",
-      "reason": "non-numeric value: '82.8%'",
+      "reason": "non-numeric value: '40.0%'",
       "eml_description": "EML: ops.mul(ops.div(eml_vec('validation.within_2sigma'), eml_vec('validation.total_predictions')), eml_scalar(100.0)) \u2014 success rate = within_2\u03c3/total \u00d7 100%"
     },
     {
@@ -5271,7 +5269,7 @@
       "path": "validation.total_predictions",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_pred)': name 'N_pred' is not defined",
-      "registered": 64.0,
+      "registered": 5.0,
       "eml_description": "EML: eml_scalar(N_pred) \u2014 total number of verifiable predicted observables"
     },
     {
@@ -5285,14 +5283,14 @@
       "path": "validation.within_1sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_1\u03c3)': name 'N_1\u03c3' is not defined",
-      "registered": 40.0,
+      "registered": 1.0,
       "eml_description": "EML: eml_scalar(N_1\u03c3) \u2014 count of predictions within 1\u03c3 of experimental value"
     },
     {
       "path": "validation.within_2sigma",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(N_2\u03c3)': name 'N_2\u03c3' is not defined",
-      "registered": 53.0,
+      "registered": 2.0,
       "eml_description": "EML: eml_scalar(N_2\u03c3) \u2014 count of predictions within 2\u03c3 of experimental value"
     },
     {

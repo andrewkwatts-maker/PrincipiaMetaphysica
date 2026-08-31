@@ -1,17 +1,17 @@
 {
   "version": "24.2",
-  "generated_at": "2026-08-31T10:51:57.657120+00:00",
+  "generated_at": "2026-08-31T19:22:32.505650+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
     "total_simulations": 85,
-    "agreed": 85,
-    "failed": 0,
+    "agreed": 84,
+    "failed": 1,
     "not_implemented": 0,
     "errors": 0,
     "skipped": 0,
-    "global_max_deviation": 3.808798771726061e-12,
-    "all_agree": true
+    "global_max_deviation": 2.0,
+    "all_agree": false
   },
   "simulations": {
     "abstract_v17_2": {
@@ -106,10 +106,10 @@
       "note": ""
     },
     "ckm_matrix_v16_0": {
-      "status": "AGREE",
+      "status": "FAIL",
       "params_checked": 18,
-      "params_agreed": 18,
-      "max_deviation": 3.808798771726061e-12,
+      "params_agreed": 17,
+      "max_deviation": 2.0,
       "note": ""
     },
     "proton_decay_v17_2": {
@@ -610,5 +610,12 @@
       "note": ""
     }
   },
-  "failed_params": {}
+  "failed_params": {
+    "ckm.V_cd": {
+      "simulation": "ckm_matrix_v16_0",
+      "normal_value": -0.22313016014842982,
+      "eml_value": 0.22313016014842982,
+      "deviation": 2.0
+    }
+  }
 }

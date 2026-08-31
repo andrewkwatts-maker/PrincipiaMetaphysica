@@ -9,6 +9,11 @@
       "b3_traceback": true,
       "formula": "abs(ReT \u2212 v_target) / v_target \u00b7 100 with v_target = 174.033 GeV and b3 = 24 in the instanton exponent",
       "value": 0.0
+    },
+    "bridge_coupling_derived": {
+      "b3_traceback": true,
+      "formula": "exp(-pi * Re(T) / b3) (G2 half-instanton on the associative 3-cycle; bridge wraps cycle once vs full instanton's twice, so action is half of W_inst exponent; b3 = 24 seeded)",
+      "value": 1.2776015121645592e-10
     }
   },
   "T4_24cell_projection": {
@@ -69,7 +74,7 @@
     "epsilon_L": {
       "b3_traceback": false,
       "formula": "CP-violating phase from G2 triple-cycle intersections: 0.01 * exp(-Re(T) / 100)",
-      "value": 0.001754624884408279
+      "value": 0.0013533528323661271
     },
     "eta_B": {
       "b3_traceback": true,
@@ -109,10 +114,25 @@
       "formula": "0.012 * exp(-Re(T) / 200) * g_mirror  -- mirror-sector DE from Z2 bridge (Re(T) anchored at b3 = 24 via Sprint 4 #3)",
       "value": 6.031906962403355e-13
     },
+    "f_EDE_kk_honest_12bridges": {
+      "b3_traceback": true,
+      "formula": "(30 zeta(3) / pi^4 g_*) * N_bridges * (m_KK / T)  -- 12 bridge KK towers with proper radiation normalisation; rooted at b3 = 24 cohomology",
+      "value": 2.542582417582417
+    },
+    "f_EDE_kk_naive_288": {
+      "b3_traceback": true,
+      "formula": "N_KK / (m_KK / T)  -- naive 288-mode template (b3 = 24 * 12 bridges); UNPHYSICAL (>> 1)",
+      "value": 149.76000000000002
+    },
     "full_cosmological_tension_resolution": {
       "b3_traceback": true,
       "formula": "mirror DE / early DE from 26D bulk + Re(T); Re(T) anchored at b3 = 24 (Sprint 4 #3); DOCUMENTED_TENSION -- magnitudes ~10^13x too small",
       "value": 73.0400000000035
+    },
+    "m_kk_for_target_f_EDE": {
+      "b3_traceback": true,
+      "formula": "F_EDE_TARGET / [(30 zeta(3) / pi^4 g_*) * N_bridges] * T_recomb  -- inverted; b3 = 24 cohomology rooted, needs v28 derivation of natural m_KK",
+      "value": 0.003933009184224743
     }
   },
   "g2_inflation": {
@@ -124,7 +144,7 @@
     "r": {
       "b3_traceback": true,
       "formula": "16 * epsilon where epsilon = 3 / (2*ReT^2) and ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24",
-      "value": 0.000792406498244269
+      "value": 2.4e-11
     }
   },
   "higgs_sector": {
@@ -145,18 +165,64 @@
     },
     "m_h_divergence": {
       "b3_traceback": false,
-      "formula": "template formula sqrt(0.5*(B_mu/v + mu^2) + 35^2) vs observed 125.10 GeV",
+      "formula": "MSSM CP-even diagonalisation + stop-loop correction vs observed 125.20 GeV (PDG 2024)",
       "value": {
-        "deviation_GeV": 443.2872627529316,
-        "observed_GeV": 125.1,
-        "predicted_GeV": 568.3872627529316,
-        "uncertainty_GeV": 0.14
+        "deviation_GeV": -37.644568999445326,
+        "observed_GeV": 125.2,
+        "predicted_GeV": 87.55543100055468,
+        "uncertainty_GeV": 0.11
       }
     },
     "v_EW_GeV": {
       "b3_traceback": true,
       "formula": "minimum of MSSM Higgs potential from b3-seeded soft terms",
       "value": 174.0
+    }
+  },
+  "higgs_sector_test": {
+    "probe": {
+      "b3_traceback": true,
+      "formula": "b3 seed probe",
+      "value": 42.0
+    }
+  },
+  "lhc_predictions": {
+    "full_lhc_spectrum": {
+      "b3_traceback": true,
+      "formula": "complete LHC SUSY spectrum (gluino, stop, neutralino, higgsino) with Run 3 / HL-LHC reach verdict; b3-seeded via m_3_2",
+      "value": {
+        "hl_lhc_reach_gluino": 3000.0,
+        "lhc_run3_reach_gluino": 2200.0,
+        "m_gluino_GeV": 6500.0,
+        "m_higgsino_GeV": 1600.0,
+        "m_neutralino_GeV": 500.0,
+        "m_stop_GeV": 3082.207001484488
+      }
+    },
+    "m_gluino_GeV": {
+      "b3_traceback": true,
+      "formula": "6.5 * m_1_2 with m_1_2 = 0.5 * m_3_2 (one-loop QCD running from m_3_2; m_3_2 from soft_susy_breaking, ultimately b3-seeded via Re(T) stabilization)",
+      "value": 6500.0
+    },
+    "m_higgsino_GeV": {
+      "b3_traceback": true,
+      "formula": "0.8 * m_3_2 (mu-term from Giudice-Masiero / instanton; b3-seeded via m_3_2)",
+      "value": 1600.0
+    },
+    "m_neutralino_GeV": {
+      "b3_traceback": true,
+      "formula": "0.5 * m_1_2 with m_1_2 = 0.5 m_3_2 (bino-like; b3-seeded via m_3_2)",
+      "value": 500.0
+    },
+    "m_stop_GeV": {
+      "b3_traceback": true,
+      "formula": "sqrt(m_0^2 + 5.5 * m_1_2^2) with m_0 = m_3_2, m_1_2 = 0.5 m_3_2 (one-loop scalar RGE; b3-seeded via m_3_2)",
+      "value": 3082.207001484488
+    },
+    "verdict": {
+      "b3_traceback": false,
+      "formula": "Run 3 / HL-LHC / FCC verdict from gluino mass vs experimental reach",
+      "value": "WAITS_FOR_FCC"
     }
   },
   "mirror_dm_relic": {
