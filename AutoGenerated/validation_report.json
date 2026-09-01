@@ -4,8 +4,8 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
-    "total": 174,
-    "fail": 12,
+    "total": 175,
+    "fail": 13,
     "identity": 2,
     "input": 81,
     "marginal": 13,
@@ -22,7 +22,7 @@
     "n_load_bearing": 5,
     "n_load_bearing_cited": 0,
     "scoreboard_if_always": {
-      "FAIL": 8,
+      "FAIL": 9,
       "IDENTITY": 2,
       "INPUT": 81,
       "MARGINAL": 13,
@@ -31,7 +31,7 @@
       "UNBOUNDED": 17
     },
     "scoreboard_if_experimental_only": {
-      "FAIL": 12,
+      "FAIL": 13,
       "IDENTITY": 2,
       "INPUT": 81,
       "MARGINAL": 13,
@@ -110,6 +110,11 @@
       "verdict": "FAIL"
     },
     {
+      "path": "cosmology.n_s_slow_roll",
+      "sigma": 8.262808750209016,
+      "verdict": "FAIL"
+    },
+    {
       "path": "neutrino.sin_theta13_derived",
       "sigma": 3.322726422822558,
       "verdict": "FAIL"
@@ -157,11 +162,6 @@
     {
       "path": "neutrino.delta_CP_derived",
       "sigma": 1.825,
-      "verdict": "MARGINAL"
-    },
-    {
-      "path": "ckm.V_cb",
-      "sigma": 1.7558524965061326,
       "verdict": "MARGINAL"
     }
   ],
@@ -1124,6 +1124,26 @@
       "units": "dimensionless",
       "source_simulation": "baryon_asymmetry_v18",
       "bound_type": null,
+      "relative_margin": null
+    },
+    {
+      "path": "cosmology.n_s_slow_roll",
+      "value": 0.9996037967508778,
+      "experimental_value": 0.9649,
+      "experimental_uncertainty": 0.0042,
+      "experimental_source": "Planck2018",
+      "sigma": 8.262808750209016,
+      "sigma_experimental_only": 8.262808750209016,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "FAIL",
+      "verdict_with_theory": "FAIL",
+      "verdict_experimental_only": "FAIL",
+      "registry_status": "DERIVED",
+      "units": null,
+      "source_simulation": "v26.0:inflation",
+      "bound_type": "central_value",
       "relative_margin": null
     },
     {

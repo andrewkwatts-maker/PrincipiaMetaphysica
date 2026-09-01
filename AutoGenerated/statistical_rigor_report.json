@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-09-01T05:31:36.808609",
+  "test_date": "2026-09-01T01:06:36.927004",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
@@ -8,14 +8,14 @@
   },
   "chi_squared_from_rows": {
     "all_scoring_rows": {
-      "chi_squared": 126676.90472655697,
-      "n": 64,
-      "reduced": 1979.3266363524526
+      "chi_squared": 126745.1787349995,
+      "n": 65,
+      "reduced": 1949.9258266923
     },
     "excluding_falsified": {
-      "chi_squared": 5718.666839414389,
-      "n": 59,
-      "reduced": 96.92655660024388
+      "chi_squared": 5786.940847856919,
+      "n": 60,
+      "reduced": 96.44901413094865
     },
     "withdrawn_rows": [
       {
@@ -47,10 +47,10 @@
     "note": "FALSIFIED rows stay on the books and stay scored. They are shown separately because a withdrawn candidate should not silently set the headline fit quality in either direction."
   },
   "edof_analysis": {
-    "chi_squared": 126676.90472655697,
+    "chi_squared": 126745.1787349995,
     "effective_dof": 3,
-    "traditional_dof": 64,
-    "reduced_chi_squared": 42225.63490885232,
+    "traditional_dof": 65,
+    "reduced_chi_squared": 42248.3929116665,
     "p_value": 0.0,
     "status": "POOR_FIT",
     "is_credible": false,
@@ -58,29 +58,29 @@
     "justification": "PM's 25 testable parameters derive from only 3 truly independent seeds: b\u2083 (Betti number), \u03c6 (golden ratio), and \u03b8\u2081\u2083 (fitted mixing angle). All other 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF = 25 assumes independence, which violates PM's topological ancestry structure. EDOF = 3 reflects true statistical independence per rigorous Gemini analysis (2026-02-14).",
     "comparison": {
       "traditional_approach": {
-        "dof": 64,
-        "reduced_chi_sq": 1979.3266363524526,
+        "dof": 65,
+        "reduced_chi_sq": 1949.9258266923,
         "issue": "Assumes independence - inappropriate for topologically unified theory"
       },
       "edof_approach": {
         "edof": 3,
-        "reduced_chi_sq": 42225.63490885232,
+        "reduced_chi_sq": 42248.3929116665,
         "advantage": "Properly accounts for topological correlation structure"
       }
     }
   },
   "theory_uncertainty_correction_deprecated": {
     "old_statistics": {
-      "chi_squared": 126676.90472655697,
-      "reduced_chi_squared": 2010.7445194691581,
+      "chi_squared": 126745.1787349995,
+      "reduced_chi_squared": 1980.3934177343672,
       "p_value": 0.0,
-      "dof": 63
+      "dof": 64
     },
     "new_statistics": {
-      "chi_squared": 1963.837009215462,
-      "reduced_chi_squared": 31.17201601929305,
+      "chi_squared": 1971.293109996294,
+      "reduced_chi_squared": 30.801454843692095,
       "p_value": 0.0,
-      "dof": 63
+      "dof": 64
     },
     "theory_uncertainty_percent": 1.2,
     "tail_used": "upper (standard)",
@@ -146,8 +146,8 @@
     "full_dimensional_independence": true,
     "p_value_old": 0.0,
     "p_value_new": 0.0,
-    "chi_squared_reduced_old": 2010.7445194691581,
-    "chi_squared_reduced_new": 31.17201601929305,
+    "chi_squared_reduced_old": 1980.3934177343672,
+    "chi_squared_reduced_new": 30.801454843692095,
     "theory_uncertainty_percent": 1.2
   },
   "jacobian_analysis": {
@@ -157,21 +157,21 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        12.855580639507146,
-        5.337606205173289,
-        5.048408379906707,
-        4.868995151668372,
-        4.69027420322772,
-        4.520770670967844,
-        4.434728484168855,
-        4.311193363966474,
-        4.19804923284512,
-        4.098430846967992
+        13.074322258533208,
+        5.3020014257196,
+        4.956656113430262,
+        4.652824352686254,
+        4.647259695873191,
+        4.527456502448923,
+        4.369618112488994,
+        4.22842193476081,
+        4.160656664957153,
+        4.075855189842703
       ],
-      "condition_number": 8.725009549183072,
+      "condition_number": 8.736471559612577,
       "p_value": 0.0,
-      "chi_squared": 126676.90472655697,
-      "degrees_of_freedom": 64,
+      "chi_squared": 126745.1787349995,
+      "degrees_of_freedom": 65,
       "effective_dof": 3,
       "rigor_status": "POOR_FIT",
       "dimensions_for_95_variance": 21,
@@ -181,10 +181,10 @@
         "hidden_redundancies": false
       },
       "edof_analysis": {
-        "chi_squared": 126676.90472655697,
+        "chi_squared": 126745.1787349995,
         "effective_dof": 3,
-        "traditional_dof": 64,
-        "reduced_chi_squared": 42225.63490885232,
+        "traditional_dof": 65,
+        "reduced_chi_squared": 42248.3929116665,
         "p_value": 0.0,
         "status": "POOR_FIT",
         "is_credible": false,
@@ -192,29 +192,29 @@
         "justification": "PM's 25 testable parameters derive from only 3 truly independent seeds: b\u2083 (Betti number), \u03c6 (golden ratio), and \u03b8\u2081\u2083 (fitted mixing angle). All other 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF = 25 assumes independence, which violates PM's topological ancestry structure. EDOF = 3 reflects true statistical independence per rigorous Gemini analysis (2026-02-14).",
         "comparison": {
           "traditional_approach": {
-            "dof": 64,
-            "reduced_chi_sq": 1979.3266363524526,
+            "dof": 65,
+            "reduced_chi_sq": 1949.9258266923,
             "issue": "Assumes independence - inappropriate for topologically unified theory"
           },
           "edof_approach": {
             "edof": 3,
-            "reduced_chi_sq": 42225.63490885232,
+            "reduced_chi_sq": 42248.3929116665,
             "advantage": "Properly accounts for topological correlation structure"
           }
         }
       },
       "theory_uncertainty_results": {
         "old_statistics": {
-          "chi_squared": 126676.90472655697,
-          "reduced_chi_squared": 2010.7445194691581,
+          "chi_squared": 126745.1787349995,
+          "reduced_chi_squared": 1980.3934177343672,
           "p_value": 0.0,
-          "dof": 63
+          "dof": 64
         },
         "new_statistics": {
-          "chi_squared": 1963.837009215462,
-          "reduced_chi_squared": 31.17201601929305,
+          "chi_squared": 1971.293109996294,
+          "reduced_chi_squared": 30.801454843692095,
           "p_value": 0.0,
-          "dof": 63
+          "dof": 64
         },
         "theory_uncertainty_percent": 1.2,
         "tail_used": "upper (standard)",
@@ -277,40 +277,40 @@
       "recommended_approach": "EDOF",
       "recommendation_rationale": "The EDOF approach properly accounts for PM's topological correlation structure. Theory uncertainty injection (deprecated) makes the fit appear MORE suspicious by tightening effective error bars."
     },
-    "redundant_parameters": 61,
+    "redundant_parameters": 64,
     "redundancy_pairs": [
       [
         0,
         12,
-        0.9994611258243049
-      ],
-      [
-        0,
-        36,
-        0.9903549051533324
+        0.991868426276896
       ],
       [
         1,
         25,
-        0.9903227804973816
+        0.998306695483871
       ],
       [
-        2,
-        26,
-        0.9949265452764626
+        1,
+        37,
+        0.9995265767342817
+      ],
+      [
+        1,
+        49,
+        0.9966080937178304
       ],
       [
         2,
         38,
-        0.9963688151464808
+        0.9941360672856703
       ]
     ]
   },
   "degrees_of_freedom_assessment": {
     "full_dimensional_independence": true,
     "effective_dof": 27,
-    "claimed_dof": 64,
-    "dof_ratio": 0.421875,
+    "claimed_dof": 65,
+    "dof_ratio": 0.4153846153846154,
     "supports_low_chi_squared": false,
     "recommendation": "Investigate model - may not adequately describe data",
     "peer_review_response": "The effective rank is 27/27, demonstrating full dimensional independence. The p-value of 0.0000 indicates an appropriate fit quality. The low chi_squared reflects the strength of topological constraints, not over-fitting."
@@ -319,14 +319,14 @@
     "too_good_concern": "Traditional DOF counting gives \u03c7\u00b2_reduced = 0.23 which appears suspiciously perfect",
     "solution": "Effective Degrees of Freedom (EDOF) approach",
     "analysis": "PM's 25 testable parameters are NOT statistically independent - they all derive from the same M\u00b2\u2076 bulk topology with only 3 independent inputs: b\u2083 (Betti number), \u03c6 (golden ratio), and \u03b8\u2081\u2083 (fitted mixing angle). All other 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF = 25 assumes independence, which violates PM's fundamental premise. EDOF = 3 reflects the true number of independent topological seeds per rigorous Gemini analysis.",
-    "finding": "Using EDOF = 3: \u03c7\u00b2 = 126676.905, reduced \u03c7\u00b2 = 42225.635, p-value = 0.0000. Status: POOR_FIT. This properly accounts for the topological correlation structure.",
+    "finding": "Using EDOF = 3: \u03c7\u00b2 = 126745.179, reduced \u03c7\u00b2 = 42248.393, p-value = 0.0000. Status: POOR_FIT. This properly accounts for the topological correlation structure.",
     "response": "The EDOF approach resolves the 'too good' concern through proper statistical treatment: \n\n1. **Rigorous Topological Analysis**: PM's 25 parameters derive from only 3 truly independent seeds: b\u2083 = 24 (Betti number), \u03c6 = 1.618... (golden ratio), and \u03b8\u2081\u2083 \u2248 8.5\u00b0 (fitted mixing angle). All other apparent 'seeds' are mathematically derived: \u03c7_eff = 6\u00d7b\u2083, k_gimel = b\u2083/2 + 1/\u03c6\u00b2, \u03b4_CP = 2\u03c0/\u03c6\u00b2. Traditional DOF counting ignores these derivation relationships. \n\n2. **EDOF = 3 is Rigorously Justified**: Following Particle Data Group guidelines (Section 39.4.3), when measurements share common systematic sources, EDOF = number of independent sources. Gemini consultation (2026-02-14) confirmed through detailed mathematical analysis that only b\u2083, \u03c6, and \u03b8\u2081\u2083 are truly independent - all other 'seeds' have explicit derivation formulas. \n\n3. **p-value (HONESTY NOTE, 2026-08 audit)**: the narrative p \u2248 0.11 'Trust Zone' figure describes the EDOF=3 hand calculation above; the validator's OWN computed output in this report is p = 0.97, status TOO_GOOD, is_credible = false. Read the computed fields, not this prose \u2014 the two have not been reconciled, and until they are, the computed verdict governs. \n\n4. **Mathematical Derivations**: \u03b8\u2081\u2083 = arctan(1/7) \u2248 8.13\u00b0 (1D time / 7D G\u2082 ratio, ~4.5% from experiment due to RG flow); k_gimel = b\u2083/2 + 1/\u03c6\u00b2 = 12.382 (matches spectral gap to 0.5%); \u03b4_CP = 2\u03c0/\u03c6\u00b2 \u2248 222.5\u00b0 (within 1\u03c3 of 230\u00b0 \u00b1 40\u00b0 experimental value). \n\n5. **Full Dimensional Independence**: SVD analysis confirms effective rank = 27/27, demonstrating that all 27 manifold dimensions contribute independently at the geometric level. The EDOF reduction reflects correlation at the PHYSICS level (multiple observables from same topology).",
     "supporting_evidence": [
       "Effective rank = 27/27 (proves full dimensional independence)",
       "Zero fitted parameters - all predictions from topology",
       "Lower-tail p-value = 0.000000 (fit better than random chance)",
       "Adding 1.2% theory uncertainty makes \u03c7\u00b2 smaller (confirming errors not underestimated)",
-      "61 parameter pairs show high correlation",
+      "64 parameter pairs show high correlation",
       "Geometric constraints naturally produce tight predictions - low \u03c7\u00b2 is EXPECTED, not suspicious"
     ]
   },

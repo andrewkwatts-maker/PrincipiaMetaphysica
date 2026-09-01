@@ -8,8 +8,8 @@
   ],
   "domain_dim": 7,
   "vacuum_moduli": {
-    "L1": 4.874906174436434,
-    "L2": 4.874906174436434,
+    "L1": 4.874906095208138,
+    "L2": 4.874906095208138,
     "theta_deg": 90.0
   },
   "channel_evaluated": {
@@ -28,8 +28,8 @@
     ],
     "complement_is_associative": true
   },
-  "density_via_epsilon": 564.7614513442927,
-  "density_via_star_phi": 564.761451344293,
+  "density_via_epsilon": 564.7614146296687,
+  "density_via_star_phi": 564.761414629669,
   "route_discrepancy": 3.410605131648481e-13,
   "selection_rule": {
     "n_disjoint_placements": 210,
@@ -39,44 +39,44 @@
   "theta_sweep": [
     {
       "theta_deg": 10.0,
-      "area_route": 17.0296415058605,
-      "metric_route": 547.7318098384322
+      "area_route": 17.029640398779122,
+      "metric_route": 547.7317742308895
     },
     {
       "theta_deg": 30.0,
-      "area_route": 141.19036283607315,
-      "metric_route": 423.5710885082195
+      "area_route": 141.1903536574171,
+      "metric_route": 423.5710609722516
     },
     {
       "theta_deg": 45.0,
-      "area_route": 282.3807256721465,
-      "metric_route": 282.3807256721465
+      "area_route": 282.3807073148343,
+      "metric_route": 282.3807073148344
     },
     {
       "theta_deg": 60.0,
-      "area_route": 423.5710885082195,
-      "metric_route": 141.19036283607326
+      "area_route": 423.5710609722514,
+      "metric_route": 141.1903536574172
     },
     {
       "theta_deg": 80.0,
-      "area_route": 547.7318098384322,
-      "metric_route": 17.02964150586052
+      "area_route": 547.7317742308895,
+      "metric_route": 17.029640398779147
     },
     {
       "theta_deg": 89.0,
-      "area_route": 564.5894326358851,
-      "metric_route": 0.17201870840761402
+      "area_route": 564.5893959324438,
+      "metric_route": 0.17201869722483554
     },
     {
       "theta_deg": 90.0,
-      "area_route": 564.7614513442927,
-      "metric_route": 2.1175162788097793e-30
+      "area_route": 564.7614146296687,
+      "metric_route": 2.117516141151988e-30
     }
   ],
   "at_vacuum": {
     "theta_deg": 90.0,
-    "area_route": 564.7614513442927,
-    "metric_route": 2.1175162788097793e-30
+    "area_route": 564.7614146296687,
+    "metric_route": 2.117516141151988e-30
   },
   "path_a_boundary13": {
     "term": "int_{13} C_3 ^ G_4 ^ G_4 ^ F_2  with G_4 = dC_3",
@@ -100,7 +100,7 @@
     {
       "id": "coupling_nonzero_at_vacuum",
       "claim": "topological density is non-zero at the theta=90deg vacuum",
-      "measured": 564.7614513442927,
+      "measured": 564.7614146296687,
       "status": "PASS",
       "note": "the question Priority 1 was gated on; a zero here would have been a genuine negative result, recorded as such"
     },
@@ -128,7 +128,7 @@
     {
       "id": "metric_channel_dead_at_vacuum",
       "claim": "the metric route vanishes where the topological one peaks",
-      "measured": 2.1175162788097793e-30,
+      "measured": 2.117516141151988e-30,
       "status": "PASS",
       "note": "cos(90deg) = 0 -- this is the defect the topological route exists to bypass, and why the RP gate reads MARGINAL_VACUOUS"
     }
