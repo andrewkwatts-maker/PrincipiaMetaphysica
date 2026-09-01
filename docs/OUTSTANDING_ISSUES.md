@@ -12,15 +12,18 @@ consistency beacons 13/13 PASS · canonical registry drift 0 ·
 triple-track mismatches 1 · `formulas.json` / `sections.json` scan clean
 for stale geometry.
 
-**Honest validation scoreboard (178 records):** 47 PASS · 13 MARGINAL ·
-6 TENSION · 12 FAIL · 84 INPUT (experimental anchors, excluded from the
+**Honest validation scoreboard (179 records):** 47 PASS · 13 MARGINAL ·
+6 TENSION · 13 FAIL · 84 INPUT (experimental anchors, excluded from the
 tally) · 14 UNBOUNDED (predictions with no declared anchor) · 2 IDENTITY.
+(`cosmology.n_s_slow_roll` now appears as FAIL at 8.3σ from Planck 2018; it
+was absent for want of an experimental binding — see item C.
+`cosmology.s8_pm_vs_lensing` appears as TENSION at 2.73σ — see 1.4a.)
 
 **Global fit (computed from the rows, not asserted):** chi^2 =
-126,681 over 64 scoring rows (reduced
-1,979); excluding the 5 withdrawn candidates,
-chi^2 = 5,722 over 59 (reduced
-97.0). Both are published in
+126,749 over 65 scoring rows (reduced
+1,950); excluding the 5 withdrawn candidates,
+chi^2 = 5,791 over 60 (reduced
+96.5). Both are published in
 `statistical_rigor_report.json`; neither is a good fit. The previously
 advertised "chi^2 = 0.23, TOO_GOOD" was a v23.9 literal reached through a
 `.get(..., 0.23)` default on a key the report has never contained — see
@@ -439,10 +442,11 @@ Remaining: G19/G25/G26/G39/G56/G59/G67 need module outputs persisted.
 | `higgs-quartic` | 0.1296 | 0.129 | rounding
 | `dark-energy-wa` | −0.2041 | −0.204124 | benign rounding
 
-### 2.3 Hardcode backlog: 380 exact + 331 stale duplicates across 84 files
+### 2.3 Hardcode backlog: 391 exact + 341 stale duplicates across 86 files
 339 values have a dataset counterpart they should be read from instead.
 This is the long tail of the "everything derived or read from
-datasources" goal.
+datasources" goal. (Live count as of 2026-09-01 from `hardcode_audit.json`;
+previous entry of 380/331/84 was stale.)
 
 ### 2.4 17 predictions carry no experimental anchor (UNBOUNDED)
 `gauge.M_GUT`, `gauge.M_GUT_GEOMETRIC`, `spectral.M_GUT_G2`,
