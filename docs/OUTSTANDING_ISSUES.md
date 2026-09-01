@@ -12,15 +12,15 @@ consistency beacons 13/13 PASS · canonical registry drift 0 ·
 triple-track mismatches 1 · `formulas.json` / `sections.json` scan clean
 for stale geometry.
 
-**Honest validation scoreboard (174 records):** 44 PASS · 13 MARGINAL ·
-5 TENSION · 12 FAIL · 81 INPUT (experimental anchors, excluded from the
-tally) · 17 UNBOUNDED (predictions with no declared anchor) · 2 IDENTITY.
+**Honest validation scoreboard (178 records):** 47 PASS · 13 MARGINAL ·
+6 TENSION · 12 FAIL · 84 INPUT (experimental anchors, excluded from the
+tally) · 14 UNBOUNDED (predictions with no declared anchor) · 2 IDENTITY.
 
 **Global fit (computed from the rows, not asserted):** chi^2 =
-126,677 over 64 scoring rows (reduced
+126,681 over 64 scoring rows (reduced
 1,979); excluding the 5 withdrawn candidates,
-chi^2 = 5,719 over 59 (reduced
-96.9). Both are published in
+chi^2 = 5,722 over 59 (reduced
+97.0). Both are published in
 `statistical_rigor_report.json`; neither is a good fit. The previously
 advertised "chi^2 = 0.23, TOO_GOOD" was a v23.9 literal reached through a
 `.get(..., 0.23)` default on a key the report has never contained — see
@@ -281,6 +281,48 @@ The Ricci module now reports its own FAIL honestly, but the framework
 still ships three H₀ numbers. **Decision needed:** which is canonical?
 → Ideas: mirror-world dark sector (Cyr-Racine 2107.13000) is the closest
 published mechanism to the shadow sector — including its BBN obstruction.
+
+### 1.8 The bridge-to-channel join — ✅ **CLOSED 2026-09-01**, and it derives two things that were inputs
+The register listed "nothing maps a bridge index to a G₂ coordinate pair" as
+the load-bearing geometric gap. The two structures turn out to have identical
+shape: each coupling triangle is indexed by an omitted Fano point and its
+three vertices are the three lines through that point, so a maximal placement
+is 4 points × 3 lines = 12 slots against 4 faces × 3 bridges = 12.
+
+Adding **one stated assumption** — that the E₈ block a bridge carries is a
+property of the *channel* rather than of the face observing it, i.e. one
+global labelling of the 7 Fano lines by 3 blocks shared by every face — and
+enumerating all 3⁷ = 2187 labellings yields two results that were previously
+put in by hand:
+
+| was | now |
+|---|---|
+| `n_faces = 4` read off h^{1,1} = 4 of the TCS #187 building block, which `four_face_structure` itself classifies FITTED | **4 is the maximum.** No labelling makes 5, 6 or 7 points simultaneously rainbow. |
+| `face_genericity` narrowed 35 → 7 by fiat; the fork read OPEN with "NOT derived — nothing in the framework forbids collinear labels" | **The 28 line-containing 4-point sets admit zero labellings**; each of the 7 arcs admits 18. Genericity is a consequence. Fork OPEN → RULED. |
+
+**Not claimed:** the join narrows C(21,12) = 293,930 → 35 → 7 and stops
+there. Which arc, and which of its 18 labellings, is still open. The
+global-labelling premise remains an input and is flagged as such wherever
+the result is quoted. Kill condition: any 5-point rainbow set, or any
+line-containing 4-set admitting a labelling, retracts the respective half.
+
+Two supporting claims were also converted from prose to code. The
+"15400 total groupings, 576 cross-E₈-valid" figures behind the FITTED
+classification of the face grouping had no implementation; both now come
+from an enumeration agreeing with closed forms 12!/((3!)⁴4!) and (4!)².
+And the stride-4 vs contiguous conflict is settled: they are **different
+objects**, since the contiguous grouping's first face lies entirely inside
+one E₈ block.
+
+### 1.9 `compute_leakage_from_lattice` did not do what it said — ✅ CLOSED 2026-09-01
+Its docstring claimed the leakage coupling was "derived from the actual
+stabilized moduli rather than hardcoding ratio=6.0" and was "NOT hardcoded
+but verified from the moduli". It computed the four face volumes from
+`bridge_moduli`, **discarded them**, and returned `1/sqrt(n_bridges // 2)` —
+a function of the bridge *count* alone, identical for any moduli whatsoever.
+The topological derivation (n_aligned = n_pairs/2 = χ_eff/b₃ = 6) is
+defensible and is kept; the provenance claim is withdrawn, and the volumes
+are now load-bearing as a check that can fail.
 
 ### 1.8 Sp(2,ℝ) is invoked, not derived
 The two-time bulk's ghost-freedom rests on an Sp(2,ℝ) gauge constraint

@@ -339,6 +339,74 @@
       }
     ]
   },
+  "block_labelling": {
+    "assumption": "The E8 block is a property of the channel, not of the face: one global labelling of the 7 Fano lines by 3 blocks, shared by every face. Stated, not derived.",
+    "n_points": 7,
+    "n_lines": 7,
+    "n_blocks": 3,
+    "max_rainbow_points": 4,
+    "n_faces_is_forced": true,
+    "qualifying_point_sets": [
+      [
+        0,
+        1,
+        3,
+        6
+      ],
+      [
+        0,
+        1,
+        4,
+        5
+      ],
+      [
+        0,
+        2,
+        3,
+        5
+      ],
+      [
+        0,
+        2,
+        4,
+        6
+      ],
+      [
+        1,
+        2,
+        3,
+        4
+      ],
+      [
+        1,
+        2,
+        5,
+        6
+      ],
+      [
+        3,
+        4,
+        5,
+        6
+      ]
+    ],
+    "n_qualifying": 7,
+    "n_point_sets_of_that_size": 35,
+    "qualifying_sets_are_exactly_the_arcs": true,
+    "n_arcs": 7,
+    "labellings_per_qualifying_set": {
+      "[0, 1, 3, 6]": 18,
+      "[0, 1, 4, 5]": 18,
+      "[0, 2, 3, 5]": 18,
+      "[0, 2, 4, 6]": 18,
+      "[1, 2, 3, 4]": 18,
+      "[1, 2, 5, 6]": 18,
+      "[3, 4, 5, 6]": 18
+    },
+    "genericity_is_derived": true,
+    "residual_freedom": "7 point sets remain, each admitting 18 labellings. The join narrows C(21,12) = 293930 to 35 to 7, not to 1. The assignment is still underdetermined.",
+    "kill_condition": "If any set of 5 or more Fano points is simultaneously rainbow under a single global line-to-block labelling, then 4 is not forced and n_faces = 4 loses this support, falling back on h^{1,1} = 4 of TCS #187 -- which the framework itself labels FITTED. Equally, if any of the 28 line-containing 4-point sets admits a labelling, genericity returns to being a stated criterion rather than a consequence. Both are decided by enumeration over 3^7 = 2187 labellings and are checked on every build."
+  },
   "face_assignment": {
     "n_choices_total": 35,
     "n_line_containing": 28,
