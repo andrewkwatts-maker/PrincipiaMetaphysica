@@ -4,8 +4,8 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
-    "total": 178,
-    "fail": 12,
+    "total": 179,
+    "fail": 13,
     "identity": 2,
     "input": 84,
     "marginal": 13,
@@ -22,7 +22,7 @@
     "n_load_bearing": 5,
     "n_load_bearing_cited": 0,
     "scoreboard_if_always": {
-      "FAIL": 8,
+      "FAIL": 9,
       "IDENTITY": 2,
       "INPUT": 84,
       "MARGINAL": 13,
@@ -31,7 +31,7 @@
       "UNBOUNDED": 14
     },
     "scoreboard_if_experimental_only": {
-      "FAIL": 12,
+      "FAIL": 13,
       "IDENTITY": 2,
       "INPUT": 84,
       "MARGINAL": 13,
@@ -110,6 +110,11 @@
       "verdict": "FAIL"
     },
     {
+      "path": "cosmology.n_s_slow_roll",
+      "sigma": 8.262808750209016,
+      "verdict": "FAIL"
+    },
+    {
       "path": "neutrino.sin_theta13_derived",
       "sigma": 3.322726422822558,
       "verdict": "FAIL"
@@ -157,11 +162,6 @@
     {
       "path": "gauge.m_z_gev",
       "sigma": 1.8610433037717182,
-      "verdict": "MARGINAL"
-    },
-    {
-      "path": "neutrino.delta_CP_derived",
-      "sigma": 1.825,
       "verdict": "MARGINAL"
     }
   ],
@@ -1124,6 +1124,26 @@
       "units": "dimensionless",
       "source_simulation": "baryon_asymmetry_v18",
       "bound_type": null,
+      "relative_margin": null
+    },
+    {
+      "path": "cosmology.n_s_slow_roll",
+      "value": 0.9996037967508778,
+      "experimental_value": 0.9649,
+      "experimental_uncertainty": 0.0042,
+      "experimental_source": "Planck2018",
+      "sigma": 8.262808750209016,
+      "sigma_experimental_only": 8.262808750209016,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "FAIL",
+      "verdict_with_theory": "FAIL",
+      "verdict_experimental_only": "FAIL",
+      "registry_status": "DERIVED",
+      "units": null,
+      "source_simulation": "v26.0:inflation",
+      "bound_type": "central_value",
       "relative_margin": null
     },
     {
@@ -2231,7 +2251,7 @@
       "value": 0.776,
       "experimental_value": 0.776,
       "experimental_uncertainty": 0.017,
-      "experimental_source": "DES Y3 (DES Collaboration 2022)",
+      "experimental_source": "ESTABLISHED:DES_Y3_2022",
       "sigma": 0.0,
       "sigma_experimental_only": 0.0,
       "theory_uncertainty": null,
@@ -2242,7 +2262,7 @@
       "verdict_experimental_only": "INPUT",
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
-      "source_simulation": "s8_suppression_v16_2",
+      "source_simulation": "ESTABLISHED:DES_Y3_2022",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2251,7 +2271,7 @@
       "value": 0.769,
       "experimental_value": 0.769,
       "experimental_uncertainty": 0.032,
-      "experimental_source": "HSC Y3 (Li et al. 2023)",
+      "experimental_source": "ESTABLISHED:HSC_Y3_2023",
       "sigma": 0.0,
       "sigma_experimental_only": 0.0,
       "theory_uncertainty": null,
@@ -2262,7 +2282,7 @@
       "verdict_experimental_only": "INPUT",
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
-      "source_simulation": "s8_suppression_v16_2",
+      "source_simulation": "ESTABLISHED:HSC_Y3_2023",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2271,7 +2291,7 @@
       "value": 0.766,
       "experimental_value": 0.766,
       "experimental_uncertainty": 0.02,
-      "experimental_source": "KiDS-1000 (Heymans et al. 2021)",
+      "experimental_source": "ESTABLISHED:KiDS1000_2021",
       "sigma": 0.0,
       "sigma_experimental_only": 0.0,
       "theory_uncertainty": null,
@@ -2282,7 +2302,7 @@
       "verdict_experimental_only": "INPUT",
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
-      "source_simulation": "s8_suppression_v16_2",
+      "source_simulation": "ESTABLISHED:KiDS1000_2021",
       "bound_type": "measured",
       "relative_margin": null
     },

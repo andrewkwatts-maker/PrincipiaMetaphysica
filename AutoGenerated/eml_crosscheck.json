@@ -1,20 +1,20 @@
 {
   "total": 715,
-  "with_eml_description": 552,
+  "with_eml_description": 551,
   "skip": 108,
   "buckets": {
-    "AGREE": 376,
+    "AGREE": 379,
     "AGREE_LOOSE": 12,
-    "ERROR": 88,
+    "ERROR": 89,
     "DISAGREE": 63,
     "DISAGREE_MISSING_CTX": 63,
-    "DISAGREE_SCALE": 5
+    "DISAGREE_SCALE": 1
   },
-  "errors": 88,
+  "errors": 89,
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.6194398682042833,
-  "agreement_rate_strict": 0.7244701348747592,
-  "agreement_rate_loose": 0.7475915221579962,
+  "agreement_rate_strict_all": 0.6243822075782537,
+  "agreement_rate_strict": 0.7316602316602316,
+  "agreement_rate_loose": 0.7548262548262549,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -891,21 +891,19 @@
     },
     {
       "path": "consciousness.tau_baseline",
-      "status": "DISAGREE_SCALE",
-      "evaluated": 25.0,
+      "status": "AGREE",
+      "evaluated": 0.24023497927432053,
       "registered": 0.24023497927432072,
-      "rel_error": 103.06477889072464,
-      "eml_description": "EML: eml_scalar(25.0) \u2014 baseline Orch-OR coherence time tau_baseline = 25ms (EEG/MEG gamma scale, 6 active pairs)",
-      "diagnostic": "off by 10^2"
+      "rel_error": 8.087457950390591e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(25.0), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(ops.div(eml_scalar(6.0), eml_scalar(12.0))))), ops.pow(ops.div(eml_scalar(6.0), eml_scalar(6.0)), eml_scalar(2.0)))), eml_scalar(1000.0)) \u2014 tau_baseline = tau_0*exp(k*sqrt(n/12))*(n/6)^2/1000 with n=6 pairs, tau_0=25ms, k=3.2 (Orch-OR, SPECULATIVE). Divided by 1000 for ms\u2192s; previous eml_scalar(25.0) was the bare seed, missing the 6-pair factor exp(3.2*sqrt(0.5)) \u2248 9.61."
     },
     {
       "path": "consciousness.tau_gnosis",
-      "status": "DISAGREE_SCALE",
-      "evaluated": 2453.253019710934,
+      "status": "AGREE",
+      "evaluated": 2.453253019710935,
       "registered": 2.4532530197109352,
-      "rel_error": 998.9999999999994,
-      "eml_description": "EML: ops.mul(eml_scalar(25.0), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(eml_scalar(1.0)))), ops.pow(eml_scalar(2.0), eml_scalar(2.0)))) \u2014 full gnosis coherence time tau(12) = tau_0 * exp(3.2*sqrt(12/12)) * (12/6)^2",
-      "diagnostic": "off by 10^3"
+      "rel_error": 1.8102054956499728e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(25.0), ops.mul(ops.exp(ops.mul(eml_scalar(3.2), ops.sqrt(eml_scalar(1.0)))), ops.pow(eml_scalar(2.0), eml_scalar(2.0)))), eml_scalar(1000.0)) \u2014 tau_gnosis = tau_0*exp(k*sqrt(12/12))*(12/6)^2/1000 with tau_0=25ms, k=3.2 (Orch-OR, SPECULATIVE). Divided by 1000 for ms\u2192s; previous expression was in ms."
     },
     {
       "path": "consciousness.unlocking_probability_10",
@@ -1838,7 +1836,7 @@
       "evaluated": 0.8259690604193356,
       "registered": 0.83,
       "rel_error": 0.0048565537116438086,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (DESI/Planck input)",
+      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (Planck 2018 input; attribution Planck, not DESI)",
       "diagnostic": "within 1%"
     },
     {
@@ -3382,12 +3380,11 @@
     },
     {
       "path": "gravity.scalar_breathing_amplitude",
-      "status": "DISAGREE_SCALE",
-      "evaluated": 1.7361111111111135e-12,
+      "status": "AGREE",
+      "evaluated": 1.736111111111113e-09,
       "registered": 1.7361111111111109e-09,
-      "rel_error": 0.999,
-      "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_scalar(1e-9)) \u2014 scalar breathing mode A ~ \u03b1_F \u00d7 (NS merger strain) ~ 10\u207b\u2079",
-      "diagnostic": "off by 10^-3"
+      "rel_error": 1.19114008207636e-15,
+      "eml_description": "EML: ops.mul(eml_vec('gravity.alpha_F_r2'), eml_scalar(1e-6)) \u2014 scalar breathing mode A = \u03b1_F \u00d7 (R_source/M_Pl\u00b2) with R_source/M_Pl\u00b2 ~ 1e-6 for NS mergers (see compute_modified_gravity, line ~286). Previous expression used 1e-9 (the result, not the input), which was a transcription error."
     },
     {
       "path": "gravity.spin_connection_components",
@@ -3582,7 +3579,7 @@
       "evaluated": 0.776,
       "registered": 0.776,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.776) \u2014 DES Y3 S8"
+      "eml_description": "EML: eml_scalar(0.776) \u2014 S\u2088 from DES Year 3 cosmic shear (input anchor)"
     },
     {
       "path": "lensing.S8_hsc_y3",
@@ -3590,7 +3587,7 @@
       "evaluated": 0.769,
       "registered": 0.769,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.769) \u2014 HSC Y3 S8"
+      "eml_description": "EML: eml_scalar(0.769) \u2014 S\u2088 from HSC Year 3 cosmic shear (input anchor)"
     },
     {
       "path": "lensing.S8_kids1000",
@@ -3598,7 +3595,7 @@
       "evaluated": 0.766,
       "registered": 0.766,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.766) \u2014 KiDS-1000 S8"
+      "eml_description": "EML: eml_scalar(0.766) \u2014 S\u2088 from KiDS-1000 multi-probe weak lensing (input anchor)"
     },
     {
       "path": "moduli.re_t_attractor",
@@ -4241,12 +4238,10 @@
     },
     {
       "path": "portals.sterile_mixing_sin2_2theta",
-      "status": "DISAGREE_SCALE",
-      "evaluated": 0.041666666666666644,
+      "status": "ERROR",
+      "reason": "eml_description must start with 'EML: '; got 'FALSIFIED: sin\u00b2(2\u03b8) = 1/b\u2083 = 1/24 \u2248 0.04'",
       "registered": 4.276717531403905e-05,
-      "rel_error": 973.267446019257,
-      "eml_description": "EML: ops.pow(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(24.0))), eml_scalar(2.0)) \u2014 sin\u00b2(2\u03b8) = 1/b\u2083 = 1/24 sterile mixing from torsion geometry",
-      "diagnostic": "off by 10^3"
+      "eml_description": "FALSIFIED: sin\u00b2(2\u03b8) = 1/b\u2083 = 1/24 \u2248 0.0417 (torsion geometry claim). Exceeds IceCube/MINOS+ 2024 upper bound of 0.01 by ~4.2\u00d7. Claim excluded by data; kept on record per falsification policy (see SCALE_DISAGREEMENTS.md \u00a74). Registered value 4.28e-05 derives from bridge-mediated type-I seesaw: sin\u00b2(2\u03b8) = 4 y_as\u00b2 v_higgs\u00b2 / M_s\u00b2 \u00d7 (volume suppression) \u00d7 (KK suppression)."
     },
     {
       "path": "portals.sterile_n_eff_contribution",
@@ -4629,7 +4624,7 @@
       "evaluated": 991.6239458377953,
       "registered": 9.903956072483217e+17,
       "rel_error": 0.999999999999999,
-      "eml_description": "EML: ops.mul(eml_vec('k_gimel'), eml_scalar(80.5)) \u2014 maximum Laplace-Beltrami eigenvalue on G2 manifold, normalized by spectral gap k_gimel",
+      "eml_description": "EML: ops.mul(eml_vec('k_gimel'), eml_scalar(80.5)) \u2014 maximum Laplace-Beltrami eigenvalue on G2 manifold, normalized by spectral gap k_gimel. NOTE: 80.5 is CALIBRATED (fitted to the residue count in run()); it is not derived from b\u2083 or any other geometric quantity. The ratio registered_value/EML \u2248 1e15 misses an exact power of ten by 0.124%, indicating an unexplained normalisation factor. See SCALE_DISAGREEMENTS.md \u00a75.",
       "diagnostic": "off by 10^-15"
     },
     {

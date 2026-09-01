@@ -74,7 +74,7 @@
     "epsilon_L": {
       "b3_traceback": false,
       "formula": "CP-violating phase from G2 triple-cycle intersections: 0.01 * exp(-Re(T) / 100)",
-      "value": 0.001754624884408279
+      "value": 0.0013533528323661271
     },
     "eta_B": {
       "b3_traceback": true,
@@ -144,7 +144,7 @@
     "r": {
       "b3_traceback": true,
       "formula": "16 * epsilon where epsilon = 3 / (2*ReT^2) and ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24",
-      "value": 0.000792406498244269
+      "value": 2.4e-11
     }
   },
   "higgs_sector": {
@@ -291,7 +291,7 @@
     "status_count_fully_derived": {
       "b3_traceback": false,
       "formula": "count of registry params classified as fully_derived",
-      "value": 539
+      "value": 538
     },
     "status_count_numerical_agreement": {
       "b3_traceback": false,
@@ -301,7 +301,7 @@
     "status_count_open_tension": {
       "b3_traceback": false,
       "formula": "count of registry params classified as open_tension",
-      "value": 11
+      "value": 12
     }
   },
   "soft_susy_breaking": {
