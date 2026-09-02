@@ -1,7 +1,17 @@
 /**
  * theory-constants.js - Principia Metaphysica Theory Constants
  *
- * v17.2 STERILE MODEL - All 125 constants are geometric residues (topology-derived, not fitted parameters)
+ * v17.2 STERILE MODEL - 125 constants for which the framework proposes geometric expressions.
+ *
+ * NOT all of them are derived. Twenty entries in the geometry.* namespace carry
+ * status MEASURED: they are raw experimental input restated in the registry, not
+ * consequences of b3 = 24. They are the three NuFIT mixing angles (theta_12,
+ * theta_13, theta_23) and delta_CP_PMNS, the two mass splittings, SH0ES H0_local
+ * and Planck H0_early, Planck Omega_matter / Omega_radiation / omega_Lambda,
+ * DESI w0_observed / wa_observed / w0_error, PDG A_Wolfenstein and J_CKM, plus
+ * M_GUT_geometric, m_KK_bound, alpha_R_squared_phenom and alpha_T_phenomenological.
+ * Comparing a prediction against one of these is comparing it to the measurement
+ * it was taken from.
  * DOI: 10.5281/zenodo.18079602
  *
  * DYNAMIC BRIDGE - Loads values from parameters.json via PMTheoryBridge
@@ -111,9 +121,9 @@ const TheoryConstants = {
 
         // Cosmological parameters
         omegaLambda: 0.7,          // geometry.Omega_Lambda
-        omegaMatter: 0.315,          // geometry.Omega_matter
+        omegaMatter: 0.315,          // geometry.Omega_matter - MEASURED (Planck input)
         omegaBaryon: 0.198347,         // geometry.Omega_baryon
-        H0: 67.4,                    // geometry.H0_early (km/s/Mpc)
+        H0: 67.4,                    // geometry.H0_early (km/s/Mpc) - MEASURED (Planck input)
     },
 
     // ================================================================
@@ -274,11 +284,14 @@ const TheoryConstants = {
         deltaMSq21: 7.420000e-5,         // geometry.dm21_squared (eV^2)
         deltaMSq31: 0.00251,         // geometry.dm31_squared (eV^2)
 
-        // Mixing angles (PMNS from octonionic triality)
-        theta_12: 33.41,             // geometry.theta_12 (degrees)
-        theta_13: 8.54,              // geometry.theta_13 (degrees)
-        theta_23: 49,              // geometry.theta_23 (degrees)
-        delta_CP: 278.4,             // geometry.delta_CP_PMNS (degrees)
+        // Mixing angles - MEASURED INPUT, not derived. These are NuFIT values
+        // restated in the registry (status MEASURED); the "octonionic triality"
+        // attribution is withdrawn. The framework's own theta_13 derivation is
+        // particle.theta_13_deg = 8.6686 (0.805 sigma vs NuFIT 6.0 8.58 +- 0.11).
+        theta_12: 33.41,             // geometry.theta_12 (degrees) - MEASURED
+        theta_13: 8.54,              // geometry.theta_13 (degrees) - MEASURED
+        theta_23: 49,                // geometry.theta_23 (degrees) - MEASURED
+        delta_CP: 278.4,             // geometry.delta_CP_PMNS (degrees) - MEASURED
 
         // Seesaw scale
         mRHNeutrino: 1e14,
@@ -292,8 +305,8 @@ const TheoryConstants = {
         V_us: 0.224304,                 // geometry.V_us (Cabibbo angle)
         V_cb: 0.040753,                 // geometry.V_cb
         V_ub: 0.00372414,                // geometry.V_ub
-        jarlskogInvariant: 3.000000e-5,   // geometry.J_CKM
-        wolfensteinA: 0.81,          // geometry.A_Wolfenstein
+        jarlskogInvariant: 3.000000e-5,   // geometry.J_CKM - MEASURED (PDG input)
+        wolfensteinA: 0.81,          // geometry.A_Wolfenstein - MEASURED (PDG input)
         wolfensteinLambda: 0.224304,    // geometry.lambda_Wolfenstein
     },
 

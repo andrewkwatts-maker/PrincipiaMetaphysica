@@ -1,7 +1,10 @@
 # Rulings Assessment — Seven Blocked Decisions, Options Scored
 
-**Prepared:** 2026-08-25 · **Status:** evidence + recommendation only — the
-rulings are the author's. Each option is scored on the requested axes:
+**Prepared:** 2026-08-25 · **Ratified and applied** — see the addendum at the
+foot, plus the second addendum (2026-09-02) correcting two things the tables
+below got wrong. **Status:** historical record of how the seven decisions were
+reached; `docs/OUTSTANDING_ISSUES.md` is the live register and wins on any
+disagreement. Each option is scored on the requested axes:
 **elegance** (does the number fall out of the structure?), **geometric**
 (does it live in the b₃ = 24 / 163 / 288 architecture?), **accuracy**
 (σ against the declared anchor), **physical soundness** (is the mechanism
@@ -22,7 +25,7 @@ branch stays on the books labelled FALSIFIED, per standing policy.
 | A. `neutrino.theta13_derived` = asin(1/6) | 9.594° | DERIVED, zero-parameter | **≈ 9σ FAIL** |
 | B. `pmns.theta_13_triality` | 8.647° | **CALIBRATED** (fitted_pmns = 2) | 0.61σ |
 | C. `particle.theta_13_deg` | 8.669° | DERIVED | 0.81σ |
-| D. `geometry.theta_13` | 8.54° | GEOMETRIC | 0.36σ |
+| ~~D. `geometry.theta_13`~~ | ~~8.54°~~ | ~~GEOMETRIC~~ | **withdrawn — see addendum 2** |
 
 **Assessment.** Option A is the most elegant number on the table —
 sin θ₁₃ = 1/6 exactly, no knobs — and that is precisely why its ≈9σ miss
@@ -34,16 +37,20 @@ Option B is the most accurate but is CALIBRATED with two fitted PMNS
 parameters — it is a fit wearing a prediction's clothing and must not be
 promoted to headline without that label travelling with it.
 
-Options C and D are both derived, sub-1σ, and unfitted. C (8.669°) sits
+~~Options C and D are both derived, sub-1σ, and unfitted. C (8.669°) sits
 on the particle-sector chain; D (8.54°) on the geometric chain. They
 disagree with each other by 0.129° (≈1.2σ in anchor units) — that
 disagreement is itself a registered shadow-derivation conflict and should
-stay visible, not be resolved by deleting one.
+stay visible, not be resolved by deleting one.~~
+**Withdrawn (addendum 2):** D is not a derivation on any chain. It is the
+NuFIT anchor restated under a `geometry.*` name, so there was never a
+two-derivation conflict to keep visible. C stands alone, at 0.805σ.
 
 **Recommendation:** label A **FALSIFIED** (keep the row — it is the
 framework's best demonstration that its gates can kill something), demote
-it from every headline, and promote **C** as the working headline with D
-as the geometric cross-check. B remains on the books as CALIBRATED.
+it from every headline, and promote **C** as the working headline (~~with D
+as the geometric cross-check~~ — D withdrawn, addendum 2). B remains on the
+books as CALIBRATED.
 **Falsifiability bonus goes to A posthumously** — it was maximally
 falsifiable and was in fact falsified; the system worked.
 
@@ -205,7 +212,7 @@ what a gate is for.
 
 | # | Ruling | Recommendation | Falsifiability |
 |---|---|---|---|
-| R1 | θ₁₃ headline | asin(1/6) → FALSIFIED (kept, labelled); 8.669° headline, 8.54° cross-check | asin(1/6) died honestly |
+| R1 | θ₁₃ headline | asin(1/6) → FALSIFIED (kept, labelled); 8.669° headline at 0.805σ; ~~8.54° cross-check~~ withdrawn (addendum 2) | asin(1/6) died honestly |
 | R2 | S₈ branch | growth-ODE 0.7909 canonical; analytic kept as approximation | KiDS-Legacy / DES-Y6 |
 | R3 | n_s branch | geometric 0.9636 canonical; slow-roll 8.3σ stays loud as potential-falsifier | CMB-S4 tightens |
 | R4 | H₀ anchor-in-group | remove (DISTINCT: anchor restatement) — ledger's own rule | honest 1.43σ MARGINAL stands |
@@ -262,7 +269,8 @@ oscillation onset; only z ≈ 3–4 would recover a lensing-friendly value.
 
 ### R1/R4/R6/R7: applied as assessed
 - R1: `neutrino.theta13_derived` and `sin_theta13_derived` now carry
-  status **FALSIFIED** in the registry; headline 8.669°, cross-check 8.54°.
+  status **FALSIFIED** in the registry; headline 8.669°, ~~cross-check 8.54°~~
+  (withdrawn 2026-09-01 — see addendum 2).
 - R4: `cosmology.H0_baseline_km_s_Mpc` dispositioned **DISTINCT**
   (anchor restatement).
 - R6: G12 evaluates against PDG with no theory buffer → **COMPUTED_FAIL**
@@ -275,3 +283,59 @@ oscillation onset; only z ≈ 3–4 would recover a lensing-friendly value.
   row sum is exactly 1.0 *by construction* (V_ud is fixed by unitarity),
   so this gate is a standing bet that the Cabibbo-anomaly deficit
   resolves upward; it fails on data movement, not framework drift.
+
+
+---
+
+## Addendum 2 — two corrections to the tables above (2026-09-02)
+
+Both were found by later audits and both point the same way: an option that
+looked like independent evidence was not.
+
+### R1 option D was never a cross-check
+`geometry.theta_13` = 8.54° was scored in the table above as a fourth,
+independent, *geometric* option at 0.36σ, and the ruling promoted it as the
+cross-check on option C. It is neither geometric nor independent: the producer
+returns a hardcoded `8.54` whose own comment reads `8.54 deg (NuFIT)`, and its
+`eml_description` is the bare literal `eml_scalar(8.54)`. It is the anchor
+restated under a `geometry.*` name — the same defect R4 ruled on for
+`H0_baseline_km_s_Mpc`, in a place nobody looked.
+
+It is now **deliberately left unscored**: binding it would publish a ~0σ PASS
+measuring nothing. Consequences for the ruling as shipped:
+
+- **Option C stands alone as the headline**, and it is now a computed row for
+  the first time: `particle.theta_13_deg` = 8.669°, **0.805σ PASS** against
+  NuFIT 6.0 8.58 ± 0.11. The prose "0.8σ" is confirmed as arithmetic.
+- The "0.129° disagreement between two derivations, itself a registered
+  shadow-derivation conflict" **did not exist**. There was one derivation and
+  one restatement of the measurement.
+- Option A's falsification is untouched. `neutrino.theta13_derived` = 9.594°
+  carries FALSIFIED in the registry and scores 8.76σ. It stays on the books.
+
+The wider finding (register 1.6e): `geometric_anchors.py` registered *every*
+anchor as `GEOMETRIC` with `fundamental: True` and `tuning_free: True`, and
+**twenty** of them are raw experimental input — the three NuFIT mixing angles,
+the SH0ES H₀, the Planck matter density, the DESI w₀/wₐ, the PDG Wolfenstein A
+and Jarlskog. The correct classification already existed in a `measured_params`
+set inside a method that was never called.
+
+### R2's numbers are now computed rows against both anchors
+The addendum above quoted "~2.7σ vs KiDS-1000, ~0.9σ vs Planck" as prose. The
+weak-lensing anchors have since been added, so both are scored:
+
+| row | anchor | σ | verdict |
+|---|---|---|---|
+| `cosmology.s8_pm_predicted` | Planck 2018 S₈ 0.830 ± 0.013 | **0.718** | PASS |
+| `cosmology.s8_pm_vs_lensing` | KiDS-1000 0.766 | **2.733** | TENSION |
+
+The ruling's accepted consequence — **friction does not resolve the S₈
+weak-lensing tension** — is therefore now published on the scoreboard rather
+than only narrated. The open problem is unchanged: derive the friction onset;
+only z ≈ 3–4 recovers a lensing-friendly value.
+
+### R6 as shipped
+The table above quotes G12 at "≈22.8σ without a tolerance"; the executed gate
+reports **COMPUTED_FAIL at ~17.1σ** against PDG with no theory buffer, and the
+G72 seal fails on it (`open_gate_ids: ['12', '72']`, 41/43 locked). The ruling
+held; only the magnitude in the pre-implementation estimate was off.

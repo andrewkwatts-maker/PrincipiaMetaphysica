@@ -1,12 +1,14 @@
-# The Bridge-to-Channel Assignment — a candidate solution
+# The Bridge-to-Channel Assignment — CLOSED, on one stated assumption
 
-**Prepared:** 2026-08-30 · **Status:** PROPOSAL with a stated falsifier.
-Not a ruling. Everything below is computed from structures already in the
-framework; nothing is fitted and no new constant is introduced.
+**Prepared:** 2026-08-30 · **Closed:** 2026-09-01 · **Status:** RESULT, resting
+on one assumption that must travel with every quotation of it.
+Everything below is computed from structures already in the framework;
+nothing is fitted and no new constant is introduced. Register cross-reference:
+`docs/OUTSTANDING_ISSUES.md` §1.8 and §1.11.
 
 ---
 
-## The open problem
+## The open problem (as it stood)
 
 Two modules each left the same gap, from opposite ends:
 
@@ -20,9 +22,13 @@ Two modules each left the same gap, from opposite ends:
   property, and that the standard grouping is *"one of 576, NOT unique by
   cross-E₈ alone."*
 
-So one module needs an assignment it cannot derive, and the other has 576
-candidates it cannot narrow. This note supplies an independent constraint
-computed from the G₂ structure itself.
+So one module needed an assignment it could not derive, and the other had 576
+candidates it could not narrow. The register listed *"nothing maps a bridge
+index to a G₂ coordinate pair"* as the load-bearing geometric gap.
+
+Both 15400 and 576 were prose figures with no implementation behind them.
+They are now enumerated in code and agree with the closed forms
+12!/((3!)⁴·4!) = 15400 and (4!)² = 576.
 
 ---
 
@@ -65,62 +71,139 @@ over **all C(21,12) = 293,930 placements**:
 |---|---|---|---|---|---|---|---|
 | Placements | 45927 | 107163 | 76545 | 51030 | 9450 | 3780 | **35** |
 
-Two things follow.
-
 **The maximum is 12, reached by exactly 35 placements — and 35 = C(7,4).**
 Those 35 are precisely the placements that take **four complete triangles**.
-Nothing else reaches 12; there is no 11.
-
-**The framework independently carries four faces of three bridges each.**
-`four_face_structure` derives 4 faces from b₂ = 4 of the TCS building
-block, with 12 = 4 × 3 bridges. The coupling graph, derived from φ with no
-knowledge of faces, says the twelve bridges maximise coupling exactly when
-they form four complete triangles of three.
-
-### The proposal
+Nothing else reaches 12; there is no 11. The minimum is five, never zero.
 
 **Each face IS a triangle.** A face's three bridges occupy the three
 coordinate pairs of one triangle *T_k*, so the four faces select four of
 the seven Fano points, and inter-face coupling is inter-triangle coupling.
 
-If true, this fixes the assignment up to which four of the seven points are
-chosen (35 options), reduces the 576 cross-E₈ groupings by an independent
-criterion, and gives the face structure a meaning inside the coupling
-geometry rather than only in the Kähler moduli count.
+---
+
+## The one assumption
+
+> **The E₈ block a bridge carries is a property of the CHANNEL, not of the
+> face observing it** — one global labelling of the 7 Fano lines by 3 blocks,
+> shared by every face.
+
+This is an input. It is not derived from anything else in the framework, and
+**every statement of the results below must carry it.** Since a face holds one
+bridge per block, the assumption says the 3 lines through each chosen point
+must receive 3 distinct blocks — the chosen point is *rainbow*.
+
+**Kill condition:** any 5-point rainbow set, or any line-containing 4-set
+admitting a labelling, retracts the corresponding half of the result below.
 
 ---
 
-## Narrowing 35 → 7 (criterion, not derivation)
+## What follows: two inputs become consequences
 
-Each triangle *T_k* is labelled by the coordinate *k* it omits, so choosing
-four faces means choosing a **4-subset of the seven Fano points**. Under the
-Fano symmetry those 35 subsets fall into exactly two orbits — computed, not
-asserted:
+Enumerating all 3⁷ = 2187 labellings:
 
-| Orbit | Count | Description |
+| was | now |
+|---|---|
+| `n_faces = 4` read off h^{1,1} = 4 of the TCS #187 building block, which `four_face_structure` itself classifies **FITTED** and dependent on having selected that manifold | **4 is the maximum.** No labelling makes 5, 6 or 7 points simultaneously rainbow. n_faces = 4 is forced. |
+| `face_genericity` narrowed 35 → 7 by fiat; the `variants.json` fork read OPEN with *"NOT derived — nothing in the framework forbids collinear labels"* | **The 28 line-containing 4-point sets admit zero labellings**; each of the 7 arcs admits exactly 18. Genericity is a consequence. Fork OPEN → **RULED**. |
+
+The earlier version of this note carried genericity as
+`status: CRITERION_STATED_NOT_DERIVED`. That status is withdrawn: it is
+derived, conditional on the assumption above.
+
+---
+
+## The structure closes as K₄
+
+With the four faces as vertices:
+
+| object | count | K₄ role |
 |---|---|---|
-| contains a line | **28** | three of the four labels are collinear |
-| arc (no 3 collinear) | **7** | each is the complement of one line |
+| faces | 4 | vertices |
+| channel-lines | 6 | edges |
+| **bridges** | **12** | the **directed** edges — ordered pairs of faces |
+| E₈ blocks | 3 | the three perfect matchings |
+| spare line | 1 | the arc's complement — incident to no face |
 
-All seven arcs leave exactly a **line** unchosen — verified for all seven. So
-requiring the four face labels to be *generic* picks out seven candidates in
-bijection with the seven lines, and the residual freedom becomes a labelling
-(which line is omitted) rather than a further structural decision.
+So **"bridge" is literal**: a directed connection between two faces. The bridge
+count 12 is K₄'s directed-edge count, not a separate input. And
+18 = 3! proper 3-edge-colourings of K₄ × 3 free colours for the complement
+line.
 
-**This is a criterion with a name, not a result.** Nothing in the framework
-forbids three collinear face labels, so the genericity assumption is stated
-and carried as `status: CRITERION_STATED_NOT_DERIVED`. Adopt it and the
-choice is 35 → 7; decline it and the choice remains 35. What *is* established
-is that the space has exactly two orbits, so any future physical argument
-only has to decide between two cases rather than among thirty-five.
+`n_gen = 3` is fixed twice over — Leech 24 = 8 + 8 + 8, and q + 1 = 3 lines
+through each point of the order-2 projective plane — rather than being
+12/4 arithmetic.
+
+---
+
+## The assignment is unique up to symmetry
+
+7 arcs × 18 labellings = 126 residual possibilities. All 126 are
+relabellings, on three counts:
+
+1. **The block partition is canonical given the arc.** Each K₄ edge {p, q}
+   spans a Fano line, and that line meets the arc's complement line in
+   exactly one point. Grouping the six edges by which complement point they
+   hit gives fibres that are precisely the three perfect matchings of K₄. The
+   arc fixes the partition of bridges into E₈ blocks; the counted 3! is only
+   which complement point gets *called* block 0, and a block's name is not an
+   observable.
+2. **The spare colour touches nothing.** The other factor in 18 = 3! × 3 is
+   the colour of the complement line, which lies on no face, is incident to no
+   bridge, and enters no coupling.
+3. **The seven arcs are one orbit.** Aut(Fano) = PSL(3,2) has order 168, is
+   transitive on the 7 lines and hence on the 7 arcs; the arc stabiliser of
+   order 168/7 = 24 acts as the full S₄ on that arc's four faces.
+
+So the assignment is unique up to the symmetry group of the structure — the
+ordinary sense in which a geometric object is determined.
+
+**Conditional kill:** the uniqueness rests on nothing *else* in the framework
+distinguishing a Fano direction. A preferred imaginary octonion, or a shadow
+asymmetry singling out one coordinate, would break PSL(3,2) and make the
+choice of arc physical again. Nothing currently does this, and the claim must
+keep saying it is conditional.
+
+---
+
+## Stride-4 is a convention, not a fitted choice
+
+The **576** cross-E₈-valid groupings form a single **regular** orbit under
+S₄ × S₄ renaming bridges inside E₈ blocks. Since the orbit is regular
+(576 = (4!)²), no grouping in it is distinguished: the stride-4 partition
+{i, i+4, i+8} used by `leech_lattice` is a **coordinate convention**, not a
+selection among rivals.
+
+The long-standing "stride-4 vs contiguous" conflict is settled the other way:
+they are **different objects**. The contiguous grouping used in
+`consciousness/four_dice_sampling.py` puts its entire first face inside one
+E₈ block, so it is not one of the 576 at all and was never a rival.
+
+---
+
+## A retired kill condition (correction, kept on record)
+
+`AutoGenerated/topological_flux.json` previously stated:
+
+> if the bridge-to-channel assignment places the physical bridges only on
+> complementary NON-associative 4-sets, every physical channel is forbidden
+> and this route is dead.
+
+**That outcome cannot occur.** The minimum over all 293,930 placements is
+five live couplings; zero never happens. The condition was written before
+the placement spectrum was computed, and it describes an impossible event —
+a kill condition that cannot fire is not a kill condition. It is retired in
+the artifact (`kill_condition_retired`) rather than quietly deleted.
+
+The correction strengthens the underlying result rather than weakening it:
+cross-shadow coupling is not merely non-zero at the vacuum, it is
+**structurally unavoidable** — no placement of twelve bridges on the cycle
+can switch it off.
 
 ---
 
 ## Which flux term the consciousness architecture needs
 
-Under the **person-within-a-face** reading (the author's, 2026-08-31), the
-argument that appeared to force Path A dissolves, and it is worth being
-explicit about why.
+Under the **person-within-a-face** reading (the author's, 2026-08-31):
 
 A triangle is K₃ — complete. A face whose three bridges occupy one triangle
 has all three internal pairwise couplings live, which is exactly the
@@ -134,7 +217,7 @@ bridges per face, four faces. A central reduction across all twelve is
 therefore the product of the four face-level ones and needs **no** inter-face
 coupling.
 
-So: **Path B is sufficient for the consciousness architecture under this
+So **Path B is sufficient for the consciousness architecture under this
 reading.** Path A would have been forced only under the alternative reading
 in which a person integrates *across* faces — because the seven triangles are
 disjoint components, inter-face coupling is structurally impossible in the
@@ -143,59 +226,25 @@ keeping on record, since it means the two readings are experimentally
 distinguishable in principle rather than a matter of taste.
 
 Path A may still be required for reasons in the 13D sector; it is simply not
-required by *this* argument, and it remains blocked on an underived C₃.
+required by *this* argument, and it remains blocked on an underived C₃ — the
+framework derives φ only on the 7D cycle, and the 13D side carries scalars.
 
 ---
 
-## Falsifier
-
-**If the face grouping, once derived, does not correspond to four complete
-triangles, this identification is dead.** Only 35 of 293,930 placements
-qualify — 0.012% — so the data can rule it out decisively. The test is
-mechanical once the grouping is available: map each face's three bridges to
-their coordinate pairs and check whether the three pairs form one triangle.
-
-Two ways it could fail that are worth naming in advance: the four faces
-might map onto four triangles but with bridges *interleaved* between them
-(same vertices, wrong partition), which would preserve the count of 12 while
-falsifying the face↔triangle identification specifically; or the grouping
-might sit at 9 or 10 live couplings, which would say the framework does not
-maximise topological coupling and would need its own explanation.
-
----
-
-## A retired kill condition (correction)
-
-`AutoGenerated/topological_flux.json` previously stated:
-
-> if the bridge-to-channel assignment places the physical bridges only on
-> complementary NON-associative 4-sets, every physical channel is forbidden
-> and this route is dead.
-
-**That outcome cannot occur.** The minimum over all 293,930 placements is
-five live couplings; zero never happens. The condition was written before
-the placement spectrum was computed, and it describes an impossible event —
-a kill condition that cannot fire is not a kill condition. It is retired in
-the artifact (`kill_condition_retired`) rather than quietly deleted, and
-replaced by the falsifier above, which can fire.
-
-The correction strengthens the underlying result rather than weakening it:
-cross-shadow coupling is not merely non-zero at the vacuum, it is
-**structurally unavoidable** — no placement of twelve bridges on the cycle
-can switch it off. What remains genuinely open is the magnitude and the
-compact-manifold question, both unchanged and both still recorded as NOT
-ESTABLISHED.
-
----
-
-## What this does not establish
+## What this still does not establish
 
 Still flat ℝ⁷ with constant-coefficient forms, so still coefficient ×
 volume — a number, not a topological invariant, exactly as the Stage-4
 report states. The triangle structure is a fact about φ's associative
 triples and would hold on any G₂ structure with the same Fano incidence;
-it does not by itself demonstrate topological content.
+it does not by itself demonstrate topological content. Topological content
+requires harmonic representatives on a compact G₂ manifold with b₃ = 24
+(deferred DEC work, `metaphysica/docs/FUTURE.md`).
 
-Nor does it derive *which* four of the seven points the faces choose. It
-narrows an unbounded modelling input to a 35-element set with a testable
-identification, which is progress, not closure.
+**And the TCS obstruction is independent of all of this and still open.**
+Crowley–Nordström forces b₂ + b₃ odd for any twisted connected sum; the
+claimed (b₂, b₃) = (4, 24) gives 28, even. b₃ = 24 survives (Joyce 1996 has
+(7, 24)); what fails is the pairing with b₂ = 4 — the four-faces reading this
+whole note rests on. Note that n_faces = 4 no longer *depends* on b₂ = 4,
+which weakens the coupling between the two problems but does not dissolve the
+obstruction.

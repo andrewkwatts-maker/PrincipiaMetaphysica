@@ -2,6 +2,38 @@
 
 **Dated 2026-08-19.** This document is an ideas register for the outstanding problems in the Principia Metaphysica framework (26D bulk with signature (24,2), two 13D(12,1) shadows, G2-manifold compactification with b3 = 24). For each open issue — falsified predictions, underived assumptions, and speculative sectors — it lists real, verified arXiv papers whose specific mechanisms or measurements could either repair the prediction, supply the missing derivation, or sharpen the falsification. Every arXiv ID below was verified to exist via web search on the date above; none are invented. Entries prefer 2023-2026 literature where the experimental landscape moved (DESI DR2, NuFIT 6.0, Hyper-K) and foundational papers where the theoretical machinery originates.
 
+## Status update (2026-09-02) — read this before mining the lists
+
+The register below is unchanged and still useful; four of its ten sections have
+moved since it was written, and one of its leads is obstructed. Live detail is
+in `docs/OUTSTANDING_ISSUES.md`.
+
+- **§1 (two-time).** The signature question is now **RULED**: 26D at (24,2),
+  option (c). The accepted costs are on the books — `D_crit = 26` is withdrawn
+  (the two-time bosonic critical dimension is 27–28), the Bars appeal for
+  ghost-freedom is withdrawn (Sp(2,ℝ) gauging gives one 24D shadow, not two 13D
+  ones), and the lattice obstruction (24 − 2 = 6 mod 8, so no even self-dual
+  lattice exists at this signature) is **unanswered**. Papers here are now
+  wanted for *answering the obstruction*, not for supporting the choice.
+- **§3 (θ₁₃).** Ruled **NOT_PREDICTED**: a 6243-form enumeration put 143
+  candidates inside the 1σ window against ~53 expected by chance — no excess.
+  The modular-flavour lead is moreover **obstructed**: SL(2,ℤ) modular flavour
+  needs a *complex* modulus, and G₂ moduli are **real**. Anything from §3 has to
+  clear that first. The working headline `particle.theta_13_deg` = 8.669° is a
+  genuine derivation and now scores **0.805σ PASS**; `geometry.theta_13` = 8.54°
+  is the NuFIT value restated and is not a cross-check.
+- **§5/§7 (dark energy, Σmν).** Unchanged and live. The honest w₀–wₐ figure is
+  the 2D Mahalanobis distance, 3.19–3.41σ, not the two 1D marginals.
+- **S₈** (not a numbered section here, but adjacent to §6): now scored against
+  both anchors — 0.718σ PASS vs Planck, **2.733σ TENSION vs KiDS-1000**.
+  Friction does not resolve the weak-lensing tension; what is wanted is a
+  derivation of the moduli-oscillation *onset*.
+- **The bridge-to-channel gap** that several of these sections circled is
+  **closed** on one stated assumption — see `docs/BRIDGE_CHANNEL_ASSIGNMENT.md`.
+
+Nothing above changes an arXiv id. Every id in this file was verified to exist
+on 2026-08-19 and none is invented.
+
 ## 1. Two-time physics: deriving the Sp(2,R) constraint
 
 - arXiv:hep-th/0008164 — Survey of Two-Time Physics (Bars, 2000): the canonical statement that gauging Sp(2,R) acting on the (x,p) phase-space doublet is precisely what removes ghosts and forces the (d,2) signature — the target theorem our topology (b3 = 24) would need to reproduce.

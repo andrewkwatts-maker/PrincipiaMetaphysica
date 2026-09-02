@@ -1,16 +1,28 @@
 {
   "version": "24.2",
-  "count": 230,
+  "count": 180,
   "references": {
-    "acharya_witten_2001": {
-      "id": "acharya_witten_2001",
-      "authors": "Acharya, B. S. and Witten, E.",
+    "acharya_witten2001": {
+      "id": "acharya_witten2001",
+      "authors": "Acharya, B.S. and Witten, E.",
       "title": "Chiral Fermions from Manifolds of G2 Holonomy",
       "year": 2001,
       "arxiv": "hep-th/0109152",
       "url": "https://arxiv.org/abs/hep-th/0109152",
       "notes": "Foundation for chirality from G2 compactification cited in abstract",
-      "source_simulation": "abstract_v17_2"
+      "source_simulation": "abstract_v17_2",
+      "also_registered_by": [
+        "g2_geometry_v16_0",
+        "four_face_g2_structure",
+        "master_action_simulation_v22_0",
+        "chirality_v16_0",
+        "higgs_brane_partition_v16_2",
+        "neutrino_algebraic_v24_0",
+        "octonionic_mixing_v23_1",
+        "multi_sector_v16_0",
+        "foundations_v16_2",
+        "complete_residue_registry_v18"
+      ]
     },
     "desi_2025_thawing": {
       "id": "desi_2025_thawing",
@@ -20,19 +32,45 @@
       "journal": "Physical Review Letters",
       "url": "https://arxiv.org/abs/2503.14738",
       "notes": "PM prediction w0 = -23/24 falls within BAO-only uncertainty range",
-      "source_simulation": "abstract_v17_2"
+      "source_simulation": "abstract_v17_2",
+      "also_registered_by": [
+        "results_v16_2"
+      ]
     },
-    "planck_2018": {
-      "id": "planck_2018",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 Results. VI. Cosmological Parameters",
+    "planck2018": {
+      "id": "planck2018",
+      "authors": "Planck Collaboration (Aghanim, N. et al.)",
+      "title": "Planck 2018 results. VI. Cosmological parameters",
       "year": 2020,
-      "journal": "Astronomy & Astrophysics",
+      "journal": "Astron. Astrophys.",
       "volume": "641",
       "pages": "A6",
-      "url": "https://arxiv.org/abs/1807.06209",
+      "doi": "10.1051/0004-6361/201833910",
+      "arxiv": "1807.06209",
+      "url": "https://doi.org/10.1051/0004-6361/201833910",
       "notes": "Primary cosmological data set for validation",
-      "source_simulation": "abstract_v17_2"
+      "source_simulation": "abstract_v17_2",
+      "also_registered_by": [
+        "geometric_anchors",
+        "cosmology_intro_v16_0",
+        "dark_energy_v16_0",
+        "evolution_engine_v16_2",
+        "s8_suppression_v16_2",
+        "ricci_flow_h0_v16_1",
+        "multi_sector_v16_0",
+        "cosmological_constant_v16_1",
+        "predictions_aggregator_v24_2",
+        "results_v16_2",
+        "appendix_d_alignment_v16_2",
+        "appendix_g_omega_seal_v24_2",
+        "appendix_l_omega_unwinding_v16_2",
+        "complete_residue_registry_v18",
+        "attractor_potential_v18",
+        "baryon_asymmetry_v18",
+        "axion_dm_v18",
+        "dark_matter_portals_v23",
+        "sterile_neutrino_portals_v23"
+      ]
     },
     "nufit_6_0": {
       "id": "nufit_6_0",
@@ -63,25 +101,38 @@
       "url": "https://doi.org/10.1016/0029-5582(61)90469-2",
       "source_simulation": "introduction_v16_0"
     },
-    "weinberg_1967": {
-      "id": "weinberg_1967",
+    "weinberg1967": {
+      "id": "weinberg1967",
       "authors": "Weinberg, S.",
       "title": "A Model of Leptons",
+      "year": 1967,
       "journal": "Phys. Rev. Lett.",
       "volume": "19",
-      "year": "1967",
+      "pages": "1264-1266",
+      "doi": "10.1103/PhysRevLett.19.1264",
       "url": "https://doi.org/10.1103/PhysRevLett.19.1264",
-      "source_simulation": "introduction_v16_0"
+      "source_simulation": "introduction_v16_0",
+      "also_registered_by": [
+        "master_action_simulation_v22_0",
+        "weak_mixing_v17_2"
+      ]
     },
     "georgi_glashow_1974": {
       "id": "georgi_glashow_1974",
-      "authors": "Georgi, H. and Glashow, S. L.",
-      "title": "Unity of All Elementary Particle Forces",
+      "authors": "Georgi, H. and Glashow, S.L.",
+      "title": "Unity of All Elementary-Particle Forces",
+      "year": 1974,
       "journal": "Phys. Rev. Lett.",
       "volume": "32",
-      "year": "1974",
+      "pages": "438-441",
+      "doi": "10.1103/PhysRevLett.32.438",
       "url": "https://doi.org/10.1103/PhysRevLett.32.438",
-      "source_simulation": "introduction_v16_0"
+      "source_simulation": "introduction_v16_0",
+      "also_registered_by": [
+        "gauge_unification_v16_0",
+        "fermion_generations_v16_0",
+        "appendix_c_gauge_matrices_v16_2"
+      ]
     },
     "joyce2000": {
       "key": "joyce2000",
@@ -89,12 +140,42 @@
       "authors": "Joyce, D.D.",
       "title": "Compact Manifolds with Special Holonomy",
       "year": 2000,
-      "type": "book",
       "publisher": "Oxford University Press",
-      "url": "https://global.oup.com/academic/product/compact-manifolds-with-special-holonomy-9780198506010",
       "doi": "10.1093/oso/9780198506010.001.0001",
+      "url": "https://doi.org/10.1093/oso/9780198506010.001.0001",
+      "type": "book",
       "relevance": "Foundation for G2 holonomy geometry from which the Betti number b3=24 originates",
-      "source_simulation": "geometric_anchors"
+      "source_simulation": "geometric_anchors",
+      "also_registered_by": [
+        "g2_geometry_v16_0",
+        "four_face_g2_structure",
+        "master_action_simulation_v22_0",
+        "alpha_rigor_v16_1",
+        "chirality_v16_0",
+        "mass_ratio_v23_0",
+        "neutrino_algebraic_v24_0",
+        "dark_energy_v16_0",
+        "dark_energy_thawing_v16_2",
+        "octonionic_mixing_v23_1",
+        "speed_of_light_v17_2",
+        "cosmological_constant_v16_1",
+        "pneuma_mechanism_v22_0",
+        "predictions_aggregator_v24_2",
+        "foundations_v16_2",
+        "integrity_v16_2",
+        "appendix_a_spectral_registry_v23_1",
+        "appendix_b_sum_rule_v23_1",
+        "appendix_e_brane_map_v16_2",
+        "appendix_f_72gates_v24_2",
+        "appendix_g_omega_seal_v24_2",
+        "appendix_i_terminal_states_v16_2",
+        "appendix_j_torsion_funnel_v16_2",
+        "appendix_k_sterile_constants_v16_2",
+        "appendix_l_omega_unwinding_v16_2",
+        "appendix_z_terminal_ledger_v24_2",
+        "gr_spacetime_derivations_v19",
+        "attractor_potential_v18"
+      ]
     },
     "kovalev2003": {
       "key": "kovalev2003",
@@ -108,64 +189,86 @@
       "arxiv": "math/0012189",
       "url": "https://arxiv.org/abs/math/0012189",
       "relevance": "TCS construction theorem yielding compact G2 manifolds with controlled Betti numbers",
-      "source_simulation": "geometric_anchors"
+      "source_simulation": "geometric_anchors",
+      "also_registered_by": [
+        "g2_geometry_v16_0",
+        "four_face_g2_structure",
+        "alpha_rigor_v16_1"
+      ]
     },
     "chnp2015": {
       "key": "chnp2015",
       "id": "chnp2015",
       "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
       "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
+      "year": 2015,
       "journal": "Duke Math. J.",
       "volume": "164",
       "number": "10",
       "pages": "1971-2092",
-      "year": 2015,
-      "type": "article",
+      "doi": "10.1215/00127094-3120743",
       "arxiv": "1207.4470",
       "url": "https://arxiv.org/abs/1207.4470",
-      "doi": "10.1215/00127094-3120743",
+      "type": "article",
       "relevance": "Classification of TCS G2 manifolds; source of TCS #187 with b2=4, b3=24. The h^{1,1} = b2 = 4 Kahler moduli yield the four-face sub-sector structure (see four_face_g2_structure simulation, Section 2.7)",
-      "source_simulation": "geometric_anchors"
+      "source_simulation": "geometric_anchors",
+      "also_registered_by": [
+        "g2_geometry_v16_0",
+        "four_face_g2_structure",
+        "proton_decay_v17_2",
+        "cosmology_intro_v16_0",
+        "foundations_v16_2"
+      ]
     },
-    "planck2018": {
-      "key": "planck2018",
-      "id": "planck2018",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "Astron. Astrophys.",
-      "volume": "641",
-      "pages": "A6",
-      "year": 2020,
-      "type": "article",
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "relevance": "Experimental measurement of n_s = 0.9649 +/- 0.0042 for spectral index validation",
-      "source_simulation": "geometric_anchors"
-    },
-    "desi2025": {
-      "key": "desi2025",
-      "id": "desi2025",
-      "authors": "DESI Collaboration",
+    "desi2024": {
+      "key": "desi2024",
+      "id": "desi2024",
+      "authors": "DESI Collaboration (Adame, A.G. et al.)",
       "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
-      "journal": "arXiv preprint",
       "year": 2024,
-      "type": "article",
+      "journal": "arXiv preprint",
+      "doi": "10.48550/arXiv.2404.03002",
       "arxiv": "2404.03002",
       "url": "https://arxiv.org/abs/2404.03002",
+      "type": "article",
       "relevance": "Experimental constraint w0 = -0.957 +/- 0.067 for dark energy equation of state validation",
-      "source_simulation": "geometric_anchors"
+      "source_simulation": "geometric_anchors",
+      "also_registered_by": [
+        "dark_energy_v16_0",
+        "dark_energy_thawing_v16_2",
+        "s8_suppression_v16_2",
+        "multi_sector_v16_0",
+        "appendix_d_alignment_v16_2",
+        "attractor_potential_v18"
+      ]
     },
     "codata2022": {
       "key": "codata2022",
       "id": "codata2022",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
+      "authors": "Mohr, P.J., Newell, D.B., Taylor, B.N., Tiesinga, E.",
       "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
+      "year": 2025,
       "journal": "Rev. Mod. Phys.",
-      "year": 2024,
+      "volume": "97",
+      "pages": "025002",
+      "doi": "10.1103/RevModPhys.97.025002",
+      "url": "https://doi.org/10.1103/RevModPhys.97.025002",
       "type": "article",
-      "url": "https://physics.nist.gov/cuu/Constants/",
       "relevance": "Source of alpha^-1 = 137.035999177, M_Pl, and mu_pe experimental values",
-      "source_simulation": "geometric_anchors"
+      "source_simulation": "geometric_anchors",
+      "also_registered_by": [
+        "alpha_rigor_v16_1",
+        "mass_ratio_v23_0",
+        "speed_of_light_v17_2",
+        "compton_wavelength_v17_2",
+        "stefan_boltzmann_v17_2",
+        "hartree_energy_v17_2",
+        "magnetic_flux_v17_2",
+        "von_klitzing_v17_2",
+        "avogadro_v17_2",
+        "faraday_v17_2",
+        "molar_gas_v17_2"
+      ]
     },
     "pm_four_face": {
       "key": "pm_four_face",
@@ -204,7 +307,10 @@
       "url": "https://doi.org/10.1090/pspum/099/01",
       "doi": "10.1090/pspum/099/01",
       "relevance": "Associative 3-cycle counting relevant to matter localization in M-theory. The conjectured invariants relate to the b3 = 24 associative cycles of TCS #187.",
-      "source_simulation": "g2_geometry_v16_0"
+      "source_simulation": "g2_geometry_v16_0",
+      "also_registered_by": [
+        "four_face_g2_structure"
+      ]
     },
     "chnp2012": {
       "key": "chnp2012",
@@ -248,64 +354,72 @@
       "arxiv": "math/0010054",
       "url": "https://arxiv.org/abs/math/0010054",
       "relevance": "Hitchin deformation theory for G2 structures; establishes that the moduli space of torsion-free G2 structures is a smooth manifold. The torsion tensor decomposition 1+7+14+27 under G2 is essential for the torsional leakage mechanism.",
-      "source_simulation": "g2_geometry_v16_0"
+      "source_simulation": "g2_geometry_v16_0",
+      "also_registered_by": [
+        "four_face_g2_structure"
+      ]
     },
-    "acharya2002": {
-      "key": "acharya2002",
-      "id": "acharya2002",
+    "acharya1999": {
+      "key": "acharya1999",
+      "id": "acharya1999",
       "authors": "Acharya, B.S.",
       "title": "M Theory, Joyce Orbifolds and Super Yang-Mills",
+      "year": 1999,
       "journal": "Adv. Theor. Math. Phys.",
       "volume": "3",
-      "year": 2002,
+      "pages": "227-248",
+      "arxiv": "hep-th/9812205",
+      "url": "https://arxiv.org/abs/hep-th/9812205",
       "type": "article",
-      "arxiv": "hep-th/0212294",
-      "url": "https://arxiv.org/abs/hep-th/0212294",
       "relevance": "Chiral fermion generation counting from G2 compactification index theorem",
-      "source_simulation": "g2_geometry_v16_0"
-    },
-    "acharya_witten2001": {
-      "key": "acharya_witten2001",
-      "id": "acharya_witten2001",
-      "authors": "Acharya, B.S., Witten, E.",
-      "title": "Chiral Fermions from Manifolds of G2 Holonomy",
-      "year": 2001,
-      "type": "article",
-      "arxiv": "hep-th/0109152",
-      "url": "https://arxiv.org/abs/hep-th/0109152",
-      "relevance": "Chiral fermion localization on singular G2 manifolds; establishes the mechanism for obtaining chiral matter from M-theory on G2.",
-      "source_simulation": "g2_geometry_v16_0"
+      "source_simulation": "g2_geometry_v16_0",
+      "also_registered_by": [
+        "four_face_g2_structure",
+        "higgs_mass_v16_0",
+        "higgs_brane_partition_v16_2",
+        "f_r_t_tau_gravity_v18",
+        "sterile_neutrino_portals_v23"
+      ]
     },
     "berger1955": {
       "key": "berger1955",
       "id": "berger1955",
       "authors": "Berger, M.",
       "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine et des varietes riemanniennes",
+      "year": 1955,
       "journal": "Bull. Soc. Math. France",
       "volume": "83",
       "pages": "279-330",
-      "year": 1955,
-      "type": "article",
-      "url": "https://doi.org/10.24033/bsmf.1464",
       "doi": "10.24033/bsmf.1464",
+      "url": "https://doi.org/10.24033/bsmf.1464",
+      "type": "article",
       "relevance": "Berger classification of Riemannian holonomy groups including G2 in dimension 7",
-      "source_simulation": "g2_geometry_v16_0"
+      "source_simulation": "g2_geometry_v16_0",
+      "also_registered_by": [
+        "methodology_v16_2",
+        "integrity_v16_2",
+        "appendix_a_spectral_registry_v23_1"
+      ]
     },
     "kklt2003": {
       "key": "kklt2003",
       "id": "kklt2003",
       "authors": "Kachru, S., Kallosh, R., Linde, A., Trivedi, S.P.",
       "title": "de Sitter Vacua in String Theory",
+      "year": 2003,
       "journal": "Phys. Rev. D",
       "volume": "68",
       "pages": "046005",
-      "year": 2003,
-      "type": "article",
+      "doi": "10.1103/PhysRevD.68.046005",
       "arxiv": "hep-th/0301240",
       "url": "https://arxiv.org/abs/hep-th/0301240",
-      "doi": "10.1103/PhysRevD.68.046005",
+      "type": "article",
       "relevance": "KKLT racetrack mechanism for Kahler moduli stabilization; adapted here to the four-face G2 context to derive T_i VEVs.",
-      "source_simulation": "four_face_g2_structure"
+      "source_simulation": "four_face_g2_structure",
+      "also_registered_by": [
+        "cosmology_intro_v16_0",
+        "pneuma_mechanism_v22_0"
+      ]
     },
     "bbcq2005": {
       "key": "bbcq2005",
@@ -331,7 +445,12 @@
       "year": 1998,
       "type": "book",
       "url": "https://doi.org/10.1017/CBO9780511816079",
-      "source_simulation": "unitary_filter_legacy"
+      "source_simulation": "unitary_filter_legacy",
+      "also_registered_by": [
+        "modular_invariance_v16_2",
+        "cosmological_constant_v16_1",
+        "appendix_e_brane_map_v16_2"
+      ]
     },
     "polyakov1981": {
       "id": "polyakov1981",
@@ -353,7 +472,10 @@
       "year": 2006,
       "type": "preprint",
       "url": "https://arxiv.org/abs/hep-th/0604012",
-      "source_simulation": "unitary_filter_legacy"
+      "source_simulation": "unitary_filter_legacy",
+      "also_registered_by": [
+        "cosmology_intro_v16_0"
+      ]
     },
     "conway1969": {
       "id": "conway1969",
@@ -376,7 +498,10 @@
       "pages": "145-205",
       "arxiv": "math/0105155",
       "url": "https://arxiv.org/abs/math/0105155",
-      "source_simulation": "leech_partition_v16_2"
+      "source_simulation": "leech_partition_v16_2",
+      "also_registered_by": [
+        "octonionic_mixing_v23_1"
+      ]
     },
     "hurwitz1898": {
       "id": "hurwitz1898",
@@ -409,7 +534,10 @@
       "type": "review",
       "doi": "10.1016/0370-1573(81)90059-4",
       "url": "https://doi.org/10.1016/0370-1573(81)90059-4",
-      "source_simulation": "gauge_unification_v16_0"
+      "source_simulation": "gauge_unification_v16_0",
+      "also_registered_by": [
+        "appendix_c_gauge_matrices_v16_2"
+      ]
     },
     "dienes1999": {
       "id": "dienes1999",
@@ -439,28 +567,28 @@
     },
     "pdg2024": {
       "id": "pdg2024",
-      "authors": "Particle Data Group",
+      "authors": "Particle Data Group (Navas, S. et al.)",
       "title": "Review of Particle Physics",
+      "year": 2024,
       "journal": "Phys. Rev. D",
       "volume": "110",
-      "year": "2024",
-      "type": "review",
+      "pages": "030001",
       "doi": "10.1103/PhysRevD.110.030001",
       "url": "https://pdg.lbl.gov/",
-      "source_simulation": "gauge_unification_v16_0"
-    },
-    "georgi1974": {
-      "id": "georgi1974",
-      "authors": "Georgi, H., Glashow, S. L.",
-      "title": "Unity of All Elementary-Particle Forces",
-      "journal": "Phys. Rev. Lett.",
-      "volume": "32",
-      "pages": "438-441",
-      "year": "1974",
-      "type": "article",
-      "doi": "10.1103/PhysRevLett.32.438",
-      "url": "https://doi.org/10.1103/PhysRevLett.32.438",
-      "source_simulation": "gauge_unification_v16_0"
+      "type": "review",
+      "source_simulation": "gauge_unification_v16_0",
+      "also_registered_by": [
+        "master_action_simulation_v22_0",
+        "ckm_matrix_v16_0",
+        "mass_ratio_v23_0",
+        "octonionic_mixing_v23_1",
+        "predictions_aggregator_v24_2",
+        "integrity_v16_2",
+        "appendix_f_72gates_v24_2",
+        "appendix_k_sterile_constants_v16_2",
+        "appendix_z_terminal_ledger_v24_2",
+        "complete_residue_registry_v18"
+      ]
     },
     "weinberg1980": {
       "id": "weinberg1980",
@@ -485,7 +613,11 @@
       "type": "article",
       "doi": "10.1142/S0218271818700017",
       "url": "https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory",
-      "source_simulation": "master_action_simulation_v22_0"
+      "source_simulation": "master_action_simulation_v22_0",
+      "also_registered_by": [
+        "cosmology_intro_v16_0",
+        "speed_of_light_v17_2"
+      ]
     },
     "klein1926": {
       "id": "klein1926",
@@ -498,29 +630,6 @@
       "type": "article",
       "doi": "10.1007/BF01397481",
       "url": "https://doi.org/10.1007/BF01397481",
-      "source_simulation": "master_action_simulation_v22_0"
-    },
-    "weinberg1967": {
-      "id": "weinberg1967",
-      "authors": "Weinberg, S.",
-      "title": "A Model of Leptons",
-      "journal": "Phys. Rev. Lett.",
-      "volume": "19",
-      "pages": "1264-1266",
-      "year": "1967",
-      "type": "article",
-      "doi": "10.1103/PhysRevLett.19.1264",
-      "url": "https://doi.org/10.1103/PhysRevLett.19.1264",
-      "source_simulation": "master_action_simulation_v22_0"
-    },
-    "acharya2004": {
-      "id": "acharya2004",
-      "authors": "Acharya, B. S., Witten, E.",
-      "title": "Chiral Fermions from Manifolds of G2 Holonomy",
-      "journal": "arXiv:hep-th/0109152",
-      "year": "2001",
-      "type": "article",
-      "url": "https://arxiv.org/abs/hep-th/0109152",
       "source_simulation": "master_action_simulation_v22_0"
     },
     "brans_dicke1961": {
@@ -588,16 +697,6 @@
       "relevance": "Most precise determination of alpha via Rb atom interferometry",
       "source_simulation": "alpha_rigor_v16_1"
     },
-    "georgi1975": {
-      "id": "georgi1975",
-      "authors": "Georgi, H. and Glashow, S.L.",
-      "title": "Unity of All Elementary Particle Forces",
-      "journal": "Phys. Rev. Lett.",
-      "volume": "32",
-      "year": 1974,
-      "url": "https://doi.org/10.1103/PhysRevLett.32.438",
-      "source_simulation": "fermion_generations_v16_0"
-    },
     "fritzsch1979": {
       "id": "fritzsch1979",
       "authors": "Fritzsch, H.",
@@ -630,14 +729,18 @@
     },
     "harvey_lawson1982": {
       "id": "harvey_lawson1982",
-      "authors": "Harvey, R. and Lawson, H. B.",
+      "authors": "Harvey, R. and Lawson, H.B.",
       "title": "Calibrated geometries",
+      "year": 1982,
       "journal": "Acta Math.",
       "volume": "148",
-      "year": "1982",
       "pages": "47-157",
+      "doi": "10.1007/BF02392726",
       "url": "https://doi.org/10.1007/BF02392726",
-      "source_simulation": "chirality_v16_0"
+      "source_simulation": "chirality_v16_0",
+      "also_registered_by": [
+        "octonionic_mixing_v23_1"
+      ]
     },
     "atiyah_singer1968": {
       "id": "atiyah_singer1968",
@@ -660,7 +763,10 @@
       "pages": "487-522",
       "arxiv": "math/0702077",
       "url": "https://arxiv.org/abs/math/0702077",
-      "source_simulation": "chirality_v16_0"
+      "source_simulation": "chirality_v16_0",
+      "also_registered_by": [
+        "pneuma_mechanism_v22_0"
+      ]
     },
     "cabibbo1963": {
       "id": "cabibbo1963",
@@ -704,7 +810,10 @@
       "year": "1979",
       "pages": "277-298",
       "url": "https://doi.org/10.1016/0550-3213(79)90316-X",
-      "source_simulation": "ckm_matrix_v16_0"
+      "source_simulation": "ckm_matrix_v16_0",
+      "also_registered_by": [
+        "yukawa_textures_v18"
+      ]
     },
     "jarlskog1985": {
       "id": "jarlskog1985",
@@ -744,15 +853,19 @@
     "superk2020": {
       "id": "superk2020",
       "authors": "Super-Kamiokande Collaboration (Takenaka, A. et al.)",
-      "title": "Search for proton decay via p -> e+pi0 and p -> mu+pi0 with an enlarged fiducial volume in Super-Kamiokande I-IV",
+      "title": "Search for proton decay via p -> e+ pi0 and p -> mu+ pi0 with an enlarged fiducial volume in Super-Kamiokande I-IV",
+      "year": 2020,
       "journal": "Phys. Rev. D",
       "volume": "102",
       "pages": "112011",
-      "year": 2020,
+      "doi": "10.1103/PhysRevD.102.112011",
       "arxiv": "2010.16098",
-      "url": "https://arxiv.org/abs/2010.16098",
+      "url": "https://doi.org/10.1103/PhysRevD.102.112011",
       "notes": "Super-K bound: tau_p > 2.4 x 10^34 years (90% CL) for p -> e+pi0.",
-      "source_simulation": "proton_decay_v17_2"
+      "source_simulation": "proton_decay_v17_2",
+      "also_registered_by": [
+        "predictions_aggregator_v24_2"
+      ]
     },
     "higgs1964": {
       "id": "higgs1964",
@@ -777,7 +890,10 @@
       "arxiv": "1207.7214",
       "url": "https://doi.org/10.1016/j.physletb.2012.08.020",
       "notes": "ATLAS discovery of the Higgs boson at m_H ~ 126 GeV.",
-      "source_simulation": "higgs_mass_v16_0"
+      "source_simulation": "higgs_mass_v16_0",
+      "also_registered_by": [
+        "higgs_brane_partition_v16_2"
+      ]
     },
     "cms2012": {
       "id": "cms2012",
@@ -790,7 +906,10 @@
       "arxiv": "1207.7235",
       "url": "https://doi.org/10.1016/j.physletb.2012.08.021",
       "notes": "CMS discovery of the Higgs boson at m_H ~ 125 GeV.",
-      "source_simulation": "higgs_mass_v16_0"
+      "source_simulation": "higgs_mass_v16_0",
+      "also_registered_by": [
+        "higgs_brane_partition_v16_2"
+      ]
     },
     "pdg2024_higgs": {
       "id": "pdg2024_higgs",
@@ -802,7 +921,10 @@
       "year": 2024,
       "url": "https://pdg.lbl.gov/",
       "notes": "PDG 2024 combined: m_H = 125.25 +/- 0.17 GeV (ATLAS+CMS).",
-      "source_simulation": "higgs_mass_v16_0"
+      "source_simulation": "higgs_mass_v16_0",
+      "also_registered_by": [
+        "higgs_brane_partition_v16_2"
+      ]
     },
     "acharya_g2mssm2007": {
       "id": "acharya_g2mssm2007",
@@ -864,17 +986,20 @@
       "notes": "G2 compactification predictions for fermion mass hierarchy and Yukawa textures",
       "source_simulation": "yukawa_textures_v18"
     },
-    "pdg2024_higgs_vev": {
-      "id": "pdg2024_higgs_vev",
+    "pdg2024weak": {
+      "id": "pdg2024weak",
       "authors": "Particle Data Group (Navas, S. et al.)",
       "title": "Review of Particle Physics: Electroweak Model and Constraints on New Physics",
+      "year": 2024,
       "journal": "Phys. Rev. D",
       "volume": "110",
       "pages": "030001",
-      "year": 2024,
       "url": "https://pdg.lbl.gov/",
       "notes": "PDG 2024: v = 246.22 +/- 0.5 GeV, G_F = 1.1663788(6) x 10^-5 GeV^-2.",
-      "source_simulation": "higgs_vev_refined_v18"
+      "source_simulation": "higgs_vev_refined_v18",
+      "also_registered_by": [
+        "weak_mixing_v17_2"
+      ]
     },
     "schwinger1948": {
       "id": "schwinger1948",
@@ -954,7 +1079,10 @@
       "title": "Heterotic string theory. I. The free heterotic string",
       "year": 1985,
       "doi": "10.1016/0550-3213(85)90394-3",
-      "source_simulation": "e8x8_splitting_v1_0"
+      "source_simulation": "e8x8_splitting_v1_0",
+      "also_registered_by": [
+        "dark_energy_v16_0"
+      ]
     },
     "candelas1985": {
       "id": "candelas1985",
@@ -1021,43 +1149,6 @@
       "url": "https://doi.org/10.1093/acprof:oso/9780199215607.001.0001",
       "source_simulation": "cosmology_intro_v16_0"
     },
-    "corti2015": {
-      "id": "corti2015",
-      "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
-      "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
-      "journal": "Duke Mathematical Journal",
-      "volume": "164",
-      "pages": "1971-2092",
-      "year": 2015,
-      "arxiv": "1207.4470",
-      "url": "https://arxiv.org/abs/1207.4470",
-      "notes": "TCS construction of compact G2 manifolds from K3 surface fibrations",
-      "source_simulation": "cosmology_intro_v16_0"
-    },
-    "kachru2003": {
-      "id": "kachru2003",
-      "authors": "Kachru, S., Kallosh, R., Linde, A., Trivedi, S.P.",
-      "title": "de Sitter vacua in string theory",
-      "journal": "Phys. Rev. D",
-      "volume": "68",
-      "year": 2003,
-      "arxiv": "hep-th/0301240",
-      "url": "https://arxiv.org/abs/hep-th/0301240",
-      "notes": "KKLT mechanism for moduli stabilization via racetrack superpotential",
-      "source_simulation": "cosmology_intro_v16_0"
-    },
-    "desi2024": {
-      "id": "desi2024",
-      "authors": "DESI Collaboration (Adame, A.G. et al.)",
-      "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
-      "journal": "arXiv preprint",
-      "year": 2024,
-      "arxiv": "2404.03002",
-      "url": "https://arxiv.org/abs/2404.03002",
-      "doi": "10.48550/arXiv.2404.03002",
-      "notes": "DESI Year 1 BAO measurements combined with CMB and supernovae. Reports preference for evolving dark energy (w0 > -1, wa < 0). Thawing quintessence fit: w0 = -0.957 +/- 0.067. Validates PM prediction w0 = -23/24 = -0.9583 (consistent with BAO-only measurement).",
-      "source_simulation": "dark_energy_v16_0"
-    },
     "green1987": {
       "id": "green1987",
       "authors": "Green, M.B., Schwarz, J.H., Witten, E.",
@@ -1077,7 +1168,10 @@
       "pages": "213-223",
       "arxiv": "gr-qc/0009008",
       "url": "https://arxiv.org/abs/gr-qc/0009008",
-      "source_simulation": "dark_energy_v16_0"
+      "source_simulation": "dark_energy_v16_0",
+      "also_registered_by": [
+        "dark_energy_thawing_v16_2"
+      ]
     },
     "desi2025_thawing": {
       "id": "desi2025_thawing",
@@ -1090,19 +1184,6 @@
       "notes": "w0 = -0.957 +/- 0.067 (thawing quintessence model)",
       "source_simulation": "dark_energy_v16_0"
     },
-    "planck2018_cosmo": {
-      "id": "planck2018_cosmo",
-      "authors": "Planck Collaboration (Aghanim, N. et al.)",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "Astron. Astrophys.",
-      "volume": "641",
-      "year": 2020,
-      "pages": "A6",
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "w0 = -1.03 +/- 0.03 (Planck alone, consistent with cosmological constant)",
-      "source_simulation": "dark_energy_v16_0"
-    },
     "weinberg1989": {
       "id": "weinberg1989",
       "authors": "Weinberg, S.",
@@ -1113,7 +1194,11 @@
       "pages": "1-23",
       "url": "https://doi.org/10.1103/RevModPhys.61.1",
       "notes": "Classic review of the 120-order hierarchy problem",
-      "source_simulation": "dark_energy_v16_0"
+      "source_simulation": "dark_energy_v16_0",
+      "also_registered_by": [
+        "cosmological_constant_v16_1",
+        "attractor_potential_v18"
+      ]
     },
     "linder2003": {
       "id": "linder2003",
@@ -1126,19 +1211,10 @@
       "arxiv": "astro-ph/0208512",
       "url": "https://arxiv.org/abs/astro-ph/0208512",
       "notes": "CPL parametrization w(a) = w0 + wa(1-a)",
-      "source_simulation": "dark_energy_v16_0"
-    },
-    "desi2024_bao": {
-      "id": "desi2024_bao",
-      "authors": "DESI Collaboration (Adame, A.G. et al.)",
-      "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
-      "journal": "arXiv preprint",
-      "year": 2024,
-      "arxiv": "2404.03002",
-      "url": "https://arxiv.org/abs/2404.03002",
-      "doi": "10.48550/arXiv.2404.03002",
-      "notes": "DESI Year 1 BAO measurements combined with CMB and supernovae. Reports preference for evolving dark energy with w0 > -1, wa < 0 (thawing quintessence). Thawing model fit: w0 = -0.957 +/- 0.067, wa = -0.99 +/- 0.32.",
-      "source_simulation": "dark_energy_thawing_v16_2"
+      "source_simulation": "dark_energy_v16_0",
+      "also_registered_by": [
+        "dark_energy_thawing_v16_2"
+      ]
     },
     "hamilton1982": {
       "id": "hamilton1982",
@@ -1150,7 +1226,12 @@
       "pages": "255-306",
       "url": "https://doi.org/10.4310/jdg/1214436922",
       "notes": "Ricci flow foundational paper",
-      "source_simulation": "dark_energy_thawing_v16_2"
+      "source_simulation": "dark_energy_thawing_v16_2",
+      "also_registered_by": [
+        "evolution_engine_v16_2",
+        "ricci_flow_h0_v16_1",
+        "speed_of_light_v17_2"
+      ]
     },
     "pm-v14.2": {
       "id": "pm-v14.2",
@@ -1170,28 +1251,23 @@
       "notes": "Established geometric foundation from G2 manifold dynamics",
       "source_simulation": "evolution_engine_v16_2"
     },
-    "shoes2025": {
-      "id": "shoes2025",
-      "authors": "Riess, A.G. et al.",
-      "title": "A Comprehensive Measurement of the Local Value of the Hubble Constant",
-      "journal": "ApJ",
-      "year": 2025,
-      "url": "https://arxiv.org/abs/2112.04510",
+    "riess_2022": {
+      "id": "riess_2022",
+      "authors": "Riess, A.G. et al. (SH0ES Team)",
+      "title": "A Comprehensive Measurement of the Local Value of the Hubble Constant with 1 km/s/Mpc Uncertainty from the Hubble Space Telescope and the SH0ES Team",
+      "year": 2022,
+      "journal": "Astrophys. J. Lett.",
+      "volume": "934",
+      "pages": "L7",
+      "doi": "10.3847/2041-8213/ac5c5b",
+      "arxiv": "2112.04510",
+      "url": "https://doi.org/10.3847/2041-8213/ac5c5b",
       "notes": "H0 = 73.04 +/- 1.04 km/s/Mpc",
-      "source_simulation": "evolution_engine_v16_2"
-    },
-    "planck2020": {
-      "id": "planck2020",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "A&A",
-      "volume": "641",
-      "pages": "A6",
-      "year": 2020,
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "S8 = 0.832 ± 0.013",
-      "source_simulation": "s8_suppression_v16_2"
+      "source_simulation": "evolution_engine_v16_2",
+      "also_registered_by": [
+        "ricci_flow_h0_v16_1",
+        "results_v16_2"
+      ]
     },
     "kids2021": {
       "id": "kids2021",
@@ -1240,7 +1316,10 @@
       "year": 2024,
       "url": "http://www.nu-fit.org",
       "notes": "Global fit of neutrino oscillation parameters; source of all experimental PMNS benchmarks",
-      "source_simulation": "neutrino_mixing_v17_2"
+      "source_simulation": "neutrino_mixing_v17_2",
+      "also_registered_by": [
+        "octonionic_mixing_v23_1"
+      ]
     },
     "pontecorvo1957": {
       "id": "pontecorvo1957",
@@ -1278,25 +1357,6 @@
       "url": "https://inspirehep.net/literature/52sergei",
       "notes": "Extended neutrino mixing formalism; completed the Pontecorvo-MNS framework",
       "source_simulation": "neutrino_mixing_v17_2"
-    },
-    "harveylawson1982": {
-      "id": "harveylawson1982",
-      "authors": "Harvey, R. and Lawson, H.B.",
-      "title": "Calibrated Geometries",
-      "journal": "Acta Mathematica",
-      "volume": "148",
-      "year": 1982,
-      "pages": "47-157",
-      "url": "https://doi.org/10.1007/BF02392726",
-      "source_simulation": "octonionic_mixing_v23_1"
-    },
-    "acharya2001": {
-      "id": "acharya2001",
-      "authors": "Acharya, B.S. and Witten, E.",
-      "title": "Chiral Fermions from Manifolds of G2 Holonomy",
-      "year": 2001,
-      "url": "https://arxiv.org/abs/hep-th/0109152",
-      "source_simulation": "octonionic_mixing_v23_1"
     },
     "friedmann1922": {
       "id": "friedmann1922",
@@ -1340,7 +1400,12 @@
       "year": 2019,
       "url": "https://www.bipm.org/en/publications/si-brochure",
       "notes": "Redefinition of SI base units making c exact",
-      "source_simulation": "speed_of_light_v17_2"
+      "source_simulation": "speed_of_light_v17_2",
+      "also_registered_by": [
+        "avogadro_v17_2",
+        "faraday_v17_2",
+        "molar_gas_v17_2"
+      ]
     },
     "mohr2016": {
       "id": "mohr2016",
@@ -1354,16 +1419,6 @@
       "notes": "Defines Compton wavelength as lambda_C = h/(m_e * c)",
       "source_simulation": "compton_wavelength_v17_2"
     },
-    "codata2022stefan": {
-      "id": "codata2022stefan",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
-      "journal": "Journal of Physical and Chemical Reference Data",
-      "year": 2024,
-      "url": "https://physics.nist.gov/cuu/Constants/",
-      "notes": "sigma = 5.670374419e-8 W/(m^2 K^4) (exact since 2019 SI redefinition)",
-      "source_simulation": "stefan_boltzmann_v17_2"
-    },
     "stefan1879": {
       "id": "stefan1879",
       "authors": "Stefan, J.",
@@ -1375,16 +1430,6 @@
       "url": "https://doi.org/10.1007/BF01011459",
       "notes": "Original experimental determination of the T^4 radiation law",
       "source_simulation": "stefan_boltzmann_v17_2"
-    },
-    "codata2022hartree": {
-      "id": "codata2022hartree",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
-      "journal": "Journal of Physical and Chemical Reference Data",
-      "year": 2024,
-      "url": "https://physics.nist.gov/cuu/Constants/",
-      "notes": "E_h = 4.3597447222071(85)e-18 J",
-      "source_simulation": "hartree_energy_v17_2"
     },
     "hartree1928wave": {
       "id": "hartree1928wave",
@@ -1398,16 +1443,6 @@
       "notes": "Original definition of atomic units and Hartree energy",
       "source_simulation": "hartree_energy_v17_2"
     },
-    "codata2022flux": {
-      "id": "codata2022flux",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
-      "journal": "Journal of Physical and Chemical Reference Data",
-      "year": 2024,
-      "url": "https://physics.nist.gov/cuu/Constants/",
-      "notes": "Phi_0 = h/(2e) = 2.067833848e-15 Wb (exact since 2019 SI)",
-      "source_simulation": "magnetic_flux_v17_2"
-    },
     "deaver1961fluxoid": {
       "id": "deaver1961fluxoid",
       "authors": "Deaver, B.S., Fairbank, W.M.",
@@ -1420,16 +1455,6 @@
       "notes": "First experimental observation of magnetic flux quantization",
       "source_simulation": "magnetic_flux_v17_2"
     },
-    "codata2022rk": {
-      "id": "codata2022rk",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
-      "journal": "Journal of Physical and Chemical Reference Data",
-      "year": 2024,
-      "url": "https://physics.nist.gov/cuu/Constants/",
-      "notes": "R_K = h/e^2 = 25812.80745 Ohm (exact since 2019 SI redefinition)",
-      "source_simulation": "von_klitzing_v17_2"
-    },
     "klitzing1980": {
       "id": "klitzing1980",
       "authors": "von Klitzing, K., Dorda, G., Pepper, M.",
@@ -1441,37 +1466,6 @@
       "url": "https://doi.org/10.1103/PhysRevLett.45.494",
       "notes": "Discovery of the integer quantum Hall effect and quantized resistance",
       "source_simulation": "von_klitzing_v17_2"
-    },
-    "codata2022faraday": {
-      "id": "codata2022faraday",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
-      "journal": "Journal of Physical and Chemical Reference Data",
-      "year": 2024,
-      "url": "https://physics.nist.gov/cuu/Constants/",
-      "notes": "F = 96485.33212 C/mol (exact since 2019 SI redefinition: F = N_A * e)",
-      "source_simulation": "faraday_v17_2"
-    },
-    "codata2022r": {
-      "id": "codata2022r",
-      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
-      "journal": "Journal of Physical and Chemical Reference Data",
-      "year": 2024,
-      "url": "https://physics.nist.gov/cuu/Constants/",
-      "notes": "R = 8.314462618 J/(mol K) (exact since 2019 SI: R = N_A * k_B)",
-      "source_simulation": "molar_gas_v17_2"
-    },
-    "pdg2024weak": {
-      "id": "pdg2024weak",
-      "authors": "Particle Data Group",
-      "title": "Review of Particle Physics: Electroweak Model and Constraints on New Physics",
-      "journal": "Physical Review D",
-      "year": 2024,
-      "volume": "110",
-      "url": "https://pdg.lbl.gov/",
-      "notes": "sin^2(theta_W) = 0.23122 +/- 0.00004 (MS-bar scheme at M_Z)",
-      "source_simulation": "weak_mixing_v17_2"
     },
     "desi2025_lambda": {
       "id": "desi2025_lambda",
@@ -1494,29 +1488,6 @@
       "url": "https://doi.org/10.1103/RevModPhys.74.825",
       "source_simulation": "cosmological_constant_v16_1"
     },
-    "planck2018_lambda": {
-      "id": "planck2018_lambda",
-      "authors": "Planck Collaboration (Aghanim, N. et al.)",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "Astron. Astrophys.",
-      "volume": "641",
-      "year": 2020,
-      "pages": "A6",
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "Omega_Lambda = 0.6847 +/- 0.0073, H0 = 67.36 +/- 0.54 km/s/Mpc",
-      "source_simulation": "cosmological_constant_v16_1"
-    },
-    "joyce2000_g2": {
-      "id": "joyce2000_g2",
-      "authors": "Joyce, D.D.",
-      "title": "Compact Manifolds with Special Holonomy",
-      "publisher": "Oxford University Press",
-      "year": 2000,
-      "url": "https://doi.org/10.1093/acprof:oso/9780198527916.001.0001",
-      "notes": "G2 manifold topology, Betti numbers b2=0, b3=24 for Joyce manifolds",
-      "source_simulation": "cosmological_constant_v16_1"
-    },
     "perlmutter1999": {
       "id": "perlmutter1999",
       "authors": "Perlmutter, S. et al.",
@@ -1537,7 +1508,10 @@
       "volume": "443",
       "year": "1995",
       "url": "https://arxiv.org/abs/hep-th/9503124",
-      "source_simulation": "pneuma_mechanism_v22_0"
+      "source_simulation": "pneuma_mechanism_v22_0",
+      "also_registered_by": [
+        "discussion_v16_0"
+      ]
     },
     "cvetic2002": {
       "id": "cvetic2002",
@@ -1553,13 +1527,18 @@
       "id": "penrose1996",
       "authors": "Penrose, R.",
       "title": "On Gravity's Role in Quantum State Reduction",
+      "year": 1996,
       "journal": "Gen. Rel. Grav.",
       "volume": "28",
       "pages": "581-600",
-      "year": "1996",
       "doi": "10.1007/BF02105068",
+      "url": "https://doi.org/10.1007/BF02105068",
       "note": "Included for gravitational quantum collapse aspects relevant to field dynamics, not speculative consciousness theories",
-      "source_simulation": "pneuma_mechanism_v22_0"
+      "source_simulation": "pneuma_mechanism_v22_0",
+      "also_registered_by": [
+        "thermal_time_v22_0",
+        "orch_or_geometry_v22_0"
+      ]
     },
     "connes_rovelli_1994": {
       "id": "connes_rovelli_1994",
@@ -1577,32 +1556,49 @@
       "id": "rovelli_1993",
       "authors": "Rovelli, C.",
       "title": "Statistical mechanics of gravity and the thermodynamical origin of time",
+      "year": 1993,
       "journal": "Class. Quantum Grav.",
       "volume": "10",
-      "year": "1993",
-      "url": "https://doi.org/10.1103/PhysRevD.48.1506",
-      "source_simulation": "thermal_time_v22_0"
+      "pages": "1549-1566",
+      "doi": "10.1088/0264-9381/10/8/015",
+      "url": "https://doi.org/10.1088/0264-9381/10/8/015",
+      "source_simulation": "thermal_time_v22_0",
+      "also_registered_by": [
+        "orch_or_geometry_v22_0"
+      ]
     },
-    "connes1994": {
-      "id": "connes1994",
+    "connes_1994_noncommutative_geometry": {
+      "id": "connes_1994_noncommutative_geometry",
       "authors": "Connes, A.",
       "title": "Noncommutative Geometry",
+      "year": 1994,
       "journal": "Academic Press",
-      "year": "1994",
-      "url": "https://doi.org/10.1016/B978-0-08-057175-1.X5000-6",
+      "publisher": "Academic Press",
+      "isbn": "9780121858605",
+      "url": "https://openlibrary.org/works/OL3495466W",
       "note": "Foundational text for Tomita-Takesaki modular theory and its physical applications",
-      "source_simulation": "thermal_time_v22_0"
+      "source_simulation": "thermal_time_v22_0",
+      "also_registered_by": [
+        "orch_or_geometry_v22_0",
+        "appendix_u_gamma_correction_v24"
+      ]
     },
-    "hameroff_penrose2014": {
-      "id": "hameroff_penrose2014",
+    "hameroff_penrose_2014": {
+      "id": "hameroff_penrose_2014",
       "authors": "Hameroff, S. and Penrose, R.",
-      "title": "Consciousness in the universe: A review of the 'Orch OR' theory",
+      "title": "Consciousness in the universe: A review of the Orch OR theory",
+      "year": 2014,
       "journal": "Physics of Life Reviews",
       "volume": "11",
       "pages": "39-78",
-      "year": "2014",
       "doi": "10.1016/j.plrev.2013.08.002",
-      "source_simulation": "thermal_time_v22_0"
+      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
+      "source_simulation": "thermal_time_v22_0",
+      "also_registered_by": [
+        "orch_or_geometry_v22_0",
+        "orch_or_pair_shielding_v22",
+        "discussion_v16_0"
+      ]
     },
     "rovelli2004": {
       "id": "rovelli2004",
@@ -1614,61 +1610,15 @@
       "note": "Chapter 5: thermal time hypothesis and its role in background-independent quantum gravity",
       "source_simulation": "thermal_time_v22_0"
     },
-    "penrose_1996_gravity_reduction": {
-      "id": "penrose_1996_gravity_reduction",
-      "authors": "Penrose, R.",
-      "title": "On Gravity's Role in Quantum State Reduction",
-      "year": 1996,
-      "journal": "General Relativity and Gravitation",
-      "volume": "28",
-      "pages": "581-600",
-      "url": "https://doi.org/10.1093/oso/9780198539957.001.0001",
-      "notes": "Establishes the Penrose Criterion tau = hbar / E_g for objective reduction of quantum superpositions by gravitational self-energy. This is the core formula used by the Orch-OR geometry solver to derive coherence times from G2 manifold topology.",
-      "source_simulation": "orch_or_geometry_v22_0"
-    },
-    "hameroff_penrose_2014_consciousness": {
-      "id": "hameroff_penrose_2014_consciousness",
-      "authors": "Hameroff, S. and Penrose, R.",
-      "title": "Consciousness in the universe: A review of the 'Orch OR' theory",
-      "year": 2014,
-      "journal": "Physics of Life Reviews",
-      "volume": "11",
-      "pages": "39-78",
-      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
-      "notes": "Comprehensive Orch-OR review connecting microtubule quantum coherence to consciousness. The 13-protofilament helical structure matches the G2 topological pitch, and conformational mass shifts produce neural timescale collapse times. The v22 gnosis model extends this framework.",
-      "source_simulation": "orch_or_geometry_v22_0"
-    },
     "penrose_2004_road_to_reality": {
       "id": "penrose_2004_road_to_reality",
       "authors": "Penrose, R.",
       "title": "The Road to Reality: A Complete Guide to the Laws of the Universe",
       "year": 2004,
       "publisher": "Jonathan Cape",
-      "url": "https://doi.org/10.1093/oso/9780198539957.001.0001",
+      "isbn": "9780224044479",
+      "url": "https://openlibrary.org/works/OL3474173W",
       "notes": "Provides the mathematical framework connecting gravitational physics to quantum state reduction. Chapters on twistor theory, spinor geometry, and gravitational energy inform the PM warp-corrected approach.",
-      "source_simulation": "orch_or_geometry_v22_0"
-    },
-    "connes_1994_noncommutative_geometry": {
-      "id": "connes_1994_noncommutative_geometry",
-      "authors": "Connes, A.",
-      "title": "Noncommutative Geometry",
-      "year": 1994,
-      "publisher": "Academic Press",
-      "url": "https://doi.org/10.1016/B978-0-08-057175-1.X5000-6",
-      "notes": "Foundation for spectral geometry approaches to physics. The G2 manifold topology and Dirac spectral methods used in the PM framework draw on Connes' formulation of noncommutative differential geometry. The k_gimel warp factor connects to spectral action principles.",
-      "source_simulation": "orch_or_geometry_v22_0"
-    },
-    "rovelli_1993_thermal_time": {
-      "id": "rovelli_1993_thermal_time",
-      "authors": "Rovelli, C.",
-      "title": "Statistical mechanics of gravity and the thermodynamical origin of time",
-      "year": 1993,
-      "journal": "Classical and Quantum Gravity",
-      "volume": "10",
-      "pages": "1549-1566",
-      "arxiv": "gr-qc/9302019",
-      "url": "https://doi.org/10.1103/PhysRevD.48.1506",
-      "notes": "The thermal time hypothesis connects the emergence of physical time to thermodynamic properties of quantum states. The Orch-OR geometry solver's coherence time tau relates to this framework through the modular flow interpretation of collapse timing.",
       "source_simulation": "orch_or_geometry_v22_0"
     },
     "penrose1994": {
@@ -1677,54 +1627,11 @@
       "title": "Shadows of the Mind",
       "year": 1994,
       "doi": "10.1093/acprof:oso/9780198539780.001.0001",
-      "source_simulation": "gnosis_unlocking_v22_2"
-    },
-    "hameroff2014": {
-      "id": "hameroff2014",
-      "authors": "Hameroff, S. and Penrose, R.",
-      "title": "Consciousness in the universe: A review of the Orch OR theory",
-      "year": 2014,
-      "doi": "10.1016/j.plrev.2013.08.002",
-      "source_simulation": "orch_or_pair_shielding_v22"
-    },
-    "hameroff_penrose_2014": {
-      "id": "hameroff_penrose_2014",
-      "authors": "Hameroff, S. and Penrose, R.",
-      "title": "Consciousness in the universe: A review of the Orch OR theory",
-      "year": 2014,
-      "journal": "Physics of Life Reviews",
-      "volume": "11",
-      "pages": "39-78",
-      "url": "https://doi.org/10.1016/j.plrev.2013.08.002",
-      "notes": "Orch-OR consciousness model explored as a speculative interpretive extension of the PM geometric framework (not a core claim)",
-      "source_simulation": "discussion_v16_0"
-    },
-    "pdg-2024": {
-      "id": "pdg-2024",
-      "authors": "Particle Data Group",
-      "title": "Review of Particle Physics",
-      "year": "2024",
-      "url": "https://pdg.lbl.gov",
-      "type": "review",
-      "source_simulation": "predictions_aggregator_v24_2"
-    },
-    "planck-2018": {
-      "id": "planck-2018",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "year": "2020",
-      "doi": "10.1051/0004-6361/201833910",
-      "type": "journal",
-      "source_simulation": "predictions_aggregator_v24_2"
-    },
-    "super-k-2020": {
-      "id": "super-k-2020",
-      "authors": "Super-Kamiokande Collaboration",
-      "title": "Search for proton decay via p -> e+ pi0 and p -> mu+ pi0",
-      "year": "2020",
-      "doi": "10.1103/PhysRevD.102.112011",
-      "type": "journal",
-      "source_simulation": "predictions_aggregator_v24_2"
+      "source_simulation": "gnosis_unlocking_v22_2",
+      "also_registered_by": [
+        "four_dice_sampling_v22",
+        "discussion_v16_0"
+      ]
     },
     "desi-2024": {
       "id": "desi-2024",
@@ -1735,84 +1642,36 @@
       "type": "journal",
       "source_simulation": "predictions_aggregator_v24_2"
     },
-    "joyce-2000": {
-      "id": "joyce-2000",
-      "authors": "Joyce, D.D.",
-      "title": "Compact Manifolds with Special Holonomy",
-      "year": "2000",
-      "doi": "10.1093/acprof:oso/9780198506010.001.0001",
-      "type": "monograph",
-      "source_simulation": "predictions_aggregator_v24_2"
-    },
-    "joyce_2000": {
-      "id": "joyce_2000",
-      "authors": "Joyce, D. D.",
-      "title": "Compact Manifolds with Special Holonomy",
-      "year": 2000,
-      "publisher": "Oxford University Press",
-      "url": "https://doi.org/10.1093/acprof:oso/9780198527916.001.0001",
-      "notes": "Definitive reference for G2 holonomy manifold construction",
-      "source_simulation": "foundations_v16_2"
-    },
-    "corti_haskins_2015": {
-      "id": "corti_haskins_2015",
-      "authors": "Corti, A., Haskins, M., Nordstrom, J., Pacini, T.",
-      "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
-      "year": 2015,
-      "journal": "Duke Mathematical Journal",
-      "volume": "164",
-      "arxiv": "1207.4470",
-      "url": "https://arxiv.org/abs/1207.4470",
-      "notes": "TCS (Twisted Connected Sum) construction used for K_Pneuma",
-      "source_simulation": "foundations_v16_2"
-    },
     "selberg1956": {
       "id": "selberg1956",
       "authors": "Selberg, A.",
       "title": "Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series",
       "year": 1956,
-      "journal": "Journal of the Indian Mathematical Society",
+      "journal": "J. Indian Math. Soc.",
       "volume": "20",
       "pages": "47-87",
-      "url": "https://doi.org/10.1007/BF02940436",
-      "notes": "Foundation for the trace formula relating spectral and geometric data",
-      "source_simulation": "methodology_v16_2"
+      "url": "https://www.mathnet.ru/eng/mat30",
+      "notes": "No DOI is registered for the 1956 J. Indian Math. Soc. printing (doi.org returns 404 for the JIMS identifier). The linked Mathnet record indexes this paper and cites the original as J. Indian Math. Soc. 20 (1956) 47-87.",
+      "source_simulation": "methodology_v16_2",
+      "also_registered_by": [
+        "appendix_s_spectral_residue_v24_2"
+      ]
     },
     "minakshisundaram_pleijel_1949": {
       "id": "minakshisundaram_pleijel_1949",
       "authors": "Minakshisundaram, S. and Pleijel, A.",
       "title": "Some Properties of the Eigenfunctions of the Laplace-Operator on Riemannian Manifolds",
       "year": 1949,
-      "journal": "Canadian Journal of Mathematics",
+      "journal": "Canad. J. Math.",
       "volume": "1",
       "pages": "242-256",
+      "doi": "10.4153/CJM-1949-021-5",
       "url": "https://doi.org/10.4153/CJM-1949-021-5",
       "notes": "Heat kernel expansion; asymptotic formula used in sterile proof (2.2b)",
-      "source_simulation": "methodology_v16_2"
-    },
-    "riess_2022": {
-      "id": "riess_2022",
-      "authors": "Riess, A. G., Yuan, W., Macri, L. M., et al.",
-      "title": "A Comprehensive Measurement of the Local Value of the Hubble Constant",
-      "year": 2022,
-      "journal": "The Astrophysical Journal Letters",
-      "volume": "934",
-      "pages": "L7",
-      "url": "https://doi.org/10.3847/2041-8213/ac5c5b",
-      "notes": "SH0ES H0 = 73.04 +/- 1.04 km/s/Mpc; PM predicts 71.55 (1.4σ below SH0ES)",
-      "source_simulation": "results_v16_2"
-    },
-    "planck_2020": {
-      "id": "planck_2020",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 Results. VI. Cosmological Parameters",
-      "year": 2020,
-      "journal": "Astronomy & Astrophysics",
-      "volume": "641",
-      "pages": "A6",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "Planck H0 = 67.4 +/- 0.5; tension with SH0ES reduced by w0 dynamics",
-      "source_simulation": "results_v16_2"
+      "source_simulation": "methodology_v16_2",
+      "also_registered_by": [
+        "appendix_s_spectral_residue_v24_2"
+      ]
     },
     "nist-sha256": {
       "id": "nist-sha256",
@@ -1823,15 +1682,6 @@
       "type": "standard",
       "source_simulation": "integrity_v16_2"
     },
-    "berger-1955": {
-      "id": "berger-1955",
-      "authors": "Berger, M.",
-      "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine",
-      "year": 1955,
-      "doi": "10.24033/bsmf.1464",
-      "type": "journal_article",
-      "source_simulation": "integrity_v16_2"
-    },
     "atiyah-singer-1968": {
       "id": "atiyah-singer-1968",
       "authors": "Atiyah, M.F. and Singer, I.M.",
@@ -1840,18 +1690,6 @@
       "doi": "10.2307/1970715",
       "type": "journal_article",
       "source_simulation": "integrity_v16_2"
-    },
-    "berger1966": {
-      "id": "berger1966",
-      "authors": "Berger, M.",
-      "title": "Sur les groupes d'holonomie homogene des varietes a connexion affine",
-      "year": "1966",
-      "journal": "Bulletin de la Societe Mathematique de France",
-      "volume": "83",
-      "pages": "279-330",
-      "doi": "10.24033/bsmf.1464",
-      "notes": "Classification of holonomy groups including G2.",
-      "source_simulation": "appendix_a_spectral_registry_v23_1"
     },
     "mckean_singer1967": {
       "id": "mckean_singer1967",
@@ -1890,7 +1728,11 @@
       "year": "1999",
       "doi": "10.1007/978-1-4757-6568-7",
       "type": "monograph",
-      "source_simulation": "appendix_f_72gates_v24_2"
+      "source_simulation": "appendix_f_72gates_v24_2",
+      "also_registered_by": [
+        "appendix_h_288_roots_v24_2",
+        "appendix_z_terminal_ledger_v24_2"
+      ]
     },
     "merkle-1989": {
       "id": "merkle-1989",
@@ -1975,12 +1817,20 @@
     },
     "nist-codata-2018": {
       "id": "nist-codata-2018",
-      "authors": "NIST",
-      "title": "CODATA Internationally Recommended Values of the Fundamental Physical Constants",
-      "year": "2018",
-      "url": "https://physics.nist.gov/cuu/Constants/",
+      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
+      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2018",
+      "year": 2021,
+      "journal": "Rev. Mod. Phys.",
+      "volume": "93",
+      "pages": "025010",
+      "doi": "10.1103/RevModPhys.93.025010",
+      "url": "https://doi.org/10.1103/RevModPhys.93.025010",
       "type": "database",
-      "source_simulation": "appendix_k_sterile_constants_v16_2"
+      "source_simulation": "appendix_k_sterile_constants_v16_2",
+      "also_registered_by": [
+        "appendix_z_terminal_ledger_v24_2",
+        "gr_spacetime_derivations_v19"
+      ]
     },
     "weinberg-1972": {
       "id": "weinberg-1972",
@@ -2034,15 +1884,6 @@
       "year": 1972,
       "url": "https://www.wiley.com/en-us/Gravitation+and+Cosmology-p-9780471925675",
       "type": "textbook",
-      "source_simulation": "gr_spacetime_derivations_v19"
-    },
-    "codata2018_constants": {
-      "id": "codata2018_constants",
-      "authors": "CODATA Task Group on Fundamental Constants",
-      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2018",
-      "year": 2019,
-      "doi": "10.1103/RevModPhys.93.025010",
-      "type": "dataset",
       "source_simulation": "gr_spacetime_derivations_v19"
     },
     "degrassi-2012": {
@@ -2111,17 +1952,6 @@
       "doi": "10.1016/S0550-3213(01)00302-9",
       "source_simulation": "appendix_r_vacuum_stability_v24_2"
     },
-    "minakshisundaram-pleijel-1949": {
-      "id": "minakshisundaram-pleijel-1949",
-      "authors": "Minakshisundaram, S. & Pleijel, A.",
-      "title": "Some properties of the eigenfunctions of the Laplace-operator on Riemannian manifolds",
-      "journal": "Canadian Journal of Mathematics",
-      "volume": "1",
-      "pages": "242-256",
-      "year": "1949",
-      "doi": "10.4153/CJM-1949-021-5",
-      "source_simulation": "appendix_s_spectral_residue_v24_2"
-    },
     "seeley-1967": {
       "id": "seeley-1967",
       "authors": "Seeley, R.",
@@ -2162,17 +1992,6 @@
       "pages": "145-210",
       "year": "1971",
       "doi": "10.1016/0001-8708(71)90045-4",
-      "source_simulation": "appendix_s_spectral_residue_v24_2"
-    },
-    "selberg-1956": {
-      "id": "selberg-1956",
-      "authors": "Selberg, A.",
-      "title": "Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series",
-      "journal": "Journal of the Indian Mathematical Society",
-      "volume": "20",
-      "pages": "47-87",
-      "year": "1956",
-      "url": "https://mathworld.wolfram.com/SelbergTraceFormula.html",
       "source_simulation": "appendix_s_spectral_residue_v24_2"
     },
     "calderbank1996": {
@@ -2241,29 +2060,6 @@
       "notes": "Framework for GW speed constraints on modified gravity",
       "source_simulation": "f_r_t_tau_gravity_v18"
     },
-    "ref-pdg-2024": {
-      "id": "ref-pdg-2024",
-      "authors": "Particle Data Group",
-      "title": "Review of Particle Physics",
-      "year": 2024,
-      "journal": "Physical Review D",
-      "volume": "110",
-      "pages": "030001",
-      "url": "https://pdg.lbl.gov/",
-      "notes": "Source of reference particle masses, mixing angles, and coupling constants catalogued in the registry. These PDG values are stored alongside PM spectral residues for orientation; this simulation does not perform independent fits to PDG data.",
-      "source_simulation": "complete_residue_registry_v18"
-    },
-    "ref-acharya-2004-g2": {
-      "id": "ref-acharya-2004-g2",
-      "authors": "Acharya, B. S.; Witten, E.",
-      "title": "Chiral Fermions from Manifolds of G2 Holonomy",
-      "year": 2001,
-      "journal": "arXiv preprint",
-      "arxiv": "hep-th/0109152",
-      "url": "https://arxiv.org/abs/hep-th/0109152",
-      "notes": "Foundational paper on chiral fermion spectrum from G2 compactification. Provides the theoretical basis for interpreting Laplacian eigenvalues as particle modes.",
-      "source_simulation": "complete_residue_registry_v18"
-    },
     "ref-esteban-2020-nufit": {
       "id": "ref-esteban-2020-nufit",
       "authors": "Esteban, I.; Gonzalez-Garcia, M.C.; Maltoni, M.; Schwetz, T.; Zhou, A.",
@@ -2277,56 +2073,34 @@
       "notes": "Source of reference PMNS mixing angles and mass-squared splittings used to populate registry modes 41-44 and to compute neutrino mass eigenstates (modes 49-52). NuFIT central values and uncertainties are catalogued for reference; this simulation does not use NuFIT covariance matrices or perform chi-squared fits.",
       "source_simulation": "complete_residue_registry_v18"
     },
-    "ref-nishino-2012-proton": {
-      "id": "ref-nishino-2012-proton",
+    "ref-nishino-2009-proton": {
+      "id": "ref-nishino-2009-proton",
       "authors": "Nishino, H. et al. (Super-Kamiokande Collaboration)",
-      "title": "Search for Proton Decay via p -> e+pi0 and p -> mu+pi0",
+      "title": "Search for Proton Decay via p -> e+ pi0 and p -> mu+ pi0 in a Large Water Cherenkov Detector",
       "year": 2009,
-      "journal": "Physical Review Letters",
+      "journal": "Phys. Rev. Lett.",
       "volume": "102",
       "pages": "141801",
+      "doi": "10.1103/PhysRevLett.102.141801",
       "url": "https://doi.org/10.1103/PhysRevLett.102.141801",
       "notes": "Source of the proton decay experimental lower limit (~10^34 yr) cited as a reference bound for the PM proton lifetime prediction. This simulation does not fit to Super-K data; the bound is used for contextual comparison only.",
       "source_simulation": "complete_residue_registry_v18"
     },
-    "ref-planck-2018": {
-      "id": "ref-planck-2018",
-      "authors": "Planck Collaboration (Aghanim, N. et al.)",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "year": 2020,
-      "journal": "Astronomy & Astrophysics",
-      "volume": "641",
-      "pages": "A6",
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "Source of the cosmological upper bound on sum of neutrino masses (< 0.12 eV at 95% CL) cited as a reference constraint for the PM prediction of sum(m_nu) ~ 0.06 eV. Cosmological parameters (H0, Omega_Lambda, T_CMB) in registry modes 85-92 also reference Planck 2018 central values for orientation.",
-      "source_simulation": "complete_residue_registry_v18"
-    },
-    "svrcek_witten2006": {
-      "id": "svrcek_witten2006",
-      "authors": "Svrcek, P., Witten, E.",
-      "title": "Axions In String Theory",
-      "journal": "JHEP",
-      "volume": "06",
+    "svrcek_witten_2006": {
+      "id": "svrcek_witten_2006",
+      "authors": "Svrcek, P. and Witten, E.",
+      "title": "Axions in String Theory",
       "year": 2006,
+      "journal": "JHEP",
+      "volume": "0606",
       "pages": "051",
       "arxiv": "hep-th/0605206",
       "url": "https://arxiv.org/abs/hep-th/0605206",
       "notes": "Axion decay constants in string compactification",
-      "source_simulation": "attractor_potential_v18"
-    },
-    "planck2018_bbn": {
-      "id": "planck2018_bbn",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "A&A",
-      "volume": "641",
-      "pages": "A6",
-      "year": 2020,
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "eta_b = (6.143 +/- 0.019) x 10^-10 from BBN+CMB",
-      "source_simulation": "baryon_asymmetry_v18"
+      "source_simulation": "attractor_potential_v18",
+      "also_registered_by": [
+        "alp_portals_v23"
+      ]
     },
     "pdg2024_ckm": {
       "id": "pdg2024_ckm",
@@ -2350,19 +2124,6 @@
       "url": "https://doi.org/10.1070/PU1991v034n05ABEH002497",
       "notes": "Three conditions for baryogenesis",
       "source_simulation": "baryon_asymmetry_v18"
-    },
-    "planck2018_dm": {
-      "id": "planck2018_dm",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "A&A",
-      "volume": "641",
-      "pages": "A6",
-      "year": 2020,
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "Omega_DM h^2 = 0.120 +/- 0.001",
-      "source_simulation": "axion_dm_v18"
     },
     "pdg2024_axion": {
       "id": "pdg2024_axion",
@@ -2464,19 +2225,6 @@
       "notes": "Sterile neutrino production via oscillation in early universe",
       "source_simulation": "sterile_neutrino_portals_v23"
     },
-    "planck2018_neff": {
-      "id": "planck2018_neff",
-      "authors": "Planck Collaboration",
-      "title": "Planck 2018 results. VI. Cosmological parameters",
-      "journal": "A&A",
-      "volume": "641",
-      "pages": "A6",
-      "year": 2020,
-      "arxiv": "1807.06209",
-      "url": "https://arxiv.org/abs/1807.06209",
-      "notes": "N_eff = 2.99 +/- 0.34, constraining extra radiation",
-      "source_simulation": "sterile_neutrino_portals_v23"
-    },
     "pdg2024_neutrino": {
       "id": "pdg2024_neutrino",
       "authors": "Particle Data Group",
@@ -2487,31 +2235,6 @@
       "url": "https://pdg.lbl.gov/2024/reviews/rpp2024-rev-neutrino-mixing.pdf",
       "notes": "Delta m^2_atm = 2.453e-3 eV^2, atmospheric neutrino mass scale",
       "source_simulation": "sterile_neutrino_portals_v23"
-    },
-    "acharya2002_moduli": {
-      "id": "acharya2002_moduli",
-      "authors": "Acharya, B.S.",
-      "title": "M-theory, Joyce orbifolds and super Yang-Mills",
-      "journal": "Adv. Theor. Math. Phys.",
-      "volume": "3",
-      "year": 2002,
-      "arxiv": "hep-th/0212294",
-      "url": "https://arxiv.org/abs/hep-th/0202210",
-      "notes": "Moduli stabilization in G2 compactifications",
-      "source_simulation": "sterile_neutrino_portals_v23"
-    },
-    "svrcek_witten_2006": {
-      "id": "svrcek_witten_2006",
-      "authors": "Svrcek, P. & Witten, E.",
-      "title": "Axions in String Theory",
-      "journal": "JHEP",
-      "volume": "0606",
-      "pages": "051",
-      "year": 2006,
-      "arxiv": "hep-th/0605206",
-      "url": "https://arxiv.org/abs/hep-th/0605206",
-      "notes": "ALP landscape from string compactifications",
-      "source_simulation": "alp_portals_v23"
     },
     "conlon_2006": {
       "id": "conlon_2006",
