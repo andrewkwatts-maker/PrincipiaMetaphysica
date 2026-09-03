@@ -13,13 +13,13 @@
   "verification_status": "NOT_TESTABLE",
   "derivation_status": "RIGOROUS",
   "reason": "Omega Hash is the verification seal itself",
-  "note": "Gate 72: computed aggregate over 26 executed evaluations \u2014 FAILS: [12]. No longer an asserted seal.",
-  "timestamp": "2026-09-02T21:17:19.446928Z",
+  "note": "Gate 72: computed aggregate over 33 executed evaluations \u2014 FAILS: [12]. No longer an asserted seal.",
+  "timestamp": "2026-09-03T02:58:10.042021Z",
   "hash": "ff3e30dffbcd8e0d",
   "evaluation_status": "COMPUTED_FAIL",
   "evaluation": {
     "tier": "aggregate",
-    "basis": "AND over 26 executed gate evaluations (arithmetic + registry tiers); declarative gates are excluded from the seal, not assumed true",
+    "basis": "AND over 33 executed gate evaluations (arithmetic + registry tiers); declarative gates are excluded from the seal, not assumed true",
     "failed_gates": [
       12
     ],

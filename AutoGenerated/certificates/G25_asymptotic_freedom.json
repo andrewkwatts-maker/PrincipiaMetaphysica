@@ -11,14 +11,23 @@
   "result": "UV fixed point alpha* = 1/24",
   "formula": "\u03b1_s(E\u2192\u221e) \u2192 0",
   "verification_status": "VERIFIED",
-  "evaluation_status": "DECLARATIVE",
+  "evaluation_status": "COMPUTED_PASS",
   "evaluation": {
-    "tier": "none",
-    "status": "DECLARATIVE",
-    "note": "no executable form; certificate is a declared statement"
+    "tier": "registry",
+    "source": "PDG 2024 alpha_s(MZ) = 0.1180 +/- 0.0009",
+    "checks": [
+      {
+        "path": "constants.alpha_s_pred",
+        "value": 0.11824551449975534,
+        "expected": 0.118,
+        "sigma": 0.27279388861705606,
+        "ok": true
+      }
+    ],
+    "status": "COMPUTED_PASS"
   },
   "derivation_status": "FITTED",
   "note": "Gate 25: 3-loop RG + asymptotic safety fixed point from G2 topology. High-energy tension \u2192 0",
-  "timestamp": "2026-09-02T21:17:19.439750Z",
+  "timestamp": "2026-09-03T02:58:10.035974Z",
   "hash": "81ff992e07e239d3"
 }

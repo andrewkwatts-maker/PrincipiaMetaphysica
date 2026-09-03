@@ -1,7 +1,7 @@
 {
   "framework": "Principia Metaphysica",
   "scorecard_type": "Gate LOCKED vs OPEN tally + completion percentage",
-  "generated_at": "2026-09-02T21:17:36.116759Z",
+  "generated_at": "2026-09-03T03:15:56.225134Z",
   "seed_provenance": "All 72 gates trace back to seed b3 = 24 (G2 manifold).",
   "totals": {
     "total_gates": 72,
@@ -11,7 +11,7 @@
     "other": 0,
     "testable_total": 43,
     "completion_percent": 95.35,
-    "declarative_no_executable_form": 45
+    "declarative_no_executable_form": 38
   },
   "by_phase": {
     "1": {
@@ -112,5 +112,5 @@
     "72"
   ],
   "counts_source": "evaluation_status where the gate has an executable form, verification_status otherwise. This previously read verification_status alone, so gates the evaluation layer had already failed were still counted LOCKED.",
-  "status_summary": "41/43 testable gates LOCKED (95.3% complete); 29 axiomatic; 45 declarative (no executable form, never run)."
+  "status_summary": "41/43 testable gates LOCKED (95.3% complete); 29 axiomatic; 38 declarative (no executable form, never run)."
 }

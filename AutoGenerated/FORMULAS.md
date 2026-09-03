@@ -1,7 +1,7 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** VALIDATED | **Last Sync:** 2026-09-03 07:17:17
-**Engine Version:** v24.2-26D
+**Status:** VALIDATED | **Last Sync:** 2026-06-13 12:02:45
+**Engine Version:** v24.2-27D
 **Sovereign Hash:** `49f3962fe2a87ff196057896ceedcc85...`
 
 <!-- SOVEREIGN_HASH_FULL: 49f3962fe2a87ff196057896ceedcc858985b372574aff74b941d0efca940778 -->
@@ -176,7 +176,7 @@ The framework uses Hebrew-derived naming for mathematical constants, connecting 
 | residual_key | `10` | D_ι | Yod (י) | 10 | Core Flux Residual | The Hand of Creation |
 | syzygy_gap | `18` | Δ_χι | Chai (חי) | 18 | Aeon Pair Gap | The Life Delta |
 | elder_kads | `24` | E_כד | Kad (כד) | 24 | Symmetric Governance Energy | The Governing Elder |
-| horos_limit | `26` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
+| horos_limit | `27` | β_כז | Kaz (כז) | 27 | Dimensional Boundary Limit | The Boundary Beth |
 | mephorash_chi | `72` | χ_עב | Ayin-Bet (עב) | 72 | Explicit Chiral Characteristic | The Shem HaMephorash |
 | sophian_modulus | `125` | ק_כה | Qoph-Kaf-He (קכה) | 125 | Visible Residue Modulus | Sophia Assembly |
 | demiurgic_Yetts | `135` | 𝒮_δ | Dalet (ד) | 4 | Normal Portal Flux | The Sophia Door |
