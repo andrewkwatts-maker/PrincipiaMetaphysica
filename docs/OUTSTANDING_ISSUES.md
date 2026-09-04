@@ -17,12 +17,12 @@ terminology audit 0 flags (CONSISTENT) · consistency beacons 13/13 PASS ·
 canonical registry drift 0 · `formulas.json` / `sections.json` scan clean
 for stale geometry.
 
-**EML cross-check:** 352 AGREE · 5 AGREE_LOOSE ·
-52 DISAGREE · 106 DISAGREE_MISSING_CTX ·
-92 ERROR, strict rate 0.683. The rate FELL from
-~0.79 because 24 ambiguous bare names are now refused rather than bound to
-whichever parameter came first — see 1.6f. The earlier "85/85 AGREE" counted
-a curated subset, not the 715 rows carrying an EML description.
+**EML cross-check:** 376 AGREE · 5 AGREE_LOOSE ·
+53 DISAGREE · 80 DISAGREE_MISSING_CTX ·
+92 ERROR, strict rate 0.730. The rate dipped to
+0.683 when 24 ambiguous bare names were refused rather than bound to whichever
+parameter came first (see 1.6f), and has since recovered to 0.730 as those
+expressions were qualified — not by restoring ambiguous binding.
 
 **Honest validation scoreboard (179 records):** 47 PASS · 13 MARGINAL ·
 6 TENSION · 13 FAIL · 84 INPUT (experimental anchors, excluded from the
@@ -42,7 +42,7 @@ advertised "chi^2 = 0.23, TOO_GOOD" was a v23.9 literal reached through a
 1.6c.
 
 **Gate dashboard:** 41/43 locked (95.3%), open ['12', '72'],
-29 axiomatic, 45 declarative (no executable form, never
+29 axiomatic, 38 declarative (no executable form, never
 run). This replaces "42/42 LOCKED (100.0%), open_gate_ids: []" — see 2.6.
 
 ---
@@ -337,7 +337,8 @@ arbitrary choice.
 The walker's `producer_of` simply has no entry, so the edge is invisible and
 `b3_rooted_count` (366 of 422) was measured over partly fictional chains.
 `topology.euler_chi` appears 20 times, `cosmology.H0_geometric` 11,
-`topology.vol_v7` 10. Now published as `declared_paths_that_do_not_exist` —
+`topology.vol_v7` 10. Now published as `declared_paths_that_do_not_exist`; a
+scheduled pass has since resolved 90 of them, leaving 117 —
 reported, not repaired, since create-the-path vs drop-the-declaration is a
 per-formula question.
 
