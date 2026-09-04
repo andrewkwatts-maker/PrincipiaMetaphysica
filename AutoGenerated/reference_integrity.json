@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "count": 4,
-  "n_pass": 4,
+  "count": 5,
+  "n_pass": 5,
   "n_fail": 0,
   "totals": {
     "references": 180,
@@ -38,6 +38,14 @@
       "note": "a shared TITLE splits one paper's citations, which is untidy; a shared IDENTIFIER between works of different years sends the reader to the wrong document, which breaks the citation. This check exists because the title check flagged the PDG and CODATA groups while missing berger1966 carrying Berger 1955's DOI and penrose_2004_road_to_reality carrying a 1996 identifier. Note the blind spot it keeps: an identifier that is simply wrong, and shared with nothing, passes"
     },
     {
+      "id": "no_near_duplicate_titles",
+      "claim": "no two entries share a title once subtitles are dropped",
+      "measured": 14,
+      "expected": 0,
+      "status": "ADVISORY",
+      "note": "Advisory, not a gate. A looser title key would wrongly collapse the deliberate PDG per-section citations, the distinct CODATA releases and two different Acharya papers, so these are surfaced for a human decision rather than merged. This tier is what exposed two books whose DOIs resolved to a DNA nanopore experiment and a magazine price list -- unique identifiers pointing at the wrong document, which no other check can detect"
+    },
+    {
       "id": "references_are_cited",
       "claim": "each entry is cited by a formula, section or parameter",
       "measured": 180,
@@ -49,6 +57,32 @@
   "orphans": [],
   "duplicate_groups": {},
   "identifier_conflicts": {},
+  "near_duplicate_titles": {
+    "nufit 6 0 (2024)": [
+      "nufit6_2024",
+      "nufit_6_0"
+    ],
+    "desi 2024 vi (2024)": [
+      "desi-2024",
+      "desi2024"
+    ],
+    "review of particle physics (2024)": [
+      "pdg2024",
+      "pdg2024_axion",
+      "pdg2024_ckm",
+      "pdg2024_higgs",
+      "pdg2024_neutrino",
+      "pdg2024weak"
+    ],
+    "the road to reality (2004)": [
+      "penrose-2004",
+      "penrose_2004_road_to_reality"
+    ],
+    "gravitation and cosmology (1972)": [
+      "weinberg-1972",
+      "weinberg1972_gravity"
+    ]
+  },
   "without_identifier": [],
   "references_per_simulation": {
     "g2_geometry_v16_0": 7,

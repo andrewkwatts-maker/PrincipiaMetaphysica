@@ -352,6 +352,42 @@ producing it. Now carried through metadata like `eml_description`: 195
 parameters name 114 formulas, with exactly one dangling id
 (`odowd-h0-composite`) pinned by a test.
 
+### 1.6h Two citations pointed at the wrong document — ✅ CLOSED 2026-09-04
+An identifier can be unique, well-formed, resolvable — and wrong. Verified
+against Crossref:
+
+| entry | carried | actually resolves to |
+|---|---|---|
+| `penrose-2004` "The Road to Reality" (2004) | `10.1038/nphys344` | *Direct force measurements on DNA in a solid-state nanopore*, Nature Physics **2** (2006) — a journal that did not exist in 2004 |
+| `weinberg-1972` "Gravitation and Cosmology" (1972) | `10.1002/piuz.19740050511` | *Preise für Jahres‑Abonnement 1975*, Physik in unserer Zeit **5** (1974) — a subscription price list |
+
+A reader following the Penrose citation arrived at a DNA nanopore
+experiment.
+
+**Every check passed.** `every_reference_is_identifiable` — both *have* an
+identifier. `no_conflicting_identifiers` — it looks for one id claimed by
+entries of different years, and each of these was claimed once; **an id can
+be wrong without being shared**. `no_duplicate_titles` — each book had a
+second, correctly-identified entry, but under its full subtitle, so strict
+normalisation saw two different works.
+
+Both DOIs are replaced with identifiers their correctly-formed twins already
+carried (ISBN + OpenLibrary for Penrose, the Wiley URL for Weinberg) — SSOT
+respected, nothing invented.
+
+A new **`no_near_duplicate_titles` ADVISORY** closes the detection route:
+titles agreeing once a subtitle is dropped, in the same year. Deliberately
+*not* a gate — a looser key would collapse the seven deliberate PDG
+per-section citations, the distinct CODATA 2014/2018/2022 releases, and two
+genuinely different Acharya G₂-MSSM papers, and merging those is a worse
+error than the duplicate. It surfaces 14 entries in 5 groups for human
+decision. The strict gates are untouched and a test asserts they still pass,
+so the advisory was not bought by weakening them.
+
+**Bibliography status:** all four gates PASS — 180 references, 0 duplicate
+titles, 0 identifier conflicts, 0 orphans — with 5 near-duplicate groups
+outstanding as advisories.
+
 ### 1.7 H₀ — three coexisting values, one at 3.17σ
 Canonical `H0_local` = 71.55 (1.43σ, FITTED_COMPOSITE), sterile-extraction
 variant 70.42, and `H0_ricci_variant` = 76.34 at **3.17σ** from SH0ES.
