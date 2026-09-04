@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-09-03T21:21:50.244475",
+  "test_date": "2026-09-04T13:19:13.590072",
   "test_name": "Observer Integration and Measurement Back-Reaction",
   "scaffold_note": "STRUCTURAL/ILLUSTRATIVE: the observer-independence alpha test asserts a constant against itself and the geometric sub-check is excluded from all_tests_pass \u2014 this report demonstrates the framework's intended structure, it is not an executed falsification test. See validation_report.json for computed value-vs-experiment checks.",
   "manifold": {
@@ -22,16 +22,16 @@
     "all_tests_pass": true,
     "measurement_back_reaction": {
       "n_measurements": 1000,
-      "mean_backreaction_E_planck": -8.241478384608642e-19,
-      "max_backreaction_E_planck": 8.933105749789418e-17,
-      "std_backreaction_E_planck": 2.1713613257798286e-17,
+      "mean_backreaction_E_planck": 7.568492641497453e-19,
+      "max_backreaction_E_planck": 8.545187402970372e-17,
+      "std_backreaction_E_planck": 2.1578766839961052e-17,
       "fraction_holonomy_stable": 1.0,
       "is_perturbative": true,
       "holonomy_preserved": true
     },
     "observer_independence": {
       "alpha_inverse_variation": 0.0,
-      "mass_variation": 0.6978365210962758,
+      "mass_variation": 1.2860546028381532,
       "topological_constants_invariant": true,
       "geometric_constants_nearly_invariant": false,
       "status": "OBSERVER-DEPENDENT (Constants vary with observer)",
@@ -41,7 +41,7 @@
   },
   "interpretation": {
     "conclusion": "Quantum measurement does not destabilize 26D topology or physical constants",
-    "peer_review_response": "Quantum measurement in the M^{26}(24,2) framework produces back-reaction energy \u0394E \u2248 -8.24e-19 E_Planck (max 8.93e-17), which is perturbative. G\u2082 holonomy remains stable in 100.0% of measurements. Topological constants (\u03b1\u207b\u00b9) are exactly observer-independent. This proves measurement does not collapse the 26D\u21924D projection.",
+    "peer_review_response": "Quantum measurement in the M^{26}(24,2) framework produces back-reaction energy \u0394E \u2248 7.57e-19 E_Planck (max 8.55e-17), which is perturbative. G\u2082 holonomy remains stable in 100.0% of measurements. Topological constants (\u03b1\u207b\u00b9) are exactly observer-independent. This proves measurement does not collapse the 26D\u21924D projection.",
     "physical_picture": "Observers in 4D effective theory measure projections of 26D fields. The measurement process couples to the bulk, but the coupling is weak (suppressed by Planck scale). Topological invariants (b\u2083, \u03c7_eff) are protected by G\u2082 holonomy and remain constant across all observer frames."
   }
 }
