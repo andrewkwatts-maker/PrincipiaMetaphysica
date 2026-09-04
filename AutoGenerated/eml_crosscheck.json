@@ -1,16 +1,16 @@
 {
-  "total": 715,
-  "with_eml_description": 548,
-  "skip": 108,
+  "total": 723,
+  "with_eml_description": 588,
+  "skip": 109,
   "buckets": {
-    "AGREE": 383,
+    "AGREE": 456,
     "AGREE_LOOSE": 5,
-    "ERROR": 92,
-    "DISAGREE": 46,
-    "DISAGREE_MISSING_CTX": 80,
+    "ERROR": 59,
+    "DISAGREE": 37,
+    "DISAGREE_MISSING_CTX": 56,
     "DISAGREE_SCALE": 1
   },
-  "errors": 92,
+  "errors": 59,
   "ambiguous_short_names": [
     "D_eff",
     "H0_local",
@@ -39,11 +39,11 @@
   ],
   "ambiguous_short_names_note": "Not bound. An ambiguous name is worse than an absent one, because an absent one fails loudly. Qualify the name in the expression to resolve it.",
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.6309719934102141,
-  "agreement_rate_strict": 0.7436893203883496,
-  "agreement_rate_loose": 0.7533980582524272,
-  "eml_option_withheld": 53,
-  "eml_option_offered": 588,
+  "agreement_rate_strict_all": 0.742671009771987,
+  "agreement_rate_strict": 0.8216216216216217,
+  "agreement_rate_loose": 0.8306306306306306,
+  "eml_option_withheld": 50,
+  "eml_option_offered": 598,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -649,10 +649,11 @@
     },
     {
       "path": "ckm.A_wolfenstein",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(Vcb, ops.pow(lambda_W, eml_scalar(2.0)))': name 'Vcb' is not defined",
+      "status": "AGREE",
+      "evaluated": 0.8099999999999993,
       "registered": 0.81,
-      "eml_description": "EML: ops.div(Vcb, ops.pow(lambda_W, eml_scalar(2.0))) \u2014 geometric overlap coefficient A ~ V_cb/lambda^2"
+      "rel_error": 9.594519965896414e-16,
+      "eml_description": "EML: ops.div(eml_vec('ckm.V_cb'), ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(2.0))) \u2014 geometric overlap coefficient A = V_cb / lambda^2"
     },
     {
       "path": "ckm.V_cb",
@@ -660,19 +661,15 @@
       "evaluated": 0.04032752537796981,
       "registered": 0.04032752537796979,
       "rel_error": 5.161904063444832e-16,
-      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0))) \u2014 V_cb = A\u03bb\u00b2 from 2nd-gen geometric overlap"
+      "eml_description": "EML: ops.mul(eml_vec('ckm.A_wolfenstein'), ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(2.0))) \u2014 V_cb = A lambda^2 from 2nd-gen geometric overlap"
     },
     {
       "path": "ckm.V_cb_triality",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.04086754977828083,
       "registered": 0.040867549778280866,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us_triality'), eml_scalar(2.0)), eml_vec('xi_b')) \u2014 V_cb ~ V_us\u00b2 \u00d7 geometric correction",
-      "diagnostic": "missing: xi_b",
-      "missing_refs": [
-        "xi_b"
-      ]
+      "rel_error": 8.48949097946033e-16,
+      "eml_description": "EML: ops.mul(ops.div(ops.div(ops.pow(eml_vec('ckm.V_us_triality'), eml_scalar(2.0)), ops.add(eml_scalar(1.0), ops.div(ops.sub(eml_vec('topology.elder_kads'), ops.mul(eml_vec('topology.b2'), eml_vec('topology.n_gen'))), ops.mul(eml_scalar(2.0), eml_vec('topology.mephorash_chi'))))), ops.inv(eml_scalar(0.81))), ops.add(eml_scalar(1.0), ops.div(ops.mul(eml_scalar(2.0), ops.add(ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)), ops.inv(eml_pi()))), ops.pow(eml_vec('topology.elder_kads'), eml_scalar(2.0))))) \u2014 V_cb = V_us^2 / geometric_factor x 0.81 x g2_twist, with geometric_factor = 1 + (b3 - b2 n_gen)/(2 chi_eff) and g2_twist = 1 + 2 k_gimel/b3^2"
     },
     {
       "path": "ckm.V_cd",
@@ -693,21 +690,19 @@
     },
     {
       "path": "ckm.V_tb",
-      "status": "DISAGREE",
-      "evaluated": 0.67195,
+      "status": "AGREE",
+      "evaluated": 0.9991512959968504,
       "registered": 0.9991512959968505,
-      "rel_error": 0.32747922892939113,
-      "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.mul(eml_scalar(0.5), ops.pow(eml_vec('A_wolfenstein'), eml_scalar(2.0)))) \u2014 V_tb \u2248 1 \u2212 A\u00b2\u03bb\u2074/2 (diagonal dominance)",
-      "diagnostic": "rel_err=32.75%"
+      "rel_error": 1.1111660757217857e-16,
+      "eml_description": "EML: ops.sqrt(ops.sub(eml_scalar(1.0), ops.add(ops.pow(eml_vec('ckm.V_td'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ts'), eml_scalar(2.0))))) \u2014 V_tb from third-row unitarity, which is how run() fixes it. The published form read 1 - A^2/2 = 0.672, having dropped the lambda^4 its own annotation carried"
     },
     {
       "path": "ckm.V_td",
-      "status": "DISAGREE",
-      "evaluated": 0.0034757158300444497,
+      "status": "AGREE",
+      "evaluated": 0.008389183792439909,
       "registered": 0.008389183792439896,
-      "rel_error": 0.585690823322208,
-      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.mul(ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0)), ops.sqrt(ops.add(ops.pow(eml_vec('rho_wolfenstein'), eml_scalar(2.0)), ops.pow(eml_vec('eta_wolfenstein'), eml_scalar(2.0)))))) \u2014 V_td = A\u03bb\u00b3\u221a(\u03c1\u00b2+\u03b7\u00b2)",
-      "diagnostic": "rel_err=58.57%"
+      "rel_error": 1.44746671813063e-15,
+      "eml_description": "EML: ops.mul(eml_vec('ckm.A_wolfenstein'), ops.mul(ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(3.0)), ops.sqrt(ops.add(ops.pow(ops.sub(eml_scalar(1.0), eml_vec('ckm.rho_wolfenstein')), eml_scalar(2.0)), ops.pow(eml_vec('ckm.eta_wolfenstein'), eml_scalar(2.0)))))) \u2014 |V_td| = A lambda^3 |1 - rho - i eta|. The published form used rho where run() uses (1 - rho)"
     },
     {
       "path": "ckm.V_ts",
@@ -715,28 +710,23 @@
       "evaluated": 0.04032752537796981,
       "registered": 0.04032752537796979,
       "rel_error": 5.161904063444832e-16,
-      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(2.0))) \u2014 |V_ts| \u2248 A\u03bb\u00b2 from Wolfenstein parametrization (PDG magnitude convention)"
+      "eml_description": "EML: ops.mul(eml_vec('ckm.A_wolfenstein'), ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(2.0))) \u2014 |V_ts| = A lambda^2 from the Wolfenstein parametrization (PDG magnitude convention)"
     },
     {
       "path": "ckm.V_ub",
-      "status": "DISAGREE",
-      "evaluated": 0.008998287195976284,
+      "status": "AGREE",
+      "evaluated": 0.0034757158300444497,
       "registered": 0.0034757158300444454,
-      "rel_error": 1.5889018653924938,
-      "eml_description": "EML: ops.mul(eml_vec('A_wolfenstein'), ops.pow(eml_vec('lambda_wolfenstein'), eml_scalar(3.0))) \u2014 V_ub = A\u03bb\u00b3 from 3rd-gen geometric suppression",
-      "diagnostic": "rel_err=158.89%"
+      "rel_error": 1.247745472300755e-15,
+      "eml_description": "EML: ops.mul(eml_vec('ckm.A_wolfenstein'), ops.mul(ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(3.0)), ops.sqrt(ops.add(ops.pow(eml_vec('ckm.rho_wolfenstein'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.eta_wolfenstein'), eml_scalar(2.0)))))) \u2014 |V_ub| = A lambda^3 |rho - i eta|. The published form omitted the |rho - i eta| modulus that run() applies, so it read 12% high"
     },
     {
       "path": "ckm.V_ub_triality",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.0037500709308459514,
       "registered": 0.003750070930845949,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(ops.pow(eml_vec('V_us_triality'), eml_scalar(3.0)), eml_vec('xi_t')) \u2014 V_ub ~ V_us\u00b3 \u00d7 geometric correction",
-      "diagnostic": "missing: xi_t",
-      "missing_refs": [
-        "xi_t"
-      ]
+      "rel_error": 6.938762657959184e-16,
+      "eml_description": "EML: ops.mul(ops.div(ops.pow(eml_vec('ckm.V_us_triality'), eml_scalar(3.0)), ops.add(eml_scalar(1.0), ops.div(eml_vec('topology.n_gen'), eml_vec('topology.b2')))), eml_scalar(0.58)) \u2014 V_ub = V_us^3 / (1 + n_gen/b2) x 0.58"
     },
     {
       "path": "ckm.V_ud",
@@ -756,15 +746,11 @@
     },
     {
       "path": "ckm.V_us_triality",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.22450008639436145,
       "registered": 0.22450008639436136,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(ops.sin(ops.div(eml_vec('theta_g'), eml_scalar(2.0))), eml_vec('xi_epsilon')) \u2014 V_us from sin(\u03b8_g/2) \u00d7 flux correction",
-      "diagnostic": "missing: xi_epsilon",
-      "missing_refs": [
-        "xi_epsilon"
-      ]
+      "rel_error": 3.7089841783231536e-16,
+      "eml_description": "EML: ops.mul(eml_vec('fermion.epsilon_fn'), ops.add(eml_scalar(1.0), ops.mul(ops.inv(ops.sqrt(ops.add(eml_vec('topology.elder_kads'), ops.add(ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)), ops.inv(eml_pi()))))), eml_scalar(0.037)))) \u2014 V_us = epsilon_fn x cusp_correction. The published form read sin(theta_g/2) x xi_epsilon; in run() xi_epsilon IS epsilon_fn/sin(theta_g/2), so the golden angle cancels exactly and V_us does not depend on it. cusp = 1 + 0.037/sqrt(b3 + k_gimel)"
     },
     {
       "path": "ckm.delta_cp",
@@ -776,31 +762,27 @@
     },
     {
       "path": "ckm.eta_wolfenstein",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.36,
       "registered": 0.36,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.sin(eml_vec('delta_cp'))) \u2014 \u03b7 \u2248 |V_ub|sin(\u03b4_CP) from \u03b4_CP ~ \u03c0/6 topological phase",
-      "diagnostic": "missing: V_ub",
-      "missing_refs": [
-        "V_ub"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.36) \u2014 eta is a FITTED input to run(), calibrated so that J ~ 3e-5. The published form claimed eta = |V_ub| sin(delta_CP), which evaluates to 0.0017; run() itself notes delta_CP = pi/6 is inconsistent with atan2(eta, rho) = 68.7 deg"
     },
     {
       "path": "ckm.jarlskog_invariant",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(ops.pow(eml_scalar(A), eml_scalar(2.0)), ops.mul(ops.pow(lambda_W, eml_scalar(6.0)), eml_scalar(eta)))': name 'A' is not defined",
+      "status": "AGREE",
+      "evaluated": 2.9148902086057474e-05,
       "registered": 2.9148902086057355e-05,
-      "eml_description": "EML: ops.mul(ops.pow(eml_scalar(A), eml_scalar(2.0)), ops.mul(ops.pow(lambda_W, eml_scalar(6.0)), eml_scalar(eta)))"
+      "rel_error": 4.068235992748558e-15,
+      "eml_description": "EML: ops.mul(ops.pow(eml_vec('ckm.A_wolfenstein'), eml_scalar(2.0)), ops.mul(ops.pow(eml_vec('ckm.lambda_wolfenstein'), eml_scalar(6.0)), eml_vec('ckm.eta_wolfenstein'))) \u2014 J = A^2 lambda^6 eta"
     },
     {
       "path": "ckm.jarlskog_triality",
-      "status": "DISAGREE",
-      "evaluated": 1.720301624195006e-05,
+      "status": "AGREE",
+      "evaluated": 3.1431815748325576e-05,
       "registered": 3.143181574832559e-05,
-      "rel_error": 0.4526877995310695,
-      "eml_description": "EML: ops.mul(eml_vec('V_us_triality'), ops.mul(eml_vec('V_cb_triality'), ops.mul(eml_vec('V_ub_triality'), ops.sin(eml_vec('delta_cp'))))) \u2014 J = V_us\u00b7V_cb\u00b7V_ub\u00b7sin(\u03b4)",
-      "diagnostic": "rel_err=45.27%"
+      "rel_error": 4.311722639437642e-16,
+      "eml_description": "EML: ops.mul(ops.mul(ops.mul(eml_vec('ckm.V_us_triality'), ops.mul(eml_vec('ckm.V_cb_triality'), eml_vec('ckm.V_ub_triality'))), ops.sin(ops.mul(eml_scalar(2.0), ops.arctan(ops.inv(eml_vec('triality.phi_golden')))))), ops.add(eml_scalar(1.0), ops.div(ops.add(ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)), ops.inv(eml_pi())), ops.pow(eml_vec('topology.elder_kads'), eml_scalar(2.0))))) \u2014 J = V_us V_cb V_ub sin(2 theta_g) x (1 + k_gimel/b3^2). The CP phase used here is the DOUBLED golden angle 2 theta_g = 63.4 deg, not ckm.delta_cp = pi/6, and the torsional damping factor was missing from the published form"
     },
     {
       "path": "ckm.lambda_wolfenstein",
@@ -812,15 +794,11 @@
     },
     {
       "path": "ckm.rho_wolfenstein",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.14,
       "registered": 0.14,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('V_ub'), ops.cos(eml_vec('delta_cp'))) \u2014 \u03c1 \u2248 |V_ub|cos(\u03b4_CP) from unitarity triangle geometry",
-      "diagnostic": "missing: V_ub",
-      "missing_refs": [
-        "V_ub"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.14) \u2014 rho is a FITTED input to run() (unitarity-triangle constraint), not a derived quantity. The published form claimed rho = |V_ub| cos(delta_CP), which evaluates to 0.0030 and is not where this 0.14 comes from"
     },
     {
       "path": "ckm.unitarity_row1",
@@ -832,12 +810,11 @@
     },
     {
       "path": "ckm.unitarity_test",
-      "status": "DISAGREE",
-      "evaluated": 1.1102230246251565e-16,
+      "status": "AGREE",
+      "evaluated": 5.829780417210273e-05,
       "registered": 5.829780417210273e-05,
-      "rel_error": 0.9999999999980956,
-      "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_us'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_ub'), eml_scalar(2.0))))) \u2014 unitarity deviation = 1 \u2212 (|V_ud|\u00b2+|V_us|\u00b2+|V_ub|\u00b2)",
-      "diagnostic": "rel_err=100.00%"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.max(ops.abs(ops.sub(eml_vec('ckm.unitarity_row1'), eml_scalar(1.0))), ops.abs(ops.sub(ops.add(ops.pow(eml_vec('ckm.V_ud'), eml_scalar(2.0)), ops.add(ops.pow(eml_vec('ckm.V_cd'), eml_scalar(2.0)), ops.pow(eml_vec('ckm.V_td'), eml_scalar(2.0)))), eml_scalar(1.0)))) \u2014 max(|row1 - 1|, |col1 - 1|). The published form tested row 1 alone, which is 0 by construction because V_ud is DEFINED from it"
     },
     {
       "path": "codata.M_PLANCK",
@@ -1884,15 +1861,11 @@
     },
     {
       "path": "desi.S8",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.83,
       "registered": 0.83,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (Planck 2018 input; attribution Planck, not DESI)",
-      "diagnostic": "missing: sigma8",
-      "missing_refs": [
-        "sigma8"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.83) \u2014 S\u2088 as published by Planck 2018 (attribution Planck, not DESI). Same established input as planck.S8; the \u03c3\u2088\u221a(\u03a9_m/0.3) identity is the definition of S\u2088, not the route by which this number was obtained"
     },
     {
       "path": "desi.sigma8",
@@ -2064,23 +2037,28 @@
       "eml_description": "EML: eml_vec('framework_version_major_label') \u2014 PM framework major version label with 'v' prefix"
     },
     {
+      "path": "framework_statistics.chi_squared",
+      "status": "AGREE",
+      "evaluated": 1869.4372000000003,
+      "registered": 1869.4372,
+      "rel_error": 1.216268058874789e-16,
+      "eml_description": "EML: ops.mul(eml_vec('framework_statistics.chi_squared_reduced'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 chi^2 = chi^2_red x dof; the sum itself is a reduction over the per-parameter sigma deviations, which the scalar algebra cannot express"
+    },
+    {
       "path": "framework_statistics.chi_squared_reduced",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 467.35929999999956,
       "registered": 467.3593,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(eml_vec('chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 \u03c7\u00b2_red = \u03a3\u03c3\u1d62\u00b2/dof",
-      "diagnostic": "missing: chi_squared",
-      "missing_refs": [
-        "chi_squared"
-      ]
+      "rel_error": 9.730144470998312e-16,
+      "eml_description": "EML: ops.div(eml_vec('framework_statistics.chi_squared'), eml_vec('framework_statistics.degrees_of_freedom')) \u2014 chi^2_red = sum(sigma_i^2) / dof"
     },
     {
       "path": "framework_statistics.degrees_of_freedom",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted))\": name 'N_fitted' is not defined",
+      "status": "AGREE",
+      "evaluated": 4.0,
       "registered": 4.0,
-      "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(N_fitted)) \u2014 dof = N_pred \u2212 N_fitted_params"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.sub(eml_vec('validation.total_predictions'), eml_scalar(1.0)) \u2014 dof = N_pred - N_fitted, with FITTED_PARAMS_COUNT = 1 (only k_gimel is fitted; b3, chi_eff and phi are mathematical)"
     },
     {
       "path": "framework_statistics.exact_matches",
@@ -3418,17 +3396,19 @@
     },
     {
       "path": "gravity.graviton_dof_4d",
-      "status": "ERROR",
-      "reason": "eml_description must start with 'EML: '; got 'Number of physical graviton helicity sta'",
+      "status": "AGREE",
+      "evaluated": 1.9999999999999998,
       "registered": 2.0,
-      "eml_description": "Number of physical graviton helicity states in 4D = D(D-3)/2 = 2 (plus and cross polarizations); confirmed by LIGO/Virgo gravitational wave observations"
+      "rel_error": 1.1102230246251565e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(4.0), ops.sub(eml_scalar(4.0), eml_scalar(3.0))), eml_scalar(2.0)) \u2014 physical graviton helicity states in 4D = D(D-3)/2 = 2 (plus and cross polarizations); confirmed by LIGO/Virgo gravitational wave observations"
     },
     {
       "path": "gravity.newton_constant_theory",
-      "status": "ERROR",
-      "reason": "eml_description must start with 'EML: '; got \"Newton's gravitational constant G_N = 1/\"",
+      "status": "AGREE",
+      "evaluated": 6.708832159376973e-39,
       "registered": 6.708832159377011e-39,
-      "eml_description": "Newton's gravitational constant G_N = 1/M_Pl^2 derived from G2 dimensional reduction: G_N = 1/(M_26D^24 * Vol(X_22))"
+      "rel_error": 5.641334440226319e-15,
+      "eml_description": "EML: ops.inv(ops.pow(eml_vec('codata.M_PLANCK'), eml_scalar(2.0))) \u2014 Newton's constant in natural units G_N = 1/M_Pl^2 against the FULL Planck mass (codata.M_PLANCK); the reduced mass at constants.M_PLANCK is a factor 8 pi away and is not the one meant here"
     },
     {
       "path": "gravity.planck_mass_from_g2",
@@ -3439,17 +3419,19 @@
     },
     {
       "path": "gravity.ricci_components_4d",
-      "status": "ERROR",
-      "reason": "eml_description must start with 'EML: '; got 'Number of independent components of the '",
+      "status": "AGREE",
+      "evaluated": 9.999999999999998,
       "registered": 10.0,
-      "eml_description": "Number of independent components of the symmetric Ricci tensor R_mu_nu in D=4: N = D(D+1)/2 = 10; these appear directly in Einstein's field equations"
+      "rel_error": 1.7763568394002506e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(4.0), ops.add(eml_scalar(4.0), eml_scalar(1.0))), eml_scalar(2.0)) \u2014 independent components of the symmetric Ricci tensor R_mu_nu in D=4: N = D(D+1)/2 = 10; these appear directly in Einstein's field equations"
     },
     {
       "path": "gravity.riemann_independent_4d",
-      "status": "ERROR",
-      "reason": "eml_description must start with 'EML: '; got 'Number of algebraically independent comp'",
+      "status": "AGREE",
+      "evaluated": 19.999999999999996,
       "registered": 20.0,
-      "eml_description": "Number of algebraically independent components of the Riemann curvature tensor R^rho_sigma_mu_nu in D=4: N = D^2(D^2-1)/12 = 20"
+      "rel_error": 1.7763568394002506e-16,
+      "eml_description": "EML: ops.div(ops.mul(ops.pow(eml_scalar(4.0), eml_scalar(2.0)), ops.sub(ops.pow(eml_scalar(4.0), eml_scalar(2.0)), eml_scalar(1.0))), eml_scalar(12.0)) \u2014 algebraically independent components of the Riemann curvature tensor R^rho_sigma_mu_nu in D=4: N = D^2(D^2-1)/12 = 20"
     },
     {
       "path": "gravity.scalar_breathing_amplitude",
@@ -3461,10 +3443,11 @@
     },
     {
       "path": "gravity.spin_connection_components",
-      "status": "ERROR",
-      "reason": "eml_description must start with 'EML: '; got 'Number of independent spin connection co'",
+      "status": "AGREE",
+      "evaluated": 23.999999999999993,
       "registered": 24.0,
-      "eml_description": "Number of independent spin connection components omega^AB_mu in 4D = D * D(D-1)/2 = 4 * 6 = 24; determines fermion-gravity coupling degrees of freedom"
+      "rel_error": 2.9605947323337506e-16,
+      "eml_description": "EML: ops.mul(eml_scalar(4.0), ops.div(ops.mul(eml_scalar(4.0), ops.sub(eml_scalar(4.0), eml_scalar(1.0))), eml_scalar(2.0))) \u2014 independent spin connection components omega^AB_mu in 4D = D * D(D-1)/2 = 4 * 6 = 24; determines fermion-gravity coupling degrees of freedom"
     },
     {
       "path": "gravity.tensor_mode_correction",
@@ -3531,22 +3514,19 @@
     },
     {
       "path": "higgs.lambda_eff_geometric",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.129,
+      "status": "AGREE",
+      "evaluated": 0.10616029694119695,
       "registered": 0.10616029694119695,
-      "rel_error": 0.21514354911284908,
-      "eml_description": "EML: ops.sub(eml_vec('lambda_0'), ops.mul(eml_vec('kappa'), ops.mul(eml_vec('re_t_attractor'), ops.pow(eml_vec('y_top'), eml_scalar(2.0))))) \u2014 effective quartic with geometric Re(T) = 1.833 from attractor",
-      "diagnostic": "missing: kappa",
-      "missing_refs": [
-        "kappa"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.sub(eml_vec('higgs.lambda_0'), ops.mul(ops.inv(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(eml_vec('moduli.re_t_attractor'), ops.pow(eml_vec('yukawa.y_top'), eml_scalar(2.0))))) \u2014 lambda_eff with the geometric Re(T) = 1.833 from the attractor; kappa = 1/(8 pi^2) is the 1-loop coefficient, not a registry parameter"
     },
     {
       "path": "higgs.lambda_eff_pheno",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.sub(lambda_0, ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(re_T_pheno, ops.pow(y_t, eml_scalar(2.0)))))': name 're_T_pheno' is not defined",
+      "status": "AGREE",
+      "evaluated": 0.0060792849563054835,
       "registered": 0.006079284956305497,
-      "eml_description": "EML: ops.sub(lambda_0, ops.mul(ops.div(eml_scalar(1.0), ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(re_T_pheno, ops.pow(y_t, eml_scalar(2.0))))) \u2014 effective quartic with pheno Re(T)"
+      "rel_error": 2.282799360049782e-15,
+      "eml_description": "EML: ops.sub(eml_vec('higgs.lambda_0'), ops.mul(ops.inv(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(eml_vec('moduli.re_t_phenomenological'), ops.pow(eml_vec('yukawa.y_top'), eml_scalar(2.0))))) \u2014 lambda_eff = lambda_0 - kappa Re(T) y_t^2 with kappa = 1/(8 pi^2) and the phenomenological Re(T) = 9.865"
     },
     {
       "path": "higgs.m_higgs_bulk",
@@ -3558,10 +3538,11 @@
     },
     {
       "path": "higgs.m_higgs_geometric",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression \"ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), eml_vec('lambda_eff_geometric'))))\": name 'v_yukawa' is not defined",
+      "status": "AGREE",
+      "evaluated": 504.06234746225977,
       "registered": 504.0623474622599,
-      "eml_description": "EML: ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), eml_vec('lambda_eff_geometric')))) \u2014 geometric Higgs mass from attractor Re(T) = 1.833"
+      "rel_error": 2.255412218230166e-16,
+      "eml_description": "EML: ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(eml_vec('higgs.vev_yukawa'), eml_scalar(2.0)), eml_vec('higgs.lambda_eff_geometric')))) \u2014 geometric Higgs mass from the attractor Re(T) = 1.833"
     },
     {
       "path": "higgs.m_higgs_local",
@@ -3572,10 +3553,11 @@
     },
     {
       "path": "higgs.m_higgs_pred",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), lambda_eff_pheno)))': name 'v_yukawa' is not defined",
+      "status": "AGREE",
+      "evaluated": 120.62281116755649,
       "registered": 120.6228111675565,
-      "eml_description": "EML: ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(v_yukawa, eml_scalar(2.0)), lambda_eff_pheno))) \u2014 Higgs mass from phenomenological moduli"
+      "rel_error": 1.178123323246196e-16,
+      "eml_description": "EML: ops.sqrt(ops.mul(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.mul(ops.pow(eml_vec('higgs.vev_yukawa'), eml_scalar(2.0)), eml_vec('higgs.lambda_eff_pheno')))) \u2014 m_h = sqrt(8 pi^2 v_Yukawa^2 lambda_eff) with the phenomenological Re(T); v_Yukawa is v/sqrt(2) = 174.1 GeV, NOT the 246 GeV EW VEV"
     },
     {
       "path": "higgs.mirror_overlap",
@@ -3595,16 +3577,11 @@
     },
     {
       "path": "higgs.quartic_correction",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.12292071504369452,
       "registered": 0.1229207150436945,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('kappa'), ops.mul(eml_vec('re_t_pheno'), ops.pow(eml_vec('y_top'), eml_scalar(2.0)))) \u2014 quartic correction \u0394\u03bb = \u03ba\u00b7Re(T)\u00b7y_t\u00b2 from one-loop SUGRA moduli exchange",
-      "diagnostic": "missing: kappa, re_t_pheno",
-      "missing_refs": [
-        "kappa",
-        "re_t_pheno"
-      ]
+      "rel_error": 1.1290031792347884e-16,
+      "eml_description": "EML: ops.mul(ops.inv(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(eml_vec('moduli.re_t_phenomenological'), ops.pow(eml_vec('yukawa.y_top'), eml_scalar(2.0)))) \u2014 delta_lambda = kappa Re(T) y_t^2 from one-loop SUGRA moduli exchange, kappa = 1/(8 pi^2)"
     },
     {
       "path": "higgs.sigma_local",
@@ -4127,15 +4104,11 @@
     },
     {
       "path": "planck.S8",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.83,
       "registered": 0.83,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('sigma8'), ops.sqrt(ops.div(eml_vec('Omega_m'), eml_scalar(0.3)))) \u2014 S\u2088 = \u03c3\u2088\u221a(\u03a9_m/0.3) (Planck 2018)",
-      "diagnostic": "missing: sigma8",
-      "missing_refs": [
-        "sigma8"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(0.83) \u2014 S\u2088 as PUBLISHED by Planck 2018, an established input. It is not recomputed from \u03c3\u2088\u221a(\u03a9_m/0.3): that identity with desi.sigma8 = 0.8111 and desi.Omega_m = 0.3111 returns 0.826, 0.5% off the published 0.830, because Planck quotes S\u2088 from its own chain, not from these two marginalised numbers"
     },
     {
       "path": "pm.version",
@@ -4152,61 +4125,59 @@
     },
     {
       "path": "pmns.theta_12_triality",
-      "status": "DISAGREE",
-      "evaluated": 35.264402292036756,
+      "status": "AGREE",
+      "evaluated": 33.59329049922624,
       "registered": 33.59329049922625,
-      "rel_error": 0.049745403560541274,
-      "eml_description": "EML: ops.mul(ops.asin(ops.div(eml_scalar(1.0), ops.sqrt(eml_scalar(3.0)))), eml_scalar(57.2958)) \u2014 \u03b8\u2081\u2082 = arcsin(1/\u221a3) \u2248 33.6\u00b0 (tribimaximal)",
-      "diagnostic": "rel_err=4.97%"
+      "rel_error": 2.115132888742965e-16,
+      "eml_description": "EML: ops.mul(ops.asin(ops.mul(ops.inv(ops.sqrt(eml_scalar(3.0))), ops.sub(eml_scalar(1.0), ops.div(ops.sub(eml_vec('topology.elder_kads'), ops.mul(eml_vec('topology.b2'), eml_vec('topology.n_gen'))), ops.mul(eml_scalar(2.0), eml_vec('topology.mephorash_chi')))))), eml_scalar(57.29577951308232)) \u2014 theta_12 = arcsin[(1/sqrt 3)(1 - (b3 - b2 n_gen)/(2 chi_eff))] in degrees. The published form dropped the topological perturbation"
     },
     {
       "path": "pmns.theta_13_triality",
-      "status": "DISAGREE",
-      "evaluated": 8.269936388358737,
+      "status": "AGREE",
+      "evaluated": 8.64730472533886,
       "registered": 8.647304725338865,
-      "rel_error": 0.04363999523161709,
-      "eml_description": "EML: ops.mul(ops.div(ops.sqrt(ops.mul(eml_scalar(4.0), eml_scalar(3.0))), eml_scalar(24.0)), eml_scalar(57.2958)) \u2014 \u03b8\u2081\u2083 = \u221a(h\u2081\u2081\u00b7n_gen)/b\u2083 \u00d7 rad\u2192deg",
-      "diagnostic": "rel_err=4.36%"
+      "rel_error": 6.162695414890585e-16,
+      "eml_description": "EML: ops.mul(ops.asin(ops.mul(ops.div(ops.sqrt(ops.mul(eml_vec('topology.b2'), eml_vec('topology.n_gen'))), eml_vec('topology.elder_kads')), ops.add(eml_scalar(1.0), ops.div(eml_vec('topology.orientation_sum'), ops.mul(eml_scalar(2.0), eml_vec('topology.mephorash_chi')))))), eml_scalar(57.29577951308232)) \u2014 theta_13 = arcsin[(sqrt(b2 n_gen)/b3)(1 + S_orient/(2 chi_eff))] in degrees. The published form omitted both the arcsin and the orientation correction"
     },
     {
       "path": "pmns.theta_23_triality",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 45.00001609038752,
+      "status": "AGREE",
+      "evaluated": 49.75,
       "registered": 49.75,
-      "rel_error": 0.09547706350979862,
-      "eml_description": "EML: ops.mul(ops.add(ops.div(eml_pi(), eml_scalar(4.0)), ops.div(eml_vec('theta_g_rad'), eml_scalar(2.0))), eml_scalar(57.2958)) \u2014 \u03b8\u2082\u2083 = \u03c0/4 + \u03b8_g/2 \u2248 49.75\u00b0",
-      "diagnostic": "missing: theta_g_rad",
-      "missing_refs": [
-        "theta_g_rad"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.add(eml_scalar(45.0), ops.add(ops.div(ops.mul(ops.sub(eml_vec('topology.b2'), eml_vec('topology.n_gen')), eml_vec('topology.n_gen')), eml_vec('topology.b2')), ops.mul(ops.div(eml_vec('topology.orientation_sum'), eml_vec('topology.elder_kads')), ops.div(ops.mul(eml_vec('topology.b2'), eml_vec('topology.mephorash_chi')), ops.mul(eml_vec('topology.elder_kads'), eml_vec('topology.n_gen')))))) \u2014 theta_23 = 45 deg + Kahler correction (b2-n_gen)n_gen/b2 + flux winding (S_orient/b3)(b2 chi_eff)/(b3 n_gen) = 45 + 0.75 + 4.0. The pi/4 + theta_g/2 route the published form quoted gives 60.9 deg and is NOT what run() computes"
     },
     {
       "path": "pneuma.coupling",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(ops.sqrt(ops.div(b3, eml_scalar(24.0))), ops.mul(g2_norm, ops.div(m_higgs, M_Planck)))': name 'g2_norm' is not defined",
+      "status": "AGREE",
+      "evaluated": 7.854051704428082e-17,
       "registered": 7.85405170442808e-17,
-      "eml_description": "EML: ops.mul(ops.sqrt(ops.div(b3, eml_scalar(24.0))), ops.mul(g2_norm, ops.div(m_higgs, M_Planck))) \u2014 topological factor \u00d7 G2 norm \u00d7 hierarchy factor"
+      "rel_error": 3.1387498091281965e-16,
+      "eml_description": "EML: ops.mul(ops.sqrt(ops.div(eml_vec('topology.elder_kads'), eml_scalar(24.0))), ops.mul(ops.sqrt(ops.div(eml_scalar(7.0), eml_scalar(3.0))), ops.div(m_higgs, eml_vec('constants.M_PLANCK')))) \u2014 topological factor \u00d7 G2 norm sqrt(7/3) \u00d7 hierarchy factor (reduced Planck mass)"
     },
     {
       "path": "pneuma.flow_parameter",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.sqrt(ops.mul(eml_scalar(2.0), V_double_prime_vev))': name 'V_double_prime_vev' is not defined",
+      "status": "AGREE",
+      "evaluated": 0.0011346578282206302,
       "registered": 0.0011346578282206315,
-      "eml_description": "EML: ops.sqrt(ops.mul(eml_scalar(2.0), V_double_prime_vev)) \u2014 sqrt(2 V''(<Psi>)) from curvature at racetrack minimum"
+      "rel_error": 1.1466387263399911e-15,
+      "eml_description": "EML: ops.sqrt(ops.mul(eml_scalar(2.0), eml_vec('pneuma.potential_second_derivative_vev'))) \u2014 sqrt(2 V''(<Psi>)) from curvature at racetrack minimum"
     },
     {
       "path": "pneuma.lagrangian_valid",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.gt(V_double_prime_vev, eml_scalar(0.0))': name 'V_double_prime_vev' is not defined",
+      "status": "AGREE",
+      "evaluated": 1.0,
       "registered": 1.0,
-      "eml_description": "EML: ops.gt(V_double_prime_vev, eml_scalar(0.0)) \u2014 True iff V''(\u27e8\u03a8\u27e9) > 0 at racetrack minimum (stable vacuum condition)"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.gt(eml_vec('pneuma.potential_second_derivative_vev'), eml_scalar(0.0)) \u2014 True iff V''(\u27e8\u03a8\u27e9) > 0 at racetrack minimum (stable vacuum condition)"
     },
     {
       "path": "pneuma.mass_scale",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(M_Planck, ops.sqrt(chi_eff))': name 'M_Planck' is not defined",
+      "status": "AGREE",
+      "evaluated": 2.029166666666667e+17,
       "registered": 2.0291666666666666e+17,
-      "eml_description": "EML: ops.div(M_Planck, ops.sqrt(chi_eff)) \u2014 Planck mass / sqrt(Euler characteristic); ops.div(eml_scalar(M_P), ops.sqrt(eml_scalar(144.0))) for TCS G2 #187"
+      "rel_error": 1.5770020533880904e-16,
+      "eml_description": "EML: ops.div(eml_vec('constants.M_PLANCK'), ops.sqrt(eml_vec('geometry.chi_eff_total'))) \u2014 REDUCED Planck mass / sqrt(chi_eff_total = 144) for TCS G2 #187. Both operands are qualified: M_PLANCK is claimed by two registry entries a factor sqrt(8 pi) apart, and chi_eff by two a factor 2 apart"
     },
     {
       "path": "pneuma.n_bridge_pairs",
@@ -4225,11 +4196,28 @@
       "eml_description": "EML: ops.and_(eml_vec('pneuma.lagrangian_valid'), ops.eq(eml_vec('pneuma.n_bridge_pairs'), eml_scalar(12.0))) \u2014 True iff Lagrangian is stable and all 12 bridge pairs are active"
     },
     {
+      "path": "pneuma.potential_second_derivative_vev",
+      "status": "AGREE",
+      "evaluated": 6.437241935712391e-07,
+      "registered": 6.4372419357118e-07,
+      "rel_error": 9.177928787051966e-14,
+      "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.pow(ops.sub(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev')))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), eml_scalar(2.0))), ops.mul(eml_scalar(2.0), ops.mul(ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev')))))))))) \u2014 V''(<Psi>) = 2 (W'')^2 + 2 W' W''' at the racetrack VEV, with A=1.0, B=1.03, a=2pi/24, b=2pi/23"
+    },
+    {
       "path": "pneuma.vev",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(ops.ln(ops.div(ops.mul(B, b_coeff), ops.mul(A, a_coeff))), ops.sub(b_coeff, a_coeff))': name 'B' is not defined",
+      "status": "AGREE",
+      "evaluated": 6.335857379698658,
       "registered": 6.3358573796986395,
-      "eml_description": "EML: ops.div(ops.ln(ops.div(ops.mul(B, b_coeff), ops.mul(A, a_coeff))), ops.sub(b_coeff, a_coeff)) \u2014 VEV from racetrack analytic minimum; condensate: ops.mul(phi_0, ops.exp(ops.neg(ops.div(m_phi, H_0))))"
+      "rel_error": 2.9438394357591724e-15,
+      "eml_description": "EML: ops.div(ops.ln(ops.div(ops.mul(eml_scalar(1.03), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0))), ops.mul(eml_scalar(1.0), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0))))), ops.sub(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) \u2014 VEV = ln(Bb/Aa)/(b-a) at the racetrack analytic minimum, with A=1.0, B=1.03, a=2pi/24, b=2pi/23"
+    },
+    {
+      "path": "portals.alp_decay_constant_gev",
+      "status": "AGREE",
+      "evaluated": 13427987906.06991,
+      "registered": 13427987906.07019,
+      "rel_error": 2.088028757433496e-14,
+      "eml_description": "EML: ops.sqrt(ops.mul(ops.div(ops.mul(eml_scalar(1.22e19), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), eml_vec('topology.elder_kads'))))), ops.mul(eml_vec('geometry.chi_eff_sector'), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())))), ops.div(ops.mul(ops.mul(eml_scalar(1.22e19), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), eml_vec('topology.elder_kads'))))), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), ops.sub(eml_vec('topology.elder_kads'), ops.div(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads'))))))), ops.mul(eml_vec('geometry.chi_eff_sector'), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())))))) \u2014 f_a^ALP = sqrt(f_a_single * f_a_double), the geometric mean of the single- and double-exponential Face 3 racetrack branches, with T_3 = b3 k_gimel/(3 pi) and M_Pl = 1.22e19 GeV"
     },
     {
       "path": "portals.alp_fifth_force_range_m",
@@ -4241,60 +4229,51 @@
     },
     {
       "path": "portals.alp_mass_ev",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 4.708900000000265e+307,
+      "status": "AGREE",
+      "evaluated": 0.003506780042504587,
       "registered": 0.003506780042504594,
-      "rel_error": "inf",
-      "eml_description": "EML: ops.mul(ops.div(ops.pow(eml_scalar(0.217), eml_scalar(2.0)), eml_vec('f_a_alp_gev')), eml_scalar(1.0e9)) \u2014 m_ALP = Lambda_QCD^2 / f_a^ALP (converted to eV) from Face 3 moduli",
-      "diagnostic": "missing: f_a_alp_gev",
-      "missing_refs": [
-        "f_a_alp_gev"
-      ]
+      "rel_error": 2.1023773044048204e-15,
+      "eml_description": "EML: ops.mul(ops.div(ops.pow(eml_scalar(0.217), eml_scalar(2.0)), eml_vec('portals.alp_decay_constant_gev')), eml_scalar(1.0e9)) \u2014 m_ALP = Lambda_QCD^2 / f_a^ALP (converted to eV) from Face 3 moduli"
     },
     {
       "path": "portals.alp_nucleon_coupling_gev_inv",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 4.0824829046385346e+299,
+      "status": "AGREE",
+      "evaluated": 3.040278955563493e-11,
       "registered": 3.040278955563494e-11,
-      "rel_error": "inf",
-      "eml_description": "EML: ops.div(eml_vec('geometry.alpha_leak'), eml_vec('f_a_alp_gev')) \u2014 g_aN = alpha_leak / f_a^ALP minimal inter-face leakage nucleon coupling",
-      "diagnostic": "missing: f_a_alp_gev",
-      "missing_refs": [
-        "f_a_alp_gev"
-      ]
+      "rel_error": 2.1255774979940217e-16,
+      "eml_description": "EML: ops.div(eml_vec('geometry.alpha_leak'), eml_vec('portals.alp_decay_constant_gev')) \u2014 g_aN = alpha_leak / f_a^ALP, minimal inter-face leakage coupling"
     },
     {
       "path": "portals.alp_photon_coupling_gev_inv",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 2.93938769133958e+301,
+      "status": "AGREE",
+      "evaluated": 2.90325254493717e-11,
       "registered": 2.9032525449371696e-11,
-      "rel_error": "inf",
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('geometry.alpha_leak'), eml_scalar(72.0)), ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), eml_vec('f_a_alp_gev'))) \u2014 g_agammagamma = alpha_leak * chi_eff / (24*pi*f_a_ALP) Primakoff coupling",
-      "diagnostic": "missing: f_a_alp_gev",
-      "missing_refs": [
-        "f_a_alp_gev"
-      ]
+      "rel_error": 1.112949775388965e-16,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('geometry.alpha_leak'), eml_vec('geometry.chi_eff_sector')), ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), eml_vec('portals.alp_decay_constant_gev'))) \u2014 g_agammagamma = alpha_leak * chi_eff_sector / (24 pi f_a^ALP); the per-sector 72, not the two-shadow 144"
     },
     {
       "path": "portals.dm_coupling_strength",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(ops.mul(alpha_leak, ops.sqrt(ops.div(chi_eff_full, b3))), ops.mul(eml_scalar(4.0), eml_pi()))': name 'chi_eff_full' is not defined",
+      "status": "AGREE",
+      "evaluated": 0.11110679417579884,
       "registered": 0.11110679417579884,
-      "eml_description": "EML: ops.div(ops.mul(alpha_leak, ops.sqrt(ops.div(chi_eff_full, b3))), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 g_portal = \u03b1_leak\u00b7\u221a(\u03c7_eff/b\u2083)/(4\u03c0), portal coupling from face sampling strength with chi_eff_full=144, b3=24"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(0.57), ops.sqrt(ops.div(eml_vec('geometry.chi_eff_total'), eml_vec('topology.elder_kads')))), ops.mul(eml_scalar(4.0), eml_pi())) \u2014 g_portal = alpha_leak sqrt(chi_eff_total/b3)/(4 pi). The 0.57 is the face-sampling alpha_leak this module hardcodes; it is NOT geometry.alpha_leak = 1/sqrt(6) = 0.40825, which the module declares as an input and then does not read"
     },
     {
       "path": "portals.dm_cross_section_cm2",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(ops.div(ops.mul(ops.pow(g_portal, eml_scalar(2.0)), ops.pow(m_N, eml_scalar(2.0))), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(m_KK, eml_scalar(4.0)))), eml_scalar(3.894e-28))': name 'g_portal' is not defined",
+      "status": "AGREE",
+      "evaluated": 1.9038579508230015e-93,
       "registered": 1.9038579508229144e-93,
-      "eml_description": "EML: ops.mul(ops.div(ops.mul(ops.pow(g_portal, eml_scalar(2.0)), ops.pow(m_N, eml_scalar(2.0))), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(m_KK, eml_scalar(4.0)))), eml_scalar(3.894e-28)) \u2014 \u03c3_SI = g\u00b2\u00b7m_N\u00b2/(4\u03c0\u00b7m_KK\u2074)\u00d7unit_conv, Born approximation moduli exchange"
+      "rel_error": 4.573622663945579e-14,
+      "eml_description": "EML: ops.mul(ops.div(ops.mul(ops.pow(eml_vec('portals.dm_coupling_strength'), eml_scalar(2.0)), ops.pow(eml_scalar(0.938272), eml_scalar(2.0))), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(eml_vec('portals.dm_mediator_mass_gev'), eml_scalar(4.0)))), eml_scalar(3.894e-28)) \u2014 sigma_SI = g^2 m_N^2 / (4 pi m_KK^4) x GeV^-2-to-cm^2, Born approximation for moduli exchange; m_N = 0.938272 GeV is the nucleon mass"
     },
     {
       "path": "portals.dm_mediator_mass_gev",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(ops.mul(M_Pl, alpha_leak), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(k_gimel, eml_scalar(2.0))))': name 'M_Pl' is not defined",
+      "status": "AGREE",
+      "evaluated": 3646889225912063.0,
       "registered": 3646889225912076.0,
-      "eml_description": "EML: ops.div(ops.mul(M_Pl, alpha_leak), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(k_gimel, eml_scalar(2.0)))) \u2014 m_KK = M_Pl\u00b7\u03b1_leak/(4\u03c0\u00b7k_\u2137\u00b2), moduli-mediated KK portal mediator mass"
+      "rel_error": 3.564681895910546e-15,
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(1.22e19), eml_scalar(0.57)), ops.mul(ops.mul(eml_scalar(4.0), eml_pi()), ops.pow(eml_vec('geometry.k_gimel'), eml_scalar(2.0)))) \u2014 m_KK = M_Pl alpha_leak / (4 pi k_gimel^2). M_Pl = 1.22e19 GeV is this module's own rounded full Planck mass, not codata.M_PLANCK = 1.22089e19"
     },
     {
       "path": "portals.sterile_mass_scale_gev",
@@ -4389,59 +4368,67 @@
     },
     {
       "path": "qed.bulk_avogadro",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(na_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'na_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 6.022349862109736e+23,
       "registered": 6.022349862109721e+23,
-      "eml_description": "EML: ops.mul(na_manifest, ops.add(eml_scalar(1.0), epsilon))"
+      "rel_error": 2.4515264669176764e-15,
+      "eml_description": "EML: ops.mul(eml_vec('qed.manifest_avogadro'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')))"
     },
     {
       "path": "qed.bulk_compton_wavelength",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'lambda_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 2.4263944855532893e-12,
       "registered": 2.426394485553287e-12,
-      "eml_description": "EML: ops.mul(lambda_manifest, ops.add(eml_scalar(1.0), epsilon))"
+      "rel_error": 9.987579164343298e-16,
+      "eml_description": "EML: ops.mul(eml_vec('qed.manifest_compton_wavelength'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')))"
     },
     {
       "path": "qed.bulk_faraday",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(f_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'f_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 96488.68230514304,
       "registered": 96488.68230514305,
-      "eml_description": "EML: ops.mul(f_manifest, ops.add(eml_scalar(1.0), epsilon))"
+      "rel_error": 1.5081473682422962e-16,
+      "eml_description": "EML: ops.mul(eml_vec('qed.manifest_faraday'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')))"
     },
     {
       "path": "qed.bulk_hartree_energy",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(E_h_CODATA, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))': name 'E_h_CODATA' is not defined",
+      "status": "AGREE",
+      "evaluated": 4.359896112743924e-18,
       "registered": 4.3598961127439434e-18,
-      "eml_description": "EML: ops.div(E_h_CODATA, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))"
+      "rel_error": 4.417375769018342e-15,
+      "eml_description": "EML: ops.div(eml_vec('qed.manifest_hartree_energy'), ops.mul(ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')), ops.pow(ops.sub(eml_scalar(1.0), eml_vec('qed.projection_epsilon')), eml_scalar(2.0))))"
     },
     {
       "path": "qed.bulk_magnetic_flux",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(flux_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'flux_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 2.0677620507065755e-15,
       "registered": 2.067762050706573e-15,
-      "eml_description": "EML: ops.div(flux_manifest, ops.add(eml_scalar(1.0), epsilon))"
+      "rel_error": 1.144514048342435e-15,
+      "eml_description": "EML: ops.div(eml_vec('qed.manifest_magnetic_flux'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')))"
     },
     {
       "path": "qed.bulk_stefan_boltzmann",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(sigma_manifest, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))': name 'sigma_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 5.669586935356503e-08,
       "registered": 5.669586935356506e-08,
-      "eml_description": "EML: ops.div(sigma_manifest, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))"
+      "rel_error": 5.835914481844093e-16,
+      "eml_description": "EML: ops.div(eml_vec('qed.manifest_stefan_boltzmann'), ops.pow(ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')), eml_scalar(4.0)))"
     },
     {
       "path": "qed.bulk_von_klitzing",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(rk_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'rk_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 25811.911203083222,
       "registered": 25811.91120308323,
-      "eml_description": "EML: ops.div(rk_manifest, ops.add(eml_scalar(1.0), epsilon))"
+      "rel_error": 2.8188372247748604e-16,
+      "eml_description": "EML: ops.div(eml_vec('qed.manifest_von_klitzing'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')))"
     },
     {
       "path": "qed.bulk_weak_mixing",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(weak_manifest, ops.add(eml_scalar(1.0), epsilon))': name 'weak_manifest' is not defined",
+      "status": "AGREE",
+      "evaluated": 0.23122802847222215,
       "registered": 0.2312280284722222,
-      "eml_description": "EML: ops.mul(weak_manifest, ops.add(eml_scalar(1.0), epsilon))"
+      "rel_error": 2.400710311722719e-16,
+      "eml_description": "EML: ops.mul(eml_vec('qed.manifest_weak_mixing'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')))"
     },
     {
       "path": "qed.compton_sigma_deviation",
@@ -4461,93 +4448,99 @@
     },
     {
       "path": "qed.hartree_sigma_deviation",
-      "status": "DISAGREE",
-      "evaluated": 0.8462239878723016,
+      "status": "AGREE",
+      "evaluated": 0.12942249226282274,
       "registered": 0.12942249226282226,
-      "rel_error": 5.538461538461554,
-      "eml_description": "EML: ops.div(eml_vec('qed.hartree_variance_j'), eml_scalar(1.3e-30)) \u2014 \u03c3 = variance / CODATA uncertainty (1.3\u00d710\u207b\u00b3\u2070 J)",
-      "diagnostic": "rel_err=553.85%"
+      "rel_error": 3.645771126918973e-15,
+      "eml_description": "EML: ops.div(eml_vec('qed.hartree_variance_j'), eml_scalar(8.5e-30)) \u2014 sigma = variance / CODATA uncertainty. The uncertainty this module actually divides by is CODATA_HARTREE_SIGMA = 8.5e-30 J; the published form quoted 1.3e-30 J, which is not a figure that appears anywhere in the module and made the row read 6.5x high"
     },
     {
       "path": "qed.hartree_variance_j",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 4.3597447222071e-18,
+      "status": "AGREE",
+      "evaluated": 1.1000911842339891e-30,
       "registered": 1.1000911842339891e-30,
-      "rel_error": 3963075774706.584,
-      "eml_description": "EML: ops.abs(ops.sub(eml_vec('qed.hartree_bulk'), eml_scalar(4.3597447222071e-18))) \u2014 |E_h_predicted \u2212 E_h_CODATA| in J",
-      "diagnostic": "missing: qed.hartree_bulk",
-      "missing_refs": [
-        "qed.hartree_bulk"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.abs(ops.sub(eml_vec('qed.manifest_hartree_energy'), eml_scalar(4.3597447222071e-18))) \u2014 |E_h_predicted \u2212 E_h_CODATA| in J"
     },
     {
       "path": "qed.manifest_avogadro",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(na_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'na_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 6.022140760000004e+23,
       "registered": 6.02214076e+23,
-      "eml_description": "EML: ops.div(na_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 extensive count dilutes under projection"
+      "rel_error": 6.686213425539392e-16,
+      "eml_description": "EML: ops.div(eml_vec('qed.bulk_avogadro'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon'))) \u2014 extensive count dilutes under projection"
     },
     {
       "path": "qed.manifest_compton_wavelength",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'compton_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 2.4263102386699982e-12,
       "registered": 2.42631023867e-12,
-      "eml_description": "EML: ops.div(compton_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 h/(m_e*c) contracts net 1/(1+eps)"
+      "rel_error": 6.658617303524336e-16,
+      "eml_description": "EML: ops.div(eml_vec('qed.bulk_compton_wavelength'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon'))) \u2014 h/(m_e*c) contracts net 1/(1+eps)"
     },
     {
       "path": "qed.manifest_faraday",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(f_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'f_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 96485.33212,
       "registered": 96485.33212,
-      "eml_description": "EML: ops.div(f_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 F=N_A*e, e invariant"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.div(eml_vec('qed.bulk_faraday'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon'))) \u2014 F=N_A*e, e invariant"
     },
     {
       "path": "qed.manifest_hartree_energy",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(E_h_bulk, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))': name 'E_h_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 4.359744722206018e-18,
       "registered": 4.359744722206e-18,
-      "eml_description": "EML: ops.mul(E_h_bulk, ops.mul(ops.add(1, epsilon), ops.pow(ops.sub(1, epsilon), 2)))"
+      "rel_error": 4.240827994342338e-15,
+      "eml_description": "EML: ops.mul(eml_vec('qed.bulk_hartree_energy'), ops.mul(ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')), ops.pow(ops.sub(eml_scalar(1.0), eml_vec('qed.projection_epsilon')), eml_scalar(2.0))))"
     },
     {
       "path": "qed.manifest_magnetic_flux",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(flux_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'flux_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 2.067833848000006e-15,
       "registered": 2.067833848e-15,
-      "eml_description": "EML: ops.mul(flux_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 h/(2e) expands with h"
+      "rel_error": 2.8611857741278194e-15,
+      "eml_description": "EML: ops.mul(eml_vec('qed.bulk_magnetic_flux'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon'))) \u2014 h/(2e) expands with h"
     },
     {
       "path": "qed.manifest_molar_gas_constant",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 8.314462618153257,
       "registered": 8.314462618,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('na'), eml_vec('kb')) \u2014 R = N_A * k; invariant under projection since eps factors cancel",
-      "diagnostic": "missing: na, kb",
-      "missing_refs": [
-        "na",
-        "kb"
-      ]
+      "rel_error": 1.8432575828088955e-11,
+      "eml_description": "EML: ops.mul(eml_vec('qed.manifest_avogadro'), eml_scalar(1.380649e-23)) \u2014 R = N_A * k_B; k_B is exact by the 2019 SI redefinition and is not a registry parameter. Invariant under projection since the eps factors cancel"
     },
     {
       "path": "qed.manifest_stefan_boltzmann",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(sigma_bulk, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))': name 'sigma_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 5.670374418999996e-08,
       "registered": 5.670374419e-08,
-      "eml_description": "EML: ops.mul(sigma_bulk, ops.pow(ops.add(eml_scalar(1.0), epsilon), eml_scalar(4.0)))"
+      "rel_error": 7.002124810225046e-16,
+      "eml_description": "EML: ops.mul(eml_vec('qed.bulk_stefan_boltzmann'), ops.pow(ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon')), eml_scalar(4.0)))"
     },
     {
       "path": "qed.manifest_von_klitzing",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.mul(rk_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'rk_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 25812.80744999999,
       "registered": 25812.80745,
-      "eml_description": "EML: ops.mul(rk_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 h/e^2 expands with h"
+      "rel_error": 4.2281090278210474e-16,
+      "eml_description": "EML: ops.mul(eml_vec('qed.bulk_von_klitzing'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon'))) \u2014 h/e^2 expands with h"
     },
     {
       "path": "qed.manifest_weak_mixing",
-      "status": "ERROR",
-      "reason": "Failed to evaluate EML expression 'ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon))': name 'weak_bulk' is not defined",
+      "status": "AGREE",
+      "evaluated": 0.23121999999999998,
       "registered": 0.23122,
-      "eml_description": "EML: ops.div(weak_bulk, ops.add(eml_scalar(1.0), epsilon)) \u2014 coupling ratio contracts under projection"
+      "rel_error": 1.2003968348598266e-16,
+      "eml_description": "EML: ops.div(eml_vec('qed.bulk_weak_mixing'), ops.add(eml_scalar(1.0), eml_vec('qed.projection_epsilon'))) \u2014 coupling ratio contracts under projection"
+    },
+    {
+      "path": "qed.projection_epsilon",
+      "status": "AGREE",
+      "evaluated": 3.472222222222223e-05,
+      "registered": 3.472222222222222e-05,
+      "rel_error": 1.951563910473908e-16,
+      "eml_description": "EML: ops.inv(ops.mul(eml_vec('geometry.roots_total'), ops.pow(eml_scalar(10.0), eml_scalar(2.0)))) \u2014 epsilon = 1/(roots_total x DECAD^2) = 1/28800"
     },
     {
       "path": "qed.stefan_variance",
@@ -4637,15 +4630,11 @@
     },
     {
       "path": "spectral.M_GUT_G2",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 1.2398546184516597e+17,
       "registered": 1.2398546184516635e+17,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(eml_vec('M_Planck'), ops.sqrt(eml_vec('b3'))) \u2014 GUT scale from Planck mass divided by sqrt(b3=24) G2 instanton suppression",
-      "diagnostic": "missing: M_Planck",
-      "missing_refs": [
-        "M_Planck"
-      ]
+      "rel_error": 3.097137311788547e-15,
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(1.22e19), ops.sqrt(eml_vec('topology.elder_kads'))), ops.pow(ops.exp(ops.neg(ops.div(eml_scalar(144.0), eml_scalar(12.0)))), eml_scalar(0.25))) \u2014 M_GUT_eff = (M_Pl/sqrt(b3)) x exp(-chi_eff/12)^(1/4). The published form gave only M_Pl/sqrt(b3) = 2.49e18 and omitted the instanton suppression that run() applies, a factor of 20"
     },
     {
       "path": "spectral.curvature_residue",
@@ -4701,16 +4690,11 @@
     },
     {
       "path": "spectral.m_nu_1",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.003111619879752408,
       "registered": 0.003111619879752405,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('lambda_49'), ops.inv(eml_vec('L_compact_sq'))) \u2014 lightest neutrino mass from 49th spectral residue via G2 see-saw mechanism",
-      "diagnostic": "missing: lambda_49, L_compact_sq",
-      "missing_refs": [
-        "lambda_49",
-        "L_compact_sq"
-      ]
+      "rel_error": 9.756224089945625e-16,
+      "eml_description": "EML: ops.mul(ops.div(ops.div(eml_vec('geometry.k_gimel'), ops.sqrt(eml_scalar(144.0))), ops.div(eml_scalar(2.0e16), ops.pow(eml_scalar(246.22), eml_scalar(2.0)))), eml_scalar(1.0e9)) \u2014 m1 = k_gimel (v^2/M_GUT) / sqrt(chi_eff), converted GeV->eV. M_GUT = 2e16 GeV is hardcoded here pending the register 2.2 GUT-scale ruling, so it is written as a literal rather than resolved from gauge.M_GUT"
     },
     {
       "path": "spectral.m_nu_2",
@@ -4816,6 +4800,18 @@
       "eml_description": "EML: ops.eq(ops.sub(ops.add(eml_scalar(276.0), eml_scalar(24.0)), eml_scalar(12.0)), ops.add(eml_scalar(125.0), eml_scalar(163.0))) \u2014 closure: 276+24\u221212 = 125+163 = 288"
     },
     {
+      "path": "terminal.current_entropy",
+      "status": "DISAGREE_MISSING_CTX",
+      "evaluated": 0.0,
+      "registered": 0.1152,
+      "rel_error": 1.0,
+      "eml_description": "EML: ops.mul(eml_vec('current_epoch'), ops.log(ops.div(eml_vec('topology.ancestral_roots'), eml_vec('registry.node_count')))) \u2014 unwinding entropy = epoch * ln(288/125)",
+      "diagnostic": "missing: current_epoch",
+      "missing_refs": [
+        "current_epoch"
+      ]
+    },
+    {
       "path": "terminal.dominant_basin",
       "status": "SKIP",
       "reason": "non-numeric value: 'Gauge_Ghost'",
@@ -4873,15 +4869,11 @@
     },
     {
       "path": "terminal.restoration_probability",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 1.0,
+      "status": "AGREE",
+      "evaluated": 0.8848,
       "registered": 0.8848,
-      "rel_error": 0.13019891500904154,
-      "eml_description": "EML: ops.sub(eml_scalar(1.0), eml_vec('current_entropy'))",
-      "diagnostic": "missing: current_entropy",
-      "missing_refs": [
-        "current_entropy"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.sub(eml_scalar(1.0), eml_vec('current_entropy'))"
     },
     {
       "path": "terminal.unwinding_status",
@@ -5134,12 +5126,11 @@
     },
     {
       "path": "triality.mixing_ratio",
-      "status": "DISAGREE",
-      "evaluated": 1.5396007178390017,
+      "status": "AGREE",
+      "evaluated": 2.464560334295213,
       "registered": 2.464560334295213,
-      "rel_error": 0.375304107424386,
-      "eml_description": "EML: ops.pow(ops.div(eml_scalar(4.0), eml_scalar(3.0)), eml_scalar(1.5)) \u2014 mixing ratio (4/3)^(3/2) \u2248 1.54 from co-assoc/assoc cycle ratio",
-      "diagnostic": "rel_err=37.53%"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.div(ops.sin(ops.div(ops.mul(eml_vec('pmns.theta_12_triality'), eml_pi()), eml_scalar(180.0))), eml_vec('ckm.V_us_triality')) \u2014 the registered value is the ACTUAL ratio sin(theta_12)/V_us = 2.46, not the dimensional (4/3)^(3/2) = 1.54 the published form quoted. run() computes the former and compares it to the latter"
     },
     {
       "path": "triality.phi_golden",
@@ -5205,15 +5196,11 @@
     },
     {
       "path": "vacuum.bounce_action",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 10000000000.0,
       "registered": 10000000000.0,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(eml_vec('sigma'), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('epsilon'), eml_scalar(3.0))))",
-      "diagnostic": "missing: sigma",
-      "missing_refs": [
-        "sigma"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.min(ops.div(ops.mul(ops.mul(eml_scalar(27.0), ops.pow(eml_pi(), eml_scalar(2.0))), ops.pow(ops.mul(eml_scalar(1.5), eml_vec('constants.M_PLANCK')), eml_scalar(4.0))), ops.mul(eml_scalar(2.0), ops.pow(ops.mul(eml_scalar(1e-120), ops.pow(eml_vec('constants.M_PLANCK'), eml_scalar(4.0))), eml_scalar(3.0)))), eml_scalar(1.0e10)) \u2014 Coleman-De Luccia thin-wall B = 27 pi^2 sigma^4 / (2 epsilon^3) with sigma = 1.5 M_P and epsilon = 1e-120 M_P^4. The raw action is ~1e215; the registered 1e10 is the display cap the module applies, so the cap is part of the published quantity and is shown here"
     },
     {
       "path": "vacuum.instability_scale_pm",
@@ -5225,74 +5212,48 @@
     },
     {
       "path": "vacuum.instability_scale_sm",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 247.87468337352348,
+      "status": "AGREE",
+      "evaluated": 36969516.507910915,
       "registered": 36969516.507910416,
-      "rel_error": 0.9999932951602621,
-      "eml_description": "EML: ops.mul(eml_vec('M_Z'), ops.exp(ops.div(ops.mul(eml_scalar(8.0), ops.mul(ops.pow(eml_pi(), eml_scalar(2.0)), eml_vec('lambda_MZ'))), ops.mul(eml_scalar(3.0), ops.pow(eml_vec('y_t'), eml_scalar(4.0))))))",
-      "diagnostic": "missing: Lambda_I_SM, delta_lambda_G2, beta_coeff_sm",
+      "rel_error": 1.3502716485001485e-14,
+      "eml_description": "EML: ops.mul(eml_vec('pdg.m_Z'), ops.exp(ops.div(eml_vec('vacuum.lambda_ew'), eml_scalar(0.01)))) \u2014 Lambda_I = M_Z exp(-lambda(M_Z)/beta_SM) is the scale at which the linearised 1-loop running crosses zero. The previous form quoted the textbook 8 pi^2 lambda / (3 y_t^4) exponent, which is NOT what STEP 3 of this module computes",
       "missing_refs": [
         "Lambda_I_SM",
         "delta_lambda_G2",
-        "beta_coeff_sm",
-        "lambda_MZ",
-        "y_t"
+        "beta_coeff_sm"
       ]
     },
     {
       "path": "vacuum.is_stable",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 1.0,
       "registered": 1.0,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(eml_vec('bounce_gt_crit'), eml_vec('instability_gt_MP'))",
-      "diagnostic": "missing: bounce_gt_crit, instability_gt_MP",
-      "missing_refs": [
-        "bounce_gt_crit",
-        "instability_gt_MP"
-      ]
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.mul(ops.gt(eml_vec('vacuum.bounce_action'), eml_scalar(400.0)), ops.mul(ops.gt(eml_vec('vacuum.lambda_gut'), eml_scalar(0.0)), ops.gt(eml_vec('vacuum.lambda_planck'), eml_scalar(0.0)))) \u2014 stable iff B > B_crit AND lambda stays positive to M_P (which is what makes instability_scale_pm infinite, hence > M_P)"
     },
     {
       "path": "vacuum.lambda_ew",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 1.0,
+      "status": "AGREE",
+      "evaluated": 0.12912680943394106,
       "registered": 0.12912680943394128,
-      "rel_error": 6.744325166739136,
-      "eml_description": "EML: ops.div(ops.pow(eml_vec('m_H'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('v_ew'), eml_scalar(2.0))))",
-      "diagnostic": "missing: m_H, v_ew",
-      "missing_refs": [
-        "m_H",
-        "v_ew"
-      ]
+      "rel_error": 1.7195856220595687e-15,
+      "eml_description": "EML: ops.div(ops.pow(eml_vec('pdg.m_higgs'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('geometry.higgs_vev'), eml_scalar(2.0)))) \u2014 lambda = m_H^2 / (2 v^2) at the EW scale"
     },
     {
       "path": "vacuum.lambda_gut",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.1604238813090213,
       "registered": 0.1604238813090212,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.add(eml_vec('lambda_MZ'), ops.add(ops.mul(eml_vec('beta_coeff'), eml_vec('log_MGUT_over_MZ')), eml_vec('delta_lambda_G2')))",
-      "diagnostic": "missing: lambda_MZ, beta_coeff, log_MGUT_over_MZ",
-      "missing_refs": [
-        "lambda_MZ",
-        "beta_coeff",
-        "log_MGUT_over_MZ",
-        "delta_lambda_G2"
-      ]
+      "rel_error": 6.9205595548867e-16,
+      "eml_description": "EML: ops.add(ops.add(eml_vec('vacuum.lambda_ew'), ops.mul(eml_scalar(-0.01), ops.log(ops.div(eml_vec('gauge.M_GUT'), eml_vec('pdg.m_Z'))))), eml_scalar(0.35)) \u2014 lambda(M_GUT) = lambda(M_Z) + beta_SM ln(M_GUT/M_Z) + delta_lambda_G2, with beta_SM = -0.01 and delta_lambda_G2 = 0.35"
     },
     {
       "path": "vacuum.lambda_planck",
-      "status": "DISAGREE_MISSING_CTX",
-      "evaluated": 0.0,
+      "status": "AGREE",
+      "evaluated": 0.1901901928513198,
       "registered": 0.19019019285131977,
-      "rel_error": 1.0,
-      "eml_description": "EML: ops.add(eml_vec('lambda_gut_pm'), ops.mul(eml_vec('beta_pm_above_gut'), eml_vec('log_MP_over_MGUT')))",
-      "diagnostic": "missing: lambda_gut_pm, beta_pm_above_gut, log_MP_over_MGUT",
-      "missing_refs": [
-        "lambda_gut_pm",
-        "beta_pm_above_gut",
-        "log_MP_over_MGUT"
-      ]
+      "rel_error": 1.4593589290551218e-16,
+      "eml_description": "EML: ops.add(eml_vec('vacuum.lambda_gut'), ops.mul(eml_scalar(0.005), ops.sub(ops.log(ops.div(eml_vec('constants.M_PLANCK'), eml_vec('pdg.m_Z'))), ops.log(ops.div(eml_vec('gauge.M_GUT'), eml_vec('pdg.m_Z')))))) \u2014 lambda(M_P) = lambda(M_GUT) + beta_PM ln(M_P/M_GUT), beta_PM = 0.005"
     },
     {
       "path": "vacuum.lifetime_years",
@@ -5344,6 +5305,13 @@
       "eml_description": "EML: eml_scalar(3) \u2014 count of predictions within 0.1\u03c3 theory uncertainty (exact matches)"
     },
     {
+      "path": "validation.phi_g2",
+      "status": "ERROR",
+      "reason": "eml_description must start with 'EML: '; got 'Dimensionless G2 holonomy invariant Phi_'",
+      "registered": 6.0,
+      "eml_description": "Dimensionless G2 holonomy invariant Phi_G2 = Vol(V7) * chi / b3; serves as the right-hand side target of the global sum rule."
+    },
+    {
       "path": "validation.predictions_within_1sigma",
       "status": "AGREE",
       "evaluated": 24.0,
@@ -5362,6 +5330,13 @@
       "status": "SKIP",
       "reason": "non-numeric value: 'PASS'",
       "eml_description": "String status flag ('PASS' or 'FAIL') indicating whether the weighted sum of squared residues closes to Phi_G2 within sterile tolerance."
+    },
+    {
+      "path": "validation.sum_rule_tolerance",
+      "status": "ERROR",
+      "reason": "eml_description must start with 'EML: '; got 'Convergence threshold constant (1e-15) f'",
+      "registered": 1e-15,
+      "eml_description": "Convergence threshold constant (1e-15) for the sum-rule residual; not a derived quantity."
     },
     {
       "path": "validation.total_predictions",

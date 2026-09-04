@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-04T12:56:09.668702Z",
+  "generated_at": "2026-09-04T22:32:08.824562Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
   "total_scripts": 274,
@@ -731,6 +731,7 @@
             "pneuma.mass_scale",
             "pneuma.n_bridge_pairs",
             "pneuma.neural_gate_active",
+            "pneuma.potential_second_derivative_vev",
             "pneuma.vev"
           ]
         },
@@ -1271,7 +1272,9 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "validation.phi_g2",
             "validation.sum_rule_result",
+            "validation.sum_rule_tolerance",
             "validation.trace_convergence"
           ]
         },
@@ -1449,6 +1452,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "terminal.current_entropy",
             "terminal.dominant_basin",
             "terminal.omega_seal",
             "terminal.restoration_probability"
@@ -1984,6 +1988,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "portals.alp_decay_constant_gev",
             "portals.alp_fifth_force_range_m",
             "portals.alp_mass_ev",
             "portals.alp_nucleon_coupling_gev_inv",
@@ -2044,7 +2049,8 @@
           "gates_contributed": [],
           "parameters_contributed": [
             "qed.bulk_avogadro",
-            "qed.manifest_avogadro"
+            "qed.manifest_avogadro",
+            "qed.projection_epsilon"
           ]
         },
         {
