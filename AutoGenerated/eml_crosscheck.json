@@ -3,10 +3,10 @@
   "with_eml_description": 548,
   "skip": 108,
   "buckets": {
-    "AGREE": 376,
+    "AGREE": 383,
     "AGREE_LOOSE": 5,
     "ERROR": 92,
-    "DISAGREE": 53,
+    "DISAGREE": 46,
     "DISAGREE_MISSING_CTX": 80,
     "DISAGREE_SCALE": 1
   },
@@ -39,9 +39,9 @@
   ],
   "ambiguous_short_names_note": "Not bound. An ambiguous name is worse than an absent one, because an absent one fails loudly. Qualify the name in the expression to resolve it.",
   "note": "agreement_rate_strict/loose are computed over expressions that EVALUATED. agreement_rate_strict_all counts unevaluable expressions (ERROR) as failures and is the honest headline: an EML description that does not evaluate is a broken representation, not a skip.",
-  "agreement_rate_strict_all": 0.6194398682042833,
-  "agreement_rate_strict": 0.7300970873786408,
-  "agreement_rate_loose": 0.7398058252427184,
+  "agreement_rate_strict_all": 0.6309719934102141,
+  "agreement_rate_strict": 0.7436893203883496,
+  "agreement_rate_loose": 0.7533980582524272,
   "eml_option_withheld": 53,
   "eml_option_offered": 588,
   "tolerance": 0.001,
@@ -881,12 +881,11 @@
     },
     {
       "path": "consciousness.dice_branches",
-      "status": "DISAGREE",
-      "evaluated": 4.000000000000001,
+      "status": "AGREE",
+      "evaluated": 255.99999999999994,
       "registered": 256.0,
-      "rel_error": 0.984375,
-      "eml_description": "EML: ops.pow(eml_scalar(2.0), eml_scalar(2.0)) \u2014 4 dice branches = 2\u00b2 from binary quantum sampling",
-      "diagnostic": "rel_err=98.44%"
+      "rel_error": 2.220446049250313e-16,
+      "eml_description": "EML: ops.pow(eml_scalar(4.0), eml_scalar(4.0)) \u2014 total branches = DICE_MODULUS^NUM_DICE = 4^4 = 256 (quaternionic mod-4, 4 dice)"
     },
     {
       "path": "consciousness.dice_entropy",
@@ -3819,12 +3818,11 @@
     },
     {
       "path": "neutrino.theta13_derived",
-      "status": "DISAGREE",
-      "evaluated": 0.16744807921968935,
+      "status": "AGREE",
+      "evaluated": 9.594068226860468,
       "registered": 9.594068226860465,
-      "rel_error": 0.9825467074800568,
-      "eml_description": "EML: ops.asin(ops.div(eml_scalar(1.0), eml_scalar(6.0))) \u2014 \u03b8\u2081\u2083 = asin(1/6) = asin(\u03b1_leak/\u221a(2\u00b7n_gen)) \u2248 9.59\u00b0",
-      "diagnostic": "rel_err=98.25%"
+      "rel_error": 3.7030314927863304e-16,
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(180.0), eml_pi()), ops.asin(ops.div(eml_scalar(1.0), eml_scalar(6.0)))) \u2014 \u03b8\u2081\u2083 = (180/\u03c0)\u00b7asin(1/6) = (180/\u03c0)\u00b7asin(\u03b1_leak/\u221a(2\u00b7n_gen)) \u2248 9.59\u00b0 [FALSIFIED: ~9\u03c3 from NuFIT 8.57\u00b0\u00b10.11\u00b0]"
     },
     {
       "path": "neutrino.theta13_sigma",
@@ -3837,30 +3835,27 @@
     },
     {
       "path": "neutrino.theta_12_pred",
-      "status": "DISAGREE",
-      "evaluated": 0.5862560957448946,
+      "status": "AGREE",
+      "evaluated": 33.59329049922624,
       "registered": 33.59329049922625,
-      "rel_error": 0.982548417048982,
-      "eml_description": "EML: ops.mul(eml_scalar(33.59), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
-      "diagnostic": "rel_err=98.25%"
+      "rel_error": 2.115132888742965e-16,
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(180.0), eml_pi()), ops.asin(ops.mul(ops.inv(ops.sqrt(eml_scalar(3.0))), ops.add(eml_scalar(1.0), ops.neg(ops.div(ops.sub(eml_vec('topology.elder_kads'), ops.mul(eml_vec('topology.b2'), eml_vec('topology.n_gen'))), ops.mul(eml_scalar(2.0), eml_vec('topology.mephorash_chi')))))))) \u2014 \u03b8\u2081\u2082 = (180/\u03c0)\u00b7arcsin[(1/\u221a3)(1\u2212(b\u2083\u2212b\u2082n_gen)/2\u03c7)] in degrees"
     },
     {
       "path": "neutrino.theta_13_pred",
-      "status": "DISAGREE",
-      "evaluated": 0.15097098029750933,
+      "status": "AGREE",
+      "evaluated": 8.64730472533886,
       "registered": 8.647304725338865,
-      "rel_error": 0.9825412674708773,
-      "eml_description": "EML: ops.mul(eml_scalar(8.65), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
-      "diagnostic": "rel_err=98.25%"
+      "rel_error": 6.162695414890585e-16,
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(180.0), eml_pi()), ops.asin(ops.mul(ops.div(ops.sqrt(ops.mul(eml_vec('topology.b2'), eml_vec('topology.n_gen'))), eml_vec('topology.elder_kads')), ops.add(eml_scalar(1.0), ops.div(eml_vec('topology.orientation_sum'), ops.mul(eml_scalar(2.0), eml_vec('topology.mephorash_chi'))))))) \u2014 \u03b8\u2081\u2083 = (180/\u03c0)\u00b7arcsin[\u221a(b\u2082n_gen)/b\u2083\u00b7(1+S/2\u03c7)] in degrees"
     },
     {
       "path": "neutrino.theta_23_pred",
-      "status": "DISAGREE",
-      "evaluated": 0.8683013028671781,
+      "status": "AGREE",
+      "evaluated": 49.75,
       "registered": 49.75,
-      "rel_error": 0.9825467074800567,
-      "eml_description": "EML: ops.mul(eml_scalar(49.75), ops.div(eml_pi(), eml_scalar(180.0))) \u2014 CALIBRATED to NuFIT 6.0",
-      "diagnostic": "rel_err=98.25%"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.add(eml_scalar(45.0), ops.add(ops.div(ops.mul(ops.sub(eml_vec('topology.b2'), eml_vec('topology.n_gen')), eml_vec('topology.n_gen')), eml_vec('topology.b2')), ops.mul(ops.div(eml_vec('topology.orientation_sum'), eml_vec('topology.elder_kads')), ops.div(ops.mul(eml_vec('topology.b2'), eml_vec('topology.mephorash_chi')), ops.mul(eml_vec('topology.elder_kads'), eml_vec('topology.n_gen')))))) \u2014 \u03b8\u2082\u2083 = 45\u00b0+(b\u2082\u2212n)n/b\u2082+(S/b\u2083)(b\u2082\u03c7/b\u2083n) in degrees"
     },
     {
       "path": "nufit.delta_CP",
@@ -4088,12 +4083,11 @@
     },
     {
       "path": "physics.cabibbo_angle",
-      "status": "DISAGREE",
-      "evaluated": 0.20556893116117386,
+      "status": "AGREE",
+      "evaluated": 11.778232154550624,
       "registered": 11.778232154550615,
-      "rel_error": 0.9825467074800567,
-      "eml_description": "EML: ops.arcsin(ops.sqrt(ops.inv(eml_scalar(24.0)))) \u2014 \u03b8_C = arcsin(1/\u221a24) from torsion pin geometry",
-      "diagnostic": "rel_err=98.25%"
+      "rel_error": 7.540846606228341e-16,
+      "eml_description": "EML: ops.mul(ops.div(eml_scalar(180.0), eml_pi()), ops.asin(ops.sqrt(ops.inv(eml_scalar(24.0))))) \u2014 \u03b8_C = (180/\u03c0)\u00b7arcsin(1/\u221a24) in degrees from torsion pin geometry"
     },
     {
       "path": "physics.g_residue",
@@ -4981,12 +4975,11 @@
     },
     {
       "path": "topology.critical_dim",
-      "status": "DISAGREE",
-      "evaluated": 27.0,
+      "status": "AGREE",
+      "evaluated": 26.0,
       "registered": 26.0,
-      "rel_error": 0.038461538461538464,
-      "eml_description": "EML: ops.add(eml_scalar(26.0), eml_scalar(1.0)) \u2014 bosonic critical dimension 26 plus timelike fiber = 27 total (or ops.add(b3, eml_scalar(2)) = 26 for the bosonic string)",
-      "diagnostic": "rel_err=3.85%"
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.add(eml_vec('topology.elder_kads'), eml_scalar(2.0)) \u2014 D_crit = b\u2083+2 = 24+2 = 26; note D_crit=26 withdrawn under the (24,2) ruling (see OUTSTANDING_ISSUES \u00a71.12)"
     },
     {
       "path": "topology.d_over_R",

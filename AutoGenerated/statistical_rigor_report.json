@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-09-04T17:19:11.817987",
+  "test_date": "2026-09-04T18:20:56.504534",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
@@ -157,24 +157,24 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        12.988191426747232,
-        5.363440135391203,
-        4.930044720121768,
-        4.894825379546493,
-        4.645967948703457,
-        4.589223675653875,
-        4.343101896355343,
-        4.315986247951081,
-        4.143192274361027,
-        4.113438756836946
+        12.745906267253453,
+        5.16271180372309,
+        5.064707904058637,
+        4.9251144538213705,
+        4.570496670545428,
+        4.520503675032943,
+        4.381379742610816,
+        4.360581575744785,
+        4.291221830058925,
+        4.047516600393093
       ],
-      "condition_number": 8.42284068513555,
+      "condition_number": 7.186209292462327,
       "p_value": 0.0,
       "chi_squared": 126748.85737558578,
       "degrees_of_freedom": 65,
       "effective_dof": 3,
       "rigor_status": "POOR_FIT",
-      "dimensions_for_95_variance": 21,
+      "dimensions_for_95_variance": 22,
       "interpretation": {
         "full_rank": true,
         "independent_residues": true,
@@ -281,28 +281,28 @@
     "redundancy_pairs": [
       [
         0,
-        12,
-        0.9904192195963217
-      ],
-      [
-        0,
         24,
-        0.9990477008898508
-      ],
-      [
-        0,
-        36,
-        0.9906342919781
-      ],
-      [
-        0,
-        48,
-        0.9936204916337563
+        0.9951044266485783
       ],
       [
         1,
-        13,
-        0.9915507555616184
+        37,
+        0.995439815090124
+      ],
+      [
+        2,
+        14,
+        0.9930652285835772
+      ],
+      [
+        2,
+        38,
+        0.9910194205926152
+      ],
+      [
+        2,
+        50,
+        0.9956031348393727
       ]
     ]
   },
