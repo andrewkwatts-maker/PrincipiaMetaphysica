@@ -934,3 +934,154 @@ Carlo, and quantities built from operands the framework never computes
 (`Vol_bridge`, `Vol_spinor`, `R_kk`, `M_5`, `g_s`, three unregistered
 potentials). Absence of an `eml_description` is the withholding mechanism; a
 non-`EML:` string is reported as a malformed expression instead.
+
+---
+
+## 2026-09-05 (second pass) — three open problems closed from the literature
+
+Counters held at zero throughout (phantom 0, silent defaults 0, EML strict 1.0,
+580 AGREE). 1710 tests pass. Three Tier 1 items move, and one silent artifact
+bug was found while doing it.
+
+### C1. Vol(X₇) is derivable — the placeholder is retired (closes part of 1.6g / the G₂-volume gap)
+
+The G₂ volume was a 1.0 placeholder declared by ten formulas across five
+modules. It is not unknown: **standard M-theory on a G₂ manifold determines
+it from α_GUT**, and the relations are textbook (Friedmann & Witten
+[hep-th/0211269](https://arxiv.org/abs/hep-th/0211269); Acharya–Kane–Kumar,
+[arXiv:1204.2795](https://arxiv.org/abs/1204.2795)):
+
+- Non-abelian gauge fields localise on three-cycles, and the coupling **is**
+  the cycle volume: `4π/g² = 1/α = Vol(Q)`. So
+  **`geometry.associative_3cycle_volume` = 1/α_GUT = 24.3** — the path the
+  SU(3) reduction declared and no registry held.
+- Vol(X₇) is homogeneous of degree 7/3 in the moduli, so
+  **`topology.vol_v7` = α_GUT^(−7/3) = 1710.3** in eleven-dimensional Planck
+  units.
+
+**The check that could have failed.** Eliminating M₁₁ between
+`M_GUT ~ M₁₁ α^(1/3)` and `M_Pl² ~ V₇ M₁₁²` predicts the reduced Planck mass
+from α_GUT and M_GUT alone — both registered independently of it:
+
+    M_Pl ~ M_GUT · α_GUT^(−1/3) · √V₇  =  2.516e18 GeV
+    registered geometry.M_star          =  2.435e18 GeV
+    validation.mpl_from_gut_ratio       =  1.0330   (3.3%)
+
+on a relation carrying dropped order-one factors. This is the framework's
+first Planck-mass statement with content: `geometry.m_planck_4d` is the
+reduced mass times √(8π), a unit conversion whose 0.26σ PASS is an identity.
+
+Consequence: `validation.phi_g2` = Vol(X₇)·χ/b₃ moves **6 → 10262**. The old
+6 was χ/b₃ with an invisible factor of one.
+
+This does **not** rescue `holonomy-volume-constraint`, whose own two steps
+disagree (its H₀ bridge inverts to exponent 2, the next step asserts 7) and
+which gives ~10¹⁸³. That formula is superseded, not repaired.
+
+### C2. wₐ is not free — thawing forces a band (closes 1.3)
+
+Register 1.3 recorded wₐ = −1/√b₃ as "admitted leading-order" with no
+derivation. There is one, and it is a published criterion, not new physics.
+**Caldwell & Linder (2005), "The Limits of Quintessence"**
+([astro-ph/0505494](https://arxiv.org/abs/astro-ph/0505494)) show thawing
+models occupy a narrow wedge of the w–w′ plane, `(1+w) ≤ w′ ≤ 3(1+w)`
+(confirmed independently in
+[MNRAS 420, 1309](https://academic.oup.com/mnras/article/420/2/1309/984332),
+which attributes it to Caldwell & Linder and calls it the LC bound). In CPL,
+w′ at a = 1 is exactly −wₐ, so
+
+    (1 + w₀) ≤ −wₐ ≤ 3(1 + w₀)
+
+This framework's w₀ = −(b₃−1)/b₃ gives **1 + w₀ = 1/b₃ exactly**, so the wedge
+collapses to a pure statement about b₃:
+
+    wₐ ∈ [ −3/b₃, −1/b₃ ] = [−0.125, −0.0417]
+
+That is zero-parameter and derived. **The registered wₐ is outside it.**
+−1/√b₃ = −0.2041 exceeds the upper limit by 1.63×; the retired −4/√b₃ =
+−0.8165 misses by 6.5×; wₐ = 0 fails the other end. The module named
+*thawing*, which registers `cosmology.wa_thawing`, does not satisfy the
+published definition of thawing.
+
+**Recorded, not repaired, and deliberately so:** every point in the band is
+*further* from DESI DR2 (−0.86 ± 0.22) than the present value — 3.34σ at the
+band edge −3/b₃ against 2.98σ now. Deriving wₐ correctly makes the tension
+worse, which is exactly why the choice must not be made to improve a number.
+Now registered as `cosmology.wa_thawing_band_min` / `_max` /
+`cosmology.wa_in_thawing_band` (= 0).
+
+### C3. The S₈ friction onset cannot be a modulus (closes the open problem in 1.4)
+
+Register 1.4 asked for the friction onset to be derived, noting only
+z ≈ 3–4 recovers a weak-lensing-friendly S₈. The onset condition is standard:
+a field frozen by Hubble friction rolls when `3H(z) = m_φ`. Run it backwards:
+
+| field mass | z at which it starts oscillating |
+|---|---|
+| 1 TeV (light SUSY modulus) | ~3 × 10²² |
+| 30 TeV (BBN-safe floor) | ~2 × 10²³ |
+| needed for S₈ (z ≈ 3–4) | m ≈ 2–3 × 10⁻³² eV ≈ 15 H₀ |
+
+A string modulus starts oscillating **twenty-two orders of magnitude** before
+the window S₈ needs. The field that switches on at z ≈ 3–5 has a
+quintessence mass, not a modulus mass. This is consistent with
+`moduli_dm_coupling.py`'s own numerical verdict that multiplying the moduli
+coupling by 8 moves S₈ by 0.2% — **the moduli coupling was never the relevant
+knob**, which is why no amount of tuning it worked.
+
+**And the framework already has the right field.** Applying the same onset
+condition at the registered `cosmology.z_thaw` = √b₃ = 4.899 gives
+
+    m_φ / H₀ = 3 E(√b₃) = 24.25   =   b₃ to 1.05%
+
+So `z_thaw = √b₃` and `m_φ = b₃·H₀` are the same statement, and the second is
+the physical one — falsifiable, in natural units, comparable across sectors.
+Registered as `cosmology.m_phi_over_H0`. If the S₈ suppression is real, the
+field responsible is the dark energy scalar and the two sectors are one
+sector. Wiring S₈ to it is a physics ruling and is not taken here.
+
+### C4. b₃ = 24 is incompatible with a twisted connected sum, and that is fine
+
+The register's stated obstruction — "Crowley–Nordström forces b₂ + b₃ odd for
+any TCS" — is not what the literature says, and the actual constraint is
+different and sharper. Crowley–Nordström's ν is a **Z/48 invariant** defined
+from the signature and Euler characteristic of a Spin(7) coboundary, and for
+**every** TCS G₂-manifold ν = 24
+([1211.0269](https://arxiv.org/abs/1211.0269),
+[Nordström's survey](https://sites.duke.edu/scshgap/files/2016/09/nordstrom_v3.pdf)).
+It says nothing about b₂ + b₃ parity.
+
+What *does* bite: TCS manifolds built from pairs of Fano 3-folds satisfy
+**71 ≤ b₃ ≤ 155**. b₃ = 24 is far below that floor, so the framework's b₃
+cannot come from that construction at all — a cleaner exclusion than the
+parity claim.
+
+The escape is already in the literature and already half-recorded here.
+Joyce's orbifold resolutions of T⁷/Γ span **b₂ ∈ [0, 28] and b₃ ∈ [4, 215]**,
+with 252 distinct (b₂, b₃) pairs among simply-connected examples
+([1810.12659](https://arxiv.org/abs/1810.12659)), and Joyce examples can have
+odd ν where TCS cannot. **(b₂, b₃) = (4, 24) lies inside the Joyce ranges.**
+
+→ **Action for the author:** the framework should drop the TCS framing and
+state Joyce orbifold resolution as the construction. The parity claim in
+Tier 1/Phase 6 should be corrected to the b₃ ≥ 71 exclusion, which is the
+real one. This does not by itself exhibit a manifold with (4, 24) — the
+ranges being compatible is necessary, not sufficient — so the item stays open,
+but it is open for a different and much narrower reason than recorded.
+
+### C5. A progress message was deleting fourteen parameters
+
+Found while checking C1. `registry.py`'s v25/v26 module loaders print
+`[OK] <module>: <keys>` after each load. On a cp1252 console a parameter key
+containing a non-ASCII character raised `UnicodeEncodeError` **inside that
+print**; the exception escaped `_try`, escaped `load_v26_modules`, and hit the
+caller's `except Exception`, which reported it as *"v26.0 module loading
+failed"* — silently dropping the four modules after it and fourteen registry
+parameters, the whole `cosmological_tensions` block among them
+(`S8_baseline`, `S8_resolved`, `H0_baseline_km_s_Mpc`,
+`S8_tension_remaining_sigma`, `H0_tension_remaining_sigma`).
+
+The build happened to run under a UTF-8 stream and carried them; a bare
+`run_all_simulations` did not. **The two artifact copies silently disagreed by
+fourteen parameters** — 731 against 745 — and nothing compared them. Progress
+output now degrades to a readable approximation instead of propagating.

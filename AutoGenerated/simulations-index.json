@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-05T09:33:48.369174Z",
+  "generated_at": "2026-09-05T10:15:14.313256Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
   "total_scripts": 274,
@@ -396,6 +396,7 @@
           "parameters_contributed": [
             "cosmology.D_eff",
             "cosmology.alpha_shadow",
+            "cosmology.m_phi_over_H0",
             "cosmology.thawing_validated",
             "cosmology.torsional_leakage",
             "cosmology.w0_desi_sigma",
@@ -403,7 +404,10 @@
             "cosmology.w0_thawing",
             "cosmology.w0_validation",
             "cosmology.wa_desi_sigma",
+            "cosmology.wa_in_thawing_band",
             "cosmology.wa_thawing",
+            "cosmology.wa_thawing_band_max",
+            "cosmology.wa_thawing_band_min",
             "cosmology.z_thaw"
           ]
         },
@@ -416,12 +420,16 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "cosmology.m_phi_over_H0",
             "cosmology.thawing_validated",
             "cosmology.torsional_leakage",
             "cosmology.w0_desi_sigma",
             "cosmology.w0_thawing",
             "cosmology.wa_desi_sigma",
+            "cosmology.wa_in_thawing_band",
             "cosmology.wa_thawing",
+            "cosmology.wa_thawing_band_max",
+            "cosmology.wa_thawing_band_min",
             "cosmology.z_thaw"
           ]
         },
@@ -1279,7 +1287,10 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "geometry.associative_3cycle_volume",
+            "geometry.m11_scale",
             "topology.vol_v7",
+            "validation.mpl_from_gut_ratio",
             "validation.phi_g2",
             "validation.sum_rule_result",
             "validation.sum_rule_tolerance",

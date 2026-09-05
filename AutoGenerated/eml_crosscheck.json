@@ -1,9 +1,9 @@
 {
-  "total": 739,
-  "with_eml_description": 606,
-  "skip": 165,
+  "total": 746,
+  "with_eml_description": 612,
+  "skip": 166,
   "buckets": {
-    "AGREE": 574
+    "AGREE": 580
   },
   "errors": 0,
   "ambiguous_short_names": [
@@ -38,7 +38,7 @@
   "agreement_rate_strict": 1.0,
   "agreement_rate_loose": 1.0,
   "eml_option_withheld": 15,
-  "eml_option_offered": 592,
+  "eml_option_offered": 598,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -1287,6 +1287,14 @@
       "eml_description": "EML: ops.div(eml_scalar(3.08e-5), ops.mul(eml_scalar(2.0), ops.sub(eml_vec('topology.elder_kads'), eml_scalar(14.0)))) \u2014 k_bary = J / N_eff with N_eff = 2(b3 - 14) = 20. J is the module's own literal 3.08e-5 (PDG 2024); it is NOT pdg.J_ckm (3.12e-5) nor the framework's computed ckm.jarlskog_invariant (2.915e-5), and the three do not agree. The former string named bare J_jarlskog, which is not a registry path."
     },
     {
+      "path": "cosmology.m_phi_over_H0",
+      "status": "AGREE",
+      "evaluated": 24.25102852917122,
+      "registered": 24.251028529171226,
+      "rel_error": 2.9299488675517337e-16,
+      "eml_description": "EML: ops.mul(eml_scalar(3.0), ops.sqrt(ops.add(ops.mul(eml_vec('geometry.Omega_matter'), ops.pow(ops.add(eml_scalar(1.0), eml_vec('cosmology.z_thaw')), eml_scalar(3.0))), ops.sub(eml_scalar(1.0), eml_vec('geometry.Omega_matter'))))) \u2014 m_phi/H0 = 3E(z_thaw), the onset condition 3H = m_phi"
+    },
+    {
       "path": "cosmology.mirror_weight",
       "status": "AGREE",
       "evaluated": 0.0,
@@ -1584,6 +1592,22 @@
       "registered": -0.8164965809277261,
       "rel_error": 4.0792198665315547e-16,
       "eml_description": "EML: ops.mul(ops.neg(ops.inv(ops.sqrt(eml_scalar(24)))), eml_scalar(4)) \u2014 4-form projection"
+    },
+    {
+      "path": "cosmology.wa_thawing_band_max",
+      "status": "AGREE",
+      "evaluated": -0.04166666666666663,
+      "registered": -0.04166666666666663,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.neg(ops.add(eml_scalar(1.0), eml_vec('cosmology.w0_thawing'))) \u2014 wa <= -(1+w0) = -1/b3, the Caldwell-Linder thawing lower wedge"
+    },
+    {
+      "path": "cosmology.wa_thawing_band_min",
+      "status": "AGREE",
+      "evaluated": -0.12499999999999986,
+      "registered": -0.12499999999999989,
+      "rel_error": 2.220446049250315e-16,
+      "eml_description": "EML: ops.neg(ops.mul(eml_scalar(3.0), ops.add(eml_scalar(1.0), eml_vec('cosmology.w0_thawing')))) \u2014 wa >= -3(1+w0) = -3/b3, the Caldwell-Linder thawing upper wedge"
     },
     {
       "path": "cosmology.z_thaw",
@@ -2336,6 +2360,14 @@
       "eml_description": "EML: ops.sub(eml_scalar(1.0), ops.div(eml_scalar(1.0), ops.pow(eml_vec('elder_kads'), eml_scalar(2.0)))) \u2014 BRST anomaly correction (1 - 1/b\u2083\u00b2) \u2248 0.998264"
     },
     {
+      "path": "geometry.associative_3cycle_volume",
+      "status": "AGREE",
+      "evaluated": 24.3,
+      "registered": 24.3,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.inv(eml_vec('geometry.alpha_gut')) \u2014 Vol(Q) = 1/alpha_GUT, the gauge three-cycle volume"
+    },
+    {
       "path": "geometry.c_kaf",
       "status": "AGREE",
       "evaluated": 27.200000000000017,
@@ -2556,6 +2588,14 @@
       "registered": 1314.8335055546956,
       "rel_error": 0.0,
       "eml_description": "EML: ops.mul(eml_vec('topology.elder_kads'), ops.log(eml_scalar(6.204484017332394e23))) \u2014 landscape entropy S = b\u2083 ln(b\u2083!) = 24 ln(24!) = 1314.8335. The operand is 24! written out: EML has no factorial node, and landscape_factorial_b3 was a name no registry held, so the row scored against a substituted value"
+    },
+    {
+      "path": "geometry.m11_scale",
+      "status": "AGREE",
+      "evaluated": 6.082583123015438e+16,
+      "registered": 6.082583123015467e+16,
+      "rel_error": 4.734830485263023e-15,
+      "eml_description": "EML: ops.div(eml_vec('geometry.M_GUT_geometric'), ops.pow(eml_vec('geometry.alpha_gut'), ops.div(eml_scalar(1.0), eml_scalar(3.0)))) \u2014 M_11 = M_GUT / alpha_GUT^(1/3)"
     },
     {
       "path": "geometry.m_KK",
@@ -4615,10 +4655,10 @@
     {
       "path": "topology.vol_v7",
       "status": "AGREE",
-      "evaluated": 1.0,
-      "registered": 1.0,
-      "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(1.0) \u2014 placeholder; no G2 volume is derived anywhere in the framework"
+      "evaluated": 1710.3354801473326,
+      "registered": 1710.3354801473358,
+      "rel_error": 1.861173724777686e-15,
+      "eml_description": "EML: ops.pow(eml_vec('geometry.alpha_gut'), ops.neg(ops.div(eml_scalar(7.0), eml_scalar(3.0)))) \u2014 V7 = alpha_GUT^(-7/3), the G2 volume from M-theory moduli scaling"
     },
     {
       "path": "triality.associative_dimension",
@@ -4810,12 +4850,20 @@
       "eml_description": "EML: eml_scalar(3) \u2014 count of predictions within 0.1\u03c3 theory uncertainty (exact matches)"
     },
     {
+      "path": "validation.mpl_from_gut_ratio",
+      "status": "AGREE",
+      "evaluated": 1.0329925407517278,
+      "registered": 1.0329925407517322,
+      "rel_error": 4.299055340001669e-15,
+      "eml_description": "EML: ops.div(ops.mul(ops.mul(eml_vec('geometry.M_GUT_geometric'), ops.pow(eml_vec('geometry.alpha_gut'), ops.neg(ops.div(eml_scalar(1.0), eml_scalar(3.0))))), ops.sqrt(ops.pow(eml_vec('geometry.alpha_gut'), ops.neg(ops.div(eml_scalar(7.0), eml_scalar(3.0)))))), eml_vec('geometry.M_star')) \u2014 predicted M_Pl over registered M_star"
+    },
+    {
       "path": "validation.phi_g2",
       "status": "AGREE",
-      "evaluated": 6.0,
-      "registered": 6.0,
-      "rel_error": 0.0,
-      "eml_description": "EML: ops.div(ops.mul(eml_scalar(1.0), eml_vec('topology.mephorash_chi')), eml_vec('topology.elder_kads')) \u2014 Phi_G2 = Vol(V7) chi / b3. NOTE: topology.vol_v7 is in no registry, so the module default Vol(V7) = 1.0 always fires and Phi_G2 is 144/24 = 6 -- the volume factor is written as the literal it actually is rather than as a reference that would silently resolve to zero."
+      "evaluated": 10262.012880884,
+      "registered": 10262.012880884015,
+      "rel_error": 1.4180371236401416e-15,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('topology.vol_v7'), eml_vec('topology.mephorash_chi')), eml_vec('topology.elder_kads')) \u2014 Phi_G2 = Vol(X7)\u00b7chi/b3. The volume is now a real registry reference: it used to be written as the literal eml_scalar(1.0) because topology.vol_v7 was in no registry and the module default always fired."
     },
     {
       "path": "validation.predictions_within_1sigma",
