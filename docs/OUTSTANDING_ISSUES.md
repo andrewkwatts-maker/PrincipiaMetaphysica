@@ -1212,3 +1212,102 @@ patch), the Cabibbo angle at 2.79σ, the neutrino mass sum's dependence on the
 unresolved GUT-scale ruling, the w₀ anchor published two ways, the 4040
 written as 400 × 10.1, the three sin²θ_W, and b₂ = 0 in `appendix_p` against
 b₂ = 4 in `topology.b2`.
+
+---
+
+## 2026-09-06 (addendum) — the arithma track was never running
+
+The dependency artifact recorded **`arithma_available: false`**, and the one
+test that would have caught it sat *behind that flag*:
+
+```python
+    if d.get("arithma_available"):
+        assert d["degraded_walks"] == 0
+```
+
+Both halves of that were wrong. `arithma` imported fine; what failed was every
+arithma **expression**. So the flag was false, the assertion never ran, and
+the consequences were invisible:
+
+* **Zero of 422 formulas carried an arithma tree.** Every walk fell through to
+  the degraded fallback — a substring scan of the human-written `latex` field
+  for `"b3"`.
+* **`b3_rooted_count = 367` was measured by scanning prose.** It is now 350,
+  measured structurally. All 17 of the difference turn out to contain no b₃
+  whatever:
+
+  | formula | its actual arithma tree |
+  |---|---|
+  | `generation-theorem` | `3 × 8` |
+  | `c37cp-strong-cp-lock` | `0` |
+  | `gauge-unification-sum` | `0` |
+  | `cabibbo-angle-geometric` | `0` |
+  | `higgs-effective-potential-v19` | `0` |
+
+  This is the 2026-09-04 ratchet lesson in a new place: **making the edges real
+  shows which ones were never there.** The floor was lowered once, against a
+  named cause; below 350 is a genuine regression.
+
+### What was actually broken
+
+Four separate defects, each of which alone would have silenced the track:
+
+1. **`from_f64` used a saturating fixed-scale rational** (§A of the previous
+   entry). `1.9e-93 → 0.0`, `4.757e34 → 9.2e9`.
+2. **The integer fast-path used an absolute epsilon.**
+   `(f - rounded).abs() <= f64::EPSILON * f.abs().max(1.0)` — the `.max(1.0)`
+   makes the tolerance an absolute 2.22e-16 for every |f| < 1, so anything
+   smaller matched `rounded == 0.0` and was returned as the **integer zero**.
+   1.9e-93 never reached the rational path at all.
+3. **`to_f64` read a capped 32-byte prefix** of an arbitrary-precision
+   magnitude. `2^360` has one set bit 45 bytes up, so its low 32 bytes are all
+   zero and it converted to `0.0` — and it is the denominator of every small
+   float. The cap was justified as keeping the loop finite; `value.len()` was
+   already finite, so it only bounded correctness.
+4. **`Expression.constant(name)` no longer consults the environment.** A
+   constant now carries its own cached value, so `constant("b3")` raised
+   *"constant 'b3' has no cached value"*. These symbols are bound by the
+   evaluation environment, which makes them **variables**; and `triple_assert`
+   now seeds that environment from the same SSoT `FormulasRegistry` the EML
+   `b3_leaf()` reads, so both tracks stand on the same footing.
+
+Fixed in `H:/Github/Arithma` (1, 2, 3) and in this repo (4). The Arithma
+changes are **left uncommitted** — that repo has substantial unrelated work in
+progress in the same file, and committing `integer.rs` wholesale would sweep
+it in. 507 Rust tests pass, including four new ones pinning losslessness.
+
+### The design point that shaped the fix
+
+Arithma exists to be **lossless**, so `from_f64` now builds the exact rational
+with a **decimal** denominator, taken from the shortest decimal string that
+round-trips to `f`:
+
+```text
+    0.1   ->  1 / 10                    (not 3602879701896397 / 2^55)
+    0.3   ->  3 / 10
+    pi    ->  3141592653589793 / 10^15
+```
+
+Both forms are exact and both round-trip; they differ in what they say the
+number *is*. The binary form is the literal content of the 64 bits but is not
+the number anyone wrote, and it makes every denominator a power of two that
+never cancels against a decimal one. There is no scale constant and no range
+limit beyond the arbitrary-precision integer.
+
+### And a walker bug the working trees exposed
+
+The two compact dialects order the pair the opposite way round —
+EML `[label, kind]` (`["b3_leaf","c"]`), arithma `[kind, label]`
+(`["var","b3"]`) — and the walker only understood the first. Harmless while no
+arithma tree existed; with 169 of them it read `["var","b3"]` as
+`label="var"` and found b₃ in none. Now it reads both.
+
+### Status
+
+All simulations pass. phantom 0, silent defaults 0, EML strict 1.0 over 580
+rows, validation unchanged at 180 rows. The remaining 12 degraded walks are
+the 12 formulas that declare no symbolic expression in **either** dialect —
+the Jordan-algebra, E7/E8 and Clifford constructions already withheld from the
+EML cross-check for the same reason. That is an honest floor, and the test now
+pins those 12 by name rather than asserting a zero that a package install was
+never going to deliver.
