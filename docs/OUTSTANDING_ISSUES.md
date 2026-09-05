@@ -1085,3 +1085,130 @@ The build happened to run under a UTF-8 stream and carried them; a bare
 `run_all_simulations` did not. **The two artifact copies silently disagreed by
 fourteen parameters** — 731 against 745 — and nothing compared them. Progress
 output now degrades to a readable approximation instead of propagating.
+
+---
+
+## 2026-09-06 — state assessment, and a comparison of the routes to closure
+
+### A. A dependency was silently rewriting the physics
+
+The build went green → nine failing simulations → 37 failing tests with **no
+change to any physics file**. Cause: `arithma`, which backs one of the three
+tracks of the triple-track guard, was **not declared in `pyproject.toml` at
+all** — an entire computation track resting on whatever happened to be
+installed.
+
+The installed 2.0.4 converts every non-integer float to a **fixed-scale i64
+rational** (`from_f64`, `rust/arithma_core/src/expression/mod.rs:271`):
+
+| |f| | scale | usable range |
+|---|---|---|
+| < 9000 | 1e15 | [1e-15, 9.2e3] |
+| ≥ 9000 | 1e9 | [1e-9, 9.2e9], then **saturates** |
+
+Measured: `1.9e-93 → exactly 0.0`, `4.757e34 → 9223372036.854776` (= i64::MAX
+/ 1e9). The framework spans **1.9e-93 (portal-dm-cross-section-v23) to 4.8e34
+(proton-lifetime) — about 128 decades**. No fixed scale covers that: an i64
+rational carries ~19 significant decimal digits wherever the point is put.
+The in-flight source change from 1e9 to 1e15 *improves precision* for small
+values and *lowers* the ceiling from 9.2e9 to 9.2e3; it does not address the
+range.
+
+Two things are worth recording about how this surfaced:
+
+* **The triple-track guard did exactly its job.** Nothing was silently wrong —
+  nine simulations failed loudly, printing the expected and arithma values
+  side by side. This is the argument for redundant computation, and it is why
+  the tolerances must **not** be relaxed to make it pass. The affected values
+  would then be published as zero.
+* **It would have been invisible otherwise.** A numeric backend that returns
+  `0.0` instead of `1.9e-93` does not raise.
+
+Fixed: `arithma>=2.0.1,<2.0.3` is now declared with the measurement as its
+justification, and `tests/test_arithma_dynamic_range.py` states the
+requirement as a property of the library, so a future swap is diagnosed
+rather than rediscovered. The unary helpers were also made API-agnostic —
+2.0.4 turned `sqrt`/`exp`/`ln`/`sin`/`cos` into staticmethods, so `a.sqrt()`
+raised; `Expression.sqrt(a)` is correct on both shapes.
+
+### B. What the state of the theory actually is
+
+With the counters at zero, the framework's remaining content can be stated
+plainly, and the plain statement is uncomfortable:
+
+**Almost every headline is a ratio of small integers drawn from
+{2, 3, 4, 6, 8, 12, 24, 144}, and the predictions are far more sensitive to
+*which* integer is chosen than to any of the physics around it.**
+
+That is now measured rather than asserted. Running the framework's own
+functional form `w₀ = −(n−1)/n` over its own structural integers, scored by
+its own DE-plane gate across the full ρ scan:
+
+| n | origin | w₀ | 2D distance (ρ ∈ [−0.9, −0.6]) |
+|---|---|---|---|
+| 24 | b₃ — **adopted** | −0.9583 | **3.21 – 3.52 σ** |
+| 12 | bridges | −0.9167 | 2.48 – 2.75 σ |
+| 8 | dim 𝕆 | −0.8750 | 1.78 – 1.98 σ |
+| 6 | χ_eff/b₃ | −0.8333 | 1.17 – 1.24 σ |
+| **4** | **b₂ = h¹¹ = faces** | **−0.7500** | **0.25 – 0.74 σ** |
+| 3 | E₈ blocks = n_gen | −0.6667 | 1.01 – 1.69 σ |
+
+A 3.3σ swing across choices the framework already contains. This is recorded
+as the `dark_energy_betti` fork (status **OPEN**, adopted option unchanged).
+
+**It is not a result and must not be promoted.** Six integers were scanned
+and two fit well; under the discipline the R1 θ₁₃ ruling established, that is
+not evidence for either. Only b₃ = 24 has a stated derivation. And b₂ = 4
+carries a specific objection from the framework's own moduli sector: b₂
+counts **Kähler** moduli, and all four of them
+(`geometry.face_moduli_T1..T4`) are racetrack-stabilised — a stabilised
+modulus cannot also be the rolling quintessence field.
+
+### C. Routes to closure, compared
+
+**Route 1 — Identify the quintessence field (axion vs Kähler modulus).**
+*Closes three Tier 1 items at once.* b₃ counts C₃ moduli (axions), b₂ counts
+Kähler moduli (saxions). Which drives quintessence fixes w₀, fixes the
+Caldwell–Linder band for wₐ, and via `m_φ = b₃H₀` fixes the S₈ friction onset.
+It is decidable by physics rather than by fit: an axion has a shift symmetry
+protecting the flat potential thawing requires; a Kähler modulus does not, and
+this framework has already stabilised its four. **Highest value per unit of
+work, and the only route that converts the integer scan into a derivation.**
+
+**Route 2 — Exhibit a Joyce manifold with (b₂, b₃) = (4, 24).**
+*Finite, decisive, and now the only structural blocker.* After the TCS
+correction (§C4 of the previous entry), the question is no longer "does a
+parity obstruction forbid it" but "is (4,24) among Joyce's 252 (b₂,b₃) pairs".
+Joyce's ranges — b₂ ∈ [0,28], b₃ ∈ [4,215] — admit it, but compatible ranges
+are necessary and not sufficient. **Not verified here**: the table is
+Joyce 1996 Table 2 (reproduced in Scaduto's ν-invariant paper), and neither
+source fetched was machine-readable. A yes makes the geometric foundation
+real; a no removes b₂ = 4 and the four-face structure with it, which would
+also settle Route 1 against `b2_4`.
+
+**Route 3 — Build outward from α_GUT rather than b₃ alone.**
+The M-theory volume result is the framework's only successful cross-sector
+prediction that is not an identity: α_GUT and M_GUT alone give the reduced
+Planck mass to 3.3%, and Vol(Q) = 1/α_GUT turned a declared-but-absent path
+into real geometry. α_GUT is doing work that b₃ is not. Extending this —
+deriving the gauge sector from cycle volumes rather than from integer ratios
+— is slower but each step is checkable against a relation that can fail.
+
+**Route 4 — Accept the DE sector as fitted and say so.**
+Named for completeness. It costs the framework's central claim (zero
+parameters) and should be the fallback, not the plan.
+
+**A caution that applies to Routes 1 and 4 equally.** The DR2 central
+wₐ = −0.86 lies **outside the Caldwell–Linder thawing wedge for every n ≥ 4**.
+If DR2 holds, thawing quintessence is disfavoured on its own terms regardless
+of which integer is adopted — so a route that only re-tunes n cannot succeed,
+and the framework would need a non-thawing dark energy sector.
+
+### D. Still open, unchanged
+
+θ₁₃ (no zero-parameter derivation survives the R1 enumeration; the live idea
+is modular flavour symmetry, which is a research programme rather than a
+patch), the Cabibbo angle at 2.79σ, the neutrino mass sum's dependence on the
+unresolved GUT-scale ruling, the w₀ anchor published two ways, the 4040
+written as 400 × 10.1, the three sin²θ_W, and b₂ = 0 in `appendix_p` against
+b₂ = 4 in `topology.b2`.
