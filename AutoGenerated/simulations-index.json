@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-04T22:32:08.824562Z",
+  "generated_at": "2026-09-05T03:55:57.540356Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
   "total_scripts": 274,
@@ -239,9 +239,11 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "consciousness.penrose_E_G_joules",
             "consciousness.penrose_tau_ms",
             "consciousness.shielded_tau_ms",
-            "consciousness.shielding_factor"
+            "consciousness.shielding_factor",
+            "consciousness.tau_base_ms"
           ]
         }
       ]
@@ -378,7 +380,8 @@
             "cosmology.brane_tension_5_2",
             "cosmology.breathing_mode_vev",
             "cosmology.epsilon_KK",
-            "cosmology.pneuma_components_4D"
+            "cosmology.pneuma_components_4D",
+            "gauge.so10_spinor_dim"
           ]
         },
         {
@@ -1219,6 +1222,7 @@
             "constants.phi",
             "dimensions.D_G2",
             "dimensions.D_bulk",
+            "dimensions.D_observable",
             "dimensions.D_physics",
             "framework.version",
             "framework.version_label",
@@ -1780,6 +1784,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "higgs.dt_splitting_ratio",
             "higgs.lambda_0",
             "higgs.lambda_eff_geometric",
             "higgs.lambda_eff_pheno",
@@ -2018,6 +2023,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "portals.alpha_leak_yukawa",
             "portals.sterile_mass_scale_gev",
             "portals.sterile_mixing_sin2_2theta",
             "portals.sterile_n_eff_contribution"
