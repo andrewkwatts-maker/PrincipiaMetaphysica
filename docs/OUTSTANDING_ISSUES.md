@@ -809,3 +809,128 @@ Ranking every test by discriminating power surfaced two systematic defects:
 - **`integrity.py` phantom certificates.** Formula 4.2 (certificate-validation)
   declared `certificates.tier1_status`, `tier2_status`, `tier3_status` as inputs;
   `CertificateStack` never registers these paths. Declarations removed.
+
+---
+
+## 2026-09-05 update — the seven counters reach zero, and what that exposed
+
+Phantom paths 37 → **0**, silent registry defaults 12 → **0**, EML ERROR 44 →
+**0**, DISAGREE 28 → **0**, DISAGREE_SCALE 1 → **0**, MISSING_CTX 53 → **0**,
+AGREE_LOOSE 5 → **0**. EML strict agreement **1.0** over 574 offered rows, 15
+withheld. 1710 tests pass, SSOT 100%.
+
+The counters were never the point. Each one was a place where a check could
+not fail, and clearing them is what made the underlying defects visible.
+
+### Rulings now required from the author
+
+1. **w₀ is published both ways, and now visibly so in one report.**
+   `cosmology.w0_derived` = −0.95833 scores **0.0199σ PASS** against
+   `DESI2025_thawing` (−0.957 ± 0.067), while `cosmology.w0_thawing` — *the
+   same number* — scores **3.6199σ FAIL** against `DESI2025` (−0.752 ± 0.057,
+   the DR2 w0waCDM headline). `established.py` records the thawing anchor's
+   attribution as UNVERIFIED and names `desi.w0` the primary scoring anchor.
+   One of these two rows has to go. Until it does the framework reports a
+   0.02σ agreement and a 3.6σ failure for one prediction, side by side.
+
+2. **`cosmology.H0_physical` PASSes at 0.021σ, and the PASS is manufactured.**
+   The chain is (125/288)/24 × 400 × 10.1 = 73.06 against SH0ES 73.04 ± 1.04.
+   Neither 400 nor 10.1 has a source, and **only their product 4040 enters the
+   arithmetic** — one fitted constant written as two, split into a "geometric"
+   factor and a "temporal" one so the result reads as a two-step derivation.
+   Recorded as DISTINCT in the disposition ledger on the R4 grounds. If either
+   factor can be sourced independently, this should become a MEMBER.
+
+3. **Three different sin²θ_W.** `electroweak_mixing.py` uses its own on-shell
+   0.22320; the registry carries `gauge.sin2_theta_w` = 0.23122 (PDG),
+   `gauge.sin2_theta_w_geometric` = 0.23190, and `gauge.sin2_theta_W_gut` =
+   0.375. g′ is derived from the first, which is registered nowhere.
+
+4. **b₂ = 0 versus b₂ = 4.** `appendix_p_g2_holonomy` asserts
+   `g2_holonomy.b2 == 0` ("b2 should be 0 for G2 manifolds") while
+   `topology.b2` = 4 carries the four-faces reading that Phase 4 and the whole
+   face-triangle proposal rest on. This is adjacent to the TCS obstruction
+   already recorded in Tier 1 and is not resolved by it.
+
+5. **Two G₂ volume conventions, differing by exactly χ/b₃.**
+   `geometry.V_G2` = 0.1667 is 1/6 = b₃/χ_eff to four figures, and
+   `topology.vol_v7` is registered at 1.0. The ratio is exactly the χ/b₃ = 6
+   that appears in Φ_G2 = Vol(V₇)·χ/b₃. That is consistent with one quantity
+   under two normalisations, but nothing states which is meant, so it is an
+   observation and not a reconciliation.
+
+6. **`cosmology.racetrack_Re_T` is CALIBRATED, and it closes η_B.** The source
+   comment reads "Re(T) = 7.086 chosen to match BBN baryon asymmetry
+   η_b ~ 6.1e-10". The moduli damping exp(−Re(T)) that closes
+   `cosmology.eta_baryon_geometric` was therefore fitted to a quantity it
+   helps predict. It was outside the registry entirely until now, so the
+   calibration was invisible to every audit.
+
+### Defects found by clearing the counters
+
+- **The published Ricci law was still the wrong one.** The code and the Rust
+  were corrected last cycle; `latex`, `plain_text`, the "analytic solution"
+  derivation step and the EML tree still shipped R₀exp(−z/τ) — the law that
+  solves a different ODE and underflows to exactly 0.0 at recombination. That
+  is what the site and the paper rendered.
+
+- **`cosmology.z_transition` was the integration bound.**
+  `_find_transition_redshift` took argmax|dH/dz| over a monotonically
+  steepening curve, so the answer was always the right edge of the grid:
+  10.0 / 20.0 / 50.0 for z_max = 10 / 20 / 50. The module docstring said
+  0.5–1.0 and the registry published 10.0; nothing compared them. Now the
+  second derivative: 0.5205 / 0.5205 / 0.5005 on those grids, agreeing to 1.4%
+  with τ = k_gimel/b₃ = 0.5133. A boundary answer now raises.
+
+- **`seal.bridge_pairs` could not fail.** It was read from the registry with
+  `default=12` *by the module that produces it*, so the read always missed,
+  the default always fired, and the check `bridge_pairs == 12` two lines later
+  was a tautology. It now reads `bridge.n_pairs`.
+
+- **The 288-root budget rested on hidden literals.** `torsion_per_shadow` and
+  `manifold_cost` were both `registry.get(path, default=12)` on paths no
+  registry held. Appendix H now runs before Appendix G — the appendices were
+  in alphabetical order, which is not a dependency order, and it never
+  mattered while the default was firing.
+
+- **`topology.vol_v7` is declared by ten formulas and derived by none.** Every
+  consumer received 1.0 from a default. Registered at that value as an ANSATZ
+  placeholder rather than at a fabricated volume:
+  `holonomy-volume-constraint`'s own two steps disagree (inverting its stated
+  H₀ bridge gives exponent 2, the next step asserts 7), and taken literally
+  the value is ~10¹⁸³. Φ_G2 = Vol(V₇)·χ/b₃ = 6 was χ/b₃ with an invisible 1.
+
+- **Three gauge couplings each declare a cycle volume that is computed
+  nowhere.** The reductions say α_s, g₂ and g′ are "locked by" the
+  associative, coassociative and residual abelian cycle volumes. No such
+  volume exists anywhere in the codebase.
+
+- **The η transformation phase π/12 was declared under two names and existed
+  under neither**, breaking the b₃ ≡ 0 mod 24 argument in both directions.
+
+- **A proton-decay quantity was inside a structure-growth formula.** The bare
+  operand `suppression_factor` bound to `proton_decay.suppression_factor`.
+
+- **`funnel.compression_ratio` does not depend on the pins.**
+  (roots/pins)/(active/pins) = roots/active: the 24-pin bottleneck it is
+  described as measuring cancels out.
+
+- **The silent-default audit was itself broken.** Its regex matched the
+  pattern inside comments explaining sites that had already been repaired, so
+  documenting a fix made the count go *up*. It now walks the AST.
+
+- **Two registry rows stored rounded numbers.** `round(compression, 2)`
+  published 2.3 for 288/125 = 2.304; `round(x, 1)` published 4.8 for 4.7574.
+  A rounded registry value can never be checked more tightly than its
+  rounding.
+
+### Fifteen parameters are withheld from the EML cross-check
+
+The line is drawn on **kind**, not on difficulty: boolean flags (the three
+`gauge.*_canonical` rows registered `True` while carrying a coupling formula —
+a number compared against a yes/no answer), tallies, version strings,
+reductions over indexed families, quadrature, ODE solutions, seeded Monte
+Carlo, and quantities built from operands the framework never computes
+(`Vol_bridge`, `Vol_spinor`, `R_kk`, `M_5`, `g_s`, three unregistered
+potentials). Absence of an `eml_description` is the withholding mechanism; a
+non-`EML:` string is reported as a malformed expression instead.

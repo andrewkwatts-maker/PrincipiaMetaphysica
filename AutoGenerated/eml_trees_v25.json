@@ -74,7 +74,7 @@
     "epsilon_L": {
       "b3_traceback": false,
       "formula": "CP-violating phase from G2 triple-cycle intersections: 0.01 * exp(-Re(T) / 100)",
-      "value": 0.0013533528323661271
+      "value": 0.001754624884408279
     },
     "eta_B": {
       "b3_traceback": true,
@@ -144,7 +144,7 @@
     "r": {
       "b3_traceback": true,
       "formula": "16 * epsilon where epsilon = 3 / (2*ReT^2) and ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24",
-      "value": 2.4e-11
+      "value": 0.000792406498244269
     }
   },
   "higgs_sector": {
@@ -271,7 +271,7 @@
     "ledger_summary": {
       "b3_traceback": false,
       "formula": "full registry audit + Bayesian Gaussian-prior scan (sigma=1%, N=1000)",
-      "value": 729
+      "value": 739
     },
     "status_count_eml_deferred": {
       "b3_traceback": false,
@@ -291,17 +291,17 @@
     "status_count_fully_derived": {
       "b3_traceback": false,
       "formula": "count of registry params classified as fully_derived",
-      "value": 552
+      "value": 521
     },
     "status_count_numerical_agreement": {
       "b3_traceback": false,
       "formula": "count of registry params classified as numerical_agreement",
-      "value": 94
+      "value": 134
     },
     "status_count_open_tension": {
       "b3_traceback": false,
       "formula": "count of registry params classified as open_tension",
-      "value": 12
+      "value": 13
     }
   },
   "soft_susy_breaking": {

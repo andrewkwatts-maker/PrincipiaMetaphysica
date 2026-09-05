@@ -4,14 +4,14 @@
   "framework": "Principia Metaphysica",
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
-    "total": 179,
-    "fail": 13,
+    "total": 180,
+    "fail": 14,
     "identity": 2,
-    "input": 84,
+    "input": 83,
     "marginal": 13,
     "pass": 47,
     "tension": 6,
-    "unbounded": 14
+    "unbounded": 15
   },
   "theory_uncertainty_policy": {
     "active": "cited_only",
@@ -22,22 +22,22 @@
     "n_load_bearing": 5,
     "n_load_bearing_cited": 0,
     "scoreboard_if_always": {
-      "FAIL": 9,
+      "FAIL": 10,
       "IDENTITY": 2,
-      "INPUT": 84,
+      "INPUT": 83,
       "MARGINAL": 13,
       "PASS": 51,
       "TENSION": 6,
-      "UNBOUNDED": 14
+      "UNBOUNDED": 15
     },
     "scoreboard_if_experimental_only": {
-      "FAIL": 13,
+      "FAIL": 14,
       "IDENTITY": 2,
-      "INPUT": 84,
+      "INPUT": 83,
       "MARGINAL": 13,
       "PASS": 47,
       "TENSION": 6,
-      "UNBOUNDED": 14
+      "UNBOUNDED": 15
     },
     "load_bearing_rows": [
       {
@@ -115,6 +115,11 @@
       "verdict": "FAIL"
     },
     {
+      "path": "cosmology.w0_thawing",
+      "sigma": 3.619883040935673,
+      "verdict": "FAIL"
+    },
+    {
       "path": "neutrino.sin_theta13_derived",
       "sigma": 3.322726422822558,
       "verdict": "FAIL"
@@ -157,11 +162,6 @@
     {
       "path": "ckm.V_ub",
       "sigma": 1.9480379086868613,
-      "verdict": "MARGINAL"
-    },
-    {
-      "path": "gauge.m_z_gev",
-      "sigma": 1.8610433037717182,
       "verdict": "MARGINAL"
     }
   ],
@@ -1027,6 +1027,26 @@
       "relative_margin": null
     },
     {
+      "path": "cosmology.H0_physical",
+      "value": 73.0613425925926,
+      "experimental_value": 73.04,
+      "experimental_uncertainty": 1.04,
+      "experimental_source": "SH0ES 2022",
+      "sigma": 0.020521723646720166,
+      "sigma_experimental_only": 0.020521723646720166,
+      "theory_uncertainty": null,
+      "theory_uncertainty_cited": null,
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "PASS",
+      "verdict_with_theory": "PASS",
+      "verdict_experimental_only": "PASS",
+      "registry_status": "DERIVED",
+      "units": null,
+      "source_simulation": "appendix_z_terminal_ledger_v24_2",
+      "bound_type": "central_value",
+      "relative_margin": null
+    },
+    {
       "path": "cosmology.H0_ricci_variant",
       "value": 76.33940416705774,
       "experimental_value": 73.04,
@@ -1249,17 +1269,17 @@
     {
       "path": "cosmology.w0_thawing",
       "value": -0.9583333333333334,
-      "experimental_value": -0.957,
-      "experimental_uncertainty": 0.067,
+      "experimental_value": -0.752,
+      "experimental_uncertainty": 0.057,
       "experimental_source": "DESI2025",
-      "sigma": 0.01990049751243893,
-      "sigma_experimental_only": 0.01990049751243893,
+      "sigma": 3.619883040935673,
+      "sigma_experimental_only": 3.619883040935673,
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "PASS",
-      "verdict_with_theory": "PASS",
-      "verdict_experimental_only": "PASS",
+      "verdict": "FAIL",
+      "verdict_with_theory": "FAIL",
+      "verdict_experimental_only": "FAIL",
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "dark_energy_thawing_v16_2",
@@ -1349,11 +1369,11 @@
     {
       "path": "cosmology.wa_thawing",
       "value": -0.8164965809277261,
-      "experimental_value": -0.99,
-      "experimental_uncertainty": 0.32,
+      "experimental_value": -0.86,
+      "experimental_uncertainty": 0.23,
       "experimental_source": "DESI2025",
-      "sigma": 0.5421981846008558,
-      "sigma_experimental_only": 0.5421981846008558,
+      "sigma": 0.18914530031423407,
+      "sigma_experimental_only": 0.18914530031423407,
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
@@ -3608,18 +3628,18 @@
     },
     {
       "path": "spectral.tau_proton",
-      "value": 1e+34,
+      "value": 4.243989515371765e+39,
       "experimental_value": 1e+34,
       "experimental_uncertainty": 5e+33,
       "experimental_source": "SuperK_limit",
       "sigma": null,
-      "sigma_experimental_only": 0.0,
+      "sigma_experimental_only": 848795.903074353,
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "INPUT",
-      "verdict_with_theory": "INPUT",
-      "verdict_experimental_only": "INPUT",
+      "verdict": "UNBOUNDED",
+      "verdict_with_theory": "UNBOUNDED",
+      "verdict_experimental_only": "UNBOUNDED",
       "registry_status": "PREDICTED",
       "units": "years",
       "source_simulation": "complete_residue_registry_v18",

@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-05T03:55:57.540356Z",
+  "generated_at": "2026-09-05T09:33:48.369174Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
   "total_scripts": 274,
@@ -314,7 +314,8 @@
             "cosmology.cp_phase_sterile",
             "cosmology.delta_b3_asymmetry",
             "cosmology.eta_baryon_geometric",
-            "cosmology.k_bary_normalization"
+            "cosmology.k_bary_normalization",
+            "cosmology.racetrack_Re_T"
           ]
         },
         {
@@ -1122,6 +1123,7 @@
             "topology.g2_compatible",
             "topology.leech_dim",
             "topology.n_gen_leech",
+            "topology.niemeier_count",
             "topology.octonion_dim",
             "topology.partition_exact"
           ]
@@ -1138,6 +1140,7 @@
             "topology.anomaly_free",
             "topology.b3_modular",
             "topology.critical_dim",
+            "topology.dedekind_eta_phase",
             "topology.modular_weight",
             "topology.vacuum_energy"
           ]
@@ -1276,6 +1279,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "topology.vol_v7",
             "validation.phi_g2",
             "validation.sum_rule_result",
             "validation.sum_rule_tolerance",
@@ -1401,10 +1405,14 @@
           "gates_contributed": [],
           "parameters_contributed": [
             "topology.ancestral_roots",
+            "topology.e8_root_count",
+            "topology.e8_tilde_compactified_roots",
             "topology.hidden_supports",
             "topology.shadow_torsion_total",
             "topology.so24_generators",
-            "topology.sterile_ratio"
+            "topology.sterile_angle",
+            "topology.sterile_ratio",
+            "topology.torsion_per_shadow"
           ]
         },
         {
@@ -1585,6 +1593,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "cosmology.H0_physical",
             "cosmology.h0_unwinding_scale",
             "cosmology.omega_total",
             "physics.c_geometric",
