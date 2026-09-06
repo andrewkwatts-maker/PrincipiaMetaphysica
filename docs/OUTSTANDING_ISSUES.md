@@ -1920,3 +1920,50 @@ and is what should be argued. Also untouched: the raw v14.2 log-scaling
 formula, which does **not** take H0_early as an input and gives
 H0_inferred ≈ 101.4 — 68σ from Planck. The framework already records both; only
 the tautology was being published as the result.
+
+### The same shape once more, and what "44 PASS" was hiding
+
+`cosmology.H0_early` = 67.4 published **0.0741σ PASS** against Planck 67.36,
+with a description that already said:
+
+> NOT an independent prediction: the interpolation is normalised so that the
+> z ≫ z_* limit returns the Planck value, so agreement here is definitional
+> (2026-08 review).
+
+The mechanism is explicit in the module. The ODE is built so that
+H(z) → `geometry.H0_early` for z ≫ z_star, and `cosmology.H0_early` is then
+read back off that same curve at z = 1089 — recovering the asymptote it was
+handed. Declared `passthrough_of="geometry.H0_early"` and reported as INPUT.
+
+Two `registry.get("geometry.H0_early", default=67.4)` fallbacks went with it.
+They never fired, but the default **is the very number whose provenance the
+module exists to establish**: a missing key would have manufactured the
+agreement rather than reporting the failure. That makes 39 silent defaults
+removed across the campaign.
+
+### Prepared, not decided: what a PASS actually means
+
+Of the 44 passes, **14 carry FITTED or CALIBRATED** — the value was tuned to
+the measurement it is then scored against:
+
+    ckm.V_tb  ckm.V_td  ckm.V_ts  ckm.V_ub_triality  ckm.V_us_triality
+    ckm.jarlskog_triality  cosmology.wa_thawing  neutrino.delta_CP_pred
+    neutrino.theta_12_pred  neutrino.theta_13_pred  neutrino.theta_23_pred
+    pmns.theta_12_triality  pmns.theta_13_triality  pmns.theta_23_triality
+
+`_is_input_anchor` already keeps ESTABLISHED anchors out of the tally, on the
+stated grounds that *"counting those as passes inflated the scoreboard with
+tautologies"*. A fit scored against its own training data is the same shape
+one step removed: not an identity, and not independent evidence either. The
+headline said only **44**.
+
+The report now carries `summary.pass_by_provenance`, splitting the count by
+registry status and naming the tuned rows. **No verdict changed.** Whether a
+FITTED row should score at all is an author ruling — it decides how the CKM
+and PMNS sectors are presented, and R1 has already ruled one of these values
+(`theta_13_pred`) a fit. The composition is now visible in the artifact
+instead of being derivable only by joining two files.
+
+`higgs.vev` is the remaining oddity in that table: registry status ESTABLISHED,
+value 246.0, scored against 246.22 at 0.44σ. It sits inside the open
+electroweak-VEV ruling recorded above and should be settled with it.

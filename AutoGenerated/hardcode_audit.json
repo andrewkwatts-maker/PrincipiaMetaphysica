@@ -4,7 +4,7 @@
   "summary": {
     "files_scanned": 196,
     "dataset_values": 339,
-    "exact_dup": 388,
+    "exact_dup": 386,
     "stale_dup": 337,
     "files_with_findings": 87
   },
@@ -31,7 +31,7 @@
     ],
     [
       "simulations/PM/cosmology/ricci_flow_h0.py",
-      28
+      26
     ],
     [
       "simulations/PM/particle/octonionic_mixing.py",
@@ -777,7 +777,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 931,
+      "line": 943,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -785,7 +785,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 932,
+      "line": 944,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -793,7 +793,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 933,
+      "line": 945,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -801,7 +801,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1092,
+      "line": 1104,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -809,7 +809,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 415,
+      "line": 419,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -817,7 +817,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 771,
+      "line": 775,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -825,7 +825,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 929,
+      "line": 941,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -833,7 +833,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1030,
+      "line": 1042,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -841,7 +841,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1090,
+      "line": 1102,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -849,7 +849,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1272,
+      "line": 1284,
       "literal": 0.311,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -857,7 +857,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1274,
+      "line": 1286,
       "literal": 0.689,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
       "dataset_value": 0.6931,
@@ -881,7 +881,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 255,
+      "line": 773,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -889,7 +889,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 348,
+      "line": 939,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -897,7 +897,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 769,
+      "line": 1040,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -905,7 +905,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 927,
+      "line": 1100,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -913,23 +913,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1028,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1088,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 789,
+      "line": 793,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -937,7 +921,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 792,
+      "line": 796,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -945,7 +929,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 819,
+      "line": 823,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -953,7 +937,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 822,
+      "line": 826,
       "literal": 1.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
       "dataset_value": 1.04,
@@ -961,7 +945,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 839,
+      "line": 851,
       "literal": 67.36,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -969,7 +953,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1093,
+      "line": 1105,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -977,7 +961,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1108,
+      "line": 1120,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -985,7 +969,7 @@
     },
     {
       "file": "simulations/PM/cosmology/ricci_flow_h0.py",
-      "line": 1109,
+      "line": 1121,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,

@@ -7,11 +7,39 @@
     "total": 204,
     "fail": 20,
     "identity": 2,
-    "input": 94,
+    "input": 95,
     "marginal": 13,
-    "pass": 44,
+    "pass": 43,
     "tension": 8,
-    "unbounded": 23
+    "unbounded": 23,
+    "pass_by_provenance": {
+      "by_registry_status": {
+        "CALIBRATED": 6,
+        "DERIVED": 11,
+        "ESTABLISHED": 1,
+        "FITTED": 8,
+        "GEOMETRIC": 7,
+        "PREDICTED": 10
+      },
+      "n_tuned_to_the_data_they_are_scored_against": 14,
+      "tuned_rows": [
+        "ckm.V_tb",
+        "ckm.V_td",
+        "ckm.V_ts",
+        "ckm.V_ub_triality",
+        "ckm.V_us_triality",
+        "ckm.jarlskog_triality",
+        "cosmology.wa_thawing",
+        "neutrino.delta_CP_pred",
+        "neutrino.theta_12_pred",
+        "neutrino.theta_13_pred",
+        "neutrino.theta_23_pred",
+        "pmns.theta_12_triality",
+        "pmns.theta_13_triality",
+        "pmns.theta_23_triality"
+      ],
+      "note": "A PASS on a FITTED or CALIBRATED row reports that a fit reproduces what it was fitted to, which is not independent evidence. Listed, not demoted: whether they should score is an author ruling."
+    }
   },
   "theory_uncertainty_policy": {
     "active": "cited_only",
@@ -24,18 +52,18 @@
     "scoreboard_if_always": {
       "FAIL": 12,
       "IDENTITY": 2,
-      "INPUT": 94,
+      "INPUT": 95,
       "MARGINAL": 15,
-      "PASS": 50,
+      "PASS": 49,
       "TENSION": 8,
       "UNBOUNDED": 23
     },
     "scoreboard_if_experimental_only": {
       "FAIL": 20,
       "IDENTITY": 2,
-      "INPUT": 94,
+      "INPUT": 95,
       "MARGINAL": 13,
-      "PASS": 44,
+      "PASS": 43,
       "TENSION": 8,
       "UNBOUNDED": 23
     },
@@ -993,9 +1021,9 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "PASS",
-      "verdict_with_theory": "PASS",
-      "verdict_experimental_only": "PASS",
+      "verdict": "INPUT",
+      "verdict_with_theory": "INPUT",
+      "verdict_experimental_only": "INPUT",
       "registry_status": "ANCHORED",
       "units": "km/s/Mpc",
       "source_simulation": "ricci_flow_h0_v16_1",
