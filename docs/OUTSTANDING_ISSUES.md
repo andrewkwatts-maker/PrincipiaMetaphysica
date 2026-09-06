@@ -1735,3 +1735,125 @@ compliance returns to 846/846.
 the removal of its own literal if it was ever *derived into another form*.
 Grepping for `0.958` and for `0.02` would both have missed this. What found it
 was making the guard fail loudly instead of defaulting.
+
+---
+
+## 2026-09-06 (eighth pass) — the theory-uncertainty policy could not fire
+
+Generalising the w₀ defect into a scan produced nothing, which was itself the
+bug: the scan read `experimental_bound` and `uncertainty`, and the report's
+fields are `experimental_value` and `experimental_uncertainty`. Zero was
+guaranteed. **A scan written to find checks that cannot fail was one.** Fixed,
+it returned 76 candidates, 11 of them carrying a scoring verdict.
+
+### A theory tolerance published as a CODATA measurement
+
+Four rows quoted a theory tolerance as the experimental σ of a CODATA
+measurement. Each is identified as a theory tolerance by the framework's own
+comment at the point of use, and `alpha_rigor.py` states the mechanism
+outright:
+
+```python
+    # Theoretical tolerance: ~0.0005% of value (intrinsic formula precision)
+    # This gives sigma ~ 1.0 for the Geometric Anchors derivation
+    uncertainty=0.0007,
+```
+
+The tolerance is chosen so the result reads as 1σ. CODATA measures α⁻¹ to
+2.1e-08 and μ_pe to 3.2e-08; the quoted σ were 0.0007, 0.01, 5e-07 and 2.0 —
+the last inflating the measurement error by a factor of 6×10⁷ and turning a
+12.7σ disagreement into `0.0000σ PASS`.
+
+### Why nothing caught it: both slots held the same number
+
+The root cause is not the four rows but a table in `geometric_anchors.run()`
+that writes the **same value into both uncertainty fields**:
+
+    m_planck_4d    experimental 1.9e15   theory 1.9e15
+    mu_pe          experimental 2.0      theory 2.0      ← "# Theory uncertainty"
+    alpha_inverse  experimental 0.01     theory 0.01     ← "# Theory uncertainty"
+
+The certificate generator decides
+
+```python
+    load_bearing = bool(theory_unc) and v_with_theory != v_exp_only
+```
+
+so equal slots shift σ by only √2, almost never crossing a band. `load_bearing`
+stayed False, the active `cited_only` policy never fired, and **the entire
+cited/uncited apparatus was inert for precisely the rows built to need it.**
+Same shape as the registry-status short-circuit and the χ² that came from a
+default on a key that never existed: a comparison between a number and itself.
+
+`m_planck_4d` is the sharpest. Its theory uncertainty was a copy of the
+measurement error annotated *"Same as experimental — exact derivation"*. Those
+two claims contradict each other: an exact derivation has no theory
+uncertainty, and a copy of the experimental σ is not one. The number went, the
+claim stayed — and it now stands on its own at **0.371σ PASS**.
+
+With the slots independent, `load_bearing` is True for all four, the policy
+fires, and both verdicts are published side by side:
+
+| row | σ with theory | σ experimental-only | published |
+|---|---|---|---|
+| `geometry.alpha_inverse` | 0.070 | 3.35e4 | FAIL |
+| `electromagnetic.alpha_inv` | 1.004 | 3.35e4 | FAIL |
+| `geometry.mu_pe` | 2.0e-7 | 12.73 | FAIL |
+| `fermion.mass_ratio_proton_electron` | 1.015 | 12.73 | FAIL |
+
+Verdicts move PASS 48 → 45, FAIL 16 → 20. Nothing was invented and nothing
+deleted: each number moved to the slot its own comment said it belonged in,
+and the experimental slot took the σ already carried in `codata_2022.json`.
+
+Reproducing μ_pe to 2 parts in 10¹⁰ from three topological inputs remains a
+striking coincidence and is recorded as one. It is not agreement at CODATA
+precision, and the difference is now visible in the artifact rather than
+absorbed into a tolerance.
+
+### A description advertising a formula the row does not publish
+
+`geometry.alpha_inverse`'s description claimed the four-term form
+
+    α⁻¹ = k_gimel² − b₃/φ + φ/(4π) − D_G2/(10⁴ − 3k_gimel)
+
+"yields 137.035999179 … (rel. err. 1.7e-11)". The registry holds
+**137.036701776**, which is the *three*-term form at rel. err. 5.1e-6. The
+fourth term reproduces the claimed number only with D = 7, not the G₂ algebra
+dimension 14 the symbol implies — and `geometric_anchors_core.py` records that
+term as **retired in v22.5**, kept as a documented NUMERICAL_OBSERVATION
+because 10⁴ is unmotivated.
+
+So the description advertised the retired, better-fitting formula over the
+value the row publishes. The retirement is correct and stands; the description
+now describes what is actually published.
+
+### Recorded, not decided — the electroweak VEV
+
+Two shipped datasources disagree about the same PDG2024 quantity:
+
+    experimental/experiment_ref.json    v_EW       246.22 ± 0.01  "PDG2024"
+    experimental/pdg_2024_values.json   higgs.vev  246.22 ± 0.5
+
+Neither is a measurement. PDG does not quote v directly; it follows from G_F,
+and the same `pdg_2024_values.json` carries
+`constants.G_F = 1.1663788e-05 ± 6e-12`, giving
+
+    v       = (√2 G_F)^(−1/2) = 246.2197 GeV
+    σ_v     = (v/2)(δG_F/G_F) = 6.3e-05 GeV
+
+so 0.01 overstates it by ~160× and 0.5 by ~8000×. Adopting the derived σ would
+move `higgs.vev_geometric` (246.37 vs 246.22) from the published 0.3σ to
+roughly 2400σ, because that comparison actually rests on the geometric
+derivation's own tolerance rather than on the measurement. **Which datasource
+is canonical, and how much theory uncertainty v = k_gimel·(b₃−4) carries, are
+author rulings.** Recorded in `_OPEN_RULINGS` with the derivation, with a
+companion test that fails if the pair stops disagreeing, so the exemption
+cannot go stale.
+
+### The lesson, for the fifth time
+
+A fabricated or misplaced quantity survives the removal of its literal if it
+was ever *derived into another form*. Grepping for `0.958` and for `0.02` both
+missed the `{-0.998, -0.918}` band; grepping for a wrong uncertainty would
+have missed a right one sitting in the wrong slot. What found these was
+supplying the real value and watching what broke.

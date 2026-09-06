@@ -4,7 +4,7 @@
   "summary": {
     "files_scanned": 196,
     "dataset_values": 339,
-    "exact_dup": 391,
+    "exact_dup": 388,
     "stale_dup": 337,
     "files_with_findings": 87
   },
@@ -15,7 +15,7 @@
     ],
     [
       "simulations/base/established.py",
-      43
+      40
     ],
     [
       "simulations/PM/geometry/geometric_anchors.py",
@@ -1849,7 +1849,7 @@
     },
     {
       "file": "simulations/PM/geometry/alpha_rigor.py",
-      "line": 885,
+      "line": 898,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1873,7 +1873,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 797,
+      "line": 809,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
@@ -1881,15 +1881,15 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 804,
-      "literal": 1836.15267343,
+      "line": 821,
+      "literal": 1836.152673426,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 811,
+      "line": 828,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1897,7 +1897,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 825,
+      "line": 842,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1905,7 +1905,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 836,
+      "line": 853,
       "literal": 1.1663788e-05,
       "dataset_key": "pdg_2024_values.constants.G_F.value",
       "dataset_value": 1.1663788e-05,
@@ -1913,7 +1913,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 847,
+      "line": 864,
       "literal": 2.7255,
       "dataset_key": "planck_2018.T_CMB.value",
       "dataset_value": 2.7255,
@@ -1921,7 +1921,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 856,
+      "line": 873,
       "literal": 6.12e-10,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
       "dataset_value": 6.12e-10,
@@ -1953,7 +1953,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 818,
+      "line": 835,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1961,7 +1961,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1554,
+      "line": 1585,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -1969,7 +1969,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1578,
+      "line": 1615,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -1977,7 +1977,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1620,
+      "line": 1657,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
@@ -1985,15 +1985,15 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1633,
-      "literal": 1836.15267343,
+      "line": 1685,
+      "literal": 1836.152673426,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1906,
+      "line": 1963,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2001,7 +2001,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1910,
+      "line": 1967,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2009,7 +2009,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1926,
+      "line": 1983,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2017,7 +2017,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1930,
+      "line": 1987,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2025,7 +2025,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1985,
+      "line": 2042,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2041,7 +2041,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1566,
+      "line": 1603,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2049,7 +2049,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1916,
+      "line": 1973,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2057,7 +2057,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1920,
+      "line": 1977,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2081,7 +2081,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1986,
+      "line": 2043,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2097,7 +2097,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1802,
+      "line": 1859,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2105,7 +2105,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1822,
+      "line": 1879,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -2113,7 +2113,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1912,
+      "line": 1969,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2121,7 +2121,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1981,
+      "line": 2038,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2129,7 +2129,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors.py",
-      "line": 1812,
+      "line": 1869,
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
@@ -3521,7 +3521,7 @@
     },
     {
       "file": "simulations/PM/particle/mass_ratio.py",
-      "line": 398,
+      "line": 413,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -3529,7 +3529,7 @@
     },
     {
       "file": "simulations/PM/particle/mass_ratio.py",
-      "line": 447,
+      "line": 462,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -3546,14 +3546,14 @@
     {
       "file": "simulations/PM/particle/mass_ratio.py",
       "line": 335,
-      "literal": 1836.15267343,
+      "literal": 1836.152673426,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
       "class": "EXACT_DUP"
     },
     {
       "file": "simulations/PM/particle/mass_ratio.py",
-      "line": 497,
+      "line": 512,
       "literal": 1836.15267343,
       "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
       "dataset_value": 1836.152673426,
@@ -5809,47 +5809,23 @@
     },
     {
       "file": "simulations/base/established.py",
+      "line": 653,
+      "literal": 137.035999177,
+      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
+      "dataset_value": 137.035999177,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/base/established.py",
+      "line": 667,
+      "literal": 1836.15267343,
+      "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
+      "dataset_value": 1836.152673426,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/base/established.py",
       "line": 681,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/base/established.py",
-      "line": 690,
-      "literal": 1836.15267343,
-      "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
-      "dataset_value": 1836.152673426,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/base/established.py",
-      "line": 699,
-      "literal": 1.22089e+19,
-      "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
-      "dataset_value": 1.22089e+19,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/base/established.py",
-      "line": 640,
-      "literal": 137.035999177,
-      "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
-      "dataset_value": 137.035999177,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/base/established.py",
-      "line": 654,
-      "literal": 1836.15267343,
-      "dataset_key": "codata_2022.fundamental_constants.proton_electron_mass_ratio.value",
-      "dataset_value": 1836.152673426,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/base/established.py",
-      "line": 668,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
