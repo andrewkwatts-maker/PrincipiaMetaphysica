@@ -1552,3 +1552,69 @@ asserts arithma has not crept back into the required dependencies.
 
 The working path is unchanged: 94 simulations pass, `arithma_available: true`,
 phantom 0, silent defaults 0, EML strict 1.0 over 603 rows, b₃-rooted 381.
+
+---
+
+## 2026-09-06 (sixth pass) — the recorded deficits are now closed
+
+### The xfail is gone, because the gap it recorded is closed
+
+All **57** formulas that lacked a derivation dict, or stopped short of three
+steps, now have one: 14 in `gauge_sector_complete`, 16 in
+`matter_sector_complete`, 12 in `cosmology_sector_complete`, 15 in
+`lagrangian_master`. `test_rule_1_formulas` runs unmarked and passes, and
+**all 11 SSOT rules are green with no xfail**.
+
+Every step is drawn from the formula's own declared latex, plain_text,
+description and terms. Nothing was auto-generated — which was the point of
+recording the deficit rather than filling it mechanically last pass.
+
+**Where a formula does not derive what it claims, the derivation says so.**
+That is the part worth reading:
+
+| formula | what the note records |
+|---|---|
+| `higgs-quartic-from-geometry-v19` | despite the id, **not** derived from geometry — it inverts the measured m_H and v |
+| `higgs-mass-from-potential-v19` | circular with the above; one of the two is an input |
+| `higgs-vev-minimization-v19` | v = 246 GeV is reproduced, not predicted, because mu is fixed from it |
+| `christ-constant-153-v19` | fitted; the 9 is **not** the SU(3) Cartan dimension — rank(SU(3)) = 2 |
+| `yukawa-froggatt-nielsen-v19` | the A_f prefactors are fitted O(1) coefficients; only epsilon^Q is geometric |
+| `yukawa-epsilon-cabibbo-v19` | a 1% numerical coincidence, not a derivation of either quantity |
+| `pmns-from-geometry-v19` | theta_13 has no surviving zero-parameter derivation (R1 ruling) |
+| `dm-omega-sterile-ratio-v19` | the 0.48 is undocumented, and a **dead second computation** in the same file gives 0.152 for the same parameter |
+| `de-h0-odowd-v19` | theta_mix = 31.0 degrees is fitted |
+| `de-hubble-tension-v19` | "Tension Resolved" overstates it — 71.55 is 1.43 sigma from SH0ES |
+| `cosmo-baryon-asymmetry-v19` | Re(T) is calibrated to the answer, so eta_b is not zero-parameter |
+| `neutrino-mass-hierarchy-v19` | an observational input restated, not a prediction |
+| `v22-consciousness-io-gate` | stated hypothesis; no observable is computed from it |
+| `su3-confinement-v19` | the sigma ~ 1/Vol proportionality is asserted; no string tension is evaluated |
+| `u1-anomaly-cancellation-v19` | follows from the hypercharge assignments; the claim that it "emerges from G2 geometry" is not demonstrated |
+
+### Symbolic trees: four supplied, forty-five principled
+
+Of the 49 formulas carrying no tree in either dialect, **four were genuine
+omissions** and now have one — `harmonic-cycle-fraction` (18/24),
+`bulk-metric-ratio`, `metric-conversion` and `root-lattice-288` (2·chi_eff),
+each verified against its own stated value.
+
+The remaining **45 have no scalar form to supply**, and the floor now records
+the classification rather than a bare number:
+
+    15  action / Lagrangian          an integral over a field configuration
+     7  reduction over an indexed    products and direct sums over a family
+        family
+     6  tensor / spinor equation     carries free indices; not a scalar
+     3  metric decomposition         ds^2 = ... has no value
+    14  other structural             Jordan-27 / E7 / E8 pairings, manifold
+                                     structure statements, counting chains
+
+Writing trees for those would mean inventing content. That is a principled
+floor, not a backlog.
+
+### And the pattern showed up a third time
+
+Giving `root-lattice-288` a real tree revealed it is **2·chi_eff**, which
+never reaches b₃ — it had been counted rooted by the degraded latex scan.
+`non_b3` goes 180 → 181 with `b3_rooted` unchanged at 381. Supplying the tree
+is what exposes the missing edge, exactly as clearing a phantom path did on
+2026-09-04 and as fixing the arithma backend did earlier today.
