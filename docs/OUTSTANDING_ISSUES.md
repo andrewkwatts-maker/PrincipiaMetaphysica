@@ -1857,3 +1857,66 @@ was ever *derived into another form*. Grepping for `0.958` and for `0.02` both
 missed the `{-0.998, -0.918}` band; grepping for a wrong uncertainty would
 have missed a right one sitting in the wrong slot. What found these was
 supplying the real value and watching what broke.
+
+---
+
+## 2026-09-06 (ninth pass) — a "verification" that E(z) equals E(z)
+
+`cosmology.H0_early_normalized` = 67.4000176934533 scored **0.0000σ PASS**
+against Planck 67.4 ± 0.5 with status PREDICTED. The agreement is arithmetic:
+
+```
+H(z)              = H0_eff(z) · E(z)
+H0_early_inferred = H(z_cmb) / E(z_cmb)        ← the SAME E(z)
+                  = H0_eff(z_cmb)
+                  = H0_late·f + H0_early·(1 − f)
+```
+
+E(z) cancels **identically**, so Ω_m, Ω_de and z_cmb cannot affect the result
+at all — the normalisation divides by exactly what the evolution multiplied
+by. With f(1100) = 3.1371e-06,
+
+    67.4 + 3.1371e-06 × (73.04 − 67.4) = 67.4000176934533
+
+which is the published value to all thirteen digits. The 67.4 is
+`geometry.H0_early`, an **input** to the interpolation. The verification
+confirms that 67.4 equals 67.4.
+
+`CERTIFICATES.py` already knew. The gate consuming this row carries an
+explicit **CIRCULARITY WARNING**: *"the interpolation weight on H0_early is
+~99.9997%, making the near-zero tension a structural tautology rather than a
+genuine physics prediction."* The honesty existed in that docstring and in
+neither of the two places the published artifact reads — the registry row said
+PREDICTED, and `validation_report.json` said PASS.
+
+### Why not simply widen the identity detector
+
+The generator already demotes round-trips via `_is_roundtrip_identity`, whose
+bound is **1e-10** — machine precision, floating-point noise. This row's
+relative deviation is 2.6e-07, so it escaped. Widening 1e-10 until it were
+caught would be tuning a tolerance until it produced the wanted verdict, which
+is the defect under repair, and it would sweep in genuine near misses.
+
+`cosmology.H0_late_evolved` reads INPUT already, but only by the *accident* of
+being exactly equal to its bound. A vanishing-but-nonzero admixture is enough
+to slip past an equality test, which is precisely what happened here.
+
+So the relationship is **declared**, not detected:
+`Parameter(passthrough_of="geometry.H0_early")` names the input the row
+returns, and the generator reports it as INPUT. Because a declaration nobody
+checks is only a comment, `tests/test_declared_passthroughs.py` verifies the
+named input really is reproduced, that the declaration is honoured in the
+published verdict, and that at least one declaration exists — so the mechanism
+cannot pass vacuously either.
+
+The row stays visible in the report as INPUT rather than disappearing, which
+matters given the register's standing complaint that the most-promoted numbers
+are the least-scored ones.
+
+**What survives:** the non-trivial content of this gate was never the Planck
+agreement. It is that b₃ = 24 sets z_star = 1/(k_ℷ/b₃) ≈ 1.95 as the
+transition scale between the early and late regimes. That claim is untouched
+and is what should be argued. Also untouched: the raw v14.2 log-scaling
+formula, which does **not** take H0_early as an input and gives
+H0_inferred ≈ 101.4 — 68σ from Planck. The framework already records both; only
+the tautology was being published as the result.
