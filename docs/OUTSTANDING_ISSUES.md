@@ -1311,3 +1311,175 @@ the Jordan-algebra, E7/E8 and Clifford constructions already withheld from the
 EML cross-check for the same reason. That is an honest floor, and the test now
 pins those 12 by name rather than asserting a zero that a package install was
 never going to deliver.
+
+---
+
+## 2026-09-06 (third pass) — nine simulations had never run, and Route 1 is settled
+
+### D1. Route 1 closed: the quintessence field cannot be a Kähler modulus
+
+The `dark_energy_betti` fork moves **OPEN → RULED**, and it is ruled in favour
+of the option that fits *worse*.
+
+The framework's own racetrack fixes the answer with no new input. It sets
+`a_i = iπ/b₃` and `T_i = b₃·k_gimel/(iπ)`, so
+
+    a_i · T_i = k_gimel        for EVERY face
+
+— the 1/i hierarchy cancels exactly, which is the real content of the
+construction: all four condensates are equally suppressed. That combination is
+precisely what sets the modulus mass in KKLT-type stabilisation
+([Choi et al, hep-th/0503216](https://arxiv.org/abs/hep-th/0503216)):
+
+    m_T = 2 (a T) m_{3/2} = 2 k_gimel m_{3/2}
+
+With this framework's own gravitino mass, `susy.m_3_2_GeV` = 1 TeV, that is
+**24.6 TeV**. A rolling dark-energy field needs `m_φ = b₃H₀` = 3.5e-32 eV. The
+gap is **7.1e44 — forty-five orders of magnitude**, now published as
+`geometry.kahler_over_quintessence_mass`.
+
+So b₂ = 4 is ruled out as the origin of w₀ **despite fitting thirteen times
+better** (0.25σ against 3.2σ in the 2D plane). A field stabilised at 24.6 TeV
+cannot be rolling today. The quintessence direction must be shift-symmetry
+protected — a C₃ axion, counted by b₃ — which is the adopted option.
+
+The same argument independently settles the S₈ friction onset, and both are
+*computed* rather than asserted: if the gravitino mass or the racetrack
+changes, the ruling moves with them.
+
+**What it costs.** The surviving option is the one at 3.2–3.5σ from DESI DR2.
+Ruling on physics rather than on fit means accepting the worse number, and the
+tension is now structural rather than a matter of choosing differently. And
+the caution survives the ruling: the DR2 central wₐ = −0.86 lies outside the
+Caldwell–Linder thawing wedge for **every** n ≥ 4, so the remaining question
+is not which integer but whether the sector is thawing at all.
+
+Incidentally, `k_gimel = 12 + 1/π` **exactly** (12.318309886183791), which is
+what makes `a·T` come out as a clean constant.
+
+### D2. Nine simulation modules had never run
+
+Each is imported as `try: from X import Y / except ImportError: FLAG = False`,
+which cannot distinguish "module absent" from "class name misspelled". Nine
+asked for a class with a `V19` suffix the module never defined:
+
+    lagrangian_master, gauge_sector_complete, matter_sector_complete,
+    cosmology_sector_complete, and appendices M, N, O, P, Q
+
+The run summary reported **"85 simulations, all passed"** the entire time. The
+absence surfaced only indirectly: `g2_holonomy.b2` was missing from the
+registry while `topology.b2 = 4` sat beside it.
+
+Reviving them: **422 → 569 formulas, 746 → 807 parameters, 180 → 204 scored
+rows** (PASS 47→56, FAIL 14→16, MARGINAL 13→15, TENSION 6→7). b₃-rooted
+350 → 381.
+
+Three then failed on `required_inputs` naming paths that exist nowhere —
+`constants.M_STAR`, `gauge.alpha_gut`, `geometry.sophian_modulus`,
+`geometry.barbelo_modulus`. That is the same phantom class the formula audit
+tracks, but `required_inputs` is not walked by it, so they could rot
+indefinitely while the module was disabled. `tests/test_no_simulation_is_
+silently_disabled.py` now checks both.
+
+They also brought 21 phantom paths and 19 malformed EML expressions with them,
+all now cleared: phantom **0**, silent defaults **0**, EML strict **1.0** over
+603 rows.
+
+### D3. `b₂ = 0` was a false theorem
+
+`appendix_p_g2_holonomy` hardcoded `b2 = 0` with the comment *"For G2 holonomy
+manifolds: b2 = 0 (no harmonic 2-forms)"*, and a `__main__` assertion pinned
+it. That is wrong, and is very likely a confusion with b₁: holonomy exactly G₂
+forces a finite fundamental group and hence **b₁ = 0**, but places no
+constraint on b₂. H² decomposes under G₂ as 14 ⊕ 7, and Joyce's resolutions
+realise b₂ anywhere in [0, 28]. It now reads `topology.b2`, and the assertion
+checks agreement with the rest of the framework instead of restating a
+non-theorem. This closes the "b₂ = 0 vs b₂ = 4" item — it was never a
+contradiction between two claims, just one false one, latent because the
+module never ran.
+
+### D4. One parameter, two computations, 79% apart
+
+`cosmology_sector_complete` computes `cosmology.omega_dm_geometric` twice.
+`DarkMatterDerivation` registers `sterile_ratio × 0.48 = 0.2717`;
+`CosmologicalParametersDerivation` computes `sterile_ratio × Ω_m × 0.85 =
+0.152` for the same name, carries the comment *"needs adjustment"*, and is
+dead. Nothing compared them. The dead line is kept and labelled rather than
+deleted, and the live 0.48 is commented *"From Ω_m/(1 − Ω_DE/2)"* and is not
+derived anywhere.
+
+---
+
+## 2026-09-06 (fourth pass) — the SSOT debt the revived modules brought
+
+Reviving nine never-run simulations added 147 formulas and 40 references, and
+those had never been through any gate. Closed this pass:
+
+**References — all four gates green again.** `every_reference_is_identifiable`
+had gone FAIL at 16 unidentified; it is PASS at 0. Ten DOIs were looked up
+against api.crossref.org and checked against the citation's own title and
+year; four Crossref hits were **rejected as wrong targets**:
+
+| id | Crossref returned | verdict |
+|---|---|---|
+| `misner_thorne_wheeler1973` | a Physics Today **book review** of Gravitation | rejected |
+| `ricci1904` | a 1999 chapter **about** Ricci and Levi-Civita | rejected |
+| `cartan1904` | a 2014 collection, not the 1904 original | rejected |
+| `acharya-witten2001` | an unrelated 1987 SU(3)-holonomy paper | rejected |
+
+Four URLs were then **fetched and their titles checked** rather than recalled
+(Princeton for MTW, Wiley for Weinberg 1972, numdam ASENS_1904_3_21__153_0 for
+Cartan — whose page title matches the citation exactly). Three entries were
+**removed** rather than given an invented identifier: `ricci1904` and two
+`eigenchris` YouTube series, for which no identifier could be verified. An
+entry nobody can look up cannot support a claim; that is the rule that caught
+two DOIs in this project resolving to a DNA nanopore experiment and a
+subscription price list.
+
+`no_duplicate_titles` went FAIL at 38 groups → PASS at 0. The revived modules
+re-cite common works under their own ids — "Chiral Fermions from Manifolds of
+G2 Holonomy" arrived under three. Each group collapsed onto the id that
+existed *before* the revival. The four merges that looked risky
+(`acharya-2001`→`acharya1999`, `atiyah-singer-1963`→`atiyah-singer-1968` and
+two more) were checked individually: all four suspect ids were **new**, and
+each shares an *identical* title with the pre-existing entry — the same paper
+cited under a different year label, not two different papers. The register's
+standing caution about collapsing the deliberate PDG and CODATA groups still
+holds; this used the gate's own strict title key, not a looser one.
+
+`no_conflicting_identifiers` went FAIL → PASS. `desi2025_lambda` (year 2025,
+"DESI 2025 Cosmological Parameters") pointed at arXiv:2404.03002. Both ids
+were fetched: 2404.03002 is **DESI 2024 VI**, and 2503.14738 is **DESI DR2
+Results II**, which is the paper the entry means and the one `established.py`
+already cites for `desi.w0`/`desi.wa`. Repointed, and the title corrected to
+the real one.
+
+**Certificates and inputs.** Seven certificates in appendices O and Q used
+`status="STERILE"`, which is not in the vocabulary; they assert structural
+facts (an index equalling b₃/8), so they are now `STRUCTURAL`. Four
+simulations declared empty `required_inputs` while reading the registry —
+`appendix_m` reads `constants.M_PLANCK`, `appendix_o` and `appendix_q` read
+`topology.elder_kads` and `topology.mephorash_chi`. `appendix_n` genuinely
+read nothing because it **hardcoded D = 4**; it now reads
+`geometry.D_visible_total`, which removes the hardcode and declares the
+dependency in one move.
+
+### Recorded, not closed: ~50 formulas with no derivation dict
+
+`test_rule_1_formulas` is marked `xfail(strict=True)` with the count and the
+cause. This is a marker on a real gap, not a weakened check.
+
+The gap could be closed in minutes by assembling a derivation dict
+mechanically from each formula's own `latex` and `description` — and that
+would be exactly the **pass-by-construction** pattern this suite exists to
+catch: a dict that satisfies the step count while saying nothing. Each needs
+writing from what the code actually computes, which is per-formula work
+across `gauge_sector_complete`, `matter_sector_complete`,
+`cosmology_sector_complete` and `lagrangian_master`.
+
+`strict=True` is deliberate: the moment the deficit is cleared the marker
+fails as XPASS and must be removed, so it cannot go stale the way the nine
+`V19` entries in `_KNOWN_DEAD` did — those were *recorded* as dead by an
+earlier session and sat there while the modules stayed absent. Recording a
+defect is not the same as fixing it, and the record should make that
+uncomfortable.

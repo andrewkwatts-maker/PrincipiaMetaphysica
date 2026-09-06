@@ -4,10 +4,10 @@
   "n_pass": 5,
   "n_fail": 0,
   "totals": {
-    "references": 180,
-    "cited": 180,
+    "references": 199,
+    "cited": 199,
     "orphans": 0,
-    "distinct_titles": 180,
+    "distinct_titles": 199,
     "duplicate_titles": 0,
     "entries_in_duplicate_groups": 0,
     "without_identifier": 0
@@ -16,8 +16,8 @@
     {
       "id": "every_reference_is_identifiable",
       "claim": "each entry carries an arXiv id, DOI or URL a reader can follow",
-      "measured": 180,
-      "expected": 180,
+      "measured": 199,
+      "expected": 199,
       "status": "PASS",
       "note": "an entry nobody can look up cannot support a claim"
     },
@@ -40,7 +40,7 @@
     {
       "id": "no_near_duplicate_titles",
       "claim": "no two entries share a title once subtitles are dropped",
-      "measured": 14,
+      "measured": 15,
       "expected": 0,
       "status": "ADVISORY",
       "note": "Advisory, not a gate. A looser title key would wrongly collapse the deliberate PDG per-section citations, the distinct CODATA releases and two different Acharya papers, so these are surfaced for a human decision rather than merged. This tier is what exposed two books whose DOIs resolved to a DNA nanopore experiment and a magazine price list -- unique identifiers pointing at the wrong document, which no other check can detect"
@@ -48,8 +48,8 @@
     {
       "id": "references_are_cited",
       "claim": "each entry is cited by a formula, section or parameter",
-      "measured": 180,
-      "expected": 180,
+      "measured": 199,
+      "expected": 199,
       "status": "PASS",
       "note": "source_simulation records which module registered an entry -- that is provenance, not citation; it does not say which claim the paper supports"
     }
@@ -64,7 +64,8 @@
     ],
     "desi 2024 vi (2024)": [
       "desi-2024",
-      "desi2024"
+      "desi2024",
+      "desi2024_de"
     ],
     "review of particle physics (2024)": [
       "pdg2024",
@@ -93,12 +94,14 @@
     "ckm_matrix_v16_0": 5,
     "dark_energy_v16_0": 5,
     "thermal_time_v22_0": 5,
+    "lagrangian_master_derivation_v22": 5,
     "abstract_v17_2": 4,
     "introduction_v16_0": 4,
     "chirality_v16_0": 4,
     "higgs_mass_v16_0": 4,
     "yukawa_textures_v18": 4,
     "neutrino_mixing_v17_2": 4,
+    "appendix_o_kk_reduction_v24_2": 4,
     "appendix_s_spectral_residue_v24_2": 4,
     "f_r_t_tau_gravity_v18": 4,
     "dark_matter_portals_v23": 4,
@@ -114,8 +117,7 @@
     "pneuma_mechanism_v22_0": 3,
     "appendix_h_288_roots_v24_2": 3,
     "appendix_i_terminal_states_v16_2": 3,
-    "gr_spacetime_derivations_v19": 3,
-    "sterile_neutrino_portals_v23": 3,
+    "appendix_n_vielbein_v24_2": 3,
     "four_face_g2_structure": 2,
     "alpha_rigor_v16_1": 2,
     "fermion_generations_v16_0": 2,
@@ -133,10 +135,16 @@
     "appendix_j_torsion_funnel_v16_2": 2,
     "appendix_k_sterile_constants_v16_2": 2,
     "appendix_l_omega_unwinding_v16_2": 2,
+    "gauge_sector_complete_v19": 2,
+    "matter_sector_complete_v19": 2,
+    "cosmology_sector_complete_v19": 2,
+    "appendix_m_tensor_calc_v24_2": 2,
+    "appendix_q_index_theorem_v24_2": 2,
     "appendix_t_qec_bridge_v24": 2,
     "complete_residue_registry_v18": 2,
     "baryon_asymmetry_v18": 2,
     "axion_dm_v18": 2,
+    "sterile_neutrino_portals_v23": 2,
     "modular_invariance_v16_2": 1,
     "higgs_brane_partition_v16_2": 1,
     "cosmology_intro_v16_0": 1,
@@ -151,6 +159,7 @@
     "gnosis_unlocking_v22_2": 1,
     "predictions_aggregator_v24_2": 1,
     "appendix_g_omega_seal_v24_2": 1,
+    "gr_spacetime_derivations_v19": 1,
     "attractor_potential_v18": 1
   },
   "note": "Reports, does not repair. Collapsing duplicate ids is an editorial decision about which id is canonical, and orphan entries may be genuinely relevant background that simply has no citation site yet. Both are surfaced so the choice is deliberate rather than accidental.",

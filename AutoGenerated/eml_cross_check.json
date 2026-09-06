@@ -1,11 +1,11 @@
 {
   "version": "24.2",
-  "generated_at": "2026-09-05T23:25:20.269204+00:00",
+  "generated_at": "2026-09-06T05:20:01.301607+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
-    "total_simulations": 85,
-    "agreed": 84,
+    "total_simulations": 94,
+    "agreed": 93,
     "failed": 1,
     "not_implemented": 0,
     "errors": 0,
@@ -44,8 +44,8 @@
     },
     "four_face_g2_structure": {
       "status": "AGREE",
-      "params_checked": 9,
-      "params_agreed": 9,
+      "params_checked": 11,
+      "params_agreed": 11,
       "max_deviation": 0.0,
       "note": ""
     },
@@ -518,10 +518,73 @@
       "max_deviation": 0.0,
       "note": ""
     },
+    "lagrangian_master_derivation_v22": {
+      "status": "AGREE",
+      "params_checked": 11,
+      "params_agreed": 11,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "gauge_sector_complete_v19": {
+      "status": "AGREE",
+      "params_checked": 12,
+      "params_agreed": 12,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "matter_sector_complete_v19": {
+      "status": "AGREE",
+      "params_checked": 13,
+      "params_agreed": 13,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "cosmology_sector_complete_v19": {
+      "status": "AGREE",
+      "params_checked": 12,
+      "params_agreed": 12,
+      "max_deviation": 0.0,
+      "note": ""
+    },
     "gr_spacetime_derivations_v19": {
       "status": "AGREE",
       "params_checked": 7,
       "params_agreed": 7,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "appendix_m_tensor_calc_v24_2": {
+      "status": "AGREE",
+      "params_checked": 6,
+      "params_agreed": 6,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "appendix_n_vielbein_v24_2": {
+      "status": "AGREE",
+      "params_checked": 6,
+      "params_agreed": 6,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "appendix_o_kk_reduction_v24_2": {
+      "status": "AGREE",
+      "params_checked": 6,
+      "params_agreed": 6,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "appendix_p_g2_holonomy_v24_2": {
+      "status": "AGREE",
+      "params_checked": 7,
+      "params_agreed": 7,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "appendix_q_index_theorem_v24_2": {
+      "status": "AGREE",
+      "params_checked": 6,
+      "params_agreed": 6,
       "max_deviation": 0.0,
       "note": ""
     },

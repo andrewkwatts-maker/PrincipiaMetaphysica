@@ -1,9 +1,9 @@
 {
-  "total": 746,
-  "with_eml_description": 612,
-  "skip": 166,
+  "total": 807,
+  "with_eml_description": 638,
+  "skip": 204,
   "buckets": {
-    "AGREE": 580
+    "AGREE": 603
   },
   "errors": 0,
   "ambiguous_short_names": [
@@ -21,13 +21,17 @@
     "exact_matches",
     "hierarchy_ratio",
     "k_gimel",
+    "riemann_symmetries",
     "sigma8",
     "sin2_theta_W",
+    "spin_connection_components",
+    "sterile_ratio",
     "sum_m_nu",
     "tau_proton",
     "theta_13",
     "theta_23",
     "vev",
+    "vielbein_rank",
     "w0_thawing",
     "wa",
     "wa_thawing"
@@ -37,8 +41,8 @@
   "agreement_rate_strict_all": 1.0,
   "agreement_rate_strict": 1.0,
   "agreement_rate_loose": 1.0,
-  "eml_option_withheld": 15,
-  "eml_option_offered": 598,
+  "eml_option_withheld": 18,
+  "eml_option_offered": 621,
   "tolerance": 0.001,
   "loose_tolerance": 0.01,
   "results": [
@@ -1324,6 +1328,14 @@
       "eml_description": "EML: eml_vec('geometry.n_s')"
     },
     {
+      "path": "cosmology.omega_dm_geometric",
+      "status": "AGREE",
+      "evaluated": 0.27166666666666656,
+      "registered": 0.27166666666666667,
+      "rel_error": 4.086710520092601e-16,
+      "eml_description": "EML: ops.mul(eml_vec('cosmology.sterile_ratio'), eml_scalar(0.48)) \u2014 Omega_DM = (163/288) * 0.48. The 0.48 is commented 'From Omega_m / (1 - Omega_DE/2)' and is not derived anywhere. NOTE: this file computes this parameter TWICE. The live value comes from DarkMatterDerivation (sterile_ratio * 0.48 = 0.2717); a second line in CosmologicalParametersDerivation computes sterile_ratio * omega_m * 0.85 = 0.152 for the same name, carries the comment 'needs adjustment', and is dead"
+    },
+    {
       "path": "cosmology.omega_frequency",
       "status": "AGREE",
       "evaluated": 0.523598775598299,
@@ -1460,6 +1472,14 @@
       "eml_description": "EML: ops.div(ops.abs(ops.sub(eml_vec('cosmology.s8_pm_predicted'), eml_scalar(0.832))), eml_scalar(0.013)) \u2014 sigma tension = |S8_PM - S8_Planck| / sigma_Planck"
     },
     {
+      "path": "cosmology.shadow_visible_ratio",
+      "status": "AGREE",
+      "evaluated": 1.3039999999999994,
+      "registered": 1.304,
+      "rel_error": 5.108388150115751e-16,
+      "eml_description": "EML: ops.div(eml_vec('topology.hidden_supports'), eml_vec('registry.node_count')) \u2014 shadow/visible = 163/125 = 1.304"
+    },
+    {
       "path": "cosmology.sigma8_pred",
       "status": "AGREE",
       "evaluated": 0.830476836658301,
@@ -1482,6 +1502,14 @@
       "registered": 299792423.16324997,
       "rel_error": 2.584656322878891e-15,
       "eml_description": "EML: ops.mul(eml_vec('C_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_scalar(1e7), eml_vec('P_3D')))))) \u2014 c = C_geo \u00d7 S_f \u00d7 B_v \u00d7 chi_gc \u00d7 10\u2077 \u00d7 P_3D from G\u2082 KK reduction; yields 299,792,423 m/s (99.99999% of CODATA)"
+    },
+    {
+      "path": "cosmology.sterile_ratio",
+      "status": "AGREE",
+      "evaluated": 0.5659722222222221,
+      "registered": 0.5659722222222222,
+      "rel_error": 1.9616210496444484e-16,
+      "eml_description": "EML: ops.div(eml_vec('topology.hidden_supports'), eml_vec('topology.ancestral_roots')) \u2014 sterile fraction 163/288 = 0.56597"
     },
     {
       "path": "cosmology.thawing_validated",
@@ -1868,6 +1896,46 @@
       "eml_description": "EML: ops.div(eml_vec('registry.node_count'), eml_vec('ancestral_roots'))"
     },
     {
+      "path": "g2_holonomy.b2",
+      "status": "AGREE",
+      "evaluated": 4.0,
+      "registered": 4.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_vec('topology.b2') \u2014 read from the registry, not asserted"
+    },
+    {
+      "path": "g2_holonomy.dim_g2",
+      "status": "AGREE",
+      "evaluated": 14.0,
+      "registered": 14.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(14.0)"
+    },
+    {
+      "path": "g2_holonomy.dim_so7",
+      "status": "AGREE",
+      "evaluated": 21.0,
+      "registered": 21.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(21.0)"
+    },
+    {
+      "path": "g2_holonomy.n_gen",
+      "status": "AGREE",
+      "evaluated": 3.000000000000001,
+      "registered": 3.0,
+      "rel_error": 2.9605947323337506e-16,
+      "eml_description": "EML: ops.div(eml_vec('b3'), eml_scalar(8.0))"
+    },
+    {
+      "path": "g2_holonomy.num_octonion_units",
+      "status": "AGREE",
+      "evaluated": 7.0,
+      "registered": 7.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(7.0)"
+    },
+    {
       "path": "gates.omega_hash",
       "status": "SKIP",
       "reason": "non-numeric value: 'ff0550f0f2ff391a'",
@@ -1912,6 +1980,14 @@
       "eml_description": "EML: ops.mul(eml_scalar(2.1e16), eml_scalar(1.0)) \u2014 geometric GUT scale from TCS G2 torsion T_omega=-0.875 and moduli Re(T)~9.865 (currently hardcoded; pending moduli derivation)"
     },
     {
+      "path": "gauge.cos_theta_w",
+      "status": "AGREE",
+      "evaluated": 0.8768010036490607,
+      "registered": 0.8768010036490607,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.sqrt(ops.sub(eml_scalar(1.0), eml_vec('gauge.sin2_theta_w'))) \u2014 cos(theta_W) from sin^2(theta_W)"
+    },
+    {
       "path": "gauge.g_gut",
       "status": "AGREE",
       "evaluated": 0.7191207083539627,
@@ -1926,6 +2002,14 @@
       "registered": 0.3497087018481249,
       "rel_error": 1.5873540160108965e-16,
       "eml_description": "EML: ops.mul(eml_vec('gauge.weak_coupling_g2'), ops.div(ops.sqrt(eml_scalar(0.22320)), ops.sqrt(ops.sub(eml_scalar(1.0), eml_scalar(0.22320))))) \u2014 hypercharge coupling g' = g\u2082 tan(\u03b8_W) from U(1)_Y embedding."
+    },
+    {
+      "path": "gauge.hypercharge_y_ratio",
+      "status": "AGREE",
+      "evaluated": 0.8680555555555558,
+      "registered": 0.8680555555555556,
+      "rel_error": 2.5579538487363605e-16,
+      "eml_description": "EML: ops.div(eml_vec('registry.node_count'), eml_vec('topology.mephorash_chi')) \u2014 Y = 125/144, visible over total chi_eff"
     },
     {
       "path": "gauge.kk_canonical",
@@ -1958,6 +2042,12 @@
       "registered": 9.0,
       "rel_error": 0.0,
       "eml_description": "EML: ops.sub(eml_vec('geometry.D_shadow_total'), eml_vec('dimensions.D_observable')) \u2014 rank(P_{13->4}) = 13 - 4 = 9 internal directions removed by the S_PR(2) reduction, taken from the two registered dimension counts rather than from prose."
+    },
+    {
+      "path": "gauge.qcd_cycle_type",
+      "status": "SKIP",
+      "reason": "non-numeric value: 'Associative 3-cycle'",
+      "eml_description": "Categorical label identifying QCD as emerging from A2 singularity resolution on G2 associative 3-cycles"
     },
     {
       "path": "gauge.qcd_gluon_count",
@@ -2008,12 +2098,26 @@
       "eml_description": "EML: eml_scalar(16.0) \u2014 dim(16 of SO(10)), the chiral spinor representation"
     },
     {
+      "path": "gauge.theta_w_degrees",
+      "status": "AGREE",
+      "evaluated": 28.741154279190336,
+      "registered": 28.741154279190333,
+      "rel_error": 1.2361068189153413e-16,
+      "eml_description": "EML: ops.mul(ops.asin(ops.sqrt(eml_vec('gauge.sin2_theta_w'))), ops.div(eml_scalar(180.0), eml_pi())) \u2014 theta_W in degrees"
+    },
+    {
       "path": "gauge.weak_boson_count",
       "status": "AGREE",
       "evaluated": 3.0,
       "registered": 3.0,
       "rel_error": 0.0,
       "eml_description": "EML: eml_scalar(3.0) \u2014 SU(2) adjoint dimension N^2 - 1 = 3."
+    },
+    {
+      "path": "gauge.weak_cycle_type",
+      "status": "SKIP",
+      "reason": "non-numeric value: 'Co-associative 4-cycle'",
+      "eml_description": "Categorical label identifying SU(2)_L weak force as arising from A1 singularity resolution on G2 co-associative 4-cycles"
     },
     {
       "path": "geometry.A_Wolfenstein",
@@ -2566,6 +2670,22 @@
       "eml_description": "EML: ops.div(eml_vec('elder_kads'), eml_scalar(6.0)) \u2014 TCS matching number k_matching = b\u2083/6 = 4"
     },
     {
+      "path": "geometry.kahler_modulus_mass_GeV",
+      "status": "AGREE",
+      "evaluated": 24636.61977298681,
+      "registered": 24636.61977298685,
+      "rel_error": 1.624320513396357e-15,
+      "eml_description": "EML: ops.mul(ops.mul(eml_scalar(2.0), eml_vec('geometry.k_gimel')), eml_vec('susy.m_3_2_GeV')) \u2014 m_T = 2 k_gimel m_3/2, the KKLT modulus mass"
+    },
+    {
+      "path": "geometry.kahler_over_quintessence_mass",
+      "status": "AGREE",
+      "evaluated": 7.128651554683709e+44,
+      "registered": 7.128651554683695e+44,
+      "rel_error": 2.000528310743105e-15,
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('geometry.kahler_modulus_mass_GeV'), eml_scalar(1e9)), ops.mul(eml_vec('topology.elder_kads'), eml_scalar(1.44e-33))) \u2014 m_T / (b3 H0)"
+    },
+    {
       "path": "geometry.lambda_Wolfenstein",
       "status": "AGREE",
       "evaluated": 0.22430411726619373,
@@ -3115,6 +3235,14 @@
       "eml_description": "EML: ops.sub(eml_vec('higgs.lambda_0'), ops.mul(ops.inv(ops.mul(eml_scalar(8.0), ops.pow(eml_pi(), eml_scalar(2.0)))), ops.mul(eml_vec('moduli.re_t_phenomenological'), ops.pow(eml_vec('yukawa.y_top'), eml_scalar(2.0))))) \u2014 lambda_eff = lambda_0 - kappa Re(T) y_t^2 with kappa = 1/(8 pi^2) and the phenomenological Re(T) = 9.865"
     },
     {
+      "path": "higgs.lambda_quartic",
+      "status": "AGREE",
+      "evaluated": 0.12907376245590704,
+      "registered": 0.12907376245590702,
+      "rel_error": 2.1503654257471977e-16,
+      "eml_description": "EML: ops.div(ops.pow(eml_vec('higgs.m_higgs_derived'), eml_scalar(2.0)), ops.mul(eml_scalar(2.0), ops.pow(eml_vec('higgs.v_ew_derived'), eml_scalar(2.0)))) \u2014 lambda = m_H^2/(2 v^2)"
+    },
+    {
       "path": "higgs.m_higgs_bulk",
       "status": "AGREE",
       "evaluated": 414.22,
@@ -3153,6 +3281,14 @@
       "registered": 1.1842296203498772,
       "rel_error": 3.7500261960924244e-16,
       "eml_description": "EML: ops.mul(ops.div(eml_scalar(13.0), eml_scalar(11.0)), ops.add(eml_scalar(1.0), ops.div(eml_scalar(2.0), ops.mul(eml_vec('topology.elder_kads'), ops.mul(eml_pi(), eml_scalar(13.0)))))) \u2014 \u03b7 = (13/11) \u00d7 (1 + 2/(b3\u00b7\u03c0\u00b713)) mirror brane overlap with holonomy correction"
+    },
+    {
+      "path": "higgs.mu_squared",
+      "status": "AGREE",
+      "evaluated": 7825.005000000002,
+      "registered": 7825.005,
+      "rel_error": 2.3245856118249845e-16,
+      "eml_description": "EML: ops.div(ops.pow(eml_vec('higgs.m_higgs_derived'), eml_scalar(2.0)), eml_scalar(2.0)) \u2014 mu^2 = m_H^2/2 at the minimum"
     },
     {
       "path": "higgs.projection_factor",
@@ -3343,6 +3479,14 @@
       "registered": 0.002,
       "rel_error": 2.1684043449710089e-16,
       "eml_description": "EML: ops.mul(ops.div(eml_vec('topology.elder_kads'), ops.mul(eml_vec('topology.b2'), eml_vec('topology.n_gen'))), eml_scalar(1.0e-3)) \u2014 m\u2083 = C_kaf \u00d7 10\u207b\u00b3 eV with C_kaf = b\u2083/(b\u2082\u00b7n_gen) = 2 (light IO state)"
+    },
+    {
+      "path": "neutrino.m_r_scale",
+      "status": "AGREE",
+      "evaluated": 1764999999999996.5,
+      "registered": 1765000000000000.0,
+      "rel_error": 1.9830028328611898e-15,
+      "eml_description": "EML: ops.div(eml_scalar(2.118e16), ops.sqrt(eml_vec('topology.mephorash_chi'))) \u2014 M_R = M_GUT/sqrt(chi_eff). NOTE the 2.118e16: this uses the gut-scale value the register still has under an unresolved ruling, not geometry.M_GUT_geometric"
     },
     {
       "path": "neutrino.mass_sum",
@@ -4309,6 +4453,28 @@
       "eml_description": "EML: eml_scalar(version_string) \u2014 PM framework version identifier (system metadata)"
     },
     {
+      "path": "tensor.metric_signature",
+      "status": "SKIP",
+      "reason": "non-numeric value: '(+,-,-,-)'",
+      "eml_description": "eml_vec('metric_signature')"
+    },
+    {
+      "path": "tensor.riemann_symmetries",
+      "status": "AGREE",
+      "evaluated": 20.0,
+      "registered": 20.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(20.0)"
+    },
+    {
+      "path": "tensor.spacetime_dimension",
+      "status": "AGREE",
+      "evaluated": 4.0,
+      "registered": 4.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(4.0)"
+    },
+    {
       "path": "terminal.closure_verified",
       "status": "AGREE",
       "evaluated": 1.0,
@@ -4886,10 +5052,42 @@
       "eml_description": "String status flag ('PASS' or 'FAIL') indicating whether the weighted sum of squared residues closes to Phi_G2 within sterile tolerance."
     },
     {
+      "path": "vielbein.lorentz_group_dimension",
+      "status": "AGREE",
+      "evaluated": 6.0,
+      "registered": 6.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(6.0)"
+    },
+    {
+      "path": "vielbein.spacetime_dimension",
+      "status": "AGREE",
+      "evaluated": 4.0,
+      "registered": 4.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(4.0)"
+    },
+    {
+      "path": "vielbein.spinor_representation_dimension",
+      "status": "AGREE",
+      "evaluated": 4.0,
+      "registered": 4.0,
+      "rel_error": 0.0,
+      "eml_description": "EML: eml_scalar(4.0)"
+    },
+    {
       "path": "yukawa.best_scaling",
       "status": "SKIP",
       "reason": "non-numeric value: 'phi'",
       "eml_description": "EML: categorical \u2014 best_scaling is the argmin over {phi, gimel, sqrt_b3} of RMS log10 error; no numeric ops chain (string selector)"
+    },
+    {
+      "path": "yukawa.epsilon_fn",
+      "status": "AGREE",
+      "evaluated": 0.22313016014842982,
+      "registered": 0.22313016014842982,
+      "rel_error": 0.0,
+      "eml_description": "EML: ops.exp(ops.neg(eml_scalar(1.5))) \u2014 Froggatt-Nielsen suppression epsilon = exp(-3/2) = 0.22313"
     },
     {
       "path": "yukawa.jarlskog_geometric",
@@ -4906,6 +5104,14 @@
       "registered": 1.618033988749895,
       "rel_error": 5.530413848347129e-13,
       "eml_description": "EML: eml_scalar(phi) \u2014 \u03bb_eff = \u03c6 = (1+\u221a5)/2 \u2248 1.618; best-fit geometric suppression base from phi^(-N) scaling of fermion masses"
+    },
+    {
+      "path": "yukawa.n_generations",
+      "status": "AGREE",
+      "evaluated": 3.000000000000001,
+      "registered": 3.0,
+      "rel_error": 2.9605947323337506e-16,
+      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(8.0)) \u2014 N_gen = b3/8 = 3, exact"
     },
     {
       "path": "yukawa.y_top",

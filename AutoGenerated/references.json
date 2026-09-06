@@ -1,6 +1,6 @@
 {
   "version": "24.2",
-  "count": 180,
+  "count": 199,
   "references": {
     "acharya_witten2001": {
       "id": "acharya_witten2001",
@@ -21,6 +21,9 @@
         "octonionic_mixing_v23_1",
         "multi_sector_v16_0",
         "foundations_v16_2",
+        "lagrangian_master_derivation_v22",
+        "gauge_sector_complete_v19",
+        "appendix_p_g2_holonomy_v24_2",
         "complete_residue_registry_v18"
       ]
     },
@@ -64,6 +67,7 @@
         "appendix_d_alignment_v16_2",
         "appendix_g_omega_seal_v24_2",
         "appendix_l_omega_unwinding_v16_2",
+        "cosmology_sector_complete_v19",
         "complete_residue_registry_v18",
         "attractor_potential_v18",
         "baryon_asymmetry_v18",
@@ -79,7 +83,10 @@
       "year": 2024,
       "url": "http://www.nu-fit.org/",
       "notes": "PMNS mixing angle and delta_CP data referenced in abstract; theta_13 and delta_CP fitted pending explicit Yukawa calculation",
-      "source_simulation": "abstract_v17_2"
+      "source_simulation": "abstract_v17_2",
+      "also_registered_by": [
+        "matter_sector_complete_v19"
+      ]
     },
     "maxwell_1865": {
       "id": "maxwell_1865",
@@ -99,7 +106,10 @@
       "volume": "22",
       "year": "1961",
       "url": "https://doi.org/10.1016/0029-5582(61)90469-2",
-      "source_simulation": "introduction_v16_0"
+      "source_simulation": "introduction_v16_0",
+      "also_registered_by": [
+        "gauge_sector_complete_v19"
+      ]
     },
     "weinberg1967": {
       "id": "weinberg1967",
@@ -114,7 +124,8 @@
       "source_simulation": "introduction_v16_0",
       "also_registered_by": [
         "master_action_simulation_v22_0",
-        "weak_mixing_v17_2"
+        "weak_mixing_v17_2",
+        "gauge_sector_complete_v19"
       ]
     },
     "georgi_glashow_1974": {
@@ -173,7 +184,12 @@
         "appendix_k_sterile_constants_v16_2",
         "appendix_l_omega_unwinding_v16_2",
         "appendix_z_terminal_ledger_v24_2",
+        "lagrangian_master_derivation_v22",
+        "gauge_sector_complete_v19",
         "gr_spacetime_derivations_v19",
+        "appendix_o_kk_reduction_v24_2",
+        "appendix_p_g2_holonomy_v24_2",
+        "appendix_q_index_theorem_v24_2",
         "attractor_potential_v18"
       ]
     },
@@ -217,7 +233,8 @@
         "four_face_g2_structure",
         "proton_decay_v17_2",
         "cosmology_intro_v16_0",
-        "foundations_v16_2"
+        "foundations_v16_2",
+        "gauge_sector_complete_v19"
       ]
     },
     "desi2024": {
@@ -377,6 +394,9 @@
         "four_face_g2_structure",
         "higgs_mass_v16_0",
         "higgs_brane_partition_v16_2",
+        "gauge_sector_complete_v19",
+        "cosmology_sector_complete_v19",
+        "appendix_q_index_theorem_v24_2",
         "f_r_t_tau_gravity_v18",
         "sterile_neutrino_portals_v23"
       ]
@@ -418,7 +438,8 @@
       "source_simulation": "four_face_g2_structure",
       "also_registered_by": [
         "cosmology_intro_v16_0",
-        "pneuma_mechanism_v22_0"
+        "pneuma_mechanism_v22_0",
+        "lagrangian_master_derivation_v22"
       ]
     },
     "bbcq2005": {
@@ -435,7 +456,10 @@
       "url": "https://arxiv.org/abs/hep-th/0502058",
       "doi": "10.1088/1126-6708/2005/03/007",
       "relevance": "Large Volume Scenario (LVS) for moduli stabilization; complementary to KKLT, providing the hierarchical moduli spectrum that mirrors the 1/i face hierarchy.",
-      "source_simulation": "four_face_g2_structure"
+      "source_simulation": "four_face_g2_structure",
+      "also_registered_by": [
+        "lagrangian_master_derivation_v22"
+      ]
     },
     "polchinski1998": {
       "id": "polchinski1998",
@@ -587,6 +611,7 @@
         "appendix_f_72gates_v24_2",
         "appendix_k_sterile_constants_v16_2",
         "appendix_z_terminal_ledger_v24_2",
+        "gauge_sector_complete_v19",
         "complete_residue_registry_v18"
       ]
     },
@@ -739,7 +764,8 @@
       "url": "https://doi.org/10.1007/BF02392726",
       "source_simulation": "chirality_v16_0",
       "also_registered_by": [
-        "octonionic_mixing_v23_1"
+        "octonionic_mixing_v23_1",
+        "appendix_p_g2_holonomy_v24_2"
       ]
     },
     "atiyah_singer1968": {
@@ -765,7 +791,8 @@
       "url": "https://arxiv.org/abs/math/0702077",
       "source_simulation": "chirality_v16_0",
       "also_registered_by": [
-        "pneuma_mechanism_v22_0"
+        "pneuma_mechanism_v22_0",
+        "appendix_p_g2_holonomy_v24_2"
       ]
     },
     "cabibbo1963": {
@@ -877,7 +904,10 @@
       "year": 1964,
       "url": "https://doi.org/10.1103/PhysRevLett.13.508",
       "notes": "Original Higgs mechanism paper predicting the scalar boson.",
-      "source_simulation": "higgs_mass_v16_0"
+      "source_simulation": "higgs_mass_v16_0",
+      "also_registered_by": [
+        "matter_sector_complete_v19"
+      ]
     },
     "atlas2012": {
       "id": "atlas2012",
@@ -923,7 +953,8 @@
       "notes": "PDG 2024 combined: m_H = 125.25 +/- 0.17 GeV (ATLAS+CMS).",
       "source_simulation": "higgs_mass_v16_0",
       "also_registered_by": [
-        "higgs_brane_partition_v16_2"
+        "higgs_brane_partition_v16_2",
+        "matter_sector_complete_v19"
       ]
     },
     "acharya_g2mssm2007": {
@@ -1023,7 +1054,10 @@
       "year": 2007,
       "url": "https://doi.org/10.1088/0264-9381/24/21/S18",
       "notes": "G2 holonomy manifolds and their role in particle physics.",
-      "source_simulation": "higgs_vev_refined_v18"
+      "source_simulation": "higgs_vev_refined_v18",
+      "also_registered_by": [
+        "matter_sector_complete_v19"
+      ]
     },
     "freudenthal1954": {
       "id": "freudenthal1954",
@@ -1470,10 +1504,10 @@
     "desi2025_lambda": {
       "id": "desi2025_lambda",
       "authors": "DESI Collaboration",
-      "title": "DESI 2025 Cosmological Parameters",
+      "title": "DESI DR2 Results II: Measurements of Baryon Acoustic Oscillations and Cosmological Constraints",
       "journal": "arXiv",
       "year": 2025,
-      "url": "https://arxiv.org/abs/2404.03002",
+      "url": "https://arxiv.org/abs/2503.14738",
       "notes": "Lambda ~ 1.1e-52 m^-2",
       "source_simulation": "cosmological_constant_v16_1"
     },
@@ -1689,7 +1723,10 @@
       "year": 1968,
       "doi": "10.2307/1970715",
       "type": "journal_article",
-      "source_simulation": "integrity_v16_2"
+      "source_simulation": "integrity_v16_2",
+      "also_registered_by": [
+        "appendix_q_index_theorem_v24_2"
+      ]
     },
     "mckean_singer1967": {
       "id": "mckean_singer1967",
@@ -1719,7 +1756,10 @@
       "year": "1987",
       "doi": "10.2307/1971360",
       "type": "journal",
-      "source_simulation": "appendix_f_72gates_v24_2"
+      "source_simulation": "appendix_f_72gates_v24_2",
+      "also_registered_by": [
+        "appendix_p_g2_holonomy_v24_2"
+      ]
     },
     "conway-sloane-1999": {
       "id": "conway-sloane-1999",
@@ -1839,7 +1879,10 @@
       "year": "1972",
       "url": "https://www.wiley.com/en-us/Gravitation+and+Cosmology-p-9780471925675",
       "type": "monograph",
-      "source_simulation": "appendix_k_sterile_constants_v16_2"
+      "source_simulation": "appendix_k_sterile_constants_v16_2",
+      "also_registered_by": [
+        "appendix_n_vielbein_v24_2"
+      ]
     },
     "penrose-2004": {
       "id": "penrose-2004",
@@ -1861,23 +1904,125 @@
       "type": "monograph",
       "source_simulation": "appendix_l_omega_unwinding_v16_2"
     },
-    "carroll2004_gr": {
-      "id": "carroll2004_gr",
-      "authors": "Carroll, S.M.",
-      "title": "Spacetime and Geometry: An Introduction to General Relativity",
-      "year": 2004,
-      "url": "https://www.cambridge.org/core/books/spacetime-and-geometry/3BD4EB1E9E68AB7EC3DFE4A2E088E87B",
-      "type": "textbook",
-      "source_simulation": "gr_spacetime_derivations_v19"
+    "weinberg1995": {
+      "id": "weinberg1995",
+      "doi": "10.1017/CBO9781139644174",
+      "authors": "Weinberg, S.",
+      "title": "The Quantum Theory of Fields, Volume I: Foundations",
+      "publisher": "Cambridge University Press",
+      "year": 1995,
+      "notes": "Foundational QFT reference for Lagrangian construction, gauge invariance, and Euler-Lagrange equations",
+      "source_simulation": "lagrangian_master_derivation_v22"
+    },
+    "peskin_schroeder1995": {
+      "id": "peskin_schroeder1995",
+      "doi": "10.1201/9780429503559",
+      "authors": "Peskin, M.E., Schroeder, D.V.",
+      "title": "An Introduction to Quantum Field Theory",
+      "publisher": "Westview Press",
+      "year": 1995,
+      "notes": "Standard QFT textbook covering Yang-Mills theory, spinor fields, and Feynman rules",
+      "source_simulation": "lagrangian_master_derivation_v22"
     },
     "mtw1973_gravitation": {
       "id": "mtw1973_gravitation",
-      "authors": "Misner, C.W., Thorne, K.S., and Wheeler, J.A.",
-      "title": "Gravitation",
-      "year": 1973,
       "url": "https://press.princeton.edu/books/hardcover/9780691177793/gravitation",
+      "authors": "Misner, C.W., Thorne, K.S., Wheeler, J.A.",
+      "title": "Gravitation",
+      "publisher": "W.H. Freeman",
+      "year": 1973,
+      "notes": "Comprehensive GR reference for vielbein/tetrad formalism, Einstein equations, and Kaluza-Klein reduction",
+      "source_simulation": "lagrangian_master_derivation_v22",
+      "also_registered_by": [
+        "gr_spacetime_derivations_v19",
+        "appendix_m_tensor_calc_v24_2"
+      ]
+    },
+    "carroll2004_gr": {
+      "id": "carroll2004_gr",
+      "doi": "10.1017/9781108770385",
+      "authors": "Carroll, S.M.",
+      "title": "Spacetime and Geometry: An Introduction to General Relativity",
+      "publisher": "Addison-Wesley",
+      "year": 2004,
+      "notes": "Primary pedagogical reference for vielbein formalism and spin connection derivations",
+      "source_simulation": "lagrangian_master_derivation_v22",
+      "also_registered_by": [
+        "gauge_sector_complete_v19",
+        "gr_spacetime_derivations_v19",
+        "appendix_m_tensor_calc_v24_2",
+        "appendix_n_vielbein_v24_2"
+      ]
+    },
+    "fernandez_gray1982": {
+      "id": "fernandez_gray1982",
+      "key": "fernandez_gray1982",
+      "authors": "Fernandez, M., Gray, A.",
+      "title": "Riemannian Manifolds with Structure Group G2",
+      "year": 1982,
+      "doi": "10.1007/BF01455968",
+      "url": "https://doi.org/10.1007/BF01455968",
+      "notes": "Classification of G2 intrinsic torsion into 4 irreducible classes tau_0, tau_1, tau_2, tau_3. Foundation for the torsion-correction-term formula (L.R2) capturing deviations from torsion-free G2 holonomy.",
+      "source_simulation": "lagrangian_master_derivation_v22"
+    },
+    "witten2002_deconstruction": {
+      "id": "witten2002_deconstruction",
+      "key": "witten2002_deconstruction",
+      "authors": "Witten, E.",
+      "title": "Deconstruction, G2 Holonomy, and Doublet-Triplet Splitting",
+      "year": 2002,
+      "url": "https://arxiv.org/abs/hep-ph/0201018",
+      "type": "article",
+      "source_simulation": "gauge_sector_complete_v19"
+    },
+    "acharya_kane2007": {
+      "id": "acharya_kane2007",
+      "key": "acharya_kane2007",
+      "authors": "Acharya, B.S., Kane, G.",
+      "title": "Phases of string/M theory compactifications and phenomenology",
+      "year": 2007,
+      "url": "https://arxiv.org/abs/hep-th/0612247",
+      "type": "review",
+      "source_simulation": "gauge_sector_complete_v19"
+    },
+    "minkowski1977_seesaw": {
+      "id": "minkowski1977_seesaw",
+      "authors": "Minkowski, P.",
+      "title": "mu -> e gamma at a rate of one out of 10^9 muon decays?",
+      "year": 1977,
+      "doi": "10.1016/0370-2693(77)90435-X",
+      "type": "article",
+      "source_simulation": "matter_sector_complete_v19",
+      "also_registered_by": [
+        "sterile_neutrino_portals_v23"
+      ]
+    },
+    "ckm_review2024": {
+      "id": "ckm_review2024",
+      "authors": "Particle Data Group",
+      "title": "CKM Quark-Mixing Matrix Review",
+      "year": 2024,
+      "url": "https://pdg.lbl.gov/2024/reviews/rpp2024-rev-ckm-matrix.pdf",
+      "type": "review",
+      "source_simulation": "matter_sector_complete_v19"
+    },
+    "desi2024_de": {
+      "id": "desi2024_de",
+      "authors": "DESI Collaboration (Adame, A.G. et al.)",
+      "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of BAO",
+      "year": 2024,
+      "url": "https://arxiv.org/abs/2404.03002",
+      "type": "article",
+      "source_simulation": "cosmology_sector_complete_v19"
+    },
+    "weinberg2008_cosmology": {
+      "id": "weinberg2008_cosmology",
+      "authors": "Weinberg, S.",
+      "title": "Cosmology",
+      "year": 2008,
+      "url": "https://global.oup.com/academic/product/cosmology-9780198526827",
       "type": "textbook",
-      "source_simulation": "gr_spacetime_derivations_v19"
+      "source_simulation": "cosmology_sector_complete_v19"
     },
     "weinberg1972_gravity": {
       "id": "weinberg1972_gravity",
@@ -1887,6 +2032,120 @@
       "url": "https://www.wiley.com/en-us/Gravitation+and+Cosmology-p-9780471925675",
       "type": "textbook",
       "source_simulation": "gr_spacetime_derivations_v19"
+    },
+    "levi_civita1900": {
+      "id": "levi_civita1900",
+      "doi": "10.1007/BF01454201",
+      "authors": "Levi-Civita, T., Ricci-Curbastro, G.",
+      "title": "Methodes de calcul differentiel absolu et leurs applications",
+      "year": "1900",
+      "journal": "Mathematische Annalen",
+      "volume": "54",
+      "pages": "125-201",
+      "notes": "Foundational paper establishing absolute differential calculus (tensor analysis)",
+      "source_simulation": "appendix_m_tensor_calc_v24_2"
+    },
+    "wald1984": {
+      "id": "wald1984",
+      "doi": "10.7208/chicago/9780226870373.001.0001",
+      "authors": "Wald, R. M.",
+      "title": "General Relativity",
+      "year": "1984",
+      "publisher": "University of Chicago Press",
+      "notes": "Mathematically rigorous treatment of GR and differential geometry",
+      "source_simulation": "appendix_m_tensor_calc_v24_2"
+    },
+    "cartan1904": {
+      "id": "cartan1904",
+      "url": "https://www.numdam.org/item/ASENS_1904_3_21__153_0/",
+      "authors": "Cartan, E.",
+      "title": "Sur la structure des groupes infinis de transformations",
+      "year": "1904",
+      "journal": "Annales Scientifiques de l'Ecole Normale Superieure",
+      "volume": "21",
+      "pages": "153-206",
+      "notes": "Foundational work on moving frames and structure equations",
+      "source_simulation": "appendix_n_vielbein_v24_2"
+    },
+    "kibble1961": {
+      "id": "kibble1961",
+      "doi": "10.1063/1.1703702",
+      "authors": "Kibble, T. W. B.",
+      "title": "Lorentz invariance and the gravitational field",
+      "year": "1961",
+      "journal": "Journal of Mathematical Physics",
+      "volume": "2",
+      "pages": "212-221",
+      "notes": "Gauging the Poincare group to derive vielbein formulation of gravity",
+      "source_simulation": "appendix_n_vielbein_v24_2"
+    },
+    "nakahara2003": {
+      "id": "nakahara2003",
+      "doi": "10.1201/9781315275826",
+      "authors": "Nakahara, M.",
+      "title": "Geometry, Topology and Physics",
+      "year": "2003",
+      "publisher": "CRC Press",
+      "notes": "Comprehensive reference on fiber bundles, connections, and Cartan formalism",
+      "source_simulation": "appendix_n_vielbein_v24_2"
+    },
+    "kaluza-1921": {
+      "id": "kaluza-1921",
+      "authors": "Kaluza, T.",
+      "title": "Zum Unitatsproblem der Physik",
+      "year": "1921",
+      "doi": "10.1142/S0218271818700017",
+      "type": "journal",
+      "source_simulation": "appendix_o_kk_reduction_v24_2"
+    },
+    "klein-1926": {
+      "id": "klein-1926",
+      "authors": "Klein, O.",
+      "title": "Quantentheorie und funfdimensionale Relativitatstheorie",
+      "year": "1926",
+      "doi": "10.1007/BF01397481",
+      "type": "journal",
+      "source_simulation": "appendix_o_kk_reduction_v24_2"
+    },
+    "randall-sundrum-1999": {
+      "id": "randall-sundrum-1999",
+      "authors": "Randall, L. & Sundrum, R.",
+      "title": "Large Mass Hierarchy from a Small Extra Dimension",
+      "year": "1999",
+      "doi": "10.1103/PhysRevLett.83.3370",
+      "type": "journal",
+      "source_simulation": "appendix_o_kk_reduction_v24_2"
+    },
+    "witten-1981": {
+      "id": "witten-1981",
+      "authors": "Witten, E.",
+      "title": "Search for a realistic Kaluza-Klein theory",
+      "year": "1981",
+      "doi": "10.1016/0550-3213(81)90006-7",
+      "type": "journal",
+      "source_simulation": "appendix_o_kk_reduction_v24_2"
+    },
+    "alvarez-gaume-1983": {
+      "id": "alvarez-gaume-1983",
+      "authors": "Alvarez-Gaume, L.",
+      "title": "Supersymmetry and the Atiyah-Singer Index Theorem",
+      "journal": "Communications in Mathematical Physics",
+      "volume": "90",
+      "pages": "161-173",
+      "year": "1983",
+      "doi": "10.1007/BF01205500",
+      "source_simulation": "appendix_q_index_theorem_v24_2"
+    },
+    "fujikawa-1979": {
+      "id": "fujikawa-1979",
+      "authors": "Fujikawa, K.",
+      "title": "Path-Integral Measure for Gauge-Invariant Fermion Theories",
+      "journal": "Physical Review Letters",
+      "volume": "42",
+      "pages": "1195-1198",
+      "year": "1979",
+      "doi": "10.1103/PhysRevLett.42.1195",
+      "source_simulation": "appendix_q_index_theorem_v24_2"
     },
     "degrassi-2012": {
       "id": "degrassi-2012",
@@ -2201,18 +2460,6 @@
       "url": "https://arxiv.org/abs/1606.07001",
       "notes": "Next-generation direct detection; projected sensitivity reaches neutrino floor",
       "source_simulation": "dark_matter_portals_v23"
-    },
-    "minkowski1977_seesaw": {
-      "id": "minkowski1977_seesaw",
-      "authors": "Minkowski, P.",
-      "title": "mu -> e gamma at a rate of one out of 10^9 muon decays?",
-      "journal": "Phys. Lett. B",
-      "volume": "67",
-      "pages": "421-428",
-      "year": 1977,
-      "url": "https://doi.org/10.1016/0370-2693(77)90435-X",
-      "notes": "Original type-I seesaw mechanism proposal",
-      "source_simulation": "sterile_neutrino_portals_v23"
     },
     "dodelson_widrow1994": {
       "id": "dodelson_widrow1994",

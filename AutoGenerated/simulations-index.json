@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-05T23:25:47.061575Z",
+  "generated_at": "2026-09-06T05:20:29.868280Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
   "total_scripts": 274,
@@ -313,7 +313,6 @@
           "parameters_contributed": [
             "cosmology.cp_phase_sterile",
             "cosmology.delta_b3_asymmetry",
-            "cosmology.eta_baryon_geometric",
             "cosmology.k_bary_normalization",
             "cosmology.racetrack_Re_T"
           ]
@@ -658,7 +657,20 @@
           "description": "Complete derivations for cosmological parameters from G2 holonomy geometry.",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "cosmology.H0_odowd",
+            "cosmology.alpha_F_r2",
+            "cosmology.attractor_fixed_point",
+            "cosmology.beta_F_trace",
+            "cosmology.dm_thermal_relic",
+            "cosmology.eta_baryon_geometric",
+            "cosmology.n_bbn_neutrino",
+            "cosmology.omega_dm_geometric",
+            "cosmology.omega_dm_total",
+            "cosmology.shadow_visible_ratio",
+            "cosmology.sterile_ratio",
+            "cosmology.w0_tzimtzum"
+          ]
         },
         {
           "file": "gauge_sector_complete.py",
@@ -668,7 +680,14 @@
           "description": "Complete derivations for the SM gauge sector from G2 holonomy geometry.",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "gauge.cos_theta_w",
+            "gauge.hypercharge_y_ratio",
+            "gauge.mixing_validated",
+            "gauge.qcd_cycle_type",
+            "gauge.theta_w_degrees",
+            "gauge.weak_cycle_type"
+          ]
         },
         {
           "file": "gr_spacetime.py",
@@ -696,7 +715,19 @@
           "description": null,
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "derivations.D_bridge_total",
+            "derivations.bridge_coherence_time",
+            "derivations.dof_26d_gravity",
+            "derivations.dof_after_g2",
+            "derivations.dof_after_sp2r",
+            "derivations.min_active_pairs",
+            "derivations.n_bridge_pairs",
+            "derivations.n_root_lattice",
+            "derivations.riemann_symmetries",
+            "derivations.spin_connection_components",
+            "derivations.vielbein_rank"
+          ]
         },
         {
           "file": "matter_sector_complete.py",
@@ -706,7 +737,19 @@
           "description": "Complete derivations for the Standard Model matter sector from G2 holonomy geometry.",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "higgs.lambda_quartic",
+            "higgs.m_higgs_derived",
+            "higgs.mu_squared",
+            "higgs.v_ew_derived",
+            "neutrino.m_nu_lightest",
+            "neutrino.m_r_scale",
+            "neutrino.sum_masses",
+            "yukawa.epsilon_fn",
+            "yukawa.n_generations",
+            "yukawa.y_bottom",
+            "yukawa.y_tau"
+          ]
         }
       ]
     },
@@ -1489,7 +1532,11 @@
           "description": "Appendix M: Tensor Calculus Foundations v19.0",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "tensor.metric_signature",
+            "tensor.riemann_symmetries",
+            "tensor.spacetime_dimension"
+          ]
         },
         {
           "file": "appendix_n_vielbein.py",
@@ -1499,7 +1546,11 @@
           "description": "DOI: 10.5281/zenodo.18079602",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "vielbein.lorentz_group_dimension",
+            "vielbein.spacetime_dimension",
+            "vielbein.spinor_representation_dimension"
+          ]
         },
         {
           "file": "appendix_o_kk_reduction.py",
@@ -1509,7 +1560,11 @@
           "description": "My Wife: Elizabeth May Watts",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "kk.compact_radius_ratio",
+            "kk.gauge_coupling_geometric",
+            "kk.mass_gap_planck"
+          ]
         },
         {
           "file": "appendix_p_g2_holonomy.py",
@@ -1519,7 +1574,13 @@
           "description": "Appendix P: G2 Holonomy Mathematics v19.0",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "g2_holonomy.b2",
+            "g2_holonomy.dim_g2",
+            "g2_holonomy.dim_so7",
+            "g2_holonomy.n_gen",
+            "g2_holonomy.num_octonion_units"
+          ]
         },
         {
           "file": "appendix_q_index_theorem.py",
@@ -1529,7 +1590,14 @@
           "description": "This appendix develops the Atiyah-Singer index theorem and its applications",
           "status": null,
           "gates_contributed": [],
-          "parameters_contributed": []
+          "parameters_contributed": [
+            "index.chiral_anomaly_coefficient",
+            "index.dirac_index",
+            "index.family_index",
+            "index.n_generations",
+            "index.n_minus",
+            "index.n_plus"
+          ]
         },
         {
           "file": "appendix_r_vacuum_stability.py",

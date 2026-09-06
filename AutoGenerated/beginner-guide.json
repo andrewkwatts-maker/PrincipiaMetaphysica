@@ -294,6 +294,18 @@
       "simulation_id": "pneuma_mechanism_v22_0",
       "domain": "pneuma",
       "section": "2"
+    },
+    {
+      "icon": "scroll",
+      "title": "The Master Blueprint of the Universe",
+      "simpleExplanation": "In physics, a 'Lagrangian' is like a recipe that tells you all the rules of the universe in one compact formula. It encodes how gravity works, how particles interact, and how forces arise. This simulation builds the master Lagrangian in 26 dimensions -- the special number where the math of string theory works consistently. From this 26D 'recipe', we can derive all of 4D physics by 'folding up' the extra dimensions.",
+      "analogy": "Think of a building blueprint. The 26D master action is like a very detailed architectural plan drawn in a high-dimensional space. The vielbein formalism is the coordinate system that keeps the blueprint readable at every point. The Kaluza-Klein reduction is like folding an origami crane -- you start with a 26D sheet and fold it down (26D -> 13D -> 7D -> 4D) until you get the familiar 4D world we live in. The folds create 'creases' that become the forces of nature (gravity, electromagnetism, nuclear forces).",
+      "keyTakeaway": "The 26D master action unifies gravity, gauge forces, fermions, and moduli into a single mathematical framework. Through G2 holonomy compactification, this reduces to 4D physics with exactly 2 graviton polarizations (confirmed by LIGO/Virgo) and a 288-root lattice encoding the gauge structure.",
+      "technicalDetail": "The vielbein e_a^mu maps between coordinate and frame indices, with g_munu = e_a^mu e_b^nu eta^ab. The 26D master action S_26 = S_EH + S_YM + S_Dirac + S_Pneuma contains Einstein-Hilbert gravity, E8 x E8 Yang-Mills, Weyl fermions (dim 2^13/2 = 4096), and Pneuma moduli coupling. The v22 architecture decomposes the 24 spatial dimensions into 12 pairs of 2D Euclidean bridges. Kaluza-Klein reduction via G2 holonomy yields 4D physics.",
+      "prediction": "The 26D graviton has D(D-3)/2 = 299 DOF. After the full reduction chain 26D -> 13D -> 7D -> 4D, exactly 2 graviton polarizations remain, matching gravitational wave observations by LIGO/Virgo.",
+      "simulation_id": "lagrangian_master_derivation_v22",
+      "domain": "derivations",
+      "section": "2"
     }
   ]
 }

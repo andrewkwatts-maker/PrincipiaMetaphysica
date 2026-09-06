@@ -1,7 +1,7 @@
 {
   "framework": "Principia Metaphysica",
   "audit_type": "26D Terminology Compliance",
-  "generated_at": "2026-09-05T23:25:36.700413Z",
+  "generated_at": "2026-09-06T05:20:18.882818Z",
   "total_files_scanned": 4,
   "files_scanned": [
     "formulas.json",
@@ -9,8 +9,8 @@
     "parameters.json",
     "theory_output.json"
   ],
-  "total_flags": 0,
-  "status": "CONSISTENT",
+  "total_flags": 3,
+  "status": "REVISION REQUIRED",
   "canonical_terminology": {
     "manifold": "M^{26}(24,2)",
     "signature": "(24,2)",
@@ -48,15 +48,37 @@
     }
   ],
   "canonical_keyword_hits": {
-    "M^{26}": 37,
-    "(24,2)": 611,
+    "M^{26}": 68,
+    "(24,2)": 712,
     "24 + 2": 27,
-    "b3 = 24": 131,
-    "G2 holonomy": 323,
-    "twisted connected sum": 28,
-    "(12,1)": 391,
-    "Sp(2,R)": 25
+    "b3 = 24": 146,
+    "G2 holonomy": 474,
+    "twisted connected sum": 42,
+    "(12,1)": 423,
+    "Sp(2,R)": 59
   },
-  "flagged_entries": [],
+  "flagged_entries": [
+    {
+      "path": "parameters.json['parameters']['derivations.n_bridge_pairs']['metadata']['description']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "Two-time ruling: the bulk is 26D = 24 space + 2 times",
+      "snippet": "v22: Total number of Euclidean bridge pairs in the bulk decomposition M^{24,2} = T^1 x_fiber (direct_sum_{i=1}^{12} B_i^{2,0}). Each of the 12 pairs contributes 2 spatial dimensions, totaling 24 spati...",
+      "file": "parameters.json"
+    },
+    {
+      "path": "theory_output.json['parameters']['derivations.n_bridge_pairs']['metadata']['description']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "Two-time ruling: the bulk is 26D = 24 space + 2 times",
+      "snippet": "v22: Total number of Euclidean bridge pairs in the bulk decomposition M^{24,2} = T^1 x_fiber (direct_sum_{i=1}^{12} B_i^{2,0}). Each of the 12 pairs contributes 2 spatial dimensions, totaling 24 spati...",
+      "file": "theory_output.json"
+    },
+    {
+      "path": "theory_output.json['self_validations'][72]['checks'][3]['message']",
+      "pattern": "\\b25D\\b",
+      "suggestion": "Two-time ruling: the bulk is 26D = 24 space + 2 times",
+      "snippet": "12 pairs * 2D = 24D spatial + 1D time = 25D total",
+      "file": "theory_output.json"
+    }
+  ],
   "seed_provenance": "All terminology terms trace back to seed b3 = 24 (G2 manifold third Betti number)."
 }
