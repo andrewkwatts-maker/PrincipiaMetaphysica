@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-09-07T07:10:46.066590",
+  "test_date": "2026-09-07T07:18:08.730133",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
@@ -157,24 +157,24 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        13.26954932330581,
-        5.32109385634856,
-        5.129718522873924,
-        4.900627473705475,
-        4.7649884436220455,
-        4.606636920457145,
-        4.474943113115177,
-        4.349393713152793,
-        4.177609777636323,
-        4.032353754524056
+        13.130124700109523,
+        5.28803815904471,
+        5.152358313970753,
+        4.967740475432382,
+        4.833914401710074,
+        4.608673295211408,
+        4.527554766182101,
+        4.22567663022243,
+        4.175275709679898,
+        4.113474714522277
       ],
-      "condition_number": 7.733778973126014,
+      "condition_number": 8.180685350114942,
       "p_value": 0.0,
       "chi_squared": 2238886595.968139,
       "degrees_of_freedom": 73,
       "effective_dof": 3,
       "rigor_status": "POOR_FIT",
-      "dimensions_for_95_variance": 21,
+      "dimensions_for_95_variance": 22,
       "interpretation": {
         "full_rank": true,
         "independent_residues": true,
@@ -281,28 +281,28 @@
     "redundancy_pairs": [
       [
         0,
+        12,
+        0.9923868866390463
+      ],
+      [
+        0,
         48,
-        0.9959117507367125
+        0.9912318087907683
       ],
       [
         1,
         13,
-        0.9973238182280855
+        0.9959950187607117
       ],
       [
         1,
         25,
-        0.9973426493110324
+        0.9972861751350326
       ],
       [
         1,
         37,
-        0.9964964821317543
-      ],
-      [
-        1,
-        49,
-        0.9971514813200923
+        0.993691434067343
       ]
     ]
   },

@@ -1967,3 +1967,45 @@ instead of being derivable only by joining two files.
 `higgs.vev` is the remaining oddity in that table: registry status ESTABLISHED,
 value 246.0, scored against 246.22 at 0.44σ. It sits inside the open
 electroweak-VEV ruling recorded above and should be settled with it.
+
+### A FAIL published beside 0.07σ
+
+Once the theory-uncertainty policy actually started firing, `verdict` and
+`sigma` came from two different computations. `geometry.alpha_inverse`
+published:
+
+    verdict: FAIL          sigma: 0.07026
+
+The FAIL came from the experimental-only deviation of 3.35e4σ; the 0.07026 is
+the theory-folded value the policy had just declined to honour. A reader sees a
+FAIL at seven hundredths of a sigma — which reads as a bug in the framework
+rather than as a disagreement with CODATA.
+
+It also hid the real misses. `worst_offenders` ranks on `sigma`, so the
+framework's largest genuine disagreements were **absent from its own list of
+worst offenders** while a falsified candidate led it. Correcting the pairing
+changes the list substantially:
+
+| | before | after |
+|---|---|---|
+| 1 | `algebra.gaugino_cabibbo_proxy` 344.7 | `electromagnetic.alpha_inv` **33457** |
+| 2 | `gauge.hypercharge_coupling_gp` 80.9 | `geometry.alpha_inverse` **33457** |
+| 3 | `algebra.gaugino_cabibbo_derived` 37.6 | `algebra.gaugino_cabibbo_proxy` 344.7 |
+| … | | `geometry.G_F_matched` **57.1**, `higgs.m_higgs_pred` **41.6** |
+
+`G_F_matched` and `m_higgs_pred` had been sitting at 0.024σ and 1.14σ once
+folded, and neither appeared anywhere near the top. Both are now visible.
+
+The invariant is simple: **a verdict is a band applied to a number, so the row
+must publish the number that was banded.** Whichever sigma the policy used is
+the one reported; the folded value is kept beside it as `sigma_with_theory`,
+so coherence costs no information and the `always` policy's number remains
+recoverable. `tests/test_sigma_matches_its_verdict.py` checks all three parts —
+that a demoted row publishes its experimental-only sigma, that the folded value
+survives, and that nothing deviating by more than the smallest listed offender
+is missing from `worst_offenders`.
+
+This is the fourth mechanism this cycle whose failure mode was **agreement
+between two numbers that were never the same number**: the registry-status
+short-circuit, the duplicated uncertainty slots, E(z) cancelling against
+itself, and now a verdict banded on one deviation and reported with another.
