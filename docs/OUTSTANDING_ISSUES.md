@@ -1483,3 +1483,72 @@ fails as XPASS and must be removed, so it cannot go stale the way the nine
 earlier session and sat there while the modules stayed absent. Recording a
 defect is not the same as fixing it, and the record should make that
 uncomfortable.
+
+---
+
+## 2026-09-06 (fifth pass) — a stub dependency took the whole package down
+
+CI went from green to **four collection errors**, on Linux, with the same root
+cause behind all of them:
+
+```
+src/metaphysica/simulations/PM/particle/neutrino_mixing.py:181
+    return _A.Expression.number(float(v))
+AttributeError: 'NoneType' object has no attribute 'number'
+
+ImportError: cannot import name 'simulations' from 'metaphysica'
+```
+
+**This was a regression from the previous pass.** Declaring `arithma` a hard
+dependency (to pin it away from the fixed-point 2.0.4) made CI install a build
+whose compiled extension does not load. arithma's own fallback then binds
+`Expression` to `None` — so `import arithma` **succeeds** and every use of it
+explodes.
+
+Fifty-three modules guard the backend as:
+
+```python
+try:
+    import arithma as _A
+except ImportError:
+    _A = None
+```
+
+That catches a **missing** package. It cannot catch a package that imports and
+does not work. And because `neutrino_mixing` runs a module-level assert that
+builds formulas at import time, a *degraded optional dependency* became an
+**import failure for the entire `metaphysica.simulations` package**.
+
+### The same blind spot, twice
+
+This is the third form of one defect. The artifact had already recorded
+`arithma_available: true` alongside **422 formulas none of which carried an
+arithma tree** — the import worked; every expression did not. *Importable is
+not usable*, and only one of those is worth reporting.
+
+Fixed by asking the right question. `simulations/core/arithma_backend.py`
+imports the package, checks `Expression` is not None, then **builds and
+evaluates a probe expression and checks it round-trips**. `ARITHMA` is the
+module if it computes and `None` otherwise, so callers keep their existing
+`if _A is None` shape and a stub is treated as what it is — absent. All 53
+guards now route through it, as do `triple_validator` and the two generators
+that publish `ARITHMA_AVAILABLE`.
+
+### And arithma is an extra again
+
+It is back under `[project.optional-dependencies]` in `sims` and `full`,
+keeping the measured `>=2.0.1,<2.0.3` bound. Every call site is written to
+degrade without it; requiring it is what let a stub reach the import path at
+all. The version bound stays because it is measured, not cautious — an
+unreleased 2.0.4 is a fixed-point rewrite with usable range about
+[1e-15, 9.2e18] against this framework's 1.9e-93 to 4.8e34.
+
+`tests/test_arithma_stub_does_not_break_import.py` reproduces the exact CI
+failure: it writes a stub `arithma` (importable, `Expression = None`), puts it
+on `PYTHONPATH`, and asserts in a subprocess that the backend reports it
+unusable, that `metaphysica.simulations` still imports, and that
+`neutrino_mixing` — the module that crashed first — still imports. It also
+asserts arithma has not crept back into the required dependencies.
+
+The working path is unchanged: 94 simulations pass, `arithma_available: true`,
+phantom 0, silent defaults 0, EML strict 1.0 over 603 rows, b₃-rooted 381.

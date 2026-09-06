@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-06T05:20:29.868280Z",
+  "generated_at": "2026-09-06T06:14:12.779332Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 274,
+  "total_scripts": 275,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -2803,7 +2803,7 @@
     },
     "core": {
       "title": "core",
-      "count": 16,
+      "count": 17,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2818,6 +2818,16 @@
             "pm.version.short",
             "system.version"
           ]
+        },
+        {
+          "file": "arithma_backend.py",
+          "path": "simulations/core/arithma_backend.py",
+          "category": "core",
+          "title": null,
+          "description": "One place that decides whether the arithma backend is actually usable.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "canonical_values.py",
