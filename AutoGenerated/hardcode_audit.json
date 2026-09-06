@@ -5,7 +5,7 @@
     "files_scanned": 196,
     "dataset_values": 339,
     "exact_dup": 391,
-    "stale_dup": 339,
+    "stale_dup": 337,
     "files_with_findings": 87
   },
   "worst_files": [
@@ -66,8 +66,8 @@
       14
     ],
     [
-      "simulations/PM/derivations/cosmology_sector_complete.py",
-      14
+      "simulations/PM/particle/higgs_vev_refined.py",
+      13
     ]
   ],
   "findings": [
@@ -1129,7 +1129,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 333,
+      "line": 348,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -1137,7 +1137,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 432,
+      "line": 479,
       "literal": 67.36,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -1145,7 +1145,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 446,
+      "line": 493,
       "literal": 2.435e+18,
       "dataset_key": "experiment_ref.parameters.gravity.M_PLANCK_reduced.value",
       "dataset_value": 2.435e+18,
@@ -1153,7 +1153,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 514,
+      "line": 566,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -1161,7 +1161,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 535,
+      "line": 587,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -1169,15 +1169,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 212,
-      "literal": 0.958,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 334,
+      "line": 349,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -1185,7 +1177,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1617,
+      "line": 1686,
       "literal": 67.36,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -1193,7 +1185,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1617,
+      "line": 1686,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -1201,7 +1193,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1276,
+      "line": 1336,
       "literal": 6.12e-10,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
       "dataset_value": 6.12e-10,
@@ -1209,7 +1201,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1621,
+      "line": 1690,
       "literal": 67.36,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -1217,7 +1209,7 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1621,
+      "line": 1690,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -1225,18 +1217,10 @@
     },
     {
       "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1206,
-      "literal": 0.958,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/derivations/cosmology_sector_complete.py",
-      "line": 1611,
-      "literal": 0.998,
-      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
-      "dataset_value": 1.0,
+      "line": 1266,
+      "literal": 0.752,
+      "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.uncertainty",
+      "dataset_value": 0.75,
       "class": "STALE_DUP"
     },
     {
@@ -1369,7 +1353,7 @@
     },
     {
       "file": "simulations/PM/derivations/matter_sector_complete.py",
-      "line": 1904,
+      "line": 1912,
       "literal": 125.1,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
@@ -1377,7 +1361,7 @@
     },
     {
       "file": "simulations/PM/derivations/matter_sector_complete.py",
-      "line": 1908,
+      "line": 1916,
       "literal": 124.96,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,
@@ -1385,7 +1369,7 @@
     },
     {
       "file": "simulations/PM/derivations/matter_sector_complete.py",
-      "line": 1908,
+      "line": 1916,
       "literal": 125.24,
       "dataset_key": "experiment_ref.parameters.higgs.m_higgs.value",
       "dataset_value": 125.2,

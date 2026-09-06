@@ -1618,3 +1618,120 @@ never reaches b₃ — it had been counted rooted by the degraded latex scan.
 `non_b3` goes 180 → 181 with `b3_rooted` unchanged at 381. Supplying the tree
 is what exposes the missing edge, exactly as clearing a phantom path did on
 2026-09-04 and as fixing the arithma backend did earlier today.
+
+---
+
+## 2026-09-06 (seventh pass) — a prediction was scored against itself
+
+Scanning the validation report for one value published under more than one
+path turned up three groups. **Two were defects.**
+
+### A fabricated DESI anchor
+
+`cosmology.w0_tzimtzum` = −0.95833 scored **0.0167σ PASS** against an anchor
+of **−0.958 ± 0.02 labelled "DESI_2025"**.
+
+**No such measurement exists.** The datasources carry exactly two DESI w₀
+rows: `desi.w0` = −0.752 ± 0.057 (the DR2 w0waCDM headline) and
+`desi.w0_thawing` = −0.957 ± 0.067 (attribution recorded UNVERIFIED). The
+−0.958 ± 0.02 was a hardcoded literal in `cosmology_sector_complete`:
+
+```python
+    self.w0_exp = -0.958   # DESI 2025 value
+    self.w0_unc = 0.02     # DESI 2025 uncertainty
+```
+
+It is the framework's own prediction, −23/24 = −0.95833, rounded to three
+decimals and given an uncertainty tight enough to make the agreement read as
+exact. **A prediction scored against itself** — the same shape as the R4 H₀
+ruling (73.04 restated under a `cosmology.*` name) and as the χ² that came
+from a default on a key that never existed.
+
+The anchor is now read from the registry with no literal fallback.
+`w0_tzimtzum` moves **0.0167σ PASS → 3.6199σ FAIL**, matching
+`cosmology.w0_thawing` exactly, which is what −23/24 actually scores against
+DESI DR2.
+
+### Eight verdicts reached without a comparison
+
+`_verdict(sigma, registry_status)` read:
+
+```python
+    s = (registry_status or "").upper()
+    if s in ("PASS", "FAIL", "MARGINAL", "TENSION"):
+        return s
+    if sigma is None:
+        return "UNBOUNDED"
+```
+
+The registry's own `validation_status` **short-circuits the sigma check**, so
+`sigma is None → UNBOUNDED` was unreachable for any row the registry had
+already labelled — and the registry labels a row whenever a bound is present,
+whether or not an uncertainty is. Eight two-sided comparisons reached PASS
+with **no uncertainty at all**:
+
+    abstract.alpha_inv_codata      abstract.alpha_inv_pred
+    gauge.cos_theta_w              gauge.theta_w_degrees
+    quantum_bio.topological_pitch  vacuum.lambda_ew
+    yukawa.y_bottom                yukawa.y_tau
+
+`quantum_bio.topological_pitch` is the clearest: **6.12 against a stated 13.0
+— a factor of two out — published as a PASS.**
+
+The uncertainty test now runs first, ahead of the registry status. One-sided
+bounds are deliberately untouched: for an `upper` or `lower` bound σ is
+legitimately None because a margin is not a residual, as settled when
+`gauge.M_GUT_GEOMETRIC` was fixed. Verdicts move PASS 55 → 48, UNBOUNDED
+15 → 23.
+
+Separately, `yukawa.epsilon_fn` declared a bound and a source but no
+uncertainty, so it PASSed while the identical value under `ckm.V_us` scored
+2.791σ TENSION against the same PDG row. The 0.00067 is read across from
+`pdg.V_us`, the row the bound already cites. Both now read 2.791σ.
+
+### The third group is real physics and must keep passing
+
+`cosmology.s8_pm_predicted` against Planck (0.718σ PASS) and
+`cosmology.s8_pm_vs_lensing` against KiDS-1000 (2.733σ TENSION) disagree
+because **Planck and weak lensing disagree**. That is the S₈ tension,
+correctly scored twice.
+
+So `tests/test_no_contradictory_scoring.py` cannot simply forbid the pattern.
+It records the legitimate groups with their reason and fails on any new one —
+which is exactly what separates a physical tension between two anchors from
+one prediction quietly scored against itself. A third test fails if a recorded
+allowance stops contradicting, so the list cannot go stale.
+
+The remaining recorded group is w₀: `w0_derived` and `geometry.w_zero` PASS at
+0.02σ against the unverified thawing anchor while `w0_thawing` and
+`w0_tzimtzum` FAIL at 3.62σ against the DR2 headline. That is the author
+ruling already open in the register — defend the thawing anchor with a
+citation or withdraw the PASS — and it is now impossible to miss.
+
+### The same fabricated number, written a second way
+
+Replacing the anchor in `__init__` made the SSOT Rule 5 check fail, because
+`validate_self()` derives without going through `run()` and so never resolved
+it. Fixing that — the resolver now falls back to the registry *singleton*,
+which is the same `established.py` row, not a literal — surfaced a **second
+copy** of the invented band:
+
+```python
+    "name": "w_0 within 3-sigma of DESI 2025",
+    "confidence_interval": {"lower": -0.998, "upper": -0.918, ...},
+```
+
+−0.998 to −0.918 **is** −0.958 ± 0.02, written out by hand as two bounds. It
+was invisible to a search for the anchor because neither the value nor the
+uncertainty appears in it. Replacing the anchor upstream left it standing, and
+it would have kept publishing the fabricated interval under a check whose name
+asserted a DESI 2025 measurement.
+
+The interval is now formed from the resolved anchor and the check is named
+from `entry.source`, so the label cannot outlive the number it describes. SSOT
+compliance returns to 846/846.
+
+**The lesson, recorded for the fourth time:** a fabricated quantity survives
+the removal of its own literal if it was ever *derived into another form*.
+Grepping for `0.958` and for `0.02` would both have missed this. What found it
+was making the guard fail loudly instead of defaulting.
