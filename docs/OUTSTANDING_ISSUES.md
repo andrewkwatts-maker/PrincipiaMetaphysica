@@ -2288,6 +2288,93 @@ number and packing density — is not taken here.
 4. **A preferred Fano direction.** Nothing supplies one. Approach 6 stays
    open, and must not be closed by assertion.
 
+## 5. The audit that gates Approach 4 — answered
+
+§4 left open whether any physical claim depends on Leech-specific numbers,
+since that is the only stated cost of adopting E8³. It does not.
+
+**The kissing number was a literal, and its "validation" compared it to
+itself.** `LeechLattice.kissing_number` was
+
+```python
+    return 196_560  # Known exact value
+```
+
+and two callers checked it:
+
+```python
+    checks['leech_kissing_196560'] = (
+        results['leech']['kissing_number'] == 196_560)      # sphere_packing.py
+    checks['leech_kissing_196560'] = (
+        results['leech']['kissing_number'] == 196_560)      # geometric_pipeline.py
+```
+
+A hardcoded constant compared against a hardcoded constant. It cannot fail —
+and it was unfalsifiable in a second, worse way: **while the generator was not
+the Leech lattice at all, the literal still read 196560, so the check passed
+for a lattice whose true kissing number was something else entirely.** The
+same pattern sits beside it in `checks['n_gen_3'] = results['leech']['n_gen']
+== 3`, against a `'n_gen': 3` set four lines above.
+
+**The packing density never touched the lattice either.**
+`optimal_density()` returns `math.pi ** 12 / math.factorial(12)` — the
+closed-form Viazovska/Cohn–Kumar result, correctly attributed, but a formula,
+not a measurement of the object.
+
+So the answer to §4's open question is: **nothing physical depends on
+rootlessness or on Leech-specific numbers.** They appear only as literature
+constants and in checks that compare them to themselves. Adopting E8³ costs
+nothing computational; it costs only relabelling claims that were never
+load-bearing.
+
+### The kissing number is now derived
+
+Now that the generator really is Λ₂₄, the number can be counted instead. The
+minimal vectors fall into exactly three shapes, and every input is taken from
+the framework's own Golay code rather than from the literature:
+
+| shape | count | from |
+|---|---|---|
+| (±4², 0²²) | 1104 | 4·C(24,2) |
+| (±2⁸, 0¹⁶) on octads | 97152 | n_octads · 2⁷, **n_octads = 759 counted from the code** |
+| (∓3, ±1²³) | 98304 | 24 · \|Golay code\|, **4096 counted from the code** |
+| | **196560** | |
+
+The full enumeration — generating each vector and solving **B x = v** over the
+integers to confirm it lies in the lattice — is in the test file. The Golay
+weight distribution came out **{0:1, 8:759, 12:2576, 16:759, 24:1}**, exactly
+G24's weight enumerator, confirming the code independently.
+
+**This is also a second, independent proof that the new construction is Λ₂₄.**
+No other Niemeier lattice has 196560 minimal vectors. The lattice was verified
+once by its definition (det 1, no roots) and now again by a quantity that was
+never used in building it.
+
+---
+
+## 6. Status of the four open items from §4
+
+| item | status |
+|---|---|
+| Does anything depend on Leech-specific numbers? | **Closed.** No. See above. |
+| The factor of 2 in 24 = 12×2 | **Open.** Two shadows are the candidate; nothing derives it. |
+| The TCS obstruction on (4, 24) | **Open, with a candidate.** b₂ = 7 is admissible (7+24 odd), is in Joyce 1996, matches the 7 Fano points and splits 7 = 4+3 = arc + complement. Costs the current n_gen = 12/4 derivation. Author's call. |
+| A preferred Fano direction | **Open.** Nothing supplies one. Must not be closed by assertion. |
+
+With the first closed, the recommendation of §3 stands with its only stated
+cost removed: **adopt E8³, take the join from the arc/complement 4×3 grid, and
+drop the bridge-as-coordinate-pair convention that Approach 1 shows can never
+be G₂-equivariant.** That remains a physics ruling and is the author's to make.
+
+> **Provenance of the section below.** This pass ran as a scheduled job
+> against the PrincipiaMetaphysica repository alone. It states in its own
+> text that no test-runner was available to it, so its numbers are
+> computed but were not checked against the suite; and it ran before the
+> Λ₂₄ correction in §0 landed. Where the two agree — notably that 196560
+> reaches no scored parameter, which is §5's finding arrived at
+> independently — the agreement is worth something precisely because the
+> two passes did not share a working tree.
+
 ---
 
 # 2026-09-07 — Computational verification pass (second run)
