@@ -2529,3 +2529,216 @@ The single remaining path that an author decision could close is **item 2**:
 accepting b₂ = 7 (replacing "four faces = b₂") in exchange for TCS
 admissibility and the clean 7 = 4+3 = arc+complement Fano decomposition.
 All the geometry is already there; only the physics ruling is outstanding.
+
+---
+
+## 2026-09-08 (tenth pass) — reading the source instead of citing it
+
+Four claims in this register were checked against the actual text of
+arXiv:1810.12659 (Kennon, *G₂-Manifolds and M-Theory Compactifications*), read
+from the PDF rather than from its abstract. One was withdrawn, two were
+confirmed verbatim, and one turns out to be **unanswerable from this source**.
+
+A first pass on the abstract alone suggested the citation was wrong — it is
+not. That reading was mistaken and is recorded here as such: the abstract does
+not mention the enumeration, the body does.
+
+### Confirmed verbatim — the 252 pairs and their ranges
+
+> "Based on the eight examples of Joyce orbifold resolutions corresponding to
+> Joyce's generalized construction, there are 252 sets of second and third
+> Betti numbers corresponding to simply-connected Joyce manifolds and
+> therefore at least that many distinct compact G₂-Manifolds [10]. For the
+> constructed spaces b₂(M) ranges between 0 and 28 and b₃(M) between 4 and
+> 215."
+
+§C4's citation is accurate.
+
+### Unanswerable from this source — is (4, 24) one of them?
+
+The 252 pairs are **not tabulated**. They are shown as a scatter plot:
+
+> "looking at a plot of Betti numbers achieved via the Joyce orbifold
+> resolutions, the pairs (b₂(M), b₃(M)) are commonly on diagonal lines of
+> constant sum b₂(M)+b₃(M) [10]."
+
+So membership of (4, 24) **cannot be read off this paper**, and no pair is
+recoverable from its text. The underlying data is Joyce's reference [10]. That
+is the honest result: the question stays open, and nothing is asserted about
+(4, 24) either way. Settling it needs Joyce's tables directly.
+
+### Confirmed — the real TCS constraint, and it is about b₃ not b₂
+
+> "Oftentimes, the second Betti number vanishes, but it is necessarily true
+> that 0 ≤ b₂(M) ≤ 9."
+
+> "For the examples of twisted connected sums given in Kovalev's paper, he
+> realizes 71 ≤ b₃(M) ≤ 155."
+
+Two consequences. First, **b₂ was never the TCS problem**: the constraint is
+0 ≤ b₂ ≤ 9, which both b₂ = 4 and b₂ = 7 satisfy comfortably. Second, note the
+wording on b₃ — "for the examples given in Kovalev's paper, he realizes" is a
+statement about the examples exhibited, not a proved bound on all TCS
+manifolds. §C4's exclusion of b₃ = 24 should be stated at that strength: it is
+far outside the range anyone has realised, not a theorem forbidding it.
+
+### Withdrawn — the parity claim, now refuted by the source's own equation
+
+The register's §4/§6 repeated "Crowley–Nordström forces b₂ + b₃ odd for any
+TCS". §C4 had already corrected it; the primary source now settles it. Kennon
+gives the TCS Betti relation
+
+> b₃(M) + b₂(M) = b₃(V₁) + b₃(V₂) + 23    (2.17)
+
+where V₁, V₂ are the two building blocks. So
+
+    b₂ + b₃ ≡ b₃(V₁) + b₃(V₂) + 1   (mod 2)
+
+The parity of b₂ + b₃ is **determined by the building blocks**, not fixed. It
+is odd only when b₃(V₁) + b₃(V₂) is even. There is no universal parity
+constraint, and the claim is withdrawn — as is everything built on it,
+including the b₂ = 7 proposal, which was motivated by an obstruction that does
+not exist.
+
+### Confirmed — b₂ counts U(1) gauge fields
+
+This is the one that matters most, because it is the physics behind the
+`moduli_indexing` fork:
+
+> "as a consequence of the fact that compact G₂-Manifolds exhibit no
+> continuous symmetries, the gauge fields are determined by the Kaluza-Klein
+> reduction of the C-Field [72]. Considering this dimensional reduction,
+> compactifying M-Theory on a smooth G₂-Manifold leads to the gauge group
+> U(1)^{b₂(M)} [65], which is necessarily Abelian."
+
+So b₂ = 4 means **four U(1) gauge fields**, not four Kähler moduli. The
+framework's four T_i, entering a racetrack superpotential, cannot be indexed
+by b₂ — M2-brane instantons wrap associative 3-cycles, which b₃ counts. The
+`moduli_indexing` ruling is therefore a real question with a sourced basis,
+not a stylistic one.
+
+It also retires, from the primary source, the claim this register corrected
+separately today: `appendix_p_g2_holonomy` published "b₂ = 0 — no abelian
+gauge fields" in three artifacts. Both halves are wrong. b₂ is unconstrained
+by G₂ holonomy, and b₂ is exactly what counts the abelian gauge fields.
+
+---
+
+## 2026-09-08 (eleventh pass) — the racetrack does not stabilise anything
+
+The plan's decisive check: is `T_i = b3·k_gimel/(i·π)`, which
+`four_face_structure` calls "racetrack-stabilized VEVs", actually a stationary
+point of the racetrack potential? **No.** And answering it turned up three
+further problems in the same mechanism.
+
+### 1. There are two different objects both called the racetrack
+
+| | `bridge_geometry.racetrack_potential` | `four_face_structure` |
+|---|---|---|
+| variables | **12 bridges**, T = L₁L₂sin θ (an area) | **4 faces** |
+| how T is obtained | numerical minimisation (L-BFGS-B, 36 params) | **assigned** in closed form |
+| values | all 12 equal at T = 23.765 | 94.105, 47.053, 31.368, 23.526 |
+
+Different variables, different counts, different magnitudes, and **no map
+between them**. Neither validates the other.
+
+### 2. The closed form is not a stationary point
+
+Embedding the four face values into the twelve bridges (θ = π/2 so area = T
+exactly) and differentiating numerically:
+
+    V at the closed-form point = 1.674e-06
+    ||grad V||                 = 4.415e-06        (stationary would be ~0)
+
+So "racetrack-stabilized" describes something the code does not do. The four
+face moduli are an **ansatz**, not a stabilisation — the same defect class this
+campaign has been removing, sitting in the load-bearing part of the geometry.
+
+### 3. The objective is not the scalar potential, and its own docstring says so
+
+```
+The scalar potential is V = e^K (|DW|² − 3|W|²) in N=1 SUGRA.
+For simplicity, we minimize |W|² as a proxy for finding a stable vacuum.
+```
+
+It writes the right thing and then minimises something else. With
+A = 1.0, B = −0.5, a = 0.26180, b = 0.24166, the superpotential
+W = A e^{−aT} + B e^{−bT} is monotone and changes sign, so |W|² is minimised
+exactly where **W = 0**:
+
+    T = ln(A / −B) / (a − b) = 34.419
+
+**A vanishing superpotential is not a stabilised vacuum.** In N=1 SUGRA the
+condition is D_T W = 0; a point with W = 0 and D_T W ≠ 0 is not a vacuum at
+all. So even a perfectly converged minimisation of this objective would not
+find one.
+
+### 4. The minimiser does not reach its own minimum either
+
+    objective at T = 34.419 (the true W = 0)   2.645e-38
+    objective at T = 23.765 (where it stops)   2.118e-05
+
+`stabilize_moduli` halts **31% short**, because the gradient is exponentially
+small there and L-BFGS-B stalls. The point it returns is not the minimum of
+the function it is minimising — and, tellingly, the closed-form ansatz scores
+1.674e-06, an order of magnitude *better* than the "optimum" the minimiser
+reports.
+
+### What this does and does not overturn
+
+It does **not** touch the Route 1 closure. That rests on the relation
+a_i T_i = k_gimel giving m_T = 2 k_gimel m_{3/2}, which is an algebraic
+consequence of the racetrack *form*, not of any numerical minimum.
+
+It does mean the four-face moduli values themselves are unsupported. Anything
+downstream that treats 94.105 / 47.053 / 31.368 / 23.526 as *stabilised*
+volumes — rather than as a chosen 1/i ansatz — is overclaiming, and δ_T = 0.75
+is a property of that ansatz (δ_T = 1 − 1/n) rather than of a vacuum.
+
+**Recommended sequencing, unchanged in spirit:** no multi-start vacuum search,
+no Hessian spectrum, and no basin-hopping is worth running against this
+objective, because minimising |W|² cannot locate a vacuum however well it is
+optimised. The prerequisite is a real scalar potential — V = e^K(|D W|² −
+3|W|²) with a Kähler potential — and that is a modelling decision, not a
+numerical one. The `moduli_indexing` ruling has to come first regardless,
+since under `b2_gauge` the racetrack does not apply to these modes at all.
+
+### What the lattice switch actually measured
+
+Running the whole suite under `METAPHYSICA_VARIANT_LATTICE_24D=niemeier_e8x3`
+produced **8 failures**, and every one was a test asserting a property of Λ₂₄
+while the model ran on E8³. That is the switch doing its job: the failures
+**enumerate the dependency surface** — exactly what in the codebase depends on
+which 24-dimensional lattice is chosen.
+
+| what depends on the choice | where |
+|---|---|
+| kissing number 196560 → 720 | `test_leech_lattice`, `test_geometric_pipeline` |
+| minimum norm 4 → 2 (rootless → has roots) | `test_leech_lattice_is_the_leech_lattice` |
+| basis is (1/√8)×integer → half-integer | same |
+| minimal vectors of Leech shape | same |
+| generator-Q anisotropy | `test_axion_alignment_is_basis_independent` |
+
+Five files, ten assertions. **Nothing else in 2147 tests moved.** That is a
+sharper answer than the earlier prose result ("swapping the lattice changed no
+published number"): the dependency is real but confined to statements *about
+the lattice itself*, and no physics result reads through it.
+
+They are now conditional on the branch rather than weakened — a Λ₂₄ property is
+still asserted at full strength exactly when Λ₂₄ is running, and E8³ has its
+own counterpart assertions.
+
+### A quantitative by-product: the basis artifact is lattice-dependent
+
+The anisotropy test was the one worth branching rather than skipping:
+
+| Q computed from | max off-diagonal | condition number |
+|---|---|---|
+| Leech Construction A generator | 26729.8 | **49827** |
+| E8³ block-diagonal generator | 0.5 | **4.617** |
+| either minimal-vector shell | ≤ 2.5e-13 | **1** |
+
+So the *size* of the basis artifact depends on the lattice: Construction A is
+wildly anisotropic, while a block-diagonal E8³ basis is already nearly
+isotropic. Both remain basis-dependent — neither reaches the shell's exact
+isotropy — which is precisely why the shell computation is the one to trust.
