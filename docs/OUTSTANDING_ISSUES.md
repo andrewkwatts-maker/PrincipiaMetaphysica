@@ -2009,3 +2009,281 @@ This is the fourth mechanism this cycle whose failure mode was **agreement
 between two numbers that were never the same number**: the registry-status
 short-circuit, the duplicated uncertainty slots, E(z) cancelling against
 itself, and now a verdict banded on one deviation and reported with another.
+
+---
+
+# 2026-09-07 — Closing the geometric model: assessment of six approaches
+
+The task was to find the right path to close the geometric model, and to
+report clearly on whatever could not be closed. Six approaches were worked;
+one of them changed the problem, and one of them settles a question the
+register has carried since the beginning.
+
+---
+
+## 0. The finding that reframes everything: the lattice was not Λ₂₄
+
+`LeechLattice._generator_matrix` did not generate the Leech lattice. Its own
+docstring said so — *"This isn't quite right for the standard form"* — and it
+was used anyway for every generator-derived quantity in the module: the Gram
+matrix, the bridge-pair moduli, and the axion alignment matrix.
+
+It failed **both** defining properties:
+
+```
+det(Gram) = 7_144_929  (= 2673²)      Λ₂₄ is unimodular, det 1
+12 basis rows of norm 2               Λ₂₄ has NO vector of norm 2
+```
+
+The norm-2 rows are the `4·e_i` for i < 12, since |4e_i|²/8 = 2. That alone is
+decisive: rootlessness is exactly what separates Λ₂₄ from the other 23
+Niemeier lattices, so an even unimodular rank-24 lattice *with* roots is by
+definition one of the other 23.
+
+Worse for the framework's purposes, the construction applied `4·e_i` to only
+the **first twelve** coordinates while the last twelve came from the Golay
+rows. The two halves obeyed different rules, so the 8-coordinate "E8 blocks"
+0-7 / 8-15 / 16-23 straddled that divide. **There was no E8³ decomposition at
+all** — and `cross_e8`, the property the whole four-face grouping is selected
+by, is a statement about that decomposition.
+
+The binary Golay code was never at fault: its generator has row weights
+{8, 12}, correct for G24. Only the lattice assembly was.
+
+**Fixed and verified.** A correct Λ₂₄ is now built from that same Golay code:
+
+```
+2c            for Golay codewords c   -- "2 on an octad", norm 4
+8·e_i                                 -- norm 8
+4(e_0 − e_i)                          -- norm 4
+(−3, 1²³)     the odd vector          -- norm 4
+```
+
+with `4·e_i` deliberately excluded — it is not a Leech vector and was the
+source of the roots. The integer basis has determinant exactly **8¹² = 2³⁶**,
+so det(Gram) = det(B)²/8²⁴ = **1 exactly** (checked in `Fraction` arithmetic,
+not floating point), and the minimum norm is **4**. Those two properties
+*characterise* Λ₂₄, so `tests/test_leech_lattice_is_the_leech_lattice.py`
+is not evidence of correctness but proof of it. The falsified construction
+stays on the books as `_FALSIFIED_GENERATOR_NOTE`.
+
+**Impact is bounded, and the measurement of it is the sharpest result here.**
+All nine registry rows sourced to the lattice modules are dimensional or
+combinatorial — `leech_dim` 24, `octonion_dim` 8, `n_gen_leech` 3,
+`niemeier_count` 24, `partition_exact`, `g2_compatible`. None is
+generator-derived: `leech_partition` computes 24/8 = 3 by arithmetic and never
+touches the generator.
+
+Rebuilding after the replacement, the diff across `parameters.json` and
+`validation_report.json` is **1584 changed lines, every one of them a
+`git_commit` provenance stamp.** `validation_report.json` is byte-identical.
+Filtering timestamps and commit stamps, the count of changed values is **0**.
+
+That is worth stating plainly: **the lattice was swapped for a different
+lattice — one that differs in determinant by a factor of seven million and in
+minimum norm by a factor of two — and not one published number moved.** The
+Leech lattice was decorative in the published model. Everything the framework
+draws from "the lattice" is index arithmetic on 24 = 12×2 = 3×4×2, which would
+hold for any 24-element set.
+
+What was broken was internal: the Gram matrix, the bridge moduli, and the
+axion alignment matrix — the last of which already self-flagged
+`derivation_honest: False — depends on generator choice`.
+
+This also means the fix is *safe* and the diagnosis is *certain*. Nothing
+downstream can have been tuned to the old object, because nothing downstream
+reads it.
+
+---
+
+## 1. What both sides actually are (enumerated, not asserted)
+
+**R⁷ side.** Verified by direct enumeration of PG(2,2):
+
+| fact | value |
+|---|---|
+| Fano points / lines | 7 / 7, every pair on exactly one line |
+| \|Aut(Fano)\| = \|PSL(3,2)\| | **168** |
+| 4-subsets containing no line (arcs) | **7** of 35 |
+| every arc's complement is a line | **true** |
+| action on arcs | **transitive**, stabiliser order **24** |
+| stabiliser acting on the arc's 4 points | the **full S₄** |
+
+And the part that matters: each K₄ edge of the arc spans a Fano line, that
+line meets the complement line in exactly one point, and grouping the six
+edges by that point yields **three perfect matchings of K₄**. So an arc alone
+canonically produces
+
+> **4 faces (arc points) × 3 blocks (complement points) = 12**,
+
+a 4+3 split using all seven Fano points.
+
+**R²⁴ side.** 15400 = 12!/((3!)⁴4!) total 4×3 groupings; 576 = (4!)²
+cross-E8-valid; the 576 are a **single regular orbit under S₄×S₄ with trivial
+stabiliser**.
+
+**So both sides are the same 4×3 grid**, and the 576 is precisely the freedom
+in the two bijections (block₁→faces, block₂→faces). That is a much better
+starting position than "nothing maps a bridge index to a G₂ coordinate pair".
+
+*(576 = 24² = |arc stabiliser|² is arithmetically true but is **not** claimed
+as structural: both are 4! for unrelated reasons — 4 faces on one side, 4
+bridges per block on the other. Recorded so nobody mistakes it for evidence.)*
+
+---
+
+## 2. The six approaches
+
+### Approach 1 — Octonionic Leech (Wilson's rank-3 construction)
+
+Build Λ₂₄ as a rank-3 module over the integral octonions, so 24 = 3×8 is
+*octonionic*: three octonion coordinates are the three blocks, and each
+octonion carries the Fano plane on its seven imaginary units.
+
+- **Buys:** the only route where the block structure and the Fano/G₂ structure
+  come from one object. G₂ = Aut(𝕆) would be literally the acting symmetry,
+  and the join would be structural rather than chosen.
+- **Defeated by:** the framework's bridge is a *pair* of coordinates
+  (2b, 2b+1), four pairs per block of 8. Octonionically 8 = 1 real + 7
+  imaginary, and **no pairing into four pairs respects that split**: 7 is odd,
+  so one pair must marry the real unit to an imaginary one, which selects a
+  distinguished imaginary direction and breaks G₂ to SU(3) (the stabiliser of
+  a unit imaginary octonion). The 7-dimensional representation of G₂ is
+  irreducible — standard representation theory, not computed here — so **no
+  G₂-equivariant pairing of the imaginary directions exists at all.**
+- **Verdict:** the bridge-as-coordinate-pair convention is provably not
+  G₂-equivariant. This is a genuine obstruction and explains why the join has
+  resisted for so long. It is not fixable by relabelling.
+
+### Approach 2 — Define bridges as (arc point, complement point)
+
+Drop the coordinate-pair convention and take the 12 bridges to *be* the 4×3
+grid the R⁷ side already derives.
+
+- **Buys:** the four-face grouping becomes automatic and the 576 collapses to
+  1 — there is nothing left to choose, because faces and blocks are what
+  bridges are made of. It also sidesteps the Approach-1 obstruction entirely,
+  since no pairing of octonion coordinates is involved.
+- **Defeated by:** it severs "24 = 12 bridges × 2". The factor of 2 would need
+  an independent account. The two-time/shadow structure is the obvious
+  candidate (one time per shadow) but nothing currently derives it, and
+  asserting it would be inventing structure.
+- **Verdict:** strongest of the six on the join itself, at the cost of owing
+  an explanation for the 2.
+
+### Approach 3 — Use Λ₂₄'s own invariants, now that the lattice is real
+
+With a correct Λ₂₄ in hand, ask whether the lattice has a canonical E8³
+decomposition or a canonical 4×3 structure.
+
+- **Buys:** the question is finally well-posed — it was not, while the object
+  was not the Leech lattice.
+- **Defeated by — and this is the decisive result of the whole assessment:**
+  **Λ₂₄ has no roots, and E8 is generated by its roots.** So Λ₂₄ contains no
+  E8 root sublattice, and E8³ is a *different* Niemeier lattice — even,
+  unimodular, rank 24, but *with* roots. Λ₂₄ is the unique one without.
+
+  > **"The Leech lattice decomposes into three E8 copies" cannot be true.**
+  > The framework must choose: Λ₂₄ **or** three E8 blocks. Not both.
+
+- **Verdict:** this forecloses one reading and strongly recommends the other —
+  see §3.
+
+### Approach 4 — Take the Niemeier lattice E8³ instead of Leech
+
+If the three blocks are what the physics needs, name the lattice that has them.
+
+- **Buys:** everything the framework actually uses. Three genuine E8 blocks;
+  each E8 ≅ the integral octonions (Coxeter), so each block carries a Fano
+  plane and G₂ = Aut(𝕆) acts; 24 = 3×8 becomes a real decomposition rather
+  than index arithmetic; n_gen = 24/8 = 3 survives unchanged; b₃ = 24
+  survives. The octonionic reading of Approach 1 *works* here, because E8's 8
+  coordinates are the octonion's 1+7 with no pairing imposed.
+- **Defeated by:** anything that genuinely needs rootlessness or Leech-specific
+  numbers — the kissing number 196560, the packing density. These are quoted
+  in `leech_lattice.py` as literature values and would have to be withdrawn or
+  re-derived for E8³ (whose kissing number is 3×240 = 720). Whether any
+  physical claim rests on them needs an audit that is **not** done here.
+- **Verdict:** the most promising single path. It is also the one that makes
+  Approach 1's octonionic join available again, and it costs only claims the
+  framework may not be using.
+
+### Approach 5 — Prove the residual freedom is not physical
+
+Extend the existing `assignment_uniqueness_report` argument: show every
+observable is invariant under S₄×S₄ and block renaming, so "unique up to
+relabelling" is genuine closure.
+
+- **Buys:** closes the question with no new structure. "Unique up to change of
+  basis" is the standard sense in which a geometric object is determined, and
+  the module already establishes that the block partition is canonical given
+  the arc, that the spare factor of 3 touches nothing, and that the 7 arcs are
+  one PSL(3,2) orbit.
+- **Defeated by:** it is conditional on nothing else in the framework breaking
+  PSL(3,2), which the module states honestly. It also closes the question by
+  *dissolving* it rather than deriving the map — acceptable mathematically,
+  unsatisfying if the four faces are meant to be physically distinguishable.
+- **Verdict:** already largely done and defensible; keep as the fallback
+  position if Approach 4 is not adopted.
+
+### Approach 6 — Find the preferred Fano direction elsewhere in the theory
+
+The seven arcs stop being equivalent if something breaks PSL(3,2): a preferred
+imaginary octonion, or a shadow asymmetry singling out a coordinate.
+
+- **Buys:** would make the choice physical and, in principle, testable.
+- **Defeated by:** nothing in the framework currently does this. The two-time
+  structure (one time per shadow, α_T = 2.6) is the only candidate and it
+  distinguishes a *time* direction, not an imaginary octonion. Manufacturing
+  one would be inventing structure to close a gap.
+- **Verdict:** correctly recorded as open. Do not pursue by assertion.
+
+---
+
+## 3. Recommendation
+
+**Adopt Approach 4, with Approach 2's grid as the join and Approach 5 as the
+fallback.**
+
+The reasoning is forced rather than chosen. Approach 3 proves Λ₂₄ and three E8
+blocks are mutually exclusive. Every structure the framework actually uses —
+three blocks, octonions, the Fano plane, G₂ = Aut(𝕆), n_gen = 24/8 = 3 —
+belongs to E8³ and not to Leech. Nothing the framework uses appears to require
+rootlessness. The lattice was named "Leech" and, until today, was not any
+identifiable lattice at all; that it was never Λ₂₄ is a large part of why the
+join never closed.
+
+Under E8³ the join is no longer a mystery: each block is an octonion, its
+seven imaginary directions are the Fano points, the arc supplies four faces
+and its complement line supplies three blocks, and the bridge is the (face,
+block) pair. What must be **dropped** is the bridge-as-coordinate-pair
+convention, which Approach 1 shows can never be G₂-equivariant.
+
+**This is a physics ruling and it is the author's.** The evidence is prepared;
+the decision — whether to rename the lattice, and what to do with the kissing
+number and packing density — is not taken here.
+
+---
+
+## 4. What is not closed, and why
+
+1. **The factor of 2.** If bridges are (face, block) pairs, 24 = 12×2 needs an
+   independent account. The two shadows are the obvious candidate; nothing
+   derives it.
+2. **The TCS obstruction on (b₂, b₃) = (4, 24).** Crowley–Nordström forces
+   b₂ + b₃ **odd** for any twisted connected sum; 4 + 24 = 28 is even, so no
+   TCS realises it. b₃ = 24 survives — Joyce 1996 has (7, 24). What fails is
+   the pairing with b₂ = 4.
+
+   A reconciliation worth testing, **not** adopted here: **b₂ = 7**, which is
+   TCS-admissible (7 + 24 = 31, odd), is realised in Joyce 1996, matches the
+   seven Fano points, and decomposes as **7 = 4 + 3 = arc + complement line** —
+   exactly the split that produces the 4 faces and the 3 blocks. That would
+   make b₂ = 7 the total 2-cycle count and the "four faces" a *sub*-structure
+   of it rather than the whole. It also breaks n_gen = 12/4 = 3 as currently
+   derived, which would need re-deriving. Recorded as a candidate with its
+   cost stated; deciding it requires the author.
+3. **Whether any physical claim depends on Leech-specific numbers**
+   (196560, packing density). Needs an audit before Approach 4 can be adopted.
+4. **A preferred Fano direction.** Nothing supplies one. Approach 6 stays
+   open, and must not be closed by assertion.
