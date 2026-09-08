@@ -2742,3 +2742,384 @@ So the *size* of the basis artifact depends on the lattice: Construction A is
 wildly anisotropic, while a block-diagonal E8³ basis is already nearly
 isotropic. Both remain basis-dependent — neither reaches the shell's exact
 isotropy — which is precisely why the shell computation is the one to trust.
+
+---
+
+## 2026-09-09 (twelfth pass) — the orbifold, derived from φ
+
+A five-part G₂ formalism was supplied and evaluated against the code. Only one
+of the five adds a **constraint** — the 11D anomaly/M2 tadpole — and it is
+absent from the framework entirely (the only "anomaly" code present is 4D
+chiral cancellation, Σ Y = 0 per generation, a different statement). Two parts
+exposed real defects. Two are blocked on inputs that must not be invented.
+
+The unblocking move was to stop needing an explicit Y₇: Joyce's manifolds are
+resolutions of the **flat orbifold T⁷/Γ**, and the flat orbifold is completely
+explicit — finite group theory and linear algebra on Λ³(R⁷), no metric.
+
+### R1 — Γ = (Z/2)³ is forced by φ, not postulated
+
+Asking which of the 2⁷ = 128 diagonal sign flips on R⁷ preserve the framework's
+own φ: **exactly 8**, closed under multiplication, every non-identity element
+an involution. The diagonal stabiliser of φ *is* (Z/2)³ — Joyce's group.
+
+It is a computation, not a lookup: 120 of the 128 patterns are rejected, and
+perturbing φ by one extra component moves the order **8 → 4**.
+
+### R2 — the 7 involutions ARE the 7 Fano arcs, and this derives the 4+3 split
+
+Each non-identity element flips exactly 4 coordinates, and those 4-sets are
+**identical** (set equality, not a count) to the 7 Fano arcs. Each flipped set
+is the complement of a Fano line:
+
+```
+moves (3,4,5,6)  fixes (0,1,2)      moves (0,2,4,6)  fixes (1,3,5)
+moves (1,2,5,6)  fixes (0,3,4)      moves (0,2,3,5)  fixes (1,4,6)
+moves (1,2,3,4)  fixes (0,5,6)      moves (0,1,4,5)  fixes (2,3,6)
+                                    moves (0,1,3,6)  fixes (2,4,5)
+```
+
+**The four faces are the coordinates an involution moves; the three blocks are
+the coordinates it fixes.** That split was a labelling convention; it is now the
+moved/fixed decomposition of a group element, and choosing an arc means
+choosing which involution in Γ — geometric, not nominal.
+
+### R3 — the flat contribution to b₃ is 7, and it is exactly φ
+
+The Γ-invariant subspace of Λ³(R⁷) has **dimension exactly 7, spanned by
+exactly the 7 triples of φ**. The other 28 basis forms are each negated by some
+group element (checked individually, so the dimension count is not vacuous).
+
+So b₃ = 24 would split as **7 (flat) + 17 (resolutions)**.
+
+**The 17 is not derived.** It is 24 − 7 by subtraction, under the assumption
+b₃ = 24, and nothing here proves b₃ = 24. Only the *linear* part of Γ was used;
+Joyce's Γ also carries half-shift translations, and those fix the singular loci
+and hence the twisted sector. The module reports
+`twisted_sector_contribution: None` and a test fails if that ever becomes a
+number without being computed.
+
+It does bear on the factor-of-2 question: the split the geometry gives is
+**7 + 17, not 12 + 12**, so 24 = 12 × 2 may be the wrong decomposition to look
+for.
+
+### R4 — a second Fano plane, on Γ itself
+
+The 7 non-identity elements are the non-zero vectors of F₂³ — the points of
+PG(2,2) — and the triples whose product is the identity are its lines: **7 of
+them**, every point on exactly 3. So two Fano planes sit in canonical duality,
+one on the coordinates and one on the group, linked by
+**element ↔ arc ↔ complement line**.
+
+This is a candidate answer to the preferred-Fano-direction question, which has
+been open with nothing supplying one. Presenting the orbifold requires choosing
+**3 generators** of Γ, which in F₂³ is a non-collinear triple; that choice
+breaks PSL(3,2) and it is geometric — it is how the quotient is presented —
+rather than asserted. Whether it is *physical* is still the author's ruling, but
+it is no longer absent.
+
+All four are convention-independent: the counts (8, 7, 7, 7) come out the same
+for the framework's all-(+1) φ and for the (+,+,+,+,−,−,−) convention.
+
+### The torsion classes were three hardcoded zeros — and the fix is subtler
+
+`compute_torsion_classes` returned
+
+```python
+tau1 = np.zeros(7)           # never computed
+tau2 = np.zeros((7, 7))      # never computed
+tau3 = np.zeros((7, 7, 7))   # never computed
+```
+
+with only τ₀ computed, and `test_tau1_zero` compared a hardcoded zero against
+zero. τ₂ and τ₃ were untested.
+
+**But the verdict was right.** On flat R⁷ with a constant-coefficient φ, dφ and
+d⋆φ vanish *identically* — `compute_d_phi`'s own docstring says so — so the
+structure genuinely is torsion-free. The defect is that the check **cannot
+return anything else, for any input the class accepts**. It is vacuous, not
+wrong, and that distinction is now recorded rather than glossed:
+`vacuous_by_construction: True` with the reason.
+
+Two claims in the file were false and are corrected:
+
+- *"A perturbed φ generally has nonzero torsion."* It does not. Perturbing a
+  constant form leaves it constant, so torsion stays zero; what changes is the
+  induced metric.
+- The implication that a perturbation leaves the G₂ orbit. **G₂ 3-forms are an
+  open set in Λ³**, so a small perturbation is still a G₂ form — the Hitchin
+  metric stays positive definite (eigenvalues 0.44 … 2.01 at ε = 0.3).
+
+The projections are real now, built rather than tabulated and verified by
+dimension:
+
+    Λ³ = Λ³₁ ⊕ Λ³₇ ⊕ Λ³₂₇   →  (1, 7, 27)   = 35
+    Λ² = Λ²₇ ⊕ Λ²₁₄          →  (7, 14)      = 21,  Λ²₁₄ = g₂
+
+with the projectors tested on arbitrary forms — idempotent on their own
+subspace, annihilating the complement, and summing to the identity on a random
+3-form. That is what makes them falsifiable without inventing a mesh.
+
+**The honest ceiling:** torsion on a *curved* G₂ manifold needs a discretised
+mesh, which this module does not have. So no torsion result here says anything
+about a compact G₂ manifold, and the register should not imply otherwise.
+
+### Three mutually inconsistent Kähler potentials
+
+| form | where |
+|---|---|
+| `K = −3 ln(T + T̄)` | `config.py:5320`, `dynamical_lambda.py:284,310`, `bridge_geometry.py:288,331`, `bridge_axion_ede.py:498` |
+| `K = −2 ln(Vol₇)` | `lagrangian_master.py:2329,2341` |
+| `K = −3 ln(4π/3 · Im(T)^{7/3})` | `matter_sector_complete.py:323` |
+
+These cannot all be right. The canonical G₂ form is **K = −3 ln V₇** with
+V₇ = (1/7)∫Φ∧⋆Φ. For a single overall modulus V₇ ∝ (Im T)^{7/3}, so the **7/3
+form is the G₂-consistent one**; −3 ln(T + T̄) is the CY₃/no-scale
+single-modulus form carried over, and the −2 coefficient matches neither.
+
+**Not changed here.** K enters the F-term potential, so rewriting six call sites
+changes published numbers — that is a physics ruling. The inconsistency is
+recorded and a test pins the three known forms so a fourth cannot appear
+unnoticed. It also supports `moduli_indexing = b3_clusters`, since the
+canonical K is over **24** moduli rather than 4.
+
+### The Joyce (4,24) question: extraction attempted, and it failed cleanly
+
+The 252 pairs are a scatter plot, not a table, so the pairs were sought in the
+PDF's vector graphics — marker positions live in the content stream if the
+figure is vector art. Result: **the paper contains no figures at all** — zero
+XObjects of any kind, zero occurrences of "Figure", zero path operators. The
+sentence describing the plot cites **[10]**, Joyce's book; the review does not
+reproduce it.
+
+So the route is closed for a knowable reason and **(4,24) remains
+undetermined**. The only remaining path is Joyce's own tables. Nothing is
+asserted about (4,24) either way.
+
+### What stays blocked, with the missing inputs named
+
+- **The M2 instanton sum** needs the BPS invariants n_k counting stable
+  associative 3-cycles. There is no G₂ analogue of the Gopakumar–Vafa tables to
+  read; this is an open problem in the mathematics. The framework's four-face
+  racetrack is a **truncation** of this sum to four terms with chosen
+  coefficients, and should be described as one.
+- **The Yukawa overlap integrals** need singularity positions p_I and their
+  widths. The framework has no metric and no singular locus, so the integral has
+  no inputs. The exponential-hierarchy *mechanism* is a legitimate statement of
+  where the hierarchy comes from; the *integral* is not computable here.
+- **The triple intersection numbers d_ijk** need a harmonic basis on an actual
+  Y₇. The orbifold gives the 7 flat forms but not the 17 twisted ones.
+
+### Tested and refuted: three shadows instead of two
+
+The proposal: if 24 = 3 × 8 rather than 12 × 2, there would be three shadows of
+8 spatial dimensions each, nothing left unused, and the count would match the
+framework's own octonionic algebra. It is a good idea for real reasons, and it
+fails on arithmetic.
+
+**What genuinely favours it.**
+
+- **3 × 8 is a real M₂₄ structure**, the "trio" (stabiliser order 64512), listed
+  in CANON alongside 4×6, 6×4 and 12+12. It is not invented.
+- **3 × 8 is the OCTONIONIC decomposition.** CANON records that Leech
+  decomposes as 12×2 (ℂ, dim 2), 6×4 (ℍ, dim 4) and 3×8 (𝕆, dim 8). The
+  framework's holonomy is G₂ = Aut(𝕆), so the octonionic split is the one that
+  *matches its own algebra* — while the currently adopted 12 × 2 is the
+  **complex** split. That mismatch is a legitimate objection to the status quo
+  and is now on the record.
+- It coincides exactly with the `niemeier_e8x3` fork branch: three E8 blocks of
+  8, each ≅ the integral octonions.
+- n_gen = 24/8 = 3 would become "3 = the number of shadows" rather than a
+  numerical coincidence.
+- **27 = dim J₃(𝕆)** — the exceptional Jordan algebra of 3×3 Hermitian
+  octonionic matrices — splits as 3 real diagonal + 3 × 8 octonionic
+  off-diagonal = **3 + 24**, which maps onto 3 times + 24 space.
+- The "octern" 8 × 3 has stabiliser **L₂(7) of order 168 = PSL(3,2) =
+  Aut(Fano)** — the group carrying the whole arc/face analysis. A striking
+  coincidence worth recording even though it is the transpose structure.
+
+**What kills it — the descent, by counting.**
+
+Each shadow must contain the 7-dimensional G₂ manifold *and* visible (3,1)
+spacetime. Per shadow, with one time each:
+
+| shadows | space each | shadow | after G₂(7) | need 4 |
+|---|---|---|---|---|
+| 2 | 12 | 13D (12,1) | **6** = 4 + 2 | ✓ |
+| **3** | **8** | 9D (8,1) | **2** | ✗ short by 2 |
+| 4 | 6 | 7D (6,1) | 0 | ✗ short by 4 |
+
+**8 spatial dimensions cannot hold a 7D G₂ manifold plus 3 visible spatial
+dimensions: 7 + 3 = 10 > 8.** Only the two-shadow split leaves 6 = 4 + 2, which
+is exactly the descent the framework uses. This is arithmetic, not preference.
+
+**And it does not fix the lattice problem.** The even unimodular existence test
+is p − q ≡ 0 mod 8:
+
+    (24,2)  22 = 6 mod 8   FAIL   <- current
+    (24,3)  21 = 5 mod 8   FAIL   <- tri-shadow
+    (26,2)  24 = 0 mod 8   PASS
+    (25,1)  24 = 0 mod 8   PASS
+
+So the tri-shadow signature inherits the current failure rather than repairing
+it. And Bars–Kounnas's 27 sits at signature **(25,2)** — two times — so 27D
+total does not buy the critical dimension for a three-time reading.
+
+**Where the instinct does land.** The "spare nodes" are real: the
+`assignment_uniqueness_report` records that the complement line's three points
+lie "on no face … incident to no bridge, so its label enters no coupling." R2
+above identifies those three as exactly the coordinates each involution
+**fixes**.
+
+So they are not wasted — they are the **three blocks**, and under
+`niemeier_e8x3` they are the three E8 factors. The correct reading of the
+proposal is **tri-sector, not tri-shadow**: three blocks inside one 24, which R2
+already derives from the group action, with the two-shadow split left intact
+because the descent requires it.
+
+Recorded as **FALSIFIED as a shadow count, ADOPTED in substance as the block
+structure.**
+
+### The spare nodes as the solution space: a candidate for the "+2", with its gap named
+
+Asked whether a structure built on the *spare* nodes could plug the outstanding
+bulk/shadow problems. There is a numerical fit, it is worth recording, and it
+rests on one step that is **not** derived. Both halves are stated.
+
+**The fit.** CANON's recommended repair of the bulk is (26,2): it needs exactly
+**2** extra spatial directions beyond the 24, which the author's own proposed
+structure calls "2 shared breathing pins". The spare nodes number **3** — the
+coordinates each involution *fixes*, which R2 identifies as a Fano **line**, and
+which `assignment_uniqueness_report` had already noted "lies on no face …
+incident to no bridge, so its label enters no coupling."
+
+Modelling the Fano plane as the 7 non-zero vectors of F₂³ (a labelling was
+constructed, not assumed, such that every line sums to zero), the 3 fixed points
+of **all seven** involutions sum to zero over F₂ and have **rank 2**:
+
+```
+fixed (0,1,2)  sum = 0  rank 2        fixed (1,4,6)  sum = 0  rank 2
+fixed (0,3,4)  sum = 0  rank 2        fixed (2,3,6)  sum = 0  rank 2
+fixed (0,5,6)  sum = 0  rank 2        fixed (2,4,5)  sum = 0  rank 2
+fixed (1,3,5)  sum = 0  rank 2
+```
+
+Three spare nodes carrying two independent directions is the count (26,2)
+requires.
+
+**What it would fix**, against CANON's own list of unresolved costs of (24,2):
+
+| outstanding issue | (24,2) | with the +2 | |
+|---|---|---|---|
+| lattice, p − q ≡ 0 mod 8 | 22 ≡ 6, **fails** | 24 ≡ 0, **passes** | fixed |
+| critical dimension | 26 withdrawn; two-time is 27–28 | (26,2) = 28D exactly | fixed |
+| Frobenius–Schur reality | bulk complex vs quaternionic shadow pair | bulk **real**, Majorana–Weyl | fixed |
+| the "+2" has three readings | lightcone / two-time+bridge / 2 Sp(2,ℝ) | one: the spare line's rank | fixed |
+| ghost freedom, Sp(2,ℝ) | open, no computed backing | unchanged | **not** fixed |
+| the 12+12 split of Leech | a choice, not lattice-derived | unchanged | **not** fixed |
+
+Four of six, and the fourth matters disproportionately: CANON states that the
+"+2" currently carries three mutually inconsistent readings and "at most one can
+be right". This supplies one, from the group action rather than by assertion.
+
+The descent also survives: the 24 still splits 12 + 12, so the shadows stay
+13D (12,1) and 13 − 7(G₂) = 6 = 4 + 2 is untouched. The extra 2 is a **shared**
+sector, in neither shadow — precisely the 13 + 13 + 2 partition CANON records
+the author proposing, and which its own refinement confirms is available as a
+tangent-space split (Q1: "YES, trivially") even though the *lattice* does not
+hand it to you (Q2: "NO").
+
+**THE GAP, which must not be glossed.** Rank 2 is a statement about the **F₂³
+labelling** of the Fano plane. The spare nodes are 3 **real coordinate
+directions** in R⁷, and 3 real directions span 3 real dimensions. Identifying
+"F₂-rank 2" with "2 real spacetime dimensions" **conflates the label space with
+the coordinate space**, and that is exactly the class of leap this register
+exists to catch — a number matched to a number without a map between the objects
+carrying them.
+
+So this is a **candidate, not a derivation**. To become one it needs a reason the
+shared sector is 2-dimensional over ℝ, not merely rank 2 over F₂.
+
+A second and more physical route to the same 2 exists and is worth pursuing:
+**3 fixed directions minus the overall scale = 2**, the removed direction being
+the volume/"breathing" mode. Two independent arguments landing on 2 is mildly
+encouraging, and neither closes the gap.
+
+**Status: RECORDED AS A CANDIDATE for the `bulk_signature` fork's `26_2`
+option, strengthening it with a new argument. Not adopted; the ruling is the
+author's, and the F₂-to-ℝ step is the thing to attack.**
+
+### The extra "breathing portals": four readings, all tested
+
+Four ways the extra directions beyond the 24 could attach were proposed and each
+tested against the even-unimodular existence condition p − q ≡ 0 mod 8:
+
+| reading | signature | total | mod 8 | |
+|---|---|---|---|---|
+| as adopted, no extras | (24,2) | 26D | 6 | **fails** |
+| **+1 direction total** | **(25,1)** | **26D** | **0** | **passes** |
+| +2, shared or one per shadow | (26,2) | 28D | 0 | passes |
+| +1 per face (4 extra) | (28,4) | 32D | 0 | passes |
+
+**The one-direction reading is lattice-exact and the cleanest of the four.**
+II₂₅,₁ = Λ₂₄ ⊕ II₁,₁ — Leech plus a single hyperbolic plane. That plane has
+signature (1,1), so its **spacelike half is the single breathing direction and
+its timelike half is the single time**. Nothing is peeled apart, which is
+exactly CANON's objection to the shared-2 reading ("you cannot peel the time off
+a hyperbolic plane and leave its spacelike partner behind"). It also restores
+D_crit = 26 as a *correct* statement — 26 is the one-time bosonic critical
+dimension at (25,1) — and II₂₅,₁ is the lattice bosonic string theory actually
+uses. This is CANON resolution option (a).
+
+Its cost is stated plainly: **one time, hence one shadow.** The two-shadow
+structure would need re-deriving, for instance as Bars gauge-fixings of a single
+bulk rather than a partition of it.
+
+The +1-per-face reading survives the lattice test only at **(28,4)** — one time
+per *face* — which is a four-time bulk the framework has no mechanism for.
+
+**"Each face has a direction" is already derived.** R2 shows the 4 faces *are*
+the 4 coordinates an involution moves and the 3 blocks *are* the 3 it fixes:
+4 + 3 = 7, the imaginary octonion directions. So faces and blocks are directions
+already; what is not derived is any *additional* direction beyond the 7.
+
+**A distinguished face already exists in the code**, and it is unsupported.
+`four_face_structure.py:1222` calls T₁ = b₃k_gimel/π the "dominant face" and T₄
+the "subdominant" one, and line 347 notes a first face "lies wholly inside one
+E8 block". So the S₄ symmetry among the four faces *is* broken in the
+implementation — by the 1/i racetrack ladder, which the eleventh pass showed is
+an ansatz and not a stationary point of the potential. Any claim that one face
+carries extra structure currently rests on that ladder.
+
+**Status: all four readings recorded as candidates for the `bulk_signature`
+fork. None adopted. The lattice test rules out the adopted (24,2) and admits the
+other three, so the choice is between costs, not between right and wrong:
+one-direction costs the second time, +2 costs either the lattice-derivation or
+the descent leftover, +1-per-face costs three more times.**
+
+### The four faces are four axes, not two axes with signs — but a 2+2 pairing is block-relative
+
+Proposed: the 4 faces are N/S/E/W, i.e. ± in each of two orthogonal directions.
+Tested against R2, and the distinction matters.
+
+A N/S/E/W reading gives 4 *rays* spanning only **2 dimensions**. R2 gives the 4
+faces as 4 **distinct coordinate axes** out of the 7 — spanning **4** dimensions.
+The involution flips all four by −1 simultaneously, so they are not ± pairs, and
+the framework needs four independent moduli: T₁…T₄ take four distinct values
+(94.1, 47.1, 31.4, 23.5), not two magnitudes.
+
+**But a 2+2 pairing does exist, relative to a chosen block.** Each of the 3
+blocks splits the 4 faces into 2 pairs — a perfect matching of K₄:
+
+```
+block 0 → (3,4)(5,6)     block 1 → (3,5)(4,6)     block 2 → (3,6)(4,5)
+```
+
+So an "axes with signs" reading is available *given a block*, and there are
+exactly **3 competing choices**, permuted by the arc stabiliser under S₄ → S₃.
+None is preferred without extra structure. **This is the confirmed reading:** the
+pairing is real and block-relative, not intrinsic to the faces.
+
+That places it in the same family as everything else settled this cycle — the
+structure is determined up to the symmetry group, and singling out one member
+requires something external to the incidence geometry.

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 196,
+    "files_scanned": 197,
     "dataset_values": 339,
     "exact_dup": 386,
     "stale_dup": 337,

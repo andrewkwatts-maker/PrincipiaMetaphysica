@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-07T22:11:37.557662Z",
+  "generated_at": "2026-09-08T20:46:13.032782Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 275,
+  "total_scripts": 276,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -954,7 +954,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 13,
+      "count": 14,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1158,6 +1158,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Geometric Anchors v16.2 - First Principles Parameter Derivation",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "joyce_orbifold.py",
+          "path": "simulations/PM/geometry/joyce_orbifold.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
