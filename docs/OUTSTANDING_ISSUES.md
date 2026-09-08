@@ -3123,3 +3123,43 @@ pairing is real and block-relative, not intrinsic to the faces.
 That places it in the same family as everything else settled this cycle — the
 structure is determined up to the symmetry group, and singling out one member
 requires something external to the incidence geometry.
+
+### The 2 breathing portals, block-relative: the count is forced
+
+Following the confirmed block-relative reading, the question was whether the 2
+breathing portals sit on one side of the NSEW pairing. Tested, and the count
+turns out to be **forced by the incidence geometry** rather than chosen.
+
+Every block point lies on exactly **3** Fano lines: the complement line itself,
+plus exactly **2** lines each meeting the arc in a face **pair**. Verified for
+every arc and every block point — the pair-line count is always 2.
+
+```
+arc [3,4,5,6], block 0 → face-pair lines [0,3,4] and [0,5,6]
+arc [3,4,5,6], block 1 → face-pair lines [1,3,5] and [1,4,6]
+arc [1,2,5,6], block 4 → face-pair lines [1,4,6] and [2,4,5]
+```
+
+So "2 breathing portals" acquires a canonical referent: **the two face-pair
+lines through the chosen block point**, each of the form {block, face, face}.
+
+**One correction to the proposal.** They are not both on one side of the NSEW
+split — there is exactly **one per pair**. Given block *p* with matching
+(a,b)(c,d), the two lines are {p,a,b} and {p,c,d}, one per "axis". That is
+tidier than the original phrasing and it is what the geometry gives.
+
+**What this buys.** The number 2 is now *forced* — it is (3 lines through a
+point) − (1 complement line) — rather than asserted, and the two directions are
+*localised*: each connects a block to one face-pair, so they are not free-floating
+"shared pins". Combined with the (26,2) reading this gives the "+2" a structural
+origin tied to the block.
+
+**The gap, still unclosed but shorter.** Two *lines* is not two *real
+dimensions*. This remains the F₂/incidence-to-ℝ step flagged earlier. It is a
+shorter leap than the previous rank-2 argument, since lines are 1-dimensional
+objects and there are exactly two of them, but it is still a leap and is not
+recorded as a derivation.
+
+**Status: the strongest available account of the "+2" — forced count, canonical
+location, one per NSEW axis — and still a candidate, not a derivation. The
+remaining step is why an incidence line should contribute one real direction.**
