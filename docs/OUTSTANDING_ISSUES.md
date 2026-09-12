@@ -3280,3 +3280,165 @@ one move.
 assembled; the decision is not taken here. If it is adopted, the removal should
 be staged as a fork option so both states can be run and compared before the
 apparatus is deleted.
+
+---
+
+## 2026-09-13 (fourteenth pass) — phi is not a G2 3-form, and two candidates for 24
+
+### THE HEADLINE: the framework's phi lies outside the G2 orbit
+
+Found while running the A6 calibration gate on a new module — the gate exists to
+stop an uncalibrated pipeline being trusted, and the first thing it caught was
+upstream of the pipeline it was guarding.
+
+**The measurement.** g2 is by definition the subalgebra of so(7) annihilating
+phi, and dim g2 = 14. Building the linear map A -> A.phi on so(7) and taking its
+kernel:
+
+| form | support | dim ann(phi) in so(7) |
+|---|---|---|
+| the framework's phi | all (+1) on the 7 Fano triples | **6** |
+| Bryant's phi | (+,+,+,+,-,-,-) on the **same** 7 triples | **14** |
+
+**The dimension of the annihilator is a GL(7) similarity invariant**, so 6 != 14
+proves the two forms lie in *different GL(7) orbits*. No relabelling, no change
+of basis and no sign convention can carry one to the other — and an exhaustive
+sweep of all 128 diagonal sign flips confirms none maps the framework's form to
+a G2 form. Exactly **16 of the 128** sign assignments on those seven triples give
+a genuine G2 form. All-(+1) is not one of them.
+
+So the object the framework calls phi is not a G2 3-form. The triples are right;
+the signs are not, and the signs are what carry the octonionic orientation.
+
+**Why it was never caught.** The obvious sanity check does not discriminate. The
+naive induced metric g_ij = phi_imn phi_jmn comes out **6 x I for both forms**,
+so "the metric is positive definite and isotropic" passes either way. A test
+comparing that metric could never have found this.
+
+**The blast radius, measured rather than assumed.** Both forms were run through
+every existing result:
+
+SAFE — these depend only on *which* seven triples carry phi, not on their signs,
+and were verified identical for both forms:
+
+- R1, the diagonal stabiliser is (Z/2)^3 of order 8
+- R2, each involution moves an arc and fixes the complementary line
+- R3, the invariant 3-forms are exactly phi's 7 triples
+- R4, the Fano plane on Gamma
+- the arc flag identity below
+
+BROKEN — these require phi to be a G2 form:
+
+- Lambda^2 = 7 + 14 with the 14 identified as **g2**. The framework's V14 has the
+  right dimension but does **not** annihilate phi (max action norm 1.19), so it
+  is not g2.
+- Lambda^3 = 1 + 7 + 27 as G2 irreps
+- the torsion classes, which are computed by projection onto those subspaces
+
+So the derived combinatorial 7-layer is untouched and the differential-geometry
+layer is not.
+
+**NOT FIXED.** Substituting a signed phi changes the framework's own convention
+and may move published numbers, so it is a ruling for the author. Evidence is
+assembled; the decision is not taken. The 16 admissible sign choices form a
+single orbit under the diagonal sign group, so "which G2 form" is itself a
+further question, not a free choice of any one of the 16.
+
+Recorded by `tests/test_phi_is_not_yet_a_g2_form.py`, which is **green while the
+defect stands and fails the moment phi changes** — so the correction cannot be
+made silently. It also pins the blast radius, and fails if the defect ever
+reaches the combinatorial results.
+
+### 24 = 12 x 2, derived — and labelled NUMERICAL anyway
+
+The author's proposed structure is 24 = 2 shadows x 12, each shadow 3 x 4. Taking
+the arc A (4 points, the faces an involution moves) and its complementary line L
+(3 points, the blocks it fixes), all four steps compute:
+
+1. **The 12 is a flag set.** Each point of A lies on exactly 3 lines; each such
+   line differs from L and so meets L in exactly one point, and those three
+   points are distinct. So the 12 flags (a, line) biject with the 12 pairs
+   A x L — the complete bipartite incidence K(4,3). "Three per side on four
+   sides" is the incidence structure of the arc that defines the faces.
+2. **The stabiliser is S4.** |PSL(3,2)| = 168 and it is transitive on the 7 arcs,
+   so an arc stabiliser has order 168/7 = **24**; four points in general position
+   form a frame of PG(2,2), so the stabiliser injects into Sym(A) — verified, 24
+   distinct actions.
+3. **It is transitive on the 12.** The kernel of S4 -> Sym(L) is V4 of order 4,
+   and V4 acts **freely** on A (checked), so Stab(a) meets it trivially and maps
+   onto Sym(L).
+4. **Hence |Stab(flag)| = 24/12 = 2**, verified for **all seven** arcs, not just
+   one.
+
+    24 = 12 x 2 = (4 faces x 3 blocks) x (flag stabiliser)
+
+**Verdict: NUMERICAL, and not adopted.** It is the order of a stabiliser
+subgroup, not a count of 3-cycles or harmonic 3-forms, and A4 applies without
+exception — the diagnosed failure mode is index structure mistaken for geometric
+structure, and a group order is an index. A test fails if the label is ever
+upgraded without a 3-cycle count appearing.
+
+**It does not contradict the standing CANON ruling** that "4 x 3 is not a
+structure on 24" (M_24 is 5-transitive hence primitive, so no partition of 24
+points is M_24-invariant). Nothing here partitions 24 points: the 4 and the 3
+live on the **seven** coordinates of PG(2,2), and the 24 is a subgroup order.
+
+The load-bearing test perturbs phi and the identity must break: under the
+perturbation Aut drops 168 -> 6, arcs 7 -> 3, stabiliser 24 -> 2 and
+`identity_holds` goes False. A mutation check confirmed the test flips to
+passing if the module stops reading phi, so it is not vacuous.
+
+### D4's 24 roots: the count is forced, the map is missing
+
+The framework lives in G2 = Aut(O) inside Spin(7) inside Spin(8) = **D4**, so D4
+is not imported from outside, and its root count is **forced** rather than
+matched: for any finite root system |roots| = rank x Coxeter number, and D4 has
+rank 4 with h = 6. The Coxeter number is computed here as the **order of a
+Coxeter element** — taking |roots|/rank would make the identity circular, and a
+test pins that.
+
+Computed: 24 roots, all of norm^2 = 2, closed under negation, summing to zero —
+a genuine **shell** about the origin, the 4-dimensional kissing configuration —
+splitting 12 + 12.
+
+**Two things stop it.**
+
+- **The split is not free.** Choosing which roots are positive is choosing a Weyl
+  chamber. Two different regular vectors give different halves (verified), so
+  "two shadows of 12" still costs a choice here, exactly as the 12 + 12 split of
+  the 24-dimensional lattice does. This candidate does not make that choice free.
+- **Dimensional mismatch, and it is decisive.** The 24 roots are directions in
+  the **4-dimensional** Cartan space of so(8). A b_3 of 24 would be 24 harmonic
+  3-forms on a **7-manifold**. No map between them exists and none is
+  constructed. Worse, **24 is not a G2 irrep dimension** (1, 7, 14, 27, 35, 64,
+  77), so b_3 = 24 cannot be read off G2 representation theory either.
+
+**Verdict: NUMERICAL.** Forced beats matched, which is more than any earlier
+candidate managed — and it is still not geometry.
+
+### Where the geometry actually is: 112 three-tori, and the half-shifts
+
+The one thing in this pass made of genuine 3-cycles. For an involution moving the
+4 coordinates of an arc and fixing the 3 of a line, its fixed locus in
+T^7 = R^7/Z^7 is the set of points whose 4 moved coordinates each sit at a
+half-period: 2^4 = **16 components**, each a **3-torus**. Seven involutions give
+**112**.
+
+And the linear action cannot reduce that number at all. Negating a coordinate
+sends 0 to 0 and 1/2 to -1/2 = 1/2 mod 1, so a sign flip **preserves every
+component label**. Only a half-shift exchanges 0 and 1/2.
+
+**So the half-shift data is load-bearing, not a refinement.** Nothing in the
+linear part of Gamma can move 112 toward 24 or 17, which means the half-shift
+enumeration is the *necessary* route to the twisted sector and hence to b_3 — not
+one option among several. That sharpens the open question and is the next
+concrete piece of work.
+
+### Status
+
+- `arc_flag_structure.py` + 16 tests, `d4_root_shell.py` + 12 tests,
+  `test_phi_is_not_yet_a_g2_form.py` + 10 tests. Suite green.
+- Two candidates for the origin of 24, both labelled **NUMERICAL**, both on the
+  books, neither adopted. Per A5 both remain live and neither closes the other.
+- One foundational defect recorded with its blast radius measured, its
+  correction available (16 admissible sign choices), and the ruling left open.
