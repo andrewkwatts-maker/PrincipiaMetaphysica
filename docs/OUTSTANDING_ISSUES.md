@@ -3613,3 +3613,26 @@ Two readings, and the register does not choose between them:
 Either way, **correcting phi costs nothing measurable**, which makes the ruling
 cheap rather than risky. It remains the author's: whether the G2 holonomy claim
 should rest on an object that moves no output is not a question code can settle.
+
+### The half-shift enumeration is tractable, and here is its size
+
+Scoped, since the pass above proved the half-shift data is load-bearing rather
+than a refinement.
+
+Conjugating a generator g by a translation T_t sends its shift vector
+s -> s + (eps - 1) t componentwise. On a **flipped** coordinate eps = -1, so
+s -> s - 2t and 2t covers all of R/Z: the shift is **removable**. On a **fixed**
+coordinate eps = +1, so s is **invariant**.
+
+So the meaningful data is a half-shift on each generator's FIXED line only --
+3 coordinates, s in {0, 1/2} for g^2 = 1, hence 2^3 = 8 choices per generator.
+Presenting the orbifold needs 3 generators, a non-collinear triple in F_2^3, of
+which there are **28** of the 35 triples.
+
+    raw enumeration = 8^3 x 28 = 14,336 assignments
+    reduction by one global translation = a 2^7 = 128 search per assignment
+
+Total well under 10^7, so this is direct enumeration rather than a search
+problem. The A6 gate still applies before any novel (b_2, b_3) is read off it:
+the pipeline must first reproduce Joyce's published Betti numbers for his known
+(Z/2)^3 examples.
