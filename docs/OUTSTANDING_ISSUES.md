@@ -3542,3 +3542,74 @@ regression without the stash test.
 the one-sign difference, the blast radius, and the fact that the fork exists and
 has **not** been switched. It is green while the defect stands and fails the
 moment phi changes, so the correction cannot be made silently.
+
+### The cost of correcting phi, measured: zero — and what that exposes
+
+With the fork switched **coherently** (every phi consumer routed through one
+accessor, so the branch cannot compare one convention against the other), the
+correction was measured properly, with a rebuild between branches.
+
+| | all_plus_one (adopted) | octonion_derived |
+|---|---|---|
+| suite | **1825 passed, 0 failed** | 1816 passed, 9 failed |
+| published parameters | 807 | 807 |
+| values moved | — | **0** |
+
+All **807** published parameters were compared across the branches: none moved,
+none appeared, none vanished. And every one of the nine failures is a test that
+asserts *the defect is present* — the seven in
+`test_phi_is_not_yet_a_g2_form.py`, the D4 calibration-honesty test, and the
+framework's own `test_multiplication_constants_differ_by_one_sign`. Each must
+fail once phi is corrected; that is what they are for. **No physics test fails.**
+
+**The earlier figure of 15 failures and 40 errors was wrong**, and it was wrong
+because of how the fork was wired, not because of the physics. The first cut
+switched `_standard_phi()` and left `g2_structure_as_3form()` on the old tensor,
+putting the framework in a state it never occupies. That is corrected and the
+number is retracted here rather than quietly replaced.
+
+#### What the invariance actually reveals
+
+This is the more important half, and it is not good news.
+
+phi can be replaced by a tensor in a **different GL(7) orbit** — not a
+rescaling, not a relabelling, a genuinely different 3-form, one a G2 form and
+one not — and **not a single published number moves**.
+
+So no published quantity is sensitive to the sign assignment on the Fano
+triples, and therefore none is sensitive to whether phi is a G2 form at all.
+The parameters that carry `g2_structure` or `octonion` provenance are all
+invariant under the switch:
+
+    geometry.n_faces              geometry.alpha_leak
+    geometry.face_moduli_T1..T4   geometry.shadow_asymmetry_delta_T
+    geometry.racetrack_stability  geometry.n_aligned_pairs
+    geometry.V_cb                 geometry.J_CKM
+    geometry.theta_23             geometry.kahler_modulus_mass_GeV
+
+The precise statement is therefore **not** "phi feeds nothing". It is that the
+outputs depend on the Fano **incidence structure** — which seven triples carry
+the form — and not on the **orientation** that makes it G2. That is exactly
+consistent with everything else measured this pass: R1 to R4 and the arc flag
+identity were all verified *identical* under both branches, because they read
+which triples, not which signs.
+
+**This is the 24-layer diagnosis one level in.** There, the lattice supplied an
+integer and no geometry. Here, the G2 structure supplies a combinatorial
+incidence pattern and no differential geometry: the holonomy claim, the torsion
+classes, the Lambda^2 and Lambda^3 splittings all sit on an object whose
+orientation no output can detect.
+
+Two readings, and the register does not choose between them:
+
+1. The framework is really a **combinatorial** theory of the Fano plane, and the
+   G2 language is descriptive rather than load-bearing. If so it should say that,
+   and the correction is free because nothing depended on the geometry anyway.
+2. The G2 content is meant to be load-bearing and the machinery that would make
+   it so — the metric, the torsion, an actual Y_7 — is absent, so there is
+   nothing yet for the orientation to act on. If so the invariance is a
+   statement about how much is unbuilt, not about what is true.
+
+Either way, **correcting phi costs nothing measurable**, which makes the ruling
+cheap rather than risky. It remains the author's: whether the G2 holonomy claim
+should rest on an object that moves no output is not a question code can settle.
