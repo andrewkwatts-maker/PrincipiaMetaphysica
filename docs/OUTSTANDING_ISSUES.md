@@ -3163,3 +3163,120 @@ recorded as a derivation.
 **Status: the strongest available account of the "+2" — forced count, canonical
 location, one per NSEW axis — and still a candidate, not a derivation. The
 remaining step is why an incidence line should contribute one real direction.**
+
+---
+
+## 2026-09-09 (thirteenth pass) — the (8,6,6,6) proposal, and the conclusion the evidence forces
+
+### The (8,6,6,6) asymmetric face partition: three claims tested, three fail
+
+Proposed: one distinguished face F₀ absorbs the 2 breathing modes to become
+8-dimensional, giving 24 → (6+2)+6+6+6 = 26; the 8 matches a Golay **octad**;
+and the asymmetry generates δ_T = 0.75, which would make the racetrack ansatz
+stationary.
+
+**Claim 1 — the arithmetic.** 8+6+6+6 = **26**, so it is a partition of 26, not
+of 24. The Golay code and M₂₄ are defined on **24** points. The partition and
+the code are therefore on different sets.
+
+**Claim 2 — the octad.** An octad is a weight-8 codeword of C₂₄: 8 of the
+twenty-four points. F₀ is built as 6 Golay coordinates **plus 2 breathing
+coordinates**, and the breathing directions are by construction *outside* the
+24. So the 8 is not an octad, and cannot be one.
+
+**Claim 3 — δ_T = 0.75.** Tested under every natural weighting of (8,6,6,6):
+
+| weighting | δ_T |
+|---|---|
+| T ∝ size | 0.250 |
+| T ∝ 1/size | 0.333 |
+| T ∝ size^(7/3) | 0.489 |
+| T ∝ log size | 0.138 |
+
+None gives 0.75. The verified source of 0.75 remains the 1/i ladder,
+δ_T = 1 − 1/n at n = 4 — and that ladder is the ansatz the eleventh pass showed
+is not a stationary point. So the proposal does not repair stationarity; it
+also cannot, because the objective being minimised is |W|², whose minimum is
+where the superpotential *vanishes*, regardless of how the coefficients are
+weighted.
+
+**What was worth salvaging, and tested.** 4 faces × 6 coordinates = 24 *is* a
+recognised M₂₄ structure — the MOG's four rows — unlike the 4×3 MiniMOG that
+CANON notes conflates M₁₂ with M₂₄. So: does the framework's stride-4 face
+partition carry Golay content?
+
+Only **1 of 4096** codewords is a union of whole faces, and it is the trivial
+all-ones word. Octads scatter across the faces in 9 distinct intersection
+profiles — (1,2,2,3) most often at 330, then (1,1,3,3) at 104, and so on.
+
+**Calibration, because the test must be falsifiable.** Against 40 random 4×6
+partitions the profile count ranges 9–12 with mean 10.9, and a hand-built
+"octad-aligned" partition scored 12 — worse than random, so that construction
+was not actually aligned. The framework's 9 sits **inside** the random band.
+
+So this is **no evidence of Golay alignment**, not proof of its absence. The
+discriminator is weak and is recorded as weak.
+
+### The conclusion the session's evidence forces
+
+The decisive results do not depend on that weak test. Across this cycle every
+claim in the **7-layer** survived and several became derived, while every claim
+in the **24-layer** failed or was found unsupported.
+
+**24-layer, all measured:**
+
+- The object called the Leech lattice **was not** Λ₂₄ (det 7,144,929; 12 rows of
+  norm 2). Replaced and verified — and replacing it moved **no published
+  number**, only `git_commit` stamps.
+- No PM module reads anything from the lattice except `dimension`, which is
+  `return 24`. The two physics modules that touch it compute
+  `b3 == leech.dimension`, i.e. **24 == 24** — a check that cannot fail.
+- The four-face racetrack is an **ansatz**: ‖∇V‖ = 4.4e-06 at the closed form,
+  the objective is not the scalar potential, and the minimiser stops 31% short
+  of its own minimum.
+- (24,2) **fails** the even-unimodular existence test at 6 mod 8.
+- b₃ = 24's geometric support is **7 derived + 17 by subtraction**.
+- No code establishes the shadow split across the 24, so the bridges may not
+  bridge.
+
+**7-layer, all computed from the framework's own Φ:**
+
+- Γ = (Z/2)³ **forced** as Φ's diagonal stabiliser (120 of 128 rejected;
+  perturbation moves the order 8 → 4).
+- The 7 involutions **are** the 7 Fano arcs, by set equality; each fixes the
+  complementary line.
+- The **4+3 split is derived** — moved versus fixed coordinates of a group
+  element.
+- Flat b₃ contribution is **exactly 7**, spanned by exactly Φ's triples, with
+  all 28 other basis forms individually shown to be negated.
+- A **second Fano plane on Γ** itself, 7 points and 7 lines, dual to the
+  coordinate one.
+- The "+2" count is **forced**: 3 lines through a block point minus the
+  complement line.
+
+**The unifying diagnosis.** Every failure in the 24-layer has the same shape:
+**index structure mistaken for geometric structure.** The lattice supplied an
+integer and no geometry. The faces are an index convention with no demonstrated
+Golay content. The bridges are coordinate pairs, not shadow-crossing objects.
+And every "+2" candidate — the F₂-rank-2 of a Fano line, the two face-pair
+lines — identifies a *label* count with a *real dimension*, which is the same
+error one level up.
+
+**So the solution is a demotion, and it is a real result.** The theory that
+survives is the G₂/octonionic **7-layer**, where the derivations are and where
+they are getting stronger. b₃ = 24 is an **input**, not a derivation. The Leech
+lattice contributes exactly one thing: the integer 24, hardcoded and compared
+against itself; its Gram matrix, minimal vectors, kissing number and
+rootlessness feed nothing.
+
+**What adopting this would cost and buy.** w₀ = −23/24 and n_gen = 24/8 consume
+the integer 24, so they become predictions from a stated input rather than from
+derived geometry — legitimate, but it changes how they are presented. What it
+buys is that the entire Leech/bridge apparatus becomes **removable without loss
+of any published number**, deleting a large amount of unsupported structure in
+one move.
+
+**This is an architectural ruling and remains the author's.** The evidence is
+assembled; the decision is not taken here. If it is adopted, the removal should
+be staged as a fork option so both states can be run and compared before the
+apparatus is deleted.
