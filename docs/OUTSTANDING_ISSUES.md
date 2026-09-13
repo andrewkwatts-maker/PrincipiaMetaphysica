@@ -4084,3 +4084,23 @@ What would actually reduce it, in order of leverage:
 That last point is the sharpest open problem the closure leaves behind: **the
 two best candidates for explaining 24 explain a number the geometry cannot
 realise.**
+
+### CLOSED: the eml-math install blocker
+
+`eml-math 2.4.0` is published. Verified from the index -- 2.4.0 is the newest
+available -- and `pip install "eml-math>=2.4.0"` resolves on a dry run, so the
+pin in metaphysica's pyproject is satisfiable from a clean environment.
+
+The pin was always correct; the package simply had not been released. The
+version and `src/eml_math/operators.py`, which metaphysica imports as
+`eml_math.operators`, were present in the repository at 2.4.0 throughout. What
+was missing was the GitHub Release that triggers the wheel build and the
+Trusted-Publishing upload. Tag `v2.4.0` and that release now exist.
+
+Worth keeping on the record, because it is the kind of thing that looks like a
+code fault and is not: relaxing the pin to the then-latest 2.3.0 would have made
+installation succeed and then fail at import, since that version has no
+`operators` module at all. A loud failure at install was the better state to be
+in, and the fix was to publish rather than to loosen.
+
+Status: CLOSED. Not a framework defect -- a release that had not been cut.
