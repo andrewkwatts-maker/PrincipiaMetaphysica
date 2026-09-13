@@ -4246,3 +4246,74 @@ time. Until then, every Betti statement stays conditional and labelled.
 Status: register updated, module and tests rewritten, guard tests hold the
 DERIVED-vs-no-derivation contradiction open. The refutation stays on the books
 as WITHDRAWN, per the standing rule that nothing is silently retired.
+
+### The Re(T) equations, solved completely: the vacuum is 37.85
+
+The six-way Re(T) contradiction now has a computed verdict, obtained by solving
+the equations the framework already declares rather than by choosing among the
+incumbents. dynamical_lambda declares W = e^{-aT} - (1/2) e^{-bT} with
+GEOMETRIC exponents a = 2 pi / b_3 and b = 2 pi / 26, and the full N=1
+potential. racetrack_vacuum.py now finds every stationary point of V on
+(0.5, 300), Hessian-classified in both the Re(T) and axion directions, under
+both Kahler slopes.
+
+| quantity | n = 3 (CY form) | n = 7 (G2 form) |
+|---|---|---|
+| the unique minimum | Re(T) = 37.8527 | Re(T) = 37.314 |
+| its character | SUSY AdS, axion-stable | SUSY AdS, axion-stable |
+| dS saddle barrier above it | 41.73 | 40.64 |
+
+Consequences, each pinned by a test that recomputes it:
+
+- **37.85 — one of the six incumbents — IS the vacuum of the declared
+  equations.** The D_T W = 0 condition and full stationarity of V agree there.
+- **7.086 (CALIBRATED "to match BBN") and 9.865 (fixed circularly by m_H) are
+  not stationary points of anything the framework has written down**, under
+  either Kahler form. Nor are 1.833, 3.739 or 174.03.
+- The open Kahler fork moves this output by 1.4%, so the vacuum is robust
+  against that ruling.
+- The vacuum is AdS. Nothing declared uplifts it to dS, so the
+  cosmological-constant story cannot come from this potential as it stands.
+  Recorded, not patched.
+
+**Free-parameter accounting.** D_T W = 0 is invariant under rescaling W, so the
+vacuum location depends on exactly ONE continuous knob — the ratio B/A = -1/2 —
+plus the geometric integers 24 and 26, and only logarithmically on the ratio.
+The six-way Re(T) freedom reduces to one choice with a stated, mild
+sensitivity.
+
+**Ruling left open:** adopting 37.85 moves the BBN and Higgs sectors (the
+latter currently consumes m_H to fix Re(T) = 9.865 — the circularity already
+on the books). The evidence is computed; the decision is the author's.
+
+### The free set shrinks again: 67 rows -> 40 independent knobs
+
+Three further removals, each an exact identity recomputed on every run:
+
+    fermion.n_generations = b_3 / 8              (machine precision)
+    yukawa.lambda_eff     = (1 + sqrt 5) / 2     (machine precision; the free
+                                                  content is the DISCRETE
+                                                  choice best_scaling = "phi",
+                                                  which stays in the free set)
+    cosmology.wa_thawing  = -4 / sqrt(b_3)       (machine precision; this is
+                                                  the RETIRED formula's legacy
+                                                  artefact — the removal
+                                                  records that it carries no
+                                                  independent content, and is
+                                                  not a revival)
+
+Current honest state of the parameter-closure programme:
+
+    ledger rows                67
+    independent knobs          40
+    of which discrete choices  (e.g. best_scaling) stay counted
+    largest remaining blocks   flavour cluster (~14 knobs), measured anchors
+                               feeding derivations, Re(T)'s B/A ratio, and the
+                               UNRESOLVED adjudications
+
+The direction of travel the author set — cull to the true free set, then
+derive the survivors from geometry — is now executing: CKM collapsed onto
+(A, rho, eta, lambda); n_gen, lambda_eff and wa collapsed onto b_3 and one
+discrete choice; Re(T) collapsed onto B/A. Each reduction is a verified
+computation, and a test returns the row to the free set the moment its
+identity stops holding.
