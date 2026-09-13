@@ -4104,3 +4104,53 @@ installation succeed and then fail at import, since that version has no
 in, and the fix was to publish rather than to loosen.
 
 Status: CLOSED. Not a framework defect -- a release that had not been cut.
+
+### The 67 counts registration sites, not independent knobs
+
+Raised by the author: either the model needs far more geometry to explain 67
+quantities, or the list needs culling. Measured, and it is the second first --
+the count cannot be trusted in either direction until it is cleaned.
+
+**1. Twelve rows repeat a quantity already counted.** The three PMNS angles each
+appear THREE times, under different sectors and branches:
+
+    theta_12   geometry.theta_12  neutrino.theta_12_pred  pmns.theta_12_triality
+    theta_13   geometry.theta_13  neutrino.theta_13_pred  pmns.theta_13_triality
+    theta_23   geometry.theta_23  neutrino.theta_23_pred  pmns.theta_23_triality
+
+and so do delta_CP (x2), H0_local (x2), V_cb (x2), V_ub (x2), A_Wolfenstein (x2).
+Nine rows for three physical angles. The triality rows are an alternative
+PARAMETERISATION of the same angles -- a fork, not extra freedom.
+
+**2. Seven rows are external data or uncertainties, not model knobs.**
+`geometry.w0_error_DESI` is an ERROR BAR. It cannot be a free parameter of the
+theory under any reading. Alongside it: w0_observed_DESI, wa_observed_DESI,
+omega_Lambda_Planck, Omega_radiation, M_Pl_4D, m_KK_bound. These are what
+predictions are scored AGAINST; counting them as freedom conflates the data with
+the model.
+
+**3. Six CKM rows are arithmetic on three inputs.** A, rho and eta are the
+Wolfenstein inputs; V_cb, V_ts, V_tb, V_td, V_ub and jarlskog_invariant are
+computed from them. Six rows, zero additional freedom.
+
+So of 67 rows, roughly **25 carry no independent content** -- repeats,
+comparison data, an uncertainty, and downstream arithmetic. The honest
+independent count is nearer the low forties before the 49 UNRESOLVED rows are
+even adjudicated, and will fall further once they are.
+
+**Why this matters beyond bookkeeping.** The quantity the framework actually
+wants is the RANK of the free set -- how many independent knobs -- not its
+cardinality. That is precisely what EDOF is supposed to be, and
+`calculate_effective_dof` still returns a hardcoded 3 with `# ANSATZ` written
+above it. So the framework has one number that is measured but inflated (67) and
+one that is meaningful but asserted (3), and neither is yet the thing it needs.
+
+**The order of work follows.** Cull before adding geometry: deduplicate to one
+row per physical quantity, move comparison data and uncertainties out of the
+count entirely, and collapse downstream arithmetic onto its inputs. Only the
+residue that survives is a real demand on new geometry, and only then is it
+worth asking what structure would explain it. Sizing the missing physics against
+a count that includes an error bar would be sizing it against noise.
+
+Status: the ledger is correct about what it measures; what it measures is not
+yet the right quantity. Recorded as the next concrete piece of work.
