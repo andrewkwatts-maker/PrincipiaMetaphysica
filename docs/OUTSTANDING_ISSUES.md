@@ -4317,3 +4317,46 @@ derive the survivors from geometry — is now executing: CKM collapsed onto
 discrete choice; Re(T) collapsed onto B/A. Each reduction is a verified
 computation, and a test returns the row to the free set the moment its
 identity stops holding.
+
+### Free set 40 -> 37, and what the survivor list reveals
+
+Three further verified removals: `freudenthal_quartic` = 16 (b_3/27)^2 =
+1024/81 to machine precision (a function of b_3 alone, its ANSATZ label
+notwithstanding); `alpha_gut_coefficient`, which the code itself declares as
+round(1/(10 pi), 6) — arithmetic on pi, with the rowless formula choice listed
+under `dissolved_discrete_choices` so the caveat survives; and `fitted_pmns`,
+a COUNT of fitted parameters, which as a free parameter would double-count the
+parameters it counts.
+
+**A defect found on the way, recorded and pinned:** freudenthal_triple.py's
+ImportError fallback computes a DIFFERENT quartic from the eml_spectral path —
+27 c^4/4 against 16 c^2, exactly 3x apart at b_3 = 24. If eml_spectral goes
+missing, the published quartic silently changes by a factor of 3. Which
+formula is correct needs the eml_spectral definition; the disagreement is
+recorded, not adjudicated, and a test fails the day the two paths agree so the
+note cannot go stale.
+
+**The 37 survivors now cluster cleanly, which is the map for what remains:**
+
+    flavour block (~14)   theta_12/13/23, delta_CP, dm21, dm31, A, rho, eta,
+                          V_us_triality, J_CKM, jarlskog_triality, ckm
+                          delta_cp, dm2_21, mass_sum
+                          -> the Gamma_7 modular programme's target
+    cosmology (~7)        H0_early, H0_local, Omega_matter, alpha_T,
+                          alpha_R^2, alpha_shadow, delta_b3_asymmetry,
+                          racetrack_Re_T
+                          -> Re(T) now has a computed vacuum; the anchors
+                             need role adjudication
+    Higgs block (3)       lambda_0, lambda_eff_pheno, m_higgs_pred
+                          -> all downstream of Re(T); the 37.85-vs-9.865
+                             ruling decides their fate
+    scale/GUT (3)         M_GUT_geometric, alpha_inverse, vev_coefficient
+    yukawa (2)            best_scaling (discrete), phi_fit
+    unadjudicated (4)     as_weight, bridge_ede classification,
+                          mass_ratio_proton_electron, axion.theta_i,
+                          gauge.su2/su3 source-level rows
+
+The parameter-closure programme's honest state: 67 registered rows, 37
+independent knobs, every removal a recomputed identity or a named structural
+reason, and the knob count falling only when a verification passes — never by
+relabelling.
