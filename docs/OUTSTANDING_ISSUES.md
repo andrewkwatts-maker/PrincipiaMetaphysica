@@ -3895,3 +3895,126 @@ worked around:
 Either 2.4.0 needs publishing, or the floor needs lowering to a version that
 exists and the expressions that call the missing operators need revisiting.
 Until then the package is uninstallable from a clean environment.
+
+---
+
+## 2026-09-13 (fifteenth pass) — THE GEOMETRY CLOSES: b_3 = 24 is an input
+
+### The half-shift enumeration, run in full, and a parity theorem
+
+The previous pass established that the half-shift data is **load-bearing**: under
+the linear action alone there are 7 x 16 = 112 fixed 3-tori and no group element
+identifies any two, because negating a half-period returns it to itself mod 1.
+Only a half-shift exchanges 0 and 1/2. So the shifts had to be enumerated.
+
+**The reduction that makes it finite.** An element is an affine map
+x_a -> eps_a x_a + s_a. Conjugating by a translation T_t sends
+s -> s + (eps - 1)t componentwise:
+
+- flipped coordinate, eps = -1: s -> s - 2t, and 2t covers R/Z — **removable**
+- fixed coordinate, eps = +1: s -> s — **invariant**
+
+So the only meaningful data is one half-shift per generator on its **fixed line**
+(3 coordinates, s in {0, 1/2} for g^2 = 1, hence 8 choices), over the **28**
+non-collinear generating triples of F_2^3. Total **8^3 x 28 = 14336**
+assignments, enumerated exhaustively.
+
+**Which elements are singular.** An element has fixed points iff it carries no
+shift along any coordinate it fixes; otherwise it acts freely. When it does, its
+locus is 2^4 = 16 three-tori and Gamma permutes them — which is where the shifts
+finally bite.
+
+**The result.** 22 distinct singular-locus profiles, recorded as the number of
+families with Gamma-orbit size 1, 2, 4 and 8. **In every profile, every entry is
+even.**
+
+Resolution is additive over the families, so twisted b_3 = sum_k n_k c_k with
+c_k non-negative integers. Every n_k even makes twisted b_3 **even** for any
+choice of c_k, and the flat contribution is **exactly 7** (R3, derived). So
+
+    b_3 = 7 + even = ODD, always
+
+and 24 is even. Confirmed independently by direct search over integer
+contributions: **0 of the 22 profiles admit a total of 17**.
+
+**This is model-independent.** It needs no per-class Betti contribution — only
+that the contributions are non-negative integers and that resolution is
+additive. So it does not depend on a citation that is not in hand.
+
+**A wrong version of this argument, recorded.** The first attempt reasoned from
+"the number of families is always even". That does not go through: the orbit
+sizes are **1, 2, 4 and 8**, not uniform, so the families are heterogeneous and
+may contribute differently. The theorem requires every family-**class** count to
+be even, which is the stronger fact the enumeration actually establishes. The
+weaker argument is left here because it is the kind that looks sufficient and
+is not.
+
+### Both branches of the g2_construction fork now fail
+
+| branch | status |
+|---|---|
+| `joyce_orbifold` (adopted) | **b_3 = 24 REFUTED** — b_3 is necessarily odd |
+| `fano_tcs` | already recorded: b_3 = 24 sits far below the exhibited 71-155 range |
+
+So no construction the framework offers delivers b_3 = 24.
+
+### THE CLOSURE
+
+The geometry closes, and it closes in the honest direction:
+
+**b_3 = 24 is an INPUT, not a derivation.**
+
+This was already the reading the evidence pointed to — the twelfth pass recorded
+that b_3 = 24's support was "7 derived + 17 by subtraction", and that the Leech
+apparatus contributes only the integer 24 compared against itself. What changes
+now is the standing of that conclusion. It was an **absence of evidence**; it is
+now a **positive proof**: the 17 is not merely underived, it is **unreachable**.
+
+What the closed theory looks like:
+
+- **DERIVED.** Gamma = (Z/2)^3 forced as phi's diagonal stabiliser (R1). The 7
+  involutions are the 7 Fano arcs (R2). The 4 + 3 split as moved/fixed
+  coordinates (R2). The flat contribution to b_3 is exactly 7 (R3). A second
+  Fano plane on Gamma (R4). The singular locus, now fully enumerated. The "+2"
+  count forced by incidence. 24 = 12 x 2 as an orbit-stabiliser identity —
+  labelled NUMERICAL, since a group order is not a 3-cycle count.
+- **INPUT.** b_3 = 24, and with it w_0 = -23/24 and n_gen = 24/8, which become
+  predictions from a stated input rather than from derived geometry.
+- **REMOVABLE.** The Leech/bridge apparatus. Measured earlier to move no
+  published number.
+- **NOT LOAD-BEARING.** The G2 orientation itself. Measured this session: phi can
+  be replaced by a tensor in a different GL(7) orbit without moving any of 807
+  published parameters, so the outputs ride on the Fano **incidence** structure,
+  not on the orientation that makes it G2.
+
+The consistent picture across three passes: **the framework's physics is carried
+by the combinatorics of the Fano plane on 7 points.** Every layer above that —
+the 24-dimensional lattice, the differential-geometric content of phi, the
+twisted sector — has now been measured and found either removable, undetectable
+in the outputs, or arithmetically impossible.
+
+### Consequences for the free-variable ledger
+
+b_3 = 24 is now definitively a `LOAD_BEARING_INPUT` and must appear as one. It is
+consumed by w_0, n_gen, alpha_T and the moduli count, so it is not
+`COMPARISON_ONLY`. The published free-parameter count cannot be zero while it
+stands, and the honest count must say so.
+
+### What is NOT closed
+
+- **Other constructions.** The refutation is specific to Joyce (Z/2)^3 with the
+  forced Gamma. A different G2 construction could in principle give b_3 = 24;
+  neither option the framework declares does.
+- **Why 24.** If b_3 = 24 is an input, the question becomes what sets it. Both
+  candidates from the previous pass remain **NUMERICAL** and unadopted: the arc
+  flag identity 24 = 12 x 2, and D4's forced 24 roots.
+- **The parity prediction.** Every (Z/2)^3 Joyce orbifold of this type must have
+  odd b_3. That is how the calibration gate is discharged here — as a
+  **falsifiable prediction** rather than a quoted table. Joyce's published
+  Betti numbers can confirm or destroy it, and none is asserted here.
+
+**Status: b_3 = 24 REFUTED as a derivation for both declared constructions.
+Recorded as an INPUT. The architectural consequence — presenting b_3 = 24 as a
+stated input and retiring the apparatus that no longer earns its place — is a
+ruling for the author, and the evidence for it is now positive rather than
+circumstantial.**
