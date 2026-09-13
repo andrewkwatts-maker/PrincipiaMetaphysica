@@ -4018,3 +4018,69 @@ Recorded as an INPUT. The architectural consequence — presenting b_3 = 24 as a
 stated input and retiring the apparatus that no longer earns its place — is a
 ruling for the author, and the evidence for it is now positive rather than
 circumstantial.**
+
+### The parity theorem's consequence for w_0: undetectable
+
+If b_3 must be odd, the dark-energy prediction w_0 = -(b_3 - 1)/b_3 moves. It
+was checked against the registry's own DESI anchor, w_0 = -0.958 +/- 0.02:
+
+| b_3 | w_0 | sigma |
+|---|---|---|
+| 21 | -0.952381 | 0.281 |
+| 23 | -0.956522 | 0.074 |
+| **24** | **-0.958333** | **0.017** <- EXCLUDED by parity |
+| 25 | -0.960000 | 0.100 |
+| 27 | -0.962963 | 0.248 |
+
+Two things follow, and neither is comfortable.
+
+**w_0 cannot discriminate b_3.** Every candidate within reach sits well inside
+1 sigma, so the dark-energy sector supplies no evidence for or against any of
+them. It cannot be used to select b_3, and a fit there is not support for the
+geometry.
+
+**The excluded value is the best-fitting one.** b_3 = 24 gives the closest w_0
+of any integer nearby, at 0.017 sigma, and it is precisely the value the parity
+theorem forbids. This is the same shape as the 2026-09-06 dark_energy_betti
+ruling, which went deliberately to the option that fits worse; here the geometry
+excludes the best fit outright.
+
+### Is a zero-parameter model reachable? Measured answer: not as things stand
+
+The target is zero free variables outside the permitted reduction bucket. The
+ledger measures the current state rather than asserting it:
+
+    free variables            67
+    PERMITTED_OR_SCALE         1     (the permitted bucket)
+    COMPARISON_ONLY            6     (scored against, not consumed)
+    LOAD_BEARING_INPUT        11     (counts against the target)
+    UNRESOLVED                49     (counts against, and blocks release)
+
+and b_3 = 24 must now join as load-bearing, since the refutation removes its
+claim to be derived and w_0, n_gen, alpha_T and the moduli count all consume it.
+
+So the honest floor today is **at least 12 load-bearing inputs plus whatever
+share of the 49 unresolved rows turns out to be consumed**, not zero. Saying
+otherwise would restore exactly the claim this ledger was built to retire.
+
+What would actually reduce it, in order of leverage:
+
+1. **Classify the 49 unresolved rows.** Each is either consumed by a derivation
+   or only scored against; only the first kind counts. This is bookkeeping with
+   a definite answer and it is the largest single block.
+2. **Derive Re(T).** Six incompatible values ship today and it gates the Higgs
+   mass circularly. Fixing the Kahler potential, implementing the true F-term
+   potential and finding a genuine stationary point would turn several fitted
+   rows into outputs at once.
+3. **The flavour sector.** The largest cluster of fits -- 5 neutrino, 3 triality
+   angles, 8 CKM rows downstream of Wolfenstein, the delta_CP offset and its two
+   tuned coefficients.
+4. **b_3 itself.** If it is an input, something must set it. Both candidates
+   remain NUMERICAL and unadopted: the arc flag identity 24 = 12 x 2, and D4's
+   forced 24 roots. Neither produces 3-cycles, and the parity theorem now says
+   whatever sets it must produce an odd number, which excludes 24 -- so both
+   candidates are arguing for a value the geometry forbids.
+
+That last point is the sharpest open problem the closure leaves behind: **the
+two best candidates for explaining 24 explain a number the geometry cannot
+realise.**
