@@ -4154,3 +4154,95 @@ a count that includes an error bar would be sizing it against noise.
 
 Status: the ledger is correct about what it measures; what it measures is not
 yet the right quantity. Recorded as the next concrete piece of work.
+
+---
+
+## 2026-09-13 (sixteenth pass) — WITHDRAWAL: the b_3 parity refutation was unsound
+
+A review of the week's directions, requested by the author, found one major
+error, and it is in the strongest result claimed: the parity refutation of
+b_3 = 24. It is WITHDRAWN. b_3 = 24 for the Joyce (Z/2)^3 construction returns
+to UNDETERMINED — not refuted, and not derived.
+
+### The three flaws, each verified computationally
+
+**1. The enumeration covered 1/32 of the moduli space.** Its reduction claimed
+shifts on flipped coordinates are removable by conjugation. That is true for
+one generator in isolation and FALSE for coordinates flipped by more than one:
+conjugation by a translation moves every flipping generator's shift by the same
+-2t_a, so pairwise DIFFERENCES are invariants, and the commutator constraint
+pins each difference to {0, 1/2}. Verified by quarter-step search: no
+translation removes a relative shift of 1/2. Per generating triple that is 5
+non-removable bits (2 on the triply-flipped coordinate, 1 on each of the 3
+doubly-flipped), so the true space is 8^3 x 2^5 x 28 = 458,752 assignments; the
+old enumeration visited 14,336. Joyce's own examples use shifts of the form
+1/2 - x on flipped coordinates — they live precisely in the missed strata.
+
+**2. The additivity premise failed on what was covered.** The parity argument
+assumed resolution contributes additively over disjoint singular families. In
+the covered stratum the fixed sets of distinct pure sign flips INTERSECT (a
+shared 1-torus, verified), so the isolated-A1 model did not apply there at all.
+Joyce's construction requires pairwise-disjoint singular sets, and it is
+exactly the missed relative shifts that separate them.
+
+**3. A labelling defect.** The component action omitted the singular element's
+own flipped-coordinate shift (the s^sigma twist), which composed elements carry
+even in the old stratum. The corrected action is verified functorial.
+
+### Blast radius of the withdrawal
+
+- "THE GEOMETRY CLOSES: b_3 = 24 is an input" (fifteenth pass) — WITHDRAWN as a
+  conclusion. The closure question is OPEN again.
+- The w_0 table's "EXCLUDED by parity" annotation on b_3 = 24 — RETRACTED.
+- The free-set note "b_3 must join the load-bearing inputs" — now conditional
+  on the author's ruling, not forced by a refutation.
+- The parity prediction "every (Z/2)^3 Joyce orbifold has odd b_3" — WITHDRAWN.
+- NOT affected: phi is still not a G2 form (independent linear algebra); the
+  free set 67 -> 43 stands; the flag identity and D4 candidates stand as
+  NUMERICAL; R1-R4 and flat b_3 = 7 stand (linear statements); fano_tcs's
+  71-155 range exclusion stands. The published DERIVED status of b_3 still has
+  no derivation behind it — that contradiction of record remains, narrower.
+
+### The corrected machinery, and what it finds
+
+half_shift_enumeration.py is rewritten: full moduli space, Joyce admissibility
+(pairwise-disjoint singular sets, decided per pair by a shared flipped
+coordinate with differing shifts), corrected component action (functoriality
+tested), family counting with stabiliser types. Full survey:
+
+    assignments                  458,752
+    admissible                   446,964
+    family counts (admissible)   {0, 4, 8, 12, 16} — always a multiple of 4
+    family types observed        plain T3, and T3_reflected; no translated type
+    canonical Joyce structure    7,840 assignments (3 singular, pairwise
+                                 disjoint, 12 plain-T3 families — the family
+                                 structure of Joyce's first example)
+
+Finding the canonical 12-family structure is the structural half of the A6
+calibration, and the withdrawn enumeration could never produce it.
+
+### What can and cannot be concluded now — stated with the lesson applied
+
+Unconditional: every A1 family contributes at most dim H^1(T^3) = 3 to b_3, so
+twisted = 17 needs at least 6 families; family counts come only in multiples
+of 4.
+
+Tempting and NOT concluded: under a single-constant-per-type contribution rule,
+twisted would be ≡ 0 mod 4 and 17 unreachable. But Joyce's reflected families
+admit TWO topologically distinct resolutions with different contributions —
+that is how his tables get several (b_2, b_3) from one orbifold — so the
+constant-per-type premise is exactly the kind of unexamined assumption that
+sank the withdrawn theorem. If the two resolutions differ by odd steps, 17 can
+live in the (0,16)-type or mixed profiles.
+
+**Decision input needed, and it is a single citation:** the per-type,
+per-resolution contribution table for T^3 x C^2/{+-1} singularities and their
+quotients, from Joyce, Compact Manifolds with Special Holonomy, ch. 12 — the
+reference this register already carries. With that table transcribed, the
+corrected survey becomes a finite decision procedure for whether ANY admissible
+(Z/2)^3 assignment yields b_3 = 24, and settles (4,24) and (7,24) at the same
+time. Until then, every Betti statement stays conditional and labelled.
+
+Status: register updated, module and tests rewritten, guard tests hold the
+DERIVED-vs-no-derivation contradiction open. The refutation stays on the books
+as WITHDRAWN, per the standing rule that nothing is silently retired.
