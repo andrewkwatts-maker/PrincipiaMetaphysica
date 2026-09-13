@@ -4360,3 +4360,103 @@ The parameter-closure programme's honest state: 67 registered rows, 37
 independent knobs, every removal a recomputed identity or a named structural
 reason, and the knob count falling only when a verification passes — never by
 relabelling.
+
+---
+
+## 2026-09-14 (seventeenth pass) — gated switches, a preferred path, and the b_3 ruling executed
+
+### RULING EXECUTED: b_3 = 24 is an INPUT
+
+`topology.elder_kads` moves from `GEOMETRIC` / `GEOMETRIC:TCS_G2_187` to
+`INPUT` / `INPUT:B3_ORIGIN_OPEN`, with the ruling recorded in its metadata and
+the withdrawn previous status kept visible. Nothing on the books derives
+b_3 = 24: the TCS route places it far below its exhibited 71-155 range, and the
+Joyce (Z/2)^3 route is UNDETERMINED pending a citation.
+
+Executed at the row's real source — the checked-in datasource
+`src/metaphysica/data/parameters.json`. An earlier attempt edited a code
+default inside a `has_param` fallback that never runs, because the datasource
+seeds the row first; that is worth recording, because "I changed the code and
+nothing happened" is a debugging trap this repository will hit again.
+
+**A residual inconsistency, pinned not hidden.** `particle.b3` and
+`cosmology.b3` are downstream ECHOES of the same integer, emitted through
+result dicts where `set_param`'s status argument defaults to `DERIVED`. They
+still ship DERIVED while the seed is INPUT. They derive nothing — they restate
+the input. Correcting them threads an explicit status through two registration
+paths and touches published rows, so it is staged, and a test fails the day
+they change.
+
+### Three gated switches for the things we do not know
+
+| fork | adopted | alternative | wired into |
+|---|---|---|---|
+| `re_t_adoption` | `calibrated` | `computed_vacuum` | `baryon_asymmetry._resolve_re_t` |
+| `b3_origin` | `input_24` | `arc_flag_stabiliser`, `d4_root_shell`, `joyce_twisted_sector` | declarative + the sweep |
+| `joyce_contribution_table` | `absent` | `supplied` | `joyce_contributions` gate |
+
+Twelve forks now, eight still OPEN, drift-clean. Flipping `re_t_adoption`
+genuinely swaps the BBN-calibrated Re(T) for the solved stationary point, and
+the registered status follows the branch — `CALIBRATED` or `COMPUTED`. The cost
+becomes visible rather than arguable: moduli damping exp(-Re T) falls by
+~e^{-31}, destroying the eta_b match this sector was tuned for.
+
+The Joyce gate **refuses an uncited table** rather than trusting one. An entry
+without a citation is rejected, because a fabricated table produces numbers that
+look like results. With a validated table, the corrected survey becomes a finite
+decision procedure for whether b_3 = 24 is reachable and whether (4,24) and
+(7,24) occur.
+
+### The preferred path: one declared state, all others runnable
+
+`simulations/core/preferred_path.py` declares **adopted-2026-09-14**, digest
+`75ea3a4ba4183912`, as the state documentation and theory output generate from.
+It is a VIEW over the forks — every entry is that fork's own adopted option, so
+it cannot drift, and a test enforces the equality.
+
+`snapshot()` stamps the state and its digest onto output, so a recorded number
+can be traced to the configuration that produced it. `history_entry()` records
+state without stamping time, keeping it reproducible. `compare_states()` runs
+observables under two selections and reports both columns plus deltas — ordered
+by observable name, verdict always `NO_SELECTION_MADE`, because a switchboard
+that reports "which option fits best" is a parameter fitter. Demonstrated:
+flipping two switches moves phi's annihilator 6 -> 14 and Re(T) 7.086 -> 37.85.
+
+### The b_3 candidate sweep, and a narrowing that uses no measurement
+
+`b3_candidate_sweep` pushes seven candidate b_3 values through every registered
+relation that consumes b_3 — w_0, n_gen, wa, the quartic, the racetrack
+exponent, k_bary cycles, the +2 identity — reporting all of them in declaration
+order with no row flagged.
+
+It surfaced a **genuine structural narrowing**. Two constraints, neither
+referring to any experimental anchor:
+
+    C1   n_gen = b_3 / 8 must be integral   (a generation count is a number of
+                                             things), so 8 divides b_3
+    C2   D_bulk - b_3 = 2                   (the framework's own '+2' identity,
+                                             with D_bulk from the registry)
+
+Over b_3 in 1..200, C1 leaves 25 values and C1 ∧ C2 leaves **exactly one: 24**.
+
+Status **CONDITIONAL**, with both premises named: it assumes the relation
+n_gen = b_3/8 (the 8 being dim O) and the registered D_bulk, whose own status is
+GEOMETRIC and whose reading as the critical dimension was withdrawn earlier. So
+this is not a geometric derivation of b_3 and not an appeal to data — it reduces
+b_3's freedom to two prior commitments, which is strictly better than a bare
+input and strictly weaker than a derivation.
+
+Also confirmed and now pinned by a test: w_0 changes only **0.0017 per unit
+b_3**, so the earlier "w_0 cannot discriminate b_3" finding is locked in.
+
+### Arithma for formula building and export; no magic numbers
+
+The racetrack superpotential is now built **symbolically in Arithma** with
+variable coefficients, giving clean LaTeX `A e^{-aT} + B e^{-bT}`, a
+compact-tree export that roundtrips, and an **exact symbolic dW/dT** replacing
+finite differences.
+
+Its exponents are built from **registered topology** rather than module
+constants: a = 2 pi / `topology.elder_kads`, b = 2 pi / `dimensions.D_bulk`.
+Numbers arrive only at evaluate time, from the registry, and the provenance of
+each is exported alongside the formula.
