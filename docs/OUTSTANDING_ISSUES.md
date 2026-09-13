@@ -4460,3 +4460,79 @@ Its exponents are built from **registered topology** rather than module
 constants: a = 2 pi / `topology.elder_kads`, b = 2 pi / `dimensions.D_bulk`.
 Numbers arrive only at evaluate time, from the registry, and the provenance of
 each is exported alongside the formula.
+
+### Arithma under the formulas, and the first switch-combination search
+
+**The shared third track.** Arithma coverage was 51 of 121 simulation modules,
+and the reason was cost: each conversion meant hand-writing the stub guard,
+expression construction, an evaluation environment and a comparison. Fifty-three
+modules had already copied that guard, and the copies are what let a *degraded*
+arithma become a hard CI failure.
+
+`simulations/core/arithma_formula.py` is that scaffolding once. A simulation
+declares name, LaTeX hint, a build lambda, its registry `inputs`, mathematical
+`constants`, and the plain-Python statement — and gets `latex()`, `compact()`,
+`evaluate()`, `derivative()` and `check()`.
+
+`check()` is the point: it compares the Arithma tree against the Python callable
+on registry values, so three independent statements of one formula get verified
+against each other rather than merely coexisting. **Two tests prove it can
+fail** — a deliberately drifted Python reference must be caught — because a
+checker that always agrees verifies nothing.
+
+No magic numbers anywhere in the path. `inputs` maps symbols to REGISTRY PATHS
+fetched at evaluate time; mathematical constants come from **Arithma's own
+constant table** (`initialize_defaults` / `lookup_value`), because pi is not a
+physics parameter and does not belong in the parameter registry, but must not be
+a literal either. `provenance()` reports each number's origin, and a missing
+input **refuses to evaluate** rather than guessing.
+
+First batch: the four b_3 relations — w_0, n_gen, the racetrack exponent, the
+Freudenthal quartic. All four agree with their Python statements at **rel = 0.0**,
+all export LaTeX, all roundtrip through the compact form. Coverage ratchet
+installed at the measured 51/121, with a companion test that fails if the
+baseline goes stale.
+
+### The switch-combination search, and what it found about the preferred path
+
+`simulations/core/switch_search.py` enumerates combinations of the open forks and
+reports what each does. It obeys the anti-tuning rule literally: every
+combination reported, rows ordered by **digest** (any ordering derived from the
+outcomes is the first step towards ranking by fit), verdict always
+`NO_SELECTION_MADE`.
+
+What it can legitimately decide is **internal consistency**, which references no
+measurement. Five checks, all measurement-free:
+
+| check | what it asks |
+|---|---|
+| `phi_is_a_g2_form` | is dim ann(phi) = 14, as g2 requires by definition? |
+| `n_gen_is_integral` | is b_3/8 an integer? A generation count is a number of things |
+| `re_t_is_the_solved_vacuum` | is the live Re(T) the declared potential's stationary point, or a calibration? |
+| `arithma_track_agrees` | do the three statements of each formula agree? |
+| `joyce_branch_is_decidable` | can a branch claiming the Joyce route actually compute it? |
+
+**First result, over `g2_form_convention` x `re_t_adoption` x `b3_origin`, 16
+combinations: 3 internally consistent, 13 not.**
+
+And the finding that matters: **the PREFERRED path is among the inconsistent
+ones**, carrying two CONTRADICTIONS —
+
+    phi_is_a_g2_form            dim ann(phi) = 6, g2 requires 14
+    re_t_is_the_solved_vacuum   live Re(T) = 7.086, the only minimum is 37.853
+
+Both were already on the books individually. This is the first time the framework
+has been able to **report that its own adopted configuration contains them**, as
+a computed verdict rather than two separate register entries a reader has to
+connect.
+
+Neither contradiction is resolved here, because both resolutions are author
+rulings: adopting `g2_form_convention = octonion_derived` (cost measured at zero
+— no physics test fails, no published parameter moves) and
+`re_t_adoption = computed_vacuum` (cost measured and real — the eta_b match is
+destroyed).
+
+**What closure would look like, now recognisable.** Exactly one internally
+consistent combination whose free set has no `LOAD_BEARING_INPUT` left. Both
+numbers are reported per row, so that state can be identified the moment it
+arrives. The module does not declare it, and will not.
