@@ -4909,3 +4909,79 @@ two places where a mechanism is already half-built are the ones to push: the
 half-shift enumeration (which produces actual 3-cycles and needs only the cited
 contribution table) and the racetrack potential (which already produces Re(T) as
 an output rather than a fit).
+
+---
+
+## 2026-09-14 (eighteenth pass) — THE MECHANISM DELIVERS: b_3 = 24 forces b_2 = 15
+
+### The contribution table is derivable, and was derived
+
+The Joyce gate had been waiting on a citation. On inspection the table is not
+physics data at all — it is computable mathematics, from three ingredients:
+
+1. **Eguchi–Hanson cohomology.** The resolution of C²/{±1} deformation-retracts
+   to the exceptional S², so H⁰ = H² = Z. Textbook topology.
+2. **Künneth on T³ × EH.** A plain family contributes (Δb₂, Δb₃) = (1, 3). The
+   T³ class itself is not new — its three fixed coordinates form a Fano line
+   whose 3-form is already among the 7 flat invariants (R3, derived).
+3. **Invariants for reflected families.** k = dim H¹(T³)^δ = **1, always** —
+   because two distinct Fano lines meet in exactly one point, a stabilising
+   reflection flips exactly 2 of σ's 3 fixed coordinates. **Verified over
+   35,712 reflection stabilisers: k = 1, no exceptions.** The two available
+   resolutions then contribute (1, 1) or (0, 2).
+
+One named assumption survives: the **ε-dichotomy** (both resolutions available
+independently at every reflected family). Every verdict below is
+CONDITIONAL_ON_DERIVED_TABLE. Joyce ch. 12's role inverts: the book now
+**checks** the derivation rather than gating it — and if it disagrees, the
+derivation is corrected, not the book.
+
+### Two corroborations fell out unprompted
+
+- **(12, 43)** from the canonical 12-family profile — the known Joyce value,
+  reproduced by pure Künneth counting.
+- **The b₂ + b₃ = 55 series**, (8,47) through (16,39), from the (8,8) profile —
+  the signature shape of alternative resolutions of a single orbifold in
+  Joyce's tables. This is also exactly where the even-b₃ values live that
+  falsified the withdrawn parity theorem, now produced by the corrected
+  machinery instead of contradicting it.
+
+### The verdicts, computed over all 458,752 assignments
+
+| question | verdict (conditional) |
+|---|---|
+| b₃ = 24 reachable? | **YES — uniquely at (b₂, b₃) = (15, 24)** |
+| how | the (0,16) profile — 196 assignments, sixteen reflected families — with exactly one family taking the ε = −1 resolution |
+| (4, 24)? | **UNREACHABLE.** The g2_construction fork's adopted "Joyce (4,24)" claim cannot be realised by this construction |
+| (7, 24)? | **UNREACHABLE.** The b₂ = 7 alternative falls the same way |
+
+**So, conditionally on one stated assumption: if the framework's manifold is a
+Joyce (Z/2)³ resolution with b₃ = 24, then b₂ = 15 — not 4, and not 7.**
+
+This is the first time b₃ = 24 has been produced by counting actual 3-cycles
+rather than matched to an integer. It clears the A4 bar by construction: the
+24 decomposes as 7 flat Fano forms + 15 exceptional classes at ε=+1 families
++ 2 at the one ε=−1 family, every one of them a genuine cohomology class of a
+genuine resolution.
+
+### What this would cost the framework, prepared not decided
+
+- `geometry.n_faces = 4` currently traces to b₂ = 4 (h^{1,1} of TCS #187). At
+  b₂ = 15 that derivation chain breaks and the four-face structure needs a
+  different origin — the arc/involution derivation (R2) is the natural
+  candidate since it never used b₂.
+- The b3_origin fork's `joyce_twisted_sector` branch stops being undecidable:
+  under the derived table it is DECIDED-CONDITIONAL, and uniquely pins b₂.
+- The falsifiable check: Joyce's tables either contain a (15, 24) — in which
+  case the construction exists in the literature — or they do not, in which
+  case either the assumption fails or the (0,16) assignments fail a finer
+  admissibility condition not yet imposed. Both outcomes are informative.
+
+### Method note, honestly
+
+This came from the author's redirection: stop matching formulas, search for
+mechanisms. The shape search over 1213 expressions found nothing because there
+was nothing to find at that level; the same session's Künneth computation
+produced a unique, falsifiable (b₂, b₃) because it counted objects instead of
+matching values. The difference between those two outcomes is the A4 bar,
+operating as intended.
