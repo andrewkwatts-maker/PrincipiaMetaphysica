@@ -5225,3 +5225,79 @@ alternatives, *Conceptual* is the best-argued — it signals the physics stays
 rigorous while index notation is translated — but "Layperson" was the author's
 own term and is unambiguous to a non-specialist, which is the audience the toggle
 exists for. Recorded as a deliberate choice rather than an oversight.
+
+### The (6+2,6,6,6) structure merges with the 43 derivation — because its 24 is not b₃
+
+The author corrected the earlier hint from (5,3,3,3) to **(6+2, 6, 6, 6)**, and
+that correction forced me to withdraw the aim of my own refutation.
+
+#### First, the correction I owe
+
+The thirteenth pass refuted (8,6,6,6) partly on the grounds that
+8+6+6+6 = **26 ≠ 24**, so Golay and M₂₄ cannot apply. That is true about Golay
+and **irrelevant** if the 26 was never meant to be a Golay support. On the
+corrected reading the 26 is **D_bulk**, and then the arithmetic is coherent:
+
+    4 faces × 6  = 24,   + 2 on ONE face,   total 26
+
+So that objection was aimed at the wrong claim and is withdrawn. **Two of the
+three original objections survive and still matter**: the 8 is not an octad (it
+is 6 Golay coordinates plus 2 breathing coordinates that are by construction
+outside the 24), and no weighting gives δ_T = 0.75 (tested at 0.250, 0.333,
+0.489, 0.138), so it does not rescue the racetrack stationarity it was proposed
+for.
+
+#### The apparent conflict
+
+Read as a partition of b₃, the structure is coherent **only at seed_24**:
+
+| | seed_24 | seed_43_joyce |
+|---|---|---|
+| 4 × 6 = b₃ | ✓ 24 | ✗ 43 |
+| D_bulk − b₃ = 2 | ✓ | ✗ −17 |
+
+which put the framework's two most attractive structures in opposition: the
+(6+2,6,6,6) face structure needs b₃ = 24, and b₃ = 24 is exactly what the
+resolution derivation showed is unreachable.
+
+#### THE MERGE: the 24 is |S₄|, not b₃
+
+It dissolves, because 4 × 6 = 24 is **derived — from the arc structure, not from
+the cohomology**. Computed this pass:
+
+    4     arc points = the faces                    derived (R2)
+    × 6   each point-stabiliser is S₃, order 6      computed: 6, 6, 6, 6
+    = 24  = |S₄|, the arc stabiliser                computed, and 4 cosets × 6
+    + 2   = the flag stabiliser order               derived earlier this session
+    = 26
+
+Every number in (6+2, 6, 6, 6) is a derived group-theoretic quantity of the Fano
+arc, and **none of them is b₃**. So the structure is fully compatible with
+b₃ = 43: it describes the symmetry group, the 43 describes the cohomology, and
+they are different objects.
+
+That also gives the "breathing +2" a concrete identity for the first time: it is
+the **flag stabiliser**, the involution fixing one (arc point, line) incidence.
+
+#### The limitation, stated before it is misread
+
+This merge does **not** derive D_bulk = 26. Partitioning 24 group elements is not
+partitioning 24 dimensions, and claiming otherwise is exactly the A4 error this
+register exists to catch — index structure mistaken for geometric structure. So:
+
+- **What is established:** the *pattern* (four faces, six each, one lopsided by
+  two) is derived, from |S₄| = 4 × 6 and the order-2 flag stabiliser.
+- **What is not:** that this pattern is a decomposition of spacetime dimensions.
+  D_bulk = 26 remains unexplained by it.
+
+#### Two further merge candidates, recorded not claimed
+
+**The twisted sector is 6².** b₃ = 7 + 36 and 36 = 6 × 6, with 6 = |S₃| the same
+point-stabiliser order. It is also 12 families × 3 forms. Two readings of the
+same 36; whether the 6² factorisation is structural or coincidental is untested.
+
+**Two lopsided splits, not obviously the same one.** Finding B gives 3 singular +
+4 free involutions (a 3+4 split of 7); the face structure gives 1 lopsided + 3
+normal (a 1+3 split of 4). Both are lopsided and neither is derived from the
+other. Worth testing whether the lopsided face is the one belonging to a
+non-singular involution.
