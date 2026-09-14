@@ -5140,3 +5140,88 @@ identity.
 `compare_paths()` reports both and selects neither. A test asserts **both pass
 the structural discriminator**, so integrality does not force the answer — the
 ruling is genuinely the author's.
+
+### The four suggested directions, assessed against the simulation
+
+Four high-leverage tests were proposed. The simulation has already settled two of
+them, one is superseded by its own diagnosis, and one is newly possible and paid
+off immediately.
+
+#### Test 1 — internal K_IJ from the associative 3-cycles: ADOPTED, and it works
+
+Proposed: compute K_IJ = ∫ ω_I ∧ *ω_J from the actual 3-cycles rather than
+importing an external Leech matrix, and test whether the S₄ structure induces
+block structure — i.e. whether internal G₂ geometry produces axion hierarchies
+without external lattice packings.
+
+This is the right test, and it is now **possible for the first time**, because
+the resolution derivation supplies an explicit harmonic 3-form basis. One
+correction to the premise: there are **not 24** cycles. b₃ = 24 is unreachable;
+at the canonical point b₃ = 43, decomposing as
+
+    7   flat     Γ-invariant Λ³, exactly φ's triples (R3, derived)
+    36  twisted  3 per A1 family × 12 families (derived)
+
+At the canonical (12, 43) point the structure is **3 singular involutions with 4
+families each**, the other **4 involutions acting freely**. Symmetry therefore
+forces K_IJ into **four blocks**:
+
+    K_IJ  =  7  ⊕  12  ⊕  12  ⊕  12
+
+**This answers the question the test was asking: the internal geometry produces a
+non-isotropic K_IJ with four distinct blocks and no external lattice anywhere.**
+The hierarchy source is the singular-locus decomposition, not a packing.
+
+Two structural bonuses fall out. **3 singular + 4 free = the 7 involutions** —
+that is the lop-sidedness, derived rather than posited. And **3 × 4 = 12
+families** is the faces × blocks structure arriving for the third time from an
+independent direction.
+
+(The block *structure* is forced by symmetry and is computed. The block *values*
+still need a metric, which the framework does not have — so hierarchies are shown
+to be structurally available, not yet numerically evaluated.)
+
+#### Test 2 — lower-symmetry Niemeier lattices: DECLINED, but the diagnosis is kept
+
+The insight is **correct and valuable**: Leech and E8³ gave Q_shell ∝ I₁₂ because
+Co₀ and W(E8)³ are large enough that Schur's lemma forces isotropy. That
+explains the earlier null result properly, and it is now on the record.
+
+The proposed fix is declined. Testing D₂₄⁺ or A₁²⁴ would break isotropy, but it
+continues down a path already measured as decorative: swapping the lattice moved
+**no published number**, the only thing any module read from it was
+`dimension → return 24`, and b₃ = 24 is now unreachable anyway. Test 1 reaches
+the same goal — genuine off-diagonal structure — through geometry that is
+load-bearing. Same target, better route.
+
+#### Test 3 — solve D_I W = 0 on the full N=1 potential: ALREADY DONE, one modulus
+
+Implemented in `racetrack_vacuum.py`: the full V = e^K(K^{IJ̄} D_I W D̄_J̄ W̄ −
+3|W|²), every stationary point on (0.5, 300), Hessian-classified in both the
+Re(T) and axion directions, under two Kähler slopes. Result: a unique
+supersymmetric AdS minimum at Re(T) = 37.85 where D_T W = 0 coincides with full
+stationarity, with the dS saddle barrier at 41.7.
+
+The genuine extension in the proposal is **four moduli** with
+K = −Σ ln(T_i + T̄_i) and gradient descent in log coordinates. That is not done
+and is the natural next step — it is also where the four K_IJ blocks from Test 1
+would enter, which makes Tests 1 and 3 the same programme rather than two.
+
+#### Test 4 — asymmetric (8,6,6,6) clustering: ALREADY REFUTED, three ways
+
+Tested in the thirteenth pass and refuted on arithmetic: 8+6+6+6 = **26**, so it
+partitions 26 while the Golay code lives on 24; the 8 is **not an octad**, being
+built from 6 Golay coordinates plus 2 breathing coordinates that are by
+construction outside the 24; and **no** weighting gives δ_T = 0.75 (size → 0.250,
+1/size → 0.333, size^(7/3) → 0.489, log → 0.138).
+
+It is now refuted a fourth way: b₃ = 24 is unreachable, so there are no 24 cycles
+to partition. Stays FALSIFIED.
+
+#### Terminology
+
+The reading-level toggle ships as **Layperson / Full**. Of the suggested
+alternatives, *Conceptual* is the best-argued — it signals the physics stays
+rigorous while index notation is translated — but "Layperson" was the author's
+own term and is unambiguous to a non-specialist, which is the audience the toggle
+exists for. Recorded as a deliberate choice rather than an oversight.
