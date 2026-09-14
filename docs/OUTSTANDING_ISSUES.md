@@ -4985,3 +4985,97 @@ was nothing to find at that level; the same session's Künneth computation
 produced a unique, falsifiable (b₂, b₃) because it counted objects instead of
 matching values. The difference between those two outcomes is the A4 bar,
 operating as intended.
+
+---
+
+## 2026-09-15 (nineteenth pass) — SETTLED: b_3 ≡ 7 (mod 12), so b_3 = 24 is unreachable
+
+### The retraction led somewhere better than the claim
+
+The (15, 24) verdict was withdrawn when the stabiliser census showed the A₁
+model applied outside its domain. Following that to its cause produced a clean
+answer with **no assumption left over** — the opposite of what a retraction
+usually yields.
+
+**The classification.** Transverse groups, by how many of σ's 4 moved
+coordinates each element flips:
+
+    order 2   flips (4,)                    43,664 components
+    order 4   flips (2,2,4)                  4,688 components
+    order 8   flips (2,2,2,2,2,2,4)             16 components
+
+Pair the transverse R⁴ into C². Flipping **all 4** acts as −1 ∈ SU(2): that is
+A₁, hyperkähler, resolved by Eguchi–Hanson. Flipping exactly **2** is either not
+complex-linear, or complex-linear with **det = −1** — outside SU(2) either way,
+so no complex orbifold and no hyperkähler ALE resolution. Joyce uses C²/±1
+precisely because that is the case that works.
+
+**So admissibility was incomplete.** Pairwise-disjointness is necessary but not
+sufficient; every component must also be A₁:
+
+    pairwise-disjoint only      446,964 assignments
+    plus every component A₁     411,488 assignments
+
+and the surviving profiles collapse to **(n_T3, n_reflected) ∈ {(0,0), (4,0),
+(8,0), (12,0)}**.
+
+**Every reflected family vanishes — because the reflected ones WERE the non-A₁
+ones.** That removes the ε-dichotomy assumption entirely: with no reflected
+families there is no resolution choice left to assume. The table reduces to its
+one unambiguous entry, plain T³ → (1, 3), and
+
+| n_T3 | b₂ | b₃ |
+|---|---|---|
+| 0 | 0 | 7 |
+| 4 | 4 | 19 |
+| 8 | 8 | 31 |
+| 12 | 12 | **43** |
+
+    b_3 = 7 + 3·n_T3,  n_T3 ∈ {0,4,8,12}  ⇒  b_3 ≡ 7 (mod 12)
+
+**24 ≡ 0 (mod 12), so b₃ = 24 is UNREACHABLE.** (4,24) and (7,24) fall with it:
+b₂ = 4 forces b₃ = 19, and b₂ = 7 is unattainable since family counts are
+multiples of 4.
+
+### Calibration, unprompted — the A6 gate discharged by computation
+
+**(12, 43) is in the reachable set, and 43 is the b₃ of Joyce's canonical
+T⁷/(Z/2)³ example.** The machinery reproduced a published value it was never
+given. That is the calibration gate satisfied by derivation rather than by
+transcribing a table — and it is why the Joyce ch. 12 citation is no longer the
+blocker it was two passes ago.
+
+And the family counts are **multiples of 4 capped at 12** — the 4 faces of an
+involution, and 4 × 3 = 12 faces × blocks. The same structure the arc/flag work
+derived independently, arriving here from a completely different direction.
+
+### What this closes, and what it costs
+
+b₃ = 24 was already an INPUT (2026-09-14 ruling). This removes its **last
+possible geometric home among the declared options**: `fano_tcs` places it far
+below its exhibited 71–155 range, and Joyce (Z/2)³ now cannot produce it at all.
+
+So one of these must give:
+
+1. **The seed is not 24.** The nearest reachable value is b₃ = 43 at b₂ = 12 —
+   also the canonical Joyce example. Then w₀ = −(b₃−1)/b₃ moves from −0.9583 to
+   −0.9767, a ~0.9σ shift against the registry's DESI anchor: real but not
+   decisive. What IS decisive is **n_gen = b₃/8**: 43/8 is not an integer, and a
+   generation count is a number of things. That is the substance of the ruling.
+2. **The manifold is neither declared construction.** Then a third construction
+   must be named and its Betti range exhibited, and both existing fork branches
+   are wrong.
+
+**Scope, stated not overclaimed.** This refutes b₃ = 24 for Joyce's construction
+with hyperkähler ALE resolutions. A different resolution of the non-A₁ components
+is not excluded — but it is not Joyce's, carries no G₂ metric guarantee, and
+would have to be exhibited rather than assumed.
+
+### Method note
+
+Three passes ago this question needed a library book. It is now settled by
+computation, and the route was: mechanism-first (Eguchi–Hanson + Künneth), then
+a wrong answer, then following the author's lop-sidedness observation to the
+flaw, then the flaw's cause turning out to be a missing admissibility condition
+that closes the question outright. Every step that mattered came from asking
+what the objects *are*, not what the numbers *match*.
