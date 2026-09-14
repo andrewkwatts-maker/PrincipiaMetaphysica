@@ -4748,3 +4748,99 @@ cannot be tested at all).
    is a policy call.
 3. `particle.b3` / `cosmology.b3` still ship `DERIVED` while the seed is
    `INPUT` — carried forward from the seventeenth pass, unchanged.
+
+### ADDENDUM — the neutrino mass sum is published three ways, all DERIVED
+
+Looking for remaining hard-coded choices to port to switches (the pass's Task B),
+the search for `calibrated` / `we use` / `chosen` turned up something better than
+a fork. **The framework publishes four values for Σm_ν**, three of them `DERIVED`:
+
+| row | value (eV) | status | source |
+|---|---|---|---|
+| `neutrino.mass_sum` | 0.101214 | FITTED | `neutrino_mixing_v17_2` |
+| `neutrino.sum_masses` | 0.101975 | DERIVED | `matter_sector_complete_v19` |
+| `particle.sigma_m_base_eV` | 0.060517 | DERIVED | `neutrino_sector` v26.0 |
+| `particle.sigma_m_refined_eV` | 0.042517 | DERIVED | `neutrino_sector` v26.0 |
+
+A spread of **2.4×** between derived statements of one physical quantity. No
+measurement is involved in noticing this: it is the theory disagreeing with
+itself, which is exactly what `switch_search`'s CONTRADICTION category is for,
+and it is now check number five there.
+
+**The stated explanation does not hold.** `neutrino_sector`'s module docstring
+says:
+
+> NOTE: companion module (neutrino_mixing.py) publishes a different Σm_ν
+> under the opposite mass ordering — the two scenarios are alternatives,
+> not simultaneous predictions.
+
+`neutrino_mixing` is **not** under the opposite ordering. It predicts INVERTED
+(`neutrino.ordering = INVERTED`, PREDICTED, from that module), and
+`neutrino-mass-hierarchy-v19` states INVERTED as the framework's ordering. So the
+ordering is not what separates 0.102 from 0.043, and the note explains a
+discrepancy on grounds that are not the case.
+
+What *is* the case, from the formula register: `neutrino-sum-prediction-v18`
+computes "Sum of neutrino masses **in normal hierarchy** … sum ~ 0.06 eV", and
+0.0605 is what `neutrino_sector` registers as `sigma_m_base_eV` while its own
+docstring says it computes the *inverted* sum. **A normal-hierarchy number is
+being carried under an inverted-hierarchy label, inside a framework that
+predicts inverted.** That is the most likely root, and it is stated here as the
+lead to check, not as a finding — resolving it is a physics ruling and belongs
+to the author.
+
+`neutrino.mass_sum` is deliberately EXCLUDED from the check: it is FITTED, and a
+fit disagreeing with a derivation is not the theory contradicting itself.
+`base` and `refined` are both included on purpose — the module presents refined
+as superseding base, yet registers both as DERIVED, so the register carries two
+live derived answers rather than one.
+
+### A standing defect must not flatten the sweep
+
+Adding that check exposed a design flaw in the search. The Σm_ν contradiction is
+**fork-independent** — no setting of any switch touches it — so it failed in all
+16 rows and made every combination inconsistent, erasing the switch-dependent
+structure the sweep exists to expose. One standing defect would have silenced
+the whole instrument.
+
+`search()` now partitions the checks by whether their outcome VARIES across the
+combinations searched:
+
+    problems no combination fixes ..... arithma_track_agrees (environment),
+                                        neutrino_mass_sum_is_stated_once (real)
+    problems the switches control ..... phi_is_a_g2_form,
+                                        re_t_is_the_solved_vacuum,
+                                        joyce_branch_is_decidable
+    clean on every switch-controlled check ................ 3 of 16
+
+Separated, **not excused**: `internally_consistent` is unchanged and those rows
+remain inconsistent. A test requires the two sets to be disjoint, requires the
+standing set to genuinely fail in every row, and requires at least one check to
+vary — because a sweep in which nothing varies discriminates nothing and the
+search would have no content.
+
+The three rows clean on every switch-controlled check are unchanged from the
+previous pass, and the structure is the result:
+
+| fork | value in all three |
+|---|---|
+| `g2_form_convention` | `octonion_derived` |
+| `re_t_adoption` | `computed_vacuum` |
+| `b3_origin` | **free** — `input_24`, `arc_flag_stabiliser`, `d4_root_shell` |
+
+That is a set named in digest order, with no row placed ahead of another and no
+residual against any measurement anywhere in the path — a test asserts the
+ordering and a source scan rejects any mention of DESI / NuFIT / Planck / PDG /
+CODATA / SH0ES / KiDS / sigma / chi2 / residual inside `consistency_checks`.
+That scan fired on this pass's own first draft, which named the check
+`sigma_m_nu_is_stated_once`: the Σ of a sum tripped a guard looking for
+standard deviations. **The name was changed; the guard was not weakened.**
+
+### Open ruling added
+
+4. **Σm_ν is stated three ways, all DERIVED, spread 2.4×.** The recorded
+   explanation (opposite mass ordering) is not the case — both named modules are
+   INVERTED. The lead worth checking first is that
+   `neutrino-sum-prediction-v18`'s **normal-hierarchy** ~0.06 eV is what
+   `neutrino_sector` carries as its inverted base. Which value the framework
+   publishes, and what happens to the other two, is a physics ruling.
