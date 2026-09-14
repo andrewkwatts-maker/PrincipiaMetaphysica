@@ -5079,3 +5079,64 @@ a wrong answer, then following the author's lop-sidedness observation to the
 flaw, then the flaw's cause turning out to be a missing admissibility condition
 that closes the question outright. Every step that mattered came from asking
 what the objects *are*, not what the numbers *match*.
+
+### The 43 path is open as a switch, and the generations relocate rather than break
+
+Following the settled result, both live paths now run. Two new OPEN forks, with
+adopted options unchanged so no published number moves:
+
+| fork | adopted | alternative |
+|---|---|---|
+| `b3_seed` | `seed_24` | `seed_43_joyce` |
+| `n_gen_source` | `b3_over_dim_O` | `b2_over_faces` |
+
+| | seed_24 | seed_43_joyce |
+|---|---|---|
+| b₃ | 24, **INPUT**, origin open | 43, **DERIVED** = 7 flat + 3×12 families |
+| b₂ | 4, from a previously FITTED h^{1,1} | 12, **DERIVED**, one 2-class per family |
+| Joyce-reachable | **no** | **yes**, and it is the canonical published pair |
+| w₀ | −23/24, **0.017σ** | −42/43, **0.94σ** |
+| n_gen | b₃/8 = 3 | **b₂/4 = 3** |
+| D_bulk − b₃ = 2 | holds | **BROKEN**, gives −17 |
+
+#### The crux was the generation count, and the 43 path answers it
+
+At b₃ = 43 the existing derivation fails: 43/8 = 5.375, and a generation count
+is a number of things. That looked fatal. But b₂ = 12 arrives **derived from the
+same A1 family count**, and
+
+    n_gen = b₂ / n_faces = 12 / 4 = 3
+
+with n_faces = 4 derived as the moved coordinates of an involution (R2). So the
+three generations are not lost — they **relocate**, from b₃ and dim 𝕆 to b₂ and
+the faces, with both sides derived. The register notes from earlier passes that
+an `n_gen = 12/4` derivation existed and that b₂ = 7 would have cost it; at
+b₂ = 12 it is exactly right.
+
+The two forks are therefore **coupled**, and the notes say so rather than
+implying independence: b₃/8 fails at 43, and b₂/4 gives 1 at the current b₂ = 4.
+Exactly one generation source works per seed.
+
+#### What the 43 path costs, recorded and tested
+
+- **w₀ worsens** from 0.017σ to 0.94σ. A test asserts the 43 path is reported as
+  the worse fit — concealing that would be the anchor-shopping this project
+  already retired once. It is the same trade the `dark_energy_betti` ruling took
+  deliberately, in favour of derivedness over agreement.
+- **The '+2' identity breaks**: D_bulk − b₃ = 26 − 43 = −17. Either D_bulk is not
+  26 on this path, or the identity was never structural. A test asserts the break
+  and that the note reads "not dropped".
+- **Every b₃ consumer shifts** — racetrack exponent 2π/43, k_bary = 29, χ/b₃,
+  wa_thawing — and a test fails if any of them does not respond to the seed.
+
+#### What the author is ruling on
+
+`seed_24` keeps the better w₀ and an **input** b₃ that now has **no geometric
+home** among the declared constructions. `seed_43_joyce` derives both Betti
+numbers from the resolution count, reproduces Joyce's canonical published pair,
+keeps exactly three generations, and pays with w₀ at ~0.94σ and a broken
+identity.
+
+`compare_paths()` reports both and selects neither. A test asserts **both pass
+the structural discriminator**, so integrality does not force the answer — the
+ruling is genuinely the author's.
