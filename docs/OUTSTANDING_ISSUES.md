@@ -4844,3 +4844,68 @@ standard deviations. **The name was changed; the guard was not weakened.**
    `neutrino-sum-prediction-v18`'s **normal-hierarchy** ~0.06 eV is what
    `neutrino_sector` carries as its inverted base. Which value the framework
    publishes, and what happens to the other two, is a physics ruling.
+### Exactly one internally consistent combination, and consistency is not closure
+
+Adding the **A4 bar as a sixth consistency check** collapsed the consistent set
+from three combinations to **one**. The first search had found three, all
+sharing `octonion_derived` + `computed_vacuum` and differing only in
+`b3_origin` — which exposed a flaw in the checks rather than a freedom in the
+theory: the other five checks were **blind to b3_origin**, treating `input_24`,
+`arc_flag_stabiliser` and `d4_root_shell` as equivalent. They are not. Two of
+them ASSERT a geometric origin for b_3 while being recorded NUMERICAL, and
+claiming an origin that does not exhibit 24 three-cycles is an internal
+contradiction that references no measurement.
+
+With the bar applied, of 16 combinations exactly one survives:
+
+    g2_form_convention = octonion_derived
+    re_t_adoption      = computed_vacuum
+    b3_origin          = input_24
+
+Every alternative fails for a named reason: `d4_root_shell` and
+`arc_flag_stabiliser` fail the A4 bar, `joyce_twisted_sector` fails as
+undecidable, and every `all_plus_one` or `calibrated` branch carries a
+contradiction.
+
+**And the finding that matters most: the free set is 37 in the surviving
+combination, exactly as in the failing ones.** The two open rulings buy internal
+coherence and **zero** parameter reduction. Consistency and closure are
+different axes, now measured rather than assumed, and a test pins it so the day
+a switch does move the count is visible.
+
+### Shape search over the 37: nothing found, and the negative result is the point
+
+A search for geometric formulas linking the free parameters carries an obvious
+hazard, so `shape_search` reports the **trials factor** with every result.
+Testing N expressions at relative tolerance p yields ~N·2p matches by chance;
+a match is informative only when that number is far below 1.
+
+Deliberately small grammar — 13 primitives, **1213 expressions**, giving
+E[false] = 0.243 per target at tol = 1e-4. The primitives are DERIVED or
+structural quantities only (b_3, D_bulk, chi, pi, the 7/4/3 Fano counts, dim O,
+dim g2, dim J3(O), |Aut(Fano)|, |S_4|, the golden ratio); feeding fitted values
+in would let the search rediscover them and call it a derivation.
+
+**Result across 32 numeric targets: ZERO significant matches.** The two WEAK
+hits are both explicable rather than promising:
+
+| target | "match" | what it actually is |
+|---|---|---|
+| `ckm.delta_cp` | `24·pi/144 = pi/6` | the code ALREADY declares this as the G2 triality CP phase — a rediscovery, i.e. a consistency check passing |
+| `geometry.theta_23` | `168·7/24 = 49` | θ₂₃ = 49 is a NuFIT value **in degrees**; degrees are a human convention, and in radians (0.855) the match evaporates. A pure unit artefact |
+
+That second one is the cleanest demonstration yet of why the trials factor is
+mandatory: a search over geometric integers "predicted" an experimental anchor,
+and the prediction was an accident of unit choice.
+
+**What the negative result teaches.** The free parameters are **not** simple
+ratios of this framework's geometric primitives. Whatever closes them is a
+different shape, and expression-matching will not find it — which is the A4 bar
+restated at the level of method: a derivation exhibits a mechanism, and an
+expression that lands on a number exhibits nothing.
+
+The productive direction is therefore mechanism-first, not formula-first. The
+two places where a mechanism is already half-built are the ones to push: the
+half-shift enumeration (which produces actual 3-cycles and needs only the cited
+contribution table) and the racetrack potential (which already produces Re(T) as
+an output rather than a fit).
