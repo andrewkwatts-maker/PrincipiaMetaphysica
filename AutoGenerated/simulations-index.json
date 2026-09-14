@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-08T20:46:13.032782Z",
+  "generated_at": "2026-09-13T20:03:31.453821Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 276,
+  "total_scripts": 285,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -250,7 +250,7 @@
     },
     "PM/cosmology": {
       "title": "PM/cosmology",
-      "count": 23,
+      "count": 24,
       "scripts": [
         {
           "file": "attractor_potential.py",
@@ -563,6 +563,16 @@
             "cosmology.sm_weight",
             "cosmology.w_eff"
           ]
+        },
+        {
+          "file": "racetrack_vacuum.py",
+          "path": "simulations/PM/cosmology/racetrack_vacuum.py",
+          "category": "PM/cosmology",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "ricci_flow_h0.py",
@@ -954,7 +964,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 14,
+      "count": 19,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -970,11 +980,41 @@
           ]
         },
         {
+          "file": "arc_flag_structure.py",
+          "path": "simulations/PM/geometry/arc_flag_structure.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "b3_candidate_sweep.py",
+          "path": "simulations/PM/geometry/b3_candidate_sweep.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Push candidate b_3 values through the downstream chain and show the path.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "bridge_geometry.py",
           "path": "simulations/PM/geometry/bridge_geometry.py",
           "category": "PM/geometry",
           "title": null,
           "description": "Bridge Geometry and (2,0) Field Sampling",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "d4_root_shell.py",
+          "path": "simulations/PM/geometry/d4_root_shell.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The 24 roots of D4 as a candidate origin for the number 24 -- and its gap.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1163,6 +1203,26 @@
           "parameters_contributed": []
         },
         {
+          "file": "half_shift_enumeration.py",
+          "path": "simulations/PM/geometry/half_shift_enumeration.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "joyce_contributions.py",
+          "path": "simulations/PM/geometry/joyce_contributions.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "joyce_orbifold.py",
           "path": "simulations/PM/geometry/joyce_orbifold.py",
           "category": "PM/geometry",
@@ -1295,6 +1355,7 @@
             "validation.calibrated_count",
             "validation.constraints_count",
             "validation.exact_matches",
+            "validation.free_variable_count",
             "validation.predictions_within_1sigma"
           ]
         },
@@ -2813,7 +2874,7 @@
     },
     "core": {
       "title": "core",
-      "count": 17,
+      "count": 20,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2900,6 +2961,26 @@
           "parameters_contributed": []
         },
         {
+          "file": "free_set.py",
+          "path": "simulations/core/free_set.py",
+          "category": "core",
+          "title": null,
+          "description": "The FREE SET: how many independent knobs, not how many registration sites.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "free_variable_ledger.py",
+          "path": "simulations/core/free_variable_ledger.py",
+          "category": "core",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "identify_ghost_literals.py",
           "path": "simulations/core/identify_ghost_literals.py",
           "category": "core",
@@ -2925,6 +3006,16 @@
           "category": "core",
           "title": null,
           "description": "Typed, immutable view of the framework's dimensional structure.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "preferred_path.py",
+          "path": "simulations/core/preferred_path.py",
+          "category": "core",
+          "title": null,
+          "description": "The preferred path: one declared switch state, all others kept runnable.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

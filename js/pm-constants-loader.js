@@ -104,6 +104,7 @@
 
             // Validation aliases (loaded from validation section)
             'validation.calibrated_count': '_dynamic.calibrated_count',
+            'validation.free_variable_count': '_dynamic.free_variable_count',
             'validation.constraints_count': '_dynamic.constraints_count',
             'validation.predictions_within_1sigma': '_dynamic.within_1sigma',
             'validation.predictions_within_2sigma': '_dynamic.within_2sigma',
@@ -726,12 +727,17 @@
          */
         get validation() {
             // Return validation object with both camelCase and snake_case accessors
+            // calibrated_count and free_variable_count are deliberately
+            // absent from this fallback. They are answers to "how many free
+            // variables does this theory have?", and a stale literal here
+            // would publish that answer on a page whose data failed to
+            // load. With the keys missing the span keeps its inline text,
+            // which the build writes from the free-variable ledger.
             const v = this._data?.validation ?? {
                 within_1sigma: 30,
                 within_2sigma: 32,
                 total_predictions: 48,
                 total_parameters: 58,
-                calibrated_count: 0,
                 constraints_count: 1
             };
             // Add alias for predictions_within_1sigma -> within_1sigma
