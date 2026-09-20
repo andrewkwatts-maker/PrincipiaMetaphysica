@@ -1,9 +1,9 @@
 {
   "_schema": 1,
   "_note": "Derived from docs/OUTSTANDING_ISSUES.md. The pass log is the later authority; where a numbered entry disagrees with a pass that cites it, the disagreement is recorded in `contradiction`, never resolved here. Every status word is one the register itself uses.",
-  "_the_structural_finding": "The register's two halves are joined by nothing a machine can check. Across 26 passes there are only 7 id-citations of numbered entries, so 23 of 29 entries are never cited by number at all. Amendment happens by topic, in prose. That is exactly how a numbered entry goes stale while a later pass has already moved it. A keyword-overlap heuristic was tried as a substitute link and removed: it matched 6-9 of the 25 passes for EVERY entry, so it carried no information. Restoring the link means citing entry ids in the passes, not guessing.",
+  "_the_structural_finding": "The register's two halves are joined by nothing a machine can check. Across 27 passes there are only 7 id-citations of numbered entries, so 23 of 29 entries are never cited by number at all. Amendment happens by topic, in prose. That is exactly how a numbered entry goes stale while a later pass has already moved it. A keyword-overlap heuristic was tried as a substitute link and removed: it matched 6-9 of the 25 passes for EVERY entry, so it carried no information. Restoring the link means citing entry ids in the passes, not guessing.",
   "n_entries": 29,
-  "n_passes": 26,
+  "n_passes": 27,
   "n_id_citations": 7,
   "n_entries_never_cited_by_id": 23,
   "entries_never_cited_by_id": [
@@ -173,6 +173,11 @@
       "date": "2026-09-20",
       "title": "(twentieth pass) — reconciling a second workstream, and the register's two halves are not joined",
       "line": 5307
+    },
+    {
+      "date": "2026-09-21",
+      "title": "(twenty-first pass) — the real form is SPLIT, and the metric-free cubic exists",
+      "line": 5477
     }
   ],
   "entries": [

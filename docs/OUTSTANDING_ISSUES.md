@@ -5471,3 +5471,220 @@ monkeypatch restores is a half-initialised module, so `available()` and
 2018 passed, 393 skipped, 1 failed before the fix; the one failure was the
 order-dependent test above. Variants drift clean at 14 forks. The working tree
 is clean after a no-op rebuild for the first time.
+
+---
+
+## 2026-09-21 (twenty-first pass) — the real form is SPLIT, and the metric-free cubic exists
+
+M1 and M2 of the closure programme. The question was which geometric mechanisms
+are physically correct; two are now settled, one by construction and one by
+refutation.
+
+### THE HEADLINE: phi is not "not a G₂ form" — it is the SPLIT real form
+
+§1 of the fourteenth pass recorded that the framework's phi lies outside the G₂
+orbit, measured by a 6-dimensional annihilator in so(7) where g₂ needs 14. That
+is true and it understates the situation. Implementing Hitchin's construction
+properly gives the precise statement.
+
+**The old metric could not have seen this.** `compute_metric()` is the QUADRATIC
+contraction phi_iab phi_jab / 6. Measured, it returns exactly **1.0 · I₇ for
+both** the all-(+1) phi and the octonion-derived one. Every claim of "the unique
+compatible Riemannian metric" made through it was unfalsifiable. Two docstrings
+— in `g2_differential.compute_metric` and `octonions.g2_structure_as_3form` —
+called it "Hitchin's formula". It is not: Hitchin's construction is **cubic**,
+
+    B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7},  g = B/|det B|^{1/9}
+
+and cubic is the lowest degree that sees the difference. Both docstrings are
+corrected.
+
+**What it measures.** Λ³(R⁷) has exactly **two** open GL(7,ℝ) orbits, and **both
+have 14-dimensional stabilisers** — so "dim 14" discriminates nothing. The
+invariant that does is the unordered signature of B:
+
+| phi | GL(7) stab | signature | real form | Riemannian? |
+|---|---|---|---|---|
+| `octonion_derived` | 14 | **(7,0)** | compact G₂ | yes |
+| `all_plus_one` (adopted) | 14 | **(4,3)** | **split G₂\*** | **no** |
+
+So the framework's phi **is** a G₂-structure, with a genuine 14-dimensional
+symmetry algebra — it is g₂\*, the split real form, whose maximal compact is
+SU(2)×SU(2) of dimension **6**. That is where the register's 6 came from. What
+phi is not is **Riemannian**: its induced metric has signature (4,3), so no
+Riemannian G₂-holonomy manifold sits behind it, and Joyce's construction needs
+the compact form.
+
+Classification is by signature **up to overall sign**, verified stable under
+rotation, general GL(7) and reflection — a reflection sends (7,0) to (0,7),
+which is the same real form.
+
+### AND THE CLOSURE DOES NOT DEPEND ON IT — proven, because it is load-bearing
+
+The diagonal (Z/2)³ stabiliser depends only on phi's **support** — which triples
+are non-zero — because the sign-flip action multiplies each triple's coefficient
+by ε_iε_jε_k and invariance only constrains which triples are present. Both
+branches have identical support, hence **identical stabilisers** (same 8
+elements, verified).
+
+So R1–R4, the half-shift enumeration, the A₁ census and **b₃ = 7 + 3·n_T3 are
+fork-independent**. The geometric closure rides on Fano incidence, not on the
+real form. A test asserts it, because if it ever stopped being true the b₃ result
+would silently acquire a second axis.
+
+### Two corrections to the register's own blast-radius listing
+
+The fourteenth pass listed as **BROKEN**: "Λ² = 7 + 14 with the 14 identified as
+g₂", "Λ³ = 1 + 7 + 27 as G₂ irreps", and the torsion projections. Measured:
+
+- **The dimensions are identical on both real forms** — Λ³ = 1+7+27 = 35 and
+  Λ² = 7+14 = 21, on the compact phi and the split one alike. They must be: the
+  split and compact forms share a complexification, hence share irrep
+  dimensions. So nothing needs recomputing. What the split branch breaks is the
+  **identification** of the 14 with *compact* g₂ — a naming error, not a
+  dimension error. Every sentence calling the 14 "g₂" is wrong on that branch;
+  every dimension is right.
+- **The un-antisymmetrised V7 wedge in `_lambda3_subspaces` is not a bug.** It
+  writes one ordered tuple instead of all 24 permutations, but the ε contraction
+  antisymmetrises anyway, so it spans the **identical** 7-dimensional subspace
+  and differs by exactly a factor of 24 — on rows used only as a span for a
+  least-squares projection, where scale is irrelevant. Pinned by a test so it is
+  not "fixed" into a regression.
+
+### b₂ flat = 0 had a false citation, and deriving it settled every degree
+
+`derived_contribution_table` carried `FLAT_B2 = 0` commented **"DERIVED in
+joyce_orbifold"**. joyce_orbifold had no Λ² computation at all. The value was
+right and its provenance was false — the worse of the two failures, because a
+wrong number gets caught and a wrong citation gets trusted.
+
+Deriving it (R5) produced more than the one number. Measured: the **7
+coordinates of T⁷ realise the 7 NON-TRIVIAL characters of (Z/2)³ bijectively**.
+(Z/2)³ has 8 characters; the trivial one is not among the coordinates. Then:
+
+- **b₁ flat = 0** — no coordinate carries the trivial character.
+- **b₂ flat = 0** — χ_iχ_j is trivial iff χ_i = χ_j iff i = j, and a 2-form needs
+  i ≠ j. So no invariant 2-form **can** exist. Stronger than none being found.
+- **b₃ flat = 7** — zero-sum character triples are exactly the **7 lines of
+  PG(2,2)**. Hence the invariant 3-forms *are* the Fano lines, which is why they
+  coincide with phi's own support, and why **R3 and R4 were always one fact seen
+  twice**.
+
+The coordinate index set is itself a Fano plane, and that single fact — not phi,
+not the real form — fixes the whole flat sector. Flat Betti:
+**{1, 0, 0, 7, 7, 0, 0, 1}**, with Poincaré duality exact and χ = 0 as any odd
+dimension requires; both are self-checks that can fail. A falsifiability test
+drops to a proper subgroup of order 4 and confirms invariant 2-forms then **do**
+appear, so the derivation depends on Γ rather than being vacuous.
+
+### d_ijk is not blocked — it does not exist
+
+The register carries triple intersection numbers as BLOCKED, "needs a harmonic
+basis on an actual Y₇". That is the wrong diagnosis. The proposed object
+
+    N_IJK = ∫_M ω_I ∧ ω_J ∧ ω_K,   ω ∈ H³
+
+has total degree **3 + 3 + 3 = 9** on a 7-manifold, so it is identically zero for
+every input. No metric, no harmonic representative and no resolution changes
+that. **The item closes by refutation**, and that is a closure.
+
+A second refutation follows and is the uncomfortable one: **3 + 3 = 6 ≠ 7**, so
+there is no topological bilinear on H³ alone either. The only bilinear is the
+Hodge pairing ∫ω_I ∧ \*ω_J, which is **metric-dependent**. So the intrinsic
+H₃(M,ℤ) route does **not** escape the metric. Dropping the external lattice
+really does cost a metric-free Gram matrix, and that cost is real rather than
+presentational.
+
+### What does exist: exactly three pairings, and one of them is new
+
+The same degree arithmetic answers the positive question completely. For the 43
+path (b₂ = 12, b₃ = 43) the admissible multilinear invariants are exactly:
+
+| pairing | degrees | shape | |
+|---|---|---|---|
+| H² × H⁵ → ℤ | 2+5 | 12 × 12 | Poincaré |
+| H³ × H⁴ → ℤ | 3+4 | 43 × 43 | Poincaré |
+| **H² × H² × H³ → ℤ** | 2+2+3 | **12 × 12 × 43** | the only non-Poincaré one |
+
+So the 12×12×43 **integer** tensor is uniquely the available metric-free cubic
+invariant — the honest replacement for the retired lattice Gram matrix. Unlike a
+lattice shell it carries no large symmetry group, so **Schur's lemma cannot force
+it proportional to the identity**, which was the actual mechanism behind the
+Leech and E8³ null results. The enumeration is recounted by brute force in the
+tests and verified to respond to its Betti input.
+
+### The tensor, computed, and it is decisively non-isotropic
+
+Every entry is forced by facts already on the books; none is fitted:
+
+- **Diagonal in H²** — Joyce admissibility makes the singular sets pairwise
+  disjoint, so α_f ∧ α_g = 0 for f ≠ g. Not an approximation; it *is* the
+  admissibility condition.
+- **Value −2** — the intersection form on an A_n resolution is minus the A_n
+  Cartan matrix; A₁ gives −(2). A₁ is exactly what `transverse_group_census`
+  established, so the −2 is read off the derived singularity type.
+- **Which ω_K** — R2: each involution's fixed set is a Fano line, so precisely
+  one flat 3-form restricts to that family's T³ volume; the 36 twisted forms each
+  carry a leg in an exceptional direction and restrict to zero.
+
+Computed at the canonical point: **12 non-zero entries out of 6192**, all −2, all
+on the H² diagonal, landing in only **3 of the 43** H³ slots. `is_isotropic` is
+False, and the rule is a named predicate exercised on both sides.
+
+**What was not put in and came out anyway:** the 3 singular involutions fix three
+**distinct** Fano lines, so 3 flat 3-forms are paired and **4 are never paired at
+all** — and 4 is exactly the number of **free** involutions. The 3 + 4 split of
+the seven flat 3-forms mirrors the 3 singular + 4 free split of Γ's seven
+involutions.
+
+### The fork cost, re-measured at observable level
+
+`compare_states` over the two `g2_form_convention` branches, with the
+environment override applied per evaluation:
+
+| observable | all_plus_one | octonion_derived | delta |
+|---|---|---|---|
+| `phi_annihilator_dim` | 6 | **14** | 8 |
+| `free_set_size` | 37 | 37 | 0 |
+| `lattice_kissing_number` | 196560 | 196560 | 0 |
+| `racetrack_Re_T` | 7.086 | 7.086 | 0 |
+
+Only the annihilator dimension moves. The zero-cost finding of the fourteenth
+pass stands, now at observable level as well as at parameter level, and the
+verdict remains `NO_SELECTION_MADE`.
+
+### Three of my own errors, recorded
+
+1. **A stabiliser-inside-so(g_phi) diagnostic was built and REMOVED, not
+   shipped.** It read 0 where the truth is 14 for a non-orthogonally-moved
+   compact form. Two causes, both measured: the stabiliser conjugates as
+   h A h⁻¹ not h⁻¹ A h, and g_phi is **not covariant** under the obvious
+   pushforward because B contracts with ε, which is a density rather than a fixed
+   array — g(h\*phi) is not proportional to hᵀ g(phi) h, one ratio eigenvalue
+   even coming out negative. Signature settles the real form without it, so a
+   number that cannot be computed correctly was dropped rather than published.
+2. **A claimed landmine did not exist.** The capability audit reported that
+   `from_e8()`'s assert "fires when the fork flips to octonion_derived", and I
+   carried that into the plan without checking. It does not:
+   `g2_structure_as_3form` goes through the shared fork-aware `_phi_tensor()`
+   accessor, so the assert agrees on both branches. Converting it to a reported
+   diagnostic is still better than a crash, but no landmine was defused. The
+   plan is corrected.
+3. **A tautological test, in the file about eliminating them.** The non-isotropy
+   test originally asserted `(1 <= 1) is True`. Replaced by a named predicate
+   exercised at 0, 1, 3 and 43.
+
+### Still open, unchanged by this pass
+
+`g2_form_convention` remains **OPEN**, and adoption is the author's. What has
+changed is what the ruling is about: it is no longer "is phi a G₂ form" but
+"which real form does the framework intend". The compact branch buys a Riemannian
+metric and G₂ holonomy; the adopted split branch buys signature (4,3) and keeps
+every published number, since the cost was measured at zero and b₃ is
+fork-independent either way. Note the thematic pull toward a (4,3) internal
+signature given the framework's two-time preoccupation — but provenance is not
+an argument, and nothing here derives one from the other.
+
+Not addressed: the Eguchi–Hanson metric, the glued G₂ metric, and K_IJ block
+**values** all remain to be built (M3), and the audit confirms none of that
+machinery exists yet. The multi-sector SUGRA vacuum (M4) is untouched.
