@@ -2,14 +2,14 @@
   "proof_id": "G12_electroweak_alignment",
   "gate_id": 12,
   "gate_name": "Electroweak Alignment",
-  "label": "\u03b8w locked to Shadow-A/B tilt",
+  "label": "θw locked to Shadow-A/B tilt",
   "category": "Electroweak",
   "phase": 2,
   "block": "B",
   "version": "24.2",
   "wl_code": "sin2_theta_W_geometric = 0.23190; pdg = 0.23122 (MS-bar, Z-pole)",
   "result": "0.23190 vs 0.23122 (0.68 sigma with 0.001 theory uncertainty)",
-  "formula": "sin\u00b2\u03b8_W from 12/24 shadow",
+  "formula": "sin²θ_W from 12/24 shadow",
   "verification_status": "VERIFIED",
   "evaluation_status": "COMPUTED_FAIL",
   "evaluation": {
@@ -27,7 +27,7 @@
     "status": "COMPUTED_FAIL"
   },
   "derivation_status": "DERIVED",
-  "note": "Gate 12: Geometric sin\u00b2\u03b8_W = 0.23190 vs PDG 2024 0.23122\u00b10.00003 \u2014 0.68\u03c3 using the module's 0.001 theory uncertainty. (Previous cert showed Sin[ArcTan[12/24]]\u00b2=0.20 labelled 0.2312 \u2014 removed as arithmetically false.). \u03b8w locked to Shadow-A/B tilt",
-  "timestamp": "2026-09-08T20:45:26.956442Z",
+  "note": "Gate 12: Geometric sin²θ_W = 0.23190 vs PDG 2024 0.23122±0.00003 — 0.68σ using the module's 0.001 theory uncertainty. (Previous cert showed Sin[ArcTan[12/24]]²=0.20 labelled 0.2312 — removed as arithmetically false.). θw locked to Shadow-A/B tilt",
+  "timestamp": "2026-09-20T21:48:55.832529Z",
   "hash": "4af56fe6ffcb0ad7"
 }

@@ -2,11 +2,11 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 197,
+    "files_scanned": 207,
     "dataset_values": 339,
     "exact_dup": 386,
-    "stale_dup": 337,
-    "files_with_findings": 87
+    "stale_dup": 338,
+    "files_with_findings": 88
   },
   "worst_files": [
     [
@@ -209,7 +209,7 @@
     },
     {
       "file": "simulations/PM/cosmology/baryon_asymmetry.py",
-      "line": 188,
+      "line": 226,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -217,7 +217,7 @@
     },
     {
       "file": "simulations/PM/cosmology/baryon_asymmetry.py",
-      "line": 206,
+      "line": 244,
       "literal": 6.12e-10,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
       "dataset_value": 6.12e-10,
@@ -225,7 +225,7 @@
     },
     {
       "file": "simulations/PM/cosmology/baryon_asymmetry.py",
-      "line": 606,
+      "line": 648,
       "literal": 6.12e-10,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
       "dataset_value": 6.12e-10,
@@ -233,7 +233,7 @@
     },
     {
       "file": "simulations/PM/cosmology/baryon_asymmetry.py",
-      "line": 984,
+      "line": 1026,
       "literal": 0.999,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -241,7 +241,7 @@
     },
     {
       "file": "simulations/PM/cosmology/baryon_asymmetry.py",
-      "line": 985,
+      "line": 1027,
       "literal": 1.001,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_23.uncertainty",
       "dataset_value": 1.0,
@@ -765,6 +765,14 @@
       "literal": 0.957,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/cosmology/racetrack_vacuum.py",
+      "line": 69,
+      "literal": 174.03,
+      "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
+      "dataset_value": 172.69,
       "class": "STALE_DUP"
     },
     {
@@ -2233,7 +2241,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 220,
+      "line": 227,
       "literal": 137.03670177575597,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2241,7 +2249,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 221,
+      "line": 228,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2249,7 +2257,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 222,
+      "line": 229,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -2257,7 +2265,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 293,
+      "line": 312,
       "literal": 92.1,
       "dataset_key": "pdg_2024_values.gauge_bosons.m_Z.value",
       "dataset_value": 91.188,
@@ -2265,7 +2273,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 778,
+      "line": 805,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2273,7 +2281,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 790,
+      "line": 817,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -2281,7 +2289,7 @@
     },
     {
       "file": "simulations/PM/paper/abstract.py",
-      "line": 802,
+      "line": 829,
       "literal": 49.3,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.theta_23.value",
       "dataset_value": 49.3,
@@ -5817,7 +5825,7 @@
     },
     {
       "file": "simulations/base/registry.py",
-      "line": 904,
+      "line": 929,
       "literal": 0.9649,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,

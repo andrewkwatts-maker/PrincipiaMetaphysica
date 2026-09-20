@@ -14,7 +14,7 @@
   "evaluation_status": "COMPUTED_PASS",
   "evaluation": {
     "tier": "registry",
-    "source": "CODATA 2022 m_p/m_e 1836.15267343 +/- 5e-7 (FITTED param \u2014 impl sanity check)",
+    "source": "CODATA 2022 m_p/m_e 1836.15267343 +/- 5e-7 (FITTED param — impl sanity check)",
     "checks": [
       {
         "path": "fermion.mass_ratio_proton_electron",
@@ -28,6 +28,6 @@
   },
   "derivation_status": "DERIVED",
   "note": "Gate 26: Derives m_p/m_e from G2 cycle volumes with < 0.001% error vs CODATA 2022. me locked to EM coupling geometrically",
-  "timestamp": "2026-09-08T20:45:26.963016Z",
+  "timestamp": "2026-09-20T21:48:55.837811Z",
   "hash": "1c1205d8314c4134"
 }

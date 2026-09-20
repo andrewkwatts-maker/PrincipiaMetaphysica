@@ -4,16 +4,16 @@
   "value": 24,
   "units": null,
   "uncertainty": null,
-  "source": "GEOMETRIC:TCS_G2_187",
-  "status": "GEOMETRIC",
+  "source": "INPUT:B3_ORIGIN_OPEN",
+  "status": "INPUT",
   "description": null,
   "eml_expression": "EML: eml_scalar(24) — b3 is the foundational topological seed; all PM constants derive from it",
   "kind": "physics",
   "_provenance": {
     "metaphysica_version": "2.3.1",
-    "generated_at": "2026-09-08T20:45:43.468232+00:00",
+    "generated_at": "2026-09-20T21:47:36.058623+00:00",
     "sources": [
-      "GEOMETRIC:TCS_G2_187"
+      "INPUT:B3_ORIGIN_OPEN"
     ]
   }
 }

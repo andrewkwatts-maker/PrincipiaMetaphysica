@@ -1,0 +1,1410 @@
+{
+  "schema": "free_variables/1",
+  "generator": "metaphysica.simulations.core.free_variable_ledger",
+  "what_this_counts": "Quantities this framework did not derive, swept from the tree. free_variable_count is len(rows) -- no literal anywhere in this file states it.",
+  "free_variable_count": 67,
+  "free_variable_count_excluding_permitted": 66,
+  "count_by_role": {
+    "PERMITTED_OR_SCALE": 1,
+    "COMPARISON_ONLY": 17,
+    "LOAD_BEARING_INPUT": 11,
+    "UNRESOLVED": 38
+  },
+  "count_by_status": {
+    "ANSATZ": 8,
+    "CALIBRATED": 16,
+    "FITTED": 21,
+    "FITTED_COMPOSITE": 1,
+    "MEASURED": 21
+  },
+  "roles": {
+    "PERMITTED_OR_SCALE": "reduction/scale-setting choice; the one permitted bucket",
+    "COMPARISON_ONLY": "measured value read only to score a prediction against it",
+    "LOAD_BEARING_INPUT": "measured or chosen value that flows into a registered output",
+    "UNRESOLVED": "no consumer traced, or the row contradicts its own status"
+  },
+  "superseded_claims": {
+    "validation.calibrated_count": 0,
+    "statistical_rigor_validator.calculate_effective_dof": 3,
+    "abstract.calibration_inputs": 3,
+    "note": "All three were literals. None was computed. They are recorded here so the replacement is auditable, not so the old numbers keep circulating."
+  },
+  "derived_from_free_variables": [
+    {
+      "name": "geometry.DM_to_baryon_ratio",
+      "registered_as": "GEOMETRIC (fundamental=True, tuning_free=True)",
+      "inherits_from": [
+        "geometry.Omega_matter"
+      ],
+      "finding": "registered as a tuning-free consequence of b3 = 24, but its value is arithmetic on experimental input; b3 does no work in it"
+    },
+    {
+      "name": "geometry.H0_tension_ratio",
+      "registered_as": "GEOMETRIC (fundamental=True, tuning_free=True)",
+      "inherits_from": [
+        "geometry.H0_early",
+        "geometry.H0_local"
+      ],
+      "finding": "registered as a tuning-free consequence of b3 = 24, but its value is arithmetic on experimental input; b3 does no work in it"
+    },
+    {
+      "name": "geometry.Omega_DM",
+      "registered_as": "GEOMETRIC (fundamental=True, tuning_free=True)",
+      "inherits_from": [
+        "geometry.Omega_matter"
+      ],
+      "finding": "registered as a tuning-free consequence of b3 = 24, but its value is arithmetic on experimental input; b3 does no work in it"
+    }
+  ],
+  "unnamed_declarations": [
+    {
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1488",
+      "callee": "set_param",
+      "status": "MEASURED",
+      "note": "path is a variable, so no row can name it; check by hand that the quantities it writes are covered"
+    }
+  ],
+  "rows": [
+    {
+      "name": "ckm.V_cb_triality",
+      "value": 0.040867549778280866,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1138",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:237",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of ckm.V_cb_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "c-b mixing from second power of golden angle. V_cb = V_us^2 * xi_b ~ 0.040.",
+      "notes": []
+    },
+    {
+      "name": "ckm.V_ub_triality",
+      "value": 0.003750070930845949,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1163",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:238",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of ckm.V_ub_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "u-b mixing from third power of golden angle. V_ub = V_us^3 * xi_t ~ 0.004.",
+      "notes": []
+    },
+    {
+      "name": "higgs.lambda_0",
+      "value": 0.129,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1032",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\config.py:3624",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in HIGGS_QUARTIC: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of higgs.lambda_0 from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Tree-level Higgs quartic coupling from SO(10) \u2192 MSSM matching. Value \u03bb_0 = 0.129 is calibrated to match observations, not purely geometric (geometric value would be ~0.0945).",
+      "notes": []
+    },
+    {
+      "name": "pmns.theta_12_triality",
+      "value": 33.59329049922625,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1208",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:229",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of pmns.theta_12_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Solar mixing angle from tribimaximal base on 4-form. theta_12 = arcsin(1/sqrt(3)) * (1 - delta) ~ 33.59 degrees.",
+      "notes": []
+    },
+    {
+      "name": "pmns.theta_13_triality",
+      "value": 8.647304725338865,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1258",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:231",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\observable_groups.py:43",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in OBSERVABLE_GROUPS: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of pmns.theta_13_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Reactor mixing angle from cycle intersection geometry. theta_13 = sqrt(b2*n_gen)/b3 * correction ~ 8.33 degrees.",
+      "notes": []
+    },
+    {
+      "name": "pmns.theta_23_triality",
+      "value": 49.75,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1231",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:233",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of pmns.theta_23_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Atmospheric mixing angle from maximal base + golden enhancement. theta_23 = pi/4 + theta_g/2 = 60.9 degrees raw, reduced to ~49.75 by flux/Kahler corrections.",
+      "notes": []
+    },
+    {
+      "name": "ckm.A_wolfenstein",
+      "value": 0.81,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1225",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:236",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.A_wolfenstein's datasource row rather than tuned to it.",
+      "description": "Wolfenstein A parameter derived from geometric overlap coefficient. Geometric derivation parameter, no direct experimental measurement.",
+      "notes": []
+    },
+    {
+      "name": "ckm.V_cb",
+      "value": 0.04032752537796979,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1073",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:237",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.V_cb's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "ckm.V_ub",
+      "value": 0.0034757158300444454,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1094",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:238",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.V_ub's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "neutrino.dm2_21",
+      "value": 7.419999999999996e-05,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1784",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\config.py:2526",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in NEUTRINO_MASS_21: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\consistency_beacons.py:166",
+          "function": "beacon_nufit_delta_m21",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "_reg_value(...) -> value, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against neutrino.dm2_21's datasource row rather than tuned to it.",
+      "description": "Solar neutrino mass-squared difference (m2^2 - m1^2)",
+      "notes": []
+    },
+    {
+      "name": "neutrino.mass_sum",
+      "value": 0.1012138384586706,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1757",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\de_plane_gate.py:162",
+          "function": "mass_sum_rows",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in mass_sum_rows: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against neutrino.mass_sum's datasource row rather than tuned to it.",
+      "description": "Sum of neutrino masses \u03a3m_\u03bd = m1 + m2 + m3. Cosmologically constrained quantity. Planck 2018: \u03a3m_\u03bd < 0.12 eV (95% CL). DESI 2024 + CMB: \u03a3m_\u03bd < 0.072 eV (95% CL). PM predicts \u03a3m_\u03bd \u2248 0.10 eV from geometric seesaw mechanism (scales with the FITTED m_base = 0.049 eV). NOTE: companion module (neutrino_sector.py) publishes a different \u03a3m_\u03bd under the opposite mass ordering \u2014 the two scenarios are alterna",
+      "notes": []
+    },
+    {
+      "name": "geometry.A_Wolfenstein",
+      "value": 0.81,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:718",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:236",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "An expression for A_Wolfenstein in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"Wolfenstein parameter A \u2248 0.81.\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.Omega_radiation",
+      "value": 8.5e-05,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:526",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\consistency_beacons.py:386",
+          "function": "beacon_friedmann_closure",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "_reg_value(...) -> orad, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "An expression for Omega_radiation in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.delta_CP_PMNS",
+      "value": 278.4,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:760",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:234",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "An expression for delta_CP_PMNS in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.theta_12",
+      "value": 33.41,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:727",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:228",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "An expression for theta_12 in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.theta_13",
+      "value": 8.54,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:738",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:230",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\observable_groups.py:41",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in OBSERVABLE_GROUPS: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "An expression for theta_13 in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.theta_23",
+      "value": 49.0,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:749",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:232",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "An expression for theta_23 in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "fermion.n_generations",
+      "value": 3,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\fermion_generations.py:728",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:274",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:329",
+          "function": "run",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get_param(...) -> n_gen, never reaches a returned registry value"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:501",
+          "function": "run_eml",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get_param(...) -> n_gen, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "ANSATZ: spinor_DOF = 8 was chosen so that b3/spinor_DOF = 24/8 = 3 reproduces the observed number of generations; the input is not derived independently of the desired output. See module docstring for full assessment.",
+      "notes": []
+    },
+    {
+      "name": "geometry.alpha_inverse",
+      "value": 137.03670177575597,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors.py:1564",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors.py:2161",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in <module-level list>: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\appendices\\appendix_d_alignment.py:105",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\discussion.py:120",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:119",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\results.py:105",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        }
+      ],
+      "closing_derivation": "Either a derivation of geometry.alpha_inverse from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Tree-level alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.036701776 vs CODATA 2022 137.035999177(21), a relative error of 5.1e-06. THIS DESCRIPTION USED TO DESCRIBE A DIFFERENT FORMULA: it quoted the four-term form with - D_G2/(10^4 - 3*k_gimel) and its 1.7e-11 error, which is not the value this row publishes. That fourth term is the '7D suppression' that geometric_anchors_core.py records as RET",
+      "notes": []
+    },
+    {
+      "name": "neutrino.delta_CP_pred",
+      "value": 278.4,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1657",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\config.py:2578",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in CP_PHASE_GEOMETRIC: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\generators\\generate_72_certificates.py:417",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:234",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:468",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:231",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:458",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> neutrino_preds, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:162",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:316",
+          "function": "_validate_neutrino_parameters",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get_param(...) -> delta_CP_pm, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against neutrino.delta_CP_pred's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "neutrino.theta_12_pred",
+      "value": 33.59329049922625,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1564",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\generators\\generate_72_certificates.py:414",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:228",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:465",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\consistency_beacons.py:330",
+          "function": "beacon_pmns_row1_unitarity",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "_reg_value(...) -> th12, never reaches a returned registry value"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:228",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:455",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> neutrino_preds, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:159",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:265",
+          "function": "_validate_neutrino_parameters",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get_param(...) -> theta_12_pm, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against neutrino.theta_12_pred's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "neutrino.theta_13_pred",
+      "value": 8.647304725338865,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1595",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\generators\\generate_72_certificates.py:415",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:230",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\observable_groups.py:42",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in OBSERVABLE_GROUPS: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:466",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\consistency_beacons.py:331",
+          "function": "beacon_pmns_row1_unitarity",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "_reg_value(...) -> th13, never reaches a returned registry value"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:229",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:456",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> neutrino_preds, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:160",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:281",
+          "function": "_validate_neutrino_parameters",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get_param(...) -> theta_13_pm, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against neutrino.theta_13_pred's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "neutrino.theta_23_pred",
+      "value": 49.75,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1626",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\config.py:1437",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in THETA23_MAXIMAL: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\generators\\generate_72_certificates.py:416",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:232",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:467",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:230",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigor_covariance.py:457",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get_param(...) -> neutrino_preds, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:161",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\rigorous_validator.py:297",
+          "function": "_validate_neutrino_parameters",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get_param(...) -> theta_23_pm, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against neutrino.theta_23_pred's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "cosmology.H0_local",
+      "value": 71.5500639237564,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\ricci_flow_h0.py:808",
+      "status": "FITTED_COMPOSITE",
+      "source_kind": "PARAMETER_CALL",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:235",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\appendices\\appendix_d_alignment.py:129",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get(...) -> H0_geo, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\validation\\audit\\certificate_stack.py:307",
+          "function": "audit_c_zeta_decay",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get(...) -> h0, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against cosmology.H0_local's datasource row rather than tuned to it.",
+      "description": "Canonical H0 display value: O'Dowd composite 288/4 - 163/144 + eta_S = 71.55 km/s/Mpc (1.43 sigma from SH0ES 2022, 8.3 sigma from Planck). Explicitly NOT a topology-first prediction \u2014 the composite uses the fitted 163-residue split and the post-hoc eta_S. See core/canonical_values.py for the ruling and the retired candidates.",
+      "notes": []
+    },
+    {
+      "name": "geometry.H0_early",
+      "value": 67.4,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:546",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:568",
+          "function": "H0_tension_ratio",
+          "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
+          "detail": "self.H0_early is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\ricci_flow_h0.py:259",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get(...) -> H0_planck, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\ricci_flow_h0.py:352",
+          "function": "_solve_evolution_odes",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "get(...) -> H0_planck, never reaches a returned registry value"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\CERTIFICATES.py:683",
+          "function": "cert_cosmo_015_h0",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "_get_param(...) -> h0, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "An expression for H0_early in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.H0_local",
+      "value": 73.04,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:555",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:568",
+          "function": "H0_tension_ratio",
+          "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
+          "detail": "self.H0_local is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:235",
+          "function": "duplicate_groups",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\core\\observable_groups.py:61",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in OBSERVABLE_GROUPS: a curated group, read for cross-checking rather than fed into a derivation"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\ricci_flow_h0.py:254",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get(...) -> H0_shoes, which reaches a value position in a returned registry dict"
+        }
+      ],
+      "closing_derivation": "An expression for H0_local in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.M_GUT_geometric",
+      "value": 2.1e+16,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:586",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\appendices\\appendix_b_sum_rule.py:134",
+          "function": "required_inputs",
+          "kind": "DECLARED_AS_INPUT",
+          "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\appendices\\appendix_b_sum_rule.py:171",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get(...) -> m_gut, which reaches a value position in a returned registry dict"
+        }
+      ],
+      "closing_derivation": "An expression for M_GUT_geometric in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "geometry.Omega_matter",
+      "value": 0.315,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:495",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "LOAD_BEARING_INPUT",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:523",
+          "function": "Omega_DM",
+          "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
+          "detail": "self.Omega_matter is read by Omega_DM, which get_all_anchors exports and register_anchors registers as geometry.Omega_DM"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:335",
+          "function": "run",
+          "kind": "READ_INTO_REGISTERED_OUTPUT",
+          "detail": "get(...) -> omega_m, which reaches a value position in a returned registry dict"
+        },
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\consistency_beacons.py:384",
+          "function": "beacon_friedmann_closure",
+          "kind": "READ_FOR_COMPARISON",
+          "detail": "_reg_value(...) -> om, never reaches a returned registry value"
+        }
+      ],
+      "closing_derivation": "An expression for Omega_matter in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": []
+    },
+    {
+      "name": "abstract.vev_coefficient",
+      "value": 1.5859,
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:719",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "PERMITTED_OR_SCALE",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:719",
+          "function": "<own description>",
+          "kind": "SELF_DECLARED_SCALE_SETTING",
+          "detail": "the row's own description declares it scale-setting"
+        }
+      ],
+      "closing_derivation": "Either a derivation of abstract.vev_coefficient from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Dimensionless coefficient relating the G2 spectral scale to the electroweak VEV",
+      "notes": []
+    },
+    {
+      "name": "algebra.freudenthal_quartic",
+      "value": 12.641975308641973,
+      "location": "src\\metaphysica\\simulations\\PM\\algebra\\freudenthal_triple.py:248",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "Quartic proxy (non-standard form; the standard Freudenthal quartic lives in e7_representation.py); encodes ALP mass scale.",
+      "notes": []
+    },
+    {
+      "name": "ckm.delta_cp",
+      "value": 0.5235987755982988,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1279",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "CP-violating phase in CKM matrix. Registered as delta_CP ~ pi/6 ~ 30 degrees from K=4 topological matching fibres in TCS G2 manifold (inconsistent with atan2(eta, rho) = 68.7 deg \u2014 the pi/6 display value is a legacy ansatz; numeric kept for downstream consumers).",
+      "notes": []
+    },
+    {
+      "name": "gauge.su2_sin2_theta_W",
+      "value": null,
+      "location": "src\\metaphysica\\simulations\\PM\\gauge\\su2_weak_gauge.py:632",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "ANSATZ: Weak mixing angle sin^2(theta_W) = 0.23122 asserted from the ratio of G2 cycle volumes r_W / r_Y. No analytic derivation of this ratio from moduli exists in this module; the value is set to match PDG 2024 (0.23122 +/- 0.00003, MS-bar at Z-pole).",
+      "notes": []
+    },
+    {
+      "name": "gauge.su3_alpha_s_predicted",
+      "value": null,
+      "location": "src\\metaphysica\\simulations\\PM\\gauge\\su3_qcd_gauge.py:665",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "ANSATZ: alpha_s value 0.1179 is asserted consistent with PDG 2024 (0.1179 \u00b1 0.0009); no analytic derivation from G2 cycle volumes exists in this module. The 'spectral residue' label describes the intended mechanism but the actual computation here is a hard-coded assignment.",
+      "notes": []
+    },
+    {
+      "name": "yukawa.best_scaling",
+      "value": "phi",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\yukawa_textures.py:538",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "",
+      "notes": [
+        "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it.",
+        "ALSO DECLARED AT src\\metaphysica\\simulations\\PM\\particle\\yukawa_textures.py:762 (status ANSATZ)"
+      ]
+    },
+    {
+      "name": "yukawa.lambda_eff",
+      "value": 1.618033988749895,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\yukawa_textures.py:526",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "",
+      "notes": [
+        "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it.",
+        "ALSO DECLARED AT src\\metaphysica\\simulations\\PM\\particle\\yukawa_textures.py:750 (status ANSATZ)"
+      ]
+    },
+    {
+      "name": "yukawa.phi_fit",
+      "value": 0.06033562156338123,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\yukawa_textures.py:549",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "",
+      "notes": [
+        "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it."
+      ]
+    },
+    {
+      "name": "abstract.alpha_gut_coefficient",
+      "value": 0.031831,
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:728",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of abstract.alpha_gut_coefficient from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Coefficient 1/(10*pi) relating the GUT coupling to the spectral gap k_gimel",
+      "notes": []
+    },
+    {
+      "name": "abstract.fitted_pmns",
+      "value": 2,
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:710",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of abstract.fitted_pmns from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Number of PMNS parameters fitted to NuFIT 6.0 pending explicit Yukawa calculation",
+      "notes": []
+    },
+    {
+      "name": "axion.theta_i",
+      "value": 0.4820904498785659,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\axion_dm.py:264",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of axion.theta_i from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "",
+      "notes": [
+        "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it.",
+        "ALSO DECLARED AT src\\metaphysica\\simulations\\PM\\cosmology\\axion_dm.py:794 (status CALIBRATED)"
+      ]
+    },
+    {
+      "name": "ckm.V_us_triality",
+      "value": 0.22450008639436136,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1114",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of ckm.V_us_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Cabibbo angle derived from golden angle on associative 3-form. V_us = sin(theta_g/2) * xi ~ 0.223. The 3D rigidity constrains mixing.",
+      "notes": []
+    },
+    {
+      "name": "ckm.jarlskog_triality",
+      "value": 3.143181574832559e-05,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1182",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of ckm.jarlskog_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "CP violation measure from octonionic structure. J ~ V_us * V_cb * V_ub * sin(delta).",
+      "notes": []
+    },
+    {
+      "name": "cosmology.delta_b3_asymmetry",
+      "value": 0.12,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:341",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of cosmology.delta_b3_asymmetry from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "",
+      "notes": [
+        "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it.",
+        "ALSO DECLARED AT src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:680 (status CALIBRATED)"
+      ]
+    },
+    {
+      "name": "cosmology.racetrack_Re_T",
+      "value": 7.086,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:617",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of cosmology.racetrack_Re_T from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Real part of the stabilized Kahler modulus entering the moduli damping factor exp(-Re(T)) = 8.38e-4. CALIBRATED, not derived: the source comment reads 'Re(T) = 7.086 chosen to match BBN baryon asymmetry eta_b ~ 6.1e-10', so the damping that closes eta_baryon_geometric was fitted to the quantity it helps predict. It sat outside the registry entirely -- declared as a formula input under a path nothi",
+      "notes": []
+    },
+    {
+      "name": "higgs.m_higgs_pred",
+      "value": 120.6228111675565,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:953",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "Either a derivation of higgs.m_higgs_pred from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Higgs mass computed using phenomenologically constrained Re(T). This uses the experimental value m_h = 125.20 GeV (PDG 2024) as input to fix Re(T) = 9.865, then verifies consistency.",
+      "notes": []
+    },
+    {
+      "name": "as_weight",
+      "value": null,
+      "location": "src\\metaphysica\\simulations\\PM\\gauge\\asymptotic_safety.py:538",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against as_weight's datasource row rather than tuned to it.",
+      "description": "AS gauge coupling mixing weight",
+      "notes": [
+        "UNREACHABLE: this Parameter(...) call passes classification, domain, id, source, unit, value, none of which is a field of Parameter, so it raises TypeError if executed. The fit is declared but never runs."
+      ]
+    },
+    {
+      "name": "bridge_ede.entropy_damping.classification",
+      "value": null,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\bridge_axion_ede.py:1073",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against bridge_ede.entropy_damping.classification's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": [
+        "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it."
+      ]
+    },
+    {
+      "name": "ckm.V_tb",
+      "value": 0.9991512959968505,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1162",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.V_tb's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "ckm.V_td",
+      "value": 0.008389183792439896,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1118",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.V_td's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "ckm.V_ts",
+      "value": 0.04032752537796979,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1141",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.V_ts's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "ckm.eta_wolfenstein",
+      "value": 0.36,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1259",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.eta_wolfenstein's datasource row rather than tuned to it.",
+      "description": "Imaginary Wolfenstein parameter eta. Controls CP violation magnitude, derived from topological phase delta_CP ~ pi/6. Geometric derivation parameter.",
+      "notes": []
+    },
+    {
+      "name": "ckm.jarlskog_invariant",
+      "value": 2.9148902086057355e-05,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1186",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.jarlskog_invariant's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "ckm.rho_wolfenstein",
+      "value": 0.14,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\ckm_matrix.py:1241",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against ckm.rho_wolfenstein's datasource row rather than tuned to it.",
+      "description": "Real Wolfenstein parameter rho. Emerges from geometric CP phase structure. Geometric derivation parameter from unitarity triangle.",
+      "notes": []
+    },
+    {
+      "name": "cosmology.alpha_shadow",
+      "value": 0.576,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1255",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against cosmology.alpha_shadow's datasource row rather than tuned to it.",
+      "description": "Residual degrees of freedom from compact dimensions: alpha_shadow = 0.576. FITTED (LEGACY): calibrated for old D_eff formula. Since v16.2, w0 uses w0 = -1 + 1/b3 which does NOT depend on alpha_shadow. Retained for backward compatibility with D_eff output parameter.",
+      "notes": []
+    },
+    {
+      "name": "cosmology.wa_thawing",
+      "value": -0.8164965809277261,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:1388",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against cosmology.wa_thawing's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "fermion.mass_ratio_proton_electron",
+      "value": 1836.1526738332332,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\mass_ratio.py:319",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against fermion.mass_ratio_proton_electron's datasource row rather than tuned to it.",
+      "description": "",
+      "notes": []
+    },
+    {
+      "name": "higgs.lambda_eff_pheno",
+      "value": 0.006079284956305497,
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1053",
+      "status": "FITTED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A closed form replacing the fitted literal, derived before the comparison and scored against higgs.lambda_eff_pheno's datasource row rather than tuned to it.",
+      "description": "Effective Higgs quartic coupling with moduli corrections, using phenomenologically constrained Re(T) = 9.865.",
+      "notes": []
+    },
+    {
+      "name": "cosmology.M_Pl_4D",
+      "value": 1.2208194772e+19,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:780",
+      "status": "MEASURED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for cosmology.M_Pl_4D in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "4D Planck mass M_Pl = 1.220890\u00d710\u00b9\u2079 GeV (CODATA 2022, full \u2014 not reduced)",
+      "notes": []
+    },
+    {
+      "name": "geometry.J_CKM",
+      "value": 3e-05,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:702",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for J_CKM in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.alpha_R_squared_phenom",
+      "value": 0.0045,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:659",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for alpha_R_squared_phenom in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"Phenomenological R\u00b2 coefficient for modified gravity.\"\"\"",
+      "notes": [
+        "DECLARED MEASURED BUT IS A FIT: the property source says so in its own words. Not a measurement; open ruling.",
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.alpha_T_phenomenological",
+      "value": 2.6,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:641",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for alpha_T_phenomenological in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"Phenomenological thermal time parameter from observations.\"\"\"",
+      "notes": [
+        "DECLARED MEASURED BUT IS A FIT: the property source says so in its own words. Not a measurement; open ruling.",
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.dm21_squared",
+      "value": 7.42e-05,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:772",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for dm21_squared in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.dm31_squared",
+      "value": 0.00251,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:781",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for dm31_squared in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.m_KK_bound",
+      "value": 3.5,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:449",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for m_KK_bound in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"Current experimental bound on KK mass from ATLAS/CMS: 3.5 TeV.\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.omega_Lambda_Planck",
+      "value": 0.6889,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:887",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for omega_Lambda_Planck in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"Planck 2018: \u03a9_\u039b = 0.6889 \u00b1 0.0056.\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.w0_error_DESI",
+      "value": 0.02,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:877",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for w0_error_DESI in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"DESI 2025 w0 uncertainty.\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.w0_observed_DESI",
+      "value": -0.958,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:872",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for w0_observed_DESI in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"DESI 2025 thawing quintessence: w0 = -0.958 +/- 0.02.\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    },
+    {
+      "name": "geometry.wa_observed_DESI",
+      "value": -0.99,
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:882",
+      "status": "MEASURED",
+      "source_kind": "GEOMETRIC_ANCHOR",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "An expression for wa_observed_DESI in terms of the framework's own invariants that reproduces the registered value without reading the experimental number back in.",
+      "description": "\"\"\"DESI 2025 thawing: wa = -0.99 \u00b1 0.33.\"\"\"",
+      "notes": [
+        "No executing consumer traced: registered and exported to the website, but nothing reads it into a computation."
+      ]
+    }
+  ]
+}

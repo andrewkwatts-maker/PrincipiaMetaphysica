@@ -3,6 +3,179 @@
   "note": "Open decisions that can be executed either way. Defaults mirror the value adopted at each fork's source and are checked against it; this module stores no physics of its own. Comparisons report every option and never rank by agreement with anchors.",
   "env_prefix": "METAPHYSICA_VARIANT_",
   "forks": {
+    "re_t_adoption": {
+      "question": "Which Re(T) does the baryogenesis sector use?",
+      "source": "simulations.PM.cosmology.baryon_asymmetry.RE_T_CALIBRATED",
+      "status": "OPEN",
+      "selected": "calibrated",
+      "default": "calibrated",
+      "options": [
+        {
+          "id": "calibrated",
+          "summary": "the BBN-calibrated value the sector currently ships",
+          "consequence": "BUYS: the baryon asymmetry match that the sector was tuned for, and no published number moves.\nCOSTS: the value is not a stationary point of the framework's own declared racetrack equations under either Kahler slope, so moduli stabilisation is asserted rather than solved, and the Higgs sector separately inverts m_H to obtain a different Re(T) -- the three-way tension stays open.",
+          "adopted": true
+        },
+        {
+          "id": "computed_vacuum",
+          "summary": "the solved stationary point of the declared potential",
+          "consequence": "BUYS: Re(T) becomes an OUTPUT -- the unique minimum of the declared N=1 potential, supersymmetric, axion-stable, with its barrier located. The six-way Re(T) freedom collapses to the single ratio B/A, on which the vacuum depends only logarithmically.\nCOSTS: the moduli damping exp(-Re T) falls by roughly e^{-31}, so the eta_b match this sector was calibrated for is destroyed. That is the honest price of the true vacuum under the present baryogenesis model, and seeing it is the reason this branch exists.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-14. racetrack_vacuum solves the framework's own declared equations completely -- W = A e^{-aT} + B e^{-bT} with a = 2 pi / topology.elder_kads and b = 2 pi / dimensions.D_bulk, and the full N=1 potential -- and finds ONE minimum on (0.5, 300): a supersymmetric AdS vacuum, stable in the axion direction, with the dS saddle barrier above it. The incumbent value used for baryogenesis is not a stationary point of those equations, and neither is the Higgs-inverted one.\n\nSo this is not a preference between two fits. One branch is the solved vacuum of the declared model; the other is a calibration that reproduces eta_b. Both are runnable so the cost of the true vacuum can be measured rather than argued.",
+      "drift": null
+    },
+    "b3_seed": {
+      "question": "Which (b_3, b_2) does the model take, and is the seed derived?",
+      "source": "simulations.PM.geometry.b3_path.PATHS adopted entry",
+      "status": "OPEN",
+      "selected": "seed_24",
+      "default": "seed_24",
+      "options": [
+        {
+          "id": "seed_24",
+          "summary": "b_3 = 24, b_2 = 4 -- the status quo, seed as an input",
+          "consequence": "BUYS: every published number unchanged, and w_0 = -23/24 at 0.017 sigma against the DESI anchor -- the closest agreement any candidate reaches.\nCOSTS: b_3 = 24 is an INPUT with no geometric home left. It is unreachable by the Joyce construction and far below the TCS range, so nothing declared derives it, and b_2 = 4 traces to a previously FITTED h^{1,1}. The free-variable count cannot reach zero while this holds.",
+          "adopted": true
+        },
+        {
+          "id": "seed_43_joyce",
+          "summary": "b_3 = 43, b_2 = 12 -- both derived from the A1 family count",
+          "consequence": "BUYS: the seed stops being an input. b_3 = 7 + 3 x 12 where the 7 is the derived flat contribution and the 12 is the derived count of A1 T^3 families; b_2 = 12 is derived from the same count, one exceptional 2-class per family. The pair (12, 43) is Joyce's canonical published example. The generation count survives as n_gen = b_2/4 = 3, relocated but still exactly three and still derived on both sides.\nCOSTS: w_0 moves to -42/43, about 0.94 sigma against the DESI anchor -- worse agreement, in exchange for a derived seed, which is the same trade the dark_energy_betti ruling already took deliberately. The '+2' identity D_bulk - b_3 = 2 BREAKS, giving -17, so either D_bulk is not 26 on this path or that identity was never structural. Every b_3-consuming relation shifts: the racetrack exponent, k_bary = b_3 - 14, chi/b_3, alpha_T.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-15 by a computation, not a preference. derived_contribution_table settled the reachable Betti numbers of a Joyce (Z/2)^3 resolution of T^7/Gamma with Gamma the diagonal stabiliser of the framework's own phi: b_3 = 7 + 3 n_T3 with n_T3 in {0, 4, 8, 12}, so b_3 in {7, 19, 31, 43} and b_3 = 7 (mod 12). 24 = 0 (mod 12), so b_3 = 24 is NOT REACHABLE by this construction, and fano_tcs had already placed it far below its exhibited 71-155 range.\n\nSo b_3 = 24 has no geometric home left among the declared options, while (12, 43) is reachable AND is the Betti pair of Joyce's canonical published example -- reproduced by machinery that was never told it, which discharges the calibration gate by computation rather than by citation.\n\nThe decisive discriminator is structural, not statistical: a generation count must be an integer. At b_3 = 43, b_3/8 fails, but b_2 = 12 arrives derived from the same family count and n_gen = b_2/4 = 3 exactly, with 4 the derived faces. So the three generations survive the move -- they relocate. See the n_gen_source fork.",
+      "drift": null
+    },
+    "n_gen_source": {
+      "question": "Which geometric quantity supplies the generation count?",
+      "source": "simulations.PM.geometry.b3_path n_gen_source per path",
+      "status": "OPEN",
+      "selected": "b3_over_dim_O",
+      "default": "b3_over_dim_O",
+      "options": [
+        {
+          "id": "b3_over_dim_O",
+          "summary": "n_gen = b_3 / 8, the 8 being dim O",
+          "consequence": "BUYS: the current derivation, giving exactly 3 at b_3 = 24, with the 8 carrying octonionic meaning.\nCOSTS: it requires 8 to divide b_3, so it is incompatible with every Joyce-reachable value -- 7, 19, 31 and 43 are all odd. Adopting the derived seed forces this to be abandoned.",
+          "adopted": true
+        },
+        {
+          "id": "b2_over_faces",
+          "summary": "n_gen = b_2 / 4, the 4 being the derived faces",
+          "consequence": "BUYS: exactly 3 at b_2 = 12, with both sides derived -- b_2 from the A1 family count and 4 from the moved coordinates of an involution (R2). It is the only generation source compatible with a derived seed.\nCOSTS: gives 1 at the current b_2 = 4, so it is wrong on the status-quo path. It also relocates the generation count away from the octonions, which is a change in the theory's story about why there are three.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-15 alongside b3_seed, because the two are coupled and pretending otherwise would hide the coupling. n_gen must be a positive integer -- a generation count is a number of things -- and that is a structural constraint referencing no measurement, which makes it the decisive discriminator where w_0 is not (w_0 moves only 0.0017 per unit b_3).\n\nb_3/8 gives 3 at b_3 = 24 and 5.375 at b_3 = 43, so it fails on the derived-seed path. b_2/4 gives 3 at b_2 = 12 and 1 at b_2 = 4, so it fails on the status-quo path. Exactly one works per seed, which is why this fork is not independent of b3_seed and says so.",
+      "drift": null
+    },
+    "b3_origin": {
+      "question": "What sets b_3 = 24?",
+      "source": "simulations.run_all_simulations topology.elder_kads status",
+      "status": "OPEN",
+      "selected": "input_24",
+      "default": "input_24",
+      "options": [
+        {
+          "id": "input_24",
+          "summary": "b_3 = 24 as a stated input, origin open",
+          "consequence": "BUYS: honesty. The seed is registered INPUT, the free-variable ledger counts it, and no derivation is claimed that does not exist.\nCOSTS: w_0 = -(b_3-1)/b_3, n_gen = b_3/8 and alpha_T become predictions from a stated input rather than from derived geometry, so the zero-parameter claim cannot hold while this branch is adopted.",
+          "adopted": true
+        },
+        {
+          "id": "arc_flag_stabiliser",
+          "summary": "24 as the order of a Fano arc stabiliser, 12 flags x 2",
+          "consequence": "BUYS: a fully derived orbit-stabiliser identity -- the 12 flags of an arc biject with (4 faces) x (3 blocks) and the flag stabiliser has order 2, verified for all seven arcs, from the framework's own phi.\nCOSTS: it is a subgroup ORDER, not a count of 3-cycles or harmonic 3-forms, so it does not clear the A4 bar and is labelled NUMERICAL. Adopting it would restate the index-for-geometry error this register exists to catch.",
+          "adopted": false
+        },
+        {
+          "id": "d4_root_shell",
+          "summary": "24 as the D4 root count, forced by its Coxeter number",
+          "consequence": "BUYS: the count is FORCED rather than matched -- for any finite root system |roots| = rank x Coxeter number, and D4 has rank 4 with h = 6. The framework already lives in G2 subset Spin(7) subset Spin(8) = D4, the roots form a shell splitting 12 + 12, and roots are genuine directions rather than labels.\nCOSTS: those directions live in a 4-dimensional Cartan space while b_3 counts 3-forms on a 7-manifold, with no map between them; 24 is also not a G2 irrep dimension. The 12 + 12 split additionally costs a Weyl chamber choice. NUMERICAL.",
+          "adopted": false
+        },
+        {
+          "id": "joyce_twisted_sector",
+          "summary": "24 = 7 flat + twisted, from an admissible resolution",
+          "consequence": "BUYS: the only candidate that would produce actual 3-cycles. The flat contribution is derived to be exactly 7, and half_shift_enumeration surveys all 458,752 assignments, imposes pairwise-disjointness and finds the canonical 12-family Joyce structure.\nCOSTS: undecidable here. Converting families to Betti numbers needs the per-type contribution table, so this branch is inert until joyce_contribution_table supplies one. Selecting it without the table asserts what it cannot compute.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-14 with the ruling that removed b_3 = 24's DERIVED/GEOMETRIC status. Nothing on the books derives it: the TCS route places b_3 = 24 far below its exhibited range, the Joyce (Z/2)^3 route is UNDETERMINED pending the contribution table (see joyce_contribution_table), and the candidate structures below all reproduce the integer without exhibiting 24 three-cycles -- the A4 bar.\n\nThe options are therefore candidate ORIGINS, each labelled by what it actually delivers. Switching one on does not change the value while they all yield 24; what it changes is which justification the pipeline records, and b3_candidate_sweep pushes alternative VALUES through the downstream chain so the shape of the dependence is visible. Per the module's standing rule the sweep reports every outcome and never orders them by agreement with anchors.",
+      "drift": null
+    },
+    "joyce_contribution_table": {
+      "question": "Is a cited resolution contribution table available?",
+      "source": "simulations.PM.geometry.joyce_contributions declared table",
+      "status": "OPEN",
+      "selected": "absent",
+      "default": "absent",
+      "options": [
+        {
+          "id": "absent",
+          "summary": "no table supplied; Betti statements stay conditional",
+          "consequence": "BUYS: the honest state. The survey publishes family counts and types, which are computed, and withholds Betti numbers, which are not. The unconditional bound still applies: no A1 family contributes more than dim H^1(T^3) = 3, so twisted = 17 needs at least six families.\nCOSTS: b_3 = 24 stays UNDETERMINED for this construction, so the geometry cannot be closed and the b3_origin fork cannot be settled.",
+          "adopted": true
+        },
+        {
+          "id": "supplied",
+          "summary": "a cited table is present; reachability is decided",
+          "consequence": "BUYS: the survey turns into a decision procedure. Every admissible assignment's family profile is mapped to (b_2, b_3), so whether b_3 = 24 is reachable becomes a finite check rather than an open question, and the answer settles (4,24) and (7,24) at once.\nCOSTS: the verdict is only as good as the table, so the citation must be recorded per entry and the machinery calibrated against a published example before any novel pair is quoted. A table without a source is worse than no table, because it looks like an answer.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-14. The corrected half-shift survey computes the singular locus of every admissible (Z/2)^3 assignment -- family counts and stabiliser types -- but converting those into (b_2, b_3) needs the per-type, per-resolution contribution table for T^3 x C^2/{+-1} singularities. That table is a citation, not something this repository may invent, and the standing rule forbids inventing it.\n\nThis fork is the uncertainty switch. While absent, every Betti statement stays conditional and no reachability verdict is published. When a table is supplied, the survey becomes a finite decision procedure for whether ANY admissible assignment yields b_3 = 24, settling the b3_origin joyce branch and the (4,24) and (7,24) questions together.",
+      "drift": null
+    },
+    "g2_form_convention": {
+      "question": "Which signs does the associative 3-form carry on its 7 triples?",
+      "source": "simulations.PM.geometry.g2_differential.G2_TRIPLES",
+      "status": "OPEN",
+      "selected": "all_plus_one",
+      "default": "all_plus_one",
+      "options": [
+        {
+          "id": "all_plus_one",
+          "summary": "all (+1) on the seven Fano triples -- the status quo",
+          "consequence": "BUYS: every currently published number is unchanged, and the combinatorial results are untouched. R1 to R4 and the arc flag identity read WHICH triples carry phi, not their signs, and were verified identical under both branches.\nCOSTS: phi is not a G2 3-form. Its annihilator in so(7) is 6-dimensional where g2 needs 14, so the holonomy claim has no object behind it. Lambda^2 = 7 + 14 has the right dimensions but the 14 does not annihilate phi and is therefore not g2; Lambda^3 = 1 + 7 + 27 is not a G2 irrep split; and the torsion classes are projections onto subspaces that are not the ones they are named after.",
+          "adopted": true
+        },
+        {
+          "id": "octonion_derived",
+          "summary": "signs read off the framework's own octonion product",
+          "consequence": "BUYS: phi becomes an actual G2 3-form with a 14-dimensional annihilator, and the signs are DERIVED rather than imported from a textbook convention. They are read off the framework's own multiplication table via phi[i,j,k] = (e_i e_j)_k. Lambda^2_14 then really is g2, the Lambda^3 split really is 1 + 7 + 27, and the torsion classes project onto the subspaces they name. Because the algebra picks the signs, WHICH of the 16 G2 forms to use is not an open choice here.\nCOSTS: measured with a rebuild between branches, and the answer is ZERO. All 807 published parameters were compared across the two branches: none moved, none appeared, none vanished. The suite gives 1816 passed / 9 failed against 1825 / 0, and every one of the nine is a test asserting the defect is PRESENT -- the seven in test_phi_is_not_yet_a_g2_form.py, the D4 calibration-honesty test, and the framework's own test_multiplication_constants_differ_by_one_sign. Each must fail once phi is corrected; that is their purpose. No physics test fails.\nWHAT THAT REVEALS, and it is the more important finding: phi can be replaced by a tensor in a DIFFERENT GL(7) orbit without moving a single published number. So no published quantity is sensitive to the sign assignment on the Fano triples, and therefore none is sensitive to whether phi is a G2 form at all. The outputs depend on the Fano INCIDENCE structure -- which seven triples -- not on the orientation that makes it G2. Parameters carrying g2_structure or octonion provenance (face_moduli_T1..T4, n_faces, alpha_leak, shadow_asymmetry_delta_T, V_cb, J_CKM) are all invariant. Consistent with R1-R4 and the arc flag identity, which were verified identical under both branches.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-13 by measurement, not by preference. g2 is the subalgebra of so(7) annihilating phi and has dimension 14. Building the map A -> A.phi and taking its kernel gives dim 6 for the adopted all-(+1) assignment and dim 14 for the signs the framework's own octonion product implies on the SAME seven triples. dim ann is a GL(7) similarity invariant, so the two lie in different GL(7) orbits and no basis change, relabelling or sign flip connects them, checked exhaustively over all 128 diagonal sign patterns. Exactly 16 of the 128 assignments give a genuine G2 form.\n\nROOT CAUSE, located the same day: the octonion module is NOT at fault. Its multiply() is a genuine octonion product, verified norm-multiplicative to 4e-16 and alternative to 6e-16. But g2_structure_as_3form() returns a separate all-(+1) tensor (_C_geom) instead of the 3-form its own multiplication implies. The two differ in exactly ONE sign, on the triple (1,3,5), so the correct form was already in the codebase.\n\nThe adopted branch is kept anyway because substituting phi moves published numbers, and that is a physics ruling. The fork exists so both states can be run and the cost measured first. Note the obvious check does not discriminate: the induced metric phi_imn phi_jmn is 6 * I for BOTH forms, which is why this was not caught earlier. A header note in g2_differential.py had ruled the all-(+1) code correct and its signed docstring wrong; that ruling is backwards and is marked superseded there.",
+      "drift": null
+    },
+    "metric_construction": {
+      "question": "Which construction turns phi into a metric?",
+      "source": "simulations.PM.geometry.g2_differential.G2DifferentialGeometry.metric_by_convention",
+      "status": "OPEN",
+      "selected": "quadratic_contraction",
+      "default": "quadratic_contraction",
+      "options": [
+        {
+          "id": "quadratic_contraction",
+          "summary": "phi_iab phi_jab / 6 -- the status quo",
+          "consequence": "BUYS: nothing published moves. Every metric-dependent quantity in the framework already rides on this, and it is a genuine identity for a genuine G2 form.\nCOSTS: it is blind to the real form, returning 1.0 * I_7 for compact and split alike, so it cannot certify any orientation as Riemannian and cannot detect an unstable phi at all. It is a consistency check wearing a metric derivation's clothes.",
+          "adopted": true
+        },
+        {
+          "id": "hitchin_cubic",
+          "summary": "Hitchin's cubic construction on the 3-form",
+          "consequence": "BUYS: a metric that actually depends on the GL(7) orbit. It gives a flat positive-definite metric on the compact branch, exhibits signature (4,3) on the adopted split branch, is stable under rotation, general GL(7) and reflection, and RAISES on an unstable phi instead of returning a matrix for a 3-form that induces no metric.\nCOSTS: on the adopted all-(+1) phi it is INDEFINITE, so anything downstream expecting a Riemannian metric would be consuming a signature-(4,3) object. That is not a defect in the construction but an honest report of what the adopted phi induces -- and it means this branch and g2_form_convention = octonion_derived belong together if a Riemannian metric is wanted.\nALSO LIMITED, measured: g_phi is not covariant under the obvious pushforward, because B contracts with epsilon, which transforms as a density rather than a fixed array. g(h*phi) is not proportional to h^T g(phi) h. The signature is still frame-robust up to overall sign, which is what the classification uses.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-21. compute_metric() is the QUADRATIC contraction phi_iab phi_jab / 6, and its docstring called that Hitchin's formula. It is not: Hitchin's construction is CUBIC in phi, B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7} with g = B / |det B|^(1/9), and cubic is the lowest degree that can see the difference. Measured: the quadratic returns exactly 1.0 * I_7 for BOTH the all-(+1) phi and the octonion-derived one, so every claim of 'the unique compatible Riemannian metric' made through it was unfalsifiable -- which is why g2_form_convention went unnoticed as long as it did.\n\nWHAT THE CUBIC FORM REVEALS, refining the earlier finding rather than confirming it: Lambda^3(R^7) has exactly TWO open GL(7,R) orbits and BOTH have 14-dimensional stabilisers, so 'dim 14 vs 6' is not the invariant it was read as. The one that discriminates is the unordered signature of B -- (7,0) for octonion_derived, (4,3) for all_plus_one. So the adopted phi IS a G2-structure, for the SPLIT real form g2*, whose maximal compact SU(2)xSU(2) has dimension 6: exactly the 6 measured in so(7). What it is not is RIEMANNIAN, and Joyce's construction needs the compact form.\n\nThis also settles the Lambda decomposition question. The dimensions 1 + 7 + 27 and 7 + 14 are correct on BOTH branches, as a shared complexification requires; only the IDENTIFICATION of the 14 with compact g2 breaks, not any dimension.\n\nNOT AFFECTED, verified: the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.",
+      "drift": null
+    },
     "lattice_24d": {
       "question": "Which even unimodular rank-24 lattice does the model use?",
       "source": "simulations.PM.algebra.leech_lattice.LeechLattice._generator_matrix",

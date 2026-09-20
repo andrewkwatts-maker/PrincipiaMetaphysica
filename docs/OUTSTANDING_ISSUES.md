@@ -5688,3 +5688,100 @@ an argument, and nothing here derives one from the other.
 Not addressed: the Eguchi–Hanson metric, the glued G₂ metric, and K_IJ block
 **values** all remain to be built (M3), and the audit confirms none of that
 machinery exists yet. The multi-sector SUGRA vacuum (M4) is untouched.
+
+### ADDENDUM — the seed could not reach the pipeline, and a no-op build rewrote 164 files
+
+Two blockers found and cleared after the main pass, both of the same family: a
+value that looked derived but was a literal, and noise that made real changes
+invisible.
+
+#### §2.3 — the root simulation emitted the seed as a literal
+
+`g2_geometry` is the ROOT topology simulation. Nothing feeds it, and it EMITS
+`topology.elder_kads`, `topology.b2`, `topology.mephorash_chi` and
+`topology.n_gen`. Those were literals in `__init__`, so **the `b3_seed` fork
+could not propagate at all** — flipping it moved `b3_path`'s own report and
+nothing downstream, because the pipeline's source of b₃ was here and constant.
+Every "the 43 path costs nothing downstream" reading was therefore measuring a
+disconnected switch.
+
+`(b₃, b₂)` now come from `b3_path.seed_values()`. `seed_24` stays adopted, so no
+published number moves — verified by a clean build: b₃ = 24 INPUT, b₂ = 4,
+chi_eff = 144, n_gen = 3, k_gimel = 12.318. `seed_43_joyce` now reaches the
+pipeline and gives (43, 12) with n_gen = 3 via b₂/4.
+
+**A false provenance, corrected.** `self._b3 = 24` carried the comment "From TCS
+construction". `fano_tcs` exhibits 71 ≤ b₃ ≤ 155, so TCS #187 does not supply 24
+— and the old code set `_b3` **independently of h31**, so the comment described
+a derivation that was not even being attempted. This is the same defect shape as
+§1's b₂ citation: right value, false provenance, and the citation is the more
+dangerous half.
+
+#### chi_eff has two origins that agree at b₃ = 24 by coincidence
+
+Exposed by making the seed live. Two claimed derivations:
+
+| route | at b₃ = 24 | at b₃ = 43 |
+|---|---|---|
+| 2(h11 − h21 + h31), TCS Hodge numbers — never references b₃ | 144 | 144 |
+| b₃²/4, from FormulasRegistry | 144 | **462.25** |
+
+They coincide at 24 and diverge badly at 43, where the second is not even an
+integer and so cannot be an effective Euler characteristic. **The agreement at
+24 was two different statements sharing a number** — the "matching values are
+not evidence of the same statement" trap, caught live rather than argued. Both
+routes are now computed and reported side by side, with the Hodge route used
+because it stays integral. Which is meant is an **author ruling**; nothing is
+decided here.
+
+#### `n_gen_source` was inert, which made my own guard unfalsifiable
+
+Writing a coupling guard in the root — 43 with b₃/8 gives 5.375 generations, so
+refuse it — exposed that the guard **could not fire**. `n_gen_report` read
+`PATHS[key]["n_gen_source"]` and nothing ever called `resolve("n_gen_source")`,
+so the fork was slaved to `b3_seed` and no inconsistent combination was
+reachable. A check that cannot fire is a defect, and shipping it would have been
+one.
+
+Rather than delete the guard, the fork was made live, with the path's own
+declaration as its default. An explicit override now reaches the inconsistent
+state: `seed_43_joyce` + `b3_over_dim_O` gives 5.375 and the root refuses it,
+asserted by test. **One of the six inert forks is now real**, the adopted state
+is unchanged, and both consistent combinations are tested not to raise.
+
+#### A no-op build rewrote 164 of 299 artifacts
+
+Measured by hashing the artifact tree across two identical builds. The
+certificate generator restamped every file unconditionally — the same defect
+§1's addendum fixed for the 45 datasheets, in a second generator.
+
+    before   164 of 299 JSON artifacts rewritten by a no-op build
+    after     22
+
+The logic moved to `_common.write_json_stable`, now the single place to fix this
+class, and it handles nested and in-list timestamps which the datasheet version
+did not. The datasheet writer was refactored onto it rather than left as a
+second copy.
+
+**The remaining 22 are recorded, not tolerated**: `parameters.json`,
+`formulas.json`, `GATES_72.json`, `GATES_72_v16_2.json`, `observer_report.json`,
+`falsification_report.json`, `eml_cross_check.json`, `compression_report.json`,
+`improvement_scorecard.json`, `named_constants.json`, `metadata.json`,
+`plots-manifest.json` and the rest of the top-level reports. Their writers are
+spread across `generators/` and the validation modules; converting them is a
+sweep, not a patch, and it is left open rather than half-done.
+
+Why this matters beyond tidiness: while 164 files churn on every build, a real
+parameter change cannot be distinguished from a rebuild, so "all params captured
+from the outputs" is unverifiable by inspection. It is also how three Windows
+icon-cache files sat committed at a repo root for two weeks.
+
+#### Also observed, not acted on
+
+PM's committed `AutoGenerated/` was **stale against metaphysica main** — the
+first clean build brought in the 2026-09-14 seed ruling (`GEOMETRIC:TCS_G2_187`
+→ `INPUT:B3_ORIGIN_OPEN`) and the calibration-input count moving from a literal
+3 to the measured 67. Both are earlier landed work that had never reached the
+published artifacts. The staged inconsistency at §1 remains visible and
+unresolved: `particle.b3` and `cosmology.b3` still ship **DERIVED** while the
+seed ships **INPUT**.

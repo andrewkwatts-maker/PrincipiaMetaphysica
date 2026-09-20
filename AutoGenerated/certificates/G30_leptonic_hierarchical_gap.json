@@ -2,14 +2,14 @@
   "proof_id": "G30_leptonic_hierarchical_gap",
   "gate_id": 30,
   "gate_name": "Leptonic Hierarchical Gap",
-  "label": "\u03bc/\u03c4 = higher harmonics of electron",
+  "label": "μ/τ = higher harmonics of electron",
   "category": "Leptons",
   "phase": 3,
   "block": "C",
   "version": "24.2",
   "wl_code": "m_mu/m_e ~ chi_eff",
   "result": "chi_eff = 144",
-  "formula": "m_\u03bc/m_e, m_\u03c4/m_e ratios",
+  "formula": "m_μ/m_e, m_τ/m_e ratios",
   "verification_status": "VERIFIED",
   "evaluation_status": "DECLARATIVE",
   "evaluation": {
@@ -18,7 +18,7 @@
     "note": "no executable form; certificate is a declared statement"
   },
   "derivation_status": "DERIVED",
-  "note": "Gate 30: m_mu/m_e ~ chi_eff = 144, m_tau/m_mu ~ b3/2 = 12. \u03bc/\u03c4 = higher harmonics of electron",
-  "timestamp": "2026-09-08T20:45:26.963084Z",
+  "note": "Gate 30: m_mu/m_e ~ chi_eff = 144, m_tau/m_mu ~ b3/2 = 12. μ/τ = higher harmonics of electron",
+  "timestamp": "2026-09-20T21:48:55.837869Z",
   "hash": "60c22b8ff14890e2"
 }
