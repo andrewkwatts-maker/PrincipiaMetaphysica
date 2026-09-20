@@ -1,0 +1,622 @@
+{
+  "_schema": 1,
+  "_note": "Derived from docs/OUTSTANDING_ISSUES.md. The pass log is the later authority; where a numbered entry disagrees with a pass that cites it, the disagreement is recorded in `contradiction`, never resolved here. Every status word is one the register itself uses.",
+  "_the_structural_finding": "The register's two halves are joined by nothing a machine can check. Across 26 passes there are only 7 id-citations of numbered entries, so 23 of 29 entries are never cited by number at all. Amendment happens by topic, in prose. That is exactly how a numbered entry goes stale while a later pass has already moved it. A keyword-overlap heuristic was tried as a substitute link and removed: it matched 6-9 of the 25 passes for EVERY entry, so it carried no information. Restoring the link means citing entry ids in the passes, not guessing.",
+  "n_entries": 29,
+  "n_passes": 26,
+  "n_id_citations": 7,
+  "n_entries_never_cited_by_id": 23,
+  "entries_never_cited_by_id": [
+    "1.10",
+    "1.11",
+    "1.13",
+    "1.2",
+    "1.5",
+    "1.6",
+    "1.6a",
+    "1.6b",
+    "1.6c",
+    "1.6d",
+    "1.6e",
+    "1.6f",
+    "1.6g",
+    "1.6h",
+    "1.7",
+    "1.8",
+    "1.9",
+    "2.1",
+    "2.2",
+    "2.5",
+    "2.6",
+    "2.6a",
+    "2.7"
+  ],
+  "n_contradictions": 1,
+  "status_counts": {
+    "AUTHOR_RULING": 2,
+    "CLOSED": 12,
+    "FALSIFIED": 3,
+    "OPEN": 2,
+    "RESOLVED": 1,
+    "RETIRED": 2,
+    "STRUCTURAL": 2,
+    "UNBOUNDED": 1,
+    "UNLABELLED": 4
+  },
+  "passes": [
+    {
+      "date": "2026-08-20",
+      "title": "update — literature review + evidential audit",
+      "line": 710
+    },
+    {
+      "date": "2026-09-05",
+      "title": "update — the seven counters reach zero, and what that exposed",
+      "line": 815
+    },
+    {
+      "date": "2026-09-05",
+      "title": "(second pass) — three open problems closed from the literature",
+      "line": 940
+    },
+    {
+      "date": "2026-09-06",
+      "title": "state assessment, and a comparison of the routes to closure",
+      "line": 1091
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(addendum) — the arithma track was never running",
+      "line": 1218
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(third pass) — nine simulations had never run, and Route 1 is settled",
+      "line": 1317
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(fourth pass) — the SSOT debt the revived modules brought",
+      "line": 1413
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(fifth pass) — a stub dependency took the whole package down",
+      "line": 1489
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(sixth pass) — the recorded deficits are now closed",
+      "line": 1558
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(seventh pass) — a prediction was scored against itself",
+      "line": 1624
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(eighth pass) — the theory-uncertainty policy could not fire",
+      "line": 1741
+    },
+    {
+      "date": "2026-09-06",
+      "title": "(ninth pass) — a \"verification\" that E(z) equals E(z)",
+      "line": 1863
+    },
+    {
+      "date": "2026-09-07",
+      "title": "Closing the geometric model: assessment of six approaches",
+      "line": 2015
+    },
+    {
+      "date": "2026-09-07",
+      "title": "Computational verification pass (second run)",
+      "line": 2380
+    },
+    {
+      "date": "2026-09-08",
+      "title": "(tenth pass) — reading the source instead of citing it",
+      "line": 2535
+    },
+    {
+      "date": "2026-09-08",
+      "title": "(eleventh pass) — the racetrack does not stabilise anything",
+      "line": 2627
+    },
+    {
+      "date": "2026-09-09",
+      "title": "(twelfth pass) — the orbifold, derived from φ",
+      "line": 2748
+    },
+    {
+      "date": "2026-09-09",
+      "title": "(thirteenth pass) — the (8,6,6,6) proposal, and the conclusion the evidence forces",
+      "line": 3169
+    },
+    {
+      "date": "2026-09-13",
+      "title": "(fourteenth pass) — phi is not a G2 3-form, and two candidates for 24",
+      "line": 3286
+    },
+    {
+      "date": "2026-09-13",
+      "title": "(fifteenth pass) — THE GEOMETRY CLOSES: b_3 = 24 is an input",
+      "line": 3901
+    },
+    {
+      "date": "2026-09-13",
+      "title": "(sixteenth pass) — WITHDRAWAL: the b_3 parity refutation was unsound",
+      "line": 4160
+    },
+    {
+      "date": "2026-09-14",
+      "title": "(seventeenth pass) — gated switches, a preferred path, and the b_3 ruling executed",
+      "line": 4366
+    },
+    {
+      "date": "2026-09-14",
+      "title": "(eighteenth pass) — the third track has never run, and CI had been red for thirty commits",
+      "line": 4542
+    },
+    {
+      "date": "2026-09-14",
+      "title": "(eighteenth pass) — THE MECHANISM DELIVERS: b_3 = 24 forces b_2 = 15",
+      "line": 4915
+    },
+    {
+      "date": "2026-09-15",
+      "title": "(nineteenth pass) — SETTLED: b_3 ≡ 7 (mod 12), so b_3 = 24 is unreachable",
+      "line": 4991
+    },
+    {
+      "date": "2026-09-20",
+      "title": "(twentieth pass) — reconciling a second workstream, and the register's two halves are not joined",
+      "line": 5307
+    }
+  ],
+  "entries": [
+    {
+      "id": "1.1",
+      "tier": 1,
+      "heading": "θ₁₃: asin(1/6) FALSIFIED by ruling (R1, 2026-08-25) — headline is 8.669°",
+      "line": 59,
+      "status": "FALSIFIED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "FALSIFIED"
+      ],
+      "n_passes_citing_by_id": 1,
+      "last_cited": "2026-08-20",
+      "last_cited_markers": [
+        "FALSIFIED",
+        "RESOLVED"
+      ],
+      "contradiction": "entry reads ['FALSIFIED']; the 2026-08-20 pass that touches it reads ['RESOLVED']"
+    },
+    {
+      "id": "1.10",
+      "tier": 1,
+      "heading": "Speculative predictions with no derivation path",
+      "line": 508,
+      "status": "UNLABELLED",
+      "status_source": "none",
+      "all_markers_in_entry": [],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.11",
+      "tier": 1,
+      "heading": "Cross-shadow coupling — RESOLVED affirmatively, at a stated scope",
+      "line": 518,
+      "status": "RESOLVED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "RESOLVED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.12",
+      "tier": 1,
+      "heading": "Sp(2,ℝ) is invoked, not derived",
+      "line": 494,
+      "status": "STRUCTURAL",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "STRUCTURAL"
+      ],
+      "n_passes_citing_by_id": 1,
+      "last_cited": "2026-08-20",
+      "last_cited_markers": [
+        "STRUCTURAL"
+      ],
+      "contradiction": null
+    },
+    {
+      "id": "1.13",
+      "tier": 1,
+      "heading": "α_T = 26/10 is a target-first identity",
+      "line": 501,
+      "status": "STRUCTURAL",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "STRUCTURAL"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.2",
+      "tier": 1,
+      "heading": "Dark energy (w₀, wₐ) — **3.2–3.4σ in the 2D plane** (updated 2026-08-24)",
+      "line": 77,
+      "status": "RETIRED",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "RETIRED",
+        "AUTHOR_RULING"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.3",
+      "tier": 1,
+      "heading": "wₐ — **2.98σ**, and the derivation is admitted leading-order",
+      "line": 99,
+      "status": "RETIRED",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "RETIRED"
+      ],
+      "n_passes_citing_by_id": 2,
+      "last_cited": "2026-09-07",
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.4",
+      "tier": 1,
+      "heading": "S₈ — friction cannot rescue the weak-lensing tension (R2, 2026-08-25)",
+      "line": 106,
+      "status": "OPEN",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "OPEN"
+      ],
+      "n_passes_citing_by_id": 1,
+      "last_cited": "2026-09-05",
+      "last_cited_markers": [
+        "OPEN"
+      ],
+      "contradiction": null
+    },
+    {
+      "id": "1.5",
+      "tier": 1,
+      "heading": "Neutrino mass sum — geometric 0.0817 eV canonical (R5, 2026-08-25)",
+      "line": 125,
+      "status": "UNLABELLED",
+      "status_source": "none",
+      "all_markers_in_entry": [],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6",
+      "tier": 1,
+      "heading": "Cabibbo angle — **2.79σ**, with three falsified siblings",
+      "line": 141,
+      "status": "FALSIFIED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "FALSIFIED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6a",
+      "tier": 1,
+      "heading": "Sterile mixing sin²(2θ) = 1/b₃ — **FALSIFIED, and still published**",
+      "line": 162,
+      "status": "FALSIFIED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "FALSIFIED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6b",
+      "tier": 1,
+      "heading": "Theory-uncertainty deflation — four PASSes were buffer-driven",
+      "line": 191,
+      "status": "UNLABELLED",
+      "status_source": "none",
+      "all_markers_in_entry": [],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6c",
+      "tier": 1,
+      "heading": "The global fit was a literal, and four other numbers were too — ✅ CLOSED 2026-09-01",
+      "line": 234,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6d",
+      "tier": 1,
+      "heading": "Twenty statuses were being upgraded at export — ✅ CLOSED 2026-09-01",
+      "line": 263,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6e",
+      "tier": 1,
+      "heading": "Twenty anchors claimed to be tuning-free consequences of b₃ — ✅ CLOSED 2026-09-01",
+      "line": 278,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6f",
+      "tier": 1,
+      "heading": "Ambiguous bare names let a prediction agree with its own anchor — ✅ CLOSED 2026-09-02",
+      "line": 303,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6g",
+      "tier": 1,
+      "heading": "Two more silent gaps in the artifact layer — ✅ CLOSED 2026-09-02; 12 further phantoms resolved 2026-09-04",
+      "line": 337,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED",
+        "RESOLVED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.6h",
+      "tier": 1,
+      "heading": "Two citations pointed at the wrong document — ✅ CLOSED 2026-09-04",
+      "line": 371,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.7",
+      "tier": 1,
+      "heading": "H₀ — three coexisting values, one at 3.17σ",
+      "line": 408,
+      "status": "AUTHOR_RULING",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "AUTHOR_RULING"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.8",
+      "tier": 1,
+      "heading": "The bridge-to-channel join — ✅ **CLOSED 2026-09-01**, and it derives two things that were inputs",
+      "line": 416,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "1.9",
+      "tier": 1,
+      "heading": "`compute_leakage_from_lattice` did not do what it said — ✅ CLOSED 2026-09-01",
+      "line": 484,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.1",
+      "tier": 2,
+      "heading": "7 of 72 gates remain declarative — G19/G25/G26/G39/G56/G59/G67 ✅ CLOSED 2026-09-03",
+      "line": 596,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.2",
+      "tier": 2,
+      "heading": "config.py formula values drift from the live registry (9 items)",
+      "line": 609,
+      "status": "AUTHOR_RULING",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "AUTHOR_RULING"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.3",
+      "tier": 2,
+      "heading": "Hardcode backlog: 392 exact + 341 stale duplicates across 87 files",
+      "line": 622,
+      "status": "UNLABELLED",
+      "status_source": "none",
+      "all_markers_in_entry": [],
+      "n_passes_citing_by_id": 1,
+      "last_cited": "2026-09-13",
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.4",
+      "tier": 2,
+      "heading": "14 predictions carry no experimental anchor (UNBOUNDED)",
+      "line": 629,
+      "status": "UNBOUNDED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "UNBOUNDED"
+      ],
+      "n_passes_citing_by_id": 1,
+      "last_cited": "2026-09-20",
+      "last_cited_markers": [
+        "UNBOUNDED",
+        "OPEN"
+      ],
+      "contradiction": null
+    },
+    {
+      "id": "2.5",
+      "tier": 2,
+      "heading": "Ledger: 17 \"still fitted (legacy marker)\" + 9 open tensions",
+      "line": 657,
+      "status": "OPEN",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "OPEN"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.6",
+      "tier": 2,
+      "heading": "Terminology audit — ✅ CLOSED this session (0 flags)",
+      "line": 661,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.6a",
+      "tier": 2,
+      "heading": "The dashboard contradicted the gates — ✅ CLOSED 2026-09-01",
+      "line": 641,
+      "status": "CLOSED",
+      "status_source": "heading",
+      "all_markers_in_entry": [
+        "CLOSED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    },
+    {
+      "id": "2.7",
+      "tier": 2,
+      "heading": "One triple-track mismatch remains",
+      "line": 672,
+      "status": "CLOSED",
+      "status_source": "body",
+      "all_markers_in_entry": [
+        "CLOSED",
+        "USER_GATED",
+        "AUTHOR_RULING",
+        "UNBOUNDED"
+      ],
+      "n_passes_citing_by_id": 0,
+      "last_cited": null,
+      "last_cited_markers": [],
+      "contradiction": null
+    }
+  ]
+}

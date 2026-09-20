@@ -5301,3 +5301,173 @@ same 36; whether the 6² factorisation is structural or coincidental is untested
 normal (a 1+3 split of 4). Both are lopsided and neither is derived from the
 other. Worth testing whether the lopsided face is the one belonging to a
 non-singular involution.
+
+---
+
+## 2026-09-20 (twentieth pass) — reconciling a second workstream, and the register's two halves are not joined
+
+Sprint 1 of the closure programme. Its job was reconciliation and measurement,
+not physics: bring a divergent second workstream back to one line of work, and
+turn this file from prose into something countable.
+
+### The divergence: three branches, two worktrees, three stashes — one line kept
+
+A second workstream had been running and none of its output was merged.
+Adjudicated hunk by hunk, against the rule that nothing crosses the pre-rewrite
+history boundary:
+
+**Two agent worktrees**, stranded on pre-rewrite history (1131 commits
+divergent), with 4 and 5 uncommitted files. Both were EML coverage work —
+adding `eml_tree_str` / `eml_description` to formula declarations. Verified line
+by line against main: 92–100% of every added line is already present, and
+**every line that is not present is one main deliberately replaced with
+something better**:
+
+* `axion_dm.py` — the worktree writes `ops.pow(k_gimel, 6)`; main inlines
+  `k_gimel = b_3/2 + 1/pi` so the tree roots at `b3_leaf()`, with the in-source
+  reason that the dependency walker otherwise "stops at the opaque k_gimel
+  variable".
+* `neutrino_mixing.py` — the worktree writes `ops.mul(eml_scalar(33.44), ...)`
+  annotated "CALIBRATED to NuFIT 6.0"; main derives
+  `sin(theta_12) = 1/sqrt(3) * (1 - (b_3 - b_2*n_gen)/(2*chi_eff))`.
+
+So merging either worktree would have **regressed a derivation back to a
+calibrated literal**. They are removed; their branches remain reachable and
+their patches are archived. This is worth stating plainly: the naive assumption
+that unmerged work is work owed was wrong in both cases.
+
+**`origin/polish-audit`** (8 commits, 181 behind) — **rejected in full.** Its
+stated purpose was making CI green, and its method was converting loud failures
+into silent successes:
+
+* `generate_formula_renders.py` turns a missing `formulas.json` from
+  `ERROR ... return 1` into **writing `{"_v":1,"_formats":[],"f":{}}` and
+  returning 0** — an empty artifact that downstream consumers read as a
+  legitimate zero. That is the precise mechanism behind the 569-vs-565 formula
+  gap that held CI red for six days.
+* `test_ssot_full_compliance.py` gains a **module-level `importorskip`** — the
+  same defect this register already recorded and fixed on 2026-09-14 ("this was
+  a MODULE-LEVEL pytestmark, so every test here skipped").
+* `test_import_health.py` converts an ImportError **failure** into a **skip**
+  when the error message mentions eml-math — a substring match on an error
+  string, which cannot distinguish an absent module from a misspelled class.
+  That is the nine-simulations-never-ran defect with a narrower filter.
+* Its one genuinely valuable hunk, the "not peer-reviewed" research-status
+  notice injected on every sub-page, **is already on main**.
+
+CI is green on main without any of it.
+
+**`origin/continue/gates-and-rulings`** (3 commits, 105 behind) — mostly
+superseded, one thing extracted. Main already carries **eight** strategy-A
+gates (including G40 *and* G32) and twelve mutation tests where that branch had
+seven and eight. The single salvageable item was a bundled-wheel fallback for
+`parameters.json`: G23 read only the build output, so in any environment that
+had not run the build it was **unevaluable and its test skipped**. An
+unevaluated gate is not a passed one. Landed, and verified by pointing
+`autogen_dir` at a path that does not exist and confirming the gate still
+scores.
+
+**`docs/RULINGS_ASSESSMENT.md`** (380 lines, never merged) — preserved as
+`docs/history/RULINGS_ASSESSMENT_2026-08-25.md`, quarantined rather than
+adopted. It scores each option on an **"Accuracy vs data" axis (1–5) and
+recommends a winner**, which is what `switch_search`'s permanent
+`NO_SELECTION_MADE` and the `test_variants` word ban exist to prevent; and its
+ruling (a) rests on `sin(theta_13) = 1/sqrt(b_3)` "following directly from
+b_3 = 24". The seven questions it raises — theta13, the S8 branch, the n_s
+branch, the H0 anchor, the neutrino mass sum, the G12/G30/G32 tolerances, G36
+CKM unitarity — are all still open here. **The questions survive; the scoring
+does not.** A test asserts no production module reads it, checked against a
+control probe so it cannot pass by scanning nothing.
+
+**Three stashes**, all accounted for and none applied: one is the repo-split
+scrub checkpoint (325,297 deletions — a record of an operation already
+completed), one is build-output churn regenerable from the metaphysica source,
+one is a single gate-review state file. They are left in place rather than
+dropped; dropping is irreversible and they cost nothing.
+
+### THE STRUCTURAL FINDING: this file's two halves are joined by nothing
+
+`docs/issues_index.json` is now generated from this register. It reports 29
+numbered entries and 25 dated passes — and **six id-citations between them.**
+Twenty-four of twenty-nine entries are never cited by number by any pass.
+
+Amendment happens by topic, in prose. There is no machine-checkable link
+between "### 1.5 Neutrino mass sum" and the pass that found it published three
+ways with a 2.4x spread. **That is precisely how a numbered entry reads as live
+while a later pass has already moved it**, and until now the only way to detect
+it was to read all 5,303 lines.
+
+One contradiction falls straight out: **1.1** reads FALSIFIED while the
+2026-08-20 pass that cites it reads RESOLVED.
+
+A keyword-overlap heuristic was tried as a substitute link and **removed**: it
+matched 6–9 of the 25 passes for *every* entry, so it carried no information at
+all. A signal that fires on everything is a check that cannot fail wearing
+other clothes, and shipping it as "a lead to check" would have dressed noise as
+evidence. The honest report is the gap itself. **Restoring the link means
+citing entry ids in the passes** — which this entry does.
+
+Status counts as measured: CLOSED 12, FALSIFIED 3, AUTHOR_RULING 2, OPEN 2,
+RETIRED 2, STRUCTURAL 2, RESOLVED 1, UNBOUNDED 1, UNLABELLED 4.
+
+The ratchet makes the standing rule enforceable rather than merely stated: a
+FALSIFIED or WITHDRAWN entry may not lose its label, a CLOSED one may not
+reopen, and no entry may vanish. Its baseline is a literal in the test file,
+**not the generated artifact** — per the eighteenth pass's open ruling on
+tracked artifacts as baselines, and because a baseline read from the file under
+test would agree with itself.
+
+### The register is stale against its own artifacts, measurably
+
+The header advertises 179 validation records (13 FAIL, 14 UNBOUNDED). The live
+`validation_report.json` has **204 records: 43 PASS, 13 MARGINAL, 8 TENSION,
+20 FAIL, 95 INPUT, 23 UNBOUNDED, 2 IDENTITY.** §2.4 tracks 14 UNBOUNDED where
+there are 23. The free-variable ledger is described here as 49 UNRESOLVED; the
+live artifact has 38. `switch_search` and `preferred_path` docstrings still say
+"eight forks are open" and "twelve executable forks" against 14.
+
+**Counts quoted in prose must be generated, not typed.** None of these numbers
+is wrong-in-kind; all of them are simply older than the thing they describe.
+
+### `generated_at` recorded when the generator ran, not when the content changed
+
+Every regeneration restamped all 45 datasheets, so a no-op build left 47
+modified files in `src/metaphysica/data/` — the checked-in datasource. The cost
+is not cosmetic: a real edit arrives invisible inside a wall of timestamp
+noise, and `git status` stops being readable as a signal.
+
+`_write_json` now carries the old timestamp forward when the rest of the
+payload is byte-identical, and still restamps the moment any content moves.
+Both halves are asserted, because "never update it" would be the same defect
+facing the other way. Verified: restore, regenerate twice, zero diff; perturb a
+value, regenerate, the timestamp moves and the value is corrected.
+
+Found underneath that noise: **three Windows icon-cache `.db` files, committed
+on 2026-09-06**, inside a LITERAL `%SystemDrive%` directory at the repo root —
+created by running a cmd.exe variable under a shell that does not expand it.
+Two weeks in the tree, invisible for exactly the reason above. Removed and
+gitignored.
+
+### The order-dependent test: mechanism, not flakiness
+
+`test_the_import_block_is_real` passed alone and failed in the full run.
+`importlib.import_module` resolves through `sys.modules` and returns a cached
+module **without ever calling `builtins.__import__`**, so once anything earlier
+in the session had imported `matplotlib.pyplot` the patched blocker was never
+reached and `pytest.raises` saw DID NOT RAISE. Collection is alphabetical, so
+`test_g*` and `test_i*` got there first. Its sibling already purged
+`sys.modules`; this one did not. Two lines. Fixed, and verified both alone and
+after a deliberate contaminator.
+
+**Recorded, not fixed:** the same file holds the mirror defect.
+`test_optional_plotting_names_the_extra_rather_than_raising_bare` passes alone
+and passes in the full suite, but **fails when run with its own file's earlier
+tests** — those delete `matplotlib` from `sys.modules` mid-import, and what
+monkeypatch restores is a half-initialised module, so `available()` and
+`find_spec` disagree. Same root cause, opposite direction. Not chased here.
+
+### Baseline
+
+2018 passed, 393 skipped, 1 failed before the fix; the one failure was the
+order-dependent test above. Variants drift clean at 14 forks. The working tree
+is clean after a no-op rebuild for the first time.
