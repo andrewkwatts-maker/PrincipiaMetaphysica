@@ -1029,3 +1029,81 @@ html {
    rules that lived here were removed 2026-08-25 with the header toggle.
    Nothing ever emitted those classes; speculation renders exclusively
    as details.speculation-block panels above, collapsed by default.) */
+
+/* ------------------------------------------------------------------ *
+ * Layperson / Full reading level  (see js/pm-layperson-toggle.js)
+ *
+ * A second reading axis, orthogonal to the per-card Normal/EML math toggle.
+ * The level lives on <html data-reading-level>, so switching hides and shows
+ * blocks with no re-render. Default is "full": if the attribute is missing
+ * (JS disabled, or the script failed) the scientific register is what shows,
+ * which is the safe direction to fail in.
+ * ------------------------------------------------------------------ */
+
+.reading-block[data-level="layperson"] { display: none; }
+.reading-block[data-level="full"] { display: block; }
+
+html[data-reading-level="layperson"] .reading-block[data-level="layperson"] { display: block; }
+html[data-reading-level="layperson"] .reading-block[data-level="full"] { display: none; }
+
+.reading-toggle {
+    display: inline-flex;
+    gap: 0;
+    border: 1px solid var(--pm-border, #d0d7de);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.reading-toggle-btn {
+    appearance: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0.25rem 0.85rem;
+    font: inherit;
+    font-size: 0.85em;
+    line-height: 1.6;
+    background: transparent;
+    color: var(--pm-text-muted, #57606a);
+}
+
+.reading-toggle-btn[aria-pressed="true"] {
+    background: var(--pm-accent, #0969da);
+    color: #fff;
+}
+
+.reading-toggle-btn:focus-visible {
+    outline: 2px solid var(--pm-accent, #0969da);
+    outline-offset: -2px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .reading-toggle-btn { transition: background-color 120ms ease, color 120ms ease; }
+}
+
+/* ------------------------------------------------------------------ *
+ * EML diagrams: scale to the window instead of overflowing it.
+ *
+ * eml_flow.js emits SVG with fixed width/height attributes (720px default)
+ * but ALSO a correct viewBox, so constraining the CSS width rescales the
+ * whole diagram losslessly. height: auto preserves the aspect ratio from
+ * the viewBox. overflow-x: auto is the fallback for any non-SVG EML
+ * content (long ops.* expressions), which scrolls inside its own block
+ * rather than widening the page.
+ * ------------------------------------------------------------------ */
+
+.math-mode-block[data-mode="eml"],
+.eml-formula {
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.math-mode-block[data-mode="eml"] svg,
+.eml-formula svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.math-mode-inline[data-mode="eml"] {
+    overflow-wrap: anywhere;
+}
