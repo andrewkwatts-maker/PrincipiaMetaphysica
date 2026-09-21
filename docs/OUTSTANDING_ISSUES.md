@@ -6352,7 +6352,7 @@ it is the transverse structure of the Joyce construction, now measured.
 
 Consequence for chi_eff: χ(K3) = 24 now has a geometric entry point. Whether
 any defect-count expression through 24 reaches 144 more cheaply than the ~8/320
-already enumerated is for `chi_eff_routes` to CO ST under the trials-factor
+already enumerated is for `chi_eff_routes` to COST under the trials-factor
 discipline — an entry in the enumeration, not a derivation. The proposal's own
 formula chi_eff = 24·(N ℓ_s⁷/V_cell) is not admissible as written: ℓ_s and
 V_cell are unbound dimensionful constants (SSOT), and the ruling on chi_eff
