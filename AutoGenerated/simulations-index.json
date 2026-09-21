@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-20T22:08:26.124857Z",
+  "generated_at": "2026-09-21T09:48:21.630755Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 293,
+  "total_scripts": 296,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -964,7 +964,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 23,
+      "count": 26,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1040,6 +1040,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "eguchi_hanson.py",
+          "path": "simulations/PM/geometry/eguchi_hanson.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "exterior_algebra.py",
           "path": "simulations/PM/geometry/exterior_algebra.py",
           "category": "PM/geometry",
@@ -1079,7 +1089,6 @@
           "gates_contributed": [],
           "parameters_contributed": [
             "topology.K_MATCHING",
-            "topology.b2",
             "topology.d_over_R"
           ]
         },
@@ -1280,6 +1289,16 @@
           ]
         },
         {
+          "file": "metric_pairing.py",
+          "path": "simulations/PM/geometry/metric_pairing.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "modular_invariance.py",
           "path": "simulations/PM/geometry/modular_invariance.py",
           "category": "PM/geometry",
@@ -1335,6 +1354,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Sphere Packing Simulation \u2014 E8 and Leech Lattice",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "twisted_form_basis.py",
+          "path": "simulations/PM/geometry/twisted_form_basis.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

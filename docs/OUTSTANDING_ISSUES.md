@@ -6015,3 +6015,113 @@ family) is now blocking rather than cosmetic, and it is the one ruling that
 would unblock the 43 path. The `twisted_norm_convention` fork is likewise
 **unselected** — both branches are live and costed, per the standing rule that a
 comparison reports every option and never orders them by agreement.
+
+### ADDENDUM — the seed's third source, resolved; and the fork propagated HALF way
+
+Written after the twenty-second pass and in answer to its recorded blocker. That
+pass named `FormulasRegistry.py:653` as the seed's third frozen source and
+declined to change it, correctly. There was also a source it did not reach, and
+the way that one failed is the more instructive half.
+
+#### A literal in the runner beat the fork-aware root
+
+`run_all_simulations` **pre-loads** `topology.elder_kads` before the root
+simulation runs, and `has_param` makes it first-writer-wins. So a literal 24
+there silently beat `g2_geometry`'s fork-aware value. `k_gimel` was hardcoded a
+third time in the same block, as `24 / 2 + 1 / np.pi`.
+
+Nothing pre-loaded `b_2`. So on the 43 branch **b₂ moved to 12 while b₃ stayed
+24**, and the pipeline ran on a state no declared path produces.
+
+#### What the chimera claimed, and what is actually true
+
+The mixed state produced confident numbers that read as a decisive result:
+
+| | mixed (b₃=24, b₂=12) | **coherent (b₃=43, b₂=12)** | anchor |
+|---|---|---|---|
+| θ₁₂ | 36.97° — 4.75σ | **34.29° — 1.17σ** | 33.41° |
+| θ₁₃ | 15.09° — **58.8σ** | **8.36° — 2.48σ** | 8.63° |
+| θ₂₃ | 59.25° — 9.95σ | **50.99° — 1.69σ** | 49.3° |
+
+That first column was in hand and about to be recorded as "the 43 path destroys
+the neutrino sector". It does not. θ₁₃ moves from 58.8σ to 2.5σ once both Betti
+numbers come from one seed.
+
+**A partially-propagated fork is more dangerous than an inert one.** An inert
+fork is visibly inert; a half-live one produces confident arithmetic about a
+manifold that is not there. Same family as the A4 bar — the computation was
+fine, the object was not.
+
+Both literals now read `seed_values()`, and b₂ is pre-loaded from the same seed
+so it cannot move alone. A guard asserts the published (b₃, b₂) pair is one a
+declared path produces, **and** asserts that the chimera which shipped — (24,12)
+— is rejected by that same rule, so the guard is tested against the state that
+actually occurred rather than only against states that work.
+
+#### The cost table, with its scope stated exactly
+
+| | seed_24 (adopted) | seed_43_joyce |
+|---|---|---|
+| b₃, b₂ | 24, 4 | 43, 12 |
+| k_gimel | 12.318 | 21.818 |
+| θ₁₂ | 33.59° (0.24σ) | 34.29° (1.17σ) |
+| θ₁₃ | ≈8.6° | 8.36° (2.48σ) |
+| θ₂₃ | ≈49° | 50.99° (1.69σ) |
+| w₀ | −0.9583 (3.62σ) | −0.9767 (3.94σ) |
+| **free set** | **37** | **39 measured / 40 honest** |
+
+**SCOPE, and it matters.** This is the **normal track only**. The 43 build still
+exits 72, for exactly the reason the twenty-second pass gave: `b3_leaf()` sources
+b₃ from `FormulasRegistry`, so the EML/Arithma track stays pinned to 24 and the
+triple-track guard fires correctly. The parameters above are written before that
+seal check and are coherent among themselves; the EML track is not coherent with
+them. So this is **not** a clean end-to-end 43 run, and it is not offered as one.
+The previous pass declined to publish a second free-set count on these grounds;
+this is offered as a normal-track reading with the caveat attached, not as a
+correction to that caution.
+
+**No selection is made.** This is the cost table the `b3_seed` ruling needs.
+
+#### The free set at 43 is 39 measured and 40 honest, and the gap is a defect
+
+Two reductions withdraw themselves on the 43 path exactly as `free_set` is built
+to: `algebra.freudenthal_quartic` (16(b₃/27)²) and `cosmology.wa_thawing`
+(−4/√b₃) stop reproducing, so both rows return. 37 → 39.
+
+`fermion.n_generations` stays removed, justified as "b₃/8 from the registered
+`particle.b3`" — and **`particle.b3` still reads 24 when the seed reads 43**. The
+reduction validates 24/8 = 3 and passes for the wrong reason. With a
+seed-tracking `particle.b3` it would compute 43/8 = 5.375, fail, and return the
+row: **the honest count is 40.**
+
+This sharpens §1's staged inconsistency. `particle.b3` and `cosmology.b3` were
+recorded as *mislabelled*, shipping DERIVED while the seed ships INPUT. They are
+also **numerically stale** — they do not track the seed at all — and one of them
+is now load-bearing for a free-set reduction. That is the SILENTLY_INSENSITIVE
+class with a measured consequence, not a labelling complaint. Not fixed: those
+rows are an author ruling, and the standing note that "a test fails the day they
+change" still holds. What is new is that the cost of leaving them stale is now
+one spurious reduction.
+
+#### A correction I owe the twenty-second pass, and one it owes back
+
+**Mine to it.** The task specification it was given asserted that the K_IJ
+cross-blocks vanish by character orthogonality. That was wrong, and it said so:
+the flat 3-forms and η are both Γ-invariant, so characters cannot separate them,
+and leg counting fails too. The O(t²) it derived from the shrinking neck is the
+real mechanism. The instruction was mine and the correction is its.
+
+**Its to mine.** `intersection_tensor` read its −2 off "the intersection form on
+an A_n resolution is minus the A_n Cartan matrix". The citation was right and the
+number was right, and **nothing in the tree could produce either** — a literal
+wearing a reference. Building the Eguchi–Hanson object makes −2 arrive a second
+way, independently. That is a better outcome than the citation, and the earlier
+module was weaker than its docstring implied.
+
+#### Method note
+
+Every branch comparison was made with a **full rebuild between branches**,
+because the two runs share gitignored artifacts and a skipped rebuild makes the
+second reading meaningless. The adopted build was restored afterwards and
+verified at b₃ = 24, b₂ = 4, k_gimel = 12.318, free set 37 — so the published
+artifacts are the adopted path and not the experiment.

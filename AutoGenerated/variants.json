@@ -176,6 +176,29 @@
       "notes": "Opened 2026-09-21. compute_metric() is the QUADRATIC contraction phi_iab phi_jab / 6, and its docstring called that Hitchin's formula. It is not: Hitchin's construction is CUBIC in phi, B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7} with g = B / |det B|^(1/9), and cubic is the lowest degree that can see the difference. Measured: the quadratic returns exactly 1.0 * I_7 for BOTH the all-(+1) phi and the octonion-derived one, so every claim of 'the unique compatible Riemannian metric' made through it was unfalsifiable -- which is why g2_form_convention went unnoticed as long as it did.\n\nWHAT THE CUBIC FORM REVEALS, refining the earlier finding rather than confirming it: Lambda^3(R^7) has exactly TWO open GL(7,R) orbits and BOTH have 14-dimensional stabilisers, so 'dim 14 vs 6' is not the invariant it was read as. The one that discriminates is the unordered signature of B -- (7,0) for octonion_derived, (4,3) for all_plus_one. So the adopted phi IS a G2-structure, for the SPLIT real form g2*, whose maximal compact SU(2)xSU(2) has dimension 6: exactly the 6 measured in so(7). What it is not is RIEMANNIAN, and Joyce's construction needs the compact form.\n\nThis also settles the Lambda decomposition question. The dimensions 1 + 7 + 27 and 7 + 14 are correct on BOTH branches, as a shared complexification requires; only the IDENTIFICATION of the 14 with compact g2 breaks, not any dimension.\n\nNOT AFFECTED, verified: the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.",
       "drift": null
     },
+    "twisted_norm_convention": {
+      "question": "Is a family's twisted representative the SUM over its orbit of T^3 components, or the average?",
+      "source": "simulations.PM.geometry.metric_pairing._resolve_orbit_convention",
+      "status": "OPEN",
+      "selected": "orbit_sum",
+      "default": "orbit_sum",
+      "options": [
+        {
+          "id": "orbit_sum",
+          "summary": "representative is the sum over the family's orbit",
+          "consequence": "BUYS: the representative is the honest push-forward of a single component's form to the quotient, which is what 'the class of the exceptional divisor' normally means, and it keeps the twisted entries integral multiples of 8 pi^2 L^3.\nCOSTS: the twisted entries carry a factor equal to the orbit size, so they are not comparable across families with different orbit sizes without dividing it back out. At the canonical point every orbit has size 4, so this cost is invisible there and would only appear at a point with mixed orbit sizes -- which is exactly the kind of hidden dependence a fork is for.",
+          "adopted": true
+        },
+        {
+          "id": "orbit_average",
+          "summary": "representative is normalised per component",
+          "consequence": "BUYS: twisted entries that are directly comparable across families whatever their orbit sizes, and a K_IJ whose twisted block is Vol(T^3) * 8 pi^2 with no group order in it at all.\nCOSTS: the representative is no longer the push-forward of a component's form, so its periods are divided by the orbit size and it is not an integral class. Any later comparison against an intersection number -- including the -2 that eguchi_hanson reproduces -- would have to restore the factor.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-21 while computing K_IJ. Each of the 12 A1 families is an ORBIT of T^3 components -- orbit_size is read live from intersection_tensor.sector_families() and is 4 at the canonical point -- and the class that survives the quotient is built from the whole orbit. Whether the representative is the sum over the orbit or its average is a NORMALISATION the framework has never fixed, and it multiplies every twisted diagonal entry of K_IJ by the orbit size.\n\nThis is a fork rather than a choice because writing either factor into metric_pairing would have been an invented constant. It is wired: metric_pairing._resolve_orbit_convention consults it and twisted_block_entry consumes the result, so flipping it moves every twisted entry of the 43 x 43 matrix.\n\nNEITHER BRANCH CHANGES THE ISOTROPY VERDICT, measured: the flat entries go as L^7 and the twisted ones as L^3 under both, so K is not proportional to the identity either way. What moves is the RATIO between the blocks, which is what any downstream normalisation of the twisted sector would consume.",
+      "drift": null
+    },
     "lattice_24d": {
       "question": "Which even unimodular rank-24 lattice does the model use?",
       "source": "simulations.PM.algebra.leech_lattice.LeechLattice._generator_matrix",
