@@ -6293,3 +6293,110 @@ Both closures above turned on the same structure: a constant sitting at the
 whether its derivations intersect at one point by construction — because that is
 what choosing a value and then finding formulas through it produces, and it is
 indistinguishable from corroboration unless the crossing is solved for.
+
+### ADDENDUM — six proposed closure mechanisms adjudicated; two survive, and the Kummer K3 is real
+
+**2026-09-22.** A proposal arrived for closing the remaining parameters via
+singular flux compactification: Yukawas from intersecting singular loci, a TCS
+reading of the Eguchi–Hanson gluing, Donaldson-matching angles quantized by
+Co₀, a Leech deep-hole projection anchoring the singular locus, chi_eff as a
+defect density, and flux quantization on the 43-form basis. Adjudicated
+against the live enumeration before anything was built. Two survive with kill
+conditions; the rest are refuted by things this campaign already measured.
+
+#### REFUTED: Yukawas from intersecting singular loci — by the admissibility predicate itself
+
+The mechanism needs triple intersection points L₁∩L₂∩L₃ of the singular
+families, with couplings from the geometry at the points. **The construction
+forbids them.** `half_shift_enumeration.fixed_sets_disjoint` (line 198) IS the
+admissibility predicate: an assignment is admissible exactly when the fixed
+sets of distinct involutions are pairwise disjoint — that disjointness is what
+makes Joyce's family-by-family resolution work. So at EVERY admissible
+assignment, not merely the canonical point, pairwise intersections are empty
+and triple intersections are empty a fortiori. The intersecting-defect Yukawa
+mechanism has no points to live on anywhere Joyce applies.
+
+The deeper physical point stands regardless: the enumerated singular loci are
+3-dimensional A₁ families (T³ × EH necks), which give **gauge enhancement**,
+not chirality. Chiral matter in M-theory on G₂ needs codimension-7 conical
+points, and the enumeration contains none. That is the precise missing object,
+and it belongs in the zero-mode docking spec, not in a coupling formula.
+
+#### REFUTED: the TCS reading of the EH gluing
+
+"The K_IJ gluing is mimicking the Twisted Connected Sum" — no. TCS glues two
+asymptotically cylindrical CY3 × S¹ pieces along a K3 fiber with a Donaldson
+matching; the adopted construction is Joyce's: flat T⁷/Γ with EH necks at A₁
+families. These are the two DISTINCT construction families of the G₂
+literature, and the register already uses the TCS b₃ range 71–155 as an
+**independent exclusion** — b₃ = 43 is outside it. Adopting a TCS reading
+would un-derive one of the three exclusions that select the 43 path. Stays a
+labelled off-path.
+
+With it falls the Co₀-quantized Donaldson angle: the matching for a K3 fiber
+lives in the K3 lattice II(3,19), not in Aut(Λ₂₄) = Co₀ — wrong lattice, and
+no TCS gluing exists on-path to carry the angle in the first place.
+
+#### MEASURED AND REAL: the Kummer K3 under each singular involution
+
+The proposal's "K3 fibers" have an honest local home, and it was checkable
+from the live enumeration. Each singular involution negates 4 of 7
+coordinates; transverse to its fixed T³ the local model is T⁴/Z₂ — the
+**orbifold-limit Kummer K3**, whose resolution has exactly 16 A₁ points.
+Measured at the canonical point: each singular involution carries 4 families ×
+orbit size 4 = **16 fixed tori on the cover — 16/16/16**, matching Kummer
+exactly. A4 bar: the 16 counts fixed tori (group-action data on the cover);
+Kummer's 16 counts A₁ points on T⁴/Z₂; the correspondence is T³ × (A₁ point),
+family by family. This is NOT a global K3 fibration and does not license TCS;
+it is the transverse structure of the Joyce construction, now measured.
+
+Consequence for chi_eff: χ(K3) = 24 now has a geometric entry point. Whether
+any defect-count expression through 24 reaches 144 more cheaply than the ~8/320
+already enumerated is for `chi_eff_routes` to CO ST under the trials-factor
+discipline — an entry in the enumeration, not a derivation. The proposal's own
+formula chi_eff = 24·(N ℓ_s⁷/V_cell) is not admissible as written: ℓ_s and
+V_cell are unbound dimensionful constants (SSOT), and the ruling on chi_eff
+remains the author's.
+
+#### RETAINED WITH KILL CONDITION: the Leech deep-hole anchor
+
+As proposed, "project the deep holes of Λ₂₄ to the 7D singular locus" smuggles
+in the projection P: a 7×24 real matrix is 168 continuous parameters presented
+as a parameter reduction. The Schur isotropy null for Co₀/W(E8)³ shell forms
+is already on the books. The testable kernel that survives: does a
+Γ-EQUIVARIANT linear map from the E8³ Niemeier structure to the 7 coordinates
+exist at all? That is a character computation — decompose the 24 under an
+embedded (Z/2)³ against the 7's known character decomposition — with a clean
+kill: if no equivariant map exists, the anchor is dead as geometry and is
+recorded dead; if one exists, its freedom is measured in dimensions, not
+assumed zero.
+
+#### VALID, NEW: the orbit/degeneracy scan of the glued form
+
+Nobody has measured what the gluing does to the GL(7) orbit. K_IJ is computed
+at leading order from closed-form pieces; no pointwise Hitchin B along the
+neck has ever been evaluated. The question "does the glued φ stay in the split
+orbit, cross a degenerate wall (det B = 0), or land compact at some radius?"
+is genuinely open, computable with existing machinery (`hitchin_bilinear` +
+`twisted_form_basis.neck_chart`), and is the first place the two real forms
+could DYNAMICALLY differ rather than differing by convention. Paired with a
+signature guard test at the seam — exactly 3 negative eigenvalues on the split
+branch, 0 on the compact branch, fork-aware, failable.
+
+#### VALID AT LEADING ORDER: flux quantization on the 43 basis
+
+W = Σ_{I=1..43} n_I Π_I with n ∈ ℤ⁴³ and periods Π from the leading-order
+K_IJ is the standard flux-superpotential shape and is buildable honestly —
+every output labelled leading-order-in-t. Its correct targets are the **2
+FLUX_DEPENDENT and 7 METRIC_DEPENDENT** rows of the closure ledger. The
+proposal claimed it validates the 15 non-knobs; that conflates two ledger
+layers — the 15 include EXPERIMENTAL measured anchors (H₀ is not a flux
+quantum), and no flux will ever supply a measured constant. Discrete flux
+minima freezing MODULI is the honest version, and it is the one to build.
+
+#### Two wording hazards in the proposal, for the record
+
+The bulk is **26D, signature (24,2)** (two-time migration, ADOPTED); 27 is the
+Jordan-algebra hazard that migration flagged. And "(4,3) is inherently
+non-compact" conflates metric signature with manifold compactness — T⁷ is
+compact whatever the signature of the φ-induced metric.
