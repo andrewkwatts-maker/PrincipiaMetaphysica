@@ -5785,3 +5785,233 @@ first clean build brought in the 2026-09-14 seed ruling (`GEOMETRIC:TCS_G2_187`
 published artifacts. The staged inconsistency at §1 remains visible and
 unresolved: `particle.b3` and `cosmology.b3` still ship **DERIVED** while the
 seed ships **INPUT**.
+
+---
+
+## 2026-09-21 (twenty-second pass) — the A1 resolution becomes an object, and the seed's third source
+
+Three modules landed (M3, M3-continued, M4) and one blocker was found that stops
+the 43 path from building at all. The blocker is the more important half.
+
+### THE HEADLINE: −2 arrives twice, from two directions that never met
+
+`intersection_tensor` reads its A1 entry off "the intersection form on an A_n
+resolution is minus the A_n Cartan matrix". The citation was correct and the
+number was right, and **nothing in the tree could produce it** — there was no
+resolution, no metric, no exceptional class. It was a literal wearing a
+reference, which is the defect shape §2.3 catalogues and the more dangerous half
+of the pair §1's b₂ citation exhibited.
+
+`PM/geometry/eguchi_hanson.py` builds the object the reference names:
+
+* the Eguchi–Hanson metric with bolt parameter `a`, **Ricci-flat as an EXACT
+  symbolic zero** in (r, θ, a) — not to a tolerance, so no threshold hides a
+  failure;
+* ALE decay **measured**, not asserted: the log–log fit of ‖g − g|_{a=0}‖ gives
+  −4.000087, and the residual falls to 1.3e−9 when the grid moves outward by
+  16×. Convergence is the check; a wrong integer power sits a whole unit away;
+* the normalisable exceptional 2-form η = d((a²/r²)σ₃), **closed as a
+  STRUCTURAL zero** through `exterior_algebra.exterior_d` — which refuses float
+  coefficients, so this cannot be passed by the stub `compute_d_phi` still is;
+* with ψ of period 2π (the Z₂, and the only place A1 enters the geometry),
+
+      ∫ η ∧ η = −8π²   and   [η / 2π]² = **−2**
+
+That −2 is `A1_SELF_INTERSECTION`, reached from a metric and an integral instead
+of from a Cartan matrix. The two routes were not consulted against each other
+while either was built, and the test compares against the value the other module
+derives rather than a literal, so a change to either now breaks it.
+
+### THE NEGATIVE RESULT, and it changed where the t-order lives
+
+M3 was specified to exhibit an L² norm **proportional to a²**. It does not
+exist, and not for want of looking:
+
+    ‖η‖²_{L²} = 8π²   EXACTLY, for every bolt radius a > 0.
+
+In four dimensions the L² norm of a 2-form is invariant under g → t²g (|ω|²
+scales as t⁻⁴, the volume element as t⁺⁴), so **no 2-form norm on a 4-manifold
+can carry a scale**. On a harmonic (anti-)self-dual form it moreover equals the
+topological self-intersection, an integer invariant that cannot move with a
+modulus. The specification asked for a topological invariant wearing a
+parameter's clothes.
+
+This is not a cosmetic correction. M4 was specified to make the twisted blocks
+proportional to `Vol(T³) · ‖η_EH‖²`, and they are — but since that second factor
+carries **no t**, the twisted sector takes its entire t-dependence from the T³
+volume and the 1-form legs. A module that had fitted an a² into the norm would
+have put the t-order in the wrong place and every downstream expansion would
+have inherited it. The a²-proportional quantity that *does* exist is the bolt
+**area**, πa²; it is returned, and it is labelled an area, never a norm.
+
+### M3 continued — the 43 are now 43 objects
+
+`PM/geometry/twisted_form_basis.py`: 7 flat (φ's own triples, via R3/R5) + 3 per
+family (dx^i ∧ η_EH, i over the family's fixed line, which R2 establishes is a
+Fano line — hence three legs, hence the 3 in b₃ = 7 + 3n_T3). The 12 families are
+read live from `sector_families()` and never tabulated.
+
+All 43 are **closed**, verified individually through the symbolic exterior
+derivative in each element's own chart. Swept parametrically over profiles:
+
+    sectors=0  n_T3= 0  dim= 7  blocks [7]
+    sectors=1  n_T3= 4  dim=19  blocks [7,12]
+    sectors=2  n_T3= 8  dim=31  blocks [7,12,12]
+    sectors=3  n_T3=12  dim=43  blocks [7,12,12,12]
+
+### M4 — K_IJ, with values, and decisively non-isotropic
+
+`PM/geometry/metric_pairing.py`. §multilinear_degree_audit had already refuted a
+metric-free pairing on H³ (3+3 = 6 ≠ 7), so this *requires* a metric and every
+entry is **ASYMPTOTIC IN t**. Labelled per block, never conflated:
+
+| block | size | diagonal entry | order |
+|---|---|---|---|
+| flat | 7 | L⁷/\|Γ\| | t⁰ |
+| twisted[sector 0,1,2] | 12 each | 32π²L³ | t⁰ |
+| cross | — | 0 | **t²** |
+
+Not isotropic, and the verdict is taken **over expressions rather than at a
+sampled L**: the flat entries go as L⁷ and the twisted as L³, so no scalar makes
+K = cI for all L. The predicate is fed c·I directly and must accept it —
+asserting non-isotropy is worth nothing unless the same rule can say yes.
+
+`L`, the torus circle length, is a **MODULUS the framework does not fix**. No
+registry row carries it and none was invented; it is carried symbolically, which
+is stronger than any numeric verdict. It joins the UNBOUND population §2.4
+tracks.
+
+#### The cross-blocks do NOT vanish by character orthogonality
+
+Specified as such; it is **wrong**, and recorded rather than smoothed. The flat
+3-forms and η are *both* Γ-invariant, so characters do not separate them. Leg
+counting fails too: two distinct Fano lines meet in exactly one point, so a flat
+line L ≠ fixed_line(f) contributes exactly one T³ leg and two transverse legs —
+precisely the index pattern a non-zero pairing needs. What actually controls them
+is the shrinking neck: Cauchy–Schwarz against a 4-volume O(t⁴) gives **O(t²)**.
+So they vanish *at leading order*, with a derived exponent, and are not claimed
+to vanish identically. A consumer needing them exactly does not have them here —
+the same discipline §1.3 applies to wₐ.
+
+### New fork: `twisted_norm_convention`, and it is wired
+
+A family is an ORBIT of T³ components (size 4 at the canonical point, read live).
+Whether the representative is the orbit **sum** or **average** multiplies every
+twisted diagonal entry by the orbit size, and the framework has never fixed it.
+Writing either factor in would have been an invented constant, so it is a fork
+with both branches live: flipping it moves all 36 twisted entries (32π²L³ ↔
+8π²L³). `read_adopted` is a **behavioural** read following
+`_metric_construction_adopted`, not one of the three string literals this file
+still carries. Neither branch changes the isotropy verdict; what moves is the
+block ratio.
+
+### §2.3 — the certificates were the seed's second frozen source
+
+The previous addendum made `g2_geometry.run()` consume `b3_seed`. **The
+certificates still said 24.** `Formula.value`, `latex`, `plain_text` and every
+`terms` entry were literals, so the simulation emitted 43 while every published
+certificate beside it read 24 — and the website, paper and datasheets publish
+the certificates, not `run()`. A reader of the artifacts could not tell the fork
+existed.
+
+Now generated from live values. The adopted branch is byte-identical
+(`b0=1, b1=0, b2=4, b3=24, b4=24, b5=4, b6=0, b7=1`, χ=144, n_gen=3); on
+`seed_43_joyce` the published string becomes `b2=12, b3=43, b4=43, b5=12`.
+
+Two inconsistencies this surfaced, both now stated **in the published
+derivation** rather than left reading 4 = 4:
+
+* **K = h¹,¹ = b₂ BREAKS on the 43 path.** `K_matching` rides on the TCS Hodge
+  number, which the seed fork does not move, so K stays 4 while b₂ becomes 12.
+  The chain has two links and the seed breaks the second.
+* **the χ_eff divergence now reaches the certificate** — 2(h¹¹−h²¹+h³¹) = 144
+  never references b₃, while b₃²/4 = 462.25 at 43 and is not even an integer.
+
+### THE BLOCKER: the seed has a THIRD source, and it stops the 43 path dead
+
+`seed_43_joyce` **cannot complete a build at all**, and this is pre-existing —
+verified by stashing my change and rebuilding: exit 72 either way.
+
+    FormulasRegistry.py:653   "elder_kads": {"value": 24, ...}
+
+`eml_integration.b3_leaf()` sources b₃ from that table, so the **entire
+EML/Arithma track is pinned to 24 regardless of the fork**. The triple-track
+guard then fires, correctly:
+
+    topology.mephorash_chi: normal=144  eml=258   (= 6 × 43)
+    topology.n_gen:         normal=3    eml=5     (= ⌊43/8⌋)
+
+This is §2.7's "one triple-track mismatch remains", and it is larger than that
+entry records: on the 43 path it is three, and it halts the build.
+
+**It is not a mechanical fix and I did not attempt one.** Making `elder_kads`
+follow the fork would make matters worse, not better: the EML trees encode
+χ_eff = 6b₃ and n_gen = b₃/8, relations that are *structurally specific to
+b₃ = 24*. At 43 they give 258 and 5.375 against published 144 and 3. Repairing
+them requires ruling **which χ_eff route is meant** — the divergence recorded
+above — and that is an author ruling, not a code change. Recorded, unresolved.
+
+### What did NOT work, stated as prominently as what did
+
+**T1's free-set re-measurement is BLOCKED and I nearly published a phantom.**
+The task was to measure the free set under both seeds and report both counts.
+First attempt returned **37 for both** — and that was wrong. The `seed_43_joyce`
+build had exited 72, so the second measurement read the **stale seed_24
+artifacts** still on disk. This is exactly the phantom-reading trap the standing
+instruction warns about, it has caused two false readings before, and it caught
+me because a build exit code was not checked before reading its output.
+
+The honest report: **free set = 37 on `seed_24`. Not measurable on
+`seed_43_joyce`** until the blocker above is ruled on. No second count is
+offered, and the "both branches cost the same" reading that the matching 37s
+would have supported is **withdrawn before it was ever made**.
+
+### Baseline correction — the stated baseline does not reproduce from a clean clone
+
+Recorded because it will mislead the next pass. The standing baseline is
+**2093 passed / 0 failed / 393 skipped**. From a fresh container on pristine
+`origin/main`, with no edits, the suite gives **1969 / 11 / 528**.
+
+The 11 failures are **order-dependent, not real**: all 73 tests in the five
+implicated files pass in isolation. `AutoGenerated/` is gitignored and **carries
+0 tracked files**, so a fresh clone has no artifacts; tests needing
+`parameters.json` skip early (hence +135 skips), then a test generates the
+artifacts mid-run, and later tests read a half-built tree. The documented
+baseline silently assumes a build has already run.
+
+**`python -m metaphysica.build --out ./site` must precede `pytest` on a fresh
+checkout.** After building, the suite behaves. This also means the ~20 s runtime
+in CLAUDE.md is optimistic by two orders of magnitude on a cold container: the
+full suite takes ~13.5 minutes here.
+
+### Method note
+
+The Eguchi–Hanson Ricci computation was done symbolically rather than
+numerically **before** any tolerance was chosen, which is why there is no
+tolerance to report. The one threshold that does exist, `ALE_FIT_TOLERANCE`,
+is paired with a convergence check, because a bare tolerance can always be
+loosened until something passes and a test that cannot fail is a defect.
+
+Every count above states what it counts: 43 is a DIMENSION of a span of
+representatives, 12 counts FAMILIES, 3 counts COORDINATE DIRECTIONS, 8π² and −2
+are INTEGRALS, πa² is an AREA, |Γ| = 8 and the orbit sizes are GROUP ORDERS, and
+the t-exponents are ORDERS. None is converted into another.
+
+### Baseline after this pass
+
+**2148 passed / 0 failed / 421 skipped** (12m35s), `variants` exits 0, and a
+clean `metaphysica.build` completes on the adopted branch. 66 tests across the
+four touched files; the skip count is above the historical 393 because the
+`[pdf]` extra **cannot be installed in this container** — `xhtml2pdf` pulls
+`pyHanko` → `cryptography`, which collides with the Debian-managed copy and
+aborts the install. `[sims,plots,dev]` install cleanly once `packaging` is
+force-installed past the same collision.
+
+### Still open, unchanged by this pass
+
+`b3_seed` remains **OPEN with `seed_24` adopted**; nothing here selects a branch
+and no published number moved. The χ_eff route question (§2.7's triple-track
+family) is now blocking rather than cosmetic, and it is the one ruling that
+would unblock the 43 path. The `twisted_norm_convention` fork is likewise
+**unselected** — both branches are live and costed, per the standing rule that a
+comparison reports every option and never orders them by agreement.

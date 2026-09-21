@@ -1,11 +1,11 @@
 {
   "_schema": 1,
   "_note": "Derived from docs/OUTSTANDING_ISSUES.md. The pass log is the later authority; where a numbered entry disagrees with a pass that cites it, the disagreement is recorded in `contradiction`, never resolved here. Every status word is one the register itself uses.",
-  "_the_structural_finding": "The register's two halves are joined by nothing a machine can check. Across 27 passes there are only 8 id-citations of numbered entries, so 23 of 29 entries are never cited by number at all. Amendment happens by topic, in prose. That is exactly how a numbered entry goes stale while a later pass has already moved it. A keyword-overlap heuristic was tried as a substitute link and removed: it matched 6-9 of the 25 passes for EVERY entry, so it carried no information. Restoring the link means citing entry ids in the passes, not guessing.",
+  "_the_structural_finding": "The register's two halves are joined by nothing a machine can check. Across 28 passes there are only 12 id-citations of numbered entries, so 22 of 29 entries are never cited by number at all. Amendment happens by topic, in prose. That is exactly how a numbered entry goes stale while a later pass has already moved it. A keyword-overlap heuristic was tried as a substitute link and removed: it matched 6-9 of the 25 passes for EVERY entry, so it carried no information. Restoring the link means citing entry ids in the passes, not guessing.",
   "n_entries": 29,
-  "n_passes": 27,
-  "n_id_citations": 8,
-  "n_entries_never_cited_by_id": 23,
+  "n_passes": 28,
+  "n_id_citations": 12,
+  "n_entries_never_cited_by_id": 22,
   "entries_never_cited_by_id": [
     "1.10",
     "1.11",
@@ -28,8 +28,7 @@
     "2.2",
     "2.5",
     "2.6",
-    "2.6a",
-    "2.7"
+    "2.6a"
   ],
   "n_contradictions": 1,
   "status_counts": {
@@ -178,6 +177,11 @@
       "date": "2026-09-21",
       "title": "(twenty-first pass) — the real form is SPLIT, and the metric-free cubic exists",
       "line": 5477
+    },
+    {
+      "date": "2026-09-21",
+      "title": "(twenty-second pass) — the A1 resolution becomes an object, and the seed's third source",
+      "line": 5791
     }
   ],
   "entries": [
@@ -285,8 +289,8 @@
       "all_markers_in_entry": [
         "RETIRED"
       ],
-      "n_passes_citing_by_id": 2,
-      "last_cited": "2026-09-07",
+      "n_passes_citing_by_id": 3,
+      "last_cited": "2026-09-21",
       "last_cited_markers": [],
       "contradiction": null
     },
@@ -537,7 +541,7 @@
       "status": "UNLABELLED",
       "status_source": "none",
       "all_markers_in_entry": [],
-      "n_passes_citing_by_id": 2,
+      "n_passes_citing_by_id": 3,
       "last_cited": "2026-09-21",
       "last_cited_markers": [],
       "contradiction": null
@@ -552,12 +556,9 @@
       "all_markers_in_entry": [
         "UNBOUNDED"
       ],
-      "n_passes_citing_by_id": 1,
-      "last_cited": "2026-09-20",
-      "last_cited_markers": [
-        "UNBOUNDED",
-        "OPEN"
-      ],
+      "n_passes_citing_by_id": 2,
+      "last_cited": "2026-09-21",
+      "last_cited_markers": [],
       "contradiction": null
     },
     {
@@ -618,9 +619,11 @@
         "AUTHOR_RULING",
         "UNBOUNDED"
       ],
-      "n_passes_citing_by_id": 0,
-      "last_cited": null,
-      "last_cited_markers": [],
+      "n_passes_citing_by_id": 1,
+      "last_cited": "2026-09-21",
+      "last_cited_markers": [
+        "OPEN"
+      ],
       "contradiction": null
     }
   ]
