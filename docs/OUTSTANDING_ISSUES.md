@@ -6125,3 +6125,171 @@ because the two runs share gitignored artifacts and a skipped rebuild makes the
 second reading meaningless. The adopted build was restored afterwards and
 verified at b₃ = 24, b₂ = 4, k_gimel = 12.318, free set 37 — so the published
 artifacts are the adopted path and not the experiment.
+
+### ADDENDUM — three generations SELECTS the topology, and chi_eff = 144 is a crossing point
+
+Two closures found while chasing §2.7's triple-track mismatch and the EML
+blocker. One positive, one negative, and the negative one is what the blocker
+was waiting on.
+
+#### The family carries ONE topological input, not two
+
+Every Joyce-reachable profile has b₂ = n_T3 and b₃ = 7 + 3·n_T3, so across the
+whole family
+
+> **b₃ = 7 + 3 b₂**
+
+b₂ and b₃ are not independent. The framework has been carrying them as two
+topological inputs; they are one.
+
+The adopted pair fails it: 7 + 3·4 = 19 ≠ 24. That is a **third independent
+route** to excluding (24, 4), alongside b₃ ≡ 7 (mod 12) and the TCS range
+71 ≤ b₃ ≤ 155.
+
+#### THREE GENERATIONS IS THE MAXIMUM, AND IT SELECTS THE TOPOLOGY
+
+With n_gen = b₂/4, the 4 derived in R2 as an involution's moved coordinates:
+
+| n_T3 | b₂ | b₃ | n_gen |
+|---|---|---|---|
+| 0 | 0 | 7 | 0 |
+| 4 | 4 | 19 | 1 |
+| 8 | 8 | 31 | 2 |
+| **12** | **12** | **43** | **3** |
+
+**n_gen ≤ 3 always.** There are 3 singular involutions carrying 4 families each,
+so n_T3 ≤ 12 and b₂ ≤ 12. Three generations is the *maximum this construction
+admits* — and it is attained by exactly one profile.
+
+So the observed generation count **forces** (b₂, b₃) = (12, 43). Three
+generations stops being an output the model must reproduce and becomes a
+**selector** that picks the topology out of four candidates. The candidates were
+enumerated before the count was applied, which is what separates a selection
+from a fit; a parametrised test confirms 0, 1, 2, 3 each select exactly one
+profile and 4, 5 select none, so the selector is not vacuous.
+
+**The other n_gen route is not worse — it is empty.** b₃ = 7 + 3·n_T3 with n_T3
+even is **odd at every profile**, and 8 divides no odd number, so b₃/8 yields an
+integer *nowhere* on the family: 0.875, 2.375, 3.875, 5.375. That is strictly
+stronger than "43/8 is not an integer", which is a statement about one point.
+`n_gen_source = b3_over_dim_O` is incompatible with the Joyce construction
+entirely, not merely at the canonical profile.
+
+**Scope, stated.** This selects *within* the declared construction; it does not
+prove the construction. IF the manifold is a Joyce (Z/2)³ resolution of T⁷/Γ for
+this φ, AND n_gen = b₂/n_faces, THEN three generations forces b₃ = 43. Both
+premises are author rulings, and `n_gen_source` carries the second.
+
+#### AND THE CAP IS A GROUP RANK, not a coincidence of counting
+
+"n_T3 ≤ 12 because 3 involutions carry 4 families each" restates the
+observation. Measured over the live enumeration it is a group-theoretic fact:
+
+- **n_families = 4 × n_singular at EVERY admissible assignment** — 88,176 of
+  them, across n_singular = 0, 1, 2, 3. So `b₂/4` is not dividing by the face
+  count at all; it **recovers the number of singular involutions**.
+- Wherever three involutions are singular, those three are **independent over
+  F₂**: **1680 of 1680**. They form a **basis of Γ**, so the singular set can
+  never exceed rank(Γ) = 3.
+
+Hence n_gen = b₂/4 = n_singular ≤ rank(Γ) = 3, and Γ is forced by φ (R1).
+
+> **Three generations is the rank of the diagonal stabiliser of the framework's
+> own 3-form.**
+
+**The A4 bar, per arrow, because this chain crosses type boundaries:**
+
+| step | type |
+|---|---|
+| rank(Γ) | group-theoretic rank |
+| n_singular | a count of group **elements** |
+| n_families | a count of **orbits** of fixed-locus components |
+| b₂ | a count of **cohomology classes** |
+| n_gen | a count of fermion generations |
+
+Each arrow is a measured correspondence over the enumeration, not an
+identification. The chain is only as strong as its weakest link, and that is the
+last one — `b₂/n_faces = n_gen`, which is the `n_gen_source` fork and an author
+ruling. Nothing here converts a group order into a dimension.
+
+#### chi_eff = 144 has three derivations, and their agreement is structural
+
+This is what §2.7's triple-track mismatch and the EML blocker were waiting on.
+Three routes are claimed:
+
+| | expression | site | depends on b₃? |
+|---|---|---|---|
+| A | 2(h11 − h21 + h31) | `g2_geometry` | **no** |
+| B | b₃²/4 | `FormulasRegistry` | yes |
+| C | 6 b₃ | EML operator trees | yes |
+
+All three return 144 at b₃ = 24. Four reasons that is not corroboration:
+
+1. **B and C cross at exactly one point, and it is 24.** 6b = b²/4 ⟺ b² − 24b = 0,
+   whose positive root is 24, uniquely. Their agreement at 144 is *the definition
+   of their crossing point*, not evidence for it. Off 24 they diverge at once —
+   at b₃ = 43 they give 258 and 462.25.
+2. **144 is cheap.** Roughly 8 of 320 simple expressions in the framework's own
+   integers hit it, about 2.5%. Two landing on it is weak.
+3. **No b-dependent expression gives 144 at both seed points.** Only constants
+   do, and a constant is not a derivation.
+4. **Route A is a type error on the Joyce path.** 2(h11 − h21 + h31) is the Euler
+   characteristic of a Calabi–Yau **threefold** written in its Hodge numbers. A
+   Joyce orbifold T⁷/Γ is not a CY3 and has no h21 and no h31; the expression
+   evaluates only because `g2_geometry` carries TCS #187's Hodge numbers as
+   attributes. This is the A4 bar in a new place — the arithmetic runs, the
+   object it refers to is not there. It is also why route A returns 144 at every
+   profile: it is a constant in disguise.
+
+**The dichotomy.** chi_eff is exactly one of:
+
+- a **constant**, independent of the seed — in which case routes B and C are
+  wrong and n_gen = chi_eff/48 carries no topological content; or
+- **seed-dependent** — in which case it is not 144 on the 43 path, and every
+  consumer of the literal 144 must move.
+
+The framework currently wants both. **That is the ruling the EML blocker needs**,
+and it is now a dichotomy with both branches computed rather than a preference.
+Nothing is selected here.
+
+#### A coincidence at the canonical point, caught while cross-checking
+
+Checking the new closure against the routine's K_IJ produced a false positive of
+my own, and the reason is worth pinning. **There are two different twelves:**
+
+| | value | factorisation | lives in |
+|---|---|---|---|
+| b₂ | 12 | 12 families × 1 exceptional 2-class | H² |
+| K_IJ twisted block | 12 | 4 families × 3 three-forms per sector | H³ |
+
+Equal as integers, unrelated as objects. I wrote a cross-check asserting the
+twisted blocks summed to b₂; they sum to **36**, because each block counts
+3-forms within one sector while b₂ counts 2-classes across all families. Writing
+"b₂ = the block size" would be true arithmetic and false geometry.
+
+It is more dangerous than it looks: 7 + 3·12 = 43 holds for **both** twelves, so
+the family relation and the block structure produce the same b₃ from different
+objects. The coincidence survives the obvious dimensional check.
+
+**What the modules genuinely share is the count 3**, and that one is real — five
+independent routes give it:
+
+| route | source |
+|---|---|
+| rank(Γ) | group theory |
+| number of singular involutions | the enumeration |
+| sectors in the intersection tensor | resolution combinatorics |
+| twisted blocks in K_IJ | the glued metric |
+| n_gen = b₂/n_faces | the generation route |
+
+A guard test now records the agreement that holds and the identification that
+must not be made.
+
+#### Note on a pattern worth watching
+
+Both closures above turned on the same structure: a constant sitting at the
+**unique crossing point** of two low-order formulas. 6b₃ and b₃²/4 cross only at
+24. It is worth asking of any "independently derived" constant in the framework
+whether its derivations intersect at one point by construction — because that is
+what choosing a value and then finding formulas through it produces, and it is
+indistinguishable from corroboration unless the crossing is solved for.

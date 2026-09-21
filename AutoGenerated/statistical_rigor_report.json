@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-09-21T19:48:20.774094",
+  "test_date": "2026-09-22T04:09:38.418946",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
@@ -160,24 +160,24 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        12.016851147650272,
-        5.183660268768002,
-        5.019424928542661,
-        4.849745485127335,
-        4.714786234932726,
-        4.662919304263919,
-        4.454129528105272,
-        4.2567251543968805,
-        4.2288813814690736,
-        3.9163424706519763
+        12.544719900031758,
+        5.336730162843004,
+        5.329350584503256,
+        4.878534059584791,
+        4.65843603392266,
+        4.408410900039642,
+        4.211263904285914,
+        4.17155887698732,
+        4.072509578514663,
+        3.9984100370963196
       ],
-      "condition_number": 8.39137078755754,
+      "condition_number": 7.3283267104635,
       "p_value": 0.0,
       "chi_squared": 2238886595.968139,
       "degrees_of_freedom": 73,
       "effective_dof": 3,
       "rigor_status": "POOR_FIT",
-      "dimensions_for_95_variance": 21,
+      "dimensions_for_95_variance": 22,
       "interpretation": {
         "full_rank": true,
         "independent_residues": true,
@@ -283,32 +283,32 @@
       "recommended_approach": "EDOF",
       "recommendation_rationale": "The EDOF approach properly accounts for PM's topological correlation structure. Theory uncertainty injection (deprecated) makes the fit appear MORE suspicious by tightening effective error bars."
     },
-    "redundant_parameters": 68,
+    "redundant_parameters": 61,
     "redundancy_pairs": [
       [
         0,
         12,
-        0.9989002204196743
+        0.9956106703112537
       ],
       [
         0,
         24,
-        0.9976070393318377
+        0.9943795900548074
       ],
       [
         0,
-        48,
-        0.9969778996048066
+        36,
+        0.9977789538013941
       ],
       [
         1,
         13,
-        0.9904175990805876
+        0.9927281214333763
       ],
       [
         1,
         25,
-        0.9994554944939633
+        0.9937528928330386
       ]
     ]
   },
@@ -332,7 +332,7 @@
       "Zero fitted parameters - all predictions from topology",
       "Lower-tail p-value = 0.000000 (fit better than random chance)",
       "Adding 1.2% theory uncertainty makes \u03c7\u00b2 smaller (confirming errors not underestimated)",
-      "68 parameter pairs show high correlation",
+      "61 parameter pairs show high correlation",
       "Geometric constraints naturally produce tight predictions - low \u03c7\u00b2 is EXPECTED, not suspicious"
     ]
   },

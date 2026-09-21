@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-21T09:48:21.630755Z",
+  "generated_at": "2026-09-21T18:09:39.303527Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 296,
+  "total_scripts": 298,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -964,7 +964,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 26,
+      "count": 28,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1015,6 +1015,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Bridge Geometry and (2,0) Field Sampling",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "chi_eff_routes.py",
+          "path": "simulations/PM/geometry/chi_eff_routes.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1091,6 +1101,16 @@
             "topology.K_MATCHING",
             "topology.d_over_R"
           ]
+        },
+        {
+          "file": "generation_selection.py",
+          "path": "simulations/PM/geometry/generation_selection.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "geometric_anchors.py",
