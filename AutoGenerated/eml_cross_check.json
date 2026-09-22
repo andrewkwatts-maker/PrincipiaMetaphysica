@@ -1,12 +1,12 @@
 {
   "version": "24.2",
-  "generated_at": "2026-09-21T18:09:13.120733+00:00",
+  "generated_at": "2026-09-22T08:59:13.505226+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
     "total_simulations": 94,
-    "agreed": 93,
-    "failed": 1,
+    "agreed": 92,
+    "failed": 2,
     "not_implemented": 0,
     "errors": 0,
     "skipped": 0,
@@ -36,10 +36,10 @@
       "note": ""
     },
     "g2_geometry_v16_0": {
-      "status": "AGREE",
+      "status": "FAIL",
       "params_checked": 7,
-      "params_agreed": 7,
-      "max_deviation": 3.469446951953614e-16,
+      "params_agreed": 5,
+      "max_deviation": 0.7916666666666666,
       "note": ""
     },
     "four_face_g2_structure": {
@@ -51,22 +51,22 @@
     },
     "unitary_filter_legacy": {
       "status": "AGREE",
-      "params_checked": 6,
-      "params_agreed": 6,
+      "params_checked": 7,
+      "params_agreed": 7,
       "max_deviation": 0.0,
       "note": ""
     },
     "leech_partition_v16_2": {
       "status": "AGREE",
-      "params_checked": 6,
-      "params_agreed": 6,
+      "params_checked": 7,
+      "params_agreed": 7,
       "max_deviation": 0.0,
       "note": ""
     },
     "modular_invariance_v16_2": {
       "status": "AGREE",
-      "params_checked": 6,
-      "params_agreed": 6,
+      "params_checked": 7,
+      "params_agreed": 7,
       "max_deviation": 0.0,
       "note": ""
     },
@@ -74,7 +74,7 @@
       "status": "AGREE",
       "params_checked": 6,
       "params_agreed": 6,
-      "max_deviation": 5.682198770160213e-16,
+      "max_deviation": 9.73467180617959e-16,
       "note": ""
     },
     "master_action_simulation_v22_0": {
@@ -158,7 +158,7 @@
       "status": "AGREE",
       "params_checked": 4,
       "params_agreed": 4,
-      "max_deviation": 1.249000902703301e-16,
+      "max_deviation": 1.3942335658083361e-16,
       "note": ""
     },
     "e7_representation_v1_0": {
@@ -172,7 +172,7 @@
       "status": "AGREE",
       "params_checked": 8,
       "params_agreed": 8,
-      "max_deviation": 0.0,
+      "max_deviation": 2.2127344030193574e-16,
       "note": ""
     },
     "e8x8_splitting_v1_0": {
@@ -200,7 +200,7 @@
       "status": "AGREE",
       "params_checked": 7,
       "params_agreed": 7,
-      "max_deviation": 1.8241377757393734e-15,
+      "max_deviation": 1.6510652785264986e-15,
       "note": ""
     },
     "cosmology_intro_v16_0": {
@@ -214,7 +214,7 @@
       "status": "AGREE",
       "params_checked": 6,
       "params_agreed": 6,
-      "max_deviation": 1.3597399555105182e-16,
+      "max_deviation": 1.8200548080610225e-16,
       "note": ""
     },
     "dark_energy_thawing_v16_2": {
@@ -249,7 +249,7 @@
       "status": "AGREE",
       "params_checked": 13,
       "params_agreed": 13,
-      "max_deviation": 4.23026577748593e-16,
+      "max_deviation": 6.217281732148452e-16,
       "note": ""
     },
     "octonionic_mixing_v23_1": {
@@ -674,6 +674,18 @@
     }
   },
   "failed_params": {
+    "topology.mephorash_chi": {
+      "simulation": "g2_geometry_v16_0",
+      "normal_value": 144.0,
+      "eml_value": 258.0,
+      "deviation": 0.7916666666666666
+    },
+    "topology.n_gen": {
+      "simulation": "g2_geometry_v16_0",
+      "normal_value": 3.0,
+      "eml_value": 5.0,
+      "deviation": 0.6666666666666666
+    },
     "ckm.V_cd": {
       "simulation": "ckm_matrix_v16_0",
       "normal_value": -0.22313016014842982,

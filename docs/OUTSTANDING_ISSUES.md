@@ -7031,3 +7031,82 @@ mechanisms were tried and measured null. The continuous count stands at 22.
 n_gen_source (6b₃/48 ≡ b₃/8 identically -- route C is the b₃-route in
 disguise); b3_seed; re_t_adoption. Each has both branches executable with
 measured costs. The EML track unblocks on the first of these.
+
+### RULED — the active path is the found solution: b3_seed = seed_43_joyce ADOPTED
+
+**2026-09-22, author ruling.** The author directed that the active path match
+the found solution. Executed as: `b3_seed = seed_43_joyce` and
+`n_gen_source = b2_over_faces` ADOPTED (both forks RULED); seed_24 stays
+runnable as the labelled off-path branch via the override, nothing deleted.
+**chi_eff is NOT decided by this ruling** — the dichotomy stands, the EML
+chi-quantities (72/144) stay pinned, and their divergences publish as honest
+FAILs until that ruling lands.
+
+#### What the flip propagated
+
+`FormulasRegistry._b3` now reads the seed (43 adopted / 24 off-path), so
+`elder_kads`, `b3_leaf()` and every EML consumer follow the fork. The site
+rebuilt under 43: parameters.json carries topology.elder_kads = 43,
+topology.b2 = 12.
+
+#### Three 24-conflations, disentangled rather than broken
+
+The three sims that hard-failed under 43 were all asserting the SAME wrong
+identification: that their 24 was b_3. It never was — each counts the BULK's
+24 spacelike core dimensions of the adopted (24,2) two-time signature:
+
+| sim | its 24 actually counts | after the fix |
+|---|---|---|
+| unitary_filter | bc-ghost transverse modes | C = 24 + 2 − 26 = **0**, ghost-free on BOTH branches |
+| leech_partition | dim of the Leech lattice (Conway/Niemeier) | lattice checked against the core it occupies |
+| modular_invariance | eta^(−24) transverse oscillators | critical_dim = 26 on both branches |
+
+Each sim now registers the old identification's per-branch status
+(`HOLDS(coincidence of seed_24)` / `BROKEN_ON_ADOPTED_SEED`) as data. The
+anomaly cancellation, the Leech uniqueness, and the modular selection all
+SURVIVE the ruling — they were claims about the bulk wearing b_3's name. The
+same correction landed in four formulas (vacuum-energy = −(D−2)/24,
+26d-signature = 24 + 2 with the b_3 + 2 identity recorded broken,
+the two 12-pair formulas) and `b3-generations` was rewired to the adopted
+route n_gen = b_2/4 = rank(Gamma) = 3.
+
+#### The honest cost surface, measured (OMEGA = 19 + 4)
+
+The pipeline completes under 43 and exports; Gate 72 reports NOT STERILE with
+19 formula failures + 4 neutrino tensions (theta_13 2.48 sigma, delta_CP 4.98
+sigma), and the build now PUBLISHES that verdict instead of halting on it —
+exit 72 fires after export, the artifacts carry every FAIL, and only exit 72
+from run-all is treated as completed-with-recorded-failures (any other exit
+still halts). Classes: chi_eff-coupled formulas (euler-characteristic 258 =
+6×43 vs the constant 144 — the dichotomy in numbers), b_3-consuming relations
+moving as the fork consequence predicted (w0 → −42/43 at 0.94 sigma;
+alpha-inverse-geometric moves to 449.6, a seed-dependent agreement now
+falsified-by-ruling and LABELLED), and stale-expected sides to be moved row by
+row in the wording sweep.
+
+#### Named remaining seed-blind writer
+
+`particle.b3 = 24` is registered by the v25.0 yukawa/PMNS complex
+(DEFAULT_B3 = 24 with hard NuFIT assertions that are build-breaking by
+design). Its flip re-calibrates the flavour-ansatz sector and moves every
+PMNS number, so it is its OWN documented pass, not a side effect of this one.
+Until then the free set's artifact-vs-fork provenance guard correctly reports
+the mismatch.
+
+#### Reporter hardening, found the hard way
+
+THREE separate process deaths this pass came from printing an error message
+containing a Unicode subscript on a cp1252 console — the runner's reporter
+crashed, not the simulation, truncating logs mid-run. stdout/stderr now
+backslashreplace at runner entry, and the certificate strategies read
+parameters.json as UTF-8 (the rebuilt artifact's content made the
+default-encoding open fail).
+
+#### The plain-register story, generated
+
+`geometry_narration.layperson_narration()` — the beginner assembly-line story
+(7 hallways + 3 chambers per repaired seam × 12 seams = 43), every number read
+from the fork, three corrections against the circulated draft baked in: Betti
+numbers COUNT (never lengths or areas), the seams are 3-dimensional tori (not
+lines), and the generation count is the RANK of the folding symmetry (not a
+dial). Switching the seed rewrites the story.

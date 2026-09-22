@@ -67,14 +67,14 @@
   "rows": [
     {
       "name": "ckm.V_cb_triality",
-      "value": 0.040867549778280866,
+      "value": 0.040671015229949876,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1138",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:237",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:254",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -86,14 +86,14 @@
     },
     {
       "name": "ckm.V_ub_triality",
-      "value": 0.003750070930845949,
+      "value": 0.005225968326081694,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1163",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:238",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:255",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -124,14 +124,14 @@
     },
     {
       "name": "pmns.theta_12_triality",
-      "value": 33.59329049922625,
+      "value": 34.285533439123924,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1208",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:229",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:246",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -143,14 +143,14 @@
     },
     {
       "name": "pmns.theta_13_triality",
-      "value": 8.647304725338865,
+      "value": 8.357480095666395,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1258",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:231",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:248",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -168,14 +168,14 @@
     },
     {
       "name": "pmns.theta_23_triality",
-      "value": 49.75,
+      "value": 50.988236884802596,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1231",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:233",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:250",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -194,7 +194,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:236",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:253",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -213,7 +213,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:237",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:254",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -232,7 +232,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:238",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:255",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -269,7 +269,7 @@
     },
     {
       "name": "neutrino.mass_sum",
-      "value": 0.1012138384586706,
+      "value": 0.10028549266801504,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1757",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
@@ -295,7 +295,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:236",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:253",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -333,7 +333,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:234",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:251",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -352,7 +352,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:228",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:245",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -371,7 +371,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:230",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:247",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -396,7 +396,7 @@
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:232",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:249",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -482,7 +482,7 @@
     },
     {
       "name": "neutrino.delta_CP_pred",
-      "value": 278.4,
+      "value": 148.45813953488368,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1657",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
@@ -501,7 +501,7 @@
           "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:234",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:251",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -543,7 +543,7 @@
     },
     {
       "name": "neutrino.theta_12_pred",
-      "value": 33.59329049922625,
+      "value": 34.285533439123924,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1564",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
@@ -556,7 +556,7 @@
           "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:228",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:245",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -604,7 +604,7 @@
     },
     {
       "name": "neutrino.theta_13_pred",
-      "value": 8.647304725338865,
+      "value": 8.357480095666395,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1595",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
@@ -617,7 +617,7 @@
           "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:230",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:247",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -671,7 +671,7 @@
     },
     {
       "name": "neutrino.theta_23_pred",
-      "value": 49.75,
+      "value": 50.988236884802596,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\neutrino_mixing.py:1626",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
@@ -690,7 +690,7 @@
           "detail": "listed in GATE_EVAL_SPECS: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:232",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:249",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -739,7 +739,7 @@
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:235",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:252",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -813,7 +813,7 @@
           "detail": "self.H0_local is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
         },
         {
-          "location": "src\\metaphysica\\simulations\\core\\free_set.py:235",
+          "location": "src\\metaphysica\\simulations\\core\\free_set.py:252",
           "function": "duplicate_groups",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
@@ -912,7 +912,7 @@
     },
     {
       "name": "algebra.freudenthal_quartic",
-      "value": 12.641975308641973,
+      "value": 130.26981405273585,
       "location": "src\\metaphysica\\simulations\\PM\\algebra\\freudenthal_triple.py:248",
       "status": "ANSATZ",
       "source_kind": "PARAMETER_CALL",
@@ -1043,7 +1043,7 @@
     },
     {
       "name": "ckm.V_us_triality",
-      "value": 0.22450008639436136,
+      "value": 0.22415560226305503,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1114",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
@@ -1055,7 +1055,7 @@
     },
     {
       "name": "ckm.jarlskog_triality",
-      "value": 3.143181574832559e-05,
+      "value": 4.311625961031884e-05,
       "location": "src\\metaphysica\\simulations\\PM\\particle\\octonionic_mixing.py:1182",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
@@ -1218,7 +1218,7 @@
     },
     {
       "name": "cosmology.wa_thawing",
-      "value": -0.8164965809277261,
+      "value": -0.6099942813304187,
       "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:1388",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",

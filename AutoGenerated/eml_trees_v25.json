@@ -69,7 +69,7 @@
     "D_top": {
       "b3_traceback": true,
       "formula": "G2 entropy dilution D_top = exp(-b3 / 2) from associative 3-cycle volume Vol(Y3) = b3 / 2",
-      "value": 6.14421235332821e-06
+      "value": 4.5990553786523166e-10
     },
     "epsilon_L": {
       "b3_traceback": false,
@@ -79,19 +79,19 @@
     "eta_B": {
       "b3_traceback": true,
       "formula": "epsilon_L * (28/79) * exp(-b3/2) * (Gamma / H) from moduli decay + G2 dilution + sphaleron",
-      "value": 2.3018305698236694e-10
+      "value": 1.722962302427502e-14
     },
     "full_baryogenesis_solution": {
       "b3_traceback": false,
       "formula": "T1.2 canonical: v18 G2 cycle asymmetry + Jarlskog (secondary_estimate: Sprint 6.2 moduli decay + dilution + sphaleron)",
       "value": {
-        "D_top": 6.14421235332821e-06,
+        "D_top": 4.5990553786523166e-10,
         "epsilon_L": 0.001754624884408279,
-        "eta_B": 6.185164569435048e-10,
+        "eta_B": 6.846485445932354e-10,
         "eta_B_source": "BaryonAsymmetryV18 (G2 cycle asymmetry + Jarlskog), T1.2 canonical",
         "observed_comparison": "eta_B ~ 6.19e-10 (canonical, v18 geometric) vs. observed 6.12e-10 -- within 1.1 % (2.2 sigma)",
         "secondary_estimate": {
-          "eta_B": 2.3018305698236694e-10,
+          "eta_B": 1.722962302427502e-14,
           "label": "Sprint 6.2 moduli decay + G2 dilution + sphaleron",
           "note": "Cross-check value (~2.3e-10) -- factor ~2.6 below observation; retained for diagnostics. Canonical eta_B comes from BaryonAsymmetryV18."
         }
