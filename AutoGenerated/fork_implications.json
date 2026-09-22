@@ -1,0 +1,961 @@
+{
+  "generator": "fork_implications",
+  "adopted_selection": {
+    "b3_origin": "derived_joyce_a1",
+    "b3_seed": "seed_43_joyce",
+    "bulk_signature": "24_2",
+    "chi_eff_route": "unruled",
+    "dark_energy_betti": "b3_24",
+    "face_genericity": "generic",
+    "flavour_seed_coupling": "follow_seed",
+    "g2_construction": "joyce_orbifold",
+    "g2_form_convention": "all_plus_one",
+    "joyce_contribution_table": "absent",
+    "lattice_24d": "leech",
+    "metric_construction": "quadratic_contraction",
+    "moduli_indexing": "b3_clusters",
+    "n_gen_source": "b2_over_faces",
+    "re_t_adoption": "calibrated",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "twisted_norm_convention": "orbit_sum"
+  },
+  "adopted_digest": "4575eb450af9e9d8",
+  "n_forks": 18,
+  "n_deviations": 50,
+  "watched": {
+    "observables": [
+      "ancestral_roots",
+      "axion_g_a_gamma_GeV",
+      "axion_window_status",
+      "free_set_size",
+      "lattice_kissing_number",
+      "phi_annihilator_dim",
+      "racetrack_Re_T",
+      "seed_b2",
+      "seed_b3",
+      "theta_13_deg"
+    ],
+    "identities": [
+      "alpha_f_curvature_coefficient",
+      "ancestral_roots_from_so_n",
+      "bridge_pairs_half_b3",
+      "chi_eff_over_b3_is_three",
+      "chi_pressure_from_b3_squared",
+      "d_bulk_is_b3_plus_two",
+      "hidden_supports_seven_b3_minus_five",
+      "modular_anomaly_b3_mod_24",
+      "n_eff_cycles_b3_minus_14",
+      "n_gen_from_b2_over_faces",
+      "n_gen_from_b3_over_eight",
+      "reachability_b3_is_seven_plus_three_b2",
+      "roots_total_twelve_b3",
+      "shadow_dim_half_b3_plus_one",
+      "shadow_torsion_total_is_b3"
+    ],
+    "gates": [
+      "gate_G01_integer_root_parity",
+      "gate_G13_photon_zero_mass",
+      "gate_G17_generation_triality",
+      "gate_G22_gluon_string_tension",
+      "gate_G23_proton_stability_floor",
+      "gate_G29_weak_hypercharge",
+      "gate_G32_wz_gut_ratio",
+      "gate_G40_sterile_active_mixing"
+    ]
+  },
+  "artifact_bound_gates": [
+    "gate_G01_integer_root_parity",
+    "gate_G23_proton_stability_floor"
+  ],
+  "artifact_bound_observables": [
+    "free_set_size"
+  ],
+  "rows": [
+    {
+      "fork": "b3_origin",
+      "option": "arc_flag_stabiliser",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "b3_origin",
+      "option": "d4_root_shell",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "b3_origin",
+      "option": "derived_joyce_a1",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "b3_origin",
+      "option": "input_24",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "b3_origin",
+      "option": "joyce_twisted_sector",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "b3_seed",
+      "option": "seed_19_joyce",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [
+        {
+          "observable": "ancestral_roots",
+          "adopted": 915,
+          "deviated": 183,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_g_a_gamma_GeV",
+          "adopted": 2.6884918153374434e-11,
+          "deviated": 1.1879382439863122e-11,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_window_status",
+          "adopted": "ABOVE the BabyIAXO/IAXO discovery window (2.688492e-11 > 2.0e-11 GeV^-1) -- the in-window claim does NOT hold on this branch",
+          "deviated": "lies within BabyIAXO/IAXO discovery window (8.0e-12 < 1.187938e-11 < 2.0e-11 GeV^-1)",
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "free_set_size",
+          "adopted": 39,
+          "deviated": 40,
+          "artifact_bound": true,
+          "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
+        },
+        {
+          "observable": "seed_b2",
+          "adopted": 12,
+          "deviated": 4,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "seed_b3",
+          "adopted": 43,
+          "deviated": 19,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "theta_13_deg",
+          "adopted": 4.835067770441071,
+          "deviated": 10.956137634152538,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [
+        {
+          "identity": "n_gen_from_b2_over_faces",
+          "adopted": "HOLDS",
+          "deviated": "BROKEN"
+        }
+      ],
+      "gates_changed": [
+        {
+          "gate": "gate_G17_generation_triality",
+          "adopted": "PASS",
+          "deviated": "FAIL",
+          "artifact_bound": false
+        }
+      ],
+      "n_changes": 9
+    },
+    {
+      "fork": "b3_seed",
+      "option": "seed_24",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [
+        {
+          "observable": "ancestral_roots",
+          "adopted": 915,
+          "deviated": 288,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_g_a_gamma_GeV",
+          "adopted": 2.6884918153374434e-11,
+          "deviated": 1.5005535713511313e-11,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_window_status",
+          "adopted": "ABOVE the BabyIAXO/IAXO discovery window (2.688492e-11 > 2.0e-11 GeV^-1) -- the in-window claim does NOT hold on this branch",
+          "deviated": "lies within BabyIAXO/IAXO discovery window (8.0e-12 < 1.500554e-11 < 2.0e-11 GeV^-1)",
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "free_set_size",
+          "adopted": 39,
+          "deviated": 40,
+          "artifact_bound": true,
+          "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
+        },
+        {
+          "observable": "seed_b2",
+          "adopted": 12,
+          "deviated": 4,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "seed_b3",
+          "adopted": 43,
+          "deviated": 24,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "theta_13_deg",
+          "adopted": 4.835067770441071,
+          "deviated": 8.668576499284981,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [
+        {
+          "identity": "alpha_f_curvature_coefficient",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "ancestral_roots_from_so_n",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "bridge_pairs_half_b3",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "chi_pressure_from_b3_squared",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "d_bulk_is_b3_plus_two",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "hidden_supports_seven_b3_minus_five",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "modular_anomaly_b3_mod_24",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "n_eff_cycles_b3_minus_14",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "n_gen_from_b2_over_faces",
+          "adopted": "HOLDS",
+          "deviated": "BROKEN"
+        },
+        {
+          "identity": "n_gen_from_b3_over_eight",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "reachability_b3_is_seven_plus_three_b2",
+          "adopted": "HOLDS",
+          "deviated": "BROKEN"
+        },
+        {
+          "identity": "roots_total_twelve_b3",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "shadow_dim_half_b3_plus_one",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        },
+        {
+          "identity": "shadow_torsion_total_is_b3",
+          "adopted": "BROKEN",
+          "deviated": "HOLDS"
+        }
+      ],
+      "gates_changed": [
+        {
+          "gate": "gate_G17_generation_triality",
+          "adopted": "PASS",
+          "deviated": "FAIL",
+          "artifact_bound": false
+        }
+      ],
+      "n_changes": 22
+    },
+    {
+      "fork": "b3_seed",
+      "option": "seed_31_joyce",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [
+        {
+          "observable": "ancestral_roots",
+          "adopted": 915,
+          "deviated": 477,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_g_a_gamma_GeV",
+          "adopted": 2.6884918153374434e-11,
+          "deviated": 1.9382150296618782e-11,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_window_status",
+          "adopted": "ABOVE the BabyIAXO/IAXO discovery window (2.688492e-11 > 2.0e-11 GeV^-1) -- the in-window claim does NOT hold on this branch",
+          "deviated": "lies within BabyIAXO/IAXO discovery window (8.0e-12 < 1.938215e-11 < 2.0e-11 GeV^-1)",
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "free_set_size",
+          "adopted": 39,
+          "deviated": 40,
+          "artifact_bound": true,
+          "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
+        },
+        {
+          "observable": "seed_b2",
+          "adopted": 12,
+          "deviated": 8,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "seed_b3",
+          "adopted": 43,
+          "deviated": 31,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "theta_13_deg",
+          "adopted": 4.835067770441071,
+          "deviated": 6.708560011038927,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [
+        {
+          "identity": "n_gen_from_b2_over_faces",
+          "adopted": "HOLDS",
+          "deviated": "BROKEN"
+        }
+      ],
+      "gates_changed": [
+        {
+          "gate": "gate_G17_generation_triality",
+          "adopted": "PASS",
+          "deviated": "FAIL",
+          "artifact_bound": false
+        }
+      ],
+      "n_changes": 9
+    },
+    {
+      "fork": "b3_seed",
+      "option": "seed_43_joyce",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "b3_seed",
+      "option": "seed_7_joyce",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [
+        {
+          "observable": "ancestral_roots",
+          "adopted": 915,
+          "deviated": 33,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_g_a_gamma_GeV",
+          "adopted": 2.6884918153374434e-11,
+          "deviated": 4.376614583107467e-12,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_window_status",
+          "adopted": "ABOVE the BabyIAXO/IAXO discovery window (2.688492e-11 > 2.0e-11 GeV^-1) -- the in-window claim does NOT hold on this branch",
+          "deviated": "below the BabyIAXO/IAXO discovery window (4.376615e-12 < 8.0e-12 GeV^-1)",
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "free_set_size",
+          "adopted": 39,
+          "deviated": 40,
+          "artifact_bound": true,
+          "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
+        },
+        {
+          "observable": "seed_b2",
+          "adopted": 12,
+          "deviated": 0,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "seed_b3",
+          "adopted": 43,
+          "deviated": 7,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "theta_13_deg",
+          "adopted": 4.835067770441071,
+          "deviated": 30.066564681511473,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [
+        {
+          "identity": "n_gen_from_b2_over_faces",
+          "adopted": "HOLDS",
+          "deviated": "BROKEN"
+        }
+      ],
+      "gates_changed": [
+        {
+          "gate": "gate_G17_generation_triality",
+          "adopted": "PASS",
+          "deviated": "FAIL",
+          "artifact_bound": false
+        }
+      ],
+      "n_changes": 9
+    },
+    {
+      "fork": "bulk_signature",
+      "option": "24_2",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "bulk_signature",
+      "option": "25_1",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "bulk_signature",
+      "option": "26_2",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "chi_eff_route",
+      "option": "constant_144",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [
+        {
+          "identity": "chi_eff_over_b3_is_three",
+          "adopted": "NOT_EVALUABLE",
+          "deviated": "BROKEN"
+        }
+      ],
+      "gates_changed": [],
+      "n_changes": 1
+    },
+    {
+      "fork": "chi_eff_route",
+      "option": "seed_dependent",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [
+        {
+          "identity": "chi_eff_over_b3_is_three",
+          "adopted": "NOT_EVALUABLE",
+          "deviated": "BROKEN"
+        }
+      ],
+      "gates_changed": [],
+      "n_changes": 1
+    },
+    {
+      "fork": "chi_eff_route",
+      "option": "unruled",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "b2_4",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "b3_24",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "bridges_12",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "chi_over_b3_6",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "ngen_3",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "octonion_8",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "face_genericity",
+      "option": "all",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "face_genericity",
+      "option": "generic",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "flavour_seed_coupling",
+      "option": "calibrated_24",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [
+        {
+          "observable": "axion_g_a_gamma_GeV",
+          "adopted": 2.6884918153374434e-11,
+          "deviated": 1.5005535713511313e-11,
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "axion_window_status",
+          "adopted": "ABOVE the BabyIAXO/IAXO discovery window (2.688492e-11 > 2.0e-11 GeV^-1) -- the in-window claim does NOT hold on this branch",
+          "deviated": "lies within BabyIAXO/IAXO discovery window (8.0e-12 < 1.500554e-11 < 2.0e-11 GeV^-1)",
+          "artifact_bound": false,
+          "reading": "live"
+        },
+        {
+          "observable": "theta_13_deg",
+          "adopted": 4.835067770441071,
+          "deviated": 8.668576499284981,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 3
+    },
+    {
+      "fork": "flavour_seed_coupling",
+      "option": "follow_seed",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "g2_construction",
+      "option": "fano_tcs",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "g2_construction",
+      "option": "joyce_orbifold",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "g2_form_convention",
+      "option": "all_plus_one",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "g2_form_convention",
+      "option": "octonion_derived",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [
+        {
+          "observable": "phi_annihilator_dim",
+          "adopted": 6,
+          "deviated": 14,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 1
+    },
+    {
+      "fork": "joyce_contribution_table",
+      "option": "absent",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "joyce_contribution_table",
+      "option": "supplied",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "lattice_24d",
+      "option": "leech",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "lattice_24d",
+      "option": "niemeier_e8x3",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [
+        {
+          "observable": "lattice_kissing_number",
+          "adopted": 196560,
+          "deviated": 720,
+          "artifact_bound": false,
+          "reading": "live"
+        }
+      ],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 1
+    },
+    {
+      "fork": "metric_construction",
+      "option": "hitchin_cubic",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "metric_construction",
+      "option": "quadratic_contraction",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "moduli_indexing",
+      "option": "b2_gauge",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "moduli_indexing",
+      "option": "b3_clusters",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "moduli_indexing",
+      "option": "cy3_shadow",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "n_gen_source",
+      "option": "b2_over_faces",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "n_gen_source",
+      "option": "b3_over_dim_O",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [
+        {
+          "observable": "free_set_size",
+          "adopted": 39,
+          "deviated": 40,
+          "artifact_bound": true,
+          "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
+        }
+      ],
+      "identities_flipped": [],
+      "gates_changed": [
+        {
+          "gate": "gate_G17_generation_triality",
+          "adopted": "PASS",
+          "deviated": "ERROR: ValueError",
+          "artifact_bound": false
+        }
+      ],
+      "n_changes": 2
+    },
+    {
+      "fork": "re_t_adoption",
+      "option": "calibrated",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "re_t_adoption",
+      "option": "computed_vacuum",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "render_policy",
+      "option": "permissive",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "render_policy",
+      "option": "strict",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "theory_uncertainty_policy",
+      "option": "always",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "theory_uncertainty_policy",
+      "option": "cited_only",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "theory_uncertainty_policy",
+      "option": "experimental_only",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "twisted_norm_convention",
+      "option": "orbit_average",
+      "is_adopted_option": false,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "twisted_norm_convention",
+      "option": "orbit_sum",
+      "is_adopted_option": true,
+      "fork_status": "OPEN",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    }
+  ],
+  "ordering": "fork id, then option id; never by how much a deviation improves agreement with any anchor",
+  "verdict": "NO_SELECTION_MADE",
+  "note": "A deviation row is a cost statement, not a recommendation. Rows whose only movement is in an artifact_bound gate are reporting the build artifact, not the deviation."
+}

@@ -1,0 +1,1306 @@
+{
+  "generator": "racetrack_pairs",
+  "menu": [
+    {
+      "n": 3,
+      "counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source"
+    },
+    {
+      "n": 4,
+      "counts": "faces of K_4, derived as the moved coordinates of an involution"
+    },
+    {
+      "n": 7,
+      "counts": "flat b_3 contribution of the Joyce orbifold (R3)"
+    },
+    {
+      "n": 12,
+      "counts": "b_2 on the adopted profile; also the K_4 directed-edge count"
+    },
+    {
+      "n": 24,
+      "counts": "the BULK's spacelike core dimensions at signature (24,2)"
+    },
+    {
+      "n": 26,
+      "counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2"
+    },
+    {
+      "n": 36,
+      "counts": "3 x 12; a hidden-sector rank the register names as a candidate"
+    },
+    {
+      "n": 43,
+      "counts": "b_3 on the adopted profile"
+    }
+  ],
+  "n_pairs": 28,
+  "kahler_slopes": [
+    3,
+    7
+  ],
+  "trials_factor": 56,
+  "trials_note": "56 solves were run. Any agreement between a row's Re(T) and an incumbent value must be read against that factor: at 1-in-56 a near-hit is expected and means nothing. The factor is published as a field, not a footnote, because an enumeration whose cost is not stated is a fit wearing a table.",
+  "held_fixed": {
+    "A": 1.0,
+    "B": -0.5,
+    "why": "B/A is the one continuous knob in this potential. Letting it float per pair would make this a two-parameter fit rather than an enumeration of exponent choices."
+  },
+  "window": {
+    "lo": 0.5,
+    "hi": 300.0,
+    "samples": 60000
+  },
+  "rows": [
+    {
+      "pair": "3_4",
+      "N1": 3,
+      "N2": 4,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 1.5707963267948966,
+          "ordering_restored": true,
+          "n_stationary_points": 13279,
+          "n_minima": 1,
+          "n_saddles": 13278,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.6927779605200381,
+          "V_at_minimum": -2.92415518189996e-06,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.241366133417534,
+          "susy_roots": [
+            1.692778
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 1.5707963267948966,
+          "ordering_restored": true,
+          "n_stationary_points": 14889,
+          "n_minima": 1,
+          "n_saddles": 14888,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.5703785734322264,
+          "V_at_minimum": -2.6280195673711418e-08,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.9470874991635823,
+          "susy_roots": [
+            1.570379
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "3_7",
+      "N1": 3,
+      "N2": 7,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 0.8975979010256552,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.8990270618268761,
+          "V_at_minimum": -0.0025985795069803645,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.6640666370198676,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 0.8975979010256552,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.7403475164694215,
+          "V_at_minimum": -0.0003915836343426131,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.1092284446394287,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "3_12",
+      "N1": 3,
+      "N2": 12,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 0.5235987755982988,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.7491271755195854,
+          "V_at_minimum": -0.014961445065448754,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.7460691455586064,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 0.5235987755982988,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.5774763459134782,
+          "V_at_minimum": -0.005544283942643441,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 0.9562692114154898,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "3_24",
+      "N1": 3,
+      "N2": 24,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6818717986092115,
+          "V_at_minimum": -0.03768534151220547,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.0027852150108503,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 1,
+          "n_minima": 0,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": null,
+          "V_at_minimum": null,
+          "vacuum_energy_sign": null,
+          "re_t_saddle": 0.8928381928334326,
+          "susy_roots": [],
+          "structure": "SADDLE(S) ONLY -- no minimum over the declared window"
+        }
+      }
+    },
+    {
+      "pair": "3_26",
+      "N1": 3,
+      "N2": 26,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6775667239084164,
+          "V_at_minimum": -0.040172209166479345,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.037373906936435,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 1,
+          "n_minima": 0,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": null,
+          "V_at_minimum": null,
+          "vacuum_energy_sign": null,
+          "re_t_saddle": 0.8890402448503796,
+          "susy_roots": [],
+          "structure": "SADDLE(S) ONLY -- no minimum over the declared window"
+        }
+      }
+    },
+    {
+      "pair": "3_36",
+      "N1": 3,
+      "N2": 36,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6639724465014072,
+          "V_at_minimum": -0.04939951070319551,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.1843734365682295,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 1,
+          "n_minima": 0,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": null,
+          "V_at_minimum": null,
+          "vacuum_energy_sign": null,
+          "re_t_saddle": 0.8773765656285044,
+          "susy_roots": [],
+          "structure": "SADDLE(S) ONLY -- no minimum over the declared window"
+        }
+      }
+    },
+    {
+      "pair": "3_43",
+      "N1": 3,
+      "N2": 43,
+      "N1_counts": "generations; n_gen = b_2/4 = rank(Gamma), the RULED n_gen_source",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 2.0943951023931953,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6585519066017482,
+          "V_at_minimum": -0.05376935717476142,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.2680790151762915,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 2.0943951023931953,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 1,
+          "n_minima": 0,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": null,
+          "V_at_minimum": null,
+          "vacuum_energy_sign": null,
+          "re_t_saddle": 0.8728891226200368,
+          "susy_roots": [],
+          "structure": "SADDLE(S) ONLY -- no minimum over the declared window"
+        }
+      }
+    },
+    {
+      "pair": "4_7",
+      "N1": 4,
+      "N2": 7,
+      "N1_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "N2_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 1.5707963267948966,
+          "b": 0.8975979010256552,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.477562892243193,
+          "V_at_minimum": -0.0001388021502830564,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.3442032144994878,
+          "susy_roots": [
+            1.477563
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 1.5707963267948966,
+          "b": 0.8975979010256552,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.2825704036428913,
+          "V_at_minimum": -2.516208177393578e-06,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.7725806048718367,
+          "susy_roots": [
+            1.28257
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "4_12",
+      "N1": 4,
+      "N2": 12,
+      "N1_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "N2_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 1.5707963267948966,
+          "b": 0.5235987755982988,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.078581115594436,
+          "V_at_minimum": -0.0030193454228016033,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.239487298322854,
+          "susy_roots": [
+            1.078581
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 1.5707963267948966,
+          "b": 0.5235987755982988,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.8575791348797239,
+          "V_at_minimum": -0.00024019087660229102,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.3549732970209147,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "4_24",
+      "N1": 4,
+      "N2": 24,
+      "N1_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "N2_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 1.5707963267948966,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.9357822311472628,
+          "V_at_minimum": -0.011923124750260538,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.5137139492902083,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 1.5707963267948966,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6990479623016426,
+          "V_at_minimum": -0.00197280106171636,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.214626757443023,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "4_26",
+      "N1": 4,
+      "N2": 26,
+      "N1_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "N2_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 1.5707963267948966,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.9272776892157832,
+          "V_at_minimum": -0.013052264194398451,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.555687855758535,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 1.5707963267948966,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6893141706336063,
+          "V_at_minimum": -0.0022696417277289567,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.206791864123261,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "4_36",
+      "N1": 4,
+      "N2": 36,
+      "N1_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "N2_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 1.5707963267948966,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.9009170912476951,
+          "V_at_minimum": -0.017430928446369745,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.7385633171613524,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 1.5707963267948966,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6587925632423786,
+          "V_at_minimum": -0.003556718733924622,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.1831962637658417,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "4_43",
+      "N1": 4,
+      "N2": 43,
+      "N1_counts": "faces of K_4, derived as the moved coordinates of an involution",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 1.5707963267948966,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.890617642199858,
+          "V_at_minimum": -0.01959683175191231,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.8448908835618196,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 1.5707963267948966,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 0,
+          "re_t_minimum": 0.6466959074633984,
+          "V_at_minimum": -0.0042680575377515295,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 1.1743250842427058,
+          "susy_roots": [],
+          "structure": "non-SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "7_12",
+      "N1": 7,
+      "N2": 12,
+      "N1_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "N2_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.8975979010256552,
+          "b": 0.5235987755982988,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 2.6411333686504834,
+          "V_at_minimum": -2.0853640947101276e-05,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.139130673743651,
+          "susy_roots": [
+            2.641133
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.8975979010256552,
+          "b": 0.5235987755982988,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 2.3027151170178124,
+          "V_at_minimum": -3.663582443988347e-08,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 3.1606477970532634,
+          "susy_roots": [
+            2.302715
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "7_24",
+      "N1": 7,
+      "N2": 24,
+      "N1_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "N2_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.8975979010256552,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.8135019182262444,
+          "V_at_minimum": -0.0008264800575779523,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 3.980255314497005,
+          "susy_roots": [
+            1.813502
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.8975979010256552,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.4198317220811756,
+          "V_at_minimum": -8.56243495353914e-06,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.2963859438296623,
+          "susy_roots": [
+            1.419832
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "7_26",
+      "N1": 7,
+      "N2": 26,
+      "N1_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "N2_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.8975979010256552,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.777244122164526,
+          "V_at_minimum": -0.0010034736533709081,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.026345925398957,
+          "susy_roots": [
+            1.777244
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.8975979010256552,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.3798824273016663,
+          "V_at_minimum": -1.1519291410788003e-05,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.2602148927482233,
+          "susy_roots": [
+            1.379882
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "7_36",
+      "N1": 7,
+      "N2": 36,
+      "N1_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "N2_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.8975979010256552,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.6716637432810666,
+          "V_at_minimum": -0.001817084677315543,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.265071519572363,
+          "susy_roots": [
+            1.671664
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.8975979010256552,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.2620002135659676,
+          "V_at_minimum": -2.8701965790162716e-05,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.1575281260742907,
+          "susy_roots": [
+            1.262
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "7_43",
+      "N1": 7,
+      "N2": 43,
+      "N1_counts": "flat b_3 contribution of the Joyce orbifold (R3)",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.8975979010256552,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.6330659378102608,
+          "V_at_minimum": -0.0022868528424745994,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.4203387891089925,
+          "susy_roots": [
+            1.633066
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.8975979010256552,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 1.2181319771850245,
+          "V_at_minimum": -4.095815674743239e-05,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 2.121384892504202,
+          "susy_roots": [
+            1.218132
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "12_24",
+      "N1": 12,
+      "N2": 24,
+      "N1_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "N2_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.5235987755982988,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 3.955785581500061,
+          "V_at_minimum": -1.6051165369608225e-05,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 6.766029374374764,
+          "susy_roots": [
+            3.955786
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.5235987755982988,
+          "b": 0.2617993877991494,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 3.3443660634496144,
+          "V_at_minimum": -6.0425781919128e-09,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.81406790327306,
+          "susy_roots": [
+            3.344366
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "12_26",
+      "N1": 12,
+      "N2": 26,
+      "N1_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "N2_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.5235987755982988,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 3.7504242666756973,
+          "V_at_minimum": -2.7032318492520214e-05,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 6.689521698514579,
+          "susy_roots": [
+            3.750424
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.5235987755982988,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 3.1261592579655426,
+          "V_at_minimum": -1.3047118716501175e-08,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.598269016257582,
+          "susy_roots": [
+            3.126159
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "12_36",
+      "N1": 12,
+      "N2": 36,
+      "N1_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "N2_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.5235987755982988,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 3.2357433471223107,
+          "V_at_minimum": -0.00011182760825191125,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 6.718461894703411,
+          "susy_roots": [
+            3.235743
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.5235987755982988,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 2.5727374044363973,
+          "V_at_minimum": -1.0982664682317803e-07,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 4.0649198912541245,
+          "susy_roots": [
+            2.572737
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "12_43",
+      "N1": 12,
+      "N2": 43,
+      "N1_counts": "b_2 on the adopted profile; also the K_4 directed-edge count",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.5235987755982988,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 3.073467845693724,
+          "V_at_minimum": -0.00018311776918368176,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 6.865561832783445,
+          "susy_roots": [
+            3.073468
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.5235987755982988,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 2.395048651110943,
+          "V_at_minimum": -2.3278783907064597e-07,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 3.9012764973035416,
+          "susy_roots": [
+            2.395049
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "24_26",
+      "N1": 24,
+      "N2": 26,
+      "N1_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "N2_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.2617993877991494,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 37.85273132366518,
+          "V_at_minimum": -8.748328786131585e-17,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 41.732212005409195,
+          "susy_roots": [
+            37.852731
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.2617993877991494,
+          "b": 0.241660973353061,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 37.31409033320861,
+          "V_at_minimum": -2.7447008173348452e-24,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 40.63558380356463,
+          "susy_roots": [
+            37.31409
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "24_36",
+      "N1": 24,
+      "N2": 36,
+      "N1_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "N2_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.2617993877991494,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 10.752790804562842,
+          "V_at_minimum": -8.35744415200868e-08,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 15.483517893247662,
+          "susy_roots": [
+            10.752791
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.2617993877991494,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 9.669947632757331,
+          "V_at_minimum": -4.961621944122071e-13,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 12.633685733907626,
+          "susy_roots": [
+            9.669948
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "24_43",
+      "N1": 24,
+      "N2": 43,
+      "N1_counts": "the BULK's spacelike core dimensions at signature (24,2)",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.2617993877991494,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 8.665143616792836,
+          "V_at_minimum": -8.101962636012526e-07,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 13.938226624129992,
+          "susy_roots": [
+            8.665144
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.2617993877991494,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 7.484724386155193,
+          "V_at_minimum": -1.2566748115021876e-11,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 10.423661017122363,
+          "susy_roots": [
+            7.484724
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "26_36",
+      "N1": 26,
+      "N2": 36,
+      "N1_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "N2_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.241660973353061,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 13.467459567584946,
+          "V_at_minimum": -1.2607866337622012e-08,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 18.338386941158603,
+          "susy_roots": [
+            13.46746
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.241660973353061,
+          "b": 0.17453292519943295,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 12.36494009556245,
+          "V_at_minimum": -2.897134163905852e-14,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 15.607567709937396,
+          "susy_roots": [
+            12.36494
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "26_43",
+      "N1": 26,
+      "N2": 43,
+      "N1_counts": "D_bulk, the bulk dimension at signature (24,2) = 24 + 2",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": true,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.241660973353061,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 10.208498434427568,
+          "V_at_minimum": -2.6965611135412205e-07,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 15.652901352060251,
+          "susy_roots": [
+            10.208498
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.241660973353061,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 8.971082886764346,
+          "V_at_minimum": -2.082326467058216e-12,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 12.16155710312021,
+          "susy_roots": [
+            8.971083
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    },
+    {
+      "pair": "36_43",
+      "N1": 36,
+      "N2": 43,
+      "N1_counts": "3 x 12; a hidden-sector rank the register names as a candidate",
+      "N2_counts": "b_3 on the adopted profile",
+      "is_the_adopted_pair": false,
+      "by_slope": {
+        "n_3": {
+          "kahler_slope": 3,
+          "a": 0.17453292519943295,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 29.123835104195564,
+          "V_at_minimum": -1.2064789123643609e-11,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 35.263647980012095,
+          "susy_roots": [
+            29.123835
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        },
+        "n_7": {
+          "kahler_slope": 7,
+          "a": 0.17453292519943295,
+          "b": 0.14612058853906015,
+          "ordering_restored": true,
+          "n_stationary_points": 2,
+          "n_minima": 1,
+          "n_saddles": 1,
+          "n_susy_roots": 1,
+          "re_t_minimum": 27.89803055789512,
+          "V_at_minimum": -1.1504155640137128e-18,
+          "vacuum_energy_sign": "AdS",
+          "re_t_saddle": 32.570364185200916,
+          "susy_roots": [
+            27.898031
+          ],
+          "structure": "SUSY AdS minimum with a barrier above it"
+        }
+      }
+    }
+  ],
+  "ordering": "pair name (N1, N2); never by agreement with any anchor",
+  "verdict": "NO_SELECTION_MADE",
+  "adopted": null,
+  "note": "Feeds the OPEN re_t_adoption ruling an option table. The adopted path's own exponents (b_3 = 43 against D_bulk = 26) give a > b FALSE and are not in this list, which enumerates ordered pairs N1 < N2 -- i.e. every way the lost ordering COULD be restored, not a claim that any of them should be."
+}

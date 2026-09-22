@@ -1,0 +1,772 @@
+{
+  "generator": "identity_ledger",
+  "adopted_branch": "seed_43_joyce",
+  "branches": [
+    "seed_19_joyce",
+    "seed_24",
+    "seed_31_joyce",
+    "seed_43_joyce",
+    "seed_7_joyce"
+  ],
+  "chi_eff_supplied": null,
+  "n_identities": 15,
+  "identities": [
+    {
+      "identity": "alpha_f_curvature_coefficient",
+      "claim": "1/b_3^2 = 1/576",
+      "counts": "b_3^2 counts ordered pairs of associative 3-cycles; the coefficient is claimed to be fixed 'from topology alone'.",
+      "claimed": 576,
+      "source": "PM.derivations.cosmology_sector_complete (alpha_F = 1/b3^2)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "alpha_f_curvature_coefficient",
+          "claim": "1/b_3^2 = 1/576",
+          "computed": 361,
+          "claimed": 576,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "alpha_f_curvature_coefficient",
+          "claim": "1/b_3^2 = 1/576",
+          "computed": 576,
+          "claimed": 576,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "alpha_f_curvature_coefficient",
+          "claim": "1/b_3^2 = 1/576",
+          "computed": 961,
+          "claimed": 576,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "alpha_f_curvature_coefficient",
+          "claim": "1/b_3^2 = 1/576",
+          "computed": 1849,
+          "claimed": 576,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "alpha_f_curvature_coefficient",
+          "claim": "1/b_3^2 = 1/576",
+          "computed": 49,
+          "claimed": 576,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "ancestral_roots_from_so_n",
+      "claim": "b_3(b_3-1)/2 + 2*12 - 12 = 288",
+      "counts": "b_3(b_3-1)/2 counts the generators of SO(n) on n transverse directions; 2*12 counts torsion pins over two shadow branes; -12 counts symmetry directions spent projecting onto the manifold. The identity holds only where n = 24, and whether n is b_3 or the BULK's 24 spacelike core dimensions is the open reading -- appendix_h reads it from topology.elder_kads.",
+      "claimed": 288,
+      "source": "PM.paper.appendices.appendix_h_288_roots.run",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "ancestral_roots_from_so_n",
+          "claim": "b_3(b_3-1)/2 + 2*12 - 12 = 288",
+          "computed": 183,
+          "claimed": 288,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "ancestral_roots_from_so_n",
+          "claim": "b_3(b_3-1)/2 + 2*12 - 12 = 288",
+          "computed": 288,
+          "claimed": 288,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "ancestral_roots_from_so_n",
+          "claim": "b_3(b_3-1)/2 + 2*12 - 12 = 288",
+          "computed": 477,
+          "claimed": 288,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "ancestral_roots_from_so_n",
+          "claim": "b_3(b_3-1)/2 + 2*12 - 12 = 288",
+          "computed": 915,
+          "claimed": 288,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "ancestral_roots_from_so_n",
+          "claim": "b_3(b_3-1)/2 + 2*12 - 12 = 288",
+          "computed": 33,
+          "claimed": 288,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "bridge_pairs_half_b3",
+      "claim": "P_12 = b_3/2 = 12",
+      "counts": "b_3/2 is claimed to count bridge PAIRS. 12 is independently the K_4 directed-edge count and the derived A1 T^3 family count (= b_2), and nothing shows those three 12s to be the same 12.",
+      "claimed": 12,
+      "source": "PM.paper.appendices.appendix_g_omega_seal (P_12 = b3/2)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "bridge_pairs_half_b3",
+          "claim": "P_12 = b_3/2 = 12",
+          "computed": 9.5,
+          "claimed": 12,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "bridge_pairs_half_b3",
+          "claim": "P_12 = b_3/2 = 12",
+          "computed": 12.0,
+          "claimed": 12,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "bridge_pairs_half_b3",
+          "claim": "P_12 = b_3/2 = 12",
+          "computed": 15.5,
+          "claimed": 12,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "bridge_pairs_half_b3",
+          "claim": "P_12 = b_3/2 = 12",
+          "computed": 21.5,
+          "claimed": 12,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "bridge_pairs_half_b3",
+          "claim": "P_12 = b_3/2 = 12",
+          "computed": 3.5,
+          "claimed": 12,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "chi_eff_over_b3_is_three",
+      "claim": "chi_eff / b_3 = 3",
+      "counts": "chi_eff is an effective Euler characteristic; b_3 counts associative 3-cycles; 3 is the generation count. This was one of the routes to n_gen and is NOT the ruled one (n_gen_source = b2_over_faces).",
+      "claimed": 3,
+      "source": "PM.geometry.chi_eff_branches; FormulasRegistry.n_gen (retired route)",
+      "chi_eff_dependent": true,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "chi_eff_over_b3_is_three",
+          "claim": "chi_eff / b_3 = 3",
+          "computed": null,
+          "claimed": 3,
+          "status": "NOT_EVALUABLE"
+        },
+        "seed_24": {
+          "identity": "chi_eff_over_b3_is_three",
+          "claim": "chi_eff / b_3 = 3",
+          "computed": null,
+          "claimed": 3,
+          "status": "NOT_EVALUABLE"
+        },
+        "seed_31_joyce": {
+          "identity": "chi_eff_over_b3_is_three",
+          "claim": "chi_eff / b_3 = 3",
+          "computed": null,
+          "claimed": 3,
+          "status": "NOT_EVALUABLE"
+        },
+        "seed_43_joyce": {
+          "identity": "chi_eff_over_b3_is_three",
+          "claim": "chi_eff / b_3 = 3",
+          "computed": null,
+          "claimed": 3,
+          "status": "NOT_EVALUABLE"
+        },
+        "seed_7_joyce": {
+          "identity": "chi_eff_over_b3_is_three",
+          "claim": "chi_eff / b_3 = 3",
+          "computed": null,
+          "claimed": 3,
+          "status": "NOT_EVALUABLE"
+        }
+      },
+      "status_on_adopted": "NOT_EVALUABLE",
+      "branches_holding": []
+    },
+    {
+      "identity": "chi_pressure_from_b3_squared",
+      "claim": "b_3^2 / 4 = 144",
+      "counts": "b_3^2/4 is claimed to give the pressure divisor 144. 144 also arrives as 2(h11 - h21 + h31), a route that does not reference the seed -- two derivations of one integer, agreeing only at 24.",
+      "claimed": 144,
+      "source": "PM.paper.appendices.appendix_h_288_roots (H.9 pressure divisor)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "chi_pressure_from_b3_squared",
+          "claim": "b_3^2 / 4 = 144",
+          "computed": 90.25,
+          "claimed": 144,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "chi_pressure_from_b3_squared",
+          "claim": "b_3^2 / 4 = 144",
+          "computed": 144.0,
+          "claimed": 144,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "chi_pressure_from_b3_squared",
+          "claim": "b_3^2 / 4 = 144",
+          "computed": 240.25,
+          "claimed": 144,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "chi_pressure_from_b3_squared",
+          "claim": "b_3^2 / 4 = 144",
+          "computed": 462.25,
+          "claimed": 144,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "chi_pressure_from_b3_squared",
+          "claim": "b_3^2 / 4 = 144",
+          "computed": 12.25,
+          "claimed": 144,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "d_bulk_is_b3_plus_two",
+      "claim": "D_bulk = b_3 + 2 = 26",
+      "counts": "b_3 counts associative 3-cycles; the +2 counts lightcone directions (time + longitudinal). 26 is the BULK dimension, ruled independently at signature (24,2). RECORDED BROKEN at the adoption: 26 - 43 = -17.",
+      "claimed": 26,
+      "source": "PM.geometry.modular_invariance; PM.validation.consistency_beacons",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "d_bulk_is_b3_plus_two",
+          "claim": "D_bulk = b_3 + 2 = 26",
+          "computed": 21,
+          "claimed": 26,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "d_bulk_is_b3_plus_two",
+          "claim": "D_bulk = b_3 + 2 = 26",
+          "computed": 26,
+          "claimed": 26,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "d_bulk_is_b3_plus_two",
+          "claim": "D_bulk = b_3 + 2 = 26",
+          "computed": 33,
+          "claimed": 26,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "d_bulk_is_b3_plus_two",
+          "claim": "D_bulk = b_3 + 2 = 26",
+          "computed": 45,
+          "claimed": 26,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "d_bulk_is_b3_plus_two",
+          "claim": "D_bulk = b_3 + 2 = 26",
+          "computed": 9,
+          "claimed": 26,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "hidden_supports_seven_b3_minus_five",
+      "claim": "7 b_3 - 5 = 163",
+      "counts": "163 is the hidden-support count (ancestral roots minus active residues). The 7 and the -5 are fitted integers, not counted objects -- which is why this row is the clearest coincidence in the ledger.",
+      "claimed": 163,
+      "source": "simulations.validation.eta_s_derivation_test (formula='7 * b3 - 5')",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "hidden_supports_seven_b3_minus_five",
+          "claim": "7 b_3 - 5 = 163",
+          "computed": 128,
+          "claimed": 163,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "hidden_supports_seven_b3_minus_five",
+          "claim": "7 b_3 - 5 = 163",
+          "computed": 163,
+          "claimed": 163,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "hidden_supports_seven_b3_minus_five",
+          "claim": "7 b_3 - 5 = 163",
+          "computed": 212,
+          "claimed": 163,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "hidden_supports_seven_b3_minus_five",
+          "claim": "7 b_3 - 5 = 163",
+          "computed": 296,
+          "claimed": 163,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "hidden_supports_seven_b3_minus_five",
+          "claim": "7 b_3 - 5 = 163",
+          "computed": 44,
+          "claimed": 163,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "modular_anomaly_b3_mod_24",
+      "claim": "b_3 = 0 (mod 24)",
+      "counts": "the modular anomaly condition asks b_3 to be divisible by 24, where 24 is the eta-function's transverse oscillator count -- a BULK property. Imposing it ON b_3 is the conflation itself.",
+      "claimed": 0,
+      "source": "PM.geometry.modular_invariance (modular-anomaly-condition)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "modular_anomaly_b3_mod_24",
+          "claim": "b_3 = 0 (mod 24)",
+          "computed": 19,
+          "claimed": 0,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "modular_anomaly_b3_mod_24",
+          "claim": "b_3 = 0 (mod 24)",
+          "computed": 0,
+          "claimed": 0,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "modular_anomaly_b3_mod_24",
+          "claim": "b_3 = 0 (mod 24)",
+          "computed": 7,
+          "claimed": 0,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "modular_anomaly_b3_mod_24",
+          "claim": "b_3 = 0 (mod 24)",
+          "computed": 19,
+          "claimed": 0,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "modular_anomaly_b3_mod_24",
+          "claim": "b_3 = 0 (mod 24)",
+          "computed": 7,
+          "claimed": 0,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "n_eff_cycles_b3_minus_14",
+      "claim": "N_eff = b_3 - 14 = 10",
+      "counts": "b_3 counts 3-cycles; 14 is subtracted as the dimension of g_2. A cycle count minus a Lie-algebra dimension is a subtraction between different kinds of object.",
+      "claimed": 10,
+      "source": "PM.derivations.cosmology_sector_complete (N_eff = b3 - 14)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "n_eff_cycles_b3_minus_14",
+          "claim": "N_eff = b_3 - 14 = 10",
+          "computed": 5,
+          "claimed": 10,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "n_eff_cycles_b3_minus_14",
+          "claim": "N_eff = b_3 - 14 = 10",
+          "computed": 10,
+          "claimed": 10,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "n_eff_cycles_b3_minus_14",
+          "claim": "N_eff = b_3 - 14 = 10",
+          "computed": 17,
+          "claimed": 10,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "n_eff_cycles_b3_minus_14",
+          "claim": "N_eff = b_3 - 14 = 10",
+          "computed": 29,
+          "claimed": 10,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "n_eff_cycles_b3_minus_14",
+          "claim": "N_eff = b_3 - 14 = 10",
+          "computed": -7,
+          "claimed": 10,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "n_gen_from_b2_over_faces",
+      "claim": "b_2 / 4 = 3",
+      "counts": "b_2 counts exceptional 2-classes (one per A1 T^3 family); 4 counts the faces of K_4, derived as the moved coordinates of an involution. This is the RULED n_gen_source.",
+      "claimed": 3,
+      "source": "PM.geometry.b3_path.n_gen_report; variants fork n_gen_source",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "n_gen_from_b2_over_faces",
+          "claim": "b_2 / 4 = 3",
+          "computed": 1.0,
+          "claimed": 3,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "n_gen_from_b2_over_faces",
+          "claim": "b_2 / 4 = 3",
+          "computed": 1.0,
+          "claimed": 3,
+          "status": "BROKEN"
+        },
+        "seed_31_joyce": {
+          "identity": "n_gen_from_b2_over_faces",
+          "claim": "b_2 / 4 = 3",
+          "computed": 2.0,
+          "claimed": 3,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "n_gen_from_b2_over_faces",
+          "claim": "b_2 / 4 = 3",
+          "computed": 3.0,
+          "claimed": 3,
+          "status": "HOLDS"
+        },
+        "seed_7_joyce": {
+          "identity": "n_gen_from_b2_over_faces",
+          "claim": "b_2 / 4 = 3",
+          "computed": 0.0,
+          "claimed": 3,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "HOLDS",
+      "branches_holding": [
+        "seed_43_joyce"
+      ]
+    },
+    {
+      "identity": "n_gen_from_b3_over_eight",
+      "claim": "b_3 / 8 = 3",
+      "counts": "b_3 counts 3-cycles; 8 is dim(O). REFUTED ROUTE, kept runnable and labelled: it is not the ruled n_gen_source, and a generation count is a number of things, so a non-integer here is a structural failure rather than a disagreement with data.",
+      "claimed": 3,
+      "source": "PM.geometry.chi_eff_branches.route_c_is_the_b3_over_8_route",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "n_gen_from_b3_over_eight",
+          "claim": "b_3 / 8 = 3",
+          "computed": 2.375,
+          "claimed": 3,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "n_gen_from_b3_over_eight",
+          "claim": "b_3 / 8 = 3",
+          "computed": 3.0,
+          "claimed": 3,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "n_gen_from_b3_over_eight",
+          "claim": "b_3 / 8 = 3",
+          "computed": 3.875,
+          "claimed": 3,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "n_gen_from_b3_over_eight",
+          "claim": "b_3 / 8 = 3",
+          "computed": 5.375,
+          "claimed": 3,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "n_gen_from_b3_over_eight",
+          "claim": "b_3 / 8 = 3",
+          "computed": 0.875,
+          "claimed": 3,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "reachability_b3_is_seven_plus_three_b2",
+      "claim": "b_3 = 7 + 3 b_2",
+      "counts": "7 counts the flat b_3 contribution of the Joyce orbifold; 3 counts the 3-cycles each resolved A1 T^3 family contributes; b_2 counts those families. This is the REACHABILITY relation, and it is the criterion that excludes seed_24 -- so it is expected to hold on the Joyce family and fail off it.",
+      "claimed": 0,
+      "source": "PM.geometry.derived_contribution_table; b3_path.PATHS",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "reachability_b3_is_seven_plus_three_b2",
+          "claim": "b_3 = 7 + 3 b_2",
+          "computed": 0,
+          "claimed": 0,
+          "status": "HOLDS"
+        },
+        "seed_24": {
+          "identity": "reachability_b3_is_seven_plus_three_b2",
+          "claim": "b_3 = 7 + 3 b_2",
+          "computed": 5,
+          "claimed": 0,
+          "status": "BROKEN"
+        },
+        "seed_31_joyce": {
+          "identity": "reachability_b3_is_seven_plus_three_b2",
+          "claim": "b_3 = 7 + 3 b_2",
+          "computed": 0,
+          "claimed": 0,
+          "status": "HOLDS"
+        },
+        "seed_43_joyce": {
+          "identity": "reachability_b3_is_seven_plus_three_b2",
+          "claim": "b_3 = 7 + 3 b_2",
+          "computed": 0,
+          "claimed": 0,
+          "status": "HOLDS"
+        },
+        "seed_7_joyce": {
+          "identity": "reachability_b3_is_seven_plus_three_b2",
+          "claim": "b_3 = 7 + 3 b_2",
+          "computed": 0,
+          "claimed": 0,
+          "status": "HOLDS"
+        }
+      },
+      "status_on_adopted": "HOLDS",
+      "branches_holding": [
+        "seed_19_joyce",
+        "seed_31_joyce",
+        "seed_43_joyce",
+        "seed_7_joyce"
+      ]
+    },
+    {
+      "identity": "roots_total_twelve_b3",
+      "claim": "R_288 = 12 b_3 = 288",
+      "counts": "12 is the bridge count (K_4 directed edges); b_3 counts 3-cycles. Gives 288 at b_3 = 24, the SAME integer the SO(n) route gives -- two unrelated routes agreeing at one seed.",
+      "claimed": 288,
+      "source": "PM.qed._triple_track; PM.paper.appendices.appendix_g_omega_seal",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "roots_total_twelve_b3",
+          "claim": "R_288 = 12 b_3 = 288",
+          "computed": 228,
+          "claimed": 288,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "roots_total_twelve_b3",
+          "claim": "R_288 = 12 b_3 = 288",
+          "computed": 288,
+          "claimed": 288,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "roots_total_twelve_b3",
+          "claim": "R_288 = 12 b_3 = 288",
+          "computed": 372,
+          "claimed": 288,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "roots_total_twelve_b3",
+          "claim": "R_288 = 12 b_3 = 288",
+          "computed": 516,
+          "claimed": 288,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "roots_total_twelve_b3",
+          "claim": "R_288 = 12 b_3 = 288",
+          "computed": 84,
+          "claimed": 288,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "shadow_dim_half_b3_plus_one",
+      "claim": "13 = b_3/2 + 1",
+      "counts": "13 is the shadow-brane dimension (12 bridge dims + 1 time), ruled as half of the 26D bulk. Deriving it from b_3 makes a BULK quantity depend on the seed.",
+      "claimed": 13,
+      "source": "PM.paper.appendices.appendix_c_gauge_matrices (I_13 rank)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "shadow_dim_half_b3_plus_one",
+          "claim": "13 = b_3/2 + 1",
+          "computed": 10.5,
+          "claimed": 13,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "shadow_dim_half_b3_plus_one",
+          "claim": "13 = b_3/2 + 1",
+          "computed": 13.0,
+          "claimed": 13,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "shadow_dim_half_b3_plus_one",
+          "claim": "13 = b_3/2 + 1",
+          "computed": 16.5,
+          "claimed": 13,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "shadow_dim_half_b3_plus_one",
+          "claim": "13 = b_3/2 + 1",
+          "computed": 22.5,
+          "claimed": 13,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "shadow_dim_half_b3_plus_one",
+          "claim": "13 = b_3/2 + 1",
+          "computed": 4.5,
+          "claimed": 13,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    },
+    {
+      "identity": "shadow_torsion_total_is_b3",
+      "claim": "tau_24 = b_3 = 24",
+      "counts": "tau_24 counts torsion pins, 12 per shadow brane over two branes. Binding it to b_3 is the conflation that made strategy_a's G22 read reg.b3 for a quantity its own header calls shadow_pins.",
+      "claimed": 24,
+      "source": "PM.paper.appendices.appendix_g_omega_seal (tau_24 = b3)",
+      "chi_eff_dependent": false,
+      "per_branch": {
+        "seed_19_joyce": {
+          "identity": "shadow_torsion_total_is_b3",
+          "claim": "tau_24 = b_3 = 24",
+          "computed": 19,
+          "claimed": 24,
+          "status": "BROKEN"
+        },
+        "seed_24": {
+          "identity": "shadow_torsion_total_is_b3",
+          "claim": "tau_24 = b_3 = 24",
+          "computed": 24,
+          "claimed": 24,
+          "status": "HOLDS"
+        },
+        "seed_31_joyce": {
+          "identity": "shadow_torsion_total_is_b3",
+          "claim": "tau_24 = b_3 = 24",
+          "computed": 31,
+          "claimed": 24,
+          "status": "BROKEN"
+        },
+        "seed_43_joyce": {
+          "identity": "shadow_torsion_total_is_b3",
+          "claim": "tau_24 = b_3 = 24",
+          "computed": 43,
+          "claimed": 24,
+          "status": "BROKEN"
+        },
+        "seed_7_joyce": {
+          "identity": "shadow_torsion_total_is_b3",
+          "claim": "tau_24 = b_3 = 24",
+          "computed": 7,
+          "claimed": 24,
+          "status": "BROKEN"
+        }
+      },
+      "status_on_adopted": "BROKEN",
+      "branches_holding": [
+        "seed_24"
+      ]
+    }
+  ],
+  "holds_on_adopted": [
+    "n_gen_from_b2_over_faces",
+    "reachability_b3_is_seven_plus_three_b2"
+  ],
+  "broken_on_adopted": [
+    "alpha_f_curvature_coefficient",
+    "ancestral_roots_from_so_n",
+    "bridge_pairs_half_b3",
+    "chi_pressure_from_b3_squared",
+    "d_bulk_is_b3_plus_two",
+    "hidden_supports_seven_b3_minus_five",
+    "modular_anomaly_b3_mod_24",
+    "n_eff_cycles_b3_minus_14",
+    "n_gen_from_b3_over_eight",
+    "roots_total_twelve_b3",
+    "shadow_dim_half_b3_plus_one",
+    "shadow_torsion_total_is_b3"
+  ],
+  "ordering": "identity id; never by how many branches an identity survives",
+  "verdict": "NO_SELECTION_MADE",
+  "note": "A broken identity is a recorded cost of the b3_seed ruling, not evidence against it. Branch columns are reported, never ranked."
+}

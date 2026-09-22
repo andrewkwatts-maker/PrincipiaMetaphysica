@@ -2,9 +2,9 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 223,
+    "files_scanned": 224,
     "dataset_values": 339,
-    "exact_dup": 386,
+    "exact_dup": 387,
     "stale_dup": 339,
     "files_with_findings": 89
   },
@@ -201,7 +201,15 @@
     },
     {
       "file": "simulations/PM/cosmology/baryogenesis.py",
-      "line": 134,
+      "line": 125,
+      "literal": 6.12e-10,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.eta_baryon.value",
+      "dataset_value": 6.12e-10,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/cosmology/baryogenesis.py",
+      "line": 186,
       "literal": 174.033,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -769,7 +777,7 @@
     },
     {
       "file": "simulations/PM/cosmology/racetrack_vacuum.py",
-      "line": 69,
+      "line": 94,
       "literal": 174.03,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -2585,7 +2593,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_h_288_roots.py",
-      "line": 1047,
+      "line": 1150,
       "literal": 25.72,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.uncertainty",
       "dataset_value": 26.0,
@@ -2593,7 +2601,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_h_288_roots.py",
-      "line": 1051,
+      "line": 1154,
       "literal": 25.71,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.uncertainty",
       "dataset_value": 26.0,
@@ -2601,7 +2609,7 @@
     },
     {
       "file": "simulations/PM/paper/appendices/appendix_h_288_roots.py",
-      "line": 1051,
+      "line": 1154,
       "literal": 25.73,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.uncertainty",
       "dataset_value": 26.0,
@@ -2945,7 +2953,7 @@
     },
     {
       "file": "simulations/PM/particle/axion_photon_coupling.py",
-      "line": 116,
+      "line": 137,
       "literal": 80.75,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -2953,7 +2961,7 @@
     },
     {
       "file": "simulations/PM/particle/axion_photon_coupling.py",
-      "line": 101,
+      "line": 122,
       "literal": 137.036,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -4808,6 +4816,54 @@
       "class": "STALE_DUP"
     },
     {
+      "file": "simulations/PM/validation/CERTIFICATES.py",
+      "line": 686,
+      "literal": 67.4,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
+      "dataset_value": 67.4,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/CERTIFICATES.py",
+      "line": 697,
+      "literal": 73.04,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
+      "dataset_value": 73.04,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/CERTIFICATES.py",
+      "line": 423,
+      "literal": 0.957,
+      "dataset_key": "planck_2018.n_s.value",
+      "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/CERTIFICATES.py",
+      "line": 701,
+      "literal": 0.311,
+      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
+      "dataset_value": 0.3111,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/CERTIFICATES.py",
+      "line": 701,
+      "literal": 0.689,
+      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
+      "dataset_value": 0.6931,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/validation/CERTIFICATES.py",
+      "line": 683,
+      "literal": 67.4,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
+      "dataset_value": 67.4,
+      "class": "EXACT_DUP"
+    },
+    {
       "file": "simulations/PM/validation/adversarial_axiom_tester.py",
       "line": 54,
       "literal": 137.035999177,
@@ -4949,54 +5005,6 @@
       "literal": 2.49e-09,
       "dataset_key": "experiment_ref.parameters.leptons.muon_g_minus_2_anomaly.value",
       "dataset_value": 2.49e-09,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/CERTIFICATES.py",
-      "line": 686,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/CERTIFICATES.py",
-      "line": 697,
-      "literal": 73.04,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
-      "dataset_value": 73.04,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/CERTIFICATES.py",
-      "line": 423,
-      "literal": 0.957,
-      "dataset_key": "planck_2018.n_s.value",
-      "dataset_value": 0.9649,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/CERTIFICATES.py",
-      "line": 701,
-      "literal": 0.311,
-      "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
-      "dataset_value": 0.3111,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/CERTIFICATES.py",
-      "line": 701,
-      "literal": 0.689,
-      "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
-      "dataset_value": 0.6931,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/validation/CERTIFICATES.py",
-      "line": 683,
-      "literal": 67.4,
-      "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
-      "dataset_value": 67.4,
       "class": "EXACT_DUP"
     },
     {

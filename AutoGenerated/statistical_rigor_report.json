@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica v24.1",
-  "test_date": "2026-09-23T01:05:49.389146",
+  "test_date": "2026-09-22T17:16:55.037610",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
@@ -80,8 +80,8 @@
       "dof": 72
     },
     "new_statistics": {
-      "chi_squared": 13149.336278139655,
-      "reduced_chi_squared": 182.62967052971743,
+      "chi_squared": 13149.336278129014,
+      "reduced_chi_squared": 182.62967052956964,
       "p_value": 0.0,
       "dof": 72
     },
@@ -150,7 +150,7 @@
     "p_value_old": 0.0,
     "p_value_new": 0.0,
     "chi_squared_reduced_old": 2279900475.892472,
-    "chi_squared_reduced_new": 182.62967052971743,
+    "chi_squared_reduced_new": 182.62967052956964,
     "theory_uncertainty_percent": 1.2
   },
   "jacobian_analysis": {
@@ -160,18 +160,18 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        12.467432996284973,
-        5.009332623803766,
-        4.929720679904563,
-        4.719208472422435,
-        4.649112939669691,
-        4.572913153495669,
-        4.517199328431457,
-        4.311137048002177,
-        4.219437888218269,
-        4.115544923534925
+        12.445115028522064,
+        5.001206053584287,
+        4.901427305120928,
+        4.816597303033964,
+        4.7075478140777856,
+        4.6536188867594905,
+        4.420345024498649,
+        4.295216190202698,
+        4.13845735167379,
+        4.0483644490330954
       ],
-      "condition_number": 8.117218219501602,
+      "condition_number": 6.831139360410912,
       "p_value": 0.0,
       "chi_squared": 164152834264.25797,
       "degrees_of_freedom": 73,
@@ -217,8 +217,8 @@
           "dof": 72
         },
         "new_statistics": {
-          "chi_squared": 13149.336278139655,
-          "reduced_chi_squared": 182.62967052971743,
+          "chi_squared": 13149.336278129014,
+          "reduced_chi_squared": 182.62967052956964,
           "p_value": 0.0,
           "dof": 72
         },
@@ -283,32 +283,32 @@
       "recommended_approach": "EDOF",
       "recommendation_rationale": "The EDOF approach properly accounts for PM's topological correlation structure. Theory uncertainty injection (deprecated) makes the fit appear MORE suspicious by tightening effective error bars."
     },
-    "redundant_parameters": 60,
+    "redundant_parameters": 59,
     "redundancy_pairs": [
       [
         0,
         12,
-        0.9960913644598363
+        0.991801270964029
+      ],
+      [
+        0,
+        36,
+        0.9908183381089862
+      ],
+      [
+        0,
+        48,
+        0.9916374233051166
+      ],
+      [
+        1,
+        25,
+        0.9968932129237367
       ],
       [
         1,
         49,
-        0.9943040973090732
-      ],
-      [
-        2,
-        38,
-        0.9994973738405984
-      ],
-      [
-        2,
-        50,
-        0.9965872731283282
-      ],
-      [
-        3,
-        15,
-        0.9979943147952429
+        0.9910963027235986
       ]
     ]
   },
@@ -332,7 +332,7 @@
       "Zero fitted parameters - all predictions from topology",
       "Lower-tail p-value = 0.000000 (fit better than random chance)",
       "Adding 1.2% theory uncertainty makes \u03c7\u00b2 smaller (confirming errors not underestimated)",
-      "60 parameter pairs show high correlation",
+      "59 parameter pairs show high correlation",
       "Geometric constraints naturally produce tight predictions - low \u03c7\u00b2 is EXPECTED, not suspicious"
     ]
   },

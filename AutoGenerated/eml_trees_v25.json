@@ -47,12 +47,12 @@
     "C_a_gamma_gamma": {
       "b3_traceback": true,
       "formula": "b3 / (2*pi) * exp(-Re(T) / 200)  -- anomaly coefficient from G2 bridge + triple-cycle intersections",
-      "value": 1.6000130155615222
+      "value": 2.8666899862143937
     },
     "axion_photon_coupling_summary": {
       "b3_traceback": true,
       "formula": "g_a_gamma_gamma derived from b3 = 24 via G2 anomaly + Re(T)",
-      "value": 1.5005535713511313e-11
+      "value": 2.6884918153374434e-11
     },
     "f_a_GeV": {
       "b3_traceback": true,
@@ -62,7 +62,7 @@
     "g_a_gamma_gamma_GeV": {
       "b3_traceback": true,
       "formula": "(alpha_EM / (2*pi*f_a)) * C_a_gamma_gamma * S  -- C_a_gamma_gamma derived from b3 = 24 via G2 anomaly",
-      "value": 1.5005535713511313e-11
+      "value": 2.6884918153374434e-11
     }
   },
   "baryogenesis": {
@@ -74,7 +74,7 @@
     "epsilon_L": {
       "b3_traceback": false,
       "formula": "CP-violating phase from G2 triple-cycle intersections: 0.01 * exp(-Re(T) / 100)",
-      "value": 0.001754624884408279
+      "value": 0.0013533528323661271
     },
     "eta_B": {
       "b3_traceback": true,
@@ -89,7 +89,7 @@
         "epsilon_L": 0.001754624884408279,
         "eta_B": 6.846485445932354e-10,
         "eta_B_source": "BaryonAsymmetryV18 (G2 cycle asymmetry + Jarlskog), T1.2 canonical",
-        "observed_comparison": "eta_B ~ 6.19e-10 (canonical, v18 geometric) vs. observed 6.12e-10 -- within 1.1 % (2.2 sigma)",
+        "observed_comparison": "eta_B = 6.846485e-10 (canonical, v18 geometric) vs. observed 6.120000e-10 +/- 4.0e-12 (Planck 2018 + BBN) -- 11.87 % away, 18.16 sigma [experimental uncertainty only]",
         "secondary_estimate": {
           "eta_B": 1.722962302427502e-14,
           "label": "Sprint 6.2 moduli decay + G2 dilution + sphaleron",
@@ -271,7 +271,7 @@
     "ledger_summary": {
       "b3_traceback": false,
       "formula": "full registry audit + Bayesian Gaussian-prior scan (sigma=1%, N=1000)",
-      "value": 811
+      "value": 812
     },
     "status_count_eml_deferred": {
       "b3_traceback": false,
@@ -296,7 +296,7 @@
     "status_count_numerical_agreement": {
       "b3_traceback": false,
       "formula": "count of registry params classified as numerical_agreement",
-      "value": 173
+      "value": 174
     },
     "status_count_open_tension": {
       "b3_traceback": false,

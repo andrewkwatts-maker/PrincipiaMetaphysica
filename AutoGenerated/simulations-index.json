@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-22T15:05:50.184497Z",
+  "generated_at": "2026-09-22T17:17:07.774989Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 314,
+  "total_scripts": 317,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -250,7 +250,7 @@
     },
     "PM/cosmology": {
       "title": "PM/cosmology",
-      "count": 24,
+      "count": 25,
       "scripts": [
         {
           "file": "attractor_potential.py",
@@ -563,6 +563,16 @@
             "cosmology.sm_weight",
             "cosmology.w_eff"
           ]
+        },
+        {
+          "file": "racetrack_pairs.py",
+          "path": "simulations/PM/cosmology/racetrack_pairs.py",
+          "category": "PM/cosmology",
+          "title": null,
+          "description": "Every racetrack exponent pair from the derived integer menu, COSTED.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "racetrack_vacuum.py",
@@ -2049,6 +2059,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "particle.axion_b3_consumed",
             "particle.axion_photon_coupling_status",
             "particle.f_a_GeV",
             "particle.g_a\u03b3\u03b3_GeV"
@@ -3076,7 +3087,7 @@
     },
     "core": {
       "title": "core",
-      "count": 29,
+      "count": 31,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -3193,6 +3204,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "fork_implications.py",
+          "path": "simulations/core/fork_implications.py",
+          "category": "core",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "free_set.py",
           "path": "simulations/core/free_set.py",
           "category": "core",
@@ -3218,6 +3239,16 @@
           "category": "core",
           "title": null,
           "description": "Ghost Literal Hunter v17.2 - Identifies hardcoded constants that bypass SSoT",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "identity_ledger.py",
+          "path": "simulations/core/identity_ledger.py",
+          "category": "core",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

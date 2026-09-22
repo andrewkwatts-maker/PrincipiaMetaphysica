@@ -7214,9 +7214,15 @@ resolution physics open".
 
 #### Configurability as the standing pattern
 
-Seventeen forks, each env-overridable with a behavioural drift guard; the
+Seventeen forks [CORRECTED 2026-09-22 by the review pass: **eighteen** are
+declared, 11 OPEN and 7 RULED, measured from `variants.FORKS`], each
+env-overridable with a behavioural drift guard; the
 flavour sector's calibrated_24 contract is regression-pinned so the costed
-branch cannot rot; `core/ruled_divergences.py` (38 measured rows) makes the
+branch cannot rot; `core/ruled_divergences.py` (38 measured rows [CORRECTED
+2026-09-22 by the review pass: the file holds **37**; `len(RULED_DIVERGENCES)`
+was measured directly and `tests/test_triple_track.py` passes against 37.
+Either the 38 was a miscount or a row left without a note -- the register
+records both possibilities rather than choosing one after the fact]) makes the
 triple-track gate two-directional -- outside the ledger tracks agree at
 1e-12, inside it they must ACTUALLY diverge. New ideas enter as
 VariantOptions, enumeration entries with trials factors, or ledger rows --
@@ -7456,3 +7462,247 @@ NEVER REACHED the adopted seed_43_joyce -- a truncated search silently
 omitting the baseline every result is compared against. Now a capped sweep
 spends its budget on combinations someone might actually adopt, and the
 refuted profiles sweep last. Pinned by tests at several caps.
+
+## 2026-09-22 (twenty-third pass) — the adoption sweep, REVIEWED
+
+A review pass over the b3_seed adoption sweep, run as a reviewer rather than
+an author: separate signal from noise, finish the named debts, solidify the
+findings. Nothing is adopted here and no fork is ruled. Full review document:
+`docs/ADOPTION_REVIEW_2026-09-22.md`.
+
+### THE BASELINE WAS NOT GREEN, and that is the first finding
+
+The handover said the tree was "green except possibly artifact-freshness
+transients that a rebuild clears". Measured before touching anything:
+
+| | inherited | after this pass |
+|---|---|---|
+| failed | **15** | **0** |
+| errors | **24** | **0** |
+| passed | 1997 | 2553 |
+| skipped | **846** | 422 |
+| SSOT compliance | 99.9 % | **100.0 %** |
+
+The 846 skips were the story. They were not a quiet tree; they were a tree
+that could not find its own artifacts. A prompt-typed count has now been
+wrong three times this campaign, and the rule that caught it each time is the
+same: measure the baseline first and trust the measurement.
+
+### THE SIGNAL, and what defends each piece
+
+Recorded in full in the review document; in brief, what must survive any
+future cleanup:
+
+- **the deleted racetrack vacuum** — 31 tests pin the ABSENCE, and it now has
+  a second lock: the one-fork deviation `re_t_adoption → computed_vacuum`
+  produces **zero changes**, because there is no computed vacuum to switch
+  to. The fork is inert *because* the vacuum is gone.
+- **the conical 128** — off the admissible branch, resolution physics open.
+- **π₁(Y) = 1** on the admissible branch; the Wilson dock stays CLOSED.
+- **the disentangled bulk-24s** — and this pass found a FOURTH and FIFTH of
+  the same class (§1.4 of the review): `appendix_g_omega_seal` binds
+  `tau_24 = b_3`, and the two declarative strategies read DIFFERENT
+  numerators for the same gate G22.
+- **the measured ruling costs**, all re-measured rather than copied.
+
+### A REGRESSION IN THE PREVIOUS PASS'S OWN FIX
+
+`RACETRACK_a` became a property when the silent 2π/24 fallback was removed,
+but `racetrack_vacuum._declared_coefficients` still read it off the CLASS,
+where a property evaluates to the descriptor object. `float()` raised
+TypeError on exactly the unbuilt-tree path the property exists to serve.
+**24 errors and 4 failures from one attribute access.** Pinned with the
+registry lookups forced to miss, because the branch is invisible whenever an
+artifact happens to be present — which is how it shipped.
+
+### FOUR COPIES OF ONE SEARCH ORDER (debt (g), larger than briefed)
+
+Fifty-three test files and four SOURCE modules each carried a private copy of
+"where is parameters.json", every one naming `H:/Github/PrincipiaMetaphysica`
+as its non-local candidate. On POSIX that is a RELATIVE path, so the
+published checkout was unreachable by any candidate. Three defects rode
+along, all invisible because a missing artifact SKIPS rather than fails: the
+drive-letter address, an order that was right on one machine and wrong
+everywhere else, and per-DIRECTORY resolution that let a partial scratch tree
+(25 artifacts, `formulas.json` at 761 KB) shadow the complete published one
+(67 artifacts, 1.69 MB).
+
+The briefed fix — "reorder to repo-local FIRST" — would have ENTRENCHED the
+defect, because repo-local is the build-scratch tree in this environment.
+Repo-local is first as directed, and it is safe **only** because resolution
+is now per-FILE. One order, in `tests/_artifact_search.py`, pinned in both
+directions by `tests/test_artifact_search_order.py`; the four source copies
+delegate to `core.parameter_artifact`, which already existed to be that
+single place.
+
+**Debt (h) fell out of this and needed neither briefed remedy.** The
+validation report was never missing — it sat in the sibling checkout no
+candidate path named. The seven tests now score the real 204 rows.
+
+Found on the way: `autogen_dir()` **mkdirs on a read**, so merely evaluating
+gate G32 created an empty repo-local `AutoGenerated/` that then satisfied
+every `is_dir()` check for the rest of the session. Named; not yet fixed.
+
+### THE BUILD HALTED ON A MISSING OPTIONAL EXTRA
+
+`proof_completeness.build_ledger` raises an ImportError NAMING the `plots`
+extra — a module doing exactly the right thing — but the step had no row in
+`OPTIONAL_DEPS`, so nothing caught it and the whole build stopped. That is
+precisely the failure the comment beside the gate says must not happen. The
+rule existed; the row did not. Worse: a build without `[sims]` skipped 20+
+steps and **still overwrote published artifacts**, replacing the real 204-row
+`validation_report.json` with the placeholder. A degraded build should not be
+able to damage a good artifact set. Restored from git; the gap is closed and
+a test now reads each step's own source rather than trusting the map.
+
+### THE DEBTS, as found versus as briefed
+
+| debt | briefed | measured |
+|---|---|---|
+| (a) axion `DEFAULT_B3` | outstanding | **CLOSED** — both halves |
+| (b) `vacuum_selection.DEFAULT_B3` | outstanding | **already closed in the sweep**; verified, not redone |
+| (c) baryogenesis prose | outstanding | **CLOSED**, computed |
+| (d) `appendix_h` labels | outstanding | **CLOSED**, generated + per branch |
+| (e) gates G22 / G01 | "wire accordingly" | **NOT wired, deliberately** — both are READINGS |
+| (f) `switch_search` b₃/8 probe | outstanding | **CLOSED**, refutation kept labelled |
+| (g) artifact search order | "repo-local first" | **CLOSED**, and larger than briefed |
+| (h) validation_report skips | "run build_report or auto-unskip" | **CLOSED** as a consequence of (g) |
+
+**(a) is the one worth reading twice.** The debt was not only the frozen
+`DEFAULT_B3 = 24`; the status string read "lies within BabyIAXO/IAXO
+discovery window" **whatever it computed**. Routing the seed alone would have
+moved the number and left the prose lying. Both are fixed, so the register's
+own correction of 2026-09-22 — "it becomes a published cost only when that
+debt closes" — is now SATISFIED: g_aγγ = 2.688492e-11 publishes ABOVE the
+2e-11 ceiling on the adopted branch, and 1.500554e-11 inside it under
+`calibrated_24`. **The test asserts the BREACH**, so the cost cannot be tuned
+away by re-scaling `AXION_PHOTON_SCALE`. The seed-blindness tripwire that
+demanded exactly this change is flipped rather than deleted.
+
+**(e) is not wired, and the reason matters.** `strategy_a`'s G22 reads
+`reg.b3` (moves to 43) while `strategy_b`'s G22 reads
+`topology.shadow_torsion_total` (stays 24), for the same gate; G01 expects
+288 while `topology.ancestral_roots` computes 915. Deciding which quantity
+each gate means is a READING, not a refactor — the identity ledger registers
+`tau_24 = b_3` as BROKEN on the adopted branch, which is the evidence, but
+wiring either way silently would be the conflation the whole sweep exposed.
+`validation.288_root_verified` returns False honestly meanwhile, so nothing
+is hidden. **Author ruling requested.**
+
+### CONTRADICTIONS, fixed at source
+
+`switch_search` claimed "Eight forks are open" against 11; the prose in
+`b3_path.py` still said "**NOT ADOPTED.** seed_24 remains the adopted
+branch" and "two live paths" against a RULED adoption and a generated family
+of five; `racetrack_vacuum`'s docstring asserted a vacuum its own tests prove
+absent. The last two were first written down as "the author's to rewrite",
+which was the wrong call and is corrected: a docstring stating the reverse of
+a ruling is a factual error, not a narrative judgment, and the register wins
+over any document. All three now state the per-branch truth, with the
+seed_24 record kept in full.
+
+### COUNTS CORRECTED BY MEASUREMENT
+
+- `core/ruled_divergences.py` holds **37** rows, not the 38 this register
+  states twice. Corrected in place above.
+- **Eighteen** forks are declared (11 OPEN, 7 RULED), not seventeen.
+  Corrected in place above.
+- The free set is **39** on the adopted branch with a consistent artifact.
+  The "40 under seed_24" obtainable by flipping the env var is **not a
+  measurement** — see the next entry.
+- The continuous parameter count is **23**, consistent with this register.
+
+### THE IDENTITY LEDGER, and what it says per branch
+
+`core/identity_ledger.py` — every claimed integer identity, evaluated LIVE
+per fork state, HOLDS/BROKEN/NOT_EVALUABLE per branch, each row carrying a
+mandatory `counts` field saying what its numbers count and a `source` saying
+where the claim is made. Published as `AutoGenerated/identity_ledger.json`,
+one test per identity.
+
+**Fifteen identities. TWELVE hold on `seed_24` ALONE** — D_bulk = b₃+2,
+163 = 7b₃−5, 288 = 12b₃, b₃²/4 = 144, τ₂₄ = b₃, 13 = b₃/2+1, N_eff = b₃−14,
+b₃ ≡ 0 mod 24, b₃/8 = 3, 1/b₃² = 1/576, P₁₂ = b₃/2, n(n−1)/2+12 = 288.
+**Two hold on the adopted branch, and they are exactly the two criteria the
+adoption rests on**: n_gen = b₂/4 (the RULED n_gen_source) and b₃ = 7 + 3b₂
+(reachability). **One is NOT_EVALUABLE** because chi_eff is UNRULED and the
+ledger does not pick a side.
+
+Stated carefully, because it would be easy to over-read: the framework's
+integer-coincidence structure was anchored almost entirely on one off-family
+seed, and what survives the adoption is DERIVED rather than coincidental.
+**This is not evidence for or against the ruling.** A count of surviving
+coincidences is exactly the number that would make this a fitter, and the
+ledger refuses to rank branches for that reason. Broken rows are never
+deleted; a test asserts the twelve stay.
+
+### THE FORK IMPLICATION MATRIX, and a defect it committed against itself
+
+`core/fork_implications.py` — for each fork, each option as a one-fork
+deviation from the adopted state: which observables move (both values), which
+identities flip, which gates change verdict. Deterministic ordering by fork
+then option, `write_json_stable`, never ranked by agreement. Every fork's
+ADOPTED option gets a row as the CONTROL, and all eighteen are null.
+
+Two corrections it needed, both of the class it was built to detect:
+
+1. It reported `free_set_size` moving 39 → 40 on a deviation to seed_24.
+   **That is not a measurement.** `free_set` reads `parameters.json`, whose
+   b₃-arithmetic removals verify against whichever seed BUILT it, so flipping
+   the fork re-reads the ADOPTED artifact under a fork it does not match —
+   `free_set`'s own provenance guard says so. Reporting it as "moved" would
+   have manufactured a consequence. Artifact-bound rows now carry an explicit
+   "NOT A MEASUREMENT of the deviated branch": *did not move* and *could not
+   move* are different facts.
+2. It watched four observables, three of them seed-blind, so
+   `flavour_seed_coupling` reported ZERO changes while its headline cost is
+   θ₁₃ moving 8.6686 → 4.8351. A matrix that cannot see the cost it exists to
+   publish is worse than none. The register's cost-table quantities are now
+   watched by name.
+
+### DIRECTION A EXECUTED — racetrack exponent pairs, COSTED, adopting nothing
+
+`PM/cosmology/racetrack_pairs.py`. Every ordered pair (N1 < N2) from the
+DERIVED menu {3, 4, 7, 12, 24, 26, 36, 43}, run through the existing solver
+at both Kähler slopes. **Trials factor 56, published as a field**, because
+Re(T) has six incumbent values in this codebase and at 1-in-56 a near-hit
+means nothing. B/A held fixed at −0.5 across every row — it is the one
+continuous knob, and letting it float per pair would make this a
+two-parameter fit. Ordered by pair name. **Nothing adopted.**
+
+Two cross-checks validate the substitution, both reproducing numbers measured
+before the module existed: **(24, 26) → Re(T) = 37.8527**, the seed_24
+branch's recorded minimum; **(26, 43) → 10.2085**, the ordering-restored
+control that proved the solver innocent.
+
+**The structural result is negative and that is its value: every pair that
+restores the ordering gives an AdS minimum. Nothing on the derived menu
+uplifts to dS.** So "try other exponents" — the obvious next thought after
+the adopted vacuum vanished — only relocates the AdS minimum. It does not
+touch the cosmological-constant problem. `re_t_adoption` now has an option
+table; it stays OPEN.
+
+### A RATCHET WHOSE BASELINE PREDATED A RULING
+
+`test_b3_root_coverage`'s NO_BACKEND pair asked for b3_rooted ≥ 398; the tree
+gives 397. Only the WITH_BACKEND pair was re-measured at the adoption — the
+no-backend pair could not be, because the artifact was unreachable and the
+file SKIPPED. Fixing the search order made it run, and the first thing it
+reported was that its own baseline predated a ruling.
+
+Lowering a ratchet needs a reason and "it failed" is not one, so the reason
+was MEASURED: commit `f289f94` — before any of this pass's changes — was
+checked out into a worktree and its walker run against the SAME
+`formulas.json`. Identical: 397 / 161 / 11. The movement is the adoption's,
+not this pass's, and it is the same single formula the WITH_BACKEND note
+describes (`b3-generations`, rewired to n_gen = b₂/4). Re-pinned with that
+evidence recorded.
+
+### AUTHOR RULINGS STILL WAITING
+
+| ruling | status | current best evidence |
+|---|---|---|
+| `chi_eff` | OPEN | the ledger row is NOT_EVALUABLE by design; the matrix shows `chi_eff_route` deviations flipping exactly that one identity and nothing else — the dichotomy is narrower in consequence than its prominence suggests. EML track still pinned on it. |
+| `re_t_adoption` | OPEN, reframed | the racetrack supplies nothing on the adopted path; deviating the fork changes zero observables. Now has a 56-row costed option table, and the menu-wide result that no pair gives dS. |
+| **G22's numerator / G01's 288** | **OPEN (new)** | the two declarative strategies disagree with each other today; `tau_24 = b_3` is registered BROKEN on the adopted branch. |
+| **`appendix_h`'s n: b₃ or the bulk's 24?** | **OPEN (new)** | the module reads `elder_kads`, so the budget is 915 and the SO(24) label is false on-path. Stated per branch; not decided. |
