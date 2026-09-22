@@ -20,27 +20,27 @@
     "delta_CP_rad": {
       "b3_traceback": true,
       "formula": "(3*pi/2) * (1 - 0.12 * sqrt(2)*sin(pi/b3) * cos(pi/b3) + 0.05 * cos(pi/b3)^2)  | T4 phase, eta + xi sister, b3-rooted",
-      "value": 4.840502915626067
+      "value": 4.8885329695811315
     },
     "theta_13_deg": {
       "b3_traceback": true,
       "formula": "arcsin(sqrt(2/3) * sqrt(2) * sin(pi/b3)) * 180/pi  | b3-rooted",
-      "value": 8.668576499284981
+      "value": 4.835067770441071
     },
     "theta_13_rad": {
       "b3_traceback": true,
       "formula": "arcsin(sqrt(2/3) * sqrt(2) * sin(pi/b3))  | b3-rooted",
-      "value": 0.15129520137352678
+      "value": 0.08438785215125806
     },
     "xi_distortion": {
       "b3_traceback": true,
       "formula": "cos(pi / b3)  | T4 vertex-orbit half-angle cosine, b3-rooted",
-      "value": 0.9914448613738104
+      "value": 0.9973322836635516
     },
     "y_e_hierarchy": {
       "b3_traceback": true,
       "formula": "sqrt(2/3) * exp(-b3 / 24)  | T4 orbit amplitude \u00b7 b3 ratio",
-      "value": 0.3003723059100852
+      "value": 0.13609539290297878
     }
   },
   "axion_photon_coupling": {
@@ -271,7 +271,7 @@
     "ledger_summary": {
       "b3_traceback": false,
       "formula": "full registry audit + Bayesian Gaussian-prior scan (sigma=1%, N=1000)",
-      "value": 808
+      "value": 811
     },
     "status_count_eml_deferred": {
       "b3_traceback": false,
@@ -291,17 +291,17 @@
     "status_count_fully_derived": {
       "b3_traceback": false,
       "formula": "count of registry params classified as fully_derived",
-      "value": 549
+      "value": 539
     },
     "status_count_numerical_agreement": {
       "b3_traceback": false,
       "formula": "count of registry params classified as numerical_agreement",
-      "value": 170
+      "value": 173
     },
     "status_count_open_tension": {
       "b3_traceback": false,
       "formula": "count of registry params classified as open_tension",
-      "value": 18
+      "value": 28
     }
   },
   "soft_susy_breaking": {

@@ -2,26 +2,26 @@
   "proof_id": "G22_gluon_string_tension",
   "gate_id": 22,
   "gate_name": "Gluon String Tension",
-  "label": "Quark separation energy → 24-pin density",
+  "label": "Quark separation energy → 43-pin density",
   "category": "QCD",
   "phase": 2,
   "block": "C",
   "version": "24.2",
   "wl_code": "sigma = 24/288",
   "result": "0.0833",
-  "formula": "σ = 24/288 tension",
+  "formula": "σ = 43/288 tension",
   "verification_status": "VERIFIED",
-  "evaluation_status": "COMPUTED_PASS",
+  "evaluation_status": "COMPUTED_FAIL",
   "evaluation": {
     "tier": "semantic",
-    "measured": "24/288 = 0.083333",
+    "measured": "43/288 = 0.149306",
     "expected": "24/288 = 0.083333",
     "numbers_invented": 0,
     "note": "Exact integer ratio b3/roots_total; no floating tolerance required.",
-    "status": "COMPUTED_PASS"
+    "status": "COMPUTED_FAIL"
   },
   "derivation_status": "FITTED",
-  "note": "Gate 22: Quark separation energy from 24-pin density. Quark separation energy → 24-pin density",
-  "timestamp": "2026-09-20T21:48:55.832659Z",
+  "note": "Gate 22: Quark separation energy from 24-pin density. Quark separation energy → 43-pin density",
+  "timestamp": "2026-09-22T10:36:19.284913Z",
   "hash": "2914b1552e7be952"
 }

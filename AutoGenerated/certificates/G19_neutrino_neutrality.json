@@ -11,23 +11,23 @@
   "result": "Matches NuFIT",
   "formula": "ν type from torsion",
   "verification_status": "VERIFIED",
-  "evaluation_status": "COMPUTED_PASS",
+  "evaluation_status": "COMPUTED_FAIL",
   "evaluation": {
     "tier": "registry",
     "source": "NuFIT 6.0 theta_13 IO central 8.58 +/- 0.11 deg",
     "checks": [
       {
         "path": "particle.theta_13_deg",
-        "value": 8.668576499284981,
+        "value": 4.835067770441071,
         "expected": 8.58,
-        "sigma": 0.8052409025907376,
-        "ok": true
+        "sigma": 34.044838450535714,
+        "ok": false
       }
     ],
-    "status": "COMPUTED_PASS"
+    "status": "COMPUTED_FAIL"
   },
   "derivation_status": "FITTED",
   "note": "Gate 19: PMNS matches NuFIT. Majorana/Dirac status from torsion twist",
-  "timestamp": "2026-09-20T21:48:55.832616Z",
+  "timestamp": "2026-09-22T10:36:19.284871Z",
   "hash": "34b6742e46c2a8d0"
 }

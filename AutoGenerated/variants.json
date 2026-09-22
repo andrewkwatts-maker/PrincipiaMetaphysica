@@ -29,21 +29,39 @@
     "b3_seed": {
       "question": "Which (b_3, b_2) does the model take, and is the seed derived?",
       "source": "simulations.PM.geometry.b3_path.PATHS adopted entry",
-      "status": "OPEN",
-      "selected": "seed_24",
-      "default": "seed_24",
+      "status": "RULED",
+      "selected": "seed_43_joyce",
+      "default": "seed_43_joyce",
       "options": [
         {
           "id": "seed_24",
           "summary": "b_3 = 24, b_2 = 4 -- the status quo, seed as an input",
           "consequence": "BUYS: every published number unchanged, and w_0 = -23/24 at 0.017 sigma against the DESI anchor -- the closest agreement any candidate reaches.\nCOSTS: b_3 = 24 is an INPUT with no geometric home left. It is unreachable by the Joyce construction and far below the TCS range, so nothing declared derives it, and b_2 = 4 traces to a previously FITTED h^{1,1}. The free-variable count cannot reach zero while this holds.",
-          "adopted": true
+          "adopted": false
+        },
+        {
+          "id": "seed_7_joyce",
+          "summary": "b_3 = 7, b_2 = 0 -- the unresolved orbifold limit",
+          "consequence": "BUYS: reachable and fully derived, so it belongs in the family the selection argument ranges over.\nCOSTS: n_gen = b_2/4 = 0. No generations at all -- a STRUCTURAL refutation, not a disagreement with data.",
+          "adopted": false
+        },
+        {
+          "id": "seed_19_joyce",
+          "summary": "b_3 = 19, b_2 = 4 -- four A1 families",
+          "consequence": "BUYS: reachable and derived; the b_2 = 4 that seed_24 carries as a FITTED h^{1,1} arrives here derived.\nCOSTS: n_gen = b_2/4 = 1. One generation, refuted structurally.",
+          "adopted": false
+        },
+        {
+          "id": "seed_31_joyce",
+          "summary": "b_3 = 31, b_2 = 8 -- eight A1 families",
+          "consequence": "BUYS: reachable and derived.\nCOSTS: n_gen = b_2/4 = 2. Two generations, refuted structurally.",
+          "adopted": false
         },
         {
           "id": "seed_43_joyce",
           "summary": "b_3 = 43, b_2 = 12 -- both derived from the A1 family count",
           "consequence": "BUYS: the seed stops being an input. b_3 = 7 + 3 x 12 where the 7 is the derived flat contribution and the 12 is the derived count of A1 T^3 families; b_2 = 12 is derived from the same count, one exceptional 2-class per family. The pair (12, 43) is Joyce's canonical published example. The generation count survives as n_gen = b_2/4 = 3, relocated but still exactly three and still derived on both sides.\nCOSTS: w_0 moves to -42/43, about 0.94 sigma against the DESI anchor -- worse agreement, in exchange for a derived seed, which is the same trade the dark_energy_betti ruling already took deliberately. The '+2' identity D_bulk - b_3 = 2 BREAKS, giving -17, so either D_bulk is not 26 on this path or that identity was never structural. Every b_3-consuming relation shifts: the racetrack exponent, k_bary = b_3 - 14, chi/b_3, alpha_T.",
-          "adopted": false
+          "adopted": true
         }
       ],
       "notes": "Opened 2026-09-15 by a computation, not a preference. derived_contribution_table settled the reachable Betti numbers of a Joyce (Z/2)^3 resolution of T^7/Gamma with Gamma the diagonal stabiliser of the framework's own phi: b_3 = 7 + 3 n_T3 with n_T3 in {0, 4, 8, 12}, so b_3 in {7, 19, 31, 43} and b_3 = 7 (mod 12). 24 = 0 (mod 12), so b_3 = 24 is NOT REACHABLE by this construction, and fano_tcs had already placed it far below its exhibited 71-155 range.\n\nSo b_3 = 24 has no geometric home left among the declared options, while (12, 43) is reachable AND is the Betti pair of Joyce's canonical published example -- reproduced by machinery that was never told it, which discharges the calibration gate by computation rather than by citation.\n\nThe decisive discriminator is structural, not statistical: a generation count must be an integer. At b_3 = 43, b_3/8 fails, but b_2 = 12 arrives derived from the same family count and n_gen = b_2/4 = 3 exactly, with 4 the derived faces. So the three generations survive the move -- they relocate. See the n_gen_source fork.",
@@ -52,21 +70,21 @@
     "n_gen_source": {
       "question": "Which geometric quantity supplies the generation count?",
       "source": "simulations.PM.geometry.b3_path n_gen_source per path",
-      "status": "OPEN",
-      "selected": "b3_over_dim_O",
-      "default": "b3_over_dim_O",
+      "status": "RULED",
+      "selected": "b2_over_faces",
+      "default": "b2_over_faces",
       "options": [
         {
           "id": "b3_over_dim_O",
           "summary": "n_gen = b_3 / 8, the 8 being dim O",
           "consequence": "BUYS: the current derivation, giving exactly 3 at b_3 = 24, with the 8 carrying octonionic meaning.\nCOSTS: it requires 8 to divide b_3, so it is incompatible with every Joyce-reachable value -- 7, 19, 31 and 43 are all odd. Adopting the derived seed forces this to be abandoned.",
-          "adopted": true
+          "adopted": false
         },
         {
           "id": "b2_over_faces",
           "summary": "n_gen = b_2 / 4, the 4 being the derived faces",
-          "consequence": "BUYS: exactly 3 at b_2 = 12, with both sides derived -- b_2 from the A1 family count and 4 from the moved coordinates of an involution (R2). It is the only generation source compatible with a derived seed.\nCOSTS: gives 1 at the current b_2 = 4, so it is wrong on the status-quo path. It also relocates the generation count away from the octonions, which is a change in the theory's story about why there are three.",
-          "adopted": false
+          "consequence": "BUYS: exactly 3 at b_2 = 12, with both sides derived -- b_2 from the A1 family count and 4 from the moved coordinates of an involution (R2). It is the only generation source compatible with a derived seed.\nCOSTS: gives 1 at the off-path b_2 = 4, so it is wrong on the seed_24 branch. It also relocates the generation count away from the octonions, which is a change in the theory's story about why there are three -- and the measured chain behind it is n_gen = rank(Gamma) = 3, of which b_2/4 is the RECOVERY (n_families = 4 x n_singular at every admissible assignment).",
+          "adopted": true
         }
       ],
       "notes": "Opened 2026-09-15 alongside b3_seed, because the two are coupled and pretending otherwise would hide the coupling. n_gen must be a positive integer -- a generation count is a number of things -- and that is a structural constraint referencing no measurement, which makes it the decisive discriminator where w_0 is not (w_0 moves only 0.0017 per unit b_3).\n\nb_3/8 gives 3 at b_3 = 24 and 5.375 at b_3 = 43, so it fails on the derived-seed path. b_2/4 gives 3 at b_2 = 12 and 1 at b_2 = 4, so it fails on the status-quo path. Exactly one works per seed, which is why this fork is not independent of b3_seed and says so.",
@@ -76,14 +94,20 @@
       "question": "What sets b_3 = 24?",
       "source": "simulations.run_all_simulations topology.elder_kads status",
       "status": "OPEN",
-      "selected": "input_24",
-      "default": "input_24",
+      "selected": "derived_joyce_a1",
+      "default": "derived_joyce_a1",
       "options": [
         {
-          "id": "input_24",
-          "summary": "b_3 = 24 as a stated input, origin open",
-          "consequence": "BUYS: honesty. The seed is registered INPUT, the free-variable ledger counts it, and no derivation is claimed that does not exist.\nCOSTS: w_0 = -(b_3-1)/b_3, n_gen = b_3/8 and alpha_T become predictions from a stated input rather than from derived geometry, so the zero-parameter claim cannot hold while this branch is adopted.",
+          "id": "derived_joyce_a1",
+          "summary": "the seed is DERIVED: b_2 = A1 family count, b_3 = 7 + 3 b_2",
+          "consequence": "BUYS: the origin question is ANSWERED on the reachable family -- n_gen = rank(Gamma) = 3 selects (12, 43) out of the four profiles, the flat 7 is derived (R5), and the family count comes from the enumeration.\nCOSTS: applies only on a Joyce-reachable seed; on seed_24 the candidate origins below stay exactly as open as they were.",
           "adopted": true
+        },
+        {
+          "id": "input_24",
+          "summary": "b_3 = 24 as a stated input, origin open (off-family)",
+          "consequence": "BUYS: honesty. The seed is registered INPUT, the free-variable ledger counts it, and no derivation is claimed that does not exist.\nCOSTS: w_0 = -(b_3-1)/b_3, n_gen = b_3/8 and alpha_T become predictions from a stated input rather than from derived geometry, so the zero-parameter claim cannot hold while this branch is taken.",
+          "adopted": false
         },
         {
           "id": "arc_flag_stabiliser",
@@ -153,6 +177,29 @@
       "notes": "Opened 2026-09-13 by measurement, not by preference. g2 is the subalgebra of so(7) annihilating phi and has dimension 14. Building the map A -> A.phi and taking its kernel gives dim 6 for the adopted all-(+1) assignment and dim 14 for the signs the framework's own octonion product implies on the SAME seven triples. dim ann is a GL(7) similarity invariant, so the two lie in different GL(7) orbits and no basis change, relabelling or sign flip connects them, checked exhaustively over all 128 diagonal sign patterns. Exactly 16 of the 128 assignments give a genuine G2 form.\n\nROOT CAUSE, located the same day: the octonion module is NOT at fault. Its multiply() is a genuine octonion product, verified norm-multiplicative to 4e-16 and alternative to 6e-16. But g2_structure_as_3form() returns a separate all-(+1) tensor (_C_geom) instead of the 3-form its own multiplication implies. The two differ in exactly ONE sign, on the triple (1,3,5), so the correct form was already in the codebase.\n\nThe adopted branch is kept anyway because substituting phi moves published numbers, and that is a physics ruling. The fork exists so both states can be run and the cost measured first. Note the obvious check does not discriminate: the induced metric phi_imn phi_jmn is 6 * I for BOTH forms, which is why this was not caught earlier. A header note in g2_differential.py had ruled the all-(+1) code correct and its signed docstring wrong; that ruling is backwards and is marked superseded there.",
       "drift": null
     },
+    "flavour_seed_coupling": {
+      "question": "Which b_3 does the flavour-ansatz sector consume?",
+      "source": "simulations.PM.particle.yukawa_derivation.resolve_flavour_b3",
+      "status": "RULED",
+      "selected": "follow_seed",
+      "default": "follow_seed",
+      "options": [
+        {
+          "id": "follow_seed",
+          "summary": "the flavour formulas consume the live seed's b_3",
+          "consequence": "BUYS: consistency with the adopted path -- a formula claiming b_3 gets b_3, and particle.b3 stops being a frozen 24. theta_13 moves to 4.8351 deg (measured), publishing the ansatz's real disagreement with NuFIT.\nCOSTS: the v25 'PMNS derived at 0.8 sigma' result is exposed as a property of the off-path calibration.",
+          "adopted": true
+        },
+        {
+          "id": "calibrated_24",
+          "summary": "the flavour formulas keep their 24 as a calibrated constant",
+          "consequence": "BUYS: the v25 agreement figures remain reproducible for costing, regression-pinned under this branch.\nCOSTS: the 24 must be ADMITTED to be a calibrated constant, not b_3 -- the formula text's claim to a topological origin is false on this branch.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-22 with the b3_seed adoption. The v25 flavour formulas CLAIM b_3 in their text (theta_13 = arcsin(sqrt(2/3) * sqrt(2) * sin(pi/b3))) but were CALIBRATED at 24 and registered particle.b3 = 24 regardless of the seed -- the last seed-blind writer. A formula claiming a topological origin must consume the topology; one that will not follow the seed is a calibrated constant wearing b_3's name and must say so. MEASURED at the flip: theta_13 = 8.6686 deg at b_3 = 24 (0.8 sigma vs NuFIT), 4.8351 deg at b_3 = 43.",
+      "drift": null
+    },
     "metric_construction": {
       "question": "Which construction turns phi into a metric?",
       "source": "simulations.PM.geometry.g2_differential.G2DifferentialGeometry.metric_by_convention",
@@ -174,6 +221,35 @@
         }
       ],
       "notes": "Opened 2026-09-21. compute_metric() is the QUADRATIC contraction phi_iab phi_jab / 6, and its docstring called that Hitchin's formula. It is not: Hitchin's construction is CUBIC in phi, B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7} with g = B / |det B|^(1/9), and cubic is the lowest degree that can see the difference. Measured: the quadratic returns exactly 1.0 * I_7 for BOTH the all-(+1) phi and the octonion-derived one, so every claim of 'the unique compatible Riemannian metric' made through it was unfalsifiable -- which is why g2_form_convention went unnoticed as long as it did.\n\nWHAT THE CUBIC FORM REVEALS, refining the earlier finding rather than confirming it: Lambda^3(R^7) has exactly TWO open GL(7,R) orbits and BOTH have 14-dimensional stabilisers, so 'dim 14 vs 6' is not the invariant it was read as. The one that discriminates is the unordered signature of B -- (7,0) for octonion_derived, (4,3) for all_plus_one. So the adopted phi IS a G2-structure, for the SPLIT real form g2*, whose maximal compact SU(2)xSU(2) has dimension 6: exactly the 6 measured in so(7). What it is not is RIEMANNIAN, and Joyce's construction needs the compact form.\n\nThis also settles the Lambda decomposition question. The dimensions 1 + 7 + 27 and 7 + 14 are correct on BOTH branches, as a shared complexification requires; only the IDENTIFICATION of the 14 with compact g2 breaks, not any dimension.\n\nNOT AFFECTED, verified: the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.",
+      "drift": null
+    },
+    "chi_eff_route": {
+      "question": "Is chi_eff a CONSTANT independent of the seed, or SEED-DEPENDENT? The framework currently wants both.",
+      "source": "simulations.PM.geometry.geometry_narration.chi_eff_claim -- which returns the dichotomy and no value",
+      "status": "OPEN",
+      "selected": "unruled",
+      "default": "unruled",
+      "options": [
+        {
+          "id": "unruled",
+          "summary": "no route adopted; chi_eff_claim returns the dichotomy",
+          "consequence": "BUYS: the framework does not assert a derivation it cannot defend, and both branches stay runnable and costed. This is the honest state and it is what the code actually does.\nCOSTS: the EML track stays blocked -- the triple-track mismatch at FormulasRegistry.py:653 is waiting on exactly this ruling -- and every downstream consumer keeps reading a literal 144 whose provenance is open.",
+          "adopted": true
+        },
+        {
+          "id": "constant_144",
+          "summary": "chi_eff is a constant, independent of the seed",
+          "consequence": "BUYS: every consumer of the literal 144 keeps working unchanged, at either seed, and nothing downstream moves.\nCOSTS: chi_eff carries NO topological content, and this is demonstrated rather than interpreted -- n_gen = chi_eff/48 = 3 at every reachable profile INCLUDING n_T3 = 0, where there are no A_1 families and the generation count should be 0. Routes B and C are then both wrong, and the three-derivation agreement at 144 was never evidence.",
+          "adopted": false
+        },
+        {
+          "id": "seed_dependent",
+          "summary": "chi_eff = f(b_3), so it is not 144 off b_3 = 24",
+          "consequence": "BUYS: chi_eff becomes a genuine function of the topology rather than a constant, so it can carry topological content at all.\nCOSTS: it is not 144 on the 43 path -- 462.25 via b_3^2/4 or 258 via 6 b_3 -- so every consumer of the literal moves, across 112 modules that mention it. Worse, n_gen = chi_eff/48 is then NON-INTEGER at every Joyce-reachable profile on both sub-routes, so adopting this also forces a ruling on n_gen_source. The two b_3-dependent routes also disagree with each other everywhere except b_3 = 24, so this branch is not one option but two.",
+          "adopted": false
+        }
+      ],
+      "notes": "Opened 2026-09-22 so the two branches can be RUN rather than argued. chi_eff = 144 is load-bearing -- n_gen is taken as chi_eff/48, alpha_leak as 1/sqrt(chi_eff/b_3), reid_invariant as 1/chi_eff -- and 112 modules mention it under one of its names (measured). Three derivations are claimed and all three return 144 at b_3 = 24, which is precisely where the two b_3-dependent ones CROSS, uniquely.\n\nThe default is `unruled` because adopting either branch is an author act and neither has been made. `unruled` is not a placeholder: it is what the code does today, and chi_eff_claim() returns the dichotomy rather than a value.\n\nTWO COSTS MEASURED 2026-09-22, both new, and they COUPLE this fork to n_gen_source. First, 6 b_3 / 48 = b_3 / 8 IDENTICALLY, so `seed_dependent` via route C is not an independent route to the generation count -- it IS n_gen_source = b3_over_dim_O, and inherits that route's refutation across the whole Joyce family. Second, n_gen = chi_eff/48 fails on BOTH branches on that family: seed-dependent gives a non-integer at every reachable profile (0.2552, 1.8802, 5.0052, 9.6302 via b_3^2/4), while the constant branch gives n_gen = 3 even at n_T3 = 0, where the manifold carries no A_1 families and the count should be 0.\n\nSee PM.geometry.chi_eff_branches for the executable branches and the full cost table. Nothing there selects either.",
       "drift": null
     },
     "twisted_norm_convention": {

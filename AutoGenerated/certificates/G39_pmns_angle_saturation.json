@@ -9,7 +9,7 @@
   "version": "24.2",
   "wl_code": "24-pin cage geometry",
   "result": "theta_12~33, theta_23~45, theta_13~8.5",
-  "formula": "θ_ij from 24-pin axes",
+  "formula": "θ_ij from 43-pin axes",
   "verification_status": "VERIFIED",
   "evaluation_status": "COMPUTED_PASS",
   "evaluation": {
@@ -18,9 +18,9 @@
     "checks": [
       {
         "path": "pmns.theta_23_triality",
-        "value": 49.75,
+        "value": 50.988236884802596,
         "expected": 49.3,
-        "sigma": 0.45000000000000284,
+        "sigma": 1.688236884802599,
         "ok": true
       }
     ],
@@ -28,6 +28,6 @@
   },
   "derivation_status": "DERIVED",
   "note": "Gate 39: PMNS angles from 24-pin cage geometry. θ12, θ23, θ13 = principal axes",
-  "timestamp": "2026-09-20T21:48:55.843556Z",
+  "timestamp": "2026-09-22T10:36:19.301926Z",
   "hash": "3489e1b6bb4100f2"
 }

@@ -247,5 +247,20 @@
       }
     }
   },
-  "registry_drift": []
+  "registry_drift": [
+    {
+      "symbol": "H0_km_s_Mpc",
+      "registry_path": "cosmology.H0_local",
+      "canonical": 71.55,
+      "registry": 71.73960724690849,
+      "rel": 0.002649996462732274
+    },
+    {
+      "symbol": "theta13_deg",
+      "registry_path": "neutrino.theta_13_pred",
+      "canonical": 8.6473,
+      "registry": 8.357480095666395,
+      "rel": 0.03351565278567934
+    }
+  ]
 }

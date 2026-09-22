@@ -11,44 +11,44 @@
   "result": "theta_12=33.59, theta_13=8.65, theta_23=49.75, delta_CP=278.4",
   "formula": "U_PMNS from geometry",
   "verification_status": "VERIFIED",
-  "evaluation_status": "COMPUTED_PASS",
+  "evaluation_status": "COMPUTED_FAIL",
   "evaluation": {
     "tier": "registry",
     "source": "NuFIT dataset (5.2-era values, IO block)",
     "checks": [
       {
         "path": "neutrino.theta_12_pred",
-        "value": 33.59329049922625,
+        "value": 34.285533439123924,
         "expected": 33.41,
-        "sigma": 0.2443873323016703,
+        "sigma": 1.1673779188319031,
         "ok": true
       },
       {
         "path": "neutrino.theta_13_pred",
-        "value": 8.647304725338865,
+        "value": 8.357480095666395,
         "expected": 8.63,
-        "sigma": 0.15731568489876224,
+        "sigma": 2.477453675760056,
         "ok": true
       },
       {
         "path": "neutrino.theta_23_pred",
-        "value": 49.75,
+        "value": 50.988236884802596,
         "expected": 49.3,
-        "sigma": 0.45000000000000284,
+        "sigma": 1.688236884802599,
         "ok": true
       },
       {
         "path": "neutrino.delta_CP_pred",
-        "value": 278.4,
+        "value": 148.45813953488368,
         "expected": 278.0,
-        "sigma": 0.01538461538461451,
-        "ok": true
+        "sigma": 4.98237924865832,
+        "ok": false
       }
     ],
-    "status": "COMPUTED_PASS"
+    "status": "COMPUTED_FAIL"
   },
   "derivation_status": "DERIVED",
   "note": "Gate 27: PMNS parameters vs NuFIT dataset (registry-tier evaluation; theta_13 and delta_CP carry FITTED inputs per the honesty convention). Neutrino mixing from hidden rotation",
-  "timestamp": "2026-09-20T21:48:55.837822Z",
+  "timestamp": "2026-09-22T10:36:19.293804Z",
   "hash": "7f5aab5d35ad97d3"
 }

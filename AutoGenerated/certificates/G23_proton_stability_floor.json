@@ -2,7 +2,7 @@
   "proof_id": "G23_proton_stability_floor",
   "gate_id": 23,
   "gate_name": "Proton Stability Floor",
-  "label": "Baryon→meson decay forbidden by SO(24)",
+  "label": "Baryon→meson decay forbidden by SO(43)",
   "category": "Nuclear",
   "phase": 2,
   "block": "C",
@@ -21,7 +21,7 @@
     "status": "COMPUTED_PASS"
   },
   "derivation_status": "DERIVED",
-  "note": "Gate 23: Canonical tau_p = 4.757e34 yr vs Super-K p->e+pi0 bound 2.4e34 yr (PDG 2024) — evaluated against the live registry value.. Baryon→meson decay forbidden by SO(24)",
-  "timestamp": "2026-09-20T21:48:55.832681Z",
+  "note": "Gate 23: Canonical tau_p = 4.757e34 yr vs Super-K p->e+pi0 bound 2.4e34 yr (PDG 2024) — evaluated against the live registry value.. Baryon→meson decay forbidden by SO(43)",
+  "timestamp": "2026-09-22T10:36:19.284929Z",
   "hash": "6c8c3bd8c45196fd"
 }

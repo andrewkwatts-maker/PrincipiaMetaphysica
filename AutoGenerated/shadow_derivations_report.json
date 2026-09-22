@@ -18,14 +18,14 @@
       "values": {
         "nufit.theta_13": 8.58,
         "geometry.theta_13": 8.54,
-        "neutrino.theta_13_pred": 8.647304725338865,
-        "pmns.theta_13_triality": 8.647304725338865,
-        "particle.theta_13_deg": 8.668576499284981,
-        "neutrino.theta13_derived": 9.594068226860465
+        "neutrino.theta_13_pred": 8.357480095666395,
+        "pmns.theta_13_triality": 8.357480095666395,
+        "particle.theta_13_deg": 4.835067770441071,
+        "neutrino.theta13_derived": 12.890505732579426
       },
-      "max_pct_diff": 10.986665947500727,
+      "max_pct_diff": 62.4912484370498,
       "worst_pair": [
-        "geometry.theta_13",
+        "particle.theta_13_deg",
         "neutrino.theta13_derived"
       ],
       "tolerance_pct": 2.0,
@@ -52,34 +52,49 @@
       "skipped": {}
     },
     {
-      "observable": "H0_local",
+      "observable": "m_higgs",
       "values": {
-        "geometry.H0_local": 73.04,
-        "cosmology.H0_resolved_km_s_Mpc": 73.0400000000035,
-        "cosmology.H0_late_evolved": 73.04,
-        "cosmology.H0_local": 71.5500639237564
+        "pdg.m_higgs": 125.2,
+        "particle.m_h_GeV": 125.07986037465686,
+        "higgs.m_higgs_local": 70.56751354698358
       },
-      "max_pct_diff": 2.0398905753655985,
+      "max_pct_diff": 43.636171288351775,
       "worst_pair": [
-        "cosmology.H0_resolved_km_s_Mpc",
-        "cosmology.H0_local"
+        "pdg.m_higgs",
+        "higgs.m_higgs_local"
       ],
       "tolerance_pct": 2.0,
       "tolerance_used": 2.0,
       "verdict": "CONFLICT",
-      "skipped": {}
+      "skipped": {
+        "higgs.m_h": "not_in_registry"
+      }
     }
   ],
   "consistent_observables": [
     {
       "observable": "eta_B",
       "values": {
-        "cosmology.eta_baryon_pred": 6.185164569435048e-10,
-        "cosmology.eta_baryon_geometric": 6.185164569435048e-10,
-        "cosmology.eta_B": 6.185164569435048e-10,
-        "geometry.eta_baryon": 6.185164569435048e-10
+        "cosmology.eta_baryon_pred": 6.846485445932354e-10,
+        "cosmology.eta_baryon_geometric": 6.846485445932354e-10,
+        "cosmology.eta_B": 6.846485445932354e-10,
+        "geometry.eta_baryon": 6.846485445932354e-10
       },
       "max_pct_diff": 0.0,
+      "tolerance_pct": 2.0,
+      "tolerance_used": 2.0,
+      "verdict": "CONSISTENT",
+      "skipped": {}
+    },
+    {
+      "observable": "H0_local",
+      "values": {
+        "geometry.H0_local": 73.04,
+        "cosmology.H0_resolved_km_s_Mpc": 73.0400000000035,
+        "cosmology.H0_late_evolved": 73.04,
+        "cosmology.H0_local": 71.73960724690849
+      },
+      "max_pct_diff": 1.7803843826601156,
       "tolerance_pct": 2.0,
       "tolerance_used": 2.0,
       "verdict": "CONSISTENT",
@@ -100,28 +115,13 @@
       "skipped": {}
     },
     {
-      "observable": "m_higgs",
-      "values": {
-        "pdg.m_higgs": 125.2,
-        "particle.m_h_GeV": 125.07986037465686,
-        "higgs.m_higgs_local": 125.10242591991029
-      },
-      "max_pct_diff": 0.09595816720698291,
-      "tolerance_pct": 2.0,
-      "tolerance_used": 2.0,
-      "verdict": "CONSISTENT",
-      "skipped": {
-        "higgs.m_h": "not_in_registry"
-      }
-    },
-    {
       "observable": "g_a_gamma",
       "values": {
         "alp.coupling_GeV_inv": 1e-11,
         "alp.coupling_GeV_inv_value": 2.8999999999999997e-11,
-        "portals.alp_photon_coupling_gev_inv": 2.9032525449371696e-11
+        "portals.alp_photon_coupling_gev_inv": 1.2304479796271353e-06
       },
-      "max_pct_diff": 65.55587278330825,
+      "max_pct_diff": 99.99918728786868,
       "tolerance_pct": 200.0,
       "tolerance_used": 200.0,
       "verdict": "CONSISTENT",
@@ -132,9 +132,9 @@
       "values": {
         "geometry.sum_m_nu": 0.08168832953849638,
         "spectral.sum_m_nu": 0.062516556873872,
-        "neutrino.mass_sum": 0.1012138384586706
+        "neutrino.mass_sum": 0.10028549266801504
       },
-      "max_pct_diff": 38.233192391572175,
+      "max_pct_diff": 37.661415215033415,
       "tolerance_pct": 40.0,
       "tolerance_used": 40.0,
       "verdict": "CONSISTENT",

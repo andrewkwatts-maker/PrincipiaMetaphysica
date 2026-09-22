@@ -2,11 +2,11 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 212,
+    "files_scanned": 223,
     "dataset_values": 339,
     "exact_dup": 386,
-    "stale_dup": 338,
-    "files_with_findings": 88
+    "stale_dup": 339,
+    "files_with_findings": 89
   },
   "worst_files": [
     [
@@ -457,7 +457,7 @@
     },
     {
       "file": "simulations/PM/cosmology/dynamical_lambda.py",
-      "line": 703,
+      "line": 721,
       "literal": 280.96,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -2221,6 +2221,14 @@
       "literal": 0.958,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,
+      "class": "STALE_DUP"
+    },
+    {
+      "file": "simulations/PM/geometry/glued_orbit_scan.py",
+      "line": 117,
+      "literal": 1.05,
+      "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.uncertainty",
+      "dataset_value": 1.04,
       "class": "STALE_DUP"
     },
     {
@@ -4049,7 +4057,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 116,
+      "line": 122,
       "literal": 172.69,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -4057,7 +4065,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 117,
+      "line": 123,
       "literal": 4.18,
       "dataset_key": "experiment_ref.parameters.quarks.m_bottom.value",
       "dataset_value": 4.18,
@@ -4065,7 +4073,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 118,
+      "line": 124,
       "literal": 1.27,
       "dataset_key": "experiment_ref.parameters.quarks.m_charm.value",
       "dataset_value": 1.27,
@@ -4073,7 +4081,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 120,
+      "line": 126,
       "literal": 0.00467,
       "dataset_key": "experiment_ref.parameters.quarks.m_down.value",
       "dataset_value": 0.00467,
@@ -4081,7 +4089,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 121,
+      "line": 127,
       "literal": 0.00216,
       "dataset_key": "experiment_ref.parameters.quarks.m_up.value",
       "dataset_value": 0.00216,
@@ -4089,7 +4097,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 123,
+      "line": 129,
       "literal": 1.777,
       "dataset_key": "pdg_2024_values.leptons.m_tau.value",
       "dataset_value": 1.77693,
@@ -4097,7 +4105,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 124,
+      "line": 130,
       "literal": 0.1057,
       "dataset_key": "pdg_2024_values.leptons.m_muon.value",
       "dataset_value": 0.1056583755,
@@ -4105,7 +4113,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 125,
+      "line": 131,
       "literal": 0.000511,
       "dataset_key": "pdg_2024_values.leptons.m_electron.value",
       "dataset_value": 0.00051099895069,
@@ -4113,7 +4121,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 181,
+      "line": 198,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -4121,7 +4129,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 190,
+      "line": 207,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,
@@ -4129,7 +4137,7 @@
     },
     {
       "file": "simulations/PM/particle/yukawa_textures.py",
-      "line": 813,
+      "line": 830,
       "literal": 3.08e-05,
       "dataset_key": "experiment_ref.parameters.CKM_matrix.Jarlskog_invariant.value",
       "dataset_value": 3.08e-05,

@@ -1,16 +1,16 @@
 {
   "framework": "Principia Metaphysica",
   "scorecard_type": "Gate LOCKED vs OPEN tally + completion percentage",
-  "generated_at": "2026-09-21T18:09:27.666804Z",
+  "generated_at": "2026-09-22T15:05:37.043887Z",
   "seed_provenance": "All 72 gates trace back to seed b3 = 24 (G2 manifold).",
   "totals": {
     "total_gates": 72,
-    "locked": 41,
-    "open": 2,
+    "locked": 37,
+    "open": 6,
     "axiom_not_testable": 29,
     "other": 0,
     "testable_total": 43,
-    "completion_percent": 95.35,
+    "completion_percent": 86.05,
     "declarative_no_executable_form": 38
   },
   "by_phase": {
@@ -19,17 +19,19 @@
       "axiom": 5
     },
     "2": {
-      "locked": 12,
-      "open": 1,
+      "locked": 10,
+      "open": 3,
       "axiom": 2
     },
     "3": {
-      "locked": 12,
+      "locked": 11,
+      "open": 1,
       "axiom": 3
     },
     "4": {
-      "locked": 6,
-      "axiom": 9
+      "locked": 5,
+      "axiom": 9,
+      "open": 1
     },
     "5": {
       "locked": 6,
@@ -43,12 +45,13 @@
       "axiom": 5
     },
     "B": {
-      "locked": 7,
-      "open": 1,
+      "locked": 6,
+      "open": 2,
       "axiom": 2
     },
     "C": {
-      "locked": 10
+      "locked": 8,
+      "open": 2
     },
     "D": {
       "locked": 8,
@@ -56,7 +59,8 @@
     },
     "E": {
       "axiom": 9,
-      "locked": 5
+      "locked": 4,
+      "open": 1
     },
     "F": {
       "locked": 6,
@@ -75,15 +79,12 @@
     "14",
     "17",
     "18",
-    "19",
     "20",
     "21",
-    "22",
     "23",
     "24",
     "25",
     "26",
-    "27",
     "28",
     "29",
     "30",
@@ -99,7 +100,6 @@
     "47",
     "48",
     "49",
-    "50",
     "56",
     "59",
     "60",
@@ -109,8 +109,12 @@
   ],
   "open_gate_ids": [
     "12",
+    "19",
+    "22",
+    "27",
+    "50",
     "72"
   ],
   "counts_source": "evaluation_status where the gate has an executable form, verification_status otherwise. This previously read verification_status alone, so gates the evaluation layer had already failed were still counted LOCKED.",
-  "status_summary": "41/43 testable gates LOCKED (95.3% complete); 29 axiomatic; 38 declarative (no executable form, never run)."
+  "status_summary": "37/43 testable gates LOCKED (86.0% complete); 29 axiomatic; 38 declarative (no executable form, never run)."
 }

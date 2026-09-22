@@ -2,7 +2,7 @@
   "version": "24.2",
   "name": "Named Constants Registry",
   "description": "Curated named physics constants from parameters.json, keyed by canonical short name.",
-  "generated_at": "2026-09-21T18:09:27.401421Z",
+  "generated_at": "2026-09-22T15:05:36.809764Z",
   "generator": "metaphysica.generators.generate_named_constants",
   "seed_provenance": "All constants derive from or calibrate against the seed b3 = 24.",
   "total": 9,
@@ -61,7 +61,7 @@
     },
     "k_gimel": {
       "pm_path": "topology.k_gimel",
-      "value": 12.31830988618379,
+      "value": 21.81830988618379,
       "units": null,
       "description": null,
       "status": "GEOMETRIC",
@@ -74,7 +74,7 @@
     },
     "b3": {
       "pm_path": "particle.b3",
-      "value": 24,
+      "value": 43,
       "units": null,
       "description": null,
       "status": "DERIVED",

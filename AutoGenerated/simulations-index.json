@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-21T18:09:39.303527Z",
+  "generated_at": "2026-09-22T15:05:50.184497Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 298,
+  "total_scripts": 314,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -964,7 +964,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 28,
+      "count": 39,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1020,8 +1020,28 @@
           "parameters_contributed": []
         },
         {
+          "file": "chi_eff_branches.py",
+          "path": "simulations/PM/geometry/chi_eff_branches.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "chi_eff_routes.py",
           "path": "simulations/PM/geometry/chi_eff_routes.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "conical_point_search.py",
+          "path": "simulations/PM/geometry/conical_point_search.py",
           "category": "PM/geometry",
           "title": null,
           "description": null,
@@ -1070,8 +1090,38 @@
           "parameters_contributed": []
         },
         {
+          "file": "flat_form_involution_map.py",
+          "path": "simulations/PM/geometry/flat_form_involution_map.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "flux_quantization.py",
+          "path": "simulations/PM/geometry/flux_quantization.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "four_face_structure.py",
           "path": "simulations/PM/geometry/four_face_structure.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "fundamental_group.py",
+          "path": "simulations/PM/geometry/fundamental_group.py",
           "category": "PM/geometry",
           "title": null,
           "description": null,
@@ -1252,8 +1302,38 @@
           "parameters_contributed": []
         },
         {
+          "file": "geometry_narration.py",
+          "path": "simulations/PM/geometry/geometry_narration.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "What the framework may currently CLAIM about its geometry, generated.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "glued_orbit_scan.py",
+          "path": "simulations/PM/geometry/glued_orbit_scan.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "half_shift_enumeration.py",
           "path": "simulations/PM/geometry/half_shift_enumeration.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "holonomy_wording_audit.py",
+          "path": "simulations/PM/geometry/holonomy_wording_audit.py",
           "category": "PM/geometry",
           "title": null,
           "description": null,
@@ -1292,6 +1372,26 @@
           "parameters_contributed": []
         },
         {
+          "file": "kummer_transverse.py",
+          "path": "simulations/PM/geometry/kummer_transverse.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "leech_equivariance.py",
+          "path": "simulations/PM/geometry/leech_equivariance.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "leech_partition.py",
           "path": "simulations/PM/geometry/leech_partition.py",
           "category": "PM/geometry",
@@ -1300,6 +1400,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "topology.b3_leech_identification",
             "topology.g2_compatible",
             "topology.leech_dim",
             "topology.n_gen_leech",
@@ -1329,6 +1430,7 @@
           "parameters_contributed": [
             "topology.anomaly_free",
             "topology.b3_modular",
+            "topology.b3_modular_identification",
             "topology.critical_dim",
             "topology.dedekind_eta_phase",
             "topology.modular_weight",
@@ -1381,6 +1483,16 @@
         {
           "file": "twisted_form_basis.py",
           "path": "simulations/PM/geometry/twisted_form_basis.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "zero_mode_spec.py",
+          "path": "simulations/PM/geometry/zero_mode_spec.py",
           "category": "PM/geometry",
           "title": null,
           "description": null,
@@ -2703,6 +2815,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "unitary.b3_transverse_identification",
             "unitary.c_bridge",
             "unitary.c_ghost",
             "unitary.c_transverse",
@@ -2963,7 +3076,7 @@
     },
     "core": {
       "title": "core",
-      "count": 24,
+      "count": 29,
       "scripts": [
         {
           "file": "FormulasRegistry.py",
@@ -2978,6 +3091,16 @@
             "pm.version.short",
             "system.version"
           ]
+        },
+        {
+          "file": "ansatz_dependency_graph.py",
+          "path": "simulations/core/ansatz_dependency_graph.py",
+          "category": "core",
+          "title": null,
+          "description": "Does choosing a discrete ansatz freeze a metric-dependent parameter?",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "arithma_backend.py",
@@ -3005,6 +3128,16 @@
           "category": "core",
           "title": null,
           "description": "Canonical-value rulings for every contested quantity (2026-08 review).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "closure_ledger.py",
+          "path": "simulations/core/closure_ledger.py",
+          "category": "core",
+          "title": null,
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -3110,6 +3243,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "parameter_artifact.py",
+          "path": "simulations/core/parameter_artifact.py",
+          "category": "core",
+          "title": null,
+          "description": "One place that knows where `parameters.json` is, and says when it is missing.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "physics_config.py",
           "path": "simulations/core/physics_config.py",
           "category": "core",
@@ -3135,6 +3278,26 @@
           "category": "core",
           "title": null,
           "description": "Typed access to canonical registry parameter paths.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "ruled_divergences.py",
+          "path": "simulations/core/ruled_divergences.py",
+          "category": "core",
+          "title": null,
+          "description": "Formulas whose triple-track divergence is a RECORDED cost, not a defect.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "seed_blindness.py",
+          "path": "simulations/core/seed_blindness.py",
+          "category": "core",
+          "title": null,
+          "description": "Which published rows CLAIM b_3 but do not move when b_3 moves.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -3548,6 +3711,7 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
+            "unitary.b3_transverse_identification",
             "unitary.c_bridge",
             "unitary.c_ghost",
             "unitary.c_transverse",

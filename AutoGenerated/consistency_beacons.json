@@ -30,9 +30,9 @@
       "id": "beacon.nufit_delta_m32_squared_IO",
       "name": "Framework |dm2_32| vs NuFIT IO anchor",
       "reference": "NuFIT file inverted_ordering (5.2-era values)",
-      "value": 0.002494086266377881,
+      "value": 0.002490572439694893,
       "expected": 0.002498,
-      "delta_pct": 0.1566746846324541,
+      "delta_pct": 0.29734028443182364,
       "tolerance": 5.0,
       "status": "PASS",
       "note": "Registered neutrino.dm2_32 magnitude (LIVE) vs the dataset IO anchor 2.498e-3 eV\u00b2; the ~3.8% gap is the known 3.35\u03c3 tension."
@@ -96,9 +96,9 @@
       "id": "beacon.pmns_row1_unitarity",
       "name": "PMNS row-1 unitarity (LIVE framework angles)",
       "reference": "PDG 2024 neutrino mixing review (unitary 3x3 parameterisation)",
-      "value": 0.9999999999999999,
+      "value": 1.0,
       "expected": 1.0,
-      "delta_pct": 1.1102230246251565e-14,
+      "delta_pct": 0.0,
       "tolerance": 0.01,
       "status": "PASS",
       "note": "cos\u00b2\u03b813 + sin\u00b2\u03b813 must be exactly 1 for any consistent (\u03b812, \u03b813) pair."
