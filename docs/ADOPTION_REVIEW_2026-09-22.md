@@ -20,7 +20,7 @@ transients that a rebuild clears". It was not.
 | run | result |
 |---|---|
 | baseline, as inherited | **15 failed, 1997 passed, 846 skipped, 24 errors** (16m12s) |
-| after this pass | **0 failed, 2583 passed, 421 skipped, 0 errors** (29m08s), SSOT 99.9 % → **100.0 %** |
+| after this pass | **0 failed, 2592 passed, 414 skipped, 0 errors** (29m29s), 3006 collected, SSOT 99.9 % → **100.0 %** |
 
 The 846 skips are the headline. They were not a quiet tree; they were a tree
 that could not find its own artifacts, and §2 explains why. Of the 15+24
