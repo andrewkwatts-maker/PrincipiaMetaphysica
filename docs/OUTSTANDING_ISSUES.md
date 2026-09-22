@@ -7479,8 +7479,8 @@ transients that a rebuild clears". Measured before touching anything:
 |---|---|---|
 | failed | **15** | **0** |
 | errors | **24** | **0** |
-| passed | 1997 | 2553 |
-| skipped | **846** | 422 |
+| passed | 1997 | **2583** |
+| skipped | **846** | 421 |
 | SSOT compliance | 99.9 % | **100.0 %** |
 
 The 846 skips were the story. They were not a quiet tree; they were a tree
