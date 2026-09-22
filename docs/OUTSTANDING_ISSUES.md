@@ -7110,3 +7110,59 @@ from the fork, three corrections against the circulated draft baked in: Betti
 numbers COUNT (never lengths or areas), the seams are 3-dimensional tori (not
 lines), and the generation count is the RANK of the folding symmetry (not a
 dial). Switching the seed rewrites the story.
+
+### FINDING — the racetrack vacuum does not exist on the adopted path
+
+**2026-09-22, adoption sweep.** The racetrack mechanism IS the exponent
+ordering a > b, with a = 2π/b₃ and b = 2π/D_bulk. The seed adoption flips it:
+a = 2π/43 ≈ 0.1461 < b = 2π/26 ≈ 0.2417. Measured with the module's own
+solver over its declared window, both Kähler slopes: **zero stationary
+points, zero SUSY roots, V strictly positive and strictly decreasing** — a
+bare runaway to V → 0⁺. Not a relocated minimum; a deleted one. The solver
+was proven innocent by an ordering-restored control (a ↔ b): the SUSY AdS
+minimum reappears at Re(T) = 10.2085 with a dS saddle at 15.6529. This is
+the broken D_bulk − b₃ = −17 identity surfacing as physics: the "+2" was a
+load-bearing coincidence of the off-path seed.
+
+Hardened, not just recorded: `RACETRACK_a` is now a property over the live
+seed fork (the silent 2π/24 fallback that would have re-found 37.85 on any
+unbuilt tree is gone), `vacuum_report` computes its geometry strings and
+carries an `ordering_note` stating the loss, and the tests pin the ABSENCE
+(0 points, 0 roots, monotone V) so a vacuum cannot sneak back unnoticed.
+The seed_24 branch keeps its complete measured record: minimum 37.852731,
+saddle 41.732212 (n=3); 37.314090 / 40.635584 (n=7); Kähler sensitivity
+0.0142299.
+
+**Consequence for the OPEN re_t_adoption ruling — reframed.** The question
+is no longer "adopt 37.85 or an incumbent": on the active path the racetrack
+supplies NOTHING, so Re(T) is unbound-by-racetrack, and the options are (a)
+a costed boundary input (choosing WHICH value, e.g. any incumbent, is the
+ruling), or (b) a different stabilisation mechanism on 43 — α' corrections
+or a hidden-sector rank BELOW 26 (a larger rank weakens the instanton
+further; a proposal to raise it above 43 had the direction inverted).
+Nothing is adopted here.
+
+### The flavour sector becomes a switch: flavour_seed_coupling
+
+Same sweep. The v25 flavour formulas CLAIM b₃ in their text
+(θ₁₃ = arcsin(√(2/3)·√2·sin(π/b₃))) but were calibrated at 24 and registered
+particle.b3 = 24 with status DERIVED regardless of the seed — the last
+seed-blind writer. Now a fork: **follow_seed (adopted)** — the formulas
+consume the live seed, θ₁₃ = 4.8351° (measured), the honest divergence of a
+24-calibrated ansatz that claimed a topological origin, published as such;
+**calibrated_24** — the full v25 contract, regression-pinned under its
+branch (18/18), so the costed alternative cannot rot. One resolution feeds
+the values, the EML trees (flavour_b3_leaf) and the arithma side, so
+triple-track cannot see phantom splits; the Sprint-4 hard θ₁₃ assertion is
+branch-aware (hard on the calibrated branch, recorded divergence on the
+adopted one).
+
+Also this sweep: the 24-census (1330 B3_MOVES / 639 BULK_STAYS / 47
+AMBIGUOUS across 183 files, artifact b3_24_census.json); the beginner guide
+is now GENERATED from layperson_narration (the hand-written "24 ÷ 8 = 3"
+story is gone from source); b3_origin is branch-aware (on the adopted path
+its question is ANSWERED — derived_joyce_a1; on seed_24 the 2026-09-14
+INPUT ruling stands); and the seed registration's provenance says
+DERIVED:JOYCE_A1_FAMILY_COUNT / INPUT:B3_ORIGIN_OPEN per branch, because
+registering a derived value under an INPUT label would be lying in one
+direction and the reverse in the other.
