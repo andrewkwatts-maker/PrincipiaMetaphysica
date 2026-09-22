@@ -6969,3 +6969,65 @@ chunks. Chunked because this container suspends between commands, so a
 background run of the whole suite makes almost no progress; that is an
 environment property and not a property of the tree.
 
+
+### ADDENDUM — the geometric layer closed out: seed provenance, the exponent pinned, the ledger self-contained
+
+**2026-09-22, after the routine's pass.** Three hardening items land on top of
+the routine's work, and with them the geometric layer is closed out in the
+sense this campaign uses the word: every reachable claim measured, every
+unreachable claim named with its missing object, every null recorded where a
+reader would look for it.
+
+#### The free set now says which SEED built its artifact (2dfd477)
+
+Discovered independently of, and complementary to, the routine's resolver fix.
+With `METAPHYSICA_VARIANT_B3_SEED=seed_43_joyce` set and no rebuild, the
+registered `particle.b3` still reads 24 -- `parameters.json` is a shared
+gitignored build artifact, so the three b₃-arithmetic removals verify against
+whichever seed last BUILT, with nothing in the output saying which. The guard
+LABELS rather than un-removes: the removals are internally consistent with the
+artifact as built, so the fork-side count exists only after a rebuild, and
+changing the count from the env var alone would fake a measurement never made.
+`build_free_set()` now carries `artifact_seed_provenance` (artifact b₃ vs the
+live fork's, with a consistency verdict) and, on a mismatch, names the
+removals resting on the stale value. The routine's `parameter_artifact`
+answers *which file was read*; this answers *which seed built it*. Both
+provenance layers are needed and both are tested together.
+
+#### The sqrt(t) wall claim becomes an EXPONENT (ae944d9)
+
+Adversarial review of the routine's orbit scan found one gap: the order-one
+test (t·a²/r*² ∈ (0.5, 1.5) over t ∈ [1, 100]) tolerates any wall exponent in
+roughly [0.38, 0.62] -- r* ~ t^0.47 would have passed while the register says
+sqrt(t). Measured: local log-log slopes 0.49667 → 0.49867 → 0.49948 across
+t = 100..3000, approaching ½ monotonically FROM BELOW as the a⁴/r⁴ correction
+dies. Pinned as three assertions -- below ½ always, monotone increasing, final
+within 5e-3 of ½ (measured deviation 5.2e-4, margin 10×, stated in the file).
+The rest of the review found the discipline held: no unfalsifiable
+assertions in the nine new modules, the Leech enumeration genuinely exhaustive
+(512 = 8³ block characters, 168 faithful), kill conditions tested where they
+could fire.
+
+#### The ledger's layer notes carry the measured nulls
+
+`closure_ledger.LAYERS` now records, in the layer notes themselves: integer
+flux cannot freeze a METRIC_DEPENDENT row at leading order because the
+pairing is t-free (43 integers collapse to 2); and no discrete ansatz reaches
+one either (zero traced edges). A reader of the ledger alone now sees not
+just that the 7 metric rows are open, but that the two known freezing
+mechanisms were tried and measured null. The continuous count stands at 22.
+
+#### The closed-out state of the geometric layer
+
+| layer | state |
+|---|---|
+| topology | CLOSED -- (12, 43) selected by n_gen = rank(Γ) = 3; b₃ = 7 + 3b₂ makes one input |
+| metric | valued at leading order; its degenerate wall located at r* ∝ √t (exponent pinned), off-manifold below t_crit |
+| flux | 43 integers → 2 effective at leading order; freezes the scale only (null recorded) |
+| flavour | blocked on a NAMED missing object: codimension-7 conical points, of which the enumeration has none; intersection routes closed by admissibility = disjointness |
+| wording | generated from live forks; published-artifact ratchet in place; the one literal PASS gate now refuses on both branches |
+
+**The author rulings now waiting, consolidated:** ruling chi_eff also rules
+n_gen_source (6b₃/48 ≡ b₃/8 identically -- route C is the b₃-route in
+disguise); b3_seed; re_t_adoption. Each has both branches executable with
+measured costs. The EML track unblocks on the first of these.
