@@ -6887,3 +6887,85 @@ live predicate's source rather than against the spec's own prose.
 today — writing the EH neck boundary conditions precisely — unblocks none of
 them on its own, which the module says in its own text.
 
+#### TASK 1(b)(c) — the on-path fix, at the one site that was both false AND inert
+
+The wording task's highest-value site turned out to be a defect of both kinds
+at once, and it was being published. `g2_geometry.get_gate_checks()` emitted
+into `theory_output.json`:
+
+```
+"gate_id":   "G_GEOMETRY_HOLONOMY",
+"assertion": "G2 holonomy validated (parallel spinor + Ricci-flat + torsion-free)",
+"result":    "PASS",
+"details":   {"parallel_spinors": 1, "ricci_scalar": 0.0, "torsion_free": True}
+```
+
+**It was the only gate in that list whose `result` was a literal** rather than
+a comparison — its three siblings all read `"PASS" if <expr> else "FAIL"` — and
+the three "details" offered as evidence were the same three literals the check
+itself used.
+
+**And the check could not fail.** `_validate_g2_holonomy` was `all()` over:
+
+| condition | what it actually did |
+|---|---|
+| exactly one parallel spinor | `n_parallel_spinors = 1`, then asserted `== 1` |
+| Ricci-flatness | `ricci_scalar = 0.0`, then asserted `< 1e-10` |
+| torsion-free | `_validate_torsion_free()`, which is zero by construction because `_exterior_derivative_3form` returns `np.zeros(...)` |
+
+The third was already annotated honestly — `_validate_torsion_free`'s own
+docstring says "cannot fail by construction" — but `_validate_g2_holonomy` did
+not say so, and its verdict was published. So a validation returning `True`
+unconditionally published a PASS for a claim that is **false on the adopted
+branch**: φ is a G₂-structure for the SPLIT real form, induced metric signature
+(4,3), so no Riemannian G₂-holonomy manifold is behind it.
+
+Fixed by **generation, not by find-and-replace**, which is the whole point of
+the route: the assertion sentence and the verdict now come from
+`geometry_narration.holonomy_claim()`, and each condition reports MEASURED or
+PLACEHOLDER with a reason. All three are placeholders.
+
+**The two objections are deliberately kept separate.** On `octonion_derived`
+the real-form objection disappears and the assertion rewrites itself to the
+compact-form sentence — and the gate **still refuses**, because the conditions
+are placeholders on either branch. Collapsing them into one verdict would hide
+whichever got fixed first and silently restore a PASS built on three literals.
+A test pins both branches.
+
+Measured after a fresh rebuild: **published occurrences unchanged at 742**, and
+the **source-file count unchanged at 93**. The old assertion string and its
+generated replacement each carry one occurrence, so the ratchets do not move —
+which is the correct outcome and worth stating, because a wording fix that
+lowered a count would have been deleting history rather than correcting a
+claim.
+
+#### Suite cost, and a correction to what this pass added
+
+The new modules made the suite roughly three times slower before this was
+looked at. Four hot spots, all fixed with the results re-verified **identical**:
+
+* the **7⁷ = 823,543-entry Levi-Civita symbol** was rebuilt on every
+  `G2DifferentialGeometry()` construction — cached, and made read-only since it
+  is now shared;
+* **Hitchin's contraction** now uses a pairwise order (`optimize=True`),
+  0.156 s → 0.0003 s. An earlier version of the comment claimed it was
+  **bitwise identical**; measured across the glued forms it is **not** — the
+  orders differ by ~1e-13 absolute on entries of order 400, machine-epsilon
+  reassociation. The claim was made from a single test case and the test caught
+  it. What is pinned instead is the property that matters: sign of det B and
+  the eigenvalue signs agree under both orders at every sampled point;
+* `eta` was **lambdified** from the symbolic form rather than substituted into
+  per call;
+* the character table, the identity index, the flat-form map and the
+  whole-tree source read are **memoised**.
+
+The orbit scan went **306 s → 0.3 s** with every measured number unchanged —
+same 700 records, same 36 degenerate detections, same 165 orientation flips,
+same wall table, same t_crit. `correspondence_report` went 100 s → 0.22 s and
+the Leech enumeration 38 s → 0.06 s.
+
+**Baseline after this pass: 2391 passed / 421 skipped / 0 failed**, run in six
+chunks. Chunked because this container suspends between commands, so a
+background run of the whole suite makes almost no progress; that is an
+environment property and not a property of the tree.
+
