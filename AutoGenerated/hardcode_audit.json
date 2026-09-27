@@ -4,7 +4,7 @@
   "summary": {
     "files_scanned": 224,
     "dataset_values": 339,
-    "exact_dup": 394,
+    "exact_dup": 393,
     "stale_dup": 341,
     "files_with_findings": 90
   },
@@ -58,15 +58,15 @@
       15
     ],
     [
-      "simulations/PM/particle/higgs_vev_refined.py",
-      15
-    ],
-    [
       "simulations/PM/validation/candidate_closure_gate.py",
       15
     ],
     [
       "simulations/PM/cosmology/evolution_engine.py",
+      14
+    ],
+    [
+      "simulations/PM/particle/higgs_vev_refined.py",
       14
     ]
   ],
@@ -3473,7 +3473,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 227,
+      "line": 247,
       "literal": 172.69,
       "dataset_key": "experiment_ref.parameters.quarks.m_top.value",
       "dataset_value": 172.69,
@@ -3481,7 +3481,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 228,
+      "line": 248,
       "literal": 91.1876,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_Z.value",
       "dataset_value": 91.1876,
@@ -3489,7 +3489,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 229,
+      "line": 249,
       "literal": 80.3692,
       "dataset_key": "experiment_ref.parameters.weak_interaction.m_W.value",
       "dataset_value": 80.3692,
@@ -3497,7 +3497,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 232,
+      "line": 252,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -3505,7 +3505,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 234,
+      "line": 254,
       "literal": 1.1663788e-05,
       "dataset_key": "pdg_2024_values.constants.G_F.value",
       "dataset_value": 1.1663788e-05,
@@ -3513,7 +3513,15 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 224,
+      "line": 440,
+      "literal": 246.22,
+      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
+      "dataset_value": 246.22,
+      "class": "EXACT_DUP"
+    },
+    {
+      "file": "simulations/PM/particle/higgs_vev_refined.py",
+      "line": 244,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -3521,7 +3529,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 419,
+      "line": 664,
       "literal": 246.22,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -3529,23 +3537,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 419,
-      "literal": 246.22,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 641,
-      "literal": 246.22,
-      "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
-      "dataset_value": 246.22,
-      "class": "EXACT_DUP"
-    },
-    {
-      "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 669,
+      "line": 692,
       "literal": 1.1663788e-05,
       "dataset_key": "pdg_2024_values.constants.G_F.value",
       "dataset_value": 1.1663788e-05,
@@ -3553,7 +3545,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 870,
+      "line": 893,
       "literal": 245.72,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -3561,7 +3553,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 870,
+      "line": 893,
       "literal": 246.72,
       "dataset_key": "experiment_ref.parameters.weak_interaction.v_EW.value",
       "dataset_value": 246.22,
@@ -3569,7 +3561,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 619,
+      "line": 642,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -3577,7 +3569,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 597,
+      "line": 620,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
@@ -3585,7 +3577,7 @@
     },
     {
       "file": "simulations/PM/particle/higgs_vev_refined.py",
-      "line": 610,
+      "line": 633,
       "literal": 137.035999177,
       "dataset_key": "codata_2022.fundamental_constants.alpha_inverse.value",
       "dataset_value": 137.035999177,
