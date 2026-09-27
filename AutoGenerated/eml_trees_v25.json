@@ -51,7 +51,7 @@
     },
     "axion_photon_coupling_summary": {
       "b3_traceback": true,
-      "formula": "g_a_gamma_gamma derived from b3 = 24 via G2 anomaly + Re(T)",
+      "formula": "g_a_gamma_gamma derived from b3 = 43 via G2 anomaly + Re(T)",
       "value": 2.6884918153374434e-11
     },
     "f_a_GeV": {
@@ -61,7 +61,7 @@
     },
     "g_a_gamma_gamma_GeV": {
       "b3_traceback": true,
-      "formula": "(alpha_EM / (2*pi*f_a)) * C_a_gamma_gamma * S  -- C_a_gamma_gamma derived from b3 = 24 via G2 anomaly",
+      "formula": "(alpha_EM / (2*pi*f_a)) * C_a_gamma_gamma * S  -- C_a_gamma_gamma derived from b3 = 43 via G2 anomaly",
       "value": 2.6884918153374434e-11
     }
   },
@@ -74,7 +74,7 @@
     "epsilon_L": {
       "b3_traceback": false,
       "formula": "CP-violating phase from G2 triple-cycle intersections: 0.01 * exp(-Re(T) / 100)",
-      "value": 0.0013533528323661271
+      "value": 0.001754624884408279
     },
     "eta_B": {
       "b3_traceback": true,
@@ -101,17 +101,17 @@
   "cosmological_tensions": {
     "H0_resolved_km_s_Mpc": {
       "b3_traceback": true,
-      "formula": "73.04 + 5.8 * delta_w_mirror  -- H0 + DESI-linear-response shift (delta_w from b3 = 24 anchored mirror sector; magnitude currently ~10^13x too small to resolve tension)",
+      "formula": "73.04 + 5.8 * delta_w_mirror  -- H0 + DESI-linear-response shift (delta_w from b3 = 43 anchored mirror sector; magnitude currently ~10^13x too small to resolve tension)",
       "value": 73.0400000000035
     },
     "S8_resolved": {
       "b3_traceback": true,
-      "formula": "0.83 - 0.085 * delta_w_mirror  -- S8 + KiDS/DES growth-suppression (delta_w from b3 = 24 anchored mirror sector)",
+      "formula": "0.83 - 0.085 * delta_w_mirror  -- S8 + KiDS/DES growth-suppression (delta_w from b3 = 43 anchored mirror sector)",
       "value": 0.8299999999999487
     },
     "delta_w_mirror": {
       "b3_traceback": true,
-      "formula": "0.012 * exp(-Re(T) / 200) * g_mirror  -- mirror-sector DE from Z2 bridge (Re(T) anchored at b3 = 24 via Sprint 4 #3)",
+      "formula": "0.012 * exp(-Re(T) / 200) * g_mirror  -- mirror-sector DE from Z2 bridge (Re(T) anchored at b3 = 43 via Sprint 4 #3)",
       "value": 6.031906962403355e-13
     },
     "f_EDE_kk_honest_12bridges": {
@@ -126,7 +126,7 @@
     },
     "full_cosmological_tension_resolution": {
       "b3_traceback": true,
-      "formula": "mirror DE / early DE from 26D bulk + Re(T); Re(T) anchored at b3 = 24 (Sprint 4 #3); DOCUMENTED_TENSION -- magnitudes ~10^13x too small",
+      "formula": "mirror DE / early DE from 26D bulk + Re(T); Re(T) anchored at b3 = 43 (Sprint 4 #3); DOCUMENTED_TENSION -- magnitudes ~10^13x too small",
       "value": 73.0400000000035
     },
     "m_kk_for_target_f_EDE": {
@@ -138,12 +138,12 @@
   "g2_inflation": {
     "n_s": {
       "b3_traceback": true,
-      "formula": "Canonical (infrared closure, native): 1 - 2*phi^2/chi_eff = 1 - 2/55 where chi_eff = 6*b3 = 144 and phi = (1+sqrt(5))/2. Slow-roll diagnostic: 1 - 6*epsilon + 2*eta where epsilon = 3 / (2*ReT^2), eta = -1.5 / ReT^2, ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24.",
+      "formula": "Canonical (infrared closure, native): 1 - 2*phi^2/chi_eff = 1 - 2/55 where chi_eff = 6*b3 = 144 and phi = (1+sqrt(5))/2. Slow-roll diagnostic: 1 - 6*epsilon + 2*eta where epsilon = 3 / (2*ReT^2), eta = -1.5 / ReT^2, ReT inherits from Sprint 4 Re(T) stabilization with b3 = 43.",
       "value": 0.9636384168229182
     },
     "r": {
       "b3_traceback": true,
-      "formula": "16 * epsilon where epsilon = 3 / (2*ReT^2) and ReT inherits from Sprint 4 Re(T) stabilization with b3 = 24",
+      "formula": "16 * epsilon where epsilon = 3 / (2*ReT^2) and ReT inherits from Sprint 4 Re(T) stabilization with b3 = 43",
       "value": 0.000792406498244269
     }
   },
@@ -160,7 +160,7 @@
     },
     "m_h_GeV": {
       "b3_traceback": true,
-      "formula": "MSSM CP-even mass-matrix diagonalisation + stop-loop correction; m_h^2 = m_h_tree^2(B_mu, tan_beta, m_Z) + delta_radiative^2; soft terms seeded by b3=24 via Re(T) sector",
+      "formula": "MSSM CP-even mass-matrix diagonalisation + stop-loop correction; m_h^2 = m_h_tree^2(B_mu, tan_beta, m_Z) + delta_radiative^2; soft terms seeded by b3=43 via Re(T) sector",
       "value": 125.07986037465686
     },
     "m_h_divergence": {
@@ -233,7 +233,7 @@
     },
     "mirror_dm_relic": {
       "b3_traceback": true,
-      "formula": "2.74e8 * m_mirror * Y_today | full freeze-out from Z2 bridge (b3=24)",
+      "formula": "2.74e8 * m_mirror * Y_today | full freeze-out from Z2 bridge (b3=43)",
       "value": {
         "Y_today": 1.0000940672916601e-10,
         "omega_mirror_h2": 9.618304682770812e-05
@@ -241,14 +241,14 @@
     },
     "omega_mirror_h2": {
       "b3_traceback": true,
-      "formula": "solve Boltzmann + bridge_coupling from G2 cycles | b3=24 rooted via re_t_sector | CALIBRATED: IC-dominated (see Y_INITIAL note)",
+      "formula": "solve Boltzmann + bridge_coupling from G2 cycles | b3=43 rooted via re_t_sector | CALIBRATED: IC-dominated (see Y_INITIAL note)",
       "value": 9.618304682770812e-05
     }
   },
   "neutrino_sector": {
     "m_lightest_eV": {
       "b3_traceback": true,
-      "formula": "(b3 / 24) * m_seed  -- lightest neutrino mass anchored to b3 = 24 seed via G2 triple-cycle Yukawa",
+      "formula": "(b3 / 24) * m_seed  -- lightest neutrino mass anchored to b3 = 43 seed via G2 triple-cycle Yukawa",
       "value": 0.001
     },
     "mirror_correction_eV": {
@@ -381,7 +381,7 @@
     },
     "theta_QCD_eff": {
       "b3_traceback": true,
-      "formula": "min V(a) = Lambda^4 (1 - cos(a/f_a + theta_QCD))  -- f_a from b3 = 24 via Re(T)",
+      "formula": "min V(a) = Lambda^4 (1 - cos(a/f_a + theta_QCD))  -- f_a from b3 = 43 via Re(T)",
       "value": 0.0
     }
   }

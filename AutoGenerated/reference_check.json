@@ -2,9 +2,14 @@
   "schema_version": 1,
   "note": "Dead-link check: formula ids referenced from sections.json that do not resolve in formulas.json. Empty = healthy.",
   "summary": {
-    "formulas": 569,
+    "formulas": 568,
     "referenced": 514,
-    "unresolved": 0
+    "unresolved": 1
   },
-  "unresolved": []
+  "unresolved": [
+    {
+      "id": "fermi-constant-physical-v18",
+      "via": "formula_refs list"
+    }
+  ]
 }
