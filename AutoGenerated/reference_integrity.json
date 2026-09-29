@@ -4,10 +4,10 @@
   "n_pass": 5,
   "n_fail": 0,
   "totals": {
-    "references": 199,
-    "cited": 199,
+    "references": 203,
+    "cited": 203,
     "orphans": 0,
-    "distinct_titles": 199,
+    "distinct_titles": 203,
     "duplicate_titles": 0,
     "entries_in_duplicate_groups": 0,
     "without_identifier": 0
@@ -16,8 +16,8 @@
     {
       "id": "every_reference_is_identifiable",
       "claim": "each entry carries an arXiv id, DOI or URL a reader can follow",
-      "measured": 199,
-      "expected": 199,
+      "measured": 203,
+      "expected": 203,
       "status": "PASS",
       "note": "an entry nobody can look up cannot support a claim"
     },
@@ -48,8 +48,8 @@
     {
       "id": "references_are_cited",
       "claim": "each entry is cited by a formula, section or parameter",
-      "measured": 199,
-      "expected": 199,
+      "measured": 203,
+      "expected": 203,
       "status": "PASS",
       "note": "source_simulation records which module registered an entry -- that is provenance, not citation; it does not say which claim the paper supports"
     }
@@ -97,6 +97,7 @@
     "lagrangian_master_derivation_v22": 5,
     "abstract_v17_2": 4,
     "introduction_v16_0": 4,
+    "closed_geometry_certificate": 4,
     "chirality_v16_0": 4,
     "higgs_mass_v16_0": 4,
     "yukawa_textures_v18": 4,

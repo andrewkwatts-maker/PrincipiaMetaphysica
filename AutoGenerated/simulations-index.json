@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-27T01:56:27.812962Z",
+  "generated_at": "2026-09-29T20:55:12.006565Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 317,
+  "total_scripts": 327,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -974,7 +974,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 39,
+      "count": 49,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1028,6 +1028,18 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
+        },
+        {
+          "file": "certificate.py",
+          "path": "simulations/PM/geometry/closed_geometry/certificate.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The certificate: every theorem evaluated on the active seed, and the",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "topology.chi_y7"
+          ]
         },
         {
           "file": "chi_eff_branches.py",
@@ -1100,6 +1112,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "family_topology.py",
+          "path": "simulations/PM/geometry/family_topology.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "flat_form_involution_map.py",
           "path": "simulations/PM/geometry/flat_form_involution_map.py",
           "category": "PM/geometry",
@@ -1112,6 +1134,16 @@
         {
           "file": "flux_quantization.py",
           "path": "simulations/PM/geometry/flux_quantization.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "flux_vacuum.py",
+          "path": "simulations/PM/geometry/flux_vacuum.py",
           "category": "PM/geometry",
           "title": null,
           "description": null,
@@ -1382,6 +1414,26 @@
           "parameters_contributed": []
         },
         {
+          "file": "joyce_reachability.py",
+          "path": "simulations/PM/geometry/joyce_reachability.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Which (b_2, b_3) Joyce's construction reaches from phi's own (Z/2)^3: D-006.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "joyce_resolution.py",
+          "path": "simulations/PM/geometry/joyce_resolution.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The full Betti sequence of the resolved Joyce manifold, and chi(Y_7) = 0.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "kummer_transverse.py",
           "path": "simulations/PM/geometry/kummer_transverse.py",
           "category": "PM/geometry",
@@ -1458,6 +1510,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "physics.py",
+          "path": "simulations/PM/geometry/closed_geometry/physics.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The scoped physics theorems CG.5-CG.6 (closure plan item G2): what",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "re_t_sector.py",
           "path": "simulations/PM/geometry/re_t_sector.py",
           "category": "PM/geometry",
@@ -1468,6 +1530,47 @@
           "parameters_contributed": [
             "geometry.ReT",
             "geometry.VEV_gap_percent"
+          ]
+        },
+        {
+          "file": "references.py",
+          "path": "simulations/PM/geometry/closed_geometry/references.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The certificate's bibliography: one record per source, cited by key.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "simulation.py",
+          "path": "simulations/PM/geometry/closed_geometry/simulation.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Publication: the certificate as formulas, a paper subsection, certificates,",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "bridge.breathing_aggregation",
+            "bridge.distributed_or_rank",
+            "bridge.n_pairs",
+            "gauge.chirality_reversal_probability",
+            "gauge.hypercharge_canonical",
+            "gauge.hypercharge_coupling_gp",
+            "gauge.kk_canonical",
+            "gauge.kk_gauge_kinetic_coeff",
+            "gauge.kk_planck_factor",
+            "gauge.m_w_gev",
+            "gauge.m_z_gev",
+            "gauge.qcd_alpha_s_mz",
+            "gauge.qcd_canonical",
+            "gauge.qcd_gluon_count",
+            "gauge.rho_parameter",
+            "gauge.sin2_theta_w",
+            "gauge.sin2_theta_w_geometric",
+            "gauge.weak_boson_count",
+            "gauge.weak_canonical",
+            "gauge.weak_coupling_g2"
           ]
         },
         {
@@ -1486,6 +1589,33 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Sphere Packing Simulation \u2014 E8 and Leech Lattice",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "theorem.py",
+          "path": "simulations/PM/geometry/closed_geometry/theorem.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The certificate's building blocks: the Theorem record, the expression",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "index.chiral_anomaly_coefficient",
+            "index.dirac_index",
+            "index.family_index",
+            "index.n_generations",
+            "index.n_minus",
+            "index.n_plus"
+          ]
+        },
+        {
+          "file": "topology.py",
+          "path": "simulations/PM/geometry/closed_geometry/topology.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The topological theorems CG.1-CG.4: independent of the metric and of",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

@@ -22,7 +22,7 @@
   },
   "adopted_digest": "4575eb450af9e9d8",
   "n_forks": 18,
-  "n_deviations": 50,
+  "n_deviations": 51,
   "watched": {
     "observables": [
       "ancestral_roots",
@@ -151,8 +151,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 39,
-          "deviated": 40,
+          "adopted": 38,
+          "deviated": 39,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -224,8 +224,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 39,
-          "deviated": 40,
+          "adopted": 38,
+          "deviated": 39,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -362,8 +362,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 39,
-          "deviated": 40,
+          "adopted": 38,
+          "deviated": 39,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -445,8 +445,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 39,
-          "deviated": 40,
+          "adopted": 38,
+          "deviated": 39,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -575,6 +575,16 @@
       "fork": "dark_energy_betti",
       "option": "b3_24",
       "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_betti",
+      "option": "b3_live",
+      "is_adopted_option": false,
       "fork_status": "RULED",
       "observables_moved": [],
       "identities_flipped": [],
@@ -847,8 +857,8 @@
       "observables_moved": [
         {
           "observable": "free_set_size",
-          "adopted": 39,
-          "deviated": 40,
+          "adopted": 38,
+          "deviated": 39,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         }

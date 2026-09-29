@@ -1,7 +1,7 @@
 {
   "framework": "Principia Metaphysica",
   "audit_type": "26D Terminology Compliance",
-  "generated_at": "2026-09-27T01:56:14.755947Z",
+  "generated_at": "2026-09-29T20:55:00.416186Z",
   "total_files_scanned": 4,
   "files_scanned": [
     "formulas.json",
@@ -52,7 +52,7 @@
     "(24,2)": 722,
     "24 + 2": 39,
     "b3 = 24": 138,
-    "G2 holonomy": 420,
+    "G2 holonomy": 416,
     "twisted connected sum": 57,
     "(12,1)": 423,
     "Sp(2,R)": 59
@@ -73,7 +73,7 @@
       "file": "theory_output.json"
     },
     {
-      "path": "theory_output.json['self_validations'][72]['checks'][3]['message']",
+      "path": "theory_output.json['self_validations'][73]['checks'][3]['message']",
       "pattern": "\\b25D\\b",
       "suggestion": "Two-time ruling: the bulk is 26D = 24 space + 2 times",
       "snippet": "12 pairs * 2D = 24D spatial + 1D time = 25D total",

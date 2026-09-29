@@ -7718,3 +7718,163 @@ evidence recorded.
 | `re_t_adoption` | OPEN, reframed | the racetrack supplies nothing on the adopted path; deviating the fork changes zero observables. Now has a 56-row costed option table, and the menu-wide result that no pair gives dS. |
 | **G22's numerator / G01's 288** | **OPEN (new)** | the two declarative strategies disagree with each other today; `tau_24 = b_3` is registered BROKEN on the adopted branch. |
 | **`appendix_h`'s n: b₃ or the bulk's 24?** | **OPEN (new)** | the module reads `elder_kads`, so the budget is 915 and the SO(24) label is false on-path. Stated per branch; not decided. |
+
+
+## 2026-09-30 (twenty-fourth pass) — closing the geometry: a certificate, a red-team, and a SETTLED result that fell
+
+The author delegated working decisions under a published decision rule
+(validity > closure > consistency > elegance > data as a test). This pass is its
+first use. Every step was pre-registered in `docs/DECISION_LOG.md` (D-001 …
+D-006) and committed before it was computed; the log carries the evidence, and
+this entry carries the narrative.
+
+### THE CERTIFICATE (G0, seeding G4)
+
+The geometry now has one source of truth for prose: the certificate in
+`PM/geometry/closed_geometry/`. Each theorem carries:
+
+- a statement rendered from the live computation;
+- what it counts, its proof, its falsifier and its scope;
+- a test id that fails if it is false;
+- references checked against the source.
+
+It follows the seed fork. Flipping to (8, 31) re-derives every statement for that
+member, and seed_24 publishes nothing. It is wired into the run as subsection
+2.4, with parameter `topology.chi_y7 = 0`.
+
+- **CG.1** The resolved Betti sequence (1, 0, 12, 43, 43, 12, 0, 1), derived from
+  Joyce's resolution formula.
+- **CG.2** χ(Y₇) = 0. It is the Euler characteristic. The formula still published
+  as `euler-characteristic` is the effective index χ_eff: an open ruling, computed
+  from off-path TCS Hodge data. Its labels were corrected, and its id and value are
+  untouched.
+- **CG.3** Twelve singular components, each a flat T³ with b₁ = 3.
+- **CG.4** π₁ is finite exactly when all three generating involutions are
+  singular, with an explicit infinite-order witness otherwise.
+- **CG.5** Gauge content. The 12 loci are C²/ℤ₂ × T³, so each is N = 4 SU(2)
+  (Acharya, hep-th/9812205, quoted): no confinement, no gaugino condensate.
+- **CG.7** The reachable set: what Joyce's construction reaches from φ's
+  (ℤ/2)³. It is family-level, so it publishes on every branch, including
+  seed_24, which it excludes: b₃ = 24 is not among the 28 literature-checked
+  pairs.
+- **CG.6** The flux potential runs away. With the Lukas–Morris Kähler potential
+  for exactly this manifold (hep-th/0305078) and the ADV superpotential
+  (hep-th/0502060), V = 4e^K K^{ij}N_iN_j > 0, which scales as λ⁻⁵. The control
+  with a non-real Chern–Simons invariant finds the supersymmetric AdS vacuum, so
+  the method is able to find one.
+
+### THE RED-TEAM, AND WHAT FELL
+
+A blind verifier re-derived G0 without seeing the lead's work. It confirmed every
+Betti sequence, χ = 0, π₁ (as a crystallographic group of rank 2^(3−n) − 1), the
+independence of the singular involutions, and n ≤ 3.
+
+It also found a defect in a result the codebase had labelled SETTLED.
+`all_components_are_a1` tests a component's setwise stabiliser, not the isotropy
+at its points, and so rejects Joyce's own JDG II Example 4. The lead read Example
+4 in the source: b₂ = 8 + l, b₃ = 47 − l, l = 0 … 8, simply connected, holonomy G₂.
+
+The corrected reachable set was recomputed independently in the codebase
+(`joyce_reachability`), with contributions computed from lift characters. It
+reproduces Joyce's eq. (27) exactly. The set is (0, 7) plus the lines
+b₂ + b₃ = 23, 39 and 55: 28 literature-checked pairs, identical to the
+verifier's.
+
+**What survives:**
+- b₃ = 24 is unreachable in every variant.
+- (12, 43) is reachable, twice over: as Example 3 (all plain) and as Example 4 at
+  l = 4.
+
+**What falls:** "b₃ ∈ {7, 19, 31, 43}", "b₃ ≡ 7 mod 12", "b₃ = 7 + 3b₂" as the
+family law, "exactly four members", and "(12, 43) is the unique holonomy-G₂
+member". The last is true inside the all-plain subfamily; in the full family,
+holonomy selects the whole n = 3 line. All of these are relabelled "all-plain
+subfamily". Nothing is deleted, and no computed number changed.
+
+`generation_selection` and the ruled `n_gen_source = b2_over_faces` are
+labelled the same way: b₂/4 counts the singular involutions only when every
+family is plain. On Joyce's full family the invariant count is n, the rank of
+the singular span.
+
+The seed's selection argument therefore goes back to the author. Within the
+n = 3 line, (12, 43) is picked out in two ways: as the all-plain member (Joyce's
+Example 3, symmetric in the three generators), and as the only member on which
+b₂/4 agrees with n.
+
+### THE REAL FORM (G3): EVIDENCE READY, RULING REQUESTED
+
+- Flipping φ to the compact form moves 0 of 788 parameters and 0 of 226 numeric
+  formula values, measured in two fresh pipeline runs.
+- The adopted split form is one transcription sign away from the form the
+  framework's own octonion product implies.
+- The det B = 0 "wall" appears identically on both forms, and only at t ≥ 0.5.
+- On the split form, 6 of the 7 involutions have a neutral (2, 2) transverse ℝ⁴,
+  so Eguchi–Hanson is not the local model. The seed's own derivation therefore
+  needs the compact form.
+
+The lead recommends `octonion_derived`.
+
+### RE(T) (G2): ABSENCE AT LEADING ORDER
+
+The adopted geometry carries no leading-order pair that fixes Re(T): no
+condensate, a runaway flux potential, and a real Chern–Simons invariant. This
+covers classical supergravity with the leading-order K and G₄ flux. Membrane
+instantons and corrections to K are open. The options for the author: an open
+modulus (recommended), a labelled calibration, or research beyond leading order.
+
+### WHAT EACH 24 COUNTS (G5): CLASSIFIED, VERIFICATION RUNNING
+
+A neutral inventory found 121 places where b₃, or a 24 once called b₃, enters a
+computation. Each has its verbatim derivation text and its value measured under
+both seeds. They were classified by the object each text names (D-004 rules,
+D-007 table), and the classification was committed before any re-wiring:
+
+- **B3: 20.** The w₀ family, whose text names "the b3 associative 3-cycles". Its
+  cost is confirmed: −42/43.
+- **BULK: 7, plus parts of MIXED roots.** Bridge pairs, the 13D shadow, SO(24),
+  and G22's torsion pins, all misfiled as b₃. These heal internal numbers.
+- **NAMED: 3.** The PMNS distortion, built on the 24-cell. θ₁₃ heals, with a
+  trials factor of 2.
+- **NONE: 66.** These include k_gimel = b₃/2 + 1/π, whose texts name four objects
+  and derive none. Everything built on it — α⁻¹, the Higgs VEV, sin²θ_W, T_CMB,
+  μ — is a fit that agrees only at the retired 24.
+
+The contested outcomes run both ways. A blind verifier is classifying a
+fixed-seed third of the roots, plus the seven contested ones, from the rules
+alone. Nothing is re-wired until it reports.
+
+### DEFECTS FOUND IN PASSING
+
+- `SimulationRunner.run_all()` always exports to the repo-local `AutoGenerated/`.
+  A harvest subprocess — including the seed-blindness harvest under seed_24 —
+  therefore overwrites the root the tests read first. This is a Stage 3 item.
+- The enumeration's assignment counts are 28-fold redundant: each generating
+  triple parametrises all 16,384 classes. The class counts are
+  6,296 / 5,936 / 2,184 / 280 for n = 0 … 3.
+- `pi1_finiteness`'s two "sides" were logically equivalent, so they could not
+  confirm each other. This is now stated, together with the proof of E = ker p
+  that the rank identification needs.
+
+### MEASURED
+
+- Engine `ee85cfb`. Non-slow suite: 2,743 passed and 1 failed. The one failure
+  was the EML b₃-coverage ratchet, which counted the seven new upstream
+  certificate formulas as non-rooted. Its baseline was corrected by name in the
+  same change: b₃-rooted unchanged at 113, and no existing formula changed its
+  rooting. The file then passes 7/7. The session baseline was 2,682 / 0.
+- Both artifact roots were rebuilt, each carrying 576 formulas (569 before), all
+  seven certificate theorems among them.
+- The stale-claims ratchets are at or below their ceilings. CG.7's own falsifier
+  sentence first pushed `b3_is_24` to 568. It was reworded to name the seed as
+  off-path, not by widening the ratchet's marker list.
+- The fork implication matrix was regenerated for both roots.
+
+### AUTHOR RULINGS NOW WAITING (Stage 2 digest)
+
+| ruling | lead's recommendation | evidence |
+|---|---|---|
+| φ's real form (G3) | compact (`octonion_derived`) | D-003 |
+| Re(T) (G2) | open modulus at leading order | D-005 |
+| what selects (12, 43) on the n = 3 line | to be argued in the digest | D-006 |
+| χ_eff (G1) | pending the consumer inventory | inventory running |
+| the demotion of the k_gimel layer to calibrations | labels only; the published values stay | D-007 |
