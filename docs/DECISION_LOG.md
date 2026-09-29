@@ -782,3 +782,37 @@ MODEL IDENTIFICATION: working assumption WA-1. It costs no parameter. Its testab
 content is the 3 × 4 grouping of gauge couplings, and it fixes which Fano points
 are faces. Any module that uses a different arc then disagrees with it. Adopting
 it as the seed's selection criterion is the author's ruling at Stage 2.
+
+## D-008 · RESULT · 2026-09-30 · CONFIRMED (lead run), blind verification running
+
+`PM/geometry/bridge_component_map.py`, reusing `arc_flag_structure`'s Fano
+lines and arcs:
+
+- **The adopted point.** The singular lines (0, 1, 2), (0, 3, 4) and (1, 3, 5) are
+  non-concurrent, with triangle vertices {0, 1, 3} and missed point 6. They fix
+  the arc {0, 1, 3, 6} with complement line (2, 4, 5).
+- **The blocks.** The K₄ blocks, labelled by complement points, are
+  2: {01, 36}, 4: {03, 16} and 5: {06, 13}. Each holds exactly one singular side
+  (01 ⊂ L_α, 03 ⊂ L_β, 13 ⊂ L_γ), so block → involution is a canonical bijection.
+- **The bijection.** Four bridges per block against four components per
+  involution, 12 ↔ 12. It is canonical up to a Klein-four relabelling inside each
+  block.
+- **Every n = 3 class of the first generating triple:** 280 all-plain classes
+  admit the bijection; the 84 Example-4-type classes admit none. There are zero
+  exceptions.
+
+No kill condition fired. Lukas–Morris eq. (1.3) — "The gauge-kinetic functions
+for these multiplets depend on the type τ of the blow-up only" — gives three
+quartets of U(1) couplings, consistent with blocks ↔ involutions.
+
+**What this makes available to the author (Stage 2).** A seed selection that
+uses no data: holonomy G₂ gives n = 3, and one bridge per resolved A1 component
+(WA-1) gives the all-plain member, (12, 43). Three generations then become an
+output.
+
+WA-1 is a model identification, not a theorem. Its cost is zero parameters.
+Its content is the 3 × 4 gauge-coupling grouping, which is consistent with the
+literature, and a fixed face arc, {0, 1, 3, 6}. Every module that uses another
+arc must be reconciled. The PSL(3,2) "uniqueness up to symmetry" of the bridge
+record is then broken by the singular set, which that record itself named as the
+condition that would make the arc physical.
