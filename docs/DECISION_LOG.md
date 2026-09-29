@@ -608,3 +608,117 @@ verifier's set.
 5. **The switch infrastructure** (`b3_path.PATHS`, the family fork) is enumerated
    from the corrected set only after the author has seen the digest. Until then
    the four-member family is labelled "all-plain subfamily" wherever it is named.
+
+## D-006 · RESULT · 2026-09-30 · CONFIRMED (lead's recomputation agrees with the verifier)
+
+`PM/geometry/joyce_reachability.py` recomputes the reachable set from the
+codebase's own primitives. It uses pairwise-disjoint admissibility, and it computes
+each family's contribution rather than looking it up: the part of H*(T³) that
+transforms by a lift character ε: Stab → {±1}, with ε(σ) = +1.
+
+- **Calibration by computation.** On the first Example-4-type class the
+  computation returns exactly Joyce's eq. (27): (8 + l, 47 − l), l = 0 … 8. A plain
+  family gives {(1, 3)}. A T³/ℤ₂ family gives {(1, 1), (0, 2)}.
+- **Literature-checked reachable set.** (0, 7) plus b₂ + b₃ = 23 (b₂ = 0 … 8), 39
+  (b₂ = 4 … 12) and 55 (b₂ = 8 … 16). That is 28 pairs, identical to the verifier's
+  independent set, and b₂ + b₃ = 7 + 16n throughout.
+- **b₃ = 24** is unreachable in every variant.
+- **Open sub-question, labelled.** Eight more pairs, (9, 14) … (16, 7) on the 23
+  line, arise only from the TRIVIAL lift character on the order-8 stabiliser
+  families (7 classes, n = 1). No published example covers that case. The verifier
+  derived three admissible lifts there (all non-trivial) and the lead's character
+  computation allows four. They are reported separately and claim nothing.
+
+No kill condition fired.
+
+**Applied now (labels only; no computed number changed).**
+- `derived_contribution_table`: the "SETTLED RESULT" is re-headed "the all-plain
+  subfamily". `a1_admissible_survey` status: `SETTLED_NO_ASSUMPTION` →
+  `ALL_PLAIN_SUBFAMILY`, with `superseded_by`. Its scope no longer claims the
+  removed families "are not Joyce's".
+- `b3_path`: the family provenance says "all-plain subfamily".
+- `family_topology` / `closed_geometry`: uniqueness claims are scoped. CG.4 now
+  states "π₁ finite exactly when n = 3", which holds in both families.
+- The pinned status in `test_derived_contribution_table` was updated in the same
+  change, with the reason in its docstring.
+
+**Carried to the Stage 2 digest.** The seed's selection argument. Holonomy G₂
+selects the n = 3 line, nine pairs. (12, 43) is its all-plain member (Joyce's
+Example 3), and also Example 4 at l = 4. What picks it within the line is the
+author's to rule.
+
+---
+
+## D-007 · 2026-09-30 · G5 · PRE-REGISTERED — the classification, before any re-wiring
+
+The full table is in `docs/decisions/D-007-g5-classification.md`: 121 roots,
+each with its class, the pre-registered action, and a fragment of the root's OWN
+derivation text as evidence.
+
+The source is a neutral inventory. A separate agent was told not to classify
+anything; it gathered the texts verbatim, with file and line, and measured every
+value in fresh processes under both seeds.
+
+| class | count | pre-registered action |
+|---|---|---|
+| B3 — the text names 3-cycles, H³ or metric moduli of Y₇ | 20 | follow the live seed; the recorded cost stands |
+| BULK — bridge pairs, the 13D shadow, SO(24) transverse, torsion pins, D_space | 7 (+ parts of 5 MIXED) | keep 24 / 12 / 13; re-wire code that reads b₃ |
+| NAMED — the 24-cell and T₄ | 3 | re-wire the flavour route to the 24-cell reading |
+| NONE — arithmetic, a fit, or a type error | 66 | demote to a labelled calibration, kept runnable |
+| MIXED | 15 | split; the mixture is recorded as a defect |
+| G1 (the χ_eff family) / INFRA | 7 / 3 | deferred to G1 / fixed or left |
+
+**What the classification says, in brief.**
+
+- **k_gimel = b₃/2 + 1/π is NONE.** Its texts name four different objects —
+  "Mass-Energy Gearbox", "Holonomy Precision Limit", "Leech lattice spectral gap",
+  "associative 3-cycles" — and derive none of them. Everything built on it is
+  therefore a fit: α⁻¹, the Higgs VEV (its "b₃ − 4" counts TCS K3 matching fibres,
+  an object absent from the Joyce construction), sin²θ_W, T_CMB and μ. They agree
+  with data only at the retired 24, which is a pre-registered dead-end criterion.
+  Their published values come from `ANCHOR_FIT` and will not move. Their status
+  label will.
+- **The w₀ family is B3** (its texts name "the b3 associative 3-cycles"). The
+  `dark_energy_betti` option adopted today, `b3_24`, is by its own text "a constant
+  rather than a topological read". So w₀ follows the seed to −42/43. **The cost is
+  confirmed, not healed.**
+- **The PMNS distortion η = √2 sin(π/24) is NAMED.** Its derivation builds on "the
+  24-cell … T₄", and b₃ appears only as a variable name (rule 1). So the 2026-09-22
+  `flavour_seed_coupling = follow_seed` ruling was a mis-disentanglement. The
+  24-cell reading restores θ₁₃ = 8.67°. That improvement is **not evidence**
+  (trials factor 2), and the route's own derivation status is flagged separately.
+- **Misfiled bulk counts heal internal numbers only.** The bridge pairs (`pneuma`
+  gives 21 pairs at 43), the 13D shadow's "b₃/2 + 1" (appendix C gives 22.5),
+  SO(24) in appendices G and H, and G22's torsion pins.
+- **δ_CP in `neutrino_algebraic` is B3** ("b3/n_gen associative 3-cycles"), so its
+  cost stands.
+
+**Direction check (D-004's second kill condition).** The contested outcomes run
+both ways:
+- w₀ gets worse against data;
+- θ₁₃ gets better;
+- 66 claimed derivations are withdrawn as fits;
+- the bulk fixes are internal.
+
+So the audit is not one-directional.
+
+**Blind verification protocol, fixed now.**
+1. **Random sample.** 41 roots — one third — drawn with `random.Random(20260930)`:
+   FR01, FR03, FR04, FR06, FR07, FR09, FR10, FR11, FR23, FR29, FR32, FR36, FR40,
+   FR42, FR45, FR49, NC02, NC04, NC06, NC10, NC14, NC15, NC19, NC23, OT02, OT06,
+   OT08, OT09, OT10, OT14, OT18, OT19, OT20, OT21, OT23, OT24, OT30, SP02, SP12,
+   SP16, SP17.
+2. **Contested set.** The seven roots where rule 4 or 5 decided the outcome,
+   verified SEPARATELY and not counted in the rate: FR02, SP01, SP05, SP11, SP13,
+   SP14, OT13.
+3. The verifier gets the D-004 rules and the inventory's texts, not this table.
+   Agreement is measured on the class.
+4. Below 80% on the random sample, the rules are tightened and re-registered
+   before anything is re-wired.
+
+**After verification.** Each action is one commit with its measured before/after
+and a one-line revert:
+- flip `dark_energy_betti` to `b3_live`;
+- flip `flavour_seed_coupling` to the 24-cell reading;
+- re-wire the bulk counts;
+- demote the NONE layer in its labels.
