@@ -444,3 +444,167 @@ supergravity at large volume, the leading-order Kähler potential, G₄ flux, an
 gaugino condensation. It does NOT cover membrane (M2) instantons on associative
 cycles, corrections to K beyond (U/T)², or quantum corrections. ADV note that the
 latter "may change this". Those stay open and are listed as open.
+
+## D-005 · RESULT · 2026-09-30 · CONFIRMED (lead run), the ruling goes to the author
+
+**Numerical check** (`PM/geometry/flux_vacuum.py`; seed 20260930; 40 random
+points inside the Lukas–Morris domain, with random fluxes in [−3, 3]⁴³):
+
+| check | worst residual |
+|---|---|
+| homogeneity K(λs) = K(s) − 7 ln λ | 8 × 10⁻¹⁵ |
+| K_i sⁱ = −7 | 3 × 10⁻¹⁵ |
+| K_ij sʲ = −K_i | 7 × 10⁻¹⁷ |
+| V = 4e^K K^{ij}N_iN_j (c₂ = 0) | 2 × 10⁻¹⁵ relative |
+| V(λs) = λ⁻⁵ V(s) | 5 × 10⁻¹⁶ |
+
+- The metric is positive definite at every sampled point (minimum eigenvalue
+  2.5 × 10⁻³), and V > 0 at every sampled point.
+- The analytic gradient and Hessian agree with central differences to 2 × 10⁻⁹
+  and 2 × 10⁻¹¹.
+- **The control finds a vacuum when one exists.** With a hypothetical c₂ = −10 or
+  25, F = 0 holds exactly at s_A = −c₂/(5N_A), with W₂ = −(2/5)c₂ and V < 0 (AdS).
+
+No kill condition fired.
+
+**Gauge content** (Acharya, hep-th/9812205, quoted verbatim before use). The local
+content is "precisely that of pure N = (1 + b₁) super Yang-Mills", and for
+M ≅ T³ "those of pure N = 4 super Yang-Mills theory". Every adopted-path locus is
+C²/ℤ₂ × T³ with trivial monodromy (D-001), so each carries N = 4 SU(2): no
+confinement and no condensate. The b₁ = 0 case Acharya uses for pure N = 1 is
+exactly the reflected, non-A1 case that admissibility excludes.
+
+**Published** in the certificate:
+- `y7-gauge-content` (CG.5): U(1)¹² on the resolution, N = 4 at each locus;
+- `y7-flux-potential-runaway` (CG.6): the measured exponent −5, matching the
+  closed form −7 + 2.
+
+Each carries its scope: classical supergravity, large volume, leading-order K,
+G₄ flux. Membrane instantons and corrections to K are not covered.
+
+**What the author is asked (Stage 2).** The adopted geometry carries no
+leading-order pair that fixes Re(T): no gaugino condensate, a runaway flux
+potential, and a real Chern–Simons invariant. The options are:
+
+- (a) **Open modulus.** Re(T) is recorded as undetermined at leading order, and
+  every consumer is labelled as depending on an unfixed field value.
+- (b) **Labelled calibration.** `re_t_adoption = calibrated`, counted as one
+  fitted input with its trials factor.
+- (c) **Research beyond leading order.** Membrane instantons on associative cycles
+  (which needs a rigidity analysis of the calibrated cycles) or corrections to K.
+
+The lead recommends (a) as the published position, with (c) as the open research
+item. (b) would re-introduce a free parameter into a layer the programme is trying
+to close. Today's silent 7.086 fallback is a reporting defect under every option,
+and is labelled in Stage 3 whatever is ruled.
+
+---
+
+## D-001 / D-002 · INDEPENDENT VERIFICATION · 2026-09-30
+
+A separate agent, told not to open the lead's modules or this log, re-derived
+everything from the enumeration primitives and the literature. It also built its
+own exact-rational model of the (ℤ/2)³ actions: 4⁷ = 16,384 conjugacy classes,
+each of the 28 generating triples enumerating all of them.
+
+- **D-001 CONFIRMED.** Same Betti sequences, Poincaré duality, χ = 0, and every
+  component a plain T³ with stabiliser {1, σ}. Cross-checks: the n = 1 member is
+  (T³ × K3)/(ℤ₂)², and Joyce's own JDG I example, mapped into codebase coordinates,
+  gives (12, 43).
+- **D-002 CONFIRMED, then REVISED.**
+  - Confirmed: π₁ ≅ p(G), a crystallographic group of rank 2^(3−n) − 1.
+    `h1_of_resolution` matches an independent Smith-normal-form computation on all
+    14,696 admissible classes. Singular involutions are independent, and n ≤ 3,
+    even under disjointness alone (proof via the 4-arc lemma).
+  - Confirmed: supersymmetry does not discriminate (N = 1 on every member).
+  - The holonomy criterion is Joyce, JDG II, Proposition 1.1.1, which the lead
+    read in the source: "the holonomy group of g is G₂ if and only if the
+    fundamental group π₁(M) is finite". It is also Joyce (2000), Proposition
+    10.2.2, located via a citation only. Cheeger–Gromoll is JDG 6 (1971), Theorem 3.
+  - REVISED: see D-006. "(12, 43) alone has holonomy G₂" holds only inside the
+    A1-filtered subfamily.
+- **Wording defects found and fixed.**
+  - `pi1_finiteness`'s two "sides" are logically equivalent, so their agreement
+    checks the code, not the mathematics twice.
+  - The identification of k needed E = ker p; the proof is now stated.
+  - "Joyce states simple connectivity for his examples" overgeneralised: his
+    JDG II Examples 1–2 have π₁ = ℤ³ and ℤ.
+  - The docstrings' assignment counts are 28-fold redundant, since each
+    generating triple parametrises all 16,384 classes. The class counts at
+    n = 0/1/2/3 are 6,296 / 5,936 / 2,184 / 280.
+
+## D-003 · ADDENDUM · the split form does not support the resolution
+
+The verifier computed B_φ for the codebase's φ as 6·diag(+, −, +, −, +, −, +):
+signature (4, 3). With that φ, 6 of the 7 involutions have a neutral (2, 2)
+transverse ℝ⁴, so Eguchi–Hanson — a Riemannian hyperkähler ALE space — is not
+even the right local model. On the adopted split form, then, the resolution that
+DERIVES (b₂, b₃) is not available. Only the compact form supports the derivation
+the seed rests on. This strengthens the recommendation from "the holonomy wording
+needs it" to "the seed's own derivation needs it".
+
+---
+
+## D-006 · 2026-09-30 · PRE-REGISTERED — the reachable set, corrected
+
+**Finding (red-team, confirmed by the lead in the primary source).**
+`derived_contribution_table.all_components_are_a1` tests a component's SETWISE
+stabiliser, not the isotropy at its points.
+
+- Under pairwise disjointness, every stabilising element other than σ acts freely
+  on the component, because a fixed point would lie in two singular sets. So every
+  singular point is already A1.
+- A free extra stabiliser is exactly Joyce's JDG II setting: (T³ × ℂ²/{±1})/F
+  with F acting freely, resolved by Theorems 2.2.2–2.2.3 with two choices of
+  ℤ₂-action on each Eguchi–Hanson space.
+- JDG II §3.1, **Example 4**, read by the lead: α and β give 4 plain T³ each; γ
+  gives 8 copies of T³/ℤ₂. Each ℤ₂-action choice contributes (1, 1) or (0, 2).
+  The result is "b₂(M) = 8 + l, b₃(M) = 47 − l, l = 0, 1, …, 8" — nine simply
+  connected manifolds with holonomy G₂.
+- The filter rejects this admissible structure. The withdrawn ε-table
+  ((1, 1) / (0, 2)) was correct, and replacing it with the filter was the error.
+
+**Hypothesis.** Under Joyce's actual hypotheses — pairwise disjoint singular sets
+(his Condition 2.1.2), free extra stabilisers resolved equivariantly — the reachable
+(b₂, b₃) are:
+
+- (0, 7);
+- b₂ + b₃ = 23 for b₂ = 0, …, 8 (n = 1);
+- b₂ + b₃ = 39 for b₂ = 4, …, 12 (n = 2);
+- b₂ + b₃ = 55 for b₂ = 8, …, 16 (n = 3).
+
+That is 28 pairs, with b₂ + b₃ = 7 + 16n throughout.
+
+**Discriminating test.** Recompute in the codebase from its own primitives:
+pairwise-disjoint admissibility, family stabilisers, and Joyce's contributions —
+plain (1, 3); free ℤ₂ reflecting two coordinates: (1, 1) or (0, 2). Families whose
+stabiliser has order 8 are the verifier's own derivation, (0, 1) with three choices;
+they are labelled NOT literature-checked and reported separately. Compare with the
+verifier's set.
+
+**Kill conditions.**
+- The recomputation disagrees with the set above on any pair realised by
+  literature-checked contributions.
+- b₃ = 24 becomes reachable.
+- An n ≤ 2 member has finite π₁.
+
+**Consequences, if confirmed — stated before computing.**
+1. b₃ = 24 stays unreachable, so the adoption's exclusion of the seed_24 branch
+   survives.
+2. **The published claims that fall:** "b₃ ∈ {7, 19, 31, 43}", "b₃ ≡ 7 mod 12",
+   "b₃ = 7 + 3b₂" as the family law (it holds only on the all-plain subfamily), and
+   "exactly four members". These are labelled, not deleted.
+3. **Holonomy G₂ selects n = 3,** the whole line b₂ + b₃ = 55. (12, 43) sits on it
+   twice: as Joyce's Example 3 (all plain) and as Example 4 with l = 4.
+4. **What picks (12, 43) on that line is open again.** Candidates, to be weighed by
+   the decision rule, not by data:
+   - all-plain (no free quotients; the maximally symmetric member);
+   - b₂/4 = 3, which is data unless b₂/4 is given a meaning off the all-plain
+     subfamily.
+
+   This is a foundational matter — the seed ruling of 2026-09-22 — so it goes to
+   the author in the Stage 2 digest with this evidence. The adopted seed is not
+   changed here.
+5. **The switch infrastructure** (`b3_path.PATHS`, the family fork) is enumerated
+   from the corrected set only after the author has seen the digest. Until then
+   the four-member family is labelled "all-plain subfamily" wherever it is named.
