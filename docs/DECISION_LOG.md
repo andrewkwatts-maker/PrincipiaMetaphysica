@@ -722,3 +722,63 @@ and a one-line revert:
 - flip `flavour_seed_coupling` to the 24-cell reading;
 - re-wire the bulk counts;
 - demote the NONE layer in its labels.
+
+---
+
+## D-008 · 2026-09-30 · G1b · PRE-REGISTERED — are the two twelves one structure?
+
+**Question.** Is there a structure-preserving map between the bulk's 12 bridges
+and the resolved manifold's 12 A1 components, or is b₂ = 12 = D_space/2 a
+coincidence of the adopted point?
+
+**What each twelve is, from the framework's own records.**
+- **Bridges** (`BRIDGE_CHANNEL_ASSIGNMENT.md`): the 12 bridges are the directed
+  edges of K₄ on a Fano arc of 4 "faces". The 3 E₈ blocks are K₄'s three perfect
+  matchings, labelled by the points of the arc's complement line. The arc is
+  "unique up to symmetry", one PSL(3,2) orbit, with a stated conditional: "a
+  preferred imaginary octonion … would break PSL(3,2) and make the choice of arc
+  physical again."
+- **Components:** 3 singular involutions × 4 Γ-orbits of fixed 3-tori (D-001).
+  Each involution's fixed set is a Fano line.
+
+**Hypothesis.**
+1. Three singular involutions that span Γ are three non-concurrent Fano lines. They
+   canonically fix an arc: the triangle's three vertices (the pairwise
+   intersections) plus the one point lying on none of the lines. The complement
+   line is the unique line meeting none of those four points.
+2. Each perfect matching of K₄ on that arc contains exactly ONE side of the
+   singular triangle. Therefore the E₈ blocks and the singular involutions are in
+   canonical bijection.
+3. Each block holds 4 bridges, and on an all-plain assignment each involution
+   holds 4 components. So a bijection bridges ↔ components exists that respects
+   the 3 × 4 structure. It is canonical up to a Klein-four relabelling within each
+   block, since both sides are (ℤ/2)²-torsors.
+4. On Joyce's Example-4 classes (D-006), one involution carries 8 components, so
+   no structure-preserving bijection exists. The correspondence holds exactly on
+   the all-plain members, and at n = 3 that is (12, 43).
+
+**Discriminating test.** Compute 1–4 from the enumeration, on the canonical
+point and on every n = 3 class. Check the correspondence against Lukas–Morris
+(hep-th/0305078, eq. 1.3): the 12 U(1) gauge-kinetic functions depend on the
+blow-up TYPE only, so they must come in 3 quartets, one per block.
+
+**Kill conditions.**
+- An n = 3 class whose singular lines are concurrent.
+- A perfect matching holding 0 or 2 singular sides.
+- A structure-preserving bijection on a non-all-plain class, which would remove the
+  selection.
+- The bridge records not describing K₄'s directed edges on an arc.
+
+**Consequences if confirmed, stated before computing.**
+- The two twelves are one structure, answering G1b positively. The Joyce singular
+  set breaks PSL(3,2) and fixes the face arc, which the bridge record already
+  anticipated.
+- Combined with holonomy G₂ (n = 3, D-002/D-006), "one bridge per resolved A1
+  component" selects (12, 43) on the n = 3 line without data. Three generations
+  then become an output.
+
+**Status of that last step.** "One bridge per component (one U(1) each)" is a
+MODEL IDENTIFICATION: working assumption WA-1. It costs no parameter. Its testable
+content is the 3 × 4 grouping of gauge couplings, and it fixes which Fano points
+are faces. Any module that uses a different arc then disagrees with it. Adopting
+it as the seed's selection criterion is the author's ruling at Stage 2.
