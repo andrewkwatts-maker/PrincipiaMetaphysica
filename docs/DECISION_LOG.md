@@ -376,3 +376,71 @@ NAMED whose code reads b₃ are re-wired to read their object. Each is its own
 commit with its measured before/after and a one-line revert. NONE roots are
 demoted to labelled calibrations. B3 roots keep following the seed, and their
 recorded costs stand.
+
+---
+
+## D-005 · 2026-09-30 · G2 · PRE-REGISTERED — does the adopted geometry fix Re(T)?
+
+**Question.** The author asked for "the appropriate pair, with geometric reasons".
+Which pair, if any, does the adopted geometry actually carry to fix the metric
+moduli at leading order?
+
+**Sources, verified before use.**
+- Lukas & Morris, *Moduli Kähler potential for M-theory on a G₂ manifold*, Phys.
+  Rev. D 69, 066003 (2004), hep-th/0305078. Eq. (5.10) and Table 1 give K for
+  exactly Joyce's T⁷/ℤ₂³: 7 bulk moduli Tᴬ and 36 blow-up moduli U^(τ,n,a), three
+  per blow-up, for 12 blow-ups. The formula is valid at large moduli and to
+  quadratic order in U/T. The count matches D-001's b₁(L_j) = 3 on each of the 12
+  components.
+- Acharya, Denef & Valandro, *Statistics of M theory vacua*, JHEP 0506:056 (2005),
+  hep-th/0502060, eqs. (3.1)–(3.18): W = N_i zⁱ + c₁ + i c₂, where c is the
+  Chern–Simons invariant of the singular locus. Their words: "The addition of
+  fluxes when X is smooth does not stabilise these moduli, as the induced potential
+  is positive definite and runs down to zero at infinite volume." Stabilisation
+  needs a codimension-four locus Q that "admits a complex, non-real Chern-Simons
+  invariant … for instance, Q is a hyperbolic manifold."
+
+**Hypothesis: absence at leading order, by three independent routes.**
+
+1. **Flux on the smooth resolution runs away.** Homogeneity of V_X (degree 7/3)
+   gives K_i sⁱ = −7 and K^{ij}K_j = −sⁱ. With c₂ = 0 these reduce the potential
+   exactly to V = 4 e^K K^{ij} N_i N_j, which is positive definite. Along the
+   volume ray s → λs it scales as λ⁻⁵, so dV/dλ = −5V/λ < 0 and there is no
+   critical point at finite volume, for any flux. The (N_flat, N_twisted) pair of
+   `flux_quantization` gives stationarity of W, which is not a vacuum.
+2. **No non-real Chern–Simons invariant at the orbifold point.** Each locus Q is a
+   flat T³ (D-001). A flat SU(2) connection on T³ is conjugate into the maximal
+   torus, because π₁ = ℤ³ is abelian. Its Chern–Simons invariant is therefore 0,
+   so c₂ = 0, and the Acharya mechanism (which needs a hyperbolic Q) is absent.
+3. **No gaugino condensation.** Each SU(2) sits on a Q with b₁ = 3, which gives
+   three adjoint chirals — not pure N = 1 super-Yang–Mills (Acharya's b₁(Q) = 0
+   criterion). The racetrack `a = 2π/b₃` read a Betti number as a gauge rank.
+
+**Discriminating test.**
+- Implement the Lukas–Morris K (their Table 1, verbatim) and verify:
+  homogeneity, K(λs) = K(s) − 7 ln λ; both identities, numerically at random
+  admissible points; V = 4e^K K^{ij}N_iN_j with c₂ = 0 to rounding; and
+  monotone decrease along the ray.
+- Control: with a hypothetical c₂ ≠ 0, the supersymmetric AdS point with
+  W = −(2/5)c₂ must appear, so the solver is shown able to find a vacuum when one
+  exists.
+
+**Kill condition.**
+- A finite-volume critical point of V with c₂ = 0 for some flux.
+- The Lukas–Morris K failing homogeneity or the identities. The general argument
+  would then not apply, and the result must be re-derived.
+- A flat SU(2) connection on T³ with non-zero Chern–Simons invariant.
+
+**Consequence if confirmed.**
+- Re(T) is not fixed by any leading-order mechanism the adopted geometry carries.
+  This is published as ABSENCE and replaces the silent 7.086 fallback.
+- `re_t_adoption` gains an option recording the absence. `calibrated` stays
+  available, labelled as a fitted input with its trials factor.
+- The Stage 2 digest presents the author with the real choice: an open modulus,
+  a labelled calibration, or research beyond leading order.
+
+**Scope, stated so the claim is not overstated.** This covers classical
+supergravity at large volume, the leading-order Kähler potential, G₄ flux, and
+gaugino condensation. It does NOT cover membrane (M2) instantons on associative
+cycles, corrections to K beyond (U/T)², or quantum corrections. ADV note that the
+latter "may change this". Those stay open and are listed as open.
