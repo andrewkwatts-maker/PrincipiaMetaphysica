@@ -7878,3 +7878,54 @@ alone. Nothing is re-wired until it reports.
 | what selects (12, 43) on the n = 3 line | to be argued in the digest | D-006 |
 | χ_eff (G1) | pending the consumer inventory | inventory running |
 | the demotion of the k_gimel layer to calibrations | labels only; the published values stay | D-007 |
+
+## PENDING — next sessions (written 2026-09-30, for the weekend)
+
+In order, each pre-registered in `docs/DECISION_LOG.md` before it is computed:
+
+1. **G5 re-registration and re-verification.** The verification kill fired at 56%.
+   Tighten the MIXED/NONE rule; resolve the conflicting w₀ texts by rule 5
+   (FR04 "bridge size modulus" vs SP07 "b3 associative 3-cycles"); re-run the
+   blind verifier on the 41 random roots plus the 7 contested ones. Re-wire only
+   on ≥ 80%:
+   - dark_energy_betti;
+   - flavour_seed_coupling (24-cell);
+   - the bulk counts: pneuma bridge pairs, appendix C's 13, SO(24) in appendices
+     G and H, G22's pins;
+   - the NONE-layer status labels;
+   - appendix P's published n_gen = 5;
+   - re_t_sector's geometry.ReT "DERIVED".
+2. **χ_eff wording.** Relabel the 41 sites that call χ_eff "the Euler
+   characteristic of Y₇" (it is 0; CG.2). This is factual and does not wait for
+   the ruling. Then apply the author's χ_eff ruling (K3 reading recommended, D-009)
+   and the generation route (count n, not b₂/4).
+3. **G1b.** Re-run the blind check (interrupted). If clean, CG.8's scope stands
+   as written.
+4. **Stage 2 digest for the author.** Rulings:
+   - φ's real form (compact recommended, D-003);
+   - Re(T) (open modulus, D-005);
+   - seed selection on the n = 3 line (WA-1, D-008);
+   - χ_eff (K3 reading, D-009);
+   - the k_gimel layer as calibrations (D-007, after re-verification).
+5. **Open problems (D-011).**
+   - Chirality via the heterotic dual of the Kummer fibrations (Acharya
+     hep-th/9603033), or the shadows as walls. Verify the Hořava–Witten and
+     arXiv:2106.03886 citations first.
+   - Moduli via rigid associatives or cross-shadow terms.
+   - Dark energy beyond leading order, or multi-field.
+   - Flavour from the three involution quartets.
+6. **Wording sweep** of paper sections, introduction and website pages, rendered
+   through the provenance registry and certificate. The top-down order:
+   standard (cited) → selection → postulates → findings → corrections → open.
+   Then verify the pending citations (Bars, Eguchi–Hanson, Polchinski /
+   bosonic 26D).
+7. **Stage 3 tooling.**
+   - The EML walker's b3_leaf detection.
+   - The 68-formula publishing gap.
+   - run_all's repo-local export hazard.
+   - Frozen literals.
+   - The big-file splits.
+
+Published today (engine `7a82f3d`, site HEAD): certificate CG.1–CG.11, the
+provenance table in section 2.4, and the beginner-guide topic "The Closed
+Geometry: What Is Standard, What Is Ours, What Is Open".

@@ -1027,3 +1027,37 @@ postulates.
 
 Each direction must be pre-registered with a kill condition before it is
 computed.
+
+## D-007 · VERIFICATION · 2026-09-30 · KILL CONDITION FIRED — re-wires held
+
+The blind verifier (rules and inventory texts only, not the D-007 table) was
+interrupted by a usage limit after 32 of the 41 random-sample roots and none of
+the contested set.
+
+**Class agreement: 18/32 = 56%**, below the pre-registered 80%. As registered,
+nothing is re-wired. The rules are to be tightened and re-registered, and the
+sample re-verified.
+
+**Where the disagreements fall.**
+- **Mostly MIXED vs NONE on the same action** (FR03, FR29, FR32, FR42, FR45,
+  NC10, OT08, OT09, OT10): a root combining a seed-moving b₃ with frozen
+  numerology. The verifier labels it MIXED; the table labelled it NONE. Both lead
+  to DEMOTE. **Rule to tighten:** a root is MIXED only when at least one part has
+  an object; otherwise it is NONE.
+- **Compatible** (NC14, NC15, OT14): MIXED with parts B3 / G1 or BULK / unused.
+- **Substantive, and they change actions:**
+  - **FR04 (σ_T = 23/24).** The table said B3. The verifier said NONE: its text
+    names "Void Seal" and a "bridge size modulus", not 3-cycles, while SP07's text
+    does name "the b3 associative 3-cycles". The w₀ family's texts CONFLICT. That
+    is rule 4 — ambiguous — and must be resolved by rule 5 before any w₀ change.
+    **The dark_energy_betti flip is held.**
+  - **OT06 (24//8 E₈ blocks).** The table said NONE. The verifier said NAMED: 24
+    read as a rank-24 lattice splitting into 3 E₈ blocks of 8 (Niemeier E₈³),
+    which stays 3. A plausible object the table missed.
+
+**This is the protocol working.** The rules were too loose to reproduce, so no
+published number moves on them. Next, when usage allows:
+1. Re-register D-007 with the tightened MIXED/NONE rule and the rule-5
+   resolution of the w₀ texts.
+2. Re-run the blind verifier on the full random sample plus the contested set.
+3. Re-wire only on ≥ 80% agreement.
