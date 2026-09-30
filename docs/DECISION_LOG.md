@@ -890,3 +890,25 @@ Recommend that χ_eff means the K3 reading, stated as adding nothing beyond n. T
 other 21 definitions are demoted as NONE or type errors. The 41 "Euler
 characteristic of Y₇" sites are relabelled. The ruled generation route should
 count n, not b₂/4. The alternative is to retire χ_eff altogether and use n.
+
+## D-009 · RESULT · 2026-09-30 · CONFIRMED (lead run)
+
+`PM/geometry/kummer_index.py`, engine `d271d97`:
+
+- **Adopted point.** Each singular involution fixes 16 transverse points,
+  counted on the quarter lattice rather than assumed. χ(K3) = 24 both from the
+  quotient and from Betti numbers (b₂ = 6 + 16 = 22). Per shadow 72; χ_eff = 144;
+  n_gen = 3.
+- **All 15,963 pairwise-disjoint classes** (first generating triple): the reading
+  equals n on every class, with no exceptions.
+- **The ruled route b₂/4 = n** holds on only 15,963 of the 26,155 reachable
+  (class, pair) combinations, one per class.
+
+No kill condition fired.
+
+**Recommendation to the author (χ_eff is a foundational ruling).**
+- Rule χ_eff = the K3 reading: 72 per shadow and 144 in total are Euler
+  characteristics of the Kummer surfaces, and n_gen = χ_eff/48 ≡ n.
+- Switch the generation route from b₂/4 to n, the count of singular involutions.
+- Demote the other 21 definitions as NONE or type errors.
+- Relabel the 41 sites that call χ_eff "the Euler characteristic of Y₇".
