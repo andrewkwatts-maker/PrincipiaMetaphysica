@@ -816,3 +816,77 @@ literature, and a fixed face arc, {0, 1, 3, 6}. Every module that uses another
 arc must be reconciled. The PSL(3,2) "uniqueness up to symmetry" of the bridge
 record is then broken by the singular set, which that record itself named as the
 condition that would make the arc physical.
+
+---
+
+## D-009 · 2026-09-30 · G1 · PRE-REGISTERED — what χ_eff is, starting from its consumers
+
+**Step 1: the consumer inventory** (neutral agent; 946 consumers, 261 of them
+feeding published quantities).
+- There are **22 different definitions** of χ_eff in the code: 72, 144, 1/144,
+  2(h¹¹ − h²¹ + h³¹) from off-path TCS Hodge data, b₃²/4, (b₃/2)², b₃²/8, 6b₃, 3b₃,
+  4·b₃·n_gen, (288/24)², "χ(CY4) = 72 with n_gen = χ/24", even χ = −168, and more.
+- 41 sites — 31 in the engine and website, 10 in published artifacts — call χ_eff
+  the Euler characteristic of Y₇, which is 0 (CG.2).
+- Consumers by stated purpose:
+  - cosmology 184;
+  - generation count 164;
+  - gates/certificates 118;
+  - particle physics 101;
+  - flux/tadpole 33;
+  - "Euler characteristic" 30;
+  - sampler/Reid 29;
+  - index/chirality 18;
+  - the rest naming and instrumentation.
+
+**Step 2: what each consumer's physics requires on Y₇.**
+- **Generation count.** Needs a count of generations. On the construction the
+  invariant count is n, the rank of the singular span. b₂/4 equals n only on the
+  all-plain subfamily (D-006).
+- **Index/chirality and flux/tadpole.** They invoke χ/24-type formulas: the M2
+  tadpole of an 8-manifold, F-theory on a CY4. Those need an 8-manifold, and none
+  is defined for a G₂ 7-manifold. They are therefore TYPE ERRORS, class NONE.
+- **"Euler characteristic of Y₇".** That quantity is 0, so these sites are
+  relabelled.
+- **Cosmology, particle, gates and sampler.** These use 144 or 72 as a bare number,
+  class NONE under D-007.
+
+**Hypothesis: the K3 reading.** Each singular involution σ acts as −1 on its
+transverse T⁴, which has 16 fixed points. The resolution K3_σ is a Kummer surface:
+χ = (0 − 16)/2 + 2·16 = 24. Define
+
+  χ_eff := 2 · Σ_σ χ(K3_σ) = 48n,
+
+with the factor 2 for the two shadows, which is the two-time ruling. That gives
+72 per shadow and 144 in total at n = 3. These are the registry's existing
+mephorash_chi 72 and chi_eff_total 144, now with an object behind them. Then
+
+  n_gen = χ_eff/48 ≡ n.
+
+This is THE SAME STATEMENT as counting singular involutions, not a second
+derivation.
+
+**Discriminating test.**
+- Compute Σ χ(K3_σ) from the enumeration on every pairwise-disjoint class of the
+  first generating triple: all-plain, Example-4 type, and order-8 profiles.
+- Check that χ_eff/48 = n on every class.
+- Check where b₂/4 = n fails, over every reachable (b₂, b₃).
+
+**The four readings of 144, recorded with their evaluation:**
+
+| reading | what it counts | outcome |
+|---|---|---|
+| 2Σχ(K3_σ) | Euler characteristics of real 4-manifolds, two shadows | 48n; tracks n everywhere |
+| (D_space/2)² | a squared bulk pair count, not an index | 144 on every seed, so gives 3 everywhere |
+| b₂² | ordered pairs of 2-classes, a type change | varies inside the n = 3 line (b₂ = 8 … 16) |
+| (b₃/2)² | "pairs of 3-cycles" | refuted: b₃ is odd on the whole family |
+
+**Kill conditions.**
+- A singular σ whose transverse quotient is not 16 A1 points.
+- Any class with χ_eff/48 ≠ n.
+
+**Consequence if confirmed (the author's ruling; χ_eff is foundational).**
+Recommend that χ_eff means the K3 reading, stated as adding nothing beyond n. The
+other 21 definitions are demoted as NONE or type errors. The 41 "Euler
+characteristic of Y₇" sites are relabelled. The ruled generation route should
+count n, not b₂/4. The alternative is to retire χ_eff altogether and use n.
