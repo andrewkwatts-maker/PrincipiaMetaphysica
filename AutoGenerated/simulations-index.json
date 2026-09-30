@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-29T20:55:12.006565Z",
+  "generated_at": "2026-09-30T13:17:28.112936Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 327,
+  "total_scripts": 332,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -974,7 +974,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 49,
+      "count": 54,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1012,6 +1012,16 @@
         {
           "file": "b3_path.py",
           "path": "simulations/PM/geometry/b3_path.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "bridge_component_map.py",
+          "path": "simulations/PM/geometry/bridge_component_map.py",
           "category": "PM/geometry",
           "title": null,
           "description": null,
@@ -1122,6 +1132,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "findings.py",
+          "path": "simulations/PM/geometry/closed_geometry/findings.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Certificate theorems CG.8-CG.11: the findings of G1b, G1, C2 and C3.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "flat_form_involution_map.py",
           "path": "simulations/PM/geometry/flat_form_involution_map.py",
           "category": "PM/geometry",
@@ -1193,6 +1213,16 @@
             "topology.K_MATCHING",
             "topology.d_over_R"
           ]
+        },
+        {
+          "file": "gauge_sectors.py",
+          "path": "simulations/PM/geometry/gauge_sectors.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Which gauge theories live on the singular loci, across phi's Joyce family (C2).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "generation_selection.py",
@@ -1434,6 +1464,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "kummer_index.py",
+          "path": "simulations/PM/geometry/kummer_index.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The K3 reading of chi_eff: one Kummer surface per singular involution (G1).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "kummer_transverse.py",
           "path": "simulations/PM/geometry/kummer_transverse.py",
           "category": "PM/geometry",
@@ -1515,6 +1555,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "The scoped physics theorems CG.5-CG.6 (closure plan item G2): what",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "provenance.py",
+          "path": "simulations/PM/geometry/closed_geometry/provenance.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "What the model takes from standard physics, what it postulates, what it has",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

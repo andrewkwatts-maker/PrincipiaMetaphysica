@@ -210,7 +210,7 @@
         "abstract.ledger_open",
         "abstract.v25_v26_closures"
       ],
-      "timestamp": "2026-09-30T06:54:01.826529"
+      "timestamp": "2026-09-30T23:16:10.731593"
     },
     "1": {
       "id": "1",
@@ -964,7 +964,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2026-09-30T06:54:01.828116"
+      "timestamp": "2026-09-30T23:16:10.733158"
     },
     "2": {
       "id": "2",
@@ -2222,7 +2222,7 @@
         "topology.K_MATCHING",
         "topology.d_over_R"
       ],
-      "timestamp": "2026-09-30T06:54:02.035390"
+      "timestamp": "2026-09-30T23:16:10.945316"
     },
     "2.4": {
       "id": "2",
@@ -2378,6 +2378,245 @@
         {
           "type": "callout",
           "content": "a finite-volume critical point of V with real c for some flux; or a flat SU(2) connection on T^3 with non-zero Chern-Simons invariant. Scope: classical supergravity at large volume, the leading-order Kahler potential (Lukas-Morris, to quadratic order in U/T), G4 flux; membrane instantons and corrections to K are not covered."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.8) The 12 bridges and the 12 A1 components are one structure",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The three singular Fano lines [(1, 3, 5), (0, 3, 4), (0, 1, 2)] fix the arc [0, 1, 3, 6] with complement [2, 4, 5]; each of K4's three perfect matchings (the E8 blocks) holds exactly one singular side, so blocks and singular involutions biject, and the 12 bridges match the 12 A1 components as one 3 x 4 structure. Over every n = 3 class: 280 all-plain classes admit it, 84 Example-4 classes do not, so it exists only at (12, 43)."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "bridge-component-correspondence",
+          "label": "(CG.8)",
+          "equationNumber": "(CG.8)"
+        },
+        {
+          "type": "callout",
+          "content": "a block holding 0 or 2 singular sides, or a bijection on a non-all-plain n = 3 class. Scope: combinatorial: a theorem about PG(2,2) and the enumeration. Reading one bridge as one resolved A1 component (one U(1)) is working assumption WA-1, the author's ruling (D-008)."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.9) One Kummer K3 per singular involution",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Each of the 3 singular involutions acts as -1 on its transverse T^4 with 16 fixed points (counted); resolving them gives a Kummer K3 with chi = 24, both from the quotient and from its Betti numbers. Read as 2 x sum chi(K3) over the two shadows, chi_eff = 144 (72 per shadow) and, on this still-unruled reading, chi_eff/48 = 3: the same statement as counting singular involutions, and it holds on every class of the family, where b_2/4 does not. Adopting this as chi_eff's definition is the author's ruling."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "k3-reading-generations",
+          "label": "(CG.9)",
+          "equationNumber": "(CG.9)"
+        },
+        {
+          "type": "callout",
+          "content": "a singular involution whose transverse quotient is not 16 A1 points, or a class where the unruled reading chi_eff/48 != n. Scope: topological; the adoption of this reading as chi_eff is the author's ruling (D-009)."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.10) Holonomy G2 and a confining sector are mutually exclusive",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Pure N = 1 super Yang-Mills, the confining sector every racetrack-type stabilisation needs, requires a singular locus with b_1 = 0. Across phi's Joyce family such loci occur only at n = [1]; every n = 3 class has smallest b_1 in [1, 3]. Holonomy exactly G2 and a confining sector are mutually exclusive inside the construction."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "confinement-exclusion",
+          "label": "(CG.10)",
+          "equationNumber": "(CG.10)"
+        },
+        {
+          "type": "callout",
+          "content": "an n = 3 class with a b_1 = 0 locus. Scope: family-level: holds on every member, whichever seed is active."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.11) The flux potential cannot accelerate the universe",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Homogeneity of the G2 volume gives K_ij s^i s^j = 7 and s.grad V = -5 V, so the canonical slope of the flux potential obeys |grad V|/V >= 5 sqrt(2/7) = 2.673 everywhere (measured minimum 2.721), far above the acceleration threshold sqrt(2) = 1.414. The leading-order flux potential cannot accelerate the universe; dark energy is open."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "flux-no-acceleration",
+          "label": "(CG.11)",
+          "equationNumber": "(CG.11)"
+        },
+        {
+          "type": "callout",
+          "content": "a point where |grad V|/V < 5 sqrt(2/7). Scope: leading-order Kahler potential, single-field reading; multi-field rapid-turn trajectories are not excluded."
+        },
+        {
+          "type": "heading",
+          "content": "What is standard, what is postulated, what is found",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Standard physics is cited to its source; postulates are the model's own assumptions; findings are established by the computations above; corrections record what was wrong; open problems are stated as open."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "kind",
+            "statement",
+            "in plain words",
+            "source or evidence"
+          ],
+          "rows": [
+            [
+              "Standard",
+              "M-theory on a compact 7-manifold with holonomy G2 gives 4D N = 1 supergravity with b_2 abelian vector multiplets and b_3 neutral chiral multiplets.",
+              "Curling up seven extra dimensions into a special shape called a G2 manifold leaves a four-dimensional world with a fixed set of force carriers and shape parameters, counted by the shape's holes.",
+              "Acharya, B. S. (1999) 'M theory, Joyce orbifolds and super Yang-Mills', Adv. Theor. Math. Phys. 3 227-248, hep-th/9812205; Lukas, A., Morris, S. (2004) 'Moduli Kahler potential for M-theory on a G2 manifold', Phys. Rev. D 69 066003, hep-th/0305078"
+            ],
+            [
+              "Standard",
+              "Compact 7-manifolds with a torsion-free G2-structure are obtained by resolving T^7/Gamma with Eguchi-Hanson spaces; the (Z/2)^3 example has b_2 = 12, b_3 = 43, and further examples include b_2 = 8 + l, b_3 = 47 - l.",
+              "Joyce built the first such shapes by folding a seven-dimensional doughnut with mirror symmetries and smoothing out the creases.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. I', J. Differential Geom. 43 291-328; Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375; Joyce, D. D. (2000) 'Compact Manifolds with Special Holonomy', Oxford University Press"
+            ],
+            [
+              "Standard",
+              "For a compact torsion-free G2-structure, Hol = G2 iff pi_1 is finite (Joyce, JDG II, Prop. 1.1.1).",
+              "A shape has the full G2 character exactly when it has no loops that cannot be shrunk away.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Standard",
+              "pi_1 of a quotient space is the group modulo the subgroup generated by elements with fixed points.",
+              "When folding a space, every fold that has a fixed crease lets loops through it be shrunk.",
+              "Armstrong, M. A. (1968) 'The fundamental group of the orbit space of a discontinuous group', Proc. Cambridge Philos. Soc. 64 299-301"
+            ],
+            [
+              "Standard",
+              "An A1 singularity fibred over a 3-manifold Q carries pure N = (1 + b_1(Q)) super Yang-Mills.",
+              "The kind of force living on a crease is set by how many loops the crease itself has.",
+              "Acharya, B. S. (1999) 'M theory, Joyce orbifolds and super Yang-Mills', Adv. Theor. Math. Phys. 3 227-248, hep-th/9812205"
+            ],
+            [
+              "Standard",
+              "G4 flux on a smooth G2 manifold gives a positive runaway potential; a supersymmetric vacuum needs a non-real Chern-Simons invariant.",
+              "Magnetic-like fluxes alone push the extra dimensions to grow for ever instead of settling.",
+              "Acharya, B. S., Denef, F., Valandro, R. (2005) 'Statistics of M theory vacua', JHEP 0506 056, hep-th/0502060; Lukas, A., Morris, S. (2004) 'Moduli Kahler potential for M-theory on a G2 manifold', Phys. Rev. D 69 066003, hep-th/0305078"
+            ],
+            [
+              "Standard",
+              "M-theory on Joyce manifolds, as K3 fibrations, is dual to heterotic strings on T^3-fibred Calabi-Yau threefolds.",
+              "The same physics can be described by a different kind of string theory, which may help with the open problems.",
+              "Acharya, B. S. (1996) 'N=1 heterotic/M theory duality and Joyce manifolds', Nucl. Phys. B 475 579-596, hep-th/9603033"
+            ],
+            [
+              "Standard",
+              "Two-time physics with an Sp(2,R) gauge symmetry removing the relative time (Bars).",
+              "A framework in which a second time direction is harmless because a symmetry removes its unwanted effects.",
+              "source to be verified"
+            ],
+            [
+              "Postulate",
+              "The bulk is 26-dimensional with signature (24,2), one time per 13D shadow of signature (12,1).",
+              "The model starts from a 26-dimensional space with two time directions, split into two mirror halves.",
+              "memory: two-time migration ruling 2026-08-19"
+            ],
+            [
+              "Postulate",
+              "Twelve bridges: the directed edges of K4 on a Fano arc of four faces, grouped into three E8 blocks.",
+              "Twelve links connect the two halves, grouped in three sets of four.",
+              "docs/BRIDGE_CHANNEL_ASSIGNMENT.md (site repo)"
+            ],
+            [
+              "Finding",
+              "Joyce's construction from phi's diagonal (Z/2)^3 reaches 28 literature-checked (b_2, b_3); the off-path seed b_3 = 24 is not among them.",
+              "Only certain hole-counts are possible; the old value 24 is not one.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Finding",
+              "Across the family, restricted holonomy is trivial, SU(2), SU(3), G2 for n = 0..3 singular involutions; pi_1 is finite only at n = 3.",
+              "As more creases appear, the shape climbs a ladder of richness; only the top rung is fully G2.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Finding",
+              "The 12 bridges and the 12 A1 components form one 3 x 4 structure, existing exactly on the all-plain members.",
+              "The twelve links and the twelve creases match one-to-one, and only for the adopted shape.",
+              "tests/test_bridge_component_map.py"
+            ],
+            [
+              "Finding",
+              "chi_eff = 2 x sum over singular involutions of chi(Kummer K3) = 48n; n_gen = chi_eff/48 counts singular involutions (an unruled reading).",
+              "The number 144 counts hidden K3 surfaces: three in each mirror half, each contributing 24, taken once for each half.",
+              "tests/test_kummer_index.py"
+            ],
+            [
+              "Finding",
+              "In phi's Joyce family, holonomy exactly G2 and a confining gauge sector are mutually exclusive.",
+              "The shape that is fully G2 cannot also host the force usually used to pin its size.",
+              "Acharya, B. S. (1999) 'M theory, Joyce orbifolds and super Yang-Mills', Adv. Theor. Math. Phys. 3 227-248, hep-th/9812205"
+            ],
+            [
+              "Correction",
+              "The adopted 3-form was the split real form, one transcription sign away from the framework's own octonion product.",
+              "A sign error made the internal shape the wrong kind; fixing it changes no number.",
+              "D-003"
+            ],
+            [
+              "Correction",
+              "The A1 filter tested the setwise stabiliser; the four-member family was the all-plain subfamily of Joyce's construction.",
+              "An over-strict check had hidden most of the possible shapes.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Correction",
+              "Constants built on k_gimel = b_3/2 + 1/pi were fits made at the retired seed, not derivations.",
+              "Several headline numbers were tuned, not predicted.",
+              "D-007"
+            ],
+            [
+              "Open",
+              "No chiral matter inside Y_7: disjoint singular loci leave no codimension-7 points.",
+              "The internal shape alone cannot yet make matter tell left from right.",
+              "Acharya, B. S. (1996) 'N=1 heterotic/M theory duality and Joyce manifolds', Nucl. Phys. B 475 579-596, hep-th/9603033"
+            ],
+            [
+              "Open",
+              "The 43 moduli, Re(T) included, are unfixed at leading order.",
+              "The size and shape of the extra dimensions are not yet pinned.",
+              "Acharya, B. S., Denef, F., Valandro, R. (2005) 'Statistics of M theory vacua', JHEP 0506 056, hep-th/0502060"
+            ],
+            [
+              "Open",
+              "The leading-order flux potential cannot accelerate the universe (slope >= 5 sqrt(2/7)).",
+              "The model does not yet explain dark energy.",
+              "D-010"
+            ],
+            [
+              "Open",
+              "Flavour structure awaits a chiral sector.",
+              "Why particles come in different masses is not yet derived.",
+              "D-011"
+            ],
+            [
+              "Ruling",
+              "WA-1: one bridge per resolved A1 component (one U(1)).",
+              "Each link is identified with one smoothed-out crease of the internal shape.",
+              "D-008 (the author's ruling)"
+            ]
+          ]
         }
       ],
       "content_blocks": [
@@ -2524,6 +2763,245 @@
         {
           "type": "callout",
           "content": "a finite-volume critical point of V with real c for some flux; or a flat SU(2) connection on T^3 with non-zero Chern-Simons invariant. Scope: classical supergravity at large volume, the leading-order Kahler potential (Lukas-Morris, to quadratic order in U/T), G4 flux; membrane instantons and corrections to K are not covered."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.8) The 12 bridges and the 12 A1 components are one structure",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The three singular Fano lines [(1, 3, 5), (0, 3, 4), (0, 1, 2)] fix the arc [0, 1, 3, 6] with complement [2, 4, 5]; each of K4's three perfect matchings (the E8 blocks) holds exactly one singular side, so blocks and singular involutions biject, and the 12 bridges match the 12 A1 components as one 3 x 4 structure. Over every n = 3 class: 280 all-plain classes admit it, 84 Example-4 classes do not, so it exists only at (12, 43)."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "bridge-component-correspondence",
+          "label": "(CG.8)",
+          "equationNumber": "(CG.8)"
+        },
+        {
+          "type": "callout",
+          "content": "a block holding 0 or 2 singular sides, or a bijection on a non-all-plain n = 3 class. Scope: combinatorial: a theorem about PG(2,2) and the enumeration. Reading one bridge as one resolved A1 component (one U(1)) is working assumption WA-1, the author's ruling (D-008)."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.9) One Kummer K3 per singular involution",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Each of the 3 singular involutions acts as -1 on its transverse T^4 with 16 fixed points (counted); resolving them gives a Kummer K3 with chi = 24, both from the quotient and from its Betti numbers. Read as 2 x sum chi(K3) over the two shadows, chi_eff = 144 (72 per shadow) and, on this still-unruled reading, chi_eff/48 = 3: the same statement as counting singular involutions, and it holds on every class of the family, where b_2/4 does not. Adopting this as chi_eff's definition is the author's ruling."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "k3-reading-generations",
+          "label": "(CG.9)",
+          "equationNumber": "(CG.9)"
+        },
+        {
+          "type": "callout",
+          "content": "a singular involution whose transverse quotient is not 16 A1 points, or a class where the unruled reading chi_eff/48 != n. Scope: topological; the adoption of this reading as chi_eff is the author's ruling (D-009)."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.10) Holonomy G2 and a confining sector are mutually exclusive",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Pure N = 1 super Yang-Mills, the confining sector every racetrack-type stabilisation needs, requires a singular locus with b_1 = 0. Across phi's Joyce family such loci occur only at n = [1]; every n = 3 class has smallest b_1 in [1, 3]. Holonomy exactly G2 and a confining sector are mutually exclusive inside the construction."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "confinement-exclusion",
+          "label": "(CG.10)",
+          "equationNumber": "(CG.10)"
+        },
+        {
+          "type": "callout",
+          "content": "an n = 3 class with a b_1 = 0 locus. Scope: family-level: holds on every member, whichever seed is active."
+        },
+        {
+          "type": "heading",
+          "content": "(CG.11) The flux potential cannot accelerate the universe",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Homogeneity of the G2 volume gives K_ij s^i s^j = 7 and s.grad V = -5 V, so the canonical slope of the flux potential obeys |grad V|/V >= 5 sqrt(2/7) = 2.673 everywhere (measured minimum 2.721), far above the acceleration threshold sqrt(2) = 1.414. The leading-order flux potential cannot accelerate the universe; dark energy is open."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "flux-no-acceleration",
+          "label": "(CG.11)",
+          "equationNumber": "(CG.11)"
+        },
+        {
+          "type": "callout",
+          "content": "a point where |grad V|/V < 5 sqrt(2/7). Scope: leading-order Kahler potential, single-field reading; multi-field rapid-turn trajectories are not excluded."
+        },
+        {
+          "type": "heading",
+          "content": "What is standard, what is postulated, what is found",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Standard physics is cited to its source; postulates are the model's own assumptions; findings are established by the computations above; corrections record what was wrong; open problems are stated as open."
+        },
+        {
+          "type": "table",
+          "content": null,
+          "headers": [
+            "kind",
+            "statement",
+            "in plain words",
+            "source or evidence"
+          ],
+          "rows": [
+            [
+              "Standard",
+              "M-theory on a compact 7-manifold with holonomy G2 gives 4D N = 1 supergravity with b_2 abelian vector multiplets and b_3 neutral chiral multiplets.",
+              "Curling up seven extra dimensions into a special shape called a G2 manifold leaves a four-dimensional world with a fixed set of force carriers and shape parameters, counted by the shape's holes.",
+              "Acharya, B. S. (1999) 'M theory, Joyce orbifolds and super Yang-Mills', Adv. Theor. Math. Phys. 3 227-248, hep-th/9812205; Lukas, A., Morris, S. (2004) 'Moduli Kahler potential for M-theory on a G2 manifold', Phys. Rev. D 69 066003, hep-th/0305078"
+            ],
+            [
+              "Standard",
+              "Compact 7-manifolds with a torsion-free G2-structure are obtained by resolving T^7/Gamma with Eguchi-Hanson spaces; the (Z/2)^3 example has b_2 = 12, b_3 = 43, and further examples include b_2 = 8 + l, b_3 = 47 - l.",
+              "Joyce built the first such shapes by folding a seven-dimensional doughnut with mirror symmetries and smoothing out the creases.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. I', J. Differential Geom. 43 291-328; Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375; Joyce, D. D. (2000) 'Compact Manifolds with Special Holonomy', Oxford University Press"
+            ],
+            [
+              "Standard",
+              "For a compact torsion-free G2-structure, Hol = G2 iff pi_1 is finite (Joyce, JDG II, Prop. 1.1.1).",
+              "A shape has the full G2 character exactly when it has no loops that cannot be shrunk away.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Standard",
+              "pi_1 of a quotient space is the group modulo the subgroup generated by elements with fixed points.",
+              "When folding a space, every fold that has a fixed crease lets loops through it be shrunk.",
+              "Armstrong, M. A. (1968) 'The fundamental group of the orbit space of a discontinuous group', Proc. Cambridge Philos. Soc. 64 299-301"
+            ],
+            [
+              "Standard",
+              "An A1 singularity fibred over a 3-manifold Q carries pure N = (1 + b_1(Q)) super Yang-Mills.",
+              "The kind of force living on a crease is set by how many loops the crease itself has.",
+              "Acharya, B. S. (1999) 'M theory, Joyce orbifolds and super Yang-Mills', Adv. Theor. Math. Phys. 3 227-248, hep-th/9812205"
+            ],
+            [
+              "Standard",
+              "G4 flux on a smooth G2 manifold gives a positive runaway potential; a supersymmetric vacuum needs a non-real Chern-Simons invariant.",
+              "Magnetic-like fluxes alone push the extra dimensions to grow for ever instead of settling.",
+              "Acharya, B. S., Denef, F., Valandro, R. (2005) 'Statistics of M theory vacua', JHEP 0506 056, hep-th/0502060; Lukas, A., Morris, S. (2004) 'Moduli Kahler potential for M-theory on a G2 manifold', Phys. Rev. D 69 066003, hep-th/0305078"
+            ],
+            [
+              "Standard",
+              "M-theory on Joyce manifolds, as K3 fibrations, is dual to heterotic strings on T^3-fibred Calabi-Yau threefolds.",
+              "The same physics can be described by a different kind of string theory, which may help with the open problems.",
+              "Acharya, B. S. (1996) 'N=1 heterotic/M theory duality and Joyce manifolds', Nucl. Phys. B 475 579-596, hep-th/9603033"
+            ],
+            [
+              "Standard",
+              "Two-time physics with an Sp(2,R) gauge symmetry removing the relative time (Bars).",
+              "A framework in which a second time direction is harmless because a symmetry removes its unwanted effects.",
+              "source to be verified"
+            ],
+            [
+              "Postulate",
+              "The bulk is 26-dimensional with signature (24,2), one time per 13D shadow of signature (12,1).",
+              "The model starts from a 26-dimensional space with two time directions, split into two mirror halves.",
+              "memory: two-time migration ruling 2026-08-19"
+            ],
+            [
+              "Postulate",
+              "Twelve bridges: the directed edges of K4 on a Fano arc of four faces, grouped into three E8 blocks.",
+              "Twelve links connect the two halves, grouped in three sets of four.",
+              "docs/BRIDGE_CHANNEL_ASSIGNMENT.md (site repo)"
+            ],
+            [
+              "Finding",
+              "Joyce's construction from phi's diagonal (Z/2)^3 reaches 28 literature-checked (b_2, b_3); the off-path seed b_3 = 24 is not among them.",
+              "Only certain hole-counts are possible; the old value 24 is not one.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Finding",
+              "Across the family, restricted holonomy is trivial, SU(2), SU(3), G2 for n = 0..3 singular involutions; pi_1 is finite only at n = 3.",
+              "As more creases appear, the shape climbs a ladder of richness; only the top rung is fully G2.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Finding",
+              "The 12 bridges and the 12 A1 components form one 3 x 4 structure, existing exactly on the all-plain members.",
+              "The twelve links and the twelve creases match one-to-one, and only for the adopted shape.",
+              "tests/test_bridge_component_map.py"
+            ],
+            [
+              "Finding",
+              "chi_eff = 2 x sum over singular involutions of chi(Kummer K3) = 48n; n_gen = chi_eff/48 counts singular involutions (an unruled reading).",
+              "The number 144 counts hidden K3 surfaces: three in each mirror half, each contributing 24, taken once for each half.",
+              "tests/test_kummer_index.py"
+            ],
+            [
+              "Finding",
+              "In phi's Joyce family, holonomy exactly G2 and a confining gauge sector are mutually exclusive.",
+              "The shape that is fully G2 cannot also host the force usually used to pin its size.",
+              "Acharya, B. S. (1999) 'M theory, Joyce orbifolds and super Yang-Mills', Adv. Theor. Math. Phys. 3 227-248, hep-th/9812205"
+            ],
+            [
+              "Correction",
+              "The adopted 3-form was the split real form, one transcription sign away from the framework's own octonion product.",
+              "A sign error made the internal shape the wrong kind; fixing it changes no number.",
+              "D-003"
+            ],
+            [
+              "Correction",
+              "The A1 filter tested the setwise stabiliser; the four-member family was the all-plain subfamily of Joyce's construction.",
+              "An over-strict check had hidden most of the possible shapes.",
+              "Joyce, D. D. (1996) 'Compact Riemannian 7-manifolds with holonomy G2. II', J. Differential Geom. 43 329-375"
+            ],
+            [
+              "Correction",
+              "Constants built on k_gimel = b_3/2 + 1/pi were fits made at the retired seed, not derivations.",
+              "Several headline numbers were tuned, not predicted.",
+              "D-007"
+            ],
+            [
+              "Open",
+              "No chiral matter inside Y_7: disjoint singular loci leave no codimension-7 points.",
+              "The internal shape alone cannot yet make matter tell left from right.",
+              "Acharya, B. S. (1996) 'N=1 heterotic/M theory duality and Joyce manifolds', Nucl. Phys. B 475 579-596, hep-th/9603033"
+            ],
+            [
+              "Open",
+              "The 43 moduli, Re(T) included, are unfixed at leading order.",
+              "The size and shape of the extra dimensions are not yet pinned.",
+              "Acharya, B. S., Denef, F., Valandro, R. (2005) 'Statistics of M theory vacua', JHEP 0506 056, hep-th/0502060"
+            ],
+            [
+              "Open",
+              "The leading-order flux potential cannot accelerate the universe (slope >= 5 sqrt(2/7)).",
+              "The model does not yet explain dark energy.",
+              "D-010"
+            ],
+            [
+              "Open",
+              "Flavour structure awaits a chiral sector.",
+              "Why particles come in different masses is not yet derived.",
+              "D-011"
+            ],
+            [
+              "Ruling",
+              "WA-1: one bridge per resolved A1 component (one U(1)).",
+              "Each link is identified with one smoothed-out crease of the internal shape.",
+              "D-008 (the author's ruling)"
+            ]
+          ]
         }
       ],
       "formulaRefs": [
@@ -2533,7 +3011,11 @@
         "y7-fundamental-group",
         "joyce-reachable-set",
         "y7-gauge-content",
-        "y7-flux-potential-runaway"
+        "y7-flux-potential-runaway",
+        "bridge-component-correspondence",
+        "k3-reading-generations",
+        "confinement-exclusion",
+        "flux-no-acceleration"
       ],
       "paramRefs": [
         "topology.chi_y7"
@@ -2545,12 +3027,16 @@
         "y7-fundamental-group",
         "joyce-reachable-set",
         "y7-gauge-content",
-        "y7-flux-potential-runaway"
+        "y7-flux-potential-runaway",
+        "bridge-component-correspondence",
+        "k3-reading-generations",
+        "confinement-exclusion",
+        "flux-no-acceleration"
       ],
       "param_refs": [
         "topology.chi_y7"
       ],
-      "timestamp": "2026-09-30T06:54:04.210317"
+      "timestamp": "2026-09-30T23:16:12.620808"
     },
     "2.7": {
       "id": "2",
@@ -2940,7 +3426,7 @@
         "geometry.shadow_asymmetry_delta_T",
         "geometry.racetrack_stability"
       ],
-      "timestamp": "2026-09-30T06:54:04.211258"
+      "timestamp": "2026-09-30T23:16:12.621702"
     },
     "V.1": {
       "id": "validation",
@@ -3062,7 +3548,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-09-30T06:54:04.212239"
+      "timestamp": "2026-09-30T23:16:12.622208"
     },
     "3.4": {
       "id": "3",
@@ -3226,7 +3712,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-09-30T06:54:04.212424"
+      "timestamp": "2026-09-30T23:16:12.622330"
     },
     "3.6": {
       "id": "3",
@@ -3398,7 +3884,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-09-30T06:54:04.212803"
+      "timestamp": "2026-09-30T23:16:12.622550"
     },
     "3": {
       "id": "3",
@@ -3602,7 +4088,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2026-09-30T06:54:04.265058"
+      "timestamp": "2026-09-30T23:16:12.655174"
     },
     "3.2": {
       "id": "3",
@@ -4090,7 +4576,7 @@
         "bridge.distributed_or_rank",
         "gauge.chirality_reversal_probability"
       ],
-      "timestamp": "2026-09-30T06:54:04.265798"
+      "timestamp": "2026-09-30T23:16:12.655675"
     },
     "3.1": {
       "id": "3",
@@ -4148,7 +4634,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-09-30T06:54:04.266396"
+      "timestamp": "2026-09-30T23:16:12.656023"
     },
     "4.2": {
       "id": "4",
@@ -4286,7 +4772,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-09-30T06:54:04.545862"
+      "timestamp": "2026-09-30T23:16:12.862490"
     },
     "4.1": {
       "id": "4",
@@ -4574,7 +5060,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-09-30T06:54:04.904896"
+      "timestamp": "2026-09-30T23:16:13.057709"
     },
     "4.3": {
       "id": "4",
@@ -4814,7 +5300,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-09-30T06:54:04.905510"
+      "timestamp": "2026-09-30T23:16:13.058173"
     },
     "4.6": {
       "id": "4",
@@ -5008,7 +5494,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-09-30T06:54:04.906268"
+      "timestamp": "2026-09-30T23:16:13.058543"
     },
     "4.4": {
       "id": "4",
@@ -5190,7 +5676,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-09-30T06:54:04.906865"
+      "timestamp": "2026-09-30T23:16:13.058922"
     },
     "4.9": {
       "id": "4",
@@ -5292,7 +5778,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-09-30T06:54:04.907119"
+      "timestamp": "2026-09-30T23:16:13.059091"
     },
     "6.1.1": {
       "id": "6",
@@ -5406,7 +5892,7 @@
         "yukawa.phi_fit",
         "yukawa.gimel_fit"
       ],
-      "timestamp": "2026-09-30T06:54:04.907564"
+      "timestamp": "2026-09-30T23:16:13.059393"
     },
     "4.2.1": {
       "id": "4",
@@ -5480,7 +5966,7 @@
         "constants.G_F_tree",
         "constants.G_F_physical"
       ],
-      "timestamp": "2026-09-30T06:54:04.908032"
+      "timestamp": "2026-09-30T23:16:13.059706"
     },
     "4.8": {
       "id": "4",
@@ -5538,7 +6024,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-09-30T06:54:04.908756"
+      "timestamp": "2026-09-30T23:16:13.060272"
     },
     "A2": {
       "id": "A2",
@@ -5610,7 +6096,7 @@
         "algebra.freudenthal_jordan_trace",
         "algebra.pneuma_27d_condensate_scale"
       ],
-      "timestamp": "2026-09-30T06:54:04.909786"
+      "timestamp": "2026-09-30T23:16:13.061129"
     },
     "A3": {
       "id": "A3",
@@ -5696,7 +6182,7 @@
         "algebra.e7_symplectic",
         "algebra.e7_alp_mass_gev"
       ],
-      "timestamp": "2026-09-30T06:54:04.910166"
+      "timestamp": "2026-09-30T23:16:13.061411"
     },
     "A4": {
       "id": "A4",
@@ -5806,7 +6292,7 @@
         "algebra.gaugino_condensate_ratio",
         "algebra.gaugino_cabibbo_derived"
       ],
-      "timestamp": "2026-09-30T06:54:04.910334"
+      "timestamp": "2026-09-30T23:16:13.061528"
     },
     "A5": {
       "id": "A5",
@@ -5938,7 +6424,7 @@
         "algebra.e8_portal_coupling",
         "algebra.e8_heterotic_spectral_proxy"
       ],
-      "timestamp": "2026-09-30T06:54:04.946055"
+      "timestamp": "2026-09-30T23:16:13.085624"
     },
     "A6": {
       "id": "A6",
@@ -6176,7 +6662,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-09-30T06:54:04.946368"
+      "timestamp": "2026-09-30T23:16:13.085820"
     },
     "A7": {
       "id": "A7",
@@ -6424,7 +6910,7 @@
         "algebra.clifford_flrw_invariant",
         "algebra.clifford_rotation_check"
       ],
-      "timestamp": "2026-09-30T06:54:04.946451"
+      "timestamp": "2026-09-30T23:16:13.085869"
     },
     "neutrino-algebraic": {
       "id": "neutrino-algebraic",
@@ -6590,7 +7076,7 @@
         "neutrino.theta13_sigma",
         "neutrino.delta_CP_sigma"
       ],
-      "timestamp": "2026-09-30T06:54:04.946600"
+      "timestamp": "2026-09-30T23:16:13.085964"
     },
     "5.1": {
       "id": "5",
@@ -6930,7 +7416,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-09-30T06:54:04.946786"
+      "timestamp": "2026-09-30T23:16:13.086081"
     },
     "5.2": {
       "id": "5",
@@ -7224,7 +7710,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-09-30T06:54:04.947114"
+      "timestamp": "2026-09-30T23:16:13.086296"
     },
     "5.6": {
       "id": "5",
@@ -7548,7 +8034,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-09-30T06:54:04.947613"
+      "timestamp": "2026-09-30T23:16:13.086618"
     },
     "5.7": {
       "id": "5",
@@ -7692,7 +8178,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-09-30T06:54:04.951299"
+      "timestamp": "2026-09-30T23:16:13.088745"
     },
     "5.4": {
       "id": "5",
@@ -8012,7 +8498,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-09-30T06:54:04.957152"
+      "timestamp": "2026-09-30T23:16:13.092268"
     },
     "5.9": {
       "id": "5",
@@ -8174,7 +8660,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-09-30T06:54:04.959037"
+      "timestamp": "2026-09-30T23:16:13.093426"
     },
     "4.5": {
       "id": "4",
@@ -8434,7 +8920,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-09-30T06:54:05.211352"
+      "timestamp": "2026-09-30T23:16:13.316869"
     },
     "4.7": {
       "id": "4",
@@ -8686,7 +9172,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-09-30T06:54:05.212860"
+      "timestamp": "2026-09-30T23:16:13.318250"
     },
     "5.3": {
       "id": "5",
@@ -8844,7 +9330,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-09-30T06:54:05.213235"
+      "timestamp": "2026-09-30T23:16:13.318619"
     },
     "5.8": {
       "id": "5",
@@ -9166,7 +9652,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-09-30T06:54:05.213360"
+      "timestamp": "2026-09-30T23:16:13.318738"
     },
     "6.1": {
       "id": "6",
@@ -9226,7 +9712,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213487"
+      "timestamp": "2026-09-30T23:16:13.318858"
     },
     "6.2": {
       "id": "6",
@@ -9274,7 +9760,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213540"
+      "timestamp": "2026-09-30T23:16:13.319022"
     },
     "6.3": {
       "id": "6",
@@ -9366,7 +9852,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213597"
+      "timestamp": "2026-09-30T23:16:13.319073"
     },
     "6.4": {
       "id": "6",
@@ -9418,7 +9904,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213639"
+      "timestamp": "2026-09-30T23:16:13.319113"
     },
     "6.5": {
       "id": "6",
@@ -9470,7 +9956,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213677"
+      "timestamp": "2026-09-30T23:16:13.319153"
     },
     "6.6": {
       "id": "6",
@@ -9522,7 +10008,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213829"
+      "timestamp": "2026-09-30T23:16:13.319192"
     },
     "6.7": {
       "id": "6",
@@ -9574,7 +10060,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213870"
+      "timestamp": "2026-09-30T23:16:13.319229"
     },
     "6.8": {
       "id": "6",
@@ -9618,7 +10104,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213901"
+      "timestamp": "2026-09-30T23:16:13.319257"
     },
     "6.9": {
       "id": "6",
@@ -9662,7 +10148,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.213997"
+      "timestamp": "2026-09-30T23:16:13.319401"
     },
     "5.5": {
       "id": "5",
@@ -9816,7 +10302,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-09-30T06:54:05.231837"
+      "timestamp": "2026-09-30T23:16:13.333257"
     },
     "2.8": {
       "id": "2",
@@ -10762,7 +11248,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-09-30T06:54:05.232064"
+      "timestamp": "2026-09-30T23:16:13.333472"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -10902,7 +11388,7 @@
         "thermal.entropy_gradient",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-09-30T06:54:05.232451"
+      "timestamp": "2026-09-30T23:16:13.333845"
     },
     "7.2": {
       "id": "7",
@@ -11018,7 +11504,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-09-30T06:54:05.232744"
+      "timestamp": "2026-09-30T23:16:13.334132"
     },
     "7.7": {
       "id": "7",
@@ -11100,7 +11586,7 @@
         "consciousness.unlocking_probability_6",
         "consciousness.unlocking_probability_10"
       ],
-      "timestamp": "2026-09-30T06:54:05.233024"
+      "timestamp": "2026-09-30T23:16:13.334388"
     },
     "7.8": {
       "id": "7",
@@ -11160,7 +11646,7 @@
         "consciousness.dice_branches",
         "consciousness.dice_entropy"
       ],
-      "timestamp": "2026-09-30T06:54:05.305534"
+      "timestamp": "2026-09-30T23:16:13.400475"
     },
     "7.6": {
       "id": "7",
@@ -11234,7 +11720,7 @@
         "consciousness.penrose_E_G_joules",
         "consciousness.tau_base_ms"
       ],
-      "timestamp": "2026-09-30T06:54:05.305718"
+      "timestamp": "2026-09-30T23:16:13.400672"
     },
     "7": {
       "id": "7",
@@ -14082,7 +14568,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.305860"
+      "timestamp": "2026-09-30T23:16:13.400813"
     },
     "6": {
       "id": "6",
@@ -16988,7 +17474,7 @@
         "topology.mephorash_chi",
         "topology.n_gen"
       ],
-      "timestamp": "2026-09-30T06:54:05.306089"
+      "timestamp": "2026-09-30T23:16:13.401030"
     },
     "1.1": {
       "id": "1",
@@ -17698,7 +18184,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.306486"
+      "timestamp": "2026-09-30T23:16:13.401428"
     },
     "2.6": {
       "id": "2",
@@ -18578,7 +19064,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.306726"
+      "timestamp": "2026-09-30T23:16:13.401650"
     },
     "3.7": {
       "id": "3",
@@ -19218,7 +19704,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.307044"
+      "timestamp": "2026-09-30T23:16:13.401930"
     },
     "4": {
       "id": "4",
@@ -19736,7 +20222,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-09-30T06:54:05.307269"
+      "timestamp": "2026-09-30T23:16:13.402122"
     },
     "A": {
       "id": "A",
@@ -19946,7 +20432,7 @@
         "geometry.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-09-30T06:54:05.307358"
+      "timestamp": "2026-09-30T23:16:13.402206"
     },
     "B": {
       "id": "B",
@@ -20182,7 +20668,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-09-30T06:54:05.307453"
+      "timestamp": "2026-09-30T23:16:13.402296"
     },
     "C": {
       "id": "C",
@@ -20388,7 +20874,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-09-30T06:54:05.307521"
+      "timestamp": "2026-09-30T23:16:13.402363"
     },
     "D": {
       "id": "D",
@@ -20584,7 +21070,7 @@
         "geometry.H0_local",
         "desi.w0"
       ],
-      "timestamp": "2026-09-30T06:54:05.307572"
+      "timestamp": "2026-09-30T23:16:13.402415"
     },
     "E": {
       "id": "E",
@@ -20786,7 +21272,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-09-30T06:54:05.307628"
+      "timestamp": "2026-09-30T23:16:13.402467"
     },
     "F": {
       "id": "F",
@@ -21026,7 +21512,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-09-30T06:54:05.308137"
+      "timestamp": "2026-09-30T23:16:13.402951"
     },
     "H": {
       "id": "H",
@@ -21424,7 +21910,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-09-30T06:54:05.308750"
+      "timestamp": "2026-09-30T23:16:13.403473"
     },
     "G": {
       "id": "G",
@@ -21772,7 +22258,7 @@
         "seal.bridge_pairs",
         "seal.bridge_architecture"
       ],
-      "timestamp": "2026-09-30T06:54:05.308899"
+      "timestamp": "2026-09-30T23:16:13.403599"
     },
     "I": {
       "id": "I",
@@ -22126,7 +22612,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-09-30T06:54:05.308988"
+      "timestamp": "2026-09-30T23:16:13.403683"
     },
     "J": {
       "id": "J",
@@ -22408,7 +22894,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-09-30T06:54:05.309084"
+      "timestamp": "2026-09-30T23:16:13.403773"
     },
     "K": {
       "id": "K",
@@ -22824,7 +23310,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-09-30T06:54:05.309161"
+      "timestamp": "2026-09-30T23:16:13.403842"
     },
     "L": {
       "id": "L",
@@ -23116,7 +23602,7 @@
         "terminal.restoration_probability",
         "terminal.omega_seal"
       ],
-      "timestamp": "2026-09-30T06:54:05.311396"
+      "timestamp": "2026-09-30T23:16:13.405489"
     },
     "Z": {
       "id": "Z",
@@ -23308,7 +23794,7 @@
         "cosmology.h0_unwinding_scale",
         "cosmology.H0_physical"
       ],
-      "timestamp": "2026-09-30T06:54:05.311526"
+      "timestamp": "2026-09-30T23:16:13.405617"
     },
     "2.1": {
       "id": "2",
@@ -23820,7 +24306,7 @@
         "derivations.bridge_coherence_time",
         "derivations.D_bridge_total"
       ],
-      "timestamp": "2026-09-30T06:54:05.382317"
+      "timestamp": "2026-09-30T23:16:13.472367"
     },
     "3.3.1": {
       "id": "3",
@@ -24242,7 +24728,7 @@
         "gauge.hypercharge_y_ratio",
         "gauge.sin2_theta_w"
       ],
-      "timestamp": "2026-09-30T06:54:05.383100"
+      "timestamp": "2026-09-30T23:16:13.472962"
     },
     "3.4.1": {
       "id": "3",
@@ -24544,7 +25030,7 @@
         "neutrino.m_r_scale",
         "neutrino.sum_masses"
       ],
-      "timestamp": "2026-09-30T06:54:05.383537"
+      "timestamp": "2026-09-30T23:16:13.473256"
     },
     "5.4.2": {
       "id": "5",
@@ -24778,7 +25264,7 @@
         "cosmology.eta_baryon_geometric",
         "cosmology.n_bbn_neutrino"
       ],
-      "timestamp": "2026-09-30T06:54:05.383984"
+      "timestamp": "2026-09-30T23:16:13.473544"
     },
     "2.2": {
       "id": "2",
@@ -25120,7 +25606,7 @@
         "gravity.planck_mass_from_g2",
         "gravity.graviton_dof_4d"
       ],
-      "timestamp": "2026-09-30T06:54:05.384306"
+      "timestamp": "2026-09-30T23:16:13.473747"
     },
     "M": {
       "id": "2",
@@ -25748,7 +26234,7 @@
         "tensor.metric_signature",
         "tensor.riemann_symmetries"
       ],
-      "timestamp": "2026-09-30T06:54:05.384535"
+      "timestamp": "2026-09-30T23:16:13.473894"
     },
     "N": {
       "id": "N",
@@ -26332,7 +26818,7 @@
         "vielbein.lorentz_group_dimension",
         "vielbein.spinor_representation_dimension"
       ],
-      "timestamp": "2026-09-30T06:54:05.384873"
+      "timestamp": "2026-09-30T23:16:13.474131"
     },
     "O": {
       "id": "O",
@@ -26958,7 +27444,7 @@
         "gauge.g_weak",
         "geometry.V_G2"
       ],
-      "timestamp": "2026-09-30T06:54:05.385260"
+      "timestamp": "2026-09-30T23:16:13.474397"
     },
     "P": {
       "id": "2",
@@ -27632,7 +28118,7 @@
         "g2_holonomy.b2",
         "g2_holonomy.n_gen"
       ],
-      "timestamp": "2026-09-30T06:54:05.385645"
+      "timestamp": "2026-09-30T23:16:13.474614"
     },
     "Q": {
       "id": "Q",
@@ -28276,7 +28762,7 @@
         "index.chiral_anomaly_coefficient",
         "index.family_index"
       ],
-      "timestamp": "2026-09-30T06:54:05.386075"
+      "timestamp": "2026-09-30T23:16:13.474878"
     },
     "R.1": {
       "id": "R",
@@ -28832,7 +29318,7 @@
         "vacuum.lifetime_years",
         "vacuum.is_stable"
       ],
-      "timestamp": "2026-09-30T06:54:05.386603"
+      "timestamp": "2026-09-30T23:16:13.475307"
     },
     "S.1": {
       "id": "S",
@@ -29546,7 +30032,7 @@
         "topology.mephorash_chi",
         "topology.elder_kads"
       ],
-      "timestamp": "2026-09-30T06:54:05.386882"
+      "timestamp": "2026-09-30T23:16:13.475481"
     },
     "appendix-T": {
       "id": "appendix-T",
@@ -29622,7 +30108,7 @@
         "appendix_t.stabilizer_weight_mean",
         "appendix_t.syndrome_example_valid"
       ],
-      "timestamp": "2026-09-30T06:54:05.387455"
+      "timestamp": "2026-09-30T23:16:13.475828"
     },
     "appendix-U": {
       "id": "appendix-U",
@@ -29708,7 +30194,7 @@
         "appendix_u.gamma_geometric",
         "appendix_u.match_sigma"
       ],
-      "timestamp": "2026-09-30T06:54:05.387564"
+      "timestamp": "2026-09-30T23:16:13.475894"
     },
     "5.1.1": {
       "id": "5",
@@ -29874,7 +30360,7 @@
         "gravity.tensor_mode_correction",
         "gravity.scalar_breathing_amplitude"
       ],
-      "timestamp": "2026-09-30T06:54:05.387828"
+      "timestamp": "2026-09-30T23:16:13.476068"
     },
     "2.3": {
       "id": "2",
@@ -30190,7 +30676,7 @@
         "spectral.BR_e_pi0",
         "spectral.BR_nu_K"
       ],
-      "timestamp": "2026-09-30T06:54:05.388116"
+      "timestamp": "2026-09-30T23:16:13.476257"
     },
     "5.2.1": {
       "id": "5",
@@ -30356,7 +30842,7 @@
         "cosmology.w_0_attractor",
         "cosmology.w_a_thawing"
       ],
-      "timestamp": "2026-09-30T06:54:05.388318"
+      "timestamp": "2026-09-30T23:16:13.476380"
     },
     "6.2.1": {
       "id": "6",
@@ -30508,7 +30994,7 @@
         "cosmology.k_bary_normalization",
         "cosmology.racetrack_Re_T"
       ],
-      "timestamp": "2026-09-30T06:54:05.388453"
+      "timestamp": "2026-09-30T23:16:13.476469"
     },
     "7.1": {
       "id": "7",
@@ -30660,7 +31146,7 @@
         "axion.omega_h2",
         "axion.theta_i"
       ],
-      "timestamp": "2026-09-30T06:54:05.388570"
+      "timestamp": "2026-09-30T23:16:13.476542"
     },
     "7.3": {
       "id": "7",
@@ -30824,7 +31310,7 @@
         "portals.dm_cross_section_cm2",
         "portals.dm_mediator_mass_gev"
       ],
-      "timestamp": "2026-09-30T06:54:05.388717"
+      "timestamp": "2026-09-30T23:16:13.476644"
     },
     "7.4": {
       "id": "7",
@@ -30944,7 +31430,7 @@
         "portals.sterile_n_eff_contribution",
         "portals.alpha_leak_yukawa"
       ],
-      "timestamp": "2026-09-30T06:54:05.389383"
+      "timestamp": "2026-09-30T23:16:13.477105"
     },
     "7.5": {
       "id": "7",
@@ -31106,7 +31592,7 @@
         "portals.alp_nucleon_coupling_gev_inv",
         "portals.alp_fifth_force_range_m"
       ],
-      "timestamp": "2026-09-30T06:54:05.389669"
+      "timestamp": "2026-09-30T23:16:13.477283"
     }
   }
 }
