@@ -952,3 +952,37 @@ parts) at random points and fluxes. It must never fall below the bound.
 **Scope.** The leading-order Kähler potential, and a single-field reading of
 acceleration. Multi-field rapid-turn trajectories are not excluded by a
 gradient bound and are noted as open.
+
+## D-010 · RESULT · 2026-09-30 · CONFIRMED (lead run)
+
+**C2.** Classes by the smallest b₁ among their loci (first generating triple):
+
+| n | b₁ = 0 | b₁ = 1 | b₁ = 3 |
+|---|---|---|---|
+| 1 | 7 | 840 | 5,936 |
+| 2 | — | 336 | 2,184 |
+| 3 | — | 84 | 280 |
+
+Confining (b₁ = 0) loci occur ONLY at n = 1, whose π₁ is infinite. **Within φ's
+Joyce family, holonomy exactly G₂ and a confining gauge sector are mutually
+exclusive.** The mainstream route to moduli stabilisation — Acharya's pure
+N = 1 SYM plus flux — is structurally unavailable on every full-holonomy
+member, not just on (12, 43).
+
+**C3.** Across 60 random points and fluxes, the canonical slope |∇V|/V was at
+least 2.72. That respects the homogeneity bound 5√(2/7) = 2.673 and sits far
+above √2. **The leading-order flux potential cannot drive accelerated
+expansion.** Dark energy and the cosmological constant need physics beyond
+leading order (open), and the w₀ values carry no mechanism.
+
+No kill condition fired. Engine commit follows this entry.
+
+**What remains open, and where to look (next session).**
+- **Chirality** (absent structurally: disjoint loci have no codim-7 points).
+  Candidate sources: a heterotic dual through the Kummer fibrations; the two
+  shadows as boundary walls.
+- **Moduli.** Membrane instantons on rigid associatives, cross-shadow potentials,
+  corrections to K.
+- **Flavour.** Tied to chirality. The 3 singular involutions ↔ 3 E₈ blocks ↔ 3
+  gauge-coupling quartets structure is the hint.
+- **Dark energy.** Beyond leading order, or multi-field.
