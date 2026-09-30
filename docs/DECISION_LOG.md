@@ -986,3 +986,44 @@ No kill condition fired. Engine commit follows this entry.
 - **Flavour.** Tied to chirality. The 3 singular involutions ↔ 3 E₈ blocks ↔ 3
   gauge-coupling quartets structure is the hint.
 - **Dark energy.** Beyond leading order, or multi-field.
+
+---
+
+## D-011 · 2026-09-30 · open problems C1 + C4 · ANALYSIS (no computation yet)
+
+**Are the four problems really open, or does the geometry avoid them?**
+Answered for all four:
+
+| problem | status | why |
+|---|---|---|
+| C1 chiral matter | **really open**; absent inside Y₇ by structure | Smooth G₂ gives only neutral chirals. Acharya–Witten chirality needs codim-7 points where singular loci meet, and Joyce admissibility IS pairwise disjointness, so the whole family has none. The orbifold limit gives N = 4 SU(2), which is non-chiral. |
+| C2 moduli | **really open**, sharpened (D-010) | Full holonomy and a confining sector are mutually exclusive. |
+| C3 dark energy / CC | **really open**, sharpened (D-010) | The flux potential's slope is ≥ 2.673 > √2. |
+| C4 flavour | **really open**, downstream of C1 | Without chiral loci there are no Yukawas, and π₁ = 1 closes Wilson lines. |
+
+So the geometry avoids none of them. C2 and C3 are now no-go statements INSIDE
+the construction. The remaining freedom lies OUTSIDE Y₇, in the model's own
+postulates.
+
+**Research directions, verified sources only.**
+1. **Heterotic dual.** Acharya, *N=1 heterotic/M theory duality and Joyce
+   manifolds*, Nucl. Phys. B475 (1996) 579–596, hep-th/9603033 (verified). It
+   pairs M-theory on Joyce manifolds, as K3 fibrations, with heterotic strings on
+   T³-fibred Calabi–Yau threefolds, and matches their massless spectra. The K3
+   fibres are the Kummer surfaces of the K3 reading (D-009). Chirality on the
+   heterotic side comes from the gauge bundle. The question: does the dual of
+   (12, 43) carry a chiral bundle, and what is its M-theory image? A later
+   non-perturbative treatment of heterotic duals of G₂ orbifolds exists
+   (arXiv:2106.03886; to be verified before citing).
+2. **The two shadows as boundary walls.** In Hořava–Witten, chiral E₈ matter lives
+   on two walls (citation to be verified). The model already has two shadows and
+   three E₈ blocks tied to the singular involutions (D-008). Test whether the
+   shadow structure can carry wall-localised chiral multiplets. Kill: if the
+   bulk's (24,2) signature cannot host 10D-type walls.
+3. **Flavour hint.** The 3 singular involutions ↔ 3 E₈ blocks ↔ 3 quartets of U(1)
+   couplings, f = T^A by type (Lukas–Morris). If generations ARE the involutions,
+   hierarchies would come from the three locus volumes. Those are unfixed moduli,
+   so C4 depends on C2.
+
+Each direction must be pre-registered with a kill condition before it is
+computed.
