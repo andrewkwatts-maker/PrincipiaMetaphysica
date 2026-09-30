@@ -912,3 +912,43 @@ No kill condition fired.
 - Switch the generation route from b₂/4 to n, the count of singular involutions.
 - Demote the other 21 definitions as NONE or type errors.
 - Relabel the 41 sites that call χ_eff "the Euler characteristic of Y₇".
+
+---
+
+## D-010 · 2026-09-30 · open problems C2 + C3 · PRE-REGISTERED
+
+**C2: moduli stabilisation — can any full-holonomy member confine?**
+Gaugino condensation needs pure N = 1 SYM on a locus Q, which means b₁(Q) = 0
+(Acharya: N = 1 + b₁). In φ's Joyce family the loci are T³/Stab:
+- plain loci have b₁ = 3 (N = 4);
+- T³/ℤ₂ (Example 4) has b₁ = 1 (N = 2);
+- only the order-8, Hantzsche–Wendt-type loci of some n = 1 classes can have
+  b₁ = 0.
+
+**Conjecture.** No class with n = 3 (the full-holonomy classes, D-002/D-006) has a
+locus with b₁ = 0. Full holonomy and a confining sector would then be mutually
+exclusive inside the construction.
+
+**Test.** For every pairwise-disjoint class, compute each locus's b₁ from its
+stabiliser's invariant 1-forms, and the minimum by n.
+
+**Kill.** An n = 3 class with a b₁ = 0 locus.
+
+**C3: the cosmological constant — can the flux potential accelerate the universe?**
+Homogeneity (D-005) gives K_ij sⁱ sʲ = 7 and s·∇V = −5V. In canonical
+normalisation the radial direction has norm √(7/2), so the RADIAL slope is
+5/√(7/2) = 5√(2/7) ≈ 2.673. A gradient's norm is at least its projection, so
+
+  |∇V|/V ≥ 5√(2/7)
+
+at every point, for every flux. That exceeds √2, the threshold for accelerated
+expansion from an exponential potential.
+
+**Test.** Evaluate the full |∇V|/V in the canonical metric (K_ij/2 for the real
+parts) at random points and fluxes. It must never fall below the bound.
+
+**Kill.** A point below 2.673.
+
+**Scope.** The leading-order Kähler potential, and a single-field reading of
+acceleration. Multi-field rapid-turn trajectories are not excluded by a
+gradient bound and are noted as open.
