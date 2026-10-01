@@ -1,0 +1,406 @@
+[
+ {
+  "id": "FR01",
+  "set": "random",
+  "class": "INFRA",
+  "evidence": "self._b3 = _seed_values(_resolve_b3_path())[0] (simulations/core/FormulasRegistry.py:1131); \"# b3: Third Betti number, follows the b3_seed fork (43 adopted, 24 off-path)\" (simulations/core/FormulasRegistry.py:1107)",
+  "reasoning": "This root is the b3 seed accessor itself (FormulasRegistry._b3 and its aliases elder_kads / b3 / elders / elder_vessels), which the INFRA row names explicitly ('the seed accessor itself'). It makes no physics claim of its own; it hands the seed value to consumers. The object it carries is named in its own comment as cohomology classes ('b3 counts cohomology classes and is 43 on the adopted path', FormulasRegistry.py:1116-1117), so the value it supplies is B3-type, but the root as a site is plumbing and is classed INFRA."
+ },
+ {
+  "id": "FR03",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"#   - sterile_sector = BULK_PRESSURE = 163 (= 7*b3 - 5)\n#   - denominator = b3*10 - 1 = 239 (one less than decimal b3 scaling)\" (simulations/core/FormulasRegistry.py:1397-1398); \"STATUS: FITTED (post-hoc integer rationalization 163/239 of the\npreviously fitted 0.6819; 0.016% match)\" (simulations/core/FormulasRegistry.py:3868-3869)",
+  "reasoning": "The b3 factor enters only through the denominator b3*10 - 1, whose stated reason is 'one less than decimal b3 scaling' -- arithmetic, the rule-3 example verbatim -- and the numerator is a fixed literal 163 whose documented b3 form '7*b3 - 5' is again arithmetic. No part names what b3 counts (the label 'shadow gauge degrees of freedom' attaches to 163, not to the 24), and the registry docstring itself calls the formula a post-hoc rationalisation of a fit. With no part naming an object, rule 6' gives NONE rather than MIXED."
+ },
+ {
+  "id": "FR04",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"# 10. Tzimtzum Pressure (sigma_T = 23/24) - Void Seal\" (simulations/core/FormulasRegistry.py:1408); \"#   w0 = -1 + 1/b3 = -23/24 = -0.9583 (consistent with DESI 2025 BAO-only data)\" (simulations/core/FormulasRegistry.py:1316); \"\\\"formula\\\": \\\"23/24 = 1 - 1/B3\\\",\" (simulations/core/FormulasRegistry.py:4824); family member SP12: \"b_3 is READ\nfrom the adopted seed (b_2, b_3) = (12, 43) of the Joyce orbifold\nT^7/(Z/2)^3\" (simulations/PM/cosmology/attractor_potential.py:28-30)",
+  "reasoning": "FR04's own text names no counted object: 'Void Seal' and 'Tzimtzum' are names (rule 9), 'bridge size modulus' (FormulasRegistry.py:15) is a continuous modulus, not a count (rule 10), and 'b3'/'B3' appear only as symbols. But sigma_T is the dark-energy w0 (the 268 table row and OT09's 'Tzimtzum pressure: w_0 = -(1 - 1/b3)'), so FR04 belongs to the w0 family with OT09, SP11 and SP12. In that family the only object named for the n in w0 = -(n-1)/n is b_3 of Y7 (SP12: the Joyce orbifold's b_3; SP11 notes: 'b3 counts C3 moduli (axions)'). Its literal 24 is that same factor ('23/24 = 1 - 1/B3'), so by rule 8 it takes the family class B3. The literal does not move today; that is an implementation gap, not a different object."
+ },
+ {
+  "id": "FR06",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"#   - sterile_sector = 163: Derived from arbitrary values (288 - 125)\" (simulations/core/FormulasRegistry.py:144); \"This is DERIVED from two numerological values:\n- roots_total = 288 (Gnostic/Geometric dual interpretation)\n- visible_sector = 125 (5^3, origin unclear)\n...\nSTATUS: Derived value, numerological. No independent justification.\" (simulations/core/FormulasRegistry.py:1564-1574); \"163 = 288 - 125 = (7 * 24) - 5\" (simulations/core/FormulasRegistry.py:4139)",
+  "reasoning": "The computation is 288 - 125, both inputs fixed. The only place a 24 appears is the documented form 7*24 - 5 (the rule-3 example of bare arithmetic) and, indirectly, the 288, which FR06's own text calls 'numerological' with 'no independent justification'. No part of FR06's text names a counted object (B3, BULK or NAMED), so by rules 3 and 6' it is NONE. Its family partner, FR03's BULK_PRESSURE = 163 numerator, likewise names only '7*b3 - 5'."
+ },
+ {
+  "id": "FR07",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "b3 factor in the documented 288 = 12 x b3 (b3 * D_space_12)": "B3",
+   "12 factor (D_shadow_space / bridge count)": "BULK",
+   "computed value shadow_sector + christ_constant = 135 + 153": "NONE"
+  },
+  "evidence": "\"claim=\\\"R_288 = 12 b_3 = 288\\\",\ncounts=(\n\\\"12 is the bridge count (K_4 directed edges); b_3 counts \\\"\n\\\"3-cycles. Gives 288 at b_3 = 24, the SAME integer the SO(n) \\\"\n\\\"route gives -- two unrelated routes agreeing at one seed.\\\"\" (simulations/core/identity_ledger.py:250-254); \"# The total logic-closure integer 288 = 12 x b3 is topological.  Its\n# split into a \\\"visible\\\" 135 and a \\\"sterile / joint-closure\\\" 153\n# component is phenomenological\" (simulations/core/FormulasRegistry.py:153-155); \"# roots_total = b3 * D_shadow_space = 24 * 12 = 288 (octonionic structure)\" (simulations/core/FormulasRegistry.py:1271)",
+  "reasoning": "The code computes 288 as the fitted literals 135 + 153, which the text calls phenomenological, so that part is NONE. The 24 enters only through the documented total 12 x b3, and there the text names what each factor counts: 'b_3 counts 3-cycles' (B3) and 12 is 'the bridge count' / D_shadow_space (BULK). 'Octonionic/24D structure (b3=24 ...)' is undefined prose tied to the symbol b3, not a named bulk object (rules 1 and 9), so it does not open a B3/BULK fork for the 24. One part names an object and the others come from different classes, so by rule 6' the root is MIXED. Split, the b3 part moves (12 x 43 = 516) while the fitted 135 + 153 stays 288. Alternative: FR01 records that the old '24' prose meant D_core_24, the bulk's spacelike dimension. If '24D structure' is read that way, the 24 forks B3/BULK, and closure/consistency (135+153 = 288 and every 288 consumer) would favour BULK. The parts would change, but the root stays MIXED because of the fitted 135+153 part."
+ },
+ {
+  "id": "FR09",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"VISIBLE_GATES = 135      # visible-sector integer (fitted decomposition)\" (simulations/core/FormulasRegistry.py:173); \"# split into a \\\"visible\\\" 135 and a \\\"sterile / joint-closure\\\" 153\n# component is phenomenological: it was chosen so downstream\n# cosmological quantities (H0, dark-energy coupling) match observation\" (simulations/core/FormulasRegistry.py:154-156)",
+  "reasoning": "135 is a literal that the text describes only as a fitted split integer, chosen so downstream quantities match observation. 'The Sophia' and 'Shadow Gates' are names (rule 9). No counted object is named, so by rule 3 it is NONE however well the split agrees with data. No 24 or b3 enters the expression; the root is in the inventory only as half of the 288 closure."
+ },
+ {
+  "id": "FR10",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"JC_CONSTANT = 153        # joint-closure integer (fitted; = 288 - VISIBLE_GATES)\" (simulations/core/FormulasRegistry.py:172); \"Both claims are model-\n# internal, not derivable from G2 topology\" (simulations/core/FormulasRegistry.py:162-163); \"\\\"formula\\\": \\\"288 - 135 = 153\\\",\" (simulations/core/FormulasRegistry.py:4769)",
+  "reasoning": "153 is a literal described as a fitted integer equal to 288 - 135, i.e. arithmetic on a fitted split. The text explicitly withdraws the earlier 'topological necessity' claim. 'Christ Constant' / 'Logos Potential' are names (rule 9). No counted object is named, so by rule 3 it is NONE."
+ },
+ {
+  "id": "FR11",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"Effective Visible Sector Residues: 125 phenomenological parameter slots.\n...\nWARNING: This is NUMEROLOGY, not rigorous physics.\" (simulations/core/FormulasRegistry.py:1536-1539); \"STATUS: Requires theoretical justification or explicit ANSATZ label.\nThe origin of '5' in 5^3 needs tracing within the framework.\" (simulations/core/FormulasRegistry.py:1551-1552)",
+  "reasoning": "125 is a literal that the text itself calls numerology, and it lists what 125 is not. The only gloss, 5^3 with '5 represents spacetime dimensions (4D + 1 compact?)', is tentative arithmetic and not a count of 24 things. No 24 or b3 enters the expression and no counted object is named, so by rule 3 it is NONE."
+ },
+ {
+  "id": "FR23",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"Formula: C_geo = SYZYGY_GAP / PLEROMA = 18/24 = 0.75\n\nPurpose: This is the base velocity ratio derived from the Syzygy Gap.\nIt represents the \\\"resting\\\" speed of the manifold before stretching.\" (simulations/core/FormulasRegistry.py:1883-1886); \"\\\"derived_from\\\": [\\\"syzygy_gap\\\", \\\"b3\\\"],\" (simulations/core/FormulasRegistry.py:4928)",
+  "reasoning": "The divisor 24 is called 'PLEROMA', a legacy name that rule 9 lists explicitly as not an object, and elsewhere just 'b3' (a symbol, rule 1). The text never says what the 24 counts. The numerator syzygy_gap = 153 - 135 is a difference of the fitted split. Neither part names an object ('the 0.75 Harmonic', 'resting speed of the manifold' are descriptions, not counts), so by rule 6' the root is NONE. Its downstream speed_of_light_derived agreeing with data cannot choose (rule 3)."
+ },
+ {
+  "id": "FR29",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "24 factor (read as self._b3)": "BULK",
+   "christ 153": "NONE",
+   "sterile 163": "NONE"
+  },
+  "evidence": "\"G10: Dimensional Anchor - Anchors 24D manifold to 2D temporal plane.\n\nFormula: G10 = (153 × 24) / 163\n\nPurpose: Calculates the \\\"Weight\\\" of the Joint Closure across the\nmanifold dimensions relative to the Bulk Pressure. This anchors\nthe 24D manifold to the G(24,2) metric's two-time temporal direction.\" (simulations/core/FormulasRegistry.py:2614-2620)",
+  "reasoning": "The text names what the 24 counts: the dimensions of the '24D manifold' that the G(24,2) metric pairs with two time directions, i.e. the 24 space dimensions of the (24,2) bulk (BULK). The code reads self._b3, but by rule 1 the symbol is not evidence. The 153 and 163 factors are the fitted / numerological closure integers (FR10, FR06) with no counted object (NONE). One part names an object and the others are a different class, so by rule 6' the root is MIXED. Split, the 24 should stay 24; the b3 read that moves it to 43 contradicts its own text."
+ },
+ {
+  "id": "FR32",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "exponent 24 (read as self._b3)": "BULK",
+   "base 163/153": "NONE"
+  },
+  "evidence": "\"G70: Entropy Reversal Gate - Computational entropy filter.\n\nFormula: G70 = (163/153)^24\n\nPurpose: Raises Bulk/Joint ratio to 24th power (manifold\ndimensions) to create \\\"Entropy Trap.\\\"\" (simulations/core/FormulasRegistry.py:3478-3483)",
+  "reasoning": "The exponent's stated object is 'manifold dimensions', 24 of them. The only 24-dimensional object in the geometry is the bulk's space (the registry's sibling gate G10 calls it 'the 24D manifold ... G(24,2) metric'), and b3 is not a dimension count. So the exponent is BULK, whatever the self._b3 symbol says (rule 1). The base 163/153 is a ratio of the numerological / fitted closure integers with no counted object (NONE). Under rule 6' that makes it MIXED. The exponent should stay 24, and the base is a dead-end candidate. This gloss is less explicit than G10's, but no reading other than BULK is offered."
+ },
+ {
+  "id": "FR36",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"The 144 divisor: B3^2 / 4 = 576 / 4 = 144\n\nRepresents the Hexagonal Projection of the bulk.\nNOTE: This is a geometric projection constant, distinct from chi_eff (72).\" (simulations/core/FormulasRegistry.py:4097-4100); \"b_3^2/4 is claimed to give the pressure divisor 144. 144 also \\\"\n\\\"arrives as 2(h11 - h21 + h31), a route that does not reference \\\"\n\\\"the seed -- two derivations of one integer, agreeing only at 24.\" (simulations/core/identity_ledger.py:151-153)",
+  "reasoning": "The text gives B3^2/4 = 576/4 and a label, 'Hexagonal Projection of the bulk' / 'cross-shadow/global bulk pressure correction'. It never says what the 24 (or 576) counts. The ledger entry likewise records only the claim, without naming 3-cycles or bulk dimensions. 'Bulk' describes what the 144 is applied to, not a count of 24 bulk objects, and the variable name manifold_area_bulk is a symbol (rule 1). It is not G1: the root does not consume chi_eff, and its text calls itself 'distinct from chi_eff'. With no object named, rule 3 gives NONE."
+ },
+ {
+  "id": "FR40",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"Calculate Manifold Parity: eta_S + sigma_T ≈ 1.6403 (derived)\n\nv23.0+: With eta_S = 163/239, the exact parity sum is:\n163/239 + 23/24 = 1.64034169820...\n\nThe Sophian Drag + Tzimtzum Pressure must balance.\" (simulations/core/FormulasRegistry.py:4289-4294); \"This is 0.014% higher than the old phenomenological target 1.6402 (based on\nfitted eta_S = 0.6819).\" (simulations/core/FormulasRegistry.py:4631-4632)",
+  "reasoning": "FR40 adds two registry values, and its own text gives only the arithmetic 163/239 + 23/24 and a phenomenological target. 'Manifold Parity', 'Sophian Drag' and 'Tzimtzum Pressure' are names (rule 9). Neither input's 24 is given an object here: eta_S's 24 is arithmetic (FR03), and sigma_T names none in its own text (FR04 got B3 only through the w0 family). parity_sum is not a w0-family quantity, so rule 8 does not carry that class over, and by rules 3 and 6' the root is NONE. If one instead propagated FR04's inherited class into the sigma_T input, the root would read MIXED {eta_S: NONE, sigma_T: B3}; I do not, because the rules classify on the root's own text."
+ },
+ {
+  "id": "FR42",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"Formula: mu = (C_kaf^2 * kappa_Delta / pi) / holonomy_eff\n\nWhere holonomy_eff = holonomy_base * (1 + gamma/b3)\" (simulations/core/FormulasRegistry.py:4331-4333); \"Uses Sophian Gamma for Emerald Holonomy Coupling.\" (simulations/core/FormulasRegistry.py:4343); \"- holonomy_base = phi - 7/93 = phi - dim(G2)/(chi_eff + moduli)\nWhere: dim(G2) = 7, chi_eff = 72, moduli = 21, so 72+21 = 93\" (simulations/core/FormulasRegistry.py:4346-4347)",
+  "reasoning": "The b3-bearing parts are the correction (1 + gamma/b3), kappa_Delta (k_gimel) and C_kaf. FR42's text names no counted object for any of them: 'Sophian Gamma' and 'Emerald Holonomy Coupling' are names (rule 9), and the formula's history is fit-driven ('brings the prediction from 943 to ~1836 (matching experiment to <0.1%)'). The holonomy_base part consumes chi_eff = 72, which is G1, and per rule 6' a G1 part alone does not make the root MIXED. Since no part names a B3/BULK/NAMED object, the root is NONE. The chi_eff part stays deferred under G1."
+ },
+ {
+  "id": "FR45",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"TREE-LEVEL FORMULA:\n===================\nT_tree = phi × k_gimel / (2π + 1) = 2.7366 K\n\nv24.2: Apply phi/chi_eff_total correction\nchi_eff_total = 144 (cross-shadow effective Euler characteristic)\" (simulations/core/FormulasRegistry.py:4523-4528); \"T = T_tree - phi/chi_eff_total = 2.7254 K\nSigma: 0.16 (was 18.56 without correction) - 114× improvement\" (simulations/core/FormulasRegistry.py:4536-4537)",
+  "reasoning": "The 24 enters through k_gimel in the tree-level term, and FR45's text gives no reason why k_gimel (or anything it counts) sets the CMB temperature. It is a formula justified by its fit, including a correction motivated by a 114x sigma improvement. The phi/chi_eff_total part consumes chi_eff = 144 (G1), and a G1 part alone does not make the root MIXED (rule 6'). No part names a B3/BULK/NAMED object, so rules 3 and 6' give NONE. FR45 computes the CMB temperature, not k_gimel, so it is not in FR02's family and inherits nothing from it (rule 8)."
+ },
+ {
+  "id": "FR49",
+  "set": "random",
+  "class": "INFRA",
+  "evidence": "\"v23: Generate the Sovereign Hash - cryptographic verification of sterility.\n\nThe hash is computed from:\n1. The Ten Pillar Seeds (The DNA)\n2. The derived geometric invariants (The Logic)\n3. The calculated outputs (The Result)\n\nThis hash is deterministic: same seeds + same logic = same hash.\nAny tampering (Ghost Literals, manual edits) will change the hash.\" (simulations/core/FormulasRegistry.py:4155-4163)",
+  "reasoning": "Here b3 is one field of a block that gets hashed for tamper detection (\"b3\": self._b3, FormulasRegistry.py:4172). The text describes integrity checking, not a physical quantity, and nothing is counted. This is the INFRA case: registry plumbing, not a physics claim. The hash changing with the seed is the intended behaviour of a checksum."
+ },
+ {
+  "id": "NC02",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "RACETRACK_a = 2pi/24 and fterm defaults a = 2pi/24, b = 4pi/24 (N_a = b3)": "B3",
+   "RACETRACK_b = 2pi/26 (N_b = 26)": "BULK"
+  },
+  "evidence": "\"# Racetrack parameters derived from G2 geometry\n# Two condensing gauge groups: SU(N_a) x SU(N_b) on the TCS G2 manifold\n# N_a = b3 = 24 (from Leech lattice / third Betti number)\n# N_b = 26 (spacelike dimensions of M^26(24,2), giving a - b > 0 for a SUSY minimum)\" (simulations/PM/geometry/bridge_geometry.py:237-240); \"a: First instanton exponent 2pi/b3 (default 2pi/24)\nb: Second instanton exponent 4pi/b3 (default 4pi/24)\" (simulations/PM/geometry/bridge_geometry.py:310-311); \"`RACETRACK_a`\n(found by a re-measurement agent) ... Each was a row that claimed to ride on b_3 and did not.\" (simulations/core/seed_blindness.py:7-9)",
+  "reasoning": "The a-exponent's 24 (N_a) has two named objects, the Leech lattice (NAMED) and the third Betti number (B3), so rule 4 makes it a fork. Both readings are valid on the adopted geometry (dim Leech = 24, b3 = 43). Consistency settles it for B3: the family (NC06 'a = 2 pi / b_3', the a_i = i*pi/b3 hierarchy at :298-299) and seed_blindness all read this row as riding b_3, and the heading places it 'on the ... G2 manifold'. The b-exponent's 26 is the 26D frame M^26(24,2) (BULK). B3 and BULK parts are combined in one racetrack, so by rule 6' the root is MIXED. Caveat: on b3 = 43, a < b and the stated 'a - b > 0 for a SUSY minimum' fails (NC06 records the minimum is deleted). If rule 5's 'closure' means the root's own stated condition must still hold, the a-part would go to NAMED instead. The class stays MIXED either way."
+ },
+ {
+  "id": "NC04",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "B3 = 24 (and RACETRACK_a = 2pi/b3, b3 * ln T_min)": "B3",
+   "N_BRIDGES = 12 (b3/2)": "BULK",
+   "CHI_EFF = 144 (and CHI_EFF/B3**3)": "G1"
+  },
+  "evidence": "\"KEY PARAMETERS (from topology):\n- b3: G2 Betti number, read from the adopted seed (24 on the\nretired seed_24 branch)\n- chi_eff = 144: Effective Euler characteristic\n- N_bridges = 12: Number of bridge pairs\" (simulations/PM/cosmology/dynamical_lambda.py:181-185); \"B3 = 24                     # G2 Betti number\nCHI_EFF = 144               # Effective Euler characteristic (b3^2/4)\nN_BRIDGES = 12              # Bridge pairs (b3/2)\" (simulations/PM/cosmology/dynamical_lambda.py:190-192); \"'motivation': 'One torsion class per harmonic 3-form (b3 classes)',\" (simulations/PM/cosmology/dynamical_lambda.py:676)",
+  "reasoning": "B3 = 24 names the G2 Betti number 'read from the adopted seed', motivated as 'one torsion class per harmonic 3-form', so it is B3. The frozen literal is an implementation gap; the object moves to 43. N_BRIDGES names bridge pairs but derives them as b3/2, a fork that rule 5 settles on validity: 'b3/2 = 12 bridge pairs' is false at b3 = 43, so it is BULK. CHI_EFF = 144 is a chi_eff part (G1, deferred). B3 and BULK parts sit in the same class, so by rule 6' the root is MIXED (the G1 part alone would not have made it so)."
+ },
+ {
+  "id": "NC06",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "a = 2pi/b3 (b3 read from parameters.json)": "B3",
+   "b = 2pi/N_b with N_b = dimensions.D_bulk = 26": "BULK"
+  },
+  "evidence": "\"a = 2 pi / b_3 = 2 pi / 24       b = 2 pi / N_b = 2 pi / 26\" (simulations/PM/cosmology/racetrack_vacuum.py:11); \"The exponents are geometry (b_3 and the bulk dimension); the only continuous\nfreedom the vacuum location sees is the RATIO B/A\" (simulations/PM/cosmology/racetrack_vacuum.py:15-16); \"On the ADOPTED path (b_3 = 43) that ordering is\nLOST -- a = 2 pi / 43 < b = 2 pi / 26 -- and the solver finds ZERO stationary\npoints\" (simulations/PM/cosmology/racetrack_vacuum.py:25-27)",
+  "reasoning": "The text calls the two exponents 'geometry (b_3 and the bulk dimension)'. It takes the a-exponent's b_3 as the adopted geometry's Betti number (b_3 = 43 on the adopted path), and the racetrack family it shares with NC02 resolves to B3 under rule 5 (consistency). The b-exponent's N_b = 26 is the bulk dimension, the 26D frame (BULK). The root's value is the coefficient set (A, B, a, b), which combines a B3 part and a BULK part, so by rule 6' it is MIXED. The text itself records that the B3 reading deletes the racetrack minimum on the adopted seed. That is a consequence, not a reason to choose (rule 5 forbids data), and it is the same 'closure' caveat as NC02."
+ },
+ {
+  "id": "NC10",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "DEFAULT_B3 = 24 (b_3 in W_inst = exp(-2 pi Re(T)/b_3))": "B3",
+   "DEFAULT_ALPHA_GUT = 1/24": "NONE"
+  },
+  "evidence": "\"# Standard G_2 / MSSM constants used by the derivation.  Defaults match\n# the v25.0 Re(T) stabilized value and the b_3 = 24 G_2 seed.\" (simulations/PM/susy/soft_susy_breaking.py:136-137); \"W_inst     = exp(-2 pi Re(T) / b_3)   ~ 1.6e-20 at v25.0 defaults\" (simulations/PM/susy/soft_susy_breaking.py:251); \"(Re(T) = 174.033, b_3 = 24, alpha_GUT = 1/24)\" (simulations/PM/susy/soft_susy_breaking.py:431)",
+  "reasoning": "DEFAULT_B3 is identified as 'the b_3 = 24 G_2 seed', the G2 manifold's third Betti number, used in the instanton exponent. That is the dim H^3 object (B3), weakly stated, and the frozen default is an implementation gap. DEFAULT_ALPHA_GUT = 1/24 is listed only as a 'standard ... MSSM constant' with no counted object (NONE). The two are combined in the same soft-term derivation, so by rule 6' the root is MIXED. In practice the published m_3/2 is '~ 1 TeV by construction', since W_inst ~ 1e-20 is negligible, and that does not change the classification. Caveat: the B3 part rests only on the gloss 'the b_3 = 24 G_2 seed'. If that is judged a symbol rather than a named object (it gives no counting reason for b_3 in the instanton exponent), no part names an object and NC10 would be NONE."
+ },
+ {
+  "id": "NC14",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"# --- δ_CP from G₂ associative 3-form holonomy angle ---\n# Each of n_gen generations accesses b3/n_gen associative 3-cycles.\n# The elementary holonomy angle around each cycle: φ = 2π/(b3/n_gen).\n# The CP phase is modulated by the full-manifold factor chi_eff/(b3 n_gen).\" (simulations/PM/algebra/neutrino_algebraic.py:182-185)",
+  "reasoning": "The text names what b3 counts: associative 3-cycles of the G2 manifold, shared among the generations. That is a Y7 3-cycle count, so B3, and only one reading is offered (no fork). The chi_eff factor in delta_CP is a G1 part, which by rule 6' does not make the root MIXED. The _B3 = 24 literal at the site is a frozen reference copy for registry-less rendering, not a different object. Note that on b3 = 43, b3/n_gen = 14.33 is not an integer number of cycles per generation; that is a consequence of the B3 reading, not grounds to reclassify (rule 5 only arbitrates between readings)."
+ },
+ {
+  "id": "NC15",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "B_3 = 24 (module literal; read by no computation)": "B3",
+   "TOTAL_PAIRS = 12": "BULK",
+   "K_GIMEL = registry demiurgic_coupling (b_3/2 + 1/pi)": "NONE"
+  },
+  "evidence": "\"B_3 = 24                        # Third Betti number of G2 manifold\nTOTAL_PAIRS = 12                # Number of (2,0) bridge pairs\n#: k_gimel = b_3/2 + 1/pi. READ from the registry, not typed: the old\n#: `12 + 1/np.pi` froze the retired seed_24 value into this module.\" (simulations/PM/consciousness/four_dice_sampling.py:64-67); \"- b_3 (third Betti number, READ from the adopted seed; 24 on the retired\" (simulations/PM/consciousness/four_dice_sampling.py:22)",
+  "reasoning": "B_3 = 24 is defined as the G2 manifold's third Betti number, a dim H^3 object (B3); the literal is stale and unread. TOTAL_PAIRS = 12 is defined as the number of (2,0) bridge pairs, a BULK object with no b3 derivation offered. A B3 part and a BULK part sit in one constant block, so by rule 6' the root is MIXED. The K_GIMEL part is the registry's k_gimel (FR02), and here its formula b_3/2 + 1/pi is only restated with no reason for halving b_3. By rule 3 and for consistency with its source root, that part is NONE. If one credits the module's 'b_3 (third Betti number)' gloss to it, it would be B3; the root stays MIXED either way."
+ },
+ {
+  "id": "NC19",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"K_GIMEL = 12.31  # Derived: b₃/2 + 1/π = 24/2 + 1/π = 12.318\nK_GIMEL_SYMBOL = \\\"k_ג\\\"\nK_GIMEL_DESCRIPTION = \\\"Warping parameter controlling exponential hierarchy in brane tensions\\\"\nK_GIMEL_FORMULA = \\\"k_ג = b₃/2 + 1/π (geometric: brane spacing + G₂ holonomy)\\\"\" (config/nomenclature.py:654-657)",
+  "reasoning": "NC19 is a literal copy of k_gimel and belongs to the k_gimel family with FR02. The only gloss on the b3/2 term is 'brane spacing', and the quantity is described as a 'warping parameter'. A spacing is a continuous size, so by rule 10 it is a modulus, not a count of 24 (or 12) things. 'G₂ holonomy' attaches to the 1/pi term. No counted object is named for the 24, so by rule 3 it is NONE, and the family as a whole names none (FR02's text gives only names). The frozen 12.31 not moving is irrelevant to the class."
+ },
+ {
+  "id": "NC23",
+  "set": "random",
+  "class": "INFRA",
+  "evidence": "\"except ImportError:\n# Fallback values if SSOT not available (standalone execution)\nB3_G2 = 24           # Third Betti number\" (simulations/PM/derivations/gr_spacetime.py:103-105); \"B3_G2 = _REG.elder_kads             # Third Betti number, from the seed\" (simulations/PM/derivations/gr_spacetime.py:88)",
+  "reasoning": "This root is the set of substitutes that fire only when the registry or a parameter is missing; the primary branch reads the seed accessor (the measured values move to 43 on the adopted seed because the primary branch ran). The text describes them as standalone-execution fallbacks for the SSOT value, which makes them registry plumbing standing in for the seed accessor (FR01), not a separate physics claim: INFRA. The value they stand in for is named 'Third Betti number' (B3) at most sites. The fallback literal 24 is stale, a hygiene defect rather than a different object. One listed site (appendix_h n_transverse default) stands in for SP13's n, whose object is the bulk's, which confirms these lines inherit whatever their primary read is."
+ },
+ {
+  "id": "OT02",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"Calculate torsional leakage coefficient from G2 3-form.\n\nThe torsional leakage represents how the G2 associative 3-form\n\\\"leaks\\\" energy as the manifold relaxes under Ricci flow.\" (simulations/PM/cosmology/dark_energy_thawing.py:535-538); \"epsilon_T = (b3 / chi_eff) * (1 - 1/sqrt(b3))\" (simulations/PM/cosmology/dark_energy_thawing.py:544); \"# Thawing factor from sqrt(b3) scaling\" (simulations/PM/cosmology/dark_energy_thawing.py:571); \"NOTE, UNRULED: chi_eff = 144 is an OPEN ruling.\" (simulations/PM/cosmology/dark_energy_thawing.py:551)",
+  "reasoning": "The mechanism is about the single G2 associative 3-form (the G2 structure form) leaking energy. The text never says that b3, or sqrt(b3), counts anything; 'sqrt(b3) scaling' is arithmetic, and the formula is asserted rather than counted. So the b3 part names no object (rule 3). The chi_eff part is G1, which the text itself flags as an open ruling. A G1 part alone does not make a root MIXED, and since no part names a B3/BULK/NAMED object, rule 6' gives NONE (with the chi_eff part deferred under G1)."
+ },
+ {
+  "id": "OT06",
+  "set": "random",
+  "class": "NAMED",
+  "evidence": "\"# n_bridges is derived, not asserted: the Leech lattice splits as\n# 8 + 8 + 8, giving b3 / 8 = 3 E8 blocks, and each of the n_faces\n# faces carries one bridge into each block\" (simulations/PM/geometry/four_face_structure.py:604-606)",
+  "reasoning": "The text says what the 24 counts here: the dimension of the Leech lattice, split 8 + 8 + 8 into three E8 blocks (dim Leech is listed under NAMED). The code reads b3, but that is a symbol (rule 1) and no 3-cycle or harmonic-form object is offered, so there is no B3 reading to fork with. Even if b3 were taken as one, a Leech split '8 + 8 + 8' is false at 43 (43 // 8 = 5 blocks), so rule 5 validity would still pick NAMED. The other inputs (n_faces = 4 faces, and the resulting 12 bridge pairs / 6 aligned pairs) are not places the 24 enters; they are the derivation's other input and its output. So the root is NAMED and should stay at 3 blocks / 6 aligned pairs rather than move to 10."
+ },
+ {
+  "id": "OT08",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"- N_eff = b3 - 2*7 = 24 - 14 = 10 (effective baryogenesis cycles)\" (simulations/PM/cosmology/baryon_asymmetry.py:24); \"\\\"b_3 counts 3-cycles; 14 is subtracted as the dimension of g_2. \\\"\n\\\"A cycle count minus a Lie-algebra dimension is a subtraction \\\"\n\\\"between different kinds of object.\\\"\" (simulations/core/identity_ledger.py:201-203); \"# v22 UPDATE: With chi_eff = 72 (doubled suppression factor b3/chi_eff),\n# we need to adjust N_eff to maintain agreement with eta_B observation.\" (simulations/PM/cosmology/baryon_asymmetry.py:232-233)",
+  "reasoning": "The b3 factor is named as a count of 3-cycles ('effective baryogenesis cycles'; the ledger says 'b_3 counts 3-cycles'). It is a Y7 cycle count with no competing reading, so B3. The suppression b3/chi_eff consumes chi_eff = 72 (G1), and by rule 6' a G1 part alone does not make the root MIXED. The v22 doubling of N_eff is an explicit fit to the eta_B observation, but it adjusts a non-24 co-factor (2, 14 = 2*7) and leaves the b3 factor's object unchanged; rule 3 makes a root NONE only when the text gives nothing but arithmetic or a fit. The ledger's objection that a cycle count minus a Lie-algebra dimension is incoherent is a defect of the formula, not a different object."
+ },
+ {
+  "id": "OT09",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"claim=\\\"1/b_3^2 = 1/576\\\",\ncounts=(\n\\\"b_3^2 counts ordered pairs of associative 3-cycles; the \\\"\n\\\"coefficient is claimed to be fixed 'from topology alone'.\\\"\" (simulations/core/identity_ledger.py:112-115); \"# Baryon asymmetry from Jarlskog + G2 cycles\" (simulations/PM/derivations/cosmology_sector_complete.py:588); \"# -1 + 1/b_3. Published as -23/24 = -0.9583 at b_3 = 24; b_3 now\n# rides the seed, so this value moves with it by design.\" (simulations/PM/derivations/cosmology_sector_complete.py:475-476)",
+  "reasoning": "Every b3-bearing piece here reads the same elder_kads factor. Where the text says what it counts, the object is Y7 3-cycles: alpha_F's b_3^2 counts 'ordered pairs of associative 3-cycles', and N_eff_bary is 'from ... G2 cycles'. The w0 term says b_3 'rides the seed ... by design', which matches the w0 family's B3 reading (SP12). gamma_F reuses the same factor. beta_F and gamma_F's sqrt(chi) consume chi_eff = 144 (G1), which by rule 6' does not make the root MIXED. No competing BULK or NAMED object is named for this factor, so the root is B3, with the chi_eff part deferred under G1."
+ },
+ {
+  "id": "OT10",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"# alpha_F: R^2 coefficient from associative 3-cycle fluctuations\n# Dimensional analysis: [alpha_F] = L^2 = 1/M^2\n# Geometric origin: 1/b3^2 sets the scale of curvature corrections\nalpha_F = 1.0 / (self.elder_kads ** 2)  # ~ 1/576 ~ 0.00174\" (simulations/PM/cosmology/f_r_t_tau_gravity.py:186-189); \"# gamma_F: R*tau cross-coupling from holonomy-scalar interaction\n# Arises from mixed terms in dimensional reduction\ngamma_F = 1.0 / (self.elder_kads * np.sqrt(self.mephorash_chi))\" (simulations/PM/cosmology/f_r_t_tau_gravity.py:196-198)",
+  "reasoning": "alpha_F's b3 is tied to 'associative 3-cycle fluctuations', a Y7 3-cycle object (B3), and gamma_F reuses the same elder_kads factor. The beta_F and gamma_F pieces also consume chi_eff = 144 (G1). By rule 6' a G1 part alone does not make the root MIXED. No BULK or NAMED reading is offered for the b3 factor, so the root is B3 with the chi_eff part deferred. It agrees with OT09's identical alpha_F (ledger: 'b_3^2 counts ordered pairs of associative 3-cycles')."
+ },
+ {
+  "id": "OT14",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "generation_count = b3/8 and saturation_ratio (b3 'flux units' reading)": "NONE",
+   "chiral_index divisor 24.0 (index-theorem normalization)": "NAMED",
+   "chiral_index numerator chi_eff": "G1"
+  },
+  "evidence": "\"# The \\\"equivalently via flux counting\\\" reading -- b3 = 24 flux units,\n# 8 spinor DOF per generation, n_gen = 24/8 = 3 -- is ABANDONED. On the\n# Joyce-reachable family b_3 in {7, 19, 31, 43} is ODD at every\n# profile and 8 divides no odd number, so b_3/8 is non-integral\n# EVERYWHERE on the family. The ruled generation count is\n# n_gen = b_2/4 = rank(Gamma) = 3. Kept here, labelled, not deleted.\" (simulations/PM/particle/chirality.py:212-217); \"# Chirality index from Atiyah-Singer index theorem on G2 manifolds\n# The precise form (Berline-Getzler-Vergne, \\\"Heat Kernels and Dirac Operators\\\"):\n#   index(D/) = chi_eff / 24 = A-hat genus / 2\" (simulations/PM/particle/chirality.py:195-197)",
+  "reasoning": "The b3/8 generation count's only object reading ('b3 = 24 flux units, 8 per generation') is abandoned by the text itself as non-integral on the adopted Joyce family. So it fails rule 5 validity, leaves no valid object, and is NONE (a labelled dead end). The chiral_index part consumes chi_eff (G1). Its literal 24 is attributed to the index theorem ('index = chi_eff/24 = A-hat genus/2'), a Y7-independent constant, which I read as NAMED (the relation is the chi(K3)=24 normalization). A NAMED part plus a NONE part makes the root MIXED under rule 6'. If the 24.0 divisor is folded into the G1 part instead of being read as NAMED, no part names an object and the root would be NONE. That fold is the one judgment call here."
+ },
+ {
+  "id": "OT18",
+  "set": "random",
+  "class": "BULK",
+  "evidence": "\"# T4 (b): 13D ancestral = 12 bridge dims + 1 time = b3/2 + 1; carry b3_leaf into V_13 dim factor\" (simulations/PM/paper/appendices/appendix_c_gauge_matrices.py:274); \"\\\"13 is the shadow-brane dimension (12 bridge dims + 1 time), \\\"\n\\\"ruled as half of the 26D bulk. Deriving it from b_3 makes a \\\"\n\\\"BULK quantity depend on the seed.\\\"\" (simulations/core/identity_ledger.py:264-266)",
+  "reasoning": "The text says what 13 counts: the 13D shadow's 12 bridge dimensions plus 1 time, half of the 26D (24,2) bulk. That is a BULK object, and b3 appears only as the symbol in the b3/2 + 1 expression. If one nonetheless reads b3/2 as a b3 object, the fork is settled by rule 5 validity, since '12 bridge dims = b3/2' is false at b3 = 43 (it would give 22.5 'dimensions'). So the factor is BULK and should stay 13 rather than track the seed."
+ },
+ {
+  "id": "OT19",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"explanation=(\n\\\"The sterile sector emerges from the 7-fold octonionic structure \\\"\n\\\"of the G2 manifold (7 = dim(G2)) scaled by the Pleroma (b3=24), \\\"\n\\\"minus the 5-fold pentagrammic defect (5 = dimension of compactified space).\\\"\" (simulations/validation/eta_s_derivation_test.py:166-169); \"= (7*b3 - 5) / (b3*10 - 1)\n= (7*24 - 5) / (24*10 - 1)\" (simulations/validation/eta_s_derivation_test.py:154-155)",
+  "reasoning": "This is the eta_S family (FR03) restated as a test. The 24 enters as 7*B3 - 5, the rule-3 arithmetic example. Its only gloss is 'scaled by the Pleroma (b3=24)', and rule 9 names 'Pleroma' as a non-object. The denominator b3*10 - 1 is glossed as 'Decad scaling of the Pleroma, minus 1 for the observer collapse' (eta_s_derivation_test.py:184-187), again names and arithmetic. The module comment calling B3 the 'G2 manifold third Betti number' identifies the symbol but gives no counting reason for 7*b3 - 5. No part names an object, so it is NONE, consistent with FR03. SIGMA_T is a module constant this function does not use."
+ },
+ {
+  "id": "OT20",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "b3 (exponent of flux_modes; exp(-0.92 b3) pruning)": "B3",
+   "flux_modes = 12": "BULK"
+  },
+  "evidence": "\"log N_raw = b3 * log(flux_modes) + 8 * log(10)\n\nwhere flux_modes = 12 (the 12 bridge pairs of M^{26}(24,2)).\" (simulations/PM/cosmology/vacuum_selection.py:20-22); \"where 0.92 is the attractor decay rate per b3-cycle from the\nAcharya-Kane G2-MSSM moduli flow.\" (simulations/PM/cosmology/vacuum_selection.py:30-31); \"Every numeric leaf in the EML tree traces back to b3 (the third\nBetti number of the G2 manifold, == 24). The flux_modes=12 input\nis itself b3/2 (paired bridges)\" (simulations/PM/cosmology/vacuum_selection.py:45-47)",
+  "reasoning": "The b3 factor is named as the G2 manifold's third Betti number, and the pruning is 'per b3-cycle', so it counts Y7 3-cycles (B3). flux_modes = 12 is named as 'the 12 bridge pairs of M^{26}(24,2)' and also derived as b3/2. That fork is resolved by rule 5 validity, since 'b3/2 = 12 bridge pairs' is false at b3 = 43, so it is BULK. The root combines a B3 part and a BULK part (N_raw = flux_modes^b3), so by rule 6' it is MIXED. The calibrated 0.92 rate and the anthropic 8 log 10 are not places a 24 enters."
+ },
+ {
+  "id": "OT21",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"Key: N₁=24 comes directly from b₃=24 (G₂ Betti number — topological invariant),\" (simulations/PM/algebra/gaugino_condensation.py:30); \"# W_np(N) = exp(-2π/N) with T=1; N₁=b₃ is forced by G₂ topology.\" (simulations/PM/algebra/gaugino_condensation.py:134); \"r\\\"N_1 = b_3 = 24\\\": \\\"Dominant flux quanta = G₂ Betti number b₃ (topological invariant)\\\",\" (simulations/PM/algebra/gaugino_condensation.py:286)",
+  "reasoning": "The text names what N1 counts: the dominant flux quanta, identified with the G2 manifold's Betti number b3 (dim H^3 of Y7). That is a B3 object, with no competing bulk or named-constant reading. N2 = b3 - 1 is the same factor shifted by one ('sub-dominant flux quanta'), not a different object. So the root is B3, which on the adopted seed gives N1 = 43, N2 = 42, both well-defined integers."
+ },
+ {
+  "id": "OT23",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"eml_description=\\\"EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)) — condensate scale s = b₃/27 (b₃=24 gives s≈0.888…)\\\",\" (simulations/PM/algebra/freudenthal_triple.py:282); \"Dependencies: g2_geometry_v16_0 (topology.elder_kads = b₃ = 24)\" (simulations/PM/algebra/freudenthal_triple.py:16)",
+  "reasoning": "The text gives only the arithmetic s = b3/27 and the symbol identity elder_kads = b3 = 24. It never says what b3 counts in a 'pneuma condensate scale' or why it is divided by 27, and the site code (freudenthal_triple.py:81-91, e7_representation.py:93-106) adds no gloss. By rules 1 and 3 the symbol is not evidence and no object is named, so the root is NONE. The published e7_alpha_leak does not move and is not built from this factor."
+ },
+ {
+  "id": "OT24",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "b3 = 24 default (instanton exponent exp(-2 pi ReT/b3), prefactor flux*A/b3)": "B3",
+   "flux = 12 default": "BULK"
+  },
+  "evidence": "\"where ``b3 = 24`` (G₂ third Betti number), ``flux = 12`` (paired\" (simulations/PM/geometry/re_t_sector.py:162); \"W_inst = (flux·A / b3) · exp(−2π·ReT / b3), b3 = 24 \" (simulations/PM/geometry/re_t_sector.py:328); docstring continuation: \"bridges), and ``A = 3.2`` (gaugino + M2 instanton prefactor).\" (simulations/PM/geometry/re_t_sector.py:163) and \"flux:\n    Number of paired (2,0) bridges contributing to the tree-level\n    flux superpotential. Default ``12``.\" (simulations/PM/geometry/re_t_sector.py:177-179)",
+  "reasoning": "The solver's b3 is named as the 'G₂ third Betti number' (dim H^3 of Y7, B3) entering the instanton exponent. The frozen default 24 is an implementation gap, since the object moves to 43. Its flux = 12 is named as the 'number of paired (2,0) bridges', the bulk's 12 bridge pairs, with no b3/2 derivation offered (BULK). Both are combined in one superpotential, so by rule 6' the root is MIXED. The text also records the result as 'CALIBRATED (tautological anchor ...)'. Rule 3 makes a root NONE only when nothing but arithmetic or a fit is given, and here both parts name objects. I completed the cut-off quote at :162 from the same docstring."
+ },
+ {
+  "id": "OT30",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"Compute Ricci flow parameters from G2 topology.\n\nThe Ricci flow rate is determined by the manifold's\ncharacteristic curvature scale.\" (simulations/PM/cosmology/ricci_flow_h0.py:306-309); \"# Ricci flow rate from topology\n# tau = k_gimel / b3 (characteristic timescale)\" (simulations/PM/cosmology/ricci_flow_h0.py:311-312); \"kappa = 1.0 / (b3 - 7)  # From holonomy constraint\" (simulations/PM/cosmology/ricci_flow_h0.py:322)",
+  "reasoning": "The text attributes tau = k_gimel/b3, R_initial = b3/k_gimel^2 and kappa = 1/(b3 - 7) to 'G2 topology', a 'characteristic curvature scale' and a 'holonomy constraint'. It never says what b3 counts in them, and a timescale or curvature scale is a continuous quantity, not a count (rule 10). The k_gimel input is the k_gimel family, which names no counted object (FR02, NC19). No part names an object, so by rules 3 and 6' the root is NONE. Its downstream H0_local agreeing with data cannot select a reading."
+ },
+ {
+  "id": "SP02",
+  "set": "random",
+  "class": "MIXED",
+  "parts": {
+   "elder_kads - 4 (anchor)": "B3",
+   "k_gimel (anchor)": "NONE"
+  },
+  "evidence": "\"Certificate C07: Higgs Vacuum Expectation Value\n\nv = k_gimel × (b₃ - 4)\n\nThe Higgs VEV emerges from the Gimel constant scaled by the\n20 non-trivial cycles of the G2 manifold.\" (simulations/PM/geometry/geometric_anchors_core.py:985-990); \"\\\"Compute denominator: b3 - 4 = 24 - 4 = 20 (total Betti number minus K3 matching fibres)\\\",\" (simulations/PM/geometry/geometric_anchors.py:548)",
+  "reasoning": "The (b3 - 4) factor is named as the G2 manifold's 'non-trivial cycles' ('total Betti number minus ...'), a Y7 cycle count, so B3. The text offers no bulk reading such as D_space - 4. The k_gimel factor is called only 'the Gimel constant' (a name, rule 9) and belongs to the k_gimel family, which names no counted object (FR02/NC19), so NONE. A B3 part combined with a NONE part is MIXED by rule 6'. This matches its Higgs-VEV family partner SP01. The frozen anchor values (20, 12.318) not moving are an implementation fact, not an object. Note the '- 4' is glossed as 'K3 matching fibres', a TCS object absent on the adopted Joyce orbifold, so the subtraction itself has no object on the adopted geometry."
+ },
+ {
+  "id": "SP12",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"2. Dark energy EoS: w_0 = -(b_3-1)/b_3 (thawing quintessence). b_3 is READ\nfrom the adopted seed (b_2, b_3) = (12, 43) of the Joyce orbifold\nT^7/(Z/2)^3; the fraction read -23/24 on the retired seed_24 branch.\" (simulations/PM/cosmology/attractor_potential.py:28-30); \"# Check 2: w0 close to the topological prediction -(b3-1)/b3\" (simulations/PM/cosmology/attractor_potential.py:992)",
+  "reasoning": "The text identifies the n in w0 = -(n-1)/n as b_3 of the adopted Joyce orbifold Y7, (b_2, b_3) = (12, 43), i.e. dim H^3 of the internal manifold (B3). It explicitly assigns 24 to the retired branch, and no bulk or named-constant reading is offered. The literal -23.0/24.0 at the site does not move, which contradicts its own text (an implementation gap), but the class follows the object (rule 1). This is the clearest member of the w0 family (with OT09, SP11, FR04) and fixes that family's class as B3."
+ },
+ {
+  "id": "SP16",
+  "set": "random",
+  "class": "B3",
+  "evidence": "\"α*⁻¹ = b₃ = dim(H³(X, ℝ)) = 24\" (simulations/PM/gauge/asymptotic_safety.py:10); \"The Hitchin functional V_H[φ] = ∫_X φ ∧ *φ defines a moduli space\nof torsion-free G₂ structures parameterised by H³(X, ℝ), whose\ndimension is b₃. At the UV fixed point:\n\nα*⁻¹ = dim(H³(X, ℝ)) = b₃\" (simulations/PM/gauge/asymptotic_safety.py:203-207); \"CLASSIFICATION: MOTIVATED_IDENTIFICATION\" (simulations/PM/gauge/asymptotic_safety.py:32)",
+  "reasoning": "The text names the object precisely: dim H^3(X, R), the dimension of the moduli space of torsion-free G2 structures (the metric moduli of Y7). That is the B3 class's own definition, with no competing reading. The text's honest admission that the identification is motivated, not a theorem, does not remove the named object; rule 3 applies only when no object is given. The lambda_6 = exp(-chi_eff/b3) part consumes chi_eff (G1), which alone does not make the root MIXED. The site reading the frozen geometry.elder_kads anchor (24 on both seeds) is an implementation gap; the object moves to 43."
+ },
+ {
+  "id": "SP17",
+  "set": "random",
+  "class": "NONE",
+  "evidence": "\"alpha_leak  = 1/sqrt(chi_eff / b3) = 1/sqrt(6)  [DERIVED]\" (simulations/PM/cosmology/moduli_dm_coupling.py:338); \"1. alpha_leak = 1/sqrt(6) ~ 0.408  (G2 volume ratio: chi_eff/b3 = 144/24 = 6)\" (simulations/PM/cosmology/moduli_dm_coupling.py:15)",
+  "reasoning": "The only gloss on the b3 here is that chi_eff/b3 is a 'G2 volume ratio'. A volume ratio is a continuous quantity, not a count (rule 10), and nothing says what the 24 counts. The chi_eff numerator is a G1 part, which alone does not make the root MIXED. The check mixes a frozen anchor b3 (geometry.elder_kads = 24) with a live-seed registry alpha_leak and raises on b3 = 43. That is a seed mismatch, but rule 6' allows MIXED only when some part names an object, and none does. So the root is NONE, with the chi_eff part deferred under G1."
+ },
+ {
+  "id": "FR02",
+  "set": "contested",
+  "class": "NONE",
+  "evidence": "\"# 9. Demiurgic Coupling (kappa_Delta) - Mass-Energy Gearbox\n# Formula: kappa_Delta = B3/2 + 1/pi = 12 + 0.318...\" (simulations/core/FormulasRegistry.py:1404-1405); \"- k_gimel = b3/2 + 1/pi = 12.3183... (Holonomy Precision Limit)\" (simulations/core/FormulasRegistry.py:4387); \"# k_gimel from G2 holonomy (derived from b3)\" (simulations/core/FormulasRegistry.py:4422); family member NC19: \"K_GIMEL_FORMULA = \\\"k_ג = b₃/2 + 1/π (geometric: brane spacing + G₂ holonomy)\\\"\" (config/nomenclature.py:657)",
+  "reasoning": "FR02's own text gives the arithmetic B3/2 + 1/pi and labels ('Demiurgic Coupling', 'Mass-Energy Gearbox', 'Holonomy Precision Limit'), which rule 9 treats as names. 'From G2 holonomy (derived from b3)' says where the symbol comes from, not what b3/2 counts. That is the same footing as rule 3's 'one less than decimal b3 scaling'. The family member computing the same k_gimel (NC19) glosses b3/2 as 'brane spacing', a continuous size and so a modulus, not a count (rule 10). No text in the family names 3-cycles, bridge pairs or any other counted object for b3/2, so there is no fork to resolve and the root is NONE. The obvious competing reading, 'b3/2 = 12 bridge pairs', is not made by any k_gimel-computing text. Even if it were, rule 5 validity would reject the b3 side of it (false at b3 = 43)."
+ },
+ {
+  "id": "SP01",
+  "set": "contested",
+  "class": "MIXED",
+  "parts": {
+   "elder_kads - 4": "B3",
+   "k_gimel (registry demiurgic_coupling, b3/2 + 1/pi)": "NONE"
+  },
+  "evidence": "\"The Higgs VEV emerges from the G2 holonomy warp factor times the\nnumber of non-trivial 3-cycles participating in symmetry breaking:\n\nv = k_gimel x (b3 - 4)\n\nWhere:\n- k_gimel = b3/2 + 1/pi (holonomy warp factor; RIDES THE SEED)\n- b3 - 4 (non-trivial cycles for EWSB)\" (simulations/PM/particle/higgs_vev_refined.py:10-17); \"self.elder_kads = _REG.elder_kads  # = 24 (Third Betti number)\" (simulations/PM/particle/higgs_vev_refined.py:238)",
+  "reasoning": "The (b3 - 4) factor is named as 'the number of non-trivial 3-cycles participating in symmetry breaking', a Y7 3-cycle count, so B3. No text in the root or its family (SP02: '20 non-trivial cycles of the G2 manifold') offers a bulk reading such as D_space - 4, so there is no fork. The k_gimel factor is described only as a 'holonomy warp factor' that 'rides the seed'. A warp factor is a continuous quantity, not a count (rule 10), and k_gimel's own family (FR02, NC19) names no counted object for b3/2, so that part is NONE. A B3 part plus a NONE part gives MIXED (rule 6'). That 'both factors consume b3' describes the code, not the objects. The large falsification on the adopted seed is data and cannot choose (rule 5)."
+ },
+ {
+  "id": "SP05",
+  "set": "contested",
+  "class": "NAMED",
+  "evidence": "\"η = √2 · sin(π / b₃)              [Sprint 6 #1 retuning]\n\nrooted in pure G₂ topology: ``sin(π/b₃)`` is the half-angle of one\nT₄ vertex orbit around the central rotation axis of the 24-cell, and\nthe ``√2`` factor is the octahedral unit-cell diagonal (each of the\n24-cell's 24 octahedral cells has unit edges and √2 diagonals).\" (simulations/PM/particle/yukawa_derivation.py:25-30); \"1. ``sin(π / b₃)``: The 24-cell has b₃ = 24 octahedral cells arranged\nwith discrete rotational symmetry. The smallest angular separation\nbetween adjacent T₄ vertex orbits projected onto the bridge-pair\nplane is 2π/b₃, hence the *half-angle* is π/b₃\" (simulations/PM/particle/yukawa_derivation.py:89-92); \"For b₃ = 24 (the SSoT G₂ third Betti number) this evaluates to\" (simulations/PM/particle/yukawa_derivation.py:221)",
+  "reasoning": "The 24 in sin(pi/b3) (and in xi = cos(pi/b3)) gets two readings. The geometric provenance names the 24-cell, whose 24 octahedral cells and T4 vertex orbits fix the angle 2pi/24 (NAMED: 'the 24-cell'). The docstring also calls it 'the SSoT G₂ third Betti number' (B3). Rule 4 makes this a fork, and rule 5 validity settles it: the identification 'the 24-cell has b₃ = 24 octahedral cells' is false at b3 = 43. The B3 side also offers no Y7 object for which pi/43 would be an orbit half-angle; 'pure G₂ topology' names none. The 24-cell reading is valid on the adopted geometry and is the only one that carries the stated derivation, so SP05 is NAMED and the angle should stay at pi/24. The tuned (a, b) coefficients of the delta_CP leg are fits but are not places the 24 enters. This verdict uses only the inventory's quotes; the engine file was edited after the inventory (2026-10-01) and I did not rely on its current wording."
+ },
+ {
+  "id": "SP11",
+  "set": "contested",
+  "class": "B3",
+  "evidence": "\"question=\\\"Which topological integer n sets w0 = -(n-1)/n?\\\",\" (simulations/core/variants.py:1554); \"\\\"n = 24 as a FROZEN integer, w0 = -23/24 = -0.9583 \\\"\n\\\"(adopted). This summary read 'n = b3 = 24' until \\\"\n\\\"2026-09-26, which the b3_seed ruling made false: b_3 = \\\"\n\\\"43 on the adopted path, so 24 is no longer b_3 and this \\\"\n\\\"option is a constant rather than a topological read. \\\"\" (simulations/core/variants.py:1562-1566); \"consequence=\\\"The framework's headline: pure b3 topology, zero \\\"\" (simulations/core/variants.py:1570); \"\\\"n = b_3 on whatever seed is live -- 43 on the adopted \\\"\n\\\"path, giving w0 = -42/43 = -0.976744\\\"\" (simulations/core/variants.py:1584-1585); w0-family member SP12: \"b_3 is READ\nfrom the adopted seed (b_2, b_3) = (12, 43) of the Joyce orbifold\nT^7/(Z/2)^3\" (simulations/PM/cosmology/attractor_potential.py:28-30)",
+  "reasoning": "The 24 here is the integer n in w0 = -(n-1)/n, which the fork reader recovers from the live w0. The only counted object any text names for n is b_3 of Y7: this fork's 'pure b3 topology' and its b3_live option ('n = b_3 on whatever seed is live -- 43'), SP12's Joyce-orbifold b_3, and OT09's 'rides the seed by design'. The adopted option's own text says its 24 is 'a FROZEN integer ... a constant rather than a topological read', i.e. it names no object, so it cannot compete as a reading (rule 3), and 'static pressure of the 24-cycle with 12-pair aggregation' is an undefined label (rule 9), not a bulk object. By rule 8 the w0 family (SP12, OT09, FR04, SP11) is B3, and SP11 consumes that factor, so it takes B3. The frozen 24's far better DESI fit is data and may not choose (rule 5). Alternative: the cited site is the fork's drift detector, which publishes no physics number, so a reader treating it as plumbing would class it INFRA. I follow the inventory's framing, which attaches the fork's physics text to this root."
+ },
+ {
+  "id": "SP13",
+  "set": "contested",
+  "class": "MIXED",
+  "parts": {
+   "n_transverse (and SO(n) generators n(n-1)/2)": "BULK",
+   "shadow_torsion_total = 2 x TORSION_PER_SHADOW (12) = 24": "NONE",
+   "MANIFOLD_PROJECTION_COST = 12": "NONE"
+  },
+  "evidence": "\"``n(n-1)/2``   generators of SO(n) on n transverse directions.\n``2 x 12``     torsion pins, 12 per shadow brane over two branes.\n``-12``        symmetry directions spent projecting onto the manifold.\n\nWhether ``n`` is b_3 or the BULK's 24 spacelike core dimensions is OPEN\nand is not decided here.\" (simulations/PM/paper/appendices/appendix_h_288_roots.py:116-121); \"- 276: SO(24) generators from 24 transverse dimensions\" (simulations/PM/paper/appendices/appendix_h_288_roots.py:165); \"#: Torsion pins carried by each shadow brane. Two branes give the 24 total.\" (simulations/PM/paper/appendices/appendix_h_288_roots.py:49); header of the same constants block: \"They are POSITED counts,\\n# not derived ones\" (simulations/PM/paper/appendices/appendix_h_288_roots.py:45-46); \"nothing derives it or shows those 12s to be\n#: the same 12.\" (simulations/PM/paper/appendices/appendix_h_288_roots.py:59-60)",
+  "reasoning": "For n the text itself states the fork (rule 4): b_3 or 'the BULK's 24 spacelike core dimensions'. The counted object is 'n transverse directions' carrying SO(n) ('SO(24) transverse group of the 26D bulk'). On the adopted geometry there are 24 transverse directions, not 43, so the b_3 reading fails rule 5 validity in exactly the way 'b3/2 = 12 bridge pairs' does, and n is BULK (the budget returns to 288). The shadow-torsion 24 counts 'torsion pins', an undefined framework name (rule 9) that the module labels a posited count, so it is NONE. The -12 is likewise underived (NONE, and not itself a 24). A BULK part combined with NONE parts is MIXED (rule 6'). If 'torsion pins, 12 per shadow brane' were accepted as the shadows' 12 space dimensions, the root would be BULK, but the text never says so. (Line numbers for appendix_h are those of the inventory-time file; the module was edited again during this verification and I did not use the new text.)"
+ },
+ {
+  "id": "SP14",
+  "set": "contested",
+  "class": "NONE",
+  "evidence": "\"# G22: Gluon String Tension — σ = 24/288\n# Claim: the topological string tension ratio is shadow_pins / roots_total.\n# Source: shadow_torsion (b3 = 24) and roots_total (288) from registry.\" (simulations/PM/validation/declarative_strategies/strategy_a_semantic.py:150-152); \"\\\"tau_24 counts torsion pins, 12 per shadow brane over two \\\"\n\\\"branes. Binding it to b_3 is the conflation that made \\\"\n\\\"strategy_a's G22 read reg.b3 for a quantity its own header \\\"\n\\\"calls shadow_pins.\\\"\" (simulations/core/identity_ledger.py:276-279); \"# String tension from 24-pin density\" (simulations/PM/paper/appendices/appendix_f_72gates.py:1074)",
+  "reasoning": "The 24 that enters G22 is 'shadow_pins'. Its b3 reading ('shadow_torsion (b3 = 24)') is a symbol equation that the ledger itself calls a conflation, and it fails rule 5 validity (torsion pins stay 24 while b3 = 43). The remaining reading counts 'torsion pins' / 'pin density', an undefined framework name that appendix_h labels a posited count (rules 9 and 3), so the numerator names no object. The 288 is consumed from the registry, and SP14's text says nothing about what it counts. SP14 computes G22, not roots_total, so rule 8 does not import FR07's class. With no part naming an object, rule 6' gives NONE. This is close to undecidable on one point: if consumed inputs were classed by their source roots, the 288 would bring FR07's B3/BULK parts and SP14 would be MIXED. In either case the strategy_a read of reg.b3 is unsupported."
+ },
+ {
+  "id": "OT13",
+  "set": "contested",
+  "class": "MIXED",
+  "parts": {
+   "N_flux = chi_eff//6 (-> a = 2pi/N_flux, b = 2pi/(N_flux-1))": "G1",
+   "sqrt(b3/24.0): numerator b3": "B3",
+   "sqrt(b3/24.0): literal 24 divisor": "NONE",
+   "n_bridge_pairs = b3//2 (compared with N_BRIDGE_PAIRS = 12)": "BULK"
+  },
+  "evidence": "\"# Compute flux quantization\nN_flux = chi_eff // 6  # = 24 for chi_eff = 144\n\n# Racetrack coefficients from instanton counting\" (simulations/PM/field_dynamics/pneuma_mechanism.py:236-239); \"# Compute coupling constant from G2 normalization and topology\n# g_pneuma ~ sqrt(b3/24) * g2_norm * (m_higgs / M_Planck)\" (simulations/PM/field_dynamics/pneuma_mechanism.py:251-252); \"# v22.0: Compute neural gate structure from b3\nn_bridge_pairs = b3 // 2  # b3 = 24 => 12 pairs\nneural_gate_active = lagrangian_valid and n_bridge_pairs == self.N_BRIDGE_PAIRS\" (simulations/PM/field_dynamics/pneuma_mechanism.py:264-266); the constant it is compared with: \"# v22.0: Number of bridge pairs from b3/2\nN_BRIDGE_PAIRS = 12  # b3 = 24 => 24/2 = 12 pairs\" (simulations/PM/field_dynamics/pneuma_mechanism.py:138-139); the run()'s own b3 gloss: \"b3 = 24  # Associative 3-cycles\" (simulations/PM/field_dynamics/pneuma_mechanism.py:234, listed in NC23)",
+  "reasoning": "Three different 24s enter here. (1) The racetrack's N_flux = 24 is chi_eff // 6, so the a, b coefficients consume chi_eff (G1, deferred). (2) The coupling factor sqrt(b3/24): b3 is glossed in the same run() as 'Associative 3-cycles' (B3), while the literal 24 divisor has no stated reason; 'G2 normalization and topology' names no count (NONE). (3) n_bridge_pairs = b3//2 names bridge pairs (the 12x(2,0) bridge pairs, BULK) but derives them from b3 (3-cycles), a rule-4 fork. Rule 5 validity settles it: 'b3/2 = 12 bridge pairs' is false at b3 = 43 (it gives 21 and switches the gate off), so BULK. Parts of different classes are combined, and not merely through G1, so the root is MIXED. Folding the whole sqrt factor into NONE would leave it MIXED. (pneuma_mechanism.py line numbers and the N_BRIDGE_PAIRS / fallback comments are from the inventory-time file; the module was edited again during this verification, at 2026-10-01 22:59, and I did not read the new text.)"
+ }
+]
