@@ -1234,3 +1234,85 @@ none with n ≥ 4.
   through WA-1, so this does not move CG.12.
 
 No kill condition fired.
+
+---
+
+## D-016 · 2026-10-01 · OPEN PROBLEMS C1–C4 · LITERATURE VERDICTS (D-011 directions)
+
+A research agent checked every candidate direction of D-011 against fetched sources
+(arXiv API, Crossref, INSPIRE, full texts; evidence kept in the session scratchpad
+`open_problems/`). Nothing was computed; the computations are pre-registered in
+D-017. **All four problems stay open, and no direction is PROMISING.**
+
+| # | Direction | Verdict | Why (verified source) |
+|---|---|---|---|
+| C1 | Chirality via the heterotic dual | **KILLED** | Acharya–Kinsella–Morrison, JHEP 11 (2021) 065 (arXiv:2106.03886), Example 3.2 *is* this orbifold: "SU(2)¹² gauge symmetry with 3 adjoint chirals for each SU(2) and 7 neutral chiral multiplets … the spectra are non-chiral". The dual's bundle is the image of the G₂ geometry, so there is no extra datum to make chiral. |
+| C1 | Chirality from the shadows as Hořava–Witten walls | **KILLED** | HW (NPB 460 (1996) 506; NPB 475 (1996) 94) needs even-dimensional codimension-1 walls of an odd-dimensional bulk and a 6D internal space; here walls are 25D, shadows 13D, Y₇ 7D. The model's E₈ blocks are blocks of bulk directions, not HW's E₈ gauge groups (A4). |
+| C2 | Corrections to K beyond (U/T)² | **KILLED** | ADV eq. (3.2): the exact classical K = −3 ln V_X with V_X homogeneous of degree 7/3, so the λ⁻⁵ runaway holds to all orders in U/T; Becker–Robbins–Witten (JHEP 06 (2014) 051): quantum corrections leave the moduli space unlifted to all orders in 1/R. |
+| C2 | M2 instantons on rigid associatives | **NEEDS COMPUTATION** (PR-1; predicted kill) | Harvey–Moore need rigid rational homology spheres. The known associatives of this resolution (Dwivedi–Platt–Walpuski, CMP 401 (2023), Ex. 4.9) are S¹×S², b₁ = 1. An analytic lemma predicts no flat rigid b₁ = 0 cycle avoids the singular set. |
+| C3 | Multi-field dark energy | **KILLED classically** (analytic; PR-3 confirms) | The slope 5√(2/7) is the universal internal-flux volume exponent and holds off the axion slice; late-time attractors give ε ≥ 25/7 (Shiu–Tonioni–Tran, PRD 108 (2023) 063528, eq. IV.3); the hyperinflation window (Bjorkmo–Marsh, JHEP 04 (2019) 172) is empty. Only brief transient acceleration remains possible. |
+| C4 | Flavour from the three locus volumes | **KILLED as derivable** | No chiral points, no Yukawa couplings (Acharya–Witten hep-th/0109152 §2.4; Witten hep-ph/0201018). The locus volumes are gauge couplings, f(τ) = T⁷, T⁶, T⁵ (Lukas–Morris eq. 1.3), and unfixed moduli. |
+
+**Status after D-016.** C1 and C4 are *not derivable on Y₇*: a chiral sector would be
+a construction-level postulate (codimension-7 points outside Joyce's admissible
+family), a fork option with its own consequence and kill condition, for the author.
+C2 has no candidate mechanism inside Y₇ pending PR-1. C3's multi-field loophole is
+closed classically pending PR-3.
+
+**Corrections this forces.**
+- D-011's "K3 fibres" holds in the ORBIFOLD limit only: whether the resolution has a
+  coassociative K3 fibration is open (AKM 2021, footnote 1). D-009's count needs no
+  fibration and is unaffected.
+- Acharya 1996's explicit N = 1 pairs are J⁸₃₁ and the Example-4 family, not (12, 43);
+  the (12, 43) dual is AKM 2021.
+- Do not cite Atiyah–Witten for Yukawas or chirality.
+
+**Citations verified for the 'standard physics' list (DOIs fetched):**
+- Bars, CQG 18 (2001) 3113, DOI 10.1088/0264-9381/18/16/303.
+- Bars & Kounnas, PRD 56 (1997) 3664, DOI 10.1103/PhysRevD.56.3664: two-time critical dimension 27 or 28, never 26.
+- Eguchi & Hanson, PLB 74 (1978) 249, DOI 10.1016/0370-2693(78)90566-X.
+- Polchinski, *String Theory* Vol. 1, CUP 1998, DOI 10.1017/CBO9780511816079: D = 26 is the one-time result.
+- Acharya & Witten, hep-th/0109152: preprint, no DOI.
+- Cheeger & Gromoll, JDG 6 (1971) 119, DOI 10.4310/jdg/1214430220. The theorem number "Theorem 3" is unverified.
+- Atiyah & Witten, ATMP 6 (2002) 1, DOI 10.4310/ATMP.2002.v6.n1.a1.
+- New DOIs for records already cited: Lukas–Morris 10.1103/PhysRevD.69.066003; ADV 10.1088/1126-6708/2005/06/056; Acharya 1996 10.1016/0550-3213(96)00326-4.
+
+---
+
+## D-017 · 2026-10-01 · PRE-REGISTERED — PR-1, PR-2, PR-3 (fixed before any computation)
+
+**PR-1 · C2 — does Y₇ carry a Harvey–Moore instanton cycle?**
+- Hypothesis: no totally geodesic associative N = (T_V + c)/S of T⁷/Γ avoiding the
+  singular set is both rigid and a rational homology sphere, on any class with n ≥ 1.
+  Lemma: b₁(N) = dim V^S; rigid ⇔ (V^⊥)^S = 0; dim(ℝ⁷)^S = 8/|S| − 1; so "rigid and
+  b₁ = 0" forces S = Γ, V a Fano line, and then a singular involution fixes points of
+  the torus.
+- Computation: for the canonical point and every n ≥ 1 class of the first generating
+  triple, every Fano line L and transverse offset c on the quarter lattice: S, b₁,
+  rigid, free. Check dim(ℝ⁷)^S = 8/|S| − 1 on all 16 subgroups. Count rows that are
+  b₁ = 0, rigid and free. **Prediction: 0.**
+- Kill: any such row, or the subgroup identity failing.
+
+**PR-2 · C2/C3 scope — are the runaway and the slope bound exact in U/T?**
+- Hypothesis: both follow from homogeneity alone (degree 7/3), so any degree-0
+  correction in X = Σ(8/3)u²/(s_A s_B) leaves V(λs) = λ⁻⁵V(s) and the bound intact.
+- Test: replace −3 ln(1 − X) by −3 ln(1 − X − a₂X² − a₃X³), and separately add a
+  degree-0 term g(u²/(s_A s_B)), keeping the metric positive definite; re-run the
+  flux-vacuum identities and the acceleration report.
+- Kill: any identity failing beyond rounding.
+
+**PR-3 · C3 — can the classical flux potential accelerate, multi-field?**
+- H3a: off the axion slice (c₂ = 0) V = 4e^K[K^{ij}N_iN_j + (N·a + c₁)²] and
+  |∇V|_g/V ≥ 5√(2/7) on all fields.
+- H3b: at u = 0 with equal bulk fluxes and equal s_A the slope equals 5√(2/7).
+- H3c: with bulk flux only, u = 0 is consistent and ε ≥ 25/7.
+- H3d: for every flat axion direction the hyperinflation window is empty
+  (L_eff ≥ 1/√2).
+- H3e: 200 FRW trajectories (seed 20260930), started at rest or with kinetic energy
+  ≤ V: none has ≥ 1 uninterrupted e-fold of acceleration.
+- Kills: H3a any point below 5√(2/7)(1 − 10⁻⁶); H3b relative deviation > 10⁻⁶;
+  H3c µ_CH < √2; H3d any point with 3L_eff < |∇V|/V < 1/L_eff; H3e any trajectory
+  with ≥ 1 e-fold.
+
+Each is implemented as an engine module with tests, run, and its result recorded
+here before any wording changes on its account.
