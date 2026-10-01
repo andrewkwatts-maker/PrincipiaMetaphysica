@@ -1,16 +1,16 @@
 {
   "proof_manifest": {
-    "title": "Geometric Anchors Derivation Chain",
+    "title": "Geometric Anchors Derivation Chain (off-path seed b₃ = 24)",
     "version": "16.2",
     "generated": "2025-12-29",
     "framework": "Principia Metaphysica - Geometric Unity",
-    "description": "Complete Wolfram Language proof chains for all 13 geometric parameters derived from b₃ = 24",
+    "description": "OFF-PATH (b3_seed = seed_24): Wolfram Language evaluation chains for 13 geometric parameters built on the retired seed b₃ = 24. The adopted internal space Y₇ is Joyce's resolution of T⁷/(ℤ/2)³ with (b₂, b₃) = (12, 43), and Joyce's construction from Γ = (ℤ/2)³ does not reach b₃ = 24 (CG.7). Values that use b₃ are calibrated at the off-path seed, not derived from Y₇.",
     "base_invariant": {
       "symbol": "b₃",
       "value": 24,
-      "name": "Third Betti Number",
-      "source": "TCS G₂ manifold #187 (Joyce construction)",
-      "physical_meaning": "Topological invariant counting independent 3-cycles in G₂ manifold"
+      "name": "Third Betti Number (off-path seed)",
+      "source": "OFF-PATH (b3_seed = seed_24): formerly attributed to 'TCS G₂ manifold #187 (Joyce construction)'. No published TCS enumeration has an entry #187, and Joyce's construction from (ℤ/2)³ does not reach b₃ = 24. The adopted Y₇ is Joyce's resolution of T⁷/(ℤ/2)³ with b₃ = 43.",
+      "physical_meaning": "Topological invariant counting independent 3-cycles in G₂ manifold (24 is the retired seed value; the adopted Y₇ has b₃ = 43 = 7 + 3b₂)"
     },
     "verification_protocol": {
       "method": "Wolfram Language symbolic computation",
@@ -23,7 +23,7 @@
     "b3": {
       "parameter_id": "b3",
       "symbol": "b₃",
-      "name": "Third Betti Number",
+      "name": "Third Betti Number (off-path seed)",
       "category": "TOPOLOGICAL_INVARIANT",
       "final_value": 24.0,
       "exact_form": "24",
@@ -44,8 +44,8 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "TCS G₂ manifold construction from Joyce classification",
-          "formula": "TCS #187 → b₃",
+          "description": "OFF-PATH (b3_seed = seed_24): retired TCS attribution. No published TCS enumeration has an entry #187, and Joyce's construction does not reach b₃ = 24; the adopted Y₇ (Joyce's resolution of T⁷/(ℤ/2)³) has b₃ = 43.",
+          "formula": "TCS #187 → b₃ (retired attribution)",
           "result": "b₃ = 24"
         },
         {
@@ -61,14 +61,14 @@
           "result": "b₃ = b₄ = 24"
         }
       ],
-      "physical_meaning": "Third Betti number of TCS G₂ manifold - counts independent 3-cycles",
-      "topology_connection": "Fundamental topological invariant from Joyce construction TCS #187",
+      "physical_meaning": "OFF-PATH (b3_seed = seed_24): the third Betti number counts independent 3-cycles; 24 is the retired seed, formerly attributed to a TCS G₂ manifold. The adopted Y₇ has b₃ = 43 = 7 + 3b₂.",
+      "topology_connection": "Retired attribution (formerly 'Joyce construction TCS #187'). Y₇ is Joyce's orbifold resolution of T⁷/(ℤ/2)³, which reaches b₃ = 43 and never 24 (CG.7).",
       "hash_certificate": "5feceb66ffc86f38"
     },
     "chi_eff": {
       "parameter_id": "chi_eff",
       "symbol": "χ_eff",
-      "name": "Effective Euler Characteristic",
+      "name": "Effective Index",
       "category": "GEOMETRIC",
       "final_value": 144.0,
       "exact_form": "6 * 24",
@@ -89,13 +89,13 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Start with b₃ from TCS construction",
+          "description": "OFF-PATH (b3_seed = seed_24): start from the retired seed b₃ = 24 (formerly attributed to a TCS construction)",
           "formula": "b₃ = 24",
           "result": "b₃ = 24"
         },
         {
           "step": 2,
-          "description": "Apply χ_eff formula from G₂ topology",
+          "description": "OFF-PATH: the seed-dependent route χ_eff = 6 b₃ (demoted, D-009), which returns 144 only at the retired seed. The adopted K3 reading is χ_eff = 2 × Σχ(K3) = 48n, 144 at n = 3.",
           "formula": "χ_eff = 6 × b₃",
           "result": "χ_eff = 6 × 24"
         },
@@ -106,14 +106,14 @@
           "result": "144"
         }
       ],
-      "physical_meaning": "Effective Euler characteristic from TCS G₂ compactification",
-      "topology_connection": "Linear scaling from b₃ via G₂ holonomy constraint",
+      "physical_meaning": "An effective index, not the Euler characteristic of Y₇ (which is 0). Adopted K3 reading (D-015): χ_eff = 2 × Σχ(K3) = 48n, the Kummer K3 surfaces transverse to the n singular involutions, counted once per shadow; 144 at n = 3. The steps above follow the off-path route 6 b₃.",
+      "topology_connection": "OFF-PATH (seed-dependent route, demoted): linear scaling from b₃ via G₂ holonomy constraint; it returns 144 only at the retired seed b₃ = 24.",
       "hash_certificate": "6b86b273ff34fce1"
     },
     "n_generations": {
       "parameter_id": "n_generations",
       "symbol": "N_gen",
-      "name": "Fermion Generations",
+      "name": "Fermion Generations (abandoned b₃/8 route)",
       "category": "GEOMETRIC",
       "final_value": 3.0,
       "exact_form": "24 / 8",
@@ -134,13 +134,13 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Start with b₃ from TCS construction",
+          "description": "ABANDONED route (n_gen = b₃/8): start from the retired seed b₃ = 24 (formerly attributed to a TCS construction)",
           "formula": "b₃ = 24",
           "result": "b₃ = 24"
         },
         {
           "step": 2,
-          "description": "Apply index theorem for chiral fermions on G₂",
+          "description": "ABANDONED: n_gen = b₃/8, formerly presented as an index theorem for chiral fermions on G₂. 8 divides no reachable b₃ (all are odd), and no index theorem for chirality is established on Y₇ (chirality is OPEN). The ruled route is n_gen = b₂/4 = 3, the number of singular involutions.",
           "formula": "N_gen = b₃ / 8",
           "result": "N_gen = 24 / 8"
         },
@@ -151,8 +151,8 @@
           "result": "3"
         }
       ],
-      "physical_meaning": "Number of fermion families from chiral index theorem",
-      "topology_connection": "Division by 8 from spinor representation dimension on G₂",
+      "physical_meaning": "Number of fermion generations. The ruled route is n_gen = b₂/4 = 3, the number of singular involutions. The b₃/8 route evaluated here is abandoned, and no chiral index theorem is established (chirality is OPEN).",
+      "topology_connection": "ABANDONED: division by 8 from spinor representation dimension on G₂; 8 divides no reachable b₃ (all are odd).",
       "hash_certificate": "d4735e3a265e16ee"
     },
     "k_gimel": {
@@ -191,7 +191,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Start with b₃ topological invariant",
+          "description": "CALIBRATED at the off-path seed b₃ = 24: start from the retired seed value (k_gimel is a fit made there, D-007; the adopted Y₇ has b₃ = 43)",
           "formula": "b₃ = 24",
           "result": "b₃ = 24"
         },
@@ -220,8 +220,8 @@
           "result": "12.31831"
         }
       ],
-      "physical_meaning": "Warping factor from 7D → 4D compactification with AdS₄ curvature",
-      "topology_connection": "Geometric part (12) from b₃/2, transcendental part from π curvature",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: a fit made at the retired seed (D-007), described as the warping factor from 7D → 4D compactification with AdS₄ curvature",
+      "topology_connection": "Geometric part (12) from b₃/2 at the off-path seed b₃ = 24, transcendental part from π curvature",
       "hash_certificate": "4e07408562bedb8b"
     },
     "c_kaf": {
@@ -260,7 +260,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Start with b₃ from G₂ manifold",
+          "description": "CALIBRATED at the off-path seed b₃ = 24: start from the retired seed value (the adopted Y₇ has b₃ = 43)",
           "formula": "b₃ = 24",
           "result": "b₃ = 24"
         },
@@ -283,7 +283,7 @@
           "result": "136/5"
         }
       ],
-      "physical_meaning": "Flux quantization constraint from G₂ intersection form",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: flux quantization constraint from G₂ intersection form, evaluated at the retired seed",
       "topology_connection": "Rational function of b₃ from cohomology intersection pairing",
       "hash_certificate": "4b227777d4dd1fc6"
     },
@@ -413,7 +413,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Use previously derived warp factor",
+          "description": "CALIBRATED at the off-path seed b₃ = 24: use the calibrated warp factor k_gimel (a fit, D-007)",
           "formula": "k_gimel = 24/2 + 1/π",
           "result": "k_gimel ≈ 12.31831"
         },
@@ -425,7 +425,7 @@
         },
         {
           "step": 3,
-          "description": "Topological denominator from b₃",
+          "description": "Denominator 2π/b₃, evaluated at the off-path seed b₃ = 24",
           "formula": "2π/b₃",
           "result": "2π/24 ≈ 0.2618"
         },
@@ -442,7 +442,7 @@
           "result": "9.589"
         }
       ],
-      "physical_meaning": "Logarithmic loop threshold correction from RG running",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: logarithmic loop threshold correction from RG running",
       "topology_connection": "Combines k_gimel (warping) with b₃ (topology) for loop effects",
       "hash_certificate": "2c624232cdd221ef"
     },
@@ -476,7 +476,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Base GUT coupling from b₃",
+          "description": "CALIBRATED at the off-path seed b₃ = 24: base GUT coupling set to the retired seed value",
           "formula": "α_GUT⁻¹_base = b₃",
           "result": "α_GUT⁻¹_base = 24"
         },
@@ -505,8 +505,8 @@
           "result": "24.10833"
         }
       ],
-      "physical_meaning": "Inverse GUT coupling at unification scale from topology",
-      "topology_connection": "Base value from b₃, corrections from EW and topological thresholds",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: inverse GUT coupling at the unification scale, built on the retired seed rather than derived from Y₇",
+      "topology_connection": "Base value is the off-path seed b₃ = 24; corrections from EW and topological thresholds",
       "hash_certificate": "19581e27de7ced00"
     },
     "alpha_gut": {
@@ -539,7 +539,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Use previously derived inverse coupling",
+          "description": "Use the inverse coupling above (calibrated at the off-path seed b₃ = 24)",
           "formula": "α_GUT⁻¹ = 24 + 1/10 + 1/(5×24)",
           "result": "α_GUT⁻¹ ≈ 24.10833"
         },
@@ -556,14 +556,14 @@
           "result": "0.041479"
         }
       ],
-      "physical_meaning": "Grand Unified Theory coupling constant at M_GUT",
-      "topology_connection": "Derived from inverse coupling anchored to b₃",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: Grand Unified Theory coupling constant at M_GUT",
+      "topology_connection": "Inverse of α_GUT⁻¹, which is anchored to the off-path seed b₃ = 24",
       "hash_certificate": "480ca5364e9f1e90"
     },
     "k_matching": {
       "parameter_id": "k_matching",
       "symbol": "K_match",
-      "name": "TCS Matching Number",
+      "name": "TCS Matching Number (off-path)",
       "category": "GEOMETRIC",
       "final_value": 4.0,
       "exact_form": "24 / 6",
@@ -584,13 +584,13 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Start with b₃ topological invariant",
+          "description": "OFF-PATH (b3_seed = seed_24): start from the retired seed b₃ = 24",
           "formula": "b₃ = 24",
           "result": "b₃ = 24"
         },
         {
           "step": 2,
-          "description": "Apply TCS matching constraint",
+          "description": "OFF-PATH: apply the TCS matching constraint (TCS is not the adopted construction)",
           "formula": "K_matching = b₃ / 6",
           "result": "K_matching = 24 / 6"
         },
@@ -601,8 +601,8 @@
           "result": "4"
         }
       ],
-      "physical_meaning": "TCS construction matching parameter for twisted connected sum",
-      "topology_connection": "Division by 6 from χ_eff/b₃ ratio in TCS gluing",
+      "physical_meaning": "OFF-PATH: TCS construction matching parameter for twisted connected sum. The adopted Y₇ is Joyce's orbifold resolution of T⁷/(ℤ/2)³, not a twisted connected sum, and b₃/6 = 4 holds only at the retired seed.",
+      "topology_connection": "OFF-PATH: division by 6 from χ_eff/b₃ ratio in TCS gluing; χ_eff/b₃ = 6 only at the retired seed b₃ = 24",
       "hash_certificate": "8277e0910d750195"
     },
     "pneuma_amplitude": {
@@ -629,7 +629,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Use warp factor from geometric anchor",
+          "description": "CALIBRATED at the off-path seed b₃ = 24: use the calibrated warp factor k_gimel (D-007)",
           "formula": "k_gimel = 24/2 + 1/π",
           "result": "k_gimel ≈ 12.31831"
         },
@@ -646,7 +646,7 @@
           "result": "0.06159"
         }
       ],
-      "physical_meaning": "Early Dark Energy amplitude for Hubble tension resolution",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: Early Dark Energy amplitude proposed for the Hubble tension",
       "topology_connection": "Scaled from k_gimel warping factor via cosmological normalization",
       "hash_certificate": "8e35c2cd3bf6641b"
     },
@@ -680,7 +680,7 @@
       "derivation_steps": [
         {
           "step": 1,
-          "description": "Use flux constraint from geometric anchor",
+          "description": "CALIBRATED at the off-path seed b₃ = 24: use C_kaf, evaluated at the retired seed",
           "formula": "C_kaf = 24(24-7)/(24-9)",
           "result": "C_kaf = 136/5 = 27.2"
         },
@@ -697,7 +697,7 @@
           "result": "54.4"
         }
       ],
-      "physical_meaning": "Early Dark Energy transition width for Hubble tension resolution",
+      "physical_meaning": "CALIBRATED at the off-path seed b₃ = 24: Early Dark Energy transition width proposed for the Hubble tension",
       "topology_connection": "Scaled from C_kaf flux constraint via factor of 2",
       "hash_certificate": "8c6976e5b5410415"
     }
@@ -706,13 +706,13 @@
     "internal_consistency": [
       {
         "test_id": "chi_eff_from_b3",
-        "description": "Verify χ_eff = 6b₃",
+        "description": "OFF-PATH check: χ_eff = 6b₃ holds at the retired seed b₃ = 24 only",
         "wl_code": "6 * 24 == 144",
         "expected": "True"
       },
       {
         "test_id": "n_flux_from_chi_eff",
-        "description": "Verify N_flux = χ_eff/6 = b₃",
+        "description": "OFF-PATH check: N_flux = χ_eff/6 = b₃ holds at the retired seed only",
         "wl_code": "144 / 6 == 24",
         "expected": "True"
       },
@@ -744,7 +744,7 @@
       },
       {
         "test_id": "n_generations_exact",
-        "description": "Exactly 3 fermion generations",
+        "description": "ABANDONED route check: b₃/8 = 3 at the retired seed b₃ = 24 (the ruled route is n_gen = b₂/4 = 3)",
         "wl_code": "24 / 8 == 3",
         "expected": "True"
       },

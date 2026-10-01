@@ -17,7 +17,8 @@ const TheoryDerivations = {
     // ================================================================
 
     dimensionalStructure: {
-        // Critical dimension from Virasoro algebra
+        // RETIRED (signature ruling 2026-08-31): "26 = the critical dimension"
+        // is withdrawn; the two-time critical dimension is 27-28. Kept as history.
         virasoroCentralCharge: {
             derivation: `
                 Central charge calculation for bosonic strings:
@@ -234,17 +235,19 @@ const TheoryDerivations = {
             experiment: "Vienna entanglement labs"
         },
 
-        // Cosmological parameters (v16.2: derived from b3=24)
+        // Cosmological parameters (OFF-PATH: frozen at the off-path seed b3 = 24)
         cosmological: {
             w0: {
                 value: -23/24,
                 decimal: -0.958333333,
-                derivation: "w₀ = -1 + 1/b₃ = -1 + 1/24 = -23/24 from G2 manifold topology",
+                derivation: "OFF-PATH: w₀ = -1 + 1/b₃ evaluated at the retired seed b₃ = 24 gives -23/24 (no derivation; frozen at the off-path seed)",
+                // The DESI DR2 w0waCDM headline (BAO+CMB+DESY5) is w0 = -0.752 +/- 0.057;
+                // -23/24 sits more than 3 sigma from it. The comparison below is legacy.
                 desiComparison: { value: -0.957, sigma: 0.067, tension: "0.02σ" }
             },
             wa: {
                 value: -0.816497,
-                derivation: "wₐ = -1/√b₃ = -1/√24 ≈ -0.8165 from G2 moduli dynamics",
+                derivation: "wₐ = -1/√b₃ = -1/√24 ≈ -0.8165, calibrated at the off-path seed b₃ = 24",
                 desiComparison: { value: -0.816, sigma: 0.25, tension: "< 0.01σ agreement" }
             },
             alphaT: {
@@ -267,7 +270,7 @@ const TheoryDerivations = {
             eulerCharacteristic: 144,
             divisor: 48,
             result: 144 / 48,  // = 3
-            explanation: "χ_total = 144 for Z₂-doubled CY4"
+            explanation: "K3 reading: χ_eff = 2 Σ χ(K3) = 48n = 144 (formerly read as a Z₂-doubled CY4); χ_eff/48 = n restates n_gen = b₂/4"
         },
 
         // Effective 13D derivation (F-theory)
@@ -276,7 +279,7 @@ const TheoryDerivations = {
             eulerCharacteristic: 72,
             divisor: 24,
             result: 72 / 24,  // = 3
-            explanation: "F-theory index formula on single CY4 sector"
+            explanation: "Per shadow, Σ χ(K3) = 24n = 72 (formerly read as the F-theory index on one CY4 sector)"
         },
 
         // Consistency check
@@ -284,7 +287,7 @@ const TheoryDerivations = {
             check26D: 144 / 48,  // 3
             check13D: 72 / 24,   // 3
             isConsistent: (144/48) === (72/24),  // true
-            significance: "Non-trivial consistency between full and effective theories"
+            significance: "Both restate n = 3 singular involutions; the ruled count is n_gen = b₂/4"
         }
     },
 
@@ -330,9 +333,10 @@ const TheoryDerivations = {
     // ================================================================
 
     validate: {
-        // Check critical dimension
+        // Check critical dimension (RETIRED claim, kept as history: the
+        // two-time critical dimension is 27-28)
         checkCriticalDimension() {
-            const c_spatial = 24;
+            const c_spatial = 24;   // the bulk's 24 space directions
             const c_time = -4;  // 2 × -2
             const c_gauge = 6;
             return c_spatial + c_time + c_gauge === 26;
@@ -360,7 +364,7 @@ const TheoryDerivations = {
             };
         },
 
-        // Check w₀ derivation (v16.2: from b3=24)
+        // Check w₀ (OFF-PATH: the formula evaluated at the retired seed b3 = 24)
         checkW0() {
             const b3 = 24;
             const w0 = -1 + 1/b3;  // = -23/24

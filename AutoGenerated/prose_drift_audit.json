@@ -3,7 +3,38 @@
   "note": "Prose-drift audit (S-1 guard): superseded numerals from the canonical-value rulings found in section content. Every hit is prose that must be rewritten to the canonical value or explicitly framed as a retired candidate.",
   "summary": {
     "tokens_scanned": 42,
-    "hits": 0
+    "hits": 5
   },
-  "hits": []
+  "hits": [
+    {
+      "section": "1",
+      "token": "0.2257",
+      "ruling": "stale V_us (canonical 0.22500)",
+      "context": "moduli sectors and a racetrack that fixed &epsilon; &asymp; 0.2257; that construction is off-path, no racetrack exists on Y<su"
+    },
+    {
+      "section": "2",
+      "token": "0.2257",
+      "ruling": "stale V_us (canonical 0.22500)",
+      "context": "umes, whose inverse gave the Froggatt-Nielsen parameter ε ≈ 0.2257 (quoted constants do not reproduce this value; gaugino_cond"
+    },
+    {
+      "section": "2",
+      "token": "0.2257",
+      "ruling": "stale V_us (canonical 0.22500)",
+      "context": "s; value under tension) → ε = exp(−π(b−a)T<sub>min</sub>) ~ 0.2257 (quoted constants do not reproduce this value; gaugino_cond"
+    },
+    {
+      "section": "6",
+      "token": "0.2257",
+      "ruling": "stale V_us (canonical 0.22500)",
+      "context": "<strong>CKM:</strong> the racetrack value ε = 0.2257 is a calibration at the off-path seed &mdash; no racetrack"
+    },
+    {
+      "section": "6",
+      "token": "+0.27",
+      "ruling": "wa: thermal alpha_T form (wrong sign vs data)",
+      "context": "y (a BAO-only thawing fit gives 0.02σ); w<sub>a,eff</sub> = +0.27 is 3.4σ away (the alternative −1/√b₃ at the off-path seed i"
+    }
+  ]
 }

@@ -282,7 +282,7 @@ const FORMULA_REGISTRY = {
                 },
                 "ℒ<sub>Sp(2,ℝ)</sub>": {
                     name: "Sp(2,R) Gauge Lagrangian",
-                    description: "Ghost elimination for two-time physics",
+                    description: "Gauge term taken from two-time physics. Ghost control for the second time is OPEN: Bars' Sp(2,R) ghost-freedom theorem is not inherited.",
                     link: "foundations/tomita-takesaki.html"
                 }
             },
@@ -290,9 +290,9 @@ const FORMULA_REGISTRY = {
                 parentFormulas: [],
                 establishedPhysics: ["einstein-hilbert", "clifford-algebra", "sp2r-constraints"],
                 steps: [
-                    "Start with Einstein-Hilbert action in 26D with signature (24,2)",
+                    "Start with Einstein-Hilbert action in 26D with signature (24,2): 24 space directions and 2 times, one per 13D shadow",
                     "Add Dirac-type fermion term using Cl(24,2) Clifford algebra",
-                    "Include Sp(2,R) gauge symmetry to eliminate ghosts from second time",
+                    "Include an Sp(2,R) gauge term; ghost control for the second time is OPEN (Bars' theorem is not inherited)",
                     "Result: gauge-invariant action with 8192-component Pneuma spinor"
                 ],
                 verificationPage: "sections.html#geometric-framework"
@@ -307,22 +307,22 @@ const FORMULA_REGISTRY = {
             label: "(1.2) 13D Shadow Action",
             category: "THEORY",
             attribution: "Principia Metaphysica",
-            description: "Shadow brane action after Sp(2,R) gauge fixing to 13D",
+            description: "Per-shadow action: each 13D shadow of the 26D (24,2) bulk has signature (12,1) and carries one of the two times",
             status: "FOUNDATIONAL",
             v12_7_status: "derived from master action",
             terms: {
-                "S<sub>D</sub>": { name: "Shadow Action", description: "13D gauge-fixed action" },
-                "G<sub>(12,1)</sub>": { name: "13D Metric", description: "Signature (12,1)" },
+                "S<sub>D</sub>": { name: "Shadow Action", description: "13D action of one shadow" },
+                "G<sub>(12,1)</sub>": { name: "13D Metric", description: "Signature (12,1): 12 space directions and the shadow's own time" },
                 "R<sub>13</sub>": { name: "13D Ricci Scalar", description: "13D curvature" }
             },
             derivation: {
                 parentFormulas: ["master-action-26d"],
                 establishedPhysics: ["sp2r-constraints"],
                 steps: [
-                    "Start with 26D master action S",
-                    "Apply Sp(2,R) gauge fixing to eliminate second time",
-                    "Project to 13D shadow brane with signature (12,1)",
-                    "Result: effective 13D action for shadow physics"
+                    "Start with 26D master action S, signature (24,2)",
+                    "Split the bulk into two 13D shadows, one time per shadow (no time is shared)",
+                    "Each shadow has signature (12,1); ghost control for the second time is OPEN",
+                    "Result: effective 13D action for each shadow"
                 ],
                 verificationPage: "sections.html#geometric-framework"
             }
@@ -364,7 +364,7 @@ const FORMULA_REGISTRY = {
             label: "(2.1) 26D Spacetime Structure",
             category: "THEORY",
             attribution: "Principia Metaphysica",
-            description: "26D = 6D two-time base × CY4 × Mirror CY4 with Z₂ symmetry",
+            description: "SUPERSEDED structure (6D two-time base × CY4 × mirror CY4), kept as history. The adopted bulk is 26D of signature (24,2): 24 space directions and 2 times, one per 13D (12,1) shadow; the internal space is the G₂ manifold Y₇.",
             status: "ANSATZ",
             v12_7_status: "fundamental structure",
             terms: {
@@ -374,7 +374,7 @@ const FORMULA_REGISTRY = {
                 },
                 "K<sub>Pneuma</sub>": {
                     name: "Pneuma Manifold",
-                    description: "CY4 with χ = 72"
+                    description: "CY4 with χ = 72 (superseded structure)"
                 },
                 "K̃<sub>Pneuma</sub>": {
                     name: "Mirror Manifold",
@@ -385,10 +385,10 @@ const FORMULA_REGISTRY = {
                 parentFormulas: [],
                 establishedPhysics: ["bosonic-string-critical"],
                 steps: [
-                    "Bosonic string requires D = 26 for anomaly cancellation",
+                    "RETIRED (signature ruling 2026-08-31): '26 = the critical dimension' is withdrawn; the two-time critical dimension is 27-28",
                     "Two-time physics requires signature (D-2, 2)",
-                    "Compactify on CY4 × mirror CY4 with Z₂ identification",
-                    "Result: 26 = 6 + 10 + 10 dimensions"
+                    "Superseded: compactify on CY4 × mirror CY4 with Z₂ identification",
+                    "Superseded result: 26 = 6 + 10 + 10 dimensions"
                 ],
                 verificationPage: "sections.html#2"
             }
@@ -442,7 +442,7 @@ const FORMULA_REGISTRY = {
                 parentFormulas: [],
                 establishedPhysics: ["sp2r-constraints", "tomita-takesaki"],
                 steps: [
-                    "Sp(2,R) constraints fix one time direction gauge",
+                    "Sp(2,R) constraints fix one time direction gauge (ghost control for the second time is OPEN; Bars' theorem is not inherited)",
                     "Remaining projection gives observable thermal time",
                     "Orthogonal time contributes through mirror angle"
                 ],
@@ -461,13 +461,13 @@ const FORMULA_REGISTRY = {
             id: "generation-number",
             html: "n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3",
             latex: "n_{gen} = \\chi_{eff}/48 = 144/48 = 3",
-            plainText: "n_gen = χ_eff/48 = 144/48 = 3",
+            plainText: "n_gen = χ_eff/48 = 144/48 = 3 (the K3 reading; it restates the ruled count n_gen = b₂/4 = 3)",
             label: "(2.6) Three Generations Formula",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "Topological derivation of exactly 3 fermion generations from flux-dressed G₂ geometry - explains why nature has exactly three families of quarks and leptons",
+            description: "The ruled generation count is n_gen = b₂/4 = 12/4 = 3, the number of singular involutions of Y₇. On the adopted K3 reading χ_eff = 2 Σ χ(K3) = 48n, so χ_eff/48 = n restates that count; it is not a second derivation and not an index theorem for chirality (chirality is OPEN).",
             status: "VERIFIED",
-            v12_7_status: "exact - topologically required",
+            v12_7_status: "K3 reading; restates the ruled count n_gen = b₂/4",
             pmConstant: "PM.topology.n_gen",
             experimentalValue: 3,
             sigma: 0,
@@ -479,12 +479,12 @@ const FORMULA_REGISTRY = {
                 },
                 "χ<sub>eff</sub>": {
                     name: "Effective Index",
-                    description: "= 144, an effective index whose meaning is an open ruling. It is not the Euler characteristic of Y₇, which is 0 for every closed odd-dimensional manifold. On the unruled K3 reading, χ_eff = 48n counts the Kummer K3 surfaces transverse to the n = 3 singular involutions, once per shadow.",
+                    description: "= 144 on the K3 reading: χ_eff = 2 Σ χ(K3) = 48n, the Kummer K3 surfaces transverse to the n = 3 singular involutions, counted once per shadow. It is not the Euler characteristic of Y₇, which is 0 for every closed odd-dimensional manifold.",
                     link: "sections.html#2#euler-char"
                 },
                 "48": {
-                    name: "Two-Time Index Divisor",
-                    description: "= 24 × 2, where 24 comes from the F-theory index theorem and the factor of 2 accounts for the two-time structure of the 26D framework.",
+                    name: "K3 Reading Divisor",
+                    description: "= 2 × 24 on the K3 reading: 24 = χ(K3) for each Kummer K3 transverse to a singular involution, and the 2 counts the two shadows. So χ_eff/48 = n, the number of singular involutions.",
                     link: "sections.html#2#index-theorem"
                 }
             },
@@ -492,10 +492,10 @@ const FORMULA_REGISTRY = {
                 parentFormulas: ["spacetime-26d", "clifford-26d"],
                 establishedPhysics: ["f-theory-index"],
                 steps: [
-                    "F-theory generation formula: n_gen = χ/24",
-                    "PM two-time framework doubles divisor: n_gen = χ_eff/48",
-                    "G₂ manifold with χ_eff = 144: n_gen = 144/48 = 3",
-                    "Result: exactly 3 generations topologically fixed"
+                    "Ruled route: n_gen = b₂/4 = 12/4 = 3, the number of singular involutions of Y₇ (the rank of Γ = (ℤ/2)³)",
+                    "K3 reading (adopted, D-015): χ_eff = 2 Σ χ(K3) = 48n = 144",
+                    "On that reading χ_eff/48 = n = 3 restates the ruled count; it is not a second derivation",
+                    "χ_eff is not the Euler characteristic of Y₇ (which is 0), and n_gen = χ_eff/48 is not an index theorem for chirality (chirality is OPEN)"
                 ],
                 verificationPage: "sections.html#2"
             }
@@ -506,27 +506,28 @@ const FORMULA_REGISTRY = {
             html: "χ<sub>eff</sub> = 2(h<sup>11</sup> - h<sup>21</sup> + h<sup>31</sup>) = 144",
             latex: "\\chi_{eff} = 2(h^{11} - h^{21} + h^{31}) = 144",
             plainText: "χ_eff = 2(h¹¹ - h²¹ + h³¹) = 2(4 - 0 + 68) = 144",
-            label: "(2.5) Effective Euler Characteristic",
+            label: "(2.5) Effective Index χ_eff",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "Flux-dressed topology giving χ_eff = 144",
+            description: "OFF-PATH Hodge route. On the adopted K3 reading χ_eff = 2 Σ χ(K3) = 48n = 144; it is not the Euler characteristic of Y₇, which is 0. This formula used the Hodge numbers of the retired TCS model; a Joyce orbifold has no h²¹ or h³¹.",
             status: "VERIFIED",
-            v12_7_status: "exact - from Hodge numbers",
+            v12_7_status: "off-path route; χ_eff is read as 2 Σ χ(K3) = 48n (the K3 reading)",
             pmConstant: "PM.topology.chi_eff",
             experimentalValue: 144,
             sigma: 0,
             terms: {
-                "h<sup>11</sup>": { name: "h¹¹", description: "= 4 (Kähler moduli)" },
-                "h<sup>21</sup>": { name: "h²¹", description: "= 0 (complex structure)" },
-                "h<sup>31</sup>": { name: "h³¹", description: "= 68 (from flux)" }
+                "h<sup>11</sup>": { name: "h¹¹", description: "= 4 on the retired TCS model (off-path)" },
+                "h<sup>21</sup>": { name: "h²¹", description: "= 0 on the retired TCS model (off-path)" },
+                "h<sup>31</sup>": { name: "h³¹", description: "= 68 on the retired TCS model (off-path)" }
             },
             derivation: {
                 parentFormulas: ["spacetime-26d"],
                 establishedPhysics: ["f-theory-index"],
                 steps: [
-                    "TCS G₂ manifold has Hodge numbers h¹¹=4, h²¹=0, h³¹=68",
-                    "Effective Euler: χ_eff = 2(4 - 0 + 68) = 144",
-                    "This gives n_gen = χ_eff/48 = 3"
+                    "OFF-PATH: the retired TCS model carried Hodge numbers h¹¹=4, h²¹=0, h³¹=68",
+                    "That model gave χ_eff = 2(4 - 0 + 68) = 144",
+                    "The adopted Y₇ (Joyce's resolution of T⁷/(ℤ/2)³) has Betti numbers (b₂, b₃) = (12, 43) and χ(Y₇) = 0; it has no h²¹ or h³¹",
+                    "χ_eff = 144 survives on the K3 reading: χ_eff = 2 Σ χ(K3) = 48n"
                 ],
                 verificationPage: "sections.html#2"
             }
@@ -568,7 +569,7 @@ const FORMULA_REGISTRY = {
             label: "(6.2) Solar Mixing Angle",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "Solar angle from G₂ cycle geometry",
+            description: "Solar angle from a cycle-geometry model construct (flavour is OPEN on the adopted path)",
             status: "VERIFIED",
             v12_7_status: "geometric - 0.24σ from NuFIT",
             pmConstant: "PM.pmns_matrix.theta_12_deg",
@@ -644,7 +645,7 @@ const FORMULA_REGISTRY = {
                 establishedPhysics: ["tomita-takesaki"],
                 steps: [
                     "Ghost central charge coefficient = 26/52 = 0.5",
-                    "Shadow_ק = Shadow_ח = 0.576152 from G₂ holonomy",
+                    "Shadow_ק = Shadow_ח = 0.576152 from the G₂ manifold",
                     "d_eff = 12 + 0.5×(0.576152 + 0.576152) = 12.576",
                     "This determines w₀ via MEP formula"
                 ],
@@ -660,9 +661,9 @@ const FORMULA_REGISTRY = {
             label: "(4.1) GUT Scale from G₂ Torsion",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "Grand Unification scale derived purely from geometry with no free parameters - the energy scale where electromagnetic, weak, and strong forces unify into a single force",
+            description: "Grand Unification scale in this model - the energy scale where electromagnetic, weak, and strong forces unify into a single force. Its inputs are the model parameters T_ω and s; s comes from a racetrack calibrated at the off-path seed b₃ = 24, so this value is calibrated, not derived.",
             status: "VERIFIED",
-            v12_7_status: "pure geometric - breakthrough derivation",
+            v12_7_status: "calibrated - the modulus s is calibrated at the off-path seed b₃ = 24",
             pmConstant: "PM.proton_decay.M_GUT",
             experimentalValue: 2.118e16,
             sigma: 0,
@@ -678,12 +679,12 @@ const FORMULA_REGISTRY = {
                 },
                 "T<sub>ω</sub>": {
                     name: "G₂ Torsion",
-                    description: "= -0.875 from Spin(7) spinor fraction 7/8. The intrinsic torsion of the TCS G₂ manifold, derived from flux stabilization. This is the key geometric input that fixes M_GUT with no adjustable parameters.",
+                    description: "= -0.875 from the Spin(7) spinor fraction 7/8: a model parameter, an effective torsion from flux. It was introduced on the retired TCS model (off-path); the adopted Y₇ carries a torsion-free G₂-structure.",
                     link: "sections.html#2#torsion"
                 },
                 "s": {
                     name: "Moduli Parameter",
-                    description: "= 1.178 from G₂ volume modulus stabilization via racetrack superpotential. Determines the size of the compactified dimensions.",
+                    description: "= 1.178 from a racetrack superpotential calibrated at the off-path seed b₃ = 24. No racetrack exists on Y₇, and moduli stabilisation is OPEN on the adopted path.",
                     link: "sections.html#2#moduli"
                 }
             },
@@ -691,10 +692,10 @@ const FORMULA_REGISTRY = {
                 parentFormulas: ["spacetime-26d"],
                 establishedPhysics: ["einstein-hilbert"],
                 steps: [
-                    "TCS G₂ manifold has intrinsic torsion T_ω = -0.875 (spinor fraction 7/8)",
-                    "s-parameter from G₂ moduli stabilization: s = 1.178",
+                    "Effective torsion T_ω = -0.875 (spinor fraction 7/8), a model parameter introduced on the retired TCS model (off-path)",
+                    "s-parameter from a racetrack calibrated at the off-path seed b₃ = 24: s = 1.178 (moduli stabilisation is OPEN on Y₇)",
                     "M_GUT = M_* × exp(T_ω × s / 2)",
-                    "Result: M_GUT = 2.118 × 10^16 GeV (no fitting)"
+                    "Result: M_GUT = 2.118 × 10^16 GeV (calibrated, not derived)"
                 ],
                 verificationPage: "sections.html#gauge-unification"
             }
@@ -724,7 +725,7 @@ const FORMULA_REGISTRY = {
                 steps: [
                     "SO(10) Casimir invariant C_A = 9",
                     "Leading term: α_GUT = 1/(10π) ≈ 0.0318",
-                    "Apply TCS volume and torsion corrections",
+                    "Apply volume and torsion corrections (introduced on the retired TCS model; off-path)",
                     "Result: 1/α_GUT = 23.54 (0.8% from RG prediction)"
                 ],
                 verificationPage: "sections.html#gauge-unification"
@@ -738,10 +739,10 @@ const FORMULA_REGISTRY = {
             plainText: "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583",
             label: "(7.2) Dark Energy Equation of State w₀",
             category: "DERIVED",
-            attribution: "Principia Metaphysica (v16.2 Thawing Quintessence)",
-            description: "Dark energy equation of state from G2 thawing quintessence - determines how dark energy pressure relates to its density",
+            attribution: "Principia Metaphysica (thawing quintessence)",
+            description: "OFF-PATH (frozen at the off-path seed b₃ = 24): w₀ = -23/24 is w₀ = -1 + 1/b₃ evaluated at the retired seed. The formula has no derivation, and the value is frozen rather than following the seed. Dark energy is OPEN on the adopted path: the leading-order flux potential on Y₇ cannot accelerate.",
             status: "VERIFIED",
-            v12_7_status: "derived from b₃ topology - 0.02σ agreement with DESI 2025 thawing",
+            v12_7_status: "frozen at the off-path seed b₃ = 24; more than 3σ from the DESI DR2 w₀w_aCDM headline",
             pmConstant: "PM.dark_energy.w0_PM",
             experimentalValue: -0.957,
             experimentalSource: "DESI 2025 (thawing)",
@@ -749,27 +750,27 @@ const FORMULA_REGISTRY = {
             terms: {
                 "w<sub>0</sub>": {
                     name: "Dark Energy EoS",
-                    description: "= -0.9583 (present epoch). The equation of state parameter w = P/ρ relates pressure to density. w = -1 is a cosmological constant, w > -1 is quintessence. PM v16.2 predicts w₀ = -23/24.",
+                    description: "= -0.9583 (present epoch). The equation of state parameter w = P/ρ relates pressure to density. w = -1 is a cosmological constant, w > -1 is quintessence. The value -23/24 is frozen at the off-path seed b₃ = 24.",
                     link: "sections/cosmology.html#dark-energy"
                 },
                 "b<sub>3</sub>": {
-                    name: "Associative 3-cycles",
-                    description: "= 24 from G₂ topology TCS #187. The third Betti number controls the thawing quintessence deviation from the cosmological constant.",
+                    name: "Third Betti Number",
+                    description: "The formula was evaluated at the off-path seed b₃ = 24 (retired, from the off-path TCS reading). The adopted Y₇ has b₃ = 43, where the same formula would give -42/43; neither value is derived.",
                     link: "sections/cosmology.html#thawing"
                 },
                 "-23/24": {
                     name: "Thawing Quintessence",
-                    description: "The formula w₀ = -1 + 1/b₃ gives quintessence slowly thawing from w = -1 with a geometric correction from the G2 topology."
+                    description: "The formula w₀ = -1 + 1/b₃ describes quintessence slowly thawing from w = -1. It has no derivation on the adopted path; -23/24 is its value at the off-path seed."
                 }
             },
             derivation: {
                 parentFormulas: ["two-time-structure"],
                 establishedPhysics: ["thawing-quintessence", "g2-topology"],
                 steps: [
-                    "G₂ manifold TCS #187 has b₃ = 24 associative 3-cycles",
-                    "Thawing quintessence: w₀ = -1 + 1/b₃",
-                    "Substitute b₃ = 24: w₀ = -1 + 1/24 = -23/24",
-                    "Result: w₀ = -0.9583 (0.02σ from DESI 2025 thawing)"
+                    "OFF-PATH: the formula used the retired seed b₃ = 24 (the off-path TCS reading)",
+                    "Thawing quintessence ansatz: w₀ = -1 + 1/b₃ (no derivation)",
+                    "At the off-path seed: w₀ = -1 + 1/24 = -23/24 ≈ -0.9583, frozen there",
+                    "DESI DR2 w₀w_aCDM (BAO+CMB+DESY5) gives w₀ = -0.752 ± 0.057; -23/24 sits more than 3σ from it"
                 ],
                 verificationPage: "sections/cosmology.html"
             }
@@ -783,7 +784,7 @@ const FORMULA_REGISTRY = {
             label: "(6.1) Maximal Atmospheric Mixing",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "PMNS angles from G₂ associative cycle geometry",
+            description: "PMNS angles from a cycle-geometry model construct. Flavour is OPEN on the adopted path: it needs a chiral sector, which Y₇ alone does not provide.",
             status: "VERIFIED",
             v12_7_status: "geometric - 0.00σ to 0.24σ vs NuFIT 6.0",
             pmConstant: "PM.pmns_matrix",
@@ -799,8 +800,8 @@ const FORMULA_REGISTRY = {
                 parentFormulas: ["generation-number"],
                 establishedPhysics: ["seesaw-mechanism"],
                 steps: [
-                    "TCS G₂ manifold has 24 associative 3-cycles (b₃ = 24)",
-                    "Cycle intersection numbers determine Yukawa ratios",
+                    "OFF-PATH: built on the retired TCS reading with b₃ = 24; the adopted Y₇ has b₃ = 43",
+                    "Cycle intersection numbers set Yukawa ratios in this model construct (flavour is OPEN)",
                     "Shadow_ק = Shadow_ח = 0.576152 gives maximal θ₂₃ = 45°",
                     "Remaining angles from cycle asymmetries"
                 ],
@@ -836,7 +837,7 @@ const FORMULA_REGISTRY = {
                 parentFormulas: ["theta23-maximal", "generation-number"],
                 establishedPhysics: ["seesaw-mechanism"],
                 steps: [
-                    "TCS G₂ breaking pattern determines mass ratios",
+                    "Breaking pattern from the retired TCS reading (off-path) sets the mass ratios",
                     "Hybrid suppression model gives m₁ << m₂ < m₃",
                     "Bayesian analysis: 76% NH, 24% IH",
                     "JUNO 2027 will provide definitive test"
@@ -933,24 +934,24 @@ const FORMULA_REGISTRY = {
             label: "(8.3) Proton Decay Branching Ratio",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica",
-            description: "Dominant channel from b₃ = 24 cycle structure",
+            description: "OFF-PATH (cycle count at the retired seed b₃ = 24): the ratio 12/24 counts 3-cycles of the off-path seed. The adopted Y₇ has b₃ = 43, so this branching ratio is calibrated at the off-path seed, not derived.",
             status: "TESTABLE",
-            v12_7_status: "geometric prediction",
+            v12_7_status: "calibrated at the off-path seed b₃ = 24",
             derivationScript: "simulations/proton_decay_br_v12_8.py",
             experimentalLimit: "Not yet observed",
             futureTest: "Hyper-K 2032-2038",
             terms: {
                 "BR": { name: "Branching Ratio", description: "≈ 25% dominant" },
-                "(12/24)²": { name: "Cycle Ratio", description: "From b₃ = 24" }
+                "(12/24)²": { name: "Cycle Ratio", description: "Calibrated at the off-path seed b₃ = 24 (retired)" }
             },
             derivation: {
                 parentFormulas: ["proton-lifetime", "generation-number"],
                 establishedPhysics: ["yang-mills"],
                 steps: [
-                    "b₃ = 24 associative 3-cycles determine decay channels",
-                    "12 cycles couple to e⁺π⁰ final state",
+                    "OFF-PATH: the decay channels were counted on the retired seed b₃ = 24; the adopted Y₇ has b₃ = 43",
+                    "On that seed, 12 cycles were taken to couple to the e⁺π⁰ final state",
                     "BR = (12/24)² = 0.25 from amplitude squared",
-                    "Dominant channel at 25%"
+                    "Dominant channel at 25%, calibrated at the off-path seed"
                 ],
                 verificationPage: "sections.html#predictions"
             }
@@ -964,24 +965,24 @@ const FORMULA_REGISTRY = {
             label: "(8.4) GW Dispersion Parameter",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica",
-            description: "Gravitational wave dispersion from G₂ torsion",
+            description: "Gravitational wave dispersion from the effective torsion T_ω. OFF-PATH (b₃ = 24): the divisor is the retired seed, so this value is calibrated at the off-path seed b₃ = 24.",
             status: "TESTABLE",
-            v12_7_status: "geometric prediction",
+            v12_7_status: "calibrated at the off-path seed b₃ = 24",
             derivationScript: "simulations/gw_dispersion_v12_8.py",
             experimentalLimit: "Beyond current sensitivity",
             futureTest: "LISA 2037+",
             terms: {
                 "η": { name: "Dispersion Parameter", description: "≈ 0.101" },
                 "T<sub>ω</sub>": { name: "Torsion", description: "-0.884" },
-                "b<sub>3</sub>": { name: "Third Betti", description: "= 24" }
+                "b<sub>3</sub>": { name: "Third Betti", description: "Evaluated at the off-path seed b₃ = 24 (retired); the adopted Y₇ has b₃ = 43" }
             },
             derivation: {
                 parentFormulas: ["gut-scale"],
                 establishedPhysics: ["einstein-field"],
                 steps: [
-                    "G₂ torsion T_ω = -0.875 from Spin(7) spinor fraction 7/8",
-                    "b₃ = 24 from topology",
-                    "η = exp(|-0.875|)/24 = 2.40/24 ≈ 0.100",
+                    "Effective torsion T_ω = -0.875 from the Spin(7) spinor fraction 7/8",
+                    "OFF-PATH: the divisor is the retired seed b₃ = 24 (the adopted value is 43)",
+                    "η = exp(|-0.875|)/24 = 2.40/24 ≈ 0.100, calibrated at the off-path seed",
                     "Detectable by next-generation GW observatories"
                 ],
                 verificationPage: "sections.html#predictions"

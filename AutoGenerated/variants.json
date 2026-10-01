@@ -11,13 +11,13 @@
     "re_t_adoption": {
       "question": "Which Re(T) does the baryogenesis sector use?",
       "source": "simulations.PM.cosmology.baryon_asymmetry.RE_T_CALIBRATED",
-      "status": "OPEN",
+      "status": "RULED",
       "selected": "calibrated",
       "default": "calibrated",
       "options": [
         {
           "id": "calibrated",
-          "summary": "the BBN-calibrated value the sector currently ships",
+          "summary": "the BBN-calibrated value: a calibration, since Re(T) is an open modulus of Y_7",
           "consequence": "BUYS: the baryon asymmetry match that the sector was tuned for, and no published number moves.\nCOSTS: the value is not a stationary point of the framework's own declared racetrack equations under either Kahler slope, so moduli stabilisation is asserted rather than solved, and the Higgs sector separately inverts m_H to obtain a different Re(T) -- the three-way tension stays open.",
           "adopted": true,
           "status": "active",
@@ -26,22 +26,21 @@
         {
           "id": "computed_vacuum",
           "summary": "the solved stationary point of the declared potential",
-          "consequence": "BUYS: Re(T) becomes an OUTPUT -- the unique minimum of the declared N=1 potential, supersymmetric, axion-stable, with its barrier located. The six-way Re(T) freedom collapses to the single ratio B/A, on which the vacuum depends only logarithmically.\nCOSTS: the moduli damping exp(-Re T) falls by roughly e^{-31}, so the eta_b match this sector was calibrated for is destroyed. That is the honest price of the true vacuum under the present baryogenesis model, and seeing it is the reason this branch exists.",
+          "consequence": "BUYS: Re(T) becomes an OUTPUT -- the unique minimum of the declared N=1 potential, supersymmetric, axion-stable, with its barrier located. The six-way Re(T) freedom collapses to the single ratio B/A, on which the vacuum depends only logarithmically.\nCOSTS: the moduli damping exp(-Re T) falls by roughly e^{-31}, so the eta_b match this sector was calibrated for is destroyed. That is the honest price of the true vacuum under the present baryogenesis model, and seeing it is the reason this branch exists.\nDEMOTED 2026-10-01 (D-015): the declared racetrack is not a potential Y_7 has (CG.5, CG.10), so its vacuum is not this geometry's Re(T). Runnable for comparison.",
           "adopted": false,
-          "status": "considered",
-          "priority": 1
+          "status": "disabled",
+          "priority": 2
         }
       ],
       "status_counts": {
         "active": 1,
-        "considered": 1,
-        "disabled": 0
+        "considered": 0,
+        "disabled": 1
       },
       "sweepable": [
-        "calibrated",
-        "computed_vacuum"
+        "calibrated"
       ],
-      "notes": "Opened 2026-09-14. racetrack_vacuum solves the framework's own declared equations completely -- W = A e^{-aT} + B e^{-bT} with a = 2 pi / topology.elder_kads and b = 2 pi / dimensions.D_bulk, and the full N=1 potential -- and finds ONE minimum on (0.5, 300): a supersymmetric AdS vacuum, stable in the axion direction, with the dS saddle barrier above it. The incumbent value used for baryogenesis is not a stationary point of those equations, and neither is the Higgs-inverted one.\n\nSo this is not a preference between two fits. One branch is the solved vacuum of the declared model; the other is a calibration that reproduces eta_b. Both are runnable so the cost of the true vacuum can be measured rather than argued.",
+      "notes": "RULED 2026-10-01 by the author (D-015): Re(T) is an OPEN modulus. Y_7 fixes no Re(T) at leading order -- the G4 flux potential is positive and runs away (certificate CG.6) -- and Y_7 carries no gaugino racetrack: its singular loci hold N = 4 super Yang-Mills (CG.5) and full holonomy excludes a confining sector in phi's Joyce family (CG.10). So the value consumers use is a CALIBRATION, labelled as such, and computed_vacuum -- the stationary point of a racetrack this geometry does not have -- is demoted but kept runnable for comparison.\n\nOpened 2026-09-14. racetrack_vacuum solves the framework's own declared equations completely -- W = A e^{-aT} + B e^{-bT} with a = 2 pi / topology.elder_kads and b = 2 pi / dimensions.D_bulk, and the full N=1 potential -- and finds ONE minimum on (0.5, 300): a supersymmetric AdS vacuum, stable in the axion direction, with the dS saddle barrier above it. The incumbent value used for baryogenesis is not a stationary point of those equations, and neither is the Higgs-inverted one.\n\nSo this is not a preference between two fits. One branch is the solved vacuum of the declared model; the other is a calibration that reproduces eta_b. Both are runnable so the cost of the true vacuum can be measured rather than argued.",
       "drift": null,
       "source_read": "live"
     },
@@ -247,25 +246,25 @@
     "g2_form_convention": {
       "question": "Which signs does the associative 3-form carry on its 7 triples?",
       "source": "simulations.PM.geometry.g2_differential.G2_TRIPLES",
-      "status": "OPEN",
-      "selected": "all_plus_one",
-      "default": "all_plus_one",
+      "status": "RULED",
+      "selected": "octonion_derived",
+      "default": "octonion_derived",
       "options": [
         {
           "id": "all_plus_one",
-          "summary": "all (+1) on the seven Fano triples -- the status quo",
+          "summary": "all (+1) on the seven Fano triples -- the split form G2*, kept switchable",
           "consequence": "BUYS: every currently published number is unchanged, and the combinatorial results are untouched. R1 to R4 and the arc flag identity read WHICH triples carry phi, not their signs, and were verified identical under both branches.\nCOSTS: phi is not a G2 3-form. Its annihilator in so(7) is 6-dimensional where g2 needs 14, so the holonomy claim has no object behind it. Lambda^2 = 7 + 14 has the right dimensions but the 14 does not annihilate phi and is therefore not g2; Lambda^3 = 1 + 7 + 27 is not a G2 irrep split; and the torsion classes are projections onto subspaces that are not the ones they are named after.",
-          "adopted": true,
-          "status": "active",
+          "adopted": false,
+          "status": "considered",
           "priority": 0
         },
         {
           "id": "octonion_derived",
           "summary": "signs read off the framework's own octonion product",
           "consequence": "BUYS: phi becomes an actual G2 3-form with a 14-dimensional annihilator, and the signs are DERIVED rather than imported from a textbook convention. They are read off the framework's own multiplication table via phi[i,j,k] = (e_i e_j)_k. Lambda^2_14 then really is g2, the Lambda^3 split really is 1 + 7 + 27, and the torsion classes project onto the subspaces they name. Because the algebra picks the signs, WHICH of the 16 G2 forms to use is not an open choice here.\nCOSTS: measured with a rebuild between branches, and the answer is ZERO. All 807 published parameters were compared across the two branches: none moved, none appeared, none vanished. The suite gives 1816 passed / 9 failed against 1825 / 0, and every one of the nine is a test asserting the defect is PRESENT -- the seven in test_phi_is_not_yet_a_g2_form.py, the D4 calibration-honesty test, and the framework's own test_multiplication_constants_differ_by_one_sign. Each must fail once phi is corrected; that is their purpose. No physics test fails.\nWHAT THAT REVEALS, and it is the more important finding: phi can be replaced by a tensor in a DIFFERENT GL(7) orbit without moving a single published number. So no published quantity is sensitive to the sign assignment on the Fano triples, and therefore none is sensitive to whether phi is a G2 form at all. The outputs depend on the Fano INCIDENCE structure -- which seven triples -- not on the orientation that makes it G2. Parameters carrying g2_structure or octonion provenance (face_moduli_T1..T4, n_faces, alpha_leak, shadow_asymmetry_delta_T, V_cb, J_CKM) are all invariant. Consistent with R1-R4 and the arc flag identity, which were verified identical under both branches.",
-          "adopted": false,
-          "status": "considered",
-          "priority": 1
+          "adopted": true,
+          "status": "active",
+          "priority": 0
         }
       ],
       "status_counts": {
@@ -277,7 +276,7 @@
         "all_plus_one",
         "octonion_derived"
       ],
-      "notes": "Opened 2026-09-13 by measurement, not by preference. g2 is the subalgebra of so(7) annihilating phi and has dimension 14. Building the map A -> A.phi and taking its kernel gives dim 6 for the adopted all-(+1) assignment and dim 14 for the signs the framework's own octonion product implies on the SAME seven triples. dim ann is a GL(7) similarity invariant, so the two lie in different GL(7) orbits and no basis change, relabelling or sign flip connects them, checked exhaustively over all 128 diagonal sign patterns. Exactly 16 of the 128 assignments give a genuine G2 form.\n\nROOT CAUSE, located the same day: the octonion module is NOT at fault. Its multiply() is a genuine octonion product, verified norm-multiplicative to 4e-16 and alternative to 6e-16. But g2_structure_as_3form() returns a separate all-(+1) tensor (_C_geom) instead of the 3-form its own multiplication implies. The two differ in exactly ONE sign, on the triple (1,3,5), so the correct form was already in the codebase.\n\nThe adopted branch is kept anyway because substituting phi moves published numbers, and that is a physics ruling. The fork exists so both states can be run and the cost measured first. Note the obvious check does not discriminate: the induced metric phi_imn phi_jmn is 6 * I for BOTH forms, which is why this was not caught earlier. A header note in g2_differential.py had ruled the all-(+1) code correct and its signed docstring wrong; that ruling is backwards and is marked superseded there.",
+      "notes": "RULED 2026-10-01 by the author (D-015): adopt the sensible path, keep the alternative switchable. The compact form (octonion_derived) is the active path -- it is a genuine G2 form and the only one on which Joyce's Eguchi-Hanson resolution, and so the derivation of (b_2, b_3) = (12, 43), applies (D-003 addendum: on the split form 6 of the 7 involutions have a neutral (2,2) transverse space). all_plus_one stays runnable for comparison.\n\nOpened 2026-09-13 by measurement, not by preference. g2 is the subalgebra of so(7) annihilating phi and has dimension 14. Building the map A -> A.phi and taking its kernel gives dim 6 for the adopted all-(+1) assignment and dim 14 for the signs the framework's own octonion product implies on the SAME seven triples. dim ann is a GL(7) similarity invariant, so the two lie in different GL(7) orbits and no basis change, relabelling or sign flip connects them, checked exhaustively over all 128 diagonal sign patterns. Exactly 16 of the 128 assignments give a genuine G2 form.\n\nROOT CAUSE, located the same day: the octonion module is NOT at fault. Its multiply() is a genuine octonion product, verified norm-multiplicative to 4e-16 and alternative to 6e-16. But g2_structure_as_3form() returns a separate all-(+1) tensor (_C_geom) instead of the 3-form its own multiplication implies. The two differ in exactly ONE sign, on the triple (1,3,5), so the correct form was already in the codebase.\n\nThe adopted branch is kept anyway because substituting phi moves published numbers, and that is a physics ruling. The fork exists so both states can be run and the cost measured first. Note the obvious check does not discriminate: the induced metric phi_imn phi_jmn is 6 * I for BOTH forms, which is why this was not caught earlier. A header note in g2_differential.py had ruled the all-(+1) code correct and its signed docstring wrong; that ruling is backwards and is marked superseded there.",
       "drift": null,
       "source_read": "live"
     },
@@ -357,18 +356,26 @@
     },
     "chi_eff_route": {
       "question": "Is chi_eff a CONSTANT independent of the seed, or SEED-DEPENDENT? The framework currently wants both.",
-      "source": "simulations.PM.geometry.geometry_narration.chi_eff_claim -- which returns the dichotomy and no value",
-      "status": "OPEN",
-      "selected": "unruled",
-      "default": "unruled",
+      "source": "simulations.PM.geometry.geometry_narration.CHI_EFF_READING",
+      "status": "RULED",
+      "selected": "k3_reading",
+      "default": "k3_reading",
       "options": [
+        {
+          "id": "k3_reading",
+          "summary": "chi_eff = 2 x sum chi(K3) over the singular involutions = 48 n (D-009)",
+          "consequence": "BUYS: chi_eff is an Euler characteristic of real objects on Y_7 -- one Kummer K3 per singular involution, with 16 fixed points resolved to chi = 24 -- doubled for the two shadows. It follows the geometry (48 n tracks n on every class of phi's Joyce family) and equals 144 on the adopted point, so the consumers of 144 keep their value with a derivation behind it.\nCOSTS: n_gen = chi_eff/48 is then the SAME statement as n_gen = n (= b_2/4 on the all-plain members), not an independent route, and it says nothing about chirality, which stays open.",
+          "adopted": true,
+          "status": "active",
+          "priority": 0
+        },
         {
           "id": "unruled",
           "summary": "no route adopted; chi_eff_claim returns the dichotomy",
           "consequence": "BUYS: the framework does not assert a derivation it cannot defend, and both branches stay runnable and costed. This is the honest state and it is what the code actually does.\nCOSTS: the EML track stays blocked -- the triple-track mismatch at FormulasRegistry.py:653 is waiting on exactly this ruling -- and every downstream consumer keeps reading a literal 144 whose provenance is open.",
-          "adopted": true,
-          "status": "active",
-          "priority": 0
+          "adopted": false,
+          "status": "considered",
+          "priority": 1
         },
         {
           "id": "constant_144",
@@ -383,21 +390,21 @@
           "summary": "chi_eff = f(b_3), so it is not 144 off b_3 = 24",
           "consequence": "BUYS: chi_eff becomes a genuine function of the topology rather than a constant, so it can carry topological content at all.\nCOSTS: it is not 144 on the 43 path -- 462.25 via b_3^2/4 or 258 via 6 b_3 -- so every consumer of the literal moves, across 112 modules that mention it. Worse, n_gen = chi_eff/48 is then NON-INTEGER at every Joyce-reachable profile on both sub-routes, so adopting this also forces a ruling on n_gen_source. The two b_3-dependent routes also disagree with each other everywhere except b_3 = 24, so this branch is not one option but two.",
           "adopted": false,
-          "status": "considered",
-          "priority": 1
+          "status": "disabled",
+          "priority": 2
         }
       ],
       "status_counts": {
         "active": 1,
         "considered": 2,
-        "disabled": 0
+        "disabled": 1
       },
       "sweepable": [
+        "k3_reading",
         "unruled",
-        "constant_144",
-        "seed_dependent"
+        "constant_144"
       ],
-      "notes": "Opened 2026-09-22 so the two branches can be RUN rather than argued. chi_eff = 144 is load-bearing -- n_gen is taken as chi_eff/48, alpha_leak as 1/sqrt(chi_eff/b_3), reid_invariant as 1/chi_eff -- and 112 modules mention it under one of its names (measured). Three derivations are claimed and all three return 144 at b_3 = 24, which is precisely where the two b_3-dependent ones CROSS, uniquely.\n\nThe default is `unruled` because adopting either branch is an author act and neither has been made. `unruled` is not a placeholder: it is what the code does today, and chi_eff_claim() returns the dichotomy rather than a value.\n\nTWO COSTS MEASURED 2026-09-22, both new, and they COUPLE this fork to n_gen_source. First, 6 b_3 / 48 = b_3 / 8 IDENTICALLY, so `seed_dependent` via route C is not an independent route to the generation count -- it IS n_gen_source = b3_over_dim_O, and inherits that route's refutation across the whole Joyce family. Second, n_gen = chi_eff/48 fails on BOTH branches on that family: seed-dependent gives a non-integer at every reachable profile (0.2552, 1.8802, 5.0052, 9.6302 via b_3^2/4), while the constant branch gives n_gen = 3 even at n_T3 = 0, where the manifold carries no A_1 families and the count should be 0.\n\nSee PM.geometry.chi_eff_branches for the executable branches and the full cost table. Nothing there selects either.",
+      "notes": "RULED 2026-10-01 by the author (D-015): the K3 reading of D-009 is adopted. chi_eff = 2 x sum over the singular involutions of chi(K3) = 48 n -- the Kummer K3 surfaces transverse to the singular loci, once per shadow -- which is 144 at n = 3, tracks n on all 15,963 classes of phi's Joyce family, and keeps chi_eff an Euler characteristic of real objects. n_gen = chi_eff/48 = n then restates the ruled route b_2/4. The other routes stay switchable; seed_dependent is demoted (D-009 refuted both of its sub-routes on the family).\n\nOpened 2026-09-22 so the two branches can be RUN rather than argued. chi_eff = 144 is load-bearing -- n_gen is taken as chi_eff/48, alpha_leak as 1/sqrt(chi_eff/b_3), reid_invariant as 1/chi_eff -- and 112 modules mention it under one of its names (measured). Three derivations are claimed and all three return 144 at b_3 = 24, which is precisely where the two b_3-dependent ones CROSS, uniquely.\n\nThe default is `unruled` because adopting either branch is an author act and neither has been made. `unruled` is not a placeholder: it is what the code does today, and chi_eff_claim() returns the dichotomy rather than a value.\n\nTWO COSTS MEASURED 2026-09-22, both new, and they COUPLE this fork to n_gen_source. First, 6 b_3 / 48 = b_3 / 8 IDENTICALLY, so `seed_dependent` via route C is not an independent route to the generation count -- it IS n_gen_source = b3_over_dim_O, and inherits that route's refutation across the whole Joyce family. Second, n_gen = chi_eff/48 fails on BOTH branches on that family: seed-dependent gives a non-integer at every reachable profile (0.2552, 1.8802, 5.0052, 9.6302 via b_3^2/4), while the constant branch gives n_gen = 3 even at n_T3 = 0, where the manifold carries no A_1 families and the count should be 0.\n\nSee PM.geometry.chi_eff_branches for the executable branches and the full cost table. Nothing there selects either.",
       "drift": null,
       "source_read": "live"
     },
@@ -803,6 +810,43 @@
         "all"
       ],
       "notes": "See docs/BRIDGE_CHANNEL_ASSIGNMENT.md. Adopting 'generic' is a criterion, not a result; the orbit split 28/7 is the fact.",
+      "drift": null,
+      "source_read": "live"
+    },
+    "seed_selection": {
+      "question": "What selects (b_2, b_3) = (12, 43) on the n = 3 line of phi's Joyce family?",
+      "source": "simulations.PM.geometry.closed_geometry.selection.SELECTION_ROUTE",
+      "status": "RULED",
+      "selected": "wa1_correspondence",
+      "default": "wa1_correspondence",
+      "options": [
+        {
+          "id": "wa1_correspondence",
+          "summary": "WA-1: one bridge = one resolved A1 component; the 3 x 4 match selects (12, 43)",
+          "consequence": "BUYS: (12, 43) is selected by geometry with no data and no free choice: the reachable family, pi_1 on the n = 3 line, and the bridge <-> component match compose into one chain (CG.12).\nCOSTS: WA-1 is an identification, not a theorem -- the combinatorics are proved, the physical reading is assumed. Its kill condition is the quartet structure of the U(1) couplings.",
+          "adopted": true,
+          "status": "active",
+          "priority": 0
+        },
+        {
+          "id": "ruling_only",
+          "summary": "(12, 43) by the 2026-09-22 ruling; the bridge match is a finding, not a selection",
+          "consequence": "BUYS: no identification of bridges with components is assumed.\nCOSTS: the n = 3 line has 9 Joyce-reachable pairs and nothing in the geometry picks (12, 43) among them -- the choice is an input.",
+          "adopted": false,
+          "status": "considered",
+          "priority": 0
+        }
+      ],
+      "status_counts": {
+        "active": 1,
+        "considered": 1,
+        "disabled": 0
+      },
+      "sweepable": [
+        "wa1_correspondence",
+        "ruling_only"
+      ],
+      "notes": "RULED 2026-10-01 by the author (D-015): adopt WA-1. pi_1 is finite exactly on the n = 3 line (CG.4; holonomy exactly G2 there on the compact form), and on that line the 12 bridges match the 12 resolved A1 components as one 3 x 4 structure only on the all-plain classes (CG.8: 280 yes, 84 Example-4 no). Reading one bridge as one component turns that match into the selection. Consumer: certificate theorem CG.12 (y7-selection) and the overview's selection layer. WA-1's own test, stated when it was proposed: the 12 U(1) gauge-kinetic functions come in 3 quartets (Lukas-Morris eq. 1.3); a class breaking that would kill it.",
       "drift": null,
       "source_read": "live"
     }

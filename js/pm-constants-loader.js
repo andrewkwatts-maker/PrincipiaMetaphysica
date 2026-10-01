@@ -39,15 +39,15 @@
 
         // Fundamental dimensions (always available, from theory)
         dimensions: {
-            D_BULK: 27,
+            D_BULK: 26,         // 26D bulk, signature (24,2); the live value is geometry.D_bulk
             D_AFTER_SP2R: 13,
             D_G2: 7,
             D_SPIN8: 8,         // Octonions dimension (Spin(8) triality)
             D_OBSERVABLE: 4,
             D_COMMON: 4,
             // Signature components
-            SIGNATURE_SPACE: 24,      // Spacelike dimensions in (24,2) signature
-            SIGNATURE_TIME: 2,        // Timelike dimensions in (24,2) signature
+            SIGNATURE_SPACE: 24,      // The bulk's 24 space directions in (24,2) signature (not b3)
+            SIGNATURE_TIME: 2,        // Two times in (24,2) signature, one per 13D shadow
             SIGNATURE_EFF_SPACE: 12,  // Spacelike dimensions in 13D (12,1) signature
             SIGNATURE_EFF_TIME: 1,    // Timelike dimension in 13D (12,1) signature
             // Spinor components
@@ -87,7 +87,7 @@
             // Legacy / Alternate paths used in HTML files
             // ================================================================
             'seeds.k_gimel': '_named.demiurgic_coupling',  // k_gimel symplectic stiffness constant
-            'cosmology.w0_dark_energy': '_named.dark_energy_w0',  // w0 = -23/24
+            'cosmology.w0_dark_energy': '_named.dark_energy_w0',  // w0 = -23/24, frozen at the off-path seed b3 = 24
 
             // ================================================================
             // Framework Statistics / Validation mapping
@@ -199,11 +199,17 @@
             // ================================================================
             // Topology parameters (from parameters.json or named_constants.json)
             // ================================================================
-            'topology.n_gen': '_hardcoded.n_gen',  // 3 fermion generations = chi_eff/48
-            'parameters.topology.b2': '_named.b3',  // b2 usually same as b3 for G2
+            'topology.n_gen': '_hardcoded.n_gen',  // n_gen = b2/4 = 3, the number of singular involutions
+            // b2 and b3 are different numbers: (b2, b3) = (12, 43) on the adopted
+            // seed, with b3 = 7 + 3*b2. b2 is published as its own parameter
+            // (topology.b2), so it must never be read from the b3 constant.
+            'parameters.topology.b2': 'topology.b2',
             'parameters.topology.b3': '_named.b3',
-            'parameters.topology.B2': '_named.b3',
+            'parameters.topology.B2': 'topology.b2',
             'parameters.topology.B3': '_named.b3',
+            // Hodge numbers h11/h21/h31 belonged to the retired off-path TCS
+            // model; Y7 (a Joyce orbifold resolution) has no h21 or h31, so
+            // these resolve to nothing on the adopted path.
             'parameters.topology.h11': 'parameters.topology.HODGE_H11',
             'parameters.topology.h21': 'parameters.topology.HODGE_H21',
             'parameters.topology.h31': 'parameters.topology.HODGE_H31',
@@ -249,12 +255,12 @@
             'constants.weinstein_scale': '_named.weinstein_scale',
             'constants.kappa_E': '_named.weinstein_scale',
             'heptagon.weinstein_scale': '_named.weinstein_scale',
-            // 4. Hossenfelder Root (λ_S = √24) - Hidden Root
+            // 4. Hossenfelder Root (λ_S = √24) - Hidden Root (calibrated at the off-path seed b3 = 24)
             'constants.hossenfelder_root': '_named.hossenfelder_root',
             'constants.hossenfelder_constant': '_named.hossenfelder_root',
             'constants.lambda_S': '_named.hossenfelder_root',
             'heptagon.hossenfelder_root': '_named.hossenfelder_root',
-            // 5. O'Dowd Bulk Pressure (P_O = 163) - Bulk Pressure
+            // 5. O'Dowd Bulk Pressure (P_O = 163) - Bulk Pressure (calibrated at the off-path seed b3 = 24)
             'constants.odowd_bulk_pressure': '_named.odowd_bulk_pressure',
             'constants.odowd_constant': '_named.odowd_bulk_pressure',
             'constants.P_O': '_named.odowd_bulk_pressure',
@@ -279,12 +285,12 @@
             'constants.eta_S': '_named.sophian_drag',
             'cosmology.eta_S': '_named.sophian_drag',
             'mechanical.sophian_drag': '_named.sophian_drag',
-            // 9. Demiurgic Coupling (κ_Δ = k_gimel ≈ 12.318) - Gate 46
+            // 9. Demiurgic Coupling (κ_Δ = k_gimel ≈ 12.318 at the off-path seed b3 = 24; CALIBRATED) - Gate 46
             'constants.demiurgic_coupling': '_named.demiurgic_coupling',
             'constants.kappa_Delta': '_named.demiurgic_coupling',
             'constants.k_gimel': '_named.demiurgic_coupling',
             'mechanical.demiurgic_coupling': '_named.demiurgic_coupling',
-            // 10. Tzimtzum Pressure (σ_T = 23/24) - Gate 70
+            // 10. Tzimtzum Pressure (σ_T = 23/24, frozen at the off-path seed b3 = 24) - Gate 70
             'constants.tzimtzum_pressure': '_named.tzimtzum_pressure',
             'constants.sigma_T': '_named.tzimtzum_pressure',
             'cosmology.sigma_T': '_named.tzimtzum_pressure',
@@ -345,10 +351,10 @@
             'kk_m1_TeV': 5.0,                  // KK graviton mass prediction
             'kk_hl_lhc': '5σ discovery potential',
             'BR_epi0': 0.45,                   // Proton decay branching ratio
-            'bulk_signature': '(24,2)',        // 26D = 24 + 2 signature (topological)
-            'n_gen': 3,                        // chi_eff / 48 = 144 / 48 = 3 (topological)
+            'bulk_signature': '(24,2)',        // 26D bulk: 24 space directions + 2 times, one per 13D shadow
+            'n_gen': 3,                        // n_gen = b2/4 = 12/4 = 3 (the number of singular involutions)
             'phi': 1.6180339887,               // Golden ratio (mathematical constant)
-            'H0_local': 71.55,                 // H0 = (288/4) - (163/144) + 0.6819 (O'Dowd formula)
+            'H0_local': 71.55,                 // H0 = (288/4) - (163/144) + 0.6819 (O'Dowd formula), calibrated at the off-path seed b3 = 24
             // certificates_total: removed - now loaded dynamically from GATES_CERTIFICATES.json via _getDynamicValue()
             'D_observable': 4,                 // Observable spacetime dimensions (topological)
         },
@@ -451,29 +457,31 @@
             return this._defaultNamedConstants[key] ?? null;
         },
 
-        // Default values (used if named_constants.json fails to load)
+        // Default values (used if named_constants.json fails to load).
+        // These are DISPLAY fallbacks only; the live values come from
+        // named_constants.json / parameters.json.
         _defaultNamedConstants: {
             // === TOPOLOGICAL INVARIANTS ===
-            'b3': 24,
-            'chi_eff': 144,
-            'roots': 288,
-            'visible': 125,
-            'sterile': 163,
+            'b3': 43,           // adopted seed: (b2, b3) = (12, 43); 24 is the off-path seed
+            'chi_eff': 144,     // the K3 reading: 2 x sum chi(K3) = 48n = 144 (not the Euler characteristic of Y7, which is 0)
+            'roots': 288,       // root counts calibrated at the off-path seed b3 = 24
+            'visible': 125,     // calibrated at the off-path seed b3 = 24
+            'sterile': 163,     // 288 - 125, calibrated at the off-path seed b3 = 24
             // === THE SACRED HEPTAGON (7 Intellectual Anchors) ===
             'watts_constant': 1.0,                    // Ω_W: Observer Unity
-            'reid_invariant': 0.006944444444444444,   // χ_R: 1/144 Sounding Board
+            'reid_invariant': 0.006944444444444444,   // χ_R: 1/144 = 1/χ_eff Sounding Board
             'weinstein_scale': 12.0,                  // κ_E: Spinor Connection
-            'hossenfelder_root': 4.898979485566356,   // λ_S: √24 Hidden Root
-            'odowd_bulk_pressure': 163,               // P_O: Bulk Pressure
+            'hossenfelder_root': 4.898979485566356,   // λ_S: √24 Hidden Root, calibrated at the off-path seed b3 = 24
+            'odowd_bulk_pressure': 163,               // P_O: Bulk Pressure, calibrated at the off-path seed b3 = 24
             'penrose_hameroff_bridge': 13,            // Φ_PH: Fibonacci Bridge
             'christ_constant': 153,                   // Λ_JC: Logos Potential
             // === THE MECHANICAL TRIAD (Gates 64, 46, 70) ===
             'sophian_drag': 0.6819,                   // η_S: H0 Friction
-            'demiurgic_coupling': 12.31830988618379,  // κ_Δ: Mass-Energy Gearbox
-            'tzimtzum_pressure': 0.9583333333333334,  // σ_T: Void Seal (23/24)
+            'demiurgic_coupling': 12.31830988618379,  // κ_Δ: k_gimel = b3/2 + 1/π at the off-path seed b3 = 24 (CALIBRATED)
+            'tzimtzum_pressure': 0.9583333333333334,  // σ_T: Void Seal (23/24), frozen at the off-path seed b3 = 24
             // === DERIVED VALUES ===
-            'hubble_constant': 71.55,                 // H0 = (288/4) - (163/144) + η_S
-            'dark_energy_w0': -0.9583333333333334,    // w0 = -σ_T
+            'hubble_constant': 71.55,                 // H0 = (288/4) - (163/144) + η_S, calibrated at the off-path seed b3 = 24
+            'dark_energy_w0': -0.9583333333333334,    // w0 = -σ_T = -23/24, frozen at the off-path seed b3 = 24
             'parity_product': 144,                    // CHI = Ω_W / χ_R
             // === QED CONSTANTS ===
             'alpha_inverse': 137.04748733776924,      // 1/α fine structure (from CODATA)

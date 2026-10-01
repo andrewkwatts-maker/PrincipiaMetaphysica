@@ -28,16 +28,16 @@
         value: 26,
         title: 'Bulk Dimension',
         symbol: 'D',
-        shortDescription: 'Bosonic string critical dimension',
-        longDescription: 'The full bulk spacetime has 26 dimensions with signature (24,2), incorporating two timelike dimensions for two-time physics.',
+        shortDescription: '26D bulk: 24 space directions and 2 times',
+        longDescription: 'The full bulk spacetime has 26 dimensions with signature (24,2): 24 space directions and 2 times, one per 13D (12,1) shadow. The 26D bulk is a postulate of the model.',
         unit: 'dimensions',
         formula: 'D = 26',
         formulaHtml: 'D = 26',
         category: 'fundamental',
         derivedFrom: ['virasoro_anomaly'],
         derivationSteps: [
-            'Virasoro anomaly cancellation requires D = 26 for bosonic strings',
-            'This gives signature (24,2) with 24 spacelike and 2 timelike dimensions'
+            'RETIRED (signature ruling 2026-08-31): "26 = the critical dimension" is withdrawn; the two-time critical dimension is 27-28',
+            'Postulate: signature (24,2), with 24 space directions and 2 times, one per 13D shadow'
         ],
         references: ['Polchinski Vol 1', 'Bars 2001'],
         simulationFile: 'config.py'
@@ -61,12 +61,12 @@
         value: 144,
         title: 'Effective Index',
         symbol: 'χ_eff',
-        shortDescription: 'Effective index (open ruling); not the Euler characteristic of Y₇, which is 0',
-        longDescription: 'χ_eff = 144 is an effective index whose meaning is an open ruling. It is not the Euler characteristic of Y₇ (0 for every closed odd-dimensional manifold). On the unruled K3 reading, χ_eff = 2 × Σ χ(K3) = 48n, with n = 3 singular involutions.',
-        formula: 'χ_eff = 48n = 144 (unruled K3 reading)',
-        formulaHtml: 'χ<sub>eff</sub> = 48n = 144 (unruled K3 reading)',
+        shortDescription: 'Effective index on the K3 reading: χ_eff = 2 Σ χ(K3) = 48n; not the Euler characteristic of Y₇, which is 0',
+        longDescription: 'χ_eff = 144 is read as 2 × Σ χ(K3) = 48n: the Kummer K3 surfaces transverse to the n = 3 singular involutions, counted once per shadow (the K3 reading, adopted). It is not the Euler characteristic of Y₇ (0 for every closed odd-dimensional manifold).',
+        formula: 'χ_eff = 2 Σ χ(K3) = 48n = 144 (the K3 reading)',
+        formulaHtml: 'χ<sub>eff</sub> = 2 Σ χ(K3) = 48n = 144 (the K3 reading)',
         category: 'open',
-        derivedFrom: ['K3 reading (unruled)'],
+        derivedFrom: ['K3 reading (adopted)'],
         references: ['Joyce, J. Differential Geom. 43 (1996) 329-375'],
         simulationFile: 'config.py'
     });
@@ -77,18 +77,18 @@
         title: 'Generation Count',
         symbol: 'n_gen',
         shortDescription: 'Number of fermion generations',
-        longDescription: 'The number of fermion generations is derived geometrically from the Euler characteristic: n_gen = χ_eff/48 = 144/48 = 3.',
-        formula: 'n_gen = χ_eff/48 = 3',
-        formulaHtml: 'n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3',
+        longDescription: 'The ruled count is n_gen = b₂/4 = 12/4 = 3, the number of singular involutions of Y₇. On the K3 reading χ_eff = 48n, so n_gen = χ_eff/48 = 144/48 = 3 restates the same count; it is not a second derivation.',
+        formula: 'n_gen = b₂/4 = χ_eff/48 = 3',
+        formulaHtml: 'n<sub>gen</sub> = b<sub>2</sub>/4 = χ<sub>eff</sub>/48 = 3',
         experimentalValue: 3,
         experimentalSource: 'SM observation',
         agreementSigma: 0,
         category: 'derived',
         derivedFrom: ['chi_eff'],
         derivationSteps: [
-            'Start with χ_eff = 144 from TCS G₂ manifold',
-            'Apply index theorem: n_gen = χ_eff/48',
-            'Result: n_gen = 144/48 = 3 generations'
+            'Ruled route: n_gen = b₂/4 = 12/4 = 3, the number of singular involutions of Y₇',
+            'K3 reading: χ_eff = 2 Σ χ(K3) = 48n = 144, so χ_eff/48 = n restates the same count (not an index theorem for chirality, which is OPEN)',
+            'Result: n_gen = 3 generations'
         ],
         references: ['Acharya-Witten 2001'],
         simulationFile: 'config.py'
@@ -130,7 +130,7 @@
         title: 'Higgs Mass',
         symbol: 'm_H',
         shortDescription: 'Higgs boson mass prediction',
-        longDescription: 'The Higgs mass is constrained by the complex structure modulus Re(T) = 7.086 through the geometric formula linking moduli to masses.',
+        longDescription: 'CALIBRATED: the Higgs mass formula uses the modulus Re(T) = 7.086, calibrated at the off-path seed b₃ = 24 (racetrack). Re(T) is an OPEN modulus on the adopted path: Y₇ fixes no Re(T) at leading order.',
         unit: 'GeV',
         formula: 'm_H = f(Re(T))',
         experimentalValue: 125.25,
@@ -149,7 +149,7 @@
         title: 'Electroweak VEV',
         symbol: 'v',
         shortDescription: 'Electroweak vacuum expectation value',
-        longDescription: 'The electroweak VEV emerges from the Pneuma field dynamics through the racetrack potential stabilization.',
+        longDescription: 'CALIBRATED at the off-path seed b₃ = 24: the model value of the electroweak VEV is a fit made at the retired seed (the k_ℷ layer), not a derivation. No racetrack exists on Y₇.',
         unit: 'GeV',
         formula: 'v = v_Higgs/√2 = 246.22 GeV',
         formulaHtml: 'v = v<sub>Higgs</sub>/√2 = 246.22 GeV',
@@ -170,8 +170,8 @@
         value: -0.9583,
         title: 'Dark Energy Equation of State',
         symbol: 'w₀',
-        shortDescription: 'Present-day dark energy EoS (v16.2 thawing)',
-        longDescription: 'The dark energy equation of state w₀ = -23/24 ≈ -0.9583 is derived from G2 manifold topology (TCS #187) with b₃ = 24 associative 3-cycles via thawing quintessence.',
+        shortDescription: 'Present-day dark energy EoS (thawing ansatz, frozen at the off-path seed)',
+        longDescription: 'OFF-PATH (frozen at the off-path seed b₃ = 24): w₀ = -23/24 ≈ -0.9583 is w₀ = -1 + 1/b₃ evaluated at the retired seed of the off-path TCS reading. The formula has no derivation. The DESI DR2 w₀w_aCDM headline (BAO+CMB+DESY5) is w₀ = -0.752 ± 0.057, and -23/24 sits more than 3σ from it. Dark energy is OPEN on the adopted path.',
         formula: 'w₀ = -1 + 1/b₃ = -23/24',
         formulaHtml: 'w<sub>0</sub> = -1 + 1/b<sub>3</sub> = -23/24 ≈ -0.9583',
         experimentalValue: -0.957,
@@ -183,10 +183,10 @@
         testableBy: 'DESI, Euclid, Roman',
         derivedFrom: ['g2_topology', 'b3_cycles'],
         derivationSteps: [
-            'Start with G2 manifold TCS #187 topology: b₂ = 4, b₃ = 24',
-            'Thawing quintessence deviates from Λ by 1/b₃',
-            'Apply formula: w₀ = -1 + 1/b₃ = -1 + 1/24',
-            'Result: w₀ = -23/24 ≈ -0.9583'
+            'OFF-PATH: evaluated at the retired seed of the off-path TCS reading; the adopted Y₇ has (b₂, b₃) = (12, 43)',
+            'Thawing quintessence ansatz: deviation from Λ by 1/b₃ (no derivation)',
+            'At the off-path seed: w₀ = -1 + 1/24',
+            'Result: w₀ = -23/24 ≈ -0.9583, frozen at the off-path seed'
         ],
         simulationFile: 'dark_energy_thawing_v16_2.py'
     });
@@ -196,7 +196,7 @@
         value: -0.204,
         title: 'Dark Energy Evolution',
         symbol: 'w_a',
-        shortDescription: 'Dark energy time evolution parameter (v16.2)',
+        shortDescription: 'Dark energy time evolution parameter (calibrated at the off-path seed b₃ = 24)',
         formula: 'w_a = -1/√b₃ = -1/√24',
         formulaHtml: 'w<sub>a</sub> = -1/√b<sub>3</sub> = -1/√24 ≈ -0.204',
         experimentalValue: -0.99,
@@ -232,7 +232,7 @@
         title: 'Atmospheric Mixing Angle',
         symbol: 'θ₂₃',
         shortDescription: 'PMNS atmospheric mixing angle (maximal)',
-        longDescription: 'The atmospheric mixing angle is exactly maximal (45°) due to Z₂ symmetry in the G₂ holonomy structure.',
+        longDescription: 'Model construct: a Z₂ symmetry sets the atmospheric mixing angle to maximal (45°). Flavour is OPEN on the adopted path: it needs a chiral sector.',
         unit: 'degrees',
         formula: 'θ₂₃ = π/4 = 45°',
         formulaHtml: 'θ<sub>23</sub> = π/4 = 45°',
@@ -322,9 +322,9 @@
         title: 'GUT Scale',
         symbol: 'M_GUT',
         shortDescription: 'Grand Unified Theory scale',
-        longDescription: 'The GUT scale is derived geometrically from TCS G₂ torsion logarithms, not phenomenological fit.',
+        longDescription: 'CALIBRATED: the GUT scale formula uses torsion inputs introduced on the retired TCS model (off-path) and a modulus calibrated at the off-path seed b₃ = 24. It is not derived on the adopted path.',
         unit: 'GeV',
-        formula: 'M_GUT from TCS torsion',
+        formula: 'M_GUT from torsion inputs (off-path TCS model)',
         category: 'derived',
         simulationFile: 'g2_landscape_scanner.py'
     });
@@ -377,7 +377,7 @@
     });
 
     // ========================================================================
-    // MULTI-SECTOR v16.0
+    // MULTI-SECTOR
     // ========================================================================
 
     PM_PARAMS.register({
@@ -386,7 +386,7 @@
         title: 'Modulation Width',
         symbol: 'σ',
         shortDescription: 'Sector blending width from G₂ wavefunction overlap',
-        longDescription: 'The modulation width σ ≈ 0.25 is geometrically derived from the second moment of chiral zero-mode wavefunctions on the G₂ manifold.',
+        longDescription: 'The modulation width σ ≈ 0.25 comes from the second moment of zero-mode wavefunctions on the G₂ manifold, scaled by b₃/24; it is calibrated at the off-path seed b₃ = 24.',
         formula: 'σ = √⟨(r - ⟨r⟩)²⟩_{|Ψ|²} × √(3/7) × (b₃/24) × 1.2',
         formulaHtml: 'σ = √⟨(r - ⟨r⟩)<sup>2</sup>⟩<sub>|Ψ|²</sub> × √(3/7) × (b<sub>3</sub>/24) × 1.2',
         category: 'derived',
@@ -400,7 +400,7 @@
         title: 'DM/Baryon Ratio',
         symbol: 'Ω_DM/Ω_b',
         shortDescription: 'Dark matter to baryon density ratio (predicted)',
-        longDescription: 'The DM/baryon ratio ≈ 5.8 emerges as a geometric prediction from the G₂ wavefunction overlap, not phenomenological tuning.',
+        longDescription: 'The DM/baryon ratio ≈ 5.8 follows from the modulation width, which is calibrated at the off-path seed b₃ = 24.',
         experimentalValue: 5.4,
         experimentalUncertainty: 0.5,
         experimentalSource: 'Planck 2018',

@@ -63,7 +63,7 @@ const PM_VISUALIZATION_MANIFEST = {
             title: "The G2 Holonomy",
             anchor_text: "associative 3-form calibration and the co-associative 4-form residue",
             visualization: "g2_manifold_holonomy",
-            caption: "Figure 2: Geometric representation of the G2 manifold, highlighting the associative cycles (b3=24) that determine gauge coupling residues."
+            caption: "Figure 2: Geometric representation of the G2 manifold. (Legacy figure drawn at the off-path seed b3 = 24; the adopted Y7 has (b2, b3) = (12, 43).)"
         },
         {
             section: "4.2",
@@ -118,7 +118,7 @@ const PM_VISUALIZATION_MANIFEST = {
             title: "G2 Holonomy Manifold",
             section: "2.1",
             simulation: "v16/geometric/g2_geometry_v16_0.py",
-            description: "The 7-dimensional G2 manifold with b3=24 associative 3-cycles",
+            description: "The 7-dimensional G2 manifold (legacy figure drawn at the off-path seed b3 = 24; the adopted Y7 has b3 = 43)",
             status: "KEEP",
             v16_2_notes: "Core foundation - unchanged from v16.1"
         },
@@ -154,7 +154,7 @@ const PM_VISUALIZATION_MANIFEST = {
             simulation: "v16/cosmology/dark_energy_thawing_v16_2.py",
             description: "w0-wa parameter space with Ricci flow z=2.0 anchor",
             status: "NEW",
-            v16_2_notes: "Essential for DESI 2025 alignment. w0=-0.9583 from b3=24 thawing correction."
+            v16_2_notes: "w0 = -0.9583 is the thawing formula frozen at the off-path seed b3 = 24; it sits more than 3 sigma from the DESI DR2 w0waCDM headline."
         },
 
         "ricci_flow_evolution": {

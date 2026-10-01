@@ -2,17 +2,17 @@
   "schema": "free_variables/1",
   "generator": "metaphysica.simulations.core.free_variable_ledger",
   "what_this_counts": "Quantities this framework did not derive, swept from the tree. free_variable_count is len(rows) -- no literal anywhere in this file states it.",
-  "free_variable_count": 67,
-  "free_variable_count_excluding_permitted": 66,
+  "free_variable_count": 68,
+  "free_variable_count_excluding_permitted": 67,
   "count_by_role": {
     "PERMITTED_OR_SCALE": 1,
-    "COMPARISON_ONLY": 17,
+    "COMPARISON_ONLY": 18,
     "LOAD_BEARING_INPUT": 11,
     "UNRESOLVED": 38
   },
   "count_by_status": {
     "ANSATZ": 8,
-    "CALIBRATED": 16,
+    "CALIBRATED": 17,
     "FITTED": 21,
     "FITTED_COMPOSITE": 1,
     "MEASURED": 21
@@ -101,6 +101,25 @@
       ],
       "closing_derivation": "Either a derivation of ckm.V_ub_triality from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
       "description": "u-b mixing from third power of golden angle. V_ub = V_us^3 * xi_t ~ 0.004.",
+      "notes": []
+    },
+    {
+      "name": "cosmology.eta_baryon_geometric",
+      "value": 6.846485445932354e-10,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:663",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\core\\observable_groups.py:48",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in OBSERVABLE_GROUPS: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of cosmology.eta_baryon_geometric from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "CALIBRATED: baryon asymmetry from G2 cycle structure + CP violation via leptogenesis at 4-brane intersections, with Re(T) = 7.086 tuned to the observed eta_b; the worked agreement (6.05e-10, 1.6 sigma) was at the off-path seed b3 = 24.",
       "notes": []
     },
     {
@@ -409,7 +428,7 @@
     {
       "name": "fermion.n_generations",
       "value": 3,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\fermion_generations.py:827",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\fermion_generations.py:871",
       "status": "ANSATZ",
       "source_kind": "PARAMETER_CALL",
       "role": "LOAD_BEARING_INPUT",
@@ -464,7 +483,7 @@
           "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:119",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:127",
           "function": "required_inputs",
           "kind": "DECLARED_AS_INPUT",
           "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
@@ -507,7 +526,7 @@
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:468",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:476",
           "function": "run",
           "kind": "READ_INTO_REGISTERED_OUTPUT",
           "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
@@ -562,7 +581,7 @@
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:465",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:473",
           "function": "run",
           "kind": "READ_INTO_REGISTERED_OUTPUT",
           "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
@@ -629,7 +648,7 @@
           "detail": "listed in OBSERVABLE_GROUPS: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:466",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:474",
           "function": "run",
           "kind": "READ_INTO_REGISTERED_OUTPUT",
           "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
@@ -696,7 +715,7 @@
           "detail": "listed in groups: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:467",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\predictions_aggregator.py:475",
           "function": "run",
           "kind": "READ_INTO_REGISTERED_OUTPUT",
           "detail": "get_param(...) -> summary, which reaches a value position in a returned registry dict"
@@ -788,7 +807,7 @@
           "detail": "get(...) -> H0_planck, never reaches a returned registry value"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\validation\\CERTIFICATES.py:683",
+          "location": "src\\metaphysica\\simulations\\PM\\validation\\CERTIFICATES.py:740",
           "function": "cert_cosmo_015_h0",
           "kind": "READ_FOR_COMPARISON",
           "detail": "_get_param(...) -> h0, never reaches a returned registry value"
@@ -894,13 +913,13 @@
     {
       "name": "abstract.vev_coefficient",
       "value": 1.5859,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:745",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:650",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "PERMITTED_OR_SCALE",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:745",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:650",
           "function": "<own description>",
           "kind": "SELF_DECLARED_SCALE_SETTING",
           "detail": "the row's own description declares it scale-setting"
@@ -1005,7 +1024,7 @@
     {
       "name": "abstract.alpha_gut_coefficient",
       "value": 0.031831,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:754",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:659",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1017,7 +1036,7 @@
     {
       "name": "abstract.fitted_pmns",
       "value": 2,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:736",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:641",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1068,7 +1087,7 @@
     {
       "name": "cosmology.delta_b3_asymmetry",
       "value": 0.12,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:341",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:358",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1077,13 +1096,13 @@
       "description": "",
       "notes": [
         "Registered directly with registry.set_param, bypassing the Parameter(...) declaration surface. A sweep of parameter declarations alone does not see it.",
-        "ALSO DECLARED AT src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:680 (status CALIBRATED)"
+        "ALSO DECLARED AT src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:708 (status CALIBRATED)"
       ]
     },
     {
       "name": "cosmology.racetrack_Re_T",
       "value": 7.086,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:617",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:641",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1255,7 +1274,7 @@
     {
       "name": "cosmology.M_Pl_4D",
       "value": 1.2208194772e+19,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:788",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:842",
       "status": "MEASURED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",

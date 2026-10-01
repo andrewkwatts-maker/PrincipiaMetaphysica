@@ -90,7 +90,7 @@
       "path": "abstract.calibration_inputs",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(validation.free_variable_count)': name 'validation' is not defined",
-      "registered": 67.0,
+      "registered": 68.0,
       "eml_description": "EML: eml_scalar(validation.free_variable_count) \u2014 measured by free_variable_ledger, not asserted"
     },
     {
@@ -313,7 +313,7 @@
       "evaluated": 0.7696654124932398,
       "registered": 0.8640535019525616,
       "rel_error": 0.10923870946188685,
-      "eml_description": "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) \u2014 W_np\u2081 = exp(\u22122\u03c0/24) dominant condensate from N\u2081=b\u2083=24 cycles",
+      "eml_description": "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) \u2014 W_np\u2081 = exp(\u22122\u03c0/24), the dominant condensate at the off-path seed N\u2081 = 24",
       "diagnostic": "rel_err=10.92%"
     },
     {
@@ -322,7 +322,7 @@
       "evaluated": 0.7609543042679819,
       "registered": 0.861052629702625,
       "rel_error": 0.11625111169942447,
-      "eml_description": "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)))) \u2014 W_np\u2082 = exp(\u22122\u03c0/23) sub-dominant condensate from N\u2082=b\u2083\u22121=23 cycles",
+      "eml_description": "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)))) \u2014 W_np\u2082 = exp(\u22122\u03c0/23), the sub-dominant condensate at the off-path seed N\u2082 = 23",
       "diagnostic": "rel_err=11.63%"
     },
     {
@@ -356,7 +356,7 @@
       "evaluated": 1.003485120591262,
       "registered": 1.0034851205912616,
       "rel_error": 4.425468806038715e-16,
-      "eml_description": "EML: ops.div(eml_vec('algebra.gaugino_W_np_1'), eml_vec('algebra.gaugino_W_np_2')) \u2014 ratio W_np\u2081/W_np\u2082 = exp(\u22122\u03c0/24)/exp(\u22122\u03c0/23) of dominant to sub-dominant condensates"
+      "eml_description": "EML: ops.div(eml_vec('algebra.gaugino_W_np_1'), eml_vec('algebra.gaugino_W_np_2')) \u2014 ratio W_np\u2081/W_np\u2082 = exp(\u22122\u03c0/24)/exp(\u22122\u03c0/23) of dominant to sub-dominant condensates at the off-path seed"
     },
     {
       "path": "algebra.gaugino_lambda_eff",
@@ -373,7 +373,7 @@
       "evaluated": 3.739012301981763,
       "registered": 6.763460927095619,
       "rel_error": 0.447174702081501,
-      "eml_description": "EML: ops.div(ops.log(ops.div(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))), ops.sub(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) \u2014 T_min = ln(a\u2082/a\u2081)/(a\u2082\u2212a\u2081) with a\u1d62 = 2\u03c0/N\u1d62, N\u2081=24, N\u2082=23",
+      "eml_description": "EML: ops.div(ops.log(ops.div(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))), ops.sub(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)))) \u2014 T_min = ln(a\u2082/a\u2081)/(a\u2082\u2212a\u2081) with a\u1d62 = 2\u03c0/N\u1d62, N\u2081=24, N\u2082=23 (the off-path seed)",
       "diagnostic": "rel_err=44.72%"
     },
     {
@@ -1008,7 +1008,7 @@
       "evaluated": 12.576152,
       "registered": 12.576152,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.add(eml_scalar(12.0), ops.mul(eml_scalar(0.5), ops.add(eml_scalar(0.576152), eml_scalar(0.576152)))) \u2014 D_eff = 12 + (Shadow_aleph + Shadow_heth)/2 from TCS G2 shadow fractions"
+      "eml_description": "EML: ops.add(eml_scalar(12.0), ops.mul(eml_scalar(0.5), ops.add(eml_scalar(0.576152), eml_scalar(0.576152)))) \u2014 D_eff = 12 + (Shadow_aleph + Shadow_heth)/2; the shadow fractions were attributed to a TCS G2 manifold, which is off-path"
     },
     {
       "path": "cosmology.H0_early",
@@ -1171,7 +1171,7 @@
       "evaluated": 1.826250000000009e+17,
       "registered": 1.82625e+17,
       "rel_error": 4.906228610540726e-15,
-      "eml_description": "EML: ops.mul(eml_scalar(0.075), eml_vec('constants.M_PLANCK')) \u2014 \u27e8\u03c3\u27e9 = 0.075 \u00d7 M_Pl, VEV from racetrack superpotential minimum at T_min=1.4885. Qualified: M_PLANCK is ambiguous (reduced 2.435e18 vs codata full 1.22089e19); run() reads constants.M_PLANCK"
+      "eml_description": "EML: ops.mul(eml_scalar(0.075), eml_vec('constants.M_PLANCK')) \u2014 \u27e8\u03c3\u27e9 = 0.075 \u00d7 M_Pl, VEV from racetrack superpotential minimum at T_min=1.4885 (calibrated at the off-path seed b3 = 24; no gaugino racetrack on Y_7). Qualified: M_PLANCK is ambiguous (reduced 2.435e18 vs codata full 1.22089e19); run() reads constants.M_PLANCK"
     },
     {
       "path": "cosmology.c_accuracy_percent",
@@ -1305,7 +1305,7 @@
       "evaluated": 5.310344827586203e-07,
       "registered": 5.310344827586207e-07,
       "rel_error": 7.975310217654126e-16,
-      "eml_description": "EML: ops.div(eml_scalar(3.08e-5), ops.mul(eml_scalar(2.0), ops.sub(eml_vec('topology.elder_kads'), eml_scalar(14.0)))) \u2014 k_bary = J / N_eff with N_eff = 2(b3 - 14) = 20. J is the module's own literal 3.08e-5 (PDG 2024); it is NOT pdg.J_ckm (3.12e-5) nor the framework's computed ckm.jarlskog_invariant (2.915e-5), and the three do not agree. The former string named bare J_jarlskog, which is not a registry path."
+      "eml_description": "EML: ops.div(eml_scalar(3.08e-5), ops.mul(eml_scalar(2.0), ops.sub(eml_vec('topology.elder_kads'), eml_scalar(14.0)))) \u2014 k_bary = J / N_eff with N_eff = 2(b3 - 14) (20 at the off-path seed b3 = 24). J is the module's own literal 3.08e-5 (PDG 2024); it is NOT pdg.J_ckm (3.12e-5) nor the framework's computed ckm.jarlskog_invariant (2.915e-5), and the three do not agree. The former string named bare J_jarlskog, which is not a registry path."
     },
     {
       "path": "cosmology.m_phi_over_H0",
@@ -1523,7 +1523,7 @@
       "evaluated": 179077056.97204658,
       "registered": 179077056.9720464,
       "rel_error": 9.985306736087605e-16,
-      "eml_description": "EML: ops.mul(eml_vec('C_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_scalar(1e7), eml_vec('P_3D')))))) \u2014 c = C_geo \u00d7 S_f \u00d7 B_v \u00d7 chi_gc \u00d7 10\u2077 \u00d7 P_3D from G\u2082 KK reduction; yields 299,792,423 m/s (99.99999% of CODATA)"
+      "eml_description": "EML: ops.mul(eml_vec('C_geo'), ops.mul(eml_vec('S_f'), ops.mul(eml_vec('B_v'), ops.mul(eml_vec('chi_gc'), ops.mul(eml_scalar(1e7), eml_vec('P_3D')))))) \u2014 c = C_geo \u00d7 S_f \u00d7 B_v \u00d7 chi_gc \u00d7 10\u2077 \u00d7 P_3D from G\u2082 KK reduction; yields 299,792,423 m/s (99.99999% of CODATA) only at the off-path seed b\u2083 = 24, where it was fitted"
     },
     {
       "path": "cosmology.sterile_ratio",
@@ -3551,7 +3551,7 @@
       "evaluated": 8.000000000000002,
       "registered": 14.333333333333334,
       "rel_error": 0.44186046511627897,
-      "eml_description": "EML: ops.div(eml_scalar(24.0), eml_scalar(3.0)) \u2014 8 associative 3-cycles per generation (b\u2083=24 / 3 generations)",
+      "eml_description": "EML: ops.div(eml_scalar(24.0), eml_scalar(3.0)) \u2014 8 associative 3-cycles per generation at the off-path seed (b\u2083 = 24 / 3 generations)",
       "diagnostic": "rel_err=44.19%"
     },
     {
@@ -3560,7 +3560,7 @@
       "evaluated": -28.03677663601948,
       "registered": -28.036776636019468,
       "rel_error": 3.8014858750591013e-16,
-      "eml_description": "EML: ops.neg(ops.mul(ops.div(eml_scalar(360.0), ops.div(eml_vec('topology.elder_kads'), eml_vec('topology.n_gen'))), ops.div(eml_vec('topology.mephorash_chi'), ops.mul(eml_vec('topology.elder_kads'), eml_vec('topology.n_gen'))))) \u2014 \u03b4_CP = \u2212(2\u03c0/(b\u2083/n_gen)) \u00d7 \u03c7/(b\u2083\u00b7n_gen) = \u2212\u03c0/2 = \u221290\u00b0"
+      "eml_description": "EML: ops.neg(ops.mul(ops.div(eml_scalar(360.0), ops.div(eml_vec('topology.elder_kads'), eml_vec('topology.n_gen'))), ops.div(eml_vec('topology.mephorash_chi'), ops.mul(eml_vec('topology.elder_kads'), eml_vec('topology.n_gen'))))) \u2014 \u03b4_CP = \u2212(2\u03c0/(b\u2083/n_gen)) \u00d7 \u03c7/(b\u2083\u00b7n_gen) = \u2212\u03c0/2 = \u221290\u00b0 at the off-path seed b\u2083 = 24"
     },
     {
       "path": "neutrino.delta_CP_pred",
@@ -3655,7 +3655,7 @@
       "evaluated": 0.7853981633974487,
       "registered": 0.43836176561718043,
       "rel_error": 0.7916666666666677,
-      "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(8.0)) \u2014 \u03c6_assoc = 2\u03c0 / (b\u2083/n_gen) = 2\u03c0/8 = \u03c0/4 elementary holonomy angle",
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(8.0)) \u2014 \u03c6_assoc = 2\u03c0 / (b\u2083/n_gen) = 2\u03c0/8 = \u03c0/4 elementary holonomy angle at the off-path seed",
       "diagnostic": "rel_err=79.17%"
     },
     {
@@ -4042,7 +4042,7 @@
       "evaluated": 2.029166666666667e+17,
       "registered": 2.0291666666666666e+17,
       "rel_error": 1.5770020533880904e-16,
-      "eml_description": "EML: ops.div(eml_vec('constants.M_PLANCK'), ops.sqrt(eml_vec('geometry.chi_eff_total'))) \u2014 REDUCED Planck mass / sqrt(chi_eff_total = 144) for TCS G2 #187. Both operands are qualified: M_PLANCK is claimed by two registry entries a factor sqrt(8 pi) apart, and chi_eff by two a factor 2 apart"
+      "eml_description": "EML: ops.div(eml_vec('constants.M_PLANCK'), ops.sqrt(eml_vec('geometry.chi_eff_total'))) \u2014 REDUCED Planck mass / sqrt(chi_eff_total = 144, the K3 reading 48 n at n = 3). Both operands are qualified: M_PLANCK is claimed by two registry entries a factor sqrt(8 pi) apart, and chi_eff by two a factor 2 apart"
     },
     {
       "path": "pneuma.n_bridge_pairs",
@@ -4050,7 +4050,7 @@
       "evaluated": 21.499999999999996,
       "registered": 21.0,
       "rel_error": 0.02380952380952364,
-      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)) \u2014 n = b3/2 = 12 bridge pairs from 12\u00d7(2,0) paired bridge system in M\u00b2\u2076",
+      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(2.0)) \u2014 n = b3/2, which is 12 only at the off-path seed; the object is the bulk's 12 bridge pairs (12\u00d7(2,0) in M\u00b2\u2076)",
       "diagnostic": "rel_err=2.38%"
     },
     {
@@ -4068,7 +4068,7 @@
       "evaluated": 6.437241935712391e-07,
       "registered": 6.4372419357118e-07,
       "rel_error": 9.177928787051966e-14,
-      "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.pow(ops.sub(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev')))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), eml_scalar(2.0))), ops.mul(eml_scalar(2.0), ops.mul(ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev')))))))))) \u2014 V''(<Psi>) = 2 (W'')^2 + 2 W' W''' at the racetrack VEV, with A=1.0, B=1.03, a=2pi/24, b=2pi/23"
+      "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.pow(ops.sub(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev')))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), eml_scalar(2.0))), ops.mul(eml_scalar(2.0), ops.mul(ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev')))))))))) \u2014 V''(<Psi>) = 2 (W'')^2 + 2 W' W''' at the racetrack VEV, with A=1.0, B=1.03, a=2pi/24, b=2pi/23 (calibrated at the off-path seed)"
     },
     {
       "path": "pneuma.vev",
@@ -4084,7 +4084,7 @@
       "evaluated": 11409098006.449308,
       "registered": 424093.00207886304,
       "rel_error": 26901.349132202155,
-      "eml_description": "EML: ops.sqrt(ops.mul(ops.div(ops.mul(eml_scalar(1.22e19), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), eml_vec('topology.elder_kads'))))), ops.mul(eml_vec('geometry.chi_eff_sector'), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())))), ops.div(ops.mul(ops.mul(eml_scalar(1.22e19), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), eml_vec('topology.elder_kads'))))), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), ops.sub(eml_vec('topology.elder_kads'), ops.div(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads'))))))), ops.mul(eml_vec('geometry.chi_eff_sector'), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())))))) \u2014 f_a^ALP = sqrt(f_a_single * f_a_double), the geometric mean of the single- and double-exponential Face 3 racetrack branches, with T_3 = b3 k_gimel/(3 pi) and M_Pl = 1.22e19 GeV",
+      "eml_description": "EML: ops.sqrt(ops.mul(ops.div(ops.mul(eml_scalar(1.22e19), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), eml_vec('topology.elder_kads'))))), ops.mul(eml_vec('geometry.chi_eff_sector'), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())))), ops.div(ops.mul(ops.mul(eml_scalar(1.22e19), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), eml_vec('topology.elder_kads'))))), ops.exp(ops.neg(ops.div(ops.mul(ops.mul(eml_scalar(2.0), eml_pi()), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi()))), ops.sub(eml_vec('topology.elder_kads'), ops.div(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads'))))))), ops.mul(eml_vec('geometry.chi_eff_sector'), ops.div(ops.mul(eml_vec('topology.elder_kads'), eml_vec('geometry.k_gimel')), ops.mul(eml_scalar(3.0), eml_pi())))))) \u2014 f_a^ALP = sqrt(f_a_single * f_a_double), the geometric mean of the single- and double-exponential Face 3 racetrack branches, with T_3 = b3 k_gimel/(3 pi) and M_Pl = 1.22e19 GeV (CALIBRATED at the off-path seed b3 = 24)",
       "diagnostic": "rel_err=2690134.91%"
     },
     {
@@ -4117,7 +4117,7 @@
       "evaluated": 1.230447979627136e-06,
       "registered": 1.2304479796271353e-06,
       "rel_error": 5.162954638953803e-16,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('geometry.alpha_leak'), eml_vec('geometry.chi_eff_sector')), ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), eml_vec('portals.alp_decay_constant_gev'))) \u2014 g_agammagamma = alpha_leak * chi_eff_sector / (24 pi f_a^ALP); the per-sector 72, not the two-shadow 144"
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('geometry.alpha_leak'), eml_vec('geometry.chi_eff_sector')), ops.mul(ops.mul(eml_scalar(24.0), eml_pi()), eml_vec('portals.alp_decay_constant_gev'))) \u2014 g_agammagamma = alpha_leak * chi_eff_sector / (24 pi f_a^ALP); the per-sector 72, not the two-shadow 144 (K3 reading); the 24 is a literal, calibrated at the off-path seed b3 = 24"
     },
     {
       "path": "portals.alpha_leak_yukawa",
@@ -4125,7 +4125,7 @@
       "evaluated": 0.696819377482038,
       "registered": 0.6968193774820381,
       "rel_error": 1.5932723177661267e-16,
-      "eml_description": "EML: ops.sqrt(ops.mul(ops.mul(ops.mul(ops.inv(ops.sqrt(ops.div(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads')))), ops.div(ops.sub(eml_vec('topology.elder_kads'), eml_scalar(1.0)), eml_vec('topology.elder_kads'))), ops.sqrt(ops.div(eml_vec('geometry.chi_eff_sector'), ops.sub(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads'))))), ops.inv(ops.sqrt(eml_scalar(6.0))))) \u2014 y_as = sqrt( (1/sqrt(\u03c7_eff/b\u2083)) \u00b7 ((b\u2083\u22121)/b\u2083) \u00b7 sqrt(\u03c7_eff/(\u03c7_eff\u2212b\u2083)) \u00b7 1/sqrt(6) ) with \u03c7_eff = 72 per-shadow and b\u2083 = 24"
+      "eml_description": "EML: ops.sqrt(ops.mul(ops.mul(ops.mul(ops.inv(ops.sqrt(ops.div(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads')))), ops.div(ops.sub(eml_vec('topology.elder_kads'), eml_scalar(1.0)), eml_vec('topology.elder_kads'))), ops.sqrt(ops.div(eml_vec('geometry.chi_eff_sector'), ops.sub(eml_vec('geometry.chi_eff_sector'), eml_vec('topology.elder_kads'))))), ops.inv(ops.sqrt(eml_scalar(6.0))))) \u2014 y_as = sqrt( (1/sqrt(\u03c7_eff/b\u2083)) \u00b7 ((b\u2083\u22121)/b\u2083) \u00b7 sqrt(\u03c7_eff/(\u03c7_eff\u2212b\u2083)) \u00b7 1/sqrt(6) ) with \u03c7_eff = 72 per shadow (K3 reading), written at the off-path seed b\u2083 = 24; the module reads b\u2083 from the live seed"
     },
     {
       "path": "portals.dm_coupling_strength",
@@ -4724,7 +4724,7 @@
       "evaluated": 0.26179938779914946,
       "registered": 0.14612058853906015,
       "rel_error": 0.7916666666666669,
-      "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)) \u2014 KMS period 2\u03c0 divided by b\u2083=24 associative 3-cycles",
+      "eml_description": "EML: ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)) \u2014 KMS period 2\u03c0 divided by b\u2083 = 24 associative 3-cycles at the off-path seed",
       "diagnostic": "rel_err=79.17%"
     },
     {
@@ -4755,7 +4755,7 @@
       "evaluated": 4.0,
       "registered": 4.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(4) \u2014 K = h^{1,1} = 4 K3 matching fibres in TCS #187 gluing"
+      "eml_description": "EML: eml_scalar(4) \u2014 K = h^{1,1} = 4 K3 matching fibres in the off-path TCS #187 gluing"
     },
     {
       "path": "topology.T_OMEGA",
@@ -4780,7 +4780,7 @@
       "evaluated": 0.0,
       "registered": 1.0,
       "rel_error": 1.0,
-      "eml_description": "EML: ops.mul(ops.eq(ops.mod(eml_vec('b3'), eml_scalar(24.0)), eml_scalar(0.0)), ops.eq(eml_vec('vacuum_energy'), ops.neg(eml_scalar(1.0)))) \u2014 anomaly cancellation: b3 mod 24 = 0 AND E0 = -1",
+      "eml_description": "EML: ops.mul(ops.eq(ops.mod(eml_vec('b3'), eml_scalar(24.0)), eml_scalar(0.0)), ops.eq(eml_vec('vacuum_energy'), ops.neg(eml_scalar(1.0)))) \u2014 anomaly cancellation: n mod 24 = 0 AND E0 = -1 (the 'b3' leaf is the eta exponent n)",
       "diagnostic": "rel_err=100.00%"
     },
     {
@@ -4796,7 +4796,7 @@
       "evaluated": 24.0,
       "registered": 24.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(24.0) \u2014 b3=24 is the unique minimal solution to ops.eq(ops.mod(b3, 24), 0)"
+      "eml_description": "EML: eml_scalar(24.0) \u2014 n = 24 is the minimal solution of n = 0 (mod 24); it equalled b3 only at the off-path seed"
     },
     {
       "path": "topology.chi_y7",
@@ -4821,7 +4821,7 @@
       "evaluated": 0.12,
       "registered": 0.12,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(0.12) \u2014 d/R = 0.12 associative 3-cycle separation ratio for TCS #187; Yukawa suppression ~ ops.exp(ops.neg(ops.mul(eml_scalar(2.0), ops.mul(eml_pi(), d_over_R))))"
+      "eml_description": "EML: eml_scalar(0.12) \u2014 d/R = 0.12 associative 3-cycle separation ratio carried from the off-path TCS #187 model; Yukawa suppression ~ ops.exp(ops.neg(ops.mul(eml_scalar(2.0), ops.mul(eml_pi(), d_over_R))))"
     },
     {
       "path": "topology.dedekind_eta_phase",
@@ -4894,7 +4894,7 @@
       "evaluated": -12.0,
       "registered": -12.0,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.neg(ops.div(eml_scalar(24.0), eml_scalar(2.0))) \u2014 modular weight of \u03b7^(\u2212b3)"
+      "eml_description": "EML: ops.neg(ops.div(eml_scalar(24.0), eml_scalar(2.0))) \u2014 modular weight of \u03b7^(\u2212n) for n = 24"
     },
     {
       "path": "topology.n_gen",
@@ -5064,7 +5064,7 @@
       "evaluated": 24.0,
       "registered": 24.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(24.0) \u2014 transverse central charge = b\u2083 = 24 from G\u2082 Betti number (24 transverse modes)"
+      "eml_description": "EML: eml_scalar(24.0) \u2014 transverse central charge = 24, the bulk's 24 space directions (formerly read as b\u2083 = 24, the off-path seed)"
     },
     {
       "path": "unitary.central_charge",
@@ -5072,7 +5072,7 @@
       "evaluated": 19.0,
       "registered": 0.0,
       "rel_error": 19.0,
-      "eml_description": "EML: ops.add(ops.add(eml_vec('b3'), eml_scalar(2.0)), ops.neg(eml_scalar(26.0))) \u2014 central charge c = b\u2083 + 2 \u2212 26 = 0 (Weyl anomaly cancellation)",
+      "eml_description": "EML: ops.add(ops.add(eml_vec('b3'), eml_scalar(2.0)), ops.neg(eml_scalar(26.0))) \u2014 central charge c = transverse + 2 \u2212 26 = 0 (Weyl anomaly cancellation; the transverse term, named b\u2083, is the bulk's 24 space directions)",
       "diagnostic": "rel_err=1900.00%"
     },
     {
@@ -5172,7 +5172,7 @@
       "path": "validation.calibrated_count",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(validation.free_variable_count)': name 'validation' is not defined",
-      "registered": 67.0,
+      "registered": 68.0,
       "eml_description": "EML: eml_scalar(validation.free_variable_count) \u2014 measured by free_variable_ledger, not asserted"
     },
     {
@@ -5195,7 +5195,7 @@
       "path": "validation.free_variable_count",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(len(free_variables.rows))': name 'len' is not defined",
-      "registered": 67.0,
+      "registered": 68.0,
       "eml_description": "EML: eml_scalar(len(free_variables.rows)) \u2014 a count of swept rows, with no literal behind it"
     },
     {

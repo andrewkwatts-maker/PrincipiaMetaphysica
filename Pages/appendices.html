@@ -345,9 +345,11 @@
                 <div class="appendix-label">Appendix A</div>
                 <div class="appendix-title">Virasoro Anomaly Cancellation</div>
                 <div class="appendix-description">
-                    Derivation of the critical dimension $D = 26$ from BRST quantization of the bosonic string.
-                    Validates the v21 (24,1) two-time structure signature compatibility with Virasoro central charge cancellation
-                    and includes dual-shadow Euclidean bridge analysis.
+                    Standard result: the critical dimension $D = 26$ from BRST quantization of the one-time bosonic string.
+                    (The model's earlier claim that its 26D bulk <em>is</em> this critical dimension is withdrawn: the two-time
+                    critical dimension is 27&ndash;28.)
+                    Kept as history: earlier versions checked a (24,1) signature against Virasoro central charge cancellation,
+                    with a dual-shadow Euclidean bridge analysis.
                 </div>
                 <div class="appendix-actions">
                     <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-a')">
@@ -359,14 +361,14 @@
                     <h4>Key Results</h4>
                     <p>The Virasoro central charge calculation demonstrates:</p>
                     <ul>
-                        <li>Critical dimension $D = 26$ emerges from BRST cohomology requirements</li>
-                        <li>The v21 (24,1) two-time structure signature is compatible with conformal anomaly cancellation</li>
-                        <li>The dual-shadow Euclidean bridge structure ensures ghost-free unitarity</li>
+                        <li>Critical dimension $D = 26$ emerges from BRST cohomology requirements (for the one-time bosonic string)</li>
+                        <li>Historical: an earlier (24,1) signature was checked against conformal anomaly cancellation; the adopted bulk is 26D of signature (24,2)</li>
+                        <li>Ghost control for the second time is open on the adopted bulk (Bars' Sp(2,R) ghost-freedom theorem is not inherited)</li>
                     </ul>
                     <div class="equation">
                         $$c_{\text{total}} = c_{\text{matter}} + c_{\text{ghost}} = 26 - 26 = 0$$
                     </div>
-                    <p>This vanishing central charge is essential for consistent string quantization. The v22 framework achieves this with two-time structure (24,1) where 12×(2,0) bridge pairs warp to create 2×13D(12,1) shadows through coordinate selection mechanism.</p>
+                    <p>This vanishing central charge is essential for consistent one-time string quantization. Earlier versions claimed it for their (24,1) structure; that claim is withdrawn for the adopted two-time bulk, whose critical dimension is 27&ndash;28. The adopted bulk is 26D (24,2), where 12×(2,0) bridge pairs give 2×13D(12,1) shadows with one time each.</p>
                 </div>
             </div>
 
@@ -375,9 +377,9 @@
                 <div class="appendix-label">Appendix B</div>
                 <div class="appendix-title">Generation Number Derivation</div>
                 <div class="appendix-description">
-                    Extended index formula demonstrating how three fermion generations emerge from
-                    G₂ holonomy group structure. Includes chirality operator analysis and
-                    spinor representation calculations on the seven-dimensional manifold.
+                    The generation count n<sub>gen</sub> = b₂/4 = 3 on Y₇, with the K3 reading of χ<sub>eff</sub>.
+                    The earlier index-formula route and its chirality analysis are kept as superseded history;
+                    chirality is open on the adopted path.
                 </div>
                 <div class="appendix-actions">
                     <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-b')">
@@ -387,16 +389,18 @@
                 </div>
                 <div class="appendix-content" id="content-appendix-b">
                     <h4>Key Results</h4>
-                    <p>The generation number emerges from the Atiyah-Singer index theorem on the G₂ manifold:</p>
+                    <p>The adopted count is $n_{\text{gen}} = b_2/4 = 3$, the number of singular involutions of $Y_7$
+                    (Joyce's resolution of $T^7/(\mathbb{Z}/2)^3$, with $(b_2, b_3) = (12, 43)$). On the K3 reading,
+                    $\chi_{\text{eff}} = 2\sum\chi(K3) = 48n = 144$ and $\chi_{\text{eff}}/48 = 3$ restates it.</p>
                     <ul>
-                        <li>Three fermion generations arise from $b_3(M_{G_2}) = 3$ Betti number topology</li>
-                        <li>Chirality operator analysis confirms left-handed fermion localization</li>
-                        <li>Spinor representations under $G_2 \subset Spin(7)$ yield correct quantum numbers</li>
+                        <li>Each singular involution gives four resolved $A_1$ families, so $b_2 = 4n$</li>
+                        <li>Chirality is open: the singular loci are disjoint, so $Y_7$ alone gives no chiral matter</li>
+                        <li>SUPERSEDED: the earlier index-formula route below gave 3 only on retired topologies; at $(b_2, b_3) = (12, 43)$ it gives 15.5</li>
                     </ul>
                     <div class="equation">
-                        $$N_{\text{gen}} = \frac{1}{2}|b_3(M_{G_2}) - b_2(M_{G_2})| = 3$$
+                        $$N_{\text{gen}} = \frac{1}{2}|b_3(M_{G_2}) - b_2(M_{G_2})| \quad \text{(superseded)}$$
                     </div>
-                    <p>This topological result is robust against continuous deformations of the manifold.</p>
+                    <p>$b_2$ is a topological invariant, so the adopted count is robust against continuous deformations of the manifold.</p>
                 </div>
             </div>
 
@@ -405,7 +409,8 @@
                 <div class="appendix-label">Appendix C</div>
                 <div class="appendix-title">Atmospheric Mixing Angle Derivation</div>
                 <div class="appendix-description">
-                    Calculation of the PMNS atmospheric mixing angle $\theta_{23}$ from G₂ geometry.
+                    Calculation of the PMNS atmospheric mixing angle $\theta_{23}$ from a G₂ cycle-volume model construct
+                    (flavour is open on the adopted path).
                     Derives the prediction $\theta_{23} = 42.3°$ from associative 3-cycle volumes
                     and compares with experimental value $42.1° \pm 0.7°$.
                 </div>
@@ -435,9 +440,9 @@
                 <div class="appendix-label">Appendix D</div>
                 <div class="appendix-title">Dark Energy Equation of State</div>
                 <div class="appendix-description">
-                    Derivation of the dark energy equation of state w₀ = -23/24 ≈ -0.9583 from
-                    G₂ thawing quintessence (v16.2). Includes full simulation code for
-                    dark energy evolution and comparison with DESI 2025 thawing observations.
+                    The dark energy equation of state w₀ = -23/24 ≈ -0.9583 from thawing quintessence,
+                    frozen at the off-path seed b₃ = 24 (no derivation on the adopted path). Includes the
+                    simulation code for dark energy evolution and the comparison with DESI.
                 </div>
                 <div class="appendix-actions">
                     <button class="appendix-btn btn-expand" onclick="toggleAppendix('appendix-d')">
@@ -447,16 +452,17 @@
                 </div>
                 <div class="appendix-content" id="content-appendix-d">
                     <h4>Key Results</h4>
-                    <p>The dark energy equation of state emerges from G₂ moduli dynamics:</p>
+                    <p>OFF-PATH: this value is frozen at the off-path seed $b_3 = 24$. Dark energy is open on the adopted
+                    path: the leading-order flux potential on $Y_7$ cannot accelerate.</p>
                     <ul>
-                        <li>Thawing quintessence from slowly-rolling G₂ moduli fields</li>
-                        <li>Prediction: $w_0 = -23/24 \approx -0.9583$</li>
-                        <li>DESI 2025: $w_0 = -0.55^{+0.39}_{-0.21}$ (thawing preferred)</li>
+                        <li>Thawing quintessence ansatz from slowly-rolling moduli fields</li>
+                        <li>Model value: $w_0 = -23/24 \approx -0.9583$ (frozen at the off-path seed)</li>
+                        <li>DESI DR2 $w_0w_a$CDM (BAO+CMB+DESY5, arXiv:2503.14738): $w_0 = -0.752 \pm 0.057$; $-23/24$ sits more than $3\sigma$ from it</li>
                     </ul>
                     <div class="equation">
                         $$w_0 = -1 + \frac{1}{24} = -\frac{23}{24}$$
                     </div>
-                    <p>The 1/24 deviation from cosmological constant arises from the v22 breathing dark energy mechanism via bridge pressure mismatch between dual 13D(12,1) shadows.</p>
+                    <p>The 1/24 deviation from a cosmological constant was attributed to a breathing dark energy mechanism (bridge pressure mismatch between the dual 13D(12,1) shadows); the 24 is the off-path seed $b_3 = 24$.</p>
                 </div>
             </div>
 
@@ -729,7 +735,7 @@
                 <div class="appendix-label">Appendix N</div>
                 <div class="appendix-title">G₂ Topology Landscape</div>
                 <div class="appendix-description">
-                    Complete enumeration of known G₂ manifold constructions from twisted connected sums,
+                    Enumeration of known G₂ manifold constructions (twisted connected sums,
                     resolutions, and other geometric techniques. Documents the landscape of viable
                     compactification candidates and their topological invariants.
                 </div>
@@ -743,7 +749,7 @@
                     <h4>Topology Overview</h4>
                     <p>Comprehensive G₂ manifold landscape enumeration:</p>
                     <ul>
-                        <li>Twisted connected sum (TCS) constructions from Fano threefolds</li>
+                        <li>Twisted connected sum (TCS) constructions from Fano threefolds (off-path for this model: their b₃ range is 71&ndash;155)</li>
                         <li>Joyce orbifold resolutions and their deformations</li>
                         <li>Topological invariants: $b_2$, $b_3$ Betti numbers for each class</li>
                         <li>Candidate selection criteria for SM gauge group emergence</li>
@@ -930,7 +936,7 @@
         <!-- Footer -->
         <div class="footer">
             <p>
-                <strong>Principia Metaphysica v24.2</strong><br>
+                <strong>Principia Metaphysica</strong><br>
                 A Geometric Unification of the Standard Model and Cosmology from M-Theory on a Single G₂ Manifold
             </p>
             <p style="margin-top: 1rem;">

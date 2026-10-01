@@ -26,7 +26,7 @@ const PM = {
   "meta": {
     "version": "8.4",
     "last_updated": "2025-12-25",
-    "description": "Enhanced theory constants with full metadata - v8.4 with CKM rotation and TCS cycle orientations",
+    "description": "LEGACY (not loaded by any page): theory constants from the retired TCS model. The adopted Y7 is Joyce's resolution of T^7/(Z/2)^3 with (b2, b3) = (12, 43).",
     "has_metadata": true,
     "hover_enabled": true
   },
@@ -35,8 +35,8 @@ const PM = {
       "value": 26.0,
       "unit": "dimensions",
       "display": "26",
-      "description": "Bosonic string critical dimension",
-      "formula": "D = 26 from Virasoro anomaly cancellation",
+      "description": "26D bulk of signature (24,2), one time per 13D shadow (the critical-dimension reading is withdrawn)",
+      "formula": "D = 26 (postulate; '26 = the critical dimension' is retired)",
       "derivation": "String theory consistency",
       "source": "fundamental",
       "references": [
@@ -47,8 +47,8 @@ const PM = {
       "value": 13.0,
       "unit": "dimensions",
       "display": "13",
-      "description": "After Sp(2,R) gauge fixing",
-      "formula": "26D \u2192 13D shadow via two-time projection",
+      "description": "One 13D shadow of signature (12,1), with its own time",
+      "formula": "26D \u2192 two 13D shadows, one time each",
       "derivation": "Sp(2,R) gauge symmetry",
       "source": "geometric",
       "references": [
@@ -61,9 +61,9 @@ const PM = {
       "value": 144.0,
       "unit": "dimensionless",
       "display": "144",
-      "description": "Effective Euler characteristic",
-      "formula": "\u03c7_eff = 144 from TCS G\u2082 construction",
-      "derivation": "Flux quantization on TCS manifold #187",
+      "description": "Effective index: on the K3 reading chi_eff = 2 x sum chi(K3) = 48n = 144 (not the Euler characteristic of Y7, which is 0)",
+      "formula": "\u03c7_eff = 144 (OFF-PATH formula from the retired TCS construction)",
+      "derivation": "OFF-PATH: flux quantization on the retired TCS model",
       "source": "geometric:TCSTopologyParameters",
       "references": [
         "Corti-Haskins-Nordstr\u00f6m-Pacini 2015"
@@ -73,9 +73,9 @@ const PM = {
       "value": 4.0,
       "unit": "dimensionless",
       "display": "4",
-      "description": "Second Betti number (h^{1,1})",
-      "formula": "b\u2082 = K = 4 matching K3 fibres",
-      "derivation": "TCS gluing construction",
+      "description": "OFF-PATH: second Betti number of the retired TCS model (the adopted Y7 has b2 = 12)",
+      "formula": "b\u2082 = K = 4 matching K3 fibres (retired TCS model)",
+      "derivation": "OFF-PATH: TCS gluing construction (CHNP is not the construction)",
       "source": "geometric:TCSTopologyParameters",
       "references": [
         "CHNP 2015"
@@ -85,9 +85,9 @@ const PM = {
       "value": 24.0,
       "unit": "dimensionless",
       "display": "24",
-      "description": "Number of coassociative 4-cycles",
-      "formula": "b\u2083 = b\u2082(X\u2081) + b\u2082(X\u2082) + K + 1 = 24",
-      "derivation": "G\u2082 cohomology from TCS gluing",
+      "description": "OFF-PATH: third Betti number of the retired TCS model, the retired seed (the adopted Y7 has b3 = 43)",
+      "formula": "b\u2083 = b\u2082(X\u2081) + b\u2082(X\u2082) + K + 1 (retired TCS model)",
+      "derivation": "OFF-PATH: G\u2082 cohomology from TCS gluing",
       "source": "geometric:TCSTopologyParameters",
       "references": [
         "CHNP 2015"
@@ -97,9 +97,9 @@ const PM = {
       "value": 4.0,
       "unit": "dimensionless",
       "display": "4",
-      "description": "Number of matching K3 fibres",
-      "formula": "K = b\u2082 = 4",
-      "derivation": "TCS construction parameter",
+      "description": "OFF-PATH: number of matching K3 fibres in the retired TCS model",
+      "formula": "K = 4 (retired TCS model)",
+      "derivation": "OFF-PATH: TCS construction parameter",
       "source": "geometric:TCSTopologyParameters",
       "references": [
         "CHNP 2015"
@@ -121,9 +121,9 @@ const PM = {
       "value": 3.0,
       "unit": "generations",
       "display": "3",
-      "description": "Number of fermion generations",
-      "formula": "n_gen = \u03c7_eff / 48 = 144 / 48",
-      "derivation": "Index theorem on G\u2082 manifold",
+      "description": "Number of fermion generations: n_gen = b_2/4 = 3 (the ruled count)",
+      "formula": "n_gen = \u03c7_eff / 48 = 144 / 48 (restates n_gen = b\u2082/4 on the K3 reading)",
+      "derivation": "Ruled route n_gen = b_2/4; not an index theorem for chirality (chirality is OPEN)",
       "source": "geometric:exact",
       "experimental_value": 3,
       "experimental_source": "PDG 2024",

@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Gates of Integrity - Complete sterile certification framework with hard locks from G2 topology">
-    <title>Gates of Integrity - Principia Metaphysica v24.2</title>
+    <title>Gates of Integrity - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pm-common.css">
     <link rel="stylesheet" href="../css/pm-header.css">
@@ -827,7 +827,7 @@
             <h1><span id="hero-gate-count">72</span> Gates of Integrity</h1>
             <p class="lead">
                 Complete sterile certification framework with <span id="lead-gate-count">72</span> hard locks organized into 6 symmetry blocks.
-                $72 = 24 \times 3$ aligns with the 3-fold symmetry of the torsion pins.
+                The grouping $72 = 24 \times 3$ was set at the off-path seed $b_3 = 24$; it is bookkeeping, not a derivation on the adopted path.
                 Every gate is <strong>LOCKED</strong> &mdash; STERILE: <span id="sterile-gate-ratio">72/72</span> GATES LOCKED.
             </p>
         </div>
@@ -838,13 +838,13 @@
             <div class="seeds-grid">
                 <div class="seed-card">
                     <div class="seed-symbol">$b_3$</div>
-                    <div class="seed-value"><span data-pm-value="topology.b3">24</span></div>
+                    <div class="seed-value"><span data-pm-value="topology.b3">43</span></div>
                     <div class="seed-origin">$G_2$ manifold Betti number (the Joyce orbifold construction)</div>
                 </div>
                 <div class="seed-card">
                     <div class="seed-symbol">$k_\gimel$</div>
                     <div class="seed-value"><span data-pm-value="constants.demiurgic_coupling">12.3183098862</span></div>
-                    <div class="seed-origin">Spectral gap from Leech lattice</div>
+                    <div class="seed-origin">$k_\gimel = b_3/2 + 1/\pi$ at the off-path seed $b_3 = 24$ (CALIBRATED)</div>
                 </div>
                 <div class="seed-card">
                     <div class="seed-symbol">$\varphi$</div>
@@ -920,7 +920,7 @@
                 <div class="proof-card">
                     <h3>Mirror Brane Metric Derivation</h3>
                     <p style="color: var(--text-secondary);">
-                        Formal proof of $w_0 = -23/24$ from $G_2$ thawing quintessence: $w_0 = -1 + 1/b_3$
+                        Archived (OFF-PATH): the argument for $w_0 = -23/24$ from thawing quintessence, $w_0 = -1 + 1/b_3$ at the off-path seed $b_3 = 24$. The formula has no derivation on the adopted path.
                     </p>
                     <a href="../docs/validation_archives/proofs/Mirror_Brane_Metric_Derivation_v16_2.md" class="proof-link">View Document</a>
                 </div>
@@ -932,9 +932,9 @@
                     <a href="https://github.com/andrewkwatts-maker/metaphysica/blob/main/src/metaphysica/simulations/data/wolfram/Mirror_Brane_Resonance.wl" class="proof-link">View Notebook</a>
                 </div>
                 <div class="proof-card">
-                    <h3>Proof Manifest v16.2</h3>
+                    <h3>Proof Manifest (archive)</h3>
                     <p style="color: var(--text-secondary);">
-                        Complete proof chain and validation status for all PM v24.2 derivations.
+                        Archived proof chain and validation status from an earlier version of the framework.
                     </p>
                     <a href="../docs/validation_archives/proofs/PROOF_MANIFEST_v16_2.md" class="proof-link">View Manifest</a>
                 </div>
@@ -944,7 +944,7 @@
 
     <footer>
         <p>
-            <strong>Principia Metaphysica v24.2</strong><br>
+            <strong>Principia Metaphysica</strong><br>
             &copy; 2025-2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
@@ -1207,7 +1207,7 @@
     const LEGACY_CERTIFICATES = [
       { id: 1, name: "Hubble Unwinding Rate", symbol: "H\u2080", formula: "H\u2080 = H\u2080_CMB \u00d7 (1 + sin\u00b2\u03b8/2)", derived: 71.55, experimental: 73.04, uncertainty: 1.04, units: "km/s/Mpc", domain: "Cosmology", notes: "O'Dowd formula: (288/4) - (163/144) + η_S = 71.55 [OBSOLETE: Hubble tension resolved via sin\u00b2 geometric correction",
         pythonCode: `# Certificate 1: Hubble Constant (O'Dowd Formula v17)
-b3 = 24  # G2 Betti number (Manifold Base)
+b3 = 24  # OFF-PATH seed (retired; the adopted Y7 has b3 = 43): CALIBRATED at b3 = 24
 ROOTS = 288  # Octonionic/24D structure (b3*12), NOT E8xE8
 P_O = 163  # O'Dowd Bulk Pressure = (7*24) - 5
 chi_eff = 144  # pressure_divisor = b3^2/4 (distinct from chi_eff_sector = 72)
@@ -1218,9 +1218,9 @@ H0_local = (ROOTS / 4) - (P_O / chi_eff) + eta_S
 # = 72 - 1.1319 + 0.6819 = 71.55 km/s/Mpc`,
         derivationChain: ["G2 Manifold (b\u2083=24)", "O'Dowd Bulk P_O = 163 [OLD: Solar Mixing Angle \u03b8\u2081\u2082", "Geometric Parallax Factor", "H\u2080 = 73.04 km/s/Mpc"]
       },
-      { id: 2, name: "Fine Structure Constant", symbol: "\u03b1\u207b\u00b9", formula: "\u03b1\u207b\u00b9 = tree - 7/9963", derived: 137.0360, experimental: 137.036, uncertainty: 0.01, units: "", domain: "QED", notes: "v24.2: Geometric correction -7/9963 (4.39\u03c3)",
-        pythonCode: `# Certificate 2: Fine Structure Constant (v24.2)
-b3 = 24
+      { id: 2, name: "Fine Structure Constant", symbol: "\u03b1\u207b\u00b9", formula: "\u03b1\u207b\u00b9 = tree - 7/9963", derived: 137.0360, experimental: 137.036, uncertainty: 0.01, units: "", domain: "QED", notes: "Geometric correction -7/9963 (4.39\u03c3)",
+        pythonCode: `# Certificate 2: Fine Structure Constant
+b3 = 24  # OFF-PATH seed (retired; adopted b3 = 43): CALIBRATED at b3 = 24
 k_gimel = 12.3183098862
 phi = 1.6180339887
 
@@ -1228,7 +1228,7 @@ phi = 1.6180339887
 alpha_inv_tree = k_gimel**2 - b3/phi + phi/(4*np.pi)
 # = 151.74 - 14.83 + 0.129 = 137.037
 
-# v24.2: Geometric correction from torsion curvature
+# Geometric correction from torsion curvature
 # Correction = -7/9963 (from G2 manifold flux quantization)
 geometric_correction = -7/9963  # = -0.000703
 
@@ -1237,19 +1237,19 @@ alpha_inv = alpha_inv_tree + geometric_correction
 
 # CODATA 2022: 137.035999177 \u00b1 0.01
 # Agreement: 4.39\u03c3 (improved from 33,461\u03c3)`,
-        derivationChain: ["tree = k\u00b2 - b\u2083/\u03c6 + \u03c6/(4\u03c0) = 137.037", "v24.2 correction: -7/9963", "\u03b1\u207b\u00b9 = tree - 7/9963 = 137.0360", "Agreement: 4.39\u03c3"]
+        derivationChain: ["tree = k\u00b2 - b\u2083/\u03c6 + \u03c6/(4\u03c0) = 137.037", "correction: -7/9963", "\u03b1\u207b\u00b9 = tree - 7/9963 = 137.0360", "Agreement: 4.39\u03c3"]
       },
-      { id: 3, name: "Strong Coupling", symbol: "\u03b1s(MZ)", formula: "\u03b1s = [k / (b\u2083(\u03c0+1) + k/2)] \u00d7 (1+1/(b\u2083\u03c0))", derived: 0.1182, experimental: 0.1180, uncertainty: 0.0009, units: "", domain: "QCD", notes: "v16.2: Lattice correction from 24-cycle friction (0.27\u03c3)",
+      { id: 3, name: "Strong Coupling", symbol: "\u03b1s(MZ)", formula: "\u03b1s = [k / (b\u2083(\u03c0+1) + k/2)] \u00d7 (1+1/(b\u2083\u03c0))", derived: 0.1182, experimental: 0.1180, uncertainty: 0.0009, units: "", domain: "QCD", notes: "Lattice correction from 24-cycle friction, calibrated at the off-path seed b\u2083 = 24 (0.27\u03c3)",
         pythonCode: `# Certificate 3: Strong Coupling at M_Z
-# v16.2 FIX: Added QCD lattice correction, 1.45\u03c3 \u2192 0.27\u03c3
-b3 = 24
+# FIX: Added QCD lattice correction, 1.45\u03c3 \u2192 0.27\u03c3
+b3 = 24  # OFF-PATH seed (retired; adopted b3 = 43): CALIBRATED at b3 = 24
 k_gimel = 12.3183098862
 
 # Base coupling from G2 dimensional mode count
 denominator = b3 * (np.pi + 1) + k_gimel / 2
 alpha_s_base = k_gimel / denominator  # = 0.1167
 
-# v16.2: QCD lattice correction from 24-cycle friction
+# QCD lattice correction from 24-cycle friction
 lattice_correction = 1 + 1 / (b3 * np.pi)  # = 1.0133
 
 alpha_s = alpha_s_base * lattice_correction
@@ -1258,11 +1258,11 @@ alpha_s = alpha_s_base * lattice_correction
 
 # PDG 2024: 0.1180 \u00b1 0.0009
 # Agreement: 0.27\u03c3 (improved from 1.45\u03c3)`,
-        derivationChain: ["G2 24-cycle lattice", "Base: k/(b\u2083(\u03c0+1)+k/2) = 0.1167", "Lattice: (1+1/(b\u2083\u03c0)) = 1.0133", "\u03b1s = 0.1167 \u00d7 1.0133 = 0.1182"]
+        derivationChain: ["24-cycle lattice (off-path seed b\u2083 = 24)", "Base: k/(b\u2083(\u03c0+1)+k/2) = 0.1167", "Lattice: (1+1/(b\u2083\u03c0)) = 1.0133", "\u03b1s = 0.1167 \u00d7 1.0133 = 0.1182"]
       },
       { id: 4, name: "Cosmological Constant", symbol: "\u039b", formula: "\u039b = 1/(b\u2083 \u00d7 k)^49", derived: -121.96, experimental: -121.96, uncertainty: 1.0, units: "log\u2081\u2080", domain: "Cosmology", notes: "10\u207b\u00b9\u00b2\u00b2 from 49th power (2b\u2083+1)",
         pythonCode: `# Certificate 4: Cosmological Constant
-b3 = 24
+b3 = 24  # OFF-PATH seed (retired; adopted b3 = 43): CALIBRATED at b3 = 24
 k_gimel = 12.3183098862
 
 # The CC emerges from manifold saturation depth
@@ -1279,11 +1279,11 @@ log_Lambda = np.log10(Lambda_bulk)
 # The ~72 order gap is volumetric projection`,
         derivationChain: ["b\u2083 \u00d7 k = 295.6", "Power = 2b\u2083+1 = 49", "log\u2081\u2080(\u039b\u2098\u2090\u2099\u1d62) = -121", "26D\u21924D projection"]
       },
-      { id: 5, name: "Neutrino Mass Sum", symbol: "\u03a3m\u03bd", formula: "\u03a3m\u03bd = k\u1d4d\u2099\u2093\u2091\u2097 / (2\u03c0 \u00d7 b\u2083)", derived: 0.082, experimental: 0.072, uncertainty: 0.02, units: "eV", domain: "Neutrino", notes: "v16.2 Hopf Fibration: S\u00b3 wavefunction dilution in G2" },
+      { id: 5, name: "Neutrino Mass Sum", symbol: "\u03a3m\u03bd", formula: "\u03a3m\u03bd = k\u1d4d\u2099\u2093\u2091\u2097 / (2\u03c0 \u00d7 b\u2083)", derived: 0.082, experimental: 0.072, uncertainty: 0.02, units: "eV", domain: "Neutrino", notes: "Hopf Fibration: S\u00b3 wavefunction dilution in G2" },
       { id: 6, name: "Gravitational Constant", symbol: "G_res", formula: "G = 1/(2\u03c0\u00d713)\u00b2 \u00d7 k/b\u2083\u2074", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Gravity", notes: "Scale verification" },
-      { id: 7, name: "Higgs VEV", symbol: "v", formula: "v = tree \u00d7 (1 - 1/1728)", derived: 246.22, experimental: 246.22, uncertainty: 0.5, units: "GeV", domain: "Electroweak", notes: "v24.2: Geometric correction (1-1/1728) (0.007\u03c3)",
-        pythonCode: `# Certificate 7: Higgs Vacuum Expectation Value (v24.2)
-b3 = 24
+      { id: 7, name: "Higgs VEV", symbol: "v", formula: "v = tree \u00d7 (1 - 1/1728)", derived: 246.22, experimental: 246.22, uncertainty: 0.5, units: "GeV", domain: "Electroweak", notes: "Geometric correction (1-1/1728) (0.007\u03c3)",
+        pythonCode: `# Certificate 7: Higgs Vacuum Expectation Value
+b3 = 24  # OFF-PATH seed (retired; adopted b3 = 43): CALIBRATED at b3 = 24
 k_gimel = 12.3183098862
 
 # Tree-level from dimensional reduction
@@ -1291,7 +1291,7 @@ k_gimel = 12.3183098862
 extra_dims = b3 - 4  # = 20
 v_tree = k_gimel * extra_dims  # = 246.37 GeV
 
-# v24.2: Geometric correction from curvature
+# Geometric correction from curvature
 # 1728 = 12^3 (cubic lattice structure)
 geometric_factor = 1 - 1/1728  # = 0.999421
 
@@ -1301,7 +1301,7 @@ v_higgs = v_tree * geometric_factor
 
 # PDG 2024: 246.22 \u00b1 0.5 GeV
 # Agreement: 0.007\u03c3 (improved from 0.29\u03c3)`,
-        derivationChain: ["tree = k \u00d7 (b\u2083 - 4) = 246.37 GeV", "v24.2 factor: (1 - 1/1728)", "v = tree \u00d7 (1 - 1/1728) = 246.22 GeV", "Agreement: 0.007\u03c3"]
+        derivationChain: ["tree = k \u00d7 (b\u2083 - 4) = 246.37 GeV", "factor: (1 - 1/1728)", "v = tree \u00d7 (1 - 1/1728) = 246.22 GeV", "Agreement: 0.007\u03c3"]
       },
       { id: 8, name: "Fermi Constant", symbol: "GF", formula: "GF = 1 / (\u221a2 \u00d7 v\u00b2)", derived: 1.166e-5, experimental: 1.166e-5, uncertainty: 0.002e-5, units: "GeV\u207b\u00b2", domain: "Electroweak", notes: "From Higgs VEV",
         pythonCode: `# Certificate 8: Fermi Constant
@@ -1316,8 +1316,8 @@ G_F = 1 / (np.sqrt(2) * v_higgs**2)
 # Agreement: 0.00\u03c3`,
         derivationChain: ["v = 246.37 GeV", "v\u00b2 = 60698 GeV\u00b2", "G\u1da0 = 1/(\u221a2 \u00d7 v\u00b2)", "G\u1da0 = 1.166e-5"]
       },
-      { id: 9, name: "Weak Mixing Angle", symbol: "sin\u00b2\u03b8W", formula: "sin\u00b2\u03b8W = tree - 7/9963", derived: 0.2312, experimental: 0.2312, uncertainty: 0.001, units: "", domain: "Electroweak", notes: "v24.2: Geometric correction -7/9963 (0.20\u03c3)",
-        pythonCode: `# Certificate 9: Weak Mixing Angle (v24.2)
+      { id: 9, name: "Weak Mixing Angle", symbol: "sin\u00b2\u03b8W", formula: "sin\u00b2\u03b8W = tree - 7/9963", derived: 0.2312, experimental: 0.2312, uncertainty: 0.001, units: "", domain: "Electroweak", notes: "Geometric correction -7/9963 (0.20\u03c3)",
+        pythonCode: `# Certificate 9: Weak Mixing Angle
 k_gimel = 12.3183098862
 phi = 1.6180339887
 
@@ -1328,7 +1328,7 @@ sin2_theta_W_tree = 3 / (k_gimel + phi - 1)
 # = 3 / 12.936
 # = 0.2319
 
-# v24.2: Geometric correction from G2 flux quantization
+# Geometric correction from G2 flux quantization
 # Same correction as fine structure constant
 geometric_correction = -7/9963  # = -0.000703
 
@@ -1338,7 +1338,7 @@ sin2_theta_W = sin2_theta_W_tree + geometric_correction
 
 # PDG 2024: 0.2312 \u00b1 0.001
 # Agreement: 0.20\u03c3 (improved from 17.37\u03c3)`,
-        derivationChain: ["tree = 3/(k + \u03c6 - 1) = 0.2319", "v24.2 correction: -7/9963", "sin\u00b2\u03b8\u1d42 = tree - 7/9963 = 0.2312", "Agreement: 0.20\u03c3"]
+        derivationChain: ["tree = 3/(k + \u03c6 - 1) = 0.2319", "correction: -7/9963", "sin\u00b2\u03b8\u1d42 = tree - 7/9963 = 0.2312", "Agreement: 0.20\u03c3"]
       },
       { id: 10, name: "Planck Mass", symbol: "MP_res", formula: "MP = \u221a(b\u2083\u00b2\u2076 \u00d7 k)", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Gravity", notes: "26D entropy saturation" },
       { id: 11, name: "Baryon Asymmetry", symbol: "\u03b7", formula: "\u03b7 = (k/b\u2083) \u00d7 10\u207b\u2079 \u00d7 (1+4/(b\u2083-3))", derived: 6.11e-10, experimental: 6.1e-10, uncertainty: 0.1e-10, units: "", domain: "Cosmology", notes: "Torsional slip between branes" },
@@ -1346,9 +1346,9 @@ sin2_theta_W = sin2_theta_W_tree + geometric_correction
       { id: 13, name: "Proton/Electron Ratio", symbol: "\u03bc", formula: "\u03bc = k \u00d7 (2\u03c0 \u00d7 b\u2083 - \u03c6)", derived: 1837.6, experimental: 1836.15, uncertainty: 2.0, units: "", domain: "Atomic", notes: "Full cycle count minus golden ratio" },
       { id: 14, name: "Strong CP Angle", symbol: "\u03b8QCD", formula: "\u03b8QCD = (c - 24) / b\u2083 = 0", derived: 0, experimental: 0, uncertainty: 1e-10, units: "rad", domain: "QCD", notes: "Self-canceling in 26D with b\u2083=24" },
       { id: 15, name: "Lambda Stability", symbol: "\u03b2(\u039b)", formula: "\u03b2(\u039b) = 1/(b\u2083\u00b2 \u00d7 k\u00b2)\u2074", derived: -50, experimental: -20, uncertainty: 10, units: "log\u2081\u2080", domain: "Cosmology", notes: "\u039b doesn't run at measurable scales" },
-      { id: 16, name: "Boltzmann Constant", symbol: "kB_res", formula: "kB = ln(b\u2083) \u00d7 \u03c6 / k", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Thermodynamics", notes: "Entropy per 24-cycle node" },
+      { id: 16, name: "Boltzmann Constant", symbol: "kB_res", formula: "kB = ln(b\u2083) \u00d7 \u03c6 / k", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Thermodynamics", notes: "Entropy per 24-cycle node (off-path seed b\u2083 = 24)" },
       { id: 17, name: "Bekenstein Entropy", symbol: "SBH", formula: "SBH \u221d b\u2083 \u00d7 k / 2", derived: 147.82, experimental: 147.82, uncertainty: 1.0, units: "", domain: "Gravity", notes: "Flux lines through horizon" },
-      { id: 18, name: "CMB Temperature", symbol: "TCMB", formula: "TCMB = tree - \u03c6/144", derived: 2.725, experimental: 2.725, uncertainty: 0.02, units: "K", domain: "Cosmology", notes: "v24.2: Geometric correction -\u03c6/144 (0.16\u03c3)" },
+      { id: 18, name: "CMB Temperature", symbol: "TCMB", formula: "TCMB = tree - \u03c6/144", derived: 2.725, experimental: 2.725, uncertainty: 0.02, units: "K", domain: "Cosmology", notes: "Geometric correction -\u03c6/144 (0.16\u03c3)" },
       { id: 19, name: "Stefan-Boltzmann", symbol: "\u03c3_res", formula: "\u03c3 = \u03c0\u00b2/60 \u00d7 k\u00b3/b\u2083", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Thermodynamics", notes: "Radiative flux efficiency" },
       { id: 20, name: "Universe Entropy", symbol: "Suniv", formula: "Suniv = (b\u2083 \u00d7 k)^49", derived: 121.96, experimental: 121.96, uncertainty: 1.0, units: "log\u2081\u2080(bits)", domain: "Information", notes: "Holographic duality: S = 1/\u039b" },
       { id: 21, name: "Speed of Light", symbol: "c_res", formula: "c = (b\u2083 + 2) / k", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Kinematics", notes: "Manifold unfolding velocity" },
@@ -1356,7 +1356,7 @@ sin2_theta_W = sin2_theta_W_tree + geometric_correction
       { id: 23, name: "Alpha Drift", symbol: "\u03b1\u0307/\u03b1", formula: "\u03b1\u0307/\u03b1 = 1/b\u2083\u00b9\u00b2 \u00d7 \u039b", derived: 0, experimental: 0, uncertainty: 1e-17, units: "yr\u207b\u00b9", domain: "QED", notes: "Negligible drift from mirror expansion" },
       { id: 24, name: "Dimensional Partition", symbol: "\u03c7", formula: "\u03c7 = k/\u03c0 + 1/b\u2083", derived: 3.96, experimental: 3.96, uncertainty: 0.1, units: "", domain: "Topology", notes: "Filter: 26D bulk \u2192 4D brane" },
       { id: 25, name: "Unity Seal", symbol: "I_unity", formula: "I = k \u00d7 \u03c6 / (b\u2083 - 4)", derived: 0.997, experimental: 1.0, uncertainty: 0.01, units: "", domain: "Topology", notes: "Closure certificate: model consistency" },
-      { id: 26, name: "Strong Coupling v2", symbol: "\u03b1s", formula: "\u03b1s = [k / (b\u2083(\u03c0+1) + k/2)] \u00d7 (1+1/(b\u2083\u03c0))", derived: 0.1182, experimental: 0.1184, uncertainty: 0.002, units: "", domain: "QCD", notes: "v16.2: Same lattice correction as C03" },
+      { id: 26, name: "Strong Coupling v2", symbol: "\u03b1s", formula: "\u03b1s = [k / (b\u2083(\u03c0+1) + k/2)] \u00d7 (1+1/(b\u2083\u03c0))", derived: 0.1182, experimental: 0.1184, uncertainty: 0.002, units: "", domain: "QCD", notes: "Same lattice correction as C03" },
       { id: 27, name: "Alpha Binding", symbol: "B\u03b1", formula: "B\u03b1 = k \u00d7 (\u03c6 + 2/3)", derived: 28.2, experimental: 28.3, uncertainty: 0.5, units: "MeV", domain: "Nuclear", notes: "Alpha particle binding energy" },
       { id: 28, name: "Gluon Condensate", symbol: "\u27e8G\u00b2\u27e9", formula: "\u27e8G\u00b2\u27e9 = 1/(b\u2083\u03c0 + k)", derived: 0.012, experimental: 0.012, uncertainty: 0.004, units: "GeV\u2074", domain: "QCD", notes: "Vacuum tension of 26D Bulk" },
       { id: 29, name: "Pion Decay Constant", symbol: "f\u03c0", formula: "f\u03c0 = v / (\u03c6 + 1)", derived: 94.1, experimental: 92.4, uncertainty: 2.0, units: "MeV", domain: "Nuclear", notes: "Chiral symmetry breaking scale" },

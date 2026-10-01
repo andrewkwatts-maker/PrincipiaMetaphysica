@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-09-30T13:49:46.454416Z",
+  "generated_at": "2026-10-01T13:32:46.240216Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 332,
+  "total_scripts": 335,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -97,7 +97,7 @@
           "path": "simulations/PM/algebra/gaugino_condensation.py",
           "category": "PM/algebra",
           "title": null,
-          "description": "Gaugino Condensation \u2014 Cabibbo Angle from N\u2081=24/N\u2082=23 Racetrack (DERIVED)",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -136,7 +136,7 @@
           "path": "simulations/PM/algebra/neutrino_algebraic.py",
           "category": "PM/algebra",
           "title": null,
-          "description": "Neutrino PMNS Angles from G\u2082 \u00d7 E\u2087 Topology (Algebraic Derivation)",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -307,7 +307,7 @@
           "path": "simulations/PM/cosmology/baryon_asymmetry.py",
           "category": "PM/cosmology",
           "title": null,
-          "description": "Baryon Asymmetry Geometric Derivation v24.2",
+          "description": "Baryon Asymmetry Geometric Derivation",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -371,7 +371,7 @@
           "path": "simulations/PM/cosmology/cosmology_intro.py",
           "category": "PM/cosmology",
           "title": null,
-          "description": "Cosmological Framework Introduction v22.0",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -974,7 +974,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 54,
+      "count": 57,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1044,7 +1044,7 @@
           "path": "simulations/PM/geometry/closed_geometry/certificate.py",
           "category": "PM/geometry",
           "title": null,
-          "description": "The certificate: every theorem evaluated on the active seed, and the",
+          "description": "The certificate: every theorem evaluated on the active seed, ending in the",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -1414,6 +1414,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "instanton_cycles.py",
+          "path": "simulations/PM/geometry/instanton_cycles.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "intersection_tensor.py",
           "path": "simulations/PM/geometry/intersection_tensor.py",
           "category": "PM/geometry",
@@ -1526,7 +1536,7 @@
           "path": "simulations/PM/geometry/modular_invariance.py",
           "category": "PM/geometry",
           "title": null,
-          "description": "Modular Invariance and b\u2083=24 Uniqueness v16.2",
+          "description": "Modular Invariance of the Eta Partition Function",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -1545,6 +1555,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Which multilinear invariants exist on Y_7, by degree arithmetic alone.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "overview.py",
+          "path": "simulations/PM/geometry/closed_geometry/overview.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "The model, top down: one source for the paper abstract and the main page.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1591,6 +1611,26 @@
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
+        },
+        {
+          "file": "selection.py",
+          "path": "simulations/PM/geometry/closed_geometry/selection.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Certificate theorem CG.12: what selects (b_2, b_3) = (12, 43).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "cosmology.anthropic_rejected",
+            "cosmology.b3",
+            "cosmology.classification",
+            "cosmology.dynamically_selected",
+            "cosmology.eml_value",
+            "cosmology.flux_modes",
+            "cosmology.log_vacua_raw",
+            "cosmology.pruning_factor",
+            "cosmology.raw_vacua"
+          ]
         },
         {
           "file": "simulation.py",
@@ -1755,7 +1795,7 @@
           "path": "simulations/PM/paper/appendices/appendix_a_math.py",
           "category": "PM/paper",
           "title": null,
-          "description": "Appendix A: Mathematical Foundations v24.2",
+          "description": "Appendix A: Mathematical Foundations",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1807,7 +1847,7 @@
           "path": "simulations/PM/paper/appendices/appendix_c_derivations.py",
           "category": "PM/paper",
           "title": null,
-          "description": "Appendix C: Extended Derivations v24.2",
+          "description": "Appendix C: Extended Derivations",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1853,7 +1893,7 @@
           "path": "simulations/PM/paper/appendices/appendix_d_tables.py",
           "category": "PM/paper",
           "title": null,
-          "description": "Appendix D: Parameter Tables v24.2",
+          "description": "Appendix D: Parameter Tables",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -2033,7 +2073,7 @@
           "path": "simulations/PM/paper/appendices/appendix_p_g2_holonomy.py",
           "category": "PM/paper",
           "title": null,
-          "description": "Appendix P: G2 Holonomy Mathematics v19.0",
+          "description": "Appendix P: G2 Holonomy Mathematics",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -2049,7 +2089,7 @@
           "path": "simulations/PM/paper/appendices/appendix_q_index_theorem.py",
           "category": "PM/paper",
           "title": "Appendix Q: Index Theorem Applications",
-          "description": "This appendix develops the Atiyah-Singer index theorem and its applications",
+          "description": "This appendix reviews the Atiyah-Singer index theorem and what it can and",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -2086,7 +2126,7 @@
           "path": "simulations/PM/paper/appendices/appendix_s_spectral_residue.py",
           "category": "PM/paper",
           "title": null,
-          "description": "Appendix S: Spectral Residue Methodology v19.0",
+          "description": "Appendix S: Spectral Residue Methodology",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -2162,7 +2202,7 @@
           "file": "foundations.py",
           "path": "simulations/PM/paper/foundations.py",
           "category": "PM/paper",
-          "title": "Section 1: Foundations of Dimensional Descent",
+          "title": "Section 1.1: Foundations of Dimensional Descent",
           "description": "DOI: 10.5281/zenodo.18079602",
           "status": null,
           "gates_contributed": [],
@@ -2250,7 +2290,7 @@
           "path": "simulations/PM/particle/chirality.py",
           "category": "PM/particle",
           "title": null,
-          "description": "Chirality and Spinorial Structure v16.0",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -2540,7 +2580,7 @@
           "path": "simulations/PM/portals/alp_portals.py",
           "category": "PM/portals",
           "title": null,
-          "description": "ALP (Axion-Like Particle) Portal Physics v23.0",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -2570,7 +2610,7 @@
           "path": "simulations/PM/portals/sterile_neutrino_portals.py",
           "category": "PM/portals",
           "title": null,
-          "description": "Sterile Neutrino Portal Physics v23.0",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -2902,7 +2942,7 @@
           "path": "simulations/PM/validation/principia_residue_calculator.py",
           "category": "PM/validation",
           "title": null,
-          "description": "Principia Metaphysica - Residue Calculator v17.2",
+          "description": "Principia Metaphysica - Residue Calculator",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -3002,7 +3042,7 @@
           "path": "simulations/PM/validation/unitary_filter.py",
           "category": "PM/validation",
           "title": null,
-          "description": "Principia Metaphysica - Ghost-Free Stability Check v16.2",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -3918,7 +3958,7 @@
           "path": "simulations/validation/unitary_filter_legacy.py",
           "category": "validation",
           "title": null,
-          "description": "Principia Metaphysica - Ghost-Free Stability Check v16.2",
+          "description": null,
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": [
@@ -4262,7 +4302,7 @@
           "path": "simulations/visualizations/goldilocks_plot.py",
           "category": "visualizations",
           "title": null,
-          "description": "Goldilocks Plot: Visual Proof that b3=24 is Unique",
+          "description": "Goldilocks Plot: three deviations against b3, marked at the off-path seed",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -4322,7 +4362,7 @@
           "path": "simulations/visualizations/ricci_flow_evolution.py",
           "category": "visualizations",
           "title": null,
-          "description": "Ricci Flow Hubble Evolution: Visual Hubble Tension Resolution",
+          "description": "Ricci Flow Hubble Evolution: an interpolation across the Hubble tension",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -4332,7 +4372,7 @@
           "path": "simulations/visualizations/stability_heatmap.py",
           "category": "visualizations",
           "title": null,
-          "description": "3D Stability Heatmap Visualization v16.2",
+          "description": "3D Stability Heatmap Visualization",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

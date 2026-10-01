@@ -13,7 +13,7 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <meta content="Complete parameter reference for Principia Metaphysica - geometric, derived, calibrated, predicted, and experimental parameters" name="description"/>
-    <title>Theory Parameters - Principia Metaphysica v24.2</title>
+    <title>Theory Parameters - Principia Metaphysica</title>
     <link href="../css/styles.css" rel="stylesheet"/>
     <link href="../css/pm-common.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/pm-header.css">
@@ -882,7 +882,7 @@
                     </div>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
                         Pure mathematical results requiring no experimental input. Includes topological constraints,
-                        group theory identities, and geometric necessities (e.g., b3 = 24 from G2 holonomy).
+                        group theory identities, and geometric necessities (e.g., b₃ = 7 + 3b₂ = 43 from Joyce's construction).
                     </p>
                 </div>
 
@@ -894,7 +894,7 @@
                     </div>
                     <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
                         Derived from PM geometry using established formulas. These follow from the framework
-                        but require geometric interpretation (e.g., n_gen = chi_eff/48 = 3 generations).
+                        but require geometric interpretation (e.g., n_gen = b₂/4 = 3 generations, which χ_eff/48 restates on the K3 reading).
                     </p>
                 </div>
 
@@ -937,12 +937,12 @@
         <!-- v24.2 Geometric Corrections -->
         <div class="category-section" id="v24-2-corrections" style="border: 2px solid rgba(81, 207, 102, 0.4); background: linear-gradient(135deg, rgba(81, 207, 102, 0.08), rgba(79, 172, 254, 0.05));">
             <div class="category-header">
-                <h2 class="category-title">v24.2 Geometric Corrections</h2>
-                <span class="category-count" style="background: rgba(81, 207, 102, 0.2); color: #51cf66;">NEW</span>
+                <h2 class="category-title">Calibrated Corrections (the k<sub>ℷ</sub> layer)</h2>
+                <span class="category-count" style="background: rgba(81, 207, 102, 0.2); color: #51cf66;">CALIBRATED</span>
             </div>
             <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.7;">
-                Version 24.2 introduces geometric correction terms derived from G\(_2\) manifold curvature and flux quantization.
-                These corrections dramatically improve agreement with experimental values:
+                These correction terms belong to the k<sub>ℷ</sub> layer (k<sub>ℷ</sub> = b₃/2 + 1/π), which was fitted at the retired seed
+                b₃ = 24 (D-007). They are CALIBRATED, not derived; the improvements below are improvements of a fit:
             </p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 1rem;">
                 <div style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.25rem;">
@@ -983,8 +983,8 @@
                 </div>
             </div>
             <p style="color: var(--text-muted); font-size: 0.85rem; font-style: italic;">
-                The correction factors 7/9963 and 1/1728 emerge from G\(_2\) manifold flux quantization.
-                \(\varphi = 1.618...\) is the golden ratio; 144 = \(\chi_{\text{eff}}\) is the effective Euler characteristic.
+                The correction factors 7/9963 and 1/1728 were fitted at the off-path seed b₃ = 24 (CALIBRATED).
+                \(\varphi = 1.618...\) is the golden ratio; 144 = \(\chi_{\text{eff}}\) is the effective index (on the K3 reading, 2 Σ χ(K3) = 48n; not the Euler characteristic of Y₇, which is 0).
             </p>
         </div>
 
@@ -1102,7 +1102,7 @@
 
     <footer>
         <p>
-            <strong>Principia Metaphysica v24.2</strong><br/>
+            <strong>Principia Metaphysica</strong><br/>
             © 2025-2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
@@ -1286,8 +1286,8 @@
 
         const PARAMETER_DESCRIPTIONS = {
             // Dimensions
-            'D_BULK': 'Bulk spacetime dimensions from bosonic string theory',
-            'D_AFTER_SP2R': 'Per-shadow dimension (12D) after OR reduction in v24.2 dual-shadow decomposition',
+            'D_BULK': 'Bulk spacetime dimensions: 26D of signature (24,2), 24 space directions and 2 times (one per shadow)',
+            'D_AFTER_SP2R': 'Per-shadow dimension (12D) after OR reduction in the dual-shadow decomposition',
             'D_INTERNAL': 'Internal G₂ manifold dimensions',
             'D_EFFECTIVE': 'Effective dimensions after compactification',
             'D_COMMON': 'Common observable spacetime dimensions',
@@ -1295,11 +1295,11 @@
             'M_BULK': 'Bulk Planck mass',
 
             // Topology
-            'CHI_EFF': 'Effective index chi_eff, an open ruling (not the Euler characteristic, which is 0)',
-            'B2': 'Second Betti number (number of 2-cycles)',
-            'B3': 'Third Betti number (number of 3-cycles)',
+            'CHI_EFF': 'Effective index chi_eff = 2 x sum chi(K3) = 48n on the K3 reading (not the Euler characteristic of Y7, which is 0)',
+            'B2': 'Second Betti number of Y7 (b2 = 12: four resolved A1 families per singular involution)',
+            'B3': 'Third Betti number of Y7 (b3 = 7 + 3 b2 = 43)',
             'n_flux': 'Flux quantization number',
-            'n_gen': 'Number of fermion generations',
+            'n_gen': 'Number of fermion generations (n_gen = b2/4, the number of singular involutions)',
 
             // Dark Energy
             'w0': 'Dark energy equation of state parameter at z=0',
@@ -1366,7 +1366,7 @@
             'D_SHARED_EXTRAS': 'Shared extra dimensions',
             'SIGNATURE_INITIAL': 'Initial spacetime signature',
             'SIGNATURE_BULK': 'Bulk spacetime signature',
-            'chi_eff_computed': 'Computed effective Euler characteristic',
+            'chi_eff_computed': 'Computed effective index chi_eff',
             'average_deviation_sigma': 'Average deviation from experiment',
             'source_version': 'Reference data version'
         };

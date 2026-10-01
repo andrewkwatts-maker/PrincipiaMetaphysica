@@ -238,7 +238,7 @@
             : `<span class="pm-tv-value__number pm-tv-value__number--label">${escapeHtml(value.label || 'LOCKED')}</span>`;
 
         const rootedBadge = rooted
-            ? '<span class="pm-cert-trio__rooted" title="Dependency chain terminates at b₃ = 24">b<sub>3</sub>-rooted &#x2713;</span>'
+            ? '<span class="pm-cert-trio__rooted" title="Dependency chain terminates at the topological seed b₃ (b₃ = 43 on the adopted path)">b<sub>3</sub>-rooted &#x2713;</span>'
             : '<span class="pm-cert-trio__rooted pm-cert-trio__rooted--no" title="Chain not yet b₃-rooted">b<sub>3</sub>-rooted &#x2717;</span>';
 
         return [
