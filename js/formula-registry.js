@@ -478,8 +478,8 @@ const FORMULA_REGISTRY = {
                     link: "sections.html#2#generations"
                 },
                 "χ<sub>eff</sub>": {
-                    name: "Effective Euler Characteristic",
-                    description: "= 144 from flux-dressed TCS G₂ topology. The Euler characteristic is a topological invariant that counts the 'shape' of the compactified dimensions.",
+                    name: "Effective Index",
+                    description: "= 144, an effective index whose meaning is an open ruling. It is not the Euler characteristic of Y₇, which is 0 for every closed odd-dimensional manifold. On the unruled K3 reading, χ_eff = 48n counts the Kummer K3 surfaces transverse to the n = 3 singular involutions, once per shadow.",
                     link: "sections.html#2#euler-char"
                 },
                 "48": {

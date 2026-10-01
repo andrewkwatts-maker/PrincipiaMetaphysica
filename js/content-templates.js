@@ -160,7 +160,7 @@ const getContentTemplates = () => {
       chi: {
         value: PM.topology?.chi_eff,
         formula: 'χ_eff = 144',
-        description: 'Euler characteristic of the G₂ manifold with Z₂ orbifold, yielding 3 generations via χ/48.'
+        description: 'Effective index χ_eff of the Joyce orbifold (not its Euler characteristic, which is 0); on the unruled K3 reading χ_eff/48 = 3 counts the singular involutions.'
       },
       b2: {
         value: PM.topology?.b2,

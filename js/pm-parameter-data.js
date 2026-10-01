@@ -59,15 +59,15 @@
     PM_PARAMS.register({
         id: 'topology.chi_eff',
         value: 144,
-        title: 'Effective Euler Characteristic',
+        title: 'Effective Index',
         symbol: 'χ_eff',
-        shortDescription: 'Flux-dressed Euler characteristic from TCS G₂',
-        longDescription: 'The effective Euler characteristic χ_eff = 144 arises from the TCS (Twisted Connected Sum) construction of the G₂ manifold with flux quantization.',
-        formula: 'χ_eff = 144',
-        formulaHtml: 'χ<sub>eff</sub> = 144',
-        category: 'derived',
-        derivedFrom: ['TCS construction', 'flux quantization'],
-        references: ['Corti-Haskins-Nordström-Pacini 2015'],
+        shortDescription: 'Effective index (open ruling); not the Euler characteristic of Y₇, which is 0',
+        longDescription: 'χ_eff = 144 is an effective index whose meaning is an open ruling. It is not the Euler characteristic of Y₇ (0 for every closed odd-dimensional manifold). On the unruled K3 reading, χ_eff = 2 × Σ χ(K3) = 48n, with n = 3 singular involutions.',
+        formula: 'χ_eff = 48n = 144 (unruled K3 reading)',
+        formulaHtml: 'χ<sub>eff</sub> = 48n = 144 (unruled K3 reading)',
+        category: 'open',
+        derivedFrom: ['K3 reading (unruled)'],
+        references: ['Joyce, J. Differential Geom. 43 (1996) 329-375'],
         simulationFile: 'config.py'
     });
 
@@ -96,27 +96,27 @@
 
     PM_PARAMS.register({
         id: 'topology.b2',
-        value: 4,
+        value: 12,
         title: 'Second Betti Number',
         symbol: 'b₂',
-        shortDescription: 'Kähler moduli count (h^{1,1})',
-        formula: 'b₂ = h^{1,1} = 4',
-        formulaHtml: 'b<sub>2</sub> = h<sup>1,1</sup> = 4',
+        shortDescription: 'Resolved A₁ families of Y₇: four for each singular involution',
+        formula: 'b₂ = 4n = 12',
+        formulaHtml: 'b<sub>2</sub> = 4n = 12',
         category: 'derived',
-        references: ['CHNP 2015'],
+        references: ['Joyce, J. Differential Geom. 43 (1996) 329-375'],
         simulationFile: 'config.py'
     });
 
     PM_PARAMS.register({
         id: 'topology.b3',
-        value: 24,
+        value: 43,
         title: 'Third Betti Number',
         symbol: 'b₃',
-        shortDescription: 'Number of coassociative 4-cycles',
-        formula: 'b₃ = 24',
-        formulaHtml: 'b<sub>3</sub> = 24',
+        shortDescription: 'Independent 3-cycles of Y₇: 7 flat plus 3 for each A₁ family',
+        formula: 'b₃ = 7 + 3b₂ = 43',
+        formulaHtml: 'b<sub>3</sub> = 7 + 3b<sub>2</sub> = 43',
         category: 'derived',
-        references: ['CHNP 2015'],
+        references: ['Joyce, J. Differential Geom. 43 (1996) 329-375'],
         simulationFile: 'config.py'
     });
 

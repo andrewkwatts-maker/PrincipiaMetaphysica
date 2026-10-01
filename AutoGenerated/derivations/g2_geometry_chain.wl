@@ -117,7 +117,7 @@ If[torsionNorm == 0,
 (* ========================================= *)
 
 
-(* Effective Euler characteristic for G₂ manifold *)
+(* Effective index chi_eff -- not the G₂ manifold's Euler characteristic, which is 0 *)
 (* χ_eff = 2(h^{1,1} - h^{2,1} + h^{3,1}) *)
 
 h11 = 4;   (* Kähler moduli *)

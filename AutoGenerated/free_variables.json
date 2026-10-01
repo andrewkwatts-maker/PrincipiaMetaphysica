@@ -894,13 +894,13 @@
     {
       "name": "abstract.vev_coefficient",
       "value": 1.5859,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:719",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:745",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "PERMITTED_OR_SCALE",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:719",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:745",
           "function": "<own description>",
           "kind": "SELF_DECLARED_SCALE_SETTING",
           "detail": "the row's own description declares it scale-setting"
@@ -1005,7 +1005,7 @@
     {
       "name": "abstract.alpha_gut_coefficient",
       "value": 0.031831,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:728",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:754",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1017,7 +1017,7 @@
     {
       "name": "abstract.fitted_pmns",
       "value": 2,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:710",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:736",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
