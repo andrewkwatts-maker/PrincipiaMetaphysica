@@ -1166,3 +1166,71 @@ CG.1–CG.11 and D-001…D-013), what is off-path, retired or calibrated, how a
 remaining 24 is named by its object, and how numbers enter prose
 (`geometry_narration.render`, generated from the live seed). A wording pass
 changes no value, EML tree, arithma expression, formula id or parameter path.
+
+---
+
+## D-015 · 2026-10-01 · RULINGS — the author's, on the four held decisions
+
+Asked directly (2026-10-01), the author ruled, and added the standing direction:
+**adopt the sensible path on every fork, and keep the other options as switches,
+so they can be simulated and compared quickly.**
+
+| decision | ruling | active option | kept switchable |
+|---|---|---|---|
+| φ's real form (D-003) | adopt the sensible path; both stay runnable | `g2_form_convention = octonion_derived` (compact) | `all_plus_one` (split) |
+| χ_eff (D-009) | adopt the K3 reading | new option `chi_eff_route = k3_reading`: χ_eff = 2Σχ(K3) = 48n | `unruled`, `constant_144`; `seed_dependent` demoted (refuted by D-009) |
+| Re(T) (D-005) | an open modulus | `re_t_adoption = calibrated`, labelled a calibration | `computed_vacuum` demoted: it is the vacuum of a racetrack Y₇ does not have (CG.5, CG.10) |
+| WA-1 (D-008) | adopt | new fork `seed_selection = wa1_correspondence` | `ruling_only` |
+
+**What changed in the engine (one commit, with its tests).**
+- `g2_differential.G2_TRIPLES` carries the compact signs (−1 on (1,3,5)); the split
+  table is `ALL_PLUS_TRIPLES`. The octonion module's accessor follows the switch.
+  Measured before the ruling (D-003): 0 of 788 parameters and 0 of 226 numeric
+  formulas move.
+- `geometry_narration.chi_eff_claim()` narrates per branch; on `k3_reading` a
+  derivation is claimable. `fragments()` follows it.
+- New certificate theorem **CG.12 `y7-selection`**: CG.7 + CG.4 + CG.8 read through
+  WA-1 select (12, 43). Its statement follows both switches: on the split form it
+  states only the topological half (π₁ finite exactly at n = 3); on `ruling_only`
+  it reports the match as a finding beside the 2026-09-22 ruling. Falsifiable: on
+  (8, 31) the chain still selects (12, 43), so the theorem does not hold there.
+- Tests that pinned the pre-ruling state by design now assert BOTH paths (the
+  adopted one, and the old one when switched back).
+
+**WA-1's test, restated:** the 12 U(1) gauge-kinetic functions come in 3 quartets
+(Lukas–Morris eq. 1.3: they depend on the blow-up type only). A class breaking the
+quartet structure would kill it.
+
+---
+
+## D-008 · BLIND VERIFICATION · 2026-10-01 — H1, H2, H4 confirmed; one clause of H3 refuted
+
+A fresh verifier, without the lead's module, tests or results, built its own model
+of all 2¹⁴ = 16,384 shift classes and ran the engine over all 28 generating triples
+(458,752 assignments; every triple covers every class once). Engine and model agree
+class by class: zero mismatches. n = 0/1/2/3 classes: 6,296 / 6,783 / 2,520 / 364;
+none with n ≥ 4.
+
+- **H1 confirmed.** Of the 35 triples of non-identity elements, 28 span Γ, exactly
+  the non-concurrent ones; every triangle gives a 4-arc, and exactly one line misses
+  it — the fixed line of σ₁σ₂σ₃. All 364 n = 3 classes are non-concurrent. The
+  canonical point's singular lines are (0,1,2), (0,3,4), (1,3,5); arc {0,1,3,6}.
+- **H2 confirmed.** 84/84 abstract and 1,092/1,092 concrete perfect matchings hold
+  exactly one triangle side.
+- **H3: existence confirmed, canonicity REFUTED.** All 280 all-plain classes have
+  4 components per involution and admit a 3 × 4-respecting bijection; both sides are
+  (ℤ/2)²-torsors. But all 24 bijections of a block are torsor maps, so the torsor
+  structure narrows nothing (216 choices per class), and on 112 of the 280 classes no
+  choice is invariant under the orbifold's φ-preserving symmetries; none has a
+  unique choice. Blocks ↔ involutions IS canonical; bridge ↔ component inside a
+  block is a free choice. The selection (CG.12) needs only existence, so it stands;
+  the wording "canonical up to a Klein-four relabelling" is withdrawn in the engine.
+  Physically the four U(1)s of a block share one gauge-kinetic function, so the
+  freedom sits exactly where they are indistinguishable.
+- **H4 confirmed, with a caveat.** The 84 non-all-plain n = 3 classes all have
+  components (4, 4, 8) and admit no bijection. But under the per-family lift model
+  all 84 also reach (12, 43): the pair (12, 43) does not identify the all-plain
+  members — the component profile (4, 4, 4) does. The selection reads the profile
+  through WA-1, so this does not move CG.12.
+
+No kill condition fired.
