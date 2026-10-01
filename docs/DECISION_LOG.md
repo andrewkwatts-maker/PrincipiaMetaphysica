@@ -1316,3 +1316,63 @@ closed classically pending PR-3.
 
 Each is implemented as an engine module with tests, run, and its result recorded
 here before any wording changes on its account.
+
+---
+
+## D-012 · VERIFICATION · 2026-10-01 · KILL CONDITION FIRED AGAIN (56%) — no global re-wiring
+
+A fresh blind verifier (rules as amended in D-012, inventory texts only; neither the
+D-007 nor the amended table, nor the first verifier's verdicts) classified all 41
+random roots and the 7 contested ones. Verdicts: session scratchpad
+`g5_reverify/verdicts.json`, each with its quote and reasoning.
+
+**Agreement with the amended table: 23/41 = 56.1%**, below the registered 80%. As
+registered, nothing is re-wired on the strength of the table.
+
+**Where they disagree (18):**
+- **MIXED vs NONE, again** (FR07, FR29, FR32, NC02, NC06, NC10, NC15, OT24, SP02). The
+  verifier finds an object-bearing part (a B3 or BULK factor) in roots the table read
+  as object-less. Rule 6′ removed one source of this; the remaining one is what counts
+  as a text "naming" an object.
+- **NONE vs B3** (OT08, OT09, OT10, OT21; FR04). **FR04 is the amended table's error,
+  not the verifier's:** rule 8 gives a member that consumes the family's factor
+  (σ_T = 1 − 1/b₃ documents exactly that) the family's class, B3.
+- Others: FR01 (B3 vs INFRA: the seed accessor), FR36 (G1 vs NONE), OT06 (BULK vs
+  NAMED — both "stay"), OT14 (B3 vs MIXED).
+
+**Diagnosis.** The class labels are not reproducible at 80% because applying the
+rules to texts that mix a symbol, a gloss and an object is a judgement call (the
+verifier lists six such calls). Tightening the wording again would chase the same
+judgement.
+
+---
+
+## D-018 · 2026-10-01 · G5 · PRE-REGISTERED — act only on consensus
+
+**Rule.** A G5 action is taken on a root only where TWO independent classifications —
+the amended table (D-012) and the second blind verifier — agree on the class, and the
+action follows from that class without further judgement. Every other root stays
+held, its value unchanged, its disagreement published with both readings.
+
+**The consensus set (28 roots):** FR02, FR03, FR06, FR09, FR10, FR11, FR23, FR40,
+FR42, FR45, FR49, NC04, NC14, NC19, NC23, OT02, OT13, OT18, OT19, OT20, OT23, OT30,
+SP05, SP11, SP12, SP13, SP16, SP17.
+
+**Actions it licenses** (each one commit, with before/after and a one-line revert;
+executed next session, after the wording lanes are integrated):
+- **Labels only** (16 DEMOTE roots, including the k_ℷ layer's FR02): status labels
+  CALIBRATED / NUMEROLOGY, values unchanged.
+- **SP05 — NAMED, the 24-cell** (agreed): `flavour_seed_coupling` → the 24-cell
+  reading. Its θ₁₃ value moves 4.835° → 8.669°; the NuFIT comparison is reported
+  after the change and did not choose it.
+- **SP11 — B3, the w₀ family** (agreed): `dark_energy_betti` → `b3_live`; w₀ moves
+  −23/24 → −42/43. Both lie more than 3σ from the DESI DR2 headline; reported, not
+  chosen.
+- **OT13 — MIXED, n_bridge_pairs part BULK** (agreed): pneuma's `n_bridge_pairs`
+  reads D_space/2 = 12 instead of b₃//2 (21 at b₃ = 43).
+- **SP13 — MIXED, SO(n) part BULK** (agreed): appendix H's SO(n) reads n = D_space.
+- **OT18 — BULK** (agreed): the 13D shadow's "b₃/2 + 1" reads D_space/2 + 1 = 13.
+
+**Kill condition.** If any licensed action, once made, breaks a test that is not a
+pin of the old value, or moves a published number its decision did not name, it is
+reverted and listed.
