@@ -1061,3 +1061,108 @@ published number moves on them. Next, when usage allows:
    resolution of the w₀ texts.
 2. Re-run the blind verifier on the full random sample plus the contested set.
 3. Re-wire only on ≥ 80% agreement.
+
+---
+
+## D-012 · 2026-10-01 · G5 · RE-REGISTERED — tightened rules, before re-verification
+
+D-007's blind verification fired its kill condition (18/32 = 56%). As registered
+there, the rules are tightened and re-registered HERE, before the verifier runs
+again. Nothing is re-wired until it passes.
+
+**Amendments to D-004.**
+- **Rule 6′ (MIXED).** A root is MIXED only when at least one of its parts names an
+  object (B3, BULK or NAMED) and another part comes from a different class or seed.
+  A root none of whose parts names an object is NONE, however many parts it has.
+  (Nine of the fourteen disagreements were MIXED vs NONE on the same action.)
+- **Rule 8 (families).** Roots that compute the same published quantity form a
+  family. When their texts name DIFFERENT objects for the same factor, the family is
+  AMBIGUOUS (rule 4) and rule 5 decides it once, for every member. A member whose own
+  text names no object takes the family's class only if it consumes the same factor;
+  otherwise it is NONE.
+- **Rule 9 (names are symbols).** Legacy or esoteric names ("Elders", "Pleroma",
+  "Void Seal", `elder_kads`, `tzimtzum`) are symbols, not objects (rule 1). A name
+  counts only if the text says what is counted.
+- **Rule 10 (a modulus is not a count).** A continuous modulus — a size, a volume, a
+  vev — is not a count of 24 things. A text that names only a modulus for a factor
+  of 24 names no object for it.
+
+**Resolutions fixed now, on the quoted evidence.**
+- **The w₀ family** (SP07, FR04, and the readers of `dark_energy_betti`). Only
+  SP07's text names a counted object for the 24: "the b3 associative 3-cycles",
+  i.e. H³ of Y₇ — valid on the adopted geometry, 43 classes. FR04 (σ_T = 23/24)
+  names a symbol ("Void Seal") and a modulus ("bridge size modulus") — rules 9 and
+  10 — so it is NONE. **Family class: B3.** If verified: `dark_energy_betti` →
+  `b3_live` (w₀ = −42/43), and σ_T = 23/24 is labelled a calibration, value
+  unchanged. The DESI comparison is reported after the choice and does not enter it
+  (both −23/24 and −42/43 lie more than 3σ from the DR2 w0waCDM headline).
+- **OT06** (`four_face_structure`: `n_e8_blocks = b3 // 8`, `n_bridges = n_faces ×
+  n_e8_blocks`). The derivation text names "the 12 bridge pairs" — the bulk. The
+  table's NONE is withdrawn and the verifier's NAMED is not adopted either: **BULK**
+  (24 = the bulk's space directions = 3 E₈ blocks of 8; stays 3). If verified, the
+  block count reads D_space, so n_bridges returns to 12 (it reads 20 at b₃ = 43 —
+  more bridges than the bulk has).
+
+**Re-verification protocol (fixed now).**
+1. A fresh blind verifier receives D-004 as amended here and the inventory's
+   derivation texts — not the D-007 table and not the first verifier's verdicts.
+2. It classifies the same random sample of 41 roots (`random.Random(20260930)`)
+   and, separately, the 7 contested roots (FR02, SP01, SP05, SP11, SP13, SP14,
+   OT13).
+3. **Pass: ≥ 80% exact class agreement on the 41**, measured against the D-007
+   table as amended by the resolutions above (FR04 → NONE, OT06 → BULK, and every
+   all-object-less MIXED → NONE under rule 6′). The amended table is written to
+   `docs/decisions/D-012-amended-table.md` BEFORE the verdicts are read.
+4. Below 80%: no re-wiring; the disagreements are published with their evidence.
+5. At or above 80%: the D-007 actions run, one commit each, with before/after and a
+   one-line revert.
+
+---
+
+## D-013 · 2026-10-01 · PUBLICATION · PRE-REGISTERED — the site shows the active path only
+
+**Request (the author, 2026-10-01):** only active switch/path formulas and
+parameters are displayed on the website, and only those are being updated.
+
+**Rule.** A formula or parameter is published LIVE only if it is on the active
+path:
+1. it does not implement a non-adopted option of any fork, and
+2. its claim has not been retired by a decision or ruling.
+
+Everything else is published ONLY in a generated off-path register
+(`off_path_register.json`), each entry with the fork option or decision that
+retired it and a one-line reason. It stays runnable — dead ends are demoted,
+never deleted.
+
+**Mechanism.** Membership is declared once per object, in one registry module,
+as (fork, option) or (decision, reason). It is evaluated against the LIVE fork
+state at export, so flipping a fork moves an object between the live set and the
+register. No typed list of hidden ids.
+
+**Not off-path, and still displayed:**
+- on-path quantities whose value is a calibration — labelled CALIBRATED;
+- on-path quantities with stale wording — fixed by the wording pass (D-014);
+- b₃-consumers awaiting G5 — displayed with their recorded divergence.
+
+**Checks (tests).**
+- Every declared id exists in a full run.
+- No live artifact contains a declared off-path id on the adopted path.
+- Flipping `b3_seed` to `seed_24` moves the seed-24-bound objects into the live
+  set.
+- Nothing is lost: live + register = everything the run produced.
+
+**Kill condition.** If an object cannot be assigned without a judgement the
+decision rule does not settle, it stays LIVE, labelled, and is listed for the
+author. Hiding is never the default for a doubtful case.
+
+---
+
+## D-014 · 2026-10-01 · WORDING · the rules for the wording pass
+
+The wording pass brings every surface — paper, website, beginner guide, formula
+and parameter text — onto the adopted model with one voice. Its rules are the
+engine's `docs/WORDING_MEMO.md`: what is true on the active path (certificate
+CG.1–CG.11 and D-001…D-013), what is off-path, retired or calibrated, how a
+remaining 24 is named by its object, and how numbers enter prose
+(`geometry_narration.render`, generated from the live seed). A wording pass
+changes no value, EML tree, arithma expression, formula id or parameter path.
