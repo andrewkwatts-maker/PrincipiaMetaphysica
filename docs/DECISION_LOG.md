@@ -1376,3 +1376,96 @@ executed next session, after the wording lanes are integrated):
 **Kill condition.** If any licensed action, once made, breaks a test that is not a
 pin of the old value, or moves a published number its decision did not name, it is
 reverted and listed.
+
+---
+
+## D-017 · RESULT · 2026-10-01 · PR-1 CONFIRMED (prediction held, no kill)
+
+Module `PM/geometry/instanton_cycles.py` (`subgroup_identity`,
+`flat_associative_census`, `instanton_cycle_sweep`), tests
+`tests/test_instanton_cycles.py` (7 passed).
+
+- Subgroup identity dim(ℝ⁷)^S = 8/|S| − 1 holds on all 16 subgroups of Γ.
+- Canonical point (n = 3): 1,792 rows (|S| = 1/2/4: 656/944/192; none with
+  |S| = 8); rigid ∧ b₁ = 0: 0; qualifying: 0.
+- Sweep: the canonical point and every n ≥ 1 pairwise-disjoint class of the first
+  generating triple — 9,667 classes, 17,323,264 rows. **Qualifying rows: 0**, as
+  predicted. The kill condition did not fire.
+- The hypothesis is not vacuous: 245 classes carry 16 rows each with S = Γ that are
+  rigid with b₁ = 0, and every one fails only on freeness — the lemma's mechanism. A
+  hand-built free Hantzsche–Wendt control (outside Γ) is flagged; zeroing one shift
+  switches it off.
+
+**Consequence.** C2's M2-instanton route is KILLED for flat (totally geodesic)
+associatives. Non-flat associatives stay out of scope; the known ones of this
+resolution are S¹×S² with b₁ = 1 (Dwivedi–Platt–Walpuski 2023, Ex. 4.9). C2 (Re(T)) now
+has no candidate mechanism inside Y₇.
+
+**Correction to the PR-3 registration wording (kill condition unaffected).** H3c's
+"ε ≥ 25/7" cannot hold, since ε ≤ 3 whenever V ≥ 0. The intended statement is
+µ_CH²/2 = 25/7 > 3, so the late-time attractor is kination (ε → 3). PR-2 and PR-3 are
+not yet run.
+
+---
+
+## D-019 · 2026-10-02 · PATH ASSESSMENT · PRE-REGISTERED (annex fixed before any run)
+
+**Question.** Under the decision rule (lines 21–31 of this log), is the reasoned active
+path — the D-015 selection — in the top group of all valid configurations of the
+executable forks?
+
+**Ruled by the author (2026-10-02):** ranking follows the decision rule
+lexicographically; adoption is *recommend + one explicit accept*, never automatic.
+
+**Comparator** (each criterion a tuple of integers, lower is better; a first difference
+decides, whatever later criteria say):
+
+| # | Criterion | Measured by |
+|---|---|---|
+| 1 | Validity (hard gate) | switch_search problem kinds CONTRADICTION / STRUCTURAL_FAILURE / VACUOUS; certificate claims with holds = False; converted import-time checks; target facts. A failing configuration is REJECTED with reasons and not ranked. |
+| 2 | Closure | free_set_size from that configuration's own artifact plus discrete inputs declared by its options, then n_calibrated. UNMEASURED if the free set does not count the live forks. |
+| 3 | Consistency | Count of broken identities (identity ledger with the narration's χ_eff), failing beacons, failing semantic gates, triple-track disagreements, disagreeing observable groups, OMEGA ≠ 0. A Pareto note marks fragile wins. |
+| 4 | Elegance | (formulas not rooted in the seed, raw literal leaves) from that configuration's own dependency-walker output. Nothing typed by hand. |
+| 5 | Data — tie-break only | (n_FAIL, n_TENSION, χ²) on rows common to the tied group, policy forks held fixed. Discloses the trials factor k; accepting on it adds one fitted degree of freedom. |
+
+**Amendments pre-registered here:**
+- (a) switch_search's `re_t_is_the_solved_vacuum` is re-scoped: only a configuration
+  that claims a computed vacuum must have one (D-015 made Re(T) an open modulus).
+- (b) Target fact: n_gen = 3 (the b₃_seed option texts already call one generation a
+  structural refutation).
+- (c) Checks failing in every assessed configuration are standing failures: excluded
+  from the comparison and disclosed.
+- (d) Policy forks (render_policy, theory_uncertainty_policy) are held at their active
+  values.
+- (e) A complete tie keeps the active path.
+- (f) An UNMEASURED or UNEVALUABLE value on criteria 1–4 never falls through to a later
+  criterion; such configurations are UNDECIDED.
+
+**Kill conditions.** K1 the active run does not reproduce the published build; K2 the
+screen and a full run disagree on a check (screen rejections for the forks involved are
+void); K3 the null control (active against itself) is not identical; K4 a deciding
+criterion rests on an UNMEASURED value or a run-stamp mismatch; K5 the sha256 of the
+assessment configuration differs from the one recorded in the annex.
+
+**Annex** `docs/decisions/D-019-path-assessment.md` holds the final assessment
+configuration, its sha256, the constraint list and the measured run budget. It is
+committed before the first PM assessment run; a run against any other sha256 is void.
+
+**Code.** Only the comparator module may rank. switch_search, fork_implications and
+preferred_path stay non-ranking (their tests are unchanged); new tests confine ranking
+words to the comparator and pin the criteria order.
+
+---
+
+## D-020 · 2026-10-02 · PUBLICATION · PRE-REGISTERED — the Paths tab
+
+**Request (the author, 2026-10-02):** export the switch/path graph and show it on the
+website as a navigable, zoomable tab, with the active path (the one that generates the
+paper) in gold and each node carrying its reasoning.
+
+**Rule.** The Paths tab shows every declared fork, option, constraint and decision, and
+every assessed configuration, each labelled by status (active, considered, retired,
+rejected, not implemented) with its rationale, scores and verdict. It does NOT present
+off-path physics values as predictions — D-013 still governs every other page, which
+shows the active path only. The active path is drawn in gold with the decisions that
+selected it.
