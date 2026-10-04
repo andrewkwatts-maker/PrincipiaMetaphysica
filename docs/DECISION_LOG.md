@@ -1469,3 +1469,34 @@ rejected, not implemented) with its rationale, scores and verdict. It does NOT p
 off-path physics values as predictions — D-013 still governs every other page, which
 shows the active path only. The active path is drawn in gold with the decisions that
 selected it.
+
+---
+
+## D-003 · ADDENDUM 2 · 2026-10-02 · the glued form on the compact (active) path
+
+D-015 made the compact real form the active path, so the glued-orbit scan
+(`PM/geometry/glued_orbit_scan.py`, the leading-order-in-t glued 3-form along the
+resolution neck) was re-measured on it. Coarse grid, one family (radii 1, 1.2, 2, 10,
+100; t = 0, 0.1, 1, 10; θ = π/4, π/2; 40 points):
+
+| | t = 0 | t = 0.1 | t = 1 | t = 10 |
+|---|---|---|---|---|
+| compact orbit | 10/10 | 10/10 | 7/10 | 4/10 |
+| split orbit | 0 | 0 | 3 | 6 |
+
+Four points are degenerate (det B = 0); no point flips orientation inside the compact
+orbit. On the split-form switch path the 2026-09-22 result stands unchanged
+(DEGENERATE: never leaves the split orbit; orientation flips only).
+
+**Reading.** At small amplitude the glued form is a genuine G₂ form of the compact
+orbit at every sampled point. It leaves the orbit only at t ≥ 1, where the
+leading-order expansion in t is outside its domain. This is consistent with Joyce's
+construction, which needs a small resolution parameter and then corrects the glued
+form to a torsion-free one. It marks where the leading-order ansatz breaks down, not a
+failure of the construction. The holonomy wording therefore needs no domain qualifier
+on the active path, provided the gluing amplitude is small — which is what the
+construction assumes.
+
+Tests re-pinned on both branches (`tests/test_glued_orbit_scan.py`): split
+→ no crossover; compact → all points with t ≤ 0.1 compact, crossover only at t ≥ 1,
+9 split and 4 degenerate on this grid.
