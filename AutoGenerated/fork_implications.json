@@ -4,12 +4,12 @@
     "b3_origin": "derived_joyce_a1",
     "b3_seed": "seed_43_joyce",
     "bulk_signature": "24_2",
-    "chi_eff_route": "unruled",
+    "chi_eff_route": "k3_reading",
     "dark_energy_betti": "b3_24",
     "face_genericity": "generic",
     "flavour_seed_coupling": "follow_seed",
     "g2_construction": "joyce_orbifold",
-    "g2_form_convention": "all_plus_one",
+    "g2_form_convention": "octonion_derived",
     "joyce_contribution_table": "absent",
     "lattice_24d": "leech",
     "metric_construction": "quadratic_contraction",
@@ -17,12 +17,13 @@
     "n_gen_source": "b2_over_faces",
     "re_t_adoption": "calibrated",
     "render_policy": "strict",
+    "seed_selection": "wa1_correspondence",
     "theory_uncertainty_policy": "cited_only",
     "twisted_norm_convention": "orbit_sum"
   },
-  "adopted_digest": "4575eb450af9e9d8",
-  "n_forks": 18,
-  "n_deviations": 51,
+  "adopted_digest": "eb599ffd48c9baf8",
+  "n_forks": 19,
+  "n_deviations": 54,
   "watched": {
     "observables": [
       "ancestral_roots",
@@ -151,8 +152,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 38,
-          "deviated": 39,
+          "adopted": 39,
+          "deviated": 40,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -224,8 +225,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 38,
-          "deviated": 39,
+          "adopted": 39,
+          "deviated": 40,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -362,8 +363,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 38,
-          "deviated": 39,
+          "adopted": 39,
+          "deviated": 40,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -445,8 +446,8 @@
         },
         {
           "observable": "free_set_size",
-          "adopted": 38,
-          "deviated": 39,
+          "adopted": 39,
+          "deviated": 40,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         },
@@ -474,6 +475,11 @@
       ],
       "identities_flipped": [
         {
+          "identity": "chi_eff_over_b3_is_three",
+          "adopted": "BROKEN",
+          "deviated": "NOT_EVALUABLE"
+        },
+        {
           "identity": "n_gen_from_b2_over_faces",
           "adopted": "HOLDS",
           "deviated": "BROKEN"
@@ -487,7 +493,7 @@
           "artifact_bound": false
         }
       ],
-      "n_changes": 9
+      "n_changes": 10
     },
     {
       "fork": "bulk_signature",
@@ -523,43 +529,47 @@
       "fork": "chi_eff_route",
       "option": "constant_144",
       "is_adopted_option": false,
-      "fork_status": "OPEN",
+      "fork_status": "RULED",
       "observables_moved": [],
-      "identities_flipped": [
-        {
-          "identity": "chi_eff_over_b3_is_three",
-          "adopted": "NOT_EVALUABLE",
-          "deviated": "BROKEN"
-        }
-      ],
+      "identities_flipped": [],
       "gates_changed": [],
-      "n_changes": 1
+      "n_changes": 0
+    },
+    {
+      "fork": "chi_eff_route",
+      "option": "k3_reading",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
     },
     {
       "fork": "chi_eff_route",
       "option": "seed_dependent",
       "is_adopted_option": false,
-      "fork_status": "OPEN",
-      "observables_moved": [],
-      "identities_flipped": [
-        {
-          "identity": "chi_eff_over_b3_is_three",
-          "adopted": "NOT_EVALUABLE",
-          "deviated": "BROKEN"
-        }
-      ],
-      "gates_changed": [],
-      "n_changes": 1
-    },
-    {
-      "fork": "chi_eff_route",
-      "option": "unruled",
-      "is_adopted_option": true,
-      "fork_status": "OPEN",
+      "fork_status": "RULED",
       "observables_moved": [],
       "identities_flipped": [],
       "gates_changed": [],
       "n_changes": 0
+    },
+    {
+      "fork": "chi_eff_route",
+      "option": "unruled",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [
+        {
+          "identity": "chi_eff_over_b3_is_three",
+          "adopted": "BROKEN",
+          "deviated": "NOT_EVALUABLE"
+        }
+      ],
+      "gates_changed": [],
+      "n_changes": 1
     },
     {
       "fork": "dark_energy_betti",
@@ -716,23 +726,13 @@
     {
       "fork": "g2_form_convention",
       "option": "all_plus_one",
-      "is_adopted_option": true,
-      "fork_status": "OPEN",
-      "observables_moved": [],
-      "identities_flipped": [],
-      "gates_changed": [],
-      "n_changes": 0
-    },
-    {
-      "fork": "g2_form_convention",
-      "option": "octonion_derived",
       "is_adopted_option": false,
-      "fork_status": "OPEN",
+      "fork_status": "RULED",
       "observables_moved": [
         {
           "observable": "phi_annihilator_dim",
-          "adopted": 6,
-          "deviated": 14,
+          "adopted": 14,
+          "deviated": 6,
           "artifact_bound": false,
           "reading": "live"
         }
@@ -740,6 +740,16 @@
       "identities_flipped": [],
       "gates_changed": [],
       "n_changes": 1
+    },
+    {
+      "fork": "g2_form_convention",
+      "option": "octonion_derived",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
     },
     {
       "fork": "joyce_contribution_table",
@@ -857,8 +867,8 @@
       "observables_moved": [
         {
           "observable": "free_set_size",
-          "adopted": 38,
-          "deviated": 39,
+          "adopted": 39,
+          "deviated": 40,
           "artifact_bound": true,
           "reading": "NOT A MEASUREMENT of the deviated branch: this value comes from the build artifact, which was produced under the adopted selection. Rebuild under the deviation to measure it."
         }
@@ -878,7 +888,7 @@
       "fork": "re_t_adoption",
       "option": "calibrated",
       "is_adopted_option": true,
-      "fork_status": "OPEN",
+      "fork_status": "RULED",
       "observables_moved": [],
       "identities_flipped": [],
       "gates_changed": [],
@@ -888,7 +898,7 @@
       "fork": "re_t_adoption",
       "option": "computed_vacuum",
       "is_adopted_option": false,
-      "fork_status": "OPEN",
+      "fork_status": "RULED",
       "observables_moved": [],
       "identities_flipped": [],
       "gates_changed": [],
@@ -907,6 +917,26 @@
     {
       "fork": "render_policy",
       "option": "strict",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "seed_selection",
+      "option": "ruling_only",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "seed_selection",
+      "option": "wa1_correspondence",
       "is_adopted_option": true,
       "fork_status": "RULED",
       "observables_moved": [],

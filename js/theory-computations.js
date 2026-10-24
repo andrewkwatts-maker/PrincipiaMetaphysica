@@ -316,7 +316,8 @@ Boundary integral: ∫_{brane} ∇·J_S dA > 0
             };
         },
 
-        // Check generation formula consistency
+        // Check generation formula consistency (legacy; the ruled count is
+        // n_gen = b_2/4 = 3, which chi_eff/48 restates on the K3 reading)
         checkGenerations() {
             const n26D = 144 / 48;  // Z₂ doubled
             const n13D = 72 / 24;   // F-theory
@@ -324,8 +325,8 @@ Boundary integral: ∫_{brane} ∇·J_S dA > 0
                 from26D: n26D,
                 from13D: n13D,
                 consistent: n26D === n13D && n26D === 3,
-                formula26D: "χ_total/48 = 144/48 = 3",
-                formula13D: "χ(CY4)/24 = 72/24 = 3"
+                formula26D: "χ_eff/48 = 144/48 = 3 (K3 reading; restates n_gen = b_2/4)",
+                formula13D: "Σχ(K3)/24 = 72/24 = 3 per shadow (formerly χ(CY4)/24)"
             };
         },
 

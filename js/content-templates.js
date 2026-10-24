@@ -9,7 +9,7 @@
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
-// Import PM object (available globally after theory-constants-enhanced.js loads)
+// Import PM object (available globally after pm-constants-loader.js loads)
 const getContentTemplates = () => {
   const PM = window.PM || {};
 
@@ -31,11 +31,11 @@ const getContentTemplates = () => {
     // ABSTRACT / SUMMARY
     // ========================================================================
     abstract: {
-      short: `A unified geometric framework deriving all 58 Standard Model parameters from a single G₂ manifold with minimal calibration (2 fitted parameters).`,
+      short: `A geometric framework: a 26D bulk of signature (24,2), one time per 13D shadow, compactified on the G₂ manifold Y₇ (Joyce's resolution of T⁷/(ℤ/2)³, with (b₂, b₃) = (12, 43)). Some quantities are derived, others are calibrated, and several problems are open.`,
 
-      medium: `Principia Metaphysica presents a unified geometric framework that derives all 58 Standard Model parameters from first principles. Starting from a ${PM.dimensions?.D_bulk}D bulk spacetime with signature (24,2), the theory employs Sp(2,R) gauge symmetry to eliminate ghosts while preserving G₂ holonomy compactification. The framework achieves ${PM.validation?.predictions_within_1sigma}/${PM.validation?.total_predictions} predictions within 1σ of experimental values.`,
+      medium: `Principia Metaphysica is a geometric framework. It starts from a ${PM.dimensions?.D_bulk}D bulk spacetime with signature (24,2): 24 space directions and 2 times, one per 13D shadow. The internal space is the compact G₂ manifold Y₇, Joyce's resolution of T⁷/(ℤ/2)³, with (b₂, b₃) = (12, 43); three generations come from n_gen = b₂/4, the number of singular involutions. Ghost control for the second time, chirality, the moduli, dark energy and flavour are open problems.`,
 
-      full: `Principia Metaphysica (PM) establishes a unified geometric framework for deriving all Standard Model parameters from topological and geometric first principles. The theory begins with a ${PM.dimensions?.D_bulk}-dimensional bulk spacetime possessing signature (24,2), incorporating two timelike dimensions. Through Sp(2,R) gauge symmetry, the framework eliminates negative-norm states while preserving the mathematical structure necessary for G₂ holonomy compactification. The Euler characteristic χ = ${PM.topology?.chi_eff} yields exactly ${PM.topology?.n_gen} fermion generations via the topological formula n_gen = χ/48. All quark and lepton masses emerge from b₃ = ${PM.topology?.b3} associative cycles on the G₂ manifold. The framework requires only 2 fitted parameters (VEV scale, α_GUT normalization) out of 58 total, achieving ${PM.validation?.predictions_within_1sigma}/${PM.validation?.total_predictions} predictions within 1σ of experiment.`
+      full: `Principia Metaphysica (PM) is a geometric framework for the Standard Model. It begins with a ${PM.dimensions?.D_bulk}-dimensional bulk spacetime of signature (24,2): 24 space directions and two times, one per 13D shadow of signature (12,1). Ghost control for the second time is open; Bars' Sp(2,R) ghost-freedom theorem is not inherited. The internal space is Y₇, Joyce's resolution of T⁷/(ℤ/2)³, a compact 7-manifold with Betti numbers (b₂, b₃) = (12, 43) and Euler characteristic 0. Three generations come from n_gen = b₂/4, the number of singular involutions; on the K3 reading the effective index χ_eff = 2 Σ χ(K3) = 48n = 144 restates that count. Chirality, the moduli, dark energy and flavour are open, and quantities built on the retired seed b₃ = 24 are labelled calibrated.`
     },
 
     // ========================================================================
@@ -55,7 +55,7 @@ const getContentTemplates = () => {
         derived: 56,
         total: 58,
         fittedList: ['VEV scale factor (1.5859)', 'α_GUT normalization'],
-        note: 'Only 2 of 58 Standard Model parameters require calibration - 96.6% are derived from geometry'
+        note: 'Legacy count. Quantities built on the retired seed b₃ = 24 (the k_ℷ layer, the racetrack) are calibrated, not derived; see the free-variable ledger for the current count.'
       }
     },
 
@@ -93,7 +93,7 @@ const getContentTemplates = () => {
         test: 'DESI DR2 (ongoing)',
         status: 'consistent',
         deviation: '0.38σ',
-        description: 'Dark energy equation of state from moduli dynamics, consistent with DESI DR2.'
+        description: 'Dark energy equation of state w₀ = -23/24, frozen at the off-path seed b₃ = 24. The DESI DR2 w₀w_aCDM headline is w₀ = -0.752 ± 0.057, more than 3σ away; dark energy is open on the adopted path.'
       },
 
       maximalMixing: {
@@ -101,7 +101,7 @@ const getContentTemplates = () => {
         value: `${PM.pmns_matrix?.theta_23?.toFixed(1)}°`,
         test: 'NuFIT 6.0 (2025)',
         status: 'confirmed',
-        description: 'Maximal atmospheric mixing from Shadow_ק = Shadow_ח geometric symmetry.'
+        description: 'Maximal atmospheric mixing from the Shadow_ק = Shadow_ח symmetry, a model construct (flavour is open on the adopted path).'
       }
     },
 
@@ -114,22 +114,22 @@ const getContentTemplates = () => {
           dim: PM.dimensions?.D_bulk,
           signature: '(24,2)',
           name: '26D Bulk',
-          short: 'Bosonic string critical dimension',
-          description: 'The full bulk spacetime has 24 spatial and 2 timelike dimensions, required for bosonic string consistency.'
+          short: '24 space directions and 2 times',
+          description: 'The full bulk spacetime has 24 space directions and 2 times, one per 13D shadow. (The earlier claim that 26 is the critical dimension is withdrawn: the two-time critical dimension is 27-28.)'
         },
         {
           dim: PM.dimensions?.D_after_sp2r,
           signature: '(12,1)',
           name: '13D Shadow',
-          short: 'Sp(2,R) gauge-fixed',
-          description: 'After Sp(2,R) gauge symmetry eliminates one time dimension, we obtain a 13D effective shadow with one time.'
+          short: 'One time per shadow',
+          description: 'The bulk splits into two 13D shadows of signature (12,1), each carrying one of the two times; no time is shared between them.'
         },
         {
           dim: 8,
           signature: '(7,1)',
           name: '8D G₂ × Time',
           short: 'G₂ manifold with time',
-          description: 'The 7D G₂ holonomy manifold embedded in 8D with a single timelike direction.'
+          description: 'The 7D G₂ manifold Y₇ together with the shadow\'s own time direction.'
         },
         {
           dim: 6,
@@ -149,7 +149,7 @@ const getContentTemplates = () => {
 
       twoTime: {
         thermal: 't_therm - Thermal time from KMS state (experienced/physical time)',
-        orthogonal: 't_ortho - Orthogonal time eliminated by Sp(2,R) gauge'
+        orthogonal: 't_ortho - The second time, carried by the other shadow (ghost control is open)'
       }
     },
 
@@ -160,20 +160,20 @@ const getContentTemplates = () => {
       chi: {
         value: PM.topology?.chi_eff,
         formula: 'χ_eff = 144',
-        description: 'Effective index χ_eff of the Joyce orbifold (not its Euler characteristic, which is 0); on the unruled K3 reading χ_eff/48 = 3 counts the singular involutions.'
+        description: 'Effective index on the K3 reading: χ_eff = 2 Σ χ(K3) = 48n = 144, the Kummer K3 surfaces transverse to the singular involutions, once per shadow. It is not the Euler characteristic of Y₇, which is 0.'
       },
       b2: {
         value: PM.topology?.b2,
-        description: 'Second Betti number from TCS (Twisted Connected Sum) G₂ construction.'
+        description: 'Second Betti number of Y₇ (Joyce\'s resolution of T⁷/(ℤ/2)³): b₂ = 12, four resolved A₁ families for each singular involution.'
       },
       b3: {
         value: PM.topology?.b3,
-        description: 'Third Betti number counting associative 3-cycles that determine Yukawa couplings.'
+        description: 'Third Betti number of Y₇: b₃ = 7 + 3b₂ = 43 (7 flat plus 36 twisted). Yukawa couplings need a chiral sector, which is open.'
       },
       generations: {
         value: PM.topology?.n_gen,
-        formula: 'n_gen = χ_eff / 48 = 144 / 48 = 3',
-        description: 'Three fermion generations emerge topologically from flux quantization on G₂.'
+        formula: 'n_gen = b₂/4 = 12/4 = 3',
+        description: 'Three generations: n_gen = b₂/4, the number of singular involutions of Y₇. On the K3 reading χ_eff/48 = n restates the same count. Chirality is open.'
       }
     },
 
@@ -184,7 +184,7 @@ const getContentTemplates = () => {
       mass: {
         value: PM.proton_decay?.M_GUT,
         formatted: `${(PM.proton_decay?.M_GUT / 1e16).toFixed(2)}×10¹⁶ GeV`,
-        description: 'Grand Unified Theory scale derived from G₂ torsion.'
+        description: 'Grand Unified Theory scale from torsion inputs and a modulus calibrated at the off-path seed b₃ = 24 (calibrated, not derived).'
       },
       alphaInverse: {
         value: PM.proton_decay?.alpha_GUT_inv,
@@ -199,12 +199,12 @@ const getContentTemplates = () => {
       mass: {
         value: 125.10,
         unit: 'GeV',
-        description: 'Higgs boson mass from moduli stabilization with Re(T) = 7.086.'
+        description: 'Higgs boson mass computed with Re(T) = 7.086, calibrated at the off-path seed b₃ = 24; Re(T) is an open modulus.'
       },
       vev: {
         value: PM.v12_6_geometric_derivations?.vev_pneuma?.v_EW,
         unit: 'GeV',
-        description: 'Electroweak VEV derived from Pneuma field condensation.'
+        description: 'Electroweak VEV from Pneuma field condensation, calibrated at the off-path seed b₃ = 24 (the k_ℷ layer).'
       }
     },
 

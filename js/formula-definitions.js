@@ -1,6 +1,6 @@
 /**
  * Centralized Formula Definitions for Principia Metaphysica
- * 26D(24,2) Framework - v24.2 (shadow-time directions notation)
+ * 26D(24,2) Framework (one time per 13D shadow)
  *
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  *
@@ -427,7 +427,7 @@ const PM_FORMULAS = {
             attribution: "Principia Metaphysica + [Fritzsch-Minkowski 1975]",
             description: "SO(10) from K_Pneuma isometries breaks to Standard Model",
             status: "DERIVED",
-            v12_7_status: "geometric - from TCS G₂ manifold",
+            v12_7_status: "geometric - from the retired TCS model (off-path)",
             terms: {
                 "SO(10)": { name: "GUT Group", description: "From CY4 isometries" },
                 "SU(3)<sub>C</sub>": { name: "Color", description: "Strong force" },
@@ -516,7 +516,7 @@ const PM_FORMULAS = {
             label: "(2.4) Hodge Numbers",
             category: "THEORY",
             attribution: "Principia Metaphysica",
-            description: "K_Pneuma Hodge diamond satisfying CY4 constraint",
+            description: "SUPERSEDED: K_Pneuma Hodge diamond of the earlier CY4 structure. The adopted internal space is Y₇, Joyce's resolution of T⁷/(ℤ/2)³, with (b₂, b₃) = (12, 43).",
             status: "SPECIFIED",
             v12_7_status: "geometric construction",
             terms: {
@@ -532,7 +532,7 @@ const PM_FORMULAS = {
             label: "(2.5) Euler Characteristic",
             category: "THEORY",
             attribution: "Principia Metaphysica",
-            description: "Required for exactly 3 generations via flux-dressed formula",
+            description: "SUPERSEDED (earlier CY4 structure). On the adopted path 72 = Σ χ(K3) per shadow on the K3 reading (3 × 24), and χ_eff = 144 counts both shadows.",
             status: "SPECIFIED",
             v12_7_status: "topological input",
             pm_constant: "PM.topology.chi_eff",
@@ -700,20 +700,20 @@ const PM_FORMULAS = {
             id: "generation-number-26d",
             html: "n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3",
             latex: "n_{gen} = \\chi_{eff}/48 = 144/48 = 3",
-            label: "(2.6) Three Generations [26D Framework]",
+            label: "(2.6) Three Generations [K3 reading; restates n_gen = b₂/4]",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "Topological derivation of exactly 3 fermion generations from flux-dressed Euler characteristic χ_eff = 144 with 48 = 24 × 2 for two-time framework",
+            description: "On the K3 reading χ_eff = 2 Σ χ(K3) = 48n = 144, so χ_eff/48 = n restates the ruled count n_gen = b₂/4 = 3 (the number of singular involutions); it is not a second derivation",
             status: "VERIFIED",
-            v12_7_status: "exact - topologically required",
+            v12_7_status: "restates the ruled count n_gen = b₂/4",
             pm_constant: "PM.topology.n_gen",
             experimental_value: 3,
             sigma: 0.0,
-            derivation: "Pure topology - χ_eff = 144 from G-flux corrections, 48 = 24 (base) × 2 (flux reduction)",
+            derivation: "K3 reading: 48 = 2 × χ(K3), one K3 per singular involution counted once per shadow; the ruled route is n_gen = b₂/4",
             terms: {
                 "n<sub>gen</sub>": { name: "Generations", description: "= 3 (observed)" },
-                "χ<sub>eff</sub>": { name: "Effective Euler Char", description: "144 from flux-dressed topology" },
-                "48": { name: "2T Index Divisor", description: "24 × 2 for two-time framework" }
+                "χ<sub>eff</sub>": { name: "Effective Index", description: "144 = 2 Σ χ(K3) on the K3 reading; not the Euler characteristic of Y₇ (0)" },
+                "48": { name: "K3 Reading Divisor", description: "2 × χ(K3) = 2 × 24, one per shadow" }
             }
         },
 
@@ -724,7 +724,7 @@ const PM_FORMULAS = {
             label: "(2.7) Three Generations [Effective 13D]",
             category: "DERIVED",
             attribution: "Principia Metaphysica + [Sethi, Vafa, Witten 1996]",
-            description: "Gauge-fixed result: same 3 generations from effective χ = 72",
+            description: "Per-shadow form: Σ χ(K3) = 72 per shadow on the K3 reading, so 72/24 = n = 3 restates n_gen = b₂/4 (formerly read on an effective CY4)",
             status: "VERIFIED",
             v12_7_status: "exact - gauge-fixed shadow",
             pm_constant: "PM.topology.n_gen",
@@ -744,17 +744,17 @@ const PM_FORMULAS = {
             label: "(4.1) GUT Scale from Torsion",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "GUT scale derived geometrically from TCS G₂ torsion T_ω = -0.875 (spinor fraction 7/8 = 0.875, 1.02% from target) and s-parameter = 1.178 - NO CALIBRATION",
+            description: "CALIBRATED: GUT scale from the torsion parameter T_ω = -0.875 (spinor fraction 7/8, introduced on the retired TCS model) and the modulus s = 1.178 from a racetrack calibrated at the off-path seed b₃ = 24",
             status: "VERIFIED",
-            v12_7_status: "pure geometric - breakthrough",
+            v12_7_status: "calibrated at the off-path seed b₃ = 24",
             pm_constant: "PM.proton_decay.M_GUT",
             experimental_value: 2.118e16,
             sigma: 0.0,
-            derivation: "Pure geometric from TCS G₂ manifold torsion - not fitted to any data",
+            derivation: "Torsion inputs from the retired TCS model (off-path) and a modulus calibrated at the off-path seed b₃ = 24",
             terms: {
                 "M<sub>GUT</sub>": { name: "GUT Scale", description: "2.118 × 10¹⁶ GeV" },
                 "T<sub>ω</sub>": { name: "Torsion", description: "-0.875 from Spin(7) spinor fraction 7/8" },
-                "s": { name: "s-parameter", description: "1.178 from G₂ moduli" }
+                "s": { name: "s-parameter", description: "1.178 from a racetrack calibrated at the off-path seed (moduli stabilisation is OPEN)" }
             }
         },
 
@@ -784,19 +784,19 @@ const PM_FORMULAS = {
             latex: "w_0 = -1 + \\frac{1}{b_3} = -\\frac{23}{24} \\approx -0.9583",
             label: "(6.2) w₀ from Thawing Quintessence",
             category: "DERIVED",
-            attribution: "v16.2 Thawing Quintessence + Principia Metaphysica",
-            description: "w₀ fixed by b₃ = 24 associative 3-cycles from G₂ topology - DERIVED NOT FITTED",
+            attribution: "Thawing Quintessence + Principia Metaphysica",
+            description: "OFF-PATH (frozen at the off-path seed b₃ = 24): w₀ = -1 + 1/b₃ evaluated at the retired seed. The formula has no derivation; dark energy is OPEN on the adopted path",
             status: "VERIFIED",
-            v12_7_status: "derived from b₃ topology",
+            v12_7_status: "frozen at the off-path seed b₃ = 24",
             pm_constant: "PM.dark_energy.w0_PM",
             experimental_value: -0.957,
             experimental_source: "DESI 2025 (thawing)",
             sigma: 0.02,
-            derivation: "b₃ = 24 from G₂ TCS #187 → w₀ = -1 + 1/b₃ thawing formula",
+            derivation: "OFF-PATH: the retired seed b₃ = 24 of the off-path TCS reading, put into the thawing ansatz w₀ = -1 + 1/b₃",
             terms: {
                 "w<sub>0</sub>": { name: "Present EOS", description: "≈ -0.9583" },
-                "b<sub>3</sub>": { name: "3-cycles", description: "= 24 from G₂ TCS #187" },
-                "-23/24": { name: "Rational Form", description: "Exact from b₃ = 24" }
+                "b<sub>3</sub>": { name: "3-cycles", description: "the retired seed b₃ = 24 (off-path); the adopted b₃ = 43" },
+                "-23/24": { name: "Rational Form", description: "Frozen at the off-path seed b₃ = 24" }
             }
         },
 
@@ -806,18 +806,18 @@ const PM_FORMULAS = {
             latex: "w_a = -\\frac{1}{\\sqrt{b_3}} = -\\frac{1}{\\sqrt{24}} \\approx -0.204",
             label: "(6.4) w_a from Thawing Evolution",
             category: "DERIVED",
-            attribution: "Principia Metaphysica v16.2",
-            description: "Evolution parameter from b₃ topology via thawing quintessence",
+            attribution: "Principia Metaphysica",
+            description: "Evolution parameter from the thawing ansatz, calibrated at the off-path seed b₃ = 24",
             status: "VERIFIED",
-            v12_7_status: "derived from b₃",
+            v12_7_status: "calibrated at the off-path seed b₃ = 24",
             pm_constant: "PM.dark_energy.wa_PM_effective",
             experimental_value: -0.99,
             experimental_source: "DESI 2025 (thawing)",
             sigma: 2.4,
-            derivation: "w_a = -1/√b₃ with b₃ = 24 from G₂ topology",
+            derivation: "w_a = -1/√b₃ evaluated at the off-path seed b₃ = 24 (retired)",
             terms: {
                 "w<sub>a</sub>": { name: "Evolution Parameter", description: "≈ -0.204" },
-                "b<sub>3</sub>": { name: "3-cycles", description: "= 24 from G₂ TCS #187" },
+                "b<sub>3</sub>": { name: "3-cycles", description: "the retired seed b₃ = 24 (off-path)" },
                 "w<sub>0</sub>": { name: "Present EoS", description: "= -0.9583" }
             }
         },
@@ -912,13 +912,13 @@ const PM_FORMULAS = {
             label: "(7.3) PMNS Mixing Angles",
             category: "PREDICTION",
             attribution: "Principia Metaphysica",
-            description: "PMNS angles from G₂ associative cycle geometry - EXACT MATCH for θ₂₃ and θ₁₃",
+            description: "PMNS angles from a cycle-geometry model construct (flavour is OPEN on the adopted path: it needs a chiral sector)",
             status: "VERIFIED",
             v12_7_status: "geometric - 0.00σ to 0.24σ vs NuFIT 6.0",
             pm_constant: "PM.pmns_matrix",
             experimental_value: "NuFIT 6.0",
             sigma: 0.24,
-            derivation: "Pure geometry from TCS G₂ associative 3-cycles",
+            derivation: "Model construct built on the retired TCS reading (off-path)",
             terms: {
                 "θ<sub>23</sub>": { name: "Atmospheric", description: "45.0° EXACT (maximal mixing)" },
                 "θ<sub>12</sub>": { name: "Solar", description: "33.59° vs 33.41±0.75° (0.24σ)" },
@@ -973,18 +973,18 @@ const PM_FORMULAS = {
             latex: "w_0 = -0.9583",
             label: "(6.1) Dark Energy w₀",
             category: "PREDICTION",
-            attribution: "Principia Metaphysica (v16.2 Thawing Quintessence)",
-            description: "Derived from b₃ = 24 via thawing formula - NOT FITTED",
+            attribution: "Principia Metaphysica (Thawing Quintessence)",
+            description: "OFF-PATH: the thawing formula evaluated at the retired seed b₃ = 24; frozen there, with no derivation",
             status: "VERIFIED",
-            v12_7_status: "derived from b₃ topology",
+            v12_7_status: "frozen at the off-path seed b₃ = 24",
             pm_constant: "PM.dark_energy.w0_PM",
             experimental_value: -0.957,
             experimental_source: "DESI 2025 (thawing)",
             sigma: 0.02,
             testBy: "DESI, Euclid, Roman",
-            currentData: "-0.957 ± 0.067 (DESI 2025 thawing) - agrees to 0.02σ",
+            currentData: "DESI DR2 w₀w_aCDM (BAO+CMB+DESY5): w₀ = -0.752 ± 0.057; -23/24 sits more than 3σ from it",
             terms: {
-                "w<sub>0</sub>": { name: "Present EOS", description: "-0.9583 from b₃ = 24" }
+                "w<sub>0</sub>": { name: "Present EOS", description: "-0.9583, frozen at the off-path seed b₃ = 24" }
             }
         },
 

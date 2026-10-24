@@ -1,5 +1,5 @@
 {
-  "framework": "Principia Metaphysica v24.1",
+  "framework": "Principia Metaphysica",
   "test_name": "Unity Identity Adversarial Stress-Test",
   "test_date": "2026-02-22",
   "target_value": {
@@ -36,7 +36,7 @@
   },
   "violations": [],
   "interpretation": {
-    "peer_review_response": "The Unity Identity was subjected to 1000 adversarial perturbations in 26D configuration space. Status: HIGHLY ROBUST (failure rate: 0.00%). This demonstrates the identity emerges from global topological constraints, not from parameter tuning or circular reasoning.",
-    "mathematical_significance": "A low failure rate indicates alpha_inv ~= 137.036 is a fixed point of the G2 descent dynamics, providing evidence for emergent physical constants from pure topology."
+    "peer_review_response": "The Unity Identity was subjected to 1000 adversarial perturbations in 26D configuration space. Status: HIGHLY ROBUST (failure rate: 0.00%). Per scaffold_note, this rate reflects the search design (the constraints keep configurations near the target and k_geometric_base is tuned to 137); it is not an independent test of topological stability.",
+    "mathematical_significance": "Illustrative only (see scaffold_note): A low failure rate indicates alpha_inv ~= 137.036 is a fixed point of the G2 descent dynamics, providing evidence for emergent physical constants from pure topology."
   }
 }

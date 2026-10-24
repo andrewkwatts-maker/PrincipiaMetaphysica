@@ -5,7 +5,7 @@
  *
  * NOT all of them are derived. Twenty entries in the geometry.* namespace carry
  * status MEASURED: they are raw experimental input restated in the registry, not
- * consequences of b3 = 24. They are the three NuFIT mixing angles (theta_12,
+ * consequences of the topological seed. They are the three NuFIT mixing angles (theta_12,
  * theta_13, theta_23) and delta_CP_PMNS, the two mass splittings, SH0ES H0_local
  * and Planck H0_early, Planck Omega_matter / Omega_radiation / omega_Lambda,
  * DESI w0_observed / wa_observed / w0_error, PDG A_Wolfenstein and J_CKM, plus
@@ -36,14 +36,14 @@ const TheoryConstants = {
     dimensions: {
         full: 26,                    // D_bulk: Full theory dimensionality
         signature: { space: 24, time: 2 },   // (24,2) signature from Cl(24,2)
-        effective: 7,                // D_G2: G2 holonomy manifold
-        effectiveSignature: { space: 12, time: 1 },  // (12,1) after Sp(2,R)
+        effective: 7,                // D_G2: the G2 manifold Y7
+        effectiveSignature: { space: 12, time: 1 },  // (12,1): one 13D shadow, with its own time
         observable: 4,               // Macroscopic spacetime
 
         // Brane hierarchy
         nBranes: 4,                  // Number of D-branes
         spatialDimsPerBrane: 3,      // Spatial dimensions per brane
-        timeDims: 1,                 // Shared time dimension
+        timeDims: 1,                 // One time per 13D shadow (the bulk has two; no time is shared)
 
         // Derived
         get dEff() { return 12; },   // D_shadow: Effective spatial dimensions
@@ -56,7 +56,7 @@ const TheoryConstants = {
 
     spinors: {
         full26D: 8192,       // spinor_26d: 2^13 components in Cl(24,2)
-        effective13D: 64,    // spinor_13d: 2^6 after Sp(2,R) gauge fixing
+        effective13D: 64,    // spinor_13d: 2^6 per 13D shadow, Cl(12,1)
 
         // Clifford algebras
         clifford26D: "Cl(24,2)",
@@ -67,22 +67,25 @@ const TheoryConstants = {
     },
 
     // ================================================================
-    // TOPOLOGY & GENERATIONS (from GeometricAnchors.b3=24)
+    // TOPOLOGY & GENERATIONS
+    // Adopted: Y7 = Joyce's resolution of T^7/(Z/2)^3, (b2, b3) = (12, 43).
     // ================================================================
 
     topology: {
-        // TCS #187 Hodge numbers
+        // OFF-PATH: Hodge numbers of the retired TCS model (Y7 has no h21, h31)
         h11: 4,              // geometry.h11
         h21: 0,              // geometry.h21
         h31: 68,             // geometry.h31
 
-        // Euler characteristic
-        chiEffective: 144,   // geometry.chi_eff: 2(h11 - h21 + h31) = 144
+        // Effective index (K3 reading): chi_eff = 2 x sum chi(K3) = 48n = 144;
+        // not the Euler characteristic of Y7 (which is 0). The off-path Hodge
+        // route 2(h11 - h21 + h31) gave the same 144.
+        chiEffective: 144,   // geometry.chi_eff
 
         // Flux quantization
         fluxReduction: 2,    // geometry.flux_reduction
 
-        // Generations: chi_eff / 48 = 3
+        // Generations: n_gen = b_2/4 = 3 (on the K3 reading chi_eff/48 = n restates it)
         generations: 3,      // geometry.n_generations
 
         // SO(10) representations
@@ -103,11 +106,12 @@ const TheoryConstants = {
     },
 
     // ================================================================
-    // DARK ENERGY (v16.2 DESI 2025 Thawing Quintessence)
+    // DARK ENERGY (thawing quintessence ansatz)
+    // Frozen at the off-path seed b3 = 24; dark energy is OPEN on Y7.
     // ================================================================
 
     darkEnergy: {
-        // v16.2 Theoretical values (from G2 topology b3=24)
+        // Model values frozen at the off-path seed b3 = 24 (no derivation)
         w0Numerator: -23,
         w0Denominator: 24,
         w0: -0.958333,                 // geometry.w_zero: -1 + 1/b3 = -23/24

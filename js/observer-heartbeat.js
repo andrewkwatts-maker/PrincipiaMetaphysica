@@ -271,12 +271,12 @@ const ObserverHeartbeat = {
 // Pre-load with G2 fundamental constants
 ObserverHeartbeat.initialize({
     // Topological invariants (LOCKED)
-    'topology.b3': 24,
-    'topology.chi_eff': 144,
-    'topology.k_gimel': 12.31831,
+    'topology.b3': 43,          // adopted seed (b2, b3) = (12, 43); 24 is the off-path seed
+    'topology.chi_eff': 144,    // K3 reading: 2 x sum chi(K3) = 48n at n = 3
+    'topology.k_gimel': 12.31831,  // k_gimel = b3/2 + 1/pi at the off-path seed b3 = 24 (CALIBRATED)
     'topology.c_kaf': 27.2,
 
-    // Dark energy (LOCKED to -23/24)
+    // Dark energy (LOCKED to -23/24, frozen at the off-path seed b3 = 24)
     'cosmology.w0': -0.9583333333,  // = -23/24
 
     // Fundamental constants (LOCKED)

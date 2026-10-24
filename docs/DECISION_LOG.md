@@ -1472,6 +1472,39 @@ selected it.
 
 ---
 
+## D-021 · 2026-10-25 · PUBLICATION · PRE-REGISTERED — selectable paths (amends D-020)
+
+**Request (the author, 2026-10-25):** represent every version and branch of the theory
+found in the git history and the 2025 documents; on the website, show the branching
+paths with the best one highlighted; let a reader select a path and see the site update
+with that path's results and why it was rejected or considered, what works and what
+doesn't; a button returns to the main path. Plan: `docs/plan/2026-10-25-paths-site.md`.
+
+**Rule (fixed before any path is published).**
+1. *Main path.* "Best" means the D-015 active path. It is the default on every page and
+   in every share link. No ranking of other paths is shown: the D-019 assessment has
+   not run, and under its rule fit is only a tie-break.
+2. *Computed paths.* The published set is the active path plus every single-option
+   deviation of an implemented option (one fork switched, all else active). Each is
+   computed by the same `metaphysica.build --fast` as main, and is published only as a
+   patch against the published main artifacts, pinned to their sha256.
+3. *Labelling.* Off main, every page carries a bar: "Viewing path X (status). These are
+   this path's results, not the theory's predictions", with the reason and a "Return to
+   main path" button. D-013 is otherwise unchanged: nothing off-path is presented as a
+   prediction.
+4. *Inert switches.* A deviation whose patch is empty is published as **inert**
+   (declared, no simulation reads it yet). This is reported, not hidden.
+5. *History.* Earlier versions (2025 documents, git history) are archival: shown on
+   the Paths tab with their reasons, what worked and what failed, and sourced key
+   results (sha:path or document#section). They are not re-run, and site pages do not
+   switch to them. No number appears without its source.
+6. *Dead ends are demoted, never deleted.*
+
+**Kill/void.** If any patch fails its round-trip (main + patch ≠ that path's build), or
+its base sha256 does not match the published main file, that path is not published.
+
+---
+
 ## D-003 · ADDENDUM 2 · 2026-10-02 · the glued form on the compact (active) path
 
 D-015 made the compact real form the active path, so the glued-orbit scan

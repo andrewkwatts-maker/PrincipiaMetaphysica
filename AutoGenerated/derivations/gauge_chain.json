@@ -6,15 +6,15 @@
     "timestamp": "2025-12-29T00:00:00Z",
     "author": "Andrew Keith Watts",
     "license": "Copyright (c) 2025-2026 Andrew Keith Watts. All Rights Reserved.",
-    "description": "Complete step-by-step derivation of gauge coupling unification using formal Wolfram Language syntax. All queries are publication-grade and can be verified independently.",
+    "description": "CALIBRATED at the off-path seed b₃ = 24: step-by-step Wolfram Language chain for gauge coupling unification, with α_GUT⁻¹ ≈ b₃ and M_GUT ~ M_Planck/√b₃ evaluated at the retired seed. The adopted Y₇ has b₃ = 43, so these values are calibrated, not derived from Y₇. The queries can be run independently.",
     "reference": "Principia Metaphysica v16.1 - Gauge Sector"
   },
   "introduction": {
-    "overview": "This derivation chain proves that the Standard Model gauge couplings unify at M_GUT = 2.1×10¹⁶ GeV with α_GUT = 1/24, both derived from the single topological invariant b₃ = 24 of the underlying G₂ manifold.",
+    "overview": "CALIBRATED at the off-path seed b₃ = 24: this chain runs the Standard Model gauge couplings from M_GUT = 2.1×10¹⁶ GeV with α_GUT = 1/24, both set from the retired seed b₃ = 24 (formerly presented as derived from the G₂ manifold). The adopted Y₇, Joyce's resolution of T⁷/(ℤ/2)³, has (b₂, b₃) = (12, 43).",
     "methodology": "We use renormalization group equations (RGE) at 1-loop, 2-loop, and 3-loop precision to evolve couplings from GUT scale to electroweak scale. All calculations use Wolfram Language for symbolic verification.",
     "key_predictions": [
-      "α_GUT = 1/24 ≈ 0.04167 (from b₃ = 24)",
-      "M_GUT = 2.1×10¹⁶ GeV (from G₂ geometry)",
+      "α_GUT = 1/24 ≈ 0.04167 (calibrated at the off-path seed b₃ = 24)",
+      "M_GUT = 2.1×10¹⁶ GeV (calibrated: M_Planck/√b₃ at the off-path seed b₃ = 24, with a chosen Re(T))",
       "sin²θ_W runs from 3/8 at M_GUT to 0.2312 at M_Z",
       "Beta coefficients: b₁ = 41/10, b₂ = -19/6, b₃ = -7",
       "Ghost sector corrections from mirror matter: ~10% at 2-loop"
@@ -27,11 +27,11 @@
       "R": "Ricci scalar from G₂ holonomy metric",
       "phi": "G₂ associative calibration (defines holonomy)",
       "F": "Flux 4-form from compactification (quantized by χ_eff)",
-      "psi": "G₂ spinor field (dim = 7, gives chiral fermions after reduction)"
+      "psi": "G₂ spinor field (dim = 7, gives chiral fermions after reduction; chirality on Y₇ is OPEN)"
     },
     "topology": {
-      "manifold": "TCS G₂ (Twisted Connected Sum)",
-      "classification": "TCS #187 (Joyce classification)",
+      "manifold": "OFF-PATH (b3_seed = seed_24): TCS G₂ (Twisted Connected Sum), the retired construction; the numbers in this block are the off-path seed's. The adopted Y₇ is Joyce's resolution of T⁷/(ℤ/2)³ with (b₂, b₃) = (12, 43) and χ(Y₇) = 0.",
+      "classification": "TCS #187 (Joyce classification); retired attribution, no published TCS enumeration has an entry #187",
       "b2": 14,
       "b3": 24,
       "chi": -8,
@@ -44,11 +44,11 @@
     {
       "step": 1,
       "id": "FOUNDATION-01",
-      "title": "Extract b₃ from G₂ topology",
+      "title": "Extract b₃ from G₂ topology (off-path seed b₃ = 24)",
       "category": "topology",
       "derivation_type": "topological_invariant",
       "input": {
-        "manifold": "TCS G₂ #187",
+        "manifold": "TCS G₂ #187 (retired attribution, off-path)",
         "Betti_numbers": "b₂ = 14, b₃ = 24, b₄ = 14 (Poincaré duality)"
       },
       "wolfram_query": "Solve[{b2 == 14, b3 == 24, chi == b2 - b3 + 2, chi_eff == 6*b3}, {b2, b3, chi, chi_eff}]",
@@ -60,16 +60,16 @@
         "chi": -8
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=Solve%5B%7Bb2+%3D%3D+14%2C+b3+%3D%3D+24%2C+chi+%3D%3D+b2+-+b3+%2B+2%2C+chi_eff+%3D%3D+6*b3%7D%2C+%7Bb2%2C+b3%2C+chi%2C+chi_eff%7D%5D",
-      "interpretation": "The third Betti number b₃ = 24 counts associative 3-cycles in the G₂ manifold. This is the fundamental topological invariant from which all parameters derive.",
+      "interpretation": "OFF-PATH (b3_seed = seed_24): b₃ = 24 is the retired seed, formerly read as the count of associative 3-cycles from which all parameters derive. The adopted Y₇ (Joyce's resolution of T⁷/(ℤ/2)³) has (b₂, b₃) = (12, 43); the values this chain builds on 24 are calibrated at the off-path seed.",
       "references": [
         "Joyce, D. (2007) Riemannian Holonomy Groups and Calibrated Geometry",
-        "Corti et al. (2013) G₂-manifolds and associative submanifolds"
+        "Corti et al. (2013) G₂-manifolds and associative submanifolds (TCS construction; off-path, not the adopted construction)"
       ]
     },
     {
       "step": 2,
       "id": "GAUGE-01",
-      "title": "Derive α_GUT from b₃",
+      "title": "α_GUT from b₃ (calibrated at the off-path seed b₃ = 24)",
       "category": "gauge_coupling",
       "derivation_type": "geometric_to_coupling",
       "input": {
@@ -85,20 +85,20 @@
         "alpha_GUT_approx": 0.04166666666666667
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B1%2F%2824+%2B+0.3%29%2C+15%5D",
-      "interpretation": "The unified gauge coupling is α_GUT⁻¹ = b₃ + δ, where δ ≈ 0.3 accounts for threshold corrections. To first approximation, α_GUT = 1/24.",
-      "physics_note": "This connects pure geometry (integer b₃) to particle physics (gauge coupling). The 1/24 value is unique to G₂ topology.",
+      "interpretation": "CALIBRATED at the off-path seed b₃ = 24: the unified gauge coupling is α_GUT⁻¹ = b₃ + δ, where δ ≈ 0.3 accounts for threshold corrections. To first approximation, α_GUT = 1/24.",
+      "physics_note": "CALIBRATED at the off-path seed b₃ = 24: the chain identifies α_GUT⁻¹ with the integer b₃. The value 1/24 belongs to the retired seed, not to Y₇ (b₃ = 43).",
       "derivation_steps": [
         "Start with G₂ gauge symmetry (14-dimensional)",
         "Dimensional reduction 7D → 4D creates Wilson loops",
         "Wilson loop quantization: α⁻¹ = ∫_C A · dx = 2π × winding number",
         "Winding number from 3-cycles: n = b₃/χ_eff × (geometric factors)",
-        "Result: α_GUT⁻¹ ≈ b₃ = 24"
+        "Result: α_GUT⁻¹ ≈ b₃ = 24 (off-path seed)"
       ]
     },
     {
       "step": 3,
       "id": "SCALE-01",
-      "title": "Derive M_GUT from dimensional reduction",
+      "title": "M_GUT from dimensional reduction (calibrated at the off-path seed b₃ = 24)",
       "category": "energy_scale",
       "derivation_type": "kaluza_klein",
       "input": {
@@ -115,11 +115,11 @@
         "loop_suppression": 118.57
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B1.22*10%5E19+%2F+Sqrt%5B24%5D%2C+3%5D",
-      "interpretation": "Naive dimensional reduction gives M_GUT ~ M_Planck/√b₃ ≈ 2.5×10¹⁸ GeV. Loop corrections and instanton effects reduce this by factor ~120 to 2.1×10¹⁶ GeV.",
+      "interpretation": "CALIBRATED at the off-path seed b₃ = 24, with Re(T) ≈ 9.865 chosen for an OPEN modulus: naive dimensional reduction gives M_GUT ~ M_Planck/√b₃ ≈ 2.5×10¹⁸ GeV. Loop corrections and instanton effects reduce this by factor ~120 to 2.1×10¹⁶ GeV.",
       "threshold_corrections": [
         "Instanton contributions: S_inst ≈ 8π²/α_GUT ≈ 192π",
         "Mirror sector decoupling: M_mirror ~ M_GUT × (T'/T)⁴ ≈ 0.1 M_GUT",
-        "Moduli stabilization: Re(T) ≈ 9.865 shifts threshold by factor 1/Re(T)",
+        "CALIBRATED: Re(T) ≈ 9.865 is a chosen value (Re(T) is an OPEN modulus; Y₇ fixes none at leading order), shifting the threshold by factor 1/Re(T)",
         "Combined effect: M_GUT → M_GUT × exp(-S_inst / Re(T)) ≈ 2.1×10¹⁶ GeV"
       ],
       "wolfram_verification": "N[2.49*10^18 / Exp[8*Pi^2 / (24*9.865)], 3]"
@@ -202,7 +202,7 @@
         "deviation_sigma": 0.02
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B1%2F%281%2F24+-+%2841%2F10%29%2F%282*Pi%29+*+Log%5B2.1*10%5E16%2F91.1876%5D%29%2C+6%5D",
-      "interpretation": "Running α₁ from M_GUT = 2.1×10¹⁶ GeV to M_Z = 91.2 GeV with 1-loop precision gives α₁⁻¹(M_Z) = 59.01, matching experiment exactly.",
+      "interpretation": "CALIBRATED at the off-path seed b₃ = 24: running α₁ from M_GUT = 2.1×10¹⁶ GeV to M_Z = 91.2 GeV with 1-loop precision gives α₁⁻¹(M_Z) = 59.01, matching experiment.",
       "experimental_comparison": {
         "PDG_2024": "α₁⁻¹(M_Z) = 59.01 ± 0.02",
         "PM_prediction": "59.0137",
@@ -231,7 +231,7 @@
         "deviation_sigma": 0.13
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B1%2F%281%2F24+-+%28-19%2F6%29%2F%282*Pi%29+*+Log%5B2.1*10%5E16%2F91.1876%5D%29%2C+6%5D",
-      "interpretation": "SU(2)_L coupling strengthens from high to low energy (negative beta function). Predicted value matches experiment within 0.13σ.",
+      "interpretation": "CALIBRATED at the off-path seed b₃ = 24: SU(2)_L coupling strengthens from high to low energy (negative beta function). Predicted value matches experiment within 0.13σ.",
       "experimental_comparison": {
         "PDG_2024": "α₂⁻¹(M_Z) = 29.57 ± 0.03",
         "PM_prediction": "29.5741",
@@ -261,7 +261,7 @@
         "deviation_sigma": 0.0
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B1%2F%281%2F24+-+%28-7%29%2F%282*Pi%29+*+Log%5B2.1*10%5E16%2F91.1876%5D%29%2C+6%5D",
-      "interpretation": "Strong coupling α_s shows asymptotic freedom (large negative beta). At M_Z, α_s ≈ 0.118, matching QCD observations. This is the most dramatic running.",
+      "interpretation": "CALIBRATED at the off-path seed b₃ = 24: strong coupling α_s shows asymptotic freedom (large negative beta). At M_Z, α_s ≈ 0.118, matching QCD observations. This is the most dramatic running.",
       "experimental_comparison": {
         "PDG_2024": "α_s(M_Z) = 0.1179 ± 0.0009 ⟹ α₃⁻¹ = 8.48 ± 0.07",
         "PM_prediction": "α_s(M_Z) = 0.11697 ⟹ α₃⁻¹ = 8.550",
@@ -425,9 +425,9 @@
         "p_value": 0.999
       },
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B%2859.0137+-+59.01%29%5E2%2F0.02%5E2+%2B+%2829.5741+-+29.57%29%5E2%2F0.03%5E2+%2B+%288.54977+-+8.55%29%5E2%2F0.03%5E2%2C+6%5D",
-      "interpretation": "χ² = 0.0175 with 3 degrees of freedom corresponds to p-value > 0.999. This is extraordinary agreement - far better than expected by chance.",
-      "statistical_significance": "5σ+ level (beyond publication threshold)",
-      "conclusion": "Gauge coupling unification from G₂ topology is validated to highest experimental precision."
+      "interpretation": "CALIBRATED at the off-path seed b₃ = 24: χ² = 0.0175 with 3 degrees of freedom corresponds to p-value > 0.999. A χ² this far below its degrees of freedom is not evidence of significance, and it is not a global fit.",
+      "statistical_significance": "None claimed. A χ² far below its degrees of freedom is not a significance level (the former '5σ+' wording is withdrawn).",
+      "conclusion": "Not a validation of gauge unification from Y₇: α_GUT and M_GUT are calibrated at the off-path seed b₃ = 24."
     }
   ],
   "summary": {
@@ -447,12 +447,12 @@
       "alpha_GUT": {
         "value": 0.04167,
         "inverse": 24.0,
-        "derivation": "1/b₃ where b₃ = 24",
-        "precision": "exact (geometric)"
+        "derivation": "1/b₃ at the off-path seed b₃ = 24 (calibrated, not derived from Y₇)",
+        "precision": "calibrated at the off-path seed b₃ = 24"
       },
       "M_GUT": {
         "value_GeV": 2.1e+16,
-        "derivation": "M_Planck / √b₃ with loop corrections",
+        "derivation": "M_Planck / √b₃ with loop corrections (calibrated at the off-path seed b₃ = 24, with a chosen Re(T))",
         "precision": "10% (instanton uncertainty)"
       },
       "sin2_theta_W_GUT": {
@@ -475,7 +475,7 @@
         "chi_squared": 0.0175,
         "p_value": 0.999,
         "sigma_level": "5+",
-        "conclusion": "validated"
+        "conclusion": "not a validation: inputs calibrated at the off-path seed b₃ = 24"
       }
     }
   },
