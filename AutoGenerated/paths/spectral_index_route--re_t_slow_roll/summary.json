@@ -1,0 +1,2197 @@
+{
+ "schema": "metaphysica.path_summary/1",
+ "path": "spectral_index_route--re_t_slow_roll",
+ "scoreboard": {
+  "PASS": 26,
+  "MARGINAL": 15,
+  "TENSION": 10,
+  "FAIL": 33,
+  "SKIP": 120
+ },
+ "chi2": {
+  "value": 3030.0985,
+  "dof": 4
+ },
+ "gates": [
+  {
+   "id": "G_ABSTRACT_CONTENT_INTEGRITY",
+   "passed": false,
+   "detail": "Paper abstract for Principia Metaphysica v24.2 M^{26}(24,2) dual-shadow framework"
+  },
+  {
+   "id": "G_INTRO_CONTENT_INTEGRITY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ANCHOR_KGIMEL",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ANCHOR_ALPHA",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ANCHOR_UNITY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_GEOMETRY_BETTI",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_GEOMETRY_CHI",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_GEOMETRY_GENERATIONS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_GEOMETRY_HOLONOMY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_FOUR_FACE_ALPHA_LEAK",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_FOUR_FACE_RACETRACK",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G01_integer_root_parity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G17_generation_triality",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G02_holonomy_closure",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G23_proton_stability_floor",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G12",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G23",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G25",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G15",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G21",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G29",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G34",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ALPHA_GEOMETRIC",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ALPHA_COMPONENTS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G17_generation_triality",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G01_integer_root_parity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G17_generation_triality",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G02_holonomy_closure",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G36_ckm_matrix_unitarity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G37_cp_violation_phase",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G23_proton_stability_floor",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G25_asymptotic_freedom",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G31_higgs_field_vev",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G13_photon_zero_mass",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G31_higgs_field_vev",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G18_mass_gap_quantization",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G18_mass_gap_quantization",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G37_cp_violation_phase",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G31_higgs_field_vev",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G12_electroweak_alignment",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G26_electron_mass_to_charge",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G56_compactification_radius",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G57_calabi_yau_parity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G48_w0_equation_of_state",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G48_w0_equation_of_state",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G60_desi_static_anchor",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G47_hubble_unwinding_rate",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G50_baryon_to_photon_ratio",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G47_hubble_unwinding_rate",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G27_pmns_matrix_lock",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G39_pmns_angle_saturation",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G36_ckm_matrix_unitarity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G17_generation_triality",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G49_dark_matter_bulk_pressure",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G05_metric_continuity",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G26_COMPTON_WAVELENGTH",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G26_STEFAN_BOLTZMANN_PROJECTION",
+   "passed": true,
+   "detail": "sigma uses (1+epsilon)^4 because T^4 thermal radiation spans all 4 spacetime dimensions"
+  },
+  {
+   "id": "G26_HARTREE_PROJECTION",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G26_FLUX_QUANTUM_PROJECTION",
+   "passed": true,
+   "detail": "Phi_0 = h/(2e); expands with h since e is invariant"
+  },
+  {
+   "id": "G26_VON_KLITZING_PROJECTION",
+   "passed": true,
+   "detail": "R_K = h/e^2; expands with h since e is invariant"
+  },
+  {
+   "id": "G26_AVOGADRO_PROJECTION",
+   "passed": true,
+   "detail": "N_A is exact (zero uncertainty) since 2019 SI redefinition"
+  },
+  {
+   "id": "G26_FARADAY_PROJECTION",
+   "passed": true,
+   "detail": "F = N_A * e; inherits N_A contraction since e is invariant"
+  },
+  {
+   "id": "G26_MOLAR_GAS_INVARIANCE",
+   "passed": true,
+   "detail": "R = N_A * k_B: inverse cubic cancels direct expansion"
+  },
+  {
+   "id": "G29_WEAK_MIXING_QED",
+   "passed": true,
+   "detail": "sin^2(theta_W) contracts because coupling ratios decrease as 3D space expands"
+  },
+  {
+   "id": "G46_lambda_stability",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_PNEUMA_RACETRACK_STABILITY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_PNEUMA_NEURAL_GATE_12_PAIRS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_THERMAL_TIME_ARROW",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_THERMAL_ALPHA_T_TOPOLOGY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ORCH_OR_PITCH_BIOLOGY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ORCH_OR_PENROSE_CRITERION",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ORCH_OR_SSOT_REGISTRY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_ORCH_OR_GNOSIS_V22",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_DISCUSSION_CONTENT_INTEGRITY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G23",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G48",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G17",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G_FOUNDATIONS_DESCENT_COMPLETENESS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_METHODOLOGY_SPECTRAL_COMPLETENESS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G_RESULTS_COSMOLOGICAL_ALIGNMENT",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G72",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G71",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G61",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G01",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G70",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G04",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G05",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G15",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G14",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G47",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G48",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G58",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G18",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G01",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G02",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G72",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G03",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G06",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G08",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "OMEGA-SEAL-INTEGRITY",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "C-EPSILON",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "C-ZETA",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G68",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G52",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G53",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G07",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G10",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G69",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G09",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G05",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G61",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G47",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G68",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G51",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G72",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G01",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G03",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G01_LAGRANGIAN_DIMENSIONAL_CONSISTENCY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G02_LAGRANGIAN_G2_REDUCTION",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G03_LAGRANGIAN_ROOT_LATTICE",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G04_LAGRANGIAN_RACETRACK_MODULI",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G05_LAGRANGIAN_TORSION_CORRECTION",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G06_LAGRANGIAN_SPECTRAL_RESIDUE",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G11",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G12",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G21",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G25",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G29",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G35",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G13",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G15",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G16",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G17",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G31",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G33",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G46",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G47",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G48",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G49",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G50",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G01",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G02",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G05",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G07",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G08",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G09",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G05_metric_continuity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G42_equivalence_principle",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G05_metric_continuity",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G16_fermionic_dirac_mapping",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G56",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G58",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G59",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "GATE_APPENDIX_P_G2_HOLONOMY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "GATE_APPENDIX_P_BETTI_NUMBERS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "GATE_APPENDIX_P_CHIRAL_FERMIONS",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G17",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G16",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G66",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G23",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G46",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G70",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G70",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G65",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G62",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G48_w0_equation_of_state",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "GATE-SPECTRAL-125-MODES",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "GATE-SPECTRAL-GAUGE-COUNT",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "GATE-SPECTRAL-NEUTRINO-HIERARCHY",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G48_w0_equation_of_state",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G50_baryon_to_photon_ratio",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G49_dark_matter_bulk_pressure",
+   "passed": false,
+   "detail": null
+  },
+  {
+   "id": "G49_dark_matter_bulk_pressure",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G40_sterile_active_mixing",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G19_neutrino_neutrality",
+   "passed": true,
+   "detail": null
+  },
+  {
+   "id": "G49_dark_matter_bulk_pressure",
+   "passed": false,
+   "detail": null
+  }
+ ],
+ "certificate": [
+  {
+   "id": "CERT_ABSTRACT_WORD_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT_ABSTRACT_KEY_TERMS",
+   "holds": false
+  },
+  {
+   "id": "CERT_ABSTRACT_FORMULA_INTEGRITY",
+   "holds": true
+  },
+  {
+   "id": "CERT_INTRO_WORD_COUNT",
+   "holds": false
+  },
+  {
+   "id": "CERT_INTRO_KEY_CONCEPTS",
+   "holds": false
+  },
+  {
+   "id": "CERT_INTRO_SUBSECTIONS",
+   "holds": false
+  },
+  {
+   "id": "CERT_ANCHOR_KGIMEL",
+   "holds": true
+  },
+  {
+   "id": "CERT_ANCHOR_ALPHA",
+   "holds": true
+  },
+  {
+   "id": "CERT_ANCHOR_W0",
+   "holds": true
+  },
+  {
+   "id": "CERT_ANCHOR_NS",
+   "holds": true
+  },
+  {
+   "id": "CERT_ANCHOR_UNITY",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_BETTI_B3",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_CHI_EFF",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_GENERATIONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_HOLONOMY_RICCI",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_POINCARE_DUALITY",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_TORSION_FREE",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_RESOLVED_BETTI_NUMBERS",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_EULER_CHARACTERISTIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_SINGULAR_COMPONENTS",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_FUNDAMENTAL_GROUP",
+   "holds": true
+  },
+  {
+   "id": "CERT_JOYCE_REACHABLE_SET",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_GAUGE_CONTENT",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_FLUX_POTENTIAL_RUNAWAY",
+   "holds": true
+  },
+  {
+   "id": "CERT_BRIDGE_COMPONENT_CORRESPONDENCE",
+   "holds": true
+  },
+  {
+   "id": "CERT_K3_READING_GENERATIONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_CONFINEMENT_EXCLUSION",
+   "holds": true
+  },
+  {
+   "id": "CERT_FLUX_NO_ACCELERATION",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_SELECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_HOLONOMY_G2_METRIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUR_FACE_ALPHA_LEAK",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUR_FACE_RACETRACK",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUR_FACE_ASYMMETRY",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUR_FACE_TORSIONAL_LEAKAGE",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUR_FACE_H11_CONSISTENCY",
+   "holds": true
+  },
+  {
+   "id": "CERT_WEYL_ANOMALY_CANCELLATION",
+   "holds": true
+  },
+  {
+   "id": "leech_partition_n_gen_3",
+   "holds": true
+  },
+  {
+   "id": "leech_lattice_uniqueness",
+   "holds": true
+  },
+  {
+   "id": "g2_aut_octonions",
+   "holds": true
+  },
+  {
+   "id": "modular_b3_24_uniqueness",
+   "holds": true
+  },
+  {
+   "id": "modular_vacuum_energy",
+   "holds": true
+  },
+  {
+   "id": "modular_critical_dimension",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGE_UNIFICATION_MGUT_RANGE",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGE_ALPHA_GUT_INV_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGE_SIN2_THETA_W_GUT_SO10",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGE_PROTON_LIFETIME_CONSISTENT",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASTER_ACTION_GLUON_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASTER_ACTION_WEAK_BOSON_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASTER_ACTION_SIN2_THETA_W",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASTER_ACTION_RHO_PARAMETER",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASTER_ACTION_OR_DIMENSION",
+   "holds": true
+  },
+  {
+   "id": "CERT_ALPHA_GEOMETRIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_ALPHA_NO_MAGIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_ALPHA_PRECISION",
+   "holds": true
+  },
+  {
+   "id": "CERT_NGEN_3",
+   "holds": true
+  },
+  {
+   "id": "CERT_EPSILON_CABIBBO",
+   "holds": true
+  },
+  {
+   "id": "CERT_CHIRAL_FILTER",
+   "holds": true
+  },
+  {
+   "id": "CERT_G2_SPINOR_1",
+   "holds": true
+  },
+  {
+   "id": "CERT_CHIRAL_INDEX_6",
+   "holds": true
+  },
+  {
+   "id": "CERT_SPINOR_SATURATION",
+   "holds": true
+  },
+  {
+   "id": "CERT_CKM_VUS",
+   "holds": true
+  },
+  {
+   "id": "CERT_CKM_VCB",
+   "holds": true
+  },
+  {
+   "id": "CERT_CKM_JARLSKOG",
+   "holds": true
+  },
+  {
+   "id": "CERT_CKM_UNITARITY",
+   "holds": true
+  },
+  {
+   "id": "CERT_PROTON_LIFETIME_ABOVE_SUPERK",
+   "holds": true
+  },
+  {
+   "id": "CERT_SUPPRESSION_FACTOR_PHYSICAL",
+   "holds": true
+  },
+  {
+   "id": "CERT_BRANCHING_RATIO_GEOMETRIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_HIGGS_MASS_125GEV",
+   "holds": false
+  },
+  {
+   "id": "CERT_HIGGS_VEV_246GEV",
+   "holds": true
+  },
+  {
+   "id": "CERT_HIGGS_QUARTIC_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_HIGGS_LOCAL_125GEV",
+   "holds": true
+  },
+  {
+   "id": "CERT_BRANE_PARTITION_RATIO",
+   "holds": true
+  },
+  {
+   "id": "CERT_BULK_ATTRACTOR_414",
+   "holds": true
+  },
+  {
+   "id": "CERT_YUKAWA_PHI_BEST",
+   "holds": true
+  },
+  {
+   "id": "CERT_YUKAWA_TOP_MASS",
+   "holds": true
+  },
+  {
+   "id": "CERT_YUKAWA_JARLSKOG",
+   "holds": true
+  },
+  {
+   "id": "CERT_YUKAWA_4FACE_CORRECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_VEV_GEOMETRIC_246",
+   "holds": true
+  },
+  {
+   "id": "CERT_SCHWINGER_CORRECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_GF_PHYSICAL_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASS_RATIO_LOCK",
+   "holds": true
+  },
+  {
+   "id": "CERT_MASS_RATIO_GEOMETRIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_FTS_SCALE",
+   "holds": true
+  },
+  {
+   "id": "CERT_FTS_CUBIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_FTS_QUARTIC_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_E7_ALPHA_LEAK",
+   "holds": true
+  },
+  {
+   "id": "CERT_E7_ALPHA_LEAK_SQUARED",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGINO_LAMBDA_EFF",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGINO_W1_GT_W2",
+   "holds": true
+  },
+  {
+   "id": "CERT_GAUGINO_CABIBBO_PROXY",
+   "holds": true
+  },
+  {
+   "id": "CERT_E8_PORTAL_ALGEBRAIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_E8_HIDDEN_CONDENSATE",
+   "holds": true
+  },
+  {
+   "id": "CERT_CLIFFORD_G2_SIGNATURE",
+   "holds": true
+  },
+  {
+   "id": "CERT_CLIFFORD_MINK_SIGNATURE",
+   "holds": true
+  },
+  {
+   "id": "CERT_CLIFFORD_APP_DIM",
+   "holds": true
+  },
+  {
+   "id": "CERT_NEUTRINO_THETA13_WITHIN_5SIGMA",
+   "holds": false
+  },
+  {
+   "id": "CERT_NEUTRINO_DELTA_CP_WITHIN_2SIGMA",
+   "holds": true
+  },
+  {
+   "id": "CERT_NEUTRINO_DELTA_CP_SIGN_CORRECT",
+   "holds": true
+  },
+  {
+   "id": "CERT_PNEUMA_REDUCTION_128",
+   "holds": true
+  },
+  {
+   "id": "CERT_PNEUMA_4D_COMPONENTS",
+   "holds": true
+  },
+  {
+   "id": "CERT_SHADOW_DIMENSION",
+   "holds": true
+  },
+  {
+   "id": "CERT_BPS_CASIMIR_SO24_1",
+   "holds": true
+  },
+  {
+   "id": "CERT_W0_DESI_THAWING",
+   "holds": true
+  },
+  {
+   "id": "CERT_WA_DESI_EVOLUTION",
+   "holds": false
+  },
+  {
+   "id": "CERT_W0_PHANTOM_DIVIDE",
+   "holds": true
+  },
+  {
+   "id": "CERT_THAWING_W0_DESI",
+   "holds": true
+  },
+  {
+   "id": "CERT_THAWING_WA_DESI",
+   "holds": true
+  },
+  {
+   "id": "CERT_THAWING_W0_EXACT_TOPOLOGY",
+   "holds": false
+  },
+  {
+   "id": "CERT_THAWING_WA_NL_CORRECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_EVOLUTION_H0_LATE_EXACT",
+   "holds": true
+  },
+  {
+   "id": "CERT_EVOLUTION_RELAXATION_Z0",
+   "holds": true
+  },
+  {
+   "id": "CERT_EVOLUTION_RELAXATION_Z1100",
+   "holds": true
+  },
+  {
+   "id": "CERT_S8_PLANCK_AGREEMENT",
+   "holds": true
+  },
+  {
+   "id": "CERT_S8_SUPPRESSION_PHYSICAL",
+   "holds": true
+  },
+  {
+   "id": "CERT_S8_BETWEEN_CMB_WL",
+   "holds": true
+  },
+  {
+   "id": "CERT_H0_LOCAL_SHOES",
+   "holds": false
+  },
+  {
+   "id": "CERT_H0_EARLY_PLANCK",
+   "holds": true
+  },
+  {
+   "id": "CERT_HUBBLE_TENSION_RESOLUTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_PMNS_THETA12",
+   "holds": true
+  },
+  {
+   "id": "CERT_PMNS_THETA13",
+   "holds": true
+  },
+  {
+   "id": "CERT_PMNS_THETA23",
+   "holds": true
+  },
+  {
+   "id": "CERT_PMNS_DELTA_CP",
+   "holds": true
+  },
+  {
+   "id": "CERT_OCT_VUS_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_OCT_VCB_TORSION",
+   "holds": true
+  },
+  {
+   "id": "CERT_OCT_TRIALITY_SPLIT",
+   "holds": true
+  },
+  {
+   "id": "CERT_DM_BARYON_RATIO",
+   "holds": true
+  },
+  {
+   "id": "CERT_MODULATION_WIDTH_GEOMETRIC",
+   "holds": true
+  },
+  {
+   "id": "CERT_C_ACCURACY_99999",
+   "holds": false
+  },
+  {
+   "id": "CERT_C_SIGMA_EQUIV",
+   "holds": false
+  },
+  {
+   "id": "CERT_COMPTON_CODATA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_COMPTON_CONTRACTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_STEFAN_BOLTZMANN_CODATA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_HARTREE_CODATA_MATCH",
+   "holds": false
+  },
+  {
+   "id": "CERT_HARTREE_INVERSE_GATE",
+   "holds": false
+  },
+  {
+   "id": "CERT_MAGNETIC_FLUX_CODATA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_VON_KLITZING_CODATA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_AVOGADRO_CODATA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_FARADAY_CODATA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_MOLAR_GAS_INVARIANCE",
+   "holds": true
+  },
+  {
+   "id": "CERT_WEAK_MIXING_QED_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_LAMBDA_ORDER_OF_MAGNITUDE",
+   "holds": true
+  },
+  {
+   "id": "CERT_LAMBDA_HIERARCHY_122",
+   "holds": true
+  },
+  {
+   "id": "CERT_LAMBDA_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_PNEUMA_VEV_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_PNEUMA_LAGRANGIAN_STABLE",
+   "holds": true
+  },
+  {
+   "id": "CERT_OR_REDUCTION_DETERMINANT",
+   "holds": true
+  },
+  {
+   "id": "CERT_THERMAL_ALPHA_T_VALUE",
+   "holds": true
+  },
+  {
+   "id": "CERT_THERMAL_ENTROPY_NONNEGATIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_THERMAL_MODULAR_TEMPERATURE_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_ORCH_OR_PITCH_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_ORCH_OR_TAU_NEURAL",
+   "holds": true
+  },
+  {
+   "id": "CERT_ORCH_OR_EG_POSITIVE_FINITE",
+   "holds": true
+  },
+  {
+   "id": "CERT_ORCH_OR_PAIR_STABILITY",
+   "holds": true
+  },
+  {
+   "id": "cert_gnosis_coherence_boost",
+   "holds": true
+  },
+  {
+   "id": "cert_four_dice_branches",
+   "holds": true
+  },
+  {
+   "id": "cert_pair_shielding_enhancement",
+   "holds": true
+  },
+  {
+   "id": "CERT_DISCUSSION_WORD_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT_DISCUSSION_OPEN_QUESTIONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_DISCUSSION_SUBSECTIONS",
+   "holds": true
+  },
+  {
+   "id": "cert-predictions-falsifiable",
+   "holds": true
+  },
+  {
+   "id": "cert-predictions-self-consistent",
+   "holds": true
+  },
+  {
+   "id": "cert-predictions-sourced",
+   "holds": true
+  },
+  {
+   "id": "CERT_PREDICTIONS_FALSIFIABLE",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUNDATIONS_FORMULA_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUNDATIONS_DESCENT_PATH",
+   "holds": true
+  },
+  {
+   "id": "CERT_FOUNDATIONS_B3_GENERATIONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_METHODOLOGY_STERILE_EXTRACTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_METHODOLOGY_SPECTRAL_GEOMETRY",
+   "holds": true
+  },
+  {
+   "id": "CERT_METHODOLOGY_FORMULA_COVERAGE",
+   "holds": true
+  },
+  {
+   "id": "CERT_RESULTS_W0_DESI",
+   "holds": true
+  },
+  {
+   "id": "CERT_RESULTS_H0_ALIGNMENT",
+   "holds": true
+  },
+  {
+   "id": "CERT_RESULTS_FORMULA_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT-INT-001",
+   "holds": true
+  },
+  {
+   "id": "CERT-INT-002",
+   "holds": true
+  },
+  {
+   "id": "CERT-INT-003",
+   "holds": true
+  },
+  {
+   "id": "CERT-INT-004",
+   "holds": true
+  },
+  {
+   "id": "CERT-INT-005",
+   "holds": true
+  },
+  {
+   "id": "CERT-A-001",
+   "holds": true
+  },
+  {
+   "id": "CERT-A-002",
+   "holds": true
+  },
+  {
+   "id": "cert-sum-rule-closure",
+   "holds": true
+  },
+  {
+   "id": "cert-heat-kernel-convergence",
+   "holds": true
+  },
+  {
+   "id": "cert-spectral-gap-hierarchy",
+   "holds": true
+  },
+  {
+   "id": "CERT-C-001",
+   "holds": true
+  },
+  {
+   "id": "CERT-C-002",
+   "holds": true
+  },
+  {
+   "id": "CERT-D-001",
+   "holds": false
+  },
+  {
+   "id": "CERT-D-002",
+   "holds": true
+  },
+  {
+   "id": "CERT-E-001",
+   "holds": true
+  },
+  {
+   "id": "CERT-E-002",
+   "holds": true
+  },
+  {
+   "id": "cert-gate-holonomy-closure",
+   "holds": true
+  },
+  {
+   "id": "cert-gate-phase-completeness",
+   "holds": true
+  },
+  {
+   "id": "cert-gate-omega-hash",
+   "holds": true
+  },
+  {
+   "id": "cert-288-decomposition",
+   "holds": true
+  },
+  {
+   "id": "cert-so24-generators",
+   "holds": true
+  },
+  {
+   "id": "cert-288-formula",
+   "holds": true
+  },
+  {
+   "id": "cert-active-hidden-split",
+   "holds": true
+  },
+  {
+   "id": "cert-omega-hash-determinism",
+   "holds": true
+  },
+  {
+   "id": "cert-bulk-insulation",
+   "holds": true
+  },
+  {
+   "id": "cert-temporal-sync",
+   "holds": true
+  },
+  {
+   "id": "cert-master-gate-7of7",
+   "holds": true
+  },
+  {
+   "id": "cert-metric-null-terminal",
+   "holds": true
+  },
+  {
+   "id": "cert-gauge-ghost-terminal",
+   "holds": true
+  },
+  {
+   "id": "cert-ancestral-restoration",
+   "holds": true
+  },
+  {
+   "id": "cert-entropy-threshold",
+   "holds": true
+  },
+  {
+   "id": "cert-funnel-entry",
+   "holds": true
+  },
+  {
+   "id": "cert-funnel-bottleneck",
+   "holds": true
+  },
+  {
+   "id": "cert-funnel-exit",
+   "holds": true
+  },
+  {
+   "id": "cert-compression-ratio",
+   "holds": true
+  },
+  {
+   "id": "cert-sterile-all-geometric",
+   "holds": true
+  },
+  {
+   "id": "cert-sterile-zero-free-params",
+   "holds": true
+  },
+  {
+   "id": "cert-sterile-node-assignment",
+   "holds": true
+  },
+  {
+   "id": "cert-omega-unwinding-monotonic",
+   "holds": true
+  },
+  {
+   "id": "cert-three-basins-exhaustive",
+   "holds": true
+  },
+  {
+   "id": "cert-restoration-probability",
+   "holds": true
+  },
+  {
+   "id": "cert-zero-free-parameters",
+   "holds": true
+  },
+  {
+   "id": "cert-288-roots-complete",
+   "holds": true
+  },
+  {
+   "id": "cert-24-pins-complete",
+   "holds": true
+  },
+  {
+   "id": "cert-terminal-closure",
+   "holds": true
+  },
+  {
+   "id": "cert-gauge-unification-sum",
+   "holds": true
+  },
+  {
+   "id": "cert-hierarchy-ratio",
+   "holds": false
+  },
+  {
+   "id": "cert-h0-physical-range",
+   "holds": false
+  },
+  {
+   "id": "CERT_LAGRANGIAN_GRAVITON_DOF_26D",
+   "holds": true
+  },
+  {
+   "id": "CERT_LAGRANGIAN_G2_REDUCTION_4D",
+   "holds": true
+  },
+  {
+   "id": "CERT_LAGRANGIAN_ROOT_LATTICE_288",
+   "holds": true
+  },
+  {
+   "id": "CERT_LAGRANGIAN_BRIDGE_PAIRS_12",
+   "holds": true
+  },
+  {
+   "id": "CERT_SU3_GLUON_COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT_SU2_WEAK_BOSONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_WEINBERG_ANGLE",
+   "holds": true
+  },
+  {
+   "id": "CERT_ANOMALY_CANCELLATION",
+   "holds": true
+  },
+  {
+   "id": "CERT_FERMION_GENERATIONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_HIGGS_MASS",
+   "holds": true
+  },
+  {
+   "id": "CERT_TOP_YUKAWA",
+   "holds": true
+  },
+  {
+   "id": "CERT_EPSILON_CABIBBO",
+   "holds": true
+  },
+  {
+   "id": "CERT_NEUTRINO_SEESAW",
+   "holds": true
+  },
+  {
+   "id": "CERT_OMEGA_DM_STERILE_RATIO",
+   "holds": true
+  },
+  {
+   "id": "CERT_W0_TZIMTZUM",
+   "holds": true
+  },
+  {
+   "id": "CERT_H0_ODOWD_TENSION",
+   "holds": true
+  },
+  {
+   "id": "CERT_BARYON_ASYMMETRY",
+   "holds": true
+  },
+  {
+   "id": "CERT_RIEMANN_COMPONENTS_4D",
+   "holds": true
+  },
+  {
+   "id": "CERT_GRAVITON_DOF",
+   "holds": true
+  },
+  {
+   "id": "CERT_EINSTEIN_HILBERT_EMERGENCE",
+   "holds": true
+  },
+  {
+   "id": "CERT_NEWTON_CONSTANT_G2",
+   "holds": true
+  },
+  {
+   "id": "tensor_riemann_independent_components_4d",
+   "holds": true
+  },
+  {
+   "id": "tensor_christoffel_symmetric_count_4d",
+   "holds": true
+  },
+  {
+   "id": "tensor_ricci_symmetric_components_4d",
+   "holds": true
+  },
+  {
+   "id": "tensor_metric_compatibility_levi_civita",
+   "holds": true
+  },
+  {
+   "id": "vielbein_metric_recovery_flat",
+   "holds": true
+  },
+  {
+   "id": "vielbein_lorentz_dimension_4d",
+   "holds": true
+  },
+  {
+   "id": "vielbein_spinor_dimension_4d",
+   "holds": true
+  },
+  {
+   "id": "vielbein_spin_connection_components",
+   "holds": true
+  },
+  {
+   "id": "cert-kk-12-bridges",
+   "holds": false
+  },
+  {
+   "id": "cert-kk-dimension-counting",
+   "holds": false
+  },
+  {
+   "id": "cert-kk-planck-mass",
+   "holds": false
+  },
+  {
+   "id": "cert-kk-tensor-product",
+   "holds": false
+  },
+  {
+   "id": "CERT_APPENDIX_P_G2_DIM",
+   "holds": true
+  },
+  {
+   "id": "CERT_APPENDIX_P_RICCI_FLAT",
+   "holds": true
+  },
+  {
+   "id": "CERT_APPENDIX_P_BETTI",
+   "holds": true
+  },
+  {
+   "id": "CERT_APPENDIX_P_CHIRAL_SPECTRUM",
+   "holds": true
+  },
+  {
+   "id": "cert-index-fermion-generations",
+   "holds": false
+  },
+  {
+   "id": "cert-index-anomaly-cancellation",
+   "holds": false
+  },
+  {
+   "id": "cert-family-index",
+   "holds": false
+  },
+  {
+   "id": "cert-vacuum-absolute-stability",
+   "holds": true
+  },
+  {
+   "id": "cert-coleman-deluccia-suppression",
+   "holds": true
+  },
+  {
+   "id": "cert-g2-portal-correction",
+   "holds": true
+  },
+  {
+   "id": "cert-zeta-regularization",
+   "holds": true
+  },
+  {
+   "id": "cert-heat-kernel-expansion",
+   "holds": true
+  },
+  {
+   "id": "cert-k-gimel-scale",
+   "holds": true
+  },
+  {
+   "id": "CERT_APPENDIX_T_SYNDROME",
+   "holds": true
+  },
+  {
+   "id": "CERT_APPENDIX_U_GAMMA_MATCH",
+   "holds": true
+  },
+  {
+   "id": "CERT_FRT_W0_DESI",
+   "holds": false
+  },
+  {
+   "id": "CERT_GW170817_CONSISTENT",
+   "holds": true
+  },
+  {
+   "id": "CERT_ALPHA_F_PHYSICAL",
+   "holds": true
+  },
+  {
+   "id": "CERT-SPECTRAL-125-COUNT",
+   "holds": true
+  },
+  {
+   "id": "CERT-SPECTRAL-GAUGE-12",
+   "holds": true
+  },
+  {
+   "id": "CERT-SPECTRAL-NEUTRINO-SUM",
+   "holds": true
+  },
+  {
+   "id": "CERT_ATTRACTOR_W0_DESI",
+   "holds": true
+  },
+  {
+   "id": "CERT_ATTRACTOR_AMPLITUDE_POSITIVE",
+   "holds": true
+  },
+  {
+   "id": "CERT_ATTRACTOR_DECAY_SUPER_PLANCKIAN",
+   "holds": true
+  },
+  {
+   "id": "CERT_ETA_B_BBN_AGREEMENT",
+   "holds": false
+  },
+  {
+   "id": "CERT_SAKHAROV_CONDITIONS",
+   "holds": true
+  },
+  {
+   "id": "CERT_AXION_ANTHROPIC_WINDOW",
+   "holds": true
+  },
+  {
+   "id": "CERT_AXION_NATURAL_THETA",
+   "holds": false
+  },
+  {
+   "id": "CERT_AXION_MASS_ADMX",
+   "holds": true
+  },
+  {
+   "id": "CERT_DM_PORTAL_COUPLING",
+   "holds": true
+  },
+  {
+   "id": "CERT_DM_CROSS_SECTION_BOUND",
+   "holds": true
+  },
+  {
+   "id": "CERT_DM_RELIC_DENSITY",
+   "holds": true
+  },
+  {
+   "id": "CERT_STERILE_MIXING_BOUND",
+   "holds": true
+  },
+  {
+   "id": "CERT_STERILE_NEFF_BOUND",
+   "holds": true
+  },
+  {
+   "id": "CERT_ALP_STELLAR_COOLING",
+   "holds": false
+  },
+  {
+   "id": "CERT_ALP_CAST_BOUND",
+   "holds": false
+  },
+  {
+   "id": "CERT_ALP_MASS_WINDOW",
+   "holds": false
+  }
+ ],
+ "n_gen": {
+  "value": 3,
+  "target": 3,
+  "holds": true
+ },
+ "key_values": [
+  {
+   "id": "cosmology.n_s",
+   "volatile": false,
+   "label": "cosmology.n_s",
+   "unit": null,
+   "value": 0.9996037967508778,
+   "main": 0.9636384168229182,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.n_s_pred",
+   "volatile": false,
+   "label": "cosmology.n_s_pred",
+   "unit": null,
+   "value": 0.9996037967508778,
+   "main": 0.9636384168229182,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "geometry.n_s",
+   "volatile": false,
+   "label": "geometry.n_s",
+   "unit": null,
+   "value": 0.9996037967508778,
+   "main": 0.9636384168229182,
+   "experimental": 0.9649,
+   "sigma": 7.460163795156625
+  },
+  {
+   "id": "geometry.alpha_inverse",
+   "volatile": false,
+   "label": "geometry.alpha_inverse",
+   "unit": null,
+   "value": 137.03670177575597,
+   "main": 137.03670177575597,
+   "experimental": 137.035999177,
+   "sigma": 0.07025987559627961
+  },
+  {
+   "id": "geometry.sin2_theta_W",
+   "volatile": false,
+   "label": "geometry.sin2_theta_W",
+   "unit": null,
+   "value": 0.23190478152123015,
+   "main": 0.23190478152123015,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "geometry.alpha_s",
+   "volatile": false,
+   "label": "geometry.alpha_s",
+   "unit": null,
+   "value": 0.11824551449975534,
+   "main": 0.11824551449975534,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "geometry.alpha_gut_inv",
+   "volatile": false,
+   "label": "geometry.alpha_gut_inv",
+   "unit": null,
+   "value": 24.3,
+   "main": 24.3,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.w0_derived",
+   "volatile": false,
+   "label": "cosmology.w0_derived",
+   "unit": null,
+   "value": -0.9583333333333334,
+   "main": -0.9583333333333334,
+   "experimental": -0.957,
+   "sigma": 0.01990049751243893
+  },
+  {
+   "id": "fermion.mass_ratio_proton_electron",
+   "volatile": false,
+   "label": "Proton-electron mass ratio derived from G2 cycle volumes: m_p/m_e = 1836.15267383. CODATA 2022: 1836.15267343. Error: 4.03e-07 (0.00 ppm). v18.0: 4 ppm precision is the geometric derivation limit.",
+   "unit": "dimensionless",
+   "value": 1836.1526738332332,
+   "main": 1836.1526738332332,
+   "experimental": 1836.152673426,
+   "sigma": 1.0148403750443755
+  },
+  {
+   "id": "neutrino.mass_sum",
+   "volatile": false,
+   "label": "Sum of neutrino masses Σm_ν = m1 + m2 + m3. Cosmologically constrained quantity. Planck 2018: Σm_ν < 0.12 eV (95% CL). DESI 2024 + CMB: Σm_ν < 0.072 eV (95% CL). PM predicts Σm_ν ≈ 0.10 eV from geometric seesaw mechanism (scales with the FITTED m_base = 0.049 eV). NOTE: companion module (neutrino_sector.py) publishes a different Σm_ν under the opposite mass ordering — the two scenarios are alternatives, not simultaneous predictions.",
+   "unit": "eV",
+   "value": 0.10028549266801504,
+   "main": 0.10028549266801504,
+   "experimental": 0.072,
+   "sigma": null
+  },
+  {
+   "id": "topology.n_gen",
+   "volatile": false,
+   "label": "topology.n_gen",
+   "unit": null,
+   "value": 3,
+   "main": 3,
+   "experimental": null,
+   "sigma": null
+  }
+ ],
+ "changed": {
+  "count": 86,
+  "by_artifact": {
+   "eml_crosscheck.json": 7,
+   "eml_trees_v25.json": 3,
+   "formulas.json": 8,
+   "geometry_to_physics.json": 8,
+   "metadata.json": 2,
+   "parameters.json": 6,
+   "proof_completeness_ledger.json": 5,
+   "sections.json": 6,
+   "shadow_derivations_report.json": 4,
+   "statistical_rigor_report.json": 15,
+   "theory_output.json": 8,
+   "validation_report.json": 14
+  },
+  "bookkeeping_ops": 1
+ },
+ "unverified_files": [],
+ "inert": false,
+ "failed_steps": []
+}
