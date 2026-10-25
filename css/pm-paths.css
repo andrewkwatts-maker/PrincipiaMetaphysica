@@ -45,3 +45,12 @@
   .pp-inspector { max-height: none; }
   #pp-svg { height: 50vh; }
 }
+
+/* Assessment panel (D-026) */
+.pp-assess { margin-top: 1.25rem; }
+.pp-assess-scroll { overflow-x: auto; max-width: 100%; margin-bottom: 1rem; }
+.pp-assess-scroll .pp-table { min-width: 44rem; }
+.pp-assess h3 { font-size: 1rem; margin: .75rem 0 .25rem; }
+.pp-assess tr.pp-cand td { background: rgba(255, 217, 61, .14); font-weight: 600; }
+.pp-assess .pp-fit { color: #ff9f43; }
+.pp-assess .pp-quiet { opacity: .75; font-size: .85rem; }

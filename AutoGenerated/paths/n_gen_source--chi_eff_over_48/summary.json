@@ -5,8 +5,8 @@
   "PASS": 27,
   "MARGINAL": 15,
   "TENSION": 10,
-  "FAIL": 32,
-  "SKIP": 120
+  "FAIL": 26,
+  "SKIP": 126
  },
  "chi2": {
   "value": 3030.0985,
@@ -2144,14 +2144,13 @@
   }
  ],
  "changed": {
-  "count": 22,
+  "count": 18,
   "by_artifact": {
-   "core_paper.json": 3,
    "formulas.json": 3,
    "sections.json": 5,
-   "theory_output.json": 11
+   "theory_output.json": 10
   },
-  "bookkeeping_ops": 1
+  "bookkeeping_ops": 18
  },
  "unverified_files": [],
  "inert": false,

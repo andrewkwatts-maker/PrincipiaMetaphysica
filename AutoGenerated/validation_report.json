@@ -5,13 +5,15 @@
   "note": "Computed per-parameter validation: every record compares a framework value against its experimental anchor with the sigma the registry computed. Verdicts include failures — this report is the honest scoreboard, distinct from the declarative gate certificates. PASS < 2σ, MARGINAL < 3σ, TENSION < 5σ, FAIL ≥ 5σ (or the registry's own validation_status where set). INPUT marks experimental anchors compared against themselves - they are inputs, not predictions, and are excluded from the pass/fail tally. IDENTITY marks algebraic round-trips that reproduce their own input to machine precision (a projection applied and then inverted); they are consistency identities, not predictions. Where a record declares a theory uncertainty, sigma folds it in and sigma_experimental_only reports the deviation against the experimental precision alone - read both.",
   "summary": {
     "total": 204,
-    "fail": 32,
+    "circular": 5,
+    "fail": 26,
     "identity": 2,
     "input": 93,
     "marginal": 15,
     "pass": 27,
     "tension": 10,
     "unbounded": 25,
+    "unit_check": 1,
     "pass_by_provenance": {
       "by_registry_status": {
         "DERIVED": 9,
@@ -35,25 +37,29 @@
     "fork": "theory_uncertainty_policy (see variants.json)",
     "rule": "cited_only: a theory uncertainty may change a verdict only if metadata carries theory_uncertainty_citation. A named theory_uncertainty_source ('geometric_vev_precision') is a category, not a reference, and does not count. Generalises the R6 ruling from G12 to the whole validation layer.",
     "n_rows_with_theory_uncertainty": 16,
-    "n_load_bearing": 9,
+    "n_load_bearing": 8,
     "n_load_bearing_cited": 0,
     "scoreboard_if_always": {
-      "FAIL": 23,
+      "CIRCULAR": 5,
+      "FAIL": 18,
       "IDENTITY": 2,
       "INPUT": 93,
-      "MARGINAL": 18,
+      "MARGINAL": 17,
       "PASS": 32,
       "TENSION": 11,
-      "UNBOUNDED": 25
+      "UNBOUNDED": 25,
+      "UNIT_CHECK": 1
     },
     "scoreboard_if_experimental_only": {
-      "FAIL": 32,
+      "CIRCULAR": 5,
+      "FAIL": 26,
       "IDENTITY": 2,
       "INPUT": 93,
       "MARGINAL": 15,
       "PASS": 27,
       "TENSION": 10,
-      "UNBOUNDED": 25
+      "UNBOUNDED": 25,
+      "UNIT_CHECK": 1
     },
     "load_bearing_rows": [
       {
@@ -81,15 +87,6 @@
         "theory_uncertainty": 1.4e-08,
         "cited": false,
         "verdict_with_theory": "PASS",
-        "verdict_experimental_only": "FAIL"
-      },
-      {
-        "path": "higgs.m_higgs_pred",
-        "sigma_with_theory": 41.610807567668154,
-        "sigma_experimental_only": 41.610807567668154,
-        "theory_uncertainty": 4.0,
-        "cited": false,
-        "verdict_with_theory": "MARGINAL",
         "verdict_experimental_only": "FAIL"
       },
       {
@@ -138,13 +135,13 @@
         "verdict_experimental_only": "FAIL"
       }
     ],
-    "note": "A theory uncertainty is load-bearing when it changes the verdict. 7 of the 16 rows carrying one are NOT load-bearing -- the allowance is modest and the answer is the same either way; those are untouched by this policy. Only where a buffer decides the answer does its provenance matter."
+    "note": "A theory uncertainty is load-bearing when it changes the verdict. 8 of the 16 rows carrying one are NOT load-bearing -- the allowance is modest and the answer is the same either way; those are untouched by this policy. Only where a buffer decides the answer does its provenance matter."
   },
   "worst_offenders": [
     {
       "path": "cosmology.speed_of_light_derived",
       "sigma": 402384.67009317863,
-      "verdict": "FAIL"
+      "verdict": "UNIT_CHECK"
     },
     {
       "path": "electromagnetic.alpha_inv",
@@ -164,7 +161,7 @@
     {
       "path": "higgs.m_higgs_local",
       "sigma": 496.6589677546948,
-      "verdict": "FAIL"
+      "verdict": "CIRCULAR"
     },
     {
       "path": "gauge.hypercharge_coupling_gp",
@@ -174,11 +171,6 @@
     {
       "path": "geometry.G_F_matched",
       "sigma": 57.10766319519557,
-      "verdict": "FAIL"
-    },
-    {
-      "path": "higgs.m_higgs_pred",
-      "sigma": 41.610807567668154,
       "verdict": "FAIL"
     },
     {
@@ -194,7 +186,7 @@
     {
       "path": "cosmology.H0_physical",
       "sigma": 31.020746372490564,
-      "verdict": "FAIL"
+      "verdict": "CIRCULAR"
     },
     {
       "path": "algebra.gaugino_cabibbo_derived",
@@ -214,6 +206,11 @@
     {
       "path": "geometry.eta_baryon",
       "sigma": 18.162136148308868,
+      "verdict": "FAIL"
+    },
+    {
+      "path": "gauge.sin2_theta_w_geometric",
+      "sigma": 17.119538030753443,
       "verdict": "FAIL"
     }
   ],
@@ -236,6 +233,7 @@
       "registry_status": "SYSTEM",
       "units": "dimensionless",
       "source_simulation": "abstract_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -257,6 +255,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "abstract_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -278,6 +277,7 @@
       "registry_status": "SYSTEM",
       "units": "dimensionless",
       "source_simulation": "abstract_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "range",
       "relative_margin": null
     },
@@ -299,6 +299,7 @@
       "registry_status": "SYSTEM",
       "units": "degrees",
       "source_simulation": "abstract_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -320,6 +321,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "e7_representation_v1_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -341,6 +343,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "e8x8_splitting_v1_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -362,6 +365,7 @@
       "registry_status": "FALSIFIED",
       "units": "dimensionless",
       "source_simulation": "gaugino_condensation_v1_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -383,6 +387,7 @@
       "registry_status": "FALSIFIED",
       "units": "dimensionless",
       "source_simulation": "gaugino_condensation_v1_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -404,6 +409,7 @@
       "registry_status": "FALSIFIED",
       "units": "dimensionless",
       "source_simulation": "gaugino_condensation_v1_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -425,6 +431,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "gaugino_condensation_v1_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -446,6 +453,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "axion_dm_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -467,6 +475,7 @@
       "registry_status": "ESTABLISHED",
       "units": "eV",
       "source_simulation": "ESTABLISHED:Planck2018",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -488,6 +497,7 @@
       "registry_status": "ESTABLISHED",
       "units": "years",
       "source_simulation": "ESTABLISHED:SuperK_2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -509,6 +519,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "chirality_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -530,6 +541,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -551,6 +563,7 @@
       "registry_status": "CALIBRATED",
       "units": "dimensionless",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -572,6 +585,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -593,6 +607,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -614,6 +629,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -635,6 +651,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -656,6 +673,7 @@
       "registry_status": "CALIBRATED",
       "units": "dimensionless",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -677,6 +695,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -698,6 +717,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -719,6 +739,7 @@
       "registry_status": "CALIBRATED",
       "units": "dimensionless",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -740,6 +761,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -761,6 +783,7 @@
       "registry_status": "CALIBRATED",
       "units": "dimensionless",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -782,6 +805,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -803,6 +827,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "ckm_matrix_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -824,6 +849,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:CODATA2022",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -845,6 +871,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:CODATA2022",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -866,6 +893,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:CODATA2022",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -887,6 +915,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "INPUT:SPECULATIVE",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -908,6 +937,7 @@
       "registry_status": "ESTABLISHED",
       "units": "count",
       "source_simulation": "ESTABLISHED:NEUROSCIENCE",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -929,6 +959,7 @@
       "registry_status": "DERIVED",
       "units": "GeV^{-2}",
       "source_simulation": "higgs_vev_refined_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -950,6 +981,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV^-2",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -971,6 +1003,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV·s",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -992,6 +1025,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1013,6 +1047,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1034,6 +1069,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1055,6 +1091,7 @@
       "registry_status": "ANCHORED",
       "units": "km/s/Mpc",
       "source_simulation": "ricci_flow_h0_v16_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1076,6 +1113,7 @@
       "registry_status": "PREDICTED",
       "units": "km/s/Mpc",
       "source_simulation": "evolution_engine_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1097,6 +1135,7 @@
       "registry_status": "PREDICTED",
       "units": "km/s/Mpc",
       "source_simulation": "evolution_engine_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1118,6 +1157,7 @@
       "registry_status": "FITTED_COMPOSITE",
       "units": "km/s/Mpc",
       "source_simulation": "ricci_flow_h0_v16_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1139,6 +1179,7 @@
       "registry_status": "DERIVED",
       "units": "km/s/Mpc",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1154,12 +1195,13 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "FAIL",
-      "verdict_with_theory": "FAIL",
-      "verdict_experimental_only": "FAIL",
+      "verdict": "CIRCULAR",
+      "verdict_with_theory": "CIRCULAR",
+      "verdict_experimental_only": "CIRCULAR",
       "registry_status": "DERIVED",
       "units": null,
       "source_simulation": "appendix_z_terminal_ledger_v24_2",
+      "scoring_exclusion_reason": "D-027 ruling 3: the km/s/Mpc scale (4040 = 400 x 10.1) is back-solved to the measured SH0ES H0 (D-026 audit, formula_audit_cosmo.json), so the scale input encodes the quantity being compared.",
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1181,6 +1223,7 @@
       "registry_status": "RETRODICTED_VARIANT",
       "units": "km/s/Mpc",
       "source_simulation": "ricci_flow_h0_v16_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1196,12 +1239,13 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "FAIL",
-      "verdict_with_theory": "FAIL",
-      "verdict_experimental_only": "FAIL",
+      "verdict": "CIRCULAR",
+      "verdict_with_theory": "CIRCULAR",
+      "verdict_experimental_only": "CIRCULAR",
       "registry_status": "PREDICTED",
       "units": "m^-2",
       "source_simulation": "cosmological_constant_v16_1",
+      "scoring_exclusion_reason": "D-027 ruling 3: Lambda = ... / R_H^2 with R_H = c/H0 takes the measured H0 as its scale input (D-026 audit).",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1223,6 +1267,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors:alias",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1244,6 +1289,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "multi_sector_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1265,6 +1311,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1286,6 +1333,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -1307,6 +1355,7 @@
       "registry_status": "DERIVED",
       "units": "count",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1328,6 +1377,7 @@
       "registry_status": "DERIVED",
       "units": null,
       "source_simulation": "v26.0:inflation",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1349,6 +1399,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1370,6 +1421,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1385,12 +1437,13 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "FAIL",
-      "verdict_with_theory": "FAIL",
-      "verdict_experimental_only": "FAIL",
+      "verdict": "CIRCULAR",
+      "verdict_with_theory": "CIRCULAR",
+      "verdict_experimental_only": "CIRCULAR",
       "registry_status": "DERIVED",
       "units": "J/m^3",
       "source_simulation": "cosmological_constant_v16_1",
+      "scoring_exclusion_reason": "D-027 ruling 3: rho_vac = Lambda c^4 / (8 pi G) is a unit conversion of Lambda, which is circular through the measured H0 (D-026 audit).",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1412,6 +1465,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "s8_suppression_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1433,6 +1487,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "s8_suppression_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1448,12 +1503,13 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "FAIL",
-      "verdict_with_theory": "FAIL",
-      "verdict_experimental_only": "FAIL",
+      "verdict": "UNIT_CHECK",
+      "verdict_with_theory": "UNIT_CHECK",
+      "verdict_experimental_only": "UNIT_CHECK",
       "registry_status": "PREDICTED",
       "units": "m/s",
       "source_simulation": "speed_of_light_v17_2",
+      "scoring_exclusion_reason": "D-027 ruling 3: c is exact in SI (299,792,458 m/s by definition since 1983), so this row checks unit consistency and is not a prediction.",
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1475,6 +1531,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors:alias",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1496,6 +1553,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "dark_energy_thawing_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1517,6 +1575,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "cosmology_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1538,6 +1597,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "attractor_potential_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -1559,6 +1619,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "attractor_potential_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -1580,6 +1641,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "multi_sector_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1601,6 +1663,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors:alias",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1622,6 +1685,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "dark_energy_thawing_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -1643,6 +1707,7 @@
       "registry_status": "DERIVED",
       "units": "seconds",
       "source_simulation": "lagrangian_master_derivation_v22",
+      "scoring_exclusion_reason": null,
       "bound_type": "lower",
       "relative_margin": 0.0
     },
@@ -1664,6 +1729,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "lagrangian_master_derivation_v22",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1685,6 +1751,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "lagrangian_master_derivation_v22",
+      "scoring_exclusion_reason": null,
       "bound_type": "lower",
       "relative_margin": 0.0
     },
@@ -1706,6 +1773,7 @@
       "registry_status": "ESTABLISHED",
       "units": "km/s/Mpc",
       "source_simulation": "ESTABLISHED:Planck2018",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1727,6 +1795,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:Planck2018",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1748,6 +1817,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:Planck2018",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1769,6 +1839,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:DESI_2025",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1790,6 +1861,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:DESI_2025",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1811,6 +1883,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:DESI_2025_THAWING",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1832,6 +1905,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:DESI_2025",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1853,6 +1927,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:DESI_2025_THAWING",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1874,6 +1949,7 @@
       "registry_status": "GEOMETRIC",
       "units": "dimensionless",
       "source_simulation": "alpha_rigor_v16_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1895,6 +1971,7 @@
       "registry_status": "FITTED",
       "units": "dimensionless",
       "source_simulation": "mass_ratio_v23_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1916,6 +1993,7 @@
       "registry_status": "ANSATZ",
       "units": "dimensionless",
       "source_simulation": "fermion_generations_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1937,6 +2015,7 @@
       "registry_status": "PREDICTIONS",
       "units": "dimensionless",
       "source_simulation": "appendix_p_g2_holonomy_v24_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -1958,6 +2037,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "gauge_unification_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "lower",
       "relative_margin": 5.32455532033676
     },
@@ -1979,6 +2059,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "gauge_unification_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "lower",
       "relative_margin": 20.0
     },
@@ -2000,6 +2081,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "gauge_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2021,6 +2103,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:GUT_THEORY",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2042,6 +2125,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2063,6 +2147,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2084,6 +2169,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2105,6 +2191,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2126,6 +2213,7 @@
       "registry_status": "ESTABLISHED",
       "units": "count",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2147,6 +2235,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2168,6 +2257,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2189,6 +2279,7 @@
       "registry_status": "TOPOLOGY_CANDIDATE",
       "units": "dimensionless",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2210,6 +2301,7 @@
       "registry_status": "DERIVED",
       "units": "degrees",
       "source_simulation": "gauge_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2231,6 +2323,7 @@
       "registry_status": "ESTABLISHED",
       "units": "count",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2252,6 +2345,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "master_action_simulation_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2273,6 +2367,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2294,6 +2389,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2315,6 +2411,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2336,6 +2433,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2357,6 +2455,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2378,6 +2477,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2399,6 +2499,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2420,6 +2521,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": 0.31926392051253016
     },
@@ -2441,6 +2543,7 @@
       "registry_status": "GEOMETRIC",
       "units": null,
       "source_simulation": "geometric_anchors",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2462,6 +2565,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "f_r_t_tau_gravity_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -2483,6 +2587,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "gr_spacetime_derivations_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2504,6 +2609,7 @@
       "registry_status": "DERIVED",
       "units": "GeV^-2",
       "source_simulation": "gr_spacetime_derivations_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2525,6 +2631,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "gr_spacetime_derivations_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2546,6 +2653,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "gr_spacetime_derivations_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "exact",
       "relative_margin": null
     },
@@ -2567,6 +2675,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "gr_spacetime_derivations_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "exact",
       "relative_margin": null
     },
@@ -2588,6 +2697,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless (v_gw/c)",
       "source_simulation": "f_r_t_tau_gravity_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -2609,6 +2719,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "f_r_t_tau_gravity_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -2630,6 +2741,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2651,6 +2763,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2666,12 +2779,13 @@
       "theory_uncertainty": null,
       "theory_uncertainty_cited": null,
       "theory_uncertainty_load_bearing": null,
-      "verdict": "FAIL",
-      "verdict_with_theory": "FAIL",
-      "verdict_experimental_only": "FAIL",
+      "verdict": "CIRCULAR",
+      "verdict_with_theory": "CIRCULAR",
+      "verdict_experimental_only": "CIRCULAR",
       "registry_status": "PREDICTED",
       "units": "GeV",
       "source_simulation": "higgs_brane_partition_v16_2",
+      "scoring_exclusion_reason": "D-027 ruling 3: m_local = m_bulk / 3.3111 with m_bulk = 414.22 = 125.10 x 3.3111, i.e. the measured m_H multiplied in and divided back out (D-026 audit).",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2681,18 +2795,19 @@
       "experimental_value": 125.2,
       "experimental_uncertainty": 0.11,
       "experimental_source": "PDG 2024 (ATLAS+CMS combined)",
-      "sigma": 41.610807567668154,
+      "sigma": 1.1438647659893715,
       "sigma_with_theory": 1.1438647659893715,
       "sigma_experimental_only": 41.610807567668154,
       "theory_uncertainty": 4.0,
       "theory_uncertainty_cited": false,
-      "theory_uncertainty_load_bearing": true,
-      "verdict": "FAIL",
-      "verdict_with_theory": "MARGINAL",
-      "verdict_experimental_only": "FAIL",
+      "theory_uncertainty_load_bearing": null,
+      "verdict": "CIRCULAR",
+      "verdict_with_theory": "CIRCULAR",
+      "verdict_experimental_only": "CIRCULAR",
       "registry_status": "CALIBRATED",
       "units": "GeV",
       "source_simulation": "higgs_mass_v16_0",
+      "scoring_exclusion_reason": "D-027 ruling 3 (already encodes it): higgs_mass.py:39-43 says Re(T) = 9.865 'was hand-inverted from this very formula to reproduce m_h = 125.10 GeV', so the scale input encodes the measured mass.",
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2714,6 +2829,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2735,6 +2851,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "higgs_mass_v16_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2756,6 +2873,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "higgs_vev_refined_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -2777,6 +2895,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:SM_EW",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2798,6 +2917,7 @@
       "registry_status": "PREDICTIONS",
       "units": "dimensionless",
       "source_simulation": "appendix_q_index_theorem_v24_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2819,6 +2939,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "appendix_q_index_theorem_v24_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2840,6 +2961,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:DES_Y3_2022",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2861,6 +2983,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:HSC_Y3_2023",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2882,6 +3005,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:KiDS1000_2021",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2903,6 +3027,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:G2_GEOMETRY",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2924,6 +3049,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "CONSTRAINED:HIGGS_MASS",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2945,6 +3071,7 @@
       "registry_status": "DERIVED",
       "units": "degrees",
       "source_simulation": "neutrino_algebraic_v24_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -2966,6 +3093,7 @@
       "registry_status": "FITTED",
       "units": "degrees",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -2987,6 +3115,7 @@
       "registry_status": "FITTED",
       "units": "eV^2",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3008,6 +3137,7 @@
       "registry_status": "PREDICTED",
       "units": "eV^2",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3029,6 +3159,7 @@
       "registry_status": "FITTED",
       "units": "eV",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": 0.3928540648335423
     },
@@ -3050,6 +3181,7 @@
       "registry_status": "FALSIFIED",
       "units": "dimensionless",
       "source_simulation": "neutrino_algebraic_v24_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -3071,6 +3203,7 @@
       "registry_status": "DERIVED",
       "units": "eV",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": 0.15020833333333333
     },
@@ -3092,6 +3225,7 @@
       "registry_status": "FALSIFIED",
       "units": "degrees",
       "source_simulation": "neutrino_algebraic_v24_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "central_value",
       "relative_margin": null
     },
@@ -3113,6 +3247,7 @@
       "registry_status": "FITTED",
       "units": "degrees",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3134,6 +3269,7 @@
       "registry_status": "FITTED",
       "units": "degrees",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3155,6 +3291,7 @@
       "registry_status": "FITTED",
       "units": "degrees",
       "source_simulation": "neutrino_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3176,6 +3313,7 @@
       "registry_status": "ESTABLISHED",
       "units": "degrees",
       "source_simulation": "ESTABLISHED:NuFIT",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3197,6 +3335,7 @@
       "registry_status": "ESTABLISHED",
       "units": "degrees",
       "source_simulation": "ESTABLISHED:NuFIT_IO",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3218,6 +3357,7 @@
       "registry_status": "ESTABLISHED",
       "units": "eV^2",
       "source_simulation": "ESTABLISHED:NuFIT",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3239,6 +3379,7 @@
       "registry_status": "ESTABLISHED",
       "units": "eV^2",
       "source_simulation": "ESTABLISHED:NuFIT",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3260,6 +3401,7 @@
       "registry_status": "ESTABLISHED",
       "units": "eV^2",
       "source_simulation": "ESTABLISHED:NuFIT_IO",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3281,6 +3423,7 @@
       "registry_status": "ESTABLISHED",
       "units": "degrees",
       "source_simulation": "ESTABLISHED:NuFIT",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3302,6 +3445,7 @@
       "registry_status": "ESTABLISHED",
       "units": "degrees",
       "source_simulation": "ESTABLISHED:NuFIT",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3323,6 +3467,7 @@
       "registry_status": "ESTABLISHED",
       "units": "degrees",
       "source_simulation": "ESTABLISHED:NuFIT",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3344,6 +3489,7 @@
       "registry_status": "ESTABLISHED",
       "units": "degrees",
       "source_simulation": "ESTABLISHED:NuFIT_IO",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3365,6 +3511,7 @@
       "registry_status": "DERIVED",
       "units": null,
       "source_simulation": "v25.0:yukawa_derivation",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3386,6 +3533,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3407,6 +3555,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3428,6 +3577,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3449,6 +3599,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3470,6 +3621,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3491,6 +3643,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3512,6 +3665,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3533,6 +3687,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3554,6 +3709,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3575,6 +3731,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3596,6 +3753,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3617,6 +3775,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3638,6 +3797,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3659,6 +3819,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3680,6 +3841,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3701,6 +3863,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3722,6 +3885,7 @@
       "registry_status": "ESTABLISHED",
       "units": "GeV",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3743,6 +3907,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3764,6 +3929,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:Planck2018",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3785,6 +3951,7 @@
       "registry_status": "CALIBRATED",
       "units": "degrees",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3806,6 +3973,7 @@
       "registry_status": "CALIBRATED",
       "units": "degrees",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3827,6 +3995,7 @@
       "registry_status": "CALIBRATED",
       "units": "degrees",
       "source_simulation": "octonionic_mixing_v23_1",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3848,6 +4017,7 @@
       "registry_status": "PREDICTED",
       "units": "GeV^{-1}",
       "source_simulation": "alp_portals_v23",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": -18642.151206471746
     },
@@ -3869,6 +4039,7 @@
       "registry_status": "PREDICTED",
       "units": "cm^2",
       "source_simulation": "dark_matter_portals_v23",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": 1.0
     },
@@ -3890,6 +4061,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "sterile_neutrino_portals_v23",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": 0.9921371005567214
     },
@@ -3911,6 +4083,7 @@
       "registry_status": "PREDICTED",
       "units": "dimensionless",
       "source_simulation": "sterile_neutrino_portals_v23",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -3932,6 +4105,7 @@
       "registry_status": "PREDICTED",
       "units": "years",
       "source_simulation": "proton_decay_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "lower",
       "relative_margin": 0.9822496373314865
     },
@@ -3953,6 +4127,7 @@
       "registry_status": "DERIVED",
       "units": "mol^-1",
       "source_simulation": "avogadro_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3974,6 +4149,7 @@
       "registry_status": "DERIVED",
       "units": "m",
       "source_simulation": "compton_wavelength_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -3995,6 +4171,7 @@
       "registry_status": "DERIVED",
       "units": "C/mol",
       "source_simulation": "faraday_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4016,6 +4193,7 @@
       "registry_status": "DERIVED",
       "units": "J",
       "source_simulation": "hartree_energy_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4037,6 +4215,7 @@
       "registry_status": "DERIVED",
       "units": "Wb",
       "source_simulation": "magnetic_flux_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4058,6 +4237,7 @@
       "registry_status": "DERIVED",
       "units": "J/(mol K)",
       "source_simulation": "molar_gas_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4079,6 +4259,7 @@
       "registry_status": "DERIVED",
       "units": "W/(m^2 K^4)",
       "source_simulation": "stefan_boltzmann_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4100,6 +4281,7 @@
       "registry_status": "DERIVED",
       "units": "Ohm",
       "source_simulation": "von_klitzing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4121,6 +4303,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "weak_mixing_v17_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4142,6 +4325,7 @@
       "registry_status": "GEOMETRIC",
       "units": "milliseconds",
       "source_simulation": "orch_or_geometry_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "lower",
       "relative_margin": 2.741342405984346
     },
@@ -4163,6 +4347,7 @@
       "registry_status": "GEOMETRIC",
       "units": "protofilaments",
       "source_simulation": "orch_or_geometry_v22_0",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4184,6 +4369,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "appendix_g_omega_seal_v24_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "exact",
       "relative_margin": null
     },
@@ -4205,6 +4391,7 @@
       "registry_status": "DERIVED",
       "units": "GeV",
       "source_simulation": "complete_residue_registry_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -4226,6 +4413,7 @@
       "registry_status": "DERIVED",
       "units": "count",
       "source_simulation": "complete_residue_registry_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -4247,6 +4435,7 @@
       "registry_status": "DERIVED",
       "units": "count",
       "source_simulation": "complete_residue_registry_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -4268,6 +4457,7 @@
       "registry_status": "PREDICTED",
       "units": "eV",
       "source_simulation": "complete_residue_registry_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": "upper",
       "relative_margin": 0.4790286927177333
     },
@@ -4289,6 +4479,7 @@
       "registry_status": "PREDICTED",
       "units": "years",
       "source_simulation": "complete_residue_registry_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -4310,6 +4501,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:G2_TORSION",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4331,6 +4523,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "leech_partition_v16_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "exact",
       "relative_margin": null
     },
@@ -4352,6 +4545,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:V21_BRIDGE_REDUCTION",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4373,6 +4567,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "appendix_r_vacuum_stability_v24_2",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4394,6 +4589,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4415,6 +4611,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "yukawa_textures_v18",
+      "scoring_exclusion_reason": null,
       "bound_type": null,
       "relative_margin": null
     },
@@ -4436,6 +4633,7 @@
       "registry_status": "DERIVED",
       "units": "count",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4457,6 +4655,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4478,6 +4677,7 @@
       "registry_status": "DERIVED",
       "units": "dimensionless",
       "source_simulation": "matter_sector_complete_v19",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     },
@@ -4499,6 +4699,7 @@
       "registry_status": "ESTABLISHED",
       "units": "dimensionless",
       "source_simulation": "ESTABLISHED:PDG2024",
+      "scoring_exclusion_reason": null,
       "bound_type": "measured",
       "relative_margin": null
     }

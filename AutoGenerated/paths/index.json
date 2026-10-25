@@ -2,14 +2,14 @@
  "schema": "metaphysica.paths/1",
  "theory": "pm",
  "main": "main",
- "generated": "2026-10-25T13:46:21Z",
+ "generated": "2026-10-25T16:50:02Z",
  "engine": {
   "version": "2.3.1",
-  "commit": "8df2df4"
+  "commit": "c8d152d"
  },
  "base": {
-  "GATES_72.json": "b932d5b2f6f47f17a03b03f728a5e66ad21c36fc3587ae51ed991a0c8e0a5495",
-  "GATES_72_v16_2.json": "b932d5b2f6f47f17a03b03f728a5e66ad21c36fc3587ae51ed991a0c8e0a5495",
+  "GATES_72.json": "e02dde3b75a3e64079a4cf2687240f146afe15af101321185bdb07dfd997c2b1",
+  "GATES_72_v16_2.json": "e02dde3b75a3e64079a4cf2687240f146afe15af101321185bdb07dfd997c2b1",
   "GATES_CERTIFICATES.json": "728e67b1f13b1ec12d0956473afccf93f700899b72a5c80712b9b1b0286ffcd4",
   "arithma_trees.json": "88233549e88c063e3ca3233adf76d990f71a9512dceef2128045868608677ba5",
   "beginner-guide.json": "f55aeb8670014c6bb15f330285bbfc0c30b03267cb3782801041edc8857c5ca5",
@@ -29,41 +29,37 @@
   "certificates/G48_w0_equation_of_state.json": "957528904bee26237f58912c88abb66e0dc9e0b9701806bf5b4a6c23503a7228",
   "certificates/G50_baryon_to_photon_ratio.json": "55904de9e97fbce22399efb07ef5f343e6d422ff273b48a056be728070a58827",
   "certificates/G72_the_omega_hash.json": "7e0cd403c70cb95909708a250c66a03fdd13c8aa10ecad00f3451c6cffa77780",
-  "compression_report.json": "24d88f2d53148b7c9198a326bf85a157355e8dbda70423bfba7c7d426bb4be00",
+  "compression_report.json": "bf8cfff3a955d41028d00aab60960bc1cd55c8dfa10ae7789f1de7650eece849",
   "config_drift_audit.json": "94bb3eb29f12c8ec8f8671e19b96febeb29d2bbda1c5658e8fac8e20dde9f325",
   "consistency_beacons.json": "070727a80dd5d488ac0f37279924f9c7b7ad2fb29a65c713ef40fb4a144948cc",
-  "core_paper.json": "b078d528b2d3f87fffe987faa5ec5b222c59ae8739071df411d41708a31e960e",
   "dependency_chains.json": "8ac81fb1bef13e21c5d0bbe77d88041bbeb670e33e6399811fe16854458b3f04",
-  "eml_cross_check.json": "b09769d5f5eeb1cee182a1696f0f211906390b67f09d4ef67d328247f4389a93",
-  "eml_crosscheck.json": "80b5fa9a403ad7be591d7d4baa9fc731b368b279edd06d432bb5d2756eef2c9d",
-  "eml_dependency_chains.json": "b02e5ba7a83aa4316f2e8c59f3519b88f07225383aa202d60ac28826c69659ee",
+  "eml_cross_check.json": "07f5f8d47946f899794e5aa480b719617d88b13cd7565d3b3123a673484c8592",
+  "eml_crosscheck.json": "3a129d39e4a9ece4325ebc74accd277af591718cd6066ef37393e98b28867db3",
+  "eml_dependency_chains.json": "4c5b048e48a61f80d183772a46d288c8820d243038f4a2c472a43524b835591c",
   "eml_offer_policy.json": "59bb260b28c8d38e6151cccf81cb937390f794e3cbf9a71348d2d1a35f3f7050",
   "eml_trees.json": "b7e870529c413f796509276d88a16d57a40f95d262d34932ff742147852f7199",
   "eml_trees_v25.json": "d0132ec65e30df3cbbab8fa9c7ab48a4c864f5cad21c72a89e1dec04b9c9c80d",
   "formula_renders.json": "1e9cb1765381d8b40182faf09ff89a75813570e974474562e014dd04537e1856",
-  "formulas.json": "d329c1b3f0d1043376fde35e2c198b655838b9577a52c5792c6905d9c2a68ea4",
-  "free_variables.json": "e13e798ab4f79313c3531bbd24b5024c8a62efbb63aa70ef1a7b5f3d3206734e",
-  "geometry_to_physics.json": "5aa12c365648dc0af859deef048150b3d1be5123c1d0918c87ae7ebda0dcb7d8",
-  "hardcode_audit.json": "ed1e64d7e68210a000c64f3a0bd263a8341fde4cfd98a3603665ab19af874fe7",
+  "formulas.json": "dcea5988ccdd6c00ad908c26c197327c585be3402e758d2a1b8a6df4fdb18ddb",
+  "geometry_to_physics.json": "80709c5cfc250d02775c49ca8c3aa851b9f3a1e05b803da97c35374a63085643",
   "identity_ledger.json": "ace5dd007071f33898b000bec0fb2288ace0649b70785836962d2709e8ffba32",
-  "improvement_scorecard.json": "15fb4065c321aabb7fa68734a82ea817a092c91ebd515945e09a0c74905d1393",
-  "metadata.json": "fa728c9c881507ab62a9fb1791a6566f5ce288148afc0e23c786816f9b0e7dbe",
-  "mismatches.json": "2439b271862a919f959a42c99b34c272cebc35c3e35e4bbdcc7739223890f87a",
-  "named_constants.json": "23a1413af7ce28f017fbbcdc717a263c1f16aee1a522a6ca4c03f5661fdf03ed",
-  "observer_report.json": "d422a06dfd2af46658dc5d5a59830f45ea081670dc609b4054cc7c390de8bc82",
-  "parameters.json": "3be686ca8fc5b63842e95262f0338e8df04f6396120937c0a9ea27bcf448c3ad",
-  "proof_completeness_ledger.json": "0b7679550fd27ead24a628956fccc037dc425b29f35174a15ff0692ca936378a",
+  "improvement_scorecard.json": "8156b9c43ddbdb2e7d0b693461ca6a0c92613d7c00d9462643c43fadece3e794",
+  "metadata.json": "b397c51c364207077467b1291ee27d581572f9597f28579fc5a053556463e2fb",
+  "mismatches.json": "4da830e16fd06efe1844f7a12d082e3d33ce89264a67698c7372f21329b1ae22",
+  "named_constants.json": "be1d940fbc55143895b5fe005f780995f383a0baf193656c842ddba6eff12a6d",
+  "observer_report.json": "092f4db25c0ae272fd8c60eb9d37e9ed8bc05d5fb32bc1c00ef10052a0405b22",
+  "parameters.json": "0df91aac02e097705c2bd3f38e4c5996b1978c1db4421d2f840085b39819f780",
+  "proof_completeness_ledger.json": "925363ac38adad71871f5e06c8f50967f32bb6cdc2470eec32960c5a25705ffd",
   "reference_check.json": "265854f6b85dcd9bb40bf204a472462f78492b034a05d4eae493775fb4b5cad7",
   "references.json": "87623f99dffc987651abfa78c16f1af8c70e67824e8bc23bd97b713821138378",
-  "sections.json": "80a7a5aed059639f285e72e8b74e4636cebe4eb136cf2b1deacfbc3c2bac6fb1",
+  "sections.json": "0875dba64a64e1cdfd037b13d85e25beee31abe2e949dd2357f5acdfc974a1bd",
   "shadow_derivations_report.json": "6b6b110a2f711df5dcffd0d68bf8a5181315628dc7d1f5f560d83cb8dde69ae1",
-  "simulations-index.json": "497aa641b4587c65224b8c850eb8fce1455e44b0ee232f0b264d0b08817a3843",
-  "statistical_rigor_report.json": "1eef84830226afdaa577bdc5bdc37ffed158ad90cb1c9742fa4d3dae1614f966",
-  "statistics.json": "5d9ddb82c909628b77ac024ad1caf27f3a04260c1bebf2cb0ec764e0aa606c6d",
-  "terminology_audit.json": "5b1efde798058b590726c630194c4a218e1cd1a7bb86b609906af2bf84f5eb0c",
-  "theory_output.json": "b37bd21a42a6cb7d05f8c49c6a583c7699559f34d8bae1f6152fb2477e058b77",
+  "statistical_rigor_report.json": "38f8784d5c85586ac19ac462fd64059ba86bab30297304bccb238b650e371a52",
+  "statistics.json": "449ebb085dd439400f987ba28ce5721ab998e188ef1c3e52a5ba238dbe4eb8f5",
+  "terminology_audit.json": "33a25c08f832290bb082a85c11c9aa36be8ce6b2c0ee54ef91d24df32866d4f1",
+  "theory_output.json": "562a0b36e4e4bbbaa4bd10257119864de2b08750acdadad5046c7655b9110f3f",
   "theory_overview.json": "daaf45dc77a83cc4e662bec3a53d7e6f7800deceef3b3e0f9a9d32e703892d70",
-  "validation_report.json": "d2a8325cd52d1a109394694c30758c6f7d5b5004b4a644c7ec6115aa38adc830",
+  "validation_report.json": "0dc85952c109f0b13c7a4b9df895092354162eeb3baa108082f006acb6ed0897",
   "variants.json": "f52170689aeb8e192495b89efea4883be838a1738692f0913082c49b3de6910a"
  },
  "paths": [
@@ -151,7 +147,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 415
+    "secs": 190
    },
    "failed_steps": []
   },
@@ -201,7 +197,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 252
+    "secs": 195
    },
    "failed_steps": []
   },
@@ -251,7 +247,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 380
+    "secs": 187
    },
    "failed_steps": []
   },
@@ -301,7 +297,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 276
+    "secs": 180
    },
    "failed_steps": []
   },
@@ -345,7 +341,7 @@
    "id": "b3_seed--seed_24",
    "computed": true,
    "inert": false,
-   "changed_values": 3452,
+   "changed_values": 3312,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -370,7 +366,6 @@
     "compression_report.json",
     "config_drift_audit.json",
     "consistency_beacons.json",
-    "core_paper.json",
     "dependency_chains.json",
     "eml_cross_check.json",
     "eml_crosscheck.json",
@@ -392,7 +387,6 @@
     "references.json",
     "sections.json",
     "shadow_derivations_report.json",
-    "simulations-index.json",
     "statistical_rigor_report.json",
     "statistics.json",
     "terminology_audit.json",
@@ -402,7 +396,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 196
+    "secs": 173
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -452,7 +446,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 191
+    "secs": 174
    },
    "failed_steps": []
   },
@@ -500,7 +494,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 268
+    "secs": 171
    },
    "failed_steps": []
   },
@@ -547,14 +541,14 @@
    "id": "chi_eff_route--constant_144",
    "computed": true,
    "inert": false,
-   "changed_values": 5,
+   "changed_values": 3,
    "changed_artifacts": [
-    "core_paper.json",
+    "observer_report.json",
     "sections.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 365
+    "secs": 181
    },
    "failed_steps": []
   },
@@ -601,14 +595,13 @@
    "id": "chi_eff_route--seed_dependent",
    "computed": true,
    "inert": false,
-   "changed_values": 5,
+   "changed_values": 2,
    "changed_artifacts": [
-    "core_paper.json",
     "sections.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 196
+    "secs": 180
    },
    "failed_steps": []
   },
@@ -655,14 +648,13 @@
    "id": "chi_eff_route--unruled",
    "computed": true,
    "inert": false,
-   "changed_values": 5,
+   "changed_values": 2,
    "changed_artifacts": [
-    "core_paper.json",
     "sections.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 421
+    "secs": 184
    },
    "failed_steps": []
   },
@@ -710,7 +702,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 198
+    "secs": 180
    },
    "failed_steps": []
   },
@@ -758,7 +750,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 192
+    "secs": 176
    },
    "failed_steps": []
   },
@@ -801,14 +793,12 @@
    "decision_refs": [],
    "id": "dark_energy_betti--bridges_12",
    "computed": true,
-   "inert": false,
-   "changed_values": 1,
-   "changed_artifacts": [
-    "observer_report.json"
-   ],
+   "inert": true,
+   "changed_values": 0,
+   "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 198
+    "secs": 178
    },
    "failed_steps": []
   },
@@ -856,7 +846,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 216
+    "secs": 172
    },
    "failed_steps": []
   },
@@ -904,7 +894,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 199
+    "secs": 179
    },
    "failed_steps": []
   },
@@ -952,7 +942,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 192
+    "secs": 172
    },
    "failed_steps": []
   },
@@ -998,7 +988,7 @@
    "id": "dark_energy_mechanism--mep_11_13",
    "computed": true,
    "inert": false,
-   "changed_values": 223,
+   "changed_values": 160,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -1007,11 +997,8 @@
     "certificates/G48_w0_equation_of_state.json",
     "config_drift_audit.json",
     "eml_crosscheck.json",
-    "eml_dependency_chains.json",
     "formulas.json",
-    "free_variables.json",
     "geometry_to_physics.json",
-    "hardcode_audit.json",
     "metadata.json",
     "parameters.json",
     "sections.json",
@@ -1022,7 +1009,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 484
+    "secs": 190
    },
    "failed_steps": []
   },
@@ -1070,7 +1057,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 191
+    "secs": 177
    },
    "failed_steps": []
   },
@@ -1120,7 +1107,6 @@
     "arithma_trees.json",
     "certificates/G19_neutrino_neutrality.json",
     "certificates/G72_the_omega_hash.json",
-    "core_paper.json",
     "dependency_chains.json",
     "eml_crosscheck.json",
     "eml_trees_v25.json",
@@ -1139,7 +1125,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 221
+    "secs": 178
    },
    "failed_steps": []
   },
@@ -1186,11 +1172,10 @@
    "id": "g2_form_convention--all_plus_one",
    "computed": true,
    "inert": false,
-   "changed_values": 241,
+   "changed_values": 226,
    "changed_artifacts": [
     "arithma_trees.json",
     "beginner-guide.json",
-    "core_paper.json",
     "eml_trees.json",
     "formulas.json",
     "geometry_to_physics.json",
@@ -1201,7 +1186,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 458
+    "secs": 177
    },
    "failed_steps": []
   },
@@ -1247,7 +1232,7 @@
    "id": "h0_route--kk_bridge",
    "computed": true,
    "inert": false,
-   "changed_values": 109,
+   "changed_values": 107,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -1269,7 +1254,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 317
+    "secs": 256
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -1317,7 +1302,7 @@
    "id": "h0_route--ricci_flow",
    "computed": true,
    "inert": false,
-   "changed_values": 110,
+   "changed_values": 107,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -1339,7 +1324,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 384
+    "secs": 195
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -1389,7 +1374,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 278
+    "secs": 181
    },
    "failed_steps": []
   },
@@ -1437,7 +1422,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 467
+    "secs": 179
    },
    "failed_steps": []
   },
@@ -1487,7 +1472,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 207
+    "secs": 180
    },
    "failed_steps": []
   },
@@ -1535,7 +1520,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 462
+    "secs": 173
    },
    "failed_steps": []
   },
@@ -1583,7 +1568,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 357
+    "secs": 174
    },
    "failed_steps": []
   },
@@ -1630,16 +1615,15 @@
    "id": "n_gen_source--chi_eff_over_48",
    "computed": true,
    "inert": false,
-   "changed_values": 22,
+   "changed_values": 18,
    "changed_artifacts": [
-    "core_paper.json",
     "formulas.json",
     "sections.json",
     "theory_output.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 474
+    "secs": 186
    },
    "failed_steps": []
   },
@@ -1685,16 +1669,15 @@
    "id": "n_gen_source--chi_over_24",
    "computed": true,
    "inert": false,
-   "changed_values": 22,
+   "changed_values": 18,
    "changed_artifacts": [
-    "core_paper.json",
     "formulas.json",
     "sections.json",
     "theory_output.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 354
+    "secs": 189
    },
    "failed_steps": []
   },
@@ -1744,7 +1727,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 399
+    "secs": 255
    },
    "failed_steps": []
   },
@@ -1788,14 +1771,13 @@
    "id": "render_policy--permissive",
    "computed": true,
    "inert": false,
-   "changed_values": 50,
+   "changed_values": 49,
    "changed_artifacts": [
-    "formula_renders.json",
-    "observer_report.json"
+    "formula_renders.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 192
+    "secs": 172
    },
    "failed_steps": []
   },
@@ -1841,9 +1823,8 @@
    "id": "seed_selection--ruling_only",
    "computed": true,
    "inert": false,
-   "changed_values": 33,
+   "changed_values": 27,
    "changed_artifacts": [
-    "core_paper.json",
     "formulas.json",
     "geometry_to_physics.json",
     "sections.json",
@@ -1852,7 +1833,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 191
+    "secs": 182
    },
    "failed_steps": []
   },
@@ -1898,13 +1879,14 @@
    "id": "spectral_index_route--one_minus_2_over_b3",
    "computed": true,
    "inert": false,
-   "changed_values": 87,
+   "changed_values": 85,
    "changed_artifacts": [
     "eml_crosscheck.json",
     "eml_trees_v25.json",
     "formulas.json",
     "geometry_to_physics.json",
     "metadata.json",
+    "observer_report.json",
     "parameters.json",
     "proof_completeness_ledger.json",
     "sections.json",
@@ -1915,7 +1897,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 250
+    "secs": 196
    },
    "failed_steps": []
   },
@@ -1961,7 +1943,7 @@
    "id": "spectral_index_route--re_t_slow_roll",
    "computed": true,
    "inert": false,
-   "changed_values": 86,
+   "changed_values": 84,
    "changed_artifacts": [
     "eml_crosscheck.json",
     "eml_trees_v25.json",
@@ -1978,7 +1960,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 275
+    "secs": 362
    },
    "failed_steps": []
   },
@@ -2022,7 +2004,7 @@
    "id": "theory_uncertainty_policy--always",
    "computed": true,
    "inert": false,
-   "changed_values": 83,
+   "changed_values": 79,
    "changed_artifacts": [
     "geometry_to_physics.json",
     "sections.json",
@@ -2030,7 +2012,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 211
+    "secs": 234
    },
    "failed_steps": []
   },
@@ -2074,14 +2056,14 @@
    "id": "theory_uncertainty_policy--experimental_only",
    "computed": true,
    "inert": false,
-   "changed_values": 54,
+   "changed_values": 62,
    "changed_artifacts": [
     "geometry_to_physics.json",
     "validation_report.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 195
+    "secs": 177
    },
    "failed_steps": []
   },
@@ -2124,14 +2106,12 @@
    "decision_refs": [],
    "id": "twisted_norm_convention--orbit_average",
    "computed": true,
-   "inert": false,
-   "changed_values": 1,
-   "changed_artifacts": [
-    "observer_report.json"
-   ],
+   "inert": true,
+   "changed_values": 0,
+   "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 209
+    "secs": 181
    },
    "failed_steps": []
   }

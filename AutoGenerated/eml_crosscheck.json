@@ -2008,7 +2008,7 @@
       "evaluated": 2.099999999999997e+16,
       "registered": 2.1e+16,
       "rel_error": 1.5238095238095238e-15,
-      "eml_description": "EML: ops.mul(eml_scalar(2.1e16), eml_scalar(1.0)) \u2014 geometric GUT scale from TCS G2 torsion T_omega=-0.875 and moduli Re(T)~9.865 (currently hardcoded; pending moduli derivation)"
+      "eml_description": "EML: ops.mul(eml_scalar(2.1e16), eml_scalar(1.0)) \u2014 geometric GUT scale from retired-TCS-seed G2 torsion T_omega=-0.875 and moduli Re(T)~9.865 (currently hardcoded; pending moduli derivation)"
     },
     {
       "path": "gauge.cos_theta_w",
@@ -2078,7 +2078,7 @@
       "path": "gauge.qcd_cycle_type",
       "status": "SKIP",
       "reason": "non-numeric value: 'Associative 3-cycle'",
-      "eml_description": "Categorical label identifying QCD as emerging from A2 singularity resolution on G2 associative 3-cycles"
+      "eml_description": "Categorical label identifying QCD as emerging from A2 singularities (generic ADE rule only; Y7 has no A2 loci, SU(3)_C OPEN, D-011)"
     },
     {
       "path": "gauge.qcd_gluon_count",
@@ -2148,7 +2148,7 @@
       "path": "gauge.weak_cycle_type",
       "status": "SKIP",
       "reason": "non-numeric value: 'Co-associative 4-cycle'",
-      "eml_description": "Categorical label identifying SU(2)_L weak force as arising from A1 singularity resolution on G2 co-associative 4-cycles"
+      "eml_description": "Categorical label identifying SU(2)_L weak force as arising from A1 singularity resolution at the unresolved orbifold point (OPEN on the smooth Y7, D-011) 4-cycles"
     },
     {
       "path": "geometry.A_Wolfenstein",

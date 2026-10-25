@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-10-25T06:41:18.574420Z",
+  "generated_at": "2026-10-25T16:47:54.959790Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 352,
+  "total_scripts": 354,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -994,7 +994,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 66,
+      "count": 68,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1572,6 +1572,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "kk_spectrum.py",
+          "path": "simulations/PM/geometry/kk_spectrum.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Exact scalar-Laplacian spectrum on the flat orbifold T^7/Gamma (task C5).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "kummer_index.py",
           "path": "simulations/PM/geometry/kummer_index.py",
           "category": "PM/geometry",
@@ -1653,6 +1663,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": "Which multilinear invariants exist on Y_7, by degree arithmetic alone.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "orbifold_gauge_scan.py",
+          "path": "simulations/PM/geometry/orbifold_gauge_scan.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Gauge content of flat G2 orbifolds T^7/Gamma (decision D-028 scan).",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

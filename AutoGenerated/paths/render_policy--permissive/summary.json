@@ -5,8 +5,8 @@
   "PASS": 27,
   "MARGINAL": 15,
   "TENSION": 10,
-  "FAIL": 32,
-  "SKIP": 120
+  "FAIL": 26,
+  "SKIP": 126
  },
  "chi2": {
   "value": 3030.0985,
@@ -2144,10 +2144,9 @@
   }
  ],
  "changed": {
-  "count": 50,
+  "count": 49,
   "by_artifact": {
-   "formula_renders.json": 49,
-   "observer_report.json": 1
+   "formula_renders.json": 49
   },
   "bookkeeping_ops": 18
  },

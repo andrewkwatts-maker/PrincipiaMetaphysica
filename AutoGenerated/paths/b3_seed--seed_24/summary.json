@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "b3_seed--seed_24",
  "scoreboard": {
-  "PASS": 43,
-  "MARGINAL": 13,
+  "PASS": 40,
+  "MARGINAL": 11,
   "TENSION": 8,
-  "FAIL": 20,
-  "SKIP": 120
+  "FAIL": 19,
+  "SKIP": 126
  },
  "chi2": {
   "value": 1869.4372,
@@ -2544,7 +2544,7 @@
   }
  ],
  "changed": {
-  "count": 3452,
+  "count": 3312,
   "by_artifact": {
    "GATES_72.json": 28,
    "GATES_72_v16_2.json": 28,
@@ -2569,7 +2569,6 @@
    "compression_report.json": 9,
    "config_drift_audit.json": 6,
    "consistency_beacons.json": 4,
-   "core_paper.json": 12,
    "dependency_chains.json": 14,
    "eml_cross_check.json": 13,
    "eml_crosscheck.json": 13,
@@ -2578,8 +2577,8 @@
    "eml_trees.json": 22,
    "eml_trees_v25.json": 30,
    "formula_renders.json": 18,
-   "formulas.json": 372,
-   "geometry_to_physics.json": 67,
+   "formulas.json": 371,
+   "geometry_to_physics.json": 64,
    "identity_ledger.json": 17,
    "improvement_scorecard.json": 18,
    "metadata.json": 20,
@@ -2589,15 +2588,14 @@
    "proof_completeness_ledger.json": 20,
    "reference_check.json": 2,
    "references.json": 1,
-   "sections.json": 361,
+   "sections.json": 332,
    "shadow_derivations_report.json": 46,
-   "simulations-index.json": 1,
    "statistical_rigor_report.json": 38,
    "statistics.json": 3,
    "terminology_audit.json": 1,
-   "theory_output.json": 1389,
+   "theory_output.json": 1307,
    "theory_overview.json": 15,
-   "validation_report.json": 287
+   "validation_report.json": 275
   },
   "bookkeeping_ops": 19
  },

@@ -5,8 +5,8 @@
   "PASS": 25,
   "MARGINAL": 17,
   "TENSION": 10,
-  "FAIL": 32,
-  "SKIP": 120
+  "FAIL": 26,
+  "SKIP": 126
  },
  "chi2": {
   "value": 3030.0985,
@@ -2294,7 +2294,7 @@
   }
  ],
  "changed": {
-  "count": 223,
+  "count": 160,
   "by_artifact": {
    "GATES_72.json": 2,
    "GATES_72_v16_2.json": 2,
@@ -2303,17 +2303,14 @@
    "certificates/G48_w0_equation_of_state.json": 2,
    "config_drift_audit.json": 7,
    "eml_crosscheck.json": 7,
-   "eml_dependency_chains.json": 3,
    "formulas.json": 9,
-   "free_variables.json": 27,
    "geometry_to_physics.json": 5,
-   "hardcode_audit.json": 27,
    "metadata.json": 1,
    "parameters.json": 31,
-   "sections.json": 10,
+   "sections.json": 8,
    "shadow_derivations_report.json": 2,
    "statistical_rigor_report.json": 15,
-   "theory_output.json": 41,
+   "theory_output.json": 37,
    "validation_report.json": 29
   },
   "bookkeeping_ops": 18

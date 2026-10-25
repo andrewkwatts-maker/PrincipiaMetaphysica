@@ -405,7 +405,7 @@
     },
     "genericity_is_derived": true,
     "residual_freedom": "7 point sets remain, each admitting 18 labellings. COMBINATORIALLY the join narrows C(21,12) = 293930 to 35 to 7, not to 1. PHYSICALLY nothing is left: see assignment_uniqueness_report, which shows all 7 x 18 remaining possibilities are relabellings -- the block partition is canonical given the arc, the spare colour is incident to no bridge, and the arcs form a single orbit under PSL(3,2). This field counts combinatorial options, not physical ones.",
-    "kill_condition": "If any set of 5 or more Fano points is simultaneously rainbow under a single global line-to-block labelling, then 4 is not forced and n_faces = 4 loses this support, falling back on h^{1,1} = 4 of TCS #187 -- which the framework itself labels FITTED. Equally, if any of the 28 line-containing 4-point sets admits a labelling, genericity returns to being a stated criterion rather than a consequence. Both are decided by enumeration over 3^7 = 2187 labellings and are checked on every build."
+    "kill_condition": "If any set of 5 or more Fano points is simultaneously rainbow under a single global line-to-block labelling, then 4 is not forced and n_faces = 4 loses this support, falling back on h^{1,1} = 4 of the retired TCS #187 seed (REFUSED, fork g2_construction) -- which the framework itself labels FITTED. Equally, if any of the 28 line-containing 4-point sets admits a labelling, genericity returns to being a stated criterion rather than a consequence. Both are decided by enumeration over 3^7 = 2187 labellings and are checked on every build."
   },
   "bridge_face_incidence": {
     "n_arcs": 7,

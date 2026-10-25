@@ -52,16 +52,17 @@
       "PREDICTED": 1
     },
     "by_tone": {
-      "ok": 24,
-      "fail": 8,
-      "fitted": 3
+      "ok": 26,
+      "fail": 5,
+      "fitted": 4
     },
     "by_verdict": {
       "NO_TEST": 16,
       "PASS": 7,
-      "FAIL": 8,
+      "FAIL": 5,
       "TENSION": 2,
-      "MARGINAL": 2
+      "MARGINAL": 2,
+      "CIRCULAR": 3
     },
     "open_fields": 0
   },
@@ -924,10 +925,10 @@
         "value": 125.2,
         "uncertainty": 0.11,
         "source": "PDG 2024 (ATLAS+CMS combined)",
-        "pull": 41.610807567668154,
-        "verdict": "FAIL"
+        "pull": 1.1438647659893715,
+        "verdict": "CIRCULAR"
       },
-      "tone": "fail",
+      "tone": "fitted",
       "figure": "",
       "figure_svg": "",
       "figure_caption": "",
@@ -1161,9 +1162,9 @@
         "uncertainty": 1e-53,
         "source": "DESI2025",
         "pull": 4.309141379981374,
-        "verdict": "FAIL"
+        "verdict": "CIRCULAR"
       },
-      "tone": "fail",
+      "tone": "ok",
       "figure": "",
       "figure_svg": "",
       "figure_caption": "",
@@ -1195,9 +1196,9 @@
         "uncertainty": 1.04,
         "source": "SH0ES 2022",
         "pull": 31.020746372490564,
-        "verdict": "FAIL"
+        "verdict": "CIRCULAR"
       },
-      "tone": "fail",
+      "tone": "ok",
       "figure": "",
       "figure_svg": "",
       "figure_caption": "",

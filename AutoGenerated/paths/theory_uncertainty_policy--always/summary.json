@@ -3,10 +3,10 @@
  "path": "theory_uncertainty_policy--always",
  "scoreboard": {
   "PASS": 32,
-  "MARGINAL": 18,
+  "MARGINAL": 17,
   "TENSION": 11,
-  "FAIL": 23,
-  "SKIP": 120
+  "FAIL": 18,
+  "SKIP": 126
  },
  "chi2": {
   "value": 3030.0985,
@@ -2144,11 +2144,11 @@
   }
  ],
  "changed": {
-  "count": 83,
+  "count": 79,
   "by_artifact": {
-   "geometry_to_physics.json": 15,
-   "sections.json": 6,
-   "validation_report.json": 62
+   "geometry_to_physics.json": 11,
+   "sections.json": 4,
+   "validation_report.json": 64
   },
   "bookkeeping_ops": 18
  },

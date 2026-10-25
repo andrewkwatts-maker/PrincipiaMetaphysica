@@ -5,8 +5,8 @@
   "PASS": 27,
   "MARGINAL": 15,
   "TENSION": 10,
-  "FAIL": 32,
-  "SKIP": 120
+  "FAIL": 26,
+  "SKIP": 126
  },
  "chi2": {
   "value": 3030.0985,
@@ -2144,10 +2144,10 @@
   }
  ],
  "changed": {
-  "count": 54,
+  "count": 62,
   "by_artifact": {
-   "geometry_to_physics.json": 1,
-   "validation_report.json": 53
+   "geometry_to_physics.json": 2,
+   "validation_report.json": 60
   },
   "bookkeeping_ops": 18
  },

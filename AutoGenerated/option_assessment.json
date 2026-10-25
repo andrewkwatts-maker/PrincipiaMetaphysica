@@ -1,0 +1,1834 @@
+{
+  "schema": "metaphysica.option_assessment/1",
+  "audit": "present",
+  "engine": {
+    "version": "2.3.1",
+    "commit": "069d186"
+  },
+  "forks": {
+    "spectral_index_route": {
+      "active": "golden_modulated",
+      "alternatives": [
+        {
+          "option": "one_minus_2_over_b3",
+          "path": "spectral_index_route--one_minus_2_over_b3",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": -1,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 4,
+            "share_before": 1.0,
+            "share_after": 1.0,
+            "d_share": 0.0,
+            "by_status": {
+              "DERIVED": 2,
+              "GEOMETRIC": 2
+            },
+            "calibrated_or_fitted": 0
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": -1,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "worse on P_pass,P_fail"
+          ],
+          "status": "disabled"
+        },
+        {
+          "option": "re_t_slow_roll",
+          "path": "spectral_index_route--re_t_slow_roll",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": -1,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 4,
+            "share_before": 1.0,
+            "share_after": 1.0,
+            "d_share": 0.0,
+            "by_status": {
+              "DERIVED": 2,
+              "GEOMETRIC": 2
+            },
+            "calibrated_or_fitted": 0
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": -1,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "worse on P_pass,P_fail"
+          ],
+          "status": "disabled"
+        }
+      ]
+    },
+    "h0_route": {
+      "active": "odowd_composite",
+      "alternatives": [
+        {
+          "option": "ricci_flow",
+          "path": "h0_route--ricci_flow",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 1,
+            "share_before": 0.0,
+            "share_after": 0.0,
+            "d_share": 0.0,
+            "by_status": {
+              "FITTED_COMPOSITE": 1
+            },
+            "calibrated_or_fitted": 1
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "worse on P_fail"
+          ],
+          "status": "disabled"
+        },
+        {
+          "option": "kk_bridge",
+          "path": "h0_route--kk_bridge",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 1,
+            "share_before": 0.0,
+            "share_after": 0.0,
+            "d_share": 0.0,
+            "by_status": {
+              "FITTED_COMPOSITE": 1
+            },
+            "calibrated_or_fitted": 1
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 1,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "worse on P_fail"
+          ],
+          "status": "disabled"
+        }
+      ]
+    },
+    "dark_energy_mechanism": {
+      "active": "thawing_quintessence",
+      "alternatives": [
+        {
+          "option": "mep_11_13",
+          "path": "dark_energy_mechanism--mep_11_13",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": -2,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 17,
+            "share_before": 0.4118,
+            "share_after": 0.4118,
+            "d_share": 0.0,
+            "by_status": {
+              "GEOMETRIC": 2,
+              "VALIDATION": 8,
+              "PREDICTED": 2,
+              "DERIVED": 5
+            },
+            "calibrated_or_fitted": 0
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": -2,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "worse on P_pass"
+          ],
+          "status": "disabled"
+        }
+      ]
+    },
+    "re_t_adoption": {
+      "active": "calibrated",
+      "alternatives": [
+        {
+          "option": "computed_vacuum",
+          "path": "re_t_adoption--computed_vacuum",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "disabled"
+        }
+      ]
+    },
+    "b3_seed": {
+      "active": "seed_43_joyce",
+      "alternatives": [
+        {
+          "option": "seed_24",
+          "path": "b3_seed--seed_24",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 13,
+            "d_fail": -7,
+            "d_chi2": -1160.6613
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 203,
+            "share_before": 0.6158,
+            "share_after": 0.6059,
+            "d_share": -0.0099,
+            "by_status": {
+              "INPUT": 2,
+              "GEOMETRIC": 26,
+              "DERIVED": 97,
+              "ANSATZ": 2,
+              "PREDICTED": 30,
+              "FALSIFIED": 4,
+              "VALIDATION": 13,
+              "FITTED": 6,
+              "FITTED_COMPOSITE": 1,
+              "CALIBRATED": 8,
+              "SPECULATIVE": 2,
+              "EXACT": 1,
+              "FOUNDATIONAL": 5,
+              "TERMINAL": 2,
+              "PREDICTIONS": 1,
+              "COMPUTED": 3
+            },
+            "calibrated_or_fitted": 15
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 2,
+            "literals": 18
+          },
+          "T": false,
+          "guard": {
+            "state": "FIT_AT_24",
+            "fit_at_24": [
+              {
+                "path": "ckm.V_ub_triality",
+                "main": "FAIL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "ckm.V_us_triality",
+                "main": "MARGINAL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "ckm.jarlskog_triality",
+                "main": "FAIL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "cosmology.wa_thawing",
+                "main": "MARGINAL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "geometry.eta_baryon",
+                "main": "FAIL",
+                "path_verdict": "MARGINAL"
+              },
+              {
+                "path": "neutrino.delta_CP_derived",
+                "main": "FAIL",
+                "path_verdict": "MARGINAL"
+              },
+              {
+                "path": "neutrino.delta_CP_pred",
+                "main": "FAIL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "neutrino.theta_12_pred",
+                "main": "MARGINAL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "neutrino.theta_13_pred",
+                "main": "TENSION",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "neutrino.theta_23_pred",
+                "main": "MARGINAL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "particle.theta_13_deg",
+                "main": "FAIL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "pmns.theta_12_triality",
+                "main": "MARGINAL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "pmns.theta_13_triality",
+                "main": "TENSION",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "pmns.theta_23_triality",
+                "main": "MARGINAL",
+                "path_verdict": "PASS"
+              },
+              {
+                "path": "portals.alp_photon_coupling_gev_inv",
+                "main": "FAIL",
+                "path_verdict": "PASS"
+              }
+            ],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": null
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "worse on R,E",
+            "fit at 24: ckm.V_ub_triality, ckm.V_us_triality, ckm.jarlskog_triality, cosmology.wa_thawing, geometry.eta_baryon, neutrino.delta_CP_derived, neutrino.delta_CP_pred, neutrino.theta_12_pred, neutrino.theta_13_pred, neutrino.theta_23_pred, particle.theta_13_deg, pmns.theta_12_triality, pmns.theta_13_triality, pmns.theta_23_triality, portals.alp_photon_coupling_gev_inv"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "seed_7_joyce",
+          "path": "b3_seed--seed_7_joyce",
+          "P": {
+            "state": "INVALID",
+            "reason": "ValueError: seed path 'seed_7_joyce' gives n_gen = 0.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "ValueError: seed path 'seed_7_joyce' gives n_gen = 0.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+          ],
+          "status": "disabled"
+        },
+        {
+          "option": "seed_19_joyce",
+          "path": "b3_seed--seed_19_joyce",
+          "P": {
+            "state": "INVALID",
+            "reason": "ValueError: seed path 'seed_19_joyce' gives n_gen = 1.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "ValueError: seed path 'seed_19_joyce' gives n_gen = 1.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+          ],
+          "status": "disabled"
+        },
+        {
+          "option": "seed_31_joyce",
+          "path": "b3_seed--seed_31_joyce",
+          "P": {
+            "state": "INVALID",
+            "reason": "ValueError: seed path 'seed_31_joyce' gives n_gen = 2.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "ValueError: seed path 'seed_31_joyce' gives n_gen = 2.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+          ],
+          "status": "disabled"
+        }
+      ]
+    },
+    "n_gen_source": {
+      "active": "b2_over_faces",
+      "alternatives": [
+        {
+          "option": "b3_over_dim_O",
+          "path": "n_gen_source--b3_over_dim_O",
+          "P": {
+            "state": "INVALID",
+            "reason": "ValueError: the resolved n_gen_source yields a non-integral generation count (5.375); a count must be an integer"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "ValueError: the resolved n_gen_source yields a non-integral generation count (5.375); a count must be an integer"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "chi_over_24",
+          "path": "n_gen_source--chi_over_24",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "disabled"
+        },
+        {
+          "option": "chi_eff_over_48",
+          "path": "n_gen_source--chi_eff_over_48",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "b3_origin": {
+      "active": "derived_joyce_a1",
+      "alternatives": [
+        {
+          "option": "input_24",
+          "path": "b3_origin--input_24",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "arc_flag_stabiliser",
+          "path": "b3_origin--arc_flag_stabiliser",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "d4_root_shell",
+          "path": "b3_origin--d4_root_shell",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "joyce_twisted_sector",
+          "path": "b3_origin--joyce_twisted_sector",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "joyce_contribution_table": {
+      "active": "absent",
+      "alternatives": [
+        {
+          "option": "supplied",
+          "path": "joyce_contribution_table--supplied",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "g2_form_convention": {
+      "active": "octonion_derived",
+      "alternatives": [
+        {
+          "option": "all_plus_one",
+          "path": "g2_form_convention--all_plus_one",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "flavour_seed_coupling": {
+      "active": "follow_seed",
+      "alternatives": [
+        {
+          "option": "calibrated_24",
+          "path": "flavour_seed_coupling--calibrated_24",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 1,
+            "d_fail": -1,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 16,
+            "share_before": 1.0,
+            "share_after": 1.0,
+            "d_share": 0.0,
+            "by_status": {
+              "DERIVED": 16
+            },
+            "calibrated_or_fitted": 0
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "FIT_AT_24",
+            "fit_at_24": [
+              {
+                "path": "particle.theta_13_deg",
+                "main": "FAIL",
+                "path_verdict": "PASS"
+              }
+            ],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": null
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis",
+            "fit at 24: particle.theta_13_deg"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "metric_construction": {
+      "active": "quadratic_contraction",
+      "alternatives": [
+        {
+          "option": "hitchin_cubic",
+          "path": "metric_construction--hitchin_cubic",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "chi_eff_route": {
+      "active": "k3_reading",
+      "alternatives": [
+        {
+          "option": "unruled",
+          "path": "chi_eff_route--unruled",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "constant_144",
+          "path": "chi_eff_route--constant_144",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "seed_dependent",
+          "path": "chi_eff_route--seed_dependent",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "disabled"
+        }
+      ]
+    },
+    "twisted_norm_convention": {
+      "active": "orbit_sum",
+      "alternatives": [
+        {
+          "option": "orbit_average",
+          "path": "twisted_norm_convention--orbit_average",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "lattice_24d": {
+      "active": "leech",
+      "alternatives": [
+        {
+          "option": "niemeier_e8x3",
+          "path": "lattice_24d--niemeier_e8x3",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "g2_construction": {
+      "active": "joyce_orbifold",
+      "alternatives": [
+        {
+          "option": "fano_tcs",
+          "path": "g2_construction--fano_tcs",
+          "P": {
+            "state": "INVALID",
+            "reason": "ValueError: g2_construction 'fano_tcs' is refused: no cited building blocks are in the engine, so nothing on this path is a construction; exhibited TCS examples have 71 <= b3 <= 155 (arXiv:1810.12659)"
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "ValueError: g2_construction 'fano_tcs' is refused: no cited building blocks are in the engine, so nothing on this path is a construction; exhibited TCS examples have 71 <= b3 <= 155 (arXiv:1810.12659)"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "moduli_indexing": {
+      "active": "b3_clusters",
+      "alternatives": [
+        {
+          "option": "b2_gauge",
+          "path": "moduli_indexing--b2_gauge",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "cy3_shadow",
+          "path": "moduli_indexing--cy3_shadow",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "bulk_signature": {
+      "active": "24_2",
+      "alternatives": [
+        {
+          "option": "26_2",
+          "path": "bulk_signature--26_2",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "25_1",
+          "path": "bulk_signature--25_1",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "dark_energy_betti": {
+      "active": "b3_24",
+      "alternatives": [
+        {
+          "option": "b3_live",
+          "path": "dark_energy_betti--b3_live",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "b2_4",
+          "path": "dark_energy_betti--b2_4",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "ngen_3",
+          "path": "dark_energy_betti--ngen_3",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "chi_over_b3_6",
+          "path": "dark_energy_betti--chi_over_b3_6",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "bridges_12",
+          "path": "dark_energy_betti--bridges_12",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "octonion_8",
+          "path": "dark_energy_betti--octonion_8",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "render_policy": {
+      "active": "strict",
+      "alternatives": [
+        {
+          "option": "permissive",
+          "path": "render_policy--permissive",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "theory_uncertainty_policy": {
+      "active": "cited_only",
+      "alternatives": [
+        {
+          "option": "always",
+          "path": "theory_uncertainty_policy--always",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 5,
+            "d_fail": -8,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 4
+          },
+          "T": false,
+          "guard": {
+            "state": "OPEN",
+            "fit_at_24": [
+              {
+                "path": "geometry.eta_baryon",
+                "main": "FAIL",
+                "path_verdict": "TENSION"
+              }
+            ],
+            "unaudited": [
+              "electromagnetic.alpha_inv",
+              "fermion.mass_ratio_proton_electron",
+              "gauge.sin2_theta_w_geometric",
+              "geometry.G_F_matched",
+              "geometry.T_CMB",
+              "geometry.alpha_inverse",
+              "geometry.mu_pe"
+            ]
+          },
+          "P_adjusted": {
+            "d_pass": 5,
+            "d_fail": -7,
+            "d_chi2": null
+          },
+          "candidate": false,
+          "provisional": true,
+          "reasons": [
+            "better on P_pass,P_fail",
+            "guard OPEN: rows without audit class"
+          ],
+          "status": "considered"
+        },
+        {
+          "option": "experimental_only",
+          "path": "theory_uncertainty_policy--experimental_only",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "face_genericity": {
+      "active": "generic",
+      "alternatives": [
+        {
+          "option": "all",
+          "path": "face_genericity--all",
+          "P": {
+            "state": "INERT",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "inert: no data consequence",
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    },
+    "seed_selection": {
+      "active": "wa1_correspondence",
+      "alternatives": [
+        {
+          "option": "ruling_only",
+          "path": "seed_selection--ruling_only",
+          "P": {
+            "state": "COMPUTED",
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "R": {
+            "state": "COMPUTED",
+            "changed": 0,
+            "share_before": null,
+            "share_after": null,
+            "d_share": 0.0,
+            "by_status": {}
+          },
+          "E": {
+            "state": "COMPUTED",
+            "d_free": 0,
+            "literals": 0
+          },
+          "T": false,
+          "guard": {
+            "state": "CLEAR",
+            "fit_at_24": [],
+            "unaudited": []
+          },
+          "P_adjusted": {
+            "d_pass": 0,
+            "d_fail": 0,
+            "d_chi2": 0.0
+          },
+          "candidate": false,
+          "provisional": false,
+          "reasons": [
+            "tie with the active option on every axis"
+          ],
+          "status": "considered"
+        }
+      ]
+    }
+  },
+  "candidates": [],
+  "provisional": [
+    "theory_uncertainty_policy--always"
+  ]
+}

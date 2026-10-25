@@ -58,7 +58,7 @@
   ],
   "unnamed_declarations": [
     {
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1504",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1508",
       "callee": "set_param",
       "status": "MEASURED",
       "note": "path is a variable, so no row can name it; check by hand that the quantities it writes are covered"
@@ -182,7 +182,7 @@
     {
       "name": "higgs.lambda_0",
       "value": 0.129,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1033",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1039",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
@@ -390,7 +390,7 @@
     {
       "name": "geometry.A_Wolfenstein",
       "value": 0.81,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:726",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:730",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -409,7 +409,7 @@
     {
       "name": "geometry.Omega_radiation",
       "value": 8.5e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:534",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:538",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -428,7 +428,7 @@
     {
       "name": "geometry.delta_CP_PMNS",
       "value": 278.4,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:768",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:772",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -447,7 +447,7 @@
     {
       "name": "geometry.theta_12",
       "value": 33.41,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:735",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:739",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -466,7 +466,7 @@
     {
       "name": "geometry.theta_13",
       "value": 8.54,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:746",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:750",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -491,7 +491,7 @@
     {
       "name": "geometry.theta_23",
       "value": 49.0,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:757",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:761",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -510,7 +510,7 @@
     {
       "name": "fermion.n_generations",
       "value": 3,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\fermion_generations.py:871",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\fermion_generations.py:874",
       "status": "ANSATZ",
       "source_kind": "PARAMETER_CALL",
       "role": "LOAD_BEARING_INPUT",
@@ -871,13 +871,13 @@
     {
       "name": "geometry.H0_early",
       "value": 67.4,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:554",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:558",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:576",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:580",
           "function": "H0_tension_ratio",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.H0_early is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
@@ -908,13 +908,13 @@
     {
       "name": "geometry.H0_local",
       "value": 73.04,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:563",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:567",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:576",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:580",
           "function": "H0_tension_ratio",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.H0_local is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
@@ -945,7 +945,7 @@
     {
       "name": "geometry.M_GUT_geometric",
       "value": 2.1e+16,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:594",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:598",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
@@ -970,19 +970,19 @@
     {
       "name": "geometry.Omega_matter",
       "value": 0.315,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:503",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:507",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:531",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:535",
           "function": "Omega_DM",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.Omega_matter is read by Omega_DM, which get_all_anchors exports and register_anchors registers as geometry.Omega_DM"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:345",
+          "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:348",
           "function": "run",
           "kind": "READ_INTO_REGISTERED_OUTPUT",
           "detail": "get(...) -> omega_m, which reaches a value position in a returned registry dict"
@@ -1278,7 +1278,7 @@
     {
       "name": "cosmology.alpha_shadow",
       "value": 0.576,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1309",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1311",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1290,7 +1290,7 @@
     {
       "name": "cosmology.wa_thawing",
       "value": -0.6099942813304187,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:1454",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy_thawing.py:1457",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1302,7 +1302,7 @@
     {
       "name": "higgs.lambda_eff_pheno",
       "value": 0.006079284956305497,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1054",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1060",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1326,7 +1326,7 @@
     {
       "name": "geometry.J_CKM",
       "value": 3e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:710",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:714",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1340,7 +1340,7 @@
     {
       "name": "geometry.alpha_R_squared_phenom",
       "value": 0.0045,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:667",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:671",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1355,7 +1355,7 @@
     {
       "name": "geometry.alpha_T_phenomenological",
       "value": 2.6,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:649",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:653",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1370,7 +1370,7 @@
     {
       "name": "geometry.dm21_squared",
       "value": 7.42e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:780",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:784",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1384,7 +1384,7 @@
     {
       "name": "geometry.dm31_squared",
       "value": 0.00251,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:789",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:793",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1398,7 +1398,7 @@
     {
       "name": "geometry.m_KK_bound",
       "value": 3.5,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:457",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:461",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1412,7 +1412,7 @@
     {
       "name": "geometry.omega_Lambda_Planck",
       "value": 0.6889,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:895",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:899",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1426,7 +1426,7 @@
     {
       "name": "geometry.w0_error_DESI",
       "value": 0.02,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:885",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:889",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1440,7 +1440,7 @@
     {
       "name": "geometry.w0_observed_DESI",
       "value": -0.958,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:880",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:884",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1454,7 +1454,7 @@
     {
       "name": "geometry.wa_observed_DESI",
       "value": -0.99,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:890",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:894",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",

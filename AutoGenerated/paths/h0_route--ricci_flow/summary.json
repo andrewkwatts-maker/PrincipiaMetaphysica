@@ -5,8 +5,8 @@
   "PASS": 27,
   "MARGINAL": 14,
   "TENSION": 10,
-  "FAIL": 33,
-  "SKIP": 120
+  "FAIL": 27,
+  "SKIP": 126
  },
  "chi2": {
   "value": 3030.0985,
@@ -2154,7 +2154,7 @@
   }
  ],
  "changed": {
-  "count": 110,
+  "count": 107,
   "by_artifact": {
    "GATES_72.json": 4,
    "GATES_72_v16_2.json": 4,
@@ -2164,17 +2164,17 @@
    "certificates/G72_the_omega_hash.json": 2,
    "eml_crosscheck.json": 5,
    "eml_trees_v25.json": 2,
-   "formulas.json": 9,
+   "formulas.json": 8,
    "improvement_scorecard.json": 10,
    "parameters.json": 3,
    "proof_completeness_ledger.json": 5,
-   "sections.json": 8,
+   "sections.json": 6,
    "shadow_derivations_report.json": 4,
    "statistical_rigor_report.json": 15,
    "theory_output.json": 3,
    "validation_report.json": 13
   },
-  "bookkeeping_ops": 2
+  "bookkeeping_ops": 19
  },
  "unverified_files": [],
  "inert": false,

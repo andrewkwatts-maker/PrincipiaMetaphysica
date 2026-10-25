@@ -45,6 +45,13 @@
             <input id="pp-search" type="search" placeholder="fork, option or keyword" autocomplete="off">
             <ul id="pp-list"></ul>
         </section>
+        <section class="pp-assess" id="pp-assess" aria-labelledby="pp-assess-h">
+            <h2 id="pp-assess-h">Assessment</h2>
+            <p class="pp-lead">Each alternative is scored against the active option on physics (P), provable share (R),
+                economy (E) and tightening (T), after the overfitting guard. A candidate is a flag, not an adoption; adoption
+                is an owner ruling (D-026).</p>
+            <div id="pp-assess-body"></div>
+        </section>
         <noscript>
             <h2>Paths (without JavaScript)</h2>
             <table class="pp-table">
@@ -62,5 +69,6 @@
         document.addEventListener('DOMContentLoaded', () => { injectHeader('paths'); });
     </script>
     <script src="../js/pm-paths-page.js"></script>
+    <script src="../js/pm-paths-assessment.js"></script>
 </body>
 </html>
