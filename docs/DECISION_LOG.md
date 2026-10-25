@@ -1818,3 +1818,18 @@ In the last case seed_24's better fit stands as evidence and must be reported as
   - The tower is labelled OPEN or CALIBRATED until a derivation is given.
   - The overall scale is a modulus, so M_KK ≈ 5 TeV is an input.
 - **Status.** No row changes and nothing is adopted.
+
+**Outcome, D-028 scan (2026-10-26, branch `orbiscan`, `docs/plan/geometry/d028_scan.md`, 16 tests).**
+- **Retraction.** An earlier run with a group-order cap of 64 reported "Kill 1 fires". That was an artefact of the cap and is withdrawn.
+- **Coverage.** The cap is 1536. 19516 candidates give 11664 closed groups and 740 classes. Rejected: 7852, all order-3 extensions above the cap.
+  - Order 4: all 400 classes analysed (orders 32, 64, 128).
+  - Order 3: 194 of 340 classes analysed, a seeded round-robin sample (seed 28). The 146 not analysed are listed in the report.
+- **Hits.**
+  - SU(3) × SU(2) from A2 plus A1 loci: 87 of the 194 sampled order-3 classes. 23 of them also carry A5 loci (SU(6)).
+  - Order 4: no A2 loci. 74 classes give SU(4) × SU(2)^n; reaching SU(3) × SU(2) through SU(4) ⊃ SU(3) × U(1) is a mechanism to test, not shown.
+- **Caveats.**
+  - 76 of the 87 hits also have non-A strata with no assigned gauge group, so their groups are incomplete.
+  - Resolved Betti numbers are OPEN for all 87 hits.
+  - Codimension-7 points occur in 60 of the 87 hits; their local type, and so chirality, is not classified. U(1)_Y is not addressed.
+- **Kill conditions.** KC1 does not fire: A2 loci compatible with φ₀ exist. KC2 does not fire: no A2 locus has b1 = 3; b1 is 0 for 142 loci and 1 for 87.
+- **Status.** Per ruling 4, nothing is adopted. The hits are fork candidates for the sweep and the D-026 assessment once the remaining classes, the codimension-7 types and the resolved Betti numbers are done.
