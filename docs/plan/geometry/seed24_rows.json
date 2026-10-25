@@ -1,0 +1,342 @@
+[
+ {
+  "path": "ckm.V_ub_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "main": {
+   "v": 0.005225968326081694,
+   "verdict": "FAIL",
+   "sigma": 13.963348418924488
+  },
+  "seed24": {
+   "v": 0.003750070930845949,
+   "verdict": "PASS",
+   "sigma": 0.5460993713268061
+  },
+  "exp": 0.00369,
+  "exp_src": "PDG2024",
+  "status": "CALIBRATED"
+ },
+ {
+  "path": "ckm.V_us_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "main": {
+   "v": 0.22415560226305503,
+   "verdict": "MARGINAL",
+   "sigma": 1.2602951297686178
+  },
+  "seed24": {
+   "v": 0.22450008639436136,
+   "verdict": "PASS",
+   "sigma": 0.7461397099084195
+  },
+  "exp": 0.225,
+  "exp_src": "PDG2024",
+  "status": "CALIBRATED"
+ },
+ {
+  "path": "ckm.jarlskog_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "main": {
+   "v": 4.311625961031884e-05,
+   "verdict": "FAIL",
+   "sigma": 9.474045854091415
+  },
+  "seed24": {
+   "v": 3.143181574832559e-05,
+   "verdict": "PASS",
+   "sigma": 0.48601211409660483
+  },
+  "exp": 3.08e-05,
+  "exp_src": "PDG2024",
+  "status": "CALIBRATED"
+ },
+ {
+  "path": "cosmology.H0_physical",
+  "sim": "appendix_z_terminal_ledger_v24_2",
+  "main": {
+   "v": 40.77842377260982,
+   "verdict": "FAIL",
+   "sigma": 31.020746372490564
+  },
+  "seed24": {
+   "v": 73.0613425925926,
+   "verdict": "PASS",
+   "sigma": 0.020521723646720166
+  },
+  "exp": 73.04,
+  "exp_src": "SH0ES 2022",
+  "status": "DERIVED"
+ },
+ {
+  "path": "cosmology.Lambda_derived",
+  "sim": "cosmological_constant_v16_1",
+  "main": {
+   "v": 6.690858620018627e-53,
+   "verdict": "FAIL",
+   "sigma": 4.309141379981374
+  },
+  "seed24": {
+   "v": 1.2266298633892773e-52,
+   "verdict": "MARGINAL",
+   "sigma": 1.266298633892772
+  },
+  "exp": 1.1e-52,
+  "exp_src": "DESI2025",
+  "status": "PREDICTED"
+ },
+ {
+  "path": "cosmology.rho_vacuum",
+  "sim": "cosmological_constant_v16_1",
+  "main": {
+   "v": 3.2219521147278924e-10,
+   "verdict": "FAIL",
+   "sigma": 7.260159617573692
+  },
+  "seed24": {
+   "v": 5.906779543227689e-10,
+   "verdict": "MARGINAL",
+   "sigma": 1.6892651440922966
+  },
+  "exp": 5.4e-10,
+  "exp_src": "Planck2018",
+  "status": "DERIVED"
+ },
+ {
+  "path": "cosmology.speed_of_light_derived",
+  "sim": "speed_of_light_v17_2",
+  "main": {
+   "v": 179077056.9720464,
+   "verdict": "FAIL",
+   "sigma": 402384.67009317863
+  },
+  "seed24": {
+   "v": 299792423.16324997,
+   "verdict": "PASS",
+   "sigma": 0.11612250010172526
+  },
+  "exp": 299792458.0,
+  "exp_src": "CODATA2022",
+  "status": "PREDICTED"
+ },
+ {
+  "path": "cosmology.wa_thawing",
+  "sim": "dark_energy_thawing_v16_2",
+  "main": {
+   "v": -0.6099942813304187,
+   "verdict": "MARGINAL",
+   "sigma": 1.0869813855199189
+  },
+  "seed24": {
+   "v": -0.8164965809277261,
+   "verdict": "PASS",
+   "sigma": 0.18914530031423407
+  },
+  "exp": -0.86,
+  "exp_src": "DESI2025",
+  "status": "FITTED"
+ },
+ {
+  "path": "geometry.eta_baryon",
+  "sim": "geometric_anchors",
+  "main": {
+   "v": 6.846485445932354e-10,
+   "verdict": "FAIL",
+   "sigma": 18.162136148308868
+  },
+  "seed24": {
+   "v": 6.185164569435048e-10,
+   "verdict": "MARGINAL",
+   "sigma": 1.6291142358762039
+  },
+  "exp": 6.12e-10,
+  "exp_src": "Planck2018_BBN",
+  "status": "GEOMETRIC"
+ },
+ {
+  "path": "higgs.m_higgs_local",
+  "sim": "higgs_brane_partition_v16_2",
+  "main": {
+   "v": 70.56751354698358,
+   "verdict": "FAIL",
+   "sigma": 496.6589677546948
+  },
+  "seed24": {
+   "v": 125.10242591991029,
+   "verdict": "PASS",
+   "sigma": 0.8870370917246749
+  },
+  "exp": 125.2,
+  "exp_src": "PDG2024",
+  "status": "PREDICTED"
+ },
+ {
+  "path": "neutrino.delta_CP_derived",
+  "sim": "neutrino_algebraic_v24_0",
+  "main": {
+   "v": -28.036776636019468,
+   "verdict": "FAIL",
+   "sigma": 3.374080584099514
+  },
+  "seed24": {
+   "v": -90.0,
+   "verdict": "MARGINAL",
+   "sigma": 1.825
+  },
+  "exp": -163.0,
+  "exp_src": "NuFIT_6.0_IO_2024",
+  "status": "DERIVED"
+ },
+ {
+  "path": "neutrino.delta_CP_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "main": {
+   "v": 148.45813953488368,
+   "verdict": "FAIL",
+   "sigma": 5.888266384778015
+  },
+  "seed24": {
+   "v": 278.4,
+   "verdict": "PASS",
+   "sigma": 0.018181818181817147
+  },
+  "exp": 278.0,
+  "exp_src": "NuFIT6.0",
+  "status": "FITTED"
+ },
+ {
+  "path": "neutrino.theta_12_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "main": {
+   "v": 34.285533439123924,
+   "verdict": "MARGINAL",
+   "sigma": 1.1673779188319031
+  },
+  "seed24": {
+   "v": 33.59329049922625,
+   "verdict": "PASS",
+   "sigma": 0.2443873323016703
+  },
+  "exp": 33.41,
+  "exp_src": "NuFIT6.0",
+  "status": "FITTED"
+ },
+ {
+  "path": "neutrino.theta_13_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "main": {
+   "v": 8.357480095666395,
+   "verdict": "TENSION",
+   "sigma": 2.477453675760056
+  },
+  "seed24": {
+   "v": 8.647304725338865,
+   "verdict": "PASS",
+   "sigma": 0.15731568489876224
+  },
+  "exp": 8.63,
+  "exp_src": "NuFIT6.0",
+  "status": "FITTED"
+ },
+ {
+  "path": "neutrino.theta_23_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "main": {
+   "v": 50.988236884802596,
+   "verdict": "MARGINAL",
+   "sigma": 1.688236884802599
+  },
+  "seed24": {
+   "v": 49.75,
+   "verdict": "PASS",
+   "sigma": 0.45000000000000284
+  },
+  "exp": 49.3,
+  "exp_src": "NuFIT6.0",
+  "status": "FITTED"
+ },
+ {
+  "path": "particle.theta_13_deg",
+  "sim": "v25.0:yukawa_derivation",
+  "main": {
+   "v": 4.835067770441071,
+   "verdict": "FAIL",
+   "sigma": 34.044838450535714
+  },
+  "seed24": {
+   "v": 8.668576499284981,
+   "verdict": "PASS",
+   "sigma": 0.8052409025907376
+  },
+  "exp": 8.58,
+  "exp_src": "ESTABLISHED:NuFIT",
+  "status": "DERIVED"
+ },
+ {
+  "path": "pmns.theta_12_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "main": {
+   "v": 34.285533439123924,
+   "verdict": "MARGINAL",
+   "sigma": 1.1673779188319031
+  },
+  "seed24": {
+   "v": 33.59329049922625,
+   "verdict": "PASS",
+   "sigma": 0.2443873323016703
+  },
+  "exp": 33.41,
+  "exp_src": "NuFIT6.0",
+  "status": "CALIBRATED"
+ },
+ {
+  "path": "pmns.theta_13_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "main": {
+   "v": 8.357480095666395,
+   "verdict": "TENSION",
+   "sigma": 2.477453675760056
+  },
+  "seed24": {
+   "v": 8.647304725338865,
+   "verdict": "PASS",
+   "sigma": 0.15731568489876224
+  },
+  "exp": 8.63,
+  "exp_src": "NuFIT6.0",
+  "status": "CALIBRATED"
+ },
+ {
+  "path": "pmns.theta_23_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "main": {
+   "v": 50.988236884802596,
+   "verdict": "MARGINAL",
+   "sigma": 1.688236884802599
+  },
+  "seed24": {
+   "v": 49.75,
+   "verdict": "PASS",
+   "sigma": 0.45000000000000284
+  },
+  "exp": 49.3,
+  "exp_src": "NuFIT6.0",
+  "status": "CALIBRATED"
+ },
+ {
+  "path": "portals.alp_photon_coupling_gev_inv",
+  "sim": "alp_portals_v23",
+  "main": {
+   "v": 1.2304479796271353e-06,
+   "verdict": "FAIL",
+   "sigma": null
+  },
+  "seed24": {
+   "v": 2.9032525449371696e-11,
+   "verdict": "PASS",
+   "sigma": null
+  },
+  "exp": 6.6e-11,
+  "exp_src": "CAST2017",
+  "status": "PREDICTED"
+ }
+]

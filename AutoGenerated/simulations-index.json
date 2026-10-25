@@ -2,10 +2,10 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-10-24T18:26:48.987176Z",
+  "generated_at": "2026-10-25T06:41:18.574420Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 336,
+  "total_scripts": 352,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
@@ -250,7 +250,7 @@
     },
     "PM/cosmology": {
       "title": "PM/cosmology",
-      "count": 25,
+      "count": 27,
       "scripts": [
         {
           "file": "attractor_potential.py",
@@ -507,6 +507,16 @@
           ]
         },
         {
+          "file": "late_time_routes.py",
+          "path": "simulations/PM/cosmology/late_time_routes.py",
+          "category": "PM/cosmology",
+          "title": null,
+          "description": "Late-time routes behind the ``h0_route`` and ``dark_energy_mechanism`` forks (D-022).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "mirror_dm_detection.py",
           "path": "simulations/PM/cosmology/mirror_dm_detection.py",
           "category": "PM/cosmology",
@@ -626,6 +636,16 @@
             "cosmology.s8_tension_kids_baseline",
             "cosmology.s8_tension_planck"
           ]
+        },
+        {
+          "file": "spectral_routes.py",
+          "path": "simulations/PM/cosmology/spectral_routes.py",
+          "category": "PM/cosmology",
+          "title": null,
+          "description": "Spectral-index routes behind the ``spectral_index_route`` fork.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
         },
         {
           "file": "speed_of_light.py",
@@ -974,7 +994,7 @@
     },
     "PM/geometry": {
       "title": "PM/geometry",
-      "count": 58,
+      "count": 66,
       "scripts": [
         {
           "file": "alpha_rigor.py",
@@ -1015,6 +1035,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "betti.py",
+          "path": "simulations/PM/geometry/figures/betti.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Figure c: Betti counting, 7 flat 3-forms + 3 x b2 = b3.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1092,6 +1122,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "data.py",
+          "path": "simulations/PM/geometry/figures/data.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Reads the engine once and hands plain dicts to the pure figure functions.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "derived_contribution_table.py",
           "path": "simulations/PM/geometry/derived_contribution_table.py",
           "category": "PM/geometry",
@@ -1107,6 +1147,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "eh_profile.py",
+          "path": "simulations/PM/geometry/figures/eh_profile.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Figure b: the Eguchi-Hanson neck profile f(r) = sqrt(1 - a^4/r^4), r >= a.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1182,6 +1232,18 @@
           "parameters_contributed": []
         },
         {
+          "file": "fold.py",
+          "path": "simulations/PM/geometry/figures/fold.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Figure a: the fold of T^7 under the three (Z/2) generators.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "topology.mephorash_chi"
+          ]
+        },
+        {
           "file": "four_face_structure.py",
           "path": "simulations/PM/geometry/four_face_structure.py",
           "category": "PM/geometry",
@@ -1197,6 +1259,16 @@
           "category": "PM/geometry",
           "title": null,
           "description": null,
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "g2_closure.py",
+          "path": "simulations/PM/geometry/g2_closure.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Closing the G2 geometry: every hypothesis of Joyce's existence theorem, measured.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -1414,6 +1486,22 @@
           "parameters_contributed": []
         },
         {
+          "file": "holonomy.py",
+          "path": "simulations/PM/geometry/closed_geometry/holonomy.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "CG.13: the holonomy-G2 metric exists on Y_7, by theorem (D-023).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": [
+            "g2_holonomy.b2",
+            "g2_holonomy.dim_g2",
+            "g2_holonomy.dim_so7",
+            "g2_holonomy.n_gen",
+            "g2_holonomy.num_octonion_units"
+          ]
+        },
+        {
           "file": "holonomy_wording_audit.py",
           "path": "simulations/PM/geometry/holonomy_wording_audit.py",
           "category": "PM/geometry",
@@ -1590,6 +1678,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "proof_flow.py",
+          "path": "simulations/PM/geometry/figures/proof_flow.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Figure d: hypotheses -> Joyce Thm 11.6.1 -> torsion-free -> Ric = 0 -> Hol = G2.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "provenance.py",
           "path": "simulations/PM/geometry/closed_geometry/provenance.py",
           "category": "PM/geometry",
@@ -1694,6 +1792,16 @@
           "parameters_contributed": []
         },
         {
+          "file": "svgkit.py",
+          "path": "simulations/PM/geometry/figures/svgkit.py",
+          "category": "PM/geometry",
+          "title": null,
+          "description": "Tiny SVG helpers shared by the geometry figures (no external libraries).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "theorem.py",
           "path": "simulations/PM/geometry/closed_geometry/theorem.py",
           "category": "PM/geometry",
@@ -1744,7 +1852,7 @@
     },
     "PM/paper": {
       "title": "PM/paper",
-      "count": 36,
+      "count": 42,
       "scripts": [
         {
           "file": "abstract.py",
@@ -2199,6 +2307,36 @@
           ]
         },
         {
+          "file": "conclusions.py",
+          "path": "simulations/PM/paper/conclusions.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "Section 7 conclusions, generated from live state.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "core_manifest.py",
+          "path": "simulations/PM/paper/core_manifest.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "The core manifest (D-025): the sections that carry the argument, in order.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "core_text.py",
+          "path": "simulations/PM/paper/core_text.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "Abstract and introduction text for the core paper (D-025), from live state.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "discussion.py",
           "path": "simulations/PM/paper/discussion.py",
           "category": "PM/paper",
@@ -2249,6 +2387,26 @@
           "parameters_contributed": []
         },
         {
+          "file": "path_snapshot.py",
+          "path": "simulations/PM/paper/path_snapshot.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "Snapshot of the path summaries the paper prose quotes (D-025).",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "physics_chain.py",
+          "path": "simulations/PM/paper/physics_chain.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "The geometry-to-physics chain (D-025): an ordered, declarative walkthrough.",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
           "file": "predictions_aggregator.py",
           "path": "simulations/PM/paper/predictions_aggregator.py",
           "category": "PM/paper",
@@ -2270,6 +2428,16 @@
           "category": "PM/paper",
           "title": "Section 3: Cosmological Results and Alignment",
           "description": "DOI: 10.5281/zenodo.18079602",
+          "status": null,
+          "gates_contributed": [],
+          "parameters_contributed": []
+        },
+        {
+          "file": "superseded.py",
+          "path": "simulations/PM/paper/superseded.py",
+          "category": "PM/paper",
+          "title": null,
+          "description": "Shared \"superseded path\" callout for prose that describes the retired geometry.",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

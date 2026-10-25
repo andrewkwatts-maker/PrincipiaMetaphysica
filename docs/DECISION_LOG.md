@@ -1505,6 +1505,84 @@ its base sha256 does not match the published main file, that path is not publish
 
 ---
 
+## D-022 · 2026-10-25 · PUBLICATION · PRE-REGISTERED — recovered formula options made runnable (extends D-021)
+
+**Request:** the catalogue (`theories/pm/lineage/branches.yaml`) holds recovered formula
+options that are declared only. Wire them as engine forks so they become computed paths,
+instead of leaving them as inert history. Brief: `docs/plan/paths/briefs/B-runnable-options.md`.
+
+**Forks and options made runnable (fixed before any sweep).**
+- `n_gen_source` (existing fork): `chi_over_24`, `chi_eff_over_48`.
+- `spectral_index_route` (new): `one_minus_2_over_b3`, `golden_modulated`, `re_t_slow_roll`.
+- `h0_route` (new): `odowd_composite`, `ricci_flow`, `kk_bridge`.
+- `dark_energy_mechanism` (new): `mep_11_13`.
+
+**Rule.**
+1. *Main stays the D-015 path.* In each new fork the adopted option is what the source
+   does today, read from the source, not chosen. Defaults change nothing: a default
+   build must differ from the published main only in `variants.json`.
+2. *Expected outcomes, as the catalogue records them (not predictions):*
+   `one_minus_2_over_b3` 11.48 sigma off (replaced 2026-01-10); `golden_modulated`
+   under 1 sigma (catalogue claim); `re_t_slow_roll` falsified at 8.3 sigma vs Planck 2018;
+   `odowd_composite` H0 not a topology-first prediction, 1.43 sigma SH0ES, 8.3 Planck;
+   `ricci_flow` 3.17 sigma from SH0ES (76.34); `kk_bridge` REFUTED, about 57 orders off;
+   `mep_11_13` w0 = -11/13 = -0.846, 1.76 sigma vs DESI 2025 (replaced by thawing
+   quintessence at 0.02 sigma); `chi_over_24` and `chi_eff_over_48` n_gen = 3 where the
+   source supplies chi_eff_sector = 72 and chi_eff_total = 144.
+3. *No invented numbers.* A formula comes from the current source or from the git commit
+   the catalogue cites. An option that cannot be wired without inventing something stays
+   declared, with the reason in the notes.
+4. *Inert is a failure.* A wired option must change its consumer (n_s, H0, w0 or n_gen),
+   or it is reported as inert.
+
+**Kill/void.** An option whose selection leaves its consumer unchanged is reported inert
+and not counted as a path result.
+
+---
+
+## D-023 · 2026-10-25 · GEOMETRY · PRE-REGISTERED — closing the G2 geometry by measured hypotheses
+
+**Request (the author, 2026-10-25):** close the geometry. Plan:
+`docs/plan/geometry/2026-10-25-close-g2.md`.
+
+**Rule (fixed before any code).**
+1. *What is claimed.* Existence of a torsion-free G2 metric on the resolution of the
+   adopted T^7/Gamma (Joyce 2000, Thm 11.6.1), Ricci-flatness (Bonan), and Hol = G2
+   (Joyce 1996 II, Prop 1.1.1). No explicit compact metric is claimed.
+2. *What is measured.* Hypotheses H1-H8 of the plan, each by code that can fail and each
+   with a failing control in the tests. A hypothesis read from a literal or a zeros array
+   counts as not measured.
+3. *Verdict.* CLOSED_BY_THEOREM only if all eight hold on the active path. Otherwise the
+   report names the first failing hypothesis, and the placeholders stay NOT_ESTABLISHED.
+4. *Expected outcome, stated now:* all eight hold on seed_43_joyce with octonion_derived;
+   H4a fails on `g2_form_convention--all_plus_one` (split form); the verdict is not
+   available on seeds the construction does not reach.
+5. *Gates.* G_GEOMETRY_BETTI reads the computed resolution (b3 = 7 + 3 b2), not a literal.
+
+**Kill/void.** If any hypothesis fails on the active path, the geometry is reported open
+with that hypothesis named. It is not rewritten to pass.
+
+**Outcome (2026-10-25, `PM/geometry/g2_closure.py`, `tests/test_g2_closure.py`).**
+- *Active path (seed_43_joyce, octonion_derived):* all ten rows hold (H1-H8, with H4
+  split into a/b/c). Verdict CLOSED_BY_THEOREM. G_GEOMETRY_HOLONOMY, G_GEOMETRY_BETTI and
+  both G2 certificates PASS from these measurements.
+- *Split form (all_plus_one):* OPEN, first failure H2 (signature (4,3)). H4a, H4c, H7 and
+  H8 also fail. This matches the expected outcome, except that the first named failure is
+  H2, not H4a, because H2 is checked first.
+- *seed_24:* OPEN, first failure H3. The resolution reaches (12, 43), not the seed's
+  declared (4, 24), so H3 and H6 are unmeasured, with that reason. G_GEOMETRY_BETTI FAILs.
+- *Controls:* the SD Eguchi-Hanson triple is not closed; a Z2 subgroup gives 4 invariant
+  spinors and a two-flip involution gives 0.
+- *Bug found by H8:* `glued_orbit_scan._flat_phi("all_plus_one")` followed the live fork
+  and returned the compact form. It is fixed and has a regression test.
+- *Forks classified:*
+  - `metric_construction` is inert on the adopted form by design: both constructions are
+    a constant multiple of I_7.
+  - `g2_construction--fano_tcs` is refused by the engine with its reason.
+  - The b3_origin options written for b3 = 24 are inapplicable on seed 43.
+
+---
+
 ## D-003 · ADDENDUM 2 · 2026-10-02 · the glued form on the compact (active) path
 
 D-015 made the compact real form the active path, so the glued-orbit scan
@@ -1533,3 +1611,210 @@ construction assumes.
 Tests re-pinned on both branches (`tests/test_glued_orbit_scan.py`): split
 → no crossover; compact → all points with t ≤ 0.1 compact, crossover only at t ≥ 1,
 9 split and 4 degenerate on this grid.
+
+## D-024 · 2026-10-25 · PUBLICATION · PRE-REGISTERED — the paper justifies each conclusion from live state
+
+**Problem.** The audit `docs/plan/geometry/2026-10-25-conclusions-audit.md` found:
+- section 7 written for the retired path (b3 = 24, TCS, "15/15 resolved", "97/100");
+- conflicting values for w0, H0, M_KK and the ALP kill-switch;
+- Z.6 and Z.10 labelled DERIVED although their arithmetic is false as written;
+- no references on any of the 581 formulas;
+- the canonical n_s justified as χ_eff = 6 b3. D-009 refuted that reading, and on
+  b3 = 43 it would give 258, which puts n_s 3.5σ from Planck.
+
+**Rulings.**
+1. Section 7 is generated from engine state: the certificate (CG.1 to CG.13), the
+   scoreboard and χ², and a status tag on each conclusion. It states no number of
+   its own.
+2. Where two values conflict, the value the engine computes on the active path wins.
+   The other is labelled superseded or off-path, or OPEN when neither is computed.
+   No number is chosen by hand.
+3. Arithmetic that is false keeps its numbers; its label changes.
+4. n_s keeps 0.96364. χ_eff = 2 Σ χ(K3_σ) = 48 n = 144 (the D-009 K3 reading), so it
+   does not depend on b3. The recovered `one_minus_2_over_b3` route keeps its
+   historical b3 = 24 input (D-022).
+5. Section 2.4 shows each theorem's proof steps, sources and checking test. CG.13
+   publishes Joyce 2000 Thm 11.6.1 from the measured hypotheses (D-023).
+
+**Falsifier.** A conclusion block without a status tag; a quantity with two values
+across formulas; a DERIVED formula whose arithmetic is false. Each one fails a test.
+
+## D-025 · 2026-10-25 · PUBLICATION · PRE-REGISTERED — a core paper and a geometry-to-physics walkthrough
+
+**Problem.**
+- The paper is 94 sections and about 74.8k words. The introduction is 5.6k of them.
+- 25 blocks still cite the retired b3 = 24 or TCS path.
+- No page walks a reader from the geometry, step by step, to each physical quantity.
+  Nor does any page say which of those steps hold.
+
+**Rulings (pre-registered).**
+1. A core manifest names the sections that carry the argument, in order, with one
+   sentence on what each one establishes. Every other section stays published,
+   labelled supplementary. Nothing is deleted.
+2. The abstract (250 words or fewer) and the introduction (900 or fewer) are generated
+   from live state. The current introduction text is demoted to a supplementary
+   section.
+3. Every retired-path citation becomes either the active value or a "superseded path"
+   callout. The prose-drift ratchet falls to the new count.
+4. The walkthrough runs bulk → G2 existence → topology counts → gauge group →
+   generations → couplings → masses and mixing → gravity → cosmology. For each step it
+   gives the geometric input, the operation, the formula, the value, the status, and
+   the experiment and pull. All are read from engine artifacts, and a missing input is
+   shown as OPEN. Failing steps are shown as failing.
+
+**Falsifier.** Any of the following fails a test:
+- a walkthrough value that differs from parameters.json;
+- a step status that differs from the registry;
+- a core section that cites b3 = 24 outside a superseded callout;
+- an abstract over 250 words.
+
+**Outcome (2026-10-25; engine branch `core-paper`: 27d5b75, ffb09ee, 8df2df4).**
+1. **Core manifest:** `PM/paper/core_manifest.py` lists 14 sections: 0, 1, 2, 2.4, 3.2, 3, 4.1 to 4.4, 5.1, 5.2, 6 and 7. That is about 27k words, against about 87k for the full paper. `core_paper.json` is built from it. The paper page has a Core / Full toggle, defaulting to Core; in Full, sections outside the core are badged supplementary.
+2. **Abstract and introduction:** the abstract is 227 words and the introduction 613, both generated from live state (`core_text.py`). The old texts are kept as `extended-abstract` and `extended-introduction`.
+3. **Retired-path prose:** 30 blocks that presented seed_24/TCS as active now carry one shared callout (`PM/paper/superseded.py`), with the old text kept. The ratchet (`tests/test_superseded_geometry_prose.py`) is pinned at 0 uncovered hits. The scanner counts a block as covered if retirement wording sits in the same passage; 113 such blocks were not reviewed one by one.
+4. **Walkthrough:** `PM/paper/physics_chain.py` has 35 steps over 9 stages; it is published as `Pages/geometry-to-physics.html`.
+5. **Found on the way:**
+   - The seed_24 comparison in the prose read `autogen_dir()/paths`, which a path run lacks, so every path would have differed from main. It now reads the committed `data/path_comparison.json`; refresh it after paths-publish.
+   - On the sweep, the retired seed_24 path scores better against data than main. It keeps no closure theorem, so main is unchanged. This is for the owner to decide (see the handoff).
+
+## D-026 · 2026-10-25 · PATHS · PRE-REGISTERED — assess every choice dynamically: physics, provability, economy, tightening
+
+**Problem.**
+- Path choices are ruled by hand, one decision at a time. Nothing scores the alternatives together after each sweep.
+- The D-025 sweep shows the retired seed_24 path beats main on 20 rows, and on none the other way (`docs/plan/geometry/seed24_rows.json`).
+- Several of those seed_24 values land almost exactly on data: c = 2.99792423e8 m/s, H0 = 73.06, m_H = 125.10, w_a = −0.8165. A count of harmonic forms cannot plausibly give c to 1e-7. The likely reason is that constants were chosen while b3 was 24. If so, seed_24's better score is a fit, not evidence for its geometry.
+
+**Rulings (pre-registered before any audit result).**
+1. **Formula audit.** Each of the 20 rows is traced to its formula and classified by its numeric inputs:
+   - **G** (geometric): every input is read from the geometry or from cited physics, with no tuned constant;
+   - **C24** (calibrated at 24): a constant was chosen or fitted while b3 = 24 (git history, comments or the registry say so), or a constant equals a 24-derived number;
+   - **H** (hard-wired): it uses 24, or a 24-derived count, literally where the live geometry should be read.
+   
+   An unexplained numeric literal counts against the formula.
+2. **Rubric.** Every option of every fork is scored relative to main on four axes, all computed from engine artifacts:
+   - **(P) Physics:** the change in scoreboard and χ² from the sweep. A refused option (for example n_gen ≠ 3 or a non-integer count) is INVALID with its reason. An inert option has no data consequence.
+   - **(R) Provable:** for the parameters the option changes, the share whose status is GEOMETRIC or DERIVED with a certificate or theorem id. The count that are CALIBRATED or FITTED is reported too.
+   - **(E) Economy:** the change in free-variable count, plus unexplained literals in the formulas the option uses. Fewer is better. This is the stated proxy for "elegant"; nothing else is.
+   - **(T) Tightening:** it removes a calibration or free variable without worsening P.
+3. **Overfitting guard.** A P gain carried by a C24 or H row does not count as physics evidence. It is shown, marked "fit at 24".
+4. **Dominance.** An option is a *candidate to adopt* if it is no worse than the active option on every axis and strictly better on one, after the guard. The generator only flags candidates; adoption remains an owner ruling in this log.
+5. **Dynamic.** The assessment is regenerated after every paths-publish and shown on paths.html. Nothing in it is typed by hand.
+
+**Falsifier.** Any of the following counts against D-026:
+- a published score that differs from the artifacts it cites;
+- a candidate flag raised on a guarded gain;
+- the C24 hypothesis surviving with no row classified C24 or H.
+
+In the last case seed_24's better fit stands as evidence and must be reported as such.
+
+**Outcome (2026-10-25, `docs/plan/geometry/formula_audit_mixing.json`, `formula_audit_cosmo.json`).**
+- All 20 rows are classified: **C24 on 19, H on 1** (the ALP coupling, with a literal 24π). None is G. Falsifier 3 does not fire, so H-C24 stands and ruling 3 applies: seed_24's better score is a fit made at 24, not evidence for its geometry.
+- The mixing rows share the registry constants `chi_eff` = 144 and `S_orient` = 12. These equal b3²/4 and b3/2 only at b3 = 24, yet main evaluates them beside a live b3 = 43, so main runs a hybrid of 24-era constants and 43 geometry. `yukawa_derivation.py:233` says it was "calibrated at b3 = 24".
+- The cosmology and Higgs near-hits are tuned in their own modules:
+  - c: the factor 1 + 1/28800;
+  - H0: 4040 back-solved to SH0ES;
+  - m_H: 414.22 = 125.10 × 3.3111;
+  - η_B: Re(T) = 7.086, "chosen to match";
+  - w_a: −4/√b3 = −√(2/3) only at 24.
+- m_H, Λ and ρ_vac are circular: each takes a measured value as an input.
+- Neither audit found a principled (non-fitted) fix. Git history is squashed at d779eb8, so most of the evidence is in-module comments.
+- Generator `generate_option_assessment.py` (worktree `assess`, 11 tests): with the audit absent, there are 0 firm candidates and 2 provisional ones (`flavour_seed_coupling--calibrated_24`, `theory_uncertainty_policy--always`). `b3_seed--seed_24` is not flagged; it is worse on R and E. With the audit merged, `calibrated_24` is expected to be guarded.
+
+---
+
+## D-027 · 2026-10-25 · GEOMETRY · PRE-REGISTERED — the "24" closure options, each reduced to real mathematics
+
+**Problem.**
+- The owner asks to close the 24 option and to draw on every cosmology and paper for ideas.
+- D-026 shows the "24" is not in the geometry. It sits in constants calibrated while b3 was 24.
+- An idea counts here only once it reduces to a theorem, a computable invariant or a physical mechanism with a citation. Resemblance to a number is not a reduction.
+
+**Rulings (pre-registered before any computation).**
+1. **b3 = 24 as geometry is closed negatively unless a construction is cited.**
+   - By Crowley–Nordström (Invent. Math., arXiv 1211.0269, Thm 1.3 and Thm 1.7), ν ≡ χ_ℚ mod 2, and every twisted connected sum has ν = 24. For (b1, b2, b3) = (0, 4, 24), χ_ℚ = 1 + 0 + 4 + 24 is odd, so **no TCS has these Betti numbers**. The retired "TCS with b3 = 24" claim is false by theorem.
+   - The Joyce Z2³ family with holonomy G2 lies on b2 + b3 = 55 (D-003).
+   - Published geography for b2 = 4 lists only odd b3 from 27 upward (Reidegeld arXiv 2002.09231, Thm 4.2 and Table; Kovalev–Lee 2011; Joyce §12.4–12.7).
+   - Kill condition: a cited compact holonomy-G2 manifold with (b2, b3) = (4, 24).
+2. **Every C24 constant is re-read, not refitted.** For each constant in the D-026 audits, exactly one reading applies, decided from its written derivation before evaluating:
+   - **R0:** its derivation is a formula in the geometry. It is evaluated live on the active (12, 43) manifold. A non-integer count is INVALID, per the refusal rule.
+   - **R1:** a named invariant with a stated physical mechanism equals the value on the active manifold. Examples: χ(K3) = 24 of the Kummer fibre in Joyce's local model T³ × K3; |2T| = 24 via McKay to E6; dim adj SU(5) = 24. The mechanism must be cited, not inferred from the fit.
+   - **R2:** none. The constant stays CALIBRATED and is disclosed as such.
+   
+   Several numerical coincidences (144 = 12² = b2² on the active manifold, 144 = 6 · 24) are not readings and are not tried.
+3. **Dimensionful outputs are not tests of topology.**
+   - c is exact in SI by definition (since 1983). A "derived c" row becomes a unit consistency check, not a prediction.
+   - Rows for H0, Λ and ρ_vac need one cited scale input, declared as such.
+   - Only dimensionless ratios count toward P.
+4. **Untuned structure is preferred to reinterpretation.** New predictions come from quantities with no free constant:
+   - the flat T⁷/Γ Kaluza–Klein spectrum, computed exactly from the Γ-invariant dual lattice (mass ratios only);
+   - spectral invariants (ν, ν̄ = 3η(B) − 24η(D), Scaduto arXiv 2008.07239) of the active example.
+5. **Inspiration sources are listed with their reduction** (`docs/plan/geometry/2026-10-25-closure-24.md`). An entry with no reduction is labelled "no reduction found" and kept as a dead end.
+
+**Falsifier.** Any of the following counts against D-027:
+- an R1 reading adopted without a cited mechanism;
+- a constant re-read after its value was compared with data;
+- an R0 evaluation that improves a row and was not pre-listed.
+
+**Outcome C1 (2026-10-25, `docs/plan/geometry/reread_24.json`, 22 constants).** R0 3, R1 0, R2 19.
+- **`chi_eff` = 144 (R0).** Its written formula is 2·Σχ(K3) = 48n (`geometry_narration.py:375`). That is 144 on the active manifold, n = 3, so main reads it live and correctly.
+  - The D-026 audit classed the mixing rows C24 because 144 = 24²/4. Read by its own derivation, the constant is live on main and stale on seed_24, where 48n gives 48.
+  - The conclusion stands for a corrected reason: seed_24's mixing hits used an inconsistent 144.
+  - This is the one place where χ(K3) = 24 enters through a stated formula.
+- **`dim_psi` = 4 (R0).** It is live, and no row moves.
+- **288 (weak R0).** "288 = b3 · D_space_12" (`FormulasRegistry.py:1170`) gives 516 live. That makes c and H0 worse (1.08e8 m/s; 22.8), so the formula is wrong on the active manifold and the derived-c and H0 rows lose their derivation.
+- **R2 (stay CALIBRATED, disclosed).** S_orient = 12, 1 + 1/28800, 4040, 414.22, 3.3111, Re(T) = 7.086, 0.037, 0.81, 0.58, the J damping, 45.9° and 24π.
+- **Ruling 2 result.** The 24-era constants cannot be replaced by live geometry. No row improves. No falsifier fires.
+- **Follow-up.** On main, S_orient = 12 equals b2 = 12 and the number of singular T³. Under ruling 2 this is a coincidence, not a reading, until a derivation text states it.
+
+**Outcome C4 (2026-10-25, `docs/plan/geometry/c4_gauge_chirality.md`).**
+- **(a) Gauge group: MISMATCH.**
+  - The text claims SU(3) from A2 loci and SU(2) from A1 loci on a TCS.
+  - The active manifold has 12 A1 loci only: U(1)^12 when smooth, SU(2)^12 at the orbifold point (`g2_geometry.py:1142`).
+  - "SU(3) from associative 3-cycles" is not Acharya's mechanism.
+- **(b) n_gen = 3: FORMULA** (b2/4), not an index theorem.
+- **(c) Fermion representations: ABSENT.** Chirality is OPEN (D-011).
+- **Correction owed.** The paper must say the smooth (12, 43) manifold gives U(1)^12, and it must label the Standard Model group and chirality OPEN or as inputs until D-028 resolves them.
+
+---
+
+## D-028 · 2026-10-25 · GEOMETRY · PRE-REGISTERED — the Standard Model gauge group from orbifold singular loci
+
+**Problem.**
+- A smooth G2 manifold gives an abelian gauge group only.
+- Non-abelian factors need A_{k−1} singularities R³ × C²/Z_k along associative 3-cycles: SU(k) (Acharya, hep-th/9812205).
+- Charged chiral fermions need codimension-7 conical points (Acharya–Witten, hep-th/0109152).
+- Joyce's Z2³ group gives only A1, so only SU(2) factors.
+
+**Rulings (pre-registered before the scan).**
+1. **Scan.** The scan runs over finite groups Γ ⊂ G2 that act on T⁷ = R⁷/Λ by lattice-compatible isometries preserving the flat φ₀. Γ is generated by the Z2³ involutions plus at most one element of order 3 or 4. Λ is Z⁷, or a product with hexagonal A2 planes where an order-3 rotation needs one.
+2. **Per Γ, record:**
+   - the fixed loci of every element and their stabiliser types (A_{k−1} along T³ or T³/G; codimension-7 points);
+   - the gauge group at the orbifold point;
+   - b1 of each locus (it gives the adjoint chiral multiplets; b1 > 0 means non-chiral matter);
+   - whether the orbifold is a G2 orbifold (Γ ⊂ G2 checked on φ₀);
+   - the Betti numbers after resolving every locus not kept singular.
+3. **Target.** A Γ whose loci give a group containing SU(3) × SU(2), with the rest of the geometry resolvable. U(1)_Y must come from b2 or from breaking; it is reported, not assumed.
+4. **No adoption from the scan.** A hit becomes a fork option for the sweep and the D-026 assessment. The active path changes only by owner ruling.
+
+**Kill conditions.**
+- No Γ in the scanned class gives an A2 locus compatible with φ₀. Then SU(3) needs a construction outside flat orbifolds, and that is stated.
+- A hit whose loci are all T³ with b1 = 3. That gives N = 4-like adjoint matter, so chirality still needs codimension-7 points, and that is reported.
+
+**Outcome, D-027 ruling 3 (2026-10-25, branch `closure24`, `docs/plan/geometry/d1_dimensionful.md`, 12 tests).**
+- **UNIT_CHECK:** `cosmology.speed_of_light_derived`.
+- **CIRCULAR:**
+  - `cosmology.H0_physical`, `Lambda_derived` and `rho_vacuum`: the scale is back-solved to SH0ES, or R_H = c/H0 is used.
+  - `higgs.m_higgs_local`: 414.22 = 125.10 × 3.3111.
+  - `higgs.m_higgs_pred`: Re(T) = 9.865 was hand-inverted from the same formula to give 125.10 (`higgs_mass.py:39-43`).
+- **Effect.** Values are unchanged and remain displayed with their reason; they are excluded from PASS/FAIL and χ². Main's scoreboard goes from pass 27 / fail 32 to pass 27 / fail 26. The 6 removed rows were all FAIL; that is an accounting correction, not a gain.
+- **χ²** is unchanged at 3030.0985 over 4 dof, because none of these rows feed it.
+- **Still to declare.** 18 dimensionful rows await a declared scale input (listed in `d1_dimensionful.md`).
+
+**Outcome, D-027 track C5 (2026-10-25, branch `kkspec`, `docs/plan/geometry/c5_kk_spectrum.md`, 8 tests).**
+- **Method.** Exact scalar-Laplacian spectrum on the flat T⁷/Γ for Joyce Ex. 3 (12, 43), using integer and Fraction arithmetic.
+- **Γ-invariant multiplicities by level.** With all radii equal (a choice, the symmetric point), the multiplicities at q = 1…8 are 4, 13, 38, 77, 114, 166, 296, 441, against 14, 84, 280, … on T⁷. The zero mode is 1.
+- **Radius-independent.** Which momentum classes survive: at level 1, e₁–e₄ survive and e₅–e₇ are projected out by the half-shifts. The ratios and level order depend on the 7 radius moduli. The only coordinate permutation preserving Γ is the identity.
+- **Finding.** The engine tower `shared_dimensions.py:64-67` (M_KK 5.02, 10.04, 15.06 TeV, ratios 1:2:3) is not the flat-orbifold spectrum, which goes as √q: 1 : 1.41 : 1.73 at the symmetric point, and free at generic radii.
+  - The tower is labelled OPEN or CALIBRATED until a derivation is given.
+  - The overall scale is a modulus, so M_KK ≈ 5 TeV is an input.
+- **Status.** No row changes and nothing is adopted.

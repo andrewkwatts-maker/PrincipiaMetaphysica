@@ -281,6 +281,10 @@ class PMBeginnerGuideLoader {
             `;
         }
 
+        // Ordered plain-language steps and engine-generated figures (optional)
+        cardHTML += this.createStepsList(concept.steps);
+        cardHTML += this.createFigures(concept.figures);
+
         // Add expandable technical detail if present
         if (concept.technicalDetail) {
             cardHTML += this.createExpandable('The Technical Details', concept.technicalDetail, concept.relatedFormulas);
@@ -298,6 +302,64 @@ class PMBeginnerGuideLoader {
 
         card.innerHTML = cardHTML;
         return card;
+    }
+
+    /**
+     * HTML-escape untrusted text
+     * @param {*} value
+     * @returns {string}
+     */
+    static escapeText(value) {
+        const d = document.createElement('div');
+        d.textContent = String(value == null ? '' : value);
+        return d.innerHTML;
+    }
+
+    /**
+     * Inject the step/figure styles once (view-only, responsive, no h-scroll)
+     */
+    static ensureFigureStyles() {
+        if (document.getElementById('pm-guide-figure-styles')) return;
+        const style = document.createElement('style');
+        style.id = 'pm-guide-figure-styles';
+        style.textContent = `
+            .guide-steps { margin: 1em 0; padding-left: 1.5em; }
+            .guide-steps li { margin: 0.4em 0; overflow-wrap: anywhere; }
+            .guide-figure { margin: 1.2em 0; max-width: 100%; overflow: hidden; }
+            .guide-figure svg { display: block; width: 100%; max-width: 100%; height: auto; }
+            .guide-figure figcaption { font-size: 0.9em; opacity: 0.85; margin-top: 0.4em;
+                overflow-wrap: anywhere; }
+        `;
+        document.head.appendChild(style);
+    }
+
+    /**
+     * Ordered list of plain-language steps
+     * @param {string[]} steps
+     * @returns {string}
+     */
+    static createStepsList(steps) {
+        if (!Array.isArray(steps) || steps.length === 0) return '';
+        this.ensureFigureStyles();
+        const items = steps.map(s => `<li>${this.escapeText(s)}</li>`).join('');
+        return `<h4>Step by step</h4><ol class="guide-steps">${items}</ol>`;
+    }
+
+    /**
+     * View-only figures: engine-generated SVG with caption
+     * @param {Array} figures - [{id, title, caption, svg, data_source}]
+     * @returns {string}
+     */
+    static createFigures(figures) {
+        if (!Array.isArray(figures) || figures.length === 0) return '';
+        this.ensureFigureStyles();
+        return figures.filter(f => f && typeof f.svg === 'string').map(f => `
+            <figure class="guide-figure" data-figure-id="${this.escapeText(f.id)}"
+                    data-source="${this.escapeText(f.data_source)}">
+                ${f.svg}
+                <figcaption><strong>${this.escapeText(f.title)}.</strong>
+                    ${this.escapeText(f.caption)}</figcaption>
+            </figure>`).join('');
     }
 
     /**

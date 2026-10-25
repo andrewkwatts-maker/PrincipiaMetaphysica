@@ -40,7 +40,7 @@
   },
   {
    "id": "G_GEOMETRY_BETTI",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -55,7 +55,7 @@
   },
   {
    "id": "G_GEOMETRY_HOLONOMY",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -909,15 +909,15 @@
   },
   {
    "id": "CERT_INTRO_WORD_COUNT",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_KEY_CONCEPTS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_SUBSECTIONS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_ANCHOR_KGIMEL",
@@ -953,7 +953,7 @@
   },
   {
    "id": "CERT_G2_HOLONOMY_RICCI",
-   "holds": false
+   "holds": true
   },
   {
    "id": "CERT_G2_POINCARE_DUALITY",
@@ -961,7 +961,7 @@
   },
   {
    "id": "CERT_G2_TORSION_FREE",
-   "holds": false
+   "holds": true
   },
   {
    "id": "CERT_Y7_RESOLVED_BETTI_NUMBERS",
@@ -1009,6 +1009,10 @@
   },
   {
    "id": "CERT_Y7_SELECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_HOLONOMY_G2_METRIC",
    "holds": true
   },
   {
@@ -2142,7 +2146,7 @@
  "changed": {
   "count": 0,
   "by_artifact": {},
-  "bookkeeping_ops": 1
+  "bookkeeping_ops": 18
  },
  "unverified_files": [],
  "inert": true,

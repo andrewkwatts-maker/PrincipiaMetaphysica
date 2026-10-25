@@ -1,0 +1,42 @@
+/* Geometry-to-physics walkthrough (D-025). Status colours: green ok, amber fitted, red fail, grey open. */
+.gp-page { max-width: 960px; margin: 0 auto; padding: 1rem 16px; color: var(--text-primary, #f8f9fa); }
+.gp-page h1 { margin: .5rem 0; }
+.gp-lead { max-width: 760px; color: var(--text-secondary, #adb5bd); }
+.gp-open-word { color: #adb5bd; font-weight: 600; }
+.gp-summary { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1rem 0; padding: .75rem;
+  border: 1px solid var(--border-primary, #2a2f4a); border-radius: 8px; background: var(--glass-bg, rgba(26,31,58,.8)); }
+.gp-count { padding: .2rem .7rem; border-radius: 999px; font-size: .85rem; border: 1px solid currentColor; }
+.gp-stagenav { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.gp-stagenav a { font-size: .8rem; padding: .2rem .6rem; border-radius: 4px; text-decoration: none; color: inherit;
+  border: 1px solid var(--border-accent, #4a4f6a); }
+.gp-stage { margin-top: 1.5rem; }
+.gp-stage h2 { font-size: 1.15rem; border-bottom: 1px solid var(--border-primary, #2a2f4a); padding-bottom: .3rem; }
+.gp-card { position: relative; margin: .75rem 0; padding: .8rem 1rem .8rem 1.2rem; border-radius: 8px;
+  border: 1px solid var(--border-primary, #2a2f4a); border-left: 6px solid #6c757d; background: var(--glass-bg, rgba(26,31,58,.8)); }
+.gp-card.tone-ok { border-left-color: #2fbf71; }
+.gp-card.tone-fitted { border-left-color: #f0a030; }
+.gp-card.tone-fail { border-left-color: #e5484d; }
+.gp-card.tone-open { border-left-color: #6c757d; }
+.gp-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .5rem; }
+.gp-num { font-weight: 700; min-width: 2rem; color: var(--text-secondary, #adb5bd); }
+.gp-sym { font-size: 1.1rem; font-weight: 600; }
+.gp-badge { font-size: .72rem; padding: .1rem .55rem; border-radius: 999px; font-weight: 600; color: #101322; }
+.tone-ok .gp-badge { background: #2fbf71; }
+.tone-fitted .gp-badge { background: #f0a030; }
+.tone-fail .gp-badge { background: #e5484d; color: #fff; }
+.tone-open .gp-badge { background: #adb5bd; }
+.gp-row { margin: .35rem 0; font-size: .92rem; line-height: 1.45; overflow-wrap: anywhere; }
+.gp-row b { color: var(--text-secondary, #adb5bd); font-weight: 600; margin-right: .3rem; }
+.gp-formula { font-family: monospace; font-size: .85rem; padding: .3rem .5rem; border-radius: 4px;
+  background: rgba(0,0,0,.25); overflow-x: auto; }
+.gp-value { font-family: monospace; font-size: 1rem; }
+.gp-fig { margin: .5rem 0; max-width: 100%; overflow-x: auto; background: #fff; border-radius: 6px; padding: .3rem; }
+.gp-fig svg { max-width: 100%; height: auto; }
+.gp-fig figcaption { color: #333; font-size: .8rem; padding: .2rem; }
+.gp-link { font-size: .85rem; color: var(--accent-primary, #8b7fff); }
+.gp-why { color: #adb5bd; font-style: italic; }
+.gp-error { color: #ff5c5c; }
+@media (max-width: 600px) {
+  .gp-card { padding: .7rem .7rem .7rem .9rem; }
+  .gp-summary { padding: .5rem; }
+}

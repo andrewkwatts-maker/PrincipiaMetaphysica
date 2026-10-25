@@ -40,7 +40,7 @@
   },
   {
    "id": "G_GEOMETRY_BETTI",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -55,7 +55,7 @@
   },
   {
    "id": "G_GEOMETRY_HOLONOMY",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -909,15 +909,15 @@
   },
   {
    "id": "CERT_INTRO_WORD_COUNT",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_KEY_CONCEPTS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_SUBSECTIONS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_ANCHOR_KGIMEL",
@@ -953,7 +953,7 @@
   },
   {
    "id": "CERT_G2_HOLONOMY_RICCI",
-   "holds": false
+   "holds": true
   },
   {
    "id": "CERT_G2_POINCARE_DUALITY",
@@ -961,7 +961,7 @@
   },
   {
    "id": "CERT_G2_TORSION_FREE",
-   "holds": false
+   "holds": true
   },
   {
    "id": "CERT_Y7_RESOLVED_BETTI_NUMBERS",
@@ -1009,6 +1009,10 @@
   },
   {
    "id": "CERT_Y7_SELECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_HOLONOMY_G2_METRIC",
    "holds": true
   },
   {
@@ -2140,14 +2144,16 @@
   }
  ],
  "changed": {
-  "count": 20,
+  "count": 33,
   "by_artifact": {
+   "core_paper.json": 6,
    "formulas.json": 4,
-   "sections.json": 4,
-   "theory_output.json": 11,
+   "geometry_to_physics.json": 1,
+   "sections.json": 8,
+   "theory_output.json": 13,
    "theory_overview.json": 1
   },
-  "bookkeeping_ops": 1
+  "bookkeeping_ops": 18
  },
  "unverified_files": [],
  "inert": false,

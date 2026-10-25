@@ -2,17 +2,17 @@
  "schema": "metaphysica.paths/1",
  "theory": "pm",
  "main": "main",
- "generated": "2026-10-24T19:32:17Z",
+ "generated": "2026-10-25T13:46:21Z",
  "engine": {
   "version": "2.3.1",
-  "commit": "00a736f"
+  "commit": "8df2df4"
  },
  "base": {
-  "GATES_72.json": "bb80a5112a8710c870ec40f8cc66a80420f3cf41e8041bfe51f0d0daf71e06c2",
-  "GATES_72_v16_2.json": "bb80a5112a8710c870ec40f8cc66a80420f3cf41e8041bfe51f0d0daf71e06c2",
+  "GATES_72.json": "b932d5b2f6f47f17a03b03f728a5e66ad21c36fc3587ae51ed991a0c8e0a5495",
+  "GATES_72_v16_2.json": "b932d5b2f6f47f17a03b03f728a5e66ad21c36fc3587ae51ed991a0c8e0a5495",
   "GATES_CERTIFICATES.json": "728e67b1f13b1ec12d0956473afccf93f700899b72a5c80712b9b1b0286ffcd4",
-  "arithma_trees.json": "0b18af75c51ce72d30dd4e0422399112462d3b7b710e082234752ee81263ae61",
-  "beginner-guide.json": "1b8abfe2bc141881c88d76e13e0e48ce31b0c0e0d276496788d611091fea4b92",
+  "arithma_trees.json": "88233549e88c063e3ca3233adf76d990f71a9512dceef2128045868608677ba5",
+  "beginner-guide.json": "f55aeb8670014c6bb15f330285bbfc0c30b03267cb3782801041edc8857c5ca5",
   "build_status.json": "c203493bc54c9c035bcf6c36a04b86fbbc1de023eabf6d08b83091b2fa45812e",
   "canonical_values.json": "832028f5b1127f6d7cc09225a9bcf13defa3c8521726b244ffc1fb6278511619",
   "certificates/G02_holonomy_closure.json": "218c2bdb5d83aecea1e7f6b6781359bb1875200df296ab650be910adc0d32817",
@@ -29,37 +29,42 @@
   "certificates/G48_w0_equation_of_state.json": "957528904bee26237f58912c88abb66e0dc9e0b9701806bf5b4a6c23503a7228",
   "certificates/G50_baryon_to_photon_ratio.json": "55904de9e97fbce22399efb07ef5f343e6d422ff273b48a056be728070a58827",
   "certificates/G72_the_omega_hash.json": "7e0cd403c70cb95909708a250c66a03fdd13c8aa10ecad00f3451c6cffa77780",
-  "compression_report.json": "1310a35e4bd05f46449ece29206915369d42d30a2a1e3bb84867f6f47c582910",
+  "compression_report.json": "24d88f2d53148b7c9198a326bf85a157355e8dbda70423bfba7c7d426bb4be00",
   "config_drift_audit.json": "94bb3eb29f12c8ec8f8671e19b96febeb29d2bbda1c5658e8fac8e20dde9f325",
   "consistency_beacons.json": "070727a80dd5d488ac0f37279924f9c7b7ad2fb29a65c713ef40fb4a144948cc",
-  "dependency_chains.json": "9192f3b23344566124a160c932c14a0dee8b72b700f190eb27a0c55025043a61",
-  "eml_cross_check.json": "2d632014149f98ccd9d7e72b70634c24729fc3f48340cbbcdc8e480a2dab8bb2",
+  "core_paper.json": "b078d528b2d3f87fffe987faa5ec5b222c59ae8739071df411d41708a31e960e",
+  "dependency_chains.json": "8ac81fb1bef13e21c5d0bbe77d88041bbeb670e33e6399811fe16854458b3f04",
+  "eml_cross_check.json": "b09769d5f5eeb1cee182a1696f0f211906390b67f09d4ef67d328247f4389a93",
   "eml_crosscheck.json": "80b5fa9a403ad7be591d7d4baa9fc731b368b279edd06d432bb5d2756eef2c9d",
-  "eml_dependency_chains.json": "80d7655c34e151f986cb42b0364c2d34937752f6061b2bf9903b66b6568ee901",
+  "eml_dependency_chains.json": "b02e5ba7a83aa4316f2e8c59f3519b88f07225383aa202d60ac28826c69659ee",
   "eml_offer_policy.json": "59bb260b28c8d38e6151cccf81cb937390f794e3cbf9a71348d2d1a35f3f7050",
-  "eml_trees.json": "f7f8e5d71ae6152ca82ad98400163803999e05bdd65e3447448a294f7c9334f5",
-  "eml_trees_v25.json": "e2be16230a79d3c7b44c35259421e077aeea03673de461bb421f538fc21e9c94",
-  "formula_renders.json": "2915a9bc5a23b979aff9fabc886e20db5498b04142166999d8a187acab84f8c7",
-  "formulas.json": "0cb416aaf6e71eeaac4c84856d9f16222d271650815e671a22421d739e544ec4",
+  "eml_trees.json": "b7e870529c413f796509276d88a16d57a40f95d262d34932ff742147852f7199",
+  "eml_trees_v25.json": "d0132ec65e30df3cbbab8fa9c7ab48a4c864f5cad21c72a89e1dec04b9c9c80d",
+  "formula_renders.json": "1e9cb1765381d8b40182faf09ff89a75813570e974474562e014dd04537e1856",
+  "formulas.json": "d329c1b3f0d1043376fde35e2c198b655838b9577a52c5792c6905d9c2a68ea4",
+  "free_variables.json": "e13e798ab4f79313c3531bbd24b5024c8a62efbb63aa70ef1a7b5f3d3206734e",
+  "geometry_to_physics.json": "5aa12c365648dc0af859deef048150b3d1be5123c1d0918c87ae7ebda0dcb7d8",
+  "hardcode_audit.json": "ed1e64d7e68210a000c64f3a0bd263a8341fde4cfd98a3603665ab19af874fe7",
   "identity_ledger.json": "ace5dd007071f33898b000bec0fb2288ace0649b70785836962d2709e8ffba32",
-  "improvement_scorecard.json": "afb610b4be8d3b144ca8ebff73ebc8924588ecccb91f15632eb77d7a242928c2",
-  "metadata.json": "6b2ef91099a133169ea78f9c81bacf494446899323604e580ea6f57087733412",
-  "mismatches.json": "0c9ed50539f10ed4f01ea4cc55091a4f63f2f6a44104a24a4c8a72c136f8b77d",
-  "named_constants.json": "dca721fafdd25fb0db858f58a7acccf4b82e3b84706162510def605eece4f194",
-  "parameters.json": "ac133b5b927d50e656d2ea04ccd695f0c0838bd0ecd0486f1a332ee60ee0b6fa",
-  "proof_completeness_ledger.json": "982d934704a8cfb9ae1a1b5dd16d1013598a4a54c132c0f0a5c3683d3d92fb91",
-  "reference_check.json": "d164e5f9e906b97f791d92eb7a2a0dedd9f4ac1bdd29e8ee0e1dd098f63ce1a5",
-  "references.json": "2092165f036094754b83984be43250948b05f2e3c6d3682ceb5806e123fe781b",
-  "sections.json": "3abaf3b422604246d390d21e819d0919fdfbc71d648c36d0ae65dd00ac67a12f",
+  "improvement_scorecard.json": "15fb4065c321aabb7fa68734a82ea817a092c91ebd515945e09a0c74905d1393",
+  "metadata.json": "fa728c9c881507ab62a9fb1791a6566f5ce288148afc0e23c786816f9b0e7dbe",
+  "mismatches.json": "2439b271862a919f959a42c99b34c272cebc35c3e35e4bbdcc7739223890f87a",
+  "named_constants.json": "23a1413af7ce28f017fbbcdc717a263c1f16aee1a522a6ca4c03f5661fdf03ed",
+  "observer_report.json": "d422a06dfd2af46658dc5d5a59830f45ea081670dc609b4054cc7c390de8bc82",
+  "parameters.json": "3be686ca8fc5b63842e95262f0338e8df04f6396120937c0a9ea27bcf448c3ad",
+  "proof_completeness_ledger.json": "0b7679550fd27ead24a628956fccc037dc425b29f35174a15ff0692ca936378a",
+  "reference_check.json": "265854f6b85dcd9bb40bf204a472462f78492b034a05d4eae493775fb4b5cad7",
+  "references.json": "87623f99dffc987651abfa78c16f1af8c70e67824e8bc23bd97b713821138378",
+  "sections.json": "80a7a5aed059639f285e72e8b74e4636cebe4eb136cf2b1deacfbc3c2bac6fb1",
   "shadow_derivations_report.json": "6b6b110a2f711df5dcffd0d68bf8a5181315628dc7d1f5f560d83cb8dde69ae1",
-  "simulations-index.json": "8513c7f55e4deb436a7c574758a067f3705f14fdceb4a0daad5eab07aec2d49d",
-  "statistical_rigor_report.json": "e3a849c67b6a594befa015297f0474d6fed0e74c6f8d997894beebed99461ffc",
-  "statistics.json": "2ee2ef628764a9b1e876391867537b67d96a147bb3adf6cce5f29cdec3f86f69",
-  "terminology_audit.json": "b443675c81a9eede1fd492257541ca0ea1ae523ac2e9d231155fd6578acdd001",
-  "theory_output.json": "3045754c7c372ce73e0c92a7ec049a37ad9ab55c0facd14510b399b2492fc9fa",
-  "theory_overview.json": "e51c6e86a34232d4e20cec07ac25ad6c6eaadeee4f663db5b4a5a426d9480bf4",
+  "simulations-index.json": "497aa641b4587c65224b8c850eb8fce1455e44b0ee232f0b264d0b08817a3843",
+  "statistical_rigor_report.json": "1eef84830226afdaa577bdc5bdc37ffed158ad90cb1c9742fa4d3dae1614f966",
+  "statistics.json": "5d9ddb82c909628b77ac024ad1caf27f3a04260c1bebf2cb0ec764e0aa606c6d",
+  "terminology_audit.json": "5b1efde798058b590726c630194c4a218e1cd1a7bb86b609906af2bf84f5eb0c",
+  "theory_output.json": "b37bd21a42a6cb7d05f8c49c6a583c7699559f34d8bae1f6152fb2477e058b77",
+  "theory_overview.json": "daaf45dc77a83cc4e662bec3a53d7e6f7800deceef3b3e0f9a9d32e703892d70",
   "validation_report.json": "d2a8325cd52d1a109394694c30758c6f7d5b5004b4a644c7ec6115aa38adc830",
-  "variants.json": "1fbc7989d43f28b501e94ffd59752c7a2805014cf33e12a4ea18bbfd000fc455"
+  "variants.json": "f52170689aeb8e192495b89efea4883be838a1738692f0913082c49b3de6910a"
  },
  "paths": [
   {
@@ -67,6 +72,9 @@
    "label": "Main path",
    "status": "active",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -102,6 +110,9 @@
    "label": "b3_origin = arc_flag_stabiliser",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -130,7 +141,9 @@
    },
    "summary": "24 as the order of a Fano arc stabiliser, 12 flags x 2",
    "consequence": "BUYS: a fully derived orbit-stabiliser identity -- the 12 flags of an arc biject with (4 faces) x (3 blocks) and the flag stabiliser has order 2, verified for all seven arcs, from the framework's own phi.\nCOSTS: it is a subgroup ORDER, not a count of 3-cycles or harmonic 3-forms, so it does not clear the A4 bar and is labelled NUMERICAL. Adopting it would restate the index-for-geometry error this register exists to catch.",
-   "decision_refs": [],
+   "decision_refs": [
+    "D-023"
+   ],
    "id": "b3_origin--arc_flag_stabiliser",
    "computed": true,
    "inert": true,
@@ -138,7 +151,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 415
    },
    "failed_steps": []
   },
@@ -147,6 +160,9 @@
    "label": "b3_origin = d4_root_shell",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -175,7 +191,9 @@
    },
    "summary": "24 as the D4 root count, forced by its Coxeter number",
    "consequence": "BUYS: the count is FORCED rather than matched -- for any finite root system |roots| = rank x Coxeter number, and D4 has rank 4 with h = 6. The framework already lives in G2 subset Spin(7) subset Spin(8) = D4, the roots form a shell splitting 12 + 12, and roots are genuine directions rather than labels.\nCOSTS: those directions live in a 4-dimensional Cartan space while b_3 counts 3-forms on a 7-manifold, with no map between them; 24 is also not a G2 irrep dimension. The 12 + 12 split additionally costs a Weyl chamber choice. NUMERICAL.",
-   "decision_refs": [],
+   "decision_refs": [
+    "D-023"
+   ],
    "id": "b3_origin--d4_root_shell",
    "computed": true,
    "inert": true,
@@ -183,7 +201,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 252
    },
    "failed_steps": []
   },
@@ -192,6 +210,9 @@
    "label": "b3_origin = input_24",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -220,7 +241,9 @@
    },
    "summary": "b_3 = 24 as a stated input, origin open (off-family)",
    "consequence": "BUYS: honesty. The seed is registered INPUT, the free-variable ledger counts it, and no derivation is claimed that does not exist.\nCOSTS: w_0 = -(b_3-1)/b_3, n_gen = b_3/8 and alpha_T become predictions from a stated input rather than from derived geometry, so the zero-parameter claim cannot hold while this branch is taken.",
-   "decision_refs": [],
+   "decision_refs": [
+    "D-023"
+   ],
    "id": "b3_origin--input_24",
    "computed": true,
    "inert": true,
@@ -228,7 +251,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 380
    },
    "failed_steps": []
   },
@@ -237,6 +260,9 @@
    "label": "b3_origin = joyce_twisted_sector",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -265,7 +291,9 @@
    },
    "summary": "24 = 7 flat + twisted, from an admissible resolution",
    "consequence": "BUYS: the only candidate that would produce actual 3-cycles. The flat contribution is derived to be exactly 7, and half_shift_enumeration surveys all 458,752 assignments, imposes pairwise-disjointness and finds the canonical 12-family Joyce structure.\nCOSTS: undecidable here. Converting families to Betti numbers needs the per-type contribution table, so this branch is inert until joyce_contribution_table supplies one. Selecting it without the table asserts what it cannot compute.",
-   "decision_refs": [],
+   "decision_refs": [
+    "D-023"
+   ],
    "id": "b3_origin--joyce_twisted_sector",
    "computed": true,
    "inert": true,
@@ -273,7 +301,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 276
    },
    "failed_steps": []
   },
@@ -282,6 +310,9 @@
    "label": "b3_seed = seed_24",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_24",
     "n_gen_source": "b2_over_faces",
@@ -314,7 +345,7 @@
    "id": "b3_seed--seed_24",
    "computed": true,
    "inert": false,
-   "changed_values": 3338,
+   "changed_values": 3452,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -339,6 +370,7 @@
     "compression_report.json",
     "config_drift_audit.json",
     "consistency_beacons.json",
+    "core_paper.json",
     "dependency_chains.json",
     "eml_cross_check.json",
     "eml_crosscheck.json",
@@ -348,6 +380,7 @@
     "eml_trees_v25.json",
     "formula_renders.json",
     "formulas.json",
+    "geometry_to_physics.json",
     "identity_ledger.json",
     "improvement_scorecard.json",
     "metadata.json",
@@ -369,11 +402,10 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 102
+    "secs": 196
    },
    "failed_steps": [
-    "audit_shadow_derivations_across_the_registry",
-    "report_executable_forks"
+    "audit_shadow_derivations_across_the_registry"
    ]
   },
   {
@@ -381,6 +413,9 @@
    "label": "bulk_signature = 25_1",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -417,7 +452,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 191
    },
    "failed_steps": []
   },
@@ -426,6 +461,9 @@
    "label": "bulk_signature = 26_2",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -462,7 +500,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 268
    },
    "failed_steps": []
   },
@@ -471,6 +509,9 @@
    "label": "chi_eff_route = constant_144",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -505,12 +546,15 @@
    ],
    "id": "chi_eff_route--constant_144",
    "computed": true,
-   "inert": true,
-   "changed_values": 0,
-   "changed_artifacts": [],
+   "inert": false,
+   "changed_values": 5,
+   "changed_artifacts": [
+    "core_paper.json",
+    "sections.json"
+   ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 365
    },
    "failed_steps": []
   },
@@ -519,6 +563,9 @@
    "label": "chi_eff_route = seed_dependent",
    "status": "disabled",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -553,12 +600,15 @@
    ],
    "id": "chi_eff_route--seed_dependent",
    "computed": true,
-   "inert": true,
-   "changed_values": 0,
-   "changed_artifacts": [],
+   "inert": false,
+   "changed_values": 5,
+   "changed_artifacts": [
+    "core_paper.json",
+    "sections.json"
+   ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 196
    },
    "failed_steps": []
   },
@@ -567,6 +617,9 @@
    "label": "chi_eff_route = unruled",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -601,12 +654,15 @@
    ],
    "id": "chi_eff_route--unruled",
    "computed": true,
-   "inert": true,
-   "changed_values": 0,
-   "changed_artifacts": [],
+   "inert": false,
+   "changed_values": 5,
+   "changed_artifacts": [
+    "core_paper.json",
+    "sections.json"
+   ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 421
    },
    "failed_steps": []
   },
@@ -615,6 +671,9 @@
    "label": "dark_energy_betti = b2_4",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -651,7 +710,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 198
    },
    "failed_steps": []
   },
@@ -660,6 +719,9 @@
    "label": "dark_energy_betti = b3_live",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -696,7 +758,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 192
    },
    "failed_steps": []
   },
@@ -705,6 +767,9 @@
    "label": "dark_energy_betti = bridges_12",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -736,12 +801,14 @@
    "decision_refs": [],
    "id": "dark_energy_betti--bridges_12",
    "computed": true,
-   "inert": true,
-   "changed_values": 0,
-   "changed_artifacts": [],
+   "inert": false,
+   "changed_values": 1,
+   "changed_artifacts": [
+    "observer_report.json"
+   ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 198
    },
    "failed_steps": []
   },
@@ -750,6 +817,9 @@
    "label": "dark_energy_betti = chi_over_b3_6",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -786,7 +856,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 216
    },
    "failed_steps": []
   },
@@ -795,6 +865,9 @@
    "label": "dark_energy_betti = ngen_3",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -831,7 +904,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 199
    },
    "failed_steps": []
   },
@@ -840,6 +913,9 @@
    "label": "dark_energy_betti = octonion_8",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -876,7 +952,77 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 111
+    "secs": 192
+   },
+   "failed_steps": []
+  },
+  {
+   "kind": "deviation",
+   "label": "dark_energy_mechanism = mep_11_13",
+   "status": "disabled",
+   "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "mep_11_13",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "b2_over_faces",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "dark_energy_mechanism",
+    "option": "mep_11_13",
+    "from": "thawing_quintessence",
+    "question": "What sets the dark-energy equation of state w0 (the mechanism)?"
+   },
+   "summary": "w0 = -(D-1)/(D+1) = -11/13 at D = 12 (maximum entropy production)",
+   "consequence": "WIRED D-022. Catalogue: w0 = -0.846, 1.76 sigma vs DESI 2025; replaced 2025-12-31 by thawing quintessence. restored_from: 5755a1e0:config.py (not in any local repository; the formula is the D_eff form quoted in dark_energy.py), source a40b0bfa.",
+   "decision_refs": [
+    "D-022"
+   ],
+   "id": "dark_energy_mechanism--mep_11_13",
+   "computed": true,
+   "inert": false,
+   "changed_values": 223,
+   "changed_artifacts": [
+    "GATES_72.json",
+    "GATES_72_v16_2.json",
+    "GATES_CERTIFICATES.json",
+    "canonical_values.json",
+    "certificates/G48_w0_equation_of_state.json",
+    "config_drift_audit.json",
+    "eml_crosscheck.json",
+    "eml_dependency_chains.json",
+    "formulas.json",
+    "free_variables.json",
+    "geometry_to_physics.json",
+    "hardcode_audit.json",
+    "metadata.json",
+    "parameters.json",
+    "sections.json",
+    "shadow_derivations_report.json",
+    "statistical_rigor_report.json",
+    "theory_output.json",
+    "validation_report.json"
+   ],
+   "build": {
+    "exit": 0,
+    "secs": 484
    },
    "failed_steps": []
   },
@@ -885,6 +1031,9 @@
    "label": "face_genericity = all",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -921,7 +1070,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 191
    },
    "failed_steps": []
   },
@@ -930,6 +1079,9 @@
    "label": "flavour_seed_coupling = calibrated_24",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -962,76 +1114,32 @@
    "id": "flavour_seed_coupling--calibrated_24",
    "computed": true,
    "inert": false,
-   "changed_values": 148,
+   "changed_values": 166,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "arithma_trees.json",
     "certificates/G19_neutrino_neutrality.json",
     "certificates/G72_the_omega_hash.json",
+    "core_paper.json",
     "dependency_chains.json",
     "eml_crosscheck.json",
     "eml_trees_v25.json",
     "formulas.json",
+    "geometry_to_physics.json",
     "improvement_scorecard.json",
     "metadata.json",
     "mismatches.json",
     "named_constants.json",
     "parameters.json",
+    "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
     "theory_output.json",
     "validation_report.json"
    ],
    "build": {
-    "exit": 1,
-    "secs": 111
-   },
-   "failed_steps": [
-    "report_executable_forks"
-   ]
-  },
-  {
-   "kind": "deviation",
-   "label": "g2_construction = fano_tcs",
-   "status": "considered",
-   "selection": {
-    "re_t_adoption": "calibrated",
-    "b3_seed": "seed_43_joyce",
-    "n_gen_source": "b2_over_faces",
-    "b3_origin": "derived_joyce_a1",
-    "joyce_contribution_table": "absent",
-    "g2_form_convention": "octonion_derived",
-    "flavour_seed_coupling": "follow_seed",
-    "metric_construction": "quadratic_contraction",
-    "chi_eff_route": "k3_reading",
-    "twisted_norm_convention": "orbit_sum",
-    "lattice_24d": "leech",
-    "g2_construction": "fano_tcs",
-    "moduli_indexing": "b3_clusters",
-    "bulk_signature": "24_2",
-    "dark_energy_betti": "b3_24",
-    "render_policy": "strict",
-    "theory_uncertainty_policy": "cited_only",
-    "face_genericity": "generic",
-    "seed_selection": "wa1_correspondence"
-   },
-   "deviation": {
-    "fork": "g2_construction",
-    "option": "fano_tcs",
-    "from": "joyce_orbifold",
-    "question": "Which construction realises the G2 manifold?"
-   },
-   "summary": "Twisted connected sum of Fano-pair building blocks",
-   "consequence": "COSTS: b3 = 24 sits far outside what anyone has realised. The source says 'For the examples of twisted connected sums given in Kovalev's paper, he realizes 71 <= b3(M) <= 155'. Note the strength: that is a range of exhibited examples, not a proved bound, so this is a very strong exclusion rather than an impossibility proof.\nNOT the problem: b2. The same source gives '0 <= b2(M) <= 9' for twisted connected sums, which b2 = 4 satisfies comfortably.\nWITHDRAWN: the claim that TCS forces b2 + b3 odd. The source's own relation (2.17), b3(M) + b2(M) = b3(V1) + b3(V2) + 23, makes the parity depend on the building blocks -- odd only when b3(V1) + b3(V2) is even. There is no universal parity constraint, and the b2 = 7 proposal built on one is dropped.",
-   "decision_refs": [],
-   "id": "g2_construction--fano_tcs",
-   "computed": true,
-   "inert": true,
-   "changed_values": 0,
-   "changed_artifacts": [],
-   "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 221
    },
    "failed_steps": []
   },
@@ -1040,6 +1148,9 @@
    "label": "g2_form_convention = all_plus_one",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1075,24 +1186,173 @@
    "id": "g2_form_convention--all_plus_one",
    "computed": true,
    "inert": false,
-   "changed_values": 61,
+   "changed_values": 241,
    "changed_artifacts": [
+    "arithma_trees.json",
+    "beginner-guide.json",
+    "core_paper.json",
+    "eml_trees.json",
     "formulas.json",
+    "geometry_to_physics.json",
+    "mismatches.json",
     "sections.json",
     "theory_output.json",
     "theory_overview.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 108
+    "secs": 458
    },
    "failed_steps": []
+  },
+  {
+   "kind": "deviation",
+   "label": "h0_route = kk_bridge",
+   "status": "disabled",
+   "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "kk_bridge",
+    "dark_energy_mechanism": "thawing_quintessence",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "b2_over_faces",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "h0_route",
+    "option": "kk_bridge",
+    "from": "odowd_composite",
+    "question": "Where does the displayed H0 (cosmology.H0_local) come from?"
+   },
+   "summary": "early-dark-energy-like KK modes shift H0 through the sound horizon",
+   "consequence": "WIRED D-022 with the steps of hubble_tension.HubbleTensionEDE.run. Catalogue: REFUTED; lightest KK mass ~5e28 eV vs ~1e-28 eV needed, ~57 orders off; H0 stays at the Planck value to ~5e-7. restored_from: main:src/metaphysica/simulations/PM/cosmology/hubble_tension.py.",
+   "decision_refs": [
+    "D-022"
+   ],
+   "id": "h0_route--kk_bridge",
+   "computed": true,
+   "inert": false,
+   "changed_values": 109,
+   "changed_artifacts": [
+    "GATES_72.json",
+    "GATES_72_v16_2.json",
+    "GATES_CERTIFICATES.json",
+    "canonical_values.json",
+    "certificates/G47_hubble_unwinding_rate.json",
+    "certificates/G72_the_omega_hash.json",
+    "eml_crosscheck.json",
+    "eml_trees_v25.json",
+    "formulas.json",
+    "improvement_scorecard.json",
+    "parameters.json",
+    "proof_completeness_ledger.json",
+    "sections.json",
+    "shadow_derivations_report.json",
+    "statistical_rigor_report.json",
+    "theory_output.json",
+    "validation_report.json"
+   ],
+   "build": {
+    "exit": 1,
+    "secs": 317
+   },
+   "failed_steps": [
+    "audit_shadow_derivations_across_the_registry"
+   ]
+  },
+  {
+   "kind": "deviation",
+   "label": "h0_route = ricci_flow",
+   "status": "disabled",
+   "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "ricci_flow",
+    "dark_energy_mechanism": "thawing_quintessence",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "b2_over_faces",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "h0_route",
+    "option": "ricci_flow",
+    "from": "odowd_composite",
+    "question": "Where does the displayed H0 (cosmology.H0_local) come from?"
+   },
+   "summary": "H0 = H0_planck (1 + sin^2(31 deg)/2) via G2 Ricci flow",
+   "consequence": "WIRED D-022. Catalogue: 3.17 sigma from SH0ES (76.34); still published as cosmology.H0_ricci_variant; fitted angle THETA_MIXING_13D_26D_DEG = 31. restored_from: main:src/metaphysica/simulations/PM/cosmology/ricci_flow_h0.py; source engine 871a296, 2beca44.",
+   "decision_refs": [
+    "D-022"
+   ],
+   "id": "h0_route--ricci_flow",
+   "computed": true,
+   "inert": false,
+   "changed_values": 110,
+   "changed_artifacts": [
+    "GATES_72.json",
+    "GATES_72_v16_2.json",
+    "GATES_CERTIFICATES.json",
+    "canonical_values.json",
+    "certificates/G47_hubble_unwinding_rate.json",
+    "certificates/G72_the_omega_hash.json",
+    "eml_crosscheck.json",
+    "eml_trees_v25.json",
+    "formulas.json",
+    "improvement_scorecard.json",
+    "parameters.json",
+    "proof_completeness_ledger.json",
+    "sections.json",
+    "shadow_derivations_report.json",
+    "statistical_rigor_report.json",
+    "theory_output.json",
+    "validation_report.json"
+   ],
+   "build": {
+    "exit": 1,
+    "secs": 384
+   },
+   "failed_steps": [
+    "audit_shadow_derivations_across_the_registry"
+   ]
   },
   {
    "kind": "deviation",
    "label": "joyce_contribution_table = supplied",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1129,7 +1389,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 111
+    "secs": 278
    },
    "failed_steps": []
   },
@@ -1138,6 +1398,9 @@
    "label": "lattice_24d = niemeier_e8x3",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1174,7 +1437,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 467
    },
    "failed_steps": []
   },
@@ -1183,6 +1446,9 @@
    "label": "metric_construction = hitchin_cubic",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1211,25 +1477,28 @@
    },
    "summary": "Hitchin's cubic construction on the 3-form",
    "consequence": "BUYS: a metric that actually depends on the GL(7) orbit. It gives a flat positive-definite metric on the compact branch, exhibits signature (4,3) on the adopted split branch, is stable under rotation, general GL(7) and reflection, and RAISES on an unstable phi instead of returning a matrix for a 3-form that induces no metric.\nCOSTS: on the adopted all-(+1) phi it is INDEFINITE, so anything downstream expecting a Riemannian metric would be consuming a signature-(4,3) object. That is not a defect in the construction but an honest report of what the adopted phi induces -- and it means this branch and g2_form_convention = octonion_derived belong together if a Riemannian metric is wanted.\nALSO LIMITED, measured: g_phi is not covariant under the obvious pushforward, because B contracts with epsilon, which transforms as a density rather than a fixed array. g(h*phi) is not proportional to h^T g(phi) h. The signature is still frame-robust up to overall sign, which is what the classification uses.",
-   "decision_refs": [],
+   "decision_refs": [
+    "D-023"
+   ],
    "id": "metric_construction--hitchin_cubic",
    "computed": true,
    "inert": true,
    "changed_values": 0,
    "changed_artifacts": [],
    "build": {
-    "exit": 1,
-    "secs": 110
+    "exit": 0,
+    "secs": 207
    },
-   "failed_steps": [
-    "report_executable_forks"
-   ]
+   "failed_steps": []
   },
   {
    "kind": "deviation",
    "label": "moduli_indexing = b2_gauge",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1266,7 +1535,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 109
+    "secs": 462
    },
    "failed_steps": []
   },
@@ -1275,6 +1544,9 @@
    "label": "moduli_indexing = cy3_shadow",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1311,7 +1583,118 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 111
+    "secs": 357
+   },
+   "failed_steps": []
+  },
+  {
+   "kind": "deviation",
+   "label": "n_gen_source = chi_eff_over_48",
+   "status": "considered",
+   "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "chi_eff_over_48",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "n_gen_source",
+    "option": "chi_eff_over_48",
+    "from": "b2_over_faces",
+    "question": "Which geometric quantity supplies the generation count?"
+   },
+   "summary": "n_gen = chi_eff_total/48 (144/48 = 3), generations from the effective Euler characteristic",
+   "consequence": "WIRED D-022: FormulasRegistry.n_gen reads chi_eff_total/48. Catalogue (3ba5848): fails on the whole Joyce family on both chi_eff branches; 6 b3/48 = b3/8 identically, so not independent. Under D-009 it survives as n_gen = chi_eff/48 = n with the K3 reading. restored_from: main:src/metaphysica/simulations/PM/geometry/chi_eff_branches.py; source metaphysica/docs/DISCARDED_PATH_COVERAGE.md rows 22, 23. Expected: 3 on the registry's own chi_eff_total = 144.",
+   "decision_refs": [
+    "D-009",
+    "D-022"
+   ],
+   "id": "n_gen_source--chi_eff_over_48",
+   "computed": true,
+   "inert": false,
+   "changed_values": 22,
+   "changed_artifacts": [
+    "core_paper.json",
+    "formulas.json",
+    "sections.json",
+    "theory_output.json"
+   ],
+   "build": {
+    "exit": 0,
+    "secs": 474
+   },
+   "failed_steps": []
+  },
+  {
+   "kind": "deviation",
+   "label": "n_gen_source = chi_over_24",
+   "status": "disabled",
+   "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "chi_over_24",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "n_gen_source",
+    "option": "chi_over_24",
+    "from": "b2_over_faces",
+    "question": "Which geometric quantity supplies the generation count?"
+   },
+   "summary": "n_gen = chi_eff/24 (the per-sector chi_eff, 72/24 = 3)",
+   "consequence": "WIRED D-022: FormulasRegistry.n_gen reads chi_eff_sector/24. Catalogue: corrected from chi/2 to chi/24 for 8D manifolds on 2025-11-22 (source 48ec267c); kept as the sector-level formula in v20.1 (FormulasRegistry v20.1 'Formula A'). restored_from: none (current source). Expected: 3, the same as the adopted route, because the source supplies chi_eff_sector = 72.",
+   "decision_refs": [
+    "D-022"
+   ],
+   "id": "n_gen_source--chi_over_24",
+   "computed": true,
+   "inert": false,
+   "changed_values": 22,
+   "changed_artifacts": [
+    "core_paper.json",
+    "formulas.json",
+    "sections.json",
+    "theory_output.json"
+   ],
+   "build": {
+    "exit": 0,
+    "secs": 354
    },
    "failed_steps": []
   },
@@ -1320,6 +1703,9 @@
    "label": "re_t_adoption = computed_vacuum",
    "status": "disabled",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "computed_vacuum",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1358,7 +1744,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 168
+    "secs": 399
    },
    "failed_steps": []
   },
@@ -1367,6 +1753,9 @@
    "label": "render_policy = permissive",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1399,13 +1788,14 @@
    "id": "render_policy--permissive",
    "computed": true,
    "inert": false,
-   "changed_values": 47,
+   "changed_values": 50,
    "changed_artifacts": [
-    "formula_renders.json"
+    "formula_renders.json",
+    "observer_report.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 192
    },
    "failed_steps": []
   },
@@ -1414,6 +1804,9 @@
    "label": "seed_selection = ruling_only",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1448,16 +1841,144 @@
    "id": "seed_selection--ruling_only",
    "computed": true,
    "inert": false,
-   "changed_values": 20,
+   "changed_values": 33,
    "changed_artifacts": [
+    "core_paper.json",
     "formulas.json",
+    "geometry_to_physics.json",
     "sections.json",
     "theory_output.json",
     "theory_overview.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 191
+   },
+   "failed_steps": []
+  },
+  {
+   "kind": "deviation",
+   "label": "spectral_index_route = one_minus_2_over_b3",
+   "status": "disabled",
+   "selection": {
+    "spectral_index_route": "one_minus_2_over_b3",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "b2_over_faces",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "spectral_index_route",
+    "option": "one_minus_2_over_b3",
+    "from": "golden_modulated",
+    "question": "Where does the spectral index n_s come from?"
+   },
+   "summary": "n_s = 1 - 2/b3",
+   "consequence": "WIRED D-022. Catalogue: 11.48 sigma off; replaced 2026-01-10. GeometricAnchors.n_s docstring v16.0: 0.9167 at b3 = 24. restored_from: 2c246586:config.py (parent of 0b984a37); source 0b984a37. Each consumer uses its own b3 (inflation B3_SEED = 24; GeometricAnchors.elder_kads).",
+   "decision_refs": [
+    "D-022"
+   ],
+   "id": "spectral_index_route--one_minus_2_over_b3",
+   "computed": true,
+   "inert": false,
+   "changed_values": 87,
+   "changed_artifacts": [
+    "eml_crosscheck.json",
+    "eml_trees_v25.json",
+    "formulas.json",
+    "geometry_to_physics.json",
+    "metadata.json",
+    "parameters.json",
+    "proof_completeness_ledger.json",
+    "sections.json",
+    "shadow_derivations_report.json",
+    "statistical_rigor_report.json",
+    "theory_output.json",
+    "validation_report.json"
+   ],
+   "build": {
+    "exit": 0,
+    "secs": 250
+   },
+   "failed_steps": []
+  },
+  {
+   "kind": "deviation",
+   "label": "spectral_index_route = re_t_slow_roll",
+   "status": "disabled",
+   "selection": {
+    "spectral_index_route": "re_t_slow_roll",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
+    "re_t_adoption": "calibrated",
+    "b3_seed": "seed_43_joyce",
+    "n_gen_source": "b2_over_faces",
+    "b3_origin": "derived_joyce_a1",
+    "joyce_contribution_table": "absent",
+    "g2_form_convention": "octonion_derived",
+    "flavour_seed_coupling": "follow_seed",
+    "metric_construction": "quadratic_contraction",
+    "chi_eff_route": "k3_reading",
+    "twisted_norm_convention": "orbit_sum",
+    "lattice_24d": "leech",
+    "g2_construction": "joyce_orbifold",
+    "moduli_indexing": "b3_clusters",
+    "bulk_signature": "24_2",
+    "dark_energy_betti": "b3_24",
+    "render_policy": "strict",
+    "theory_uncertainty_policy": "cited_only",
+    "face_genericity": "generic",
+    "seed_selection": "wa1_correspondence"
+   },
+   "deviation": {
+    "fork": "spectral_index_route",
+    "option": "re_t_slow_roll",
+    "from": "golden_modulated",
+    "question": "Where does the spectral index n_s come from?"
+   },
+   "summary": "V ~ W_flux + W_inst; epsilon = 3/(2 Re(T)^2); n_s = 1 - 6 eps + 2 eta",
+   "consequence": "WIRED D-022. Catalogue: n_s = 0.9996, FALSIFIED at 8.3 sigma vs Planck 2018 (8.263 sigma FAIL); still rescored every build as cosmology.n_s_slow_roll; Re(T) inputs off-path. restored_from: main:src/metaphysica/simulations/PM/cosmology/inflation.py; source metaphysica/docs/DISCARDED_PATH_COVERAGE.md row 41.",
+   "decision_refs": [
+    "D-022"
+   ],
+   "id": "spectral_index_route--re_t_slow_roll",
+   "computed": true,
+   "inert": false,
+   "changed_values": 86,
+   "changed_artifacts": [
+    "eml_crosscheck.json",
+    "eml_trees_v25.json",
+    "formulas.json",
+    "geometry_to_physics.json",
+    "metadata.json",
+    "parameters.json",
+    "proof_completeness_ledger.json",
+    "sections.json",
+    "shadow_derivations_report.json",
+    "statistical_rigor_report.json",
+    "theory_output.json",
+    "validation_report.json"
+   ],
+   "build": {
+    "exit": 0,
+    "secs": 275
    },
    "failed_steps": []
   },
@@ -1466,6 +1987,9 @@
    "label": "theory_uncertainty_policy = always",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1498,13 +2022,15 @@
    "id": "theory_uncertainty_policy--always",
    "computed": true,
    "inert": false,
-   "changed_values": 62,
+   "changed_values": 83,
    "changed_artifacts": [
+    "geometry_to_physics.json",
+    "sections.json",
     "validation_report.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 211
    },
    "failed_steps": []
   },
@@ -1513,6 +2039,9 @@
    "label": "theory_uncertainty_policy = experimental_only",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1545,13 +2074,14 @@
    "id": "theory_uncertainty_policy--experimental_only",
    "computed": true,
    "inert": false,
-   "changed_values": 53,
+   "changed_values": 54,
    "changed_artifacts": [
+    "geometry_to_physics.json",
     "validation_report.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 110
+    "secs": 195
    },
    "failed_steps": []
   },
@@ -1560,6 +2090,9 @@
    "label": "twisted_norm_convention = orbit_average",
    "status": "considered",
    "selection": {
+    "spectral_index_route": "golden_modulated",
+    "h0_route": "odowd_composite",
+    "dark_energy_mechanism": "thawing_quintessence",
     "re_t_adoption": "calibrated",
     "b3_seed": "seed_43_joyce",
     "n_gen_source": "b2_over_faces",
@@ -1591,16 +2124,16 @@
    "decision_refs": [],
    "id": "twisted_norm_convention--orbit_average",
    "computed": true,
-   "inert": true,
-   "changed_values": 0,
-   "changed_artifacts": [],
+   "inert": false,
+   "changed_values": 1,
+   "changed_artifacts": [
+    "observer_report.json"
+   ],
    "build": {
-    "exit": 1,
-    "secs": 110
+    "exit": 0,
+    "secs": 209
    },
-   "failed_steps": [
-    "report_executable_forks"
-   ]
+   "failed_steps": []
   }
  ],
  "not_computed": [
@@ -1621,6 +2154,12 @@
    "fork": "b3_seed",
    "option": "seed_7_joyce",
    "reason": "ValueError: seed path 'seed_7_joyce' gives n_gen = 0.0 via b2_over_faces, which is not three. The n_gen_source fork must move with b3_seed; a generation count is a number of things."
+  },
+  {
+   "id": "g2_construction--fano_tcs",
+   "fork": "g2_construction",
+   "option": "fano_tcs",
+   "reason": "ValueError: g2_construction 'fano_tcs' is refused: no cited building blocks are in the engine, so nothing on this path is a construction; exhibited TCS examples have 71 <= b3 <= 155 (arXiv:1810.12659)"
   },
   {
    "id": "n_gen_source--b3_over_dim_O",

@@ -1,7 +1,56 @@
 {
   "version": "24.2",
-  "count": 204,
+  "count": 206,
   "references": {
+    "joyce2000": {
+      "id": "joyce2000",
+      "authors": "Joyce, D.D.",
+      "title": "Compact Manifolds with Special Holonomy",
+      "year": 2000,
+      "publisher": "Oxford University Press",
+      "doi": "10.1093/oso/9780198506010.001.0001",
+      "url": "https://doi.org/10.1093/oso/9780198506010.001.0001",
+      "type": "monograph",
+      "notes": "Existence of torsion-free G2 metrics on resolved orbifolds (Thm 11.6.1); no explicit metric is claimed.",
+      "source_simulation": "abstract_v17_2",
+      "also_registered_by": [
+        "geometric_anchors",
+        "g2_geometry_v16_0",
+        "closed_geometry_certificate",
+        "four_face_g2_structure",
+        "master_action_simulation_v22_0",
+        "alpha_rigor_v16_1",
+        "chirality_v16_0",
+        "mass_ratio_v23_0",
+        "neutrino_algebraic_v24_0",
+        "dark_energy_v16_0",
+        "dark_energy_thawing_v16_2",
+        "octonionic_mixing_v23_1",
+        "speed_of_light_v17_2",
+        "cosmological_constant_v16_1",
+        "pneuma_mechanism_v22_0",
+        "predictions_aggregator_v24_2",
+        "foundations_v16_2",
+        "integrity_v16_2",
+        "appendix_a_spectral_registry_v23_1",
+        "appendix_b_sum_rule_v23_1",
+        "appendix_e_brane_map_v16_2",
+        "appendix_f_72gates_v24_2",
+        "appendix_g_omega_seal_v24_2",
+        "appendix_i_terminal_states_v16_2",
+        "appendix_j_torsion_funnel_v16_2",
+        "appendix_k_sterile_constants_v16_2",
+        "appendix_l_omega_unwinding_v16_2",
+        "appendix_z_terminal_ledger_v24_2",
+        "lagrangian_master_derivation_v22",
+        "gauge_sector_complete_v19",
+        "gr_spacetime_derivations_v19",
+        "appendix_o_kk_reduction_v24_2",
+        "appendix_p_g2_holonomy_v24_2",
+        "appendix_q_index_theorem_v24_2",
+        "attractor_potential_v18"
+      ]
+    },
     "acharya_witten2001": {
       "id": "acharya_witten2001",
       "authors": "Acharya, B.S. and Witten, E.",
@@ -143,55 +192,6 @@
         "gauge_unification_v16_0",
         "fermion_generations_v16_0",
         "appendix_c_gauge_matrices_v16_2"
-      ]
-    },
-    "joyce2000": {
-      "key": "joyce2000",
-      "id": "joyce2000",
-      "authors": "Joyce, D.D.",
-      "title": "Compact Manifolds with Special Holonomy",
-      "year": 2000,
-      "publisher": "Oxford University Press",
-      "doi": "10.1093/oso/9780198506010.001.0001",
-      "url": "https://doi.org/10.1093/oso/9780198506010.001.0001",
-      "type": "book",
-      "relevance": "Foundation for G2 geometry. Formerly cited as the source of 'the Betti number b3=24'; the anchor is the fitted integer 24 while the live third Betti number is b_3 = 43, so the identification anchor = b_3 is WITHDRAWN here; the numbers below are unchanged and their topological provenance is OPEN pending an author ruling",
-      "source_simulation": "geometric_anchors",
-      "also_registered_by": [
-        "g2_geometry_v16_0",
-        "closed_geometry_certificate",
-        "four_face_g2_structure",
-        "master_action_simulation_v22_0",
-        "alpha_rigor_v16_1",
-        "chirality_v16_0",
-        "mass_ratio_v23_0",
-        "neutrino_algebraic_v24_0",
-        "dark_energy_v16_0",
-        "dark_energy_thawing_v16_2",
-        "octonionic_mixing_v23_1",
-        "speed_of_light_v17_2",
-        "cosmological_constant_v16_1",
-        "pneuma_mechanism_v22_0",
-        "predictions_aggregator_v24_2",
-        "foundations_v16_2",
-        "integrity_v16_2",
-        "appendix_a_spectral_registry_v23_1",
-        "appendix_b_sum_rule_v23_1",
-        "appendix_e_brane_map_v16_2",
-        "appendix_f_72gates_v24_2",
-        "appendix_g_omega_seal_v24_2",
-        "appendix_i_terminal_states_v16_2",
-        "appendix_j_torsion_funnel_v16_2",
-        "appendix_k_sterile_constants_v16_2",
-        "appendix_l_omega_unwinding_v16_2",
-        "appendix_z_terminal_ledger_v24_2",
-        "lagrangian_master_derivation_v22",
-        "gauge_sector_complete_v19",
-        "gr_spacetime_derivations_v19",
-        "appendix_o_kk_reduction_v24_2",
-        "appendix_p_g2_holonomy_v24_2",
-        "appendix_q_index_theorem_v24_2",
-        "attractor_potential_v18"
       ]
     },
     "kovalev2003": {
@@ -499,6 +499,55 @@
       "relevance": "M-theory on Joyce manifolds (as K3 fibrations) dual to heterotic strings on T^3-fibred Calabi-Yau threefolds; massless spectra agree",
       "key": "acharya1996",
       "id": "acharya1996",
+      "source_simulation": "closed_geometry_certificate"
+    },
+    "bryant-1987": {
+      "authors": "Bryant, R. L.",
+      "title": "Metrics with exceptional holonomy",
+      "journal": "Ann. of Math. (2)",
+      "volume": "126",
+      "issue": "3",
+      "year": 1987,
+      "doi": "10.2307/1971360",
+      "url": "https://annals.math.princeton.edu/1987/126-3/p06",
+      "type": "article",
+      "relevance": "a torsion-free G2 structure has a Ricci-flat metric (first observed by Bonan, C. R. Acad. Sci. Paris 262, 1966, which has no DOI or online copy)",
+      "key": "bryant-1987",
+      "id": "bryant-1987",
+      "source_simulation": "closed_geometry_certificate",
+      "also_registered_by": [
+        "appendix_f_72gates_v24_2",
+        "appendix_p_g2_holonomy_v24_2"
+      ]
+    },
+    "eguchi_hanson1978": {
+      "authors": "Eguchi, T., Hanson, A. J.",
+      "title": "Asymptotically flat self-dual solutions to Euclidean gravity",
+      "journal": "Phys. Lett. B",
+      "volume": "74",
+      "pages": "249-251",
+      "year": 1978,
+      "type": "article",
+      "doi": "10.1016/0370-2693(78)90566-X",
+      "url": "https://doi.org/10.1016/0370-2693(78)90566-X",
+      "relevance": "the hyperkahler ALE metric that resolves each C^2/Z2 singularity",
+      "key": "eguchi_hanson1978",
+      "id": "eguchi_hanson1978",
+      "source_simulation": "closed_geometry_certificate"
+    },
+    "wang1989": {
+      "authors": "Wang, M. Y.",
+      "title": "Parallel spinors and parallel forms",
+      "journal": "Ann. Global Anal. Geom.",
+      "volume": "7",
+      "pages": "59-68",
+      "year": 1989,
+      "type": "article",
+      "doi": "10.1007/BF00137402",
+      "url": "https://doi.org/10.1007/BF00137402",
+      "relevance": "a parallel spinor exists only for holonomy SU(m), Sp(m), G2 or Spin(7); the count of invariant spinors (H7)",
+      "key": "wang1989",
+      "id": "wang1989",
       "source_simulation": "closed_geometry_certificate"
     },
     "kklt2003": {
@@ -1380,7 +1429,8 @@
       "source_simulation": "evolution_engine_v16_2",
       "also_registered_by": [
         "ricci_flow_h0_v16_1",
-        "results_v16_2"
+        "results_v16_2",
+        "appendix_z_terminal_ledger_v24_2"
       ]
     },
     "kids2021": {
@@ -1828,18 +1878,6 @@
       "url": "https://github.com/andrewkwatts/PrincipiaMetaphysica",
       "notes": "Original formulation of sterile sum rule constraint",
       "source_simulation": "appendix_b_sum_rule_v23_1"
-    },
-    "bryant-1987": {
-      "id": "bryant-1987",
-      "authors": "Bryant, R.L.",
-      "title": "Metrics with Exceptional Holonomy",
-      "year": "1987",
-      "doi": "10.2307/1971360",
-      "type": "journal",
-      "source_simulation": "appendix_f_72gates_v24_2",
-      "also_registered_by": [
-        "appendix_p_g2_holonomy_v24_2"
-      ]
     },
     "conway-sloane-1999": {
       "id": "conway-sloane-1999",

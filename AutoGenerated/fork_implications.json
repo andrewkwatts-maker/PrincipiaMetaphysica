@@ -6,10 +6,12 @@
     "bulk_signature": "24_2",
     "chi_eff_route": "k3_reading",
     "dark_energy_betti": "b3_24",
+    "dark_energy_mechanism": "thawing_quintessence",
     "face_genericity": "generic",
     "flavour_seed_coupling": "follow_seed",
     "g2_construction": "joyce_orbifold",
     "g2_form_convention": "octonion_derived",
+    "h0_route": "odowd_composite",
     "joyce_contribution_table": "absent",
     "lattice_24d": "leech",
     "metric_construction": "quadratic_contraction",
@@ -18,12 +20,13 @@
     "re_t_adoption": "calibrated",
     "render_policy": "strict",
     "seed_selection": "wa1_correspondence",
+    "spectral_index_route": "golden_modulated",
     "theory_uncertainty_policy": "cited_only",
     "twisted_norm_convention": "orbit_sum"
   },
-  "adopted_digest": "eb599ffd48c9baf8",
-  "n_forks": 19,
-  "n_deviations": 54,
+  "adopted_digest": "9ec96695c2cc2a4f",
+  "n_forks": 22,
+  "n_deviations": 64,
   "watched": {
     "observables": [
       "ancestral_roots",
@@ -642,6 +645,26 @@
       "n_changes": 0
     },
     {
+      "fork": "dark_energy_mechanism",
+      "option": "mep_11_13",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "dark_energy_mechanism",
+      "option": "thawing_quintessence",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
       "fork": "face_genericity",
       "option": "all",
       "is_adopted_option": false,
@@ -745,6 +768,36 @@
       "fork": "g2_form_convention",
       "option": "octonion_derived",
       "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "h0_route",
+      "option": "kk_bridge",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "h0_route",
+      "option": "odowd_composite",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "h0_route",
+      "option": "ricci_flow",
+      "is_adopted_option": false,
       "fork_status": "RULED",
       "observables_moved": [],
       "identities_flipped": [],
@@ -885,6 +938,26 @@
       "n_changes": 2
     },
     {
+      "fork": "n_gen_source",
+      "option": "chi_eff_over_48",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "n_gen_source",
+      "option": "chi_over_24",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
       "fork": "re_t_adoption",
       "option": "calibrated",
       "is_adopted_option": true,
@@ -938,6 +1011,36 @@
       "fork": "seed_selection",
       "option": "wa1_correspondence",
       "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "spectral_index_route",
+      "option": "golden_modulated",
+      "is_adopted_option": true,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "spectral_index_route",
+      "option": "one_minus_2_over_b3",
+      "is_adopted_option": false,
+      "fork_status": "RULED",
+      "observables_moved": [],
+      "identities_flipped": [],
+      "gates_changed": [],
+      "n_changes": 0
+    },
+    {
+      "fork": "spectral_index_route",
+      "option": "re_t_slow_roll",
+      "is_adopted_option": false,
       "fork_status": "RULED",
       "observables_moved": [],
       "identities_flipped": [],

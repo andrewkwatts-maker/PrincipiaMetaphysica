@@ -40,7 +40,7 @@
   },
   {
    "id": "G_GEOMETRY_BETTI",
-   "passed": true,
+   "passed": false,
    "detail": null
   },
   {
@@ -909,15 +909,15 @@
   },
   {
    "id": "CERT_INTRO_WORD_COUNT",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_KEY_CONCEPTS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_SUBSECTIONS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_ANCHOR_KGIMEL",
@@ -1009,6 +1009,10 @@
   },
   {
    "id": "CERT_Y7_SELECTION",
+   "holds": false
+  },
+  {
+   "id": "CERT_Y7_HOLONOMY_G2_METRIC",
    "holds": false
   },
   {
@@ -2540,13 +2544,13 @@
   }
  ],
  "changed": {
-  "count": 3338,
+  "count": 3452,
   "by_artifact": {
    "GATES_72.json": 28,
    "GATES_72_v16_2.json": 28,
    "GATES_CERTIFICATES.json": 55,
-   "arithma_trees.json": 37,
-   "beginner-guide.json": 26,
+   "arithma_trees.json": 40,
+   "beginner-guide.json": 38,
    "canonical_values.json": 1,
    "certificates/G02_holonomy_closure.json": 1,
    "certificates/G06_shadow_a_b_parity.json": 3,
@@ -2565,35 +2569,37 @@
    "compression_report.json": 9,
    "config_drift_audit.json": 6,
    "consistency_beacons.json": 4,
-   "dependency_chains.json": 12,
+   "core_paper.json": 12,
+   "dependency_chains.json": 14,
    "eml_cross_check.json": 13,
    "eml_crosscheck.json": 13,
-   "eml_dependency_chains.json": 48,
+   "eml_dependency_chains.json": 49,
    "eml_offer_policy.json": 1,
-   "eml_trees.json": 21,
+   "eml_trees.json": 22,
    "eml_trees_v25.json": 30,
-   "formula_renders.json": 17,
-   "formulas.json": 354,
+   "formula_renders.json": 18,
+   "formulas.json": 372,
+   "geometry_to_physics.json": 67,
    "identity_ledger.json": 17,
    "improvement_scorecard.json": 18,
    "metadata.json": 20,
-   "mismatches.json": 36,
+   "mismatches.json": 37,
    "named_constants.json": 2,
    "parameters.json": 322,
    "proof_completeness_ledger.json": 20,
    "reference_check.json": 2,
-   "references.json": 2,
-   "sections.json": 317,
+   "references.json": 1,
+   "sections.json": 361,
    "shadow_derivations_report.json": 46,
    "simulations-index.json": 1,
    "statistical_rigor_report.json": 38,
    "statistics.json": 3,
    "terminology_audit.json": 1,
-   "theory_output.json": 1437,
-   "theory_overview.json": 14,
+   "theory_output.json": 1389,
+   "theory_overview.json": 15,
    "validation_report.json": 287
   },
-  "bookkeeping_ops": 3
+  "bookkeeping_ops": 19
  },
  "unverified_files": [],
  "inert": false,
@@ -2601,12 +2607,6 @@
   {
    "id": "audit_shadow_derivations_across_the_registry",
    "title": "Audit shadow derivations across the registry",
-   "exit": 1,
-   "reason": null
-  },
-  {
-   "id": "report_executable_forks",
-   "title": "Report executable forks",
    "exit": 1,
    "reason": null
   }

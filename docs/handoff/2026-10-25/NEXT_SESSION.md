@@ -52,6 +52,17 @@ therefore showed the previous build's χ². A second statistics pass now runs af
 validator, covered by `tests/test_build_statistics_order.py`.
 
 ## Open
+- **Owner decision: the headline χ².** The abstract quotes the row χ² (1.64e11 over 73 rows, from `load_fit_summary`). The path comparison uses `framework_statistics` (3030 over 4 dof). Pick one headline.
+- **`dark_energy_betti` is active at `b3_24`** while main has b3 = 43. Its options were all inert on the sweep. Rule on it.
+- **Unreviewed superseded prose:** the 113 scanner hits already worded "retired" in the same passage were not reviewed one by one. Older wording also remains in `geometry/g2_geometry.py` and `geometry/geometric_anchors.py`.
+- **Unchecked rendering:** the callouts prepended in 3.7, whose blocks carry `&lt;Normal&gt;` and `&lt;EML&gt;` markup, have not been looked at on the page.
+- **Possibly flaky:** `test_b3_root_coverage::test_arithma_walk_degradation_is_bounded` failed in the full suite but passed alone.
+- `test_artifact_search_order` fails only when `METAPHYSICA_OUT` points at the site; that is expected.
+- **Owner decision: seed_24 fits data better than main.** It scores pass 43 and fail 20
+  (χ² 1869 over 4 dof), against main's pass 27 and fail 32 (χ² 3030). It still has no G2
+  closure theorem, so main stays on seed_43_joyce, and every superseded callout must say
+  both facts. Find out which rows move: diff `paths/b3_seed--seed_24/patch.json` against
+  main's `validation_report`.
 - **Seed the Jacobian stub.** `statistical_rigor_validator.generate_jacobian_matrix` uses
   unseeded `np.random`.
   - `dimensions_for_95_variance` flips between 21 and 22.
@@ -78,8 +89,115 @@ validator, covered by `tests/test_build_statistics_order.py`.
   - coupled deviations (seed plus n_gen_source) as computed paths. That needs a D-021
     amendment, because paths are single-option today.
 
+## Track A results: the G2 geometry is closed by theorem (D-023, engine 2197391)
+- **What changed.** `PM/geometry/g2_closure.py` measures every hypothesis of Joyce 2000
+  Thm 11.6.1 on the active path, H1-H8 with H4 split into a/b/c. Each measurement has a
+  failing control in `tests/test_g2_closure.py`. Existence, Ricci-flatness (Bonan) and
+  Hol = G2 (Joyce 1996 II, Prop 1.1.1) follow by citation. No explicit metric is claimed.
+- **Gates.** G_GEOMETRY_HOLONOMY, G_GEOMETRY_BETTI (now read from `joyce_resolution`,
+  b3 = 7 + 3 b2) and the certificates CERT_G2_HOLONOMY_RICCI and CERT_G2_TORSION_FREE now
+  PASS from those measurements on main.
+- **Off-path controls.**
+  - `all_plus_one`: OPEN at H2.
+  - `seed_24`: OPEN at H3, because the resolution reaches (12, 43), not (4, 24). The
+    Betti gate fails there.
+  - `g2_construction--fano_tcs`: refused by the engine, with its reason.
+- **Fork classification.**
+  - `metric_construction` is inert on the adopted form by design: both constructions
+    are a constant multiple of I_7.
+  - The `b3_origin` options written for 24 are inapplicable on seed 43.
+- **Bug fixed.** `glued_orbit_scan._flat_phi("all_plus_one")` returned the compact form.
+- **Tests.** The geometry-touching tests give 838 passed and 7 skipped.
+- **Follow-ups, done in engine 52d5bdb.**
+  - CG.13 is the `closed_geometry` theorem entry that cites `closure_report()`.
+  - inflation's B3_SEED = 24 only feeds the recovered `one_minus_2_over_b3` route.
+    The canonical n_s uses the K3 reading χ_eff = 48n = 144, which is
+    seed-independent (see D-024).
+
+## Paper, guides and site polish (D-024, engine 52d5bdb)
+- **Section 2.4.** Each theorem renders its statement, proof steps, sources and
+  checking test. CG.13 (`closed_geometry/holonomy.py`) publishes Joyce Thm 11.6.1
+  from the measured hypotheses. Ricci-flatness cites Bryant 1987 (DOI); Bonan 1966
+  has no DOI or online copy.
+- **Sections 7-9.** Generated from live state by `PM/paper/conclusions.py`. The
+  retired-path claims are removed, and each conclusion carries a status tag.
+  Anything not computed is marked OPEN.
+- **Final equations.**
+  - w0 = -42/43 is computed on the adopted seed; -23/24 is labelled superseded.
+  - Z.6, Z.10 and Z.7 to Z.9 are FALSIFIED as written at b3 = 43; Z.1 to Z.4 are
+    identities.
+  - `Formula.references` is new, and the final equations cite registered ids.
+  - Tests: `tests/test_final_equation_consistency.py`, `tests/test_discussion_section.py`.
+- **Beginner guide.** `PM/geometry/figures/` draws four SVGs from engine data: the
+  fold, the EH neck, the Betti count and the proof flow. The guide gains numbered
+  `steps`, and `js/pm-beginner-guide-loader.js` renders figures and steps.
+- **Static pages.** foundations, bridge-channel, index and yang-mills now name
+  b3 = 43 as adopted. b3 = 24 and TCS are labelled superseded and linked
+  `paths.html#b3_seed--seed_24`. Audit: `docs/plan/geometry/2026-10-25-conclusions-audit.md`.
+- **Yours to rule on.**
+  - M_KK: 4.5 TeV (the warped form at b3 = 24) or 5.0 TeV (a benchmark literal).
+    It is OPEN now.
+  - Re(T): `geometry.ReT` 174 is DERIVED and `cosmology.racetrack_Re_T` 7.086 is
+    CALIBRATED. The paper shows both and flags the mismatch.
+  - H0 (3.2, 3.2b): FITTED/OPEN, because nothing computes it on the adopted path.
+    Z.11 gives 40.8 at b3 = 43.
+  - ALP kill-switch A3.3: ANSATZ/OPEN, because neither 3.51 meV nor 111 eV is
+    derived on the path.
+  - Whether Joyce is an acceptable background citation for (8.2) to (8.5).
+- **Still to do.**
+  - Prose in `results.py` quotes b3 = 24 numbers under a notice block.
+  - The PMNS and GW-dispersion rows in section 8 are typed numbers.
+
+## Track B results: all 42 single-option deviations (sweep `runs_c`, engine 52d5bdb)
+paths-publish: 37 computed (22 inert), 6 not computed. site_check: 10/10 PASS.
+- **Main:**
+  - pass 27, marginal 15, tension 10, fail 32;
+  - χ² 3030.0985 over 4 dof;
+  - 48 gates failing.
+- **Change results:**
+  - `b3_seed--seed_24`: pass 43, marginal 13, tension 8, fail 20; χ² 1869.4372 over 4 dof; 45 gates failing. This is the retired TCS-era seed, and it fits data better than main. It has no closure theorem (fano_tcs is refused), so main keeps seed_43_joyce. This needs an owner decision; see Open.
+  - `theory_uncertainty_policy--always`: pass 32, fail 23. This is a reporting policy, not physics.
+  - `flavour_seed_coupling--calibrated_24`: pass 28, fail 31.
+  - `h0_route--{kk_bridge, ricci_flow}`: fail 33.
+  - `spectral_index_route--{one_minus_2_over_b3, re_t_slow_roll}`: pass 26, fail 33.
+  - `g2_form_convention--all_plus_one`: scoreboard unchanged, 49 gates failing (one more than main).
+- **Inert (22):** b3_origin ×4, bulk_signature ×2, chi_eff_route ×3, dark_energy_betti ×6, face_genericity, lattice_24d, metric_construction--hitchin_cubic, moduli_indexing ×2, re_t_adoption--computed_vacuum and twisted_norm_convention.
+- **Not computed (5; mep_11_13 now computes, see the bug list):**
+  - seed_7, seed_19 and seed_31 give n_gen = 0, 1 and 2;
+  - `g2_construction--fano_tcs` has no cited building blocks;
+  - `n_gen_source--b3_over_dim_O` gives a non-integral 5.375;
+- **Untriaged:** several computed paths fail the `report_executable_forks` and
+  `audit_shadow_derivations` steps (seed_24 fails both). Triage with `docs/plan/paths/triage.py`.
+
+## Core paper and walkthrough (D-025, engine branch `core-paper`)
+- **Abstract and introduction:** 227 and 613 words, generated live (`PM/paper/core_text.py`). The old texts are kept as the supplementary sections `extended-abstract` and `extended-introduction`.
+- **Core manifest:** 14 sections, about 27k of about 87k words (`core_manifest.py`, giving `core_paper.json`). The paper page has a Core / Full toggle (`js/pm-core-toggle.js`).
+- **Retired-path prose:** 30 blocks wrapped in a shared superseded-path callout (`PM/paper/superseded.py`). The ratchet test is pinned at 0.
+- **Walkthrough:** `Pages/geometry-to-physics.html` covers 35 steps over 9 stages, from `physics_chain.py`.
+- **Engine fixes:**
+  - hover markup never substitutes inside inserted spans;
+  - section 7 is refreshed from the build's own rigor report;
+  - the option-status pins were updated for D-022 and D-023;
+  - Bryant 1987 now uses one id;
+  - the prose's path comparison reads the committed `data/path_comparison.json`.
+- **Merge sweep:** a full site build (exit 0, χ² 3030.0985 over 4 dof), two fast mains matching it, publish (31 computed, 9 not computed), site_check 10/0, and 54 tests pass. The snapshot figures are unchanged.
+- **Bugs the sweep exposed (fixed on `core-paper`, each with a test):**
+  - **DEMON LOCK w0 seal:** it hard-coded −23/24, which blocked `dark_energy_mechanism--mep_11_13` (−11/13). The seal now follows the active mechanism (`demon_lock_guard.py`, test in `test_demon_lock_guard.py`).
+  - **"Report executable forks":** on every path run it read the override as drift and exited 1, halting 7 path builds. Drift is now checked only on runs without overrides; override runs are marked `not_checked` (`variants.describe`, test in `test_variants.py`).
+  - **`generate_statistics`:** it hit a KeyError 'chi_squared' when no sigma set existed. It now raises with the cause (`test_statistics_fail_early.py`).
+  - **Disk:** C: filled up (WinError 112). That killed `experimental_only`, `always` and `permissive`, truncated JSON in `octonion_8` and `seed_dependent`, and failed steps in `25_1` and `b3_live`. Runs now live in `H:/claude-scratch/runs_d`, and those 12 paths are being rerun.
+  - **w0 alias:** mep_11_13 still published w0 = −23/24, because `geometry.w_zero` (aliased to `cosmology.w0_derived` by `geometric_anchors`) and the EML cross-check ignored the mechanism. Both now follow it, and the path publishes −11/13 = −0.8462, 1.65σ from DESI's −0.957. Main is unchanged (`test_w0_alias_follows_mechanism.py`). Rerun: 38 computed, 5 not computed, snapshot UNCHANGED, site_check 10/0, 81 tests pass. Engine: `core-paper` abad6e6, merged to main 626ea6a.
+  - **Bundle drift:** the bundle's `js/eml_flow.js` was stale; the build syncs the real file from `eml_math.web`. The bundle copy is refreshed. The `index.html` difference is the build-injected overview, which is expected.
+- **Correct, not bugs:**
+  - Five paths are refused with reasons: seed_7, seed_19 and seed_31 (n_gen ≠ 3), fano_tcs, and b3_over_dim_O (5.375).
+  - On the paths `h0_route--kk_bridge`, `h0_route--ricci_flow` and `b3_seed--seed_24`, the shadow audit flags H0_local as a new conflict. That is a finding about the path.
+- **Stale and not yet removed:** `metaphysica/src/metaphysica/simulations/AutoGenerated` is a real, gitignored directory last written 2026-10-03. Every build warns about it, and nothing reads it in this sweep. Delete it if the owner agrees.
+
 ## Rebuild recipe
 Scripts are in `docs/plan/paths/`: `sweep.py` runs each deviation with `--fast --keep-going`,
 sequentially, because the AutoGenerated junction is shared. Then:
 `python -m metaphysica.testground paths-publish --theory pm --main-run <site> --volatile-run
 <fast main A> <fast main B> --runs <runs> --published <site> --out <site>/AutoGenerated/paths`
+Then refresh the prose snapshot and commit it if it changed:
+`python -m metaphysica.simulations.PM.paper.path_snapshot <site>/AutoGenerated/paths`.
+The full D-025 sequence is `docs/plan/paths/merge_d025.sh <scratch dir>`. Keep runs on H: (C: is at 99%); the sweep resumes, skipping runs that have DONE.json.

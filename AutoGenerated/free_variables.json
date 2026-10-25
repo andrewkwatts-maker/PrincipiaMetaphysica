@@ -6,9 +6,9 @@
   "free_variable_count_excluding_permitted": 67,
   "count_by_role": {
     "PERMITTED_OR_SCALE": 1,
-    "COMPARISON_ONLY": 19,
+    "COMPARISON_ONLY": 22,
     "LOAD_BEARING_INPUT": 11,
-    "UNRESOLVED": 37
+    "UNRESOLVED": 34
   },
   "count_by_status": {
     "ANSATZ": 8,
@@ -58,13 +58,51 @@
   ],
   "unnamed_declarations": [
     {
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1488",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1504",
       "callee": "set_param",
       "status": "MEASURED",
       "note": "path is a variable, so no row can name it; check by hand that the quantities it writes are covered"
     }
   ],
   "rows": [
+    {
+      "name": "abstract.alpha_gut_coefficient",
+      "value": 0.031831,
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:730",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:448",
+          "function": "get_layered_section_content",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in get_layered_section_content: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of abstract.alpha_gut_coefficient from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Coefficient 1/(10*pi) relating the GUT coupling to the spectral gap k_gimel",
+      "notes": []
+    },
+    {
+      "name": "abstract.fitted_pmns",
+      "value": 2,
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:712",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:445",
+          "function": "get_layered_section_content",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in get_layered_section_content: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of abstract.fitted_pmns from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Number of PMNS parameters fitted to NuFIT 6.0 pending explicit Yukawa calculation",
+      "notes": []
+    },
     {
       "name": "ckm.V_cb_triality",
       "value": 0.040671015229949876,
@@ -123,9 +161,28 @@
       "notes": []
     },
     {
+      "name": "cosmology.racetrack_Re_T",
+      "value": 7.086,
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:641",
+      "status": "CALIBRATED",
+      "source_kind": "PARAMETER_CALL",
+      "role": "COMPARISON_ONLY",
+      "role_evidence": [
+        {
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\conclusions.py:343",
+          "function": "<module>",
+          "kind": "CROSS_CHECK_GROUP",
+          "detail": "listed in RE_T_PATHS: a curated group, read for cross-checking rather than fed into a derivation"
+        }
+      ],
+      "closing_derivation": "Either a derivation of cosmology.racetrack_Re_T from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
+      "description": "Real part of the stabilized Kahler modulus entering the moduli damping factor exp(-Re(T)) = 8.38e-4. CALIBRATED, not derived: the source comment reads 'Re(T) = 7.086 chosen to match BBN baryon asymmetry eta_b ~ 6.1e-10', so the damping that closes eta_baryon_geometric was fitted to the quantity it helps predict. It sat outside the registry entirely -- declared as a formula input under a path nothi",
+      "notes": []
+    },
+    {
       "name": "higgs.lambda_0",
       "value": 0.129,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1032",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1033",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
@@ -264,13 +321,13 @@
     {
       "name": "fermion.mass_ratio_proton_electron",
       "value": 1836.1526738332332,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\mass_ratio.py:319",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\mass_ratio.py:320",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "COMPARISON_ONLY",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\theories\\pm\\results.py:40",
+          "location": "src\\metaphysica\\theories\\pm\\results.py:44",
           "function": "<module>",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in HEADLINE: a curated group, read for cross-checking rather than fed into a derivation"
@@ -320,7 +377,7 @@
           "detail": "listed in mass_sum_rows: a curated group, read for cross-checking rather than fed into a derivation"
         },
         {
-          "location": "src\\metaphysica\\theories\\pm\\results.py:41",
+          "location": "src\\metaphysica\\theories\\pm\\results.py:45",
           "function": "<module>",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in HEADLINE: a curated group, read for cross-checking rather than fed into a derivation"
@@ -333,7 +390,7 @@
     {
       "name": "geometry.A_Wolfenstein",
       "value": 0.81,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:718",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:726",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -352,7 +409,7 @@
     {
       "name": "geometry.Omega_radiation",
       "value": 8.5e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:526",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:534",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -371,7 +428,7 @@
     {
       "name": "geometry.delta_CP_PMNS",
       "value": 278.4,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:760",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:768",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -390,7 +447,7 @@
     {
       "name": "geometry.theta_12",
       "value": 33.41,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:727",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:735",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -409,7 +466,7 @@
     {
       "name": "geometry.theta_13",
       "value": 8.54,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:738",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:746",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -434,7 +491,7 @@
     {
       "name": "geometry.theta_23",
       "value": 49.0,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:749",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:757",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -502,7 +559,7 @@
           "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\discussion.py:120",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\discussion.py:131",
           "function": "required_inputs",
           "kind": "DECLARED_AS_INPUT",
           "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
@@ -514,13 +571,13 @@
           "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
         },
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\results.py:105",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\results.py:120",
           "function": "required_inputs",
           "kind": "DECLARED_AS_INPUT",
           "detail": "listed in required_inputs: the declaring simulation states it needs this value to run"
         },
         {
-          "location": "src\\metaphysica\\theories\\pm\\results.py:35",
+          "location": "src\\metaphysica\\theories\\pm\\results.py:39",
           "function": "<module>",
           "kind": "CROSS_CHECK_GROUP",
           "detail": "listed in HEADLINE: a curated group, read for cross-checking rather than fed into a derivation"
@@ -814,13 +871,13 @@
     {
       "name": "geometry.H0_early",
       "value": 67.4,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:546",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:554",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:568",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:576",
           "function": "H0_tension_ratio",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.H0_early is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
@@ -851,13 +908,13 @@
     {
       "name": "geometry.H0_local",
       "value": 73.04,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:555",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:563",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:568",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:576",
           "function": "H0_tension_ratio",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.H0_local is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
@@ -888,7 +945,7 @@
     {
       "name": "geometry.M_GUT_geometric",
       "value": 2.1e+16,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:586",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:594",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
@@ -913,13 +970,13 @@
     {
       "name": "geometry.Omega_matter",
       "value": 0.315,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:495",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:503",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:523",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:531",
           "function": "Omega_DM",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.Omega_matter is read by Omega_DM, which get_all_anchors exports and register_anchors registers as geometry.Omega_DM"
@@ -944,13 +1001,13 @@
     {
       "name": "abstract.vev_coefficient",
       "value": 1.5859,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:650",
+      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:721",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "PERMITTED_OR_SCALE",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:650",
+          "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:721",
           "function": "<own description>",
           "kind": "SELF_DECLARED_SCALE_SETTING",
           "detail": "the row's own description declares it scale-setting"
@@ -1053,30 +1110,6 @@
       ]
     },
     {
-      "name": "abstract.alpha_gut_coefficient",
-      "value": 0.031831,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:659",
-      "status": "CALIBRATED",
-      "source_kind": "PARAMETER_CALL",
-      "role": "UNRESOLVED",
-      "role_evidence": [],
-      "closing_derivation": "Either a derivation of abstract.alpha_gut_coefficient from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
-      "description": "Coefficient 1/(10*pi) relating the GUT coupling to the spectral gap k_gimel",
-      "notes": []
-    },
-    {
-      "name": "abstract.fitted_pmns",
-      "value": 2,
-      "location": "src\\metaphysica\\simulations\\PM\\paper\\abstract.py:641",
-      "status": "CALIBRATED",
-      "source_kind": "PARAMETER_CALL",
-      "role": "UNRESOLVED",
-      "role_evidence": [],
-      "closing_derivation": "Either a derivation of abstract.fitted_pmns from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
-      "description": "Number of PMNS parameters fitted to NuFIT 6.0 pending explicit Yukawa calculation",
-      "notes": []
-    },
-    {
       "name": "axion.theta_i",
       "value": 3.5671529413141503,
       "location": "src\\metaphysica\\simulations\\PM\\cosmology\\axion_dm.py:279",
@@ -1131,21 +1164,9 @@
       ]
     },
     {
-      "name": "cosmology.racetrack_Re_T",
-      "value": 7.086,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\baryon_asymmetry.py:641",
-      "status": "CALIBRATED",
-      "source_kind": "PARAMETER_CALL",
-      "role": "UNRESOLVED",
-      "role_evidence": [],
-      "closing_derivation": "Either a derivation of cosmology.racetrack_Re_T from the geometry, or an explicit ruling that it is one of the permitted scale-setting inputs -- it is currently neither.",
-      "description": "Real part of the stabilized Kahler modulus entering the moduli damping factor exp(-Re(T)) = 8.38e-4. CALIBRATED, not derived: the source comment reads 'Re(T) = 7.086 chosen to match BBN baryon asymmetry eta_b ~ 6.1e-10', so the damping that closes eta_baryon_geometric was fitted to the quantity it helps predict. It sat outside the registry entirely -- declared as a formula input under a path nothi",
-      "notes": []
-    },
-    {
       "name": "higgs.m_higgs_pred",
       "value": 120.6228111675565,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:953",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:954",
       "status": "CALIBRATED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1257,7 +1278,7 @@
     {
       "name": "cosmology.alpha_shadow",
       "value": 0.576,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1307",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\dark_energy.py:1309",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1281,7 +1302,7 @@
     {
       "name": "higgs.lambda_eff_pheno",
       "value": 0.006079284956305497,
-      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1053",
+      "location": "src\\metaphysica\\simulations\\PM\\particle\\higgs_mass.py:1054",
       "status": "FITTED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1305,7 +1326,7 @@
     {
       "name": "geometry.J_CKM",
       "value": 3e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:702",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:710",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1319,7 +1340,7 @@
     {
       "name": "geometry.alpha_R_squared_phenom",
       "value": 0.0045,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:659",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:667",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1334,7 +1355,7 @@
     {
       "name": "geometry.alpha_T_phenomenological",
       "value": 2.6,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:641",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:649",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1349,7 +1370,7 @@
     {
       "name": "geometry.dm21_squared",
       "value": 7.42e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:772",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:780",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1363,7 +1384,7 @@
     {
       "name": "geometry.dm31_squared",
       "value": 0.00251,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:781",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:789",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1377,7 +1398,7 @@
     {
       "name": "geometry.m_KK_bound",
       "value": 3.5,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:449",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:457",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1391,7 +1412,7 @@
     {
       "name": "geometry.omega_Lambda_Planck",
       "value": 0.6889,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:887",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:895",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1405,7 +1426,7 @@
     {
       "name": "geometry.w0_error_DESI",
       "value": 0.02,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:877",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:885",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1419,7 +1440,7 @@
     {
       "name": "geometry.w0_observed_DESI",
       "value": -0.958,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:872",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:880",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1433,7 +1454,7 @@
     {
       "name": "geometry.wa_observed_DESI",
       "value": -0.99,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:882",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:890",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",

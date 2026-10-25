@@ -8,6 +8,130 @@
   "note": "Open decisions that can be executed either way. Defaults mirror the value adopted at each fork's source and are checked against it; this module stores no physics of its own. Comparisons report every option and never rank by agreement with anchors.",
   "env_prefix": "METAPHYSICA_VARIANT_",
   "forks": {
+    "spectral_index_route": {
+      "question": "Where does the spectral index n_s come from?",
+      "source": "simulations.PM.cosmology.spectral_routes.ADOPTED_ROUTE",
+      "status": "RULED",
+      "selected": "golden_modulated",
+      "default": "golden_modulated",
+      "options": [
+        {
+          "id": "golden_modulated",
+          "summary": "n_s = 1 - 2 phi^2/chi_eff = 1 - 2/N_eff, N_eff = chi_eff/phi^2",
+          "consequence": "ADOPTED (read from inflation._infrared_closure_n_s and GeometricAnchors.n_s v18.0). Catalogue: golden-modulated e-folds, under 1 sigma; geometric justification phi^2 = phi + 1. restored_from: 0b984a37:config.py; source 0b984a37.",
+          "adopted": true,
+          "status": "active",
+          "priority": 0
+        },
+        {
+          "id": "one_minus_2_over_b3",
+          "summary": "n_s = 1 - 2/b3",
+          "consequence": "WIRED D-022. Catalogue: 11.48 sigma off; replaced 2026-01-10. GeometricAnchors.n_s docstring v16.0: 0.9167 at b3 = 24. restored_from: 2c246586:config.py (parent of 0b984a37); source 0b984a37. Each consumer uses its own b3 (inflation B3_SEED = 24; GeometricAnchors.elder_kads).",
+          "adopted": false,
+          "status": "disabled",
+          "priority": 2
+        },
+        {
+          "id": "re_t_slow_roll",
+          "summary": "V ~ W_flux + W_inst; epsilon = 3/(2 Re(T)^2); n_s = 1 - 6 eps + 2 eta",
+          "consequence": "WIRED D-022. Catalogue: n_s = 0.9996, FALSIFIED at 8.3 sigma vs Planck 2018 (8.263 sigma FAIL); still rescored every build as cosmology.n_s_slow_roll; Re(T) inputs off-path. restored_from: main:src/metaphysica/simulations/PM/cosmology/inflation.py; source metaphysica/docs/DISCARDED_PATH_COVERAGE.md row 41.",
+          "adopted": false,
+          "status": "disabled",
+          "priority": 2
+        }
+      ],
+      "status_counts": {
+        "active": 1,
+        "considered": 0,
+        "disabled": 2
+      },
+      "sweepable": [
+        "golden_modulated"
+      ],
+      "notes": "Opened 2026-10-25 (D-022) from the lineage catalogue. Consumers: G2Inflation.derive_observables (cosmology.n_s) and GeometricAnchors.n_s (geometry.n_s), both through PM/cosmology/spectral_routes.py. The adopted route is what the source computes today: n_s = 1 - 2 phi^2/chi_eff, which the source itself calls the golden-modulated e-fold count (N_eff = chi_eff/phi^2). CAVEAT: the catalogue's golden_modulated entry cites 0b984a37:config.py, which is not in any local repository, so the original 2026-01 form could not be diffed against the current one.",
+      "drift": null,
+      "source_read": "live"
+    },
+    "h0_route": {
+      "question": "Where does the displayed H0 (cosmology.H0_local) come from?",
+      "source": "simulations.PM.cosmology.late_time_routes.ADOPTED_H0_ROUTE",
+      "status": "RULED",
+      "selected": "odowd_composite",
+      "default": "odowd_composite",
+      "options": [
+        {
+          "id": "odowd_composite",
+          "summary": "H0 = 288/4 - 163/144 + eta_S (three fitted inputs)",
+          "consequence": "ADOPTED (FormulasRegistry.calculate_h0_local). Catalogue: canonical DISPLAY value; 1.43 sigma SH0ES, 8.3 Planck; H0 is NOT a topology-first prediction. restored_from: main:src/metaphysica/simulations/core/canonical_values.py.",
+          "adopted": true,
+          "status": "active",
+          "priority": 0
+        },
+        {
+          "id": "ricci_flow",
+          "summary": "H0 = H0_planck (1 + sin^2(31 deg)/2) via G2 Ricci flow",
+          "consequence": "WIRED D-022. Catalogue: 3.17 sigma from SH0ES (76.34); still published as cosmology.H0_ricci_variant; fitted angle THETA_MIXING_13D_26D_DEG = 31. restored_from: main:src/metaphysica/simulations/PM/cosmology/ricci_flow_h0.py; source engine 871a296, 2beca44.",
+          "adopted": false,
+          "status": "disabled",
+          "priority": 2
+        },
+        {
+          "id": "kk_bridge",
+          "summary": "early-dark-energy-like KK modes shift H0 through the sound horizon",
+          "consequence": "WIRED D-022 with the steps of hubble_tension.HubbleTensionEDE.run. Catalogue: REFUTED; lightest KK mass ~5e28 eV vs ~1e-28 eV needed, ~57 orders off; H0 stays at the Planck value to ~5e-7. restored_from: main:src/metaphysica/simulations/PM/cosmology/hubble_tension.py.",
+          "adopted": false,
+          "status": "disabled",
+          "priority": 2
+        }
+      ],
+      "status_counts": {
+        "active": 1,
+        "considered": 0,
+        "disabled": 2
+      },
+      "sweepable": [
+        "odowd_composite"
+      ],
+      "notes": "Opened 2026-10-25 (D-022) from the lineage catalogue. Consumer: FormulasRegistry.calculate_h0_local (-> cosmology.H0_local) via PM/cosmology/late_time_routes.py. The adopted route is what the source computes today: the O'Dowd composite 288/4 - 163/144 + eta_S = 71.55, which canonical_values CANON['H0_km_s_Mpc'] rules a DISPLAY value, not a topology-first prediction.",
+      "drift": null,
+      "source_read": "live"
+    },
+    "dark_energy_mechanism": {
+      "question": "What sets the dark-energy equation of state w0 (the mechanism)?",
+      "source": "simulations.PM.cosmology.late_time_routes.ADOPTED_DE_MECHANISM",
+      "status": "RULED",
+      "selected": "thawing_quintessence",
+      "default": "thawing_quintessence",
+      "options": [
+        {
+          "id": "thawing_quintessence",
+          "summary": "w0 = -1 + 1/b3 (thawing quintessence from the b3 3-cycles)",
+          "consequence": "ADOPTED (dark_energy.py v22; FormulasRegistry.calculate_w0 breathing form -sigma_T). Catalogue: replaced mep_11_13 on 2025-12-31, 0.02 sigma vs DESI 2025 (commit text); the form was chosen after the data (dark_energy.py assessment).",
+          "adopted": true,
+          "status": "active",
+          "priority": 0
+        },
+        {
+          "id": "mep_11_13",
+          "summary": "w0 = -(D-1)/(D+1) = -11/13 at D = 12 (maximum entropy production)",
+          "consequence": "WIRED D-022. Catalogue: w0 = -0.846, 1.76 sigma vs DESI 2025; replaced 2025-12-31 by thawing quintessence. restored_from: 5755a1e0:config.py (not in any local repository; the formula is the D_eff form quoted in dark_energy.py), source a40b0bfa.",
+          "adopted": false,
+          "status": "disabled",
+          "priority": 2
+        }
+      ],
+      "status_counts": {
+        "active": 1,
+        "considered": 0,
+        "disabled": 1
+      },
+      "sweepable": [
+        "thawing_quintessence"
+      ],
+      "notes": "Opened 2026-10-25 (D-022). Consumers: FormulasRegistry.calculate_w0 (w0_dark_energy) and DarkEnergy._derive_dark_energy_eos (cosmology.w0_derived). The adopted mechanism is what the source does today: thawing quintessence, w0 = -1 + 1/b3 (the catalogue says the 2025-12-31 v16.2 change replaced mep_11_13 with it). The catalogue's other mechanisms (thermal_time, mashiach_quintessence, pi_attractor, flux_attractor) stay declared: none has a w0 formula in the current source that is not already this one.",
+      "drift": null,
+      "source_read": "live"
+    },
     "re_t_adoption": {
       "question": "Which Re(T) does the baryogenesis sector use?",
       "source": "simulations.PM.cosmology.baryon_asymmetry.RE_T_CALIBRATED",
@@ -127,16 +251,33 @@
           "adopted": true,
           "status": "active",
           "priority": 0
+        },
+        {
+          "id": "chi_over_24",
+          "summary": "n_gen = chi_eff/24 (the per-sector chi_eff, 72/24 = 3)",
+          "consequence": "WIRED D-022: FormulasRegistry.n_gen reads chi_eff_sector/24. Catalogue: corrected from chi/2 to chi/24 for 8D manifolds on 2025-11-22 (source 48ec267c); kept as the sector-level formula in v20.1 (FormulasRegistry v20.1 'Formula A'). restored_from: none (current source). Expected: 3, the same as the adopted route, because the source supplies chi_eff_sector = 72.",
+          "adopted": false,
+          "status": "disabled",
+          "priority": 2
+        },
+        {
+          "id": "chi_eff_over_48",
+          "summary": "n_gen = chi_eff_total/48 (144/48 = 3), generations from the effective Euler characteristic",
+          "consequence": "WIRED D-022: FormulasRegistry.n_gen reads chi_eff_total/48. Catalogue (3ba5848): fails on the whole Joyce family on both chi_eff branches; 6 b3/48 = b3/8 identically, so not independent. Under D-009 it survives as n_gen = chi_eff/48 = n with the K3 reading. restored_from: main:src/metaphysica/simulations/PM/geometry/chi_eff_branches.py; source metaphysica/docs/DISCARDED_PATH_COVERAGE.md rows 22, 23. Expected: 3 on the registry's own chi_eff_total = 144.",
+          "adopted": false,
+          "status": "considered",
+          "priority": 1
         }
       ],
       "status_counts": {
         "active": 1,
-        "considered": 1,
-        "disabled": 0
+        "considered": 2,
+        "disabled": 1
       },
       "sweepable": [
         "b3_over_dim_O",
-        "b2_over_faces"
+        "b2_over_faces",
+        "chi_eff_over_48"
       ],
       "notes": "Opened 2026-09-15 alongside b3_seed, because the two are coupled and pretending otherwise would hide the coupling. n_gen must be a positive integer -- a generation count is a number of things -- and that is a structural constraint referencing no measurement, which makes it the decisive discriminator where w_0 is not (w_0 moves only 0.0017 per unit b_3).\n\nb_3/8 gives 3 at b_3 = 24 and 5.375 at b_3 = 43, so it fails on the derived-seed path. b_2/4 gives 3 at b_2 = 12 and 1 at b_2 = 4, so it fails on the status-quo path. Exactly one works per seed, which is why this fork is not independent of b3_seed and says so.",
       "drift": null,
@@ -202,7 +343,7 @@
         "d4_root_shell",
         "joyce_twisted_sector"
       ],
-      "notes": "Opened 2026-09-14 with the ruling that removed b_3 = 24's DERIVED/GEOMETRIC status. Nothing on the books derives it: the TCS route places b_3 = 24 far below its exhibited range, the Joyce (Z/2)^3 route is UNDETERMINED pending the contribution table (see joyce_contribution_table), and the candidate structures below all reproduce the integer without exhibiting 24 three-cycles -- the A4 bar.\n\nThe options are therefore candidate ORIGINS, each labelled by what it actually delivers. Switching one on does not change the value while they all yield 24; what it changes is which justification the pipeline records, and b3_candidate_sweep pushes alternative VALUES through the downstream chain so the shape of the dependence is visible. Per the module's standing rule the sweep reports every outcome and never orders them by agreement with anchors.",
+      "notes": "Opened 2026-09-14 with the ruling that removed b_3 = 24's DERIVED/GEOMETRIC status. Nothing on the books derives it: the TCS route places b_3 = 24 far below its exhibited range, the Joyce (Z/2)^3 route is UNDETERMINED pending the contribution table (see joyce_contribution_table), and the candidate structures below all reproduce the integer without exhibiting 24 three-cycles -- the A4 bar.\n\nThe options are therefore candidate ORIGINS, each labelled by what it actually delivers. Switching one on does not change the value while they all yield 24; what it changes is which justification the pipeline records, and b3_candidate_sweep pushes alternative VALUES through the downstream chain so the shape of the dependence is visible. Per the module's standing rule the sweep reports every outcome and never orders them by agreement with anchors.\n\nINAPPLICABLE ON THE ADOPTED SEED (D-023, 2026-10-25): input_24, arc_flag_stabiliser, d4_root_shell and joyce_twisted_sector were written for b_3 = 24. On seed_43_joyce the origin is answered by derived_joyce_a1, and joyce_twisted_sector is what it became once the contribution table existed. Selecting the others there changes no output; input_24 is contract-bound to seed_24, and the other two already fail b3_origin_clears_the_a4_bar.",
       "drift": null,
       "source_read": "live"
     },
@@ -350,7 +491,7 @@
         "quadratic_contraction",
         "hitchin_cubic"
       ],
-      "notes": "Opened 2026-09-21. compute_metric() is the QUADRATIC contraction phi_iab phi_jab / 6, and its docstring called that Hitchin's formula. It is not: Hitchin's construction is CUBIC in phi, B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7} with g = B / |det B|^(1/9), and cubic is the lowest degree that can see the difference. Measured: the quadratic returns exactly 1.0 * I_7 for BOTH the all-(+1) phi and the octonion-derived one, so every claim of 'the unique compatible Riemannian metric' made through it was unfalsifiable -- which is why g2_form_convention went unnoticed as long as it did.\n\nWHAT THE CUBIC FORM REVEALS, refining the earlier finding rather than confirming it: Lambda^3(R^7) has exactly TWO open GL(7,R) orbits and BOTH have 14-dimensional stabilisers, so 'dim 14 vs 6' is not the invariant it was read as. The one that discriminates is the unordered signature of B -- (7,0) for octonion_derived, (4,3) for all_plus_one. So the adopted phi IS a G2-structure, for the SPLIT real form g2*, whose maximal compact SU(2)xSU(2) has dimension 6: exactly the 6 measured in so(7). What it is not is RIEMANNIAN, and Joyce's construction needs the compact form.\n\nThis also settles the Lambda decomposition question. The dimensions 1 + 7 + 27 and 7 + 14 are correct on BOTH branches, as a shared complexification requires; only the IDENTIFICATION of the 14 with compact g2 breaks, not any dimension.\n\nNOT AFFECTED, verified: the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.",
+      "notes": "Opened 2026-09-21. compute_metric() is the QUADRATIC contraction phi_iab phi_jab / 6, and its docstring called that Hitchin's formula. It is not: Hitchin's construction is CUBIC in phi, B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7} with g = B / |det B|^(1/9), and cubic is the lowest degree that can see the difference. Measured: the quadratic returns exactly 1.0 * I_7 for BOTH the all-(+1) phi and the octonion-derived one, so every claim of 'the unique compatible Riemannian metric' made through it was unfalsifiable -- which is why g2_form_convention went unnoticed as long as it did.\n\nWHAT THE CUBIC FORM REVEALS, refining the earlier finding rather than confirming it: Lambda^3(R^7) has exactly TWO open GL(7,R) orbits and BOTH have 14-dimensional stabilisers, so 'dim 14 vs 6' is not the invariant it was read as. The one that discriminates is the unordered signature of B -- (7,0) for octonion_derived, (4,3) for all_plus_one. So the adopted phi IS a G2-structure, for the SPLIT real form g2*, whose maximal compact SU(2)xSU(2) has dimension 6: exactly the 6 measured in so(7). What it is not is RIEMANNIAN, and Joyce's construction needs the compact form.\n\nThis also settles the Lambda decomposition question. The dimensions 1 + 7 + 27 and 7 + 14 are correct on BOTH branches, as a shared complexification requires; only the IDENTIFICATION of the 14 with compact g2 breaks, not any dimension.\n\nNOT AFFECTED, verified: the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.\n\nINERT ON THE ADOPTED PATH, BY DESIGN (D-023, 2026-10-25): on the compact octonion_derived form both constructions return a constant multiple of I_7 (measured: 1.0 and 3.017), so switching changes no output there. The fork is a consistency check, not a rival: it discriminates only on the split form, where the cubic exhibits (4,3).",
       "drift": null,
       "source_read": "live"
     },
@@ -500,7 +641,7 @@
         {
           "id": "fano_tcs",
           "summary": "Twisted connected sum of Fano-pair building blocks",
-          "consequence": "COSTS: b3 = 24 sits far outside what anyone has realised. The source says 'For the examples of twisted connected sums given in Kovalev's paper, he realizes 71 <= b3(M) <= 155'. Note the strength: that is a range of exhibited examples, not a proved bound, so this is a very strong exclusion rather than an impossibility proof.\nNOT the problem: b2. The same source gives '0 <= b2(M) <= 9' for twisted connected sums, which b2 = 4 satisfies comfortably.\nWITHDRAWN: the claim that TCS forces b2 + b3 odd. The source's own relation (2.17), b3(M) + b2(M) = b3(V1) + b3(V2) + 23, makes the parity depend on the building blocks -- odd only when b3(V1) + b3(V2) is even. There is no universal parity constraint, and the b2 = 7 proposal built on one is dropped.",
+          "consequence": "COSTS: b3 = 24 sits far outside what anyone has realised. The source says 'For the examples of twisted connected sums given in Kovalev's paper, he realizes 71 <= b3(M) <= 155'. Note the strength: that is a range of exhibited examples, not a proved bound, so this is a very strong exclusion rather than an impossibility proof.\nNOT the problem: b2. The same source gives '0 <= b2(M) <= 9' for twisted connected sums, which b2 = 4 satisfies comfortably.\nWITHDRAWN: the claim that TCS forces b2 + b3 odd. The source's own relation (2.17), b3(M) + b2(M) = b3(V1) + b3(V2) + 23, makes the parity depend on the building blocks -- odd only when b3(V1) + b3(V2) is even. There is no universal parity constraint, and the b2 = 7 proposal built on one is dropped.\nREFUSED (D-023): no cited building blocks are in the engine, so selecting this builds nothing; exhibited examples (71 <= b3 <= 155) also exclude b3 = 43.",
           "adopted": false,
           "status": "considered",
           "priority": 1
@@ -515,7 +656,7 @@
         "joyce_orbifold",
         "fano_tcs"
       ],
-      "notes": "Opened 2026-09-08. The framework carries b3 = 24, and the two constructions place very different demands on that. Quotations below are from arXiv:1810.12659 (Kennon, 'G2-Manifolds and M-Theory Compactifications'), read from the paper rather than its abstract.",
+      "notes": "Opened 2026-09-08. The framework carries b3 = 24, and the two constructions place very different demands on that. Quotations below are from arXiv:1810.12659 (Kennon, 'G2-Manifolds and M-Theory Compactifications'), read from the paper rather than its abstract.\n\nSUPERSEDED READING (D-023, 2026-10-25): the adopted seed is now (b2, b3) = (12, 43), computed by joyce_resolution, and every hypothesis of Joyce 2000 Thm 11.6.1 is measured (g2_closure). fano_tcs is REFUSED by the engine (g2_closure.require_buildable_construction) with its reason.",
       "drift": null,
       "source_read": "not_checkable"
     },

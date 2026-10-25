@@ -1,0 +1,509 @@
+{
+  "version": 1,
+  "core": [
+    {
+      "id": "0",
+      "title": "Abstract",
+      "role": "States what is assumed, what the closed geometry is, what follows from it and where it stands against data.",
+      "words": 231
+    },
+    {
+      "id": "1",
+      "title": "Introduction",
+      "role": "Poses the problem, names the one idea, and says how to read the paper.",
+      "words": 557
+    },
+    {
+      "id": "2",
+      "title": "Geometric Framework",
+      "role": "Defines the geometric framework: the bulk, the two shadows and the compact G2 internal space.",
+      "words": 4710
+    },
+    {
+      "id": "2.4",
+      "title": "The Closed Geometry, Theorem by Theorem",
+      "role": "Proves the closed geometry theorem by theorem, including the existence of the holonomy-G2 metric by Joyce's theorem.",
+      "words": 5397
+    },
+    {
+      "id": "3.2",
+      "title": "Standard Model Gauge Sectors from Master Action (<span class=\"pm-value\" data-pm-value=\"framework.version_major_label\">v23</span> 12-Pair Bridge)",
+      "role": "Reads the Standard Model gauge sectors off the geometry.",
+      "words": 1215
+    },
+    {
+      "id": "3",
+      "title": "Gauge Coupling Unification and the GUT Scale",
+      "role": "Derives gauge coupling unification and the GUT scale from the same inputs.",
+      "words": 450
+    },
+    {
+      "id": "4.1",
+      "title": "Chirality and Spinorial Structure",
+      "role": "Treats chirality and the spinor structure, and says what is still open.",
+      "words": 711
+    },
+    {
+      "id": "4.2",
+      "title": "Fermion Generations and Yukawa Texture",
+      "role": "Counts fermion generations from the topology and sets the Yukawa texture.",
+      "words": 680
+    },
+    {
+      "id": "4.3",
+      "title": "CKM Matrix and Quark Mixing",
+      "role": "Obtains quark mixing from the geometry and compares it with data.",
+      "words": 494
+    },
+    {
+      "id": "4.4",
+      "title": "Higgs Mass from Moduli Stabilization",
+      "role": "Fixes the Higgs mass through moduli stabilisation and records where that step is calibrated.",
+      "words": 1017
+    },
+    {
+      "id": "5.1",
+      "title": "Deriving 4D Gravity from Kaluza-Klein Reduction",
+      "role": "Derives four-dimensional gravity by Kaluza-Klein reduction.",
+      "words": 1542
+    },
+    {
+      "id": "5.2",
+      "title": "Dark Energy from Dimensional Reduction",
+      "role": "Derives the dark-energy sector from the dimensional reduction and states its status.",
+      "words": 986
+    },
+    {
+      "id": "6",
+      "title": "Falsifiable Predictions via the Standard-Model Extension (SME)",
+      "role": "Lists the falsifiable predictions with their status.",
+      "words": 5000
+    },
+    {
+      "id": "7",
+      "title": "Discussion, Conclusions, and Theory Analysis",
+      "role": "Gives the conclusions, the scoreboard and the global fit, including every failure.",
+      "words": 4386
+    }
+  ],
+  "supplementary": [
+    {
+      "id": "extended-abstract",
+      "title": "Extended abstract (supplementary)",
+      "words": 1657
+    },
+    {
+      "id": "extended-introduction",
+      "title": "Extended introduction (supplementary)",
+      "words": 6536
+    },
+    {
+      "id": "2.7",
+      "title": "Four-Face G2 Sub-Sector Structure",
+      "words": 1267
+    },
+    {
+      "id": "V.1",
+      "title": "Ghost-Free Stability Check (The Guardian)",
+      "words": 218
+    },
+    {
+      "id": "3.4",
+      "title": "Octonionic Generation Partition",
+      "words": 525
+    },
+    {
+      "id": "3.6",
+      "title": "Modular Invariance of the Eta Partition Function",
+      "words": 312
+    },
+    {
+      "id": "3.1",
+      "title": "Fine Structure Constant from G2 Geometry",
+      "words": 230
+    },
+    {
+      "id": "4.6",
+      "title": "Proton Decay Lifetime",
+      "words": 1297
+    },
+    {
+      "id": "4.9",
+      "title": "Higgs Mass from 4-Brane Partition",
+      "words": 270
+    },
+    {
+      "id": "6.1.1",
+      "title": "Yukawa Textures from G2 Geometry",
+      "words": 231
+    },
+    {
+      "id": "4.2.1",
+      "title": "Geometric Higgs VEV from G2 Holonomy",
+      "words": 228
+    },
+    {
+      "id": "4.8",
+      "title": "Fermion Mass Ratios from G2 Geometry",
+      "words": 177
+    },
+    {
+      "id": "A2",
+      "title": "Freudenthal Triple System: 26D Pneuma Condensate",
+      "words": 125
+    },
+    {
+      "id": "A3",
+      "title": "E₇ 56D Representation: Derived Portal Coupling α_leak = 1/√6",
+      "words": 183
+    },
+    {
+      "id": "A4",
+      "title": "Gaugino Condensation: Cabibbo from Racetrack N₁=24/N₂=23 (Calibrated; No Racetrack on Y₇)",
+      "words": 397
+    },
+    {
+      "id": "A5",
+      "title": "Heterotic E₈ × E₈: Visible/Hidden Sector Splitting",
+      "words": 320
+    },
+    {
+      "id": "A6",
+      "title": "Clifford Algebra Unification: EMLMultivector API",
+      "words": 257
+    },
+    {
+      "id": "A7",
+      "title": "Clifford Algebra Unification: The EMLMultivector API",
+      "words": 355
+    },
+    {
+      "id": "neutrino-algebraic",
+      "title": "Neutrino PMNS Angles from G₂ Topology (Algebraic Derivation)",
+      "words": 785
+    },
+    {
+      "id": "5.6",
+      "title": "Dark Energy Thawing from G₂ Ricci Flow Relaxation",
+      "words": 860
+    },
+    {
+      "id": "5.7",
+      "title": "Unified Hubble Evolution Engine (v16.2)",
+      "words": 182
+    },
+    {
+      "id": "5.4",
+      "title": "S₈ Tension Analysis with Dynamical Dark Energy",
+      "words": 673
+    },
+    {
+      "id": "5.9",
+      "title": "Ricci Flow Resolution of Hubble Tension",
+      "words": 196
+    },
+    {
+      "id": "4.5",
+      "title": "Neutrino Mixing from G2 Geometry",
+      "words": 1165
+    },
+    {
+      "id": "4.7",
+      "title": "Unified CKM/PMNS from G2 Triality",
+      "words": 502
+    },
+    {
+      "id": "5.3",
+      "title": "Multi-Sector Cosmological Dynamics",
+      "words": 563
+    },
+    {
+      "id": "5.8",
+      "title": "Speed of Light from G₂ Manifold Geometry",
+      "words": 915
+    },
+    {
+      "id": "6.1",
+      "title": "Compton Wavelength from Inverse Cubic Projection",
+      "words": 133
+    },
+    {
+      "id": "6.2",
+      "title": "Stefan-Boltzmann from Quad-Gate Expansion",
+      "words": 135
+    },
+    {
+      "id": "6.3",
+      "title": "Hartree Energy from Inverse Double-Gate Projection",
+      "words": 198
+    },
+    {
+      "id": "6.4",
+      "title": "Magnetic Flux Quantum",
+      "words": 153
+    },
+    {
+      "id": "6.5",
+      "title": "Von Klitzing Constant",
+      "words": 169
+    },
+    {
+      "id": "6.6",
+      "title": "Avogadro Number",
+      "words": 240
+    },
+    {
+      "id": "6.7",
+      "title": "Faraday Constant",
+      "words": 219
+    },
+    {
+      "id": "6.8",
+      "title": "Molar Gas Constant - The Still Point",
+      "words": 101
+    },
+    {
+      "id": "6.9",
+      "title": "Weak Mixing Angle",
+      "words": 137
+    },
+    {
+      "id": "5.5",
+      "title": "Cosmological Constant from G2 Entropy with Instanton Suppression",
+      "words": 303
+    },
+    {
+      "id": "2.8",
+      "title": "The Pneuma Lagrangian",
+      "words": 3571
+    },
+    {
+      "id": "thermal-time",
+      "title": "The Thermal Time Hypothesis and Two-Time Framework",
+      "words": 542
+    },
+    {
+      "id": "7.2",
+      "title": "Orch-OR Quantum Consciousness Validation (v24.2)",
+      "words": 775
+    },
+    {
+      "id": "7.7",
+      "title": "Gnosis Unlocking: Progressive Pair Activation (6→12)",
+      "words": 76
+    },
+    {
+      "id": "7.8",
+      "title": "4-Dice Consciousness Branch Selection",
+      "words": 89
+    },
+    {
+      "id": "7.6",
+      "title": "Orch-OR Pair Shielding: Decoherence Protection",
+      "words": 210
+    },
+    {
+      "id": "1.1",
+      "title": "Foundations of Dimensional Descent",
+      "words": 3431
+    },
+    {
+      "id": "2.6",
+      "title": "The Topologically Anchored Methodology (EDOF=3)",
+      "words": 3123
+    },
+    {
+      "id": "3.7",
+      "title": "Cosmological Results and Alignment",
+      "words": 2937
+    },
+    {
+      "id": "4",
+      "title": "System Integrity and Verification",
+      "words": 1804
+    },
+    {
+      "id": "A",
+      "title": "Appendix A: The 125-Residue Spectral Registry (The Master Table)",
+      "words": 374
+    },
+    {
+      "id": "B",
+      "title": "Appendix B: Algebraic Foundations of S_PR(2)",
+      "words": 424
+    },
+    {
+      "id": "C",
+      "title": "Appendix C: The S_PR(2) Gauge Reduction Matrices",
+      "words": 402
+    },
+    {
+      "id": "D",
+      "title": "Appendix D: Statistical Convergence Logs (DESI/Planck 2025)",
+      "words": 487
+    },
+    {
+      "id": "E",
+      "title": "Appendix E: The Brane-Intersection Map",
+      "words": 277
+    },
+    {
+      "id": "F",
+      "title": "Appendix F: The Gates of Integrity",
+      "words": 312
+    },
+    {
+      "id": "H",
+      "title": "Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
+      "words": 1064
+    },
+    {
+      "id": "G",
+      "title": "Appendix G: The 42-Certificate Validation Matrix (12-PAIR-BRIDGE)",
+      "words": 719
+    },
+    {
+      "id": "I",
+      "title": "Appendix I: The Three Terminal States (Terminal Geodesics)",
+      "words": 726
+    },
+    {
+      "id": "J",
+      "title": "Appendix J: The Torsion Funnel",
+      "words": 469
+    },
+    {
+      "id": "K",
+      "title": "Appendix K: The Sterile Constant Table",
+      "words": 764
+    },
+    {
+      "id": "L",
+      "title": "Appendix L: The Omega Unwinding Map",
+      "words": 459
+    },
+    {
+      "id": "Z",
+      "title": "Appendix Z: Terminal Constant Ledger (v24.2)",
+      "words": 205
+    },
+    {
+      "id": "2.1",
+      "title": "Core M^{26}(24,2) Master Action: the 12×(2,0) Paired Bridge System",
+      "words": 1545
+    },
+    {
+      "id": "3.3.1",
+      "title": "Complete Gauge Sector Lagrangian Derivations from G2 Holonomy",
+      "words": 766
+    },
+    {
+      "id": "3.4.1",
+      "title": "Complete Matter Sector Derivations from G2 Holonomy",
+      "words": 436
+    },
+    {
+      "id": "5.4.2",
+      "title": "Complete Cosmology Sector Derivations from G2 Holonomy",
+      "words": 378
+    },
+    {
+      "id": "2.2",
+      "title": "General Relativity and Spacetime from Master Action",
+      "words": 343
+    },
+    {
+      "id": "M",
+      "title": "Appendix M: Tensor Calculus Foundations",
+      "words": 1371
+    },
+    {
+      "id": "N",
+      "title": "Appendix N: Vielbein and Spin Connection",
+      "words": 1029
+    },
+    {
+      "id": "O",
+      "title": "Appendix O: Kaluza-Klein Reduction Steps (v24.2)",
+      "words": 1439
+    },
+    {
+      "id": "P",
+      "title": "Appendix P: G2 Holonomy Mathematics",
+      "words": 1421
+    },
+    {
+      "id": "Q",
+      "title": "Appendix Q: Index Theorem Applications",
+      "words": 1474
+    },
+    {
+      "id": "R.1",
+      "title": "Appendix R: Vacuum Stability Analysis",
+      "words": 1022
+    },
+    {
+      "id": "S.1",
+      "title": "Appendix S: Spectral Residue Methodology",
+      "words": 1193
+    },
+    {
+      "id": "appendix-T",
+      "title": "Appendix T: QEC Bridge — Stabilizer Table and Syndrome Extraction",
+      "words": 321
+    },
+    {
+      "id": "appendix-U",
+      "title": "Appendix U: Geometric Derivation of gamma_correction",
+      "words": 235
+    },
+    {
+      "id": "5.1.1",
+      "title": "f(R,T,tau) Modified Gravity from G2 Compactification",
+      "words": 333
+    },
+    {
+      "id": "2.3",
+      "title": "Complete Spectral Decomposition",
+      "words": 1219
+    },
+    {
+      "id": "5.2.1",
+      "title": "Dark Energy Attractor Potential",
+      "words": 288
+    },
+    {
+      "id": "6.2.1",
+      "title": "Baryon Asymmetry from G₂ Cycles + Jarlskog",
+      "words": 561
+    },
+    {
+      "id": "7.1",
+      "title": "Axion Dark Matter from G2 Geometry",
+      "words": 558
+    },
+    {
+      "id": "7.3",
+      "title": "Dark Matter Portal Physics from G2 Hidden Faces",
+      "words": 532
+    },
+    {
+      "id": "7.4",
+      "title": "Sterile Neutrino Portals from Dual-Shadow Architecture",
+      "words": 344
+    },
+    {
+      "id": "7.5",
+      "title": "ALP Portal Physics from Face 3 Moduli",
+      "words": 575
+    }
+  ],
+  "totals": {
+    "core_sections": 14,
+    "core_words": 27376,
+    "supplementary_sections": 82,
+    "supplementary_words": 62837,
+    "all_sections": 96,
+    "all_words": 90213
+  }
+}

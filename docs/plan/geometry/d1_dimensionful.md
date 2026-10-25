@@ -1,0 +1,7 @@
+# D1: dimensionful rows (D-027 ruling 3), worktree metaphysica-closure24, uncommitted
+- Mechanism: new verdicts UNIT_CHECK and CIRCULAR (Parameter.scoring_exclusion + reason); shown with the reason, excluded from PASS/FAIL counts and chi2 via NON_SCORING_VERDICTS.
+- UNIT_CHECK: cosmology.speed_of_light_derived (c exact in SI). CIRCULAR: cosmology.H0_physical (4040 back-solved to SH0ES), cosmology.Lambda_derived (R_H = c/H0), cosmology.rho_vacuum (conversion of Lambda), higgs.m_higgs_local (414.22 = 125.10 x 3.3111), higgs.m_higgs_pred (higgs_mass.py:39-43: Re(T) = 9.865 hand-inverted to reproduce 125.10).
+- Scoreboard before (main): pass 27, marginal 15, tension 10, fail 32, chi2 3030.0985 on 4 dof. After: pass 27, marginal 15, tension 10, fail 26, circular 5, unit_check 1; chi2 3030.0985 on 4 dof (the 5 rows behind it are none of the marked ones).
+- Left to declare a cited scale input (scoring unchanged): cosmology.H0_local, H0_odowd, H0_ricci_variant; gauge.M_GUT, M_GUT_GEOMETRIC, m_w_gev, m_z_gev; gravity.newton_constant_theory; higgs.vev; neutrino.dm2_32, mass_sum, sum_masses; spectral.sum_m_nu; portals.alp_photon_coupling_gev_inv, dm_cross_section_cm2; proton_decay.tau_p_years; quantum_bio.coherence_time_ms.
+- Tests: tests/test_dimensionful_rows.py (12 pass), one per marked row plus exclusion, scoring and totals checks.
+- Paper prose: no section found claiming c, H0 or Lambda as a prediction (only labels and docstrings).

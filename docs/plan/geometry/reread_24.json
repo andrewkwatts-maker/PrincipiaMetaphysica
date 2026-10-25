@@ -1,0 +1,377 @@
+[
+ {
+  "constant": "chi_eff (topology.mephorash_chi)",
+  "value": 144,
+  "used_by": [
+   "pmns.theta_12_triality",
+   "neutrino.theta_12_pred",
+   "pmns.theta_13_triality",
+   "neutrino.theta_13_pred",
+   "pmns.theta_23_triality",
+   "neutrino.theta_23_pred",
+   "neutrino.delta_CP_derived",
+   "ckm.jarlskog_triality"
+  ],
+  "derivation_quote": "chi_eff = 2 x sum over the n singular involutions of chi(K3) = 48 n = %g (D-009; ruled D-015)",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/geometry/geometry_narration.py:375-402",
+  "reading": "R0",
+  "formula_as_written": "chi_eff = 2 * sum_sigma chi(K3_sigma) = 48 n (n = b2/4, PM/geometry/b3_path.py n_gen_report)",
+  "live_value_12_43": 144,
+  "valid": true,
+  "rows_recomputed": [],
+  "notes": "Live helper exists: chi_eff_claim() on the adopted k3_reading branch. At (12,43), n=3 gives 144, equal to the value main already uses, so no row moves. The same formula at the (4,24) seed gives n=1, so 48: the 24-era hits used 144 where the live reading would have given 48. Per-shadow chi_eff = 72 = 24n (baryon rows) is the same reading. Older text (config/constants.py:106, core/eml_integration.py:363) says 6*b3 = 144 at b3=24; that is the retired seed-dependent route."
+ },
+ {
+  "constant": "S_orient (topology.orientation_sum)",
+  "value": 12,
+  "used_by": [
+   "pmns.theta_13_triality",
+   "neutrino.theta_13_pred",
+   "pmns.theta_23_triality",
+   "neutrino.theta_23_pred"
+  ],
+  "derivation_quote": "orientation_sum = 12 (from Euclidean bridge OR reduction, single bridge)",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/neutrino_mixing.py:60 (also :12 '12x(2,0) bridge pairs' of a (24,2) signature; base/established.py:572)",
+  "reading": "R2",
+  "formula_as_written": "none: a count of bridge pairs with no formula in b2, b3, n or chi",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "The text names a bridge count tied to the (24,2) two-time signature, itself a 24-era statement, and cites no invariant or reference. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "roots_total 288 (ENNOIA; also 288 in 125/288, B_v, chi_gc, and sterile 163 = 288-125)",
+  "value": 288,
+  "used_by": [
+   "cosmology.speed_of_light_derived",
+   "cosmology.H0_physical"
+  ],
+  "derivation_quote": "GEOMETRIC: 288 = b3 * D_space_12 = 24 * 12",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/core/FormulasRegistry.py:1170 (also :1511, :637 '12 x b3')",
+  "reading": "R0 (weak)",
+  "formula_as_written": "288 = b3 * 12 (12 = D_space_12, spinor rank)",
+  "live_value_12_43": 516,
+  "valid": true,
+  "rows_recomputed": [
+   {
+    "path": "cosmology.speed_of_light_derived",
+    "main_value": 179077056.97,
+    "reread_value": 108032439.66,
+    "experiment": 299792458.0,
+    "sigma_or_null": null
+   },
+   {
+    "path": "cosmology.H0_physical",
+    "main_value": 40.7784,
+    "reread_value": 22.7601,
+    "experiment": 73.04,
+    "sigma_or_null": null
+   }
+  ],
+  "notes": "Weak R0: the SSOT computes 288 as the Gnostic sum 135+153; b3*12 is written as the geometric interpretation and the 12 is a literal. Re-read: 288 -> 12*b3 = 516 everywhere, sterile 163 -> 516-125 = 391 (as the registry derives it), P_3D with 516, 135/153/125 left literal. c = 1.080e8 m/s (main 1.791e8; observed 2.998e8; exact in SI so no sigma): worse. H0 = 22.76 (main 40.78; SH0ES 73.04): worse. With P_3D kept at 1+1/28800, c = 1.0803e8. Nothing improves, so no pre-listing problem. 12 was itself found as 288/24, a 24-era ratio."
+ },
+ {
+  "constant": "P_3D = 1 + 1/28800",
+  "value": 1.0000347222,
+  "used_by": [
+   "cosmology.speed_of_light_derived"
+  ],
+  "derivation_quote": "This closes the gap from ~10,444 m/s to ~35 m/s!",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/core/FormulasRegistry.py:1992 (formula :1999)",
+  "reading": "R2",
+  "formula_as_written": "P_3D = 1 + MONAD/(ENNOIA * DECAD^2) = 1 + 1/(288*100)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Formula is in registry counts (288, DECAD=10), not geometry, and its stated purpose is to close a residual. 288 is handled in its own entry. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "135 / 153 / 125 counts, 1e7 scale, syzygy 18",
+  "value": null,
+  "used_by": [
+   "cosmology.speed_of_light_derived",
+   "cosmology.H0_physical"
+  ],
+  "derivation_quote": "self._visible_sector = 125       # 5^3 = SM parameters",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/core/FormulasRegistry.py:1185 (135 and 153 at :1161-1162; 1e7 'Sovereign Constants' in speed_of_light_derived)",
+  "reading": "R2",
+  "formula_as_written": "none (named counts; 125 = 5^3)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Gnostic counts with no geometric formula; 1e7 is the unit literal that turns a pure number into m/s. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "H0 scales 400 x 10.1 = 4040",
+  "value": 4040.0,
+  "used_by": [
+   "cosmology.H0_physical"
+  ],
+  "derivation_quote": "Unsourced; no derivation from 24 is given.",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/paper/appendices/appendix_z_terminal_ledger.py:118 (:106-116 'only the PRODUCT (4040) is determined by the answer')",
+  "reading": "R2",
+  "formula_as_written": "H0 = (125/288)/b3 * 400 * 10.1",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible. The module itself says only the product is fixed by the answer."
+ },
+ {
+  "constant": "m_higgs_bulk 414.22 GeV",
+  "value": 414.22,
+  "used_by": [
+   "higgs.m_higgs_local"
+  ],
+  "derivation_quote": "m_bulk = 414.22 GeV    -> INPUT (hardcoded, not derivable from topology)",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/higgs_brane_partition.py:15",
+  "reading": "R2",
+  "formula_as_written": "none",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible. Module classifies the row FITTED."
+ },
+ {
+  "constant": "projection divisor 3.3111 (overlap 13/11, holonomy correction 2/(13 pi b3))",
+  "value": 3.3111,
+  "used_by": [
+   "higgs.m_higgs_local"
+  ],
+  "derivation_quote": "overlap = 13/11         -> FITTED (changed historically to maintain output)",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/higgs_brane_partition.py:17 (:80 'arithmetically arranged so that 414.22 / 3.311 = 125.10 GeV')",
+  "reading": "R2",
+  "formula_as_written": "m_H = 414.22 / ((k_gimel/pi)/((13/11)(1+2/(13 pi b3))))",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Only the k_gimel/pi part is live in b3 (main already reads it: divisor 5.87 at b3=43, m_H 70.57). The 13/11 and the correction term are labelled FITTED. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "dim_psi = 4 in wa = -4/sqrt(b3)",
+  "value": 4,
+  "used_by": [
+   "cosmology.wa_thawing"
+  ],
+  "derivation_quote": "dim_psi = 4  # Dimension of co-associative 4-form",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/cosmology/dark_energy_thawing.py:495 (docstring :468-470: observables project through Psi, acquiring dim(Psi))",
+  "reading": "R0",
+  "formula_as_written": "wa = -(1/sqrt(b3)) * dim(Psi), Psi = *phi",
+  "live_value_12_43": 4,
+  "valid": true,
+  "rows_recomputed": [],
+  "notes": "The text states a geometric quantity (degree of *phi on a 7-manifold, 7-3 = 4), b3-independent, so the live value is 4 and the row stays -0.60999 against -0.86. The registry labels the row FITTED and the docstring cites the DESI match. Reading it R0 changes nothing."
+ },
+ {
+  "constant": "Re(T) = 7.086",
+  "value": 7.086,
+  "used_by": [
+   "geometry.eta_baryon"
+  ],
+  "derivation_quote": "STATUS: CALIBRATED. Re(T) = 7.086 was chosen to match the BBN baryon",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/cosmology/baryon_asymmetry.py:9",
+  "reading": "R2",
+  "formula_as_written": "none (RE_T_CALIBRATED, :150)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "delta_b3 = 0.12 b3",
+  "value": 0.12,
+  "used_by": [
+   "geometry.eta_baryon"
+  ],
+  "derivation_quote": "delta_b3 = 0.12 is asserted, not computed (CALIBRATED)",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/cosmology/baryon_asymmetry.py:73",
+  "reading": "R2",
+  "formula_as_written": "delta_b3 = 0.12 * b3",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "N_eff doubling factor 2 in 2(b3-14)",
+  "value": 2,
+  "used_by": [
+   "geometry.eta_baryon"
+  ],
+  "derivation_quote": "N_eff was doubled to keep the eta_B agreement",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/cosmology/baryon_asymmetry.py:248",
+  "reading": "R2",
+  "formula_as_written": "N_eff = 2(b3 - 14)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible. The 14 = 2*7 reads geometry; the 2 is the tune."
+ },
+ {
+  "constant": "delta_CP = pi/6 in baryon row",
+  "value": 0.5235988,
+  "used_by": [
+   "geometry.eta_baryon"
+  ],
+  "derivation_quote": "sin(delta_CP) = sin(pi/6) = 0.5 from G2 triality",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/cosmology/baryon_asymmetry.py:29",
+  "reading": "R2",
+  "formula_as_written": "sin(delta_CP) = sin(pi/6)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "G2 triality is named but no invariant or citation is given; the measured CKM phase is about 1.14 rad. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "CKM cusp coefficient 0.037",
+  "value": 0.037,
+  "used_by": [
+   "ckm.V_us_triality",
+   "ckm.jarlskog_triality"
+  ],
+  "derivation_quote": "v16.2 FIX: Adjusted coefficient from 0.12 to 0.037 for PDG 2024 alignment",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/octonionic_mixing.py:428",
+  "reading": "R2",
+  "formula_as_written": "cusp_correction = 1 + 0.037/sqrt(b3+k_gimel)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "A mechanism is named (Fano plane regularization) but no invariant. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "CKM factor 0.81 in V_cb",
+  "value": 0.81,
+  "used_by": [
+   "ckm.jarlskog_triality"
+  ],
+  "derivation_quote": "V_cb = V_us ** 2 / geometric_factor * 0.81 * g2_twist_correction",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/octonionic_mixing.py:452",
+  "reading": "R2",
+  "formula_as_written": "bare factor, no comment",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "CKM factor 0.58 in V_ub",
+  "value": 0.58,
+  "used_by": [
+   "ckm.V_ub_triality",
+   "ckm.jarlskog_triality"
+  ],
+  "derivation_quote": "V_ub = V_us ** 3 / topological_factor * 0.58",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/octonionic_mixing.py:459",
+  "reading": "R2",
+  "formula_as_written": "bare factor, no comment",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "Jarlskog torsional damping (1 + k_gimel/b3^2)",
+  "value": null,
+  "used_by": [
+   "ckm.jarlskog_triality"
+  ],
+  "derivation_quote": "the Jarlskog area into agreement with PDG target 3.0e-5",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/octonionic_mixing.py:471-472",
+  "reading": "R2",
+  "formula_as_written": "J = J_bare * (1 + k_gimel/b3^2)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Comment states it was introduced to hit the target. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "epsilon_fn = exp(-1.5)",
+  "value": 0.22313016,
+  "used_by": [
+   "ckm.V_us_triality",
+   "ckm.V_ub_triality",
+   "ckm.jarlskog_triality"
+  ],
+  "derivation_quote": "lambda_curvature=1.5 is hardcoded with post-hoc justification.",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/fermion_generations.py:118 (:221)",
+  "reading": "R2",
+  "formula_as_written": "epsilon = exp(-lambda_curvature)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "b3-independent. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "parity_offset 45.9 deg",
+  "value": 45.9,
+  "used_by": [
+   "neutrino.delta_CP_pred"
+  ],
+  "derivation_quote": "Uses parity_offset = 45.9 degrees -- hardcoded, not derived.",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/neutrino_mixing.py:113 (:28, :616)",
+  "reading": "R2",
+  "formula_as_written": "delta_CP = 180*((n+b2)/(2n) + n/b3) + 45.9",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "24 in 24*pi (ALP coupling)",
+  "value": 24,
+  "used_by": [
+   "portals.alp_photon_coupling_gev_inv"
+  ],
+  "derivation_quote": "the 24 in 24 * pi is a literal, not read from b3; calibrated at the off-path seed b3 = 24",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/portals/alp_portals.py:46-47",
+  "reading": "R2",
+  "formula_as_written": "g = alpha_leak * chi_eff / (24 pi f_a)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "No mechanism cited for the 24 in the file. chi(K3) = 24 (D-027 R1 candidate) needs a cited K3 mechanism; none is written there, so it is not adopted. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "DEFAULT_B3 = 24 in theta_13 = arcsin((2/sqrt3) sin(pi/b3))",
+  "value": 24,
+  "used_by": [
+   "particle.theta_13_deg"
+  ],
+  "derivation_quote": "DEFAULT_B3, the calibration constant 24",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/particle/yukawa_derivation.py:22 (:233)",
+  "reading": "R2",
+  "formula_as_written": "sin(theta_13) = sqrt(2/3)*sqrt(2)*sin(pi/b3)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Only a default argument; main already evaluates the form at live b3=43 (4.835 deg). The sin(pi/b3) ansatz is the 24-cell reading with no stated derivation. Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "constant": "Lambda factors (8 pi)^2 and projection factor 3",
+  "value": 631.65,
+  "used_by": [
+   "cosmology.Lambda_derived",
+   "cosmology.rho_vacuum"
+  ],
+  "derivation_quote": "POST-HOC FACTORS: The factors (8*pi)^2 ~ 631.5 and projection_factor = 3",
+  "derivation_ref": "metaphysica/src/metaphysica/simulations/PM/cosmology/cosmological_constant.py:42",
+  "reading": "R2",
+  "formula_as_written": "Lambda = (8pi)^2 k_gimel^2/(3 b3^3 R_H^2)",
+  "live_value_12_43": null,
+  "valid": null,
+  "rows_recomputed": [],
+  "notes": "Module's own text calls them post-hoc; H0 is a measured input (D-027 ruling 3). Stays CALIBRATED; no re-read possible."
+ },
+ {
+  "summary": {
+   "R0": 3,
+   "R1": 0,
+   "R2": 19,
+   "rows_improved": [],
+   "rows_worsened": [
+    "cosmology.speed_of_light_derived",
+    "cosmology.H0_physical"
+   ],
+   "note": "Only roots_total 288 -> 12*b3 changes any row (both worse). chi_eff and dim_psi are R0 but their live values equal main's. Sigma is null: the audits carry none."
+  }
+ }
+]

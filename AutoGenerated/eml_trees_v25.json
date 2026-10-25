@@ -116,12 +116,12 @@
     },
     "f_EDE_kk_honest_12bridges": {
       "b3_traceback": true,
-      "formula": "(30 zeta(3) / pi^4 g_*) * N_bridges * (m_KK / T)  -- 12 bridge KK towers with proper radiation normalisation; rooted at b3 = 24 cohomology",
+      "formula": "(30 zeta(3) / pi^4 g_*) * N_bridges * (m_KK / T)  -- 12 bridge KK towers with proper radiation normalisation; rooted at b3 = 43 cohomology",
       "value": 2.542582417582417
     },
     "f_EDE_kk_naive_288": {
       "b3_traceback": true,
-      "formula": "N_KK / (m_KK / T)  -- naive 288-mode template (b3 = 24 * 12 bridges); UNPHYSICAL (>> 1)",
+      "formula": "N_KK / (m_KK / T)  -- naive 288-mode template (b3 = 43 * 12 bridges); UNPHYSICAL (>> 1)",
       "value": 149.76000000000002
     },
     "full_cosmological_tension_resolution": {
@@ -131,14 +131,14 @@
     },
     "m_kk_for_target_f_EDE": {
       "b3_traceback": true,
-      "formula": "F_EDE_TARGET / [(30 zeta(3) / pi^4 g_*) * N_bridges] * T_recomb  -- inverted; b3 = 24 cohomology rooted, needs v28 derivation of natural m_KK",
+      "formula": "F_EDE_TARGET / [(30 zeta(3) / pi^4 g_*) * N_bridges] * T_recomb  -- inverted; b3 = 43 cohomology rooted, needs v28 derivation of natural m_KK",
       "value": 0.003933009184224743
     }
   },
   "g2_inflation": {
     "n_s": {
       "b3_traceback": true,
-      "formula": "Canonical (infrared closure, native): 1 - 2*phi^2/chi_eff = 1 - 2/55 where chi_eff = 6*b3 = 144 and phi = (1+sqrt(5))/2. Slow-roll diagnostic: 1 - 6*epsilon + 2*eta where epsilon = 3 / (2*ReT^2), eta = -1.5 / ReT^2, ReT inherits from Sprint 4 Re(T) stabilization with b3 = 43.",
+      "formula": "Canonical (infrared closure, native): 1 - 2*phi^2/chi_eff = 1 - 2/55 where chi_eff = 2*sum chi(K3_sigma) = 48*n = 144 (n = 3 singular involutions, each resolved by a Kummer K3 with chi = 24; D-009 k3_reading) and phi = (1+sqrt(5))/2. Slow-roll diagnostic: 1 - 6*epsilon + 2*eta where epsilon = 3 / (2*ReT^2), eta = -1.5 / ReT^2, ReT inherits from Sprint 4 Re(T) stabilization with b3 = 43.",
       "value": 0.9636384168229182
     },
     "r": {

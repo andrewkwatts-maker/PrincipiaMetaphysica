@@ -1,0 +1,1210 @@
+{
+  "schema_version": 1,
+  "decision": "D-025",
+  "note": "Every value, status and experiment is read from engine artifacts. OPEN marks an input that could not be found.",
+  "stages": [
+    {
+      "id": "bulk",
+      "label": "Bulk and signature"
+    },
+    {
+      "id": "g2_existence",
+      "label": "G2 manifold existence (closed-geometry theorems)"
+    },
+    {
+      "id": "topology",
+      "label": "Topology counts"
+    },
+    {
+      "id": "gauge_group",
+      "label": "Gauge group"
+    },
+    {
+      "id": "generations",
+      "label": "Generations and chirality"
+    },
+    {
+      "id": "couplings",
+      "label": "Couplings"
+    },
+    {
+      "id": "masses_mixing",
+      "label": "Masses and mixing"
+    },
+    {
+      "id": "gravity",
+      "label": "Gravity"
+    },
+    {
+      "id": "cosmology",
+      "label": "Cosmology"
+    }
+  ],
+  "summary": {
+    "steps": 35,
+    "by_status": {
+      "GEOMETRIC": 9,
+      "THEOREM": 7,
+      "DERIVED": 12,
+      "TOPOLOGY_CANDIDATE": 1,
+      "FITTED": 4,
+      "CALIBRATED": 1,
+      "PREDICTED": 1
+    },
+    "by_tone": {
+      "ok": 24,
+      "fail": 8,
+      "fitted": 3
+    },
+    "by_verdict": {
+      "NO_TEST": 16,
+      "PASS": 7,
+      "FAIL": 8,
+      "TENSION": 2,
+      "MARGINAL": 2
+    },
+    "open_fields": 0
+  },
+  "steps": [
+    {
+      "id": "bulk_dim",
+      "order": 1,
+      "stage": "bulk",
+      "geometric_input": "A 26-dimensional bulk of signature (24,2).",
+      "operation": "Take the critical dimension as the starting space.",
+      "output_symbol": "D_bulk",
+      "param_path": "dimensions.D_bulk",
+      "formula_id": "26d-signature",
+      "theorem_id": "",
+      "section_id": "2.1",
+      "section_href": "paper.html#section-2.1",
+      "formula": {
+        "latex": "\\text{Signature}(M^{24,2}) = (24, 2) \\quad ds^2 = -dt_1^2 - dt_2^2 + \\sum_{i=1}^{12}(dy_{1i}^2 + dy_{2i}^2)",
+        "plain_text": "Signature(M^{24,2}) = (24, 2); ds^2 = -dt_1^2 - dt_2^2 + sum_i(dy_{1i}^2 + dy_{2i}^2)",
+        "category": "DERIVED",
+        "label": "(1.1)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 26,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "shadow_split",
+      "order": 2,
+      "stage": "bulk",
+      "geometric_input": "Two times, one per shadow.",
+      "operation": "Split the bulk into two 13D shadows with 12 space directions each.",
+      "output_symbol": "D_shadow",
+      "param_path": "geometry.D_shadow_total",
+      "formula_id": "abstract-framework-overview",
+      "theorem_id": "",
+      "section_id": "2.1",
+      "section_href": "paper.html#section-2.1",
+      "formula": {
+        "latex": "M^{26}(24,2) \\;\\xrightarrow{\\text{OR}}\\; 2 \\times 13\\text{D}(12,1) \\;\\xrightarrow{Y_7}\\; 2 \\times 4\\text{D} \\quad \\Rightarrow \\quad n_{\\text{gen}} = \\frac{b_2}{4} = \\frac{12}{4} = 3",
+        "plain_text": "M^26(24,2) -> 2 x 13D(12,1) -> 2 x 4D on Y_7 => n_gen = b2/4 = 12/4 = 3",
+        "category": "DERIVED",
+        "label": "(0.1)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 13,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "g2_dim",
+      "order": 3,
+      "stage": "bulk",
+      "geometric_input": "Seven internal dimensions per shadow.",
+      "operation": "Choose a G2-holonomy 7-manifold Y_7 as the internal space.",
+      "output_symbol": "D_G2",
+      "param_path": "dimensions.D_G2",
+      "formula_id": "g2-holonomy-foundations",
+      "theorem_id": "",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "\\text{Hol}(g) \\subseteq G_2 \\iff \\exists \\eta: \\nabla \\eta = 0",
+        "plain_text": "Hol(g) ⊆ G2 iff exists eta: nabla eta = 0",
+        "category": "DERIVED",
+        "label": "(1.3)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 7,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "cg_selection",
+      "order": 4,
+      "stage": "g2_existence",
+      "geometric_input": "The group (Z/2)^3 acting on the torus T^7.",
+      "operation": "Fold the flat torus by three involutions; select (b2, b3) = (12, 43).",
+      "output_symbol": "Y_7 family",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "y7-selection",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "",
+        "plain_text": "Joyce's construction from phi's (Z/2)^3 reaches the family of CG.7; pi_1 is finite exactly on the n = 3 line, so on the compact form the holonomy is exactly G2 there and nowhere else in the family (CG.4). On that line the 12 bridges match the 12 A1 components as one 3 x 4 structure on 280 all-plain classes and on none of the 84 Example-4 classes; with WA-1 (one bridge = one resolved A1 component, adopted 2026-10-01) this selects (12, 43) without using data, the seed in force.",
+        "category": "THEOREM",
+        "label": "(CG.12)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "fold",
+      "figure_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 225\" role=\"img\" class=\"pm-fig\" style=\"max-width:100%;height:auto;color:inherit\"><title>T^7 folded by three Z/2 generators, creases resolved</title><desc>Flat T^7 is folded by 3 generators into 12 singular 3-tori; each is resolved by an Eguchi-Hanson patch, giving b2 = 12.</desc><style>.fg{fill:none;stroke:currentColor;stroke-width:1.5}.tx{fill:currentColor;font:13px sans-serif}.sm{fill:currentColor;font:11px sans-serif;opacity:.8}.ok{fill:var(--pm-fig-ok,#2e9e5b);fill-opacity:.25;stroke:var(--pm-fig-ok,#2e9e5b);stroke-width:1.5}.bad{fill:var(--pm-fig-bad,#d6453d);fill-opacity:.25;stroke:var(--pm-fig-bad,#d6453d);stroke-width:1.5}.off{fill:var(--pm-fig-off,#8a8a8a);fill-opacity:.2;stroke:var(--pm-fig-off,#8a8a8a);stroke-width:1.5;stroke-dasharray:4 3}.ac{fill:var(--pm-fig-accent,#4a7bd0);fill-opacity:.25;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:1.5}.curve{fill:none;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:2.5}</style><rect x=\"10\" y=\"20\" width=\"150\" height=\"90\" rx=\"6\" class=\"fg\"/><text x=\"85\" y=\"70\" class=\"tx\" text-anchor=\"middle\">flat T^7</text><text x=\"85\" y=\"130\" class=\"sm\" text-anchor=\"middle\">7-dim torus</text><rect x=\"215\" y=\"20\" width=\"190\" height=\"90\" rx=\"6\" class=\"ac\"/><text x=\"310\" y=\"55\" class=\"tx\" text-anchor=\"middle\">3 folding generators</text><text x=\"310\" y=\"75\" class=\"sm\" text-anchor=\"middle\">(Z/2)^3 acts</text><text x=\"310\" y=\"130\" class=\"sm\" text-anchor=\"middle\">each fold pinches the torus</text><rect x=\"460\" y=\"20\" width=\"170\" height=\"90\" rx=\"6\" class=\"ok\"/><text x=\"545\" y=\"55\" class=\"tx\" text-anchor=\"middle\">12 singular 3-tori</text><text x=\"545\" y=\"75\" class=\"sm\" text-anchor=\"middle\">each a crease T^3 x C^2/Z2</text><text x=\"545\" y=\"130\" class=\"sm\" text-anchor=\"middle\">orbit size(s): 4</text><text x=\"185\" y=\"68\" class=\"tx\" text-anchor=\"middle\">→</text><text x=\"432\" y=\"68\" class=\"tx\" text-anchor=\"middle\">→</text><rect x=\"215\" y=\"160\" width=\"415\" height=\"50\" rx=\"6\" class=\"ac\"/><text x=\"422\" y=\"182\" class=\"tx\" text-anchor=\"middle\">each crease replaced by an Eguchi-Hanson patch</text><text x=\"422\" y=\"200\" class=\"sm\" text-anchor=\"middle\">b2 = 12 exceptional 2-classes (engine)</text></svg>",
+      "figure_caption": "Flat T^7 folded by three Z/2 generators; each crease is resolved by an Eguchi-Hanson patch.",
+      "value": true,
+      "status": "THEOREM",
+      "value_source": "closed_geometry.certificate",
+      "why": {}
+    },
+    {
+      "id": "cg_singular",
+      "order": 5,
+      "stage": "g2_existence",
+      "geometric_input": "Twelve disjoint 3-tori in the fold locus.",
+      "operation": "Resolve each crease with an Eguchi-Hanson patch.",
+      "output_symbol": "singular set",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "y7-singular-components",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "",
+        "plain_text": "The singular set of T^7/Gamma is 12 disjoint three-tori, one Gamma-orbit of 4 fixed tori each, from 3 singular involutions. Every one is an A_1 locus and a flat T^3 with Betti numbers (1, 3, 3, 1), so b_1 = 3 on each. The resolution adds one 2-class per component (b_2 = 12) and three 3-classes per component (b_3 = 7 + 3 x 12).",
+        "category": "THEOREM",
+        "label": "(CG.3)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "eh_profile",
+      "figure_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 270\" role=\"img\" class=\"pm-fig\" style=\"max-width:100%;height:auto;color:inherit\"><title>Eguchi-Hanson neck profile f(r)</title><desc>f(r)=sqrt(1-a^4/r^4) rises from 0 at the bolt r=a toward 1 as r grows, sampled at 60 points up to r=4 a.</desc><style>.fg{fill:none;stroke:currentColor;stroke-width:1.5}.tx{fill:currentColor;font:13px sans-serif}.sm{fill:currentColor;font:11px sans-serif;opacity:.8}.ok{fill:var(--pm-fig-ok,#2e9e5b);fill-opacity:.25;stroke:var(--pm-fig-ok,#2e9e5b);stroke-width:1.5}.bad{fill:var(--pm-fig-bad,#d6453d);fill-opacity:.25;stroke:var(--pm-fig-bad,#d6453d);stroke-width:1.5}.off{fill:var(--pm-fig-off,#8a8a8a);fill-opacity:.2;stroke:var(--pm-fig-off,#8a8a8a);stroke-width:1.5;stroke-dasharray:4 3}.ac{fill:var(--pm-fig-accent,#4a7bd0);fill-opacity:.25;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:1.5}.curve{fill:none;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:2.5}</style><line x1=\"60\" y1=\"220\" x2=\"600\" y2=\"220\" class=\"fg\"/><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"220\" class=\"fg\"/><polyline class=\"curve\" points=\"60.0,220.0 69.2,135.2 78.3,106.7 87.5,88.4 96.6,75.3 105.8,65.6 114.9,58.1 124.1,52.2 133.2,47.4 142.4,43.5 151.5,40.3 160.7,37.7 169.8,35.5 179.0,33.6 188.1,32.0 197.3,30.6 206.4,29.5 215.6,28.5 224.7,27.6 233.9,26.8 243.1,26.1 252.2,25.5 261.4,25.0 270.5,24.6 279.7,24.2 288.8,23.8 298.0,23.5 307.1,23.2 316.3,22.9 325.4,22.7 334.6,22.5 343.7,22.3 352.9,22.1 362.0,22.0 371.2,21.8 380.3,21.7 389.5,21.6 398.6,21.5 407.8,21.4 416.9,21.3 426.1,21.2 435.3,21.1 444.4,21.0 453.6,21.0 462.7,20.9 471.9,20.9 481.0,20.8 490.2,20.8 499.3,20.7 508.5,20.7 517.6,20.6 526.8,20.6 535.9,20.6 545.1,20.5 554.2,20.5 563.4,20.5 572.5,20.5 581.7,20.4 590.8,20.4 600.0,20.4\"/><text x=\"330.0\" y=\"258\" class=\"tx\" text-anchor=\"middle\">radius r / a  (r = a is the bolt, a 2-sphere)</text><text x=\"14\" y=\"120.0\" class=\"tx\" text-anchor=\"start\">f(r)</text><text x=\"54\" y=\"24\" class=\"sm\" text-anchor=\"end\">1</text><text x=\"54\" y=\"224\" class=\"sm\" text-anchor=\"end\">0</text><text x=\"60\" y=\"236\" class=\"sm\" text-anchor=\"middle\">1</text><text x=\"600\" y=\"236\" class=\"sm\" text-anchor=\"end\">4</text><text x=\"330.0\" y=\"50\" class=\"sm\" text-anchor=\"middle\">f(r) = sqrt(1 - a^4 / r^4) tends to 1: flat far away</text></svg>",
+      "figure_caption": "The Eguchi-Hanson neck profile f(r) = sqrt(1 - a^4/r^4), sampled from the formula.",
+      "value": true,
+      "status": "THEOREM",
+      "value_source": "closed_geometry.certificate",
+      "why": {}
+    },
+    {
+      "id": "cg_pi1",
+      "order": 6,
+      "stage": "g2_existence",
+      "geometric_input": "The three involutions span the group.",
+      "operation": "Compute the fundamental group; it is trivial.",
+      "output_symbol": "pi_1(Y_7)",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "y7-fundamental-group",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "",
+        "plain_text": "pi_1(Y_7) = 1: the 3 singular involutions span Gamma and flip every coordinate, so every generator of the orbifold group lies in the subgroup generated by elements with fixed points. On representatives of n = 0, 1, 2, 3 singular involutions the flat ranks are (0, 7): 7, (4, 19): 3, (8, 31): 1, (12, 43): 0: pi_1 is finite exactly when all three generating involutions are singular (n = 3), and infinite otherwise.",
+        "category": "THEOREM",
+        "label": "(CG.4)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": true,
+      "status": "THEOREM",
+      "value_source": "closed_geometry.certificate",
+      "why": {}
+    },
+    {
+      "id": "cg_metric",
+      "order": 7,
+      "stage": "g2_existence",
+      "geometric_input": "Hypotheses H1-H8 measured on the active seed.",
+      "operation": "Apply Joyce 2000, Thm 11.6.1: a torsion-free G2 structure exists.",
+      "output_symbol": "Hol = G2",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "closure_report",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "",
+        "plain_text": "a torsion-free G2 structure exists on the resolution; its metric is Ricci-flat; its holonomy is exactly G2",
+        "category": "THEOREM",
+        "label": "(CG.13)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "proof_flow",
+      "figure_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 335\" role=\"img\" class=\"pm-fig\" style=\"max-width:100%;height:auto;color:inherit\"><title>From the hypotheses to holonomy exactly G2</title><desc>Hypotheses H1 holds, H2 holds, H3 holds, H4a holds, H4b holds, H4c holds, H5 holds, H6 holds, H7 holds, H8 holds feed three conclusions; verdict CLOSED_BY_THEOREM.</desc><style>.fg{fill:none;stroke:currentColor;stroke-width:1.5}.tx{fill:currentColor;font:13px sans-serif}.sm{fill:currentColor;font:11px sans-serif;opacity:.8}.ok{fill:var(--pm-fig-ok,#2e9e5b);fill-opacity:.25;stroke:var(--pm-fig-ok,#2e9e5b);stroke-width:1.5}.bad{fill:var(--pm-fig-bad,#d6453d);fill-opacity:.25;stroke:var(--pm-fig-bad,#d6453d);stroke-width:1.5}.off{fill:var(--pm-fig-off,#8a8a8a);fill-opacity:.2;stroke:var(--pm-fig-off,#8a8a8a);stroke-width:1.5;stroke-dasharray:4 3}.ac{fill:var(--pm-fig-accent,#4a7bd0);fill-opacity:.25;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:1.5}.curve{fill:none;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:2.5}</style><rect x=\"10\" y=\"10\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"27\" class=\"tx\" text-anchor=\"start\">H1  holds</text><text x=\"130\" y=\"27\" class=\"sm\" text-anchor=\"start\">Gamma = (Z2)^3 preserves phi0</text><rect x=\"10\" y=\"42\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"59\" class=\"tx\" text-anchor=\"start\">H2  holds</text><text x=\"130\" y=\"59\" class=\"sm\" text-anchor=\"start\">phi0 is positive: Hitchin metric (7,0)</text><rect x=\"10\" y=\"74\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"91\" class=\"tx\" text-anchor=\"start\">H3  holds</text><text x=\"130\" y=\"91\" class=\"sm\" text-anchor=\"start\">every singular component is T^3 x C^2/</text><rect x=\"10\" y=\"106\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"123\" class=\"tx\" text-anchor=\"start\">H4a  holds</text><text x=\"130\" y=\"123\" class=\"sm\" text-anchor=\"start\">phi0's triple on each flipped 4-plane </text><rect x=\"10\" y=\"138\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"155\" class=\"tx\" text-anchor=\"start\">H4b  holds</text><text x=\"130\" y=\"155\" class=\"sm\" text-anchor=\"start\">the Eguchi-Hanson triple is closed in </text><rect x=\"10\" y=\"170\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"187\" class=\"tx\" text-anchor=\"start\">H4c  holds</text><text x=\"130\" y=\"187\" class=\"sm\" text-anchor=\"start\">local model EH x T^3: d phi = d*phi = </text><rect x=\"10\" y=\"202\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"219\" class=\"tx\" text-anchor=\"start\">H5  holds</text><text x=\"130\" y=\"219\" class=\"sm\" text-anchor=\"start\">Eguchi-Hanson is Ricci-flat and decays</text><rect x=\"10\" y=\"234\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"251\" class=\"tx\" text-anchor=\"start\">H6  holds</text><text x=\"130\" y=\"251\" class=\"sm\" text-anchor=\"start\">pi_1 finite and b_1 = 0</text><rect x=\"10\" y=\"266\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"283\" class=\"tx\" text-anchor=\"start\">H7  holds</text><text x=\"130\" y=\"283\" class=\"sm\" text-anchor=\"start\">exactly one Gamma-invariant spinor</text><rect x=\"10\" y=\"298\" width=\"330\" height=\"26\" rx=\"4\" class=\"ok\"/><text x=\"18\" y=\"315\" class=\"tx\" text-anchor=\"start\">H8  holds</text><text x=\"130\" y=\"315\" class=\"sm\" text-anchor=\"start\">the glued form is compact-orbit at sma</text><rect x=\"380\" y=\"14.0\" width=\"250\" height=\"94.66666666666667\" rx=\"6\" class=\"ok\"/><text x=\"505\" y=\"59.333333333333336\" class=\"tx\" text-anchor=\"middle\">a torsion-free G2 structure exists on th</text><text x=\"505\" y=\"77.33333333333334\" class=\"sm\" text-anchor=\"middle\">Joyce 2000, Thm 11.6.1; Joyce 1996 I</text><rect x=\"380\" y=\"120.66666666666667\" width=\"250\" height=\"94.66666666666667\" rx=\"6\" class=\"ok\"/><text x=\"505\" y=\"166.0\" class=\"tx\" text-anchor=\"middle\">its metric is Ricci-flat</text><text x=\"505\" y=\"184.0\" class=\"sm\" text-anchor=\"middle\">Bonan</text><rect x=\"380\" y=\"227.33333333333334\" width=\"250\" height=\"94.66666666666667\" rx=\"6\" class=\"ok\"/><text x=\"505\" y=\"272.6666666666667\" class=\"tx\" text-anchor=\"middle\">its holonomy is exactly G2</text><text x=\"505\" y=\"290.6666666666667\" class=\"sm\" text-anchor=\"middle\">Joyce 1996 II, Prop 1.1.1</text><text x=\"360\" y=\"175.0\" class=\"tx\" text-anchor=\"middle\">→</text></svg>",
+      "figure_caption": "Each hypothesis is measured by the engine; the theorems then give Ric = 0 and Hol = G2.",
+      "value": "CLOSED_BY_THEOREM",
+      "status": "THEOREM",
+      "value_source": "g2_closure.closure_report",
+      "why": {}
+    },
+    {
+      "id": "b2",
+      "order": 8,
+      "stage": "topology",
+      "geometric_input": "The resolved 7-manifold Y_7.",
+      "operation": "Count degree-2 cohomology classes.",
+      "output_symbol": "b_2",
+      "param_path": "topology.b2",
+      "formula_id": "betti-numbers",
+      "theorem_id": "",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "b_0=1, b_1=0, b_2=12, b_3=43, b_4=43, b_5=12, b_6=0, b_7=1",
+        "plain_text": "b0=1, b1=0, b2=12, b3=43, b4=43, b5=12, b6=0, b7=1",
+        "category": "DERIVED",
+        "label": "(2.2a)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "betti",
+      "figure_svg": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 640 110\" role=\"img\" class=\"pm-fig\" style=\"max-width:100%;height:auto;color:inherit\"><title>Counting b3: flat hallways plus three per repair</title><desc>b3 = 43 equals 7 flat 3-forms plus 3 times b2 = 12, i.e. 36.</desc><style>.fg{fill:none;stroke:currentColor;stroke-width:1.5}.tx{fill:currentColor;font:13px sans-serif}.sm{fill:currentColor;font:11px sans-serif;opacity:.8}.ok{fill:var(--pm-fig-ok,#2e9e5b);fill-opacity:.25;stroke:var(--pm-fig-ok,#2e9e5b);stroke-width:1.5}.bad{fill:var(--pm-fig-bad,#d6453d);fill-opacity:.25;stroke:var(--pm-fig-bad,#d6453d);stroke-width:1.5}.off{fill:var(--pm-fig-off,#8a8a8a);fill-opacity:.2;stroke:var(--pm-fig-off,#8a8a8a);stroke-width:1.5;stroke-dasharray:4 3}.ac{fill:var(--pm-fig-accent,#4a7bd0);fill-opacity:.25;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:1.5}.curve{fill:none;stroke:var(--pm-fig-accent,#4a7bd0);stroke-width:2.5}</style><rect x=\"10\" y=\"20\" width=\"130\" height=\"70\" rx=\"6\" class=\"fg\"/><text x=\"75\" y=\"50\" class=\"tx\" text-anchor=\"middle\">7</text><text x=\"75\" y=\"72\" class=\"sm\" text-anchor=\"middle\">flat 3-forms</text><text x=\"160\" y=\"60\" class=\"tx\" text-anchor=\"middle\">+</text><rect x=\"180\" y=\"20\" width=\"190\" height=\"70\" rx=\"6\" class=\"ac\"/><text x=\"275\" y=\"50\" class=\"tx\" text-anchor=\"middle\">3 × 12 = 36</text><text x=\"275\" y=\"72\" class=\"sm\" text-anchor=\"middle\">twisted 3-forms (3 per repair)</text><text x=\"390\" y=\"60\" class=\"tx\" text-anchor=\"middle\">=</text><rect x=\"410\" y=\"20\" width=\"220\" height=\"70\" rx=\"6\" class=\"ok\"/><text x=\"520\" y=\"50\" class=\"tx\" text-anchor=\"middle\">b3 = 43</text><text x=\"520\" y=\"72\" class=\"sm\" text-anchor=\"middle\">b2 = 12 repairs (engine)</text></svg>",
+      "figure_caption": "b3 = 7 + 3 x b2, read from the engine.",
+      "value": 12,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "b3",
+      "order": 9,
+      "stage": "topology",
+      "geometric_input": "The resolved 7-manifold Y_7.",
+      "operation": "Count degree-3 classes: b_3 = 7 + 3 b_2.",
+      "output_symbol": "b_3",
+      "param_path": "particle.b3",
+      "formula_id": "betti-numbers",
+      "theorem_id": "",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "b_0=1, b_1=0, b_2=12, b_3=43, b_4=43, b_5=12, b_6=0, b_7=1",
+        "plain_text": "b0=1, b1=0, b2=12, b3=43, b4=43, b5=12, b6=0, b7=1",
+        "category": "DERIVED",
+        "label": "(2.2a)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 43,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "chi_eff",
+      "order": 10,
+      "stage": "topology",
+      "geometric_input": "Three Kummer K3 surfaces, one per involution.",
+      "operation": "Sum the Euler characteristics of the K3 reading.",
+      "output_symbol": "chi_eff",
+      "param_path": "geometry.chi_eff_total",
+      "formula_id": "euler-characteristic",
+      "theorem_id": "",
+      "section_id": "2.4",
+      "section_href": "paper.html#section-2.4",
+      "formula": {
+        "latex": "\\chi_{\\text{eff}} = 2(h^{1,1} - h^{2,1} + h^{3,1})",
+        "plain_text": "chi_eff = 2(h^{1,1} - h^{2,1} + h^{3,1})",
+        "category": "DERIVED",
+        "label": "(2.2)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 144,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "gauge_content",
+      "order": 11,
+      "stage": "gauge_group",
+      "geometric_input": "Twelve A1 loci with b_1 = 3.",
+      "operation": "M-theory on the locus gives b_2 = 12 U(1) vector multiplets.",
+      "output_symbol": "gauge content",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "y7-gauge-content",
+      "section_id": "3.2",
+      "section_href": "paper.html#section-3.2",
+      "formula": {
+        "latex": "",
+        "plain_text": "M-theory on the resolved Y_7 gives b_2 = 12 U(1) vector multiplets and b_3 neutral chiral multiplets. At the orbifold point each of the 12 singular loci is C^2/Z_2 x T^3 with trivial monodromy, carrying SU(2) with 1 + b_1(T^3) = 4 fermion zero modes: the content of pure N = 4 super Yang-Mills, which neither confines nor forms a gaugino condensate. A gaugino-condensation racetrack has no gauge sector to come from on this geometry; pure N = 1 would need b_1 = 0, the reflected case that A_1 admissibility excludes.",
+        "category": "THEOREM",
+        "label": "(CG.5)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": true,
+      "status": "THEOREM",
+      "value_source": "closed_geometry.certificate",
+      "why": {}
+    },
+    {
+      "id": "no_confinement",
+      "order": 12,
+      "stage": "gauge_group",
+      "geometric_input": "Every singular locus has b_1 > 0.",
+      "operation": "Exclude a confining sector on a holonomy-G2 manifold.",
+      "output_symbol": "no confinement",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "confinement-exclusion",
+      "section_id": "3.2",
+      "section_href": "paper.html#section-3.2",
+      "formula": {
+        "latex": "",
+        "plain_text": "Pure N = 1 super Yang-Mills, the confining sector every racetrack-type stabilisation needs, requires a singular locus with b_1 = 0. Across phi's Joyce family such loci occur only at n = [1]; every n = 3 class has smallest b_1 in [1, 3]. Holonomy exactly G2 and a confining sector are mutually exclusive inside the construction.",
+        "category": "THEOREM",
+        "label": "(CG.10)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": true,
+      "status": "THEOREM",
+      "value_source": "closed_geometry.certificate",
+      "why": {}
+    },
+    {
+      "id": "k3_reading",
+      "order": 13,
+      "stage": "generations",
+      "geometric_input": "One Kummer K3 per singular involution.",
+      "operation": "Count the K3 factors as generation sources.",
+      "output_symbol": "n (K3 count)",
+      "param_path": "",
+      "formula_id": "",
+      "theorem_id": "k3-reading-generations",
+      "section_id": "4.2",
+      "section_href": "paper.html#section-4.2",
+      "formula": {
+        "latex": "",
+        "plain_text": "Each of the 3 singular involutions acts as -1 on its transverse T^4 with 16 fixed points (counted); resolving them gives a Kummer K3 with chi = 24, both from the quotient and from its Betti numbers. Read as 2 x sum chi(K3) over the two shadows, chi_eff = 144 (72 per shadow), so chi_eff/48 = 3: the same statement as counting singular involutions, and it holds on every class of the family, where b_2/4 does not. This reading is chi_eff's definition since 2026-10-01 (D-015, chi_eff_route = k3_reading); it is an index of the K3 surfaces, not the Euler characteristic of Y_7, which is 0.",
+        "category": "THEOREM",
+        "label": "(CG.9)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": true,
+      "status": "THEOREM",
+      "value_source": "closed_geometry.certificate",
+      "why": {}
+    },
+    {
+      "id": "chiral_index",
+      "order": 14,
+      "stage": "generations",
+      "geometric_input": "Associative chirality projector.",
+      "operation": "Count left minus right zero modes.",
+      "output_symbol": "chiral index",
+      "param_path": "chirality.chiral_index",
+      "formula_id": "chirality-index-theorem",
+      "theorem_id": "",
+      "section_id": "4.1",
+      "section_href": "paper.html#section-4.1",
+      "formula": {
+        "latex": "\\text{index}(\\not{D}) = n_L - n_R = \\frac{1}{(2\\pi)^3} \\int_{M_7} \\Phi \\wedge F \\wedge F",
+        "plain_text": "index(∂/) = n_L - n_R = (2π)^(-3) ∫ Φ ∧ F ∧ F",
+        "category": "DERIVED",
+        "label": "(4.1.4)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 6.0,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "n_gen",
+      "order": 15,
+      "stage": "generations",
+      "geometric_input": "Three singular involutions, b_2 = 12.",
+      "operation": "Divide: n_gen = b_2 / 4.",
+      "output_symbol": "n_gen",
+      "param_path": "topology.n_gen",
+      "formula_id": "three-generations",
+      "theorem_id": "",
+      "section_id": "4.2",
+      "section_href": "paper.html#section-4.2",
+      "formula": {
+        "latex": "n_{\\text{gen}} = \\frac{\\chi_{\\text{eff}}}{48}",
+        "plain_text": "n_gen = chi_eff / 48",
+        "category": "DERIVED",
+        "label": "(2.3)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 3,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "alpha_gut_inv",
+      "order": 16,
+      "stage": "couplings",
+      "geometric_input": "Gauge coupling unification on Y_7.",
+      "operation": "Run the three couplings to a common scale.",
+      "output_symbol": "1/alpha_GUT",
+      "param_path": "gauge.ALPHA_GUT_INV",
+      "formula_id": "gauge-coupling-unification",
+      "theorem_id": "",
+      "section_id": "3",
+      "section_href": "paper.html#section-3",
+      "formula": {
+        "latex": "M_{GUT} = (6.3 \\pm 0.3) \\times 10^{15}\\,\\text{GeV}, \\quad \\frac{1}{\\alpha_{GUT}} = 42.7 \\pm 2.0",
+        "plain_text": "M_GUT = 6.3e15 GeV, 1/alpha_GUT = 42.7 +/- 2.0",
+        "category": "PREDICTED",
+        "label": "(3.6)"
+      },
+      "experiment": {
+        "verdict": "NO_TEST",
+        "why": "no validation_report row for this quantity"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 43.7945572223018,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "m_gut",
+      "order": 17,
+      "stage": "couplings",
+      "geometric_input": "The unification condition.",
+      "operation": "Solve for the scale at which the couplings meet.",
+      "output_symbol": "M_GUT",
+      "param_path": "gauge.M_GUT",
+      "formula_id": "gut-scale",
+      "theorem_id": "",
+      "section_id": "3",
+      "section_href": "paper.html#section-3",
+      "formula": {
+        "latex": "M_{GUT} : \\quad \\min_{\\mu} \\sigma[\\alpha_1(\\mu), \\alpha_2(\\mu), \\alpha_3(\\mu)]",
+        "plain_text": "M_GUT: min over mu of std[alpha_1(mu), alpha_2(mu), alpha_3(mu)]",
+        "category": "DERIVED",
+        "label": "(3.5)"
+      },
+      "experiment": {
+        "value": 1000000000000000.0,
+        "uncertainty": null,
+        "source": "Indirect: Super-Kamiokande tau_p > 1.67e34 yr (p -> e+ pi0) constrains M_GUT above ~1e15 GeV. This is an inference, not a measurement of M_GUT -- no direct measurement is possible at this scale.",
+        "pull": null,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 6324555320336760.0,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "alpha_inv",
+      "order": 18,
+      "stage": "couplings",
+      "geometric_input": "G2 geometry of the electromagnetic factor.",
+      "operation": "Evaluate the geometric fine-structure expression.",
+      "output_symbol": "1/alpha",
+      "param_path": "electromagnetic.alpha_inv",
+      "formula_id": "alpha-inverse-geometric",
+      "theorem_id": "",
+      "section_id": "3.1",
+      "section_href": "paper.html#section-3.1",
+      "formula": {
+        "latex": "\\alpha^{-1} = k_{\\gimel}^2 - \\frac{b_3}{\\varphi} + \\frac{\\varphi}{4\\pi} \\approx 137.037",
+        "plain_text": "alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.037",
+        "category": "GEOMETRIC",
+        "label": "(3.1) Fine Structure Constant"
+      },
+      "experiment": {
+        "value": 137.035999177,
+        "uncertainty": 2.1e-08,
+        "source": "CODATA2022",
+        "pull": 33457.08361734978,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 137.03670177575597,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "sin2_theta_w",
+      "order": 19,
+      "stage": "couplings",
+      "geometric_input": "The topological weak-mixing candidate.",
+      "operation": "Evaluate sin^2(theta_W) from the topology counts.",
+      "output_symbol": "sin^2 theta_W",
+      "param_path": "gauge.sin2_theta_w_geometric",
+      "formula_id": "ew-weinberg-angle-v19",
+      "theorem_id": "",
+      "section_id": "6.9",
+      "section_href": "paper.html#section-6.9",
+      "formula": {
+        "latex": "\\sin^2\\theta_W = \\frac{12}{24} \\times f_{\\text{RG}} = 0.2312, \\quad f_{\\text{RG}} \\approx 0.924",
+        "plain_text": "sin^2(theta_W) = (12/24) * f_RG = 0.2312, f_RG ~ 0.924",
+        "category": "DERIVED",
+        "label": "(3.3.11)"
+      },
+      "experiment": {
+        "value": 0.23122,
+        "uncertainty": 4e-05,
+        "source": "PDG2024",
+        "pull": 17.119538030753443,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.23190478152123015,
+      "status": "TOPOLOGY_CANDIDATE",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "g2_weak",
+      "order": 20,
+      "stage": "couplings",
+      "geometric_input": "The SU(2) factor of the gauge sector.",
+      "operation": "Fix the weak coupling from the Lagrangian.",
+      "output_symbol": "g_2",
+      "param_path": "gauge.weak_coupling_g2",
+      "formula_id": "su2-weak-lagrangian-v22",
+      "theorem_id": "",
+      "section_id": "3.2",
+      "section_href": "paper.html#section-3.2",
+      "formula": {
+        "latex": "\\mathcal{L}_{\\text{weak}} = -\\frac{1}{4}W^a_{\\mu\\nu}W^{a\\mu\\nu} + \\bar{\\psi}_L i\\gamma^\\mu D_\\mu \\psi_L",
+        "plain_text": "L_weak = -1/4 W^a_mn W^a^mn + psi-bar_L i*gamma^mu*D_mu psi_L",
+        "category": "DERIVED",
+        "label": "(3.3)"
+      },
+      "experiment": {
+        "value": 0.6517,
+        "uncertainty": 0.0001,
+        "source": "PDG2024",
+        "pull": 7.000000000000339,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.6524,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "v_us",
+      "order": 21,
+      "stage": "masses_mixing",
+      "geometric_input": "Froggatt-Nielsen hierarchy from Y_7.",
+      "operation": "Read the Cabibbo angle from the texture.",
+      "output_symbol": "V_us",
+      "param_path": "ckm.V_us",
+      "formula_id": "ckm-hierarchy",
+      "theorem_id": "",
+      "section_id": "4.3",
+      "section_href": "paper.html#section-4.3",
+      "formula": {
+        "latex": "V_{\\text{us}} \\sim \\epsilon, \\quad V_{\\text{cb}} \\sim A\\epsilon^2, \\quad V_{\\text{ub}} \\sim A\\epsilon^3",
+        "plain_text": "V_us ~ epsilon, V_cb ~ A*epsilon^2, V_ub ~ A*epsilon^3",
+        "category": "DERIVED",
+        "label": "(4.3.2)"
+      },
+      "experiment": {
+        "value": 0.225,
+        "uncertainty": 0.00067,
+        "source": "PDG2024",
+        "pull": 2.79080574861222,
+        "verdict": "TENSION"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.22313016014842982,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "v_cb",
+      "order": 22,
+      "stage": "masses_mixing",
+      "geometric_input": "The same hierarchy at second order.",
+      "operation": "Evaluate V_cb.",
+      "output_symbol": "V_cb",
+      "param_path": "ckm.V_cb",
+      "formula_id": "ckm-hierarchy",
+      "theorem_id": "",
+      "section_id": "4.3",
+      "section_href": "paper.html#section-4.3",
+      "formula": {
+        "latex": "V_{\\text{us}} \\sim \\epsilon, \\quad V_{\\text{cb}} \\sim A\\epsilon^2, \\quad V_{\\text{ub}} \\sim A\\epsilon^3",
+        "plain_text": "V_us ~ epsilon, V_cb ~ A*epsilon^2, V_ub ~ A*epsilon^3",
+        "category": "DERIVED",
+        "label": "(4.3.2)"
+      },
+      "experiment": {
+        "value": 0.04182,
+        "uncertainty": 0.00085,
+        "source": "PDG2024",
+        "pull": 1.7558524965061326,
+        "verdict": "MARGINAL"
+      },
+      "tone": "fitted",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.04032752537796979,
+      "status": "FITTED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "theta12",
+      "order": 23,
+      "stage": "masses_mixing",
+      "geometric_input": "Neutrino sector from G2 topology.",
+      "operation": "Evaluate the solar angle.",
+      "output_symbol": "theta_12",
+      "param_path": "neutrino.theta_12_pred",
+      "formula_id": "pmns-theta-12",
+      "theorem_id": "",
+      "section_id": "4.5",
+      "section_href": "paper.html#section-4.5",
+      "formula": {
+        "latex": "\\sin\\theta_{12} = \\frac{1}{\\sqrt{3}} \\left(1 - \\frac{b_3 - b_2 n_{\\text{gen}}}{2\\chi_{\\text{eff}}}\\right)",
+        "plain_text": "sin(theta_12) = 1/sqrt(3) * (1 - (b3 - b2*n_gen)/(2*chi_eff))",
+        "category": "DERIVED",
+        "label": "(4.15)"
+      },
+      "experiment": {
+        "value": 33.41,
+        "uncertainty": 0.75,
+        "source": "NuFIT6.0",
+        "pull": 1.1673779188319031,
+        "verdict": "MARGINAL"
+      },
+      "tone": "fitted",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 34.285533439123924,
+      "status": "FITTED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "theta13",
+      "order": 24,
+      "stage": "masses_mixing",
+      "geometric_input": "Neutrino sector from G2 topology.",
+      "operation": "Evaluate the reactor angle.",
+      "output_symbol": "theta_13",
+      "param_path": "neutrino.theta_13_pred",
+      "formula_id": "pmns-theta-13",
+      "theorem_id": "",
+      "section_id": "4.5",
+      "section_href": "paper.html#section-4.5",
+      "formula": {
+        "latex": "\\sin\\theta_{13} = \\frac{\\sqrt{b_2 \\times n_{\\text{gen}}}}{b_3} \\left(1 + \\frac{S_{\\text{orient}}}{2\\chi_{\\text{eff}}}\\right)",
+        "plain_text": "sin(theta_13) = sqrt(b2 * n_gen) / b3 * (1 + S_orient/(2*chi_eff))",
+        "category": "DERIVED",
+        "label": "(4.13)"
+      },
+      "experiment": {
+        "value": 8.63,
+        "uncertainty": 0.11,
+        "source": "NuFIT6.0",
+        "pull": 2.477453675760056,
+        "verdict": "TENSION"
+      },
+      "tone": "fitted",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 8.357480095666395,
+      "status": "FITTED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "delta_cp",
+      "order": 25,
+      "stage": "masses_mixing",
+      "geometric_input": "Neutrino sector from G2 topology.",
+      "operation": "Evaluate the CP phase.",
+      "output_symbol": "delta_CP",
+      "param_path": "neutrino.delta_CP_pred",
+      "formula_id": "pmns-delta-cp",
+      "theorem_id": "",
+      "section_id": "4.5",
+      "section_href": "paper.html#section-4.5",
+      "formula": {
+        "latex": "\\delta_{CP} = \\pi \\left(\\frac{n_{\\text{gen}} + b_2}{2n_{\\text{gen}}} + \\frac{n_{\\text{gen}}}{b_3}\\right) + \\delta_{\\text{parity}} \\quad (\\delta_{\\text{parity}} = 45.9^\\circ,\\ \\text{FITTED})",
+        "plain_text": "delta_CP = pi * ((n_gen + b2)/(2*n_gen) + n_gen/b3) + delta_parity (delta_parity = 45.9 deg, FITTED)",
+        "category": "FITTED",
+        "label": "(4.14)"
+      },
+      "experiment": {
+        "value": 278.0,
+        "uncertainty": 22.0,
+        "source": "NuFIT6.0",
+        "pull": 5.888266384778015,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 148.45813953488368,
+      "status": "FITTED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "higgs_quartic",
+      "order": 26,
+      "stage": "masses_mixing",
+      "geometric_input": "Moduli potential on Y_7.",
+      "operation": "Read the Higgs quartic coupling.",
+      "output_symbol": "lambda",
+      "param_path": "higgs.lambda_quartic",
+      "formula_id": "higgs-quartic-from-geometry-v19",
+      "theorem_id": "",
+      "section_id": "4.4",
+      "section_href": "paper.html#section-4.4",
+      "formula": {
+        "latex": "\\lambda = \\frac{m_H^2}{2v^2} = \\frac{(125.1)^2}{2 \\times (246)^2} \\approx 0.129",
+        "plain_text": "lambda = m_H^2 / (2*v^2) = (125.1)^2 / (2*246^2) ~ 0.129",
+        "category": "DERIVED",
+        "label": "(3.4.2)"
+      },
+      "experiment": {
+        "value": 0.129,
+        "uncertainty": 0.002,
+        "source": "PDG2024",
+        "pull": 0.03688122795350579,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.12907376245590702,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "higgs_mass",
+      "order": 27,
+      "stage": "masses_mixing",
+      "geometric_input": "Moduli stabilisation.",
+      "operation": "Evaluate the Higgs mass.",
+      "output_symbol": "m_H",
+      "param_path": "higgs.m_higgs_pred",
+      "formula_id": "higgs-mass",
+      "theorem_id": "",
+      "section_id": "4.4",
+      "section_href": "paper.html#section-4.4",
+      "formula": {
+        "latex": "m_h^2 = 8\\pi^2 v^2 \\lambda_{\\text{eff}}",
+        "plain_text": "m_h^2 = 8π^2 v^2 λ_eff",
+        "category": "DERIVED",
+        "label": "(4.4.1)"
+      },
+      "experiment": {
+        "value": 125.2,
+        "uncertainty": 0.11,
+        "source": "PDG 2024 (ATLAS+CMS combined)",
+        "pull": 41.610807567668154,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 120.6228111675565,
+      "status": "CALIBRATED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "m_pl",
+      "order": 28,
+      "stage": "gravity",
+      "geometric_input": "Kaluza-Klein reduction of the 14D action.",
+      "operation": "Integrate over Y_7 to get the 4D Planck mass.",
+      "output_symbol": "M_Pl",
+      "param_path": "cosmology.M_Pl_4D",
+      "formula_id": "einstein-hilbert-14D",
+      "theorem_id": "",
+      "section_id": "5.1",
+      "section_href": "paper.html#section-5.1",
+      "formula": {
+        "latex": "S_{14} = \\frac{1}{2\\kappa_{14}^{2}} \\int d^{14}x \\sqrt{-G} R_{14}",
+        "plain_text": "S_14 = (1/2kappa^2_14) integral d^14 x sqrt(-G) R_14",
+        "category": "DERIVED",
+        "label": "(5.2)"
+      },
+      "experiment": {
+        "value": 1.22089e+19,
+        "uncertainty": 1900000000000000.0,
+        "source": "CODATA2022",
+        "pull": 0.37117263157894737,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 1.2208194772e+19,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "g_newton",
+      "order": 29,
+      "stage": "gravity",
+      "geometric_input": "The reduced Einstein-Hilbert term.",
+      "operation": "Read Newton's constant from the G2 volume.",
+      "output_symbol": "G_N",
+      "param_path": "gravity.newton_constant_theory",
+      "formula_id": "gr-newton-from-g2-v19",
+      "theorem_id": "",
+      "section_id": "5.1",
+      "section_href": "paper.html#section-5.1",
+      "formula": {
+        "latex": "G_N = \\frac{1}{M_{Pl}^2} = \\frac{1}{M_{26D}^{24} \\cdot \\text{Vol}(X_{22})}",
+        "plain_text": "G_N = 1/M_Pl^2 = 1/(M_26D^24 * Vol(X_22))",
+        "category": "DERIVED",
+        "label": "(2.2.14)"
+      },
+      "experiment": {
+        "value": 6.70883e-39,
+        "uncertainty": 1.5e-44,
+        "source": "CODATA 2018 (converted to natural units)",
+        "pull": 0.14395846738234636,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 6.708832159377011e-39,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "n_s",
+      "order": 30,
+      "stage": "cosmology",
+      "geometric_input": "Dimensional-reduction cascade.",
+      "operation": "Evaluate the geometric spectral index.",
+      "output_symbol": "n_s",
+      "param_path": "geometry.n_s",
+      "formula_id": "",
+      "theorem_id": "",
+      "section_id": "5.2",
+      "section_href": "paper.html#section-5.2",
+      "formula": {
+        "latex": "OPEN",
+        "plain_text": "OPEN",
+        "category": "OPEN"
+      },
+      "experiment": {
+        "value": 0.9649,
+        "uncertainty": 0.0042,
+        "source": "Planck2018",
+        "pull": 0.2711984861427667,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.9636384168229182,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "n_s_slow_roll",
+      "order": 31,
+      "stage": "cosmology",
+      "geometric_input": "Slow-roll evaluation of the same quantity.",
+      "operation": "Evaluate n_s from the slow-roll expression.",
+      "output_symbol": "n_s (slow roll)",
+      "param_path": "cosmology.n_s_slow_roll",
+      "formula_id": "",
+      "theorem_id": "",
+      "section_id": "5.2",
+      "section_href": "paper.html#section-5.2",
+      "formula": {
+        "latex": "OPEN",
+        "plain_text": "OPEN",
+        "category": "OPEN"
+      },
+      "experiment": {
+        "value": 0.9649,
+        "uncertainty": 0.0042,
+        "source": "Planck2018",
+        "pull": 8.262808750209016,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.9996037967508778,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "w0",
+      "order": 32,
+      "stage": "cosmology",
+      "geometric_input": "Four-face dark-energy sector.",
+      "operation": "Evaluate the dark-energy equation of state.",
+      "output_symbol": "w_0",
+      "param_path": "cosmology.w0_derived",
+      "formula_id": "dark-energy-eos-derivation",
+      "theorem_id": "",
+      "section_id": "5.2",
+      "section_href": "paper.html#section-5.2",
+      "formula": {
+        "latex": "w_0 = -1 + \\frac{1}{b_3} = -\\frac{42}{43} \\approx -0.9767",
+        "plain_text": "w_0 = -1 + 1/b3 = -42/43 ≈ -0.9767",
+        "category": "PREDICTED",
+        "label": "(5.10)"
+      },
+      "experiment": {
+        "value": -0.957,
+        "uncertainty": 0.067,
+        "source": "DESI2025_thawing",
+        "pull": 0.01990049751243893,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": -0.9583333333333334,
+      "status": "GEOMETRIC",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "omega_dm",
+      "order": 33,
+      "stage": "cosmology",
+      "geometric_input": "Matter split between the sectors.",
+      "operation": "Evaluate the dark-matter fraction.",
+      "output_symbol": "Omega_DM",
+      "param_path": "cosmology.omega_dm_total",
+      "formula_id": "cosmo-omega-matter-split-v19",
+      "theorem_id": "",
+      "section_id": "5.3",
+      "section_href": "paper.html#section-5.3",
+      "formula": {
+        "latex": "\\Omega_m = \\Omega_b + \\Omega_{\\rm DM} = 0.049 + 0.266 = 0.315",
+        "plain_text": "Omega_m = Omega_b + Omega_DM = 0.049 + 0.266 = 0.315",
+        "category": "DERIVED",
+        "label": "(5.4.12)"
+      },
+      "experiment": {
+        "value": 0.266,
+        "uncertainty": 0.007,
+        "source": "Planck2018",
+        "pull": 0.571428571428572,
+        "verdict": "PASS"
+      },
+      "tone": "ok",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 0.27,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "lambda_cc",
+      "order": 34,
+      "stage": "cosmology",
+      "geometric_input": "G2 entropy with an inflation-era correction.",
+      "operation": "Evaluate the cosmological constant.",
+      "output_symbol": "Lambda",
+      "param_path": "cosmology.Lambda_derived",
+      "formula_id": "cosmological-constant-geometric",
+      "theorem_id": "",
+      "section_id": "5.5",
+      "section_href": "paper.html#section-5.5",
+      "formula": {
+        "latex": "\\Lambda = \\frac{k_{\\gimel} \\cdot [\\ln(k_{\\gimel})]^2}{b_3^3} \\cdot \\left(\\frac{l_{Pl}}{R_H}\\right)^2 \\cdot e^{-2\\pi D_{crit}}",
+        "plain_text": "Lambda = (k_gimel * ln(k_gimel)^2 / b3^3) * (l_Pl/R_H)^2 * exp(-2*pi*D_crit)",
+        "category": "PREDICTED",
+        "label": "(5.26)"
+      },
+      "experiment": {
+        "value": 1.1e-52,
+        "uncertainty": 1e-53,
+        "source": "DESI2025",
+        "pull": 4.309141379981374,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 6.690858620018627e-53,
+      "status": "PREDICTED",
+      "value_source": "parameters.json",
+      "why": {}
+    },
+    {
+      "id": "h0",
+      "order": 35,
+      "stage": "cosmology",
+      "geometric_input": "The unwinding scale.",
+      "operation": "Evaluate the Hubble constant.",
+      "output_symbol": "H_0",
+      "param_path": "cosmology.H0_physical",
+      "formula_id": "h0-unwinding-scale",
+      "theorem_id": "",
+      "section_id": "5.9",
+      "section_href": "paper.html#section-5.9",
+      "formula": {
+        "latex": "H_0^{\\text{phys}} = H_0^{\\text{geom}} \\times \\kappa = 7.24 \\times 10.1 = 73.1\\,\\text{km/s/Mpc}",
+        "plain_text": "H0_physical = H0_geometric x 10.1 = 40.8 km/s/Mpc at b3 = 43 (73.1 only at the retired b3 = 24)",
+        "category": "FALSIFIED",
+        "label": "(Z.11)"
+      },
+      "experiment": {
+        "value": 73.04,
+        "uncertainty": 1.04,
+        "source": "SH0ES 2022",
+        "pull": 31.020746372490564,
+        "verdict": "FAIL"
+      },
+      "tone": "fail",
+      "figure": "",
+      "figure_svg": "",
+      "figure_caption": "",
+      "value": 40.77842377260982,
+      "status": "DERIVED",
+      "value_source": "parameters.json",
+      "why": {}
+    }
+  ]
+}

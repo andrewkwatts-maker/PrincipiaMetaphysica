@@ -50,6 +50,7 @@
     <script src="../js/pm-constants-loader.js"></script>
     <script src="../js/pm-formula-loader.js"></script>
     <script src="../js/pm-paper-renderer.js"></script>
+    <script src="../js/pm-core-toggle.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
     <script src="../js/pm-paper-tooltips.js"></script>
 
@@ -1208,6 +1209,10 @@
                 const endTime = performance.now();
                 const statsEl = document.getElementById('render-stats');
                 const metaEl = document.getElementById('paper-meta');
+
+                if (success && window.PMCoreToggle) {
+                    await window.PMCoreToggle.init('paper-content');
+                }
 
                 if (success) {
                     const renderTime = (endTime - startTime).toFixed(0);

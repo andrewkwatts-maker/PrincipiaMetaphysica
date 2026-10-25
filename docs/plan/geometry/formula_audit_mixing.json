@@ -1,0 +1,494 @@
+[
+ {
+  "path": "ckm.V_us_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "file": "src/metaphysica/simulations/PM/particle/octonionic_mixing.py",
+  "function": "get_ckm_matrix",
+  "line": 422,
+  "formula": "V_us = sin(theta_g/2) * (epsilon_fn/sin(theta_g/2)) * (1 + 0.037/sqrt(b3+k_gimel)) = epsilon_fn*(1 + 0.037/sqrt(b3+k_gimel)); k_gimel = b3/2 + 1/pi",
+  "inputs": [
+   {
+    "name": "epsilon_fn",
+    "value": 0.22313016,
+    "source": "literal",
+    "evidence": "exp(-lambda_curvature) with lambda_curvature=1.5 'hardcoded with post-hoc justification' (fermion_generations.py:118, :221); independent of b3"
+   },
+   {
+    "name": "cusp coefficient",
+    "value": 0.037,
+    "source": "tuned",
+    "evidence": "octonionic_mixing.py:428 'v16.2 FIX: Adjusted coefficient from 0.12 to 0.037 for PDG 2024 alignment'; docstring l.54 'CALIBRATED: fitted to the 2020-era PDG central 0.2245'; lambda_cusp comment '~0.166' = 1/sqrt(24+k_g), so fitted at b3=24. History squashed to d779eb8 (v1.3.0)"
+   },
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "k_gimel",
+    "value": "b3/2+1/pi",
+    "source": "geometry",
+    "evidence": "octonionic_mixing.py:425, read live"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "Almost none. epsilon_fn = exp(-1.5) is b3-independent; only the 0.5% cusp factor moves (about 1.0065 at b3=24, 1.0046 at b3=43). Main and seed24 differ by 0.15%.",
+  "main_value": 0.22415560226305503,
+  "seed24_value": 0.22450008639436136,
+  "experiment": 0.225,
+  "unexplained_literals": 2,
+  "principled_fix": null,
+  "notes": "The sin(theta_g/2) factor cancels algebraically. The seed24 PASS (0.75 sigma vs 1.26 sigma) is a 0.0003 shift from a cusp coefficient fitted to data at b3=24; not geometric evidence. Weakest C24 case: both values are within 1.3 sigma, and the leading term is a b3-independent exp(-1.5)."
+ },
+ {
+  "path": "ckm.V_ub_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "file": "src/metaphysica/simulations/PM/particle/octonionic_mixing.py",
+  "function": "get_ckm_matrix",
+  "line": 459,
+  "formula": "V_ub = V_us^3 / (1 + n_gen/b2) * 0.58",
+  "inputs": [
+   {
+    "name": "V_us",
+    "value": "see ckm.V_us_triality",
+    "source": "tuned",
+    "evidence": "2 literals inherited"
+   },
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "b2",
+    "value": 12,
+    "source": "geometry",
+    "evidence": "registry topology.b2, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (4 at seed24)"
+   },
+   {
+    "name": "0.58",
+    "value": 0.58,
+    "source": "tuned",
+    "evidence": "octonionic_mixing.py:459 bare factor, no comment; the '~0.00368' comment is evaluated at b2=4 (0.0111/1.75*0.58); only d779eb8 (squashed v1.3.0) in git -S; value matches PDG 0.00369 at the b2=4 denominator 1.75"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "Through b2 only; b3 does not enter. 1+n_gen/b2 is 1.75 at b2=4 and 1.25 at b2=12, so V_ub rises 1.4x (0.00375 to 0.00523). The 0.58 was matched to the b2=4 value, so the b2=12 seed misses by 14 sigma.",
+  "main_value": 0.005225968326081694,
+  "seed24_value": 0.003750070930845949,
+  "experiment": 0.00369,
+  "unexplained_literals": 3,
+  "principled_fix": null,
+  "notes": "Seed24 hits PDG by construction (0.58 fitted against the b2=4 denominator). Reading b2 live moved the denominator but not the fitted 0.58."
+ },
+ {
+  "path": "ckm.jarlskog_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "file": "src/metaphysica/simulations/PM/particle/octonionic_mixing.py",
+  "function": "get_ckm_matrix",
+  "line": 470,
+  "formula": "J = V_us * V_cb * V_ub * sin(2*theta_g) * (1 + k_gimel/b3^2); V_cb = V_us^2 / (1 + (b3 - b2*n_gen)/(2*chi_eff)) * 0.81 * (1 + 2*k_gimel/b3^2)",
+  "inputs": [
+   {
+    "name": "V_us, V_ub",
+    "value": "see entries",
+    "source": "tuned",
+    "evidence": "0.037, 0.58, exp(-1.5)"
+   },
+   {
+    "name": "0.81",
+    "value": 0.81,
+    "source": "tuned",
+    "evidence": "octonionic_mixing.py:452 bare factor; V_cb comment '~0.0388 * 1.0428 ~ 0.0405' is evaluated at b3=24; no commit trail past d779eb8"
+   },
+   {
+    "name": "theta_g = arctan(1/phi)",
+    "value": 0.5536,
+    "source": "cited",
+    "evidence": "golden-ratio angle of the G2 octonionic ansatz (octonionic_mixing.py:176); b3-independent"
+   },
+   {
+    "name": "chi_eff (topology.mephorash_chi)",
+    "value": 144,
+    "source": "literal",
+    "evidence": "registry GEOMETRIC:TCS_G2_manifold; a fixed 144, not computed from b3 or b2. Equals b3^2/4 only at b3=24 (octonionic_mixing.py:541 comment '(4*144)/(24*3)'; neutrino_mixing.py docstring 'b3^2/4 = 576/4')"
+   },
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "b2",
+    "value": 12,
+    "source": "geometry",
+    "evidence": "registry topology.b2, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (4 at seed24)"
+   },
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "torsional damping form",
+    "value": "1+k_gimel/b3^2",
+    "source": "tuned",
+    "evidence": "octonionic_mixing.py:470 'brings the Jarlskog area into agreement with PDG target 3.0e-5': an explicit fit"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "Inherits V_ub's 1/(1+n/b2), so it scales about 1.37x from seed24 to main (3.14e-5 to 4.31e-5). The damping and geometric_factor change by under 2%.",
+  "main_value": 4.311625961031884e-05,
+  "seed24_value": 3.143181574832559e-05,
+  "experiment": 3.08e-05,
+  "unexplained_literals": 4,
+  "principled_fix": null,
+  "notes": "Comment states the damping factor was introduced to hit the PDG J target. Seed24 hits by construction via 0.81, 0.58 and 0.037."
+ },
+ {
+  "path": "pmns.theta_12_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "file": "src/metaphysica/simulations/PM/particle/octonionic_mixing.py",
+  "function": "get_pmns_matrix",
+  "line": 550,
+  "formula": "sin(theta_12) = (1/sqrt(3)) * (1 - (b3 - b2*n_gen)/(2*chi_eff))",
+  "inputs": [
+   {
+    "name": "1/sqrt(3)",
+    "value": 0.5774,
+    "source": "cited",
+    "evidence": "tribimaximal base (Harrison-Perkins-Scott)"
+   },
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "b2",
+    "value": 12,
+    "source": "geometry",
+    "evidence": "registry topology.b2, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (4 at seed24)"
+   },
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "chi_eff (topology.mephorash_chi)",
+    "value": 144,
+    "source": "literal",
+    "evidence": "registry GEOMETRIC:TCS_G2_manifold; a fixed 144, not computed from b3 or b2. Equals b3^2/4 only at b3=24 (octonionic_mixing.py:541 comment '(4*144)/(24*3)'; neutrino_mixing.py docstring 'b3^2/4 = 576/4')"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "Perturbation (b3-b2*n)/(2*chi): 12/288 = 0.0417 at (4,24), giving 33.59 deg; 7/288 = 0.0243 at (12,43), giving 34.29 deg. chi_eff stays 144.",
+  "main_value": 34.285533439123924,
+  "seed24_value": 33.59329049922625,
+  "experiment": 33.41,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "SHARED formula: neutrino.theta_12_pred (neutrino_mixing.py:626) is the same expression with identical values. At seed24 b3 - b2*n_gen = 12 = b3/2 and chi_eff = b3^2/4, so the constants are 24-shaped. No explicit fit comment; the match is a coincidence of 24-derived constants, not a documented fit."
+ },
+ {
+  "path": "neutrino.theta_12_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "file": "src/metaphysica/simulations/PM/particle/neutrino_mixing.py",
+  "function": "_compute_theta_12",
+  "line": 626,
+  "formula": "Same as pmns.theta_12_triality",
+  "inputs": [
+   {
+    "name": "see pmns.theta_12_triality",
+    "value": "",
+    "source": "geometry",
+    "evidence": "identical inputs"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "As pmns.theta_12_triality.",
+  "main_value": 34.285533439123924,
+  "seed24_value": 33.59329049922625,
+  "experiment": 33.41,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "Duplicate of pmns.theta_12_triality."
+ },
+ {
+  "path": "pmns.theta_13_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "file": "src/metaphysica/simulations/PM/particle/octonionic_mixing.py",
+  "function": "get_pmns_matrix",
+  "line": 561,
+  "formula": "sin(theta_13) = sqrt(b2*n_gen)/b3 * (1 + S_orient/(2*chi_eff))",
+  "inputs": [
+   {
+    "name": "b2",
+    "value": 12,
+    "source": "geometry",
+    "evidence": "registry topology.b2, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (4 at seed24)"
+   },
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "S_orient (topology.orientation_sum)",
+    "value": 12,
+    "source": "literal",
+    "evidence": "registry ESTABLISHED:V21_BRIDGE_REDUCTION, fixed 12, 'not seed-dependent' (neutrino_mixing.py:857); equals b3/2 and b2*n_gen only at the (b2,b3)=(4,24) seed"
+   },
+   {
+    "name": "chi_eff (topology.mephorash_chi)",
+    "value": 144,
+    "source": "literal",
+    "evidence": "registry GEOMETRIC:TCS_G2_manifold; a fixed 144, not computed from b3 or b2. Equals b3^2/4 only at b3=24 (octonionic_mixing.py:541 comment '(4*144)/(24*3)'; neutrino_mixing.py docstring 'b3^2/4 = 576/4')"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "sqrt(b2*n)/b3 is sqrt(12)/24 = 0.1443 at (4,24) and sqrt(36)/43 = 0.1395 at (12,43). The correction 1.0417 is b3-independent (S and chi fixed). theta_13 goes 8.65 to 8.36 deg.",
+  "main_value": 8.357480095666395,
+  "seed24_value": 8.647304725338865,
+  "experiment": 8.63,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "SHARED with neutrino.theta_13_pred (neutrino_mixing.py:545). Every comment is evaluated at (4,24). The match to 8.63 relies on sqrt(b2*n_gen) = sqrt(12) = b3/2 = S_orient; S and chi are fixed, not live."
+ },
+ {
+  "path": "neutrino.theta_13_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "file": "src/metaphysica/simulations/PM/particle/neutrino_mixing.py",
+  "function": "_compute_theta_13",
+  "line": 545,
+  "formula": "Same as pmns.theta_13_triality",
+  "inputs": [
+   {
+    "name": "see pmns.theta_13_triality",
+    "value": "",
+    "source": "geometry",
+    "evidence": "identical inputs"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "As pmns.theta_13_triality.",
+  "main_value": 8.357480095666395,
+  "seed24_value": 8.647304725338865,
+  "experiment": 8.63,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "Duplicate of pmns.theta_13_triality."
+ },
+ {
+  "path": "pmns.theta_23_triality",
+  "sim": "octonionic_mixing_v23_1",
+  "file": "src/metaphysica/simulations/PM/particle/octonionic_mixing.py",
+  "function": "get_pmns_matrix",
+  "line": 539,
+  "formula": "theta_23 = 45 deg + (b2 - n_gen)*n_gen/b2 + (S_orient/b3)*(b2*chi_eff)/(b3*n_gen)   [dimensionless terms added as degrees]",
+  "inputs": [
+   {
+    "name": "45 deg",
+    "value": 45.0,
+    "source": "cited",
+    "evidence": "G2 ~ Aut(O) maximal mixing, asserted (neutrino_mixing.py, _compute_theta_23)"
+   },
+   {
+    "name": "b2",
+    "value": 12,
+    "source": "geometry",
+    "evidence": "registry topology.b2, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (4 at seed24)"
+   },
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "S_orient (topology.orientation_sum)",
+    "value": 12,
+    "source": "literal",
+    "evidence": "registry ESTABLISHED:V21_BRIDGE_REDUCTION, fixed 12, 'not seed-dependent' (neutrino_mixing.py:857); equals b3/2 and b2*n_gen only at the (b2,b3)=(4,24) seed"
+   },
+   {
+    "name": "chi_eff (topology.mephorash_chi)",
+    "value": 144,
+    "source": "literal",
+    "evidence": "registry GEOMETRIC:TCS_G2_manifold; a fixed 144, not computed from b3 or b2. Equals b3^2/4 only at b3=24 (octonionic_mixing.py:541 comment '(4*144)/(24*3)'; neutrino_mixing.py docstring 'b3^2/4 = 576/4')"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "Kahler term 0.75 at b2=4 and 2.25 at b2=12. Flux term 4.0 at (4,24) (12/24 * 576/72), 3.74 at (12,43); it scales as b2*chi*S/(b3^2*n). theta_23 goes 49.75 to 50.99 deg.",
+  "main_value": 50.988236884802596,
+  "seed24_value": 49.75,
+  "experiment": 49.3,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "SHARED with neutrino.theta_23_pred (neutrino_mixing.py:654). The code comment calls the flux term the 'KEY INNOVATION to resolve the octant tension', so it was introduced to reach the NuFIT upper octant. The integer split 0.75 + 4.0 holds only at (4,24)."
+ },
+ {
+  "path": "neutrino.theta_23_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "file": "src/metaphysica/simulations/PM/particle/neutrino_mixing.py",
+  "function": "_compute_theta_23",
+  "line": 654,
+  "formula": "Same as pmns.theta_23_triality",
+  "inputs": [
+   {
+    "name": "see pmns.theta_23_triality",
+    "value": "",
+    "source": "geometry",
+    "evidence": "identical inputs"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "As pmns.theta_23_triality.",
+  "main_value": 50.988236884802596,
+  "seed24_value": 49.75,
+  "experiment": 49.3,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "Duplicate of pmns.theta_23_triality."
+ },
+ {
+  "path": "neutrino.delta_CP_pred",
+  "sim": "neutrino_mixing_v17_2",
+  "file": "src/metaphysica/simulations/PM/particle/neutrino_mixing.py",
+  "function": "_compute_delta_cp",
+  "line": 584,
+  "formula": "delta_CP = [180 deg * ((n_gen + b2)/(2*n_gen) + n_gen/b3) + 45.9 deg] mod 360",
+  "inputs": [
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "b2",
+    "value": 12,
+    "source": "geometry",
+    "evidence": "registry topology.b2, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (4 at seed24)"
+   },
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "parity_offset",
+    "value": 45.9,
+    "source": "tuned",
+    "evidence": "neutrino_mixing.py parity_offset = 45.9 ('v17.2 13D Parity-Flip Offset'); neutrino_algebraic.py:47 calls it 'FITTED 45.9 deg offset'; core_formulas.py:1820 'parity_offset = 45.9 fitted'. The bare phase at (4,24) is 232.5 deg, so 45.9 lands 278.4 against NuFIT 278"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "Bare phase 232.5 deg at (4,24); 462.6 deg at (12,43), which is 102.6 deg after mod 360, plus 45.9 gives 148.5 deg. b2 (4 to 12) dominates; b3 enters only through n/b3 (0.125 vs 0.070).",
+  "main_value": 148.45813953488368,
+  "seed24_value": 278.4,
+  "experiment": 278.0,
+  "unexplained_literals": 1,
+  "principled_fix": null,
+  "notes": "A directly tuned offset: it hits NuFIT 278 at 0.02 sigma at (4,24) by construction. The offset was fitted to a bare phase that depends on b2=4, so it does not transfer."
+ },
+ {
+  "path": "neutrino.delta_CP_derived",
+  "sim": "neutrino_algebraic_v24_0",
+  "file": "src/metaphysica/simulations/PM/algebra/neutrino_algebraic.py",
+  "function": "run",
+  "line": 214,
+  "formula": "delta_CP = -(2*pi/(b3/n_gen)) * chi_eff/(b3*n_gen) = -2*pi*chi_eff/b3^2",
+  "inputs": [
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "n_gen",
+    "value": 3,
+    "source": "geometry",
+    "evidence": "registry topology.n_gen GEOMETRIC"
+   },
+   {
+    "name": "chi_eff (topology.mephorash_chi)",
+    "value": 144,
+    "source": "literal",
+    "evidence": "registry GEOMETRIC:TCS_G2_manifold; a fixed 144, not computed from b3 or b2. Equals b3^2/4 only at b3=24 (octonionic_mixing.py:541 comment '(4*144)/(24*3)'; neutrino_mixing.py docstring 'b3^2/4 = 576/4')"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "1/b3^2 in b3. It is exactly -90 deg at b3=24 only because chi_eff = 144 = b3^2/4; it is -28.04 deg at b3=43 (2*pi*144/1849). n_gen cancels.",
+  "main_value": -28.036776636019468,
+  "seed24_value": -90.0,
+  "experiment": -163.0,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "The module flags this itself: 'a whole number only at the off-path seed b3 = 24'. The seed24 value is MARGINAL (1.8 sigma against a 40 deg approximate sigma), so the 'gain' is weak and the by-construction hit is on pi/2, not on data. A fixed chi_eff=144 where a live chi_eff(b3) is needed."
+ },
+ {
+  "path": "particle.theta_13_deg",
+  "sim": "v25.0:yukawa_derivation",
+  "file": "src/metaphysica/simulations/PM/particle/yukawa_derivation.py",
+  "function": "derive_pmns_angles",
+  "line": 450,
+  "formula": "sin(theta_13) = sqrt(2/3) * eta with eta = sqrt(2)*sin(pi/b3), so theta_13 = arcsin((2/sqrt(3)) * sin(pi/b3))",
+  "inputs": [
+   {
+    "name": "b3",
+    "value": 43,
+    "source": "geometry",
+    "evidence": "registry topology.elder_kads, DERIVED:JOYCE_A1_FAMILY_COUNT, read live (24 at seed24)"
+   },
+   {
+    "name": "sqrt(2/3)",
+    "value": 0.8165,
+    "source": "cited",
+    "evidence": "T4_ORBIT_AMPLITUDE, 'pure topology' of the T4/24-cell ansatz"
+   },
+   {
+    "name": "sqrt(2)",
+    "value": 1.4142,
+    "source": "cited",
+    "evidence": "24-cell octahedral diagonal (ansatz reading)"
+   },
+   {
+    "name": "DEFAULT_B3",
+    "value": 24,
+    "source": "literal",
+    "evidence": "yukawa_derivation.py:233 'the b3 its closed forms were calibrated at, the off-path seed b3 = 24'; _eta_from_b3 docstring: 'at the adopted b3 it gives 4.8351 deg, so that agreement belongs to the calibration'"
+   }
+  ],
+  "class": "C24",
+  "b3_dependence": "About (2/sqrt(3))*pi/b3 for large b3: 8.669 deg at 24 and 4.835 deg at 43. Close to 1/b3, so 8.6 deg needs b3 near 24.",
+  "main_value": 4.835067770441071,
+  "seed24_value": 8.668576499284981,
+  "experiment": 8.58,
+  "unexplained_literals": 0,
+  "principled_fix": null,
+  "notes": "Strongest C24 case: the module's own docstring states calibration at 24 and that main's miss is the calibration showing. The form is live in b3, but its ansatz (24-cell, sin(pi/b3)) builds b3=24 into the definition."
+ }
+]

@@ -1,11 +1,11 @@
 {
   "version": "24.2",
-  "generated_at": "2026-10-24T18:22:11.263734+00:00",
+  "generated_at": "2026-10-25T06:34:06.631546+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
-    "total_simulations": 95,
-    "agreed": 92,
+    "total_simulations": 97,
+    "agreed": 94,
     "failed": 2,
     "not_implemented": 1,
     "errors": 0,
@@ -21,7 +21,21 @@
       "max_deviation": 0.0,
       "note": ""
     },
+    "abstract_extended_v17_2": {
+      "status": "AGREE",
+      "params_checked": 44,
+      "params_agreed": 44,
+      "max_deviation": 0.0,
+      "note": ""
+    },
     "introduction_v16_0": {
+      "status": "AGREE",
+      "params_checked": 0,
+      "params_agreed": 0,
+      "max_deviation": 0.0,
+      "note": ""
+    },
+    "introduction_extended_v16_0": {
       "status": "AGREE",
       "params_checked": 0,
       "params_agreed": 0,

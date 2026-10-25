@@ -805,6 +805,8 @@
         sectionDiv.id = `section-${sectionId}`;
         sectionDiv.className = 'paper-section';
         sectionDiv.setAttribute('data-section-id', sectionId);
+        // Registry key (subsection_id, else id): the key the core manifest uses.
+        sectionDiv.setAttribute('data-section-key', String(section.subsection_id || section.id || sectionId));
 
         // Add appendix class and alias for letter-based section IDs (e.g., B -> appendix-b)
         const isAppendix = /^[A-Z]$/.test(sectionId) || section.type === 'appendix' || section.appendix === true ||

@@ -49,9 +49,184 @@
       "in_log": true,
       "status": "PR-1 CONFIRMED (prediction held, no kill)",
       "title": "PR-1, PR-2, PR-3 (fixed before any computation)"
+    },
+    {
+      "date": "2026-10-25",
+      "decision_id": "D-022",
+      "in_log": true,
+      "status": "PRE-REGISTERED",
+      "title": "recovered formula options made runnable (extends D-021)"
+    },
+    {
+      "date": "2026-10-25",
+      "decision_id": "D-023",
+      "in_log": true,
+      "status": "PRE-REGISTERED",
+      "title": "closing the G2 geometry by measured hypotheses"
     }
   ],
   "edges": [
+    {
+      "class": null,
+      "rationale": null,
+      "source": "fork:spectral_index_route",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:spectral_index_route",
+      "target": "option:spectral_index_route.golden_modulated",
+      "type": "has_option"
+    },
+    {
+      "class": "disabled",
+      "rationale": null,
+      "source": "fork:spectral_index_route",
+      "target": "option:spectral_index_route.one_minus_2_over_b3",
+      "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:spectral_index_route.one_minus_2_over_b3",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "disabled",
+      "rationale": null,
+      "source": "fork:spectral_index_route",
+      "target": "option:spectral_index_route.re_t_slow_roll",
+      "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:spectral_index_route.re_t_slow_roll",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "fork:h0_route",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:h0_route",
+      "target": "option:h0_route.odowd_composite",
+      "type": "has_option"
+    },
+    {
+      "class": "disabled",
+      "rationale": null,
+      "source": "fork:h0_route",
+      "target": "option:h0_route.ricci_flow",
+      "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:h0_route.ricci_flow",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "disabled",
+      "rationale": null,
+      "source": "fork:h0_route",
+      "target": "option:h0_route.kk_bridge",
+      "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:h0_route.kk_bridge",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "option:dark_energy_mechanism.thawing_quintessence",
+      "type": "has_option"
+    },
+    {
+      "class": "disabled",
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "option:dark_energy_mechanism.mep_11_13",
+      "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:dark_energy_mechanism.mep_11_13",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "not_implemented",
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "option:dark_energy_mechanism.thermal_time",
+      "type": "has_option"
+    },
+    {
+      "class": "not_implemented",
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "option:dark_energy_mechanism.mashiach_quintessence",
+      "type": "has_option"
+    },
+    {
+      "class": "not_implemented",
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "option:dark_energy_mechanism.pi_attractor",
+      "type": "has_option"
+    },
+    {
+      "class": "not_implemented",
+      "rationale": null,
+      "source": "fork:dark_energy_mechanism",
+      "target": "option:dark_energy_mechanism.flux_attractor",
+      "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:dark_energy_mechanism.flux_attractor",
+      "target": "decision:D-010",
+      "type": "decided_by"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:dark_energy_mechanism.flux_attractor",
+      "target": "decision:D-016",
+      "type": "decided_by"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:dark_energy_mechanism.flux_attractor",
+      "target": "decision:D-017",
+      "type": "decided_by"
+    },
     {
       "class": null,
       "rationale": null,
@@ -165,18 +340,32 @@
       "type": "has_option"
     },
     {
-      "class": "not_implemented",
+      "class": "disabled",
       "rationale": null,
       "source": "fork:n_gen_source",
       "target": "option:n_gen_source.chi_over_24",
       "type": "has_option"
     },
     {
-      "class": "not_implemented",
+      "class": null,
+      "rationale": null,
+      "source": "option:n_gen_source.chi_over_24",
+      "target": "decision:D-022",
+      "type": "decided_by"
+    },
+    {
+      "class": "considered",
       "rationale": null,
       "source": "fork:n_gen_source",
       "target": "option:n_gen_source.chi_eff_over_48",
       "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:n_gen_source.chi_eff_over_48",
+      "target": "decision:D-022",
+      "type": "decided_by"
     },
     {
       "class": null,
@@ -191,6 +380,13 @@
       "source": "fork:n_gen_source",
       "target": "option:n_gen_source.thermal_winding",
       "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "fork:b3_origin",
+      "target": "decision:D-023",
+      "type": "decided_by"
     },
     {
       "class": "active",
@@ -296,6 +492,13 @@
       "source": "fork:flavour_seed_coupling",
       "target": "option:flavour_seed_coupling.calibrated_24",
       "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "fork:metric_construction",
+      "target": "decision:D-023",
+      "type": "decided_by"
     },
     {
       "class": "active",
@@ -410,6 +613,13 @@
       "type": "has_option"
     },
     {
+      "class": null,
+      "rationale": null,
+      "source": "fork:g2_construction",
+      "target": "decision:D-023",
+      "type": "decided_by"
+    },
+    {
       "class": "active",
       "rationale": null,
       "source": "fork:g2_construction",
@@ -422,6 +632,13 @@
       "source": "fork:g2_construction",
       "target": "option:g2_construction.fano_tcs",
       "type": "has_option"
+    },
+    {
+      "class": null,
+      "rationale": null,
+      "source": "option:g2_construction.fano_tcs",
+      "target": "decision:D-023",
+      "type": "decided_by"
     },
     {
       "class": "not_implemented",
@@ -638,104 +855,6 @@
       "rationale": null,
       "source": "fork:seed_selection",
       "target": "option:seed_selection.ruling_only",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:dark_energy_mechanism",
-      "target": "option:dark_energy_mechanism.mep_11_13",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:dark_energy_mechanism",
-      "target": "option:dark_energy_mechanism.thermal_time",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:dark_energy_mechanism",
-      "target": "option:dark_energy_mechanism.mashiach_quintessence",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:dark_energy_mechanism",
-      "target": "option:dark_energy_mechanism.pi_attractor",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:dark_energy_mechanism",
-      "target": "option:dark_energy_mechanism.flux_attractor",
-      "type": "has_option"
-    },
-    {
-      "class": null,
-      "rationale": null,
-      "source": "option:dark_energy_mechanism.flux_attractor",
-      "target": "decision:D-010",
-      "type": "decided_by"
-    },
-    {
-      "class": null,
-      "rationale": null,
-      "source": "option:dark_energy_mechanism.flux_attractor",
-      "target": "decision:D-016",
-      "type": "decided_by"
-    },
-    {
-      "class": null,
-      "rationale": null,
-      "source": "option:dark_energy_mechanism.flux_attractor",
-      "target": "decision:D-017",
-      "type": "decided_by"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:spectral_index_route",
-      "target": "option:spectral_index_route.one_minus_2_over_b3",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:spectral_index_route",
-      "target": "option:spectral_index_route.golden_modulated",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:spectral_index_route",
-      "target": "option:spectral_index_route.re_t_slow_roll",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:h0_route",
-      "target": "option:h0_route.odowd_composite",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:h0_route",
-      "target": "option:h0_route.ricci_flow",
-      "type": "has_option"
-    },
-    {
-      "class": "not_implemented",
-      "rationale": null,
-      "source": "fork:h0_route",
-      "target": "option:h0_route.kk_bridge",
       "type": "has_option"
     },
     {
@@ -1372,6 +1491,27 @@
       "class": "active",
       "rationale": null,
       "source": "theory:pm",
+      "target": "option:spectral_index_route.golden_modulated",
+      "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:spectral_index_route.golden_modulated",
+      "target": "option:h0_route.odowd_composite",
+      "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:h0_route.odowd_composite",
+      "target": "option:dark_energy_mechanism.thawing_quintessence",
+      "type": "path_step"
+    },
+    {
+      "class": "active",
+      "rationale": null,
+      "source": "option:dark_energy_mechanism.thawing_quintessence",
       "target": "option:re_t_adoption.calibrated",
       "type": "path_step"
     },
@@ -1516,199 +1656,199 @@
     "columns": [
       {
         "depth": 0,
-        "fork": "re_t_adoption",
+        "fork": "spectral_index_route",
         "index": 0,
         "kind": "physics",
-        "node": "fork:re_t_adoption",
+        "node": "fork:spectral_index_route",
         "w": 220,
         "x": 260
       },
       {
         "depth": 0,
-        "fork": "b3_seed",
+        "fork": "h0_route",
         "index": 1,
         "kind": "physics",
-        "node": "fork:b3_seed",
+        "node": "fork:h0_route",
         "w": 220,
         "x": 536
       },
       {
         "depth": 0,
-        "fork": "n_gen_source",
+        "fork": "dark_energy_mechanism",
         "index": 2,
         "kind": "physics",
-        "node": "fork:n_gen_source",
+        "node": "fork:dark_energy_mechanism",
         "w": 220,
         "x": 812
       },
       {
         "depth": 0,
-        "fork": "b3_origin",
+        "fork": "re_t_adoption",
         "index": 3,
         "kind": "physics",
-        "node": "fork:b3_origin",
+        "node": "fork:re_t_adoption",
         "w": 220,
         "x": 1088
       },
       {
         "depth": 0,
-        "fork": "joyce_contribution_table",
+        "fork": "b3_seed",
         "index": 4,
         "kind": "physics",
-        "node": "fork:joyce_contribution_table",
+        "node": "fork:b3_seed",
         "w": 220,
         "x": 1364
       },
       {
         "depth": 0,
-        "fork": "g2_form_convention",
+        "fork": "n_gen_source",
         "index": 5,
         "kind": "physics",
-        "node": "fork:g2_form_convention",
+        "node": "fork:n_gen_source",
         "w": 220,
         "x": 1640
       },
       {
         "depth": 0,
-        "fork": "flavour_seed_coupling",
+        "fork": "b3_origin",
         "index": 6,
         "kind": "physics",
-        "node": "fork:flavour_seed_coupling",
+        "node": "fork:b3_origin",
         "w": 220,
         "x": 1916
       },
       {
         "depth": 0,
-        "fork": "metric_construction",
+        "fork": "joyce_contribution_table",
         "index": 7,
         "kind": "physics",
-        "node": "fork:metric_construction",
+        "node": "fork:joyce_contribution_table",
         "w": 220,
         "x": 2192
       },
       {
         "depth": 0,
-        "fork": "chi_eff_route",
+        "fork": "g2_form_convention",
         "index": 8,
         "kind": "physics",
-        "node": "fork:chi_eff_route",
+        "node": "fork:g2_form_convention",
         "w": 220,
         "x": 2468
       },
       {
         "depth": 0,
-        "fork": "twisted_norm_convention",
+        "fork": "flavour_seed_coupling",
         "index": 9,
         "kind": "physics",
-        "node": "fork:twisted_norm_convention",
+        "node": "fork:flavour_seed_coupling",
         "w": 220,
         "x": 2744
       },
       {
         "depth": 0,
-        "fork": "lattice_24d",
+        "fork": "metric_construction",
         "index": 10,
         "kind": "physics",
-        "node": "fork:lattice_24d",
+        "node": "fork:metric_construction",
         "w": 220,
         "x": 3020
       },
       {
         "depth": 0,
-        "fork": "g2_construction",
+        "fork": "chi_eff_route",
         "index": 11,
         "kind": "physics",
-        "node": "fork:g2_construction",
+        "node": "fork:chi_eff_route",
         "w": 220,
         "x": 3296
       },
       {
         "depth": 0,
-        "fork": "moduli_indexing",
+        "fork": "twisted_norm_convention",
         "index": 12,
         "kind": "physics",
-        "node": "fork:moduli_indexing",
+        "node": "fork:twisted_norm_convention",
         "w": 220,
         "x": 3572
       },
       {
         "depth": 0,
-        "fork": "bulk_signature",
+        "fork": "lattice_24d",
         "index": 13,
         "kind": "physics",
-        "node": "fork:bulk_signature",
+        "node": "fork:lattice_24d",
         "w": 220,
         "x": 3848
       },
       {
         "depth": 0,
-        "fork": "dark_energy_betti",
+        "fork": "g2_construction",
         "index": 14,
         "kind": "physics",
-        "node": "fork:dark_energy_betti",
+        "node": "fork:g2_construction",
         "w": 220,
         "x": 4124
       },
       {
         "depth": 0,
-        "fork": "render_policy",
+        "fork": "moduli_indexing",
         "index": 15,
         "kind": "physics",
-        "node": "fork:render_policy",
+        "node": "fork:moduli_indexing",
         "w": 220,
         "x": 4400
       },
       {
         "depth": 0,
-        "fork": "theory_uncertainty_policy",
+        "fork": "bulk_signature",
         "index": 16,
         "kind": "physics",
-        "node": "fork:theory_uncertainty_policy",
+        "node": "fork:bulk_signature",
         "w": 220,
         "x": 4676
       },
       {
         "depth": 0,
-        "fork": "face_genericity",
+        "fork": "dark_energy_betti",
         "index": 17,
         "kind": "physics",
-        "node": "fork:face_genericity",
+        "node": "fork:dark_energy_betti",
         "w": 220,
         "x": 4952
       },
       {
         "depth": 0,
-        "fork": "seed_selection",
+        "fork": "render_policy",
         "index": 18,
         "kind": "physics",
-        "node": "fork:seed_selection",
+        "node": "fork:render_policy",
         "w": 220,
         "x": 5228
       },
       {
         "depth": 0,
-        "fork": "dark_energy_mechanism",
+        "fork": "theory_uncertainty_policy",
         "index": 19,
         "kind": "physics",
-        "node": "fork:dark_energy_mechanism",
+        "node": "fork:theory_uncertainty_policy",
         "w": 220,
         "x": 5504
       },
       {
         "depth": 0,
-        "fork": "spectral_index_route",
+        "fork": "face_genericity",
         "index": 20,
         "kind": "physics",
-        "node": "fork:spectral_index_route",
+        "node": "fork:face_genericity",
         "w": 220,
         "x": 5780
       },
       {
         "depth": 0,
-        "fork": "h0_route",
+        "fork": "seed_selection",
         "index": 21,
         "kind": "physics",
-        "node": "fork:h0_route",
+        "node": "fork:seed_selection",
         "w": 220,
         "x": 6056
       },
@@ -1997,67 +2137,79 @@
     },
     "positions": {
       "decision:D-003": [
-        1690,
+        2518,
         596,
         120,
         40
       ],
       "decision:D-005": [
-        310,
+        1307,
         596,
         120,
         40
       ],
       "decision:D-009": [
-        1966,
+        2794,
         596,
         120,
         40
       ],
       "decision:D-010": [
-        5554,
+        911,
         596,
         120,
         40
       ],
       "decision:D-015": [
-        2098,
+        2926,
         596,
         120,
         40
       ],
       "decision:D-016": [
-        2932,
+        1043,
         596,
         120,
         40
       ],
       "decision:D-017": [
-        3064,
+        1175,
+        596,
+        120,
+        40
+      ],
+      "decision:D-022": [
+        779,
+        596,
+        120,
+        40
+      ],
+      "decision:D-023": [
+        3346,
         596,
         120,
         40
       ],
       "fork:b3_origin": [
-        1088,
+        1916,
         24,
         220,
         48
       ],
       "fork:b3_seed": [
-        536,
+        1364,
         24,
         220,
         48
       ],
       "fork:bulk_signature": [
-        3848,
+        4676,
         24,
         220,
         48
       ],
       "fork:chi_eff_route": [
-        2468,
+        3296,
         24,
         220,
         48
@@ -2069,37 +2221,37 @@
         48
       ],
       "fork:dark_energy_betti": [
-        4124,
-        24,
-        220,
-        48
-      ],
-      "fork:dark_energy_mechanism": [
-        5504,
-        24,
-        220,
-        48
-      ],
-      "fork:face_genericity": [
         4952,
         24,
         220,
         48
       ],
+      "fork:dark_energy_mechanism": [
+        812,
+        24,
+        220,
+        48
+      ],
+      "fork:face_genericity": [
+        5780,
+        24,
+        220,
+        48
+      ],
       "fork:flavour_seed_coupling": [
-        1916,
+        2744,
         24,
         220,
         48
       ],
       "fork:g2_construction": [
-        3296,
+        4124,
         24,
         220,
         48
       ],
       "fork:g2_form_convention": [
-        1640,
+        2468,
         24,
         220,
         48
@@ -2111,235 +2263,235 @@
         48
       ],
       "fork:h0_route": [
-        6056,
+        536,
         24,
         220,
         48
       ],
       "fork:joyce_contribution_table": [
-        1364,
-        24,
-        220,
-        48
-      ],
-      "fork:lattice_24d": [
-        3020,
-        24,
-        220,
-        48
-      ],
-      "fork:metric_construction": [
         2192,
         24,
         220,
         48
       ],
+      "fork:lattice_24d": [
+        3848,
+        24,
+        220,
+        48
+      ],
+      "fork:metric_construction": [
+        3020,
+        24,
+        220,
+        48
+      ],
       "fork:moduli_indexing": [
-        3572,
-        24,
-        220,
-        48
-      ],
-      "fork:n_gen_source": [
-        812,
-        24,
-        220,
-        48
-      ],
-      "fork:re_t_adoption": [
-        260,
-        24,
-        220,
-        48
-      ],
-      "fork:render_policy": [
         4400,
         24,
         220,
         48
       ],
-      "fork:seed_selection": [
+      "fork:n_gen_source": [
+        1640,
+        24,
+        220,
+        48
+      ],
+      "fork:re_t_adoption": [
+        1088,
+        24,
+        220,
+        48
+      ],
+      "fork:render_policy": [
         5228,
         24,
         220,
         48
       ],
+      "fork:seed_selection": [
+        6056,
+        24,
+        220,
+        48
+      ],
       "fork:spectral_index_route": [
-        5780,
+        260,
         24,
         220,
         48
       ],
       "fork:theory_uncertainty_policy": [
-        4676,
+        5504,
         24,
         220,
         48
       ],
       "fork:twisted_norm_convention": [
-        2744,
+        3572,
         24,
         220,
         48
       ],
       "option:b3_origin.arc_flag_stabiliser": [
-        1088,
+        1916,
         174,
         220,
         36
       ],
       "option:b3_origin.betti_survey": [
-        1088,
+        1916,
         312,
         220,
         36
       ],
       "option:b3_origin.d4_root_shell": [
-        1088,
+        1916,
         220,
         220,
         36
       ],
       "option:b3_origin.derived_joyce_a1": [
-        1088,
+        1916,
         82,
         220,
         36
       ],
       "option:b3_origin.input_24": [
-        1088,
+        1916,
         128,
         220,
         36
       ],
       "option:b3_origin.joyce_twisted_sector": [
-        1088,
+        1916,
         266,
         220,
         36
       ],
       "option:b3_origin.profile_15_24": [
-        1088,
+        1916,
         358,
         220,
         36
       ],
       "option:b3_seed.seed_19_joyce": [
-        536,
+        1364,
         220,
         220,
         36
       ],
       "option:b3_seed.seed_24": [
-        536,
+        1364,
         128,
         220,
         36
       ],
       "option:b3_seed.seed_31_joyce": [
-        536,
+        1364,
         266,
         220,
         36
       ],
       "option:b3_seed.seed_43_joyce": [
-        536,
+        1364,
         82,
         220,
         36
       ],
       "option:b3_seed.seed_7_joyce": [
-        536,
+        1364,
         174,
         220,
         36
       ],
       "option:bulk_signature.10_2": [
-        3848,
+        4676,
         266,
         220,
         36
       ],
       "option:bulk_signature.12_1": [
-        3848,
+        4676,
         312,
         220,
         36
       ],
       "option:bulk_signature.12_2_x2": [
-        3848,
+        4676,
         220,
         220,
         36
       ],
       "option:bulk_signature.14_2": [
-        3848,
+        4676,
         358,
         220,
         36
       ],
       "option:bulk_signature.24_1": [
-        3848,
+        4676,
         404,
         220,
         36
       ],
       "option:bulk_signature.24_1_2": [
-        3848,
+        4676,
         496,
         220,
         36
       ],
       "option:bulk_signature.24_2": [
-        3848,
+        4676,
         82,
         220,
         36
       ],
       "option:bulk_signature.25_1": [
-        3848,
+        4676,
         174,
         220,
         36
       ],
       "option:bulk_signature.26_1": [
-        3848,
+        4676,
         450,
         220,
         36
       ],
       "option:bulk_signature.26_2": [
-        3848,
+        4676,
         128,
         220,
         36
       ],
       "option:chi_eff_route.constant_144": [
-        2468,
+        3296,
         174,
         220,
         36
       ],
       "option:chi_eff_route.dual_72": [
-        2468,
+        3296,
         266,
         220,
         36
       ],
       "option:chi_eff_route.k3_reading": [
-        2468,
+        3296,
         82,
         220,
         36
       ],
       "option:chi_eff_route.seed_dependent": [
-        2468,
+        3296,
         220,
         220,
         36
       ],
       "option:chi_eff_route.unruled": [
-        2468,
+        3296,
         128,
         220,
         36
@@ -2375,127 +2527,133 @@
         36
       ],
       "option:dark_energy_betti.b2_4": [
-        4124,
+        4952,
         174,
         220,
         36
       ],
       "option:dark_energy_betti.b3_24": [
-        4124,
+        4952,
         82,
         220,
         36
       ],
       "option:dark_energy_betti.b3_live": [
-        4124,
+        4952,
         128,
         220,
         36
       ],
       "option:dark_energy_betti.bridges_12": [
-        4124,
+        4952,
         312,
         220,
         36
       ],
       "option:dark_energy_betti.chi_over_b3_6": [
-        4124,
+        4952,
         266,
         220,
         36
       ],
       "option:dark_energy_betti.ngen_3": [
-        4124,
+        4952,
         220,
         220,
         36
       ],
       "option:dark_energy_betti.octonion_8": [
-        4124,
+        4952,
         358,
         220,
         36
       ],
       "option:dark_energy_mechanism.flux_attractor": [
-        5504,
-        82,
-        220,
-        36
-      ],
-      "option:dark_energy_mechanism.mashiach_quintessence": [
-        5504,
-        220,
-        220,
-        36
-      ],
-      "option:dark_energy_mechanism.mep_11_13": [
-        5504,
+        812,
         128,
         220,
         36
       ],
-      "option:dark_energy_mechanism.pi_attractor": [
-        5504,
+      "option:dark_energy_mechanism.mashiach_quintessence": [
+        812,
         266,
         220,
         36
       ],
-      "option:dark_energy_mechanism.thermal_time": [
-        5504,
+      "option:dark_energy_mechanism.mep_11_13": [
+        812,
         174,
         220,
         36
       ],
+      "option:dark_energy_mechanism.pi_attractor": [
+        812,
+        312,
+        220,
+        36
+      ],
+      "option:dark_energy_mechanism.thawing_quintessence": [
+        812,
+        82,
+        220,
+        36
+      ],
+      "option:dark_energy_mechanism.thermal_time": [
+        812,
+        220,
+        220,
+        36
+      ],
       "option:face_genericity.all": [
-        4952,
+        5780,
         128,
         220,
         36
       ],
       "option:face_genericity.generic": [
-        4952,
+        5780,
         82,
         220,
         36
       ],
       "option:flavour_seed_coupling.calibrated_24": [
-        1916,
+        2744,
         128,
         220,
         36
       ],
       "option:flavour_seed_coupling.follow_seed": [
-        1916,
+        2744,
         82,
         220,
         36
       ],
       "option:g2_construction.cy4_ftheory": [
-        3296,
+        4124,
         174,
         220,
         36
       ],
       "option:g2_construction.fano_tcs": [
-        3296,
+        4124,
         128,
         220,
         36
       ],
       "option:g2_construction.joyce_orbifold": [
-        3296,
+        4124,
         82,
         220,
         36
       ],
       "option:g2_form_convention.all_plus_one": [
-        1640,
+        2468,
         128,
         220,
         36
       ],
       "option:g2_form_convention.octonion_derived": [
-        1640,
+        2468,
         82,
         220,
         36
@@ -2513,211 +2671,211 @@
         36
       ],
       "option:h0_route.kk_bridge": [
-        6056,
-        128,
+        536,
+        174,
         220,
         36
       ],
       "option:h0_route.odowd_composite": [
-        6056,
+        536,
         82,
         220,
         36
       ],
       "option:h0_route.ricci_flow": [
-        6056,
-        174,
+        536,
+        128,
         220,
         36
       ],
       "option:joyce_contribution_table.absent": [
-        1364,
+        2192,
         82,
         220,
         36
       ],
       "option:joyce_contribution_table.supplied": [
-        1364,
+        2192,
         128,
         220,
         36
       ],
       "option:lattice_24d.eisenstein_split": [
-        3020,
+        3848,
         220,
         220,
         36
       ],
       "option:lattice_24d.leech": [
-        3020,
+        3848,
         82,
         220,
         36
       ],
       "option:lattice_24d.niemeier_e8x3": [
-        3020,
+        3848,
         128,
         220,
         36
       ],
       "option:lattice_24d.old_construction_a": [
-        3020,
+        3848,
         174,
         220,
         36
       ],
       "option:metric_construction.hitchin_cubic": [
-        2192,
+        3020,
         128,
         220,
         36
       ],
       "option:metric_construction.quadratic_contraction": [
-        2192,
+        3020,
         82,
         220,
         36
       ],
       "option:moduli_indexing.b2_gauge": [
-        3572,
+        4400,
         128,
         220,
         36
       ],
       "option:moduli_indexing.b3_clusters": [
-        3572,
+        4400,
         82,
         220,
         36
       ],
       "option:moduli_indexing.cy3_shadow": [
-        3572,
+        4400,
         174,
         220,
         36
       ],
       "option:n_gen_source.b2_over_faces": [
-        812,
+        1640,
         82,
         220,
         36
       ],
       "option:n_gen_source.b3_over_dim_O": [
-        812,
+        1640,
         128,
         220,
         36
       ],
       "option:n_gen_source.chi_eff_over_48": [
-        812,
+        1640,
         174,
         220,
         36
       ],
       "option:n_gen_source.chi_over_24": [
-        812,
+        1640,
         220,
         220,
         36
       ],
       "option:n_gen_source.thermal_winding": [
-        812,
+        1640,
         266,
         220,
         36
       ],
       "option:re_t_adoption.calibrated": [
-        260,
+        1088,
         82,
         220,
         36
       ],
       "option:re_t_adoption.computed_vacuum": [
-        260,
+        1088,
         174,
         220,
         36
       ],
       "option:re_t_adoption.higgs_vev_174": [
-        260,
+        1088,
         220,
         220,
         36
       ],
       "option:re_t_adoption.m2_instanton": [
-        260,
+        1088,
         128,
         220,
         36
       ],
       "option:render_policy.permissive": [
-        4400,
+        5228,
         128,
         220,
         36
       ],
       "option:render_policy.strict": [
-        4400,
+        5228,
         82,
         220,
         36
       ],
       "option:seed_selection.ruling_only": [
-        5228,
+        6056,
         128,
         220,
         36
       ],
       "option:seed_selection.wa1_correspondence": [
-        5228,
+        6056,
         82,
         220,
         36
       ],
       "option:spectral_index_route.golden_modulated": [
-        5780,
+        260,
         82,
         220,
         36
       ],
       "option:spectral_index_route.one_minus_2_over_b3": [
-        5780,
+        260,
         128,
         220,
         36
       ],
       "option:spectral_index_route.re_t_slow_roll": [
-        5780,
+        260,
         174,
         220,
         36
       ],
       "option:theory_uncertainty_policy.always": [
-        4676,
+        5504,
         128,
         220,
         36
       ],
       "option:theory_uncertainty_policy.cited_only": [
-        4676,
+        5504,
         82,
         220,
         36
       ],
       "option:theory_uncertainty_policy.experimental_only": [
-        4676,
+        5504,
         174,
         220,
         36
       ],
       "option:twisted_norm_convention.orbit_average": [
-        2744,
+        3572,
         128,
         220,
         36
       ],
       "option:twisted_norm_convention.orbit_sum": [
-        2744,
+        3572,
         82,
         220,
         36
@@ -2779,7 +2937,7 @@
         "env_prefix": "METAPHYSICA_VARIANT_",
         "n_constraints": 0,
         "n_forks": 24,
-        "n_options": 90,
+        "n_options": 91,
         "theory": "pm"
       },
       "class": "theory",
@@ -2791,9 +2949,604 @@
     {
       "attrs": {
         "active_from": "store",
-        "active_option": "calibrated",
+        "active_option": "golden_modulated",
         "binding": "unknown",
         "column": 0,
+        "consumers": [],
+        "decision_refs": [
+          "D-022"
+        ],
+        "depth": 0,
+        "fork": "spectral_index_route",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 3,
+        "order": 0,
+        "question": "Where does the spectral index n_s come from?",
+        "source": "simulations.PM.cosmology.spectral_routes.ADOPTED_ROUTE",
+        "stage": "simulation",
+        "status": "RULED",
+        "wired": false
+      },
+      "class": "physics",
+      "id": "fork:spectral_index_route",
+      "label": "spectral_index_route",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "Opened 2026-10-25 (D-022) from the lineage catalogue. Consumers: G2Inflation.derive_observables (cosmology.n_s) and GeometricAnchors.n_s (geometry.n_s), both through PM/cosmology/spectral_routes.py. The adopted route is what the source computes today: n_s = 1 - 2 phi^2/chi_eff, which the source itself calls the golden-modulated e-fold count (N_eff = chi_eff/phi^2). CAVEAT: the catalogue's golden_modulated entry cites 0b984a37:config.py, which is not in any local repository, so the original 2026-01 form could not be diffed against the current one.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "Where does the spectral index n_s come from?"
+      },
+      "status": "RULED",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "spectral_index_route",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "n_s = 1 - 2 phi^2/chi_eff = 1 - 2/N_eff, N_eff = chi_eff/phi^2"
+      },
+      "class": "active",
+      "id": "option:spectral_index_route.golden_modulated",
+      "label": "golden_modulated",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "ADOPTED (read from inflation._infrared_closure_n_s and GeometricAnchors.n_s v18.0). Catalogue: golden-modulated e-folds, under 1 sigma; geometric justification phi^2 = phi + 1. restored_from: 0b984a37:config.py; source 0b984a37.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "n_s = 1 - 2 phi^2/chi_eff = 1 - 2/N_eff, N_eff = chi_eff/phi^2"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [
+          "D-022"
+        ],
+        "declared_active": false,
+        "fork": "spectral_index_route",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "n_s = 1 - 2/b3"
+      },
+      "class": "disabled",
+      "id": "option:spectral_index_route.one_minus_2_over_b3",
+      "label": "one_minus_2_over_b3",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "WIRED D-022. Catalogue: 11.48 sigma off; replaced 2026-01-10. GeometricAnchors.n_s docstring v16.0: 0.9167 at b3 = 24. restored_from: 2c246586:config.py (parent of 0b984a37); source 0b984a37. Each consumer uses its own b3 (inflation B3_SEED = 24; GeometricAnchors.elder_kads).",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "n_s = 1 - 2/b3"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [
+          "D-022"
+        ],
+        "declared_active": false,
+        "fork": "spectral_index_route",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 2,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "V ~ W_flux + W_inst; epsilon = 3/(2 Re(T)^2); n_s = 1 - 6 eps + 2 eta"
+      },
+      "class": "disabled",
+      "id": "option:spectral_index_route.re_t_slow_roll",
+      "label": "re_t_slow_roll",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "WIRED D-022. Catalogue: n_s = 0.9996, FALSIFIED at 8.3 sigma vs Planck 2018 (8.263 sigma FAIL); still rescored every build as cosmology.n_s_slow_roll; Re(T) inputs off-path. restored_from: main:src/metaphysica/simulations/PM/cosmology/inflation.py; source metaphysica/docs/DISCARDED_PATH_COVERAGE.md row 41.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "V ~ W_flux + W_inst; epsilon = 3/(2 Re(T)^2); n_s = 1 - 6 eps + 2 eta"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "active_from": "store",
+        "active_option": "odowd_composite",
+        "binding": "unknown",
+        "column": 1,
+        "consumers": [],
+        "decision_refs": [
+          "D-022"
+        ],
+        "depth": 0,
+        "fork": "h0_route",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 3,
+        "order": 1,
+        "question": "Where does the displayed H0 (cosmology.H0_local) come from?",
+        "source": "simulations.PM.cosmology.late_time_routes.ADOPTED_H0_ROUTE",
+        "stage": "simulation",
+        "status": "RULED",
+        "wired": false
+      },
+      "class": "physics",
+      "id": "fork:h0_route",
+      "label": "h0_route",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "Opened 2026-10-25 (D-022) from the lineage catalogue. Consumer: FormulasRegistry.calculate_h0_local (-> cosmology.H0_local) via PM/cosmology/late_time_routes.py. The adopted route is what the source computes today: the O'Dowd composite 288/4 - 163/144 + eta_S = 71.55, which canonical_values CANON['H0_km_s_Mpc'] rules a DISPLAY value, not a topology-first prediction.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "Where does the displayed H0 (cosmology.H0_local) come from?"
+      },
+      "status": "RULED",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "h0_route",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "H0 = 288/4 - 163/144 + eta_S (three fitted inputs)"
+      },
+      "class": "active",
+      "id": "option:h0_route.odowd_composite",
+      "label": "odowd_composite",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "ADOPTED (FormulasRegistry.calculate_h0_local). Catalogue: canonical DISPLAY value; 1.43 sigma SH0ES, 8.3 Planck; H0 is NOT a topology-first prediction. restored_from: main:src/metaphysica/simulations/core/canonical_values.py.",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "H0 = 288/4 - 163/144 + eta_S (three fitted inputs)"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [
+          "D-022"
+        ],
+        "declared_active": false,
+        "fork": "h0_route",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "H0 = H0_planck (1 + sin^2(31 deg)/2) via G2 Ricci flow"
+      },
+      "class": "disabled",
+      "id": "option:h0_route.ricci_flow",
+      "label": "ricci_flow",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "WIRED D-022. Catalogue: 3.17 sigma from SH0ES (76.34); still published as cosmology.H0_ricci_variant; fitted angle THETA_MIXING_13D_26D_DEG = 31. restored_from: main:src/metaphysica/simulations/PM/cosmology/ricci_flow_h0.py; source engine 871a296, 2beca44.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "H0 = H0_planck (1 + sin^2(31 deg)/2) via G2 Ricci flow"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [
+          "D-022"
+        ],
+        "declared_active": false,
+        "fork": "h0_route",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 2,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "early-dark-energy-like KK modes shift H0 through the sound horizon"
+      },
+      "class": "disabled",
+      "id": "option:h0_route.kk_bridge",
+      "label": "kk_bridge",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "WIRED D-022 with the steps of hubble_tension.HubbleTensionEDE.run. Catalogue: REFUTED; lightest KK mass ~5e28 eV vs ~1e-28 eV needed, ~57 orders off; H0 stays at the Planck value to ~5e-7. restored_from: main:src/metaphysica/simulations/PM/cosmology/hubble_tension.py.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "early-dark-energy-like KK modes shift H0 through the sound horizon"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "active_from": "store",
+        "active_option": "thawing_quintessence",
+        "binding": "unknown",
+        "column": 2,
+        "consumers": [],
+        "decision_refs": [
+          "D-022"
+        ],
+        "depth": 0,
+        "fork": "dark_energy_mechanism",
+        "kind": "physics",
+        "legacy_option": null,
+        "n_options": 6,
+        "order": 2,
+        "question": "What sets the dark-energy equation of state w0 (the mechanism)?",
+        "source": "simulations.PM.cosmology.late_time_routes.ADOPTED_DE_MECHANISM",
+        "stage": "simulation",
+        "status": "RULED",
+        "wired": false
+      },
+      "class": "physics",
+      "id": "fork:dark_energy_mechanism",
+      "label": "dark_energy_mechanism",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "Opened 2026-10-25 (D-022). Consumers: FormulasRegistry.calculate_w0 (w0_dark_energy) and DarkEnergy._derive_dark_energy_eos (cosmology.w0_derived). The adopted mechanism is what the source does today: thawing quintessence, w0 = -1 + 1/b3 (the catalogue says the 2025-12-31 v16.2 change replaced mep_11_13 with it). The catalogue's other mechanisms (thermal_time, mashiach_quintessence, pi_attractor, flux_attractor) stay declared: none has a w0 formula in the current source that is not already this one.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "What sets the dark-energy equation of state w0 (the mechanism)?"
+      },
+      "status": "RULED",
+      "type": "fork"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": true,
+        "fork": "dark_energy_mechanism",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": true,
+        "on_recommended_path": false,
+        "order": 0,
+        "priority": 0,
+        "restored_from": "",
+        "summary": "w0 = -1 + 1/b3 (thawing quintessence from the b3 3-cycles)"
+      },
+      "class": "active",
+      "id": "option:dark_energy_mechanism.thawing_quintessence",
+      "label": "thawing_quintessence",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "ADOPTED (dark_energy.py v22; FormulasRegistry.calculate_w0 breathing form -sigma_T). Catalogue: replaced mep_11_13 on 2025-12-31, 0.02 sigma vs DESI 2025 (commit text); the form was chosen after the data (dark_energy.py assessment).",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "w0 = -1 + 1/b3 (thawing quintessence from the b3 3-cycles)"
+      },
+      "status": "active",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [
+          "D-022"
+        ],
+        "declared_active": false,
+        "fork": "dark_energy_mechanism",
+        "implemented": true,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 1,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "w0 = -(D-1)/(D+1) = -11/13 at D = 12 (maximum entropy production)"
+      },
+      "class": "disabled",
+      "id": "option:dark_energy_mechanism.mep_11_13",
+      "label": "mep_11_13",
+      "rationale": {
+        "decision_refs": [
+          "D-022"
+        ],
+        "sections": [
+          {
+            "body": "WIRED D-022. Catalogue: w0 = -0.846, 1.76 sigma vs DESI 2025; replaced 2025-12-31 by thawing quintessence. restored_from: 5755a1e0:config.py (not in any local repository; the formula is the D_eff form quoted in dark_energy.py), source a40b0bfa.",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-022"
+            ]
+          }
+        ],
+        "summary": "w0 = -(D-1)/(D+1) = -11/13 at D = 12 (maximum entropy production)"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "dark_energy_mechanism",
+        "implemented": false,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 2,
+        "priority": 2,
+        "restored_from": "main:src/metaphysica/simulations/visualizations/plot_wz_evolution.py",
+        "summary": "pre-DESI thermal-time dark-energy equation of state"
+      },
+      "class": "not_implemented",
+      "id": "option:dark_energy_mechanism.thermal_time",
+      "label": "thermal_time",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Retired pre-DESI; wa = +0.27 / +0.1 (thermal / attractor) failed the sign test against DESI wa < 0. Value survives as a default argument.\nSource: site 9e9bf9ae 2026-03-21 thermal time",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "pre-DESI thermal-time dark-energy equation of state"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "dark_energy_mechanism",
+        "implemented": false,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 3,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "Mashiach is an ordinary scalar quintessence with flat potential, ~70% of energy density"
+      },
+      "class": "not_implemented",
+      "id": "option:dark_energy_mechanism.mashiach_quintessence",
+      "label": "mashiach_quintessence",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Analysis PDF description of the 12D revision.\nSource: Analysis PDF 'Dark energy through the Mashiach-quintessence identification'",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "Mashiach is an ordinary scalar quintessence with flat potential, ~70% of energy density"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "certainty": null,
+        "decision_refs": [],
+        "declared_active": false,
+        "fork": "dark_energy_mechanism",
+        "implemented": false,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 4,
+        "priority": 2,
+        "restored_from": "",
+        "summary": "V_eff = Lambda_QG[1-cos^2(2 Pi_U Phi)]; Phi->pi as tau->infinity; Omega_m=1/Pi_U, Omega_Lambda=1-1/Pi_U"
+      },
+      "class": "not_implemented",
+      "id": "option:dark_energy_mechanism.pi_attractor",
+      "label": "pi_attractor",
+      "rationale": {
+        "decision_refs": [],
+        "sections": [
+          {
+            "body": "Wastepad 1 s5.2; Pi_U arises from F(R,T) / CDT in wastepads 1-3 and equals pi up to quantum corrections.\nSource: GUT Waste Pad.md ss3.3, 5.2, 9.1",
+            "heading": "",
+            "key": "text",
+            "refs": []
+          }
+        ],
+        "summary": "V_eff = Lambda_QG[1-cos^2(2 Pi_U Phi)]; Phi->pi as tau->infinity; Omega_m=1/Pi_U, Omega_Lambda=1-1/Pi_U"
+      },
+      "status": "disabled",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "adds_discrete_input": false,
+        "catalogue_status": "rejected",
+        "certainty": "certain",
+        "decision_refs": [
+          "D-010",
+          "D-016",
+          "D-017"
+        ],
+        "declared_active": false,
+        "fork": "dark_energy_mechanism",
+        "implemented": false,
+        "kill_condition": "",
+        "legacy": false,
+        "on_active_path": false,
+        "on_recommended_path": false,
+        "order": 5,
+        "priority": 2,
+        "restored_from": "main:src/metaphysica/simulations/PM/geometry/flux_vacuum.py",
+        "summary": "flux potential or hyperinflation accelerates the universe"
+      },
+      "class": "not_implemented",
+      "id": "option:dark_energy_mechanism.flux_attractor",
+      "label": "flux_attractor",
+      "rationale": {
+        "decision_refs": [
+          "D-010",
+          "D-016",
+          "D-017"
+        ],
+        "sections": [
+          {
+            "body": "D-010 C3: slope 5 sqrt(2/7) is the universal volume exponent; late-time attractor is kination (epsilon -> 3), PR-3 pre-registered; 'the flux potential cannot accelerate'.\nSource: PrincipiaMetaphysica/docs/DECISION_LOG.md D-010, D-016, D-017",
+            "heading": "",
+            "key": "text",
+            "refs": [
+              "D-010",
+              "D-016",
+              "D-017"
+            ]
+          }
+        ],
+        "summary": "flux potential or hyperinflation accelerates the universe"
+      },
+      "status": "rejected",
+      "type": "option"
+    },
+    {
+      "attrs": {
+        "active_from": "store",
+        "active_option": "calibrated",
+        "binding": "unknown",
+        "column": 3,
         "consumers": [],
         "decision_refs": [
           "D-015"
@@ -2803,7 +3556,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 4,
-        "order": 0,
+        "order": 3,
         "question": "Which Re(T) does the baryogenesis sector use?",
         "source": "simulations.PM.cosmology.baryon_asymmetry.RE_T_CALIBRATED",
         "stage": "simulation",
@@ -3014,7 +3767,7 @@
         "active_from": "store",
         "active_option": "seed_43_joyce",
         "binding": "unknown",
-        "column": 1,
+        "column": 4,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -3022,7 +3775,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 5,
-        "order": 1,
+        "order": 4,
         "question": "Which (b_3, b_2) does the model take, and is the seed derived?",
         "source": "simulations.PM.geometry.b3_path.PATHS adopted entry",
         "stage": "simulation",
@@ -3257,7 +4010,7 @@
         "active_from": "store",
         "active_option": "b2_over_faces",
         "binding": "unknown",
-        "column": 2,
+        "column": 5,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -3265,7 +4018,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 5,
-        "order": 2,
+        "order": 5,
         "question": "Which geometric quantity supplies the generation count?",
         "source": "simulations.PM.geometry.b3_path n_gen_source per path",
         "stage": "simulation",
@@ -3376,10 +4129,12 @@
       "attrs": {
         "adds_discrete_input": false,
         "certainty": null,
-        "decision_refs": [],
+        "decision_refs": [
+          "D-022"
+        ],
         "declared_active": false,
         "fork": "n_gen_source",
-        "implemented": false,
+        "implemented": true,
         "kill_condition": "",
         "legacy": false,
         "on_active_path": false,
@@ -3387,22 +4142,26 @@
         "order": 2,
         "priority": 2,
         "restored_from": "",
-        "summary": "n_gen = chi_eff/24 (72/24 = 3); first stated for CY4 in Nov-22 as chi/24 not chi/2"
+        "summary": "n_gen = chi_eff/24 (the per-sector chi_eff, 72/24 = 3)"
       },
-      "class": "not_implemented",
+      "class": "disabled",
       "id": "option:n_gen_source.chi_over_24",
       "label": "chi_over_24",
       "rationale": {
-        "decision_refs": [],
+        "decision_refs": [
+          "D-022"
+        ],
         "sections": [
           {
-            "body": "Corrected from chi/2 to chi/24 for 8D manifolds on 2025-11-22; kept as sector-level formula in v20.1.\nSource: 48ec267c",
+            "body": "WIRED D-022: FormulasRegistry.n_gen reads chi_eff_sector/24. Catalogue: corrected from chi/2 to chi/24 for 8D manifolds on 2025-11-22 (source 48ec267c); kept as the sector-level formula in v20.1 (FormulasRegistry v20.1 'Formula A'). restored_from: none (current source). Expected: 3, the same as the adopted route, because the source supplies chi_eff_sector = 72.",
             "heading": "",
             "key": "text",
-            "refs": []
+            "refs": [
+              "D-022"
+            ]
           }
         ],
-        "summary": "n_gen = chi_eff/24 (72/24 = 3); first stated for CY4 in Nov-22 as chi/24 not chi/2"
+        "summary": "n_gen = chi_eff/24 (the per-sector chi_eff, 72/24 = 3)"
       },
       "status": "disabled",
       "type": "option"
@@ -3412,38 +4171,41 @@
         "adds_discrete_input": false,
         "certainty": null,
         "decision_refs": [
+          "D-022",
           "D-009"
         ],
         "declared_active": false,
         "fork": "n_gen_source",
-        "implemented": false,
+        "implemented": true,
         "kill_condition": "",
         "legacy": false,
         "on_active_path": false,
         "on_recommended_path": false,
         "order": 3,
         "priority": 1,
-        "restored_from": "main:src/metaphysica/simulations/PM/geometry/chi_eff_branches.py",
-        "summary": "generations from the effective Euler characteristic"
+        "restored_from": "",
+        "summary": "n_gen = chi_eff_total/48 (144/48 = 3), generations from the effective Euler characteristic"
       },
-      "class": "not_implemented",
+      "class": "considered",
       "id": "option:n_gen_source.chi_eff_over_48",
       "label": "chi_eff_over_48",
       "rationale": {
         "decision_refs": [
+          "D-022",
           "D-009"
         ],
         "sections": [
           {
-            "body": "3ba5848: fails on the whole Joyce family on both chi_eff branches; 6 b3/48 = b3/8 identically, so not independent. Under D-009 it survives as n_gen = chi_eff/48 = n with the K3 reading.\nSource: metaphysica/docs/DISCARDED_PATH_COVERAGE.md rows 22, 23",
+            "body": "WIRED D-022: FormulasRegistry.n_gen reads chi_eff_total/48. Catalogue (3ba5848): fails on the whole Joyce family on both chi_eff branches; 6 b3/48 = b3/8 identically, so not independent. Under D-009 it survives as n_gen = chi_eff/48 = n with the K3 reading. restored_from: main:src/metaphysica/simulations/PM/geometry/chi_eff_branches.py; source metaphysica/docs/DISCARDED_PATH_COVERAGE.md rows 22, 23. Expected: 3 on the registry's own chi_eff_total = 144.",
             "heading": "",
             "key": "text",
             "refs": [
+              "D-022",
               "D-009"
             ]
           }
         ],
-        "summary": "generations from the effective Euler characteristic"
+        "summary": "n_gen = chi_eff_total/48 (144/48 = 3), generations from the effective Euler characteristic"
       },
       "status": "considered",
       "type": "option"
@@ -3488,15 +4250,17 @@
         "active_from": "store",
         "active_option": "derived_joyce_a1",
         "binding": "unknown",
-        "column": 3,
+        "column": 6,
         "consumers": [],
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "depth": 0,
         "fork": "b3_origin",
         "kind": "physics",
         "legacy_option": null,
         "n_options": 7,
-        "order": 3,
+        "order": 6,
         "question": "What sets b_3? (asked of whichever seed is live; the options below were written when it was 24)",
         "source": "simulations.run_all_simulations topology.elder_kads status",
         "stage": "simulation",
@@ -3507,13 +4271,17 @@
       "id": "fork:b3_origin",
       "label": "b3_origin",
       "rationale": {
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "sections": [
           {
-            "body": "Opened 2026-09-14 with the ruling that removed b_3 = 24's DERIVED/GEOMETRIC status. Nothing on the books derives it: the TCS route places b_3 = 24 far below its exhibited range, the Joyce (Z/2)^3 route is UNDETERMINED pending the contribution table (see joyce_contribution_table), and the candidate structures below all reproduce the integer without exhibiting 24 three-cycles -- the A4 bar.\n\nThe options are therefore candidate ORIGINS, each labelled by what it actually delivers. Switching one on does not change the value while they all yield 24; what it changes is which justification the pipeline records, and b3_candidate_sweep pushes alternative VALUES through the downstream chain so the shape of the dependence is visible. Per the module's standing rule the sweep reports every outcome and never orders them by agreement with anchors.",
+            "body": "Opened 2026-09-14 with the ruling that removed b_3 = 24's DERIVED/GEOMETRIC status. Nothing on the books derives it: the TCS route places b_3 = 24 far below its exhibited range, the Joyce (Z/2)^3 route is UNDETERMINED pending the contribution table (see joyce_contribution_table), and the candidate structures below all reproduce the integer without exhibiting 24 three-cycles -- the A4 bar.\n\nThe options are therefore candidate ORIGINS, each labelled by what it actually delivers. Switching one on does not change the value while they all yield 24; what it changes is which justification the pipeline records, and b3_candidate_sweep pushes alternative VALUES through the downstream chain so the shape of the dependence is visible. Per the module's standing rule the sweep reports every outcome and never orders them by agreement with anchors.\n\nINAPPLICABLE ON THE ADOPTED SEED (D-023, 2026-10-25): input_24, arc_flag_stabiliser, d4_root_shell and joyce_twisted_sector were written for b_3 = 24. On seed_43_joyce the origin is answered by derived_joyce_a1, and joyce_twisted_sector is what it became once the contribution table existed. Selecting the others there changes no output; input_24 is contract-bound to seed_24, and the other two already fail b3_origin_clears_the_a4_bar.",
             "heading": "",
             "key": "text",
-            "refs": []
+            "refs": [
+              "D-023"
+            ]
           }
         ],
         "summary": "What sets b_3? (asked of whichever seed is live; the options below were written when it was 24)"
@@ -3801,7 +4569,7 @@
         "active_from": "store",
         "active_option": "absent",
         "binding": "unknown",
-        "column": 4,
+        "column": 7,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -3809,7 +4577,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 4,
+        "order": 7,
         "question": "Is a cited resolution contribution table available?",
         "source": "simulations.PM.geometry.joyce_contributions declared table",
         "stage": "simulation",
@@ -3921,7 +4689,7 @@
         "active_from": "store",
         "active_option": "octonion_derived",
         "binding": "unknown",
-        "column": 5,
+        "column": 8,
         "consumers": [],
         "decision_refs": [
           "D-015",
@@ -3932,7 +4700,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 5,
+        "order": 8,
         "question": "Which signs does the associative 3-form carry on its 7 triples?",
         "source": "simulations.PM.geometry.g2_differential.G2_TRIPLES",
         "stage": "simulation",
@@ -4056,7 +4824,7 @@
         "active_from": "store",
         "active_option": "follow_seed",
         "binding": "unknown",
-        "column": 6,
+        "column": 9,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -4064,7 +4832,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 6,
+        "order": 9,
         "question": "Which b_3 does the flavour-ansatz sector consume?",
         "source": "simulations.PM.particle.yukawa_derivation.resolve_flavour_b3",
         "stage": "simulation",
@@ -4176,15 +4944,17 @@
         "active_from": "store",
         "active_option": "quadratic_contraction",
         "binding": "unknown",
-        "column": 7,
+        "column": 10,
         "consumers": [],
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "depth": 0,
         "fork": "metric_construction",
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 7,
+        "order": 10,
         "question": "Which construction turns phi into a metric?",
         "source": "simulations.PM.geometry.g2_differential.G2DifferentialGeometry.metric_by_convention",
         "stage": "simulation",
@@ -4195,7 +4965,9 @@
       "id": "fork:metric_construction",
       "label": "metric_construction",
       "rationale": {
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "sections": [
           {
             "body": "Opened 2026-09-21. compute_metric() is the QUADRATIC contraction phi_iab phi_jab / 6, and its docstring called that Hitchin's formula. It is not: Hitchin's construction is CUBIC in phi, B_ij = eps^{a1..a7} phi_{i a1 a2} phi_{j a3 a4} phi_{a5 a6 a7} with g = B / |det B|^(1/9), and cubic is the lowest degree that can see the difference. Measured: the quadratic returns exactly 1.0 * I_7 for BOTH the all-(+1) phi and the octonion-derived one, so every claim of 'the unique compatible Riemannian metric' made through it was unfalsifiable -- which is why g2_form_convention went unnoticed as long as it did.\n\nWHAT THE CUBIC FORM REVEALS, refining the earlier finding rather than confirming it: Lambda^3(R^7) has exactly TWO open GL(7,R) orbits and BOTH have 14-dimensional stabilisers, so 'dim 14 vs 6' is not the invariant it was read as. The one that discriminates is the unordered signature of B -- (7,0) for octonion_derived, (4,3) for all_plus_one. So the adopted phi IS a G2-structure, for the SPLIT real form g2*, whose maximal compact SU(2)xSU(2) has dimension 6: exactly the 6 measured in so(7). What it is not is RIEMANNIAN, and Joyce's construction needs the compact form.\n\nThis also settles the Lambda decomposition question. The dimensions 1 + 7 + 27 and 7 + 14 are correct on BOTH branches, as a shared complexification requires; only the IDENTIFICATION of the 14 with compact g2 breaks, not any dimension.",
@@ -4204,10 +4976,12 @@
             "refs": []
           },
           {
-            "body": "the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.",
+            "body": "the diagonal (Z/2)^3 stabiliser depends only on phi's SUPPORT, which both branches share exactly, so R1 to R4, the half-shift enumeration, the A1 census and b_3 = 7 + 3 n_T3 are fork-independent either way. The closure rides on Fano incidence, not on the real form.\n\nINERT ON THE ADOPTED PATH, BY DESIGN (D-023, 2026-10-25): on the compact octonion_derived form both constructions return a constant multiple of I_7 (measured: 1.0 and 3.017), so switching changes no output there. The fork is a consistency check, not a rival: it discriminates only on the split form, where the cubic exhibits (4,3).",
             "heading": "NOT AFFECTED, verified:",
             "key": "not_affected",
-            "refs": []
+            "refs": [
+              "D-023"
+            ]
           }
         ],
         "summary": "Which construction turns phi into a metric?"
@@ -4308,7 +5082,7 @@
         "active_from": "store",
         "active_option": "k3_reading",
         "binding": "unknown",
-        "column": 8,
+        "column": 11,
         "consumers": [],
         "decision_refs": [
           "D-015",
@@ -4319,7 +5093,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 5,
-        "order": 8,
+        "order": 11,
         "question": "Is chi_eff a CONSTANT independent of the seed, or SEED-DEPENDENT? The framework currently wants both.",
         "source": "simulations.PM.geometry.geometry_narration.CHI_EFF_READING",
         "stage": "simulation",
@@ -4558,7 +5332,7 @@
         "active_from": "store",
         "active_option": "orbit_sum",
         "binding": "unknown",
-        "column": 9,
+        "column": 12,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -4566,7 +5340,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 9,
+        "order": 12,
         "question": "Is a family's twisted representative the SUM over its orbit of T^3 components, or the average?",
         "source": "simulations.PM.geometry.metric_pairing._resolve_orbit_convention",
         "stage": "simulation",
@@ -4678,7 +5452,7 @@
         "active_from": "store",
         "active_option": "leech",
         "binding": "unknown",
-        "column": 10,
+        "column": 13,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -4686,7 +5460,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 4,
-        "order": 10,
+        "order": 13,
         "question": "Which even unimodular rank-24 lattice does the model use?",
         "source": "simulations.PM.algebra.leech_lattice.LeechLattice._generator_matrix",
         "stage": "simulation",
@@ -4869,15 +5643,17 @@
         "active_from": "store",
         "active_option": "joyce_orbifold",
         "binding": "unknown",
-        "column": 11,
+        "column": 14,
         "consumers": [],
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "depth": 0,
         "fork": "g2_construction",
         "kind": "physics",
         "legacy_option": null,
         "n_options": 3,
-        "order": 11,
+        "order": 14,
         "question": "Which construction realises the G2 manifold?",
         "source": "docs/OUTSTANDING_ISSUES.md section C4",
         "stage": "simulation",
@@ -4888,13 +5664,17 @@
       "id": "fork:g2_construction",
       "label": "g2_construction",
       "rationale": {
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "sections": [
           {
-            "body": "Opened 2026-09-08. The framework carries b3 = 24, and the two constructions place very different demands on that. Quotations below are from arXiv:1810.12659 (Kennon, 'G2-Manifolds and M-Theory Compactifications'), read from the paper rather than its abstract.",
+            "body": "Opened 2026-09-08. The framework carries b3 = 24, and the two constructions place very different demands on that. Quotations below are from arXiv:1810.12659 (Kennon, 'G2-Manifolds and M-Theory Compactifications'), read from the paper rather than its abstract.\n\nSUPERSEDED READING (D-023, 2026-10-25): the adopted seed is now (b2, b3) = (12, 43), computed by joyce_resolution, and every hypothesis of Joyce 2000 Thm 11.6.1 is measured (g2_closure). fano_tcs is REFUSED by the engine (g2_closure.require_buildable_construction) with its reason.",
             "heading": "",
             "key": "text",
-            "refs": []
+            "refs": [
+              "D-023"
+            ]
           }
         ],
         "summary": "Which construction realises the G2 manifold?"
@@ -4947,7 +5727,9 @@
       "attrs": {
         "adds_discrete_input": false,
         "certainty": null,
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "declared_active": false,
         "fork": "g2_construction",
         "implemented": true,
@@ -4964,7 +5746,9 @@
       "id": "option:g2_construction.fano_tcs",
       "label": "fano_tcs",
       "rationale": {
-        "decision_refs": [],
+        "decision_refs": [
+          "D-023"
+        ],
         "sections": [
           {
             "body": "b3 = 24 sits far outside what anyone has realised. The source says 'For the examples of twisted connected sums given in Kovalev's paper, he realizes 71 <= b3(M) <= 155'. Note the strength: that is a range of exhibited examples, not a proved bound, so this is a very strong exclusion rather than an impossibility proof.\nNOT the problem: b2. The same source gives '0 <= b2(M) <= 9' for twisted connected sums, which b2 = 4 satisfies comfortably.",
@@ -4973,10 +5757,12 @@
             "refs": []
           },
           {
-            "body": "the claim that TCS forces b2 + b3 odd. The source's own relation (2.17), b3(M) + b2(M) = b3(V1) + b3(V2) + 23, makes the parity depend on the building blocks -- odd only when b3(V1) + b3(V2) is even. There is no universal parity constraint, and the b2 = 7 proposal built on one is dropped.",
+            "body": "the claim that TCS forces b2 + b3 odd. The source's own relation (2.17), b3(M) + b2(M) = b3(V1) + b3(V2) + 23, makes the parity depend on the building blocks -- odd only when b3(V1) + b3(V2) is even. There is no universal parity constraint, and the b2 = 7 proposal built on one is dropped.\nREFUSED (D-023): no cited building blocks are in the engine, so selecting this builds nothing; exhibited examples (71 <= b3 <= 155) also exclude b3 = 43.",
             "heading": "WITHDRAWN:",
             "key": "withdrawn",
-            "refs": []
+            "refs": [
+              "D-023"
+            ]
           }
         ],
         "summary": "Twisted connected sum of Fano-pair building blocks"
@@ -5024,7 +5810,7 @@
         "active_from": "store",
         "active_option": "b3_clusters",
         "binding": "unknown",
-        "column": 12,
+        "column": 15,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -5032,7 +5818,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 3,
-        "order": 12,
+        "order": 15,
         "question": "What do the four T_i in the racetrack actually represent?",
         "source": "simulations.PM.geometry.four_face_structure",
         "stage": "simulation",
@@ -5191,7 +5977,7 @@
         "active_from": "store",
         "active_option": "24_2",
         "binding": "unknown",
-        "column": 13,
+        "column": 16,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -5199,7 +5985,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 10,
-        "order": 13,
+        "order": 16,
         "question": "What is the bulk dimension and signature?",
         "source": "simulations.core.canonical_values.CANON['bulk']",
         "stage": "simulation",
@@ -5586,7 +6372,7 @@
         "active_from": "store",
         "active_option": "b3_24",
         "binding": "unknown",
-        "column": 14,
+        "column": 17,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -5594,7 +6380,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 7,
-        "order": 14,
+        "order": 17,
         "question": "Which topological integer n sets w0 = -(n-1)/n?",
         "source": "simulations.PM.cosmology.dark_energy_thawing",
         "stage": "simulation",
@@ -5869,7 +6655,7 @@
         "active_from": "store",
         "active_option": "strict",
         "binding": "unknown",
-        "column": 15,
+        "column": 18,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -5877,7 +6663,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 15,
+        "order": 18,
         "question": "May a lone symbol be offered as a formula's EML diagram?",
         "source": "generators.eml_render_validity.REQUIRE_OPERATOR",
         "stage": "simulation",
@@ -5977,7 +6763,7 @@
         "active_from": "store",
         "active_option": "cited_only",
         "binding": "unknown",
-        "column": 16,
+        "column": 19,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -5985,7 +6771,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 3,
-        "order": 16,
+        "order": 19,
         "question": "May an UNCITED theory uncertainty change a verdict?",
         "source": "generators.generate_validation_certificates.DEFAULT_THEORY_UNCERTAINTY_POLICY",
         "stage": "simulation",
@@ -6120,7 +6906,7 @@
         "active_from": "store",
         "active_option": "generic",
         "binding": "unknown",
-        "column": 17,
+        "column": 20,
         "consumers": [],
         "decision_refs": [],
         "depth": 0,
@@ -6128,7 +6914,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 17,
+        "order": 20,
         "question": "Must the four face labels avoid containing a Fano line?",
         "source": "PM.gauge.topological_terms.face_assignment_candidates",
         "stage": "simulation",
@@ -6228,7 +7014,7 @@
         "active_from": "store",
         "active_option": "wa1_correspondence",
         "binding": "unknown",
-        "column": 18,
+        "column": 21,
         "consumers": [],
         "decision_refs": [
           "D-015"
@@ -6238,7 +7024,7 @@
         "kind": "physics",
         "legacy_option": null,
         "n_options": 2,
-        "order": 18,
+        "order": 21,
         "question": "What selects (b_2, b_3) = (12, 43) on the n = 3 line of phi's Joyce family?",
         "source": "simulations.PM.geometry.closed_geometry.selection.SELECTION_ROUTE",
         "stage": "simulation",
@@ -6347,521 +7133,6 @@
         "summary": "(12, 43) by the 2026-09-22 ruling; the bridge match is a finding, not a selection"
       },
       "status": "considered",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "active_from": "undeclared",
-        "active_option": "",
-        "binding": "unknown",
-        "column": 19,
-        "consumers": [],
-        "decision_refs": [],
-        "depth": 0,
-        "fork": "dark_energy_mechanism",
-        "kind": "physics",
-        "legacy_option": null,
-        "n_options": 5,
-        "order": 19,
-        "question": "What drives dark energy (the mechanism, not the integer n)?",
-        "source": "archaeology",
-        "stage": "simulation",
-        "status": "declared",
-        "wired": false
-      },
-      "class": "physics",
-      "id": "fork:dark_energy_mechanism",
-      "label": "dark_energy_mechanism",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "declared only: no engine switch",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "What drives dark energy (the mechanism, not the integer n)?"
-      },
-      "status": "declared",
-      "type": "fork"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "dark_energy_mechanism",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 0,
-        "priority": 2,
-        "restored_from": "5755a1e0:config.py (parent of d72731ef)",
-        "summary": "w0 = -11/13 = -0.846 from a maximum-entropy-production argument, d=12"
-      },
-      "class": "not_implemented",
-      "id": "option:dark_energy_mechanism.mep_11_13",
-      "label": "mep_11_13",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "Replaced 2025-12-31 by thawing quintessence; agreement with DESI 2025 improved from 1.76 sigma to 0.02 sigma (commit text).\nSource: a40b0bfa",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "w0 = -11/13 = -0.846 from a maximum-entropy-production argument, d=12"
-      },
-      "status": "disabled",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "dark_energy_mechanism",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 1,
-        "priority": 2,
-        "restored_from": "main:src/metaphysica/simulations/visualizations/plot_wz_evolution.py",
-        "summary": "pre-DESI thermal-time dark-energy equation of state"
-      },
-      "class": "not_implemented",
-      "id": "option:dark_energy_mechanism.thermal_time",
-      "label": "thermal_time",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "Retired pre-DESI; wa = +0.27 / +0.1 (thermal / attractor) failed the sign test against DESI wa < 0. Value survives as a default argument.\nSource: site 9e9bf9ae 2026-03-21 thermal time",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "pre-DESI thermal-time dark-energy equation of state"
-      },
-      "status": "disabled",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "dark_energy_mechanism",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 2,
-        "priority": 2,
-        "restored_from": "",
-        "summary": "Mashiach is an ordinary scalar quintessence with flat potential, ~70% of energy density"
-      },
-      "class": "not_implemented",
-      "id": "option:dark_energy_mechanism.mashiach_quintessence",
-      "label": "mashiach_quintessence",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "Analysis PDF description of the 12D revision.\nSource: Analysis PDF 'Dark energy through the Mashiach-quintessence identification'",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "Mashiach is an ordinary scalar quintessence with flat potential, ~70% of energy density"
-      },
-      "status": "disabled",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "dark_energy_mechanism",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 3,
-        "priority": 2,
-        "restored_from": "",
-        "summary": "V_eff = Lambda_QG[1-cos^2(2 Pi_U Phi)]; Phi->pi as tau->infinity; Omega_m=1/Pi_U, Omega_Lambda=1-1/Pi_U"
-      },
-      "class": "not_implemented",
-      "id": "option:dark_energy_mechanism.pi_attractor",
-      "label": "pi_attractor",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "Wastepad 1 s5.2; Pi_U arises from F(R,T) / CDT in wastepads 1-3 and equals pi up to quantum corrections.\nSource: GUT Waste Pad.md ss3.3, 5.2, 9.1",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "V_eff = Lambda_QG[1-cos^2(2 Pi_U Phi)]; Phi->pi as tau->infinity; Omega_m=1/Pi_U, Omega_Lambda=1-1/Pi_U"
-      },
-      "status": "disabled",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "catalogue_status": "rejected",
-        "certainty": "certain",
-        "decision_refs": [
-          "D-010",
-          "D-016",
-          "D-017"
-        ],
-        "declared_active": false,
-        "fork": "dark_energy_mechanism",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 4,
-        "priority": 2,
-        "restored_from": "main:src/metaphysica/simulations/PM/geometry/flux_vacuum.py",
-        "summary": "flux potential or hyperinflation accelerates the universe"
-      },
-      "class": "not_implemented",
-      "id": "option:dark_energy_mechanism.flux_attractor",
-      "label": "flux_attractor",
-      "rationale": {
-        "decision_refs": [
-          "D-010",
-          "D-016",
-          "D-017"
-        ],
-        "sections": [
-          {
-            "body": "D-010 C3: slope 5 sqrt(2/7) is the universal volume exponent; late-time attractor is kination (epsilon -> 3), PR-3 pre-registered; 'the flux potential cannot accelerate'.\nSource: PrincipiaMetaphysica/docs/DECISION_LOG.md D-010, D-016, D-017",
-            "heading": "",
-            "key": "text",
-            "refs": [
-              "D-010",
-              "D-016",
-              "D-017"
-            ]
-          }
-        ],
-        "summary": "flux potential or hyperinflation accelerates the universe"
-      },
-      "status": "rejected",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "active_from": "undeclared",
-        "active_option": "",
-        "binding": "unknown",
-        "column": 20,
-        "consumers": [],
-        "decision_refs": [],
-        "depth": 0,
-        "fork": "spectral_index_route",
-        "kind": "physics",
-        "legacy_option": null,
-        "n_options": 3,
-        "order": 20,
-        "question": "Where does the spectral index n_s come from?",
-        "source": "archaeology",
-        "stage": "simulation",
-        "status": "declared",
-        "wired": false
-      },
-      "class": "physics",
-      "id": "fork:spectral_index_route",
-      "label": "spectral_index_route",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "declared only: no engine switch",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "Where does the spectral index n_s come from?"
-      },
-      "status": "declared",
-      "type": "fork"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "catalogue_status": "rejected",
-        "certainty": "certain",
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "spectral_index_route",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 0,
-        "priority": 2,
-        "restored_from": "2c246586:config.py (parent of 0b984a37)",
-        "summary": "n_s = 1 - 2/b3"
-      },
-      "class": "not_implemented",
-      "id": "option:spectral_index_route.one_minus_2_over_b3",
-      "label": "one_minus_2_over_b3",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "11.48 sigma off; replaced 2026-01-10.\nSource: 0b984a37",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "n_s = 1 - 2/b3"
-      },
-      "status": "rejected",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "spectral_index_route",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 1,
-        "priority": 1,
-        "restored_from": "0b984a37:config.py",
-        "summary": "golden-modulated e-folds"
-      },
-      "class": "not_implemented",
-      "id": "option:spectral_index_route.golden_modulated",
-      "label": "golden_modulated",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "< 1 sigma; 'geometric justification: phi^2 = phi + 1'.\nSource: 0b984a37",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "golden-modulated e-folds"
-      },
-      "status": "considered",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "catalogue_status": "rejected",
-        "certainty": "certain",
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "spectral_index_route",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 2,
-        "priority": 2,
-        "restored_from": "main:src/metaphysica/simulations/PM/cosmology/inflation.py",
-        "summary": "V ~ W_flux + W_inst; epsilon = 3/(2 Re(T)^2); n_s = 0.9996"
-      },
-      "class": "not_implemented",
-      "id": "option:spectral_index_route.re_t_slow_roll",
-      "label": "re_t_slow_roll",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "FALSIFIED at 8.3 sigma vs Planck 2018 (8.263 sigma FAIL), still rescored every build as cosmology.n_s_slow_roll; Re(T) inputs off-path.\nSource: metaphysica/docs/DISCARDED_PATH_COVERAGE.md row 41",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "V ~ W_flux + W_inst; epsilon = 3/(2 Re(T)^2); n_s = 0.9996"
-      },
-      "status": "rejected",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "active_from": "undeclared",
-        "active_option": "",
-        "binding": "unknown",
-        "column": 21,
-        "consumers": [],
-        "decision_refs": [],
-        "depth": 0,
-        "fork": "h0_route",
-        "kind": "physics",
-        "legacy_option": null,
-        "n_options": 3,
-        "order": 21,
-        "question": "Where does the displayed H0 come from?",
-        "source": "archaeology",
-        "stage": "simulation",
-        "status": "declared",
-        "wired": false
-      },
-      "class": "physics",
-      "id": "fork:h0_route",
-      "label": "h0_route",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "declared only: no engine switch",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "Where does the displayed H0 come from?"
-      },
-      "status": "declared",
-      "type": "fork"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "h0_route",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 0,
-        "priority": 1,
-        "restored_from": "main:src/metaphysica/simulations/core/canonical_values.py",
-        "summary": "canonical DISPLAY value, three fitted inputs"
-      },
-      "class": "not_implemented",
-      "id": "option:h0_route.odowd_composite",
-      "label": "odowd_composite",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "Ruling: H0 is NOT a topology-first prediction; 1.43 sigma SH0ES, 8.3 Planck. All 'Hubble tension resolved' claims retired.\nSource: metaphysica src/metaphysica/simulations/core/canonical_values.py CANON['H0_km_s_Mpc']",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "canonical DISPLAY value, three fitted inputs"
-      },
-      "status": "considered",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "certainty": null,
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "h0_route",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 1,
-        "priority": 2,
-        "restored_from": "main:src/metaphysica/simulations/PM/cosmology/ricci_flow_h0.py",
-        "summary": "H0_local = H0_planck (1 + sin^2(31 deg)/2) via G2 Ricci flow"
-      },
-      "class": "not_implemented",
-      "id": "option:h0_route.ricci_flow",
-      "label": "ricci_flow",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "Superseded: 3.17 sigma from SH0ES (76.34); sterile extraction 2.5 sigma SH0ES, 6.0 Planck. Still published as cosmology.H0_ricci_variant. Declared a second H0 pass-through (2beca44) and 'the geometric H0 in the alignment appendix was the SH0ES measurement' (871a296).\nSource: engine 871a296, 2beca44",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "H0_local = H0_planck (1 + sin^2(31 deg)/2) via G2 Ricci flow"
-      },
-      "status": "disabled",
-      "type": "option"
-    },
-    {
-      "attrs": {
-        "adds_discrete_input": false,
-        "catalogue_status": "rejected",
-        "certainty": "certain",
-        "decision_refs": [],
-        "declared_active": false,
-        "fork": "h0_route",
-        "implemented": false,
-        "kill_condition": "",
-        "legacy": false,
-        "on_active_path": false,
-        "on_recommended_path": false,
-        "order": 2,
-        "priority": 2,
-        "restored_from": "main:src/metaphysica/simulations/PM/cosmology/hubble_tension.py",
-        "summary": "early-dark-energy-like KK modes"
-      },
-      "class": "not_implemented",
-      "id": "option:h0_route.kk_bridge",
-      "label": "kk_bridge",
-      "rationale": {
-        "decision_refs": [],
-        "sections": [
-          {
-            "body": "hubble_tension.py verdict REFUTED: lightest KK mass ~5e28 eV vs ~1e-28 eV needed, ~57 orders off.\nSource: metaphysica src/metaphysica/simulations/PM/cosmology/hubble_tension.py",
-            "heading": "",
-            "key": "text",
-            "refs": []
-          }
-        ],
-        "summary": "early-dark-energy-like KK modes"
-      },
-      "status": "rejected",
       "type": "option"
     },
     {
@@ -9907,7 +10178,7 @@
             "gate": "",
             "heading": "D-003 · ADDENDUM 2 · 2026-10-02 · the glued form on the compact (active) path",
             "kind": "ADDENDUM",
-            "line": 1508,
+            "line": 1586,
             "status": "ADDENDUM 2",
             "title": "the glued form on the compact (active) path"
           }
@@ -10114,6 +10385,58 @@
       "label": "D-017",
       "status": "PR-1 CONFIRMED (prediction held, no kill)",
       "type": "decision"
+    },
+    {
+      "attrs": {
+        "date": "2026-10-25",
+        "decision_id": "D-022",
+        "entries": [
+          {
+            "date": "2026-10-25",
+            "gate": "PUBLICATION",
+            "heading": "D-022 · 2026-10-25 · PUBLICATION · PRE-REGISTERED — recovered formula options made runnable (extends D-021)",
+            "kind": "ENTRY",
+            "line": 1508,
+            "status": "PRE-REGISTERED",
+            "title": "recovered formula options made runnable (extends D-021)"
+          }
+        ],
+        "in_log": true,
+        "status": "PRE-REGISTERED",
+        "summary": "**Request:** the catalogue (`theories/pm/lineage/branches.yaml`) holds recovered formula options that are declared only. Wire them as engine forks so they become computed paths, instead of leaving them as inert history. Brief: `docs/plan/paths/briefs/B-runnable-options.md`.",
+        "title": "recovered formula options made runnable (extends D-021)"
+      },
+      "class": "decision",
+      "id": "decision:D-022",
+      "label": "D-022",
+      "status": "PRE-REGISTERED",
+      "type": "decision"
+    },
+    {
+      "attrs": {
+        "date": "2026-10-25",
+        "decision_id": "D-023",
+        "entries": [
+          {
+            "date": "2026-10-25",
+            "gate": "GEOMETRY",
+            "heading": "D-023 · 2026-10-25 · GEOMETRY · PRE-REGISTERED — closing the G2 geometry by measured hypotheses",
+            "kind": "ENTRY",
+            "line": 1543,
+            "status": "PRE-REGISTERED",
+            "title": "closing the G2 geometry by measured hypotheses"
+          }
+        ],
+        "in_log": true,
+        "status": "PRE-REGISTERED",
+        "summary": "**Request (the author, 2026-10-25):** close the geometry. Plan: `docs/plan/geometry/2026-10-25-close-g2.md`.",
+        "title": "closing the G2 geometry by measured hypotheses"
+      },
+      "class": "decision",
+      "id": "decision:D-023",
+      "label": "D-023",
+      "status": "PRE-REGISTERED",
+      "type": "decision"
     }
   ],
   "provenance": {
@@ -10127,15 +10450,12 @@
   "theory": {
     "active": {
       "decided_by": {},
-      "digest": "eb599ffd48c9baf8",
+      "digest": "9ec96695c2cc2a4f",
       "drift": [],
       "lifecycle": "ACTIVE",
       "missing_forks": [
         "consciousness_model",
-        "dark_energy_mechanism",
-        "gauge_origin",
-        "h0_route",
-        "spectral_index_route"
+        "gauge_origin"
       ],
       "name": "active",
       "verdict": null,

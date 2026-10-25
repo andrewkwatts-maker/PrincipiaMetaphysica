@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica",
-  "test_date": "2026-10-25T04:26:41.527570",
+  "test_date": "2026-10-25T16:40:35.624978",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
@@ -160,18 +160,18 @@
       "theoretical_max_rank": 27,
       "rank_completeness": 1.0,
       "singular_values": [
-        12.649976713858702,
-        5.178969197846677,
-        4.959508592926212,
-        4.74408069359895,
-        4.641441168387979,
-        4.549951340167176,
-        4.2501957568047946,
-        4.186990400045764,
-        4.100213690307363,
-        4.015868438983472
+        13.091588523393103,
+        5.297692387881632,
+        4.919158442217297,
+        4.733344978001478,
+        4.7019373123371375,
+        4.55772961580446,
+        4.310191203390716,
+        4.244918056242029,
+        4.171632979685655,
+        4.111275446473337
       ],
-      "condition_number": 8.08070789799896,
+      "condition_number": 8.19094722020124,
       "p_value": 0.0,
       "chi_squared": 164152834264.25797,
       "degrees_of_freedom": 73,
@@ -283,32 +283,32 @@
       "recommended_approach": "EDOF",
       "recommendation_rationale": "The EDOF approach properly accounts for PM's topological correlation structure. Theory uncertainty injection (deprecated) makes the fit appear MORE suspicious by tightening effective error bars."
     },
-    "redundant_parameters": 56,
+    "redundant_parameters": 61,
     "redundancy_pairs": [
       [
         0,
-        36,
-        0.9903238963775434
+        24,
+        0.9977203224622083
       ],
       [
         0,
-        48,
-        0.9982480215799721
-      ],
-      [
-        1,
-        13,
-        0.9913339241793466
+        36,
+        0.9965045696310442
       ],
       [
         1,
         37,
-        0.9978539924706621
+        0.9968114167385795
       ],
       [
-        3,
-        27,
-        0.9940676038213718
+        1,
+        49,
+        0.9935335746592746
+      ],
+      [
+        2,
+        14,
+        0.9977579562808292
       ]
     ]
   },
@@ -332,7 +332,7 @@
       "WITHDRAWN: 'zero fitted parameters' -- the free-variable ledger measures the non-derived quantities (see free_variable_count)",
       "Lower-tail p-value = 0.000000 (see summary for the computed verdict)",
       "Adding 1.2% theory uncertainty makes \u03c7\u00b2 smaller (confirming errors not underestimated)",
-      "56 parameter pairs show high correlation",
+      "61 parameter pairs show high correlation",
       "WITHDRAWN: 'low \u03c7\u00b2 is expected' -- the low \u03c7\u00b2 was a hard-coded default; no global fit is claimed (registry verdict POOR_FIT)"
     ]
   },

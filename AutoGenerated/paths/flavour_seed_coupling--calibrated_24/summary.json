@@ -40,7 +40,7 @@
   },
   {
    "id": "G_GEOMETRY_BETTI",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -55,7 +55,7 @@
   },
   {
    "id": "G_GEOMETRY_HOLONOMY",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -909,15 +909,15 @@
   },
   {
    "id": "CERT_INTRO_WORD_COUNT",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_KEY_CONCEPTS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_SUBSECTIONS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_ANCHOR_KGIMEL",
@@ -953,7 +953,7 @@
   },
   {
    "id": "CERT_G2_HOLONOMY_RICCI",
-   "holds": false
+   "holds": true
   },
   {
    "id": "CERT_G2_POINCARE_DUALITY",
@@ -961,7 +961,7 @@
   },
   {
    "id": "CERT_G2_TORSION_FREE",
-   "holds": false
+   "holds": true
   },
   {
    "id": "CERT_Y7_RESOLVED_BETTI_NUMBERS",
@@ -1009,6 +1009,10 @@
   },
   {
    "id": "CERT_Y7_SELECTION",
+   "holds": true
+  },
+  {
+   "id": "CERT_Y7_HOLONOMY_G2_METRIC",
    "holds": true
   },
   {
@@ -2280,36 +2284,32 @@
   }
  ],
  "changed": {
-  "count": 148,
+  "count": 166,
   "by_artifact": {
    "GATES_CERTIFICATES.json": 10,
    "arithma_trees.json": 1,
    "certificates/G19_neutrino_neutrality.json": 5,
    "certificates/G72_the_omega_hash.json": 2,
+   "core_paper.json": 3,
    "dependency_chains.json": 1,
    "eml_crosscheck.json": 1,
    "eml_trees_v25.json": 8,
-   "formulas.json": 4,
+   "formulas.json": 12,
+   "geometry_to_physics.json": 1,
    "improvement_scorecard.json": 10,
    "metadata.json": 6,
    "mismatches.json": 1,
    "named_constants.json": 1,
    "parameters.json": 22,
+   "sections.json": 6,
    "shadow_derivations_report.json": 3,
    "statistical_rigor_report.json": 15,
    "theory_output.json": 32,
    "validation_report.json": 26
   },
-  "bookkeeping_ops": 3
+  "bookkeeping_ops": 18
  },
  "unverified_files": [],
  "inert": false,
- "failed_steps": [
-  {
-   "id": "report_executable_forks",
-   "title": "Report executable forks",
-   "exit": 1,
-   "reason": null
-  }
- ]
+ "failed_steps": []
 }

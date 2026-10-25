@@ -1,0 +1,141 @@
+[
+  {
+    "path": "cosmology.speed_of_light_derived", "sim": "speed_of_light_v17_2",
+    "file": "src/metaphysica/simulations/core/FormulasRegistry.py", "function": "FormulasRegistry.speed_of_light_derived", "line": 1952,
+    "formula": "c = C_geo * S_f * B_v * chi_gc * 1e7 * P_3D, with C_geo = 18/b3, S_f = (10/b3)*b3 + b3/10 = 10 + b3/10, B_v = (288/163)*(153/135), chi_gc = (288 - b3)/(163 + 1), P_3D = 1 + 1/28800",
+    "inputs": [
+      {"name": "b3", "value": 43, "source": "geometry", "evidence": "FormulasRegistry.py:1131 _b3 read from the adopted seed; enters C_geo, S_f (b3/10) and chi_gc (288 - b3)"},
+      {"name": "syzygy_gap 18 = 153 - 135", "value": 18, "source": "literal", "evidence": "FormulasRegistry.py:216 SYZYGY_GAP = 18; 0.75 = 18/24 is only 3/4 at b3 = 24"},
+      {"name": "shadow 135, christ 153, visible 125 (roots_total 288, sterile 163, DECAD 10)", "value": "135/153/125", "source": "literal", "evidence": "FormulasRegistry.py:1161-1188 hard-coded; comment near :1170 says 288 = b3*12 = 24*12, i.e. a 24-derived count coded as a literal instead of b3*12 (= 516 at 43)"},
+      {"name": "scale_base 1e7", "value": 1e7, "source": "literal", "evidence": "FormulasRegistry.py:1950s speed_of_light_derived body comment '10^7 (7 Sovereign Constants)'; it is the unit scale that turns a pure number into m/s"},
+      {"name": "P_3D = 1 + 1/28800", "value": 1.0000347222, "source": "tuned", "evidence": "docstring FormulasRegistry.py:1953-1973: 'This closes the gap from ~10,444 m/s to ~35 m/s'; added to close the residual after the rest was set at 24"}
+    ],
+    "class": "C24",
+    "b3_dependence": "c = (18/b3)(10 + b3/10)(288 - b3)/164 * B_v * 1e7 * P_3D, B_v and P_3D independent of b3; falls from 2.998e8 at b3=24 to 1.79e8 at b3=43. The seven-digit hit at 24 is the product of constants that were arranged to reach it, not a geometric consequence.",
+    "main_value": 179077056.9720464, "seed24_value": 299792423.16324997, "experiment": 299792458.0,
+    "unexplained_literals": 5,
+    "principled_fix": null,
+    "notes": "No measured input, so not circular, but a dimensionless count cannot give m/s without the 1e7 unit literal, and P_3D is an explicit gap-closing term. Hits data at 24 by construction (residual 35 m/s was then absorbed). Also has H components (288, 135, 153 coded as literals where b3*12 is the stated geometry). dark_energy_betti does not feed this row. Git history is squashed at d779eb8, so no earlier commit shows the tuning; the evidence is the module's own docstring."
+  },
+  {
+    "path": "cosmology.H0_physical", "sim": "appendix_z_terminal_ledger_v24_2",
+    "file": "src/metaphysica/simulations/PM/paper/appendices/appendix_z_terminal_ledger.py", "function": "AppendixZTerminalLedger.run", "line": 726,
+    "formula": "H0_physical = (ACTIVE/ROOTS)/PINS * H0_GEOMETRIC_SCALE * H0_UNWINDING_SCALE = (125/288)/b3 * 400 * 10.1 (km/s/Mpc)",
+    "inputs": [
+      {"name": "PINS = b3", "value": 43, "source": "geometry", "evidence": "appendix_z_terminal_ledger.py:144 PINS = _REG.elder_kads (live seed)"},
+      {"name": "ACTIVE 125, ROOTS 288", "value": "125/288", "source": "literal", "evidence": "appendix_z_terminal_ledger.py:141-142; 288 = 24*12 and 125 = 5^3 are 24-era counts, ROOTS is not scaled with b3"},
+      {"name": "H0_GEOMETRIC_SCALE", "value": 400.0, "source": "tuned", "evidence": "appendix_z_terminal_ledger.py:106-116 comment: 'both unsourced ... only their PRODUCT (4040) is determined by the answer ... one fitted constant presented as two'"},
+      {"name": "H0_UNWINDING_SCALE", "value": 10.1, "source": "tuned", "evidence": "appendix_z_terminal_ledger.py:119 'Unsourced; no derivation from 24 is given'; git log -S'10.1' -> 2b51c79 / d779eb8 (squashed)"}
+    ],
+    "class": "C24",
+    "b3_dependence": "H0 proportional to 1/b3: 73.06 at b3=24, 40.78 at b3=43. 4040 reproduces SH0ES (73.04) at b3=24: 4040*125/288/24 = 73.06.",
+    "main_value": 40.77842377260982, "seed24_value": 73.0613425925926, "experiment": 73.04,
+    "unexplained_literals": 4,
+    "principled_fix": null,
+    "notes": "Fitted to a measured H0 (SH0ES) at b3=24: the 4040 factor is back-solved from the target, so the match is a fit (circular in the fit sense). The module itself says '73.1 only at the retired b3 = 24' (line 668). Registry status is DERIVED but should be CALIBRATED. Also 125 and 288 are 24-derived literals."
+  },
+  {
+    "path": "cosmology.Lambda_derived", "sim": "cosmological_constant_v16_1",
+    "file": "src/metaphysica/simulations/PM/cosmology/cosmological_constant.py", "function": "CosmologicalConstantSimulation._derive_lambda", "line": 327,
+    "formula": "Lambda = (8 pi)^2 * k_gimel^2 / (3 * b3^3 * R_H^2), k_gimel = b3/2 + 1/pi, R_H = c / H0_si, H0 = 67.4 km/s/Mpc, c = 299792458",
+    "inputs": [
+      {"name": "b3", "value": 43, "source": "geometry", "evidence": "cosmological_constant.py:231 registry topology.elder_kads; k_gimel from b3 at :188"},
+      {"name": "H0 (desi.H0)", "value": 67.4, "source": "cited", "evidence": "cosmological_constant.py:1454 registry.set_param('desi.H0', 67.4, DESI2025); a measured value, so R_H carries all 52 orders of magnitude"},
+      {"name": "c", "value": 299792458.0, "source": "cited", "evidence": "cosmological_constant.py:239 CODATA"},
+      {"name": "(8 pi)^2", "value": 631.65, "source": "literal", "evidence": "cosmological_constant.py:42-44 module's own assessment: 'POST-HOC FACTORS ... appear chosen to make the numerics work out'"},
+      {"name": "projection factor 3", "value": 3.0, "source": "literal", "evidence": "cosmological_constant.py:378 'dimensional reduction 26D -> 4D'; same post-hoc note at :42"}
+    ],
+    "class": "C24",
+    "b3_dependence": "Lambda = K(b3) * H0^2/c^2 with K = 631.65*k^2/(3 b3^3) = 2.31 at b3=24 and 1.26 at b3=43. A coefficient of order one times (H0/c)^2 equals 3*Omega_L*(H0/c)^2 for any order-one K, so the 1.2266e-52 vs 1.1e-52 'hit' at 24 comes from the measured H0, not from b3.",
+    "main_value": 6.690858620018627e-53, "seed24_value": 1.2266298633892773e-52, "experiment": 1.1e-52,
+    "unexplained_literals": 2,
+    "principled_fix": null,
+    "notes": "CIRCULAR: R_H = c/H0 uses measured H0, and the module's own v1 assessment calls the formula circular numerology (lines 27-34, 'R_horizon^2 does all the work'). The prefactor 631.65/3 = 210.5 times k^2/b3^3 landed within 11% at 24 (K=2.31 vs 3*Omega_L = 2.07) and 39% off at 43; both are order-one, so the seed24 PASS is not evidence. The row is not fitted to a number by git evidence, but the factors are flagged post-hoc by the module. No non-fitted fix: Lambda = 3 Omega_L H0^2/c^2 is the definition."
+  },
+  {
+    "path": "cosmology.rho_vacuum", "sim": "cosmological_constant_v16_1",
+    "file": "src/metaphysica/simulations/PM/cosmology/cosmological_constant.py", "function": "CosmologicalConstantSimulation.run", "line": 251,
+    "formula": "rho_vac = Lambda_derived * c^4 / (8 pi G), with G = 6.6743e-11",
+    "inputs": [
+      {"name": "Lambda_derived", "value": 6.69e-53, "source": "tuned", "evidence": "see cosmology.Lambda_derived (post-hoc factors, measured H0)"},
+      {"name": "c", "value": 299792458.0, "source": "cited", "evidence": "cosmological_constant.py:239 CODATA"},
+      {"name": "G", "value": 6.6743e-11, "source": "cited", "evidence": "cosmological_constant.py:250 CODATA"}
+    ],
+    "class": "C24",
+    "b3_dependence": "Inherits Lambda: proportional to k_gimel^2/b3^3 times the measured H0^2 (ratio main/seed24 = 0.5455 for both Lambda and rho_vac).",
+    "main_value": 3.2219521147278924e-10, "seed24_value": 5.906779543227689e-10, "experiment": 5.4e-10,
+    "unexplained_literals": 0,
+    "principled_fix": null,
+    "notes": "Not independent of Lambda: same row, a unit conversion with cited G and c. Its own literal count is 0; the 2 literals are charged to Lambda. Circular through measured H0 (see Lambda). Both rows move together, so count once as evidence."
+  },
+  {
+    "path": "cosmology.wa_thawing", "sim": "dark_energy_thawing_v16_2",
+    "file": "src/metaphysica/simulations/PM/cosmology/dark_energy_thawing.py", "function": "calculate_w_params_wa", "line": 451,
+    "formula": "wa = -(1/sqrt(b3)) * dim_psi, dim_psi = 4, so wa = -4/sqrt(b3)",
+    "inputs": [
+      {"name": "b3", "value": 43, "source": "geometry", "evidence": "dark_energy_thawing.py:215 registry topology.elder_kads, used at :491"},
+      {"name": "dim_psi", "value": 4, "source": "literal", "evidence": "dark_energy_thawing.py:496 'dim_psi = 4  # Dimension of co-associative 4-form' (a form degree, not a dimension count); docstring :472 quotes 'DESI DR2 wa = -0.86 -> 0.20 sigma agreement with -0.816'; first present in d779eb8 (squashed v1.3.0)"}
+    ],
+    "class": "C24",
+    "b3_dependence": "wa = -4/sqrt(b3): 16/b3 = 2/3 exactly at b3=24, giving -sqrt(2/3) = -0.81650; at 43 it is -0.6100. The b3 term is read live; the factor 4 is what lands on DESI at 24.",
+    "main_value": -0.6099942813304187, "seed24_value": -0.8164965809277261, "experiment": -0.86,
+    "unexplained_literals": 1,
+    "principled_fix": null,
+    "notes": "Registry status FITTED. The factor 4 has no derivation beyond the match at 24 (DESI wa = -0.86 +/- 0.22 is a loose target: any value from -0.4 to -1.3 is within 2 sigma, so the 0.2 sigma is weak evidence). Stale comment: dark_energy_thawing.py:292 says 'the current wa = -1/sqrt(b3)' and calls -4/sqrt(b3) 'retired', but the code at HEAD (line 495-499) still multiplies by 4. The dark_energy_betti fork (option b3_24) sets w0 only; it does not feed wa."
+  },
+  {
+    "path": "geometry.eta_baryon", "sim": "geometric_anchors",
+    "file": "src/metaphysica/simulations/PM/cosmology/baryon_asymmetry.py", "function": "BaryonAsymmetryV18.compute_baryon_asymmetry", "line": 279,
+    "formula": "eta_b = (J/N_eff) * delta_b3 * (b3/chi_eff) * sin(delta_CP) * exp(-Re_T); N_eff = 2(b3 - 14), delta_b3 = 0.12*b3, chi_eff = 72, delta_CP = pi/6, J = 3.08e-5, Re_T = 7.086. Reached from geometric_anchors_core.py:1230 eta_baryon",
+    "inputs": [
+      {"name": "b3", "value": 43, "source": "geometry", "evidence": "baryon_asymmetry.py:253 N_eff from elder_kads; :301 delta_b3 = 0.12*b3"},
+      {"name": "Re_T", "value": 7.086, "source": "tuned", "evidence": "baryon_asymmetry.py:9 'STATUS: CALIBRATED. Re(T) = 7.086 was chosen to match the BBN baryon ...'; RE_T_CALIBRATED at :150"},
+      {"name": "delta_b3 ratio", "value": 0.12, "source": "literal", "evidence": "baryon_asymmetry.py:73 'delta_b3 = 0.12 is asserted, not computed (CALIBRATED)'"},
+      {"name": "N_eff doubling (factor 2)", "value": 2, "source": "tuned", "evidence": "baryon_asymmetry.py:248 'N_eff was doubled to keep the eta_B agreement' when chi_eff changed 144 -> 72"},
+      {"name": "sin(delta_CP), delta_CP = pi/6", "value": 0.5, "source": "literal", "evidence": "geometric_anchors_core.py:1241 'sin(delta_CP) = sin(pi/6) = 0.5'; the measured CKM phase is about 1.14 rad, so pi/6 is not cited"},
+      {"name": "J_quark", "value": 3.08e-5, "source": "cited", "evidence": "baryon_asymmetry.py:241 Jarlskog invariant"},
+      {"name": "compact dims 7 (14 = 2*7)", "value": 7, "source": "geometry", "evidence": "baryon_asymmetry.py:244 N_eff = b3 - 2*compact_dims"}
+    ],
+    "class": "C24",
+    "b3_dependence": "eta_b proportional to b3^2/(b3-14) (with chi_eff fixed): 6.185e-10 at b3=24, 6.846e-10 at b3=43. Mild, so the 1.1% hit at 24 is set by Re_T = 7.086 (exp(-7.086) supplies the 4 orders of magnitude).",
+    "main_value": 6.846485445932354e-10, "seed24_value": 6.185164569435048e-10, "experiment": 6.12e-10,
+    "unexplained_literals": 4,
+    "principled_fix": null,
+    "notes": "Re_T was tuned to eta_b at b3=24 (module says so at :9, :56 and :72), so 1.6 sigma at 24 is a fit by construction. The row is registry-tagged GEOMETRIC, which the module's own text contradicts (CALIBRATED). Only 10% farther at 43 because the b3 dependence is weak; main's fail is mostly the 0.04e-10 error bar. The 14 = 2*7 term reads geometry, so a literal 24 is not coded here (class C24, not H)."
+  },
+  {
+    "path": "higgs.m_higgs_local", "sim": "higgs_brane_partition_v16_2",
+    "file": "src/metaphysica/simulations/PM/particle/higgs_brane_partition.py", "function": "HiggsBranePartition.run", "line": 405,
+    "formula": "m_H = 414.22 GeV / ((k_gimel/pi) / ((13/11)(1 + 2/(13 pi b3)))), k_gimel = b3/2 + 1/pi",
+    "inputs": [
+      {"name": "m_higgs_bulk", "value": 414.22, "source": "tuned", "evidence": "higgs_brane_partition.py:425 hard-coded 'From moduli attractor'; docstring :17-24 and :74-80: 'arithmetically arranged so 414.22 / 3.311 = 125.10 GeV'; 414.22 = 125.10 * 3.31111 (the b3=24 divisor); git log -S'414.22' -> 1dbfa20, d779eb8"},
+      {"name": "b3", "value": 43, "source": "geometry", "evidence": "higgs_brane_partition.py:416 registry topology.elder_kads; k_gimel registry topology.k_gimel"},
+      {"name": "overlap 13/11", "value": 1.1818, "source": "tuned", "evidence": "higgs_brane_partition.py:68 'overlap formula CHANGED from (alpha*b3)^(1/4) to 13/11 ... while the output stayed ~125 GeV -- evidence of reverse-engineering'"},
+      {"name": "holonomy correction 2/(13 pi b3)", "value": 1.00204, "source": "tuned", "evidence": "higgs_brane_partition.py:72 'added as a fine-tuning term with no independent derivation' (:453)"}
+    ],
+    "class": "C24",
+    "b3_dependence": "m_H = 414.22 * overlap(b3) * pi / k_gimel(b3), roughly proportional to 1/b3 at large b3: 125.10 at b3=24 (k=12.318), 70.57 at b3=43 (k=21.82).",
+    "main_value": 70.56751354698358, "seed24_value": 125.10242591991029, "experiment": 125.2,
+    "unexplained_literals": 3,
+    "principled_fix": null,
+    "notes": "CIRCULAR: m_bulk = 125.10 x (divisor at b3=24), i.e. the measured m_H multiplied by the 24-era scaling, then divided back out. At 24 it returns 125.10 by construction; the 0.87 sigma is the tuning residual. The module's own docstring classifies the overall row FITTED. Retuning 414.22 at 43 would reproduce the same fit and is not proposed."
+  },
+  {
+    "path": "portals.alp_photon_coupling_gev_inv", "sim": "alp_portals_v23",
+    "file": "src/metaphysica/simulations/PM/portals/alp_portals.py", "function": "ALPPortals.compute_alp", "line": 221,
+    "formula": "g = alpha_leak * chi_eff / (24 * pi * f_a); f_a = sqrt(f_single f_double); f_single = M_Pl exp(-2 pi T3/b3)/(chi_eff T3); f_double = f_single * exp(-2 pi T3/(b3 - chi_eff/b3)); T3 = b3 k_gimel/(3 pi); alpha_leak = 1/sqrt(144/b3); chi_eff = 72",
+    "inputs": [
+      {"name": "b3, k_gimel", "value": 43, "source": "geometry", "evidence": "alp_portals.py:191-196 registry values; T_3 at :258"},
+      {"name": "literal 24 in 24*pi", "value": 24, "source": "literal", "evidence": "alp_portals.py:46-47 'the 24 in 24 * pi is a literal, not read from b3; calibrated at the off-path seed b3 = 24'; used at :375"},
+      {"name": "chi_eff 72, chi_eff_total 144", "value": 72, "source": "literal", "evidence": "alp_portals.py:193-197 K3 reading from registry (mephorash_chi); fixed independent of b3"},
+      {"name": "double-exponential structure and sqrt (geometric mean)", "value": "n/a", "source": "tuned", "evidence": "alp_portals.py:10-16 and :225 'CALIBRATED at the off-path seed b3 = 24; no gaugino racetrack exists on Y_7 (CG.5, CG.10)'; comments :290-304 'to put the ALP in the meV mass window we use the FULL racetrack ... aggressive suppression'"},
+      {"name": "M_Planck 1.22e19, Lambda_QCD 0.217", "value": 1.22e19, "source": "cited", "evidence": "alp_portals.py:185-186"}
+    ],
+    "class": "H",
+    "b3_dependence": "f_a contains exp(-2 pi T3/b3) = exp(-2 k_gimel/3) and a second exponential, so it is very sensitive to b3: g = 2.90e-11 GeV^-1 at b3=24, 1.23e-6 at b3=43 (violates the stellar bound 1e-10 and CAST 6.6e-11). Reading 24 -> b3 in 24*pi would change g by only 24/43 and not rescue it.",
+    "main_value": 1.2304479796271353e-06, "seed24_value": 2.9032525449371696e-11, "experiment": 6.6e-11,
+    "unexplained_literals": 3,
+    "principled_fix": null,
+    "notes": "The experiment value is an upper limit (CAST 2017), so the seed24 PASS is a bound check, not a point hit: 2.9e-11 < 6.6e-11. Still the construction was iterated to the meV window at 24 (comments :268-304), and the 24 is a hard-wired literal (class H). Of all eight rows this is the one where the seed24 success is the least like a precise fit, though it is calibrated by the module's own statement. No gaugino racetrack exists on Y_7, so the Face 3 mechanism has no geometric basis at 43."
+  }
+]

@@ -40,7 +40,7 @@
   },
   {
    "id": "G_GEOMETRY_BETTI",
-   "passed": false,
+   "passed": true,
    "detail": null
   },
   {
@@ -909,15 +909,15 @@
   },
   {
    "id": "CERT_INTRO_WORD_COUNT",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_KEY_CONCEPTS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_INTRO_SUBSECTIONS",
-   "holds": true
+   "holds": false
   },
   {
    "id": "CERT_ANCHOR_KGIMEL",
@@ -1010,6 +1010,10 @@
   {
    "id": "CERT_Y7_SELECTION",
    "holds": true
+  },
+  {
+   "id": "CERT_Y7_HOLONOMY_G2_METRIC",
+   "holds": false
   },
   {
    "id": "CERT_FOUR_FACE_ALPHA_LEAK",
@@ -2140,12 +2144,18 @@
   }
  ],
  "changed": {
-  "count": 61,
+  "count": 241,
   "by_artifact": {
-   "formulas.json": 5,
-   "sections.json": 19,
-   "theory_output.json": 36,
-   "theory_overview.json": 1
+   "arithma_trees.json": 2,
+   "beginner-guide.json": 10,
+   "core_paper.json": 12,
+   "eml_trees.json": 3,
+   "formulas.json": 23,
+   "geometry_to_physics.json": 9,
+   "mismatches.json": 1,
+   "sections.json": 53,
+   "theory_output.json": 125,
+   "theory_overview.json": 3
   },
   "bookkeeping_ops": 1
  },

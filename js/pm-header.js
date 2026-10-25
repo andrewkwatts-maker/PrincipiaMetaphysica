@@ -40,6 +40,7 @@ const NAV_LINKS = [
   { href: 'formulas.html', label: 'Formulas', id: 'formulas' },
   { href: 'parameters.html', label: 'Parameters', id: 'parameters' },
   { href: 'paths.html', label: 'Paths', id: 'paths' },
+  { href: 'geometry-to-physics.html', label: 'Geometry to Physics', id: 'geometry-to-physics' },
   { href: 'paper.html', label: 'Paper', id: 'paper' },
   { href: 'simulations.html', label: 'Simulations', id: 'simulations' },
   { href: 'certificates.html', label: 'Certificates', id: 'certificates' },
