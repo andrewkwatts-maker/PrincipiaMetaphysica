@@ -5,7 +5,7 @@
     "files_scanned": 263,
     "dataset_values": 339,
     "exact_dup": 393,
-    "stale_dup": 341,
+    "stale_dup": 340,
     "files_with_findings": 90
   },
   "worst_files": [
@@ -377,7 +377,7 @@
     },
     {
       "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 854,
+      "line": 858,
       "literal": 1.22089e+19,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK.value",
       "dataset_value": 1.22089e+19,
@@ -385,7 +385,7 @@
     },
     {
       "file": "simulations/PM/cosmology/cosmology_intro.py",
-      "line": 1244,
+      "line": 1248,
       "literal": 0.22572,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -1273,15 +1273,7 @@
     },
     {
       "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 725,
-      "literal": 0.6517,
-      "dataset_key": "desi_2025_constraints.alternative_datasets.BAO_CMB.wa.uncertainty",
-      "dataset_value": 0.65,
-      "class": "STALE_DUP"
-    },
-    {
-      "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 1364,
+      "line": 1380,
       "literal": 0.1179,
       "dataset_key": "experiment_ref.parameters.strong_interaction.alpha_s_MZ.value",
       "dataset_value": 0.118,
@@ -1289,7 +1281,7 @@
     },
     {
       "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 1407,
+      "line": 1423,
       "literal": 0.6517,
       "dataset_key": "desi_2025_constraints.alternative_datasets.BAO_CMB.wa.uncertainty",
       "dataset_value": 0.65,
@@ -1297,7 +1289,7 @@
     },
     {
       "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 1458,
+      "line": 1474,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1305,7 +1297,7 @@
     },
     {
       "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 2031,
+      "line": 2047,
       "literal": 0.23122,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1313,7 +1305,7 @@
     },
     {
       "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 2035,
+      "line": 2051,
       "literal": 0.23081,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1321,7 +1313,7 @@
     },
     {
       "file": "simulations/PM/derivations/gauge_sector_complete.py",
-      "line": 2035,
+      "line": 2051,
       "literal": 0.23161,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1921,7 +1913,7 @@
     },
     {
       "file": "simulations/PM/geometry/g2_geometry.py",
-      "line": 1513,
+      "line": 1517,
       "literal": 0.2257,
       "dataset_key": "pdg_2024_values.ckm.V_us.value",
       "dataset_value": 0.225,
@@ -2193,7 +2185,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 513,
+      "line": 514,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -2201,7 +2193,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 564,
+      "line": 565,
       "literal": 67.4,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_Planck.value",
       "dataset_value": 67.4,
@@ -2209,7 +2201,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 575,
+      "line": 576,
       "literal": 73.04,
       "dataset_key": "experiment_ref.parameters.cosmology.H0_SH0ES.value",
       "dataset_value": 73.04,
@@ -2217,7 +2209,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 747,
+      "line": 748,
       "literal": 33.41,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_12.value",
       "dataset_value": 33.41,
@@ -2225,7 +2217,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 758,
+      "line": 759,
       "literal": 8.54,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_normal_ordering.theta_13.value",
       "dataset_value": 8.54,
@@ -2233,7 +2225,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 781,
+      "line": 782,
       "literal": 278.4,
       "dataset_key": "experiment_ref.parameters.PMNS_matrix_inverted_ordering.delta_CP.value",
       "dataset_value": 278.0,
@@ -2241,7 +2233,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 790,
+      "line": 791,
       "literal": 7.42e-05,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m21_sq.value",
       "dataset_value": 7.42e-05,
@@ -2249,7 +2241,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 799,
+      "line": 800,
       "literal": 0.00251,
       "dataset_key": "experiment_ref.parameters.neutrino_masses.delta_m31_sq_NO.value",
       "dataset_value": 0.002515,
@@ -2257,7 +2249,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 901,
+      "line": 902,
       "literal": 0.6889,
       "dataset_key": "desi_2025_constraints.cosmological_parameters.Omega_DE.value",
       "dataset_value": 0.6931,
@@ -2265,7 +2257,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 1020,
+      "line": 1021,
       "literal": 2.43521e+18,
       "dataset_key": "codata_2022.fundamental_constants.M_PLANCK_reduced.value",
       "dataset_value": 2.435323e+18,
@@ -2273,7 +2265,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 1228,
+      "line": 1229,
       "literal": 0.315,
       "dataset_key": "experiment_ref.parameters.cosmology.Omega_m.value",
       "dataset_value": 0.3111,
@@ -2281,7 +2273,7 @@
     },
     {
       "file": "simulations/PM/geometry/geometric_anchors_core.py",
-      "line": 886,
+      "line": 887,
       "literal": 0.958,
       "dataset_key": "planck_2018.n_s.value",
       "dataset_value": 0.9649,

@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "theory_uncertainty_policy--always",
  "scoreboard": {
-  "PASS": 32,
+  "PASS": 31,
   "MARGINAL": 17,
   "TENSION": 11,
   "FAIL": 18,
-  "SKIP": 126
+  "SKIP": 127
  },
  "chi2": {
   "value": 3030.0985,
@@ -2144,10 +2144,10 @@
   }
  ],
  "changed": {
-  "count": 79,
+  "count": 81,
   "by_artifact": {
    "geometry_to_physics.json": 11,
-   "sections.json": 4,
+   "sections.json": 6,
    "validation_report.json": 64
   },
   "bookkeeping_ops": 18

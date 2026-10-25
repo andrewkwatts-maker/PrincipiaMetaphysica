@@ -2,16 +2,16 @@
   "schema": "free_variables/1",
   "generator": "metaphysica.simulations.core.free_variable_ledger",
   "what_this_counts": "Quantities this framework did not derive, swept from the tree. free_variable_count is len(rows) -- no literal anywhere in this file states it.",
-  "free_variable_count": 68,
-  "free_variable_count_excluding_permitted": 67,
+  "free_variable_count": 70,
+  "free_variable_count_excluding_permitted": 69,
   "count_by_role": {
     "PERMITTED_OR_SCALE": 1,
     "COMPARISON_ONLY": 22,
     "LOAD_BEARING_INPUT": 11,
-    "UNRESOLVED": 34
+    "UNRESOLVED": 36
   },
   "count_by_status": {
-    "ANSATZ": 8,
+    "ANSATZ": 10,
     "CALIBRATED": 17,
     "FITTED": 21,
     "FITTED_COMPOSITE": 1,
@@ -58,7 +58,7 @@
   ],
   "unnamed_declarations": [
     {
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1508",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:1509",
       "callee": "set_param",
       "status": "MEASURED",
       "note": "path is a variable, so no row can name it; check by hand that the quantities it writes are covered"
@@ -390,7 +390,7 @@
     {
       "name": "geometry.A_Wolfenstein",
       "value": 0.81,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:730",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:731",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -409,7 +409,7 @@
     {
       "name": "geometry.Omega_radiation",
       "value": 8.5e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:538",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:539",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -428,7 +428,7 @@
     {
       "name": "geometry.delta_CP_PMNS",
       "value": 278.4,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:772",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:773",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -447,7 +447,7 @@
     {
       "name": "geometry.theta_12",
       "value": 33.41,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:739",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:740",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -466,7 +466,7 @@
     {
       "name": "geometry.theta_13",
       "value": 8.54,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:750",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:751",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -491,7 +491,7 @@
     {
       "name": "geometry.theta_23",
       "value": 49.0,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:761",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:762",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "COMPARISON_ONLY",
@@ -871,13 +871,13 @@
     {
       "name": "geometry.H0_early",
       "value": 67.4,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:558",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:559",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:580",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:581",
           "function": "H0_tension_ratio",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.H0_early is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
@@ -908,13 +908,13 @@
     {
       "name": "geometry.H0_local",
       "value": 73.04,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:567",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:568",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:580",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:581",
           "function": "H0_tension_ratio",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.H0_local is read by H0_tension_ratio, which get_all_anchors exports and register_anchors registers as geometry.H0_tension_ratio"
@@ -945,7 +945,7 @@
     {
       "name": "geometry.M_GUT_geometric",
       "value": 2.1e+16,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:598",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:599",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
@@ -970,13 +970,13 @@
     {
       "name": "geometry.Omega_matter",
       "value": 0.315,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:507",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:508",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "LOAD_BEARING_INPUT",
       "role_evidence": [
         {
-          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:535",
+          "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:536",
           "function": "Omega_DM",
           "kind": "ANCHOR_FEEDS_EXPORTED_ANCHOR",
           "detail": "self.Omega_matter is read by Omega_DM, which get_all_anchors exports and register_anchors registers as geometry.Omega_DM"
@@ -1042,6 +1042,18 @@
       "notes": []
     },
     {
+      "name": "gauge.qcd_cycle_type",
+      "value": "Associative 3-cycle",
+      "location": "src\\metaphysica\\simulations\\PM\\derivations\\gauge_sector_complete.py:1386",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "Associative 3-cycle with A2 singularity: the generic ADE rule, not realised on Y7 (SU(3)_C OPEN, D-011)",
+      "notes": []
+    },
+    {
       "name": "gauge.su2_sin2_theta_W",
       "value": null,
       "location": "src\\metaphysica\\simulations\\PM\\gauge\\su2_weak_gauge.py:632",
@@ -1063,6 +1075,18 @@
       "role_evidence": [],
       "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
       "description": "ANSATZ: alpha_s value 0.1179 is asserted consistent with PDG 2024 (0.1179 \u00b1 0.0009); no analytic derivation from G2 cycle volumes exists in this module. The 'spectral residue' label describes the intended mechanism but the actual computation here is a hard-coded assignment.",
+      "notes": []
+    },
+    {
+      "name": "gauge.weak_cycle_type",
+      "value": "Co-associative 4-cycle",
+      "location": "src\\metaphysica\\simulations\\PM\\derivations\\gauge_sector_complete.py:1429",
+      "status": "ANSATZ",
+      "source_kind": "PARAMETER_CALL",
+      "role": "UNRESOLVED",
+      "role_evidence": [],
+      "closing_derivation": "A proof of the asserted step. The module states the assertion; nothing yet derives it.",
+      "description": "Co-associative 4-cycle with A1 singularity: an ansatz; smooth Y7 gives U(1)^12 (SU(2)_L OPEN, D-011)",
       "notes": []
     },
     {
@@ -1314,7 +1338,7 @@
     {
       "name": "cosmology.M_Pl_4D",
       "value": 1.2208194772e+19,
-      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:842",
+      "location": "src\\metaphysica\\simulations\\PM\\cosmology\\cosmology_intro.py:846",
       "status": "MEASURED",
       "source_kind": "PARAMETER_CALL",
       "role": "UNRESOLVED",
@@ -1326,7 +1350,7 @@
     {
       "name": "geometry.J_CKM",
       "value": 3e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:714",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:715",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1340,7 +1364,7 @@
     {
       "name": "geometry.alpha_R_squared_phenom",
       "value": 0.0045,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:671",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:672",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1355,7 +1379,7 @@
     {
       "name": "geometry.alpha_T_phenomenological",
       "value": 2.6,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:653",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:654",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1370,7 +1394,7 @@
     {
       "name": "geometry.dm21_squared",
       "value": 7.42e-05,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:784",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:785",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1384,7 +1408,7 @@
     {
       "name": "geometry.dm31_squared",
       "value": 0.00251,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:793",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:794",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1398,7 +1422,7 @@
     {
       "name": "geometry.m_KK_bound",
       "value": 3.5,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:461",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:462",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1412,7 +1436,7 @@
     {
       "name": "geometry.omega_Lambda_Planck",
       "value": 0.6889,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:899",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:900",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1426,7 +1450,7 @@
     {
       "name": "geometry.w0_error_DESI",
       "value": 0.02,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:889",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:890",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1440,7 +1464,7 @@
     {
       "name": "geometry.w0_observed_DESI",
       "value": -0.958,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:884",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:885",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",
@@ -1454,7 +1478,7 @@
     {
       "name": "geometry.wa_observed_DESI",
       "value": -0.99,
-      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:894",
+      "location": "src\\metaphysica\\simulations\\PM\\geometry\\geometric_anchors_core.py:895",
       "status": "MEASURED",
       "source_kind": "GEOMETRIC_ANCHOR",
       "role": "UNRESOLVED",

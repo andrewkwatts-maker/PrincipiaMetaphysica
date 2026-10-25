@@ -4,6 +4,15 @@
 - **State.** Engine `main` 67fea63 = `core-paper` plus merges of assess, closure24, kkspec, orbiscan and c4fix. Site rebuilt from it; paths republished from sweep `H:/claude-scratch/runs_e`.
 - **Numbers.** χ² 3030.0985 on 4 dof (unchanged). After D1: main PASS 27 / FAIL 26 (6 circular or unit-check rows now SKIP); seed_24 PASS 40 / FAIL 19 (3 of its 6 removed rows had passed trivially). 38 paths computed, 5 refused with reasons. site_check 10/0. 132 tests pass.
 - **Fixed this session (each with a test).** w0 seal, executable-forks drift, statistics fail-early, and the w0 alias: mep_11_13 now publishes −11/13 (1.65σ from DESI −0.957).
+- **Audit round (engine aab876d, DECISION_LOG "Audit, discarded writes").** `inject_outputs` keeps the first registration, so later values were silently dropped; an instrumented pass found 7 differing. Fixed, with tests:
+  - `dark_energy_betti` wired (was inert); drift check no longer reports `chi_over_b3_6` under mep.
+  - The EML cross-check failed in every build (g2 χ = 6·b₃, ckm V_cd sign); it now agrees.
+  - `M_Pl_4D` reduced/full mass mix-up.
+  - Gauge PDG literals labelled DERIVED.
+  - `higgs.vev` circular PASS (main PASS 27 → 26).
+  - Cycle-type labels → ANSATZ/OPEN.
+  - Owner decision added: w0 is published twice (−23/24 alias, −42/43 `w0_thawing`).
+  - Rebuild: `RUNS=H:/claude-scratch/runs_f`.
 - **D-028.** "Kill 1 fires" retracted. SU(3)×SU(2) loci in 87 of 194 sampled order-3 classes. Gaps: resolved Betti numbers, codimension-7 types, U(1)_Y, 146 unsampled classes. Nothing adopted (DECISION_LOG).
 - **C4.** Engine prose now says smooth Y7 gives U(1)^12 and the SM group and chirality are OPEN. Retired-text callouts still quote "TCS manifold"; that is intended. Ratchet: `tests/test_c4_gauge_prose.py`.
 - **Next, in order.**
@@ -20,7 +29,7 @@
      - H0 and the ALP kill-switch;
      - Joyce citations;
      - engine/origin divergence;
-     - dark_energy_betti b3_24.
+     - dark_energy_betti b3_24 / SP11 flip: w0 is published twice, and wa does not follow the fork (DECISION_LOG audit entry).
 - **Gotcha.** Every site build rewrites `parameters.json`, so path pages then show "results unavailable" (sha pin). Always rerun `paths-publish` after a site build; `merge_d025.sh` does this.
 
 ## What shipped

@@ -1,17 +1,17 @@
 {
   "version": "24.2",
-  "generated_at": "2026-10-25T16:42:39.895588+00:00",
+  "generated_at": "2026-10-25T20:54:14.028106+00:00",
   "tolerance": 1e-06,
   "eml_available": true,
   "summary": {
     "total_simulations": 97,
-    "agreed": 94,
-    "failed": 2,
+    "agreed": 96,
+    "failed": 0,
     "not_implemented": 1,
     "errors": 0,
     "skipped": 0,
-    "global_max_deviation": 2.0,
-    "all_agree": false
+    "global_max_deviation": 3.808798771726061e-12,
+    "all_agree": true
   },
   "simulations": {
     "abstract_v17_2": {
@@ -50,10 +50,10 @@
       "note": ""
     },
     "g2_geometry_v16_0": {
-      "status": "FAIL",
+      "status": "AGREE",
       "params_checked": 7,
-      "params_agreed": 5,
-      "max_deviation": 0.7916666666666666,
+      "params_agreed": 7,
+      "max_deviation": 3.469446951953614e-16,
       "note": ""
     },
     "closed_geometry_certificate": {
@@ -127,10 +127,10 @@
       "note": ""
     },
     "ckm_matrix_v16_0": {
-      "status": "FAIL",
+      "status": "AGREE",
       "params_checked": 18,
-      "params_agreed": 17,
-      "max_deviation": 2.0,
+      "params_agreed": 18,
+      "max_deviation": 3.808798771726061e-12,
       "note": ""
     },
     "proton_decay_v17_2": {
@@ -694,24 +694,5 @@
       "note": ""
     }
   },
-  "failed_params": {
-    "topology.mephorash_chi": {
-      "simulation": "g2_geometry_v16_0",
-      "normal_value": 144.0,
-      "eml_value": 258.0,
-      "deviation": 0.7916666666666666
-    },
-    "topology.n_gen": {
-      "simulation": "g2_geometry_v16_0",
-      "normal_value": 3.0,
-      "eml_value": 5.0,
-      "deviation": 0.6666666666666666
-    },
-    "ckm.V_cd": {
-      "simulation": "ckm_matrix_v16_0",
-      "normal_value": -0.22313016014842982,
-      "eml_value": 0.22313016014842982,
-      "deviation": 2.0
-    }
-  }
+  "failed_params": {}
 }

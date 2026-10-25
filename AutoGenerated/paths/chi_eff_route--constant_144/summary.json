@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "chi_eff_route--constant_144",
  "scoreboard": {
-  "PASS": 27,
+  "PASS": 26,
   "MARGINAL": 15,
   "TENSION": 10,
   "FAIL": 26,
-  "SKIP": 126
+  "SKIP": 127
  },
  "chi2": {
   "value": 3030.0985,
@@ -2144,9 +2144,9 @@
   }
  ],
  "changed": {
-  "count": 3,
+  "count": 5,
   "by_artifact": {
-   "observer_report.json": 1,
+   "core_paper.json": 3,
    "sections.json": 2
   },
   "bookkeeping_ops": 18

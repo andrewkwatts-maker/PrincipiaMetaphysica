@@ -90,7 +90,7 @@
       "path": "abstract.calibration_inputs",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(validation.free_variable_count)': name 'validation' is not defined",
-      "registered": 68.0,
+      "registered": 70.0,
       "eml_description": "EML: eml_scalar(validation.free_variable_count) \u2014 measured by free_variable_ledger, not asserted"
     },
     {
@@ -2077,7 +2077,7 @@
     {
       "path": "gauge.qcd_cycle_type",
       "status": "SKIP",
-      "reason": "non-numeric value: 'Associative 3-cycle'",
+      "reason": "non-numeric value: 'Associative 3-cycle with A2 loci (OPEN: Y7 has only A1 loci, D-011)'",
       "eml_description": "Categorical label identifying QCD as emerging from A2 singularities (generic ADE rule only; Y7 has no A2 loci, SU(3)_C OPEN, D-011)"
     },
     {
@@ -2147,7 +2147,7 @@
     {
       "path": "gauge.weak_cycle_type",
       "status": "SKIP",
-      "reason": "non-numeric value: 'Co-associative 4-cycle'",
+      "reason": "non-numeric value: 'Co-associative 4-cycle (OPEN: SU(2) only at the unresolved orbifold point, D-011)'",
       "eml_description": "Categorical label identifying SU(2)_L weak force as arising from A1 singularity resolution at the unresolved orbifold point (OPEN on the smooth Y7, D-011) 4-cycles"
     },
     {
@@ -5172,7 +5172,7 @@
       "path": "validation.calibrated_count",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(validation.free_variable_count)': name 'validation' is not defined",
-      "registered": 68.0,
+      "registered": 70.0,
       "eml_description": "EML: eml_scalar(validation.free_variable_count) \u2014 measured by free_variable_ledger, not asserted"
     },
     {
@@ -5195,7 +5195,7 @@
       "path": "validation.free_variable_count",
       "status": "ERROR",
       "reason": "Failed to evaluate EML expression 'eml_scalar(len(free_variables.rows))': name 'len' is not defined",
-      "registered": 68.0,
+      "registered": 70.0,
       "eml_description": "EML: eml_scalar(len(free_variables.rows)) \u2014 a count of swept rows, with no literal behind it"
     },
     {

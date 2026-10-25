@@ -1833,3 +1833,19 @@ In the last case seed_24's better fit stands as evidence and must be reported as
   - Codimension-7 points occur in 60 of the 87 hits; their local type, and so chirality, is not classified. U(1)_Y is not addressed.
 - **Kill conditions.** KC1 does not fire: A2 loci compatible with φ₀ exist. KC2 does not fire: no A2 locus has b1 = 3; b1 is 0 for 142 loci and 1 for 87.
 - **Status.** Per ruling 4, nothing is adopted. The hits are fork candidates for the sweep and the D-026 assessment once the remaining classes, the codimension-7 types and the resolved Betti numbers are done.
+
+**Audit, discarded writes and EML cross-check (2026-10-26, engine `core-paper`).**
+- **Method.** A full simulation pass with `inject_outputs` instrumented. That function keeps the first registration of a path, so a later simulation's value is silently dropped. 7 dropped values differed from the published ones. Separately, the EML cross-check had failed on main in every recent build; the build carries on past it.
+- **Fixed, with tests. No published value moves except as stated.**
+  - `dark_energy_betti` is now executable. `late_time_routes.thawing_w0` sets `geometry.w_zero` (alias `cosmology.w0_derived`). Main is still −23/24. The fork's drift check now refuses under `mep_11_13`; before, −11/13 rounded to n = 6 and reported `chi_over_b3_6`.
+  - EML cross-check, g2_geometry: χ = 6·b₃ replaced by the Hodge route that `run()` uses. At b₃ = 43 the old route gave 258 and n_gen 5.
+  - EML cross-check, ckm: V_cd sign restored (−λ), matching `run()`.
+  - `cosmology_intro`: `M_Pl_4D` was the REDUCED mass (2.435e18) under a FULL-mass declaration. It now reads `codata.M_PLANCK`. The alias still wins, so the published value is unchanged.
+  - `gauge_sector_complete`: α_s, g₂ and g′ were PDG literals under status DERIVED. Run order discarded them; in any other order they would have scored 0σ against themselves. They now pass master_action's values through and fail early if absent.
+  - Validation classifier: `higgs.vev` (246, status ESTABLISHED) scored PASS at 0.44σ against 246.22, because only the source string was checked. It is now INPUT, so main PASS goes from 27 to 26.
+- **Owner decision: w0 is published twice on main.**
+  - `cosmology.w0_derived` = −23/24 (fork `dark_energy_betti` = b3_24, frozen n).
+  - `cosmology.w0_thawing` = −42/43 (`dark_energy_thawing` reads b₃ = 43, per D-007 "follow the live seed").
+  - The `dark_energy` metadata prose states −42/43, and its own (discarded) w0 and wa use b₃ = 43.
+  - SP11 agreed the flip to b3_live and it is held. With the fork wired, the flip is one switch for w0. wa (`geometry.wa` = −1/√24) does not follow the fork; the flip should decide whether it does.
+  - No value moved here.

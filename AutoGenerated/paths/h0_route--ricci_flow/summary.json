@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "h0_route--ricci_flow",
  "scoreboard": {
-  "PASS": 27,
+  "PASS": 26,
   "MARGINAL": 14,
   "TENSION": 10,
   "FAIL": 27,
-  "SKIP": 126
+  "SKIP": 127
  },
  "chi2": {
   "value": 3030.0985,
@@ -2154,7 +2154,7 @@
   }
  ],
  "changed": {
-  "count": 107,
+  "count": 109,
   "by_artifact": {
    "GATES_72.json": 4,
    "GATES_72_v16_2.json": 4,
@@ -2168,7 +2168,7 @@
    "improvement_scorecard.json": 10,
    "parameters.json": 3,
    "proof_completeness_ledger.json": 5,
-   "sections.json": 6,
+   "sections.json": 8,
    "shadow_derivations_report.json": 4,
    "statistical_rigor_report.json": 15,
    "theory_output.json": 3,

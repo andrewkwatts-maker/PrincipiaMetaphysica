@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "dark_energy_betti--b2_4",
  "scoreboard": {
-  "PASS": 27,
-  "MARGINAL": 15,
+  "PASS": 23,
+  "MARGINAL": 16,
   "TENSION": 10,
-  "FAIL": 26,
-  "SKIP": 126
+  "FAIL": 28,
+  "SKIP": 127
  },
  "chi2": {
   "value": 3030.0985,
@@ -2063,6 +2063,156 @@
  },
  "key_values": [
   {
+   "id": "cosmology.s8_tension_planck",
+   "volatile": false,
+   "label": "Statistical tension with Planck CMB inference. PM: 0.9σ vs Planck S8=0.832±0.013. PM is close to Planck; weak-lensing surveys (KiDS-1000, DES-Y3) disagree with Planck at ~2.7σ.",
+   "unit": "sigma",
+   "value": 1.2379353563021052,
+   "main": 0.8716166524255904,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.w0_derived",
+   "volatile": false,
+   "label": "cosmology.w0_derived",
+   "unit": null,
+   "value": -0.75,
+   "main": -0.9583333333333334,
+   "experimental": -0.957,
+   "sigma": 3.0895522388059695
+  },
+  {
+   "id": "geometry.w_zero",
+   "volatile": false,
+   "label": "geometry.w_zero",
+   "unit": null,
+   "value": -0.75,
+   "main": -0.9583333333333334,
+   "experimental": -0.957,
+   "sigma": 2.9604676981203193
+  },
+  {
+   "id": "cosmology.s8_improvement_factor",
+   "volatile": false,
+   "label": "Average improvement in weak lensing agreement: ~3×. Quantifies how much better PM fits late-time observations.",
+   "unit": "dimensionless",
+   "value": 1.2268813987173184,
+   "main": 1.1078004005125184,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_tension_des",
+   "volatile": false,
+   "label": "Statistical tension with DES Y3 (0.776 ± 0.017, DES Collaboration 2022): 2.35σ. Friction does not resolve it. Previously stated as \"PM: 0.7σ\"; same stale-prose cause as the KiDS row.",
+   "unit": "sigma",
+   "value": 2.347461198121916,
+   "main": 2.627587265792192,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_friction_kernel",
+   "volatile": false,
+   "label": "Integrated friction kernel I(z) over the growth history. I(z) = integral from 0 to z of H(z')/H0 * f(z') dz'/(1+z'). Controls how much total DM drag accumulates up to redshift z.",
+   "unit": "dimensionless",
+   "value": 0.12153341068362547,
+   "main": 0.13470310280473333,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_friction_suppression_pct",
+   "volatile": false,
+   "label": "Percentage suppression of S8 from moduli-DM friction: ~0.7% (growth ODE, declared z<0.5 window; the retired closed-form exponential claimed 5.1%). Too small to resolve the weak-lensing tension -- reported honestly, not inflated.",
+   "unit": "percent",
+   "value": 0.7775423853237595,
+   "main": 0.7111980765459824,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_tension_kids",
+   "volatile": false,
+   "label": "Statistical tension with KiDS-1000 (0.766 ± 0.020, Heymans et al. 2021): 2.50σ. Friction does not resolve it; the ΛCDM comparison is the separate s8_tension_kids_baseline row. The description here read \"PM: 1.1σ\" -- prose left behind by the R2 ruling, which retired the 5.1% closed-form friction suppression the smaller figure depended on. It is interpolated from the computed value now, so the two cannot drift apart again.",
+   "unit": "sigma",
+   "value": 2.495342018403629,
+   "main": 2.7334491759233637,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_tension_des_baseline",
+   "volatile": false,
+   "label": "DES Y3 tension for baseline S8 without moduli-DM friction. Demonstrates that dark energy alone is insufficient (~3.6σ).",
+   "unit": "sigma",
+   "value": 2.723563287076667,
+   "main": 2.9733748549216488,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_tension_kids_baseline",
+   "volatile": false,
+   "label": "KiDS-1000 tension for baseline S8 without moduli-DM friction. Demonstrates that dark energy alone is insufficient (~3.6σ).",
+   "unit": "sigma",
+   "value": 2.8150287940151673,
+   "main": 3.027368626683402,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.growth_index_pm",
+   "volatile": false,
+   "label": "Growth index gamma for PM cosmology: gamma_PM ≈ 0.548. Nearly identical to LCDM (0.55), as the small departure w0 = -42/43 vs w = -1 produces only a small shift in gamma. The suppression comes from the integrated expansion history, not the instantaneous growth rate.",
+   "unit": "dimensionless",
+   "value": 0.5570412414523194,
+   "main": 0.5528745747856527,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_pm_predicted",
+   "volatile": false,
+   "label": "PM prediction for S8: 0.816. ~0.6% suppression from dynamical dark energy (w0 = -42/43) plus ~0.7% from moduli-DM friction (beta_eff = 0.0650) integrated through the growth ODE under the declared z<0.5 window (R2 ruling: the earlier 5.1% closed-form exponential was retired -- it reproduced no declared version of the model). Underived-window band: 0.777-0.816. ~0.9 sigma from Planck; ~2.7 sigma from KiDS-1000 -- the weak-lensing tension is NOT resolved by this mechanism. Baseline without friction: 0.822.",
+   "unit": "dimensionless",
+   "value": 0.8159068403680726,
+   "main": 0.8206689835184673,
+   "experimental": 0.83,
+   "sigma": 1.0840892024559512
+  },
+  {
+   "id": "cosmology.s8_pm_vs_lensing",
+   "volatile": false,
+   "label": "The SAME PM prediction as cosmology.s8_pm_predicted (0.8159), scored against the weak-lensing anchor instead of the CMB one. Against Planck 2018 (0.830 +/- 0.013) it passes; against KiDS-1000 (0.766 +/- 0.020) it does not. That disagreement is the S8 tension itself, and the framework does not resolve it -- the R2 ruling retired the 5.1% friction suppression that was previously claimed to. Both comparisons are published so the scoreboard cannot show only the favourable one. WHICH ANCHOR IS CANONICAL IS AN OPEN RULING; this row does not settle it.",
+   "unit": "dimensionless",
+   "value": 0.8159068403680726,
+   "main": 0.8206689835184673,
+   "experimental": 0.766,
+   "sigma": 2.495342018403629
+  },
+  {
+   "id": "cosmology.s8_suppression_factor",
+   "volatile": false,
+   "label": "Suppression of structure growth at z=0.5: beta = 0.9956. Ratio of PM growth factor D_PM(z) to LCDM growth factor D_LCDM(z). A value near unity (~0.6% suppression) reflects the modest difference between PM's w0 = -42/43 and LCDM's w = -1.",
+   "unit": "dimensionless",
+   "value": 0.9955585690616914,
+   "main": 1.0007001619576876,
+   "experimental": null,
+   "sigma": null
+  },
+  {
+   "id": "cosmology.s8_pm_baseline",
+   "volatile": false,
+   "label": "PM S8 prediction from dark energy alone (without moduli-DM friction): S8_baseline from the w0 = -42/43 dark energy alone (~0.6% suppression relative to LCDM). Moduli-DM friction adds only ~0.7% more under the declared window (R2 growth-ODE evaluation): S8 ~ 0.821.",
+   "unit": "dimensionless",
+   "value": 0.8223005758803034,
+   "main": 0.8265473725336681,
+   "experimental": null,
+   "sigma": null
+  },
+  {
    "id": "geometry.alpha_inverse",
    "volatile": false,
    "label": "geometry.alpha_inverse",
@@ -2103,16 +2253,6 @@
    "sigma": null
   },
   {
-   "id": "cosmology.w0_derived",
-   "volatile": false,
-   "label": "cosmology.w0_derived",
-   "unit": null,
-   "value": -0.9583333333333334,
-   "main": -0.9583333333333334,
-   "experimental": -0.957,
-   "sigma": 0.01990049751243893
-  },
-  {
    "id": "fermion.mass_ratio_proton_electron",
    "volatile": false,
    "label": "Proton-electron mass ratio derived from G2 cycle volumes: m_p/m_e = 1836.15267383. CODATA 2022: 1836.15267343. Error: 4.03e-07 (0.00 ppm). v18.0: 4 ppm precision is the geometric derivation limit.",
@@ -2144,11 +2284,37 @@
   }
  ],
  "changed": {
-  "count": 0,
-  "by_artifact": {},
-  "bookkeeping_ops": 18
+  "count": 197,
+  "by_artifact": {
+   "GATES_CERTIFICATES.json": 10,
+   "canonical_values.json": 1,
+   "certificates/G48_w0_equation_of_state.json": 5,
+   "certificates/G72_the_omega_hash.json": 2,
+   "config_drift_audit.json": 7,
+   "eml_crosscheck.json": 1,
+   "eml_trees_v25.json": 2,
+   "formulas.json": 8,
+   "geometry_to_physics.json": 8,
+   "improvement_scorecard.json": 10,
+   "metadata.json": 1,
+   "parameters.json": 27,
+   "proof_completeness_ledger.json": 8,
+   "sections.json": 10,
+   "shadow_derivations_report.json": 4,
+   "statistical_rigor_report.json": 15,
+   "theory_output.json": 37,
+   "validation_report.json": 41
+  },
+  "bookkeeping_ops": 19
  },
  "unverified_files": [],
- "inert": true,
- "failed_steps": []
+ "inert": false,
+ "failed_steps": [
+  {
+   "id": "audit_shadow_derivations_across_the_registry",
+   "title": "Audit shadow derivations across the registry",
+   "exit": 1,
+   "reason": null
+  }
+ ]
 }
