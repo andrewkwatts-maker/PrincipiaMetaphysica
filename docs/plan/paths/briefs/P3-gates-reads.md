@@ -12,6 +12,7 @@ only model.
 - Scratch: `C:/Users/Andrew/AppData/Local/Temp/claude/h--Projects-MathsPhysicsEcosystem-periodica/0e04300a-6655-4024-b6d7-a1accd423861/scratchpad/p3/`.
 - Don't sleep or poll. Run long commands in the background and wait for the notification.
 - Never kill processes by name (no `taskkill /IM python.exe`, no `Stop-Process -Name`). Kill only PIDs you started; other sessions share this machine.
+- Budget: about 60 tool calls; hard stop at about 100 turns. Near it, commit what passes, write a "## Checkpoint" (done / not done / next) at the end of this brief, report and stop.
 - Commit on `claude/pathgates` only, with no AI attribution or Co-Authored-By lines. Never push.
 - Baseline first: run the full suite in the background and record the failing set.
 

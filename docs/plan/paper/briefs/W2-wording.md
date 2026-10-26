@@ -13,6 +13,7 @@ the remaining stale hits come from `variants.py` output.
 - Don't sleep or poll. Run long commands in the background and wait for the notification.
 - Never kill processes by name (no `taskkill /IM python.exe`, no `Stop-Process -Name`). Kill
   only PIDs you started; other sessions share this machine.
+- Budget: about 60 tool calls; hard stop at about 100 turns. Near it, commit what passes, write a "## Checkpoint" (done / not done / next) at the end of this brief, report and stop.
 - Commit on `claude/wording2` only, with no AI attribution or Co-Authored-By lines. Never push.
 - Change words, never values. Don't edit the formula text of the 31 action formulas in
   `../geometry/master_ladder_map.md`; they render from the ladder.

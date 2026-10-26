@@ -16,6 +16,7 @@ actions declare. Any mismatch becomes a failing check; it is never patched.
 - Don't sleep or poll. Run long commands in the background and wait for the notification.
 - Never kill processes by name (no `taskkill /IM python.exe`, no `Stop-Process -Name`). Kill
   only PIDs you started; other sessions share this machine.
+- Budget: about 60 tool calls; hard stop at about 100 turns. Near it, commit what passes, write a "## Checkpoint" (done / not done / next) at the end of this brief, report and stop.
 - Commit on `claude/zeromodes` only, with no AI attribution or Co-Authored-By lines. Never push.
 - Lanes P3 (forks and `variants`) and W2 (wording) run at the same time. Don't edit `variants*`,
   `testground/`, `theories/pm`, or any formula's or section's text.
