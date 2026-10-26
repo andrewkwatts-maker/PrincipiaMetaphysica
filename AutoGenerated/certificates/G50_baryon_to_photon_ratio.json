@@ -26,8 +26,14 @@
     ],
     "status": "COMPUTED_FAIL"
   },
+  "result_unmatched_numbers": [
+    "6.19e-10",
+    "1.63",
+    "6.12",
+    "-0.04e-10"
+  ],
   "derivation_status": "DERIVED",
   "note": "Gate 50: Leptogenesis chain: epsilon=(3/16pi)*(M_N1*m_nu)/v^2*sin(delta_CP), eta_B=c_sph*epsilon*kappa. The module's direct computation gives 2.30e-10 (factor ~2.7 below Planck); the canonical 6.19e-10 display value sits 1.63 sigma from Planck 2018 (6.12 +/- 0.04e-10). Previous cert claimed sigma < 0.01 — removed as arithmetically false.. η = matter/radiation density",
-  "timestamp": "2026-09-22T10:36:19.302106Z",
+  "timestamp": "2026-10-26T13:05:10.378037Z",
   "hash": "0707a707e15afaab"
 }

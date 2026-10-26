@@ -2,26 +2,16 @@
   "version": "24.2",
   "name": "Simulations Index",
   "description": "Top-level index of simulation modules with gate/parameter contributions.",
-  "generated_at": "2026-10-26T09:14:11.526406Z",
+  "generated_at": "2026-10-26T13:10:45.285949Z",
   "generator": "metaphysica.generators.generate_simulations_index",
   "seed_provenance": "All simulations descend from the seed b3 = 24.",
-  "total_scripts": 354,
+  "total_scripts": 330,
   "total_categories": 24,
   "categories": {
     "PM/algebra": {
       "title": "PM/algebra",
-      "count": 13,
+      "count": 12,
       "scripts": [
-        {
-          "file": "_triple_helpers.py",
-          "path": "simulations/PM/algebra/_triple_helpers.py",
-          "category": "PM/algebra",
-          "title": null,
-          "description": "Triple-track helper facade for the ``PM.algebra`` sector.",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
         {
           "file": "clifford_unification.py",
           "path": "simulations/PM/algebra/clifford_unification.py",
@@ -3399,7 +3389,7 @@
     },
     "constants": {
       "title": "constants",
-      "count": 10,
+      "count": 9,
       "scripts": [
         {
           "file": "add_missing_params.py",
@@ -3427,16 +3417,6 @@
           "category": "constants",
           "title": "Simulations Index Generator",
           "description": "Auto-generates simulations-index.json by scanning simulations directory.",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "hebrew_naming.py",
-          "path": "simulations/Constants/hebrew_naming.py",
-          "category": "constants",
-          "title": "Hebrew Letter Naming Conventions",
-          "description": "DOI: 10.5281/zenodo.18079602",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -3825,18 +3805,8 @@
     },
     "data": {
       "title": "data",
-      "count": 2,
+      "count": 1,
       "scripts": [
-        {
-          "file": "csv_loader.py",
-          "path": "simulations/data/experimental/csv_loader.py",
-          "category": "data",
-          "title": null,
-          "description": "CSV Loader for Experimental Physics Data",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
         {
           "file": "experimental_data_loader.py",
           "path": "simulations/data/experimental_data_loader.py",
@@ -3867,7 +3837,7 @@
     },
     "support": {
       "title": "support",
-      "count": 11,
+      "count": 10,
       "scripts": [
         {
           "file": "chiral_stabilizer.py",
@@ -3940,16 +3910,6 @@
           "parameters_contributed": []
         },
         {
-          "file": "shell_saturation.py",
-          "path": "simulations/support/physics/shell_saturation.py",
-          "category": "support",
-          "title": "Shell Saturation (Fermion Packing)",
-          "description": "DOI: 10.5281/zenodo.18079602",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
           "file": "strong_cp_lock.py",
           "path": "simulations/support/physics/strong_cp_lock.py",
           "category": "support",
@@ -3999,7 +3959,7 @@
     },
     "validation": {
       "title": "validation",
-      "count": 29,
+      "count": 22,
       "scripts": [
         {
           "file": "add_simulation_links_to_theory.py",
@@ -4052,26 +4012,6 @@
           "parameters_contributed": []
         },
         {
-          "file": "final_gates.py",
-          "path": "simulations/validation/audit/final_gates.py",
-          "category": "validation",
-          "title": "Final Gates (C35-C41)",
-          "description": "DOI: 10.5281/zenodo.18079602",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "formula_validator.py",
-          "path": "simulations/validation/audit/formula_validator.py",
-          "category": "validation",
-          "title": "Formula Validator",
-          "description": "DOI: 10.5281/zenodo.18079602",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
           "file": "hard_certificate_audit.py",
           "path": "simulations/validation/audit/hard_certificate_audit.py",
           "category": "validation",
@@ -4112,40 +4052,10 @@
           "parameters_contributed": []
         },
         {
-          "file": "parameter_sensitivity_test.py",
-          "path": "simulations/validation/parameter_sensitivity_test.py",
-          "category": "validation",
-          "title": null,
-          "description": "Parameter Sensitivity Test v23",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "recursive_symmetry_gatekeeper.py",
-          "path": "simulations/validation/recursive_symmetry_gatekeeper.py",
-          "category": "validation",
-          "title": null,
-          "description": "Recursive Symmetry Gatekeeper - v16.2 Topological Validator",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
           "file": "stress_test_rigidity.py",
           "path": "simulations/validation/rigidity/stress_test_rigidity.py",
           "category": "validation",
           "title": "Stress Test Rigidity",
-          "description": "DOI: 10.5281/zenodo.18079602",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "terminal_certificates.py",
-          "path": "simulations/validation/audit/terminal_certificates.py",
-          "category": "validation",
-          "title": "Terminal Certificate Stack",
           "description": "DOI: 10.5281/zenodo.18079602",
           "status": null,
           "gates_contributed": [],
@@ -4195,16 +4105,6 @@
           "category": "validation",
           "title": null,
           "description": "Validation script to compare dynamic content from theory_output.json",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "validate_experimental_compliance.py",
-          "path": "simulations/validation/validate_experimental_compliance.py",
-          "category": "validation",
-          "title": null,
-          "description": "Validate Experimental Value Compliance",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -4280,16 +4180,6 @@
           "parameters_contributed": []
         },
         {
-          "file": "validation_modules.py",
-          "path": "simulations/validation/validation_modules.py",
-          "category": "validation",
-          "title": null,
-          "description": "This is the intellectual property of Andrew Keith Watts. Unauthorized",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
           "file": "verify_content_migration.py",
           "path": "simulations/validation/verify_content_migration.py",
           "category": "validation",
@@ -4303,7 +4193,7 @@
     },
     "visualizations": {
       "title": "visualizations",
-      "count": 29,
+      "count": 16,
       "scripts": [
         {
           "file": "_submission_common.py",
@@ -4311,16 +4201,6 @@
           "category": "visualizations",
           "title": null,
           "description": "Submission Figures - Shared Helpers",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "algebra_diagrams.py",
-          "path": "simulations/visualizations/algebra_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Algebraic Structure Visualization Diagrams",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -4336,81 +4216,11 @@
           "parameters_contributed": []
         },
         {
-          "file": "brane_gauge_diagrams.py",
-          "path": "simulations/visualizations/brane_gauge_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Brane Gauge Diagrams Generator",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
           "file": "certificate_dashboard.py",
           "path": "simulations/visualizations/certificate_dashboard.py",
           "category": "visualizations",
           "title": null,
           "description": "Certificate Dashboard - v16.2 Sterile Model",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "compactification_diagrams.py",
-          "path": "simulations/visualizations/compactification_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Compactification Diagrams",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "cosmology_diagrams.py",
-          "path": "simulations/visualizations/cosmology_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Cosmology Diagrams for Principia Metaphysica",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "descent_chain.py",
-          "path": "simulations/visualizations/descent_chain.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Descent Chain Visualization v24.2",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "dimension_intro_diagrams.py",
-          "path": "simulations/visualizations/dimension_intro_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Dimension Introduction Diagrams",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "entropy_basin_terminal_map.py",
-          "path": "simulations/visualizations/entropy_basin_terminal_map.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Entropy Basin Terminal Map - v16.2 Sterile Model",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "falsifiability_dashboard.py",
-          "path": "simulations/visualizations/falsifiability_dashboard.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Falsifiability Dashboard - v16.2 Demon-Lock Visualization",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []
@@ -4476,61 +4286,11 @@
           "parameters_contributed": []
         },
         {
-          "file": "gauge_theory_diagrams.py",
-          "path": "simulations/visualizations/gauge_theory_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Gauge Theory Diagrams for Principia Metaphysica",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "gnosis_progression.py",
-          "path": "simulations/visualizations/gnosis_progression.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Gnosis Progression Visualization v22.2",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
           "file": "goldilocks_plot.py",
           "path": "simulations/visualizations/goldilocks_plot.py",
           "category": "visualizations",
           "title": null,
           "description": "Goldilocks Plot: three deviations against b3, marked at the off-path seed",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "microtubule_12pair.py",
-          "path": "simulations/visualizations/microtubule_12pair.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Microtubule Interior Visualization with 12 (2,0) Pairs v22.2",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "octonionic_triality.py",
-          "path": "simulations/visualizations/octonionic_triality.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Octonionic Triality: CKM vs PMNS Mixing Explanation",
-          "status": null,
-          "gates_contributed": [],
-          "parameters_contributed": []
-        },
-        {
-          "file": "particle_diagrams.py",
-          "path": "simulations/visualizations/particle_diagrams.py",
-          "category": "visualizations",
-          "title": null,
-          "description": "Particle Physics Visualization Diagrams",
           "status": null,
           "gates_contributed": [],
           "parameters_contributed": []

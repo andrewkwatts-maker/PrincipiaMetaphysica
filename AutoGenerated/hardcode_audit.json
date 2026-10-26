@@ -2,7 +2,7 @@
   "schema_version": 1,
   "note": "SSOT enforcement audit (simulation layer): float literals in PM/base simulation modules that duplicate values held by the experimental datasets. EXACT_DUP should migrate to ExperimentalDataLoader / registered parameters; STALE_DUP is a drifted copy of a measurement and is a live correctness bug. STALE_DUP matching is heuristic (2% window) — verify before editing, the neighbour may be a legitimately different quantity.",
   "summary": {
-    "files_scanned": 263,
+    "files_scanned": 262,
     "dataset_values": 339,
     "exact_dup": 393,
     "stale_dup": 340,
@@ -1609,7 +1609,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 936,
+      "line": 937,
       "literal": 0.23189,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1689,7 +1689,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 936,
+      "line": 937,
       "literal": 0.23189,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,
@@ -1697,7 +1697,7 @@
     },
     {
       "file": "simulations/PM/gauge/master_action.py",
-      "line": 936,
+      "line": 937,
       "literal": 0.23189,
       "dataset_key": "experiment_ref.parameters.weak_interaction.sin2_theta_W.value",
       "dataset_value": 0.23122,

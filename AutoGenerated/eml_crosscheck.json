@@ -273,7 +273,7 @@
       "evaluated": 0.8640535019525616,
       "registered": 0.8640535019525616,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('topology.elder_kads')))) \u2014 W_np = exp(\u22122\u03c0/b\u2083) hidden E\u2088' gaugino condensate with b\u2083=24"
+      "eml_description": "EML: ops.exp(ops.neg(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_vec('topology.elder_kads')))) \u2014 W_np = exp(\u22122\u03c0/b\u2083) hidden E\u2088' gaugino condensate at the retired seed_24 value b\u2083=24"
     },
     {
       "path": "algebra.e8_portal_coupling",
@@ -382,7 +382,7 @@
       "evaluated": 1.5925925925925923,
       "registered": 1.5925925925925926,
       "rel_error": 1.3942335658083361e-16,
-      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)) \u2014 condensate scale s = b\u2083/27 (b\u2083=24 gives s\u22480.888\u2026)"
+      "eml_description": "EML: ops.div(eml_vec('topology.elder_kads'), eml_scalar(27.0)) \u2014 condensate scale s = b\u2083/27 (retired seed_24 value b\u2083=24 gives s\u22480.888\u2026)"
     },
     {
       "path": "alp.coupling_GeV_inv",

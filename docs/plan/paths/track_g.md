@@ -98,3 +98,33 @@ coincident or feeds a non-row output. I did not run anything to separate those t
   n_gen_source x2 (chi_eff_over_48, chi_over_24; the source text expects 3, same as adopted),
   re_t_adoption--computed_vacuum, render_policy--permissive, seed_selection--ruling_only,
   theory_uncertainty_policy x2, twisted_norm_convention--orbit_average.
+
+## Joint sweep of the overlapping pairs (2026-10-27, engine c294094)
+
+`interactions.py` on runs_g: 37 single-option runs (24 inert), 636 cross-fork pairs,
+10 whose changed rows overlap. All 10 were built jointly with `sweep_paths.py`
+(selections in `<scratchpad>/pair_selections.json`), and `interactions.py joint`
+compared each joint build with the single-option runs (test_interactions.py, 5 cases).
+
+Result: **0 non-additive rows in all 10.** Every joint row equals the baseline or one of
+the two single-option values. On rows both options move:
+
+| Pair | Shared rows | Joint takes |
+|---|---|---|
+| dark_energy_betti (any of 6) × dark_energy_mechanism=mep_11_13 | 15 | mep_11_13, all 15 |
+| b3_seed=seed_24 × flavour_seed_coupling=calibrated_24 | 16 | identical values |
+| b3_seed=seed_24 × dark_energy_mechanism=mep_11_13 | 2 (w0) | mep_11_13 |
+| b3_seed=seed_24 × h0_route=kk_bridge / ricci_flow | 1 (H0_local) | h0_route |
+
+So the 2.09e9-path space factorises on today's wiring: a path's rows are the union of
+its single-option deltas, with the precedence above on shared rows. Two follow-ups:
+- dark_energy_betti only acts under the default mechanism: declare it (`requires`
+  dark_energy_mechanism default, or mark the betti options inert under mep_11_13), so
+  describe() and the site stop offering 6 x mep paths that are one path.
+- flavour_seed_coupling=calibrated_24 reproduces seed_24's 16 flavour rows exactly: one
+  lever behind two forks. Owner: merge, or keep and say so.
+
+Seed_24 joint selections must state `n_gen_source=b3_over_dim_O`: sweep_paths validates
+against the adopted defaults, where b2_over_faces excludes seed_24, while b3_path uses the
+path's declared source unless one is explicit. Every seed_24 build (single or joint)
+exits 1 on "Audit shadow derivations across the registry" and publishes with --keep-going.

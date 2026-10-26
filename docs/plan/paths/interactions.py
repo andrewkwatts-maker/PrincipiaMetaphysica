@@ -5,7 +5,13 @@ different forks can only produce a non-additive joint result on rows that both
 change; if their sets are disjoint, the joint path is the two deltas combined.
 So only overlapping option pairs need a joint build.
 
+`joint` mode reads the joint builds that sweep_paths.py wrote (RUNS/<id>/DONE.json
+with a "selection") and lists the rows where the joint value is not what the
+single-option runs predict: a single option's value where one changed the row,
+either option's value where both did, the baseline where neither did.
+
 Usage: python -I interactions.py RUNS [OUT.json]
+       python -I interactions.py joint RUNS [OUT.json]
 """
 import itertools, json, math, sys
 from pathlib import Path
@@ -59,7 +65,49 @@ def overlaps(devs):
     return hits
 
 
+def expected(base, singles, k):
+    """Values a joint row may take if the options combine additively."""
+    moved = [r.get(k) for r in singles if differs(base.get(k), r.get(k))]
+    return moved or [base.get(k)]
+
+
+def non_additive(base, singles, joint_rows):
+    keys = set(base) | set(joint_rows)
+    return sorted(k for k in keys
+                  if all(differs(joint_rows.get(k), e) for e in expected(base, singles, k)))
+
+
+def joint(runs):
+    """{selection id: report} for every joint build in RUNS."""
+    base = rows(runs / "active")
+    out = {}
+    for done in sorted(runs.glob("*/DONE.json")):
+        meta = json.loads(done.read_text(encoding="utf-8"))
+        sel, run = meta.get("selection"), done.parent
+        if not sel or rows(run) is None:
+            continue
+        singles = [rows(runs / ("%s--%s" % fo)) for fo in sel.items()]
+        missing = [f for f, r in zip(sel, singles) if r is None]
+        bad = non_additive(base, [r for r in singles if r is not None], rows(run))
+        out[run.name] = {"selection": sel, "exit": meta.get("exit"),
+                         "no_single_run": missing, "non_additive": len(bad),
+                         "rows": bad}
+    return out
+
+
+def main_joint(argv):
+    report = joint(Path(argv[2]))
+    for pid, r in report.items():
+        print(pid, r["selection"], "non-additive", r["non_additive"],
+              "(no single run: %s)" % r["no_single_run"] if r["no_single_run"] else "",
+              r["rows"][:4])
+    if len(argv) > 3:
+        Path(argv[3]).write_text(json.dumps(report, indent=1), encoding="utf-8")
+
+
 def main(argv):
+    if argv[1] == "joint":
+        return main_joint(argv)
     runs = Path(argv[1])
     devs = deviations(runs)
     pairs = sum(1 for x, y in itertools.combinations(devs, 2) if x[0] != y[0])
