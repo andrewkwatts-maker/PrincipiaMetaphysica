@@ -73,6 +73,15 @@ only model.
   `metaphysica.build --fast` with output in scratch (check `--help`) and record
   `fork_reads.json`: which forks were never read, and the read counts.
 
+## 5. `testground validate --theory pm` (fails before this lane, 5 problems)
+P1 found: `gauge_origin` and `consciousness_model` are declared-only forks with no adopted
+option, and three signals are missing. List each problem with file:line. Fix a problem when
+the fix is only a missing declaration (a signal that is emitted but not declared, or the reverse).
+For a declared-only fork, add an explicit `kind="declared"` (the field P1 added), with
+validate skipping that kind and a test, only if validate already has such a notion; otherwise
+report it. Then `test_pm_constraints_agree.py` should enumerate the PM `THEORY`, not only
+the engine forks. If validate still fails, say why.
+
 ## If the brief is wrong
 Stop and report the precise conflict (file:line). Don't redesign.
 
