@@ -51,3 +51,8 @@ all formulas' LaTeX rendered correctly, correct formulas".
 - 2026-10-27: probe done, plan written, F1 started.
 - F1 merged (3190f90): render errors 11 → 0, one MathJax config pinned to 3.2.2, formula lints; build gate step d61220b.
 - L2a merged (36bb6a4); L2c and W1 started.
+- L2c merged (e7ae865). W1 done in part (ae256ca): stale autogen 277 → 265, website 15 → 3;
+  duplicate groups 57 → 56 (21 with a keeper, 34 for the owner); filler 12 → 5, version
+  tags 19 → 14, long sentences 317. w0 = -23/24 is the dark_energy_betti default b3_24
+  (n = 24), not a bug; the prose that says "b3 = 24" is the error. Next: briefs/W2-wording.md,
+  after P1.
