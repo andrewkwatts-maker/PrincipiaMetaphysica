@@ -165,7 +165,7 @@ const PM = {
       "display": "0.956",
       "uncertainty": 0.01,
       "description": "4th dimension coupling strength",
-      "formula": "From TCS torsion: (\u03a3+\u0394)/2 with \u03a3=1.178, \u0394=0.733",
+      "formula": "From the retired TCS model's torsion: (\u03a3+\u0394)/2 with \u03a3=1.178, \u0394=0.733",
       "derivation": "G\u2082 torsion logarithms + \u03b8\u2082\u2083 matching",
       "source": "geometric",
       "references": [
@@ -178,7 +178,7 @@ const PM = {
       "display": "0.222",
       "uncertainty": 0.01,
       "description": "5th dimension coupling strength",
-      "formula": "From TCS torsion: (\u03a3-\u0394)/2 with \u03a3=1.178, \u0394=0.733",
+      "formula": "From the retired TCS model's torsion: (\u03a3-\u0394)/2 with \u03a3=1.178, \u0394=0.733",
       "derivation": "G\u2082 torsion logarithms + \u03b8\u2082\u2083 matching",
       "source": "geometric",
       "references": [
@@ -285,7 +285,7 @@ const PM = {
       "uncertainty": 900000000000000.0,
       "description": "X boson mass (heavy gauge boson)",
       "formula": "M_X = M_GUT from SO(10) symmetry",
-      "derivation": "Geometrically derived from TCS G\u2082 torsion",
+      "derivation": "OFF-PATH: derived from the retired TCS G\u2082 torsion",
       "source": "geometric:M_GUT",
       "charge": 1.3333333333333333,
       "charge_display": "\u00b14/3 e",

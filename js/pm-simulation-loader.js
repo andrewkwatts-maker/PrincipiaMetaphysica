@@ -29,7 +29,7 @@
         GITHUB_REPO: 'andrewkwatts-maker/metaphysica',
         GITHUB_BRANCH: 'main',
         // simulations-index emits paths relative to the lib's source root
-        // (e.g. "simulations/PM/algebra/_triple_helpers.py"); prepend the
+        // (e.g. "simulations/core/triple_helpers.py"); prepend the
         // wheel-layout prefix so the raw URL hits the right blob.
         SOURCE_PREFIX: 'src/metaphysica/',
         INDEX_PATHS: [
