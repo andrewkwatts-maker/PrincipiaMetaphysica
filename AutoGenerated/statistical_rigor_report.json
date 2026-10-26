@@ -1,6 +1,6 @@
 {
   "framework": "Principia Metaphysica",
-  "test_date": "2026-10-26T14:57:32.470514",
+  "test_date": "2026-10-26T19:13:35.312476",
   "test_name": "Statistical Rigor Validation with Effective DOF (EDOF)",
   "scaffold_notes": {
     "jacobian_stub": "The 125x27 Jacobian is populated with random uniform entries, not numerical derivatives of real PM observables.  SVD rank (full=27) and correlation results are artefacts of the random seed, not physics.",
