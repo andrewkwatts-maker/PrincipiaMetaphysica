@@ -22,14 +22,16 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
 - P1 f06142f: `variants` is a package; testground's `Fork` is the only fork model. Full
   suite on f06142f: 3873 passed, 424 skipped, 0 failed.
 
-## Running at handoff (worktrees beside the engine; review, merge `--no-ff`, remove)
-- P3 `metaphysica-pathgates` / claude/pathgates: fork gates (dark_energy_betti only under
-  thawing), read tracker → `fork_reads.json`, PM `testground validate` (5 problems).
-- W2 merged in part (30fd32a); next lane W3 (briefs/W3-wording.md): close the callout loophole,
-  then rewrite stale text at its source (autogen 159) and split long sentences (317).
-- L3a `metaphysica-zeromodes` / claude/zeromodes: generic `actions/zero_modes.py` (controls:
-  Joyce (12, 43); T^7 → 28 vectors and 70 scalars), wired into the G2 step, plus the
-  `nonabelian_gauge_source` check (expected to fail: a smooth G2 gives only U(1)^12).
+## Also merged after the first handoff draft (core-paper b8916d5)
+- L3a 48ad890: zero modes. The 13D action has no p-forms, so the G2 step gives no gauge fields
+  and 43 undeclared moduli; nonabelian_gauge_source fails. See track_l "L3a result".
+- P3 b8916d5 (partial): fork gates, canonical selections, fork_reads.json (8 of 22 forks
+  never read). §5 (PM validate, 5 problems) is an owner decision; see track_p Status.
+- Lint tests that read PM_PUBLISHED_ROOT fail on the stale default build; point them at
+  `<scratchpad>/w2m/build` or a fresh build.
+
+## Next lanes (briefs written): W3 (briefs/W3-wording.md). To write: P4 (the 8 never-read
+forks), L3b, F2, L2b.
 
 ## Findings
 - w0 = -23/24 is correct for the dark_energy_betti default `b3_24` (n = 24), not the
@@ -46,7 +48,9 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
    derived from the master action").
 3. reduced-lagrangian-4d sign convention (item 5).
 4. The 34 duplicate-statement groups with no keeper.
-5. Declared-only forks gauge_origin and consciousness_model (if P3 can't resolve them).
+5. Declared-only forks gauge_origin and consciousness_model, and the 3 unmeasured signals.
+6. L3a: add a p-form to the 13D action and/or name a D-028 SU(3)xSU(2) class as the gauge
+   source; declare or stabilise the 43 moduli.
 
 ## Next briefs to write
 F2 (triple-track for the 347 unchecked formulas), P4, P5, L2b (action forks, after P3),

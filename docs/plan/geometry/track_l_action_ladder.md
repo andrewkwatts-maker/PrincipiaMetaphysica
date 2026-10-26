@@ -55,6 +55,21 @@ rho_breath) are reported OPEN at their step, not hidden.
 | L3a zero modes on the seed, nonabelian gauge source | briefs/L3a-zero-modes.md | L2 |
 | L3b D-028 Betti (reasons per invalid class), D-029 pre-registration | (write after L3a) | L3a |
 
+## L3a result (merged 48ad890)
+- Generic `actions/zero_modes.py`. Controls: Joyce (12, 43) gives 12 vectors and 43 chirals;
+  11D on T^7 gives 28 vectors and 70 scalars (failing control: no dualisation, 63).
+- **The 13D action has no p-form fields** (only G and Psi). So the G2 step gives no gauge
+  fields at all, not even the U(1)^12 that a C3 form would give on b2 = 12. It does give
+  43 metric-modulus scalars (b3), which the 6D action doesn't declare: `zero_modes:scalar`
+  fails. G and the 8 spinor components match.
+- `nonabelian_gauge_source` fails. SU(3)×SU(2) enters only through the OPEN `A4:L_SM` term,
+  with no D-028 class named. Keeping the active Z2^3's 12 A1 loci singular gives SU(2)^12
+  with b1 = 3 adjoint chirals (non-chiral), no SU(3), and (b2, b3) = (0, 7).
+- Failing checks: [owner_item_6] → [nonabelian_gauge_source, owner_item_6, zero_modes:scalar].
+- Owner decision: add a 3-form (or other p-form) to the 13D action, as in M-theory, and/or
+  name a D-028 singular class with SU(3)×SU(2) as the gauge source (139 such classes at cap
+  1536). Then declare the 43 moduli in 6D, or say how they are stabilised.
+
 ## Status
 - 2026-10-27: plan written; L1 started. L2 split into L2a (no forks, starts after L1) and L2b.
 - L1 merged (c9c1f2f): `metaphysica.actions`, 35 tests, every control and failing control computed; LEGAL.txt. L2a started (briefs/L2a-master-ladder.md).
