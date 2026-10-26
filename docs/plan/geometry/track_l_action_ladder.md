@@ -52,7 +52,8 @@ rho_breath) are reported OPEN at their step, not hidden.
 | L2a single master action as a checked ladder; map of published statements | briefs/L2a-master-ladder.md | L1 |
 | L2c render every published action statement from the ladder; retire duplicates | (write after L2a, F1) | L2a, F1 |
 | L2b action forks and gated terms | (write after L2a, P3) | L2a, P3 |
-| L3 zero modes, D-028 Betti, D-029 | (write after L2) | L2 |
+| L3a zero modes on the seed, nonabelian gauge source | briefs/L3a-zero-modes.md | L2 |
+| L3b D-028 Betti (reasons per invalid class), D-029 pre-registration | (write after L3a) | L3a |
 
 ## Status
 - 2026-10-27: plan written; L1 started. L2 split into L2a (no forks, starts after L1) and L2b.
