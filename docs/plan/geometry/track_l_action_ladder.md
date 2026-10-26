@@ -49,9 +49,11 @@ rho_breath) are reported OPEN at their step, not hidden.
 | Lane | Brief | Depends on |
 |---|---|---|
 | L1 engine + established-physics controls | `briefs/L1-ladder-engine.md` | none |
-| L2a single master action: one definition, every published statement rendered from it, dimension checks per step (the duplicate list is in `../paper/track_f_formulas.md`) | (write after L1) | L1 |
+| L2a single master action as a checked ladder; map of published statements | briefs/L2a-master-ladder.md | L1 |
+| L2c render every published action statement from the ladder; retire duplicates | (write after L2a, F1) | L2a, F1 |
 | L2b action forks and gated terms | (write after L2a, P3) | L2a, P3 |
 | L3 zero modes, D-028 Betti, D-029 | (write after L2) | L2 |
 
 ## Status
 - 2026-10-27: plan written; L1 started. L2 split into L2a (no forks, starts after L1) and L2b.
+- L1 merged (c9c1f2f): `metaphysica.actions`, 35 tests, every control and failing control computed; LEGAL.txt. L2a started (briefs/L2a-master-ladder.md).
