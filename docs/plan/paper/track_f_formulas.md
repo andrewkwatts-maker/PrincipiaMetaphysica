@@ -42,9 +42,12 @@ all formulas' LaTeX rendered correctly, correct formulas".
 | Lane | Brief | Depends on | Worktree / branch |
 |---|---|---|---|
 | F1 render gate, shared MathJax config, formula lints, fix all hits | briefs/F1-render-gate.md | none | metaphysica-texgate / claude/texgate |
-| L2a single master action, rendered statements, dimension checks | (write after L1 merges) | L1 | |
+| L2a master action as a checked ladder | ../geometry/briefs/L2a-master-ladder.md | L1 | merged 36bb6a4 |
+| L2c render action formulas from the ladder; retire duplicates | ../geometry/briefs/L2c-render-from-ladder.md | L2a, F1 | metaphysica-ladderrender / claude/ladderrender |
 | F2 triple-track coverage of the unchecked 347 | (write after F1) | F1 | |
-| W1 stale wording to 0, duplicates, concision | (write after F1) | F1 | |
+| W1 stale wording to 0, duplicates, concision | briefs/W1-wording.md | F1 | metaphysica-wording / claude/wording |
 
 ## Status
 - 2026-10-27: probe done, plan written, F1 started.
+- F1 merged (3190f90): render errors 11 → 0, one MathJax config pinned to 3.2.2, formula lints; build gate step d61220b.
+- L2a merged (36bb6a4); L2c and W1 started.
