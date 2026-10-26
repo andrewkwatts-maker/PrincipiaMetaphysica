@@ -1620,8 +1620,8 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
                         </code>
                       </div>
                       <div style="font-size:0.78rem; color:var(--text-muted); margin-top:0.5rem;">
-                        EML (Mirror Phase Mathematics) path — produces same result as Wolfram verification above.
-                        Both modes converge to identical numerical values (AGREE in cross-check).
+                        EML (Mirror Phase Mathematics) form of this gate. This page does not evaluate it;
+                        the EML cross-check report lists which simulations have an independent EML path.
                       </div>
                     </div>
                   </div>
@@ -1740,14 +1740,10 @@ m_higgs = (k_gimel**2 / phi) * (4/3)
       if (formula && (formula.eml_tree_str || formula.eml_latex)) {
         return formula.eml_tree_str || formula.eml_latex;
       }
-      // Generic EML form based on Wolfram code
-      if (gate.wolfram) {
-        const compressed = gate.wolfram.replace(/\s+/g, ' ').slice(0, 120);
-        return `(* EML path — same result via Mirror Phase Mathematics *)\n` +
-               `(* Normal: ${compressed}${gate.wolfram.length > 120 ? '…' : ''} *)\n` +
-               `eml_verify(gate_id=${gate.id}, formula="${gate.formula || gate.name || '?'}")`;
-      }
-      return `eml_verify(gate_id=${gate.id})  (* EML computation path — agrees with Normal Math *)`;
+      // No EML tree is recorded for this gate. Say so: the old fallback
+      // printed a call to an eml_verify function that exists nowhere, and claimed
+      // agreement with Normal Math that nothing had checked.
+      return `(* no EML tree recorded for gate ${gate.id} *)`;
     }
 
     /** Current math mode ('normal' | 'eml') */

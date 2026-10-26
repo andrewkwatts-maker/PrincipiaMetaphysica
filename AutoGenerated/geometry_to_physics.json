@@ -58,11 +58,11 @@
     },
     "by_verdict": {
       "NO_TEST": 16,
-      "PASS": 7,
+      "PASS": 5,
       "FAIL": 5,
       "TENSION": 2,
       "MARGINAL": 2,
-      "CIRCULAR": 3
+      "CIRCULAR": 5
     },
     "open_fields": 0
   },
@@ -960,7 +960,7 @@
         "uncertainty": 1900000000000000.0,
         "source": "CODATA2022",
         "pull": 0.37117263157894737,
-        "verdict": "PASS"
+        "verdict": "CIRCULAR"
       },
       "tone": "ok",
       "figure": "",
@@ -994,7 +994,7 @@
         "uncertainty": 1.5e-44,
         "source": "CODATA 2018 (converted to natural units)",
         "pull": 0.14395846738234636,
-        "verdict": "PASS"
+        "verdict": "CIRCULAR"
       },
       "tone": "ok",
       "figure": "",

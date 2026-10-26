@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "dark_energy_betti--octonion_8",
  "scoreboard": {
-  "PASS": 24,
+  "PASS": 21,
   "MARGINAL": 17,
   "TENSION": 10,
   "FAIL": 26,
-  "SKIP": 127
+  "SKIP": 130
  },
  "chi2": {
   "value": 3030.0985,
@@ -2284,21 +2284,22 @@
   }
  ],
  "changed": {
-  "count": 146,
+  "count": 200,
   "by_artifact": {
    "GATES_CERTIFICATES.json": 2,
    "canonical_values.json": 1,
    "certificates/G48_w0_equation_of_state.json": 2,
    "config_drift_audit.json": 7,
-   "eml_crosscheck.json": 1,
+   "eml_crosscheck.json": 32,
    "formulas.json": 9,
    "geometry_to_physics.json": 5,
    "metadata.json": 1,
    "parameters.json": 26,
+   "proof_completeness_ledger.json": 15,
    "sections.json": 10,
    "shadow_derivations_report.json": 2,
    "statistical_rigor_report.json": 15,
-   "theory_output.json": 36,
+   "theory_output.json": 44,
    "validation_report.json": 29
   },
   "bookkeeping_ops": 18

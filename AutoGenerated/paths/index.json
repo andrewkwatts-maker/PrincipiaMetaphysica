@@ -2,17 +2,17 @@
  "schema": "metaphysica.paths/1",
  "theory": "pm",
  "main": "main",
- "generated": "2026-10-25T23:10:46Z",
+ "generated": "2026-10-26T06:54:33Z",
  "engine": {
   "version": "2.3.1",
-  "commit": "aab876d"
+  "commit": "043a0a4"
  },
  "base": {
-  "GATES_72.json": "998b15a4f75d23bf944ab2cddc741c5294a3e18d7adaddafd4378985501ee097",
-  "GATES_72_v16_2.json": "998b15a4f75d23bf944ab2cddc741c5294a3e18d7adaddafd4378985501ee097",
+  "GATES_72.json": "af8192ef0288c1f968276728fdab78c09808bfe76eb3c7088e0615c46ca38470",
+  "GATES_72_v16_2.json": "af8192ef0288c1f968276728fdab78c09808bfe76eb3c7088e0615c46ca38470",
   "GATES_CERTIFICATES.json": "728e67b1f13b1ec12d0956473afccf93f700899b72a5c80712b9b1b0286ffcd4",
   "arithma_trees.json": "88233549e88c063e3ca3233adf76d990f71a9512dceef2128045868608677ba5",
-  "beginner-guide.json": "f55aeb8670014c6bb15f330285bbfc0c30b03267cb3782801041edc8857c5ca5",
+  "beginner-guide.json": "79f08619c400d35a057deab46b670b1885276ca5d9bc0579c6194f3b9a6cf4a2",
   "build_status.json": "c203493bc54c9c035bcf6c36a04b86fbbc1de023eabf6d08b83091b2fa45812e",
   "canonical_values.json": "832028f5b1127f6d7cc09225a9bcf13defa3c8521726b244ffc1fb6278511619",
   "certificates/G02_holonomy_closure.json": "218c2bdb5d83aecea1e7f6b6781359bb1875200df296ab650be910adc0d32817",
@@ -29,39 +29,41 @@
   "certificates/G48_w0_equation_of_state.json": "957528904bee26237f58912c88abb66e0dc9e0b9701806bf5b4a6c23503a7228",
   "certificates/G50_baryon_to_photon_ratio.json": "55904de9e97fbce22399efb07ef5f343e6d422ff273b48a056be728070a58827",
   "certificates/G72_the_omega_hash.json": "7e0cd403c70cb95909708a250c66a03fdd13c8aa10ecad00f3451c6cffa77780",
-  "compression_report.json": "9e2746b4545e30cd236a69b6321927adaa9c3f84afcd0ba8ddeb7045457bbe62",
+  "compression_report.json": "e0cc2813d0806b38d79fc29b80b0931a15393573116fcfa37716aec2eef94933",
   "config_drift_audit.json": "94bb3eb29f12c8ec8f8671e19b96febeb29d2bbda1c5658e8fac8e20dde9f325",
   "consistency_beacons.json": "070727a80dd5d488ac0f37279924f9c7b7ad2fb29a65c713ef40fb4a144948cc",
-  "core_paper.json": "dacbbc56591a077b13e51d63576d127e6e8b56dee8b52c7400b639c121cd8223",
+  "core_paper.json": "e8ff44c6f08ee0c1b2bb56968c87c4ca9b0f706a701cb89d6637353b68063c7c",
+  "de_plane_gate.json": "c2eee5924a6a8a47c2833b5009d84f92f77a1f7ae840997fd96f05a76d70fb48",
   "dependency_chains.json": "8ac81fb1bef13e21c5d0bbe77d88041bbeb670e33e6399811fe16854458b3f04",
-  "eml_cross_check.json": "e9e44c37b73e51f15bbeabae34867c0512b0397dc1723a939dc851bb6a0df499",
-  "eml_crosscheck.json": "e34e045b916239f35a640d22dff1479ea30f4bdb5ca49e78a3a7beb6abe156f1",
+  "eml_cross_check.json": "44172d3ac79cce35e8b5dfcf48356e5ac553a0b1fcbeeddcb4390ad36050f7d6",
+  "eml_crosscheck.json": "757955746cb2a625e17c0396e7e6291e06827f83e4eebfa46bf15fc5e8183571",
   "eml_dependency_chains.json": "4c5b048e48a61f80d183772a46d288c8820d243038f4a2c472a43524b835591c",
   "eml_offer_policy.json": "59bb260b28c8d38e6151cccf81cb937390f794e3cbf9a71348d2d1a35f3f7050",
   "eml_trees.json": "b7e870529c413f796509276d88a16d57a40f95d262d34932ff742147852f7199",
   "eml_trees_v25.json": "d0132ec65e30df3cbbab8fa9c7ab48a4c864f5cad21c72a89e1dec04b9c9c80d",
   "formula_renders.json": "1e9cb1765381d8b40182faf09ff89a75813570e974474562e014dd04537e1856",
-  "formulas.json": "5fab40eb18f156b2e4ff5ae9df1d7791ee5ef40b766be9c6d41736b6353c193a",
-  "geometry_to_physics.json": "80709c5cfc250d02775c49ca8c3aa851b9f3a1e05b803da97c35374a63085643",
+  "formulas.json": "7e659072a020fa3a13433aa34ed73b56dbf31842c4c134fdcfb31a276a48b853",
+  "free_variables.json": "d06ee98fc173e4ae69751a6082e28d59c33faf6881a9c9bea6cec3eaf196b2c3",
+  "geometry_to_physics.json": "6df9a50fb76ff32af5fc365ad1d52fa360f001de1128dd8f4f7c9b879f7123bc",
   "identity_ledger.json": "ace5dd007071f33898b000bec0fb2288ace0649b70785836962d2709e8ffba32",
-  "improvement_scorecard.json": "001c5571a06bb9ee30a2dbfcb9ecc688f2f647cceb09c30c8d3a987dc748e834",
-  "metadata.json": "9cb9d31ae432a47cf5cca3c372f85eb0190cc2898c1a698eca6641c0d53411d1",
-  "mismatches.json": "4da830e16fd06efe1844f7a12d082e3d33ce89264a67698c7372f21329b1ae22",
-  "named_constants.json": "3b7846497f1bff48d6982de3f01d5d58a9c835d6adc70141cd38ff4d74116590",
-  "observer_report.json": "200bd8b3ff4684207a984322d1494c33399c632abbf6de67a315b4a3c9cc1906",
-  "parameters.json": "727d05958d473633e2596d9f668addfa6665b2e3d6e6c61e271910cc312bd4d8",
-  "proof_completeness_ledger.json": "2044f28bc91cc87f8ab6ad7522034c2f6c48653bf0f9688262bbd7514f78d82d",
+  "improvement_scorecard.json": "4e0e5b63b7430010c002a52fce5b8fc7b98baf0bec554728c14e3387a0e7ddeb",
+  "metadata.json": "66f19470fb651927826ec230564c11209790e66e7486f5bb1ddfabcc2260bea1",
+  "mismatches.json": "ad2831c998a4a66c5c87d0543220945547644ba72133f3a394113cf26fd5f712",
+  "named_constants.json": "eecaff355ea1efdcf799c41a3d37bdad73be892153147b51671cd347b717244f",
+  "parameters.json": "57b9b87f28020797d97afd103dbbe3e5d991adbfa3a5f7826689950053a13239",
+  "proof_completeness_ledger.json": "37dca85f48c7fd0495c9b8840f9603bcebc8adc6d774d8e04e3fe648db20890a",
+  "prose_drift_audit.json": "d87c2c29acd12ea2e0c84a898196580c0acb6f84c69154fc43512a48d1a7b1dd",
   "reference_check.json": "265854f6b85dcd9bb40bf204a472462f78492b034a05d4eae493775fb4b5cad7",
-  "references.json": "87623f99dffc987651abfa78c16f1af8c70e67824e8bc23bd97b713821138378",
-  "sections.json": "83a2c13c88b2965a799a5359531a615e0a188dcd70302a5b6f7f017e321de422",
+  "references.json": "e36c56f3f26c977e9183d297fbaf6df76809fbe235cd36566ba86595c77380ae",
+  "sections.json": "e0e9c71efc9beec1ee5a357109476df0cae21ef494d10069ebfbcd507ecb1a12",
   "shadow_derivations_report.json": "6b6b110a2f711df5dcffd0d68bf8a5181315628dc7d1f5f560d83cb8dde69ae1",
-  "simulations-index.json": "9dcf622225be8eb114073a9fcb1a405b74d4a6ca7dd578d0eea3eafddbfb45df",
-  "statistical_rigor_report.json": "aa203dc5e7dae1539a1ec48a96182c742d60126a8a137675ba7ef924b7d23eaa",
-  "statistics.json": "cb0c2b130879c14ce0aa02923c7ebcde43612f4be5b1e1e4b68b46004c3bc55a",
-  "terminology_audit.json": "d5169c3c7e220ad6be97a9071af0fa371450a94651e4fd66f40327b234a26d05",
-  "theory_output.json": "6398831b406b33b9f67378baf756b0446ea4a017e16d26dfa1681a4e64070020",
-  "theory_overview.json": "daaf45dc77a83cc4e662bec3a53d7e6f7800deceef3b3e0f9a9d32e703892d70",
-  "validation_report.json": "98ea8ed4bca7430efb76ba2554d6293a413e1e0997f079574e7d81034bec67b8",
+  "simulations-index.json": "d5c56265755463f5165db06be5d1c3f12ddcbbdc2a836c9f44b89a8b0a8109df",
+  "statistical_rigor_report.json": "b1475358badcf5d56f3b763f94b565a1156defd6de8d2db3616d710abac34507",
+  "statistics.json": "3de8b520c63128d3c9bff6b19676e79b40762f96d0ae14c341533602f2f18993",
+  "terminology_audit.json": "f8d64054b30e3b6f34246804590296d5a2647d3f8fb48f2e6c124a61db555bb2",
+  "theory_output.json": "2c4b93e55b9e36293dcd21a66d3e839533d54031930b7e785a2eadaaa5108346",
+  "theory_overview.json": "9070900415515f85c3db9ee5ff965c512d4fec93d1ec59799067600508d05128",
+  "validation_report.json": "904e350d51ae723c7235a4ffcb00093db546424efe960d83a1b94638cae6390a",
   "variants.json": "f52170689aeb8e192495b89efea4883be838a1738692f0913082c49b3de6910a"
  },
  "paths": [
@@ -149,7 +151,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -199,7 +201,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -244,14 +246,12 @@
    ],
    "id": "b3_origin--input_24",
    "computed": true,
-   "inert": false,
-   "changed_values": 1,
-   "changed_artifacts": [
-    "observer_report.json"
-   ],
+   "inert": true,
+   "changed_values": 0,
+   "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -301,7 +301,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 181
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -345,7 +345,7 @@
    "id": "b3_seed--seed_24",
    "computed": true,
    "inert": false,
-   "changed_values": 3430,
+   "changed_values": 3575,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -371,6 +371,7 @@
     "config_drift_audit.json",
     "consistency_beacons.json",
     "core_paper.json",
+    "de_plane_gate.json",
     "dependency_chains.json",
     "eml_cross_check.json",
     "eml_crosscheck.json",
@@ -380,6 +381,7 @@
     "eml_trees_v25.json",
     "formula_renders.json",
     "formulas.json",
+    "free_variables.json",
     "geometry_to_physics.json",
     "identity_ledger.json",
     "improvement_scorecard.json",
@@ -402,7 +404,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 160
+    "secs": 149
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -452,7 +454,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -500,7 +502,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -547,14 +549,15 @@
    "id": "chi_eff_route--constant_144",
    "computed": true,
    "inert": false,
-   "changed_values": 5,
+   "changed_values": 8,
    "changed_artifacts": [
     "core_paper.json",
-    "sections.json"
+    "sections.json",
+    "theory_output.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -601,14 +604,15 @@
    "id": "chi_eff_route--seed_dependent",
    "computed": true,
    "inert": false,
-   "changed_values": 5,
+   "changed_values": 8,
    "changed_artifacts": [
     "core_paper.json",
-    "sections.json"
+    "sections.json",
+    "theory_output.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 180
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -655,14 +659,15 @@
    "id": "chi_eff_route--unruled",
    "computed": true,
    "inert": false,
-   "changed_values": 5,
+   "changed_values": 8,
    "changed_artifacts": [
     "core_paper.json",
-    "sections.json"
+    "sections.json",
+    "theory_output.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -706,7 +711,7 @@
    "id": "dark_energy_betti--b2_4",
    "computed": true,
    "inert": false,
-   "changed_values": 197,
+   "changed_values": 252,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "canonical_values.json",
@@ -729,7 +734,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 179
+    "secs": 169
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -775,7 +780,7 @@
    "id": "dark_energy_betti--b3_live",
    "computed": true,
    "inert": false,
-   "changed_values": 124,
+   "changed_values": 179,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "canonical_values.json",
@@ -786,6 +791,7 @@
     "formulas.json",
     "geometry_to_physics.json",
     "parameters.json",
+    "proof_completeness_ledger.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
@@ -794,7 +800,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -838,7 +844,7 @@
    "id": "dark_energy_betti--bridges_12",
    "computed": true,
    "inert": false,
-   "changed_values": 120,
+   "changed_values": 174,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "canonical_values.json",
@@ -848,6 +854,7 @@
     "formulas.json",
     "geometry_to_physics.json",
     "parameters.json",
+    "proof_completeness_ledger.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
@@ -856,7 +863,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 198
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -900,7 +907,7 @@
    "id": "dark_energy_betti--chi_over_b3_6",
    "computed": true,
    "inert": false,
-   "changed_values": 145,
+   "changed_values": 199,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "canonical_values.json",
@@ -911,6 +918,7 @@
     "geometry_to_physics.json",
     "metadata.json",
     "parameters.json",
+    "proof_completeness_ledger.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
@@ -919,7 +927,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 230
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -963,7 +971,7 @@
    "id": "dark_energy_betti--ngen_3",
    "computed": true,
    "inert": false,
-   "changed_values": 193,
+   "changed_values": 247,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "canonical_values.json",
@@ -986,7 +994,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 204
+    "secs": 167
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -1032,7 +1040,7 @@
    "id": "dark_energy_betti--octonion_8",
    "computed": true,
    "inert": false,
-   "changed_values": 146,
+   "changed_values": 200,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "canonical_values.json",
@@ -1043,6 +1051,7 @@
     "geometry_to_physics.json",
     "metadata.json",
     "parameters.json",
+    "proof_completeness_ledger.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
@@ -1051,7 +1060,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 222
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1097,7 +1106,7 @@
    "id": "dark_energy_mechanism--mep_11_13",
    "computed": true,
    "inert": false,
-   "changed_values": 165,
+   "changed_values": 226,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -1110,6 +1119,7 @@
     "geometry_to_physics.json",
     "metadata.json",
     "parameters.json",
+    "proof_completeness_ledger.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
@@ -1118,7 +1128,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 181
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -1161,14 +1171,12 @@
    "decision_refs": [],
    "id": "face_genericity--all",
    "computed": true,
-   "inert": false,
-   "changed_values": 1,
-   "changed_artifacts": [
-    "observer_report.json"
-   ],
+   "inert": true,
+   "changed_values": 0,
+   "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 227
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1212,7 +1220,7 @@
    "id": "flavour_seed_coupling--calibrated_24",
    "computed": true,
    "inert": false,
-   "changed_values": 170,
+   "changed_values": 195,
    "changed_artifacts": [
     "GATES_CERTIFICATES.json",
     "arithma_trees.json",
@@ -1229,15 +1237,17 @@
     "mismatches.json",
     "named_constants.json",
     "parameters.json",
+    "proof_completeness_ledger.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
+    "terminology_audit.json",
     "theory_output.json",
     "validation_report.json"
    ],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -1284,7 +1294,7 @@
    "id": "g2_form_convention--all_plus_one",
    "computed": true,
    "inert": false,
-   "changed_values": 241,
+   "changed_values": 250,
    "changed_artifacts": [
     "arithma_trees.json",
     "beginner-guide.json",
@@ -1299,7 +1309,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 173
+    "secs": 163
    },
    "failed_steps": []
   },
@@ -1345,7 +1355,7 @@
    "id": "h0_route--kk_bridge",
    "computed": true,
    "inert": false,
-   "changed_values": 110,
+   "changed_values": 113,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -1356,6 +1366,7 @@
     "eml_crosscheck.json",
     "eml_trees_v25.json",
     "formulas.json",
+    "free_variables.json",
     "improvement_scorecard.json",
     "parameters.json",
     "proof_completeness_ledger.json",
@@ -1367,7 +1378,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 180
+    "secs": 167
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -1415,7 +1426,7 @@
    "id": "h0_route--ricci_flow",
    "computed": true,
    "inert": false,
-   "changed_values": 109,
+   "changed_values": 116,
    "changed_artifacts": [
     "GATES_72.json",
     "GATES_72_v16_2.json",
@@ -1426,9 +1437,11 @@
     "eml_crosscheck.json",
     "eml_trees_v25.json",
     "formulas.json",
+    "free_variables.json",
     "improvement_scorecard.json",
     "parameters.json",
     "proof_completeness_ledger.json",
+    "prose_drift_audit.json",
     "sections.json",
     "shadow_derivations_report.json",
     "statistical_rigor_report.json",
@@ -1437,7 +1450,7 @@
    ],
    "build": {
     "exit": 1,
-    "secs": 179
+    "secs": 167
    },
    "failed_steps": [
     "audit_shadow_derivations_across_the_registry"
@@ -1487,7 +1500,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 169
    },
    "failed_steps": []
   },
@@ -1535,7 +1548,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1585,7 +1598,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1633,7 +1646,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 169
    },
    "failed_steps": []
   },
@@ -1676,14 +1689,12 @@
    "decision_refs": [],
    "id": "moduli_indexing--cy3_shadow",
    "computed": true,
-   "inert": false,
-   "changed_values": 1,
-   "changed_artifacts": [
-    "observer_report.json"
-   ],
+   "inert": true,
+   "changed_values": 0,
+   "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 178
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -1739,7 +1750,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 185
    },
    "failed_steps": []
   },
@@ -1794,7 +1805,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1844,7 +1855,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 235
+    "secs": 219
    },
    "failed_steps": []
   },
@@ -1894,7 +1905,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 199
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1940,7 +1951,7 @@
    "id": "seed_selection--ruling_only",
    "computed": true,
    "inert": false,
-   "changed_values": 33,
+   "changed_values": 35,
    "changed_artifacts": [
     "core_paper.json",
     "formulas.json",
@@ -1951,7 +1962,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 243
+    "secs": 168
    },
    "failed_steps": []
   },
@@ -1997,14 +2008,13 @@
    "id": "spectral_index_route--one_minus_2_over_b3",
    "computed": true,
    "inert": false,
-   "changed_values": 88,
+   "changed_values": 95,
    "changed_artifacts": [
     "eml_crosscheck.json",
     "eml_trees_v25.json",
     "formulas.json",
     "geometry_to_physics.json",
     "metadata.json",
-    "observer_report.json",
     "parameters.json",
     "proof_completeness_ledger.json",
     "sections.json",
@@ -2015,7 +2025,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 181
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -2061,7 +2071,7 @@
    "id": "spectral_index_route--re_t_slow_roll",
    "computed": true,
    "inert": false,
-   "changed_values": 86,
+   "changed_values": 94,
    "changed_artifacts": [
     "eml_crosscheck.json",
     "eml_trees_v25.json",
@@ -2078,7 +2088,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 181
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -2130,7 +2140,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 221
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -2181,7 +2191,7 @@
    ],
    "build": {
     "exit": 0,
-    "secs": 216
+    "secs": 167
    },
    "failed_steps": []
   },
@@ -2229,7 +2239,7 @@
    "changed_artifacts": [],
    "build": {
     "exit": 0,
-    "secs": 179
+    "secs": 168
    },
    "failed_steps": []
   }

@@ -3,7 +3,7 @@
   "audit": "present",
   "engine": {
     "version": "2.3.1",
-    "commit": "c8d152d"
+    "commit": "90b1b93"
   },
   "forks": {
     "spectral_index_route": {
@@ -20,13 +20,13 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 4,
+            "changed": 85,
             "share_before": 1.0,
             "share_after": 1.0,
             "d_share": 0.0,
             "by_status": {
               "DERIVED": 2,
-              "GEOMETRIC": 2
+              "GEOMETRIC": 83
             },
             "calibrated_or_fitted": 0
           },
@@ -64,13 +64,13 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 4,
+            "changed": 85,
             "share_before": 1.0,
             "share_after": 1.0,
             "d_share": 0.0,
             "by_status": {
               "DERIVED": 2,
-              "GEOMETRIC": 2
+              "GEOMETRIC": 83
             },
             "calibrated_or_fitted": 0
           },
@@ -113,11 +113,12 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 1,
-            "share_before": 0.0,
-            "share_after": 0.0,
+            "changed": 83,
+            "share_before": 0.988,
+            "share_after": 0.988,
             "d_share": 0.0,
             "by_status": {
+              "GEOMETRIC": 82,
               "FITTED_COMPOSITE": 1
             },
             "calibrated_or_fitted": 1
@@ -156,11 +157,12 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 1,
-            "share_before": 0.0,
-            "share_after": 0.0,
+            "changed": 83,
+            "share_before": 0.988,
+            "share_after": 0.988,
             "d_share": 0.0,
             "by_status": {
+              "GEOMETRIC": 82,
               "FITTED_COMPOSITE": 1
             },
             "calibrated_or_fitted": 1
@@ -204,12 +206,12 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 17,
-            "share_before": 0.4118,
-            "share_after": 0.4118,
+            "changed": 98,
+            "share_before": 0.898,
+            "share_after": 0.898,
             "d_share": 0.0,
             "by_status": {
-              "GEOMETRIC": 2,
+              "GEOMETRIC": 83,
               "VALIDATION": 8,
               "PREDICTED": 2,
               "DERIVED": 5
@@ -248,18 +250,21 @@
           "option": "computed_vacuum",
           "path": "re_t_adoption--computed_vacuum",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -280,7 +285,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "disabled"
@@ -301,13 +305,13 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 203,
-            "share_before": 0.6158,
-            "share_after": 0.6059,
-            "d_share": -0.0099,
+            "changed": 280,
+            "share_before": 0.7214,
+            "share_after": 0.7143,
+            "d_share": -0.0071,
             "by_status": {
               "INPUT": 2,
-              "GEOMETRIC": 26,
+              "GEOMETRIC": 103,
               "DERIVED": 97,
               "ANSATZ": 2,
               "PREDICTED": 30,
@@ -497,11 +501,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -537,11 +544,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -575,18 +585,21 @@
           "option": "input_24",
           "path": "b3_origin--input_24",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -607,7 +620,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -616,18 +628,21 @@
           "option": "arc_flag_stabiliser",
           "path": "b3_origin--arc_flag_stabiliser",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -648,7 +663,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -657,18 +671,21 @@
           "option": "d4_root_shell",
           "path": "b3_origin--d4_root_shell",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -689,7 +706,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -698,18 +714,21 @@
           "option": "joyce_twisted_sector",
           "path": "b3_origin--joyce_twisted_sector",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -730,7 +749,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -744,18 +762,21 @@
           "option": "supplied",
           "path": "joyce_contribution_table--supplied",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -776,7 +797,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -797,11 +817,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -842,12 +865,13 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 16,
+            "changed": 98,
             "share_before": 1.0,
             "share_after": 1.0,
             "d_share": 0.0,
             "by_status": {
-              "DERIVED": 16
+              "DERIVED": 16,
+              "GEOMETRIC": 82
             },
             "calibrated_or_fitted": 0
           },
@@ -890,18 +914,21 @@
           "option": "hitchin_cubic",
           "path": "metric_construction--hitchin_cubic",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -922,7 +949,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -943,11 +969,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -983,11 +1012,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1023,11 +1055,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1061,18 +1096,21 @@
           "option": "orbit_average",
           "path": "twisted_norm_convention--orbit_average",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1093,7 +1131,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1107,18 +1144,21 @@
           "option": "niemeier_e8x3",
           "path": "lattice_24d--niemeier_e8x3",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1139,7 +1179,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1172,18 +1211,21 @@
           "option": "b2_gauge",
           "path": "moduli_indexing--b2_gauge",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1204,7 +1246,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1213,18 +1254,21 @@
           "option": "cy3_shadow",
           "path": "moduli_indexing--cy3_shadow",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1245,7 +1289,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1259,18 +1302,21 @@
           "option": "26_2",
           "path": "bulk_signature--26_2",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1291,7 +1337,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1300,18 +1345,21 @@
           "option": "25_1",
           "path": "bulk_signature--25_1",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1332,7 +1380,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1346,18 +1393,24 @@
           "option": "b3_live",
           "path": "dark_energy_betti--b3_live",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 96,
+            "share_before": 0.9167,
+            "share_after": 0.9167,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 83,
+              "PREDICTED": 2,
+              "DERIVED": 5,
+              "VALIDATION": 6
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1378,7 +1431,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1387,18 +1439,24 @@
           "option": "b2_4",
           "path": "dark_energy_betti--b2_4",
           "P": {
-            "state": "INERT",
-            "d_pass": 0,
-            "d_fail": 0,
+            "state": "COMPUTED",
+            "d_pass": -3,
+            "d_fail": 2,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 96,
+            "share_before": 0.9167,
+            "share_after": 0.9167,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 83,
+              "PREDICTED": 2,
+              "DERIVED": 5,
+              "VALIDATION": 6
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1412,15 +1470,14 @@
             "unaudited": []
           },
           "P_adjusted": {
-            "d_pass": 0,
-            "d_fail": 0,
+            "d_pass": -3,
+            "d_fail": 2,
             "d_chi2": 0.0
           },
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
-            "tie with the active option on every axis"
+            "worse on P_pass,P_fail"
           ],
           "status": "considered"
         },
@@ -1428,18 +1485,24 @@
           "option": "ngen_3",
           "path": "dark_energy_betti--ngen_3",
           "P": {
-            "state": "INERT",
-            "d_pass": 0,
-            "d_fail": 0,
+            "state": "COMPUTED",
+            "d_pass": -3,
+            "d_fail": 2,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 96,
+            "share_before": 0.9167,
+            "share_after": 0.9167,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 83,
+              "PREDICTED": 2,
+              "DERIVED": 5,
+              "VALIDATION": 6
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1453,15 +1516,14 @@
             "unaudited": []
           },
           "P_adjusted": {
-            "d_pass": 0,
-            "d_fail": 0,
+            "d_pass": -3,
+            "d_fail": 2,
             "d_chi2": 0.0
           },
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
-            "tie with the active option on every axis"
+            "worse on P_pass,P_fail"
           ],
           "status": "considered"
         },
@@ -1469,18 +1531,24 @@
           "option": "chi_over_b3_6",
           "path": "dark_energy_betti--chi_over_b3_6",
           "P": {
-            "state": "INERT",
-            "d_pass": 0,
+            "state": "COMPUTED",
+            "d_pass": -2,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 96,
+            "share_before": 0.9167,
+            "share_after": 0.9167,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 83,
+              "PREDICTED": 2,
+              "DERIVED": 5,
+              "VALIDATION": 6
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1494,15 +1562,14 @@
             "unaudited": []
           },
           "P_adjusted": {
-            "d_pass": 0,
+            "d_pass": -2,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
-            "tie with the active option on every axis"
+            "worse on P_pass"
           ],
           "status": "considered"
         },
@@ -1510,18 +1577,24 @@
           "option": "bridges_12",
           "path": "dark_energy_betti--bridges_12",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 96,
+            "share_before": 0.9167,
+            "share_after": 0.9167,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 83,
+              "PREDICTED": 2,
+              "DERIVED": 5,
+              "VALIDATION": 6
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1542,7 +1615,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1551,18 +1623,24 @@
           "option": "octonion_8",
           "path": "dark_energy_betti--octonion_8",
           "P": {
-            "state": "INERT",
-            "d_pass": 0,
+            "state": "COMPUTED",
+            "d_pass": -2,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 96,
+            "share_before": 0.9167,
+            "share_after": 0.9167,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 83,
+              "PREDICTED": 2,
+              "DERIVED": 5,
+              "VALIDATION": 6
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1576,15 +1654,14 @@
             "unaudited": []
           },
           "P_adjusted": {
-            "d_pass": 0,
+            "d_pass": -2,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
-            "tie with the active option on every axis"
+            "worse on P_pass"
           ],
           "status": "considered"
         }
@@ -1604,11 +1681,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1649,11 +1729,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1704,11 +1787,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1742,18 +1828,21 @@
           "option": "all",
           "path": "face_genericity--all",
           "P": {
-            "state": "INERT",
+            "state": "COMPUTED",
             "d_pass": 0,
             "d_fail": 0,
             "d_chi2": 0.0
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",
@@ -1774,7 +1863,6 @@
           "candidate": false,
           "provisional": false,
           "reasons": [
-            "inert: no data consequence",
             "tie with the active option on every axis"
           ],
           "status": "considered"
@@ -1795,11 +1883,14 @@
           },
           "R": {
             "state": "COMPUTED",
-            "changed": 0,
-            "share_before": null,
-            "share_after": null,
+            "changed": 82,
+            "share_before": 1.0,
+            "share_after": 1.0,
             "d_share": 0.0,
-            "by_status": {}
+            "by_status": {
+              "GEOMETRIC": 82
+            },
+            "calibrated_or_fitted": 0
           },
           "E": {
             "state": "COMPUTED",

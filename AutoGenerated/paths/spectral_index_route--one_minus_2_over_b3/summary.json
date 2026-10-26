@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "spectral_index_route--one_minus_2_over_b3",
  "scoreboard": {
-  "PASS": 25,
+  "PASS": 22,
   "MARGINAL": 15,
   "TENSION": 10,
   "FAIL": 27,
-  "SKIP": 127
+  "SKIP": 130
  },
  "chi2": {
   "value": 3030.0985,
@@ -2174,16 +2174,15 @@
   }
  ],
  "changed": {
-  "count": 88,
+  "count": 95,
   "by_artifact": {
-   "eml_crosscheck.json": 7,
+   "eml_crosscheck.json": 11,
    "eml_trees_v25.json": 3,
    "formulas.json": 9,
    "geometry_to_physics.json": 8,
    "metadata.json": 2,
-   "observer_report.json": 1,
    "parameters.json": 6,
-   "proof_completeness_ledger.json": 5,
+   "proof_completeness_ledger.json": 9,
    "sections.json": 6,
    "shadow_derivations_report.json": 4,
    "statistical_rigor_report.json": 15,

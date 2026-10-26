@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "h0_route--kk_bridge",
  "scoreboard": {
-  "PASS": 26,
+  "PASS": 23,
   "MARGINAL": 14,
   "TENSION": 10,
   "FAIL": 27,
-  "SKIP": 127
+  "SKIP": 130
  },
  "chi2": {
   "value": 3030.0985,
@@ -2154,7 +2154,7 @@
   }
  ],
  "changed": {
-  "count": 110,
+  "count": 113,
   "by_artifact": {
    "GATES_72.json": 4,
    "GATES_72_v16_2.json": 4,
@@ -2162,12 +2162,13 @@
    "canonical_values.json": 2,
    "certificates/G47_hubble_unwinding_rate.json": 8,
    "certificates/G72_the_omega_hash.json": 2,
-   "eml_crosscheck.json": 5,
+   "eml_crosscheck.json": 7,
    "eml_trees_v25.json": 2,
-   "formulas.json": 9,
+   "formulas.json": 8,
+   "free_variables.json": 1,
    "improvement_scorecard.json": 10,
    "parameters.json": 3,
-   "proof_completeness_ledger.json": 5,
+   "proof_completeness_ledger.json": 6,
    "sections.json": 8,
    "shadow_derivations_report.json": 4,
    "statistical_rigor_report.json": 15,

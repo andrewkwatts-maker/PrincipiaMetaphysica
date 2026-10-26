@@ -2,11 +2,11 @@
  "schema": "metaphysica.path_summary/1",
  "path": "dark_energy_betti--bridges_12",
  "scoreboard": {
-  "PASS": 26,
+  "PASS": 23,
   "MARGINAL": 15,
   "TENSION": 10,
   "FAIL": 26,
-  "SKIP": 127
+  "SKIP": 130
  },
  "chi2": {
   "value": 3030.0985,
@@ -2284,20 +2284,21 @@
   }
  ],
  "changed": {
-  "count": 120,
+  "count": 174,
   "by_artifact": {
    "GATES_CERTIFICATES.json": 2,
    "canonical_values.json": 1,
    "certificates/G48_w0_equation_of_state.json": 2,
    "config_drift_audit.json": 7,
-   "eml_crosscheck.json": 1,
+   "eml_crosscheck.json": 32,
    "formulas.json": 9,
    "geometry_to_physics.json": 2,
    "parameters.json": 24,
+   "proof_completeness_ledger.json": 15,
    "sections.json": 6,
    "shadow_derivations_report.json": 2,
    "statistical_rigor_report.json": 15,
-   "theory_output.json": 33,
+   "theory_output.json": 41,
    "validation_report.json": 16
   },
   "bookkeeping_ops": 18

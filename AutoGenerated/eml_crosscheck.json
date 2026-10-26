@@ -2627,7 +2627,7 @@
       "evaluated": 24.0,
       "registered": 24.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(24.0) \u2014 the integer anchor, formerly labelled 'Betti number b\u2083=24 from G\u2082 TCS topology'. the anchor is the fitted integer 24 while the live third Betti number is b_3 = 43, so the identification anchor = b_3 is WITHDRAWN here; the numbers below are unchanged and their topological provenance is OPEN pending an author ruling"
+      "eml_description": "EML: eml_scalar(24.0) \u2014 the integer anchor, formerly labelled 'Betti number b\u2083=24 from G\u2082 TCS (retired reading) topology'. the anchor is the fitted integer 24 while the live third Betti number is b_3 = 43, so the identification anchor = b_3 is WITHDRAWN here; the numbers below are unchanged and their topological provenance is OPEN pending an author ruling"
     },
     {
       "path": "geometry.eta_GW",
@@ -2659,7 +2659,7 @@
       "evaluated": 168.6047121676784,
       "registered": 168.60471216745654,
       "rel_error": 1.3158580265146128e-12,
-      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('constants.k_gimel')), eml_pi()) \u2014 T1 = b3\u00b7k_gimel/\u03c0, dominant K\u00e4hler modulus from TCS racetrack stabilization"
+      "eml_description": "EML: ops.div(ops.mul(eml_vec('b3'), eml_vec('constants.k_gimel')), eml_pi()) \u2014 T1 = b3\u00b7k_gimel/\u03c0, dominant K\u00e4hler modulus from TCS (retired reading) racetrack stabilization"
     },
     {
       "path": "geometry.face_moduli_T2",
@@ -2707,7 +2707,7 @@
       "evaluated": 4.0,
       "registered": 4.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(4.0) \u2014 Hodge number h^{1,1}=4 K\u00e4hler moduli from 4 K3 fibres in TCS #187"
+      "eml_description": "EML: eml_scalar(4.0) \u2014 Hodge number h^{1,1}=4 K\u00e4hler moduli from 4 K3 fibres in TCS #187 (retired reading)"
     },
     {
       "path": "geometry.h21",
@@ -2723,7 +2723,7 @@
       "evaluated": 68.0,
       "registered": 68.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(68.0) \u2014 Hodge number h^{3,1}=68 associative 3-cycle moduli in TCS #187"
+      "eml_description": "EML: eml_scalar(68.0) \u2014 Hodge number h^{3,1}=68 associative 3-cycle moduli in TCS #187 (retired reading)"
     },
     {
       "path": "geometry.higgs_vev",
@@ -2893,7 +2893,7 @@
       "evaluated": 4.0,
       "registered": 4.0,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(4.0) \u2014 four K\u00e4hler moduli faces from TCS #187 h^{1,1}=4 construction"
+      "eml_description": "EML: eml_scalar(4.0) \u2014 four K\u00e4hler moduli faces from TCS #187 (retired reading) h^{1,1}=4 construction"
     },
     {
       "path": "geometry.n_generations",
@@ -3522,7 +3522,7 @@
       "evaluated": 1.833,
       "registered": 1.833,
       "rel_error": 0.0,
-      "eml_description": "EML: eml_scalar(1.833) \u2014 Re(T) attractor from TCS #187 G\u2082 flux instanton geometry (geometric input)"
+      "eml_description": "EML: eml_scalar(1.833) \u2014 Re(T) attractor calibrated at the retired TCS seed; not re-derived on Y7 (geometric input)"
     },
     {
       "path": "moduli.re_t_phenomenological",
@@ -4026,7 +4026,7 @@
       "evaluated": 0.0011346578282206302,
       "registered": 0.0011346578282206315,
       "rel_error": 1.1466387263399911e-15,
-      "eml_description": "EML: ops.sqrt(ops.mul(eml_scalar(2.0), eml_vec('pneuma.potential_second_derivative_vev'))) \u2014 sqrt(2 V''(<Psi>)) from curvature at racetrack minimum"
+      "eml_description": "EML: ops.sqrt(ops.mul(eml_scalar(2.0), eml_vec('pneuma.potential_second_derivative_vev'))) \u2014 sqrt(2 V''(\u27e8Psi\u27e9)) from curvature at racetrack minimum"
     },
     {
       "path": "pneuma.lagrangian_valid",
@@ -4068,7 +4068,7 @@
       "evaluated": 6.437241935712391e-07,
       "registered": 6.4372419357118e-07,
       "rel_error": 9.177928787051966e-14,
-      "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.pow(ops.sub(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev')))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), eml_scalar(2.0))), ops.mul(eml_scalar(2.0), ops.mul(ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev')))))))))) \u2014 V''(<Psi>) = 2 (W'')^2 + 2 W' W''' at the racetrack VEV, with A=1.0, B=1.03, a=2pi/24, b=2pi/23 (calibrated at the off-path seed)"
+      "eml_description": "EML: ops.add(ops.mul(eml_scalar(2.0), ops.pow(ops.sub(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev')))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(2.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), eml_scalar(2.0))), ops.mul(eml_scalar(2.0), ops.mul(ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(1.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev'))))))), ops.add(ops.neg(ops.mul(eml_scalar(1.0), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(24.0)), eml_vec('pneuma.vev'))))))), ops.mul(eml_scalar(1.03), ops.mul(ops.pow(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_scalar(3.0)), ops.exp(ops.neg(ops.mul(ops.div(ops.mul(eml_scalar(2.0), eml_pi()), eml_scalar(23.0)), eml_vec('pneuma.vev')))))))))) \u2014 V''(\u27e8Psi\u27e9) = 2 (W'')^2 + 2 W' W''' at the racetrack VEV, with A=1.0, B=1.03, a=2pi/24, b=2pi/23 (calibrated at the off-path seed)"
     },
     {
       "path": "pneuma.vev",
@@ -4227,7 +4227,7 @@
       "evaluated": 1.2840254166877414,
       "registered": 1.2840254166877414,
       "rel_error": 0.0,
-      "eml_description": "EML: ops.exp(ops.inv(eml_vec('topology.K_MATCHING'))) \u2014 S = exp(1/K) TCS neck wavefunction overlap suppression from K3 fibre matching number"
+      "eml_description": "EML: ops.exp(ops.inv(eml_vec('topology.K_MATCHING'))) \u2014 S = exp(1/K) TCS (retired reading) neck wavefunction overlap suppression from K3 fibre matching number"
     },
     {
       "path": "proton_decay.tau_p_years",
