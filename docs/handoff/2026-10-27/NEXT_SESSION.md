@@ -29,8 +29,6 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
 - L3a `metaphysica-zeromodes` / claude/zeromodes: generic `actions/zero_modes.py` (controls:
   Joyce (12, 43); T^7 → 28 vectors and 70 scalars), wired into the G2 step, plus the
   `nonabelian_gauge_source` check (expected to fail: a smooth G2 gives only U(1)^12).
-- Leftover folder `metaphysica-pathmodel` (deregistered worktree, 607 files): delete it once
-  you've checked that it matches core-paper, ignoring CRLF.
 
 ## Findings
 - w0 = -23/24 is correct for the dark_energy_betti default `b3_24` (n = 24), not the
