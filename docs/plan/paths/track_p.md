@@ -1,0 +1,65 @@
+# Track P: one path engine that finds every distinct path and proves it (2026-10-27)
+
+Goal (owner): the branches and pipeline are clearly defined, the code is clean, and one
+generic mechanism finds the right paths through all options and catches what the
+declarations missed.
+
+## Diagnosis
+Three systems answer "which paths exist and what do they change":
+
+| System | Where | Has |
+|---|---|---|
+| variants | `simulations/core/variants.py` (2570 lines) + `switch_search.py`, `fork_implications.py` | the PM catalogue, `resolve`, `forced`, option `requires`/`excludes` |
+| testground | `src/metaphysica/testground/` (10k lines, theory-agnostic, toy theory) | its own copy of `VariantOption`/`Fork`, constraints, enumeration, isolated runs, engine fingerprint, cache, pool, graph export |
+| plan scripts | `PrincipiaMetaphysica/docs/plan/paths/sweep*.py`, `interactions.py` | sequential full builds, changed-row diffs, pairwise interaction check |
+
+Their joins are broken. `theories/pm._convert_option` drops `requires`/`excludes`, and
+`PmSwitches.constraints()` returns `()`, so testground enumerates PM paths that variants
+refuses. `variants.Fork` has no `binding`/`consumers`, so testground sees every PM fork as
+`binding=unknown` and `consumers=()` (inert).
+
+## Target
+- **One model:** `testground.switches.model` is the only `VariantOption`/`Fork`.
+  variants holds PM data and the PM resolve only. Option `requires`/`excludes` become
+  testground `Constraint`s through one generic function.
+- **Gates:** `Fork.applies_when`. A fork acts only when the named forks pick the listed
+  options. A gated-off fork is inert, not forbidden: `canonical(sel)` drops it, so the
+  selection id, enumeration and path count all see one path.
+- **Observed vs declared, both directions (the catch-all):**
+  1. *Read tracker:* `resolve()` counts reads per fork, and each run writes `fork_reads.json`.
+     Not read under S means it cannot matter under S (sound).
+  2. *Output classes:* runs whose rows match within the existing tolerance (rel 1e-12)
+     form one class. That is ground truth for "did not matter here", and it covers value
+     coincidences no declaration can state.
+  3. *Reconcile:* a fork read while its gate is closed fails; a fork unread under S with
+     its gate open is reported as an undeclared gate; an option whose run falls in the
+     `active` class is reported as a no-op unless a gate or the inert list explains it.
+- **Coverage without 2e9 builds:** single deviations give footprints (changed rows). Joint
+  runs only for k-sets (k ≤ 3) of pairwise-overlapping, compatible options. A seeded
+  random sample of full paths is then built and compared with the prediction composed
+  from the singles. Any mismatch is an interaction the footprints missed.
+- **Display:** a class is one node listing its members. It splits the moment any row differs.
+
+## Owner decisions (2026-10-27)
+- `dark_energy_betti`: gated by `dark_energy_mechanism=thawing_quintessence`. A test
+  proves inertness under `mep_11_13`; if mep ever reads n, the test fails.
+- `flavour_seed_coupling=calibrated_24`: keep. It is "seed_24 scoped to flavour". It
+  equals `follow_seed` only when the global b3 is 24; output classes collapse that one
+  duplicate. No declaration.
+- Generalise in testground, not in PM code. The plan scripts retire once the CLI replaces them.
+
+## Lanes
+| Lane | Brief | Depends on | Worktree / branch |
+|---|---|---|---|
+| P1 split variants, one model | briefs/P1-model.md | none | metaphysica-pathmodel / claude/pathmodel |
+| P2 generic audit library | briefs/P2-audit.md | none | metaphysica-pathaudit / claude/pathaudit |
+| P3 gates, read tracker, Betti | (write after P1) | P1 | |
+| P4 `testground sweep`/`audit` CLI; retire plan scripts | (write after P2, P3) | P2, P3 | |
+| P5 real sweep, audit report, site class nodes | (write after P4) | P4 | |
+
+Base for all lanes: metaphysica `core-paper` at 9cc21fd. The main checkout has an
+uncommitted `data/path_comparison.json` that is not ours; leave it.
+
+## Status
+- 2026-10-27: plan written; P1 and P2 started.
+- P2 merged (4031c8e): `testground/audit/` (rows, classes, noop, interactions, sampling, reads, report), 22 tests; contract §7.

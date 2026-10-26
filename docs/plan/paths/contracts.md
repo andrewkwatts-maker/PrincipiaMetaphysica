@@ -139,3 +139,27 @@ is volatile (§5) never ranks as moved; a headline one carries `volatile: true`.
   [Return to main path] clears the selection and reloads without `?path`. Main
   pages show a small gold "Main path" chip linking to the Paths page.
 - Internal links keep `?path=` while a path is selected.
+
+## 7. Path audit: `metaphysica.testground.audit.report.audit()` (`metaphysica.path_audit/1`)
+A plain, JSON-ready dict with sorted keys. Generic: it knows no theory. An option is
+`{"fork": str, "option": str}`; a gate finding is `{"fork": str, "run": str}`.
+```
+{"classes": [{"representative": "<run>", "members": ["<run>", "..."]}],
+ "closed_gate_reads": [{"fork": "...", "run": "..."}],
+ "interaction_sets": [[{"fork": "...", "option": "..."}, "..."]],
+ "mismatches": {"<joint run>": ["<non-additive row>", "..."]},
+ "never_read": ["<fork>"],
+ "no_op_options": [{"fork": "...", "option": "..."}],
+ "schema": "metaphysica.path_audit/1",
+ "undeclared_gates": [{"fork": "...", "run": "..."}]}
+```
+- `classes`: in input order; a run joins the first class whose representative it matches
+  on every row (rel 1e-12, NaN equals NaN). Singleton classes are listed too.
+- `no_op_options`: single deviations that change no row, sorted.
+- `interaction_sets`: sets of 2..k (k <= 4) options from distinct forks that pairwise
+  share a changed row and are compatible; sorted tuples, by size then lexicographically.
+- `mismatches`: only runs with at least one row whose joint value is not allowed by the
+  prediction composed from the single deviations.
+- `never_read`: forks unread in every run. `undeclared_gates`: unread under a selection
+  whose gate is open. `closed_gate_reads`: read although the gate is closed.
+- `to_markdown(report)` renders one short table per non-empty finding kind.

@@ -128,3 +128,9 @@ Seed_24 joint selections must state `n_gen_source=b3_over_dim_O`: sweep_paths va
 against the adopted defaults, where b2_over_faces excludes seed_24, while b3_path uses the
 path's declared source unless one is explicit. Every seed_24 build (single or joint)
 exits 1 on "Audit shadow derivations across the registry" and publishes with --keep-going.
+
+## Owner decisions on the two follow-ups (2026-10-27)
+- dark_energy_betti: a gate (`Fork.applies_when` dark_energy_mechanism=thawing_quintessence),
+  not a `requires`. Inertness under mep_11_13 is pinned by a test. Track P, lane P3.
+- flavour_seed_coupling=calibrated_24: keep, as "seed_24 scoped to flavour". The duplicate
+  path at seed_24 collapses through output classes, with no declaration. Track P, lane P2/P5.
