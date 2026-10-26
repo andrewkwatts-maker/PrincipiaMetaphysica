@@ -51,3 +51,15 @@ Stop and report the precise conflict (file:line). Don't redesign.
 
 ## Report (≤ 15 lines)
 The commits; each count before → after; the groups left for the owner.
+
+## Checkpoint (2026-10-27, branch claude/wording2 in ../metaphysica-wording2)
+Done: section 1 (w0 prose and core_formulas.py 398-412 now say n = 24 from dark_energy_betti);
+stale autogen 160 -> 118 (fresh --fast build; the 265 in the plan predates P1), website 3 -> 0,
+formula_lint superseded 13 -> 0; ceilings lowered. Fork-history strings in
+`simulations/core/variants/catalogue/*.py` got an inline "(Superseded path)" label (23 places;
+reads clumsily, a rewrite is nicer).
+Not done: remaining 118 autogen hits (path_graph 30, theory_output 28, geometric_anchors chain/export 24,
+formulas 7, identity_ledger 7, rest singles) are long-tail strings in many modules; section 2 tail,
+section 3 (21 keeper groups, 56 groups now; non-keepers share an output_param, merging means
+dropping it from their output_params or changing latex, which needs an owner call), section 4
+(317 long sentences, abstract/introduction/conclusion first).

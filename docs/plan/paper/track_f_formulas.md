@@ -56,3 +56,7 @@ all formulas' LaTeX rendered correctly, correct formulas".
   tags 19 → 14, long sentences 317. w0 = -23/24 is the dark_energy_betti default b3_24
   (n = 24), not a bug; the prose that says "b3 = 24" is the error. Next: briefs/W2-wording.md,
   after P1.
+- W2 merged in part (30fd32a). w0 prose names the dark_energy_betti option; website stale
+  3 → 0. Its 23 inline "(Superseded path)" labels were reverted (c9a9e2d): the scan excuses any
+  hit near that text, so labels lowered counts without changing the reading. Honest ratchets:
+  autogen 159, formula superseded 12. Next: briefs/W3-wording.md.

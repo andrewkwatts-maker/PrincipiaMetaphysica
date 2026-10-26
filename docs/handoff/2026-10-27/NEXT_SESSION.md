@@ -18,14 +18,15 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
   26D → 13D → 6D → 4D; the 26D/13D/4D action formulas render from it; 5 duplicates retired.
 - W1 8615661: stale autogen 277 → 265, website 15 → 3; prose_lint and duplicate_statements
   with ratchets; `_RETIRED` pattern pinned. 1d6451b re-pins the old-introduction hash.
+- W2 30fd32a (partial): w0 prose fixed, website stale 0; ratchets autogen 159, formula 12.
 - P1 f06142f: `variants` is a package; testground's `Fork` is the only fork model. Full
   suite on f06142f: 3873 passed, 424 skipped, 0 failed.
 
 ## Running at handoff (worktrees beside the engine; review, merge `--no-ff`, remove)
 - P3 `metaphysica-pathgates` / claude/pathgates: fork gates (dark_energy_betti only under
   thawing), read tracker → `fork_reads.json`, PM `testground validate` (5 problems).
-- W2 `metaphysica-wording2` / claude/wording2: "b3 = 24" prose → the dark_energy_betti
-  option; stale hits; 21 duplicate groups with a keeper; long sentences (317).
+- W2 merged in part (30fd32a); next lane W3 (briefs/W3-wording.md): close the callout loophole,
+  then rewrite stale text at its source (autogen 159) and split long sentences (317).
 - L3a `metaphysica-zeromodes` / claude/zeromodes: generic `actions/zero_modes.py` (controls:
   Joyce (12, 43); T^7 → 28 vectors and 70 scalars), wired into the G2 step, plus the
   `nonabelian_gauge_source` check (expected to fail: a smooth G2 gives only U(1)^12).
