@@ -10,7 +10,7 @@ Plans: `docs/plan/paths/track_p.md` (P), `docs/plan/geometry/track_l_action_ladd
 Token rule (receipts session): each brief has a budget of about 60 tool calls and a hard stop at about 100 turns,
 then a checkpoint in the brief. Never kill processes by name; kill only your own PIDs.
 
-## Merged into engine `core-paper` (now f06142f, not pushed)
+## Merged into engine `core-paper` (not pushed)
 - F1 3190f90 + d61220b: MathJax 3.2.2 render gate (`tools/texcheck`, build step), one shared
   config, formula lints (measure, Planck exponent, superseded). Render errors 11 → 0.
 - L1 c9c1f2f, L2a 36bb6a4, L2c e7ae865: `metaphysica.actions` (fields, terms, dimensions,
@@ -43,7 +43,7 @@ forks), L3b, F2, L2b.
   `<scratchpad>/w1m/build`, pre-P1).
 
 ## Owner decisions open
-1. Item 6: where the second time goes in 26 → 13 (the ladder's only failing check).
+1. Item 6: where the second time goes in 26 → 13 (the first failing ladder check; L3a's two follow).
 2. Retire de-frt-lagrangian-v19, f-r-t-tau-lagrangian-v18, pneuma-lagrangian? (marked "Not
    derived from the master action").
 3. reduced-lagrangian-4d sign convention (item 5).
