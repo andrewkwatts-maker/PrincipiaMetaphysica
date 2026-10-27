@@ -53,7 +53,8 @@ rho_breath) are reported OPEN at their step, not hidden.
 | L2c render every published action statement from the ladder; retire duplicates | (write after L2a, F1) | L2a, F1 |
 | L2b action forks and gated terms | (write after L2a, P3) | L2a, P3 |
 | L3a zero modes on the seed, nonabelian gauge source | briefs/L3a-zero-modes.md | L2 |
-| L3b D-028 Betti (reasons per invalid class), D-029 pre-registration | (write after L3a) | L3a |
+| L3b D-028 invalid reasons, codim-7 local types, gauge-source candidates | briefs/L3b-gauge-source.md | L3a |
+| L3c D-029 pre-registration | (write after L3b) | L3b |
 
 ## L3a result (merged 48ad890)
 - Generic `actions/zero_modes.py`. Controls: Joyce (12, 43) gives 12 vectors and 43 chirals;
@@ -74,3 +75,4 @@ rho_breath) are reported OPEN at their step, not hidden.
 - 2026-10-27: plan written; L1 started. L2 split into L2a (no forks, starts after L1) and L2b.
 - L1 merged (c9c1f2f): `metaphysica.actions`, 35 tests, every control and failing control computed; LEGAL.txt. L2a started (briefs/L2a-master-ladder.md).
 - L2a merged (36bb6a4). L2c merged (e7ae865): 26D/13D/4D action formulas render from the ladder; 5 duplicates retired; de-frt, f-r-t-tau and scalar pneuma-lagrangian marked "Not derived from the master action" (owner: retire?). Open: owner item 6 (second time in 26 -> 13) is the only failing ladder check; reduced-lagrangian-4d still mostly-minus.
+- L3a merged (48ad890); see "L3a result". L3b started (briefs/L3b-gauge-source.md).

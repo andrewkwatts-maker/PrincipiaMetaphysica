@@ -53,7 +53,8 @@ refuses. `variants.Fork` has no `binding`/`consumers`, so testground sees every 
 |---|---|---|---|
 | P1 split variants, one model | briefs/P1-model.md | none | metaphysica-pathmodel / claude/pathmodel |
 | P2 generic audit library | briefs/P2-audit.md | none | metaphysica-pathaudit / claude/pathaudit |
-| P3 gates, read tracker, Betti | (write after P1) | P1 | |
+| P3 gates, read tracker, Betti | briefs/P3-gates-reads.md | P1 | metaphysica-pathgates / claude/pathgates |
+| P3b every fork read, gated or explained | briefs/P3b-unread-forks.md | P3 | metaphysica-unread / claude/unread |
 | P4 `testground sweep`/`audit` CLI; retire plan scripts | (write after P2, P3) | P2, P3 | |
 | P5 real sweep, audit report, site class nodes | (write after P4) | P4 | |
 
@@ -75,5 +76,5 @@ uncommitted `data/path_comparison.json` that is not ours; leave it.
   Three signals (validity, consistency, elegance) are not measured (`theories/pm/__init__.py:132`
   declares only data.n_fail, data.n_tension). Decide: a "declared" kind that validate skips, or
   adopt an option; and whether the three signals are measured or dropped.
-- Next: the 8 never-read forks are candidates for a gate or retirement (P4: each one is read
-  somewhere off the default path, or it is dead).
+- P3b started (briefs/P3b-unread-forks.md): each of the 8 never-read forks is gated, rerouted
+  through `resolve`, or listed dead for the owner; a guard test pins the rest.
