@@ -30,10 +30,29 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
 - Lint tests that read PM_PUBLISHED_ROOT fail on the stale default build; point them at
   `<scratchpad>/w2m/build` or a fresh build.
 
-## Running: E1 (claude/established), E3a (claude/chains). Merged this round: P3b 24bd5a9, L3b
-2abe983, PID fix ae43ec7, W3 9ceca21, E2 3aaa2ec. Track E plan: docs/plan/physics/.
+## Second session (periodica-17, 23:00): merged into core-paper (not pushed)
+E3a b41230b, E1 def7eeb, F2a c2a8546, P4 6eff829, L2b f3f9d5a, F2b b34c640. Results are in each
+track's Status (track_e, track_f, track_p, track_l). Latest good fast builds: H:/claude-scratch/
+f2b/new2 (core-paper + F2b) and H:/claude-scratch/l2b/build1. Set PM_PUBLISHED_ROOT and
+METAPHYSICA_OUT to one of them; the default runs_g build is stale.
+Earlier this round: P3b 24bd5a9, L3b 2abe983, PID fix ae43ec7, W3 9ceca21, E2 3aaa2ec.
+
+## Running: P5a singles sweep (start here)
+claude/sweep 8ac2f13 (not merged). One background sweep, shell PID 2348584, log
+H:/claude-scratch/p5a/sweep.log, about 62 builds of about 10 min each. When it exits, run the audit
+command in the Checkpoint of paths/briefs/P5a-real-sweep.md, merge 8ac2f13, then write P5b
+(joint + sample sweeps, site class nodes, retire plan scripts). Don't edit src in
+metaphysica-sweep while it runs (the engine fingerprint covers it).
+
+## Next briefs to write
+P5b (after the P5a audit); F2c (qed, 288-roots appendix, residue registry, four-face G2; 177
+left); E3b and L3c wait on owner decisions 7 and 6.
 
 ## Findings
+- 2026-10-27 ~23:00: C: reached 0 bytes free (receipts session temp 53 GB). All builds and
+  scratch now go to `H:/claude-scratch/<lane>/` with TEMP/TMP=H:/claude-scratch/tmp.
+- F2b: 8 of 72 gates fail on PM; 5 because validate_gate hardcodes b3 = 24 vs elder_kads 43.
+  ew-weinberg-angle-v19's stated product is wrong (0.462, not 0.2312). See track_f.
 - w0 = -23/24 is correct for the dark_energy_betti default `b3_24` (n = 24), not the
   geometry's b3 = 43. The prose that says "b3 = 24" is the error (W2).
 - Spinors: 26D (24,2) has s−t ≡ 6 mod 8, so pseudo-Majorana but no Majorana–Weyl; 64×64 =
@@ -50,8 +69,10 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
 4. The 34 duplicate-statement groups with no keeper.
 5. Declared-only forks gauge_origin and consciousness_model, and the 3 unmeasured signals.
 6. L3a: add a p-form to the 13D action and/or name a D-028 SU(3)xSU(2) class as the gauge
-   source; declare or stabilise the 43 moduli.
-
-## Next briefs to write
-F2 (triple-track for the 347 unchecked formulas), P4 (sweep CLI), P5, L2b (action forks),
-L3c (pre-register D-029, after L3b).
+   source; declare or stabilise the 43 moduli. (L2b's bulk-sector forks add no terms yet, so
+   gauge checks stay BLOCKED under every option.)
+7. Which b3 the 72 gates mean: validate_gate hardcodes 24, the registry is 43 (5 of 8 failing
+   gates). With E3b: stop publishing elder_kads = 24 / b3_modular = 24 at the source?
+8. E3a beyond its brief: the ALP coupling now reads its registry row (1e-11 → 1.23e-6 GeV⁻¹);
+   keep or revert.
+9. ew-weinberg-angle-v19 states (12/24)·0.924 = 0.2312; the product is 0.462. Fix or retire.

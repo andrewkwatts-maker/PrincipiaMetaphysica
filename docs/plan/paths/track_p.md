@@ -55,8 +55,9 @@ refuses. `variants.Fork` has no `binding`/`consumers`, so testground sees every 
 | P2 generic audit library | briefs/P2-audit.md | none | metaphysica-pathaudit / claude/pathaudit |
 | P3 gates, read tracker, Betti | briefs/P3-gates-reads.md | P1 | metaphysica-pathgates / claude/pathgates |
 | P3b every fork read, gated or explained | briefs/P3b-unread-forks.md | P3 | metaphysica-unread / claude/unread |
-| P4 `testground sweep`/`audit` CLI; retire plan scripts | (write after P2, P3) | P2, P3 | |
-| P5 real sweep, audit report, site class nodes | (write after P4) | P4 | |
+| P4 `testground sweep`/`audit` CLI; retire plan scripts | briefs/P4-sweep-cli.md | P2, P3 | metaphysica-sweepcli / claude/sweepcli |
+| P5a real singles sweep + audit; NOT_RUNNABLE cause | briefs/P5a-real-sweep.md | P4 | metaphysica-sweep / claude/sweep |
+| P5b joint + sample sweeps, site class nodes, retire plan scripts | (write after P5a) | P5a | |
 
 Base for all lanes: metaphysica `core-paper` at 9cc21fd. The main checkout has an
 uncommitted `data/path_comparison.json` that is not ours; leave it.
@@ -85,3 +86,19 @@ uncommitted `data/path_comparison.json` that is not ours; leave it.
 - Fix ae43ec7: the fork read files were `<pid>.json`, and Windows reuses PIDs within a build, so
   later steps overwrote earlier reads (11 vs 14 forks between builds). Now `<pid>-<uuid>.json`;
   a fresh build reads 14 forks over 43 processes.
+- P4 merged (core-paper 6eff829, lane 7681390 + 3b6a3ab; tests/testground 524 passed merged).
+  `testground sweep` (--singles/--only, --joint K, --sample N --seed S, --dry-run, resume by
+  fingerprint; --jobs > 1 refused for PM, hardcoded `shared_state` set in sweep/execute.py) and
+  `testground audit` (classes, no-ops, interactions, non-additive, reads, failures; schema /2;
+  exit 3 on a closed-gate read or non-additive row). PM dry-run: 62 selections (default + 61
+  singles). Smoke cut short by C: full; 4 runs audited: 4 classes, 1 no-op, 0 closed-gate reads.
+  Every PM run is NOT_RUNNABLE because a late build step exits non-zero (likely the texcheck
+  `npm ci` in the worktree) and the PM build has no --keep-going. Plan scripts kept until P5
+  proves the CLI on a real sweep. P5 needs: builds on H: with TEMP/TMP there; npm ci in the
+  worktree; a PM-side `shared_state` declaration instead of the hardcoded set.
+- P5a (claude/sweep 8ac2f13, not merged): shared_state is a Theory attribute (PM True). P4's
+  NOT_RUNNABLE was environment (texcheck node_modules, C: full): the default build is clean
+  (566 s). Singles sweep running since ~2026-10-27 22:50 (shell PID 2348584, log
+  H:/claude-scratch/p5a/sweep.log, runs H:/claude-scratch/p5a/runs, ~62 builds × ~10 min).
+  Next: when it exits, run the audit command in the P5a Checkpoint, then merge 8ac2f13 and
+  write P5b.

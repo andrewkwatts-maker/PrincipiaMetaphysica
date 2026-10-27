@@ -62,3 +62,21 @@ parameter as falsifiable and justified as possible.
   value per quantity for the 10 read conflict groups; (4) per sector, cut UNJUSTIFIED and
   UNFALSIFIABLE.
 - E3a started (briefs/E3a-chains-scores.md), base 3aaa2ec.
+- E3a merged (core-paper b41230b, lane 473236e): `generators/derivation_chain.py`; 227 of 813
+  rows carry `derivation_chain`; 77 declared formulas fail the check (mostly the parameter is
+  missing from `output_params`), pinned at a ceiling of 77. Circular count 6 → 2; ckm.V_td,
+  V_ts, V_tb and neutrino.dm2_21 are now CALIBRATION_CHECK. The oracle reads every kill switch
+  from its registry row: fifth force 5.62e-5 → 1.774e-9 (now VIABLE), sterile ν 0.01 → 7.86e-5
+  (MARGINAL), KK gravitons 4.5 → 5.0, proton decay 4.757e34 → 4.7574e34; Cross_Pair_Bell has
+  "no registry row". Beyond the brief: the ALP coupling is read from
+  portals.alp_photon_coupling_gev_inv (1e-11 → 1.23e-6 GeV⁻¹, still IMMINENT_TEST); the owner
+  may revert it. No row values changed. 355 of 553 DERIVED/GEOMETRIC/PREDICTED rows have no
+  derivation_formula (geometric_anchors 82 lead).
+- E1 merged (core-paper def7eeb, lane e528a48; 93 tests pass on it; b41230b fresh build passed, 26 E3a tests): generic
+  `EstablishedCheck` catalogue in `actions/established*.py`; ladder report gains `established`.
+  29 REPRODUCED, 0 FAILS, 16 BLOCKED. Gravity (Schwarzschild, weak field with G_N = 1/(8πM²),
+  Friedmann, waves with D(D−3)/2 polarisations), Dirac, universal coupling and the Planck-mass
+  step reproduce on A4/A6/A13 (A26 too, except Schwarzschild: symbolic D=26 > 20 min, skipped).
+  Gauge (Maxwell, YM, anomalies, Higgs) BLOCKED on A4:L_SM (D-011), A26:ym, A26:V. A26's second
+  time is a flat spectator in the weak-field and FLRW checks. Gauge checks are tested only on
+  `sm_gauge_action()`. report() takes ~66 s.

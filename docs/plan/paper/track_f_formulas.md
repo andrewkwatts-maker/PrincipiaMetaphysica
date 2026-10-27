@@ -44,7 +44,8 @@ all formulas' LaTeX rendered correctly, correct formulas".
 | F1 render gate, shared MathJax config, formula lints, fix all hits | briefs/F1-render-gate.md | none | metaphysica-texgate / claude/texgate |
 | L2a master action as a checked ladder | ../geometry/briefs/L2a-master-ladder.md | L1 | merged 36bb6a4 |
 | L2c render action formulas from the ladder; retire duplicates | ../geometry/briefs/L2c-render-from-ladder.md | L2a, F1 | metaphysica-ladderrender / claude/ladderrender |
-| F2 triple-track coverage of the unchecked 347 | (write after F1) | F1 | |
+| F2a unchecked set ratcheted, non-numeric reasons, first batch | briefs/F2a-triple-track.md | F1 | metaphysica-triple / claude/triple |
+| F2b the 72 gates and sector formulas | briefs/F2b-triple-track.md | F2a | metaphysica-triple2 / claude/triple2 |
 | W1 stale wording to 0, duplicates, concision | briefs/W1-wording.md | F1 | metaphysica-wording / claude/wording |
 
 ## Status
@@ -67,3 +68,19 @@ all formulas' LaTeX rendered correctly, correct formulas".
   regex. Long sentences 317 → 288. Open (Checkpoint in W3-wording.md): path_graph 46,
   variants.json 14, identity_ledger 7 claim ids, the introduction and conclusion. Better: stop
   publishing geometry.elder_kads = 24 and topology.b3_modular = 24 at the source (E3b).
+- F2a merged (core-paper c2a8546, lane b32c897; 315 tests pass merged). The 347 unchecked had
+  no `value` at all (status ""), none FLOAT_ONLY. `Formula.non_numeric` (reason; registration
+  raises if a value is also set), `closed_form(spec, env)` in core/triple_helpers.py,
+  `test_triple_ratchet` (pin 273). OK 206 → 218 (12 cosmology formulas, no disagreements);
+  62 non-numeric (action densities, field equations, tensor definitions). Left 273: top
+  appendix_f_72gates 73 (pass/fail gates), matter/gauge/cosmology_sector_complete 15/14/12,
+  qed 11. Ratchet tests read the build through METAPHYSICA_OUT as well as PM_PUBLISHED_ROOT.
+- F2b (claude/triple2, 2 commits, acceptance pending: C: hit 0 bytes mid-build; rerunning on
+  H:/claude-scratch/f2b). Gates: 11 numeric (triple-checked), 61 + omega-hash-72 predicates
+  (non_numeric). On PM 64 pass, 8 fail (6, 9, 12, 22, 29, 31, 63, 72); 6/9/12/22/31 fail
+  because validate_gate hardcodes b3 = 24 while the registry's TORSION_PINS (elder_kads) is 43
+  (gate 31 gives 850.91 GeV). Gates not changed: owner/E3b question (which b3 the gates mean).
+  Finding: ew-weinberg-angle-v19 states (12/24)·0.924 = 0.2312, but the product is 0.462.
+- F2b merged (core-paper b34c640, lane ca4a106/7ad3fdb/aa85c17): unchecked pin 273 → 177;
+  parameters.json values unchanged. Next (F2c): qed (X_bulk·(1+ε) with CODATA inputs), the
+  288-roots appendix, residue registry, four-face G2; and the owner question on the gates' b3.
