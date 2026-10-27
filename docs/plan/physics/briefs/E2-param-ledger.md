@@ -37,6 +37,11 @@ Give each row exactly one class, with the evidence that earns it:
 Map every one of the 30 labels in a single table in code. An unknown label fails the test.
 List the ambiguous labels (VALIDATION, SYSTEM, TERMINAL, ...) for the owner, with an example row.
 Cross-check: every free_variables.json row must land in a non-derived class.
+**Value conflicts:** list rows that name the same quantity with different values in one build.
+Use free_set's duplicate groups plus a same-final-name match. Known example: geometry.elder_kads
+= 24 (geometric_anchors) and topology.b3_modular = 24, while topology.elder_kads = particle.b3 =
+cosmology.b3 = 43. For each conflict, list the rows that read the off-path value (follow
+derivation_chain). Report these; don't fix them.
 
 ## 2. Falsifiability record (physical observables only)
 - TESTED_NOW: value, experimental value, uncertainty and sigma, with PASS / TENSION / FAIL as
@@ -67,4 +72,4 @@ Stop and report the precise conflict (file:line). Don't redesign.
 
 ## Report (≤ 15 lines)
 The commits; counts per class; counts per falsifiability state; the circular rows; the top 5
-UNJUSTIFIED sources; the ambiguous labels.
+UNJUSTIFIED sources; the ambiguous labels; the value conflicts and how many rows read each.
