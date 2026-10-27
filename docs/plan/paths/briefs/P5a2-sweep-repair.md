@@ -84,3 +84,8 @@ Stop and report the precise conflict (file:line). Don't redesign.
 - How refused singles are handled.
 - The 7 not-implemented options.
 - The sweep PID, or the audit: classes, no-ops, closed-gate reads, failure groups with counts.
+
+## Checkpoint
+- Done: partial runs (Stage.rows_written, COMPLETED_WITH_FAILURES, PM passes --keep-going); constrained singles (repair if unique, else refused and listed); b2_over_faces excludes seed_7/19/31; tests; commit 8ae8cc3 on claude/sweep; sweep restarted detached, PID 25076.
+- Not done: the audit (sweep still running, ~62 builds x ~10 min).
+- Next: when PID 25076 exits, run the audit command from section 4 (cwd W, absolute PYTHONPATH, TEMP/TMP on H:), then merge 8ae8cc3 and write P5b. Pre-existing failures: tests/test_variants.py::test_every_option_states_a_consequence (exponent_24 consequence too short); test_2c_pool concurrent test flakes (pool ERROR) under load.

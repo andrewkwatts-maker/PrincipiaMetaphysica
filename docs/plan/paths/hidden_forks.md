@@ -80,3 +80,11 @@ Next tier: H09 (alpha_leak literal), H26/H27 (n_gen = 3 literals, contradict `n_
 ## Not done
 - Rows reached are not traced; a runtime read-trace (as `fork_reads.json` does for forks) for the literal sites would give counts.
 - Did not search `config/` or `website/` for the same literals.
+
+## H2 status (2026-10-28, branch claude/wirehidden in metaphysica-wirehidden)
+Paths are under `src/metaphysica/simulations/`.
+- H07 wired: `core/FormulasRegistry.py` `__init__` (`_chi_eff_total`, `_chi_eff`) via `_chi_eff_from_route` and `PM/geometry/chi_eff_branches.py:registry_chi_eff_total`. k3_reading/unruled/constant_144 give 144 (72 per sector); seed_dependent gives b3^2/4 (462.25 at b3 = 43).
+- H08 wired (7 literal sites to `get_registry().chi_eff_total`): `PM/gauge/asymptotic_safety.py:506`, `PM/geometry/bridge_geometry.py:512`, `PM/geometry/four_face_structure.py:2414`, `PM/particle/higgs_brane_partition.py:315`, `PM/support/complete_residue_registry.py:426`, `PM/particle/octonionic_mixing.py:1779`, `PM/validation/adversarial_axiom_tester.py:72`. Pinned with comment (unreachable fallbacks, equal to k3_reading): `PM/cosmology/multi_sector.py:172`, `PM/field_dynamics/pneuma_mechanism.py:257`. The other matches of the rg are prose or docstrings. These sites still hold `b3 = 24` (decision 7).
+- H12 wired: `PM/cosmology/dynamical_lambda.py` `CHI_EFF` and `N_BRIDGES` (= chi_eff/12, 12 at 144). `B3` untouched (decision 7).
+- H26 wired for n_gen: `PM/algebra/gaugino_condensation.py` both `n_gen` sites via `_resolved_n_gen()` (n_gen_source). `N1 = 24`, `N2 = 23` untouched (decision 7). Refused: none.
+- Tests: `tests/test_hidden_forks_wired.py`.

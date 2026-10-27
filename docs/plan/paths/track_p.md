@@ -102,3 +102,10 @@ uncommitted `data/path_comparison.json` that is not ours; leave it.
   H:/claude-scratch/p5a/sweep.log, runs H:/claude-scratch/p5a/runs, ~62 builds × ~10 min).
   Next: when it exits, run the audit command in the P5a Checkpoint, then merge 8ac2f13 and
   write P5b.
+- P5a2 (claude/sweep 8ae8cc3): singles sweep restarted detached (PID 25076, log
+  H:/claude-scratch/p5a/sweep2.log, runs H:/claude-scratch/p5a/runs); first attempt died at 22/62.
+  Partial runs (rows written, build exits non-zero) are COMPLETED_WITH_FAILURES and audited. The 7
+  NOT_RUNNABLE "not implemented" options are lineage-declared only (`implemented=False`, no raise),
+  in theories/pm/lineage/branches.yaml: n_gen_source=thermal_winding :1946, re_t_adoption=higgs_vev_174
+  :1967, re_t_adoption=m2_instanton :1977, dark_energy_mechanism=thermal_time :1988,
+  =mashiach_quintessence :1998, =pi_attractor :2007, =flux_attractor :2017. Not implemented here.

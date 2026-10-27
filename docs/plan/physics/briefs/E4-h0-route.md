@@ -70,3 +70,25 @@ Stop and report the precise conflict (file:line). Don't redesign.
 - What each fix was.
 - The three option builds' H0 values before and after.
 - Any other new shadow conflict those builds show (name only; don't fix it).
+
+## Trace (E4, worktree metaphysica-h0route)
+| H0 row | Producer | Computes from | Reads h0_route / b3_seed |
+|---|---|---|---|
+| cosmology.H0_local | ricci_flow_h0 (registers `_REG.h0_local`) | FormulasRegistry.calculate_h0_local (O'Dowd; b3 via elder_kads) | yes, both (resolve h0_route; b3 seed) |
+| cosmology.H0_ricci_variant | ricci_flow_h0 | own H(z=0) from Planck H0 and 31 deg angle | no, route-independent, DISTINCT |
+| geometry.H0_local / H0_early | geometric_anchors | SH0ES / Planck anchors | no (data) |
+| cosmology.H0_resolved_km_s_Mpc, H0_baseline | cosmological_tensions | 73.04 anchor + ~1e-13 shift | no (anchor restated) |
+| cosmology.H0_late_evolved | evolution_engine | built on 73.04 anchor | no |
+| cosmology.H0_physical, H0_odowd | appendix_z ledger, cosmology_sector_complete | own arithmetic, DISTINCT | no |
+
+Finding: the producer already reads the route. The "conflict" is the audit comparing the route-dependent
+cosmology.H0_local against route-independent anchors. Fix: observable_groups.effective_groups drops
+cosmology.H0_local from the H0_local group when h0_route or b3_seed is off the adopted option, reason in
+H0_OFF_PATH_REASON. Default group unchanged. Commit 3c80676.
+
+## Result (E4)
+Commit 3c80676 on claude/h0route. Builds in H:/claude-scratch/e4/{default,kk,ricci,seed24}: audit shows only the
+known conflicts (theta_13, n_s, m_higgs; seed24 lacks m_higgs). H0_local: default 71.74, kk 67.4, ricci 76.34, seed24 71.55.
+Off-path H0_local is still compared with SH0ES by gate 47 (generators/generate_72_certificates.py:422, sigma vs 73.04).
+Data anchors restated as derived: H0_resolved_km_s_Mpc (73.04+~1e-13), H0_baseline, H0_late_evolved, H0_physical.
+Note: G47 `result` string stays "71.55" under kk/ricci (label updates); not fixed.
