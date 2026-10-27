@@ -76,5 +76,9 @@ uncommitted `data/path_comparison.json` that is not ours; leave it.
   Three signals (validity, consistency, elegance) are not measured (`theories/pm/__init__.py:132`
   declares only data.n_fail, data.n_tension). Decide: a "declared" kind that validate skips, or
   adopt an option; and whether the three signals are measured or dropped.
-- P3b started (briefs/P3b-unread-forks.md): each of the 8 never-read forks is gated, rerouted
-  through `resolve`, or listed dead for the owner; a guard test pins the rest.
+- P3b merged (24bd5a9): joyce_contribution_table gated on b3_origin=joyce_twisted_sector;
+  `test_every_fork_accounted` pins `UNREAD_OK` at 7. Off-build readers only: b3_origin,
+  metric_construction, twisted_norm_convention; n_gen_source read only when explicit (routing
+  it would change values: seed_24 declares b3_over_dim_O, fork default b2_over_faces). Dead
+  (owner: retire?): bulk_signature, face_genericity, moduli_indexing. Untraced: the P3b build
+  reads theory_uncertainty_policy and the baseline doesn't.
