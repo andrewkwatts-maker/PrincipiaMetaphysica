@@ -38,7 +38,8 @@ parameter as falsifiable and justified as possible.
 |---|---|---|---|
 | E1 established physics on the PM ladder | briefs/E1-established.md | L3a | metaphysica-established / claude/established |
 | E2 parameter justification + falsifiability ledger | briefs/E2-param-ledger.md | none | metaphysica-paramledger / claude/paramledger |
-| E3 reduce ANSATZ/FITTED/UNRESOLVED per sector | (write after E1, E2) | E1, E2, owner | |
+| E3a chains at source, honest scores, kill switches | briefs/E3a-chains-scores.md | E2 | metaphysica-chains / claude/chains |
+| E3b one value per quantity; E3c per-sector cuts | (write after E3a) | E3a, owner | |
 
 ## Status
 - 2026-10-27: plan and briefs E1, E2 written.
