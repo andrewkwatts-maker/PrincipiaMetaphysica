@@ -70,3 +70,11 @@ Stop and report the precise conflict (file:line). Don't redesign.
 - The integral-χ pairs.
 - The anchors' new status.
 - The cause of the flaky pool test.
+
+## Checkpoint
+Worktree: H:/Projects/MathsPhysicsEcosystem/metaphysica-small, branch claude/small, commit 47d634e.
+Done: items 1-4 coded, committed, with tests (test_chi_eff_integral, test_restated_anchors, test_2c_pool extended-prefix test, test_hidden_forks_wired updated).
+Item 4 cause: isolation._inside compared Path.resolve() of base vs a path whose parents another pool thread was creating; Windows resolve returned the \?\ prefixed form for one, so is_relative_to failed ("outside the run base"). Fixed with _plain(). 18/18 runs pass at 3x concurrency.
+Not done / pending: fresh default build at H:/claude-scratch/h3/default (started, was still running) then cmp_params vs H:/claude-scratch/h2/default; tests/test_derivation_chains.py needs PM_PUBLISHED_ROOT and METAPHYSICA_OUT set to that build (3 tests fail without it); tests/testground x5 (started in background).
+Pre-existing failures on core-paper (also fail unmodified): test_option_status population pin; test_fork_implications (2) count drift.
+Note: gate 47 result string now comes from the value (default build text may change from "71.55" to the live H0_local, 2 dp).

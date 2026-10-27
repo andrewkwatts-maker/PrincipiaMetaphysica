@@ -61,3 +61,8 @@ Stop and report the precise conflict (file:line). Don't redesign.
 - Conversions and non-numeric markings by module.
 - Every disagreeing formula, with both values.
 - The remaining unchecked formulas by module (top 5).
+
+## Checkpoint (2026-10-28)
+Done (claude/triple3 in metaphysica-triple3, 1 commit, not pushed): pin 177 -> 126. 24 converted: qed 11 (via qed_gate_kwargs in PM/qed/_triple_track.py, eps as the literal 1/(288*10^2)), appendix_h_288_roots 7, appendix_g 2, appendix_i 3, lagrangian_master root-lattice-288 1. 27 non_numeric: residue registry 4, four_face 6, cosmology_intro 6, appendix_g 4, appendix_i 3, lagrangian_master 4. Build H:/claude-scratch/f2c/new (723 s): six suites pass; parameters.json values identical to h2/default.
+Findings: in closed_form the b3 leaf is the live registry b3 = 43, so trees using 12*b3 give eps = 1/51600; specs use literals 24/288 instead (owner decision 7 untouched). molar-gas value is N_A*k_B from exact SI (8.31446261815), not the module's rounded CODATA_R (1.8e-10 off, beyond the 1e-12 tolerance). sterile-projection-filter is registered as sin(theta_s) = 125/288. No disagreeing leg.
+Not done: residue registry neutrino-sum-prediction, proton-decay-lifetime, gut-scale-g2 (need live chi_eff, M_Pl); matter/cosmology_sector_complete 7 each, s8 6, axion 6, dark_energy 5.
