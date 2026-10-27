@@ -30,8 +30,8 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
 - Lint tests that read PM_PUBLISHED_ROOT fail on the stale default build; point them at
   `<scratchpad>/w2m/build` or a fresh build.
 
-## Running (launched after ec59f79): W3 (claude/wording3), P3b (claude/unread, the 8 never-read
-forks), L3b (claude/gaugesrc, D-028 gauge-source candidates). Review, test-merge, ff each.
+## Running: W3 (claude/wording3), L3b (claude/gaugesrc), E1 (claude/established, docs/plan/physics).
+Queued: E2 (briefs/E2-param-ledger.md) when a slot frees. P3b merged 24bd5a9.
 
 ## Findings
 - w0 = -23/24 is correct for the dark_energy_betti default `b3_24` (n = 24), not the
