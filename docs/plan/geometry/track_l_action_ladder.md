@@ -75,4 +75,12 @@ rho_breath) are reported OPEN at their step, not hidden.
 - 2026-10-27: plan written; L1 started. L2 split into L2a (no forks, starts after L1) and L2b.
 - L1 merged (c9c1f2f): `metaphysica.actions`, 35 tests, every control and failing control computed; LEGAL.txt. L2a started (briefs/L2a-master-ladder.md).
 - L2a merged (36bb6a4). L2c merged (e7ae865): 26D/13D/4D action formulas render from the ladder; 5 duplicates retired; de-frt, f-r-t-tau and scalar pneuma-lagrangian marked "Not derived from the master action" (owner: retire?). Open: owner item 6 (second time in 26 -> 13) is the only failing ladder check; reduced-lagrangian-4d still mostly-minus.
-- L3a merged (48ad890); see "L3a result". L3b started (briefs/L3b-gauge-source.md).
+- L3a merged (48ad890); see "L3a result".
+- L3b merged (2abe983); table `d028_gauge_source.md`. Reasons over 740 classes: 370 all three
+  (crossings, non-A strata, non-free normals), 334 crossings only, 36 none. The 139 SU(3)xSU(2)
+  hits: 122 all three, 17 crossings only, so none is Betti-valid. All 92 hits with codim-7
+  points have SU(3)-SU(2) meeting points (necessary condition only). In 1808 codim-7 orbits, H
+  never acts freely on S^6 (every G2 element fixes a line): a flat T^7/Gamma has no isolated
+  Acharya-Witten cone, so chiral matter needs a resolved or non-flat geometry. Top rows:
+  classes 228 and 293 (order 192), 234, 236 and 386 (order 384), each with one SU(3) adjoint chiral.
+  Next: L3c (pre-register D-029) only after the owner rules on decision 6.
