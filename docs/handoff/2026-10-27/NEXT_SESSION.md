@@ -64,8 +64,14 @@ Earlier this round: P3b 24bd5a9, L3b 2abe983, PID fix ae43ec7, W3 9ceca21, E2 3a
   axion_dm, dark_energy); E5 for the shadow conflicts theta_13, n_s, m_higgs (KNOWN_CONFLICTS).
 
 ## Next briefs to write
-P5b (after the P5a audit); F2c (qed, 288-roots appendix, residue registry, four-face G2; 177
-left); E3b and L3c wait on owner decisions 7 and 6.
+One deliverable per brief, about 60 tool calls (receipts, 2026-10-28: H3's 4 items took 109
+calls and another agent ran 168 turns). Split multi-item work into separate briefs.
+- P5b (after the P5a audit): split joint sweeps, sample sweeps, site class nodes and plan-script
+  retirement into separate briefs.
+- F2d: the 126 unchecked formulas, one module group per brief (matter/cosmology sector v19, s8,
+  axion_dm, dark_energy, then the residue rows that need live chi_eff and M_Pl).
+- E5: one brief per shadow conflict (theta_13, n_s, m_higgs).
+- E3b and L3c wait on owner decisions 7 and 6.
 
 ## Findings
 - 2026-10-27 ~23:00: C: reached 0 bytes free (receipts session temp 53 GB). All builds and
