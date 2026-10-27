@@ -42,3 +42,21 @@ parameter as falsifiable and justified as possible.
 
 ## Status
 - 2026-10-27: plan and briefs E1, E2 written.
+- E2 done (claude/paramledger 1d80ac1; summary `parameter_ledger.md`):
+  - **`derivation_chain` is empty on all 813 rows**, so no registry row records how it was
+    derived. The ledger rebuilds chains from formulas.json (inputs → outputs).
+  - Classes: GEOMETRY 354, UNJUSTIFIED 223, MEASURED_INPUT 109, CONVENTION_SYSTEM 79,
+    FITTED 21, CALIBRATED 16, ANSATZ 11, ACTION 0.
+  - Falsifiability: TESTED_NOW 174, TESTABLE 3, UNFALSIFIABLE 46, UNSCORED 7, NOT_OBSERVABLE 583.
+  - Circular (6): ckm.V_td, V_ts and V_tb, and neutrino.dm2_21 pass against the datum they were
+    set from; e8_portal_coupling and v_ew_derived have their own datum in the chain.
+  - Kill switches: 2 of 6 match the registry (ALP, proton decay). Fifth force, sterile ν and KK
+    gravitons differ; Cross_Pair_Bell has no row.
+  - Value conflicts: 39 groups, 10 with readers. b3: the 24s (geometry.elder_kads,
+    topology.b3_modular) have no readers; 328 rows read 43. Others with readers: M_PLANCK 15,
+    n_gen 13, sin2_theta_W 12, k_gimel 10.
+  - Ratchets: unjustified 223, ANSATZ+FITTED 32, unfalsifiable 46, circular 6.
+- E3 order (proposed): (1) record real derivation chains at the source (set_param) so the
+  ledger stops guessing; (2) fix the 4 kill-switch mismatches and 6 circular scores; (3) one
+  value per quantity for the 10 read conflict groups; (4) per sector, cut UNJUSTIFIED and
+  UNFALSIFIABLE.
