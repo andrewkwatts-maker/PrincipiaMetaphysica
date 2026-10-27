@@ -30,8 +30,8 @@ then a checkpoint in the brief. Never kill processes by name; kill only your own
 - Lint tests that read PM_PUBLISHED_ROOT fail on the stale default build; point them at
   `<scratchpad>/w2m/build` or a fresh build.
 
-## Next lanes (briefs written): W3 (briefs/W3-wording.md). To write: P4 (the 8 never-read
-forks), L3b, F2, L2b.
+## Running (launched after ec59f79): W3 (claude/wording3), P3b (claude/unread, the 8 never-read
+forks), L3b (claude/gaugesrc, D-028 gauge-source candidates). Review, test-merge, ff each.
 
 ## Findings
 - w0 = -23/24 is correct for the dark_energy_betti default `b3_24` (n = 24), not the
@@ -53,5 +53,5 @@ forks), L3b, F2, L2b.
    source; declare or stabilise the 43 moduli.
 
 ## Next briefs to write
-F2 (triple-track for the 347 unchecked formulas), P4, P5, L2b (action forks, after P3),
-L3b (reason per invalid D-028 Betti class; then pre-register D-029).
+F2 (triple-track for the 347 unchecked formulas), P4 (sweep CLI), P5, L2b (action forks),
+L3c (pre-register D-029, after L3b).
