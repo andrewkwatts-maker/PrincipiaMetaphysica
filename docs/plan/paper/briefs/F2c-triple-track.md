@@ -17,7 +17,7 @@ Checkpoints at the end of `briefs/F2a-triple-track.md` and `briefs/F2b-triple-tr
   run in the background (about 10 min).
 - Tests that read a build need `PM_PUBLISHED_ROOT` and `METAPHYSICA_OUT` set to that build.
   Base build to compare with: `H:/claude-scratch/h2/default` (core-paper 62af070 in values).
-- Don't sleep or poll. Run long commands in the background and wait for the notification.
+- Run sweeps and builds with run_in_background and wait for the notification, or use Monitor with an until-condition, never sleep loops.
 - Never kill processes by name (no `taskkill /IM python.exe`, no `Stop-Process -Name`). Kill
   only PIDs you started; other sessions share this machine.
 - Budget: about 60 tool calls; hard stop at about 100 turns. Near it, commit what passes, write
