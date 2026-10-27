@@ -37,12 +37,25 @@ f2b/new2 (core-paper + F2b) and H:/claude-scratch/l2b/build1. Set PM_PUBLISHED_R
 METAPHYSICA_OUT to one of them; the default runs_g build is stale.
 Earlier this round: P3b 24bd5a9, L3b 2abe983, PID fix ae43ec7, W3 9ceca21, E2 3aaa2ec.
 
-## Running: P5a singles sweep (start here)
-claude/sweep 8ac2f13 (not merged). One background sweep, shell PID 2348584, log
-H:/claude-scratch/p5a/sweep.log, about 62 builds of about 10 min each. When it exits, run the audit
-command in the Checkpoint of paths/briefs/P5a-real-sweep.md, merge 8ac2f13, then write P5b
-(joint + sample sweeps, site class nodes, retire plan scripts). Don't edit src in
-metaphysica-sweep while it runs (the engine fingerprint covers it).
+## Third session (2026-10-28): merged into core-paper 62af070 (not pushed)
+- P5a/P5a2 ef26770: partial runs (rows written, a late step failed) are COMPLETED_WITH_FAILURES
+  and compared; refused singles run as their unique repair or are listed; b2_over_faces excludes
+  seeds 7/19/31. The first sweep died with its session after 22 runs (the run from those 22:
+  missing constraints, 7 options declared but `implemented=False` in branches.yaml).
+- 0ad5388: exponent_24 consequence text (test_variants was failing since L2b).
+- E4 f668d1d: H0 producer already follows h0_route; off-path H0_local leaves the anchor group
+  (gate 47 still scores it vs SH0ES).
+- H1 survey `paths/hidden_forks.md` (37 hidden choices); H2 62af070 wired chi_eff (H07/H08/H12)
+  and n_gen (H26). Default values unchanged (cmp_params: 0 value diffs vs f2b/new2).
+- Base build for core-paper 62af070 values: H:/claude-scratch/h2/default.
+
+## Running (start here)
+- Singles sweep, detached PID 25076 (cwd metaphysica-sweep, 69 selections), logs
+  H:/claude-scratch/p5a/sweep2.log/.err. When it exits: audit command in P5a2's brief §4, then
+  write P5b (joint + sample sweeps, site class nodes, retire plan scripts). Don't edit src in
+  metaphysica-sweep while it runs.
+- Lanes F2c (claude/triple3) and H3 (claude/small: gate 47 string, integral-χ constraint,
+  H0 anchors marked, flaky test_2c_pool). Merge each when it reports.
 
 ## Next briefs to write
 P5b (after the P5a audit); F2c (qed, 288-roots appendix, residue registry, four-face G2; 177
@@ -76,3 +89,9 @@ left); E3b and L3c wait on owner decisions 7 and 6.
 8. E3a beyond its brief: the ALP coupling now reads its registry row (1e-11 → 1.23e-6 GeV⁻¹);
    keep or revert.
 9. ew-weinberg-angle-v19 states (12/24)·0.924 = 0.2312; the product is 0.462. Fix or retire.
+10. Decision 7 also covers the ~13 `b3 = 24` hidden sites in hidden_forks.md (H01 dependency
+    resolver, H03, H05, H10, H11, H19, H21–H25, H27).
+11. H36: the gauge sector still computes on the refused TCS #187 seed (g2_construction ignored);
+    moving it changes values. H33–H35: retire the dead forks moduli_indexing, bulk_signature,
+    face_genericity?
+12. The 7 declared-but-unimplemented options (branches.yaml:1946–2017): implement or retire.
