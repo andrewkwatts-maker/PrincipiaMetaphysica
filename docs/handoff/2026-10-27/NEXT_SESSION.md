@@ -86,6 +86,14 @@ calls and another agent ran 168 turns). Split multi-item work into separate brie
   need a fresh `metaphysica.build --fast` (the latest good one is
   `<scratchpad>/w1m/build`, pre-P1).
 
+## Owner decisions made 2026-10-28 (track_s_selection.md)
+- The path is selected dynamically. Paths rank by consistency first (switch_search verdict,
+  ladder, applicable gates), and fit to measurements only breaks ties. The paper discloses the
+  selection and the number of paths searched. Reasonable alternatives glow on the paths page.
+- The gates read the selected path's values, with no fixed 72 count. This settles 7 and 10 for
+  the gates. Running: S1 (rank), G1 (path gates), V1 (glow). Next: S2 (default from the
+  ranking), W4 (the "72 gates" prose).
+
 ## Owner decisions open
 1. Item 6: where the second time goes in 26 → 13 (the first failing ladder check; L3a's two follow).
 2. Retire de-frt-lagrangian-v19, f-r-t-tau-lagrangian-v18, pneuma-lagrangian? (marked "Not
