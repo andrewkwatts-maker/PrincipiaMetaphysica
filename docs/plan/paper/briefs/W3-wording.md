@@ -53,3 +53,14 @@ Stop and report the precise conflict (file:line). Don't redesign.
 
 ## Report (≤ 15 lines)
 The commits; the autogen count under the old and new rule; each count before → after.
+
+## Checkpoint (2026-10-27, branch claude/wording3 in ../metaphysica-wording3)
+Done: section 1 (scanner: only the shared callout block/lead or retired wording excuses a hit; the
+"Superseded path" label struck from the retired-wording check; 2 new tests). Autogen active hits
+144 under the old rule and 144 under the new (the loophole was not yet used in the build);
+then 144 -> 98 by rewriting: geometric_anchors chain/export data (24), ~14 generator strings
+(chirality, foundations, mass_ratio, geometric_anchors, results ...). Long sentences 317 -> 288
+(shared callout split; abstract g2_geometry); filler 5->2, version_tag 14->0 (measured).
+Not done: path_graph 46 (testground history graph, P3b territory), variants.json 14 (fork notes),
+theory_output remainder, identity_ledger 7 (claim ids), formulas.json 3; long sentences in the
+introduction and conclusion.

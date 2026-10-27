@@ -82,3 +82,6 @@ uncommitted `data/path_comparison.json` that is not ours; leave it.
   it would change values: seed_24 declares b3_over_dim_O, fork default b2_over_faces). Dead
   (owner: retire?): bulk_signature, face_genericity, moduli_indexing. Untraced: the P3b build
   reads theory_uncertainty_policy and the baseline doesn't.
+- Fix ae43ec7: the fork read files were `<pid>.json`, and Windows reuses PIDs within a build, so
+  later steps overwrote earlier reads (11 vs 14 forks between builds). Now `<pid>-<uuid>.json`;
+  a fresh build reads 14 forks over 43 processes.

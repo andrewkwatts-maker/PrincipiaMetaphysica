@@ -60,3 +60,10 @@ all formulas' LaTeX rendered correctly, correct formulas".
   3 → 0. Its 23 inline "(Superseded path)" labels were reverted (c9a9e2d): the scan excuses any
   hit near that text, so labels lowered counts without changing the reading. Honest ratchets:
   autogen 159, formula superseded 12. Next: briefs/W3-wording.md.
+- W3 merged in part (9ceca21): the scan counts a hit as excused only inside the real callout
+  (lead or block), and the "Superseded path" label is struck before the retired-wording check.
+  Autogen hits 144 → 98, but most of the drop is "retired/off-path seed_24" written next to b3 =
+  24. Those words are true (E2: no row reads the 24s), and they are still in the scan's excuse
+  regex. Long sentences 317 → 288. Open (Checkpoint in W3-wording.md): path_graph 46,
+  variants.json 14, identity_ledger 7 claim ids, the introduction and conclusion. Better: stop
+  publishing geometry.elder_kads = 24 and topology.b3_modular = 24 at the source (E3b).

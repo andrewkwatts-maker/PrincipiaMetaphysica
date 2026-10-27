@@ -43,7 +43,7 @@ parameter as falsifiable and justified as possible.
 
 ## Status
 - 2026-10-27: plan and briefs E1, E2 written.
-- E2 done (claude/paramledger 1d80ac1; summary `parameter_ledger.md`):
+- E2 merged (3aaa2ec; summary `parameter_ledger.md`):
   - **`derivation_chain` is empty on all 813 rows**, so no registry row records how it was
     derived. The ledger rebuilds chains from formulas.json (inputs → outputs).
   - Classes: GEOMETRY 354, UNJUSTIFIED 223, MEASURED_INPUT 109, CONVENTION_SYSTEM 79,
@@ -61,3 +61,4 @@ parameter as falsifiable and justified as possible.
   ledger stops guessing; (2) fix the 4 kill-switch mismatches and 6 circular scores; (3) one
   value per quantity for the 10 read conflict groups; (4) per sector, cut UNJUSTIFIED and
   UNFALSIFIABLE.
+- E3a started (briefs/E3a-chains-scores.md), base 3aaa2ec.
