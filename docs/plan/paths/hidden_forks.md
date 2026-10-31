@@ -88,3 +88,11 @@ Paths are under `src/metaphysica/simulations/`.
 - H12 wired: `PM/cosmology/dynamical_lambda.py` `CHI_EFF` and `N_BRIDGES` (= chi_eff/12, 12 at 144). `B3` untouched (decision 7).
 - H26 wired for n_gen: `PM/algebra/gaugino_condensation.py` both `n_gen` sites via `_resolved_n_gen()` (n_gen_source). `N1 = 24`, `N2 = 23` untouched (decision 7). Refused: none.
 - Tests: `tests/test_hidden_forks_wired.py`.
+
+## G1 (2026-10-28, branch claude/gates in metaphysica-gates)
+Literals in the gate modules that disagree with the registry (b3 = 43 on the adopted seed) and that no fork decides. Paths are under `src/metaphysica/`.
+- `simulations/PM/paper/appendices/appendix_f_72gates.py` G31 Higgs VEV (was lines 1126-1128): `torsion = b3 = 24` in `v = k_gimel (b3 - 4)`; registry b3 = 43 gives 850.91 GeV. Not a decided fork: now read from `b3_path.seed_values()` and G31 is NOT_APPLICABLE unless `b3_seed = seed_24`. The premise assignment is a G1 judgement, not an owner ruling.
+- `generators/generate_72_certificates.py:89` G48 `w0 = -(b3-1)/b3 = -23/24` (literal 24; registry b3 43 gives -42/43; published `desi.w0` = -0.752).
+- `generators/generate_72_certificates.py:125` G60 `wa = -1/Sqrt[24]` (literal 24; published `geometry.wa` = -0.2041 follows it).
+- `generators/generate_72_certificates.py:60` G25 `alpha* = 1/24` and other WL strings keep 24 literals (declarative, never executed).
+- Not hidden: G6, G9, G12, G22, G29, G63 used `24` for the shadow torsion pin count (`topology.shadow_torsion_total`, 12 per brane), which is not b3 (identity ledger `shadow_torsion_total_is_b3`). They now read the registry pin rows.
